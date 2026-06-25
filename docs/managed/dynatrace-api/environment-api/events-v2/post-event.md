@@ -1,14 +1,21 @@
 ---
-title: "Events API v2 - POST an event"
+title: Events API v2 - POST an event
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/events-v2/post-event
-updated: 2026-02-09
+scraped: 2026-05-12T11:11:48.386955
 ---
+
+# Events API v2 - POST an event
+
+# Events API v2 - POST an event
+
+* Reference
+* Published Nov 05, 2021
 
 Ingests a custom event to Dynatrace.
 
 The request consumes an `application/json` payload.
 
-The ingestion of custom events consumes Davis Data Units (DDUs).") from the events pool.
+The ingestion of custom events consumes [Davis Data Units (DDUs)](/managed/license/monitoring-consumption-classic/davis-data-units "Understand how Dynatrace monitoring consumption is calculated based on Davis data units (DDU).") from the events pool.
 
 |  |  |  |
 | --- | --- | --- |
@@ -19,7 +26,7 @@ The ingestion of custom events consumes Davis Data Units (DDUs).") from the even
 
 To execute this request, you need an access token with `events.ingest` scope.
 
-To learn how to obtain and use it, see Tokens and authentication.
+To learn how to obtain and use it, see [Tokens and authentication](/managed/discover-dynatrace/references/dynatrace-api/basics/dynatrace-api-authentication).
 
 ## Parameters
 
@@ -36,9 +43,9 @@ The configuration of an event to be ingested.
 | Element | Type | Description | Required |
 | --- | --- | --- | --- |
 | endTime | integer | The end time of the event, in UTC milliseconds.  If not set, the start time plus timeout is used. | Optional |
-| entitySelector | string | The [entity selector](https://dt-url.net/apientityselector), defining a set of Dynatrace entities to be associated with the event.  Only entities that have been active within the last 24 hours can be selected. Note that the `entityId` filter bypasses this time constraint, allowing events to be ingested for entities that have been inactive for more than 24 hours.  If not set, the event is associated with the environment (`dt.entity.environment`) entity. | Optional |
+| entitySelector | string | The [entity selectorï»¿](https://dt-url.net/apientityselector), defining a set of Dynatrace entities to be associated with the event.  Only entities that have been active within the last 24 hours can be selected. Note that the `entityId` filter bypasses this time constraint, allowing events to be ingested for entities that have been inactive for more than 24 hours.  If not set, the event is associated with the environment (`dt.entity.environment`) entity. | Optional |
 | eventType | string | The type of the event. The element can hold these values * `AVAILABILITY_EVENT` * `CUSTOM_ALERT` * `CUSTOM_ANNOTATION` * `CUSTOM_CONFIGURATION` * `CUSTOM_DEPLOYMENT` * `CUSTOM_INFO` * `ERROR_EVENT` * `MARKED_FOR_TERMINATION` * `PERFORMANCE_EVENT` * `RESOURCE_CONTENTION_EVENT` * `WARNING` | Required |
-| properties | object | A map of event properties.  * To set event properties with predefined behavior, use classic `dt.event.*` and `dt.davis.*` properties. To check which properties belong to classic API, see [Events API v2 - GET all event properties](https://dt-url.net/9622g1w). * To attach entity information to an event, use `dt.entity.*` keys. * To provide additional info, you can use any key outside of the `dt.*` namespace.  Values of event properties with predefined behavior must fulfill the requirements of the respective property.  A maximum of 100 properties can be specified. A property key is allowed to contain up to 100 characters. A property value is allowed to contain up to 4096 characters. | Optional |
+| properties | object | A map of event properties.  * To set event properties with predefined behavior, use classic `dt.event.*` and `dt.davis.*` properties. To check which properties belong to classic API, see [Events API v2 - GET all event propertiesï»¿](https://dt-url.net/9622g1w). * To attach entity information to an event, use `dt.entity.*` keys. * To provide additional info, you can use any key outside of the `dt.*` namespace.  Values of event properties with predefined behavior must fulfill the requirements of the respective property.  A maximum of 100 properties can be specified. A property key is allowed to contain up to 100 characters. A property value is allowed to contain up to 4096 characters. | Optional |
 | startTime | integer | The start time of the event, in UTC milliseconds.  If not set, the current timestamp is used.  Depending on the event type, the start time must not lie in the past more than 6 hours for problem-opening events and 30 days for info events.  Depending on the event type, the start time must not lie in the future more than 5 minutes for problem-opening events and 7 days for info events.  Events that can be sent up to 7 days in the future:  * `CUSTOM_ANNOTATION` * `CUSTOM_CONFIGURATION` * `CUSTOM_DEPLOYMENT` * `CUSTOM_INFO` * `MARKED_FOR_TERMINATION` | Optional |
 | timeout | integer | The timeout of the event, in minutes.  If not set, 15 is used.  The timeout will automatically be capped to a maximum of 360 minutes (6 hours).  Problem-opening events can be refreshed and therefore kept open by sending the same payload again. | Optional |
 | title | string | The title of the event. | Required |
@@ -51,25 +58,33 @@ This is a model of the request body, showing the possible elements. It has to be
 {
 
 
+
 "endTime": 1,
+
 
 
 "entitySelector": "string",
 
 
+
 "eventType": "AVAILABILITY_EVENT",
+
 
 
 "properties": {},
 
 
+
 "startTime": 1,
+
 
 
 "timeout": 1,
 
 
+
 "title": "string"
+
 
 
 }
@@ -136,68 +151,89 @@ A list of constraint violations
 {
 
 
+
 "eventIngestResults": [
 
 
+
 {
+
 
 
 "correlationId": "string",
 
 
+
 "status": "INVALID_ENTITY_TYPE"
+
 
 
 }
 
 
+
 ],
+
 
 
 "reportCount": 1
 
 
+
 }
 ```
 
 ```
 {
+
 
 
 "error": {
 
 
+
 "code": 1,
+
 
 
 "constraintViolations": [
 
 
+
 {
+
 
 
 "location": "string",
 
 
+
 "message": "string",
+
 
 
 "parameterLocation": "HEADER",
 
 
+
 "path": "string"
 
 
+
 }
+
 
 
 ],
 
 
+
 "message": "string"
 
 
+
 }
+
 
 
 }
@@ -225,34 +261,45 @@ The API token is passed in the **Authorization** header.
 curl --request POST \
 
 
+
 --url https://mySampleEnv.live.dynatrace.com/api/v2/events/ingest \
+
 
 
 --header 'Authorization: Api-Token dt0c01.abc123.abcdefjhij1234567890' \
 
 
+
 --header 'Content-Type: application/json' \
+
 
 
 --data '{
 
 
+
 "eventType": "MARKED_FOR_TERMINATION",
+
 
 
 "title": "Planned host downscale",
 
 
+
 "entitySelector": "type(HOST),fromRelationship.isInstanceOf(type(HOST_GROUP),entityName(cloud-burst-hosts))",
+
 
 
 "properties": {
 
 
+
 "job.number": "21234346"
 
 
+
 }
+
 
 
 }'
@@ -270,22 +317,29 @@ https://mySampleEnv.live.dynatrace.com/api/v2/events/ingest
 {
 
 
+
 "eventType": "MARKED_FOR_TERMINATION",
+
 
 
 "title": "Planned host downscale",
 
 
+
 "entitySelector": "type(HOST),fromRelationship.isInstanceOf(type(HOST_GROUP),entityName(cloud-burst-hosts))",
+
 
 
 "properties": {
 
 
+
 "job.number": "21234346"
 
 
+
 }
+
 
 
 }
@@ -297,37 +351,49 @@ https://mySampleEnv.live.dynatrace.com/api/v2/events/ingest
 {
 
 
+
 "reportCount": 2,
+
 
 
 "eventIngestResults": [
 
 
+
 {
+
 
 
 "correlationId": "41f5d263011a6c9a",
 
 
+
 "status": "OK"
+
 
 
 },
 
 
+
 {
+
 
 
 "correlationId": "80eae4d163cc5760",
 
 
+
 "status": "OK"
+
 
 
 }
 
 
+
 ]
+
 
 
 }
@@ -351,43 +417,57 @@ The API token is passed in the **Authorization** header.
 curl --request POST \
 
 
+
 --url https://mySampleEnv.live.dynatrace.com/api/v2/events/ingest \
+
 
 
 --header 'Authorization: Api-Token dt0c01.abc123.abcdefjhij1234567890' \
 
 
+
 --header 'Content-Type: application/json' \
+
 
 
 --data '{
 
 
+
 "eventType": "CUSTOM_INFO",
+
 
 
 "title": "Loadtest start",
 
 
+
 "timeout": 30,
+
 
 
 "entitySelector": "type(SERVICE),entityName.equals(BookingService)",
 
 
+
 "properties": {
+
 
 
 "Tool": "MyLoadTool",
 
 
+
 "Load per minute": "100",
+
 
 
 "Load pattern": "production"
 
 
+
 }
+
 
 
 }'
@@ -405,31 +485,41 @@ https://mySampleEnv.live.dynatrace.com/api/v2/events/ingest
 {
 
 
+
 "eventType": "CUSTOM_INFO",
+
 
 
 "title": "Loadtest start",
 
 
+
 "timeout": 30,
+
 
 
 "entitySelector": "type(SERVICE),entityName.equals(BookingService)",
 
 
+
 "properties": {
+
 
 
 "Tool": "MyLoadTool",
 
 
+
 "Load per minute": "100",
+
 
 
 "Load pattern": "production"
 
 
+
 }
+
 
 
 }
@@ -441,25 +531,33 @@ https://mySampleEnv.live.dynatrace.com/api/v2/events/ingest
 {
 
 
+
 "reportCount": 1,
+
 
 
 "eventIngestResults": [
 
 
+
 {
+
 
 
 "correlationId": "eba82f647696e485",
 
 
+
 "status": "OK"
+
 
 
 }
 
 
+
 ]
+
 
 
 }
@@ -483,43 +581,57 @@ The API token is passed in the **Authorization** header.
 curl --request POST \
 
 
+
 --url https://mySampleEnv.live.dynatrace.com/api/v2/events/ingest \
+
 
 
 --header 'Authorization: Api-Token dt0c01.abc123.abcdefjhij1234567890' \
 
 
+
 --header 'Content-Type: application/json' \
+
 
 
 --data '{
 
 
+
 "eventType": "ERROR_EVENT",
+
 
 
 "title": "Product catalog update failed",
 
 
+
 "timeout": 30,
+
 
 
 "entitySelector": "type(SERVICE),entityName.equals(BookingService)",
 
 
+
 "properties": {
+
 
 
 "dt.event.allow_davis_merge": "false",
 
 
+
 "Catalog": "APAC travels",
+
 
 
 "Batch processor": "travel-catalog"
 
 
+
 }
+
 
 
 }'
@@ -537,31 +649,41 @@ https://mySampleEnv.live.dynatrace.com/api/v2/events/ingest
 {
 
 
+
 "eventType": "ERROR_EVENT",
+
 
 
 "title": "Product catalog update failed",
 
 
+
 "timeout": 30,
+
 
 
 "entitySelector": "type(SERVICE),entityName.equals(BookingService)",
 
 
+
 "properties": {
+
 
 
 "dt.event.allow_davis_merge": "false",
 
 
+
 "Catalog": "APAC travels",
+
 
 
 "Batch processor": "travel-catalog"
 
 
+
 }
+
 
 
 }
@@ -573,25 +695,33 @@ https://mySampleEnv.live.dynatrace.com/api/v2/events/ingest
 {
 
 
+
 "reportCount": 1,
+
 
 
 "eventIngestResults": [
 
 
+
 {
+
 
 
 "correlationId": "cefb7ae03ac720b6",
 
 
+
 "status": "OK"
+
 
 
 }
 
 
+
 ]
+
 
 
 }
@@ -603,5 +733,5 @@ https://mySampleEnv.live.dynatrace.com/api/v2/events/ingest
 
 ## Related topics
 
-* Event categories
-* Event analysis and correlation
+* [Event categories](/managed/dynatrace-intelligence/root-cause-analysis/event-analysis-and-correlation/event-categories "Learn about different categories of events and supported event types, along with their severity levels, and the logic behind raising them.")
+* [Event analysis and correlation](/managed/dynatrace-intelligence/root-cause-analysis/event-analysis-and-correlation "Gain an understanding of the Events section on each host, process, and service overview page.")

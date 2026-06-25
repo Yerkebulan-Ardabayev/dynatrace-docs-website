@@ -1,0 +1,39 @@
+---
+title: Settings API - Varnish Cache schema table
+source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/settings/schemas/builtin-monitored-technologies-varnish
+scraped: 2026-05-12T11:48:51.809657
+---
+
+# Settings API - Varnish Cache schema table
+
+# Settings API - Varnish Cache schema table
+
+* Published Dec 05, 2023
+
+### Varnish Cache (`builtin:monitored-technologies.varnish)`
+
+By default, Varnish Cache monitoring is disabled on all hosts. If you want to enable Varnish Cache monitoring on selected hosts, enable it on these hosts via their settings.
+
+If you want to disable Varnish Cache monitoring only on selected hosts, enable global Varnish Cache monitoring and disable it on these hosts via their settings.
+
+| Schema ID | Schema groups | Scope |
+| --- | --- | --- |
+| `builtin:monitored-technologies.varnish` | - | `HOST` - Host  `environment` |
+
+Retrieve schema via Settings API
+
+|  |  |  |
+| --- | --- | --- |
+| GET | Managed | `https://{your-domain}/e/{your-environment-id}/api/v2/settings/schemas/builtin:monitored-technologies.varnish` |
+| GET | SaaS | `https://{your-environment-id}.live.dynatrace.com/api/v2/settings/schemas/builtin:monitored-technologies.varnish` |
+| GET | Environment ActiveGate | `https://{your-activegate-domain}/e/{your-environment-id}/api/v2/settings/schemas/builtin:monitored-technologies.varnish` |
+
+## Authentication
+
+To execute this request, you need an access token with **Read settings** (`settings.read`) scope. To learn how to obtain and use it, see [Tokens and authentication](/managed/discover-dynatrace/references/dynatrace-api/basics/dynatrace-api-authentication).
+
+## Parameters
+
+| Property | Type | Description | Required |
+| --- | --- | --- | --- |
+| Monitor Varnish Cache `enabled` | boolean | - | Required |

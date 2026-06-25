@@ -1,12 +1,18 @@
 ---
-title: "OpenTelemetry and Dynatrace"
+title: OpenTelemetry and Dynatrace
 source: https://docs.dynatrace.com/managed/ingest-from/opentelemetry
-updated: 2026-02-09
+scraped: 2026-05-12T11:03:46.968454
 ---
 
-* 2-min read
+# OpenTelemetry and Dynatrace
 
-[OpenTelemetry (OTel)](https://www.opentelemetry.io) provides a standardized way of collecting and exporting telemetry data.
+# OpenTelemetry and Dynatrace
+
+* Overview
+* 2-min read
+* Updated on May 04, 2026
+
+[OpenTelemetry (OTel)ï»¿](https://www.opentelemetry.io) provides a standardized way of collecting and exporting telemetry data.
 It allows applications and infrastructure to transmit telemetry to backends (such as Dynatrace) using vendor-agnostic formats.
 These backends can then aggregate and analyze the data.
 
@@ -18,39 +24,15 @@ Dynatrace supports this flexible approach, ensuring you experience industry-lead
 There are three different ways you can export your OTLP data to Dynatrace.
 Choose the deployment option that best aligns with your observability strategy.
 
-![OTLP send data to Dynatrace](https://dt-cdn.net/images/screenshot-2025-09-30-at-12-44-57-2356-978977628c.png)
+![OTLP: Send data to Dynatrace](https://cdn.bfldr.com/B686QPH3/as/5gstm5nvpmxmg8rr5gm6cgn/OpenTelemetry_and_Dynatrace_-_Ingest_methods_-_Light_Mode?auto=webp&format=png&position=1)
 
-Method
+OTLP: Send data to Dynatrace
 
-Best whenâ¦
-
-Good forâ¦
-
-Ideal forâ¦
-
-Direct export to Dynatrace API endpoints
-
-You want minimal complexity and infrastructure overhead.
-
-Simple deployments with straightforward telemetry requirements.
-
-If you don't need data processing, enrichment, or transformation capabilities.
-
-Standard OpenTelemetry Collector
-
-Your organization has already standardized on OpenTelemetry collectors.
-
-Teams with existing OpenTelemetry expertise and tooling.
-
-Ideal if you need compatibility with existing collector configurations or custom versions.
-
-Dynatrace Collector Recommended
-
-Most Dynatrace deployments requiring data processing capabilities.
-
-Teams who need a fully supported Collector distribution with verified configurations.
-
-When you want automated management through the Dynatrace Operator.
+| Method | Best whenâ¦ | Good forâ¦ | Ideal forâ¦ |
+| --- | --- | --- | --- |
+| Direct export to Dynatrace API endpoints | You want minimal complexity and infrastructure overhead. | Simple deployments with straightforward telemetry requirements. | If you don't need data processing, enrichment, or transformation capabilities. |
+| Standard OTel Collector | Your organization has already standardized on OTel Collectors. | Teams with existing OpenTelemetry expertise and tooling. | Ideal if you need compatibility with existing collector configurations or custom versions. |
+| Dynatrace OTel Collector Recommended | Most Dynatrace deployments requiring data processing capabilities. | Teams who need a fully supported OTel Collector distribution with verified configurations. | When you want automated management through the Dynatrace Operator. |
 
 ## Why use OpenTelemetry with Dynatrace?
 
@@ -61,7 +43,7 @@ This solution empowers you to simplify complexity and innovate faster by extract
 Dynatrace provides you with:
 
 * Powerful analytics at scale.
-  Execute massive queries at lightning speed by leveraging the power of Grail with your OpenTelemetry data, turning telemetry data into actionable and intelligent insights for faster problem resolution.
+  Execute massive queries at lightning speed, turning telemetry data into actionable and intelligent insights for faster problem resolution.
 * Intelligence beyond instrumentation.
   Dynatrace enriches OpenTelemetry data with business context and advanced analytics to deliver actionable intelligence, rather than just data collection.
 * Accelerated innovation.
@@ -83,8 +65,8 @@ Dynatrace is deeply committed to the OpenTelemetry ecosystem through multiple av
 Dynatrace meets customers where they are in their observability journey, offering multiple ingestion options for getting OpenTelemetry signals into the platform including:
 
 * OTLP API
-* OpenTelemetry Collector
-* Dynatrace Collector
+* OTel Collector
+* Dynatrace OTel Collector
 
 ## Licensing
 
@@ -92,4 +74,4 @@ Licensing for OpenTelemetry data is fully integrated into the Dynatrace Platform
 
 ## Related topics
 
-* Use OneAgent with OpenTelemetry data
+* [Use OneAgent with OpenTelemetry data](/managed/ingest-from/dynatrace-oneagent/oneagent-and-opentelemetry/oneagent-otel "Learn how to send OpenTelemetry data to a Dynatrace OneAgent.")

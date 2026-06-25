@@ -1,288 +1,155 @@
 ---
 title: Пользовательский SSL-сертификат для ActiveGate
-source: https://www.dynatrace.com/docs/ingest-from/dynatrace-activegate/configuration/configure-custom-ssl-certificate-on-activegate
-scraped: 2026-03-06T21:27:26.606529
+source: https://docs.dynatrace.com/managed/ingest-from/dynatrace-activegate/configuration/configure-custom-ssl-certificate-on-activegate
+scraped: 2026-05-12T11:13:58.051235
 ---
 
-* Latest Dynatrace
+# Пользовательский SSL-сертификат для ActiveGate
+
+# Пользовательский SSL-сертификат для ActiveGate
+
+* 6-min read
+* Updated on Feb 24, 2026
 
 Не применимо к Cluster ActiveGate
 
-Следующая процедура -- прямая загрузка SSL-сертификата на ActiveGate -- не применима к Cluster ActiveGate.
-Не пытайтесь настраивать SSL-сертификаты напрямую на Cluster ActiveGate. В этом случае сертификат будет перезаписан автоматическим управлением, выполняемым Dynatrace.
-Для Cluster ActiveGate необходимо загружать сертификаты через [Cluster Management Console](https://docs.dynatrace.com/managed/shortlink/managed-ssl-cluster-ag) или [Cluster REST API v1](https://docs.dynatrace.com/managed/shortlink/api-cluster-post-ssl-cert-store).
+Следующая процедура прямой загрузки SSL-сертификата на ActiveGate **не применима** к Cluster ActiveGate.
+Не пытайтесь настраивать SSL-сертификаты непосредственно на Cluster ActiveGate: сертификат будет перезаписан автоматическим управлением Dynatrace.
+Для Cluster ActiveGate загружайте сертификаты через [Cluster Management Console](/managed/managed-cluster/installation/ssl-certificate-cluster-activegate "Настройте пользовательский SSL-сертификат на Cluster ActiveGate.") или [Cluster REST API v1](/managed/dynatrace-api/cluster-api/cluster-api-v1/ssl-certificates-v1/post-cluster-ssl-cert-store-status "Узнайте, как использовать Dynatrace API для хранения SSL-сертификата кластера.").
 
-Подключение к ActiveGate от OneAgent или REST API осуществляется через зашифрованный канал HTTPS. ActiveGate предъявляет самоподписанный сертификат аутентификации всем подключающимся клиентам. В то время как экземпляры OneAgent могут игнорировать валидность сертификатов ActiveGate (в зависимости от конфигурации), соединения от браузерных клиентов (таких как RUM JavaScript) проверяют правильность имени хоста, указанного в сертификате, перед отправкой данных.
+Подключение к ActiveGate от OneAgent или REST API происходит по зашифрованному HTTPS-каналу. ActiveGate предъявляет самоподписанный сертификат всем подключающимся клиентам. Хотя экземпляры OneAgent могут игнорировать действительность сертификатов ActiveGate (в зависимости от конфигурации), подключения из браузерных клиентов (например, [RUM JavaScript](/managed/observe/digital-experience/web-applications/initial-setup/rum-injection "Настройте автоматическое внедрение RUM JavaScript на страницы ваших приложений")) проверяют, что имя хоста, указанное в сертификате, является корректным.
 
-**ActiveGate может обслуживать пользовательский сертификат вместо сертификата по умолчанию. Для этого вам нужен файл в формате `PKCS#12`, содержащий закрытый ключ и соответствующую цепочку сертификатов.**
+ActiveGate может использовать пользовательский сертификат вместо сертификата по умолчанию.
 
-В зависимости от корневого удостоверяющего центра, подписавшего пользовательский сертификат ActiveGate, может потребоваться дополнительная настройка OneAgent. См. Безопасность OneAgent.
+* В зависимости от корневого ЦС, подписавшего пользовательский сертификат ActiveGate, может потребоваться дополнительная конфигурация для OneAgent. Смотрите [Безопасность OneAgent](/managed/ingest-from/dynatrace-oneagent/oneagent-security#trusted-root-certificates "Управление безопасностью OneAgent").
+* Конфигурацию пользовательского сертификата также можно применить во время установки ActiveGate, указав параметры установки для [Linux](/managed/ingest-from/dynatrace-activegate/installation/linux/linux-customize-installation-for-activegate#custom-ssl-certificate "Узнайте о параметрах командной строки для ActiveGate на Linux.") или [Windows](/managed/ingest-from/dynatrace-activegate/installation/windows/windows-customize-installation-for-activegate#custom-ssl-certificate "Узнайте о параметрах для ActiveGate на Windows."). Для этого требуется файл в формате PKCS#12, содержащий закрытый ключ и соответствующую цепочку сертификатов.
 
-### Возможность настройки во время установки
+## Настройка пользовательского SSL-сертификата
 
-Эту конфигурацию также можно применить во время установки ActiveGate, указав параметры установки для Linux или Windows.
+agctl
 
-## Настройка пользовательского сертификата
+custom.properties
 
-Чтобы настроить ActiveGate для использования пользовательского сертификата
+ActiveGate версии 1.333+
 
-1. Скопируйте файл сертификата в каталог ssl и установите правильные разрешения.
+Используйте [agctl](/managed/ingest-from/dynatrace-activegate/agctl-command-line-interface#ssl-certificate "Узнайте, как использовать agctl для настройки и управления ActiveGate из командной строки") для настройки пользовательского SSL-сертификата.
 
-   В Linux убедитесь, что разрешения скопированного файла сертификата включают пользователя ActiveGate, которого вы назначили для запуска службы ActiveGate. Если вы не указали пользовательского пользователя при установке, пользователь по умолчанию -- `dtuserag`.
+#### Установка с минимальными параметрами:
 
-   В Windows убедитесь, что учетная запись `LocalService` имеет разрешения на доступ к скопированному файлу сертификата.
-2. Добавьте следующие записи в файл `custom.properties` в каталоге конфигурации ActiveGate.
+```
+agctl ssl-certificate set --certificate=/path/to/cert.crt --key=/path/to/key.pem
+```
+
+#### Установка со всеми параметрами:
+
+```
+agctl ssl-certificate set --certificate=/path/to/cert.crt --key=/path/to/key.pem --pem-password=secret --password=changeit --alias=mycert
+```
+
+#### Параметры:
+
+* `--certificate`: путь к файлу сертификата в формате PEM (обязательный)
+* `--key`: путь к файлу закрытого ключа в формате PEM (обязательный)
+* `--pem-password`: пароль файла закрытого ключа (если зашифрован)
+* `--password`: пароль для сгенерированного хранилища ключей (необязательный, генерируется автоматически)
+* `--alias`: псевдоним сертификата в хранилище ключей (необязательный)
+
+После настройки SSL-сертификата с помощью `agctl` необходимо [перезапустить ActiveGate](/managed/ingest-from/dynatrace-activegate/operation/stop-restart-activegate "Узнайте, как запустить, остановить и перезапустить ActiveGate на Windows или Linux.").
+
+Для настройки через `custom.properties` требуется файл в формате **PKCS#12**, содержащий закрытый ключ и цепочку сертификатов.
+
+1. Скопируйте файл сертификата в [директорию ssl](/managed/ingest-from/dynatrace-activegate/configuration/where-can-i-find-activegate-files "Узнайте, где хранятся файлы ActiveGate на Windows и Linux.") и установите корректные права доступа.
+
+   На Linux убедитесь, что права доступа к скопированному файлу сертификата включают пользователя ActiveGate (по умолчанию: `dtuserag`).
+
+   На Windows убедитесь, что учётная запись `LocalService` имеет права доступа к файлу.
+
+2. Добавьте следующие записи в файл `custom.properties` в [директории конфигурации ActiveGate](/managed/ingest-from/dynatrace-activegate/configuration/where-can-i-find-activegate-files "Узнайте, где хранятся файлы ActiveGate на Windows и Linux."):
 
    ```
    [com.compuware.apm.webserver]
-
-
    certificate-file = certificate-file.p12
-
-
    certificate-password = password
-
-
    certificate-alias = friendly-name
    ```
 
-   Вам необходимо добавить вышеуказанные записи в секцию `[com.compuware.apm.webserver]`. Если такая секция уже существует в вашем файле `custom.properties`, просто добавьте свойства в эту секцию. Если секция не существует, создайте также заголовок секции.
+   Добавьте эти записи в раздел `[com.compuware.apm.webserver]`. Если раздел уже существует, просто добавьте свойства. Если раздела нет, создайте его заголовок.
 
-   Пароль сертификата, который вы указываете в свойстве `certificate-password`, будет обфусцирован после перезапуска основной службы ActiveGate. Обфусцированный пароль сохраняется в свойстве `certificate-password-encr`, а исходное свойство удаляется.
+   Пароль сертификата будет зашифрован после [перезапуска основной службы ActiveGate](/managed/ingest-from/dynatrace-activegate/operation/stop-restart-activegate "Узнайте, как перезапустить ActiveGate."). Зашифрованный пароль хранится в `certificate-password-encr`, исходное свойство удаляется.
 
-   **Значение `certificate-alias` должно быть указано в нижнем регистре.** Если у сертификата нет дружественного имени, вы можете опустить свойство `certificate-alias`.
+   **Значение `certificate-alias` должно быть указано в нижнем регистре.** Если у сертификата нет псевдонима, свойство `certificate-alias` можно опустить.
 
 ## Управление сертификатами через REST API
 
-Сертификатами можно управлять удаленно через REST API. Подготовьте файл сертификата `PKCS#12`, и вы сможете загрузить его на ActiveGate с помощью REST.
+Сертификатами можно управлять удалённо через REST API. Подготовьте файл сертификата `PKCS#12` и загрузите его на ActiveGate с помощью REST.
 
-Токен авторизации
-
-Для авторизации требуется API-токен. API-токены могут предоставляться через HTTP-заголовки или другими способами. См. Dynatrace API -- Токены и аутентификация
-
-API-токен, используемый для следующих действий, должен иметь разрешение `ActiveGate certificate management`.
+API-токен для следующих операций должен иметь разрешение `ActiveGate certificate management`.
 
 #### Загрузка и активация сертификата
 
-Следующая конечная точка REST загружает и активирует выбранный файл сертификата. Пароль для файла должен совпадать с паролем для ключей, содержащихся в файле, и должен быть указан в пользовательском HTTP-заголовке `X-Password`.
+```
+curl https://{address of ActiveGate}:{port}/e/{environment ID}/api/v1/certificate/{certificate file name} -H"Authorization: Api-Token {token}" -H"X-Password: {password}" -H"Content-Type: application/octet-stream" -T {path to certificate file}
+```
 
-`curl https://{address of ActiveGate}:{port}/e/{environment ID}/api/v1/certificate/{certificate file name} -H"Authorization: Api-Token {token}" -H"X-Password: {password}" -H"Content-Type: application/octet-stream" -T {path to certificate file}`
-
-* Порт настраивается, по умолчанию -- 9999.
-* Путь к файлу сертификата может быть просто именем локального файла или полным путем.
-* Имя сертификата, указанное в URL, не обязательно должно совпадать с именем файла.
-
-Например:
+Пример:
 
 ```
 curl https://myActiveGate:9999/e/myEnvironmentId/api/v1/certificate/cert.p12 \
-
-
 -H "Authorization: Api-Token 123abc" \
-
-
 -H "X-Password: myPassword" \
-
-
 -H "Content-Type: application/octet-stream" \
-
-
 -T cert.p12
 ```
 
-Если API-вызов успешен, HTTP-ответ будет `200` с JSON-описанием содержимого активированного файла сертификата.
-
-Если API-вызов завершится неудачей, HTTP-ответ будет содержать код ошибки `4xx` или `5xx` с текстовым сообщением.
-
 #### Замена активного сертификата
 
-Вы не можете заменить активный сертификат с помощью этой конечной точки. Операция вернет `HTTP 403 Forbidden`. Чтобы заменить активный сертификат, загрузите новый сертификат под другим именем, а затем удалите старый сертификат.
+Заменить активный сертификат через эту конечную точку невозможно (HTTP 403 Forbidden). Загрузите новый сертификат под другим именем, затем удалите старый.
 
 #### Удаление сертификата
-
-Удаляет выбранный сертификат на ActiveGate.
 
 ```
 curl -XDELETE https://myActiveGate:9999/e/myEnvironmentId/api/v1/certificate/cert.p12 -H"Authorization: Api-Token 123abc"
 ```
 
-Если сертификат успешно удален, API-вызов вернет HTTP-код `200` без содержимого.
-
-Если файл с указанным именем не существует, API-вызов вернет HTTP-код `404 Not found`.
-
-Если файл сертификата используется в данный момент, API-вызов вернет HTTP-код `403 Forbidden`.
-
 #### Активация сертификата
-
-Активирует существующий ранее загруженный файл сертификата с использованием указанного пароля.
 
 ```
 curl -XPOST https://myActiveGate:9999/e/myEnvironmentId/api/v1/certificate/cert.p12/activate -H"Authorization: Api-Token 123abc" -d"{\"password\":\"pass\"}"
 ```
 
-```
-curl -XPOST https://myActiveGate:9999/e/myEnvironmentId/api/v1/certificate/cert.p12/activate -H"Authorization: Api-Token 123abc" -H"X-Password: pass"
-```
-
-Если сертификат успешно активирован, API-вызов вернет HTTP-код `200` с JSON-описанием содержимого активированного файла сертификата.
-
-Если запрошенный файл сертификата не существует на ActiveGate, API-вызов вернет HTTP-код `404`.
-
-Если предоставленный пароль не совпадает, API-вызов вернет HTTP-код `400`.
-
 #### Список всех сертификатов
-
-Возвращает JSON-список всех загруженных файлов.
 
 ```
 curl https://myActiveGate:9999/e/myEnvironmentId/api/v1/certificate/list -H"Authorization: Api-Token 123abc"
 ```
 
-Если активное хранилище ключей присутствует в списке, его запись будет содержать дополнительные детали.
-
-Пример ответа:
-
-```
-[
-
-
-{
-
-
-"name":"cert_demo.p12"
-
-
-},
-
-
-{      "name":"cert.p12",
-
-
-"desc":[         {
-
-
-"alias":"local",
-
-
-"description":"Subject:CN=myActiveGate;Valid from:Fri Feb 15 13:16:58 CET 2019;Valid to:Sat Feb 15 13:16:58 CET 2020;Serial number:71d275dd3983c3cb9382437275dd3983c3cb93dbca"
-
-
-},
-
-
-{
-
-
-"alias":"dynatrace",
-
-
-"description":"Subject:CN=*.clients.dynatrace.org;Valid from:Thu Feb 21 10:06:03 CET 2019;Valid to:Fri Feb 21 10:06:03 CET 2020;Serial number:6dc7008ab269ecebeed03652ce08ab269ecebeeeb33"
-
-
-}
-
-
-]
-
-
-},
-
-
-{
-
-
-"name":"cert_key_1.p12"
-
-
-}
-
-
-]
-```
-
-Обратите внимание, что самоподписанный сертификат по умолчанию не включается в список.
-
 #### Описание сертификата
-
-Этот API-вызов возвращает JSON-описание выбранного файла.
 
 ```
 curl https://myActiveGate:9999/e/myEnvironmentId/api/v1/certificate/cert.p12/list -H"Authorization: Api-Token 123abc" -H"X-Password: pass"
 ```
 
-```
-curl -XPOST https://myActiveGate:9999/e/myEnvironmentId/api/v1/certificate/cert.p12/list -H"Authorization: Api-Token 123abc" -H"X-Password: pass"
-```
-
-```
-curl -XPOST https://myActiveGate:9999/e/myEnvironmentId/api/v1/certificate/cert.p12/list -H"Authorization: Api-Token 123abc" -d"{\"password\":\"pass\"}"
-```
-
-Если запрошенный файл сертификата не существует на ActiveGate, API-вызов вернет HTTP-код `404`.
-
-Если пароль не совпадает, API-вызов вернет HTTP-код `400`.
-
-Пример ответа:
-
-```
-{   "name":"cert.p12",
-
-
-"desc":[      {
-
-
-"alias":"local",
-
-
-"description":"Subject:CN=myActiveGate;Valid from:Fri Feb 15 13:16:58 CET 2019;Valid to:Sat Feb 15 13:16:58 CET 2020;Serial number:7137275dd398c4182437275dd3983c3cb93dbca"
-
-
-},
-
-
-{
-
-
-"alias":"dynatrace",
-
-
-"description":"Subject:CN=*.clients.dynatrace.org;Valid from:Thu Feb 21 10:06:03 CET 2019;Valid to:Fri Feb 21 10:06:03 CET 2020;Serial number:6d2ce08ab269ecebeee7f1bd03652ce08ab269ecebeeeb33"
-
-
-}
-
-
-]
-
-
-}
-```
-
 ## Создание файла сертификата для тестирования
-
-Чтобы создать самоподписанный файл сертификата `PKCS#12` для тестирования
 
 1. Сгенерируйте ключ и самоподписанный сертификат:
 
    ```
    openssl req -x509 -newkey rsa:4096 -keyout key.pem -out cert.pem -days 365 -subj "/CN=localhost"
    ```
-2. Конвертируйте сгенерированные файлы в формат `PKCS#12`:
+
+2. Конвертируйте в формат `PKCS#12`:
 
    ```
    openssl pkcs12 -export -inkey key.pem -in cert.pem -out cert_key.p12
    ```
 
-   или, чтобы задать дружественное имя, используйте:
+   или с псевдонимом (в нижнем регистре):
 
    ```
    openssl pkcs12 -export -inkey key.pem -in cert.pem -out cert_key.p12 -name friendly-name
    ```
 
-   помните, что `friendly-name` должно быть указано в нижнем регистре.
+## Известные ограничения
 
-## Известные ограничения и поддержка нескольких сертификатов
-
-* Пароль для файла `PKCS#12` должен совпадать с паролем для ключа, содержащегося в этом файле.
-  Не используйте опцию `-twopass` в команде `openssl pkcs12`.
-* Использовать несколько файлов сертификатов невозможно: может быть только один файл сертификата ActiveGate, хотя этот файл может содержать несколько сертификатов и ключей.
+* Пароль файла `PKCS#12` должен совпадать с паролем ключа в этом файле. Не используйте опцию `-twopass`.
+* Использование нескольких файлов сертификатов невозможно: может быть только один файл сертификата ActiveGate, хотя файл может содержать несколько сертификатов и ключей.

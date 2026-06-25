@@ -1,8 +1,15 @@
 ---
-title: "Dashboards API - POST a dashboard"
+title: Dashboards API - POST a dashboard
 source: https://docs.dynatrace.com/managed/dynatrace-api/configuration-api/dashboards-api/post-dashboard
-updated: 2026-02-09
+scraped: 2026-05-12T11:14:42.629636
 ---
+
+# Dashboards API - POST a dashboard
+
+# Dashboards API - POST a dashboard
+
+* Reference
+* Published Aug 30, 2019
 
 Creates a new dashboard.
 
@@ -17,13 +24,13 @@ The request consumes and produces an `application/json` payload.
 
 To execute this request, you need an access token with `WriteConfig` scope.
 
-To learn how to obtain and use it, see Tokens and authentication.
+To learn how to obtain and use it, see [Tokens and authentication](/managed/discover-dynatrace/references/dynatrace-api/basics/dynatrace-api-authentication).
 
 ## Parameters
 
 The body must not provide an ID. An ID is assigned automatically by Dynatrace.
 
-Refer to Tile JSON models to find JSON models for each tile type.
+Refer to [Tile JSON models](/managed/dynatrace-api/configuration-api/dashboards-api/dashboards-api-tile-models "Learn the variations of tile JSON models in the Dynatrace Dashboards Classic API.") to find JSON models for each tile type.
 
 | Parameter | Type | Description | In | Required |
 | --- | --- | --- | --- | --- |
@@ -111,7 +118,7 @@ Metadata useful for debugging
 
 Configuration of a tile.
 
-The actual set of fields depends on the type of the tile. Find the list of actual objects in the description of the **tileType** field or see [Dashboards API - Tile JSON models](https://dt-url.net/2wc3spx).
+The actual set of fields depends on the type of the tile. Find the list of actual objects in the description of the **tileType** field or see [Dashboards API - Tile JSON modelsï»¿](https://dt-url.net/2wc3spx).
 
 | Element | Type | Description | Required |
 | --- | --- | --- | --- |
@@ -153,262 +160,349 @@ This is a model of the request body, showing the possible elements. It has to be
 {
 
 
+
 "dashboardMetadata": {
+
 
 
 "dashboardFilter": {
 
 
+
 "managementZone": {
+
 
 
 "id": "3438779970106539862",
 
 
+
 "name": "Example Management Zone"
 
 
+
 },
+
 
 
 "timeframe": "l_72_HOURS"
 
 
+
 },
+
 
 
 "dynamicFilters": {
 
 
+
 "filters": [
+
 
 
 "SERVICE_TYPE"
 
 
+
 ]
 
 
+
 },
+
 
 
 "name": "Example Dashboard",
 
 
+
 "owner": "Example Owner",
+
 
 
 "shared": true
 
 
+
 },
+
 
 
 "metadata": {
 
 
+
 "clusterVersion": "Mock version",
+
 
 
 "configurationVersions": [
 
 
+
 4,
+
 
 
 2
 
 
+
 ]
 
 
+
 },
+
 
 
 "tiles": [
 
 
+
 {
+
 
 
 "bounds": {
 
 
+
 "height": 38,
+
 
 
 "left": 0,
 
 
+
 "top": 0,
+
 
 
 "width": 304
 
 
+
 },
 
 
+
 "configured": true,
+
 
 
 "name": "Hosts",
 
 
+
 "tileFilter": {},
+
 
 
 "tileType": "HEADER"
 
 
+
 },
+
 
 
 {
 
 
+
 "bounds": {
+
 
 
 "height": 38,
 
 
+
 "left": 304,
+
 
 
 "top": 0,
 
 
+
 "width": 304
+
 
 
 },
 
 
+
 "configured": true,
+
 
 
 "name": "Applications",
 
 
+
 "tileFilter": {},
+
 
 
 "tileType": "HEADER"
 
 
+
 },
+
 
 
 {
 
 
+
 "bounds": {
 
 
+
 "height": 304,
+
 
 
 "left": 0,
 
 
+
 "top": 38,
+
 
 
 "width": 304
 
 
+
 },
+
 
 
 "chartVisible": true,
 
 
+
 "configured": true,
+
 
 
 "name": "Host health",
 
 
+
 "tileFilter": {
+
 
 
 "managementZone": {
 
 
+
 "id": "3438779970106539862",
+
 
 
 "name": "Example Management Zone"
 
 
+
 }
 
 
+
 },
+
 
 
 "tileType": "HOSTS"
 
 
+
 },
+
 
 
 {
 
 
+
 "bounds": {
+
 
 
 "height": 304,
 
 
+
 "left": 304,
+
 
 
 "top": 38,
 
 
+
 "width": 304
 
 
+
 },
+
 
 
 "chartVisible": true,
 
 
+
 "configured": true,
+
 
 
 "name": "Application health",
 
 
+
 "tileFilter": {
+
 
 
 "managementZone": {
 
 
+
 "id": "3438779970106539862",
+
 
 
 "name": "Example Management Zone"
 
 
+
 }
+
 
 
 },
 
 
+
 "tileType": "APPLICATIONS"
+
 
 
 }
 
 
+
 ]
+
 
 
 }
@@ -466,13 +560,17 @@ A list of constraint violations
 {
 
 
+
 "description": "Dynatrace entity for the REST API example",
+
 
 
 "id": "6a98d7bc-abb9-44f8-ae6a-73e68e71812a",
 
 
+
 "name": "Dynatrace entity"
+
 
 
 }
@@ -480,42 +578,55 @@ A list of constraint violations
 
 ```
 {
+
 
 
 "error": {
 
 
+
 "code": 1,
+
 
 
 "constraintViolations": [
 
 
+
 {
+
 
 
 "location": "string",
 
 
+
 "message": "string",
+
 
 
 "parameterLocation": "HEADER",
 
 
+
 "path": "string"
 
 
+
 }
+
 
 
 ],
 
 
+
 "message": "string"
 
 
+
 }
+
 
 
 }
@@ -536,7 +647,7 @@ The request consumes an `application/json` payload.
 
 To execute this request, you need an access token with `WriteConfig` scope.
 
-To learn how to obtain and use it, see Tokens and authentication.
+To learn how to obtain and use it, see [Tokens and authentication](/managed/discover-dynatrace/references/dynatrace-api/basics/dynatrace-api-authentication).
 
 ### Response
 
@@ -580,40 +691,53 @@ A list of constraint violations
 {
 
 
+
 "error": {
+
 
 
 "code": 1,
 
 
+
 "constraintViolations": [
+
 
 
 {
 
 
+
 "location": "string",
+
 
 
 "message": "string",
 
 
+
 "parameterLocation": "HEADER",
+
 
 
 "path": "string"
 
 
+
 }
+
 
 
 ],
 
 
+
 "message": "string"
 
 
+
 }
+
 
 
 }
@@ -635,13 +759,17 @@ Since the request body is lengthy, it is truncated in this example **Curl** sect
 curl -X POST \
 
 
+
 https://mySampleEnv.live.dynatrace.com/api/config/v1/dashboards \
+
 
 
 -H 'Authorization: Api-Token dt0c01.abc123.abcdefjhij1234567890' \
 
 
+
 -H 'Content-Type: application/json' \
+
 
 
 -d '{<truncated - see the Request body section >}'
@@ -659,118 +787,157 @@ https://mySampleEnv.live.dynatrace.com/api/config/v1/dashboards
 {
 
 
+
 "dashboardMetadata": {
+
 
 
 "name": "REST example",
 
 
+
 "shared": true,
+
 
 
 "sharingDetails": {
 
 
+
 "linkShared": true,
+
 
 
 "published": true
 
 
+
 },
+
 
 
 "dashboardFilter": {
 
 
+
 "timeframe": "l_2_HOURS",
+
 
 
 "managementZone": {
 
 
+
 "id": "9130632296508575249",
+
 
 
 "name": "Easytravel"
 
 
+
 }
 
 
+
 }
+
 
 
 },
+
 
 
 "tiles": [
 
 
+
 {
+
 
 
 "name": "User Sessions Query",
 
 
+
 "tileType": "DTAQL",
+
 
 
 "configured": true,
 
 
+
 "bounds": {
+
 
 
 "top": 0,
 
 
+
 "left": 0,
+
 
 
 "width": 1200,
 
 
+
 "height": 450
 
 
+
 },
+
 
 
 "tileFilter": {
 
 
+
 "managementZone": null
+
 
 
 },
 
 
+
 "customName": "User sessions query results",
+
 
 
 "query": "select * FROM useraction where (apdexCategory IS 'TOLERATING' OR apdexCategory IS 'FRUSTRATED')",
 
 
+
 "type": "TABLE",
+
 
 
 "chartConfig": {
 
 
+
 "xAxis": ["apdexCategory"],
+
 
 
 "yAxis": ["application"]
 
 
+
 }
 
 
+
 }
+
 
 
 ]
+
 
 
 }
@@ -782,10 +949,13 @@ https://mySampleEnv.live.dynatrace.com/api/config/v1/dashboards
 {
 
 
+
 "id": "7dd386fe-f91d-42e3-a2ec-0c88070933f4",
 
 
+
 "name": "REST example"
+
 
 
 }
@@ -799,6 +969,8 @@ https://mySampleEnv.live.dynatrace.com/api/config/v1/dashboards
 
 ![New dashboard](https://dt-cdn.net/images/rest-example-dashboard-1684-9a9bf56653.png)
 
+New dashboard
+
 ## Related topics
 
-* Dashboards
+* [Dashboards](/managed/analyze-explore-automate/dashboards-classic "Learn how to create, manage, and use Dynatrace Dashboards Classic.")

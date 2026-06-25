@@ -1,24 +1,32 @@
 ---
 title: Мониторинг Amazon Aurora
-source: https://www.dynatrace.com/docs/ingest-from/amazon-web-services/integrate-with-aws/aws-all-services/aws-service-aurora
-scraped: 2026-03-06T21:37:03.991711
+source: https://docs.dynatrace.com/managed/ingest-from/amazon-web-services/integrate-with-aws/aws-all-services/aws-service-aurora
+scraped: 2026-05-12T11:31:12.237731
 ---
 
-Dynatrace собирает метрики для нескольких предварительно выбранных пространств имён, включая Amazon Aurora. Вы можете просматривать метрики для каждого экземпляра сервиса, разбивать метрики по нескольким измерениям и создавать пользовательские графики, которые можно закреплять на дашбордах.
+# Мониторинг Amazon Aurora
+
+# Мониторинг Amazon Aurora
+
+* Практическое руководство
+* Чтение: 22 мин
+* Опубликовано 15 октября 2020 г.
+
+Dynatrace принимает метрики для множества предопределённых пространств имён, включая Amazon Aurora. Можно просматривать метрики по каждому экземпляру сервиса, разбивать их на несколько измерений и создавать собственные графики, которые можно закреплять на дашбордах.
 
 ## Предварительные требования
 
-Для включения мониторинга этого сервиса необходимо:
+Чтобы включить мониторинг этого сервиса, необходимо
 
 * ActiveGate версии 1.181+, а именно:
 
   + Для развёртываний Dynatrace SaaS требуется Environment ActiveGate или Multi-environment ActiveGate.
-  + Для развёртываний Dynatrace Managed можно использовать любой вид ActiveGate.
+  + Для развёртываний Dynatrace Managed можно использовать ActiveGate любого типа.
 
-    Для доступа на основе ролей (в развёртываниях SaaS или [Managed](https://docs.dynatrace.com/managed/shortlink/aws-managed-deployment)) требуется Environment ActiveGate, установленный на хосте Amazon EC2.
+    Для доступа на основе ролей (в развёртывании [SaaS](/managed/ingest-from/amazon-web-services/integrate-with-aws/cloudwatch-metrics#role-based-access "Приём метрик Amazon CloudWatch.") или [Managed](/managed/ingest-from/amazon-web-services/set-up-aws-monitoring-with-managed#role-based-access "Подключите аккаунт Amazon к Dynatrace Managed и начните мониторинг.")) требуется [Environment ActiveGate](/managed/ingest-from/dynatrace-activegate/installation "Узнайте, как настроить ActiveGate"), установленный на хосте Amazon EC2.
 * Dynatrace версии 1.182+
-* Обновлённая политика мониторинга AWS для включения дополнительных AWS сервисов.
-  Для [обновления политики AWS IAM](https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_manage-edit.html#edit-managed-policy-console) используйте JSON ниже, содержащий политику мониторинга (разрешения) для всех поддерживаемых сервисов.
+* Обновлённая [политика мониторинга AWS](/managed/ingest-from/amazon-web-services/integrate-with-aws/cloudwatch-metrics#aws-policy-and-authentication "Приём метрик Amazon CloudWatch."), включающая дополнительные сервисы AWS.
+  Чтобы [обновить политику AWS IAM](https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_manage-edit.html#edit-managed-policy-console), используйте приведённый ниже JSON, содержащий политику мониторинга (разрешения) для всех поддерживаемых сервисов.
 
 Предопределённая JSON-политика для всех поддерживаемых сервисов
 
@@ -26,292 +34,387 @@ Dynatrace собирает метрики для нескольких предв
 {
 
 
+
 "Version": "2012-10-17",
+
 
 
 "Statement": [
 
 
+
 {
+
 
 
 "Sid": "VisualEditor0",
 
 
+
 "Effect": "Allow",
+
 
 
 "Action": [
 
 
+
 "acm-pca:ListCertificateAuthorities",
+
 
 
 "apigateway:GET",
 
 
+
 "apprunner:ListServices",
+
 
 
 "appstream:DescribeFleets",
 
 
+
 "appsync:ListGraphqlApis",
+
 
 
 "athena:ListWorkGroups",
 
 
+
 "autoscaling:DescribeAutoScalingGroups",
+
 
 
 "cloudformation:ListStackResources",
 
 
+
 "cloudfront:ListDistributions",
+
 
 
 "cloudhsm:DescribeClusters",
 
 
+
 "cloudsearch:DescribeDomains",
+
 
 
 "cloudwatch:GetMetricData",
 
 
+
 "cloudwatch:GetMetricStatistics",
+
 
 
 "cloudwatch:ListMetrics",
 
 
+
 "codebuild:ListProjects",
+
 
 
 "datasync:ListTasks",
 
 
+
 "dax:DescribeClusters",
+
 
 
 "directconnect:DescribeConnections",
 
 
+
 "dms:DescribeReplicationInstances",
+
 
 
 "dynamodb:ListTables",
 
 
+
 "dynamodb:ListTagsOfResource",
+
 
 
 "ec2:DescribeAvailabilityZones",
 
 
+
 "ec2:DescribeInstances",
+
 
 
 "ec2:DescribeNatGateways",
 
 
+
 "ec2:DescribeSpotFleetRequests",
+
 
 
 "ec2:DescribeTransitGateways",
 
 
+
 "ec2:DescribeVolumes",
+
 
 
 "ec2:DescribeVpnConnections",
 
 
+
 "ecs:ListClusters",
+
 
 
 "eks:ListClusters",
 
 
+
 "elasticache:DescribeCacheClusters",
+
 
 
 "elasticbeanstalk:DescribeEnvironmentResources",
 
 
+
 "elasticbeanstalk:DescribeEnvironments",
+
 
 
 "elasticfilesystem:DescribeFileSystems",
 
 
+
 "elasticloadbalancing:DescribeInstanceHealth",
+
 
 
 "elasticloadbalancing:DescribeListeners",
 
 
+
 "elasticloadbalancing:DescribeLoadBalancers",
+
 
 
 "elasticloadbalancing:DescribeRules",
 
 
+
 "elasticloadbalancing:DescribeTags",
+
 
 
 "elasticloadbalancing:DescribeTargetHealth",
 
 
+
 "elasticmapreduce:ListClusters",
+
 
 
 "elastictranscoder:ListPipelines",
 
 
+
 "es:ListDomainNames",
+
 
 
 "events:ListEventBuses",
 
 
+
 "firehose:ListDeliveryStreams",
+
 
 
 "fsx:DescribeFileSystems",
 
 
+
 "gamelift:ListFleets",
+
 
 
 "glue:GetJobs",
 
 
+
 "inspector:ListAssessmentTemplates",
+
 
 
 "kafka:ListClusters",
 
 
+
 "kinesis:ListStreams",
+
 
 
 "kinesisanalytics:ListApplications",
 
 
+
 "kinesisvideo:ListStreams",
+
 
 
 "lambda:ListFunctions",
 
 
+
 "lambda:ListTags",
+
 
 
 "lex:GetBots",
 
 
+
 "logs:DescribeLogGroups",
+
 
 
 "mediaconnect:ListFlows",
 
 
+
 "mediaconvert:DescribeEndpoints",
+
 
 
 "mediapackage-vod:ListPackagingConfigurations",
 
 
+
 "mediapackage:ListChannels",
+
 
 
 "mediatailor:ListPlaybackConfigurations",
 
 
+
 "opsworks:DescribeStacks",
+
 
 
 "qldb:ListLedgers",
 
 
+
 "rds:DescribeDBClusters",
+
 
 
 "rds:DescribeDBInstances",
 
 
+
 "rds:DescribeEvents",
+
 
 
 "rds:ListTagsForResource",
 
 
+
 "redshift:DescribeClusters",
+
 
 
 "robomaker:ListSimulationJobs",
 
 
+
 "route53:ListHostedZones",
+
 
 
 "route53resolver:ListResolverEndpoints",
 
 
+
 "s3:ListAllMyBuckets",
+
 
 
 "sagemaker:ListEndpoints",
 
 
+
 "sns:ListTopics",
+
 
 
 "sqs:ListQueues",
 
 
+
 "storagegateway:ListGateways",
+
 
 
 "sts:GetCallerIdentity",
 
 
+
 "swf:ListDomains",
+
 
 
 "tag:GetResources",
 
 
+
 "tag:GetTagKeys",
+
 
 
 "transfer:ListServers",
 
 
+
 "workmail:ListOrganizations",
+
 
 
 "workspaces:DescribeWorkspaces"
 
 
+
 ],
+
 
 
 "Resource": "*"
 
 
+
 }
+
 
 
 ]
 
 
+
 }
 ```
 
-Если вы не хотите добавлять разрешения для всех сервисов, а хотите выбрать разрешения только для определённых сервисов, обратитесь к таблице ниже. В таблице содержится набор разрешений, необходимых для всех AWS облачных сервисов, а также для каждого поддерживаемого сервиса — список необязательных разрешений, специфичных для этого сервиса.
+Если вы не хотите добавлять разрешения для всех сервисов и предпочитаете выбрать разрешения только для определённых сервисов, обратитесь к таблице ниже. В таблице приведён набор разрешений, необходимых для [всех облачных сервисов AWS](/managed/ingest-from/amazon-web-services/integrate-with-aws/aws-all-services "Мониторинг всех облачных сервисов AWS в Dynatrace и просмотр доступных метрик."), и для каждого поддерживаемого сервиса приведён список необязательных разрешений, специфичных для этого сервиса.
 
 Разрешения, необходимые для интеграции мониторинга AWS:
 
@@ -325,9 +428,9 @@ Dynatrace собирает метрики для нескольких предв
 
 ### Полный список разрешений для облачных сервисов
 
-| Название | Разрешения |
+| Имя | Разрешения |
 | --- | --- |
-| Все отслеживаемые сервисы Amazon Обязательно | `cloudwatch:GetMetricData`, `cloudwatch:GetMetricStatistics`, `cloudwatch:ListMetrics`, `sts:GetCallerIdentity`, `tag:GetResources`, `tag:GetTagKeys`, `ec2:DescribeAvailabilityZones` |
+| All monitored Amazon services Required | `cloudwatch:GetMetricData`, `cloudwatch:GetMetricStatistics`, `cloudwatch:ListMetrics`, `sts:GetCallerIdentity`, `tag:GetResources`, `tag:GetTagKeys`, `ec2:DescribeAvailabilityZones` |
 | AWS Certificate Manager Private Certificate Authority | `acm-pca:ListCertificateAuthorities` |
 | Amazon MQ |  |
 | Amazon API Gateway | `apigateway:GET` |
@@ -337,7 +440,7 @@ Dynatrace собирает метрики для нескольких предв
 | Amazon Athena | `athena:ListWorkGroups` |
 | Amazon Aurora | `rds:DescribeDBClusters` |
 | Amazon EC2 Auto Scaling | `autoscaling:DescribeAutoScalingGroups` |
-| Amazon EC2 Auto Scaling (встроенный) | `autoscaling:DescribeAutoScalingGroups` |
+| Amazon EC2 Auto Scaling (built-in) | `autoscaling:DescribeAutoScalingGroups` |
 | AWS Billing |  |
 | Amazon Keyspaces |  |
 | AWS Chatbot |  |
@@ -354,11 +457,11 @@ Dynatrace собирает метрики для нескольких предв
 | Amazon DocumentDB | `rds:DescribeDBClusters` |
 | AWS Direct Connect | `directconnect:DescribeConnections` |
 | Amazon DynamoDB | `dynamodb:ListTables` |
-| Amazon DynamoDB (встроенный) | `dynamodb:ListTables`, `dynamodb:ListTagsOfResource` |
+| Amazon DynamoDB (built-in) | `dynamodb:ListTables`, `dynamodb:ListTagsOfResource` |
 | Amazon EBS | `ec2:DescribeVolumes` |
-| Amazon EBS (встроенный) | `ec2:DescribeVolumes` |
+| Amazon EBS (built-in) | `ec2:DescribeVolumes` |
 | Amazon EC2 API |  |
-| Amazon EC2 (встроенный) | `ec2:DescribeInstances` |
+| Amazon EC2 (built-in) | `ec2:DescribeInstances` |
 | Amazon EC2 Spot Fleet | `ec2:DescribeSpotFleetRequests` |
 | Amazon Elastic Container Service (ECS) | `ecs:ListClusters` |
 | Amazon ECS Container Insights | `ecs:ListClusters` |
@@ -369,7 +472,7 @@ Dynatrace собирает метрики для нескольких предв
 | Amazon Elastic Map Reduce (EMR) | `elasticmapreduce:ListClusters` |
 | Amazon Elasticsearch Service (ES) | `es:ListDomainNames` |
 | Amazon Elastic Transcoder | `elastictranscoder:ListPipelines` |
-| Amazon Elastic Load Balancer (ELB) (встроенный) | `elasticloadbalancing:DescribeInstanceHealth`, `elasticloadbalancing:DescribeListeners`, `elasticloadbalancing:DescribeLoadBalancers`, `elasticloadbalancing:DescribeRules`, `elasticloadbalancing:DescribeTags`, `elasticloadbalancing:DescribeTargetHealth` |
+| Amazon Elastic Load Balancer (ELB) (built-in) | `elasticloadbalancing:DescribeInstanceHealth`, `elasticloadbalancing:DescribeListeners`, `elasticloadbalancing:DescribeLoadBalancers`, `elasticloadbalancing:DescribeRules`, `elasticloadbalancing:DescribeTags`, `elasticloadbalancing:DescribeTargetHealth` |
 | Amazon EventBridge | `events:ListEventBuses` |
 | Amazon FSx | `fsx:DescribeFileSystems` |
 | Amazon GameLift | `gamelift:ListFleets` |
@@ -383,9 +486,9 @@ Dynatrace собирает метрики для нескольких предв
 | Amazon Kinesis Data Streams | `kinesis:ListStreams` |
 | Amazon Kinesis Video Streams | `kinesisvideo:ListStreams` |
 | AWS Lambda | `lambda:ListFunctions` |
-| AWS Lambda (встроенный) | `lambda:ListFunctions`, `lambda:ListTags` |
+| AWS Lambda (built-in) | `lambda:ListFunctions`, `lambda:ListTags` |
 | Amazon Lex | `lex:GetBots` |
-| Amazon Application and Network Load Balancer (встроенный) | `elasticloadbalancing:DescribeInstanceHealth`, `elasticloadbalancing:DescribeListeners`, `elasticloadbalancing:DescribeLoadBalancers`, `elasticloadbalancing:DescribeRules`, `elasticloadbalancing:DescribeTags`, `elasticloadbalancing:DescribeTargetHealth` |
+| Amazon Application and Network Load Balancer (built-in) | `elasticloadbalancing:DescribeInstanceHealth`, `elasticloadbalancing:DescribeListeners`, `elasticloadbalancing:DescribeLoadBalancers`, `elasticloadbalancing:DescribeRules`, `elasticloadbalancing:DescribeTags`, `elasticloadbalancing:DescribeTargetHealth` |
 | Amazon CloudWatch Logs | `logs:DescribeLogGroups` |
 | AWS Elemental MediaConnect | `mediaconnect:ListFlows` |
 | AWS Elemental MediaConvert | `mediaconvert:DescribeEndpoints` |
@@ -398,14 +501,14 @@ Dynatrace собирает метрики для нескольких предв
 | Amazon Polly |  |
 | Amazon QLDB | `qldb:ListLedgers` |
 | Amazon RDS | `rds:DescribeDBInstances` |
-| Amazon RDS (встроенный) | `rds:DescribeDBInstances`, `rds:DescribeEvents`, `rds:ListTagsForResource` |
+| Amazon RDS (built-in) | `rds:DescribeDBInstances`, `rds:DescribeEvents`, `rds:ListTagsForResource` |
 | Amazon Redshift | `redshift:DescribeClusters` |
 | Amazon Rekognition |  |
 | AWS RoboMaker | `robomaker:ListSimulationJobs` |
 | Amazon Route 53 | `route53:ListHostedZones` |
 | Amazon Route 53 Resolver | `route53resolver:ListResolverEndpoints` |
 | Amazon S3 | `s3:ListAllMyBuckets` |
-| Amazon S3 (встроенный) | `s3:ListAllMyBuckets` |
+| Amazon S3 (built-in) | `s3:ListAllMyBuckets` |
 | Amazon SageMaker Batch Transform Jobs |  |
 | Amazon SageMaker Endpoint Instances | `sagemaker:ListEndpoints` |
 | Amazon SageMaker Endpoints | `sagemaker:ListEndpoints` |
@@ -433,7 +536,7 @@ Dynatrace собирает метрики для нескольких предв
 | Amazon WorkMail | `workmail:ListOrganizations` |
 | Amazon WorkSpaces | `workspaces:DescribeWorkspaces` |
 
-Пример JSON-политики для одного отдельного сервиса.
+Пример JSON-политики для одного сервиса.
 
 JSON-политика для Amazon API Gateway
 
@@ -441,79 +544,98 @@ JSON-политика для Amazon API Gateway
 {
 
 
+
 "Version": "2012-10-17",
+
 
 
 "Statement": [
 
 
+
 {
+
 
 
 "Sid": "VisualEditor0",
 
 
+
 "Effect": "Allow",
+
 
 
 "Action": [
 
 
+
 "apigateway:GET",
+
 
 
 "cloudwatch:GetMetricData",
 
 
+
 "cloudwatch:GetMetricStatistics",
+
 
 
 "cloudwatch:ListMetrics",
 
 
+
 "sts:GetCallerIdentity",
+
 
 
 "tag:GetResources",
 
 
+
 "tag:GetTagKeys",
+
 
 
 "ec2:DescribeAvailabilityZones"
 
 
+
 ],
+
 
 
 "Resource": "*"
 
 
+
 }
+
 
 
 ]
 
 
+
 }
 ```
 
-В этом примере из полного списка разрешений необходимо выбрать:
+В этом примере из полного списка разрешений необходимо выбрать
 
 * `"apigateway:GET"` для **Amazon API Gateway**
-* `"cloudwatch:GetMetricData"`, `"cloudwatch:GetMetricStatistics"`, `"cloudwatch:ListMetrics"`, `"sts:GetCallerIdentity"`, `"tag:GetResources"`, `"tag:GetTagKeys"` и `"ec2:DescribeAvailabilityZones"` для **всех AWS облачных сервисов**.
+* `"cloudwatch:GetMetricData"`, `"cloudwatch:GetMetricStatistics"`, `"cloudwatch:ListMetrics"`, `"sts:GetCallerIdentity"`, `"tag:GetResources"`, `"tag:GetTagKeys"` и `"ec2:DescribeAvailabilityZones"` для **All AWS cloud services**.
 
-### Конечные точки AWS, которые должны быть доступны из ActiveGate, с соответствующими AWS сервисами
+### Конечные точки AWS, которые должны быть доступны с ActiveGate, и соответствующие им сервисы AWS
 
 | Конечная точка | Сервис |
 | --- | --- |
-| `autoscaling.<REGION>.amazonaws.com` | Amazon EC2 Auto Scaling (встроенный), Amazon EC2 Auto Scaling |
-| `lambda.<REGION>.amazonaws.com` | AWS Lambda (встроенный), AWS Lambda |
-| `elasticloadbalancing.<REGION>.amazonaws.com` | Amazon Application and Network Load Balancer (встроенный), Amazon Elastic Load Balancer (ELB) (встроенный) |
-| `dynamodb.<REGION>.amazonaws.com` | Amazon DynamoDB (встроенный), Amazon DynamoDB |
-| `ec2.<REGION>.amazonaws.com` | Amazon EBS (встроенный), Amazon EC2 (встроенный), Amazon EBS, Amazon EC2 Spot Fleet, Amazon VPC NAT Gateways, AWS Transit Gateway, AWS Site-to-Site VPN |
-| `rds.<REGION>.amazonaws.com` | Amazon RDS (встроенный), Amazon Aurora, Amazon DocumentDB, Amazon Neptune, Amazon RDS |
-| `s3.<REGION>.amazonaws.com` | Amazon S3 (встроенный) |
+| `autoscaling.<REGION>.amazonaws.com` | Amazon EC2 Auto Scaling (built-in), Amazon EC2 Auto Scaling |
+| `lambda.<REGION>.amazonaws.com` | AWS Lambda (built-in), AWS Lambda |
+| `elasticloadbalancing.<REGION>.amazonaws.com` | Amazon Application and Network Load Balancer (built-in), Amazon Elastic Load Balancer (ELB) (built-in) |
+| `dynamodb.<REGION>.amazonaws.com` | Amazon DynamoDB (built-in), Amazon DynamoDB |
+| `ec2.<REGION>.amazonaws.com` | Amazon EBS (built-in), Amazon EC2 (built-in), Amazon EBS, Amazon EC2 Spot Fleet, Amazon VPC NAT Gateways, AWS Transit Gateway, AWS Site-to-Site VPN |
+| `rds.<REGION>.amazonaws.com` | Amazon RDS (built-in), Amazon Aurora, Amazon DocumentDB, Amazon Neptune, Amazon RDS |
+| `s3.<REGION>.amazonaws.com` | Amazon S3 (built-in) |
 | `acm-pca.<REGION>.amazonaws.com` | AWS Certificate Manager Private Certificate Authority |
 | `apigateway.<REGION>.amazonaws.com` | Amazon API Gateway |
 | `apprunner.<REGION>.amazonaws.com` | AWS App Runner |
@@ -564,449 +686,449 @@ JSON-политика для Amazon API Gateway
 
 Этот сервис отслеживает кластеры Amazon RDS. Уже отслеживаемые ресурсы можно найти на странице обзора AWS в разделе **Cloud services**.
 
-Для мониторинга экземпляров RDS вместо кластеров обратитесь к сервису Amazon RDS и разделу **RDS** на странице обзора AWS.
+Чтобы вместо этого отслеживать экземпляры RDS, см. Amazon RDS и раздел **RDS** на странице обзора AWS.
 
 ## Включение мониторинга
 
-Чтобы узнать, как включить мониторинг сервиса, см. Включение мониторинга сервиса.
+Чтобы узнать, как включить мониторинг сервиса, см. [Включение мониторинга сервиса](/managed/ingest-from/amazon-web-services/integrate-with-aws/aws-metrics-ingest/aws-enable-service-monitoring "Включение мониторинга AWS в Dynatrace.").
 
 ## Просмотр метрик сервиса
 
-Вы можете просматривать метрики сервиса в вашей среде Dynatrace на **странице обзора пользовательского устройства** или на странице **Дашборды**.
+Вы можете просматривать метрики сервиса в вашей среде Dynatrace на **странице обзора пользовательского устройства** или на странице **Dashboards**.
 
 ### Просмотр метрик на странице обзора пользовательского устройства
 
-Для доступа к странице обзора пользовательского устройства
+Чтобы перейти на страницу обзора пользовательского устройства:
 
-1. Перейдите в ![Technologies](https://dt-cdn.net/images/technologies-512-977161d83c.png "Technologies") **Technologies & Processes Classic**.
-2. Выполните фильтрацию по имени сервиса и выберите соответствующую группу пользовательских устройств.
-3. После выбора группы пользовательских устройств вы попадёте на **страницу обзора группы пользовательских устройств**.
-4. На **странице обзора группы пользовательских устройств** перечислены все экземпляры (пользовательские устройства), входящие в группу. Выберите экземпляр для просмотра **страницы обзора пользовательского устройства**.
+1. Перейдите в **Technologies & Processes**.
+2. Отфильтруйте по имени сервиса и выберите соответствующую группу пользовательских устройств.
+3. После выбора группы пользовательских устройств вы окажетесь на **странице обзора группы пользовательских устройств**.
+4. На **странице обзора группы пользовательских устройств** перечислены все экземпляры (пользовательские устройства), принадлежащие группе. Выберите экземпляр для просмотра **страницы обзора пользовательского устройства**.
 
 ### Просмотр метрик на дашборде
 
-Вы также можете просматривать метрики в веб-интерфейсе Dynatrace на дашбордах. Для этого сервиса нет стандартного дашборда, но вы можете создать собственный дашборд.
+Вы также можете просматривать метрики в веб-интерфейсе Dynatrace на дашбордах. Для этого сервиса нет предустановленного дашборда, но вы можете [создать собственный дашборд](/managed/analyze-explore-automate/dashboards-classic/dashboards/create-dashboards "Узнайте, как создавать и редактировать дашборды Dynatrace.").
 
-Для проверки наличия стандартных дашбордов для каждого AWS сервиса см. список ниже.
+Чтобы проверить доступность предустановленных дашбордов для каждого сервиса AWS, см. список ниже.
 
-### Список наличия стандартных дашбордов
+### Список доступности предустановленных дашбордов
 
-| AWS сервис | Стандартный дашборд |
+| Сервис AWS | Предустановленный дашборд |
 | --- | --- |
-| Amazon EC2 Auto Scaling (встроенный) | Недоступно |
-| AWS Lambda (встроенный) | Недоступно |
-| Amazon Application and Network Load Balancer (встроенный) | Недоступно |
-| Amazon DynamoDB (встроенный) | Недоступно |
-| Amazon EBS (встроенный) | Недоступно |
-| Amazon EC2 (встроенный) | Недоступно |
-| Amazon Elastic Load Balancer (ELB) (встроенный) | Недоступно |
-| Amazon RDS (встроенный) | Недоступно |
-| Amazon S3 (встроенный) | Недоступно |
-| AWS Certificate Manager Private Certificate Authority | Недоступно |
-| Все отслеживаемые сервисы Amazon | Недоступно |
-| Amazon API Gateway | Недоступно |
-| AWS App Runner | Недоступно |
-| Amazon AppStream | Доступно |
-| AWS AppSync | Доступно |
-| Amazon Athena | Доступно |
-| Amazon Aurora | Недоступно |
-| Amazon EC2 Auto Scaling | Доступно |
-| AWS Billing | Доступно |
-| Amazon Keyspaces | Доступно |
-| AWS Chatbot | Доступно |
-| Amazon CloudFront | Недоступно |
-| AWS CloudHSM | Доступно |
-| Amazon CloudSearch | Доступно |
-| AWS CodeBuild | Доступно |
-| Amazon Cognito | Недоступно |
-| Amazon Connect | Доступно |
-| AWS DataSync | Доступно |
-| Amazon DynamoDB Accelerator (DAX) | Доступно |
-| AWS Database Migration Service (AWS DMS) | Доступно |
-| Amazon DocumentDB | Доступно |
-| AWS Direct Connect | Доступно |
-| Amazon DynamoDB | Недоступно |
-| Amazon EBS | Недоступно |
-| Amazon EC2 Spot Fleet | Недоступно |
-| Amazon EC2 API | Доступно |
-| Amazon Elastic Container Service (ECS) | Недоступно |
-| Amazon ECS Container Insights | Доступно |
-| Amazon Elastic File System (EFS) | Недоступно |
-| Amazon Elastic Kubernetes Service (EKS) | Доступно |
-| Amazon ElastiCache (EC) | Недоступно |
-| AWS Elastic Beanstalk | Доступно |
-| Amazon Elastic Inference | Доступно |
-| Amazon Elastic Transcoder | Доступно |
-| Amazon Elastic Map Reduce (EMR) | Недоступно |
-| Amazon Elasticsearch Service (ES) | Недоступно |
-| Amazon EventBridge | Доступно |
-| Amazon FSx | Доступно |
-| Amazon GameLift | Доступно |
-| AWS Glue | Недоступно |
-| Amazon Inspector | Доступно |
-| AWS Internet of Things (IoT) | Недоступно |
-| AWS IoT Things Graph | Доступно |
-| AWS IoT Analytics | Доступно |
-| Amazon Managed Streaming for Kafka | Доступно |
-| Amazon Kinesis Data Analytics | Недоступно |
-| Amazon Data Firehose | Недоступно |
-| Amazon Kinesis Data Streams | Недоступно |
-| Amazon Kinesis Video Streams | Недоступно |
-| AWS Lambda | Недоступно |
-| Amazon Lex | Доступно |
-| Amazon CloudWatch Logs | Доступно |
-| AWS Elemental MediaTailor | Доступно |
-| AWS Elemental MediaConnect | Доступно |
-| AWS Elemental MediaConvert | Доступно |
-| AWS Elemental MediaPackage Live | Доступно |
-| AWS Elemental MediaPackage Video on Demand | Доступно |
-| Amazon MQ | Доступно |
-| Amazon VPC NAT Gateways | Недоступно |
-| Amazon Neptune | Доступно |
-| AWS OpsWorks | Доступно |
-| Amazon Polly | Доступно |
-| Amazon QLDB | Доступно |
-| Amazon RDS | Недоступно |
-| Amazon Redshift | Недоступно |
-| Amazon Rekognition | Доступно |
-| AWS RoboMaker | Доступно |
-| Amazon Route 53 | Доступно |
-| Amazon Route 53 Resolver | Доступно |
-| Amazon S3 | Недоступно |
-| Amazon SageMaker Batch Transform Jobs | Недоступно |
-| Amazon SageMaker Endpoints | Недоступно |
-| Amazon SageMaker Endpoint Instances | Недоступно |
-| Amazon SageMaker Ground Truth | Недоступно |
-| Amazon SageMaker Processing Jobs | Недоступно |
-| Amazon SageMaker Training Jobs | Недоступно |
-| AWS Service Catalog | Доступно |
-| Amazon Simple Email Service (SES) | Недоступно |
-| Amazon Simple Notification Service (SNS) | Недоступно |
-| Amazon Simple Queue Service (SQS) | Недоступно |
-| AWS Systems Manager - Run Command | Доступно |
-| AWS Step Functions | Доступно |
-| AWS Storage Gateway | Доступно |
-| Amazon SWF | Доступно |
-| Amazon Textract | Доступно |
-| AWS Transfer Family | Доступно |
-| AWS Transit Gateway | Доступно |
-| Amazon Translate | Доступно |
-| AWS Trusted Advisor | Доступно |
-| AWS API Usage | Доступно |
-| AWS Site-to-Site VPN | Доступно |
-| AWS WAF Classic | Доступно |
-| AWS WAF | Доступно |
-| Amazon WorkMail | Доступно |
-| Amazon WorkSpaces | Доступно |
+| Amazon EC2 Auto Scaling (built-in) | Не применимо |
+| AWS Lambda (built-in) | Не применимо |
+| Amazon Application and Network Load Balancer (built-in) | Не применимо |
+| Amazon DynamoDB (built-in) | Не применимо |
+| Amazon EBS (built-in) | Не применимо |
+| Amazon EC2 (built-in) | Не применимо |
+| Amazon Elastic Load Balancer (ELB) (built-in) | Не применимо |
+| Amazon RDS (built-in) | Не применимо |
+| Amazon S3 (built-in) | Не применимо |
+| AWS Certificate Manager Private Certificate Authority | Не применимо |
+| All monitored Amazon services | Не применимо |
+| Amazon API Gateway | Не применимо |
+| AWS App Runner | Не применимо |
+| Amazon AppStream | Применимо |
+| AWS AppSync | Применимо |
+| Amazon Athena | Применимо |
+| Amazon Aurora | Не применимо |
+| Amazon EC2 Auto Scaling | Применимо |
+| AWS Billing | Применимо |
+| Amazon Keyspaces | Применимо |
+| AWS Chatbot | Применимо |
+| Amazon CloudFront | Не применимо |
+| AWS CloudHSM | Применимо |
+| Amazon CloudSearch | Применимо |
+| AWS CodeBuild | Применимо |
+| Amazon Cognito | Не применимо |
+| Amazon Connect | Применимо |
+| AWS DataSync | Применимо |
+| Amazon DynamoDB Accelerator (DAX) | Применимо |
+| AWS Database Migration Service (AWS DMS) | Применимо |
+| Amazon DocumentDB | Применимо |
+| AWS Direct Connect | Применимо |
+| Amazon DynamoDB | Не применимо |
+| Amazon EBS | Не применимо |
+| Amazon EC2 Spot Fleet | Не применимо |
+| Amazon EC2 API | Применимо |
+| Amazon Elastic Container Service (ECS) | Не применимо |
+| Amazon ECS Container Insights | Применимо |
+| Amazon Elastic File System (EFS) | Не применимо |
+| Amazon Elastic Kubernetes Service (EKS) | Применимо |
+| Amazon ElastiCache (EC) | Не применимо |
+| AWS Elastic Beanstalk | Применимо |
+| Amazon Elastic Inference | Применимо |
+| Amazon Elastic Transcoder | Применимо |
+| Amazon Elastic Map Reduce (EMR) | Не применимо |
+| Amazon Elasticsearch Service (ES) | Не применимо |
+| Amazon EventBridge | Применимо |
+| Amazon FSx | Применимо |
+| Amazon GameLift | Применимо |
+| AWS Glue | Не применимо |
+| Amazon Inspector | Применимо |
+| AWS Internet of Things (IoT) | Не применимо |
+| AWS IoT Things Graph | Применимо |
+| AWS IoT Analytics | Применимо |
+| Amazon Managed Streaming for Kafka | Применимо |
+| Amazon Kinesis Data Analytics | Не применимо |
+| Amazon Data Firehose | Не применимо |
+| Amazon Kinesis Data Streams | Не применимо |
+| Amazon Kinesis Video Streams | Не применимо |
+| AWS Lambda | Не применимо |
+| Amazon Lex | Применимо |
+| Amazon CloudWatch Logs | Применимо |
+| AWS Elemental MediaTailor | Применимо |
+| AWS Elemental MediaConnect | Применимо |
+| AWS Elemental MediaConvert | Применимо |
+| AWS Elemental MediaPackage Live | Применимо |
+| AWS Elemental MediaPackage Video on Demand | Применимо |
+| Amazon MQ | Применимо |
+| Amazon VPC NAT Gateways | Не применимо |
+| Amazon Neptune | Применимо |
+| AWS OpsWorks | Применимо |
+| Amazon Polly | Применимо |
+| Amazon QLDB | Применимо |
+| Amazon RDS | Не применимо |
+| Amazon Redshift | Не применимо |
+| Amazon Rekognition | Применимо |
+| AWS RoboMaker | Применимо |
+| Amazon Route 53 | Применимо |
+| Amazon Route 53 Resolver | Применимо |
+| Amazon S3 | Не применимо |
+| Amazon SageMaker Batch Transform Jobs | Не применимо |
+| Amazon SageMaker Endpoints | Не применимо |
+| Amazon SageMaker Endpoint Instances | Не применимо |
+| Amazon SageMaker Ground Truth | Не применимо |
+| Amazon SageMaker Processing Jobs | Не применимо |
+| Amazon SageMaker Training Jobs | Не применимо |
+| AWS Service Catalog | Применимо |
+| Amazon Simple Email Service (SES) | Не применимо |
+| Amazon Simple Notification Service (SNS) | Не применимо |
+| Amazon Simple Queue Service (SQS) | Не применимо |
+| AWS Systems Manager - Run Command | Применимо |
+| AWS Step Functions | Применимо |
+| AWS Storage Gateway | Применимо |
+| Amazon SWF | Применимо |
+| Amazon Textract | Применимо |
+| AWS Transfer Family | Применимо |
+| AWS Transit Gateway | Применимо |
+| Amazon Translate | Применимо |
+| AWS Trusted Advisor | Применимо |
+| AWS API Usage | Применимо |
+| AWS Site-to-Site VPN | Применимо |
+| AWS WAF Classic | Применимо |
+| AWS WAF | Применимо |
+| Amazon WorkMail | Применимо |
+| Amazon WorkSpaces | Применимо |
 
 ## Доступные метрики
 
-`DBClusterIdentifier` является основным измерением.
+Основное измерение: `DBClusterIdentifier`.
 
-| Название | Описание | Единица | Статистика | Измерения | Рекомендовано |
+| Имя | Описание | Единица измерения | Статистика | Измерения | Рекомендуется |
 | --- | --- | --- | --- | --- | --- |
-| ActiveTransactions | Среднее количество текущих транзакций, выполняемых на экземпляре базы данных Aurora в секунду | Count/Second | Average | DBClusterIdentifier, Role |  |
-| ActiveTransactions |  | Count/Second | Average | DBClusterIdentifier |  |
-| ActiveTransactions |  | Count/Second | Average | DatabaseClass, Region |  |
-| ActiveTransactions |  | Count/Second | Average | EngineName, Region |  |
-| ActiveTransactions |  | Count/Second | Average | Region |  |
-| ActiveTransactions |  | Count/Second | Maximum | DBClusterIdentifier, Role |  |
-| ActiveTransactions |  | Count/Second | Maximum | DBClusterIdentifier |  |
-| ActiveTransactions |  | Count/Second | Maximum | DatabaseClass, Region |  |
-| ActiveTransactions |  | Count/Second | Maximum | EngineName, Region |  |
-| ActiveTransactions |  | Count/Second | Maximum | Region |  |
-| AuroraBinlogReplicaLag | Время отставания реплики кластера БД на Aurora с совместимостью MySQL от исходного кластера БД | Seconds | Multi | DBClusterIdentifier, Role |  |
-| AuroraBinlogReplicaLag |  | Seconds | Multi | DBClusterIdentifier |  |
-| AuroraBinlogReplicaLag |  | Seconds | Multi | DatabaseClass, Region |  |
-| AuroraBinlogReplicaLag |  | Seconds | Multi | EngineName, Region |  |
-| AuroraBinlogReplicaLag |  | Seconds | Multi | Region |  |
-| AuroraReplicaLagMaximum | Максимальное отставание между основным экземпляром и каждым экземпляром Aurora БД в кластере БД | Milliseconds | Average | DBClusterIdentifier, Role |  |
-| AuroraReplicaLagMaximum |  | Milliseconds | Average | DBClusterIdentifier |  |
-| AuroraReplicaLagMaximum |  | Milliseconds | Average | DatabaseClass, Region |  |
-| AuroraReplicaLagMaximum |  | Milliseconds | Average | EngineName, Region |  |
-| AuroraReplicaLagMaximum |  | Milliseconds | Average | Region |  |
-| AuroraReplicaLagMinimum |  | Milliseconds | Average | DBClusterIdentifier, Role |  |
-| AuroraReplicaLagMinimum |  | Milliseconds | Average | DBClusterIdentifier |  |
-| AuroraReplicaLagMinimum |  | Milliseconds | Average | DatabaseClass, Region |  |
-| AuroraReplicaLagMinimum |  | Milliseconds | Average | EngineName, Region |  |
-| AuroraReplicaLagMinimum |  | Milliseconds | Average | Region |  |
-| AuroraReplicaLag | Для реплики Aurora: время отставания при репликации обновлений от основного экземпляра | Milliseconds | Average | DBClusterIdentifier, Role |  |
-| AuroraReplicaLag |  | Milliseconds | Average | DBClusterIdentifier |  |
-| AuroraReplicaLag |  | Milliseconds | Average | DatabaseClass, Region |  |
-| AuroraReplicaLag |  | Milliseconds | Average | EngineName, Region |  |
-| AuroraReplicaLag |  | Milliseconds | Average | Region |  |
-| BacktrackChangeRecordsCreationRate | Количество записей об изменениях для отслеживания, созданных за 5 минут для вашего кластера БД | Count | Sum | DBClusterIdentifier, Role |  |
-| BacktrackChangeRecordsCreationRate |  | Count | Sum | DBClusterIdentifier |  |
-| BacktrackChangeRecordsCreationRate |  | Count | Sum | DatabaseClass, Region |  |
-| BacktrackChangeRecordsCreationRate |  | Count | Sum | EngineName, Region |  |
-| BacktrackChangeRecordsCreationRate |  | Count | Sum | Region |  |
-| BacktrackChangeRecordsStored | Количество записей об изменениях для отслеживания, используемых вашим кластером БД | Count | Sum | DBClusterIdentifier, Role |  |
-| BacktrackChangeRecordsStored |  | Count | Sum | DBClusterIdentifier |  |
-| BacktrackChangeRecordsStored |  | Count | Sum | DatabaseClass, Region |  |
-| BacktrackChangeRecordsStored |  | Count | Sum | EngineName, Region |  |
-| BacktrackChangeRecordsStored |  | Count | Sum | Region |  |
-| BacktrackWindowActual | Разница между целевым и фактическим окном отслеживания | Count | Sum | DBClusterIdentifier, Role |  |
-| BacktrackWindowActual |  | Count | Sum | DBClusterIdentifier |  |
-| BacktrackWindowActual |  | Count | Sum | DatabaseClass, Region |  |
-| BacktrackWindowActual |  | Count | Sum | EngineName, Region |  |
-| BacktrackWindowActual |  | Count | Sum | Region |  |
-| BacktrackWindowAlert | Количество случаев, когда фактическое окно отслеживания меньше целевого за заданный период | Count | Sum | DBClusterIdentifier, Role |  |
-| BacktrackWindowAlert |  | Count | Sum | DBClusterIdentifier |  |
-| BacktrackWindowAlert |  | Count | Sum | DatabaseClass, Region |  |
-| BacktrackWindowAlert |  | Count | Sum | EngineName, Region |  |
-| BacktrackWindowAlert |  | Count | Sum | Region |  |
-| BinLogDiskUsage | Объём дискового пространства, занятого двоичными журналами на основном экземпляре | Bytes | Average | DBClusterIdentifier, Role |  |
-| BinLogDiskUsage |  | Bytes | Average | DBClusterIdentifier |  |
-| BinLogDiskUsage |  | Bytes | Average | DatabaseClass, Region |  |
-| BinLogDiskUsage |  | Bytes | Average | EngineName, Region |  |
-| BinLogDiskUsage |  | Bytes | Average | Region |  |
-| BlockedTransactions | Среднее количество заблокированных транзакций в базе данных в секунду | Count/Second | Average | DBClusterIdentifier, Role |  |
-| BlockedTransactions |  | Count/Second | Average | DBClusterIdentifier |  |
-| BlockedTransactions |  | Count/Second | Average | DatabaseClass, Region |  |
-| BlockedTransactions |  | Count/Second | Average | EngineName, Region |  |
-| BlockedTransactions |  | Count/Second | Average | Region |  |
-| BlockedTransactions |  | Count/Second | Maximum | DBClusterIdentifier, Role |  |
-| BlockedTransactions |  | Count/Second | Maximum | DBClusterIdentifier |  |
-| BlockedTransactions |  | Count/Second | Maximum | DatabaseClass, Region |  |
-| BlockedTransactions |  | Count/Second | Maximum | EngineName, Region |  |
-| BlockedTransactions |  | Count/Second | Maximum | Region |  |
-| BufferCacheHitRatio | Процент запросов, обслуженных из кэша буфера | Percent | Average | DBClusterIdentifier, Role |  |
-| BufferCacheHitRatio |  | Percent | Average | DBClusterIdentifier |  |
-| BufferCacheHitRatio |  | Percent | Average | DatabaseClass, Region |  |
-| BufferCacheHitRatio |  | Percent | Average | EngineName, Region |  |
-| BufferCacheHitRatio |  | Percent | Average | Region |  |
-| CPUCreditBalance | Количество кредитов ЦПУ, накопленных экземпляром, отчитывается с интервалом 5 минут. Метрика применима только к экземплярам `db.t2.small` и `db.t2.medium`. Используйте её для определения, как долго экземпляр Aurora MySQL DB может работать сверх базового уровня производительности с заданной скоростью. | Count | Average | DBClusterIdentifier, Role |  |
-| CPUCreditBalance |  | Count | Average | DBClusterIdentifier |  |
-| CPUCreditBalance |  | Count | Average | DatabaseClass, Region |  |
-| CPUCreditBalance |  | Count | Average | EngineName, Region |  |
-| CPUCreditBalance |  | Count | Average | Region |  |
-| CPUCreditUsage | Количество кредитов ЦПУ, использованных за указанный период, отчитывается с интервалом 5 минут. Метрика применима только к экземплярам `db.t2.small` и `db.t2.medium`. Измеряет время, в течение которого физические ЦПУ использовались для обработки инструкций виртуальными ЦПУ, выделенными экземпляру Aurora MySQL DB. | Count | Average | DBClusterIdentifier, Role |  |
-| CPUCreditUsage |  | Count | Average | DBClusterIdentifier |  |
-| CPUCreditUsage |  | Count | Average | DatabaseClass, Region |  |
-| CPUCreditUsage |  | Count | Average | EngineName, Region |  |
-| CPUCreditUsage |  | Count | Average | Region |  |
-| CPUUtilization | Процент использования ЦПУ экземпляром Aurora DB | Percent | Average | DBClusterIdentifier, Role |  |
-| CPUUtilization |  | Percent | Average | DBClusterIdentifier |  |
-| CPUUtilization |  | Percent | Average | DatabaseClass, Region |  |
-| CPUUtilization |  | Percent | Average | EngineName, Region |  |
-| CPUUtilization |  | Percent | Average | Region |  |
-| CPUUtilization |  | Percent | Maximum | DBClusterIdentifier, Role |  |
-| CPUUtilization |  | Percent | Maximum | DBClusterIdentifier |  |
-| CPUUtilization |  | Percent | Maximum | DatabaseClass, Region |  |
-| CPUUtilization |  | Percent | Maximum | EngineName, Region |  |
-| CPUUtilization |  | Percent | Maximum | Region |  |
-| CommitLatency | Задержка операций фиксации | Milliseconds | Multi | DBClusterIdentifier, Role |  |
-| CommitLatency |  | Milliseconds | Multi | DBClusterIdentifier |  |
-| CommitLatency |  | Milliseconds | Multi | DatabaseClass, Region |  |
-| CommitLatency |  | Milliseconds | Multi | EngineName, Region |  |
-| CommitLatency |  | Milliseconds | Multi | Region |  |
-| CommitThroughput | Среднее количество операций фиксации в секунду | Count/Second | Multi | DBClusterIdentifier, Role |  |
-| CommitThroughput |  | Count/Second | Multi | DBClusterIdentifier |  |
-| CommitThroughput |  | Count/Second | Multi | DatabaseClass, Region |  |
-| CommitThroughput |  | Count/Second | Multi | EngineName, Region |  |
-| CommitThroughput |  | Count/Second | Multi | Region |  |
-| DDLLatency | Задержка запросов языка определения данных (DDL), таких как create, alter и drop | Milliseconds | Multi | DBClusterIdentifier, Role |  |
-| DDLLatency |  | Milliseconds | Multi | DBClusterIdentifier |  |
-| DDLLatency |  | Milliseconds | Multi | DatabaseClass, Region |  |
-| DDLLatency |  | Milliseconds | Multi | EngineName, Region |  |
-| DDLLatency |  | Milliseconds | Multi | Region |  |
-| DDLThroughput | Среднее количество DDL-запросов в секунду | Count/Second | Multi | DBClusterIdentifier, Role |  |
-| DDLThroughput |  | Count/Second | Multi | DBClusterIdentifier |  |
-| DDLThroughput |  | Count/Second | Multi | DatabaseClass, Region |  |
-| DDLThroughput |  | Count/Second | Multi | EngineName, Region |  |
-| DDLThroughput |  | Count/Second | Multi | Region |  |
-| DMLLatency | Задержка операций вставки, обновления и удаления | Milliseconds | Multi | DBClusterIdentifier, Role |  |
-| DMLLatency |  | Milliseconds | Multi | DBClusterIdentifier |  |
-| DMLLatency |  | Milliseconds | Multi | DatabaseClass, Region |  |
-| DMLLatency |  | Milliseconds | Multi | EngineName, Region |  |
-| DMLLatency |  | Milliseconds | Multi | Region |  |
-| DMLThroughput | Среднее количество операций вставки, обновления и удаления в секунду | Count/Second | Multi | DBClusterIdentifier, Role |  |
-| DMLThroughput |  | Count/Second | Multi | DBClusterIdentifier |  |
-| DMLThroughput |  | Count/Second | Multi | DatabaseClass, Region |  |
-| DMLThroughput |  | Count/Second | Multi | EngineName, Region |  |
-| DMLThroughput |  | Count/Second | Multi | Region |  |
-| DatabaseConnections | Количество подключений к экземпляру Aurora DB | Count | Average | DBClusterIdentifier, Role |  |
-| DatabaseConnections |  | Count | Average | DBClusterIdentifier |  |
-| DatabaseConnections |  | Count | Average | DatabaseClass, Region |  |
-| DatabaseConnections |  | Count | Average | EngineName, Region |  |
-| DatabaseConnections |  | Count | Average | Region |  |
-| DatabaseConnections |  | Count | Maximum | DBClusterIdentifier, Role |  |
-| DatabaseConnections |  | Count | Maximum | DBClusterIdentifier |  |
-| DatabaseConnections |  | Count | Maximum | DatabaseClass, Region |  |
-| DatabaseConnections |  | Count | Maximum | EngineName, Region |  |
-| DatabaseConnections |  | Count | Maximum | Region |  |
-| Deadlocks | Среднее количество взаимоблокировок в базе данных в секунду | Count/Second | Average | DBClusterIdentifier, Role |  |
-| Deadlocks |  | Count/Second | Average | DBClusterIdentifier |  |
-| Deadlocks |  | Count/Second | Average | DatabaseClass, Region |  |
-| Deadlocks |  | Count/Second | Average | EngineName, Region |  |
-| Deadlocks |  | Count/Second | Average | Region |  |
-| Deadlocks |  | Count/Second | Maximum | DBClusterIdentifier, Role |  |
-| Deadlocks |  | Count/Second | Maximum | DBClusterIdentifier |  |
-| Deadlocks |  | Count/Second | Maximum | DatabaseClass, Region |  |
-| Deadlocks |  | Count/Second | Maximum | EngineName, Region |  |
-| Deadlocks |  | Count/Second | Maximum | Region |  |
-| DeleteLatency | Задержка запросов удаления | Milliseconds | Multi | DBClusterIdentifier, Role |  |
-| DeleteLatency |  | Milliseconds | Multi | DBClusterIdentifier |  |
-| DeleteLatency |  | Milliseconds | Multi | DatabaseClass, Region |  |
-| DeleteLatency |  | Milliseconds | Multi | EngineName, Region |  |
-| DeleteLatency |  | Milliseconds | Multi | Region |  |
-| DeleteThroughput | Среднее количество запросов удаления в секунду | Count/Second | Multi | DBClusterIdentifier, Role |  |
-| DeleteThroughput |  | Count/Second | Multi | DBClusterIdentifier | Доступно |
-| DeleteThroughput |  | Count/Second | Multi | DatabaseClass, Region |  |
-| DeleteThroughput |  | Count/Second | Multi | EngineName, Region |  |
-| DeleteThroughput |  | Count/Second | Multi | Region |  |
-| DiskQueueDepth | Количество ожидающих запросов чтения/записи на диск | Count | Multi | DBClusterIdentifier, Role |  |
-| DiskQueueDepth |  | Count | Multi | DBClusterIdentifier |  |
-| DiskQueueDepth |  | Count | Multi | DatabaseClass, Region |  |
-| DiskQueueDepth |  | Count | Multi | EngineName, Region |  |
-| DiskQueueDepth |  | Count | Multi | Region |  |
-| EngineUptime | Время работы экземпляра | Seconds | Average | DBClusterIdentifier, Role |  |
-| EngineUptime |  | Seconds | Average | DBClusterIdentifier |  |
-| EngineUptime |  | Seconds | Average | DatabaseClass, Region |  |
-| EngineUptime |  | Seconds | Average | EngineName, Region |  |
-| EngineUptime |  | Seconds | Average | Region |  |
-| FreeLocalStorage | Объём локального хранилища, доступного для каждого экземпляра БД. | Bytes | Average | DBClusterIdentifier, Role |  |
-| FreeLocalStorage |  | Bytes | Average | DBClusterIdentifier |  |
-| FreeLocalStorage |  | Bytes | Average | DatabaseClass, Region |  |
-| FreeLocalStorage |  | Bytes | Average | EngineName, Region |  |
-| FreeLocalStorage |  | Bytes | Average | Region |  |
-| FreeableMemory | Объём доступной оперативной памяти | Bytes | Average | DBClusterIdentifier, Role |  |
-| FreeableMemory |  | Bytes | Average | DBClusterIdentifier |  |
-| FreeableMemory |  | Bytes | Average | DatabaseClass, Region |  |
-| FreeableMemory |  | Bytes | Average | EngineName, Region |  |
-| FreeableMemory |  | Bytes | Average | Region |  |
-| InsertLatency | Задержка запросов вставки | Milliseconds | Multi | DBClusterIdentifier, Role |  |
-| InsertLatency |  | Milliseconds | Multi | DBClusterIdentifier |  |
-| InsertLatency |  | Milliseconds | Multi | DatabaseClass, Region |  |
-| InsertLatency |  | Milliseconds | Multi | EngineName, Region |  |
-| InsertLatency |  | Milliseconds | Multi | Region |  |
-| InsertThroughput | Среднее количество запросов вставки в секунду | Count/Second | Multi | DBClusterIdentifier, Role |  |
-| InsertThroughput |  | Count/Second | Multi | DBClusterIdentifier | Доступно |
-| InsertThroughput |  | Count/Second | Multi | DatabaseClass, Region |  |
-| InsertThroughput |  | Count/Second | Multi | EngineName, Region |  |
-| InsertThroughput |  | Count/Second | Multi | Region |  |
-| LoginFailures | Среднее количество неудачных попыток входа в секунду | Count/Second | Average | DBClusterIdentifier, Role |  |
-| LoginFailures |  | Count/Second | Average | DBClusterIdentifier |  |
-| LoginFailures |  | Count/Second | Average | DatabaseClass, Region |  |
-| LoginFailures |  | Count/Second | Average | EngineName, Region |  |
-| LoginFailures |  | Count/Second | Average | Region |  |
-| LoginFailures |  | Count/Second | Maximum | DBClusterIdentifier, Role |  |
-| LoginFailures |  | Count/Second | Maximum | DBClusterIdentifier |  |
-| LoginFailures |  | Count/Second | Maximum | DatabaseClass, Region |  |
-| LoginFailures |  | Count/Second | Maximum | EngineName, Region |  |
-| LoginFailures |  | Count/Second | Maximum | Region |  |
-| MaximumUsedTransactionIDs | Возраст самой старой незавершённой транзакции в транзакциях. Если это значение достигает `2`,`146`,`483`,`648` (2^31 - 1 000 000), база данных переводится в режим только для чтения во избежание переполнения идентификатора транзакции. | Count | Average | DBClusterIdentifier, Role |  |
-| MaximumUsedTransactionIDs |  | Count | Average | DBClusterIdentifier |  |
-| MaximumUsedTransactionIDs |  | Count | Average | DatabaseClass, Region |  |
-| MaximumUsedTransactionIDs |  | Count | Average | EngineName, Region |  |
-| MaximumUsedTransactionIDs |  | Count | Average | Region |  |
-| NetworkReceiveThroughput | Объём сетевой пропускной способности, полученной от клиентов каждым экземпляром кластера Aurora MySQL DB. Не включает сетевой трафик между экземплярами кластера Aurora DB и томом кластера. | Bytes/Second | Multi | DBClusterIdentifier, Role |  |
-| NetworkReceiveThroughput |  | Bytes/Second | Multi | DBClusterIdentifier |  |
-| NetworkReceiveThroughput |  | Bytes/Second | Multi | DatabaseClass, Region |  |
-| NetworkReceiveThroughput |  | Bytes/Second | Multi | EngineName, Region |  |
-| NetworkReceiveThroughput |  | Bytes/Second | Multi | Region |  |
-| NetworkThroughput | Объём сетевой пропускной способности, полученной от клиентов и переданной клиентам каждым экземпляром кластера Aurora MySQL DB. Не включает сетевой трафик между экземплярами кластера БД и томом кластера. | Bytes/Second | Multi | DBClusterIdentifier, Role |  |
-| NetworkThroughput |  | Bytes/Second | Multi | DBClusterIdentifier |  |
-| NetworkThroughput |  | Bytes/Second | Multi | DatabaseClass, Region |  |
-| NetworkThroughput |  | Bytes/Second | Multi | EngineName, Region |  |
-| NetworkThroughput |  | Bytes/Second | Multi | Region |  |
-| NetworkTransmitThroughput | Объём сетевой пропускной способности, переданной клиентам каждым экземпляром кластера Aurora DB. Не включает сетевой трафик между экземплярами кластера БД и томом кластера. | Bytes/Second | Multi | DBClusterIdentifier, Role |  |
-| NetworkTransmitThroughput |  | Bytes/Second | Multi | DBClusterIdentifier |  |
-| NetworkTransmitThroughput |  | Bytes/Second | Multi | DatabaseClass, Region |  |
-| NetworkTransmitThroughput |  | Bytes/Second | Multi | EngineName, Region |  |
-| NetworkTransmitThroughput |  | Bytes/Second | Multi | Region |  |
-| Queries | Среднее количество запросов в секунду | Count/Second | Multi | DBClusterIdentifier, Role |  |
-| Queries |  | Count/Second | Multi | DBClusterIdentifier | Доступно |
-| Queries |  | Count/Second | Multi | DatabaseClass, Region |  |
-| Queries |  | Count/Second | Multi | EngineName, Region |  |
-| Queries |  | Count/Second | Multi | Region |  |
-| RDSToAuroraPostgreSQLReplicaLag | Отставание при репликации обновлений от основного экземпляра RDS PostgreSQL в другие узлы кластера | Seconds | Multi | DBClusterIdentifier, Role |  |
-| RDSToAuroraPostgreSQLReplicaLag |  | Seconds | Multi | DBClusterIdentifier |  |
-| RDSToAuroraPostgreSQLReplicaLag |  | Seconds | Multi | DatabaseClass, Region |  |
-| RDSToAuroraPostgreSQLReplicaLag |  | Seconds | Multi | EngineName, Region |  |
-| RDSToAuroraPostgreSQLReplicaLag |  | Seconds | Multi | Region |  |
-| ReadIOPS | Среднее количество дисковых операций ввода-вывода в секунду | Count/Second | Multi | DBClusterIdentifier, Role |  |
-| ReadIOPS |  | Count/Second | Multi | DBClusterIdentifier |  |
-| ReadIOPS |  | Count/Second | Multi | DatabaseClass, Region |  |
-| ReadIOPS |  | Count/Second | Multi | EngineName, Region |  |
-| ReadIOPS |  | Count/Second | Multi | Region |  |
-| ReadLatency | Среднее время выполнения одной дисковой операции ввода-вывода | Seconds | Multi | DBClusterIdentifier, Role |  |
-| ReadLatency |  | Seconds | Multi | DBClusterIdentifier |  |
-| ReadLatency |  | Seconds | Multi | DatabaseClass, Region |  |
-| ReadLatency |  | Seconds | Multi | EngineName, Region |  |
-| ReadLatency |  | Seconds | Multi | Region |  |
-| ReadThroughput | Среднее количество байт, считываемых с диска в секунду | Bytes/Second | Multi | DBClusterIdentifier, Role |  |
-| ReadThroughput |  | Bytes/Second | Multi | DBClusterIdentifier |  |
-| ReadThroughput |  | Bytes/Second | Multi | DatabaseClass, Region |  |
-| ReadThroughput |  | Bytes/Second | Multi | EngineName, Region |  |
-| ReadThroughput |  | Bytes/Second | Multi | Region |  |
-| ResultSetCacheHitRatio | Процент запросов, обслуженных из кэша наборов результатов | Percent | Average | DBClusterIdentifier, Role |  |
-| ResultSetCacheHitRatio |  | Percent | Average | DBClusterIdentifier |  |
-| ResultSetCacheHitRatio |  | Percent | Average | DatabaseClass, Region |  |
-| ResultSetCacheHitRatio |  | Percent | Average | EngineName, Region |  |
-| ResultSetCacheHitRatio |  | Percent | Average | Region |  |
-| ResultSetCacheHitRatio |  | Percent | Maximum | DBClusterIdentifier, Role |  |
-| ResultSetCacheHitRatio |  | Percent | Maximum | DBClusterIdentifier |  |
-| ResultSetCacheHitRatio |  | Percent | Maximum | DatabaseClass, Region |  |
-| ResultSetCacheHitRatio |  | Percent | Maximum | EngineName, Region |  |
-| ResultSetCacheHitRatio |  | Percent | Maximum | Region |  |
-| SelectLatency | Задержка запросов выборки | Milliseconds | Multi | DBClusterIdentifier, Role |  |
-| SelectLatency |  | Milliseconds | Multi | DBClusterIdentifier |  |
-| SelectLatency |  | Milliseconds | Multi | DatabaseClass, Region |  |
-| SelectLatency |  | Milliseconds | Multi | EngineName, Region |  |
-| SelectLatency |  | Milliseconds | Multi | Region |  |
-| SelectThroughput | Среднее количество запросов выборки в секунду | Count/Second | Multi | DBClusterIdentifier, Role |  |
-| SelectThroughput |  | Count/Second | Multi | DBClusterIdentifier |  |
-| SelectThroughput |  | Count/Second | Multi | DatabaseClass, Region |  |
-| SelectThroughput |  | Count/Second | Multi | EngineName, Region |  |
-| SelectThroughput |  | Count/Second | Multi | Region |  |
-| SwapUsage | Объём используемого swap-пространства на экземпляре Aurora PostgreSQL DB | Bytes | Multi | DBClusterIdentifier, Role |  |
-| SwapUsage |  | Bytes | Multi | DBClusterIdentifier |  |
-| SwapUsage |  | Bytes | Multi | DatabaseClass, Region |  |
-| SwapUsage |  | Bytes | Multi | EngineName, Region |  |
-| SwapUsage |  | Bytes | Multi | Region |  |
-| TransactionLogsDiskUsage | Объём дискового пространства, занятого журналами транзакций на экземпляре Aurora PostgreSQL DB. Метрика генерируется только при использовании Aurora PostgreSQL с логической репликацией или AWS Database Migration Service. По умолчанию Aurora PostgreSQL использует записи журнала, а не журналы транзакций. Когда журналы транзакций не используются, значение этой метрики равно -1. | Bytes | Multi | DBClusterIdentifier, Role |  |
-| TransactionLogsDiskUsage |  | Bytes | Multi | DBClusterIdentifier |  |
-| TransactionLogsDiskUsage |  | Bytes | Multi | DatabaseClass, Region |  |
-| TransactionLogsDiskUsage |  | Bytes | Multi | EngineName, Region |  |
-| TransactionLogsDiskUsage |  | Bytes | Multi | Region |  |
-| UpdateLatency | Задержка запросов обновления | Milliseconds | Multi | DBClusterIdentifier, Role |  |
-| UpdateLatency |  | Milliseconds | Multi | DBClusterIdentifier |  |
-| UpdateLatency |  | Milliseconds | Multi | DatabaseClass, Region |  |
-| UpdateLatency |  | Milliseconds | Multi | EngineName, Region |  |
-| UpdateLatency |  | Milliseconds | Multi | Region |  |
-| UpdateThroughput | Среднее количество запросов обновления в секунду | Count/Second | Multi | DBClusterIdentifier, Role |  |
-| UpdateThroughput |  | Count/Second | Multi | DBClusterIdentifier | Доступно |
-| UpdateThroughput |  | Count/Second | Multi | DatabaseClass, Region |  |
-| UpdateThroughput |  | Count/Second | Multi | EngineName, Region |  |
-| UpdateThroughput |  | Count/Second | Multi | Region |  |
-| VolumeBytesUsed | Объём хранилища, используемого вашим экземпляром Aurora DB. Это значение влияет на стоимость кластера Aurora DB. | Bytes | Multi | DBClusterIdentifier, Role |  |
-| VolumeBytesUsed |  | Bytes | Multi | DBClusterIdentifier |  |
-| VolumeBytesUsed |  | Bytes | Multi | DatabaseClass, Region |  |
-| VolumeBytesUsed |  | Bytes | Multi | EngineName, Region |  |
-| VolumeBytesUsed |  | Bytes | Multi | Region |  |
-| VolumeReadIOPs | Количество оплачиваемых операций чтения ввода-вывода из тома кластера за 5-минутный интервал | Count/Second | Multi | DBClusterIdentifier, Role |  |
-| VolumeReadIOPs |  | Count/Second | Multi | DBClusterIdentifier |  |
-| VolumeReadIOPs |  | Count/Second | Multi | DatabaseClass, Region |  |
-| VolumeReadIOPs |  | Count/Second | Multi | EngineName, Region |  |
-| VolumeReadIOPs |  | Count/Second | Multi | Region |  |
-| VolumeWriteIOPs | Количество операций записи дискового ввода-вывода в том кластера, отчитывается с интервалом 5 минут | Count/Second | Multi | DBClusterIdentifier, Role |  |
-| VolumeWriteIOPs |  | Count/Second | Multi | DBClusterIdentifier |  |
-| VolumeWriteIOPs |  | Count/Second | Multi | DatabaseClass, Region |  |
-| VolumeWriteIOPs |  | Count/Second | Multi | EngineName, Region |  |
-| VolumeWriteIOPs |  | Count/Second | Multi | Region |  |
-| WriteIOPS | Среднее количество дисковых операций ввода-вывода в секунду | Count/Second | Multi | DBClusterIdentifier, Role |  |
-| WriteIOPS |  | Count/Second | Multi | DBClusterIdentifier |  |
-| WriteIOPS |  | Count/Second | Multi | DatabaseClass, Region |  |
-| WriteIOPS |  | Count/Second | Multi | EngineName, Region |  |
-| WriteIOPS |  | Count/Second | Multi | Region |  |
-| WriteLatency | Среднее время выполнения одной дисковой операции ввода-вывода | Seconds | Multi | DBClusterIdentifier, Role |  |
-| WriteLatency |  | Seconds | Multi | DBClusterIdentifier |  |
-| WriteLatency |  | Seconds | Multi | DatabaseClass, Region |  |
-| WriteLatency |  | Seconds | Multi | EngineName, Region |  |
-| WriteLatency |  | Seconds | Multi | Region |  |
-| WriteThroughput | Среднее количество байт, записываемых на диск | Bytes/Second | Multi | DBClusterIdentifier, Role |  |
-| WriteThroughput |  | Bytes/Second | Multi | DBClusterIdentifier |  |
-| WriteThroughput |  | Bytes/Second | Multi | DatabaseClass, Region |  |
-| WriteThroughput |  | Bytes/Second | Multi | EngineName, Region |  |
-| WriteThroughput |  | Bytes/Second | Multi | Region |  |
+| ActiveTransactions | Среднее количество текущих транзакций, выполняемых на экземпляре базы данных Aurora, в секунду | Количество в секунду | Average | DBClusterIdentifier, Role |  |
+| ActiveTransactions |  | Количество в секунду | Average | DBClusterIdentifier |  |
+| ActiveTransactions |  | Количество в секунду | Average | DatabaseClass, Region |  |
+| ActiveTransactions |  | Количество в секунду | Average | EngineName, Region |  |
+| ActiveTransactions |  | Количество в секунду | Average | Region |  |
+| ActiveTransactions |  | Количество в секунду | Maximum | DBClusterIdentifier, Role |  |
+| ActiveTransactions |  | Количество в секунду | Maximum | DBClusterIdentifier |  |
+| ActiveTransactions |  | Количество в секунду | Maximum | DatabaseClass, Region |  |
+| ActiveTransactions |  | Количество в секунду | Maximum | EngineName, Region |  |
+| ActiveTransactions |  | Количество в секунду | Maximum | Region |  |
+| AuroraBinlogReplicaLag | Время, на которое реплика кластера БД, работающая на Aurora с совместимостью MySQL, отстаёт от исходного кластера БД | Секунда | Multi | DBClusterIdentifier, Role |  |
+| AuroraBinlogReplicaLag |  | Секунда | Multi | DBClusterIdentifier |  |
+| AuroraBinlogReplicaLag |  | Секунда | Multi | DatabaseClass, Region |  |
+| AuroraBinlogReplicaLag |  | Секунда | Multi | EngineName, Region |  |
+| AuroraBinlogReplicaLag |  | Секунда | Multi | Region |  |
+| AuroraReplicaLagMaximum | Максимальная величина отставания между первичным экземпляром и каждым экземпляром БД Aurora в кластере БД | Миллисекунда | Average | DBClusterIdentifier, Role |  |
+| AuroraReplicaLagMaximum |  | Миллисекунда | Average | DBClusterIdentifier |  |
+| AuroraReplicaLagMaximum |  | Миллисекунда | Average | DatabaseClass, Region |  |
+| AuroraReplicaLagMaximum |  | Миллисекунда | Average | EngineName, Region |  |
+| AuroraReplicaLagMaximum |  | Миллисекунда | Average | Region |  |
+| AuroraReplicaLagMinimum |  | Миллисекунда | Average | DBClusterIdentifier, Role |  |
+| AuroraReplicaLagMinimum |  | Миллисекунда | Average | DBClusterIdentifier |  |
+| AuroraReplicaLagMinimum |  | Миллисекунда | Average | DatabaseClass, Region |  |
+| AuroraReplicaLagMinimum |  | Миллисекунда | Average | EngineName, Region |  |
+| AuroraReplicaLagMinimum |  | Миллисекунда | Average | Region |  |
+| AuroraReplicaLag | Для реплики Aurora: величина отставания при репликации обновлений с первичного экземпляра | Миллисекунда | Average | DBClusterIdentifier, Role |  |
+| AuroraReplicaLag |  | Миллисекунда | Average | DBClusterIdentifier |  |
+| AuroraReplicaLag |  | Миллисекунда | Average | DatabaseClass, Region |  |
+| AuroraReplicaLag |  | Миллисекунда | Average | EngineName, Region |  |
+| AuroraReplicaLag |  | Миллисекунда | Average | Region |  |
+| BacktrackChangeRecordsCreationRate | Количество записей изменений backtrack, созданных за 5 минут для вашего кластера БД | Количество | Sum | DBClusterIdentifier, Role |  |
+| BacktrackChangeRecordsCreationRate |  | Количество | Sum | DBClusterIdentifier |  |
+| BacktrackChangeRecordsCreationRate |  | Количество | Sum | DatabaseClass, Region |  |
+| BacktrackChangeRecordsCreationRate |  | Количество | Sum | EngineName, Region |  |
+| BacktrackChangeRecordsCreationRate |  | Количество | Sum | Region |  |
+| BacktrackChangeRecordsStored | Количество записей изменений backtrack, использованных вашим кластером БД | Количество | Sum | DBClusterIdentifier, Role |  |
+| BacktrackChangeRecordsStored |  | Количество | Sum | DBClusterIdentifier |  |
+| BacktrackChangeRecordsStored |  | Количество | Sum | DatabaseClass, Region |  |
+| BacktrackChangeRecordsStored |  | Количество | Sum | EngineName, Region |  |
+| BacktrackChangeRecordsStored |  | Количество | Sum | Region |  |
+| BacktrackWindowActual | Разница между целевым окном backtrack и фактическим окном backtrack | Количество | Sum | DBClusterIdentifier, Role |  |
+| BacktrackWindowActual |  | Количество | Sum | DBClusterIdentifier |  |
+| BacktrackWindowActual |  | Количество | Sum | DatabaseClass, Region |  |
+| BacktrackWindowActual |  | Количество | Sum | EngineName, Region |  |
+| BacktrackWindowActual |  | Количество | Sum | Region |  |
+| BacktrackWindowAlert | Количество случаев, когда фактическое окно backtrack меньше целевого окна backtrack за заданный период времени | Количество | Sum | DBClusterIdentifier, Role |  |
+| BacktrackWindowAlert |  | Количество | Sum | DBClusterIdentifier |  |
+| BacktrackWindowAlert |  | Количество | Sum | DatabaseClass, Region |  |
+| BacktrackWindowAlert |  | Количество | Sum | EngineName, Region |  |
+| BacktrackWindowAlert |  | Количество | Sum | Region |  |
+| BinLogDiskUsage | Объём дискового пространства, занятого двоичными журналами на первичном экземпляре | Байт | Average | DBClusterIdentifier, Role |  |
+| BinLogDiskUsage |  | Байт | Average | DBClusterIdentifier |  |
+| BinLogDiskUsage |  | Байт | Average | DatabaseClass, Region |  |
+| BinLogDiskUsage |  | Байт | Average | EngineName, Region |  |
+| BinLogDiskUsage |  | Байт | Average | Region |  |
+| BlockedTransactions | Среднее количество транзакций в базе данных, заблокированных в секунду | Количество в секунду | Average | DBClusterIdentifier, Role |  |
+| BlockedTransactions |  | Количество в секунду | Average | DBClusterIdentifier |  |
+| BlockedTransactions |  | Количество в секунду | Average | DatabaseClass, Region |  |
+| BlockedTransactions |  | Количество в секунду | Average | EngineName, Region |  |
+| BlockedTransactions |  | Количество в секунду | Average | Region |  |
+| BlockedTransactions |  | Количество в секунду | Maximum | DBClusterIdentifier, Role |  |
+| BlockedTransactions |  | Количество в секунду | Maximum | DBClusterIdentifier |  |
+| BlockedTransactions |  | Количество в секунду | Maximum | DatabaseClass, Region |  |
+| BlockedTransactions |  | Количество в секунду | Maximum | EngineName, Region |  |
+| BlockedTransactions |  | Количество в секунду | Maximum | Region |  |
+| BufferCacheHitRatio | Процент запросов, обслуженных буферным кэшем | Процент | Average | DBClusterIdentifier, Role |  |
+| BufferCacheHitRatio |  | Процент | Average | DBClusterIdentifier |  |
+| BufferCacheHitRatio |  | Процент | Average | DatabaseClass, Region |  |
+| BufferCacheHitRatio |  | Процент | Average | EngineName, Region |  |
+| BufferCacheHitRatio |  | Процент | Average | Region |  |
+| CPUCreditBalance | Количество кредитов CPU, накопленных экземпляром; регистрируется с интервалом в 5 минут. Эта метрика применима только к экземплярам `db.t2.small` и `db.t2.medium`. С помощью этой метрики можно определить, как долго экземпляр БД Aurora MySQL может работать в режиме всплеска сверх базового уровня производительности при заданной интенсивности. | Количество | Average | DBClusterIdentifier, Role |  |
+| CPUCreditBalance |  | Количество | Average | DBClusterIdentifier |  |
+| CPUCreditBalance |  | Количество | Average | DatabaseClass, Region |  |
+| CPUCreditBalance |  | Количество | Average | EngineName, Region |  |
+| CPUCreditBalance |  | Количество | Average | Region |  |
+| CPUCreditUsage | Количество кредитов CPU, израсходованных за указанный период; регистрируется с интервалом в 5 минут. Эта метрика применима только к экземплярам `db.t2.small` и `db.t2.medium`. Эта метрика измеряет количество времени, в течение которого физические CPU использовались для обработки инструкций виртуальными CPU, выделенными экземпляру БД Aurora MySQL. | Количество | Average | DBClusterIdentifier, Role |  |
+| CPUCreditUsage |  | Количество | Average | DBClusterIdentifier |  |
+| CPUCreditUsage |  | Количество | Average | DatabaseClass, Region |  |
+| CPUCreditUsage |  | Количество | Average | EngineName, Region |  |
+| CPUCreditUsage |  | Количество | Average | Region |  |
+| CPUUtilization | Процент CPU, используемого экземпляром БД Aurora | Процент | Average | DBClusterIdentifier, Role |  |
+| CPUUtilization |  | Процент | Average | DBClusterIdentifier |  |
+| CPUUtilization |  | Процент | Average | DatabaseClass, Region |  |
+| CPUUtilization |  | Процент | Average | EngineName, Region |  |
+| CPUUtilization |  | Процент | Average | Region |  |
+| CPUUtilization |  | Процент | Maximum | DBClusterIdentifier, Role |  |
+| CPUUtilization |  | Процент | Maximum | DBClusterIdentifier |  |
+| CPUUtilization |  | Процент | Maximum | DatabaseClass, Region |  |
+| CPUUtilization |  | Процент | Maximum | EngineName, Region |  |
+| CPUUtilization |  | Процент | Maximum | Region |  |
+| CommitLatency | Задержка операций фиксации | Миллисекунда | Multi | DBClusterIdentifier, Role |  |
+| CommitLatency |  | Миллисекунда | Multi | DBClusterIdentifier |  |
+| CommitLatency |  | Миллисекунда | Multi | DatabaseClass, Region |  |
+| CommitLatency |  | Миллисекунда | Multi | EngineName, Region |  |
+| CommitLatency |  | Миллисекунда | Multi | Region |  |
+| CommitThroughput | Среднее количество операций фиксации в секунду | Количество в секунду | Multi | DBClusterIdentifier, Role |  |
+| CommitThroughput |  | Количество в секунду | Multi | DBClusterIdentifier |  |
+| CommitThroughput |  | Количество в секунду | Multi | DatabaseClass, Region |  |
+| CommitThroughput |  | Количество в секунду | Multi | EngineName, Region |  |
+| CommitThroughput |  | Количество в секунду | Multi | Region |  |
+| DDLLatency | Задержка запросов языка определения данных (DDL), например запросов create, alter и drop | Миллисекунда | Multi | DBClusterIdentifier, Role |  |
+| DDLLatency |  | Миллисекунда | Multi | DBClusterIdentifier |  |
+| DDLLatency |  | Миллисекунда | Multi | DatabaseClass, Region |  |
+| DDLLatency |  | Миллисекунда | Multi | EngineName, Region |  |
+| DDLLatency |  | Миллисекунда | Multi | Region |  |
+| DDLThroughput | Среднее количество запросов DDL в секунду | Количество в секунду | Multi | DBClusterIdentifier, Role |  |
+| DDLThroughput |  | Количество в секунду | Multi | DBClusterIdentifier |  |
+| DDLThroughput |  | Количество в секунду | Multi | DatabaseClass, Region |  |
+| DDLThroughput |  | Количество в секунду | Multi | EngineName, Region |  |
+| DDLThroughput |  | Количество в секунду | Multi | Region |  |
+| DMLLatency | Задержка операций вставки, обновления и удаления | Миллисекунда | Multi | DBClusterIdentifier, Role |  |
+| DMLLatency |  | Миллисекунда | Multi | DBClusterIdentifier |  |
+| DMLLatency |  | Миллисекунда | Multi | DatabaseClass, Region |  |
+| DMLLatency |  | Миллисекунда | Multi | EngineName, Region |  |
+| DMLLatency |  | Миллисекунда | Multi | Region |  |
+| DMLThroughput | Среднее количество операций вставки, обновления и удаления в секунду | Количество в секунду | Multi | DBClusterIdentifier, Role |  |
+| DMLThroughput |  | Количество в секунду | Multi | DBClusterIdentifier |  |
+| DMLThroughput |  | Количество в секунду | Multi | DatabaseClass, Region |  |
+| DMLThroughput |  | Количество в секунду | Multi | EngineName, Region |  |
+| DMLThroughput |  | Количество в секунду | Multi | Region |  |
+| DatabaseConnections | Количество подключений к экземпляру БД Aurora | Количество | Average | DBClusterIdentifier, Role |  |
+| DatabaseConnections |  | Количество | Average | DBClusterIdentifier |  |
+| DatabaseConnections |  | Количество | Average | DatabaseClass, Region |  |
+| DatabaseConnections |  | Количество | Average | EngineName, Region |  |
+| DatabaseConnections |  | Количество | Average | Region |  |
+| DatabaseConnections |  | Количество | Maximum | DBClusterIdentifier, Role |  |
+| DatabaseConnections |  | Количество | Maximum | DBClusterIdentifier |  |
+| DatabaseConnections |  | Количество | Maximum | DatabaseClass, Region |  |
+| DatabaseConnections |  | Количество | Maximum | EngineName, Region |  |
+| DatabaseConnections |  | Количество | Maximum | Region |  |
+| Deadlocks | Среднее количество взаимоблокировок в базе данных в секунду | Количество в секунду | Average | DBClusterIdentifier, Role |  |
+| Deadlocks |  | Количество в секунду | Average | DBClusterIdentifier |  |
+| Deadlocks |  | Количество в секунду | Average | DatabaseClass, Region |  |
+| Deadlocks |  | Количество в секунду | Average | EngineName, Region |  |
+| Deadlocks |  | Количество в секунду | Average | Region |  |
+| Deadlocks |  | Количество в секунду | Maximum | DBClusterIdentifier, Role |  |
+| Deadlocks |  | Количество в секунду | Maximum | DBClusterIdentifier |  |
+| Deadlocks |  | Количество в секунду | Maximum | DatabaseClass, Region |  |
+| Deadlocks |  | Количество в секунду | Maximum | EngineName, Region |  |
+| Deadlocks |  | Количество в секунду | Maximum | Region |  |
+| DeleteLatency | Задержка запросов удаления | Миллисекунда | Multi | DBClusterIdentifier, Role |  |
+| DeleteLatency |  | Миллисекунда | Multi | DBClusterIdentifier |  |
+| DeleteLatency |  | Миллисекунда | Multi | DatabaseClass, Region |  |
+| DeleteLatency |  | Миллисекунда | Multi | EngineName, Region |  |
+| DeleteLatency |  | Миллисекунда | Multi | Region |  |
+| DeleteThroughput | Среднее количество запросов удаления в секунду | Количество в секунду | Multi | DBClusterIdentifier, Role |  |
+| DeleteThroughput |  | Количество в секунду | Multi | DBClusterIdentifier | Применимо |
+| DeleteThroughput |  | Количество в секунду | Multi | DatabaseClass, Region |  |
+| DeleteThroughput |  | Количество в секунду | Multi | EngineName, Region |  |
+| DeleteThroughput |  | Количество в секунду | Multi | Region |  |
+| DiskQueueDepth | Количество незавершённых запросов чтения/записи, ожидающих доступа к диску | Количество | Multi | DBClusterIdentifier, Role |  |
+| DiskQueueDepth |  | Количество | Multi | DBClusterIdentifier |  |
+| DiskQueueDepth |  | Количество | Multi | DatabaseClass, Region |  |
+| DiskQueueDepth |  | Количество | Multi | EngineName, Region |  |
+| DiskQueueDepth |  | Количество | Multi | Region |  |
+| EngineUptime | Время работы экземпляра | Секунда | Average | DBClusterIdentifier, Role |  |
+| EngineUptime |  | Секунда | Average | DBClusterIdentifier |  |
+| EngineUptime |  | Секунда | Average | DatabaseClass, Region |  |
+| EngineUptime |  | Секунда | Average | EngineName, Region |  |
+| EngineUptime |  | Секунда | Average | Region |  |
+| FreeLocalStorage | Объём локального хранилища, доступного для каждого экземпляра БД. | Байт | Average | DBClusterIdentifier, Role |  |
+| FreeLocalStorage |  | Байт | Average | DBClusterIdentifier |  |
+| FreeLocalStorage |  | Байт | Average | DatabaseClass, Region |  |
+| FreeLocalStorage |  | Байт | Average | EngineName, Region |  |
+| FreeLocalStorage |  | Байт | Average | Region |  |
+| FreeableMemory | Объём доступной оперативной памяти | Байт | Average | DBClusterIdentifier, Role |  |
+| FreeableMemory |  | Байт | Average | DBClusterIdentifier |  |
+| FreeableMemory |  | Байт | Average | DatabaseClass, Region |  |
+| FreeableMemory |  | Байт | Average | EngineName, Region |  |
+| FreeableMemory |  | Байт | Average | Region |  |
+| InsertLatency | Задержка запросов вставки | Миллисекунда | Multi | DBClusterIdentifier, Role |  |
+| InsertLatency |  | Миллисекунда | Multi | DBClusterIdentifier |  |
+| InsertLatency |  | Миллисекунда | Multi | DatabaseClass, Region |  |
+| InsertLatency |  | Миллисекунда | Multi | EngineName, Region |  |
+| InsertLatency |  | Миллисекунда | Multi | Region |  |
+| InsertThroughput | Среднее количество запросов вставки в секунду | Количество в секунду | Multi | DBClusterIdentifier, Role |  |
+| InsertThroughput |  | Количество в секунду | Multi | DBClusterIdentifier | Применимо |
+| InsertThroughput |  | Количество в секунду | Multi | DatabaseClass, Region |  |
+| InsertThroughput |  | Количество в секунду | Multi | EngineName, Region |  |
+| InsertThroughput |  | Количество в секунду | Multi | Region |  |
+| LoginFailures | Среднее количество неудачных попыток входа в секунду | Количество в секунду | Average | DBClusterIdentifier, Role |  |
+| LoginFailures |  | Количество в секунду | Average | DBClusterIdentifier |  |
+| LoginFailures |  | Количество в секунду | Average | DatabaseClass, Region |  |
+| LoginFailures |  | Количество в секунду | Average | EngineName, Region |  |
+| LoginFailures |  | Количество в секунду | Average | Region |  |
+| LoginFailures |  | Количество в секунду | Maximum | DBClusterIdentifier, Role |  |
+| LoginFailures |  | Количество в секунду | Maximum | DBClusterIdentifier |  |
+| LoginFailures |  | Количество в секунду | Maximum | DatabaseClass, Region |  |
+| LoginFailures |  | Количество в секунду | Maximum | EngineName, Region |  |
+| LoginFailures |  | Количество в секунду | Maximum | Region |  |
+| MaximumUsedTransactionIDs | Возраст самого старого неочищенного идентификатора транзакции, в транзакциях. Если это значение достигает `2`,`146`,`483`,`648` (2^31 - 1 000 000), база данных принудительно переводится в режим только для чтения во избежание зацикливания идентификаторов транзакций. | Количество | Average | DBClusterIdentifier, Role |  |
+| MaximumUsedTransactionIDs |  | Количество | Average | DBClusterIdentifier |  |
+| MaximumUsedTransactionIDs |  | Количество | Average | DatabaseClass, Region |  |
+| MaximumUsedTransactionIDs |  | Количество | Average | EngineName, Region |  |
+| MaximumUsedTransactionIDs |  | Количество | Average | Region |  |
+| NetworkReceiveThroughput | Объём сетевой пропускной способности, полученной от клиентов каждым экземпляром в кластере БД Aurora MySQL. Эта пропускная способность не включает сетевой трафик между экземплярами в кластере БД Aurora и томом кластера. | Байт в секунду | Multi | DBClusterIdentifier, Role |  |
+| NetworkReceiveThroughput |  | Байт в секунду | Multi | DBClusterIdentifier |  |
+| NetworkReceiveThroughput |  | Байт в секунду | Multi | DatabaseClass, Region |  |
+| NetworkReceiveThroughput |  | Байт в секунду | Multi | EngineName, Region |  |
+| NetworkReceiveThroughput |  | Байт в секунду | Multi | Region |  |
+| NetworkThroughput | Объём сетевой пропускной способности, как полученной от клиентов, так и переданной им каждым экземпляром в кластере БД Aurora MySQL. Эта пропускная способность не включает сетевой трафик между экземплярами в кластере БД и томом кластера. | Байт в секунду | Multi | DBClusterIdentifier, Role |  |
+| NetworkThroughput |  | Байт в секунду | Multi | DBClusterIdentifier |  |
+| NetworkThroughput |  | Байт в секунду | Multi | DatabaseClass, Region |  |
+| NetworkThroughput |  | Байт в секунду | Multi | EngineName, Region |  |
+| NetworkThroughput |  | Байт в секунду | Multi | Region |  |
+| NetworkTransmitThroughput | Объём сетевой пропускной способности, отправленной клиентам каждым экземпляром в кластере БД Aurora. Эта пропускная способность не включает сетевой трафик между экземплярами в кластере БД и томом кластера. | Байт в секунду | Multi | DBClusterIdentifier, Role |  |
+| NetworkTransmitThroughput |  | Байт в секунду | Multi | DBClusterIdentifier |  |
+| NetworkTransmitThroughput |  | Байт в секунду | Multi | DatabaseClass, Region |  |
+| NetworkTransmitThroughput |  | Байт в секунду | Multi | EngineName, Region |  |
+| NetworkTransmitThroughput |  | Байт в секунду | Multi | Region |  |
+| Queries | Среднее количество запросов, выполненных в секунду | Количество в секунду | Multi | DBClusterIdentifier, Role |  |
+| Queries |  | Количество в секунду | Multi | DBClusterIdentifier | Применимо |
+| Queries |  | Количество в секунду | Multi | DatabaseClass, Region |  |
+| Queries |  | Количество в секунду | Multi | EngineName, Region |  |
+| Queries |  | Количество в секунду | Multi | Region |  |
+| RDSToAuroraPostgreSQLReplicaLag | Отставание при репликации обновлений с первичного экземпляра RDS PostgreSQL на другие узлы в кластере | Секунда | Multi | DBClusterIdentifier, Role |  |
+| RDSToAuroraPostgreSQLReplicaLag |  | Секунда | Multi | DBClusterIdentifier |  |
+| RDSToAuroraPostgreSQLReplicaLag |  | Секунда | Multi | DatabaseClass, Region |  |
+| RDSToAuroraPostgreSQLReplicaLag |  | Секунда | Multi | EngineName, Region |  |
+| RDSToAuroraPostgreSQLReplicaLag |  | Секунда | Multi | Region |  |
+| ReadIOPS | Среднее количество дисковых операций ввода-вывода в секунду | Количество в секунду | Multi | DBClusterIdentifier, Role |  |
+| ReadIOPS |  | Количество в секунду | Multi | DBClusterIdentifier |  |
+| ReadIOPS |  | Количество в секунду | Multi | DatabaseClass, Region |  |
+| ReadIOPS |  | Количество в секунду | Multi | EngineName, Region |  |
+| ReadIOPS |  | Количество в секунду | Multi | Region |  |
+| ReadLatency | Среднее время, затрачиваемое на одну дисковую операцию ввода-вывода | Секунда | Multi | DBClusterIdentifier, Role |  |
+| ReadLatency |  | Секунда | Multi | DBClusterIdentifier |  |
+| ReadLatency |  | Секунда | Multi | DatabaseClass, Region |  |
+| ReadLatency |  | Секунда | Multi | EngineName, Region |  |
+| ReadLatency |  | Секунда | Multi | Region |  |
+| ReadThroughput | Среднее количество байт, считываемых с диска в секунду | Байт в секунду | Multi | DBClusterIdentifier, Role |  |
+| ReadThroughput |  | Байт в секунду | Multi | DBClusterIdentifier |  |
+| ReadThroughput |  | Байт в секунду | Multi | DatabaseClass, Region |  |
+| ReadThroughput |  | Байт в секунду | Multi | EngineName, Region |  |
+| ReadThroughput |  | Байт в секунду | Multi | Region |  |
+| ResultSetCacheHitRatio | Процент запросов, обслуженных кэшем результирующих наборов | Процент | Average | DBClusterIdentifier, Role |  |
+| ResultSetCacheHitRatio |  | Процент | Average | DBClusterIdentifier |  |
+| ResultSetCacheHitRatio |  | Процент | Average | DatabaseClass, Region |  |
+| ResultSetCacheHitRatio |  | Процент | Average | EngineName, Region |  |
+| ResultSetCacheHitRatio |  | Процент | Average | Region |  |
+| ResultSetCacheHitRatio |  | Процент | Maximum | DBClusterIdentifier, Role |  |
+| ResultSetCacheHitRatio |  | Процент | Maximum | DBClusterIdentifier |  |
+| ResultSetCacheHitRatio |  | Процент | Maximum | DatabaseClass, Region |  |
+| ResultSetCacheHitRatio |  | Процент | Maximum | EngineName, Region |  |
+| ResultSetCacheHitRatio |  | Процент | Maximum | Region |  |
+| SelectLatency | Задержка запросов выборки | Миллисекунда | Multi | DBClusterIdentifier, Role |  |
+| SelectLatency |  | Миллисекунда | Multi | DBClusterIdentifier |  |
+| SelectLatency |  | Миллисекунда | Multi | DatabaseClass, Region |  |
+| SelectLatency |  | Миллисекунда | Multi | EngineName, Region |  |
+| SelectLatency |  | Миллисекунда | Multi | Region |  |
+| SelectThroughput | Среднее количество запросов выборки в секунду | Количество в секунду | Multi | DBClusterIdentifier, Role |  |
+| SelectThroughput |  | Количество в секунду | Multi | DBClusterIdentifier |  |
+| SelectThroughput |  | Количество в секунду | Multi | DatabaseClass, Region |  |
+| SelectThroughput |  | Количество в секунду | Multi | EngineName, Region |  |
+| SelectThroughput |  | Количество в секунду | Multi | Region |  |
+| SwapUsage | Объём пространства подкачки, используемого на экземпляре БД Aurora PostgreSQL | Байт | Multi | DBClusterIdentifier, Role |  |
+| SwapUsage |  | Байт | Multi | DBClusterIdentifier |  |
+| SwapUsage |  | Байт | Multi | DatabaseClass, Region |  |
+| SwapUsage |  | Байт | Multi | EngineName, Region |  |
+| SwapUsage |  | Байт | Multi | Region |  |
+| TransactionLogsDiskUsage | Объём дискового пространства, занятого журналами транзакций на экземпляре БД Aurora PostgreSQL. Эта метрика формируется только тогда, когда Aurora PostgreSQL использует логическую репликацию или AWS Database Migration Service. По умолчанию Aurora PostgreSQL использует записи журнала, а не журналы транзакций. Когда журналы транзакций не используются, значение этой метрики равно -1. | Байт | Multi | DBClusterIdentifier, Role |  |
+| TransactionLogsDiskUsage |  | Байт | Multi | DBClusterIdentifier |  |
+| TransactionLogsDiskUsage |  | Байт | Multi | DatabaseClass, Region |  |
+| TransactionLogsDiskUsage |  | Байт | Multi | EngineName, Region |  |
+| TransactionLogsDiskUsage |  | Байт | Multi | Region |  |
+| UpdateLatency | Задержка запросов обновления | Миллисекунда | Multi | DBClusterIdentifier, Role |  |
+| UpdateLatency |  | Миллисекунда | Multi | DBClusterIdentifier |  |
+| UpdateLatency |  | Миллисекунда | Multi | DatabaseClass, Region |  |
+| UpdateLatency |  | Миллисекунда | Multi | EngineName, Region |  |
+| UpdateLatency |  | Миллисекунда | Multi | Region |  |
+| UpdateThroughput | Среднее количество запросов обновления в секунду | Количество в секунду | Multi | DBClusterIdentifier, Role |  |
+| UpdateThroughput |  | Количество в секунду | Multi | DBClusterIdentifier | Применимо |
+| UpdateThroughput |  | Количество в секунду | Multi | DatabaseClass, Region |  |
+| UpdateThroughput |  | Количество в секунду | Multi | EngineName, Region |  |
+| UpdateThroughput |  | Количество в секунду | Multi | Region |  |
+| VolumeBytesUsed | Объём хранилища, используемого вашим экземпляром БД Aurora. Это значение влияет на стоимость кластера БД Aurora. | Байт | Multi | DBClusterIdentifier, Role |  |
+| VolumeBytesUsed |  | Байт | Multi | DBClusterIdentifier |  |
+| VolumeBytesUsed |  | Байт | Multi | DatabaseClass, Region |  |
+| VolumeBytesUsed |  | Байт | Multi | EngineName, Region |  |
+| VolumeBytesUsed |  | Байт | Multi | Region |  |
+| VolumeReadIOPs | Количество оплачиваемых операций ввода-вывода чтения из тома кластера за 5-минутный интервал | Количество в секунду | Multi | DBClusterIdentifier, Role |  |
+| VolumeReadIOPs |  | Количество в секунду | Multi | DBClusterIdentifier |  |
+| VolumeReadIOPs |  | Количество в секунду | Multi | DatabaseClass, Region |  |
+| VolumeReadIOPs |  | Количество в секунду | Multi | EngineName, Region |  |
+| VolumeReadIOPs |  | Количество в секунду | Multi | Region |  |
+| VolumeWriteIOPs | Количество дисковых операций ввода-вывода записи в том кластера; регистрируется с интервалом в 5 минут | Количество в секунду | Multi | DBClusterIdentifier, Role |  |
+| VolumeWriteIOPs |  | Количество в секунду | Multi | DBClusterIdentifier |  |
+| VolumeWriteIOPs |  | Количество в секунду | Multi | DatabaseClass, Region |  |
+| VolumeWriteIOPs |  | Количество в секунду | Multi | EngineName, Region |  |
+| VolumeWriteIOPs |  | Количество в секунду | Multi | Region |  |
+| WriteIOPS | Среднее количество дисковых операций ввода-вывода в секунду | Количество в секунду | Multi | DBClusterIdentifier, Role |  |
+| WriteIOPS |  | Количество в секунду | Multi | DBClusterIdentifier |  |
+| WriteIOPS |  | Количество в секунду | Multi | DatabaseClass, Region |  |
+| WriteIOPS |  | Количество в секунду | Multi | EngineName, Region |  |
+| WriteIOPS |  | Количество в секунду | Multi | Region |  |
+| WriteLatency | Среднее время, затрачиваемое на одну дисковую операцию ввода-вывода | Секунда | Multi | DBClusterIdentifier, Role |  |
+| WriteLatency |  | Секунда | Multi | DBClusterIdentifier |  |
+| WriteLatency |  | Секунда | Multi | DatabaseClass, Region |  |
+| WriteLatency |  | Секунда | Multi | EngineName, Region |  |
+| WriteLatency |  | Секунда | Multi | Region |  |
+| WriteThroughput | Среднее количество байт, записанных на диск | Байт в секунду | Multi | DBClusterIdentifier, Role |  |
+| WriteThroughput |  | Байт в секунду | Multi | DBClusterIdentifier |  |
+| WriteThroughput |  | Байт в секунду | Multi | DatabaseClass, Region |  |
+| WriteThroughput |  | Байт в секунду | Multi | EngineName, Region |  |
+| WriteThroughput |  | Байт в секунду | Multi | Region |  |

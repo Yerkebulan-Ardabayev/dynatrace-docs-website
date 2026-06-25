@@ -1,13 +1,13 @@
 ---
 title: OneAgent diagnostics
-source: https://www.dynatrace.com/docs/ingest-from/dynatrace-oneagent/oneagent-troubleshooting/oneagent-diagnostics
-scraped: 2026-03-04T21:32:36.436365
+source: https://docs.dynatrace.com/managed/ingest-from/dynatrace-oneagent/oneagent-troubleshooting/oneagent-diagnostics
+scraped: 2026-05-12T11:22:17.067324
 ---
 
 # OneAgent diagnostics
 
+# OneAgent diagnostics
 
-* Latest Dynatrace
 * 7-min read
 * Published Oct 22, 2020
 
@@ -22,7 +22,7 @@ The workflow enables you to:
 
 Command-line diagnostics
 
-If you don't have access to Dynatrace or you would like to script diagnostic data collection, you can use the `oneagentctl` command to collect a subset of full diagnostics data right on the host where OneAgent is installed. For more information, see Create support archive.
+If you don't have access to Dynatrace or you would like to script diagnostic data collection, you can use the `oneagentctl` command to collect a subset of full diagnostics data right on the host where OneAgent is installed. For more information, see [Create support archive](/managed/ingest-from/dynatrace-oneagent/oneagent-configuration-via-command-line-interface#create-support-archive "Learn how to perform some OneAgent configuration tasks without the need to reinstall OneAgent.").
 
 ## Requirements
 
@@ -36,7 +36,7 @@ This procedure describes the default procedure: Dynatrace collects diagnostics d
 
 If you prefer to collect and review the data before manually submitting it to Dynatrace for analysis, see [Collect and review locally](#collect-and-review-locally).
 
-1. Go to ![Hosts](https://dt-cdn.net/images/hosts-512-59f5d2dd7f.png "Hosts") **Hosts Classic**.
+1. Go to **Hosts**.
 2. Select the host you want to troubleshoot.
 3. Run diagnostics on the host or process level.
 
@@ -44,12 +44,16 @@ If you prefer to collect and review the data before manually submitting it to Dy
      Example menu selection
 
      ![OneAgent diagnostics: menu item](https://dt-cdn.net/images/diagnostics-menu-item2-950-0243641987.png)
+
+     OneAgent diagnostics: menu item
    * Process level: on the host page, open a process page, and then select **Run OneAgent diagnostics** from the browse menu (**â¦**) on the process page.
 4. On the **Run Dynatrace OneAgent diagnostics** page, briefly describe what isnât working as expected from your point of view.
 
    Example OneAgent diagnostics page
 
    ![OneAgent diagnostics: run](https://dt-cdn.net/images/run-diagnostics-1548-2f9988d21a.png)
+
+   OneAgent diagnostics: run
 5. Optional By default, 24 hours (1 day) of data is collected for analysis. If you need more data, select the **Advanced options** link, change the number of days, and select **Apply**.
 6. Select **Start analysis**.
 
@@ -134,6 +138,8 @@ Example
 
 ![OneAgent diagnostics: alerts](https://dt-cdn.net/images/public-alerts-1-1783-14caea955d.png)
 
+OneAgent diagnostics: alerts
+
 In this example, you can see that the fully automated OneAgent troubleshooting workflow has detected that this OneAgent was mounted on a network file system (NFS), which isnât supported. Instructions for resolving the issue are included.
 
 ## Collect and review locally
@@ -142,7 +148,7 @@ This procedure describes how to collect diagnostics data for a host or process l
 
 If you instead want to collect data and submit it to Dynatrace automatically for analysis, see [Analyze automatically](#analyze-automatically).
 
-1. Go to ![Hosts](https://dt-cdn.net/images/hosts-512-59f5d2dd7f.png "Hosts") **Hosts Classic**.
+1. Go to **Hosts**.
 2. Select the host you want to troubleshoot.
 3. Run diagnostics on the host or process level.
 
@@ -150,12 +156,16 @@ If you instead want to collect data and submit it to Dynatrace automatically for
      Example
 
      ![OneAgent diagnostics: menu item](https://dt-cdn.net/images/diagnostics-menu-item2-950-0243641987.png)
+
+     OneAgent diagnostics: menu item
    * Process level: on the host page, open a process page, and then select **Run OneAgent diagnostics** from the browse menu (**â¦**) on the process page.
 4. On the **Run Dynatrace OneAgent diagnostics** page, briefly describe what isnât working as expected from your point of view.
 
    Example OneAgent diagnostics page
 
    ![OneAgent diagnostics: run](https://dt-cdn.net/images/run-diagnostics-1548-2f9988d21a.png)
+
+   OneAgent diagnostics: run
 5. Select the **Advanced options** link.
 6. Select **and store locally**.
 
@@ -216,7 +226,7 @@ Stringent data privacy protections are enforced and logged throughout this proce
 
 For an overview of all OneAgent troubleshooting runs in your environment
 
-1. Go to ![Hosts](https://dt-cdn.net/images/hosts-512-59f5d2dd7f.png "Hosts") **Hosts Classic**.
+1. Go to **Hosts**.
 2. Open the browse (**â¦**) menu and select **OneAgent diagnostics overview**.
 
 The **Dynatrace OneAgent diagnostics overview** page lists all OneAgent diagnostics activity in your environment. Expand any entry to see details. If the data has not been deleted (all diagnostic data is deleted automatically after 30 days), you can download it or delete it.
@@ -225,21 +235,31 @@ The **Dynatrace OneAgent diagnostics overview** page lists all OneAgent diagnost
 
 All the collected diagnostic data is compressed into a `SupportArchive<ID number>` ZIP file that includes the following folders and files:
 
+| Folder or file | Description |
+| --- | --- |
+| `host` (folder) | Contains a snapshot of the topology information of the host entity including any relationships to other hosts. |
+| `monitored_entities` (folder) | Contains a snapshot of the topology information of all involved process groups, process group instances, services, and service instances. |
+| `agent_registration_entries` (JSON) | Contains information about which OneAgent code modules are connected to Dynatrace. |
+| `archive` (JSON) | Contains information about who, when, where, and why the diagnostic data was collected. |
+| `monitoring_state` (JSON) | Contains information about the monitoring state of processes and related problems. |
+| `support_archive` (ZIP) | Contains the local configuration of the OneAgent installed on the host or process where youâve run the troubleshooting, as well as the OneAgent-related log files. |
+| `diagnostic_files` ZIP | Contains information about the process group detection, auto-injection problems, and extension configuration. |
+
 ## Data privacy
 
 To comply with regional data protection and privacy regulations, Dynatrace does the following:
 
 * Masks some personal data before storing a support archive in Cassandra and uploading it to an AWS S3 bucket. For example, IBANs and URI credentials are replaced with `<masked>`. However, some personal data may not be masked.
 * Writes audit log messages when support archives are created, analyzed, accessed, and deleted to ensure transparency in the use of support archives.
-* Provides access to OneAgent support archives only to users that have the **View sensitive request data** environment permission.
-* Automatically deletes all diagnostic data 30 days after its collection.
+* Provides access to OneAgent support archives only to users that have the **View sensitive request data** [environment permission](/managed/manage/identity-access-management/permission-management/role-based-permissions#environment "Role-based permissions").
+* Automatically deletes all diagnostic data 30 days after its collection. This [data retention period](/managed/manage/data-privacy-and-security/data-privacy/data-retention-periods#diagnostics "Check retention times for various data types.") is configurable.
 
-  This applies to the data in your Dynatrace environment. You can also choose to delete collected diagnostic data earlier.
+  This applies to the data on the Dynatrace Cluster. You can also choose to delete collected diagnostic data earlier.
 
 For related details on OneAgent diagnostics, check the following pages:
 
-* Personal data captured by Dynatrace
-* Data retention periods
+* [Personal data captured by Dynatrace](/managed/manage/data-privacy-and-security/data-privacy/personal-data-captured-by-dynatrace#oneagent-diagnostics "Find out what types of end-user data may be captured during Dynatrace monitoring and the methods that are available for masking personal end-user data.")
+* [Data retention periods](/managed/manage/data-privacy-and-security/data-privacy/data-retention-periods#diagnostics "Check retention times for various data types.")
 
 ## Troubleshooting
 

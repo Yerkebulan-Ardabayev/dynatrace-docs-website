@@ -1,0 +1,7 @@
+aws-service-appsync.md
+aws-service-codebuild.md
+aws-service-connect.md
+aws-service-lambda-new.md
+aws-service-step-functions.md
+aws-service-simple-workflow-service-swf.md
+aws-service-cloudhsm-v2.md

@@ -1,0 +1,32 @@
+--- builtin-infrastructure-disk-edge-anomaly-detectors.md ---
+em-dash=0, mojibake-BOM=0, ENUM-left=0, Auth-left=0, Param-left=0, single_a=0
+calque hits (0):
+signal-words hits:
+
+
+--- builtin-management-zones.md ---
+em-dash=0, mojibake-BOM=0, ENUM-left=0, Auth-left=0, Param-left=0, single_a=0
+calque hits (0):
+signal-words hits:
+
+
+--- builtin-os-services-monitoring.md ---
+em-dash=0, mojibake-BOM=0, ENUM-left=0, Auth-left=0, Param-left=0, single_a=0
+calque hits (1):
+  ote: политики задаются для каждой поддерживаемой OS отдельно, и часть параметров и свойств между ними различается.
+
+| Schema ID |
+signal-words hits:
+
+
+--- builtin-tags-auto-tagging.md ---
+em-dash=0, mojibake-BOM=0, ENUM-left=0, Auth-left=0, Param-left=0, single_a=0
+calque hits (0):
+signal-words hits:
+
+
+--- builtin-anomaly-detection-infrastructure-hosts.md ---
+em-dash=0, mojibake-BOM=0, ENUM-left=0, Auth-left=0, Param-left=0, single_a=0
+calque hits (0):
+signal-words hits:
+

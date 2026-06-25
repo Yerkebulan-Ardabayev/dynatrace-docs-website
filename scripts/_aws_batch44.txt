@@ -1,0 +1,17 @@
+aws-service-waf-classic.md
+aws-service-site-to-site-vpn.md
+aws-service-lex.md
+aws-service-polly.md
+aws-service-textract.md
+aws-service-chatbot.md
+aws-service-route-53-resolver.md
+aws-service-cloudwatch-logs.md
+aws-service-fsx.md
+aws-service-translate.md
+aws-service-rekognition.md
+aws-service-inspector.md
+aws-service-appstream-2.md
+aws-service-athena.md
+aws-service-redshift.md
+aws-service-route-53.md
+aws-service-elastic-file-system-efs.md

@@ -1,317 +1,420 @@
 ---
 title: Мониторинг Amazon SageMaker (Batch Transform Jobs, Endpoint Instances, Endpoints, Ground Truth, Processing Jobs, Training Jobs)
-source: https://www.dynatrace.com/docs/ingest-from/amazon-web-services/integrate-with-aws/aws-all-services/aws-service-sagemaker
-scraped: 2026-02-27T21:17:50.308435
+source: https://docs.dynatrace.com/managed/ingest-from/amazon-web-services/integrate-with-aws/aws-all-services/aws-service-sagemaker
+scraped: 2026-05-12T11:30:49.347905
 ---
 
-Dynatrace собирает метрики для множества предварительно выбранных пространств имён, включая Amazon SageMaker. Вы можете просматривать метрики для каждого экземпляра сервиса, разделять метрики по нескольким измерениям и создавать пользовательские графики, которые можно закрепить на панелях мониторинга.
+# Мониторинг Amazon SageMaker (Batch Transform Jobs, Endpoint Instances, Endpoints, Ground Truth, Processing Jobs, Training Jobs)
+
+# Мониторинг Amazon SageMaker (Batch Transform Jobs, Endpoint Instances, Endpoints, Ground Truth, Processing Jobs, Training Jobs)
+
+* Практическое руководство
+* Чтение: 9 мин
+* Опубликовано 16 октября 2020 г.
+
+Dynatrace принимает метрики для множества предопределённых пространств имён, включая Amazon SageMaker. Можно просматривать метрики по каждому экземпляру сервиса, разбивать их на несколько измерений и создавать собственные графики, которые можно закреплять на дашбордах.
 
 ## Предварительные требования
 
-Для включения мониторинга данного сервиса вам необходимо
+Чтобы включить мониторинг этого сервиса, необходимо
 
 * ActiveGate версии 1.181+, а именно:
 
-  + Для развертываний Dynatrace SaaS вам потребуется Environment ActiveGate или Multi-environment ActiveGate.
-  + Для развертываний Dynatrace Managed можно использовать любой тип ActiveGate.
+  + Для развёртываний Dynatrace SaaS требуется Environment ActiveGate или Multi-environment ActiveGate.
+  + Для развёртываний Dynatrace Managed можно использовать ActiveGate любого типа.
 
-    Для доступа на основе ролей (как в развертывании SaaS так и [Managed](https://docs.dynatrace.com/managed/shortlink/aws-managed-deployment) развертывании) вам потребуется Environment ActiveGate, установленный на хосте Amazon EC2.
+    Для доступа на основе ролей (в развёртывании [SaaS](/managed/ingest-from/amazon-web-services/integrate-with-aws/cloudwatch-metrics#role-based-access "Приём метрик Amazon CloudWatch.") или [Managed](/managed/ingest-from/amazon-web-services/set-up-aws-monitoring-with-managed#role-based-access "Подключите аккаунт Amazon к Dynatrace Managed и начните мониторинг.")) требуется [Environment ActiveGate](/managed/ingest-from/dynatrace-activegate/installation "Узнайте, как настроить ActiveGate"), установленный на хосте Amazon EC2.
 * Dynatrace версии 1.182+
-* Обновленная политика мониторинга AWS для включения дополнительных сервисов AWS.  
-  Для [обновления политики AWS IAM](https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_manage-edit.html#edit-managed-policy-console) используйте приведённый ниже JSON, содержащий политику мониторинга (разрешения) для всех поддерживаемых сервисов.
+* Обновлённая [политика мониторинга AWS](/managed/ingest-from/amazon-web-services/integrate-with-aws/cloudwatch-metrics#aws-policy-and-authentication "Приём метрик Amazon CloudWatch."), включающая дополнительные сервисы AWS.
+  Чтобы [обновить политику AWS IAM](https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_manage-edit.html#edit-managed-policy-console), используйте приведённый ниже JSON, содержащий политику мониторинга (разрешения) для всех поддерживаемых сервисов.
 
-Предопределённая политика JSON для всех поддерживаемых сервисов
+Предопределённая JSON-политика для всех поддерживаемых сервисов
 
 ```
 {
+
 
 
 "Version": "2012-10-17",
 
 
+
 "Statement": [
+
 
 
 {
 
 
+
 "Sid": "VisualEditor0",
+
 
 
 "Effect": "Allow",
 
 
+
 "Action": [
+
 
 
 "acm-pca:ListCertificateAuthorities",
 
 
+
 "apigateway:GET",
+
 
 
 "apprunner:ListServices",
 
 
+
 "appstream:DescribeFleets",
+
 
 
 "appsync:ListGraphqlApis",
 
 
+
 "athena:ListWorkGroups",
+
 
 
 "autoscaling:DescribeAutoScalingGroups",
 
 
+
 "cloudformation:ListStackResources",
+
 
 
 "cloudfront:ListDistributions",
 
 
+
 "cloudhsm:DescribeClusters",
+
 
 
 "cloudsearch:DescribeDomains",
 
 
+
 "cloudwatch:GetMetricData",
+
 
 
 "cloudwatch:GetMetricStatistics",
 
 
+
 "cloudwatch:ListMetrics",
+
 
 
 "codebuild:ListProjects",
 
 
+
 "datasync:ListTasks",
+
 
 
 "dax:DescribeClusters",
 
 
+
 "directconnect:DescribeConnections",
+
 
 
 "dms:DescribeReplicationInstances",
 
 
+
 "dynamodb:ListTables",
+
 
 
 "dynamodb:ListTagsOfResource",
 
 
+
 "ec2:DescribeAvailabilityZones",
+
 
 
 "ec2:DescribeInstances",
 
 
+
 "ec2:DescribeNatGateways",
+
 
 
 "ec2:DescribeSpotFleetRequests",
 
 
+
 "ec2:DescribeTransitGateways",
+
 
 
 "ec2:DescribeVolumes",
 
 
+
 "ec2:DescribeVpnConnections",
+
 
 
 "ecs:ListClusters",
 
 
+
 "eks:ListClusters",
+
 
 
 "elasticache:DescribeCacheClusters",
 
 
+
 "elasticbeanstalk:DescribeEnvironmentResources",
+
 
 
 "elasticbeanstalk:DescribeEnvironments",
 
 
+
 "elasticfilesystem:DescribeFileSystems",
+
 
 
 "elasticloadbalancing:DescribeInstanceHealth",
 
 
+
 "elasticloadbalancing:DescribeListeners",
+
 
 
 "elasticloadbalancing:DescribeLoadBalancers",
 
 
+
 "elasticloadbalancing:DescribeRules",
+
 
 
 "elasticloadbalancing:DescribeTags",
 
 
+
 "elasticloadbalancing:DescribeTargetHealth",
+
 
 
 "elasticmapreduce:ListClusters",
 
 
+
 "elastictranscoder:ListPipelines",
+
 
 
 "es:ListDomainNames",
 
 
+
 "events:ListEventBuses",
+
 
 
 "firehose:ListDeliveryStreams",
 
 
+
 "fsx:DescribeFileSystems",
+
 
 
 "gamelift:ListFleets",
 
 
+
 "glue:GetJobs",
+
 
 
 "inspector:ListAssessmentTemplates",
 
 
+
 "kafka:ListClusters",
+
 
 
 "kinesis:ListStreams",
 
 
+
 "kinesisanalytics:ListApplications",
+
 
 
 "kinesisvideo:ListStreams",
 
 
+
 "lambda:ListFunctions",
+
 
 
 "lambda:ListTags",
 
 
+
 "lex:GetBots",
+
 
 
 "logs:DescribeLogGroups",
 
 
+
 "mediaconnect:ListFlows",
+
 
 
 "mediaconvert:DescribeEndpoints",
 
 
+
 "mediapackage-vod:ListPackagingConfigurations",
+
 
 
 "mediapackage:ListChannels",
 
 
+
 "mediatailor:ListPlaybackConfigurations",
+
 
 
 "opsworks:DescribeStacks",
 
 
+
 "qldb:ListLedgers",
+
 
 
 "rds:DescribeDBClusters",
 
 
+
 "rds:DescribeDBInstances",
+
 
 
 "rds:DescribeEvents",
 
 
+
 "rds:ListTagsForResource",
+
 
 
 "redshift:DescribeClusters",
 
 
+
 "robomaker:ListSimulationJobs",
+
 
 
 "route53:ListHostedZones",
 
 
+
 "route53resolver:ListResolverEndpoints",
+
 
 
 "s3:ListAllMyBuckets",
 
 
+
 "sagemaker:ListEndpoints",
+
 
 
 "sns:ListTopics",
 
 
+
 "sqs:ListQueues",
+
 
 
 "storagegateway:ListGateways",
 
 
+
 "sts:GetCallerIdentity",
+
 
 
 "swf:ListDomains",
 
 
+
 "tag:GetResources",
+
 
 
 "tag:GetTagKeys",
 
 
+
 "transfer:ListServers",
+
 
 
 "workmail:ListOrganizations",
 
 
+
 "workspaces:DescribeWorkspaces"
+
 
 
 ],
 
 
+
 "Resource": "*"
 
 
+
 }
+
 
 
 ]
 
 
+
 }
 ```
 
-Если вы не хотите добавлять разрешения для всех сервисов, а хотите выбрать разрешения только для определённых сервисов, обратитесь к таблице ниже. Таблица содержит набор разрешений, необходимых для всех облачных сервисов AWS, а также для каждого поддерживаемого сервиса список дополнительных разрешений, специфичных для этого сервиса.
+Если вы не хотите добавлять разрешения для всех сервисов и предпочитаете выбрать разрешения только для определённых сервисов, обратитесь к таблице ниже. В таблице приведён набор разрешений, необходимых для [всех облачных сервисов AWS](/managed/ingest-from/amazon-web-services/integrate-with-aws/aws-all-services "Мониторинг всех облачных сервисов AWS в Dynatrace и просмотр доступных метрик."), и для каждого поддерживаемого сервиса приведён список необязательных разрешений, специфичных для этого сервиса.
 
 Разрешения, необходимые для интеграции мониторинга AWS:
 
@@ -325,9 +428,9 @@ Dynatrace собирает метрики для множества предва
 
 ### Полный список разрешений для облачных сервисов
 
-| Название | Разрешения |
+| Имя | Разрешения |
 | --- | --- |
-| Все отслеживаемые сервисы Amazon (обязательно) | `cloudwatch:GetMetricData`, `cloudwatch:GetMetricStatistics`, `cloudwatch:ListMetrics`, `sts:GetCallerIdentity`, `tag:GetResources`, `tag:GetTagKeys`, `ec2:DescribeAvailabilityZones` |
+| All monitored Amazon services Required | `cloudwatch:GetMetricData`, `cloudwatch:GetMetricStatistics`, `cloudwatch:ListMetrics`, `sts:GetCallerIdentity`, `tag:GetResources`, `tag:GetTagKeys`, `ec2:DescribeAvailabilityZones` |
 | AWS Certificate Manager Private Certificate Authority | `acm-pca:ListCertificateAuthorities` |
 | Amazon MQ |  |
 | Amazon API Gateway | `apigateway:GET` |
@@ -433,66 +536,85 @@ Dynatrace собирает метрики для множества предва
 | Amazon WorkMail | `workmail:ListOrganizations` |
 | Amazon WorkSpaces | `workspaces:DescribeWorkspaces` |
 
-Пример политики JSON для одного отдельного сервиса.
+Пример JSON-политики для одного сервиса.
 
-Политика JSON для Amazon API Gateway
+JSON-политика для Amazon API Gateway
 
 ```
 {
 
 
+
 "Version": "2012-10-17",
+
 
 
 "Statement": [
 
 
+
 {
+
 
 
 "Sid": "VisualEditor0",
 
 
+
 "Effect": "Allow",
+
 
 
 "Action": [
 
 
+
 "apigateway:GET",
+
 
 
 "cloudwatch:GetMetricData",
 
 
+
 "cloudwatch:GetMetricStatistics",
+
 
 
 "cloudwatch:ListMetrics",
 
 
+
 "sts:GetCallerIdentity",
+
 
 
 "tag:GetResources",
 
 
+
 "tag:GetTagKeys",
+
 
 
 "ec2:DescribeAvailabilityZones"
 
 
+
 ],
+
 
 
 "Resource": "*"
 
 
+
 }
 
 
+
 ]
+
 
 
 }
@@ -501,9 +623,9 @@ Dynatrace собирает метрики для множества предва
 В этом примере из полного списка разрешений необходимо выбрать
 
 * `"apigateway:GET"` для **Amazon API Gateway**
-* `"cloudwatch:GetMetricData"`, `"cloudwatch:GetMetricStatistics"`, `"cloudwatch:ListMetrics"`, `"sts:GetCallerIdentity"`, `"tag:GetResources"`, `"tag:GetTagKeys"` и `"ec2:DescribeAvailabilityZones"` для **всех облачных сервисов AWS**.
+* `"cloudwatch:GetMetricData"`, `"cloudwatch:GetMetricStatistics"`, `"cloudwatch:ListMetrics"`, `"sts:GetCallerIdentity"`, `"tag:GetResources"`, `"tag:GetTagKeys"` и `"ec2:DescribeAvailabilityZones"` для **All AWS cloud services**.
 
-### Конечные точки AWS, которые должны быть доступны из ActiveGate с соответствующими сервисами AWS
+### Конечные точки AWS, которые должны быть доступны с ActiveGate, и соответствующие им сервисы AWS
 
 | Конечная точка | Сервис |
 | --- | --- |
@@ -564,221 +686,221 @@ Dynatrace собирает метрики для множества предва
 
 ## Включение мониторинга
 
-Чтобы узнать, как включить мониторинг сервиса, см. Включение мониторинга сервиса.
+Чтобы узнать, как включить мониторинг сервиса, см. [Включение мониторинга сервиса](/managed/ingest-from/amazon-web-services/integrate-with-aws/aws-metrics-ingest/aws-enable-service-monitoring "Включение мониторинга AWS в Dynatrace.").
 
 ## Просмотр метрик сервиса
 
-Вы можете просматривать метрики сервиса в вашей среде Dynatrace либо на **странице обзора пользовательского устройства**, либо на странице **Панели мониторинга**.
+Вы можете просматривать метрики сервиса в вашей среде Dynatrace на **странице обзора пользовательского устройства** или на странице **Dashboards**.
 
 ### Просмотр метрик на странице обзора пользовательского устройства
 
-Для доступа к странице обзора пользовательского устройства
+Чтобы перейти на страницу обзора пользовательского устройства:
 
-1. Перейдите в ![Technologies](https://dt-cdn.net/images/technologies-512-977161d83c.png "Technologies") **Technologies & Processes Classic**.
+1. Перейдите в **Technologies & Processes**.
 2. Отфильтруйте по имени сервиса и выберите соответствующую группу пользовательских устройств.
 3. После выбора группы пользовательских устройств вы окажетесь на **странице обзора группы пользовательских устройств**.
 4. На **странице обзора группы пользовательских устройств** перечислены все экземпляры (пользовательские устройства), принадлежащие группе. Выберите экземпляр для просмотра **страницы обзора пользовательского устройства**.
 
-### Просмотр метрик на панели мониторинга
+### Просмотр метрик на дашборде
 
-Вы также можете просматривать метрики в веб-интерфейсе Dynatrace на панелях мониторинга. Для данного сервиса предустановленная панель мониторинга недоступна, но вы можете создать собственную панель мониторинга.
+Вы также можете просматривать метрики в веб-интерфейсе Dynatrace на дашбордах. Для этого сервиса нет предустановленного дашборда, но вы можете [создать собственный дашборд](/managed/analyze-explore-automate/dashboards-classic/dashboards/create-dashboards "Узнайте, как создавать и редактировать дашборды Dynatrace.").
 
-Для проверки доступности предустановленных панелей мониторинга для каждого сервиса AWS см. список ниже.
+Чтобы проверить доступность предустановленных дашбордов для каждого сервиса AWS, см. список ниже.
 
-### Список доступности предустановленных панелей мониторинга
+### Список доступности предустановленных дашбордов
 
-| Сервис AWS | Предустановленная панель |
+| Сервис AWS | Предустановленный дашборд |
 | --- | --- |
-| Amazon EC2 Auto Scaling (built-in) | Недоступна |
-| AWS Lambda (built-in) | Недоступна |
-| Amazon Application and Network Load Balancer (built-in) | Недоступна |
-| Amazon DynamoDB (built-in) | Недоступна |
-| Amazon EBS (built-in) | Недоступна |
-| Amazon EC2 (built-in) | Недоступна |
-| Amazon Elastic Load Balancer (ELB) (built-in) | Недоступна |
-| Amazon RDS (built-in) | Недоступна |
-| Amazon S3 (built-in) | Недоступна |
-| AWS Certificate Manager Private Certificate Authority | Недоступна |
-| All monitored Amazon services | Недоступна |
-| Amazon API Gateway | Недоступна |
-| AWS App Runner | Недоступна |
-| Amazon AppStream | Доступна |
-| AWS AppSync | Доступна |
-| Amazon Athena | Доступна |
-| Amazon Aurora | Недоступна |
-| Amazon EC2 Auto Scaling | Доступна |
-| AWS Billing | Доступна |
-| Amazon Keyspaces | Доступна |
-| AWS Chatbot | Доступна |
-| Amazon CloudFront | Недоступна |
-| AWS CloudHSM | Доступна |
-| Amazon CloudSearch | Доступна |
-| AWS CodeBuild | Доступна |
-| Amazon Cognito | Недоступна |
-| Amazon Connect | Доступна |
-| AWS DataSync | Доступна |
-| Amazon DynamoDB Accelerator (DAX) | Доступна |
-| AWS Database Migration Service (AWS DMS) | Доступна |
-| Amazon DocumentDB | Доступна |
-| AWS Direct Connect | Доступна |
-| Amazon DynamoDB | Недоступна |
-| Amazon EBS | Недоступна |
-| Amazon EC2 Spot Fleet | Недоступна |
-| Amazon EC2 API | Доступна |
-| Amazon Elastic Container Service (ECS) | Недоступна |
-| Amazon ECS Container Insights | Доступна |
-| Amazon Elastic File System (EFS) | Недоступна |
-| Amazon Elastic Kubernetes Service (EKS) | Доступна |
-| Amazon ElastiCache (EC) | Недоступна |
-| AWS Elastic Beanstalk | Доступна |
-| Amazon Elastic Inference | Доступна |
-| Amazon Elastic Transcoder | Доступна |
-| Amazon Elastic Map Reduce (EMR) | Недоступна |
-| Amazon Elasticsearch Service (ES) | Недоступна |
-| Amazon EventBridge | Доступна |
-| Amazon FSx | Доступна |
-| Amazon GameLift | Доступна |
-| AWS Glue | Недоступна |
-| Amazon Inspector | Доступна |
-| AWS Internet of Things (IoT) | Недоступна |
-| AWS IoT Things Graph | Доступна |
-| AWS IoT Analytics | Доступна |
-| Amazon Managed Streaming for Kafka | Доступна |
-| Amazon Kinesis Data Analytics | Недоступна |
-| Amazon Data Firehose | Недоступна |
-| Amazon Kinesis Data Streams | Недоступна |
-| Amazon Kinesis Video Streams | Недоступна |
-| AWS Lambda | Недоступна |
-| Amazon Lex | Доступна |
-| Amazon CloudWatch Logs | Доступна |
-| AWS Elemental MediaTailor | Доступна |
-| AWS Elemental MediaConnect | Доступна |
-| AWS Elemental MediaConvert | Доступна |
-| AWS Elemental MediaPackage Live | Доступна |
-| AWS Elemental MediaPackage Video on Demand | Доступна |
-| Amazon MQ | Доступна |
-| Amazon VPC NAT Gateways | Недоступна |
-| Amazon Neptune | Доступна |
-| AWS OpsWorks | Доступна |
-| Amazon Polly | Доступна |
-| Amazon QLDB | Доступна |
-| Amazon RDS | Недоступна |
-| Amazon Redshift | Недоступна |
-| Amazon Rekognition | Доступна |
-| AWS RoboMaker | Доступна |
-| Amazon Route 53 | Доступна |
-| Amazon Route 53 Resolver | Доступна |
-| Amazon S3 | Недоступна |
-| Amazon SageMaker Batch Transform Jobs | Недоступна |
-| Amazon SageMaker Endpoints | Недоступна |
-| Amazon SageMaker Endpoint Instances | Недоступна |
-| Amazon SageMaker Ground Truth | Недоступна |
-| Amazon SageMaker Processing Jobs | Недоступна |
-| Amazon SageMaker Training Jobs | Недоступна |
-| AWS Service Catalog | Доступна |
-| Amazon Simple Email Service (SES) | Недоступна |
-| Amazon Simple Notification Service (SNS) | Недоступна |
-| Amazon Simple Queue Service (SQS) | Недоступна |
-| AWS Systems Manager - Run Command | Доступна |
-| AWS Step Functions | Доступна |
-| AWS Storage Gateway | Доступна |
-| Amazon SWF | Доступна |
-| Amazon Textract | Доступна |
-| AWS Transfer Family | Доступна |
-| AWS Transit Gateway | Доступна |
-| Amazon Translate | Доступна |
-| AWS Trusted Advisor | Доступна |
-| AWS API Usage | Доступна |
-| AWS Site-to-Site VPN | Доступна |
-| AWS WAF Classic | Доступна |
-| AWS WAF | Доступна |
-| Amazon WorkMail | Доступна |
-| Amazon WorkSpaces | Доступна |
+| Amazon EC2 Auto Scaling (built-in) | Не применимо |
+| AWS Lambda (built-in) | Не применимо |
+| Amazon Application and Network Load Balancer (built-in) | Не применимо |
+| Amazon DynamoDB (built-in) | Не применимо |
+| Amazon EBS (built-in) | Не применимо |
+| Amazon EC2 (built-in) | Не применимо |
+| Amazon Elastic Load Balancer (ELB) (built-in) | Не применимо |
+| Amazon RDS (built-in) | Не применимо |
+| Amazon S3 (built-in) | Не применимо |
+| AWS Certificate Manager Private Certificate Authority | Не применимо |
+| All monitored Amazon services | Не применимо |
+| Amazon API Gateway | Не применимо |
+| AWS App Runner | Не применимо |
+| Amazon AppStream | Применимо |
+| AWS AppSync | Применимо |
+| Amazon Athena | Применимо |
+| Amazon Aurora | Не применимо |
+| Amazon EC2 Auto Scaling | Применимо |
+| AWS Billing | Применимо |
+| Amazon Keyspaces | Применимо |
+| AWS Chatbot | Применимо |
+| Amazon CloudFront | Не применимо |
+| AWS CloudHSM | Применимо |
+| Amazon CloudSearch | Применимо |
+| AWS CodeBuild | Применимо |
+| Amazon Cognito | Не применимо |
+| Amazon Connect | Применимо |
+| AWS DataSync | Применимо |
+| Amazon DynamoDB Accelerator (DAX) | Применимо |
+| AWS Database Migration Service (AWS DMS) | Применимо |
+| Amazon DocumentDB | Применимо |
+| AWS Direct Connect | Применимо |
+| Amazon DynamoDB | Не применимо |
+| Amazon EBS | Не применимо |
+| Amazon EC2 Spot Fleet | Не применимо |
+| Amazon EC2 API | Применимо |
+| Amazon Elastic Container Service (ECS) | Не применимо |
+| Amazon ECS Container Insights | Применимо |
+| Amazon Elastic File System (EFS) | Не применимо |
+| Amazon Elastic Kubernetes Service (EKS) | Применимо |
+| Amazon ElastiCache (EC) | Не применимо |
+| AWS Elastic Beanstalk | Применимо |
+| Amazon Elastic Inference | Применимо |
+| Amazon Elastic Transcoder | Применимо |
+| Amazon Elastic Map Reduce (EMR) | Не применимо |
+| Amazon Elasticsearch Service (ES) | Не применимо |
+| Amazon EventBridge | Применимо |
+| Amazon FSx | Применимо |
+| Amazon GameLift | Применимо |
+| AWS Glue | Не применимо |
+| Amazon Inspector | Применимо |
+| AWS Internet of Things (IoT) | Не применимо |
+| AWS IoT Things Graph | Применимо |
+| AWS IoT Analytics | Применимо |
+| Amazon Managed Streaming for Kafka | Применимо |
+| Amazon Kinesis Data Analytics | Не применимо |
+| Amazon Data Firehose | Не применимо |
+| Amazon Kinesis Data Streams | Не применимо |
+| Amazon Kinesis Video Streams | Не применимо |
+| AWS Lambda | Не применимо |
+| Amazon Lex | Применимо |
+| Amazon CloudWatch Logs | Применимо |
+| AWS Elemental MediaTailor | Применимо |
+| AWS Elemental MediaConnect | Применимо |
+| AWS Elemental MediaConvert | Применимо |
+| AWS Elemental MediaPackage Live | Применимо |
+| AWS Elemental MediaPackage Video on Demand | Применимо |
+| Amazon MQ | Применимо |
+| Amazon VPC NAT Gateways | Не применимо |
+| Amazon Neptune | Применимо |
+| AWS OpsWorks | Применимо |
+| Amazon Polly | Применимо |
+| Amazon QLDB | Применимо |
+| Amazon RDS | Не применимо |
+| Amazon Redshift | Не применимо |
+| Amazon Rekognition | Применимо |
+| AWS RoboMaker | Применимо |
+| Amazon Route 53 | Применимо |
+| Amazon Route 53 Resolver | Применимо |
+| Amazon S3 | Не применимо |
+| Amazon SageMaker Batch Transform Jobs | Не применимо |
+| Amazon SageMaker Endpoints | Не применимо |
+| Amazon SageMaker Endpoint Instances | Не применимо |
+| Amazon SageMaker Ground Truth | Не применимо |
+| Amazon SageMaker Processing Jobs | Не применимо |
+| Amazon SageMaker Training Jobs | Не применимо |
+| AWS Service Catalog | Применимо |
+| Amazon Simple Email Service (SES) | Не применимо |
+| Amazon Simple Notification Service (SNS) | Не применимо |
+| Amazon Simple Queue Service (SQS) | Не применимо |
+| AWS Systems Manager - Run Command | Применимо |
+| AWS Step Functions | Применимо |
+| AWS Storage Gateway | Применимо |
+| Amazon SWF | Применимо |
+| Amazon Textract | Применимо |
+| AWS Transfer Family | Применимо |
+| AWS Transit Gateway | Применимо |
+| Amazon Translate | Применимо |
+| AWS Trusted Advisor | Применимо |
+| AWS API Usage | Применимо |
+| AWS Site-to-Site VPN | Применимо |
+| AWS WAF Classic | Применимо |
+| AWS WAF | Применимо |
+| Amazon WorkMail | Применимо |
+| Amazon WorkSpaces | Применимо |
 
 ## Доступные метрики
 
 ### Amazon SageMaker Batch Transform Jobs
 
-| Название | Описание | Единица | Статистика | Измерения | Рекомендуемая |
+| Имя | Описание | Единица измерения | Статистика | Измерения | Рекомендуется |
 | --- | --- | --- | --- | --- | --- |
-| CPUUtilization | Процент использования ЦПУ контейнерами на экземпляре. Значение может варьироваться от `0%` до `100%` и умножается на количество ЦПУ. Например, при четырёх ЦПУ `CPUUtilization` может варьироваться от `0%` до `400%'. | Percent | Average | Region, Host | Доступна |
-| MemoryUtilization | Процент памяти, используемой контейнерами на экземпляре. Значение может варьироваться от `0%` до `100%`. | Percent | Average | Region, Host | Доступна |
-| GPUMemoryUtilization | Процент использования памяти GPU контейнерами на экземпляре. Значение может варьироваться от `0%` до `100%` и умножается на количество GPU. Например, при четырёх GPU `GPUMemoryUtilization` может варьироваться от `0%` до `400%'. | Percent | Average | Region, Host | Доступна |
-| GPUUtilization | Процент использования GPU контейнерами на экземпляре. Значение может варьироваться от `0%` до `100%` и умножается на количество GPU. Например, при четырёх GPU `GPUUtilization` может варьироваться от `0%` до `400%'. | Percent | Average | Region, Host | Доступна |
+| CPUUtilization | Процент единиц CPU, используемых контейнерами на экземпляре. Значение может варьироваться от `0%` до `100%` и умножается на количество CPU. Например, при четырёх CPU `CPUUtilization` может варьироваться от `0%` до `400%'. | Процент | Average | Region, Host | Применимо |
+| MemoryUtilization | Процент памяти, используемой контейнерами на экземпляре. Это значение может варьироваться от `0%` до `100%`. | Процент | Average | Region, Host | Применимо |
+| GPUMemoryUtilization | Процент памяти GPU, используемой контейнерами на экземпляре. Значение может варьироваться от `0%` до `100%` и умножается на количество GPU. Например, при четырёх GPU `GPUMemoryUtilization` может варьироваться от `0%` до `400%'. | Процент | Average | Region, Host | Применимо |
+| GPUUtilization | Процент единиц GPU, используемых контейнерами на экземпляре. Значение может варьироваться от `0%` до `100%` и умножается на количество GPU. Например, при четырёх GPU `GPUUtilization` может варьироваться от `0%` до `400%'. | Процент | Average | Region, Host | Применимо |
 
 ### Amazon SageMaker Processing Jobs, Amazon SageMaker Training Jobs
 
-| Название | Описание | Единица | Статистика | Измерения | Рекомендуемая |
+| Имя | Описание | Единица измерения | Статистика | Измерения | Рекомендуется |
 | --- | --- | --- | --- | --- | --- |
-| CPUUtilization | Процент использования ЦПУ контейнерами на экземпляре. Значение может варьироваться от `0%` до `100%` и умножается на количество ЦПУ. Например, при четырёх ЦПУ `CPUUtilization` может варьироваться от `0%` до `400%'. | Percent | Average | Region, Host | Доступна |
-| DiskUtilization | Процент дискового пространства, используемого контейнерами на экземпляре. Значение может варьироваться от `0%` до `100%`. Эта метрика не поддерживается для заданий пакетного преобразования. | Percent | Average | EndpointName, VariantName | Доступна |
-| GPUMemoryUtilization | Процент использования памяти GPU контейнерами на экземпляре. Значение может варьироваться от `0%` до `100%` и умножается на количество GPU. Например, при четырёх GPU `GPUMemoryUtilization` может варьироваться от `0%` до `400%'. | Percent | Average | Region, Host | Доступна |
-| GPUUtilization | Процент использования GPU контейнерами на экземпляре. Значение может варьироваться от `0%` до `100%` и умножается на количество GPU. Например, при четырёх GPU `GPUUtilization` может варьироваться от `0%` до `400%'. | Percent | Average | Region, Host | Доступна |
-| MemoryUtilization | Процент памяти, используемой контейнерами на экземпляре. Значение может варьироваться от `0%` до `100%`. | Percent | Average | Region, Host | Доступна |
+| CPUUtilization | Процент единиц CPU, используемых контейнерами на экземпляре. Значение может варьироваться от `0%` до `100%` и умножается на количество CPU. Например, при четырёх CPU `CPUUtilization` может варьироваться от `0%` до `400%'. | Процент | Average | Region, Host | Применимо |
+| DiskUtilization | Процент дискового пространства, используемого контейнерами на экземпляре. Это значение может варьироваться от `0%` до `100%`. Эта метрика не поддерживается для заданий пакетного преобразования. | Процент | Average | EndpointName, VariantName | Применимо |
+| GPUMemoryUtilization | Процент памяти GPU, используемой контейнерами на экземпляре. Значение может варьироваться от `0%` до `100%` и умножается на количество GPU. Например, при четырёх GPU `GPUMemoryUtilization` может варьироваться от `0%` до `400%'. | Процент | Average | Region, Host | Применимо |
+| GPUUtilization | Процент единиц GPU, используемых контейнерами на экземпляре. Значение может варьироваться от `0%` до `100%` и умножается на количество GPU. Например, при четырёх GPU `GPUUtilization` может варьироваться от `0%` до `400%'. | Процент | Average | Region, Host | Применимо |
+| MemoryUtilization | Процент памяти, используемой контейнерами на экземпляре. Это значение может варьироваться от `0%` до `100%`. | Процент | Average | Region, Host | Применимо |
 
 ### Amazon SageMaker Endpoint Instances
 
-`EndpointName` является основным измерением.
+Основное измерение: `EndpointName`.
 
-| Название | Описание | Единица | Статистика | Измерения | Рекомендуемая |
+| Имя | Описание | Единица измерения | Статистика | Измерения | Рекомендуется |
 | --- | --- | --- | --- | --- | --- |
-| CPUUtilization | Процент использования ЦПУ контейнерами на экземпляре. Значение может варьироваться от `0%` до `100%` и умножается на количество ЦПУ. Например, при четырёх ЦПУ `CPUUtilization` может варьироваться от `0%` до `400%'. | Percent | Average | EndpointName, VariantName | Доступна |
-| DiskUtilization | Процент дискового пространства, используемого контейнерами на экземпляре. Значение может варьироваться от `0%` до `100%`. Эта метрика не поддерживается для заданий пакетного преобразования. | Percent | Average | EndpointName, VariantName | Доступна |
-| GPUMemoryUtilization | Процент использования GPU контейнерами на экземпляре. Значение может варьироваться от `0%` до `100%` и умножается на количество GPU. Например, при четырёх GPU `GPUUtilization` может варьироваться от `0%` до `400%'. | Percent | Average | EndpointName, VariantName | Доступна |
-| GPUUtilization | Процент использования GPU контейнерами на экземпляре. Значение может варьироваться от `0%` до `100%` и умножается на количество GPU. Например, при четырёх GPU `GPUUtilization` может варьироваться от `0%` до `400%'. | Percent | Average | EndpointName, VariantName | Доступна |
-| LoadedModelCount | Количество моделей, загруженных в контейнеры мульти-модельной конечной точки. Эта метрика выдаётся для каждого экземпляра. | None | Average | EndpointName, VariantName |  |
+| CPUUtilization | Процент единиц CPU, используемых контейнерами на экземпляре. Значение может варьироваться от `0%` до `100%` и умножается на количество CPU. Например, при четырёх CPU `CPUUtilization` может варьироваться от `0%` до `400%'. | Процент | Average | EndpointName, VariantName | Применимо |
+| DiskUtilization | Процент дискового пространства, используемого контейнерами на экземпляре. Это значение может варьироваться от `0%` до `100%`. Эта метрика не поддерживается для заданий пакетного преобразования. | Процент | Average | EndpointName, VariantName | Применимо |
+| GPUMemoryUtilization | Процент единиц GPU, используемых контейнерами на экземпляре. Значение может варьироваться от `0%` до `100%` и умножается на количество GPU. Например, при четырёх GPU `GPUUtilization` может варьироваться от `0%` до `400%'. | Процент | Average | EndpointName, VariantName | Применимо |
+| GPUUtilization | Процент единиц GPU, используемых контейнерами на экземпляре. Значение может варьироваться от `0%` до `100%` и умножается на количество GPU. Например, при четырёх GPU `GPUUtilization` может варьироваться от `0%` до `400%'. | Процент | Average | EndpointName, VariantName | Применимо |
+| LoadedModelCount | Количество моделей, загруженных в контейнеры мультимодельной конечной точки. Эта метрика выдаётся для каждого экземпляра. | None | Average | EndpointName, VariantName |  |
 | LoadedModelCount |  | None | Sum | EndpointName, VariantName |  |
-| MemoryUtilization | Процент памяти, используемой контейнерами на экземпляре. Значение может варьироваться от `0%` до `100%`. | Percent | Average | EndpointName, VariantName | Доступна |
+| MemoryUtilization | Процент памяти, используемой контейнерами на экземпляре. Это значение может варьироваться от `0%` до `100%`. | Процент | Average | EndpointName, VariantName | Применимо |
 
 ### Amazon SageMaker Endpoints
 
-`EndpointName` является основным измерением.
+Основное измерение: `EndpointName`.
 
-| Название | Описание | Единица | Статистика | Измерения | Рекомендуемая |
+| Имя | Описание | Единица измерения | Статистика | Измерения | Рекомендуется |
 | --- | --- | --- | --- | --- | --- |
-| Invocation4XXErrors | Количество запросов `InvokeEndpoint`, при которых модель вернула HTTP-код ответа `4xx`. Для каждого ответа `4xx` отправляется `1`, в противном случае — `0`. | None | Average | EndpointName, VariantName |  |
+| Invocation4XXErrors | Количество запросов `InvokeEndpoint`, при которых модель вернула код ответа HTTP `4xx`. Для каждого ответа `4xx` отправляется `1`, в противном случае отправляется `0`. | None | Average | EndpointName, VariantName |  |
 | Invocation4XXErrors |  | None | Sum | EndpointName, VariantName |  |
-| Invocation5XXErrors | Количество запросов `InvokeEndpoint`, при которых модель вернула HTTP-код ответа `5xx`. Для каждого ответа `5xx` отправляется `1`, в противном случае — `0`. | None | Average | EndpointName, VariantName |  |
-| Invocation5XXErrors |  | None | Sum | EndpointName, VariantName | Доступна |
-| Invocations | Количество запросов `InvokeEndpoint`, отправленных на конечную точку модели | None | Sum | EndpointName, VariantName | Доступна |
+| Invocation5XXErrors | Количество запросов `InvokeEndpoint`, при которых модель вернула код ответа HTTP `5xx`. Для каждого ответа `5xx` отправляется `1`, в противном случае отправляется `0`. | None | Average | EndpointName, VariantName |  |
+| Invocation5XXErrors |  | None | Sum | EndpointName, VariantName | Применимо |
+| Invocations | Количество запросов `InvokeEndpoint`, отправленных в конечную точку модели | None | Sum | EndpointName, VariantName | Применимо |
 | Invocations |  | None | Count | EndpointName, VariantName |  |
-| InvocationsPerInstance | Количество вызовов, отправленных модели, нормализованное по `InstanceCount` в каждом `ProductionVariant`. Значение `1/numberOfInstances` отправляется при каждом запросе, где `numberOfInstances` — количество активных экземпляров для `ProductionVariant` за конечной точкой на момент запроса. | None | Sum | EndpointName, VariantName |  |
-| ModelCacheHit | Количество запросов `InvokeEndpoint`, отправленных на мульти-модельную конечную точку, для которых модель уже была загружена | None | Sum | EndpointName, VariantName |  |
+| InvocationsPerInstance | Количество вызовов, отправленных в модель, нормализованное по `InstanceCount` в каждом `ProductionVariant`. В качестве значения для каждого запроса отправляется `1/numberOfInstances`, где `numberOfInstances` означает количество активных экземпляров для `ProductionVariant` за конечной точкой на момент запроса. | None | Sum | EndpointName, VariantName |  |
+| ModelCacheHit | Количество запросов `InvokeEndpoint`, отправленных в мультимодельную конечную точку, для которых модель уже была загружена | None | Sum | EndpointName, VariantName |  |
 | ModelCacheHit |  | None | Average | EndpointName, VariantName |  |
 | ModelCacheHit |  | None | Count | EndpointName, VariantName |  |
-| ModelLatency | Время отклика модели с точки зрения SageMaker. Этот интервал включает время локальной коммуникации для отправки запроса и получения ответа от контейнера модели, а также время выполнения инференса в контейнере. | Microseconds | Multi | EndpointName, VariantName | Доступна |
-| ModelLatency |  | Microseconds | Sum | EndpointName, VariantName |  |
-| ModelLatency |  | Microseconds | Count | EndpointName, VariantName |  |
-| ModelLoadingTime | Время загрузки модели через API-вызов `LoadModel` контейнера. | Microseconds | Multi | EndpointName, VariantName |  |
-| ModelLoadingTime |  | Microseconds | Sum | EndpointName, VariantName |  |
-| ModelLoadingTime |  | Microseconds | Count | EndpointName, VariantName |  |
-| ModelLoadingWaitTime | Время ожидания запросом вызова загрузки или скачивания целевой модели (или того и другого) для выполнения инференса | Microseconds | Multi | EndpointName, VariantName |  |
-| ModelLoadingWaitTime |  | Microseconds | Sum | EndpointName, VariantName |  |
-| ModelLoadingWaitTime |  | Microseconds | Count | EndpointName, VariantName |  |
-| ModelDownloadingTime | Время скачивания модели из Amazon Simple Storage Service (Amazon S3) | Microseconds | Multi | EndpointName, VariantName |  |
-| ModelDownloadingTime |  | Microseconds | Sum | EndpointName, VariantName |  |
-| ModelDownloadingTime |  | Microseconds | Count | EndpointName, VariantName |  |
-| ModelUnloadingTime | Время выгрузки модели через API-вызов `UnloadModel` контейнера | Microseconds | Multi | EndpointName, VariantName |  |
-| ModelUnloadingTime |  | Microseconds | Sum | EndpointName, VariantName |  |
-| ModelUnloadingTime |  | Microseconds | Count | EndpointName, VariantName |  |
-| OverheadLatency | Дополнительное время, добавленное к времени ответа на клиентский запрос накладными расходами SageMaker. Этот интервал измеряется от момента получения запроса SageMaker до возврата ответа клиенту, за вычетом `ModelLatency`. | Microseconds | Multi | EndpointName, VariantName | Доступна |
-| OverheadLatency |  | Microseconds | Sum | EndpointName, VariantName |  |
-| OverheadLatency |  | Microseconds | Count | EndpointName, VariantName |  |
+| ModelLatency | Интервал времени, затраченный моделью на ответ, с точки зрения SageMaker. Этот интервал включает время локального обмена данными, затраченное на отправку запроса и получение ответа из контейнера модели, а также время, затраченное на завершение вывода в контейнере. | Микросекунда | Multi | EndpointName, VariantName | Применимо |
+| ModelLatency |  | Микросекунда | Sum | EndpointName, VariantName |  |
+| ModelLatency |  | Микросекунда | Count | EndpointName, VariantName |  |
+| ModelLoadingTime | Интервал времени, затраченный на загрузку модели через вызов API `LoadModel` контейнера. | Микросекунда | Multi | EndpointName, VariantName |  |
+| ModelLoadingTime |  | Микросекунда | Sum | EndpointName, VariantName |  |
+| ModelLoadingTime |  | Микросекунда | Count | EndpointName, VariantName |  |
+| ModelLoadingWaitTime | Интервал времени, в течение которого запрос на вызов ожидал скачивания, загрузки или того и другого для целевой модели, чтобы выполнить вывод | Микросекунда | Multi | EndpointName, VariantName |  |
+| ModelLoadingWaitTime |  | Микросекунда | Sum | EndpointName, VariantName |  |
+| ModelLoadingWaitTime |  | Микросекунда | Count | EndpointName, VariantName |  |
+| ModelDownloadingTime | Интервал времени, затраченный на скачивание модели из Amazon Simple Storage Service (Amazon S3) | Микросекунда | Multi | EndpointName, VariantName |  |
+| ModelDownloadingTime |  | Микросекунда | Sum | EndpointName, VariantName |  |
+| ModelDownloadingTime |  | Микросекунда | Count | EndpointName, VariantName |  |
+| ModelUnloadingTime | Интервал времени, затраченный на выгрузку модели через вызов API `UnloadModel` контейнера | Микросекунда | Multi | EndpointName, VariantName |  |
+| ModelUnloadingTime |  | Микросекунда | Sum | EndpointName, VariantName |  |
+| ModelUnloadingTime |  | Микросекунда | Count | EndpointName, VariantName |  |
+| OverheadLatency | Интервал времени, добавленный к времени ответа на запрос клиента из-за накладных расходов SageMaker. Этот интервал измеряется с момента получения запроса SageMaker до возврата ответа клиенту, за вычетом `ModelLatency`. | Микросекунда | Multi | EndpointName, VariantName | Применимо |
+| OverheadLatency |  | Микросекунда | Sum | EndpointName, VariantName |  |
+| OverheadLatency |  | Микросекунда | Count | EndpointName, VariantName |  |
 
 ### Amazon SageMaker Ground Truth
 
-| Название | Описание | Измерения | Статистика | Единица | Рекомендуемая |
+| Имя | Описание | Измерения | Статистика | Единица измерения | Рекомендуется |
 | --- | --- | --- | --- | --- | --- |
-| ActiveWorkers | Количество работников частной рабочей группы, выполняющих задание по разметке | Region, LabelingJobName | Maximum | None |  |
-| DatasetObjectsAutoAnnotated | Количество объектов набора данных, автоматически аннотированных в задании по разметке. Эта метрика выдаётся только при включённой автоматической разметке. | Region, LabelingJobName | Maximum | None | Доступна |
-| DatasetObjectsHumanAnnotated | Количество объектов набора данных, аннотированных человеком в задании по разметке | Region, LabelingJobName | Maximum | None | Доступна |
-| DatasetObjectsLabelingFailed | Количество объектов набора данных, для которых разметка не удалась в задании по разметке | Region, LabelingJobName | Maximum | None | Доступна |
-| JobsFailed | Количество неудачных заданий по разметке | Region | Count | None |  |
-| JobsFailed |  | Region | Sum | None | Доступна |
-| JobsStopped | Количество остановленных заданий по разметке | Region | Count | None |  |
+| ActiveWorkers | Количество работников в частной рабочей группе, выполняющих задание разметки | Region, LabelingJobName | Maximum | None |  |
+| DatasetObjectsAutoAnnotated | Количество объектов набора данных, автоматически аннотированных в задании разметки. Эта метрика выдаётся только при включённой автоматической разметке. | Region, LabelingJobName | Maximum | None | Применимо |
+| DatasetObjectsHumanAnnotated | Количество объектов набора данных, аннотированных человеком в задании разметки | Region, LabelingJobName | Maximum | None | Применимо |
+| DatasetObjectsLabelingFailed | Количество объектов набора данных, для которых разметка завершилась неудачно в задании разметки | Region, LabelingJobName | Maximum | None | Применимо |
+| JobsFailed | Количество заданий разметки, завершившихся неудачно | Region | Count | None |  |
+| JobsFailed |  | Region | Sum | None | Применимо |
+| JobsStopped | Количество остановленных заданий разметки | Region | Count | None |  |
 | JobsStopped |  | Region | Sum | None |  |
-| JobsSucceeded | Количество успешных заданий по разметке | Region | Count | None |  |
-| JobsSucceeded |  | Region | Sum | None | Доступна |
-| TasksSubmitted | Количество задач, отправленных/завершённых частной рабочей группой | Region, LabelingJobName | Maximum | None |  |
-| TimeSpent | Время, затраченное на задачу, завершённую частной рабочей группой | Region, LabelingJobName | Maximum | Seconds |  |
-| TotalDatasetObjectsLabeled | Количество объектов набора данных, успешно размеченных в задании по разметке | Region, LabelingJobName | Maximum | None | Доступна |
+| JobsSucceeded | Количество успешно выполненных заданий разметки | Region | Count | None |  |
+| JobsSucceeded |  | Region | Sum | None | Применимо |
+| TasksSubmitted | Количество задач, отправленных/выполненных частной рабочей группой | Region, LabelingJobName | Maximum | None |  |
+| TimeSpent | Время, затраченное на задачу, выполненную частной рабочей группой | Region, LabelingJobName | Maximum | Секунда |  |
+| TotalDatasetObjectsLabeled | Количество объектов набора данных, успешно размеченных в задании разметки | Region, LabelingJobName | Maximum | None | Применимо |

@@ -1,14 +1,19 @@
 ---
-title: "Deploy OneAgent on Mesos/Marathon"
+title: Deploy OneAgent on Mesos/Marathon
 source: https://docs.dynatrace.com/managed/ingest-from/setup-on-container-platforms/deploy-dynatrace-oneagent-on-mesos-marathon
-updated: 2026-02-09
+scraped: 2026-05-12T11:04:10.043839
 ---
 
+# Deploy OneAgent on Mesos/Marathon
+
+# Deploy OneAgent on Mesos/Marathon
+
 * 2-min read
+* Published May 21, 2020
 
 Mesos is a generic cluster resource manager which can be used together with the Marathon framework to run containers in distributed environments.
 
-To monitor applications running in [Mesos clusters](https://www.dynatrace.com/technologies/mesos-monitoring/), we recommend that you deploy OneAgent on all Mesos agent nodes by means of a Marathon application deployment. Following this, install OneAgent on the Mesos master nodes, as explained on this page.
+To monitor applications running in [Mesos clustersï»¿](https://www.dynatrace.com/technologies/mesos-monitoring/), we recommend that you deploy OneAgent on all Mesos agent nodes by means of a Marathon application deployment. Following this, install OneAgent on the Mesos master nodes, as explained on this page.
 
 ## Locate your OneAgent installer URL
 
@@ -29,8 +34,10 @@ This is the URL:
 
 ![OneAgent URL](https://dt-cdn.net/images/oneagent-url-570-2bbd3eb216.png)
 
+OneAgent URL
+
 * Replace the value of `arch` parameter with `<arch>`. Ignore the `flavor=default` parameter.
-* For the `API-Token` value, you need a PaaS token.
+* For the `API-Token` value, you need a [PaaS token](/managed/manage/identity-access-management/access-tokens-and-oauth-clients/access-tokens#paas-token "Learn the concept of an access token and its scopes.").
 
 Your URL should look like this:
 `https://host.domain.com/api/v1/deployment/installer/agent/unix/default/latest?arch=<arch>`
@@ -40,6 +47,8 @@ This is your `ONEAGENT_INSTALLER_SCRIPT_URL`.
 This your URL and API token.
 
 ![OneAgent installation page with URL to be modified](https://dt-cdn.net/images/oneagent-linux-install-url-734-22e9ac9a69.png)
+
+OneAgent installation page with URL to be modified
 
 Append the API token to the URL using the `API-Token` parameter. Your URL should look like this:
 
@@ -55,9 +64,9 @@ This is your `ONEAGENT_INSTALLER_SCRIPT_URL`.
 
    If you don't use DC/OS
 
-   If you're using [DC/OS](https://www.dynatrace.com/technologies/dcos-monitoring/) to manage your Mesos cluster, you can take advantage of the Dynatrace package in the DC/OS universe. The universe package will automatically deploy Dynatrace to all your Mesos agent nodes.
+   If you're using [DC/OSï»¿](https://www.dynatrace.com/technologies/dcos-monitoring/) to manage your Mesos cluster, you can take advantage of the Dynatrace package in the DC/OS universe. The universe package will automatically deploy Dynatrace to all your Mesos agent nodes.
 
-   If you're not using [DC/OS](https://www.dynatrace.com/technologies/dcos-monitoring), you can run OneAgent as a Marathon application by following this example.
+   If you're not using [DC/OSï»¿](https://www.dynatrace.com/technologies/dcos-monitoring), you can run OneAgent as a Marathon application by following this example.
 
    * Use the `cat` command to create the `dynatrace-oneagent.json` file. Before you run it, edit the JSON part from the example below and replace the two placeholders with your Mesos cluster specific data:
 
@@ -68,97 +77,129 @@ This is your `ONEAGENT_INSTALLER_SCRIPT_URL`.
    cat <<- EOF > dynatrace-oneagent.json
 
 
+
    {
+
 
 
    "id": "dynatrace-oneagent",
 
 
+
    "cpus": 0.1,
+
 
 
    "mem": 256,
 
 
+
    "instances": REPLACE_WITH_NUMBER_OF_NODES,
+
 
 
    "constraints": [["hostname", "UNIQUE"], ["hostname", "GROUP_BY"]],
 
 
+
    "container": {
+
 
 
    "type": "DOCKER",
 
 
+
    "volumes": [
+
 
 
    {
 
 
+
    "containerPath": "/mnt/root",
+
 
 
    "hostPath": "/",
 
 
+
    "mode": "RW"
 
 
+
    }
+
 
 
    ],
 
 
+
    "docker": {
+
 
 
    "image": "dynatrace/oneagent",
 
 
+
    "forcePullImage": true,
+
 
 
    "network": "HOST",
 
 
+
    "privileged": true,
+
 
 
    "parameters": [
 
 
+
    { "key": "pid", "value": "host" },
+
 
 
    { "key": "ipc", "value": "host" },
 
 
+
    { "key": "env", "value": "ONEAGENT_INSTALLER_SCRIPT_URL=REPLACE_WITH_YOUR_URL" },
+
 
 
    { "key": "env", "value": "ONEAGENT_INSTALLER_SKIP_CERT_CHECK=false "}
 
 
+
    ]
 
 
+
    }
+
 
 
    },
 
 
+
    "args": [
+
 
 
    ]
 
 
+
    }
+
 
 
    EOF
@@ -171,8 +212,8 @@ This is your `ONEAGENT_INSTALLER_SCRIPT_URL`.
    ```
 2. Deploy OneAgent on Mesos master nodes.
 
-   Marathon doesn't allow you to deploy applications to master nodes (except for nodes that are tagged as both master and agent). This is why you must manually install OneAgent on all Mesos master nodes that aren't additionally configured as Mesos agents. For this, use the default Linux installer.
+   Marathon doesn't allow you to deploy applications to master nodes (except for nodes that are tagged as both master and agent). This is why you must manually install OneAgent on all Mesos master nodes that aren't additionally configured as Mesos agents. For this, use the default [Linux installer](/managed/ingest-from/dynatrace-oneagent "Understand the important concepts related to OneAgent and find out how to install and operate OneAgent on different platforms.").
 
 ## Related topics
 
-* OneAgent platform and capability support matrix
+* [OneAgent platform and capability support matrix](/managed/ingest-from/technology-support/oneagent-platform-and-capability-support-matrix "Learn which capabilities are supported by OneAgent on different operating systems and platforms.")

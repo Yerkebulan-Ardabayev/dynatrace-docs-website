@@ -1,21 +1,41 @@
 ---
-title: "Доставка ПО"
+title: Software Delivery
 source: https://docs.dynatrace.com/managed/deliver
-updated: 2026-03-07
+scraped: 2026-05-12T11:03:32.603382
 ---
 
-# Доставка программного обеспечения
+# Software Delivery
 
-Инструменты для DevOps-инженеров, SRE и команд разработки для более быстрой, качественной и безопасной поставки ПО.
+# Software Delivery
 
-## Основные возможности
+* Overview
+* 2-min read
+* Published Apr 27, 2021
 
-- **Мониторинг релизов** — оценка производительности отдельных версий релизов
-- **Интеграция нагрузочного тестирования** — остановка сломанных сборок на ранних этапах
-- **Владение сервисами** — привязка команд к мониторируемым объектам для совместной работы
-- **Конфигурация как код** — управление конфигурацией через Monaco или Terraform
-- **Backstage** — интеграция Dynatrace в Backstage
+Empower DevOps platform engineers, SREs, and development teams to deliver higher quality software, faster, and more securely.
+
+[### Release monitoring
+
+Release monitoring enables an easy evaluation of the performance of individual release versions.](/managed/deliver/release-monitoring "Detect versions of monitored applications and analyze the software product lifecycle of your releases.")[### Load testing tools integrations
+
+By integrating Dynatrace into your existing load testing process, you can stop broken builds in your delivery pipeline earlier.](/managed/deliver/test-automation "Learn how you can integrate Dynatrace into your load testing process.")[![Ownership](https://dt-cdn.net/images/ownership-w-background-512-99cc966544.webp "Ownership")
+
+### Ownership
+
+Map team ownership to monitored entities for better collaboration, task assignment, incident and vulnerability response, and service-level management.](/managed/deliver/ownership "Map team ownership to monitored entities for better collaboration, task assignment, incident and vulnerability response, and service-level management.")[### Configuration as Code
+
+Learn how to use Dynatrace Configuration as Code.](/managed/deliver/configuration-as-code "Use Dynatrace configuration as code via Monaco or Terraform.")[### Backstage
+
+Integrate Dynatrace into Backstage to level up developer experience.](/managed/deliver/backstage-integration "Learn how to integrate Dynatrace into Backstage")
+
+[![Hub](https://dt-cdn.net/images/hub-512-82db3c583e.png "Hub")
+
+### Explore in Dynatrace Hub
+
+Empower DevOps platform engineers, SREs, and development teams to deliver software faster, more securely, and of a higher quality.](https://www.dynatrace.com/hub/detail/automations/?utm_source=doc&utm_medium=link&utm_campaign=cross)
 
 ## Dynatrace Classic
 
-- **SLO Classic** — цели уровня обслуживания для ускорения SRE-практик
+[### Service-level objectives classic (SLOs)
+
+Service-level objectives classic (SLOs) enable DevOps teams to accelerate and scale their site reliability engineering (SRE) efforts.](/managed/deliver/service-level-objectives-classic "Monitor and alert on service-level objectives with Dynatrace in Service-Level Objectives Classic.")

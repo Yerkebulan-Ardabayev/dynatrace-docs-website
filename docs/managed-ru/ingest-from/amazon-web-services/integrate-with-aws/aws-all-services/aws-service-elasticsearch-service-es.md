@@ -1,317 +1,420 @@
 ---
 title: Мониторинг Amazon ES (Elasticsearch Service)
-source: https://www.dynatrace.com/docs/ingest-from/amazon-web-services/integrate-with-aws/aws-all-services/aws-service-elasticsearch-service-es
-scraped: 2026-03-05T21:33:11.275619
+source: https://docs.dynatrace.com/managed/ingest-from/amazon-web-services/integrate-with-aws/aws-all-services/aws-service-elasticsearch-service-es
+scraped: 2026-05-12T11:30:26.041486
 ---
 
-Dynatrace собирает метрики для множества предварительно выбранных пространств имён, включая Amazon Elasticsearch Service (ES). Вы можете просматривать метрики для каждого экземпляра сервиса, разделять метрики по нескольким измерениям и создавать пользовательские графики, которые можно закрепить на панелях мониторинга.
+# Мониторинг Amazon ES (Elasticsearch Service)
+
+# Мониторинг Amazon ES (Elasticsearch Service)
+
+* Практическое руководство
+* Чтение: 6 мин
+* Опубликовано 15 октября 2020 г.
+
+Dynatrace принимает метрики для множества предопределённых пространств имён, включая Amazon Elasticsearch Service (ES). Можно просматривать метрики по каждому экземпляру сервиса, разбивать их на несколько измерений и создавать собственные графики, которые можно закреплять на дашбордах.
 
 ## Предварительные требования
 
-Для включения мониторинга данного сервиса вам необходимо
+Чтобы включить мониторинг этого сервиса, необходимо
 
 * ActiveGate версии 1.181+, а именно:
 
-  + Для развертываний Dynatrace SaaS вам потребуется Environment ActiveGate или Multi-environment ActiveGate.
-  + Для развертываний Dynatrace Managed можно использовать любой тип ActiveGate.
+  + Для развёртываний Dynatrace SaaS требуется Environment ActiveGate или Multi-environment ActiveGate.
+  + Для развёртываний Dynatrace Managed можно использовать ActiveGate любого типа.
 
-    Для доступа на основе ролей (как в развертывании SaaS так и [Managed](https://docs.dynatrace.com/managed/shortlink/aws-managed-deployment) развертывании) вам потребуется Environment ActiveGate, установленный на хосте Amazon EC2.
+    Для доступа на основе ролей (в развёртывании [SaaS](/managed/ingest-from/amazon-web-services/integrate-with-aws/cloudwatch-metrics#role-based-access "Приём метрик Amazon CloudWatch.") или [Managed](/managed/ingest-from/amazon-web-services/set-up-aws-monitoring-with-managed#role-based-access "Подключите аккаунт Amazon к Dynatrace Managed и начните мониторинг.")) требуется [Environment ActiveGate](/managed/ingest-from/dynatrace-activegate/installation "Узнайте, как настроить ActiveGate"), установленный на хосте Amazon EC2.
 * Dynatrace версии 1.182+
-* Обновленная политика мониторинга AWS для включения дополнительных сервисов AWS.  
-  Для [обновления политики AWS IAM](https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_manage-edit.html#edit-managed-policy-console) используйте приведённый ниже JSON, содержащий политику мониторинга (разрешения) для всех поддерживаемых сервисов.
+* Обновлённая [политика мониторинга AWS](/managed/ingest-from/amazon-web-services/integrate-with-aws/cloudwatch-metrics#aws-policy-and-authentication "Приём метрик Amazon CloudWatch."), включающая дополнительные сервисы AWS.
+  Чтобы [обновить политику AWS IAM](https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_manage-edit.html#edit-managed-policy-console), используйте приведённый ниже JSON, содержащий политику мониторинга (разрешения) для всех поддерживаемых сервисов.
 
-Предопределённая политика JSON для всех поддерживаемых сервисов
+Предопределённая JSON-политика для всех поддерживаемых сервисов
 
 ```
 {
+
 
 
 "Version": "2012-10-17",
 
 
+
 "Statement": [
+
 
 
 {
 
 
+
 "Sid": "VisualEditor0",
+
 
 
 "Effect": "Allow",
 
 
+
 "Action": [
+
 
 
 "acm-pca:ListCertificateAuthorities",
 
 
+
 "apigateway:GET",
+
 
 
 "apprunner:ListServices",
 
 
+
 "appstream:DescribeFleets",
+
 
 
 "appsync:ListGraphqlApis",
 
 
+
 "athena:ListWorkGroups",
+
 
 
 "autoscaling:DescribeAutoScalingGroups",
 
 
+
 "cloudformation:ListStackResources",
+
 
 
 "cloudfront:ListDistributions",
 
 
+
 "cloudhsm:DescribeClusters",
+
 
 
 "cloudsearch:DescribeDomains",
 
 
+
 "cloudwatch:GetMetricData",
+
 
 
 "cloudwatch:GetMetricStatistics",
 
 
+
 "cloudwatch:ListMetrics",
+
 
 
 "codebuild:ListProjects",
 
 
+
 "datasync:ListTasks",
+
 
 
 "dax:DescribeClusters",
 
 
+
 "directconnect:DescribeConnections",
+
 
 
 "dms:DescribeReplicationInstances",
 
 
+
 "dynamodb:ListTables",
+
 
 
 "dynamodb:ListTagsOfResource",
 
 
+
 "ec2:DescribeAvailabilityZones",
+
 
 
 "ec2:DescribeInstances",
 
 
+
 "ec2:DescribeNatGateways",
+
 
 
 "ec2:DescribeSpotFleetRequests",
 
 
+
 "ec2:DescribeTransitGateways",
+
 
 
 "ec2:DescribeVolumes",
 
 
+
 "ec2:DescribeVpnConnections",
+
 
 
 "ecs:ListClusters",
 
 
+
 "eks:ListClusters",
+
 
 
 "elasticache:DescribeCacheClusters",
 
 
+
 "elasticbeanstalk:DescribeEnvironmentResources",
+
 
 
 "elasticbeanstalk:DescribeEnvironments",
 
 
+
 "elasticfilesystem:DescribeFileSystems",
+
 
 
 "elasticloadbalancing:DescribeInstanceHealth",
 
 
+
 "elasticloadbalancing:DescribeListeners",
+
 
 
 "elasticloadbalancing:DescribeLoadBalancers",
 
 
+
 "elasticloadbalancing:DescribeRules",
+
 
 
 "elasticloadbalancing:DescribeTags",
 
 
+
 "elasticloadbalancing:DescribeTargetHealth",
+
 
 
 "elasticmapreduce:ListClusters",
 
 
+
 "elastictranscoder:ListPipelines",
+
 
 
 "es:ListDomainNames",
 
 
+
 "events:ListEventBuses",
+
 
 
 "firehose:ListDeliveryStreams",
 
 
+
 "fsx:DescribeFileSystems",
+
 
 
 "gamelift:ListFleets",
 
 
+
 "glue:GetJobs",
+
 
 
 "inspector:ListAssessmentTemplates",
 
 
+
 "kafka:ListClusters",
+
 
 
 "kinesis:ListStreams",
 
 
+
 "kinesisanalytics:ListApplications",
+
 
 
 "kinesisvideo:ListStreams",
 
 
+
 "lambda:ListFunctions",
+
 
 
 "lambda:ListTags",
 
 
+
 "lex:GetBots",
+
 
 
 "logs:DescribeLogGroups",
 
 
+
 "mediaconnect:ListFlows",
+
 
 
 "mediaconvert:DescribeEndpoints",
 
 
+
 "mediapackage-vod:ListPackagingConfigurations",
+
 
 
 "mediapackage:ListChannels",
 
 
+
 "mediatailor:ListPlaybackConfigurations",
+
 
 
 "opsworks:DescribeStacks",
 
 
+
 "qldb:ListLedgers",
+
 
 
 "rds:DescribeDBClusters",
 
 
+
 "rds:DescribeDBInstances",
+
 
 
 "rds:DescribeEvents",
 
 
+
 "rds:ListTagsForResource",
+
 
 
 "redshift:DescribeClusters",
 
 
+
 "robomaker:ListSimulationJobs",
+
 
 
 "route53:ListHostedZones",
 
 
+
 "route53resolver:ListResolverEndpoints",
+
 
 
 "s3:ListAllMyBuckets",
 
 
+
 "sagemaker:ListEndpoints",
+
 
 
 "sns:ListTopics",
 
 
+
 "sqs:ListQueues",
+
 
 
 "storagegateway:ListGateways",
 
 
+
 "sts:GetCallerIdentity",
+
 
 
 "swf:ListDomains",
 
 
+
 "tag:GetResources",
+
 
 
 "tag:GetTagKeys",
 
 
+
 "transfer:ListServers",
+
 
 
 "workmail:ListOrganizations",
 
 
+
 "workspaces:DescribeWorkspaces"
+
 
 
 ],
 
 
+
 "Resource": "*"
 
 
+
 }
+
 
 
 ]
 
 
+
 }
 ```
 
-Если вы не хотите добавлять разрешения для всех сервисов, а хотите выбрать разрешения только для определённых сервисов, обратитесь к таблице ниже. Таблица содержит набор разрешений, необходимых для всех облачных сервисов AWS, а также для каждого поддерживаемого сервиса список дополнительных разрешений, специфичных для этого сервиса.
+Если вы не хотите добавлять разрешения для всех сервисов и предпочитаете выбрать разрешения только для определённых сервисов, обратитесь к таблице ниже. В таблице приведён набор разрешений, необходимых для [всех облачных сервисов AWS](/managed/ingest-from/amazon-web-services/integrate-with-aws/aws-all-services "Мониторинг всех облачных сервисов AWS в Dynatrace и просмотр доступных метрик."), и для каждого поддерживаемого сервиса приведён список необязательных разрешений, специфичных для этого сервиса.
 
 Разрешения, необходимые для интеграции мониторинга AWS:
 
@@ -325,9 +428,9 @@ Dynatrace собирает метрики для множества предва
 
 ### Полный список разрешений для облачных сервисов
 
-| Название | Разрешения |
+| Имя | Разрешения |
 | --- | --- |
-| Все отслеживаемые сервисы Amazon (обязательно) | `cloudwatch:GetMetricData`, `cloudwatch:GetMetricStatistics`, `cloudwatch:ListMetrics`, `sts:GetCallerIdentity`, `tag:GetResources`, `tag:GetTagKeys`, `ec2:DescribeAvailabilityZones` |
+| All monitored Amazon services Required | `cloudwatch:GetMetricData`, `cloudwatch:GetMetricStatistics`, `cloudwatch:ListMetrics`, `sts:GetCallerIdentity`, `tag:GetResources`, `tag:GetTagKeys`, `ec2:DescribeAvailabilityZones` |
 | AWS Certificate Manager Private Certificate Authority | `acm-pca:ListCertificateAuthorities` |
 | Amazon MQ |  |
 | Amazon API Gateway | `apigateway:GET` |
@@ -433,66 +536,85 @@ Dynatrace собирает метрики для множества предва
 | Amazon WorkMail | `workmail:ListOrganizations` |
 | Amazon WorkSpaces | `workspaces:DescribeWorkspaces` |
 
-Пример политики JSON для одного отдельного сервиса.
+Пример JSON-политики для одного сервиса.
 
-Политика JSON для Amazon API Gateway
+JSON-политика для Amazon API Gateway
 
 ```
 {
 
 
+
 "Version": "2012-10-17",
+
 
 
 "Statement": [
 
 
+
 {
+
 
 
 "Sid": "VisualEditor0",
 
 
+
 "Effect": "Allow",
+
 
 
 "Action": [
 
 
+
 "apigateway:GET",
+
 
 
 "cloudwatch:GetMetricData",
 
 
+
 "cloudwatch:GetMetricStatistics",
+
 
 
 "cloudwatch:ListMetrics",
 
 
+
 "sts:GetCallerIdentity",
+
 
 
 "tag:GetResources",
 
 
+
 "tag:GetTagKeys",
+
 
 
 "ec2:DescribeAvailabilityZones"
 
 
+
 ],
+
 
 
 "Resource": "*"
 
 
+
 }
 
 
+
 ]
+
 
 
 }
@@ -501,9 +623,9 @@ Dynatrace собирает метрики для множества предва
 В этом примере из полного списка разрешений необходимо выбрать
 
 * `"apigateway:GET"` для **Amazon API Gateway**
-* `"cloudwatch:GetMetricData"`, `"cloudwatch:GetMetricStatistics"`, `"cloudwatch:ListMetrics"`, `"sts:GetCallerIdentity"`, `"tag:GetResources"`, `"tag:GetTagKeys"` и `"ec2:DescribeAvailabilityZones"` для **всех облачных сервисов AWS**.
+* `"cloudwatch:GetMetricData"`, `"cloudwatch:GetMetricStatistics"`, `"cloudwatch:ListMetrics"`, `"sts:GetCallerIdentity"`, `"tag:GetResources"`, `"tag:GetTagKeys"` и `"ec2:DescribeAvailabilityZones"` для **All AWS cloud services**.
 
-### Конечные точки AWS, которые должны быть доступны из ActiveGate с соответствующими сервисами AWS
+### Конечные точки AWS, которые должны быть доступны с ActiveGate, и соответствующие им сервисы AWS
 
 | Конечная точка | Сервис |
 | --- | --- |
@@ -564,188 +686,188 @@ Dynatrace собирает метрики для множества предва
 
 ## Включение мониторинга
 
-Чтобы узнать, как включить мониторинг сервиса, см. Включение мониторинга сервиса.
+Чтобы узнать, как включить мониторинг сервиса, см. [Включение мониторинга сервиса](/managed/ingest-from/amazon-web-services/integrate-with-aws/aws-metrics-ingest/aws-enable-service-monitoring "Включение мониторинга AWS в Dynatrace.").
 
 ## Просмотр метрик сервиса
 
-Вы можете просматривать метрики сервиса в вашей среде Dynatrace либо на **странице обзора пользовательского устройства**, либо на странице **Панели мониторинга**.
+Вы можете просматривать метрики сервиса в вашей среде Dynatrace на **странице обзора пользовательского устройства** или на странице **Dashboards**.
 
 ### Просмотр метрик на странице обзора пользовательского устройства
 
-Для доступа к странице обзора пользовательского устройства
+Чтобы перейти на страницу обзора пользовательского устройства:
 
-1. Перейдите в ![Technologies](https://dt-cdn.net/images/technologies-512-977161d83c.png "Technologies") **Technologies & Processes Classic**.
+1. Перейдите в **Technologies & Processes**.
 2. Отфильтруйте по имени сервиса и выберите соответствующую группу пользовательских устройств.
 3. После выбора группы пользовательских устройств вы окажетесь на **странице обзора группы пользовательских устройств**.
 4. На **странице обзора группы пользовательских устройств** перечислены все экземпляры (пользовательские устройства), принадлежащие группе. Выберите экземпляр для просмотра **страницы обзора пользовательского устройства**.
 
-### Просмотр метрик на панели мониторинга
+### Просмотр метрик на дашборде
 
-Вы также можете просматривать метрики в веб-интерфейсе Dynatrace на панелях мониторинга. Для данного сервиса предустановленная панель мониторинга недоступна, но вы можете создать собственную панель мониторинга.
+Вы также можете просматривать метрики в веб-интерфейсе Dynatrace на дашбордах. Для этого сервиса нет предустановленного дашборда, но вы можете [создать собственный дашборд](/managed/analyze-explore-automate/dashboards-classic/dashboards/create-dashboards "Узнайте, как создавать и редактировать дашборды Dynatrace.").
 
-Для проверки доступности предустановленных панелей мониторинга для каждого сервиса AWS см. список ниже.
+Чтобы проверить доступность предустановленных дашбордов для каждого сервиса AWS, см. список ниже.
 
-### Список доступности предустановленных панелей мониторинга
+### Список доступности предустановленных дашбордов
 
-| Сервис AWS | Предустановленная панель |
+| Сервис AWS | Предустановленный дашборд |
 | --- | --- |
-| Amazon EC2 Auto Scaling (built-in) | Недоступна |
-| AWS Lambda (built-in) | Недоступна |
-| Amazon Application and Network Load Balancer (built-in) | Недоступна |
-| Amazon DynamoDB (built-in) | Недоступна |
-| Amazon EBS (built-in) | Недоступна |
-| Amazon EC2 (built-in) | Недоступна |
-| Amazon Elastic Load Balancer (ELB) (built-in) | Недоступна |
-| Amazon RDS (built-in) | Недоступна |
-| Amazon S3 (built-in) | Недоступна |
-| AWS Certificate Manager Private Certificate Authority | Недоступна |
-| All monitored Amazon services | Недоступна |
-| Amazon API Gateway | Недоступна |
-| AWS App Runner | Недоступна |
-| Amazon AppStream | Доступна |
-| AWS AppSync | Доступна |
-| Amazon Athena | Доступна |
-| Amazon Aurora | Недоступна |
-| Amazon EC2 Auto Scaling | Доступна |
-| AWS Billing | Доступна |
-| Amazon Keyspaces | Доступна |
-| AWS Chatbot | Доступна |
-| Amazon CloudFront | Недоступна |
-| AWS CloudHSM | Доступна |
-| Amazon CloudSearch | Доступна |
-| AWS CodeBuild | Доступна |
-| Amazon Cognito | Недоступна |
-| Amazon Connect | Доступна |
-| AWS DataSync | Доступна |
-| Amazon DynamoDB Accelerator (DAX) | Доступна |
-| AWS Database Migration Service (AWS DMS) | Доступна |
-| Amazon DocumentDB | Доступна |
-| AWS Direct Connect | Доступна |
-| Amazon DynamoDB | Недоступна |
-| Amazon EBS | Недоступна |
-| Amazon EC2 Spot Fleet | Недоступна |
-| Amazon EC2 API | Доступна |
-| Amazon Elastic Container Service (ECS) | Недоступна |
-| Amazon ECS Container Insights | Доступна |
-| Amazon Elastic File System (EFS) | Недоступна |
-| Amazon Elastic Kubernetes Service (EKS) | Доступна |
-| Amazon ElastiCache (EC) | Недоступна |
-| AWS Elastic Beanstalk | Доступна |
-| Amazon Elastic Inference | Доступна |
-| Amazon Elastic Transcoder | Доступна |
-| Amazon Elastic Map Reduce (EMR) | Недоступна |
-| Amazon Elasticsearch Service (ES) | Недоступна |
-| Amazon EventBridge | Доступна |
-| Amazon FSx | Доступна |
-| Amazon GameLift | Доступна |
-| AWS Glue | Недоступна |
-| Amazon Inspector | Доступна |
-| AWS Internet of Things (IoT) | Недоступна |
-| AWS IoT Things Graph | Доступна |
-| AWS IoT Analytics | Доступна |
-| Amazon Managed Streaming for Kafka | Доступна |
-| Amazon Kinesis Data Analytics | Недоступна |
-| Amazon Data Firehose | Недоступна |
-| Amazon Kinesis Data Streams | Недоступна |
-| Amazon Kinesis Video Streams | Недоступна |
-| AWS Lambda | Недоступна |
-| Amazon Lex | Доступна |
-| Amazon CloudWatch Logs | Доступна |
-| AWS Elemental MediaTailor | Доступна |
-| AWS Elemental MediaConnect | Доступна |
-| AWS Elemental MediaConvert | Доступна |
-| AWS Elemental MediaPackage Live | Доступна |
-| AWS Elemental MediaPackage Video on Demand | Доступна |
-| Amazon MQ | Доступна |
-| Amazon VPC NAT Gateways | Недоступна |
-| Amazon Neptune | Доступна |
-| AWS OpsWorks | Доступна |
-| Amazon Polly | Доступна |
-| Amazon QLDB | Доступна |
-| Amazon RDS | Недоступна |
-| Amazon Redshift | Недоступна |
-| Amazon Rekognition | Доступна |
-| AWS RoboMaker | Доступна |
-| Amazon Route 53 | Доступна |
-| Amazon Route 53 Resolver | Доступна |
-| Amazon S3 | Недоступна |
-| Amazon SageMaker Batch Transform Jobs | Недоступна |
-| Amazon SageMaker Endpoints | Недоступна |
-| Amazon SageMaker Endpoint Instances | Недоступна |
-| Amazon SageMaker Ground Truth | Недоступна |
-| Amazon SageMaker Processing Jobs | Недоступна |
-| Amazon SageMaker Training Jobs | Недоступна |
-| AWS Service Catalog | Доступна |
-| Amazon Simple Email Service (SES) | Недоступна |
-| Amazon Simple Notification Service (SNS) | Недоступна |
-| Amazon Simple Queue Service (SQS) | Недоступна |
-| AWS Systems Manager - Run Command | Доступна |
-| AWS Step Functions | Доступна |
-| AWS Storage Gateway | Доступна |
-| Amazon SWF | Доступна |
-| Amazon Textract | Доступна |
-| AWS Transfer Family | Доступна |
-| AWS Transit Gateway | Доступна |
-| Amazon Translate | Доступна |
-| AWS Trusted Advisor | Доступна |
-| AWS API Usage | Доступна |
-| AWS Site-to-Site VPN | Доступна |
-| AWS WAF Classic | Доступна |
-| AWS WAF | Доступна |
-| Amazon WorkMail | Доступна |
-| Amazon WorkSpaces | Доступна |
+| Amazon EC2 Auto Scaling (built-in) | Не применимо |
+| AWS Lambda (built-in) | Не применимо |
+| Amazon Application and Network Load Balancer (built-in) | Не применимо |
+| Amazon DynamoDB (built-in) | Не применимо |
+| Amazon EBS (built-in) | Не применимо |
+| Amazon EC2 (built-in) | Не применимо |
+| Amazon Elastic Load Balancer (ELB) (built-in) | Не применимо |
+| Amazon RDS (built-in) | Не применимо |
+| Amazon S3 (built-in) | Не применимо |
+| AWS Certificate Manager Private Certificate Authority | Не применимо |
+| All monitored Amazon services | Не применимо |
+| Amazon API Gateway | Не применимо |
+| AWS App Runner | Не применимо |
+| Amazon AppStream | Применимо |
+| AWS AppSync | Применимо |
+| Amazon Athena | Применимо |
+| Amazon Aurora | Не применимо |
+| Amazon EC2 Auto Scaling | Применимо |
+| AWS Billing | Применимо |
+| Amazon Keyspaces | Применимо |
+| AWS Chatbot | Применимо |
+| Amazon CloudFront | Не применимо |
+| AWS CloudHSM | Применимо |
+| Amazon CloudSearch | Применимо |
+| AWS CodeBuild | Применимо |
+| Amazon Cognito | Не применимо |
+| Amazon Connect | Применимо |
+| AWS DataSync | Применимо |
+| Amazon DynamoDB Accelerator (DAX) | Применимо |
+| AWS Database Migration Service (AWS DMS) | Применимо |
+| Amazon DocumentDB | Применимо |
+| AWS Direct Connect | Применимо |
+| Amazon DynamoDB | Не применимо |
+| Amazon EBS | Не применимо |
+| Amazon EC2 Spot Fleet | Не применимо |
+| Amazon EC2 API | Применимо |
+| Amazon Elastic Container Service (ECS) | Не применимо |
+| Amazon ECS Container Insights | Применимо |
+| Amazon Elastic File System (EFS) | Не применимо |
+| Amazon Elastic Kubernetes Service (EKS) | Применимо |
+| Amazon ElastiCache (EC) | Не применимо |
+| AWS Elastic Beanstalk | Применимо |
+| Amazon Elastic Inference | Применимо |
+| Amazon Elastic Transcoder | Применимо |
+| Amazon Elastic Map Reduce (EMR) | Не применимо |
+| Amazon Elasticsearch Service (ES) | Не применимо |
+| Amazon EventBridge | Применимо |
+| Amazon FSx | Применимо |
+| Amazon GameLift | Применимо |
+| AWS Glue | Не применимо |
+| Amazon Inspector | Применимо |
+| AWS Internet of Things (IoT) | Не применимо |
+| AWS IoT Things Graph | Применимо |
+| AWS IoT Analytics | Применимо |
+| Amazon Managed Streaming for Kafka | Применимо |
+| Amazon Kinesis Data Analytics | Не применимо |
+| Amazon Data Firehose | Не применимо |
+| Amazon Kinesis Data Streams | Не применимо |
+| Amazon Kinesis Video Streams | Не применимо |
+| AWS Lambda | Не применимо |
+| Amazon Lex | Применимо |
+| Amazon CloudWatch Logs | Применимо |
+| AWS Elemental MediaTailor | Применимо |
+| AWS Elemental MediaConnect | Применимо |
+| AWS Elemental MediaConvert | Применимо |
+| AWS Elemental MediaPackage Live | Применимо |
+| AWS Elemental MediaPackage Video on Demand | Применимо |
+| Amazon MQ | Применимо |
+| Amazon VPC NAT Gateways | Не применимо |
+| Amazon Neptune | Применимо |
+| AWS OpsWorks | Применимо |
+| Amazon Polly | Применимо |
+| Amazon QLDB | Применимо |
+| Amazon RDS | Не применимо |
+| Amazon Redshift | Не применимо |
+| Amazon Rekognition | Применимо |
+| AWS RoboMaker | Применимо |
+| Amazon Route 53 | Применимо |
+| Amazon Route 53 Resolver | Применимо |
+| Amazon S3 | Не применимо |
+| Amazon SageMaker Batch Transform Jobs | Не применимо |
+| Amazon SageMaker Endpoints | Не применимо |
+| Amazon SageMaker Endpoint Instances | Не применимо |
+| Amazon SageMaker Ground Truth | Не применимо |
+| Amazon SageMaker Processing Jobs | Не применимо |
+| Amazon SageMaker Training Jobs | Не применимо |
+| AWS Service Catalog | Применимо |
+| Amazon Simple Email Service (SES) | Не применимо |
+| Amazon Simple Notification Service (SNS) | Не применимо |
+| Amazon Simple Queue Service (SQS) | Не применимо |
+| AWS Systems Manager - Run Command | Применимо |
+| AWS Step Functions | Применимо |
+| AWS Storage Gateway | Применимо |
+| Amazon SWF | Применимо |
+| Amazon Textract | Применимо |
+| AWS Transfer Family | Применимо |
+| AWS Transit Gateway | Применимо |
+| Amazon Translate | Применимо |
+| AWS Trusted Advisor | Применимо |
+| AWS API Usage | Применимо |
+| AWS Site-to-Site VPN | Применимо |
+| AWS WAF Classic | Применимо |
+| AWS WAF | Применимо |
+| Amazon WorkMail | Применимо |
+| Amazon WorkSpaces | Применимо |
 
 ## Доступные метрики
 
-`DomainName` является основным измерением.
+Основное измерение: `DomainName`.
 
-| Название | Описание | Единица | Статистика | Измерения | Рекомендуемая |
+| Имя | Описание | Единица измерения | Статистика | Измерения | Рекомендуется |
 | --- | --- | --- | --- | --- | --- |
-| 2xx |  | Count | Sum | ClientId, DomainName |  |
-| 3xx |  | Count | Sum | ClientId, DomainName |  |
-| 4xx |  | Count | Sum | ClientId, DomainName |  |
-| 5xx |  | Count | Sum | ClientId, DomainName |  |
-| AutomatedSnapshotFailure | Количество неудачных автоматических снимков кластера. Значение `1` указывает, что автоматический снимок домена не был создан за последние 36 часов. | Count | Minimum | DomainName, ClientId |  |
-| AutomatedSnapshotFailure |  | Count | Maximum | DomainName, ClientId |  |
-| CPUCreditBalance | Оставшиеся кредиты ЦПУ, доступные для узлов данных в кластере. Один кредит ЦПУ обеспечивает производительность полного ядра ЦПУ в течение одной минуты. Эта метрика доступна только для типов экземпляров T2. | Count | Minimum | DomainName, ClientId |  |
-| CPUUtilization | Процент использования ЦПУ узлами данных в кластере. Maximum показывает узел с наибольшим использованием ЦПУ. Average представляет все узлы в кластере. Эта метрика также доступна для отдельных узлов. | Percent | Average | ClientId, DomainName, NodeId |  |
-| CPUUtilization |  | Percent | Average | DomainName, ClientId | Доступна |
-| CPUUtilization |  | Percent | Maximum | ClientId, DomainName, NodeId |  |
-| CPUUtilization |  | Percent | Maximum | DomainName, ClientId | Доступна |
-| ClusterIndexWritesBlocked | Указывает, принимает ли кластер входящие запросы на запись или блокирует их. Значение `0` означает, что кластер принимает запросы. Значение `1` означает, что кластер блокирует запросы. | Count | Maximum | DomainName, ClientId |  |
-| ClusterStatus.green | Значение `1` указывает, что все шарды индексов распределены по узлам кластера | Count | Minimum | DomainName, ClientId | Доступна |
-| ClusterStatus.green |  | Count | Maximum | DomainName, ClientId |  |
-| ClusterStatus.red | Значение `1` указывает, что основные и реплицированные шарды хотя бы одного индекса не распределены по узлам кластера | Count | Minimum | DomainName, ClientId |  |
-| ClusterStatus.red |  | Count | Maximum | DomainName, ClientId | Доступна |
-| ClusterStatus.yellow | Значение `1` указывает, что основные шарды всех индексов распределены по узлам кластера, но реплицированные шарды хотя бы одного индекса не распределены по узлам кластера | Count | Minimum | DomainName, ClientId |  |
-| ClusterStatus.yellow |  | Count | Maximum | DomainName, ClientId | Доступна |
-| ClusterUsedSpace | Общее использованное пространство кластера | Megabytes | Minimum | DomainName, ClientId |  |
-| ClusterUsedSpace |  | Megabytes | Maximum | DomainName, ClientId |  |
-| DeletedDocuments | Общее количество документов, помеченных для удаления, на всех узлах данных кластера. Эти документы больше не отображаются в результатах поиска, но Elasticsearch удаляет их с диска только при слиянии сегментов. Эта метрика увеличивается после запросов на удаление и уменьшается после слияния сегментов. | Count | Multi | DomainName, ClientId |  |
-| DiskQueueDepth | Количество ожидающих запросов ввода-вывода (I/O) для тома EBS | Count | Multi | DomainName, ClientId |  |
-| ElasticsearchRequests | Количество запросов, выполненных к кластеру Elasticsearch | Count | Sum | DomainName, ClientId | Доступна |
-| FreeStorageSpace | Свободное пространство для узлов данных в кластере | Megabytes | Multi | ClientId, DomainName, NodeId |  |
-| FreeStorageSpace |  | Megabytes | Multi | DomainName, ClientId | Доступна |
-| FreeStorageSpace |  | Megabytes | Sum | DomainName, ClientId |  |
-| FreeStorageSpace |  | Megabytes | Sum | ClientId, DomainName, NodeId |  |
-| InvalidHostHeaderRequests | Количество HTTP-запросов к кластеру Elasticsearch с недопустимым (или отсутствующим) заголовком хоста | Count | Sum | DomainName, ClientId |  |
-| JVMMemoryPressure | Максимальный процент использования кучи Java для всех узлов данных в кластере | Percent | Maximum | DomainName, ClientId |  |
-| KMSKeyError | Значение `1` указывает, что мастер-ключ клиента KMS, используемый для шифрования данных в состоянии покоя, был отключён | Count | Minimum | DomainName, ClientId |  |
-| KMSKeyError |  | Count | Maximum | DomainName, ClientId |  |
-| KMSKeyInaccessible | Значение `1` указывает, что мастер-ключ клиента KMS, используемый для шифрования данных в состоянии покоя, был удалён или его разрешения для Amazon ES были отозваны | Count | Minimum | DomainName, ClientId |  |
-| KMSKeyInaccessible |  | Count | Maximum | DomainName, ClientId |  |
-| KibanaHealthyNodes | Проверка работоспособности Kibana. Значение `1` указывает на нормальную работу. Значение `0` указывает, что Kibana недоступна. В большинстве случаев состояние Kibana соответствует состоянию кластера. | Count | Minimum | DomainName, ClientId |  |
-| MasterCPUCreditBalance | Оставшиеся кредиты ЦПУ, доступные для выделенных мастер-узлов кластера. Один кредит ЦПУ обеспечивает производительность полного ядра ЦПУ в течение одной минуты. | Count | Minimum | DomainName, ClientId |  |
-| MasterCPUUtilization | Максимальный процент использования ресурсов ЦПУ выделенными мастер-узлами | Percent | Average | DomainName, ClientId | Доступна |
-| MasterJVMMemoryPressure | Максимальный процент использования кучи Java для всех выделенных мастер-узлов кластера | Percent | Maximum | DomainName, ClientId |  |
-| MasterReachableFromNode | Проверка работоспособности для исключений MasterNotDiscovered. Значение `1` указывает на нормальную работу. Значение `0` указывает, что `/\_cluster/health/`` завершается с ошибкой. | Count | Minimum | DomainName, ClientId |  |
-| Nodes | Количество узлов в кластере Amazon ES, включая выделенные мастер-узлы и узлы UltraWarm | Count | Multi | DomainName, ClientId | Доступна |
-| ReadIOPS | Количество операций ввода-вывода (I/O) в секунду для операций чтения на томах EBS | Count/Second | Multi | DomainName, ClientId |  |
-| ReadLatency | Задержка операций чтения на томах EBS | Seconds | Multi | DomainName, ClientId |  |
-| ReadThroughput | Пропускная способность операций чтения на томах EBS | Bytes/Second | Multi | DomainName, ClientId |  |
-| RequestCount | Количество запросов, выполненных к кластеру Elasticsearch | Count | Sum | DomainName, ClientId |  |
-| SearchLatency |  | Milliseconds | Multi | ClientId, DomainName |  |
-| SearchableDocuments | Общее количество документов, доступных для поиска, на всех узлах данных кластера | Count | Multi | DomainName, ClientId |  |
-| WriteIOPS | Количество операций ввода-вывода (I/O) в секунду для операций записи на томах EBS | Count/Second | Multi | DomainName, ClientId |  |
-| WriteLatency | Задержка операций записи на томах EBS | Seconds | Multi | DomainName, ClientId |  |
-| WriteThroughput | Пропускная способность операций записи на томах EBS | Bytes/Second | Multi | DomainName, ClientId |  |
+| 2xx |  | Количество | Sum | ClientId, DomainName |  |
+| 3xx |  | Количество | Sum | ClientId, DomainName |  |
+| 4xx |  | Количество | Sum | ClientId, DomainName |  |
+| 5xx |  | Количество | Sum | ClientId, DomainName |  |
+| AutomatedSnapshotFailure | Количество неудавшихся автоматических моментальных снимков кластера. Значение `1` указывает на то, что за последние 36 часов не было создано ни одного автоматического моментального снимка домена. | Количество | Minimum | DomainName, ClientId |  |
+| AutomatedSnapshotFailure |  | Количество | Maximum | DomainName, ClientId |  |
+| CPUCreditBalance | Оставшиеся кредиты CPU, доступные для узлов данных в кластере. Кредит CPU обеспечивает производительность полного ядра CPU в течение одной минуты. Эта метрика доступна только для типов экземпляров T2. | Количество | Minimum | DomainName, ClientId |  |
+| CPUUtilization | Процент использования CPU узлами данных в кластере. Maximum показывает узел с наибольшим использованием CPU. Average представляет все узлы в кластере. Эта метрика также доступна для отдельных узлов. | Процент | Average | ClientId, DomainName, NodeId |  |
+| CPUUtilization |  | Процент | Average | DomainName, ClientId | Применимо |
+| CPUUtilization |  | Процент | Maximum | ClientId, DomainName, NodeId |  |
+| CPUUtilization |  | Процент | Maximum | DomainName, ClientId | Применимо |
+| ClusterIndexWritesBlocked | Указывает, принимает или блокирует ваш кластер входящие запросы на запись. Значение `0` означает, что кластер принимает запросы. Значение `1` означает, что кластер блокирует запросы. | Количество | Maximum | DomainName, ClientId |  |
+| ClusterStatus.green | Значение `1` указывает на то, что все шарды индексов размещены на узлах в кластере | Количество | Minimum | DomainName, ClientId | Применимо |
+| ClusterStatus.green |  | Количество | Maximum | DomainName, ClientId |  |
+| ClusterStatus.red | Значение `1` указывает на то, что первичные шарды и шарды-реплики хотя бы для одного индекса не размещены на узлах в кластере | Количество | Minimum | DomainName, ClientId |  |
+| ClusterStatus.red |  | Количество | Maximum | DomainName, ClientId | Применимо |
+| ClusterStatus.yellow | Значение `1` указывает на то, что первичные шарды для всех индексов размещены на узлах в кластере, но шарды-реплики хотя бы для одного индекса не размещены на узлах в кластере | Количество | Minimum | DomainName, ClientId |  |
+| ClusterStatus.yellow |  | Количество | Maximum | DomainName, ClientId | Применимо |
+| ClusterUsedSpace | Общее используемое пространство кластера | Мегабайт | Minimum | DomainName, ClientId |  |
+| ClusterUsedSpace |  | Мегабайт | Maximum | DomainName, ClientId |  |
+| DeletedDocuments | Общее количество документов, помеченных для удаления, по всем узлам данных в кластере. Эти документы больше не появляются в результатах поиска, но Elasticsearch удаляет удалённые документы с диска только во время слияний сегментов. Эта метрика увеличивается после запросов на удаление и уменьшается после слияний сегментов. | Количество | Multi | DomainName, ClientId |  |
+| DiskQueueDepth | Количество ожидающих запросов ввода-вывода (I/O) для тома EBS | Количество | Multi | DomainName, ClientId |  |
+| ElasticsearchRequests | Количество запросов к кластеру Elasticsearch | Количество | Sum | DomainName, ClientId | Применимо |
+| FreeStorageSpace | Свободное пространство для узлов данных в кластере | Мегабайт | Multi | ClientId, DomainName, NodeId |  |
+| FreeStorageSpace |  | Мегабайт | Multi | DomainName, ClientId | Применимо |
+| FreeStorageSpace |  | Мегабайт | Sum | DomainName, ClientId |  |
+| FreeStorageSpace |  | Мегабайт | Sum | ClientId, DomainName, NodeId |  |
+| InvalidHostHeaderRequests | Количество HTTP-запросов к кластеру Elasticsearch, содержавших недопустимый (или отсутствующий) заголовок host | Количество | Sum | DomainName, ClientId |  |
+| JVMMemoryPressure | Максимальный процент кучи Java, используемой всеми узлами данных в кластере | Процент | Maximum | DomainName, ClientId |  |
+| KMSKeyError | Значение `1` указывает на то, что главный ключ клиента KMS, используемый для шифрования данных в состоянии покоя, был отключён | Количество | Minimum | DomainName, ClientId |  |
+| KMSKeyError |  | Количество | Maximum | DomainName, ClientId |  |
+| KMSKeyInaccessible | Значение `1` указывает на то, что главный ключ клиента KMS, используемый для шифрования данных в состоянии покоя, был удалён или его разрешения для Amazon ES были отозваны | Количество | Minimum | DomainName, ClientId |  |
+| KMSKeyInaccessible |  | Количество | Maximum | DomainName, ClientId |  |
+| KibanaHealthyNodes | Проверка работоспособности Kibana. Значение `1` указывает на нормальное поведение. Значение `0` указывает на то, что Kibana недоступна. В большинстве случаев работоспособность Kibana отражает работоспособность кластера. | Количество | Minimum | DomainName, ClientId |  |
+| MasterCPUCreditBalance | Оставшиеся кредиты CPU, доступные для выделенных мастер-узлов в кластере. Кредит CPU обеспечивает производительность полного ядра CPU в течение одной минуты. | Количество | Minimum | DomainName, ClientId |  |
+| MasterCPUUtilization | Максимальный процент ресурсов CPU, используемых выделенными мастер-узлами | Процент | Average | DomainName, ClientId | Применимо |
+| MasterJVMMemoryPressure | Максимальный процент кучи Java, используемой всеми выделенными мастер-узлами в кластере | Процент | Maximum | DomainName, ClientId |  |
+| MasterReachableFromNode | Проверка работоспособности для исключений MasterNotDiscovered. Значение `1` указывает на нормальное поведение. Значение `0` указывает на то, что `/\_cluster/health/`` не работает. | Количество | Minimum | DomainName, ClientId |  |
+| Nodes | Количество узлов в кластере Amazon ES, включая выделенные мастер-узлы и узлы UltraWarm | Количество | Multi | DomainName, ClientId | Применимо |
+| ReadIOPS | Количество операций ввода-вывода (I/O) в секунду для операций чтения на томах EBS | Количество в секунду | Multi | DomainName, ClientId |  |
+| ReadLatency | Задержка операций чтения на томах EBS | Секунда | Multi | DomainName, ClientId |  |
+| ReadThroughput | Пропускная способность операций чтения на томах EBS | Байт в секунду | Multi | DomainName, ClientId |  |
+| RequestCount | Количество запросов к кластеру Elasticsearch | Количество | Sum | DomainName, ClientId |  |
+| SearchLatency |  | Миллисекунда | Multi | ClientId, DomainName |  |
+| SearchableDocuments | Общее количество документов, доступных для поиска, по всем узлам данных в кластере | Количество | Multi | DomainName, ClientId |  |
+| WriteIOPS | Количество операций ввода-вывода (I/O) в секунду для операций записи на томах EBS | Количество в секунду | Multi | DomainName, ClientId |  |
+| WriteLatency | Задержка операций записи на томах EBS | Секунда | Multi | DomainName, ClientId |  |
+| WriteThroughput | Пропускная способность операций записи на томах EBS | Байт в секунду | Multi | DomainName, ClientId |  |

@@ -1,22 +1,22 @@
 ---
 title: Amazon CloudWatch Metric Streams
-source: https://www.dynatrace.com/docs/ingest-from/amazon-web-services/integrate-with-aws/aws-metrics-ingest/cloudwatch-metric-streams
-scraped: 2026-03-06T21:33:53.919137
+source: https://docs.dynatrace.com/managed/ingest-from/amazon-web-services/integrate-with-aws/aws-metrics-ingest/cloudwatch-metric-streams
+scraped: 2026-05-12T11:14:18.734303
 ---
 
 # Amazon CloudWatch Metric Streams
 
+# Amazon CloudWatch Metric Streams
 
-* Classic
 * How-to guide
 * 10-min read
-* Updated on Sep 30, 2025
+* Updated on Mar 10, 2026
 
 Dynatrace integration with Amazon CloudWatch Metric Streams provides a simple and safe way to ingest AWS metrics. Amazon CloudWatch Metric Streams allows all metrics issued in a given AWS region to be streamed through Firehose to the Dynatrace API.
 
 ### AWS default integration vs AWS Metric Streams
 
-Differences between AWS default integration and AWS Metric Streams.
+Differences between [AWS default integration](/managed/ingest-from/amazon-web-services/integrate-with-aws/cloudwatch-metrics "Integrate metrics from Amazon CloudWatch.") and AWS Metric Streams.
 
 |  | AWS Default integration | AWS Metric Streams |
 | --- | --- | --- |
@@ -35,22 +35,24 @@ Differences between AWS default integration and AWS Metric Streams.
 
 1
 
-The `ext:` prefix is used by metrics from OneAgent extensions and ActiveGate extensions, and also by classic metrics for AWS integration.
+The `ext:` prefix is used by metrics from [OneAgent extensions](/managed/ingest-from/extensions/develop-your-extensions "Develop your own Extensions in Dynatrace.") and [ActiveGate extensions](/managed/ingest-from/extensions/develop-your-extensions "Develop your own Extensions in Dynatrace."), and also by [classic metrics for AWS integration](/managed/ingest-from/amazon-web-services/integrate-with-aws/cloudwatch-metrics "Integrate metrics from Amazon CloudWatch.").
 Despite the naming similarities, AWS integration metrics are **not** based on extensions.
 
 ## Prerequisites
 
-* Create an API token in your Dynatrace environment and enable the **Ingest metrics** permission.
+* Create an [API token](/managed/dynatrace-api/basics/dynatrace-api-authentication "Find out how to get authenticated to use the Dynatrace API.") in your Dynatrace environment and enable the **Ingest metrics** permission.
 * Determine the API URL for your environment:
 
   + **For Dynatrace SaaS**  
-    `https://<your_environment_ID>.live.dynatrace.com`
+    `https://<your_environment_ID>.live.dynatrace.com` or `https://<your_environment_ID>.apps.dynatrace.com`
+
   + **For Dynatrace Managed**  
     `https://<your_domain>/e/<your_environment_ID>`
+
   + **For ActiveGate**  
     `https://<your_active_gate_IP_or_hostname>:9999/e/<your_environment_ID>`
 
-To determine `<your_environment_ID>`, see environment ID.
+To determine `<your_environment_ID>`, see [environment ID](/managed/discover-dynatrace/get-started/monitoring-environment "Understand and learn how to work with monitoring environments.").
 
 To receive the AWS metrics, the previously selected endpoint needs to be open to incoming Internet traffic. Restrictive firewalls might block the streaming service.
 
@@ -64,11 +66,13 @@ If you're using Terraform or any other infrastructure setup solution, you need t
 name = "dt-url"
 
 
+
 value = <your_API_URL>
 ```
 
 ```
 name = "require-valid-certificate"
+
 
 
 value = "true"
@@ -102,19 +106,25 @@ Parametersâ¦
 DYNATRACE_ENV_URL=<your_API_URL>
 
 
+
 DYNATRACE_API_KEY=<your_API_token>
+
 
 
 STACK_NAME=dynatrace-aws-metric-streams-client
 
 
+
 DELIVERY_ENDPOINT=https://aws.cloud.dynatrace.com/
+
 
 
 REQUIRE_VALID_CERTIFICATE=true
 
 
+
 wget -O dynatrace-aws-metric-streams-client.yaml  https://assets.cloud.dynatrace.com/awsmetricstreaming/dynatrace-aws-metric-streams-client.yaml && \
+
 
 
 aws cloudformation deploy --capabilities CAPABILITY_NAMED_IAM --template-file ./dynatrace-aws-metric-streams-client.yaml --stack-name $STACK_NAME --parameter-overrides DynatraceEnvironmentUrl=$DYNATRACE_ENV_URL DynatraceApiKey=$DYNATRACE_API_KEY RequireValidCertificate=$REQUIRE_VALID_CERTIFICATE FirehoseHttpDeliveryEndpoint=$DELIVERY_ENDPOINT
@@ -161,9 +171,9 @@ If you don't have access to the CloudFormation template, you can manually set up
 
 [![Step 1](https://dt-cdn.net/images/step-1-086e22066c.svg "Step 1")
 
-**Create a Data Firehose stream**](../../../../../ingest-from/amazon-web-services/integrate-with-aws/aws-metrics-ingest/cloudwatch-metric-streams.md#step-1 "Ingest metrics from your AWS accounts using Amazon CloudWatch Metric Streams.")[![Step 2](https://dt-cdn.net/images/step-2-1a1384627e.svg "Step 2")
+**Create a Data Firehose stream**](/managed/ingest-from/amazon-web-services/integrate-with-aws/aws-metrics-ingest/cloudwatch-metric-streams#step-1 "Ingest metrics from your AWS accounts using Amazon CloudWatch Metric Streams.")[![Step 2](https://dt-cdn.net/images/step-2-1a1384627e.svg "Step 2")
 
-**Create a CloudWatch Metric Stream**](../../../../../ingest-from/amazon-web-services/integrate-with-aws/aws-metrics-ingest/cloudwatch-metric-streams.md#step-2 "Ingest metrics from your AWS accounts using Amazon CloudWatch Metric Streams.")
+**Create a CloudWatch Metric Stream**](/managed/ingest-from/amazon-web-services/integrate-with-aws/aws-metrics-ingest/cloudwatch-metric-streams#step-2 "Ingest metrics from your AWS accounts using Amazon CloudWatch Metric Streams.")
 
 For each region that you want to monitor, you need to repeat the entire procedure: create a Data Firehose stream and create a CloudWatch Metric Stream.
 
@@ -235,7 +245,7 @@ Once you deploy the Metric Streams client, you can use the [predefined dashboard
 Prerequisites
 
 * Install [Python 3ï»¿](https://www.python.org/downloads/) (no additional libraries are required)
-* Enable the **Read configuration** and **Write configuration** permissions for your API token
+* Enable the **Read configuration** and **Write configuration** permissions for your [API token](/managed/dynatrace-api/basics/dynatrace-api-authentication "Find out how to get authenticated to use the Dynatrace API.")
 
 To upload preset dashboards from GitHub
 

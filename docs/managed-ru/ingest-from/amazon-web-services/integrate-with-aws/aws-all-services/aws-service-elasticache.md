@@ -1,317 +1,420 @@
 ---
 title: Мониторинг Amazon ElastiCache
-source: https://www.dynatrace.com/docs/ingest-from/amazon-web-services/integrate-with-aws/aws-all-services/aws-service-elasticache
-scraped: 2026-03-06T21:30:12.764840
+source: https://docs.dynatrace.com/managed/ingest-from/amazon-web-services/integrate-with-aws/aws-all-services/aws-service-elasticache
+scraped: 2026-05-12T11:29:22.646085
 ---
 
-Dynatrace принимает метрики для множества предварительно выбранных пространств имен, включая Amazon ElastiCache. Вы можете просматривать метрики для каждого экземпляра сервиса, разделять метрики по нескольким измерениям и создавать пользовательские графики, которые можно закрепить на панелях мониторинга.
+# Мониторинг Amazon ElastiCache
+
+# Мониторинг Amazon ElastiCache
+
+* Практическое руководство
+* Чтение: 13 мин
+* Опубликовано 15 октября 2020 г.
+
+Dynatrace принимает метрики для множества предопределённых пространств имён, включая Amazon ElastiCache. Можно просматривать метрики по каждому экземпляру сервиса, разбивать их на несколько измерений и создавать собственные графики, которые можно закреплять на дашбордах.
 
 ## Предварительные требования
 
-Для включения мониторинга этого сервиса вам необходимо
+Чтобы включить мониторинг этого сервиса, необходимо
 
 * ActiveGate версии 1.181+, а именно:
 
-  + Для развертываний Dynatrace SaaS требуется Environment ActiveGate или Multi-environment ActiveGate.
-  + Для развертываний Dynatrace Managed можно использовать любой тип ActiveGate.
+  + Для развёртываний Dynatrace SaaS требуется Environment ActiveGate или Multi-environment ActiveGate.
+  + Для развёртываний Dynatrace Managed можно использовать ActiveGate любого типа.
 
-    Для доступа на основе ролей (как в развертывании SaaS, так и [Managed](https://docs.dynatrace.com/managed/shortlink/aws-managed-deployment)) необходим Environment ActiveGate, установленный на хосте Amazon EC2.
+    Для доступа на основе ролей (в развёртывании [SaaS](/managed/ingest-from/amazon-web-services/integrate-with-aws/cloudwatch-metrics#role-based-access "Приём метрик Amazon CloudWatch.") или [Managed](/managed/ingest-from/amazon-web-services/set-up-aws-monitoring-with-managed#role-based-access "Подключите аккаунт Amazon к Dynatrace Managed и начните мониторинг.")) требуется [Environment ActiveGate](/managed/ingest-from/dynatrace-activegate/installation "Узнайте, как настроить ActiveGate"), установленный на хосте Amazon EC2.
 * Dynatrace версии 1.182+
-* Обновленная политика мониторинга AWS для включения дополнительных сервисов AWS.
-  Чтобы [обновить политику AWS IAM](https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_manage-edit.html#edit-managed-policy-console), используйте приведенный ниже JSON, содержащий политику мониторинга (разрешения) для всех поддерживаемых сервисов.
+* Обновлённая [политика мониторинга AWS](/managed/ingest-from/amazon-web-services/integrate-with-aws/cloudwatch-metrics#aws-policy-and-authentication "Приём метрик Amazon CloudWatch."), включающая дополнительные сервисы AWS.
+  Чтобы [обновить политику AWS IAM](https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_manage-edit.html#edit-managed-policy-console), используйте приведённый ниже JSON, содержащий политику мониторинга (разрешения) для всех поддерживаемых сервисов.
 
-Предопределенная JSON-политика для всех поддерживаемых сервисов
+Предопределённая JSON-политика для всех поддерживаемых сервисов
 
 ```
 {
+
 
 
 "Version": "2012-10-17",
 
 
+
 "Statement": [
+
 
 
 {
 
 
+
 "Sid": "VisualEditor0",
+
 
 
 "Effect": "Allow",
 
 
+
 "Action": [
+
 
 
 "acm-pca:ListCertificateAuthorities",
 
 
+
 "apigateway:GET",
+
 
 
 "apprunner:ListServices",
 
 
+
 "appstream:DescribeFleets",
+
 
 
 "appsync:ListGraphqlApis",
 
 
+
 "athena:ListWorkGroups",
+
 
 
 "autoscaling:DescribeAutoScalingGroups",
 
 
+
 "cloudformation:ListStackResources",
+
 
 
 "cloudfront:ListDistributions",
 
 
+
 "cloudhsm:DescribeClusters",
+
 
 
 "cloudsearch:DescribeDomains",
 
 
+
 "cloudwatch:GetMetricData",
+
 
 
 "cloudwatch:GetMetricStatistics",
 
 
+
 "cloudwatch:ListMetrics",
+
 
 
 "codebuild:ListProjects",
 
 
+
 "datasync:ListTasks",
+
 
 
 "dax:DescribeClusters",
 
 
+
 "directconnect:DescribeConnections",
+
 
 
 "dms:DescribeReplicationInstances",
 
 
+
 "dynamodb:ListTables",
+
 
 
 "dynamodb:ListTagsOfResource",
 
 
+
 "ec2:DescribeAvailabilityZones",
+
 
 
 "ec2:DescribeInstances",
 
 
+
 "ec2:DescribeNatGateways",
+
 
 
 "ec2:DescribeSpotFleetRequests",
 
 
+
 "ec2:DescribeTransitGateways",
+
 
 
 "ec2:DescribeVolumes",
 
 
+
 "ec2:DescribeVpnConnections",
+
 
 
 "ecs:ListClusters",
 
 
+
 "eks:ListClusters",
+
 
 
 "elasticache:DescribeCacheClusters",
 
 
+
 "elasticbeanstalk:DescribeEnvironmentResources",
+
 
 
 "elasticbeanstalk:DescribeEnvironments",
 
 
+
 "elasticfilesystem:DescribeFileSystems",
+
 
 
 "elasticloadbalancing:DescribeInstanceHealth",
 
 
+
 "elasticloadbalancing:DescribeListeners",
+
 
 
 "elasticloadbalancing:DescribeLoadBalancers",
 
 
+
 "elasticloadbalancing:DescribeRules",
+
 
 
 "elasticloadbalancing:DescribeTags",
 
 
+
 "elasticloadbalancing:DescribeTargetHealth",
+
 
 
 "elasticmapreduce:ListClusters",
 
 
+
 "elastictranscoder:ListPipelines",
+
 
 
 "es:ListDomainNames",
 
 
+
 "events:ListEventBuses",
+
 
 
 "firehose:ListDeliveryStreams",
 
 
+
 "fsx:DescribeFileSystems",
+
 
 
 "gamelift:ListFleets",
 
 
+
 "glue:GetJobs",
+
 
 
 "inspector:ListAssessmentTemplates",
 
 
+
 "kafka:ListClusters",
+
 
 
 "kinesis:ListStreams",
 
 
+
 "kinesisanalytics:ListApplications",
+
 
 
 "kinesisvideo:ListStreams",
 
 
+
 "lambda:ListFunctions",
+
 
 
 "lambda:ListTags",
 
 
+
 "lex:GetBots",
+
 
 
 "logs:DescribeLogGroups",
 
 
+
 "mediaconnect:ListFlows",
+
 
 
 "mediaconvert:DescribeEndpoints",
 
 
+
 "mediapackage-vod:ListPackagingConfigurations",
+
 
 
 "mediapackage:ListChannels",
 
 
+
 "mediatailor:ListPlaybackConfigurations",
+
 
 
 "opsworks:DescribeStacks",
 
 
+
 "qldb:ListLedgers",
+
 
 
 "rds:DescribeDBClusters",
 
 
+
 "rds:DescribeDBInstances",
+
 
 
 "rds:DescribeEvents",
 
 
+
 "rds:ListTagsForResource",
+
 
 
 "redshift:DescribeClusters",
 
 
+
 "robomaker:ListSimulationJobs",
+
 
 
 "route53:ListHostedZones",
 
 
+
 "route53resolver:ListResolverEndpoints",
+
 
 
 "s3:ListAllMyBuckets",
 
 
+
 "sagemaker:ListEndpoints",
+
 
 
 "sns:ListTopics",
 
 
+
 "sqs:ListQueues",
+
 
 
 "storagegateway:ListGateways",
 
 
+
 "sts:GetCallerIdentity",
+
 
 
 "swf:ListDomains",
 
 
+
 "tag:GetResources",
+
 
 
 "tag:GetTagKeys",
 
 
+
 "transfer:ListServers",
+
 
 
 "workmail:ListOrganizations",
 
 
+
 "workspaces:DescribeWorkspaces"
+
 
 
 ],
 
 
+
 "Resource": "*"
 
 
+
 }
+
 
 
 ]
 
 
+
 }
 ```
 
-Если вы не хотите добавлять разрешения для всех сервисов, а хотите выбрать разрешения только для определенных сервисов, обратитесь к таблице ниже. Таблица содержит набор разрешений, необходимых для всех облачных сервисов AWS, а также для каждого поддерживаемого сервиса — список необязательных разрешений, специфичных для этого сервиса.
+Если вы не хотите добавлять разрешения для всех сервисов и предпочитаете выбрать разрешения только для определённых сервисов, обратитесь к таблице ниже. В таблице приведён набор разрешений, необходимых для [всех облачных сервисов AWS](/managed/ingest-from/amazon-web-services/integrate-with-aws/aws-all-services "Мониторинг всех облачных сервисов AWS в Dynatrace и просмотр доступных метрик."), и для каждого поддерживаемого сервиса приведён список необязательных разрешений, специфичных для этого сервиса.
 
 Разрешения, необходимые для интеграции мониторинга AWS:
 
@@ -325,9 +428,9 @@ Dynatrace принимает метрики для множества предв
 
 ### Полный список разрешений для облачных сервисов
 
-| Название | Разрешения |
+| Имя | Разрешения |
 | --- | --- |
-| Все отслеживаемые сервисы Amazon (обязательно) | `cloudwatch:GetMetricData`, `cloudwatch:GetMetricStatistics`, `cloudwatch:ListMetrics`, `sts:GetCallerIdentity`, `tag:GetResources`, `tag:GetTagKeys`, `ec2:DescribeAvailabilityZones` |
+| All monitored Amazon services Required | `cloudwatch:GetMetricData`, `cloudwatch:GetMetricStatistics`, `cloudwatch:ListMetrics`, `sts:GetCallerIdentity`, `tag:GetResources`, `tag:GetTagKeys`, `ec2:DescribeAvailabilityZones` |
 | AWS Certificate Manager Private Certificate Authority | `acm-pca:ListCertificateAuthorities` |
 | Amazon MQ |  |
 | Amazon API Gateway | `apigateway:GET` |
@@ -337,7 +440,7 @@ Dynatrace принимает метрики для множества предв
 | Amazon Athena | `athena:ListWorkGroups` |
 | Amazon Aurora | `rds:DescribeDBClusters` |
 | Amazon EC2 Auto Scaling | `autoscaling:DescribeAutoScalingGroups` |
-| Amazon EC2 Auto Scaling (встроенный) | `autoscaling:DescribeAutoScalingGroups` |
+| Amazon EC2 Auto Scaling (built-in) | `autoscaling:DescribeAutoScalingGroups` |
 | AWS Billing |  |
 | Amazon Keyspaces |  |
 | AWS Chatbot |  |
@@ -354,11 +457,11 @@ Dynatrace принимает метрики для множества предв
 | Amazon DocumentDB | `rds:DescribeDBClusters` |
 | AWS Direct Connect | `directconnect:DescribeConnections` |
 | Amazon DynamoDB | `dynamodb:ListTables` |
-| Amazon DynamoDB (встроенный) | `dynamodb:ListTables`, `dynamodb:ListTagsOfResource` |
+| Amazon DynamoDB (built-in) | `dynamodb:ListTables`, `dynamodb:ListTagsOfResource` |
 | Amazon EBS | `ec2:DescribeVolumes` |
-| Amazon EBS (встроенный) | `ec2:DescribeVolumes` |
+| Amazon EBS (built-in) | `ec2:DescribeVolumes` |
 | Amazon EC2 API |  |
-| Amazon EC2 (встроенный) | `ec2:DescribeInstances` |
+| Amazon EC2 (built-in) | `ec2:DescribeInstances` |
 | Amazon EC2 Spot Fleet | `ec2:DescribeSpotFleetRequests` |
 | Amazon Elastic Container Service (ECS) | `ecs:ListClusters` |
 | Amazon ECS Container Insights | `ecs:ListClusters` |
@@ -369,7 +472,7 @@ Dynatrace принимает метрики для множества предв
 | Amazon Elastic Map Reduce (EMR) | `elasticmapreduce:ListClusters` |
 | Amazon Elasticsearch Service (ES) | `es:ListDomainNames` |
 | Amazon Elastic Transcoder | `elastictranscoder:ListPipelines` |
-| Amazon Elastic Load Balancer (ELB) (встроенный) | `elasticloadbalancing:DescribeInstanceHealth`, `elasticloadbalancing:DescribeListeners`, `elasticloadbalancing:DescribeLoadBalancers`, `elasticloadbalancing:DescribeRules`, `elasticloadbalancing:DescribeTags`, `elasticloadbalancing:DescribeTargetHealth` |
+| Amazon Elastic Load Balancer (ELB) (built-in) | `elasticloadbalancing:DescribeInstanceHealth`, `elasticloadbalancing:DescribeListeners`, `elasticloadbalancing:DescribeLoadBalancers`, `elasticloadbalancing:DescribeRules`, `elasticloadbalancing:DescribeTags`, `elasticloadbalancing:DescribeTargetHealth` |
 | Amazon EventBridge | `events:ListEventBuses` |
 | Amazon FSx | `fsx:DescribeFileSystems` |
 | Amazon GameLift | `gamelift:ListFleets` |
@@ -383,9 +486,9 @@ Dynatrace принимает метрики для множества предв
 | Amazon Kinesis Data Streams | `kinesis:ListStreams` |
 | Amazon Kinesis Video Streams | `kinesisvideo:ListStreams` |
 | AWS Lambda | `lambda:ListFunctions` |
-| AWS Lambda (встроенный) | `lambda:ListFunctions`, `lambda:ListTags` |
+| AWS Lambda (built-in) | `lambda:ListFunctions`, `lambda:ListTags` |
 | Amazon Lex | `lex:GetBots` |
-| Amazon Application and Network Load Balancer (встроенный) | `elasticloadbalancing:DescribeInstanceHealth`, `elasticloadbalancing:DescribeListeners`, `elasticloadbalancing:DescribeLoadBalancers`, `elasticloadbalancing:DescribeRules`, `elasticloadbalancing:DescribeTags`, `elasticloadbalancing:DescribeTargetHealth` |
+| Amazon Application and Network Load Balancer (built-in) | `elasticloadbalancing:DescribeInstanceHealth`, `elasticloadbalancing:DescribeListeners`, `elasticloadbalancing:DescribeLoadBalancers`, `elasticloadbalancing:DescribeRules`, `elasticloadbalancing:DescribeTags`, `elasticloadbalancing:DescribeTargetHealth` |
 | Amazon CloudWatch Logs | `logs:DescribeLogGroups` |
 | AWS Elemental MediaConnect | `mediaconnect:ListFlows` |
 | AWS Elemental MediaConvert | `mediaconvert:DescribeEndpoints` |
@@ -398,14 +501,14 @@ Dynatrace принимает метрики для множества предв
 | Amazon Polly |  |
 | Amazon QLDB | `qldb:ListLedgers` |
 | Amazon RDS | `rds:DescribeDBInstances` |
-| Amazon RDS (встроенный) | `rds:DescribeDBInstances`, `rds:DescribeEvents`, `rds:ListTagsForResource` |
+| Amazon RDS (built-in) | `rds:DescribeDBInstances`, `rds:DescribeEvents`, `rds:ListTagsForResource` |
 | Amazon Redshift | `redshift:DescribeClusters` |
 | Amazon Rekognition |  |
 | AWS RoboMaker | `robomaker:ListSimulationJobs` |
 | Amazon Route 53 | `route53:ListHostedZones` |
 | Amazon Route 53 Resolver | `route53resolver:ListResolverEndpoints` |
 | Amazon S3 | `s3:ListAllMyBuckets` |
-| Amazon S3 (встроенный) | `s3:ListAllMyBuckets` |
+| Amazon S3 (built-in) | `s3:ListAllMyBuckets` |
 | Amazon SageMaker Batch Transform Jobs |  |
 | Amazon SageMaker Endpoint Instances | `sagemaker:ListEndpoints` |
 | Amazon SageMaker Endpoints | `sagemaker:ListEndpoints` |
@@ -441,58 +544,77 @@ JSON-политика для Amazon API Gateway
 {
 
 
+
 "Version": "2012-10-17",
+
 
 
 "Statement": [
 
 
+
 {
+
 
 
 "Sid": "VisualEditor0",
 
 
+
 "Effect": "Allow",
+
 
 
 "Action": [
 
 
+
 "apigateway:GET",
+
 
 
 "cloudwatch:GetMetricData",
 
 
+
 "cloudwatch:GetMetricStatistics",
+
 
 
 "cloudwatch:ListMetrics",
 
 
+
 "sts:GetCallerIdentity",
+
 
 
 "tag:GetResources",
 
 
+
 "tag:GetTagKeys",
+
 
 
 "ec2:DescribeAvailabilityZones"
 
 
+
 ],
+
 
 
 "Resource": "*"
 
 
+
 }
 
 
+
 ]
+
 
 
 }
@@ -501,19 +623,19 @@ JSON-политика для Amazon API Gateway
 В этом примере из полного списка разрешений необходимо выбрать
 
 * `"apigateway:GET"` для **Amazon API Gateway**
-* `"cloudwatch:GetMetricData"`, `"cloudwatch:GetMetricStatistics"`, `"cloudwatch:ListMetrics"`, `"sts:GetCallerIdentity"`, `"tag:GetResources"`, `"tag:GetTagKeys"` и `"ec2:DescribeAvailabilityZones"` для **всех облачных сервисов AWS**.
+* `"cloudwatch:GetMetricData"`, `"cloudwatch:GetMetricStatistics"`, `"cloudwatch:ListMetrics"`, `"sts:GetCallerIdentity"`, `"tag:GetResources"`, `"tag:GetTagKeys"` и `"ec2:DescribeAvailabilityZones"` для **All AWS cloud services**.
 
-### Конечные точки AWS, которые должны быть доступны из ActiveGate, с соответствующими сервисами AWS
+### Конечные точки AWS, которые должны быть доступны с ActiveGate, и соответствующие им сервисы AWS
 
 | Конечная точка | Сервис |
 | --- | --- |
-| `autoscaling.<REGION>.amazonaws.com` | Amazon EC2 Auto Scaling (встроенный), Amazon EC2 Auto Scaling |
-| `lambda.<REGION>.amazonaws.com` | AWS Lambda (встроенный), AWS Lambda |
-| `elasticloadbalancing.<REGION>.amazonaws.com` | Amazon Application and Network Load Balancer (встроенный), Amazon Elastic Load Balancer (ELB) (встроенный) |
-| `dynamodb.<REGION>.amazonaws.com` | Amazon DynamoDB (встроенный), Amazon DynamoDB |
-| `ec2.<REGION>.amazonaws.com` | Amazon EBS (встроенный), Amazon EC2 (встроенный), Amazon EBS, Amazon EC2 Spot Fleet, Amazon VPC NAT Gateways, AWS Transit Gateway, AWS Site-to-Site VPN |
-| `rds.<REGION>.amazonaws.com` | Amazon RDS (встроенный), Amazon Aurora, Amazon DocumentDB, Amazon Neptune, Amazon RDS |
-| `s3.<REGION>.amazonaws.com` | Amazon S3 (встроенный) |
+| `autoscaling.<REGION>.amazonaws.com` | Amazon EC2 Auto Scaling (built-in), Amazon EC2 Auto Scaling |
+| `lambda.<REGION>.amazonaws.com` | AWS Lambda (built-in), AWS Lambda |
+| `elasticloadbalancing.<REGION>.amazonaws.com` | Amazon Application and Network Load Balancer (built-in), Amazon Elastic Load Balancer (ELB) (built-in) |
+| `dynamodb.<REGION>.amazonaws.com` | Amazon DynamoDB (built-in), Amazon DynamoDB |
+| `ec2.<REGION>.amazonaws.com` | Amazon EBS (built-in), Amazon EC2 (built-in), Amazon EBS, Amazon EC2 Spot Fleet, Amazon VPC NAT Gateways, AWS Transit Gateway, AWS Site-to-Site VPN |
+| `rds.<REGION>.amazonaws.com` | Amazon RDS (built-in), Amazon Aurora, Amazon DocumentDB, Amazon Neptune, Amazon RDS |
+| `s3.<REGION>.amazonaws.com` | Amazon S3 (built-in) |
 | `acm-pca.<REGION>.amazonaws.com` | AWS Certificate Manager Private Certificate Authority |
 | `apigateway.<REGION>.amazonaws.com` | Amazon API Gateway |
 | `apprunner.<REGION>.amazonaws.com` | AWS App Runner |
@@ -564,268 +686,268 @@ JSON-политика для Amazon API Gateway
 
 ## Включение мониторинга
 
-Чтобы узнать, как включить мониторинг сервиса, см. Включение мониторинга сервиса.
+Чтобы узнать, как включить мониторинг сервиса, см. [Включение мониторинга сервиса](/managed/ingest-from/amazon-web-services/integrate-with-aws/aws-metrics-ingest/aws-enable-service-monitoring "Включение мониторинга AWS в Dynatrace.").
 
 ## Просмотр метрик сервиса
 
-Вы можете просматривать метрики сервиса в вашей среде Dynatrace на **странице обзора пользовательского устройства** или на странице **Панели мониторинга**.
+Вы можете просматривать метрики сервиса в вашей среде Dynatrace на **странице обзора пользовательского устройства** или на странице **Dashboards**.
 
 ### Просмотр метрик на странице обзора пользовательского устройства
 
-Для доступа к странице обзора пользовательского устройства
+Чтобы перейти на страницу обзора пользовательского устройства:
 
-1. Перейдите в ![Technologies](https://dt-cdn.net/images/technologies-512-977161d83c.png "Technologies") **Technologies & Processes Classic**.
+1. Перейдите в **Technologies & Processes**.
 2. Отфильтруйте по имени сервиса и выберите соответствующую группу пользовательских устройств.
 3. После выбора группы пользовательских устройств вы окажетесь на **странице обзора группы пользовательских устройств**.
 4. На **странице обзора группы пользовательских устройств** перечислены все экземпляры (пользовательские устройства), принадлежащие группе. Выберите экземпляр для просмотра **страницы обзора пользовательского устройства**.
 
-### Просмотр метрик на панели мониторинга
+### Просмотр метрик на дашборде
 
-Вы также можете просматривать метрики в веб-интерфейсе Dynatrace на панелях мониторинга. Для этого сервиса нет предустановленной панели мониторинга, но вы можете создать собственную панель мониторинга.
+Вы также можете просматривать метрики в веб-интерфейсе Dynatrace на дашбордах. Для этого сервиса нет предустановленного дашборда, но вы можете [создать собственный дашборд](/managed/analyze-explore-automate/dashboards-classic/dashboards/create-dashboards "Узнайте, как создавать и редактировать дашборды Dynatrace.").
 
-Чтобы проверить наличие предустановленных панелей мониторинга для каждого сервиса AWS, см. список ниже.
+Чтобы проверить доступность предустановленных дашбордов для каждого сервиса AWS, см. список ниже.
 
-### Список доступных предустановленных панелей мониторинга
+### Список доступности предустановленных дашбордов
 
-| Сервис AWS | Предустановленная панель мониторинга |
+| Сервис AWS | Предустановленный дашборд |
 | --- | --- |
-| Amazon EC2 Auto Scaling (встроенный) | Недоступна |
-| AWS Lambda (встроенный) | Недоступна |
-| Amazon Application and Network Load Balancer (встроенный) | Недоступна |
-| Amazon DynamoDB (встроенный) | Недоступна |
-| Amazon EBS (встроенный) | Недоступна |
-| Amazon EC2 (встроенный) | Недоступна |
-| Amazon Elastic Load Balancer (ELB) (встроенный) | Недоступна |
-| Amazon RDS (встроенный) | Недоступна |
-| Amazon S3 (встроенный) | Недоступна |
-| AWS Certificate Manager Private Certificate Authority | Недоступна |
-| Все отслеживаемые сервисы Amazon | Недоступна |
-| Amazon API Gateway | Недоступна |
-| AWS App Runner | Недоступна |
-| Amazon AppStream | Доступна |
-| AWS AppSync | Доступна |
-| Amazon Athena | Доступна |
-| Amazon Aurora | Недоступна |
-| Amazon EC2 Auto Scaling | Доступна |
-| AWS Billing | Доступна |
-| Amazon Keyspaces | Доступна |
-| AWS Chatbot | Доступна |
-| Amazon CloudFront | Недоступна |
-| AWS CloudHSM | Доступна |
-| Amazon CloudSearch | Доступна |
-| AWS CodeBuild | Доступна |
-| Amazon Cognito | Недоступна |
-| Amazon Connect | Доступна |
-| AWS DataSync | Доступна |
-| Amazon DynamoDB Accelerator (DAX) | Доступна |
-| AWS Database Migration Service (AWS DMS) | Доступна |
-| Amazon DocumentDB | Доступна |
-| AWS Direct Connect | Доступна |
-| Amazon DynamoDB | Недоступна |
-| Amazon EBS | Недоступна |
-| Amazon EC2 Spot Fleet | Недоступна |
-| Amazon EC2 API | Доступна |
-| Amazon Elastic Container Service (ECS) | Недоступна |
-| Amazon ECS Container Insights | Доступна |
-| Amazon Elastic File System (EFS) | Недоступна |
-| Amazon Elastic Kubernetes Service (EKS) | Доступна |
-| Amazon ElastiCache (EC) | Недоступна |
-| AWS Elastic Beanstalk | Доступна |
-| Amazon Elastic Inference | Доступна |
-| Amazon Elastic Transcoder | Доступна |
-| Amazon Elastic Map Reduce (EMR) | Недоступна |
-| Amazon Elasticsearch Service (ES) | Недоступна |
-| Amazon EventBridge | Доступна |
-| Amazon FSx | Доступна |
-| Amazon GameLift | Доступна |
-| AWS Glue | Недоступна |
-| Amazon Inspector | Доступна |
-| AWS Internet of Things (IoT) | Недоступна |
-| AWS IoT Things Graph | Доступна |
-| AWS IoT Analytics | Доступна |
-| Amazon Managed Streaming for Kafka | Доступна |
-| Amazon Kinesis Data Analytics | Недоступна |
-| Amazon Data Firehose | Недоступна |
-| Amazon Kinesis Data Streams | Недоступна |
-| Amazon Kinesis Video Streams | Недоступна |
-| AWS Lambda | Недоступна |
-| Amazon Lex | Доступна |
-| Amazon CloudWatch Logs | Доступна |
-| AWS Elemental MediaTailor | Доступна |
-| AWS Elemental MediaConnect | Доступна |
-| AWS Elemental MediaConvert | Доступна |
-| AWS Elemental MediaPackage Live | Доступна |
-| AWS Elemental MediaPackage Video on Demand | Доступна |
-| Amazon MQ | Доступна |
-| Amazon VPC NAT Gateways | Недоступна |
-| Amazon Neptune | Доступна |
-| AWS OpsWorks | Доступна |
-| Amazon Polly | Доступна |
-| Amazon QLDB | Доступна |
-| Amazon RDS | Недоступна |
-| Amazon Redshift | Недоступна |
-| Amazon Rekognition | Доступна |
-| AWS RoboMaker | Доступна |
-| Amazon Route 53 | Доступна |
-| Amazon Route 53 Resolver | Доступна |
-| Amazon S3 | Недоступна |
-| Amazon SageMaker Batch Transform Jobs | Недоступна |
-| Amazon SageMaker Endpoints | Недоступна |
-| Amazon SageMaker Endpoint Instances | Недоступна |
-| Amazon SageMaker Ground Truth | Недоступна |
-| Amazon SageMaker Processing Jobs | Недоступна |
-| Amazon SageMaker Training Jobs | Недоступна |
-| AWS Service Catalog | Доступна |
-| Amazon Simple Email Service (SES) | Недоступна |
-| Amazon Simple Notification Service (SNS) | Недоступна |
-| Amazon Simple Queue Service (SQS) | Недоступна |
-| AWS Systems Manager - Run Command | Доступна |
-| AWS Step Functions | Доступна |
-| AWS Storage Gateway | Доступна |
-| Amazon SWF | Доступна |
-| Amazon Textract | Доступна |
-| AWS Transfer Family | Доступна |
-| AWS Transit Gateway | Доступна |
-| Amazon Translate | Доступна |
-| AWS Trusted Advisor | Доступна |
-| AWS API Usage | Доступна |
-| AWS Site-to-Site VPN | Доступна |
-| AWS WAF Classic | Доступна |
-| AWS WAF | Доступна |
-| Amazon WorkMail | Доступна |
-| Amazon WorkSpaces | Доступна |
+| Amazon EC2 Auto Scaling (built-in) | Не применимо |
+| AWS Lambda (built-in) | Не применимо |
+| Amazon Application and Network Load Balancer (built-in) | Не применимо |
+| Amazon DynamoDB (built-in) | Не применимо |
+| Amazon EBS (built-in) | Не применимо |
+| Amazon EC2 (built-in) | Не применимо |
+| Amazon Elastic Load Balancer (ELB) (built-in) | Не применимо |
+| Amazon RDS (built-in) | Не применимо |
+| Amazon S3 (built-in) | Не применимо |
+| AWS Certificate Manager Private Certificate Authority | Не применимо |
+| All monitored Amazon services | Не применимо |
+| Amazon API Gateway | Не применимо |
+| AWS App Runner | Не применимо |
+| Amazon AppStream | Применимо |
+| AWS AppSync | Применимо |
+| Amazon Athena | Применимо |
+| Amazon Aurora | Не применимо |
+| Amazon EC2 Auto Scaling | Применимо |
+| AWS Billing | Применимо |
+| Amazon Keyspaces | Применимо |
+| AWS Chatbot | Применимо |
+| Amazon CloudFront | Не применимо |
+| AWS CloudHSM | Применимо |
+| Amazon CloudSearch | Применимо |
+| AWS CodeBuild | Применимо |
+| Amazon Cognito | Не применимо |
+| Amazon Connect | Применимо |
+| AWS DataSync | Применимо |
+| Amazon DynamoDB Accelerator (DAX) | Применимо |
+| AWS Database Migration Service (AWS DMS) | Применимо |
+| Amazon DocumentDB | Применимо |
+| AWS Direct Connect | Применимо |
+| Amazon DynamoDB | Не применимо |
+| Amazon EBS | Не применимо |
+| Amazon EC2 Spot Fleet | Не применимо |
+| Amazon EC2 API | Применимо |
+| Amazon Elastic Container Service (ECS) | Не применимо |
+| Amazon ECS Container Insights | Применимо |
+| Amazon Elastic File System (EFS) | Не применимо |
+| Amazon Elastic Kubernetes Service (EKS) | Применимо |
+| Amazon ElastiCache (EC) | Не применимо |
+| AWS Elastic Beanstalk | Применимо |
+| Amazon Elastic Inference | Применимо |
+| Amazon Elastic Transcoder | Применимо |
+| Amazon Elastic Map Reduce (EMR) | Не применимо |
+| Amazon Elasticsearch Service (ES) | Не применимо |
+| Amazon EventBridge | Применимо |
+| Amazon FSx | Применимо |
+| Amazon GameLift | Применимо |
+| AWS Glue | Не применимо |
+| Amazon Inspector | Применимо |
+| AWS Internet of Things (IoT) | Не применимо |
+| AWS IoT Things Graph | Применимо |
+| AWS IoT Analytics | Применимо |
+| Amazon Managed Streaming for Kafka | Применимо |
+| Amazon Kinesis Data Analytics | Не применимо |
+| Amazon Data Firehose | Не применимо |
+| Amazon Kinesis Data Streams | Не применимо |
+| Amazon Kinesis Video Streams | Не применимо |
+| AWS Lambda | Не применимо |
+| Amazon Lex | Применимо |
+| Amazon CloudWatch Logs | Применимо |
+| AWS Elemental MediaTailor | Применимо |
+| AWS Elemental MediaConnect | Применимо |
+| AWS Elemental MediaConvert | Применимо |
+| AWS Elemental MediaPackage Live | Применимо |
+| AWS Elemental MediaPackage Video on Demand | Применимо |
+| Amazon MQ | Применимо |
+| Amazon VPC NAT Gateways | Не применимо |
+| Amazon Neptune | Применимо |
+| AWS OpsWorks | Применимо |
+| Amazon Polly | Применимо |
+| Amazon QLDB | Применимо |
+| Amazon RDS | Не применимо |
+| Amazon Redshift | Не применимо |
+| Amazon Rekognition | Применимо |
+| AWS RoboMaker | Применимо |
+| Amazon Route 53 | Применимо |
+| Amazon Route 53 Resolver | Применимо |
+| Amazon S3 | Не применимо |
+| Amazon SageMaker Batch Transform Jobs | Не применимо |
+| Amazon SageMaker Endpoints | Не применимо |
+| Amazon SageMaker Endpoint Instances | Не применимо |
+| Amazon SageMaker Ground Truth | Не применимо |
+| Amazon SageMaker Processing Jobs | Не применимо |
+| Amazon SageMaker Training Jobs | Не применимо |
+| AWS Service Catalog | Применимо |
+| Amazon Simple Email Service (SES) | Не применимо |
+| Amazon Simple Notification Service (SNS) | Не применимо |
+| Amazon Simple Queue Service (SQS) | Не применимо |
+| AWS Systems Manager - Run Command | Применимо |
+| AWS Step Functions | Применимо |
+| AWS Storage Gateway | Применимо |
+| Amazon SWF | Применимо |
+| Amazon Textract | Применимо |
+| AWS Transfer Family | Применимо |
+| AWS Transit Gateway | Применимо |
+| Amazon Translate | Применимо |
+| AWS Trusted Advisor | Применимо |
+| AWS API Usage | Применимо |
+| AWS Site-to-Site VPN | Применимо |
+| AWS WAF Classic | Применимо |
+| AWS WAF | Применимо |
+| Amazon WorkMail | Применимо |
+| Amazon WorkSpaces | Применимо |
 
 ## Доступные метрики
 
-`CacheClusterId` является основным измерением.
+Основное измерение: `CacheClusterId`.
 
-| Название | Описание | Единица | Статистика | Измерения | Рекомендуемая |
+| Имя | Описание | Единица измерения | Статистика | Измерения | Рекомендуется |
 | --- | --- | --- | --- | --- | --- |
-| ActiveDefragHits | Количество перераспределений значений в минуту, выполненных процессом активной дефрагментации. Получено из статистики `active_defrag_hits`. | Count | Sum | CacheClusterId, CacheNodeId |  |
-| ActiveDefragHits |  | Count | Sum | CacheClusterId |  |
-| BytesReadIntoMemcached | Количество байт, прочитанных из сети узлом кэша | Bytes | Sum | CacheClusterId, CacheNodeId |  |
-| BytesReadIntoMemcached |  | Bytes | Sum | CacheClusterId |  |
-| BytesUsedFworCacheItems |  | Bytes | Sum | CacheClusterId, CacheNodeId |  |
-| BytesUsedForCacheItems | Количество байт, используемых для хранения элементов кэша | Bytes | Sum | CacheClusterId |  |
-| BytesUsedForCache | Общее количество байт, выделенных Redis для всех целей, включая набор данных, буферы и т.д. Получено из статистики used\_memory. | Bytes | Sum | CacheClusterId, CacheNodeId |  |
-| BytesUsedForCache |  | Bytes | Sum | CacheClusterId |  |
-| BytesUsedForHash | Количество байт, используемых хэш-таблицами в данный момент | Bytes | Sum | CacheClusterId, CacheNodeId |  |
-| BytesUsedForHash |  | Bytes | Sum | CacheClusterId |  |
-| BytesWrittenOutFromMemcached | Количество байт, записанных в сеть узлом кэша | Bytes | Sum | CacheClusterId, CacheNodeId |  |
-| BytesWrittenOutFromMemcached |  | Bytes | Sum | CacheClusterId |  |
-| CPUUtilization | Процент использования ЦП для всего хоста | Percent | Multi | CacheClusterId, CacheNodeId |  |
-| CPUUtilization |  | Percent | Multi | CacheClusterId | Доступна |
-| CacheHits | Количество успешных поисков ключей только для чтения в основном словаре. Получено из статистики keyspace\_hits. | Count | Sum | CacheClusterId, CacheNodeId |  |
-| CacheHits |  | Count | Sum | CacheClusterId |  |
-| CacheMisses | Количество неудачных поисков ключей только для чтения в основном словаре. Получено из статистики keyspace\_misses. | Count | Sum | CacheClusterId, CacheNodeId |  |
-| CacheMisses |  | Count | Sum | CacheClusterId |  |
-| CasBadval | Количество запросов CAS (check and set), полученных кэшем, в которых значение CAS не совпало с сохраненным значением CAS | Count | Sum | CacheClusterId, CacheNodeId |  |
-| CasBadval |  | Count | Sum | CacheClusterId |  |
-| CasHits | Количество запросов CAS, полученных кэшем, в которых запрашиваемый ключ был найден и значение CAS совпало | Count | Sum | CacheClusterId, CacheNodeId |  |
-| CasHits |  | Count | Sum | CacheClusterId |  |
-| CasMisses | Количество запросов CAS, полученных кэшем, в которых запрашиваемый ключ не был найден | Count | Sum | CacheClusterId, CacheNodeId |  |
-| CasMisses |  | Count | Sum | CacheClusterId |  |
-| CmdConfigGet | Совокупное количество запросов config get | Count | Sum | CacheClusterId, CacheNodeId |  |
-| CmdConfigGet |  | Count | Sum | CacheClusterId |  |
-| CmdConfigSet | Совокупное количество запросов config set | Count | Sum | CacheClusterId, CacheNodeId |  |
-| CmdConfigSet |  | Count | Sum | CacheClusterId |  |
-| CmdFlush | Количество команд flush, полученных кэшем | Count | Sum | CacheClusterId, CacheNodeId |  |
-| CmdFlush |  | Count | Sum | CacheClusterId |  |
-| CmdGet | Количество команд get, полученных кэшем | Count | Sum | CacheClusterId, CacheNodeId |  |
-| CmdGet |  | Count | Sum | CacheClusterId |  |
-| CmdSet | Количество команд set, полученных кэшем | Count | Sum | CacheClusterId, CacheNodeId |  |
-| CmdSet |  | Count | Sum | CacheClusterId |  |
-| CmdTouch | Совокупное количество запросов touch | Count | Sum | CacheClusterId, CacheNodeId |  |
-| CmdTouch |  | Count | Sum | CacheClusterId |  |
-| CurrConfig | Текущее количество сохраненных конфигураций | Count | Sum | CacheClusterId, CacheNodeId |  |
-| CurrConfig |  | Count | Sum | CacheClusterId |  |
-| CurrConnections | Количество подключений к кэшу в данный момент. ElastiCache использует два-три подключения для мониторинга кластера. | Count | Multi | CacheClusterId, CacheNodeId |  |
-| CurrConnections |  | Count | Multi | CacheClusterId | Доступна |
-| CurrItems | Количество элементов, хранящихся в кэше в данный момент | Count | Multi | CacheClusterId, CacheNodeId |  |
-| CurrItems |  | Count | Multi | CacheClusterId |  |
-| DatabaseMemoryUsagePercentage |  | Percent | Multi | CacheClusterId, CacheNodeId |  |
-| DatabaseMemoryUsagePercentage |  | Percent | Multi | CacheClusterId |  |
-| DatabaseMemoryUsagePercentage |  | Percent | Multi | Region |  |
-| DecrHits | Количество запросов на уменьшение, полученных кэшем, в которых запрашиваемый ключ был найден | Count | Sum | CacheClusterId, CacheNodeId |  |
-| DecrHits |  | Count | Sum | CacheClusterId |  |
-| DecrMisses | Количество запросов на уменьшение, полученных кэшем, в которых запрашиваемый ключ не был найден | Count | Sum | CacheClusterId, CacheNodeId |  |
-| DecrMisses |  | Count | Sum | CacheClusterId |  |
-| DeleteHits | Количество запросов на удаление, полученных кэшем, в которых запрашиваемый ключ был найден | Count | Sum | CacheClusterId, CacheNodeId |  |
-| DeleteHits |  | Count | Sum | CacheClusterId |  |
-| DeleteMisses | Количество запросов на удаление, полученных кэшем, в которых запрашиваемый ключ не был найден. | Count | Sum | CacheClusterId, CacheNodeId |  |
-| DeleteMisses |  | Count | Sum | CacheClusterId |  |
-| EngineCPUUtilization | Процент использования ЦП потоком движка Redis | Percent | Multi | CacheClusterId, CacheNodeId |  |
-| EngineCPUUtilization |  | Percent | Multi | CacheClusterId |  |
-| EvictedUnfetched | Количество валидных элементов, вытесненных из кэша по принципу наименее недавнего использования (LRU), которые ни разу не были запрошены после записи | Count | Sum | CacheClusterId, CacheNodeId |  |
-| EvictedUnfetched |  | Count | Sum | CacheClusterId |  |
-| Evictions | Количество не истекших элементов, вытесненных из кэша для освобождения места для новых записей | Count | Sum | CacheClusterId, CacheNodeId |  |
-| Evictions |  | Count | Sum | CacheClusterId | Доступна |
-| ExpiredUnfetched | Количество истекших элементов, извлеченных из LRU, которые ни разу не были запрошены после записи | Count | Sum | CacheClusterId, CacheNodeId |  |
-| ExpiredUnfetched |  | Count | Sum | CacheClusterId |  |
-| FreeableMemory | Объем свободной памяти, доступной на хосте. Получено из данных ОЗУ, буферов и кэша, которые ОС сообщает как свободные. | Bytes | Multi | CacheClusterId, CacheNodeId |  |
-| FreeableMemory |  | Bytes | Multi | CacheClusterId |  |
-| GetHits | Количество запросов get, полученных кэшем, в которых запрашиваемый ключ был найден | Count | Sum | CacheClusterId, CacheNodeId |  |
-| GetHits |  | Count | Sum | CacheClusterId |  |
-| GetMisses | Количество запросов get, полученных кэшем, в которых запрашиваемый ключ не был найден | Count | Sum | CacheClusterId, CacheNodeId |  |
-| GetMisses |  | Count | Sum | CacheClusterId |  |
-| GetTypeCmds | Общее количество команд типа только для чтения. Получено из статистики Redis commandstats путем суммирования всех команд типа только для чтения (get, hget, scard, lrange и т.д.). | Count | Sum | CacheClusterId, CacheNodeId |  |
-| GetTypeCmds |  | Count | Sum | CacheClusterId |  |
-| HashBasedCmds | Общее количество команд, основанных на хэшах. Получено из статистики Redis commandstats путем суммирования всех команд, работающих с одним или несколькими хэшами (hget, hkeys, hvals, hdel и т.д.). | Count | Sum | CacheClusterId, CacheNodeId |  |
-| HashBasedCmds |  | Count | Sum | CacheClusterId |  |
-| HyperLogLogBasedCmds | Общее количество команд, основанных на HyperLogLog | Count | Sum | CacheClusterId, CacheNodeId |  |
-| HyperLogLogBasedCmds |  | Count | Sum | CacheClusterId |  |
-| IncrHits | Количество запросов на увеличение, полученных кэшем, в которых запрашиваемый ключ был найден | Count | Sum | CacheClusterId, CacheNodeId |  |
-| IncrHits |  | Count | Sum | CacheClusterId |  |
-| IncrMisses | Количество запросов на увеличение, полученных кэшем, в которых запрашиваемый ключ не был найден | Count | Sum | CacheClusterId, CacheNodeId |  |
-| IncrMisses |  | Count | Sum | CacheClusterId |  |
-| KeyBasedCmds | Общее количество команд, основанных на ключах. Получено из статистики Redis commandstats путем суммирования всех команд, работающих с одним или несколькими ключами в нескольких структурах данных (del, expire, rename и т.д.). | Count | Sum | CacheClusterId, CacheNodeId |  |
-| KeyBasedCmds |  | Count | Sum | CacheClusterId |  |
-| KeysTracked | Количество ключей, отслеживаемых функцией отслеживания ключей Redis, в процентах от tracking-table-max-keys. Отслеживание ключей используется для поддержки кэширования на стороне клиента и уведомляет клиентов при изменении ключей. | Count | Sum | CacheClusterId, CacheNodeId |  |
-| KeysTracked |  | Count | Sum | CacheClusterId |  |
-| KeysTracked |  | Count | Sum | Region |  |
-| ListBasedCmds | Общее количество команд, основанных на списках. Получено из статистики Redis commandstats путем суммирования всех команд, работающих с одним или несколькими списками (lindex, lrange, lpush, ltrim и т.д.). | Count | Sum | CacheClusterId, CacheNodeId |  |
-| ListBasedCmds |  | Count | Sum | CacheClusterId |  |
-| Network Packets Per Second Allowance Exceeded |  | Count | Sum | CacheClusterId, CacheNodeId |  |
-| Network Packets Per Second Allowance Exceeded |  | Count | Sum | CacheClusterId |  |
-| NetworkBandwidthInAllowanceExceeded |  | Count | Sum | CacheClusterId, CacheNodeId |  |
-| NetworkBandwidthInAllowanceExceeded |  | Count | Sum | CacheClusterId |  |
-| NetworkBandwidthOutAllowanceExceeded |  | Count | Sum | CacheClusterId, CacheNodeId |  |
-| NetworkBandwidthOutAllowanceExceeded |  | Count | Sum | CacheClusterId |  |
-| NetworkBytesIn | Количество байт, прочитанных хостом из сети | Bytes | Sum | CacheClusterId, CacheNodeId |  |
-| NetworkBytesIn |  | Bytes | Sum | CacheClusterId |  |
-| NetworkBytesOut | Количество байт, отправленных экземпляром через все сетевые интерфейсы | Bytes | Sum | CacheClusterId, CacheNodeId |  |
-| NetworkBytesOut |  | Bytes | Sum | CacheClusterId |  |
-| NetworkConntrackAllowanceExceeded |  | Count | Sum | CacheClusterId, CacheNodeId |  |
-| NetworkConntrackAllowanceExceeded |  | Count | Sum | CacheClusterId |  |
-| NetworkLinkLocalAllowanceExceeded |  | Count | Sum | CacheClusterId, CacheNodeId |  |
-| NetworkLinkLocalAllowanceExceeded |  | Count | Sum | CacheClusterId |  |
-| NewConnections | Количество новых подключений, полученных кэшем. Получено из статистики memcached total\_connections путем записи изменения total\_connections за период времени. | Count | Sum | CacheClusterId, CacheNodeId |  |
-| NewConnections |  | Count | Sum | CacheClusterId |  |
-| NewItems | Количество новых элементов, сохраненных кэшем. Получено из статистики memcached total\_items путем записи изменения total\_items за период времени. | Count | Sum | CacheClusterId, CacheNodeId |  |
-| NewItems |  | Count | Sum | CacheClusterId |  |
-| Reclaimed | Количество истекших элементов, вытесненных кэшем для освобождения места для новых записей | Count | Sum | CacheClusterId, CacheNodeId |  |
-| Reclaimed |  | Count | Sum | CacheClusterId |  |
-| ReplicationBytes | Для узлов в реплицированной конфигурации ReplicationBytes показывает количество байт, отправляемых основным узлом всем его репликам. Эта метрика отражает нагрузку на запись в группе репликации. Получено из статистики master\_repl\_offset. | Bytes | Multi | CacheClusterId, CacheNodeId |  |
-| ReplicationBytes |  | Bytes | Multi | CacheClusterId |  |
-| ReplicationLag | Эта метрика применима только для узла, работающего как реплика для чтения. Она показывает, насколько реплика отстает (в секундах) в применении изменений от основного узла. | Seconds | Multi | CacheClusterId, CacheNodeId |  |
-| ReplicationLag |  | Seconds | Multi | CacheClusterId |  |
-| SaveInProgress | Эта бинарная метрика возвращает 1, когда выполняется фоновое сохранение (с разветвлением или без), и 0 в противном случае. | Count | Multi | CacheClusterId, CacheNodeId |  |
-| SaveInProgress |  | Count | Multi | CacheClusterId |  |
-| SetBasedCmds | Общее количество команд, основанных на множествах. Получено из статистики Redis commandstats путем суммирования всех команд, работающих с одним или несколькими множествами (scard, sdiff, sadd, sunion и т.д.). | Count | Sum | CacheClusterId, CacheNodeId |  |
-| SetBasedCmds |  | Count | Sum | CacheClusterId |  |
-| SetTypeCmds | Общее количество команд типа записи. Получено из статистики Redis commandstats путем суммирования всех мутирующих типов команд, работающих с данными (set, hset, sadd, lpop и т.д.). | Count | Sum | CacheClusterId, CacheNodeId |  |
-| SetTypeCmds |  | Count | Sum | CacheClusterId |  |
-| SlabsMoved | Общее количество перемещенных страниц slab | Count | Sum | CacheClusterId, CacheNodeId |  |
-| SlabsMoved |  | Count | Sum | CacheClusterId |  |
-| SortedSetBasedCmds | Общее количество команд, основанных на отсортированных множествах. Получено из статистики Redis commandstats путем суммирования всех команд, работающих с одним или несколькими отсортированными множествами (zcount, zrange, zrank, zadd и т.д.). | Count | Sum | CacheClusterId, CacheNodeId |  |
-| SortedSetBasedCmds | Общее количество команд, основанных на строках. Получено из статистики Redis commandstats путем суммирования всех команд, работающих с одной или несколькими строками (strlen, setex, setrange и т.д.). | Count | Sum | CacheClusterId |  |
-| StringBasedCmds |  | Count | Sum | CacheClusterId, CacheNodeId |  |
-| StringBasedCmds |  | Count | Sum | CacheClusterId |  |
-| SwapUsage | Объем используемого swap-пространства на хосте | Bytes | Multi | CacheClusterId, CacheNodeId |  |
-| SwapUsage |  | Bytes | Multi | CacheClusterId | Доступна |
-| TouchHits | Количество ключей, которые были затронуты и получили новое время истечения | Count | Sum | CacheClusterId, CacheNodeId |  |
-| TouchHits |  | Count | Sum | CacheClusterId |  |
-| TouchMisses | Количество элементов, которые были затронуты, но не были найдены | Count | Sum | CacheClusterId, CacheNodeId |  |
-| TouchMisses |  | Count | Sum | CacheClusterId |  |
-| UnusedMemory | Объем памяти, не используемой данными. Получено из статистики Memcached limit\_maxbytes и bytes путем вычитания bytes из limit\_maxbytes. | Bytes | Sum | CacheClusterId, CacheNodeId |  |
-| UnusedMemory |  | Bytes | Sum | CacheClusterId |  |
+| ActiveDefragHits | Количество перераспределений значений в минуту, выполненных процессом активной дефрагментации. Вычисляется на основе статистики `active_defrag_hits`. | Количество | Sum | CacheClusterId, CacheNodeId |  |
+| ActiveDefragHits |  | Количество | Sum | CacheClusterId |  |
+| BytesReadIntoMemcached | Количество байт, прочитанных из сети узлом кэша | Байт | Sum | CacheClusterId, CacheNodeId |  |
+| BytesReadIntoMemcached |  | Байт | Sum | CacheClusterId |  |
+| BytesUsedFworCacheItems |  | Байт | Sum | CacheClusterId, CacheNodeId |  |
+| BytesUsedForCacheItems | Количество байт, используемых для хранения элементов кэша | Байт | Sum | CacheClusterId |  |
+| BytesUsedForCache | Общее количество байт, выделенных Redis для всех целей, включая набор данных, буферы и т. д. Вычисляется на основе статистики used_memory. | Байт | Sum | CacheClusterId, CacheNodeId |  |
+| BytesUsedForCache |  | Байт | Sum | CacheClusterId |  |
+| BytesUsedForHash | Количество байт, используемых в настоящее время хеш-таблицами | Байт | Sum | CacheClusterId, CacheNodeId |  |
+| BytesUsedForHash |  | Байт | Sum | CacheClusterId |  |
+| BytesWrittenOutFromMemcached | Количество байт, записанных в сеть узлом кэша | Байт | Sum | CacheClusterId, CacheNodeId |  |
+| BytesWrittenOutFromMemcached |  | Байт | Sum | CacheClusterId |  |
+| CPUUtilization | Процент загрузки CPU для всего хоста | Процент | Multi | CacheClusterId, CacheNodeId |  |
+| CPUUtilization |  | Процент | Multi | CacheClusterId | Применимо |
+| CacheHits | Количество успешных операций поиска ключей только для чтения в основном словаре. Вычисляется на основе статистики keyspace_hits. | Количество | Sum | CacheClusterId, CacheNodeId |  |
+| CacheHits |  | Количество | Sum | CacheClusterId |  |
+| CacheMisses | Количество неуспешных операций поиска ключей только для чтения в основном словаре. Вычисляется на основе статистики keyspace_misses. | Количество | Sum | CacheClusterId, CacheNodeId |  |
+| CacheMisses |  | Количество | Sum | CacheClusterId |  |
+| CasBadval | Количество запросов CAS (check and set), полученных кэшем, в которых значение CAS не совпало с сохранённым значением CAS | Количество | Sum | CacheClusterId, CacheNodeId |  |
+| CasBadval |  | Количество | Sum | CacheClusterId |  |
+| CasHits | Количество запросов CAS, полученных кэшем, в которых запрошенный ключ был найден и значение CAS совпало | Количество | Sum | CacheClusterId, CacheNodeId |  |
+| CasHits |  | Количество | Sum | CacheClusterId |  |
+| CasMisses | Количество запросов CAS, полученных кэшем, в которых запрошенный ключ не был найден | Количество | Sum | CacheClusterId, CacheNodeId |  |
+| CasMisses |  | Количество | Sum | CacheClusterId |  |
+| CmdConfigGet | Накопительное количество запросов config get | Количество | Sum | CacheClusterId, CacheNodeId |  |
+| CmdConfigGet |  | Количество | Sum | CacheClusterId |  |
+| CmdConfigSet | Накопительное количество запросов config set | Количество | Sum | CacheClusterId, CacheNodeId |  |
+| CmdConfigSet |  | Количество | Sum | CacheClusterId |  |
+| CmdFlush | Количество команд flush, полученных кэшем | Количество | Sum | CacheClusterId, CacheNodeId |  |
+| CmdFlush |  | Количество | Sum | CacheClusterId |  |
+| CmdGet | Количество команд get, полученных кэшем | Количество | Sum | CacheClusterId, CacheNodeId |  |
+| CmdGet |  | Количество | Sum | CacheClusterId |  |
+| CmdSet | Количество команд set, полученных кэшем | Количество | Sum | CacheClusterId, CacheNodeId |  |
+| CmdSet |  | Количество | Sum | CacheClusterId |  |
+| CmdTouch | Накопительное количество запросов touch | Количество | Sum | CacheClusterId, CacheNodeId |  |
+| CmdTouch |  | Количество | Sum | CacheClusterId |  |
+| CurrConfig | Текущее количество сохранённых конфигураций | Количество | Sum | CacheClusterId, CacheNodeId |  |
+| CurrConfig |  | Количество | Sum | CacheClusterId |  |
+| CurrConnections | Количество подключений, установленных к кэшу в определённый момент времени. ElastiCache использует два-три из этих подключений для мониторинга кластера. | Количество | Multi | CacheClusterId, CacheNodeId |  |
+| CurrConnections |  | Количество | Multi | CacheClusterId | Применимо |
+| CurrItems | Количество элементов, хранящихся в кэше в настоящее время | Количество | Multi | CacheClusterId, CacheNodeId |  |
+| CurrItems |  | Количество | Multi | CacheClusterId |  |
+| DatabaseMemoryUsagePercentage |  | Процент | Multi | CacheClusterId, CacheNodeId |  |
+| DatabaseMemoryUsagePercentage |  | Процент | Multi | CacheClusterId |  |
+| DatabaseMemoryUsagePercentage |  | Процент | Multi | Region |  |
+| DecrHits | Количество запросов decrement, полученных кэшем, в которых запрошенный ключ был найден | Количество | Sum | CacheClusterId, CacheNodeId |  |
+| DecrHits |  | Количество | Sum | CacheClusterId |  |
+| DecrMisses | Количество запросов decrement, полученных кэшем, в которых запрошенный ключ не был найден | Количество | Sum | CacheClusterId, CacheNodeId |  |
+| DecrMisses |  | Количество | Sum | CacheClusterId |  |
+| DeleteHits | Количество запросов delete, полученных кэшем, в которых запрошенный ключ был найден | Количество | Sum | CacheClusterId, CacheNodeId |  |
+| DeleteHits |  | Количество | Sum | CacheClusterId |  |
+| DeleteMisses | Количество запросов delete, полученных кэшем, в которых запрошенный ключ не был найден. | Количество | Sum | CacheClusterId, CacheNodeId |  |
+| DeleteMisses |  | Количество | Sum | CacheClusterId |  |
+| EngineCPUUtilization | Предоставляет данные о загрузке CPU потоком движка Redis | Процент | Multi | CacheClusterId, CacheNodeId |  |
+| EngineCPUUtilization |  | Процент | Multi | CacheClusterId |  |
+| EvictedUnfetched | Количество действительных элементов, вытесненных из кэша наименее недавно использовавшихся (LRU), к которым ни разу не обращались после установки | Количество | Sum | CacheClusterId, CacheNodeId |  |
+| EvictedUnfetched |  | Количество | Sum | CacheClusterId |  |
+| Evictions | Количество неистёкших элементов, вытесненных кэшем для освобождения места под новые записи | Количество | Sum | CacheClusterId, CacheNodeId |  |
+| Evictions |  | Количество | Sum | CacheClusterId | Применимо |
+| ExpiredUnfetched | Количество истёкших элементов, освобождённых из LRU, к которым ни разу не обращались после установки | Количество | Sum | CacheClusterId, CacheNodeId |  |
+| ExpiredUnfetched |  | Количество | Sum | CacheClusterId |  |
+| FreeableMemory | Объём свободной памяти, доступной на хосте. Вычисляется на основе ОЗУ, буферов и кэша, которые ОС сообщает как освобождаемые. | Байт | Multi | CacheClusterId, CacheNodeId |  |
+| FreeableMemory |  | Байт | Multi | CacheClusterId |  |
+| GetHits | Количество запросов get, полученных кэшем, в которых запрошенный ключ был найден | Количество | Sum | CacheClusterId, CacheNodeId |  |
+| GetHits |  | Количество | Sum | CacheClusterId |  |
+| GetMisses | Количество запросов get, полученных кэшем, в которых запрошенный ключ не был найден | Количество | Sum | CacheClusterId, CacheNodeId |  |
+| GetMisses |  | Количество | Sum | CacheClusterId |  |
+| GetTypeCmds | Общее количество команд типа «только чтение». Вычисляется на основе статистики Redis commandstats путём суммирования всех команд типа «только чтение» (get, hget, scard, lrange и т. д.). | Количество | Sum | CacheClusterId, CacheNodeId |  |
+| GetTypeCmds |  | Количество | Sum | CacheClusterId |  |
+| HashBasedCmds | Общее количество команд, основанных на хешах. Вычисляется на основе статистики Redis commandstats путём суммирования всех команд, работающих с одним или несколькими хешами (hget, hkeys, hvals, hdel и т. д.). | Количество | Sum | CacheClusterId, CacheNodeId |  |
+| HashBasedCmds |  | Количество | Sum | CacheClusterId |  |
+| HyperLogLogBasedCmds | Общее количество команд на основе HyperLogLog | Количество | Sum | CacheClusterId, CacheNodeId |  |
+| HyperLogLogBasedCmds |  | Количество | Sum | CacheClusterId |  |
+| IncrHits | Количество запросов increment, полученных кэшем, в которых запрошенный ключ был найден | Количество | Sum | CacheClusterId, CacheNodeId |  |
+| IncrHits |  | Количество | Sum | CacheClusterId |  |
+| IncrMisses | Количество запросов increment, полученных кэшем, в которых запрошенный ключ не был найден | Количество | Sum | CacheClusterId, CacheNodeId |  |
+| IncrMisses |  | Количество | Sum | CacheClusterId |  |
+| KeyBasedCmds | Общее количество команд, основанных на ключах. Вычисляется на основе статистики Redis commandstats путём суммирования всех команд, работающих с одним или несколькими ключами в разных структурах данных (del, expire, rename и т. д.). | Количество | Sum | CacheClusterId, CacheNodeId |  |
+| KeyBasedCmds |  | Количество | Sum | CacheClusterId |  |
+| KeysTracked | Количество ключей, отслеживаемых механизмом отслеживания ключей Redis, в процентах от tracking-table-max-keys. Отслеживание ключей помогает кэшированию на стороне клиента и уведомляет клиентов об изменении ключей. | Количество | Sum | CacheClusterId, CacheNodeId |  |
+| KeysTracked |  | Количество | Sum | CacheClusterId |  |
+| KeysTracked |  | Количество | Sum | Region |  |
+| ListBasedCmds | Общее количество команд, основанных на списках. Вычисляется на основе статистики Redis commandstats путём суммирования всех команд, работающих с одним или несколькими списками (lindex, lrange, lpush, ltrim и т. д.). | Количество | Sum | CacheClusterId, CacheNodeId |  |
+| ListBasedCmds |  | Количество | Sum | CacheClusterId |  |
+| Network Packets Per Second Allowance Exceeded |  | Количество | Sum | CacheClusterId, CacheNodeId |  |
+| Network Packets Per Second Allowance Exceeded |  | Количество | Sum | CacheClusterId |  |
+| NetworkBandwidthInAllowanceExceeded |  | Количество | Sum | CacheClusterId, CacheNodeId |  |
+| NetworkBandwidthInAllowanceExceeded |  | Количество | Sum | CacheClusterId |  |
+| NetworkBandwidthOutAllowanceExceeded |  | Количество | Sum | CacheClusterId, CacheNodeId |  |
+| NetworkBandwidthOutAllowanceExceeded |  | Количество | Sum | CacheClusterId |  |
+| NetworkBytesIn | Количество байт, прочитанных хостом из сети | Байт | Sum | CacheClusterId, CacheNodeId |  |
+| NetworkBytesIn |  | Байт | Sum | CacheClusterId |  |
+| NetworkBytesOut | Количество байт, отправленных на всех сетевых интерфейсах экземпляром | Байт | Sum | CacheClusterId, CacheNodeId |  |
+| NetworkBytesOut |  | Байт | Sum | CacheClusterId |  |
+| NetworkConntrackAllowanceExceeded |  | Количество | Sum | CacheClusterId, CacheNodeId |  |
+| NetworkConntrackAllowanceExceeded |  | Количество | Sum | CacheClusterId |  |
+| NetworkLinkLocalAllowanceExceeded |  | Количество | Sum | CacheClusterId, CacheNodeId |  |
+| NetworkLinkLocalAllowanceExceeded |  | Количество | Sum | CacheClusterId |  |
+| NewConnections | Количество новых подключений, полученных кэшем. Вычисляется на основе статистики memcached total_connections путём фиксации изменения total_connections за период времени. | Количество | Sum | CacheClusterId, CacheNodeId |  |
+| NewConnections |  | Количество | Sum | CacheClusterId |  |
+| NewItems | Количество новых элементов, сохранённых кэшем. Вычисляется на основе статистики memcached total_items путём фиксации изменения total_items за период времени. | Количество | Sum | CacheClusterId, CacheNodeId |  |
+| NewItems |  | Количество | Sum | CacheClusterId |  |
+| Reclaimed | Количество истёкших элементов, вытесненных кэшем для освобождения места под новые записи | Количество | Sum | CacheClusterId, CacheNodeId |  |
+| Reclaimed |  | Количество | Sum | CacheClusterId |  |
+| ReplicationBytes | Для узлов в реплицированной конфигурации ReplicationBytes сообщает количество байт, которые первичный узел отправляет всем своим репликам. Эта метрика отражает нагрузку записи на группу репликации. Вычисляется на основе статистики master_repl_offset. | Байт | Multi | CacheClusterId, CacheNodeId |  |
+| ReplicationBytes |  | Байт | Multi | CacheClusterId |  |
+| ReplicationLag | Эта метрика применима только к узлу, работающему как реплика чтения. Она показывает, насколько (в секундах) реплика отстаёт в применении изменений с первичного узла. | Секунда | Multi | CacheClusterId, CacheNodeId |  |
+| ReplicationLag |  | Секунда | Multi | CacheClusterId |  |
+| SaveInProgress | Эта двоичная метрика возвращает 1, когда выполняется фоновое сохранение (с ответвлением процесса или без него), и 0 в противном случае. | Количество | Multi | CacheClusterId, CacheNodeId |  |
+| SaveInProgress |  | Количество | Multi | CacheClusterId |  |
+| SetBasedCmds | Общее количество команд, основанных на множествах. Вычисляется на основе статистики Redis commandstats путём суммирования всех команд, работающих с одним или несколькими множествами (scard, sdiff, sadd, sunion и т. д.). | Количество | Sum | CacheClusterId, CacheNodeId |  |
+| SetBasedCmds |  | Количество | Sum | CacheClusterId |  |
+| SetTypeCmds | Общее количество команд типа «запись». Вычисляется на основе статистики Redis commandstats путём суммирования всех изменяющих типов команд, работающих с данными (set, hset, sadd, lpop и т. д.). | Количество | Sum | CacheClusterId, CacheNodeId |  |
+| SetTypeCmds |  | Количество | Sum | CacheClusterId |  |
+| SlabsMoved | Общее количество перемещённых страниц slab | Количество | Sum | CacheClusterId, CacheNodeId |  |
+| SlabsMoved |  | Количество | Sum | CacheClusterId |  |
+| SortedSetBasedCmds | Общее количество команд, основанных на упорядоченных множествах. Вычисляется на основе статистики Redis commandstats путём суммирования всех команд, работающих с одним или несколькими упорядоченными множествами (zcount, zrange, zrank, zadd и т. д.). | Количество | Sum | CacheClusterId, CacheNodeId |  |
+| SortedSetBasedCmds | Общее количество команд, основанных на строках. Вычисляется на основе статистики Redis commandstats путём суммирования всех команд, работающих с одной или несколькими строками (strlen, setex, setrange и т. д.). | Количество | Sum | CacheClusterId |  |
+| StringBasedCmds |  | Количество | Sum | CacheClusterId, CacheNodeId |  |
+| StringBasedCmds |  | Количество | Sum | CacheClusterId |  |
+| SwapUsage | Объём пространства подкачки, используемого на хосте | Байт | Multi | CacheClusterId, CacheNodeId |  |
+| SwapUsage |  | Байт | Multi | CacheClusterId | Применимо |
+| TouchHits | Количество ключей, к которым обратились и которым было задано новое время истечения | Количество | Sum | CacheClusterId, CacheNodeId |  |
+| TouchHits |  | Количество | Sum | CacheClusterId |  |
+| TouchMisses | Количество элементов, к которым обратились, но которые не были найдены | Количество | Sum | CacheClusterId, CacheNodeId |  |
+| TouchMisses |  | Количество | Sum | CacheClusterId |  |
+| UnusedMemory | Объём памяти, не используемой данными. Вычисляется на основе статистик Memcached limit_maxbytes и bytes путём вычитания bytes из limit_maxbytes. | Байт | Sum | CacheClusterId, CacheNodeId |  |
+| UnusedMemory |  | Байт | Sum | CacheClusterId |  |

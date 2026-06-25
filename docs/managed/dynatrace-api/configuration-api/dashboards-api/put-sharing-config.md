@@ -1,8 +1,15 @@
 ---
-title: "Dashboards API - PUT sharing configuration"
+title: Dashboards API - PUT sharing configuration
 source: https://docs.dynatrace.com/managed/dynatrace-api/configuration-api/dashboards-api/put-sharing-config
-updated: 2026-02-09
+scraped: 2026-05-12T11:14:56.004397
 ---
+
+# Dashboards API - PUT sharing configuration
+
+# Dashboards API - PUT sharing configuration
+
+* Reference
+* Published Mar 29, 2021
 
 Updates the sharing configuration of the specified dashboard.
 
@@ -17,7 +24,7 @@ The request consumes an `application/json` payload.
 
 To execute this request, you need an access token with `WriteConfig` scope.
 
-To learn how to obtain and use it, see Tokens and authentication.
+To learn how to obtain and use it, see [Tokens and authentication](/managed/discover-dynatrace/references/dynatrace-api/basics/dynatrace-api-authentication).
 
 ## Parameters
 
@@ -38,7 +45,7 @@ Sharing configuration of the dashboard.
 | id | string | The Dynatrace entity ID of the dashboard. | Required |
 | permissions | [DashboardSharePermissions[]](#openapi-definition-DashboardSharePermissions) | A list of permissions to access the dashboard. | Required |
 | preset | boolean | If `true` the dashboard will be marked as preset. | Optional |
-| publicAccess | [DashboardAnonymousAccess](#openapi-definition-DashboardAnonymousAccess) | Configuration of the [anonymous access](https://dt-url.net/ov03sf1) to the dashboard. | Required |
+| publicAccess | [DashboardAnonymousAccess](#openapi-definition-DashboardAnonymousAccess) | Configuration of the [anonymous accessï»¿](https://dt-url.net/ov03sf1) to the dashboard. | Required |
 
 #### The `DashboardSharePermissions` object
 
@@ -52,7 +59,7 @@ Access permissions of the dashboard.
 
 #### The `DashboardAnonymousAccess` object
 
-Configuration of the [anonymous access](https://dt-url.net/ov03sf1) to the dashboard.
+Configuration of the [anonymous accessï»¿](https://dt-url.net/ov03sf1) to the dashboard.
 
 | Element | Type | Description | Required |
 | --- | --- | --- | --- |
@@ -67,121 +74,161 @@ This is a model of the request body, showing the possible elements. It has to be
 {
 
 
+
 "enabled": "true",
+
 
 
 "id": "a5fca32f-d3ba-4749-b201-5d3cd70b9d22",
 
 
+
 "permissions": [
+
 
 
 {
 
 
+
 "permission": "VIEW",
+
 
 
 "type": "ALL"
 
 
+
 },
 
 
+
 {
+
 
 
 "id": "userid",
 
 
+
 "permission": "VIEW",
+
 
 
 "type": "USER"
 
 
+
 },
 
 
+
 {
+
 
 
 "id": "userid",
 
 
+
 "permission": "EDIT",
+
 
 
 "type": "USER"
 
 
+
 },
+
 
 
 {
 
 
+
 "id": "groupid",
+
 
 
 "permission": "VIEW",
 
 
+
 "type": "GROUP"
+
 
 
 },
 
 
+
 {
+
 
 
 "id": "groupid",
 
 
+
 "permission": "EDIT",
 
 
+
 "type": "GROUP"
+
 
 
 }
 
 
+
 ],
+
 
 
 "preset": "true",
 
 
+
 "publicAccess": {
+
 
 
 "managementZoneIds": [
 
 
+
 "default",
+
 
 
 "2899273953172250973"
 
 
+
 ],
+
 
 
 "urls": {
 
 
+
 "2899273953172250973": "https://mytenantid.live.dynatrace.com/e/1/dashboards/a5fca32f-d3ba-4749-b201-5d3cd70b9d22?auth=SL5wTvCbaM2lwpew23234",
+
 
 
 "default": "https://mytenantid.live.dynatrace.com/e/1/dashboards/a5fca32f-d3ba-4749-b201-5d3cd70b9d22?auth=9yPpSI-M-3434Irz8yc8U"
 
 
+
 }
 
 
+
 }
+
 
 
 }
@@ -229,40 +276,53 @@ A list of constraint violations
 {
 
 
+
 "error": {
+
 
 
 "code": 1,
 
 
+
 "constraintViolations": [
+
 
 
 {
 
 
+
 "location": "string",
+
 
 
 "message": "string",
 
 
+
 "parameterLocation": "HEADER",
+
 
 
 "path": "string"
 
 
+
 }
+
 
 
 ],
 
 
+
 "message": "string"
 
 
+
 }
+
 
 
 }
@@ -283,7 +343,7 @@ The request consumes an `application/json` payload.
 
 To execute this request, you need an access token with `WriteConfig` scope.
 
-To learn how to obtain and use it, see Tokens and authentication.
+To learn how to obtain and use it, see [Tokens and authentication](/managed/discover-dynatrace/references/dynatrace-api/basics/dynatrace-api-authentication).
 
 ### Response
 
@@ -327,40 +387,53 @@ A list of constraint violations
 {
 
 
+
 "error": {
+
 
 
 "code": 1,
 
 
+
 "constraintViolations": [
+
 
 
 {
 
 
+
 "location": "string",
+
 
 
 "message": "string",
 
 
+
 "parameterLocation": "HEADER",
+
 
 
 "path": "string"
 
 
+
 }
+
 
 
 ],
 
 
+
 "message": "string"
 
 
+
 }
+
 
 
 }
@@ -368,4 +441,4 @@ A list of constraint violations
 
 ## Related topics
 
-* Dashboards
+* [Dashboards](/managed/analyze-explore-automate/dashboards-classic "Learn how to create, manage, and use Dynatrace Dashboards Classic.")

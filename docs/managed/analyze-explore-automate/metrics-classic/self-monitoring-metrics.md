@@ -1,13 +1,13 @@
 ---
 title: Self-monitoring metrics
-source: https://www.dynatrace.com/docs/analyze-explore-automate/metrics-classic/self-monitoring-metrics
-scraped: 2026-03-05T21:37:18.643612
+source: https://docs.dynatrace.com/managed/analyze-explore-automate/metrics-classic/self-monitoring-metrics
+scraped: 2026-05-12T11:06:50.936314
 ---
 
 # Self-monitoring metrics
 
+# Self-monitoring metrics
 
-* Classic
 * 4-min read
 * Published Dec 03, 2021
 
@@ -69,7 +69,7 @@ To view the self-monitoring data use the following metrics:
 
 ### Example environment insights dashboard
 
-You can create a Dynatrace dashboard for quick, focused access to the self-monitoring data. Create tiles by selecting the self-monitoring metrics in Data Explorer, configuring a visualization for each of them, and pinning them to your dashboards. For more information, see Dashboards Classic.
+You can create a Dynatrace dashboard for quick, focused access to the self-monitoring data. Create tiles by selecting the self-monitoring metrics in Data Explorer, configuring a visualization for each of them, and pinning them to your dashboards. For more information, see [Dashboards](/managed/analyze-explore-automate/dashboards-classic "Learn how to create, manage, and use Dynatrace Dashboards Classic.").
 
 The following screenshot shows a dashboard that uses the above metrics to monitor the operation of a Dynatrace environment over time.
 
@@ -78,9 +78,11 @@ The following screenshot shows a dashboard that uses the above metrics to monito
 
 ![Example of dashboard page with self-monitoring metrics.](https://dt-cdn.net/images/3dashboard-1107-58988f1958.png)
 
+Example of dashboard page with self-monitoring metrics.
+
 ## Log and event monitoring insights
 
-In this example, we use self-monitoring metrics to get insights into the operation of Log Monitoring Classic over time.
+In this example, we use self-monitoring metrics to get insights into the operation of [Log Monitoring](/managed/analyze-explore-automate/log-monitoring "Learn how to enable Log Monitoring, the insights that Log Monitoring can provide, and more.") over time.
 
 1. Go to **Data Explorer**.
 2. Check the metrics listed below.
@@ -118,8 +120,12 @@ The following screenshots show the JVM memory usage and JVM CPU usage of one Act
 
 ![Example of Data Explorer page with self-monitoring metric.](https://dt-cdn.net/images/1explorer-f-1565-6576341d6c.png)
 
+Example of Data Explorer page with self-monitoring metric.
+
 Notice that the memory usage and availability over time does not indicate any abnormal utilization, but CPU usage shows an interesting peak.
 
 ![Example of Data Explorer page with self-monitoring metric graph.](https://dt-cdn.net/images/2explorer-f-1565-80ae3f684e.png)
+
+Example of Data Explorer page with self-monitoring metric graph.
 
 Further investigation reveals that this peak was caused by an increased number of OneAgents reporting via this ActiveGate, which resulted from the execution of a test on this cluster.

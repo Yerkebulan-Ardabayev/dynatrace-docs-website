@@ -1,8 +1,15 @@
 ---
-title: "Events API v2 - GET all event properties"
+title: Events API v2 - GET all event properties
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/events-v2/get-event-properties
-updated: 2026-02-09
+scraped: 2026-05-12T11:12:13.267419
 ---
+
+# Events API v2 - GET all event properties
+
+# Events API v2 - GET all event properties
+
+* Reference
+* Published Oct 07, 2021
 
 Lists all event properties that Dynatrace provides.
 
@@ -17,7 +24,7 @@ The request produces an `application/json` payload.
 
 To execute this request, you need an access token with `events.read` scope.
 
-To learn how to obtain and use it, see Tokens and authentication.
+To learn how to obtain and use it, see [Tokens and authentication](/managed/discover-dynatrace/references/dynatrace-api/basics/dynatrace-api-authentication).
 
 ## Parameters
 
@@ -92,83 +99,109 @@ A list of constraint violations
 {
 
 
+
 "eventProperties": [
 
 
+
 {
+
 
 
 "description": "string",
 
 
+
 "displayName": "Custom description",
+
 
 
 "filterable": true,
 
 
+
 "key": "dt.event.description",
+
 
 
 "writable": true
 
 
+
 }
 
 
+
 ],
+
 
 
 "nextPageKey": "AQAAABQBAAAABQ==",
 
 
+
 "pageSize": 1,
+
 
 
 "totalCount": 1
 
 
+
 }
 ```
 
 ```
 {
+
 
 
 "error": {
 
 
+
 "code": 1,
+
 
 
 "constraintViolations": [
 
 
+
 {
+
 
 
 "location": "string",
 
 
+
 "message": "string",
+
 
 
 "parameterLocation": "HEADER",
 
 
+
 "path": "string"
 
 
+
 }
+
 
 
 ],
 
 
+
 "message": "string"
 
 
+
 }
+
 
 
 }
@@ -186,7 +219,9 @@ The API token is passed in the **Authorization** header.
 curl --request GET \
 
 
+
 --url 'https://mySampleEnv.live.dynatrace.com/api/v2/eventProperties?pageSize=3' \
+
 
 
 --header 'Authorization: Api-Token dt0c01.abc123.abcdefjhij1234567890'
@@ -204,73 +239,97 @@ https://mySampleEnv.live.dynatrace.com/api/v2/eventProperties?pageSize=3
 {
 
 
+
 "totalCount": 23,
+
 
 
 "pageSize": 3,
 
 
+
 "nextPageKey": "AQAAAAMBAAAAAw==",
+
 
 
 "eventProperties": [
 
 
+
 {
+
 
 
 "key": "dt.event.allow_davis_merge",
 
 
+
 "displayName": "Allow Davis merge",
+
 
 
 "description": "Allow Davis AI to merge this event into existing problems (true) or force creating a new problem (false)",
 
 
+
 "writable": true
+
 
 
 },
 
 
+
 {
+
 
 
 "key": "dt.event.baseline.service_method",
 
 
+
 "displayName": "Baseline affected service method",
+
 
 
 "description": "Lists affected service methods of the triggered service event",
 
 
+
 "writable": false
+
 
 
 },
 
 
+
 {
+
 
 
 "key": "dt.event.baseline.total_load",
 
 
+
 "displayName": "Baseline total load",
+
 
 
 "description": "The load (calls per minute) of the entire service or application for triggered event",
 
 
+
 "writable": false
+
 
 
 }
 
 
+
 ]
+
 
 
 }
@@ -282,4 +341,4 @@ https://mySampleEnv.live.dynatrace.com/api/v2/eventProperties?pageSize=3
 
 ## Related topics
 
-* Event analysis and correlation
+* [Event analysis and correlation](/managed/dynatrace-intelligence/root-cause-analysis/event-analysis-and-correlation "Gain an understanding of the Events section on each host, process, and service overview page.")

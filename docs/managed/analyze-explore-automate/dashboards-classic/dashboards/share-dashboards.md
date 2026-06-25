@@ -1,13 +1,18 @@
 ---
-title: "Share Dynatrace dashboards"
+title: Share Dynatrace dashboards
 source: https://docs.dynatrace.com/managed/analyze-explore-automate/dashboards-classic/dashboards/share-dashboards
-updated: 2026-02-09
+scraped: 2026-05-12T11:14:46.952946
 ---
+
+# Share Dynatrace dashboards
+
+# Share Dynatrace dashboards
 
 * How-to guide
 * 7-min read
+* Published Jul 19, 2017
 
-Dashboards Classic
+[Dashboards Classic](/managed/analyze-explore-automate/dashboards-classic "Learn how to create, manage, and use Dynatrace Dashboards Classic.")
 
 You can share your dashboards with anyone, even if they don't have their own accounts within the same Dynatrace environment.
 

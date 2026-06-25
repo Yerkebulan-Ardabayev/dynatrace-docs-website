@@ -1,0 +1,9 @@
+Details и impactAnalysis включены, recentComments — нет.  **{ProblemDetailsJSON}**: problem как json
+---
+Details и impactAnalysis включены, recentComments — нет.  **{ProblemDetailsJSON}**: problem как json
+---
+Details и impactAnalysis включены, recentComments — нет.  **{ProblemDetailsJSON}**: problem как json
+---
+ceNow URL. Поле взаимоисключающее с полем **url** — допустимо использовать только одно из них. | Req
+---
+. Поле взаимоисключающее с полем **instanceName** — допустимо использовать только одно из них. | Opt

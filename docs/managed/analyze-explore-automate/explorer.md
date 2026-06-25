@@ -1,10 +1,15 @@
 ---
-title: "Data Explorer"
+title: Data Explorer
 source: https://docs.dynatrace.com/managed/analyze-explore-automate/explorer
-updated: 2026-02-09
+scraped: 2026-05-12T11:03:57.692659
 ---
 
+# Data Explorer
+
+# Data Explorer
+
 * 7-min read
+* Updated on Oct 03, 2025
 
 Data Explorer greatly enhances your abilities to query and visualize metrics.
 
@@ -15,7 +20,7 @@ Data Explorer greatly enhances your abilities to query and visualize metrics.
 
 Quick start
 
-If you prefer to skip the technical details for now and learn by doing, try the Data Explorer quick start. You'll learn how to:
+If you prefer to skip the technical details for now and learn by doing, try the [Data Explorer quick start](/managed/analyze-explore-automate/explorer/explorer-quick-start "Using Data Explorer, create your first query, select a visualization, and pin the results to a dashboard."). You'll learn how to:
 
 * Use a template
 * Create a simple visualization from scratch
@@ -29,6 +34,8 @@ But if you want the details now, read below.
 Every metric query is composed of multiple optional components. For example, this query:
 
 ![Sample query](https://dt-cdn.net/images/query-sample-1340-f8a8829de6.png)
+
+Sample query
 
 has the following components:
 
@@ -45,6 +52,8 @@ In the example below, if you hover over the **i** (information) icon in the sele
 
 ![Data Explorer: Query editor: Info pop-up](https://dt-cdn.net/images/info-rate-710-80bead2920.png)
 
+Data Explorer: Query editor: Info pop-up
+
 ### Metric name
 
 In the query editor, select the metric name from the list displayed in the **Select metricâ¦** box. This can be a built-in metric or a metric ingested from a channel such as StatsD, Prometheus, or Telegraf over our metrics API.
@@ -55,18 +64,26 @@ To select the metric
 
   ![Data Explorer: metric selector: type and select](https://dt-cdn.net/images/metric-selector-metric-type-471-10a8a83a2e.png)
 
-* If you have favorited any metrics in the Metrics browser browser, those metrics are displayed at the top of the list in the metric selector.
+  Data Explorer: metric selector: type and select
+
+* If you have favorited any metrics in the [Metrics browser](/managed/analyze-explore-automate/dashboards-classic/metrics-browser "Browse metrics with the Dynatrace metrics browser.") browser, those metrics are displayed at the top of the list in the metric selector.
 
   ![Data Explorer: metric selector: favorites](https://dt-cdn.net/images/metric-selector-favorites-475-665c98b195.png)
+
+  Data Explorer: metric selector: favorites
 * You can select a metric category to focus the list of metrics.
 
   ![Data Explorer: metric selector: categories](https://dt-cdn.net/images/metric-selector-categories-476-5cbd27551a.png)
+
+  Data Explorer: metric selector: categories
 
 * When you hover over any metric in the list, a side panel displays details about that metric.
 
   ![Data Explorer: metric selector: metric details](https://dt-cdn.net/images/metric-selector-metric-details-964-cd2f59a371.png)
 
-  To see more information about that metric, select **View all metric information**. This opens the Metrics browser in a new tab (so you don't lose your work in Data Explorer) with lots of useful details about the selected metric.
+  Data Explorer: metric selector: metric details
+
+  To see more information about that metric, select **View all metric information**. This opens the [Metrics browser](/managed/analyze-explore-automate/dashboards-classic/metrics-browser "Browse metrics with the Dynatrace metrics browser.") in a new tab (so you don't lose your work in Data Explorer) with lots of useful details about the selected metric.
 
 ### Space aggregation
 
@@ -77,6 +94,8 @@ The query will always provide the statistically most accurate results for a give
 To change this aggregation, select one from the list immediately following the metric name in the query editor:
 
 ![Data Explorer: Query editor: select space aggregation](https://dt-cdn.net/images/aggregation-select-579-2c3184b61a.png)
+
+Data Explorer: Query editor: select space aggregation
 
 Every metric provides the same possible space aggregations: `Auto`, `Average`, `Count`, `Maximum`, `Minimum`, `Sum`, `Median`, `Percentile 10th`, `Percentile 75th`, and `Percentile 90th`.
 
@@ -143,7 +162,7 @@ To set an explicit limit
 1. If **Limit** is not already displayed in the query editor, select  and then select `Limit` from the list.
 2. Set **Limit** to `1`, `10`, `20`, or `100`.
 
-To remove the limit, turn on **Advanced mode** and delete the `:limit(n)` component of the query.
+For Honeycomb and Table visualizations, you can work around this limitation by using **Limit** > **Maximum** or turning on **Advanced mode** and removing `:limit(100)` from the query.
 
 ### Global limit
 
@@ -191,23 +210,27 @@ The default visualization is a graph. To change the visualization, select one fr
 
 ![Select visualization](https://dt-cdn.net/images/visualization-select-285-c06615cee7.png)
 
+Select visualization
+
 The following visualization types are available:
 
-* Graph
-* Stacked column
-* Stacked area
-* Pie
-* Single value
-* Table
-* Top list
-* Heatmap
-* Honeycomb
+* [Graph](/managed/analyze-explore-automate/dashboards-classic/charts-and-tiles/visualization-graph "Configure and use a graph visualization in Data Explorer and pin it to your dashboards as a graph tile.")
+* [Stacked column](/managed/analyze-explore-automate/dashboards-classic/charts-and-tiles/visualization-stacked-column "Configure and use a stacked column visualization in Data Explorer and display it on your dashboards.")
+* [Stacked area](/managed/analyze-explore-automate/dashboards-classic/charts-and-tiles/visualization-stacked-area "Configure and use a stacked area visualization in Data Explorer and display it on your dashboards.")
+* [Pie](/managed/analyze-explore-automate/dashboards-classic/charts-and-tiles/visualization-pie "Configure and use a pie/doughnut visualization in Data Explorer and display it on your dashboards.")
+* [Single value](/managed/analyze-explore-automate/dashboards-classic/charts-and-tiles/visualization-single-value "Configure and use a single-value visualization in Data Explorer and display it on your dashboards.")
+* [Table](/managed/analyze-explore-automate/dashboards-classic/charts-and-tiles/visualization-table "Configure and use a table visualization in Data Explorer and display it on your dashboards.")
+* [Top list](/managed/analyze-explore-automate/dashboards-classic/charts-and-tiles/visualization-top-list "Configure a top-list visualization in Data Explorer and display it on your dashboards.")
+* [Heatmap](/managed/analyze-explore-automate/dashboards-classic/charts-and-tiles/visualization-heatmap "Configure and use a heatmap visualization in Data Explorer and pin it to your dashboards as a heatmap tile.")
+* [Honeycomb](/managed/analyze-explore-automate/dashboards-classic/charts-and-tiles/visualization-honeycomb "Configure and use a honeycomb visualization in Data Explorer and display it on your dashboards.")
 
 ### Plus
 
 To add or remove metric transformations for a row in the query editor, select  and then select or clear checkboxes as needed.
 
 ![Metric Plus button](https://dt-cdn.net/images/data-explorer-metric-plus-button-46-3104fd992d.png)
+
+Metric Plus button
 
 * **All**âdisplay all available fields (see below)
 * [Default](#default)
@@ -228,6 +251,8 @@ To make a copy of a metric that you have already added to the query, select  > *
 
 ![Metric More menu ](https://dt-cdn.net/images/data-explorer-metric-more-menu-74-1b3f17af8b.png)
 
+Metric More menu
+
 ### Add metric event
 
 If you see something in a Data Explorer chart that you want to continue observing, it's easy to create a metric event.
@@ -238,11 +263,13 @@ To create a metric event from Data Explorer
 
    ![Metric More menu ](https://dt-cdn.net/images/data-explorer-metric-more-menu-74-1b3f17af8b.png)
 
+   Metric More menu
+
    The **Settings** > **Anomaly detection** > **Metric events** page is displayed in a new browser window (so you don't lose your work in Data Explorer) with **Add metric event** selected and the metric fields already filled in where possible from your query.
 2. Complete the metric event definition and save your changes.
 3. Close that browser window and return to the first browser window to continue what you were doing in Data Explorer.
 
-For details on metric events, see Metric events.
+For details on metric events, see [Metric events](/managed/dynatrace-intelligence/anomaly-detection/metric-events "Learn about metric events in Dynatrace").
 
 ### Reorder metrics
 
@@ -256,6 +283,8 @@ To change the order of metrics in your query, select and drag the metric to a ne
 
 ![Drag metric to reorder list](https://dt-cdn.net/images/data-explorer-drag-metric-69-84144c5cd2.png)
 
+Drag metric to reorder list
+
 Rerun the query to see your changes.
 
 ### Toggle metric
@@ -264,11 +293,15 @@ To toggle metrics on and off, you can select the letter next to the metric you w
 
 ![Data Explorer: Toggle metric](https://dt-cdn.net/images/eye-toggle-metric-1238-d343b9cc0e.png)
 
+Data Explorer: Toggle metric
+
 ### Delete metric
 
 To delete a metric, select  > **Delete**.
 
 ![Metric More menu ](https://dt-cdn.net/images/data-explorer-metric-more-menu-74-1b3f17af8b.png)
+
+Metric More menu
 
 ### Run query
 
@@ -276,60 +309,35 @@ Select **Run query** to run the currently configured query and display a visuali
 
 ![Data Explorer: Query run status](https://dt-cdn.net/images/query-run-status-596-20a651d897.png)
 
+Data Explorer: Query run status
+
 ### Advanced mode
 
-To fully utilize the power of the Metrics API v2 queries from within the web UI, turn on **Advanced mode** for the query.
+To fully utilize the power of the [Metrics API v2](/managed/dynatrace-api/environment-api/metric-v2 "Retrieve metric information via Metrics v2 API.") queries from within the web UI, turn on **Advanced mode** for the query.
 
 ![Advanced mode: switch](https://dt-cdn.net/images/query-advanced-turn-on-185-dda5887b1a.png)
 
-**Advanced mode** enables you to create metric expressions, timeframe shifts, and much more directly in the web UI and, of course, use this power to create vizualizations for your dashboards. Start by checking out [metric expression examples](/managed/dynatrace-api/environment-api/metric-v2/metric-expressions#examples "Use metric expressions to apply arithmetic operations in a data points query via the Metrics API v2.").
+Advanced mode: switch
 
-For **Advanced mode** details, see Data Explorer Advanced mode query editor.
+**Advanced mode** enables you to create [metric expressions](/managed/dynatrace-api/environment-api/metric-v2/metric-expressions "Use metric expressions to apply arithmetic operations in a data points query via the Metrics API v2."), timeframe shifts, and much more directly in the web UI and, of course, use this power to create vizualizations for your dashboards. Start by checking out [metric expression examples](/managed/dynatrace-api/environment-api/metric-v2/metric-expressions#examples "Use metric expressions to apply arithmetic operations in a data points query via the Metrics API v2.").
+
+For **Advanced mode** details, see [Data Explorer Advanced mode query editor](/managed/analyze-explore-automate/explorer/explorer-advanced-query-editor "Build advanced queries using the Data Explorer advanced mode.").
 
 ## Baselines
 
 To help you identify anomalies, you can use baselining to add a confidence band to a metric's line on the chart. Then you can see when the value goes outside the confidence band.
-The baseline calculation is based on the Seasonal baseline model which is used to create metric events for anomaly detection.
+The baseline calculation is based on the [Seasonal baseline](/managed/dynatrace-intelligence/ai-models/seasonal-baseline "How Davis suggests Seasonal baseline thresholds for a scope of entities.") model which is used to create [metric events](/managed/dynatrace-intelligence/anomaly-detection/metric-events "Learn about metric events in Dynatrace") for anomaly detection.
 
 * Baselines apply only to the `Graph` visualization.
 * Baselines are not added to the dashboard tile when you pin a chart to a dashboard.
 * The timeframe used to infer the baseline is determined by the currently selected resolution:
 
-  Resolution range
-
-  Resolution examples
-
-  Baseline timeframe
-
-  resolution < 5 minutes
-
-  + 1 minute
-
-  **previous 14 days**
-
-  5 minutes â¥ resolution < 1 hour
-
-  + 5 minutes
-  + 10 minutes
-  + 30 minutes
-
-  **previous 28 days**
-
-  1 hour â¥ resolution < 1 day
-
-  + 1 hour
-  + 6 hours
-  + 12 hours
-
-  **400 days**
-
-  resolution â¥ 1 day
-
-  + 1 day
-  + 1 week
-  + 1 month
-
-  **5 years**
+  | Resolution range | Resolution examples | Baseline timeframe |
+  | --- | --- | --- |
+  | resolution < 5 minutes | + 1 minute | **previous 14 days** |
+  | 5 minutes â¥ resolution < 1 hour | + 5 minutes + 10 minutes + 30 minutes | **previous 28 days** |
+  | 1 hour â¥ resolution < 1 day | + 1 hour + 6 hours + 12 hours | **400 days** |
+  | resolution â¥ 1 day | + 1 day + 1 week + 1 month | **5 years** |
 
 ### Add a baseline
 
@@ -350,63 +358,27 @@ Baselines are listed separately in the chart legend. For example, if you add a b
 
 You may notice differences between baselines in Data Explorer and metric events. These features offer different approaches to suit their different contexts. In general, the Data Explorer configuration is fixed, while the metric events configuration is configurable.
 
-**Data Explorer**
+|  | **Data Explorer** | **Metric events** |
+| --- | --- | --- |
+| **Samples** | `5` | Configurable |
+| **Violating samples** | `3` | Configurable |
+| **Dealerting samples** | `5` | Configurable |
+| **Alert on no data** | `false` | Configurable |
+| **Tolerance** (affects width of confidence band) | `4` | Configurable (range: `0.1` to `10`) |
+| **Resolution** (affects granularity) | Configurable | `1` minute |
+| **Training time** | Instantaneous | Daily |
 
-**Metric events**
-
-**Samples**
-
-`5`
-
-Configurable
-
-**Violating samples**
-
-`3`
-
-Configurable
-
-**Dealerting samples**
-
-`5`
-
-Configurable
-
-**Alert on no data**
-
-`false`
-
-Configurable
-
-**Tolerance** (affects width of confidence band)
-
-`4`
-
-Configurable (range: `0.1` to `10`)
-
-**Resolution** (affects granularity)
-
-Configurable
-
-`1` minute
-
-**Training time**
-
-Instantaneous
-
-Daily
-
-For details on seasonal baselining, see Seasonal baseline.
+For details on seasonal baselining, see [Seasonal baseline](/managed/dynatrace-intelligence/ai-models/seasonal-baseline "How Davis suggests Seasonal baseline thresholds for a scope of entities.").
 
 ### Baselines FAQ
 
 How is the baseline calculated?
 
-The baseline calculation is based on the seasonal baseline model used to create metric events for anomaly detection. For details on the inner workings of the model, see Seasonal baseline.
+The baseline calculation is based on the seasonal baseline model used to create [metric events](/managed/dynatrace-intelligence/anomaly-detection/metric-events "Learn about metric events in Dynatrace") for anomaly detection. For details on the inner workings of the model, see [Seasonal baseline](/managed/dynatrace-intelligence/ai-models/seasonal-baseline "How Davis suggests Seasonal baseline thresholds for a scope of entities.").
 
 Why is the baseline different from the seasonal baseline model preview?
 
-Although the baseline model is based on the seasonal baseline model, there are several reasons why the resulting baselines can differ:
+Although the baseline model is based on the [seasonal baseline](/managed/dynatrace-intelligence/ai-models/seasonal-baseline "How Davis suggests Seasonal baseline thresholds for a scope of entities.") model, there are several reasons why the resulting baselines can differ:
 
 * **Resolution**: The baseline in Data Explorer is derived from the data depending on the currently selected resolution as described above. A seasonal baseline model of a metric event configuration always learns the behavior from 1-minute resolution data. If the resolutions are different, the resulting baseline differs as the metric values are also different.
 * **Baseline timeframe**: The timeframe used to infer the baseline is determined by the currently selected resolution as described above. As metric event configurations always use 1-minute resolution data, the training timeframe can differ, which also can lead to different baselines.
@@ -419,7 +391,7 @@ Although the baseline model is based on the seasonal baseline model, there are s
 
 ## Correlated metrics
 
-Dynatrace DavisÂ® takes domain-specific knowledge and topology into account when computing connected observability signals. Davis ranks the most relevant signals on top, and the Davis score for each detected signal indicates how closely the signal matches the reference signal's behavior during the selected timeframe. More about DavisÂ® AI.
+Dynatrace DavisÂ® takes domain-specific knowledge and topology into account when computing connected observability signals. Davis ranks the most relevant signals on top, and the Davis score for each detected signal indicates how closely the signal matches the reference signal's behavior during the selected timeframe. [More about DavisÂ® AI](/managed/dynatrace-intelligence "Get familiar with the capabilities of Davis AI.").
 
 ### Add correlated metrics
 
@@ -436,9 +408,13 @@ Note that this option is available only if you **Split by** a dimension in the q
 
    ![Correlated metrics: query: standard mode](https://dt-cdn.net/images/query-cpu-usage-1217-d0a8083c84.png)
 
+   Correlated metrics: query: standard mode
+
    That's this in **Advanced mode**:
 
    ![Correlated metrics: query: advanced mode](https://dt-cdn.net/images/query-cpu-usage-advanced-mode-1220-9fb8efd9b1.png)
+
+   Correlated metrics: query: advanced mode
 
    ```
    builtin:host.cpu.usage:splitBy("dt.entity.host"):sort(value(auto,descending)):limit(20)
@@ -522,6 +498,8 @@ In this exampleâa `Graph` visualization showing a line chart of the `CPU us
 
 ![Data Explorer line graph pop-up](https://dt-cdn.net/images/graph-pop-up-options-391-827a7747d3.png)
 
+Data Explorer line graph pop-up
+
 In this example, you have the following options:
 
 * Select **Focus** to temperarily focus your graph on a single metric. For details, see [Focus](#focus).
@@ -540,7 +518,7 @@ When you're satisfied with your query, you can add it to a dashboard.
 2. Select a dashboard for which you have edit permission.
 3. Select **Pin**.
 
-For details, see Pin tiles to your dashboard.
+For details, see [Pin tiles to your dashboard](/managed/analyze-explore-automate/dashboards-classic/charts-and-tiles/pin-tiles-to-your-dashboard "Learn to pin tiles to your dashboards.").
 
 ### Share your results
 
@@ -560,7 +538,7 @@ To export to a comma-separated values (CSV) file
 
 1. Go to **Data Explorer** and, in the **Result** section, select  > **Export CSV**.
 
-   * CSV export is available for all visualizations except honeycomb and single value
+   * CSV export is available for all visualizations except [honeycomb](/managed/analyze-explore-automate/dashboards-classic/charts-and-tiles/visualization-honeycomb "Configure and use a honeycomb visualization in Data Explorer and display it on your dashboards.") and [single value](/managed/analyze-explore-automate/dashboards-classic/charts-and-tiles/visualization-single-value "Configure and use a single-value visualization in Data Explorer and display it on your dashboards.")
    * Values exported to a CSV file reflect the formatting specified with the **Unit** and **Format** settings in the **Settings** section.
 2. A CSV file of the results is saved to your local machine.
 
@@ -597,9 +575,13 @@ The complete query should look like this:
 
 ![Data Explorer: Table with two metrics (split)](https://dt-cdn.net/images/visualization-example-table-two-metrics-split-1590-45fa100eb8.png)
 
+Data Explorer: Table with two metrics (split)
+
 Example tile:
 
 ![Example table tile](https://dt-cdn.net/images/example-tile-table-342-b738cc1b64.png)
+
+Example table tile
 
 ### Graph with two metrics
 
@@ -621,9 +603,13 @@ The complete query should look like this:
 
 ![Graph with two metrics: Data Explorer](https://dt-cdn.net/images/visualization-example-graph-area-and-line-1586-2d9ef73a87.png)
 
+Graph with two metrics: Data Explorer
+
 Example tile:
 
 ![Graph with two metrics: dashboard tile](https://dt-cdn.net/images/graph-tile-870-488b205898.png)
+
+Graph with two metrics: dashboard tile
 
 ## Auto-extended filtering
 
@@ -642,17 +628,25 @@ With automatically extended filters, you can now filter on the Synthetic test st
 
 ![Select metric](https://dt-cdn.net/images/example2a-974-d735f4540c.png)
 
+Select metric
+
 2. Add the filter.
 
 ![Select filter](https://dt-cdn.net/images/example2b-242-030d352107.png)
+
+Select filter
 
 3. Select auto-extended dimension.
 
 ![Select dimension](https://dt-cdn.net/images/example2c-423-ccc78806c5.png)
 
+Select dimension
+
 4. Resulting filter.
 
 ![Final filter](https://dt-cdn.net/images/example2d-828-13b6907765.png)
+
+Final filter
 
 Moreover, you can now use auto-extended filters on your dashboard, so there's no need to configure multiple tiles to see the same metric for different monitors or different hosts.
 
@@ -660,13 +654,19 @@ Moreover, you can now use auto-extended filters on your dashboard, so there's no
 
 ![Dashboard filter - add filter for Custom dimension](https://dt-cdn.net/images/example2e-949-6467cdaee6.png)
 
+Dashboard filter - add filter for Custom dimension
+
 6. Select `Synthetic monitor`.
 
 ![Dashboard filter - select Synthetic monitor](https://dt-cdn.net/images/example2f-607-ccff44de90.png)
 
+Dashboard filter - select Synthetic monitor
+
 7. Save your changes and display the dashboard. Now you can filter all tiles on the dashboard by Synthetic monitor. The dashboard will automatically, for each tile, check whether any such relationship exists. So every tile (without filters set on a tile level) that has a Synthetic event metric will be filtered the moment a relationship exists between the step in the tile and the monitor you picked.
 
 ![Dashboard filter - now you can filter tiles on dashboard by Synthetic monitor](https://dt-cdn.net/images/example2g-600-455cccbf4c.png)
+
+Dashboard filter - now you can filter tiles on dashboard by Synthetic monitor
 
 ### Example 2: Host metric extended
 
@@ -679,14 +679,20 @@ Here, we extend the host metric by EC2 instance.
 
 ![Automatically extended filtering example](https://dt-cdn.net/images/ec2-instance-1299-33a6e9da4e.png)
 
+Automatically extended filtering example
+
 In this variation, the host metric is extended by host group.
 
 1. Set a filter for `Host.Host Group (isInstanceOf)` and pin the tile to our dashboard.
 
    ![Host metric is extended by host group.](https://dt-cdn.net/images/example2h-779-0e1e452a5a.png)
+
+   Host metric is extended by host group.
 2. We are now able to filter the dashboard tiles by host group.
 
    ![Filter the dashboard tiles by host group.](https://dt-cdn.net/images/example2i-598-212748528d.png)
+
+   Filter the dashboard tiles by host group.
 
 ## Notes and limitations
 
@@ -694,43 +700,20 @@ In this variation, the host metric is extended by host group.
 * Up to 100 series per metric
 
   For a Honeycomb visualization, you can bypass this limit: turn on **Advanced mode** and delete `:limit(100)` from the query.
-* Unlike multidimensional analysis, Data Explorer uses long-term metric data, not trace and request data, so values on visualizations might differ from values in multidimensional analysis.
+* Unlike multidimensional analysis, Data Explorer uses long-term metric data, not [trace and request data](/managed/observe/application-observability/multidimensional-analysis#data-source "Configure a multidimensional analysis view and save it as a calculated metric."), so values on visualizations might differ from values in multidimensional analysis.
 * To prevent performance issues on dashboard tiles created with Data Explorer, the maximum number of data points for a query on a dashboard tile is 4,000. Based on the selected timeframe and the applied custom resolution, Dynatrace projects the number of data points for the query result. If the projected number of data points exceeds 4,000, Dynatrace automatically switches to a resolution high enough to keep the number of data points below 4,000.
 
   Note that this does not apply to visualizations in Data Explorer itself, where you can have more than 4,000 data points. It applies only to dashboard tiles created with Data Explorer where the resolution/timeframe combination selected on the dashboard results in more than 4,000 data points.
 * Examples of order-of-magnitude notation in Dynatrace:
 
-  Notation
+  | Notation | Factor | Meaning |
+  | --- | --- | --- |
+  | k | 10^3 | kilo, thousand |
+  | M | 10^6 | mega, million |
+  | G | 10^9 | giga, billion |
+  | T | 10^12 | tera, trillion |
 
-  Factor
-
-  Meaning
-
-  k
-
-  10^3
-
-  kilo, thousand
-
-  M
-
-  10^6
-
-  mega, million
-
-  G
-
-  10^9
-
-  giga, billion
-
-  T
-
-  10^12
-
-  tera, trillion
-
-  For details, see Order-of-magnitude notation.
+  For details, see [Order-of-magnitude notation](/managed/discover-dynatrace/get-started/dynatrace-ui/order-of-magnitude-notation "Dynatrace order-of-magnitude notation for displaying metric values").
 
 ### Fold transformation and resolution
 
@@ -745,4 +728,4 @@ To inspect the actual query used by Data Explorer, go to the **Result** section 
 
 ## Related topics
 
-* Metrics API - Metric selector
+* [Metrics API - Metric selector](/managed/dynatrace-api/environment-api/metric-v2/metric-selector "Configure the metric selector for the Metric v2 API.")

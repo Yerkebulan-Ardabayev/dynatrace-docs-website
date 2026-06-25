@@ -1,39 +1,44 @@
 ---
-title: "Message queues"
+title: Message queues
 source: https://docs.dynatrace.com/managed/observe/infrastructure-observability/queues
-updated: 2026-02-09
+scraped: 2026-05-12T11:09:36.966254
 ---
+
+# Message queues
+
+# Message queues
 
 * Explanation
 * 4-min read
+* Updated on Jul 15, 2022
 
-Message queues in the form of a queue or a topic provide lightweight storage for messages. They offer endpoints that allow applications to send messages to them and endpoints that allow applications to retrieve messages from them asynchronously or to subscribe to topics. For full details, see Queue concepts.
+Message queues in the form of a queue or a topic provide lightweight storage for messages. They offer endpoints that allow applications to send messages to them and endpoints that allow applications to retrieve messages from them asynchronously or to subscribe to topics. For full details, see [Queue concepts](/managed/observe/infrastructure-observability/queues/queue-concepts "Basic concepts of message queue monitoring in Dynatrace.").
 
 Decoupled services are standard in applications built with microservices, and events are used to communicate between services, making it essential to observe the performance of message queues. With Dynatrace, you can get full observability into your producer and consumer services and simplify troubleshooting in asynchronous communication flows.
 
-### Queue concepts
+[### Queue concepts
 
-Learn the most important concepts of queue monitoring.### Configuration
+Learn the most important concepts of queue monitoring.](/managed/observe/infrastructure-observability/queues/queue-concepts "Basic concepts of message queue monitoring in Dynatrace.")[### Configuration
 
-Configure monitoring, tracing for IBM MQ, tags, and management zones.### Analysis
+Configure monitoring, tracing for IBM MQ, tags, and management zones.](/managed/observe/infrastructure-observability/queues/configuration "Configure Dynatrace to monitor message queues.")[### Analysis
 
-Analyze queues and topics in your environment.
+Analyze queues and topics in your environment.](/managed/observe/infrastructure-observability/queues/analyze-queues "Get insight into message queue-related anomalies with analytics views.")
 
 ## Queues and topics in Dynatrace
 
-OneAgent automatically detects queues and topics as part of distributed traces when monitored applications use the endpoints of compatible messaging clients to send or retrieve messages. To check the compatible clients, see Technology support.
+OneAgent automatically detects queues and topics as part of distributed traces when monitored applications use the endpoints of compatible messaging clients to send or retrieve messages. To check the compatible clients, see [Technology support](/managed/ingest-from/technology-support "Find technical details related to Dynatrace support for specific platforms and development frameworks.").
 
 To get an overview of all detected queues and topics, go to **Message Queues**.
 
 * For all queues and topics, OneAgent measures the number of **Incoming messages** and **Outgoing messages**.  
   By monitoring these metrics, you can catch unbalanced message processing that could result in severe problems (such as queue overflows) and prevent them by scaling queues quickly or maintaining failover processes.
-* Select the **Name** of a specific queue or topic to display its analytic view, with enhanced troubleshooting capabilities to gain additional insight into related anomalies.
+* Select the **Name** of a specific queue or topic to display its [analytic view](/managed/observe/infrastructure-observability/queues/analyze-queues "Get insight into message queue-related anomalies with analytics views."), with enhanced troubleshooting capabilities to gain additional insight into related anomalies.
 
 ![Message queues table](https://dt-cdn.net/images/queues-table-1857-49308cb749.png)
 
-## Extensions
+Message queues table
 
-Unable to render DataTable. Check configuration.
+## Extensions
 
 ## FAQ
 
@@ -46,11 +51,11 @@ In Dynatrace, both a queue and a topic result in a **Queue** entity.
 
 Is a specific license required for OneAgent to detect queues and topics?
 
-No. Queues and topics are detected as part of distributed traces when OneAgent is running in Full-Stack Monitoring mode.
+No. Queues and topics are detected as part of distributed traces when OneAgent is running in [Full-Stack Monitoring](/managed/platform/oneagent/monitoring-modes/monitoring-modes "Find out more about the available monitoring modes when using OneAgent.") mode.
 
 Can OneAgent detect queues and topics in Infrastructure Monitoring mode?
 
-No. Queues and topics are detected as part of distributed traces only when OneAgent is running in Full-Stack Monitoring mode.
+No. Queues and topics are detected as part of distributed traces only when OneAgent is running in [Full-Stack Monitoring](/managed/platform/oneagent/monitoring-modes/monitoring-modes "Find out more about the available monitoring modes when using OneAgent.") mode.
 
 When are queues and topics visible?
 
@@ -76,18 +81,18 @@ Dynatrace applies this logic to prevent monitoring of too many queues or topics.
 
 Which messaging clients are compatible with OneAgent?
 
-OneAgent supports various messaging clients. To find out the compatible clients, see Technology support.
+OneAgent supports various messaging clients. To find out the compatible clients, see [Technology support](/managed/ingest-from/technology-support "Find technical details related to Dynatrace support for specific platforms and development frameworks.").
 
 Why is my ActiveMQ broker not detected?
 
-The [ActiveMQ transport configuration](https://activemq.apache.org/components/classic/documentation/activemq-classic-connection-uris) of a broker with the IP address 0.0.0.0 is not supported.
+The [ActiveMQ transport configurationï»¿](https://activemq.apache.org/components/classic/documentation/activemq-classic-connection-uris) of a broker with the IP address 0.0.0.0 is not supported.
 
 This configuration allows the broker to accept incoming messages on all network interfaces, while a broker IP address configured on a specific network interface is required for Dynatrace to establish a connection between the broker and its queues and to capture related metrics.
 
 How can I define an automatically applied tag for queue entities?
 
-Visit the related section on the Tags and management zone page.
+Visit the related section on the [Tags and management zone page](/managed/observe/infrastructure-observability/queues/configuration/tags-and-management-zones#tags "Automatically apply tags to queues and organize them into management zones.").
 
 How can I add queue entities to existing management zones?
 
-Visit the related section on the Tags and management zone page.
+Visit the related section on the [Tags and management zone page](/managed/observe/infrastructure-observability/queues/configuration/tags-and-management-zones#management-zones "Automatically apply tags to queues and organize them into management zones.").

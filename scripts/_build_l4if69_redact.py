@@ -1,0 +1,78 @@
+# -*- coding: utf-8 -*-
+from _otel_canon import S, SUB, build_one, qa_one
+
+TT_TOKAUTH = "Find out how to get authenticated to use the Dynatrace API."
+RU_TOKAUTH = "Узнайте, как пройти аутентификацию для использования Dynatrace API."
+
+TRANS = {
+    # title / H1 (H1 duplicated in source)
+    "title: Mask sensitive data with the OTel Collector": "title: Маскирование конфиденциальных данных с помощью OTel Collector",
+    "# Mask sensitive data with the OTel Collector": "# Маскирование конфиденциальных данных с помощью OTel Collector",
+    # metadata
+    "* 5-min read": "* Чтение: 5 мин",
+    "* Updated on Jan 12, 2026": "* Обновлено 12 января 2026 г.",
+    # intro
+    "Telemetry data can often include sensitive data (such as [PII](https://en.wikipedia.org/wiki/Personal_data)), which may need to be redacted due to security and regulatory reasons. While this can be implemented on the application side, it typically is best to handle this centrally using gateways such as the OTel Collector. This enables the single-point management of redaction rules across all your applications and services, without the need to update your code each time a new redaction rule is required.": "Данные телеметрии нередко содержат конфиденциальные данные (например, [PII](https://en.wikipedia.org/wiki/Personal_data)), которые может потребоваться маскировать по соображениям безопасности и нормативным требованиям. Хотя это можно реализовать на стороне приложения, обычно лучше выполнять это централизованно с помощью шлюзов, таких как OTel Collector. Это обеспечивает управление правилами маскирования из единой точки во всех ваших приложениях и сервисах, без необходимости обновлять код каждый раз, когда требуется новое правило маскирования.",
+    "This page shows sample Collector configurations for the redaction of specific sensitive data (for example, credit card numbers or email addresses) which may appear in telemetry data and which should be masked/redacted before leaving your network.": "На этой странице показаны примеры конфигураций Collector для маскирования конкретных конфиденциальных данных (например, номеров кредитных карт или адресов электронной почты), которые могут появиться в данных телеметрии и которые следует маскировать перед выходом из вашей сети.",
+    # prerequisites (unique: transform and/or redaction processors)
+    "* One of the following Collector distributions with the [transform](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.151.0/processor/transformprocessor) and/or [redaction](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.151.0/processor/redactionprocessor) processors:": "* Один из следующих дистрибутивов Collector с processor [transform](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.151.0/processor/transformprocessor) и/или [redaction](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.151.0/processor/redactionprocessor):",
+    # Redaction processor versus transform processor
+    "## Redaction processor versus transform processor": "## Processor redaction в сравнении с processor transform",
+    "The following examples make use of these two Collector [processors](https://opentelemetry.io/docs/collector/architecture/#processors):": "В следующих примерах используются эти два [processor](https://opentelemetry.io/docs/collector/architecture/#processors) Collector:",
+    "* the [transform processor](https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/v0.151.0/processor/transformprocessor/README.md)": "* processor [transform](https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/v0.151.0/processor/transformprocessor/README.md)",
+    "* the [redaction processor](https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/v0.151.0/processor/redactionprocessor/README.md)": "* processor [redaction](https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/v0.151.0/processor/redactionprocessor/README.md)",
+    "While the following examples use both processors to mask data, each processor has its own distinct purpose. The redaction processor is straightforward and takes a list of values, based on which matching data will be completely redacted. On the other hand, the purpose of the transform processor is more versatile and goes beyond mere data redaction.": "Хотя в следующих примерах для маскирования данных используются оба компонента processor, у каждого из них своё назначение. Processor redaction прост: он принимает список значений, на основе которых совпадающие данные будут полностью замаскированы. Назначение же processor transform более универсально и выходит за рамки простого маскирования данных.",
+    "For data redaction, typically either processor can be used and you may want to choose the one best for your use case. For example, for full data redaction, the redaction processor may be easier to use. On the other hand, partial data redaction can only be achieved with the transform processor. In addition, the transform processor can also filter by data in the body of logs, whereas the redaction processor only has access to attributes.": "Для маскирования данных обычно можно использовать любой из двух компонентов processor, и стоит выбрать тот, который лучше подходит для вашего сценария использования. Например, для полного маскирования данных processor redaction может быть проще в использовании. С другой стороны, частичное маскирование данных можно реализовать только с помощью processor transform. Кроме того, processor transform может также фильтровать по данным в теле логов, тогда как processor redaction имеет доступ только к атрибутам.",
+    # Limitations and considerations
+    "## Limitations and considerations": "## Ограничения и замечания",
+    "The examples provided on this page are samples demonstrating common redaction scenarios. Note the following:": "Приведённые на этой странице примеры демонстрируют распространённые сценарии маскирования. Обратите внимание на следующее:",
+    "* The examples may not be exhaustive for all use cases. You may need to adapt them to your specific requirements.": "* Примеры могут не охватывать все сценарии использования. Возможно, потребуется адаптировать их под ваши конкретные требования.",
+    "* The regex patterns and attribute matching only work when the entire attribute value matches the pattern to be redacted. Partial matches within larger strings may require more complex patterns or additional processing.": "* Шаблоны regex и сопоставление атрибутов работают только тогда, когда всё значение атрибута соответствует шаблону для маскирования. Для частичных совпадений внутри более длинных строк могут потребоваться более сложные шаблоны или дополнительная обработка.",
+    "* The span name is stored as a separate field in the OTLP message structure, not as an attribute. Therefore, redaction processors targeting attributes will not affect span names by default. See the [Span names](#span-names) example for how to handle this.": "* Имя спана хранится в структуре сообщения OTLP как отдельное поле, а не как атрибут. Поэтому processor redaction, нацеленные на атрибуты, по умолчанию не влияют на имена спанов. О том, как с этим работать, см. пример [Имена спанов](#span-names).",
+    "* Processor order in pipelines matters. Apply transform/redaction before routing or exporting, and keep related processors adjacent so downstream steps see the sanitized data.": "* Порядок processor в конвейерах имеет значение. Применяйте transform/redaction до маршрутизации или экспорта и держите связанные processor рядом, чтобы последующие шаги видели очищенные данные.",
+    # Demo configuration prose (unique)
+    "This YAML document is a basic Collector configuration skeleton, containing basic, general components (that is, receivers, exporters, and the pipeline definition).": "Этот документ YAML представляет собой базовый каркас конфигурации Collector, содержащий основные общие компоненты (то есть receivers, exporters и определение конвейера).",
+    "Make sure to replace the placeholder values in the document with the respective configurations:": "Обязательно замените значения-заполнители в документе соответствующими конфигурациями:",
+    "* `PLACEHOLDER-FOR-PROCESSOR-CONFIGURATIONS`: the relevant processor configuration": "* `PLACEHOLDER-FOR-PROCESSOR-CONFIGURATIONS`: соответствующая конфигурация processor",
+    "* `PLACEHOLDER-FOR-PROCESSOR-REFERENCES`: referencing the applicable processor objects for the individual signal types": "* `PLACEHOLDER-FOR-PROCESSOR-REFERENCES`: ссылки на применимые объекты processor для отдельных типов сигналов",
+    # IP addresses
+    "### IP addresses": "### IP-адреса",
+    "Using the transform processor, we mask the attribute `client.address` with the [`set` statement](https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/v0.151.0/pkg/ottl/ottlfuncs/README.md#set).": "С помощью processor transform мы маскируем атрибут `client.address` с помощью [инструкции `set`](https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/v0.151.0/pkg/ottl/ottlfuncs/README.md#set).",
+    # Email addresses
+    "### Email addresses": "### Адреса электронной почты",
+    "Using the transform processor, we mask the attribute `user.email` with the [`set` statement](https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/v0.151.0/pkg/ottl/ottlfuncs/README.md#set).": "С помощью processor transform мы маскируем атрибут `user.email` с помощью [инструкции `set`](https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/v0.151.0/pkg/ottl/ottlfuncs/README.md#set).",
+    # Dynatrace API tokens
+    "### Dynatrace API tokens": "### API-токены Dynatrace",
+    'Using the redaction processor, we use the regular expression `dt0[a-z]0[1-9]\\.[A-Za-z0-9]{24}\\.([A-Za-z0-9]{64})` to mask all occurrences of [Dynatrace API tokens](/managed/dynatrace-api/basics/dynatrace-api-authentication "%s") in our telemetry data.'
+    % TT_TOKAUTH: 'С помощью processor redaction мы используем регулярное выражение `dt0[a-z]0[1-9]\\.[A-Za-z0-9]{24}\\.([A-Za-z0-9]{64})`, чтобы замаскировать все вхождения [API-токенов Dynatrace](/managed/dynatrace-api/basics/dynatrace-api-authentication "%s") в наших данных телеметрии.'
+    % RU_TOKAUTH,
+    # Usernames
+    "### Usernames": "### Имена пользователей",
+    "Using the transform processor, we mask the attributes `user.id`, `user.name`, and `user.full_name` with the [`set` statement](https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/v0.151.0/pkg/ottl/ottlfuncs/README.md#set).": "С помощью processor transform мы маскируем атрибуты `user.id`, `user.name` и `user.full_name` с помощью [инструкции `set`](https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/v0.151.0/pkg/ottl/ottlfuncs/README.md#set).",
+    # Credit card numbers
+    "### Credit card numbers": "### Номера кредитных карт",
+    "Using the transform processor, we configure three [`replace_all_patterns` statements](https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/v0.151.0/pkg/ottl/ottlfuncs/README.md#replace_all_patterns) to mask any occurrences of credit card numbers and mask everything but the last four digits.": "С помощью processor transform мы настраиваем три [инструкции `replace_all_patterns`](https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/v0.151.0/pkg/ottl/ottlfuncs/README.md#replace_all_patterns), чтобы замаскировать любые вхождения номеров кредитных карт, скрывая все цифры, кроме последних четырёх.",
+    "For credit card numbers, it is also possible to use the built-in, [standard OTTL function `IsValidLuhn()`](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.151.0/pkg/ottl/ottlfuncs#isvalidluhn) instead of regular expressions, if you prefer to block values altogether instead of just masking them.": "Для номеров кредитных карт вместо регулярных выражений можно также использовать встроенную [стандартную функцию OTTL `IsValidLuhn()`](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.151.0/pkg/ottl/ottlfuncs#isvalidluhn), если вы предпочитаете полностью блокировать значения, а не просто маскировать их.",
+    # IBAN numbers
+    "### IBAN numbers": "### Номера IBAN",
+    "Using the redaction processor, we use the regular expression `^[A-Z]{2}[0-9]{2}(\\\\s*[A-Z0-9]){8,30}$` to mask all IBAN occurrences in our telemetry data.": "С помощью processor redaction мы используем регулярное выражение `^[A-Z]{2}[0-9]{2}(\\\\s*[A-Z0-9]){8,30}$`, чтобы замаскировать все вхождения IBAN в наших данных телеметрии.",
+    # Span names
+    "### Span names": "### Имена спанов",
+    "Span names are not stored as attributes in the OTLP message structure, so attribute-based redaction does not apply to them.": "Имена спанов не хранятся в структуре сообщения OTLP как атрибуты, поэтому маскирование на основе атрибутов к ним не применяется.",
+    "There are multiple ways of redacting and simplifying span names:": "Есть несколько способов маскировать и упростить имена спанов:",
+    "#### Generate a new span name": "#### Создание нового имени спана",
+    "Recommended": "Рекомендуется",
+    "`set_semconv_span_name` is available from Collector Contrib version 0.142.0 and Dynatrace Collector version 0.42.0.": "`set_semconv_span_name` доступна начиная с версии Collector Contrib 0.142.0 и версии Dynatrace Collector 0.42.0.",
+    "Use the transform processor's [`set_semconv_span_name`](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.151.0/processor/transformprocessor#set_semconv_span_name) to derive a low-cardinality name that is compliant with OpenTelemetry semantic conventions. This will use the (low-cardinality) `http.request.method` and `http.route` to generate a new span name. It keeps the name consistent with HTTP/RPC/messaging/database conventions and avoids leaking identifiers.": "Используйте функцию processor transform [`set_semconv_span_name`](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.151.0/processor/transformprocessor#set_semconv_span_name), чтобы получить имя с низкой кардинальностью, соответствующее семантическим соглашениям OpenTelemetry. Для создания нового имени спана будут использоваться (низкокардинальные) `http.request.method` и `http.route`. Это сохраняет имя согласованным с соглашениями HTTP/RPC/messaging/database и предотвращает утечку идентификаторов.",
+    "#### Redact the span name explicitly": "#### Явное маскирование имени спана",
+    # Components / Receivers / Processors prose (unique)
+    "Under `receivers`, we specify the standard `otlp` receiver as active receiver component for our Collector instance.": "В разделе `receivers` мы указываем стандартный receiver `otlp` в качестве активного компонента receiver для нашего экземпляра Collector.",
+    "Under `processors`, we place the configuration for the relevant processor instances.": "В разделе `processors` мы размещаем конфигурацию для соответствующих экземпляров processor.",
+    # Service pipelines prose (unique)
+    "Under `service`, we eventually assemble all the configured objects into pipelines for the individual telemetry signals (traces, etc.) and have the Collector instance run the configured tasks.": "В разделе `service` мы в итоге собираем все настроенные объекты в конвейеры для отдельных сигналов телеметрии (трассировки и т. д.) и заставляем экземпляр Collector выполнять настроенные задачи.",
+    **S,
+}
+PASS = {"### Receivers", "### Processors", "### Exporters"}
+if __name__ == "__main__":
+    build_one(SUB, "redact.md", TRANS, PASS)
+    qa_one(SUB, "redact.md")

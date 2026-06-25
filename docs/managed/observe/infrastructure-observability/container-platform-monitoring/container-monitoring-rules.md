@@ -1,11 +1,16 @@
 ---
-title: "Container monitoring rules"
+title: Container monitoring rules
 source: https://docs.dynatrace.com/managed/observe/infrastructure-observability/container-platform-monitoring/container-monitoring-rules
-updated: 2026-02-09
+scraped: 2026-05-12T11:09:31.866788
 ---
+
+# Container monitoring rules
+
+# Container monitoring rules
 
 * How-to guide
 * 2-min read
+* Published Jun 25, 2021
 
 To manage all container-related settings, follow the instructions below.
 
@@ -67,4 +72,4 @@ Built-in rules are enabled by default. You can choose to disable them, but you c
 * Application-only integrations without a full OneAgent installation donât support monitoring rules. However, in such situations, the integrations themselves effectively provide the same level of control over your container monitoring setup.
 * In Kubernetes, container monitoring rules apply only to the `classicFullStack` injection mode.
 
-  Container monitoring rules are ignored for webhook-based injection modes (`cloudNativeFullStack` or `applicationMonitoring`). For these modes, use the annotation-based configuration option as described in Configure monitoring for namespaces and pods.
+  Container monitoring rules are ignored for webhook-based injection modes (`cloudNativeFullStack` or `applicationMonitoring`). For these modes, use the annotation-based configuration option as described in [Configure monitoring for namespaces and pods](/managed/ingest-from/setup-on-k8s/guides/deployment-and-configuration/monitoring-and-instrumentation/annotate "Configure monitoring for namespaces and pods").

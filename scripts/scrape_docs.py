@@ -6,11 +6,13 @@ Dynatrace Documentation Scraper
 """
 
 import os
+import re
 import sys
 import json
 import time
 import hashlib
 from collections import deque
+from email.utils import formatdate
 from pathlib import Path
 from urllib.parse import urljoin, urlparse
 from datetime import datetime
@@ -21,11 +23,15 @@ from bs4 import BeautifulSoup
 from markdownify import markdownify as md
 from tqdm import tqdm
 
-# Encoding fix
-sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8')
+# Sentinel returned by get_page_content when server replies 304 Not Modified
+NOT_MODIFIED = "__NOT_MODIFIED__"
 
-# Configuration — use canonical docs URL (matches pipeline/config.py)
-BASE_URL = os.environ.get("DYNATRACE_DOCS_URL", "https://docs.dynatrace.com/")
+# Encoding fix
+sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding="utf-8")
+
+# Configuration — Managed-only scope (Dynatrace itself decides what's applicable to Managed
+# by placing it under /managed/ — anything outside is SaaS-only or shared without Managed warranty)
+BASE_URL = os.environ.get("DYNATRACE_DOCS_URL", "https://docs.dynatrace.com/managed/")
 OUTPUT_DIR = Path("dynatrace-docs")
 CACHE_DIR = OUTPUT_DIR / ".cache"
 MAX_PAGES = None  # None = unlimited, or set number for testing
@@ -36,6 +42,7 @@ TEST_MODE = False  # Set True for testing on small subset
 OUTPUT_DIR.mkdir(exist_ok=True)
 CACHE_DIR.mkdir(exist_ok=True)
 
+
 class DynatraceDocScraper:
     def __init__(self, base_url, output_dir, max_pages=None, test_mode=False):
         self.base_url = base_url
@@ -43,112 +50,160 @@ class DynatraceDocScraper:
         self.output_dir.mkdir(parents=True, exist_ok=True)
         self.max_pages = max_pages if not test_mode else 50
         self.test_mode = test_mode
-        
+
         self.visited_urls = set()
         self.to_visit = deque([base_url])
         self.session = requests.Session()
-        self.session.headers.update({
-            'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36'
-        })
-        
+        self.session.headers.update(
+            {
+                "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36"
+            }
+        )
+
         # Statistics
         self.stats = {
-            'pages_downloaded': 0,
-            'pages_converted': 0,
-            'errors': 0,
-            'start_time': datetime.now()
+            "pages_downloaded": 0,
+            "pages_converted": 0,
+            "pages_unchanged": 0,  # 304 Not Modified — skipped re-download
+            "errors": 0,
+            "start_time": datetime.now(),
         }
-        
+
         # Load cache
         self.cache_file = CACHE_DIR / "pages_cache.json"
         self.cache = self.load_cache()
-    
+
     def load_cache(self):
         """Load page cache to avoid re-downloading unchanged pages"""
         if self.cache_file.exists():
-            with open(self.cache_file, 'r', encoding='utf-8') as f:
+            with open(self.cache_file, "r", encoding="utf-8") as f:
                 return json.load(f)
         return {}
-    
+
     def save_cache(self):
         """Save page cache"""
-        with open(self.cache_file, 'w', encoding='utf-8') as f:
+        with open(self.cache_file, "w", encoding="utf-8") as f:
             json.dump(self.cache, f, indent=2)
-    
+
     def get_url_hash(self, url):
         """Get hash of URL for caching"""
         return hashlib.md5(url.encode()).hexdigest()
-    
+
     def is_valid_url(self, url):
         """Check if URL should be scraped"""
         parsed = urlparse(url)
-        
+
         # Must be from dynatrace.com
-        if 'dynatrace.com' not in parsed.netloc:
+        if "dynatrace.com" not in parsed.netloc:
             return False
-        
+
+        # Managed-only scope: /managed/ is Dynatrace's own authoritative marker for
+        # what applies to Managed. Anything outside is SaaS-only or shared-without-warranty.
+        if "/managed/" not in url:
+            return False
+
         # Must be a documentation page
-        if not ('/docs/' in url or '/support/help/' in url or 'docs.dynatrace.com' in parsed.netloc):
+        if not (
+            "/docs/" in url
+            or "/support/help/" in url
+            or "docs.dynatrace.com" in parsed.netloc
+        ):
             return False
-        
+
         # Skip certain paths
         skip_paths = [
-            '/blog/', '/community/', '/resources/',
-            '/downloads/', '/trial/', '/pricing/',
-            'support.dynatrace.com', 'university.dynatrace.com',
-            'developer.dynatrace.com'
+            "/blog/",
+            "/community/",
+            "/resources/",
+            "/downloads/",
+            "/trial/",
+            "/pricing/",
+            "support.dynatrace.com",
+            "university.dynatrace.com",
+            "developer.dynatrace.com",
         ]
         if any(skip in url for skip in skip_paths):
             return False
-        
+
         # Skip anchors and queries
-        if '#' in url:
+        if "#" in url:
             return False
-        
+
         # Allow queries for now (some docs use them)
         return True
-    
-    def get_page_content(self, url):
-        """Download page content"""
+
+    def get_page_content(self, url, local_mtime=None):
+        """Download page content. If local_mtime is provided, send If-Modified-Since header
+        and return NOT_MODIFIED sentinel when server replies 304 (page unchanged since last scrape).
+        """
+        headers = {}
+        if local_mtime is not None:
+            headers["If-Modified-Since"] = formatdate(local_mtime, usegmt=True)
         try:
-            response = self.session.get(url, timeout=30)
+            response = self.session.get(url, timeout=30, headers=headers)
+            if response.status_code == 304:
+                return NOT_MODIFIED
             response.raise_for_status()
+            # requests falls back to ISO-8859-1 when the server sends no charset,
+            # which mangles UTF-8 punctuation (… ' " – —) into mojibake (â€¦ etc.).
+            # docs.dynatrace.com serves UTF-8, so force it on the bad fallback.
+            if not response.encoding or response.encoding.lower() == "iso-8859-1":
+                response.encoding = "utf-8"
             return response.text
         except Exception as e:
             print(f"❌ Error downloading {url}: {e}")
-            self.stats['errors'] += 1
+            self.stats["errors"] += 1
             return None
-    
+
     def extract_links(self, soup, current_url):
         """Extract all valid links from page"""
         links = set()
-        for link in soup.find_all('a', href=True):
-            absolute_url = urljoin(current_url, link['href'])
+        for link in soup.find_all("a", href=True):
+            absolute_url = urljoin(current_url, link["href"])
             if self.is_valid_url(absolute_url):
                 links.add(absolute_url)
         return links
-    
+
+    def extract_links_from_markdown(self, md_text, current_url):
+        """Extract links from locally cached .md when server returned 304 (no fresh HTML to parse).
+        Used so BFS can keep crawling even when page wasn't re-downloaded.
+        """
+        links = set()
+        # Match [text](url) — both relative (resolved via urljoin) and absolute
+        for m in re.finditer(r"\[[^\]]*\]\(([^)\s#]+)", md_text):
+            href = m.group(1).strip()
+            if not href:
+                continue
+            absolute_url = urljoin(current_url, href)
+            if self.is_valid_url(absolute_url):
+                links.add(absolute_url)
+        return links
+
     def convert_to_markdown(self, html_content, url):
         """Convert HTML to Markdown"""
-        soup = BeautifulSoup(html_content, 'html.parser')
-        
+        soup = BeautifulSoup(html_content, "html.parser")
+
         # Find main content area (adjust selector based on actual Dynatrace docs structure)
-        main_content = soup.find('main') or soup.find('article') or soup.find('div', class_='content')
-        
+        main_content = (
+            soup.find("main")
+            or soup.find("article")
+            or soup.find("div", class_="content")
+        )
+
         if not main_content:
             # Fallback to body
-            main_content = soup.find('body')
-        
+            main_content = soup.find("body")
+
         if not main_content:
             return None
-        
+
         # Get title
-        title_tag = soup.find('h1') or soup.find('title')
+        title_tag = soup.find("h1") or soup.find("title")
         title = title_tag.get_text().strip() if title_tag else "Untitled"
-        
+
         # Convert to markdown
         markdown = md(str(main_content), heading_style="ATX")
-        
+
         # Add metadata header
         header = f"""---
 title: {title}
@@ -160,84 +215,104 @@ scraped: {datetime.now().isoformat()}
 
 """
         return header + markdown
-    
+
     def get_output_path(self, url):
         """Get output file path for URL"""
         # Parse URL to get the path component
         parsed = urlparse(url)
         path = parsed.path
-        
+
         # Remove leading path prefixes to get relative path
-        for prefix in ['/docs/', '/support/help/']:
+        # /managed/ first — Dynatrace serves Managed docs from /managed/<topic>/...
+        # so we strip it to keep local layout flat (docs/en/<topic>/...) matching existing docs/ru/.
+        for prefix in ["/managed/", "/docs/", "/support/help/"]:
             if path.startswith(prefix):
-                relative_path = path[len(prefix):]
+                relative_path = path[len(prefix) :]
                 break
         else:
-            relative_path = path.strip('/')
-        
+            relative_path = path.strip("/")
+
         # Clean up path
-        relative_path = relative_path.strip('/')
-        
+        relative_path = relative_path.strip("/")
+
         # Handle empty path (homepage)
         if not relative_path:
             self.output_dir.mkdir(parents=True, exist_ok=True)
-            return self.output_dir / 'index.md'
-        
+            return self.output_dir / "index.md"
+
         # Create directory structure
-        if '/' in relative_path:
-            parts = relative_path.split('/')
+        if "/" in relative_path:
+            parts = relative_path.split("/")
             dir_path = self.output_dir / Path(*parts[:-1])
-            filename = parts[-1] or 'index'
+            filename = parts[-1] or "index"
         else:
             dir_path = self.output_dir
-            filename = relative_path or 'index'
-        
+            filename = relative_path or "index"
+
         # Ensure .md extension
-        if not filename.endswith('.md'):
-            filename += '.md'
-        
+        if not filename.endswith(".md"):
+            filename += ".md"
+
         dir_path.mkdir(parents=True, exist_ok=True)
         return dir_path / filename
-    
+
     def scrape_page(self, url):
-        """Scrape single page"""
+        """Scrape single page. Uses If-Modified-Since against local file mtime for incremental
+        re-scrapes: if server returns 304, skips re-download AND re-write, but still extracts
+        links from the local .md so BFS can keep traversing the graph.
+        """
         # Check cache
         url_hash = self.get_url_hash(url)
-        
-        # Download page
-        html_content = self.get_page_content(url)
+
+        # Determine local file path + its mtime (if exists) for If-Modified-Since
+        output_path = self.get_output_path(url)
+        local_mtime = output_path.stat().st_mtime if output_path.exists() else None
+
+        # Download page (conditional on local_mtime)
+        html_content = self.get_page_content(url, local_mtime=local_mtime)
+
+        # Case 1: server says page unchanged → reuse local .md, extract links from markdown
+        if html_content == NOT_MODIFIED:
+            self.stats["pages_unchanged"] += 1
+            try:
+                md_text = output_path.read_text(encoding="utf-8")
+                return self.extract_links_from_markdown(md_text, url)
+            except Exception as e:
+                print(f"⚠️  304 but can't read local {output_path}: {e}")
+                return set()
+
+        # Case 2: network/HTTP error
         if not html_content:
             return None
-        
-        self.stats['pages_downloaded'] += 1
-        
+
+        self.stats["pages_downloaded"] += 1
+
         # Parse HTML
-        soup = BeautifulSoup(html_content, 'html.parser')
-        
+        soup = BeautifulSoup(html_content, "html.parser")
+
         # Extract links for further crawling
         new_links = self.extract_links(soup, url)
-        
+
         # Convert to Markdown
         markdown = self.convert_to_markdown(html_content, url)
         if not markdown:
             return new_links
-        
+
         # Save to file
-        output_path = self.get_output_path(url)
-        with open(output_path, 'w', encoding='utf-8') as f:
+        with open(output_path, "w", encoding="utf-8") as f:
             f.write(markdown)
-        
-        self.stats['pages_converted'] += 1
-        
+
+        self.stats["pages_converted"] += 1
+
         # Update cache
         self.cache[url_hash] = {
-            'url': url,
-            'file': str(output_path),
-            'scraped': datetime.now().isoformat()
+            "url": url,
+            "file": str(output_path),
+            "scraped": datetime.now().isoformat(),
         }
-        
+
         return new_links
-    
+
     def run(self):
         """Main scraping loop"""
         print("=" * 80)
@@ -249,78 +324,151 @@ scraped: {datetime.now().isoformat()}
         print(f"Max pages: {self.max_pages or 'Unlimited'}")
         print(f"Test mode: {self.test_mode}")
         print()
-        
+
         with tqdm(desc="Scraping", unit=" pages") as pbar:
-            while self.to_visit and (self.max_pages is None or self.stats['pages_downloaded'] < self.max_pages):
+            while self.to_visit and (
+                self.max_pages is None
+                or self.stats["pages_downloaded"] < self.max_pages
+            ):
                 url = self.to_visit.popleft()
-                
+
                 if url in self.visited_urls:
                     continue
-                
+
                 self.visited_urls.add(url)
                 pbar.set_postfix_str(f"Current: {url[-50:]}")
-                
+
                 # Scrape page
+                unchanged_before = self.stats["pages_unchanged"]
                 new_links = self.scrape_page(url)
-                
+                was_304 = self.stats["pages_unchanged"] > unchanged_before
+
                 if new_links:
                     # Add new links to queue
                     for link in new_links:
                         if link not in self.visited_urls:
                             self.to_visit.append(link)
-                
+
                 pbar.update(1)
-                
-                # Be polite
-                time.sleep(DELAY_SECONDS)
-                
+
+                # Be polite — full delay for real downloads, shorter for 304 Not Modified
+                # (304 = cheap HEAD-like response, no body, doesn't stress the server)
+                time.sleep(DELAY_SECONDS if not was_304 else 0.1)
+
                 # Save cache periodically
-                if self.stats['pages_downloaded'] % 10 == 0:
+                if self.stats["pages_downloaded"] % 10 == 0:
                     self.save_cache()
-        
+
         # Final cache save
         self.save_cache()
-        
+
         # Print statistics
         self.print_stats()
-    
+
+    def find_orphan_files(self) -> list:
+        """Find local .md files whose URL was NOT visited in this scrape run.
+        These are pages that existed in a previous scrape but no longer appear on
+        the live site (deleted/renamed/de-indexed by Dynatrace).
+        """
+        # Build set of expected local paths from cache (all URLs the scraper produced files for)
+        expected_paths = set()
+        for entry in self.cache.values():
+            file_path = entry.get("file")
+            if file_path:
+                expected_paths.add(Path(file_path).resolve())
+
+        # Compare against all local .md files
+        orphans = []
+        for md_file in self.output_dir.rglob("*.md"):
+            if md_file.resolve() not in expected_paths:
+                orphans.append(md_file)
+        return orphans
+
+    def cleanup_orphans(self, dry_run: bool = True) -> int:
+        """Remove local files that no longer correspond to any scraped URL.
+        Returns count of files removed (or that would be removed in dry-run).
+        """
+        orphans = self.find_orphan_files()
+        if not orphans:
+            print("✅ No orphan files found")
+            return 0
+
+        print(
+            f"\n🗑️  Found {len(orphans)} orphan file(s) — pages no longer on live site:"
+        )
+        for p in orphans[:20]:
+            rel = p.relative_to(self.output_dir)
+            print(f"  - {rel}")
+        if len(orphans) > 20:
+            print(f"  ... and {len(orphans) - 20} more")
+
+        if dry_run:
+            print(f"\n(dry-run: pass --cleanup-orphans to actually delete)")
+            return len(orphans)
+
+        for p in orphans:
+            try:
+                p.unlink()
+            except Exception as e:
+                print(f"  ⚠️  Failed to remove {p}: {e}")
+        print(f"\n✅ Removed {len(orphans)} orphan file(s)")
+        return len(orphans)
+
     def print_stats(self):
         """Print scraping statistics"""
-        duration = datetime.now() - self.stats['start_time']
-        
+        duration = datetime.now() - self.stats["start_time"]
+
         print()
         print("=" * 80)
         print("📊 SCRAPING STATISTICS")
         print("=" * 80)
         print(f"✅ Pages downloaded: {self.stats['pages_downloaded']}")
         print(f"✅ Pages converted: {self.stats['pages_converted']}")
+        print(f"⏭️  Pages unchanged (304): {self.stats['pages_unchanged']}")
         print(f"❌ Errors: {self.stats['errors']}")
         print(f"⏱️  Duration: {duration}")
         print(f"📁 Output directory: {self.output_dir.absolute()}")
         print()
-        print(f"Average: {self.stats['pages_downloaded'] / duration.total_seconds():.2f} pages/second")
+        print(
+            f"Average: {self.stats['pages_downloaded'] / duration.total_seconds():.2f} pages/second"
+        )
         print("=" * 80)
 
 
 def main():
     """Main entry point"""
     import argparse
-    
-    parser = argparse.ArgumentParser(description='Scrape Dynatrace documentation')
-    parser.add_argument('--test', action='store_true', help='Test mode (50 pages)')
-    parser.add_argument('--max-pages', type=int, help='Maximum pages to scrape')
-    parser.add_argument('--output', default='dynatrace-docs', help='Output directory')
-    
+
+    parser = argparse.ArgumentParser(description="Scrape Dynatrace documentation")
+    parser.add_argument("--test", action="store_true", help="Test mode (50 pages)")
+    parser.add_argument("--max-pages", type=int, help="Maximum pages to scrape")
+    parser.add_argument("--output", default="dynatrace-docs", help="Output directory")
+    parser.add_argument(
+        "--cleanup-orphans",
+        action="store_true",
+        help="After scrape: DELETE local .md files for URLs that no longer exist on live site",
+    )
+    parser.add_argument(
+        "--dry-run-orphans",
+        action="store_true",
+        help="After scrape: LIST orphan files that would be deleted (no actual delete)",
+    )
+
     args = parser.parse_args()
-    
+
     scraper = DynatraceDocScraper(
         base_url=BASE_URL,
         output_dir=args.output,
         max_pages=args.max_pages,
-        test_mode=args.test
+        test_mode=args.test,
     )
-    
+
     scraper.run()
+
+    if args.cleanup_orphans:
+        scraper.cleanup_orphans(dry_run=False)
+    elif args.dry_run_orphans:
+        scraper.cleanup_orphans(dry_run=True)
 
 
 if __name__ == "__main__":

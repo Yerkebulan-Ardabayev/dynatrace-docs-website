@@ -1,10 +1,15 @@
 ---
-title: "OneAgent file aging mechanism"
+title: OneAgent file aging mechanism
 source: https://docs.dynatrace.com/managed/ingest-from/dynatrace-oneagent/oneagent-aging-mechanism
-updated: 2026-02-09
+scraped: 2026-05-12T11:05:32.046725
 ---
 
+# OneAgent file aging mechanism
+
+# OneAgent file aging mechanism
+
 * 6-min read
+* Updated on Feb 25, 2026
 
 OneAgent in the installer-based deployment uses a built-in aging mechanism that makes sure the OneAgent files are kept within a reasonable size.
 
@@ -25,7 +30,7 @@ The maximum disk space occupied by OneAgent log files is very well managed by th
 
 Unlike log files, large runtime data files such as crash and memory dumps are generated ad hoc and can cause rapid spikes in disk usage. To mitigate this, use the `DATA_STORAGE` installation parameter to specify a custom directory for large runtime data. Locate the custom directory on a resource where tight disk size constraints are not as critical as they are on the disk where OneAgent is installed.
 
-For more information on customizing OneAgent installation, see the OS-specific help: [Linux](/managed/ingest-from/dynatrace-oneagent/installation-and-operation/linux/installation/customize-oneagent-installation-on-linux#data-storage "Learn how to use the Linux installer with command line parameters."), Windows, or AIX.
+For more information on customizing OneAgent installation, see the OS-specific help: [Linux](/managed/ingest-from/dynatrace-oneagent/installation-and-operation/linux/installation/customize-oneagent-installation-on-linux#data-storage "Learn how to use the Linux installer with command line parameters."), [Windows](/managed/ingest-from/dynatrace-oneagent/installation-and-operation/windows/installation/customize-oneagent-installation-on-windows#data-storage "Learn how to use the OneAgent installer for Windows."), or [AIX](/managed/ingest-from/dynatrace-oneagent/installation-and-operation/aix/installation/customize-oneagent-installation-on-aix#data-storage "Learn how you can use AIX installer with command line parameters.").
 
 ## Emergency cleanup
 
@@ -45,6 +50,8 @@ The file aging mechanism checks the files and subdirectories in the main log dir
 * The total directory size is above 1 GB
 * Any file in this directory is older than 14 days
 
+Files are removed from any subdirectory that contains more than 1000 files (newest files are preserved; oldest files are removed).
+
 There are additional rules for subdirectories:
 
 * `{log-dir}/process`  
@@ -52,7 +59,6 @@ There are additional rules for subdirectories:
 
   + The files in this directory use more than 300 MB in total
   + Any file in this directory is older than 14 days
-  + This directory contains more than 1000 files (newest files are preserved; oldest files are removed)
 * `{log-dir}/installer`  
   Files are removed when any of these conditions are true:
 
@@ -64,7 +70,6 @@ There are additional rules for subdirectories:
 
   + The files in this directory use more than 100 MB in total
   + Any file in this directory is older than 14 days
-  + This directory contains more than 1000 files (newest files are preserved; oldest files are removed)
 
 ### Data storage directory
 
@@ -98,6 +103,7 @@ The OneAgent file aging mechanism checks the subdirectories starting with `0x`. 
 
 * If the `0x*` directory contains a dump subdirectory and all the files in it are older than 3 days, then the dump subdirectory is removed.
 * If all the files and directories in the `0x*` directory are older than 7 days, the whole directory is removed.
+* If the size of all files in the runtime directory exceeds 1GB, the `0x*` directories are removed, starting with the oldest, until the runtime directory size is below 1GB.
 * This directory is also fully cleaned up during OneAgent update.
 
 ### Installation bin directory
@@ -113,7 +119,7 @@ The OneAgent file aging mechanism checks the subdirectories starting with `0x`. 
 
 ## Aging mechanism for OneAgent in application-only monitoring mode
 
-If you don't have access to the infrastructure layer, Dynatrace also provides the option of application-only monitoring for Kubernetes, OpenShift, CloudFoundry or SAP Business Technology Platform.
+If you don't have access to the infrastructure layer, Dynatrace also provides the option of application-only monitoring for [Kubernetes](/managed/ingest-from/setup-on-k8s/deployment/app-obs-managed "Deploy Dynatrace Operator in application monitoring mode to Kubernetes"), [OpenShift](/managed/ingest-from/setup-on-k8s/deployment/app-obs-managed "Deploy Dynatrace Operator in application monitoring mode to Kubernetes"), [CloudFoundry](/managed/ingest-from/setup-on-container-platforms/cloud-foundry/deploy-oneagent-on-cloud-foundry-for-application-only-monitoring "Install OneAgent on Cloud Foundry.") or [SAP Business Technology Platform](/managed/ingest-from/setup-on-container-platforms/cloud-foundry/deploy-oneagent-on-sap-cloud-platform-for-application-only-monitoring "Install OneAgent on SAP Business Technology Platform.").
 
 The aging mechanism in application-only monitoring mode manages the logs of the OneAgent modules. All of them are located in the respective subdirectories of the default OneAgent log directory:
 

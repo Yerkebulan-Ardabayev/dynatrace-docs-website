@@ -1,0 +1,12 @@
+[PASS] leaf cloud-run-monitoring.md                          (lines 51, warns 0)
+[PASS] leaf cloud-functions-monitoring.md                    (lines 45, warns 0)
+[PASS] leaf app-engine-monitoring.md                         (lines 80, warns 0)
+[PASS] leaf compute-engine-monitoring.md                     (lines 385, warns 0)
+[PASS] leaf google-kubernetes-engine-monitoring.md           (lines 156, warns 0)
+[PASS] hub  gcp-functions.md                                 (lines 35, warns 0)
+[PASS] hub  google-compute-engine.md                         (lines 26, warns 0)
+[PASS] hub  google-app-engine.md                             (lines 89, warns 0)
+[PASS] hub  gcp-guide.md                                     (lines 56, warns 0)
+[PASS] hub  gcp-supported-service-metrics-new.md             (lines 99, warns 0)
+
+=== TOTAL: 0 FAIL, 0 WARN across 10 files ===

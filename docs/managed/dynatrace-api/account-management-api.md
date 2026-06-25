@@ -1,22 +1,29 @@
 ---
-title: "Account Management API"
+title: Account Management API
 source: https://docs.dynatrace.com/managed/dynatrace-api/account-management-api
-updated: 2026-02-09
+scraped: 2026-05-12T11:03:10.106263
 ---
 
-### Environment management
+# Account Management API
 
-View monitoring environments of your Dynatrace account.### Dynatrace Platform Subscription
+# Account Management API
 
-View your Dynatrace Platform Subscription and how it is used.### Reference data
+* Reference
+* Updated on Feb 20, 2026
 
-View the reference info about your account.
+[### Environment management
+
+View monitoring environments of your Dynatrace account.](/managed/dynatrace-api/account-management-api/environment-management-api/environment-management-api "View monitoring environments of your Dynatrace account via Environment management API.")[### Dynatrace Platform Subscription
+
+View your Dynatrace Platform Subscription and how it is used.](/managed/dynatrace-api/account-management-api/dynatrace-platform-subscription-api "Query the data about your Dynatrace Platform Subscription via the Account Management API.")[### Reference data
+
+View the reference info about your account.](/managed/dynatrace-api/account-management-api/reference-data "Check the reference info of your account via the Reference data API.")
 
 ## API Explorer
 
 You can access all Dynatrace API endpoints using the API Explorer.
 
-1. Go to [**Account Management**](https://myaccount.dynatrace.com/). If you have more than one account, select the account you want to manage.
+1. Go to [**Account Management**ï»¿](https://myaccount.dynatrace.com/). If you have more than one account, select the account you want to manage.
 2. On the top navigation bar, go to **Identity & access management** > **OAuth clients**.
 3. In the upper-right corner of the page, select **Account Management API**.
 
@@ -32,4 +39,4 @@ Once you've entered your OAuth 2.0 token, you can directly execute API calls wit
 
 ## Related topics
 
-* User and group management
+* [User and group management](/managed/manage/identity-access-management/user-and-group-management "User and group management")

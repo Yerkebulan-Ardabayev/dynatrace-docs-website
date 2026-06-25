@@ -1,0 +1,19 @@
+=== annotate.md
+  L149: 'For more details about configuring labels for selective monitoring, see [Labels and selectorsï»¿](https://dt-url.net/vj038vk).'
+       nonascii=[(93, '0xef'), (94, '0xbb'), (95, '0xbf')]
+  L240: 'For more details, see [Resources that support set-based requirementsï»¿](https://dt-url.net/hi03yvm).'
+       nonascii=[(68, '0xef'), (69, '0xbb'), (70, '0xbf')]
+=== instrument-nginx.md
+  L14: 'The instructions below are relevant only for the [official Kubernetes ingress controller implementation from Googleï»¿](https://dt-url.net/xr03xh3).'
+       nonascii=[(115, '0xef'), (116, '0xbb'), (117, '0xbf')]
+  L16: '* Derivatives from the official project, such as the [Bitnami ingress controllerï»¿](https://dt-url.net/ns03xjt), are not supported. However, you may instrument them manually by using the [runtime instrumentation](/managed/ingest-from/technology-support/application-software/nginx/manual-runtime-instrumentation "Learn how to force instrumenting patched/non-standard NGINX binaries during runtime.") for NGINX.'
+       nonascii=[(80, '0xef'), (81, '0xbb'), (82, '0xbf')]
+  L18: '* The [ingress controller implementation from F5 NGINXï»¿](https://dt-url.net/ph43xrd) can be instrumented automatically; no manual steps are required.'
+       nonascii=[(54, '0xef'), (55, '0xbb'), (56, '0xbf')]
+=== k8s-api-monitoring.md
+  L16: 'Dynatrace Operator manages the lifecycle of all Dynatrace components within a Kubernetes cluster and can be configured by deploying a DynaKube Custom Resource. Dynatrace ActiveGateâ\x80\x94the Dynatrace component required to monitor the Kubernetes APIâ\x80\x94offers a capability for Kubernetes API Monitoring.'
+       nonascii=[(180, '0xe2'), (181, '0x80'), (182, '0x94'), (245, '0xe2'), (246, '0x80'), (247, '0x94')]
+  L250: '   If you set `enableIstio` to `true` in the [DynaKube custom resourceï»¿](https://dt-url.net/dynakube-samples), use the command below to get the Kubernetes API URL:'
+       nonascii=[(70, '0xef'), (71, '0xbb'), (72, '0xbf')]
+  L338: '   If you set `enableIstio` to `true` in the [DynaKube custom resourceï»¿](https://dt-url.net/dynakube-samples), use the command below to get the Kubernetes API URL:'
+       nonascii=[(70, '0xef'), (71, '0xbb'), (72, '0xbf')]

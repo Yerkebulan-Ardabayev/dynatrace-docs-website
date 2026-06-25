@@ -1,0 +1,6 @@
+K8S L16 stripped:
+'Dynatrace Operator manages the lifecycle of all Dynatrace components within a Kubernetes cluster and can be configured by deploying a DynaKube Custom Resource. Dynatrace ActiveGatethe Dynatrace component required to monitor the Kubernetes APIoffers a capability for Kubernetes API Monitoring.'
+ANN L149 stripped:
+'For more details about configuring labels for selective monitoring, see [Labels and selectors](https://dt-url.net/vj038vk).'
+ANN L240 stripped:
+'For more details, see [Resources that support set-based requirements](https://dt-url.net/hi03yvm).'

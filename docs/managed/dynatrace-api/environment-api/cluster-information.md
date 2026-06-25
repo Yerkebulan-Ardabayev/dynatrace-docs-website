@@ -1,8 +1,15 @@
 ---
-title: "Cluster information API"
+title: Cluster information API
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/cluster-information
-updated: 2026-02-09
+scraped: 2026-05-12T11:11:45.435570
 ---
+
+# Cluster information API
+
+# Cluster information API
+
+* Reference
+* Published Sep 24, 2018
 
 The **Cluster information** API enables you to check the version and internal time of your Dynatrace environment.
 
@@ -36,7 +43,7 @@ The request produces an `application/json` payload.
 
 To execute this request, you need an access token with `DataExport` scope.
 
-To learn how to obtain and use it, see Tokens and authentication.
+To learn how to obtain and use it, see [Tokens and authentication](/managed/discover-dynatrace/references/dynatrace-api/basics/dynatrace-api-authentication).
 
 ### Response
 
@@ -87,7 +94,9 @@ A list of constraint violations
 {
 
 
+
 "version": "string"
+
 
 
 }
@@ -95,42 +104,55 @@ A list of constraint violations
 
 ```
 {
+
 
 
 "error": {
 
 
+
 "code": 1,
+
 
 
 "constraintViolations": [
 
 
+
 {
+
 
 
 "location": "string",
 
 
+
 "message": "string",
+
 
 
 "parameterLocation": "HEADER",
 
 
+
 "path": "string"
 
 
+
 }
+
 
 
 ],
 
 
+
 "message": "string"
 
 
+
 }
+
 
 
 }

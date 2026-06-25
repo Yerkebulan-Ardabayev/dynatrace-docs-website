@@ -1,0 +1,32 @@
+---
+title: Request attributes API
+source: https://docs.dynatrace.com/managed/dynatrace-api/configuration-api/service-api/request-attributes-api
+scraped: 2026-05-12T11:05:01.175125
+---
+
+# Request attributes API
+
+# Request attributes API
+
+* Reference
+* Published Dec 05, 2018
+
+The **Request attributes** API enables you to manage the configuration of [request attributes](/managed/observe/application-observability/services/request-attributes "Understand what request attributes are and learn how to use them across all levels of all service-analysis views.").
+
+[### List all
+
+Get an overview of all request attributes.](/managed/dynatrace-api/configuration-api/service-api/request-attributes-api/get-all "View all request attributes of your environment via the Dynatrace API.")[### View a request attribute
+
+Get parameters of a request attribute by its ID.](/managed/dynatrace-api/configuration-api/service-api/request-attributes-api/get-request-attribute "View a request attribute via the Dynatrace API.")
+
+[### Create a request attribute
+
+Create a new request attribute with the exact parameters you need.](/managed/dynatrace-api/configuration-api/service-api/request-attributes-api/post-request-attribute "Create a request attribute via the Dynatrace API.")[### Edit a request attribute
+
+Update an existing request attribute or create a new request attribute with the specified ID.](/managed/dynatrace-api/configuration-api/service-api/request-attributes-api/put-request-attribute "Update a request attribute via the Dynatrace API.")[### Delete a request attribute
+
+Delete a request attribute you don't need anymore.](/managed/dynatrace-api/configuration-api/service-api/request-attributes-api/del-request-attribute "Delete a request attribute via the Dynatrace API.")
+
+## Related topics
+
+* [Request attributes](/managed/observe/application-observability/services/request-attributes "Understand what request attributes are and learn how to use them across all levels of all service-analysis views.")

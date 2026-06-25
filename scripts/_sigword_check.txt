@@ -1,0 +1,12 @@
+WORD: **Note:** Security notifications
+r заменяется пустой строкой.  **Note:** Security notifications содержат чувствительную информацию. Избыточное использование placeholders в custom payload может привести к утечке ин
+---
+WORD: **{CvssScore}**: CVSS score
+ьное описание vulnerability.  **{CvssScore}**: CVSS score найденной vulnerability, например, "10.0". Может быть пустым. **{DavisSecurityScore}**: [Davis Security Score](https://www
+---
+WORD: **{DavisSecurityScore}**: [Davis
+р, "10.0". Может быть пустым. **{DavisSecurityScore}**: [Davis Security Score](https://www.dynatrace.com/support/help/how-to-use-dynatrace/application-security/davis-security-score
+---
+WORD: **{SecurityProblemUrl}**: URL
+ер, "Critical" или "Medium".  **{SecurityProblemUrl}**: URL security problem в Dynatrace.  **{AffectedEntities}**: данные об entities, затронутых security problem, в виде json-масс
+---

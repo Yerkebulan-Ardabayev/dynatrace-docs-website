@@ -1,8 +1,15 @@
 ---
-title: "Metric units API - GET all units"
+title: Metric units API - GET all units
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/metrics-units/get-all-units
-updated: 2026-02-09
+scraped: 2026-05-12T11:12:18.263732
 ---
+
+# Metric units API - GET all units
+
+# Metric units API - GET all units
+
+* Reference
+* Published Feb 11, 2022
 
 Lists all available metric units of your environment.
 
@@ -17,7 +24,7 @@ The request produces an `application/json` payload.
 
 To execute this request, you need an access token with `metrics.read` scope.
 
-To learn how to obtain and use it, see Tokens and authentication.
+To learn how to obtain and use it, see [Tokens and authentication](/managed/discover-dynatrace/references/dynatrace-api/basics/dynatrace-api-authentication).
 
 ## Parameters
 
@@ -90,98 +97,129 @@ A list of constraint violations
 {
 
 
+
 "totalCount": 2,
+
 
 
 "units": [
 
 
+
 {
+
 
 
 "description": "byte per second",
 
 
+
 "displayName": "byte per second",
+
 
 
 "displayNamePlural": "bytes per second",
 
 
+
 "symbol": "B/s",
+
 
 
 "unitId": "BytePerSecond"
 
 
+
 },
 
 
+
 {
+
 
 
 "description": "byte per minute",
 
 
+
 "displayName": "byte per minute",
+
 
 
 "displayNamePlural": "bytes per minute",
 
 
+
 "symbol": "B/min",
+
 
 
 "unitId": "BytePerMinute"
 
 
+
 }
+
 
 
 ]
 
 
+
 }
 ```
 
 ```
 {
+
 
 
 "error": {
 
 
+
 "code": 1,
+
 
 
 "constraintViolations": [
 
 
+
 {
+
 
 
 "location": "string",
 
 
+
 "message": "string",
+
 
 
 "parameterLocation": "HEADER",
 
 
+
 "path": "string"
 
 
+
 }
+
 
 
 ],
 
 
+
 "message": "string"
 
 
+
 }
+
 
 
 }
@@ -201,7 +239,9 @@ The result is truncated to three entries.
 curl --request GET \
 
 
+
 --url https://mySampleEnv.live.dynatrace.com/api/v2/units \
+
 
 
 --header 'Authorization: Api-Token dt0c01.abc123.abcdefjhij1234567890'
@@ -219,58 +259,77 @@ https://mySampleEnv.live.dynatrace.com/api/v2/units
 {
 
 
+
 "totalCount": 3,
+
 
 
 "activeGateTokens": [
 
 
+
 {
+
 
 
 "unitId": "Second",
 
 
+
 "displayName": "second",
+
 
 
 "symbol": "s"
 
 
+
 },
 
 
+
 {
+
 
 
 "unitId": "GigaBit",
 
 
+
 "displayName": "gigabit",
+
 
 
 "symbol": "Gbit"
 
 
+
 },
+
 
 
 {
 
 
+
 "unitId": "KiloBytePerSecond",
+
 
 
 "displayName": "kilobyte per second",
 
 
+
 "symbol": "kB/s"
+
 
 
 }
 
 
+
 ]
+
 
 
 }

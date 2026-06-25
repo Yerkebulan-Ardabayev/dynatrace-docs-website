@@ -1,31 +1,38 @@
 ---
-title: "Problems API v2"
+title: Problems API v2
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/problems-v2
-updated: 2026-02-09
+scraped: 2026-05-12T11:12:23.893003
 ---
 
-### Fetch the list of problems
+# Problems API v2
 
-Gain high-level overview of problems.### Get the problem details
+# Problems API v2
 
-When you find a problem you want to investigate, fetch details about it.### Close problem
+* Reference
+* Published Oct 12, 2020
 
-When a problem is not a concern anymore, close it.
+[### Fetch the list of problems
 
-### List comments
+Gain high-level overview of problems.](/managed/dynatrace-api/environment-api/problems-v2/problems/get-problems-list "Fetch the list of problems via Problems v2 API.")[### Get the problem details
 
-View all comments on a problem.### View a comment
+When you find a problem you want to investigate, fetch details about it.](/managed/dynatrace-api/environment-api/problems-v2/problems/get-problem-details "View details of a problem via Problems v2 API.")[### Close problem
 
-Check a particular comment on a specified problem.
+When a problem is not a concern anymore, close it.](/managed/dynatrace-api/environment-api/problems-v2/problems/post-close "Close a problem via Problems v2 API.")
 
-### Post comment
+[### List comments
 
-Post a comment on a specified problem.### Edit comment
+View all comments on a problem.](/managed/dynatrace-api/environment-api/problems-v2/comments/get-all "View all comments to a problem via Problems v2 API.")[### View a comment
 
-Edit a comment on a specified problem.### Delete comment
+Check a particular comment on a specified problem.](/managed/dynatrace-api/environment-api/problems-v2/comments/get-comment "View a comment to a problem via Problems v2 API.")
 
-Delete a comment from a specified problem.
+[### Post comment
+
+Post a comment on a specified problem.](/managed/dynatrace-api/environment-api/problems-v2/comments/post-comment "Post a comment to a problem via Problems v2 API.")[### Edit comment
+
+Edit a comment on a specified problem.](/managed/dynatrace-api/environment-api/problems-v2/comments/put-comment "Edit a comment to a problem via Problems v2 API.")[### Delete comment
+
+Delete a comment from a specified problem.](/managed/dynatrace-api/environment-api/problems-v2/comments/del-comment "Delete a comment to a problem via Problems v2 API.")
 
 ## Related topics
 
-* DavisÂ® AI
+* [DavisÂ® AI](/managed/dynatrace-intelligence "Get familiar with the capabilities of Davis AI.")

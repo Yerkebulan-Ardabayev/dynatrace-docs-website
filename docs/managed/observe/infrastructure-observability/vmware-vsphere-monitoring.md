@@ -1,13 +1,13 @@
 ---
 title: VMware vSphere monitoring
-source: https://www.dynatrace.com/docs/observe/infrastructure-observability/vmware-vsphere-monitoring
-scraped: 2026-03-06T21:17:06.043244
+source: https://docs.dynatrace.com/managed/observe/infrastructure-observability/vmware-vsphere-monitoring
+scraped: 2026-05-12T11:09:30.612528
 ---
 
 # VMware vSphere monitoring
 
+# VMware vSphere monitoring
 
-* Classic
 * How-to guide
 * Published Aug 12, 2021
 
@@ -19,6 +19,8 @@ Setting up Dynatrace monitoring of a VMware platform is easy using ActiveGate as
 **Flow of monitoring data from your VMware platform to Dynatrace:**
 
 ![Virtualization data flow](https://dt-cdn.net/images/virtualization-flow-1280-93a1053e89.png)
+
+Virtualization data flow
 
 The following applies to VMware only. For other virtualization platforms, you only need to install OneAgent for virtualized host monitoring, as the monitoring of virtualization management layers is supported only for VMware.
 
@@ -34,12 +36,12 @@ Follow the steps below to set up monitoring on the virtualization management lay
 
 ## Install and configure ActiveGate
 
-Install an Environment ActiveGate in your data center before connecting Dynatrace to your VMware platform.  
+[Install an Environment ActiveGate](/managed/ingest-from/dynatrace-activegate/installation "Learn how to configure ActiveGate") in your data center before connecting Dynatrace to your VMware platform.  
 For **Dynatrace Managed** you can use the embedded ActiveGate running on the cluster node. However, the Cluster ActiveGate is typically used to forward RUM and/or Synthetic monitoring data to the Dynatrace Cluster. We recommend that you don't overutilize this ActiveGate with another type of monitoring data. Depending on the VMware size, you might consider using a dedicated ActiveGate per environment.
 
 For virtualization monitoring, the `vmware_monitoring_enabled` property in `custom.properties` must be set to `true` (default value).
 
-See Customize ActiveGate properties for details.
+See [Customize ActiveGate properties](/managed/ingest-from/dynatrace-activegate/configuration/configure-activegate#vmware "Learn which ActiveGate properties you can configure based on your needs and requirements.") for details.
 
 ## Connect Dynatrace to your VMware platform
 
@@ -50,7 +52,7 @@ To connect Dynatrace to your VMware platform
 3. Check the network/proxy settings.  
    If you get a communication error even though the data provided is correct, it might be because of your network/proxy settings. We recommend that you revise the network/proxy settings when adding a new VMware integration.
 
-   Optional You can also bypass the proxy for connecting with vCenter or ESXi when configuring the VMware integration. Modify ActiveGate configuration to exclude a specific host from the proxy.
+   Optional You can also bypass the proxy for connecting with vCenter or ESXi when configuring the VMware integration. Modify [ActiveGate configuration](/managed/ingest-from/dynatrace-activegate/configuration/set-up-proxy-authentication-for-activegate#exclude-hosts "Learn how to configure ActiveGate properties to set up a proxy.") to exclude a specific host from the proxy.
 4. Enter the associated user credentials so that ActiveGate can sign in and collect monitoring data. The required privileges for this user are **view and read-only access**. Administrator-level access isn't required to enable monitoring (no changes to your VMware settings are required).
 
    You donât need to add ESXi hosts individually if they're managed by a vCenter server.
@@ -77,7 +79,7 @@ To cover your entire virtual infrastructure, repeat these steps for all other vC
 
 ## Limit VMware infrastructure monitoring
 
-After you set up VMware monitoring, you might want to limit which infrastructural elements (such as hosts and VMs) should actually be monitored by Dynatrace. To do this, you can use the permissions mechanism available in VMware. For more information, see Limit VMware infrastructure monitoring using permissions.
+After you set up VMware monitoring, you might want to limit which infrastructural elements (such as hosts and VMs) should actually be monitored by Dynatrace. To do this, you can use the permissions mechanism available in VMware. For more information, see [Limit VMware infrastructure monitoring using permissions](/managed/observe/infrastructure-observability/vmware-vsphere-monitoring/limit-infrastructure-monitoring-using-permissions "Limit the size of your monitored VMware infrastructure using the VMware permissions mechanism.").
 
 ## Troubleshoot VMware connection
 
@@ -87,8 +89,8 @@ After you set up VMware monitoring, you might want to limit which infrastructura
 
 ## Configure vSphere monitoring using Settings API
 
-You can use the Settings API to configure VMware vSphere monitoring.
+You can use the [Settings API](/managed/dynatrace-api/environment-api/settings "Find out what the Dynatrace Settings API offers.") to configure VMware vSphere monitoring.
 
-1. To learn the schema, use GET a schema with `builtin:virtualization.vmware` as the schemaId.
+1. To learn the schema, use [GET a schema](/managed/dynatrace-api/environment-api/settings/schemas/get-schema "View a settings schema via the Dynatrace API.") with `builtin:virtualization.vmware` as the schemaId.
 2. Based on the `builtin:virtualization.vmware` schema, create your configuration object.
-3. To create your configuration, use POST an object.
+3. To create your configuration, use [POST an object](/managed/dynatrace-api/environment-api/settings/objects/post-object "Create or validate a settings object via the Dynatrace API.").

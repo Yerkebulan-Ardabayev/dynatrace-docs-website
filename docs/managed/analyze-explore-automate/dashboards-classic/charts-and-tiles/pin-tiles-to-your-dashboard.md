@@ -1,147 +1,177 @@
 ---
-title: "Закрепить плитки на вашей панели мониторинга"
+title: Pin tiles to your dashboard
 source: https://docs.dynatrace.com/managed/analyze-explore-automate/dashboards-classic/charts-and-tiles/pin-tiles-to-your-dashboard
-updated: 2026-02-09
+scraped: 2026-05-12T11:13:01.058281
 ---
 
-Панели мониторинга Classic
+# Pin tiles to your dashboard
 
-Вы можете автоматически создать новую плитку панели мониторинга из любой страницы Dynatrace, на которой есть кнопка **Закрепить на панели мониторинга**. Для этого вам необходимы права на редактирование панели мониторинга. В этом примере мы создаем новую панель мониторинга, поэтому вы гарантированно имеете права на редактирование.
+# Pin tiles to your dashboard
 
-## Создать панель мониторинга
+* How-to guide
+* 5-min read
+* Updated on May 16, 2022
 
-Мы начинаем с создания пустой панели мониторинга.
+[Dashboards Classic](/managed/analyze-explore-automate/dashboards-classic "Learn how to create, manage, and use Dynatrace Dashboards Classic.")
 
-1. Перейдите в раздел **Панели мониторинга**.
-2. Выберите **Создать панель мониторинга**, введите **Имя панели мониторинга** (в этом примере используйте `Отфильтрованная панель мониторинга`), и выберите **Создать**.  
-   Это создает панель мониторинга и открывает ее в режиме редактирования.
-3. Выберите **Готово**.  
-   Теперь у нас есть пустая панель мониторинга с именем `Отфильтрованная панель мониторинга`.
+You can automatically create a new dashboard tile from any Dynatrace page that includes a **Pin to dashboard** button. All you need is [edit permission](/managed/analyze-explore-automate/dashboards-classic/dashboards/share-dashboards "Learn how to share your Dynatrace dashboards with others.") for the dashboard. In this example, we create a new dashboard, so you are guaranteed to have edit permission.
 
-## Создать отфильтрованную плитку
+## Create a dashboard
 
-Теперь мы создаем плитку на основе отфильтрованного представления страницы **Хосты** и закрепляем плитку на пустой панели мониторинга.
+We start by creating an empty dashboard.
 
-1. Перейдите на страницу **Хосты**.
-2. Установите фильтр на списке. В этом примере мы устанавливаем `Центр обработки данных: Гданьск, Польша`.
+1. Go to **Dashboards**.
+2. Select **Create dashboard**, enter a **Dashboard name** (in this example, use `Filtered Dashboard`), and select **Create**.  
+   This creates the dashboard and opens it in edit mode.
+3. Select **Done**.  
+   Now we have an empty dashboard named `Filtered Dashboard`.
 
-   ![Результат фильтрации](https://dt-cdn.net/images/filter-03-379-52198a4b6b.png)
+## Create a filtered tile
 
-   Как установить фильтр
+Now we create a tile based on a filtered view of the **Hosts** page and pin the tile to the empty dashboard.
 
-   1. На строке **Отфильтровано по** начните вводить текст, чтобы выбрать фильтр
+1. Go to **Hosts**.
+2. Set a filter on the list. In this example, we set `Data center: GdaÅsk, Poland`.
 
-      ![Выбрать фильтр](https://dt-cdn.net/images/filter-01-325-2fe63fb62a.png)
-   2. Выберите или введите значение
+   ![Resulting filter](https://dt-cdn.net/images/filter-03-379-52198a4b6b.png)
 
-      ![Выбрать значение](https://dt-cdn.net/images/filter-02-404-32504bda2e.png)
+   Resulting filter
 
-   Для более распространенных фильтров вы можете выбрать фильтр直接 из столбца **Быстрые фильтры** на странице **Хосты**.
-3. Выберите **Закрепить на панели мониторинга**.
+   How to set a filter
 
-   Dynatrace отображает предварительный просмотр плитки и просит вас выбрать панель мониторинга, на которую вы хотите закрепить ее. Список панелей мониторинга можно искать: выберите в списке и начните вводить текст, чтобы отфильтровать список, а затем выберите панель мониторинга из отфильтрованного списка.
+   1. On the **Filtered by** line, start typing to select a filter
 
-   ![Фильтр плиток: закрепить](https://dt-cdn.net/images/filtered-tile-01-382-0dbefb8cc5.png)
-4. Выберите панель мониторинга (в этом примере `Отфильтрованная панель мониторинга`) и выберите **Закрепить**. Это создает плитку и закрепляет ее на этой панели мониторинга.
+      ![Select a filter](https://dt-cdn.net/images/filter-01-325-2fe63fb62a.png)
 
-   ![Фильтр плиток: открыть панель мониторинга](https://dt-cdn.net/images/filtered-tile-02-380-4c83bb3eb7.png)
-5. Выберите **Открыть панель мониторинга**.  
-   Ранее пустая панель мониторинга теперь открывается в режиме редактирования с новой плиткой, выбранной для редактирования. Вы можете сделать необязательные настройки для этой плитки перед сохранением. Для плитки **Здоровье хоста** у вас есть следующие варианты:
+      Select a filter
+   2. Select or type a value
 
-   * Необязательно Выберите, отображать ли визуализацию на плитке
-   * Необязательно Выберите пользовательский временной интервал
-   * Необязательно Выберите пользовательскую зону управления
-   * Необязательно Выберите среду
+      ![Select a value](https://dt-cdn.net/images/filter-02-404-32504bda2e.png)
 
-   ![Фильтр плиток: режим редактирования плитки](https://dt-cdn.net/images/filtered-tile-03-1187-acc59a36d4.png)
-6. Выберите **Готово**.  
-   Панель мониторинга отображается с новой плиткой, представляющей хосты в Гданьске, Польша.
+      Select a value
 
-   ![Фильтр плиток: режим отображения](https://dt-cdn.net/images/filtered-tile-05-1186-285827111d.png)
+   For more common filters, you can select a filter directly from the **Quick filters** column of the **Hosts** page.
+3. Select **Pin to dashboard**.
 
-Теперь у нас есть плитка, специфичная для хостов в центре обработки данных Гданьска, Польша.
+   Dynatrace displays a preview of the tile and asks you to select the dashboard to which you want to pin it. The list of dashboards is searchable: select in the list and start typing to filter the list, and then select the dashboard from the filtered list.
 
-* Фильтр полностью динамичен. Если хосты добавляются или удаляются, или если их статусы меняются, плитка обновляется автоматически.
-* Чтобы просмотреть отфильтрованную страницу **Хосты**, из которой мы создали плитку, откройте меню в правом верхнем углу плитки и выберите **Просмотреть подробности**.
+   ![Filter tiles: pin](https://dt-cdn.net/images/filtered-tile-01-382-0dbefb8cc5.png)
 
-## Добавить заголовок к вашей плитке
+   Filter tiles: pin
+4. Select a dashboard (in this example, `Filtered Dashboard`) and select **Pin**. This creates the tile and pins it to that dashboard.
 
-Необязательно
+   ![Filter tiles: open dashboard](https://dt-cdn.net/images/filtered-tile-02-380-4c83bb3eb7.png)
 
-Чтобы добавить осмысленный ярлык к вашей плитке
+   Filter tiles: open dashboard
+5. Select **Open dashboard**.  
+   The formerly empty dashboard now opens in edit mode with the new tile selected for editing. You can make optional settings to this tile before saving it. For a **Host health** tile, you have the following options:
 
-1. Выберите **Редактировать**, чтобы редактировать вашу панель мониторинга.
-2. Перетащите плитку **Заголовок** из панели **Редактировать панель мониторинга** на вашу панель мониторинга.  
-   Это будет заголовок вашей плитки.
-3. Редактируйте текст заголовка. В этом примере мы используем **Хосты Гданьска**.
-4. Перетащите плитку **Заголовок** в позицию над вашей плиткой **Хосты**.  
-   В зависимости от позиции вашей плитки **Хосты** на панели мониторинга, вам может потребоваться перетащить обе плитки в новые позиции, чтобы вы могли разместить плитку **Заголовок** над плиткой **Хосты**.
+   * Optional Select whether to show a visualization on the tile
+   * Optional Select a custom timeframe
+   * Optional Select a custom management zone
+   * Optional Select an environment
 
-   ![Плитка заголовка - редактировать панель мониторинга](https://dt-cdn.net/images/filtered-tile-08-399-4d36db7eb2.png)
-5. Выберите **Готово**.
+   ![Filter tiles: tile edit mode](https://dt-cdn.net/images/filtered-tile-03-1187-acc59a36d4.png)
 
-   ![Плитка заголовка](https://dt-cdn.net/images/filtered-tile-07-401-f9f22ea2e9.png)
+   Filter tiles: tile edit mode
+6. Select **Done**.  
+   The dashboard is displayed with the new tile representing hosts in GdaÅsk, Poland.
 
-## Обновить отфильтрованную плитку
+   ![Filter tiles: display mode](https://dt-cdn.net/images/filtered-tile-05-1186-285827111d.png)
 
-Чтобы изменить фильтры на вашей плитке
+   Filter tiles: display mode
 
-1. На вашей панели мониторинга выберите плитку, чтобы отобразить таблицу **Хосты** с примененным фильтром.
-2. Добавьте или удалите фильтры.
+Now we have a tile that's specific to the hosts in the GdaÅsk, Poland, data center.
 
-   В этом примере мы сохраняем `Центр обработки данных: Гданьск, Польша` и добавляем `Операционная система: Linux`. Поскольку мы изменили фильтры, кнопка **Обновить плитку панели мониторинга** активна, чтобы вы могли сохранить изменения.
+* The filter is fully dynamic. If hosts are added or removed, or if their statuses change, the tile updates automatically.
+* To view the filtered **Hosts** page from which we created the tile, open the menu in the tile's upper-right corner and select **View details**.
 
-   ![Фильтр плиток: дополнительный фильтр](https://dt-cdn.net/images/filtered-tile-06-1431-274639b9a2.png)
-3. Выберите **Обновить плитку панели мониторинга**.  
-   Новые настройки фильтров сохраняются в плитке. В этом примере плитка на вашей панели мониторинга отображает состояние хостов, соответствующих `Центр обработки данных: Гданьск, Польша` и `Операционная система: Linux`, и она открывает страницу **Хосты** с этими фильтрами.
-4. Чтобы вернуться к панели мониторинга, выберите кнопку панели мониторинга в левом верхнем углу Dynatrace.
+## Add a header to your tile
 
-   ![Кнопка панели мониторинга](https://dt-cdn.net/images/dashboardbutton-28-e3cbad6cfe.png)
+Optional
 
-## Закрепить как новую плитку
+To add a meaningful label to your tile
 
-Вместо обновления плитки вы можете сохранить новую копию плитки. Например, вы можете хотеть несколько похожих плиток, но с каждой плиткой, отфильтрованной для разных операционных систем.
+1. Select **Edit** to edit your dashboard.
+2. Drag a **Header** tile from the **Edit dashboard** pane to your dashboard.  
+   This will be the title of your tile.
+3. Edit the header text. In this example, we use **Gdansk hosts**.
+4. Drag your **Header** tile into position above your **Hosts** tile.  
+   Depending on the position of your **Hosts** tile on the dashboard, you may need to drag both tiles to new positions so you can fit the **Header** tile over the **Hosts** tile.
 
-1. На той же панели мониторинга откройте меню плитки (в правом верхнем углу плитки) и выберите **Просмотреть подробности**.  
-   Страница **Хосты** открывается с теми же фильтрами.
-2. Выберите **Больше** (**…**) > **Закрепить как новую плитку**.
+   ![Header tile - edit dashboard](https://dt-cdn.net/images/filtered-tile-08-399-4d36db7eb2.png)
 
-   * Выберите другую панель мониторинга, чтобы иметь копии одной и той же плитки на двух разных панелях мониторинга.
-   * Выберите одну и ту же панель мониторинга, чтобы иметь две копии плитки на одной и той же панели мониторинга, что может показаться бессмысленным. Однако:
+   Header tile - edit dashboard
+5. Select **Done**.
 
-     + Вы можете редактировать каждую копию плитки, чтобы она имела разную зону управления, временной интервал и среду
-     + Вы можете установить разные фильтры на каждой копии плитки
+   ![Header tile](https://dt-cdn.net/images/filtered-tile-07-401-f9f22ea2e9.png)
 
-## Клонировать плитки
+   Header tile
 
-Клонирование плиток может сэкономить вам много работы. Например, предположим, что вы хотите, чтобы ваша панель мониторинга отображала три визуализации, которые идентичны, за исключением того, что каждая из них запрашивает другой хост. Самое простое решение - создать первую визуализацию, экспериментировать с настройками визуализации, пока она не станет идеальной, а затем клонировать ее дважды. После этого вам просто нужно редактировать клонированные плитки, чтобы они запрашивали другие два хоста.
+## Update a filtered tile
 
-### Клонировать плитку на текущую панель мониторинга
+To change the filters on your tile
 
-Чтобы закрепить клонированные плитки на одной и той же панели мониторинга
+1. On your dashboard, select the tile to display the **Hosts** table with your filter applied.
+2. Add or delete filters.
 
-1. Перейдите в раздел **Панели мониторинга**.
-2. Выберите имя панели мониторинга, чтобы отобразить эту панель мониторинга.
-3. Выберите **Редактировать** в правом верхнем углу панели мониторинга. Панель мониторинга открывается в режиме редактирования.
+   In this example, we keep `Data center: GdaÅsk, Poland` and add `Operating system: Linux`. Because we have changed the filters, the **Update dashboard tile** button is enabled so you can save changes.
 
-   * Если вы не видите опцию **Редактировать**, у вас нет разрешения на редактирование этой панели мониторинга.
-4. Выберите плитку, которую вы хотите клонировать (добавить копию плитки на текущую панель мониторинга), и затем выберите **Клонировать**.
+   ![Filter tiles: additional filter](https://dt-cdn.net/images/filtered-tile-06-1431-274639b9a2.png)
 
-   * Чтобы клонировать несколько плиток на текущую панель мониторинга, перетащите прямоугольник выбора вокруг *x* плиток, которые вы хотите клонировать, и затем выберите **Клонировать x плиток**.
-5. Редактируйте клонированные плитки по мере необходимости.
+   Filter tiles: additional filter
+3. Select **Update dashboard tile**.  
+   The new filter settings are saved to the tile. In this example, the tile on your dashboard displays the health of hosts matching `Data center: GdaÅsk, Poland` and `Operating system: Linux`, and it opens the **Hosts** page with those filters.
+4. To return to the dashboard, select the dashboard button in the upper-left corner of Dynatrace.
 
-### Клонировать плитку на другую панель мониторинга
+   ![Dashboard button](https://dt-cdn.net/images/dashboardbutton-28-e3cbad6cfe.png)
 
-Чтобы закрепить клонированные плитки на другой существующей панели мониторинга или создать другую панель мониторинга и закрепить клонированные плитки на ней
+   Dashboard button
 
-1. Перейдите в раздел **Панели мониторинга**.
-2. Выберите имя панели мониторинга, чтобы отобразить эту панель мониторинга.
-3. Выберите **Редактировать** в правом верхнем углу панели мониторинга. Панель мониторинга открывается в режиме редактирования.
+## Pin as new tile
 
-   * Если вы не видите опцию **Редактировать**, у вас нет разрешения на редактирование этой панели мониторинга.
-4. Выберите плитку, которую вы хотите клонировать на другую панель мониторинга, и затем выберите **Клонировать в**.
+Instead of updating a tile, you might want to save a new copy of the tile. For example, you might want multiple similar tiles but with each tile filtered for a different operating system.
 
-   * Чтобы клонировать несколько плиток на другую панель мониторинга, перетащите прямоугольник выбора вокруг *x* плиток, которые вы хотите клонировать, и затем выберите **Клонировать x в**.
-5. В всплывающем окне **Где вы хотите закрепить?** выберите существующую панель мониторинга или **Создать новую панель мониторинга**.
-6. Выберите **Закрепить**, чтобы добавить выбранные плитки на панель мониторинга.
-7. Редактируйте клонированные плитки по мере необходимости.
+1. On the same example dashboard, open the tile menu (in the upper-right of the tile) and select **View details**.  
+   The **Hosts** page opens with the same filters set.
+2. Select **More** (**â¦**) > **Pin as new tile**.
+
+   * Select a different dashboard to have copies of the same tile on two different dashboards.
+   * Select the same dashboard to have two copies of the tile on the same dashboard, which might seem pointless. However:
+
+     + You can edit each copy of the tile to have a different management zone, timerange, and environment
+     + You can set different filters on each copy of the tile
+
+## Clone tiles
+
+Tile cloning can save you a lot of work. For example, suppose you want your dashboard to display three visualizations that are identical except that they each query a different host. The easiest solution is to create the first visualization, experiment with the visualization settings until it's perfect, and then clone it twice. After that, you just need to edit the clones to query the other two hosts.
+
+### Clone a tile to the current dashboard
+
+To pin the cloned tiles to the same dashboard
+
+1. Go to **Dashboards**.
+2. Select the name of a dashboard to display that dashboard.
+3. Select **Edit** in the upper-right corner of the dashboard. The dashboard opens in edit mode.
+
+   * If you don't see an **Edit** option, you don't have permission to edit that dashboard.
+4. Select the tile that you want to clone (add a copy of the tile to the current dashboard) and then select **Clone**.
+
+   * To clone multiple tiles to the current dashboard, drag a selection rectangle around the *x* tiles you want to clone and then select **Clone x tiles**.
+5. Edit the cloned tiles as needed.
+
+### Clone a tile to another dashboard
+
+To pin the cloned tiles to another existing dashboard, or to create another dashboard and pin the clones to it
+
+1. Go to **Dashboards**.
+2. Select the name of a dashboard to display that dashboard.
+3. Select **Edit** in the upper-right corner of the dashboard. The dashboard opens in edit mode.
+
+   * If you don't see an **Edit** option, you don't have permission to edit that dashboard.
+4. Select the tile you want to clone to another dashboard and then select **Clone to**.
+
+   * To clone multiple tiles to another dashboard, drag a selection rectangle around the *x* tiles you want to clone and then select **Clone x to**.
+5. In the **Where do you want to pin to?** pop-up window, select an existing dashboard or **Create new dashboard**.
+6. Select **Pin** to add the selected tiles to the dashboard.
+7. Edit the cloned tiles as needed.

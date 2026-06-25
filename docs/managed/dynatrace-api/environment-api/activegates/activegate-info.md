@@ -1,15 +1,22 @@
 ---
-title: "ActiveGate information API"
+title: ActiveGate information API
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/activegates/activegate-info
-updated: 2026-02-09
+scraped: 2026-05-12T11:12:05.451143
 ---
 
-### List ActiveGates
+# ActiveGate information API
 
-Get an overview of all ActiveGates in your environment.### View an ActiveGate
+# ActiveGate information API
 
-View the configuration of an ActiveGate.
+* Reference
+* Published Mar 15, 2021
+
+[### List ActiveGates
+
+Get an overview of all ActiveGates in your environment.](/managed/dynatrace-api/environment-api/activegates/activegate-info/get-all "List all ActiveGates currently or recently connected to the environment.")[### View an ActiveGate
+
+View the configuration of an ActiveGate.](/managed/dynatrace-api/environment-api/activegates/activegate-info/get-activegate "View the configuration of the specified ActiveGate via the Dynatrace API.")
 
 ## Related topics
 
-* Dynatrace ActiveGate
+* [Dynatrace ActiveGate](/managed/ingest-from/dynatrace-activegate "Understand the basic concepts related to ActiveGate.")

@@ -1,9 +1,14 @@
 ---
-title: "ActiveGate release notes"
+title: ActiveGate release notes
 source: https://docs.dynatrace.com/managed/whats-new/activegate
-updated: 2026-02-09
+scraped: 2026-05-12T11:03:42.115399
 ---
 
-* Release notes
+# ActiveGate release notes
 
-Unable to render DataTable. Check configuration.
+# ActiveGate release notes
+
+* Release notes
+* Updated on Apr 29, 2026
+
+Type to filter

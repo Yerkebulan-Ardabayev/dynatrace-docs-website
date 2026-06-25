@@ -1,75 +1,85 @@
 ---
-title: Наблюдаемость приложений
-source: https://www.dynatrace.com/docs/ingest-from/setup-on-k8s/how-it-works/application-monitoring
-scraped: 2026-03-05T21:25:53.393313
+title: Application observability
+source: https://docs.dynatrace.com/managed/ingest-from/setup-on-k8s/how-it-works/application-monitoring
+scraped: 2026-05-12T11:23:30.246439
 ---
 
-* Latest Dynatrace
-* 3-min read
+# Application observability
 
-Наблюдаемость приложений сосредоточена на мониторинге метрик уровня приложений путём внедрения модулей кода в поды приложений. Этот режим предлагает несколько стратегий внедрения (автоматическое, во время выполнения и во время сборки) для сбора специфических для приложения метрик. Для получения информации об инфраструктуре объедините его с мониторингом платформы Kubernetes.
+# Application observability
 
-Дополнительную информацию см. в разделе `.spec.oneAgent.applicationMonitoring` DynaKube.
+* Чтение: 3 мин
+* Обновлено 4 мая 2026 г.
 
-## Автоматическое внедрение
+Application observability фокусируется на мониторинге метрик уровня приложений путём внедрения code modules в Pod приложений. Этот режим предлагает несколько стратегий инъекции (автоматическую, во время выполнения и во время сборки) для сбора метрик, специфичных для приложений. Для получения инсайтов на уровне инфраструктуры сочетайте его с [мониторингом платформы Kubernetes](/managed/ingest-from/setup-on-k8s/how-it-works/kubernetes-monitoring "Подробное описание мониторинга платформы Kubernetes с помощью Dynatrace Operator.").
 
-Вы можете использовать стратегию автоматического внедрения для подов приложений. Dynatrace внедряет модули кода в поды с помощью контроллера допуска Kubernetes. Этот подход позволяет собирать специфические для приложения метрики и отслеживать метрики на уровне контейнеров.
+Дополнительную информацию см. в разделе [`.spec.oneAgent.applicationMonitoring`](/managed/ingest-from/setup-on-k8s/reference/dynakube-parameters "Список доступных параметров для настройки Dynatrace Operator в Kubernetes.") DynaKube.
+
+## Автоматическая инъекция
+
+Стратегию автоматической инъекции можно использовать для Pod приложений. Dynatrace внедряет code modules в Pod с помощью admission controller Kubernetes. Этот подход позволяет собирать метрики, специфичные для приложений, и отслеживать метрики уровня контейнеров.
 
 ### Возможности
 
-* Dynatrace внедряет модули кода в поды с помощью контроллера допуска Kubernetes.
-* Обеспечивает детальный контроль над инструментируемыми подами с помощью пространств имён и аннотаций.
-* Перенаправляет метрики подов в различные среды Dynatrace в рамках одного кластера Kubernetes.
-* Включает обогащение данных для сред Kubernetes.
+* Dynatrace внедряет code modules в Pod с помощью admission controller Kubernetes.
+* Получите детальный контроль над инструментированными Pod с помощью namespace и аннотаций.
+* Направляйте метрики Pod в разные окружения Dynatrace в пределах одного кластера Kubernetes.
+* [Включите обогащение данных для окружений Kubernetes](/managed/ingest-from/extend-dynatrace/extend-data#dynatrace-kubernetes-operator "Узнайте, как автоматически обогащать данные телеметрии полями, специфичными для Dynatrace.").
 
 ### Текущие ограничения
 
-* Диагностические файлы (архивы поддержки) для подов приложений пока не поддерживаются.
-* Статический мониторинг Go поддерживается частично.
+* Диагностические файлы (архивы поддержки) для Pod приложений пока не поддерживаются.
+* [Статический мониторинг Go](/managed/ingest-from/technology-support/application-software/go/support/go-known-limitations#static-monitoring "Узнайте об ограничениях поддержки Go и способах их обхода.") поддерживается частично.
 
-При развёртывании в режиме мониторинга приложений модули кода Dynatrace отслеживают процессы внутри контейнера, включая метрики диска, CPU и сети. Метрики хоста не отслеживаются. Без [мониторинга платформы Kubernetes](#kubernetes-monitoring) топология ограничена подами и контейнерами.
+При развёртывании в режиме application monitoring code modules Dynatrace отслеживают процессы внутри контейнера, включая метрики диска, CPU и сети. Метрики хостов не отслеживаются. Без [мониторинга платформы Kubernetes](#kubernetes-monitoring) топология ограничена Pod и контейнерами.
 
-### Развёртываемые ресурсы
+### Развёрнутые ресурсы
 
-Следующие компоненты развёртываются через Helm/Manifests в рамках базовой установки. Для получения дополнительной информации перейдите в соответствующие разделы:
+Следующие компоненты развёртываются через Helm/Manifests в рамках базовой установки. Подробнее см. в соответствующих разделах:
 
-* Dynatrace Operator управляет автоматическим развёртыванием, настройкой и жизненным циклом компонентов Dynatrace в вашей среде Kubernetes.
-* Веб-хук Dynatrace Operator проверяет определения DynaKube, конвертирует определения со старыми версиями API и вводит конфигурации в поды.
-* CSI Driver Dynatrace Operator — необязательный компонент, развёртывается как DaemonSet и предоставляет записываемое хранилище томов для бинарных файлов OneAgent, чтобы минимизировать использование сети и хранилища.
+* [Dynatrace Operator](/managed/ingest-from/setup-on-k8s/how-it-works/components/dynatrace-operator#operator "Компоненты Dynatrace Operator") управляет автоматическим развёртыванием, настройкой и жизненным циклом компонентов Dynatrace в вашем окружении Kubernetes.
+* [Dynatrace Operator webhook](/managed/ingest-from/setup-on-k8s/how-it-works/components/dynatrace-operator#webhook "Компоненты Dynatrace Operator") проверяет определения DynaKube, конвертирует определения с устаревшими версиями API и внедряет конфигурации в Pod.
+* [Dynatrace Operator CSI Driver](/managed/ingest-from/setup-on-k8s/how-it-works/components/dynatrace-operator#csidriver "Компоненты Dynatrace Operator") Необязательно, развёртывается как DaemonSet, предоставляет хранилище томов с возможностью записи для двоичных файлов OneAgent, чтобы минимизировать использование сети и хранилища.
 
-Следующий компонент развёртывается путём применения DynaKube с наблюдаемостью приложений:
+Следующий компонент развёртывается путём применения DynaKube с Application observability:
 
-* Dynatrace ActiveGate перенаправляет данные наблюдаемости в кластер Dynatrace.
-* Модули кода Dynatrace внедряются в ваше приложение для обеспечения глубокого мониторинга и наблюдаемости.
+* [Dynatrace ActiveGate](/managed/ingest-from/dynatrace-activegate "Изучите основные концепции, связанные с ActiveGate.") маршрутизирует данные observability в кластер Dynatrace.
+* В ваше приложение внедряются code modules Dynatrace для обеспечения deep monitoring и observability.
 
 ![auto-injection](https://dt-cdn.net/images/screenshot-2024-01-31-at-3-23-56-pm-2358-6db693bc75.png)
 
-## Внедрение во время выполнения пода
+auto-injection
 
-Вы можете использовать мониторинг приложений для подов приложений. Вы не устанавливаете поды OneAgent и не можете собирать метрики хоста с узлов Kubernetes.
+## Инъекция во время выполнения Pod
 
-### Возможности
-
-* Модули кода Dynatrace внедряются в поды с помощью init-контейнеров Kubernetes.
-* Различные образы контейнеров могут иметь отдельные конфигурации для разных сред Dynatrace.
-
-### Ограничения
-
-Поскольку Dynatrace Operator не задействован, автоматическое внедрение, настройка и обогащение не происходят. Вам необходимо вручную настроить рабочие нагрузки Kubernetes.
-
-![PodRuntime Illustration](https://dt-cdn.net/images/podruntime-891-f7ca7624de.png)
-
-## Внедрение во время сборки контейнера
-
-Вы можете использовать мониторинг приложений для подов приложений. Вы не устанавливаете поды OneAgent и не можете собирать метрики хоста с узлов Kubernetes.
+Application monitoring можно использовать для Pod приложений. Pod OneAgent не устанавливаются, а собирать метрики хостов с узлов Kubernetes невозможно.
 
 ### Возможности
 
-* Модули кода Dynatrace встраиваются в образы контейнеров в процессе сборки.
-* Различные образы контейнеров можно настраивать для разных сред Dynatrace и использовать на любой контейнерной платформе или PaaS в дополнение к Kubernetes.
+* В Pod внедряются code modules Dynatrace с помощью init-контейнеров Kubernetes.
+* Разные образы контейнеров могут иметь отдельные конфигурации для разных окружений Dynatrace.
 
 ### Ограничения
 
-Без Dynatrace Operator автоматическое внедрение, настройка и обогащение отсутствуют. Вам необходимо вручную адаптировать процесс сборки.
+Поскольку Dynatrace Operator не задействован, автоматическая инъекция, настройка и обогащение не выполняются. Необходимо вручную корректировать ваши рабочие нагрузки Kubernetes.
 
-![BuildTimeInjection illustration](https://dt-cdn.net/images/buildtimeinjection-891-1c5525cb55.png)
+![PodRuntime Illustration](https://cdn.bfldr.com/B686QPH3/as/2jr3k4q567mf434ncb5sspbs/Application_observability_-_PodRuntime_injection_-_Light_Mode?auto=webp&format=png&position=1)
+
+diagram title
+
+## Инъекция во время сборки контейнера
+
+Application monitoring можно использовать для Pod приложений. Pod OneAgent не устанавливаются, а собирать метрики хостов с узлов Kubernetes невозможно.
+
+### Возможности
+
+* В образы контейнеров в процессе сборки встраиваются code modules Dynatrace.
+* Разные образы контейнеров можно настроить для разных окружений Dynatrace и использовать на любой контейнерной платформе или PaaS в дополнение к Kubernetes.
+
+### Ограничения
+
+Без Dynatrace Operator автоматическая инъекция, настройка и обогащение не выполняются. Необходимо вручную адаптировать ваш процесс сборки.
+
+![Container build-time injection](https://cdn.bfldr.com/B686QPH3/as/t877m9mwwnfmv55xgsfgscc/Application_observability_-_Container_build-time_injection_-_Light_Mode?auto=webp&format=png&position=1)
+
+Container build-time injection

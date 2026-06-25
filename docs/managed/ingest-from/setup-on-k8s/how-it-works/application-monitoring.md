@@ -1,19 +1,19 @@
 ---
 title: Application observability
-source: https://www.dynatrace.com/docs/ingest-from/setup-on-k8s/how-it-works/application-monitoring
-scraped: 2026-03-05T21:25:53.393313
+source: https://docs.dynatrace.com/managed/ingest-from/setup-on-k8s/how-it-works/application-monitoring
+scraped: 2026-05-12T11:23:30.246439
 ---
 
 # Application observability
 
+# Application observability
 
-* Latest Dynatrace
 * 3-min read
-* Published Oct 31, 2024
+* Updated on May 04, 2026
 
-Application observability focuses on monitoring application-level metrics by injecting code modules into application Pods. This mode offers multiple injection strategies (automatic, runtime, and build-time) to collect application-specific metrics. For infrastructure-level insights, combine it with Kubernetes platform monitoring.
+Application observability focuses on monitoring application-level metrics by injecting code modules into application Pods. This mode offers multiple injection strategies (automatic, runtime, and build-time) to collect application-specific metrics. For infrastructure-level insights, combine it with [Kubernetes platform monitoring](/managed/ingest-from/setup-on-k8s/how-it-works/kubernetes-monitoring "In-depth description of Kubernetes platform monitoring using Dynatrace Operator.").
 
-See `.spec.oneAgent.applicationMonitoring` section of DynaKube for additional information.
+See [`.spec.oneAgent.applicationMonitoring`](/managed/ingest-from/setup-on-k8s/reference/dynakube-parameters "List the available parameters for setting up Dynatrace Operator on Kubernetes.") section of DynaKube for additional information.
 
 ## Automatic injection
 
@@ -24,12 +24,12 @@ You can use the automatic injection strategy for application Pods. Dynatrace inj
 * Dynatrace injects code modules into Pods using the Kubernetes admission controller.
 * Get granular control over the instrumented Pods using namespaces and annotations.
 * Route Pod metrics to different Dynatrace environments within the same Kubernetes cluster.
-* Enable data enrichment for Kubernetes environments.
+* [Enable data enrichment for Kubernetes environments](/managed/ingest-from/extend-dynatrace/extend-data#dynatrace-kubernetes-operator "Learn how to automatically enrich your telemetry data with Dynatrace-specific fields.").
 
 ### Current limitations
 
 * Diagnostic files (support archives) for application Pods aren't yet supported.
-* Go static monitoring is partially supported.
+* [Go static monitoring](/managed/ingest-from/technology-support/application-software/go/support/go-known-limitations#static-monitoring "Learn the limitations for Go support and their workarounds.") is partially supported.
 
 When deployed in application monitoring, Dynatrace code modules monitor processes within the container, including disk, CPU, and networking metrics. Host metrics are not monitored. Without [Kubernetes Platform Monitoring](#kubernetes-monitoring), topology is limited to Pods and containers.
 
@@ -37,16 +37,18 @@ When deployed in application monitoring, Dynatrace code modules monitor processe
 
 The following components are deployed via Helm/Manifests as part of the core installation. For more information, go to their respective sections:
 
-* Dynatrace Operator manages the automated rollout, configuration, and lifecycle of Dynatrace components in your Kubernetes environment.
-* Dynatrace Operator webhook validates DynaKube definitions, converts definitions with older API versions, and injects configurations into Pods.
-* Dynatrace Operator CSI Driver Optional, deployed as a DaemonSet, provides writable volume storage for OneAgent binaries to minimize network and storage usage.
+* [Dynatrace Operator](/managed/ingest-from/setup-on-k8s/how-it-works/components/dynatrace-operator#operator "Components of Dynatrace Operator") manages the automated rollout, configuration, and lifecycle of Dynatrace components in your Kubernetes environment.
+* [Dynatrace Operator webhook](/managed/ingest-from/setup-on-k8s/how-it-works/components/dynatrace-operator#webhook "Components of Dynatrace Operator") validates DynaKube definitions, converts definitions with older API versions, and injects configurations into Pods.
+* [Dynatrace Operator CSI Driver](/managed/ingest-from/setup-on-k8s/how-it-works/components/dynatrace-operator#csidriver "Components of Dynatrace Operator") Optional, deployed as a DaemonSet, provides writable volume storage for OneAgent binaries to minimize network and storage usage.
 
 The following component is deployed by applying a DynaKube with Application observability:
 
-* Dynatrace ActiveGate routes observability data to the Dynatrace cluster.
+* [Dynatrace ActiveGate](/managed/ingest-from/dynatrace-activegate "Understand the basic concepts related to ActiveGate.") routes observability data to the Dynatrace cluster.
 * Dynatrace code modules are injected into your application to enable deep monitoring and observability.
 
 ![auto-injection](https://dt-cdn.net/images/screenshot-2024-01-31-at-3-23-56-pm-2358-6db693bc75.png)
+
+auto-injection
 
 ## Pod runtime injection
 
@@ -61,7 +63,9 @@ You can use the application monitoring for application Pods. You don't install O
 
 Because Dynatrace Operator is not involved, no automatic injection, configuration, or enrichment occurs. You need to manually adjust your Kubernetes workloads.
 
-![PodRuntime Illustration](https://dt-cdn.net/images/podruntime-891-f7ca7624de.png)
+![PodRuntime Illustration](https://cdn.bfldr.com/B686QPH3/as/2jr3k4q567mf434ncb5sspbs/Application_observability_-_PodRuntime_injection_-_Light_Mode?auto=webp&format=png&position=1)
+
+diagram title
 
 ## Container build-time injection
 
@@ -76,4 +80,6 @@ You can use the application monitoring for application Pods. You don't install O
 
 Without Dynatrace Operator, there is no automatic injection, configuration, or enrichment. You need to manually adapt your build process.
 
-![BuildTimeInjection illustration](https://dt-cdn.net/images/buildtimeinjection-891-1c5525cb55.png)
+![Container build-time injection](https://cdn.bfldr.com/B686QPH3/as/t877m9mwwnfmv55xgsfgscc/Application_observability_-_Container_build-time_injection_-_Light_Mode?auto=webp&format=png&position=1)
+
+Container build-time injection

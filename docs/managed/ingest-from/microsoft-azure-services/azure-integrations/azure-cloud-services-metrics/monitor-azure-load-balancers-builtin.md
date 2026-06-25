@@ -1,0 +1,67 @@
+---
+title: Azure Load Balancers (built-in)
+source: https://docs.dynatrace.com/managed/ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics/monitor-azure-load-balancers-builtin
+scraped: 2026-05-12T11:25:50.753874
+---
+
+# Azure Load Balancers (built-in)
+
+# Azure Load Balancers (built-in)
+
+* How-to guide
+* 1-min read
+* Updated on Nov 15, 2023
+
+For information about differences between classic services and other services, see [Migrate from Azure classic (formerly 'built-in') services to cloud services](/managed/ingest-from/microsoft-azure-services/azure-integrations/azure-monitoring-guide/azure-migration-guide "Migrate Azure classic services to their new versions.").
+
+Dynatrace ingests metrics from Azure Metrics API for **Azure Load Balancers**. You can view metrics for each service instance, split metrics into multiple dimensions, and create custom charts that you can pin to your dashboards.
+
+## Prerequisites
+
+* Environment ActiveGate
+* To disable monitoring of built-in services, you need Environment ActiveGate version 1.245+ and Dynatrace version 1.247+.
+
+No metrics are available for Basic SKU Load Balancers.
+
+## Enable monitoring
+
+To learn how to enable service monitoring, see [Enable service monitoring](/managed/ingest-from/microsoft-azure-services/azure-integrations/azure-monitoring-guide/azure-enable-service-monitoring "Enable Azure monitoring in Dynatrace.").
+
+## View service metrics
+
+You can view Azure service metrics in your Dynatrace environment on the Azure subscription page or on your own dashboard.
+
+Values in the table depend upon the selected timeframe. For more details, see [Troubleshoot timeframe comparison for Azure monitoring setup)](https://dt-url.net/7j438f0).
+
+### View metrics on the Azure account page
+
+To access metrics on the Azure account page
+
+1. Go to **Azure**.
+2. Choose the Azure subscription.
+3. Select the service whose metrics you want to check. Metrics for the selected service are visible under the infographic in the service section, similarly to the example below.
+
+   ![Azure service metrics](https://dt-cdn.net/images/azure-service-1109-9488bfa5e4.png)
+
+   Azure service metrics
+
+### View metrics on a dashboard
+
+You can create your own dashboard for viewing Azure service metrics. For information on how to create dashboards, see [Create and edit Dynatrace dashboards](/managed/analyze-explore-automate/dashboards-classic/dashboards/create-dashboards "Learn how to create and edit Dynatrace dashboards.").
+
+## Available metrics
+
+| Metric key | Name | Unit | Aggregations | Monitoring consumption |
+| --- | --- | --- | --- | --- |
+| builtin:cloud.azure.loadbalancer.availability.dipTcp | Load balancer DIP TCP availability | Percent (%) | autoavgmaxmin | DDUs |
+| builtin:cloud.azure.loadbalancer.availability.dipUdp | Load balancer DIP UDP availability | Percent (%) | autoavgmaxmin | DDUs |
+| builtin:cloud.azure.loadbalancer.availability.vip | Load Balancer VIP availability | Percent (%) | autoavgmaxmin | DDUs |
+| builtin:cloud.azure.loadbalancer.snatConnection.est | SNAT connections successful | Count | autovalue | DDUs |
+| builtin:cloud.azure.loadbalancer.snatConnection.pending | SNAT connections pending | Count | autovalue | DDUs |
+| builtin:cloud.azure.loadbalancer.snatConnection.rej | SNAT connections failed | Count | autovalue | DDUs |
+| builtin:cloud.azure.loadbalancer.traffic.byteIn | Bytes received | Byte | autovalue | DDUs |
+| builtin:cloud.azure.loadbalancer.traffic.byteOut | Bytes sent | Byte | autovalue | DDUs |
+| builtin:cloud.azure.loadbalancer.traffic.packetIn | Packets received | Count | autovalue | DDUs |
+| builtin:cloud.azure.loadbalancer.traffic.packetOut | Packets sent | Count | autovalue | DDUs |
+| builtin:cloud.azure.loadbalancer.traffic.packetSynIn | SYN packets received | Count | autovalue | DDUs |
+| builtin:cloud.azure.loadbalancer.traffic.packetSynOut | SYN packets sent | Count | autovalue | DDUs |

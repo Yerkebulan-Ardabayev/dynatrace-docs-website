@@ -1,8 +1,15 @@
 ---
-title: "Dashboards API - Tile JSON models"
+title: Dashboards API - Tile JSON models
 source: https://docs.dynatrace.com/managed/dynatrace-api/configuration-api/dashboards-api/dashboards-api-tile-models
-updated: 2026-02-09
+scraped: 2026-05-12T11:14:50.586842
 ---
+
+# Dashboards API - Tile JSON models
+
+# Dashboards API - Tile JSON models
+
+* Reference
+* Published Mar 11, 2019
 
 JSON models of dashboard tiles vary greatly, depending on the type of the tile. The JSON models for each tile type are listed below.
 
@@ -51,49 +58,65 @@ An example is the Bounce rate tile, showing the data from an assigned applicatio
 {
 
 
+
 "name": "AWS",
+
 
 
 "tileType": "AWS",
 
 
+
 "configured": true,
+
 
 
 "bounds": {
 
 
+
 "top": 192,
+
 
 
 "left": 62,
 
 
+
 "width": 304,
+
 
 
 "height": 152
 
 
+
 },
+
 
 
 "tileFilter": {
 
 
+
 "timeframe": "Today"
+
 
 
 },
 
 
+
 "assignedEntities": [
+
 
 
 "556925984968688946"
 
 
+
 ]
+
 
 
 }
@@ -192,58 +215,77 @@ Configuration of the charted metric splitting.
 {
 
 
+
 "name": "Host health",
+
 
 
 "tileType": "HOSTS",
 
 
+
 "configured": true,
+
 
 
 "bounds": {
 
 
+
 "top": 47,
+
 
 
 "left": 415,
 
 
+
 "width": 304,
+
 
 
 "height": 304
 
 
+
 },
+
 
 
 "tileFilter": {
 
 
+
 "timeframe": "-3h to now",
+
 
 
 "managementZone": {
 
 
+
 "id": "9130632296508575249",
+
 
 
 "name": "Easytravel"
 
 
+
 }
+
 
 
 },
 
 
+
 "filterConfig": null,
 
 
+
 "chartVisible": true
+
 
 
 }
@@ -281,55 +323,73 @@ An example is the Worldmap tile, showing the data from an assigned performance o
 {
 
 
+
 "name": "World map",
+
 
 
 "tileType": "APPLICATION_WORLDMAP",
 
 
+
 "configured": true,
+
 
 
 "bounds": {
 
 
+
 "top": 118,
+
 
 
 "left": 194,
 
 
+
 "width": 304,
+
 
 
 "height": 304
 
 
+
 },
+
 
 
 "tileFilter": {
 
 
+
 "timeframe": "-12h to now",
+
 
 
 "managementZone": null
 
 
+
 },
+
 
 
 "assignedEntities": [
 
 
+
 "APPLICATION-C93B8002996906CD"
+
 
 
 ],
 
 
+
 "metric": "SESSION_USERS"
+
 
 
 }
@@ -370,6 +430,7 @@ Configuration of a data explorer query.
 | filterBy | [DataExplorerFilter](#openapi-definition-DataExplorerFilter) | Filter for data explorer queries. |
 | foldTransformation | string | The fold transformation The element can hold these values * `LAST_VALUE` * `TOTAL` |
 | generatedMetricSelector | string | Generated metric selector |
+| histogram | boolean | Whether histogram operator should be applied to the metric selector |
 | id | string | The id of the query |
 | limit | integer | Limit the results of the query |
 | metric | string | The metric id |
@@ -450,7 +511,7 @@ Configuration of a visualization.
 | singleValueSettings | [SingleValueSettings](#openapi-definition-SingleValueSettings) | Settings for single value visualization |
 | tableSettings | [TableSettings](#openapi-definition-TableSettings) | Settings for table visualization |
 | thresholds | [VisualizationThreshold[]](#openapi-definition-VisualizationThreshold) | Thresholds for Visualization |
-| type | string | The id of the query The element can hold these values * `GRAPH_CHART` * `HEATMAP` * `HONEYCOMB` * `PIE_CHART` * `SINGLE_VALUE` * `STACKED_AREA` * `STACKED_COLUMN` * `TABLE` * `TOP_LIST` |
+| type | string | The id of the query The element can hold these values * `GRAPH_CHART` * `HEATMAP` * `HISTOGRAM` * `HONEYCOMB` * `PIE_CHART` * `SINGLE_VALUE` * `STACKED_AREA` * `STACKED_COLUMN` * `TABLE` * `TOP_LIST` |
 
 #### The `Axes` object
 
@@ -594,328 +655,437 @@ Settings for table visualization
 {
 
 
+
 "name": "Data Explorer results",
+
 
 
 "tileType": "DATA_EXPLORER",
 
 
+
 "configured": true,
+
 
 
 "bounds": {
 
 
+
 "top": 0,
+
 
 
 "left": 0,
 
 
+
 "width": 304,
+
 
 
 "height": 304
 
 
+
 },
+
 
 
 "tileFilter": {},
 
 
+
 "customName": "Data Explorer results",
+
 
 
 "queries": [
 
 
+
 {
+
 
 
 "id": "A",
 
 
+
 "metric": "builtin:host.cpu.usage",
+
 
 
 "timeAggregation": "DEFAULT",
 
 
+
 "splitBy": [
+
 
 
 "dt.entity.host"
 
 
+
 ],
+
 
 
 "sortBy": "DESC",
 
 
+
 "filterBy": {
+
 
 
 "filterOperator": "AND",
 
 
+
 "nestedFilters": [],
+
 
 
 "criteria": []
 
 
+
 },
+
 
 
 "limit": 100,
 
 
+
 "enabled": true
+
 
 
 }
 
 
+
 ],
+
 
 
 "visualConfig": {
 
 
+
 "type": "GRAPH_CHART",
+
 
 
 "global": {
 
 
+
 "hideLegend": false
+
 
 
 },
 
 
+
 "rules": [
 
 
+
 {
+
 
 
 "matcher": "A:",
 
 
+
 "unitTransform": "Promille",
+
 
 
 "valueFormat": "0,00",
 
 
+
 "properties": {
+
 
 
 "color": "DEFAULT",
 
 
+
 "seriesType": "LINE"
 
 
+
 },
+
 
 
 "seriesOverrides": []
 
 
+
 }
 
 
+
 ],
+
 
 
 "axes": {
 
 
+
 "xAxis": {
+
 
 
 "displayName": "",
 
 
+
 "visible": true
 
 
+
 },
+
 
 
 "yAxes": [
 
 
+
 {
+
 
 
 "displayName": "",
 
 
+
 "visible": true,
+
 
 
 "min": "AUTO",
 
 
+
 "max": "AUTO",
+
 
 
 "position": "LEFT",
 
 
+
 "queryIds": [
+
 
 
 "A"
 
 
+
 ],
+
 
 
 "defaultAxis": true
 
 
+
 }
+
 
 
 ]
 
 
+
 },
+
 
 
 "heatmapSettings": {
 
 
+
 "yAxis": "VALUE"
 
 
+
 },
+
 
 
 "singleValueSettings": {
 
 
+
 "showSparkLine": false
 
 
+
 },
+
 
 
 "thresholds": [
 
 
+
 {
+
 
 
 "axisTarget": "LEFT",
 
 
+
 "rules": [
 
 
+
 {
+
 
 
 "color": "#7dc540"
 
 
+
 },
 
 
+
 {
+
 
 
 "color": "#f5d30f"
 
 
+
 },
+
 
 
 {
 
 
+
 "value": 50,
+
 
 
 "color": "#dc172a"
 
 
+
 }
 
 
+
 ],
+
 
 
 "queryId": "",
 
 
+
 "visible": true
 
 
+
 }
+
 
 
 ],
 
 
+
 "tableSettings": {
+
 
 
 "isThresholdBackgroundAppliedToCell": false
 
 
+
 },
+
 
 
 "graphChartSettings": {
 
 
+
 "connectNulls": true
 
 
+
 },
+
 
 
 "honeycombSettings": {
 
 
+
 "showHive": true,
+
 
 
 "showLegend": true,
 
 
+
 "showLabels": false
+
 
 
 }
 
 
+
 },
+
 
 
 "queriesSettings": {
 
 
+
 "resolution": ""
+
 
 
 },
 
 
+
 "metricExpressions": [
+
 
 
 "resolution=null&(builtin:host.cpu.usage:splitBy(\"dt.entity.host\"):sort(value(auto,descending)):limit(100)):limit(100):names"
 
 
+
 ]
+
 
 
 }
@@ -1007,172 +1177,229 @@ Configuration of the charted metric splitting.
 {
 
 
+
 "name": "Custom chart",
+
 
 
 "tileType": "CUSTOM_CHARTING",
 
 
+
 "configured": true,
+
 
 
 "bounds": {
 
 
+
 "top": 115,
+
 
 
 "left": 205,
 
 
+
 "width": 304,
+
 
 
 "height": 304
 
 
+
 },
+
 
 
 "tileFilter": {
 
 
+
 "timeframe": "-1d to -12h",
+
 
 
 "managementZone": {
 
 
+
 "id": "9130632296508575249",
+
 
 
 "name": "Easytravel"
 
 
+
 }
 
 
+
 },
+
 
 
 "filterConfig": {
 
 
+
 "type": "MIXED",
+
 
 
 "customName": "CPU idle",
 
 
+
 "defaultName": "Custom chart",
+
 
 
 "chartConfig": {
 
 
+
 "type": "TIMESERIES",
+
 
 
 "series": [
 
 
+
 {
+
 
 
 "metric": "builtin:host.cpu.idle",
 
 
+
 "aggregation": "AVG",
 
 
+
 "percentile": null,
+
 
 
 "type": "LINE",
 
 
+
 "entityType": "HOST",
+
 
 
 "dimensions": [],
 
 
+
 "sortAscending": false,
+
 
 
 "sortColumn": false,
 
 
+
 "aggregationRate": "TOTAL"
 
 
+
 },
+
 
 
 {
 
 
+
 "metric": "builtin:host.cpu.load",
+
 
 
 "aggregation": "MAX",
 
 
+
 "percentile": null,
+
 
 
 "type": "AREA",
 
 
+
 "entityType": "HOST",
+
 
 
 "dimensions": [],
 
 
+
 "sortAscending": false,
+
 
 
 "sortColumn": true,
 
 
+
 "aggregationRate": "TOTAL"
 
 
+
 }
+
 
 
 ],
 
 
+
 "resultMetadata": {}
+
 
 
 },
 
 
+
 "filtersPerEntityType": {
+
 
 
 "HOST": {
 
 
+
 "AUTO_TAGS": [
+
 
 
 "easyTravel"
 
 
+
 ]
 
 
-}
-
 
 }
 
 
+
 }
+
+
+
+}
+
 
 
 }
@@ -1202,46 +1429,61 @@ Configuration of the Markdown tile.
 {
 
 
+
 "name": "Markdown",
+
 
 
 "tileType": "MARKDOWN",
 
 
+
 "configured": true,
+
 
 
 "bounds": {
 
 
+
 "top": 252,
+
 
 
 "left": 173,
 
 
+
 "width": 304,
+
 
 
 "height": 152
 
 
+
 },
+
 
 
 "tileFilter": {
 
 
+
 "timeframe": null,
+
 
 
 "managementZone": null
 
 
+
 },
 
 
+
 "markdown": "## This is a Markdown tile\n\nIt supports **rich text** and [links](https://dynatrace.com)"
+
 
 
 }
@@ -1273,58 +1515,77 @@ Configuration of a problem tile.
 {
 
 
+
 "name": "Host health",
+
 
 
 "tileType": "OPEN_PROBLEMS",
 
 
+
 "configured": true,
+
 
 
 "bounds": {
 
 
+
 "top": 47,
+
 
 
 "left": 415,
 
 
+
 "width": 304,
+
 
 
 "height": 304
 
 
+
 },
+
 
 
 "tileFilter": {
 
 
+
 "timeframe": "-3h to now",
+
 
 
 "managementZone": {
 
 
+
 "id": "9130632296508575249",
+
 
 
 "name": "Easytravel"
 
 
+
 }
+
 
 
 },
 
 
+
 "problemSelector": "status(\"open\")",
 
 
+
 "entitySelector": "type(\"HOST\"),tag(\"easyTravel\")"
+
 
 
 }
@@ -1352,49 +1613,65 @@ Configuration of a tile with the built-in custom filter id. This is only for int
 {
 
 
+
 "name": "ScalableList",
+
 
 
 "nameSize": "",
 
 
+
 "tileType": "Image",
+
 
 
 "configured": true,
 
 
+
 "bounds": {
+
 
 
 "top": 112,
 
 
+
 "left": 45,
+
 
 
 "width": 304,
 
 
+
 "height": 304
 
 
+
 },
+
 
 
 "tileFilter": {
 
 
+
 "timeframe": null,
+
 
 
 "managementZone": null
 
 
+
 },
 
 
+
 "entitySpecificTileType": "DATA_EXLORER"
+
 
 
 }
@@ -1425,55 +1702,73 @@ Configuration of the Browser monitor tile.
 {
 
 
+
 "name": "Browser monitor",
+
 
 
 "tileType": "SYNTHETIC_SINGLE_WEBCHECK",
 
 
+
 "configured": true,
+
 
 
 "bounds": {
 
 
+
 "top": 209,
+
 
 
 "left": 214,
 
 
+
 "width": 304,
+
 
 
 "height": 304
 
 
+
 },
+
 
 
 "tileFilter": {
 
 
+
 "timeframe": "-24h to now",
+
 
 
 "managementZone": null
 
 
+
 },
+
 
 
 "assignedEntities": [
 
 
+
 "SYNTHETIC_TEST-0000000000016ACF"
+
 
 
 ],
 
 
+
 "excludeMaintenanceWindows": true
+
 
 
 }
@@ -1502,7 +1797,7 @@ JSON model
 
 Configuration of a tile.
 
-The actual set of fields depends on the type of the tile. Find the list of actual objects in the description of the **tileType** field or see [Dashboards API - Tile JSON models](https://dt-url.net/2wc3spx).
+The actual set of fields depends on the type of the tile. Find the list of actual objects in the description of the **tileType** field or see [Dashboards API - Tile JSON modelsï»¿](https://dt-url.net/2wc3spx).
 
 | Element | Type | Description |
 | --- | --- | --- |
@@ -1550,46 +1845,61 @@ The short representation of a Dynatrace entity.
 {
 
 
+
 "name": "Tile",
+
 
 
 "nameSize": "",
 
 
+
 "tileType": "TILE",
+
 
 
 "configured": true,
 
 
+
 "bounds": {
+
 
 
 "top": 112,
 
 
+
 "left": 45,
+
 
 
 "width": 304,
 
 
+
 "height": 304
+
 
 
 },
 
 
+
 "tileFilter": {
+
 
 
 "timeframe": null,
 
 
+
 "managementZone": null
 
 
+
 }
+
 
 
 }
@@ -1615,7 +1925,7 @@ Configuration of a User session query tile.
 | --- | --- | --- |
 | customName | string | The name of the tile, set by user. |
 | limit | integer | The limit of the results, if not set will use the default value of the system |
-| query | string | A [user session query](https://dt-url.net/dtusql) executed by the tile. |
+| query | string | A [user session queryï»¿](https://dt-url.net/dtusql) executed by the tile. |
 | timeFrameShift | string | The comparison timeframe of the query.  If specified, you additionally get the results of the same query with the specified time shift. |
 | type | string | The visualization of the tile. The element can hold these values * `COLUMN_CHART` * `FUNNEL` * `LINE_CHART` * `NOT_CONFIGURED` * `PIE_CHART` * `SINGLE_VALUE` * `TABLE` |
 | visualizationConfig | [UserSessionQueryTileConfiguration](#openapi-definition-UserSessionQueryTileConfiguration) | Configuration of a User session query visualization tile. |
@@ -1632,61 +1942,81 @@ Configuration of a User session query visualization tile.
 {
 
 
+
 "name": "User Sessions Query",
+
 
 
 "tileType": "DTAQL",
 
 
+
 "configured": true,
+
 
 
 "bounds": {
 
 
+
 "top": 112,
+
 
 
 "left": 45,
 
 
+
 "width": 304,
+
 
 
 "height": 304
 
 
+
 },
+
 
 
 "tileFilter": {
 
 
+
 "timeframe": "Today",
+
 
 
 "managementZone": {
 
 
+
 "id": "9130632296508575249",
+
 
 
 "name": "Easytravel"
 
 
+
 }
+
 
 
 },
 
 
+
 "customName": "User sessions query results",
+
 
 
 "query": " SELECT country, city, COUNT(*) FROM usersession GROUP BY country, city",
 
 
+
 "type": "COLUMN_CHART"
+
 
 
 }
@@ -1694,4 +2024,4 @@ Configuration of a User session query visualization tile.
 
 ## Related topics
 
-* Dashboards
+* [Dashboards](/managed/analyze-explore-automate/dashboards-classic "Learn how to create, manage, and use Dynatrace Dashboards Classic.")

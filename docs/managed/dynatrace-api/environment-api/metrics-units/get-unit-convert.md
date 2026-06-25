@@ -1,8 +1,15 @@
 ---
-title: "Metric units API - GET convert units"
+title: Metric units API - GET convert units
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/metrics-units/get-unit-convert
-updated: 2026-02-09
+scraped: 2026-05-12T11:12:19.497120
 ---
+
+# Metric units API - GET convert units
+
+# Metric units API - GET convert units
+
+* Reference
+* Published Mar 25, 2022
 
 Converts a source unit into a target unit.
 
@@ -19,7 +26,7 @@ The request produces an `application/json` payload.
 
 To execute this request, you need an access token with `metrics.read` scope.
 
-To learn how to obtain and use it, see Tokens and authentication.
+To learn how to obtain and use it, see [Tokens and authentication](/managed/discover-dynatrace/references/dynatrace-api/basics/dynatrace-api-authentication).
 
 ## Parameters
 
@@ -58,10 +65,13 @@ The result of a unit conversion.
 {
 
 
+
 "resultValue": 1,
 
 
+
 "unitId": "string"
+
 
 
 }

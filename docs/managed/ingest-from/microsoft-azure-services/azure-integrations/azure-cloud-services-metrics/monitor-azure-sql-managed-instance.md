@@ -1,13 +1,13 @@
 ---
 title: Azure SQL Managed Instance monitoring
-source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics/monitor-azure-sql-managed-instance
-scraped: 2026-03-06T21:26:12.325912
+source: https://docs.dynatrace.com/managed/ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics/monitor-azure-sql-managed-instance
+scraped: 2026-05-12T11:27:23.788904
 ---
 
 # Azure SQL Managed Instance monitoring
 
+# Azure SQL Managed Instance monitoring
 
-* Latest Dynatrace
 * How-to guide
 * 1-min read
 * Published Jul 02, 2020
@@ -21,9 +21,9 @@ On the Azure SQL Managed Instance overview page you get insights into various as
 
 ## Enable monitoring
 
-To learn how to enable service monitoring, see Enable service monitoring.
+To learn how to enable service monitoring, see [Enable service monitoring](/managed/ingest-from/microsoft-azure-services/azure-integrations/azure-monitoring-guide/azure-enable-service-monitoring "Enable Azure monitoring in Dynatrace.").
 
-Optionally, for OneAgent integration, see how database activity is monitored.
+Optionally, for OneAgent integration, see [how database activity is monitored](/managed/observe/infrastructure-observability/databases/database-services-classic/how-database-activity-is-monitored "Learn about automatic detection and monitoring of database services in your application environment.").
 
 ## View service metrics
 
@@ -33,7 +33,7 @@ You can view the service metrics in your Dynatrace environment either on the **c
 
 To access the custom device overview page
 
-1. Go to ![Technologies](https://dt-cdn.net/images/technologies-512-977161d83c.png "Technologies") **Technologies & Processes Classic**.
+1. Go to **Technologies & Processes**.
 2. Filter by service name and select the relevant custom device group.
 3. Once you select the custom device group, you're on the **custom device group overview page**.
 4. The **custom device group overview page** lists all instances (custom devices) belonging to the group. Select an instance to view the **custom device overview page**.
@@ -44,14 +44,18 @@ If the service has a preset dashboard, you'll get a preset dashboard for the res
 
 For existing monitored services, you might need to resave your credentials for the preset dashboard to appear on the **Dashboards** page. To resave your credentials, go to **Settings** > **Cloud and virtualization** > **Azure**, select the desired Azure instance, then select **Save**.
 
-You can't make changes on a preset dashboard directly, but you can clone and edit it. To clone a dashboard, open the browse menu (**â¦**) and select **Clone**.  
-To remove a dashboard from the dashboards list, you can hide it. To hide a dashboard, open the browse menu (**â¦**) and select **Hide**.
+You can't make changes on a preset dashboard directly, but you can clone and edit it. To clone a dashboard, open the browse menu (**…**) and select **Clone**.  
+To remove a dashboard from the dashboards list, you can hide it. To hide a dashboard, open the browse menu (**…**) and select **Hide**.
 
 Hiding a dashboard doesn't affect other users.
 
 ![Clone hide azure](https://dt-cdn.net/images/2020-12-10-14-35-42-1473-23fe220b09.png)
 
+Clone hide azure
+
 ![SQL dash](https://dt-cdn.net/images/sqlmanagedinstances-1303-b09d61719b.png)
+
+SQL dash
 
 ## Available metrics
 

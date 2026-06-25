@@ -1,0 +1,411 @@
+---
+title: Azure credentials API - GET credentials
+source: https://docs.dynatrace.com/managed/dynatrace-api/configuration-api/azure-credentials-api/get-credentials
+scraped: 2026-05-12T11:16:35.158582
+---
+
+# Azure credentials API - GET credentials
+
+# Azure credentials API - GET credentials
+
+* Reference
+* Published Feb 25, 2020
+
+Gets the configuration of the specified Azure credentials.
+
+The request produces an `application/json` payload.
+
+|  |  |  |
+| --- | --- | --- |
+| GET | ManagedDynatrace for Government | `https://{your-domain}/e/{your-environment-id}/api/config/v1/azure/credentials/{id}` |
+| GET | Environment ActiveGate | `https://{your-activegate-domain}/e/{your-environment-id}/api/config/v1/azure/credentials/{id}` |
+
+## Authentication
+
+To execute this request, you need an access token with `ReadConfig` scope.
+
+To learn how to obtain and use it, see [Tokens and authentication](/managed/discover-dynatrace/references/dynatrace-api/basics/dynatrace-api-authentication).
+
+## Parameters
+
+| Parameter | Type | Description | In | Required |
+| --- | --- | --- | --- | --- |
+| id | string | The ID of the required Azure credentials configuration. | path | Required |
+
+## Response
+
+### Response codes
+
+| Code | Type | Description |
+| --- | --- | --- |
+| **200** | [AzureCredentials](#openapi-definition-AzureCredentials) | Success |
+
+### Response body objects
+
+#### The `AzureCredentials` object
+
+Configuration of Azure app-level credentials.
+
+| Element | Type | Description |
+| --- | --- | --- |
+| active | boolean | The monitoring is enabled (`true`) or disabled (`false`).  If not set on creation, the `true` value is used.  If the field is omitted during an update, the old value remains unaffected. |
+| appId | string | The application ID (also referred to as client ID).  The field is **required** when creating a new credentials configuration.  The field is ignored during an update, the old value remains unaffected. |
+| autoTagging | boolean | The automatic capture of Azure tags is on (`true`) or off (`false`). |
+| directoryId | string | The directory ID (also referred to as tenant ID).  The field is **required** when creating a new credentials configuration.  The field is ignored during an update, the old value remains unaffected. |
+| id | string | The Dynatrace entity ID of the Azure credentials configuration. |
+| key | string | The secret key associated with the application ID.  For security reasons, GET requests return this field as `null`.  Submit your key on creation or update of the configuration.  The field is **required** when creating a new credentials configuration. If the field is omitted during an update, the old value remains unaffected. |
+| label | string | The unique name of the Azure credentials configuration.  Allowed characters are letters, numbers, and spaces. Also the special characters `.+-_` are allowed. |
+| metadata | [ConfigurationMetadata](#openapi-definition-ConfigurationMetadata) | Metadata useful for debugging |
+| monitorOnlyExcludingTagPairs | [CloudTag[]](#openapi-definition-CloudTag) | A list of Azure tags to be excluded from monitoring.  You can specify up to 20 tags. A resource tagged with *any* of the specified tags will not be monitored.  Only applicable when the **monitorOnlyTaggedEntities** parameter is set to `true`. |
+| monitorOnlyTagPairs | [CloudTag[]](#openapi-definition-CloudTag) | A list of Azure tags to be monitored.  You can specify up to 20 tags. A resource tagged with *any* of the specified tags is monitored.  Only applicable when the **monitorOnlyTaggedEntities** parameter is set to `true`. |
+| monitorOnlyTaggedEntities | boolean | Monitor only resources that have specified Azure tags (`true`) or all resources (`false`). |
+| supportingServices | [AzureSupportingService[]](#openapi-definition-AzureSupportingService) | **Deprecated**. To manage services use [/azure/credentials/{id}/servicesï»¿](https://dt-url.net/1w62s27) operation. Built-in services are not supported here.  A list of Azure services to be monitored. Available services are listed by [/azure/supportedServicesï»¿](https://dt-url.net/wt42sdq) operation.  For each service, a list of metrics and dimensions can be specified. A list of supported metrics and dimensions for a given service can be checked in [documentationï»¿](https://dt-url.net/kx2351b).  List of metrics can be skipped (set to null), resulting in recommended (default) set of metrics and dimensions being chosen for monitoring. |
+
+#### The `ConfigurationMetadata` object
+
+Metadata useful for debugging
+
+| Element | Type | Description |
+| --- | --- | --- |
+| clusterVersion | string | Dynatrace version. |
+| configurationVersions | integer[] | A sorted list of the version numbers of the configuration. |
+| currentConfigurationVersions | string[] | A sorted list of version numbers of the configuration. |
+
+#### The `CloudTag` object
+
+A cloud tag.
+
+| Element | Type | Description |
+| --- | --- | --- |
+| name | string | The name of the tag. |
+| value | string | The value of the tag.  If set to `null` or `""`, then resources with any value of the tag are monitored. |
+
+#### The `AzureSupportingService` object
+
+A service to be monitored.
+
+| Element | Type | Description |
+| --- | --- | --- |
+| monitoredMetrics | [AzureMonitoredMetric[]](#openapi-definition-AzureMonitoredMetric) | A list of metrics to be monitored for this service. It must include all the recommended metrics. If the list is null then recommended list of metrics for this service will be monitored. |
+| name | string | The name of the service. Valid supported service names can be discovered using /azure/supportedServices restAPI |
+
+#### The `AzureMonitoredMetric` object
+
+A metric of service to be monitored.
+
+| Element | Type | Description |
+| --- | --- | --- |
+| dimensions | string[] | A list of metric's dimensions names. It must include all the recommended dimensions. |
+| name | string | The name of the metric of the service. |
+
+### Response body JSON models
+
+```
+{
+
+
+
+"active": true,
+
+
+
+"appId": "string",
+
+
+
+"autoTagging": true,
+
+
+
+"directoryId": "string",
+
+
+
+"id": "string",
+
+
+
+"key": "string",
+
+
+
+"label": "string",
+
+
+
+"metadata": {
+
+
+
+"clusterVersion": "1.192.1",
+
+
+
+"configurationVersions": [
+
+
+
+4,
+
+
+
+2
+
+
+
+],
+
+
+
+"currentConfigurationVersions": [
+
+
+
+"1.0.4",
+
+
+
+"1.23"
+
+
+
+]
+
+
+
+},
+
+
+
+"monitorOnlyExcludingTagPairs": [
+
+
+
+{
+
+
+
+"name": "string",
+
+
+
+"value": "string"
+
+
+
+}
+
+
+
+],
+
+
+
+"monitorOnlyTagPairs": [
+
+
+
+{}
+
+
+
+],
+
+
+
+"monitorOnlyTaggedEntities": true,
+
+
+
+"supportingServices": [
+
+
+
+{
+
+
+
+"monitoredMetrics": [
+
+
+
+{
+
+
+
+"dimensions": [
+
+
+
+"string"
+
+
+
+],
+
+
+
+"name": "string"
+
+
+
+}
+
+
+
+],
+
+
+
+"name": "string"
+
+
+
+}
+
+
+
+]
+
+
+
+}
+```
+
+## Example
+
+In this example, the request lists the parameters of the **Booking application** Azure credentials configuration with the ID of **AZURE\_CREDENTIALS-357FDA338DAAF338**.
+
+#### Curl
+
+```
+curl -X GET \
+
+
+
+https://mySampleEnv.live.dynatrace.com/api/config/v1/azure/credentials/AZURE_CREDENTIALS-357FDA338DAAF338 \
+
+
+
+-H 'Authorization: Api-Token dt0c01.abc123.abcdefjhij1234567890'
+```
+
+#### Request URL
+
+```
+https://mySampleEnv.live.dynatrace.com/api/config/v1/azure/credentials/AZURE_CREDENTIALS-357FDA338DAAF338
+```
+
+#### Response body
+
+```
+{
+
+
+
+"metadata": {
+
+
+
+"configurationVersions": [
+
+
+
+0
+
+
+
+],
+
+
+
+"clusterVersion": "1.189.0.20200225-180731"
+
+
+
+},
+
+
+
+"id": "AZURE_CREDENTIALS-357FDA338DAAF338",
+
+
+
+"label": "Booking application",
+
+
+
+"appId": "c4431dec-34fe-4d4c-ad93-aea38b4f944e",
+
+
+
+"directoryId": "f836b63d-8c92-4ad8-a314-bb1eeka46aa1",
+
+
+
+"key": null,
+
+
+
+"active": true,
+
+
+
+"autoTagging": true,
+
+
+
+"monitorOnlyTaggedEntities": true,
+
+
+
+"monitorOnlyTagPairs": [
+
+
+
+{
+
+
+
+"name": "bookingApp",
+
+
+
+"value": "mobile"
+
+
+
+},
+
+
+
+{
+
+
+
+"name": "bookingApp",
+
+
+
+"value": "browser"
+
+
+
+}
+
+
+
+]
+
+
+
+}
+```
+
+#### Response code
+
+200
+
+## Related topics
+
+* [Microsoft Azure Integrations](/managed/ingest-from/microsoft-azure-services/azure-integrations "Set up Dynatrace deep code monitoring on Azure using OneAgent or OpenTelemetry.")

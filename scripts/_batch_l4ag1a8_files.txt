@@ -1,0 +1,9 @@
+dynatrace-api/environment-api/settings/schemas/builtin-kubernetes-generic-metadata-enrichment.md
+dynatrace-api/environment-api/settings/schemas/builtin-appsec-third-party-vulnerability-kubernetes-label-rule-settings.md
+dynatrace-api/environment-api/settings/schemas/builtin-logmonitoring-timestamp-configuration.md
+dynatrace-api/environment-api/settings/schemas/builtin-davis-anomaly-detectors.md
+dynatrace-api/environment-api/settings/schemas/builtin-anomaly-detection-rum-mobile-crash-rate-increase.md
+dynatrace-api/environment-api/settings/schemas/builtin-logmonitoring-custom-log-source-settings.md
+dynatrace-api/environment-api/settings/schemas/builtin-anomaly-detection-rum-custom-crash-rate-increase.md
+dynatrace-api/environment-api/settings/schemas/builtin-container-built-in-monitoring-rule.md
+dynatrace-api/environment-api/settings/schemas/builtin-cloud-kubernetes-monitoring.md

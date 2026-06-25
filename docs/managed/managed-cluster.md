@@ -1,43 +1,32 @@
-# Кластер Dynatrace Managed
+---
+title: Set up a Managed cluster
+source: https://docs.dynatrace.com/managed/managed-cluster
+scraped: 2026-05-12T11:03:45.742509
+---
 
-## Архитектура
+# Set up a Managed cluster
 
-```
-┌─────────────────────────────────────────┐
-│            Load Balancer                │
-└────────────────┬────────────────────────┘
-                 │
-    ┌────────────┼────────────┐
-    │            │            │
-┌───▼───┐   ┌───▼───┐   ┌───▼───┐
-│ Node 1│   │ Node 2│   │ Node 3│
-└───────┘   └───────┘   └───────┘
-```
+# Set up a Managed cluster
 
-## Добавление узла
+* 1-min read
+* Updated on May 08, 2026
 
-1. Установите Dynatrace Managed, выберите "Join existing cluster"
-2. Укажите IP первого узла, подтвердите в CMC
+Set up a Managed Cluster and learn how the [Dynatrace Mission Control team](/managed/managed-cluster/basics/mission-control-proactive-support "Mission Control proactively monitors your Managed Cluster, provides software updates, and keeps your installation secure and reliable.") can support you with proactive assistance.
 
-## Управление узлами
+[### Basics
 
-```bash
-/opt/dynatrace-managed/cluster/status.sh
-```
+Learn about the basics of Dynatrace Managed and Mission Control.](/managed/managed-cluster/basics "Explore the Dynatrace Managed components, deployment scenarios, the Cluster Management Console, and Mission Control support.")
 
-Удаление: **CMC → Cluster → Nodes → Remove**
+[### Installation
 
-!!! warning "Внимание"
-    Минимум 3 узла для production!
+Install a Managed Cluster.](/managed/managed-cluster/installation "Review requirements and install a Dynatrace Managed Cluster, Cluster ActiveGate, and SSL certificates, or run an offline installation.")[### Configuration
 
-## Масштабирование
+Configure a Managed Cluster.](/managed/managed-cluster/configuration)[### Operation
 
-| Размер | Узлов | RAM/узел | Хостов |
-|--------|-------|----------|--------|
-| Small | 3 | 32 GB | до 100 |
-| Medium | 5 | 64 GB | до 500 |
-| Large | 7+ | 128 GB | 1000+ |
+Operate a Managed Cluster.](/managed/managed-cluster/operation)
 
-## Балансировка
+[### High availability
 
-Рекомендуемые: HAProxy, NGINX, F5 Big-IP, AWS ALB / Azure LB.
+Set up a Premium High Availability Cluster.](/managed/managed-cluster/high-availability "Understand how Dynatrace Managed achieves high availability through data replication, node redundancy, and multi-data center failover.")[### Self-monitoring
+
+Monitor the health, performance, and utilization of your Managed Clusters.](/managed/managed-cluster/self-monitoring "Find out about self-monitoring capabilities in Dynatrace Managed")

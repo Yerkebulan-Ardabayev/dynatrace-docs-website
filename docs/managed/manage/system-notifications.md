@@ -1,11 +1,16 @@
 ---
-title: "System notifications"
+title: System notifications
 source: https://docs.dynatrace.com/managed/manage/system-notifications
-updated: 2026-02-09
+scraped: 2026-05-12T11:03:14.799003
 ---
+
+# System notifications
+
+# System notifications
 
 * Explanation
 * 2-min read
+* Published Feb 23, 2022
 
 The **Notifications** table displays notifications of Dynatrace system updates.
 

@@ -1,10 +1,15 @@
 ---
-title: "Visualize your environment through Smartscape"
+title: Visualize your environment through Smartscape
 source: https://docs.dynatrace.com/managed/analyze-explore-automate/smartscape-classic
-updated: 2026-02-09
+scraped: 2026-05-12T11:04:08.651241
 ---
 
+# Visualize your environment through Smartscape
+
+# Visualize your environment through Smartscape
+
 * 8-min read
+* Published Jul 19, 2017
 
 Smartscape, our near real-time environment-topology visualization tool, is one of the most powerful features of Dynatrace.
 
@@ -58,12 +63,14 @@ In this example, the **Applications** tab is selected and the **12** detected ap
 
 ![Smartscape applications](https://dt-cdn.net/images/smartscape-applications-1310-dc4704a941.png)
 
+Smartscape applications
+
 Dynatrace supports monitoring of web-based applications and mobile apps. The node symbols indicates the application type:
 
 | Icon | Meaning |
 | --- | --- |
-| Smartscape symbol new | **Web application** |
-| Smartscape symbol 2 | **Mobile app** |
+|  | **Web application** |
+|  | **Mobile app** |
 
 There are no application connections or dependencies because, in Dynatrace, applications are viewed from the perspective of the user and therefore only constitute user endpoints. Therefore, multiple applications may use the same services, but applications can't be connected directly to one another.
 
@@ -73,14 +80,16 @@ The **Services** tab displays the topology of all the services that are running 
 
 ![Smartscape services](https://dt-cdn.net/images/smartscape-services-1621-d595e2d107.png)
 
+Smartscape services
+
 **Nodes**
 
 Each node represents a different service with a symbol that signifies the underlying service type.
 
 | Icon | Meaning |
 | --- | --- |
-| see example above | Commercial logos such as the MySQL dolphin, Apache feather, and Tomcat cat indicate service technologies supported by Dynatrace. |
-| Smartscape symbol 3 | Services of unrecognized technologies are depicted using a generic service symbol. These are typically opaque services. |
+| see example above | Commercial logos such as the MySQL dolphin, Apache feather, and Tomcat cat indicate [service technologies supported by Dynatrace](/managed/ingest-from/technology-support "Find technical details related to Dynatrace support for specific platforms and development frameworks."). |
+|  | Services of unrecognized technologies are depicted using a generic service symbol. These are typically [opaque services](/managed/observe/application-observability/services/service-detection/service-detection-v1/service-types/opaque-services "Understand what opaque services are."). |
 
 **Connections**
 
@@ -100,10 +109,12 @@ Note that you might observe a difference in the number of services presented in 
 
 The **Processes** tab provides a visualization within which each node corresponds to a process and each connection represents a TCP/IP request.
 
-* Not all processes running in your environment are shown because the number of running processes is often quite high. For clarity, only the most important processes are shown.
+* Not all processes running in your environment are shown because the number of running processes is often quite high. For clarity, only the [most important processes](/managed/observe/infrastructure-observability/process-groups/basic-concepts/which-are-the-most-important-processes "Display the most important processes for monitoring and process grouping.") are shown.
 * Dashed lines show connections between processes that are inactive or have timed out.
 
 ![Smartscape processes](https://dt-cdn.net/images/smartscape-processes-1623-2321abf3d3.png)
+
+Smartscape processes
 
 ### Hosts
 
@@ -114,11 +125,13 @@ The **Hosts** tab shows the topology of your infrastructure from the perspective
 
 ![Smartscape hosts](https://dt-cdn.net/images/smartscape-hosts-1659-8c03fceb20.png)
 
+Smartscape hosts
+
 Generic host symbols are used to signify monitoring candidates (unknown hosts that are detected because they receive TCP/IP requests from monitored hosts). We recommend that you install Dynatrace OneAgent on monitoring candidates in your environment whenever possible.
 
 | Icon | Meaning |
 | --- | --- |
-| Smartscape symbol 4 | monitoring candidate |
+|  | monitoring candidate |
 
 Inactive monitoring candidates are monitoring candidates that havenât communicated with a host. Inactive connections between hosts and connections that have timed-out are visualized with dashed lines.
 
@@ -130,6 +143,8 @@ If you use virtual servers or you have a PaaS-based infrastructure, the data cen
 
 ![Smartscape datacenters](https://dt-cdn.net/images/smartscape-datacenters-1625-63d687b49e.png)
 
+Smartscape datacenters
+
 ### Cross-tier interconnections
 
 To view cross-tier connections, select any entity in any Smartscape tier. The vertical dependencies of the entity are then displayed on the left.
@@ -137,6 +152,8 @@ To view cross-tier connections, select any entity in any Smartscape tier. The ve
 In this example, a web application called `easytravel-dynatrace-dev` is selected. On the left you can see how the application dependencies extend downward to the data centers tier.
 
 ![Smartscape inter 1](https://dt-cdn.net/images/smartscape-inter1-1687-680a65579e.png)
+
+Smartscape inter 1
 
 The `easytravel-dynatrace-dev` application is red because it's experiencing a problem. Moving downward through the related dependencies, we can see that this application calls 27 Tomcat services and 4 ASP/.NET services. These services run on processes of the same technology types (those shown in red are experiencing problems). You can see that these processes reside on a Windows-based host called `lr-ws-l02v` (to see this detail, hover your cursor over the host node). Because the unhealthy processes are running on this host, this host is also unhealthy (note the red **1** on the **Hosts** tile on the left).
 
@@ -161,12 +178,12 @@ To see vulnerabilities for affected entities, switch to the **Processes** or **H
 * To view the name of an entity, hover your cursor over the entity's symbol. While the name is displayed, you can select the arrow next to the entity name to go to that entity's overview page.
 * To view cross-tier connections, select any entity. The panel on the left expands to display the vertical dependencies of the entity.
 
-For more information on managing third-party vulnerabilities, see Third-party vulnerabilities.
+For more information on managing third-party vulnerabilities, see [Third-party vulnerabilities](/managed/secure/application-security/vulnerability-analytics/third-party-vulnerabilities "Monitor, visualize, analyze, and remediate third-party vulnerabilities, track the remediation progress, and create monitoring rules.").
 
 ## Related topics
 
-* What is a monitoring environment?
-* Topology and Smartscape API
-* Performance analysis
-* Root cause analysis concepts
-* Third-party vulnerabilities
+* [What is a monitoring environment?](/managed/discover-dynatrace/get-started/monitoring-environment "Understand and learn how to work with monitoring environments.")
+* [Topology and Smartscape API](/managed/dynatrace-api/environment-api/topology-and-smartscape "Learn about the Dynatrace Topology and Smartscape API.")
+* [Performance analysis](/managed/observe/digital-experience/web-applications/analyze-and-use/performance-analysis "Understand the available types of performance analysis that are provided by Dynatrace.")
+* [Root cause analysis concepts](/managed/dynatrace-intelligence/root-cause-analysis/concepts "Get acquainted with root cause analysis concepts.")
+* [Third-party vulnerabilities](/managed/secure/application-security/vulnerability-analytics/third-party-vulnerabilities "Monitor, visualize, analyze, and remediate third-party vulnerabilities, track the remediation progress, and create monitoring rules.")

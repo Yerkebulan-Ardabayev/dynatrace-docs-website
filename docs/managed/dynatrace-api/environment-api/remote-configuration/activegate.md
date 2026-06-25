@@ -1,23 +1,30 @@
 ---
-title: "ActiveGate remote configuration management API"
+title: ActiveGate remote configuration management API
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/remote-configuration/activegate
-updated: 2026-02-09
+scraped: 2026-05-12T11:11:56.883077
 ---
 
-### Start a job
+# ActiveGate remote configuration management API
 
-Start a new configuration job for ActiveGates.### Preview a job
+# ActiveGate remote configuration management API
 
-Check the preview of a configuration job for ActiveGates.
+* Reference
+* Published Jun 01, 2022
 
-### View current job
+[### Start a job
 
-View parameters of the running configuration job for ActiveGates.### List completed jobs
+Start a new configuration job for ActiveGates.](/managed/dynatrace-api/environment-api/remote-configuration/activegate/post-config-job "Start a new configuration job for ActiveGates remotely using the Dynatrace API.")[### Preview a job
 
-Get an overview of completed configuration jobs for ActiveGates.### View a job
+Check the preview of a configuration job for ActiveGates.](/managed/dynatrace-api/environment-api/remote-configuration/activegate/post-job-preview "Preview a configuration job for ActiveGates using the Dynatrace API.")
 
-Get an overview of a configuration job for ActiveGates.
+[### View current job
+
+View parameters of the running configuration job for ActiveGates.](/managed/dynatrace-api/environment-api/remote-configuration/activegate/get-current-job "View parameters of a current configuration job for ActiveGates using the Dynatrace API.")[### List completed jobs
+
+Get an overview of completed configuration jobs for ActiveGates.](/managed/dynatrace-api/environment-api/remote-configuration/activegate/get-finished-jobs "Get an overview of completed configuration jobs for ActiveGates using the Dynatrace API.")[### View a job
+
+Get an overview of a configuration job for ActiveGates.](/managed/dynatrace-api/environment-api/remote-configuration/activegate/get-job "View parameters of a configuration job for ActiveGates using the Dynatrace API.")
 
 ## Related topics
 
-* Remote configuration management of OneAgents and ActiveGates
+* [Remote configuration management of OneAgents and ActiveGates](/managed/ingest-from/bulk-configuration "Perform OneAgent and ActiveGate configuration on hosts from the Deployment status page or at scale using the Dynatrace API.")

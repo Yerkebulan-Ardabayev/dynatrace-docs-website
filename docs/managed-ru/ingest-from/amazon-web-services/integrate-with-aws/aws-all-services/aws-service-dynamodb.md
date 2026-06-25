@@ -1,20 +1,28 @@
 ---
 title: Мониторинг Amazon DynamoDB Accelerator (DAX)
-source: https://www.dynatrace.com/docs/ingest-from/amazon-web-services/integrate-with-aws/aws-all-services/aws-service-dynamodb
-scraped: 2026-03-05T21:35:33.055327
+source: https://docs.dynatrace.com/managed/ingest-from/amazon-web-services/integrate-with-aws/aws-all-services/aws-service-dynamodb
+scraped: 2026-05-12T11:29:30.202965
 ---
 
-Dynatrace собирает метрики для нескольких предварительно выбранных пространств имён, включая Amazon DynamoDB Accelerator (DAX). Вы можете просматривать метрики для каждого экземпляра сервиса, разбивать метрики по нескольким измерениям и создавать пользовательские графики, которые можно закрепить на панелях мониторинга.
+# Мониторинг Amazon DynamoDB Accelerator (DAX)
+
+# Мониторинг Amazon DynamoDB Accelerator (DAX)
+
+* Практическое руководство
+* Чтение: 12 мин
+* Опубликовано 6 июля 2020 г.
+
+Dynatrace принимает метрики для множества предопределённых пространств имён, включая Amazon DynamoDB Accelerator (DAX). Можно просматривать метрики по каждому экземпляру сервиса, разбивать их на несколько измерений и создавать собственные графики, которые можно закреплять на дашбордах.
 
 ## Предварительные требования
 
-Для включения мониторинга этого сервиса необходимо:
+Чтобы включить мониторинг этого сервиса, необходимо:
 
 * Любая версия ActiveGate в развёртываниях Dynatrace SaaS и Managed.
 
-  Для доступа на основе ролей (в развёртывании SaaS или [Managed](https://docs.dynatrace.com/managed/shortlink/aws-managed-deployment)) необходим ActiveGate, установленный на хосте Amazon EC2.
-* Обновлённая политика мониторинга AWS для включения дополнительных сервисов AWS.
-  Для [обновления политики AWS IAM](https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_manage-edit.html#edit-managed-policy-console) используйте приведённый ниже JSON, содержащий политику мониторинга (разрешения) для всех облачных сервисов.
+  Для доступа на основе ролей (в развёртывании [SaaS](/managed/ingest-from/amazon-web-services/integrate-with-aws/cloudwatch-metrics#role-based-access "Приём метрик Amazon CloudWatch.") или [Managed](/managed/ingest-from/amazon-web-services/set-up-aws-monitoring-with-managed#role-based-access "Подключите аккаунт Amazon к Dynatrace Managed и начните мониторинг.")) требуется ActiveGate, установленный на хосте Amazon EC2.
+* Обновлённая [политика мониторинга AWS](/managed/ingest-from/amazon-web-services/integrate-with-aws/cloudwatch-metrics#aws-policy-and-authentication "Приём метрик Amazon CloudWatch."), включающая дополнительные сервисы AWS.
+  Чтобы [обновить политику AWS IAM](https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_manage-edit.html#edit-managed-policy-console), используйте приведённый ниже JSON, содержащий политику мониторинга (разрешения) для всех облачных сервисов.
 
 Предопределённая JSON-политика для всех облачных сервисов
 
@@ -22,292 +30,387 @@ Dynatrace собирает метрики для нескольких предв
 {
 
 
+
 "Version": "2012-10-17",
+
 
 
 "Statement": [
 
 
+
 {
+
 
 
 "Sid": "VisualEditor0",
 
 
+
 "Effect": "Allow",
+
 
 
 "Action": [
 
 
+
 "acm-pca:ListCertificateAuthorities",
+
 
 
 "apigateway:GET",
 
 
+
 "apprunner:ListServices",
+
 
 
 "appstream:DescribeFleets",
 
 
+
 "appsync:ListGraphqlApis",
+
 
 
 "athena:ListWorkGroups",
 
 
+
 "autoscaling:DescribeAutoScalingGroups",
+
 
 
 "cloudformation:ListStackResources",
 
 
+
 "cloudfront:ListDistributions",
+
 
 
 "cloudhsm:DescribeClusters",
 
 
+
 "cloudsearch:DescribeDomains",
+
 
 
 "cloudwatch:GetMetricData",
 
 
+
 "cloudwatch:GetMetricStatistics",
+
 
 
 "cloudwatch:ListMetrics",
 
 
+
 "codebuild:ListProjects",
+
 
 
 "datasync:ListTasks",
 
 
+
 "dax:DescribeClusters",
+
 
 
 "directconnect:DescribeConnections",
 
 
+
 "dms:DescribeReplicationInstances",
+
 
 
 "dynamodb:ListTables",
 
 
+
 "dynamodb:ListTagsOfResource",
+
 
 
 "ec2:DescribeAvailabilityZones",
 
 
+
 "ec2:DescribeInstances",
+
 
 
 "ec2:DescribeNatGateways",
 
 
+
 "ec2:DescribeSpotFleetRequests",
+
 
 
 "ec2:DescribeTransitGateways",
 
 
+
 "ec2:DescribeVolumes",
+
 
 
 "ec2:DescribeVpnConnections",
 
 
+
 "ecs:ListClusters",
+
 
 
 "eks:ListClusters",
 
 
+
 "elasticache:DescribeCacheClusters",
+
 
 
 "elasticbeanstalk:DescribeEnvironmentResources",
 
 
+
 "elasticbeanstalk:DescribeEnvironments",
+
 
 
 "elasticfilesystem:DescribeFileSystems",
 
 
+
 "elasticloadbalancing:DescribeInstanceHealth",
+
 
 
 "elasticloadbalancing:DescribeListeners",
 
 
+
 "elasticloadbalancing:DescribeLoadBalancers",
+
 
 
 "elasticloadbalancing:DescribeRules",
 
 
+
 "elasticloadbalancing:DescribeTags",
+
 
 
 "elasticloadbalancing:DescribeTargetHealth",
 
 
+
 "elasticmapreduce:ListClusters",
+
 
 
 "elastictranscoder:ListPipelines",
 
 
+
 "es:ListDomainNames",
+
 
 
 "events:ListEventBuses",
 
 
+
 "firehose:ListDeliveryStreams",
+
 
 
 "fsx:DescribeFileSystems",
 
 
+
 "gamelift:ListFleets",
+
 
 
 "glue:GetJobs",
 
 
+
 "inspector:ListAssessmentTemplates",
+
 
 
 "kafka:ListClusters",
 
 
+
 "kinesis:ListStreams",
+
 
 
 "kinesisanalytics:ListApplications",
 
 
+
 "kinesisvideo:ListStreams",
+
 
 
 "lambda:ListFunctions",
 
 
+
 "lambda:ListTags",
+
 
 
 "lex:GetBots",
 
 
+
 "logs:DescribeLogGroups",
+
 
 
 "mediaconnect:ListFlows",
 
 
+
 "mediaconvert:DescribeEndpoints",
+
 
 
 "mediapackage-vod:ListPackagingConfigurations",
 
 
+
 "mediapackage:ListChannels",
+
 
 
 "mediatailor:ListPlaybackConfigurations",
 
 
+
 "opsworks:DescribeStacks",
+
 
 
 "qldb:ListLedgers",
 
 
+
 "rds:DescribeDBClusters",
+
 
 
 "rds:DescribeDBInstances",
 
 
+
 "rds:DescribeEvents",
+
 
 
 "rds:ListTagsForResource",
 
 
+
 "redshift:DescribeClusters",
+
 
 
 "robomaker:ListSimulationJobs",
 
 
+
 "route53:ListHostedZones",
+
 
 
 "route53resolver:ListResolverEndpoints",
 
 
+
 "s3:ListAllMyBuckets",
+
 
 
 "sagemaker:ListEndpoints",
 
 
+
 "sns:ListTopics",
+
 
 
 "sqs:ListQueues",
 
 
+
 "storagegateway:ListGateways",
+
 
 
 "sts:GetCallerIdentity",
 
 
+
 "swf:ListDomains",
+
 
 
 "tag:GetResources",
 
 
+
 "tag:GetTagKeys",
+
 
 
 "transfer:ListServers",
 
 
+
 "workmail:ListOrganizations",
+
 
 
 "workspaces:DescribeWorkspaces"
 
 
+
 ],
+
 
 
 "Resource": "*"
 
 
+
 }
+
 
 
 ]
 
 
+
 }
 ```
 
-Если вы не хотите добавлять разрешения для всех сервисов и хотите выбрать разрешения только для определённых сервисов, обратитесь к таблице ниже. Таблица содержит набор разрешений, необходимых для всех облачных сервисов AWS, а для каждого облачного сервиса — список дополнительных разрешений, специфичных для него.
+Если вы не хотите добавлять разрешения для всех сервисов и предпочитаете выбрать разрешения только для определённых сервисов, обратитесь к таблице ниже. В таблице приведён набор разрешений, необходимых для [всех облачных сервисов AWS](/managed/ingest-from/amazon-web-services/integrate-with-aws/aws-all-services "Мониторинг всех облачных сервисов AWS в Dynatrace и просмотр доступных метрик."), и для каждого облачного сервиса приведён список необязательных разрешений, специфичных для этого сервиса.
 
 Разрешения, необходимые для интеграции мониторинга AWS:
 
@@ -321,9 +424,9 @@ Dynatrace собирает метрики для нескольких предв
 
 ### Полный список разрешений для облачных сервисов
 
-| Название | Разрешения |
+| Имя | Разрешения |
 | --- | --- |
-| Все отслеживаемые сервисы Amazon (обязательно) | `cloudwatch:GetMetricData`, `cloudwatch:GetMetricStatistics`, `cloudwatch:ListMetrics`, `sts:GetCallerIdentity`, `tag:GetResources`, `tag:GetTagKeys`, `ec2:DescribeAvailabilityZones` |
+| All monitored Amazon services Required | `cloudwatch:GetMetricData`, `cloudwatch:GetMetricStatistics`, `cloudwatch:ListMetrics`, `sts:GetCallerIdentity`, `tag:GetResources`, `tag:GetTagKeys`, `ec2:DescribeAvailabilityZones` |
 | AWS Certificate Manager Private Certificate Authority | `acm-pca:ListCertificateAuthorities` |
 | Amazon MQ |  |
 | Amazon API Gateway | `apigateway:GET` |
@@ -333,7 +436,7 @@ Dynatrace собирает метрики для нескольких предв
 | Amazon Athena | `athena:ListWorkGroups` |
 | Amazon Aurora | `rds:DescribeDBClusters` |
 | Amazon EC2 Auto Scaling | `autoscaling:DescribeAutoScalingGroups` |
-| Amazon EC2 Auto Scaling (встроенный) | `autoscaling:DescribeAutoScalingGroups` |
+| Amazon EC2 Auto Scaling (built-in) | `autoscaling:DescribeAutoScalingGroups` |
 | AWS Billing |  |
 | Amazon Keyspaces |  |
 | AWS Chatbot |  |
@@ -350,11 +453,11 @@ Dynatrace собирает метрики для нескольких предв
 | Amazon DocumentDB | `rds:DescribeDBClusters` |
 | AWS Direct Connect | `directconnect:DescribeConnections` |
 | Amazon DynamoDB | `dynamodb:ListTables` |
-| Amazon DynamoDB (встроенный) | `dynamodb:ListTables`, `dynamodb:ListTagsOfResource` |
+| Amazon DynamoDB (built-in) | `dynamodb:ListTables`, `dynamodb:ListTagsOfResource` |
 | Amazon EBS | `ec2:DescribeVolumes` |
-| Amazon EBS (встроенный) | `ec2:DescribeVolumes` |
+| Amazon EBS (built-in) | `ec2:DescribeVolumes` |
 | Amazon EC2 API |  |
-| Amazon EC2 (встроенный) | `ec2:DescribeInstances` |
+| Amazon EC2 (built-in) | `ec2:DescribeInstances` |
 | Amazon EC2 Spot Fleet | `ec2:DescribeSpotFleetRequests` |
 | Amazon Elastic Container Service (ECS) | `ecs:ListClusters` |
 | Amazon ECS Container Insights | `ecs:ListClusters` |
@@ -365,7 +468,7 @@ Dynatrace собирает метрики для нескольких предв
 | Amazon Elastic Map Reduce (EMR) | `elasticmapreduce:ListClusters` |
 | Amazon Elasticsearch Service (ES) | `es:ListDomainNames` |
 | Amazon Elastic Transcoder | `elastictranscoder:ListPipelines` |
-| Amazon Elastic Load Balancer (ELB) (встроенный) | `elasticloadbalancing:DescribeInstanceHealth`, `elasticloadbalancing:DescribeListeners`, `elasticloadbalancing:DescribeLoadBalancers`, `elasticloadbalancing:DescribeRules`, `elasticloadbalancing:DescribeTags`, `elasticloadbalancing:DescribeTargetHealth` |
+| Amazon Elastic Load Balancer (ELB) (built-in) | `elasticloadbalancing:DescribeInstanceHealth`, `elasticloadbalancing:DescribeListeners`, `elasticloadbalancing:DescribeLoadBalancers`, `elasticloadbalancing:DescribeRules`, `elasticloadbalancing:DescribeTags`, `elasticloadbalancing:DescribeTargetHealth` |
 | Amazon EventBridge | `events:ListEventBuses` |
 | Amazon FSx | `fsx:DescribeFileSystems` |
 | Amazon GameLift | `gamelift:ListFleets` |
@@ -379,9 +482,9 @@ Dynatrace собирает метрики для нескольких предв
 | Amazon Kinesis Data Streams | `kinesis:ListStreams` |
 | Amazon Kinesis Video Streams | `kinesisvideo:ListStreams` |
 | AWS Lambda | `lambda:ListFunctions` |
-| AWS Lambda (встроенный) | `lambda:ListFunctions`, `lambda:ListTags` |
+| AWS Lambda (built-in) | `lambda:ListFunctions`, `lambda:ListTags` |
 | Amazon Lex | `lex:GetBots` |
-| Amazon Application and Network Load Balancer (встроенный) | `elasticloadbalancing:DescribeInstanceHealth`, `elasticloadbalancing:DescribeListeners`, `elasticloadbalancing:DescribeLoadBalancers`, `elasticloadbalancing:DescribeRules`, `elasticloadbalancing:DescribeTags`, `elasticloadbalancing:DescribeTargetHealth` |
+| Amazon Application and Network Load Balancer (built-in) | `elasticloadbalancing:DescribeInstanceHealth`, `elasticloadbalancing:DescribeListeners`, `elasticloadbalancing:DescribeLoadBalancers`, `elasticloadbalancing:DescribeRules`, `elasticloadbalancing:DescribeTags`, `elasticloadbalancing:DescribeTargetHealth` |
 | Amazon CloudWatch Logs | `logs:DescribeLogGroups` |
 | AWS Elemental MediaConnect | `mediaconnect:ListFlows` |
 | AWS Elemental MediaConvert | `mediaconvert:DescribeEndpoints` |
@@ -394,14 +497,14 @@ Dynatrace собирает метрики для нескольких предв
 | Amazon Polly |  |
 | Amazon QLDB | `qldb:ListLedgers` |
 | Amazon RDS | `rds:DescribeDBInstances` |
-| Amazon RDS (встроенный) | `rds:DescribeDBInstances`, `rds:DescribeEvents`, `rds:ListTagsForResource` |
+| Amazon RDS (built-in) | `rds:DescribeDBInstances`, `rds:DescribeEvents`, `rds:ListTagsForResource` |
 | Amazon Redshift | `redshift:DescribeClusters` |
 | Amazon Rekognition |  |
 | AWS RoboMaker | `robomaker:ListSimulationJobs` |
 | Amazon Route 53 | `route53:ListHostedZones` |
 | Amazon Route 53 Resolver | `route53resolver:ListResolverEndpoints` |
 | Amazon S3 | `s3:ListAllMyBuckets` |
-| Amazon S3 (встроенный) | `s3:ListAllMyBuckets` |
+| Amazon S3 (built-in) | `s3:ListAllMyBuckets` |
 | Amazon SageMaker Batch Transform Jobs |  |
 | Amazon SageMaker Endpoint Instances | `sagemaker:ListEndpoints` |
 | Amazon SageMaker Endpoints | `sagemaker:ListEndpoints` |
@@ -429,7 +532,7 @@ Dynatrace собирает метрики для нескольких предв
 | Amazon WorkMail | `workmail:ListOrganizations` |
 | Amazon WorkSpaces | `workspaces:DescribeWorkspaces` |
 
-Пример JSON-политики для одного отдельного сервиса.
+Пример JSON-политики для одного сервиса.
 
 JSON-политика для Amazon API Gateway
 
@@ -437,80 +540,99 @@ JSON-политика для Amazon API Gateway
 {
 
 
+
 "Version": "2012-10-17",
+
 
 
 "Statement": [
 
 
+
 {
+
 
 
 "Sid": "VisualEditor0",
 
 
+
 "Effect": "Allow",
+
 
 
 "Action": [
 
 
+
 "apigateway:GET",
+
 
 
 "cloudwatch:GetMetricData",
 
 
+
 "cloudwatch:GetMetricStatistics",
+
 
 
 "cloudwatch:ListMetrics",
 
 
+
 "sts:GetCallerIdentity",
+
 
 
 "tag:GetResources",
 
 
+
 "tag:GetTagKeys",
+
 
 
 "ec2:DescribeAvailabilityZones"
 
 
+
 ],
+
 
 
 "Resource": "*"
 
 
+
 }
+
 
 
 ]
 
 
+
 }
 ```
 
-В этом примере из полного списка разрешений необходимо выбрать:
+В этом примере из полного списка разрешений необходимо выбрать
 
 * `"apigateway:GET"` для **Amazon API Gateway**
-* `"cloudwatch:GetMetricData"`, `"cloudwatch:GetMetricStatistics"`, `"cloudwatch:ListMetrics"`, `"sts:GetCallerIdentity"`, `"tag:GetResources"`, `"tag:GetTagKeys"` и `"ec2:DescribeAvailabilityZones"` для **всех облачных сервисов AWS**.
-* Для отключения мониторинга встроенных сервисов требуется Environment ActiveGate версии 1.245+ и Dynatrace версии 1.247+.
+* `"cloudwatch:GetMetricData"`, `"cloudwatch:GetMetricStatistics"`, `"cloudwatch:ListMetrics"`, `"sts:GetCallerIdentity"`, `"tag:GetResources"`, `"tag:GetTagKeys"` и `"ec2:DescribeAvailabilityZones"` для **All AWS cloud services**.
+* Чтобы отключить мониторинг встроенных сервисов, требуется Environment ActiveGate версии 1.245+ и Dynatrace версии 1.247+.
 
-### Эндпоинты AWS, доступные из ActiveGate, с соответствующими сервисами AWS
+### Конечные точки AWS, которые должны быть доступны с ActiveGate, и соответствующие им сервисы AWS
 
-| Эндпоинт | Сервис |
+| Конечная точка | Сервис |
 | --- | --- |
-| `autoscaling.<REGION>.amazonaws.com` | Amazon EC2 Auto Scaling (встроенный), Amazon EC2 Auto Scaling |
-| `lambda.<REGION>.amazonaws.com` | AWS Lambda (встроенный), AWS Lambda |
-| `elasticloadbalancing.<REGION>.amazonaws.com` | Amazon Application and Network Load Balancer (встроенный), Amazon Elastic Load Balancer (ELB) (встроенный) |
-| `dynamodb.<REGION>.amazonaws.com` | Amazon DynamoDB (встроенный), Amazon DynamoDB |
-| `ec2.<REGION>.amazonaws.com` | Amazon EBS (встроенный), Amazon EC2 (встроенный), Amazon EBS, Amazon EC2 Spot Fleet, Amazon VPC NAT Gateways, AWS Transit Gateway, AWS Site-to-Site VPN |
-| `rds.<REGION>.amazonaws.com` | Amazon RDS (встроенный), Amazon Aurora, Amazon DocumentDB, Amazon Neptune, Amazon RDS |
-| `s3.<REGION>.amazonaws.com` | Amazon S3 (встроенный) |
+| `autoscaling.<REGION>.amazonaws.com` | Amazon EC2 Auto Scaling (built-in), Amazon EC2 Auto Scaling |
+| `lambda.<REGION>.amazonaws.com` | AWS Lambda (built-in), AWS Lambda |
+| `elasticloadbalancing.<REGION>.amazonaws.com` | Amazon Application and Network Load Balancer (built-in), Amazon Elastic Load Balancer (ELB) (built-in) |
+| `dynamodb.<REGION>.amazonaws.com` | Amazon DynamoDB (built-in), Amazon DynamoDB |
+| `ec2.<REGION>.amazonaws.com` | Amazon EBS (built-in), Amazon EC2 (built-in), Amazon EBS, Amazon EC2 Spot Fleet, Amazon VPC NAT Gateways, AWS Transit Gateway, AWS Site-to-Site VPN |
+| `rds.<REGION>.amazonaws.com` | Amazon RDS (built-in), Amazon Aurora, Amazon DocumentDB, Amazon Neptune, Amazon RDS |
+| `s3.<REGION>.amazonaws.com` | Amazon S3 (built-in) |
 | `acm-pca.<REGION>.amazonaws.com` | AWS Certificate Manager Private Certificate Authority |
 | `apigateway.<REGION>.amazonaws.com` | Amazon API Gateway |
 | `apprunner.<REGION>.amazonaws.com` | AWS App Runner |
@@ -561,310 +683,316 @@ JSON-политика для Amazon API Gateway
 
 ## Включение мониторинга
 
-Чтобы узнать, как включить мониторинг сервиса, см. раздел Включение мониторинга сервиса.
+Чтобы узнать, как включить мониторинг сервиса, см. [Включение мониторинга сервиса](/managed/ingest-from/amazon-web-services/integrate-with-aws/aws-metrics-ingest/aws-enable-service-monitoring "Включение мониторинга AWS в Dynatrace.").
 
 ## Просмотр метрик сервиса
 
-Метрики сервиса можно просматривать в среде Dynatrace на **странице обзора пользовательского устройства** или на странице **Панели мониторинга**.
+Вы можете просматривать метрики сервиса в вашей среде Dynatrace на **странице обзора пользовательского устройства** или на странице **Dashboards**.
 
 ### Просмотр метрик на странице обзора пользовательского устройства
 
-Для доступа к странице обзора пользовательского устройства:
+Чтобы перейти на страницу обзора пользовательского устройства:
 
-1. Перейдите в ![Technologies](https://dt-cdn.net/images/technologies-512-977161d83c.png "Technologies") **Technologies & Processes Classic**.
+1. Перейдите в **Technologies & Processes**.
 2. Отфильтруйте по имени сервиса и выберите соответствующую группу пользовательских устройств.
-3. После выбора группы пользовательских устройств откроется **страница обзора группы пользовательских устройств**.
+3. После выбора группы пользовательских устройств вы окажетесь на **странице обзора группы пользовательских устройств**.
 4. На **странице обзора группы пользовательских устройств** перечислены все экземпляры (пользовательские устройства), принадлежащие группе. Выберите экземпляр для просмотра **страницы обзора пользовательского устройства**.
 
-### Просмотр метрик на панели мониторинга
+### Просмотр метрик на дашборде
 
-После добавления сервиса в мониторинг на странице **Панели мониторинга** автоматически появляется стандартная панель со всеми рекомендуемыми метриками. Для поиска определённых панелей используйте фильтры **Preset** (Стандартная) и **Name** (Название).
+После добавления сервиса в мониторинг предустановленный дашборд со всеми рекомендуемыми метриками автоматически появляется на вашей странице **Dashboards**. Чтобы найти конкретные дашборды, отфильтруйте по **Preset**, а затем по **Name**.
 
 ![AWS presets](https://dt-cdn.net/images/image-26-1645-389f58aa89.png)
 
-Для уже отслеживаемых сервисов может потребоваться повторное сохранение учётных данных, чтобы стандартная панель отобразилась на странице **Панели мониторинга**. Для повторного сохранения учётных данных перейдите в **Settings** > **Cloud and virtualization** > **AWS**, выберите нужный экземпляр AWS и нажмите **Save**.
+AWS presets
 
-Вносить изменения непосредственно в стандартную панель нельзя, но её можно клонировать и редактировать. Для клонирования панели откройте меню (**...**) и выберите **Clone**.
+Для уже отслеживаемых сервисов может потребоваться повторно сохранить учётные данные, чтобы предустановленный дашборд отобразился на странице **Dashboards**. Для повторного сохранения учётных данных перейдите в **Settings** > **Cloud and virtualization** > **AWS**, выберите нужный экземпляр AWS, затем нажмите **Save**.
 
-Для удаления панели со страницы панелей мониторинга её можно скрыть. Для скрытия панели откройте меню (**...**) и выберите **Hide**.
+Вы не можете вносить изменения непосредственно в предустановленный дашборд, но можете клонировать его и редактировать. Чтобы клонировать дашборд, откройте меню обзора (**…**) и выберите **Clone**.
 
-Скрытие панели не влияет на других пользователей.
+Чтобы убрать дашборд со страницы дашбордов, его можно скрыть. Чтобы скрыть дашборд, откройте меню обзора (**…**) и выберите **Hide**.
+
+Скрытие дашборда не затрагивает других пользователей.
 
 ![Clone hide AWS](https://dt-cdn.net/images/2020-12-10-15-04-09-1502-b899a29d73.png)
 
-Для проверки доступности стандартных панелей для каждого сервиса AWS см. список ниже.
+Clone hide AWS
 
-### Список доступности стандартных панелей
+Чтобы проверить доступность предустановленных дашбордов для каждого сервиса AWS, см. список ниже.
 
-| Сервис AWS | Стандартная панель |
+### Список доступности предустановленных дашбордов
+
+| Сервис AWS | Предустановленный дашборд |
 | --- | --- |
-| Amazon EC2 Auto Scaling (встроенный) | Недоступна |
-| AWS Lambda (встроенный) | Недоступна |
-| Amazon Application and Network Load Balancer (встроенный) | Недоступна |
-| Amazon DynamoDB (встроенный) | Недоступна |
-| Amazon EBS (встроенный) | Недоступна |
-| Amazon EC2 (встроенный) | Недоступна |
-| Amazon Elastic Load Balancer (ELB) (встроенный) | Недоступна |
-| Amazon RDS (встроенный) | Недоступна |
-| Amazon S3 (встроенный) | Недоступна |
-| AWS Certificate Manager Private Certificate Authority | Недоступна |
-| Все отслеживаемые сервисы Amazon | Недоступна |
-| Amazon API Gateway | Недоступна |
-| AWS App Runner | Недоступна |
-| Amazon AppStream | Доступна |
-| AWS AppSync | Доступна |
-| Amazon Athena | Доступна |
-| Amazon Aurora | Недоступна |
-| Amazon EC2 Auto Scaling | Доступна |
-| AWS Billing | Доступна |
-| Amazon Keyspaces | Доступна |
-| AWS Chatbot | Доступна |
-| Amazon CloudFront | Недоступна |
-| AWS CloudHSM | Доступна |
-| Amazon CloudSearch | Доступна |
-| AWS CodeBuild | Доступна |
-| Amazon Cognito | Недоступна |
-| Amazon Connect | Доступна |
-| AWS DataSync | Доступна |
-| Amazon DynamoDB Accelerator (DAX) | Доступна |
-| AWS Database Migration Service (AWS DMS) | Доступна |
-| Amazon DocumentDB | Доступна |
-| AWS Direct Connect | Доступна |
-| Amazon DynamoDB | Недоступна |
-| Amazon EBS | Недоступна |
-| Amazon EC2 Spot Fleet | Недоступна |
-| Amazon EC2 API | Доступна |
-| Amazon Elastic Container Service (ECS) | Недоступна |
-| Amazon ECS Container Insights | Доступна |
-| Amazon Elastic File System (EFS) | Недоступна |
-| Amazon Elastic Kubernetes Service (EKS) | Доступна |
-| Amazon ElastiCache (EC) | Недоступна |
-| AWS Elastic Beanstalk | Доступна |
-| Amazon Elastic Inference | Доступна |
-| Amazon Elastic Transcoder | Доступна |
-| Amazon Elastic Map Reduce (EMR) | Недоступна |
-| Amazon Elasticsearch Service (ES) | Недоступна |
-| Amazon EventBridge | Доступна |
-| Amazon FSx | Доступна |
-| Amazon GameLift | Доступна |
-| AWS Glue | Недоступна |
-| Amazon Inspector | Доступна |
-| AWS Internet of Things (IoT) | Недоступна |
-| AWS IoT Things Graph | Доступна |
-| AWS IoT Analytics | Доступна |
-| Amazon Managed Streaming for Kafka | Доступна |
-| Amazon Kinesis Data Analytics | Недоступна |
-| Amazon Data Firehose | Недоступна |
-| Amazon Kinesis Data Streams | Недоступна |
-| Amazon Kinesis Video Streams | Недоступна |
-| AWS Lambda | Недоступна |
-| Amazon Lex | Доступна |
-| Amazon CloudWatch Logs | Доступна |
-| AWS Elemental MediaTailor | Доступна |
-| AWS Elemental MediaConnect | Доступна |
-| AWS Elemental MediaConvert | Доступна |
-| AWS Elemental MediaPackage Live | Доступна |
-| AWS Elemental MediaPackage Video on Demand | Доступна |
-| Amazon MQ | Доступна |
-| Amazon VPC NAT Gateways | Недоступна |
-| Amazon Neptune | Доступна |
-| AWS OpsWorks | Доступна |
-| Amazon Polly | Доступна |
-| Amazon QLDB | Доступна |
-| Amazon RDS | Недоступна |
-| Amazon Redshift | Недоступна |
-| Amazon Rekognition | Доступна |
-| AWS RoboMaker | Доступна |
-| Amazon Route 53 | Доступна |
-| Amazon Route 53 Resolver | Доступна |
-| Amazon S3 | Недоступна |
-| Amazon SageMaker Batch Transform Jobs | Недоступна |
-| Amazon SageMaker Endpoints | Недоступна |
-| Amazon SageMaker Endpoint Instances | Недоступна |
-| Amazon SageMaker Ground Truth | Недоступна |
-| Amazon SageMaker Processing Jobs | Недоступна |
-| Amazon SageMaker Training Jobs | Недоступна |
-| AWS Service Catalog | Доступна |
-| Amazon Simple Email Service (SES) | Недоступна |
-| Amazon Simple Notification Service (SNS) | Недоступна |
-| Amazon Simple Queue Service (SQS) | Недоступна |
-| AWS Systems Manager - Run Command | Доступна |
-| AWS Step Functions | Доступна |
-| AWS Storage Gateway | Доступна |
-| Amazon SWF | Доступна |
-| Amazon Textract | Доступна |
-| AWS Transfer Family | Доступна |
-| AWS Transit Gateway | Доступна |
-| Amazon Translate | Доступна |
-| AWS Trusted Advisor | Доступна |
-| AWS API Usage | Доступна |
-| AWS Site-to-Site VPN | Доступна |
-| AWS WAF Classic | Доступна |
-| AWS WAF | Доступна |
-| Amazon WorkMail | Доступна |
-| Amazon WorkSpaces | Доступна |
+| Amazon EC2 Auto Scaling (built-in) | Не применимо |
+| AWS Lambda (built-in) | Не применимо |
+| Amazon Application and Network Load Balancer (built-in) | Не применимо |
+| Amazon DynamoDB (built-in) | Не применимо |
+| Amazon EBS (built-in) | Не применимо |
+| Amazon EC2 (built-in) | Не применимо |
+| Amazon Elastic Load Balancer (ELB) (built-in) | Не применимо |
+| Amazon RDS (built-in) | Не применимо |
+| Amazon S3 (built-in) | Не применимо |
+| AWS Certificate Manager Private Certificate Authority | Не применимо |
+| All monitored Amazon services | Не применимо |
+| Amazon API Gateway | Не применимо |
+| AWS App Runner | Не применимо |
+| Amazon AppStream | Применимо |
+| AWS AppSync | Применимо |
+| Amazon Athena | Применимо |
+| Amazon Aurora | Не применимо |
+| Amazon EC2 Auto Scaling | Применимо |
+| AWS Billing | Применимо |
+| Amazon Keyspaces | Применимо |
+| AWS Chatbot | Применимо |
+| Amazon CloudFront | Не применимо |
+| AWS CloudHSM | Применимо |
+| Amazon CloudSearch | Применимо |
+| AWS CodeBuild | Применимо |
+| Amazon Cognito | Не применимо |
+| Amazon Connect | Применимо |
+| AWS DataSync | Применимо |
+| Amazon DynamoDB Accelerator (DAX) | Применимо |
+| AWS Database Migration Service (AWS DMS) | Применимо |
+| Amazon DocumentDB | Применимо |
+| AWS Direct Connect | Применимо |
+| Amazon DynamoDB | Не применимо |
+| Amazon EBS | Не применимо |
+| Amazon EC2 Spot Fleet | Не применимо |
+| Amazon EC2 API | Применимо |
+| Amazon Elastic Container Service (ECS) | Не применимо |
+| Amazon ECS Container Insights | Применимо |
+| Amazon Elastic File System (EFS) | Не применимо |
+| Amazon Elastic Kubernetes Service (EKS) | Применимо |
+| Amazon ElastiCache (EC) | Не применимо |
+| AWS Elastic Beanstalk | Применимо |
+| Amazon Elastic Inference | Применимо |
+| Amazon Elastic Transcoder | Применимо |
+| Amazon Elastic Map Reduce (EMR) | Не применимо |
+| Amazon Elasticsearch Service (ES) | Не применимо |
+| Amazon EventBridge | Применимо |
+| Amazon FSx | Применимо |
+| Amazon GameLift | Применимо |
+| AWS Glue | Не применимо |
+| Amazon Inspector | Применимо |
+| AWS Internet of Things (IoT) | Не применимо |
+| AWS IoT Things Graph | Применимо |
+| AWS IoT Analytics | Применимо |
+| Amazon Managed Streaming for Kafka | Применимо |
+| Amazon Kinesis Data Analytics | Не применимо |
+| Amazon Data Firehose | Не применимо |
+| Amazon Kinesis Data Streams | Не применимо |
+| Amazon Kinesis Video Streams | Не применимо |
+| AWS Lambda | Не применимо |
+| Amazon Lex | Применимо |
+| Amazon CloudWatch Logs | Применимо |
+| AWS Elemental MediaTailor | Применимо |
+| AWS Elemental MediaConnect | Применимо |
+| AWS Elemental MediaConvert | Применимо |
+| AWS Elemental MediaPackage Live | Применимо |
+| AWS Elemental MediaPackage Video on Demand | Применимо |
+| Amazon MQ | Применимо |
+| Amazon VPC NAT Gateways | Не применимо |
+| Amazon Neptune | Применимо |
+| AWS OpsWorks | Применимо |
+| Amazon Polly | Применимо |
+| Amazon QLDB | Применимо |
+| Amazon RDS | Не применимо |
+| Amazon Redshift | Не применимо |
+| Amazon Rekognition | Применимо |
+| AWS RoboMaker | Применимо |
+| Amazon Route 53 | Применимо |
+| Amazon Route 53 Resolver | Применимо |
+| Amazon S3 | Не применимо |
+| Amazon SageMaker Batch Transform Jobs | Не применимо |
+| Amazon SageMaker Endpoints | Не применимо |
+| Amazon SageMaker Endpoint Instances | Не применимо |
+| Amazon SageMaker Ground Truth | Не применимо |
+| Amazon SageMaker Processing Jobs | Не применимо |
+| Amazon SageMaker Training Jobs | Не применимо |
+| AWS Service Catalog | Применимо |
+| Amazon Simple Email Service (SES) | Не применимо |
+| Amazon Simple Notification Service (SNS) | Не применимо |
+| Amazon Simple Queue Service (SQS) | Не применимо |
+| AWS Systems Manager - Run Command | Применимо |
+| AWS Step Functions | Применимо |
+| AWS Storage Gateway | Применимо |
+| Amazon SWF | Применимо |
+| Amazon Textract | Применимо |
+| AWS Transfer Family | Применимо |
+| AWS Transit Gateway | Применимо |
+| Amazon Translate | Применимо |
+| AWS Trusted Advisor | Применимо |
+| AWS API Usage | Применимо |
+| AWS Site-to-Site VPN | Применимо |
+| AWS WAF Classic | Применимо |
+| AWS WAF | Применимо |
+| Amazon WorkMail | Применимо |
+| Amazon WorkSpaces | Применимо |
 
 ![Dynamodb](https://dt-cdn.net/images/dashboard-24-1986-616089414a.png)
 
+Dynamodb
+
 ## Доступные метрики
 
-`ClusterId` — основное измерение.
+Основное измерение: `ClusterId`.
 
-| Название | Описание | Единица | Статистика | Измерения | Рекомендуется |
+| Имя | Описание | Единица измерения | Статистика | Измерения | Рекомендуется |
 | --- | --- | --- | --- | --- | --- |
 | BatchGetItemRequestCount | Количество запросов BatchGetItem, обработанных узлом или кластером | Количество | Multi | ClusterId |  |
 | BatchGetItemRequestCount |  | Количество | Multi | ClusterId, NodeId |  |
-| BatchGetItemRequestCount |  | Количество | Sum | ClusterId | Доступна |
-| BatchGetItemRequestCount |  | Количество | Sum | ClusterId, NodeId | Доступна |
+| BatchGetItemRequestCount |  | Количество | Sum | ClusterId | Применимо |
+| BatchGetItemRequestCount |  | Количество | Sum | ClusterId, NodeId | Применимо |
 | BatchGetItemRequestCount |  | Количество | Multi | Region |  |
-| BatchGetItemRequestCount |  | Количество | Sum | Region | Доступна |
+| BatchGetItemRequestCount |  | Количество | Sum | Region | Применимо |
 | BatchWriteItemRequestCount | Количество запросов BatchWriteItem, обработанных узлом или кластером | Количество | Multi | ClusterId |  |
 | BatchWriteItemRequestCount |  | Количество | Multi | ClusterId, NodeId |  |
-| BatchWriteItemRequestCount |  | Количество | Sum | ClusterId | Доступна |
-| BatchWriteItemRequestCount |  | Количество | Sum | ClusterId, NodeId | Доступна |
+| BatchWriteItemRequestCount |  | Количество | Sum | ClusterId | Применимо |
+| BatchWriteItemRequestCount |  | Количество | Sum | ClusterId, NodeId | Применимо |
 | BatchWriteItemRequestCount |  | Количество | Multi | Region |  |
-| BatchWriteItemRequestCount |  | Количество | Sum | Region | Доступна |
-| CPUUtilization | Процент использования ЦП узлом или кластером | Процент | Multi | ClusterId | Доступна |
-| CPUUtilization |  | Процент | Multi | ClusterId, NodeId | Доступна |
-| CPUUtilization |  | Процент | Multi | Region | Доступна |
-| ClientConnections | Количество одновременных соединений клиентов с узлом или кластером | Количество | Multi | ClusterId | Доступна |
-| ClientConnections |  | Количество | Multi | ClusterId, NodeId | Доступна |
-| ClientConnections |  | Количество | Sum | ClusterId | Доступна |
-| ClientConnections |  | Количество | Sum | ClusterId, NodeId | Доступна |
-| ClientConnections |  | Количество | Multi | Region | Доступна |
-| ClientConnections |  | Количество | Sum | Region | Доступна |
+| BatchWriteItemRequestCount |  | Количество | Sum | Region | Применимо |
+| CPUUtilization | Процент загрузки CPU узла или кластера | Процент | Multi | ClusterId | Применимо |
+| CPUUtilization |  | Процент | Multi | ClusterId, NodeId | Применимо |
+| CPUUtilization |  | Процент | Multi | Region | Применимо |
+| ClientConnections | Количество одновременных подключений, установленных клиентами к узлу или кластеру | Количество | Multi | ClusterId | Применимо |
+| ClientConnections |  | Количество | Multi | ClusterId, NodeId | Применимо |
+| ClientConnections |  | Количество | Sum | ClusterId | Применимо |
+| ClientConnections |  | Количество | Sum | ClusterId, NodeId | Применимо |
+| ClientConnections |  | Количество | Multi | Region | Применимо |
+| ClientConnections |  | Количество | Sum | Region | Применимо |
 | DeleteItemRequestCount | Количество запросов DeleteItem, обработанных узлом или кластером | Количество | Multi | ClusterId |  |
 | DeleteItemRequestCount |  | Количество | Multi | ClusterId, NodeId |  |
-| DeleteItemRequestCount |  | Количество | Sum | ClusterId | Доступна |
-| DeleteItemRequestCount |  | Количество | Sum | ClusterId, NodeId | Доступна |
+| DeleteItemRequestCount |  | Количество | Sum | ClusterId | Применимо |
+| DeleteItemRequestCount |  | Количество | Sum | ClusterId, NodeId | Применимо |
 | DeleteItemRequestCount |  | Количество | Multi | Region |  |
-| DeleteItemRequestCount |  | Количество | Sum | Region | Доступна |
-| ErrorRequestCount | Общее количество запросов, завершившихся ошибкой пользователя, зафиксированной узлом или кластером. Включает запросы, ограниченные по скорости узлом или кластером. | Количество | Multi | ClusterId |  |
+| DeleteItemRequestCount |  | Количество | Sum | Region | Применимо |
+| ErrorRequestCount | Общее количество запросов, приведших к пользовательской ошибке, зарегистрированных узлом или кластером. Включаются запросы, подвергнутые регулированию узлом или кластером. | Количество | Multi | ClusterId |  |
 | ErrorRequestCount |  | Количество | Multi | ClusterId, NodeId |  |
-| ErrorRequestCount |  | Количество | Sum | ClusterId | Доступна |
-| ErrorRequestCount |  | Количество | Sum | ClusterId, NodeId | Доступна |
+| ErrorRequestCount |  | Количество | Sum | ClusterId | Применимо |
+| ErrorRequestCount |  | Количество | Sum | ClusterId, NodeId | Применимо |
 | ErrorRequestCount |  | Количество | Multi | Region |  |
-| ErrorRequestCount |  | Количество | Sum | Region | Доступна |
-| EstimatedDbSize | Приблизительный объём данных, кэшированных в кэше элементов и кэше запросов узлом или кластером | Байты | Multi | ClusterId | Доступна |
-| EstimatedDbSize |  | Байты | Multi | ClusterId, NodeId | Доступна |
-| EstimatedDbSize |  | Байты | Multi | Region | Доступна |
-| EvictedSize | Объём данных, вытесненных узлом или кластером для освобождения места для новых запрошенных данных | Байты | Multi | ClusterId | Доступна |
-| EvictedSize |  | Байты | Multi | ClusterId, NodeId | Доступна |
-| EvictedSize |  | Байты | Sum | ClusterId | Доступна |
-| EvictedSize |  | Байты | Sum | ClusterId, NodeId | Доступна |
-| EvictedSize |  | Байты | Multi | Region | Доступна |
-| EvictedSize |  | Байты | Sum | Region | Доступна |
-| FailedRequestCount | Общее количество запросов, завершившихся ошибкой, зафиксированной узлом или кластером | Количество | Multi | ClusterId |  |
+| ErrorRequestCount |  | Количество | Sum | Region | Применимо |
+| EstimatedDbSize | Приблизительный объём данных, кэшированных в кэше элементов и кэше запросов узлом или кластером | Байт | Multi | ClusterId | Применимо |
+| EstimatedDbSize |  | Байт | Multi | ClusterId, NodeId | Применимо |
+| EstimatedDbSize |  | Байт | Multi | Region | Применимо |
+| EvictedSize | Объём данных, вытесненных узлом или кластером для освобождения места под вновь запрошенные данные | Байт | Multi | ClusterId | Применимо |
+| EvictedSize |  | Байт | Multi | ClusterId, NodeId | Применимо |
+| EvictedSize |  | Байт | Sum | ClusterId | Применимо |
+| EvictedSize |  | Байт | Sum | ClusterId, NodeId | Применимо |
+| EvictedSize |  | Байт | Multi | Region | Применимо |
+| EvictedSize |  | Байт | Sum | Region | Применимо |
+| FailedRequestCount | Общее количество запросов, приведших к ошибке, зарегистрированных узлом или кластером | Количество | Multi | ClusterId |  |
 | FailedRequestCount |  | Количество | Multi | ClusterId, NodeId |  |
-| FailedRequestCount |  | Количество | Sum | ClusterId | Доступна |
-| FailedRequestCount |  | Количество | Sum | ClusterId, NodeId | Доступна |
+| FailedRequestCount |  | Количество | Sum | ClusterId | Применимо |
+| FailedRequestCount |  | Количество | Sum | ClusterId, NodeId | Применимо |
 | FailedRequestCount |  | Количество | Multi | Region |  |
-| FailedRequestCount |  | Количество | Sum | Region | Доступна |
-| FaultRequestCount | Общее количество запросов, завершившихся внутренней ошибкой, зафиксированной узлом или кластером | Количество | Multi | ClusterId |  |
+| FailedRequestCount |  | Количество | Sum | Region | Применимо |
+| FaultRequestCount | Общее количество запросов, приведших к внутренней ошибке, зарегистрированных узлом или кластером | Количество | Multi | ClusterId |  |
 | FaultRequestCount |  | Количество | Multi | ClusterId, NodeId |  |
-| FaultRequestCount |  | Количество | Sum | ClusterId | Доступна |
-| FaultRequestCount |  | Количество | Sum | ClusterId, NodeId | Доступна |
+| FaultRequestCount |  | Количество | Sum | ClusterId | Применимо |
+| FaultRequestCount |  | Количество | Sum | ClusterId, NodeId | Применимо |
 | FaultRequestCount |  | Количество | Multi | Region |  |
-| FaultRequestCount |  | Количество | Sum | Region | Доступна |
+| FaultRequestCount |  | Количество | Sum | Region | Применимо |
 | GetItemRequestCount | Количество запросов GetItem, обработанных узлом или кластером | Количество | Multi | ClusterId |  |
 | GetItemRequestCount |  | Количество | Multi | ClusterId, NodeId |  |
-| GetItemRequestCount |  | Количество | Sum | ClusterId | Доступна |
-| GetItemRequestCount |  | Количество | Sum | ClusterId, NodeId | Доступна |
+| GetItemRequestCount |  | Количество | Sum | ClusterId | Применимо |
+| GetItemRequestCount |  | Количество | Sum | ClusterId, NodeId | Применимо |
 | GetItemRequestCount |  | Количество | Multi | Region |  |
-| GetItemRequestCount |  | Количество | Sum | Region | Доступна |
+| GetItemRequestCount |  | Количество | Sum | Region | Применимо |
 | ItemCacheHits | Количество случаев, когда элемент был возвращён из кэша узлом или кластером | Количество | Multi | ClusterId |  |
 | ItemCacheHits |  | Количество | Multi | ClusterId, NodeId |  |
-| ItemCacheHits |  | Количество | Sum | ClusterId | Доступна |
-| ItemCacheHits |  | Количество | Sum | ClusterId, NodeId | Доступна |
+| ItemCacheHits |  | Количество | Sum | ClusterId | Применимо |
+| ItemCacheHits |  | Количество | Sum | ClusterId, NodeId | Применимо |
 | ItemCacheHits |  | Количество | Multi | Region |  |
-| ItemCacheHits |  | Количество | Sum | Region | Доступна |
-| ItemCacheMisses | Количество случаев, когда элемент отсутствовал в кэше узла или кластера и должен был быть получен из DynamoDB | Количество | Multi | ClusterId |  |
+| ItemCacheHits |  | Количество | Sum | Region | Применимо |
+| ItemCacheMisses | Количество случаев, когда элемент отсутствовал в кэше узла или кластера и его пришлось извлекать из DynamoDB | Количество | Multi | ClusterId |  |
 | ItemCacheMisses |  | Количество | Multi | ClusterId, NodeId |  |
-| ItemCacheMisses |  | Количество | Sum | ClusterId | Доступна |
-| ItemCacheMisses |  | Количество | Sum | ClusterId, NodeId | Доступна |
+| ItemCacheMisses |  | Количество | Sum | ClusterId | Применимо |
+| ItemCacheMisses |  | Количество | Sum | ClusterId, NodeId | Применимо |
 | ItemCacheMisses |  | Количество | Multi | Region |  |
-| ItemCacheMisses |  | Количество | Sum | Region | Доступна |
-| NetworkBytesIn | Количество байт, полученных через все сетевые интерфейсы узлом или кластером | Байты | Multi | ClusterId | Доступна |
-| NetworkBytesIn |  | Байты | Multi | ClusterId, NodeId | Доступна |
-| NetworkBytesIn |  | Байты | Multi | Region | Доступна |
-| NetworkBytesOut | Количество байт, отправленных через все сетевые интерфейсы узлом или кластером. Эта метрика отражает объём исходящего трафика в байтах для одного узла или кластера. | Байты | Multi | ClusterId | Доступна |
-| NetworkBytesOut |  | Байты | Multi | ClusterId, NodeId | Доступна |
-| NetworkBytesOut |  | Байты | Multi | Region | Доступна |
-| NetworkPacketsIn | Количество пакетов, полученных через все сетевые интерфейсы узлом или кластером | Количество | Multi | ClusterId | Доступна |
-| NetworkPacketsIn |  | Количество | Multi | ClusterId, NodeId | Доступна |
-| NetworkPacketsIn |  | Количество | Multi | Region | Доступна |
-| NetworkPacketsOut | Количество пакетов, отправленных через все сетевые интерфейсы узлом или кластером. Эта метрика отражает объём исходящего трафика в пакетах для одного узла или кластера. | Количество | Multi | ClusterId | Доступна |
-| NetworkPacketsOut |  | Количество | Multi | ClusterId, NodeId | Доступна |
-| NetworkPacketsOut |  | Количество | Multi | Region | Доступна |
+| ItemCacheMisses |  | Количество | Sum | Region | Применимо |
+| NetworkBytesIn | Количество байт, полученных на всех сетевых интерфейсах узлом или кластером | Байт | Multi | ClusterId | Применимо |
+| NetworkBytesIn |  | Байт | Multi | ClusterId, NodeId | Применимо |
+| NetworkBytesIn |  | Байт | Multi | Region | Применимо |
+| NetworkBytesOut | Количество байт, отправленных на всех сетевых интерфейсах узлом или кластером. Эта метрика определяет объём исходящего трафика в виде количества байт на одном узле или кластере. | Байт | Multi | ClusterId | Применимо |
+| NetworkBytesOut |  | Байт | Multi | ClusterId, NodeId | Применимо |
+| NetworkBytesOut |  | Байт | Multi | Region | Применимо |
+| NetworkPacketsIn | Количество пакетов, полученных на всех сетевых интерфейсах узлом или кластером | Количество | Multi | ClusterId | Применимо |
+| NetworkPacketsIn |  | Количество | Multi | ClusterId, NodeId | Применимо |
+| NetworkPacketsIn |  | Количество | Multi | Region | Применимо |
+| NetworkPacketsOut | Количество пакетов, отправленных на всех сетевых интерфейсах узлом или кластером. Эта метрика определяет объём исходящего трафика в виде количества пакетов на одном узле или кластере. | Количество | Multi | ClusterId | Применимо |
+| NetworkPacketsOut |  | Количество | Multi | ClusterId, NodeId | Применимо |
+| NetworkPacketsOut |  | Количество | Multi | Region | Применимо |
 | PutItemRequestCount | Количество запросов PutItem, обработанных узлом или кластером | Количество | Multi | ClusterId |  |
 | PutItemRequestCount |  | Количество | Multi | ClusterId, NodeId |  |
-| PutItemRequestCount |  | Количество | Sum | ClusterId | Доступна |
-| PutItemRequestCount |  | Количество | Sum | ClusterId, NodeId | Доступна |
+| PutItemRequestCount |  | Количество | Sum | ClusterId | Применимо |
+| PutItemRequestCount |  | Количество | Sum | ClusterId, NodeId | Применимо |
 | PutItemRequestCount |  | Количество | Multi | Region |  |
-| PutItemRequestCount |  | Количество | Sum | Region | Доступна |
+| PutItemRequestCount |  | Количество | Sum | Region | Применимо |
 | QueryCacheHits | Количество случаев, когда результат запроса был возвращён из кэша узла или кластера | Количество | Multi | ClusterId |  |
 | QueryCacheHits |  | Количество | Multi | ClusterId, NodeId |  |
-| QueryCacheHits |  | Количество | Sum | ClusterId | Доступна |
-| QueryCacheHits |  | Количество | Sum | ClusterId, NodeId | Доступна |
+| QueryCacheHits |  | Количество | Sum | ClusterId | Применимо |
+| QueryCacheHits |  | Количество | Sum | ClusterId, NodeId | Применимо |
 | QueryCacheHits |  | Количество | Multi | Region |  |
-| QueryCacheHits |  | Количество | Sum | Region | Доступна |
-| QueryCacheMisses | Количество случаев, когда результат запроса отсутствовал в кэше узла или кластера и должен был быть получен из DynamoDB | Количество | Multi | ClusterId |  |
+| QueryCacheHits |  | Количество | Sum | Region | Применимо |
+| QueryCacheMisses | Количество случаев, когда результат запроса отсутствовал в кэше узла или кластера и его пришлось извлекать из DynamoDB | Количество | Multi | ClusterId |  |
 | QueryCacheMisses |  | Количество | Multi | ClusterId, NodeId |  |
-| QueryCacheMisses |  | Количество | Sum | ClusterId | Доступна |
-| QueryCacheMisses |  | Количество | Sum | ClusterId, NodeId | Доступна |
+| QueryCacheMisses |  | Количество | Sum | ClusterId | Применимо |
+| QueryCacheMisses |  | Количество | Sum | ClusterId, NodeId | Применимо |
 | QueryCacheMisses |  | Количество | Multi | Region |  |
-| QueryCacheMisses |  | Количество | Sum | Region | Доступна |
-| QueryRequestCount | Количество запросов на выборку, обработанных узлом или кластером | Количество | Multi | ClusterId |  |
+| QueryCacheMisses |  | Количество | Sum | Region | Применимо |
+| QueryRequestCount | Количество запросов query, обработанных узлом или кластером | Количество | Multi | ClusterId |  |
 | QueryRequestCount |  | Количество | Multi | ClusterId, NodeId |  |
-| QueryRequestCount |  | Количество | Sum | ClusterId | Доступна |
-| QueryRequestCount |  | Количество | Sum | ClusterId, NodeId | Доступна |
+| QueryRequestCount |  | Количество | Sum | ClusterId | Применимо |
+| QueryRequestCount |  | Количество | Sum | ClusterId, NodeId | Применимо |
 | QueryRequestCount |  | Количество | Multi | Region |  |
-| QueryRequestCount |  | Количество | Sum | Region | Доступна |
+| QueryRequestCount |  | Количество | Sum | Region | Применимо |
 | ScanCacheHits | Количество случаев, когда результат сканирования был возвращён из кэша узла или кластера | Количество | Multi | ClusterId |  |
 | ScanCacheHits |  | Количество | Multi | ClusterId, NodeId |  |
-| ScanCacheHits |  | Количество | Sum | ClusterId | Доступна |
-| ScanCacheHits |  | Количество | Sum | ClusterId, NodeId | Доступна |
+| ScanCacheHits |  | Количество | Sum | ClusterId | Применимо |
+| ScanCacheHits |  | Количество | Sum | ClusterId, NodeId | Применимо |
 | ScanCacheHits |  | Количество | Multi | Region |  |
-| ScanCacheHits |  | Количество | Sum | Region | Доступна |
-| ScanCacheMisses | Количество случаев, когда результат сканирования отсутствовал в кэше узла или кластера и должен был быть получен из DynamoDB | Количество | Multi | ClusterId |  |
+| ScanCacheHits |  | Количество | Sum | Region | Применимо |
+| ScanCacheMisses | Количество случаев, когда результат сканирования отсутствовал в кэше узла или кластера и его пришлось извлекать из DynamoDB | Количество | Multi | ClusterId |  |
 | ScanCacheMisses |  | Количество | Multi | ClusterId, NodeId |  |
-| ScanCacheMisses |  | Количество | Sum | ClusterId | Доступна |
-| ScanCacheMisses |  | Количество | Sum | ClusterId, NodeId | Доступна |
+| ScanCacheMisses |  | Количество | Sum | ClusterId | Применимо |
+| ScanCacheMisses |  | Количество | Sum | ClusterId, NodeId | Применимо |
 | ScanCacheMisses |  | Количество | Multi | Region |  |
-| ScanCacheMisses |  | Количество | Sum | Region | Доступна |
-| ScanRequestCount | Количество запросов на сканирование, обработанных узлом или кластером | Количество | Multi | ClusterId |  |
+| ScanCacheMisses |  | Количество | Sum | Region | Применимо |
+| ScanRequestCount | Количество запросов scan, обработанных узлом или кластером | Количество | Multi | ClusterId |  |
 | ScanRequestCount |  | Количество | Multi | ClusterId, NodeId |  |
-| ScanRequestCount |  | Количество | Sum | ClusterId | Доступна |
-| ScanRequestCount |  | Количество | Sum | ClusterId, NodeId | Доступна |
+| ScanRequestCount |  | Количество | Sum | ClusterId | Применимо |
+| ScanRequestCount |  | Количество | Sum | ClusterId, NodeId | Применимо |
 | ScanRequestCount |  | Количество | Multi | Region |  |
-| ScanRequestCount |  | Количество | Sum | Region | Доступна |
-| ThrottledRequestCount | Общее количество запросов, ограниченных по скорости узлом или кластером | Количество | Multi | ClusterId |  |
+| ScanRequestCount |  | Количество | Sum | Region | Применимо |
+| ThrottledRequestCount | Общее количество запросов, подвергнутых регулированию узлом или кластером | Количество | Multi | ClusterId |  |
 | ThrottledRequestCount |  | Количество | Multi | ClusterId, NodeId |  |
-| ThrottledRequestCount |  | Количество | Sum | ClusterId | Доступна |
-| ThrottledRequestCount |  | Количество | Sum | ClusterId, NodeId | Доступна |
+| ThrottledRequestCount |  | Количество | Sum | ClusterId | Применимо |
+| ThrottledRequestCount |  | Количество | Sum | ClusterId, NodeId | Применимо |
 | ThrottledRequestCount |  | Количество | Multi | Region |  |
-| ThrottledRequestCount |  | Количество | Sum | Region | Доступна |
+| ThrottledRequestCount |  | Количество | Sum | Region | Применимо |
 | TotalRequestCount | Общее количество запросов, обработанных узлом или кластером | Количество | Multi | ClusterId |  |
 | TotalRequestCount |  | Количество | Multi | ClusterId, NodeId |  |
-| TotalRequestCount |  | Количество | Sum | ClusterId | Доступна |
-| TotalRequestCount |  | Количество | Sum | ClusterId, NodeId | Доступна |
+| TotalRequestCount |  | Количество | Sum | ClusterId | Применимо |
+| TotalRequestCount |  | Количество | Sum | ClusterId, NodeId | Применимо |
 | TotalRequestCount |  | Количество | Multi | Region |  |
-| TotalRequestCount |  | Количество | Sum | Region | Доступна |
+| TotalRequestCount |  | Количество | Sum | Region | Применимо |
 | TransactGetItemsCount | Количество запросов TransactGetItems, обработанных узлом или кластером | Количество | Multi | ClusterId |  |
 | TransactGetItemsCount |  | Количество | Multi | ClusterId, NodeId |  |
-| TransactGetItemsCount |  | Количество | Sum | ClusterId | Доступна |
-| TransactGetItemsCount |  | Количество | Sum | ClusterId, NodeId | Доступна |
+| TransactGetItemsCount |  | Количество | Sum | ClusterId | Применимо |
+| TransactGetItemsCount |  | Количество | Sum | ClusterId, NodeId | Применимо |
 | TransactGetItemsCount |  | Количество | Multi | Region |  |
-| TransactGetItemsCount |  | Количество | Sum | Region | Доступна |
+| TransactGetItemsCount |  | Количество | Sum | Region | Применимо |
 | TransactWriteItemsCount | Количество запросов TransactWriteItems, обработанных узлом или кластером | Количество | Multi | ClusterId |  |
 | TransactWriteItemsCount |  | Количество | Multi | ClusterId, NodeId |  |
-| TransactWriteItemsCount |  | Количество | Sum | ClusterId | Доступна |
-| TransactWriteItemsCount |  | Количество | Sum | ClusterId, NodeId | Доступна |
+| TransactWriteItemsCount |  | Количество | Sum | ClusterId | Применимо |
+| TransactWriteItemsCount |  | Количество | Sum | ClusterId, NodeId | Применимо |
 | TransactWriteItemsCount |  | Количество | Multi | Region |  |
-| TransactWriteItemsCount |  | Количество | Sum | Region | Доступна |
+| TransactWriteItemsCount |  | Количество | Sum | Region | Применимо |
 | UpdateItemRequestCount | Количество запросов UpdateItem, обработанных узлом или кластером | Количество | Multi | ClusterId |  |
 | UpdateItemRequestCount |  | Количество | Multi | ClusterId, NodeId |  |
-| UpdateItemRequestCount |  | Количество | Sum | ClusterId | Доступна |
-| UpdateItemRequestCount |  | Количество | Sum | ClusterId, NodeId | Доступна |
+| UpdateItemRequestCount |  | Количество | Sum | ClusterId | Применимо |
+| UpdateItemRequestCount |  | Количество | Sum | ClusterId, NodeId | Применимо |
 | UpdateItemRequestCount |  | Количество | Multi | Region |  |
-| UpdateItemRequestCount |  | Количество | Sum | Region | Доступна |
+| UpdateItemRequestCount |  | Количество | Sum | Region | Применимо |

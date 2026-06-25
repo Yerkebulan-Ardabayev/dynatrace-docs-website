@@ -1,10 +1,15 @@
 ---
-title: "How to enable deep monitoring for applications confined by AppArmor"
+title: How to enable deep monitoring for applications confined by AppArmor
 source: https://docs.dynatrace.com/managed/ingest-from/dynatrace-oneagent/installation-and-operation/linux/operation/how-to-enable-deep-monitoring-for-applications-confined-by-apparmor
-updated: 2026-02-09
+scraped: 2026-05-12T11:05:35.548711
 ---
 
+# How to enable deep monitoring for applications confined by AppArmor
+
+# How to enable deep monitoring for applications confined by AppArmor
+
 * 2-min read
+* Published Aug 08, 2017
 
 AppArmor is a mandatory access control system that restricts applications to a limited set of resources. For each confined application, a profile exists that specifies what operations the application is allowed to perform as well as the paths in the file system that the application is allowed to access. In order to enable deep monitoring of applications confined by AppArmor, a custom rule set for OneAgent must be included in the profiles of these applications.
 
@@ -14,6 +19,7 @@ We assume that the directory structure for AppArmor is the following:
 
 ```
 /etc/apparmor.d/
+
 
 
 |--- usr.sbin.tomcat-sysd
@@ -27,10 +33,13 @@ Where `usr.sbin.tomcat-sysd` is the file that defines the AppArmor profile for T
    /etc/apparmor.d/
 
 
+
    |--- usr.sbin.tomcat-sysd
 
 
+
    |--- dynatrace-oneagent
+
 
 
    |--- agentinjection
@@ -41,106 +50,139 @@ Where `usr.sbin.tomcat-sysd` is the file that defines the AppArmor profile for T
    #include <abstractions/base>
 
 
+
    #include <abstractions/nameservice>
+
 
 
    # Process Agent injection
 
 
+
    /etc/ld.so.preload r,
+
 
 
    # Host identifier calculation
 
 
+
    /sys/class/net/ r,
+
 
 
    /sys/devices/virtual/net/** r,
 
 
+
    /sys/devices/*/*{,/*}/net/** r,
+
 
 
    # OneAgent directories
 
 
+
    /opt/dynatrace/oneagent/agent/** mr,
+
 
 
    /var/lib/dynatrace/oneagent/** r,
 
 
+
    /var/lib/dynatrace/oneagent/agent/runtime/** w,
+
 
 
    /var/lib/dynatrace/oneagent/agent/config/{discovery_entry_point,ruxit_shm_v*} w,
 
 
+
    /var/lib/dynatrace/enrichment/** r,
+
 
 
    # This path must be adjusted if LOG_PATH installation parameter was used
 
 
+
    /var/log/dynatrace/oneagent/** rkw,
 
 
+
    # This path must be adjusted if DATA_STORAGE installation parameter was used
+
 
 
    /var/lib/dynatrace/oneagent/datastorage/** rkw,
 
 
+
    # Needed for Process Agent to determine whether specialized agent should be loaded and to calculate PGI ID
+
 
 
    /proc/[0-9]*/{cgroup,cmdline,environ,maps,mem,mountinfo,stat,statm,task/*/maps,task/*/mem} r,
 
 
+
    # Miscellaneous
+
 
 
    /dev/random rw,
 
 
+
    /etc/os-release r,
+
 
 
    /proc/sys/fs/file-nr r,
 
 
+
    /proc/sys/kernel/hostname r,
+
 
 
    /proc/{uptime,vmstat} r,
 
 
+
    /sys/devices/system/cpu/ r,
+
 
 
    /sys/fs/cgroup{,/,/**} r,
 
 
+
    /tmp/** rw,
+
 
 
    /var/tmp/ r,
 
 
+
    /var/tmp/** rw,
+
 
 
    /{,var/}run/utmp rk,
 
 
+
    /proc/cgroups r,
    ```
 
-   If you used the DATA\_STORAGE installation parameter to define a custom directory dedicated to storing large runtime data, edit the following line and add your custom directory
+   If you used the [DATA\_STORAGE](/managed/ingest-from/dynatrace-oneagent/installation-and-operation/linux/installation/customize-oneagent-installation-on-linux "Learn how to use the Linux installer with command line parameters.") installation parameter to define a custom directory dedicated to storing large runtime data, edit the following line and add your custom directory
 
    ```
    # This path must be adjusted if DATA_STORAGE installation parameter was used
+
 
 
    /var/lib/dynatrace/oneagent/datastorage/** rkw,
@@ -151,10 +193,13 @@ Where `usr.sbin.tomcat-sysd` is the file that defines the AppArmor profile for T
    /usr/sbin/tomcat-sysd {
 
 
+
    #include <dynatrace-oneagent/agentinjection>
 
 
+
    ... (rest of the rules that were already present in the profile)
+
 
 
    }
@@ -176,10 +221,13 @@ In case you experience denials related to OneAgent for other processes in the sy
 # Process injection
 
 
+
 /etc/ld.so.preload r,
 
 
+
 /etc/oneagentproc/ld.so.preload r,
+
 
 
 /var/log/dynatrace/oneagent/process/* rkw,

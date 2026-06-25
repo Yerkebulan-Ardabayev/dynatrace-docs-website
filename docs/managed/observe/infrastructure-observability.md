@@ -1,10 +1,16 @@
 ---
-title: "Infrastructure Observability"
+title: Infrastructure Observability
 source: https://docs.dynatrace.com/managed/observe/infrastructure-observability
-updated: 2026-02-09
+scraped: 2026-05-12T11:03:27.812323
 ---
 
+# Infrastructure Observability
+
+# Infrastructure Observability
+
+* Overview
 * 1-min read
+* Published Aug 12, 2021
 
 [#### Container platform monitoring
 
@@ -34,7 +40,7 @@ Read this guide](/managed/observe/infrastructure-observability/vmware-vsphere-mo
 
 ## Related topics
 
-* Serverless monitoring
-* Ingest data
-* Monitor container groups
-* Container monitoring rules
+* [Serverless monitoring](/managed/discover-dynatrace/get-started/serverless-monitoring "Serverless observability with Dynatrace")
+* [Ingest data](/managed/ingest-from "Learn how to install and configure ActiveGate and OneAgent on various platforms.")
+* [Monitor container groups](/managed/observe/infrastructure-observability/container-platform-monitoring/container-groups "Overview on container groups monitoring")
+* [Container monitoring rules](/managed/observe/infrastructure-observability/container-platform-monitoring/container-monitoring-rules "Define, enable and disable container monitoring rules")

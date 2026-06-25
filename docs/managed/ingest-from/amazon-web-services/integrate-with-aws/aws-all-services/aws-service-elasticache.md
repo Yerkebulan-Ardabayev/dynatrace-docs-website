@@ -1,13 +1,13 @@
 ---
 title: Amazon ElastiCache monitoring
-source: https://www.dynatrace.com/docs/ingest-from/amazon-web-services/integrate-with-aws/aws-all-services/aws-service-elasticache
-scraped: 2026-03-06T21:30:12.764840
+source: https://docs.dynatrace.com/managed/ingest-from/amazon-web-services/integrate-with-aws/aws-all-services/aws-service-elasticache
+scraped: 2026-05-12T11:29:22.646085
 ---
 
 # Amazon ElastiCache monitoring
 
+# Amazon ElastiCache monitoring
 
-* Classic
 * How-to guide
 * 13-min read
 * Published Oct 15, 2020
@@ -23,9 +23,9 @@ To enable monitoring for this service, you need
   + For Dynatrace SaaS deployments, you need an Environment ActiveGate or a Multi-environment ActiveGate.
   + For Dynatrace Managed deployments, you can use any kind of ActiveGate.
 
-    For role-based access (whether in a SaaS or [Managedï»¿](https://docs.dynatrace.com/managed/shortlink/aws-managed-deployment) deployment), you need an Environment ActiveGate installed on an Amazon EC2 host.
+    For role-based access (whether in a [SaaS](/managed/ingest-from/amazon-web-services/integrate-with-aws/cloudwatch-metrics#role-based-access "Integrate metrics from Amazon CloudWatch.") or [Managed](/managed/ingest-from/amazon-web-services/set-up-aws-monitoring-with-managed#role-based-access "Connect your Amazon account with Dynatrace Managed and start monitoring.") deployment), you need an [Environment ActiveGate](/managed/ingest-from/dynatrace-activegate/installation "Learn how to configure ActiveGate") installed on an Amazon EC2 host.
 * Dynatrace version 1.182+
-* An updated AWS monitoring policy to include the additional AWS services.  
+* An updated [AWS monitoring policy](/managed/ingest-from/amazon-web-services/integrate-with-aws/cloudwatch-metrics#aws-policy-and-authentication "Integrate metrics from Amazon CloudWatch.") to include the additional AWS services.  
   To [update the AWS IAM policyï»¿](https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_manage-edit.html#edit-managed-policy-console), use the JSON below, containing the monitoring policy (permissions) for all supporting services.
 
 JSON predefined policy for all supporting services
@@ -34,292 +34,387 @@ JSON predefined policy for all supporting services
 {
 
 
+
 "Version": "2012-10-17",
+
 
 
 "Statement": [
 
 
+
 {
+
 
 
 "Sid": "VisualEditor0",
 
 
+
 "Effect": "Allow",
+
 
 
 "Action": [
 
 
+
 "acm-pca:ListCertificateAuthorities",
+
 
 
 "apigateway:GET",
 
 
+
 "apprunner:ListServices",
+
 
 
 "appstream:DescribeFleets",
 
 
+
 "appsync:ListGraphqlApis",
+
 
 
 "athena:ListWorkGroups",
 
 
+
 "autoscaling:DescribeAutoScalingGroups",
+
 
 
 "cloudformation:ListStackResources",
 
 
+
 "cloudfront:ListDistributions",
+
 
 
 "cloudhsm:DescribeClusters",
 
 
+
 "cloudsearch:DescribeDomains",
+
 
 
 "cloudwatch:GetMetricData",
 
 
+
 "cloudwatch:GetMetricStatistics",
+
 
 
 "cloudwatch:ListMetrics",
 
 
+
 "codebuild:ListProjects",
+
 
 
 "datasync:ListTasks",
 
 
+
 "dax:DescribeClusters",
+
 
 
 "directconnect:DescribeConnections",
 
 
+
 "dms:DescribeReplicationInstances",
+
 
 
 "dynamodb:ListTables",
 
 
+
 "dynamodb:ListTagsOfResource",
+
 
 
 "ec2:DescribeAvailabilityZones",
 
 
+
 "ec2:DescribeInstances",
+
 
 
 "ec2:DescribeNatGateways",
 
 
+
 "ec2:DescribeSpotFleetRequests",
+
 
 
 "ec2:DescribeTransitGateways",
 
 
+
 "ec2:DescribeVolumes",
+
 
 
 "ec2:DescribeVpnConnections",
 
 
+
 "ecs:ListClusters",
+
 
 
 "eks:ListClusters",
 
 
+
 "elasticache:DescribeCacheClusters",
+
 
 
 "elasticbeanstalk:DescribeEnvironmentResources",
 
 
+
 "elasticbeanstalk:DescribeEnvironments",
+
 
 
 "elasticfilesystem:DescribeFileSystems",
 
 
+
 "elasticloadbalancing:DescribeInstanceHealth",
+
 
 
 "elasticloadbalancing:DescribeListeners",
 
 
+
 "elasticloadbalancing:DescribeLoadBalancers",
+
 
 
 "elasticloadbalancing:DescribeRules",
 
 
+
 "elasticloadbalancing:DescribeTags",
+
 
 
 "elasticloadbalancing:DescribeTargetHealth",
 
 
+
 "elasticmapreduce:ListClusters",
+
 
 
 "elastictranscoder:ListPipelines",
 
 
+
 "es:ListDomainNames",
+
 
 
 "events:ListEventBuses",
 
 
+
 "firehose:ListDeliveryStreams",
+
 
 
 "fsx:DescribeFileSystems",
 
 
+
 "gamelift:ListFleets",
+
 
 
 "glue:GetJobs",
 
 
+
 "inspector:ListAssessmentTemplates",
+
 
 
 "kafka:ListClusters",
 
 
+
 "kinesis:ListStreams",
+
 
 
 "kinesisanalytics:ListApplications",
 
 
+
 "kinesisvideo:ListStreams",
+
 
 
 "lambda:ListFunctions",
 
 
+
 "lambda:ListTags",
+
 
 
 "lex:GetBots",
 
 
+
 "logs:DescribeLogGroups",
+
 
 
 "mediaconnect:ListFlows",
 
 
+
 "mediaconvert:DescribeEndpoints",
+
 
 
 "mediapackage-vod:ListPackagingConfigurations",
 
 
+
 "mediapackage:ListChannels",
+
 
 
 "mediatailor:ListPlaybackConfigurations",
 
 
+
 "opsworks:DescribeStacks",
+
 
 
 "qldb:ListLedgers",
 
 
+
 "rds:DescribeDBClusters",
+
 
 
 "rds:DescribeDBInstances",
 
 
+
 "rds:DescribeEvents",
+
 
 
 "rds:ListTagsForResource",
 
 
+
 "redshift:DescribeClusters",
+
 
 
 "robomaker:ListSimulationJobs",
 
 
+
 "route53:ListHostedZones",
+
 
 
 "route53resolver:ListResolverEndpoints",
 
 
+
 "s3:ListAllMyBuckets",
+
 
 
 "sagemaker:ListEndpoints",
 
 
+
 "sns:ListTopics",
+
 
 
 "sqs:ListQueues",
 
 
+
 "storagegateway:ListGateways",
+
 
 
 "sts:GetCallerIdentity",
 
 
+
 "swf:ListDomains",
+
 
 
 "tag:GetResources",
 
 
+
 "tag:GetTagKeys",
+
 
 
 "transfer:ListServers",
 
 
+
 "workmail:ListOrganizations",
+
 
 
 "workspaces:DescribeWorkspaces"
 
 
+
 ],
+
 
 
 "Resource": "*"
 
 
+
 }
+
 
 
 ]
 
 
+
 }
 ```
 
-If you don't want to add permissions to all services, and just select permissions for certain services, consult the table below. The table contains a set of permissions that are required for All AWS cloud services and, for each supporting service, a list of optional permissions specific to that service.
+If you don't want to add permissions to all services, and just select permissions for certain services, consult the table below. The table contains a set of permissions that are required for [All AWS cloud services](/managed/ingest-from/amazon-web-services/integrate-with-aws/aws-all-services "Monitor all AWS cloud services with Dynatrace and view available metrics.") and, for each supporting service, a list of optional permissions specific to that service.
 
 Permissions required for AWS monitoring integration:
 
@@ -449,58 +544,77 @@ JSON policy for Amazon API Gateway
 {
 
 
+
 "Version": "2012-10-17",
+
 
 
 "Statement": [
 
 
+
 {
+
 
 
 "Sid": "VisualEditor0",
 
 
+
 "Effect": "Allow",
+
 
 
 "Action": [
 
 
+
 "apigateway:GET",
+
 
 
 "cloudwatch:GetMetricData",
 
 
+
 "cloudwatch:GetMetricStatistics",
+
 
 
 "cloudwatch:ListMetrics",
 
 
+
 "sts:GetCallerIdentity",
+
 
 
 "tag:GetResources",
 
 
+
 "tag:GetTagKeys",
+
 
 
 "ec2:DescribeAvailabilityZones"
 
 
+
 ],
+
 
 
 "Resource": "*"
 
 
+
 }
 
 
+
 ]
+
 
 
 }
@@ -572,7 +686,7 @@ In this example, from the complete list of permissions you need to select
 
 ## Enable monitoring
 
-To learn how to enable service monitoring, see Enable service monitoring.
+To learn how to enable service monitoring, see [Enable service monitoring](/managed/ingest-from/amazon-web-services/integrate-with-aws/aws-metrics-ingest/aws-enable-service-monitoring "Enable AWS monitoring in Dynatrace.").
 
 ## View service metrics
 
@@ -582,14 +696,14 @@ You can view the service metrics in your Dynatrace environment either on the **c
 
 To access the custom device overview page
 
-1. Go to ![Technologies](https://dt-cdn.net/images/technologies-512-977161d83c.png "Technologies") **Technologies & Processes Classic**.
+1. Go to **Technologies & Processes**.
 2. Filter by service name and select the relevant custom device group.
 3. Once you select the custom device group, you're on the **custom device group overview page**.
 4. The **custom device group overview page** lists all instances (custom devices) belonging to the group. Select an instance to view the **custom device overview page**.
 
 ### View metrics on your dashboard
 
-You can also view metrics in the Dynatrace web UI on dashboards. There is no preset dashboard available for this service, but you can create your own dashboard.
+You can also view metrics in the Dynatrace web UI on dashboards. There is no preset dashboard available for this service, but you can [create your own dashboard](/managed/analyze-explore-automate/dashboards-classic/dashboards/create-dashboards "Learn how to create and edit Dynatrace dashboards.").
 
 To check the availability of preset dashboards for each AWS service, see the list below.
 

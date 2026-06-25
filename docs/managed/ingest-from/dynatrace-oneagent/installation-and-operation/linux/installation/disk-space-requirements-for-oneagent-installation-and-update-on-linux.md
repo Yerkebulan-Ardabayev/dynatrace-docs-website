@@ -1,10 +1,15 @@
 ---
-title: "OneAgent files and disk space requirements on Linux"
+title: OneAgent files and disk space requirements on Linux
 source: https://docs.dynatrace.com/managed/ingest-from/dynatrace-oneagent/installation-and-operation/linux/installation/disk-space-requirements-for-oneagent-installation-and-update-on-linux
-updated: 2026-02-09
+scraped: 2026-05-12T11:05:33.233578
 ---
 
+# OneAgent files and disk space requirements on Linux
+
+# OneAgent files and disk space requirements on Linux
+
 * 4-min read
+* Updated on Jun 25, 2025
 
 This page provides information about the OneAgent directory structure and disk space requirements for OneAgent full-stack installation and updates. Note that exact values may vary based on OneAgent version.
 
@@ -48,21 +53,21 @@ The size depends on the number of ingested logs.
 
 6
 
-Applicable only if you use Dynatrace Extensions that define the log metrics, events, or add their own log processing rules. Can be changed via support request.
+Applicable only if you use Dynatrace Extensions that [define the log metrics, events, or add their own log processing rules](/managed/ingest-from/extensions/advanced-configuration/extension-customize#log-metrics-events-and-processing-rules "Learn how to instrument your extensions to customize how the ingested data is handled by Dynatrace."). Can be changed via support request.
 
 7
 
 The reliability mechanism does not work if the requirement is not met. For more information see [Persistence details](#persistence).
 
-For a complete list of files and directories added to your system by OneAgent, see OneAgent security on Linux.
+For a complete list of files and directories added to your system by OneAgent, see [OneAgent security on Linux](/managed/ingest-from/dynatrace-oneagent/installation-and-operation/linux/installation/oneagent-security-linux "Learn about Dynatrace OneAgent security and modifications to your Linux-based system").
 
 ## OneAgent files aging mechanism
 
-OneAgent in full-stack monitoring mode uses a built-in aging mechanism to ensure that the OneAgent files, including log files and runtime data, are kept within a reasonable size. For more information, see OneAgent file aging mechanism.
+OneAgent in full-stack monitoring mode uses a built-in aging mechanism to ensure that the OneAgent files, including log files and runtime data, are kept within a reasonable size. For more information, see [OneAgent file aging mechanism](/managed/ingest-from/dynatrace-oneagent/oneagent-aging-mechanism "Learn how OneAgent deletes old files to minimize disk space usage.").
 
 ## Dynatrace Managed self-monitoring
 
-For OneAgent self-monitoring for Dynatrace Managed requirements on Linux, see the directory structure of Dynatrace Managed.
+For OneAgent self-monitoring for Dynatrace Managed requirements on Linux, see [the directory structure of Dynatrace Managed](/managed/managed-cluster/installation/managed-hardware-requirements "Review the hardware sizing, storage, and multi-node cluster requirements before installing Dynatrace Managed on your infrastructure.").
 
 ## Space required for updates
 
@@ -113,17 +118,7 @@ Windows configuration file: `C:\ProgramData\dynatrace\remotepluginmodule\agent\c
 
 Linux configuration file: `/var/lib/dynatrace/remotepluginmodule/agent/conf/extensionsuser.conf`
 
-**Variable**
-
-**Description**
-
-`persistence.reliable_mode`
-
-`true` - reliable mode turned on; SFM logs genereted if space requirement not met
-`false` - reliable mode turned off; log ingest will be transmitted without the reliability mechanism
-
-`persistence.total_limit_kb`
-
-Maximum volume limit for Extensions Log Persistence in kilobytes.
-By default: 600 MB
-Can be modified manually if the requirement can't be met on the host.
+| **Variable** | **Description** |
+| --- | --- |
+| `persistence.reliable_mode` | `true` - reliable mode turned on; SFM logs genereted if space requirement not met `false` - reliable mode turned off; log ingest will be transmitted without the reliability mechanism |
+| `persistence.total_limit_kb` | Maximum volume limit for Extensions Log Persistence in kilobytes. By default: 600 MB Can be modified manually if the requirement can't be met on the host. |

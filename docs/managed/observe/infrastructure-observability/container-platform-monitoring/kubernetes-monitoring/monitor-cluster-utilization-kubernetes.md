@@ -1,13 +1,13 @@
 ---
 title: Monitor Kubernetes/OpenShift cluster utilization
-source: https://www.dynatrace.com/docs/observe/infrastructure-observability/container-platform-monitoring/kubernetes-monitoring/monitor-cluster-utilization-kubernetes
-scraped: 2026-03-06T21:22:06.993281
+source: https://docs.dynatrace.com/managed/observe/infrastructure-observability/container-platform-monitoring/kubernetes-monitoring/monitor-cluster-utilization-kubernetes
+scraped: 2026-05-12T12:06:06.956676
 ---
 
 # Monitor Kubernetes/OpenShift cluster utilization
 
+# Monitor Kubernetes/OpenShift cluster utilization
 
-* Classic
 * 2-min read
 * Updated on Apr 29, 2024
 
@@ -20,9 +20,11 @@ Dynatrace version 1.232+
 ## Kubernetes page
 
 After enabling access to the Kubernetes overview page for a specific Kubernetes cluster, the specific cluster will appear on the **Kubernetes** page. The Kubernetes page provides an overview of all Kubernetes clusters showing monitoring data like the clustersâ sizing and utilization.  
-To access this page, go to ![Kubernetes](https://dt-cdn.net/images/kubernetes-512-90e7075764.png "Kubernetes") **Kubernetes Classic**.
+To access this page, go to **Kubernetes**.
 
 ![Cluster utilization](https://dt-cdn.net/images/cluster-list-3710-4c21475cfb.png)
+
+Cluster utilization
 
 ## Utilization of cluster resources over time
 
@@ -40,16 +42,22 @@ As Kubernetes can run any containerized workloads and allow for horizontal pod a
 
 ![Monitor k8](https://dt-cdn.net/images/cluster-1-3700-55f0edc5fe.png)
 
+Monitor k8
+
 ## View available resources on your Kubernetes nodes
 
 You can get detailed insights of the Kubernetes node metrics on a per-node level to understand how individual nodes are utilized. The **Node analysis** page also provides information about how much workload can still be deployed on nodes.
 
 ![View resource k8](https://dt-cdn.net/images/cluster-2-3700-209833d1e0.png)
 
+View resource k8
+
 By selecting a specific node, you can access the host details at the top of the node overview page. From there, you can delve into code-level insights on currently deployed containers, along with relevant cloud-specific host properties and Kubernetes node labels.
 
 ![View host k8](https://dt-cdn.net/images/cluster-3-3700-0d7e54a3e8.png)
 
+View host k8
+
 ## Related topics
 
-* Set up Dynatrace on Kubernetes
+* [Set up Dynatrace on Kubernetes](/managed/ingest-from/setup-on-k8s "Ways to deploy and configure Dynatrace on Kubernetes")

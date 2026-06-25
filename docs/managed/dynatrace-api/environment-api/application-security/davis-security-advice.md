@@ -1,10 +1,17 @@
 ---
-title: "Davis Security Advisor API"
+title: Davis Security Advisor API
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/application-security/davis-security-advice
-updated: 2026-02-09
+scraped: 2026-05-12T11:12:28.921931
 ---
 
-The **Davis Security Advisor** API lists Davis recommendations related to open and unmuted vulnerabilities.
+# Davis Security Advisor API
+
+# Davis Security Advisor API
+
+* Reference
+* Updated on May 03, 2022
+
+The **Davis Security Advisor** API lists [Davis recommendations](/managed/secure/application-security/vulnerability-analytics/third-party-vulnerabilities/davis-security-advisor "Get recommendations for security fixes from Davis Security Advisor.") related to open and unmuted [vulnerabilities](/managed/secure/application-security/vulnerability-analytics/third-party-vulnerabilities/manage-third-party-vulnerabilities "Monitor the security issues of your third-party libraries.").
 
 You can limit the output by using the pagination:
 
@@ -22,7 +29,7 @@ The request produces an `application/json` payload.
 
 To execute this request, you need an access token with `securityProblems.read` scope.
 
-To learn how to obtain and use it, see Tokens and authentication.
+To learn how to obtain and use it, see [Tokens and authentication](/managed/discover-dynatrace/references/dynatrace-api/basics/dynatrace-api-authentication).
 
 ## Parameters
 
@@ -62,12 +69,12 @@ Security advice from the Davis security advisor.
 | Element | Type | Description |
 | --- | --- | --- |
 | adviceType | string | The type of the advice. The element can hold these values * `UPGRADE` |
-| critical | string[] | IDs of `critical` level [security problems](https://dt-url.net/p103u1h) caused by vulnerable component. |
-| high | string[] | IDs of `high` level [security problems](https://dt-url.net/p103u1h) caused by vulnerable component. |
-| low | string[] | IDs of `low` level [security problems](https://dt-url.net/p103u1h) caused by vulnerable component. |
-| medium | string[] | IDs of `medium` level [security problems](https://dt-url.net/p103u1h) caused by vulnerable component. |
+| critical | string[] | IDs of `critical` level [security problemsï»¿](https://dt-url.net/p103u1h) caused by vulnerable component. |
+| high | string[] | IDs of `high` level [security problemsï»¿](https://dt-url.net/p103u1h) caused by vulnerable component. |
+| low | string[] | IDs of `low` level [security problemsï»¿](https://dt-url.net/p103u1h) caused by vulnerable component. |
+| medium | string[] | IDs of `medium` level [security problemsï»¿](https://dt-url.net/p103u1h) caused by vulnerable component. |
 | name | string | The name of the advice. |
-| none | string[] | IDs of `none` level [security problems](https://dt-url.net/p103u1h) caused by vulnerable component. |
+| none | string[] | IDs of `none` level [security problemsï»¿](https://dt-url.net/p103u1h) caused by vulnerable component. |
 | technology | string | The technology of the vulnerable component. The element can hold these values * `DOTNET` * `GO` * `JAVA` * `KUBERNETES` * `NODE_JS` * `PHP` * `PYTHON` |
 | vulnerableComponent | string | The vulnerable component to which advice applies. |
 
@@ -102,125 +109,165 @@ A list of constraint violations
 {
 
 
+
 "advices": [
 
 
+
 {
+
 
 
 "adviceType": "UPGRADE",
 
 
+
 "critical": [
+
 
 
 "string"
 
 
+
 ],
+
 
 
 "high": [
 
 
+
 "string"
 
 
+
 ],
+
 
 
 "low": [
 
 
+
 "string"
 
 
+
 ],
+
 
 
 "medium": [
 
 
+
 "string"
 
 
+
 ],
+
 
 
 "name": "string",
 
 
+
 "none": [
+
 
 
 "string"
 
 
+
 ],
+
 
 
 "technology": "DOTNET",
 
 
+
 "vulnerableComponent": "string"
+
 
 
 }
 
 
+
 ],
+
 
 
 "nextPageKey": "AQAAABQBAAAABQ==",
 
 
+
 "pageSize": 1,
+
 
 
 "totalCount": 1
 
 
+
 }
 ```
 
 ```
 {
+
 
 
 "error": {
 
 
+
 "code": 1,
+
 
 
 "constraintViolations": [
 
 
+
 {
+
 
 
 "location": "string",
 
 
+
 "message": "string",
+
 
 
 "parameterLocation": "HEADER",
 
 
+
 "path": "string"
 
 
+
 }
+
 
 
 ],
 
 
+
 "message": "string"
 
 
+
 }
+
 
 
 }
@@ -228,5 +275,5 @@ A list of constraint violations
 
 ## Related topics
 
-* Application Security
-* Vulnerabilities API
+* [Application Security](/managed/secure/application-security "Access the Dynatrace Application Security functionalities.")
+* [Vulnerabilities API](/managed/dynatrace-api/environment-api/application-security/vulnerabilities "Find out what the vulnerabilities API offers.")

@@ -1,0 +1,45 @@
+---
+title: Google Cloud Firestore in Datastore mode monitoring
+source: https://docs.dynatrace.com/managed/ingest-from/google-cloud-platform/gcp-integrations/gcp-supported-service-metrics-new/gcp-filestore-in-datastore-mode-monitoring
+scraped: 2026-05-12T11:51:25.032917
+---
+
+# Google Cloud Firestore in Datastore mode monitoring
+
+# Google Cloud Firestore in Datastore mode monitoring
+
+* How-to guide
+* 1-min read
+* Published Jan 17, 2022
+
+Dynatrace Google Cloud integration leverages data collected from the Google Operation API to constantly monitor health and performance of Google Cloud Services. While combining all relevant data into dashboards, it also enables alerting and event tracking.
+
+## Prerequisites
+
+[Set up integration](/managed/ingest-from/google-cloud-platform/gcp-integrations/gcp-guide/deploy-k8 "Set up log and metric monitoring for GCP services on a new GKE Autopilot cluster.")
+
+## Add services and feature sets Optional
+
+After integration, Dynatrace automatically monitors a number of preset Google Cloud services and feature sets (metrics). Besides these, you can add more services or feature sets to monitoring. For details, see [Add or remove services](/managed/ingest-from/google-cloud-platform/gcp-integrations/gcp-guide/deploy-k8#manage "Set up log and metric monitoring for GCP services on a new GKE Autopilot cluster.").
+
+For a list of feature sets available for this service, see [Metric table](#table).
+
+## View metrics
+
+After deploying the integration, you can see metrics from monitored services in the [Metrics browser](/managed/analyze-explore-automate/dashboards-classic/metrics-browser "Browse metrics with the Dynatrace metrics browser."), [Data Explorer](/managed/analyze-explore-automate/explorer "Query for metrics and transform results to gain desired insights."), and your dashboard tiles.
+
+## Metric table
+
+The following feature sets are available for Google Cloud Firestore in Datastore mode.
+
+| Feature set | Name | Unit | GCP metric identifier |
+| --- | --- | --- | --- |
+| datastore\_request/default\_metrics | Requests | Count | datastore.googleapis.com/api/request\_count |
+| datastore\_request/default\_metrics | Sizes of read entities | Byte | datastore.googleapis.com/entity/read\_sizes |
+| datastore\_request/default\_metrics | Sizes of written entities | Byte | datastore.googleapis.com/entity/write\_sizes |
+| datastore\_request/default\_metrics | Index writes | Count | datastore.googleapis.com/index/write\_count |
+| datastore\_request/default\_metrics | Requests | Count | firestore.googleapis.com/api/request\_count |
+
+## Related topics
+
+* [Google Cloud integrations](/managed/ingest-from/google-cloud-platform/gcp-integrations "Set up and configure Dynatrace on Google Cloud.")

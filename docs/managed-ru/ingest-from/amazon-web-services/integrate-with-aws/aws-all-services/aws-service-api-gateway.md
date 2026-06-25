@@ -1,24 +1,32 @@
 ---
 title: Мониторинг Amazon API Gateway
-source: https://www.dynatrace.com/docs/ingest-from/amazon-web-services/integrate-with-aws/aws-all-services/aws-service-api-gateway
-scraped: 2026-02-27T21:20:40.379719
+source: https://docs.dynatrace.com/managed/ingest-from/amazon-web-services/integrate-with-aws/aws-all-services/aws-service-api-gateway
+scraped: 2026-05-12T11:29:15.152597
 ---
 
-Dynatrace собирает метрики для нескольких предварительно выбранных пространств имён, включая Amazon API Gateway. Вы можете просматривать метрики для каждого экземпляра сервиса, разбивать метрики по нескольким измерениям и создавать пользовательские графики, которые можно закреплять на дашбордах.
+# Мониторинг Amazon API Gateway
+
+# Мониторинг Amazon API Gateway
+
+* Практическое руководство
+* Чтение: 3 мин
+* Обновлено 9 января 2026 г.
+
+Dynatrace принимает метрики для множества предопределённых пространств имён, включая Amazon API Gateway. Можно просматривать метрики по каждому экземпляру сервиса, разбивать их на несколько измерений и создавать собственные графики, которые можно закреплять на дашбордах.
 
 ## Предварительные требования
 
-Для включения мониторинга этого сервиса необходимо:
+Чтобы включить мониторинг этого сервиса, необходимо
 
 * ActiveGate версии 1.181+, а именно:
 
   + Для развёртываний Dynatrace SaaS требуется Environment ActiveGate или Multi-environment ActiveGate.
-  + Для развёртываний Dynatrace Managed можно использовать любой вид ActiveGate.
+  + Для развёртываний Dynatrace Managed можно использовать ActiveGate любого типа.
 
-    Для доступа на основе ролей (в развёртываниях SaaS или [Managed](https://docs.dynatrace.com/managed/shortlink/aws-managed-deployment)) требуется Environment ActiveGate, установленный на хосте Amazon EC2.
+    Для доступа на основе ролей (в развёртывании [SaaS](/managed/ingest-from/amazon-web-services/integrate-with-aws/cloudwatch-metrics#role-based-access "Приём метрик Amazon CloudWatch.") или [Managed](/managed/ingest-from/amazon-web-services/set-up-aws-monitoring-with-managed#role-based-access "Подключите аккаунт Amazon к Dynatrace Managed и начните мониторинг.")) требуется [Environment ActiveGate](/managed/ingest-from/dynatrace-activegate/installation "Узнайте, как настроить ActiveGate"), установленный на хосте Amazon EC2.
 * Dynatrace версии 1.182+
-* Обновлённая политика мониторинга AWS для включения дополнительных AWS сервисов.
-  Для [обновления политики AWS IAM](https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_manage-edit.html#edit-managed-policy-console) используйте JSON ниже, содержащий политику мониторинга (разрешения) для всех поддерживаемых сервисов.
+* Обновлённая [политика мониторинга AWS](/managed/ingest-from/amazon-web-services/integrate-with-aws/cloudwatch-metrics#aws-policy-and-authentication "Приём метрик Amazon CloudWatch."), включающая дополнительные сервисы AWS.
+  Чтобы [обновить политику AWS IAM](https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_manage-edit.html#edit-managed-policy-console), используйте приведённый ниже JSON, содержащий политику мониторинга (разрешения) для всех поддерживаемых сервисов.
 
 Предопределённая JSON-политика для всех поддерживаемых сервисов
 
@@ -26,292 +34,387 @@ Dynatrace собирает метрики для нескольких предв
 {
 
 
+
 "Version": "2012-10-17",
+
 
 
 "Statement": [
 
 
+
 {
+
 
 
 "Sid": "VisualEditor0",
 
 
+
 "Effect": "Allow",
+
 
 
 "Action": [
 
 
+
 "acm-pca:ListCertificateAuthorities",
+
 
 
 "apigateway:GET",
 
 
+
 "apprunner:ListServices",
+
 
 
 "appstream:DescribeFleets",
 
 
+
 "appsync:ListGraphqlApis",
+
 
 
 "athena:ListWorkGroups",
 
 
+
 "autoscaling:DescribeAutoScalingGroups",
+
 
 
 "cloudformation:ListStackResources",
 
 
+
 "cloudfront:ListDistributions",
+
 
 
 "cloudhsm:DescribeClusters",
 
 
+
 "cloudsearch:DescribeDomains",
+
 
 
 "cloudwatch:GetMetricData",
 
 
+
 "cloudwatch:GetMetricStatistics",
+
 
 
 "cloudwatch:ListMetrics",
 
 
+
 "codebuild:ListProjects",
+
 
 
 "datasync:ListTasks",
 
 
+
 "dax:DescribeClusters",
+
 
 
 "directconnect:DescribeConnections",
 
 
+
 "dms:DescribeReplicationInstances",
+
 
 
 "dynamodb:ListTables",
 
 
+
 "dynamodb:ListTagsOfResource",
+
 
 
 "ec2:DescribeAvailabilityZones",
 
 
+
 "ec2:DescribeInstances",
+
 
 
 "ec2:DescribeNatGateways",
 
 
+
 "ec2:DescribeSpotFleetRequests",
+
 
 
 "ec2:DescribeTransitGateways",
 
 
+
 "ec2:DescribeVolumes",
+
 
 
 "ec2:DescribeVpnConnections",
 
 
+
 "ecs:ListClusters",
+
 
 
 "eks:ListClusters",
 
 
+
 "elasticache:DescribeCacheClusters",
+
 
 
 "elasticbeanstalk:DescribeEnvironmentResources",
 
 
+
 "elasticbeanstalk:DescribeEnvironments",
+
 
 
 "elasticfilesystem:DescribeFileSystems",
 
 
+
 "elasticloadbalancing:DescribeInstanceHealth",
+
 
 
 "elasticloadbalancing:DescribeListeners",
 
 
+
 "elasticloadbalancing:DescribeLoadBalancers",
+
 
 
 "elasticloadbalancing:DescribeRules",
 
 
+
 "elasticloadbalancing:DescribeTags",
+
 
 
 "elasticloadbalancing:DescribeTargetHealth",
 
 
+
 "elasticmapreduce:ListClusters",
+
 
 
 "elastictranscoder:ListPipelines",
 
 
+
 "es:ListDomainNames",
+
 
 
 "events:ListEventBuses",
 
 
+
 "firehose:ListDeliveryStreams",
+
 
 
 "fsx:DescribeFileSystems",
 
 
+
 "gamelift:ListFleets",
+
 
 
 "glue:GetJobs",
 
 
+
 "inspector:ListAssessmentTemplates",
+
 
 
 "kafka:ListClusters",
 
 
+
 "kinesis:ListStreams",
+
 
 
 "kinesisanalytics:ListApplications",
 
 
+
 "kinesisvideo:ListStreams",
+
 
 
 "lambda:ListFunctions",
 
 
+
 "lambda:ListTags",
+
 
 
 "lex:GetBots",
 
 
+
 "logs:DescribeLogGroups",
+
 
 
 "mediaconnect:ListFlows",
 
 
+
 "mediaconvert:DescribeEndpoints",
+
 
 
 "mediapackage-vod:ListPackagingConfigurations",
 
 
+
 "mediapackage:ListChannels",
+
 
 
 "mediatailor:ListPlaybackConfigurations",
 
 
+
 "opsworks:DescribeStacks",
+
 
 
 "qldb:ListLedgers",
 
 
+
 "rds:DescribeDBClusters",
+
 
 
 "rds:DescribeDBInstances",
 
 
+
 "rds:DescribeEvents",
+
 
 
 "rds:ListTagsForResource",
 
 
+
 "redshift:DescribeClusters",
+
 
 
 "robomaker:ListSimulationJobs",
 
 
+
 "route53:ListHostedZones",
+
 
 
 "route53resolver:ListResolverEndpoints",
 
 
+
 "s3:ListAllMyBuckets",
+
 
 
 "sagemaker:ListEndpoints",
 
 
+
 "sns:ListTopics",
+
 
 
 "sqs:ListQueues",
 
 
+
 "storagegateway:ListGateways",
+
 
 
 "sts:GetCallerIdentity",
 
 
+
 "swf:ListDomains",
+
 
 
 "tag:GetResources",
 
 
+
 "tag:GetTagKeys",
+
 
 
 "transfer:ListServers",
 
 
+
 "workmail:ListOrganizations",
+
 
 
 "workspaces:DescribeWorkspaces"
 
 
+
 ],
+
 
 
 "Resource": "*"
 
 
+
 }
+
 
 
 ]
 
 
+
 }
 ```
 
-Если вы не хотите добавлять разрешения для всех сервисов, а хотите выбрать разрешения только для определённых сервисов, обратитесь к таблице ниже. В таблице содержится набор разрешений, необходимых для всех AWS облачных сервисов, а также для каждого поддерживаемого сервиса — список необязательных разрешений, специфичных для этого сервиса.
+Если вы не хотите добавлять разрешения для всех сервисов и предпочитаете выбрать разрешения только для определённых сервисов, обратитесь к таблице ниже. В таблице приведён набор разрешений, необходимых для [всех облачных сервисов AWS](/managed/ingest-from/amazon-web-services/integrate-with-aws/aws-all-services "Мониторинг всех облачных сервисов AWS в Dynatrace и просмотр доступных метрик."), и для каждого поддерживаемого сервиса приведён список необязательных разрешений, специфичных для этого сервиса.
 
 Разрешения, необходимые для интеграции мониторинга AWS:
 
@@ -325,9 +428,9 @@ Dynatrace собирает метрики для нескольких предв
 
 ### Полный список разрешений для облачных сервисов
 
-| Название | Разрешения |
+| Имя | Разрешения |
 | --- | --- |
-| Все отслеживаемые сервисы Amazon Обязательно | `cloudwatch:GetMetricData`, `cloudwatch:GetMetricStatistics`, `cloudwatch:ListMetrics`, `sts:GetCallerIdentity`, `tag:GetResources`, `tag:GetTagKeys`, `ec2:DescribeAvailabilityZones` |
+| All monitored Amazon services Required | `cloudwatch:GetMetricData`, `cloudwatch:GetMetricStatistics`, `cloudwatch:ListMetrics`, `sts:GetCallerIdentity`, `tag:GetResources`, `tag:GetTagKeys`, `ec2:DescribeAvailabilityZones` |
 | AWS Certificate Manager Private Certificate Authority | `acm-pca:ListCertificateAuthorities` |
 | Amazon MQ |  |
 | Amazon API Gateway | `apigateway:GET` |
@@ -337,7 +440,7 @@ Dynatrace собирает метрики для нескольких предв
 | Amazon Athena | `athena:ListWorkGroups` |
 | Amazon Aurora | `rds:DescribeDBClusters` |
 | Amazon EC2 Auto Scaling | `autoscaling:DescribeAutoScalingGroups` |
-| Amazon EC2 Auto Scaling (встроенный) | `autoscaling:DescribeAutoScalingGroups` |
+| Amazon EC2 Auto Scaling (built-in) | `autoscaling:DescribeAutoScalingGroups` |
 | AWS Billing |  |
 | Amazon Keyspaces |  |
 | AWS Chatbot |  |
@@ -354,11 +457,11 @@ Dynatrace собирает метрики для нескольких предв
 | Amazon DocumentDB | `rds:DescribeDBClusters` |
 | AWS Direct Connect | `directconnect:DescribeConnections` |
 | Amazon DynamoDB | `dynamodb:ListTables` |
-| Amazon DynamoDB (встроенный) | `dynamodb:ListTables`, `dynamodb:ListTagsOfResource` |
+| Amazon DynamoDB (built-in) | `dynamodb:ListTables`, `dynamodb:ListTagsOfResource` |
 | Amazon EBS | `ec2:DescribeVolumes` |
-| Amazon EBS (встроенный) | `ec2:DescribeVolumes` |
+| Amazon EBS (built-in) | `ec2:DescribeVolumes` |
 | Amazon EC2 API |  |
-| Amazon EC2 (встроенный) | `ec2:DescribeInstances` |
+| Amazon EC2 (built-in) | `ec2:DescribeInstances` |
 | Amazon EC2 Spot Fleet | `ec2:DescribeSpotFleetRequests` |
 | Amazon Elastic Container Service (ECS) | `ecs:ListClusters` |
 | Amazon ECS Container Insights | `ecs:ListClusters` |
@@ -369,7 +472,7 @@ Dynatrace собирает метрики для нескольких предв
 | Amazon Elastic Map Reduce (EMR) | `elasticmapreduce:ListClusters` |
 | Amazon Elasticsearch Service (ES) | `es:ListDomainNames` |
 | Amazon Elastic Transcoder | `elastictranscoder:ListPipelines` |
-| Amazon Elastic Load Balancer (ELB) (встроенный) | `elasticloadbalancing:DescribeInstanceHealth`, `elasticloadbalancing:DescribeListeners`, `elasticloadbalancing:DescribeLoadBalancers`, `elasticloadbalancing:DescribeRules`, `elasticloadbalancing:DescribeTags`, `elasticloadbalancing:DescribeTargetHealth` |
+| Amazon Elastic Load Balancer (ELB) (built-in) | `elasticloadbalancing:DescribeInstanceHealth`, `elasticloadbalancing:DescribeListeners`, `elasticloadbalancing:DescribeLoadBalancers`, `elasticloadbalancing:DescribeRules`, `elasticloadbalancing:DescribeTags`, `elasticloadbalancing:DescribeTargetHealth` |
 | Amazon EventBridge | `events:ListEventBuses` |
 | Amazon FSx | `fsx:DescribeFileSystems` |
 | Amazon GameLift | `gamelift:ListFleets` |
@@ -383,9 +486,9 @@ Dynatrace собирает метрики для нескольких предв
 | Amazon Kinesis Data Streams | `kinesis:ListStreams` |
 | Amazon Kinesis Video Streams | `kinesisvideo:ListStreams` |
 | AWS Lambda | `lambda:ListFunctions` |
-| AWS Lambda (встроенный) | `lambda:ListFunctions`, `lambda:ListTags` |
+| AWS Lambda (built-in) | `lambda:ListFunctions`, `lambda:ListTags` |
 | Amazon Lex | `lex:GetBots` |
-| Amazon Application and Network Load Balancer (встроенный) | `elasticloadbalancing:DescribeInstanceHealth`, `elasticloadbalancing:DescribeListeners`, `elasticloadbalancing:DescribeLoadBalancers`, `elasticloadbalancing:DescribeRules`, `elasticloadbalancing:DescribeTags`, `elasticloadbalancing:DescribeTargetHealth` |
+| Amazon Application and Network Load Balancer (built-in) | `elasticloadbalancing:DescribeInstanceHealth`, `elasticloadbalancing:DescribeListeners`, `elasticloadbalancing:DescribeLoadBalancers`, `elasticloadbalancing:DescribeRules`, `elasticloadbalancing:DescribeTags`, `elasticloadbalancing:DescribeTargetHealth` |
 | Amazon CloudWatch Logs | `logs:DescribeLogGroups` |
 | AWS Elemental MediaConnect | `mediaconnect:ListFlows` |
 | AWS Elemental MediaConvert | `mediaconvert:DescribeEndpoints` |
@@ -398,14 +501,14 @@ Dynatrace собирает метрики для нескольких предв
 | Amazon Polly |  |
 | Amazon QLDB | `qldb:ListLedgers` |
 | Amazon RDS | `rds:DescribeDBInstances` |
-| Amazon RDS (встроенный) | `rds:DescribeDBInstances`, `rds:DescribeEvents`, `rds:ListTagsForResource` |
+| Amazon RDS (built-in) | `rds:DescribeDBInstances`, `rds:DescribeEvents`, `rds:ListTagsForResource` |
 | Amazon Redshift | `redshift:DescribeClusters` |
 | Amazon Rekognition |  |
 | AWS RoboMaker | `robomaker:ListSimulationJobs` |
 | Amazon Route 53 | `route53:ListHostedZones` |
 | Amazon Route 53 Resolver | `route53resolver:ListResolverEndpoints` |
 | Amazon S3 | `s3:ListAllMyBuckets` |
-| Amazon S3 (встроенный) | `s3:ListAllMyBuckets` |
+| Amazon S3 (built-in) | `s3:ListAllMyBuckets` |
 | Amazon SageMaker Batch Transform Jobs |  |
 | Amazon SageMaker Endpoint Instances | `sagemaker:ListEndpoints` |
 | Amazon SageMaker Endpoints | `sagemaker:ListEndpoints` |
@@ -433,7 +536,7 @@ Dynatrace собирает метрики для нескольких предв
 | Amazon WorkMail | `workmail:ListOrganizations` |
 | Amazon WorkSpaces | `workspaces:DescribeWorkspaces` |
 
-Пример JSON-политики для одного отдельного сервиса.
+Пример JSON-политики для одного сервиса.
 
 JSON-политика для Amazon API Gateway
 
@@ -441,79 +544,98 @@ JSON-политика для Amazon API Gateway
 {
 
 
+
 "Version": "2012-10-17",
+
 
 
 "Statement": [
 
 
+
 {
+
 
 
 "Sid": "VisualEditor0",
 
 
+
 "Effect": "Allow",
+
 
 
 "Action": [
 
 
+
 "apigateway:GET",
+
 
 
 "cloudwatch:GetMetricData",
 
 
+
 "cloudwatch:GetMetricStatistics",
+
 
 
 "cloudwatch:ListMetrics",
 
 
+
 "sts:GetCallerIdentity",
+
 
 
 "tag:GetResources",
 
 
+
 "tag:GetTagKeys",
+
 
 
 "ec2:DescribeAvailabilityZones"
 
 
+
 ],
+
 
 
 "Resource": "*"
 
 
+
 }
+
 
 
 ]
 
 
+
 }
 ```
 
-В этом примере из полного списка разрешений необходимо выбрать:
+В этом примере из полного списка разрешений необходимо выбрать
 
 * `"apigateway:GET"` для **Amazon API Gateway**
-* `"cloudwatch:GetMetricData"`, `"cloudwatch:GetMetricStatistics"`, `"cloudwatch:ListMetrics"`, `"sts:GetCallerIdentity"`, `"tag:GetResources"`, `"tag:GetTagKeys"` и `"ec2:DescribeAvailabilityZones"` для **всех AWS облачных сервисов**.
+* `"cloudwatch:GetMetricData"`, `"cloudwatch:GetMetricStatistics"`, `"cloudwatch:ListMetrics"`, `"sts:GetCallerIdentity"`, `"tag:GetResources"`, `"tag:GetTagKeys"` и `"ec2:DescribeAvailabilityZones"` для **All AWS cloud services**.
 
-### Конечные точки AWS, которые должны быть доступны из ActiveGate, с соответствующими AWS сервисами
+### Конечные точки AWS, которые должны быть доступны с ActiveGate, и соответствующие им сервисы AWS
 
 | Конечная точка | Сервис |
 | --- | --- |
-| `autoscaling.<REGION>.amazonaws.com` | Amazon EC2 Auto Scaling (встроенный), Amazon EC2 Auto Scaling |
-| `lambda.<REGION>.amazonaws.com` | AWS Lambda (встроенный), AWS Lambda |
-| `elasticloadbalancing.<REGION>.amazonaws.com` | Amazon Application and Network Load Balancer (встроенный), Amazon Elastic Load Balancer (ELB) (встроенный) |
-| `dynamodb.<REGION>.amazonaws.com` | Amazon DynamoDB (встроенный), Amazon DynamoDB |
-| `ec2.<REGION>.amazonaws.com` | Amazon EBS (встроенный), Amazon EC2 (встроенный), Amazon EBS, Amazon EC2 Spot Fleet, Amazon VPC NAT Gateways, AWS Transit Gateway, AWS Site-to-Site VPN |
-| `rds.<REGION>.amazonaws.com` | Amazon RDS (встроенный), Amazon Aurora, Amazon DocumentDB, Amazon Neptune, Amazon RDS |
-| `s3.<REGION>.amazonaws.com` | Amazon S3 (встроенный) |
+| `autoscaling.<REGION>.amazonaws.com` | Amazon EC2 Auto Scaling (built-in), Amazon EC2 Auto Scaling |
+| `lambda.<REGION>.amazonaws.com` | AWS Lambda (built-in), AWS Lambda |
+| `elasticloadbalancing.<REGION>.amazonaws.com` | Amazon Application and Network Load Balancer (built-in), Amazon Elastic Load Balancer (ELB) (built-in) |
+| `dynamodb.<REGION>.amazonaws.com` | Amazon DynamoDB (built-in), Amazon DynamoDB |
+| `ec2.<REGION>.amazonaws.com` | Amazon EBS (built-in), Amazon EC2 (built-in), Amazon EBS, Amazon EC2 Spot Fleet, Amazon VPC NAT Gateways, AWS Transit Gateway, AWS Site-to-Site VPN |
+| `rds.<REGION>.amazonaws.com` | Amazon RDS (built-in), Amazon Aurora, Amazon DocumentDB, Amazon Neptune, Amazon RDS |
+| `s3.<REGION>.amazonaws.com` | Amazon S3 (built-in) |
 | `acm-pca.<REGION>.amazonaws.com` | AWS Certificate Manager Private Certificate Authority |
 | `apigateway.<REGION>.amazonaws.com` | Amazon API Gateway |
 | `apprunner.<REGION>.amazonaws.com` | AWS App Runner |
@@ -562,170 +684,170 @@ JSON-политика для Amazon API Gateway
 | `workmail.<REGION>.amazonaws.com` | Amazon WorkMail |
 | `workspaces.<REGION>.amazonaws.com` | Amazon WorkSpaces |
 
-Чтобы получить метрики в данном наборе измерений [`ApiName`, `Method`, `Resource`, `Stage`], необходимо включить **детальные метрики CloudWatch**. Это можно сделать в консоли, выбрав **Enable detailed CloudWatch metrics** на вкладке **Logs** или **Tracing** этапа.
+Чтобы получать метрики в заданном наборе измерений [`ApiName`, `Method`, `Resource`, `Stage`], необходимо включить **детальные метрики CloudWatch**. Это можно сделать в консоли, выбрав **Enable detailed CloudWatch metrics** на вкладке **Logs** или **Tracing** этапа.
 
-Также можно использовать команду AWS CLI `update-stage` для обновления свойства `metricsEnabled` до значения `true`.
+Кроме того, можно вызвать команду AWS CLI `update-stage`, чтобы изменить значение свойства `metricsEnabled` на `true`.
 
-[Amazon API Gateway Version 2 API (WebSocket и HTTP API)](https://dt-url.net/dt03xj6) в настоящее время не поддерживается для Amazon API Gateway. Поддерживается только [Amazon API Gateway Version 1 API (REST APIs)](https://dt-url.net/l523xes).
+[Amazon API Gateway Version 2 API (WebSocket and HTTP APIs)](https://dt-url.net/dt03xj6) в настоящее время не поддерживается для Amazon API Gateway. Поддерживается только [Amazon API Gateway Version 1 API (REST APIs)](https://dt-url.net/l523xes).
 
 ## Включение мониторинга
 
-Чтобы узнать, как включить мониторинг сервиса, см. Включение мониторинга сервиса.
+Чтобы узнать, как включить мониторинг сервиса, см. [Включение мониторинга сервиса](/managed/ingest-from/amazon-web-services/integrate-with-aws/aws-metrics-ingest/aws-enable-service-monitoring "Включение мониторинга AWS в Dynatrace.").
 
 ## Просмотр метрик сервиса
 
-Вы можете просматривать метрики сервиса в вашей среде Dynatrace на **странице обзора пользовательского устройства** или на странице **Дашборды**.
+Вы можете просматривать метрики сервиса в вашей среде Dynatrace на **странице обзора пользовательского устройства** или на странице **Dashboards**.
 
 ### Просмотр метрик на странице обзора пользовательского устройства
 
-Для доступа к странице обзора пользовательского устройства
+Чтобы перейти на страницу обзора пользовательского устройства:
 
-1. Перейдите в ![Technologies](https://dt-cdn.net/images/technologies-512-977161d83c.png "Technologies") **Technologies & Processes Classic**.
-2. Выполните фильтрацию по имени сервиса и выберите соответствующую группу пользовательских устройств.
-3. После выбора группы пользовательских устройств вы попадёте на **страницу обзора группы пользовательских устройств**.
-4. На **странице обзора группы пользовательских устройств** перечислены все экземпляры (пользовательские устройства), входящие в группу. Выберите экземпляр для просмотра **страницы обзора пользовательского устройства**.
+1. Перейдите в **Technologies & Processes**.
+2. Отфильтруйте по имени сервиса и выберите соответствующую группу пользовательских устройств.
+3. После выбора группы пользовательских устройств вы окажетесь на **странице обзора группы пользовательских устройств**.
+4. На **странице обзора группы пользовательских устройств** перечислены все экземпляры (пользовательские устройства), принадлежащие группе. Выберите экземпляр для просмотра **страницы обзора пользовательского устройства**.
 
 ### Просмотр метрик на дашборде
 
-Вы также можете просматривать метрики в веб-интерфейсе Dynatrace на дашбордах. Для этого сервиса нет стандартного дашборда, но вы можете создать собственный дашборд.
+Вы также можете просматривать метрики в веб-интерфейсе Dynatrace на дашбордах. Для этого сервиса нет предустановленного дашборда, но вы можете [создать собственный дашборд](/managed/analyze-explore-automate/dashboards-classic/dashboards/create-dashboards "Узнайте, как создавать и редактировать дашборды Dynatrace.").
 
-Для проверки наличия стандартных дашбордов для каждого AWS сервиса см. список ниже.
+Чтобы проверить доступность предустановленных дашбордов для каждого сервиса AWS, см. список ниже.
 
-### Список наличия стандартных дашбордов
+### Список доступности предустановленных дашбордов
 
-| AWS сервис | Стандартный дашборд |
+| Сервис AWS | Предустановленный дашборд |
 | --- | --- |
-| Amazon EC2 Auto Scaling (встроенный) | Недоступно |
-| AWS Lambda (встроенный) | Недоступно |
-| Amazon Application and Network Load Balancer (встроенный) | Недоступно |
-| Amazon DynamoDB (встроенный) | Недоступно |
-| Amazon EBS (встроенный) | Недоступно |
-| Amazon EC2 (встроенный) | Недоступно |
-| Amazon Elastic Load Balancer (ELB) (встроенный) | Недоступно |
-| Amazon RDS (встроенный) | Недоступно |
-| Amazon S3 (встроенный) | Недоступно |
-| AWS Certificate Manager Private Certificate Authority | Недоступно |
-| Все отслеживаемые сервисы Amazon | Недоступно |
-| Amazon API Gateway | Недоступно |
-| AWS App Runner | Недоступно |
-| Amazon AppStream | Доступно |
-| AWS AppSync | Доступно |
-| Amazon Athena | Доступно |
-| Amazon Aurora | Недоступно |
-| Amazon EC2 Auto Scaling | Доступно |
-| AWS Billing | Доступно |
-| Amazon Keyspaces | Доступно |
-| AWS Chatbot | Доступно |
-| Amazon CloudFront | Недоступно |
-| AWS CloudHSM | Доступно |
-| Amazon CloudSearch | Доступно |
-| AWS CodeBuild | Доступно |
-| Amazon Cognito | Недоступно |
-| Amazon Connect | Доступно |
-| AWS DataSync | Доступно |
-| Amazon DynamoDB Accelerator (DAX) | Доступно |
-| AWS Database Migration Service (AWS DMS) | Доступно |
-| Amazon DocumentDB | Доступно |
-| AWS Direct Connect | Доступно |
-| Amazon DynamoDB | Недоступно |
-| Amazon EBS | Недоступно |
-| Amazon EC2 Spot Fleet | Недоступно |
-| Amazon EC2 API | Доступно |
-| Amazon Elastic Container Service (ECS) | Недоступно |
-| Amazon ECS Container Insights | Доступно |
-| Amazon Elastic File System (EFS) | Недоступно |
-| Amazon Elastic Kubernetes Service (EKS) | Доступно |
-| Amazon ElastiCache (EC) | Недоступно |
-| AWS Elastic Beanstalk | Доступно |
-| Amazon Elastic Inference | Доступно |
-| Amazon Elastic Transcoder | Доступно |
-| Amazon Elastic Map Reduce (EMR) | Недоступно |
-| Amazon Elasticsearch Service (ES) | Недоступно |
-| Amazon EventBridge | Доступно |
-| Amazon FSx | Доступно |
-| Amazon GameLift | Доступно |
-| AWS Glue | Недоступно |
-| Amazon Inspector | Доступно |
-| AWS Internet of Things (IoT) | Недоступно |
-| AWS IoT Things Graph | Доступно |
-| AWS IoT Analytics | Доступно |
-| Amazon Managed Streaming for Kafka | Доступно |
-| Amazon Kinesis Data Analytics | Недоступно |
-| Amazon Data Firehose | Недоступно |
-| Amazon Kinesis Data Streams | Недоступно |
-| Amazon Kinesis Video Streams | Недоступно |
-| AWS Lambda | Недоступно |
-| Amazon Lex | Доступно |
-| Amazon CloudWatch Logs | Доступно |
-| AWS Elemental MediaTailor | Доступно |
-| AWS Elemental MediaConnect | Доступно |
-| AWS Elemental MediaConvert | Доступно |
-| AWS Elemental MediaPackage Live | Доступно |
-| AWS Elemental MediaPackage Video on Demand | Доступно |
-| Amazon MQ | Доступно |
-| Amazon VPC NAT Gateways | Недоступно |
-| Amazon Neptune | Доступно |
-| AWS OpsWorks | Доступно |
-| Amazon Polly | Доступно |
-| Amazon QLDB | Доступно |
-| Amazon RDS | Недоступно |
-| Amazon Redshift | Недоступно |
-| Amazon Rekognition | Доступно |
-| AWS RoboMaker | Доступно |
-| Amazon Route 53 | Доступно |
-| Amazon Route 53 Resolver | Доступно |
-| Amazon S3 | Недоступно |
-| Amazon SageMaker Batch Transform Jobs | Недоступно |
-| Amazon SageMaker Endpoints | Недоступно |
-| Amazon SageMaker Endpoint Instances | Недоступно |
-| Amazon SageMaker Ground Truth | Недоступно |
-| Amazon SageMaker Processing Jobs | Недоступно |
-| Amazon SageMaker Training Jobs | Недоступно |
-| AWS Service Catalog | Доступно |
-| Amazon Simple Email Service (SES) | Недоступно |
-| Amazon Simple Notification Service (SNS) | Недоступно |
-| Amazon Simple Queue Service (SQS) | Недоступно |
-| AWS Systems Manager - Run Command | Доступно |
-| AWS Step Functions | Доступно |
-| AWS Storage Gateway | Доступно |
-| Amazon SWF | Доступно |
-| Amazon Textract | Доступно |
-| AWS Transfer Family | Доступно |
-| AWS Transit Gateway | Доступно |
-| Amazon Translate | Доступно |
-| AWS Trusted Advisor | Доступно |
-| AWS API Usage | Доступно |
-| AWS Site-to-Site VPN | Доступно |
-| AWS WAF Classic | Доступно |
-| AWS WAF | Доступно |
-| Amazon WorkMail | Доступно |
-| Amazon WorkSpaces | Доступно |
+| Amazon EC2 Auto Scaling (built-in) | Не применимо |
+| AWS Lambda (built-in) | Не применимо |
+| Amazon Application and Network Load Balancer (built-in) | Не применимо |
+| Amazon DynamoDB (built-in) | Не применимо |
+| Amazon EBS (built-in) | Не применимо |
+| Amazon EC2 (built-in) | Не применимо |
+| Amazon Elastic Load Balancer (ELB) (built-in) | Не применимо |
+| Amazon RDS (built-in) | Не применимо |
+| Amazon S3 (built-in) | Не применимо |
+| AWS Certificate Manager Private Certificate Authority | Не применимо |
+| All monitored Amazon services | Не применимо |
+| Amazon API Gateway | Не применимо |
+| AWS App Runner | Не применимо |
+| Amazon AppStream | Применимо |
+| AWS AppSync | Применимо |
+| Amazon Athena | Применимо |
+| Amazon Aurora | Не применимо |
+| Amazon EC2 Auto Scaling | Применимо |
+| AWS Billing | Применимо |
+| Amazon Keyspaces | Применимо |
+| AWS Chatbot | Применимо |
+| Amazon CloudFront | Не применимо |
+| AWS CloudHSM | Применимо |
+| Amazon CloudSearch | Применимо |
+| AWS CodeBuild | Применимо |
+| Amazon Cognito | Не применимо |
+| Amazon Connect | Применимо |
+| AWS DataSync | Применимо |
+| Amazon DynamoDB Accelerator (DAX) | Применимо |
+| AWS Database Migration Service (AWS DMS) | Применимо |
+| Amazon DocumentDB | Применимо |
+| AWS Direct Connect | Применимо |
+| Amazon DynamoDB | Не применимо |
+| Amazon EBS | Не применимо |
+| Amazon EC2 Spot Fleet | Не применимо |
+| Amazon EC2 API | Применимо |
+| Amazon Elastic Container Service (ECS) | Не применимо |
+| Amazon ECS Container Insights | Применимо |
+| Amazon Elastic File System (EFS) | Не применимо |
+| Amazon Elastic Kubernetes Service (EKS) | Применимо |
+| Amazon ElastiCache (EC) | Не применимо |
+| AWS Elastic Beanstalk | Применимо |
+| Amazon Elastic Inference | Применимо |
+| Amazon Elastic Transcoder | Применимо |
+| Amazon Elastic Map Reduce (EMR) | Не применимо |
+| Amazon Elasticsearch Service (ES) | Не применимо |
+| Amazon EventBridge | Применимо |
+| Amazon FSx | Применимо |
+| Amazon GameLift | Применимо |
+| AWS Glue | Не применимо |
+| Amazon Inspector | Применимо |
+| AWS Internet of Things (IoT) | Не применимо |
+| AWS IoT Things Graph | Применимо |
+| AWS IoT Analytics | Применимо |
+| Amazon Managed Streaming for Kafka | Применимо |
+| Amazon Kinesis Data Analytics | Не применимо |
+| Amazon Data Firehose | Не применимо |
+| Amazon Kinesis Data Streams | Не применимо |
+| Amazon Kinesis Video Streams | Не применимо |
+| AWS Lambda | Не применимо |
+| Amazon Lex | Применимо |
+| Amazon CloudWatch Logs | Применимо |
+| AWS Elemental MediaTailor | Применимо |
+| AWS Elemental MediaConnect | Применимо |
+| AWS Elemental MediaConvert | Применимо |
+| AWS Elemental MediaPackage Live | Применимо |
+| AWS Elemental MediaPackage Video on Demand | Применимо |
+| Amazon MQ | Применимо |
+| Amazon VPC NAT Gateways | Не применимо |
+| Amazon Neptune | Применимо |
+| AWS OpsWorks | Применимо |
+| Amazon Polly | Применимо |
+| Amazon QLDB | Применимо |
+| Amazon RDS | Не применимо |
+| Amazon Redshift | Не применимо |
+| Amazon Rekognition | Применимо |
+| AWS RoboMaker | Применимо |
+| Amazon Route 53 | Применимо |
+| Amazon Route 53 Resolver | Применимо |
+| Amazon S3 | Не применимо |
+| Amazon SageMaker Batch Transform Jobs | Не применимо |
+| Amazon SageMaker Endpoints | Не применимо |
+| Amazon SageMaker Endpoint Instances | Не применимо |
+| Amazon SageMaker Ground Truth | Не применимо |
+| Amazon SageMaker Processing Jobs | Не применимо |
+| Amazon SageMaker Training Jobs | Не применимо |
+| AWS Service Catalog | Применимо |
+| Amazon Simple Email Service (SES) | Не применимо |
+| Amazon Simple Notification Service (SNS) | Не применимо |
+| Amazon Simple Queue Service (SQS) | Не применимо |
+| AWS Systems Manager - Run Command | Применимо |
+| AWS Step Functions | Применимо |
+| AWS Storage Gateway | Применимо |
+| Amazon SWF | Применимо |
+| Amazon Textract | Применимо |
+| AWS Transfer Family | Применимо |
+| AWS Transit Gateway | Применимо |
+| Amazon Translate | Применимо |
+| AWS Trusted Advisor | Применимо |
+| AWS API Usage | Применимо |
+| AWS Site-to-Site VPN | Применимо |
+| AWS WAF Classic | Применимо |
+| AWS WAF | Применимо |
+| Amazon WorkMail | Применимо |
+| Amazon WorkSpaces | Применимо |
 
 ## Доступные метрики
 
-`ApiName` является основным измерением.
+Основное измерение: `ApiName`.
 
-| Название | Описание | Единица | Статистика | Измерения | Рекомендовано |
+| Имя | Описание | Единица измерения | Статистика | Измерения | Рекомендуется |
 | --- | --- | --- | --- | --- | --- |
-| 4XXError | Количество ошибок на стороне клиента за заданный период | Count | Sum | ApiName | Доступно |
-| 4XXError |  | Count | Sum | ApiName, Stage |  |
-| 4XXError |  | Count | Sum | ApiName, Method, Resource, Stage |  |
-| 5XXError | Количество ошибок на стороне сервера за заданный период | Count | Sum | ApiName | Доступно |
-| 5XXError |  | Count | Sum | ApiName, Stage |  |
-| 5XXError |  | Count | Sum | ApiName, Method, Resource, Stage |  |
-| CacheHitCount | Количество запросов, обслуженных из кэша API за заданный период | Count | Sum | ApiName |  |
-| CacheHitCount |  | Count | Sum | ApiName, Method, Resource, Stage |  |
-| CacheHitCount |  | Count | Sum | ApiName, Method, Resource, Stage |  |
-| CacheMissCount | Количество запросов, обслуженных из бэкенда за заданный период, когда кэширование API включено | Count | Sum | ApiName |  |
-| CacheMissCount |  | Count | Sum | ApiName, Stage |  |
-| CacheMissCount |  | Count | Sum | ApiName, Method, Resource, Stage |  |
-| Count | Общее количество API-запросов за заданный период | Count | Count | Region |  |
-| Count |  | Count | Count | ApiName | Доступно |
-| Count |  | Count | Count | ApiName, Stage |  |
-| Count |  | Count | Count | ApiName, Method, Resource, Stage |  |
-| IntegrationLatency | Время между передачей запроса API Gateway бэкенду и получением ответа от бэкенда | Milliseconds | Multi | ApiName | Доступно |
-| IntegrationLatency |  | Milliseconds | Multi | ApiName, Stage |  |
-| IntegrationLatency |  | Milliseconds | Multi | ApiName, Method, Resource, Stage |  |
-| Latency | Время между получением API Gateway запроса от клиента и возвратом ответа клиенту. Задержка включает задержку интеграции и другие накладные расходы API Gateway. | Milliseconds | Multi | ApiName | Доступно |
-| Latency |  | Milliseconds | Multi | ApiName, Stage |  |
-| Latency |  | Milliseconds | Multi | ApiName, Method, Resource, Stage |  |
+| 4XXError | Количество ошибок на стороне клиента, зафиксированных за указанный период | Количество | Sum | ApiName | Применимо |
+| 4XXError |  | Количество | Sum | ApiName, Stage |  |
+| 4XXError |  | Количество | Sum | ApiName, Method, Resource, Stage |  |
+| 5XXError | Количество ошибок на стороне сервера, зафиксированных за указанный период | Количество | Sum | ApiName | Применимо |
+| 5XXError |  | Количество | Sum | ApiName, Stage |  |
+| 5XXError |  | Количество | Sum | ApiName, Method, Resource, Stage |  |
+| CacheHitCount | Количество запросов, обслуженных из кэша API за указанный период | Количество | Sum | ApiName |  |
+| CacheHitCount |  | Количество | Sum | ApiName, Method, Resource, Stage |  |
+| CacheHitCount |  | Количество | Sum | ApiName, Method, Resource, Stage |  |
+| CacheMissCount | Количество запросов, обслуженных из бэкенда за указанный период, когда включено кэширование API | Количество | Sum | ApiName |  |
+| CacheMissCount |  | Количество | Sum | ApiName, Stage |  |
+| CacheMissCount |  | Количество | Sum | ApiName, Method, Resource, Stage |  |
+| Count | Общее количество запросов API за указанный период | Количество | Count | Region |  |
+| Count |  | Количество | Count | ApiName | Применимо |
+| Count |  | Количество | Count | ApiName, Stage |  |
+| Count |  | Количество | Count | ApiName, Method, Resource, Stage |  |
+| IntegrationLatency | Время между передачей запроса API Gateway в бэкенд и получением ответа от бэкенда | Миллисекунда | Multi | ApiName | Применимо |
+| IntegrationLatency |  | Миллисекунда | Multi | ApiName, Stage |  |
+| IntegrationLatency |  | Миллисекунда | Multi | ApiName, Method, Resource, Stage |  |
+| Latency | Время между получением запроса от клиента API Gateway и возвратом ответа клиенту. Эта задержка включает задержку интеграции и прочие накладные расходы API Gateway. | Миллисекунда | Multi | ApiName | Применимо |
+| Latency |  | Миллисекунда | Multi | ApiName, Stage |  |
+| Latency |  | Миллисекунда | Multi | ApiName, Method, Resource, Stage |  |

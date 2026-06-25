@@ -1,0 +1,22 @@
+--- builtin-infrastructure-disk-edge-anomaly-detectors.md ---
+em=0 BOMJ=0 ENUM=0 Auth=0 Param=0 single_a=0 calque=0 sigs=0 [OK]
+
+--- builtin-management-zones.md ---
+em=0 BOMJ=0 ENUM=0 Auth=0 Param=0 single_a=0 calque=0 sigs=0 [OK]
+
+--- builtin-os-services-monitoring.md ---
+em=0 BOMJ=0 ENUM=0 Auth=0 Param=0 single_a=0 calque=1 sigs=0 [OK]
+
+--- builtin-tags-auto-tagging.md ---
+em=0 BOMJ=0 ENUM=0 Auth=0 Param=0 single_a=0 calque=0 sigs=0 [OK]
+
+--- builtin-anomaly-detection-infrastructure-hosts.md ---
+em=0 BOMJ=0 ENUM=0 Auth=0 Param=0 single_a=0 calque=0 sigs=0 [OK]
+
+--- builtin-appsec-notification-integration.md ---
+em=0 BOMJ=0 ENUM=0 Auth=0 Param=0 single_a=0 calque=0 sigs=0 [OK]
+
+--- builtin-problem-notifications.md ---
+em=0 BOMJ=0 ENUM=0 Auth=0 Param=0 single_a=0 calque=0 sigs=0 [OK]
+
+TOTAL: em=0 BOMJ=0 ENUM=0 Auth=0 Param=0 single_a=0 calque=1 sigs=0

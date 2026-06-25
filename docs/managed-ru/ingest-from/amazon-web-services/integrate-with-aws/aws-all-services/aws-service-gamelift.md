@@ -1,317 +1,420 @@
 ---
 title: Мониторинг Amazon GameLift
-source: https://www.dynatrace.com/docs/ingest-from/amazon-web-services/integrate-with-aws/aws-all-services/aws-service-gamelift
-scraped: 2026-03-04T21:33:02.411476
+source: https://docs.dynatrace.com/managed/ingest-from/amazon-web-services/integrate-with-aws/aws-all-services/aws-service-gamelift
+scraped: 2026-05-12T11:29:44.603486
 ---
 
-Dynatrace собирает метрики для множества предварительно выбранных пространств имён, включая Amazon GameLift. Вы можете просматривать метрики для каждого экземпляра сервиса, разделять метрики по нескольким измерениям и создавать пользовательские графики, которые можно закрепить на панелях мониторинга.
+# Мониторинг Amazon GameLift
+
+# Мониторинг Amazon GameLift
+
+* Практическое руководство
+* Чтение: 10 мин
+* Опубликовано 6 июля 2020 г.
+
+Dynatrace принимает метрики для множества предопределённых пространств имён, включая Amazon GameLift. Можно просматривать метрики по каждому экземпляру сервиса, разбивать их на несколько измерений и создавать собственные графики, которые можно закреплять на дашбордах.
 
 ## Предварительные требования
 
-Для включения мониторинга данного сервиса вам необходимо
+Чтобы включить мониторинг этого сервиса, необходимо
 
 * ActiveGate версии 1.197+
 
-  + Для развертываний Dynatrace SaaS вам потребуется Environment ActiveGate или Multi-environment ActiveGate.
-  + Для развертываний Dynatrace Managed можно использовать любой тип ActiveGate.
+  + Для развёртываний Dynatrace SaaS требуется Environment ActiveGate или Multi-environment ActiveGate.
+  + Для развёртываний Dynatrace Managed можно использовать ActiveGate любого типа.
 
-    Для доступа на основе ролей (как в развертывании SaaS так и [Managed](https://docs.dynatrace.com/managed/shortlink/aws-managed-deployment) развертывании) вам потребуется Environment ActiveGate, установленный на хосте Amazon EC2.
+    Для доступа на основе ролей (в развёртывании [SaaS](/managed/ingest-from/amazon-web-services/integrate-with-aws/cloudwatch-metrics#role-based-access "Приём метрик Amazon CloudWatch.") или [Managed](/managed/ingest-from/amazon-web-services/set-up-aws-monitoring-with-managed#role-based-access "Подключите аккаунт Amazon к Dynatrace Managed и начните мониторинг.")) требуется [Environment ActiveGate](/managed/ingest-from/dynatrace-activegate/installation "Узнайте, как настроить ActiveGate"), установленный на хосте Amazon EC2.
 * Dynatrace версии 1.203+
-* Обновленная политика мониторинга AWS для включения дополнительных сервисов AWS.  
-  Для [обновления политики AWS IAM](https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_manage-edit.html#edit-managed-policy-console) используйте приведённый ниже JSON, содержащий политику мониторинга (разрешения) для всех поддерживаемых сервисов.
+* Обновлённая [политика мониторинга AWS](/managed/ingest-from/amazon-web-services/integrate-with-aws/cloudwatch-metrics#monitoring-policy "Приём метрик Amazon CloudWatch."), включающая дополнительные сервисы AWS.
+  Чтобы [обновить политику AWS IAM](https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_manage-edit.html#edit-managed-policy-console), используйте приведённый ниже JSON, содержащий политику мониторинга (разрешения) для всех поддерживаемых сервисов.
 
-Предопределённая политика JSON для всех поддерживаемых сервисов
+Предопределённая JSON-политика для всех поддерживаемых сервисов
 
 ```
 {
+
 
 
 "Version": "2012-10-17",
 
 
+
 "Statement": [
+
 
 
 {
 
 
+
 "Sid": "VisualEditor0",
+
 
 
 "Effect": "Allow",
 
 
+
 "Action": [
+
 
 
 "acm-pca:ListCertificateAuthorities",
 
 
+
 "apigateway:GET",
+
 
 
 "apprunner:ListServices",
 
 
+
 "appstream:DescribeFleets",
+
 
 
 "appsync:ListGraphqlApis",
 
 
+
 "athena:ListWorkGroups",
+
 
 
 "autoscaling:DescribeAutoScalingGroups",
 
 
+
 "cloudformation:ListStackResources",
+
 
 
 "cloudfront:ListDistributions",
 
 
+
 "cloudhsm:DescribeClusters",
+
 
 
 "cloudsearch:DescribeDomains",
 
 
+
 "cloudwatch:GetMetricData",
+
 
 
 "cloudwatch:GetMetricStatistics",
 
 
+
 "cloudwatch:ListMetrics",
+
 
 
 "codebuild:ListProjects",
 
 
+
 "datasync:ListTasks",
+
 
 
 "dax:DescribeClusters",
 
 
+
 "directconnect:DescribeConnections",
+
 
 
 "dms:DescribeReplicationInstances",
 
 
+
 "dynamodb:ListTables",
+
 
 
 "dynamodb:ListTagsOfResource",
 
 
+
 "ec2:DescribeAvailabilityZones",
+
 
 
 "ec2:DescribeInstances",
 
 
+
 "ec2:DescribeNatGateways",
+
 
 
 "ec2:DescribeSpotFleetRequests",
 
 
+
 "ec2:DescribeTransitGateways",
+
 
 
 "ec2:DescribeVolumes",
 
 
+
 "ec2:DescribeVpnConnections",
+
 
 
 "ecs:ListClusters",
 
 
+
 "eks:ListClusters",
+
 
 
 "elasticache:DescribeCacheClusters",
 
 
+
 "elasticbeanstalk:DescribeEnvironmentResources",
+
 
 
 "elasticbeanstalk:DescribeEnvironments",
 
 
+
 "elasticfilesystem:DescribeFileSystems",
+
 
 
 "elasticloadbalancing:DescribeInstanceHealth",
 
 
+
 "elasticloadbalancing:DescribeListeners",
+
 
 
 "elasticloadbalancing:DescribeLoadBalancers",
 
 
+
 "elasticloadbalancing:DescribeRules",
+
 
 
 "elasticloadbalancing:DescribeTags",
 
 
+
 "elasticloadbalancing:DescribeTargetHealth",
+
 
 
 "elasticmapreduce:ListClusters",
 
 
+
 "elastictranscoder:ListPipelines",
+
 
 
 "es:ListDomainNames",
 
 
+
 "events:ListEventBuses",
+
 
 
 "firehose:ListDeliveryStreams",
 
 
+
 "fsx:DescribeFileSystems",
+
 
 
 "gamelift:ListFleets",
 
 
+
 "glue:GetJobs",
+
 
 
 "inspector:ListAssessmentTemplates",
 
 
+
 "kafka:ListClusters",
+
 
 
 "kinesis:ListStreams",
 
 
+
 "kinesisanalytics:ListApplications",
+
 
 
 "kinesisvideo:ListStreams",
 
 
+
 "lambda:ListFunctions",
+
 
 
 "lambda:ListTags",
 
 
+
 "lex:GetBots",
+
 
 
 "logs:DescribeLogGroups",
 
 
+
 "mediaconnect:ListFlows",
+
 
 
 "mediaconvert:DescribeEndpoints",
 
 
+
 "mediapackage-vod:ListPackagingConfigurations",
+
 
 
 "mediapackage:ListChannels",
 
 
+
 "mediatailor:ListPlaybackConfigurations",
+
 
 
 "opsworks:DescribeStacks",
 
 
+
 "qldb:ListLedgers",
+
 
 
 "rds:DescribeDBClusters",
 
 
+
 "rds:DescribeDBInstances",
+
 
 
 "rds:DescribeEvents",
 
 
+
 "rds:ListTagsForResource",
+
 
 
 "redshift:DescribeClusters",
 
 
+
 "robomaker:ListSimulationJobs",
+
 
 
 "route53:ListHostedZones",
 
 
+
 "route53resolver:ListResolverEndpoints",
+
 
 
 "s3:ListAllMyBuckets",
 
 
+
 "sagemaker:ListEndpoints",
+
 
 
 "sns:ListTopics",
 
 
+
 "sqs:ListQueues",
+
 
 
 "storagegateway:ListGateways",
 
 
+
 "sts:GetCallerIdentity",
+
 
 
 "swf:ListDomains",
 
 
+
 "tag:GetResources",
+
 
 
 "tag:GetTagKeys",
 
 
+
 "transfer:ListServers",
+
 
 
 "workmail:ListOrganizations",
 
 
+
 "workspaces:DescribeWorkspaces"
+
 
 
 ],
 
 
+
 "Resource": "*"
 
 
+
 }
+
 
 
 ]
 
 
+
 }
 ```
 
-Если вы не хотите добавлять разрешения для всех сервисов, а хотите выбрать разрешения только для определённых сервисов, обратитесь к таблице ниже. Таблица содержит набор разрешений, необходимых для всех облачных сервисов AWS, а также для каждого поддерживаемого сервиса список дополнительных разрешений, специфичных для этого сервиса.
+Если вы не хотите добавлять разрешения для всех сервисов и предпочитаете выбрать разрешения только для определённых сервисов, обратитесь к таблице ниже. В таблице приведён набор разрешений, необходимых для [всех облачных сервисов AWS](/managed/ingest-from/amazon-web-services/integrate-with-aws/aws-all-services "Мониторинг всех облачных сервисов AWS в Dynatrace и просмотр доступных метрик."), и для каждого поддерживаемого сервиса приведён список необязательных разрешений, специфичных для этого сервиса.
 
 Разрешения, необходимые для интеграции мониторинга AWS:
 
@@ -325,9 +428,9 @@ Dynatrace собирает метрики для множества предва
 
 ### Полный список разрешений для облачных сервисов
 
-| Название | Разрешения |
+| Имя | Разрешения |
 | --- | --- |
-| Все отслеживаемые сервисы Amazon (обязательно) | `cloudwatch:GetMetricData`, `cloudwatch:GetMetricStatistics`, `cloudwatch:ListMetrics`, `sts:GetCallerIdentity`, `tag:GetResources`, `tag:GetTagKeys`, `ec2:DescribeAvailabilityZones` |
+| All monitored Amazon services Required | `cloudwatch:GetMetricData`, `cloudwatch:GetMetricStatistics`, `cloudwatch:ListMetrics`, `sts:GetCallerIdentity`, `tag:GetResources`, `tag:GetTagKeys`, `ec2:DescribeAvailabilityZones` |
 | AWS Certificate Manager Private Certificate Authority | `acm-pca:ListCertificateAuthorities` |
 | Amazon MQ |  |
 | Amazon API Gateway | `apigateway:GET` |
@@ -433,66 +536,85 @@ Dynatrace собирает метрики для множества предва
 | Amazon WorkMail | `workmail:ListOrganizations` |
 | Amazon WorkSpaces | `workspaces:DescribeWorkspaces` |
 
-Ниже приведён пример политики JSON для одного отдельного сервиса.
+Пример JSON-политики для одного сервиса приведён ниже.
 
-Политика JSON для Amazon API Gateway
+JSON-политика для Amazon API Gateway
 
 ```
 {
 
 
+
 "Version": "2012-10-17",
+
 
 
 "Statement": [
 
 
+
 {
+
 
 
 "Sid": "VisualEditor0",
 
 
+
 "Effect": "Allow",
+
 
 
 "Action": [
 
 
+
 "apigateway:GET",
+
 
 
 "cloudwatch:GetMetricData",
 
 
+
 "cloudwatch:GetMetricStatistics",
+
 
 
 "cloudwatch:ListMetrics",
 
 
+
 "sts:GetCallerIdentity",
+
 
 
 "tag:GetResources",
 
 
+
 "tag:GetTagKeys",
+
 
 
 "ec2:DescribeAvailabilityZones"
 
 
+
 ],
+
 
 
 "Resource": "*"
 
 
+
 }
 
 
+
 ]
+
 
 
 }
@@ -500,10 +622,10 @@ Dynatrace собирает метрики для множества предва
 
 В этом примере из полного списка разрешений необходимо выбрать
 
-* `"apigateway:GET"` for **Amazon API Gateway**
-* `"cloudwatch:GetMetricData"`, `"cloudwatch:GetMetricStatistics"`, `"cloudwatch:ListMetrics"`, `"sts:GetCallerIdentity"`, `"tag:GetResources"`, `"tag:GetTagKeys"`, and `"ec2:DescribeAvailabilityZones"` для **всех облачных сервисов AWS**.
+* `"apigateway:GET"` для **Amazon API Gateway**
+* `"cloudwatch:GetMetricData"`, `"cloudwatch:GetMetricStatistics"`, `"cloudwatch:ListMetrics"`, `"sts:GetCallerIdentity"`, `"tag:GetResources"`, `"tag:GetTagKeys"` и `"ec2:DescribeAvailabilityZones"` для **All AWS cloud services**.
 
-### Конечные точки AWS, которые должны быть доступны из ActiveGate с соответствующими сервисами AWS
+### Конечные точки AWS, которые должны быть доступны с ActiveGate, и соответствующие им сервисы AWS
 
 | Конечная точка | Сервис |
 | --- | --- |
@@ -564,247 +686,253 @@ Dynatrace собирает метрики для множества предва
 
 ## Включение мониторинга
 
-Чтобы узнать, как включить мониторинг сервиса, см. Включение мониторинга сервиса.
+Чтобы узнать, как включить мониторинг сервиса, см. [Включение мониторинга сервиса](/managed/ingest-from/amazon-web-services/integrate-with-aws/aws-metrics-ingest/aws-enable-service-monitoring "Включение мониторинга AWS в Dynatrace.").
 
 ## Просмотр метрик сервиса
 
-Вы можете просматривать метрики сервиса в вашей среде Dynatrace либо на **странице обзора пользовательского устройства**, либо на странице **Панели мониторинга**.
+Вы можете просматривать метрики сервиса в вашей среде Dynatrace на **странице обзора пользовательского устройства** или на странице **Dashboards**.
 
 ### Просмотр метрик на странице обзора пользовательского устройства
 
-Для доступа к странице обзора пользовательского устройства
+Чтобы перейти на страницу обзора пользовательского устройства:
 
-1. Перейдите в ![Technologies](https://dt-cdn.net/images/technologies-512-977161d83c.png "Technologies") **Technologies & Processes Classic**.
+1. Перейдите в **Technologies & Processes**.
 2. Отфильтруйте по имени сервиса и выберите соответствующую группу пользовательских устройств.
 3. После выбора группы пользовательских устройств вы окажетесь на **странице обзора группы пользовательских устройств**.
 4. На **странице обзора группы пользовательских устройств** перечислены все экземпляры (пользовательские устройства), принадлежащие группе. Выберите экземпляр для просмотра **страницы обзора пользовательского устройства**.
 
-### Просмотр метрик на панели мониторинга
+### Просмотр метрик на дашборде
 
-После добавления сервиса в мониторинг предустановленная панель мониторинга, содержащая все рекомендуемые метрики, автоматически появится на странице **Панели мониторинга**. Для поиска конкретных панелей мониторинга фильтруйте по **Preset** и затем по **Name**.
+После добавления сервиса в мониторинг предустановленный дашборд со всеми рекомендуемыми метриками автоматически появляется на вашей странице **Dashboards**. Чтобы найти конкретные дашборды, отфильтруйте по **Preset**, а затем по **Name**.
 
 ![AWS presets](https://dt-cdn.net/images/image-26-1645-389f58aa89.png)
 
-Для уже отслеживаемых сервисов может потребоваться повторное сохранение учётных данных, чтобы предустановленная панель мониторинга появилась на странице **Панели мониторинга**. Для повторного сохранения учётных данных перейдите в **Settings** > **Cloud and virtualization** > **AWS**, выберите нужный экземпляр AWS и нажмите **Save**.
+AWS presets
 
-Вы не можете вносить изменения в предустановленную панель мониторинга напрямую, но можете клонировать и редактировать её. Для клонирования панели мониторинга откройте меню обзора (**â¦**) и выберите **Clone**.
+Для уже отслеживаемых сервисов может потребоваться повторно сохранить учётные данные, чтобы предустановленный дашборд отобразился на странице **Dashboards**. Для повторного сохранения учётных данных перейдите в **Settings** > **Cloud and virtualization** > **AWS**, выберите нужный экземпляр AWS, затем нажмите **Save**.
 
-Для удаления панели мониторинга со страницы панелей мониторинга вы можете скрыть её. Для скрытия панели мониторинга откройте меню обзора (**â¦**) и выберите **Hide**.
+Вы не можете вносить изменения непосредственно в предустановленный дашборд, но можете клонировать его и редактировать. Чтобы клонировать дашборд, откройте меню обзора (**…**) и выберите **Clone**.
 
-Скрытие панели мониторинга не влияет на других пользователей.
+Чтобы убрать дашборд со страницы дашбордов, его можно скрыть. Чтобы скрыть дашборд, откройте меню обзора (**…**) и выберите **Hide**.
+
+Скрытие дашборда не затрагивает других пользователей.
 
 ![Clone hide AWS](https://dt-cdn.net/images/2020-12-10-15-04-09-1502-b899a29d73.png)
 
-Для проверки доступности предустановленных панелей мониторинга для каждого сервиса AWS см. список ниже.
+Clone hide AWS
 
-### Список доступности предустановленных панелей мониторинга
+Чтобы проверить доступность предустановленных дашбордов для каждого сервиса AWS, см. список ниже.
 
-| Сервис AWS | Предустановленная панель |
+### Список доступности предустановленных дашбордов
+
+| Сервис AWS | Предустановленный дашборд |
 | --- | --- |
-| Amazon EC2 Auto Scaling (built-in) | Недоступна |
-| AWS Lambda (built-in) | Недоступна |
-| Amazon Application and Network Load Balancer (built-in) | Недоступна |
-| Amazon DynamoDB (built-in) | Недоступна |
-| Amazon EBS (built-in) | Недоступна |
-| Amazon EC2 (built-in) | Недоступна |
-| Amazon Elastic Load Balancer (ELB) (built-in) | Недоступна |
-| Amazon RDS (built-in) | Недоступна |
-| Amazon S3 (built-in) | Недоступна |
-| AWS Certificate Manager Private Certificate Authority | Недоступна |
-| All monitored Amazon services | Недоступна |
-| Amazon API Gateway | Недоступна |
-| AWS App Runner | Недоступна |
-| Amazon AppStream | Доступна |
-| AWS AppSync | Доступна |
-| Amazon Athena | Доступна |
-| Amazon Aurora | Недоступна |
-| Amazon EC2 Auto Scaling | Доступна |
-| AWS Billing | Доступна |
-| Amazon Keyspaces | Доступна |
-| AWS Chatbot | Доступна |
-| Amazon CloudFront | Недоступна |
-| AWS CloudHSM | Доступна |
-| Amazon CloudSearch | Доступна |
-| AWS CodeBuild | Доступна |
-| Amazon Cognito | Недоступна |
-| Amazon Connect | Доступна |
-| AWS DataSync | Доступна |
-| Amazon DynamoDB Accelerator (DAX) | Доступна |
-| AWS Database Migration Service (AWS DMS) | Доступна |
-| Amazon DocumentDB | Доступна |
-| AWS Direct Connect | Доступна |
-| Amazon DynamoDB | Недоступна |
-| Amazon EBS | Недоступна |
-| Amazon EC2 Spot Fleet | Недоступна |
-| Amazon EC2 API | Доступна |
-| Amazon Elastic Container Service (ECS) | Недоступна |
-| Amazon ECS Container Insights | Доступна |
-| Amazon Elastic File System (EFS) | Недоступна |
-| Amazon Elastic Kubernetes Service (EKS) | Доступна |
-| Amazon ElastiCache (EC) | Недоступна |
-| AWS Elastic Beanstalk | Доступна |
-| Amazon Elastic Inference | Доступна |
-| Amazon Elastic Transcoder | Доступна |
-| Amazon Elastic Map Reduce (EMR) | Недоступна |
-| Amazon Elasticsearch Service (ES) | Недоступна |
-| Amazon EventBridge | Доступна |
-| Amazon FSx | Доступна |
-| Amazon GameLift | Доступна |
-| AWS Glue | Недоступна |
-| Amazon Inspector | Доступна |
-| AWS Internet of Things (IoT) | Недоступна |
-| AWS IoT Things Graph | Доступна |
-| AWS IoT Analytics | Доступна |
-| Amazon Managed Streaming for Kafka | Доступна |
-| Amazon Kinesis Data Analytics | Недоступна |
-| Amazon Data Firehose | Недоступна |
-| Amazon Kinesis Data Streams | Недоступна |
-| Amazon Kinesis Video Streams | Недоступна |
-| AWS Lambda | Недоступна |
-| Amazon Lex | Доступна |
-| Amazon CloudWatch Logs | Доступна |
-| AWS Elemental MediaTailor | Доступна |
-| AWS Elemental MediaConnect | Доступна |
-| AWS Elemental MediaConvert | Доступна |
-| AWS Elemental MediaPackage Live | Доступна |
-| AWS Elemental MediaPackage Video on Demand | Доступна |
-| Amazon MQ | Доступна |
-| Amazon VPC NAT Gateways | Недоступна |
-| Amazon Neptune | Доступна |
-| AWS OpsWorks | Доступна |
-| Amazon Polly | Доступна |
-| Amazon QLDB | Доступна |
-| Amazon RDS | Недоступна |
-| Amazon Redshift | Недоступна |
-| Amazon Rekognition | Доступна |
-| AWS RoboMaker | Доступна |
-| Amazon Route 53 | Доступна |
-| Amazon Route 53 Resolver | Доступна |
-| Amazon S3 | Недоступна |
-| Amazon SageMaker Batch Transform Jobs | Недоступна |
-| Amazon SageMaker Endpoints | Недоступна |
-| Amazon SageMaker Endpoint Instances | Недоступна |
-| Amazon SageMaker Ground Truth | Недоступна |
-| Amazon SageMaker Processing Jobs | Недоступна |
-| Amazon SageMaker Training Jobs | Недоступна |
-| AWS Service Catalog | Доступна |
-| Amazon Simple Email Service (SES) | Недоступна |
-| Amazon Simple Notification Service (SNS) | Недоступна |
-| Amazon Simple Queue Service (SQS) | Недоступна |
-| AWS Systems Manager - Run Command | Доступна |
-| AWS Step Functions | Доступна |
-| AWS Storage Gateway | Доступна |
-| Amazon SWF | Доступна |
-| Amazon Textract | Доступна |
-| AWS Transfer Family | Доступна |
-| AWS Transit Gateway | Доступна |
-| Amazon Translate | Доступна |
-| AWS Trusted Advisor | Доступна |
-| AWS API Usage | Доступна |
-| AWS Site-to-Site VPN | Доступна |
-| AWS WAF Classic | Доступна |
-| AWS WAF | Доступна |
-| Amazon WorkMail | Доступна |
-| Amazon WorkSpaces | Доступна |
+| Amazon EC2 Auto Scaling (built-in) | Не применимо |
+| AWS Lambda (built-in) | Не применимо |
+| Amazon Application and Network Load Balancer (built-in) | Не применимо |
+| Amazon DynamoDB (built-in) | Не применимо |
+| Amazon EBS (built-in) | Не применимо |
+| Amazon EC2 (built-in) | Не применимо |
+| Amazon Elastic Load Balancer (ELB) (built-in) | Не применимо |
+| Amazon RDS (built-in) | Не применимо |
+| Amazon S3 (built-in) | Не применимо |
+| AWS Certificate Manager Private Certificate Authority | Не применимо |
+| All monitored Amazon services | Не применимо |
+| Amazon API Gateway | Не применимо |
+| AWS App Runner | Не применимо |
+| Amazon AppStream | Применимо |
+| AWS AppSync | Применимо |
+| Amazon Athena | Применимо |
+| Amazon Aurora | Не применимо |
+| Amazon EC2 Auto Scaling | Применимо |
+| AWS Billing | Применимо |
+| Amazon Keyspaces | Применимо |
+| AWS Chatbot | Применимо |
+| Amazon CloudFront | Не применимо |
+| AWS CloudHSM | Применимо |
+| Amazon CloudSearch | Применимо |
+| AWS CodeBuild | Применимо |
+| Amazon Cognito | Не применимо |
+| Amazon Connect | Применимо |
+| AWS DataSync | Применимо |
+| Amazon DynamoDB Accelerator (DAX) | Применимо |
+| AWS Database Migration Service (AWS DMS) | Применимо |
+| Amazon DocumentDB | Применимо |
+| AWS Direct Connect | Применимо |
+| Amazon DynamoDB | Не применимо |
+| Amazon EBS | Не применимо |
+| Amazon EC2 Spot Fleet | Не применимо |
+| Amazon EC2 API | Применимо |
+| Amazon Elastic Container Service (ECS) | Не применимо |
+| Amazon ECS Container Insights | Применимо |
+| Amazon Elastic File System (EFS) | Не применимо |
+| Amazon Elastic Kubernetes Service (EKS) | Применимо |
+| Amazon ElastiCache (EC) | Не применимо |
+| AWS Elastic Beanstalk | Применимо |
+| Amazon Elastic Inference | Применимо |
+| Amazon Elastic Transcoder | Применимо |
+| Amazon Elastic Map Reduce (EMR) | Не применимо |
+| Amazon Elasticsearch Service (ES) | Не применимо |
+| Amazon EventBridge | Применимо |
+| Amazon FSx | Применимо |
+| Amazon GameLift | Применимо |
+| AWS Glue | Не применимо |
+| Amazon Inspector | Применимо |
+| AWS Internet of Things (IoT) | Не применимо |
+| AWS IoT Things Graph | Применимо |
+| AWS IoT Analytics | Применимо |
+| Amazon Managed Streaming for Kafka | Применимо |
+| Amazon Kinesis Data Analytics | Не применимо |
+| Amazon Data Firehose | Не применимо |
+| Amazon Kinesis Data Streams | Не применимо |
+| Amazon Kinesis Video Streams | Не применимо |
+| AWS Lambda | Не применимо |
+| Amazon Lex | Применимо |
+| Amazon CloudWatch Logs | Применимо |
+| AWS Elemental MediaTailor | Применимо |
+| AWS Elemental MediaConnect | Применимо |
+| AWS Elemental MediaConvert | Применимо |
+| AWS Elemental MediaPackage Live | Применимо |
+| AWS Elemental MediaPackage Video on Demand | Применимо |
+| Amazon MQ | Применимо |
+| Amazon VPC NAT Gateways | Не применимо |
+| Amazon Neptune | Применимо |
+| AWS OpsWorks | Применимо |
+| Amazon Polly | Применимо |
+| Amazon QLDB | Применимо |
+| Amazon RDS | Не применимо |
+| Amazon Redshift | Не применимо |
+| Amazon Rekognition | Применимо |
+| AWS RoboMaker | Применимо |
+| Amazon Route 53 | Применимо |
+| Amazon Route 53 Resolver | Применимо |
+| Amazon S3 | Не применимо |
+| Amazon SageMaker Batch Transform Jobs | Не применимо |
+| Amazon SageMaker Endpoints | Не применимо |
+| Amazon SageMaker Endpoint Instances | Не применимо |
+| Amazon SageMaker Ground Truth | Не применимо |
+| Amazon SageMaker Processing Jobs | Не применимо |
+| Amazon SageMaker Training Jobs | Не применимо |
+| AWS Service Catalog | Применимо |
+| Amazon Simple Email Service (SES) | Не применимо |
+| Amazon Simple Notification Service (SNS) | Не применимо |
+| Amazon Simple Queue Service (SQS) | Не применимо |
+| AWS Systems Manager - Run Command | Применимо |
+| AWS Step Functions | Применимо |
+| AWS Storage Gateway | Применимо |
+| Amazon SWF | Применимо |
+| Amazon Textract | Применимо |
+| AWS Transfer Family | Применимо |
+| AWS Transit Gateway | Применимо |
+| Amazon Translate | Применимо |
+| AWS Trusted Advisor | Применимо |
+| AWS API Usage | Применимо |
+| AWS Site-to-Site VPN | Применимо |
+| AWS WAF Classic | Применимо |
+| AWS WAF | Применимо |
+| Amazon WorkMail | Применимо |
+| Amazon WorkSpaces | Применимо |
 
 ![GameLift](https://dt-cdn.net/images/gamelift-dashboard-1-2982-7671d496d8.png)
 
+GameLift
+
 ## Доступные метрики
 
-`FleetId` является основным измерением.
+Основное измерение: `FleetId`.
 
-| Название | Описание | Единица | Статистика | Измерения | Рекомендуемая |
+| Имя | Описание | Единица измерения | Статистика | Измерения | Рекомендуется |
 | --- | --- | --- | --- | --- | --- |
-| ActivatingGameSessions | Game sessions with `Activating` status, which means they are in the process of starting up | Count | Multi | FleetId | Доступна |
-| ActivatingGameSessions |  | Count | Multi | Region, MetricGroups | Доступна |
-| ActiveGameSessions | Game sessions with `Active` status, which means they are able to host players, and are hosting zero or more players | Count | Multi | FleetId | Доступна |
-| ActiveGameSessions |  | Count | Multi | Region, MetricGroups | Доступна |
-| ActiveInstances | Instances with `Active` status, which means they are running active server processes | Count | Multi | FleetId | Доступна |
-| ActiveInstances |  | Count | Multi | Region, MetricGroups | Доступна |
-| ActiveServerProcesses | Server processes with `Active` status, which means they are running and able to host game session | Count | Multi | FleetId | Доступна |
-| ActiveServerProcesses |  | Count | Multi | Region, MetricGroups | Доступна |
-| AvailableGameSessions | Active, healthy server processes that are not currently being used to host a game session and can start a new game session without a delay to spin up new server processes or instances | Count | Multi | FleetId | Доступна |
-| AvailableGameSessions |  | Count | Multi | Region, MetricGroups | Доступна |
-| AverageWaitTime | Average amount of time that game session placement requests in the queue in `Pending` status have been waiting to be fulfilled | Seconds | Multi | Region, QueueName | Доступна |
-| AverageWaitTime |  | Seconds | Sum | Region, QueueName | Доступна |
-| CurrentPlayerSessions | Player sessions with either `Active` status (player is connected to an active game session) or `Reserved` status (player has been given a slot in a game session but hasn't yet connected) | Count | Multi | FleetId | Доступна |
-| CurrentPlayerSessions |  | Count | Multi | Region, MetricGroups | Доступна |
-| CurrentTickets | Matchmaking requests currently being processed or waiting to be processed | Count | Multi | Region, ConfigurationName | Доступна |
-| CurrentTickets |  | Count | Sum | Region, ConfigurationName | Доступна |
-| DesiredInstances | Target number of active instances that GameLift is working to maintain in the fleet | Count | Multi | FleetId |  |
-| FirstChoiceNotViable | Game sessions successfully placed but that aren't in the first-choice fleet, because that fleet isn't considered viable (such as a spot fleet with a high interruption rate) | Count/Minute | Multi | Region |  |
-| FirstChoiceNotViable |  | Count/Minute | Multi | Region, QueueName |  |
-| FirstChoiceNotViable |  | Count/Minute | Sum | Region |  |
-| FirstChoiceNotViable |  | Count/Minute | Sum | Region, QueueName |  |
-| FirstChoiceOutOfCapacity | Game sessions successfully placed but that aren't in the first-choice fleet, because that fleet doesn't have any available resources | Count/Minute | Multi | Region | Доступна |
-| FirstChoiceOutOfCapacity |  | Count/Minute | Multi | Region, QueueName | Доступна |
-| FirstChoiceOutOfCapacity |  | Count/Minute | Sum | Region | Доступна |
-| FirstChoiceOutOfCapacity |  | Count/Minute | Sum | Region, QueueName | Доступна |
-| GameSessionInterruptions | Number of game sessions on spot instances that have been interrupted | Count/Minute | Multi | FleetId |  |
-| GameSessionInterruptions |  | Count/Minute | Multi | Region, MetricGroups |  |
-| GameSessionInterruptions |  | Count/Minute | Sum | FleetId |  |
-| GameSessionInterruptions |  | Count/Minute | Sum | Region, MetricGroups |  |
-| HealthyServerProcesses | Active server processes that are reporting healthy | Count | Multi | FleetId | Доступна |
-| HealthyServerProcesses |  | Count | Multi | Region, MetricGroups | Доступна |
-| IdleInstances | Active instances that are currently hosting zero (0) game sessions. This metric measures capacity that is available but unused. | Count | Multi | FleetId | Доступна |
-| IdleInstances |  | Count | Multi | Region, MetricGroups | Доступна |
-| InstanceInterruptions | Number of spot instances that have been interrupted | Count/Minute | Multi | FleetId |  |
-| InstanceInterruptions |  | Count/Minute | Multi | Region, MetricGroups |  |
-| InstanceInterruptions |  | Count/Minute | Sum | FleetId |  |
-| InstanceInterruptions |  | Count/Minute | Sum | Region, MetricGroups |  |
-| LowestLatencyPlacement | Game sessions that were successfully placed in a region that offers the queue's lowest possible latency for the players | Count/Minute | Multi | Region | Доступна |
-| LowestLatencyPlacement |  | Count/Minute | Multi | Region, QueueName | Доступна |
-| LowestLatencyPlacement |  | Count/Minute | Sum | Region | Доступна |
-| LowestLatencyPlacement |  | Count/Minute | Sum | Region, QueueName | Доступна |
-| LowestPricePlacement | Game sessions that were successfully placed in a fleet with the queue's lowest possible price for the chosen region | Count/Minute | Multi | Region |  |
-| LowestPricePlacement |  | Count/Minute | Multi | Region, QueueName |  |
-| LowestPricePlacement |  | Count/Minute | Sum | Region |  |
-| LowestPricePlacement |  | Count/Minute | Sum | Region, QueueName |  |
-| MatchAcceptancesTimedOut | For matchmaking configurations that require acceptance, the potential matches that timed out during acceptance since the last report | Count/Minute | Sum | Region, ConfigurationName | Доступна |
-| MatchesAccepted | For matchmaking configurations that require acceptance, the potential matches that were accepted since the last report | Count/Minute | Sum | Region, ConfigurationName | Доступна |
-| MatchesCreated | Potential matches that were created since the last report | Count/Minute | Sum | Region, ConfigurationName | Доступна |
-| MatchesPlaced | Matches that were successfully placed into a game session since the last report | Count/Minute | Sum | Region, ConfigurationName | Доступна |
-| MatchesRejected | For matchmaking configurations that require acceptance, the potential matches that were rejected by at least one player since the last report | Count/Minute | Sum | Region, ConfigurationName | Доступна |
-| MaxInstances | Maximum number of instances that are allowed for the fleet | Count | Multi | FleetId |  |
-| MinInstances | Minimum number of instances allowed for the fleet | Count | Multi | FleetId |  |
-| PercentAvailableGameSessions | Percentage of game session slots on all active server processes (healthy or unhealthy) that are not currently being used (calculated as `AvailableGameSessions` / [`ActiveGameSessions` + `AvailableGameSessions` + unhealthy server processes]) | Percent | Average | FleetId | Доступна |
-| PercentAvailableGameSessions |  | Percent | Average | Region, MetricGroups | Доступна |
-| PercentHealthyServerProcesses | Percentage of all active server processes that are reporting healthy (calculated as `HealthyServerProcesses` / `ActiveServerProcesses`) | Percent | Multi | FleetId | Доступна |
-| PercentHealthyServerProcesses |  | Percent | Multi | Region, MetricGroups | Доступна |
-| PercentIdleInstances | Percentage of all active instances that are idle (calculated as `IdleInstances` / `ActiveInstances`) | Percent | Multi | FleetId | Доступна |
-| PercentIdleInstances |  | Percent | Multi | Region, MetricGroups | Доступна |
-| PlacementsCanceled | Game session placement requests canceled before timing out since the last report | Count/Minute | Multi | Region, QueueName | Доступна |
-| PlacementsCanceled |  | Count/Minute | Sum | Region, QueueName | Доступна |
-| PlacementsFailed | Game session placement requests that failed for any reason since the last report | Count/Minute | Multi | Region, QueueName | Доступна |
-| PlacementsFailed |  | Count/Minute | Sum | Region, QueueName | Доступна |
-| PlacementsStarted | New game session placement requests added to the queue since the last report | Count/Minute | Multi | Region, QueueName | Доступна |
-| PlacementsStarted |  | Count/Minute | Sum | Region, QueueName | Доступна |
-| PlacementsSucceeded | Game session placement requests that resulted in a new game session since the last report | Count/Minute | Multi | Region, QueueName | Доступна |
-| PlacementsSucceeded |  | Count/Minute | Sum | Region, QueueName | Доступна |
-| PlacementsTimedOut | Game session placement requests that reached the queue's timeout limit without being fulfilled since the last report | Count/Minute | Multi | Region, QueueName | Доступна |
-| PlacementsTimedOut |  | Count/Minute | Sum | Region, QueueName | Доступна |
-| PlayerSessionActivations | Player sessions that transitioned from `Reserved` to `Active` status since the last report | Count/Minute | Multi | FleetId | Доступна |
-| PlayerSessionActivations |  | Count/Minute | Multi | Region, MetricGroups | Доступна |
-| PlayerSessionActivations |  | Count/Minute | Sum | FleetId | Доступна |
-| PlayerSessionActivations |  | Count/Minute | Sum | Region, MetricGroups | Доступна |
-| PlayersStarted | Players in matchmaking tickets that were added since the last report | Count/Minute | Sum | Region, ConfigurationName | Доступна |
-| QueueDepth | Number of game session placement requests in the queue with `Pending` status | Count | Multi | Region, QueueName | Доступна |
-| QueueDepth |  | Count | Sum | Region, QueueName | Доступна |
-| ServerProcessAbnormalTerminations | Server processes that were shut down due to abnormal circumstances since the last report | Count/Minute | Multi | FleetId | Доступна |
-| ServerProcessAbnormalTerminations |  | Count/Minute | Sum | FleetId | Доступна |
-| ServerProcessAbnormalTerminations |  | Count/Minute | Multi | Region, MetricGroups | Доступна |
-| ServerProcessAbnormalTerminations |  | Count/Minute | Sum | Region, MetricGroups | Доступна |
-| ServerProcessActivations | Server processes that successfully transitioned from `Activating` to `Active` status since the last report | Count/Minute | Multi | FleetId | Доступна |
-| ServerProcessActivations |  | Count/Minute | Sum | FleetId | Доступна |
-| ServerProcessActivations |  | Count/Minute | Multi | Region, MetricGroups | Доступна |
-| ServerProcessActivations |  | Count/Minute | Sum | Region, MetricGroups | Доступна |
-| ServerProcessTerminations | Server processes that were shut down since the last report | Count/Minute | Multi | FleetId | Доступна |
-| ServerProcessTerminations |  | Count/Minute | Sum | FleetId | Доступна |
-| ServerProcessTerminations |  | Count/Minute | Multi | Region, MetricGroups | Доступна |
-| ServerProcessTerminations |  | Count/Minute | Sum | Region, MetricGroups | Доступна |
-| TicketsFailed | Matchmaking requests that resulted in failure since the last report | Count/Minute | Sum | Region, ConfigurationName | Доступна |
-| TicketsStarted | New matchmaking requests that were created since the last report | Count/Minute | Sum | Region, ConfigurationName | Доступна |
-| TicketsTimedOut | Matchmaking requests that reached the timeout limit since the last report | Count/Minute | Sum | Region, ConfigurationName | Доступна |
-| TimeToMatch | For matchmaking requests that were put into a potential match before the last report, the amount of time between ticket creation and potential match creation | Seconds | Multi | Region, ConfigurationName | Доступна |
-| TimeToTicketCancel | For matchmaking requests that were canceled before the last report, the amount of time between ticket creation and cancellation | Seconds | Multi | Region, ConfigurationName | Доступна |
-| TimeToTicketSuccess | For matchmaking requests that succeeded before the last report, the amount of time between ticket creation and successful match placement | Seconds | Multi | Region, ConfigurationName | Доступна |
+| ActivatingGameSessions | Игровые сессии со статусом `Activating`, что означает, что они находятся в процессе запуска | Количество | Multi | FleetId | Применимо |
+| ActivatingGameSessions |  | Количество | Multi | Region, MetricGroups | Применимо |
+| ActiveGameSessions | Игровые сессии со статусом `Active`, что означает, что они способны принимать игроков и обслуживают ноль или более игроков | Количество | Multi | FleetId | Применимо |
+| ActiveGameSessions |  | Количество | Multi | Region, MetricGroups | Применимо |
+| ActiveInstances | Экземпляры со статусом `Active`, что означает, что на них выполняются активные серверные процессы | Количество | Multi | FleetId | Применимо |
+| ActiveInstances |  | Количество | Multi | Region, MetricGroups | Применимо |
+| ActiveServerProcesses | Серверные процессы со статусом `Active`, что означает, что они выполняются и способны обслуживать игровую сессию | Количество | Multi | FleetId | Применимо |
+| ActiveServerProcesses |  | Количество | Multi | Region, MetricGroups | Применимо |
+| AvailableGameSessions | Активные, исправные серверные процессы, которые в настоящее время не используются для обслуживания игровой сессии и могут запустить новую игровую сессию без задержки на развёртывание новых серверных процессов или экземпляров | Количество | Multi | FleetId | Применимо |
+| AvailableGameSessions |  | Количество | Multi | Region, MetricGroups | Применимо |
+| AverageWaitTime | Среднее время, в течение которого запросы на размещение игровых сессий в очереди со статусом `Pending` ожидали выполнения | Секунда | Multi | Region, QueueName | Применимо |
+| AverageWaitTime |  | Секунда | Sum | Region, QueueName | Применимо |
+| CurrentPlayerSessions | Сессии игроков со статусом `Active` (игрок подключён к активной игровой сессии) или `Reserved` (игроку выделен слот в игровой сессии, но он ещё не подключился) | Количество | Multi | FleetId | Применимо |
+| CurrentPlayerSessions |  | Количество | Multi | Region, MetricGroups | Применимо |
+| CurrentTickets | Запросы на подбор игроков, которые в настоящее время обрабатываются или ожидают обработки | Количество | Multi | Region, ConfigurationName | Применимо |
+| CurrentTickets |  | Количество | Sum | Region, ConfigurationName | Применимо |
+| DesiredInstances | Целевое количество активных экземпляров, которое GameLift стремится поддерживать во флоте | Количество | Multi | FleetId |  |
+| FirstChoiceNotViable | Игровые сессии, успешно размещённые, но не во флоте первого выбора, поскольку этот флот не считается жизнеспособным (например, spot-флот с высокой частотой прерываний) | Количество в минуту | Multi | Region |  |
+| FirstChoiceNotViable |  | Количество в минуту | Multi | Region, QueueName |  |
+| FirstChoiceNotViable |  | Количество в минуту | Sum | Region |  |
+| FirstChoiceNotViable |  | Количество в минуту | Sum | Region, QueueName |  |
+| FirstChoiceOutOfCapacity | Игровые сессии, успешно размещённые, но не во флоте первого выбора, поскольку у этого флота нет доступных ресурсов | Количество в минуту | Multi | Region | Применимо |
+| FirstChoiceOutOfCapacity |  | Количество в минуту | Multi | Region, QueueName | Применимо |
+| FirstChoiceOutOfCapacity |  | Количество в минуту | Sum | Region | Применимо |
+| FirstChoiceOutOfCapacity |  | Количество в минуту | Sum | Region, QueueName | Применимо |
+| GameSessionInterruptions | Количество игровых сессий на spot-экземплярах, которые были прерваны | Количество в минуту | Multi | FleetId |  |
+| GameSessionInterruptions |  | Количество в минуту | Multi | Region, MetricGroups |  |
+| GameSessionInterruptions |  | Количество в минуту | Sum | FleetId |  |
+| GameSessionInterruptions |  | Количество в минуту | Sum | Region, MetricGroups |  |
+| HealthyServerProcesses | Активные серверные процессы, сообщающие об исправном состоянии | Количество | Multi | FleetId | Применимо |
+| HealthyServerProcesses |  | Количество | Multi | Region, MetricGroups | Применимо |
+| IdleInstances | Активные экземпляры, которые в настоящее время обслуживают ноль (0) игровых сессий. Эта метрика измеряет доступную, но неиспользуемую ёмкость. | Количество | Multi | FleetId | Применимо |
+| IdleInstances |  | Количество | Multi | Region, MetricGroups | Применимо |
+| InstanceInterruptions | Количество spot-экземпляров, которые были прерваны | Количество в минуту | Multi | FleetId |  |
+| InstanceInterruptions |  | Количество в минуту | Multi | Region, MetricGroups |  |
+| InstanceInterruptions |  | Количество в минуту | Sum | FleetId |  |
+| InstanceInterruptions |  | Количество в минуту | Sum | Region, MetricGroups |  |
+| LowestLatencyPlacement | Игровые сессии, успешно размещённые в регионе, который обеспечивает наименьшую возможную задержку очереди для игроков | Количество в минуту | Multi | Region | Применимо |
+| LowestLatencyPlacement |  | Количество в минуту | Multi | Region, QueueName | Применимо |
+| LowestLatencyPlacement |  | Количество в минуту | Sum | Region | Применимо |
+| LowestLatencyPlacement |  | Количество в минуту | Sum | Region, QueueName | Применимо |
+| LowestPricePlacement | Игровые сессии, успешно размещённые во флоте с наименьшей возможной ценой очереди для выбранного региона | Количество в минуту | Multi | Region |  |
+| LowestPricePlacement |  | Количество в минуту | Multi | Region, QueueName |  |
+| LowestPricePlacement |  | Количество в минуту | Sum | Region |  |
+| LowestPricePlacement |  | Количество в минуту | Sum | Region, QueueName |  |
+| MatchAcceptancesTimedOut | Для конфигураций подбора игроков, требующих принятия, потенциальные матчи, время ожидания которых истекло во время принятия с момента последнего отчёта | Количество в минуту | Sum | Region, ConfigurationName | Применимо |
+| MatchesAccepted | Для конфигураций подбора игроков, требующих принятия, потенциальные матчи, принятые с момента последнего отчёта | Количество в минуту | Sum | Region, ConfigurationName | Применимо |
+| MatchesCreated | Потенциальные матчи, созданные с момента последнего отчёта | Количество в минуту | Sum | Region, ConfigurationName | Применимо |
+| MatchesPlaced | Матчи, успешно размещённые в игровой сессии с момента последнего отчёта | Количество в минуту | Sum | Region, ConfigurationName | Применимо |
+| MatchesRejected | Для конфигураций подбора игроков, требующих принятия, потенциальные матчи, отклонённые хотя бы одним игроком с момента последнего отчёта | Количество в минуту | Sum | Region, ConfigurationName | Применимо |
+| MaxInstances | Максимальное количество экземпляров, разрешённое для флота | Количество | Multi | FleetId |  |
+| MinInstances | Минимальное количество экземпляров, разрешённое для флота | Количество | Multi | FleetId |  |
+| PercentAvailableGameSessions | Процент слотов игровых сессий на всех активных серверных процессах (исправных или неисправных), которые в настоящее время не используются (рассчитывается как `AvailableGameSessions` / [`ActiveGameSessions` + `AvailableGameSessions` + неисправные серверные процессы]) | Процент | Average | FleetId | Применимо |
+| PercentAvailableGameSessions |  | Процент | Average | Region, MetricGroups | Применимо |
+| PercentHealthyServerProcesses | Процент всех активных серверных процессов, сообщающих об исправном состоянии (рассчитывается как `HealthyServerProcesses` / `ActiveServerProcesses`) | Процент | Multi | FleetId | Применимо |
+| PercentHealthyServerProcesses |  | Процент | Multi | Region, MetricGroups | Применимо |
+| PercentIdleInstances | Процент всех активных экземпляров, простаивающих (рассчитывается как `IdleInstances` / `ActiveInstances`) | Процент | Multi | FleetId | Применимо |
+| PercentIdleInstances |  | Процент | Multi | Region, MetricGroups | Применимо |
+| PlacementsCanceled | Запросы на размещение игровых сессий, отменённые до истечения времени ожидания, с момента последнего отчёта | Количество в минуту | Multi | Region, QueueName | Применимо |
+| PlacementsCanceled |  | Количество в минуту | Sum | Region, QueueName | Применимо |
+| PlacementsFailed | Запросы на размещение игровых сессий, завершившиеся неудачно по любой причине, с момента последнего отчёта | Количество в минуту | Multi | Region, QueueName | Применимо |
+| PlacementsFailed |  | Количество в минуту | Sum | Region, QueueName | Применимо |
+| PlacementsStarted | Новые запросы на размещение игровых сессий, добавленные в очередь с момента последнего отчёта | Количество в минуту | Multi | Region, QueueName | Применимо |
+| PlacementsStarted |  | Количество в минуту | Sum | Region, QueueName | Применимо |
+| PlacementsSucceeded | Запросы на размещение игровых сессий, приведшие к созданию новой игровой сессии, с момента последнего отчёта | Количество в минуту | Multi | Region, QueueName | Применимо |
+| PlacementsSucceeded |  | Количество в минуту | Sum | Region, QueueName | Применимо |
+| PlacementsTimedOut | Запросы на размещение игровых сессий, достигшие предела времени ожидания очереди без выполнения, с момента последнего отчёта | Количество в минуту | Multi | Region, QueueName | Применимо |
+| PlacementsTimedOut |  | Количество в минуту | Sum | Region, QueueName | Применимо |
+| PlayerSessionActivations | Сессии игроков, перешедшие из статуса `Reserved` в `Active` с момента последнего отчёта | Количество в минуту | Multi | FleetId | Применимо |
+| PlayerSessionActivations |  | Количество в минуту | Multi | Region, MetricGroups | Применимо |
+| PlayerSessionActivations |  | Количество в минуту | Sum | FleetId | Применимо |
+| PlayerSessionActivations |  | Количество в минуту | Sum | Region, MetricGroups | Применимо |
+| PlayersStarted | Игроки в тикетах подбора игроков, добавленные с момента последнего отчёта | Количество в минуту | Sum | Region, ConfigurationName | Применимо |
+| QueueDepth | Количество запросов на размещение игровых сессий в очереди со статусом `Pending` | Количество | Multi | Region, QueueName | Применимо |
+| QueueDepth |  | Количество | Sum | Region, QueueName | Применимо |
+| ServerProcessAbnormalTerminations | Серверные процессы, остановленные из-за нештатных обстоятельств, с момента последнего отчёта | Количество в минуту | Multi | FleetId | Применимо |
+| ServerProcessAbnormalTerminations |  | Количество в минуту | Sum | FleetId | Применимо |
+| ServerProcessAbnormalTerminations |  | Количество в минуту | Multi | Region, MetricGroups | Применимо |
+| ServerProcessAbnormalTerminations |  | Количество в минуту | Sum | Region, MetricGroups | Применимо |
+| ServerProcessActivations | Серверные процессы, успешно перешедшие из статуса `Activating` в `Active` с момента последнего отчёта | Количество в минуту | Multi | FleetId | Применимо |
+| ServerProcessActivations |  | Количество в минуту | Sum | FleetId | Применимо |
+| ServerProcessActivations |  | Количество в минуту | Multi | Region, MetricGroups | Применимо |
+| ServerProcessActivations |  | Количество в минуту | Sum | Region, MetricGroups | Применимо |
+| ServerProcessTerminations | Серверные процессы, остановленные с момента последнего отчёта | Количество в минуту | Multi | FleetId | Применимо |
+| ServerProcessTerminations |  | Количество в минуту | Sum | FleetId | Применимо |
+| ServerProcessTerminations |  | Количество в минуту | Multi | Region, MetricGroups | Применимо |
+| ServerProcessTerminations |  | Количество в минуту | Sum | Region, MetricGroups | Применимо |
+| TicketsFailed | Запросы на подбор игроков, завершившиеся неудачно, с момента последнего отчёта | Количество в минуту | Sum | Region, ConfigurationName | Применимо |
+| TicketsStarted | Новые запросы на подбор игроков, созданные с момента последнего отчёта | Количество в минуту | Sum | Region, ConfigurationName | Применимо |
+| TicketsTimedOut | Запросы на подбор игроков, достигшие предела времени ожидания, с момента последнего отчёта | Количество в минуту | Sum | Region, ConfigurationName | Применимо |
+| TimeToMatch | Для запросов на подбор игроков, помещённых в потенциальный матч до последнего отчёта, время между созданием тикета и созданием потенциального матча | Секунда | Multi | Region, ConfigurationName | Применимо |
+| TimeToTicketCancel | Для запросов на подбор игроков, отменённых до последнего отчёта, время между созданием тикета и отменой | Секунда | Multi | Region, ConfigurationName | Применимо |
+| TimeToTicketSuccess | Для запросов на подбор игроков, успешно выполненных до последнего отчёта, время между созданием тикета и успешным размещением матча | Секунда | Multi | Region, ConfigurationName | Применимо |

@@ -1,0 +1,21 @@
+---
+title: Ingest Kubernetes data with the OTel Collector
+source: https://docs.dynatrace.com/managed/ingest-from/opentelemetry/collector/use-cases/kubernetes
+scraped: 2026-05-12T12:11:05.806979
+---
+
+# Ingest Kubernetes data with the OTel Collector
+
+# Ingest Kubernetes data with the OTel Collector
+
+* How-to guide
+* 1-min read
+* Published Mar 12, 2024
+
+[### Enrich
+
+Configure the OTel Collector to enrich OTLP requests with Kubernetes data.](/managed/ingest-from/opentelemetry/collector/use-cases/kubernetes/k8s-enrich "Configure the OpenTelemetry Collector to enrich OTLP requests with Kubernetes data.")[### Monitor
+
+Configure the Collector to monitor Kubernetes.](/managed/ingest-from/opentelemetry/collector/use-cases/kubernetes/k8s-monitoring "Configure the OpenTelemetry Collector to monitor your Kubernetes clusters.")[### Pod logs
+
+Configure the Collector to ingest Kubernetes pod log files into Dynatrace.](/managed/ingest-from/opentelemetry/collector/use-cases/kubernetes/k8s-podlogs "Configure the OpenTelemetry Collector to ingest Kubernetes pod log files into Dynatrace.")

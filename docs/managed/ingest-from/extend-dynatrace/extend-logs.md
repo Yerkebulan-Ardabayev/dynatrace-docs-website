@@ -1,16 +1,21 @@
 ---
-title: "Extend log observability"
+title: Extend log observability
 source: https://docs.dynatrace.com/managed/ingest-from/extend-dynatrace/extend-logs
-updated: 2026-02-09
+scraped: 2026-05-12T11:04:14.517538
 ---
 
+# Extend log observability
+
+# Extend log observability
+
 * 1-min read
+* Published Feb 04, 2022
 
 [### Log Analytics
 
-Learn how Dynatrace ingests log data with OneAgent built-in log acquisition.](https://docs.dynatrace.com/docs/shortlink/log-management-and-analytics)### Log ingestion API
+Learn how Dynatrace ingests log data with OneAgent built-in log acquisition.](https://docs.dynatrace.com/docs/shortlink/log-management-and-analytics)[### Log ingestion API
 
-Extend log observability via Dynatrace open Log APIs.[![Syslog](https://dt-cdn.net/images/syslog-c85e9ae419.svg "Syslog")
+Extend log observability via Dynatrace open Log APIs.](/managed/analyze-explore-automate/log-monitoring/acquire-log-data/logs-classic-ingestion-api "Learn how Dynatrace ingests log data and what are potential limits such ingestion.")[![Syslog](https://dt-cdn.net/images/syslog-c85e9ae419.svg "Syslog")
 
 ### Syslog ingestion with ActiveGate
 
@@ -22,9 +27,9 @@ Extend log observability in Dynatrace with Fluentd as an alternative to OneAgent
 
 ### Logstash
 
-Extend log observability in Dynatrace with Logstash as an alternative to OneAgent-based log collection.](https://github.com/dynatrace-oss/logstash-output-dynatrace)### OneAgent log ingestion API
+Extend log observability in Dynatrace with Logstash as an alternative to OneAgent-based log collection.](https://github.com/dynatrace-oss/logstash-output-dynatrace)[### OneAgent log ingestion API
 
-Extend log observability right on the host via the local OneAgent Log API.[![SNMP](https://dt-cdn.net/images/techn-icon-snmp-43de4f1139.svg "SNMP")
+Extend log observability right on the host via the local OneAgent Log API.](/managed/ingest-from/extend-dynatrace/extend-logs/oneagent-log-ingest-api "Use the Dynatrace API to push locally retrieved logs to Dynatrace.")[![SNMP](https://dt-cdn.net/images/techn-icon-snmp-43de4f1139.svg "SNMP")
 
 ### SNMP traps
 

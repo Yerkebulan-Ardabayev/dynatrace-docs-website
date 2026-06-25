@@ -1,13 +1,13 @@
 ---
 title: Azure HDInsight monitoring
-source: https://www.dynatrace.com/docs/ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics/monitor-azure-hdinsight
-scraped: 2026-03-05T21:37:08.478436
+source: https://docs.dynatrace.com/managed/ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics/monitor-azure-hdinsight
+scraped: 2026-05-12T11:26:41.410610
 ---
 
 # Azure HDInsight monitoring
 
+# Azure HDInsight monitoring
 
-* Latest Dynatrace
 * How-to guide
 * 4-min read
 * Updated on Jan 22, 2026
@@ -22,7 +22,7 @@ On the Azure HDInsights dashboard, you get holistic insights into your Hadoop, S
 
 ## Enable monitoring
 
-To learn how to enable service monitoring, see Enable service monitoring.
+To learn how to enable service monitoring, see [Enable service monitoring](/managed/ingest-from/microsoft-azure-services/azure-integrations/azure-monitoring-guide/azure-enable-service-monitoring "Enable Azure monitoring in Dynatrace.").
 
 ## Install OneAgent Optional
 
@@ -34,16 +34,16 @@ Follow the steps below to install OneAgent on Azure HDInsight cluster (Linux).
 
 [![Step 1](https://dt-cdn.net/images/step-1-086e22066c.svg "Step 1")
 
-**Create an install script**](../../../../../ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics/monitor-azure-hdinsight.md#step-1 "Monitor Azure HDInsight and view available metrics.")[![Step 2](https://dt-cdn.net/images/step-2-1a1384627e.svg "Step 2")
+**Create an install script**](/managed/ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics/monitor-azure-hdinsight#step-1 "Monitor Azure HDInsight and view available metrics.")[![Step 2](https://dt-cdn.net/images/step-2-1a1384627e.svg "Step 2")
 
-**Create an HDInsight cluster**](../../../../../ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics/monitor-azure-hdinsight.md#step-2 "Monitor Azure HDInsight and view available metrics.")[![Step 3](https://dt-cdn.net/images/step-3-350cf6c19a.svg "Step 3")
+**Create an HDInsight cluster**](/managed/ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics/monitor-azure-hdinsight#step-2 "Monitor Azure HDInsight and view available metrics.")[![Step 3](https://dt-cdn.net/images/step-3-350cf6c19a.svg "Step 3")
 
-**Restart the processes**](../../../../../ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics/monitor-azure-hdinsight.md#step-3 "Monitor Azure HDInsight and view available metrics.")
+**Restart the processes**](/managed/ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics/monitor-azure-hdinsight#step-3 "Monitor Azure HDInsight and view available metrics.")
 
 ### Step 1 Create an install script
 
-1. In Dynatrace Hub, select **OneAgent**.
-2. Select **Set up** > **Linux**.
+1. Go to **Deploy Dynatrace**.
+2. Select **Start installation** > **Linux**.
 
 3. On the **Install Dynatrace OneAgent on your Linux hosts** page, copy the command below **Use this command on the target host** and the command below **And run the installer with root rights** into a plain text document called `installdynatrace.sh`, and save it to your local machine.
 
@@ -51,6 +51,7 @@ Follow the steps below to install OneAgent on Azure HDInsight cluster (Linux).
 
 ```
 wget  -O Dynatrace-OneAgent-Linux-1.137.163.sh "https://YOURTENANT.live.dynatrace.com/api/v1/deployment/installer/agent/unix/default/latest?Api-Token=YOURAPITOKEN&arch=x86&flavor=default"
+
 
 
 /bin/sh Dynatrace-OneAgent-Linux-1.137.163.sh  --set-app-log-content-access=1
@@ -88,7 +89,7 @@ You can view the service metrics in your Dynatrace environment either on the **c
 
 To access the custom device overview page
 
-1. Go to ![Technologies](https://dt-cdn.net/images/technologies-512-977161d83c.png "Technologies") **Technologies & Processes Classic**.
+1. Go to **Technologies & Processes**.
 2. Filter by service name and select the relevant custom device group.
 3. Once you select the custom device group, you're on the **custom device group overview page**.
 4. The **custom device group overview page** lists all instances (custom devices) belonging to the group. Select an instance to view the **custom device overview page**.
@@ -99,18 +100,22 @@ If the service has a preset dashboard, you'll get a preset dashboard for the res
 
 For existing monitored services, you might need to resave your credentials for the preset dashboard to appear on the **Dashboards** page. To resave your credentials, go to **Settings** > **Cloud and virtualization** > **Azure**, select the desired Azure instance, then select **Save**.
 
-You can't make changes on a preset dashboard directly, but you can clone and edit it. To clone a dashboard, open the browse menu (**â¦**) and select **Clone**.  
-To remove a dashboard from the dashboards list, you can hide it. To hide a dashboard, open the browse menu (**â¦**) and select **Hide**.
+You can't make changes on a preset dashboard directly, but you can clone and edit it. To clone a dashboard, open the browse menu (**…**) and select **Clone**.  
+To remove a dashboard from the dashboards list, you can hide it. To hide a dashboard, open the browse menu (**…**) and select **Hide**.
 
 Hiding a dashboard doesn't affect other users.
 
 ![Clone hide azure](https://dt-cdn.net/images/2020-12-10-14-35-42-1473-23fe220b09.png)
 
+Clone hide azure
+
 ![Hdinsights azure](https://dt-cdn.net/images/hdinsights-custom-dashboard-1898-9e1893ad04.png)
+
+Hdinsights azure
 
 ### Set up a management zone
 
-To import a dashboard for Azure HDInsight, you need to set up a management zone to limit the entities displayed on the dashboard to cluster nodes only and exclude other hosts not relevant to the service.
+To import a dashboard for Azure HDInsight, you need to [set up a management zone](/managed/manage/identity-access-management/permission-management/management-zones/set-up-management-zones "Create and assign access rights to management zones.") to limit the entities displayed on the dashboard to cluster nodes only and exclude other hosts not relevant to the service.
 
 When you create a management zone for this dashboard:
 
@@ -130,7 +135,9 @@ Example
 
 ![Azure management zone](https://dt-cdn.net/images/hdinsightmanagementzone-2629-26e6039169.webp)
 
-After you create the management zone, assign it to your dashboard (from the dashboard, select **Edit** > **Settings** > **Default management zone**). For more information, see Dashboard timeframe and management zone.
+Azure management zone
+
+After you create the management zone, assign it to your dashboard (from the dashboard, select **Edit** > **Settings** > **Default management zone**). For more information, see [Dashboard timeframe and management zone](/managed/analyze-explore-automate/dashboards-classic/dashboards/dashboard-timeframe "Learn about Dynatrace dashboard timeframe and management zone settings.").
 
 ## Available metrics
 

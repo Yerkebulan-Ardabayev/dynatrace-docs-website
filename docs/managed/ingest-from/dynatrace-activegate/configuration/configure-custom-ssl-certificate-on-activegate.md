@@ -1,51 +1,81 @@
 ---
 title: Custom SSL certificate for ActiveGate
-source: https://www.dynatrace.com/docs/ingest-from/dynatrace-activegate/configuration/configure-custom-ssl-certificate-on-activegate
-scraped: 2026-03-06T21:27:26.606529
+source: https://docs.dynatrace.com/managed/ingest-from/dynatrace-activegate/configuration/configure-custom-ssl-certificate-on-activegate
+scraped: 2026-05-12T11:13:58.051235
 ---
 
 # Custom SSL certificate for ActiveGate
 
+# Custom SSL certificate for ActiveGate
 
-* Latest Dynatrace
 * 6-min read
-* Published Apr 11, 2019
+* Updated on Feb 24, 2026
 
 Not applicable to Cluster ActiveGate
 
 The following procedureâof directly uploading an SSL certificate to an ActiveGateâis not applicable for Cluster ActiveGates.
 Do not attempt to configure SSL certificates directly on a Cluster ActiveGate. If you do this, the certificate will be overwritten by automatic management performed by Dynatrace.
-For Cluster ActiveGates, you must upload your certificates using [the Cluster Management Consoleï»¿](https://docs.dynatrace.com/managed/shortlink/managed-ssl-cluster-ag) or [the Cluster REST API v1ï»¿](https://docs.dynatrace.com/managed/shortlink/api-cluster-post-ssl-cert-store).
+For Cluster ActiveGates, you must upload your certificates using [the Cluster Management Console](/managed/managed-cluster/installation/ssl-certificate-cluster-activegate "Configure a custom SSL certificate on a Cluster ActiveGate instead of relying on Dynatrace-managed certificate automation.") or [the Cluster REST API v1](/managed/dynatrace-api/cluster-api/cluster-api-v1/ssl-certificates-v1/post-cluster-ssl-cert-store-status "Learn how to use the Dynatrace API to store cluster SSL certificate.").
 
-Connection to ActiveGate, from OneAgents or REST API, takes place over an encrypted HTTPS channel. ActiveGate presents a self-signed authentication certificate to all connecting clients. While OneAgent instances may ignore the validity of ActiveGate certificates (depending on configuration), connections from browser clients (such as the RUM JavaScript) do verify that the hostname listed in the certificate is correct, before they send data.
+Connection to ActiveGate, from OneAgents or REST API, takes place over an encrypted HTTPS channel. ActiveGate presents a self-signed authentication certificate to all connecting clients. While OneAgent instances may ignore the validity of ActiveGate certificates (depending on configuration), connections from browser clients (such as the [RUM JavaScript](/managed/observe/digital-experience/web-applications/initial-setup/rum-injection "Configure automatic injection of the RUM JavaScript into the pages of your applications")) do verify that the hostname listed in the certificate is correct, before they send data.
 
-**ActiveGate can serve a custom certificate instead of the default one. To configure this, you need a file in `PKCS#12` format that contains a private key and its corresponding certificate chain.**
+ActiveGate can serve a custom certificate instead of the default one.
 
-Depending on root CA that signed custom ActiveGate certificate, additional configuration for OneAgent may be required. See OneAgent security.
+* Depending on the root CA that signed the custom ActiveGate certificate, additional configuration for OneAgent may be required. See [OneAgent security](/managed/ingest-from/dynatrace-oneagent/oneagent-security#trusted-root-certificates "Manage OneAgent security").
+* Custom certificate configuration can also be applied during ActiveGate installation, by specifying installation parameters for [Linux](/managed/ingest-from/dynatrace-activegate/installation/linux/linux-customize-installation-for-activegate#custom-ssl-certificate "Learn about the command-line parameters that you can use with ActiveGate on Linux.") or [Windows](/managed/ingest-from/dynatrace-activegate/installation/windows/windows-customize-installation-for-activegate#custom-ssl-certificate "Learn about the parameters that you can use with ActiveGate on Windows.") installations. To configure this, you need a file in PKCS#12 format that contains a private key and its corresponding certificate chain.
 
-### Option to configure during installation
+## Configure a custom SSL certificate
 
-This configuration can also be applied during ActiveGate installation, by specifying installation parameters for Linux or Windows installations.
+agctl
 
-## Configure a custom certificate
+custom.properties
 
-To configure ActiveGate to use a custom certificate
+ActiveGate version 1.333+
 
-1. Copy the certificate file to the ssl directory and set correct permissions.
+You can use [agctl](/managed/ingest-from/dynatrace-activegate/agctl-command-line-interface#ssl-certificate "Learn how to use agctl to configure and manage ActiveGate from the command line") to configure a custom SSL certificate.
+
+#### Set SSL certificate with minimum parameters:
+
+```
+agctl ssl-certificate set --certificate=/path/to/cert.crt --key=/path/to/key.pem
+```
+
+#### Set SSL certificate with all parameters:
+
+```
+agctl ssl-certificate set --certificate=/path/to/cert.crt --key=/path/to/key.pem --pem-password=secret --password=changeit --alias=mycert
+```
+
+#### Parameters:
+
+* `--certificate`: Path to the certificate file in PEM format (required)
+* `--key`: Path to the private key file in PEM format (required)
+* `--pem-password`: Password for the private key file (if encrypted)
+* `--password`: Password for the generated keystore (optional, auto-generated if not provided)
+* `--alias`: Alias for the certificate in the keystore (optional)
+
+After configuring the SSL certificate with `agctl`, you must [restart ActiveGate](/managed/ingest-from/dynatrace-activegate/operation/stop-restart-activegate "Learn how you can start, stop and restart ActiveGate on Windows or Linux.") for the changes to take effect.
+
+To configure ActiveGate to use a custom certificate, you need a file in **PKCS#12 format** that contains a private key and its corresponding certificate chain.
+
+1. Copy the certificate file to the [ssl directory](/managed/ingest-from/dynatrace-activegate/configuration/where-can-i-find-activegate-files "Find out where ActiveGate files are stored on Windows and Linux systems.") and set correct permissions.
 
    On Linux, make sure that permissions of the copied certificate file include the ActiveGate user you designated to run the ActiveGate service. If you didn't specify a custom user during installation, the default user is `dtuserag`.
 
    On Windows, make sure that the `LocalService` account has permissions to access the copied certificate file.
-2. Add the following entries to the `custom.properties` file in the ActiveGate configuration directory.
+2. Add the following entries to the `custom.properties` file in the [ActiveGate configuration directory](/managed/ingest-from/dynatrace-activegate/configuration/where-can-i-find-activegate-files "Find out where ActiveGate files are stored on Windows and Linux systems.").
 
    ```
    [com.compuware.apm.webserver]
 
 
+
    certificate-file = certificate-file.p12
 
 
+
    certificate-password = password
+
 
 
    certificate-alias = friendly-name
@@ -53,7 +83,7 @@ To configure ActiveGate to use a custom certificate
 
    You need to add the above entries in the `[com.compuware.apm.webserver]` section. If there already is such a section in your `custom.properties` file, then just add the properties to the section. If the section doesn't exist, then create the section heading as well.
 
-   The certificate password, which you provide in the `certificate-password` property, will be obfuscated, following the restart of ActiveGate main service. The obfuscated password is stored in the `certificate-password-encr` property, while the original property is deleted.
+   The certificate password, which you provide in the `certificate-password` property, will be obfuscated, following the [restart of ActiveGate main service](/managed/ingest-from/dynatrace-activegate/operation/stop-restart-activegate "Learn how you can start, stop and restart ActiveGate on Windows or Linux."). The obfuscated password is stored in the `certificate-password-encr` property, while the original property is deleted.
 
    **The value of `certificate-alias` must be specified in lower case.** If the certificate doesn't have a friendly name, you can omit the `certificate-alias` property.
 
@@ -63,7 +93,7 @@ The certificates can be managed remotely via REST API. Prepare a `PKCS#12` certi
 
 Authorization token
 
-The API token is required for authorization. API tokens can be provided via HTTP headers or other means. See Dynatrace API - Tokens and authentication
+The API token is required for authorization. API tokens can be provided via HTTP headers or other means. See [Dynatrace API - Tokens and authentication](/managed/dynatrace-api/basics/dynatrace-api-authentication "Find out how to get authenticated to use the Dynatrace API.")
 
 API token used for the following actions must have `ActiveGate certificate management` permission.
 
@@ -83,13 +113,17 @@ For example:
 curl https://myActiveGate:9999/e/myEnvironmentId/api/v1/certificate/cert.p12 \
 
 
+
 -H "Authorization: Api-Token 123abc" \
+
 
 
 -H "X-Password: myPassword" \
 
 
+
 -H "Content-Type: application/octet-stream" \
+
 
 
 -T cert.p12
@@ -151,55 +185,73 @@ Example response:
 [
 
 
+
 {
+
 
 
 "name":"cert_demo.p12"
 
 
+
 },
+
 
 
 {      "name":"cert.p12",
 
 
+
 "desc":[         {
+
 
 
 "alias":"local",
 
 
+
 "description":"Subject:CN=myActiveGate;Valid from:Fri Feb 15 13:16:58 CET 2019;Valid to:Sat Feb 15 13:16:58 CET 2020;Serial number:71d275dd3983c3cb9382437275dd3983c3cb93dbca"
+
 
 
 },
 
 
+
 {
+
 
 
 "alias":"dynatrace",
 
 
+
 "description":"Subject:CN=*.clients.dynatrace.org;Valid from:Thu Feb 21 10:06:03 CET 2019;Valid to:Fri Feb 21 10:06:03 CET 2020;Serial number:6dc7008ab269ecebeed03652ce08ab269ecebeeeb33"
 
 
+
 }
+
 
 
 ]
 
 
+
 },
+
 
 
 {
 
 
+
 "name":"cert_key_1.p12"
 
 
+
 }
+
 
 
 ]
@@ -233,31 +285,41 @@ Example response:
 {   "name":"cert.p12",
 
 
+
 "desc":[      {
+
 
 
 "alias":"local",
 
 
+
 "description":"Subject:CN=myActiveGate;Valid from:Fri Feb 15 13:16:58 CET 2019;Valid to:Sat Feb 15 13:16:58 CET 2020;Serial number:7137275dd398c4182437275dd3983c3cb93dbca"
+
 
 
 },
 
 
+
 {
+
 
 
 "alias":"dynatrace",
 
 
+
 "description":"Subject:CN=*.clients.dynatrace.org;Valid from:Thu Feb 21 10:06:03 CET 2019;Valid to:Fri Feb 21 10:06:03 CET 2020;Serial number:6d2ce08ab269ecebeee7f1bd03652ce08ab269ecebeeeb33"
+
 
 
 }
 
 
+
 ]
+
 
 
 }

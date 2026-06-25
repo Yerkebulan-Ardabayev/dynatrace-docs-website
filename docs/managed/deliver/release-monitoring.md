@@ -1,10 +1,16 @@
 ---
-title: "Release monitoring"
+title: Release monitoring
 source: https://docs.dynatrace.com/managed/deliver/release-monitoring
-updated: 2026-02-09
+scraped: 2026-05-12T11:09:53.218628
 ---
 
+# Release monitoring
+
+# Release monitoring
+
+* Overview
 * 1-min read
+* Published Sep 14, 2020
 
 The software product lifecycle of a release requires careful management of release risks. Also, as more and more components and versions are deployed, the frequency of releases in your organization increases, and manually collecting release-relevant data can easily become a bottleneck in your release automation pipeline and automated software lifecycle.
 
@@ -21,9 +27,9 @@ Dynatrace offers a built-in release-analysis solution that helps you determine:
 
 ## Configure
 
-* Learn how to configure environment variables for version detection.
-* Optionally, you can integrate your issue-tracking systems and configure dynamic queries.
+* Learn how to [configure environment variables for version detection](/managed/deliver/release-monitoring/version-detection-strategies "Metadata for version detection in different technologies").
+* Optionally, you can [integrate your issue-tracking systems and configure dynamic queries](/managed/deliver/release-monitoring/issue-tracking-integration "Integrate your issue tracker into Dynatrace to pull statistics for monitored entities.").
 
 ## Analyze
 
-Once you configure your software/issue tracker, you can analyze the software product lifecycle of your releases.
+Once you configure your software/issue tracker, you can [analyze the software product lifecycle of your releases](/managed/deliver/release-monitoring/monitor-releases-with-dynatrace "Analyze data related to each release version of your software.").

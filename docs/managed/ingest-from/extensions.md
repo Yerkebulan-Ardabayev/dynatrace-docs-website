@@ -1,10 +1,16 @@
 ---
-title: "Extensions"
+title: Extensions
 source: https://docs.dynatrace.com/managed/ingest-from/extensions
-updated: 2026-02-09
+scraped: 2026-05-12T11:03:25.410252
 ---
 
+# Extensions
+
+# Extensions
+
+* Overview
 * 2-min read
+* Published Jun 16, 2025
 
 ## What are Extensions?
 

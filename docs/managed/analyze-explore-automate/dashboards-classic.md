@@ -1,12 +1,18 @@
 ---
-title: "Dashboards"
+title: Dashboards
 source: https://docs.dynatrace.com/managed/analyze-explore-automate/dashboards-classic
-updated: 2026-02-09
+scraped: 2026-05-12T11:04:13.299045
 ---
 
-* 7-min read
+# Dashboards
 
-Dashboards Classic
+# Dashboards
+
+* Reference
+* 7-min read
+* Published Sep 25, 2018
+
+[Dashboards Classic](/managed/analyze-explore-automate/dashboards-classic "Learn how to create, manage, and use Dynatrace Dashboards Classic.")
 
 Each dashboard consists of tiles and visualizations that can be selected, configured, and positioned to best meet your needs. Dynatrace provides many preconfigured tiles in addition to a number of configurable tiles that you can customize to visualize the metrics that are most relevant to the people using the dashboard. Select any dashboard tile that reports on monitored entities in your environment (hosts, processes, or services) to view the list of monitored entities.
 
@@ -25,6 +31,8 @@ For more elaborate examples
 
 ![Dashboard general example](https://dt-cdn.net/images/dashboard-general-example3-778-3ecb2bdf91.png)
 
+Dashboard general example
+
 You can make different dashboards for specific people, roles, and teams, so everyone can focus on what's important to them.
 
 Basic navigation
@@ -37,15 +45,23 @@ Basic navigation
 * To drill down to a problematic (red) element, select the red hexagon and then select the **Viewâ¦** button. On this example **Synthetic monitor health** tile, we have selected a red element, which enabled the **View test** drilldown button for that element.
 
   ![Drill down to problematic entity from health tile](https://dt-cdn.net/images/tile-health-bad-drilldown-276-6265617519.png)
+
+  Drill down to problematic entity from health tile
 * You can't drill down from a healthy (green) element. From any tile, however, you can select the menu in the upper-right corner of the tile and then select **View details** to display the relevant Dynatrace page for the tile. For example, **View details** from a **Synthetic monitor health** tile displays the **Synthetic monitors** table.
 
   ![Select tile menu](https://dt-cdn.net/images/tile-health-menu-open-272-17a936feef.png)
 
+  Select tile menu
+
   ![Select 'View details' from tile menu](https://dt-cdn.net/images/tile-health-menu-view-details-270-aaf4eae8ec.png)
+
+  Select 'View details' from tile menu
 
 * If you drill down from a tile, you can always select the dashboard button
 
   ![Dashboard button](https://dt-cdn.net/images/home-icon-26-dd12d3ab04.png)
+
+  Dashboard button
 
   in the upper-left corner of the Dynatrace web UI to return to your current dashboard. If you select the dashboard button while you're already on a dashboard, you instead go to the **Dashboards** page.
 * You can open several dashboards at the same time in multiple browser tabs, one dashboard per browser tab.
@@ -82,7 +98,7 @@ Browse and display dashboards
 
    * To open multiple copies of the same dashboard, right-click the dashboard title on the **Dashboards** page and open the link in a new tab or window. (Alternatively, you can copy and paste the address line from a dashboard page and paste it on the address line of a different browser tab or window.)
 
-For details on using the **Dashboards** table, see Organize dashboards.
+For details on using the **Dashboards** table, see [Organize dashboards](/managed/analyze-explore-automate/dashboards-classic/dashboards/organize-dashboards "Learn how to organize your Dynatrace dashboards.").
 
 List dashboards by popularity
 
@@ -104,6 +120,8 @@ Return to the current dashboard
 
 ![Dashboard button](https://dt-cdn.net/images/dashboardbutton-28-e3cbad6cfe.png)
 
+Dashboard button
+
 The current dashboard is your most recently visited dashboard.
 
 * When you drill down from a dashboard, select the dashboard button in the upper-left corner of Dynatrace to go back to the current dashboard.
@@ -114,12 +132,12 @@ Create a new (empty) dashboard
 1. Go to **Dashboards**.
 2. Select **Create Dashboard**.
 3. Enter a name for your dashboard and select **Create**. The new dashboard opens in edit mode.
-4. Optional To add a tile, drag it from the **Tiles** pane to the dashboard, or pin a tile to the dashboard.
+4. Optional To add a tile, drag it from the **Tiles** pane to the dashboard, or [pin a tile to the dashboard](/managed/analyze-explore-automate/dashboards-classic/charts-and-tiles/pin-tiles-to-your-dashboard "Learn to pin tiles to your dashboards.").
 5. Optional To configure dashboard-specific settings, select the **Settings** tile.
 6. Select **Done**.  
-   The new dashboard is displayed as it will appear to you and people with whom you share it, though other people will not see the **Edit** button if you don't give them edit permission.
+   The new dashboard is displayed as it will appear to you and people with whom you [share](/managed/analyze-explore-automate/dashboards-classic/dashboards/share-dashboards "Learn how to share your Dynatrace dashboards with others.") it, though other people will not see the **Edit** button if you don't give them edit permission.
 
-For details on creating dashboards, see Create and edit Dynatrace dashboards
+For details on creating dashboards, see [Create and edit Dynatrace dashboards](/managed/analyze-explore-automate/dashboards-classic/dashboards/create-dashboards "Learn how to create and edit Dynatrace dashboards.")
 
 Clone an existing dashboard
 
@@ -129,7 +147,7 @@ Clone an existing dashboard
    * The copy opens in edit mode.
    * The original dashboard is unaffected.
 
-For details on creating dashboards, see Create and edit Dynatrace dashboards
+For details on creating dashboards, see [Create and edit Dynatrace dashboards](/managed/analyze-explore-automate/dashboards-classic/dashboards/create-dashboards "Learn how to create and edit Dynatrace dashboards.")
 
 Edit an existing dashboard
 
@@ -166,19 +184,23 @@ To favorite the dashboard you are viewing, select the star in the upper-right co
 
 ![Favoriting the current dashboard](https://dt-cdn.net/images/favorite-current-dashboard-169-caf101b927.png)
 
+Favoriting the current dashboard
+
 To favorite multiple dashboards
 
 1. Go to **Dashboards**.  
    By default, the table is sorted by the **Favorite** column, so your favorites should be listed at the top of the table.
 2. In the **Favorite** column, select the star for each dashboard you want to favorite.
 
-For more on organizing dashboards, see Organize dashboards.
+For more on organizing dashboards, see [Organize dashboards](/managed/analyze-explore-automate/dashboards-classic/dashboards/organize-dashboards "Learn how to organize your Dynatrace dashboards.").
 
 Unfavorite a dashboard
 
 To unfavorite the dashboard you are viewing, select the star in the upper-right corner of the dashboard. The star toggles favoriting on and off.
 
 ![Unfavoriting the current dashboard](https://dt-cdn.net/images/unfavorite-current-dashboard-169-97f319d05f.png)
+
+Unfavoriting the current dashboard
 
 To unfavorite multiple dashboards
 
@@ -187,7 +209,7 @@ To unfavorite multiple dashboards
 2. Optional To list only your favorites, filter the table by `Favorite: Yes`.
 3. In the **Favorite** column, select the star for each dashboard you want to unfavorite.
 
-For more on organizing dashboards, see Organize dashboards.
+For more on organizing dashboards, see [Organize dashboards](/managed/analyze-explore-automate/dashboards-classic/dashboards/organize-dashboards "Learn how to organize your Dynatrace dashboards.").
 
 List my favorite dashboards
 
@@ -198,7 +220,7 @@ List my favorite dashboards
    * Under **Favorite** in the left column, select `Yes`
    * On the **Filter by** line, select `Favorite: Yes`
 
-For more on organizing dashboards, see Organize dashboards.
+For more on organizing dashboards, see [Organize dashboards](/managed/analyze-explore-automate/dashboards-classic/dashboards/organize-dashboards "Learn how to organize your Dynatrace dashboards.").
 
 Tag a dashboard
 
@@ -209,7 +231,7 @@ Tag a dashboard
    Repeat this step as needed to add additional tags to this dashboard.
 4. Select **Done**.
 
-For more on tagging dashboards, see Organize dashboards.
+For more on tagging dashboards, see [Organize dashboards](/managed/analyze-explore-automate/dashboards-classic/dashboards/organize-dashboards "Learn how to organize your Dynatrace dashboards.").
 
 Share a dashboard
 
@@ -219,7 +241,7 @@ Share a dashboard
 2. Select **More** (**â¦**) > **Share** in the upper-right corner of the dashboard.
 3. Select **Advanced settings** to open **Dashboard settings** to the **Manage access** tab.
 
-For details on your dashboard sharing options, see Share dashboards.
+For details on your dashboard sharing options, see [Share dashboards](/managed/analyze-explore-automate/dashboards-classic/dashboards/share-dashboards "Learn how to share your Dynatrace dashboards with others.").
 
 Subscribe to dashboard reports
 
@@ -230,7 +252,7 @@ Subscribe to dashboard reports
    * If you see an **Enable reports** button, you have edit rights to that dashboard and you must enable reports if you want to receive reports from that dashboard.
 3. Select how often you want to receive a dashboard report in email (turn on **Weekly** or **Monthly** or both).
 
-For details on subscribing to dashboard reports, see Subscribe to dashboard reports.
+For details on subscribing to dashboard reports, see [Subscribe to dashboard reports](/managed/analyze-explore-automate/dashboards-classic/dashboards/subscribe-to-dashboard-reports "Learn how to subscribe to reports generated from Dynatrace dashboards.").
 
 Set a dashboard-specific timeframe
 
@@ -238,7 +260,7 @@ Set a dashboard-specific timeframe
 2. Turn on **Default timeframe**.
 3. Select the timeframe you want to be the default for this dashboard.
 
-For an overview of timeframes and management zones on dashboards, see Dynatrace dashboard timeframe and management zone settings.
+For an overview of timeframes and management zones on dashboards, see [Dynatrace dashboard timeframe and management zone settings](/managed/analyze-explore-automate/dashboards-classic/dashboards/dashboard-timeframe "Learn about Dynatrace dashboard timeframe and management zone settings.").
 
 Set a dashboard-specific management zone
 
@@ -246,8 +268,8 @@ Set a dashboard-specific management zone
 2. Turn on **Default management zone**.
 3. Select the management zone you want to be the default for this dashboard.
 
-* For an overview of timeframes and management zones on dashboards, see Dynatrace dashboard timeframe and management zone settings
-* For more on using management zones to organize your dashboards, see Organize Dynatrace dashboards
+* For an overview of timeframes and management zones on dashboards, see [Dynatrace dashboard timeframe and management zone settings](/managed/analyze-explore-automate/dashboards-classic/dashboards/dashboard-timeframe "Learn about Dynatrace dashboard timeframe and management zone settings.")
+* For more on using management zones to organize your dashboards, see [Organize Dynatrace dashboards](/managed/analyze-explore-automate/dashboards-classic/dashboards/organize-dashboards "Learn how to organize your Dynatrace dashboards.")
 
 Configure advanced settings
 
@@ -287,7 +309,7 @@ To import a dashboard
 3. Select the JSON file for the dashboard you want to import.  
    The imported dashboard opens in edit mode.
 
-For details, see Edit Dynatrace dashboard JSON.
+For details, see [Edit Dynatrace dashboard JSON](/managed/analyze-explore-automate/dashboards-classic/dashboards/dashboard-json "Learn how to export, edit, and import the JSON for a Dynatrace dashboard.").
 
 ### Tiles
 
@@ -303,7 +325,7 @@ List available tiles
 
 Now you can scroll down the **Tiles** pane to see all tile types available for your dashboard.
 
-For details on available tiles, see Available tiles.
+For details on available tiles, see [Available tiles](/managed/analyze-explore-automate/dashboards-classic/charts-and-tiles/available-tiles "Find out how to configure your dashboard to track business-critical user-actions and conversion goals.").
 
 Create a metric visualization tile
 
@@ -315,7 +337,7 @@ Create a metric visualization tile
 6. Select a dashboard for which you have edit permission.
 7. Select **Pin**.
 
-For details, see Data Explorer.
+For details, see [Data Explorer](/managed/analyze-explore-automate/explorer "Query for metrics and transform results to gain desired insights.").
 
 Add a tile
 
@@ -392,7 +414,7 @@ Some Dynatrace pages can be pinned as a tile to a dashboard. Those pages have a 
 
 In this example, the new tile on your dashboard shows a graphic representation of your host selection. If there are ten hosts listed on the **Hosts** page, there are ten hosts (and their health) indicated on the tile. Select **View details** from that tile's menu to return to the **Hosts** table with the same filters set.
 
-For details, see Pin tiles to your dashboard.
+For details, see [Pin tiles to your dashboard](/managed/analyze-explore-automate/dashboards-classic/charts-and-tiles/pin-tiles-to-your-dashboard "Learn to pin tiles to your dashboards.").
 
 Clone a tile to the current dashboard
 
@@ -444,7 +466,7 @@ To set a tile timeframe that overrides the dashboard timeframe
 7. **Done**.  
    When you set a tile-specific timeframe, a filter is displayed in the upper-right of the tile. Hover over the filter to see the setting.
 
-For an overview of timeframes and management zones on dashboards, see Dashboard timeframe and management zone.
+For an overview of timeframes and management zones on dashboards, see [Dashboard timeframe and management zone](/managed/analyze-explore-automate/dashboards-classic/dashboards/dashboard-timeframe "Learn about Dynatrace dashboard timeframe and management zone settings.").
 
 Set a tile-specific management zone
 
@@ -461,7 +483,7 @@ To set a tile management zone that overrides the dashboard management zone
 7. **Done**.  
    When you set a tile-specific management zone, a filter is displayed in the upper-right of the tile. Hover over the filter to see the setting.
 
-For an overview of timeframes and management zones on dashboards, see Dashboard timeframe and management zone.
+For an overview of timeframes and management zones on dashboards, see [Dashboard timeframe and management zone](/managed/analyze-explore-automate/dashboards-classic/dashboards/dashboard-timeframe "Learn about Dynatrace dashboard timeframe and management zone settings.").
 
 Set a tile-specific environment
 
@@ -477,7 +499,7 @@ To set a tile environment that overrides the dashboard environment
 6. **Done**.  
    When you set a tile-specific environment, a filter is displayed in the upper-right of the tile. Hover over the filter to see the setting.
 
-For details on remote environments, see Create remote/multi-environment Dynatrace dashboards.
+For details on remote environments, see [Create remote/multi-environment Dynatrace dashboards](/managed/analyze-explore-automate/dashboards-classic/dashboards/dashboards-multi-environment "Create dashboards that display data from multiple Dynatrace environments.").
 
 Delete a tile
 
@@ -528,13 +550,13 @@ Create a header
 
 ## API
 
-You can also manage dashboards through the Dashboards API:
+You can also manage dashboards through the [Dashboards API](/managed/dynatrace-api/configuration-api/dashboards-api "Find out how to manage dashboard configuration via Dynatrace Classic configuration API."):
 
-* GET all dashboards: List all dashboards of your Dynatrace environment.
-* GET a dashboard: Get parameters of a specified dashboard.
-* POST a dashboard: Create a new dashboard.
-* PUT a dashboard: Update a specified dashboard.
-* DELETE a dashboard: Delete a specified dashboard.
-* GET sharing configuration: Get the sharing configuration of the specified dashboard.
-* PUT sharing configuration: Update the sharing configuration of the specified dashboard.
-* Tile JSON models: JSON models of dashboard tiles vary greatly, depending on the type of a tile. Check this page to see JSON models for each tile type.
+* [GET all dashboards](/managed/dynatrace-api/configuration-api/dashboards-api/get-all "View all dashboards of your environment via the Dynatrace Classic API."): List all dashboards of your Dynatrace environment.
+* [GET a dashboard](/managed/dynatrace-api/configuration-api/dashboards-api/get-dashboard "View a dashboard via the Dynatrace Classic API."): Get parameters of a specified dashboard.
+* [POST a dashboard](/managed/dynatrace-api/configuration-api/dashboards-api/post-dashboard "Create a dashboard via the Dynatrace Classic API."): Create a new dashboard.
+* [PUT a dashboard](/managed/dynatrace-api/configuration-api/dashboards-api/put-dashboard "Edit a dashboard via the Dynatrace Classic API."): Update a specified dashboard.
+* [DELETE a dashboard](/managed/dynatrace-api/configuration-api/dashboards-api/del-dashboard "Delete a dashboard via the Dynatrace Classic API."): Delete a specified dashboard.
+* [GET sharing configuration](/managed/dynatrace-api/configuration-api/dashboards-api/get-sharing-config "View the sharing configuration of a dashboard via the Dynatrace Classic API."): Get the sharing configuration of the specified dashboard.
+* [PUT sharing configuration](/managed/dynatrace-api/configuration-api/dashboards-api/put-sharing-config "Update the sharing configuration of a dashboard via the Dynatrace Classic API."): Update the sharing configuration of the specified dashboard.
+* [Tile JSON models](/managed/dynatrace-api/configuration-api/dashboards-api/dashboards-api-tile-models "Learn the variations of tile JSON models in the Dynatrace Dashboards Classic API."): JSON models of dashboard tiles vary greatly, depending on the type of a tile. Check this page to see JSON models for each tile type.

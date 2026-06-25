@@ -1,41 +1,55 @@
 ---
-title: "Define custom topology"
+title: Define custom topology
 source: https://docs.dynatrace.com/managed/ingest-from/extend-dynatrace/extend-topology/custom-topology
-updated: 2026-02-09
+scraped: 2026-05-12T11:11:39.470417
 ---
 
+# Define custom topology
+
+# Define custom topology
+
 * 5-min read
+* Published Apr 09, 2021
 
 We continue with our [Easy Shipping LTD logistics example](/managed/ingest-from/extend-dynatrace/extend-topology#custom-topology-model-in-action "Ensure that all incoming observations are context-rich and analyzed in the context of the monitored entities they relate to."), in which trucks and truck-mounted containers send telemetry data to Dynatrace.
 
-The example data stream conforms to the Dynatrace metric line protocol format.
+The example data stream conforms to the [Dynatrace metric line protocol format](/managed/ingest-from/extend-dynatrace/extend-metrics/reference/metric-ingestion-protocol "Learn how the data ingestion protocol for Dynatrace Metrics API works.").
 
 ```
 truck.fuel.total,trucknr=99,model=mac-granite 10234
 
 
+
 truck.fuel.usage,trucknr=99,model=mac-granite 17
+
 
 
 truck.operation.hours,trucknr=99,model=mac-granite 23766
 
 
+
 truck.fuel.total,trucknr=12,model=mac-anthem 234
+
 
 
 truck.fuel.usage,trucknr=12,model=mac-anthem 10
 
 
+
 truck.operation.hours,trucknr=12,model=mac-anthem 13766
+
 
 
 container.temperature,containernr=234321,trucknr=99 40
 
 
+
 container.temperature.dev,containernr=234321,trucknr=99 0
 
 
+
 container.temperature,containernr=111111,trucknr=12 39
+
 
 
 container.temperature.dev,containernr=111111,trucknr=12 2.5
@@ -69,6 +83,8 @@ Example
 
 ![Custom topology](https://dt-cdn.net/images/type-definition-1552-1418014aaf.png)
 
+Custom topology
+
 ### Step 2 Specify extraction rules
 
 Teach Dynatrace how your new entity type should be automatically matched and how to identify unique entity instances (trucks).
@@ -82,6 +98,8 @@ Teach Dynatrace how your new entity type should be automatically matched and how
    Example
 
    ![Custom topology](https://dt-cdn.net/images/extraction-rules-1243-69772b09cb.png)
+
+   Custom topology
 4. To specify the extraction rule for the entity attribute, select **Add attribute extraction rule**. In this example, each truck's data is reported with the `model` dimension, which is the truck attribute:
 
    * **Attribute key**  
@@ -95,6 +113,8 @@ Teach Dynatrace how your new entity type should be automatically matched and how
 
    ![Custom topology](https://dt-cdn.net/images/attribute-extraction-1250-c9e3cc8800.png)
 
+   Custom topology
+
 ### Step 3 Repeat for additional entities
 
 Repeat the above steps to define additional entities. In this case, we still need to define the `container` entity type, specify its extraction rules (`containernr`), and specify extraction rules for its attributes (`trucknr`).
@@ -104,6 +124,8 @@ After you configure your own domain types on top of your incoming metrics or log
 Result
 
 ![Custom topology](https://dt-cdn.net/images/new-types-1252-7d636b2655.png)
+
+Custom topology
 
 ## Define entity relationships
 
@@ -134,6 +156,8 @@ With a joined data stream, we now can define a relationship between a truck and 
 Result
 
 ![Custom topology](https://dt-cdn.net/images/relationship-1270-0c3423b42e.png)
+
+Custom topology
 
 ### Optional roles
 

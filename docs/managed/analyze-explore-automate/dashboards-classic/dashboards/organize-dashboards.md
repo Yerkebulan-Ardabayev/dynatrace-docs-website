@@ -1,13 +1,18 @@
 ---
-title: "Organize Dynatrace dashboards"
+title: Organize Dynatrace dashboards
 source: https://docs.dynatrace.com/managed/analyze-explore-automate/dashboards-classic/dashboards/organize-dashboards
-updated: 2026-02-09
+scraped: 2026-05-12T11:14:40.349510
 ---
+
+# Organize Dynatrace dashboards
+
+# Organize Dynatrace dashboards
 
 * How-to guide
 * 3-min read
+* Published Jan 18, 2019
 
-Dashboards Classic
+[Dashboards Classic](/managed/analyze-explore-automate/dashboards-classic "Learn how to create, manage, and use Dynatrace Dashboards Classic.")
 
 When you have a lot of dashboards, you need to manage them.
 
@@ -43,7 +48,7 @@ You can apply the following filters to the **Dashboards** table:
 * **Owner**: Filters by the name or user ID of the owner
 * **Tag**: Filters by [dashboard tag](#tag)
 * **Hidden**: Set to `Yes` to display your hidden dashboards
-* **Preset**: Whether to list only preset dashboards
+* **Preset**: Whether to list only [preset dashboards](/managed/analyze-explore-automate/dashboards-classic/dashboards/dashboards-preset "Learn about out-of-the-box Dynatrace dashboards and how to create your own preset dashboards.")
 
 If you set more than one filter, only dashboards that match all of the filters are shown.
 
@@ -57,6 +62,8 @@ To favorite the dashboard you are viewing, select the star in the upper-right co
 
 ![Favoriting the current dashboard](https://dt-cdn.net/images/favorite-current-dashboard-169-caf101b927.png)
 
+Favoriting the current dashboard
+
 To favorite multiple dashboards
 
 1. Go to **Dashboards**.  
@@ -68,6 +75,8 @@ To favorite multiple dashboards
 To unfavorite the dashboard you are viewing, select the star in the upper-right corner of the dashboard. The star toggles favoriting on and off.
 
 ![Unfavoriting the current dashboard](https://dt-cdn.net/images/unfavorite-current-dashboard-169-97f319d05f.png)
+
+Unfavoriting the current dashboard
 
 To unfavorite multiple dashboards
 
@@ -90,6 +99,8 @@ To unfavorite multiple dashboards
 The **Popularity** column of the **Dashboards** table shows you which dashboards have been most viewed over the last 30 days. Each dashboard is given a popularity score between 1 (least popular) and 10 (most popular).
 
 ![Dashboard popularity](https://dt-cdn.net/images/relnotes-232-dashboard-popularity-347-ec0f08449a.png)
+
+Dashboard popularity
 
 * If you're a Dynatrace user, sort by **Popularity** to find popular dashboards that you might want to use.
 * If you manage a Dynatrace deployment, sort by **Popularity** to identify underused dashboards that could be candidates for cleanup.
@@ -123,6 +134,8 @@ You can filter the **Dashboards** list by **Tag**.
    4. Select **Dynamic filters**.
 
       ![The "Dynamic filters" tab of a dashboard](https://dt-cdn.net/images/empty-dynamic-filters-tab-1072-a5cc3d3c6e.png)
+
+      The "Dynamic filters" tab of a dashboard
 2. Select **Add filter**.
 3. Set **Filter criteria** to `Generic tag key`.
 4. Set **Display name** to a unique display name that identifies this generic filter (for example, `Application name`).
@@ -137,9 +150,9 @@ You can filter the **Dashboards** list by **Tag**.
 
 ## Management zones
 
-Management zones are used to partition monitoring data based on team ownership and responsibility. Dashboard content is automatically filtered whenever a management zone is selected.
+[Management zones](/managed/manage/identity-access-management/permission-management/management-zones "Learn about management zones concepts, how to define management zones, and how to make the most of them.") are used to partition monitoring data based on team ownership and responsibility. Dashboard content is automatically filtered whenever a management zone is selected.
 
-You can set a default timeframe and management zone for each dashboard; these are selected every time you open the dashboard. They're also used when you share the dashboard.
+You can set a default timeframe and management zone for each dashboard; these are selected every time you open the dashboard. They're also used when you [share](/managed/analyze-explore-automate/dashboards-classic/dashboards/share-dashboards "Learn how to share your Dynatrace dashboards with others.") the dashboard.
 
 To configure the default timeframe and management zone, edit the dashboard, switch to the **Settings** tab, and configure either or both settings:
 
@@ -148,7 +161,7 @@ To configure the default timeframe and management zone, edit the dashboard, swit
 
 Team members who view a zone-specific dashboard without having the required management zone permissions are presented with a dashboard that has no content. They must select a management zone that they have permission to view before data is displayed on the dashboard.
 
-For more on dashboards and management zones, see Dashboard timeframe and management zone.
+For more on dashboards and management zones, see [Dashboard timeframe and management zone](/managed/analyze-explore-automate/dashboards-classic/dashboards/dashboard-timeframe "Learn about Dynatrace dashboard timeframe and management zone settings.").
 
 ## More dashboard management procedures
 
@@ -157,12 +170,12 @@ Create a new (empty) dashboard
 1. Go to **Dashboards**.
 2. Select **Create Dashboard**.
 3. Enter a name for your dashboard and select **Create**. The new dashboard opens in edit mode.
-4. Optional To add a tile, drag it from the **Tiles** pane to the dashboard, or pin a tile to the dashboard.
+4. Optional To add a tile, drag it from the **Tiles** pane to the dashboard, or [pin a tile to the dashboard](/managed/analyze-explore-automate/dashboards-classic/charts-and-tiles/pin-tiles-to-your-dashboard "Learn to pin tiles to your dashboards.").
 5. Optional To configure dashboard-specific settings, select the **Settings** tile.
 6. Select **Done**.  
-   The new dashboard is displayed as it will appear to you and people with whom you share it, though other people will not see the **Edit** button if you don't give them edit permission.
+   The new dashboard is displayed as it will appear to you and people with whom you [share](/managed/analyze-explore-automate/dashboards-classic/dashboards/share-dashboards "Learn how to share your Dynatrace dashboards with others.") it, though other people will not see the **Edit** button if you don't give them edit permission.
 
-For details on creating dashboards, see Create and edit Dynatrace dashboards
+For details on creating dashboards, see [Create and edit Dynatrace dashboards](/managed/analyze-explore-automate/dashboards-classic/dashboards/create-dashboards "Learn how to create and edit Dynatrace dashboards.")
 
 Clone an existing dashboard
 
@@ -172,7 +185,7 @@ Clone an existing dashboard
    * The copy opens in edit mode.
    * The original dashboard is unaffected.
 
-For details on creating dashboards, see Create and edit Dynatrace dashboards
+For details on creating dashboards, see [Create and edit Dynatrace dashboards](/managed/analyze-explore-automate/dashboards-classic/dashboards/create-dashboards "Learn how to create and edit Dynatrace dashboards.")
 
 Edit an existing dashboard
 
@@ -203,4 +216,4 @@ Delete a dashboard
 
 ## Related topics
 
-* Dashboards API
+* [Dashboards API](/managed/dynatrace-api/configuration-api/dashboards-api "Find out how to manage dashboard configuration via Dynatrace Classic configuration API.")

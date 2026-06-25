@@ -1,12 +1,18 @@
 ---
-title: "Configuration as Code overview"
+title: Configuration as Code overview
 source: https://docs.dynatrace.com/managed/deliver/configuration-as-code
-updated: 2026-02-09
+scraped: 2026-05-12T11:03:01.245854
 ---
 
-* 2-min read
+# Configuration as Code overview
 
-![Configuration as Code](https://dt-cdn.net/images/configuration-as-code-highresolution-1025-29c909e912.png "Configuration as Code") **Configuration as Code** (CaC) provides Observability as Code and Security as Code to fully automate the configuration of the Dynatrace platform at any scale for:
+# Configuration as Code overview
+
+* Overview
+* 2-min read
+* Updated on Jul 27, 2025
+
+![Configuration as Code](https://dt-cdn.net/images/configuration-as-code-highresolution-1025-29c909e912.png "Configuration as Code") Configuration as Code (CaC) provides Observability as Code and Security as Code to fully automate the configuration of the Dynatrace platform at any scale for:
 
 * Automating and standardizing your observability configurations.
 * Adding observability to your software delivery process.
@@ -17,39 +23,18 @@ updated: 2026-02-09
 
 1 of 2Set up Open Pipeline configurations via Terraform
 
-## Overview
-
-Configuration-as-Code represents an approach to managing software and application configuration data, including observability and security systems.
-
-In a nutshell, it allows you to configure Dynatrace declaratively without the need to setup everything in the UI.
-
-A Configuration as Code self-service model allows development teams to set up monitoring, observability, and security policies quickly and efficiently, even for large-scale applications. It eliminates the need to build custom solutions and reduces the manual work of observability teams.
-
-The Dynatrace Configuration as Code approach allows you to manage your Dynatrace environment observability tasks through configuration files instead of a graphical user interface.
-
 ## Use cases
 
-Manage any Dynatrace configuration side-by-side with any source code, from within YAML files organized in Git repositories. For example:
+Manage any Dynatrace configuration side-by-side with any source code, from within YAML files organized in Git repositories.
 
-* release validation
-* AWS well architected framework pillars
+For example:
+
 * IAM resources
-* service monitoring / service onboarding
+* Service monitoring / service onboarding
 * SLO dashboards
-* Remediation and problem notification automations
 
 You can manage any Dynatrace configuration side-by-side with any source code, from within YAML files organized in Git repositories.
-Check out our [samples on GitHub](https://github.com/Dynatrace/dynatrace-configuration-as-code-samples).
-
-Examples of what can be configured in code:
-
-* Dashboards, Notebooks and Launchpads.
-* Incident management.
-* Release validations.
-* Real-user monitoring enablement.
-* ![Anomaly Detection - new](https://dt-cdn.net/images/davis-anomalydetection-256-105da91594.png "Anomaly Detection - new") **Anomaly Detection**.
-* Synthetic monitoring.
-* Data ingest and open pipeline configurations.
+Check out our [samples on GitHubï»¿](https://github.com/Dynatrace/dynatrace-configuration-as-code-samples).
 
 ## Concepts
 
@@ -99,14 +84,14 @@ Applying CaC allows
 * Reduce deployment time by integrating CaC to streamline your application onboarding process via Golden Paths.
 * Introduce observability and security standards in your environment by integrating them into your CI/CD pipelines, for example, via container images, and ensuring consistency in all your stages.
 * Provide self-service possibilities, integrating observability, automation, and quality gates into your SDLC.
-  For more information, see Platform Engineering.
+  For more information, see [Platform Engineering](/managed/discover-dynatrace/get-started/platform-engineering "Use observability and security to drive analytics and automation at scale.").
 
 ## Tools
 
 To set up and manage Dynatrace with CaC you have two tool options:
 
-* Terraform, the industry-standard CaC software tool.
-* Monaco, the Dynatrace-proprietary CaC CLI tool.
+* [Terraform](/managed/deliver/configuration-as-code/terraform "Manage your Dynatrace environment using Dynatrace Configuration as Code via Terraform."), the industry-standard CaC software tool.
+* [Monaco](/managed/deliver/configuration-as-code/monaco "Manage your Dynatrace environment using Dynatrace Configuration as Code via Monaco."), the Dynatrace-proprietary CaC CLI tool.
 
 Deciding what to use depends on the tool stack and requirements.
 
@@ -122,6 +107,6 @@ Monaco provides a third-party independent solution, operating in standalone mode
 
 ## Related topics
 
-* Configuration as Code via Terraform overview
-* Configuration as Code via Monaco overview
-* [[Blog] Automated observability, security, and reliability at scale](https://www.dynatrace.com/news/blog/automated-observability-security-and-reliability-at-scale/)
+* [Configuration as Code via Terraform overview](/managed/deliver/configuration-as-code/terraform "Manage your Dynatrace environment using Dynatrace Configuration as Code via Terraform.")
+* [Configuration as Code via Monaco overview](/managed/deliver/configuration-as-code/monaco "Manage your Dynatrace environment using Dynatrace Configuration as Code via Monaco.")
+* [[Blog] Automated observability, security, and reliability at scaleï»¿](https://www.dynatrace.com/news/blog/automated-observability-security-and-reliability-at-scale/)

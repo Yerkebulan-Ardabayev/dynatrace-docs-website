@@ -1,8 +1,15 @@
 ---
-title: "Metrics API - Metric expressions"
+title: Metrics API - Metric expressions
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/metric-v2/metric-expressions
-updated: 2026-02-09
+scraped: 2026-05-12T11:11:42.814914
 ---
+
+# Metrics API - Metric expressions
+
+# Metrics API - Metric expressions
+
+* Reference
+* Updated on Jul 29, 2022
 
 Metric expressions enable you to use simple arithmetic operations right in the metric selector.
 
@@ -16,7 +23,7 @@ For the operands of the expression, you can use metrics or numbers.
 
 * You need to use brackets to enforce order of operations.
 * All metrics with more than 1 data point involved in a metric expression must be of the same resolution.
-* You can use any metric as an operand, including metrics modified by any transformation chain, and you can apply transformations to the result of the expression.
+* You can use any metric as an operand, including metrics modified by any [transformation chain](/managed/dynatrace-api/environment-api/metric-v2/metric-selector "Configure the metric selector for the Metric v2 API."), and you can apply transformations to the result of the expression.
 
 ## Limitations
 
@@ -76,16 +83,21 @@ Use a metric expression only if you cannot accomplish your goal without it. Let'
 (
 
 
+
 builtin:host.cpu.usage:filter(eq("dt.entity.host","HOST-001")):splitBy()
+
 
 
 +
 
 
+
 builtin:host.cpu.usage:filter(eq("dt.entity.host","HOST-002")):splitBy()
 
 
+
 )
+
 
 
 /2
@@ -97,25 +109,33 @@ There are two problems with this approach. First, the expression is hard to read
 builtin:host.cpu.usage
 
 
+
 :filter(
+
 
 
 or(
 
 
+
 eq("dt.entity.host","HOST-001"),
+
 
 
 eq("dt.entity.host","HOST-002")
 
 
+
 )
 
 
+
 )
+
 
 
 :splitBy()
+
 
 
 :avg
@@ -123,7 +143,7 @@ eq("dt.entity.host","HOST-002")
 
 ### Do not convert units
 
-Do not use a metric expression to convert the unit of the data. Use the [**toUnit** transformation](/managed/dynatrace-api/environment-api/metric-v2/metric-selector#to-unit "Configure the metric selector for the Metric v2 API.") instead. The only exception to this rule is for units that Dynatrace does not support. Use the GET all units request to fetch the list of supported units.
+Do not use a metric expression to convert the unit of the data. Use the [**toUnit** transformation](/managed/dynatrace-api/environment-api/metric-v2/metric-selector#to-unit "Configure the metric selector for the Metric v2 API.") instead. The only exception to this rule is for units that Dynatrace does not support. Use the [GET all units](/managed/dynatrace-api/environment-api/metrics-units/get-all-units "List all metrics that are available for your monitoring environment via the Dynatrace API.") request to fetch the list of supported units.
 
 ### Limit transformation usage
 
@@ -135,7 +155,9 @@ Consider the following query, which attempts to add top-10 CPU usage times to to
 builtin:host.cpu.usage:sort(value(avg,descending)):limit(10)
 
 
+
 +
+
 
 
 builtin:host.cpu.idle:sort(value(avg,descending)):limit(10)
@@ -147,19 +169,25 @@ If you have a large environment with hundreds of hosts, it is unlikely that the 
 (
 
 
+
 builtin:host.cpu.usage
+
 
 
 +
 
 
+
 builtin:host.cpu.idle
+
 
 
 )
 
 
+
 :sort(value(auto,descending))
+
 
 
 :limit(10)
@@ -175,7 +203,9 @@ Consider this example of a ratio expression, where we calculate the error ratio 
 builtin:apps.other.keyUserActions.reportedErrorCount.os
 
 
+
 /
+
 
 
 builtin:apps.other.keyUserActions.requestCount.os
@@ -187,7 +217,9 @@ If there are many requests but not a single error in your timeframe, the result 
 builtin:apps.other.keyUserActions.reportedErrorCount.os:default(0)
 
 
+
 /
+
 
 
 builtin:apps.other.keyUserActions.requestCount.os
@@ -208,19 +240,25 @@ From them, we can build an error ratio metric:
 builtin:service.errors.total.count:value:default(0)
 
 
+
 /
+
 
 
 (
 
 
+
 builtin:service.errors.total.successCount:value:default(0)
+
 
 
 +
 
 
+
 builtin:service.errors.total.count:value:default(0)
+
 
 
 )
@@ -238,79 +276,105 @@ Result
 {
 
 
+
 "totalCount": 3,
+
 
 
 "nextPageKey": null,
 
 
+
 "result": [
 
 
+
 {
+
 
 
 "metricId": "builtin:service.errors.total.count",
 
 
+
 "data": [
+
 
 
 {
 
 
+
 "dimensions": ["SERVICE-B82BFBCB4E264A98"],
+
 
 
 "dimensionMap": {
 
 
+
 "dt.entity.service": "SERVICE-B82BFBCB4E264A98"
+
 
 
 },
 
 
+
 "timestamps": [1619913600000, 1620086400000, 1620259200000],
+
 
 
 "values": [48763, 81283, 80798]
 
 
+
 },
+
 
 
 {
 
 
+
 "dimensions": ["SERVICE-BE8B6928C46204B5"],
+
 
 
 "dimensionMap": {
 
 
+
 "dt.entity.service": "SERVICE-BE8B6928C46204B5"
+
 
 
 },
 
 
+
 "timestamps": [1619913600000, 1620086400000, 1620259200000],
+
 
 
 "values": [1096, 1124, 1095]
 
 
+
 }
+
 
 
 ]
 
 
+
 }
 
 
+
 ]
+
 
 
 }
@@ -318,81 +382,107 @@ Result
 
 ```
 {
+
 
 
 "totalCount": 3,
 
 
+
 "nextPageKey": null,
+
 
 
 "result": [
 
 
+
 {
+
 
 
 "metricId": "builtin:service.errors.total.successCount",
 
 
+
 "data": [
+
 
 
 {
 
 
+
 "dimensions": ["SERVICE-B82BFBCB4E264A98"],
+
 
 
 "dimensionMap": {
 
 
+
 "dt.entity.service": "SERVICE-B82BFBCB4E264A98"
+
 
 
 },
 
 
+
 "timestamps": [1619913600000, 1620086400000, 1620259200000],
+
 
 
 "values": [46182, 77110, 76736]
 
 
+
 },
+
 
 
 {
 
 
+
 "dimensions": ["SERVICE-BE8B6928C46204B5"],
+
 
 
 "dimensionMap": {
 
 
+
 "dt.entity.service": "SERVICE-BE8B6928C46204B5"
+
 
 
 },
 
 
+
 "timestamps": [1619913600000, 1620086400000, 1620259200000],
+
 
 
 "values": [0, 0, 0]
 
 
+
 }
+
 
 
 ]
 
 
+
 }
 
 
+
 ]
+
 
 
 }
@@ -400,81 +490,107 @@ Result
 
 ```
 {
+
 
 
 "totalCount": 3,
 
 
+
 "nextPageKey": null,
+
 
 
 "result": [
 
 
+
 {
+
 
 
 "metricId": "builtin:service.errors.total.count/(builtin:service.errors.total.count+builtin:service.errors.total.successCount)",
 
 
+
 "data": [
 
 
+
 {
+
 
 
 "dimensions": ["SERVICE-B82BFBCB4E264A98"],
 
 
+
 "dimensionMap": {
+
 
 
 "dt.entity.service": "SERVICE-B82BFBCB4E264A98"
 
 
+
 },
 
 
+
 "timestamps": [1619913600000, 1620086400000, 1620259200000],
+
 
 
 "values": [0.513592079625046, 0.513172930621934, 0.5128924549621035]
 
 
+
 },
+
 
 
 {
 
 
+
 "dimensions": ["SERVICE-BE8B6928C46204B5"],
+
 
 
 "dimensionMap": {
 
 
+
 "dt.entity.service": "SERVICE-BE8B6928C46204B5"
+
 
 
 },
 
 
+
 "timestamps": [1619913600000, 1620086400000, 1620259200000],
+
 
 
 "values": [1, 1, 1]
 
 
+
 }
+
 
 
 ]
 
 
+
 }
 
 
+
 ]
+
 
 
 }
@@ -495,7 +611,9 @@ Then use this expression:
 builtin:service.errors.total.count:filter(eq("dt.entity.service","SERVICE-B82BFBCB4E264A98")):value:default(0)
 
 
+
 /
+
 
 
 builtin:service.errors.total.count:splitBy():value:default(0) * 100
@@ -513,55 +631,73 @@ Percentage
 {
 
 
+
 "totalCount": 1,
+
 
 
 "nextPageKey": null,
 
 
+
 "result": [
 
 
+
 {
+
 
 
 "metricId": "builtin:service.errors.total.count:filter(eq(\"dt.entity.service\",SERVICE-B82BFBCB4E264A98))",
 
 
+
 "data": [
+
 
 
 {
 
 
+
 "dimensions": ["SERVICE-B82BFBCB4E264A98"],
+
 
 
 "dimensionMap": {
 
 
+
 "dt.entity.service": "SERVICE-B82BFBCB4E264A98"
+
 
 
 },
 
 
+
 "timestamps": [1619913600000, 1620086400000, 1620259200000],
+
 
 
 "values": [48763, 81283, 80798]
 
 
+
 }
+
 
 
 ]
 
 
+
 }
 
 
+
 ]
+
 
 
 }
@@ -569,51 +705,67 @@ Percentage
 
 ```
 {
+
 
 
 "totalCount": 1,
 
 
+
 "nextPageKey": null,
+
 
 
 "result": [
 
 
+
 {
+
 
 
 "metricId": "builtin:service.errors.total.count:splitBy()",
 
 
+
 "data": [
 
 
+
 {
+
 
 
 "dimensions": [],
 
 
+
 "dimensionMap": {},
 
 
+
 "timestamps": [1619913600000, 1620086400000, 1620259200000],
+
 
 
 "values": [49882, 82425, 81911]
 
 
+
 }
+
 
 
 ]
 
 
+
 }
 
 
+
 ]
+
 
 
 }
@@ -621,57 +773,75 @@ Percentage
 
 ```
 {
+
 
 
 "totalCount": 1,
 
 
+
 "nextPageKey": null,
+
 
 
 "result": [
 
 
+
 {
+
 
 
 "metricId": "builtin:service.errors.total.count:filter(eq(\"dt.entity.service\",SERVICE-B82BFBCB4E264A98))/builtin:service.errors.total.count:splitBy()*100",
 
 
+
 "data": [
+
 
 
 {
 
 
+
 "dimensions": ["SERVICE-B82BFBCB4E264A98"],
+
 
 
 "dimensionMap": {
 
 
+
 "dt.entity.service": "SERVICE-B82BFBCB4E264A98"
+
 
 
 },
 
 
+
 "timestamps": [1619913600000, 1620086400000, 1620259200000],
+
 
 
 "values": [97.75670582574877, 98.61449802851077, 98.64120814054277]
 
 
+
 }
+
 
 
 ]
 
 
+
 }
 
 
+
 ]
+
 
 
 }
@@ -689,13 +859,17 @@ Additionally, we can sort the result in descending order by applying the [sort t
 (
 
 
+
 builtin:tech.jvm.memory.gc.collectionTime
+
 
 
 /
 
 
+
 builtin:tech.jvm.memory.pool.collectionCount:splitBy("dt.entity.process_group_instance")
+
 
 
 ):sort(value(max,descending))
@@ -711,103 +885,137 @@ Average GC duration
 {
 
 
+
 "totalCount": 3,
+
 
 
 "nextPageKey": null,
 
 
+
 "result": [
 
 
+
 {
+
 
 
 "metricId": "builtin:tech.jvm.memory.gc.collectionTime",
 
 
+
 "data": [
+
 
 
 {
 
 
+
 "dimensions": ["PROCESS_GROUP_INSTANCE-18A5241823ABC769"],
+
 
 
 "dimensionMap": {
 
 
+
 "dt.entity.process_group_instance": "PROCESS_GROUP_INSTANCE-18A5241823ABC769"
+
 
 
 },
 
 
+
 "timestamps": [1619913600000, 1620086400000, 1620259200000],
+
 
 
 "values": [164670, 171630, 163044]
 
 
+
 },
+
 
 
 {
 
 
+
 "dimensions": ["PROCESS_GROUP_INSTANCE-92605BB8AE962F1C"],
+
 
 
 "dimensionMap": {
 
 
+
 "dt.entity.process_group_instance": "PROCESS_GROUP_INSTANCE-92605BB8AE962F1C"
+
 
 
 },
 
 
+
 "timestamps": [1619913600000, 1620086400000, 1620259200000],
+
 
 
 "values": [6883411, 5977311, 6356225]
 
 
+
 },
+
 
 
 {
 
 
+
 "dimensions": ["PROCESS_GROUP_INSTANCE-4285F2EF6B79E8A9"],
+
 
 
 "dimensionMap": {
 
 
+
 "dt.entity.process_group_instance": "PROCESS_GROUP_INSTANCE-4285F2EF6B79E8A9"
+
 
 
 },
 
 
+
 "timestamps": [1619913600000, 1620086400000, 1620259200000],
+
 
 
 "values": [163368, 162924, 170502]
 
 
+
 }
+
 
 
 ]
 
 
+
 }
 
 
+
 ]
+
 
 
 }
@@ -815,105 +1023,139 @@ Average GC duration
 
 ```
 {
+
 
 
 "totalCount": 3,
 
 
+
 "nextPageKey": null,
+
 
 
 "result": [
 
 
+
 {
+
 
 
 "metricId": "builtin:tech.jvm.memory.pool.collectionCount:splitBy(\"dt.entity.process_group_instance\")",
 
 
+
 "data": [
+
 
 
 {
 
 
+
 "dimensions": ["PROCESS_GROUP_INSTANCE-18A5241823ABC769"],
+
 
 
 "dimensionMap": {
 
 
+
 "dt.entity.process_group_instance": "PROCESS_GROUP_INSTANCE-18A5241823ABC769"
+
 
 
 },
 
 
+
 "timestamps": [1619913600000, 1620086400000, 1620259200000],
+
 
 
 "values": [1727814, 1720686, 1691604]
 
 
+
 },
+
 
 
 {
 
 
+
 "dimensions": ["PROCESS_GROUP_INSTANCE-92605BB8AE962F1C"],
+
 
 
 "dimensionMap": {
 
 
+
 "dt.entity.process_group_instance": "PROCESS_GROUP_INSTANCE-92605BB8AE962F1C"
+
 
 
 },
 
 
+
 "timestamps": [1619913600000, 1620086400000, 1620259200000],
+
 
 
 "values": [31363, 30588, 31419.5]
 
 
+
 },
+
 
 
 {
 
 
+
 "dimensions": ["PROCESS_GROUP_INSTANCE-4285F2EF6B79E8A9"],
+
 
 
 "dimensionMap": {
 
 
+
 "dt.entity.process_group_instance": "PROCESS_GROUP_INSTANCE-4285F2EF6B79E8A9"
+
 
 
 },
 
 
+
 "timestamps": [1619913600000, 1620086400000, 1620259200000],
+
 
 
 "values": [1697262, 1703742, 1722612]
 
 
+
 }
+
 
 
 ]
 
 
+
 }
 
 
+
 ]
+
 
 
 }
@@ -921,111 +1163,145 @@ Average GC duration
 
 ```
 {
+
 
 
 "totalCount": 3,
 
 
+
 "nextPageKey": null,
+
 
 
 "result": [
 
 
+
 {
+
 
 
 "metricId": "(builtin:tech.jvm.memory.gc.collectionTime/builtin:tech.jvm.memory.pool.collectionCount:splitBy(\"dt.entity.process_group_instance\")):sort(value(max,descending))",
 
 
+
 "data": [
 
 
+
 {
+
 
 
 "dimensions": ["PROCESS_GROUP_INSTANCE-92605BB8AE962F1C"],
 
 
+
 "dimensionMap": {
+
 
 
 "dt.entity.process_group_instance": "PROCESS_GROUP_INSTANCE-92605BB8AE962F1C"
 
 
+
 },
 
 
+
 "timestamps": [1619913600000, 1620086400000, 1620259200000],
+
 
 
 "values": [219.47552848898383, 195.41359356610437, 202.3019144162065]
 
 
+
 },
 
 
+
 {
+
 
 
 "dimensions": ["PROCESS_GROUP_INSTANCE-18A5241823ABC769"],
 
 
+
 "dimensionMap": {
+
 
 
 "dt.entity.process_group_instance": "PROCESS_GROUP_INSTANCE-18A5241823ABC769"
 
 
+
 },
 
 
+
 "timestamps": [1619913600000, 1620086400000, 1620259200000],
+
 
 
 "values": [0.09530539745597616, 0.09974510166294141, 0.09638426014599162]
 
 
+
 },
+
 
 
 {
 
 
+
 "dimensions": ["PROCESS_GROUP_INSTANCE-4285F2EF6B79E8A9"],
+
 
 
 "dimensionMap": {
 
 
+
 "dt.entity.process_group_instance": "PROCESS_GROUP_INSTANCE-4285F2EF6B79E8A9"
+
 
 
 },
 
 
+
 "timestamps": [1619913600000, 1620086400000, 1620259200000],
+
 
 
 "values": [0.09625384884596486, 0.09562715481569392, 0.09897876016189368]
 
 
+
 }
+
 
 
 ]
 
 
+
 }
 
 
+
 ]
+
 
 
 }
 ```
 
-For more examples, see the ['Metric Expressions by Example' Github page](https://dt-url.net/metric-expressions-by-example).
+For more examples, see the ['Metric Expressions by Example' Github pageï»¿](https://dt-url.net/metric-expressions-by-example).
 
 ## Introductory video
 

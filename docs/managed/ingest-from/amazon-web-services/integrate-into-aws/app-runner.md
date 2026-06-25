@@ -1,13 +1,13 @@
 ---
 title: Monitor AWS App Runner
-source: https://www.dynatrace.com/docs/ingest-from/amazon-web-services/integrate-into-aws/app-runner
-scraped: 2026-03-06T21:17:49.528383
+source: https://docs.dynatrace.com/managed/ingest-from/amazon-web-services/integrate-into-aws/app-runner
+scraped: 2026-05-12T11:14:20.069682
 ---
 
 # Monitor AWS App Runner
 
+# Monitor AWS App Runner
 
-* Classic
 * How-to guide
 * 3-min read
 * Published Jan 16, 2023
@@ -16,11 +16,11 @@ To deploy OneAgent on App Runner, read the instructions provided below.
 
 ## Prerequisites
 
-* Create an API token in your Dynatrace environment and enable the following permissions:
+* [Create an API token](/managed/manage/identity-access-management/access-tokens-and-oauth-clients/access-tokens#create-api-token "Learn the concept of an access token and its scopes.") in your Dynatrace environment and enable the following permissions:
 
   + **Access problem and event feed, metrics, and topology** (`DataExport`) (API v1)
   + **PaaS integration - Installer download** (`InstallerDownload`)
-* Review the list of supported applications and versions.
+* Review the list of [supported applications and versions](/managed/ingest-from/technology-support "Find technical details related to Dynatrace support for specific platforms and development frameworks.").
 
 ## Integrate OneAgent into your application image
 
@@ -48,6 +48,7 @@ To use this option you need:
    COPY --from=<your-environment-url>/linux/oneagent-codemodules:<technology> / /
 
 
+
    ENV LD_PRELOAD /opt/dynatrace/oneagent/agent/lib64/liboneagentproc.so
    ```
 
@@ -67,6 +68,7 @@ Dynatrace OneAgent supports Alpine Linux-based environments. Use this syntax:
 
 ```
 COPY --from=<your-activegate>/linux/oneagent-codemodules-musl:<technology> / /
+
 
 
 ENV LD_PRELOAD /opt/dynatrace/oneagent/agent/lib64/liboneagentproc.so
@@ -104,28 +106,37 @@ Valid options here are `all`, `go`, `java`, `apache`, `nginx`, and `nodejs`.
    ARG DT_API_URL="https://<your-environment-id>.live.dynatrace.com/api"
 
 
+
    ARG DT_API_TOKEN="<your-paas-token>"
+
 
 
    ARG DT_ONEAGENT_OPTIONS="flavor=default&include=<technology1>&include=<technology2>"
 
 
+
    ENV DT_HOME="/opt/dynatrace/oneagent"
+
 
 
    RUN mkdir -p "$DT_HOME" && \
 
 
+
    wget -O "$DT_HOME/oneagent.zip" "$DT_API_URL/v1/deployment/installer/agent/unix/paas/latest?Api-Token=$DT_API_TOKEN&$DT_ONEAGENT_OPTIONS" && \
+
 
 
    unzip -d "$DT_HOME" "$DT_HOME/oneagent.zip" && \
 
 
+
    rm "$DT_HOME/oneagent.zip"
 
 
+
    ENTRYPOINT [ "/opt/dynatrace/oneagent/dynatrace-agent64.sh" ]
+
 
 
    CMD [ "executable", "param1", "param2" ] # the command of your application, for example, Java
@@ -172,11 +183,11 @@ You can configure network zones as an environment variable:
 
 * `DT_NETWORK_ZONE`: equals `your.network.zone`
 
-See network zones for more information.
+See [network zones](/managed/manage/network-zones "Find out how network zones work in Dynatrace.") for more information.
 
 ## Monitoring Consumption
 
-For AWS App Runner, monitoring consumption is based on host units. See Application and Infrastructure Monitoring (Host Units) for details.
+For AWS App Runner, monitoring consumption is based on host units. See [Application and Infrastructure Monitoring (Host Units)](/managed/license/monitoring-consumption-classic/application-and-infrastructure-monitoring "Understand how Dynatrace application and infrastructure monitoring consumption is calculated based on host units.") for details.
 
 ## Troubleshooting
 
@@ -184,4 +195,4 @@ For AWS App Runner, monitoring consumption is based on host units. See Applicati
 
 ## Related topics
 
-* OneAgent platform and capability support matrix
+* [OneAgent platform and capability support matrix](/managed/ingest-from/technology-support/oneagent-platform-and-capability-support-matrix "Learn which capabilities are supported by OneAgent on different operating systems and platforms.")

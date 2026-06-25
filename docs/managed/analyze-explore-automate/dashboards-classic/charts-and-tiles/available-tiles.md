@@ -1,12 +1,18 @@
 ---
-title: "Available tiles"
+title: Available tiles
 source: https://docs.dynatrace.com/managed/analyze-explore-automate/dashboards-classic/charts-and-tiles/available-tiles
-updated: 2026-02-09
+scraped: 2026-05-12T11:14:54.364143
 ---
 
-* 33-min read
+# Available tiles
 
-Dashboards Classic
+# Available tiles
+
+* Reference
+* 33-min read
+* Updated on May 16, 2022
+
+[Dashboards Classic](/managed/analyze-explore-automate/dashboards-classic "Learn how to create, manage, and use Dynatrace Dashboards Classic.")
 
 Tiles you can add to your dashboards are described below.
 
@@ -51,21 +57,21 @@ Editing tips
 
 ## Visualizations
 
-Use visualization tiles to create visual representations of Data Explorer queries that you can pin to your dashboards.
+Use visualization tiles to create visual representations of [Data Explorer](/managed/analyze-explore-automate/explorer "Query for metrics and transform results to gain desired insights.") queries that you can pin to your dashboards.
 
 ### Visualization types
 
 Dynatrace offers the following visualization types:
 
-* Graph
-* Stacked column
-* Stacked area
-* Pie
-* Single value
-* Table
-* Top list
-* Heatmap
-* Honeycomb
+* [Graph](/managed/analyze-explore-automate/dashboards-classic/charts-and-tiles/visualization-graph "Configure and use a graph visualization in Data Explorer and pin it to your dashboards as a graph tile.")
+* [Stacked column](/managed/analyze-explore-automate/dashboards-classic/charts-and-tiles/visualization-stacked-column "Configure and use a stacked column visualization in Data Explorer and display it on your dashboards.")
+* [Stacked area](/managed/analyze-explore-automate/dashboards-classic/charts-and-tiles/visualization-stacked-area "Configure and use a stacked area visualization in Data Explorer and display it on your dashboards.")
+* [Pie](/managed/analyze-explore-automate/dashboards-classic/charts-and-tiles/visualization-pie "Configure and use a pie/doughnut visualization in Data Explorer and display it on your dashboards.")
+* [Single value](/managed/analyze-explore-automate/dashboards-classic/charts-and-tiles/visualization-single-value "Configure and use a single-value visualization in Data Explorer and display it on your dashboards.")
+* [Table](/managed/analyze-explore-automate/dashboards-classic/charts-and-tiles/visualization-table "Configure and use a table visualization in Data Explorer and display it on your dashboards.")
+* [Top list](/managed/analyze-explore-automate/dashboards-classic/charts-and-tiles/visualization-top-list "Configure a top-list visualization in Data Explorer and display it on your dashboards.")
+* [Heatmap](/managed/analyze-explore-automate/dashboards-classic/charts-and-tiles/visualization-heatmap "Configure and use a heatmap visualization in Data Explorer and pin it to your dashboards as a heatmap tile.")
+* [Honeycomb](/managed/analyze-explore-automate/dashboards-classic/charts-and-tiles/visualization-honeycomb "Configure and use a honeycomb visualization in Data Explorer and display it on your dashboards.")
 
 #### Interactivity
 
@@ -76,7 +82,7 @@ Interactivity of visualization tiles varies according to the type of visualizati
 * The legend is active: select a legend entry to show or hide the corresponding element on the visualization.
 * All tiles have a tile menu in the upper-right corner:
 
-  + **Configure tile in Data Explorer** opens the tile in Data Explorer, where you can configure the query and visualization.
+  + **Configure tile in Data Explorer** opens the tile in [Data Explorer](/managed/analyze-explore-automate/explorer "Query for metrics and transform results to gain desired insights."), where you can configure the query and visualization.
   + **Edit tile** (if you have edit rights) opens the dashboard in edit mode with the current tile selected.
 
 #### Configuration
@@ -85,7 +91,7 @@ To configure a visualization tile from the dashboard editor
 
 1. Display your dashboard and select **Edit**.
 2. Drag a visualization tile from the **Edit dashboard** pane, **Tiles** tab, to your dashboard.
-3. Select **Configure tile** to open your tile in Data Explorer.
+3. Select **Configure tile** to open your tile in [Data Explorer](/managed/analyze-explore-automate/explorer "Query for metrics and transform results to gain desired insights.").
 4. Configure the query for the tile. You don't have to create the final version all at once; you can build your query iteratively.
 
    * Select **Run query** after you make a query change to see the results of the change.
@@ -110,18 +116,20 @@ To configure a visualization tile from the 'Data Explorer'
    * Select different visualization types to see what works best for your query.
    * The selection of visual settings available depends on the query and visualization type. For details:
 
-     + Graph
-     + Stacked column
-     + Stacked area
-     + Pie
-     + Single value
-     + Table
-     + Top list
-     + Heatmap
-     + Honeycomb
+     + [Graph](/managed/analyze-explore-automate/dashboards-classic/charts-and-tiles/visualization-graph "Configure and use a graph visualization in Data Explorer and pin it to your dashboards as a graph tile.")
+     + [Stacked column](/managed/analyze-explore-automate/dashboards-classic/charts-and-tiles/visualization-stacked-column "Configure and use a stacked column visualization in Data Explorer and display it on your dashboards.")
+     + [Stacked area](/managed/analyze-explore-automate/dashboards-classic/charts-and-tiles/visualization-stacked-area "Configure and use a stacked area visualization in Data Explorer and display it on your dashboards.")
+     + [Pie](/managed/analyze-explore-automate/dashboards-classic/charts-and-tiles/visualization-pie "Configure and use a pie/doughnut visualization in Data Explorer and display it on your dashboards.")
+     + [Single value](/managed/analyze-explore-automate/dashboards-classic/charts-and-tiles/visualization-single-value "Configure and use a single-value visualization in Data Explorer and display it on your dashboards.")
+     + [Table](/managed/analyze-explore-automate/dashboards-classic/charts-and-tiles/visualization-table "Configure and use a table visualization in Data Explorer and display it on your dashboards.")
+     + [Top list](/managed/analyze-explore-automate/dashboards-classic/charts-and-tiles/visualization-top-list "Configure a top-list visualization in Data Explorer and display it on your dashboards.")
+     + [Heatmap](/managed/analyze-explore-automate/dashboards-classic/charts-and-tiles/visualization-heatmap "Configure and use a heatmap visualization in Data Explorer and pin it to your dashboards as a heatmap tile.")
+     + [Honeycomb](/managed/analyze-explore-automate/dashboards-classic/charts-and-tiles/visualization-honeycomb "Configure and use a honeycomb visualization in Data Explorer and display it on your dashboards.")
    * Some visualizations (for example, heatmaps) can display only one metric. To display a different metric in the visualization, select the letter next to the metric you want to visualize. In this example, we would change the selection from **A** (`CPU usage %`) to **B** (`Memory used %`).
 
      ![Change metric selection](https://dt-cdn.net/images/select-metric-379-6a5af28695.png)
+
+     Change metric selection
 
      Other visualizations (for example, tables) can display more than one metric. To change the selection of metrics to visualize, select the letters next to the metric names. In the above example, we would change the selection from **A** (`CPU usage %` only) to both **A** and **B** (`CPU usage %` and `Memory used %`).
 3. When you are satisfied with the results of your query, select **Pin to dashboard** and choose the destination dashboard and tile title.
@@ -210,7 +218,7 @@ A link consists of two parts:
     and the full link specification is something like:
 
     ```
-    My link to deployment status
+    [My link to deployment status](ui/deploymentstatus/oneagents?gtf=-2h&gf=all)
     ```
 
     Similarly, if you added this example to a markdown tile on one of your dashboards, the link would open the Dynatrace Hosts table:
@@ -282,6 +290,8 @@ Example dashboard with images:
 
 ![Example dashboard with images](https://dt-cdn.net/images/dashboard-image-example-01-1286-031295613c.png)
 
+Example dashboard with images
+
 ## Infrastructure
 
 ### Host health
@@ -296,11 +306,17 @@ Health tile drilldowns
 * To drill down to a problematic (red) element, select the red hexagon and then select the **Viewâ¦** button. On this example **Synthetic monitor health** tile, we have selected a red element, which enabled the **View test** drilldown button for that element.
 
   ![Drill down to problematic entity from health tile](https://dt-cdn.net/images/tile-health-bad-drilldown-276-6265617519.png)
+
+  Drill down to problematic entity from health tile
 * You can't drill down from a healthy (green) element. From any tile, however, you can select the menu in the upper-right corner of the tile and then select **View details** to display the relevant Dynatrace page for the tile. For example, **View details** from a **Synthetic monitor health** tile displays the **Synthetic monitors** table.
 
   ![Select tile menu](https://dt-cdn.net/images/tile-health-menu-open-272-17a936feef.png)
 
+  Select tile menu
+
   ![Select 'View details' from tile menu](https://dt-cdn.net/images/tile-health-menu-view-details-270-aaf4eae8ec.png)
+
+  Select 'View details' from tile menu
 
 #### Configuration
 
@@ -428,11 +444,17 @@ Health tile drilldowns
 * To drill down to a problematic (red) element, select the red hexagon and then select the **Viewâ¦** button. On this example **Synthetic monitor health** tile, we have selected a red element, which enabled the **View test** drilldown button for that element.
 
   ![Drill down to problematic entity from health tile](https://dt-cdn.net/images/tile-health-bad-drilldown-276-6265617519.png)
+
+  Drill down to problematic entity from health tile
 * You can't drill down from a healthy (green) element. From any tile, however, you can select the menu in the upper-right corner of the tile and then select **View details** to display the relevant Dynatrace page for the tile. For example, **View details** from a **Synthetic monitor health** tile displays the **Synthetic monitors** table.
 
   ![Select tile menu](https://dt-cdn.net/images/tile-health-menu-open-272-17a936feef.png)
 
+  Select tile menu
+
   ![Select 'View details' from tile menu](https://dt-cdn.net/images/tile-health-menu-view-details-270-aaf4eae8ec.png)
+
+  Select 'View details' from tile menu
 
 #### Configuration
 
@@ -520,11 +542,17 @@ Health tile drilldowns
 * To drill down to a problematic (red) element, select the red hexagon and then select the **Viewâ¦** button. On this example **Synthetic monitor health** tile, we have selected a red element, which enabled the **View test** drilldown button for that element.
 
   ![Drill down to problematic entity from health tile](https://dt-cdn.net/images/tile-health-bad-drilldown-276-6265617519.png)
+
+  Drill down to problematic entity from health tile
 * You can't drill down from a healthy (green) element. From any tile, however, you can select the menu in the upper-right corner of the tile and then select **View details** to display the relevant Dynatrace page for the tile. For example, **View details** from a **Synthetic monitor health** tile displays the **Synthetic monitors** table.
 
   ![Select tile menu](https://dt-cdn.net/images/tile-health-menu-open-272-17a936feef.png)
 
+  Select tile menu
+
   ![Select 'View details' from tile menu](https://dt-cdn.net/images/tile-health-menu-view-details-270-aaf4eae8ec.png)
+
+  Select 'View details' from tile menu
 
 #### Configuration
 
@@ -608,11 +636,11 @@ To configure this tile type from the dashboard editor
 
    **Performance metric based on user actions:**
 
-   * Apdex
-   * User actions
-   * Load actions
-   * XHR actions
-   * Custom actions
+   * [Apdex](/managed/observe/digital-experience/rum-concepts/scores-and-ratings/apdex-ratings "Learn how Dynatrace uses Apdex to measure user satisfaction with application performance.")
+   * [User actions](/managed/observe/digital-experience/rum-concepts/user-actions "Learn what user actions are and how they help you understand what users do with your application.")
+   * [Load actions](/managed/observe/digital-experience/rum-concepts/user-actions#load-action "Learn what user actions are and how they help you understand what users do with your application.")
+   * [XHR actions](/managed/observe/digital-experience/rum-concepts/user-actions#xhr-action "Learn what user actions are and how they help you understand what users do with your application.")
+   * [Custom actions](/managed/observe/digital-experience/rum-concepts/user-actions#custom-action "Learn what user actions are and how they help you understand what users do with your application.")
    * Errors
 
    **Behavior metric based on sessions or users:**
@@ -635,7 +663,7 @@ To pin this tile to your dashboard with filters set
 
 **Troubleshooting:**
 
-* If you don't see data on the world map, you might need to map your internal IP addresses to locations for your web, mobile, and custom applications.
+* If you don't see data on the world map, you might need to map your internal IP addresses to locations for your [web](/managed/observe/digital-experience/web-applications/additional-configuration/map-internal-ip-addresses-to-locations-web "Configure Dynatrace to use local addresses to understand where the users of your web applications are."), [mobile](/managed/observe/digital-experience/mobile-applications/additional-configuration/map-internal-ip-addresses-to-locations-mobile "Configure Dynatrace to use local addresses to understand where the users of your mobile applications are."), and [custom applications](/managed/observe/digital-experience/custom-applications/additional-configuration/map-internal-ip-addresses-to-locations-custom "Configure Dynatrace to use local addresses to understand where the users of your custom applications are.").
 * Remember that the timeframe of a world map tile is always **Last 2 hours**, regardless of how you set the global or dashboard timeframe.
 
 ### Key user action overview
@@ -825,7 +853,7 @@ To configure this tile type from the dashboard editor
 
 ### Web application
 
-Displays key performance indicators related to the selected application: Apdex rating, user actions per minute, and number of JavaScript errors per minute.
+Displays key performance indicators related to the selected application: [Apdex rating](/managed/observe/digital-experience/rum-concepts/scores-and-ratings/apdex-ratings "Learn how Dynatrace uses Apdex to measure user satisfaction with application performance."), [user actions](/managed/observe/digital-experience/rum-concepts/user-actions "Learn what user actions are and how they help you understand what users do with your application.") per minute, and number of JavaScript errors per minute.
 
 #### Drilldowns
 
@@ -850,7 +878,7 @@ To pin this tile to your dashboard with filters set
 
 ### Key user action
 
-Displays key performance indicators related to the selected application and key user action: user action duration, user actions/min, and number of errors/min.
+Displays key performance indicators related to the selected application and key [user action](/managed/observe/digital-experience/rum-concepts/user-actions "Learn what user actions are and how they help you understand what users do with your application."): user action duration, user actions/min, and number of errors/min.
 
 #### Drilldowns
 
@@ -893,7 +921,7 @@ To configure this tile type from the dashboard editor
 
 1. Drag a **User Sessions Query** tile from the **Edit dashboard** pane, **Tiles** tab, to your dashboard
 2. Select **Configure tile** in the **User Sessions Query** configuration pane
-3. On the **User sessions query** page, create a query and select **Run query**
+3. On the **User sessions query** page, [create a query](/managed/observe/digital-experience/session-segmentation/custom-queries-segmentation-and-aggregation-of-session-data "Learn how you can access and query user session data based on keywords, syntax, functions, and more.") and select **Run query**
 4. When you have a query that you want to link to your tile, select **Save changes to dashboard**
 5. Optional Select a custom timeframe
 6. Optional Select a custom management zone
@@ -915,7 +943,7 @@ Displays the following:
 * **Tiles filters\*Environment**
 * Optional Set **Title**
 
-For more information, see Configure and monitor service-level objectives with Dynatrace.
+For more information, see [Configure and monitor service-level objectives with Dynatrace](/managed/deliver/service-level-objectives-classic/configure-and-monitor-slo#slodashboardtile "Create, configure, and monitor service-level objectives with Dynatrace.").
 
 #### Drilldowns
 
@@ -995,11 +1023,17 @@ Health tile drilldowns
 * To drill down to a problematic (red) element, select the red hexagon and then select the **Viewâ¦** button. On this example **Synthetic monitor health** tile, we have selected a red element, which enabled the **View test** drilldown button for that element.
 
   ![Drill down to problematic entity from health tile](https://dt-cdn.net/images/tile-health-bad-drilldown-276-6265617519.png)
+
+  Drill down to problematic entity from health tile
 * You can't drill down from a healthy (green) element. From any tile, however, you can select the menu in the upper-right corner of the tile and then select **View details** to display the relevant Dynatrace page for the tile. For example, **View details** from a **Synthetic monitor health** tile displays the **Synthetic monitors** table.
 
   ![Select tile menu](https://dt-cdn.net/images/tile-health-menu-open-272-17a936feef.png)
 
+  Select tile menu
+
   ![Select 'View details' from tile menu](https://dt-cdn.net/images/tile-health-menu-view-details-270-aaf4eae8ec.png)
+
+  Select 'View details' from tile menu
 
 #### Configuration
 
@@ -1082,11 +1116,17 @@ Health tile drilldowns
 * To drill down to a problematic (red) element, select the red hexagon and then select the **Viewâ¦** button. On this example **Synthetic monitor health** tile, we have selected a red element, which enabled the **View test** drilldown button for that element.
 
   ![Drill down to problematic entity from health tile](https://dt-cdn.net/images/tile-health-bad-drilldown-276-6265617519.png)
+
+  Drill down to problematic entity from health tile
 * You can't drill down from a healthy (green) element. From any tile, however, you can select the menu in the upper-right corner of the tile and then select **View details** to display the relevant Dynatrace page for the tile. For example, **View details** from a **Synthetic monitor health** tile displays the **Synthetic monitors** table.
 
   ![Select tile menu](https://dt-cdn.net/images/tile-health-menu-open-272-17a936feef.png)
 
+  Select tile menu
+
   ![Select 'View details' from tile menu](https://dt-cdn.net/images/tile-health-menu-view-details-270-aaf4eae8ec.png)
+
+  Select 'View details' from tile menu
 
 #### Configuration
 
@@ -1129,11 +1169,17 @@ Health tile drilldowns
 * To drill down to a problematic (red) element, select the red hexagon and then select the **Viewâ¦** button. On this example **Synthetic monitor health** tile, we have selected a red element, which enabled the **View test** drilldown button for that element.
 
   ![Drill down to problematic entity from health tile](https://dt-cdn.net/images/tile-health-bad-drilldown-276-6265617519.png)
+
+  Drill down to problematic entity from health tile
 * You can't drill down from a healthy (green) element. From any tile, however, you can select the menu in the upper-right corner of the tile and then select **View details** to display the relevant Dynatrace page for the tile. For example, **View details** from a **Synthetic monitor health** tile displays the **Synthetic monitors** table.
 
   ![Select tile menu](https://dt-cdn.net/images/tile-health-menu-open-272-17a936feef.png)
 
+  Select tile menu
+
   ![Select 'View details' from tile menu](https://dt-cdn.net/images/tile-health-menu-view-details-270-aaf4eae8ec.png)
+
+  Select 'View details' from tile menu
 
 #### Configuration
 
@@ -1152,7 +1198,7 @@ Displays the number of problems that are currently watched and active against th
 
 #### Drilldowns
 
-* From the tile menu, select **View details** to open your Problems feed.
+* From the tile menu, select **View details** to open your [Problems](/managed/dynatrace-intelligence/root-cause-analysis/concepts "Get acquainted with root cause analysis concepts.") feed.
 
 #### Configuration
 
@@ -1165,7 +1211,7 @@ To configure this tile type from the dashboard editor
 
 ### Smartscape
 
-Synthetically visualizes your environment components based on Smartscape analysis. The tile display constantly cycles through the five Smartscape layers: applications, services, OS processes, hosts, and datacenters. For each layer, the tile shows the total number in your environment and, in red, the number currently affected by problems.
+Synthetically visualizes your environment components based on [Smartscape](/managed/analyze-explore-automate/smartscape-classic "Learn how Smartscape visualizes all the entities and dependencies in your environment.") analysis. The tile display constantly cycles through the five Smartscape layers: applications, services, OS processes, hosts, and datacenters. For each layer, the tile shows the total number in your environment and, in red, the number currently affected by problems.
 
 #### Drilldowns
 

@@ -1,8 +1,15 @@
 ---
-title: "Metric units API - GET a unit"
+title: Metric units API - GET a unit
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/metrics-units/get-unit
-updated: 2026-02-09
+scraped: 2026-05-12T11:11:49.691997
 ---
+
+# Metric units API - GET a unit
+
+# Metric units API - GET a unit
+
+* Reference
+* Published Feb 11, 2022
 
 Gets properties of a metric unit.
 
@@ -17,7 +24,7 @@ The request produces an `application/json` payload.
 
 To execute this request, you need an access token with `metrics.read` scope.
 
-To learn how to obtain and use it, see Tokens and authentication.
+To learn how to obtain and use it, see [Tokens and authentication](/managed/discover-dynatrace/references/dynatrace-api/basics/dynatrace-api-authentication).
 
 ## Parameters
 
@@ -56,19 +63,25 @@ The metadata of a unit.
 {
 
 
+
 "description": "The second is the base unit of time and defined as 1/86400 of a day.",
+
 
 
 "displayName": "second",
 
 
+
 "displayNamePlural": "seconds",
+
 
 
 "symbol": "s",
 
 
+
 "unitId": "Second"
+
 
 
 }
@@ -86,7 +99,9 @@ The API token is passed in the **Authorization** header.
 curl --request GET \
 
 
+
 --url https://mySampleEnv.live.dynatrace.com//api/v2/units/MebiByte \
+
 
 
 --header 'Authorization: Api-Token dt0c01.abc123.abcdefjhij1234567890'
@@ -104,16 +119,21 @@ https://mySampleEnv.live.dynatrace.com//api/v2/units/MebiByte
 {
 
 
+
 "unitId": "MebiByte",
+
 
 
 "displayName": "mebibyte",
 
 
+
 "symbol": "MiB",
 
 
+
 "description": "1048576.0 byte"
+
 
 
 }

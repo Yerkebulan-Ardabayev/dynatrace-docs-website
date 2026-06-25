@@ -1,10 +1,16 @@
 ---
-title: "Ownership"
+title: Ownership
 source: https://docs.dynatrace.com/managed/deliver/ownership
-updated: 2026-02-09
+scraped: 2026-05-12T11:03:55.722938
 ---
 
+# Ownership
+
+# Ownership
+
+* Overview
 * 2-min read
+* Updated on Nov 07, 2023
 
 Assigning team owners to monitored entities in Dynatrace drives effective DevSecOps collaboration and swift, smart resolution of incidents and service degradations.
 
@@ -17,32 +23,36 @@ Knowledge about the ownership of an entity enables additional automation, such a
 * Assignment of vulnerabilities to the responsible team members.
 * Provision of information to all relevant stakeholders.
 
-You can create ownership information in the web UI, via API, and using Configuration as Code. For scalability and complete coverage, assign ownership as part of deployment metadata. You can also use the settings and entity web interfaces for these purposes.
+You can [create ownership](/managed/deliver/ownership/ownership-teams "Define teams with team identifiers, descriptions, responsibilities, and routing information for entity ownership.") information in the web UI, via API, and using [Configuration as Code](/managed/deliver/configuration-as-code "Use Dynatrace configuration as code via Monaco or Terraform."). For scalability and complete coverage, [assign ownership](/managed/deliver/ownership/assign-ownership "Assign owners to entities using entity metadata like labels, environment variables, and tags.") as part of deployment metadata. You can also use the settings and entity web interfaces for these purposes.
 
-1. Create and maintain ownership teams with unique IDs and associated contact information to make problem routing easier. See also Best practices for entity ownership.
+1. [Create and maintain ownership teams](/managed/deliver/ownership/ownership-teams "Define teams with team identifiers, descriptions, responsibilities, and routing information for entity ownership.") with unique IDs and associated contact information to make problem routing easier. See also [Best practices for entity ownership](/managed/deliver/ownership/best-practices "Tips and best practices to ensure that entities have adequate ownership coverage").
 
    ![Ownership teams settings page](https://dt-cdn.net/images/ownership-teams-page-2212-be3abe3c7d.png)
-2. Assign teams to Dynatrace-monitored entities via host metadata, Kubernetes labels and annotations, environment variables, and tags. See also Best practices for entity ownership.
+
+   Ownership teams settings page
+2. [Assign teams to Dynatrace-monitored entities](/managed/deliver/ownership/assign-ownership "Assign owners to entities using entity metadata like labels, environment variables, and tags.") via host metadata, Kubernetes labels and annotations, environment variables, and tags. See also [Best practices for entity ownership](/managed/deliver/ownership/best-practices "Tips and best practices to ensure that entities have adequate ownership coverage").
 3. View ownership information with routing details as part of Dynatrace entity details pages.
 
    ![Owner of a Kubernetes workload](https://dt-cdn.net/images/ownership-k8s-workload-2213-2217e57297.png)
 
+   Owner of a Kubernetes workload
+
 ### Basics
 
-* Create and manage teams for entity ownership
-* Assign ownership teams to monitored entities
-* Best practices for entity ownership
+* [Create and manage teams for entity ownership](/managed/deliver/ownership/ownership-teams "Define teams with team identifiers, descriptions, responsibilities, and routing information for entity ownership.")
+* [Assign ownership teams to monitored entities](/managed/deliver/ownership/assign-ownership "Assign owners to entities using entity metadata like labels, environment variables, and tags.")
+* [Best practices for entity ownership](/managed/deliver/ownership/best-practices "Tips and best practices to ensure that entities have adequate ownership coverage")
 
 ### Additional
 
-Define tags and metadata for hosts
+[Define tags and metadata for hosts](/managed/observe/infrastructure-observability/hosts/configuration/define-tags-and-metadata-for-hosts "Learn how to tag and set additional properties for a monitored host.")
 
-Define your own process group metadata
+[Define your own process group metadata](/managed/observe/infrastructure-observability/process-groups/configuration/define-your-own-process-group-metadata "Configure your own process-related metadata based on the unique needs of your organization or environment.")
 
-Configuration as Code overview
+[Configuration as Code overview](/managed/deliver/configuration-as-code "Use Dynatrace configuration as code via Monaco or Terraform.")
 
 ### API
 
-Settings API (retrieve schema and create teams)
+[Settings API (retrieve schema and create teams)](/managed/dynatrace-api/environment-api/settings "Find out what the Dynatrace Settings API offers.")
 
-Monitored entities - Custom tags API
+[Monitored entities - Custom tags API](/managed/dynatrace-api/environment-api/custom-tags "Manage custom tags of the monitored entities via the Dynatrace API.")

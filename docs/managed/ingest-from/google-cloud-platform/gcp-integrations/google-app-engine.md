@@ -1,13 +1,13 @@
 ---
 title: Monitor Google App Engine
-source: https://www.dynatrace.com/docs/ingest-from/google-cloud-platform/gcp-integrations/google-app-engine
-scraped: 2026-03-06T21:17:51.187037
+source: https://docs.dynatrace.com/managed/ingest-from/google-cloud-platform/gcp-integrations/google-app-engine
+scraped: 2026-05-12T11:22:56.656451
 ---
 
 # Monitor Google App Engine
 
+# Monitor Google App Engine
 
-* Latest Dynatrace
 * How-to guide
 * 2-min read
 * Published Jun 23, 2020
@@ -16,8 +16,8 @@ The Google App Engine standard environment type supports applications that run o
 
 ## Prerequisites
 
-* Create a PaaS Token.
-* Review the list of supported applications and versions.
+* Create a [PaaS Token](/managed/manage/identity-access-management/access-tokens-and-oauth-clients/access-tokens#paas-token "Learn the concept of an access token and its scopes.").
+* Review the list of [supported applications and versions](/managed/ingest-from/technology-support "Find technical details related to Dynatrace support for specific platforms and development frameworks.").
 
 ## Integrate OneAgent into the application image
 
@@ -31,28 +31,37 @@ To integrate OneAgent into a container deployment with a Dockerfile in Google Ap
 ARG DT_API_URL="https://<environmentID>.live.dynatrace.com/api"
 
 
+
 ARG DT_API_TOKEN="<token>"
+
 
 
 ARG DT_ONEAGENT_OPTIONS="flavor=default&include=<technology1>&include=<technology2>"
 
 
+
 ENV DT_HOME="/opt/dynatrace/oneagent"
+
 
 
 RUN mkdir -p "$DT_HOME" && \
 
 
+
 wget -O "$DT_HOME/oneagent.zip" "$DT_API_URL/v1/deployment/installer/agent/unix/paas/latest?Api-Token=$DT_API_TOKEN&$DT_ONEAGENT_OPTIONS" && \
+
 
 
 unzip -d "$DT_HOME" "$DT_HOME/oneagent.zip" && \
 
 
+
 rm "$DT_HOME/oneagent.zip"
 
 
+
 ENTRYPOINT [ "/opt/dynatrace/oneagent/dynatrace-agent64.sh" ]
+
 
 
 CMD [ "executable", "param1", "param2" ] # the command of your application, for example, Java
@@ -76,5 +85,5 @@ Every time you want to update your version of Dynatrace OneAgent, you must redep
 
 ## Related topics
 
-* Set up Dynatrace on Google Cloud
-* OneAgent platform and capability support matrix
+* [Set up Dynatrace on Google Cloud](/managed/ingest-from/google-cloud-platform "Monitor Google Cloud with Dynatrace.")
+* [OneAgent platform and capability support matrix](/managed/ingest-from/technology-support/oneagent-platform-and-capability-support-matrix "Learn which capabilities are supported by OneAgent on different operating systems and platforms.")

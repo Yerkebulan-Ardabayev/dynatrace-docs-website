@@ -1,0 +1,5 @@
+aws-service-ebs-new.md
+aws-service-simple-storage-service-s3.md
+aws-service-storage-gateway.md
+aws-service-transit-gateway.md
+aws-service-elasticsearch-service-es.md

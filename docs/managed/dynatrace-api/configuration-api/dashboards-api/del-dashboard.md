@@ -1,8 +1,15 @@
 ---
-title: "Dashboards API - DELETE a dashboard"
+title: Dashboards API - DELETE a dashboard
 source: https://docs.dynatrace.com/managed/dynatrace-api/configuration-api/dashboards-api/del-dashboard
-updated: 2026-02-09
+scraped: 2026-05-12T11:14:57.205468
 ---
+
+# Dashboards API - DELETE a dashboard
+
+# Dashboards API - DELETE a dashboard
+
+* Reference
+* Published Aug 30, 2019
 
 Deletes the specified dashboard.
 
@@ -15,7 +22,7 @@ Deletes the specified dashboard.
 
 To execute this request, you need an access token with `WriteConfig` scope.
 
-To learn how to obtain and use it, see Tokens and authentication.
+To learn how to obtain and use it, see [Tokens and authentication](/managed/discover-dynatrace/references/dynatrace-api/basics/dynatrace-api-authentication).
 
 ## Parameters
 
@@ -43,7 +50,9 @@ The API token is passed in the **Authorization** header.
 curl -X DELETE \
 
 
+
 https://mySampleEnv.live.dynatrace.com/api/config/v1/dashboards/7dd386fe-f91d-42e3-a2ec-0c88070933f4 \
+
 
 
 -H 'Authorization: Api-Token dt0c01.abc123.abcdefjhij1234567890'
@@ -61,4 +70,4 @@ DELETE https://mySampleEnv.live.dynatrace.com/api/config/v1/dashboards/7dd386fe-
 
 ## Related topics
 
-* Dashboards
+* [Dashboards](/managed/analyze-explore-automate/dashboards-classic "Learn how to create, manage, and use Dynatrace Dashboards Classic.")

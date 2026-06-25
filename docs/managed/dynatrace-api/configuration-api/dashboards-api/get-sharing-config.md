@@ -1,8 +1,15 @@
 ---
-title: "Dashboards API - GET sharing configuration"
+title: Dashboards API - GET sharing configuration
 source: https://docs.dynatrace.com/managed/dynatrace-api/configuration-api/dashboards-api/get-sharing-config
-updated: 2026-02-09
+scraped: 2026-05-12T11:14:44.121591
 ---
+
+# Dashboards API - GET sharing configuration
+
+# Dashboards API - GET sharing configuration
+
+* Reference
+* Published Mar 29, 2021
 
 Gets the sharing configuration of the specified dashboard.
 
@@ -17,7 +24,7 @@ The request produces an `application/json` payload.
 
 To execute this request, you need an access token with `ReadConfig` scope.
 
-To learn how to obtain and use it, see Tokens and authentication.
+To learn how to obtain and use it, see [Tokens and authentication](/managed/discover-dynatrace/references/dynatrace-api/basics/dynatrace-api-authentication).
 
 ## Parameters
 
@@ -45,7 +52,7 @@ Sharing configuration of the dashboard.
 | id | string | The Dynatrace entity ID of the dashboard. |
 | permissions | [DashboardSharePermissions[]](#openapi-definition-DashboardSharePermissions) | A list of permissions to access the dashboard. |
 | preset | boolean | If `true` the dashboard will be marked as preset. |
-| publicAccess | [DashboardAnonymousAccess](#openapi-definition-DashboardAnonymousAccess) | Configuration of the [anonymous access](https://dt-url.net/ov03sf1) to the dashboard. |
+| publicAccess | [DashboardAnonymousAccess](#openapi-definition-DashboardAnonymousAccess) | Configuration of the [anonymous accessï»¿](https://dt-url.net/ov03sf1) to the dashboard. |
 
 #### The `DashboardSharePermissions` object
 
@@ -59,7 +66,7 @@ Access permissions of the dashboard.
 
 #### The `DashboardAnonymousAccess` object
 
-Configuration of the [anonymous access](https://dt-url.net/ov03sf1) to the dashboard.
+Configuration of the [anonymous accessï»¿](https://dt-url.net/ov03sf1) to the dashboard.
 
 | Element | Type | Description |
 | --- | --- | --- |
@@ -72,121 +79,161 @@ Configuration of the [anonymous access](https://dt-url.net/ov03sf1) to the dashb
 {
 
 
+
 "enabled": "true",
+
 
 
 "id": "a5fca32f-d3ba-4749-b201-5d3cd70b9d22",
 
 
+
 "permissions": [
+
 
 
 {
 
 
+
 "permission": "VIEW",
+
 
 
 "type": "ALL"
 
 
+
 },
 
 
+
 {
+
 
 
 "id": "userid",
 
 
+
 "permission": "VIEW",
+
 
 
 "type": "USER"
 
 
+
 },
 
 
+
 {
+
 
 
 "id": "userid",
 
 
+
 "permission": "EDIT",
+
 
 
 "type": "USER"
 
 
+
 },
+
 
 
 {
 
 
+
 "id": "groupid",
+
 
 
 "permission": "VIEW",
 
 
+
 "type": "GROUP"
+
 
 
 },
 
 
+
 {
+
 
 
 "id": "groupid",
 
 
+
 "permission": "EDIT",
 
 
+
 "type": "GROUP"
+
 
 
 }
 
 
+
 ],
+
 
 
 "preset": "true",
 
 
+
 "publicAccess": {
+
 
 
 "managementZoneIds": [
 
 
+
 "default",
+
 
 
 "2899273953172250973"
 
 
+
 ],
+
 
 
 "urls": {
 
 
+
 "2899273953172250973": "https://mytenantid.live.dynatrace.com/e/1/dashboards/a5fca32f-d3ba-4749-b201-5d3cd70b9d22?auth=SL5wTvCbaM2lwpew23234",
+
 
 
 "default": "https://mytenantid.live.dynatrace.com/e/1/dashboards/a5fca32f-d3ba-4749-b201-5d3cd70b9d22?auth=9yPpSI-M-3434Irz8yc8U"
 
 
+
 }
 
 
+
 }
+
 
 
 }
@@ -194,4 +241,4 @@ Configuration of the [anonymous access](https://dt-url.net/ov03sf1) to the dashb
 
 ## Related topics
 
-* Dashboards
+* [Dashboards](/managed/analyze-explore-automate/dashboards-classic "Learn how to create, manage, and use Dynatrace Dashboards Classic.")

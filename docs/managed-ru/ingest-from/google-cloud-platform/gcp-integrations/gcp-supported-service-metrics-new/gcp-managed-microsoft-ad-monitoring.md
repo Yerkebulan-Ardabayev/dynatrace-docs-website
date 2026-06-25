@@ -1,38 +1,42 @@
 ---
 title: Мониторинг Google Managed Microsoft AD
-source: https://www.dynatrace.com/docs/ingest-from/google-cloud-platform/gcp-integrations/gcp-supported-service-metrics-new/gcp-managed-microsoft-ad-monitoring
-scraped: 2026-03-04T21:35:21.063986
+source: https://docs.dynatrace.com/managed/ingest-from/google-cloud-platform/gcp-integrations/gcp-supported-service-metrics-new/gcp-managed-microsoft-ad-monitoring
+scraped: 2026-05-12T11:50:51.070635
 ---
 
-* Latest Dynatrace
-* How-to guide
-* 1-min read
+# Мониторинг Google Managed Microsoft AD
 
-Интеграция Dynatrace с Google Cloud использует данные, собранные из Google Operation API, для постоянного мониторинга работоспособности и производительности сервисов Google Cloud. Объединяя все соответствующие данные на дашбордах, она также обеспечивает оповещение и отслеживание событий.
+# Мониторинг Google Managed Microsoft AD
 
-## Предварительные требования
+* Практическое руководство
+* Чтение: 1 мин
+* Опубликовано 17 января 2022 г.
 
-Настройка интеграции
+Интеграция Dynatrace с Google Cloud использует данные, собранные через Google Operation API, для постоянного мониторинга работоспособности и производительности сервисов Google Cloud. Объединяя все релевантные данные в дашбордах, она также обеспечивает оповещения и отслеживание событий.
 
-## Добавление сервисов и наборов функций (опционально)
+## Предварительные условия
 
-После интеграции Dynatrace автоматически начинает мониторинг ряда предустановленных сервисов Google Cloud и наборов функций (метрик). Помимо этого, вы можете добавить дополнительные сервисы или наборы функций в мониторинг. Подробнее см. в разделе Добавление и удаление сервисов.
+[Настройка интеграции](/managed/ingest-from/google-cloud-platform/gcp-integrations/gcp-guide/deploy-k8 "Настройка мониторинга логов и метрик для сервисов GCP в новом кластере GKE Autopilot.")
 
-Список наборов функций, доступных для данного сервиса, приведён в разделе [Таблица метрик](#table).
+## Добавление сервисов и наборов функций Необязательно
+
+После интеграции Dynatrace автоматически отслеживает ряд предустановленных сервисов и наборов функций (метрик) Google Cloud. Помимо них, в мониторинг можно добавить дополнительные сервисы или наборы функций. Подробнее см. [Добавление или удаление сервисов](/managed/ingest-from/google-cloud-platform/gcp-integrations/gcp-guide/deploy-k8#manage "Настройка мониторинга логов и метрик для сервисов GCP в новом кластере GKE Autopilot.").
+
+Список наборов функций, доступных для этого сервиса, см. в разделе [Таблица метрик](#table).
 
 ## Просмотр метрик
 
-После развёртывания интеграции метрики с отслеживаемых сервисов можно просматривать в браузере метрик, Data Explorer и на плитках дашборда.
+После развёртывания интеграции метрики отслеживаемых сервисов можно просматривать в [Браузере метрик](/managed/analyze-explore-automate/dashboards-classic/metrics-browser "Просматривайте метрики с помощью браузера метрик Dynatrace."), [Data Explorer](/managed/analyze-explore-automate/explorer "Запрашивайте метрики и преобразовывайте результаты для получения нужных аналитических данных.") и на плитках ваших дашбордов.
 
 ## Таблица метрик
 
 Для Google Managed Microsoft AD доступны следующие наборы функций.
 
-| Набор функций | Название | Единица измерения | Идентификатор метрики GCP |
+| Набор функций | Имя | Единица измерения | Идентификатор метрики GCP |
 | --- | --- | --- | --- |
-| microsoft\_ad\_domain/default\_metrics | AD Domain Health | Unspecified | managedidentities.googleapis.com/microsoft\_ad/domain/health |
-| microsoft\_ad\_domain/default\_metrics | AD Domain Trust Health | Unspecified | managedidentities.googleapis.com/microsoft\_ad/domain/trust/state |
+| microsoft\_ad\_domain/default\_metrics | AD Domain Health | Не указано | managedidentities.googleapis.com/microsoft\_ad/domain/health |
+| microsoft\_ad\_domain/default\_metrics | AD Domain Trust Health | Не указано | managedidentities.googleapis.com/microsoft\_ad/domain/trust/state |
 
 ## Связанные темы
 
-* Интеграции Google Cloud
+* [Интеграции Google Cloud](/managed/ingest-from/google-cloud-platform/gcp-integrations "Настройка и конфигурирование Dynatrace в Google Cloud.")

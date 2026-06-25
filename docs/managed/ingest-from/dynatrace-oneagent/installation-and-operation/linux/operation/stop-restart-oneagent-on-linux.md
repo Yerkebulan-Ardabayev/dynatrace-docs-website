@@ -1,10 +1,15 @@
 ---
-title: "Stop/restart OneAgent on Linux"
+title: Stop/restart OneAgent on Linux
 source: https://docs.dynatrace.com/managed/ingest-from/dynatrace-oneagent/installation-and-operation/linux/operation/stop-restart-oneagent-on-linux
-updated: 2026-02-09
+scraped: 2026-05-12T11:05:22.394739
 ---
 
+# Stop/restart OneAgent on Linux
+
+# Stop/restart OneAgent on Linux
+
 * 1-min read
+* Published Sep 19, 2018
 
 In case you don't want to use OneAgent inside a particular Java (or other) process, you can easily disable Dynatrace monitoring for individual hosts, process groups, or applications:
 
@@ -30,7 +35,7 @@ When you use the `set` parameters, you need to restart OneAgent service to apply
 ./oneagentctl --set-proxy=my-proxy.com --restart-service
 ```
 
-For more information, see OneAgent configuration via command-line interface.
+For more information, see [OneAgent configuration via command-line interface](/managed/ingest-from/dynatrace-oneagent/oneagent-configuration-via-command-line-interface "Learn how to perform some OneAgent configuration tasks without the need to reinstall OneAgent.").
 
 ## Stop OneAgent using the command line
 
@@ -52,4 +57,4 @@ To start Dynatrace OneAgent again, use the following command:
 
 where `oneagent` is the `init.d` script for OneAgent.
 
-Learn more about how Dynatrace interacts with your OS.
+Learn more about [how Dynatrace interacts with your OS](/managed/ingest-from/dynatrace-oneagent/installation-and-operation/linux/installation/oneagent-security-linux "Learn about Dynatrace OneAgent security and modifications to your Linux-based system").

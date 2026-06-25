@@ -1,9 +1,14 @@
 ---
-title: "OneAgent release notes"
+title: OneAgent release notes
 source: https://docs.dynatrace.com/managed/whats-new/oneagent
-updated: 2026-02-09
+scraped: 2026-05-12T11:04:07.294251
 ---
 
-* Release notes
+# OneAgent release notes
 
-Unable to render DataTable. Check configuration.
+# OneAgent release notes
+
+* Release notes
+* Updated on Apr 29, 2026
+
+Type to filter
