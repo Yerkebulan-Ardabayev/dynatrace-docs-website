@@ -1,16 +1,17 @@
 # Что ещё нужно перевести (EN -> RU)
 
-**Готово: 2612 / 2655 (98.38%). Осталось: 43 файлов.**
+**Готово: 2612 / 2655 (98.38%).**
 
-> Этот файл генерируется автоматически. Пересоздать актуальную версию:
-> `python scripts/_gen_pending_md.py`  (или `python scripts/_pending_inventory.py` для сводки в консоль).
->
-> Как доперевести: открыть Claude Code в этой папке и сказать,
-> например: «продолжай перевод раздела amazon-web-services по тому же пайплайну».
+- **Активный перевод (`ingest-from`): осталось 43 файлов** — это реальная работа.
+
+> Генерируется автоматически: `python scripts/_gen_pending_md.py`.
+> Как доперевести: открыть Claude Code в этой папке и сказать, например:
+> «продолжай перевод раздела amazon-web-services по тому же пайплайну (движок `_zos_canon_l4if71`, глоссарий, субагенты, QA, крит.ревью)».
 > EN-исходник: `docs/managed/<путь>` -> RU-результат: `docs/managed-ru/<путь>`.
-> Движок и глоссарии: `scripts/` (_zos_canon_l4if71.py, _GLOSSARY_*.md, _build_*.py).
 
-## ingest-from/amazon-web-services  (19)
+## Активный перевод — ingest-from
+
+### ingest-from/amazon-web-services  (19)
 
 - [ ] `ingest-from/amazon-web-services/integrate-into-aws/app-runner.md`
 - [ ] `ingest-from/amazon-web-services/integrate-with-aws/aws-metrics-ingest/cloudwatch-metric-streams.md`
@@ -32,7 +33,7 @@
 - [ ] `ingest-from/amazon-web-services/integrate-with-aws/cloudwatch-metrics/view-aws-monitoring-results.md`
 - [ ] `ingest-from/amazon-web-services/set-up-aws-monitoring-with-managed.md`
 
-## ingest-from/google-cloud-platform  (15)
+### ingest-from/google-cloud-platform  (15)
 
 - [ ] `ingest-from/google-cloud-platform/gcp-integrations/cloudrun.md`
 - [ ] `ingest-from/google-cloud-platform/gcp-integrations/gcp-functions/opentelemetry-on-gcf-dotnet.md`
@@ -50,7 +51,7 @@
 - [ ] `ingest-from/google-cloud-platform/legacy/deployment-k8s-container-legacy.md`
 - [ ] `ingest-from/google-cloud-platform/legacy/gcp-supported-service-metrics-legacy.md`
 
-## ingest-from/technology-support  (6)
+### ingest-from/technology-support  (6)
 
 - [ ] `ingest-from/technology-support/application-software/go/support/go-known-limitations.md`
 - [ ] `ingest-from/technology-support/application-software/java/graalvm-native-image.md`
@@ -59,12 +60,12 @@
 - [ ] `ingest-from/technology-support/application-software/nginx/kong-gateway.md`
 - [ ] `ingest-from/technology-support/known-solutions-and-workarounds.md`
 
-## ingest-from/setup-on-container-platforms  (2)
+### ingest-from/setup-on-container-platforms  (2)
 
 - [ ] `ingest-from/setup-on-container-platforms/kubernetes/legacy/deploy-oneagent-operator-k8s-legacy.md`
 - [ ] `ingest-from/setup-on-container-platforms/kubernetes/legacy/deploy-oneagent-operator-openshift-legacy.md`
 
-## ingest-from/extend-dynatrace  (1)
+### ingest-from/extend-dynatrace  (1)
 
 - [ ] `ingest-from/extend-dynatrace/extend-metrics/ingestion-methods/telegraf.md`
 
