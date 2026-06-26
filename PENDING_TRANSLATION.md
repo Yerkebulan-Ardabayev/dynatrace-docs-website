@@ -1,8 +1,8 @@
 # Что ещё нужно перевести (EN -> RU)
 
-**Готово: 2637 / 2698 (97.74%).**
+**Готово: 2652 / 2698 (98.30%).**
 
-- **Активный перевод (`ingest-from`): осталось 23 файлов** — это реальная работа.
+- **Активный перевод (`ingest-from`): осталось 8 файлов** — это реальная работа.
 - Прочие/legacy страницы: 38 (топ-левел / cluster-API, управляются CI-рескрейпом, низкий приоритет).
 
 > Генерируется автоматически: `python scripts/_gen_pending_md.py`.
@@ -11,24 +11,6 @@
 > EN-исходник: `docs/managed/<путь>` -> RU-результат: `docs/managed-ru/<путь>`.
 
 ## Активный перевод — ingest-from
-
-### ingest-from/google-cloud-platform  (15)
-
-- [ ] `ingest-from/google-cloud-platform/gcp-integrations/cloudrun.md`
-- [ ] `ingest-from/google-cloud-platform/gcp-integrations/gcp-functions/opentelemetry-on-gcf-dotnet.md`
-- [ ] `ingest-from/google-cloud-platform/gcp-integrations/gcp-functions/opentelemetry-on-gcf-go.md`
-- [ ] `ingest-from/google-cloud-platform/gcp-integrations/gcp-functions/opentelemetry-on-gcf-nodejs.md`
-- [ ] `ingest-from/google-cloud-platform/gcp-integrations/gcp-functions/opentelemetry-on-gcf-python.md`
-- [ ] `ingest-from/google-cloud-platform/gcp-integrations/gcp-functions/opentelemetry-on-gcf.md`
-- [ ] `ingest-from/google-cloud-platform/gcp-integrations/gcp-functions/otel-gcf-go.md`
-- [ ] `ingest-from/google-cloud-platform/gcp-integrations/gcp-guide/deploy-k8.md`
-- [ ] `ingest-from/google-cloud-platform/gcp-integrations/gcp-guide/deploy-with-google-cloud-function.md`
-- [ ] `ingest-from/google-cloud-platform/gcp-integrations/gcp-guide/set-up-gcp-integration-logs-only.md`
-- [ ] `ingest-from/google-cloud-platform/gcp-integrations/gcp-guide/set-up-gcp-integration-metrics-only.md`
-- [ ] `ingest-from/google-cloud-platform/gcp-integrations/gcp-guide/set-up-gcp-integration-on-existing-cluster.md`
-- [ ] `ingest-from/google-cloud-platform/legacy/deploy-with-google-cloud-function-legacy.md`
-- [ ] `ingest-from/google-cloud-platform/legacy/deployment-k8s-container-legacy.md`
-- [ ] `ingest-from/google-cloud-platform/legacy/gcp-supported-service-metrics-legacy.md`
 
 ### ingest-from/technology-support  (6)
 

@@ -24,7 +24,7 @@ Dynatrace собирает метрики для множества предва
 
   Для доступа на основе ролей (будь то развёртывание [SaaS](/managed/ingest-from/amazon-web-services/integrate-with-aws/cloudwatch-metrics#role-based-access "Интеграция метрик из Amazon CloudWatch.") или [Managed](/managed/ingest-from/amazon-web-services/set-up-aws-monitoring-with-managed#role-based-access "Подключение аккаунта Amazon к Dynatrace Managed и начало мониторинга.")) требуется ActiveGate, установленный на хосте Amazon EC2.
 * Обновлённая [политика мониторинга AWS](/managed/ingest-from/amazon-web-services/integrate-with-aws/cloudwatch-metrics#aws-policy-and-authentication "Интеграция метрик из Amazon CloudWatch.") для включения дополнительных сервисов AWS.
-  Чтобы [обновить политику AWS IAM﻿](https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_manage-edit.html#edit-managed-policy-console), используйте приведённый ниже JSON, содержащий политику мониторинга (разрешения) для всех облачных сервисов.
+  Чтобы [обновить политику AWS IAM](https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_manage-edit.html#edit-managed-policy-console), используйте приведённый ниже JSON, содержащий политику мониторинга (разрешения) для всех облачных сервисов.
 
 Предопределённая JSON-политика для всех облачных сервисов
 

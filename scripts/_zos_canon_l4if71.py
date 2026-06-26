@@ -230,6 +230,13 @@ def qa_one(rel_dir, fname, verbose=True):
             msgs.append(("FAIL", f"mojibake {m!r} at {ln[:8]}"))
     if ru.startswith(BOM):
         msgs.append(("FAIL", "BOM present"))
+    # U+FEFF mid-content: scraping artifact from EN `ï»¿` that the demoji guard
+    # skips (no â/Ã/Â) and the 3-char MOJI pattern misses once decoded to the
+    # single char U+FEFF. Canon L4-IF.66 #3 = strip in RU. (L4-IF.74 blindspot.)
+    nfeff = ru.count("﻿")
+    if nfeff:
+        lnf = [i + 1 for i, l in enumerate(rl) if "﻿" in l]
+        msgs.append(("FAIL", f"U+FEFF BOM mid-content x{nfeff} at {lnf[:8]}"))
 
     if _urls(en) != _urls(ru):
         only_en = sorted(set(_urls(en)) - set(_urls(ru)))
