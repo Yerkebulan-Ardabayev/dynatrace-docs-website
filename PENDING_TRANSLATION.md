@@ -1,8 +1,9 @@
 # Что ещё нужно перевести (EN -> RU)
 
-**Готово: 2612 / 2655 (98.38%).**
+**Готово: 2637 / 2698 (97.74%).**
 
-- **Активный перевод (`ingest-from`): осталось 43 файлов** — это реальная работа.
+- **Активный перевод (`ingest-from`): осталось 23 файлов** — это реальная работа.
+- Прочие/legacy страницы: 38 (топ-левел / cluster-API, управляются CI-рескрейпом, низкий приоритет).
 
 > Генерируется автоматически: `python scripts/_gen_pending_md.py`.
 > Как доперевести: открыть Claude Code в этой папке и сказать, например:
@@ -10,28 +11,6 @@
 > EN-исходник: `docs/managed/<путь>` -> RU-результат: `docs/managed-ru/<путь>`.
 
 ## Активный перевод — ingest-from
-
-### ingest-from/amazon-web-services  (19)
-
-- [ ] `ingest-from/amazon-web-services/integrate-into-aws/app-runner.md`
-- [ ] `ingest-from/amazon-web-services/integrate-with-aws/aws-metrics-ingest/cloudwatch-metric-streams.md`
-- [ ] `ingest-from/amazon-web-services/integrate-with-aws/cloudwatch-metrics.md`
-- [ ] `ingest-from/amazon-web-services/integrate-with-aws/cloudwatch-metrics/aws-lambda-cloudwatch-metrics/lambda-builtin.md`
-- [ ] `ingest-from/amazon-web-services/integrate-with-aws/cloudwatch-metrics/aws-migration-guide.md`
-- [ ] `ingest-from/amazon-web-services/integrate-with-aws/cloudwatch-metrics/aws-set-up-metric-events-for-alerting.md`
-- [ ] `ingest-from/amazon-web-services/integrate-with-aws/cloudwatch-metrics/cloudwatch-ec2/ec2-api.md`
-- [ ] `ingest-from/amazon-web-services/integrate-with-aws/cloudwatch-metrics/cloudwatch-ec2/ec2-auto-scaling-builltin.md`
-- [ ] `ingest-from/amazon-web-services/integrate-with-aws/cloudwatch-metrics/cloudwatch-ec2/ec2-auto-scaling.md`
-- [ ] `ingest-from/amazon-web-services/integrate-with-aws/cloudwatch-metrics/cloudwatch-ec2/ec2-builtin.md`
-- [ ] `ingest-from/amazon-web-services/integrate-with-aws/cloudwatch-metrics/cloudwatch-ec2/ec2-spot-fleet.md`
-- [ ] `ingest-from/amazon-web-services/integrate-with-aws/cloudwatch-metrics/cloudwatch-ecs.md`
-- [ ] `ingest-from/amazon-web-services/integrate-with-aws/cloudwatch-metrics/cloudwatch-ecs/ecs-container-insights.md`
-- [ ] `ingest-from/amazon-web-services/integrate-with-aws/cloudwatch-metrics/cloudwatch-eks.md`
-- [ ] `ingest-from/amazon-web-services/integrate-with-aws/cloudwatch-metrics/cloudwatch-elastic-beanstalk.md`
-- [ ] `ingest-from/amazon-web-services/integrate-with-aws/cloudwatch-metrics/default-aws-metrics.md`
-- [ ] `ingest-from/amazon-web-services/integrate-with-aws/cloudwatch-metrics/limit-api-calls-to-aws-using-tags.md`
-- [ ] `ingest-from/amazon-web-services/integrate-with-aws/cloudwatch-metrics/view-aws-monitoring-results.md`
-- [ ] `ingest-from/amazon-web-services/set-up-aws-monitoring-with-managed.md`
 
 ### ingest-from/google-cloud-platform  (15)
 
@@ -65,7 +44,70 @@
 - [ ] `ingest-from/setup-on-container-platforms/kubernetes/legacy/deploy-oneagent-operator-k8s-legacy.md`
 - [ ] `ingest-from/setup-on-container-platforms/kubernetes/legacy/deploy-oneagent-operator-openshift-legacy.md`
 
-### ingest-from/extend-dynatrace  (1)
+## Прочие / legacy (низкий приоритет, управляется CI)
 
-- [ ] `ingest-from/extend-dynatrace/extend-metrics/ingestion-methods/telegraf.md`
+### managed-cluster/api-references  (30)
+
+- [ ] `managed-cluster/api-references/cluster-api/cluster-api-v2.md`
+- [ ] `managed-cluster/api-references/cluster-api/cluster-api-v2/cluster-tokens/create-cluster-tokens.md`
+- [ ] `managed-cluster/api-references/cluster-api/cluster-api-v2/cluster-tokens/delete-cluster-token.md`
+- [ ] `managed-cluster/api-references/cluster-api/cluster-api-v2/cluster-tokens/list-cluster-token-metadata-para.md`
+- [ ] `managed-cluster/api-references/cluster-api/cluster-api-v2/cluster-tokens/list-cluster-token-metadata-req.md`
+- [ ] `managed-cluster/api-references/cluster-api/cluster-api-v2/cluster-tokens/list-cluster-tokens.md`
+- [ ] `managed-cluster/api-references/cluster-api/cluster-api-v2/cluster-tokens/update-cluster-token.md`
+- [ ] `managed-cluster/api-references/cluster-api/cluster-api-v2/environments/create-managed-environment.md`
+- [ ] `managed-cluster/api-references/cluster-api/cluster-api-v2/environments/delete-specific-managed-environment.md`
+- [ ] `managed-cluster/api-references/cluster-api/cluster-api-v2/environments/list-managed-environments.md`
+- [ ] `managed-cluster/api-references/cluster-api/cluster-api-v2/environments/list-specific-managed-environment.md`
+- [ ] `managed-cluster/api-references/cluster-api/cluster-api-v2/environments/update-specific-managed-environment.md`
+- [ ] `managed-cluster/api-references/cluster-api/cluster-api-v2/export-license-data/get-export-license-data.md`
+- [ ] `managed-cluster/api-references/cluster-api/cluster-api-v2/log-monitoring/get-log-monitoring-status.md`
+- [ ] `managed-cluster/api-references/cluster-api/cluster-api-v2/log-monitoring/post-update-log-events-per-cluster-for-log-monitoring.md`
+- [ ] `managed-cluster/api-references/cluster-api/cluster-api-v2/remote-access/get-all-cluster-access-requests.md`
+- [ ] `managed-cluster/api-references/cluster-api/cluster-api-v2/remote-access/get-cluster-access-request.md`
+- [ ] `managed-cluster/api-references/cluster-api/cluster-api-v2/remote-access/post-remote-access-permission.md`
+- [ ] `managed-cluster/api-references/cluster-api/cluster-api-v2/remote-access/put-change-access-request-state.md`
+- [ ] `managed-cluster/api-references/cluster-api/cluster-api-v2/synthetic-locations-and-nodes/delete-a-location.md`
+- [ ] `managed-cluster/api-references/cluster-api/cluster-api-v2/synthetic-locations-and-nodes/get-a-location.md`
+- [ ] `managed-cluster/api-references/cluster-api/cluster-api-v2/synthetic-locations-and-nodes/get-all-locations.md`
+- [ ] `managed-cluster/api-references/cluster-api/cluster-api-v2/synthetic-locations-and-nodes/get-all.md`
+- [ ] `managed-cluster/api-references/cluster-api/cluster-api-v2/synthetic-locations-and-nodes/get-node.md`
+- [ ] `managed-cluster/api-references/cluster-api/cluster-api-v2/synthetic-locations-and-nodes/post-a-location.md`
+- [ ] `managed-cluster/api-references/cluster-api/cluster-api-v2/synthetic-locations-and-nodes/put-a-location.md`
+- [ ] `managed-cluster/api-references/cluster-api/cluster-api-v2/user-management/delete-cluster-user-session.md`
+- [ ] `managed-cluster/api-references/cluster-api/cluster-api-v2/user-management/get-cluster-user-sessions-configuration.md`
+- [ ] `managed-cluster/api-references/cluster-api/cluster-api-v2/user-management/get-cluster-user-sessions.md`
+- [ ] `managed-cluster/api-references/cluster-api/cluster-api-v2/user-management/update-cluster-user-sessions-configuration.md`
+
+### backup.md  (1)
+
+- [ ] `backup.md`
+
+### cluster.md  (1)
+
+- [ ] `cluster.md`
+
+### configuration.md  (1)
+
+- [ ] `configuration.md`
+
+### installation.md  (1)
+
+- [ ] `installation.md`
+
+### managed.md  (1)
+
+- [ ] `managed.md`
+
+### operations.md  (1)
+
+- [ ] `operations.md`
+
+### security.md  (1)
+
+- [ ] `security.md`
+
+### update.md  (1)
+
+- [ ] `update.md`
 
