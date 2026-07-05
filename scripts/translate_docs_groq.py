@@ -246,6 +246,11 @@ def translate_via_gemini(text: str) -> str | None:
                     print(f"  ❌ Gemini: пустой ответ")
                     break
 
+                # Обрезка по лимиту токенов — НЕ отдавать усечённый перевод в корпус.
+                if candidates[0].get('finishReason') == 'MAX_TOKENS':
+                    print(f"  ✂️  Gemini: ответ обрезан (MAX_TOKENS) — бракую, дальше")
+                    return None
+
                 translation = candidates[0]['content']['parts'][0]['text'].strip()
                 time.sleep(4.0)  # Gemini free: 15 req/min = 4 sec between requests
                 return translation
@@ -314,6 +319,10 @@ def translate_via_groq(text: str) -> str | None:
                 print(f"  ❌ Groq: пустой ответ")
                 return None
 
+            if result['choices'][0].get('finish_reason') == 'length':
+                print(f"  ✂️  Groq: ответ обрезан (finish_reason=length) — бракую")
+                return None
+
             translation = result['choices'][0]['message']['content'].strip()
             time.sleep(2.0)  # Groq: 30 req/min
             return translation
@@ -375,6 +384,10 @@ def translate_via_openrouter(text: str) -> str | None:
                 result = response.json()
                 if 'choices' not in result or not result['choices']:
                     print(f"  ❌ OpenRouter [{model}]: пустой ответ")
+                    break
+
+                if result['choices'][0].get('finish_reason') == 'length':
+                    print(f"  ✂️  OpenRouter [{model}]: обрезан (length) — след. модель")
                     break
 
                 translation = result['choices'][0]['message']['content'].strip()

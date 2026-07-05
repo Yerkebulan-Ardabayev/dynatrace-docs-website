@@ -240,18 +240,30 @@ scraped: {datetime.now().isoformat()}
             self.output_dir.mkdir(parents=True, exist_ok=True)
             return self.output_dir / "index.md"
 
-        # Create directory structure
-        if "/" in relative_path:
-            parts = relative_path.split("/")
-            dir_path = self.output_dir / Path(*parts[:-1])
-            filename = parts[-1] or "index"
-        else:
-            dir_path = self.output_dir
-            filename = relative_path or "index"
+        # Create directory structure — защита от path traversal: URL приходит из
+        # скрейпа (ссылки на страницах), сегменты `..`/пустые/абсолютные могут
+        # увести запись ЗА пределы output_dir. Отбрасываем опасные сегменты и в
+        # конце проверяем, что итоговый путь остаётся внутри output_dir.
+        parts = [p for p in relative_path.split("/") if p and p not in (".", "..")]
+        if not parts:
+            self.output_dir.mkdir(parents=True, exist_ok=True)
+            return self.output_dir / "index.md"
 
-        # Ensure .md extension
+        filename = parts[-1]
         if not filename.endswith(".md"):
             filename += ".md"
+        dir_path = (
+            self.output_dir.joinpath(*parts[:-1])
+            if len(parts) > 1
+            else self.output_dir
+        )
+
+        out_base = self.output_dir.resolve()
+        final_path = (dir_path / filename).resolve()
+        if not final_path.is_relative_to(out_base):
+            raise ValueError(
+                f"path traversal заблокирован для URL {url!r}: {final_path}"
+            )
 
         dir_path.mkdir(parents=True, exist_ok=True)
         return dir_path / filename
@@ -405,6 +417,22 @@ scraped: {datetime.now().isoformat()}
         if dry_run:
             print(f"\n(dry-run: pass --cleanup-orphans to actually delete)")
             return len(orphans)
+
+        # Safety: не удалять, если скрейп был неполным — иначе живые страницы, не
+        # дошедшие в этот прогон (сеть/лимит), будут снесены как "orphan".
+        total_local = sum(1 for _ in self.output_dir.rglob("*.md"))
+        if self.stats.get("errors", 0) > 0:
+            print(
+                f"\n⚠️  Скрейп с ошибками ({self.stats['errors']}) — отмена удаления "
+                f"orphans (возможен неполный обход)."
+            )
+            return 0
+        if total_local and len(orphans) > 0.4 * total_local:
+            print(
+                f"\n⚠️  Orphans {len(orphans)} из {total_local} (>40%) — похоже на "
+                f"неполный скрейп, отмена удаления."
+            )
+            return 0
 
         for p in orphans:
             try:

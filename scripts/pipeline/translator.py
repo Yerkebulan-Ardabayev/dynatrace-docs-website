@@ -32,9 +32,6 @@ class QuotaExhaustedError(Exception):
 class TranslationProvider:
     """Base class for translation API providers."""
 
-    # HTTP status codes that indicate quota/rate limit exhaustion
-    QUOTA_STATUS_CODES = {429, 402, 403}
-
     def __init__(self, name: str, api_key: str, model: str, endpoint: str, rate_limit: int):
         self.name = name
         self.api_key = api_key
@@ -52,12 +49,30 @@ class TranslationProvider:
             time.sleep(min_interval - elapsed)
         self._last_request_time = time.time()
 
-    def _check_quota_error(self, status_code: int, response_text: str) -> bool:
-        """Check if error indicates quota exhaustion."""
-        if status_code in self.QUOTA_STATUS_CODES:
-            return True
-        quota_keywords = ["quota", "limit", "exceeded", "rate_limit", "too many requests", "insufficient"]
-        return any(kw in response_text.lower() for kw in quota_keywords)
+    def _note_error(self, status_code: int, response_text: str) -> None:
+        """Обработать HTTP-ошибку провайдера, различая ВРЕМЕННЫЙ rate-limit и
+        НАСТОЯЩЕЕ исчерпание квоты.
+
+        Раньше любой 429 ставил exhausted=True навсегда, хотя 429 у Gemini чаще
+        минутный лимит, а не дневная квота — провайдер выключался на весь прогон
+        (HIGH аудита). Теперь: 402/403 или явная дневная/биллинговая квота ->
+        exhausted; 429/минутный -> бэкофф, провайдер остаётся живым.
+        """
+        text = (response_text or "").lower()
+        permanent = status_code in (402, 403) or any(
+            kw in text
+            for kw in ("per day", "daily", "billing", "insufficient", "quota exceeded")
+        )
+        if permanent:
+            self.exhausted = True
+            print(f"[{self.name}] QUOTA EXHAUSTED (HTTP {status_code})")
+            return
+        if status_code == 429 or "rate" in text or "too many requests" in text:
+            wait = min(60.0, max(5.0, 60.0 / max(self.rate_limit, 1)))
+            print(f"[{self.name}] rate-limited (HTTP {status_code}), backoff {wait:.0f}s")
+            time.sleep(wait)
+            return
+        print(f"[{self.name}] Error {status_code}: {response_text[:200]}")
 
     def translate(self, text: str, source_lang: str = "en", target_lang: str = "ru") -> Optional[str]:
         """Translate text. Returns translated text or None on failure."""
@@ -90,11 +105,7 @@ class GeminiProvider(TranslationProvider):
                 if candidates:
                     return candidates[0]["content"]["parts"][0]["text"]
             else:
-                if self._check_quota_error(response.status_code, response.text):
-                    print(f"[Gemini] QUOTA EXHAUSTED (HTTP {response.status_code})")
-                    self.exhausted = True
-                else:
-                    print(f"[Gemini] Error {response.status_code}: {response.text[:200]}")
+                self._note_error(response.status_code, response.text)
                 return None
         except Exception as e:
             print(f"[Gemini] Exception: {e}")
@@ -151,11 +162,7 @@ Output ONLY the translation.
                 data = response.json()
                 return data["choices"][0]["message"]["content"]
             else:
-                if self._check_quota_error(response.status_code, response.text):
-                    print(f"[Groq] QUOTA EXHAUSTED (HTTP {response.status_code})")
-                    self.exhausted = True
-                else:
-                    print(f"[Groq] Error {response.status_code}: {response.text[:200]}")
+                self._note_error(response.status_code, response.text)
                 return None
         except Exception as e:
             print(f"[Groq] Exception: {e}")
@@ -196,11 +203,7 @@ Output ONLY the translation.
                 data = response.json()
                 return data["choices"][0]["message"]["content"]
             else:
-                if self._check_quota_error(response.status_code, response.text):
-                    print(f"[OpenRouter] QUOTA EXHAUSTED (HTTP {response.status_code})")
-                    self.exhausted = True
-                else:
-                    print(f"[OpenRouter] Error {response.status_code}")
+                self._note_error(response.status_code, response.text)
                 return None
         except Exception as e:
             print(f"[OpenRouter] Exception: {e}")

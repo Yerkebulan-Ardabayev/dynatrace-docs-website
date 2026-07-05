@@ -13,6 +13,7 @@ Usage:
 """
 import argparse
 import json
+import re
 import sys
 import time
 from pathlib import Path
@@ -28,6 +29,32 @@ from translate_docs_groq import (
 BASE_DIR = Path(__file__).parent.parent
 EN_DIR = BASE_DIR / "docs" / "en"
 RU_DIR = BASE_DIR / "docs" / "ru"
+
+
+# Английские преамбулы, которыми LLM иногда предваряет перевод вместо чистого текста.
+_EN_PREAMBLE = (
+    "sure", "here is", "here's", "certainly", "of course", "okay", "ok,",
+    "translation:", "translated text", "i'll translate", "i will translate",
+    "below is",
+)
+
+
+def _validate_translation(source: str, translated: str) -> tuple[bool, str]:
+    """Гейт ПЕРЕД записью в корпус (HIGH аудита): не пустой, есть кириллица, не
+    короче 25% оригинала (ловит усечение), не начинается с англ-преамбулы LLM.
+    Возвращает (ok, причина). Плохой перевод НЕ должен затирать готовый файл.
+    """
+    if not translated or not translated.strip():
+        return False, "пустой перевод"
+    t = translated.strip()
+    if not re.search(r"[а-яА-ЯёЁ]", t):
+        return False, "нет кириллицы (похоже, не переведено)"
+    if len(t) < 0.25 * len(source):
+        return False, f"слишком коротко ({len(t)} vs {len(source)} симв., возможна обрезка)"
+    head = t.lstrip("#*_> \n").lower()[:40]
+    if any(head.startswith(p) for p in _EN_PREAMBLE):
+        return False, "начинается с английской преамбулы LLM"
+    return True, "ok"
 
 
 def translate_single_file(en_file: Path, ru_file: Path) -> bool:
@@ -53,6 +80,11 @@ def translate_single_file(en_file: Path, ru_file: Path) -> bool:
         translated = translate_text(content, str(en_file.name))
         if translated is None:
             return False
+
+    ok, reason = _validate_translation(content, translated)
+    if not ok:
+        print(f"  REJECT ({reason}) — не перезаписываю {ru_file.name}")
+        return False
 
     ru_file.parent.mkdir(parents=True, exist_ok=True)
     ru_file.write_text(translated, encoding="utf-8")
