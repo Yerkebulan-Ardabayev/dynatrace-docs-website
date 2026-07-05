@@ -74,6 +74,11 @@ notebooklm-pdfs/
 pdf-docs/
 
 # Auto-pipeline artifacts
-scripts/.change_tracking/
+# ВНИМАНИЕ: scripts/.change_tracking/hash_registry.json НЕ игнорируется — он должен
+# персиститься в git, иначе detect_changes на свежем checkout уходит в mtime-эвристику
+# (все mtime равны) и выдаёт случайный список «что переводить». Игнорируем только
+# временные .tmp реестра, сам registry коммитится (git add -f в update-docs.yml).
+scripts/.change_tracking/*.tmp
 changes_report.json
 changes_report.md
+translation_result.json

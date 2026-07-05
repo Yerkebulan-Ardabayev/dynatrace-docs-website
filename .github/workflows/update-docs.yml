@@ -54,54 +54,64 @@ jobs:
           pip install weasyprint markdown
 
       # ---------- RESTORE HASH REGISTRY CACHE ----------
+      # Основной источник реестра хэшей — сам репозиторий (он коммитится через
+      # git add -f, .gitignore для него снят). Кэш — вторичная оптимизация со
+      # СТАБИЛЬНЫМ ключом (не github.run_id, который промахивался каждый прогон).
       - name: Restore hash registry cache
         uses: actions/cache@v4
         with:
           path: scripts/.change_tracking/hash_registry.json
-          key: hash-registry-${{ github.run_id }}
+          key: hash-registry-v2
           restore-keys: |
             hash-registry-
 
-      # ---------- STAGE 1: Scrape English docs ----------
+      # ---------- STAGE 1: Scrape Managed docs (канонический корпус) ----------
       - name: Scrape documentation
         id: scrape
         if: ${{ !inputs.skip_scrape }}
         run: |
           set -e
-          echo "=== Stage 1: Scraping Dynatrace documentation ==="
-          cd scripts
-          python scrape_docs.py --max-pages ${{ inputs.max_pages || 1000 }} 2>&1 | tail -30
+          echo "=== Stage 1: Scraping Dynatrace MANAGED documentation ==="
+          # Пишем напрямую в канонический Managed-корпус docs/managed (без мёртвого
+          # organize-шага): scrape_docs.py раскладывает по структуре URL и защищён
+          # от path traversal. Запуск из корня репо, чтобы docs/managed резолвился.
+          python scripts/scrape_docs.py \
+            --output docs/managed \
+            --max-pages ${{ inputs.max_pages || 1000 }} 2>&1 | tail -30
           echo "scrape_done=true" >> $GITHUB_OUTPUT
 
       - name: Verify scrape results
         if: steps.scrape.outputs.scrape_done == 'true'
         run: |
           set -e
-          COUNT=$(find docs/en -name "*.md" 2>/dev/null | wc -l)
-          echo "Scraped files: $COUNT"
+          COUNT=$(find docs/managed -name "*.md" 2>/dev/null | wc -l)
+          echo "Scraped files (docs/managed): $COUNT"
           if [ "$COUNT" -lt 5 ]; then
             echo "::error::Scrape returned only $COUNT files — possible scraper failure"
             exit 1
           fi
           echo "scrape_verified=true" >> $GITHUB_OUTPUT
 
-      - name: Organize files
+      # ---------- GATE A: корпус действительно Managed ----------
+      # verify_corpus.py валит прогон, если в docs/managed попал чужой (не-Managed)
+      # source. Стоит НА пути ДО перевода: не переводим и не коммитим мусор.
+      - name: Gate — verify Managed corpus
+        id: verify_corpus
         if: steps.scrape.outputs.scrape_done == 'true'
         run: |
           set -e
-          if [ -f scripts/organize_docs.py ]; then
-            python scripts/organize_docs.py
-          fi
+          echo "=== Gate A: verify docs/managed is really Managed ==="
+          python scripts/verify_corpus.py
 
-      # ---------- STAGE 2: Detect changes ----------
+      # ---------- STAGE 2: Detect changes (managed -> managed-ru) ----------
       - name: Detect new and updated articles
         id: detect
         run: |
           set -e
-          echo "=== Stage 2: Detecting changes ==="
+          echo "=== Stage 2: Detecting changes (managed -> managed-ru) ==="
           python scripts/detect_changes.py \
-            --source-dir docs/en \
-            --target-dir docs/ru \
+            --source-dir docs/managed \
+            --target-dir docs/managed-ru \
             --repo ${{ github.repository }} \
             --report changes_report.json \
             --markdown changes_report.md
@@ -149,6 +159,21 @@ jobs:
           ")
           echo "translated_count=$TRANSLATED" >> $GITHUB_OUTPUT
 
+      # ---------- GATE B: валидация свежих переводов ПЕРЕД коммитом ----------
+      # Второй гейт (после per-write гейта в translate_changed.py): проверяет ТОЛЬКО
+      # реально переведённые в этом прогоне файлы (translation_result.json), не весь
+      # корпус. Плохой перевод валит прогон и НЕ попадает в commit docs/managed-ru.
+      - name: Gate — validate fresh translations
+        id: validate
+        if: steps.translate.outputs.translated_count != '0' && steps.translate.outputs.translated_count != ''
+        run: |
+          set -e
+          echo "=== Gate B: validate freshly translated files ==="
+          python scripts/validate_translations.py \
+            --ru-dir docs/managed-ru \
+            --en-dir docs/managed \
+            --report translation_result.json
+
       # ---------- STAGE 4: Generate PDFs from translated docs ----------
       - name: Generate PDFs for translated docs
         id: pdf
@@ -173,11 +198,13 @@ jobs:
           git config user.name "Yerkebulan Ardabayev"
           git config user.email "yerkebulan.ardabayev@gmail.com"
 
-          # Stage English docs
-          git add docs/en/ scripts/.change_tracking/
+          # Канонический Managed-корпус: EN (docs/managed) + RU (docs/managed-ru).
+          git add docs/managed/ docs/managed-ru/
 
-          # Stage translations if any
-          git add docs/ru/ || true
+          # Реестр хэшей коммитим принудительно (-f): даже если правило .gitignore
+          # для scripts/.change_tracking/ вернут, registry всё равно попадёт в git.
+          # Иначе detect_changes на свежем checkout уходит в mtime-эвристику.
+          git add -f scripts/.change_tracking/hash_registry.json || true
 
           # Stage PDFs if any
           git add pdf-docs/ || true
@@ -190,7 +217,7 @@ jobs:
             DATE=$(date +%Y-%m-%d)
             TRANSLATED=${{ steps.translate.outputs.translated_count || 0 }}
 
-            MSG="docs: sync from docs.dynatrace.com ${DATE}"
+            MSG="docs: sync Managed from docs.dynatrace.com/managed ${DATE}"
             if [ "$TRANSLATED" -gt 0 ] 2>/dev/null; then
               MSG="docs: sync + translate ${TRANSLATED} articles ${DATE}"
             fi
@@ -376,10 +403,14 @@ jobs:
           REASON="неизвестный шаг pipeline"
           if [ "${{ steps.scrape.outcome }}" = "failure" ]; then
             REASON="Scrape — docs.dynatrace.com не ответил / scraper упал / timeout"
+          elif [ "${{ steps.verify_corpus.outcome }}" = "failure" ]; then
+            REASON="Gate A verify_corpus — в docs/managed попал чужой (не-Managed) source"
           elif [ "${{ steps.detect.outcome }}" = "failure" ]; then
             REASON="Detect changes — сравнение хэшей упало (повреждён registry / нет файлов)"
           elif [ "${{ steps.translate.outcome }}" = "failure" ]; then
             REASON="Auto-translate — Gemini/Groq/OpenRouter API (ключ невалид / квота / сеть)"
+          elif [ "${{ steps.validate.outcome }}" = "failure" ]; then
+            REASON="Gate B validate_translations — свежий перевод не прошёл проверку (не коммитим)"
           elif [ "${{ steps.pdf.outcome }}" = "failure" ]; then
             REASON="PDF generation — weasyprint / markdown конвертация"
           elif [ "${{ steps.commit.outcome }}" = "failure" ]; then
@@ -446,7 +477,7 @@ jobs:
           publish_branch: gh-pages
           user_name: 'Yerkebulan Ardabayev'
           user_email: 'yerkebulan.ardabayev@gmail.com'
-          commit_message: 'deploy: sync English docs update'
+          commit_message: 'deploy: sync Managed docs update'
 
       # ---------- Summary ----------
       - name: Pipeline summary

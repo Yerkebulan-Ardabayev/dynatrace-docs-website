@@ -2,18 +2,19 @@
 """
 Detect new and updated documentation articles.
 
-Compares English source docs against Russian translations to find:
-- NEW articles: exist in en/ but not in ru/
-- UPDATED articles: en/ version changed since last sync (hash mismatch)
-- OUTDATED translations: ru/ exists but en/ has been modified after ru/ was created
+Канонический корпус — Dynatrace MANAGED: docs/managed (EN) -> docs/managed-ru (RU).
+Сравнивает английский Managed-источник с русским Managed-переводом и находит:
+- NEW articles: есть в managed/ но нет в managed-ru/
+- UPDATED articles: managed/ изменился с прошлой синхронизации (несовпадение хэша)
+- OUTDATED translations: managed-ru/ есть, но managed/ изменён позже перевода
 
 Generates a JSON report and a Markdown report for GitHub Issues.
 Issue contains direct clickable links to files on GitHub for convenience.
 
 Usage:
     python scripts/detect_changes.py \
-        --source-dir docs/en \
-        --target-dir docs/ru \
+        --source-dir docs/managed \
+        --target-dir docs/managed-ru \
         --repo Yerkebulan-Ardabayev/dynatrace-docs-website \
         --report changes_report.json \
         --markdown changes_report.md
@@ -136,15 +137,20 @@ def detect_section(rel_path: str) -> str:
 
 def detect_changes(source_dir: Path, target_dir: Path) -> dict:
     """
-    Detect all changes between source (en/) and target (ru/) directories.
+    Detect all changes between source (managed/) and target (managed-ru/) directories.
 
     Returns dict with:
-        new_articles:     list of articles in en/ without ru/ counterpart
-        updated_articles: list of articles where en/ changed since last sync
+        new_articles:     list of articles in source without target counterpart
+        updated_articles: list of articles where source changed since last sync
         new_count:        number of new articles
         updated_count:    number of updated articles
         total_changes:    total articles needing translation
     """
+    # Префиксы путей для отчёта/GitHub-ссылок берём из реальных каталогов, а не
+    # хардкодим docs/en|docs/ru — иначе при Managed-корпусе ссылки вели бы в SaaS-дерево.
+    src_prefix = source_dir.as_posix().rstrip("/")
+    tgt_prefix = target_dir.as_posix().rstrip("/")
+
     prev_hashes = load_hash_registry()
     current_hashes = {}
 
@@ -172,8 +178,8 @@ def detect_changes(source_dir: Path, target_dir: Path) -> dict:
             "path": rel,
             "title": title,
             "section": section,
-            "en_path": f"docs/en/{rel}",
-            "ru_path": f"docs/ru/{rel}",
+            "en_path": f"{src_prefix}/{rel}",
+            "ru_path": f"{tgt_prefix}/{rel}",
             "hash": current_hash,
         }
 
@@ -314,7 +320,7 @@ def generate_markdown_report(result: dict, repo: str = "") -> str:
     lines.append("переведи всё новое")
     lines.append("```")
     lines.append("")
-    lines.append("Claude сам прочитает файл, переведёт, сохранит в `docs/ru/` и обновит навигацию.")
+    lines.append("Claude сам прочитает файл, переведёт, сохранит в `docs/managed-ru/` и обновит навигацию.")
     lines.append("Тебе останется только `git push` — сайт обновится автоматически.")
     lines.append("")
     lines.append("_Автоматически сгенерировано пайплайном синхронизации._")
@@ -324,10 +330,10 @@ def generate_markdown_report(result: dict, repo: str = "") -> str:
 
 def main():
     parser = argparse.ArgumentParser(description="Detect documentation changes")
-    parser.add_argument("--source-dir", default="docs/en",
-                        help="English source directory")
-    parser.add_argument("--target-dir", default="docs/ru",
-                        help="Russian translation directory")
+    parser.add_argument("--source-dir", default="docs/managed",
+                        help="English Managed source directory")
+    parser.add_argument("--target-dir", default="docs/managed-ru",
+                        help="Russian Managed translation directory")
     parser.add_argument("--report", help="Output JSON report path")
     parser.add_argument("--markdown", help="Output Markdown report path")
     parser.add_argument("--repo", default="",

@@ -13,6 +13,7 @@ Usage:
 """
 import argparse
 import json
+import os
 import re
 import sys
 import time
@@ -26,9 +27,12 @@ from translate_docs_groq import (
     GEMINI_API_KEY, GROQ_API_KEY, OPENROUTER_API_KEY,
 )
 
+# Канонический корпус — Dynatrace MANAGED. Пишем перевод ТОЛЬКО в docs/managed-ru
+# и только для реально изменившихся файлов, с гейтом _validate_translation ПЕРЕД
+# записью (см. translate_single_file), чтобы не затереть готовые 2698 файлов.
 BASE_DIR = Path(__file__).parent.parent
-EN_DIR = BASE_DIR / "docs" / "en"
-RU_DIR = BASE_DIR / "docs" / "ru"
+EN_DIR = BASE_DIR / "docs" / "managed"
+RU_DIR = BASE_DIR / "docs" / "managed-ru"
 
 
 # Английские преамбулы, которыми LLM иногда предваряет перевод вместо чистого текста.
@@ -86,8 +90,12 @@ def translate_single_file(en_file: Path, ru_file: Path) -> bool:
         print(f"  REJECT ({reason}) — не перезаписываю {ru_file.name}")
         return False
 
+    # Атомарная запись: пишем во временный файл и заменяем цель через os.replace.
+    # Обрыв посреди записи не оставит наполовину перезаписанный готовый managed-ru.
     ru_file.parent.mkdir(parents=True, exist_ok=True)
-    ru_file.write_text(translated, encoding="utf-8")
+    tmp = ru_file.with_suffix(ru_file.suffix + ".tmp")
+    tmp.write_text(translated, encoding="utf-8")
+    os.replace(tmp, ru_file)
     return True
 
 

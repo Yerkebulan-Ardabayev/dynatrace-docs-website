@@ -32,15 +32,14 @@ sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding="utf-8")
 # Configuration — Managed-only scope (Dynatrace itself decides what's applicable to Managed
 # by placing it under /managed/ — anything outside is SaaS-only or shared without Managed warranty)
 BASE_URL = os.environ.get("DYNATRACE_DOCS_URL", "https://docs.dynatrace.com/managed/")
-OUTPUT_DIR = Path("dynatrace-docs")
-CACHE_DIR = OUTPUT_DIR / ".cache"
+DEFAULT_OUTPUT_DIR = "dynatrace-docs"
 MAX_PAGES = None  # None = unlimited, or set number for testing
 DELAY_SECONDS = 1  # Delay between requests to be polite
 TEST_MODE = False  # Set True for testing on small subset
 
-# Create directories
-OUTPUT_DIR.mkdir(exist_ok=True)
-CACHE_DIR.mkdir(exist_ok=True)
+# Каталоги НЕ создаются на импорте: реальный output задаётся через --output
+# (в CI это docs/managed). Иначе импорт молча плодил бы каталог dynatrace-docs/
+# в CWD, а кэш уходил бы не туда, куда пишутся сами страницы.
 
 
 class DynatraceDocScraper:
@@ -48,8 +47,16 @@ class DynatraceDocScraper:
         self.base_url = base_url
         self.output_dir = Path(output_dir)
         self.output_dir.mkdir(parents=True, exist_ok=True)
+        # Кэш живёт рядом с выходным деревом (output_dir/.cache), а не в фиксированном
+        # ./dynatrace-docs/.cache. Так --output docs/managed кладёт кэш туда же, куда
+        # пишет страницы, и не создаёт левый каталог dynatrace-docs/ в корне репо.
+        self.cache_dir = self.output_dir / ".cache"
+        self.cache_dir.mkdir(parents=True, exist_ok=True)
         self.max_pages = max_pages if not test_mode else 50
         self.test_mode = test_mode
+        # Полнота обхода: cleanup_orphans удаляет ТОЛЬКО при полном успешном обходе.
+        # Прерван по лимиту max_pages или очередь не опустела -> обход НЕ полный.
+        self.crawl_complete = False
 
         self.visited_urls = set()
         self.to_visit = deque([base_url])
@@ -70,7 +77,7 @@ class DynatraceDocScraper:
         }
 
         # Load cache
-        self.cache_file = CACHE_DIR / "pages_cache.json"
+        self.cache_file = self.cache_dir / "pages_cache.json"
         self.cache = self.load_cache()
 
     def load_cache(self):
@@ -371,6 +378,14 @@ scraped: {datetime.now().isoformat()}
                 if self.stats["pages_downloaded"] % 10 == 0:
                     self.save_cache()
 
+        # Обход считается полным, только если очередь опустела сама (не упёрлись в
+        # max_pages). Неполный обход = запрет на удаление orphan-файлов ниже.
+        hit_page_limit = (
+            self.max_pages is not None
+            and self.stats["pages_downloaded"] >= self.max_pages
+        )
+        self.crawl_complete = (not self.to_visit) and (not hit_page_limit)
+
         # Final cache save
         self.save_cache()
 
@@ -420,6 +435,12 @@ scraped: {datetime.now().isoformat()}
 
         # Safety: не удалять, если скрейп был неполным — иначе живые страницы, не
         # дошедшие в этот прогон (сеть/лимит), будут снесены как "orphan".
+        if not self.crawl_complete:
+            print(
+                "\n⚠️  Обход НЕ полный (упёрлись в max_pages или очередь не опустела) "
+                "— отмена удаления orphans."
+            )
+            return 0
         total_local = sum(1 for _ in self.output_dir.rglob("*.md"))
         if self.stats.get("errors", 0) > 0:
             print(
@@ -470,7 +491,11 @@ def main():
     parser = argparse.ArgumentParser(description="Scrape Dynatrace documentation")
     parser.add_argument("--test", action="store_true", help="Test mode (50 pages)")
     parser.add_argument("--max-pages", type=int, help="Maximum pages to scrape")
-    parser.add_argument("--output", default="dynatrace-docs", help="Output directory")
+    parser.add_argument(
+        "--output",
+        default=None,
+        help="Output directory (default: <repo>/docs/managed — канонический Managed-корпус)",
+    )
     parser.add_argument(
         "--cleanup-orphans",
         action="store_true",
@@ -484,9 +509,17 @@ def main():
 
     args = parser.parse_args()
 
+    # По умолчанию пишем прямо в канонический Managed-корпус <repo>/docs/managed,
+    # независимо от CWD (в CI скрейпер запускается из scripts/). Так убирается
+    # мёртвый organize-шаг: скрейп сразу раскладывается по структуре URL в docs/managed.
+    if args.output:
+        output_dir = args.output
+    else:
+        output_dir = Path(__file__).resolve().parent.parent / "docs" / "managed"
+
     scraper = DynatraceDocScraper(
         base_url=BASE_URL,
-        output_dir=args.output,
+        output_dir=output_dir,
         max_pages=args.max_pages,
         test_mode=args.test,
     )

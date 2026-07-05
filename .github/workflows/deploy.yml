@@ -35,7 +35,14 @@ jobs:
           pip install mkdocs-material>=9.5.0 pymdown-extensions>=10.7 pyyaml>=6.0
 
       - name: Validate mkdocs config
-        run: mkdocs build --strict 2>&1 | tail -5 || true
+        # Гейт по exit code: строгая сборка ловит битые ссылки/nav/config. Раньше
+        # маскировалось `|| true` -> deploy шёл при любой ошибке валидации. Теперь
+        # ошибка строгой сборки валит job и блокирует deploy (нужен зелёный сайт).
+        # pipefail сохраняет код mkdocs, несмотря на pipe в tail.
+        shell: bash
+        run: |
+          set -o pipefail
+          mkdocs build --strict 2>&1 | tail -30
 
   deploy:
     needs: validate

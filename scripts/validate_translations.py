@@ -184,8 +184,14 @@ class TranslationValidator:
         self.stats['passed'] += 1
         return True
 
-    def run(self):
-        """Запуск полной валидации"""
+    def run(self, only_rel_paths=None):
+        """Запуск валидации.
+
+        only_rel_paths: если задан список относительных путей (под ru_dir) — проверяем
+        ТОЛЬКО их. В CI это набор реально переведённых в этом прогоне файлов (из
+        translation_result.json). Так гейт не падает на 2698 готовых файлах корпуса,
+        а проверяет именно свежие записи между переводом и коммитом.
+        """
         print("=" * 70)
         print("🔍 ВАЛИДАЦИЯ ПЕРЕВЕДЁННЫХ ДОКУМЕНТОВ")
         print("=" * 70)
@@ -195,12 +201,23 @@ class TranslationValidator:
             print(f"❌ Директория не найдена: {self.ru_dir}")
             return False
 
-        ru_files = list(self.ru_dir.rglob('*.md'))
-        if not ru_files:
-            print(f"❌ Нет файлов для проверки в {self.ru_dir}")
-            return False
-
-        print(f"📚 Найдено файлов: {len(ru_files)}")
+        if only_rel_paths is not None:
+            ru_files = [self.ru_dir / rel for rel in only_rel_paths]
+            missing = [p for p in ru_files if not p.exists()]
+            ru_files = [p for p in ru_files if p.exists()]
+            for p in missing:
+                print(f"⚠️  Пропущен (нет файла): {p}")
+            if not ru_files:
+                # Переводить было нечего / ничего не записалось — это не провал гейта.
+                print("📚 Нет переведённых файлов для проверки — OK (нечего валидировать)")
+                return True
+            print(f"📚 Проверяем только изменённые файлы: {len(ru_files)}")
+        else:
+            ru_files = list(self.ru_dir.rglob('*.md'))
+            if not ru_files:
+                print(f"❌ Нет файлов для проверки в {self.ru_dir}")
+                return False
+            print(f"📚 Найдено файлов: {len(ru_files)}")
         print()
 
         for ru_file in ru_files:
@@ -244,13 +261,33 @@ class TranslationValidator:
 
 if __name__ == '__main__':
     import argparse
+    import json
 
     parser = argparse.ArgumentParser(description='Validate translated Markdown documents')
-    parser.add_argument('--ru-dir', default='../docs/ru', help='Russian docs directory')
-    parser.add_argument('--en-dir', default='../docs/en', help='English docs directory')
+    parser.add_argument('--ru-dir', default='../docs/managed-ru',
+                        help='Russian Managed docs directory')
+    parser.add_argument('--en-dir', default='../docs/managed',
+                        help='English Managed docs directory')
+    parser.add_argument('--report',
+                        help='translation_result.json — проверять только его translated_files '
+                             '(гейт CI по свежим файлам, а не по всему корпусу)')
+    parser.add_argument('--files', nargs='*',
+                        help='Явный список относительных путей под --ru-dir для проверки')
 
     args = parser.parse_args()
 
+    only = None
+    if args.files:
+        only = list(args.files)
+    elif args.report:
+        rp = Path(args.report)
+        if rp.exists():
+            data = json.load(open(rp, 'r', encoding='utf-8'))
+            only = list(data.get('translated_files', []))
+        else:
+            print(f"⚠️  Отчёт {rp} не найден — проверять нечего, гейт пропущен (OK)")
+            sys.exit(0)
+
     validator = TranslationValidator(args.ru_dir, args.en_dir)
-    success = validator.run()
+    success = validator.run(only_rel_paths=only)
     sys.exit(0 if success else 1)
