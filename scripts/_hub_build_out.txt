@@ -1,7 +1,0 @@
-  gcp-functions.md                                 EN=35 RU=35  OK
-  google-compute-engine.md                         EN=26 RU=26  OK
-  google-app-engine.md                             EN=89 RU=89  OK
-  gcp-guide.md                                     EN=56 RU=56  OK
-  gcp-supported-service-metrics-new.md             EN=99 RU=99  OK
-
-Done. 0 warnings.

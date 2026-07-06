@@ -1,6 +1,0 @@
-aws-service-aurora.md
-aws-service-documentdb.md
-aws-service-dynamodb.md
-aws-service-elasticache.md
-aws-service-keyspaces-cassandra.md
-aws-service-neptune.md

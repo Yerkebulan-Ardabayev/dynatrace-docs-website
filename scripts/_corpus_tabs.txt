@@ -1,8 +1,0 @@
-docs\managed-ru\ingest-from\setup-on-k8s\guides\migration\migrate-dto-to-tenant.md :: 'Kubernetes'
-docs\managed-ru\ingest-from\setup-on-k8s\guides\migration\migrate-dto-to-tenant.md :: 'OpenShift'
-docs\managed-ru\ingest-from\setup-on-k8s\guides\migration\migrate-to-dto.md :: 'Kubernetes'
-docs\managed-ru\ingest-from\setup-on-k8s\guides\migration\migrate-to-dto.md :: 'OpenShift'
-docs\managed-ru\ingest-from\setup-on-k8s\guides\migration\api-version-migration-guides\migrate-dk-v1beta1-v1beta4.md :: 'Application monitoring'
-docs\managed-ru\ingest-from\setup-on-k8s\guides\migration\api-version-migration-guides\migrate-dk-v1beta1-v1beta4.md :: 'Metadata enrichment'
-docs\managed-ru\ingest-from\setup-on-k8s\guides\migration\api-version-migration-guides\migrate-dk-v1beta1-v1beta5.md :: 'Application monitoring'
-docs\managed-ru\ingest-from\setup-on-k8s\guides\migration\api-version-migration-guides\migrate-dk-v1beta1-v1beta5.md :: 'Metadata enrichment'

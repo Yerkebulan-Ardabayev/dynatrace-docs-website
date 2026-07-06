@@ -1,2 +1,0 @@
-STRIPPED KEY repr:
-'Dynatrace Operator manages the lifecycle of all Dynatrace components within a Kubernetes cluster and can be configured by deploying a DynaKube Custom Resource. Dynatrace ActiveGatethe Dynatrace component required to monitor the Kubernetes APIoffers a capability for Kubernetes API Monitoring.'

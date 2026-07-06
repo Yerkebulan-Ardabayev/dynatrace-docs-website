@@ -1,6 +1,0 @@
-aws-service-simple-notification-service-sns.md
-aws-service-direct-connect.md
-aws-service-database-migration-service-dms.md
-aws-service-elemental-mediaconnect.md
-aws-service-sagemaker.md
-aws-service-gamelift.md

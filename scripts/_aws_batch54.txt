@@ -1,4 +1,0 @@
-aws-service-dynamodb-new.md
-aws-service-relational-database-service-rds-new.md
-aws-service-trusted-advisor.md
-aws-service-glue.md

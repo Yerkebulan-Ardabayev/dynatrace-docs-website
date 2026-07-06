@@ -1,2 +1,0 @@
-aws-service-mq.md
-aws-service-elastic-mapreduce-emr.md
