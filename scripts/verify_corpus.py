@@ -19,17 +19,19 @@ RU_DIR = ROOT / "docs" / "managed-ru"
 
 SOURCE_RE = re.compile(r"^source:\s*(https?://\S+)", re.MULTILINE)
 
-# Допустимые корни source URL для Managed-корпуса. Dynatrace отдаёт одну и ту же
-# документацию с нескольких хостов; часть страниц канона (уже принятого пользователем)
-# ссылается на www.dynatrace.com/docs и docs.dynatrace.com/managed без завершающего
-# слэша. Всё это — легитимный Managed-корпус. Гейт должен ловить действительно чужое
-# (не-dynatrace хост или SaaS-only путь), а не падать на готовом корпусе.
-ALLOWED_PREFIXES = (
+# Корни source URL настоящего Managed-корпуса. Только эти считаются каноничным
+# Managed. Гейт валит прогон на реально чужом (не-dynatrace) источнике.
+MANAGED_PREFIXES = (
     "https://docs.dynatrace.com/managed",       # с/без завершающего слэша
-    "https://docs.dynatrace.com/docs/",         # общий docs-хост (Managed+SaaS)
-    "https://www.dynatrace.com/docs/",          # альтернативный docs-домен
     "https://www.dynatrace.com/support/",       # legacy support/help
 )
+
+# SaaS/общий docs-хост Dynatrace: это НЕ Managed (air-gapped Managed таких фич не
+# имеет). Не валим прогон, т.к. отдельные такие страницы уже попали в готовый корпус,
+# но и НЕ выдаём их за Managed — помечаем предупреждением для ручной ревизии.
+# Managed/SaaS-границу не размываем (принцип Managed-only).
+SAAS_DOCS_RE = re.compile(r"^https?://(?:www|docs)\.dynatrace\.com/docs/")
+DYNATRACE_HOST_RE = re.compile(r"^https?://(?:[a-z0-9-]+\.)?dynatrace\.com/")
 
 
 def main() -> int:
@@ -43,7 +45,8 @@ def main() -> int:
     en_rel = {p.relative_to(EN_DIR).as_posix() for p in en_files}
     ru_rel = {p.relative_to(RU_DIR).as_posix() for p in ru_files}
 
-    bad_source = []  # source URL не похож на Managed
+    bad_source = []  # source на реально чужом (не-dynatrace) хосте — валит прогон
+    saas_source = []  # source на SaaS/общем docs-хосте Dynatrace — предупреждение
     no_source = []  # вообще нет source: в frontmatter
     section_count: Counter[str] = Counter()
 
@@ -58,9 +61,14 @@ def main() -> int:
             no_source.append(p.relative_to(EN_DIR).as_posix())
             continue
         url = m.group(1)
-        if not url.startswith(ALLOWED_PREFIXES):
-            bad_source.append((p.relative_to(EN_DIR).as_posix(), url))
-        section_count[p.relative_to(EN_DIR).as_posix().split("/", 1)[0]] += 1
+        rel = p.relative_to(EN_DIR).as_posix()
+        if url.startswith(MANAGED_PREFIXES):
+            pass  # каноничный Managed
+        elif SAAS_DOCS_RE.match(url) or DYNATRACE_HOST_RE.match(url):
+            saas_source.append((rel, url))  # dynatrace, но не Managed-путь -> warn
+        else:
+            bad_source.append((rel, url))  # реально чужой хост -> fail
+        section_count[rel.split("/", 1)[0]] += 1
 
     print("=" * 70)
     print("Corpus verification -- docs/managed/")
@@ -72,16 +80,25 @@ def main() -> int:
     print(f"Orphan RU (RU minus EN):  {len(ru_rel - en_rel):>5}")
     print()
     print("Source check:")
-    print(f"  Files without source:   {len(no_source):>5}")
-    print(f"  Files with non-managed source: {len(bad_source):>3}")
+    print(f"  Files without source:      {len(no_source):>5}")
+    print(f"  Files with SaaS-docs source: {len(saas_source):>3}")
+    print(f"  Files with foreign source:   {len(bad_source):>3}")
     if bad_source:
-        print("  [WARN] FOUND NON-MANAGED SOURCES:")
+        print("  [FAIL] FOUND FOREIGN (non-Dynatrace) SOURCES:")
         for path, url in bad_source[:20]:
             print(f"    {path}  ->  {url}")
         if len(bad_source) > 20:
             print(f"    ... +{len(bad_source) - 20} more")
     else:
-        print("  [OK] All source URLs point to Managed docs")
+        print("  [OK] No foreign source hosts")
+    if saas_source:
+        # SaaS/общий docs-хост Dynatrace в Managed-корпусе. Не Managed по сути
+        # (Copilot, Grail-приложения и т.п. в air-gapped Managed недоступны).
+        # Не валим прогон (уже в готовом корпусе), но помечаем для ручной ревизии,
+        # НЕ выдаём за Managed. Managed/SaaS-границу держим явно.
+        print(f"  [WARN] {len(saas_source)} файл(ов) ссылаются на SaaS-хост dynatrace.com/docs/ (не Managed, проверить):")
+        for path, url in saas_source[:10]:
+            print(f"    {path}  ->  {url}")
     if no_source:
         # Не фатально: часть канона — рукописные сводные руководства (backup.md,
         # installation.md и т.п.) без scraped-frontmatter. Это ожидаемо, не блокируем.
@@ -104,13 +121,16 @@ def main() -> int:
                 f"  {section:<30} {count:>5} pending / {total_in_section} total ({done} done)"
             )
 
-    # Гейт валит прогон ТОЛЬКО на реально чужом источнике (bad_source): не-dynatrace
-    # хост или SaaS-only путь, попавший в Managed-дерево. Отсутствие source: —
-    # предупреждение, не блокирует (рукописные файлы канона легитимны).
+    # Гейт валит прогон ТОЛЬКО на реально чужом (не-dynatrace) источнике (bad_source).
+    # SaaS-хост dynatrace.com/docs/ и отсутствие source: — предупреждения, не блокируют
+    # (эти файлы уже в готовом каноне; SaaS помечен явно, за Managed не выдаётся).
     if bad_source:
-        print(f"\n[FAIL] {len(bad_source)} файл(ов) с чужим (не-Managed) source — гейт заблокировал прогон")
+        print(f"\n[FAIL] {len(bad_source)} файл(ов) с чужим (не-Dynatrace) source — гейт заблокировал прогон")
         return 1
-    print("\n[OK] Корпус Managed консистентен (source-check пройден)")
+    print("\n[OK] Managed source-check пройден", end="")
+    if saas_source:
+        print(f" (внимание: {len(saas_source)} файл(ов) с SaaS-source — см. WARN выше)", end="")
+    print()
     return 0
 
 
