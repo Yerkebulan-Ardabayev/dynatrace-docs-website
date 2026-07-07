@@ -33,9 +33,24 @@ HASH_REGISTRY = Path(__file__).parent / ".change_tracking" / "hash_registry.json
 
 
 def file_hash(path: Path) -> str:
-    """Calculate SHA256 hash of file content."""
-    content = path.read_bytes()
-    return hashlib.sha256(content).hexdigest()[:16]
+    """SHA256 хэш содержимого файла БЕЗ волатильной строки frontmatter `scraped:`.
+
+    scrape_docs.py штампует `scraped: <datetime.now()>` в каждый файл при каждом
+    скрейпе. Хэш сырых байт помечал бы КАЖДЫЙ пере-скрейпленный файл как
+    «изменённый», даже когда реальный контент не менялся -> ложные «updated»,
+    сожжённая квота перевода, churn коммитов (B3 аудита 2026-07-07). Исключаем
+    только эту одну строку; title/source/тело остаются в хэше.
+    """
+    text = path.read_text(encoding="utf-8", errors="surrogateescape")
+    if text.startswith("---"):
+        end = text.find("---", 3)
+        if end > 0:
+            head = "".join(
+                ln for ln in text[:end].splitlines(keepends=True)
+                if not ln.lstrip().startswith("scraped:")
+            )
+            text = head + text[end:]
+    return hashlib.sha256(text.encode("utf-8", "surrogateescape")).hexdigest()[:16]
 
 
 def load_hash_registry() -> dict:
@@ -204,18 +219,12 @@ def detect_changes(source_dir: Path, target_dir: Path) -> dict:
             updated_articles.append(article_info)
             continue
 
-        # Case 3: No previous hash record, but ru/ exists →
-        # Compare file modification times to catch updates between syncs
-        if not prev_hash and ru_file.exists():
-            try:
-                en_mtime = src_file.stat().st_mtime
-                ru_mtime = ru_file.stat().st_mtime
-                if en_mtime > ru_mtime:
-                    article_info["type"] = "updated"
-                    article_info["note"] = "no prev hash, detected via mtime"
-                    updated_articles.append(article_info)
-            except OSError:
-                pass
+        # Case 3 (mtime-эвристика) УДАЛЕНА (B7/P1-9 аудита): в CI git ставит время
+        # чекаута ВСЕМ файлам, поэтому сравнение mtime en/ru даёт мусорный сигнал и
+        # давало ложные «updated». Детект теперь только по hash_registry: при
+        # пустом реестре (первый прогон) существующие переводы считаются
+        # актуальными, а реальные апстрим-изменения ловятся хэшем на следующих
+        # прогонах (реестр переживает прогоны через стабильный cache key).
 
     # Save current hashes for next run
     save_hash_registry(current_hashes)

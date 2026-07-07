@@ -70,10 +70,25 @@ plugins:
         - ru
         - en
 
-# Исключить из сборки (не является документацией Dynatrace)
+# Исключить из сборки (не является контентом сайта)
 exclude_docs: |
   notebooklm/
   ai/notebooklm.md
+  # --- Сырьё пайплайна, не контент сайта (аудит P0-1 / B2 / U1) ---
+  # docs/en и англ. дерево docs/managed раздували search_index.json до 145 МБ
+  # (> лимита GitHub 100 МБ -> deploy падал с 25.06) и дублировали каждую тему
+  # в поиске как en/... и ru/... . Оставляем RU-контент: docs/ru (кураторский
+  # навигатор) + docs/managed-ru (полный переведённый корпус Managed: GCP,
+  # cluster-api, AWS CloudWatch и т.д.). docs/common НЕ исключаем: на него
+  # ссылаются 22+ страницы docs/ru (--strict падал бы на битых ссылках), а весит
+  # он ~1 МБ. Файлы остаются на диске, их читает пайплайн детекта; из САЙТА убраны.
+  en/
+  managed/
+
+# Пост-обработка сборки: search_index.json -> UTF-8 (иначе кириллица как \uXXXX
+# раздувает индекс до ~106 МБ > лимита GitHub 100 МБ и валит deploy). См. аудит B2/U1.
+hooks:
+  - hooks/utf8_search_index.py
 
 # =============================================================================
 # НАВИГАЦИЯ — Оптимизированная информационная архитектура
@@ -96,16 +111,18 @@ nav:
     - Семантический словарь: ru/semantic-dictionary.md
 
   # --- DYNATRACE MANAGED ---
+  # Перецелено с docs/managed (англ. исходники, из них index/managed-cluster/
+  # license были на английском) на docs/managed-ru (полный RU-перевод), аудит U4.
   - Managed:
-    - Обзор Managed: managed/index.md
-    - Установка: managed/installation.md
-    - Настройка: managed/configuration.md
-    - Обслуживание: managed/operations.md
-    - Обновления: managed/update.md
-    - Безопасность: managed/security.md
-    - Резервное копирование: managed/backup.md
-    - Кластер: managed/managed-cluster.md
-    - Лицензия Managed: managed/license.md
+    - Обзор Managed: managed-ru/index.md
+    - Установка: managed-ru/installation.md
+    - Настройка: managed-ru/configuration.md
+    - Обслуживание: managed-ru/operations.md
+    - Обновления: managed-ru/update.md
+    - Безопасность: managed-ru/security.md
+    - Резервное копирование: managed-ru/backup.md
+    - Кластер: managed-ru/managed-cluster.md
+    - Лицензия Managed: managed-ru/license.md
 
   # --- ПЛАТФОРМА ---
   - Платформа:
