@@ -19,6 +19,11 @@ from datetime import datetime
 import io
 
 import requests
+from requests.adapters import HTTPAdapter
+try:
+    from urllib3.util.retry import Retry
+except ImportError:  # старая раскладка urllib3
+    from requests.packages.urllib3.util.retry import Retry
 from bs4 import BeautifulSoup
 from markdownify import markdownify as md
 from tqdm import tqdm
@@ -52,7 +57,9 @@ class DynatraceDocScraper:
         # пишет страницы, и не создаёт левый каталог dynatrace-docs/ в корне репо.
         self.cache_dir = self.output_dir / ".cache"
         self.cache_dir.mkdir(parents=True, exist_ok=True)
-        self.max_pages = max_pages if not test_mode else 50
+        # 0 трактуем как unlimited (как и обещает описание инпута воркфлоу): раньше
+        # max_pages=0 давало условие "downloaded < 0" == False -> 0 страниц (B6 аудита).
+        self.max_pages = 50 if test_mode else (None if max_pages == 0 else max_pages)
         self.test_mode = test_mode
         # Полнота обхода: cleanup_orphans удаляет ТОЛЬКО при полном успешном обходе.
         # Прерван по лимиту max_pages или очередь не опустела -> обход НЕ полный.
@@ -66,6 +73,18 @@ class DynatraceDocScraper:
                 "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36"
             }
         )
+        # Retry с экспоненциальным backoff на 429/5xx и обрывах связи (P1-9 аудита):
+        # без него одиночная 502/timeout от docs.dynatrace.com теряла страницу
+        # насовсем. respect_retry_after_header чтит Retry-After при 429.
+        _retry = Retry(
+            total=4,
+            backoff_factor=1.0,
+            status_forcelist=[429, 500, 502, 503, 504],
+            respect_retry_after_header=True,
+        )
+        _adapter = HTTPAdapter(max_retries=_retry)
+        self.session.mount("https://", _adapter)
+        self.session.mount("http://", _adapter)
 
         # Statistics
         self.stats = {
@@ -283,12 +302,12 @@ scraped: {datetime.now().isoformat()}
         # Check cache
         url_hash = self.get_url_hash(url)
 
-        # Determine local file path + its mtime (if exists) for If-Modified-Since
         output_path = self.get_output_path(url)
-        local_mtime = output_path.stat().st_mtime if output_path.exists() else None
-
-        # Download page (conditional on local_mtime)
-        html_content = self.get_page_content(url, local_mtime=local_mtime)
+        # If-Modified-Since НЕ шлём (B7/P1-9 аудита): в CI git ставит mtime чекаута
+        # (~сейчас) ВСЕМ файлам -> сервер на "изменено с сейчас?" всегда отвечает 304
+        # -> скрейпер считал всё неизменным и НИКОГДА не подхватывал апстрим. Тянем
+        # страницу всегда свежей; что реально изменилось решает detect_changes по хэшу.
+        html_content = self.get_page_content(url)
 
         # Case 1: server says page unchanged → reuse local .md, extract links from markdown
         if html_content == NOT_MODIFIED:

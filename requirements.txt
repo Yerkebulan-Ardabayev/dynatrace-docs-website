@@ -1,7 +1,9 @@
-# MkDocs
-mkdocs>=1.5.0
-mkdocs-material>=9.5.0
-pymdown-extensions>=10.7
+# MkDocs — с верхней границей (U3 аудита): незапиненный апгрейд mkdocs уже один
+# раз включил строгие проверки ссылок и уронил --strict. Держим в пределах текущей
+# мажорной ветки; мажор поднимать осознанно, сверив CSS-хаки темы и validation.
+mkdocs>=1.6,<2.0
+mkdocs-material>=9.5,<10.0
+pymdown-extensions>=10.7,<11.0
 
 # Web scraping
 requests>=2.31.0

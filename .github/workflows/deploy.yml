@@ -39,7 +39,8 @@ jobs:
       - name: Install dependencies
         run: |
           pip install --upgrade pip
-          pip install mkdocs-material>=9.5.0 pymdown-extensions>=10.7 pyyaml>=6.0
+          # Верхние границы — U3 аудита (незапиненный mkdocs ломал --strict).
+          pip install "mkdocs>=1.6,<2.0" "mkdocs-material>=9.5,<10.0" "pymdown-extensions>=10.7,<11.0" "pyyaml>=6.0"
 
       - name: Validate mkdocs config
         # Гейт по exit code: строгая сборка ловит битые ссылки/nav/config. Раньше
@@ -70,7 +71,8 @@ jobs:
       - name: Install dependencies
         run: |
           pip install --upgrade pip
-          pip install mkdocs-material>=9.5.0 pymdown-extensions>=10.7
+          # Верхние границы — U3 аудита (незапиненный mkdocs ломал --strict).
+          pip install "mkdocs>=1.6,<2.0" "mkdocs-material>=9.5,<10.0" "pymdown-extensions>=10.7,<11.0"
 
       - name: Inject AI keys from GitHub Secrets
         env:
