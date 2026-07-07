@@ -16,6 +16,13 @@ permissions:
   pages: write
   id-token: write
 
+# Общая с update-docs.yml группа: два пуша в gh-pages одновременно (ручной deploy
+# во время ночного sync) больше не гонятся — второй ждёт (B4 аудита). cancel-in
+# -progress: false, чтобы не обрывать уже идущую публикацию на полпути.
+concurrency:
+  group: gh-pages
+  cancel-in-progress: false
+
 jobs:
   validate:
     runs-on: ubuntu-latest
@@ -96,6 +103,10 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./site
           publish_branch: gh-pages
+          # Каждый деплой = один orphan-коммит (без накопления истории сборок).
+          # gh-pages копил полную сборку каждый раз (40 версий search_index,
+          # .git раздулся до 466 МБ) — force_orphan держит ветку плоской (P1-8).
+          force_orphan: true
           user_name: 'Yerkebulan Ardabayev'
           user_email: 'yerkebulan.ardabayev@gmail.com'
           commit_message: 'deploy: update documentation'
