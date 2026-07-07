@@ -1,1 +1,0 @@
-Get-WmiObject Win32_Process -Filter "Name='python.exe' or Name='claude.exe' or Name='node.exe'" | Where-Object { $_.CommandLine -match 'translate|claude' } | Select-Object ProcessId, Name, CommandLine | Format-List
