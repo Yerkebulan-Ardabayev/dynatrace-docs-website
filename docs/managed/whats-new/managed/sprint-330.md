@@ -15,10 +15,10 @@ New versions are rolled out within configurable [maintenance windows](/managed/m
 
 |  | Rollout start | Currently supported |
 | --- | --- | --- |
+| [Version 1.342](/managed/whats-new/managed/sprint-342 "New features, changes, and resolved issues in Dynatrace Managed 1.342") | Jun 18, 2026 | Yes |
 | [Version 1.340](/managed/whats-new/managed/sprint-340 "New features, changes, and resolved issues in Dynatrace Managed 1.340") | Jun 08, 2026 | Yes |
 | [Version 1.338](/managed/whats-new/managed/sprint-338 "New features, changes, and resolved issues in Dynatrace Managed 1.338") | May 11, 2026 | Yes |
-| [Version 1.336](/managed/whats-new/managed/sprint-336 "New features, changes, and resolved issues in Dynatrace Managed 1.336") | Apr 13, 2026 | Yes |
-| [Version 1.334](/managed/whats-new/managed/sprint-334 "New features, changes, and resolved issues in Dynatrace Managed 1.334") | Mar 16, 2026 | Only with [Enterprise Success and Support﻿](https://dt-url.net/qt03zwg) |
+| [Version 1.336](/managed/whats-new/managed/sprint-336 "New features, changes, and resolved issues in Dynatrace Managed 1.336") | Apr 13, 2026 | Only with [Enterprise Success and Support﻿](https://dt-url.net/qt03zwg) |
 
 This page showcases new features, changes, and bug fixes in Dynatrace Managed version 1.330. It contains:
 

@@ -9,7 +9,7 @@ source: https://docs.dynatrace.com/managed/managed-cluster/high-availability/add
 
 * How-to guide
 * 12-min read
-* Updated on Jun 15, 2026
+* Updated on Jul 07, 2026
 
 To create a globally distributed high availability deployment (Premium High Availability (PHA)), you must add a redundant set of nodes to your original Managed Cluster deployment. Typically, such high availability deployments span across multiple data centers. Dynatrace Managed enables you to add mirrored nodes located in another data center.
 

@@ -9,7 +9,7 @@ source: https://docs.dynatrace.com/managed/managed-cluster/high-availability/fai
 
 * Explanation
 * 7-min read
-* Updated on Jun 16, 2026
+* Updated on Jul 07, 2026
 
 The Premium High Availability (PHA) multi-data center failover mechanism detects Elasticsearch or Cassandra node outages longer than 15 minutes and shorter than 72 hours. If Mission Control (MC) detects that two or more Elasticsearch or Cassandra nodes in a data center (DC) are down for 15 minutes, it automatically stops the server processes in that DC. MC then marks the DC as unhealthy.
 

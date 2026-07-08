@@ -102,8 +102,8 @@ Linux configuration file: `/var/lib/dynatrace/remotepluginmodule/agent/conf/exte
 | Red Hat Enterprise Linux | 8.10, 9.4, 9.6, 9.7, 9.8, 10.0, 10.1, 10.2 | ARM64 (AArch64), s390, x86-64 |
 | Rocky Linux | 8.10, 9.7, 10.1 | ARM64 (AArch64), x86-64 |
 | SUSE Enterprise Linux | 15.7 | ARM64 (AArch64), s390, x86-64 |
-| Ubuntu | 16.04, 18.04, 20.04, 22.04, 24.04 | x86-64 |
-| Ubuntu | 20.04, 22.04, 24.04 | ARM64 (AArch64), s390 |
+| Ubuntu | 16.04, 18.04, 20.04, 22.04, 24.04, 26.04 | x86-64 |
+| Ubuntu | 20.04, 22.04, 24.04, 26.04 | ARM64 (AArch64), s390 |
 
 1
 

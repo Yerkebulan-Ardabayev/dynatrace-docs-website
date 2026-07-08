@@ -65,7 +65,7 @@ Starting with Dynatrace Managed version 1.342, the cluster will reject connectio
 
 Action might be required:
 
-If you are running OneAgent versions 1.141 or earlier, be sure to upgrade to a later OneAgent version (1.143+) before upgrading to Dynatrace Managed version 1.342 to avoid data loss and connectivity issues.
+If you are running OneAgent versions 1.141 or earlier, upgrade to a supported OneAgent version before upgrading to Dynatrace Managed version 1.342 to avoid data loss and connectivity issues, and to benefit from enhanced security and features unavailable in earlier OneAgent versions.
 
 For more details, see [End-of-life announcements](/managed/whats-new/technology/end-of-life-announcements "Information about technologies, features, or integrations scheduled for end of life (EOL) in Dynatrace, including upcoming and recently retired items.").
 

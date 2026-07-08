@@ -9,7 +9,7 @@ source: https://docs.dynatrace.com/managed/managed-cluster/high-availability/rec
 
 * How-to guide
 * 1-min read
-* Updated on Jun 16, 2026
+* Updated on Jul 07, 2026
 
 Outages of one data center (DC) that last up to 72 hours don't require this disaster recovery procedure. When the inaccessible DC becomes available again, Premium High Availability (PHA) automatically repairs the affected DC and restores Managed Cluster operations. For details, go to [Multi-data center failover](/managed/managed-cluster/high-availability/failover "Learn how the Premium High Availability multi-data center failover mechanism detects node outages and transfers responsibility to a healthy data center.").
 

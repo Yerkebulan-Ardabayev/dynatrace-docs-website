@@ -875,6 +875,12 @@ The list of operating system versions supported by Dynatrace ActiveGate is updat
 
   + [Vendor announcement﻿](https://ubuntu.com/about/release-cycle)
 
+##### The following operating systems will no longer be supported starting 01 November 2031
+
+* Linux: Ubuntu 26.04
+
+  + [Vendor announcement﻿](https://ubuntu.com/about/release-cycle)
+
 ##### The following operating systems will no longer be supported starting 01 February 2032
 
 * Linux: SUSE Enterprise Linux 15.7

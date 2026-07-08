@@ -1,19 +1,19 @@
 ---
-title: Multi-data centers
+title: Multi-data center high availability
 source: https://docs.dynatrace.com/managed/managed-cluster/high-availability/multi-data-centers
 ---
 
-# Multi-data centers
+# Multi-data center high availability
 
-# Multi-data centers
+# Multi-data center high availability
 
 * Explanation
 * 5-min read
-* Updated on Jun 16, 2026
+* Updated on Jul 07, 2026
 
-Dynatrace Managed supports high availability deployments across single or multiple data centers (DC). Premium High Availability (PHA) is a self-contained solution for two DCs that provides minimal downtime and lets monitoring continue without data loss in failover scenarios.
+Premium High Availability (PHA) extends Dynatrace Managed high availability across two data centers (DC). PHA is a self-contained solution that keeps monitoring running with no data loss and minimal downtime when a DC fails.
 
-PHA reduces compute and storage costs by eliminating separate standby disaster recovery hosts and the infrastructure to store and transfer backup data.
+PHA keeps a full, active copy of your data in the second DC. The active copy removes the need for separate standby disaster recovery hosts and backup transfer infrastructure, reducing both compute and storage costs.
 
 ## Requirements and limitations
 
@@ -25,18 +25,18 @@ Before you plan a PHA deployment, review the following requirements and limitati
 * Deploy no more than 30 nodes, with no more than 15 nodes per DC.
 * Size both DCs symmetrically.
 * Plan the migration. You can't reverse a migration to PHA.
-* Use an operating system that supports cgroups version 1.0 and systemd version 219 or later, for example Red Hat Enterprise Linux 7 or CentOS 7.
+* Use an operating system that supports `cgroups` version 1.0 and `systemd` version 219 or later, for example Red Hat Enterprise Linux 7 or CentOS 7.
 * Open the same ports between nodes in one DC and in a Managed Cluster that spans two DCs.
 * Encrypt the connections between nodes in different DCs. Dynatrace Managed doesn't create or install the required certificates.
 * Keep round-trip network latency at 100 ms or less.
 
-## Deployment topology
+## Regional fault tolerance
 
-Regional fault tolerance means that all Managed Cluster nodes in one location domain can fail. To achieve it, distribute Managed Cluster nodes across separate physical locations using one of the following options:
+Regional fault tolerance means that all Managed Cluster nodes in one location can fail without downtime. To achieve it, distribute Managed Cluster nodes across separate physical locations using one of the following options:
 
 * Use PHA for two locations that need geographic redundancy and automatic failover.
-* Use [rack-aware Managed deployment](/managed/managed-cluster/high-availability/rack-awareness "Learn how rack-aware deployment groups Dynatrace Managed Cluster nodes into three fault domains to ensure resilience against a full rack outage and data loss.") for three low-latency locations.
-* Combine PHA with [rack-aware Managed deployment](/managed/managed-cluster/high-availability/rack-awareness "Learn how rack-aware deployment groups Dynatrace Managed Cluster nodes into three fault domains to ensure resilience against a full rack outage and data loss.") in each DC for six locations.
+* Use [rack-aware deployment](/managed/managed-cluster/high-availability/rack-awareness "Learn how rack-aware deployment groups Dynatrace Managed Cluster nodes into three fault domains to ensure resilience against a full rack outage and data loss.") for three low-latency locations.
+* Combine PHA with [rack-aware deployment](/managed/managed-cluster/high-availability/rack-awareness "Learn how rack-aware deployment groups Dynatrace Managed Cluster nodes into three fault domains to ensure resilience against a full rack outage and data loss.") in each DC for six locations.
 
 The replication factor of three ensures that each location has all the metric and event data.
 

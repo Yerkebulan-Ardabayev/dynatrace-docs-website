@@ -9,7 +9,7 @@ source: https://docs.dynatrace.com/managed/managed-cluster/high-availability/rec
 
 * How-to guide
 * 10-min read
-* Updated on Jun 15, 2026
+* Updated on Jul 07, 2026
 
 To restore a lost data center (DC) from backup in a Premium High Availability deployment, follow these steps.
 

@@ -11,7 +11,7 @@ source: https://docs.dynatrace.com/managed/managed-cluster/high-availability/rac
 * 4-min read
 * Updated on Jun 15, 2026
 
-The replication expansion method is useful for small Dynatrace Managed Clusters where one node can contain a full replica. If your current metric storage (Cassandra database) per node is more than 1 TB, use the [rack-aware conversion using restore](/managed/managed-cluster/operation/back-up-and-restore-a-cluster "Understand the steps and commands required to restore a Dynatrace Managed cluster.") method. You can use existing nodes to progressively (one after another) reinstall them with the rack-aware parameter. Optionally, you can use additional hardware as new nodes and remove one node while installing a new node with the rack-aware parameter.
+The replication expansion method is useful for small Dynatrace Managed Clusters where one node can contain a full replica. If your current metric storage (Cassandra database) per node is more than 1 TB, use the [rack-aware conversion using restore](/managed/managed-cluster/high-availability/rack-aware-restore "Learn how to convert a Dynatrace Managed Cluster to rack-aware topology using the backup and restore method, including preparation and installer parameters.") method. You can use existing nodes to progressively (one after another) reinstall them with the rack-aware parameter. Optionally, you can use additional hardware as new nodes and remove one node while installing a new node with the rack-aware parameter.
 
 The advantage of this approach is that it doesn't affect Managed Cluster availability. To maintain Managed Cluster availability, Dynatrace Managed uses its native replication methods to preserve data. Removing and adding a node to the Managed Cluster takes time. The duration depends on the size of your metric storage and the speed of your disk or network. Some cluster operations may take even one or two days. Dynatrace Managed will prevent all other cluster operations during that time (adding and removing nodes, upgrading, and backup). If you choose to perform reinstallation on the existing host, wait 72 hours before reattaching that host to the Managed Cluster.
 
@@ -23,7 +23,9 @@ Process of converting Managed Cluster to rack-aware.
 
 **Preparation**](#preparation)[![Step 2](https://dt-cdn.net/images/step-2-1a1384627e.svg "Step 2")
 
-**Extend the Managed Cluster into new racks**](#extend-racks)
+**Extend the Managed Cluster into new racks**](#extend-racks)[![Step 3](https://dt-cdn.net/images/step-3-350cf6c19a.svg "Step 3")
+
+**Verify the conversion**](#verify)
 
 ## Step 1 Preparation
 
@@ -116,6 +118,8 @@ If the node has difficulties maintaining the data load, you can temporarily stop
    For the second node, Cassandra bootstrapping is expected to be quicker.
 3. Continue adding new nodes to `rack2`. Once you have enough nodes in `rack2` (1/3 of the target Managed Cluster size), begin adding new nodes with rack parameters to `rack3` minding the disk space requirements.
 4. Remove the original nodes that were configured without rack awareness (in the default `rack1` rack) once you have enough nodes in `rack3`.
+
+## Step 3 Verify the conversion
 
 When the conversion is complete, you see racks in the **Deployment status** page in Cluster Management Console:
 

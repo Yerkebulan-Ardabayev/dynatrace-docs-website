@@ -101,16 +101,17 @@ To execute this request, you need an access token with **Read settings** (`setti
 | Do not monitor processes if ASP.NET Core application DLL contains 'Agent.Listener' `-64` | boolean | Rule id: 64 | Required |
 | Do not monitor processes if EXE name equals 'FlexNetJobExecutorService' `-65` | boolean | Rule id: 65 | Required |
 | Do not monitor processes if EXE name equals 'FlexNetMaintenanceRemotingService' `-66` | boolean | Rule id: 66 | Required |
-| Do not monitor processes if EXE name equals 'pip' `-73` | boolean | Rule id: 73 | Required |
-| Do not monitor processes if EXE name equals 'hatch' `-74` | boolean | Rule id: 74 | Required |
-| Do not monitor processes if EXE name equals 'wheel' `-75` | boolean | Rule id: 75 | Required |
-| Do not monitor processes if EXE name equals 'yum' `-76` | boolean | Rule id: 76 | Required |
-| Do not monitor processes if EXE name equals 'jupyter' `-77` | boolean | Rule id: 77 | Required |
-| Do not monitor processes if EXE name equals 'conda' `-78` | boolean | Rule id: 78 | Required |
-| Do not monitor processes if EXE name equals 'ansible' `-79` | boolean | Rule id: 79 | Required |
-| Do not monitor processes if EXE name equals 'openstack' `-80` | boolean | Rule id: 80 | Required |
-| Do not monitor processes if EXE name equals 'aws' `-81` | boolean | Rule id: 81 | Required |
-| Do not monitor processes if EXE name equals 'az' `-82` | boolean | Rule id: 82 | Required |
-| Do not monitor processes if EXE name equals 'gcloud' `-83` | boolean | Rule id: 83 | Required |
+| Do not monitor processes if Python script equals 'pip' `-73` | boolean | Rule id: 73 | Required |
+| Do not monitor processes if Python script equals 'hatch' `-74` | boolean | Rule id: 74 | Required |
+| Do not monitor processes if Python script equals 'wheel' `-75` | boolean | Rule id: 75 | Required |
+| Do not monitor processes if Python script equals 'yum' `-76` | boolean | Rule id: 76 | Required |
+| Do not monitor processes if Python script equals 'jupyter' `-77` | boolean | Rule id: 77 | Required |
+| Do not monitor processes if Python script equals 'conda' `-78` | boolean | Rule id: 78 | Required |
+| Do not monitor processes if Python script equals 'ansible' `-79` | boolean | Rule id: 79 | Required |
+| Do not monitor processes if Python script equals 'openstack' `-80` | boolean | Rule id: 80 | Required |
+| Do not monitor processes if Python script equals 'aws' `-81` | boolean | Rule id: 81 | Required |
+| Do not monitor processes if Python script equals 'az' `-82` | boolean | Rule id: 82 | Required |
+| Do not monitor processes if Python script equals 'gcloud' `-83` | boolean | Rule id: 83 | Required |
 | Do not monitor processes if command line arguments contain 'forever/bin/monitor' `-84` | boolean | Rule id: 84 | Required |
 | Do not monitor process if Java Main class contains 'ActiveGateCommandLineTool' `-85` | boolean | Rule id: 85 | Required |
+| Do not monitor processes if Python script contains 'supervisord' `-86` | boolean | Rule id: 86 | Required |

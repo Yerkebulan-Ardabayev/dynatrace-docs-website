@@ -1,20 +1,26 @@
 ---
-title: Premium High Availability
+title: High availability
 source: https://docs.dynatrace.com/managed/managed-cluster/high-availability
 ---
 
-# Premium High Availability
+# High availability
 
-# Premium High Availability
+# High availability
 
 * 1-min read
-* Updated on Jun 15, 2026
+* Updated on Jul 07, 2026
 
-Review Dynatrace Managed high availability options and choose between Premium High Availability across data centers and rack-aware deployment across fault domains. Use the following pages to compare topologies, add data centers, convert deployments, and recover from outages.
+Dynatrace Managed high availability protects against different scopes of failure. A single Managed Cluster tolerates the loss of individual nodes. Premium High Availability (PHA) adds a second data center, so monitoring continues even if an entire data center fails. On top of either topology, rack-aware deployment groups nodes into fault domains, so a Managed Cluster also survives the outage of an entire rack. First choose a base topology, either a single Managed Cluster or PHA, then optionally layer on rack-aware deployment. The following pages help you compare these options, add a data center, convert an existing Managed Cluster, and recover after an outage.
+
+## Single-cluster high availability
+
+[### Single-cluster high availability
+
+Learn how a single Managed Cluster tolerates node failures through data replication, node redundancy, and automatic OneAgent traffic failover.](/managed/managed-cluster/high-availability/single-cluster-high-availability "Understand how a single Dynatrace Managed Cluster tolerates node failures through data replication, node redundancy, and automatic OneAgent traffic failover.")
 
 ## Premium High Availability
 
-[### Multi-data centers
+[### Multi-data center high availability
 
 Understand how Premium High Availability (PHA) uses redundancy, hardware placement, capacity planning, data replication, and automatic failover across data centers.](/managed/managed-cluster/high-availability/multi-data-centers "Understand how Dynatrace Managed Premium High Availability provides failover, data resilience, and data routing across data centers.")[### Add a data center
 
@@ -32,7 +38,7 @@ Rebuild a lost data center, reinstall nodes, migrate data stores, and restore re
 
 [### Rack-aware deployment
 
-Learn how rack-aware deployments distribute nodes across fault domains, reduce data loss risk, and complement PHA topologies.](/managed/managed-cluster/high-availability/rack-awareness "Learn how rack-aware deployment groups Dynatrace Managed Cluster nodes into three fault domains to ensure resilience against a full rack outage and data loss.")[### Rack-aware conversion using replication
+Learn how rack-aware deployments group nodes into fault domains to survive a rack outage, on a single Managed Cluster or a PHA deployment.](/managed/managed-cluster/high-availability/rack-awareness "Learn how rack-aware deployment groups Dynatrace Managed Cluster nodes into three fault domains to ensure resilience against a full rack outage and data loss.")[### Rack-aware conversion using replication
 
 Convert a Managed Cluster to a rack-aware deployment using the expansion method when you can add capacity before migration.](/managed/managed-cluster/high-availability/rack-aware-replication "Learn how to convert a Dynatrace Managed Cluster to a rack-aware deployment using the replication method, including preparation and node migration steps.")[### Rack-aware conversion using restore
 

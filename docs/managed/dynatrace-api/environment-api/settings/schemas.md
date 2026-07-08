@@ -310,6 +310,7 @@ source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/setting
 | [Map IP addresses to locations](/managed/dynatrace-api/environment-api/settings/schemas/builtin-rum-ip-mappings) | `builtin:rum.ip-mappings` | `environment` |
 | [Beacon endpoint settings](/managed/dynatrace-api/environment-api/settings/schemas/builtin-rum-mobile-beacon-endpoint) | `builtin:rum.mobile.beacon-endpoint` | `MOBILE_APPLICATION` - Mobile App  `CUSTOM_APPLICATION` - Custom Application |
 | [Enablement and cost control](/managed/dynatrace-api/environment-api/settings/schemas/builtin-rum-mobile-enablement) | `builtin:rum.mobile.enablement` | `MOBILE_APPLICATION` - Mobile App  `environment` |
+| [Frontend-backend linking](/managed/dynatrace-api/environment-api/settings/schemas/builtin-rum-mobile-frontend-backend-linking) | `builtin:rum.mobile.frontend-backend-linking` | `MOBILE_APPLICATION` - Mobile App |
 | [Apdex configuration](/managed/dynatrace-api/environment-api/settings/schemas/builtin-rum-mobile-key-performance-metrics) | `builtin:rum.mobile.key-performance-metrics` | `DEVICE_APPLICATION_METHOD` - Mobile app key user action  `MOBILE_APPLICATION` - Mobile App  `CUSTOM_APPLICATION` - Custom Application |
 | [Application name](/managed/dynatrace-api/environment-api/settings/schemas/builtin-rum-mobile-name) | `builtin:rum.mobile.name` | `MOBILE_APPLICATION` - Mobile App |
 | [Privacy settings](/managed/dynatrace-api/environment-api/settings/schemas/builtin-rum-mobile-privacy) | `builtin:rum.mobile.privacy` | `MOBILE_APPLICATION` - Mobile App |
@@ -330,6 +331,7 @@ source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/setting
 | [Define custom injection rules](/managed/dynatrace-api/environment-api/settings/schemas/builtin-rum-web-custom-injection-rules) | `builtin:rum.web.custom-injection-rules` | `APPLICATION` - Web application |
 | [Custom RUM JavaScript version](/managed/dynatrace-api/environment-api/settings/schemas/builtin-rum-web-custom-rum-javascript-version) | `builtin:rum.web.custom-rum-javascript-version` | `environment` |
 | [Enablement and cost control](/managed/dynatrace-api/environment-api/settings/schemas/builtin-rum-web-enablement) | `builtin:rum.web.enablement` | `APPLICATION` - Web application  `environment` |
+| [Frontend-backend linking](/managed/dynatrace-api/environment-api/settings/schemas/builtin-rum-web-frontend-backend-linking) | `builtin:rum.web.frontend-backend-linking` | `APPLICATION` - Web application |
 | [Cookie](/managed/dynatrace-api/environment-api/settings/schemas/builtin-rum-web-injection-cookie) | `builtin:rum.web.injection.cookie` | `APPLICATION` - Web application |
 | [Exclude IP addresses from monitoring](/managed/dynatrace-api/environment-api/settings/schemas/builtin-rum-web-ipaddress-exclusion) | `builtin:rum.web.ipaddress-exclusion` | `APPLICATION` - Web application |
 | [Apdex configuration for custom actions](/managed/dynatrace-api/environment-api/settings/schemas/builtin-rum-web-key-performance-metric-custom-actions) | `builtin:rum.web.key-performance-metric-custom-actions` | `APPLICATION_METHOD` - User Action  `APPLICATION` - Web application |

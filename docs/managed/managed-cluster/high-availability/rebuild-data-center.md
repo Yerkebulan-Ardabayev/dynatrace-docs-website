@@ -9,7 +9,7 @@ source: https://docs.dynatrace.com/managed/managed-cluster/high-availability/reb
 
 * How-to guide
 * 10-min read
-* Updated on Jun 15, 2026
+* Updated on Jul 07, 2026
 
 To rebuild a lost data center (DC) in a Premium High Availability deployment, follow the steps below. The procedure migrates and replicates Dynatrace Managed components so they can replicate data across two data centers.
 
