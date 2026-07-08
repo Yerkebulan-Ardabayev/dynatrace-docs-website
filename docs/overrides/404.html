@@ -1,0 +1,23 @@
+{#
+  Кастомная страница 404 на русском (P2-13 аудита). Дефолтная страница Material
+  была англоязычной заглушкой без ссылок. Ссылки абсолютные через config.site_url:
+  404.html отдаётся с корня сайта для ЛЮБОГО несуществующего пути, поэтому
+  относительные ссылки/ассеты на subpath GitHub Pages сломались бы.
+#}
+{% extends "base.html" %}
+
+{% block content %}
+<div class="md-content" data-md-component="content">
+  <article class="md-content__inner md-typeset" style="text-align: center; padding: 3rem 1rem;">
+    <h1 style="font-size: 4rem; margin: 0;">404</h1>
+    <h2>Страница не найдена</h2>
+    <p>Запрошенная страница не существует или была перемещена.</p>
+    <p style="margin-top: 2rem;">
+      <a class="md-button md-button--primary" href="{{ config.site_url }}">На главную</a>
+    </p>
+    <p style="opacity: .75; margin-top: 1.5rem;">
+      Или воспользуйтесь поиском в шапке сайта, чтобы найти нужный раздел.
+    </p>
+  </article>
+</div>
+{% endblock %}

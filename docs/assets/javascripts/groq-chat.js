@@ -415,6 +415,16 @@ document.addEventListener('DOMContentLoaded', async function () {
     // Detect API mode first
     await detectMode();
 
+    // P2-11 аудита: не рендерим FAB/виджет, если ИИ не настроен. На проде
+    // ai-config.json с пустыми ключами -> GROQ_MODE='disabled'; раньше кнопка «AI»
+    // создавалась всё равно и на отправку отвечала ошибкой «AI-чат не настроен».
+    // Ранний выход также пропускает навешивание обработчиков ниже (иначе они
+    // упали бы на getElementById(null), т.к. виджета в DOM нет).
+    if (GROQ_MODE === 'disabled') {
+        console.log('[AI Chat] disabled -> widget not rendered');
+        return;
+    }
+
     createChatWidget();
 
     // Event listeners

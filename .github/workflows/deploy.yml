@@ -93,8 +93,9 @@ jobs:
         run: |
           SHA=$(git rev-parse --short HEAD)
           sed -i "s|\(assets/stylesheets/extra\.v[0-9][0-9]*\.css\)|\1?sha=${SHA}|g" mkdocs.yml
-          echo "CSS cache-busted with SHA=${SHA}"
-          grep "extra\.v" mkdocs.yml
+          sed -i "s|\(assets/javascripts/groq-chat\.js\)|\1?sha=${SHA}|g" mkdocs.yml
+          echo "Cache-busted CSS+JS with SHA=${SHA}"
+          grep -E "extra\.v|groq-chat" mkdocs.yml
 
       - name: Build site
         run: mkdocs build
