@@ -112,7 +112,7 @@ OpenKitShutdown(built);
 
 ### Анализ и использование данных
 
-* [Мобильные приложения](/managed/observe/digital-experience/mobile-app "Мониторинг мобильных приложений в Dynatrace.")
+* [Мобильные приложения](/managed/observe/digital-experience/mobile-applications "Мониторинг мобильных приложений в Dynatrace.")
 * [Session Replay](/managed/observe/digital-experience/session-replay "Воспроизведение сессий пользователей.")
 
 ## Связанные темы

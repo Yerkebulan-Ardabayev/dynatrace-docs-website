@@ -14,10 +14,18 @@ https://yerkebulan-ardabayev.github.io/dynatrace-docs-website/
 в `main` собирает MkDocs и публикует на GitHub Pages.
 
 - Канонический корпус: `docs/managed` (EN-исходники) -> `docs/managed-ru` (RU-перевод).
-- Кураторский навигатор: `docs/ru` (структура меню сайта).
-- В сборку сайта идут только RU-деревья (`docs/ru`, `docs/managed-ru`, `docs/common`);
-  EN-сырьё (`docs/en`, `docs/managed`) исключено из сборки (`exclude_docs` в `mkdocs.yml`),
-  а `search_index.json` пере-кодируется в UTF-8 хуком `hooks/utf8_search_index.py`.
+- Сайт Managed-only: в сборку идут `docs/managed-ru` + кастомные страницы
+  (`ru/getting-started.md`, `ru/training/`, `ai/groq.md`, `index.md`); остальные деревья
+  исключены через `exclude_docs` в `mkdocs.yml` (паттерны ЗАЯКОРЕНЫ ведущим `/`,
+  незаякоренный `managed/` молча выкидывал вложенный `managed-ru/whats-new/managed/`).
+- Хуки сборки (`mkdocs.yml` -> `hooks/`):
+  - `utf8_search_index.py`: `search_index.json` в UTF-8 (иначе кириллица в `\uXXXX`
+    раздувает индекс свыше лимита GitHub Pages 100 МБ);
+  - `rewrite_managed_links.py`: абсолютные `/managed/...`-ссылки корпуса становятся
+    внутренними относительными, а для ещё не переведённых страниц ведут на живой
+    upstream (docs.dynatrace.com) вместо 404;
+  - `full_nav.py`: боковое меню строится из файловой системы при каждой сборке
+    (кураторские топ-разделы заданы в хуке, новые страницы после sync попадают сами).
 
 ## Пайплайн (GitHub Actions)
 

@@ -588,6 +588,27 @@ nav.md-nav .md-nav__link--active {
   border-left: 1px solid var(--docflow-border);
 }
 
+/* Полный nav (hooks/full_nav.py) даёт вложенность до 7-8 уровней. Со 2-го
+   уровня отступ НЕ накапливаем: иначе 37px/уровень съедали ширину сайдбара,
+   и подписи сжимались в вертикальный столбик букв. Направляющая линия
+   остаётся, иерархию видно по ней. */
+.md-nav__item--nested .md-nav__item--nested nav.md-nav {
+  padding-left: 0.3rem;
+  margin-left: 0.2rem;
+}
+
+.md-nav__item--nested .md-nav__item--nested nav.md-nav > .md-nav__list {
+  padding-left: 0 !important;
+}
+
+/* Широким экранам — широкий сайдбар: глубокому дереву мало стандартных
+   12.1rem, русские названия страниц длинные. */
+@media screen and (min-width: 76.25em) {
+  .md-sidebar--primary {
+    width: 17rem;
+  }
+}
+
 /* Sidebar scrollbar — force non-accent colors (override Material theme hover/focus accent) */
 .md-sidebar,
 .md-sidebar__scrollwrap,

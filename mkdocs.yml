@@ -71,27 +71,37 @@ plugins:
         - en
 
 # Исключить из сборки. Сайт = только Dynatrace Managed (docs/managed-ru).
+# ВСЕ паттерны ЗАЯКОРЕНЫ ведущим "/" (= корень docs). Незаякоренный gitignore-
+# паттерн `managed/` матчил каталог с таким именем НА ЛЮБОЙ ГЛУБИНЕ и молча
+# выкидывал из сборки docs/managed-ru/whats-new/managed/ (18 RU sprint-страниц,
+# найдено аудитом 2026-07-08).
 exclude_docs: |
-  notebooklm/
-  ai/notebooklm.md
+  /notebooklm/
+  /ai/notebooklm.md
   # EN-сырьё пайплайна: раздувало search_index.json (>100 МБ, deploy падал с 25.06)
   # и дублировало темы в поиске. На диске остаётся (читается детектом), из сайта убрано.
-  en/
-  managed/
+  /en/
+  /managed/
   # Managed-only (решение юзера): docs/ru и docs/common это SaaS/Platform-навигатор
   # (Grail/DQL/Davis; source www.dynatrace.com/docs и docs.dynatrace.com/docs), к
   # Dynatrace Managed не применим -> убран из сборки и поиска. Ни одна Managed-страница
   # на него не ссылается (проверено). Оставляем только кастомные (не-SaaS) страницы:
   # свой getting-started и обучение Jusan.
-  ru/
-  common/
-  !ru/getting-started.md
-  !ru/training/
+  /ru/
+  /common/
+  !/ru/getting-started.md
+  !/ru/training/
 
 # Пост-обработка сборки: search_index.json -> UTF-8 (иначе кириллица как \uXXXX
 # раздувает индекс до ~106 МБ > лимита GitHub 100 МБ и валит deploy). См. аудит B2/U1.
 hooks:
   - hooks/utf8_search_index.py
+  # Абсолютные /managed/-ссылки корпуса: локальная страница есть -> относительная
+  # внутренняя; нет -> живой upstream (иначе все они 404-ят на GitHub Pages).
+  - hooks/rewrite_managed_links.py
+  # Полный nav из файловой системы (98% страниц были орфанами вне меню).
+  # Кураторские топ-разделы внутри хука; после sync новые страницы попадают сами.
+  - hooks/full_nav.py
 
 # Валидация ссылок (mkdocs 1.6+). Незапиненный mkdocs обновился и включил
 # строгие проверки ссылок, на которых `--strict` стал падать (мина U3 аудита):
@@ -111,111 +121,10 @@ validation:
     anchors: ignore
     not_found: info
 
-# =============================================================================
-# НАВИГАЦИЯ: только Dynatrace Managed (сайт Managed-only, решение юзера).
-# Все разделы ведут на docs/managed-ru (корпус Managed, source docs.dynatrace.com/managed).
-# SaaS-дерево docs/ru убрано из сборки (exclude_docs), кроме кастомных страниц
-# (свой getting-started + обучение Jusan). Единый язык заголовков RU.
-# =============================================================================
-nav:
-  - Главная: index.md
-
-  # --- НАЧАЛО РАБОТЫ ---
-  - Начало работы:
-    - Быстрый старт: ru/getting-started.md
-    - Что такое Dynatrace: managed-ru/discover-dynatrace/what-is-dynatrace.md
-    - Начало работы с Managed: managed-ru/discover-dynatrace/get-started.md
-    - Обзор Dynatrace Managed: managed-ru/managed.md
-
-  # --- КЛАСТЕР MANAGED (администрирование) ---
-  - Кластер Managed:
-    - Обзор кластера: managed-ru/managed-cluster.md
-    - Установка: managed-ru/installation.md
-    - Настройка: managed-ru/configuration.md
-    - Обслуживание: managed-ru/operations.md
-    - Обновление: managed-ru/update.md
-    - Апгрейд версии: managed-ru/upgrade.md
-    - Безопасность: managed-ru/security.md
-    - Резервное копирование: managed-ru/backup.md
-    - Лицензия: managed-ru/license.md
-
-  # --- ИСТОЧНИКИ ДАННЫХ ---
-  - Источники данных:
-    - Обзор источников: managed-ru/ingest-from.md
-    - OneAgent: managed-ru/ingest-from/dynatrace-oneagent.md
-    - ActiveGate: managed-ru/ingest-from/dynatrace-activegate.md
-    - Kubernetes: managed-ru/ingest-from/setup-on-k8s.md
-    - Amazon Web Services: managed-ru/ingest-from/amazon-web-services.md
-    - Microsoft Azure: managed-ru/ingest-from/microsoft-azure-services.md
-    - Google Cloud: managed-ru/ingest-from/google-cloud-platform.md
-    - Расширения: managed-ru/ingest-from/extensions.md
-    - OpenTelemetry: managed-ru/ingest-from/opentelemetry.md
-
-  # --- НАБЛЮДАЕМОСТЬ ---
-  - Наблюдаемость:
-    - Инфраструктура: managed-ru/observe/infrastructure-observability.md
-    - Приложения: managed-ru/observe/application-observability.md
-    - Распределённые трейсы: managed-ru/observe/application-observability/distributed-traces.md
-    - Цифровой опыт: managed-ru/observe/digital-experience.md
-
-  # --- DAVIS AI ---
-  - Davis AI: managed-ru/dynatrace-intelligence.md
-
-  # --- АНАЛИЗ ---
-  - Анализ:
-    - Smartscape Classic: managed-ru/analyze-explore-automate/smartscape-classic.md
-    - Классические дашборды: managed-ru/analyze-explore-automate/dashboards-classic.md
-    - Обозреватель данных: managed-ru/analyze-explore-automate/explorer.md
-    - Классические метрики: managed-ru/analyze-explore-automate/metrics-classic.md
-    - Мониторинг логов: managed-ru/analyze-explore-automate/log-monitoring.md
-    - Уведомления и оповещения: managed-ru/analyze-explore-automate/notifications-and-alerting.md
-
-  # --- DELIVER ---
-  - Deliver:
-    - Обзор Deliver: managed-ru/deliver.md
-    - Configuration as Code: managed-ru/deliver/configuration-as-code.md
-    - Ownership: managed-ru/deliver/ownership.md
-
-  # --- БЕЗОПАСНОСТЬ ПРИЛОЖЕНИЙ ---
-  - Безопасность приложений:
-    - Application Security: managed-ru/secure/application-security.md
-    - Частые вопросы: managed-ru/secure/faq.md
-
-  # --- УПРАВЛЕНИЕ ---
-  - Управление:
-    - Управление доступом (IAM): managed-ru/manage/identity-access-management.md
-    - Управление аккаунтом: managed-ru/manage/account-management.md
-    - Приватность и безопасность данных: managed-ru/manage/data-privacy-and-security.md
-    - Зоны сети: managed-ru/manage/network-zones.md
-    - Настройки (Settings 2.0): managed-ru/manage/settings/settings-20.md
-    - Теги и метаданные: managed-ru/manage/tags-and-metadata.md
-    - Системные уведомления: managed-ru/manage/system-notifications.md
-
-  # --- ПЛАТФОРМА ---
-  - Платформа:
-    - OneAgent: managed-ru/platform/oneagent.md
-
-  # --- API ---
-  - API:
-    - Обзор API: managed-ru/dynatrace-api.md
-    - Environment API: managed-ru/dynatrace-api/environment-api.md
-    - Configuration API: managed-ru/dynatrace-api/configuration-api.md
-    - Account Management API: managed-ru/dynatrace-api/account-management-api.md
-    - Cluster API v2: managed-ru/dynatrace-api/cluster-api/cluster-api-v2.md
-    - Аутентификация: managed-ru/dynatrace-api/basics/dynatrace-api-authentication.md
-
-  # --- ЧТО НОВОГО ---
-  - Что нового:
-    - Dynatrace Managed: managed-ru/whats-new/managed.md
-    - OneAgent: managed-ru/whats-new/oneagent.md
-    - ActiveGate: managed-ru/whats-new/activegate.md
-
-  # --- ОБУЧЕНИЕ JUSAN ---
-  - Обучение:
-    - "День 1. Введение в Dynatrace": ru/training/day1-introduction.md
-
-  # --- AI ПОМОЩНИК ---
-  - AI Помощник: ai/groq.md
+# НАВИГАЦИЯ строится хуком hooks/full_nav.py из файловой системы (см. аудит
+# 2026-07-08: 98% страниц были орфанами вне меню). Кураторские топ-разделы и
+# их порядок заданы в хуке; статический nav здесь не ведётся, иначе после
+# каждого ночного sync новые страницы снова выпадали бы из меню.
 
 
 markdown_extensions:

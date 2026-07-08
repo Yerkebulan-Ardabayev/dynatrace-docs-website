@@ -1,10 +1,10 @@
 ---
-title: "Документация Dynatrace Managed"
+title: "Обзор Dynatrace Managed"
 source: https://docs.dynatrace.com/managed
 updated: 2026-03-07
 ---
 
-# Добро пожаловать в документацию Dynatrace Managed
+# Обзор Dynatrace Managed
 
 Изучите Dynatrace Managed и ресурсы для улучшения наблюдаемости и безопасности вашей инфраструктуры.
 
