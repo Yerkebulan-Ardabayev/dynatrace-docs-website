@@ -39,7 +39,10 @@ sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding="utf-8")
 BASE_URL = os.environ.get("DYNATRACE_DOCS_URL", "https://docs.dynatrace.com/managed/")
 DEFAULT_OUTPUT_DIR = "dynatrace-docs"
 MAX_PAGES = None  # None = unlimited, or set number for testing
-DELAY_SECONDS = 1  # Delay between requests to be polite
+DELAY_SECONDS = 0.5  # Пауза между запросами. Было 1с, но после отказа от
+# If-Modified-Since (B7) каждый прогон тянет ВСЕ ~2700 стр. заново, и при 1с полный
+# обход не влезал в timeout-minutes джобы (ночной sync отменялся на 60-й минуте).
+# 0.5с (~2 req/s) + Retry на 429 = вежливо и укладываемся с запасом.
 TEST_MODE = False  # Set True for testing on small subset
 
 # Каталоги НЕ создаются на импорте: реальный output задаётся через --output
@@ -230,11 +233,16 @@ class DynatraceDocScraper:
         # Convert to markdown
         markdown = md(str(main_content), heading_style="ATX")
 
-        # Add metadata header
+        # Add metadata header.
+        # НЕ пишем волатильный `scraped:` таймстемп (B3 аудита, предпочтительный
+        # вариант «не писать в файл вовсе»): иначе КАЖДЫЙ пере-скрейп менял бы все
+        # ~2700 файлов, и Stage 5 `git add docs/managed/` коммитил бы тысячи файлов
+        # с одним лишь изменившимся таймстемпом на каждую пару реальных правок.
+        # detect_changes всё равно игнорирует этот field, а verify_corpus его
+        # отсутствие допускает. Время последнего скрейпа живёт в кэше/registry.
         header = f"""---
 title: {title}
 source: {url}
-scraped: {datetime.now().isoformat()}
 ---
 
 # {title}
