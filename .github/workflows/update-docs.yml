@@ -307,13 +307,13 @@ jobs:
           SITE_URL="https://yerkebulan-ardabayev.github.io/dynatrace-docs-website/"
           NL=$'\n'
 
-          MSG="📝 *Dynatrace Docs — Обновления*${NL}"
-          MSG="${MSG}${NL}📊 Обнаружено *${TOTAL}* изменений:${NL}"
-          MSG="${MSG}  • Новых статей: *${NEW}*${NL}"
-          MSG="${MSG}  • Обновлённых: *${UPDATED}*${NL}"
+          MSG="📝 <b>Dynatrace Docs — Обновления</b>${NL}"
+          MSG="${MSG}${NL}📊 Обнаружено <b>${TOTAL}</b> изменений:${NL}"
+          MSG="${MSG}  • Новых статей: <b>${NEW}</b>${NL}"
+          MSG="${MSG}  • Обновлённых: <b>${UPDATED}</b>${NL}"
 
           if [ "$TRANSLATED" -gt 0 ] 2>/dev/null; then
-            MSG="${MSG}${NL}✅ Автоперевод: *${TRANSLATED}* статей переведены${NL}"
+            MSG="${MSG}${NL}✅ Автоперевод: <b>${TRANSLATED}</b> статей переведены${NL}"
           fi
 
           # Добавить описание изменений из отчёта
@@ -326,11 +326,12 @@ jobs:
               sec = a.get('section', 'Другое')
               sections.setdefault(sec, []).append(a)
           lines = []
+          esc = lambda s: s.replace('&','&amp;').replace('<','&lt;').replace('>','&gt;')
           for sec, arts in sorted(sections.items()):
               titles = [a.get('title', a['path']) for a in arts[:5]]
-              lines.append(f'*{sec}* ({len(arts)} шт.)')
+              lines.append(f'<b>{esc(sec)}</b> ({len(arts)} шт.)')
               for t in titles:
-                  lines.append(f'  — {t}')
+                  lines.append(f'  — {esc(t)}')
               if len(arts) > 5:
                   lines.append(f'  — ...и ещё {len(arts)-5}')
           print(chr(10).join(lines[:30]))
@@ -348,18 +349,16 @@ jobs:
               exit(0)
           lines = []
           lines.append('')
-          lines.append('🚀 *Новые релизы — подробности:*')
+          lines.append('🚀 <b>Новые релизы — подробности:</b>')
           lines.append('')
+          esc = lambda s: s.replace('&','&amp;').replace('<','&lt;').replace('>','&gt;')
           for rel in releases[:5]:
               title = rel.get('title', rel['path'])
               summary = rel['summary']
               if len(summary) > 500:
                   summary = summary[:500] + '...'
-              for ch in ['_', '[', ']', '(', ')', '~', '\`', '>', '#', '+', '-', '=', '|', '{', '}', '.', '!']:
-                  summary = summary.replace(ch, '\\\\' + ch)
-                  title = title.replace(ch, '\\\\' + ch)
-              lines.append(f'📦 *{title}*')
-              lines.append(summary)
+              lines.append(f'📦 <b>{esc(title)}</b>')
+              lines.append(esc(summary))
               lines.append('')
           if len(releases) > 5:
               lines.append(f'...и ещё {len(releases)-5} релизов')
@@ -367,7 +366,7 @@ jobs:
           " 2>/dev/null || echo "")
 
             if [ -n "$DETAILS" ]; then
-              MSG="${MSG}${NL}📋 *Что изменилось:*${NL}${DETAILS}${NL}"
+              MSG="${MSG}${NL}📋 <b>Что изменилось:</b>${NL}${DETAILS}${NL}"
             fi
 
             if [ -n "$RELEASE_DETAILS" ]; then
@@ -376,15 +375,15 @@ jobs:
           fi
 
           MSG="${MSG}${NL}🕐 Синхронизация: ${DATE}${NL}"
-          MSG="${MSG}🔗 [Открыть Issues](${REPO_URL}/issues?q=label%3Atranslation+is%3Aopen)${NL}"
-          MSG="${MSG}🌐 [Сайт](${SITE_URL})"
+          MSG="${MSG}🔗 <a href=\"${REPO_URL}/issues?q=label%3Atranslation+is%3Aopen\">Открыть Issues</a>${NL}"
+          MSG="${MSG}🌐 <a href=\"${SITE_URL}\">Сайт</a>"
 
           # Send via Telegram Bot API
           if [ -n "$TG_BOT_TOKEN" ] && [ -n "$TG_CHAT_ID" ]; then
             curl -s -X POST "https://api.telegram.org/bot${TG_BOT_TOKEN}/sendMessage" \
               -d chat_id="${TG_CHAT_ID}" \
               -d text="${MSG}" \
-              -d parse_mode="Markdown" \
+              -d parse_mode="HTML" \
               -d disable_web_page_preview="true" \
               --connect-timeout 10 \
               --max-time 15 \
@@ -426,16 +425,16 @@ jobs:
             REASON="Deploy GitHub Pages — peaceiris/actions-gh-pages упал (права / gh-pages branch)"
           fi
 
-          MSG="🚨 *Dynatrace Docs — ОШИБКА pipeline*${NL}${NL}"
-          MSG="${MSG}❌ *Упавший шаг:* ${REASON}${NL}${NL}"
+          MSG="🚨 <b>Dynatrace Docs — ОШИБКА pipeline</b>${NL}${NL}"
+          MSG="${MSG}❌ <b>Упавший шаг:</b> ${REASON}${NL}${NL}"
           MSG="${MSG}📅 ${DATE}${NL}"
-          MSG="${MSG}🔗 [Открыть лог запуска](${RUN_URL})"
+          MSG="${MSG}🔗 <a href=\"${RUN_URL}\">Открыть лог запуска</a>"
 
           if [ -n "$TG_BOT_TOKEN" ] && [ -n "$TG_CHAT_ID" ]; then
             curl -s -X POST "https://api.telegram.org/bot${TG_BOT_TOKEN}/sendMessage" \
               -d chat_id="${TG_CHAT_ID}" \
               -d text="${MSG}" \
-              -d parse_mode="Markdown" \
+              -d parse_mode="HTML" \
               -d disable_web_page_preview="true" \
               --connect-timeout 10 \
               --max-time 15 \
