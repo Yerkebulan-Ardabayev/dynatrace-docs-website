@@ -155,28 +155,6 @@
   color: #3d3d52;
 }
 
-/* Nav tabs — explicit dark text on white, no opacity trick */
-[data-md-color-scheme="default"] .md-tabs {
-  background: transparent !important;
-  border-bottom: 1px solid var(--docflow-border);
-}
-
-[data-md-color-scheme="default"] .md-tabs__link {
-  color: #6b6b80;
-  opacity: 1;
-}
-
-[data-md-color-scheme="default"] .md-tabs__link:hover {
-  color: #1f1f2e;
-  background: var(--docflow-surface-hover);
-}
-
-[data-md-color-scheme="default"] .md-tabs__link--active {
-  color: #1f1f2e;
-  background: var(--docflow-surface-active);
-  font-weight: 600;
-}
-
 /* Sidebar — visibly separated from body (#fafafa). White bg needs a
    darker border or subtle shadow, otherwise sidebar visually merges with content. */
 [data-md-color-scheme="default"] .md-sidebar {
@@ -250,26 +228,6 @@
 [data-md-color-scheme="default"] .md-typeset table:not([class]) th {
   background: #f0f0f2;
   color: #3d3d52;
-}
-
-/* TOC — visible text on light */
-[data-md-color-scheme="default"] .md-sidebar--secondary .md-nav__link {
-  color: #6b6b80;
-}
-
-[data-md-color-scheme="default"] .md-sidebar--secondary .md-nav__link:hover,
-[data-md-color-scheme="default"] .md-sidebar--secondary .md-nav__link--active {
-  color: var(--md-accent-fg-color);
-}
-
-/* Footer — light bg */
-[data-md-color-scheme="default"] .md-footer {
-  background: #f0f0f2;
-  border-top: 1px solid var(--docflow-border);
-}
-
-[data-md-color-scheme="default"] .md-footer-meta {
-  background: #e8e8ec;
 }
 
 /* Selection — lighter purple on light theme */
@@ -422,15 +380,6 @@ body {
 }
 
 /* ==========================================================================
-   5. NAVIGATION TABS — DISABLED (single-source nav: sidebar only)
-   Kept as no-op in case any DOM still references these classes.
-   ========================================================================== */
-
-.md-tabs {
-  display: none !important;
-}
-
-/* ==========================================================================
    6. SIDEBAR — Stripe/Vercel-style left navigation
    Wider columns, clear section headers, collapsible groups
    ========================================================================== */
@@ -480,11 +429,6 @@ body {
 .md-sidebar--primary .md-sidebar__scrollwrap {
   max-height: 100% !important;
   overflow-y: auto !important;
-}
-
-/* Footer держится внизу */
-.md-footer {
-  flex: 0 0 auto;
 }
 
 /* Nav container — comfortable padding */
@@ -1064,70 +1008,6 @@ nav.md-nav .md-nav__link--active {
 }
 
 /* ==========================================================================
-   15. TABLE OF CONTENTS (Right sidebar)
-   DocFlow: w-240, text-sm, active = accent + left border
-   ========================================================================== */
-
-.md-sidebar--secondary {
-  width: var(--docflow-toc-width);
-}
-
-/* TOC title */
-.md-sidebar--secondary .md-nav__title {
-  font-size: 0.6875rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-  color: var(--md-default-fg-color--lighter);
-  padding-top: 2rem;
-}
-
-/* TOC links */
-.md-sidebar--secondary .md-nav__link {
-  font-size: 0.8125rem;
-  color: var(--md-default-fg-color--lighter);
-  padding: 0.25rem 0.75rem;
-  margin: 0;
-  border-left: 2px solid transparent;
-  border-radius: 0;
-  transition: color 0.15s ease, border-color 0.15s ease;
-}
-
-.md-sidebar--secondary .md-nav__link:hover {
-  color: var(--md-accent-fg-color);
-  background: transparent;
-}
-
-.md-sidebar--secondary .md-nav__link--active {
-  color: var(--md-accent-fg-color);
-  font-weight: 500;
-  border-left-color: var(--md-accent-fg-color);
-  background: transparent;
-}
-
-/* ==========================================================================
-   16. FOOTER & FOOTER NAV
-   DocFlow: border-top, prev/next links with hover:text-accent
-   ========================================================================== */
-
-.md-footer {
-  border-top: 1px solid var(--docflow-border);
-  background: var(--md-footer-bg-color);
-}
-
-.md-footer-nav__link {
-  transition: color 0.15s ease;
-}
-
-.md-footer-nav__link:hover {
-  color: var(--md-accent-fg-color);
-}
-
-.md-footer-meta {
-  background: var(--md-footer-bg-color--dark);
-}
-
-/* ==========================================================================
    17. SCROLLBAR — Custom thin scrollbar
    DocFlow: 6px, transparent track, border-color thumb
    ========================================================================== */
@@ -1523,11 +1403,9 @@ nav.md-nav .md-nav__link--active {
    ========================================================================== */
 
 .md-nav__link,
-.md-tabs__link,
 .md-typeset a,
 .md-search__form,
-.grid.cards > ul > li,
-.md-footer-nav__link {
+.grid.cards > ul > li {
   transition: all 0.2s ease;
 }
 
@@ -1605,37 +1483,6 @@ nav.md-nav .md-nav__link--active {
   padding-left: calc(0.75rem - 3px);
 }
 
-/* Active link in TOC sidebar */
-.md-sidebar--secondary .md-nav__link--active {
-  border-left-color: var(--md-accent-fg-color) !important;
-  border-left-width: 2px !important;
-  border-left-style: solid !important;
-  font-weight: 600;
-}
-
-/* --- Fix #3: TOC title — replace "Содержание" with "На этой странице" --- */
-.md-sidebar--secondary .md-nav__title {
-  font-size: 0 !important;
-  line-height: 0 !important;
-  overflow: hidden;
-}
-
-.md-sidebar--secondary .md-nav__title::before {
-  content: 'На этой странице';
-  font-size: 0.75rem;
-  font-weight: 500;
-  letter-spacing: normal;
-  text-transform: none;
-  color: var(--md-default-fg-color--lighter);
-  display: block;
-  line-height: 1.6;
-  padding-top: 2rem;
-}
-
-.md-sidebar--secondary .md-nav__title .md-nav__icon {
-  display: none;
-}
-
 /* --- Fix #8: Code blocks — enhanced border in dark theme --- */
 [data-md-color-scheme="slate"] .md-typeset pre {
   border: 1px solid rgba(55, 65, 81, 0.6);
@@ -1644,25 +1491,6 @@ nav.md-nav .md-nav__link--active {
 
 [data-md-color-scheme="slate"] .md-typeset pre > code {
   background: var(--md-code-bg-color);
-}
-
-/* --- Fix #10: Search Ctrl+K badge — inside input as ghost text --- */
-.md-search__form {
-  position: relative;
-}
-
-.md-search__form::after {
-  position: absolute !important;
-  right: 0.5rem !important;
-  top: 50% !important;
-  transform: translateY(-50%) !important;
-}
-
-/* --- Reading progress bar — REMOVED (was visually distracting) ---
-   We rely on Material's built-in instant.progress bar instead.
-   Keeping the class neutralized in case any old DOM still references it. */
-.reading-progress {
-  display: none !important;
 }
 
 /* --- Fix #12a: Ordered lists — step indicators --- */
@@ -1751,16 +1579,6 @@ nav.md-nav .md-nav__link--active {
 }
 
 /* ==========================================================================
-   25. RESPONSIVE — TOC collapse on small screens
-   ========================================================================== */
-
-@media (max-width: 1279px) {
-  .md-sidebar--secondary {
-    display: none;
-  }
-}
-
-/* ==========================================================================
    26. UX POLISH — Smooth scroll, content width, sticky tabs offset
    ========================================================================== */
 
@@ -1804,63 +1622,36 @@ html {
 }
 
 /* ==========================================================================
-   ДУБЛИ в sidebar — HACK через :has()
-   Для паттерна `X.md` + папка `X/` Material генерит псевдо-вложенность:
-   <li nested active>
-     <label>AI Помощник</label>          <- скрываем
-     <nav>
-       <li active><a>AI Помощник</a></li> <- оставляем
-     </nav>
-   </li>
-   Скрываем label у активной nested-секции, если внутри есть активная ссылка.
-   :has() поддержан в Chrome 105+, Safari 15.4+, Firefox 121+.
-   ========================================================================== */
+   ДУБЛИ в sidebar устранены КОНФИГОМ + одним стабильным правилом,
+   без :has() (решение по корню, аудит P2-10).
 
-.md-nav__item--active.md-nav__item--nested:has(> nav .md-nav__link--active) > label.md-nav__link,
-.md-nav__item--active.md-nav__item--nested:has(> nav .md-nav__link--active) > .md-nav__link[for] {
-  display: none !important;
-}
+   1) Секция вида `X.md` + папка `X/` (напр. «Наблюдаемость угроз») даёт единый
+      кликабельный заголовок секции благодаря feature `navigation.indexes`
+      в mkdocs.yml. Отдельного CSS-хака для этого дубля НЕ нужно.
+   2) На активной leaf-странице Material дополнительно рендерит <label for="__toc">
+      (тоггл встроенного в drawer оглавления) рядом с обычной <a>, оба с одним
+      заголовком, отсюда визуальный дубль «Главная / Главная». Правый TOC и футер
+      у нас убраны намеренно (см. блоки выше), встроенное оглавление не нужно,
+      поэтому глушим именно этот label по стабильному id `__toc` (контракт
+      Material, а не внутренняя вёрстка). Правило точечное: `for="__toc"` есть
+      ровно у одного элемента активной страницы, секционных тогглов `for="__nav_*"`
+      оно не касается.
 
-.md-nav__item--active.md-nav__item--nested:has(> nav .md-nav__link--active) > input.md-nav__toggle {
-  display: none !important;
-}
-
-/* ==========================================================================
-   ДУБЛИ на active leaf-страницах (включая Главную)
-   Material генерит для активной страницы сразу и <label for="__toc"> (тогл
-   TOC), и <a href="./"> — оба с одним и тем же заголовком. На мобилке label
-   был бы тогглом для TOC, но md-nav--secondary выше уже display:none, так
-   что label бесполезен. Скрываем его везде, чтобы устранить дубль типа
-   «Главная / Главная», «Что такое Dynatrace / Что такое Dynatrace».
+   УДАЛЁН прежний хак `.md-nav__item--active.md-nav__item--nested:has(> nav
+   .md-nav__link--active) > label`: :has() ошибочно матчил АКТИВНУЮ РОДИТЕЛЬСКУЮ
+   секцию (её вложенный <nav> тоже содержит active-ссылку листа) и скрывал её
+   заголовок, из-за чего «Безопасность» пропадала из меню на дочерних страницах.
+   Хрупкий (завязан на внутреннюю вёрстку Material) и давал баг; дубль, ради
+   которого он писался, закрывают navigation.indexes и правило по __toc ниже.
    ========================================================================== */
 .md-nav__item--active > label.md-nav__link[for="__toc"],
 .md-nav__item--active > input.md-nav__toggle#__toc {
   display: none !important;
 }
 
-/* Убираем padding-left у вложенного <nav> если label скрыт (уровень визуально становится родителем) */
-.md-nav__item--active.md-nav__item--nested:has(> nav .md-nav__link--active) > nav.md-nav {
-  padding-left: 0 !important;
-  margin-left: 0 !important;
-  border-left: none !important;
-}
-
-/* Sticky tabs need to align with header — fix top offset */
-.md-tabs[data-md-state="hidden"] {
-  transform: translateY(-100%);
-}
-
-/* Header autohide — smooth transition */
-.md-header[hidden] {
-  transform: translateY(-100%);
-}
+/* Header — smooth background transition on theme toggle */
 .md-header {
   transition: transform 0.25s ease, background 0.25s ease;
-}
-
-/* Material's built-in instant.progress bar — recolor to gradient */
-.md-progress {
-  background: var(--docflow-gradient) !important;
 }
 
 /* H1 — prevent border-bottom on hero sections */
@@ -1892,37 +1683,6 @@ html {
 .md-typeset h6:hover .headerlink {
   opacity: 1;
   color: var(--md-accent-fg-color);
-}
-
-/* Wider TOC for breathing room */
-.md-sidebar--secondary {
-  width: 16rem;
-}
-
-/* TOC active link — accent left border looks crisp */
-.md-sidebar--secondary .md-nav__link--active {
-  background: rgba(20, 184, 166, 0.06);
-  border-radius: 0 var(--docflow-radius-md) var(--docflow-radius-md) 0;
-}
-
-/* Footer prev/next — bigger hit targets, card style */
-.md-footer__inner.md-grid {
-  padding: 1.25rem;
-}
-
-.md-footer__link {
-  padding: 1rem 1.25rem;
-  border-radius: var(--docflow-radius);
-  border: 1px solid var(--docflow-border);
-  background: var(--docflow-card-bg);
-  transition: border-color 0.2s ease, background 0.2s ease, transform 0.2s ease;
-  margin: 0.25rem;
-}
-
-.md-footer__link:hover {
-  border-color: var(--md-primary-fg-color--light);
-  background: var(--docflow-surface-hover);
-  transform: translateY(-1px);
 }
 
 /* Skip the "Make a copy of this page editable" link if present, declutter */
