@@ -24,7 +24,7 @@
 
     Установка, настройка и обслуживание кластера
 
-    [:octicons-arrow-right-24: Managed](managed/)
+    [:octicons-arrow-right-24: Managed](managed-ru/managed-cluster.md)
 
 -   :material-eye-outline:{ .lg .middle } **Наблюдаемость**
 
@@ -32,23 +32,23 @@
 
     Инфраструктура, приложения, Kubernetes
 
-    [:octicons-arrow-right-24: Наблюдаемость](ru/observe/infrastructure-observability.md)
+    [:octicons-arrow-right-24: Наблюдаемость](managed-ru/observe/infrastructure-observability.md)
 
 -   :material-brain:{ .lg .middle } **Dynatrace Intelligence**
 
     ---
 
-    Davis AI, обнаружение аномалий, Copilot
+    Davis AI и обнаружение аномалий
 
-    [:octicons-arrow-right-24: Intelligence](ru/dynatrace-intelligence/anomaly-detection.md)
+    [:octicons-arrow-right-24: Intelligence](managed-ru/dynatrace-intelligence.md)
 
 -   :material-api:{ .lg .middle } **API Reference**
 
     ---
 
-    REST API, Environment API, Configuration API
+    Environment API, Configuration API, Cluster API
 
-    [:octicons-arrow-right-24: API](ru/dynatrace-api.md)
+    [:octicons-arrow-right-24: API](managed-ru/dynatrace-api.md)
 
 -   :material-robot-outline:{ .lg .middle } **AI Помощник**
 
@@ -62,17 +62,18 @@
 
 ---
 
-## Навигация
+## Разделы
 
-| Раздел | Описание | Язык |
-|--------|----------|------|
-| **Managed** | Установка, настройка, кластер, обновления | :flag_ru: RU |
-| **Платформа** | Grail, OneAgent, AppEngine, DQL | :flag_gb: EN |
-| **Наблюдаемость** | Инфраструктура, приложения, K8s | :flag_ru: RU / :flag_gb: EN |
-| **Intelligence** | Davis AI, обнаружение аномалий | :flag_ru: RU |
-| **Анализ** | Дашборды, логи, workflows | :flag_ru: RU |
-| **Deliver** | Monaco, Terraform, SLO, SRG | :flag_ru: RU |
-| **API** | REST API, Configuration API | :flag_ru: RU |
+| Раздел | Описание |
+|--------|----------|
+| **Кластер Managed** | Установка, настройка, обслуживание, обновление, резервное копирование |
+| **Источники данных** | OneAgent, ActiveGate, Kubernetes, AWS, Azure, GCP, расширения |
+| **Наблюдаемость** | Инфраструктура, приложения, распределённые трейсы |
+| **Davis AI** | Обнаружение аномалий и анализ первопричин |
+| **Анализ** | Smartscape, классические дашборды, логи, метрики |
+| **Deliver** | Configuration as Code, Ownership |
+| **Управление** | Доступ (IAM), аккаунт, зоны сети, настройки |
+| **API** | Environment API, Configuration API, Cluster API |
 
 !!! tip "AI Помощник"
     Нажмите кнопку **AI** в правом нижнем углу для ответов на вопросы!

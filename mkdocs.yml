@@ -70,20 +70,23 @@ plugins:
         - ru
         - en
 
-# Исключить из сборки (не является контентом сайта)
+# Исключить из сборки. Сайт = только Dynatrace Managed (docs/managed-ru).
 exclude_docs: |
   notebooklm/
   ai/notebooklm.md
-  # --- Сырьё пайплайна, не контент сайта (аудит P0-1 / B2 / U1) ---
-  # docs/en и англ. дерево docs/managed раздували search_index.json до 145 МБ
-  # (> лимита GitHub 100 МБ -> deploy падал с 25.06) и дублировали каждую тему
-  # в поиске как en/... и ru/... . Оставляем RU-контент: docs/ru (кураторский
-  # навигатор) + docs/managed-ru (полный переведённый корпус Managed: GCP,
-  # cluster-api, AWS CloudWatch и т.д.). docs/common НЕ исключаем: на него
-  # ссылаются 22+ страницы docs/ru (--strict падал бы на битых ссылках), а весит
-  # он ~1 МБ. Файлы остаются на диске, их читает пайплайн детекта; из САЙТА убраны.
+  # EN-сырьё пайплайна: раздувало search_index.json (>100 МБ, deploy падал с 25.06)
+  # и дублировало темы в поиске. На диске остаётся (читается детектом), из сайта убрано.
   en/
   managed/
+  # Managed-only (решение юзера): docs/ru и docs/common это SaaS/Platform-навигатор
+  # (Grail/DQL/Davis; source www.dynatrace.com/docs и docs.dynatrace.com/docs), к
+  # Dynatrace Managed не применим -> убран из сборки и поиска. Ни одна Managed-страница
+  # на него не ссылается (проверено). Оставляем только кастомные (не-SaaS) страницы:
+  # свой getting-started и обучение Jusan.
+  ru/
+  common/
+  !ru/getting-started.md
+  !ru/training/
 
 # Пост-обработка сборки: search_index.json -> UTF-8 (иначе кириллица как \uXXXX
 # раздувает индекс до ~106 МБ > лимита GitHub 100 МБ и валит deploy). См. аудит B2/U1.
@@ -109,194 +112,111 @@ validation:
     not_found: info
 
 # =============================================================================
-# НАВИГАЦИЯ — Оптимизированная информационная архитектура
-# Макс. глубина: 4 уровня | Единый язык заголовков (RU)
-#
-# СТРУКТУРА ПАПОК:
-#   docs/managed/       — Dynatrace Managed (EN)
-#   docs/ru/            — Dynatrace Managed (RU перевод)
-#   docs/en/            — Dynatrace (EN)
+# НАВИГАЦИЯ: только Dynatrace Managed (сайт Managed-only, решение юзера).
+# Все разделы ведут на docs/managed-ru (корпус Managed, source docs.dynatrace.com/managed).
+# SaaS-дерево docs/ru убрано из сборки (exclude_docs), кроме кастомных страниц
+# (свой getting-started + обучение Jusan). Единый язык заголовков RU.
 # =============================================================================
 nav:
   - Главная: index.md
 
   # --- НАЧАЛО РАБОТЫ ---
   - Начало работы:
-    - Документация Dynatrace: ru/index.md
-    - "\U0001F680 Быстрый старт": ru/getting-started.md
-    - Что такое Dynatrace: ru/discover-dynatrace/what-is-dynatrace.md
-    - Приложения Dynatrace: ru/discover-dynatrace/dynatrace-apps.md
-    - Семантический словарь: ru/semantic-dictionary.md
+    - Быстрый старт: ru/getting-started.md
+    - Что такое Dynatrace: managed-ru/discover-dynatrace/what-is-dynatrace.md
+    - Начало работы с Managed: managed-ru/discover-dynatrace/get-started.md
+    - Обзор Dynatrace Managed: managed-ru/managed.md
 
-  # --- DYNATRACE MANAGED ---
-  # Перецелено с docs/managed (англ. исходники, из них index/managed-cluster/
-  # license были на английском) на docs/managed-ru (полный RU-перевод), аудит U4.
-  - Managed:
-    - Обзор Managed: managed-ru/index.md
+  # --- КЛАСТЕР MANAGED (администрирование) ---
+  - Кластер Managed:
+    - Обзор кластера: managed-ru/managed-cluster.md
     - Установка: managed-ru/installation.md
     - Настройка: managed-ru/configuration.md
     - Обслуживание: managed-ru/operations.md
-    - Обновления: managed-ru/update.md
+    - Обновление: managed-ru/update.md
+    - Апгрейд версии: managed-ru/upgrade.md
     - Безопасность: managed-ru/security.md
     - Резервное копирование: managed-ru/backup.md
-    - Кластер: managed-ru/managed-cluster.md
-    - Лицензия Managed: managed-ru/license.md
-
-  # --- ПЛАТФОРМА ---
-  - Платформа:
-    - Grail:
-      - Что такое Grail: ru/platform/grail/dynatrace-grail.md
-      - Язык запросов DQL: ru/platform/grail/dynatrace-query-language.md
-    - OneAgent: ru/platform/oneagent.md
-    - AppEngine: ru/platform/appengine.md
-    - OpenPipeline: ru/platform/openpipeline.md
-
-  # --- НАБЛЮДАЕМОСТЬ ---
-  - Наблюдаемость:
-    - Инфраструктура:
-      - Обзор инфраструктуры: ru/observe/infrastructure-observability.md
-      - Хосты и операции: ru/observe/infrastructure-observability/infrastructure-and-operations.md
-      - Облачный мониторинг: ru/observe/infrastructure-observability/cloud-platform-monitoring/clouds-app.md
-      - Kubernetes: ru/observe/infrastructure-observability/container-platform-monitoring/kubernetes-app.md
-      - Kubernetes Classic: ru/observe/infrastructure-observability/container-platform-monitoring/kubernetes-monitoring.md
-      - Базы данных: ru/observe/infrastructure-observability/databases/database-app.md
-    - Приложения:
-      - Распределённая трассировка: ru/observe/application-observability/distributed-tracing.md
-      - Сервисы: ru/observe/application-observability/services/services-app.md
-    - Цифровой опыт:
-      - Обзор Digital Experience: ru/observe/digital-experience.md
-      - Синтетическое приложение: ru/observe/digital-experience/synthetic-monitoring/synthetic-on-grail/synthetic-app.md
-    - AI и LLM мониторинг: ru/observe/dynatrace-for-ai-observability.md
-
-  # --- DYNATRACE INTELLIGENCE ---
-  - Dynatrace Intelligence:
-    - Обнаружение аномалий:
-      - Обзор Anomaly Detection: ru/dynatrace-intelligence/anomaly-detection.md
-      - Настройка чувствительности: ru/dynatrace-intelligence/anomaly-detection/adjust-sensitivity-anomaly-detection.md
-      - Приложение Anomaly Detection: ru/dynatrace-intelligence/anomaly-detection/anomaly-detection-app.md
-      - Конфигурация: ru/dynatrace-intelligence/anomaly-detection/anomaly-detection-configuration.md
-      - Адаптивные пороги: ru/dynatrace-intelligence/anomaly-detection/auto-adaptive-threshold.md
-      - Многомерный бейзлайн: ru/dynatrace-intelligence/anomaly-detection/automated-multidimensional-baselining.md
-      - События метрик: ru/dynatrace-intelligence/anomaly-detection/metric-events.md
-      - Статические пороги: ru/dynatrace-intelligence/anomaly-detection/static-thresholds.md
-      - Оптимизация DQL: ru/dynatrace-intelligence/anomaly-detection/anomaly-detection-app/davis-ad-dql-optimization.md
-    - Davis Copilot:
-      - Обзор Copilot: ru/dynatrace-intelligence/copilot.md
-      - Dynatrace Assist: ru/dynatrace-intelligence/copilot/chat-with-davis-copilot.md
-      - Начало работы с Copilot: ru/dynatrace-intelligence/copilot/copilot-getting-started.md
-      - Конфиденциальность: ru/dynatrace-intelligence/copilot/copilot-data-privacy.md
-      - Запросы на естественном языке: ru/dynatrace-intelligence/copilot/quick-analysis-copilot-dql.md
-    - Проблемы Davis: ru/dynatrace-intelligence/davis-problems-app.md
-    - Анализ первопричин:
-      - Обзор RCA: ru/dynatrace-intelligence/root-cause-analysis.md
-      - Концепции RCA: ru/dynatrace-intelligence/root-cause-analysis/concepts.md
-      - Анализ событий: ru/dynatrace-intelligence/root-cause-analysis/event-analysis-and-correlation.md
-    - Интеграции Davis AI: ru/dynatrace-intelligence/dynatrace-intelligence-integrations.md
-    - Справочник:
-      - AI модели: ru/dynatrace-intelligence/reference/ai-models.md
-      - Лимиты: ru/dynatrace-intelligence/reference/davis-ai-limits.md
-
-  # --- АНАЛИЗ И АВТОМАТИЗАЦИЯ ---
-  - Анализ и автоматизация:
-    - Дашборды и ноутбуки:
-      - Дашборды: ru/analyze-explore-automate/dashboards-and-notebooks/dashboards-new.md
-      - Document API: ru/analyze-explore-automate/dashboards-and-notebooks/document-api.md
-      - Версии документов: ru/analyze-explore-automate/dashboards-and-notebooks/document-version.md
-      - Визуализации: ru/analyze-explore-automate/dashboards-and-notebooks/edit-visualizations.md
-      - Обзор данных: ru/analyze-explore-automate/dashboards-and-notebooks/explore-data.md
-    - Логи:
-      - Log Analytics: ru/analyze-explore-automate/logs.md
-      - Приложение журналов: ru/analyze-explore-automate/logs/lma-logs-app.md
-      - Фильтры: ru/analyze-explore-automate/logs/lma-logs-app/facets.md
-      - Запросы: ru/analyze-explore-automate/logs/lma-logs-app/query-and-filter.md
-    - Обозреватель данных: ru/analyze-explore-automate/explorer.md
-    - Smartscape: ru/analyze-explore-automate/smartscape.md
-    - Workflows: ru/analyze-explore-automate/workflows.md
-    - Уведомления: ru/analyze-explore-automate/notifications-and-alerting/problem-notifications.md
-    - Соответствие требованиям: ru/analyze-explore-automate/compliance-and-resilience.md
+    - Лицензия: managed-ru/license.md
 
   # --- ИСТОЧНИКИ ДАННЫХ ---
   - Источники данных:
-    - Обзор источников данных: ru/ingest-from.md
-    - Расширения: ru/ingest-from/extensions.md
-    - OneAgent — установка: ru/ingest-from/dynatrace-oneagent/installation-and-operation.md
+    - Обзор источников: managed-ru/ingest-from.md
+    - OneAgent: managed-ru/ingest-from/dynatrace-oneagent.md
+    - ActiveGate: managed-ru/ingest-from/dynatrace-activegate.md
+    - Kubernetes: managed-ru/ingest-from/setup-on-k8s.md
+    - Amazon Web Services: managed-ru/ingest-from/amazon-web-services.md
+    - Microsoft Azure: managed-ru/ingest-from/microsoft-azure-services.md
+    - Google Cloud: managed-ru/ingest-from/google-cloud-platform.md
+    - Расширения: managed-ru/ingest-from/extensions.md
+    - OpenTelemetry: managed-ru/ingest-from/opentelemetry.md
 
-  # --- DELIVER (CI/CD) ---
+  # --- НАБЛЮДАЕМОСТЬ ---
+  - Наблюдаемость:
+    - Инфраструктура: managed-ru/observe/infrastructure-observability.md
+    - Приложения: managed-ru/observe/application-observability.md
+    - Распределённые трейсы: managed-ru/observe/application-observability/distributed-traces.md
+    - Цифровой опыт: managed-ru/observe/digital-experience.md
+
+  # --- DAVIS AI ---
+  - Davis AI: managed-ru/dynatrace-intelligence.md
+
+  # --- АНАЛИЗ ---
+  - Анализ:
+    - Smartscape Classic: managed-ru/analyze-explore-automate/smartscape-classic.md
+    - Классические дашборды: managed-ru/analyze-explore-automate/dashboards-classic.md
+    - Обозреватель данных: managed-ru/analyze-explore-automate/explorer.md
+    - Классические метрики: managed-ru/analyze-explore-automate/metrics-classic.md
+    - Мониторинг логов: managed-ru/analyze-explore-automate/log-monitoring.md
+    - Уведомления и оповещения: managed-ru/analyze-explore-automate/notifications-and-alerting.md
+
+  # --- DELIVER ---
   - Deliver:
-    - Configuration as Code:
-      - Обзор CaC: ru/deliver/configuration-as-code.md
-      - Monaco:
-        - Monaco API и разрешения: ru/deliver/configuration-as-code/monaco/monaco-api-support-and-access-handling.md
-        - Концепции Monaco: ru/deliver/configuration-as-code/monaco/monaco-concepts.md
-        - Начало работы с Monaco: ru/deliver/configuration-as-code/monaco/monaco-getting-started.md
-      - Terraform:
-        - Terraform API и разрешения: ru/deliver/configuration-as-code/terraform/terraform-api-support-access-permission-handling.md
-        - CLI команды: ru/deliver/configuration-as-code/terraform/terraform-cli-commands.md
-    - SLO:
-      - Обзор SLO: ru/deliver/service-level-objectives.md
-      - Создание SLO: ru/deliver/service-level-objectives/create-slo.md
-    - Site Reliability Guardian:
-      - Обзор SRG: ru/deliver/site-reliability-guardian.md
-      - Структура событий: ru/deliver/site-reliability-guardian/event-structure.md
-    - Ownership: ru/deliver/ownership-app.md
-    - Мониторинг релизов:
-      - Обзор релизов: ru/deliver/release-monitoring.md
-      - Отслеживание релизов: ru/deliver/release-monitoring/monitor-releases-with-dynatrace.md
-    - Валидация релизов: ru/deliver/quality-gates.md
+    - Обзор Deliver: managed-ru/deliver.md
+    - Configuration as Code: managed-ru/deliver/configuration-as-code.md
+    - Ownership: managed-ru/deliver/ownership.md
 
-  # --- БЕЗОПАСНОСТЬ ---
-  - Безопасность:
-    - Наблюдаемость угроз: ru/secure/threat-observability.md
-    - Приём событий безопасности: ru/secure/threat-observability/security-events-ingest.md
+  # --- БЕЗОПАСНОСТЬ ПРИЛОЖЕНИЙ ---
+  - Безопасность приложений:
+    - Application Security: managed-ru/secure/application-security.md
+    - Частые вопросы: managed-ru/secure/faq.md
 
   # --- УПРАВЛЕНИЕ ---
   - Управление:
-    - Hub: ru/manage/hub.md
-    - Лицензирование:
-      - Обзор лицензии: ru/license.md
-      - Возможности DPS: ru/license/capabilities.md
-      - Биллинг: ru/license/billing-reports.md
-      - Бюджетные оповещения: ru/license/budget-alerts.md
-      - Жизненный цикл: ru/license/license-lifecycle.md
-      - Разрешения DPS: ru/license/dps-permissions.md
+    - Управление доступом (IAM): managed-ru/manage/identity-access-management.md
+    - Управление аккаунтом: managed-ru/manage/account-management.md
+    - Приватность и безопасность данных: managed-ru/manage/data-privacy-and-security.md
+    - Зоны сети: managed-ru/manage/network-zones.md
+    - Настройки (Settings 2.0): managed-ru/manage/settings/settings-20.md
+    - Теги и метаданные: managed-ru/manage/tags-and-metadata.md
+    - Системные уведомления: managed-ru/manage/system-notifications.md
+
+  # --- ПЛАТФОРМА ---
+  - Платформа:
+    - OneAgent: managed-ru/platform/oneagent.md
 
   # --- API ---
   - API:
-    - Обзор API: ru/dynatrace-api.md
-    - Dynatrace Intelligence: ru/dynatrace-intelligence.md
+    - Обзор API: managed-ru/dynatrace-api.md
+    - Environment API: managed-ru/dynatrace-api/environment-api.md
+    - Configuration API: managed-ru/dynatrace-api/configuration-api.md
+    - Account Management API: managed-ru/dynatrace-api/account-management-api.md
+    - Cluster API v2: managed-ru/dynatrace-api/cluster-api/cluster-api-v2.md
+    - Аутентификация: managed-ru/dynatrace-api/basics/dynatrace-api-authentication.md
 
   # --- ЧТО НОВОГО ---
   - Что нового:
-    - Все обновления: ru/whats-new.md
-    - Обновления OneAgent: ru/whats-new/oneagent.md
-    - ActiveGate: ru/whats-new/activegate.md
-    - Dynatrace Operator:
-      - Обзор: ru/whats-new/dynatrace-operator.md
-      - Версия 1.8.1: ru/whats-new/dynatrace-operator/dto-fix-1-8-1.md
-      - Версия 1.7.3: ru/whats-new/dynatrace-operator/dto-fix-1-7-3.md
-      - Версия 1.7.2: ru/whats-new/dynatrace-operator/dto-fix-1-7-2.md
-      - Версия 1.7.1: ru/whats-new/dynatrace-operator/dto-fix-1-7-1.md
-      - Версия 1.7.0: ru/whats-new/dynatrace-operator/dto-fix-1-7-0.md
-      - Версия 1.6.3: ru/whats-new/dynatrace-operator/dto-fix-1-6-3.md
-    - EdgeConnect:
-      - Обзор: ru/whats-new/edgeconnect.md
-      - Версия 1.473.5: ru/whats-new/edgeconnect/edgeconnect-release-notes-1-473-5.md
-      - Версия 1.473.2: ru/whats-new/edgeconnect/edgeconnect-release-notes-1-473-2.md
-      - Версия 1.473.0: ru/whats-new/edgeconnect/edgeconnect-release-notes-1-473-0.md
-      - Версия 1.416.14: ru/whats-new/edgeconnect/edgeconnect-release-notes-1-416-14.md
-      - Версия 1.330.2: ru/whats-new/edgeconnect/edgeconnect-release-notes-1-330-2.md
-    - Технологии:
-      - Новые технологии: ru/whats-new/technology.md
-      - Окончание жизненного цикла: ru/whats-new/technology/end-of-life-announcements.md
-      - Окончание поддержки: ru/whats-new/technology/end-of-support-news.md
-    - Новые статьи: ru/whats-new/documentation.md
+    - Dynatrace Managed: managed-ru/whats-new/managed.md
+    - OneAgent: managed-ru/whats-new/oneagent.md
+    - ActiveGate: managed-ru/whats-new/activegate.md
 
   # --- ОБУЧЕНИЕ JUSAN ---
   - Обучение:
-    - "День 1 — Введение в Dynatrace": ru/training/day1-introduction.md
+    - "День 1. Введение в Dynatrace": ru/training/day1-introduction.md
 
   # --- AI ПОМОЩНИК ---
   - AI Помощник: ai/groq.md
+
 
 markdown_extensions:
   - admonition

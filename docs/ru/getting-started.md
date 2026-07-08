@@ -31,4 +31,4 @@ sudo /bin/sh Dynatrace-OneAgent.sh
 ## Помощь
 
 - [ИИ-помощник](../ai/groq.md)
-- [Документация](index.md)
+- [Документация Dynatrace Managed](../managed-ru/index.md)
