@@ -249,6 +249,9 @@ jobs:
 
       - name: Create translation issue
         if: steps.detect.outputs.total_changes != '0'
+        # Не фатально: это уведомление, его сбой не должен ронять весь sync и
+        # блокировать build/deploy (раньше «Body is too long» валил всю джобу).
+        continue-on-error: true
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
@@ -282,6 +285,16 @@ jobs:
           📊 Новых: ${NEW} | Обновлённых: ${UPDATED} | Всего: ${TOTAL}
           🕐 Дата синхронизации: ${DATE}
           🤖 Создано автоматически пайплайном sync-docs."
+
+          # GitHub ограничивает тело issue 65536 символами. При большом бэклоге
+          # (после простоя пайплайна детект нашёл 1111 статей) полный список
+          # превышал лимит и createIssue падал. Обрезаем с запасом до 60000.
+          if [ ${#BODY} -gt 60000 ]; then
+            BODY="${BODY:0:60000}
+
+          ---
+          ⚠️ Список обрезан: превышен лимит GitHub (65536 символов). Полный отчёт — в артефакте changes_report.md этого прогона."
+          fi
 
           # Create issue
           REPO_OWNER=$(echo "${{ github.repository }}" | cut -d'/' -f1)
