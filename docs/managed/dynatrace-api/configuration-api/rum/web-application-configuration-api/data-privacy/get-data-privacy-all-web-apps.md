@@ -1,7 +1,6 @@
 ---
 title: Web application configuration API - GET data privacy of all web applications
 source: https://docs.dynatrace.com/managed/dynatrace-api/configuration-api/rum/web-application-configuration-api/data-privacy/get-data-privacy-all-web-apps
-scraped: 2026-05-12T11:16:56.616743
 ---
 
 # Web application configuration API - GET data privacy of all web applications
@@ -47,7 +46,7 @@ The request doesn't provide any configurable parameters.
 | Element | Type | Description |
 | --- | --- | --- |
 | metadata | [ConfigurationMetadata](#openapi-definition-ConfigurationMetadata) | Metadata useful for debugging |
-| values | [ApplicationDataPrivacy[]](#openapi-definition-ApplicationDataPrivacy) | - |
+| values | [ApplicationDataPrivacy](#openapi-definition-ApplicationDataPrivacy)[] | - |
 
 #### The `ConfigurationMetadata` object
 
@@ -78,7 +77,7 @@ Data privacy settings for Session Replay.
 
 | Element | Type | Description |
 | --- | --- | --- |
-| contentMaskingSettings | [SessionReplayContentMaskingSettings](#openapi-definition-SessionReplayContentMaskingSettings) | Content masking settings for Session Replay.  For more details, see [Configure Session Replayï»¿](https://dt-url.net/0m03slq) in Dynatrace Documentation. |
+| contentMaskingSettings | [SessionReplayContentMaskingSettings](#openapi-definition-SessionReplayContentMaskingSettings) | Content masking settings for Session Replay.  For more details, see [Configure Session Replay﻿](https://dt-url.net/0m03slq) in Dynatrace Documentation. |
 | optInModeEnabled | boolean | If `true`, session recording is disabled until JavaScriptAPI `dtrum.enableSessionReplay()` is called. |
 | urlExclusionRules | string[] | A list of URLs to be excluded from recording. |
 
@@ -86,7 +85,7 @@ Data privacy settings for Session Replay.
 
 Content masking settings for Session Replay.
 
-For more details, see [Configure Session Replayï»¿](https://dt-url.net/0m03slq) in Dynatrace Documentation.
+For more details, see [Configure Session Replay﻿](https://dt-url.net/0m03slq) in Dynatrace Documentation.
 
 | Element | Type | Description |
 | --- | --- | --- |
@@ -101,7 +100,7 @@ Configuration of the Session Replay masking.
 | Element | Type | Description |
 | --- | --- | --- |
 | maskingPreset | string | The type of the masking:  * `MASK_ALL`: Mask all texts, user input, and images. * `MASK_USER_INPUT`: Mask all data that is provided through user input * `ALLOW_LIST`: Only elements, specified in **maskingRules** are shown, everything else is masked. * `BLOCK_LIST`: Elements, specified in **maskingRules** are masked, everything else is shown. The element can hold these values * `ALLOW_LIST` * `BLOCK_LIST` * `MASK_ALL` * `MASK_USER_INPUT` |
-| maskingRules | [MaskingRule[]](#openapi-definition-MaskingRule) | A list of masking rules. |
+| maskingRules | [MaskingRule](#openapi-definition-MaskingRule)[] | A list of masking rules. |
 
 #### The `MaskingRule` object
 
@@ -110,7 +109,7 @@ The masking rule defining how data is hidden.
 | Element | Type | Description |
 | --- | --- | --- |
 | maskingRuleType | string | The type of the masking rule. The element can hold these values * `ATTRIBUTE` * `ELEMENT` |
-| selector | string | The selector for the element or the attribute to be masked.  Specify a CSS expression for an element or a [regular expressionï»¿](https://dt-url.net/k9e0iaq) for an attribute. |
+| selector | string | The selector for the element or the attribute to be masked.  Specify a CSS expression for an element or a [regular expression﻿](https://dt-url.net/k9e0iaq) for an attribute. |
 | userInteractionHidden | boolean | Interactions with the element are (`true`) or are not (`false) masked. |
 
 ### Response body JSON models

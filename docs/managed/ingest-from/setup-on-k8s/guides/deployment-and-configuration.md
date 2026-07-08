@@ -1,7 +1,6 @@
 ---
 title: Deployment and configuration
 source: https://docs.dynatrace.com/managed/ingest-from/setup-on-k8s/guides/deployment-and-configuration
-scraped: 2026-05-12T11:53:49.933362
 ---
 
 # Deployment and configuration
@@ -31,7 +30,7 @@ Set resource limits for Dynatrace Operator components.](/managed/ingest-from/set
 
 Resolve timeout issues in readiness- or liveness-probes caused by OneAgent injection.](/managed/ingest-from/setup-on-k8s/guides/deployment-and-configuration/resource-management/probe-timeout "Resolve timeout issues in readiness- or liveness-probes caused by OneAgent injection.")[### Update or uninstall Dynatrace Operator
 
-Upgrade and uninstallation procedures for Dynatrace Operator.](/managed/ingest-from/setup-on-k8s/guides/deployment-and-configuration/updates-and-maintenance/update-uninstall-operator "Upgrade and uninstallation procedures for Dynatrace Operator")[### Auto-update for Dynatrace Operator
+Upgrade and uninstallation procedures for Dynatrace Operator.](/managed/ingest-from/setup-on-k8s/guides/deployment-and-configuration/updates-and-maintenance/update-uninstall-operator "Upgrade paths, update procedures, and uninstallation guide for Dynatrace Operator.")[### Auto-update for Dynatrace Operator
 
 Enable automatic updates of Dynatrace Operator following a GitOps approach.](/managed/ingest-from/setup-on-k8s/guides/deployment-and-configuration/updates-and-maintenance/dto-auto-update "Enable automatic updates of Dynatrace Operator following a GitOps approach.")[### Configure auto-update for Dynatrace Operator components
 
@@ -39,4 +38,4 @@ Configure auto-updates for components managed by Dynatrace Operator.](/managed/i
 
 Sizing guide for Dynatrace ActiveGate components](/managed/ingest-from/setup-on-k8s/guides/deployment-and-configuration/resource-management/ag-resource-limits "Set resource limits for Dynatrace ActiveGates")[### Configure startup probes for Dynatrace Operator
 
-Configure startup probes for Dynatrace Operator, Webhook, and CSI Driver.](/managed/ingest-from/setup-on-k8s/guides/deployment-and-configuration/configure-startup-probes "Setup startup probes for components managed by Dynatrace Operator.")
+Configure startup probes for Dynatrace Operator, Webhook, and CSI Driver.](/managed/ingest-from/setup-on-k8s/guides/deployment-and-configuration/configure-startup-probes "Set up and customize startup probes for Dynatrace Operator, Webhook, and CSI driver components to match your environment's requirements.")

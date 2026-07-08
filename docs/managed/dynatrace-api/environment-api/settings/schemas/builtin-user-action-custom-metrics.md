@@ -1,7 +1,6 @@
 ---
 title: Settings API - User action custom metrics schema table
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/settings/schemas/builtin-user-action-custom-metrics
-scraped: 2026-05-12T11:45:51.581289
 ---
 
 # Settings API - User action custom metrics schema table
@@ -12,7 +11,7 @@ scraped: 2026-05-12T11:45:51.581289
 
 ### User action custom metrics (`builtin:user-action-custom-metrics)`
 
-With user action custom metrics (see [documentationï»¿](https://dt-url.net/3i03u3s)), you can extract business-level KPI metrics from user action data. Metrics can then be saved as timeseries and consumed (without interpolation) by your custom charts, alerting mechanisms or the Metrics REST API (`<your-dynatrace-url>//rest-api-doc/?urls.primaryName=Environment+API+v2#/Metrics`).
+With user action custom metrics (see [documentation﻿](https://dt-url.net/3i03u3s)), you can extract business-level KPI metrics from user action data. Metrics can then be saved as timeseries and consumed (without interpolation) by your custom charts, alerting mechanisms or the Metrics REST API (`<your-dynatrace-url>//rest-api-doc/?urls.primaryName=Environment+API+v2#/Metrics`).
 
 To explore collected metrics, go to Data explorer (`<your-dynatrace-url>//ui/data-explorer`).
 

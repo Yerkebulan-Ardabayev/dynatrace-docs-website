@@ -1,7 +1,6 @@
 ---
 title: Enable Go monitoring
 source: https://docs.dynatrace.com/managed/ingest-from/technology-support/application-software/go/configuration-and-analysis/enable-go-monitoring
-scraped: 2026-05-12T12:04:07.801178
 ---
 
 # Enable Go monitoring
@@ -32,7 +31,7 @@ To activate Go monitoring
 
 Support for the monitoring of statically linked Go applications is available starting with Dynatrace OneAgent version 1.203.
 
-Unless there are dependencies on packages using [cgoï»¿](https://blog.golang.org/cgo), the Go toolchain produces statically linked Go executables by default. These applications don't allow loading of additional code dynamically, so it is impossible for most monitoring agents to auto-inject themselves into such applications.
+Unless there are dependencies on packages using [cgo﻿](https://blog.golang.org/cgo), the Go toolchain produces statically linked Go executables by default. These applications don't allow loading of additional code dynamically, so it is impossible for most monitoring agents to auto-inject themselves into such applications.
 
 With Dynatrace, you do not need to force your application to be dynamically linked or change the source code if you want to monitor statically linked Go applications. There are [several limitations for this solution](/managed/ingest-from/technology-support/application-software/go/support/go-known-limitations#static-monitoring "Learn the limitations for Go support and their workarounds."), though.
 

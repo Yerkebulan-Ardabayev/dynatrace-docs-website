@@ -1,7 +1,6 @@
 ---
 title: Mobile app metrics API - GET all metrics
 source: https://docs.dynatrace.com/managed/dynatrace-api/configuration-api/calculated-metrics/mobile-app-metrics/get-all
-scraped: 2026-05-12T11:17:32.139031
 ---
 
 # Mobile app metrics API - GET all metrics
@@ -46,7 +45,7 @@ An ordered list of short representations of Dynatrace entities.
 
 | Element | Type | Description |
 | --- | --- | --- |
-| values | [EntityShortRepresentation[]](#openapi-definition-EntityShortRepresentation) | An ordered list of short representations of Dynatrace entities. |
+| values | [EntityShortRepresentation](#openapi-definition-EntityShortRepresentation)[] | An ordered list of short representations of Dynatrace entities. |
 
 #### The `EntityShortRepresentation` object
 
@@ -126,5 +125,5 @@ The short representation of a Dynatrace entity.
 
 ## Related topics
 
-* [Create calculated metrics for mobile applications](/managed/observe/digital-experience/mobile-applications/additional-configuration/rum-calculated-metrics-mobile "Create calculated metrics as well as custom charts based on calculated metrics for your mobile applications.")
-* [Create calculated metrics for custom applications](/managed/observe/digital-experience/custom-applications/additional-configuration/rum-calculated-metrics-custom "Create calculated metrics as well as custom charts based on calculated metrics for your custom applications.")
+* [Create calculated metrics for mobile applications in RUM Classic](/managed/observe/digital-experience/rum-classic/mobile-applications/additional-configuration/rum-calculated-metrics-mobile "Create calculated metrics as well as custom charts based on calculated metrics for your mobile applications.")
+* [Create calculated metrics for custom applications in RUM Classic](/managed/observe/digital-experience/rum-classic/custom-applications/additional-configuration/rum-calculated-metrics-custom "Create calculated metrics as well as custom charts based on calculated metrics for your custom applications.")

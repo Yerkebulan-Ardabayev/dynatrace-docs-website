@@ -1,12 +1,11 @@
 ---
-title: Multidimensional analysis for browser monitors
+title: Multidimensional analysis for browser monitors in Classic
 source: https://docs.dynatrace.com/managed/observe/digital-experience/synthetic-monitoring/analysis-and-alerting/multidimensional-analysis-for-browser-monitors
-scraped: 2026-05-12T11:19:16.823433
 ---
 
-# Multidimensional analysis for browser monitors
+# Multidimensional analysis for browser monitors in Classic
 
-# Multidimensional analysis for browser monitors
+# Multidimensional analysis for browser monitors in Classic
 
 * Explanation
 * 12-min read
@@ -40,7 +39,7 @@ Whether you're looking at [availability](#availability), [performance](#performa
 
 When you hover over the graph, you see arrow buttons ![Left and right arrows](https://dt-cdn.net/images/analysisarrowbuttons-49-c49391e1bc.png "Left and right arrows") that you can use to adjust the timeframe forward and backward in time, say from 10:30-12:30 to 08:30-10:30. Note that the size of the timeframe and analysis range remain the same.
 
-Use the zoom buttons ![Zoom in and out](https://dt-cdn.net/images/analysiszoombuttons-49-744f9d7427.png "Zoom in and out") to adjust the timeframe by zooming in (**+** = shorter timeframe) or zooming out (**-** = longer timeframe). The size of the analysis range is correspondingly adjusted when you use the zoom buttonsâyou can also use the dropdown to change the analysis range.
+Use the zoom buttons ![Zoom in and out](https://dt-cdn.net/images/analysiszoombuttons-49-744f9d7427.png "Zoom in and out") to adjust the timeframe by zooming in (**+** = shorter timeframe) or zooming out (**-** = longer timeframe). The size of the analysis range is correspondingly adjusted when you use the zoom buttons—you can also use the dropdown to change the analysis range.
 
 ![Analysis range](https://dt-cdn.net/images/analysisrange1-1666-a00a164538.png)
 
@@ -66,7 +65,7 @@ Multidimensional analysis for availability includes the option to filter the gra
 
 Hover over any point in the graph to see availability details for that point in time.
 
-Red areas represent outagesâthe width of the area represents outage time while the height represents outage percentage. Outages are periods of time with error data points, or failures.
+Red areas represent outages—the width of the area represents outage time while the height represents outage percentage. Outages are periods of time with error data points, or failures.
 
 Solid red bars above the availability graph indicate the duration of availability problems (global outage or local outages). Click to select a problem bar and see the outage duration. [Data points](#data-points) for the problem duration are automatically displayed. Select the problem link to go to the problem details page.
 
@@ -76,13 +75,13 @@ Availability problem in MDA
 
 * Monitor errors do not lead to [problems](/managed/observe/digital-experience/synthetic-monitoring/analysis-and-alerting/synthetic-details-for-browser-monitors#problems "Analyze browser monitor and clickpath results on the Synthetic details page.") if they don't violate your [availability thresholds](/managed/observe/digital-experience/synthetic-monitoring/browser-monitors/configure-browser-monitors#outage-handling "Learn about configuring browser monitors and clickpaths.") or if you haven't enabled thresholds.
 * Whether or not you see problems in the Dynatrace web UI and receive alert notifications during maintenance windows depends on how you [configure the maintenance windows](/managed/analyze-explore-automate/notifications-and-alerting/maintenance-windows/define-maintenance-window "Create maintenance windows and define their scope.").
-* [Maintenance windows may be excluded from availability calculations](/managed/observe/digital-experience/synthetic-monitoring/general-information/synthetic-calculations#m-windows-availability "Understand Synthetic Monitoring metric calculations.") by applying a global setting.
+* [Maintenance windows may be excluded from availability calculations](/managed/observe/digital-experience/synthetic-monitoring/general-information/synthetic-calculations#m-windows-availability "Understand Synthetic Monitoring Classic metric calculations.") by applying a global setting.
 
 ## Analyze performance
 
-You can access the **Multidimensional analysis** page for performance data from the [Synthetic details](/managed/observe/digital-experience/synthetic-monitoring/analysis-and-alerting/synthetic-details-for-browser-monitors "Analyze browser monitor and clickpath results on the Synthetic details page.") page in a few different ways. Your [default key performance metric selections](/managed/observe/digital-experience/synthetic-monitoring/browser-monitors/configure-browser-monitors#kpm "Learn about configuring browser monitors and clickpaths.") carry over to the analysis pageâyou can, however, change them ([see below](#mda-performance)).
+You can access the **Multidimensional analysis** page for performance data from the [Synthetic details](/managed/observe/digital-experience/synthetic-monitoring/analysis-and-alerting/synthetic-details-for-browser-monitors "Analyze browser monitor and clickpath results on the Synthetic details page.") page in a few different ways. Your [default key performance metric selections](/managed/observe/digital-experience/synthetic-monitoring/browser-monitors/configure-browser-monitors#kpm "Learn about configuring browser monitors and clickpaths.") carry over to the analysis page—you can, however, change them ([see below](#mda-performance)).
 
-* Select [**Analyze performance**](/managed/observe/digital-experience/synthetic-monitoring/analysis-and-alerting/synthetic-details-for-browser-monitors#performance "Analyze browser monitor and clickpath results on the Synthetic details page.") to view the performance trend for all your monitoring locations. Your event-type selection from the details page (events with load actions, events with XHR actions, or all events) carries over to the **Multidimensional analysis** page. The resulting performance graph is split by event. The metric displayed depends on your event-type selectionâ**Total duration** for all events, and your selected key performance metrics for events with load or XHR actions.
+* Select [**Analyze performance**](/managed/observe/digital-experience/synthetic-monitoring/analysis-and-alerting/synthetic-details-for-browser-monitors#performance "Analyze browser monitor and clickpath results on the Synthetic details page.") to view the performance trend for all your monitoring locations. Your event-type selection from the details page (events with load actions, events with XHR actions, or all events) carries over to the **Multidimensional analysis** page. The resulting performance graph is split by event. The metric displayed depends on your event-type selection—**Total duration** for all events, and your selected key performance metrics for events with load or XHR actions.
 
   ![Analyze performance by event type](https://dt-cdn.net/images/mdaperformanceactiontype-1520-1916a1b752.png)
 
@@ -110,14 +109,14 @@ When you view performance over a selected [analysis range](#analysis-range), fil
 
 MDA filters for performance
 
-* **Location**âselect all locations or an individual monitor location.
-* **Action type**âview performance for load actions, XHR actions, custom actions, or all actions.
-* **Performance metric**âthis list shows the same [key performance metrics](/managed/observe/digital-experience/synthetic-monitoring/browser-monitors/configure-browser-monitors#kpm "Learn about configuring browser monitors and clickpaths.") available in monitor settings, for which performance data is captured out of the box. While the [Synthetic details](/managed/observe/digital-experience/synthetic-monitoring/analysis-and-alerting/synthetic-details-for-browser-monitors "Analyze browser monitor and clickpath results on the Synthetic details page.") page graphs one key performance metric per action type, the **Multidimensional analysis** page offers all available metrics per action type.
+* **Location**—select all locations or an individual monitor location.
+* **Action type**—view performance for load actions, XHR actions, custom actions, or all actions.
+* **Performance metric**—this list shows the same [key performance metrics](/managed/observe/digital-experience/synthetic-monitoring/browser-monitors/configure-browser-monitors#kpm "Learn about configuring browser monitors and clickpaths.") available in monitor settings, for which performance data is captured out of the box. While the [Synthetic details](/managed/observe/digital-experience/synthetic-monitoring/analysis-and-alerting/synthetic-details-for-browser-monitors "Analyze browser monitor and clickpath results on the Synthetic details page.") page graphs one key performance metric per action type, the **Multidimensional analysis** page offers all available metrics per action type.
 
   + When you filter for **All actions** in the trend, you only have the option of viewing **Total duration**.
   + When you filter for **Load actions** or **XHR actions** in the trend, **Total duration** is not available. This metric is only applicable to the performance of a monitor or events as a whole, not for action types within events.
-* **Event**âselect all or a specific Synthetic script event. You can only choose an event with timings from this list; events with no timing data are grayed out.
-* **Split by**âselect **Location**, **Action type**, **Metric**, or **Event**. When you choose a splitting criterion, the corresponding list is grayed out.
+* **Event**—select all or a specific Synthetic script event. You can only choose an event with timings from this list; events with no timing data are grayed out.
+* **Split by**—select **Location**, **Action type**, **Metric**, or **Event**. When you choose a splitting criterion, the corresponding list is grayed out.
 
   ![Performance MDA splitting factor](https://dt-cdn.net/images/mdasplitby-811-2b18640f01.png)
 
@@ -147,7 +146,7 @@ Scatter plot filters
 
 Besides the [key performance metrics](/managed/observe/digital-experience/synthetic-monitoring/browser-monitors/configure-browser-monitors#kpm "Learn about configuring browser monitors and clickpaths.") that you can select as the default display metrics for load and XHR actions, Dynatrace offers and plots several other page- and resource-level metrics (see also [Waterfall graphs](/managed/observe/digital-experience/synthetic-monitoring/analysis-and-alerting/waterfall-graphs "How to analyze page resource downloads for browser monitors.")). These metrics are all listed in the **Analyze** list for [scatter plots](#scatter-plot).
 
-While up to 35 days of historical data is always available for key performance metrics, you can also capture [long-term data](/managed/manage/data-privacy-and-security/data-privacy/data-retention-periods "Check retention times for various data types.") for your customizations of any other metric by creating a calculated metric. Time series data for the calculated metric is available from the point of creation onward.
+While up to 35 days of historical data is always available for key performance metrics, you can also capture [long-term data](/managed/manage/data-privacy-and-security/data-privacy/data-retention-periods "Review default and configurable retention periods for service, RUM Classic, synthetic, Log Monitoring, metric, diagnostic, and security data in Dynatrace Managed.") for your customizations of any other metric by creating a calculated metric. Time series data for the calculated metric is available from the point of creation onward.
 
 Select your metric and apply any desired filters in the scatter plot, then select **Create metric**. Optionally, enable the splitting factor in the metric creation dialog box. You can edit the **Metric name** and **Metric key**. By default, the metric key reflects the metric name and includes the monitor name. Once you create a calculated metric, the metric name, key, and configuration cannot be edited.
 
@@ -188,10 +187,10 @@ Analyze all errors
 
 The following filters are available for multidimensional analysis of errors:
 
-* **Location**âselect all locations or an individual monitor location.
-* **Error**âselect all error codes or a single error code.
-* **Event**âselect all or an individual Synthetic script event. You can only choose an event with timings (an action) from this list; events with no timing data are grayed out.
-* **Split by**âselect **Location**, **Error code**, or **Event**.
+* **Location**—select all locations or an individual monitor location.
+* **Error**—select all error codes or a single error code.
+* **Event**—select all or an individual Synthetic script event. You can only choose an event with timings (an action) from this list; events with no timing data are grayed out.
+* **Split by**—select **Location**, **Error code**, or **Event**.
 
 ## Data points
 

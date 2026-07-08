@@ -1,7 +1,6 @@
 ---
 title: Attacks API - GET attack details
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/application-security/attacks/get-attack-details
-scraped: 2026-05-12T11:58:06.162042
 ---
 
 # Attacks API - GET attack details
@@ -59,7 +58,7 @@ Describes an attack.
 | displayId | string | The display ID of the attack. |
 | displayName | string | The display name of the attack. |
 | entrypoint | [AttackEntrypoint](#openapi-definition-AttackEntrypoint) | Describes the entrypoint used by an attacker to start a specific attack. |
-| managementZones | [ManagementZone[]](#openapi-definition-ManagementZone) | A list of management zones which the affected entities belong to. |
+| managementZones | [ManagementZone](#openapi-definition-ManagementZone)[] | A list of management zones which the affected entities belong to. |
 | request | [RequestInformation](#openapi-definition-RequestInformation) | Describes the complete request information of an attack. |
 | securityProblem | [AttackSecurityProblem](#openapi-definition-AttackSecurityProblem) | Assessment information and the ID of a security problem related to an attack. |
 | state | string | The state of the attack. The element can hold these values * `ALLOWLISTED` * `BLOCKED` * `EXPLOITED` |
@@ -223,7 +222,7 @@ A list of values that has possibly been truncated.
 | Element | Type | Description |
 | --- | --- | --- |
 | truncationInfo | [TruncationInfo](#openapi-definition-TruncationInfo) | Information on a possible truncation. |
-| values | [AttackRequestHeader[]](#openapi-definition-AttackRequestHeader) | Values of the list. |
+| values | [AttackRequestHeader](#openapi-definition-AttackRequestHeader)[] | Values of the list. |
 
 #### The `AttackRequestHeader` object
 
@@ -241,7 +240,7 @@ A list of values that has possibly been truncated.
 | Element | Type | Description |
 | --- | --- | --- |
 | truncationInfo | [TruncationInfo](#openapi-definition-TruncationInfo) | Information on a possible truncation. |
-| values | [HttpRequestParameter[]](#openapi-definition-HttpRequestParameter) | Values of the list. |
+| values | [HttpRequestParameter](#openapi-definition-HttpRequestParameter)[] | Values of the list. |
 
 #### The `HttpRequestParameter` object
 
@@ -289,7 +288,7 @@ Describes what got passed into the code level vulnerability.
 
 | Element | Type | Description |
 | --- | --- | --- |
-| inputSegments | [VulnerableFunctionInputSegment[]](#openapi-definition-VulnerableFunctionInputSegment) | A list of input segments. |
+| inputSegments | [VulnerableFunctionInputSegment](#openapi-definition-VulnerableFunctionInputSegment)[] | A list of input segments. |
 | type | string | The type of the input. The element can hold these values * `COMMAND` * `HTTP_CLIENT` * `JNDI` * `SQL_STATEMENT` |
 
 #### The `VulnerableFunctionInputSegment` object
@@ -312,7 +311,7 @@ Describes one segment that was passed into a vulnerable function.
 | Element | Type | Description |
 | --- | --- | --- |
 | code | integer | The HTTP status code |
-| constraintViolations | [ConstraintViolation[]](#openapi-definition-ConstraintViolation) | A list of constraint violations |
+| constraintViolations | [ConstraintViolation](#openapi-definition-ConstraintViolation)[] | A list of constraint violations |
 | message | string | The error message |
 
 #### The `ConstraintViolation` object

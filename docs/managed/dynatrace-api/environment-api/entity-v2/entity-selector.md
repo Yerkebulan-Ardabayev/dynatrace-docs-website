@@ -1,7 +1,6 @@
 ---
 title: Environment API v2 - Entity selector
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/entity-v2/entity-selector
-scraped: 2026-05-12T11:35:29.545944
 ---
 
 # Environment API v2 - Entity selector
@@ -127,7 +126,7 @@ By default entity names evaluation disregards the case. You can make the criteri
 
 ## Entity attribute
 
-The attribute nameâattribute value pair that the requested entity should have.
+The attribute name—attribute value pair that the requested entity should have.
 
 To fetch the list of available attributes, execute the [GET entity type](/managed/dynatrace-api/environment-api/entity-v2/get-entity-type "View the details of a monitored entity type via Dynatrace API.") call and check the **properties** field. You can use attributes with values that can be represented by a string.
 

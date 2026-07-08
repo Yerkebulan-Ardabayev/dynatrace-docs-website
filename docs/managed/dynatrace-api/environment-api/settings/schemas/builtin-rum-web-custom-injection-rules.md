@@ -1,7 +1,6 @@
 ---
 title: Settings API - Define custom injection rules schema table
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/settings/schemas/builtin-rum-web-custom-injection-rules
-scraped: 2026-05-12T11:40:37.172318
 ---
 
 # Settings API - Define custom injection rules schema table

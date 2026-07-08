@@ -1,7 +1,6 @@
 ---
 title: Settings API - Outage handling schema table
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/settings/schemas/builtin-synthetic-multiprotocol-outage-handling
-scraped: 2026-05-12T11:45:56.012075
 ---
 
 # Settings API - Outage handling schema table

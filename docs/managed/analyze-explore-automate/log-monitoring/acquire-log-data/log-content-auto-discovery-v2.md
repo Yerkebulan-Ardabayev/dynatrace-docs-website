@@ -1,7 +1,6 @@
 ---
 title: Log content autodiscovery (Logs Classic)
 source: https://docs.dynatrace.com/managed/analyze-explore-automate/log-monitoring/acquire-log-data/log-content-auto-discovery-v2
-scraped: 2026-05-12T11:13:14.481725
 ---
 
 # Log content autodiscovery (Logs Classic)

@@ -1,7 +1,6 @@
 ---
 title: Metrics API examples - Select full metric subtree
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/metric-v2/examples/select-subtree
-scraped: 2026-05-12T12:10:08.554496
 ---
 
 # Metrics API examples - Select full metric subtree

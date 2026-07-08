@@ -1,7 +1,6 @@
 ---
 title: Assign ownership teams to monitored entities
 source: https://docs.dynatrace.com/managed/deliver/ownership/assign-ownership
-scraped: 2026-05-12T11:12:49.061767
 ---
 
 # Assign ownership teams to monitored entities
@@ -27,7 +26,7 @@ The following methods for applying ownership and entity types are supported.
   | Kubernetes labels and annotations | All Kubernetes objects |
   | Host metadata via `oneagentctl` or `hostcustomproperties.conf` | Hosts |
   | Environment variables | Processes |
-* **Tags** (manual, automated, and via API)âall monitored entities
+* **Tags** (manual, automated, and via API)—all monitored entities
 
 We highly recommend that you use the preferred method for applying ownership based on entity type, as described in the sections that follow.
 
@@ -40,7 +39,7 @@ Our recommendations are based on the most efficient methods to ensure that entit
 
 ## Format for applying ownership information
 
-Regardless of the method used, ownership information is applied to entities in **key-value pairs**. The default keys `owner` and `dt.owner` are available in every monitoring environmentâsee **Settings** > **Ownership** > **Configuration**. You can, however, change or delete the default keys and [define your own](#custom-keys).
+Regardless of the method used, ownership information is applied to entities in **key-value pairs**. The default keys `owner` and `dt.owner` are available in every monitoring environment—see **Settings** > **Ownership** > **Configuration**. You can, however, change or delete the default keys and [define your own](#custom-keys).
 
 The value is always the unique team identifier specified when creating a team. You can also use supplementary identifiers. (See [Create and manage teams for entity ownership](/managed/deliver/ownership/ownership-teams "Define teams with team identifiers, descriptions, responsibilities, and routing information for entity ownership.") for more information on defining these values.)
 
@@ -452,7 +451,7 @@ See [Format for applying ownership information](#format) on all existing key-val
 
 ### Tagging methods
 
-You can use tags to apply ownership in [key-value pairs](#format) to any monitored entityâread more about [tagging](/managed/manage/tags-and-metadata "Use tags and metadata to organize data in your Dynatrace environment.").
+You can use tags to apply ownership in [key-value pairs](#format) to any monitored entity—read more about [tagging](/managed/manage/tags-and-metadata "Use tags and metadata to organize data in your Dynatrace environment.").
 
 ![Ownership via a manual tag](https://dt-cdn.net/images/ownership-manual-tag-1004-f7c90a9b42.png)
 
@@ -462,7 +461,7 @@ Ownership via a manual tag
 * You can also set up [automatic tagging rules](/managed/manage/tags-and-metadata/setup/how-to-define-tags#automatic "Find out how to define and apply tags manually and automatically.") via the web UI.
 * We recommend using the [Custom tags API](/managed/dynatrace-api/environment-api/custom-tags "Manage custom tags of the monitored entities via the Dynatrace API.") over automatic tagging rules to apply ownership to entities. The Custom tags API enables you to conveniently apply tags to a large group of entities within a single API call, executed immediately.
 
-Note that manually applied tags can be removed manually. Automatically applied tags canât be removed manually from individual services, process groups, process group instances, applications, or hosts.
+Note that manually applied tags can be removed manually. Automatically applied tags can’t be removed manually from individual services, process groups, process group instances, applications, or hosts.
 
 See [Best practices for entity ownership](/managed/deliver/ownership/best-practices "Tips and best practices to ensure that entities have adequate ownership coverage") for more information on the benefits and limitations of tagging for assigning owners to entities. See also [Best practices for scaling tagging and management-zone rules](/managed/manage/tags-and-metadata/basic-concepts/best-practice-tagging-at-scale "Optimize auto-tagging and management-zone rules to speed up the automatic assignment process.").
 
@@ -493,7 +492,7 @@ This example shows ownership information for a Kubernetes Pod.
 
 Owner of a Kubernetes Pod
 
-On the **Hosts** page, you can search for hosts with ownershipâfilter by **Tags** with the key prefixes you have defined, for example, `owner` and `dt-owner`. Note that [ownership key-value pairs](#format) must be applied to at least one host for the key to be available in the **Tags** filter. This method of searching for ownership is available on all entity group pages that can be filtered by tags.
+On the **Hosts** page, you can search for hosts with ownership—filter by **Tags** with the key prefixes you have defined, for example, `owner` and `dt-owner`. Note that [ownership key-value pairs](#format) must be applied to at least one host for the key to be available in the **Tags** filter. This method of searching for ownership is available on all entity group pages that can be filtered by tags.
 
 ![Filter by ownership tags on entity group pages](https://dt-cdn.net/images/ownership-hosts-page-2190-8b47f48119.png)
 
@@ -521,6 +520,6 @@ Unknown team
 * [Tags and metadata](/managed/manage/tags-and-metadata "Use tags and metadata to organize data in your Dynatrace environment.")
 * [Custom tags API](/managed/dynatrace-api/environment-api/custom-tags "Manage custom tags of the monitored entities via the Dynatrace API.")
 * [Best practices for scaling tagging and management-zone rules](/managed/manage/tags-and-metadata/basic-concepts/best-practice-tagging-at-scale "Optimize auto-tagging and management-zone rules to speed up the automatic assignment process.")
-* [Kubernetes labelsï»¿](https://dt-url.net/g442yn5 "Official Kubernetes documentation on labels")
-* [Kubernetes annotationsï»¿](https://dt-url.net/bz62yto "Official Kubernetes documentation on annotations")
+* [Kubernetes labels﻿](https://dt-url.net/g442yn5 "Official Kubernetes documentation on labels")
+* [Kubernetes annotations﻿](https://dt-url.net/bz62yto "Official Kubernetes documentation on annotations")
 * [Unified analysis pages](/managed/ingest-from/extend-dynatrace/extend-ui/unified-analysis "Extend the Dynatrace web UI using entity-tailored unified analysis pages.")

@@ -1,7 +1,6 @@
 ---
 title: Timeseries API v1
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/metric-v1
-scraped: 2026-05-12T11:12:34.840952
 ---
 
 # Timeseries API v1

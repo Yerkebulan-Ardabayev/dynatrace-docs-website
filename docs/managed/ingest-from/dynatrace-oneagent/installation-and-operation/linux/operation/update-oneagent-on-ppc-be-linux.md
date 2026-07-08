@@ -1,7 +1,6 @@
 ---
 title: Update OneAgent on PPC BE Linux
 source: https://docs.dynatrace.com/managed/ingest-from/dynatrace-oneagent/installation-and-operation/linux/operation/update-oneagent-on-ppc-be-linux
-scraped: 2026-05-12T11:05:25.916422
 ---
 
 # Update OneAgent on PPC BE Linux
@@ -46,5 +45,5 @@ Run `oneagentctl` with the `--version` parameter. For more information, see [One
 ### Deployment status
 
 1. Go to **Deployment Status**.
-2. Click the **All hosts** or **Recently connected hosts** tab.
+2. Select the **All hosts** or **Recently connected hosts** tab.
 3. Expand the host entry you are interested in. The installed version of OneAgent is included in the information that shows up.

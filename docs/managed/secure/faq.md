@@ -1,7 +1,6 @@
 ---
 title: Application Security FAQ
 source: https://docs.dynatrace.com/managed/secure/faq
-scraped: 2026-05-12T11:13:46.543235
 ---
 
 # Application Security FAQ
@@ -9,11 +8,11 @@ scraped: 2026-05-12T11:13:46.543235
 # Application Security FAQ
 
 * Troubleshooting
-* Updated on Mar 01, 2026
+* Updated on Jun 18, 2026
 
 See below for answers to some of the most frequently asked questions about Dynatrace Application Security, grouped by topics.
 
-For troubleshooting articles related to Application Security, visit [Dynatrace Communityï»¿](https://dt-url.net/dy122xtf).
+For troubleshooting articles related to Application Security, visit [Dynatrace Community﻿](https://dt-url.net/dy122xtf).
 
 ## Detection and monitoring
 
@@ -33,7 +32,7 @@ To get started
 
 ### What's the difference between the classic monitoring rules and the new monitoring rules?
 
-The [new monitoring rules](/managed/secure/application-security/vulnerability-analytics/third-party-vulnerabilities/define-monitoring-rules-tpv#new "Create, modify, and delete custom monitoring rules for Dynatrace-monitored processes.") let you include or exclude processes, Kubernetes nodes, and hosts based on resource attributes and Kubernetes labels. This approach is more flexible and precise, works well in dynamic and cloudânative environments, and supports previews so you can verify which entities match before enabling the rules. These rules are recommended and are the default for newer environments.
+The [new monitoring rules](/managed/secure/application-security/vulnerability-analytics/third-party-vulnerabilities/define-monitoring-rules-tpv#new "Create, modify, and delete custom monitoring rules for Dynatrace-monitored processes.") let you include or exclude processes, Kubernetes nodes, and hosts based on resource attributes and Kubernetes labels. This approach is more flexible and precise, works well in dynamic and cloud‑native environments, and supports previews so you can verify which entities match before enabling the rules. These rules are recommended and are the default for newer environments.
 
 The [classic monitoring rules](/managed/secure/application-security/vulnerability-analytics/third-party-vulnerabilities/define-monitoring-rules-tpv#classic "Create, modify, and delete custom monitoring rules for Dynatrace-monitored processes.") rely on process group tags, host tags, and management zones. They offer less granularity, depend on correct tagging, and don't provide the same level of preview or control. Classic rules still work but are scheduled for deprecation and can't be used at the same time as the new rules.
 
@@ -49,11 +48,11 @@ The [classic monitoring rules](/managed/secure/application-security/vulnerabilit
 When you enable Application Security (Runtime Vulnerability Analytics or Runtime Application Protection), keep the following in mind:
 
 * **Consumption**:  
-  **Runtime Vulnerability Analytics and Runtime Application Protection** consume [GiB-hours](/managed/license/capabilities/application-security "Learn how Dynatrace Application Security monitoring consumption is calculated using the Dynatrace Platform Subscription model.") if you're using the [Dynatrace Platform Subscription (DPS) licensing model](/managed/license "About Dynatrace Platform Subscription (DPS), the licensing model for all Dynatrace capabilities."), or [Application Security units (ASUs)](/managed/license/monitoring-consumption-classic/application-security-units "Understand how Dynatrace Application Security and Runecast SPM consumption are calculated.") if you're using the [Dynatrace classic licensing](/managed/license/monitoring-consumption-classic "Understand how Dynatrace monitoring consumption is calculated for classic licensing.").
+  **Runtime Vulnerability Analytics and Runtime Application Protection** consume [GiB-hours](/managed/license/capabilities/application-security "Learn how Dynatrace Application Security monitoring consumption is calculated using the Dynatrace Platform Subscription model.") if you're using the [Dynatrace Platform Subscription (DPS) licensing model](/managed/license "Dynatrace Platform Subscription, capability rate cards, hybrid licensing, and previous license models."), or [Application Security units (ASUs)](/managed/license/classic-licensing/application-security-units "Understand how Dynatrace Application Security and Runecast SPM consumption are calculated.") if you're using the [Dynatrace classic licensing](/managed/license/monitoring-consumption-classic "Understand how Dynatrace classic monitoring consumption is calculated, including host units, DDUs, DEM units, and Application Security units.").
 * **Network bandwidth usage**:
 
-  + **Codeâlevel vulnerability detection and attack detection**: Expect a slight increase in network usage, depending on the number of monitored applications. In most cases, this overhead is negligible.
-  + **Thirdâparty vulnerability detection**: No additional process overhead is introduced.
+  + **Code‑level vulnerability detection and attack detection**: Expect a slight increase in network usage, depending on the number of monitored applications. In most cases, this overhead is negligible.
+  + **Third‑party vulnerability detection**: No additional process overhead is introduced.
 
 ### How can I disable security monitoring?
 
@@ -235,7 +234,7 @@ Go to **Security Overview**. In the **Host coverage** section, select **Monitore
 
 ### Why do I see a vulnerability on one host but not on another?
 
-Vulnerability detection depends on the data Dynatrace receives from each host. If a host is missing required instrumentation or configuration, Dynatrace may not be able to detect or confirm a vulnerability on that host. Common causes include missing OneAgent injection, autoâinjection disabled, outdated OneAgent versions, or unsupported runtimes.
+Vulnerability detection depends on the data Dynatrace receives from each host. If a host is missing required instrumentation or configuration, Dynatrace may not be able to detect or confirm a vulnerability on that host. Common causes include missing OneAgent injection, auto‑injection disabled, outdated OneAgent versions, or unsupported runtimes.
 
 ## Limit monitoring
 
@@ -246,7 +245,7 @@ You can:
 * [Create monitoring rules for third-party vulnerabilities](/managed/secure/application-security/vulnerability-analytics/third-party-vulnerabilities/define-monitoring-rules-tpv "Create, modify, and delete custom monitoring rules for Dynatrace-monitored processes.")
 * [Create monitoring rules for code-level vulnerabilities](/managed/secure/application-security/vulnerability-analytics/code-level-vulnerabilities/define-monitoring-rules-clv "Define rules based on specific process groups")
 
-Your custom rules override the global third-party vulnerability detection control setting. Any entity that doesn't match one of your rules will follow the global thirdâparty vulnerability detection setting.
+Your custom rules override the global third-party vulnerability detection control setting. Any entity that doesn't match one of your rules will follow the global third‑party vulnerability detection setting.
 
 ### Where can I find examples of monitoring rule configurations?
 
@@ -265,7 +264,7 @@ You can follow these example use cases:
 * [Monitor only the processes on specific hosts](/managed/secure/application-security/vulnerability-analytics/third-party-vulnerabilities/define-monitoring-rules-tpv#monitor-processes-specific-host "Create, modify, and delete custom monitoring rules for Dynatrace-monitored processes.")
 * [Monitor only processes running in a specific Kubernetes namespace](/managed/secure/application-security/vulnerability-analytics/third-party-vulnerabilities/define-monitoring-rules-tpv#processes-specific-namespace "Create, modify, and delete custom monitoring rules for Dynatrace-monitored processes.")
 
-These examples show how to disable global monitoring and then create resourceâattribute monitoring rules that selectively enable monitoring for the entities you choose.
+These examples show how to disable global monitoring and then create resource‑attribute monitoring rules that selectively enable monitoring for the entities you choose.
 
 ## Change status
 
@@ -509,9 +508,9 @@ In this case, a **Restart required** notification or symbol is displayed on
 
 ## Vulnerability feeds
 
-### What feeds does Dynatrace use for vulnerabilities?
+### What feeds does Dynatrace use for vulnerabilities and malicious code?
 
-To fetch data about vulnerabilities, Dynatrace Application Security uses either the [Dynatrace Vulnerability feedï»¿](https://dt-url.net/o303679) or [NVDï»¿](https://nvd.nist.gov/vuln), depending on the vulnerable component.
+To fetch data about vulnerabilities, Dynatrace Application Security uses either the [Dynatrace Vulnerability feed﻿](https://dt-url.net/o303679) or [NVD﻿](https://nvd.nist.gov/vuln), depending on the vulnerable component. Malicious code in packages is exclusively sourced from the [Dynatrace Vulnerability feed﻿](https://dt-url.net/o303679).
 
 For more information, see [Third-party vulnerability feeds](/managed/secure/application-security/vulnerability-analytics/vulnerability-evaluation#vulnerability-feeds "Explore the mechanism for generating third-party and code-level vulnerabilities in Dynatrace.").
 
@@ -546,26 +545,26 @@ In Runtime Application Protection, to determine an attacker's IP, Dynatrace veri
 
 ### What's the data retention period for vulnerabilities, events, and attacks?
 
-For information about how security-related data is stored in Dynatrace, see [Data retention periods](/managed/manage/data-privacy-and-security/data-privacy/data-retention-periods "Check retention times for various data types.").
+For information about how security-related data is stored in Dynatrace, see [Data retention periods](/managed/manage/data-privacy-and-security/data-privacy/data-retention-periods "Review default and configurable retention periods for service, RUM Classic, synthetic, Log Monitoring, metric, diagnostic, and security data in Dynatrace Managed.").
 
 ## Consumption
 
 ### How can I check how much my hosts consume?
 
-* If you're using [Dynatrace Platform Subscription](/managed/license "About Dynatrace Platform Subscription (DPS), the licensing model for all Dynatrace capabilities."), see
+* If you're using [Dynatrace Platform Subscription](/managed/license "Dynatrace Platform Subscription, capability rate cards, hybrid licensing, and previous license models."), see
 
   + [Calculate your consumption of Runtime Vulnerability Analytics](/managed/license/capabilities/application-security/runtime-vulnerability-analytics "Learn how your consumption of the Dynatrace Runtime Vulnerability Analytics (RVA) DPS capability is billed and charged.")
   + [Calculate your consumption of Runtime Application Protection](/managed/license/capabilities/application-security/runtime-application-protection "Learn how how your consumption of the Runtime Application Protection (RAP) DPS capability is billed and charged.")
   + [Calculate your consumption of Security Posture Management](/managed/license/capabilities/application-security/security-posture-management "Learn how your consumption of the Dynatrace Security Posture Management (SPM) DPS capability is billed and charged.")
-* If you're using [Dynatrace classic licensing](/managed/license/monitoring-consumption-classic "Understand how Dynatrace monitoring consumption is calculated for classic licensing."), see [How capabilities affect monitoring consumption](/managed/license/monitoring-consumption-classic/application-security-units#how-capabilities-affect-monitoring-consumption "Understand how Dynatrace Application Security and Runecast SPM consumption are calculated.").
+* If you're using [Dynatrace classic licensing](/managed/license/monitoring-consumption-classic "Understand how Dynatrace classic monitoring consumption is calculated, including host units, DDUs, DEM units, and Application Security units."), see [How capabilities affect monitoring consumption](/managed/license/classic-licensing/application-security-units#how-capabilities-affect-monitoring-consumption "Understand how Dynatrace Application Security and Runecast SPM consumption are calculated.").
 
 To see which hosts consume DPS/ASUs, in **Security Overview**, go to the **Host coverage** section for third-party and code-level vulnerabilities and select **Monitored hosts**. The resulting list of hosts are the hosts in your environment which consume DPS/ASUs.
 For more information, see [Host coverage](/managed/secure/application-security/vulnerability-analytics/application-security-overview#host-coverage "Get an overview of the security issues of your third-party libraries.").
 
 ### Why is Application Security still showing usage even though I disabled RVA?
 
-***I disabled Thirdâparty and Codeâlevel Vulnerability Analytics. My host shows 'Not analyzed', yet usage is still appearing in my subscription. Why?***
+***I disabled Third‑party and Code‑level Vulnerability Analytics. My host shows 'Not analyzed', yet usage is still appearing in my subscription. Why?***
 
-This behavior applies to both [Dynatrace classic licensing (ASU)](/managed/license/monitoring-consumption-classic/application-security-units#how-capabilities-affect-monitoring-consumption "Understand how Dynatrace Application Security and Runecast SPM consumption are calculated.") and [Dynatrace Platform Subscription (DPS)](/managed/license/capabilities/application-security/runtime-application-protection "Learn how how your consumption of the Runtime Application Protection (RAP) DPS capability is billed and charged.").
+This behavior applies to both [Dynatrace classic licensing (ASU)](/managed/license/classic-licensing/application-security-units#how-capabilities-affect-monitoring-consumption "Understand how Dynatrace Application Security and Runecast SPM consumption are calculated.") and [Dynatrace Platform Subscription (DPS)](/managed/license/capabilities/application-security/runtime-application-protection "Learn how how your consumption of the Runtime Application Protection (RAP) DPS capability is billed and charged.").
 
-Check whether Runtime Application Protection (RAP) is enabled. RAP depends on Runtime Vulnerability Assessment (RVA) to determine which vulnerability an attack attempts to exploit. Because RAP cannot operate without RVA, any host with RAP enabled will always consume ASUs/DPS for both RAP and RVAâeven if the global switches for thirdâparty or codeâlevel vulnerability detection are turned off.
+Check whether Runtime Application Protection (RAP) is enabled. RAP depends on Runtime Vulnerability Assessment (RVA) to determine which vulnerability an attack attempts to exploit. Because RAP cannot operate without RVA, any host with RAP enabled will always consume ASUs/DPS for both RAP and RVA—even if the global switches for third‑party or code‑level vulnerability detection are turned off.

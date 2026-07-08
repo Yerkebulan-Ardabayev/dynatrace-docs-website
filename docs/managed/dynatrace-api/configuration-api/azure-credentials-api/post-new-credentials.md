@@ -1,7 +1,6 @@
 ---
 title: Azure credentials API - POST new credentials
 source: https://docs.dynatrace.com/managed/dynatrace-api/configuration-api/azure-credentials-api/post-new-credentials
-scraped: 2026-05-12T11:16:28.596059
 ---
 
 # Azure credentials API - POST new credentials
@@ -50,10 +49,10 @@ Configuration of Azure app-level credentials.
 | key | string | The secret key associated with the application ID.  For security reasons, GET requests return this field as `null`.  Submit your key on creation or update of the configuration.  The field is **required** when creating a new credentials configuration. If the field is omitted during an update, the old value remains unaffected. | Required |
 | label | string | The unique name of the Azure credentials configuration.  Allowed characters are letters, numbers, and spaces. Also the special characters `.+-_` are allowed. | Required |
 | metadata | [ConfigurationMetadata](#openapi-definition-ConfigurationMetadata) | Metadata useful for debugging | Optional |
-| monitorOnlyExcludingTagPairs | [CloudTag[]](#openapi-definition-CloudTag) | A list of Azure tags to be excluded from monitoring.  You can specify up to 20 tags. A resource tagged with *any* of the specified tags will not be monitored.  Only applicable when the **monitorOnlyTaggedEntities** parameter is set to `true`. | Optional |
-| monitorOnlyTagPairs | [CloudTag[]](#openapi-definition-CloudTag) | A list of Azure tags to be monitored.  You can specify up to 20 tags. A resource tagged with *any* of the specified tags is monitored.  Only applicable when the **monitorOnlyTaggedEntities** parameter is set to `true`. | Optional |
+| monitorOnlyExcludingTagPairs | [CloudTag](#openapi-definition-CloudTag)[] | A list of Azure tags to be excluded from monitoring.  You can specify up to 20 tags. A resource tagged with *any* of the specified tags will not be monitored.  Only applicable when the **monitorOnlyTaggedEntities** parameter is set to `true`. | Optional |
+| monitorOnlyTagPairs | [CloudTag](#openapi-definition-CloudTag)[] | A list of Azure tags to be monitored.  You can specify up to 20 tags. A resource tagged with *any* of the specified tags is monitored.  Only applicable when the **monitorOnlyTaggedEntities** parameter is set to `true`. | Optional |
 | monitorOnlyTaggedEntities | boolean | Monitor only resources that have specified Azure tags (`true`) or all resources (`false`). | Required |
-| supportingServices | [AzureSupportingService[]](#openapi-definition-AzureSupportingService) | **Deprecated**. To manage services use [/azure/credentials/{id}/servicesï»¿](https://dt-url.net/1w62s27) operation. Built-in services are not supported here.  A list of Azure services to be monitored. Available services are listed by [/azure/supportedServicesï»¿](https://dt-url.net/wt42sdq) operation.  For each service, a list of metrics and dimensions can be specified. A list of supported metrics and dimensions for a given service can be checked in [documentationï»¿](https://dt-url.net/kx2351b).  List of metrics can be skipped (set to null), resulting in recommended (default) set of metrics and dimensions being chosen for monitoring. | Optional |
+| supportingServices | [AzureSupportingService](#openapi-definition-AzureSupportingService)[] | **Deprecated**. To manage services use [/azure/credentials/{id}/services﻿](https://dt-url.net/1w62s27) operation. Built-in services are not supported here.  A list of Azure services to be monitored. Available services are listed by [/azure/supportedServices﻿](https://dt-url.net/wt42sdq) operation.  For each service, a list of metrics and dimensions can be specified. A list of supported metrics and dimensions for a given service can be checked in [documentation﻿](https://dt-url.net/kx2351b).  List of metrics can be skipped (set to null), resulting in recommended (default) set of metrics and dimensions being chosen for monitoring. | Optional |
 
 #### The `ConfigurationMetadata` object
 
@@ -80,7 +79,7 @@ A service to be monitored.
 
 | Element | Type | Description | Required |
 | --- | --- | --- | --- |
-| monitoredMetrics | [AzureMonitoredMetric[]](#openapi-definition-AzureMonitoredMetric) | A list of metrics to be monitored for this service. It must include all the recommended metrics. If the list is null then recommended list of metrics for this service will be monitored. | Optional |
+| monitoredMetrics | [AzureMonitoredMetric](#openapi-definition-AzureMonitoredMetric)[] | A list of metrics to be monitored for this service. It must include all the recommended metrics. If the list is null then recommended list of metrics for this service will be monitored. | Optional |
 | name | string | The name of the service. Valid supported service names can be discovered using /azure/supportedServices restAPI | Required |
 
 #### The `AzureMonitoredMetric` object
@@ -300,7 +299,7 @@ The short representation of a Dynatrace entity.
 | Element | Type | Description |
 | --- | --- | --- |
 | code | integer | The HTTP status code |
-| constraintViolations | [ConstraintViolation[]](#openapi-definition-ConstraintViolation) | A list of constraint violations |
+| constraintViolations | [ConstraintViolation](#openapi-definition-ConstraintViolation)[] | A list of constraint violations |
 | message | string | The error message |
 
 #### The `ConstraintViolation` object
@@ -431,7 +430,7 @@ To learn how to obtain and use it, see [Tokens and authentication](/managed/disc
 | Element | Type | Description |
 | --- | --- | --- |
 | code | integer | The HTTP status code |
-| constraintViolations | [ConstraintViolation[]](#openapi-definition-ConstraintViolation) | A list of constraint violations |
+| constraintViolations | [ConstraintViolation](#openapi-definition-ConstraintViolation)[] | A list of constraint violations |
 | message | string | The error message |
 
 #### The `ConstraintViolation` object

@@ -1,7 +1,6 @@
 ---
 title: Network zones API - PUT a network zone
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/network-zones/put-network-zone
-scraped: 2026-05-12T11:52:21.058866
 ---
 
 # Network zones API - PUT a network zone
@@ -44,7 +43,7 @@ Configuration of a network zone.
 | id | string | The ID of the network zone. | Optional |
 | numOfConfiguredActiveGates | integer | The number of ActiveGates in the network zone. | Optional |
 | numOfConfiguredOneAgents | integer | The number of OneAgents that are configured to use the network zone as primary. | Optional |
-| numOfOneAgentsFromOtherZones | integer | The number of OneAgents from other network zones that are using ActiveGates in the network zone.  This is a fraction ofÂ **numOfOneAgentsUsing**.  One possible reason for switching to another zone is that a firewall is preventing a OneAgent from connecting to any ActiveGate in the preferred network zone. | Optional |
+| numOfOneAgentsFromOtherZones | integer | The number of OneAgents from other network zones that are using ActiveGates in the network zone.  This is a fraction of **numOfOneAgentsUsing**.  One possible reason for switching to another zone is that a firewall is preventing a OneAgent from connecting to any ActiveGate in the preferred network zone. | Optional |
 | numOfOneAgentsUsing | integer | The number of OneAgents that are using ActiveGates in the network zone. | Optional |
 | overridesGlobal | boolean | Indicates if a global network zone is overridden (managed only). | Optional |
 | scope | string | Specifies the scope of the network zone (managed only). | Optional |
@@ -144,7 +143,7 @@ The short representation of a Dynatrace entity.
 | Element | Type | Description |
 | --- | --- | --- |
 | code | integer | The HTTP status code |
-| constraintViolations | [ConstraintViolation[]](#openapi-definition-ConstraintViolation) | A list of constraint violations |
+| constraintViolations | [ConstraintViolation](#openapi-definition-ConstraintViolation)[] | A list of constraint violations |
 | message | string | The error message |
 
 #### The `ConstraintViolation` object

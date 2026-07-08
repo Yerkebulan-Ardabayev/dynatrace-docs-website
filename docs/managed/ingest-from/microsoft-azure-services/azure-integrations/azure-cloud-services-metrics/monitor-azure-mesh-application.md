@@ -1,7 +1,6 @@
 ---
 title: Azure Mesh Application monitoring
 source: https://docs.dynatrace.com/managed/ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics/monitor-azure-mesh-application
-scraped: 2026-05-12T11:27:15.401713
 ---
 
 # Azure Mesh Application monitoring
@@ -12,7 +11,7 @@ scraped: 2026-05-12T11:27:15.401713
 * 1-min read
 * Published Sep 10, 2020
 
-This service has been retired by Microsoft. For more information, see the [Microsoft announcement](https://azure.microsoft.com/en-us/updates/azure-service-fabric-mesh-preview-retirement/).
+This service has been retired by Microsoft. For more information, see the [Microsoft announcement﻿](https://azure.microsoft.com/en-us/updates/azure-service-fabric-mesh-preview-retirement/).
 
 Dynatrace ingests metrics from Azure Metrics API for Azure Mesh Application. You can view metrics for each service instance, split metrics into multiple dimensions, and create custom charts that you can pin to your dashboards.
 

@@ -1,7 +1,6 @@
 ---
 title: Role-based permissions
 source: https://docs.dynatrace.com/managed/manage/identity-access-management/permission-management/role-based-permissions
-scraped: 2026-05-12T11:08:46.345863
 ---
 
 # Role-based permissions
@@ -20,7 +19,7 @@ Dynatrace version 1.252+
 
 Starting with Dynatrace version 1.252, you can manage role-based access using policies. For more information, see [Upgrade role-based permissions to Dynatrace IAM policies](/managed/manage/identity-access-management/permission-management/manage-user-permissions-policies/advanced/migrate-roles "Manage access to a Dynatrace environment using security policies.").
 
-Go to [**Account Management**ï»¿](https://myaccount.dynatrace.com/)âsee [Account Management](/managed/manage/account-management "Manage your Dynatrace license, accounts, platform adoption, and environment health.") for more information.
+Go to [**Account Management**﻿](https://myaccount.dynatrace.com/)—see [Account Management](/managed/manage/account-management "Manage your Dynatrace license, accounts, platform adoption, and environment health.") for more information.
 
 ## Account permissions
 
@@ -44,7 +43,7 @@ Dynatrace provides the following environment-level permissions. Select all that 
 
   The **View logs** role bypasses any existing conditional access you may have defined in policy boundaries through the [storage logs permission](/managed/manage/identity-access-management/permission-management/manage-user-permissions-policies/advanced/iam-policystatements#storage-logs-read "Complete reference of IAM policies and corresponding conditions across all Dynatrace services."). To have those conditions adhered to, consider expressing the same **View logs** permissions within a policy statement leveraging the equivalent [environment log viewer permission](/managed/manage/identity-access-management/permission-management/manage-user-permissions-policies/advanced/iam-policystatements#environment-roles-logviewer "Complete reference of IAM policies and corresponding conditions across all Dynatrace services.").
 
-* **Replay session data with masking:** Allows replay of [recorded user sessions](/managed/observe/digital-experience/session-replay "Learn how you can use Session Replay to better understand and troubleshoot errors experienced by your customers.") with [playback masking rules](/managed/observe/digital-experience/session-replay/configure-session-replay-web#masking-preset-options "Configure monitoring consumption and data privacy settings for Session Replay.") applied at the time of replay. Note that any data masked during recording is never captured and, therefore, always masked during replay.
+* **Replay session data with masking:** Allows replay of [recorded user sessions](/managed/observe/digital-experience/session-replay "Learn how you can use Session Replay to better understand and troubleshoot errors experienced by your customers.") with [playback masking rules](/managed/observe/digital-experience/session-replay/configure-session-replay-web#masking-preset-options "Configure monitoring consumption and data privacy settings for Session Replay Classic.") applied at the time of replay. Note that any data masked during recording is never captured and, therefore, always masked during replay.
 * **Replay session data without masking:** Allows replay of recorded user sessions without playback masking rules applied. Note that any data masked during recording is always masked during replay.
 
 * **Install OneAgent**: Allows download of OneAgent and installation on hosts. To change/edit settings, you must provide the **Manage monitoring settings** permission.
@@ -66,11 +65,11 @@ Dynatrace provides the following management-zone-level permissions. Select all t
 
   **View environment** permission is required for any of the other management zone permissions, so **View environment** is automatically selected for the management zone when you select any other management zone permission.
 
-* **View sensitive request data:** Allows viewing of potentially [personal data captured by Dynatrace](/managed/manage/data-privacy-and-security/data-privacy/personal-data-captured-by-dynatrace "Find out what types of end-user data may be captured during Dynatrace monitoring and the methods that are available for masking personal end-user data.") for the entities within the management zone. Users who do not have this permission see that the data point exists but the personal data is masked by asterisks (`*****`)âsee also [**Environment permissions**](#environment) above.
+* **View sensitive request data:** Allows viewing of potentially [personal data captured by Dynatrace](/managed/manage/data-privacy-and-security/data-privacy/personal-data-captured-by-dynatrace "Find out what types of end-user data may be captured during Dynatrace monitoring and the methods that are available for masking personal end-user data.") for the entities within the management zone. Users who do not have this permission see that the data point exists but the personal data is masked by asterisks (`*****`)—see also [**Environment permissions**](#environment) above.
 
-* **View logs:** Allows access to sensitive log file data in the **Logs** tab for hosts explicitly included within the management zone. Note that it is not sufficient to provide management-zone-level access to the host groups that the hosts belong toâsee [Management zone rules](/managed/manage/identity-access-management/permission-management/management-zones/management-zone-rules "Define rules to limit the entities accessible within a management zone.") for details.
+* **View logs:** Allows access to sensitive log file data in the **Logs** tab for hosts explicitly included within the management zone. Note that it is not sufficient to provide management-zone-level access to the host groups that the hosts belong to—see [Management zone rules](/managed/manage/identity-access-management/permission-management/management-zones/management-zone-rules "Define rules to limit the entities accessible within a management zone.") for details.
 
-* **Replay session data with masking:** Allows replay of [recorded user sessions](/managed/observe/digital-experience/session-replay "Learn how you can use Session Replay to better understand and troubleshoot errors experienced by your customers.") with [playback masking rules](/managed/observe/digital-experience/session-replay/configure-session-replay-web#masking-preset-options "Configure monitoring consumption and data privacy settings for Session Replay.") applied at the time of replay. Note that any data masked during recording is never captured and, therefore, always masked during replay.
+* **Replay session data with masking:** Allows replay of [recorded user sessions](/managed/observe/digital-experience/session-replay "Learn how you can use Session Replay to better understand and troubleshoot errors experienced by your customers.") with [playback masking rules](/managed/observe/digital-experience/session-replay/configure-session-replay-web#masking-preset-options "Configure monitoring consumption and data privacy settings for Session Replay Classic.") applied at the time of replay. Note that any data masked during recording is never captured and, therefore, always masked during replay.
 * **Replay session data without masking:** Allows replay of recorded user sessions without playback masking rules applied. Note that any data masked during recording is always masked during replay.
 
   For Session Replay permissions to work within a management zone, the user also needs to have access to the requisite applications.

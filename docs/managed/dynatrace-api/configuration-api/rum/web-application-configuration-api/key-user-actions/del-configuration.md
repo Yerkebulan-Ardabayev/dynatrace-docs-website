@@ -1,7 +1,6 @@
 ---
 title: Web application configuration API - DELETE a key user action
 source: https://docs.dynatrace.com/managed/dynatrace-api/configuration-api/rum/web-application-configuration-api/key-user-actions/del-configuration
-scraped: 2026-05-12T11:16:57.861868
 ---
 
 # Web application configuration API - DELETE a key user action
@@ -41,4 +40,4 @@ To learn how to obtain and use it, see [Tokens and authentication](/managed/disc
 
 ## Related topics
 
-* [User actions](/managed/observe/digital-experience/rum-concepts/user-actions "Learn what user actions are and how they help you understand what users do with your application.")
+* [User actions in RUM Classic](/managed/observe/digital-experience/rum-classic/rum-concepts/user-actions "Learn what user actions are and how they help you understand what users do with your application.")

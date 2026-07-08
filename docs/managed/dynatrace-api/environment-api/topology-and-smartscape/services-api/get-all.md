@@ -1,7 +1,6 @@
 ---
 title: Services API - GET all services
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/topology-and-smartscape/services-api/get-all
-scraped: 2026-05-12T12:02:11.343542
 ---
 
 # Services API - GET all services
@@ -66,7 +65,7 @@ The timeframe is restricted to a **maximum period of 3 days**.
 
 | Code | Type | Description |
 | --- | --- | --- |
-| **200** | [Service[]](#openapi-definition-Service) | Success |
+| **200** | [Service](#openapi-definition-Service)[] | Success |
 | **400** | [ErrorEnvelope](#openapi-definition-ErrorEnvelope) | Failed. The input is invalid. |
 | **4XX** | [ErrorEnvelope](#openapi-definition-ErrorEnvelope) | Client side error. |
 | **5XX** | [ErrorEnvelope](#openapi-definition-ErrorEnvelope) | Server side error. |
@@ -81,7 +80,6 @@ The timeframe is restricted to a **maximum period of 3 days**.
 | --- | --- | --- |
 | agentTechnologyType | string | -The element can hold these values * `APACHE` * `DOTNET` * `DUMPPROC` * `GO` * `IIS` * `JAVA` * `LOG_ANALYTICS` * `N/A` * `NET` * `NETTRACER` * `NGINX` * `NODEJS` * `OPENTRACINGNATIVE` * `OS` * `PHP` * `PLUGIN` * `PROCESS` * `PYTHON` * `REMOTE_PLUGIN` * `RUBY` * `SDK` * `UPDATER` * `VARNISH` * `WSMB` * `Z` |
 | akkaActorSystem | string | The services of the akka actor system. |
-| attributes | object | - |
 | className | string | - |
 | contextRoot | string | - |
 | customizedName | string | The customized name of the entity |
@@ -100,7 +98,7 @@ The timeframe is restricted to a **maximum period of 3 days**.
 | ipAddresses | string[] | - |
 | isExternalService | boolean | - |
 | lastSeenTimestamp | integer | The timestamp of when the entity was last detected, in UTC milliseconds |
-| managementZones | [EntityShortRepresentation[]](#openapi-definition-EntityShortRepresentation) | The management zones that the entity is part of. |
+| managementZones | [EntityShortRepresentation](#openapi-definition-EntityShortRepresentation)[] | The management zones that the entity is part of. |
 | path | string | - |
 | port | integer | - |
 | publicDomainName | object | Public domain name. |
@@ -109,17 +107,13 @@ The timeframe is restricted to a **maximum period of 3 days**.
 | serviceDetectionAttributes | object | Attributes that contributed to the service id. |
 | serviceTechnologyTypes | string[] | - |
 | serviceType | string | -The element can hold these values * `Cics` * `CicsInteraction` * `CustomApplication` * `Database` * `EnterpriseServiceBus` * `External` * `Ims` * `ImsInteraction` * `Messaging` * `Method` * `Mobile` * `Process` * `QueueInteraction` * `QueueListener` * `RemoteCall` * `Rmi` * `SaasVendor` * `Span` * `Unified` * `Unknown` * `WebRequest` * `WebService` * `WebSite` * `ZosConnect` |
-| softwareTechnologies | [TechnologyInfo[]](#openapi-definition-TechnologyInfo) | - |
-| tags | [TagInfo[]](#openapi-definition-TagInfo) | The list of entity tags. |
+| softwareTechnologies | [TechnologyInfo](#openapi-definition-TechnologyInfo)[] | - |
+| tags | [TagInfo](#openapi-definition-TagInfo)[] | The list of entity tags. |
 | toRelationships | object | - |
 | webApplicationId | string | - |
 | webServerName | string | - |
 | webServiceName | string | - |
 | webServiceNamespace | string | - |
-
-#### The `AnyValue` object
-
-A schema representing an arbitrary value type.
 
 #### The `EntityShortRepresentation` object
 
@@ -160,7 +154,7 @@ Tag of a Dynatrace entity.
 | Element | Type | Description |
 | --- | --- | --- |
 | code | integer | The HTTP status code |
-| constraintViolations | [ConstraintViolation[]](#openapi-definition-ConstraintViolation) | A list of constraint violations |
+| constraintViolations | [ConstraintViolation](#openapi-definition-ConstraintViolation)[] | A list of constraint violations |
 | message | string | The error message |
 
 #### The `ConstraintViolation` object
@@ -190,18 +184,6 @@ A list of constraint violations
 
 
 "akkaActorSystem": "string",
-
-
-
-"attributes": {
-
-
-
-"empty": true
-
-
-
-},
 
 
 

@@ -1,7 +1,6 @@
 ---
 title: Vulnarabilities API - POST mute remediation items
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/application-security/vulnerabilities/post-remediation-items-mute
-scraped: 2026-05-12T11:59:09.277908
 ---
 
 # Vulnarabilities API - POST mute remediation items
@@ -95,7 +94,7 @@ Response of muting several remediation items.
 
 | Element | Type | Description |
 | --- | --- | --- |
-| summary | [RemediationItemMutingSummary[]](#openapi-definition-RemediationItemMutingSummary) | The summary of which remediation items were muted and which already were muted previously. |
+| summary | [RemediationItemMutingSummary](#openapi-definition-RemediationItemMutingSummary)[] | The summary of which remediation items were muted and which already were muted previously. |
 
 #### The `RemediationItemMutingSummary` object
 
@@ -118,7 +117,7 @@ Summary of (un-)muting a remediation item.
 | Element | Type | Description |
 | --- | --- | --- |
 | code | integer | The HTTP status code |
-| constraintViolations | [ConstraintViolation[]](#openapi-definition-ConstraintViolation) | A list of constraint violations |
+| constraintViolations | [ConstraintViolation](#openapi-definition-ConstraintViolation)[] | A list of constraint violations |
 | message | string | The error message |
 
 #### The `ConstraintViolation` object

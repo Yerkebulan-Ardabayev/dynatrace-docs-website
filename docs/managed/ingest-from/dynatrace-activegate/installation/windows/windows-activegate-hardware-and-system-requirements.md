@@ -1,7 +1,6 @@
 ---
 title: Hardware and system requirements for routing/monitoring ActiveGates on Windows
 source: https://docs.dynatrace.com/managed/ingest-from/dynatrace-activegate/installation/windows/windows-activegate-hardware-and-system-requirements
-scraped: 2026-05-12T11:08:08.991629
 ---
 
 # Hardware and system requirements for routing/monitoring ActiveGates on Windows
@@ -9,7 +8,7 @@ scraped: 2026-05-12T11:08:08.991629
 # Hardware and system requirements for routing/monitoring ActiveGates on Windows
 
 * 2-min read
-* Published Oct 09, 2018
+* Updated on May 07, 2026
 
 ### Hardware and system requirements: Routing OneAgent traffic to Dynatrace, monitoring cloud environments, or monitoring remote technologies with extensions
 
@@ -28,10 +27,10 @@ Utilizing ActiveGate on a dedicated system not only minimizes the risk of compro
 You need a machine dedicated to ActiveGate that has:
 
 * 4 GB free disk space for ActiveGate and Extensions installation, configuration, and logs for auto update purposes.
-* 4 GB for ActiveGate and OneAgent cached installers and container imagesâif such will need to be stored.
-* Space for dump filesâif such will need to be stored. This functionality is turned off by default, but can be turned on in ActiveGate configuration. The maximum size of the storage space is [configurable](/managed/observe/application-observability/profiling-and-optimization/memory-dump-analysis/configure-an-activegate-for-memory-dump-storage "Learn how to enable storage of memory dumps on an ActiveGate.")â100 GB by default.
+* 4 GB for ActiveGate and OneAgent cached installers and container images—if such will need to be stored.
+* Space for dump files—if such will need to be stored. This functionality is turned off by default, but can be turned on in ActiveGate configuration. The maximum size of the storage space is [configurable](/managed/observe/application-observability/profiling-and-optimization/memory-dump-analysis/configure-an-activegate-for-memory-dump-storage "Learn how to enable storage of memory dumps on an ActiveGate.")—100 GB by default.
 * 600 MB + 1.5 GB (buffer) of free disk space for Extension Execution Controller logs retransmission persistence file.
-* Space for extension uploadsâdepending on extensions used.
+* Space for extension uploads—depending on extensions used.
 * 2 GB RAM (4 GB recommended).
 * 1 dual core processor.
 
@@ -44,16 +43,16 @@ For large environments, you may need to use a machine with additional CPU and me
 
 | **Top-level directory** | **Disk space requirements** |
 | --- | --- |
-| ActiveGate and autoupdater executable files, libraries, and related files  `%PROGRAMFILES%\dynatrace\gateway`  relative to installation parameter: `<INSTALL>\gateway`  also configurable in GUI during installation | 300 MB |
+| ActiveGate and autoupdater executable files, libraries, and related files  `%PROGRAMFILES%\dynatrace\gateway`  relative to installation parameter: `<INSTALL>\gateway`  also configurable in GUI during installation | 600 MB |
 | ActiveGate configuration and related directories  For Environment ActiveGate, it also contains Extensions configuration  `%PROGRAMDATA%\dynatrace` | 2 MB |
-| For Environment ActiveGate only: Extensions executable files, libraries, and related files `%PROGRAMFILES%\dynatrace\remotepluginmodule`  relative to installation parameter: `<INSTALL>\remotepluginmodule`  also configurable in GUI during installation | 850 MB |
+| For Environment ActiveGate only: Extensions executable files, libraries, and related files `%PROGRAMFILES%\dynatrace\remotepluginmodule`  relative to installation parameter: `<INSTALL>\remotepluginmodule`  also configurable in GUI during installation | 1.2 GB |
 
 **Space allocation per directory, for ActiveGate operation:**  
 **(for more detailed allocation, refer to [ActiveGate directories](/managed/ingest-from/dynatrace-activegate/configuration/where-can-i-find-activegate-files "Find out where ActiveGate files are stored on Windows and Linux systems."))**
 
 | **Top-level directory** | **Disk space requirements** |
 | --- | --- |
-| ActiveGate and autoupdater logs  ActiveGate packages directory for auto-update installer downloads  `%PROGRAMDATA%\dynatrace` | 1.2 GB |
+| ActiveGate and autoupdater logs  ActiveGate packages directory for auto-update installer downloads  `%PROGRAMDATA%\dynatrace` | 1.8 GB |
 | ActiveGate temporary files  `%PROGRAMDATA%\dynatrace\gateway\tmp` | 4 GB (including 3 GB for cached OneAgent installers and container images) |
 | Dump files uploaded to ActiveGate by OneAgent  `%PROGRAMDATA%\dynatrace\gateway\dump` | Functionality off by default. When activated, can take configurable maximum size: default 100 GB. |
 | For Environment ActiveGate only: ActiveGate Extensions logs, cache, run-time work area  `%PROGRAMDATA%\dynatrace\remotepluginmodule` | 2 GB |

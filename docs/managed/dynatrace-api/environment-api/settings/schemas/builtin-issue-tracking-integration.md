@@ -1,7 +1,6 @@
 ---
 title: Settings API - Issue-tracking for releases schema table
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/settings/schemas/builtin-issue-tracking-integration
-scraped: 2026-05-12T11:46:09.191739
 ---
 
 # Settings API - Issue-tracking for releases schema table
@@ -12,7 +11,7 @@ scraped: 2026-05-12T11:46:09.191739
 
 ### Issue-tracking for releases (`builtin:issue-tracking.integration)`
 
-Query any issue-tracking system to pull issue statistics for monitored entities into Dynatrace for release analysis. For details, see [Issue-tracking integrationï»¿](https://dt-url.net/releasesissuetracker).
+Query any issue-tracking system to pull issue statistics for monitored entities into Dynatrace for release analysis. For details, see [Issue-tracking integration﻿](https://dt-url.net/releasesissuetracker).
 
 | Schema ID | Schema groups | Scope |
 | --- | --- | --- |

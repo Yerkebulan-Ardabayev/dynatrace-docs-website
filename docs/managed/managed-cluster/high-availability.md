@@ -1,48 +1,39 @@
 ---
 title: Premium High Availability
 source: https://docs.dynatrace.com/managed/managed-cluster/high-availability
-scraped: 2026-05-12T11:11:12.647346
 ---
 
 # Premium High Availability
 
 # Premium High Availability
 
-* Explanation
-* 3-min read
-* Published Mar 23, 2022
+* 1-min read
+* Updated on Jun 15, 2026
 
-Dynatrace Managed allows for high-availability deployments across single or multiple data centers that consist of multiple, equally important nodes that run the same services.
+Review Dynatrace Managed high availability options and choose between Premium High Availability across data centers and rack-aware deployment across fault domains. Use the following pages to compare topologies, add data centers, convert deployments, and recover from outages.
 
-To achieve optimal failover deployments, follow these guidelines.
+## Premium High Availability
 
-## Redundancy
+[### Multi-data centers
 
-Plan to deploy a minimum of three Managed Cluster nodes. All nodes automatically replicate data across nodes, so there are typically two replicas in addition to the primary shard. The latency between nodes should be around 10 ms or less.
+Understand how Premium High Availability (PHA) uses redundancy, hardware placement, capacity planning, data replication, and automatic failover across data centers.](/managed/managed-cluster/high-availability/multi-data-centers "Understand how Dynatrace Managed Premium High Availability provides failover, data resilience, and data routing across data centers.")[### Add a data center
 
-The entire configuration of the Managed Cluster and its environments (including all events, user sessions, and metrics) is distributed across all nodes in the Managed Cluster, with two copies of the data maintained. This ensures that Dynatrace can continue to operate fully even after a node's loss. The Managed Cluster's performance and availability might be impacted by the loss of two or more nodes, depending on the data distribution and the consistency level required for the data.
+Replicate Managed Cluster nodes across two data centers and prepare Cassandra, Elasticsearch, and server components for PHA.](/managed/managed-cluster/high-availability/add-data-center "Learn how to replicate Managed Cluster nodes across two data centers to set up a Premium High Availability deployment with cross-data center replication.")[### Multi-data center failover
 
-[Log Monitoring](/managed/analyze-explore-automate/log-monitoring "Learn how to enable Log Monitoring, the insights that Log Monitoring can provide, and more.") event data is replicated in the Elasticsearch store to achieve high availability and optimize storage cost. As a result, if a node goes down, Dynatrace has a copy stored on the other node. However, the failure of two nodes makes some log events unavailable. If the nodes go back up, the data will be available again. Otherwise, the data is lost.
+Review how PHA detects Elasticsearch and Cassandra node outages, routes failover decisions, and restores service after recovery.](/managed/managed-cluster/high-availability/failover "Learn how the Premium High Availability multi-data center failover mechanism detects node outages and transfers responsibility to a healthy data center.")[### Recover a data center from another data center
 
-Raw transaction data (call stacks, database statements, code-level visibility, and so on) isn't replicated across nodes. It's evenly distributed across all nodes. As a result, in the event of a node failure, Dynatrace can accurately estimate the missing data. This is possible because this data is typically short-lived, and the high volume of raw data that Dynatrace collects ensures that each node still has a large enough data set even if a node isn't available for some time.
+Recover a data center in a PHA deployment by using another data center as the recovery source.](/managed/managed-cluster/high-availability/recover-from-data-center "Recover a data center when Premium High Availability can't repair it within 72 hours by restoring or recreating it from another data center.")[### Recover a data center from backup
 
-If you plan to achieve regional fault-tolerance (where all Managed Cluster nodes in one location domain can fail), distribute Managed Cluster nodes across separate physical locations using one of the following options:
+Recover a lost data center from backup and restore the data center topology in a multi-data center deployment.](/managed/managed-cluster/high-availability/recover-from-backup "Learn how to restore a Premium High Availability data center from backup in a Dynatrace Managed multi-DC deployment after a data center loss.")[### Rebuild a data center
 
-* Two locations can only be implemented with [High availability for multi-data centers](/managed/managed-cluster/high-availability/premium-high-availability "Learn how Dynatrace Premium High Availability provides near-zero downtime and data resilience through multi-data-center deployments for Managed Clusters.").
-* Three low-latency locations can be implemented with [Rack-aware Managed deployment](/managed/managed-cluster/high-availability/rack-awareness "Understand the steps required to create a rack-aware Dynatrace Managed deployment.").
-* Six locations can be implemented with High availability for multi-data centers and rack-aware Managed deployment in each data center.
+Rebuild a lost data center, reinstall nodes, migrate data stores, and restore replication across both data centers.](/managed/managed-cluster/high-availability/rebuild-data-center "Learn how to rebuild a lost data center in a Dynatrace Managed Premium High Availability deployment and restore replication across both data centers.")
 
-The replication factor of three ensures that each location has all the metric and event data.
+## Rack-aware deployment
 
-For Dynatrace Managed installations that are deployed across globally distributed data centers (with latency higher than 10 ms), you need Premium High Availability, which provides fully automatic failover capabilities in cases where an entire data center experiences an outage. This extends the existing high availability capabilities of Dynatrace Managed to provide geographic redundancy for globally distributed enterprises that need to run critically important services in a turnkey manner without depending on external replication or load balancing solutions.  
-See [High availability for multi-data centers](/managed/managed-cluster/high-availability/premium-high-availability "Learn how Dynatrace Premium High Availability provides near-zero downtime and data resilience through multi-data-center deployments for Managed Clusters.").
+[### Rack-aware deployment
 
-## Hardware
+Learn how rack-aware deployments distribute nodes across fault domains, reduce data loss risk, and complement PHA topologies.](/managed/managed-cluster/high-availability/rack-awareness "Learn how rack-aware deployment groups Dynatrace Managed Cluster nodes into three fault domains to ensure resilience against a full rack outage and data loss.")[### Rack-aware conversion using replication
 
-To prevent configuration, metrics, and logs data loss, deploy each node on a separate host. Deploy nodes on hardware with the same characteristics â especially disk, CPU, and RAM â to minimize performance degradation when some nodes are unavailable. Only the data on the failed machine is affected by a hardware failure. Metrics data and configuration are not affected because all nodes replicate them. The data stored on that node only â distributed traces and session replays â is lost. However, a representative count is available on other nodes. Performance degradation is minimized because all nodes operate on the same hardware type with an evenly distributed workload.
+Convert a Managed Cluster to a rack-aware deployment using the expansion method when you can add capacity before migration.](/managed/managed-cluster/high-availability/rack-aware-replication "Learn how to convert a Dynatrace Managed Cluster to a rack-aware deployment using the replication method, including preparation and node migration steps.")[### Rack-aware conversion using restore
 
-## Processing capacity
-
-Build your Managed Cluster with additional capacity and possible node failure in mind. Managed Clusters that operate at 100% of their processing capacity have no capacity to compensate for a lost node and are susceptible to dropping data in the event of a node failure. Deployments planned for node failure should have a processing capacity one-third higher than their typical utilization.
-
-If a node fails, the NGINX that is load-balancing the system automatically redirects all OneAgent traffic to the remaining working nodes, and there is no need for user action other than replacing the failed node.
+Convert a Managed Cluster to a rack-aware deployment using the restore method when you need to rebuild from restored data.](/managed/managed-cluster/high-availability/rack-aware-restore "Learn how to convert a Dynatrace Managed Cluster to rack-aware topology using the backup and restore method, including preparation and installer parameters.")

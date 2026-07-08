@@ -1,7 +1,6 @@
 ---
 title: Compute histogram summaries with the OTel Collector
 source: https://docs.dynatrace.com/managed/ingest-from/opentelemetry/collector/use-cases/histograms
-scraped: 2026-05-12T12:10:42.304439
 ---
 
 # Compute histogram summaries with the OTel Collector
@@ -20,7 +19,7 @@ The following configuration example shows how to use the Collector to compute an
 
 ## Prerequisites
 
-* One of the following Collector distributions with the [transformï»¿](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.151.0/processor/transformprocessor) and [filterï»¿](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.151.0/processor/filterprocessor) processors:
+* One of the following Collector distributions with the [transform﻿](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.155.0/processor/transformprocessor) and [filter﻿](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.155.0/processor/filterprocessor) processors:
 
   + The [Dynatrace OTel Collector](/managed/ingest-from/opentelemetry/collector#dt-collector-dist "Learn how to use the OpenTelemetry Collector, including the Dynatrace OTel Collector, to ingest telemetry from OpenTelemetry.")
   + OpenTelemetry [Contrib](/managed/ingest-from/opentelemetry/collector#collector-contrib "Learn how to use the OpenTelemetry Collector, including the Dynatrace OTel Collector, to ingest telemetry from OpenTelemetry.")
@@ -184,17 +183,17 @@ Under `receivers`, we specify the standard `otlp` receiver as active receiver co
 
 Under `processors`, we configure the following two processor instances:
 
-* [`transform`ï»¿](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.151.0/processor/transformprocessor), to compute the desired sum and count values of the histograms:
+* [`transform`﻿](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.155.0/processor/transformprocessor), to compute the desired sum and count values of the histograms:
 
-  + We first use the function [`extract_count_metric`ï»¿](https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/v0.151.0/processor/transformprocessor/README.md#extract_count_metric) to compute the number of values in each histogram bucket.
-  + Then, we use the function [`extract_sum_metric`ï»¿](https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/v0.151.0/processor/transformprocessor/README.md#extract_sum_metric) to compute the total sum of all of its values and convert it to a gauge using [`convert_sum_to_gauge`ï»¿](https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/v0.151.0/processor/transformprocessor/README.md#convert_sum_to_gauge).
-* [`filter`ï»¿](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.151.0/processor/filterprocessor), to drop the existing histogram buckets (based on `type`) and avoid histogram-related error messages.
+  + We first use the function [`extract_count_metric`﻿](https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/v0.155.0/processor/transformprocessor/README.md#extract_count_metric) to compute the number of values in each histogram bucket.
+  + Then, we use the function [`extract_sum_metric`﻿](https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/v0.155.0/processor/transformprocessor/README.md#extract_sum_metric) to compute the total sum of all of its values and convert it to a gauge using [`convert_sum_to_gauge`﻿](https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/v0.155.0/processor/transformprocessor/README.md#convert_sum_to_gauge).
+* [`filter`﻿](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.155.0/processor/filterprocessor), to drop the existing histogram buckets (based on `type`) and avoid histogram-related error messages.
 
 With this configuration, the Collector drops histogram metrics and creates in their place two new metrics for the sum and item count of each respective histogram.
 
 ### Exporters
 
-Under `exporters`, we specify the default [`otlp_http` exporterï»¿](https://github.com/open-telemetry/opentelemetry-collector/tree/v0.151.0/exporter/otlphttpexporter) and configure it with our Dynatrace API URL and the required authentication token.
+Under `exporters`, we specify the default [`otlp_http` exporter﻿](https://github.com/open-telemetry/opentelemetry-collector/tree/v0.155.0/exporter/otlphttpexporter) and configure it with our Dynatrace API URL and the required authentication token.
 
 For this purpose, we set the following two environment variables and reference them in the configuration values for `endpoint` and `Authorization`:
 

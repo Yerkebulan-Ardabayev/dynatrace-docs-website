@@ -1,7 +1,6 @@
 ---
 title: Monitor Azure Virtual Machines
 source: https://docs.dynatrace.com/managed/ingest-from/microsoft-azure-services/azure-integrations/azure-vm
-scraped: 2026-05-12T11:22:41.250664
 ---
 
 # Monitor Azure Virtual Machines
@@ -12,7 +11,7 @@ scraped: 2026-05-12T11:22:41.250664
 * 8-min read
 * Published Jul 19, 2017
 
-Dynatrace provides a [VM Extensionï»¿](https://docs.microsoft.com/en-us/azure/virtual-machines/extensions/overview) to install OneAgent on Azure Virtual Machines. This enables you to leverage the native deployment automation features using Azure Resource Manager (ARM). The Dynatrace VM extension is available for Windows and Linux in all public Azure regions (including support for Classic Virtual Machines).
+Dynatrace provides a [VM Extension﻿](https://docs.microsoft.com/en-us/azure/virtual-machines/extensions/overview) to install OneAgent on Azure Virtual Machines. This enables you to leverage the native deployment automation features using Azure Resource Manager (ARM). The Dynatrace VM extension is available for Windows and Linux in all public Azure regions (including support for Classic Virtual Machines).
 
 The Dynatrace OneAgent site extension doesn't include the OneAgent installer. Instead, the extension uses the Dynatrace REST API to download the installer from the cluster in the target version as set in [OneAgent updates](/managed/ingest-from/dynatrace-oneagent/oneagent-update#configure-oneagent-updates "Learn how to update OneAgent.").
 
@@ -27,7 +26,7 @@ The Dynatrace OneAgent site extension doesn't include the OneAgent installer. In
 ## Prerequisites
 
 * Create a [PaaS token](/managed/manage/identity-access-management/access-tokens-and-oauth-clients/access-tokens#paas-token "Learn the concept of an access token and its scopes.").
-* Determine your [environment ID](/managed/discover-dynatrace/get-started/monitoring-environment "Understand and learn how to work with monitoring environments.").
+* Determine your [environment ID](/managed/discover-dynatrace/get-started/monitoring-environment "Learn what a Dynatrace monitoring environment is, how to find your environment ID, and how to set up and connect multiple environments.").
 * Determine your server URL if required.
 
   The server URL is required only if you use either of the following:
@@ -46,9 +45,9 @@ The Dynatrace OneAgent site extension doesn't include the OneAgent installer. In
 
 ## Install Dynatrace OneAgent VM extension
 
-There are several ways to install the Dynatrace OneAgent VM extension: through Azure Portal, Azure CLI, or PowerShell, or by using an ARM template. Follow the steps below for instructions.
+There are several ways to install the Dynatrace OneAgent VM extension: through Azure portal, Azure CLI, or PowerShell, or by using an ARM template. Follow the steps below for instructions.
 
-Azure Portal
+Azure portal
 
 Azure CLI 2.0
 
@@ -56,7 +55,7 @@ PowerShell
 
 ### Add the extension to an existing VM
 
-1. In Azure Portal, go to an existing virtual machine where you want to add the OneAgent extension.
+1. In the Azure portal, go to an existing virtual machine where you want to add the OneAgent extension.
 2. In the left menu, go to **Settings** and select **Extensions**.
 3. Select **Add**.
 4. Select **Choose extension**.
@@ -111,7 +110,7 @@ az vm extension set
 --settings "{\"tenantId\":\"<Environment-ID>\",\"token\":\"<API-Token>\", \"server\":\"<Server-Url>\", \"enableLogAnalytics\":\"yes\", \"hostGroup\":\"<Host-Group>\"}"
 ```
 
-When using the Azure CLI within PowerShell, the settings have to be formatted as a [here-stringï»¿](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_quoting_rules?view=powershell-6#here-strings).
+When using the Azure CLI within PowerShell, the settings have to be formatted as a [here-string﻿](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_quoting_rules?view=powershell-6#here-strings).
 
 ```
 --settings @'"{\"tenantId\":\"<Environment-ID>\",\"token\":\"<API-Token>\"}"'@
@@ -127,7 +126,7 @@ When using the Azure CLI within PowerShell, the settings have to be formatted as
 | server | Optional | The server URL, if you want to configure an alternative communication endpoint as described in [Prerequisites](#prerequisites). |
 | enableLogsAnalytics | Optional | Set to `yes` if you want to enable Log Monitoring. |
 | hostGroup | Optional | Define the [host group](/managed/observe/infrastructure-observability/hosts/configuration/organize-your-environment-using-host-groups "Find out how Dynatrace enables you to organize your hosts, processes, and services using host groups.") to which the VM belongs. |
-| overrideDefaults [1](#fn-1-1-def) | Optional | Override the default value of the timeoutâ120 seconds. For example, if you want to set the timeout to 600 seconds, add `\"overrideDefaults\": {\"downloadInstallerRequestTimeoutInSeconds\": 600}` to the `-Settings` string, you can also leave it empty `\"overrideDefaults\": {}`, or `null`. In such cases, the 120 seconds default value will apply. |
+| overrideDefaults [1](#fn-1-1-def) | Optional | Override the default value of the timeout—120 seconds. For example, if you want to set the timeout to 600 seconds, add `\"overrideDefaults\": {\"downloadInstallerRequestTimeoutInSeconds\": 600}` to the `-Settings` string, you can also leave it empty `\"overrideDefaults\": {}`, or `null`. In such cases, the 120 seconds default value will apply. |
 
 1
 
@@ -187,7 +186,7 @@ Set-AzureRmVmExtension
 | server | Optional | The server URL, if you want to configure an alternative communication endpoint as described in [Prerequisites](#prerequisites). |
 | enableLogsAnalytics | Optional | Set to `yes` if you want to enable Log Monitoring. |
 | hostGroup | Optional | Define the [host group](/managed/observe/infrastructure-observability/hosts/configuration/organize-your-environment-using-host-groups "Find out how Dynatrace enables you to organize your hosts, processes, and services using host groups.") to which the VM belongs. |
-| overrideDefaults [1](#fn-2-1-def) | Optional | Override the default value of the timeoutâ120 seconds. For example, if you want to set the timeout to 600 seconds, add `\"overrideDefaults\": {\"downloadInstallerRequestTimeoutInSeconds\": 600}` to the `-Settings` string, you can also leave it empty `\"overrideDefaults\": {}`, or `null`. In such cases, the 120 seconds default value will apply. |
+| overrideDefaults [1](#fn-2-1-def) | Optional | Override the default value of the timeout—120 seconds. For example, if you want to set the timeout to 600 seconds, add `\"overrideDefaults\": {\"downloadInstallerRequestTimeoutInSeconds\": 600}` to the `-Settings` string, you can also leave it empty `\"overrideDefaults\": {}`, or `null`. In such cases, the 120 seconds default value will apply. |
 
 1
 
@@ -208,7 +207,7 @@ With the VM extension 2.201.1.0 release, you can set the `overrideDefaults` para
 ## Install Dynatrace OneAgent VM extension via an ARM template
 
 Alternatively to the main installation methods, you can make the Dynatrace VM extension part of your ARM templates.  
-The JSON file for a virtual machine extension can be nested inside the virtual machine resource, or placed at the root or top level of a resource manager JSON template. [The placement of the JSON file affects the value of the resource name and typeï»¿](https://docs.microsoft.com/en-us/azure/azure-resource-manager/resource-manager-templates-resources#child-resources).
+The JSON file for a virtual machine extension can be nested inside the virtual machine resource, or placed at the root or top level of a resource manager JSON template. [The placement of the JSON file affects the value of the resource name and type﻿](https://docs.microsoft.com/en-us/azure/azure-resource-manager/resource-manager-templates-resources#child-resources).
 
 * The following example assumes the OneAgent extension is nested inside the virtual machine resource. When nesting the extension resource, the JSON file is placed in the "resources": [] object of the virtual machine.
 
@@ -400,7 +399,7 @@ The JSON file for a virtual machine extension can be nested inside the virtual m
 | server | Optional | The server URL, if you want to configure an alternative communication endpoint as described in [Prerequisites](#prerequisites). |
 | enableLogsAnalytics | Optional | Set to `yes` if you want to enable Log Monitoring. |
 | hostGroup | Optional | Define the [host group](/managed/observe/infrastructure-observability/hosts/configuration/organize-your-environment-using-host-groups "Find out how Dynatrace enables you to organize your hosts, processes, and services using host groups.") to which the VM belongs. |
-| overrideDefaults [1](#fn-3-1-def) | Optional | Override the default value of the timeoutâ120 seconds. For example, if you want to set the timeout to 600 seconds, add `\"overrideDefaults\": {\"downloadInstallerRequestTimeoutInSeconds\": 600}` to the ARM template in the `settings` object, you can also leave it empty `\"overrideDefaults\": {}`, or `null`. In such cases, the 120 seconds default value will apply. |
+| overrideDefaults [1](#fn-3-1-def) | Optional | Override the default value of the timeout—120 seconds. For example, if you want to set the timeout to 600 seconds, add `\"overrideDefaults\": {\"downloadInstallerRequestTimeoutInSeconds\": 600}` to the ARM template in the `settings` object, you can also leave it empty `\"overrideDefaults\": {}`, or `null`. In such cases, the 120 seconds default value will apply. |
 
 1
 

@@ -1,7 +1,6 @@
 ---
 title: Kubernetes credentials API
 source: https://docs.dynatrace.com/managed/dynatrace-api/configuration-api/k8s-credentials-api-api
-scraped: 2026-05-12T12:10:20.761560
 ---
 
 # Kubernetes credentials API
@@ -29,4 +28,4 @@ Delete credentials configuration you no longer need.](/managed/dynatrace-api/con
 
 ## Related topics
 
-* [Explore Kubernetes in Dynatrace Hubï»¿](https://www.dynatrace.com/hub/?filter=kubernetes&utm_source=doc&utm_medium=link&utm_campaign=cross)
+* [Explore Kubernetes in Dynatrace Hub﻿](https://www.dynatrace.com/hub/?filter=kubernetes&utm_source=doc&utm_medium=link&utm_campaign=cross)

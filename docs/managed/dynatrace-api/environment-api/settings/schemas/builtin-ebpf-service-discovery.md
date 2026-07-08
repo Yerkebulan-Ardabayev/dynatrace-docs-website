@@ -1,7 +1,6 @@
 ---
 title: Settings API - eBPF Service Discovery schema table
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/settings/schemas/builtin-ebpf-service-discovery
-scraped: 2026-05-12T11:43:11.470017
 ---
 
 # Settings API - eBPF Service Discovery schema table

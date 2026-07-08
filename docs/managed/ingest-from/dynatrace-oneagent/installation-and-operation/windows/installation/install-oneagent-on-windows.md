@@ -1,7 +1,6 @@
 ---
 title: Install OneAgent on Windows
 source: https://docs.dynatrace.com/managed/ingest-from/dynatrace-oneagent/installation-and-operation/windows/installation/install-oneagent-on-windows
-scraped: 2026-05-12T11:07:30.878502
 ---
 
 # Install OneAgent on Windows
@@ -27,8 +26,8 @@ For more information, see [Install OneAgent using Ansible](/managed/ingest-from/
 * The host on which you install OneAgent needs at least 200 MB RAM.
 * OneAgent installation isn't supported on networked storage mount points that are managed by standards such as NFS or iSCSI.
 * All hosts that are to be monitored need to be able to send data to the Dynatrace cluster. Depending on your Dynatrace deployment and on your network layout and security settings, you may choose to either provide direct access to Dynatrace cluster or to [set up an ActiveGate](/managed/ingest-from/dynatrace-activegate "Understand the basic concepts related to ActiveGate.").
-* For OneAgent version 1.253 and earlier, we recommend that you [uninstall any existing `WinPcap` driver](/managed/ingest-from/dynatrace-oneagent/installation-and-operation/windows/installation/install-oneagent-on-windows#uninstall-winpcap-driver-to-allow-npcap-installation "Learn how to download and install Dynatrace OneAgent on Windows.") to allow `Npcap` installationâdo this on all Windows versions, except for `Windows Server 2019 build 1809 without hotfix KB5066187`.
-  For OneAgent version 1.255+, `Npcap` is installed by default and may cause a network disruption on `Windows Server 2016`, `Windows Server 2019 build 1809`, and `Windows Server 2019 build 1809 without hotfix KB5066187`. To prevent it, upgrade your hosts with the hotfix [KB5066187ï»¿](https://www.catalog.update.microsoft.com/Search.aspx?q=KB5066187) or use [other documented options](/managed/observe/infrastructure-observability/networks-classic/troubleshoot-network-monitoring#potential-network-disruption-during-oneagent-installation-on-windows "Learn more about troubleshooting network monitoring.").
+* For OneAgent version 1.253 and earlier, we recommend that you [uninstall any existing `WinPcap` driver](/managed/ingest-from/dynatrace-oneagent/installation-and-operation/windows/installation/install-oneagent-on-windows#uninstall-winpcap-driver-to-allow-npcap-installation "Learn how to download and install Dynatrace OneAgent on Windows.") to allow `Npcap` installation—do this on all Windows versions, except for `Windows Server 2019 build 1809 without hotfix KB5066187`.
+  For OneAgent version 1.255+, `Npcap` is installed by default and may cause a network disruption on `Windows Server 2016`, `Windows Server 2019 build 1809`, and `Windows Server 2019 build 1809 without hotfix KB5066187`. To prevent it, upgrade your hosts with the hotfix [KB5066187﻿](https://www.catalog.update.microsoft.com/Search.aspx?q=KB5066187) or use [other documented options](/managed/observe/infrastructure-observability/networks-classic/troubleshoot-network-monitoring#potential-network-disruption-during-oneagent-installation-on-windows "Learn more about troubleshooting network monitoring.").
 
 ### Allow connections through firewall
 
@@ -92,7 +91,7 @@ OneAgent installer for Windows doesn't support the `modify` and `repair` operati
    **If further customizations are required, you can specify [additional options on the command line](/managed/ingest-from/dynatrace-oneagent/installation-and-operation/windows/installation/customize-oneagent-installation-on-windows "Learn how to use the OneAgent installer for Windows.").**
 6. If you have not specified any custom options, run the executable file and follow the instructions as displayed.
    If you have specified custom options above, use the generated command, and run it from the download directory. The command will contain all the installation parameters reflecting the custom settings you have specified.
-7. Restart all processes that you want to monitor. Youâll be prompted with a list of the processes that need to be restarted. Note that you can restart your processes at any time, even during your organizationâs next planned maintenance period. Though until all processes have been restarted, youâll only see a limited set of metrics, for example CPU or memory consumption.
+7. Restart all processes that you want to monitor. You’ll be prompted with a list of the processes that need to be restarted. Note that you can restart your processes at any time, even during your organization’s next planned maintenance period. Though until all processes have been restarted, you’ll only see a limited set of metrics, for example CPU or memory consumption.
 
 What happens during installation?
 
@@ -102,7 +101,7 @@ During the installation process, the installer:
 
 * Installs executable code and libraries that are used by OneAgent.
 * Creates entries in the Windows Registry that start OneAgent as a `SYSTEM` service. Additionally, the `oneagentmon` device and (optionally) `Npcap` or `WinPcap` are installed to allow better integration with the operating system and to facilitate the capture of network statistics.
-* Checks the systemâs global proxy settings.
+* Checks the system’s global proxy settings.
 * Checks for a connection to Dynatrace Server or ActiveGate (if you installed ActiveGate and downloaded the OneAgent installer after ActiveGate was connected to Dynatrace).
 * OneAgent version 1.193 and earlier Creates its own user (`dtuser`) to run OneAgent extensions. This user is a member of the **Performance Monitoring Users** group, and can only log in as a service. The password is randomly generated during installation and stored encrypted. You can't change the password. For security purposes, the `dtuser` is not allowed to:
 

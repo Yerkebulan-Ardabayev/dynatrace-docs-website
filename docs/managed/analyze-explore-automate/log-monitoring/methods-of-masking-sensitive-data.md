@@ -1,7 +1,6 @@
 ---
 title: Methods of masking sensitive data (Logs Classic)
 source: https://docs.dynatrace.com/managed/analyze-explore-automate/log-monitoring/methods-of-masking-sensitive-data
-scraped: 2026-05-12T11:53:54.856378
 ---
 
 # Methods of masking sensitive data (Logs Classic)

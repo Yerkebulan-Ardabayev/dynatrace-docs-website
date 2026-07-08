@@ -1,7 +1,6 @@
 ---
 title: Settings API - Resource types schema table
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/settings/schemas/builtin-rum-web-resource-types
-scraped: 2026-05-12T11:44:37.343622
 ---
 
 # Settings API - Resource types schema table

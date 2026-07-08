@@ -1,7 +1,6 @@
 ---
 title: Monitor Azure App Service
 source: https://docs.dynatrace.com/managed/ingest-from/microsoft-azure-services/azure-integrations/azure-appservice
-scraped: 2026-05-12T11:38:10.860760
 ---
 
 # Monitor Azure App Service
@@ -12,7 +11,7 @@ scraped: 2026-05-12T11:38:10.860760
 * 1-min read
 * Published Jan 16, 2023
 
-Azure App Service provides many different hosting options for Windows, Linux, and containers with shared infrastructure ([App Service planï»¿](https://dt-url.net/f4031wl)), or fully isolated and dedicated infrastructure ([Azure App Service Environmentï»¿](https://dt-url.net/u0231c3)).
+Azure App Service provides many different hosting options for Windows, Linux, and containers with shared infrastructure ([App Service plan﻿](https://dt-url.net/f4031wl)), or fully isolated and dedicated infrastructure ([Azure App Service Environment﻿](https://dt-url.net/u0231c3)).
 
 ## Capabilities
 
@@ -27,4 +26,4 @@ The App Service integration with Dynatrace provides the following capabilities:
 
 ## Related topics
 
-* [Serverless monitoring](/managed/discover-dynatrace/get-started/serverless-monitoring "Serverless observability with Dynatrace")
+* [Serverless monitoring](/managed/discover-dynatrace/get-started/serverless-monitoring "Monitor serverless cloud services across AWS, Azure, and Google Cloud with Dynatrace for end-to-end visibility and AI-powered analysis.")

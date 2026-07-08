@@ -1,7 +1,6 @@
 ---
 title: Cluster Management Console
 source: https://docs.dynatrace.com/managed/managed-cluster/basics/cluster-management-console
-scraped: 2026-05-12T11:08:41.103410
 ---
 
 # Cluster Management Console
@@ -22,13 +21,13 @@ Cluster Management Console
 
 **Home** displays the **Dynatrace Managed deployment overview**, with a graphical representation of your deployment at a glance.
 
-* [Environments](#environments)âDisplays the number of active environments. Links to [Environments](#environments).
-* [ActiveGates](#deployment-status-ag)âDisplays the number of Cluster ActiveGates and Environment ActiveGates. Links to [Deployment status](#deployment-status).
-* [Cluster nodes](#deployment-status-cluster-nodes)âDisplays the number of Cluster nodes.
-* [Last backup](/managed/managed-cluster/operation/back-up-and-restore-a-cluster "Understand the steps and commands required to restore a Dynatrace Managed cluster.")âDisplays the date and storage location of the last backup.
-* [Events](#events)âDisplays the number of log events.
-* [Users](#user-authentication)âDisplays the number of users and user groups.
-* [Dynatrace Mission Control](/managed/managed-cluster/basics/mission-control-proactive-support "Mission Control proactively monitors your Managed Cluster, provides software updates, and keeps your installation secure and reliable.")âProvides access to Mission Control proactive support.
+* [Environments](#environments)—Displays the number of active environments. Links to [Environments](#environments).
+* [ActiveGates](#deployment-status-ag)—Displays the number of Cluster ActiveGates and Environment ActiveGates. Links to [Deployment status](#deployment-status).
+* [Cluster nodes](#deployment-status-cluster-nodes)—Displays the number of Cluster nodes.
+* [Last backup](/managed/managed-cluster/operation/back-up-and-restore-a-cluster "Understand the steps and commands required to restore a Dynatrace Managed cluster.")—Displays the date and storage location of the last backup.
+* [Events](#events)—Displays the number of log events.
+* [Users](#user-authentication)—Displays the number of users and user groups.
+* [Dynatrace Mission Control](/managed/managed-cluster/basics/mission-control-proactive-support "Mission Control proactively monitors your Managed Cluster, provides software updates, and keeps your installation secure and reliable.")—Provides access to Mission Control proactive support.
 
 ## Deployment status
 
@@ -81,31 +80,31 @@ Cluster Management Console
 
 **User authentication** links to user-related settings.
 
-* **User accounts**âLists user accounts. Select a user to view details and group assignments and permissions. For details, see [user and group management](/managed/manage/identity-access-management/user-and-group-management "User and group management").
-* **User groups**âLists user groups. Select  for a group to configure the group name, permissions, and policies. For details, see [user and group management](/managed/manage/identity-access-management/user-and-group-management "User and group management").
-* **Policy management**âLists policies. Select a policy in the **Actions** column to view or edit it.
-* **User sessions**âLists user sessions. For details, see [user sessions](/managed/managed-cluster/configuration/configure-manage-user-sessions "Learn how to define the maximum number of concurrent user sessions for Dynatrace Managed.").
-* **Password policy**âFor details, see [password complexity rules](/managed/managed-cluster/configuration/password-complexity-rules "Learn how to configure password complexity rules for Dynatrace Managed.").
-* **User repository**âView and edit user repository settings. For details, see [LDAP](/managed/manage/identity-access-management/user-and-group-management/manage-users-and-groups-with-ldap "Learn how to connect your Dynatrace Server to an LDAP server to import user groups or accounts that need access to your Dynatrace Managed environment.").
-* **Single sign-on settings**âFor details, see [SAML settings](/managed/manage/identity-access-management/user-and-group-management/manage-users-and-groups-with-saml "Learn how to connect your Dynatrace Server to a SAML server to import user groups or accounts that need access to your Dynatrace Managed environment.") and [OpenID Connect settings](/managed/manage/identity-access-management/user-and-group-management/manage-users-and-groups-with-openid "Learn how to use OpenID as an SSO IdP for the management of users and groups.").
-* **Login screen**âFor details, see [sign-in customization](/managed/managed-cluster/configuration/sign-in-customization "Learn how to customize the sign-in page in Dynatrace Managed.").
+* **User accounts**—Lists user accounts. Select a user to view details and group assignments and permissions. For details, see [user and group management](/managed/manage/identity-access-management/user-and-group-management "User and group management").
+* **User groups**—Lists user groups. Select  for a group to configure the group name, permissions, and policies. For details, see [user and group management](/managed/manage/identity-access-management/user-and-group-management "User and group management").
+* **Policy management**—Lists policies. Select a policy in the **Actions** column to view or edit it.
+* **User sessions**—Lists user sessions. For details, see [user sessions](/managed/managed-cluster/configuration/manage-user-sessions "Learn how to define the maximum number of concurrent user sessions, terminate active sessions, and configure automatic sign-out in Dynatrace Managed.").
+* **Password policy**—For details, see [password complexity rules](/managed/managed-cluster/configuration/password-complexity-rules "Configure password complexity rules for Dynatrace Managed, including minimum length, character categories, default policy values, and best practices.").
+* **User repository**—View and edit user repository settings. For details, see [LDAP](/managed/manage/identity-access-management/user-and-group-management/manage-users-and-groups-with-ldap "Learn how to connect your Dynatrace Server to an LDAP server to import user groups or accounts that need access to your Dynatrace Managed environment.").
+* **Single sign-on settings**—For details, see [SAML settings](/managed/manage/identity-access-management/user-and-group-management/manage-users-and-groups-with-saml "Learn how to connect your Dynatrace Server to a SAML server to import user groups or accounts that need access to your Dynatrace Managed environment.") and [OpenID Connect settings](/managed/manage/identity-access-management/user-and-group-management/manage-users-and-groups-with-openid "Learn how to use OpenID as an SSO IdP for the management of users and groups.").
+* **Login screen**—For details, see [sign-in customization](/managed/managed-cluster/configuration/customize-login-page "Learn how to customize the sign-in page in Dynatrace Managed to display system information, authentication details, legal notices, or an administrator contact.").
 
 ## Settings
 
 **Settings** links to cluster-related settings.
 
 * **Public endpoints**
-* **Internet proxy**âFor details, see [Configure internet proxy for cluster](/managed/managed-cluster/configuration/internet-proxy "Configure a proxy connection for your Managed Cluster if you don't have direct internet access.").
+* **Internet proxy**—For details, see [Configure internet proxy](/managed/managed-cluster/configuration/configure-internet-proxy "Configure a proxy connection for your Managed Cluster if you don't have direct internet access. Supported protocols include Basic and NTLMv1.").
 * **Emails**
 
-  + **SMTP server**âConfigure how email notifications for the cluster are delivered. For details, see [Configure an SMTP server connection](/managed/managed-cluster/configuration/configure-smtp-server-connection "Learn how to configure an SMTP server connection and why this is recommended.").
-  + **Email notifications**âConfigure email notification recipients.
-* **Preferences**âFor details, see [Cluster preferences](/managed/managed-cluster/configuration/configure-cluster-preferences "Configure cluster preferences and privacy settings").
-* **Remote access permissions**âFor details, see [Cluster remote access](/managed/managed-cluster/configuration/cluster-remote-access "Learn how to grant permission for remote access.").
-* **API tokens**âFor details, see [Cluster API - Tokens and authentication](/managed/dynatrace-api/cluster-api/cluster-api-authentication "How to get authenticated to use the Dynatrace Cluster API.").
-* **Backup**âFor details, see [Backup and restore a cluster](/managed/managed-cluster/operation/back-up-and-restore-a-cluster "Understand the steps and commands required to restore a Dynatrace Managed cluster.").
+  + **SMTP server**—Configure how email notifications for the cluster are delivered. For details, see [Configure SMTP server connection](/managed/managed-cluster/configuration/configure-smtp-server-connection "Learn how to configure an SMTP server connection on your Managed Cluster, including connection security, mail server settings, and delivery method options.").
+  + **Email notifications**—Configure email notification recipients.
+* **Preferences**—For details, see [Configure Cluster preferences](/managed/managed-cluster/configuration/configure-cluster-preferences "Configure cluster preferences to manage proactive support reporting, remote access, data privacy, domain name, and community settings for your Managed Cluster.").
+* **Remote access permissions**—For details, see [Configure Cluster remote access](/managed/managed-cluster/configuration/configure-cluster-remote-access "Configure remote access permissions for your Managed Cluster, including scope options and role assignments for Dynatrace product experts.").
+* **API tokens**—For details, see [Cluster API - Tokens and authentication](/managed/dynatrace-api/cluster-api/cluster-api-authentication "How to get authenticated to use the Dynatrace Cluster API.").
+* **Backup**—For details, see [Backup and restore a cluster](/managed/managed-cluster/operation/back-up-and-restore-a-cluster "Understand the steps and commands required to restore a Dynatrace Managed cluster.").
 * **Service Providers**
-* **Automatic update**âFor details, see [Update a cluster](/managed/managed-cluster/operation/update-cluster "Learn how to update a Managed cluster and how to schedule an automatic update.").
+* **Automatic update**—For details, see [Update a cluster](/managed/managed-cluster/operation/update-cluster "Learn how to update a Managed cluster and how to schedule an automatic update.").
 
 ## Licensing
 

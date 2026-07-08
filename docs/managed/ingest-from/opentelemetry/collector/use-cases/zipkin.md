@@ -1,7 +1,6 @@
 ---
 title: Ingest Zipkin data with the OTel Collector
 source: https://docs.dynatrace.com/managed/ingest-from/opentelemetry/collector/use-cases/zipkin
-scraped: 2026-05-12T12:10:58.126890
 ---
 
 # Ingest Zipkin data with the OTel Collector
@@ -18,9 +17,9 @@ The following configuration example shows how you configure a Collector instance
 
 ### B3 requirements
 
-Pay attention to the B3 requirements, to avoid having spans being dropped because of shared and duplicated span identifiers. See the [propagator specificationï»¿](https://opentelemetry.io/docs/specs/otel/context/api-propagators/#b3-requirements) for more details.
+Pay attention to the B3 requirements, to avoid having spans being dropped because of shared and duplicated span identifiers. See the [propagator specification﻿](https://opentelemetry.io/docs/specs/otel/context/api-propagators/#b3-requirements) for more details.
 
-For example, if you are using [Spring Code Sleuthï»¿](https://cloud.spring.io/spring-cloud-sleuth/2.1.x/multi/multi__propagation.html#_extracting_a_propagated_context), you can use the following configuration setting to disable span sharing:
+For example, if you are using [Spring Code Sleuth﻿](https://cloud.spring.io/spring-cloud-sleuth/2.1.x/multi/multi__propagation.html#_extracting_a_propagated_context), you can use the following configuration setting to disable span sharing:
 
 ```
 spring:
@@ -40,7 +39,7 @@ Make sure to route all related Zipkin/B3 spans via the same Collector instance, 
 
 ## Prerequisites
 
-* One of the following Collector distributions with the [Zipkin receiverï»¿](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.151.0/receiver/zipkinreceiver):
+* One of the following Collector distributions with the [Zipkin receiver﻿](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.155.0/receiver/zipkinreceiver):
 
   + The [Dynatrace OTel Collector](/managed/ingest-from/opentelemetry/collector#dt-collector-dist "Learn how to use the OpenTelemetry Collector, including the Dynatrace OTel Collector, to ingest telemetry from OpenTelemetry.")
   + OpenTelemetry [Contrib](/managed/ingest-from/opentelemetry/collector#collector-contrib "Learn how to use the OpenTelemetry Collector, including the Dynatrace OTel Collector, to ingest telemetry from OpenTelemetry.")
@@ -116,11 +115,11 @@ For our configuration, we configure the following components.
 
 Under `receivers`, we specify the `zipkin` receiver as active receiver component for our Collector instance.
 
-The Zipkin receiver can be customized with [a few more attributesï»¿](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.151.0/receiver/zipkinreceiver), which we leave with their default values in our example.
+The Zipkin receiver can be customized with [a few more attributes﻿](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.155.0/receiver/zipkinreceiver), which we leave with their default values in our example.
 
 ### Exporters
 
-Under `exporters`, we specify the default [`otlp_http` exporterï»¿](https://github.com/open-telemetry/opentelemetry-collector/tree/v0.151.0/exporter/otlphttpexporter) and configure it with our Dynatrace API URL and the required authentication token.
+Under `exporters`, we specify the default [`otlp_http` exporter﻿](https://github.com/open-telemetry/opentelemetry-collector/tree/v0.155.0/exporter/otlphttpexporter) and configure it with our Dynatrace API URL and the required authentication token.
 
 For this purpose, we set the following two environment variables and reference them in the configuration values for `endpoint` and `Authorization`.
 

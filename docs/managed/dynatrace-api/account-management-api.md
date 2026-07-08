@@ -1,7 +1,6 @@
 ---
 title: Account Management API
 source: https://docs.dynatrace.com/managed/dynatrace-api/account-management-api
-scraped: 2026-05-12T11:03:10.106263
 ---
 
 # Account Management API
@@ -23,7 +22,7 @@ View the reference info about your account.](/managed/dynatrace-api/account-mana
 
 You can access all Dynatrace API endpoints using the API Explorer.
 
-1. Go to [**Account Management**ï»¿](https://myaccount.dynatrace.com/). If you have more than one account, select the account you want to manage.
+1. Go to [**Account Management**﻿](https://myaccount.dynatrace.com/). If you have more than one account, select the account you want to manage.
 2. On the top navigation bar, go to **Identity & access management** > **OAuth clients**.
 3. In the upper-right corner of the page, select **Account Management API**.
 

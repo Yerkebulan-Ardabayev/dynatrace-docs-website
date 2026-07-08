@@ -1,7 +1,6 @@
 ---
 title: Manage SNMP extensions
 source: https://docs.dynatrace.com/managed/ingest-from/extensions/supported-extensions/data-sources/snmp
-scraped: 2026-05-12T11:10:19.929800
 ---
 
 # Manage SNMP extensions
@@ -16,7 +15,7 @@ Dynatrace provides you with a framework that you can use to extend your observab
 
 You can also extend your insights into data related to SNMP traps issued in your infrastructure.
 
-First, check [Dynatrace Hubï»¿](https://www.dynatrace.com/hub/?query=snmp) to see if your device is covered by an existing extension. If it isn't, you can build your own [Dynatrace SNMP extension](/managed/ingest-from/extensions/develop-your-extensions/data-sources/snmp-extensions "Learn how to create an SNMP extension using the Extensions framework.") to cover your SNMP device.
+First, check [Dynatrace Hub﻿](https://www.dynatrace.com/hub/?query=snmp) to see if your device is covered by an existing extension. If it isn't, you can build your own [Dynatrace SNMP extension](/managed/ingest-from/extensions/develop-your-extensions/data-sources/snmp-extensions "Learn how to create an SNMP extension using the Extensions framework.") to cover your SNMP device.
 
 ## Before you begin
 
@@ -71,7 +70,7 @@ Select **Define** to configure optional advanced properties:
 * **Max repetitions**  
   Can be used to limit the amount of data returned for a single query and might in turn increase the number of requests sent to the device until all required data is collected. Default = `50` repetitions.
 * **Max OIDs per query**  
-  Number of OIDs that can be queried in one SNMP request. Default = `60` OIDs. For most extensions, you don't need to change it. For the [F5 BIG-IP LTMï»¿](https://dt-url.net/jl036z9) extension, we recommend that you set it to `5`.
+  Number of OIDs that can be queried in one SNMP request. Default = `60` OIDs. For most extensions, you don't need to change it. For the [F5 BIG-IP LTM﻿](https://dt-url.net/jl036z9) extension, we recommend that you set it to `5`.
 * **Enable unconnected UDP**
   When enabled, the UDP socket becomes unconnected. This allows it to accept responses from a different address than the one the request was sent to, or to ignore ICMP packets. Default value is `false`.
 
@@ -122,4 +121,4 @@ The files stored in the `mib-files-custom` directory are preserved between updat
 
 ## Related topics
 
-* [Troubleshooting extensionsï»¿](https://dt-url.net/6303zdg "Learn how to troubleshoot Dynatrace Extensions")
+* [Troubleshooting extensions﻿](https://dt-url.net/6303zdg "Learn how to troubleshoot Dynatrace Extensions")

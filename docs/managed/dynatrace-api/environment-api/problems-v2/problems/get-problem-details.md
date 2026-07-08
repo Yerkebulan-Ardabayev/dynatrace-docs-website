@@ -1,7 +1,6 @@
 ---
 title: Problems API v2 - GET problems details
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/problems-v2/problems/get-problem-details
-scraped: 2026-05-12T11:57:21.415895
 ---
 
 # Problems API v2 - GET problems details
@@ -53,20 +52,20 @@ The properties of a problem.
 
 | Element | Type | Description |
 | --- | --- | --- |
-| affectedEntities | [EntityStub[]](#openapi-definition-EntityStub) | A list of all entities that are affected by the problem. |
+| affectedEntities | [EntityStub](#openapi-definition-EntityStub)[] | A list of all entities that are affected by the problem. |
 | displayId | string | The display ID of the problem. |
 | endTime | integer | The end timestamp of the problem, in UTC milliseconds.  Has `-1` value, if the problem is still open. |
-| entityTags | [METag[]](#openapi-definition-METag) | A list of all entity tags of the problem. |
+| entityTags | [METag](#openapi-definition-METag)[] | A list of all entity tags of the problem. |
 | evidenceDetails | [EvidenceDetails](#openapi-definition-EvidenceDetails) | The evidence details of a problem. |
 | impactAnalysis | [ImpactAnalysis](#openapi-definition-ImpactAnalysis) | A list of all impacts of the problem. |
 | impactLevel | string | The impact level of the problem. It shows what is affected by the problem. The element can hold these values * `APPLICATION` * `ENVIRONMENT` * `INFRASTRUCTURE` * `SERVICES` |
-| impactedEntities | [EntityStub[]](#openapi-definition-EntityStub) | A list of all entities that are impacted by the problem. |
+| impactedEntities | [EntityStub](#openapi-definition-EntityStub)[] | A list of all entities that are impacted by the problem. |
 | k8s.cluster.name | string[] | The related Kubernetes cluster names. |
 | k8s.cluster.uid | string[] | The related Kubernetes cluster UIDs. |
 | k8s.namespace.name | string[] | The related Kubernetes namespace names. |
 | linkedProblemInfo | [LinkedProblem](#openapi-definition-LinkedProblem) | The properties of the linked problem. |
-| managementZones | [ManagementZone[]](#openapi-definition-ManagementZone) | A list of all management zones that the problem belongs to. |
-| problemFilters | [AlertingProfileStub[]](#openapi-definition-AlertingProfileStub) | A list of alerting profiles that match the problem. |
+| managementZones | [ManagementZone](#openapi-definition-ManagementZone)[] | A list of all management zones that the problem belongs to. |
+| problemFilters | [AlertingProfileStub](#openapi-definition-AlertingProfileStub)[] | A list of alerting profiles that match the problem. |
 | problemId | string | The ID of the problem. |
 | recentComments | [CommentsList](#openapi-definition-CommentsList) | A list of comments. |
 | rootCauseEntity | [EntityStub](#openapi-definition-EntityStub) | A short representation of a monitored entity. |
@@ -110,14 +109,14 @@ The evidence details of a problem.
 
 | Element | Type | Description |
 | --- | --- | --- |
-| details | [Evidence[]](#openapi-definition-Evidence) | A list of all evidence. |
+| details | [Evidence](#openapi-definition-Evidence)[] | A list of all evidence. |
 | totalCount | integer | The total number of evidence of a problem. |
 
 #### The `Evidence` object
 
 An evidence of a root cause.
 
-The actual set of fields depends on the type of the evidence. Find the list of actual objects in the description of the **evidenceType** field or see [Problems API v2 - JSON modelsï»¿](https://dt-url.net/we03sp2).
+The actual set of fields depends on the type of the evidence. Find the list of actual objects in the description of the **evidenceType** field or see [Problems API v2 - JSON models﻿](https://dt-url.net/we03sp2).
 
 | Element | Type | Description |
 | --- | --- | --- |
@@ -134,13 +133,13 @@ A list of all impacts of the problem.
 
 | Element | Type | Description |
 | --- | --- | --- |
-| impacts | [Impact[]](#openapi-definition-Impact) | A list of all impacts of the problem. |
+| impacts | [Impact](#openapi-definition-Impact)[] | A list of all impacts of the problem. |
 
 #### The `Impact` object
 
 The impact analysis of the problem on other entities/users.
 
-The actual set of fields depends on the type of the impact. Find the list of actual objects in the description of the **impactType** field or see [Problems API v2 - JSON modelsï»¿](https://dt-url.net/we03sp2).
+The actual set of fields depends on the type of the impact. Find the list of actual objects in the description of the **impactType** field or see [Problems API v2 - JSON models﻿](https://dt-url.net/we03sp2).
 
 | Element | Type | Description |
 | --- | --- | --- |
@@ -181,7 +180,7 @@ A list of comments.
 
 | Element | Type | Description |
 | --- | --- | --- |
-| comments | [Comment[]](#openapi-definition-Comment) | The result entries. |
+| comments | [Comment](#openapi-definition-Comment)[] | The result entries. |
 | nextPageKey | string | The cursor for the next page of results. Has the value of `null` on the last page.  Use it in the **nextPageKey** query parameter to obtain subsequent pages of the result. |
 | pageSize | integer | The number of entries per page. |
 | totalCount | integer | The total number of entries in the result. |
@@ -209,7 +208,7 @@ The comment to a problem.
 | Element | Type | Description |
 | --- | --- | --- |
 | code | integer | The HTTP status code |
-| constraintViolations | [ConstraintViolation[]](#openapi-definition-ConstraintViolation) | A list of constraint violations |
+| constraintViolations | [ConstraintViolation](#openapi-definition-ConstraintViolation)[] | A list of constraint violations |
 | message | string | The error message |
 
 #### The `ConstraintViolation` object
@@ -651,4 +650,4 @@ A list of constraint violations
 
 ## Related topics
 
-* [DavisÂ® AI](/managed/dynatrace-intelligence "Get familiar with the capabilities of Davis AI.")
+* [Davis® AI](/managed/dynatrace-intelligence "Learn how Davis® AI detects performance anomalies, identifies root causes, and uses AI models for adaptive thresholds across your environment.")

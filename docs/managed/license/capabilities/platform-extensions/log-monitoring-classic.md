@@ -1,7 +1,6 @@
 ---
 title: Log Monitoring Classic (DPS)
 source: https://docs.dynatrace.com/managed/license/capabilities/platform-extensions/log-monitoring-classic
-scraped: 2026-05-12T12:13:11.406817
 ---
 
 # Log Monitoring Classic (DPS)
@@ -161,4 +160,4 @@ Log Monitoring Classic (DPS)
 ## Related topics
 
 * [Platform extensions overview (DPS)](/managed/license/capabilities/platform-extensions "Learn how consumption of Dynatrace platform extensions is calculated using the Dynatrace Platform Subscription model.")
-* [Dynatrace pricingï»¿](https://www.dynatrace.com/pricing/)
+* [Dynatrace pricing﻿](https://www.dynatrace.com/pricing/)

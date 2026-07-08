@@ -1,7 +1,6 @@
 ---
 title: Settings API - Ingest pipelines configuration (user.events) schema table
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-user-events-pipelines
-scraped: 2026-05-12T11:41:12.563368
 ---
 
 # Settings API - Ingest pipelines configuration (user.events) schema table
@@ -48,7 +47,7 @@ To execute this request, you need an access token with **Read settings** (`setti
 | Davis event extraction stage `davis` | [Stage](#Stage) | - | Optional |
 | Data extraction stage `dataExtraction` | [Stage](#Stage) | - | Optional |
 | Routing `routing` | enum | The element has these enums * `routable` * `notRoutable` | Optional |
-| Group role `groupRole` | enum | The element has these enums * `memberPipeline` * `compositionPipeline` | Optional |
+| Group role `groupRole` | enum | The element has these enums * `memberPipeline` * `basePipeline` * `compositionPipeline` | Optional |
 
 ##### The `MetadataEntry` object
 
@@ -68,8 +67,8 @@ To execute this request, you need an access token with **Read settings** (`setti
 | Property | Type | Description | Required |
 | --- | --- | --- | --- |
 | Processor identifier `id` | text | - | Required |
-| Type `type` | enum | Processor type The element has these enums * `fieldsAdd` * `fieldsRemove` * `fieldsRename` * `dql` * `technology` * `drop` * `bucketAssignment` * `noStorage` * `securityContext` * `counterMetric` * `samplingAwareCounterMetric` * `valueMetric` * `histogramMetric` * `samplingAwareValueMetric` * `samplingAwareHistogramMetric` * `davis` * `bizevent` * `sdlcEvent` * `azureLogForwarding` * `securityEvent` * `costAllocation` * `productAllocation` * `smartscapeNode` * `smartscapeEdge` | Required |
-| Matcher (DQL) `matcher` | text | [See our documentationï»¿](https://dt-url.net/bp234rv) | Required |
+| Type `type` | enum | Processor type The element has these enums * `fieldsAdd` * `fieldsRemove` * `fieldsRename` * `dql` * `technology` * `drop` * `bucketAssignment` * `noStorage` * `securityContext` * `counterMetric` * `samplingAwareCounterMetric` * `valueMetric` * `histogramMetric` * `samplingAwareValueMetric` * `samplingAwareHistogramMetric` * `davis` * `bizevent` * `sdlcEvent` * `azureLogForwarding` * `securityEvent` * `costAllocation` * `productAllocation` * `smartscapeNode` * `smartscapeEdge` * `geoLookup` * `inlineLookup` | Required |
+| Matcher (DQL) `matcher` | text | [See our documentation﻿](https://dt-url.net/bp234rv) | Required |
 | Description `description` | text | - | Required |
 | Sample data `sampleData` | text | - | Optional |
 | Enabled `enabled` | boolean | - | Required |
@@ -95,6 +94,8 @@ To execute this request, you need an access token with **Read settings** (`setti
 | Security event extraction processor attributes `securityEvent` | [SecurityEventAttributes](#SecurityEventAttributes) | - | Required |
 | Cost allocation processor attributes `costAllocation` | [CostAllocationAttributes](#CostAllocationAttributes) | - | Required |
 | Product allocation processor attributes `productAllocation` | [ProductAllocationAttributes](#ProductAllocationAttributes) | - | Required |
+| Geo lookup processor attributes `geoLookup` | [GeoLookupAttributes](#GeoLookupAttributes) | - | Required |
+| Inline lookup processor attributes `inlineLookup` | [InlineLookupAttributes](#InlineLookupAttributes) | - | Required |
 
 ##### The `DqlAttributes` object
 
@@ -267,6 +268,23 @@ To execute this request, you need an access token with **Read settings** (`setti
 | Property | Type | Description | Required |
 | --- | --- | --- | --- |
 | The strategy to set product allocation field `value` | [GenericValueAssignment](#GenericValueAssignment) | - | Required |
+
+##### The `GeoLookupAttributes` object
+
+| Property | Type | Description | Required |
+| --- | --- | --- | --- |
+| IP field key `ipFieldKey` | text | The field key that contains the IP address to be resolved to a geo location. | Required |
+| Geo field prefix `geoFieldPrefix` | text | Optional prefix for all output geo fields. If specified, output fields will be prefixed as .geo.. If omitted, output fields will be geo.. | Optional |
+| Output fields `outputFields` | Set<[GeoOutputField](#GeoOutputField)> | The geo fields to enrich the record with. If empty or not specified, the default fields (city name, country ISO code, country name, location) are used. The element has these enums * `cityName` * `countryIsoCode` * `countryName` * `location` * `continentIsoCode` * `continentName` * `postalCode` * `regionIsoCode` * `regionName` * `subdivisionIsoCodes` | Required |
+
+##### The `InlineLookupAttributes` object
+
+| Property | Type | Description | Required |
+| --- | --- | --- | --- |
+| Source field `sourceField` | text | The field key whose value is looked up in the lookup table. | Required |
+| Destination field `destinationField` | text | The field key to write the matched lookup value to. | Required |
+| Lookup entries `inlineLookupTable` | text | The key-value pairs of the inline lookup table, encoded as a compact JSON string: [[["key1","key2"],"value1"],[["key3"],"value2"]]. | Required |
+| Default value `defaultValue` | text | The value to write to the destination field when no lookup key matches. If absent, the destination field is left unchanged when no key matches. | Optional |
 
 ##### The `FieldsAddAttributesEntry` object
 

@@ -1,7 +1,6 @@
 ---
 title: Web application metrics API - POST a metric
 source: https://docs.dynatrace.com/managed/dynatrace-api/configuration-api/calculated-metrics/rum-metrics/post-metric
-scraped: 2026-05-12T11:17:56.258346
 ---
 
 # Web application metrics API - POST a metric
@@ -41,7 +40,7 @@ Descriptor of the calculated web application metric.
 | Element | Type | Description | Required |
 | --- | --- | --- | --- |
 | applicationIdentifier | string | The Dynatrace entity ID of the application to which the metric belongs. | Required |
-| dimensions | [WebApplicationDimensionDefinition[]](#openapi-definition-WebApplicationDimensionDefinition) | A list of metric dimensions. | Optional |
+| dimensions | [WebApplicationDimensionDefinition](#openapi-definition-WebApplicationDimensionDefinition)[] | A list of metric dimensions. | Optional |
 | enabled | boolean | The metric is enabled (`true`) or disabled (`false`). | Required |
 | metricDefinition | [WebApplicationMetricDefinition](#openapi-definition-WebApplicationMetricDefinition) | Definition of the web application metric. | Required |
 | metricKey | string | The unique key of the metric.  The key must have the `calc:apps` prefix. | Required |
@@ -111,7 +110,7 @@ A user action must match **all** the criteria.
 | targetViewName | string | Only actions on the specified view are included in the metric calculation. | Optional |
 | targetViewNameMatchType | string | Specifies the match type of the view name filter, e.g. using `Contains` or `Equals`. Defaults to `Equals`. The element can hold these values * `Contains` * `Equals` | Optional |
 | userActionName | string | Only actions with this name are included in the metric calculation.  The EQUALS operator applies. | Optional |
-| userActionProperties | [UserActionPropertyFilter[]](#openapi-definition-UserActionPropertyFilter) | Only actions with the specified properties are included in the metric calculation. | Optional |
+| userActionProperties | [UserActionPropertyFilter](#openapi-definition-UserActionPropertyFilter)[] | Only actions with the specified properties are included in the metric calculation. | Optional |
 | xhrAction | boolean | The status of XHR actions in the metric calculation:  * `true`: XHR actions are included. * `false`: All actions are included. | Optional |
 | xhrRouteChangeAction | boolean | The status of route change actions in the metric calculation:  * `true`: Route change actions are included. * `false`: All actions are included. | Optional |
 
@@ -243,7 +242,7 @@ The short representation of a Dynatrace entity.
 | Element | Type | Description |
 | --- | --- | --- |
 | code | integer | The HTTP status code |
-| constraintViolations | [ConstraintViolation[]](#openapi-definition-ConstraintViolation) | A list of constraint violations |
+| constraintViolations | [ConstraintViolation](#openapi-definition-ConstraintViolation)[] | A list of constraint violations |
 | message | string | The error message |
 
 #### The `ConstraintViolation` object
@@ -374,7 +373,7 @@ To learn how to obtain and use it, see [Tokens and authentication](/managed/disc
 | Element | Type | Description |
 | --- | --- | --- |
 | code | integer | The HTTP status code |
-| constraintViolations | [ConstraintViolation[]](#openapi-definition-ConstraintViolation) | A list of constraint violations |
+| constraintViolations | [ConstraintViolation](#openapi-definition-ConstraintViolation)[] | A list of constraint violations |
 | message | string | The error message |
 
 #### The `ConstraintViolation` object
@@ -448,4 +447,4 @@ A list of constraint violations
 
 ## Related topics
 
-* [Create calculated metrics for web applications](/managed/observe/digital-experience/web-applications/additional-configuration/rum-calculated-metrics-web "Create calculated metrics as well as custom charts based on calculated metrics for your web applications.")
+* [Create calculated metrics for web applications in RUM Classic](/managed/observe/digital-experience/rum-classic/web-applications/additional-configuration/rum-calculated-metrics-web "Create calculated metrics as well as custom charts based on calculated metrics for your web applications.")

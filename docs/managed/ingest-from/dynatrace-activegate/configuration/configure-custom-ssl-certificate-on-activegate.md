@@ -1,7 +1,6 @@
 ---
 title: Custom SSL certificate for ActiveGate
 source: https://docs.dynatrace.com/managed/ingest-from/dynatrace-activegate/configuration/configure-custom-ssl-certificate-on-activegate
-scraped: 2026-05-12T11:13:58.051235
 ---
 
 # Custom SSL certificate for ActiveGate
@@ -13,11 +12,11 @@ scraped: 2026-05-12T11:13:58.051235
 
 Not applicable to Cluster ActiveGate
 
-The following procedureâof directly uploading an SSL certificate to an ActiveGateâis not applicable for Cluster ActiveGates.
+The following procedure—of directly uploading an SSL certificate to an ActiveGate—is not applicable for Cluster ActiveGates.
 Do not attempt to configure SSL certificates directly on a Cluster ActiveGate. If you do this, the certificate will be overwritten by automatic management performed by Dynatrace.
 For Cluster ActiveGates, you must upload your certificates using [the Cluster Management Console](/managed/managed-cluster/installation/ssl-certificate-cluster-activegate "Configure a custom SSL certificate on a Cluster ActiveGate instead of relying on Dynatrace-managed certificate automation.") or [the Cluster REST API v1](/managed/dynatrace-api/cluster-api/cluster-api-v1/ssl-certificates-v1/post-cluster-ssl-cert-store-status "Learn how to use the Dynatrace API to store cluster SSL certificate.").
 
-Connection to ActiveGate, from OneAgents or REST API, takes place over an encrypted HTTPS channel. ActiveGate presents a self-signed authentication certificate to all connecting clients. While OneAgent instances may ignore the validity of ActiveGate certificates (depending on configuration), connections from browser clients (such as the [RUM JavaScript](/managed/observe/digital-experience/web-applications/initial-setup/rum-injection "Configure automatic injection of the RUM JavaScript into the pages of your applications")) do verify that the hostname listed in the certificate is correct, before they send data.
+Connection to ActiveGate, from OneAgents or REST API, takes place over an encrypted HTTPS channel. ActiveGate presents a self-signed authentication certificate to all connecting clients. While OneAgent instances may ignore the validity of ActiveGate certificates (depending on configuration), connections from browser clients (such as the [RUM JavaScript](/managed/observe/digital-experience/rum-classic/web-applications/initial-setup/rum-injection "Configure automatic injection of the RUM JavaScript into the pages of your applications")) do verify that the hostname listed in the certificate is correct, before they send data.
 
 ActiveGate can serve a custom certificate instead of the default one.
 

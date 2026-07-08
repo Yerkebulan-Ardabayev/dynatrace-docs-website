@@ -1,7 +1,6 @@
 ---
 title: Monitor third-party services
 source: https://docs.dynatrace.com/managed/observe/application-observability/services/service-detection/service-detection-v1/monitor-3rd-party-services
-scraped: 2026-05-12T12:02:44.728967
 ---
 
 # Monitor third-party services
@@ -15,7 +14,7 @@ scraped: 2026-05-12T12:02:44.728967
 Dynatrace captures and monitors all outgoing requests from your monitored server-side services. This includes web requests that your server-side components send out across the internet.
 
 * Most of them probably are not important to you, so Dynatrace collects them into a special service called **Requests to public networks**.
-* Some of them, however, probably *are* important to youâfor example, if your application relies on the performance and availability of third-party service providers. For this reason, Dynatrace provides a way to monitor third-party services with important HTTP requests as standalone services
+* Some of them, however, probably *are* important to you—for example, if your application relies on the performance and availability of third-party service providers. For this reason, Dynatrace provides a way to monitor third-party services with important HTTP requests as standalone services
 
 Note that currently, the feature doesn't support gRPC requests.
 
@@ -32,7 +31,7 @@ To configure Dynatrace to monitor a third-party service provider as a separate s
 3. On the **Requests to public networks** page, select **View requests** to list details about aggregated requests.
 4. Scroll down to the **top domains** table of domains and select the domain that you want to monitor as a separate service.  
    The page is now filtered by this domain name.
-5. In the upper-right corner of the page, select **More** (**â¦**) > **Monitor as separate service**.
+5. In the upper-right corner of the page, select **More** (**…**) > **Monitor as separate service**.
 
    ![3rd party service 2](https://dt-cdn.net/images/3rd-party-service-2-1178-b6dda96df9.png)
 
@@ -55,7 +54,7 @@ If you no longer want to have a recategorized third-party service set up as a st
 
 1. Go to **Services**.
 2. Find and open the required service.
-3. Select **More** (**â¦**) > **Revert to 3rd party service status**.
+3. Select **More** (**…**) > **Revert to 3rd party service status**.
 
    ![3rd party service 3](https://dt-cdn.net/images/3rd-party-service-3-842-21ac60233d.png)
 

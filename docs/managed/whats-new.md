@@ -1,7 +1,6 @@
 ---
 title: What's new in Dynatrace Managed
 source: https://docs.dynatrace.com/managed/whats-new
-scraped: 2026-05-12T11:36:47.966622
 ---
 
 # What's new in Dynatrace Managed
@@ -10,7 +9,7 @@ scraped: 2026-05-12T11:36:47.966622
 
 * Updated on Mar 10, 2026
 
-These release notes for Dynatrace updatesâshowcasing new features, changes, and bug fixesâkeep you informed and ahead of the game.
+These release notes for Dynatrace updates—showcasing new features, changes, and bug fixes—keep you informed and ahead of the game.
 
 Filter by
 
@@ -34,13 +33,13 @@ Rollout process
 
 Every second sprint is publicly released. To guarantee maximum reliability, we follow a staged rollout process that typically takes under four weeks to complete.
 
-![Rollout process](https://dt-cdn.net/images/rollout-process-1108-fb0a5a03b6.png)
+![ActiveGate and OneAgent rollout process](https://cdn.bfldr.com/B686QPH3/as/kn8fgfvk8p289hwxb9mfhz5p/Dynatrace_OneAgent_and_ActiveGate_rollout_process_-_Light_Mode?auto=webp&format=png&position=1)
 
-Rollout process
+ActiveGate and OneAgent rollout process
 
 ## How long are versions supported following rollout?
 
-|  | [Standard Supportï»¿](https://www.dynatrace.com/services-support/) | [Enterprise Success and Supportï»¿](https://www.dynatrace.com/services-support/) |
+|  | [Standard Support﻿](https://www.dynatrace.com/services-support/) | [Enterprise Success and Support﻿](https://www.dynatrace.com/services-support/) |
 | --- | --- | --- |
 | OneAgent | 9 months | 12 months |
 | ActiveGate | 9 months | 12 months |
@@ -62,6 +61,4 @@ Other Dynatrace components have their own release cycles, independent of Dynatra
 
 Discover new technologies that can be monitored with Dynatrace, and how to get started.](/managed/whats-new/technology "Discover new technologies that can be monitored with Dynatrace.")[### End-of-support news
 
-End of support announcements for technologies supported by Dynatrace.](/managed/whats-new/technology/end-of-support-news "End of support announcements for technologies supported by Dynatrace.")[### New Documentation topics
-
-List of all new or significantly changed Dynatrace Documentation topics, sorted by week of publication.](/managed/upgrade/unavailable-in-managed "Your selection is unavailable in Dynatrace Managed.")
+End of support announcements for technologies supported by Dynatrace.](/managed/whats-new/technology/end-of-support-news "End of support announcements for technologies supported by Dynatrace.")

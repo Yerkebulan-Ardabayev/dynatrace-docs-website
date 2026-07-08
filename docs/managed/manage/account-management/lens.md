@@ -1,7 +1,6 @@
 ---
 title: Lens
 source: https://docs.dynatrace.com/managed/manage/account-management/lens
-scraped: 2026-05-12T11:13:42.032527
 ---
 
 # Lens

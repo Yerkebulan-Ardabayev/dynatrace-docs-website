@@ -1,7 +1,6 @@
 ---
 title: Customize JMX extensions
 source: https://docs.dynatrace.com/managed/ingest-from/extend-dynatrace/extend-metrics/ingestion-methods/jmx-extensions/customize-jmx-extensions
-scraped: 2026-05-12T11:50:00.025846
 ---
 
 # Customize JMX extensions
@@ -246,7 +245,7 @@ This part specifies the configuration of one or more alerts for a given timeseri
 | `event_name` | String | Event name displayed on UI pages. |
 | `threshold` | Float | The value of the threshold. |
 | `alert_condition` | String | ABOVE or BELOW. |
-| `samples` | Integer | Size of the âwindowâ in which violating\_samples are counted. |
+| `samples` | Integer | Size of the “window” in which violating\_samples are counted. |
 | `violating_samples` | Integer | The number of violating samples that rise an alert. |
 | `dealerting_samples` | Integer | The number of not violating samples that deactivate the alert. |
 | `value_extractor` | String | Dynatrace captures a value every 10 seconds but only sends one aggregate value per minute. This specifies how to aggregate these 10 second values. Possible values: `MIN`, `MAX`, `SUM`, `COUNT`, `AVG`, `MEDIAN`, `P90`. Default value is `AVG` |

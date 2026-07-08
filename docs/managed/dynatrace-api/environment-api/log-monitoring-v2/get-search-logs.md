@@ -1,7 +1,6 @@
 ---
 title: Log Monitoring API v2 - GET search logs
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/log-monitoring-v2/get-search-logs
-scraped: 2026-05-12T11:54:16.614018
 ---
 
 # Log Monitoring API v2 - GET search logs
@@ -39,7 +38,7 @@ To learn how to obtain and use it, see [Tokens and authentication](/managed/disc
 | from | string | The start of the requested timeframe.  You can use one of the following formats:  * Timestamp in UTC milliseconds. * Human-readable format of `2021-01-25T05:57:01.123+01:00`. If no time zone is specified, UTC is used. You can use a space character instead of the `T`. Seconds and fractions of a second are optional. * Relative timeframe, back from now. The format is `now-NU/A`, where `N` is the amount of time, `U` is the unit of time, and `A` is an alignment. The alignment rounds all the smaller values to the nearest zero in the past. For example, `now-1y/w` is one year back, aligned by a week.   You can also specify relative timeframe without an alignment: `now-NU`.   Supported time units for the relative timeframe are: + `m`: minutes   + `h`: hours   + `d`: days   + `w`: weeks   + `M`: months   + `y`: years  If not set, the relative timeframe of two weeks is used (`now-2w`). | query | Optional |
 | to | string | The end of the requested timeframe.  You can use one of the following formats:  * Timestamp in UTC milliseconds. * Human-readable format of `2021-01-25T05:57:01.123+01:00`. If no time zone is specified, UTC is used. You can use a space character instead of the `T`. Seconds and fractions of a second are optional. * Relative timeframe, back from now. The format is `now-NU/A`, where `N` is the amount of time, `U` is the unit of time, and `A` is an alignment. The alignment rounds all the smaller values to the nearest zero in the past. For example, `now-1y/w` is one year back, aligned by a week.   You can also specify relative timeframe without an alignment: `now-NU`.   Supported time units for the relative timeframe are: + `m`: minutes   + `h`: hours   + `d`: days   + `w`: weeks   + `M`: months   + `y`: years  If not set, the current timestamp is used. | query | Optional |
 | limit | integer | The desired amount of log records.  The maximal allowed limit is 1000.  If not set, 1000 is used. | query | Optional |
-| query | string | The log search query.  The query must use the [Dynatrace search query languageï»¿](https://dt-url.net/pe03s6f). | query | Optional |
+| query | string | The log search query.  The query must use the [Dynatrace search query language﻿](https://dt-url.net/pe03s6f). | query | Optional |
 | sort | string | Defines the ordering of the log records.  Each field has a sign prefix (+/-) for sorting order. If no sign prefix is set, then the `+` option will be applied.  Currently, ordering is available only for the timestamp (+timestamp for the oldest records first, or -timestamp for the newest records first).  When millisecond resolution provided by the timestamp is not enough, log records are sorted based on the order in which they appear in the log source (remote process writing to REST API endpoint or remote process from which logs are collected). | query | Optional |
 | nextSliceKey | string | The cursor for the next slice of results. You can find it in the **nextSliceKey** field of the previous response.  The first slice is always returned if you don't specify this parameter.  If this parameter is set, all other query parameters are ignored.  Unsupported on *Log Management and Analytics, powered by Grail*. | query | Optional |
 
@@ -63,7 +62,7 @@ A list of retrieved log records.
 | Element | Type | Description |
 | --- | --- | --- |
 | nextSliceKey | string | The cursor for the next slice of log records. Always null on *Log Management and Analytics, powered by Grail*. |
-| results | [LogRecord[]](#openapi-definition-LogRecord) | A list of retrieved log records. |
+| results | [LogRecord](#openapi-definition-LogRecord)[] | A list of retrieved log records. |
 | sliceSize | integer | The total number of records in a slice. |
 | warnings | string | Optional warning messages. |
 
@@ -90,7 +89,7 @@ A single log record.
 | Element | Type | Description |
 | --- | --- | --- |
 | code | integer | The HTTP status code |
-| constraintViolations | [ConstraintViolation[]](#openapi-definition-ConstraintViolation) | A list of constraint violations |
+| constraintViolations | [ConstraintViolation](#openapi-definition-ConstraintViolation)[] | A list of constraint violations |
 | message | string | The error message |
 
 #### The `ConstraintViolation` object

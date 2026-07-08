@@ -1,7 +1,6 @@
 ---
 title: Monitor Kubernetes/OpenShift events
 source: https://docs.dynatrace.com/managed/observe/infrastructure-observability/container-platform-monitoring/kubernetes-monitoring/monitor-events-kubernetes
-scraped: 2026-05-12T12:00:30.414729
 ---
 
 # Monitor Kubernetes/OpenShift events
@@ -24,7 +23,7 @@ For full observability into your Kubernetes events, automatic Davis analysis, an
 To enable event monitoring for specific Kubernetes clusters
 
 1. Go to **Kubernetes**.
-2. Find your Kubernetes cluster and, in the **Actions** column, select **More** (**â¦**) > **Settings**.
+2. Find your Kubernetes cluster and, in the **Actions** column, select **More** (**…**) > **Settings**.
 3. On the **Monitoring Settings** tab, turn on **Monitor events**.
 4. Select **Save changes**.
 
@@ -77,7 +76,7 @@ Filtering is turned off by default, which means that all events are ingested. To
 
 ### Set up event field selectors
 
-Filtering follows the [Kubernetes-established syntax of field selectorsï»¿](https://kubernetes.io/docs/concepts/overview/working-with-objects/field-selectors/), so events can be chosen based on event resource fields such as `source.component`, `type`, or `involvedObject`.
+Filtering follows the [Kubernetes-established syntax of field selectors﻿](https://kubernetes.io/docs/concepts/overview/working-with-objects/field-selectors/), so events can be chosen based on event resource fields such as `source.component`, `type`, or `involvedObject`.
 
 A field selector expression must meet the following requirements:
 
@@ -115,7 +114,7 @@ Via CLI
 Via API
 
 1. Go to **Kubernetes**.
-2. Find your Kubernetes cluster and, in the **Actions** column, select **More** (**â¦**) > **Settings**.
+2. Find your Kubernetes cluster and, in the **Actions** column, select **More** (**…**) > **Settings**.
 3. On the **Monitoring Settings** tab
 
    * Turn on **Filter events**.
@@ -156,7 +155,7 @@ By default, all these events are monitored when [**Monitor events**](#monitor-ev
 To enable monitoring of important events, when event filtering is turned on
 
 1. Go to **Kubernetes**.
-2. Find your Kubernetes cluster and, in the **Actions** column, select **More** (**â¦**) > **Settings**.
+2. Find your Kubernetes cluster and, in the **Actions** column, select **More** (**…**) > **Settings**.
 3. On the **Monitoring Settings** tab, turn on **Include important events**.
 
    If you don't see the **Include important events** switch, make sure that **Monitor events** and **Filter events** are turned on first.
@@ -177,7 +176,7 @@ Example query for a 24-hour timeframe:
 
 `dsfm:active_gate.kubernetes.events.processed:splitBy("dt.entity.kubernetes_cluster"):sum:auto:sort(value(sum,descending)):limit(10)`
 
-DDU consumption applies to Kubernetes event monitoring. For details, see [DDUs for custom Davis events](/managed/license/monitoring-consumption-classic/davis-data-units/ddu-events "Understand how to calculate Davis data unit consumption and costs related to custom-configured and custom-ingested events.").
+DDU consumption applies to Kubernetes event monitoring. For details, see [DDUs for custom Davis events](/managed/license/classic-licensing/davis-data-units/ddu-events "Understand how to calculate Davis data unit consumption and costs related to custom-configured and custom-ingested events.").
 
 ## Related topics
 

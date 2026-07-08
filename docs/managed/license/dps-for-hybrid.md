@@ -1,12 +1,11 @@
 ---
-title: Dynatrace Platform Subscription for hybrid setups (DPS for Hybrid)
+title: DPS for Hybrid
 source: https://docs.dynatrace.com/managed/license/dps-for-hybrid
-scraped: 2026-05-12T11:09:06.219449
 ---
 
-# Dynatrace Platform Subscription for hybrid setups (DPS for Hybrid)
+# DPS for Hybrid
 
-# Dynatrace Platform Subscription for hybrid setups (DPS for Hybrid)
+# DPS for Hybrid
 
 * Explanation
 * 2-min read
@@ -21,7 +20,7 @@ With DPS for Hybrid:
 * Your order form contains all relevant rate card capabilities for your Managed and/or SaaS deployments.
 * On-demand consumption (ODC) is always enabled for all accounts.
 
-For more information about DPS in general, see [License Dynatrace](/managed/license "About Dynatrace Platform Subscription (DPS), the licensing model for all Dynatrace capabilities.").
+For more information about DPS in general, see [License Dynatrace](/managed/license "Dynatrace Platform Subscription, capability rate cards, hybrid licensing, and previous license models.").
 
 ## Why to use DPS for Hybrid
 
@@ -50,7 +49,7 @@ Here are some use cases where DPS for Hybrid is not the right solution:
 | You want to share monitoring data between different accounts. | DPS for Hybrid is focused on your license, not your monitoring data. While you can share data between different environments in the same account, it isn't possible to share monitoring data between different accounts. |
 | You want to allocate or report budgets across multiple accounts. | Budgets are allocated and reported at the license level. You can't use DPS for Hybrid to allocate or report your budget to individual accounts. If you want to do this, your accounts need to have separate DPS licenses. |
 | You have purchased one of your DPS licenses via a marketplace, such as:  * Microsoft Marketplace (Azure). * AWS Marketplace. * Google Cloud Marketplace. | DPS for Hybrid can't share license information between accounts on different marketplaces.  You can still use DPS for Hybrid if you deploy via a hyperscaler. DPS for Hybrid isn't affected by the technical infrastructure provider. |
-| You are a [Dynatrace Solution Partnerï»¿](https://www.dynatrace.com/partners/solution-partners/). | DPS for Hybrid is designed only for end customers, not for Dynatrace Solution Partners. |
+| You are a [Dynatrace Solution Partner﻿](https://www.dynatrace.com/partners/solution-partners/). | DPS for Hybrid is designed only for end customers, not for Dynatrace Solution Partners. |
 
 ## Cost management with DPS for Hybrid
 
@@ -59,7 +58,7 @@ You can use forecasts, cost events, and budget alerts to manage your costs.
 ### Forecasts and cost events
 
 Forecasts and cost events help you manage your DPS for Hybrid budget at the account level.
-For more information, see [Customize cost alerts](/managed/license/cost-monitors "Learn how to use the Cost Monitors feature to make forecasts and cost events.").
+For more information, see [Cost monitors](/managed/manage-your-costs/control/cost-monitors "Learn how to use the Cost Monitors feature to make forecasts and cost events.").
 
 Note that the following considerations apply for DPS for Hybrid subscriptions:
 
@@ -74,7 +73,7 @@ Forecasts are based on statistical models and therefore be relied on with cautio
 ### Budget alerts
 
 Use the Account Management **Budgets** tab to customize your Dynatrace Platform Subscription (DPS) budgets.
-For general information about budgets, see [Set budget alerts](/managed/license/budget-alerts "Learn how to configure budgets in Dynatrace.").
+For general information about budgets, see [Budget alerts](/managed/manage-your-costs/control/budgets "Learn how to configure budgets in Dynatrace.").
 
 Note that the following considerations apply for DPS for Hybrid subscriptions:
 
@@ -109,7 +108,7 @@ In case you haven't received an invite to the forum, reach out to your DT contac
 If I move from a classic license model to DPS for Hybrid, what changes for me?
 
 You will get all the benefits of our powerful Dynatrace Platform Subscription (DPS).
-For more information about DPS, see [License Dynatrace](/managed/license "About Dynatrace Platform Subscription (DPS), the licensing model for all Dynatrace capabilities.").
+For more information about DPS, see [License Dynatrace](/managed/license "Dynatrace Platform Subscription, capability rate cards, hybrid licensing, and previous license models.").
 
 Can I add additional accounts to a DPS for Hybrid, after setting it up?
 
@@ -142,4 +141,4 @@ This contains all relevant Managed and/or SaaS capabilities.
 ## Related topics
 
 * [Subscription overview (DPS for Hybrid)](/managed/manage/account-management/license-subscription/subscription-overview-dps-hybrid "View your DPS for Hybrid budget summary and cost analysis.")
-* [License Dynatrace](/managed/license "About Dynatrace Platform Subscription (DPS), the licensing model for all Dynatrace capabilities.")
+* [License Dynatrace](/managed/license "Dynatrace Platform Subscription, capability rate cards, hybrid licensing, and previous license models.")

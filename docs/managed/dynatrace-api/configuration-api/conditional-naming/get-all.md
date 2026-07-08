@@ -1,7 +1,6 @@
 ---
 title: conditional naming API - GET all conditional naming rules
 source: https://docs.dynatrace.com/managed/dynatrace-api/configuration-api/conditional-naming/get-all
-scraped: 2026-05-12T11:17:26.672933
 ---
 
 # conditional naming API - GET all conditional naming rules
@@ -34,7 +33,7 @@ To learn how to obtain and use it, see [Tokens and authentication](/managed/disc
 
 ## Response
 
-The request returns the list of short representations of conditional naming rulesâjust ID, name, and description.
+The request returns the list of short representations of conditional naming rules—just ID, name, and description.
 
 ### Response codes
 
@@ -50,7 +49,7 @@ An ordered list of short representations of Dynatrace entities.
 
 | Element | Type | Description |
 | --- | --- | --- |
-| values | [EntityShortRepresentation[]](#openapi-definition-EntityShortRepresentation) | An ordered list of short representations of Dynatrace entities. |
+| values | [EntityShortRepresentation](#openapi-definition-EntityShortRepresentation)[] | An ordered list of short representations of Dynatrace entities. |
 
 #### The `EntityShortRepresentation` object
 

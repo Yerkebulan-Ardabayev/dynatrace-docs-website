@@ -1,7 +1,6 @@
 ---
 title: Preset Dynatrace dashboards
 source: https://docs.dynatrace.com/managed/analyze-explore-automate/dashboards-classic/dashboards/dashboards-preset
-scraped: 2026-05-12T12:02:15.162347
 ---
 
 # Preset Dynatrace dashboards
@@ -66,10 +65,10 @@ Use **Clone** to create your personal, editable copy of a dashboard with `-clone
 2. Find the out-of-the-box preset dashboard you want to clone.
 3. Use one of these methods to clone the dashboard:
 
-   * Select **More** (**â¦**) > **Clone** for the dashboard you want to clone.
-   * Open the dashboard, select **More** (**â¦**) in the upper-right of the dashboard, and select **Clone**.
+   * Select **More** (**…**) > **Clone** for the dashboard you want to clone.
+   * Open the dashboard, select **More** (**…**) in the upper-right of the dashboard, and select **Clone**.
 
-To clone a dashboard you are currently displaying, select **More** (**â¦**) > **Clone**.
+To clone a dashboard you are currently displaying, select **More** (**…**) > **Clone**.
 
 ### To inspect and edit the clone
 
@@ -77,10 +76,10 @@ Now that you have a copy of the dashboard, you can experiment with it.
 
 1. Select **Edit** to inspect and edit the dashboard components.
 
-   * **Name**âSelect  after the dashboard name to personalize the name of your clone.
-   * **Tags**âUnder the dashboard name, add and delete tags as needed.
-   * **Markdown** and **Header** tilesâSelect them to see how to use text and headers on your dashboard to label and explain elements of the dashboard.
-   * Other tilesâselect tiles to see the settings in the tile-specific pane on the right. See [Available tiles](/managed/analyze-explore-automate/dashboards-classic/charts-and-tiles/available-tiles "Find out how to configure your dashboard to track business-critical user-actions and conversion goals.") for tile-specific help.
+   * **Name**—Select  after the dashboard name to personalize the name of your clone.
+   * **Tags**—Under the dashboard name, add and delete tags as needed.
+   * **Markdown** and **Header** tiles—Select them to see how to use text and headers on your dashboard to label and explain elements of the dashboard.
+   * Other tiles—select tiles to see the settings in the tile-specific pane on the right. See [Available tiles](/managed/analyze-explore-automate/dashboards-classic/charts-and-tiles/available-tiles "Find out how to configure your dashboard to track business-critical user-actions and conversion goals.") for tile-specific help.
 2. Select **Done** to save any changes and display the working dashboard.
 3. Try drilldowns from the tiles to see where they go.
 

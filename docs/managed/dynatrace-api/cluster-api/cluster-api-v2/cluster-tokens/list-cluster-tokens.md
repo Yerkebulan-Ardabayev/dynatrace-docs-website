@@ -1,7 +1,6 @@
 ---
 title: List available Cluster tokens
 source: https://docs.dynatrace.com/managed/dynatrace-api/cluster-api/cluster-api-v2/cluster-tokens/list-cluster-tokens
-scraped: 2026-05-12T11:06:03.716511
 ---
 
 # List available Cluster tokens
@@ -16,7 +15,7 @@ You can narrow down the output by adding parameters. The token has to match all 
 
 You can also specify the limit of returned tokens.
 
-This list may contain tokens which were created automatically (for example, InstallerDownload, Mobile, â¦) and are not visible on the Settings page. Deleting these might have unintended side-effects as they may still be in use.
+This list may contain tokens which were created automatically (for example, InstallerDownload, Mobile, …) and are not visible on the Settings page. Deleting these might have unintended side-effects as they may still be in use.
 
 ## Authentication
 
@@ -52,7 +51,7 @@ An ordered list of short representations of Dynatrace entities.
 
 | Element | Type | Description |
 | --- | --- | --- |
-| values | [EntityShortRepresentation[]](#openapi-definition-EntityShortRepresentation) | An ordered list of short representations of Dynatrace entities. |
+| values | [EntityShortRepresentation](#openapi-definition-EntityShortRepresentation)[] | An ordered list of short representations of Dynatrace entities. |
 
 #### The `EntityShortRepresentation` object
 

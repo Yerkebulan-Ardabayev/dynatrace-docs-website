@@ -1,7 +1,6 @@
 ---
 title: OneAgent metric API
 source: https://docs.dynatrace.com/managed/ingest-from/extend-dynatrace/extend-metrics/ingestion-methods/oneagent-metric-api
-scraped: 2026-05-12T11:10:22.871494
 ---
 
 # OneAgent metric API
@@ -33,7 +32,7 @@ Enable for a single host
 
 1. Go to **Hosts**.
 2. Find and select your host to display the host overview page.
-3. In the upper-right corner of the host overview page, select **More** (**â¦**) > **Settings**.
+3. In the upper-right corner of the host overview page, select **More** (**…**) > **Settings**.
 
 4. In the host settings, select **Extension Execution Controller**.
 5. Turn on **Enable Extension Execution Controller**.
@@ -134,7 +133,7 @@ Note that changing the port for the OneAgent metric API also affects scripting i
 
 Unlike the local ingestion interface, which adds the topology context automatically (each metric is assigned to a respective host), metrics pushed through the public [Metrics API](/managed/dynatrace-api/environment-api/metric-v2 "Retrieve metric information via Metrics v2 API.") v2 are flat by default. This is especially beneficial for business-related metrics that don't have any relation to the topology entities in your environment.
 
-However, to have events raised for a selected host and have DavisÂ® perform causation analysis based on your metrics, you can configure your app to add the `dt.entity.host` dimension. To automatically enrich process group identifier with the metric, provide `dt.process.pid` dimension. For more information, see [Metrics API - POST ingest data points](/managed/dynatrace-api/environment-api/metric-v2/post-ingest-metrics "Ingest custom metrics to Dynatrace via Metrics v2 API.").
+However, to have events raised for a selected host and have Davis® perform causation analysis based on your metrics, you can configure your app to add the `dt.entity.host` dimension. To automatically enrich process group identifier with the metric, provide `dt.process.pid` dimension. For more information, see [Metrics API - POST ingest data points](/managed/dynatrace-api/environment-api/metric-v2/post-ingest-metrics "Ingest custom metrics to Dynatrace via Metrics v2 API.").
 
 ## Related topics
 

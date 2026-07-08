@@ -1,7 +1,6 @@
 ---
 title: Synthetic nodes API v2
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/synthetic-v2/synthetic-nodes-v2
-scraped: 2026-05-12T11:11:44.003453
 ---
 
 # Synthetic nodes API v2

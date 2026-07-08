@@ -1,7 +1,6 @@
 ---
 title: Available tiles
 source: https://docs.dynatrace.com/managed/analyze-explore-automate/dashboards-classic/charts-and-tiles/available-tiles
-scraped: 2026-05-12T11:14:54.364143
 ---
 
 # Available tiles
@@ -50,7 +49,7 @@ Editing tips
   Clone an existing dashboard
 
   1. Go to **Dashboards**.
-  2. In the table of dashboards, select **More** (**â¦**) > **Clone** for the dashboard you want to copy.
+  2. In the table of dashboards, select **More** (**…**) > **Clone** for the dashboard you want to copy.
 
      + The copy opens in edit mode.
      + The original dashboard is unaffected.
@@ -262,8 +261,8 @@ To point to an image via URL and display it on your dashboard, you first need to
 2. Select **Add item**.
 3. Set **Rule**, which specifies how to process this allowlist entry.
 
-   * **Starts with**âallow any image whose URL starts with the contents of **Pattern**.
-   * **Exact**âallow the specific image whose URL matches the contents of **Pattern** exactly.
+   * **Starts with**—allow any image whose URL starts with the contents of **Pattern**.
+   * **Exact**—allow the specific image whose URL matches the contents of **Pattern** exactly.
 4. Set **Pattern**:
 
    * To specify a URL start, enter enough of the URL to make sure any matching image URLs will be suitable for your dashboards.  
@@ -303,7 +302,7 @@ Displays the number of hosts (operating system instances, whether physical and v
 Health tile drilldowns
 
 * From a health tile (such as **Host health**, **Service health**, and **Application health**), where you see green and red elements (such as hosts, services, or applications), hover over any problematic (red) element to see the identity of the element.
-* To drill down to a problematic (red) element, select the red hexagon and then select the **Viewâ¦** button. On this example **Synthetic monitor health** tile, we have selected a red element, which enabled the **View test** drilldown button for that element.
+* To drill down to a problematic (red) element, select the red hexagon and then select the **View…** button. On this example **Synthetic monitor health** tile, we have selected a red element, which enabled the **View test** drilldown button for that element.
 
   ![Drill down to problematic entity from health tile](https://dt-cdn.net/images/tile-health-bad-drilldown-276-6265617519.png)
 
@@ -441,7 +440,7 @@ Depending on the selected timeframe, the tile shows:
 Health tile drilldowns
 
 * From a health tile (such as **Host health**, **Service health**, and **Application health**), where you see green and red elements (such as hosts, services, or applications), hover over any problematic (red) element to see the identity of the element.
-* To drill down to a problematic (red) element, select the red hexagon and then select the **Viewâ¦** button. On this example **Synthetic monitor health** tile, we have selected a red element, which enabled the **View test** drilldown button for that element.
+* To drill down to a problematic (red) element, select the red hexagon and then select the **View…** button. On this example **Synthetic monitor health** tile, we have selected a red element, which enabled the **View test** drilldown button for that element.
 
   ![Drill down to problematic entity from health tile](https://dt-cdn.net/images/tile-health-bad-drilldown-276-6265617519.png)
 
@@ -498,7 +497,7 @@ To pin this tile to your dashboard with filters set
 
 1. Go to **Services**.
 2. Select a service.
-3. From the service page, select **More** (**â¦**) > **Pin to dashboard**. You can then set any of the options described above.
+3. From the service page, select **More** (**…**) > **Pin to dashboard**. You can then set any of the options described above.
 
    * The tile will reflect the options you have set
    * The next time you select the tile on your dashboard, the service page will open with the options already applied
@@ -539,7 +538,7 @@ Displays the total number of applications in your environment versus the number 
 Health tile drilldowns
 
 * From a health tile (such as **Host health**, **Service health**, and **Application health**), where you see green and red elements (such as hosts, services, or applications), hover over any problematic (red) element to see the identity of the element.
-* To drill down to a problematic (red) element, select the red hexagon and then select the **Viewâ¦** button. On this example **Synthetic monitor health** tile, we have selected a red element, which enabled the **View test** drilldown button for that element.
+* To drill down to a problematic (red) element, select the red hexagon and then select the **View…** button. On this example **Synthetic monitor health** tile, we have selected a red element, which enabled the **View test** drilldown button for that element.
 
   ![Drill down to problematic entity from health tile](https://dt-cdn.net/images/tile-health-bad-drilldown-276-6265617519.png)
 
@@ -636,11 +635,11 @@ To configure this tile type from the dashboard editor
 
    **Performance metric based on user actions:**
 
-   * [Apdex](/managed/observe/digital-experience/rum-concepts/scores-and-ratings/apdex-ratings "Learn how Dynatrace uses Apdex to measure user satisfaction with application performance.")
-   * [User actions](/managed/observe/digital-experience/rum-concepts/user-actions "Learn what user actions are and how they help you understand what users do with your application.")
-   * [Load actions](/managed/observe/digital-experience/rum-concepts/user-actions#load-action "Learn what user actions are and how they help you understand what users do with your application.")
-   * [XHR actions](/managed/observe/digital-experience/rum-concepts/user-actions#xhr-action "Learn what user actions are and how they help you understand what users do with your application.")
-   * [Custom actions](/managed/observe/digital-experience/rum-concepts/user-actions#custom-action "Learn what user actions are and how they help you understand what users do with your application.")
+   * [Apdex](/managed/observe/digital-experience/rum-classic/rum-concepts/scores-and-ratings/apdex-ratings "Learn how Dynatrace uses Apdex to measure user satisfaction with application performance.")
+   * [User actions](/managed/observe/digital-experience/rum-classic/rum-concepts/user-actions "Learn what user actions are and how they help you understand what users do with your application.")
+   * [Load actions](/managed/observe/digital-experience/rum-classic/rum-concepts/user-actions#load-action "Learn what user actions are and how they help you understand what users do with your application.")
+   * [XHR actions](/managed/observe/digital-experience/rum-classic/rum-concepts/user-actions#xhr-action "Learn what user actions are and how they help you understand what users do with your application.")
+   * [Custom actions](/managed/observe/digital-experience/rum-classic/rum-concepts/user-actions#custom-action "Learn what user actions are and how they help you understand what users do with your application.")
    * Errors
 
    **Behavior metric based on sessions or users:**
@@ -663,7 +662,7 @@ To pin this tile to your dashboard with filters set
 
 **Troubleshooting:**
 
-* If you don't see data on the world map, you might need to map your internal IP addresses to locations for your [web](/managed/observe/digital-experience/web-applications/additional-configuration/map-internal-ip-addresses-to-locations-web "Configure Dynatrace to use local addresses to understand where the users of your web applications are."), [mobile](/managed/observe/digital-experience/mobile-applications/additional-configuration/map-internal-ip-addresses-to-locations-mobile "Configure Dynatrace to use local addresses to understand where the users of your mobile applications are."), and [custom applications](/managed/observe/digital-experience/custom-applications/additional-configuration/map-internal-ip-addresses-to-locations-custom "Configure Dynatrace to use local addresses to understand where the users of your custom applications are.").
+* If you don't see data on the world map, you might need to map your internal IP addresses to locations for your [web](/managed/observe/digital-experience/rum-classic/web-applications/additional-configuration/map-internal-ip-addresses-to-locations-web "Configure Dynatrace to use local addresses to understand where the users of your web applications are."), [mobile](/managed/observe/digital-experience/rum-classic/mobile-applications/additional-configuration/map-internal-ip-addresses-to-locations-mobile "Configure Dynatrace to use local addresses to understand where the users of your mobile applications are."), and [custom applications](/managed/observe/digital-experience/rum-classic/custom-applications/additional-configuration/map-internal-ip-addresses-to-locations-custom "Configure Dynatrace to use local addresses to understand where the users of your custom applications are.").
 * Remember that the timeframe of a world map tile is always **Last 2 hours**, regardless of how you set the global or dashboard timeframe.
 
 ### Key user action overview
@@ -853,7 +852,7 @@ To configure this tile type from the dashboard editor
 
 ### Web application
 
-Displays key performance indicators related to the selected application: [Apdex rating](/managed/observe/digital-experience/rum-concepts/scores-and-ratings/apdex-ratings "Learn how Dynatrace uses Apdex to measure user satisfaction with application performance."), [user actions](/managed/observe/digital-experience/rum-concepts/user-actions "Learn what user actions are and how they help you understand what users do with your application.") per minute, and number of JavaScript errors per minute.
+Displays key performance indicators related to the selected application: [Apdex rating](/managed/observe/digital-experience/rum-classic/rum-concepts/scores-and-ratings/apdex-ratings "Learn how Dynatrace uses Apdex to measure user satisfaction with application performance."), [user actions](/managed/observe/digital-experience/rum-classic/rum-concepts/user-actions "Learn what user actions are and how they help you understand what users do with your application.") per minute, and number of JavaScript errors per minute.
 
 #### Drilldowns
 
@@ -878,7 +877,7 @@ To pin this tile to your dashboard with filters set
 
 ### Key user action
 
-Displays key performance indicators related to the selected application and key [user action](/managed/observe/digital-experience/rum-concepts/user-actions "Learn what user actions are and how they help you understand what users do with your application."): user action duration, user actions/min, and number of errors/min.
+Displays key performance indicators related to the selected application and key [user action](/managed/observe/digital-experience/rum-classic/rum-concepts/user-actions "Learn what user actions are and how they help you understand what users do with your application."): user action duration, user actions/min, and number of errors/min.
 
 #### Drilldowns
 
@@ -902,7 +901,7 @@ To pin this tile to your dashboard with filters set
 4. Select a key user action.
 
    * If the user action has already been selected as a key user action, select it in the **Key user actions** list.
-   * If the user action has not been selected as a key user action, select a user action from the **Top 100 user actions** tab, and then select **More** (**â¦**) > **Mark as key user action**.
+   * If the user action has not been selected as a key user action, select a user action from the **Top 100 user actions** tab, and then select **More** (**…**) > **Mark as key user action**.
 
    The **Pin to dashboard** button is now displayed.
 5. Select **Pin to dashboard**, select a target dashboard, and select **Pin**.
@@ -921,7 +920,7 @@ To configure this tile type from the dashboard editor
 
 1. Drag a **User Sessions Query** tile from the **Edit dashboard** pane, **Tiles** tab, to your dashboard
 2. Select **Configure tile** in the **User Sessions Query** configuration pane
-3. On the **User sessions query** page, [create a query](/managed/observe/digital-experience/session-segmentation/custom-queries-segmentation-and-aggregation-of-session-data "Learn how you can access and query user session data based on keywords, syntax, functions, and more.") and select **Run query**
+3. On the **User sessions query** page, [create a query](/managed/observe/digital-experience/rum-classic/session-segmentation/custom-queries-segmentation-and-aggregation-of-session-data "Learn how you can access and query user session data based on keywords, syntax, functions, and more.") and select **Run query**
 4. When you have a query that you want to link to your tile, select **Save changes to dashboard**
 5. Optional Select a custom timeframe
 6. Optional Select a custom management zone
@@ -1020,7 +1019,7 @@ Displays the number of active synthetic monitors in your environment against the
 Health tile drilldowns
 
 * From a health tile (such as **Host health**, **Service health**, and **Application health**), where you see green and red elements (such as hosts, services, or applications), hover over any problematic (red) element to see the identity of the element.
-* To drill down to a problematic (red) element, select the red hexagon and then select the **Viewâ¦** button. On this example **Synthetic monitor health** tile, we have selected a red element, which enabled the **View test** drilldown button for that element.
+* To drill down to a problematic (red) element, select the red hexagon and then select the **View…** button. On this example **Synthetic monitor health** tile, we have selected a red element, which enabled the **View test** drilldown button for that element.
 
   ![Drill down to problematic entity from health tile](https://dt-cdn.net/images/tile-health-bad-drilldown-276-6265617519.png)
 
@@ -1113,7 +1112,7 @@ Displays the number of databases in your environment against the number of datab
 Health tile drilldowns
 
 * From a health tile (such as **Host health**, **Service health**, and **Application health**), where you see green and red elements (such as hosts, services, or applications), hover over any problematic (red) element to see the identity of the element.
-* To drill down to a problematic (red) element, select the red hexagon and then select the **Viewâ¦** button. On this example **Synthetic monitor health** tile, we have selected a red element, which enabled the **View test** drilldown button for that element.
+* To drill down to a problematic (red) element, select the red hexagon and then select the **View…** button. On this example **Synthetic monitor health** tile, we have selected a red element, which enabled the **View test** drilldown button for that element.
 
   ![Drill down to problematic entity from health tile](https://dt-cdn.net/images/tile-health-bad-drilldown-276-6265617519.png)
 
@@ -1166,7 +1165,7 @@ Displays the total number of data center services in your environment against th
 Health tile drilldowns
 
 * From a health tile (such as **Host health**, **Service health**, and **Application health**), where you see green and red elements (such as hosts, services, or applications), hover over any problematic (red) element to see the identity of the element.
-* To drill down to a problematic (red) element, select the red hexagon and then select the **Viewâ¦** button. On this example **Synthetic monitor health** tile, we have selected a red element, which enabled the **View test** drilldown button for that element.
+* To drill down to a problematic (red) element, select the red hexagon and then select the **View…** button. On this example **Synthetic monitor health** tile, we have selected a red element, which enabled the **View test** drilldown button for that element.
 
   ![Drill down to problematic entity from health tile](https://dt-cdn.net/images/tile-health-bad-drilldown-276-6265617519.png)
 

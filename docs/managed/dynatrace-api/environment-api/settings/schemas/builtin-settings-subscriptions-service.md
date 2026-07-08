@@ -1,7 +1,6 @@
 ---
 title: Settings API - Key requests schema table
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/settings/schemas/builtin-settings-subscriptions-service
-scraped: 2026-05-12T11:44:31.650816
 ---
 
 # Settings API - Key requests schema table
@@ -17,7 +16,7 @@ Configuration for specifying Key requests for a particular Service. Each Service
 * Key requests can be used to have long-term metric history and dedicated dashboard tiles for charting and direct access from your dashboard. Request naming rules can affect Key requests and vice versa.
 * When you set up a Request naming rule that affects Key requests, to keep a renamed request as Key request you must provide the final name (after all Request naming rules are applied) here.
 
-You can learn more about Key requests in our [helpï»¿](https://dt-url.net/ss03uui "Visit dynatrace.com").
+You can learn more about Key requests in our [help﻿](https://dt-url.net/ss03uui "Visit dynatrace.com").
 
 | Schema ID | Schema groups | Scope |
 | --- | --- | --- |

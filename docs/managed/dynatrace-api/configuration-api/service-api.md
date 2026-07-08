@@ -1,7 +1,6 @@
 ---
 title: Services configuration API
 source: https://docs.dynatrace.com/managed/dynatrace-api/configuration-api/service-api
-scraped: 2026-05-12T12:15:30.374715
 ---
 
 # Services configuration API

@@ -1,7 +1,6 @@
 ---
 title: Settings API - Log audit events schema table
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/settings/schemas/builtin-audit-log
-scraped: 2026-05-12T11:46:26.657308
 ---
 
 # Settings API - Log audit events schema table

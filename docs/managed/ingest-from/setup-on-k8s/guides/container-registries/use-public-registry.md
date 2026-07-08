@@ -1,7 +1,6 @@
 ---
 title: Use a public registry
 source: https://docs.dynatrace.com/managed/ingest-from/setup-on-k8s/guides/container-registries/use-public-registry
-scraped: 2026-05-12T12:09:14.443467
 ---
 
 # Use a public registry
@@ -40,7 +39,7 @@ Start using these fortified images today for a safer and more efficient containe
 
 ## Supported public registries
 
-Dynatrace publishes its container images to [Amazon ECRï»¿](https://gallery.ecr.aws/dynatrace) and [Docker Hubï»¿](https://hub.docker.com/u/dynatrace):
+Dynatrace publishes its container images to [Amazon ECR﻿](https://gallery.ecr.aws/dynatrace) and [Docker Hub﻿](https://hub.docker.com/u/dynatrace):
 
 | Amazon ECR | Docker Hub |
 | --- | --- |

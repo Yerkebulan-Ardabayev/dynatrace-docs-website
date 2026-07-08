@@ -1,7 +1,6 @@
 ---
 title: Set custom host names
 source: https://docs.dynatrace.com/managed/observe/infrastructure-observability/hosts/configuration/set-custom-host-names-in-dynamic-environments
-scraped: 2026-05-12T11:22:14.203101
 ---
 
 # Set custom host names
@@ -12,7 +11,7 @@ scraped: 2026-05-12T11:22:14.203101
 * 5-min read
 * Published Dec 18, 2017
 
-Dynatrace automatically identifies and monitors the infrastructure on which itâs deployed, including all detected hosts. It detects hosts, technologies, locations, services, applications, and dependencies between those entities. Every hosts gets a name automatically.
+Dynatrace automatically identifies and monitors the infrastructure on which it’s deployed, including all detected hosts. It detects hosts, technologies, locations, services, applications, and dependencies between those entities. Every host gets a name automatically.
 
 However, detected host names can be unintuitive or confusing, especially within large and dynamic deployments that include frequently changing host instances and names (for example, within AWS, Azure, or Google Cloud).
 
@@ -32,7 +31,7 @@ See below for details.
 If you're monitoring a relatively static environment in which host instances are stable, you can enter a custom host name on the **Host settings** page for the selected host.
 
 1. Go to **Hosts** and select a host.
-2. On the host details page, select **More** (**â¦**) > **Settings** in the upper-right corner.
+2. On the host details page, select **More** (**…**) > **Settings** in the upper-right corner.
 3. On the **General** page, type a new **Host name**.
 
 * If you need to revert the name change, select the **Reset name to detected** link that is displayed on the **Host settings** page after renaming a host.

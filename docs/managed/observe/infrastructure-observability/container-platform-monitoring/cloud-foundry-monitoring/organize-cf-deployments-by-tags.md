@@ -1,7 +1,6 @@
 ---
 title: Organize Cloud Foundry deployments by tags
 source: https://docs.dynatrace.com/managed/observe/infrastructure-observability/container-platform-monitoring/cloud-foundry-monitoring/organize-cf-deployments-by-tags
-scraped: 2026-05-12T11:11:29.170818
 ---
 
 # Organize Cloud Foundry deployments by tags
@@ -12,13 +11,13 @@ scraped: 2026-05-12T11:11:29.170818
 * 3-min read
 * Published Sep 21, 2017
 
-Dynatrace provides the ability to define tags for CloudFoundry application process groups and services via any user-provided Dynatrace [Cloud Foundry serviceï»¿](https://docs.run.pivotal.io/devguide/services/) thatâs bound to your application. This enables you to automatically organize and filter all monitored Cloud Foundry application components.
+Dynatrace provides the ability to define tags for CloudFoundry application process groups and services via any user-provided Dynatrace [Cloud Foundry service﻿](https://docs.run.pivotal.io/devguide/services/) that’s bound to your application. This enables you to automatically organize and filter all monitored Cloud Foundry application components.
 
 ## Recommendation
 
-Defining tags in the environment itself has its uses. However, we don't recommended it as a general purpose solution. The reason is that this is cumbersome and requires a lot of preplanning. Making changes later isn't easy either. Use it with caution.
+Defining tags in the environment itself has its uses. However, we don't recommend it as a general purpose solution. The reason is that this is cumbersome and requires a lot of preplanning. Making changes later isn't easy either. Use it with caution.
 
-We recommend that you define additional metadata at the deployed system. For CloudFoundry apps this can also be done via a user-provided Dynatrace [Cloud Foundry serviceï»¿](https://docs.run.pivotal.io/devguide/services/) thatâs bound to your application.
+We recommend that you define additional metadata at the deployed system. For CloudFoundry apps this can also be done via a user-provided Dynatrace [Cloud Foundry service﻿](https://docs.run.pivotal.io/devguide/services/) that’s bound to your application.
 
 This enables you to use [automated tagging rules](/managed/manage/tags-and-metadata/setup/how-to-define-tags#automatic "Find out how to define and apply tags manually and automatically."), based on existing or custom metadata, to define your filter sets for charts, alerting, and more. These tags and rules can be changed and adapted any time and will apply almost immediately without any change to the monitored environment or applications.
 
@@ -30,7 +29,7 @@ To define Dynatrace tags, you can leverage one or more Cloud Foundry service ins
 cf cups dynatrace-tags -p '{ "tag key": "tag value", "tag key": "tag value"}'
 ```
 
-Youâre prompted automatically to provide values for certain tags (for example, `tag:region>eu-central-1`). Dynatrace supports both Cloud Foundry labels and Cloud Foundry key-value tags. For example, the tag `tanzu` in the example above is used to label all applications running within a VMware Tanzu environmentâso this tag doesnât include a value. The key-value tag `region` in the example holds the region of the AWS account that was used to deploy the Cloud Foundry environment.
+You’re prompted automatically to provide values for certain tags (for example, `tag:region>eu-central-1`). Dynatrace supports both Cloud Foundry labels and Cloud Foundry key-value tags. For example, the tag `tanzu` in the example above is used to label all applications running within a VMware Tanzu environment—so this tag doesn’t include a value. The key-value tag `region` in the example holds the region of the AWS account that was used to deploy the Cloud Foundry environment.
 
 You can easily update your user-provided Cloud Foundry services with new values (for example, `tag:region>eu-west-2`) or additional tags:
 
@@ -46,7 +45,7 @@ cf bs spring-music dynatrace-tags
 
 ## Define tags for specific Cloud Foundry applications
 
-Additionally, Dynatrace automatically detects tags that are provided to applications via [Cloud Foundry environment variablesï»¿](https://docs.pivotal.io/pivotalcf/1-12/devguide/deploy-apps/manifest.html#env-block). For instance, you can provide the environment variable `DT_TAGS` in the environment block of your application manifest but you can also set `DT_TAGS` using the `cf` command `set-env`:
+Additionally, Dynatrace automatically detects tags that are provided to applications via [Cloud Foundry environment variables﻿](https://docs.pivotal.io/pivotalcf/1-12/devguide/deploy-apps/manifest.html#env-block). For instance, you can provide the environment variable `DT_TAGS` in the environment block of your application manifest but you can also set `DT_TAGS` using the `cf` command `set-env`:
 
 ```
 ---

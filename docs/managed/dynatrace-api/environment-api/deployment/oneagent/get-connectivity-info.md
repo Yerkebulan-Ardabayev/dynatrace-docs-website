@@ -1,7 +1,6 @@
 ---
 title: Deployment API - View connectivity information for OneAgent
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/deployment/oneagent/get-connectivity-info
-scraped: 2026-05-12T11:58:27.718654
 ---
 
 # Deployment API - View connectivity information for OneAgent
@@ -68,7 +67,7 @@ OneAgent connectivity information.
 | Element | Type | Description |
 | --- | --- | --- |
 | code | integer | The HTTP status code |
-| constraintViolations | [ConstraintViolation[]](#openapi-definition-ConstraintViolation) | A list of constraint violations |
+| constraintViolations | [ConstraintViolation](#openapi-definition-ConstraintViolation)[] | A list of constraint violations |
 | message | string | The error message |
 
 #### The `ConstraintViolation` object

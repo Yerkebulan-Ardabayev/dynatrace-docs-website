@@ -1,7 +1,6 @@
 ---
 title: Hub items API
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/hub
-scraped: 2026-05-12T11:11:50.880132
 ---
 
 # Hub items API

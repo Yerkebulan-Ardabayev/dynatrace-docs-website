@@ -1,7 +1,6 @@
 ---
 title: Extensions API - GET states of an extension
 source: https://docs.dynatrace.com/managed/dynatrace-api/configuration-api/extensions-api/get-state
-scraped: 2026-05-12T11:19:53.366984
 ---
 
 # Extensions API - GET states of an extension
@@ -54,7 +53,7 @@ A list of extension states.
 | Element | Type | Description |
 | --- | --- | --- |
 | nextPageKey | string | The cursor for the next page of results. Has the value of `null` on the last page.  Use it in the **nextPageKey** query parameter to obtain subsequent pages of the result. |
-| states | [ExtensionState[]](#openapi-definition-ExtensionState) | A list of extension states. |
+| states | [ExtensionState](#openapi-definition-ExtensionState)[] | A list of extension states. |
 | totalResults | integer | The total number of entries in the result. |
 
 #### The `ExtensionState` object

@@ -1,7 +1,6 @@
 ---
 title: Configure and use a pie visualization in Dynatrace
 source: https://docs.dynatrace.com/managed/analyze-explore-automate/dashboards-classic/charts-and-tiles/visualization-pie
-scraped: 2026-05-12T11:13:06.685151
 ---
 
 # Configure and use a pie visualization in Dynatrace

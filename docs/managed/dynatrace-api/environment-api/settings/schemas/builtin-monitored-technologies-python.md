@@ -1,7 +1,6 @@
 ---
 title: Settings API - Python schema table
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/settings/schemas/builtin-monitored-technologies-python
-scraped: 2026-05-12T11:49:33.578343
 ---
 
 # Settings API - Python schema table

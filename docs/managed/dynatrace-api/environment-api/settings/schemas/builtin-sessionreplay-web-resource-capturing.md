@@ -1,7 +1,6 @@
 ---
 title: Settings API - Resource capture for Session Replay schema table
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/settings/schemas/builtin-sessionreplay-web-resource-capturing
-scraped: 2026-05-12T11:46:52.161254
 ---
 
 # Settings API - Resource capture for Session Replay schema table
@@ -12,7 +11,7 @@ scraped: 2026-05-12T11:46:52.161254
 
 ### Resource capture for Session Replay (`builtin:sessionreplay.web.resource-capturing)`
 
-Resource capture allows you to capture and store stylesheets during user session recording. For details, see [Resource capturingï»¿](https://dt-url.net/sr-resource-capturing).
+Resource capture allows you to capture and store stylesheets during user session recording. For details, see [Resource capturing﻿](https://dt-url.net/sr-resource-capturing).
 
 | Schema ID | Schema groups | Scope |
 | --- | --- | --- |
@@ -34,5 +33,5 @@ To execute this request, you need an access token with **Read settings** (`setti
 
 | Property | Type | Description | Required |
 | --- | --- | --- | --- |
-| Enable resource capture `enableResourceCapturing` | boolean | When turned on, Dynatrace captures resources for up to 0.1% of user sessions recorded with Session Replay. For details, see [Resource captureï»¿](https://dt-url.net/sr-resource-capturing). | Required |
+| Enable resource capture `enableResourceCapturing` | boolean | When turned on, Dynatrace captures resources for up to 0.1% of user sessions recorded with Session Replay. For details, see [Resource capture﻿](https://dt-url.net/sr-resource-capturing). | Required |
 | URL exclusion `resourceCaptureUrlExclusionPatternList` | set | Add exclusion rules to avoid the capture of resources from certain pages. | Required |

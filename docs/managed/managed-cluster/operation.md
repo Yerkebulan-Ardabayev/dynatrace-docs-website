@@ -1,7 +1,6 @@
 ---
 title: Operation
 source: https://docs.dynatrace.com/managed/managed-cluster/operation
-scraped: 2026-05-12T11:11:11.466816
 ---
 
 # Operation

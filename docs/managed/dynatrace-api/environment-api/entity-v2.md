@@ -1,7 +1,6 @@
 ---
 title: Monitored entities API
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/entity-v2
-scraped: 2026-05-12T11:12:16.687239
 ---
 
 # Monitored entities API
@@ -9,7 +8,9 @@ scraped: 2026-05-12T11:12:16.687239
 # Monitored entities API
 
 * Reference
-* Published May 28, 2020
+* Updated on Jun 11, 2026
+
+Starting with Dynatrace version 1.334, Dynatrace has entered a transition phase to migrate to the new Smartscape storage. Classic entity queries and the classic Monitored entities API should no longer be used. We recommend exploring and transitioning to the [Smartscape on Grail](/managed/upgrade/unavailable-in-managed "Your selection is unavailable in Dynatrace Managed.") model instead.
 
 [### List entities
 

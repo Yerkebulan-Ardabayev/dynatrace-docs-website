@@ -1,7 +1,6 @@
 ---
 title: ActiveGate auto-update configuration API - GET global
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/activegates/auto-update-config/get-global
-scraped: 2026-05-12T11:59:29.488066
 ---
 
 # ActiveGate auto-update configuration API - GET global
@@ -72,7 +71,7 @@ Metadata useful for debugging
 | Element | Type | Description |
 | --- | --- | --- |
 | code | integer | The HTTP status code |
-| constraintViolations | [ConstraintViolation[]](#openapi-definition-ConstraintViolation) | A list of constraint violations |
+| constraintViolations | [ConstraintViolation](#openapi-definition-ConstraintViolation)[] | A list of constraint violations |
 | message | string | The error message |
 
 #### The `ConstraintViolation` object

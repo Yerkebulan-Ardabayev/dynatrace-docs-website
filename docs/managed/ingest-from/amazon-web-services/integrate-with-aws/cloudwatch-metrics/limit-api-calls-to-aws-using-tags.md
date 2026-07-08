@@ -1,7 +1,6 @@
 ---
 title: Limit API calls to AWS using tags
 source: https://docs.dynatrace.com/managed/ingest-from/amazon-web-services/integrate-with-aws/cloudwatch-metrics/limit-api-calls-to-aws-using-tags
-scraped: 2026-05-12T11:27:39.491231
 ---
 
 # Limit API calls to AWS using tags

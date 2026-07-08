@@ -1,7 +1,6 @@
 ---
 title: WMI data source reference
 source: https://docs.dynatrace.com/managed/ingest-from/extensions/develop-your-extensions/data-sources/wmi-extensions/wmi-schema-reference
-scraped: 2026-05-12T12:16:25.507564
 ---
 
 # WMI data source reference
@@ -226,11 +225,11 @@ Your WMI monitoring scope definition starts with the `wmi` YAML node. All the se
 
 ## WQL queries
 
-WMI extensions rely on WMI namespaces and their classes. Your WMI extension extracts the dimension and metric values from WMI class properties using the [WQL queriesï»¿](https://docs.microsoft.com/en-us/windows/win32/wmisdk/querying-with-wql).
+WMI extensions rely on WMI namespaces and their classes. Your WMI extension extracts the dimension and metric values from WMI class properties using the [WQL queries﻿](https://docs.microsoft.com/en-us/windows/win32/wmisdk/querying-with-wql).
 
-Most extension-related classes and properties reside in the `root\civm2` namespace. To learn more about WMI namespaces and classes, see [Windows Management Instrumentationï»¿](https://docs.microsoft.com/en-us/windows/win32/wmisdk/wmi-start-page) in the Microsoft documentation.
+Most extension-related classes and properties reside in the `root\civm2` namespace. To learn more about WMI namespaces and classes, see [Windows Management Instrumentation﻿](https://docs.microsoft.com/en-us/windows/win32/wmisdk/wmi-start-page) in the Microsoft documentation.
 
-In this example, we query the disk-related properties from the [`Win32_LogicalDisk`ï»¿](https://docs.microsoft.com/en-us/windows/win32/cimwin32prov/win32-logicaldisk) class (`DeviceID`, `FreeSpace`, and `Size`) in the `root\cimv2` namespace (`wmiNamespace` defined at the group level) and we filter the results to drive C with some `FreeSpace` left. Filtering is achieved with a variable; see [monitoring configuration](#monitoring-configuration) below. The values queried from WMI are then assigned to dimension and metric values and ingested into Dynatrace.
+In this example, we query the disk-related properties from the [`Win32_LogicalDisk`﻿](https://docs.microsoft.com/en-us/windows/win32/cimwin32prov/win32-logicaldisk) class (`DeviceID`, `FreeSpace`, and `Size`) in the `root\cimv2` namespace (`wmiNamespace` defined at the group level) and we filter the results to drive C with some `FreeSpace` left. Filtering is achieved with a variable; see [monitoring configuration](#monitoring-configuration) below. The values queried from WMI are then assigned to dimension and metric values and ingested into Dynatrace.
 
 ```
 name: custom:wmi.wql.example
@@ -497,7 +496,7 @@ Apart from simply instructing the extension to extract a dimension value from a 
 
   value: var:agent_version
   ```
-* Monitoring configurationâdefined device details, such as device IP address or port. Use `this:device.host`.
+* Monitoring configuration–defined device details, such as device IP address or port. Use `this:device.host`.
 
   ```
   dimensions:
@@ -837,7 +836,7 @@ value: column:Name
 value: this:device.host
 ```
 
-When activating your extension using [monitoring configuration](#monitoring-configuration), you can limit monitoring to one of the feature sets. To work properly, the extension has to collect at least one metric after the activation.
+When activating your extension using a monitoring configuration, you can limit monitoring to one of the feature sets. To work properly, the extension has to collect at least one metric after the activation.
 
 In highly segmented networks, feature sets can reflect the segments of your environment. Then, when you create a monitoring configuration, you can select a feature set and a corresponding ActiveGate group that can connect to this particular segment.
 

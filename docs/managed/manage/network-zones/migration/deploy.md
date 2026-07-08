@@ -1,7 +1,6 @@
 ---
 title: Deploy network zones (migration)
 source: https://docs.dynatrace.com/managed/manage/network-zones/migration/deploy
-scraped: 2026-05-12T11:52:30.729913
 ---
 
 # Deploy network zones (migration)

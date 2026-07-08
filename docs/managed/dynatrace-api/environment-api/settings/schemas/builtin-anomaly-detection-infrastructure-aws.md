@@ -1,7 +1,6 @@
 ---
 title: Settings API - Anomaly detection for classic AWS services schema table
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/settings/schemas/builtin-anomaly-detection-infrastructure-aws
-scraped: 2026-05-12T11:40:06.698950
 ---
 
 # Settings API - Anomaly detection for classic AWS services schema table

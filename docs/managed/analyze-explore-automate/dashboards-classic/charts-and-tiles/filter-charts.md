@@ -1,7 +1,6 @@
 ---
 title: Filter tiles
 source: https://docs.dynatrace.com/managed/analyze-explore-automate/dashboards-classic/charts-and-tiles/filter-charts
-scraped: 2026-05-12T11:54:09.042391
 ---
 
 # Filter tiles
@@ -27,7 +26,7 @@ Dynatrace provides powerful filtering options that enable you to set up dashboar
 ## Create a filtered tile
 
 1. Go to **Hosts**.
-2. Set a filter on the table. In this example, we set `Data center` to `GdaÅsk, Poland`.
+2. Set a filter on the table. In this example, we set `Data center` to `Gdańsk, Poland`.
 
    There are two ways to set a filter:
 
@@ -63,7 +62,7 @@ Dynatrace provides powerful filtering options that enable you to set up dashboar
    * Select a tile-specific environment
 6. Select **Done**.
 
-Now we have a tile that's specific to the hosts in the GdaÅsk, Poland, data center.
+Now we have a tile that's specific to the hosts in the Gdańsk, Poland, data center.
 
 Each hexagon on the tile represents a host. A green hexagon is a healthy host; a red hexagon is a host with a problem.
 

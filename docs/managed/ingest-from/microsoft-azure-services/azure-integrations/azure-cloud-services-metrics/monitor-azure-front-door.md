@@ -1,7 +1,6 @@
 ---
 title: Azure Front Door (classic) monitoring
 source: https://docs.dynatrace.com/managed/ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics/monitor-azure-front-door
-scraped: 2026-05-12T11:25:58.351431
 ---
 
 # Azure Front Door (classic) monitoring
@@ -19,9 +18,9 @@ The Azure Front Door (classic) overview page gives you visibility into the numbe
 * Dynatrace version 1.196+
 * Environment ActiveGate version 1.195+
 
-This service monitors previous (classic) offering of [Azure Front Door](https://dt-url.net/rz0390g).
+This service monitors previous (classic) offering of [Azure Front Door﻿](https://dt-url.net/rz0390g).
 
-For information regarding the latest Microsoft [Azure Front Door Standard and Premium](https://learn.microsoft.com/en-us/azure/frontdoor/front-door-overview) service, `Front Door and CDN profile`, see [Azure Front Door Standard/Premium and CDN profiles monitoring](/managed/ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics/monitor-azure-front-door-cdn-profiles "Monitor Azure Front Door Standard/Premium and CDN profiles and view available metrics.").
+For information regarding the latest Microsoft [Azure Front Door Standard and Premium﻿](https://learn.microsoft.com/en-us/azure/frontdoor/front-door-overview) service, `Front Door and CDN profile`, see [Azure Front Door Standard/Premium and CDN profiles monitoring](/managed/ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics/monitor-azure-front-door-cdn-profiles "Monitor Azure Front Door Standard/Premium and CDN profiles and view available metrics.").
 
 ## Enable monitoring
 

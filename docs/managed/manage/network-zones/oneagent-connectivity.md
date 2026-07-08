@@ -1,7 +1,6 @@
 ---
 title: OneAgent connectivity in network zones
 source: https://docs.dynatrace.com/managed/manage/network-zones/oneagent-connectivity
-scraped: 2026-05-12T11:10:48.870460
 ---
 
 # OneAgent connectivity in network zones
@@ -18,16 +17,16 @@ Network zones enforce the connectivity order for OneAgents and ActiveGates. This
 
 A network zone instructs OneAgent to communicate with ActiveGates from the same network zone. If that isn't possible, OneAgent tries to connect to another ActiveGate. To organize these fallback connections, all ActiveGates are sorted into priority groups:
 
-* Group 1âActiveGates from the same network zone.
-* Group 2âActiveGates from the alternative network zone.
-* Group 3âActiveGates from the default network zone.
-* Group 4âAll other ActiveGates.
+* Group 1—ActiveGates from the same network zone.
+* Group 2—ActiveGates from the alternative network zone.
+* Group 3—ActiveGates from the default network zone.
+* Group 4—All other ActiveGates.
 
 In every group, ActiveGates are further prioritized depending on the type:
 
-* Index 1âEnvironment ActiveGates
-* Index 2âCluster ActiveGates
-* Index 3âEmbedded ActiveGates
+* Index 1—Environment ActiveGates
+* Index 2—Cluster ActiveGates
+* Index 3—Embedded ActiveGates
 
 ![ActiveGate priority](https://dt-cdn.net/images/ag-priority-1532-2ffac1c718.png)
 

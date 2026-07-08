@@ -1,7 +1,6 @@
 ---
 title: Google Cloud Run monitoring
 source: https://docs.dynatrace.com/managed/ingest-from/google-cloud-platform/gcp-integrations/cloudrun/cloud-run-monitoring
-scraped: 2026-05-12T11:50:45.285686
 ---
 
 # Google Cloud Run monitoring

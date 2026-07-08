@@ -1,7 +1,6 @@
 ---
 title: Timeseries API v1 - Custom metrics
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/metric-v1/custom-metrics
-scraped: 2026-05-12T11:38:38.571892
 ---
 
 # Timeseries API v1 - Custom metrics
@@ -21,4 +20,4 @@ As Dynatrace AI and intelligent problem detection and correlation depend on topo
 
 ## Monitoring consumption
 
-[Limited custom metric ingestion and analysis](/managed/license/monitoring-consumption-classic/davis-data-units/metric-cost-calculation#metrics-per-host-unit "Understand how to calculate Davis data unit consumption and costs related to monitored metrics.") is included in out-of-the-box Dynatrace technology support. To arrange for additional custom metric ingestion and analysis, [contact Dynatrace Salesï»¿](https://www.dynatrace.com/contact/).
+[Limited custom metric ingestion and analysis](/managed/license/classic-licensing/davis-data-units/metric-cost-calculation#metrics-per-host-unit "Understand how to calculate Davis data unit consumption and costs related to monitored metrics.") is included in out-of-the-box Dynatrace technology support. To arrange for additional custom metric ingestion and analysis, [contact Dynatrace Sales﻿](https://www.dynatrace.com/contact/).

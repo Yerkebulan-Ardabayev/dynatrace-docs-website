@@ -1,7 +1,6 @@
 ---
 title: Monitor Azure Virtual Machines (built-in)
 source: https://docs.dynatrace.com/managed/ingest-from/microsoft-azure-services/azure-integrations/azure-vm/monitor-azure-virtual-machines-builtin
-scraped: 2026-05-12T11:26:13.745049
 ---
 
 # Monitor Azure Virtual Machines (built-in)
@@ -31,7 +30,7 @@ To learn how to enable service monitoring, see [Enable service monitoring](/mana
 
 You can view Azure service metrics in your Dynatrace environment on the Azure subscription page or on your own dashboard.
 
-Values in the table depend upon the selected timeframe. For more details, see [Troubleshoot timeframe comparison for Azure monitoring setup)ï»¿](https://dt-url.net/7j438f0).
+Values in the table depend upon the selected timeframe. For more details, see [Troubleshoot timeframe comparison for Azure monitoring setup)﻿](https://dt-url.net/7j438f0).
 
 ### View metrics on the Azure account page
 

@@ -1,7 +1,6 @@
 ---
 title: Hub capabilities API - PUT an extension 2.0 metadata
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/hub/put-update-extension-20-metadata
-scraped: 2026-05-12T11:54:53.267546
 ---
 
 # Hub capabilities API - PUT an extension 2.0 metadata
@@ -90,7 +89,7 @@ This is a model of the request body, showing the possible elements. It has to be
 | Element | Type | Description |
 | --- | --- | --- |
 | code | integer | The HTTP status code |
-| constraintViolations | [ConstraintViolation[]](#openapi-definition-ConstraintViolation) | A list of constraint violations |
+| constraintViolations | [ConstraintViolation](#openapi-definition-ConstraintViolation)[] | A list of constraint violations |
 | message | string | The error message |
 
 #### The `ConstraintViolation` object

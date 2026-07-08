@@ -1,7 +1,6 @@
 ---
 title: Send Dynatrace notifications to xMatters
 source: https://docs.dynatrace.com/managed/analyze-explore-automate/notifications-and-alerting/problem-notifications/xmatters-integration
-scraped: 2026-05-12T11:24:53.080496
 ---
 
 # Send Dynatrace notifications to xMatters
@@ -15,9 +14,9 @@ xMatters is a digital service availability platform that prevents technology iss
 
 ## Configure xMatters
 
-For configuring xMatters, see the [Dynatraceï»¿](https://help.xmatters.com/integrations/monitoring/dynatrace.htm?cshid=Dynatrace) page in the xMatters Workflows documentation.
+For configuring xMatters, see the [Dynatrace﻿](https://help.xmatters.com/integrations/monitoring/dynatrace.htm?cshid=Dynatrace) page in the xMatters Workflows documentation.
 
-The built-in version of xMatters integration that requires an API token is no longer available. If you require it as a reference, see the [Previous versionsï»¿](https://help.xmatters.com/integrations/monitoring/dynatrace.htm?cshid=Dynatrace#PreviousVersions) section of the Dynatrace integration in the official xMatters documentation.
+The built-in version of xMatters integration that requires an API token is no longer available. If you require it as a reference, see the [Previous versions﻿](https://help.xmatters.com/integrations/monitoring/dynatrace.htm?cshid=Dynatrace#PreviousVersions) section of the Dynatrace integration in the official xMatters documentation.
 
 ## Configure Dynatrace
 
@@ -27,13 +26,13 @@ The built-in version of xMatters integration that requires an API token is no lo
 3. Select **xMatters** from the available notification types.
 4. Configure the notification:
 
-   * **Display name**âthe freeform name of this integration that will be displayed in Dynatrace on the **Problem notifications** page when you finish this configuration.
-   * **xMatters URL**âthe xMatters webhook URL.
+   * **Display name**—the freeform name of this integration that will be displayed in Dynatrace on the **Problem notifications** page when you finish this configuration.
+   * **xMatters URL**—the xMatters webhook URL.
    * Optional Turn on **Accept any SSL certificate** option. We recommend that you use a valid SSL certificate (even for internal installations), but you can ignore the certificate for convenience.
-   * Optional **Additional HTTP headers**âcustom HTTP header fields such as 'Content-Type' or 'Authorization' that can be used if the target endpoint needs an authentication token within the HTTP header or if you would like to send a different content type such as 'text/plain' or 'application/xml'.
-   * **Custom payload**âonce a problem is detected or resolved, this customizable payload is pushed through an **HTTP POST** to the target system. Use specific placeholders to dynamically populate the payload with problem-related information, such as problem state or title.
+   * Optional **Additional HTTP headers**—custom HTTP header fields such as 'Content-Type' or 'Authorization' that can be used if the target endpoint needs an authentication token within the HTTP header or if you would like to send a different content type such as 'text/plain' or 'application/xml'.
+   * **Custom payload**—once a problem is detected or resolved, this customizable payload is pushed through an **HTTP POST** to the target system. Use specific placeholders to dynamically populate the payload with problem-related information, such as problem state or title.
    * Assign an [Alerting profile](/managed/analyze-explore-automate/notifications-and-alerting/alerting-profiles "Learn how to create and manage alerting profiles.").
 5. Select **Send test notification** to make sure your xMatters integration is working.
 6. Select **Save changes**.
 
-After youâve finished integration with Dynatrace, youâll see your newly created xMatters integration in your list of integrations on the **Problem notifications** page.
+After you’ve finished integration with Dynatrace, you’ll see your newly created xMatters integration in your list of integrations on the **Problem notifications** page.

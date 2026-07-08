@@ -1,7 +1,6 @@
 ---
 title: Stop/restart OneAgent on Linux
 source: https://docs.dynatrace.com/managed/ingest-from/dynatrace-oneagent/installation-and-operation/linux/operation/stop-restart-oneagent-on-linux
-scraped: 2026-05-12T11:05:22.394739
 ---
 
 # Stop/restart OneAgent on Linux
@@ -9,12 +8,12 @@ scraped: 2026-05-12T11:05:22.394739
 # Stop/restart OneAgent on Linux
 
 * 1-min read
-* Published Sep 19, 2018
+* Updated on May 20, 2026
 
 In case you don't want to use OneAgent inside a particular Java (or other) process, you can easily disable Dynatrace monitoring for individual hosts, process groups, or applications:
 
 1. Go to **Settings > Monitoring overview**.
-2. Click the **Hosts**, **Process groups**, or **Applications** tab to access the monitoring switches for individual entities.
+2. Select the **Hosts**, **Process groups**, or **Applications** tab to access the monitoring switches for individual entities.
 3. Slide the **Monitoring** switch to the **Off** position.
 4. Restart all processes for which monitoring has been disabled.
 
@@ -39,22 +38,12 @@ For more information, see [OneAgent configuration via command-line interface](/m
 
 ## Stop OneAgent using the command line
 
-If you use configuration management tools like Puppet or Ansible, you can alternatively stop the OneAgent service using the following command:
-
-* for systems with SystemV: `service oneagent stop`
-* for systems with systemd: `systemctl stop oneagent`
-
-where `oneagent` is the `init.d` script for OneAgent.
+If you use configuration management tools like Puppet or Ansible, you can alternatively stop the OneAgent service using the `systemctl stop oneagent` command.
 
 If you stop OneAgent service, monitoring will be disabled until the service is restarted.
 
 ## Start OneAgent using the command line
 
-To start Dynatrace OneAgent again, use the following command:
-
-* for systems with SystemV: `service oneagent start`
-* for systems with systemd: `systemctl start oneagent`
-
-where `oneagent` is the `init.d` script for OneAgent.
+To start OneAgent again, use the `systemctl start oneagent` command.
 
 Learn more about [how Dynatrace interacts with your OS](/managed/ingest-from/dynatrace-oneagent/installation-and-operation/linux/installation/oneagent-security-linux "Learn about Dynatrace OneAgent security and modifications to your Linux-based system").

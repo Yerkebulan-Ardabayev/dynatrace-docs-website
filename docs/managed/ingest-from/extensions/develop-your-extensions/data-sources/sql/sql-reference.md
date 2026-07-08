@@ -1,7 +1,6 @@
 ---
 title: SQL data source reference
 source: https://docs.dynatrace.com/managed/ingest-from/extensions/develop-your-extensions/data-sources/sql/sql-reference
-scraped: 2026-05-12T12:08:31.052886
 ---
 
 # SQL data source reference
@@ -220,19 +219,19 @@ jdbc:
 
 
 
-driverClassName: âorg.mariadb.jdbc.Driverâ
+driverClassName: “org.mariadb.jdbc.Driver”
 
 
 
-connectionStringPattern: âjdbc:mariadb:(. |\\s)+$"
+connectionStringPattern: “jdbc:mariadb:(. |\\s)+$"
 
 
 
-connectionStringPatternErrorMessage: âThis isn't a correct connection string, please start with jdbc:mariadb."
+connectionStringPatternErrorMessage: “This isn't a correct connection string, please start with jdbc:mariadb."
 
 
 
-validationQuery: âSELECT 1â
+validationQuery: “SELECT 1”
 ```
 
 Users running your extension will also need to upload a related JDBC driver to an ActiveGate belonging to the group designated to run your extension. For more information, see [JDBC monitoring configuration](/managed/ingest-from/extensions/develop-your-extensions/data-sources/sql/jdbc-monitoring#upload "JDBC extensions in the Extensions framework.").
@@ -454,28 +453,28 @@ The expression must follow the Unix cron format:
 
 
 
-# | | | | day of the week (1â7) (Sunday to Saturday)
+# | | | | day of the week (1–7) (Sunday to Saturday)
 
 
 
-# | | | month (1â12)
+# | | | month (1–12)
 
 
 
-# | | day of the month (1â31)
+# | | day of the month (1–31)
 
 
 
-# | hour (0â23)
+# | hour (0–23)
 
 
 
-# minute (0â59)
+# minute (0–59)
 ```
 
 The values also support lists (`1,2,3,4`), steps (`0-23/2`), and ranges (`2-5`).
 
-The format doesn't support specifying both a day-of-week and a day-of-month value. You must use the â?â character in one of these fields.
+The format doesn't support specifying both a day-of-week and a day-of-month value. You must use the ‘?’ character in one of these fields.
 
 For example, to run a query at 12:00 on every week day (Monday-Friday), use the following entry:
 
@@ -781,22 +780,22 @@ value: const:dev
 
 Define the filter based on a condition as follows:
 
-* **Starts with** â use a `const:$prefix` qualifier. Example:
+* **Starts with** – use a `const:$prefix` qualifier. Example:
 
   ```
   filter: const:$prefix(xyz)
   ```
-* **Ends with** â use a `const:$suffix` qualifier. Example:
+* **Ends with** – use a `const:$suffix` qualifier. Example:
 
   ```
   filter: const:$suffix(xyz)
   ```
-* **Contains** â use a `const:$contains` qualifier. Example:
+* **Contains** – use a `const:$contains` qualifier. Example:
 
   ```
   filter: const:$contains(xyz)
   ```
-* **Equals** â use a `const:$eq` qualifier. Example:
+* **Equals** – use a `const:$eq` qualifier. Example:
 
   ```
   filter: const:$eq(xyz)
@@ -804,17 +803,17 @@ Define the filter based on a condition as follows:
 
   For the expressions mentioned above, you can also use qualifiers:
 
-  + `const:$and` â to chain two or more expressions with AND operator. Example:
+  + `const:$and` – to chain two or more expressions with AND operator. Example:
 
     ```
     filter: const:$and(<expr1>,<expr2>)
     ```
-  + a `const:$or` â to chain two or more expressions with OR operator. Example:
+  + a `const:$or` – to chain two or more expressions with OR operator. Example:
 
     ```
     filter: const:$or(<expr1>,<expr2>)
     ```
-  + a `const:$not` â to negate an expression. Example:
+  + a `const:$not` – to negate an expression. Example:
 
     ```
     filter: const:$not(<expr>)
@@ -1042,7 +1041,7 @@ value: col:bytes_written
 type: count
 ```
 
-When activating your extension using [monitoring configuration](#monitoring-configuration), you can limit monitoring to one of the feature sets. To work properly, the extension has to collect at least one metric after the activation.
+When activating your extension using a monitoring configuration, you can limit monitoring to one of the feature sets. To work properly, the extension has to collect at least one metric after the activation.
 
 In highly segmented networks, feature sets can reflect the segments of your environment. Then, when you create a monitoring configuration, you can select a feature set and a corresponding ActiveGate group that can connect to this particular segment.
 

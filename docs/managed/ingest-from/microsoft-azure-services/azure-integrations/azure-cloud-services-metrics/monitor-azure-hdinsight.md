@@ -1,7 +1,6 @@
 ---
 title: Azure HDInsight monitoring
 source: https://docs.dynatrace.com/managed/ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics/monitor-azure-hdinsight
-scraped: 2026-05-12T11:26:41.410610
 ---
 
 # Azure HDInsight monitoring
@@ -58,8 +57,8 @@ wget  -O Dynatrace-OneAgent-Linux-1.137.163.sh "https://YOURTENANT.live.dynatrac
 ```
 
 3. Go to Microsoft Azure Storage Explorer and upload the Dynatrace installation file `installdynatrace.sh` to an accessible Blob Storage Container.
-4. Click right on `installdynatrace.sh` and select **Set public access level**. In the pop-up window, set the access level to **Public read access for container and blobs**, and click **Apply**.
-5. On the top menu of the Microsoft Azure Storage Explorer window, click on "Copy URL" and save it locally for later access.
+4. Right-click on `installdynatrace.sh` and select **Set public access level**. In the pop-up window, set the access level to **Public read access for container and blobs**, and select **Apply**.
+5. On the top menu of the Microsoft Azure Storage Explorer window, select **Copy URL** and save it locally for later access.
 
 ### Step 2 Create an HDInsight cluster
 
@@ -76,7 +75,7 @@ wget  -O Dynatrace-OneAgent-Linux-1.137.163.sh "https://YOURTENANT.live.dynatrac
 
 Once the installation is completed, make sure to restart the processes.
 
-1. Select your newly created cluster on the MicrosoftAzure portal. On the **Overview** menu, click on your cluster URL.
+1. Select your newly created cluster on the MicrosoftAzure portal. On the **Overview** menu, select your cluster URL.
 2. For each node where you chose to install Dynatrace, go to **Service Actions** and select **Restart All**.
 
 As soon as processes are restarted, Dynatrace will start collecting metrics.

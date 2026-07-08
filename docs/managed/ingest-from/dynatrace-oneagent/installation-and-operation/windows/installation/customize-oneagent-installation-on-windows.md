@@ -1,7 +1,6 @@
 ---
 title: Customize OneAgent installation on Windows
 source: https://docs.dynatrace.com/managed/ingest-from/dynatrace-oneagent/installation-and-operation/windows/installation/customize-oneagent-installation-on-windows
-scraped: 2026-05-12T11:07:32.481217
 ---
 
 # Customize OneAgent installation on Windows
@@ -11,10 +10,10 @@ scraped: 2026-05-12T11:07:32.481217
 * 9-min read
 * Updated on Jan 21, 2026
 
-OneAgent installer for Windows is provided and used as a self-extracting EXE file. The installer can also be extracted and used directlyâas an MSI package. This later approach is mostly used in [Group Policy deployment](/managed/ingest-from/dynatrace-oneagent/installation-and-operation/windows/installation/install-oneagent-on-windows#installation "Learn how to download and install Dynatrace OneAgent on Windows.").
+OneAgent installer for Windows is provided and used as a self-extracting EXE file. The installer can also be extracted and used directly—as an MSI package. This later approach is mostly used in [Group Policy deployment](/managed/ingest-from/dynatrace-oneagent/installation-and-operation/windows/installation/install-oneagent-on-windows#installation "Learn how to download and install Dynatrace OneAgent on Windows.").
 
 You can customize the installation by specifying command-line parameters for selected settings, or you can rely on default settings.
-However, note that parameters marked below as `environment-specific`âthat is, parameters that set the communication endpoint, environment ID, and tokenâare:
+However, note that parameters marked below as `environment-specific`—that is, parameters that set the communication endpoint, environment ID, and token—are:
 
 * mandatory
 * pre-configured only for the EXE version of the installer.
@@ -64,7 +63,7 @@ Starting with version 1.213, the following parameters are only accepted if speci
 
 ## MSI installation parameters
 
-`INSTALL_PATH`, `LOG_PATH`, `DATA_STORAGE`, `PCAP_DRIVER` and `USER` are a special kind of parameter adhering to [MSI public property syntaxï»¿](https://docs.microsoft.com/en-us/windows/win32/msi/public-properties). They won't be replaced by equivalent `--set-param=<value>` parameters. You can use them only on the installer command line, not in the installer UI.
+`INSTALL_PATH`, `LOG_PATH`, `DATA_STORAGE`, `PCAP_DRIVER` and `USER` are a special kind of parameter adhering to [MSI public property syntax﻿](https://docs.microsoft.com/en-us/windows/win32/msi/public-properties). They won't be replaced by equivalent `--set-param=<value>` parameters. You can use them only on the installer command line, not in the installer UI.
 
 ## Installation path
 
@@ -171,7 +170,7 @@ To change the endpoint after installation, use `--set-server` in the [OneAgent c
 
 **Default value**: `environment specific`
 
-The Dynatrace [environment ID](/managed/discover-dynatrace/get-started/monitoring-environment "Understand and learn how to work with monitoring environments.") you received with your activation email. If you install OneAgent using the Dynatrace **Deploy** page, this is already set to the correct value. If you're selling Dynatrace-based services, use this option to set your customers' IDs from the pool of IDs you purchased from Dynatrace.
+The Dynatrace [environment ID](/managed/discover-dynatrace/get-started/monitoring-environment "Learn what a Dynatrace monitoring environment is, how to find your environment ID, and how to set up and connect multiple environments.") you received with your activation email. If you install OneAgent using the Dynatrace **Deploy** page, this is already set to the correct value. If you're selling Dynatrace-based services, use this option to set your customers' IDs from the pool of IDs you purchased from Dynatrace.
 
 To set the environment ID, pass it as a parameter value:
 
@@ -239,11 +238,11 @@ Starting with OneAgent version 1.301, OneAgent doesn't use the TCP ports for its
 
 Watchdog is a binary used for starting and monitoring OneAgent monitoring processes:
 
-* `oneagentos`âoperating system monitoring
-* `oneagentplugin`âmonitoring using [OneAgent extensions](/managed/ingest-from/extensions/develop-your-extensions#oneagent-extensions "Develop your own Extensions in Dynatrace.")
-* `oneagentextensions`âmonitoring using local [Extensions](/managed/ingest-from/extensions "Learn how to create and manage Dynatrace Extensions.")
-* `oneagentloganalytics`â[Log Monitoring](/managed/analyze-explore-automate/log-monitoring "Learn how to enable Log Monitoring, the insights that Log Monitoring can provide, and more.")
-* `oneagentnetwork`â[network monitoring](/managed/observe/infrastructure-observability/networks "Learn how to monitor network communications.")
+* `oneagentos`—operating system monitoring
+* `oneagentplugin`—monitoring using [OneAgent extensions](/managed/ingest-from/extensions/develop-your-extensions#oneagent-extensions "Develop your own Extensions in Dynatrace.")
+* `oneagentextensions`—monitoring using local [Extensions](/managed/ingest-from/extensions "Learn how to create and manage Dynatrace Extensions.")
+* `oneagentloganalytics`—[Log Monitoring](/managed/analyze-explore-automate/log-monitoring "Learn how to enable Log Monitoring, the insights that Log Monitoring can provide, and more.")
+* `oneagentnetwork`—[network monitoring](/managed/observe/infrastructure-observability/networks "Learn how to monitor network communications.")
 
 Use the `--set-watchdog-portrange=<arg>` parameter to change the watchdog listening port range to `<arg>`. The `<arg>` must contain two port numbers separated by a colon (`:`). For example `50000:50100`. The maximum supported port range is from 1024 to 65535. The port range must cover at least 4 ports. The port number starting the range must be lower. For example:
 
@@ -261,7 +260,7 @@ Use the `--set-auto-update-enabled=<arg>` to enable or disable OneAgent auto-upd
 --set-auto-update-enabled=true
 ```
 
-After you set the parameter to `false`, you won't be able to control OneAgent automatic updates using the Dynatrace web UI at **Settings** > **Updates** > **OneAgent updates**.
+After you set the parameter to `false`, you won't be able to control OneAgent automatic updates using the Dynatrace web UI at **Settings** > **Deployment** > **OneAgent updates**.
 
 ## Host group
 
@@ -371,10 +370,10 @@ It's particularly important to keep your host ID static in dynamic virtual envir
 
 To **define the source for host ID generation**, use `--set-host-id-source` and set it to one of the predefined values:
 
-* `auto` â Let Dynatrace generate the host ID automatically
-* `ip-addresses` â Generate host ID based on the host IP address
-* `mac-addresses` â Generate host ID based on the host's NIC MAC address
-* `fqdn` â Generate host ID based on the host fully qualified domain name (FQDN) in the `host.domain` format. If the FQDN doesn't contain a dot character, the NIC MAC address is used instead.
+* `auto` — Let Dynatrace generate the host ID automatically
+* `ip-addresses` — Generate host ID based on the host IP address
+* `mac-addresses` — Generate host ID based on the host's NIC MAC address
+* `fqdn` — Generate host ID based on the host fully qualified domain name (FQDN) in the `host.domain` format. If the FQDN doesn't contain a dot character, the NIC MAC address is used instead.
 * If you monitor multiple environments, you can split the hosts with identical IPs, MAC addresses, or FQDNs using a different namespace for each environment. The namespace can contain only alphanumeric characters, hyphens, underscores, and periods; the maximum length is 256 characters:
 
 * `ip-addresses;namespace=<namespace>`
@@ -433,7 +432,7 @@ For more information, see [Automatic injection](/managed/ingest-from/dynatrace-o
 
 ## Local metric ingestion
 
-**Default value**: `14449`
+**Default value**: `14499`
 
 You can use the `--set-extensions-ingest-port=<arg>` parameter to change the default communication port used for local metric ingestion. The port is used by [OneAgent REST API](/managed/ingest-from/extend-dynatrace/extend-metrics/ingestion-methods/oneagent-metric-api "Use the Dynatrace API to retrieve the metrics of monitored entities."), [Scripting integration](/managed/ingest-from/extend-dynatrace/extend-metrics/ingestion-methods/oneagent-pipe "Learn how to ingest metrics using local scripting integration.") (`dynatrace_ingest`), and [Telegraf](/managed/ingest-from/extend-dynatrace/extend-metrics/ingestion-methods/telegraf "Ingest Telegraf metrics into Dynatrace.").
 
@@ -478,7 +477,7 @@ When using the silent installation mode, the OneAgent installer should be pre-co
 
 The environment specific parameters are preconfigured only for the EXE version of the installer. When using the installer in the form of an MSI package, you must specify all of these parameters yourself.
 
-### MSI packageâsilent installation
+### MSI package—silent installation
 
 To set up silent command-line installation when using an MSI package, add `/quiet /qn` as in these examples:
 
@@ -496,7 +495,7 @@ msiexec /i C:\some\path\Dynatrace-OneAgent-Windows.msi --% ADDITIONAL_CONFIGURAT
 
 Note the `--%` stop-parsing symbol used in the PowerShell command.
 
-### EXE installerâsilent installation
+### EXE installer—silent installation
 
 To set up silent command-line installation for an EXE version of the installer, add `--quiet` as in this example:
 

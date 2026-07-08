@@ -1,7 +1,6 @@
 ---
 title: Migration guide for DynaKube API versions
 source: https://docs.dynatrace.com/managed/ingest-from/setup-on-k8s/guides/migration/dynakube
-scraped: 2026-05-12T12:09:37.583978
 ---
 
 # Migration guide for DynaKube API versions
@@ -16,7 +15,7 @@ scraped: 2026-05-12T12:09:37.583978
 
 Depending on your Dynatrace Operator Version, different `apiVersion`'s of the `DynaKube` are supported. This page collects the migration guides for each `apiVersion` considering the version of the Operator.
 
-Starting with Dynatrace Operator version 1.8.0+, Dynatrace Operator emits a Kubernetes warning event if the installed DynaKube CRD version doesnât match the version expected by this Operator release.
+Starting with Dynatrace Operator version 1.8.0+, Dynatrace Operator emits a Kubernetes warning event if the installed DynaKube CRD version doesn’t match the version expected by this Operator release.
 
 ### API Version Overview
 
@@ -26,8 +25,8 @@ Starting with Dynatrace Operator version 1.8.0+, Dynatrace Operator emits a Kube
 | v1beta5 | 1.6.0 |  |  |  | [to v1beta6](/managed/ingest-from/setup-on-k8s/guides/migration/api-version-migration-guides/migrate-dk-v1beta5-v1beta6 "Migrate your v1beta5 DynaKube CR to the v1beta6 apiVersions.") |
 | v1beta4 | 1.5.0 | 1.9.0 |  |  | [to v1beta6](/managed/ingest-from/setup-on-k8s/guides/migration/api-version-migration-guides/migrate-dk-v1beta4-v1beta6 "Migrate your v1beta4 DynaKube CR to the v1beta6 apiVersions."), [to v1beta5](/managed/ingest-from/setup-on-k8s/guides/migration/api-version-migration-guides/migrate-dk-v1beta4-v1beta5 "Migrate your v1beta4 DynaKube CR to the v1beta5 apiVersions.") |
 | v1beta3 | 1.4.0 | 1.7.0 | 1.8.0 | 1.9.0 | [to v1beta5](/managed/ingest-from/setup-on-k8s/guides/migration/api-version-migration-guides/migrate-dk-v1beta3-v1beta5 "Migrate your v1beta3 DynaKube CR to the v1beta5 apiVersions."), [to v1beta4](/managed/ingest-from/setup-on-k8s/guides/migration/api-version-migration-guides/migrate-dk-v1beta3-v1beta4 "Migrate your v1beta3 DynaKube CR to the v1beta4 apiVersions.") |
-| v1beta2 | 1.2.0 | 1.6.0 | 1.7.0 | 1.7.0 | [to v1beta5](/managed/ingest-from/setup-on-k8s/guides/migration/api-version-migration-guides/migrate-dk-v1beta2-v1beta5 "Migrate your v1beta2 DynaKube CR to the v1beta5 apiVersions."), [to v1beta4](/managed/ingest-from/setup-on-k8s/guides/migration/api-version-migration-guides/migrate-dk-v1beta2-v1beta4 "Migrate your v1beta2 DynaKube CR to the v1beta4 apiVersions.") |
-| v1beta1 | 0.3.0 | 1.6.0 | 1.7.0 | 1.7.0 | [to v1beta5](/managed/ingest-from/setup-on-k8s/guides/migration/api-version-migration-guides/migrate-dk-v1beta1-v1beta5 "Migrate your v1beta1 DynaKube CR to the v1beta5 apiVersions."), [to v1beta4](/managed/ingest-from/setup-on-k8s/guides/migration/api-version-migration-guides/migrate-dk-v1beta1-v1beta4 "Migrate your v1beta1 DynaKube CR to the v1beta4 apiVersions.") |
+| v1beta2 | 1.2.0 | 1.6.0 | 1.7.0 | 1.8.0 | [to v1beta5](/managed/ingest-from/setup-on-k8s/guides/migration/api-version-migration-guides/migrate-dk-v1beta2-v1beta5 "Migrate your v1beta2 DynaKube CR to the v1beta5 apiVersions."), [to v1beta4](/managed/ingest-from/setup-on-k8s/guides/migration/api-version-migration-guides/migrate-dk-v1beta2-v1beta4 "Migrate your v1beta2 DynaKube CR to the v1beta4 apiVersions.") |
+| v1beta1 | 0.3.0 | 1.6.0 | 1.7.0 | 1.8.0 | [to v1beta5](/managed/ingest-from/setup-on-k8s/guides/migration/api-version-migration-guides/migrate-dk-v1beta1-v1beta5 "Migrate your v1beta1 DynaKube CR to the v1beta5 apiVersions."), [to v1beta4](/managed/ingest-from/setup-on-k8s/guides/migration/api-version-migration-guides/migrate-dk-v1beta1-v1beta4 "Migrate your v1beta1 DynaKube CR to the v1beta4 apiVersions.") |
 
 1
 
@@ -88,7 +87,7 @@ So when you are checking, using `kubectl` what `apiVersion` you are using, you w
 
 ## Removal process
 
-The Dynatrace Operator follows a structured deprecation process that follows the [official Kubernetes guidanceï»¿](https://kubernetes.io/docs/tasks/extend-kubernetes/custom-resources/custom-resource-definition-versioning) to ensure smooth transitions between DynaKube API versions while providing adequate time for migration.
+The Dynatrace Operator follows a structured deprecation process that follows the [official Kubernetes guidance﻿](https://kubernetes.io/docs/tasks/extend-kubernetes/custom-resources/custom-resource-definition-versioning) to ensure smooth transitions between DynaKube API versions while providing adequate time for migration.
 
 ### Phase 1: Deprecation announcement
 

@@ -1,7 +1,6 @@
 ---
 title: Anomaly detection API - Services
 source: https://docs.dynatrace.com/managed/dynatrace-api/configuration-api/anomaly-detection-api/anomaly-detection-api-services
-scraped: 2026-05-12T11:05:03.529440
 ---
 
 # Anomaly detection API - Services
@@ -11,7 +10,7 @@ scraped: 2026-05-12T11:05:03.529440
 * Reference
 * Published Oct 30, 2018
 
-The **Anomaly detectionâServices** API enables you to manage the configuration of anomaly detection for services. You can also manage the same configuration in the Dynatrace web UI at **Settings** > **Anomaly detection** > **Services**.
+The **Anomaly detection—Services** API enables you to manage the configuration of anomaly detection for services. You can also manage the same configuration in the Dynatrace web UI at **Settings** > **Anomaly detection** > **Services**.
 
 [### View configuration
 
@@ -22,5 +21,5 @@ Update configuration of anomaly detection for services.](/managed/dynatrace-api/
 ## Related topics
 
 * [Adjust the sensitivity of anomaly detection for services](/managed/dynatrace-intelligence/anomaly-detection/adjust-sensitivity-anomaly-detection/adjust-sensitivity-services "Learn how to adapt the sensitivity of problem detection for services.")
-* [DavisÂ® AI](/managed/dynatrace-intelligence "Get familiar with the capabilities of Davis AI.")
+* [Davis® AI](/managed/dynatrace-intelligence "Learn how Davis® AI detects performance anomalies, identifies root causes, and uses AI models for adaptive thresholds across your environment.")
 * [Services](/managed/observe/application-observability/services "Learn how to monitor and analyze your services, define and use request attributes, and more.")

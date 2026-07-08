@@ -1,7 +1,6 @@
 ---
 title: Application Observability
 source: https://docs.dynatrace.com/managed/observe/application-observability
-scraped: 2026-05-12T11:03:02.479838
 ---
 
 # Application Observability
@@ -36,7 +35,7 @@ Learn how to use Dynatrace diagnostic tools for crash analysis, memory dump anal
 
 * Overview
 
-See the overview](/managed/observe/application-observability/profiling-and-optimization)[#### Services
+See the overview](/managed/observe/application-observability/profiling-and-optimization)[#### Services page
 
 Learn about Dynatrace's classic service monitoring
 

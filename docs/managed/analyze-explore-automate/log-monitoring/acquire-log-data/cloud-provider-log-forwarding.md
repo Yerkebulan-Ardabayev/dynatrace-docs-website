@@ -1,7 +1,6 @@
 ---
 title: Cloud provider log forwarding (Logs Classic)
 source: https://docs.dynatrace.com/managed/analyze-explore-automate/log-monitoring/acquire-log-data/cloud-provider-log-forwarding
-scraped: 2026-05-12T11:13:10.794964
 ---
 
 # Cloud provider log forwarding (Logs Classic)
@@ -18,7 +17,7 @@ Dynatrace version 1.230+
 
 DDU consumption for Log Monitoring
 
-DDU pricing applies to cloud Log Monitoring. See [DDUs for Log Monitoring](/managed/license/monitoring-consumption-classic/davis-data-units/log-monitoring-consumption "Understand how the volume of DDU consumption is calculated for Dynatrace Log Monitoring Classic.") for details.
+DDU pricing applies to cloud Log Monitoring. See [DDUs for Log Monitoring](/managed/license/classic-licensing/davis-data-units/log-monitoring-consumption "Understand how the volume of DDU consumption is calculated for Dynatrace Log Monitoring Classic.") for details.
 
 ## Amazon Web Services
 
@@ -43,12 +42,12 @@ You can stream logs from AWS S3 to Dynatrace using a serverless architecture.
 
 The log forwarder offers:
 
-* Out of the box parsing of AWS services, see [Supported AWS Servicesï»¿](https://github.com/dynatrace-oss/dynatrace-aws-s3-log-forwarder#supported-aws-services)
-* Processing mechanism for any other use case including 3rd party logs written to s3, see [Log Processingï»¿](https://github.com/dynatrace-oss/dynatrace-aws-s3-log-forwarder/blob/main/docs/log_processing.md#log-processing)
-* Cross-region support, see [S3 buckets on different AWS Regionsï»¿](https://github.com/dynatrace-oss/dynatrace-aws-s3-log-forwarder/blob/main/docs/log_forwarding.md#forward-logs-from-s3-buckets-on-different-aws-regions)
-* Multiple AWS account support, see [S3 buckets on different AWS accountsï»¿](https://github.com/dynatrace-oss/dynatrace-aws-s3-log-forwarder/blob/main/docs/log_forwarding.md#forward-logs-from-s3-buckets-on-different-aws-accounts)
+* Out of the box parsing of AWS services, see [Supported AWS Services﻿](https://github.com/dynatrace-oss/dynatrace-aws-s3-log-forwarder#supported-aws-services)
+* Processing mechanism for any other use case including 3rd party logs written to s3, see [Log Processing﻿](https://github.com/dynatrace-oss/dynatrace-aws-s3-log-forwarder/blob/main/docs/log_processing.md#log-processing)
+* Cross-region support, see [S3 buckets on different AWS Regions﻿](https://github.com/dynatrace-oss/dynatrace-aws-s3-log-forwarder/blob/main/docs/log_forwarding.md#forward-logs-from-s3-buckets-on-different-aws-regions)
+* Multiple AWS account support, see [S3 buckets on different AWS accounts﻿](https://github.com/dynatrace-oss/dynatrace-aws-s3-log-forwarder/blob/main/docs/log_forwarding.md#forward-logs-from-s3-buckets-on-different-aws-accounts)
 
-For detailed instructions on how to set up log ingestion from AWS S3, see [documentation on GitHubï»¿](https://github.com/dynatrace-oss/dynatrace-aws-s3-log-forwarder).
+For detailed instructions on how to set up log ingestion from AWS S3, see [documentation on GitHub﻿](https://github.com/dynatrace-oss/dynatrace-aws-s3-log-forwarder).
 
 ### AWS Lambda log collection
 
@@ -83,7 +82,7 @@ Deployment of Azure log forwarder results in creating the following resources:
 
 Azure log forwarder uses Linux based Azure function by default. Windows based function is not supported.
 
-For details about the resources created, see the [Azure Resource Manager file on GitHubï»¿](https://github.com/dynatrace-oss/dynatrace-azure-log-forwarder/blob/master/deployment/dynatrace-azure-forwarder.json)
+For details about the resources created, see the [Azure Resource Manager file on GitHub﻿](https://github.com/dynatrace-oss/dynatrace-azure-log-forwarder/blob/master/deployment/dynatrace-azure-forwarder.json)
 
 For detailed instruction on how to set up Azure log forwarding see, [Azure Logs](/managed/ingest-from/microsoft-azure-services/azure-integrations/set-up-log-forwarder-azure#prereq "Use Azure log forwarding to ingest Azure logs.").
 
@@ -100,4 +99,4 @@ For all log ingestion options, see [Log ingestion](/managed/ingest-from/google-c
 
 ## Related topics
 
-* [DDUs for Log Monitoring Classic](/managed/license/monitoring-consumption-classic/davis-data-units/log-monitoring-consumption "Understand how the volume of DDU consumption is calculated for Dynatrace Log Monitoring Classic.")
+* [DDUs for Log Monitoring Classic](/managed/license/classic-licensing/davis-data-units/log-monitoring-consumption "Understand how the volume of DDU consumption is calculated for Dynatrace Log Monitoring Classic.")

@@ -1,7 +1,6 @@
 ---
 title: Define your own process group metadata
 source: https://docs.dynatrace.com/managed/observe/infrastructure-observability/process-groups/configuration/define-your-own-process-group-metadata
-scraped: 2026-05-12T11:11:32.984894
 ---
 
 # Define your own process group metadata
@@ -12,7 +11,7 @@ scraped: 2026-05-12T11:11:32.984894
 * 1-min read
 * Updated on Aug 07, 2023
 
-Dynatrace automatically detects and displays lots of metadata values related to the processes that run in your environmentâincluding version numbers, port numbers, and the name of the script or JAR file that launches each process (see images below).
+Dynatrace automatically detects and displays lots of metadata values related to the processes that run in your environment—including version numbers, port numbers, and the name of the script or JAR file that launches each process (see images below).
 
 ![Metadata 1](https://dt-cdn.net/images/metadata1-1068-2deabeeefb.png)
 
@@ -22,7 +21,7 @@ Metadata 1
 
 Metadata 2
 
-Dynatrace enables you to use these metadata values to [automate tagging](/managed/manage/tags-and-metadata/setup/how-to-define-tags "Find out how to define and apply tags manually and automatically.") as well as to use [environment variables to supply tags](/managed/manage/tags-and-metadata/setup/define-tags-based-on-environment-variables "Find out how Dynatrace enables you to define tags based on environment variables."). Dynatrace even allows you to define your own metadata based on your organizationâs or environmentâs unique needs.
+Dynatrace enables you to use these metadata values to [automate tagging](/managed/manage/tags-and-metadata/setup/how-to-define-tags "Find out how to define and apply tags manually and automatically.") as well as to use [environment variables to supply tags](/managed/manage/tags-and-metadata/setup/define-tags-based-on-environment-variables "Find out how Dynatrace enables you to define tags based on environment variables."). Dynatrace even allows you to define your own metadata based on your organization’s or environment’s unique needs.
 
 ## Define metadata via environment variables
 
@@ -95,7 +94,7 @@ pg-vars
 
 ## Using annotations in Kubernetes
 
-Dynatrace supports automated tagging in Kubernetes based on [Kubernetes labelsï»¿](https://kubernetes.io/docs/concepts/overview/working-with-objects/labels/). You can similarly use [Kubernetes annotationsï»¿](https://kubernetes.io/docs/concepts/overview/working-with-objects/annotations/)âthey too will show up on your Process and Process group pages (see below).
+Dynatrace supports automated tagging in Kubernetes based on [Kubernetes labels﻿](https://kubernetes.io/docs/concepts/overview/working-with-objects/labels/). You can similarly use [Kubernetes annotations﻿](https://kubernetes.io/docs/concepts/overview/working-with-objects/annotations/)—they too will show up on your Process and Process group pages (see below).
 
 ![Environment variables 4](https://dt-cdn.net/images/environmentvariables-4-1099-4cd32148af.png)
 

@@ -1,7 +1,6 @@
 ---
 title: Semantic attributes (Logs Classic)
 source: https://docs.dynatrace.com/managed/analyze-explore-automate/log-monitoring/acquire-log-data/logs-classic-ingestion-api/log-classic-semantic-attributes
-scraped: 2026-05-12T12:10:18.884525
 ---
 
 # Semantic attributes (Logs Classic)

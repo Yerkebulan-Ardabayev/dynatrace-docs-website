@@ -1,7 +1,6 @@
 ---
 title: SaaS Upgrade Assistant
 source: https://docs.dynatrace.com/managed/upgrade/saas-upgrade-assistant
-scraped: 2026-05-12T12:16:04.575549
 ---
 
 # SaaS Upgrade Assistant
@@ -37,7 +36,7 @@ For more information, see [Update configuration in SaaS Upgrade Assistant](/mana
 
 ## How to install, update, or uninstall SaaS Upgrade Assistant SaaS Upgrade Assistant?
 
-To install, update, or uninstall the SaaS Upgrade Assistant, in [Dynatrace Hubï»¿](https://docs.dynatrace.com/docs/shortlink/hub), select ![SaaS Upgrade Assistant](https://dt-cdn.net/images/saas-upgrade-assistant-61dc5b83c0.svg "SaaS Upgrade Assistant") **SaaS Upgrade Assistant**. Then select either **Install**, **Update**, or **Uninstall** to perform this action in your environment.
+To install, update, or uninstall the SaaS Upgrade Assistant, in [Dynatrace Hub﻿](https://docs.dynatrace.com/docs/shortlink/hub), select ![SaaS Upgrade Assistant](https://dt-cdn.net/images/saas-upgrade-assistant-61dc5b83c0.svg "SaaS Upgrade Assistant") **SaaS Upgrade Assistant**. Then select either **Install**, **Update**, or **Uninstall** to perform this action in your environment.
 
 If you want to uninstall ![SaaS Upgrade Assistant](https://dt-cdn.net/images/saas-upgrade-assistant-61dc5b83c0.svg "SaaS Upgrade Assistant") **SaaS Upgrade Assistant**, note that
 

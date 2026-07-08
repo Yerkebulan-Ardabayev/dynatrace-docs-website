@@ -1,7 +1,6 @@
 ---
 title: Serverless compute support matrix
 source: https://docs.dynatrace.com/managed/ingest-from/technology-support/serverless-compute-services
-scraped: 2026-05-12T11:22:46.141174
 ---
 
 # Serverless compute support matrix
@@ -24,9 +23,9 @@ Key to columns and cells
 | Distributed tracing | Dynatrace supports distributed tracing for these services, either providing a dedicated integration or via OpenTelemetry. |
 | Automatic tracing | Dynatrace provides automatic out-of-the-box tracing without code changes. |
 | OpenTelemetry/Extend tracing | Dynatrace provides the ability to enhance tracing via [OpenTelemetry](/managed/ingest-from/extend-dynatrace/extend-tracing/opentracing "Learn how to integrate OpenTracing with Dynatrace."), its own [SDKs](/managed/ingest-from/extend-dynatrace/extend-tracing/oneagent-sdk "The Dynatrace OneAgent SDK enables you to instrument your application manually to extend end-to-end visibility for frameworks and technologies for which there is no code module yet available."), and [custom services](/managed/observe/application-observability/services/service-detection/service-detection-v1/service-types/custom-services "Define entry points (a method, class, or interface) for custom services that don't use standard protocols."). |
-| Custom metrics | Dynatrace provides the ability to add custom metrics via [API](/managed/ingest-from/extend-dynatrace/extend-metrics "Learn how to extend metric observability in Dynatrace."), [OpenTelemetry](/managed/ingest-from/opentelemetry "Learn how to integrate and ingest OpenTelemetry data (traces, metrics, and logs) into Dynatrace."), [Spring Micrometerï»¿](https://micrometer.io/docs/registry/dynatrace), and many other means. |
+| Custom metrics | Dynatrace provides the ability to add custom metrics via [API](/managed/ingest-from/extend-dynatrace/extend-metrics "Learn how to extend metric observability in Dynatrace."), [OpenTelemetry](/managed/ingest-from/opentelemetry "Learn how to integrate and ingest OpenTelemetry data (traces, metrics, and logs) into Dynatrace."), [Spring Micrometer﻿](https://micrometer.io/docs/registry/dynatrace), and many other means. |
 | Automatic RUM | Dynatrace provides out-of-the-box real user monitoring with no code changes required. |
-| Agentless RUM | Dynatrace provides an [agentless integration](/managed/observe/digital-experience/web-applications/initial-setup/set-up-agentless-real-user-monitoring "Set up agentless monitoring for your web applications.") for real user monitoring. |
+| Agentless RUM | Dynatrace provides an [agentless integration](/managed/observe/digital-experience/rum-classic/web-applications/initial-setup/set-up-agentless-real-user-monitoring "Set up agentless monitoring for your web applications.") for real user monitoring. |
 
 #### Cells
 
@@ -132,7 +131,7 @@ Requires integration of [OneAgent on AppServices for Linux and Containers](/mana
 
 1
 
-Functions written in [C# (class libaries), C# script (.csx) and F# (.fsx)ï»¿](https://docs.microsoft.com/en-us/azure/azure-functions/supported-languages#language-support-details) which are executed in the [in-process modelï»¿](https://docs.microsoft.com/en-us/azure/azure-functions/dotnet-isolated-process-guide#differences-with-net-class-library-functions)
+Functions written in [C# (class libaries), C# script (.csx) and F# (.fsx)﻿](https://docs.microsoft.com/en-us/azure/azure-functions/supported-languages#language-support-details) which are executed in the [in-process model﻿](https://docs.microsoft.com/en-us/azure/azure-functions/dotnet-isolated-process-guide#differences-with-net-class-library-functions)
 
 2
 
@@ -143,12 +142,12 @@ Limited to functions deployed on on AppService-Plan / Appservice-Environment or 
 | Language | Distributed tracing | Automatic tracing |
 | --- | --- | --- |
 | .NET Core[1](#fn-6-1-def) | GA | GA[2](#fn-6-2-def) |
-| [.Net Core, Isolated-Processï»¿](https://docs.microsoft.com/en-us/azure/azure-functions/dotnet-isolated-process-guide) | GA | Future |
+| [.Net Core, Isolated-Process﻿](https://docs.microsoft.com/en-us/azure/azure-functions/dotnet-isolated-process-guide) | GA | Future |
 | Other languages | GA | Future |
 
 1
 
-Functions written in [C# (class libaries), C# script (.csx) and F# (.fsx)ï»¿](https://docs.microsoft.com/en-us/azure/azure-functions/supported-languages#language-support-details) which are executed in the [in-process modelï»¿](https://docs.microsoft.com/en-us/azure/azure-functions/dotnet-isolated-process-guide#differences-with-net-class-library-functions)
+Functions written in [C# (class libaries), C# script (.csx) and F# (.fsx)﻿](https://docs.microsoft.com/en-us/azure/azure-functions/supported-languages#language-support-details) which are executed in the [in-process model﻿](https://docs.microsoft.com/en-us/azure/azure-functions/dotnet-isolated-process-guide#differences-with-net-class-library-functions)
 
 2
 
@@ -165,7 +164,7 @@ Limited to functions deployed on on AppService-Plan / Appservice-Environment or 
 
 1
 
-Durable Functions SDK has [preview support for distributed tracingï»¿](https://dt-url.net/qj03vf2) for .NET Core using Application-Insights.
+Durable Functions SDK has [preview support for distributed tracing﻿](https://dt-url.net/qj03vf2) for .NET Core using Application-Insights.
 
 ### Google Cloud Functions
 
@@ -183,7 +182,7 @@ Durable Functions SDK has [preview support for distributed tracingï»¿](https:
 
 ## Related topics
 
-* [Serverless monitoring](/managed/discover-dynatrace/get-started/serverless-monitoring "Serverless observability with Dynatrace")
+* [Serverless monitoring](/managed/discover-dynatrace/get-started/serverless-monitoring "Monitor serverless cloud services across AWS, Azure, and Google Cloud with Dynatrace for end-to-end visibility and AI-powered analysis.")
 * [OneAgent platform and capability support matrix](/managed/ingest-from/technology-support/oneagent-platform-and-capability-support-matrix "Learn which capabilities are supported by OneAgent on different operating systems and platforms.")
 * [Technology support](/managed/ingest-from/technology-support "Find technical details related to Dynatrace support for specific platforms and development frameworks.")
 * [Known solutions and workarounds](/managed/ingest-from/technology-support/known-solutions-and-workarounds "Check the solutions for reported problems regarding various technologies.")

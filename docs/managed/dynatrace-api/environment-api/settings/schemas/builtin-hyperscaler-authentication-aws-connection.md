@@ -1,7 +1,6 @@
 ---
 title: Settings API - AWS Connections schema table
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/settings/schemas/builtin-hyperscaler-authentication-aws-connection
-scraped: 2026-05-12T11:46:33.555960
 ---
 
 # Settings API - AWS Connections schema table
@@ -12,7 +11,7 @@ scraped: 2026-05-12T11:46:33.555960
 
 ### AWS Connections (`builtin:hyperscaler-authentication.aws.connection)`
 
-Available connections for [AWS for Workflowsï»¿](https://dt-url.net/s803q9r). A connection is used to authenticate against your AWS account. The retrieved, temporary AWS credentials are used to execute the AWS workflow actions.
+Available connections for [AWS for Workflows﻿](https://dt-url.net/s803q9r). A connection is used to authenticate against your AWS account. The retrieved, temporary AWS credentials are used to execute the AWS workflow actions.
 
 | Schema ID | Schema groups | Scope |
 | --- | --- | --- |

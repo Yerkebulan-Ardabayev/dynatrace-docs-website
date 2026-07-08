@@ -1,7 +1,6 @@
 ---
 title: Dashboards
 source: https://docs.dynatrace.com/managed/analyze-explore-automate/dashboards-classic
-scraped: 2026-05-12T11:04:13.299045
 ---
 
 # Dashboards
@@ -42,7 +41,7 @@ Basic navigation
 3. When you open a dashboard, it becomes your *current dashboard*.
 
 * From a health tile (such as **Host health**, **Service health**, and **Application health**), where you see green and red elements (such as hosts, services, or applications), hover over any problematic (red) element to see the identity of the element.
-* To drill down to a problematic (red) element, select the red hexagon and then select the **Viewâ¦** button. On this example **Synthetic monitor health** tile, we have selected a red element, which enabled the **View test** drilldown button for that element.
+* To drill down to a problematic (red) element, select the red hexagon and then select the **View…** button. On this example **Synthetic monitor health** tile, we have selected a red element, which enabled the **View test** drilldown button for that element.
 
   ![Drill down to problematic entity from health tile](https://dt-cdn.net/images/tile-health-bad-drilldown-276-6265617519.png)
 
@@ -142,7 +141,7 @@ For details on creating dashboards, see [Create and edit Dynatrace dashboards](/
 Clone an existing dashboard
 
 1. Go to **Dashboards**.
-2. In the table of dashboards, select **More** (**â¦**) > **Clone** for the dashboard you want to copy.
+2. In the table of dashboards, select **More** (**…**) > **Clone** for the dashboard you want to copy.
 
    * The copy opens in edit mode.
    * The original dashboard is unaffected.
@@ -162,18 +161,18 @@ Hide and unhide dashboards
 To hide a dashboard
 
 1. Go to **Dashboards**.
-2. In the table of dashboards, select **More** (**â¦**) > **Hide** for the dashboard you want to hide.
+2. In the table of dashboards, select **More** (**…**) > **Hide** for the dashboard you want to hide.
 
 To unhide a dashboard
 
 1. Go to **Dashboards**.
 2. Filter the table by `Hidden: Yes` to display all of your hidden dashboards.
-3. In the table of dashboards, select **More** (**â¦**) > **Unhide** for the dashboard you want to unhide.
+3. In the table of dashboards, select **More** (**…**) > **Unhide** for the dashboard you want to unhide.
 
 Delete a dashboard
 
 1. Go to **Dashboards**.
-2. In the table of dashboards, select **More** (**â¦**) > **Delete** for the dashboard you want to delete.
+2. In the table of dashboards, select **More** (**…**) > **Delete** for the dashboard you want to delete.
 
    * If you don't see a **Delete** option, you don't have permission to delete that dashboard.
 3. Confirm the deletion to remove the dashboard.
@@ -238,7 +237,7 @@ Share a dashboard
 1. Display the dashboard you want to share.
 
    * To display a dashboard, go to **Dashboards** and select the name of the dashboard.
-2. Select **More** (**â¦**) > **Share** in the upper-right corner of the dashboard.
+2. Select **More** (**…**) > **Share** in the upper-right corner of the dashboard.
 3. Select **Advanced settings** to open **Dashboard settings** to the **Manage access** tab.
 
 For details on your dashboard sharing options, see [Share dashboards](/managed/analyze-explore-automate/dashboards-classic/dashboards/share-dashboards "Learn how to share your Dynatrace dashboards with others.").
@@ -246,7 +245,7 @@ For details on your dashboard sharing options, see [Share dashboards](/managed/a
 Subscribe to dashboard reports
 
 1. Display the dashboard.
-2. Select **More** (**â¦**) > **Subscribe** in the upper-right corner of the dashboard.
+2. Select **More** (**…**) > **Subscribe** in the upper-right corner of the dashboard.
 
    * If you don't see a **Subscribe** option, the dashboard owners have not enabled reports for that dashboard.
    * If you see an **Enable reports** button, you have edit rights to that dashboard and you must enable reports if you want to receive reports from that dashboard.
@@ -275,7 +274,7 @@ Configure advanced settings
 
 1. Display **Dashboard settings**.
 
-   * If you're starting from the **Dashboards** page, find the dashboard and select **More** (**â¦**) > **Configure**
+   * If you're starting from the **Dashboards** page, find the dashboard and select **More** (**…**) > **Configure**
    * If you're starting from the dashboard, select **Edit**, switch to the **Settings** tab, and then select **Configure more**.
 
 Print a dashboard to a PDF file
@@ -299,7 +298,7 @@ Export and import dashboards
 To export a dashboard
 
 1. Go to **Dashboards**.
-2. In the table of dashboards, select **More** (**â¦**) > **Export** for the dashboard you want to export.  
+2. In the table of dashboards, select **More** (**…**) > **Export** for the dashboard you want to export.  
    The dashboard definition is exported as a JSON file to your computer.
 
 To import a dashboard
@@ -372,8 +371,8 @@ To add an image to your dashboard via URL, you first need to add the image URL t
 2. Select **Add item**.
 3. Set **Rule**, which specifies how to process this allowlist entry.
 
-   * **Starts with**âallow any image whose URL starts with the contents of **Pattern**.
-   * **Exact**âallow the specific image whose URL matches the contents of **Pattern** exactly.
+   * **Starts with**—allow any image whose URL starts with the contents of **Pattern**.
+   * **Exact**—allow the specific image whose URL matches the contents of **Pattern** exactly.
 4. Set **Pattern**:
 
    * To specify a URL start, enter enough of the URL to make sure any matching image URLs will be suitable for your dashboards.  

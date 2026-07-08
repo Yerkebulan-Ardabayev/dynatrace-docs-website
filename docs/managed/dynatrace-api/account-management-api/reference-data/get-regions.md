@@ -1,7 +1,6 @@
 ---
 title: Reference data API - GET geographical regions
 source: https://docs.dynatrace.com/managed/dynatrace-api/account-management-api/reference-data/get-regions
-scraped: 2026-05-12T11:24:42.135733
 ---
 
 # Reference data API - GET geographical regions
@@ -33,7 +32,7 @@ The request doesn't provide any configurable parameters.
 
 | Code | Type | Description |
 | --- | --- | --- |
-| **200** | [RegionDto[]](#openapi-definition-RegionDto) | Success. The response contains the list of regions. |
+| **200** | [RegionDto](#openapi-definition-RegionDto)[] | Success. The response contains the list of regions. |
 
 ### Response body objects
 

@@ -1,7 +1,6 @@
 ---
 title: Network configurations
 source: https://docs.dynatrace.com/managed/ingest-from/setup-on-k8s/guides/networking-security-compliance/network-configurations
-scraped: 2026-05-12T11:50:11.772217
 ---
 
 # Network configurations
@@ -429,7 +428,7 @@ By default, ActiveGate uses a self-signed certificate, which can be replaced by 
 
 To configure a server TLS certificate for the ActiveGate:
 
-1. Create the [Kubernetes Opaque secretï»¿](https://dt-url.net/zm03qza) holding the ActiveGate certificate(s) and ActiveGate private key.
+1. Create the [Kubernetes Opaque secret﻿](https://dt-url.net/zm03qza) holding the ActiveGate certificate(s) and ActiveGate private key.
 
    ```
    kubectl -n dynatrace create secret generic mytlssecret --from-file=server.p12=<myag.p12> --from-file=server.crt=<myag.crt> --from-literal=password=<mypassword>
@@ -437,9 +436,9 @@ To configure a server TLS certificate for the ActiveGate:
 
    Where:
 
-   * `server.crt`âDynatrace Operator propagates ActiveGate certificate(s) from the file to OneAgents.
-   * `server.p12`âActiveGate certificate(s) and ActiveGate private key, ActiveGate reads the file and configures itself to use the provided private key and certificates.
-   * `password`âActiveGate reads it and uses it to decrypt the `server.p12` file.
+   * `server.crt`–Dynatrace Operator propagates ActiveGate certificate(s) from the file to OneAgents.
+   * `server.p12`–ActiveGate certificate(s) and ActiveGate private key, ActiveGate reads the file and configures itself to use the provided private key and certificates.
+   * `password`–ActiveGate reads it and uses it to decrypt the `server.p12` file.
 
    `server.12` and `server.crt` files should contain the same certificate(s).
 2. Provide the name of the secret via the `tlsSecretName` field.

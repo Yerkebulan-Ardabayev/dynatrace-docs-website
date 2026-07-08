@@ -1,7 +1,6 @@
 ---
 title: Azure Cosmos DB Account (MongoDB) monitoring
 source: https://docs.dynatrace.com/managed/ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics/monitor-azure-cosmos-db-account-mongodb
-scraped: 2026-05-12T11:26:56.971345
 ---
 
 # Azure Cosmos DB Account (MongoDB) monitoring

@@ -1,7 +1,6 @@
 ---
 title: Database anomaly detection API - GET configuration
 source: https://docs.dynatrace.com/managed/dynatrace-api/configuration-api/anomaly-detection-api/anomaly-detection-api-database/get-config
-scraped: 2026-05-12T11:20:09.578927
 ---
 
 # Database anomaly detection API - GET configuration

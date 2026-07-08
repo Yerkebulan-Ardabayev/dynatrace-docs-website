@@ -1,7 +1,6 @@
 ---
 title: Custom API definitions
 source: https://docs.dynatrace.com/managed/observe/application-observability/services/customize-api-definitions
-scraped: 2026-05-12T12:02:39.663830
 ---
 
 # Custom API definitions

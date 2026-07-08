@@ -1,7 +1,6 @@
 ---
 title: Settings API - Anonymize End-User IP Addresses schema table
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/settings/schemas/builtin-preferences-ipaddressmasking
-scraped: 2026-05-12T11:45:19.207167
 ---
 
 # Settings API - Anonymize End-User IP Addresses schema table
@@ -14,7 +13,7 @@ scraped: 2026-05-12T11:45:19.207167
 
 Control what data Dynatrace is capturing. Dynatrace can capture IP addresses and GPS coordinates of end users to determine the location from which they access your application. IP Address Masking truncates IP addresses captured from your end users' web browsers and the data captured by OneAgent for effective de-identification.
 
-To learn more, visit [Mask IPs and GPS coordinatesï»¿](https://dt-url.net/mask-end-users-ip-addresses). For further details on Dynatrace's privacy settings, visit [Data privacy and securityï»¿](https://dt-url.net/zn03sq4) documentation.
+To learn more, visit [Mask IPs and GPS coordinates﻿](https://dt-url.net/mask-end-users-ip-addresses). For further details on Dynatrace's privacy settings, visit [Data privacy and security﻿](https://dt-url.net/zn03sq4) documentation.
 
 | Schema ID | Schema groups | Scope |
 | --- | --- | --- |

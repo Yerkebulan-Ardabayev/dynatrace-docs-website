@@ -1,7 +1,6 @@
 ---
 title: Settings API - Cloud Development Environments schema table
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/settings/schemas/builtin-app-engine-registry-cloud-development-environments
-scraped: 2026-05-12T11:41:39.995395
 ---
 
 # Settings API - Cloud Development Environments schema table

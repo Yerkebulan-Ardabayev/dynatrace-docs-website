@@ -1,7 +1,6 @@
 ---
 title: Dynatrace API changelog version 1.307
 source: https://docs.dynatrace.com/managed/whats-new/dynatrace-api/sprint-307
-scraped: 2026-05-12T11:35:28.174056
 ---
 
 # Dynatrace API changelog version 1.307
@@ -133,4 +132,4 @@ Early Access
 
 ## Related topics
 
-* [SaaS Release Notes 1.307ï»¿](https://docs.dynatrace.com/docs/shortlink/release-notes-saas-sprint-307)
+* [SaaS Release Notes 1.307﻿](https://docs.dynatrace.com/docs/shortlink/release-notes-saas-sprint-307)

@@ -1,7 +1,6 @@
 ---
 title: OneAgent configuration via command-line interface
 source: https://docs.dynatrace.com/managed/ingest-from/dynatrace-oneagent/oneagent-configuration-via-command-line-interface
-scraped: 2026-05-12T11:05:28.442727
 ---
 
 # OneAgent configuration via command-line interface
@@ -10,7 +9,7 @@ scraped: 2026-05-12T11:05:28.442727
 
 * Reference
 * 20-min read
-* Updated on Sep 17, 2025
+* Updated on Jun 23, 2026
 
 Use the `oneagentctl` command-line interface to perform some post-installation OneAgent configuration at the individual host level.
 
@@ -112,7 +111,7 @@ For example:
 
 ### Set environment ID
 
-Use the `--set-tenant` parameter to set an [environment ID](/managed/discover-dynatrace/get-started/monitoring-environment "Understand and learn how to work with monitoring environments."). By default, this is already set to the correct value. If you're selling Dynatrace-based services, use this option to set your customers' IDs from the pool of IDs you purchased from Dynatrace.
+Use the `--set-tenant` parameter to set an [environment ID](/managed/discover-dynatrace/get-started/monitoring-environment "Learn what a Dynatrace monitoring environment is, how to find your environment ID, and how to set up and connect multiple environments."). By default, this is already set to the correct value. If you're selling Dynatrace-based services, use this option to set your customers' IDs from the pool of IDs you purchased from Dynatrace.
 
 * **Linux** or **AIX**:  
   `./oneagentctl --set-tenant=abc123456`
@@ -123,7 +122,7 @@ Always use in combination with `--set-tenant-token`, which defines the [tenant t
 
 ### Show environment ID
 
-The Dynatrace [environment ID](/managed/discover-dynatrace/get-started/monitoring-environment "Understand and learn how to work with monitoring environments.") you received with your activation email.
+The Dynatrace [environment ID](/managed/discover-dynatrace/get-started/monitoring-environment "Learn what a Dynatrace monitoring environment is, how to find your environment ID, and how to set up and connect multiple environments.") you received with your activation email.
 
 Use the `--get-tenant` parameter to display the environment ID:
 
@@ -216,11 +215,11 @@ Starting with OneAgent version 1.301, OneAgent doesn't use the TCP ports for its
 
 Watchdog is a binary used for starting and monitoring OneAgent monitoring processes:
 
-* `oneagentos`âoperating system monitoring
-* `oneagentplugin`âmonitoring using [OneAgent extensions](/managed/ingest-from/extensions/develop-your-extensions#oneagent-extensions "Develop your own Extensions in Dynatrace.")
-* `oneagentextensions`âmonitoring using local [Extensions](/managed/ingest-from/extensions "Learn how to create and manage Dynatrace Extensions.")
-* `oneagentloganalytics`â[Log Monitoring](/managed/analyze-explore-automate/log-monitoring "Learn how to enable Log Monitoring, the insights that Log Monitoring can provide, and more.")
-* `oneagentnetwork`â[network monitoring](/managed/observe/infrastructure-observability/networks "Learn how to monitor network communications.")
+* `oneagentos`—operating system monitoring
+* `oneagentplugin`—monitoring using [OneAgent extensions](/managed/ingest-from/extensions/develop-your-extensions#oneagent-extensions "Develop your own Extensions in Dynatrace.")
+* `oneagentextensions`—monitoring using local [Extensions](/managed/ingest-from/extensions "Learn how to create and manage Dynatrace Extensions.")
+* `oneagentloganalytics`—[Log Monitoring](/managed/analyze-explore-automate/log-monitoring "Learn how to enable Log Monitoring, the insights that Log Monitoring can provide, and more.")
+* `oneagentnetwork`—[network monitoring](/managed/observe/infrastructure-observability/networks "Learn how to monitor network communications.")
 
 Use the `--set-watchdog-portrange=arg` parameter to change the watchdog listening port range to `<arg>`. The `<arg>` must contain two port numbers separated by a colon (`:`). For example `50000:50100`. The maximum supported port range is from 1024 to 65535. The port range must cover at least 4 ports. The port number starting the range must be lower.
 
@@ -251,11 +250,11 @@ Set the `--set-auto-update-enabled` parameter to `true` or `false` to disable or
 * **Windows**:  
   `.\oneagentctl.exe --set-auto-update-enabled=true`
 
-After you use this command to disable auto-updates, you won't be able to control OneAgent automatic updates using Dynatrace at **Settings** > **Updates** > **OneAgent updates**.
+After you use this command to disable auto-updates, you won't be able to control OneAgent automatic updates using Dynatrace at **Settings** > **Deployment** > **OneAgent updates**.
 
 ## Log monitoring
 
-For more information, see [Log Monitoringï»¿](https://docs.dynatrace.com/docs/shortlink/log-management-and-analytics).
+For more information, see [Log Monitoring﻿](https://docs.dynatrace.com/docs/shortlink/log-management-and-analytics).
 
 ### Check if Log Monitoring is enabled
 
@@ -317,7 +316,7 @@ All the collected diagnostic data is compressed into a `support_archive_agent_YY
 
 | Folder or file | Description |
 | --- | --- |
-| `support_archive` (ZIP) | Contains the local configuration of the OneAgent installed on the host or process where youâve run the troubleshooting, as well as the OneAgent-related log files. |
+| `support_archive` (ZIP) | Contains the local configuration of the OneAgent installed on the host or process where you’ve run the troubleshooting, as well as the OneAgent-related log files. |
 | `diagnostic_files` (ZIP) | Contains information about process group detection, auto-injection problems, and extension configuration. |
 
 ## Access to system logs for proactive support
@@ -368,10 +367,10 @@ It's particularly important to keep your host ID static in dynamic virtual envir
 
 To **define the source for host ID generation**, use `--set-host-id-source` and set it to one of the predefined values:
 
-* `auto` â Let Dynatrace generate the host ID automatically
-* `ip-addresses` â Generate host ID based on the host IP address
-* `mac-addresses` â Generate host ID based on the host's NIC MAC address
-* `fqdn` â Generate host ID based on the host fully qualified domain name (FQDN) in the `host.domain` format. If the FQDN doesn't contain a dot character, the NIC MAC address is used instead.
+* `auto` — Let Dynatrace generate the host ID automatically
+* `ip-addresses` — Generate host ID based on the host IP address
+* `mac-addresses` — Generate host ID based on the host's NIC MAC address
+* `fqdn` — Generate host ID based on the host fully qualified domain name (FQDN) in the `host.domain` format. If the FQDN doesn't contain a dot character, the NIC MAC address is used instead.
 * If you monitor multiple environments, you can split the hosts with identical IPs, MAC addresses, or FQDNs using a different namespace for each environment. The namespace can contain only alphanumeric characters, hyphens, underscores, and periods; the maximum length is 256 characters.
 
   + `ip-addresses;namespace=<namespace>`
@@ -502,15 +501,6 @@ To **add or change host properties**, run the following command:
   `.\oneagentctl.exe --set-host-property=AppName --set-host-property Environment=Dev`
 
 You can add or change more than one property in the same command.
-
-Set a security context for your host
-
-To set a security context for your host, use the following command:
-
-* **Linux** and **AIX**  
-  `./oneagentctl --set-host-property=dt.security_context=easytrade_sec`
-* **Windows**  
-  `.\oneagentctl.exe --set-host-property=dt.security_context=easytrade_sec`
 
 To **remove host properties**, run the following command:
 
@@ -752,7 +742,7 @@ Windows
 To pass through the configuration parameters, simply add the parameter and precede the value with the equals sign (`=`). For example:
 
 ```
-/bin/sh Dynatrace-OneAgent-Linux.sh â-set-host-group=test_group
+/bin/sh Dynatrace-OneAgent-Linux.sh –-set-host-group=test_group
 ```
 
 ### EXE installer
@@ -804,7 +794,7 @@ To disable FIPS mode:
 
 If you want to enable FIPS mode for application-only deployment, go to `/paas/package/agent` and delete `dt_fips_disabled.flag`.
 
-## cap\_setuid for OS Agent
+## cap\_setuid for OS Agent on Linux
 
 GPFS monitoring
 
@@ -827,6 +817,28 @@ Use the `get-osagent-cap-setuid-enabled` parameter to check whether cap\_setuid 
 
 ### Enable or disable cap\_setuid for OS Agent
 
-Set the `--set-osagent-cap-setuid-enabled` parameter to `true` or `false` to disable or enable cap\_setuid for OS Agent:
+Set the `set-osagent-cap-setuid-enabled` parameter to `true` or `false` to disable or enable cap\_setuid for OS Agent:
 
 `./oneagentctl --set-osagent-cap-setuid-enabled=true`
+
+## Windows Redirection Guard
+
+OneAgent version 1.341+
+
+Dynatrace OneAgent supports the Windows Redirection Guard on Windows editions that provide this feature.
+
+OneAgent rejects paths or files that resolve through NTFS junctions created by regular (non-elevated) Windows user accounts. This applies to locations OneAgent touches (for example, during process technology detection).
+
+This reduces the attack surface for junction-based attacks on Windows by preventing OneAgent from following potentially malicious junctions created by non-privileged users.
+
+### Check if Windows Redirection Guard in OneAgent is enabled
+
+Use the `get-watchdog-redirection-trust-policy-enabled` parameter to check whether support for Windows Redirection Guard in OneAgent is enabled:
+
+`./oneagentctl --get-watchdog-redirection-trust-policy-enabled`
+
+### Enable or disable Windows Redirection Guard support
+
+Set the `set-watchdog-redirection-trust-policy-enabled` parameter to `true` or `false` to enable (set by default) or disable support for Windows Redirection Guard in OneAgent:
+
+`./oneagentctl --set-watchdog-redirection-trust-policy-enabled=false`

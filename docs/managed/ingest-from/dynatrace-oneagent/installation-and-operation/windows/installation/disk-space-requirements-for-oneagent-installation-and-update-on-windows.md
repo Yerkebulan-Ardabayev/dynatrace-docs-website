@@ -1,7 +1,6 @@
 ---
 title: OneAgent files and disk space requirements on Windows
 source: https://docs.dynatrace.com/managed/ingest-from/dynatrace-oneagent/installation-and-operation/windows/installation/disk-space-requirements-for-oneagent-installation-and-update-on-windows
-scraped: 2026-05-12T11:07:29.471580
 ---
 
 # OneAgent files and disk space requirements on Windows
@@ -72,7 +71,7 @@ When calculating the space required for updates, we take into account the compre
 | 3 | ~750 MB | Extra storage for temporary installation files | End of the installation | OneAgent Installation | `%APPDATA%` |
 | 4 | ~750 MB | Copy of the MSI installer saved by Windows | Next version installed | Windows installer | `%WINDIR%\Installer` |
 | 5 | ~750 MB | Installed files | Next version installed | OneAgent Installation | `[Installation path]` |
-| Î£ | ~3130 MB |  |  |  |  |
+| Σ | ~3130 MB |  |  |  |  |
 
 1
 

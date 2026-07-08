@@ -1,7 +1,6 @@
 ---
 title: IP address mapping rules - PUT configuration
 source: https://docs.dynatrace.com/managed/dynatrace-api/configuration-api/rum/geographic-regions-ip-address/put-configuration
-scraped: 2026-05-12T11:17:57.727711
 ---
 
 # IP address mapping rules - PUT configuration
@@ -40,7 +39,7 @@ Configuration of the IP address mappings to geographic locations.
 
 | Element | Type | Description | Required |
 | --- | --- | --- | --- |
-| ipAddressMappingRules | [IpAddressMappingRule[]](#openapi-definition-IpAddressMappingRule) | A list of IP address mapping rules.  Rules are evaluated from top to bottom; the first matching rule applies. | Optional |
+| ipAddressMappingRules | [IpAddressMappingRule](#openapi-definition-IpAddressMappingRule)[] | A list of IP address mapping rules.  Rules are evaluated from top to bottom; the first matching rule applies. | Optional |
 
 #### The `IpAddressMappingRule` object
 
@@ -58,10 +57,10 @@ The location for an IP address mapping.
 | Element | Type | Description | Required |
 | --- | --- | --- | --- |
 | city | string | The city name of the location. | Optional |
-| countryCode | string | The country code of the location.  To fetch the list of available country codes, use the [GET all countriesï»¿](https://dt-url.net/37030go) request. | Required |
+| countryCode | string | The country code of the location.  To fetch the list of available country codes, use the [GET all countries﻿](https://dt-url.net/37030go) request. | Required |
 | latitude | number | The latitude of the location in `DDD.dddd` format. | Optional |
 | longitude | number | The longitude of the location in `DDD.dddd` format. | Optional |
-| regionCode | string | The region code of the location.  To fetch the list of available region codes, use the [GET regions of the countryï»¿](https://dt-url.net/az230x0) request. | Optional |
+| regionCode | string | The region code of the location.  To fetch the list of available region codes, use the [GET regions of the country﻿](https://dt-url.net/az230x0) request. | Optional |
 
 #### The `IpAddressRange` object
 
@@ -171,7 +170,7 @@ This is a model of the request body, showing the possible elements. It has to be
 | Element | Type | Description |
 | --- | --- | --- |
 | code | integer | The HTTP status code |
-| constraintViolations | [ConstraintViolation[]](#openapi-definition-ConstraintViolation) | A list of constraint violations |
+| constraintViolations | [ConstraintViolation](#openapi-definition-ConstraintViolation)[] | A list of constraint violations |
 | message | string | The error message |
 
 #### The `ConstraintViolation` object
@@ -282,7 +281,7 @@ To learn how to obtain and use it, see [Tokens and authentication](/managed/disc
 | Element | Type | Description |
 | --- | --- | --- |
 | code | integer | The HTTP status code |
-| constraintViolations | [ConstraintViolation[]](#openapi-definition-ConstraintViolation) | A list of constraint violations |
+| constraintViolations | [ConstraintViolation](#openapi-definition-ConstraintViolation)[] | A list of constraint violations |
 | message | string | The error message |
 
 #### The `ConstraintViolation` object
@@ -356,6 +355,6 @@ A list of constraint violations
 
 ## Related topics
 
-* [Map internal IP addresses to locations for web applications](/managed/observe/digital-experience/web-applications/additional-configuration/map-internal-ip-addresses-to-locations-web "Configure Dynatrace to use local addresses to understand where the users of your web applications are.")
-* [Map internal IP addresses to locations for mobile applications](/managed/observe/digital-experience/mobile-applications/additional-configuration/map-internal-ip-addresses-to-locations-mobile "Configure Dynatrace to use local addresses to understand where the users of your mobile applications are.")
-* [Map internal IP addresses to locations for custom applications](/managed/observe/digital-experience/custom-applications/additional-configuration/map-internal-ip-addresses-to-locations-custom "Configure Dynatrace to use local addresses to understand where the users of your custom applications are.")
+* [Map internal IP addresses to locations for web applications in RUM Classic](/managed/observe/digital-experience/rum-classic/web-applications/additional-configuration/map-internal-ip-addresses-to-locations-web "Configure Dynatrace to use local addresses to understand where the users of your web applications are.")
+* [Map internal IP addresses to locations for mobile applications in RUM Classic](/managed/observe/digital-experience/rum-classic/mobile-applications/additional-configuration/map-internal-ip-addresses-to-locations-mobile "Configure Dynatrace to use local addresses to understand where the users of your mobile applications are.")
+* [Map internal IP addresses to locations for custom applications in RUM Classic](/managed/observe/digital-experience/rum-classic/custom-applications/additional-configuration/map-internal-ip-addresses-to-locations-custom "Configure Dynatrace to use local addresses to understand where the users of your custom applications are.")

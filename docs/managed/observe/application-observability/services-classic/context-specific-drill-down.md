@@ -1,7 +1,6 @@
 ---
 title: Context-specific drill-down
 source: https://docs.dynatrace.com/managed/observe/application-observability/services-classic/context-specific-drill-down
-scraped: 2026-05-12T11:21:53.053239
 ---
 
 # Context-specific drill-down
@@ -72,7 +71,7 @@ Select any service in the service flow and you'll now see a hovering drill-down 
 
 Service flow context-specific drill-down
 
-### Context-sensitive PurePathÂ® distributed traces
+### Context-sensitive PurePath® distributed traces
 
 ![Distributed traces](https://dt-cdn.net/images/purepaths-icon-790bea38ba.svg "Distributed traces") Context-specific distributed traces are available for all non-database services.
 
@@ -96,7 +95,7 @@ Access top database statatement from service flow
 
 ![Filter](https://dt-cdn.net/images/filter-icon-41ddd02d66.svg "Filter") Context-specific filters are available for all services.
 
-They filter service flow to calls originating in the service that triggered the service flow and subsequently called the selected serviceâjust like the **Filter service flow** button in the top tile of the [side pane](/managed/observe/application-observability/services-classic/service-flow/service-flow-metrics#side-pane "Learn about the service flow metrics that measure the performance of the service calls that are triggered by each service request in your environment.").
+They filter service flow to calls originating in the service that triggered the service flow and subsequently called the selected service—just like the **Filter service flow** button in the top tile of the [side pane](/managed/observe/application-observability/services-classic/service-flow/service-flow-metrics#side-pane "Learn about the service flow metrics that measure the performance of the service calls that are triggered by each service request in your environment.").
 
 ### Context-sensitive drill-down menus
 

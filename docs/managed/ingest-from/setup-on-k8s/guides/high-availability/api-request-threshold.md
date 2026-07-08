@@ -1,7 +1,6 @@
 ---
 title: Configure minimum time between requests
 source: https://docs.dynatrace.com/managed/ingest-from/setup-on-k8s/guides/high-availability/api-request-threshold
-scraped: 2026-05-12T12:09:33.527764
 ---
 
 # Configure minimum time between requests

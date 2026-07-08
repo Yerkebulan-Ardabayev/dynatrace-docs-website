@@ -1,7 +1,6 @@
 ---
 title: Jira integration for security notifications
 source: https://docs.dynatrace.com/managed/secure/application-security/application-protection/security-notifications-rap/jira-integration
-scraped: 2026-05-12T12:10:30.586378
 ---
 
 # Jira integration for security notifications

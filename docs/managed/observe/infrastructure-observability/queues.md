@@ -1,7 +1,6 @@
 ---
 title: Message queues
 source: https://docs.dynatrace.com/managed/observe/infrastructure-observability/queues
-scraped: 2026-05-12T11:09:36.966254
 ---
 
 # Message queues
@@ -85,7 +84,7 @@ OneAgent supports various messaging clients. To find out the compatible clients,
 
 Why is my ActiveMQ broker not detected?
 
-The [ActiveMQ transport configurationï»¿](https://activemq.apache.org/components/classic/documentation/activemq-classic-connection-uris) of a broker with the IP address 0.0.0.0 is not supported.
+The [ActiveMQ transport configuration﻿](https://activemq.apache.org/components/classic/documentation/activemq-classic-connection-uris) of a broker with the IP address 0.0.0.0 is not supported.
 
 This configuration allows the broker to accept incoming messages on all network interfaces, while a broker IP address configured on a specific network interface is required for Dynatrace to establish a connection between the broker and its queues and to capture related metrics.
 

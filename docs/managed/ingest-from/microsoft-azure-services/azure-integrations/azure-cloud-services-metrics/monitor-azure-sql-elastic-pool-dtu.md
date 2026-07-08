@@ -1,7 +1,6 @@
 ---
 title: Azure SQL elastic pool (DTU) monitoring
 source: https://docs.dynatrace.com/managed/ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics/monitor-azure-sql-elastic-pool-dtu
-scraped: 2026-05-12T11:27:05.700447
 ---
 
 # Azure SQL elastic pool (DTU) monitoring

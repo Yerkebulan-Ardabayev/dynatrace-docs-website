@@ -1,7 +1,6 @@
 ---
 title: Settings API - Built-in process monitoring rules schema table
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/settings/schemas/builtin-process-built-in-process-monitoring-rule
-scraped: 2026-05-12T11:49:14.678424
 ---
 
 # Settings API - Built-in process monitoring rules schema table
@@ -114,3 +113,4 @@ To execute this request, you need an access token with **Read settings** (`setti
 | Do not monitor processes if EXE name equals 'az' `-82` | boolean | Rule id: 82 | Required |
 | Do not monitor processes if EXE name equals 'gcloud' `-83` | boolean | Rule id: 83 | Required |
 | Do not monitor processes if command line arguments contain 'forever/bin/monitor' `-84` | boolean | Rule id: 84 | Required |
+| Do not monitor process if Java Main class contains 'ActiveGateCommandLineTool' `-85` | boolean | Rule id: 85 | Required |

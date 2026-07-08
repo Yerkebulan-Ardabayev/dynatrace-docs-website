@@ -1,7 +1,6 @@
 ---
 title: Send Dynatrace notifications to Trello
 source: https://docs.dynatrace.com/managed/analyze-explore-automate/notifications-and-alerting/problem-notifications/trello-integration
-scraped: 2026-05-12T11:24:49.916821
 ---
 
 # Send Dynatrace notifications to Trello
@@ -27,7 +26,7 @@ To set up Trello problem-notification integration
 
      Trello application key
 
-     Sign in to Trello and have Trello automatically generate an [application keyï»¿](https://trello.com/app-key) that you can use here.
+     Sign in to Trello and have Trello automatically generate an [application key﻿](https://trello.com/app-key) that you can use here.
    * Enter your Trello authorization token.
    * Specify the Trello board to which problem cards should be assigned.
    * Specify the Trello list to which new problem cards should be assigned.

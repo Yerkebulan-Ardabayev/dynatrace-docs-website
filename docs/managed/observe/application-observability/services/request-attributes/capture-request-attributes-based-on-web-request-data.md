@@ -1,7 +1,6 @@
 ---
 title: Capture request attributes based on web request data
 source: https://docs.dynatrace.com/managed/observe/application-observability/services/request-attributes/capture-request-attributes-based-on-web-request-data
-scraped: 2026-05-12T11:38:30.227783
 ---
 
 # Capture request attributes based on web request data
@@ -38,7 +37,7 @@ Example of request attributes rule definition
 
 This `GET` parameter will be captured on all monitored processes that support code-level insight and it will be reported on all requests that are monitored by Dynatrace.
 
-While this is convenient, itâs not always whatâs needed. This is why you can restrict rules to a subset of process groups and services. To do this, select process group and service names from the four drop-lists above to reduce the number of process groups and services that the rule applies to.
+While this is convenient, it’s not always what’s needed. This is why you can restrict rules to a subset of process groups and services. To do this, select process group and service names from the four drop-lists above to reduce the number of process groups and services that the rule applies to.
 
 You may not be interested in capturing every value. In other cases, a value may contain a prefix that you want to check against. To do this, specify that the designated parameter should only be used if its value matches a certain value. You can also opt to not use an entire value, but instead extract a portion of a value. The example below is set up to only consider `iceform:destination` `HTTP POST` parameters that begin with the string `Journey :`. This approach will extract everything that follows the string `Journey:` and store it in the request attribute.
 
@@ -55,7 +54,7 @@ Request attribute data sources for web requests include
 * Technology-independent sources, such as:
 
   + HTTP POST parameters
-  + [Client IP addresses](/managed/observe/digital-experience/rum-concepts/detection-of-ip-addresses-locations-and-user-agents#ip-addresses "Dynatrace detects IP addresses and geolocations like a city, region, and country as well as browsers, devices, and operating systems.")  
+  + [Client IP addresses](/managed/observe/digital-experience/rum-classic/rum-concepts/detection-of-ip-addresses-locations-and-user-agents#ip-addresses "Dynatrace detects IP addresses and geolocations like a city, region, and country as well as browsers, devices, and operating systems.")  
     The value of the first matching header is reported.
   + HTTP request and response headers
   + Web request URL or one of its constituents, like the path or a query parameter
@@ -81,15 +80,15 @@ Request attribute data sources for web requests include
   External service call: request that goes to external resources.
 * Technology-specific sources.
 
-  + The application can hold a complex object in an attribute, while OneAgent converts it to a string upon capture (for example, in [Java servlet session attributeï»¿](https://dt-url.net/q503soq) and [ASP.NET session-state variableï»¿](https://dt-url.net/qf23stx)). This might have side effects, so be careful with what you capture.
+  + The application can hold a complex object in an attribute, while OneAgent converts it to a string upon capture (for example, in [Java servlet session attribute﻿](https://dt-url.net/q503soq) and [ASP.NET session-state variable﻿](https://dt-url.net/qf23stx)). This might have side effects, so be careful with what you capture.
   + ASP.NET When multiple parameters have the same name, you will see only the first captured value.
   + Java servlet Java servlet request attributes and session attributes are captured only after the servlet or filter is entered.
 
 ## Post processing
 
-In most cases, a captured value will contain what it is youâre looking for. However, you may not want an entire value, or even every value. With post processing you can manipulate the captured value.
+In most cases, a captured value will contain what it is you’re looking for. However, you may not want an entire value, or even every value. With post processing you can manipulate the captured value.
 
-Expand the **Optionally restrict or process the captured parameter(s) further** option to see the processing steps. The steps are executed in the presented orderâeach step is applied to the result of the previous step.
+Expand the **Optionally restrict or process the captured parameter(s) further** option to see the processing steps. The steps are executed in the presented order—each step is applied to the result of the previous step.
 
 You don't have to apply all the steps. Each step becomes active once you provide a value for it or select the option box.
 

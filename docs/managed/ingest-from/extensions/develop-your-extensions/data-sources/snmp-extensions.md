@@ -1,7 +1,6 @@
 ---
 title: SNMP data source
 source: https://docs.dynatrace.com/managed/ingest-from/extensions/develop-your-extensions/data-sources/snmp-extensions
-scraped: 2026-05-12T11:50:06.297939
 ---
 
 # SNMP data source
@@ -47,19 +46,19 @@ For SNMP v3, the SNMP data source supports the `NoAuthNoPriv`, `authNoPriv`, and
 
 | Protocol |  | RFC |
 | --- | --- | --- |
-| MD5 | HMAC-96-MD5 | [rfc3414ï»¿](https://tools.ietf.org/html/rfc3414) |
-| SHA | HMAC-96-SHA | [rfc3414ï»¿](https://tools.ietf.org/html/rfc3414) |
-| SHA224 | HMAC-128-SHA-224 | [rfc7860ï»¿](https://tools.ietf.org/html/rfc7860) |
-| SHA256 | HMAC-192-SHA-256 | [rfc7860ï»¿](https://tools.ietf.org/html/rfc7860) |
-| SHA384 | HMAC-256-SHA-384 | [rfc7860ï»¿](https://tools.ietf.org/html/rfc7860) |
-| SHA512 | HMAC-384-SHA-512 | [rfc7860ï»¿](https://tools.ietf.org/html/rfc7860) |
+| MD5 | HMAC-96-MD5 | [rfc3414﻿](https://tools.ietf.org/html/rfc3414) |
+| SHA | HMAC-96-SHA | [rfc3414﻿](https://tools.ietf.org/html/rfc3414) |
+| SHA224 | HMAC-128-SHA-224 | [rfc7860﻿](https://tools.ietf.org/html/rfc7860) |
+| SHA256 | HMAC-192-SHA-256 | [rfc7860﻿](https://tools.ietf.org/html/rfc7860) |
+| SHA384 | HMAC-256-SHA-384 | [rfc7860﻿](https://tools.ietf.org/html/rfc7860) |
+| SHA512 | HMAC-384-SHA-512 | [rfc7860﻿](https://tools.ietf.org/html/rfc7860) |
 
 #### `authPriv`
 
 | Protocol |  | RFC | Notes |
 | --- | --- | --- | --- |
-| DES | CBC-DES | [rfc3414ï»¿](https://tools.ietf.org/html/rfc3414) |  |
-| AES | CFB128-AES-128 | [rfc3826ï»¿](https://tools.ietf.org/html/rfc3826) |  |
+| DES | CBC-DES | [rfc3414﻿](https://tools.ietf.org/html/rfc3414) |  |
+| AES | CFB128-AES-128 | [rfc3826﻿](https://tools.ietf.org/html/rfc3826) |  |
 | AES192[1](#fn-1-1-def) |  | n/a | Blumenthal key extension |
 | AES256[1](#fn-1-1-def) |  | n/a | Blumenthal key extension |
 | AES192C[1](#fn-1-1-def) |  | n/a | Reeder key extension |
@@ -67,7 +66,7 @@ For SNMP v3, the SNMP data source supports the `NoAuthNoPriv`, `authNoPriv`, and
 
 1
 
-These encryption algorithms are not officially specified, but they are often supported by network devices. See [SNMPv3 with AES-256ï»¿](https://www.snmp.com/snmpv3/snmpv3_aes256.shtml).
+These encryption algorithms are not officially specified, but they are often supported by network devices. See [SNMPv3 with AES-256﻿](https://www.snmp.com/snmpv3/snmpv3_aes256.shtml).
 
 To learn how to define authentication in your monitoring configuration, see [SNMP authentication](/managed/ingest-from/extensions/develop-your-extensions/data-sources/snmp-extensions/snmp-schema-reference#authentication "Learn about SNMP extensions in the Extensions framework.").
 

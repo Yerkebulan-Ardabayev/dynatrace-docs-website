@@ -1,7 +1,6 @@
 ---
 title: Tenant token
 source: https://docs.dynatrace.com/managed/manage/identity-access-management/access-tokens-and-oauth-clients/access-tokens/rotate-tenant-token
-scraped: 2026-05-12T11:22:20.752000
 ---
 
 # Tenant token

@@ -1,7 +1,6 @@
 ---
 title: Audit logs API - GET audit log
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/audit-logs/get-log
-scraped: 2026-05-12T11:36:50.709353
 ---
 
 # Audit logs API - GET audit log
@@ -60,7 +59,7 @@ The audit log of your environment.
 
 | Element | Type | Description |
 | --- | --- | --- |
-| auditLogs | [AuditLogEntry[]](#openapi-definition-AuditLogEntry) | A list of audit log entries ordered by the creation timestamp. |
+| auditLogs | [AuditLogEntry](#openapi-definition-AuditLogEntry)[] | A list of audit log entries ordered by the creation timestamp. |
 | nextPageKey | string | The cursor for the next page of results. Has the value of `null` on the last page.  Use it in the **nextPageKey** query parameter to obtain subsequent pages of the result. |
 | pageSize | integer | The number of entries per page. |
 | totalCount | integer | The total number of entries in the result. |
@@ -83,7 +82,7 @@ An entry of the audit log.
 | eventType | string | The type of the recorded operation.  * `LOGIN` -> A user logged in * `LOGOUT` -> A user logged out * `CREATE` -> An object was created * `UPDATE` -> An object was updated * `DELETE` -> An object was deleted * `REVOKE` -> An Active Gate token was revoked * `TAG_ADD` -> A manual tag was added * `TAG_REMOVE` -> A manual tag was removed * `TAG_UPDATE` -> A manual tag was updated * `REMOTE_CONFIGURATION_MANAGEMENT` -> A Remote Configuration Management related operation occurred The element can hold these values * `CREATE` * `DELETE` * `LOGIN` * `LOGOUT` * `REORDER` * `REVOKE` * `TAG_ADD` * `TAG_REMOVE` * `TAG_UPDATE` * `UPDATE` |
 | logId | string | The ID of the log entry. |
 | message | string | The logged message. |
-| patch | string | The patch of the recorded operation as the JSON representation.  The format is an enhanced RFC 6902. The patch also carries the previous value in the **oldValue** field. |
+| patch | [AnyValue](#openapi-definition-AnyValue) | The patch of the recorded operation as the JSON representation.  The format is an enhanced RFC 6902. The patch also carries the previous value in the **oldValue** field. |
 | success | boolean | The recorded operation is successful (`true`) or failed (`false`). |
 | timestamp | integer | The timestamp of the record creation, in UTC milliseconds. |
 | user | string | The ID of the user who performed the recorded operation. |
@@ -105,7 +104,7 @@ A schema representing an arbitrary value type.
 | Element | Type | Description |
 | --- | --- | --- |
 | code | integer | The HTTP status code |
-| constraintViolations | [ConstraintViolation[]](#openapi-definition-ConstraintViolation) | A list of constraint violations |
+| constraintViolations | [ConstraintViolation](#openapi-definition-ConstraintViolation)[] | A list of constraint violations |
 | message | string | The error message |
 
 #### The `ConstraintViolation` object

@@ -1,7 +1,6 @@
 ---
 title: Settings API - .NET schema table
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/settings/schemas/builtin-monitored-technologies-dotnet
-scraped: 2026-05-12T11:42:10.958888
 ---
 
 # Settings API - .NET schema table

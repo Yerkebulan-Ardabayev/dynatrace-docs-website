@@ -1,7 +1,6 @@
 ---
 title: Calculate your consumption of Infrastructure Monitoring (DPS)
 source: https://docs.dynatrace.com/managed/license/capabilities/app-infra-observability/infrastructure-monitoring
-scraped: 2026-05-12T11:13:43.319125
 ---
 
 # Calculate your consumption of Infrastructure Monitoring (DPS)
@@ -10,7 +9,7 @@ scraped: 2026-05-12T11:13:43.319125
 
 * Explanation
 * 1-min read
-* Updated on Dec 10, 2025
+* Updated on Jun 09, 2026
 
 Dynatrace OneAgent can be configured for Infrastructure Monitoring mode, which provides comprehensive host monitoring for physical and virtual hosts.
 
@@ -32,14 +31,14 @@ When a host is monitored for fewer than 15 minutes in an interval, host-hour con
 
 The figure below illustrates how host-hour consumption per host is calculated at 15-minute intervals.
 
-![Infrastructure Monitoring consumption](https://dt-cdn.net/images/infrastructure-monitoring-consumption-5843-2c70d0f91c.jpg)
+![Infrastructure Monitoring consumption](https://cdn.bfldr.com/B686QPH3/as/4sqp5cxcncksmpsrtfr5njf9/Infrastructure_Monitoring_consumption-Light_Mode?auto=webp&format=png&position=1)
 
 Infrastructure Monitoring consumption
 
 ### Metrics
 
 This section assumes that you have followed the Dynatrace-recommended deployment options.
-If you implement a custom deployment, the charging of included metrics may still work as describedâbut this is not guaranteed by Dynatrace.
+If you implement a custom deployment, the charging of included metrics may still work as described—but this is not guaranteed by Dynatrace.
 
 Dynatrace Infrastructure Monitoring includes Infrastructure Monitoring metrics and [other built-in metrics](/managed/analyze-explore-automate/metrics-classic/built-in-metrics "Explore the complete list of built-in Dynatrace metrics.").
 These metrics are included and never produce any charge.
@@ -61,10 +60,10 @@ Looking at Figure 2 above, the included custom metric data point volume for the 
 
 ### Included custom metric data points calculation example
 
-* First 15-minute interval: `1 (hosts monitored) Ã 1,500 (metric data points) = 1,500 Included custom metric data points`
-* Second 15-minute interval: `2 (hosts monitored) Ã 1,500 (metric data points) = 3,000 Included custom metric data points`
-* Third 15-minute interval: `1 (hosts monitored) Ã 1,500 (metric data points) = 1,500 Included custom metric data points`
-* Fourth 15-minute interval: `1 (hosts monitored) Ã 1,500 (metric data points) = 1,500 Included custom metric data points`
+* First 15-minute interval: `1 (hosts monitored) × 1,500 (metric data points) = 1,500 Included custom metric data points`
+* Second 15-minute interval: `2 (hosts monitored) × 1,500 (metric data points) = 3,000 Included custom metric data points`
+* Third 15-minute interval: `1 (hosts monitored) × 1,500 (metric data points) = 1,500 Included custom metric data points`
+* Fourth 15-minute interval: `1 (hosts monitored) × 1,500 (metric data points) = 1,500 Included custom metric data points`
 
 ### How custom metric data points are consumed in Infrastructure Monitoring mode
 
@@ -190,4 +189,4 @@ Infrastructure Monitoring (DPS)
 
 * [Dynatrace OneAgent](/managed/ingest-from/dynatrace-oneagent "Understand the important concepts related to OneAgent and find out how to install and operate OneAgent on different platforms.")
 * [Application & Infrastructure Observability overview (DPS)](/managed/license/capabilities/app-infra-observability "Learn about the different Application & Infrastructure Observability options that are available with a Dynatrace Platform Subscription (DPS) license.")
-* [Dynatrace pricingï»¿](https://www.dynatrace.com/pricing/)
+* [Dynatrace pricing﻿](https://www.dynatrace.com/pricing/)

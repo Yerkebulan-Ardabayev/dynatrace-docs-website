@@ -1,7 +1,6 @@
 ---
 title: Settings API - Pipeline Groups configuration (user.events) schema table
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-user-events-pipeline-groups
-scraped: 2026-05-12T11:39:38.613396
 ---
 
 # Settings API - Pipeline Groups configuration (user.events) schema table

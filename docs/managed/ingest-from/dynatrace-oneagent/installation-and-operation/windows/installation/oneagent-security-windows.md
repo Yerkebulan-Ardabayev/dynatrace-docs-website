@@ -1,7 +1,6 @@
 ---
 title: OneAgent security on Windows
 source: https://docs.dynatrace.com/managed/ingest-from/dynatrace-oneagent/installation-and-operation/windows/installation/oneagent-security-windows
-scraped: 2026-05-12T11:07:34.962767
 ---
 
 # OneAgent security on Windows
@@ -62,7 +61,7 @@ OneAgent installer modifies the following aspects of your system:
   + `HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\oneagentmon`
   + `HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\Dynatrace OneAgent`
   + `HKEY_LOCAL_MACHINE\SOFTWARE\Caphyon\Advanced Installer`
-* [Troubleshooting: Network Agent initialization failure on Windowsï»¿](https://dt-url.net/7c438ee)
+* [Troubleshooting: Network Agent initialization failure on Windows﻿](https://dt-url.net/7c438ee)
 * The `Npcap` driver is installed with the `/admin_only` flag set, which restricts Npcap's packet reading and writing to users with Administrator privileges only. Unprivileged users can't access Npcap's functionality on a monitored host. Note that WinPcap doesn't offer this restriction. For more information, see [Customize OneAgent installation on Windows](/managed/ingest-from/dynatrace-oneagent/installation-and-operation/windows/installation/customize-oneagent-installation-on-windows#packet_capture_driver "Learn how to use the OneAgent installer for Windows.").
 
   Make sure these Npcap and WinPcap operations are permitted in your system's security settings:
@@ -71,7 +70,7 @@ OneAgent installer modifies the following aspects of your system:
   + **Npcap:** Reading and writing registry values to `SOFTWARE\WOW6432Node\Microsoft\Windows\CurrentVersion\Uninstall\NpcapInst`
   + **Winpcap:** Reading and writing registry values to `SOFTWARE\WOW6432Node\Microsoft\Windows\CurrentVersion\Uninstall\WinPcapInst` and `SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\WinPcapInst`
   + **Npcap and Winpcap:** Loading `wpcap.dll` and `packet.dll` located in `C:\WINDOWS\system32\Npcap` / `C:\WINDOWS\system32\WinPcap`
-  + **Npcap and Winpcap:** Reading registry values regarding present network interfaces in [`SYSTEM\CurrentControlSet\Control\Network\{Network-Service-GUID}`ï»¿](https://dt-url.net/lz036sy)\*
+  + **Npcap and Winpcap:** Reading registry values regarding present network interfaces in [`SYSTEM\CurrentControlSet\Control\Network\{Network-Service-GUID}`﻿](https://dt-url.net/lz036sy)\*
 
 ## Files added
 
@@ -116,13 +115,13 @@ We're aware that global read and write permissions on OneAgent directories get f
 
 ## Installer signing
 
-The OneAgent installer is signed against one or more [DigiCert root certificatesï»¿](https://www.digicert.com/kb/digicert-root-certificates.htm). For regularly maintained systems, Windows verifies that the OneAgent installer has been published by a verified publisher.
+The OneAgent installer is signed against one or more [DigiCert root certificates﻿](https://www.digicert.com/kb/digicert-root-certificates.htm). For regularly maintained systems, Windows verifies that the OneAgent installer has been published by a verified publisher.
 
-If your Windows-based system has been offline since March 2021 or longer, Windows won't be able to verify the installer and the OneAgent installer publisher will appear as **Unknown publisher** when you attempt an installation or update. In such a case, you need to download the latest certificate from [DigiCert root certificatesï»¿](https://www.digicert.com/kb/digicert-root-certificates.htm) and add it to your system. Among all the DigiCert certificates, the `DigiCert Global Root G3` is mandatory for successful verification of the OneAgent installer.
+If your Windows-based system has been offline since March 2021 or longer, Windows won't be able to verify the installer and the OneAgent installer publisher will appear as **Unknown publisher** when you attempt an installation or update. In such a case, you need to download the latest certificate from [DigiCert root certificates﻿](https://www.digicert.com/kb/digicert-root-certificates.htm) and add it to your system. Among all the DigiCert certificates, the `DigiCert Global Root G3` is mandatory for successful verification of the OneAgent installer.
 
-* See [How to: View certificates with the MMC snap-inï»¿](https://docs.microsoft.com/en-us/dotnet/framework/wcf/feature-details/how-to-view-certificates-with-the-mmc-snap-in) in Microsoft docs to learn which root certificates are installed in your system.
-* Download the latest root certificates from [DigiCert root certificatesï»¿](https://www.digicert.com/kb/digicert-root-certificates.htm).
+* See [How to: View certificates with the MMC snap-in﻿](https://docs.microsoft.com/en-us/dotnet/framework/wcf/feature-details/how-to-view-certificates-with-the-mmc-snap-in) in Microsoft docs to learn which root certificates are installed in your system.
+* Download the latest root certificates from [DigiCert root certificates﻿](https://www.digicert.com/kb/digicert-root-certificates.htm).
 
 ### Windows 2008 R2
 
-Starting with OneAgent version 1.225, the installer is signed using the SHA-2 algorithm. Consequently, Windows 2008 R2 hosts are required to have SHA-2 code signing support installed. If you use Windows Update, the updates were offered to you automatically (KB4474419 and KB4490628). If, however, your Windows 2008 R2 system doesn't support verifying SHA-2 signed installers, OneAgent auto-update and installation won't work if `Applocker` is configured to block unknown publishers and/or security warnings may be displayed. For more information, see the Microsoft [2019 SHA-2 Code Signing Support requirement for Windows and WSUSï»¿](https://support.microsoft.com/en-us/topic/2019-sha-2-code-signing-support-requirement-for-windows-and-wsus-64d1c82d-31ee-c273-3930-69a4cde8e64f) announcement.
+Starting with OneAgent version 1.225, the installer is signed using the SHA-2 algorithm. Consequently, Windows 2008 R2 hosts are required to have SHA-2 code signing support installed. If you use Windows Update, the updates were offered to you automatically (KB4474419 and KB4490628). If, however, your Windows 2008 R2 system doesn't support verifying SHA-2 signed installers, OneAgent auto-update and installation won't work if `Applocker` is configured to block unknown publishers and/or security warnings may be displayed. For more information, see the Microsoft [2019 SHA-2 Code Signing Support requirement for Windows and WSUS﻿](https://support.microsoft.com/en-us/topic/2019-sha-2-code-signing-support-requirement-for-windows-and-wsus-64d1c82d-31ee-c273-3930-69a4cde8e64f) announcement.

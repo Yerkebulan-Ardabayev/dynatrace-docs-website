@@ -1,7 +1,6 @@
 ---
 title: Set up Dynatrace on Kubernetes
 source: https://docs.dynatrace.com/managed/ingest-from/setup-on-k8s
-scraped: 2026-05-12T11:03:48.149913
 ---
 
 # Set up Dynatrace on Kubernetes
@@ -39,4 +38,4 @@ Dynatrace is the only Kubernetes observability platform on the market that integ
 
 ## Related topics
 
-* [Kubernetes cluster and workload monitoringï»¿](https://www.dynatrace.com/technologies/kubernetes-monitoring/)
+* [Kubernetes cluster and workload monitoring﻿](https://www.dynatrace.com/technologies/kubernetes-monitoring/)

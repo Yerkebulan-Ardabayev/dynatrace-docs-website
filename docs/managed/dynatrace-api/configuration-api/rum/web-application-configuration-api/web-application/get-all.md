@@ -1,7 +1,6 @@
 ---
 title: Web application configuration API - GET all web applications
 source: https://docs.dynatrace.com/managed/dynatrace-api/configuration-api/rum/web-application-configuration-api/web-application/get-all
-scraped: 2026-05-12T11:17:13.365216
 ---
 
 # Web application configuration API - GET all web applications
@@ -48,7 +47,7 @@ An ordered list of short representations of Dynatrace entities.
 
 | Element | Type | Description |
 | --- | --- | --- |
-| values | [EntityShortRepresentation[]](#openapi-definition-EntityShortRepresentation) | An ordered list of short representations of Dynatrace entities. |
+| values | [EntityShortRepresentation](#openapi-definition-EntityShortRepresentation)[] | An ordered list of short representations of Dynatrace entities. |
 
 #### The `EntityShortRepresentation` object
 

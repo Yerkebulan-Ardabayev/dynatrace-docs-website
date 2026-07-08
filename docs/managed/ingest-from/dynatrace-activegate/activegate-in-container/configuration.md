@@ -1,7 +1,6 @@
 ---
 title: Containerized ActiveGate configuration
 source: https://docs.dynatrace.com/managed/ingest-from/dynatrace-activegate/activegate-in-container/configuration
-scraped: 2026-05-12T11:36:35.918031
 ---
 
 # Containerized ActiveGate configuration
@@ -36,7 +35,7 @@ To determine the endpoints, use [GET connectivity information for ActiveGate](/m
 
 ### Environment ID
 
-The Dynatrace [environment ID](/managed/discover-dynatrace/get-started/monitoring-environment "Understand and learn how to work with monitoring environments.").
+The Dynatrace [environment ID](/managed/discover-dynatrace/get-started/monitoring-environment "Learn what a Dynatrace monitoring environment is, how to find your environment ID, and how to set up and connect multiple environments.").
 
 |  |  |  |  |
 | --- | --- | --- | --- |
@@ -92,9 +91,9 @@ See [ActiveGate modules](/managed/ingest-from/dynatrace-activegate/configuration
 
 The exceptions to this rule are the following modules that are stored in the `[collector]` section.
 
-* `MSGrouter`âEnables message routing
-* `restInterface`âEnables REST API module
-* `java-script-agent-servlet`âEnables JavaScript agent
+* `MSGrouter`—Enables message routing
+* `restInterface`—Enables REST API module
+* `java-script-agent-servlet`—Enables JavaScript agent
 
 Not all modules are supported
 
@@ -129,7 +128,7 @@ The proxy password needs to meet the following requirements.
 
 ### Load balancer between ActiveGate and OneAgents
 
-Dynatrace OneAgent accesses the ActiveGate via an auto-detected endpoint list. If a load balancer is placed on the path from OneAgent to the ActiveGate, such as Kubernetes [Serviceï»¿](https://kubernetes.io/docs/concepts/services-networking/service/), you need to explicitly set the endpoint to be used by OneAgents.
+Dynatrace OneAgent accesses the ActiveGate via an auto-detected endpoint list. If a load balancer is placed on the path from OneAgent to the ActiveGate, such as Kubernetes [Service﻿](https://kubernetes.io/docs/concepts/services-networking/service/), you need to explicitly set the endpoint to be used by OneAgents.
 
 | Environment variable | Example value |
 | --- | --- |

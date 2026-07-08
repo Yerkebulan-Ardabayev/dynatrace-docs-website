@@ -1,12 +1,11 @@
 ---
-title: Synthetic calculations
+title: Synthetic calculations in Classic
 source: https://docs.dynatrace.com/managed/observe/digital-experience/synthetic-monitoring/general-information/synthetic-calculations
-scraped: 2026-05-12T11:31:38.848414
 ---
 
-# Synthetic calculations
+# Synthetic calculations in Classic
 
-# Synthetic calculations
+# Synthetic calculations in Classic
 
 * Explanation
 * 4-min read
@@ -16,7 +15,7 @@ Dynatrace uses specific formulas to calculate metric values and generate problem
 
 ## Availability
 
-Availability calculation for a synthetic monitor isn't based on the number of successful executions but on the length of time (duration) that a monitor is considered to be `UP`. Dynatrace stores timestamps of state changesâ`UP`, `DOWN`, and `UNMONITORED`.
+Availability calculation for a synthetic monitor isn't based on the number of successful executions but on the length of time (duration) that a monitor is considered to be `UP`. Dynatrace stores timestamps of state changes—`UP`, `DOWN`, and `UNMONITORED`.
 
 The timespan covered by successive successful monitor executions is considered to be uptime (`UP`). The time between the last successful execution and the first failed execution is also considered to be uptime (`UP`). Likewise, the timespan covered by successive failed executions is considered to be downtime (`DOWN`). The time between the last failed execution and the first successful execution is considered to be downtime (`DOWN`). This is illustrated in the image below.
 
@@ -24,7 +23,7 @@ The time that a monitor spends in the `UNMONITORED` state isn't considered in av
 
 * **Uptime** is the duration in ms during which a synthetic monitor is in state `UP`.
 * **Downtime** is the duration in ms during which a synthetic monitor is in state `DOWN`.
-* **Availability % per location** is `Uptime / (Uptime + Downtime) Ã 100`.
+* **Availability % per location** is `Uptime / (Uptime + Downtime) × 100`.
 * **Overall availability of a monitor** is the `sum of availability % per location / number of locations`.
 
 Availability is stored as a percentage with two decimal places.
@@ -35,7 +34,7 @@ Availability calculation
 
 ## Maintenance windows
 
-Maintenance windows can be excluded from availability calculation for synthetic monitors, displayed, for example, in **Synthetic Classic**, [synthetic monitor details pages](/managed/observe/digital-experience/synthetic-monitoring/analysis-and-alerting/synthetic-details-for-browser-monitors "Analyze browser monitor and clickpath results on the Synthetic details page."), and reports. A global setting enables you to always exclude maintenance windows from availability calculationsâgo to **Settings** > **Web and mobile monitoring** > **Synthetic availability** to access it.
+Maintenance windows can be excluded from availability calculation for synthetic monitors, displayed, for example, in **Synthetic Classic**, [synthetic monitor details pages](/managed/observe/digital-experience/synthetic-monitoring/analysis-and-alerting/synthetic-details-for-browser-monitors "Analyze browser monitor and clickpath results on the Synthetic details page."), and reports. A global setting enables you to always exclude maintenance windows from availability calculations—go to **Settings** > **Web and mobile monitoring** > **Synthetic availability** to access it.
 
 ![Availability calculation](https://dt-cdn.net/images/maintenancewindowsavailability-901-6ba52f57f9.png)
 
@@ -56,7 +55,7 @@ Retry on error for single-URL browser monitors and browser clickpaths is configu
 
 ## Key performance metrics
 
-**Total duration** is calculated as a summation of the **User action duration** of the load and XHR actions in a monitor. Other [key performance metric](/managed/observe/digital-experience/web-applications/analyze-and-use/work-with-key-performance-metrics "Learn how to use the right key performance metrics to optimize user experience data for each of your applications.") values are averages, calculated separately for load actions and XHR actions.
+**Total duration** is calculated as a summation of the **User action duration** of the load and XHR actions in a monitor. Other [key performance metric](/managed/observe/digital-experience/rum-classic/web-applications/analyze-and-use/work-with-key-performance-metrics "Learn how to use the right key performance metrics to optimize user experience data for each of your applications.") values are averages, calculated separately for load actions and XHR actions.
 
 ## Performance problems, resolution, and timeouts
 
@@ -80,16 +79,16 @@ Performance thresholds for [HTTP monitors](/managed/observe/digital-experience/s
 
 ## Availability problems, resolution, and timeouts
 
-Synthetic monitors can experience global outage or local outage availability problems. A global outage occurs when all locations experience 1â5 consecutive failures simultaneously. A local outage occurs when the specified number of locations experiences the specified number of consecutive failures, for example, when 3 of 4 total locations experience two consecutive failures.
+Synthetic monitors can experience global outage or local outage availability problems. A global outage occurs when all locations experience 1–5 consecutive failures simultaneously. A local outage occurs when the specified number of locations experiences the specified number of consecutive failures, for example, when 3 of 4 total locations experience two consecutive failures.
 
-An outage problem is resolved when there are as many consecutive successful executions as the configured number of failed executions for generating the problem. The successful executions must occur on the number of locations that = the total number of locationsâthe number of locations required for the problem+1.
+An outage problem is resolved when there are as many consecutive successful executions as the configured number of failed executions for generating the problem. The successful executions must occur on the number of locations that = the total number of locations–the number of locations required for the problem+1.
 
-For example, for your monitor running on 4 locations configured to generate a problem when 3 locations have 2 consecutive failures, an outage problem is resolved when there are 2 consecutive successful executions on 2 (=4â3+1) locations.
+For example, for your monitor running on 4 locations configured to generate a problem when 3 locations have 2 consecutive failures, an outage problem is resolved when there are 2 consecutive successful executions on 2 (=4–3+1) locations.
 
 Note that when a global outage problem is resolved, you might still have one or more locations experiencing monitor failure. Set up local outage rules to be alerted on these.
 
-Outage problem resolution occurs when a monitor is enabled/active. If a monitor is disabled/inactive, open outage problems are closed, or time out, if there are no new executions for 2x the monitor frequency. For example, if a monitor scheduled to run every hour and has an open outage problem when it is disabled at 7:00 AM, the problem times out at 9:00 AM (2 Ã 1 hour).
+Outage problem resolution occurs when a monitor is enabled/active. If a monitor is disabled/inactive, open outage problems are closed, or time out, if there are no new executions for 2x the monitor frequency. For example, if a monitor scheduled to run every hour and has an open outage problem when it is disabled at 7:00 AM, the problem times out at 9:00 AM (2 × 1 hour).
 
 ## Related topics
 
-* [Number of actions consumed by browser clickpaths](/managed/observe/digital-experience/synthetic-monitoring/browser-monitors/number-of-actions-consumed-by-browser-clickpaths "Find out how many actions are consumed by a browser clickpath and how they differ from events.")
+* [Number of actions consumed by browser clickpaths in Classic](/managed/observe/digital-experience/synthetic-monitoring/browser-monitors/number-of-actions-consumed-by-browser-clickpaths "Find out how many actions are consumed by a browser clickpath and how they differ from events.")

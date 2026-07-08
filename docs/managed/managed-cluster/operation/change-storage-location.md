@@ -1,14 +1,13 @@
 ---
 title: Change storage location
 source: https://docs.dynatrace.com/managed/managed-cluster/operation/change-storage-location
-scraped: 2026-05-12T11:53:16.490832
 ---
 
 # Change storage location
 
 # Change storage location
 
-* Updated on Jul 01, 2024
+* Updated on May 20, 2026
 
 Dynatrace Managed stores multiple types of monitoring data that vary depending on the use case. There are default storage locations, as listed in [Dynatrace Managed hardware and system requirements](/managed/managed-cluster/installation/managed-hardware-requirements#storage "Review the hardware sizing, storage, and multi-node cluster requirements before installing Dynatrace Managed on your infrastructure.").
 
@@ -129,16 +128,16 @@ If you customized the storage locations, `SERVER_DATASTORE_PATH`, `CASSANDRA_DAT
 
 | **Directory symbol** | **Directory path** | **Description** | **Required free disk space for installing** | **Required free disk space for upgrading** |
 | --- | --- | --- | --- | --- |
-| SELFMON\_AGENT\_INSTALL\_PATH  Also see, [Disk space for OneAgent](/managed/ingest-from/dynatrace-oneagent/installation-and-operation/linux/installation/disk-space-requirements-for-oneagent-installation-and-update-on-linux "Learn the OneAgent directory structure and disk space requirements for OneAgent installation on Linux.") | `/opt/dynatrace` | Main directory for self-monitoring OneAgent binaries. | 3 GB [1](#fn-1-1-def) | 1.4 GB [1](#fn-1-1-def) |
-| PRODUCT\_PATH | `/opt/dynatrace-managed` | Main directory for Dynatrace Managed binaries | 7 GB [1](#fn-1-1-def) | 5 GB [1](#fn-1-1-def) |
-| DATASTORE\_PATH | `/var/opt/dynatrace-managed` | Main directory for Dynatrace Managed data | 24 GB | 3 GB |
-| LOG\_PATH | `DATASTORE_PATH` `/log` | Logs of all Dynatrace Managed components, services, and tools | 2 GB | 1 GB |
-| CASSANDRA\_DATASTORE\_PATH | `DATASTORE_PATH` `/cassandra` | Metrics repository | 25 GB | 1 GB |
-| ELASTICSEARCH\_DATASTORE\_PATH | `DATASTORE_PATH` `/elasticsearch` | Elasticsearch store | 3 GB | 1 GB |
-| SERVER\_DATASTORE\_PATH | `DATASTORE_PATH` `/server/tenantData` | Transactions store | 14 GB | 1 GB |
-| SERVER\_REPLAY\_DATASTORE\_PATH | `DATASTORE_PATH` `/server/replayData` | Session replay store | 14 GB | 1 GB |
-| AGENT\_BUILD\_UNITS\_PATH | `DATASTORE_PATH` `/agents` | OneAgent and ActiveGate installation packages (if downloaded by Dynatrace Server or installed from a standalone packages) | 20 GB | 1 GB |
-| SERVER\_BUILD\_UNITS\_PATH | `DATASTORE_PATH` `/installer` | Dynatrace Managed installer for adding nodes to a cluster, prepared during installation/upgrade | 2 GB | 1 GB |
+| `SELFMON_AGENT_INSTALL_PATH`  Also see, [Disk space for OneAgent](/managed/ingest-from/dynatrace-oneagent/installation-and-operation/linux/installation/disk-space-requirements-for-oneagent-installation-and-update-on-linux "Learn the OneAgent directory structure and disk space requirements for OneAgent installation on Linux.") | `/opt/dynatrace` | Main directory for self-monitoring OneAgent binaries. | 3 GB [1](#fn-1-1-def) | 1.8 GB [1](#fn-1-1-def) |
+| `PRODUCT_PATH` | `/opt/dynatrace-managed` | Main directory for Dynatrace Managed binaries | 12 GB [1](#fn-1-1-def) | 10 GB [1](#fn-1-1-def) |
+| `DATASTORE_PATH` | `/var/opt/dynatrace-managed` | Main directory for Dynatrace Managed data | 24 GB | 3 GB |
+| `LOG_PATH` | `DATASTORE_PATH` `/log` | Logs of all Dynatrace Managed components, services, and tools | 2 GB | 1 GB |
+| `CASSANDRA_DATASTORE_PATH` | `DATASTORE_PATH` `/cassandra` | Metrics repository | 25 GB | 1 GB |
+| `ELASTICSEARCH_DATASTORE_PATH` | `DATASTORE_PATH` `/elasticsearch` | Elasticsearch store | 3 GB | 1 GB |
+| `SERVER_DATASTORE_PATH` | `DATASTORE_PATH` `/server/tenantData` | Transactions store | 14 GB | 1 GB |
+| `SERVER_REPLAY_DATASTORE_PATH` | `DATASTORE_PATH` `/server/replayData` | Session replay store | 14 GB | 1 GB |
+| `AGENT_BUILD_UNITS_PATH` | `DATASTORE_PATH` `/agents` | OneAgent and ActiveGate installation packages (if downloaded by Dynatrace Server or installed from a standalone packages) | 20 GB | 1 GB |
+| `SERVER_BUILD_UNITS_PATH` | `DATASTORE_PATH` `/installer` | Dynatrace Managed installer for adding nodes to a cluster, prepared during installation/upgrade | 2 GB | 1 GB |
 
 1
 
@@ -160,4 +159,4 @@ Insufficient disk space on <mountPoint> on <path>
 
 You need at least <required MB> free for <storage type>. Currently, only <current free disk space> of a total of <disk size> is available. Providing enough disk space is vital to the health of your cluster and ensures your monitoring data is safe, consistent, and available. Ignoring that message may cause data loss.
 
-If the transaction data storage is affected, you'll see an additional cluster event that automatically truncates the data and adapts the data retention period. To read more, see [Adaptive Data Retention](/managed/manage/data-privacy-and-security/data-privacy/adaptive-data-retention "Find out how the retention time for the data stored in the transaction, Session Replay, and Log monitoring storages is adjusted.").
+If the transaction data storage is affected, you'll see an additional cluster event that automatically truncates the data and adapts the data retention period. To read more, see [Adaptive data retention](/managed/manage/data-privacy-and-security/data-privacy/adaptive-data-retention "Learn how Dynatrace Managed adapts transaction, Session Replay, and Log Monitoring retention when environments exceed quota or disk limits.").

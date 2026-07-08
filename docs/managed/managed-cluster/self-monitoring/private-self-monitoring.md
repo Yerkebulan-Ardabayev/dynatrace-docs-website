@@ -1,30 +1,37 @@
 ---
-title: Private self-monitoring environment
+title: Private self-monitoring
 source: https://docs.dynatrace.com/managed/managed-cluster/self-monitoring/private-self-monitoring
-scraped: 2026-05-12T11:53:29.169776
 ---
 
-# Private self-monitoring environment
+# Private self-monitoring
 
-# Private self-monitoring environment
+# Private self-monitoring
 
-* Published Nov 17, 2021
+* How-to guide
+* 1-min read
+* Updated on Jun 11, 2026
 
-If you have very strict data privacy requirements or you need full control over data residency and access, you can opt out any time from sending self-monitoring data to Dynatrace.
+To keep full control over data residency and access, opt out of reporting self-monitoring data to Dynatrace and set up your own private self-monitoring environment.
 
-### Opt out of reporting self-monitoring data
+If your data privacy requirements are strict, you can opt out at any time. Opting out stops sending self-monitoring data to Dynatrace.
 
-To opt out of reporting Dynatrace Managed self-monitoring data, you need cluster administrator permissions.
+Setting up your own self-monitoring environment requires installing OneAgent on your Managed Cluster nodes, which consumes Dynatrace licenses.
+
+## Opt out of reporting self-monitoring data
+
+To opt out of reporting Dynatrace Managed self-monitoring data, you need Managed Cluster administrator permissions.
 
 1. Sign in to your Dynatrace Managed Cluster Management Console.
 2. Go to **Settings** to display the Dynatrace Managed settings page.
 3. Select **Preferences**.
 4. Turn off **Dynatrace deployment health monitoring**.
 
-If this setting is disabled - Please contact a Dynatrace product expert via live chat within your environment.
+Please contact a Dynatrace product expert via live chat within your environment. if this setting is turned off.
 
-### Set up your own self-monitoring
+## Set up your own self-monitoring
 
-To retain high availability of your self-monitoring data, we recommend that you set up cross-cluster monitoring. For example, have a pre-production cluster monitor a production cluster, and vice versa. If one cluster goes down, you still have access to self-monitoring data to troubleshoot on your own or with our support and services teams.
+Setting up your own self-monitoring gives you additional visibility into your Managed Cluster and makes it easier for Dynatrace product experts to troubleshoot issues. You can install OneAgents on your Managed Cluster nodes and Environment ActiveGates.
 
-For advanced configuration of a self-monitoring environment, dashboards, alerting, and naming rules, reach our to our expert [ACE Servicesï»¿](https://www.dynatrace.com/services-support/expert-services/) team.
+To retain high availability of your self-monitoring data, set up cross-cluster monitoring. For example, have a pre-production Managed Cluster monitor a production Managed Cluster, and vice versa. If one Managed Cluster goes down, you still have access to self-monitoring data to troubleshoot on your own or with Dynatrace support and services teams.
+
+For advanced configuration of a self-monitoring environment, dashboards, alerting, and naming rules, contact the [Dynatrace ACE Services﻿](https://www.dynatrace.com/services-support/expert-services/) team.

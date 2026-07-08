@@ -1,12 +1,11 @@
 ---
-title: Configure browser monitors
+title: Configure browser monitors in Classic
 source: https://docs.dynatrace.com/managed/observe/digital-experience/synthetic-monitoring/browser-monitors/configure-browser-monitors
-scraped: 2026-05-12T11:31:45.322340
 ---
 
-# Configure browser monitors
+# Configure browser monitors in Classic
 
-# Configure browser monitors
+# Configure browser monitors in Classic
 
 * How-to guide
 * 15-min read
@@ -23,7 +22,7 @@ To configure/edit an existing single-URL browser monitor or browser clickpath
 1. Go to **Synthetic Classic**.
 2. Select the browser monitor you want to configure.
 3. Select **Edit** from the quick links to go to monitor settings. Alternatively, you can go to **Synthetic Classic**, select the checkbox next to the monitor you want to edit, and select **Edit** at the bottom of the page.
-4. Browse through the **Monitor settings** tabs on the left to configure settings (see explanations belowâa subset of these settings are available when you first set up a monitor).
+4. Browse through the **Monitor settings** tabs on the left to configure settings (see explanations below—a subset of these settings are available when you first set up a monitor).
 
    * [General](#monitor-setup)
    * [Recorded clickpath](#recorded-clickpath)
@@ -57,7 +56,7 @@ Default user agent
 * The default Dynatrace user agent during recording and local playback is in the format `Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/{version} Safari/537.36 RuxitSynthetic/1.0 v0 t0 cfeatureHash=7efgijmoqtvx caes=1 ccux=1 sia=1 smf=1`, where:
 
   + `{version}` is the current browser version used for recording.
-  + `v0` and `t0` identify Synthetic Monitoring traffic.
+  + `v0` and `t0` identify Synthetic Monitoring Classic traffic.
   + `sia=1` indicates faster RUM JavaScript injection (value can be `1` or `0`).
   + `smf=1` indicates monitoring of pages in frames (requires enabling **Capture performance metrics for pages loaded in frames** in [**Advanced setup**](#advanced-setup); value is `0` if not enabled).
   + `cfeatureHash=<value>` appears when custom RUM JavaScript settings are enabled in **Advanced setup**.
@@ -71,7 +70,7 @@ Default user agent
   + `{id}` represents long IDs used by Dynatrace to identify a monitor execution.
   + Other parameters are as described above.
 
-  Note that even if a custom user agent is defined, Dynatrace always automatically adds `RuxitSynthetic/1.0 v{id} t{id} ath{id} alt{id}`, `sia`, `smf`, and, if applicable, `cfeaturehash` and any key-value pairs beginning with `c` to the user agent to make sure that Synthetic Monitoring traffic can be identified.
+  Note that even if a custom user agent is defined, Dynatrace always automatically adds `RuxitSynthetic/1.0 v{id} t{id} ath{id} alt{id}`, `sia`, `smf`, and, if applicable, `cfeaturehash` and any key-value pairs beginning with `c` to the user agent to make sure that Synthetic Monitoring Classic traffic can be identified.
 
 Bandwidth caps
 
@@ -98,7 +97,7 @@ This setting is available in edit mode only.
 
 You can choose one key performance metric for each load action and XHR action included in a browser monitor or clickpath.
 
-[**Key performance metrics**](/managed/observe/digital-experience/web-applications/analyze-and-use/work-with-key-performance-metrics "Learn how to use the right key performance metrics to optimize user experience data for each of your applications.") enable you to choose performance goals that best fit the variable needs of each application you monitor. For example, you might want to choose User action duration to optimize the performance of a traditional web application. For other applications where the speed of user interaction is more important than the UI, you might want to optimize the time it takes for JavaScript resources to load. The default is **Visually complete** for both load and XHR actions as it measures how long it takes for the visible portion of a userâs browser to be fully rendered.
+[**Key performance metrics**](/managed/observe/digital-experience/rum-classic/web-applications/analyze-and-use/work-with-key-performance-metrics "Learn how to use the right key performance metrics to optimize user experience data for each of your applications.") enable you to choose performance goals that best fit the variable needs of each application you monitor. For example, you might want to choose User action duration to optimize the performance of a traditional web application. For other applications where the speed of user interaction is more important than the UI, you might want to optimize the time it takes for JavaScript resources to load. The default is **Visually complete** for both load and XHR actions as it measures how long it takes for the visible portion of a user’s browser to be fully rendered.
 
 As Dynatrace captures a list of key performance metrics out of the box, you can switch your selection in monitor settings and immediately have historical data available.
 
@@ -120,7 +119,7 @@ You can assign a browser monitor to a web application.
 
 This tab also displays separate lists of auto-assigned and manually associated applications. You can dissociate manually associated applications from here.
 
-Note that you cannot block Synthetic Monitoring traffic for RUM applications by [excluding bots, spiders, or the IP addresses of Synthetic locations](/managed/observe/digital-experience/web-applications/additional-configuration/exclude-browsers-robots-and-spiders-from-monitoring "Disable Real User Monitoring for certain IP addresses, browsers, bots, and spiders.").
+Note that you cannot block Synthetic Monitoring traffic for RUM applications by [excluding bots, spiders, or the IP addresses of Synthetic locations](/managed/observe/digital-experience/rum-classic/web-applications/additional-configuration/exclude-browsers-robots-and-spiders-from-monitoring "Disable Real User Monitoring Classic for certain IP addresses, browsers, bots, and spiders.").
 
 ![Browser monitor: Assigned applications](https://dt-cdn.net/images/bm-assigned-applications-1320-1d1646a6b1.png)
 
@@ -138,7 +137,7 @@ Captured credential
 
 Read more about credentials in the [Navigate event](/managed/observe/digital-experience/synthetic-monitoring/browser-monitors/browser-clickpath-events#navigate "Learn about the event types created when recording a browser clickpath.") and [Keystroke event](/managed/observe/digital-experience/synthetic-monitoring/browser-monitors/browser-clickpath-events#keystroke "Learn about the event types created when recording a browser clickpath.").
 
-Select **Record again** to re-record your clickpath. You can choose between recording the clickpath over completely (from the first event URL) or after playing back to a specified event. Note that any JavaScript events that precede an initial Navigate event will be erased when you re-record your clickpathâsee [Browser clickpath events](/managed/observe/digital-experience/synthetic-monitoring/browser-monitors/browser-clickpath-events#javascript "Learn about the event types created when recording a browser clickpath.").
+Select **Record again** to re-record your clickpath. You can choose between recording the clickpath over completely (from the first event URL) or after playing back to a specified event. Note that any JavaScript events that precede an initial Navigate event will be erased when you re-record your clickpath—see [Browser clickpath events](/managed/observe/digital-experience/synthetic-monitoring/browser-monitors/browser-clickpath-events#javascript "Learn about the event types created when recording a browser clickpath.").
 
 ![Record a clickpath again](https://dt-cdn.net/images/recordagainclickpath-344-85b24812cc.png)
 
@@ -156,14 +155,14 @@ Play back clickpath
 
 You can opt to keep the playback window open after playing back a clickpath (**Keep window open after playback**), say, to debug a failed execution or test some JavaScript code on the website.
 
-* Each monitor run begins in a clean state, that is, with a clean browser cache and empty [local storageï»¿](https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage).
+* Each monitor run begins in a clean state, that is, with a clean browser cache and empty [local storage﻿](https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage).
 * Local playback in Dynatrace is in emulation mode, based on the device profile and user agent you select during monitor configuration. That is, playback emulates your chosen device. If you navigate to the same URL or perform the same transaction outside Dynatrace, your experience might vary.
 
-You aren't limited to just one mode to view and edit your clickpathâyou can switch back and forth between the UI and script modes by selecting **Clickpath** or **Script**. For details on editing your clickpath in JSON format, see [Script mode for browser monitor configuration](/managed/observe/digital-experience/synthetic-monitoring/browser-monitors/script-mode-for-browser-monitor-configuration "Create or edit your browser monitors in JSON format.").
+You aren't limited to just one mode to view and edit your clickpath—you can switch back and forth between the UI and script modes by selecting **Clickpath** or **Script**. For details on editing your clickpath in JSON format, see [Script mode for browser monitor configuration](/managed/observe/digital-experience/synthetic-monitoring/browser-monitors/script-mode-for-browser-monitor-configuration "Create or edit your browser monitors in JSON format.").
 
 In visual/UI mode, you can avail of these controls to edit events in your script:
 
-If necessary, you can delete events from your clickpath by selecting **x** under **Delete** for the respective event. You can also add eventsâselect **Add synthetic event**. Specify a name, [event type](/managed/observe/digital-experience/synthetic-monitoring/browser-monitors/browser-clickpath-events "Learn about the event types created when recording a browser clickpath."), and the event it should follow.
+If necessary, you can delete events from your clickpath by selecting **x** under **Delete** for the respective event. You can also add events—select **Add synthetic event**. Specify a name, [event type](/managed/observe/digital-experience/synthetic-monitoring/browser-monitors/browser-clickpath-events "Learn about the event types created when recording a browser clickpath."), and the event it should follow.
 
 ![Add synthetic event](https://dt-cdn.net/images/addsyntheticevent-367-3353ee375a.jpg)
 
@@ -171,7 +170,7 @@ Add synthetic event
 
 Use the **Move up/down** arrows ![Move up](https://dt-cdn.net/images/sorter-move-up-6275b6459e.svg "Move up") ![Move down](https://dt-cdn.net/images/sorter-move-down-710c5d6229.svg "Move down") to reorder events. Note that the first [Navigate event](/managed/observe/digital-experience/synthetic-monitoring/browser-monitors/browser-clickpath-events#navigate "Learn about the event types created when recording a browser clickpath.") of a clickpath can be preceded only by [JavaScript events](/managed/observe/digital-experience/synthetic-monitoring/browser-monitors/browser-clickpath-events#javascript "Learn about the event types created when recording a browser clickpath.").
 
-Although we do our best to name events intuitively, you can edit event names as requiredâsimply click in the field provided for the event name.
+Although we do our best to name events intuitively, you can edit event names as required—simply click in the field provided for the event name.
 
 In addition, you can configure each event by hovering over it and clicking when your cursor changes to a finger pointer. From event details, you can delete the event by selecting **Delete synthetic event**. Note that the first [Navigate event](/managed/observe/digital-experience/synthetic-monitoring/browser-monitors/browser-clickpath-events#navigate "Learn about the event types created when recording a browser clickpath.") of a clickpath cannot be deleted.
 
@@ -179,7 +178,7 @@ In addition, you can configure each event by hovering over it and clicking when 
 
 Edit a synthetic event
 
-The fields available to edit depend on the event typeâsee [Browser clickpath events](/managed/observe/digital-experience/synthetic-monitoring/browser-monitors/browser-clickpath-events "Learn about the event types created when recording a browser clickpath.") for detailed descriptions. When you are done editing, be sure to **Save changes**. Select **Close details** to exit event details if necessary.
+The fields available to edit depend on the event type—see [Browser clickpath events](/managed/observe/digital-experience/synthetic-monitoring/browser-monitors/browser-clickpath-events "Learn about the event types created when recording a browser clickpath.") for detailed descriptions. When you are done editing, be sure to **Save changes**. Select **Close details** to exit event details if necessary.
 
 ![Synthetic event UI](https://dt-cdn.net/images/recordedclickpatheditevent1-1369-f196cf21e4.jpg)
 
@@ -189,9 +188,9 @@ A clickpath event is not the same thing as an action. See [Number of actions con
 
 ## Frequency and locations
 
-Two factors make up your monitoring scheduleâhow frequently your browser monitor runs and the number of locations it's executed from.
+Two factors make up your monitoring schedule—how frequently your browser monitor runs and the number of locations it's executed from.
 
-Dynatrace offers a global network of [public Synthetic Monitoring locations](/managed/observe/digital-experience/synthetic-monitoring/general-information/public-synthetic-locations "Learn about all currently available public Synthetic Monitoring locations.") out-of-the-box. You can also [create private Synthetic locations](/managed/observe/digital-experience/synthetic-monitoring/private-synthetic-locations/create-a-private-synthetic-location "Learn how to create a private location for synthetic monitoring.") within your own network infrastructure. Both public and private locations appear on this settings page.
+Dynatrace offers a global network of [public Synthetic Monitoring locations](/managed/observe/digital-experience/synthetic-monitoring/general-information/public-synthetic-locations "Learn about all currently available public Synthetic Monitoring Classic locations.") out-of-the-box. You can also [create private Synthetic locations](/managed/observe/digital-experience/synthetic-monitoring/private-synthetic-locations/create-a-private-synthetic-location "Learn how to create a private location for synthetic monitoring.") within your own network infrastructure. Both public and private locations appear on this settings page.
 
 The frequency and number of locations determine the number of monitor executions per hour. For example, running a monitor from 3 locations every 15 minutes results in 12 executions per hour (4 times per hour from each of the 3 locations). Monitor executions are evenly spaced within the selected interval. That is, for a monitor running from 3 locations every 15 minutes, executions are triggered at 5-minute intervals.
 
@@ -289,7 +288,7 @@ You can play back your single-URL browser monitor from here (**Play back monitor
 
 ## Outage handling
 
-Outage handling settings determine what to do in the event of monitor failures (availability outages). Default outage handling behavior can be defined at the environment level for all browser monitors or all HTTP monitorsâgo to **Settings** > **Web and mobile monitoring** and select the respective **Outage handling** tab. You can opt to use Dynatrace-provided defaults (**Use defaults**) to define environment-level outage handling. When enabled, these defaults apply for all browser or HTTP monitors that do not override them with monitor-level outage handling settings.
+Outage handling settings determine what to do in the event of monitor failures (availability outages). Default outage handling behavior can be defined at the environment level for all browser monitors or all HTTP monitors—go to **Settings** > **Web and mobile monitoring** and select the respective **Outage handling** tab. You can opt to use Dynatrace-provided defaults (**Use defaults**) to define environment-level outage handling. When enabled, these defaults apply for all browser or HTTP monitors that do not override them with monitor-level outage handling settings.
 
 At the monitor level, this setting is available in edit mode only. The outage handling options available at the environment or the monitor level are the same. You can override the default, environment-wide settings at the monitor level. You can also restore environment-level defaults (**Remove override**).
 
@@ -318,14 +317,14 @@ You can disable problem generation for global and local outages if you're testin
 
 Outage handling
 
-An outage problem is resolved when there are as many consecutive successful executions as the configured number of failed executions for generating the problem. The successful executions must occur on the number of locations that = the total number of locationsâthe number of locations required for the problem+1.
+An outage problem is resolved when there are as many consecutive successful executions as the configured number of failed executions for generating the problem. The successful executions must occur on the number of locations that = the total number of locations–the number of locations required for the problem+1.
 
 Note that when a global outage problem is resolved, you might still have one or more locations experiencing monitor failure. Set up local outage rules to be alerted on these.
 
-See [Synthetic calculations](/managed/observe/digital-experience/synthetic-monitoring/general-information/synthetic-calculations "Understand Synthetic Monitoring metric calculations.") for more information on:
+See [Synthetic calculations](/managed/observe/digital-experience/synthetic-monitoring/general-information/synthetic-calculations "Understand Synthetic Monitoring Classic metric calculations.") for more information on:
 
-* The difference between [outage resolution and timeouts](/managed/observe/digital-experience/synthetic-monitoring/general-information/synthetic-calculations#availability-problems "Understand Synthetic Monitoring metric calculations.").
-* [Excluding synthetic monitor executions during maintenance windows from availability calculations](/managed/observe/digital-experience/synthetic-monitoring/general-information/synthetic-calculations#m-windows-availability "Understand Synthetic Monitoring metric calculations.").
+* The difference between [outage resolution and timeouts](/managed/observe/digital-experience/synthetic-monitoring/general-information/synthetic-calculations#availability-problems "Understand Synthetic Monitoring Classic metric calculations.").
+* [Excluding synthetic monitor executions during maintenance windows from availability calculations](/managed/observe/digital-experience/synthetic-monitoring/general-information/synthetic-calculations#m-windows-availability "Understand Synthetic Monitoring Classic metric calculations.").
 
 ## Performance thresholds
 
@@ -357,7 +356,7 @@ Dynatrace generates a performance problem if a monitor at a given location viola
 
 The problem is closed if the performance thresholds are not violated in the 5 most recent executions at each of the previously affected locations.
 
-See [Synthetic calculations](/managed/observe/digital-experience/synthetic-monitoring/general-information/synthetic-calculations#performance-problems "Understand Synthetic Monitoring metric calculations.") for more information.
+See [Synthetic calculations](/managed/observe/digital-experience/synthetic-monitoring/general-information/synthetic-calculations#performance-problems "Understand Synthetic Monitoring Classic metric calculations.") for more information.
 
 ## Monitor script
 
@@ -385,7 +384,7 @@ Dynatrace makes it easy to automate signing in to password-protected pages. This
 
 #### Single-URL browser monitors
 
-When initially setting up a single-URL browser monitor, you can select **Enable global login authentication** and choose between **HTTP authentication** and **Kerberos authentication** methods. In edit mode, this setting is available for single-URL browser monitors within **Advanced setup**. For details, see [Supported authentication methods in Synthetic Monitoring](/managed/observe/digital-experience/synthetic-monitoring/general-information/synthetic-authentication#http-single-page "Learn how to configure authentication methods for monitoring web applications and API endpoints in Synthetic Monitoring.").
+When initially setting up a single-URL browser monitor, you can select **Enable global login authentication** and choose between **HTTP authentication** and **Kerberos authentication** methods. In edit mode, this setting is available for single-URL browser monitors within **Advanced setup**. For details, see [Supported authentication methods in Synthetic Monitoring Classic](/managed/observe/digital-experience/synthetic-monitoring/general-information/synthetic-authentication#http-single-page "Learn how to configure authentication methods for monitoring web applications and API endpoints in Synthetic Monitoring Classic.").
 
 ##### Web form authentication
 
@@ -406,7 +405,7 @@ For browser clickpaths, login authentication does not appear within **Advanced s
 * For **web form-based authentication**, you can simply record entering credentials into a web form. You can later edit your clickpath to use credentials stored in the [credential vault](/managed/manage/credential-vault "Store and manage credentials in the credential vault.").
 * For **HTTP-based authentication schemes**, you need to manually enter the username and password in the browser-native dialog box when recording your clickpath. Then, in the [Navigate event](/managed/observe/digital-experience/synthetic-monitoring/browser-monitors/browser-clickpath-events#navigate "Learn about the event types created when recording a browser clickpath.") of your recorded clickpath in edit mode, turn on **Enable HTTP authentication**.
 
-See [Supported authentication methods in Synthetic Monitoring](/managed/observe/digital-experience/synthetic-monitoring/general-information/synthetic-authentication "Learn how to configure authentication methods for monitoring web applications and API endpoints in Synthetic Monitoring.") for more information.
+See [Supported authentication methods in Synthetic Monitoring Classic](/managed/observe/digital-experience/synthetic-monitoring/general-information/synthetic-authentication "Learn how to configure authentication methods for monitoring web applications and API endpoints in Synthetic Monitoring Classic.") for more information.
 
 #### How to use or store credentials in the credential vault
 
@@ -426,7 +425,7 @@ Who can edit a monitor that has associated credentials?
 
 * If a browser monitor (clickpath or single URL) is associated with a restricted credential (owner only or shared with a few users), any user can make changes to certain fields, even if they don't have access to the credential used. You can edit monitor name, device emulation settings, wait conditions, frequency, locations, outage alerting, performance thresholds, metrics, connected applications, validation, and HTTP status codes to be ignored. And, of course, you can change a token or user ID/password credential. You can create a credential within monitor settings in edit mode. You'll need to change all credentials in the monitor to ones that you have access to. Note that replacing another user's credential with one you have access to is irreversible.
 
-  Controls that you cannot editâsuch as the URL, switching on/off HTTP authentication, adding or deleting clickpath events, data entry in Keystroke, and **Advanced setup** in monitor settingsâare grayed out or display an error message when you attempt to save changes, whether in script or UI mode.
+  Controls that you cannot edit—such as the URL, switching on/off HTTP authentication, adding or deleting clickpath events, data entry in Keystroke, and **Advanced setup** in monitor settings—are grayed out or display an error message when you attempt to save changes, whether in script or UI mode.
 
 * You can enable/disable or delete a synthetic monitor that's secured by another user's owner-only credentials.
 
@@ -438,7 +437,7 @@ Dynatrace version 1.272+
 
 ActiveGate version 1.271+
 
-You can set up certificate authentication for browser monitors running on any [public location](/managed/observe/digital-experience/synthetic-monitoring/general-information/public-synthetic-locations "Learn about all currently available public Synthetic Monitoring locations.") and [private locations](/managed/observe/digital-experience/synthetic-monitoring/private-synthetic-locations/create-a-private-synthetic-location "Learn how to create a private location for synthetic monitoring.") with Linux-based ActiveGates ([containerized](/managed/observe/digital-experience/synthetic-monitoring/private-synthetic-locations/containerized-locations "Deploy and manage containerized, auto-scalable private Synthetic locations on Kubernetes/RedHat OpenShift.") as well as non-containerized). This control is available in edit mode for single-URL browser monitors and browser clickpaths.
+You can set up certificate authentication for browser monitors running on any [public location](/managed/observe/digital-experience/synthetic-monitoring/general-information/public-synthetic-locations "Learn about all currently available public Synthetic Monitoring Classic locations.") and [private locations](/managed/observe/digital-experience/synthetic-monitoring/private-synthetic-locations/create-a-private-synthetic-location "Learn how to create a private location for synthetic monitoring.") with Linux-based ActiveGates ([containerized](/managed/observe/digital-experience/synthetic-monitoring/private-synthetic-locations/containerized-locations "Deploy and manage containerized, auto-scalable private Synthetic locations on Kubernetes/RedHat OpenShift.") as well as non-containerized). This control is available in edit mode for single-URL browser monitors and browser clickpaths.
 
 Before first recording a clickpath on a website that requires certificate authentication, ensure that you have installed the required certificate in the browser. Then, when you navigate to the website in the recording window, the native browser dialog simply selects the correct certificate.
 
@@ -471,7 +470,7 @@ The monitor is created with a bare minimum set of headers required by the protoc
 
 You can specify multiple HTTP headers. They will be set for all requests the monitor makes.
 
-If you want to set headers only for specific requests, check **Only apply headers to requests matching a pattern** and then define a **Pattern**. After that, the header is only set for requests that match the pattern youâve defined.
+If you want to set headers only for specific requests, check **Only apply headers to requests matching a pattern** and then define a **Pattern**. After that, the header is only set for requests that match the pattern you’ve defined.
 
 ![HTTP headers](https://dt-cdn.net/images/enablehttpheaders-481-88d1794c8b.jpg)
 
@@ -491,13 +490,13 @@ Block requests
 
 You can also define patterns, for example, `http:*://*/*.png` or `https*://*/*.png` to block all requests to PNG images.
 
-Matching requests are blocked throughout monitor execution and arenât dependent on events.
+Matching requests are blocked throughout monitor execution and aren’t dependent on events.
 
-If you're unable to block specific requests, refer to the Dynatrace Community article [Unable to block specific requests (owing to limitations on the length of regular expressions)ï»¿](https://dt-url.net/w0i2xhk).
+If you're unable to block specific requests, refer to the Dynatrace Community article [Unable to block specific requests (owing to limitations on the length of regular expressions)﻿](https://dt-url.net/w0i2xhk).
 
 ### Ignore specific status codes
 
-This enables you to exclude HTTP status codes 400â599 from causing availability outages/errors if encountered in the main document request. Typically, this is the base page in a load action. If this setting is enabled and the base page of a load action encounters HTTP errors 400â599, an availability outage is not triggered.
+This enables you to exclude HTTP status codes 400–599 from causing availability outages/errors if encountered in the main document request. Typically, this is the base page in a load action. If this setting is enabled and the base page of a load action encounters HTTP errors 400–599, an availability outage is not triggered.
 
 You can specify an exact status code, range, or status class mask. Use commas to separate multiple values; use the minus sign (`-`) with no spaces for a range, for example, `404, 405-410, 5xx`. You can apply the rule only to document requests that match a specific regular expression (**Only apply to document request matching this regex**).
 
@@ -524,7 +523,7 @@ Cookies in browser monitors
 
 If you have a Content Security Policy in place, it's likely to prevent the browser from sending monitoring data to the Dynatrace Cluster. As a first and preferred method to have the browser bypass the CSP of any monitored pages in your single-URL browser monitor or browser clickpath, enable this option.
 
-If you're unable to use this option for some reason, refer to the advanced solutions for bypassing CSP in the Dynatrace Community article [Browser monitors: Issues with Content Security Policyï»¿](https://dt-url.net/ycs2x56).
+If you're unable to use this option for some reason, refer to the advanced solutions for bypassing CSP in the Dynatrace Community article [Browser monitors: Issues with Content Security Policy﻿](https://dt-url.net/ycs2x56).
 
 ### Capture performance metrics for pages loaded in frames
 
@@ -550,7 +549,7 @@ In script mode, the parameter `"useIESupportedAgent": true` enables support for 
 
 ## Metrics
 
-Dynatrace Synthetic Monitoring enables you to capture your metric customizations (filters and splitting factors) as [calculated metrics](/managed/observe/digital-experience/synthetic-monitoring/analysis-and-alerting/multidimensional-analysis-for-browser-monitors#calculated-metrics "Learn how to analyze browser-monitor data points.") and track their performance over a [long period of time](/managed/manage/data-privacy-and-security/data-privacy/data-retention-periods "Check retention times for various data types."). This tab displays all calculated metrics for your monitor and a count of calculated metrics for your monitoring environment as a whole. The settings in this tab are available in edit mode only.
+Dynatrace Synthetic Monitoring Classic enables you to capture your metric customizations (filters and splitting factors) as [calculated metrics](/managed/observe/digital-experience/synthetic-monitoring/analysis-and-alerting/multidimensional-analysis-for-browser-monitors#calculated-metrics "Learn how to analyze browser-monitor data points.") and track their performance over a [long period of time](/managed/manage/data-privacy-and-security/data-privacy/data-retention-periods "Review default and configurable retention periods for service, RUM Classic, synthetic, Log Monitoring, metric, diagnostic, and security data in Dynatrace Managed."). This tab displays all calculated metrics for your monitor and a count of calculated metrics for your monitoring environment as a whole. The settings in this tab are available in edit mode only.
 
 Expand a metric to view details. You can disable/enable, delete, or create custom charts and alerts based on a calculated metric. While you cannot change the metric name, key, or configuration once created, you can choose whether you want to display any splitting factors in custom charts based on the metric.
 

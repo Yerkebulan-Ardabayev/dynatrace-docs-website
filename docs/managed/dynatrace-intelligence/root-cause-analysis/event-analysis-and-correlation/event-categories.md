@@ -1,7 +1,6 @@
 ---
 title: Event categories
 source: https://docs.dynatrace.com/managed/dynatrace-intelligence/root-cause-analysis/event-analysis-and-correlation/event-categories
-scraped: 2026-05-12T11:36:46.762528
 ---
 
 # Event categories

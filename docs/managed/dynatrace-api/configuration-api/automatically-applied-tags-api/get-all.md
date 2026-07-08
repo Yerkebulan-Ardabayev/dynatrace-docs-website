@@ -1,7 +1,6 @@
 ---
 title: Automatically applied tags API - GET all auto-tags
 source: https://docs.dynatrace.com/managed/dynatrace-api/configuration-api/automatically-applied-tags-api/get-all
-scraped: 2026-05-12T12:06:02.974114
 ---
 
 # Automatically applied tags API - GET all auto-tags
@@ -50,7 +49,7 @@ An ordered list of short representations of Dynatrace entities.
 
 | Element | Type | Description |
 | --- | --- | --- |
-| values | [EntityShortRepresentation[]](#openapi-definition-EntityShortRepresentation) | An ordered list of short representations of Dynatrace entities. |
+| values | [EntityShortRepresentation](#openapi-definition-EntityShortRepresentation)[] | An ordered list of short representations of Dynatrace entities. |
 
 #### The `EntityShortRepresentation` object
 

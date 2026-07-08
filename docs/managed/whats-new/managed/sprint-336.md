@@ -1,7 +1,6 @@
 ---
 title: What's new in Dynatrace Managed 1.336
 source: https://docs.dynatrace.com/managed/whats-new/managed/sprint-336
-scraped: 2026-05-12T11:07:46.857126
 ---
 
 # What's new in Dynatrace Managed 1.336
@@ -10,12 +9,13 @@ scraped: 2026-05-12T11:07:46.857126
 
 * Release notes
 * 2-min read
-* Updated on Apr 13, 2026
+* Updated on Jun 01, 2026
 * Rollout start on Apr 13, 2026
 
 This page showcases new features, changes, and bug fixes in Dynatrace Managed version 1.336. It contains:
 
 * [Feature updates](#updates): 2
+* [Breaking changes](#breaking): 1
 * [Fixes and maintenance](#fixes): 7
 
 Platform | Settings
@@ -48,57 +48,47 @@ Platform
 
 The installation packages can be quite large, so uploading them manually to the **Cluster Management Console** via the **Automatic updates** settings page may take some time. A progress indicator now displays the remaining time so that you're always informed of the current status.
 
+## Breaking changes
+
+Platform
+
+### Increased disk space requirement for Dynatrace Managed
+
+We increased the required disk space for the Dynatrace Managed installation volume from 5 GB to 10 GB. When there is not enough free disk space available, the update might not start. For details, see [Default directory paths and required free disk space for installing and upgrading](/managed/managed-cluster/operation/change-storage-location "Learn how to change the location of datastores defined during the install of Dynatrace Managed.").
+
 ## Fixes and maintenance
 
 ### Resolved issues in this release
 
 * Improved container instrumentation rules to prevent accidental instrumentation of OpenShift 4.14+ platform components. This improves performance and reduces overhead. (OA-61720)
-* Fixed an issue where multiple threads could trigger redundant reconnections to the data store after a connection reset, potentially causing unnecessary load and instability (MGD-11060)
+* Fixed an issue where multiple threads could trigger redundant reconnections to the data store after a connection reset, causing unnecessary load and potential instability. (MGD-11060)
 * On the **Process group** page, the JVM metric **Garbage collection time** is now correctly displayed as a sum and not as an average. However, this change may affect the existing metric baseline. (MGD-10582)
-* Improved how Data Explorer handles bad requests to provide more useful feedback when queries return a result set thatâs too large or when a user executes too many requests. (MGD-9727)
+* Improved how Data Explorer handles bad requests to provide more useful feedback when queries return a result set that’s too large or when a user executes too many requests. (MGD-9727)
 * Added `dynatrace.com/split-mounts` annotation to the synthetic pod template. This annotation was introduced in Dynatrace Operator 1.8.0 to avoid conflicts with application images that already contain a `/var/lib/dynatrace` directory, enabling correct injection into ActiveGate pods. Adding this annotation to synthetic deployments aligns the synthetic pod template with the Operator's default behavior for ActiveGate-managed pods. (DEM-22172)
-* Fixed a behavior where page resizes were not accounted for when replaying RUM sessions via Session Replay (moving the renderer back in time). (DEM-21951)
+* Fixed an issue where page resizes were not accounted for when replaying RUM sessions via Session Replay (moving the renderer back in time). (DEM-21951)
 * Fixed an issue where the `dt.source_entity` and `loglevel` attributes were being overwritten by Azure log processing rules. These attributes now retain their original values if set by the source. (APPOBS-33744)
 
 ## Operating systems support
 
 ### Future Dynatrace Managed operating systems support changes
 
-##### The following operating systems will no longer be supported starting 01 June 2026
-
-* Linux: Oracle Linux 9.6
-
-  + x86-64
-  + [Vendor announcementï»¿](https://www.oracle.com/a/ocom/docs/elsp-lifetime-069338.pdf)
-* Linux: Rocky Linux 9.6
-
-  + x86-64
-  + [Vendor announcementï»¿](https://endoflife.date/rocky-linux)
-
-##### The following operating systems will no longer be supported starting 01 July 2026
-
-* Linux: SUSE Enterprise Linux 15.3
-
-  + x86-64
-  + [Vendor announcementï»¿](https://www.suse.com/lifecycle/)
-
 ##### The following operating systems will no longer be supported starting 01 November 2026
 
 * Linux: Red Hat Enterprise Linux 9.4, 9.7
 
   + x86-64
-  + [Vendor announcementï»¿](https://access.redhat.com/support/policy/updates/errata)
+  + [Vendor announcement﻿](https://access.redhat.com/support/policy/updates/errata)
 * Linux: Ubuntu 16.04
 
   + x86-64
-  + [Vendor announcementï»¿](https://ubuntu.com/about/release-cycle)
+  + [Vendor announcement﻿](https://ubuntu.com/about/release-cycle)
 
 ##### The following operating systems will no longer be supported starting 01 January 2027
 
 * Linux: Amazon Linux 2
 
   + x86-64
-  + [Vendor announcementï»¿](https://aws.amazon.com/linux/)
+  + [Vendor announcement﻿](https://aws.amazon.com/linux/)
 
 ### Past Dynatrace Managed operating systems support changes
 
@@ -107,22 +97,40 @@ The installation packages can be quite large, so uploading them manually to the 
 * Linux: Red Hat Enterprise Linux 8.8, 9.2, 9.5
 
   + x86-64
-  + [Vendor announcementï»¿](https://access.redhat.com/support/policy/updates/errata)
+  + [Vendor announcement﻿](https://access.redhat.com/support/policy/updates/errata)
 * Linux: Oracle Linux 9.5
 
   + x86-64
-  + [Vendor announcementï»¿](https://www.oracle.com/a/ocom/docs/elsp-lifetime-069338.pdf)
+  + [Vendor announcement﻿](https://www.oracle.com/a/ocom/docs/elsp-lifetime-069338.pdf)
 * Linux: Rocky Linux 9.5
 
   + x86-64
-  + [Vendor announcementï»¿](https://endoflife.date/rocky-linux)
+  + [Vendor announcement﻿](https://endoflife.date/rocky-linux)
 
 ##### The following operating systems are no longer supported since 01 January 2026
 
 * Linux: Debian 10
 
   + x86-64
-  + [Vendor announcementï»¿](https://wiki.debian.org/DebianReleases)
+  + [Vendor announcement﻿](https://wiki.debian.org/DebianReleases)
+
+##### The following operating systems are no longer supported since 01 June 2026
+
+* Linux: Oracle Linux 9.6
+
+  + x86-64
+  + [Vendor announcement﻿](https://www.oracle.com/a/ocom/docs/elsp-lifetime-069338.pdf)
+* Linux: Rocky Linux 9.6
+
+  + x86-64
+  + [Vendor announcement﻿](https://endoflife.date/rocky-linux)
+
+##### The following operating systems are no longer supported since 01 July 2026
+
+* Linux: SUSE Enterprise Linux 15.3
+
+  + x86-64
+  + [Vendor announcement﻿](https://www.suse.com/lifecycle/)
 
 ## Dynatrace API
 

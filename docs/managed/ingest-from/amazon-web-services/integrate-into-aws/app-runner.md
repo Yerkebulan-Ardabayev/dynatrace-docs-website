@@ -1,7 +1,6 @@
 ---
 title: Monitor AWS App Runner
 source: https://docs.dynatrace.com/managed/ingest-from/amazon-web-services/integrate-into-aws/app-runner
-scraped: 2026-05-12T11:14:20.069682
 ---
 
 # Monitor AWS App Runner
@@ -152,7 +151,7 @@ Valid options here are `all`, `go`, `java`, `apache`, `nginx`, and `nodejs`.
 
    **What if my Docker image is based on Alpine Linux?**
 
-   Dynatrace OneAgent supports the flavor `musl` for Alpine Linuxâbased environments. Valid options for `flavor=musl` are `all`, `go`, `java`, `apache`, `nginx`, and `nodejs`.
+   Dynatrace OneAgent supports the flavor `musl` for Alpine Linux–based environments. Valid options for `flavor=musl` are `all`, `go`, `java`, `apache`, `nginx`, and `nodejs`.
 2. Build your application image.
 
    Build the Docker image from your dockerfile to use it in your Kubernetes environment:
@@ -187,11 +186,11 @@ See [network zones](/managed/manage/network-zones "Find out how network zones wo
 
 ## Monitoring Consumption
 
-For AWS App Runner, monitoring consumption is based on host units. See [Application and Infrastructure Monitoring (Host Units)](/managed/license/monitoring-consumption-classic/application-and-infrastructure-monitoring "Understand how Dynatrace application and infrastructure monitoring consumption is calculated based on host units.") for details.
+For AWS App Runner, monitoring consumption is based on host units. See [Application and Infrastructure Monitoring (Host Units)](/managed/license/classic-licensing/application-and-infrastructure-monitoring "Understand how Dynatrace application and infrastructure monitoring consumption is calculated based on host units.") for details.
 
 ## Troubleshooting
 
-* [Application image OneAgent integration problemsï»¿](https://dt-url.net/yu23mli)
+* [Application image OneAgent integration problems﻿](https://dt-url.net/yu23mli)
 
 ## Related topics
 

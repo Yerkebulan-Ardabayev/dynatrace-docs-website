@@ -1,7 +1,6 @@
 ---
 title: Settings API - Microsoft Entra ID schema table
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/settings/schemas/app-dynatrace-azure-connector-microsoft-entra-identity-developer-connection
-scraped: 2026-05-12T11:45:04.750869
 ---
 
 # Settings API - Microsoft Entra ID schema table

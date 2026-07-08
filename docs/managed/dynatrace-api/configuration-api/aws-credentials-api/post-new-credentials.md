@@ -1,7 +1,6 @@
 ---
 title: AWS credentials API - POST new credentials
 source: https://docs.dynatrace.com/managed/dynatrace-api/configuration-api/aws-credentials-api/post-new-credentials
-scraped: 2026-05-12T11:15:08.851216
 ---
 
 # AWS credentials API - POST new credentials
@@ -49,9 +48,9 @@ Configuration of an AWS credentials.
 | label | string | The name of the credentials. | Required |
 | metadata | [ConfigurationMetadata](#openapi-definition-ConfigurationMetadata) | Metadata useful for debugging | Optional |
 | partitionType | string | The type of the AWS partition. The element can hold these values * `AWS_CN` * `AWS_DEFAULT` * `AWS_US_GOV` | Required |
-| supportingServicesToMonitor | [AwsSupportingServiceConfig[]](#openapi-definition-AwsSupportingServiceConfig) | **Deprecated**. To manage services use [/aws/credentials/{id}/servicesï»¿](https://dt-url.net/l022s6v) operation. Built-in services are not supported here.  A list of AWS services to be monitored. Available services are listed by [/aws/supportedServicesï»¿](https://dt-url.net/me02sh2) operation.  For each service, a list of metrics and dimensions can be specified. A list of supported metrics and dimensions for a given service can be checked in [documentationï»¿](https://dt-url.net/r12v0pkl).  List of metrics can be skipped (set to null), resulting in recommended (default) set of metrics and dimensions being chosen for monitoring. | Optional |
+| supportingServicesToMonitor | [AwsSupportingServiceConfig](#openapi-definition-AwsSupportingServiceConfig)[] | **Deprecated**. To manage services use [/aws/credentials/{id}/services﻿](https://dt-url.net/l022s6v) operation. Built-in services are not supported here.  A list of AWS services to be monitored. Available services are listed by [/aws/supportedServices﻿](https://dt-url.net/me02sh2) operation.  For each service, a list of metrics and dimensions can be specified. A list of supported metrics and dimensions for a given service can be checked in [documentation﻿](https://dt-url.net/r12v0pkl).  List of metrics can be skipped (set to null), resulting in recommended (default) set of metrics and dimensions being chosen for monitoring. | Optional |
 | taggedOnly | boolean | Monitor only resources which have specified AWS tags (`true`) or all resources (`false`). | Optional |
-| tagsToMonitor | [AwsConfigTag[]](#openapi-definition-AwsConfigTag) | A list of AWS tags to be monitored.  You can specify up to 10 tags.  Only applicable when the **taggedOnly** parameter is set to `true`. | Optional |
+| tagsToMonitor | [AwsConfigTag](#openapi-definition-AwsConfigTag)[] | A list of AWS tags to be monitored.  You can specify up to 10 tags.  Only applicable when the **taggedOnly** parameter is set to `true`. | Optional |
 
 #### The `AwsAuthenticationData` object
 
@@ -98,7 +97,7 @@ A service to be monitored.
 
 | Element | Type | Description | Required |
 | --- | --- | --- | --- |
-| monitoredMetrics | [AwsSupportingServiceMetric[]](#openapi-definition-AwsSupportingServiceMetric) | A list of metrics to be monitored for this service. If the list is null then recommended list of metrics for this service will be monitored. | Optional |
+| monitoredMetrics | [AwsSupportingServiceMetric](#openapi-definition-AwsSupportingServiceMetric)[] | A list of metrics to be monitored for this service. If the list is null then recommended list of metrics for this service will be monitored. | Optional |
 | name | string | The name of the service. Valid supported service names can be discovered using /aws/supportedServices restAPI | Required |
 
 #### The `AwsSupportingServiceMetric` object
@@ -360,7 +359,7 @@ The short representation of a Dynatrace entity.
 | Element | Type | Description |
 | --- | --- | --- |
 | code | integer | The HTTP status code |
-| constraintViolations | [ConstraintViolation[]](#openapi-definition-ConstraintViolation) | A list of constraint violations |
+| constraintViolations | [ConstraintViolation](#openapi-definition-ConstraintViolation)[] | A list of constraint violations |
 | message | string | The error message |
 
 #### The `ConstraintViolation` object
@@ -542,7 +541,7 @@ To learn how to obtain and use it, see [Tokens and authentication](/managed/disc
 | Element | Type | Description |
 | --- | --- | --- |
 | code | integer | The HTTP status code |
-| constraintViolations | [ConstraintViolation[]](#openapi-definition-ConstraintViolation) | A list of constraint violations |
+| constraintViolations | [ConstraintViolation](#openapi-definition-ConstraintViolation)[] | A list of constraint violations |
 | message | string | The error message |
 
 #### The `ConstraintViolation` object

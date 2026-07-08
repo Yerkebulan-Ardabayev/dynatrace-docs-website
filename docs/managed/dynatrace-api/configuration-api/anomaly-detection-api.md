@@ -1,7 +1,6 @@
 ---
 title: Anomaly detection API
 source: https://docs.dynatrace.com/managed/dynatrace-api/configuration-api/anomaly-detection-api
-scraped: 2026-05-12T12:08:15.734428
 ---
 
 # Anomaly detection API

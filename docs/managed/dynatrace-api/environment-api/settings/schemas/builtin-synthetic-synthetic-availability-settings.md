@@ -1,7 +1,6 @@
 ---
 title: Settings API - Synthetic availability schema table
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/settings/schemas/builtin-synthetic-synthetic-availability-settings
-scraped: 2026-05-12T11:43:04.947443
 ---
 
 # Settings API - Synthetic availability schema table

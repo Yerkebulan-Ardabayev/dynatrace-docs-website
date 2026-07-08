@@ -1,7 +1,6 @@
 ---
 title: High availability
 source: https://docs.dynatrace.com/managed/ingest-from/setup-on-k8s/guides/high-availability
-scraped: 2026-05-12T11:53:51.094063
 ---
 
 # High availability

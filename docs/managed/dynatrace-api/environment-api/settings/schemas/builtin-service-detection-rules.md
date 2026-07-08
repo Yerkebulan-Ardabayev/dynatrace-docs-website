@@ -1,7 +1,6 @@
 ---
 title: Settings API - Service detection schema table
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/settings/schemas/builtin-service-detection-rules
-scraped: 2026-05-12T11:44:50.609980
 ---
 
 # Settings API - Service detection schema table
@@ -12,7 +11,7 @@ scraped: 2026-05-12T11:44:50.609980
 
 ### Service detection (`builtin:service-detection-rules)`
 
-Define rules to detect and name services based on resource attributes defined in the [Semantic Dictionaryï»¿](https://docs.dynatrace.com/docs/discover-dynatrace/references/semantic-dictionary/fields) and custom attributes. Rules are evaluated in order and the first matching rule applies.
+Define rules to detect and name services based on resource attributes defined in the [Semantic Dictionary﻿](https://docs.dynatrace.com/docs/discover-dynatrace/references/semantic-dictionary/fields) and custom attributes. Rules are evaluated in order and the first matching rule applies.
 
 | Schema ID | Schema groups | Scope |
 | --- | --- | --- |
@@ -43,6 +42,6 @@ To execute this request, you need an access token with **Read settings** (`setti
 | --- | --- | --- | --- |
 | Rule name `ruleName` | text | - | Required |
 | Description `description` | text | - | Optional |
-| Matching condition `condition` | text | Limits the scope of the service detection rule using [DQL matcherï»¿](https://dt-url.net/l603wby) conditions on resource attributes.  A rule is applied only if the condition matches, otherwise the ruleset evaluation continues.  If empty, the condition will always match. | Optional |
+| Matching condition `condition` | text | Limits the scope of the service detection rule using [DQL matcher﻿](https://dt-url.net/l603wby) conditions on resource attributes.  A rule is applied only if the condition matches, otherwise the ruleset evaluation continues.  If empty, the condition will always match. | Optional |
 | Service name template `serviceNameTemplate` | text | Specify resource attribute placeholders in curly braces, e.g. {service.name} or {k8s.workload.name}.  All attributes used in the placeholder are required for the rule to apply. If any of them is missing, the rule will not be applied and ruleset evaluation continues.  All resolved attribute values contribute to the final service ID. | Required |
 | Additional service detection attributes `additionalRequiredAttributes` | set | Add resource attribute keys (e.g. service.namespace or k8s.workload.kind) that also detect unique services but are not included in the displayed service name.  Attributes specified here are required to apply the rule. If any of them is missing, the rule will not be applied and ruleset evaluation continues.  All attribute values contribute to the final service ID. | Required |

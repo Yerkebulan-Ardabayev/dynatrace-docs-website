@@ -1,7 +1,6 @@
 ---
 title: Settings API - Built-in detection rules schema table
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/settings/schemas/builtin-process-group-detection-flags
-scraped: 2026-05-12T11:49:46.876638
 ---
 
 # Settings API - Built-in detection rules schema table

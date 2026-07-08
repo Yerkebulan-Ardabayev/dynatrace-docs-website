@@ -1,7 +1,6 @@
 ---
 title: z/OS module messages - DTAX messages
 source: https://docs.dynatrace.com/managed/ingest-from/dynatrace-oneagent/installation-and-operation/zos/operation/zos-code-module-messages/dtax-messages
-scraped: 2026-05-12T12:13:19.824216
 ---
 
 # z/OS module messages - DTAX messages
@@ -478,7 +477,7 @@ scraped: 2026-05-12T12:13:19.824216
 ## ZDTP062S
 
 * **Full message** - ZDTP062S No CICSplex name, CPSM API error <xx> occurred
-* **Explanation** - CICSPlex name not found for the CICS region due to an unexpected error indicated by the error code âxxâ
+* **Explanation** - CICSPlex name not found for the CICS region due to an unexpected error indicated by the error code “xx”
 * **System action** - CICS code module continues initialization.
 * **User response** - None
 
@@ -710,7 +709,7 @@ scraped: 2026-05-12T12:13:19.824216
 
 ## ZDTP009I
 
-* **Full message** - ZDTP009I INIT failed during PLT. Trying to reconnectâ¦
+* **Full message** - ZDTP009I INIT failed during PLT. Trying to reconnect…
 * **Explanation** - The PLT program is unable to establish connection with the zRemote code module during PLT time.
 * **System action** - Reconnect attempted during the next DTAX cycle, which starts immediately after the CICS region comes up.
 * **User response** - None
@@ -956,7 +955,7 @@ scraped: 2026-05-12T12:13:19.824216
 ## ZDTP139I
 
 * **Full message** - ZDTP139I Install of <COBOL routine> Hook Completed Return Code: xxxx
-* **Explanation** - CICS code module has completed installing COBOL hooks IGZCFCC, IGZCLNK and IGZXFCAL (indicated by âCOBOL routineâ) for monitoring COBOL dynamic calls. Return code 0 indicates successful COBOL hooks installation.
+* **Explanation** - CICS code module has completed installing COBOL hooks IGZCFCC, IGZCLNK and IGZXFCAL (indicated by “COBOL routine”) for monitoring COBOL dynamic calls. Return code 0 indicates successful COBOL hooks installation.
 * **System action** - CICS code module is ready to monitor COBOL dynamic calls with the successful COBOL hooks installation.
 * **User response** - If the Return code is a non-zero value, COBOL hook installation has failed. Please contact a Dynatrace product expert via live chat within your environment.
 

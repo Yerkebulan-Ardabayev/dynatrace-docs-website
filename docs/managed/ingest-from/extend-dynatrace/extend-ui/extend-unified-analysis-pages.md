@@ -1,7 +1,6 @@
 ---
 title: Extend built-in unified analysis pages
 source: https://docs.dynatrace.com/managed/ingest-from/extend-dynatrace/extend-ui/extend-unified-analysis-pages
-scraped: 2026-05-12T11:09:17.474300
 ---
 
 # Extend built-in unified analysis pages
@@ -78,7 +77,7 @@ The following options are available for a card supplied by your extension:
 
   Details
 
-  It can serve multiple purposesâselecting the entity where the chart will be displayed and filtering them based on certain rules or relating entities. It is used in conjunction with `entityType` to further refine which entities are applicable for the card. For example, if `entityType` is `HOST`, you can use `entitySelectorTemplate` to show the card only for hosts using a certain operating system.
+  It can serve multiple purposes—selecting the entity where the chart will be displayed and filtering them based on certain rules or relating entities. It is used in conjunction with `entityType` to further refine which entities are applicable for the card. For example, if `entityType` is `HOST`, you can use `entitySelectorTemplate` to show the card only for hosts using a certain operating system.
 
   `$entityConditions` acts as a dynamic placeholder, adapting to the context in which the card appears. For example, when the card is displayed on a page dedicated to a specific host, `$entityConditions` will automatically adjust to conditions applicable to that host.
 

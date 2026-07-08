@@ -1,7 +1,6 @@
 ---
 title: Cloud application and workload detection
 source: https://docs.dynatrace.com/managed/observe/infrastructure-observability/process-groups/configuration/cloud-app-and-workload-detection
-scraped: 2026-05-12T11:37:57.224517
 ---
 
 # Cloud application and workload detection
@@ -27,7 +26,7 @@ Starting with Dynatrace version 1.258 and OneAgent version 1.257
 
   1. Go to **Settings**.
   2. Select **Processes and containers** > **Cloud application and workload detection**.
-  3. Turn on/off **Enable cloud application and workload detection [â¦]** for **Cloud Foundry**, **Docker and Podman**, or **Kubernetes/OpenShift** as needed.
+  3. Turn on/off **Enable cloud application and workload detection […]** for **Cloud Foundry**, **Docker and Podman**, or **Kubernetes/OpenShift** as needed.
   4. Select **Save changes**.
 
 OneAgents version 1.256 and earlier do not support independent configuration per environment type. For these OneAgents, cloud application and workload detection is only enabled if the setting is activated for all three environments: **Cloud Foundry**, **Docker and Podman**, **Kubernetes/OpenShift**.
@@ -46,7 +45,7 @@ See below for how to use Kubernetes workload properties for grouping processes o
 
 By default, Dynatrace separates process groups and services for every Kubernetes workload.
 
-You can define rules to support your release strategies (such as blue/green, canary) by using workload properties like **Namespace name**, **Base pod name**, or **Container name**, as well as the environment variables `DT_RELEASE_STAGE` and `DT_RELEASE_PRODUCT` for grouping processes of similar workloads. You can also specify the [version and build version](/managed/deliver/release-monitoring/version-detection-strategies "Metadata for version detection in different technologies") of the deployed workload by setting the `DT_RELEASE_VERSION` and `DT_RELEASE_BUILD_VERSION` environment variables. This gives you extended visibility into the impact of releases on your services.
+You can define rules to support your release strategies (such as blue/green, canary) by using workload properties like **Namespace name**, **Base pod name**, or **Container name**, as well as the environment variables `DT_RELEASE_STAGE` and `DT_RELEASE_PRODUCT` for grouping processes of similar workloads. You can also specify the [version and build version](/managed/deliver/release-monitoring-classic/version-detection-strategies "Metadata for version detection in different technologies") of the deployed workload by setting the `DT_RELEASE_VERSION` and `DT_RELEASE_BUILD_VERSION` environment variables. This gives you extended visibility into the impact of releases on your services.
 
 The rules are scoped for Kubernetes namespaces so that you can easily migrate your existing environment namespace by namespace. The first applicable rule in the list is applied. If no rule matches, the combination of **Namespace name**, **Base pod name**, and **Container name** is used as a fallback.
 
@@ -81,7 +80,7 @@ Once your process groups or services gain new IDs, be aware that:
 
 OneAgent versions 1.241+
 
-Dynatrace aims to provide intuitive names for process groups that make sense for DevOps teams. Creating rules for Kubernetes workloads also affects the composition of meaningful default names for process groups. The default pattern for `{ProcessGroup:DetectedName}` is as follows: `â<tech_prefix> <product> <STAGE> <base_pod_name>â`, where
+Dynatrace aims to provide intuitive names for process groups that make sense for DevOps teams. Creating rules for Kubernetes workloads also affects the composition of meaningful default names for process groups. The default pattern for `{ProcessGroup:DetectedName}` is as follows: `“<tech_prefix> <product> <STAGE> <base_pod_name>”`, where
 
 * `<tech_prefix>` refers to names from detected technologies, such as the name of a technology, executable, path, and startup class.
 * `<product>`, `<STAGE>`, `<base_pod_name>` are optional variables and only used when included in the rule that has been applied for the respective Kubernetes namespace.
@@ -98,7 +97,7 @@ If the default process group naming is too generic or doesn't reflect your namin
 
 ### Example - best practices with Kubernetes labels
 
-We recommend that you propagate Kubernetes labels to environment variables in the deployment configuration (see [Version detection with Kubernetes labels](/managed/deliver/release-monitoring/version-detection-strategies#kubernetes "Metadata for version detection in different technologies")) using the [Downward APIï»¿](https://dt-url.net/5k03x6s):
+We recommend that you propagate Kubernetes labels to environment variables in the deployment configuration (see [Version detection with Kubernetes labels](/managed/deliver/release-monitoring-classic/version-detection-strategies#kubernetes "Metadata for version detection in different technologies")) using the [Downward API﻿](https://dt-url.net/5k03x6s):
 
 * `app.kubernetes.io/version` -> `DT_RELEASE_VERSION`
 * `app.kubernetes.io/name` -> `DT_RELEASE_PRODUCT`

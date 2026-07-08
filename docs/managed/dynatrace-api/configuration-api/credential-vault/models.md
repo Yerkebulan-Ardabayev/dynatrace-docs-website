@@ -1,7 +1,6 @@
 ---
 title: Credential vault API - JSON models
 source: https://docs.dynatrace.com/managed/dynatrace-api/configuration-api/credential-vault/models
-scraped: 2026-05-12T12:13:33.488288
 ---
 
 # Credential vault API - JSON models

@@ -1,7 +1,6 @@
 ---
 title: Get started with Distributed Traces
 source: https://docs.dynatrace.com/managed/observe/application-observability/distributed-traces/analysis/get-started
-scraped: 2026-05-12T11:14:11.970352
 ---
 
 # Get started with Distributed Traces
@@ -40,11 +39,11 @@ To configure a view of the distributed traces in your environment
 
    * Ingestion method
 
-     + Select **PurePaths** to view PurePathÂ® distributed traces captured by OneAgent.
+     + Select **PurePaths** to view PurePath® distributed traces captured by OneAgent.
      + Select **Ingested traces** to view distributed traces [instrumented with other libraries](/managed/ingest-from/extend-dynatrace/extend-tracing "Learn how to extend trace observability in Dynatrace.").
    * Service
 
-     Go to **Filter requests** > **Service name** and enter the service name. Note that you can access this view also by going to **Services** > **More** (**â¦**) > **Distributed traces** for the service.
+     Go to **Filter requests** > **Service name** and enter the service name. Note that you can access this view also by going to **Services** > **More** (**…**) > **Distributed traces** for the service.
 
 ## Export overview data
 
@@ -176,6 +175,6 @@ What does `[declared unavailable by agent]` mean?
 
 ## Related topics
 
-* [Services](/managed/observe/application-observability/services-classic "Learn about Dynatrace's classic service monitoring")
+* [Services page](/managed/observe/application-observability/services-classic "Learn about Dynatrace's classic service monitoring")
 * [Service flow](/managed/observe/application-observability/services-classic/service-flow "Find out how Dynatrace can help you trace the sequence of service calls that are triggered by each service request in your environment.")
 * [Service analysis timings](/managed/observe/application-observability/services-classic/service-analysis-timing "Find out what each time in service analysis means.")

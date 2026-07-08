@@ -1,7 +1,6 @@
 ---
 title: Azure credentials API - GET all credentials
 source: https://docs.dynatrace.com/managed/dynatrace-api/configuration-api/azure-credentials-api/get-all
-scraped: 2026-05-12T11:16:31.081425
 ---
 
 # Azure credentials API - GET all credentials
@@ -46,7 +45,7 @@ An ordered list of short representations of Dynatrace entities.
 
 | Element | Type | Description |
 | --- | --- | --- |
-| values | [EntityShortRepresentation[]](#openapi-definition-EntityShortRepresentation) | An ordered list of short representations of Dynatrace entities. |
+| values | [EntityShortRepresentation](#openapi-definition-EntityShortRepresentation)[] | An ordered list of short representations of Dynatrace entities. |
 
 #### The `EntityShortRepresentation` object
 

@@ -1,7 +1,6 @@
 ---
 title: Events API v2 - GET a event property
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/events-v2/get-event-property
-scraped: 2026-05-12T12:01:03.699342
 ---
 
 # Events API v2 - GET a event property
@@ -67,7 +66,7 @@ Configuration of an event property.
 | Element | Type | Description |
 | --- | --- | --- |
 | code | integer | The HTTP status code |
-| constraintViolations | [ConstraintViolation[]](#openapi-definition-ConstraintViolation) | A list of constraint violations |
+| constraintViolations | [ConstraintViolation](#openapi-definition-ConstraintViolation)[] | A list of constraint violations |
 | message | string | The error message |
 
 #### The `ConstraintViolation` object

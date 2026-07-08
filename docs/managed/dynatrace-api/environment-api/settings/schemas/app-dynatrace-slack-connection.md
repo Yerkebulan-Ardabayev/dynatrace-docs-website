@@ -1,7 +1,6 @@
 ---
 title: Settings API - Slack schema table
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/settings/schemas/app-dynatrace-slack-connection
-scraped: 2026-05-12T11:43:06.709745
 ---
 
 # Settings API - Slack schema table
@@ -14,7 +13,7 @@ scraped: 2026-05-12T11:43:06.709745
 
 Authentication details for Slack API
 
-(for more information read the [Slack api documentationï»¿](https://api.slack.com/authentication/basics/ "Visit Slack document"))
+(for more information read the [Slack api documentation﻿](https://api.slack.com/authentication/basics/ "Visit Slack document"))
 
 | Schema ID | Schema groups | Scope |
 | --- | --- | --- |

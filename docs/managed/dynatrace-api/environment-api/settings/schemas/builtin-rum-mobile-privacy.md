@@ -1,7 +1,6 @@
 ---
 title: Settings API - Privacy settings schema table
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/settings/schemas/builtin-rum-mobile-privacy
-scraped: 2026-05-12T11:48:59.353844
 ---
 
 # Settings API - Privacy settings schema table
@@ -12,7 +11,7 @@ scraped: 2026-05-12T11:48:59.353844
 
 ### Privacy settings (`builtin:rum.mobile.privacy)`
 
-Enable user opt-in mode to allow your users to decide what types of data they are willing to share. For details, see [Opt-in modeï»¿](https://dt-url.net/9602z8z)
+Enable user opt-in mode to allow your users to decide what types of data they are willing to share. For details, see [Opt-in mode﻿](https://dt-url.net/9602z8z)
 
 | Schema ID | Schema groups | Scope |
 | --- | --- | --- |

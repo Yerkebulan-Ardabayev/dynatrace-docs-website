@@ -1,7 +1,6 @@
 ---
 title: Troubleshooting OneAgent deep-monitoring issues
 source: https://docs.dynatrace.com/managed/ingest-from/dynatrace-oneagent/oneagent-troubleshooting/troubleshoot-oneagent-deep-monitoring-issues
-scraped: 2026-05-12T12:05:04.731173
 ---
 
 # Troubleshooting OneAgent deep-monitoring issues
@@ -61,7 +60,7 @@ To turn a feature on or off for a particular process or group of processes
    ![Link from Smartscape topology to process details page](https://dt-cdn.net/images/link-to-process-page-377-da0282e435.png)
 
    Link from Smartscape topology to process details page
-4. On the process details page, select **More** (**â¦**) > **Settings** and then select the **OneAgent features** tab.
+4. On the process details page, select **More** (**…**) > **Settings** and then select the **OneAgent features** tab.
 5. Select **Add override** to add a process-specific setting that overrides the environment setting.
 6. Type a search string in the **Feature** box to find and select the feature.
 7. Set the switches as needed for the override and then select **Save changes**.

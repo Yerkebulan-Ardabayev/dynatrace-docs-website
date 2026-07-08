@@ -1,7 +1,6 @@
 ---
 title: Memory profiling
 source: https://docs.dynatrace.com/managed/observe/application-observability/profiling-and-optimization/memory-profiling
-scraped: 2026-05-12T11:24:16.624630
 ---
 
 # Memory profiling
@@ -12,7 +11,7 @@ scraped: 2026-05-12T11:24:16.624630
 * 7-min read
 * Updated on Aug 30, 2022
 
-To use the feature, you need a JVM that supports Low-Overhead Heap Profiling, introduced with [JEP 331ï»¿](https://openjdk.java.net/jeps/331). Note that this feature is available only for Java processes.
+To use the feature, you need a JVM that supports Low-Overhead Heap Profiling, introduced with [JEP 331﻿](https://openjdk.java.net/jeps/331). Note that this feature is available only for Java processes.
 
 Memory profiling enables you to understand the memory allocation and garbage collection behavior of your applications over time. It helps you identify method calls in the context within which most memory was allocated and combine this information with the number of allocated objects. The Survivor perspective helps you to understand the context within which your long-living objects (objects that survive multiple garbage collection cycles) are created.
 
@@ -21,7 +20,7 @@ You have the following options for accessing memory profiling:
 * **via diagnostic tools**
 
   1. Go to **Profiling & Optimization** and select **Continuous CPU profiling**.
-  2. In the **Actions** column of the required process group, select **More** (**â¦**) > **Memory allocation**.
+  2. In the **Actions** column of the required process group, select **More** (**…**) > **Memory allocation**.
 * **via process details**
 
   1. Go to **Hosts** and select the required host.
@@ -29,7 +28,7 @@ You have the following options for accessing memory profiling:
      If you are using the [classic host page design](/managed/observe/infrastructure-observability/hosts/monitoring/host-monitoring "Monitor hosts with Dynatrace."), to find the processes list go to **Processes**.
   3. Do one of the following:
 
-     + Select **More** (**â¦**) > **Memory profiling** to open the **All allocations** tab.
+     + Select **More** (**…**) > **Memory profiling** to open the **All allocations** tab.
      + Open the **JVM metrics** tab and select **Analyze suspension** to directly open the **Survivors** tab.
 
 ![Memory profiling page overview](https://dt-cdn.net/images/memory-profiling-overview-3548-050610ff58.png)
@@ -60,7 +59,7 @@ Top 100 memory allocation hotspots
 
 The **Allocated types** column shows objects that are allocated only in the method itself. These don't apply to any subsequently called methods.
 
-You can [exclude third-party APIs](#exclude-3rd-party) from this view by selecting **More** (**â¦**) > **API detection rules** in the **Actions** column.
+You can [exclude third-party APIs](#exclude-3rd-party) from this view by selecting **More** (**…**) > **API detection rules** in the **Actions** column.
 
 A flame graph is a type of bar graph that shows hierarchical data. Flame graphs increase the readability of stack traces with a top-down layout and help to identify the memory allocation hotspots in your application code.
 
@@ -118,7 +117,7 @@ By varying the analysis timeframe you can find the time when these objects were 
 
 The **Survived types** column shows objects that are allocated only in the method itself. These don't apply to any subsequently called methods.
 
-You can [exclude third-party APIs](#exclude-3rd-party) from this view, by selecting **More** (**â¦**) > **API detection rules** under the **Actions** column.
+You can [exclude third-party APIs](#exclude-3rd-party) from this view, by selecting **More** (**…**) > **API detection rules** under the **Actions** column.
 
 A flame graph is a type of bar graph that shows hierarchical data. Flame graphs increase the readability of stack traces with a top-down layout and help identify the garbage collection allocation hotspots in your application code.
 
@@ -153,7 +152,7 @@ To focus the analysis on your code, we recommend that you define third-party lib
 3. Turn on **This API defines a third party library**.
 4. Save your changes.
 
-* You can leverage a pre-filled version of the **API detection rules** page from the hotspots tables on the **Memory profiling** page. In the chosen method row, select **More** (**â¦**) > **API detection rules** in the **Action** column.
+* You can leverage a pre-filled version of the **API detection rules** page from the hotspots tables on the **Memory profiling** page. In the chosen method row, select **More** (**…**) > **API detection rules** in the **Action** column.
 * You can exclude a library without manually configuring rules from the **Built-in APIs** list. Create a user-defined rule for the library and mark it as third party. To learn how, see [Custom API definitions](/managed/observe/application-observability/services/customize-api-definitions "Set detection rules to customize APIs in your environment.").
 
 The **Called method** page is configured to display all methods, including third-party APIs. When you define third-party library APIs, these are not excluded from the **Called method** views.

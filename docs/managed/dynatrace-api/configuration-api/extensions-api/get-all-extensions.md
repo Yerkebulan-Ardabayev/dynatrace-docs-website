@@ -1,7 +1,6 @@
 ---
 title: Extensions API - GET all extensions
 source: https://docs.dynatrace.com/managed/dynatrace-api/configuration-api/extensions-api/get-all-extensions
-scraped: 2026-05-12T11:20:00.516123
 ---
 
 # Extensions API - GET all extensions
@@ -47,7 +46,7 @@ To learn how to obtain and use it, see [Tokens and authentication](/managed/disc
 
 | Element | Type | Description |
 | --- | --- | --- |
-| extensions | [ExtensionDto[]](#openapi-definition-ExtensionDto) | A list of extensions. |
+| extensions | [ExtensionDto](#openapi-definition-ExtensionDto)[] | A list of extensions. |
 | nextPageKey | string | The cursor for the next page of results. Has the value of `null` on the last page.  Use it in the **nextPageKey** query parameter to obtain subsequent pages of the result. |
 | totalResults | integer | The total number of entries in the result. |
 

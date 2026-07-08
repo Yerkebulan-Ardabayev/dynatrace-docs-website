@@ -1,7 +1,6 @@
 ---
 title: Settings API - Simple detection rules schema table
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/settings/schemas/builtin-process-group-simple-detection-rule
-scraped: 2026-05-12T11:45:15.561974
 ---
 
 # Settings API - Simple detection rules schema table
@@ -12,7 +11,7 @@ scraped: 2026-05-12T11:45:15.561974
 
 ### Simple detection rules (`builtin:process-group.simple-detection-rule)`
 
-Simple process group detection rules enable you to adapt the default process-group detection logic for deep monitored processes via **environment variables** or **Java system properties**. [More about custom process-group detectionï»¿](https://dt-url.net/ty02won)
+Simple process group detection rules enable you to adapt the default process-group detection logic for deep monitored processes via **environment variables** or **Java system properties**. [More about custom process-group detection﻿](https://dt-url.net/ty02won)
 
 Note: Detection rules change the composition, makeup, and identity of a process group, not just the name. If you only need to change default name use the naming rules (`<your-dynatrace-url>//#settings/pgnamingsettings "Visit Naming rules page"`) instead.
 

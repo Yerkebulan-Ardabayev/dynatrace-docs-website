@@ -1,7 +1,6 @@
 ---
 title: Automated multi-dimensional baselining
 source: https://docs.dynatrace.com/managed/dynatrace-intelligence/anomaly-detection/automated-multidimensional-baselining
-scraped: 2026-05-12T11:38:42.119740
 ---
 
 # Automated multi-dimensional baselining
@@ -10,9 +9,9 @@ scraped: 2026-05-12T11:38:42.119740
 
 * Explanation
 * 10-min read
-* Published May 20, 2019
+* Updated on Jun 09, 2026
 
-Context-rich data collection and baselining are the two fundamental pillars that anomaly detection is built on. A huge amount of high-quality and accurate data is necessary to determine baselines that can effectively be used to distinguish between normal and anomalous situations. This distinction however is often blurred due to high data fluctuation or simply because the definition of ânormalâ is very much context-specific and changes as applications, platforms, infrastructure, and algorithms evolve. This makes the generation of accurate alerts a real challenge.
+Context-rich data collection and baselining are the two fundamental pillars that anomaly detection is built on. A huge amount of high-quality and accurate data is necessary to determine baselines that can effectively be used to distinguish between normal and anomalous situations. This distinction however is often blurred due to high data fluctuation or simply because the definition of “normal” is very much context-specific and changes as applications, platforms, infrastructure, and algorithms evolve. This makes the generation of accurate alerts a real challenge.
 
 When an alert is created for a situation that is indeed anomalous, it is a *true positive*, while if the situation is in fact normal, the alert is *false positive*. It's also possible that an abnormal situation is missed and therefore no alert is generated. This is characterized as a *false negative*. *True negatives* are normal cases that were correctly identified as non-anomalous events. To generate accurate alerts an anomaly detection system should aim at maximizing true positives and true negatives while minimizing false positives and false negatives. To achieve this goal, Dynatrace has developed an intelligent baselining approach.
 
@@ -22,9 +21,9 @@ In this case, the term application refers to web, mobile, and custom application
 
 ### Traffic
 
-Dynatrace application traffic anomaly detection is based on the assumption that most business traffic follows predictable daily and weekly traffic patterns. Dynatrace automatically learns each application's unique traffic patterns. Alerting on traffic spikes and drops begins after a learning period of one week because baselining requires a full weekâs worth of traffic to learn daily and weekly patterns.
+Dynatrace application traffic anomaly detection is based on the assumption that most business traffic follows predictable daily and weekly traffic patterns. Dynatrace automatically learns each application's unique traffic patterns. Alerting on traffic spikes and drops begins after a learning period of one week because baselining requires a full week’s worth of traffic to learn daily and weekly patterns.
 
-Following the learning period, Dynatrace forecasts the next weekâs traffic and then compares the actual incoming application traffic with the prediction. If Dynatrace detects a statistically significant deviation from forecasted traffic levels, it raises an alert.
+Following the learning period, Dynatrace forecasts the next week’s traffic and then compares the actual incoming application traffic with the prediction. If Dynatrace detects a statistically significant deviation from forecasted traffic levels, it raises an alert.
 
 ### Error rate
 
@@ -48,11 +47,11 @@ For new services detected less than 24 hours ago, several adapted baselines are 
 
 Multi-dimensionality offers a highly granular baselining scheme, leading to a more sophisticated baselining approach that ultimately results in more accurate thresholds. The more accurate the thresholds are, the more intelligent the overall anomaly detection process becomes.
 
-Consider as an example the application baseline cube that is generated for the calculation of the response time thresholds. Suppose that you have a web application called "easyTravel". A non-multidimensional system would learn a reference value for the response time of the entire application. A more fine-grained approach however would delve into each user action and learn a separate reference value for each of them. Letâs assume that easyTravel is comprised of four user actions `login`, `logout`, `getBookingPage`, and `getReportPage`. For each user action, a separate response time baseline would be specified.
+Consider as an example the application baseline cube that is generated for the calculation of the response time thresholds. Suppose that you have a web application called "easyTravel". A non-multidimensional system would learn a reference value for the response time of the entire application. A more fine-grained approach however would delve into each user action and learn a separate reference value for each of them. Let’s assume that easyTravel is comprised of four user actions `login`, `logout`, `getBookingPage`, and `getReportPage`. For each user action, a separate response time baseline would be specified.
 
 In addition to user actions, Dynatrace takes into account the geographical location. This means that Dynatrace AI will identify baselines for the combinations of each user action with each geolocation. A response time baseline of 90msec could be, for example, the response time baseline for the logout action in the US. But multi-dimensionality in Dynatrace AI goes even deeper. Each geolocation is combined with the browser type and each browser type in turn is combined with the operating system, ultimately resulting in the specification of a separate threshold for each combination of user action, geolocation, browser, and operating system. The generated baseline cube offers a high-level baseline granularity and accuracy.
 
-![Automated multi-dimensional base lining](https://dt-cdn.net/images/automated-baseline-1129-37479665d1.png)
+![Automated multi-dimensional base lining](https://cdn.bfldr.com/B686QPH3/as/9m9gpqrn93ws67hwwxsr7h2v/Automated_multi-dimensional_baselining-Light_Mode?auto=webp&format=png&position=1)
 
 Automated multi-dimensional base lining
 
@@ -80,13 +79,13 @@ Services of the `PROCESS` type don't support automated baselining. Use [anomaly 
 
 Automated baselining attempts to figure out the best reference values for incoming application and service traffic. To do this, Dynatrace automatically generates a baseline cube for your actual incoming application and service traffic. This means that if your traffic comes mainly from New York, and most of your users use the Chrome browser, your baseline cube will contain the following reference values:
 
-`USA - New York â Chrome â Reference response time : 2s, error rate: 0%, load: 2 actions/min`
+`USA - New York – Chrome – Reference response time : 2s, error rate: 0%, load: 2 actions/min`
 
 If your application also receives traffic from Beijing, but with a completely different response time, the baseline cube will automatically adapt and thereafter contain the following reference values:
 
-`USA - New York â Chrome â Reference response time : 2s, error rate: 0%, load: 2 actions/min`
+`USA - New York – Chrome – Reference response time : 2s, error rate: 0%, load: 2 actions/min`
 
-`China â Bejing - QQ Browser - Reference response time : 4s, error rate: 1%, load: 1 actions/min`
+`China – Bejing - QQ Browser - Reference response time : 4s, error rate: 1%, load: 1 actions/min`
 
 Dynatrace checks when your applications and services are initially detected by OneAgent. The baseline cube is calculated **two hours after** your application or service is initially detected by OneAgent so that it can analyze two hours of actual traffic to calculate preliminary reference values and identify where your traffic comes from. Calculation of the reference cube is repeated every day so that Dynatrace can continue to adapt to changes in your traffic.
 
@@ -96,9 +95,9 @@ For the generation of alerts, baselines are evaluated within 5-min and 15-min sl
 
 To avoid over-alerting and reduce notification noise, the automated anomaly detection modes don't alert on fluctuating applications and services that haven't run for at least 20% of a full week (7 days). Alerting on response time degradations and error rate increases begins once the baseline cube is ready and the application or service has run for at least 20% of a week (7 days).
 
-Dynatrace application traffic anomaly detection is based on the assumption that most business traffic follows predictable daily and weekly traffic patterns. Dynatrace automatically learns each applicationâs unique traffic patterns. Alerting on traffic spikes and drops begins after a learning period of one week, because baselining requires a full weekâs worth of traffic to learn daily and weekly patterns.
+Dynatrace application traffic anomaly detection is based on the assumption that most business traffic follows predictable daily and weekly traffic patterns. Dynatrace automatically learns each application’s unique traffic patterns. Alerting on traffic spikes and drops begins after a learning period of one week, because baselining requires a full week’s worth of traffic to learn daily and weekly patterns.
 
-Following the learning period, Dynatrace forecasts the next weekâs traffic and then compares the actual incoming application traffic with the prediction. If Dynatrace detects a statistically significant deviation from forecasted traffic levels, it raises either an `Unexpected low traffic` or `Unexpected high traffic` problem.
+Following the learning period, Dynatrace forecasts the next week’s traffic and then compares the actual incoming application traffic with the prediction. If Dynatrace detects a statistically significant deviation from forecasted traffic levels, it raises either an `Unexpected low traffic` or `Unexpected high traffic` problem.
 
 In general, newly detected anomalous events in an environment won't necessarily result in the immediate raising of an alert. Raised alerts always provide insight into the underlying root cause. To identify the root causes of problems, Dynatrace follows [a context-aware approach to detect interdependent events](/managed/dynatrace-intelligence/root-cause-analysis/concepts "Get acquainted with root cause analysis concepts.") across time, processes, hosts, services, applications, and both vertical and horizontal topological monitoring perspectives. By taking into account all these monitoring perspectives, Dynatrace pinpoints the root causes of problems. And only then will alerts be generated for a detected problem.
 

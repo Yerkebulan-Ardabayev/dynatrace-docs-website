@@ -1,7 +1,6 @@
 ---
 title: Convert Managed Cluster from offline to online
 source: https://docs.dynatrace.com/managed/managed-cluster/installation/cluster-offline-to-online
-scraped: 2026-05-12T11:35:45.421914
 ---
 
 # Convert Managed Cluster from offline to online
@@ -30,7 +29,7 @@ To convert a Managed Cluster from offline to online mode, complete the following
 * SSH access with sudo capability to all Dynatrace Managed Cluster nodes
 * Cluster API token with the Service Provider API scope
 * Cluster connectivity to Mission Control (the conversion script verifies this)
-* Proxy (if needed, see [How to configure internet proxy for cluster](/managed/managed-cluster/configuration/internet-proxy "Configure a proxy connection for your Managed Cluster if you don't have direct internet access."))
+* Proxy (if needed, see [How to configure internet proxy for cluster](/managed/managed-cluster/configuration/configure-internet-proxy "Configure a proxy connection for your Managed Cluster if you don't have direct internet access. Supported protocols include Basic and NTLMv1."))
 * Cassandra and Elasticsearch are healthy.
 * All nodes are up and running.
 * The cluster isn't in maintenance mode.

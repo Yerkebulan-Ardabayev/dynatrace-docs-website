@@ -1,7 +1,6 @@
 ---
 title: Settings API - Ingest routing configuration (bizevents) schema table
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-bizevents-routing
-scraped: 2026-05-12T11:39:53.665280
 ---
 
 # Settings API - Ingest routing configuration (bizevents) schema table

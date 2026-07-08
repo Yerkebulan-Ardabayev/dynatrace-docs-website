@@ -1,7 +1,6 @@
 ---
 title: Configure and monitor service-level objectives with Dynatrace
 source: https://docs.dynatrace.com/managed/deliver/service-level-objectives-classic/configure-and-monitor-slo
-scraped: 2026-05-12T12:07:52.211910
 ---
 
 # Configure and monitor service-level objectives with Dynatrace
@@ -18,7 +17,7 @@ The list of defined service-level objectives (SLOs) within a Dynatrace monitorin
 
 ### Analyze problems
 
-If there are any open problems associated with an SLO, the value in the **Open/total problems** column for the SLO is marked with a red warning symbol. Select the value to display the **Problems** page filtered by the respective entity selector. For more information on how to analyze problems, see [DavisÂ® AI](/managed/dynatrace-intelligence "Get familiar with the capabilities of Davis AI.").
+If there are any open problems associated with an SLO, the value in the **Open/total problems** column for the SLO is marked with a red warning symbol. Select the value to display the **Problems** page filtered by the respective entity selector. For more information on how to analyze problems, see [Davis® AI](/managed/dynatrace-intelligence "Learn how Davis® AI detects performance anomalies, identifies root causes, and uses AI models for adaptive thresholds across your environment.").
 
 ### SLO details
 
@@ -114,13 +113,13 @@ To set up your own service-level objective, go to **Settings**, select **Cloud A
 
 ### Edit SLOs
 
-To edit an SLO, in Dynatrace, go to **Service-Level Objectives**, find your SLO, and select **More** (**â¦**) > **SLO definition** in the **Actions** column.
+To edit an SLO, in Dynatrace, go to **Service-Level Objectives**, find your SLO, and select **More** (**…**) > **SLO definition** in the **Actions** column.
 
 ### Normalize error budget
 
 To see a normalized error budget for all SLOs, go to **Settings** > **Cloud Automation** > **Setup**, and enable **Normalize error budget**.
 
-Take, for example, an SLO target of 95% with a current SLO status of 96%. If the normalization is turned on, the remaining error budget left is (status â target) Ã· (100 â target) Ã 100, for example, (96% â 95%) Ã· (100 â 95%) Ã 100.
+Take, for example, an SLO target of 95% with a current SLO status of 96%. If the normalization is turned on, the remaining error budget left is (status − target) ÷ (100 − target) × 100, for example, (96% − 95%) ÷ (100 − 95%) × 100.
 
 ## Error budget burn rate
 
@@ -162,14 +161,14 @@ Alerts can only be created based on metric events within the last hour. If you s
 
 * To set up an SLO alert
 
-1. Go to **Service-Level Objectives**, find your SLO, and select **More** (**â¦**) > **Create alert**.
+1. Go to **Service-Level Objectives**, find your SLO, and select **More** (**…**) > **Create alert**.
 2. For **Select alert type**, select `Status`.
 3. Name your alert and set a threshold value. If you don't set a value, the threshold is populated with the existing SLO target value.
 4. Select **Create alert**.
 
 * To set up a burn rate alert
 
-1. Go to **Service-Level Objectives**, find your SLO, and select **More** (**â¦**) > **Create alert**.
+1. Go to **Service-Level Objectives**, find your SLO, and select **More** (**…**) > **Create alert**.
 2. For **Select alert type**, select `Burn rate`.
 3. Name your alert and set the burn rate threshold.
 4. Select **Create alert**.
@@ -198,7 +197,7 @@ For more information on how you can control access to the SLOs in your environme
 
 After you define your objectives, you can add the SLOs to your dashboard to visualize their current status along with the remaining error budgets.
 
-1. In Dynatrace, go to **Service-Level Objectives**, find your SLO, and select **More** (**â¦**) > **Pin to your dashboard** in the **Actions** column.
+1. In Dynatrace, go to **Service-Level Objectives**, find your SLO, and select **More** (**…**) > **Pin to your dashboard** in the **Actions** column.
 2. From the list, select an existing dashboard or **Create new dashboard**, and then select **Pin**.
 3. Select **Open dashboard** to open the dashboard in edit mode with the SLO tile selected.
 4. Adjust the tile configuration as needed.
@@ -225,7 +224,7 @@ Select **Edit tile** from the menu in the upper-right corner of the tile.configu
 
 * **Select an SLO:**: select the SLO to display in this tile.
 * **Title**: the title to display at the top of the tile. By default, the title is taken from the name of the selected SLO. Use **Title Size** to adjust the font size.
-* **Max shown decimals**: the maximum number of decimal places (0â10) to display. The decimals are cut off/truncated, not rounded. The number of decimal places displayed is automatically adjusted to fit the tile size.
+* **Max shown decimals**: the maximum number of decimal places (0–10) to display. The decimals are cut off/truncated, not rounded. The number of decimal places displayed is automatically adjusted to fit the tile size.
 
 The toggle options are
 
@@ -313,7 +312,7 @@ To query and chart metrics, go to the service-level objective you want and selec
 
 ## Davis alerting
 
-Dynatrace DavisÂ® provides quick notifications on anomalies detected, along with actionable root causes. If your SLO has turned red, this is most likely because Davis has already raised a problem for the underlying metrics, showing you the root cause.
+Dynatrace Davis® provides quick notifications on anomalies detected, along with actionable root causes. If your SLO has turned red, this is most likely because Davis has already raised a problem for the underlying metrics, showing you the root cause.
 
 Davis doesn't provide alerts for SLO target breaches, but for underlying metrics and SLO entities.
 
@@ -321,7 +320,7 @@ Davis doesn't provide alerts for SLO target breaches, but for underlying metrics
 
 The following are solutions to problems some people have.
 
-* [Service-level objective (SLO) list takes a lot of time to loadï»¿](https://dt-url.net/og238b6)
-* [Service-level objective (SLO): One resulting value is required, but the SLO definition delivers more than oneï»¿](https://dt-url.net/us4383g)
-* [Service-level objective (SLO): Timeframe starts before the metric was createdï»¿](https://dt-url.net/cg638yh)
-* [Service-level objective (SLO): No management zone selectedï»¿](https://dt-url.net/e883882)
+* [Service-level objective (SLO) list takes a lot of time to load﻿](https://dt-url.net/og238b6)
+* [Service-level objective (SLO): One resulting value is required, but the SLO definition delivers more than one﻿](https://dt-url.net/us4383g)
+* [Service-level objective (SLO): Timeframe starts before the metric was created﻿](https://dt-url.net/cg638yh)
+* [Service-level objective (SLO): No management zone selected﻿](https://dt-url.net/e883882)

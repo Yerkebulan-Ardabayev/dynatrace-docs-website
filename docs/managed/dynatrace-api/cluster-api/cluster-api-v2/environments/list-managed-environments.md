@@ -1,7 +1,6 @@
 ---
 title: List all existing environments
 source: https://docs.dynatrace.com/managed/dynatrace-api/cluster-api/cluster-api-v2/environments/list-managed-environments
-scraped: 2026-05-12T11:06:13.613500
 ---
 
 # List all existing environments
@@ -49,7 +48,7 @@ A list of environments.
 
 | Element | Type | Description |
 | --- | --- | --- |
-| environments | [Environment[]](#openapi-definition-Environment) | The list of environments. |
+| environments | [Environment](#openapi-definition-Environment)[] | The list of environments. |
 | nextPageKey | string | The cursor for the next page of results. Has the value of `null` on the last page.  Use it in the **nextPageKey** query parameter to obtain subsequent pages of the result. |
 | pageSize | integer | The number of entries per page. |
 | totalCount | integer | The total number of entries in the result. |

@@ -1,7 +1,6 @@
 ---
 title: Create a new environment
 source: https://docs.dynatrace.com/managed/dynatrace-api/cluster-api/cluster-api-v2/environments/create-managed-environment
-scraped: 2026-05-12T11:05:46.662122
 ---
 
 # Create a new environment

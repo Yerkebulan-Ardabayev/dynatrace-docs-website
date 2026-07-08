@@ -1,7 +1,6 @@
 ---
 title: Settings API - Log buckets schema table
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/settings/schemas/builtin-logmonitoring-log-buckets-rules
-scraped: 2026-05-12T11:48:49.995468
 ---
 
 # Settings API - Log buckets schema table
@@ -12,7 +11,7 @@ scraped: 2026-05-12T11:48:49.995468
 
 ### Log buckets (`builtin:logmonitoring.log-buckets-rules)`
 
-Dynatrace logs are stored in buckets. You can give each bucket a unique log retention period (35 days is the default). In addition, you can use buckets to set unique access rules to different logs or log areas. To create or manage buckets go to [bucket permissionsï»¿](https://dt-url.net/vc034se). Read more about using buckets for logs in our [documentationï»¿](https://dt-url.net/ep234n2).
+Dynatrace logs are stored in buckets. You can give each bucket a unique log retention period (35 days is the default). In addition, you can use buckets to set unique access rules to different logs or log areas. To create or manage buckets go to [bucket permissions﻿](https://dt-url.net/vc034se). Read more about using buckets for logs in our [documentation﻿](https://dt-url.net/ep234n2).
 
 | Schema ID | Schema groups | Scope |
 | --- | --- | --- |

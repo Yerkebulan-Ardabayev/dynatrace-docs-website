@@ -1,7 +1,6 @@
 ---
 title: Notifications API - POST filter notifications
 source: https://docs.dynatrace.com/managed/dynatrace-api/account-management-api/post-notifications
-scraped: 2026-05-12T11:35:20.918278
 ---
 
 # Notifications API - POST filter notifications
@@ -11,7 +10,7 @@ scraped: 2026-05-12T11:35:20.918278
 * Reference
 * Updated on Apr 14, 2026
 
-This API returns all accountâlevel notification types, including budget, cost, and forecast.
+This API returns all account‑level notification types, including budget, cost, and forecast.
 
 |  |  |
 | --- | --- |
@@ -153,7 +152,7 @@ This is a model of the request body, showing the possible elements. It has to be
 
 | Element | Type | Description |
 | --- | --- | --- |
-| records | [NotificationDto[]](#openapi-definition-NotificationDto) | A list of notifications of the account. |
+| records | [NotificationDto](#openapi-definition-NotificationDto)[] | A list of notifications of the account. |
 | totalRecordCount | number | The total number of notifications matching the filter. |
 | hasNextPage | boolean | If there are more notifications. |
 
@@ -166,7 +165,7 @@ This is a model of the request body, showing the possible elements. It has to be
 | message | string | - |
 | severity | string | - |
 | type | string | - |
-| details | [SubscriptionRelatedEventDataDto](#openapi-definition-SubscriptionRelatedEventDataDto) | - |
+| details | [SubscriptionRelatedEventDataDto](#openapi-definition-SubscriptionRelatedEventDataDto) | [ByokEventDto](#openapi-definition-ByokEventDto) | - |
 | date | string | - |
 
 #### The `SubscriptionRelatedEventDataDto` object
@@ -177,6 +176,13 @@ This is a model of the request body, showing the possible elements. It has to be
 | capabilities | string[] | - |
 | allEnvironments | boolean | - |
 | allCapabilities | boolean | - |
+
+#### The `ByokEventDto` object
+
+| Element | Type | Description |
+| --- | --- | --- |
+| environmentUuid | string | - |
+| keyName | string | - |
 
 ### Response body JSON models
 

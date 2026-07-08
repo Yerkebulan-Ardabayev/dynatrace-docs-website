@@ -1,7 +1,6 @@
 ---
 title: Settings API - Crash dump analytics schema table
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/settings/schemas/builtin-crashdump-analytics
-scraped: 2026-05-12T11:45:11.930998
 ---
 
 # Settings API - Crash dump analytics schema table
@@ -12,7 +11,7 @@ scraped: 2026-05-12T11:45:11.930998
 
 ### Crash dump analytics (`builtin:crashdump.analytics)`
 
-Dynatrace automatically detects application crashes on Windows and Linux and analyzes the crashes' core dumps. Here you can manage crash dump analytics. For details on crash analysis, see the [documentationï»¿](https://docs.dynatrace.com/docs/shortlink/crash-analysis)
+Dynatrace automatically detects application crashes on Windows and Linux and analyzes the crashes' core dumps. Here you can manage crash dump analytics. For details on crash analysis, see the [documentation﻿](https://docs.dynatrace.com/docs/shortlink/crash-analysis)
 
 | Schema ID | Schema groups | Scope |
 | --- | --- | --- |

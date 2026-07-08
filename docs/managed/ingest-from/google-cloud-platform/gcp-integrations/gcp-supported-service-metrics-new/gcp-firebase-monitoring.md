@@ -1,7 +1,6 @@
 ---
 title: Google Cloud Firebase monitoring
 source: https://docs.dynatrace.com/managed/ingest-from/google-cloud-platform/gcp-integrations/gcp-supported-service-metrics-new/gcp-firebase-monitoring
-scraped: 2026-05-12T11:50:58.911431
 ---
 
 # Google Cloud Firebase monitoring

@@ -1,7 +1,6 @@
 ---
 title: Mobile and custom app API - GET key user actions
 source: https://docs.dynatrace.com/managed/dynatrace-api/configuration-api/rum/mobile-custom-app-configuration/key-user-actions/get-configuration
-scraped: 2026-05-12T11:15:28.898822
 ---
 
 # Mobile and custom app API - GET key user actions
@@ -49,7 +48,7 @@ A list of key actions in an application.
 
 | Element | Type | Description |
 | --- | --- | --- |
-| keyUserActions | [KeyUserActionMobile[]](#openapi-definition-KeyUserActionMobile) | A list of key actions in an application. |
+| keyUserActions | [KeyUserActionMobile](#openapi-definition-KeyUserActionMobile)[] | A list of key actions in an application. |
 
 #### The `KeyUserActionMobile` object
 
@@ -91,4 +90,4 @@ A key user action.
 
 ## Related topics
 
-* [User actions](/managed/observe/digital-experience/rum-concepts/user-actions "Learn what user actions are and how they help you understand what users do with your application.")
+* [User actions in RUM Classic](/managed/observe/digital-experience/rum-classic/rum-concepts/user-actions "Learn what user actions are and how they help you understand what users do with your application.")

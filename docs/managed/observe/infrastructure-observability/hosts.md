@@ -1,7 +1,6 @@
 ---
 title: Hosts
 source: https://docs.dynatrace.com/managed/observe/infrastructure-observability/hosts
-scraped: 2026-05-12T12:03:14.492484
 ---
 
 # Hosts
@@ -56,7 +55,7 @@ Explore monitoring modes in Dynatrace.](/managed/platform/oneagent/monitoring-mo
 
 Monitor hosts with Dynatrace.](/managed/observe/infrastructure-observability/hosts/monitoring/host-monitoring "Monitor hosts with Dynatrace.")[### OS services monitoring
 
-Improve the visibility of your infrastructure by monitoring the availability of operating system services.](/managed/observe/infrastructure-observability/hosts/monitoring/os-services "Improve the visibility of your infrastructure by monitoring the availability of operating system services.")[### Classic Windows services monitoring
+Improve the visibility of your infrastructure by monitoring the availability of operating system services.](/managed/observe/infrastructure-observability/hosts/monitoring/os-services "Monitor the availability of operating system services on your hosts to improve infrastructure visibility and detect failures in real time.")[### Classic Windows services monitoring
 
 Improve the visibility of your infrastructure by monitoring the availability of Windows services.](/managed/observe/infrastructure-observability/hosts/monitoring/windows-services "Learn how to improve the visibility of your infrastructure by monitoring the availability of Windows services.")[### Process availability
 

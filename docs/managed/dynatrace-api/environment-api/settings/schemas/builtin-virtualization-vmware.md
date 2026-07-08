@@ -1,7 +1,6 @@
 ---
 title: Settings API - VMware schema table
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/settings/schemas/builtin-virtualization-vmware
-scraped: 2026-05-12T11:48:53.597597
 ---
 
 # Settings API - VMware schema table

@@ -1,7 +1,6 @@
 ---
 title: Reports API - GET all reports
 source: https://docs.dynatrace.com/managed/dynatrace-api/configuration-api/reports-api/get-all
-scraped: 2026-05-12T11:15:39.595465
 ---
 
 # Reports API - GET all reports
@@ -49,7 +48,7 @@ A list of short representations of reports.
 
 | Element | Type | Description |
 | --- | --- | --- |
-| values | [DashboardReportStub[]](#openapi-definition-DashboardReportStub) | A list of reports. |
+| values | [DashboardReportStub](#openapi-definition-DashboardReportStub)[] | A list of reports. |
 
 #### The `DashboardReportStub` object
 

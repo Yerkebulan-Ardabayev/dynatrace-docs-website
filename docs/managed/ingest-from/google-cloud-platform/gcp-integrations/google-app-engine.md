@@ -1,7 +1,6 @@
 ---
 title: Monitor Google App Engine
 source: https://docs.dynatrace.com/managed/ingest-from/google-cloud-platform/gcp-integrations/google-app-engine
-scraped: 2026-05-12T11:22:56.656451
 ---
 
 # Monitor Google App Engine
@@ -23,7 +22,7 @@ The Google App Engine standard environment type supports applications that run o
 
 To integrate OneAgent into a container deployment with a Dockerfile in Google App Engine flexible environment and activate instrumentation of your application, add the commands below to your current Dockerfile, making sure to enter your own values for the `DT_API_URL`, `DT_API_TOKEN`, and `DT_ONEAGENT_OPTIONS` arguments.
 
-* `<environmentID>` should be replaced with your Dynatrace environment ID. If youâre using Dynatrace Managed, you need to provide your Dynatrace Server URL (`https://<YourDynatraceServerURL>/e/<environmentID>/api`).
+* `<environmentID>` should be replaced with your Dynatrace environment ID. If you’re using Dynatrace Managed, you need to provide your Dynatrace Server URL (`https://<YourDynatraceServerURL>/e/<environmentID>/api`).
 * `<token>`should be replaced with the PaaS token mentioned in the prerequisites.
 * Technology support is enabled via `include` parameters. Valid options for `flavor=default` are `all`, `java`, `apache`, `nginx`, `nodejs`, `dotnet`, `php` and `go`. Including specific technology-support options, rather than support for all technology options, results in a smaller OneAgent package. For Alpine Linux based environments, Dynatrace OneAgent supports the flavor `musl`. Valid options for `flavor=musl` are `all`, `go`, `java`, `apache`, `nginx`, and `nodejs`.
 

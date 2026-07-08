@@ -1,7 +1,6 @@
 ---
 title: Add a custom properties file
 source: https://docs.dynatrace.com/managed/ingest-from/setup-on-k8s/guides/metadata-automation/custom-properties-file
-scraped: 2026-05-12T12:03:42.303693
 ---
 
 # Add a custom properties file

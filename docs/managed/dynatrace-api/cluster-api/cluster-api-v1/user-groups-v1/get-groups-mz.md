@@ -1,7 +1,6 @@
 ---
 title: Get management zones for user groups
 source: https://docs.dynatrace.com/managed/dynatrace-api/cluster-api/cluster-api-v1/user-groups-v1/get-groups-mz
-scraped: 2026-05-12T12:12:59.431245
 ---
 
 # Get management zones for user groups
@@ -32,7 +31,7 @@ To execute this request, you need the **Service Provider API** (`ServiceProvider
 
 | Code | Type | Description |
 | --- | --- | --- |
-| **200** | [MzPermissionsForGroup[]](#openapi-definition-MzPermissionsForGroup) | Success |
+| **200** | [MzPermissionsForGroup](#openapi-definition-MzPermissionsForGroup)[] | Success |
 
 ### Response body objects
 
@@ -43,14 +42,14 @@ To execute this request, you need the **Service Provider API** (`ServiceProvider
 | Element | Type | Description |
 | --- | --- | --- |
 | groupId | string | Group ID |
-| mzPermissionsPerEnvironment | [MzListForEnvironment[]](#openapi-definition-MzListForEnvironment) | List of management zone permissions per environment |
+| mzPermissionsPerEnvironment | [MzListForEnvironment](#openapi-definition-MzListForEnvironment)[] | List of management zone permissions per environment |
 
 #### The `MzListForEnvironment` object
 
 | Element | Type | Description |
 | --- | --- | --- |
 | environmentUuid | string | Environment UUID |
-| mzPermissions | [MzPermissionsList[]](#openapi-definition-MzPermissionsList) | List of management zone models with permissions |
+| mzPermissions | [MzPermissionsList](#openapi-definition-MzPermissionsList)[] | List of management zone models with permissions |
 
 #### The `MzPermissionsList` object
 

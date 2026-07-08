@@ -1,7 +1,6 @@
 ---
 title: Multidimensional analysis
 source: https://docs.dynatrace.com/managed/observe/application-observability/multidimensional-analysis
-scraped: 2026-05-12T11:05:14.139941
 ---
 
 # Multidimensional analysis
@@ -33,7 +32,7 @@ Understand and analyze all code-level exceptions.](/managed/observe/application-
 
 ## Data source
 
-Multidimensional analysis uses trace and request data as its data source, which includes information on [distributed traces](/managed/manage/data-privacy-and-security/data-privacy/data-retention-periods#traces-grail "Check retention times for various data types.") and [requests](/managed/manage/data-privacy-and-security/data-privacy/data-retention-periods#request-attributes "Check retention times for various data types.").
+Multidimensional analysis uses trace and request data as its data source, which includes information on [distributed traces](/managed/manage/data-privacy-and-security/data-privacy/data-retention-periods#traces-grail "Review default and configurable retention periods for service, RUM Classic, synthetic, Log Monitoring, metric, diagnostic, and security data in Dynatrace Managed.") and [requests](/managed/manage/data-privacy-and-security/data-privacy/data-retention-periods#request-attributes "Review default and configurable retention periods for service, RUM Classic, synthetic, Log Monitoring, metric, diagnostic, and security data in Dynatrace Managed.").
 
 * For timeframes shorter than two hours, a higher resolution (below 1 minute) is used.
 * For larger amounts of data, especially for longer timeframes or unfiltered analysis, sampling is applied: only a fraction of trace and request data is used.
@@ -52,7 +51,7 @@ In **Configure view**, you can set up multiple filtering capabilities. The view 
 | --- | --- |
 | Metric | The metric to be analyzed. |
 | Aggregation | How the metric values are aggregated. Available aggregations depend on the selected metric. |
-| Split mode | How dimensions specified in **Split by dimension** are treated.  * **Split by services**âeach dimension is displayed separately for each service. * **Merge by services**âsame dimensions from different services are merged into one. |
+| Split mode | How dimensions specified in **Split by dimension** are treated.  * **Split by services**—each dimension is displayed separately for each service. * **Merge by services**—same dimensions from different services are merged into one. |
 | Split by dimension | A list of dimensions by which the requests are split.  You can specify several dimensions. Place your cursor in the input field to see the available options. The requests are split by dimension in the specified order. |
 | Filter requests | Filter the requests to be included to the view. Place your cursor in the input field to see the available options.  Criteria of the same type are grouped by **OR** logic. Criteria of different types are grouped by **AND** logic. |
 
@@ -81,7 +80,7 @@ The chart shows the top 15 dimensions (all other dimensions are aggregated into 
 In the **Actions** column of the table, you can select:
 
 * **Filter** ![Filter](https://dt-cdn.net/images/filter-icon-41ddd02d66.svg "Filter") to filter the view for the specified dimension.
-* **More** (**â¦**) to access further analysis options from the [**Analyze** menu](/managed/observe/application-observability/services-classic/context-specific-drill-down#analyze-menu "Learn about easy navigation and filtering for services analysis.").
+* **More** (**…**) to access further analysis options from the [**Analyze** menu](/managed/observe/application-observability/services-classic/context-specific-drill-down#analyze-menu "Learn about easy navigation and filtering for services analysis.").
 
 For timeframes containing data older than 10 days, you can turn on **Show data retention** to better understand which data is available for which period directly from the chart.
 

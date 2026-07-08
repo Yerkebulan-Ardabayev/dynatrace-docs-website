@@ -1,7 +1,6 @@
 ---
 title: Google Cloud monitoring
 source: https://docs.dynatrace.com/managed/observe/infrastructure-observability/cloud-platform-monitoring/gcp-monitoring
-scraped: 2026-05-12T11:10:36.614958
 ---
 
 # Google Cloud monitoring
@@ -16,7 +15,7 @@ Dynatrace automatically discovers, baselines, and intelligently monitors dynamic
 
 ## Full-stack monitoring
 
-Dynatrace OneAgent provides full-stack monitoring for core compute resources such as Google Kubernetes Engine (GKE), Google Compute Engine (GCE), and Google Application Engine (GAE). This gives you deep code-level visibility and end-to-end traces for everything thatâs running on compute services.
+Dynatrace OneAgent provides full-stack monitoring for core compute resources such as Google Kubernetes Engine (GKE), Google Compute Engine (GCE), and Google Application Engine (GAE). This gives you deep code-level visibility and end-to-end traces for everything that’s running on compute services.
 
 ## Google Cloud services monitoring
 

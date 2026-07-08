@@ -1,7 +1,6 @@
 ---
 title: Calculate your consumption of Runtime Application Protection (RAP) (DPS)
 source: https://docs.dynatrace.com/managed/license/capabilities/application-security/runtime-application-protection
-scraped: 2026-05-12T12:00:45.595262
 ---
 
 # Calculate your consumption of Runtime Application Protection (RAP) (DPS)
@@ -10,7 +9,7 @@ scraped: 2026-05-12T12:00:45.595262
 
 * Explanation
 * 5-min read
-* Published Aug 12, 2025
+* Updated on Jun 09, 2026
 
 Runtime Application Protection feature overview
 
@@ -38,7 +37,7 @@ For example, a host with 8.3 GiB memory is counted as an 8.5 GiB host, being the
 
 Example scenario: Consumption calculation example
 
-![Consumption calculation for Runtime Application Protection](https://dt-cdn.net/images/rap-consumption-5040-914c9fdd96.jpg)
+![Consumption calculation for Runtime Application Protection](https://cdn.bfldr.com/B686QPH3/as/ttsnpgqw7z4qhvwm8t8rt76/Runtime_application_protection-Consumption_calculation-Light_Mode?auto=webp&format=png&position=1)
 
 Consumption calculation for Runtime Application Protection
 
@@ -64,7 +63,7 @@ If no memory limit is set, the memory of the underlying virtual machine is used 
 
 #### Exceptions
 
-* For Azure App Services running on the App Service (Dedicated) plan for Windows, instances are counted as hosts and the defined memory of all instances is aggregated to determine total memoryâregardless of how many applications run on those instances.
+* For Azure App Services running on the App Service (Dedicated) plan for Windows, instances are counted as hosts and the defined memory of all instances is aggregated to determine total memory—regardless of how many applications run on those instances.
 * For Azure App Service on Linux and Azure App Service for Linux Containers with OneAgent version 1.283+, memory consumption is calculated using the memory of each plan instance.
   In these cases, there is no ability to set container resource limits.
 * Solaris Zones are counted as hosts.
@@ -127,7 +126,7 @@ Runtime Application Protection (DPS)
 
 You can also track your usage in Account Management.
 
-1. Go to [**Account Management**ï»¿](https://myaccount.dynatrace.com/) > **Subscription** > **Overview**.
+1. Go to [**Account Management**﻿](https://myaccount.dynatrace.com/) > **Subscription** > **Overview**.
 2. In **Cost and usage details**, select **Usage summary**.
 3. Search for `Runtime Application Protection` and select **View details**.
 
@@ -142,6 +141,6 @@ You can query metrics via the [Environment API - Metrics API v2](/managed/dynatr
 ## Related topics
 
 * [Runtime Application Protection](/managed/secure/application-security/application-protection "Set up and configure Dynatrace Runtime Application Protection to monitor attacks and attack-generated code-level vulnerabilities.")
-* [License Dynatrace](/managed/license "About Dynatrace Platform Subscription (DPS), the licensing model for all Dynatrace capabilities.")
+* [License Dynatrace](/managed/license "Dynatrace Platform Subscription, capability rate cards, hybrid licensing, and previous license models.")
 * [Application Security overview (DPS)](/managed/license/capabilities/application-security "Learn how Dynatrace Application Security monitoring consumption is calculated using the Dynatrace Platform Subscription model.")
-* [Dynatrace pricingï»¿](https://www.dynatrace.com/pricing/)
+* [Dynatrace pricing﻿](https://www.dynatrace.com/pricing/)

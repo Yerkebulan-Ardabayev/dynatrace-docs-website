@@ -1,7 +1,6 @@
 ---
 title: Mobile and custom app API - POST a key user action
 source: https://docs.dynatrace.com/managed/dynatrace-api/configuration-api/rum/mobile-custom-app-configuration/key-user-actions/post-configuration
-scraped: 2026-05-12T11:15:30.099797
 ---
 
 # Mobile and custom app API - POST a key user action
@@ -69,4 +68,4 @@ A key user action.
 
 ## Related topics
 
-* [User actions](/managed/observe/digital-experience/rum-concepts/user-actions "Learn what user actions are and how they help you understand what users do with your application.")
+* [User actions in RUM Classic](/managed/observe/digital-experience/rum-classic/rum-concepts/user-actions "Learn what user actions are and how they help you understand what users do with your application.")

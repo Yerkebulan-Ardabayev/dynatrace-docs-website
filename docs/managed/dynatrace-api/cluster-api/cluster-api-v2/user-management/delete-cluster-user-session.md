@@ -1,7 +1,6 @@
 ---
 title: Delete user sessions of a given user
 source: https://docs.dynatrace.com/managed/dynatrace-api/cluster-api/cluster-api-v2/user-management/delete-cluster-user-session
-scraped: 2026-05-12T11:06:06.047401
 ---
 
 # Delete user sessions of a given user

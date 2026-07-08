@@ -1,7 +1,6 @@
 ---
 title: Multi-environment deployment of ActiveGate
 source: https://docs.dynatrace.com/managed/ingest-from/dynatrace-activegate/configuration/configure-an-environment-activegate-for-multi-environment-support
-scraped: 2026-05-12T11:52:40.838032
 ---
 
 # Multi-environment deployment of ActiveGate
@@ -33,9 +32,9 @@ To configure an existing Environment ActiveGate for multi-environment support
 
 1. **Make sure that the ActiveGate modules that are incompatible with multi-environment operation are disabled.** Which module is actually installed and enabled varies based on the [purpose](/managed/ingest-from/dynatrace-activegate "Understand the basic concepts related to ActiveGate.") for which the ActiveGate was originally installed. Only one of the following modules can be present on the ActiveGate. However, if in doubt, disabling (and then removing) all of these particular modules at this point is acceptable:
 
-   * ActiveGate Extensionsâdisabled in the `[extension_controller]` section
-   * zRemoteâdisabled in the `[zremote]` section
-   * Synthetic 1.0âdisabled in the `[synthetic]` section
+   * ActiveGate Extensions—disabled in the `[extension_controller]` section
+   * zRemote—disabled in the `[zremote]` section
+   * Synthetic 1.0—disabled in the `[synthetic]` section
 
    agctl
 
@@ -84,7 +83,7 @@ To configure an existing Environment ActiveGate for multi-environment support
    ```
 2. **Make sure that the ActiveGate modules that are incompatible with multi-environment operation have been uninstalled.**
 
-   * For Linuxâexecute one of the following commands, depending on which module needs to be uninstalled. If in doubt, execute all of the commands: If the commands are found, the respective modules will be uninstalled. If the commands are not found, it means that the modules are not present:
+   * For Linux—execute one of the following commands, depending on which module needs to be uninstalled. If in doubt, execute all of the commands: If the commands are found, the respective modules will be uninstalled. If the commands are not found, it means that the modules are not present:
 
      ```
      sudo /opt/dynatrace/remotepluginmodule/uninstall.sh
@@ -103,8 +102,8 @@ To configure an existing Environment ActiveGate for multi-environment support
      + **Dynatrace ZRemote**
      + **Dynatrace Synthetic**
 3. **In the ActiveGate [configuration directory](/managed/ingest-from/dynatrace-activegate/configuration/where-can-i-find-activegate-files "Find out where ActiveGate files are stored on Windows and Linux systems."), locate the `authorization.properties` file and familiarize yourself with the content.**  
-   The `authorization.properties` file defines ActiveGate authorization for each environment as identified by the [environment ID](/managed/discover-dynatrace/get-started/monitoring-environment "Understand and learn how to work with monitoring environments."). ActiveGate authorizes via [tenant token](/managed/manage/identity-access-management/access-tokens-and-oauth-clients/access-tokens/rotate-tenant-token "Learn what a tenant token is and how to change it.") and [individual ActiveGate token](/managed/ingest-from/dynatrace-activegate/activegate-security "Secure ActiveGates with dedicated tokens.").
-   **One and only one of the sections will contain the property `mainTenant = true`.** This is for the environment from which the ActiveGate was downloaded and installed. **Do not remove this section or this entry.** Do not remove any other sectionsârelating to other environmentsâunless you do not want the ActiveGate to support those particular environments anymore.
+   The `authorization.properties` file defines ActiveGate authorization for each environment as identified by the [environment ID](/managed/discover-dynatrace/get-started/monitoring-environment "Learn what a Dynatrace monitoring environment is, how to find your environment ID, and how to set up and connect multiple environments."). ActiveGate authorizes via [tenant token](/managed/manage/identity-access-management/access-tokens-and-oauth-clients/access-tokens/rotate-tenant-token "Learn what a tenant token is and how to change it.") and [individual ActiveGate token](/managed/ingest-from/dynatrace-activegate/activegate-security "Secure ActiveGates with dedicated tokens.").
+   **One and only one of the sections will contain the property `mainTenant = true`.** This is for the environment from which the ActiveGate was downloaded and installed. **Do not remove this section or this entry.** Do not remove any other sections—relating to other environments—unless you do not want the ActiveGate to support those particular environments anymore.
 
    Format of the entries in `authorization.properties`:
 

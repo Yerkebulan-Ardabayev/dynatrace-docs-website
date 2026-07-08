@@ -1,7 +1,6 @@
 ---
 title: Settings API - Monitoring schema table
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/settings/schemas/builtin-host-monitoring
-scraped: 2026-05-12T11:40:30.125155
 ---
 
 # Settings API - Monitoring schema table

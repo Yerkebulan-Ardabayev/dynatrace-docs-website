@@ -1,7 +1,6 @@
 ---
 title: OneAgent environment-wide configuration API - GET auto-update configuration
 source: https://docs.dynatrace.com/managed/dynatrace-api/configuration-api/oneagent-configuration/oneagent-environment-wide/get-auto-update-configuration
-scraped: 2026-05-12T11:15:19.377254
 ---
 
 # OneAgent environment-wide configuration API - GET auto-update configuration
@@ -54,7 +53,7 @@ Applies to all OneAgents connecting to the environment if their **setting** para
 | setting | string | The auto-update state of OneAgents connecting to the environment:  * `ENABLED`: OneAgents automatically update to the most recent version. * `DISABLED`: OneAgents update to the version specified in the **version** field.  OneAgents that connect to the environment use this configuration only when their **setting** parameter is set to `INHERITED`. The element can hold these values * `ENABLED` * `DISABLED` |
 | targetVersion | string | Version to update a OneAgent to when automatic updates are enabled.  Supports relative versions `latest`, `previous` and `older` as well as specific version in `<major>.<minor>` format (for example `1.261`) or `<major>.<minor>.<revision>.<timestamp>` format (for example `1.261.178.20230313-090930`).  Only applicable when the **setting** parameter is set to `ENABLED`. |
 | updateWindows | [UpdateWindowsConfig](#openapi-definition-UpdateWindowsConfig) | Basic information about all configured update windows |
-| version | string | The version to which the OneAgent must be updated.  Specify the version in the `<major>.<minor>.<revision>` format (for example `1.181.0`) or `<major>.<minor>` format (for example `1.181`). You can fetch the list of available versions with the [GET available versionsï»¿](https://dt-url.net/fo23rb5) call. If no suitable installer is found for the provided version or the value is set to `null`, OneAgent won't be updated.  Only applicable when the **setting** parameter is set to `DISABLED`. |
+| version | string | The version to which the OneAgent must be updated.  Specify the version in the `<major>.<minor>.<revision>` format (for example `1.181.0`) or `<major>.<minor>` format (for example `1.181`). You can fetch the list of available versions with the [GET available versions﻿](https://dt-url.net/fo23rb5) call. If no suitable installer is found for the provided version or the value is set to `null`, OneAgent won't be updated.  Only applicable when the **setting** parameter is set to `DISABLED`. |
 
 #### The `ConfigurationMetadata` object
 
@@ -72,7 +71,7 @@ Basic information about all configured update windows
 
 | Element | Type | Description |
 | --- | --- | --- |
-| windows | [UpdateWindow[]](#openapi-definition-UpdateWindow) | List of update windows when the OneAgent update can start. If there is no value and update should be performed, the update will start at earliest convenience. |
+| windows | [UpdateWindow](#openapi-definition-UpdateWindow)[] | List of update windows when the OneAgent update can start. If there is no value and update should be performed, the update will start at earliest convenience. |
 
 #### The `UpdateWindow` object
 

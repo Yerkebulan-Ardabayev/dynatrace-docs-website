@@ -1,12 +1,11 @@
 ---
-title: Configure Session Replay for iOS
+title: Configure Session Replay Classic for iOS
 source: https://docs.dynatrace.com/managed/observe/digital-experience/session-replay/session-replay-ios
-scraped: 2026-05-12T11:33:35.180369
 ---
 
-# Configure Session Replay for iOS
+# Configure Session Replay Classic for iOS
 
-# Configure Session Replay for iOS
+# Configure Session Replay Classic for iOS
 
 * How-to guide
 * 8-min read
@@ -16,13 +15,13 @@ This page describes how to enable and customize Session Replay for your iOS apps
 
 OneAgent for iOS version 8.323 or later is required for applications compiled with Xcode 26.
 
-## Full Session Replay
+## Full Session Replay Classic
 
 [Session Replay](/managed/observe/digital-experience/session-replay "Learn how you can use Session Replay to better understand and troubleshoot errors experienced by your customers.") on iOS enables you to capture your customers' interactions with your mobile and replay each tap, swipe, screen rotation in a movie-like experience.
 
-## Session Replay on crashes
+## Session Replay Classic on crashes
 
-Additionally, you can use it to get more context for crash analysis in the form of video-like screen recordings that replay the user actions preceding a detected [crash](/managed/observe/digital-experience/rum-concepts/user-and-error-events#crash "Learn about user and error events and the types of user and error events captured by Dynatrace.").
+Additionally, you can use it to get more context for crash analysis in the form of video-like screen recordings that replay the user actions preceding a detected [crash](/managed/observe/digital-experience/rum-classic/rum-concepts/user-and-error-events#crash "Learn about user and error events and the types of user and error events captured by Dynatrace.").
 
 ## Prerequisites
 
@@ -38,11 +37,11 @@ Make sure that your system meets the following requirements:
 * Xcode 16+
 * SwiftUI is supported.
 
-* Real User Monitoring enabled for your application
+* Real User Monitoring activated for your application
 * Active Dynatrace Digital Experience Monitoring license
 * The web UI URL has a trusted certificate
 
-* [Secondary disk](/managed/observe/digital-experience/session-replay/enable-session-replay-web#session-replay-disk "Learn the prerequisites and the procedure for enabling Session Replay.") configured to store user session data
+* [Secondary disk](/managed/observe/digital-experience/session-replay/enable-session-replay-web#session-replay-disk "Learn the prerequisites and the procedure for enabling Session Replay Classic.") configured to store user session data
 
   Calculate secondary disk size
 
@@ -67,20 +66,20 @@ Make sure that your system meets the following requirements:
 * For a hybrid app, Session Replay is supported only for the native part of the app. For the browser part, Session Replay only supports webpage load events.
 * We recommend not using other crash reporting tools together with Dynatrace Session Replay.
 * Session Replay can capture only certain events. However, if you need to track a specific view or event that is not supported by default, you can [capture a custom event](#capture-custom-events).
-* You can only play back the user sessions recorded with Session Replay in [certain browsers](/managed/discover-dynatrace/get-started/dynatrace-ui/dynatrace-web-ui-requirements#session-replay "Find out which browsers Dynatrace Managed can run on.").
+* You can only play back the user sessions recorded with Session Replay in [certain browsers](/managed/discover-dynatrace/get-started/dynatrace-ui/dynatrace-web-ui-requirements#session-replay "Browser and TLS requirements for the Dynatrace Managed web UI, including supported browsers for Session Replay and Synthetic Monitoring.").
 * For iOS 26 applications generated with Xcode 26, masking functionality is only available with OneAgent for iOS version 8.323+.
 
-See [Technical restrictions for Session Replay for web applications](/managed/observe/digital-experience/session-replay/session-replay-restrictions-web "Learn which restrictions apply to Session Replay.") for more information.
+See [Technical restrictions for Session Replay for web applications](/managed/observe/digital-experience/session-replay/session-replay-restrictions-web "Learn which restrictions apply to Session Replay Classic.") for more information.
 
 Session Replay is a video-like reconstruction of the user interactions with mobile applications that use captured events and data. Because of this approach, replayed sessions can differ from the actual user experience. Known issues
 
-## Enable Session Replay on iOS
+## Enable Session Replay Classic on iOS
 
 If you haven't done so already, complete all steps described in the instrumentation wizard.
 
 1. Go to **Mobile**.
 2. Select the mobile application that you want to configure.
-3. Select **More** (**â¦**) > **Edit** in the upper-right corner of the tile with your application name
+3. Select **More** (**…**) > **Edit** in the upper-right corner of the tile with your application name
 4. From the application settings, select **General** > **Enablement and cost control**.
 5. Turn on **Enable Full Session Replay** and/or **Enable Session Replay on crashes**. You have the following options:
 
@@ -90,16 +89,16 @@ If you haven't done so already, complete all steps described in the instrumentat
 6. From the application settings, select **Instrumentation wizard**, and then select **Android** or **iOS**.
 7. Follow the steps in the instrumentation wizard.
 
-### Enable Session Replay for SwiftUI apps
+### Enable Session Replay Classic for SwiftUI apps
 
 OneAgent for iOS version 8.249+
 
-If you've already [instrumented your SwiftUI app](/managed/observe/digital-experience/mobile-applications/instrument-ios-app/instrumentation/instrument-swiftui-controls "Use the Dynatrace SwiftUI instrumentor to monitor your SwiftUI apps."), you can additionally enable Session Replay for such a mobile app.
+If you've already [instrumented your SwiftUI app](/managed/observe/digital-experience/rum-classic/mobile-applications/instrument-ios-app/instrumentation/instrument-swiftui-controls "Use the Dynatrace SwiftUI instrumentor to monitor your SwiftUI apps."), you can additionally enable Session Replay for such a mobile app.
 
 To enable Session Replay for your instrumented SwiftUI app
 
 1. Complete all the steps of the [**Enable Session Replay** instruction](#enable-session-replay) above.
-2. Set the [`DTXSwiftUIEnableSessionReplayInstrumentation` configuration key](/managed/observe/digital-experience/mobile-applications/instrument-ios-app/customization/ios-configuration-keys#swiftui "With configuration keys, you can fine-tune the auto-instrumentation of your iOS apps.") to `true` in your project's [`Info.plist` file](/managed/observe/digital-experience/mobile-applications/instrument-ios-app/instrumentation/info-plist-file "Info.plist file stores your app identification and configuration keys. Use it to fine-tune the instrumentation configuration.").
+2. Set the [`DTXSwiftUIEnableSessionReplayInstrumentation` configuration key](/managed/observe/digital-experience/rum-classic/mobile-applications/instrument-ios-app/customization/ios-configuration-keys#swiftui "With configuration keys, you can fine-tune the auto-instrumentation of your iOS apps.") to `true` in your project's [`Info.plist` file](/managed/observe/digital-experience/rum-classic/mobile-applications/instrument-ios-app/instrumentation/info-plist-file "Info.plist file stores your app identification and configuration keys. Use it to fine-tune the instrumentation configuration.").
 
    ```
    <key>DTXSwiftUIEnableSessionReplayInstrumentation</key>
@@ -113,9 +112,9 @@ To enable Session Replay for your instrumented SwiftUI app
 
 We support Session Replay for the following SwiftUI containers:
 
-* [Listï»¿](https://developer.apple.com/documentation/swiftui/list/)
-* [LazyVGridï»¿](https://developer.apple.com/documentation/swiftui/lazyvgrid)
-* [LazyHGridï»¿](https://developer.apple.com/documentation/swiftui/lazyhgrid)
+* [List﻿](https://developer.apple.com/documentation/swiftui/list/)
+* [LazyVGrid﻿](https://developer.apple.com/documentation/swiftui/lazyvgrid)
+* [LazyHGrid﻿](https://developer.apple.com/documentation/swiftui/lazyhgrid)
 
 #### Known limitations for SwiftUI apps
 
@@ -131,9 +130,9 @@ Dynatrace doesn't instrument the following SwiftUI containers:
 
 Session Replay on comes with three predefined masking levels:
 
-* **Safest**âall the editable text fields, images, labels, web views, and switches are masked.
-* **Safe**âall the editable text fields are masked.
-* **Custom**âby default, masks the same elements as **Safest**, but you can decide exactly which application components or views should be masked. See [Configure custom masking](#custom-masking) for details.
+* **Safest**—all the editable text fields, images, labels, web views, and switches are masked.
+* **Safe**—all the editable text fields are masked.
+* **Custom**—by default, masks the same elements as **Safest**, but you can decide exactly which application components or views should be masked. See [Configure custom masking](#custom-masking) for details.
 
 ### Change masking level
 
@@ -205,9 +204,9 @@ try? maskingConfiguration.removeNonMaskedView(viewIds: ["nonMasked_view_id"])
 
 You can also mask a view by adding the data-dtrum-mask masking tag to the view's accessibilityIdentifier. A view with this masking tag is always masked.
 
-## Enable Session Replay logs
+## Enable Session Replay Classic logs
 
-You can enable Session Replay logs the same way as for OneAgent. See [OneAgent for iOS debug logging](/managed/observe/digital-experience/mobile-applications/instrument-ios-app/customization/logging-for-ios "Turn on debug logging for OneAgent.") for more information
+You can enable Session Replay logs the same way as for OneAgent. See [OneAgent for iOS debug logging](/managed/observe/digital-experience/rum-classic/mobile-applications/instrument-ios-app/customization/logging-for-ios "Turn on debug logging for OneAgent.") for more information
 
 ## Capture custom events
 
@@ -261,7 +260,7 @@ try? AgentManager.trackCustomEvent(name: "my_view_name")
 
 ## Change transmission mode to Wi-Fi for images
 
-By default, all dataâinformation on captured events and imagesâis sent over any connection. However, you can opt to transfer images only when the users are connected to Wi-Fi to save their mobile data
+By default, all data—information on captured events and images—is sent over any connection. However, you can opt to transfer images only when the users are connected to Wi-Fi to save their mobile data
 
 ```
 AgentManager.setTransmissionMode(.wifi) // .data by default
@@ -269,7 +268,7 @@ AgentManager.setTransmissionMode(.wifi) // .data by default
 
 ## Screenshot debugger
 
-The Session Replay screenshot debugger allows you to see when the screenshots are taken, which parts of the screen are captured, and what dataâtext fields, images, labels, web views, and togglesâis masked
+The Session Replay screenshot debugger allows you to see when the screenshots are taken, which parts of the screen are captured, and what data—text fields, images, labels, web views, and toggles—is masked
 
 You can use the Session Replay screenshot debugger when running your mobile app in the simulator, so you don't have to wait until the session is closed and uploaded to Dynatrace.
 
@@ -294,10 +293,10 @@ To enable the Session Replay screenshot debugger:
 
 ## Troubleshooting
 
-* [User sessions are not recorded at allï»¿](https://dt-url.net/yw438pl)
-* [User sessions are recorded, but Session Replay is not availableï»¿](https://dt-url.net/74638c2)
+* [User sessions are not recorded at all﻿](https://dt-url.net/yw438pl)
+* [User sessions are recorded, but Session Replay is not available﻿](https://dt-url.net/74638c2)
 
 ## Related topics
 
 * [Session Replay](/managed/observe/digital-experience/session-replay "Learn how you can use Session Replay to better understand and troubleshoot errors experienced by your customers.")
-* [View crash reports for mobile applications](/managed/observe/digital-experience/mobile-applications/analyze-and-use/crash-reports-mobile "Check the latest crash reports for your mobile applications.")
+* [View crash reports for mobile applications in RUM Classic](/managed/observe/digital-experience/rum-classic/mobile-applications/analyze-and-use/crash-reports-mobile "Check the latest crash reports for your mobile applications.")

@@ -1,7 +1,6 @@
 ---
 title: Configuration API
 source: https://docs.dynatrace.com/managed/dynatrace-api/configuration-api
-scraped: 2026-05-12T11:02:59.960540
 ---
 
 # Configuration API
@@ -13,7 +12,7 @@ scraped: 2026-05-12T11:02:59.960540
 
 Automation is the key to successful IT operations. Automation is also the key to successful monitoring and how you set up your monitoring environment or software intelligence platform.
 
-Managing your configuration is critically importantâyou probably wouldnât let anybody change the configuration of your production monitoring environment without proper staging tests.
+Managing your configuration is critically important—you probably wouldn’t let anybody change the configuration of your production monitoring environment without proper staging tests.
 
 Keeping track of all the changes within your configurations is another important aspect of what is commonly known as *configuration as code*.
 
@@ -153,7 +152,7 @@ Dynatrace configuration API helps you keep track of your Dynatrace monitoring en
 
 ## API Explorer
 
-You can access all Dynatrace API endpoints using the API Explorer. From the [user menu](/managed/discover-dynatrace/get-started/dynatrace-ui#user-menu-previous-dynatrace "Navigate the Dynatrace Managed platform"), scroll down to **Dynatrace API** and select the API section you're interested in.
+You can access all Dynatrace API endpoints using the API Explorer. From the [user menu](/managed/discover-dynatrace/get-started/dynatrace-ui#user-menu-previous-dynatrace "Explore Dynatrace Managed, including navigation, browser requirements, timeframe selection, metric notation, and accessibility."), scroll down to **Dynatrace API** and select the API section you're interested in.
 
 Alternatively, you can access the API Explorer via the direct link `https://{your-domain}/e/{your-environment-id}/rest-api-doc/`.
 

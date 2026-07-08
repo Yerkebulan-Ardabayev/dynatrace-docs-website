@@ -1,7 +1,6 @@
 ---
 title: Change state of access request
 source: https://docs.dynatrace.com/managed/dynatrace-api/cluster-api/cluster-api-v2/remote-access/put-change-access-request-state
-scraped: 2026-05-12T11:05:59.951223
 ---
 
 # Change state of access request

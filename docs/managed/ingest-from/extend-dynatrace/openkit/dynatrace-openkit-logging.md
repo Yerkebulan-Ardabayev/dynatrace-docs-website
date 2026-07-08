@@ -1,7 +1,6 @@
 ---
 title: Dynatrace OpenKit logging
 source: https://docs.dynatrace.com/managed/ingest-from/extend-dynatrace/openkit/dynatrace-openkit-logging
-scraped: 2026-05-12T11:33:43.464718
 ---
 
 # Dynatrace OpenKit logging

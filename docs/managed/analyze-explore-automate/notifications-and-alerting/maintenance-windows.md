@@ -1,7 +1,6 @@
 ---
 title: Maintenance windows
 source: https://docs.dynatrace.com/managed/analyze-explore-automate/notifications-and-alerting/maintenance-windows
-scraped: 2026-05-12T11:08:22.082505
 ---
 
 # Maintenance windows

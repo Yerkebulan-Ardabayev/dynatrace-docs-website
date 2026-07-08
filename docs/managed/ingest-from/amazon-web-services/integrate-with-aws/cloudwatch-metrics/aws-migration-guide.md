@@ -1,7 +1,6 @@
 ---
 title: Migrate from AWS classic (formerly 'built-in') services to cloud services
 source: https://docs.dynatrace.com/managed/ingest-from/amazon-web-services/integrate-with-aws/cloudwatch-metrics/aws-migration-guide
-scraped: 2026-05-12T11:29:34.423156
 ---
 
 # Migrate from AWS classic (formerly 'built-in') services to cloud services
@@ -16,7 +15,7 @@ From the AWS overview page, you can access Dynatrace classic services and cloud 
 
 ## Classic services vs cloud services
 
-As previously mentioned, classic services and cloud services share the same AWS resources. However, cloud services support a wider range of configuration options, such as new metrics and customizable monitored metrics. To give you more customization options, weâve started the following:
+As previously mentioned, classic services and cloud services share the same AWS resources. However, cloud services support a wider range of configuration options, such as new metrics and customizable monitored metrics. To give you more customization options, we’ve started the following:
 
 * Adding more services to the **Cloud services** section so you can customize which metrics you want to monitor.
 * Adding more metrics for cloud services; not only are they configurable, but you can now monitor much more than before.
@@ -44,26 +43,26 @@ Even though classic and cloud services monitor the same AWS resources on Dynatra
 You currently have the option to choose from a classic or cloud service to preserve historical data, but be aware of the following:
 
 * Historical data is persisted on the classic services. If you switch back, monitored data will present gaps for the period in which the resources were monitored via the cloud service.
-* You canât have both of them turned on simultaneously. Even though on the Dynatrace side theyâre two different services, the legacy and new versions monitor the same AWS resource. If you had two versions switched on simultaneously, you would be charged double for polling the same data twice.
+* You can’t have both of them turned on simultaneously. Even though on the Dynatrace side they’re two different services, the legacy and new versions monitor the same AWS resource. If you had two versions switched on simultaneously, you would be charged double for polling the same data twice.
 * If you turn on the new version, the classic version is turned off automatically, and vice versa.
 * There is no direct link between
 
   + Entities containing historical and new data.
-  + Cloud service data and data coming from OneAgent for opaque **Amazon RDS**ânot linked to the new cloud service page with CloudWatch metrics.
+  + Cloud service data and data coming from OneAgent for opaque **Amazon RDS**—not linked to the new cloud service page with CloudWatch metrics.
 * Logs from [Amazon Data Firehose](/managed/ingest-from/amazon-web-services/integrate-with-aws/aws-logs-ingest/lm-stream-logs-with-firehose "Amazon Data Firehose integration allows ingest of cloud logs directly, without additional infrastructure needed, and at higher throughput.") to **Amazon RDS** are still being linked to the historical data and entity `RELATIONAL_DATABASE_SERVICE`.
 * Events or problems that would have been auto-detected on the historical (classic) data might not be automatically raised. Alerting rules are not provided for these cloud services:
 
   + **Amazon RDS**
   + **Amazon EBS**
-  + **AWS Lambda**â[predefined metric event configuration](/managed/ingest-from/amazon-web-services/integrate-with-aws/cloudwatch-metrics/aws-set-up-metric-events-for-alerting "Set up and configure metric events for alerting.") is provided but needs to be manually enabled.
+  + **AWS Lambda**—[predefined metric event configuration](/managed/ingest-from/amazon-web-services/integrate-with-aws/cloudwatch-metrics/aws-set-up-metric-events-for-alerting "Set up and configure metric events for alerting.") is provided but needs to be manually enabled.
 
-To monitor cloud services, you need to have [Environment ActiveGateï»¿](https://dt-url.net/sc0396g) configured.
+To monitor cloud services, you need to have [Environment ActiveGate﻿](https://dt-url.net/sc0396g) configured.
 
 ## Changes in the UI
 
 Your AWS overview page changes after configuring a new version of a service.
 
-For example, letâs have a look at **Amazon EBS**.
+For example, let’s have a look at **Amazon EBS**.
 
 * If the legacy **Amazon EBS (classic)** service is configured, this is what the **EBS volumes** section of the AWS overview looks like.
 

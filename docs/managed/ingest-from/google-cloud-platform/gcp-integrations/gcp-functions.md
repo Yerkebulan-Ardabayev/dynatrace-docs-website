@@ -1,7 +1,6 @@
 ---
 title: Google Cloud Functions monitoring
 source: https://docs.dynatrace.com/managed/ingest-from/google-cloud-platform/gcp-integrations/gcp-functions
-scraped: 2026-05-12T11:10:40.266617
 ---
 
 # Google Cloud Functions monitoring
@@ -27,9 +26,9 @@ Google Cloud Functions lets you run your code without provisioning or managing s
 
 ## Monitoring consumption
 
-For Google Cloud Functions, monitoring consumption is based on Davis data units. See [Serverless monitoring](/managed/license/monitoring-consumption-classic/davis-data-units/serverless-monitoring "Understand how serverless monitoring consumption is calculated.") for details.
+For Google Cloud Functions, monitoring consumption is based on Davis data units. See [Serverless monitoring](/managed/license/classic-licensing/davis-data-units/serverless-monitoring "Understand how serverless monitoring consumption is calculated.") for details.
 
 ## Related topics
 
 * [Set up Dynatrace on Google Cloud](/managed/ingest-from/google-cloud-platform "Monitor Google Cloud with Dynatrace.")
-* [Google Cloud monitoringï»¿](https://www.dynatrace.com/technologies/google-cloud-monitoring/)
+* [Google Cloud monitoring﻿](https://www.dynatrace.com/technologies/google-cloud-monitoring/)

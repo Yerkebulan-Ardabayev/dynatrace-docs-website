@@ -1,7 +1,6 @@
 ---
 title: Transform OTLP gRPC to HTTP with the OTel Collector
 source: https://docs.dynatrace.com/managed/ingest-from/opentelemetry/collector/use-cases/grpc
-scraped: 2026-05-12T12:00:57.575460
 ---
 
 # Transform OTLP gRPC to HTTP with the OTel Collector
@@ -134,11 +133,11 @@ For our configuration, we configure the following components.
 
 ### Receivers
 
-Under `receivers`, we specify the gRPC [`otlp` receiverï»¿](https://github.com/open-telemetry/opentelemetry-collector/tree/v0.151.0/receiver/otlpreceiver) as active receiver component for our Collector instance.
+Under `receivers`, we specify the gRPC [`otlp` receiver﻿](https://github.com/open-telemetry/opentelemetry-collector/tree/v0.155.0/receiver/otlpreceiver) as active receiver component for our Collector instance.
 
 ### Exporters
 
-Under `exporters`, we specify the default [`otlp_http` exporterï»¿](https://github.com/open-telemetry/opentelemetry-collector/tree/v0.151.0/exporter/otlphttpexporter) and configure it with our Dynatrace API URL and the required authentication token.
+Under `exporters`, we specify the default [`otlp_http` exporter﻿](https://github.com/open-telemetry/opentelemetry-collector/tree/v0.155.0/exporter/otlphttpexporter) and configure it with our Dynatrace API URL and the required authentication token.
 
 For this purpose, we set the following two environment variables and reference them in the configuration values for `endpoint` and `Authorization`.
 

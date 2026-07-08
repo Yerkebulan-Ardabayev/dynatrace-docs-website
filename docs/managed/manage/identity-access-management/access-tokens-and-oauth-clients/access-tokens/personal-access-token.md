@@ -1,7 +1,6 @@
 ---
 title: Personal access token
 source: https://docs.dynatrace.com/managed/manage/identity-access-management/access-tokens-and-oauth-clients/access-tokens/personal-access-token
-scraped: 2026-05-12T11:14:04.904893
 ---
 
 # Personal access token
@@ -28,7 +27,7 @@ To enable personal access tokens
 
 To generate a personal access token
 
-1. Go to **Personal Access Tokens** (accessible via the [user menu](/managed/discover-dynatrace/get-started/dynatrace-ui#user-menu-previous-dynatrace "Navigate the Dynatrace Managed platform") in the previous Dynatrace).
+1. Go to **Personal Access Tokens** (accessible via the [user menu](/managed/discover-dynatrace/get-started/dynatrace-ui#user-menu-previous-dynatrace "Explore Dynatrace Managed, including navigation, browser requirements, timeframe selection, metric notation, and accessibility.") in the previous Dynatrace).
 2. Select **Generate new token**.
 3. Enter a name for your token.  
    Dynatrace doesn't enforce unique token names. You can create multiple tokens with the same name. Be sure to provide a meaningful name for each token you generate. Proper naming helps you to efficiently manage your tokens and perhaps delete them when they're no longer needed.

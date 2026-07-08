@@ -1,7 +1,6 @@
 ---
 title: Dynatrace settings framework
 source: https://docs.dynatrace.com/managed/manage/settings/settings-20
-scraped: 2026-05-12T11:03:34.983416
 ---
 
 # Dynatrace settings framework
@@ -20,7 +19,7 @@ Each Settings 2.0 configuration is represented by a *settings object* (which def
 
 Many settings can be set for different scopes (for an entire monitoring environment or a specific entity). The default scope is global (the entire monitoring environment).
 
-Configurations that are available via **Settings** (in Dynatrace, go to **Settings**) affect the entire environment. You can check for existing entity-level overrides of the environment-level setting. Select **More** (**â¦**) > **Hierarchy and overrides**. From here, you can easily navigate to entity-level configurations, which in turn provide information on the parent setting.
+Configurations that are available via **Settings** (in Dynatrace, go to **Settings**) affect the entire environment. You can check for existing entity-level overrides of the environment-level setting. Select **More** (**…**) > **Hierarchy and overrides**. From here, you can easily navigate to entity-level configurations, which in turn provide information on the parent setting.
 
 ![Global settings with overrides](https://dt-cdn.net/images/settings-global-1717-6ffb544dd6.png)
 
@@ -38,7 +37,7 @@ If a setting is available at multiple levels, manage it on the highest possible 
 
 For some settings, the order of the items is essential. For example, naming rules are evaluated in a particular order, and the first matching rule applies.
 
-Ordered settings can be defined on the global and entity level. However, hierarchy works slightly differently hereâentity-level settings don't override global settings, they extend them. The list of entity-level settings is prepended on top of the global list; therefore, entity-level rules are evaluated first. If none of the entity-level rules apply, the evaluation continues with global rules.
+Ordered settings can be defined on the global and entity level. However, hierarchy works slightly differently here—entity-level settings don't override global settings, they extend them. The list of entity-level settings is prepended on top of the global list; therefore, entity-level rules are evaluated first. If none of the entity-level rules apply, the evaluation continues with global rules.
 
 You can easily re-order ordered items by dragging and dropping them to the required position.
 
@@ -48,7 +47,7 @@ Settings - reorder list
 
 ## Configuration history
 
-Every Settings 2.0 configuration maintains a history of changes, keeping track of changes to the configuration and who made these changes. To access history, select **More** (**â¦**) > **Revision history**.
+Every Settings 2.0 configuration maintains a history of changes, keeping track of changes to the configuration and who made these changes. To access history, select **More** (**…**) > **Revision history**.
 
 ![Settings history](https://dt-cdn.net/images/settings-history-1242-a32e589da1.png)
 

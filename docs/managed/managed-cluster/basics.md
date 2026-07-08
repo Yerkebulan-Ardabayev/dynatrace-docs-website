@@ -1,12 +1,11 @@
 ---
-title: Basics
+title: Managed Cluster basics
 source: https://docs.dynatrace.com/managed/managed-cluster/basics
-scraped: 2026-05-12T11:11:09.093953
 ---
 
-# Basics
+# Managed Cluster basics
 
-# Basics
+# Managed Cluster basics
 
 * 1-min read
 * Updated on May 08, 2026

@@ -1,14 +1,13 @@
 ---
 title: Cluster API v1
 source: https://docs.dynatrace.com/managed/dynatrace-api/cluster-api/cluster-api-v1
-scraped: 2026-05-12T12:04:47.499302
 ---
 
 # Cluster API v1
 
 # Cluster API v1
 
-* Published Nov 18, 2020
+* Updated on Jun 03, 2026
 
 Dynatrace Managed exposes cluster-wide functionality via REST endpoints. This interactive documentation also acts as a REST client you can use to interact with Dynatrace Managed clusters.
 
@@ -63,6 +62,10 @@ To access the Cluster API
 * [Get cluster SSL certificate details](/managed/dynatrace-api/cluster-api/cluster-api-v1/ssl-certificates-v1/get-cluster-ssl-cert-details "Learn how to use the Dynatrace API to get cluster SSL certificate details.")
 * [Get cluster SSL certificate storage status](/managed/dynatrace-api/cluster-api/cluster-api-v1/ssl-certificates-v1/get-cluster-ssl-cert-storage-status "Learn how to use the Dynatrace API to get cluster SSL certificate storage status.")
 * [Store cluster SSL certificate](/managed/dynatrace-api/cluster-api/cluster-api-v1/ssl-certificates-v1/post-cluster-ssl-cert-store-status "Learn how to use the Dynatrace API to store cluster SSL certificate.")
+
+### Updates
+
+* [Trigger manual cluster update](/managed/dynatrace-api/cluster-api/cluster-api-v1/updates-v1/post-trigger-manual-cluster-update "Learn how to use the Dynatrace API to trigger manual cluster update.")
 
 ### Users
 

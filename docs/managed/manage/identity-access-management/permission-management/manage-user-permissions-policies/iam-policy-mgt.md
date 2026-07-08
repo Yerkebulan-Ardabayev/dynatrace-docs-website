@@ -1,7 +1,6 @@
 ---
 title: Manage IAM policies
 source: https://docs.dynatrace.com/managed/manage/identity-access-management/permission-management/manage-user-permissions-policies/iam-policy-mgt
-scraped: 2026-05-12T11:49:53.325675
 ---
 
 # Manage IAM policies
@@ -25,10 +24,10 @@ To list configured IAM policies
 1. In the Cluster Management Console, go to **User authentication** > **Policy management**.
 2. Review the table of all existing policies that you can bind to user groups.
 
-   * **Policy**âthe name of the policy
-   * **Policy description**âa brief description of the policy
-   * **Organizational level**â`global`, `cluster`, or `environment`
-   * **Actions**âview, edit, or delete that row's policy (actions available to you depend on your permission level)
+   * **Policy**—the name of the policy
+   * **Policy description**—a brief description of the policy
+   * **Organizational level**—`global`, `cluster`, or `environment`
+   * **Actions**—view, edit, or delete that row's policy (actions available to you depend on your permission level)
 
 ### Default policies
 
@@ -37,7 +36,7 @@ To let you use policies right away, Dynatrace IAM is shipped with built-in globa
 * On the **Policies** page, in the **Source** column, they're all set to `Dynatrace`
 * They're predefined and managed by Dynatrace
 * You can apply a built-in policy by [assigning it to a group](/managed/manage/identity-access-management/permission-management/manage-user-permissions-policies "Working with policies") for the whole account or to any environment.
-* You can inspect themâselect **View policy** in the **Actions** columnâbut you can't edit them
+* You can inspect them—select **View policy** in the **Actions** column—but you can't edit them
 
 ## Create a policy
 

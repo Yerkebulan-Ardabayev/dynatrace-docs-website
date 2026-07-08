@@ -1,7 +1,6 @@
 ---
 title: ActiveGate default installation settings for Windows
 source: https://docs.dynatrace.com/managed/ingest-from/dynatrace-activegate/installation/windows/windows-default-settings
-scraped: 2026-05-12T11:36:29.629318
 ---
 
 # ActiveGate default installation settings for Windows
@@ -23,10 +22,10 @@ On Windows, the `%PROGRAMDATA%` directory is usually hidden for non-privileged u
 | ActiveGate configuration | `%PROGRAMDATA%\dynatrace\gateway\config` |  |  |
 | ActiveGate SSL folder | `%PROGRAMDATA%\dynatrace\gateway\ssl` |  |  |
 | ActiveGate temporary files | `%PROGRAMDATA%\dynatrace\gateway\tmp` |  | 4 GB (including 3 GB for cached OneAgent installers and container images) |
-| ActiveGate logs | `%PROGRAMDATA%\dynatrace\gateway\log` |  | 500 MB |
+| ActiveGate logs | `%PROGRAMDATA%\dynatrace\gateway\log` |  | 1.2 GB |
 | Dump files uploaded to ActiveGate by OneAgent | `%PROGRAMDATA%\dynatrace\gateway\dump` |  | Functionality off by default. When activated, can take configurable maximum size: default 100 GB. |
-| ActiveGate packages directory for auto-update installer downloads | `%PROGRAMDATA%\dynatrace\packages` |  | 500 MB |
-| ActiveGate extensions executable files, libraries, and related files | `%PROGRAMFILES%\dynatrace\remotepluginmodule` | `<INSTALL>\remotepluginmodule` | 350 MB |
+| ActiveGate packages directory for auto-update installer downloads | `%PROGRAMDATA%\dynatrace\packages` |  | 600 MB |
+| ActiveGate extensions executable files, libraries, and related files | `%PROGRAMFILES%\dynatrace\remotepluginmodule` | `<INSTALL>\remotepluginmodule` | 1.2 GB |
 | ActiveGate extensions configuration, logs, cache, run-time work area | `%PROGRAMDATA%\dynatrace\remotepluginmodule` |  | 2 GB (for logs and crash dumps) |
 | ActiveGate extensions upload directory | `%PROGRAMFILES%\dynatrace\remotepluginmodule\plugin_deployment` | `<INSTALL>\remotepluginmodule\plugin_deployment` | Depending on uploaded extensions |
 | zRemote executable files, libraries, and related files | `%PROGRAMFILES%\dynatrace\zremote` | `<INSTALL>\zremote` | 50 MB |
@@ -45,7 +44,7 @@ On Windows, the `%PROGRAMDATA%` directory is usually hidden for non-privileged u
 | **Component name** | **Service name** | **Description** |
 | ActiveGate | `Dynatrace Gateway` | The main ActiveGate service. Present for all ActiveGate [purposes](/managed/ingest-from/dynatrace-activegate/capabilities "Learn the capabilities and uses of ActiveGate.") and functional [modules](/managed/ingest-from/dynatrace-activegate/configuration/configure-activegate#modules "Learn which ActiveGate properties you can configure based on your needs and requirements."). |
 | ActiveGate auto-updater | `Dynatrace Autoupdater` | An auto-updater service. Present for all ActiveGate [purposes](/managed/ingest-from/dynatrace-activegate/capabilities "Learn the capabilities and uses of ActiveGate.") and functional [modules](/managed/ingest-from/dynatrace-activegate/configuration/configure-activegate#modules "Learn which ActiveGate properties you can configure based on your needs and requirements."). |
-| Extensions | `Dynatrace Extensions Controller` | Service for the [Extensions functional module](/managed/ingest-from/dynatrace-activegate/configuration/configure-activegate#extn2_mod "Learn which ActiveGate properties you can configure based on your needs and requirements."). Present on ActiveGates installed for the [routing-monitoring purpose](/managed/ingest-from/dynatrace-activegate/capabilities/routing-monitoring-purpose "Learn about the routing and monitoring capabilities and uses of ActiveGate."). This service will be active or inactive, depending on configurationâfor default setting, refer to the module description. |
+| Extensions | `Dynatrace Extensions Controller` | Service for the [Extensions functional module](/managed/ingest-from/dynatrace-activegate/configuration/configure-activegate#extn2_mod "Learn which ActiveGate properties you can configure based on your needs and requirements."). Present on ActiveGates installed for the [routing-monitoring purpose](/managed/ingest-from/dynatrace-activegate/capabilities/routing-monitoring-purpose "Learn about the routing and monitoring capabilities and uses of ActiveGate."). This service will be active or inactive, depending on configuration—for default setting, refer to the module description. |
 | zRemote | `Dynatrace zRemote` | Service for the [zRemote functional module](/managed/ingest-from/dynatrace-activegate/configuration/configure-activegate#zos_mod "Learn which ActiveGate properties you can configure based on your needs and requirements."). Present on ActiveGates installed for the [purpose of routing z/OS traffic to Dynatrace](/managed/ingest-from/dynatrace-activegate/capabilities/zremote-purpose "Learn about installing the zRemote module for z/OS monitoring."). |
 | Synthetic | `Dynatrace Synthetic` | Service for the [Synthetic functional module](/managed/ingest-from/dynatrace-activegate/configuration/configure-activegate#synth_mod "Learn which ActiveGate properties you can configure based on your needs and requirements."). Present on ActiveGates installed for the [purpose of running Synthetic monitors from a private location](/managed/ingest-from/dynatrace-activegate/capabilities/synthetic-purpose "ActiveGates purposed for synthetic monitoring of internal and external resources from private Synthetic locations"). |
 

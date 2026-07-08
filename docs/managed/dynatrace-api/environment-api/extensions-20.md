@@ -1,7 +1,6 @@
 ---
 title: Extensions 2.0 API
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/extensions-20
-scraped: 2026-05-12T11:12:09.078510
 ---
 
 # Extensions 2.0 API

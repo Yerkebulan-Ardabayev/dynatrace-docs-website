@@ -1,7 +1,6 @@
 ---
 title: Azure Machine Learning monitoring
 source: https://docs.dynatrace.com/managed/ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics/monitor-azure-machine-learning
-scraped: 2026-05-12T11:25:18.497096
 ---
 
 # Azure Machine Learning monitoring

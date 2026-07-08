@@ -1,7 +1,6 @@
 ---
 title: Hub capabilities API - GET categories
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/hub/get-categories
-scraped: 2026-05-12T11:54:40.791115
 ---
 
 # Hub capabilities API - GET categories
@@ -47,7 +46,7 @@ The request doesn't provide any configurable parameters.
 
 | Element | Type | Description |
 | --- | --- | --- |
-| items | [Category[]](#openapi-definition-Category) | A list of available categories. |
+| items | [Category](#openapi-definition-Category)[] | A list of available categories. |
 
 #### The `Category` object
 
@@ -70,7 +69,7 @@ A list of available categories.
 | Element | Type | Description |
 | --- | --- | --- |
 | code | integer | The HTTP status code |
-| constraintViolations | [ConstraintViolation[]](#openapi-definition-ConstraintViolation) | A list of constraint violations |
+| constraintViolations | [ConstraintViolation](#openapi-definition-ConstraintViolation)[] | A list of constraint violations |
 | message | string | The error message |
 
 #### The `ConstraintViolation` object

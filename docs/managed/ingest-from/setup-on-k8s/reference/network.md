@@ -1,7 +1,6 @@
 ---
 title: Network traffic
 source: https://docs.dynatrace.com/managed/ingest-from/setup-on-k8s/reference/network
-scraped: 2026-05-12T11:53:40.710402
 ---
 
 # Network traffic
@@ -38,11 +37,11 @@ Dynatrace Operator components are accessible through specific ports and access v
 
 1
 
-[Liveness probesï»¿](https://dt-url.net/dh03q2c) are used by Kubernetes to verify the container is running properly. If the request fails, the container will be restarted. [Readiness probesï»¿](https://dt-url.net/ml23qbl) are used by Kubernetes to verify the Pod is ready to accept traffic.
+[Liveness probes﻿](https://dt-url.net/dh03q2c) are used by Kubernetes to verify the container is running properly. If the request fails, the container will be restarted. [Readiness probes﻿](https://dt-url.net/ml23qbl) are used by Kubernetes to verify the Pod is ready to accept traffic.
 
 2
 
-[Metrics endpointsï»¿](https://dt-url.net/t543q6q) emit additional metrics in Prometheus format.
+[Metrics endpoints﻿](https://dt-url.net/t543q6q) emit additional metrics in Prometheus format.
 
 No ingress traffic is accepted for EdgeConnect and OneAgent.
 

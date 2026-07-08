@@ -1,7 +1,6 @@
 ---
 title: Your license lifecycle
 source: https://docs.dynatrace.com/managed/manage/account-management/accounts-environments/license-lifecycle
-scraped: 2026-05-12T11:37:19.230188
 ---
 
 # Your license lifecycle
@@ -37,7 +36,7 @@ You will receive a notification email that explains the details of your license 
 
 Your license becomes active at its start date.
 
-With an active Dynatrace license, you can consume Dynatrace services according to the [monitoring consumption rules](/managed/license "About Dynatrace Platform Subscription (DPS), the licensing model for all Dynatrace capabilities.") and the terms and conditions of your contract.
+With an active Dynatrace license, you can consume Dynatrace services according to the [monitoring consumption rules](/managed/license/monitoring-consumption-classic "Understand how Dynatrace classic monitoring consumption is calculated, including host units, DDUs, DEM units, and Application Security units.") and the terms and conditions of your contract.
 
 You can view your consumption and the remaining quotas of your license in [Account Management](/managed/manage/account-management "Manage your Dynatrace license, accounts, platform adoption, and environment health.") or via the [Dynatrace Platform Subscription API](/managed/dynatrace-api/account-management-api/dynatrace-platform-subscription-api "Query the data about your Dynatrace Platform Subscription via the Account Management API.").
 Additionally, you can download consumption details via the [Cluster API](/managed/dynatrace-api/cluster-api/cluster-api-v2/export-license-data/get-export-license-data-hour "Learn how to export aggregated hourly license usage as a ZIP file for an hour.").
@@ -71,4 +70,4 @@ You are responsible for deleting your captured Dynatrace monitoring data.
 ## Data retention
 
 Different types of monitored data are stored for different periods of time.
-For more information, see [Data retention periods](/managed/manage/data-privacy-and-security/data-privacy/data-retention-periods "Check retention times for various data types.").
+For more information, see [Data retention periods](/managed/manage/data-privacy-and-security/data-privacy/data-retention-periods "Review default and configurable retention periods for service, RUM Classic, synthetic, Log Monitoring, metric, diagnostic, and security data in Dynatrace Managed.").

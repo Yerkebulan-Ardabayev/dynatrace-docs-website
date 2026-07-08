@@ -1,7 +1,6 @@
 ---
 title: RUM JavaScript API - GET latest version
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/rum/real-user-monitoring-javascript-code/get-most-recent-version
-scraped: 2026-05-12T11:55:53.686660
 ---
 
 # RUM JavaScript API - GET latest version

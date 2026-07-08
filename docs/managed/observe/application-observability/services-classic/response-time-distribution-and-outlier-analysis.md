@@ -1,7 +1,6 @@
 ---
 title: Response time distribution and outlier analysis
 source: https://docs.dynatrace.com/managed/observe/application-observability/services-classic/response-time-distribution-and-outlier-analysis
-scraped: 2026-05-12T11:21:55.600830
 ---
 
 # Response time distribution and outlier analysis
@@ -75,7 +74,7 @@ Outlier 6
 
 ## Analyze slow requests
 
-Returning to the **Response time distribution** page, you can see that there are a few requests that have response times higher than `3.4 s`. Selecting this column in the chart reveals further detail (see below). This last selection has revealed an important insightâthere is only a single request in this response time range, with a response time of `3.77 s` (visible below in the **Top web requests** section). This single outlier has skewed the overall response time of the service. Now it's time to dig a little deeper for the root cause of this issue.
+Returning to the **Response time distribution** page, you can see that there are a few requests that have response times higher than `3.4 s`. Selecting this column in the chart reveals further detail (see below). This last selection has revealed an important insight—there is only a single request in this response time range, with a response time of `3.77 s` (visible below in the **Top web requests** section). This single outlier has skewed the overall response time of the service. Now it's time to dig a little deeper for the root cause of this issue.
 
 ![Outlier 7](https://dt-cdn.net/images/outlier07-1535-785f5bbe88.png)
 
@@ -109,9 +108,9 @@ Failure analysis shows that the requests in question all fail due to an `HTTP 50
 
 Outlier 11
 
-As you can see, outlier analysis, enabled by Dynatrace response-time distribution analysis, reveals which types of requests have the largest impact on each serviceâs overall response time. Outlier analysis also helps you understand the correlation between specific errors and response times.
+As you can see, outlier analysis, enabled by Dynatrace response-time distribution analysis, reveals which types of requests have the largest impact on each service’s overall response time. Outlier analysis also helps you understand the correlation between specific errors and response times.
 
 ## Related topics
 
 * [Service analysis timings](/managed/observe/application-observability/services-classic/service-analysis-timing "Find out what each time in service analysis means.")
-* [[Blog] Better understand response time differences over time using compare modeï»¿](https://www.dynatrace.com/news/blog/better-understand-response-time-differences-over-time-using-compare-mode/)
+* [[Blog] Better understand response time differences over time using compare mode﻿](https://www.dynatrace.com/news/blog/better-understand-response-time-differences-over-time-using-compare-mode/)

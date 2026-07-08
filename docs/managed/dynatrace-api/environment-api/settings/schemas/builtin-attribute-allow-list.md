@@ -1,7 +1,6 @@
 ---
 title: Settings API - Allowed attributes schema table
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/settings/schemas/builtin-attribute-allow-list
-scraped: 2026-05-12T11:47:32.791958
 ---
 
 # Settings API - Allowed attributes schema table
@@ -12,7 +11,7 @@ scraped: 2026-05-12T11:47:32.791958
 
 ### Allowed attributes (`builtin:attribute-allow-list)`
 
-While Dynatrace automatically captures all OpenTelemetry attributes, to prevent the accidental storage of personal data, only the values of attributes for which a related key is specified in the allow-list below are persisted. This enables you to meet your privacy requirements while controlling the amount of monitoring data that's persisted. For further details on Dynatrace's privacy settings, visit the [Data privacy and securityï»¿](https://dt-url.net/bo210srx) documentation.
+While Dynatrace automatically captures all OpenTelemetry attributes, to prevent the accidental storage of personal data, only the values of attributes for which a related key is specified in the allow-list below are persisted. This enables you to meet your privacy requirements while controlling the amount of monitoring data that's persisted. For further details on Dynatrace's privacy settings, visit the [Data privacy and security﻿](https://dt-url.net/bo210srx) documentation.
 
 | Schema ID | Schema groups | Scope |
 | --- | --- | --- |

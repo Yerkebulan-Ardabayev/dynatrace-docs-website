@@ -1,7 +1,6 @@
 ---
 title: GraalVM Native Image
 source: https://docs.dynatrace.com/managed/ingest-from/technology-support/application-software/java/graalvm-native-image
-scraped: 2026-05-12T11:23:48.763412
 ---
 
 # GraalVM Native Image
@@ -13,7 +12,7 @@ scraped: 2026-05-12T11:23:48.763412
 
 OneAgent version 1.295+ Dynatrace version 1.295+
 
-[GraalVM Native Imageï»¿](https://www.graalvm.org/latest/docs/getting-started/) is designed to achieve high performance when running applications written in Java and other languages by pre-compiling Java code into native images. AOT-compiled native images contain only the Java code required at runtime and exclude everything else from the libraries and frameworks.
+[GraalVM Native Image﻿](https://www.graalvm.org/latest/docs/getting-started/) is designed to achieve high performance when running applications written in Java and other languages by pre-compiling Java code into native images. AOT-compiled native images contain only the Java code required at runtime and exclude everything else from the libraries and frameworks.
 
 Dynatrace provides end-to-end distributed tracing for your native Java applications pre-compiled as GraalVM Native Image running in virtualized, containerized, and K8s environments. Dynatrace automatically discovers your native Java apps' services and visualizes their dependencies from the website to containers, infrastructure, and the cloud. It diagnoses anomalies in real-time using AI and determines the root cause down to the broken code. Performance metrics give you insight into memory usage, garbage collection, and threads.
 
@@ -153,7 +152,7 @@ To integrate Dynatrace in a Maven project
 
    Replace `ENVIRONMENT_URL` and `API_TOKEN` according to your Dynatrace environment:
 
-   * `ENVIRONMENT_URL` is the Dynatrace environment URL of your [monitoring environment](/managed/discover-dynatrace/get-started/monitoring-environment "Understand and learn how to work with monitoring environments.").
+   * `ENVIRONMENT_URL` is the Dynatrace environment URL of your [monitoring environment](/managed/discover-dynatrace/get-started/monitoring-environment "Learn what a Dynatrace monitoring environment is, how to find your environment ID, and how to set up and connect multiple environments.").
    * `API_TOKEN` is your access token and can, for example, be provided with an environment variable by using `<apiToken>${env.DT_API_TOKEN}</apiToken>`. This access token requires the **PaaS integration - Installer download** scope. To learn how to generate the token, see [Generate access token](/managed/manage/identity-access-management/access-tokens-and-oauth-clients/access-tokens#create-api-token "Learn the concept of an access token and its scopes.").
 
    This will automatically download and use the latest GraalVM Native Image module version available in your environment. To use a specific GraalVM Native Image module version, add `<agentVersion>AGENT_VERSION</agentVersion>` to the `agentDownload` configuration.
@@ -173,7 +172,7 @@ To integrate Dynatrace in a Maven project
    ```
 
    to configure the Dynatrace plugin. Replace `PATH_TO_DOWNLOADED_ZIP` with the absolute or relative path to the downloaded ZIP file.
-2. Run `mvnw package -Pnative -Pdynatrace-native`. This will generate a Native Image, including Dynatrace. The `native` profile adds the [Maven plugin for GraalVM Native image buildingï»¿](https://graalvm.github.io/native-build-tools/latest/maven-plugin.html#configuration-registering-plugin).
+2. Run `mvnw package -Pnative -Pdynatrace-native`. This will generate a Native Image, including Dynatrace. The `native` profile adds the [Maven plugin for GraalVM Native image building﻿](https://graalvm.github.io/native-build-tools/latest/maven-plugin.html#configuration-registering-plugin).
 
    Typically, the resulting Native Image will be available in the `target` folder. In addition to the Native Image, there will be a `dynatrace` folder. It is required for monitoring at runtime. If you want to run the Native Image on another machine, copy the `dynatrace` folder along with the Native Image.
 
@@ -247,7 +246,7 @@ To integrate Dynatrace in a Gradle project
 
    Replace `ENVIRONMENT_URL` and `API_TOKEN` according to your Dynatrace environment:
 
-   * `ENVIRONMENT_URL` is the Dynatrace environment URL of your [monitoring environment](/managed/discover-dynatrace/get-started/monitoring-environment "Understand and learn how to work with monitoring environments.").
+   * `ENVIRONMENT_URL` is the Dynatrace environment URL of your [monitoring environment](/managed/discover-dynatrace/get-started/monitoring-environment "Learn what a Dynatrace monitoring environment is, how to find your environment ID, and how to set up and connect multiple environments.").
    * `API_TOKEN` is your access token and can, for example, be provided with an environment variable by using `System.getenv("DT_API_TOKEN")`. This access token requires the **PaaS integration - Installer download** scope. To learn how to generate the token, see [Generate access token](/managed/manage/identity-access-management/access-tokens-and-oauth-clients/access-tokens#create-api-token "Learn the concept of an access token and its scopes.").
 
    This will automatically download and use the latest GraalVM Native Image module version available in your environment. To use a specific GraalVM Native Image module version, add `agentVersion = "AGENT_VERSION"` to the `agentDownload` configuration.
@@ -356,7 +355,7 @@ You can configure the following properties:
 
 * `agentDownload` is used to configure the automatic GraalVM Native Image module download:
 
-  + `environmentUrl` specifies the Dynatrace environment URL of your [monitoring environment](/managed/discover-dynatrace/get-started/monitoring-environment "Understand and learn how to work with monitoring environments.").
+  + `environmentUrl` specifies the Dynatrace environment URL of your [monitoring environment](/managed/discover-dynatrace/get-started/monitoring-environment "Learn what a Dynatrace monitoring environment is, how to find your environment ID, and how to set up and connect multiple environments.").
   + `apiToken` specifies the access token with **PaaS integration - Installer download** scope. To learn how to generate the token, see [Generate access token](/managed/manage/identity-access-management/access-tokens-and-oauth-clients/access-tokens#create-api-token "Learn the concept of an access token and its scopes.").
   + `agentVersion` specifies the GraalVM Native Image module version. If not set, the latest GraalVM Native Image module version is used.
 * `agentZip` sets the absolute or relative path to the manually downloaded ZIP file.
@@ -403,7 +402,7 @@ You can configure the following properties:
 
 * `agentDownload` is used to configure the automatic GraalVM Native Image module download:
 
-  + `environmentUrl` specifies the Dynatrace environment URL of your [monitoring environment](/managed/discover-dynatrace/get-started/monitoring-environment "Understand and learn how to work with monitoring environments.").
+  + `environmentUrl` specifies the Dynatrace environment URL of your [monitoring environment](/managed/discover-dynatrace/get-started/monitoring-environment "Learn what a Dynatrace monitoring environment is, how to find your environment ID, and how to set up and connect multiple environments.").
   + `apiToken` specifies the access token with **PaaS integration - Installer download** scope. To learn how to generate the token, see [Generate access token](/managed/manage/identity-access-management/access-tokens-and-oauth-clients/access-tokens#create-api-token "Learn the concept of an access token and its scopes.").
   + `agentVersion` specifies the GraalVM Native Image module version. If not set, the latest GraalVM Native Image module version is used.
 * `agentZip` sets the absolute or relative path to the manually downloaded ZIP file.
@@ -469,7 +468,7 @@ Furthermore, the GraalVM Native Image module currently does not support:
 * CPU profiling
 * Memory profiling
 * Memory dump analysis
-* Built-in metricsâlimited support; suspension time metrics are not reported
+* Built-in metrics—limited support; suspension time metrics are not reported
 
 ### Spring RestTemplate
 
@@ -501,7 +500,7 @@ Configure in your `pom.xml` file:
 </jvmArgs>
 ```
 
-For reference, see [Maven plugin for GraalVM Native Image buildingï»¿](https://graalvm.github.io/native-build-tools/latest/maven-plugin.html#configuration-options).
+For reference, see [Maven plugin for GraalVM Native Image building﻿](https://graalvm.github.io/native-build-tools/latest/maven-plugin.html#configuration-options).
 
 #### Gradle projects
 

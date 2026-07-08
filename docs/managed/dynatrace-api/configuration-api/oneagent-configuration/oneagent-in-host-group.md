@@ -1,7 +1,6 @@
 ---
 title: OneAgent in a host group API
 source: https://docs.dynatrace.com/managed/dynatrace-api/configuration-api/oneagent-configuration/oneagent-in-host-group
-scraped: 2026-05-12T11:04:31.655844
 ---
 
 # OneAgent in a host group API

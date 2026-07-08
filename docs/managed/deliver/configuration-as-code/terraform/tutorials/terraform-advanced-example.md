@@ -1,7 +1,6 @@
 ---
 title: Terraform advanced example
 source: https://docs.dynatrace.com/managed/deliver/configuration-as-code/terraform/tutorials/terraform-advanced-example
-scraped: 2026-05-12T11:21:32.505428
 ---
 
 # Terraform advanced example
@@ -41,7 +40,7 @@ In this example, we'll utilize a JSON input file to automate the creation of a m
 
    The configuration below uses a `locals` block to access the contents of `data.json` within the `resource` blocks.
 
-   For more information on each resource, refer to the [Terraform Registryï»¿](https://dt-url.net/1ta37uo) documentation.
+   For more information on each resource, refer to the [Terraform Registry﻿](https://dt-url.net/1ta37uo) documentation.
 
    ```
    locals {

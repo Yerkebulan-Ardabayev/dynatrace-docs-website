@@ -1,7 +1,6 @@
 ---
 title: Install the CICS module
 source: https://docs.dynatrace.com/managed/ingest-from/dynatrace-oneagent/installation-and-operation/zos/installation/install-cics
-scraped: 2026-05-12T11:24:24.044665
 ---
 
 # Install the CICS module
@@ -42,7 +41,7 @@ CICS distributed trace with exception
 
 Detect CICS anomalies and isolate fault domains with Dynatrace
 
-DavisÂ® AI automatically pinpoints the root cause of problems and assesses their user impact so that you can prioritize mitigation strategies and reduce the mean time to repair.
+Davis® AI automatically pinpoints the root cause of problems and assesses their user impact so that you can prioritize mitigation strategies and reduce the mean time to repair.
 
 ![CICS automatic fault domain isolation](https://dt-cdn.net/images/cics-problem-1985-100d80f55c.png)
 
@@ -245,8 +244,8 @@ To trace the CICS web service provider programs that are invoked by handler prog
 
 Only pipelines using the standard terminal handler are supported by Dynatrace. If you are running a non-standard terminal handler, it can be instrumented via the CICS and IMS SDK. As a starting point, you can use the following code samples:
 
-* [ADKJSONAï»¿](https://assets.dynatrace.com/global/doc/appmon/integrations-and-extensions/development-kits/agent-development-kit-adk/cics-and-ims-adk/adkjsona.txt)âCICS assembler example of starting paths for JSON requests in a user-written apphandler.
-* [ADKJSONCï»¿](https://assets.dynatrace.com/global/doc/appmon/integrations-and-extensions/development-kits/agent-development-kit-adk/cics-and-ims-adk/adkjsonc.txt)âCICS COBOL example of starting paths for JSON requests in a user-written apphandler.
+* [ADKJSONA﻿](https://assets.dynatrace.com/global/doc/appmon/integrations-and-extensions/development-kits/agent-development-kit-adk/cics-and-ims-adk/adkjsona.txt)—CICS assembler example of starting paths for JSON requests in a user-written apphandler.
+* [ADKJSONC﻿](https://assets.dynatrace.com/global/doc/appmon/integrations-and-extensions/development-kits/agent-development-kit-adk/cics-and-ims-adk/adkjsonc.txt)—CICS COBOL example of starting paths for JSON requests in a user-written apphandler.
 
 #### CICS SOAP pipeline
 

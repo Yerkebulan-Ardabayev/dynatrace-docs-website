@@ -1,7 +1,6 @@
 ---
 title: Hardware requirements for cloud deployments
 source: https://docs.dynatrace.com/managed/managed-cluster/installation/managed-cloud-requirements
-scraped: 2026-05-12T11:53:34.447682
 ---
 
 # Hardware requirements for cloud deployments
@@ -16,7 +15,7 @@ The following tables list the required virtual machine sizes for deploying Dynat
 
 ## Amazon Web Services
 
-For details on the instance types listed below, see [Amazon EC2 R6i Instancesï»¿](https://aws.amazon.com/ec2/instance-types/r6i/).
+For details on the instance types listed below, see [Amazon EC2 R6i Instances﻿](https://aws.amazon.com/ec2/instance-types/r6i/).
 
 | **Node type** | **Size** | **vCPU** | **Memory** (GiB) |
 | --- | --- | --- | --- |
@@ -28,7 +27,7 @@ For details on the instance types listed below, see [Amazon EC2 R6i Instancesï�
 
 ## Microsoft Azure
 
-For details on the instance types listed below, see [Linux Virtual Machines pricingï»¿](https://azure.microsoft.com/en-gb/pricing/details/virtual-machines/linux/).
+For details on the instance types listed below, see [Linux Virtual Machines pricing﻿](https://azure.microsoft.com/en-gb/pricing/details/virtual-machines/linux/).
 
 | **Node type** | **Size** | **vCPU** | **Memory** (GiB) |
 | --- | --- | --- | --- |
@@ -40,7 +39,7 @@ For details on the instance types listed below, see [Linux Virtual Machines pric
 
 ## Google Cloud
 
-For details on the instance types listed below, see [Google Compute Productsï»¿](https://cloud.google.com/compute/vm-instance-pricing#general-purpose_machine_type_family).
+For details on the instance types listed below, see [Google Compute Products﻿](https://cloud.google.com/compute/vm-instance-pricing#general-purpose_machine_type_family).
 
 | **Node type** | **Size** | **vCPU** | **Memory** (GiB) |
 | --- | --- | --- | --- |

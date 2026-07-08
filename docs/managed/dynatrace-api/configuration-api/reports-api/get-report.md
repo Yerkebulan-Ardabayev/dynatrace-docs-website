@@ -1,7 +1,6 @@
 ---
 title: Reports API - GET a report
 source: https://docs.dynatrace.com/managed/dynatrace-api/configuration-api/reports-api/get-report
-scraped: 2026-05-12T11:15:46.763842
 ---
 
 # Reports API - GET a report

@@ -1,7 +1,6 @@
 ---
 title: Mission Control data exchange
 source: https://docs.dynatrace.com/managed/managed-cluster/basics/mission-control-data-exchange
-scraped: 2026-05-12T11:08:32.416519
 ---
 
 # Mission Control data exchange
@@ -10,9 +9,9 @@ scraped: 2026-05-12T11:08:32.416519
 
 * Reference
 * 5-min read
-* Updated on May 08, 2026
+* Updated on May 19, 2026
 
-Managed Clusters exchange data with Mission Control at least once or periodically. You can customize data exchange with Mission Control via [Configure cluster preferences](/managed/managed-cluster/configuration/configure-cluster-preferences "Configure cluster preferences and privacy settings") to suit your organization's needs and data protection regulations.
+Managed Clusters exchange data with Mission Control at least once or periodically. You can customize data exchange with Mission Control via [Configure cluster preferences](/managed/managed-cluster/configuration/configure-cluster-preferences "Configure cluster preferences to manage proactive support reporting, remote access, data privacy, domain name, and community settings for your Managed Cluster.") to suit your organization's needs and data protection regulations.
 
 To ensure compliance with data protection regulations:
 
@@ -29,13 +28,13 @@ The following table documents the data that a Managed Cluster exchanges with Mis
 | Registration | Once after first startup | Cluster ID, license key | Registration status, username, password | No |
 | License check | Once every 5 minutes | Cluster ID | Cluster ID, license key, license name, license type, license status, license details, account name, license creation date, license expiration date, license units limits, license units overage limits, pricing model, remote access flag, trial environment flag, country code, monitored host categories | No |
 | License data | Once each hour | Cluster ID, start timeframe, end timeframe, *environments* license data  Per *environment*, see [Export license data](/managed/managed-cluster/operation/export-license-data "Learn how to export license data from the Cluster Management Console.") | License status, license key, license units usages, license units overages, remaining license units, *environments* license data  Per *environment*: environment UUID, license units usages, license units overages, remaining license units | No |
-| Health check | Once every 2 minutes | Cluster ID, Cluster version, auto update flag, events reporting flag, remote access flag, time zone, traffic volume, admin email address, *Cluster nodes*, *Cluster ActiveGates*, maintenance windows  Per *Cluster node*: node ID, node IP address, node state, server state, node startup timestamp, OS name, OS version, JVM info, CPU statistics, memory statistics, storage statistics, Cassandra version, Cassandra data files, Cassandra partitions, certificate type, custom settings  Per *Cluster ActiveGate*: ActiveGate ID, ActiveGate IP address, ActiveGate type, ActiveGate state, OS name, OS version, certificate type | Health status, health status description, minimum Cluster nodes, minimum CPU cores, minimum memory | No |
+| Health check | Once every 2 minutes | Cluster ID, Cluster version, auto update flag, events reporting flag, remote access flag, time zone, traffic volume, admin email address, *Managed Cluster nodes*, *Cluster ActiveGates*, maintenance windows  Per *Cluster node*: node ID, node IP address, node state, server state, node startup timestamp, OS name, OS version, JVM info, CPU statistics, memory statistics, storage statistics, Cassandra version, Cassandra data files, Cassandra partitions, certificate type, custom settings  Per *Cluster ActiveGate*: ActiveGate ID, ActiveGate IP address, ActiveGate type, ActiveGate state, OS name, OS version, certificate type | Health status, health status description, minimum Cluster nodes, minimum CPU cores, minimum memory | No |
 | Heartbeat | 20 requests every 10 minutes  12 requests every 10 minutes if remote access is disabled | Cluster ID, Cluster node ID, source type | Remote access flag, WebSocket URLs | No |
-| Environment synchronization | Synchronization difference every 10 minutes  Full synchronization once a day | Environment UUID, environment name | â | No |
-| Updates | Once each hour | â | Installation package label, installation package type, installation package version, minimum required version, *files*  Per *file*: file type, file size, download URL | No |
-| Dynatrace Hub | Every 30 to 60 minutes | â | Images and text describing the capabilities and extensions available in Dynatrace Hub | No |
+| Environment synchronization | Synchronization difference every 10 minutes  Full synchronization once a day | Environment UUID, environment name | – | No |
+| Updates | Once each hour | – | Installation package label, installation package type, installation package version, minimum required version, *files*  Per *file*: file type, file size, download URL | No |
+| Dynatrace Hub | Every 30 to 60 minutes | – | Images and text describing the capabilities and extensions available in Dynatrace Hub | No |
 | [Application Security vulnerability feeds](/managed/secure/application-security#vulnerability-feeds "Access the Dynatrace Application Security functionalities.") | When updates are available | Vulnerability feed data | Vulnerability feed data | No |
-| Cluster and OneAgent events (proactive support) | When events are available | â | Event type, event severity level, event timestamp, event description | Yes |
+| Cluster and OneAgent events (proactive support) | When events are available | – | Event type, event severity level, event timestamp, event description | Yes |
 
 The following table documents the data that Nodekeeper exchanges with Mission Control. All communication between Nodekeeper and Mission Control is encrypted.
 
@@ -47,9 +46,9 @@ The following table documents the data that Nodekeeper exchanges with Mission Co
 
 Dynatrace may retrieve information about the monitored technologies and product adoption in Managed Clusters, including the entities listed below, to inform you about incompatibilities and technology-specific risks associated with your Cluster.
 
-Dynatrace companies (Dynatrace LLC and subsidiaries) [operate globallyï»¿](https://www.dynatrace.com/company/locations). Data may be transferred to, and processed by cloud services in the United States and other locations. For details, see [Data privacy and security](/managed/manage/data-privacy-and-security "Learn how Dynatrace applies various security measures required to protect private data.").
+Dynatrace companies (Dynatrace LLC and subsidiaries) [operate globally﻿](https://www.dynatrace.com/company/locations). Data may be transferred to, and processed by cloud services in the United States and other locations. For details, see [Data privacy and security](/managed/manage/data-privacy-and-security "Learn how Dynatrace applies various security measures required to protect private data.").
 
-Relevant logs are accessible on each Managed Cluster node at `<datastore_dir>/log/server/audit.rest.proxy.log`. Dynatrace doesn't send host names or any information that could compromise your Clusterâs security.
+Relevant logs are accessible on each Managed Cluster node at `<datastore_dir>/log/server/audit.rest.proxy.log`. Dynatrace doesn't send host names or any information that could compromise your Cluster's security.
 
 | Type | Data |
 | --- | --- |
@@ -91,4 +90,4 @@ Relevant logs are accessible on each Managed Cluster node at `<datastore_dir>/lo
 
 ## Related topics
 
-* [Cluster preferences](/managed/managed-cluster/configuration/configure-cluster-preferences "Configure cluster preferences and privacy settings")
+* [Configure Cluster preferences](/managed/managed-cluster/configuration/configure-cluster-preferences "Configure cluster preferences to manage proactive support reporting, remote access, data privacy, domain name, and community settings for your Managed Cluster.")

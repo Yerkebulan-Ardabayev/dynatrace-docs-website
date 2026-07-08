@@ -1,7 +1,6 @@
 ---
 title: Third-party synthetic API - POST modify state of third-party monitors
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/synthetic/third-party-synthetic/post-modify-state
-scraped: 2026-05-12T11:54:38.789186
 ---
 
 # Third-party synthetic API - POST modify state of third-party monitors
@@ -82,7 +81,7 @@ This is a model of the request body, showing the possible elements. It has to be
 | Element | Type | Description |
 | --- | --- | --- |
 | code | integer | The HTTP status code |
-| constraintViolations | [ConstraintViolation[]](#openapi-definition-ConstraintViolation) | A list of constraint violations |
+| constraintViolations | [ConstraintViolation](#openapi-definition-ConstraintViolation)[] | A list of constraint violations |
 | message | string | The error message |
 
 #### The `ConstraintViolation` object

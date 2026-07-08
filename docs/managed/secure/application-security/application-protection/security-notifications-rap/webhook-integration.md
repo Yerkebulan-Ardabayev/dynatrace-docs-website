@@ -1,7 +1,6 @@
 ---
 title: Webhook integration for security notifications
 source: https://docs.dynatrace.com/managed/secure/application-security/application-protection/security-notifications-rap/webhook-integration
-scraped: 2026-05-12T12:10:34.466052
 ---
 
 # Webhook integration for security notifications

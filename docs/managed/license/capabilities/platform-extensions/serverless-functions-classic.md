@@ -1,7 +1,6 @@
 ---
 title: Serverless Functions Classic (DPS)
 source: https://docs.dynatrace.com/managed/license/capabilities/platform-extensions/serverless-functions-classic
-scraped: 2026-05-12T12:13:07.647138
 ---
 
 # Serverless Functions Classic (DPS)
@@ -117,4 +116,4 @@ Serverless Functions Classic (DPS)
 ## Related topics
 
 * [Platform extensions overview (DPS)](/managed/license/capabilities/platform-extensions "Learn how consumption of Dynatrace platform extensions is calculated using the Dynatrace Platform Subscription model.")
-* [Dynatrace pricingï»¿](https://www.dynatrace.com/pricing/)
+* [Dynatrace pricing﻿](https://www.dynatrace.com/pricing/)

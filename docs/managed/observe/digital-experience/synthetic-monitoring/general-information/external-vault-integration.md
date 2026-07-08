@@ -1,22 +1,21 @@
 ---
-title: External vault integration
+title: External vault integration in Classic
 source: https://docs.dynatrace.com/managed/observe/digital-experience/synthetic-monitoring/general-information/external-vault-integration
-scraped: 2026-05-12T11:31:58.437491
 ---
 
-# External vault integration
+# External vault integration in Classic
 
-# External vault integration
+# External vault integration in Classic
 
 * How-to guide
 * 22-min read
 * Updated on Jan 17, 2024
 
-Synthetic Monitoring [username-password](/managed/manage/credential-vault#uid-password "Store and manage credentials in the credential vault.") and [token](/managed/manage/credential-vault#token "Store and manage credentials in the credential vault.") credentials in the Dynatrace [credential vault](/managed/manage/credential-vault "Store and manage credentials in the credential vault.") can be synchronized with an external vaultâ[Azure Key Vault](#azure-key-vault), [HashiCorp Vault](#hashicorp), or [CyberArk Vault](#cyberark) (username-password credentials only). Synchronized credentials contain the keys of external key-value pairs that hold the required values.
+Synthetic Monitoring Classic [username-password](/managed/manage/credential-vault#uid-password "Store and manage credentials in the credential vault.") and [token](/managed/manage/credential-vault#token "Store and manage credentials in the credential vault.") credentials in the Dynatrace [credential vault](/managed/manage/credential-vault "Store and manage credentials in the credential vault.") can be synchronized with an external vault—[Azure Key Vault](#azure-key-vault), [HashiCorp Vault](#hashicorp), or [CyberArk Vault](#cyberark) (username-password credentials only). Synchronized credentials contain the keys of external key-value pairs that hold the required values.
 
 When you set up synchronized credentials in the credential vault, Dynatrace automatically creates [HTTP monitors](/managed/observe/digital-experience/synthetic-monitoring/http-monitors-classic/create-an-http-monitor-classic "Learn how to set up an HTTP monitor to check the performance and availability of your site.") specifically for the purpose of synchronization. You can also use the `api.saveCredential()` or `api.saveToken()` methods in [pre-and post-execution scripts](/managed/observe/digital-experience/synthetic-monitoring/http-monitors-classic/pre-and-post-scripting-for-http-monitors-classic "Learn how to apply pre and post scripts to your requests") to create your own synchronization monitors.
 
-Autocreated synchronization monitors are named with the credential ID of the synchronized credential and are executed hourly by default from the Amazon US East (N. Virginia) [public Synthetic location](/managed/observe/digital-experience/synthetic-monitoring/general-information/public-synthetic-locations "Learn about all currently available public Synthetic Monitoring locations."). Note that the request and response bodies and headers of synchronization monitors are automatically hidden from execution details (**Analyze execution details**).
+Autocreated synchronization monitors are named with the credential ID of the synchronized credential and are executed hourly by default from the Amazon US East (N. Virginia) [public Synthetic location](/managed/observe/digital-experience/synthetic-monitoring/general-information/public-synthetic-locations "Learn about all currently available public Synthetic Monitoring Classic locations."). Note that the request and response bodies and headers of synchronization monitors are automatically hidden from execution details (**Analyze execution details**).
 
 Other synthetic monitors can call and use these synchronized credentials for testing API endpoints and websites. The monitors that call these credentials use the synchronized values obtained from the external vaults. Synchronization frequency determines how often these credentials are rotated within the synthetic monitors that call them.
 
@@ -49,7 +48,7 @@ Before setting up credentials synchronized with Azure Key Vault, you need to def
    * In **Secret name for password**, enter the name of the Azure Key Vault key mapped to the password value; do not enter an actual password.
 
    * In **Secret name for token**, enter the name of the Azure Key Vault key mapped to the token value; do not enter an actual token value.
-9. Select a **Location for synchronization**âyou can select any public or private Synthetic location for [synchronization monitor](#azure-monitor) execution. You can search for a location by entering the location name in the field.
+9. Select a **Location for synchronization**—you can select any public or private Synthetic location for [synchronization monitor](#azure-monitor) execution. You can search for a location by entering the location name in the field.
 10. Optional Provide a **Description** for the credential.
 11. Credentials are set to **Owner access only** by default. (Read more about [credential ownership](/managed/manage/credential-vault#owner-shared-public "Store and manage credentials in the credential vault.").)
 12. **Save** your credential.
@@ -214,7 +213,7 @@ We recommend naming such prerequisite tokens and certificates so that they're ea
    ![Set up HashiCorp certificate synchronization - UID](https://dt-cdn.net/images/cv-hashicorp-certificate-uid-1113-8b177811b5.webp)
 
    Set up HashiCorp certificate synchronization - UID
-9. Select a **Location for synchronization**âyou can select any public or private Synthetic location for synchronization monitor execution. You can search for a location by entering the location name in the field.
+9. Select a **Location for synchronization**—you can select any public or private Synthetic location for synchronization monitor execution. You can search for a location by entering the location name in the field.
 10. Optional Provide a **Description**.
 11. Credentials are set to **Owner access only** by default. (Read more about [credential ownership](/managed/manage/credential-vault#owner-shared-public "Store and manage credentials in the credential vault.").)
 12. **Save** your credential.
@@ -403,7 +402,7 @@ Username-password credentials for use in synthetic monitors can be synchronized 
 
 ### Prerequisites
 
-* Before using [username and password authentication](#cyberark-monitor-uid-authentication), you need to define authentication credentials for CyberArk Vaultâa [username-password pair](/managed/manage/credential-vault#uid-password "Store and manage credentials in the credential vault.") and, optionally, a [certificate credential](/managed/manage/credential-vault#certificate "Store and manage credentials in the credential vault.") stored in the Dynatrace [credential vault](/managed/manage/credential-vault "Store and manage credentials in the credential vault."). We recommend naming such prerequisite credentials so that they're easily identifiable as companion credentials for synchronization.
+* Before using [username and password authentication](#cyberark-monitor-uid-authentication), you need to define authentication credentials for CyberArk Vault—a [username-password pair](/managed/manage/credential-vault#uid-password "Store and manage credentials in the credential vault.") and, optionally, a [certificate credential](/managed/manage/credential-vault#certificate "Store and manage credentials in the credential vault.") stored in the Dynatrace [credential vault](/managed/manage/credential-vault "Store and manage credentials in the credential vault."). We recommend naming such prerequisite credentials so that they're easily identifiable as companion credentials for synchronization.
 * Before using [host-based authentication](#cyberark-monitor-allowed-machines), you need to define **Allowed Machines** by hostname or IP address in CyberArk Vault Application Details. These are the hosts that are allowed to access the synchronized credentials in CyberArk Vault and are the public or private Synthetic locations you select for synchronization monitor execution. Note that when defining allowed machines in CyberArk Vault, the application ID must be the same as provided when [you set up a synchronized credential in Dynatrace](#cyberak-set-up). Optionally, you can also define a [certificate credential](/managed/manage/credential-vault#certificate "Store and manage credentials in the credential vault.") stored in the Dynatrace [credential vault](/managed/manage/credential-vault "Store and manage credentials in the credential vault.") for authentication to CyberArk Vault. If your vault doesn't contain any certificates you have access to, you'll see a warning.
 
 We recommend naming any prerequisite credentials so that they're easily identifiable as companion credentials for synchronization.
@@ -431,7 +430,7 @@ We recommend naming any prerequisite credentials so that they're easily identifi
 
    1. Select **Allowed machines (location)** for the **Authentication method**.
 
-      You should already have registered the hostname or IP address of your selected **Location for synchronization** in the CyberArk Allowed Machines listâsee [Prerequisites](#cyberark-prereqs) above.
+      You should already have registered the hostname or IP address of your selected **Location for synchronization** in the CyberArk Allowed Machines list—see [Prerequisites](#cyberark-prereqs) above.
 
    ![Set up CyberArk synchronization - allowed machines](https://dt-cdn.net/images/cyberark-credential-vault-allowed-machines-1154-a9d5d09098.webp)
 
@@ -439,11 +438,11 @@ We recommend naming any prerequisite credentials so that they're easily identifi
 8. Recommended Select a **Certificate used for authentication to CyberArk application** from the list provided.
 9. Enter additional fields for identifying the CyberArk Vault key-value pair.
 
-   * **Application ID**âThis must be the same as the application ID when defining allowed machines in CyberArk Vaultâsee [Prerequisites](#cyberark-prereqs) above.
+   * **Application ID**—This must be the same as the application ID when defining allowed machines in CyberArk Vault—see [Prerequisites](#cyberark-prereqs) above.
    * **Safe name**
-   * **Account name**âThe name of the object that stores the username and password to retrieve and synchronize with the Dynatrace credential vault; this is not the name of the account logged into CyberArk Central Credential Provider.
-   * **Folder name** OptionalâThe name of the folder where the credentials are stored in CyberArk Vault; the default folder name is `Root`.
-10. Select a **Location for synchronization**âyou can select any public or private Synthetic location for synchronization monitor execution. You can search for a location by entering the location name in the field.
+   * **Account name**—The name of the object that stores the username and password to retrieve and synchronize with the Dynatrace credential vault; this is not the name of the account logged into CyberArk Central Credential Provider.
+   * **Folder name** Optional—The name of the folder where the credentials are stored in CyberArk Vault; the default folder name is `Root`.
+10. Select a **Location for synchronization**—you can select any public or private Synthetic location for synchronization monitor execution. You can search for a location by entering the location name in the field.
 11. Optional Provide a **Description** for the credential.
 12. Credentials are set to **Owner access only** by default. (Read more about [credential ownership](/managed/manage/credential-vault#owner-shared-public "Store and manage credentials in the credential vault.").)
 13. **Save** your credential.

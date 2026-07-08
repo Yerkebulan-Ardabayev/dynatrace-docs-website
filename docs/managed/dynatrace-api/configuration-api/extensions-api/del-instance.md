@@ -1,7 +1,6 @@
 ---
 title: Extensions API - DELETE an extension instance
 source: https://docs.dynatrace.com/managed/dynatrace-api/configuration-api/extensions-api/del-instance
-scraped: 2026-05-12T11:19:49.238867
 ---
 
 # Extensions API - DELETE an extension instance

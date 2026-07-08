@@ -1,7 +1,6 @@
 ---
 title: Geographic regions API
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/rum/geographic-regions
-scraped: 2026-05-12T11:11:55.647034
 ---
 
 # Geographic regions API
@@ -25,5 +24,5 @@ Get an overview of cities within a region.](/managed/dynatrace-api/environment-a
 
 ## Related topics
 
-* [Real User Monitoring](/managed/observe/digital-experience/rum-concepts/rum-overview "Learn about Real User Monitoring, key performance metrics, mobile app monitoring, and more.")
-* [Detection of IP addresses, geolocations, and user agents](/managed/observe/digital-experience/rum-concepts/detection-of-ip-addresses-locations-and-user-agents "Dynatrace detects IP addresses and geolocations like a city, region, and country as well as browsers, devices, and operating systems.")
+* [Real User Monitoring Classic](/managed/observe/digital-experience/rum-classic/rum-concepts/rum-overview "Learn about Real User Monitoring Classic, key performance metrics, mobile app monitoring, and more.")
+* [Detection of IP addresses, geolocations, and user agents in RUM Classic](/managed/observe/digital-experience/rum-classic/rum-concepts/detection-of-ip-addresses-locations-and-user-agents "Dynatrace detects IP addresses and geolocations like a city, region, and country as well as browsers, devices, and operating systems.")

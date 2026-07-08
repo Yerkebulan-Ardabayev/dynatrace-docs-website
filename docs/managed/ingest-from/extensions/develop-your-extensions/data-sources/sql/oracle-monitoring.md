@@ -1,7 +1,6 @@
 ---
 title: Oracle Database monitoring configuration
 source: https://docs.dynatrace.com/managed/ingest-from/extensions/develop-your-extensions/data-sources/sql/oracle-monitoring
-scraped: 2026-05-12T12:08:28.508759
 ---
 
 # Oracle Database monitoring configuration
@@ -272,7 +271,7 @@ You can define up to 20,000 endpoints in a single monitoring configuration in th
 
 ### Oracle JDBC Driver
 
-The Oracle SQL data source requires the Oracle JDBC driver distributed by Dynatrace. By setting the `licenceAccepted` property to `true`, you indicate that you have read and accepted the [Dynatrace redistribution license agreement for Oracle JDBC Driverï»¿](https://dt-url.net/0s1n0pw9).
+The Oracle SQL data source requires the Oracle JDBC driver distributed by Dynatrace. By setting the `licenceAccepted` property to `true`, you indicate that you have read and accepted the [Dynatrace redistribution license agreement for Oracle JDBC Driver﻿](https://dt-url.net/0s1n0pw9).
 
 To define an Oracle Database server, add the following details in the `endpoints` section:
 
@@ -291,8 +290,8 @@ Authentication details passed to the Dynatrace API when activating monitoring co
 
 The credential vault authentication type provides a more secure approach to using extensions by securely storing and managing user credentials. To use this, you must be the owner of the credentials and have a credential vault that meets the following criteria:
 
-* **Credential type**âUser and password
-* **Credential scope**âSynthetic (in case of external vault usage) and Extension authentication scopes enabled
+* **Credential type**—User and password
+* **Credential scope**—Synthetic (in case of external vault usage) and Extension authentication scopes enabled
 * **Owner access only** is enabled only for credential owners
 
 ```
@@ -445,23 +444,11 @@ However, if you need to use a local truststore for certificates not globally rec
    keytool -import -keystore sqlds_truststore -file .\ora.crt -alias oracle
    ```
 
-#### Validate SSL certificates
-
-ActiveGate version 1.269+
-
-The certificate is additionally validated with hostname, which means that the domain from the certificate must match the one from the endpoint passed in the monitoring configuration.
-
-Enable this option when connecting to databases using custom certificates.
-
-```
-"validateCertificates": true
-```
-
 Client certificates are not supported for SQL data sources. To authenticate securely, use basic authentication with SSL enabled. For details, see [Authentication](#authentication).
 
 ## Resource consumption
 
-Resource consumption depends on the number of Oracle endpoints. The first endpoint consumes 110 MB of RAM and 0.1%â0.5% of CPU. Every following endpoint consumes 0.5â1.0 MB of RAM and ~0.01% of CPU.
+Resource consumption depends on the number of Oracle endpoints. The first endpoint consumes 110 MB of RAM and 0.1%–0.5% of CPU. Every following endpoint consumes 0.5–1.0 MB of RAM and ~0.01% of CPU.
 
 | Endpoints | Average CPU | Max CPU | RAM (MB) | Host (EC2 instance type) |
 | --- | --- | --- | --- | --- |

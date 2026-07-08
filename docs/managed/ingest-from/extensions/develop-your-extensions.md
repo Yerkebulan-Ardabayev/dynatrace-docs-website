@@ -1,7 +1,6 @@
 ---
 title: Develop your own Extensions
 source: https://docs.dynatrace.com/managed/ingest-from/extensions/develop-your-extensions
-scraped: 2026-05-12T11:07:10.230611
 ---
 
 # Develop your own Extensions
@@ -12,7 +11,7 @@ scraped: 2026-05-12T11:07:10.230611
 * 2-min read
 * Published Jun 16, 2025
 
-Dynatrace can ingest data from [hundreds of toolsï»¿](https://www.dynatrace.com/hub/), which means you get:
+Dynatrace can ingest data from [hundreds of tools﻿](https://www.dynatrace.com/hub/), which means you get:
 
 * A single source of truth for observability.
 * A continuous flow of actionable data to help you fix problems quickly, maintain complex systems, improve code quality, and accelerate digital transformation.
@@ -36,7 +35,7 @@ Get familiar with the [Dynatrace Extensions concepts](/managed/ingest-from/exten
 
 Dynatrace applies [secure development controls](/managed/manage/data-privacy-and-security/data-security/secure-development-controls "Learn how we ensure complete security for all Dynatrace software components and development practices.") in its Security Development Lifecycle (SDL).
 
-Follow these best practices to ensure your extensions are secure, reliable, and compliant with your environmentâs security standards.
+Follow these best practices to ensure your extensions are secure, reliable, and compliant with your environment’s security standards.
 
 ### Certificate management
 

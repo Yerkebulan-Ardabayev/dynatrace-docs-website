@@ -1,7 +1,6 @@
 ---
 title: Synthetic locations API - GET all locations
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/synthetic/synthetic-locations/get-all-locations
-scraped: 2026-05-12T11:57:03.991853
 ---
 
 # Synthetic locations API - GET all locations
@@ -11,7 +10,7 @@ scraped: 2026-05-12T11:57:03.991853
 * Reference
 * Published Jul 25, 2019
 
-We have a new version of this APIâ[Synthetic API v2](/managed/dynatrace-api/environment-api/synthetic-v2 "Find out what the Dynatrace Synthetic v2 API offers."). Check it out!
+We have a new version of this API—[Synthetic API v2](/managed/dynatrace-api/environment-api/synthetic-v2 "Find out what the Dynatrace Synthetic v2 API offers."). Check it out!
 
 Lists all locations, public and private, and their parameters available for your environment.
 
@@ -57,7 +56,7 @@ A list of synthetic locations.
 
 | Element | Type | Description |
 | --- | --- | --- |
-| locations | [LocationCollectionElement[]](#openapi-definition-LocationCollectionElement) | A list of synthetic locations. |
+| locations | [LocationCollectionElement](#openapi-definition-LocationCollectionElement)[] | A list of synthetic locations. |
 
 #### The `LocationCollectionElement` object
 
@@ -85,7 +84,7 @@ A synthetic location.
 | Element | Type | Description |
 | --- | --- | --- |
 | code | integer | The HTTP status code |
-| constraintViolations | [ConstraintViolation[]](#openapi-definition-ConstraintViolation) | A list of constraint violations |
+| constraintViolations | [ConstraintViolation](#openapi-definition-ConstraintViolation)[] | A list of constraint violations |
 | message | string | The error message |
 
 #### The `ConstraintViolation` object

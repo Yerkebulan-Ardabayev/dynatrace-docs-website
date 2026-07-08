@@ -1,7 +1,6 @@
 ---
 title: Request naming API - DELETE a request naming rule
 source: https://docs.dynatrace.com/managed/dynatrace-api/configuration-api/service-api/request-naming-api/delete-a-rule
-scraped: 2026-05-12T11:17:41.146632
 ---
 
 # Request naming API - DELETE a request naming rule

@@ -1,7 +1,6 @@
 ---
 title: Settings API - Launcher schema table
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/settings/schemas/app-dynatrace-launcher-home-launchpad
-scraped: 2026-05-12T11:49:22.082489
 ---
 
 # Settings API - Launcher schema table

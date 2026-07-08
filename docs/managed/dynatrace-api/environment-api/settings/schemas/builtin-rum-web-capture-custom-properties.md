@@ -1,7 +1,6 @@
 ---
 title: Settings API - Custom Properties Capture Restrictions schema table
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/settings/schemas/builtin-rum-web-capture-custom-properties
-scraped: 2026-05-12T11:43:38.062964
 ---
 
 # Settings API - Custom Properties Capture Restrictions schema table

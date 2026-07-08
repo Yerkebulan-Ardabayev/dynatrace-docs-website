@@ -1,7 +1,6 @@
 ---
 title: Automatically applied tags API
 source: https://docs.dynatrace.com/managed/dynatrace-api/configuration-api/automatically-applied-tags-api
-scraped: 2026-05-12T12:13:46.375595
 ---
 
 # Automatically applied tags API

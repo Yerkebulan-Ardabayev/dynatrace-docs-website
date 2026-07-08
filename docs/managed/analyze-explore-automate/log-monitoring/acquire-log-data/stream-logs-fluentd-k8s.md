@@ -1,7 +1,6 @@
 ---
 title: Stream logs to Dynatrace with Fluentd on Kubernetes (Logs Classic)
 source: https://docs.dynatrace.com/managed/analyze-explore-automate/log-monitoring/acquire-log-data/stream-logs-fluentd-k8s
-scraped: 2026-05-12T11:53:57.480452
 ---
 
 # Stream logs to Dynatrace with Fluentd on Kubernetes (Logs Classic)
@@ -16,7 +15,7 @@ Log Monitoring Classic
 
 The recommended way of streaming logs from Kubernetes nodes and pods to Dynatrace is described at [Log Monitoring in Kubernetes (Logs Classic)](/managed/analyze-explore-automate/log-monitoring/acquire-log-data/log-monitoring-kubernetes "Learn how to monitor logs in Kubernetes.").
 
-Alternatively, you can use the [Dynatrace Fluentd pluginï»¿](https://dt-url.net/gb23475), which is an open-source module, to stream logs.
+Alternatively, you can use the [Dynatrace Fluentd plugin﻿](https://dt-url.net/gb23475), which is an open-source module, to stream logs.
 
 The architecture is illustrated below.
 
@@ -36,7 +35,7 @@ Logs coming from Fluentd aren't linked with the Kubernetes workloads. Consequent
 
 ## Deploy integration
 
-For instructions on how to deploy Fluentd integration, see the [documentation on GitHubï»¿](https://github.com/dynatrace-oss/fluent-plugin-dynatrace/tree/main/example).
+For instructions on how to deploy Fluentd integration, see the [documentation on GitHub﻿](https://github.com/dynatrace-oss/fluent-plugin-dynatrace/tree/main/example).
 
 ## Related topics
 

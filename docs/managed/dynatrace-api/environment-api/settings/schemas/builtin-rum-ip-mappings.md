@@ -1,7 +1,6 @@
 ---
 title: Settings API - Map IP addresses to locations schema table
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/settings/schemas/builtin-rum-ip-mappings
-scraped: 2026-05-12T11:42:50.757466
 ---
 
 # Settings API - Map IP addresses to locations schema table
@@ -16,7 +15,7 @@ If you don't see performance data for some of your customers on the world map, i
 
 Granularity of regional performance analysis increases as the number of detected user requests goes up in a specific region (continent, country, state, or city). You can even override auto-detected IP addresses if necessary to improve mapping accuracy.
 
-Dynatrace uses an IP address to geolocation mapping service offered by [MaxMind GeoIP2ï»¿](https://dt-url.net/6a21pxd). The names for regions and cities are following the [GeoNames databaseï»¿](https://dt-url.net/tz41pwz).
+Dynatrace uses an IP address to geolocation mapping service offered by [MaxMind GeoIP2﻿](https://dt-url.net/6a21pxd). The names for regions and cities are following the [GeoNames database﻿](https://dt-url.net/tz41pwz).
 To find out which names and IDs are used out of the box, use the geographic regions REST API (`<your-dynatrace-url>//rest-api-doc/index.jsp?urls.primaryName=Environment%20API%20v2#/Geographic%20regions`).
 
 | Schema ID | Schema groups | Scope |
@@ -41,8 +40,8 @@ To execute this request, you need an access token with **Read settings** (`setti
 | --- | --- | --- | --- |
 | Single IP or IP range start address `ip` | text | - | Required |
 | IP range end `ipTo` | text | - | Optional |
-| Country `countryCode` | text | The country code of the location.  Use the alpha-2 code of the [ISO 3166-2 standardï»¿](https://dt-url.net/iso3166-2), (for example, `AT` for Austria or `PL` for Poland). | Required |
-| Region `regionCode` | text | The region code of the location.  For the [USAï»¿](https://dt-url.net/iso3166us) or [Canadaï»¿](https://dt-url.net/iso3166ca) use ISO 3166-2 state codes without `US-` or `CA-` prefix.  For the rest of the world use [FIPS 10-4 codesï»¿](https://dt-url.net/fipscodes) without country prefix. | Optional |
+| Country `countryCode` | text | The country code of the location.  Use the alpha-2 code of the [ISO 3166-2 standard﻿](https://dt-url.net/iso3166-2), (for example, `AT` for Austria or `PL` for Poland). | Required |
+| Region `regionCode` | text | The region code of the location.  For the [USA﻿](https://dt-url.net/iso3166us) or [Canada﻿](https://dt-url.net/iso3166ca) use ISO 3166-2 state codes without `US-` or `CA-` prefix.  For the rest of the world use [FIPS 10-4 codes﻿](https://dt-url.net/fipscodes) without country prefix. | Optional |
 | City `city` | text | The city name of the location. | Optional |
 | Latitude `latitude` | float | - | Required |
 | Longitude `longitude` | float | - | Required |

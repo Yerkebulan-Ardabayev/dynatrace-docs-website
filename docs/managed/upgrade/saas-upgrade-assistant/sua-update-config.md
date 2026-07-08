@@ -1,7 +1,6 @@
 ---
 title: Update configuration in SaaS Upgrade Assistant
 source: https://docs.dynatrace.com/managed/upgrade/saas-upgrade-assistant/sua-update-config
-scraped: 2026-05-12T12:16:21.030848
 ---
 
 # Update configuration in SaaS Upgrade Assistant
@@ -14,8 +13,8 @@ Latest Dynatrace
 
 You can directly update the imported configuration from Dynatrace Managed in ![SaaS Upgrade Assistant](https://dt-cdn.net/images/saas-upgrade-assistant-61dc5b83c0.svg "SaaS Upgrade Assistant") **SaaS Upgrade Assistant** and deploy it to your environment in the following ways:
 
-* Update via **Enter edit mode**âThis allows you to modify your configurations without worrying about correct formats, without re-uploading the package or losing your deployment data.
-* Update via [editable properties](/managed/upgrade/saas-upgrade-assistant/sua-update-editable-properties "Learn how to update configuration in SaaS Upgrade Assistant via editable properties.")âYou can choose the single or bulk edit mode.
+* Update via **Enter edit mode**—This allows you to modify your configurations without worrying about correct formats, without re-uploading the package or losing your deployment data.
+* Update via [editable properties](/managed/upgrade/saas-upgrade-assistant/sua-update-editable-properties "Learn how to update configuration in SaaS Upgrade Assistant via editable properties.")—You can choose the single or bulk edit mode.
 
 ## Configuration structure
 
@@ -25,13 +24,13 @@ When you export or deploy configurations, each item is represented as a JSON pay
 
 To sum up, each configuration consists of the following data:
 
-* Raw JSONâJSON after metadata extraction (extracted properties are referenced by their ID using `{{.propertyId}}` format)
+* Raw JSON—JSON after metadata extraction (extracted properties are referenced by their ID using `{{.propertyId}}` format)
 * Metadata such as:
 
   + Name
   + Scope (only for "built-in" configurations)
-  + Regular propertiesâthe properties that can be edited with the **Bulk edit** functionality or in the **Edit properties** tab.
-  + Configuration referencesâalso called "reference properties." These are the properties that create dependencies between configurations, which can be previewed in the **Dependencies** tab.
+  + Regular properties—the properties that can be edited with the **Bulk edit** functionality or in the **Edit properties** tab.
+  + Configuration references—also called "reference properties." These are the properties that create dependencies between configurations, which can be previewed in the **Dependencies** tab.
 
 When you use ![SaaS Upgrade Assistant](https://dt-cdn.net/images/saas-upgrade-assistant-61dc5b83c0.svg "SaaS Upgrade Assistant") **SaaS Upgrade Assistant** to review configurations, the **JSON** tab doesn't show the raw JSON, but the JSON with all metadata already completed. This lets you preview the final payload deployed to your target environment. However, if you use edit mode to correct your configurations, you'll notice that the layout is closer to the above structure. This is so that you can fully manage both the raw JSON and the extracted metadata.
 
@@ -140,9 +139,9 @@ Sometimes configurations reference each other, which affects their deployment or
 
 This property is available only for some types of configuration, but it's mandatory when present and can't be removed. It's the only type of property that can change its category. There are three possibilities:
 
-* **String**âusually `environment`, meaning a global scope, but you can modify it freely according to your needs.
-* **Config reference**âworks in the same way as config reference properties described above. Changing it affects dependencies.
-* **Property reference**âusually used when some entity is the scope of your configuration. For example, `disk options` are defined per host. Each `disk options` configuration will have a regular property of the host category, for example, `HOST-51FEDB44E1BB4DF4` with property ID `.extractedIDs.id_HOST_51FEDB44E1BB4DF4`. Scope references the host property by using its ID as value.
+* **String**—usually `environment`, meaning a global scope, but you can modify it freely according to your needs.
+* **Config reference**—works in the same way as config reference properties described above. Changing it affects dependencies.
+* **Property reference**—usually used when some entity is the scope of your configuration. For example, `disk options` are defined per host. Each `disk options` configuration will have a regular property of the host category, for example, `HOST-51FEDB44E1BB4DF4` with property ID `.extractedIDs.id_HOST_51FEDB44E1BB4DF4`. Scope references the host property by using its ID as value.
 
   See property reference example
 
@@ -171,7 +170,7 @@ There are a few things to keep in mind when reverting configurations:
 
 Reverting configurations can be done on multiple levels:
 
-* **Single configuration**âas with edit mode, select the context menu  icon of the chosen configuration, and then select **Revert changes**.
+* **Single configuration**—as with edit mode, select the context menu  icon of the chosen configuration, and then select **Revert changes**.
 * **Filtered configurations**
 
   1. Go to the **Upgrade details: configuration** tab and set your filters.
@@ -205,7 +204,7 @@ Unacceptable space
 
 ### Exception when parsing DQL query
 
-Log matching rules must be converted from LQL to DQL before the deployment. ![SaaS Upgrade Assistant](https://dt-cdn.net/images/saas-upgrade-assistant-61dc5b83c0.svg "SaaS Upgrade Assistant") **SaaS Upgrade Assistant** doesn't handle the conversion itself. For details, see [Conversion to DQL for Logsï»¿](https://docs.dynatrace.com/docs/shortlink/lma-conversion-to-dql).
+Log matching rules must be converted from LQL to DQL before the deployment. ![SaaS Upgrade Assistant](https://dt-cdn.net/images/saas-upgrade-assistant-61dc5b83c0.svg "SaaS Upgrade Assistant") **SaaS Upgrade Assistant** doesn't handle the conversion itself. For details, see [Conversion to DQL for Logs﻿](https://docs.dynatrace.com/docs/shortlink/lma-conversion-to-dql).
 
 However, you can use edit mode to manually correct simple queries.
 
@@ -307,7 +306,7 @@ values: null
 
 ### Given entity ID not found
 
-Not all entities need to be migrated when upgrading from Managed to SaaS. Sometimes, you may need to simply get rid of an entity IDâsuch as getting rid of test steps from Synthetic monitors. This can now be achieved by removing JSON nodes in edit mode.
+Not all entities need to be migrated when upgrading from Managed to SaaS. Sometimes, you may need to simply get rid of an entity ID—such as getting rid of test steps from Synthetic monitors. This can now be achieved by removing JSON nodes in edit mode.
 
 ## FAQ
 
@@ -419,13 +418,13 @@ With edit mode, you can edit:
 
 * `config.name`
 * `type.settings.scope`
-* `config.parameters`âAll operations are supported; you can manage properties of both value and reference type, you can change their values, remove them, or add new properties.
+* `config.parameters`—All operations are supported; you can manage properties of both value and reference type, you can change their values, remove them, or add new properties.
 
 Edit mode doesn't support editing the following YAML properties:
 
-* `id`âNecessary to identify the config.
-* `config.template`âBinds JSON with its metadata.
-* `config.skip`âAutomatically changed during the deployment depending on which configurations are included.
-* `config.originObjectId`âRefers to the source configuration and is used during deployment as an additional identifier.
-* `type.settings.schema` and `type.settings.schemaVersion` (for "built-in" configurations)âNecessary to deploy configurations to correct APIs.
-* `type.api` (if not âbuilt-inâ)âNecessary to deploy configurations to correct APIs.
+* `id`—Necessary to identify the config.
+* `config.template`—Binds JSON with its metadata.
+* `config.skip`—Automatically changed during the deployment depending on which configurations are included.
+* `config.originObjectId`—Refers to the source configuration and is used during deployment as an additional identifier.
+* `type.settings.schema` and `type.settings.schemaVersion` (for "built-in" configurations)—Necessary to deploy configurations to correct APIs.
+* `type.api` (if not “built-in”)—Necessary to deploy configurations to correct APIs.

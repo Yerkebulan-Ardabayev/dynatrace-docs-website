@@ -1,7 +1,6 @@
 ---
 title: Cluster information API
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/cluster-information
-scraped: 2026-05-12T11:11:45.435570
 ---
 
 # Cluster information API
@@ -74,7 +73,7 @@ To learn how to obtain and use it, see [Tokens and authentication](/managed/disc
 | Element | Type | Description |
 | --- | --- | --- |
 | code | integer | The HTTP status code |
-| constraintViolations | [ConstraintViolation[]](#openapi-definition-ConstraintViolation) | A list of constraint violations |
+| constraintViolations | [ConstraintViolation](#openapi-definition-ConstraintViolation)[] | A list of constraint violations |
 | message | string | The error message |
 
 #### The `ConstraintViolation` object

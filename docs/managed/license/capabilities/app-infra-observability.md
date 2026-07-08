@@ -1,7 +1,6 @@
 ---
 title: Application & Infrastructure Observability overview (DPS)
 source: https://docs.dynatrace.com/managed/license/capabilities/app-infra-observability
-scraped: 2026-05-12T11:24:12.392926
 ---
 
 # Application & Infrastructure Observability overview (DPS)
@@ -26,4 +25,4 @@ For more information about OneAgent installation and setup, see [OneAgent setup]
 ## Related topics
 
 * [Dynatrace OneAgent](/managed/ingest-from/dynatrace-oneagent "Understand the important concepts related to OneAgent and find out how to install and operate OneAgent on different platforms.")
-* [Dynatrace pricingï»¿](https://www.dynatrace.com/pricing/)
+* [Dynatrace pricing﻿](https://www.dynatrace.com/pricing/)

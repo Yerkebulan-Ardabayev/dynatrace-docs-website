@@ -1,7 +1,6 @@
 ---
 title: OpenTelemetry interoperability in Java
 source: https://docs.dynatrace.com/managed/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration/aws-lambda-classic/opentelemetry-interoperability/lambda-otel-bridge-java
-scraped: 2026-05-12T12:13:54.425664
 ---
 
 # OpenTelemetry interoperability in Java
@@ -22,18 +21,18 @@ Ensure that [OpenTelemetry interoperability is enabled](/managed/ingest-from/ama
 
 ## Use OpenTelemetry Java instrumentation
 
-OpenTelemetry for Java provides several instrumentation packages in their [OpenTelemetry Java instrumentation repositoryï»¿](https://github.com/open-telemetry/opentelemetry-java-instrumentation) that can be used in combination with the Dynatrace AWS Lambda extension for additional visibility into certain technologies.
+OpenTelemetry for Java provides several instrumentation packages in their [OpenTelemetry Java instrumentation repository﻿](https://github.com/open-telemetry/opentelemetry-java-instrumentation) that can be used in combination with the Dynatrace AWS Lambda extension for additional visibility into certain technologies.
 
 Example: Instrument AWS SDK for Java to monitor a DynamoDB database
 
-Dynatrace version 1.277+ The following example shows how the [OpenTelemetry AWS SDK instrumentationï»¿](https://github.com/open-telemetry/opentelemetry-java-instrumentation/tree/main/instrumentation/aws-sdk) packages can be used to monitor calls to a DynamoDB database.
+Dynatrace version 1.277+ The following example shows how the [OpenTelemetry AWS SDK instrumentation﻿](https://github.com/open-telemetry/opentelemetry-java-instrumentation/tree/main/instrumentation/aws-sdk) packages can be used to monitor calls to a DynamoDB database.
 
 Depending on the AWS SDK version you use, add one of the following packages to your package manager configuration (for example, Maven or Gradle).
 
 | AWS SDK version | Package to add | Notes |
 | --- | --- | --- |
-| v1 | [opentelemetry-aws-sdk-1.11-autoconfigureï»¿](https://central.sonatype.com/artifact/io.opentelemetry.instrumentation/opentelemetry-aws-sdk-1.11-autoconfigure) | Experimental span attributes must be enabled via system property (`otel.instrumentation.aws-sdk.experimental-span-attributes=true`) or environment variable (`OTEL_INSTRUMENTATION_AWS_SDK_EXPERIMENTAL_SPAN_ATTRIBUTES=true`). |
-| v2 | [opentelemetry-aws-sdk-2.2-autoconfigureï»¿](https://central.sonatype.com/artifact/io.opentelemetry.instrumentation/opentelemetry-aws-sdk-2.2-autoconfigure) |  |
+| v1 | [opentelemetry-aws-sdk-1.11-autoconfigure﻿](https://central.sonatype.com/artifact/io.opentelemetry.instrumentation/opentelemetry-aws-sdk-1.11-autoconfigure) | Experimental span attributes must be enabled via system property (`otel.instrumentation.aws-sdk.experimental-span-attributes=true`) or environment variable (`OTEL_INSTRUMENTATION_AWS_SDK_EXPERIMENTAL_SPAN_ATTRIBUTES=true`). |
+| v2 | [opentelemetry-aws-sdk-2.2-autoconfigure﻿](https://central.sonatype.com/artifact/io.opentelemetry.instrumentation/opentelemetry-aws-sdk-2.2-autoconfigure) |  |
 
 Once the package has been added as a dependency, instrumentation is automatically added to capture requests to DynamoDB.
 
@@ -129,7 +128,7 @@ return APIGatewayV2HTTPResponse.builder().withBody("success!").withStatusCode(20
 
 ## Use OpenTelemetry Java API
 
-[OpenTelemetry Javaï»¿](https://opentelemetry.io/docs/instrumentation/java/) can be used in an SDK-like approach to trace additional operations that aren't covered by Dynatrace out of the box.
+[OpenTelemetry Java﻿](https://opentelemetry.io/docs/instrumentation/java/) can be used in an SDK-like approach to trace additional operations that aren't covered by Dynatrace out of the box.
 
 ```
 @Override
@@ -202,7 +201,7 @@ To enable automatic instrumentation of SQS messages, make sure you have installe
 1. AWS SDK version 2.2+ for sending the messages.
 
    You can use the v1 and v2 SDK in the same Lambda function if you need version v1 in your function.
-2. [io.opentelemetry.instrumentation:opentelemetry-aws-sdk-2.2-autoconfigureï»¿](https://central.sonatype.com/artifact/io.opentelemetry.instrumentation/opentelemetry-aws-sdk-2.2-autoconfigure/1.27.0-alpha) version 1.27+ added as a runtime-only dependency.
+2. [io.opentelemetry.instrumentation:opentelemetry-aws-sdk-2.2-autoconfigure﻿](https://central.sonatype.com/artifact/io.opentelemetry.instrumentation/opentelemetry-aws-sdk-2.2-autoconfigure/1.27.0-alpha) version 1.27+ added as a runtime-only dependency.
 
    The full set of dependencies used in the examples, in Gradle format, is as follows.
 
@@ -343,7 +342,7 @@ step automatically installs a handler that creates a span behind the scenes in t
 the OpenTelemetry API, and OneAgent picks up that span automatically.
 
 Additionally, you need to [enable the OneAgent OpenTelemetry integration](#before-you-start) and set the environment variable
-[`OTEL_INSTRUMENTATION_AWS_SDK_EXPERIMENTAL_USE_PROPAGATOR_FOR_MESSAGING`ï»¿](https://github.com/open-telemetry/opentelemetry-java-instrumentation/blob/main/instrumentation/aws-sdk/README.md#settings-for-the-aws-sdk-instrumentation) to `true` in your Lambda function's configuration.
+[`OTEL_INSTRUMENTATION_AWS_SDK_EXPERIMENTAL_USE_PROPAGATOR_FOR_MESSAGING`﻿](https://github.com/open-telemetry/opentelemetry-java-instrumentation/blob/main/instrumentation/aws-sdk/README.md#settings-for-the-aws-sdk-instrumentation) to `true` in your Lambda function's configuration.
 
 ### Step 3 Receive an SQS/SNS message
 

@@ -1,7 +1,6 @@
 ---
 title: Calculate your consumption of Mainframe Monitoring (DPS)
 source: https://docs.dynatrace.com/managed/license/capabilities/app-infra-observability/mainframe
-scraped: 2026-05-12T11:06:22.190749
 ---
 
 # Calculate your consumption of Mainframe Monitoring (DPS)
@@ -30,13 +29,13 @@ The technical prerequisites for DPS are:
 * [zDC subsystem](/managed/ingest-from/dynatrace-oneagent/installation-and-operation/zos/installation/install-zdc "Set up the z/OS Data Collection subsystem (zDC).") version 1.247+
 
 A monitored Logical Partition (LPAR) is represented as a host in Dynatrace.
-The billing for monitoring an LPAR depends on the partitionâs Million Service Unit (MSU) value and the duration of Dynatrace monitoring.
+The billing for monitoring an LPAR depends on the partition’s Million Service Unit (MSU) value and the duration of Dynatrace monitoring.
 An MSU is an IBM measurement of the amount of processing work an IBM Z mainframe can perform in one hour.
 
 ### MSU hours
 
 The unit of measure for Mainframe Monitoring is an MSU hour.
-Mainframe Monitoring consumption derives MSU hours based on the [IBM Tailored Fit Pricingï»¿](https://www.ibm.com/support/z-content-solutions/tailored-fit-pricing/) software consumption solution, retrieved per LPAR from [SMF type 70 subtype 1 recordsï»¿](https://www.ibm.com/docs/en/zos/2.5.0?topic=conditions-cpu-activity-smf-record-type-70-1) (actual number of consumed MSUs).
+Mainframe Monitoring consumption derives MSU hours based on the [IBM Tailored Fit Pricing﻿](https://www.ibm.com/support/z-content-solutions/tailored-fit-pricing/) software consumption solution, retrieved per LPAR from [SMF type 70 subtype 1 records﻿](https://www.ibm.com/docs/en/zos/2.5.0?topic=conditions-cpu-activity-smf-record-type-70-1) (actual number of consumed MSUs).
 
 The more MSUs an LPAR has, and the longer Dynatrace monitors it, the higher the MSU-hour consumption.
 
@@ -79,7 +78,7 @@ The example below shows all LPARs that contributed to the consumption in 1-hour 
 DPS Mainframe Monitoring billing metric
 
 You can also view the usage metric in Account Management.
-Go to [**Account Management**ï»¿](https://myaccount.dynatrace.com/) > **Subscription** > **Overview** > **Cost and usage details** > **Usage summary** and select the **Mainframe Monitoring** capability.
+Go to [**Account Management**﻿](https://myaccount.dynatrace.com/) > **Subscription** > **Overview** > **Cost and usage details** > **Usage summary** and select the **Mainframe Monitoring** capability.
 
 ![MSU Usage Summary](https://dt-cdn.net/images/msu-usage-summary-1505-3ab6abffd5.png)
 
@@ -87,7 +86,7 @@ MSU Usage Summary
 
 ## Consumption estimate: Mainframe
 
-Use the [IBM Sub-Capacity Reporting Tool (SCRT) reportï»¿](https://www.ibm.com/docs/en/zos/2.5.0?topic=tool-about-sub-capacity-reporting) to estimate the required MSU-hour consumption per year.
+Use the [IBM Sub-Capacity Reporting Tool (SCRT) report﻿](https://www.ibm.com/docs/en/zos/2.5.0?topic=tool-about-sub-capacity-reporting) to estimate the required MSU-hour consumption per year.
 
 1. In Section **C5**, check the **Reporting Period** of the SCRT report.
    Typically, it contains one month of data.
@@ -127,4 +126,4 @@ The following details apply to metric data points:
 
 * [Dynatrace OneAgent](/managed/ingest-from/dynatrace-oneagent "Understand the important concepts related to OneAgent and find out how to install and operate OneAgent on different platforms.")
 * [Application & Infrastructure Observability overview (DPS)](/managed/license/capabilities/app-infra-observability "Learn about the different Application & Infrastructure Observability options that are available with a Dynatrace Platform Subscription (DPS) license.")
-* [Dynatrace pricingï»¿](https://www.dynatrace.com/pricing/)
+* [Dynatrace pricing﻿](https://www.dynatrace.com/pricing/)

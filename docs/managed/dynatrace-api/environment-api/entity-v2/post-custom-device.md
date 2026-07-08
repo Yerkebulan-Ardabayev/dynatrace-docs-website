@@ -1,7 +1,6 @@
 ---
 title: Monitored entities API - POST a custom device
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/entity-v2/post-custom-device
-scraped: 2026-05-12T11:57:05.943578
 ---
 
 # Monitored entities API - POST a custom device

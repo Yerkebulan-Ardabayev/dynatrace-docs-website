@@ -1,7 +1,6 @@
 ---
 title: Data Explorer quick start
 source: https://docs.dynatrace.com/managed/analyze-explore-automate/explorer/explorer-quick-start
-scraped: 2026-05-12T11:12:56.792181
 ---
 
 # Data Explorer quick start
@@ -15,8 +14,8 @@ You're in the right place if you want to see what Data Explorer can do and learn
 
 You have two options here:
 
-* [Start with a template](#templates)âAn easy intro
-* [Start from scratch](#from-scratch)âA little harder
+* [Start with a template](#templates)—An easy intro
+* [Start from scratch](#from-scratch)—A little harder
 
 ## Start with a template
 
@@ -172,8 +171,8 @@ To save the visualization as a dashboard tile, select **Pin to dashboard**.
 
 To return from the dashboard to Data Explorer with the visualization open for viewing and editing, open the menu in the upper-right corner of the tile and select **Configure tile in Data Explorer**. Now two buttons are displayed in the **Results** section of Data Explorer:
 
-* **Save changes to dashboard**âsaves the visualization to the same tile and dashboard you used to open Data Explorer. If you have made any changes, they will update the tile on your dashboard.
-* **Pin to dashboard**âsaves the visualization as a tile on a different dashboard. You might want to pin the same visualization (perhaps with filtering differences) to various dashboards.
+* **Save changes to dashboard**—saves the visualization to the same tile and dashboard you used to open Data Explorer. If you have made any changes, they will update the tile on your dashboard.
+* **Pin to dashboard**—saves the visualization as a tile on a different dashboard. You might want to pin the same visualization (perhaps with filtering differences) to various dashboards.
 
 For details about pinning tiles to dashboards, see [Pin tiles to your dashboard](/managed/analyze-explore-automate/dashboards-classic/charts-and-tiles/pin-tiles-to-your-dashboard "Learn to pin tiles to your dashboards.").
 
@@ -181,5 +180,5 @@ For details about pinning tiles to dashboards, see [Pin tiles to your dashboard]
 
 If you're ready for the technical details, see:
 
-* [Data Explorer](/managed/analyze-explore-automate/explorer "Query for metrics and transform results to gain desired insights.")âlearn the details of query construction
-* [Data Explorer Advanced mode query editor](/managed/analyze-explore-automate/explorer/explorer-advanced-query-editor "Build advanced queries using the Data Explorer advanced mode.")âlearn how to edit queries om **Advanced mode**
+* [Data Explorer](/managed/analyze-explore-automate/explorer "Query for metrics and transform results to gain desired insights.")—learn the details of query construction
+* [Data Explorer Advanced mode query editor](/managed/analyze-explore-automate/explorer/explorer-advanced-query-editor "Build advanced queries using the Data Explorer advanced mode.")—learn how to edit queries om **Advanced mode**

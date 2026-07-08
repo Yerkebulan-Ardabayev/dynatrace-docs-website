@@ -1,7 +1,6 @@
 ---
 title: Log ingest rules (Logs Classic)
 source: https://docs.dynatrace.com/managed/analyze-explore-automate/log-monitoring/acquire-log-data/log-storage
-scraped: 2026-05-12T11:13:23.300292
 ---
 
 # Log ingest rules (Logs Classic)
@@ -131,7 +130,7 @@ The host scope can be accessed through the **Host settings** for a specific host
 
 1. Go to **Hosts**.
 2. Find and select your host to display the host overview page.
-3. In the upper-right corner of the host overview page, select **More** (**â¦**) > **Settings**.
+3. In the upper-right corner of the host overview page, select **More** (**…**) > **Settings**.
 
 4. From the host settings, go to **Log Monitoring** > **Log ingest rules**.
 5. Configure storage upload by adding rules with a set of attributes that matches the log data to be stored by Dynatrace.
@@ -165,7 +164,7 @@ The table on **Settings** > **Log Monitoring** > **Log ingest rules** lists all 
 To list all entities (hosts and host groups) to which more specific log storage rules are applied
 
 1. Go to **Settings** > **Log Monitoring** > **Log ingest rules**.
-2. In the upper-right corner of the **Log ingest rules** page, select **More** (**â¦**) > **Hierarchy and overrides**. A searchable **Hierarchy and overrides** panel lists all entities (hosts and host groups) on which you have set log storage rules that override the tenant-level rules listed on **Settings** > **Log Monitoring** > **Log ingest rules**.
+2. In the upper-right corner of the **Log ingest rules** page, select **More** (**…**) > **Hierarchy and overrides**. A searchable **Hierarchy and overrides** panel lists all entities (hosts and host groups) on which you have set log storage rules that override the tenant-level rules listed on **Settings** > **Log Monitoring** > **Log ingest rules**.
 3. Select an entity name to go to that entity's **Log ingest rules** page.
 
 ## Example upload
@@ -211,9 +210,9 @@ To check the current schema version for log ingest rules, list all available sch
 
 Log ingest rules can be configured for the following scopes:
 
-* `tenant` â configuration object affects all hosts on a given tenant.
-* `host_group` â configuration object affects all hosts assigned to a given host group.
-* `host` â configuration object affects only the given host.
+* `tenant` – configuration object affects all hosts on a given tenant.
+* `host_group` – configuration object affects all hosts assigned to a given host group.
+* `host` – configuration object affects only the given host.
 
 To create a log ingest rule using the API:
 
@@ -1148,4 +1147,4 @@ Does filtering the content reduce DDU cost and/or network usage?
 
 Yes. Content filtering conducted on OneAgent reduces both DDU costs and network usage. You can calculate the cost and network use reduction by determining your total data consumption and deducting the GB size of data that was filtered out. For details on how DDUs costs are calculated, see:
 
-* [Log Monitoring DDU calculation](/managed/license/monitoring-consumption-classic/davis-data-units/log-monitoring-consumption "Understand how the volume of DDU consumption is calculated for Dynatrace Log Monitoring Classic.")
+* [Log Monitoring DDU calculation](/managed/license/classic-licensing/davis-data-units/log-monitoring-consumption "Understand how the volume of DDU consumption is calculated for Dynatrace Log Monitoring Classic.")

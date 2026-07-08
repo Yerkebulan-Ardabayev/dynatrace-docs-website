@@ -1,7 +1,6 @@
 ---
 title: Tenant tokens API - POST cancel rotation
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/tokens-v2/tenant-tokens/post-cancel
-scraped: 2026-05-12T12:01:17.132002
 ---
 
 # Tenant tokens API - POST cancel rotation
@@ -45,7 +44,7 @@ The request doesn't provide any configurable parameters.
 
 #### The `TenantTokenConfig` object
 
-Configuration of a [tenant tokenï»¿](https://dt-url.net/b403ss9).
+Configuration of a [tenant token﻿](https://dt-url.net/b403ss9).
 
 | Element | Type | Description |
 | --- | --- | --- |
@@ -71,7 +70,7 @@ Tenant token
 | Element | Type | Description |
 | --- | --- | --- |
 | code | integer | The HTTP status code |
-| constraintViolations | [ConstraintViolation[]](#openapi-definition-ConstraintViolation) | A list of constraint violations |
+| constraintViolations | [ConstraintViolation](#openapi-definition-ConstraintViolation)[] | A list of constraint violations |
 | message | string | The error message |
 
 #### The `ConstraintViolation` object

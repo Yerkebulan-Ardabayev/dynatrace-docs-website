@@ -1,7 +1,6 @@
 ---
 title: Log Monitoring in Kubernetes (Logs Classic)
 source: https://docs.dynatrace.com/managed/analyze-explore-automate/log-monitoring/acquire-log-data/log-monitoring-kubernetes
-scraped: 2026-05-12T11:11:21.572777
 ---
 
 # Log Monitoring in Kubernetes (Logs Classic)
@@ -22,7 +21,7 @@ As an alternative to OneAgent-based log collection, you can stream logs to Dynat
 
 Dynatrace Log Monitoring supports various Kubernetes-based container platforms like Upstream Kubernetes or Red Hat OpenShift using **containerd**, or **CRI-O** as container runtime.
 
-**Docker** isnât compliant with CRI, the Container Runtime Interface. For this reason, Kubernetes setups using **Docker** are only partially supported. Kubernetes deprecated **Docker** as a container runtime after v1.20.
+**Docker** isn’t compliant with CRI, the Container Runtime Interface. For this reason, Kubernetes setups using **Docker** are only partially supported. Kubernetes deprecated **Docker** as a container runtime after v1.20.
 
 For more details regarding supported versions of Kubernetes, check [Dynatrace Operator support and known issues](/managed/ingest-from/technology-support/support-model-and-issues "How Dynatrace supports Kubernetes and Red Hat OpenShift versions and known issues").
 
@@ -171,9 +170,9 @@ To check the current schema version for log ingest rules, list all available sch
 
 Log ingest rule objects can be configured for the following scopes:
 
-* `tenant` â configuration object affects all hosts on a given tenant.
-* `host_group` â configuration object affects all hosts assigned to a given host group.
-* `host` â configuration object affects only the given host.
+* `tenant` – configuration object affects all hosts on a given tenant.
+* `host_group` – configuration object affects all hosts assigned to a given host group.
+* `host` – configuration object affects only the given host.
 
 To create a log ingest rule using the API:
 
@@ -685,5 +684,5 @@ For more ingest related FAQ, please consult the [Log ingest rules](/managed/upgr
 
 Visit Dynatrace Community for troubleshooting guides, as well as see [Troubleshooting Log Monitoring (Logs Classic)](/managed/analyze-explore-automate/log-monitoring/lmc-troubleshooting "Fix issues related to the setup and configuration of Log Monitoring Classic.").
 
-* [Why my logs are not visible in Dynatrace?ï»¿](https://community.dynatrace.com/t5/Troubleshooting/Why-my-logs-are-not-visible-in-Dynatrace/ta-p/242716)
-* [Logs Ingest on K8s with Dynatraceï»¿](https://community.dynatrace.com/t5/Troubleshooting/Logs-Ingest-on-K8s-with-Dynatrace/ta-p/285827)
+* [Why my logs are not visible in Dynatrace?﻿](https://community.dynatrace.com/t5/Troubleshooting/Why-my-logs-are-not-visible-in-Dynatrace/ta-p/242716)
+* [Logs Ingest on K8s with Dynatrace﻿](https://community.dynatrace.com/t5/Troubleshooting/Logs-Ingest-on-K8s-with-Dynatrace/ta-p/285827)

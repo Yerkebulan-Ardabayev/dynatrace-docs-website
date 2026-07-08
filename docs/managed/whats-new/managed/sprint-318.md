@@ -1,7 +1,6 @@
 ---
 title: Dynatrace Managed release notes version 1.318
 source: https://docs.dynatrace.com/managed/whats-new/managed/sprint-318
-scraped: 2026-05-12T11:08:01.177938
 ---
 
 # Dynatrace Managed release notes version 1.318
@@ -161,41 +160,23 @@ To learn about changes to the Dynatrace API in this release, see:
 
 ### Future Dynatrace Managed operating systems support changes
 
-##### The following operating systems will no longer be supported starting 01 June 2026
-
-* Linux: Oracle Linux 9.6
-
-  + x86-64
-  + [Vendor announcementï»¿](https://www.oracle.com/a/ocom/docs/elsp-lifetime-069338.pdf)
-* Linux: Rocky Linux 9.6
-
-  + x86-64
-  + [Vendor announcementï»¿](https://endoflife.date/rocky-linux)
-
-##### The following operating systems will no longer be supported starting 01 July 2026
-
-* Linux: SUSE Enterprise Linux 15.3
-
-  + x86-64
-  + [Vendor announcementï»¿](https://www.suse.com/lifecycle/)
-
 ##### The following operating systems will no longer be supported starting 01 November 2026
 
 * Linux: Red Hat Enterprise Linux 9.4, 9.7
 
   + x86-64
-  + [Vendor announcementï»¿](https://access.redhat.com/support/policy/updates/errata)
+  + [Vendor announcement﻿](https://access.redhat.com/support/policy/updates/errata)
 * Linux: Ubuntu 16.04
 
   + x86-64
-  + [Vendor announcementï»¿](https://ubuntu.com/about/release-cycle)
+  + [Vendor announcement﻿](https://ubuntu.com/about/release-cycle)
 
 ##### The following operating systems will no longer be supported starting 01 January 2027
 
 * Linux: Amazon Linux 2
 
   + x86-64
-  + [Vendor announcementï»¿](https://aws.amazon.com/linux/)
+  + [Vendor announcement﻿](https://aws.amazon.com/linux/)
 
 ### Past Dynatrace Managed operating systems support changes
 
@@ -204,21 +185,39 @@ To learn about changes to the Dynatrace API in this release, see:
 * Linux: Red Hat Enterprise Linux 8.8, 9.2, 9.5
 
   + x86-64
-  + [Vendor announcementï»¿](https://access.redhat.com/support/policy/updates/errata)
+  + [Vendor announcement﻿](https://access.redhat.com/support/policy/updates/errata)
 * Linux: Oracle Linux 9.5
 
   + x86-64
-  + [Vendor announcementï»¿](https://www.oracle.com/a/ocom/docs/elsp-lifetime-069338.pdf)
+  + [Vendor announcement﻿](https://www.oracle.com/a/ocom/docs/elsp-lifetime-069338.pdf)
 * Linux: Rocky Linux 9.5
 
   + x86-64
-  + [Vendor announcementï»¿](https://endoflife.date/rocky-linux)
+  + [Vendor announcement﻿](https://endoflife.date/rocky-linux)
 
 ##### The following operating systems are no longer supported since 01 January 2026
 
 * Linux: Debian 10
 
   + x86-64
-  + [Vendor announcementï»¿](https://wiki.debian.org/DebianReleases)
+  + [Vendor announcement﻿](https://wiki.debian.org/DebianReleases)
+
+##### The following operating systems are no longer supported since 01 June 2026
+
+* Linux: Oracle Linux 9.6
+
+  + x86-64
+  + [Vendor announcement﻿](https://www.oracle.com/a/ocom/docs/elsp-lifetime-069338.pdf)
+* Linux: Rocky Linux 9.6
+
+  + x86-64
+  + [Vendor announcement﻿](https://endoflife.date/rocky-linux)
+
+##### The following operating systems are no longer supported since 01 July 2026
+
+* Linux: SUSE Enterprise Linux 15.3
+
+  + x86-64
+  + [Vendor announcement﻿](https://www.suse.com/lifecycle/)
 
 ## Resolved issues

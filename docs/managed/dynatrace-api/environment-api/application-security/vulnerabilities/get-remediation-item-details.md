@@ -1,7 +1,6 @@
 ---
 title: Vulnerabilities API - GET remediation item details
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/application-security/vulnerabilities/get-remediation-item-details
-scraped: 2026-05-12T11:59:03.102148
 ---
 
 # Vulnerabilities API - GET remediation item details
@@ -61,7 +60,7 @@ Detailed information of a remediation item for a security problem.
 | resolvedTimestamp | integer | - |
 | trackingLink | [TrackingLink](#openapi-definition-TrackingLink) | External tracking link URL associated with the remediable entity of the security problem. |
 | vulnerabilityState | string | -The element can hold these values * `RESOLVED` * `VULNERABLE` |
-| vulnerableComponents | [RemediationItemDetailsVulnerableComponent[]](#openapi-definition-RemediationItemDetailsVulnerableComponent) | A list of vulnerable components of the remediation item.  A vulnerable component is what causes the security problem. |
+| vulnerableComponents | [RemediationItemDetailsVulnerableComponent](#openapi-definition-RemediationItemDetailsVulnerableComponent)[] | A list of vulnerable components of the remediation item.  A vulnerable component is what causes the security problem. |
 
 #### The `RemediationAssessment` object
 
@@ -76,9 +75,9 @@ Assessment of the remediation item.
 | numberOfDataAssets | integer | The number of related data assets. |
 | vulnerableFunctionRestartRequired | boolean | Whether a restart is required for the latest vulnerable function data. |
 | vulnerableFunctionUsage | string | The usage of vulnerable functions The element can hold these values * `IN_USE` * `NOT_AVAILABLE` * `NOT_IN_USE` |
-| vulnerableFunctionsInUse | [VulnerableFunction[]](#openapi-definition-VulnerableFunction) | A list of vulnerable functions that are in use. |
-| vulnerableFunctionsNotAvailable | [VulnerableFunction[]](#openapi-definition-VulnerableFunction) | A list of vulnerable functions that are not available. |
-| vulnerableFunctionsNotInUse | [VulnerableFunction[]](#openapi-definition-VulnerableFunction) | A list of vulnerable functions that are not in use. |
+| vulnerableFunctionsInUse | [VulnerableFunction](#openapi-definition-VulnerableFunction)[] | A list of vulnerable functions that are in use. |
+| vulnerableFunctionsNotAvailable | [VulnerableFunction](#openapi-definition-VulnerableFunction)[] | A list of vulnerable functions that are not available. |
+| vulnerableFunctionsNotInUse | [VulnerableFunction](#openapi-definition-VulnerableFunction)[] | A list of vulnerable functions that are not in use. |
 
 #### The `AssessmentAccuracyDetails` object
 
@@ -155,7 +154,7 @@ A vulnerable component with details for a remediation item (PG).
 | Element | Type | Description |
 | --- | --- | --- |
 | code | integer | The HTTP status code |
-| constraintViolations | [ConstraintViolation[]](#openapi-definition-ConstraintViolation) | A list of constraint violations |
+| constraintViolations | [ConstraintViolation](#openapi-definition-ConstraintViolation)[] | A list of constraint violations |
 | message | string | The error message |
 
 #### The `ConstraintViolation` object

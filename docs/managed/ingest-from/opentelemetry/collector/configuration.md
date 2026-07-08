@@ -1,7 +1,6 @@
 ---
 title: Configure the OTel Collector
 source: https://docs.dynatrace.com/managed/ingest-from/opentelemetry/collector/configuration
-scraped: 2026-05-12T11:37:06.786803
 ---
 
 # Configure the OTel Collector
@@ -142,7 +141,7 @@ exporters: [otlp_http]
 
 Cumulativetodelta processor recommendation
 
-It is recommended to set the `max_staleness` parameter of the [cumulativetodelta processorï»¿](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.151.0/processor/cumulativetodeltaprocessor) to a value higher than how often the Collector receives metrics (e.g., how often metrics via OTLP are received, or how long the Prometheus scrape interval is). This ensures that no references to abandoned metric streams accumulate in memory over time.
+It is recommended to set the `max_staleness` parameter of the [cumulativetodelta processor﻿](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.155.0/processor/cumulativetodeltaprocessor) to a value higher than how often the Collector receives metrics (e.g., how often metrics via OTLP are received, or how long the Prometheus scrape interval is). This ensures that no references to abandoned metric streams accumulate in memory over time.
 
 In this YAML file, we configure the following components:
 
@@ -177,14 +176,14 @@ dynatrace-otel-collector validate --config=[PATH_TO_YOUR_CONFIGURATION_FILE]
 If you run a container instance of the Collector, you can also use the following Docker command to run the validation directly from your container.
 
 ```
-docker run -v $(pwd):$(pwd) -w $(pwd) ghcr.io/dynatrace/dynatrace-otel-collector/dynatrace-otel-collector:0.48.0 validate --config=[YOUR_CONFIGURATION_FILE]
+docker run -v $(pwd):$(pwd) -w $(pwd) ghcr.io/dynatrace/dynatrace-otel-collector/dynatrace-otel-collector:0.51.0 validate --config=[YOUR_CONFIGURATION_FILE]
 ```
 
 ## Delta metrics
 
 Dynatrace requires metrics data to be [sent with delta temporality](/managed/ingest-from/opentelemetry/otlp-api/ingest-otlp-metrics/about-metrics-ingest#aggregation-temporality "Learn how Dynatrace ingests OpenTelemetry metrics and what limitations apply.") and **not** cumulative temporality.
 
-If your application doesn't allow you to configure delta temporality, you can use the [`cumulativetodelta` processorï»¿](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.151.0/processor/cumulativetodeltaprocessor) to have your Collector instance adjust cumulative values to delta values. The [configuration example](#configuration-example) above shows how to configure and reference the processor in your Collector configuration.
+If your application doesn't allow you to configure delta temporality, you can use the [`cumulativetodelta` processor﻿](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.155.0/processor/cumulativetodeltaprocessor) to have your Collector instance adjust cumulative values to delta values. The [configuration example](#configuration-example) above shows how to configure and reference the processor in your Collector configuration.
 
 ## Chained and load-balanced Collectors
 

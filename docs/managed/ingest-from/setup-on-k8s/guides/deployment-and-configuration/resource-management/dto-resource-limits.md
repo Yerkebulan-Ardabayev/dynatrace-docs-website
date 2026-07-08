@@ -1,7 +1,6 @@
 ---
 title: Set resource limits for Dynatrace Operator components
 source: https://docs.dynatrace.com/managed/ingest-from/setup-on-k8s/guides/deployment-and-configuration/resource-management/dto-resource-limits
-scraped: 2026-05-12T12:05:28.340010
 ---
 
 # Set resource limits for Dynatrace Operator components
@@ -344,9 +343,9 @@ Note that if the limits are set too low, this can lead to increased pod startup 
 
 ### Scaling resource limits for different environments
 
-The default resource requests and limits are designed for medium-scale environments. Use the following guidelines to adjust limits based on your environment size. These are starting recommendationsâ-always monitor actual resource usage in your environment and adjust accordingly.
+The default resource requests and limits are designed for medium-scale environments. Use the following guidelines to adjust limits based on your environment size. These are starting recommendations—-always monitor actual resource usage in your environment and adjust accordingly.
 
-**Pod Quality of Service Classes**: Some components have their limits and requests set to the same value to ensure a [Guaranteed Pod Quality of Serviceï»¿](https://kubernetes.io/docs/concepts/workloads/pods/pod-qos/#guaranteed). When scaling the limits of such components, always scale the requests proportionally as well.
+**Pod Quality of Service Classes**: Some components have their limits and requests set to the same value to ensure a [Guaranteed Pod Quality of Service﻿](https://kubernetes.io/docs/concepts/workloads/pods/pod-qos/#guaranteed). When scaling the limits of such components, always scale the requests proportionally as well.
 
 **Proportional fairness:** Having low CPU requests on a container can cause throttling due to the CPU management policy of the node. The requests serve as a **minimum guarantee**. On a heavily utilized node, therefore, containers with smaller requests will be throttled more compared to containers with larger requests, regardless of their limit. When scaling the limits, always consider scaling the requests as well.
 
@@ -370,7 +369,7 @@ For details on configuring the webhook's `replicas` and related values, see [Con
 
 #### Large environments (> 50 nodes, > 10,000 pods)
 
-Increase the default requests/limits by 50â100%:
+Increase the default requests/limits by 50–100%:
 
 * **Dynatrace Operator**:
 
@@ -398,7 +397,7 @@ Increase the default requests/limits by 50â100%:
 
 #### Enterprise environments (> 100 nodes, > 25,000 pods)
 
-Increase the default requests/limits by 100â200%:
+Increase the default requests/limits by 100–200%:
 
 * **Dynatrace Operator**: CPU 400m, Memory 512Mi
 

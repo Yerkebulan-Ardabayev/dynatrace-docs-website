@@ -1,7 +1,6 @@
 ---
 title: Access tokens API - DELETE a token
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/tokens-v2/api-tokens/del-token
-scraped: 2026-05-12T12:01:06.879818
 ---
 
 # Access tokens API - DELETE a token
@@ -58,7 +57,7 @@ To learn how to obtain and use it, see [Tokens and authentication](/managed/disc
 | Element | Type | Description |
 | --- | --- | --- |
 | code | integer | The HTTP status code |
-| constraintViolations | [ConstraintViolation[]](#openapi-definition-ConstraintViolation) | A list of constraint violations |
+| constraintViolations | [ConstraintViolation](#openapi-definition-ConstraintViolation)[] | A list of constraint violations |
 | message | string | The error message |
 
 #### The `ConstraintViolation` object

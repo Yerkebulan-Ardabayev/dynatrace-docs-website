@@ -1,7 +1,6 @@
 ---
 title: Plugins API - DELETE a plugin's endpoint
 source: https://docs.dynatrace.com/managed/dynatrace-api/configuration-api/plugins-api/delete-an-endpoint
-scraped: 2026-05-12T11:21:04.451668
 ---
 
 # Plugins API - DELETE a plugin's endpoint

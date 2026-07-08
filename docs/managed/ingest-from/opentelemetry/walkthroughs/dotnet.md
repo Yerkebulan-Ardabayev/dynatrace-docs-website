@@ -1,7 +1,6 @@
 ---
 title: Instrument your .NET application with OpenTelemetry
 source: https://docs.dynatrace.com/managed/ingest-from/opentelemetry/walkthroughs/dotnet
-scraped: 2026-05-12T12:04:17.920363
 ---
 
 # Instrument your .NET application with OpenTelemetry
@@ -10,7 +9,7 @@ scraped: 2026-05-12T12:04:17.920363
 
 * How-to guide
 * 7-min read
-* Updated on Nov 14, 2023
+* Updated on May 11, 2026
 
 This walkthrough shows how to add observability to your .NET application using the OpenTelemetry .NET libraries and tools.
 
@@ -26,7 +25,10 @@ This walkthrough shows how to add observability to your .NET application using t
 * Dynatrace version 1.254+
 * For tracing, W3C Trace Context is enabled
 
-  1. Go to **Settings** > **Preferences** > **OneAgent features**.
+  1. Go to the appropriate configuration page:
+
+     + In Latest Dynatrace, go to ![Settings](https://dt-cdn.net/images/settings-icon-256-38e1321b51.webp "Settings") **Settings** > **Collect and capture** > **General monitoring settings** > **OneAgent features**.
+     + In Dynatrace Classic, go to **Settings** > **Preferences** > **OneAgent features**.
   2. Turn on **Send W3C Trace Context HTTP headers**.
 
 ## Step 1 Get the Dynatrace access details
@@ -61,19 +63,19 @@ During development
 
 After deployment
 
-1. Install [`OpenTelemetry.Extensions.Hosting`ï»¿](https://www.nuget.org/packages/OpenTelemetry.Extensions.Hosting).
+1. Install [`OpenTelemetry.Extensions.Hosting`﻿](https://www.nuget.org/packages/OpenTelemetry.Extensions.Hosting).
 
    ```
    dotnet add package OpenTelemetry.Extensions.Hosting
    ```
-2. Install the appropriate instrumentation library for your .NET framework (full list available [hereï»¿](https://www.nuget.org/packages?q=OpenTelemetry.Instrumentation)).
+2. Install the appropriate instrumentation library for your .NET framework (full list available [here﻿](https://www.nuget.org/packages?q=OpenTelemetry.Instrumentation)).
 
    ```
    dotnet add package OpenTelemetry.Instrumentation.[FRAMEWORK_NAME]
    ```
 
-1. Download the [latest auto installerï»¿](https://github.com/open-telemetry/opentelemetry-dotnet-instrumentation/releases/latest) for the target operating system.
-2. [Run (on Unix)ï»¿](https://github.com/open-telemetry/opentelemetry-dotnet-instrumentation#shell-scripts) or [import (on Windows)ï»¿](https://github.com/open-telemetry/opentelemetry-dotnet-instrumentation#powershell-module-windows) the auto installer, to install and set up all necessary auto instrumentation libraries.
+1. Download the [latest auto installer﻿](https://github.com/open-telemetry/opentelemetry-dotnet-instrumentation/releases/latest) for the target operating system.
+2. [Run (on Unix)﻿](https://github.com/open-telemetry/opentelemetry-dotnet-instrumentation#shell-scripts) or [import (on Windows)﻿](https://github.com/open-telemetry/opentelemetry-dotnet-instrumentation#powershell-module-windows) the auto installer, to install and set up all necessary auto instrumentation libraries.
 3. Run your application.
 
 In addition to the instrumentation setup above, you also need to configure the relevant export parameters with environment variables. This includes the [endpoint URL](/managed/ingest-from/opentelemetry/otlp-api#export-to-activegate "Learn about the OTLP API endpoints that your application uses to export OpenTelemetry data to Dynatrace."), the [authentication token](/managed/ingest-from/opentelemetry/otlp-api#authentication-export-to-activegate "Learn about the OTLP API endpoints that your application uses to export OpenTelemetry data to Dynatrace."), and the [temporality preference for metrics](/managed/ingest-from/opentelemetry/otlp-api/ingest-otlp-metrics/about-metrics-ingest#aggregation-temporality "Learn how Dynatrace ingests OpenTelemetry metrics and what limitations apply.").
@@ -837,7 +839,7 @@ activity?.SetTag("net.protocol.version", "1.1");
 In the above code, we:
 
 * Create a new activity (span) and name it "Call to /myendpoint"
-* Add two tags (attributes), following the [semantic naming conventionï»¿](https://opentelemetry.io/docs/specs/semconv/general/trace/), specific to the action of this span: information on the HTTP method and version
+* Add two tags (attributes), following the [semantic naming convention﻿](https://opentelemetry.io/docs/specs/semconv/general/trace/), specific to the action of this span: information on the HTTP method and version
 
 The activity will be automatically set as the current and active span until the execution flow leaves the current method scope. Subsequent activities will automatically become child spans.
 

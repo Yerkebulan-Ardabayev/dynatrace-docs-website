@@ -1,7 +1,6 @@
 ---
 title: Calculated metrics API - Synthetic
 source: https://docs.dynatrace.com/managed/dynatrace-api/configuration-api/calculated-metrics/synthetic-metrics
-scraped: 2026-05-12T11:04:51.524576
 ---
 
 # Calculated metrics API - Synthetic
@@ -27,4 +26,4 @@ Delete a metric that you no longer need.](/managed/dynatrace-api/configuration-a
 
 ## Related topics
 
-* [Multidimensional analysis for browser monitors](/managed/observe/digital-experience/synthetic-monitoring/analysis-and-alerting/multidimensional-analysis-for-browser-monitors "Learn how to analyze browser-monitor data points.")
+* [Multidimensional analysis for browser monitors in Classic](/managed/observe/digital-experience/synthetic-monitoring/analysis-and-alerting/multidimensional-analysis-for-browser-monitors "Learn how to analyze browser-monitor data points.")

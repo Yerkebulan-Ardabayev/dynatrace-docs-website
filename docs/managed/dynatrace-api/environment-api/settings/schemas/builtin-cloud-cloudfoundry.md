@@ -1,7 +1,6 @@
 ---
 title: Settings API - Cloud Foundry schema table
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/settings/schemas/builtin-cloud-cloudfoundry
-scraped: 2026-05-12T11:45:38.821268
 ---
 
 # Settings API - Cloud Foundry schema table

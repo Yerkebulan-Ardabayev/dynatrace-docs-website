@@ -1,7 +1,6 @@
 ---
 title: Install an Environment ActiveGate on Windows
 source: https://docs.dynatrace.com/managed/ingest-from/dynatrace-activegate/installation/windows/windows-install-an-environment-activegate
-scraped: 2026-05-12T11:36:28.466208
 ---
 
 # Install an Environment ActiveGate on Windows
@@ -29,7 +28,7 @@ In most cases, you can install an ActiveGate at any time following OneAgent inst
 If you've already installed OneAgent
 
 In such instances, first install the ActiveGate and then download the OneAgent installer.
-For example, if you download the OneAgent installer and use it to install Dynatrace in a DMZ or network segment that has no internet access and then subsequently install an ActiveGate, youâll need to download and install OneAgent again to ensure that the installer provides the proper configuration between OneAgent and ActiveGate. This is because OneAgent needs to be automatically configured during installation to connect to your monitored environment and send monitoring data back to the Dynatrace Cluster via your ActiveGate.
+For example, if you download the OneAgent installer and use it to install Dynatrace in a DMZ or network segment that has no internet access and then subsequently install an ActiveGate, you’ll need to download and install OneAgent again to ensure that the installer provides the proper configuration between OneAgent and ActiveGate. This is because OneAgent needs to be automatically configured during installation to connect to your monitored environment and send monitoring data back to the Dynatrace Cluster via your ActiveGate.
 
 ### Allow connections through firewall
 

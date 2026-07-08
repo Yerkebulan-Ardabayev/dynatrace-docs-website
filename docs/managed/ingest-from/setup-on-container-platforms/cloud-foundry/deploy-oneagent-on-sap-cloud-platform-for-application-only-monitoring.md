@@ -1,7 +1,6 @@
 ---
 title: Deploy OneAgent on SAP Business Technology Platform for application-only monitoring
 source: https://docs.dynatrace.com/managed/ingest-from/setup-on-container-platforms/cloud-foundry/deploy-oneagent-on-sap-cloud-platform-for-application-only-monitoring
-scraped: 2026-05-12T11:09:20.847242
 ---
 
 # Deploy OneAgent on SAP Business Technology Platform for application-only monitoring
@@ -11,7 +10,7 @@ scraped: 2026-05-12T11:09:20.847242
 * 3-min read
 * Published Jul 19, 2017
 
-Applications deployed on Cloud Foundry are usually run through technology-specific buildpacks that provide framework and runtime support for applications running on the Cloud Foundry platform. For complete details, see [how buildpacks workï»¿](https://docs.cloudfoundry.org/buildpacks/understand-buildpacks.html).
+Applications deployed on Cloud Foundry are usually run through technology-specific buildpacks that provide framework and runtime support for applications running on the Cloud Foundry platform. For complete details, see [how buildpacks work﻿](https://docs.cloudfoundry.org/buildpacks/understand-buildpacks.html).
 
 When deployed in application-only mode, OneAgent monitors the memory, disk, CPU, and networking of processes within the container only. Host metrics aren't monitored.
 
@@ -26,13 +25,13 @@ Generate an [Access token](/managed/manage/identity-access-management/access-tok
 
 ## Deploy OneAgent on SAP BTP Cloud Foundry Runtime
 
-SAP BTP, Cloud Foundry Environment hosts [a number of buildpacksï»¿](https://help.sap.com/viewer/4505d0bdaf4948449b7f7379d24d0f0d/2.0.05/en-US/684a8a79827047998b3c1e8519dec10f.html). You can use these guidelines with the following buildpack integrations:
+SAP BTP, Cloud Foundry Environment hosts [a number of buildpacks﻿](https://help.sap.com/viewer/4505d0bdaf4948449b7f7379d24d0f0d/2.0.05/en-US/684a8a79827047998b3c1e8519dec10f.html). You can use these guidelines with the following buildpack integrations:
 
 * SAP Java Buildpack
-* [Java Buildpackï»¿](https://github.com/cloudfoundry/java-buildpack)
-* [PHP Buildpackï»¿](https://github.com/cloudfoundry/php-buildpack)
-* [Staticfile Buildpackï»¿](https://github.com/cloudfoundry/staticfile-buildpack)
-* [Cloud Foundry Node.js Buildpackï»¿](https://github.com/cloudfoundry/nodejs-buildpack).
+* [Java Buildpack﻿](https://github.com/cloudfoundry/java-buildpack)
+* [PHP Buildpack﻿](https://github.com/cloudfoundry/php-buildpack)
+* [Staticfile Buildpack﻿](https://github.com/cloudfoundry/staticfile-buildpack)
+* [Cloud Foundry Node.js Buildpack﻿](https://github.com/cloudfoundry/nodejs-buildpack).
 
 The SAP Java Buildpack is maintained by SAP. If you experience issues with the SAP Java Buildpack, please refer to component `BC-XS-JAV` and issue a ticket at SAP Support Portal. The other buildpacks listed above are maintained by the Cloud Foundry Foundation on GitHub. If you experience issues with the integration of Dynatrace into these buildpacks, please contact a Dynatrace product expert via live chat within your Dynatrace environment.
 
@@ -44,7 +43,7 @@ The SAP Java Buildpack is maintained by SAP. If you experience issues with the S
 
 ### Step 1 Create a user-provided service in your SAP BTP, Cloud Foundry Environment
 
-Create a single service instance for Dynatrace with the name `dynatrace` as a substring (for example, `dynatraceservice`). You can use the `cf` CLI or directly create a user-provided service with the [SAP Business Technology Platform cockpitï»¿](https://account.hana.ondemand.com/cockpit).
+Create a single service instance for Dynatrace with the name `dynatrace` as a substring (for example, `dynatraceservice`). You can use the `cf` CLI or directly create a user-provided service with the [SAP Business Technology Platform cockpit﻿](https://account.hana.ondemand.com/cockpit).
 
 ![SAP BTB Cockpit](https://dt-cdn.net/images/dynatrace-screen01-1765-0d4d1d9bf6.webp)
 
@@ -156,6 +155,8 @@ services:
 - dynatraceservice
 ```
 
+Starting end of May 2026, libbuildpack v1.9.0 and all buildpacks that include it support [file-based VCAP services﻿](https://docs.cloudfoundry.org/devguide/services/application-binding.html#file-based-vcap-services) as an alternative to environment variable-based service credentials.
+
 ![SAP BTB Cockpit](https://dt-cdn.net/images/dynatrace-screen02-2042-7f899341e1.webp)
 
 SAP BTB Cockpit
@@ -172,7 +173,7 @@ SAP BTB Cockpit
 
 SAP BTB Cockpit
 
-Have your Dynatrace [environment ID](/managed/discover-dynatrace/get-started/monitoring-environment "Understand and learn how to work with monitoring environments.") and a generated [PaaS token](/managed/discover-dynatrace/get-started/monitoring-environment "Understand and learn how to work with monitoring environments.") ready.
+Have your Dynatrace [environment ID](/managed/discover-dynatrace/get-started/monitoring-environment "Learn what a Dynatrace monitoring environment is, how to find your environment ID, and how to set up and connect multiple environments.") and a generated [PaaS token](/managed/discover-dynatrace/get-started/monitoring-environment "Learn what a Dynatrace monitoring environment is, how to find your environment ID, and how to set up and connect multiple environments.") ready.
 
 ![SAP BTB Cockpit](https://dt-cdn.net/images/dynatrace-screen05-2556-57631a9d36.webp)
 
@@ -180,7 +181,7 @@ SAP BTB Cockpit
 
 For Managed, enter the URL of your Cluster ActiveGate (including `/e/<environmentID>`) in the **Environment URL** field.
 
-After restarting your Java applications deployed to SAP Business Technology Platform, youâll receive the full range of application and service monitoring visibility that Dynatrace provides (for example, **Smartscape** and service-level insights with **Service flow**). If you experience issues with the setup of the Dynatrace Agent Activation Neo service, please refer to component `BC-NEO-MON-APM` and issue a ticket at SAP Support Portal. If you experience issues with Dynatrace, please contact a Dynatrace product expert via live chat within your Dynatrace environment.
+After restarting your Java applications deployed to SAP Business Technology Platform, you’ll receive the full range of application and service monitoring visibility that Dynatrace provides (for example, **Smartscape** and service-level insights with **Service flow**). If you experience issues with the setup of the Dynatrace Agent Activation Neo service, please refer to component `BC-NEO-MON-APM` and issue a ticket at SAP Support Portal. If you experience issues with Dynatrace, please contact a Dynatrace product expert via live chat within your Dynatrace environment.
 
 ## Related topics
 

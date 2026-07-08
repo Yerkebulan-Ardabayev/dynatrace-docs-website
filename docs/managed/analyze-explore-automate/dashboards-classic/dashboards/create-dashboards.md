@@ -1,7 +1,6 @@
 ---
 title: Create and edit Dynatrace dashboards
 source: https://docs.dynatrace.com/managed/analyze-explore-automate/dashboards-classic/dashboards/create-dashboards
-scraped: 2026-05-12T11:14:38.782730
 ---
 
 # Create and edit Dynatrace dashboards
@@ -41,7 +40,7 @@ Clone someone else's dashboard to save yourself work.
 Clone a Dynatrace preset dashboard to start with a more elaborate dashboard example.
 
 1. Go to **Dashboards**.
-2. In the table of dashboards, select **More** (**â¦**) > **Clone** for the dashboard you want to copy.
+2. In the table of dashboards, select **More** (**…**) > **Clone** for the dashboard you want to copy.
 
    * The copy opens in edit mode.
    * The original dashboard is unaffected.
@@ -133,7 +132,7 @@ To access detailed dashboard settings, select **Configure more**.
 To delete an entire dashboard (not just a tile)
 
 1. Go to **Dashboards**.
-2. In the table of dashboards, select **More** (**â¦**) > **Delete** for the dashboard you want to delete.
+2. In the table of dashboards, select **More** (**…**) > **Delete** for the dashboard you want to delete.
 
    * If you don't see a **Delete** option, you don't have permission to delete that dashboard.
 3. Confirm the deletion to remove the dashboard.

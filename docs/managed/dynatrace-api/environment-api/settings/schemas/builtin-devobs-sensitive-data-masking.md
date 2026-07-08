@@ -1,7 +1,6 @@
 ---
 title: Settings API - Sensitive Data Masking schema table
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/settings/schemas/builtin-devobs-sensitive-data-masking
-scraped: 2026-05-12T11:45:13.719820
 ---
 
 # Settings API - Sensitive Data Masking schema table

@@ -1,7 +1,6 @@
 ---
 title: AWS Logs ingest
 source: https://docs.dynatrace.com/managed/ingest-from/amazon-web-services/integrate-with-aws/aws-logs-ingest
-scraped: 2026-05-12T11:14:14.391953
 ---
 
 # AWS Logs ingest

@@ -1,7 +1,6 @@
 ---
 title: z/OS module messages - zDC system messages
 source: https://docs.dynatrace.com/managed/ingest-from/dynatrace-oneagent/installation-and-operation/zos/operation/zos-code-module-messages/zdc-system-messages
-scraped: 2026-05-12T12:13:15.748925
 ---
 
 # z/OS module messages - zDC system messages
@@ -833,10 +832,10 @@ scraped: 2026-05-12T12:13:15.748925
 
 ## ZDC952W
 
-* **Full message** - ZDC952W zDC zLocalâ¦ {BufferâType} is at @@% of capacity
+* **Full message** - ZDC952W zDC zLocal… {Buffer–Type} is at @@% of capacity
 * **Explanation** - This message indicates that the queue is filling and you should be aware that, if it reaches 100%, new messages won't be sent to the zLocal, possibly causing distribute trace corruption. This message first displays when the queue reaches 70% and re-displays at five percent increments. When utilization drops below 70%, this message no longer displays. Note that this message appears on the system console as well as in the `SYSPRINT` data set.
 * **System action** - Execution continues.
-* **User response** - Monitor these messages carefully. \* If the **{BufferâType};** is `Trans Buffer Que`, consider increasing zDC parameter: `DTMSG_TRANBUFSIZE()`. \* If the **{BufferâType};** is `SMO Buffer Space`, consider increasing zDC parameter: `DTMSG_SMOSIZE()`.
+* **User response** - Monitor these messages carefully. \* If the **{Buffer–Type};** is `Trans Buffer Que`, consider increasing zDC parameter: `DTMSG_TRANBUFSIZE()`. \* If the **{Buffer–Type};** is `SMO Buffer Space`, consider increasing zDC parameter: `DTMSG_SMOSIZE()`.
 
 ## ZDC953I
 

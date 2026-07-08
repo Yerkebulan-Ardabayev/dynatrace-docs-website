@@ -1,7 +1,6 @@
 ---
 title: User groups, permissions, and policies
 source: https://docs.dynatrace.com/managed/manage/identity-access-management/user-and-group-management/user-groups-and-permissions
-scraped: 2026-05-12T11:13:40.812357
 ---
 
 # User groups, permissions, and policies
@@ -80,7 +79,7 @@ Dynatrace provides the following environment-level permissions. Select all that 
 
 * **Configure request capture data:** Allows configuration of request-attribute capture rules. These can be used to capture elements such as HTTP headers or Post parameters for storage, filtering, and search. When you set this permission, **Change monitoring settings** is enabled automatically.
 
-* **Replay session data with masking:** Allows replay of [recorded user sessions](/managed/observe/digital-experience/session-replay "Learn how you can use Session Replay to better understand and troubleshoot errors experienced by your customers.") with [playback masking rules](/managed/observe/digital-experience/session-replay/configure-session-replay-web#masking-preset-options "Configure monitoring consumption and data privacy settings for Session Replay.") applied at the time of replay. Note that any data masked during recording is never captured and, therefore, always masked during replay.
+* **Replay session data with masking:** Allows replay of [recorded user sessions](/managed/observe/digital-experience/session-replay "Learn how you can use Session Replay to better understand and troubleshoot errors experienced by your customers.") with [playback masking rules](/managed/observe/digital-experience/session-replay/configure-session-replay-web#masking-preset-options "Configure monitoring consumption and data privacy settings for Session Replay Classic.") applied at the time of replay. Note that any data masked during recording is never captured and, therefore, always masked during replay.
 * **Replay session data without masking:** Allows replay of recorded user sessions without playback masking rules applied. Note that any data masked during recording is always masked during replay.
 
 * **Manage security problems:** Allows viewing and management of vulnerabilities reported by Dynatrace Application Security.
@@ -105,11 +104,11 @@ Dynatrace provides the following permissions at the management zone level. (**Do
 
 * **Manage monitoring settings:** Allows the changing of entity settings within a management zone, for example, the ability to record or edit synthetic monitors. It also grants access to some items in the global settings menu but only allows making modifications to assigned management zones. For example, problem alerting profiles can only be created and changed for a specific management zone.
 
-* **View logs:** Allows access to sensitive log file data in the **Logs** tab for hosts explicitly included within the management zone. Note that it is not sufficient to provide management-zone-level access to the host groups that the hosts belong toâsee [Management zone rules](/managed/manage/identity-access-management/permission-management/management-zones/management-zone-rules "Define rules to limit the entities accessible within a management zone.") for details.
+* **View logs:** Allows access to sensitive log file data in the **Logs** tab for hosts explicitly included within the management zone. Note that it is not sufficient to provide management-zone-level access to the host groups that the hosts belong to—see [Management zone rules](/managed/manage/identity-access-management/permission-management/management-zones/management-zone-rules "Define rules to limit the entities accessible within a management zone.") for details.
 
-* **View sensitive request data:** Allows viewing of potentially [personal data captured by Dynatrace](/managed/manage/data-privacy-and-security/data-privacy/personal-data-captured-by-dynatrace "Find out what types of end-user data may be captured during Dynatrace monitoring and the methods that are available for masking personal end-user data.") for the entities within the management zone. Users who do not have this permission see that the data point exists but the personal data is masked by asterisks (`*****`)âsee also [**Environment permissions**](#environment) above.
+* **View sensitive request data:** Allows viewing of potentially [personal data captured by Dynatrace](/managed/manage/data-privacy-and-security/data-privacy/personal-data-captured-by-dynatrace "Find out what types of end-user data may be captured during Dynatrace monitoring and the methods that are available for masking personal end-user data.") for the entities within the management zone. Users who do not have this permission see that the data point exists but the personal data is masked by asterisks (`*****`)—see also [**Environment permissions**](#environment) above.
 
-* **Replay session data with masking:** Allows replay of [recorded user sessions](/managed/observe/digital-experience/session-replay "Learn how you can use Session Replay to better understand and troubleshoot errors experienced by your customers.") with [playback masking rules](/managed/observe/digital-experience/session-replay/configure-session-replay-web#masking-preset-options "Configure monitoring consumption and data privacy settings for Session Replay.") applied at the time of replay. Note that any data masked during recording is never captured and, therefore, always masked during replay.
+* **Replay session data with masking:** Allows replay of [recorded user sessions](/managed/observe/digital-experience/session-replay "Learn how you can use Session Replay to better understand and troubleshoot errors experienced by your customers.") with [playback masking rules](/managed/observe/digital-experience/session-replay/configure-session-replay-web#masking-preset-options "Configure monitoring consumption and data privacy settings for Session Replay Classic.") applied at the time of replay. Note that any data masked during recording is never captured and, therefore, always masked during replay.
 * **Replay session data without masking:** Allows replay of recorded user sessions without playback masking rules applied. Note that any data masked during recording is always masked during replay.
 
   For Session Replay permissions to work within a management zone, the user also needs to have access to the requisite applications.

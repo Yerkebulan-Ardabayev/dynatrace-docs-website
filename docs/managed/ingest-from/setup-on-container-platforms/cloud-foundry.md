@@ -1,7 +1,6 @@
 ---
 title: Set up Dynatrace on Cloud Foundry
 source: https://docs.dynatrace.com/managed/ingest-from/setup-on-container-platforms/cloud-foundry
-scraped: 2026-05-12T11:03:26.590087
 ---
 
 # Set up Dynatrace on Cloud Foundry
@@ -56,5 +55,5 @@ If you don't have access to BOSH, Dynatrace provides two different approaches fo
 
 ## Related topics
 
-* [Cloud Foundry monitoringï»¿](https://www.dynatrace.com/technologies/cloud-foundry-monitoring/)
+* [Cloud Foundry monitoring﻿](https://www.dynatrace.com/technologies/cloud-foundry-monitoring/)
 * [Cloud Foundry monitoring](/managed/observe/infrastructure-observability/container-platform-monitoring/cloud-foundry-monitoring "Monitor Cloud Foundry with Dynatrace.")

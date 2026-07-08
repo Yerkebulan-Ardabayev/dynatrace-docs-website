@@ -1,7 +1,6 @@
 ---
 title: Settings API - Exclude/Include browsers from monitoring schema table
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/settings/schemas/builtin-rum-web-browser-exclusion
-scraped: 2026-05-12T11:42:26.347131
 ---
 
 # Settings API - Exclude/Include browsers from monitoring schema table
@@ -12,7 +11,7 @@ scraped: 2026-05-12T11:42:26.347131
 
 ### Exclude/Include browsers from monitoring (`builtin:rum.web.browser-exclusion)`
 
-If you want to exclude certain outdated browser types from your list of monitored browsers, create [browser exclusionï»¿](https://dt-url.net/0e2z0pp0) rules for the browsers that are to be excluded.
+If you want to exclude certain outdated browser types from your list of monitored browsers, create [browser exclusion﻿](https://dt-url.net/0e2z0pp0) rules for the browsers that are to be excluded.
 
 | Schema ID | Schema groups | Scope |
 | --- | --- | --- |

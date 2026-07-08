@@ -1,7 +1,6 @@
 ---
 title: Configure and use a table visualization in Dynatrace
 source: https://docs.dynatrace.com/managed/analyze-explore-automate/dashboards-classic/charts-and-tiles/visualization-table
-scraped: 2026-05-12T11:12:58.263065
 ---
 
 # Configure and use a table visualization in Dynatrace

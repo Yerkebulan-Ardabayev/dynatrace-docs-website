@@ -1,7 +1,6 @@
 ---
 title: Dynatrace API - Response codes
 source: https://docs.dynatrace.com/managed/dynatrace-api/basics/dynatrace-api-response-codes
-scraped: 2026-05-12T11:03:39.713479
 ---
 
 # Dynatrace API - Response codes

@@ -1,7 +1,6 @@
 ---
 title: Kubernetes
 source: https://docs.dynatrace.com/managed/observe/infrastructure-observability/container-platform-monitoring/kubernetes-monitoring
-scraped: 2026-05-12T11:38:07.854066
 ---
 
 # Kubernetes

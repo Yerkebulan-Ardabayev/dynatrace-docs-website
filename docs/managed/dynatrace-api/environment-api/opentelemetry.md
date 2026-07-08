@@ -1,7 +1,6 @@
 ---
 title: OpenTelemetry Protocol (OTLP) ingest API
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/opentelemetry
-scraped: 2026-05-12T12:00:49.879952
 ---
 
 # OpenTelemetry Protocol (OTLP) ingest API

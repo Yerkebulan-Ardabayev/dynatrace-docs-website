@@ -1,7 +1,6 @@
 ---
 title: OS services monitoring
 source: https://docs.dynatrace.com/managed/observe/infrastructure-observability/hosts/monitoring/os-services
-scraped: 2026-05-12T12:05:08.805618
 ---
 
 # OS services monitoring
@@ -10,11 +9,11 @@ scraped: 2026-05-12T12:05:08.805618
 
 * How-to guide
 * 14-min read
-* Updated on Jan 14, 2026
+* Updated on May 26, 2026
 
-Dynatrace provides out-of-the-box availability monitoring of OS services.
+Dynatrace monitors OS service availability without additional configuration.
 
-You can monitor hosts in full-stack monitoring mode or use lightweight monitoring modes. For more information, see [OneAgent monitoring modes](/managed/platform/oneagent/monitoring-modes/monitoring-modes "Find out more about the available monitoring modes when using OneAgent.").
+You can monitor hosts in Full-Stack monitoring mode or use lightweight monitoring modes. For more information, see [OneAgent monitoring modes](/managed/platform/oneagent/monitoring-modes/monitoring-modes "Find out more about the available monitoring modes when using OneAgent.").
 
 ## Requirements
 
@@ -27,7 +26,7 @@ Depending on your monitoring requirements, you can choose between basic or advan
 
 ### Basic alerting (Service status)
 
-Basic alerting provides insight only into the service status. The system will monitor an OS service's current status and alert you when it changes from running to failed.
+Basic alerting provides insight only into the service status. The system monitors an OS service's current status and alerts you when it changes from running to failed.
 
 You can check the service status from the **OS services monitoring** page of the selected host or query it using the [Settings API - OS services monitoring schema table](/managed/dynatrace-api/environment-api/settings/schemas/builtin-os-services-monitoring "View builtin:os-services-monitoring settings schema table of your monitoring environment via the Dynatrace API.").
 
@@ -47,7 +46,7 @@ Set an advanced alerting in Data explorer for Managed.
 
 To monitor an OS service, perform the following steps.
 
-1. Access OS services monitoring
+### 1. Access OS services monitoring
 
 In Dynatrace, go to **OS services monitoring** for the level you are configuring.
 
@@ -57,11 +56,13 @@ In Dynatrace, go to **OS services monitoring** for the level you are configuring
 * The host level inherits all settings from the host group.
   Additionally, you can add configurations for specific hosts.
 
-### Environment level
+Environment level
+
+Host-group level
+
+Host level
 
 Go to **Settings** > **Collect and capture** > **Infrastructure** > **OS** > **OS services monitoring**.
-
-### Host-group level
 
 1. Go to **Deployment Status** > **OneAgents**.
 2. On the **OneAgent deployment** page, turn off **Show new OneAgent deployments**.
@@ -76,17 +77,15 @@ Go to **Settings** > **Collect and capture** > **Infrastructure** > **OS** > **O
 
 5. In the host group settings, select **OS services monitoring**.
 
-### Host level
-
 1. Go to **Hosts**.
 2. Find and select your host to display the host overview page.
-3. In the upper-right corner of the host overview page, select **More** (**â¦**) > **Settings**.
+3. In the upper-right corner of the host overview page, select **More** (**…**) > **Settings**.
 
 4. In the host settings, select **OS services monitoring**.
 
-2. Add service monitoring policy
+### 2. Add service monitoring policy
 
-Based on the service state and the rules, the service monitoring policy defines the way Dynatrace is monitoring your service. By default, Dynatrace comes with `Auto-start Windows OS Services` and `Auto-start Linux OS Services` policies for auto-started Windows and Linux services with failed status.
+Based on the service state and the rules, the service monitoring policy defines how Dynatrace monitors your service. By default, Dynatrace comes with `Auto-start Windows OS Services` and `Auto-start Linux OS Services` policies for auto-started Windows and Linux services with failed status.
 
 Limits
 
@@ -94,16 +93,16 @@ Note that the default limit of OS Service entities is 100,000 per cluster.
 In larger environments with many hosts, we recommend creating precise rules that match only the important services for your infrastructure. Creating rules that are too general (for example, matching all services on thousands of hosts) may result in reaching the limit (entity explosion), leading to the disappearance of OS services from Dynatrace.
 Also, `Auto-start Windows OS Services` and `Auto-start Linux OS Services` can be used as a starting point for further refining the policies.
 
-The order of service monitoring policies is important. Policies that are higher on the list will proceed before those on lower positions until they are fulfilled. This allows for the creation of selective alerts or monitoring with minimal policies. For example, if you want to monitor all auto-started services and not just those created by Microsoft, you need to add a policy with disabled alerting and/or monitoring that will verify if the manufacturer is Microsoft.
+The order of service monitoring policies is important. Policies that are higher on the list proceed before those on lower positions until they are fulfilled. This allows for the creation of selective alerts or monitoring with minimal policies. For example, if you want to monitor all auto-started services and not just those created by Microsoft, you need to add a policy with disabled alerting and/or monitoring that will verify if the manufacturer is Microsoft.
 
 1. On **OS services monitoring** for the level you are configuring based on your OS, select **Add policy** and define the policy, which is a collection of rules.
-2. **System**: select your operating system.
-3. **Rule name**: enter the name that will be displayed in the **Summary** field.
-4. **Monitor**: decide whether you want to monitor service availability using the **OS service availability** (`builtin:osservice.availability`) metric. If available, the metric sends the service status every 10 seconds. The status is carried by the [**Service status**](#service-status) (`dt.osservice.status`) dimension.  
+2. **System**: Select your operating system.
+3. **Rule name**: Enter the name that will be displayed in the **Summary** field.
+4. **Monitor**: Decide whether to monitor service availability using the **OS service availability** (`builtin:osservice.availability`) metric. If available, the metric sends the service status every ten seconds. The [**Service status**](#service-status) (`dt.osservice.status`) dimension carries the status.  
    Note that the metric consumes data points. For more information, see [Metrics powered by Grail](/managed/upgrade/unavailable-in-managed "Your selection is unavailable in Dynatrace Managed.").
-5. **Alert**: decide whether you want alerting for your policy.
-6. OneAgent version 1.257+ **Alert if service is not installed**: whether you want to receive alerts about OS services that are not installed on the host.
-7. **Service status**: set the service status for which an alert should be triggered.
+5. **Alert**: Decide whether you want alerting for your policy.
+6. OneAgent version 1.257+ **Alert if service is not installed**: Whether you want to receive alerts about OS services that are not installed on the host.
+7. **Service status**: Set the service status for which an alert should be triggered.
 
    Windows
 
@@ -113,8 +112,8 @@ The order of service monitoring policies is important. Policies that are higher 
 
    Available logic operations:
 
-   * `$not($eq(paused))` â Matches services that are in state different from paused.
-   * `$or($eq(paused),$eq(running))` â Matches services that are either in paused or running state.
+   * `$not($eq(paused))` – Matches services that are in state different from paused.
+   * `$or($eq(paused),$eq(running))` – Matches services that are either in paused or running state.
 
    These are the service statuses you can monitor. Use one of the following values as a parameter for this condition:
 
@@ -130,8 +129,8 @@ The order of service monitoring policies is important. Policies that are higher 
 
    Available logic operations:
 
-   * `$not($eq(active))` â Matches services with state different from active.
-   * `$or($eq(inactive),$eq(failed))` â Matches services that are either in inactive or failed state.
+   * `$not($eq(active))` – Matches services with state different from active.
+   * `$or($eq(inactive),$eq(failed))` – Matches services that are either in inactive or failed state.
 
    These are the service statuses you can monitor. Use one of the following values as a parameter for this condition:
 
@@ -141,14 +140,14 @@ The order of service monitoring policies is important. Policies that are higher 
    * `failed`
    * `inactive`
    * `active`
-8. Optional OneAgent version 1.257+ **Alerting delay**: the number of 10-second measurement cycles for a service to be in configured state before an event is generated. This doesn't apply to alerts for services that are not installed.
+8. Optional OneAgent version 1.257+ **Alerting delay**: The number of 10-second measurement cycles for a service to be in configured state before an event is generated. This doesn't apply to alerts for services that are not installed.
 
 Next, you need to select which services you want to monitor based on service properties.
 
-3. Select services you want to monitor
+### 3. Select services you want to monitor
 
 1. Select **Add rule**.
-2. Optional **Rule scope**: select either **OS Service** or **Host**. By default, the **OS Service** option is selected.
+2. Optional **Rule scope**: Select either **OS Service** or **Host**. By default, the **OS Service** option is selected.
 
 If you selected **Host**:
 
@@ -157,17 +156,17 @@ If you selected **Host**:
   + **Key** specifies the metadata key you want to match
   + **Condition** in which you can define a string that:
 
-    - Dynatrace version 1.310+ `$match(ver*_1.2.?)` â Matches string with wildcards. Use `*` for any number of characters (including zero) and `?` for exactly one character.
-    - `$contains(production)` â Matches if production appears anywhere in the host metadata value.
-    - `$eq(production)` â Matches if production matches the host metadata value exactly.
-    - `$prefix(production)` â Matches if production matches the prefix of the host metadata value.
-    - `$suffix(production)` â Matches if production matches the suffix of the host metadata value.
+    - Dynatrace version 1.310+ `$match(ver*_1.2.?)` – Matches string with wildcards. Use `*` for any number of characters (including zero) and `?` for exactly one character.
+    - `$contains(production)` – Matches if production appears anywhere in the host metadata value.
+    - `$eq(production)` – Matches if production matches the host metadata value exactly.
+    - `$prefix(production)` – Matches if production matches the prefix of the host metadata value.
+    - `$suffix(production)` – Matches if production matches the suffix of the host metadata value.
 
     Available logic operations:
 
-    - `$not($eq(production))` â Matches if the host metadata value is different from production.
-    - `$and($prefix(production),$suffix(main))` â Matches if host metadata value starts with production and ends with main.
-    - `$or($prefix(production),$suffix(main))` â Matches if host metadata value starts with production or ends with main.
+    - `$not($eq(production))` – Matches if the host metadata value is different from production.
+    - `$and($prefix(production),$suffix(main))` – Matches if host metadata value starts with production and ends with main.
+    - `$or($prefix(production),$suffix(main))` – Matches if host metadata value starts with production or ends with main.
 
     When including special characters such as brackets `(` and `)` within your matching expressions, escape these characters with a tilde `~`. For example, to match a metadata value that includes brackets, like `my(amazing)property`, you would write `$eq(my~(amazing~)property)`.
 
@@ -191,7 +190,7 @@ A monitoring rule may consist of multiple detection rules. All detection rules m
 
 Additional information on Display name, Path, Manufacturer, and Service Name
 
-With these properties, we define the services to be monitored based on:
+Use these properties to define the services to monitor based on:
 
 * Display name visible to a system user
 * Path to the service binary
@@ -199,17 +198,17 @@ With these properties, we define the services to be monitored based on:
 * Service name representing the name or ID under which OS service is recognized
 * **Condition** in which you can define a string that:
 
-  + Starts with â use `$prefix` qualifier, for example `$prefix(ss)`.
-  + Ends with â use `$suffix` qualifier, for example `$suffix(hd)`.
-  + Equals â use `$eq` qualifier, for example `$eq(sshd)`.
-  + Contains â use `$contains` qualifier, for example `$contains(ssh)`.
-  + Dynatrace version 1.310+ Matches â use `$match` qualifier, for example `$match(ip?tables*)`, where `*` matches any number of characters (including zero) and `?` matches exactly one character.
+  + Starts with – use `$prefix` qualifier, for example `$prefix(ss)`.
+  + Ends with – use `$suffix` qualifier, for example `$suffix(hd)`.
+  + Equals – use `$eq` qualifier, for example `$eq(sshd)`.
+  + Contains – use `$contains` qualifier, for example `$contains(ssh)`.
+  + Dynatrace version 1.310+ Matches – use `$match` qualifier, for example `$match(ip?tables*)`, where `*` matches any number of characters (including zero) and `?` matches exactly one character.
 
   Available logic operations:
 
-  + `$not($eq(sshd))` â Matches if the service's property value is different from `sshd`.
-  + `$and($prefix(ss),$suffix(hd))` â Matches if service's property value starts with `ss` and ends with `hd`.
-  + `$or($prefix(ss),$suffix(hd))` â Matches if service's property value starts with `ss` or ends with `hd`.
+  + `$not($eq(sshd))` – Matches if the service's property value is different from `sshd`.
+  + `$and($prefix(ss),$suffix(hd))` – Matches if service's property value starts with `ss` and ends with `hd`.
+  + `$or($prefix(ss),$suffix(hd))` – Matches if service's property value starts with `ss` or ends with `hd`.
 
   When including special characters such as brackets `(` and `)` within your matching expressions, escape these characters with a tilde `~`. For example, to match a property value that includes brackets, like `my(amazing)property`, you would write `$eq(my~(amazing~)property)`.
 
@@ -221,12 +220,12 @@ With this property we define the services to be monitored based on their startup
 
 * **Condition** in which you can define a string that:
 
-  + Equals â use `$eq` qualifier, for example `$eq(manual)`.
+  + Equals – use `$eq` qualifier, for example `$eq(manual)`.
 
   Available logic operations:
 
-  + `$not($eq(auto))` â Matches services with startup type different from Automatic.
-  + `$or($eq(auto),$eq(manual))` â Matches if service's startup type is either Automatic or Manual.
+  + `$not($eq(auto))` – Matches services with startup type different from Automatic.
+  + `$or($eq(auto),$eq(manual))` – Matches if service's startup type is either Automatic or Manual.
 
   Use one of the following values as a parameter for this condition:
 
@@ -245,33 +244,33 @@ With this property we define the services to be monitored based on their startup
 
 Additional information on Service Name
 
-With this property we define the services to be monitored based on the service name.
+Use this property to define which services to monitor based on the service name.
 
 **Condition** in which you can define a string that:
 
-* Dynatrace version 1.310+ `$match(ip?tables*)` â Matches string with wildcards. Use `*` for any number of characters (including zero) and `?` for exactly one character.
-* `$contains(ssh)` â Matches if `ssh` appears anywhere in the service's property value.
-* `$eq(sshd)` â Matches if `sshd` matches the service's property value exactly.
-* `$prefix(ss)` â Matches if `ss` matches the prefix of the service's property value.
-* `$suffix(hd)` â Matches if `hd` matches the suffix of the service's property value.
+* Dynatrace version 1.310+ `$match(ip?tables*)` – Matches string with wildcards. Use `*` for any number of characters (including zero) and `?` for exactly one character.
+* `$contains(ssh)` – Matches if `ssh` appears anywhere in the service's property value.
+* `$eq(sshd)` – Matches if `sshd` matches the service's property value exactly.
+* `$prefix(ss)` – Matches if `ss` matches the prefix of the service's property value.
+* `$suffix(hd)` – Matches if `hd` matches the suffix of the service's property value.
 
 Available logic operations:
 
-* `$not($eq(sshd))` â Matches if the service's property value is different from `sshd`.
-* `$and($prefix(ss),$suffix(hd))` â Matches if service's property value starts with `ss` and ends with `hd`.
-* `$or($prefix(ss),$suffix(hd))` â Matches if service's property value starts with `ss` or ends with `hd`.
+* `$not($eq(sshd))` – Matches if the service's property value is different from `sshd`.
+* `$and($prefix(ss),$suffix(hd))` – Matches if service's property value starts with `ss` and ends with `hd`.
+* `$or($prefix(ss),$suffix(hd))` – Matches if service's property value starts with `ss` or ends with `hd`.
 
 Additional information on Startup Type
 
-With this property, we define the services to be monitored based on their startup type.
+Use this property to define which services to monitor based on their startup type.
 
 **Condition** in which you can define a string that:
 
-* `$eq(enabled)` â Matches services with startup type equal to enabled.
+* `$eq(enabled)` – Matches services with startup type equal to enabled.
 
 Available logic operations:
 
-* `$not($eq(enabled))` â Matches services with startup type different from enabled.
+* `$not($eq(enabled))` – Matches services with startup type different from enabled.
 * `$or($eq(enabled),$eq(disabled))` - Matches services that are either enabled or disabled.
 
 Use one of the following values as a parameter for this condition:
@@ -280,10 +279,12 @@ Use one of the following values as a parameter for this condition:
 | --- | --- |
 |  |  |
 | `enabled`, `enabled-runtime` | The service is marked as ready for startup. |
-| `static` | The unit file is not enabled and has no provisions for enabling in the install unit file section. Static units are installed as dependencies and can only be masked, but are not always executed. They will be executed only if another unit depends on them or if they're manually started. |
+| `static` | The unit file is not enabled and has no provisions for enabling in the install unit file section. Static units are installed as dependencies and can only be masked, but are not always executed. They are executed only if another unit depends on them or if they're manually started. |
 | `disabled` | The unit file is not enabled, but it contains an install section with installation instructions. |
+| `indirect` | The unit file is not enabled directly, but it can be enabled indirectly through aliases or as a dependency of another unit. Typically, such units define an `Also=` or `Alias=` directive in the `[Install]` section, allowing them to be pulled in when enabling related units. |
+| `linked`, `linked-runtime` | The unit file is linked into the systemd configuration from outside the standard unit file directories (for example, using `systemctl link`).  * `linked` indicates a persistent link stored on disk * `linked-runtime` indicates a temporary link that exists only for the current runtime (for example, created with `--runtime`) |
 
-4. Add custom properties
+### 4. Add custom properties
 
 OneAgent version 1.247+
 
@@ -322,13 +323,15 @@ To manage the OS services
 
    Host level
 
+   Host-group level
+
+   Environment level
+
    1. Go to **Hosts**.
    2. Find and select your host to display the host overview page.
-   3. In the upper-right corner of the host overview page, select **More** (**â¦**) > **Settings**.
+   3. In the upper-right corner of the host overview page, select **More** (**…**) > **Settings**.
 
    4. In the host settings, select **OS services monitoring**.
-
-   Host-group level
 
    1. Go to **Deployment Status** > **OneAgents**.
    2. On the **OneAgent deployment** page, turn off **Show new OneAgent deployments**.
@@ -343,13 +346,11 @@ To manage the OS services
 
    5. In the host group settings, select **OS services monitoring**.
 
-   Environment level
-
    Go to **Settings** > **Monitoring** > **OS services monitoring**.
 2. The OS services you monitor are displayed in a table under the **Add policy** button.
 
    * To stop monitoring a listed service, turn the **Enabled** setting off.
-   * To delete a service from the table, select the delete button in the **Delete** column
+   * To delete a service from the table, select the delete button in the **Delete** column.
    * To view and edit details, select the expand control in the **Details** column.
 
 ## Monitor service availability
@@ -383,3 +384,5 @@ On Linux, systemd OS services with the following startup types are supported:
 * `static`
 * `disabled`
 * `indirect`
+* `linked`
+* `linked-runtime`

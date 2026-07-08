@@ -1,7 +1,6 @@
 ---
 title: Settings API - Business event processing schema table
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/settings/schemas/builtin-bizevents-processing-pipelines-rule
-scraped: 2026-05-12T11:39:41.637456
 ---
 
 # Settings API - Business event processing schema table
@@ -12,7 +11,7 @@ scraped: 2026-05-12T11:39:41.637456
 
 ### Business event processing (`builtin:bizevents-processing-pipelines.rule)`
 
-Incoming business events can be transformed through processing rules using [this syntaxï»¿](https://dt-url.net/pz030w5). Note that rules are processed sequentially, making the order important; a different rule order could give different results.
+Incoming business events can be transformed through processing rules using [this syntax﻿](https://dt-url.net/pz030w5). Note that rules are processed sequentially, making the order important; a different rule order could give different results.
 
 | Schema ID | Schema groups | Scope |
 | --- | --- | --- |
@@ -36,9 +35,9 @@ To execute this request, you need an access token with **Read settings** (`setti
 | --- | --- | --- | --- |
 | Enabled `enabled` | boolean | - | Required |
 | Rule name `ruleName` | text | - | Required |
-| Matcher (DQL) `matcher` | text | [See our documentationï»¿](https://dt-url.net/bp234rv) | Required |
+| Matcher (DQL) `matcher` | text | [See our documentation﻿](https://dt-url.net/bp234rv) | Required |
 | Transformation fields `transformationFields` | [TransformationField](#TransformationField)[] | - | Required |
-| Processor definition `script` | text | [See our documentationï»¿](https://dt-url.net/pz030w5) | Required |
+| Processor definition `script` | text | [See our documentation﻿](https://dt-url.net/pz030w5) | Required |
 | `RuleTesting` | [RuleTesting](#RuleTesting) |  | Required |
 
 ##### The `TransformationField` object

@@ -1,7 +1,6 @@
 ---
 title: How to define a maintenance window
 source: https://docs.dynatrace.com/managed/analyze-explore-automate/notifications-and-alerting/maintenance-windows/define-maintenance-window
-scraped: 2026-05-12T11:36:42.059886
 ---
 
 # How to define a maintenance window
@@ -44,7 +43,7 @@ When a maintenance window is created, it is enabled by default. You can disable 
 
 Maintenance windows page
 
-[Maintenance windows may be excluded from Synthetic Monitoring availability calculations](/managed/observe/digital-experience/synthetic-monitoring/general-information/synthetic-calculations#m-windows-availability "Understand Synthetic Monitoring metric calculations.") by applying a global setting.
+[Maintenance windows may be excluded from Synthetic Monitoring availability calculations](/managed/observe/digital-experience/synthetic-monitoring/general-information/synthetic-calculations#m-windows-availability "Understand Synthetic Monitoring Classic metric calculations.") by applying a global setting.
 
 ## Disable synthetic monitor execution
 
@@ -79,26 +78,26 @@ You define maintenance-window scope by specifying one or more **Filters** (**Add
 
 You can define a filter by providing a value for one or more conditions. An entity must **match all conditions defined within a filter** to be scoped within the maintenance window.
 
-* You can specify an **Entity type**âselect the entity type from the autocomplete suggestions that appear as you type. You can add only one **Entity type** per filter.
+* You can specify an **Entity type**—select the entity type from the autocomplete suggestions that appear as you type. You can add only one **Entity type** per filter.
 
   ![Entity type](https://dt-cdn.net/images/mwentitytype-543-a791cec214.png)
 
   Entity type
 
   If you don't add any other conditions, all entities of the specified type are matched to the maintenance window. You can narrow this scope by adding conditions via **Entity tags** or **Management zones**.
-* You can limit the filter to a specific **Entity**âselect the entity type and then select the entity from the provided list of entity names and IDs. You can add only one **Entity** by entity ID per filter.
+* You can limit the filter to a specific **Entity**—select the entity type and then select the entity from the provided list of entity names and IDs. You can add only one **Entity** by entity ID per filter.
 
   ![Entity ID and name](https://dt-cdn.net/images/mwentityid-632-84f181ea10.png)
 
   Entity ID and name
-* Specify one or more **Entity tags** as key-value pairs (**Add tag**). You can also specify an optional entity type. You can specify more than one tagâentities need to match **all** tags in order to be included within the maintenance window.
+* Specify one or more **Entity tags** as key-value pairs (**Add tag**). You can also specify an optional entity type. You can specify more than one tag—entities need to match **all** tags in order to be included within the maintenance window.
 
   **Note**: Entity tags are case-sensitive.
 
   ![Tag condition for maintenance windows](https://dt-cdn.net/images/mw-tags-398-ed1877ed40.png)
 
   Tag condition for maintenance windows
-* Specify one or more **Management zones** (**Add item** > select a [management zone](/managed/manage/identity-access-management/permission-management/management-zones "Learn about management zones concepts, how to define management zones, and how to make the most of them.") from the list provided). You can specify more than one management zoneâentities need to match **all** management zones in order to be included within the maintenance window.
+* Specify one or more **Management zones** (**Add item** > select a [management zone](/managed/manage/identity-access-management/permission-management/management-zones "Learn about management zones concepts, how to define management zones, and how to make the most of them.") from the list provided). You can specify more than one management zone—entities need to match **all** management zones in order to be included within the maintenance window.
 
   There are monitored entities in Dynatrace (such as the **Disk** entity type) that don't support management zones. When you add such an entity to a maintenance window and specify a management-zone condition, the management zone of the parent entity is used instead. So if you add the **Disk** entity type to a maintenance window and specify a management zone, all disks from hosts belonging to that management zone are matched to the maintenance window. If there's no parent management zone, the monitored entity is matched to the maintenance window only if no management zone is specified.
 

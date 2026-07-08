@@ -1,7 +1,6 @@
 ---
 title: Settings API - Performance thresholds schema table
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/settings/schemas/builtin-synthetic-http-performance-thresholds
-scraped: 2026-05-12T11:48:36.033185
 ---
 
 # Settings API - Performance thresholds schema table

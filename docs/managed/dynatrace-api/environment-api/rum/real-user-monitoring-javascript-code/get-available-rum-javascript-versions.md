@@ -1,7 +1,6 @@
 ---
 title: RUM JavaScript API - GET available RUM JavaScript versions
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/rum/real-user-monitoring-javascript-code/get-available-rum-javascript-versions
-scraped: 2026-05-12T11:55:55.655378
 ---
 
 # RUM JavaScript API - GET available RUM JavaScript versions
@@ -59,7 +58,7 @@ All available RUM JavaScript versions
 | Element | Type | Description |
 | --- | --- | --- |
 | code | integer | The HTTP status code |
-| constraintViolations | [ConstraintViolation[]](#openapi-definition-ConstraintViolation) | A list of constraint violations |
+| constraintViolations | [ConstraintViolation](#openapi-definition-ConstraintViolation)[] | A list of constraint violations |
 | message | string | The error message |
 
 #### The `ConstraintViolation` object

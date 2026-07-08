@@ -1,7 +1,6 @@
 ---
 title: Davis Security Advisor API
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/application-security/davis-security-advice
-scraped: 2026-05-12T11:12:28.921931
 ---
 
 # Davis Security Advisor API
@@ -57,7 +56,7 @@ A list of advice from the Davis security advisor.
 
 | Element | Type | Description |
 | --- | --- | --- |
-| advices | [DavisSecurityAdvice[]](#openapi-definition-DavisSecurityAdvice) | - |
+| advices | [DavisSecurityAdvice](#openapi-definition-DavisSecurityAdvice)[] | - |
 | nextPageKey | string | The cursor for the next page of results. Has the value of `null` on the last page.  Use it in the **nextPageKey** query parameter to obtain subsequent pages of the result. |
 | pageSize | integer | The number of entries per page. |
 | totalCount | integer | The total number of entries in the result. |
@@ -69,12 +68,12 @@ Security advice from the Davis security advisor.
 | Element | Type | Description |
 | --- | --- | --- |
 | adviceType | string | The type of the advice. The element can hold these values * `UPGRADE` |
-| critical | string[] | IDs of `critical` level [security problemsï»¿](https://dt-url.net/p103u1h) caused by vulnerable component. |
-| high | string[] | IDs of `high` level [security problemsï»¿](https://dt-url.net/p103u1h) caused by vulnerable component. |
-| low | string[] | IDs of `low` level [security problemsï»¿](https://dt-url.net/p103u1h) caused by vulnerable component. |
-| medium | string[] | IDs of `medium` level [security problemsï»¿](https://dt-url.net/p103u1h) caused by vulnerable component. |
+| critical | string[] | IDs of `critical` level [security problems﻿](https://dt-url.net/p103u1h) caused by vulnerable component. |
+| high | string[] | IDs of `high` level [security problems﻿](https://dt-url.net/p103u1h) caused by vulnerable component. |
+| low | string[] | IDs of `low` level [security problems﻿](https://dt-url.net/p103u1h) caused by vulnerable component. |
+| medium | string[] | IDs of `medium` level [security problems﻿](https://dt-url.net/p103u1h) caused by vulnerable component. |
 | name | string | The name of the advice. |
-| none | string[] | IDs of `none` level [security problemsï»¿](https://dt-url.net/p103u1h) caused by vulnerable component. |
+| none | string[] | IDs of `none` level [security problems﻿](https://dt-url.net/p103u1h) caused by vulnerable component. |
 | technology | string | The technology of the vulnerable component. The element can hold these values * `DOTNET` * `GO` * `JAVA` * `KUBERNETES` * `NODE_JS` * `PHP` * `PYTHON` |
 | vulnerableComponent | string | The vulnerable component to which advice applies. |
 
@@ -89,7 +88,7 @@ Security advice from the Davis security advisor.
 | Element | Type | Description |
 | --- | --- | --- |
 | code | integer | The HTTP status code |
-| constraintViolations | [ConstraintViolation[]](#openapi-definition-ConstraintViolation) | A list of constraint violations |
+| constraintViolations | [ConstraintViolation](#openapi-definition-ConstraintViolation)[] | A list of constraint violations |
 | message | string | The error message |
 
 #### The `ConstraintViolation` object

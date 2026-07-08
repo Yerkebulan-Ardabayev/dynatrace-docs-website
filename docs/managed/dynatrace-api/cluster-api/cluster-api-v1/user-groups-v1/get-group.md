@@ -1,7 +1,6 @@
 ---
 title: Get user group
 source: https://docs.dynatrace.com/managed/dynatrace-api/cluster-api/cluster-api-v1/user-groups-v1/get-group
-scraped: 2026-05-12T12:13:03.887148
 ---
 
 # Get user group

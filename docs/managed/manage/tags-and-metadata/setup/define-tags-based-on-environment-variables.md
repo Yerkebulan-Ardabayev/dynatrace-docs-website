@@ -1,7 +1,6 @@
 ---
 title: Define tags based on environment variables
 source: https://docs.dynatrace.com/managed/manage/tags-and-metadata/setup/define-tags-based-on-environment-variables
-scraped: 2026-05-12T11:06:21.023107
 ---
 
 # Define tags based on environment variables
@@ -26,7 +25,7 @@ Use the environment variable [`DT_CUSTOM_PROP`](/managed/observe/infrastructure-
 
 You can define an environment variable called `DT_TAGS` on the process or host level. The format of the variable is simple. The variable can contain simple strings or key/value pairs (for example, `DT_TAGS=MikesStuff easyTravel=Mike`). As you can see in the Windows process example below, you can define multiple tags. Spaces are used to separate tag values.
 
-To customize the process group of IIS, you need to define an environment variable that you can use within the scope of a rule. To set up an environment variable in IIS version 10 or later, see [Environment variablesï»¿](https://www.iis.net/configreference/system.applicationhost/applicationpools/add/environmentvariables).
+To customize the process group of IIS, you need to define an environment variable that you can use within the scope of a rule. To set up an environment variable in IIS version 10 or later, see [Environment variables﻿](https://www.iis.net/configreference/system.applicationhost/applicationpools/add/environmentvariables).
 
 How to define an environment variable for IIS earlier than version 10
 

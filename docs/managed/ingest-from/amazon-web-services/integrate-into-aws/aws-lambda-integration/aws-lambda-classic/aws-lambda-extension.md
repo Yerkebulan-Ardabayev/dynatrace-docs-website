@@ -1,7 +1,6 @@
 ---
 title: Trace Python, Node.js, and Java Lambda functions
 source: https://docs.dynatrace.com/managed/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration/aws-lambda-classic/aws-lambda-extension
-scraped: 2026-05-12T12:03:57.549977
 ---
 
 # Trace Python, Node.js, and Java Lambda functions
@@ -10,7 +9,7 @@ scraped: 2026-05-12T12:03:57.549977
 
 * How-to guide
 * 14-min read
-* Updated on Jan 23, 2026
+* Updated on May 29, 2026
 
 This page refers to the classic AWS Lambda integration. For the latest version, see [Trace Lambda functions](/managed/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration/trace-lambda-functions "Monitor AWS Lambda functions.").
 
@@ -31,11 +30,11 @@ For other invocation types, OneAgent can't capture any specific information or c
 ## Prerequisites
 
 * A supported AWS Lambda [runtime](/managed/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration#support-lifecycle "AWS Lambda capabilities and integration options"). The Dynatrace extension supports AWS Lambda functions written in **Node.js**, **Python**, or **Java**.
-  Both **64-bit ARM** ([AWS Graviton2 processorsï»¿](https://aws.amazon.com/ec2/graviton/)) and **64-bit x86** architectures are supported.
+  Both **64-bit ARM** ([AWS Graviton2 processors﻿](https://aws.amazon.com/ec2/graviton/)) and **64-bit x86** architectures are supported.
 * Java The following RAM requirements need to be met:
 
-  + If [Lambda SnapStartï»¿](https://docs.aws.amazon.com/lambda/latest/dg/snapstart.html) is enabled and OneAgent version is 1.267+, memory needs to be set to a minimum of 512 MB.
-  + If [Lambda SnapStartï»¿](https://docs.aws.amazon.com/lambda/latest/dg/snapstart.html) is not enabled and OneAgent version is 1.265 or earlier, memory needs to be set to a minimum of 1,500 MB.
+  + If [Lambda SnapStart﻿](https://docs.aws.amazon.com/lambda/latest/dg/snapstart.html) is enabled and OneAgent version is 1.267+, memory needs to be set to a minimum of 512 MB.
+  + If [Lambda SnapStart﻿](https://docs.aws.amazon.com/lambda/latest/dg/snapstart.html) is not enabled and OneAgent version is 1.265 or earlier, memory needs to be set to a minimum of 1,500 MB.
     To configure memory in the AWS Lambda console, go to **General** > **Basic settings** and set **Memory**.
 
   A new configuration of the memory size affects the amount of virtual CPU available to the function; to learn more about it, see [Monitoring overhead](#monitoring-overhead) below.
@@ -103,7 +102,7 @@ Configure with environment variables
 
 When using this method, make sure that you add the Dynatrace Lambda layer to your function. The layer, as well as the environment variables, can be set either manually through the AWS console (**Add layer** > **Specify an ARN** and paste the ARN displayed on the deployment page) or by using an automated solution of your choice.
 
-[Client-side decryption of environment variables (Security in Transit)ï»¿](https://dt-url.net/tz234sd) is not supported.
+[Client-side decryption of environment variables (Security in Transit)﻿](https://dt-url.net/tz234sd) is not supported.
 
 If you select this method, Dynatrace provides you with:
 
@@ -157,7 +156,7 @@ This is an optional step to use Real User Monitoring (RUM), which provides you w
 
 * Make sure the `x-dtc` header is allowed in the CORS settings of your monitored Lambda functions.
 
-  RUM for Lambda functions requires a specific header (`x-dtc`) to be sent with XHR calls to AWS. To enable it, the CORS settings of your AWS deployment must allow the `x-dtc` header during preflight (`OPTIONS`) requests. To configure CORS and allow the `x-dtc` header for your specific setup, see [Enable CORS on a resource using the API Gateway consoleï»¿](https://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-cors-console.html) in AWS documentation.
+  RUM for Lambda functions requires a specific header (`x-dtc`) to be sent with XHR calls to AWS. To enable it, the CORS settings of your AWS deployment must allow the `x-dtc` header during preflight (`OPTIONS`) requests. To configure CORS and allow the `x-dtc` header for your specific setup, see [Enable CORS on a resource using the API Gateway console﻿](https://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-cors-console.html) in AWS documentation.
 
 ### Configure Dynatrace
 
@@ -165,7 +164,7 @@ To configure the `x-dtc` header for calls to your Lambda functions
 
 1. Go to **Web**, **Mobile**, **Frontend**, or **Custom Applications**, depending on your application type.
 2. Select the application you want to connect with your Lambda function.
-3. Select the browse menu (**â¦**) in the upper-right corner and select **Edit**.
+3. Select the browse menu (**…**) in the upper-right corner and select **Edit**.
 4. Select **Capturing** > **Async web requests and SPAs**.
 5. Make sure that your framework of choice is enabled. If your framework is not listed, enable **Capture XmlHttpRequest (XHR)** for generic support of `XHR`.
 6. Select **Capturing** > **Advanced setup**.
@@ -174,7 +173,7 @@ To configure the `x-dtc` header for calls to your Lambda functions
 
 Failed requests
 
-If requests start failing after enabling this option, review your CORS settings. To learn how to configure CORS, see [Enable CORS on a resource using the API Gateway consoleï»¿](https://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-cors-console.html) in AWS documentation.
+If requests start failing after enabling this option, review your CORS settings. To learn how to configure CORS, see [Enable CORS on a resource using the API Gateway console﻿](https://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-cors-console.html) in AWS documentation.
 
 ![Service Flow for AWS Lambda function](https://dt-cdn.net/images/aws-lambda1-service-flow-1430-f09d3a9ebe.png)
 
@@ -193,12 +192,12 @@ Copy the configuration snippets into your deployment and use your deployment met
 ### Configure the AWS API Gateway
 
 * If inbound (non-XHR) requests to your Lambda functions are not connected to the calling application, configure the API Gateway to pass through the Dynatrace tag. To do this, enable **Use Lambda Proxy Integration** on the **Integration Request** configuration page of the API Gateway.
-* If the API Gateway is configured from the Lambda configuration page, this setting will be enabled by default. For more information, see [Enable CORS on a resource using the API Gateway consoleï»¿](https://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-cors-console.html).
+* If the API Gateway is configured from the Lambda configuration page, this setting will be enabled by default. For more information, see [Enable CORS on a resource using the API Gateway console﻿](https://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-cors-console.html).
 
-AWS Lambda also supports [**non-proxy integration**ï»¿](https://dt-url.net/8u03rh3), whichâwithout some additional configurationâprevents Dynatrace from
+AWS Lambda also supports [**non-proxy integration**﻿](https://dt-url.net/8u03rh3), which—without some additional configuration—prevents Dynatrace from
 
 * Tracing calls from other monitored applications
-* [RUM](/managed/observe/digital-experience/rum-concepts/rum-overview "Learn about Real User Monitoring, key performance metrics, mobile app monitoring, and more.") detection (web and mobile)
+* [RUM](/managed/observe/digital-experience/rum-classic/rum-concepts/rum-overview "Learn about Real User Monitoring Classic, key performance metrics, mobile app monitoring, and more.") detection (web and mobile)
 
 Node.jsPython To make tracing calls from other monitored applications/RUM detection work in this scenario, create a custom mapping template in the integration requests configuration.
 
@@ -262,15 +261,15 @@ Node.jsPython To make tracing calls from other monitored applications/RUM detect
 
 OneAgent version 1.295+
 
-Instead of specifying the authentication token explicitly in the configuration, you can configure OneAgent to fetch a token stored in [AWS Secrets Managerï»¿](https://dt-url.net/r403pii).
+Instead of specifying the authentication token explicitly in the configuration, you can configure OneAgent to fetch a token stored in [AWS Secrets Manager﻿](https://dt-url.net/r403pii).
 
 Prerequisites
 
-* Make sure you granted the `secretsmanager:GetSecretValue` permission for the authentication token secret ARN to the Lambda function monitored by OneAgent. For details, see [Authentication and access control for AWS Secrets Managerï»¿](https://dt-url.net/7n03p10) in the AWS Secrets Manager documentation.
+* Make sure you granted the `secretsmanager:GetSecretValue` permission for the authentication token secret ARN to the Lambda function monitored by OneAgent. For details, see [Authentication and access control for AWS Secrets Manager﻿](https://dt-url.net/7n03p10) in the AWS Secrets Manager documentation.
 * Make sure the secret value contains only the plaintext authentication token value (without quotes). Note that
 
-  + Secrets with JSON structure are not supported. For details, see [Create an AWS Secrets Manager secretï»¿](https://dt-url.net/fy23pdx) in the AWS Secrets Manager documentation.
-  + When you retrieve the secret value, Secrets Manager returns by default only the current secret version (`AWSCURRENT` label). For details, see [What's in a Secrets Manager secret?ï»¿](https://dt-url.net/1f43pq8) in the AWS Secrets Manager documentation.
+  + Secrets with JSON structure are not supported. For details, see [Create an AWS Secrets Manager secret﻿](https://dt-url.net/fy23pdx) in the AWS Secrets Manager documentation.
+  + When you retrieve the secret value, Secrets Manager returns by default only the current secret version (`AWSCURRENT` label). For details, see [What's in a Secrets Manager secret?﻿](https://dt-url.net/1f43pq8) in the AWS Secrets Manager documentation.
 
 To fetch the token for a tracing connection, set the token secret ARN either to the environment variable `DT_CONNECTION_AUTH_TOKEN_SECRETS_MANAGER_ARN` or the JSON property `Connection.AuthTokenSecretsManagerArn`.
 
@@ -306,7 +305,7 @@ Screen to filter by invocations containing a Only cold start or No cold start
 
 Enabling monitoring unavoidably induces overhead to the monitored function execution. Overhead depends on several factors, such as function runtime technology, configuration, and concrete function characteristics such as code size or execution duration and complexity.
 
-The amount of memory configured for a function directly impacts the compute resources assigned to the function instance. For more details, see [Memory and computing powerï»¿](https://docs.aws.amazon.com/lambda/latest/operatorguide/computing-power.html).
+The amount of memory configured for a function directly impacts the compute resources assigned to the function instance. For more details, see [Memory and computing power﻿](https://docs.aws.amazon.com/lambda/latest/operatorguide/computing-power.html).
 
 The worst-case scenario on measured overhead is a function with an empty function handler and minimum memory configuration.
 
@@ -318,8 +317,8 @@ The worst-case scenario on measured overhead is a function with an empty functio
 
 For the cold start benchmarking process, hello-world functions (only returning a response) were tested with 512 MB of allocated memory. It is important to note that the observed overhead may vary based on a few factors:
 
-* **Configured memory**: A Lambda function is allocated CPU proportional to the [memory configuredï»¿](https://dt-url.net/4w022aa) which can influence its cold start performance. Functions with higher memory allocations typically exhibit faster initialization times due to the increased CPU allocation.
-* **Function implementation**: The complexity of the actual function implementationâincluding external dependencies, initialization logic, and the runtime environmentâcan significantly impact the cold start duration.
+* **Configured memory**: A Lambda function is allocated CPU proportional to the [memory configured﻿](https://dt-url.net/4w022aa) which can influence its cold start performance. Functions with higher memory allocations typically exhibit faster initialization times due to the increased CPU allocation.
+* **Function implementation**: The complexity of the actual function implementation—including external dependencies, initialization logic, and the runtime environment—can significantly impact the cold start duration.
 * **Runtime version**: The specific runtime version or container image used can also influence cold start times.
 
 When conducting performance evaluations, we recommend considering these factors, as they may affect the benchmarking results in real-world scenarios.
@@ -350,40 +349,43 @@ AWS Lambda metrics Invocations
 
 ## Known limitations
 
-* The Dynatrace AWS Lambda extension does not support the capture of [method-level request attributes](/managed/observe/application-observability/services/request-attributes/capture-request-attributes-based-on-method-arguments "Learn how to create request attributes based on Java, .NET, or PHP method arguments and how to use them on the serviceâs overview page. Also find out how you can aggregate the captured values of request attributes as well as how you can access objects, in case the value to be captured is a complex object.").
+* The Dynatrace AWS Lambda extension does not support the capture of [method-level request attributes](/managed/observe/application-observability/services/request-attributes/capture-request-attributes-based-on-method-arguments "Learn how to create request attributes based on Java, .NET, or PHP method arguments and how to use them on the service’s overview page. Also find out how you can aggregate the captured values of request attributes as well as how you can access objects, in case the value to be captured is a complex object.").
 * Most Dynatrace AWS Lambda extensions don't capture IP addresses of outgoing HTTP requests. This results in **unmonitored hosts** if the called service isn't monitored with Dynatrace.
-* Getting auth token from AWS Secrets Manager is not supported if [Lambda SnapStartï»¿](https://docs.aws.amazon.com/lambda/latest/dg/snapstart.html) is enabled.
+* Getting auth token from AWS Secrets Manager is not supported if [Lambda SnapStart﻿](https://docs.aws.amazon.com/lambda/latest/dg/snapstart.html) is enabled.
 * **Outgoing requests to another AWS Lambda function:** In a monitored AWS Lambda function, the following libraries are supported for outgoing requests to another AWS Lambda function:
 
   + For Java: AWS SDK version 1 for Java
   + For Node.js: AWS SDK for JavaScript in Node.js:
 
-    - [version 2ï»¿](https://www.npmjs.com/package/aws-sdk)
-    - [version 3ï»¿](https://github.com/aws/aws-sdk-js-v3) (OneAgent version 1.263+)
+    - [version 2﻿](https://www.npmjs.com/package/aws-sdk)
+    - [version 3﻿](https://github.com/aws/aws-sdk-js-v3) (OneAgent version 1.263+)
   + For Python: AWS SDK for Python (Boto3)
 * **Outgoing HTTP requests:** In a monitored AWS Lambda function, the following libraries/HTTP clients are supported for outgoing HTTP requests:
 
   + For Java: Apache HTTP Client 3.x, 4.x
   + For Node.js:
 
-    - Built-in [`http.request`ï»¿](https://nodejs.org/api/http.html#http)
-    - Built-in [`fetch API`ï»¿](https://nodejs.org/docs/latest/api/globals.html#fetch) (OneAgent version 1.285+)
+    - Built-in [`http.request`﻿](https://nodejs.org/api/http.html#http)
+    - Built-in [`fetch API`﻿](https://nodejs.org/docs/latest/api/globals.html#fetch) (OneAgent version 1.285+)
   + For Python: `requests`, `aiohttp-client`, `urllib3`, `redis-py` (OneAgent version 1.289+)
 * **Additional requirements for incoming calls for Java only:**
   To correctly monitor the configured handler method
 
   + The configured handler class has to implement the handler method by itself. If the handler method is only defined in a base class, you have to add an override in the handler class, calling the base handler method within (usually `super.handleRequest(...)`).
-  + The handler method has to have a `Context` ([`com.amazonaws.services.lambda.runtime.Context`ï»¿](https://github.com/aws/aws-lambda-java-libs/blob/main/aws-lambda-java-core/src/main/java/com/amazonaws/services/lambda/runtime/Context.java)) parameter.
-  + We recommend [following best practiceï»¿](https://docs.aws.amazon.com/lambda/latest/dg/java-handler.html) by deriving your Lambda handler class from [com.amazonaws.services.lambda.runtime.RequestHandlerï»¿](https://github.com/aws/aws-lambda-java-libs/blob/main/aws-lambda-java-core/src/main/java/com/amazonaws/services/lambda/runtime/RequestHandler.java) overrriding `handleRequest` and configuring that as handler method.
+  + The handler method has to have a `Context` ([`com.amazonaws.services.lambda.runtime.Context`﻿](https://github.com/aws/aws-lambda-java-libs/blob/main/aws-lambda-java-core/src/main/java/com/amazonaws/services/lambda/runtime/Context.java)) parameter.
+  + We recommend [following best practice﻿](https://docs.aws.amazon.com/lambda/latest/dg/java-handler.html) by deriving your Lambda handler class from [com.amazonaws.services.lambda.runtime.RequestHandler﻿](https://github.com/aws/aws-lambda-java-libs/blob/main/aws-lambda-java-core/src/main/java/com/amazonaws/services/lambda/runtime/RequestHandler.java) overrriding `handleRequest` and configuring that as handler method.
     However, as long as the previous requirements are fulfilled, OneAgent supports any valid handler function, even if not derived from that base interface.
-  + The [AWS Lambda events libraryï»¿](https://github.com/aws/aws-lambda-java-libs/tree/master/aws-lambda-java-events) must be used by your function as the types defined in the `com.amazonaws.services.lambda.runtime.events` package are used by OneAgent to match the corresponding [invocation types for incoming calls](#incoming-calls-types).
+  + The [AWS Lambda events library﻿](https://github.com/aws/aws-lambda-java-libs/tree/master/aws-lambda-java-events) must be used by your function as the types defined in the `com.amazonaws.services.lambda.runtime.events` package are used by OneAgent to match the corresponding [invocation types for incoming calls](#incoming-calls-types).
 * **Node.js sensors and instrumentations for ES modules:**
 
-  + The Node.js AWS Lambda extension sensors (instrumentations) don't support ECMAScript modules. This means that the extension won't properly monitor outgoing calls (for example, HTTP or AWS SDK requests).
+  + The Node.js classic AWS Lambda extension doesn't support ECMAScript modules (ESM). Outgoing calls such as HTTP and AWS SDK requests won't be monitored.
+  + The latest generation AWS Lambda monitoring layer supports ESM with opt-in. Set `DT_ENABLE_ESM_LOADERS` to `true` on the Lambda function to enable it. AWS SDK tracing remains available only for CommonJS (CJS) Lambda functions.
+
+    Enabling ESM support increases memory consumption.
   + OpenTelemetry instrumentations don't support ECMAScript modules by default.
 
-    There is a way to make OpenTelemetry instrumentations work with ECMAScript modules, but it's experimental and has some limitations. For details, [Instrumentation for ES Modules In NodeJS (experimental)ï»¿](https://dt-url.net/r10379k).
-* [AWS Lambda Managed Instancesï»¿](https://docs.aws.amazon.com/lambda/latest/dg/lambda-managed-instances.html) deployment mode is not supported. This new hosting option allows deploying Lambda functions on AWS-managed EC2 instance clusters. The Dynatrace Lambda extension and code module layers currently do not support this deployment mode.
+    There is a way to make OpenTelemetry instrumentations work with ECMAScript modules, but it's experimental and has some limitations. For details, [Instrumentation for ES Modules In NodeJS (experimental)﻿](https://dt-url.net/r10379k).
+* [AWS Lambda Managed Instances﻿](https://docs.aws.amazon.com/lambda/latest/dg/lambda-managed-instances.html) deployment mode is not supported. This new hosting option allows deploying Lambda functions on AWS-managed EC2 instance clusters. The Dynatrace Lambda extension and code module layers currently do not support this deployment mode.
 
 ## Related topics
 

@@ -1,7 +1,6 @@
 ---
 title: Calculate your consumption of Foundation & Discovery (DPS)
 source: https://docs.dynatrace.com/managed/license/capabilities/app-infra-observability/foundation-and-discovery
-scraped: 2026-05-12T11:13:49.082029
 ---
 
 # Calculate your consumption of Foundation & Discovery (DPS)
@@ -10,16 +9,16 @@ scraped: 2026-05-12T11:13:49.082029
 
 * Explanation
 * 1-min read
-* Updated on Dec 10, 2025
+* Updated on Jun 09, 2026
 
 Dynatrace OneAgent can be configured for Foundation & Discovery mode, which provides basic monitoring for your hosts (for example, host health, disk status, and OS service status).
 Unlike other tools that provide basic monitoring, Foundation & Discovery leverages core OneAgent features: discovery and topology.
 
 Foundation & Discovery mode detects process-to-process communication and populates the [Smartscape topology](/managed/analyze-explore-automate/smartscape-classic "Learn how Smartscape visualizes all the entities and dependencies in your environment.") accordingly.
-This provides important clues for AIOps that is included with OneAgent. For details, see [Davis AI automatic root cause analysis](/managed/dynatrace-intelligence "Get familiar with the capabilities of Davis AI.").
+This provides important clues for AIOps that is included with OneAgent. For details, see [Davis AI automatic root cause analysis](/managed/dynatrace-intelligence "Learn how Davis® AI detects performance anomalies, identifies root causes, and uses AI models for adaptive thresholds across your environment.").
 
 Broad deployment of Foundation & Discovery mode enables you to select the right monitoring mode for each of your hosts.
-A hostâs criticality can be determined based on which processes, technologies, externally accessible services, and topological connections.
+A host’s criticality can be determined based on which processes, technologies, externally accessible services, and topological connections.
 
 OneAgent in all modes also includes automated [log ingestion](/managed/upgrade/unavailable-in-managed "Your selection is unavailable in Dynatrace Managed."), which consumes [Log Management and Analytics](/managed/upgrade/unavailable-in-managed "Your selection is unavailable in Dynatrace Managed.").
 
@@ -33,7 +32,7 @@ Consumption is independent from a host's memory size.
 Host-hour cost of Foundation & Discovery
 
 While Foundation & Discovery and Infrastructure Monitoring both use host hours as their unit of measure for calculating monitoring consumption, Foundation & Discovery has a lower cost per host hour, reflecting its limited capabilities.
-For details on [Dynatrace pricingï»¿](https://www.dynatrace.com/pricing/), see your rate card, or speak to your Dynatrace account manager.
+For details on [Dynatrace pricing﻿](https://www.dynatrace.com/pricing/), see your rate card, or speak to your Dynatrace account manager.
 
 #### Billing granularity for host-hour consumption
 
@@ -43,14 +42,14 @@ When a host is monitored for fewer than 15 minutes in an interval, host-hour con
 
 The image below illustrates how host-hour consumption per host, calculated at 15-minute intervals.
 
-![Foundation & Discovery consumption calculation](https://dt-cdn.net/images/discovery-consumption-1974-85ac28a179.webp)
+![Foundation & Discovery consumption calculation](https://cdn.bfldr.com/B686QPH3/as/p9vgqhhs5p9qm636tfq4m/Foundation__Discovery_consumption_calculation-Light_Mode?auto=webp&format=png&position=1)
 
 Foundation & Discovery consumption calculation
 
 ### Metrics
 
 Foundation & Discovery includes basic built-in metrics.
-Unlike Full-Stack and Infrastructure Monitoring, Foundation & Discovery doesnât offer included custom metrics.
+Unlike Full-Stack and Infrastructure Monitoring, Foundation & Discovery doesn’t offer included custom metrics.
 For more information, see [OneAgent monitoring modes](/managed/platform/oneagent/monitoring-modes/monitoring-modes#discovery "Find out more about the available monitoring modes when using OneAgent.").
 
 ## Consumption details: Foundation & Discovery
@@ -99,4 +98,4 @@ These metrics are also available via the Environment API and your **Account Mana
 
 * [Dynatrace OneAgent](/managed/ingest-from/dynatrace-oneagent "Understand the important concepts related to OneAgent and find out how to install and operate OneAgent on different platforms.")
 * [Application & Infrastructure Observability overview (DPS)](/managed/license/capabilities/app-infra-observability "Learn about the different Application & Infrastructure Observability options that are available with a Dynatrace Platform Subscription (DPS) license.")
-* [Dynatrace pricingï»¿](https://www.dynatrace.com/pricing/)
+* [Dynatrace pricing﻿](https://www.dynatrace.com/pricing/)

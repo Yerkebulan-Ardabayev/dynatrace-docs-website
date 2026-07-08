@@ -1,7 +1,6 @@
 ---
 title: Deployment API - ActiveGate
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/deployment/activegate
-scraped: 2026-05-12T11:12:10.533594
 ---
 
 # Deployment API - ActiveGate

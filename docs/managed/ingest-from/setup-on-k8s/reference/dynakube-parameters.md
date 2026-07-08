@@ -1,7 +1,6 @@
 ---
 title: DynaKube parameters for Dynatrace Operator
 source: https://docs.dynatrace.com/managed/ingest-from/setup-on-k8s/reference/dynakube-parameters
-scraped: 2026-05-12T11:22:33.891596
 ---
 
 # DynaKube parameters for Dynatrace Operator
@@ -9,9 +8,9 @@ scraped: 2026-05-12T11:22:33.891596
 # DynaKube parameters for Dynatrace Operator
 
 * 57-min read
-* Updated on Mar 16, 2026
+* Updated on May 21, 2026
 
-This page will help you to understand and configure the DynaKube [Kubernetes Custom Resourceï»¿](https://kubernetes.io/docs/concepts/extend-kubernetes/api-extension/custom-resources/), enabling you to optimize your Dynatrace Operator setup according to your specific requirements.
+This page will help you to understand and configure the DynaKube [Kubernetes Custom Resource﻿](https://kubernetes.io/docs/concepts/extend-kubernetes/api-extension/custom-resources/), enabling you to optimize your Dynatrace Operator setup according to your specific requirements.
 
 The table below specifies the required Dynatrace Operator versions corresponding to each DynaKube API version.
 
@@ -28,7 +27,7 @@ The table below specifies the required Dynatrace Operator versions corresponding
 
 The corresponding DynaKube API versions will be removed from the Dynatrace Operator in the subsequent minor or major release.
 
-See the DynaKube YAML samples on [GitHubï»¿](https://github.com/Dynatrace/dynatrace-operator/tree/v1.9.0/assets/samples/dynakube).
+See the DynaKube YAML samples on [GitHub﻿](https://github.com/Dynatrace/dynatrace-operator/tree/v1.9.0/assets/samples/dynakube).
 
 v1beta6
 
@@ -51,7 +50,7 @@ Dynatrace Operator version 1.8.0+
 
 | **Parameter** | **Description** | **Default value** | **Data type** |
 | --- | --- | --- | --- |
-| `apiUrl` | Dynatrace `apiUrl`, including the `/api` path at the end.- For SaaS, set `YOUR_ENVIRONMENT_ID` to your environment ID.- For Managed, change the `apiUrl` address.For instructions on how to determine the environment ID and how to configure the apiUrl address, see [Environment ID](/managed/discover-dynatrace/get-started/monitoring-environment "Understand and learn how to work with monitoring environments.") | No default (required) | string |
+| `apiUrl` | Dynatrace `apiUrl`, including the `/api` path at the end.- For SaaS, set `YOUR_ENVIRONMENT_ID` to your environment ID.- For Managed, change the `apiUrl` address.For instructions on how to determine the environment ID and how to configure the apiUrl address, see [Environment ID](/managed/discover-dynatrace/get-started/monitoring-environment "Learn what a Dynatrace monitoring environment is, how to find your environment ID, and how to set up and connect multiple environments.") | No default (required) | string |
 | `customPullSecret` | Defines a custom pull secret in case you use a private registry when pulling images from the Dynatrace environment.Note: For the [node image pull feature](/managed/ingest-from/setup-on-k8s/guides/deployment-and-configuration/node-image-pull "Configure node image pull") without the CSI driver, you must manually ensure that pull secrets are available on the injected pod. See [node image pull prerequisites](/managed/ingest-from/setup-on-k8s/guides/deployment-and-configuration/node-image-pull#prerequisites "Configure node image pull") for more details.To define a custom pull secret and learn about the expected behavior, see [Configure `customPullSecret`](/managed/ingest-from/setup-on-k8s/guides/container-registries/use-private-registry#create-pull-secret "Use a private registry"). | No default (optional) | string |
 | `dynatraceApiRequestThreshold` | Minimum minutes between Dynatrace API requests. | 15 | integer |
 | `enableIstio` | When enabled, and if Istio is installed on the Kubernetes environment, Dynatrace Operator will create the corresponding VirtualService and ServiceEntry objects to allow access to the Dynatrace Cluster from the OneAgent or ActiveGate.Disabled by default. | No default (optional) | boolean |
@@ -77,23 +76,22 @@ Recommended
 | --- | --- | --- | --- |
 | `annotations` | Add custom OneAgent annotations. | No default (optional) | map[string]string |
 | `args` | Set additional arguments to the OneAgent installer.For available options, see [Linux custom installation](/managed/ingest-from/dynatrace-oneagent/installation-and-operation/linux/installation/customize-oneagent-installation-on-linux "Learn how to use the Linux installer with command line parameters.").For the list of limitations, see [Limitations](/managed/ingest-from/setup-on-container-platforms/docker/set-up-dynatrace-oneagent-as-docker-container#limitations "Install and update Dynatrace OneAgent as a Docker container."). | No default (optional) | []string |
-| `codeModulesImage` | Specifies the OneAgent CodeModules image used for injection into application pods. Updates are applied only when the image reference changes. If a floating tag (for example, `latest`) is used, new images pushed under the same tag are not automatically picked up on existing nodes. It is recommended to use a unique tag for each OneAgent CodeModule image version. |  |  |
-| No default (optional) | string |  |  |
+| `codeModulesImage` | Specifies the OneAgent CodeModules image used for injection into application pods. Updates are applied only when the image reference changes. If a floating tag (for example, `latest`) is used, new images pushed under the same tag are not automatically picked up on existing nodes. It is recommended to use a unique tag for each OneAgent CodeModule image version. | No default (optional) | string |
 | `codeModulesImagePullPolicy` | Defines the image pull policy for the CodeModules image. When empty, the Kubernetes default applies. | No default (optional) | string |
-| `dnsPolicy` | Set the DNS policy for OneAgent pods.For details, see [Pods DNS Policyï»¿](https://dt-url.net/2t2375a). | `ClusterFirstWithHostNet` | string |
+| `dnsPolicy` | Set the DNS policy for OneAgent pods.For details, see [Pods DNS Policy﻿](https://dt-url.net/2t2375a). | `ClusterFirstWithHostNet` | string |
 | `env` | Set additional environment variables for the OneAgent pods. | No default (optional) | []EnvVar |
 | `image` | Use a custom OneAgent Docker image. | The image from the Dynatrace cluster. | string |
 | `imagePullPolicy` | Defines the image pull policy. When empty, the Kubernetes default applies. | No default (optional) | string |
-| `initResources` | Define resources requests and limits for the initContainer. For details, see [Managing resources for containersï»¿](https://dt-url.net/atc371q). | No default (optional) | ResourceRequirements |
+| `initResources` | Define resources requests and limits for the initContainer. For details, see [Managing resources for containers﻿](https://dt-url.net/atc371q). | No default (optional) | ResourceRequirements |
 | `labels` | Your defined labels for OneAgent pods in order to structure workloads as desired. | No default (optional) | map[string]string |
 | `namespaceSelector` | The namespaces where you want Dynatrace Operator to inject.For more information, see [Configure monitoring for namespaces and Pods](/managed/ingest-from/setup-on-k8s/guides/deployment-and-configuration/monitoring-and-instrumentation/annotate "Configure monitoring for namespaces and pods"). | No default (optional) | LabelSelector |
 | `nodeSelector` | Specify the node selector that controls on which nodes OneAgent will be deployed. | No default (optional) | map[string]string |
-| `oneAgentResources` | Resource settings for OneAgent container. Consumption of the OneAgent heavily depends on the workload to monitor. You can use the default settings in the [CRï»¿](https://dt-url.net/dynakube-samples).`resource.requests` shows the values needed to run; `resource.limits` shows the maximum limits for the Pod. | No default (optional) | ResourceRequirements |
-| `priorityClassName` | Assign a priority class to the OneAgent pods. By default, no class is set.For details, see [Pod Priority and Preemptionï»¿](https://dt-url.net/n8437bl). | No default (optional) | string |
-| `rollingUpdate` | Define rollingUpdate settings for UpdateStrategy of the OneAgent DaemonSet.For details, see [DaemonSet specificationï»¿](https://dt-url.net/v0038c5). | No default (optional) | RollingUpdateDaemonSet |
+| `oneAgentResources` | Resource settings for OneAgent container. Consumption of the OneAgent heavily depends on the workload to monitor. You can use the default settings in the [CR﻿](https://dt-url.net/dynakube-samples).`resource.requests` shows the values needed to run; `resource.limits` shows the maximum limits for the Pod. | No default (optional) | ResourceRequirements |
+| `priorityClassName` | Assign a priority class to the OneAgent pods. By default, no class is set.For details, see [Pod Priority and Preemption﻿](https://dt-url.net/n8437bl). | No default (optional) | string |
+| `rollingUpdate` | Define rollingUpdate settings for UpdateStrategy of the OneAgent DaemonSet.For details, see [DaemonSet specification﻿](https://dt-url.net/v0038c5). | No default (optional) | RollingUpdateDaemonSet |
 | `secCompProfile` | The SecComp Profile that will be configured in order to run in secure computing mode. | No default (optional) | string |
 | `storageHostPath` | Writable directory on the host filesystem where OneAgent configurations will be stored. | No default (optional) | string |
-| `tolerations` | Tolerations to include with the OneAgent DaemonSet.For details, see [Taints and Tolerationsï»¿](https://dt-url.net/od03765). | No default (optional) | []Toleration |
+| `tolerations` | Tolerations to include with the OneAgent DaemonSet.For details, see [Taints and Tolerations﻿](https://dt-url.net/od03765). | No default (optional) | []Toleration |
 | `version` | The OneAgent version to be used for host monitoring OneAgents running in the dedicated pod. This setting doesn't affect the OneAgent version used for application monitoring. | The latest version is used by default. | string |
 
 ## `.spec.oneAgent.classicFullStack`
@@ -104,18 +102,18 @@ Recommended
 | --- | --- | --- | --- |
 | `annotations` | Add custom OneAgent annotations. | No default (optional) | map[string]string |
 | `args` | Set additional arguments to the OneAgent installer.For available options, see [Linux custom installation](/managed/ingest-from/dynatrace-oneagent/installation-and-operation/linux/installation/customize-oneagent-installation-on-linux "Learn how to use the Linux installer with command line parameters.").For the list of limitations, see [Limitations](/managed/ingest-from/setup-on-container-platforms/docker/set-up-dynatrace-oneagent-as-docker-container#limitations "Install and update Dynatrace OneAgent as a Docker container."). | No default (optional) | []string |
-| `dnsPolicy` | Set the DNS Policy for OneAgent pods.For details, see [Pods DNS Policyï»¿](https://dt-url.net/2t2375a). | `ClusterFirstWithHostNet` | string |
+| `dnsPolicy` | Set the DNS Policy for OneAgent pods.For details, see [Pods DNS Policy﻿](https://dt-url.net/2t2375a). | `ClusterFirstWithHostNet` | string |
 | `env` | Set additional environment variables for the OneAgent pods. | No default (optional) | []EnvVar |
 | `image` | Use a custom OneAgent Docker image. Defaults to the image from the Dynatrace cluster. | Name of the image. | string |
 | `imagePullPolicy` | Defines the image pull policy. When empty, the Kubernetes default applies. | No default (optional) | string |
 | `labels` | Your defined labels for OneAgent pods in order to structure workloads as desired. | No default (optional) | map[string]string |
 | `nodeSelector` | Specify the node selector that controls on which nodes OneAgent will be deployed. | No default (optional) | map[string]string |
-| `oneAgentResources` | Resource settings for OneAgent container. Consumption of the OneAgent heavily depends on the workload to monitor. You can use the default settings in the [CRï»¿](https://dt-url.net/dynakube-samples).`resource.requests` shows the values needed to run; `resource.limits` shows the maximum limits for the pod. | No default (optional) | ResourceRequirements |
-| `priorityClassName` | Assign a priority class to the OneAgent pods. By default, no class is set.For details, see [Pod Priority and Preemptionï»¿](https://dt-url.net/n8437bl). | No default (optional) | string |
-| `rollingUpdate` | Define rollingUpdate settings for UpdateStrategy of the OneAgent DaemonSet.For details, see [DaemonSet specificationï»¿](https://dt-url.net/v0038c5). | No default (optional) | RollingUpdateDaemonSet |
+| `oneAgentResources` | Resource settings for OneAgent container. Consumption of the OneAgent heavily depends on the workload to monitor. You can use the default settings in the [CR﻿](https://dt-url.net/dynakube-samples).`resource.requests` shows the values needed to run; `resource.limits` shows the maximum limits for the pod. | No default (optional) | ResourceRequirements |
+| `priorityClassName` | Assign a priority class to the OneAgent pods. By default, no class is set.For details, see [Pod Priority and Preemption﻿](https://dt-url.net/n8437bl). | No default (optional) | string |
+| `rollingUpdate` | Define rollingUpdate settings for UpdateStrategy of the OneAgent DaemonSet.For details, see [DaemonSet specification﻿](https://dt-url.net/v0038c5). | No default (optional) | RollingUpdateDaemonSet |
 | `secCompProfile` | The SecComp Profile that will be configured in order to run in secure computing mode. | No default (optional) | string |
 | `storageHostPath` | Writeable directory on the host filesystem where OneAgent configurations will be stored. | No default (optional) | string |
-| `tolerations` | Tolerations to include with the OneAgent DaemonSet.For details, see [Taints and Tolerationsï»¿](https://dt-url.net/od03765). | No default (optional) | []Toleration |
+| `tolerations` | Tolerations to include with the OneAgent DaemonSet.For details, see [Taints and Tolerations﻿](https://dt-url.net/od03765). | No default (optional) | []Toleration |
 | `version` | The OneAgent version to be used. | The latest version is used by default. | string |
 
 ## `.spec.oneAgent.applicationMonitoring`
@@ -127,7 +125,7 @@ Recommended
 | `codeModulesImage` | Specifies the OneAgent CodeModules image used for injection into application pods. Updates are applied only when the image reference changes. If a floating tag (for example, `latest`) is used, new images pushed under the same tag are not automatically picked up on existing nodes. It is recommended to use a unique tag for each OneAgent CodeModule image version. | No default (optional) | string |
 | `codeModulesImagePullPolicy` | Defines the image pull policy for the CodeModules image. When empty, the Kubernetes default applies. | No default (optional) | string |
 | `imagePullPolicy` | Defines the image pull policy. When empty, the Kubernetes default applies. | No default (optional) | string |
-| `initResources` | Define resources requests and limits for the initContainer. For details, see [Managing resources for containersï»¿](https://dt-url.net/atc371q). | No default (optional) | ResourceRequirements |
+| `initResources` | Define resources requests and limits for the initContainer. For details, see [Managing resources for containers﻿](https://dt-url.net/atc371q). | No default (optional) | ResourceRequirements |
 | `namespaceSelector` | The namespaces where you want Dynatrace Operator to inject.For more information, see [Configure monitoring for namespaces and Pods](/managed/ingest-from/setup-on-k8s/guides/deployment-and-configuration/monitoring-and-instrumentation/annotate "Configure monitoring for namespaces and pods"). | No default (optional) | LabelSelector |
 | `version` | The OneAgent version to be used. | The latest version is used by default. | string |
 
@@ -139,18 +137,18 @@ Recommended
 | --- | --- | --- | --- |
 | `annotations` | Add custom OneAgent annotations. | No default (optional) | map[string]string |
 | `args` | Set additional arguments to the OneAgent installer.For available options, see [Linux custom installation](/managed/ingest-from/dynatrace-oneagent/installation-and-operation/linux/installation/customize-oneagent-installation-on-linux "Learn how to use the Linux installer with command line parameters.").For the list of limitations, see [Limitations](/managed/ingest-from/setup-on-container-platforms/docker/set-up-dynatrace-oneagent-as-docker-container#limitations "Install and update Dynatrace OneAgent as a Docker container."). | No default (optional) | []string |
-| `dnsPolicy` | Set the DNS Policy for OneAgent pods.For details, see [Pods DNS Policyï»¿](https://dt-url.net/2t2375a). | `ClusterFirstWithHostNet` | string |
+| `dnsPolicy` | Set the DNS Policy for OneAgent pods.For details, see [Pods DNS Policy﻿](https://dt-url.net/2t2375a). | `ClusterFirstWithHostNet` | string |
 | `env` | Set additional environment variables for the OneAgent pods. | No default (optional) | []EnvVar |
 | `image` | Use a custom OneAgent Docker image. | The image from the Dynatrace cluster. | string |
 | `imagePullPolicy` | Defines the image pull policy. When empty, the Kubernetes default applies. | No default (optional) | string |
 | `labels` | Your defined labels for OneAgent pods in order to structure workloads as desired. | No default (optional) | map[string]string |
 | `nodeSelector` | Specify the node selector that controls on which nodes OneAgent will be deployed. | No default (optional) | map[string]string |
-| `oneAgentResources` | Resource settings for OneAgent container. Consumption of the OneAgent heavily depends on the workload to monitor. You can use the default settings in the [CRï»¿](https://dt-url.net/dynakube-samples).`resource.requests` shows the values needed to run; `resource.limits` shows the maximum limits for the pod. | No default (optional) | ResourceRequirements |
-| `priorityClassName` | Assign a priority class to the OneAgent pods. By default, no class is set.For details, see [Pod Priority and Preemptionï»¿](https://dt-url.net/n8437bl). | No default (optional) | string |
-| `rollingUpdate` | Define rollingUpdate settings for UpdateStrategy of the OneAgent DaemonSet.For details, see [DaemonSet specificationï»¿](https://dt-url.net/v0038c5). | No default (optional) | RollingUpdateDaemonSet |
+| `oneAgentResources` | Resource settings for OneAgent container. Consumption of the OneAgent heavily depends on the workload to monitor. You can use the default settings in the [CR﻿](https://dt-url.net/dynakube-samples).`resource.requests` shows the values needed to run; `resource.limits` shows the maximum limits for the pod. | No default (optional) | ResourceRequirements |
+| `priorityClassName` | Assign a priority class to the OneAgent pods. By default, no class is set.For details, see [Pod Priority and Preemption﻿](https://dt-url.net/n8437bl). | No default (optional) | string |
+| `rollingUpdate` | Define rollingUpdate settings for UpdateStrategy of the OneAgent DaemonSet.For details, see [DaemonSet specification﻿](https://dt-url.net/v0038c5). | No default (optional) | RollingUpdateDaemonSet |
 | `secCompProfile` | The SecComp Profile that will be configured in order to run in secure computing mode. | No default (optional) | string |
 | `storageHostPath` | Writeable directory on the host filesystem where OneAgent configurations will be stored. | No default (optional) | string |
-| `tolerations` | Tolerations to include with the OneAgent DaemonSet.For details, see [Taints and Tolerationsï»¿](https://dt-url.net/od03765). | No default (optional) | []Toleration |
+| `tolerations` | Tolerations to include with the OneAgent DaemonSet.For details, see [Taints and Tolerations﻿](https://dt-url.net/od03765). | No default (optional) | []Toleration |
 | `version` | The OneAgent version to be used. | The latest version is used by default. | string |
 
 ## `.spec.activeGate`
@@ -171,14 +169,14 @@ Recommended
 | `imagePullPolicy` | Defines the image pull policy. When empty, the Kubernetes default applies. | No default (optional) | string |
 | `labels` | Your defined labels for ActiveGate pods in order to structure workloads as desired. | No default (optional) | map[string]string |
 | `nodeSelector` | Specify the node selector that controls on which nodes ActiveGate will be deployed. | No default (optional) | map[string]string |
-| `priorityClassName` | Assign a priority class to the ActiveGate pods. By default, no class is set.For details, see [Pod Priority and Preemptionï»¿](https://dt-url.net/n8437bl). | No default (optional) | string |
+| `priorityClassName` | Assign a priority class to the ActiveGate pods. By default, no class is set.For details, see [Pod Priority and Preemption﻿](https://dt-url.net/n8437bl). | No default (optional) | string |
 | `replicas` | Number of replicas of ActiveGate pods. | 1 | int |
-| `rollingUpdate` | Define rollingUpdate settings for UpdateStrategy of the ActiveGate StatefulSet. For details, see [StatefulSet Specificationï»¿](https://dt-url.net/ql238m1).  UpdateStrategy for StatefulSet requires Kubernetes 1.35 and above. The setting is ignored on lower versions, and the Operator warns you about ignored settings if it was specified. | No default (optional) | RollingUpdateStatefulSetStrategy |
+| `rollingUpdate` | Define rollingUpdate settings for UpdateStrategy of the ActiveGate StatefulSet. For details, see [StatefulSet Specification﻿](https://dt-url.net/ql238m1).  UpdateStrategy for StatefulSet requires Kubernetes 1.35 and above. The setting is ignored on lower versions, and the Operator warns you about ignored settings if it was specified. | No default (optional) | RollingUpdateStatefulSetStrategy |
 | `resources` | Resource settings for ActiveGate container. Consumption of the ActiveGate heavily depends on the workload to monitor; adjust values accordingly. | No default (recommended) | ResourceRequirements |
 | `terminationGracePeriodSeconds` | Configures the terminationGracePeriodSeconds parameter of the ActiveGate pod. Kubernetes defaults and rules apply. | No default (optional) | int |
 | `tlsSecretName` | Name of a secret containing ActiveGate TLS certificate, key, and password. If not set, a self-signed certificate is used. For details, see [How to add a custom certificate for ActiveGate](/managed/ingest-from/setup-on-k8s/guides/networking-security-compliance/network-configurations#tls-certificate "Configure Dynatrace in network-restricted environments, network-related settings and proxy configurations."). | No default (optional) | string |
-| `tolerations` | Set tolerations for the ActiveGate pods.For details, see [Taints and Tolerationsï»¿](https://dt-url.net/od03765). | No default (optional) | []Toleration |
-| `topologySpreadConstraints` | Adds [topology spread constraintsï»¿](https://dt-url.net/xc03ysw) to the ActiveGate pods. | No default (optional) | []TopologySpreadConstraint |
+| `tolerations` | Set tolerations for the ActiveGate pods.For details, see [Taints and Tolerations﻿](https://dt-url.net/od03765). | No default (optional) | []Toleration |
+| `topologySpreadConstraints` | Adds [topology spread constraints﻿](https://dt-url.net/xc03ysw) to the ActiveGate pods. | No default (optional) | []TopologySpreadConstraint |
 | `useEphemeralVolume` | Indicates whether to use ephemeral volume for storage. | No default (optional) | boolean |
 | `volumeClaimTemplate` | Describes the common attributes of storage devices and allows a Source for provider-specific attributes. | No default (optional) | PersistentVolumeClaimSpec |
 
@@ -457,11 +455,10 @@ Adding this section enables [Kubernetes Security Posture Management (KSPM)](/man
 
 * `kubernetes-monitoring` is mandatory and has to be added to the [list of ActiveGate capabilities](#active-gate) in `.spec.activeGate.capabilities` and
 * The feature flag `feature.dynatrace.com/automatic-kubernetes-api-monitoring` must not be set to `false`.
-* All parameters in `.spec.kspm` are Optional.
 
 | **Parameter** | **Description** | **Default value** | **Data type** |
 | --- | --- | --- | --- |
-| `mappedHostPaths` | Specifies the host paths that are mounted to the NCC container. | No default (optional) | [[]string](#kspm-mappedHostPaths) |
+| `mappedHostPaths` | Specifies the host paths that are mounted to the NCC container. | No default, recommended value:  - /boot  - /etc  - /proc/sys/kernel  - /sys/fs  - /sys/kernel/security/apparmor  - /usr/lib/systemd/system  - /var/lib | [[]string](#kspm-mappedHostPaths) |
 
 ## `.spec.logMonitoring`
 
@@ -556,9 +553,9 @@ Dynatrace Operator version 1.8.0+
 
 | Parameter | Description | Default value | Data type |
 | --- | --- | --- | --- |
-| `logs` | Enables the automatic OTLP exporter configuration for logs. See [endpoint urls for otlphttpï»¿](https://opentelemetry.io/docs/specs/otel/protocol/exporter/#endpoint-urls-for-otlphttp). | No default (optional) | object |
-| `metrics` | Enables the automatic OTLP exporter configuration for metrics. See [endpoint urls for otlphttpï»¿](https://opentelemetry.io/docs/specs/otel/protocol/exporter/#endpoint-urls-for-otlphttp). | No default (optional) | object |
-| `traces` | Enables the automatic OTLP exporter configuration for traces. See [endpoint urls for otlphttpï»¿](https://opentelemetry.io/docs/specs/otel/protocol/exporter/#endpoint-urls-for-otlphttp) | No default (optional) | object |
+| `logs` | Enables the automatic OTLP exporter configuration for logs. See [endpoint urls for otlphttp﻿](https://opentelemetry.io/docs/specs/otel/protocol/exporter/#endpoint-urls-for-otlphttp). | No default (optional) | object |
+| `metrics` | Enables the automatic OTLP exporter configuration for metrics. See [endpoint urls for otlphttp﻿](https://opentelemetry.io/docs/specs/otel/protocol/exporter/#endpoint-urls-for-otlphttp). | No default (optional) | object |
+| `traces` | Enables the automatic OTLP exporter configuration for traces. See [endpoint urls for otlphttp﻿](https://opentelemetry.io/docs/specs/otel/protocol/exporter/#endpoint-urls-for-otlphttp) | No default (optional) | object |
 
 ## `.spec.templates`
 
@@ -574,7 +571,7 @@ Dynatrace Operator version 1.8.0+
 | `priorityClassName` | If specified, indicates the Pod's priority. Name must be defined by creating a PriorityClass object with that name. If not specified the setting will be removed from the DaemonSet. | No default (optional) | string |
 | `resources` | Define resource requests and limits for Node Configuration Collector Pods. | No default (optional) | ResourceRequirements |
 | `nodeAffinity` | Define the nodeAffinity for the DaemonSet of the Node Configuration Collector | No default (optional) | NodeAffinity |
-| `tolerations` | Set tolerations for the Node Configuration Collector pods.For details, see [Taints and Tolerationsï»¿](https://dt-url.net/od03765). | No default (optional) | []Toleration |
+| `tolerations` | Set tolerations for the Node Configuration Collector pods.For details, see [Taints and Tolerations﻿](https://dt-url.net/od03765). | No default (optional) | []Toleration |
 | `args` | Set additional arguments for the Node Configuration Collector main container. | No default (optional) | []string |
 | `env` | Set additional environment variables for the Node Configuration Collector main container. | No default (optional) | []string |
 
@@ -602,8 +599,8 @@ Available with Dynatrace version 1.306 and OneAgent 1.305
 | `priorityClassName` | Assign a priority class to the LogMonitoring pods. By default, no class is set. | No default (optional) | string |
 | `secCompProfile` | Configures a SecComp profile to enable secure computing mode for the LogMonitoring pods. | No default (optional) | string |
 | `resources` | Define resource requests and limits for LogMonitoring's main and init-container. | No default (optional) | ResourceRequirements |
-| `rollingUpdate` | Define rollingUpdate settings for UpdateStrategy of the LogMonitoring DaemonSet.For details, see [DaemonSet specificationï»¿](https://dt-url.net/v0038c5). | No default (optional) | RollingUpdateDaemonSet |
-| `tolerations` | Set tolerations for the LogMonitoring pods.For details, see [Taints and Tolerationsï»¿](https://dt-url.net/od03765). | No default (optional) | []Toleration |
+| `rollingUpdate` | Define rollingUpdate settings for UpdateStrategy of the LogMonitoring DaemonSet.For details, see [DaemonSet specification﻿](https://dt-url.net/v0038c5). | No default (optional) | RollingUpdateDaemonSet |
+| `tolerations` | Set tolerations for the LogMonitoring pods.For details, see [Taints and Tolerations﻿](https://dt-url.net/od03765). | No default (optional) | []Toleration |
 | `args` | Set additional arguments for the LogMonitoring init container. | No default (optional) | []string |
 
 ## `.spec.templates.logMonitoring.imageRef`
@@ -633,7 +630,7 @@ Available with a future Dynatrace version.
 | `customConfig` | ConfigMap holding a custom Extension Execution Controller configuration. | No default (optional) | string |
 | `customExtensionCertificates` | Secret holding certificates that have been used to sign custom extensions. Needed for extensions signature validation by Extension Execution Controller. | No default (optional) | string |
 | `resources` | Resource settings for Extension Execution Controller pod. | No default (optional) | ResourceRequirements |
-| `tolerations` | Tolerations for Extension Execution Controller pod.For details, see [Taints and Tolerationsï»¿](https://dt-url.net/od03765). | No default (optional) | []Toleration |
+| `tolerations` | Tolerations for Extension Execution Controller pod.For details, see [Taints and Tolerations﻿](https://dt-url.net/od03765). | No default (optional) | []Toleration |
 | `topologySpreadConstraints` | Topology spread constraints for Extension Execution Controller pod. | No default (optional) | []TopologySpreadConstraint |
 | `useEphemeralVolume` | Indicates whether to use ephemeral volume for storage. | No default (optional) | boolean |
 
@@ -661,7 +658,7 @@ Dynatrace Operator version 1.6.0+
 | `annotations` | Annotations applied to Dynatrace Collector pod. | No default (optional) | map[string]string |
 | `tlsRefName` | Secret containing a TLS certificate used by Dynatrace Collector to verify connections to endpoints of other components. | No default (optional) | string |
 | `resources` | Resource settings for Dynatrace Collector pod. | No default (optional) | ResourceRequirements |
-| `tolerations` | Tolerations for Dynatrace Collector pod.For details, see [Taints and Tolerationsï»¿](https://dt-url.net/od03765). | No default (optional) | []Toleration |
+| `tolerations` | Tolerations for Dynatrace Collector pod.For details, see [Taints and Tolerations﻿](https://dt-url.net/od03765). | No default (optional) | []Toleration |
 | `topologySpreadConstraints` | Topology spread constraints for Dynatrace Collector pod. | No default (optional) | []TopologySpreadConstraint |
 
 ## `.spec.templates.otelCollector.imageRef`
@@ -681,7 +678,7 @@ Available with a future Dynatrace version.
 | Parameter | Description | Default value | Data type |
 | --- | --- | --- | --- |
 | `imageRef` | Image that is used for SQL Extension Executor. | No default (optional) | [imageRef](#extensions-sql-extension-executor-image-ref) |
-| `tolerations` | Tolerations for SQL Extension Executor pods.For details, see [Taints and Tolerationsï»¿](https://dt-url.net/od03765). | No default (optional) | []Toleration |
+| `tolerations` | Tolerations for SQL Extension Executor pods.For details, see [Taints and Tolerations﻿](https://dt-url.net/od03765). | No default (optional) | []Toleration |
 
 ## `.spec.templates.sqlExtensionExecutor.imageRef`
 
@@ -701,7 +698,7 @@ Dynatrace Operator version 1.6.0+
 
 | **Parameter** | **Description** | **Default value** | **Data type** |
 | --- | --- | --- | --- |
-| `apiUrl` | Dynatrace `apiUrl`, including the `/api` path at the end.- For SaaS, set `YOUR_ENVIRONMENT_ID` to your environment ID.- For Managed, change the `apiUrl` address.For instructions on how to determine the environment ID and how to configure the apiUrl address, see [Environment ID](/managed/discover-dynatrace/get-started/monitoring-environment "Understand and learn how to work with monitoring environments.") | No default (required) | string |
+| `apiUrl` | Dynatrace `apiUrl`, including the `/api` path at the end.- For SaaS, set `YOUR_ENVIRONMENT_ID` to your environment ID.- For Managed, change the `apiUrl` address.For instructions on how to determine the environment ID and how to configure the apiUrl address, see [Environment ID](/managed/discover-dynatrace/get-started/monitoring-environment "Learn what a Dynatrace monitoring environment is, how to find your environment ID, and how to set up and connect multiple environments.") | No default (required) | string |
 | `customPullSecret` | Defines a custom pull secret in case you use a private registry when pulling images from the Dynatrace environment.Note: For the [node image pull feature](/managed/ingest-from/setup-on-k8s/guides/deployment-and-configuration/node-image-pull "Configure node image pull") without the CSI driver, you must manually ensure that pull secrets are available on the injected pod. See [node image pull prerequisites](/managed/ingest-from/setup-on-k8s/guides/deployment-and-configuration/node-image-pull#prerequisites "Configure node image pull") for more details.To define a custom pull secret and learn about the expected behavior, see [Configure `customPullSecret`](/managed/ingest-from/setup-on-k8s/guides/container-registries/use-private-registry#create-pull-secret "Use a private registry"). | No default (optional) | string |
 | `dynatraceApiRequestThreshold` | Minimum minutes between Dynatrace API requests. | 15 | integer |
 | `enableIstio` | When enabled, and if Istio is installed on the Kubernetes environment, Dynatrace Operator will create the corresponding VirtualService and ServiceEntry objects to allow access to the Dynatrace Cluster from the OneAgent or ActiveGate.Disabled by default. | No default (optional) | boolean |
@@ -729,18 +726,18 @@ Recommended
 | `args` | Set additional arguments to the OneAgent installer.For available options, see [Linux custom installation](/managed/ingest-from/dynatrace-oneagent/installation-and-operation/linux/installation/customize-oneagent-installation-on-linux "Learn how to use the Linux installer with command line parameters.").For the list of limitations, see [Limitations](/managed/ingest-from/setup-on-container-platforms/docker/set-up-dynatrace-oneagent-as-docker-container#limitations "Install and update Dynatrace OneAgent as a Docker container."). | No default (optional) | []string |
 | `autoUpdate` (**deprecated**) | Deprecated field to be removed in a future release. [Pin the OneAgent version on your tenant to configure auto-update](/managed/ingest-from/setup-on-k8s/guides/deployment-and-configuration/updates-and-maintenance/auto-update-components#configure-oneagent-auto-update "Configure auto-updates for components managed by Dynatrace Operator (OneAgent, ActiveGate, and EdgeConnect).").Auto-update is disabled when the `version` or `image` fields are set. | `true` | boolean |
 | `codeModulesImage` | Specifies the OneAgent CodeModules image used for injection into application pods. Updates are applied only when the image reference changes. If a floating tag (for example, `latest`) is used, new images pushed under the same tag are not automatically picked up on existing nodes. It is recommended to use a unique tag for each OneAgent CodeModule image version. | No default (optional) | string |
-| `dnsPolicy` | Set the DNS policy for OneAgent pods.For details, see [Pods DNS Policyï»¿](https://dt-url.net/2t2375a). | `ClusterFirstWithHostNet` | string |
+| `dnsPolicy` | Set the DNS policy for OneAgent pods.For details, see [Pods DNS Policy﻿](https://dt-url.net/2t2375a). | `ClusterFirstWithHostNet` | string |
 | `env` | Set additional environment variables for the OneAgent pods. | No default (optional) | []EnvVar |
 | `image` | Use a custom OneAgent Docker image. | The image from the Dynatrace cluster. | string |
-| `initResources` | Define resources requests and limits for the initContainer. For details, see [Managing resources for containersï»¿](https://dt-url.net/atc371q). | No default (optional) | ResourceRequirements |
+| `initResources` | Define resources requests and limits for the initContainer. For details, see [Managing resources for containers﻿](https://dt-url.net/atc371q). | No default (optional) | ResourceRequirements |
 | `labels` | Your defined labels for OneAgent pods in order to structure workloads as desired. | No default (optional) | map[string]string |
 | `namespaceSelector` | The namespaces where you want Dynatrace Operator to inject.For more information, see [Configure monitoring for namespaces and Pods](/managed/ingest-from/setup-on-k8s/guides/deployment-and-configuration/monitoring-and-instrumentation/annotate "Configure monitoring for namespaces and pods"). | No default (optional) | LabelSelector |
 | `nodeSelector` | Specify the node selector that controls on which nodes OneAgent will be deployed. | No default (optional) | map[string]string |
-| `oneAgentResources` | Resource settings for OneAgent container. Consumption of the OneAgent heavily depends on the workload to monitor. You can use the default settings in the [CRï»¿](https://dt-url.net/dynakube-samples).`resource.requests` shows the values needed to run; `resource.limits` shows the maximum limits for the Pod. | No default (optional) | ResourceRequirements |
-| `priorityClassName` | Assign a priority class to the OneAgent pods. By default, no class is set.For details, see [Pod Priority and Preemptionï»¿](https://dt-url.net/n8437bl). | No default (optional) | string |
+| `oneAgentResources` | Resource settings for OneAgent container. Consumption of the OneAgent heavily depends on the workload to monitor. You can use the default settings in the [CR﻿](https://dt-url.net/dynakube-samples).`resource.requests` shows the values needed to run; `resource.limits` shows the maximum limits for the Pod. | No default (optional) | ResourceRequirements |
+| `priorityClassName` | Assign a priority class to the OneAgent pods. By default, no class is set.For details, see [Pod Priority and Preemption﻿](https://dt-url.net/n8437bl). | No default (optional) | string |
 | `secCompProfile` | The SecComp Profile that will be configured in order to run in secure computing mode. | No default (optional) | string |
 | `storageHostPath` | Writable directory on the host filesystem where OneAgent configurations will be stored. | No default (optional) | string |
-| `tolerations` | Tolerations to include with the OneAgent DaemonSet.For details, see [Taints and Tolerationsï»¿](https://dt-url.net/od03765). | No default (optional) | []Toleration |
+| `tolerations` | Tolerations to include with the OneAgent DaemonSet.For details, see [Taints and Tolerations﻿](https://dt-url.net/od03765). | No default (optional) | []Toleration |
 | `version` | The OneAgent version to be used for host monitoring OneAgents running in the dedicated pod. This setting doesn't affect the OneAgent version used for application monitoring. | The latest version is used by default. | string |
 
 ## `.spec.oneAgent.classicFullStack`
@@ -752,16 +749,16 @@ Recommended
 | `annotations` | Add custom OneAgent annotations. | No default (optional) | map[string]string |
 | `args` | Set additional arguments to the OneAgent installer.For available options, see [Linux custom installation](/managed/ingest-from/dynatrace-oneagent/installation-and-operation/linux/installation/customize-oneagent-installation-on-linux "Learn how to use the Linux installer with command line parameters.").For the list of limitations, see [Limitations](/managed/ingest-from/setup-on-container-platforms/docker/set-up-dynatrace-oneagent-as-docker-container#limitations "Install and update Dynatrace OneAgent as a Docker container."). | No default (optional) | []string |
 | `autoUpdate` (**deprecated**) | Deprecated field to be removed in a future release. [Pin the OneAgent version on your tenant to configure auto-update](/managed/ingest-from/setup-on-k8s/guides/deployment-and-configuration/updates-and-maintenance/auto-update-components#configure-oneagent-auto-update "Configure auto-updates for components managed by Dynatrace Operator (OneAgent, ActiveGate, and EdgeConnect).").Auto-update is disabled when the `version` or `image` fields are set. | `true` | boolean |
-| `dnsPolicy` | Set the DNS Policy for OneAgent pods.For details, see [Pods DNS Policyï»¿](https://dt-url.net/2t2375a). | `ClusterFirstWithHostNet` | string |
+| `dnsPolicy` | Set the DNS Policy for OneAgent pods.For details, see [Pods DNS Policy﻿](https://dt-url.net/2t2375a). | `ClusterFirstWithHostNet` | string |
 | `env` | Set additional environment variables for the OneAgent pods. | No default (optional) | []EnvVar |
 | `image` | Use a custom OneAgent Docker image. Defaults to the image from the Dynatrace cluster. | Name of the image. | string |
 | `labels` | Your defined labels for OneAgent pods in order to structure workloads as desired. | No default (optional) | map[string]string |
 | `nodeSelector` | Specify the node selector that controls on which nodes OneAgent will be deployed. | No default (optional) | map[string]string |
-| `oneAgentResources` | Resource settings for OneAgent container. Consumption of the OneAgent heavily depends on the workload to monitor. You can use the default settings in the [CRï»¿](https://dt-url.net/dynakube-samples).`resource.requests` shows the values needed to run; `resource.limits` shows the maximum limits for the pod. | No default (optional) | ResourceRequirements |
-| `priorityClassName` | Assign a priority class to the OneAgent pods. By default, no class is set.For details, see [Pod Priority and Preemptionï»¿](https://dt-url.net/n8437bl). | No default (optional) | string |
+| `oneAgentResources` | Resource settings for OneAgent container. Consumption of the OneAgent heavily depends on the workload to monitor. You can use the default settings in the [CR﻿](https://dt-url.net/dynakube-samples).`resource.requests` shows the values needed to run; `resource.limits` shows the maximum limits for the pod. | No default (optional) | ResourceRequirements |
+| `priorityClassName` | Assign a priority class to the OneAgent pods. By default, no class is set.For details, see [Pod Priority and Preemption﻿](https://dt-url.net/n8437bl). | No default (optional) | string |
 | `secCompProfile` | The SecComp Profile that will be configured in order to run in secure computing mode. | No default (optional) | string |
 | `storageHostPath` | Writeable directory on the host filesystem where OneAgent configurations will be stored. | No default (optional) | string |
-| `tolerations` | Tolerations to include with the OneAgent DaemonSet.For details, see [Taints and Tolerationsï»¿](https://dt-url.net/od03765). | No default (optional) | []Toleration |
+| `tolerations` | Tolerations to include with the OneAgent DaemonSet.For details, see [Taints and Tolerations﻿](https://dt-url.net/od03765). | No default (optional) | []Toleration |
 | `version` | The OneAgent version to be used. | The latest version is used by default. | string |
 
 ## `.spec.oneAgent.applicationMonitoring`
@@ -771,7 +768,7 @@ Recommended
 | **Parameter** | **Description** | **Default value** | **Data type** |
 | --- | --- | --- | --- |
 | `codeModulesImage` | Specifies the OneAgent CodeModules image used for injection into application pods. Updates are applied only when the image reference changes. If a floating tag (for example, `latest`) is used, new images pushed under the same tag are not automatically picked up on existing nodes. It is recommended to use a unique tag for each OneAgent CodeModule image version. | No default (optional) | string |
-| `initResources` | Define resources requests and limits for the initContainer. For details, see [Managing resources for containersï»¿](https://dt-url.net/atc371q). | No default (optional) | ResourceRequirements |
+| `initResources` | Define resources requests and limits for the initContainer. For details, see [Managing resources for containers﻿](https://dt-url.net/atc371q). | No default (optional) | ResourceRequirements |
 | `namespaceSelector` | The namespaces where you want Dynatrace Operator to inject.For more information, see [Configure monitoring for namespaces and Pods](/managed/ingest-from/setup-on-k8s/guides/deployment-and-configuration/monitoring-and-instrumentation/annotate "Configure monitoring for namespaces and pods"). | No default (optional) | LabelSelector |
 | `version` | The OneAgent version to be used. | The latest version is used by default. | string |
 
@@ -784,16 +781,16 @@ Recommended
 | `annotations` | Add custom OneAgent annotations. | No default (optional) | map[string]string |
 | `args` | Set additional arguments to the OneAgent installer.For available options, see [Linux custom installation](/managed/ingest-from/dynatrace-oneagent/installation-and-operation/linux/installation/customize-oneagent-installation-on-linux "Learn how to use the Linux installer with command line parameters.").For the list of limitations, see [Limitations](/managed/ingest-from/setup-on-container-platforms/docker/set-up-dynatrace-oneagent-as-docker-container#limitations "Install and update Dynatrace OneAgent as a Docker container."). | No default (optional) | []string |
 | `autoUpdate` (**deprecated**) | Deprecated field to be removed in a future release. [Pin the OneAgent version on your tenant to configure auto-update](/managed/ingest-from/setup-on-k8s/guides/deployment-and-configuration/updates-and-maintenance/auto-update-components#configure-oneagent-auto-update "Configure auto-updates for components managed by Dynatrace Operator (OneAgent, ActiveGate, and EdgeConnect).").Auto-update is disabled when the `version` or `image` fields are set. | `true` | boolean |
-| `dnsPolicy` | Set the DNS Policy for OneAgent pods.For details, see [Pods DNS Policyï»¿](https://dt-url.net/2t2375a). | `ClusterFirstWithHostNet` | string |
+| `dnsPolicy` | Set the DNS Policy for OneAgent pods.For details, see [Pods DNS Policy﻿](https://dt-url.net/2t2375a). | `ClusterFirstWithHostNet` | string |
 | `env` | Set additional environment variables for the OneAgent pods. | No default (optional) | []EnvVar |
 | `image` | Use a custom OneAgent Docker image. | The image from the Dynatrace cluster. | string |
 | `labels` | Your defined labels for OneAgent pods in order to structure workloads as desired. | No default (optional) | map[string]string |
 | `nodeSelector` | Specify the node selector that controls on which nodes OneAgent will be deployed. | No default (optional) | map[string]string |
-| `oneAgentResources` | Resource settings for OneAgent container. Consumption of the OneAgent heavily depends on the workload to monitor. You can use the default settings in the [CRï»¿](https://dt-url.net/dynakube-samples).`resource.requests` shows the values needed to run; `resource.limits` shows the maximum limits for the pod. | No default (optional) | ResourceRequirements |
-| `priorityClassName` | Assign a priority class to the OneAgent pods. By default, no class is set.For details, see [Pod Priority and Preemptionï»¿](https://dt-url.net/n8437bl). | No default (optional) | string |
+| `oneAgentResources` | Resource settings for OneAgent container. Consumption of the OneAgent heavily depends on the workload to monitor. You can use the default settings in the [CR﻿](https://dt-url.net/dynakube-samples).`resource.requests` shows the values needed to run; `resource.limits` shows the maximum limits for the pod. | No default (optional) | ResourceRequirements |
+| `priorityClassName` | Assign a priority class to the OneAgent pods. By default, no class is set.For details, see [Pod Priority and Preemption﻿](https://dt-url.net/n8437bl). | No default (optional) | string |
 | `secCompProfile` | The SecComp Profile that will be configured in order to run in secure computing mode. | No default (optional) | string |
 | `storageHostPath` | Writeable directory on the host filesystem where OneAgent configurations will be stored. | No default (optional) | string |
-| `tolerations` | Tolerations to include with the OneAgent DaemonSet.For details, see [Taints and Tolerationsï»¿](https://dt-url.net/od03765). | No default (optional) | []Toleration |
+| `tolerations` | Tolerations to include with the OneAgent DaemonSet.For details, see [Taints and Tolerations﻿](https://dt-url.net/od03765). | No default (optional) | []Toleration |
 | `version` | The OneAgent version to be used. | The latest version is used by default. | string |
 
 ## `.spec.activeGate`
@@ -813,13 +810,13 @@ Recommended
 | `image` | Use a custom ActiveGate image. Defaults to the latest ActiveGate image from the Dynatrace cluster. | No default (optional) | string |
 | `labels` | Your defined labels for ActiveGate pods in order to structure workloads as desired. | No default (optional) | map[string]string |
 | `nodeSelector` | Specify the node selector that controls on which nodes ActiveGate will be deployed. | No default (optional) | map[string]string |
-| `priorityClassName` | Assign a priority class to the ActiveGate pods. By default, no class is set.For details, see [Pod Priority and Preemptionï»¿](https://dt-url.net/n8437bl). | No default (optional) | string |
+| `priorityClassName` | Assign a priority class to the ActiveGate pods. By default, no class is set.For details, see [Pod Priority and Preemption﻿](https://dt-url.net/n8437bl). | No default (optional) | string |
 | `replicas` | Number of replicas of ActiveGate pods. | 1 | int |
 | `resources` | Resource settings for ActiveGate container. Consumption of the ActiveGate heavily depends on the workload to monitor; adjust values accordingly. | No default (recommended) | ResourceRequirements |
 | `terminationGracePeriodSeconds` | Configures the terminationGracePeriodSeconds parameter of the ActiveGate pod. Kubernetes defaults and rules apply. | No default (optional) | int |
 | `tlsSecretName` | Name of a secret containing ActiveGate TLS certificate, key, and password. If not set, a self-signed certificate is used. For details, see [How to add a custom certificate for ActiveGate](/managed/ingest-from/setup-on-k8s/guides/networking-security-compliance/network-configurations#tls-certificate "Configure Dynatrace in network-restricted environments, network-related settings and proxy configurations."). | No default (optional) | string |
-| `tolerations` | Set tolerations for the ActiveGate pods.For details, see [Taints and Tolerationsï»¿](https://dt-url.net/od03765). | No default (optional) | []Toleration |
-| `topologySpreadConstraints` | Adds [topology spread constraintsï»¿](https://dt-url.net/xc03ysw) to the ActiveGate pods. | No default (optional) | []TopologySpreadConstraint |
+| `tolerations` | Set tolerations for the ActiveGate pods.For details, see [Taints and Tolerations﻿](https://dt-url.net/od03765). | No default (optional) | []Toleration |
+| `topologySpreadConstraints` | Adds [topology spread constraints﻿](https://dt-url.net/xc03ysw) to the ActiveGate pods. | No default (optional) | []TopologySpreadConstraint |
 | `useEphemeralVolume` | Indicates whether to use ephemeral volume for storage. | No default (optional) | boolean |
 | `volumeClaimTemplate` | Describes the common attributes of storage devices and allows a Source for provider-specific attributes. | No default (optional) | PersistentVolumeClaimSpec |
 
@@ -952,7 +949,7 @@ Enable Dynatrace [telemetry endpoints](/managed/ingest-from/setup-on-k8s/extend-
 | `priorityClassName` | If specified, indicates the Pod's priority. Name must be defined by creating a PriorityClass object with that name. If not specified the setting will be removed from the DaemonSet. | No default (optional) | string |
 | `resources` | Define resource requests and limits for Node Configuration Collector Pods. | No default (optional) | ResourceRequirements |
 | `nodeAffinity` | Define the nodeAffinity for the DaemonSet of the Node Configuration Collector | No default (optional) | NodeAffinity |
-| `tolerations` | Set tolerations for the Node Configuration Collector pods.For details, see [Taints and Tolerationsï»¿](https://dt-url.net/od03765). | No default (optional) | []Toleration |
+| `tolerations` | Set tolerations for the Node Configuration Collector pods.For details, see [Taints and Tolerations﻿](https://dt-url.net/od03765). | No default (optional) | []Toleration |
 | `args` | Set additional arguments for the Node Configuration Collector main container. | No default (optional) | []string |
 | `env` | Set additional environment variables for the Node Configuration Collector main container. | No default (optional) | []string |
 
@@ -979,7 +976,7 @@ Available with Dynatrace version 1.306 and OneAgent 1.305
 | `priorityClassName` | Assign a priority class to the LogMonitoring pods. By default, no class is set. | No default (optional) | string |
 | `secCompProfile` | Configures a SecComp profile to enable secure computing mode for the LogMonitoring pods. | No default (optional) | string |
 | `resources` | Define resource requests and limits for LogMonitoring's main and init-container. | No default (optional) | ResourceRequirements |
-| `tolerations` | Set tolerations for the LogMonitoring pods.For details, see [Taints and Tolerationsï»¿](https://dt-url.net/od03765). | No default (optional) | []Toleration |
+| `tolerations` | Set tolerations for the LogMonitoring pods.For details, see [Taints and Tolerations﻿](https://dt-url.net/od03765). | No default (optional) | []Toleration |
 | `args` | Set additional arguments for the LogMonitoring init container. | No default (optional) | []string |
 
 ## `.spec.templates.logMonitoring.imageRef`
@@ -1008,7 +1005,7 @@ Available with a future Dynatrace version.
 | `customConfig` | ConfigMap holding a custom Extension Execution Controller configuration. | No default (optional) | string |
 | `customExtensionCertificates` | Secret holding certificates that have been used to sign custom extensions. Needed for extensions signature validation by Extension Execution Controller. | No default (optional) | string |
 | `resources` | Resource settings for Extension Execution Controller pod. | No default (optional) | ResourceRequirements |
-| `tolerations` | Tolerations for Extension Execution Controller pod.For details, see [Taints and Tolerationsï»¿](https://dt-url.net/od03765). | No default (optional) | []Toleration |
+| `tolerations` | Tolerations for Extension Execution Controller pod.For details, see [Taints and Tolerations﻿](https://dt-url.net/od03765). | No default (optional) | []Toleration |
 | `topologySpreadConstraints` | Topology spread constraints for Extension Execution Controller pod. | No default (optional) | []TopologySpreadConstraint |
 | `useEphemeralVolume` | Indicates whether to use ephemeral volume for storage. | No default (optional) | boolean |
 
@@ -1035,7 +1032,7 @@ Dynatrace Operator version 1.6.0+
 | `annotations` | Annotations applied to Dynatrace Collector pod. | No default (optional) | map[string]string |
 | `tlsRefName` | Secret containing a TLS certificate used by Dynatrace Collector to verify connections to endpoints of other components. | No default (optional) | string |
 | `resources` | Resource settings for Dynatrace Collector pod. | No default (optional) | ResourceRequirements |
-| `tolerations` | Tolerations for Dynatrace Collector pod.For details, see [Taints and Tolerationsï»¿](https://dt-url.net/od03765). | No default (optional) | []Toleration |
+| `tolerations` | Tolerations for Dynatrace Collector pod.For details, see [Taints and Tolerations﻿](https://dt-url.net/od03765). | No default (optional) | []Toleration |
 | `topologySpreadConstraints` | Topology spread constraints for Dynatrace Collector pod. | No default (optional) | []TopologySpreadConstraint |
 
 ## `.spec.templates.otelCollector.imageRef`
@@ -1056,7 +1053,7 @@ Dynatrace Operator version 1.5.0+
 
 | **Parameter** | **Description** | **Default value** | **Data type** |
 | --- | --- | --- | --- |
-| `apiUrl` | Dynatrace `apiUrl`, including the `/api` path at the end.- For SaaS, set `YOUR_ENVIRONMENT_ID` to your environment ID.- For Managed, change the `apiUrl` address.For instructions on how to determine the environment ID and how to configure the apiUrl address, see [Environment ID](/managed/discover-dynatrace/get-started/monitoring-environment "Understand and learn how to work with monitoring environments.") | No default (required) | string |
+| `apiUrl` | Dynatrace `apiUrl`, including the `/api` path at the end.- For SaaS, set `YOUR_ENVIRONMENT_ID` to your environment ID.- For Managed, change the `apiUrl` address.For instructions on how to determine the environment ID and how to configure the apiUrl address, see [Environment ID](/managed/discover-dynatrace/get-started/monitoring-environment "Learn what a Dynatrace monitoring environment is, how to find your environment ID, and how to set up and connect multiple environments.") | No default (required) | string |
 | `customPullSecret` | Defines a custom pull secret in case you use a private registry when pulling images from the Dynatrace environment.Note: For the [node image pull feature](/managed/ingest-from/setup-on-k8s/guides/deployment-and-configuration/node-image-pull "Configure node image pull") without the CSI driver, you must manually ensure that pull secrets are available on the injected pod. See [node image pull prerequisites](/managed/ingest-from/setup-on-k8s/guides/deployment-and-configuration/node-image-pull#prerequisites "Configure node image pull") for more details.To define a custom pull secret and learn about the expected behavior, see [Configure `customPullSecret`](/managed/ingest-from/setup-on-k8s/guides/container-registries/use-private-registry#create-pull-secret "Use a private registry"). | No default (optional) | string |
 | `dynatraceApiRequestThreshold` | Minimum minutes between Dynatrace API requests. | 15 | integer |
 | `enableIstio` | When enabled, and if Istio is installed on the Kubernetes environment, Dynatrace Operator will create the corresponding VirtualService and ServiceEntry objects to allow access to the Dynatrace Cluster from the OneAgent or ActiveGate.Disabled by default. | No default (optional) | boolean |
@@ -1084,18 +1081,18 @@ Recommended
 | `args` | Set additional arguments to the OneAgent installer.For available options, see [Linux custom installation](/managed/ingest-from/dynatrace-oneagent/installation-and-operation/linux/installation/customize-oneagent-installation-on-linux "Learn how to use the Linux installer with command line parameters.").For the list of limitations, see [Limitations](/managed/ingest-from/setup-on-container-platforms/docker/set-up-dynatrace-oneagent-as-docker-container#limitations "Install and update Dynatrace OneAgent as a Docker container."). | No default (optional) | []string |
 | `autoUpdate` (**deprecated**) | Deprecated field to be removed in a future release. [Pin the OneAgent version on your tenant to configure auto-update](/managed/ingest-from/setup-on-k8s/guides/deployment-and-configuration/updates-and-maintenance/auto-update-components#configure-oneagent-auto-update "Configure auto-updates for components managed by Dynatrace Operator (OneAgent, ActiveGate, and EdgeConnect).").Auto-update is disabled when the `version` or `image` fields are set. | `true` | boolean |
 | `codeModulesImage` | Specifies the OneAgent CodeModules image used for injection into application pods. Updates are applied only when the image reference changes. If a floating tag (for example, `latest`) is used, new images pushed under the same tag are not automatically picked up on existing nodes. It is recommended to use a unique tag for each OneAgent CodeModule image version. | No default (optional) | string |
-| `dnsPolicy` | Set the DNS Policy for OneAgent Pods.For details, see [Pods DNS Policyï»¿](https://dt-url.net/2t2375a). | `ClusterFirstWithHostNet` | string |
+| `dnsPolicy` | Set the DNS Policy for OneAgent Pods.For details, see [Pods DNS Policy﻿](https://dt-url.net/2t2375a). | `ClusterFirstWithHostNet` | string |
 | `env` | Set additional environment variables for the OneAgent Pods. | No default (optional) | []EnvVar |
 | `image` | Use a custom OneAgent Docker image. | The image from the Dynatrace cluster. | string |
-| `initResources` | Define resources requests and limits for the initContainer. For details, see [Managing resources for containersï»¿](https://dt-url.net/atc371q). | No default (optional) | ResourceRequirements |
+| `initResources` | Define resources requests and limits for the initContainer. For details, see [Managing resources for containers﻿](https://dt-url.net/atc371q). | No default (optional) | ResourceRequirements |
 | `labels` | Your defined labels for OneAgent Pods in order to structure workloads as desired. | No default (optional) | map[string]string |
 | `namespaceSelector` | The namespaces where you want Dynatrace Operator to inject.For more information, see [Configure monitoring for namespaces and Pods](/managed/ingest-from/setup-on-k8s/guides/deployment-and-configuration/monitoring-and-instrumentation/annotate "Configure monitoring for namespaces and pods"). | No default (optional) | LabelSelector |
 | `nodeSelector` | Specify the node selector that controls on which nodes OneAgent will be deployed. | No default (optional) | map[string]string |
-| `oneAgentResources` | Resource settings for OneAgent container. Consumption of the OneAgent heavily depends on the workload to monitor. You can use the default settings in the [CRï»¿](https://github.com/Dynatrace/dynatrace-operator/tree/v1.9.0/assets/samples/dynakube).`resource.requests` shows the values needed to run; `resource.limits` shows the maximum limits for the Pod. | No default (optional) | ResourceRequirements |
-| `priorityClassName` | Assign a priority class to the OneAgent Pods. By default, no class is set.For details, see [Pod Priority and Preemptionï»¿](https://dt-url.net/n8437bl). | No default (optional) | string |
+| `oneAgentResources` | Resource settings for OneAgent container. Consumption of the OneAgent heavily depends on the workload to monitor. You can use the default settings in the [CR﻿](https://github.com/Dynatrace/dynatrace-operator/tree/v1.9.0/assets/samples/dynakube).`resource.requests` shows the values needed to run; `resource.limits` shows the maximum limits for the Pod. | No default (optional) | ResourceRequirements |
+| `priorityClassName` | Assign a priority class to the OneAgent Pods. By default, no class is set.For details, see [Pod Priority and Preemption﻿](https://dt-url.net/n8437bl). | No default (optional) | string |
 | `secCompProfile` | The SecComp Profile that will be configured in order to run in secure computing mode. | No default (optional) | string |
 | `storageHostPath` | Writeable directory on the host filesystem where OneAgent configurations will be stored. | No default (optional) | string |
-| `tolerations` | Tolerations to include with the OneAgent DaemonSet.For details, see [Taints and Tolerationsï»¿](https://dt-url.net/od03765). | No default (optional) | []Toleration |
+| `tolerations` | Tolerations to include with the OneAgent DaemonSet.For details, see [Taints and Tolerations﻿](https://dt-url.net/od03765). | No default (optional) | []Toleration |
 | `version` | The OneAgent version to be used for host monitoring OneAgents running in the dedicated Pod. This setting doesn't affect the OneAgent version used for application monitoring. | The latest version is used by default. | string |
 
 ## `.spec.oneAgent.classicFullStack`
@@ -1107,16 +1104,16 @@ Recommended
 | `annotations` | Add custom OneAgent annotations. | No default (optional) | map[string]string |
 | `args` | Set additional arguments to the OneAgent installer.For available options, see [Linux custom installation](/managed/ingest-from/dynatrace-oneagent/installation-and-operation/linux/installation/customize-oneagent-installation-on-linux "Learn how to use the Linux installer with command line parameters.").For the list of limitations, see [Limitations](/managed/ingest-from/setup-on-container-platforms/docker/set-up-dynatrace-oneagent-as-docker-container#limitations "Install and update Dynatrace OneAgent as a Docker container."). | No default (optional) | []string |
 | `autoUpdate` (**deprecated**) | Deprecated field to be removed in a future release. [Pin the OneAgent version on your tenant to configure auto-update](/managed/ingest-from/setup-on-k8s/guides/deployment-and-configuration/updates-and-maintenance/auto-update-components#configure-oneagent-auto-update "Configure auto-updates for components managed by Dynatrace Operator (OneAgent, ActiveGate, and EdgeConnect).").Auto-update is disabled when the `version` or `image` fields are set. | `true` | boolean |
-| `dnsPolicy` | Set the DNS Policy for OneAgent Pods.For details, see [Pods DNS Policyï»¿](https://dt-url.net/2t2375a). | `ClusterFirstWithHostNet` | string |
+| `dnsPolicy` | Set the DNS Policy for OneAgent Pods.For details, see [Pods DNS Policy﻿](https://dt-url.net/2t2375a). | `ClusterFirstWithHostNet` | string |
 | `env` | Set additional environment variables for the OneAgent Pods. | No default (optional) | []EnvVar |
 | `image` | Use a custom OneAgent Docker image. Defaults to the image from the Dynatrace cluster. | Name of the image. | string |
 | `labels` | Your defined labels for OneAgent Pods in order to structure workloads as desired. | No default (optional) | map[string]string |
 | `nodeSelector` | Specify the node selector that controls on which nodes OneAgent will be deployed. | No default (optional) | map[string]string |
-| `oneAgentResources` | Resource settings for OneAgent container. Consumption of the OneAgent heavily depends on the workload to monitor. You can use the default settings in the [CRï»¿](https://dt-url.net/dynakube-samples).`resource.requests` shows the values needed to run; `resource.limits` shows the maximum limits for the Pod. | No default (optional) | ResourceRequirements |
-| `priorityClassName` | Assign a priority class to the OneAgent Pods. By default, no class is set.For details, see [Pod Priority and Preemptionï»¿](https://dt-url.net/n8437bl). | No default (optional) | string |
+| `oneAgentResources` | Resource settings for OneAgent container. Consumption of the OneAgent heavily depends on the workload to monitor. You can use the default settings in the [CR﻿](https://dt-url.net/dynakube-samples).`resource.requests` shows the values needed to run; `resource.limits` shows the maximum limits for the Pod. | No default (optional) | ResourceRequirements |
+| `priorityClassName` | Assign a priority class to the OneAgent Pods. By default, no class is set.For details, see [Pod Priority and Preemption﻿](https://dt-url.net/n8437bl). | No default (optional) | string |
 | `secCompProfile` | The SecComp Profile that will be configured in order to run in secure computing mode. | No default (optional) | string |
 | `storageHostPath` | Writeable directory on the host filesystem where OneAgent configurations will be stored. | No default (optional) | string |
-| `tolerations` | Tolerations to include with the OneAgent DaemonSet.For details, see [Taints and Tolerationsï»¿](https://dt-url.net/od03765). | No default (optional) | []Toleration |
+| `tolerations` | Tolerations to include with the OneAgent DaemonSet.For details, see [Taints and Tolerations﻿](https://dt-url.net/od03765). | No default (optional) | []Toleration |
 | `version` | The OneAgent version to be used. | The latest version is used by default. | string |
 
 ## `.spec.oneAgent.applicationMonitoring`
@@ -1126,7 +1123,7 @@ Recommended
 | **Parameter** | **Description** | **Default value** | **Data type** |
 | --- | --- | --- | --- |
 | `codeModulesImage` | Specifies the OneAgent CodeModules image used for injection into application pods. Updates are applied only when the image reference changes. If a floating tag (for example, `latest`) is used, new images pushed under the same tag are not automatically picked up on existing nodes. It is recommended to use a unique tag for each OneAgent CodeModule image version. | No default (optional) | string |
-| `initResources` | Define resources requests and limits for the initContainer. For details, see [Managing resources for containersï»¿](https://dt-url.net/atc371q). | No default (optional) | ResourceRequirements |
+| `initResources` | Define resources requests and limits for the initContainer. For details, see [Managing resources for containers﻿](https://dt-url.net/atc371q). | No default (optional) | ResourceRequirements |
 | `namespaceSelector` | The namespaces where you want Dynatrace Operator to inject.For more information, see [Configure monitoring for namespaces and Pods](/managed/ingest-from/setup-on-k8s/guides/deployment-and-configuration/monitoring-and-instrumentation/annotate "Configure monitoring for namespaces and pods"). | No default (optional) | LabelSelector |
 | `version` | The OneAgent version to be used. | The latest version is used by default. | string |
 
@@ -1139,16 +1136,16 @@ Recommended
 | `annotations` | Add custom OneAgent annotations. | No default (optional) | map[string]string |
 | `args` | Set additional arguments to the OneAgent installer.For available options, see [Linux custom installation](/managed/ingest-from/dynatrace-oneagent/installation-and-operation/linux/installation/customize-oneagent-installation-on-linux "Learn how to use the Linux installer with command line parameters.").For the list of limitations, see [Limitations](/managed/ingest-from/setup-on-container-platforms/docker/set-up-dynatrace-oneagent-as-docker-container#limitations "Install and update Dynatrace OneAgent as a Docker container."). | No default (optional) | []string |
 | `autoUpdate` (**deprecated**) | Deprecated field to be removed in a future release. [Pin the OneAgent version on your tenant to configure auto-update](/managed/ingest-from/setup-on-k8s/guides/deployment-and-configuration/updates-and-maintenance/auto-update-components#configure-oneagent-auto-update "Configure auto-updates for components managed by Dynatrace Operator (OneAgent, ActiveGate, and EdgeConnect).").Auto-update is disabled when the `version` or `image` fields are set. | `true` | boolean |
-| `dnsPolicy` | Set the DNS Policy for OneAgent Pods.For details, see [Pods DNS Policyï»¿](https://dt-url.net/2t2375a). | `ClusterFirstWithHostNet` | string |
+| `dnsPolicy` | Set the DNS Policy for OneAgent Pods.For details, see [Pods DNS Policy﻿](https://dt-url.net/2t2375a). | `ClusterFirstWithHostNet` | string |
 | `env` | Set additional environment variables for the OneAgent Pods. | No default (optional) | []EnvVar |
 | `image` | Use a custom OneAgent Docker image. | The image from the Dynatrace cluster. | string |
 | `labels` | Your defined labels for OneAgent Pods in order to structure workloads as desired. | No default (optional) | map[string]string |
 | `nodeSelector` | Specify the node selector that controls on which nodes OneAgent will be deployed. | No default (optional) | map[string]string |
-| `oneAgentResources` | Resource settings for OneAgent container. Consumption of the OneAgent heavily depends on the workload to monitor. You can use the default settings in the [CRï»¿](https://dt-url.net/dynakube-samples).`resource.requests` shows the values needed to run; `resource.limits` shows the maximum limits for the Pod. | No default (optional) | ResourceRequirements |
-| `priorityClassName` | Assign a priority class to the OneAgent Pods. By default, no class is set.For details, see [Pod Priority and Preemptionï»¿](https://dt-url.net/n8437bl). | No default (optional) | string |
+| `oneAgentResources` | Resource settings for OneAgent container. Consumption of the OneAgent heavily depends on the workload to monitor. You can use the default settings in the [CR﻿](https://dt-url.net/dynakube-samples).`resource.requests` shows the values needed to run; `resource.limits` shows the maximum limits for the Pod. | No default (optional) | ResourceRequirements |
+| `priorityClassName` | Assign a priority class to the OneAgent Pods. By default, no class is set.For details, see [Pod Priority and Preemption﻿](https://dt-url.net/n8437bl). | No default (optional) | string |
 | `secCompProfile` | The SecComp Profile that will be configured in order to run in secure computing mode. | No default (optional) | string |
 | `storageHostPath` | Writeable directory on the host filesystem where OneAgent configurations will be stored. | No default (optional) | string |
-| `tolerations` | Tolerations to include with the OneAgent DaemonSet.For details, see [Taints and Tolerationsï»¿](https://dt-url.net/od03765). | No default (optional) | []Toleration |
+| `tolerations` | Tolerations to include with the OneAgent DaemonSet.For details, see [Taints and Tolerations﻿](https://dt-url.net/od03765). | No default (optional) | []Toleration |
 | `version` | The OneAgent version to be used. | The latest version is used by default. | string |
 
 ## `.spec.activeGate`
@@ -1168,13 +1165,13 @@ Recommended
 | `image` | Use a custom ActiveGate image. Defaults to the latest ActiveGate image from the Dynatrace cluster. | No default (optional) | string |
 | `labels` | Your defined labels for ActiveGate pods in order to structure workloads as desired. | No default (optional) | map[string]string |
 | `nodeSelector` | Specify the node selector that controls on which nodes ActiveGate will be deployed. | No default (optional) | map[string]string |
-| `priorityClassName` | Assign a priority class to the ActiveGate pods. By default, no class is set.For details, see [Pod Priority and Preemptionï»¿](https://dt-url.net/n8437bl). | No default (optional) | string |
+| `priorityClassName` | Assign a priority class to the ActiveGate pods. By default, no class is set.For details, see [Pod Priority and Preemption﻿](https://dt-url.net/n8437bl). | No default (optional) | string |
 | `replicas` | Number of replicas of ActiveGate pods. | 1 | int |
 | `resources` | Resource settings for ActiveGate container. Consumption of the ActiveGate heavily depends on the workload to monitor; adjust values accordingly. | No default (recommended) | ResourceRequirements |
 | `terminationGracePeriodSeconds` | Configures the terminationGracePeriodSeconds parameter of the ActiveGate pod. Kubernetes defaults and rules apply. | No default (optional) | int |
 | `tlsSecretName` | Name of a secret containing ActiveGate TLS certificate, key, and password. If not set, a self-signed certificate is used. For details, see [How to add a custom certificate for ActiveGate](/managed/ingest-from/setup-on-k8s/guides/networking-security-compliance/network-configurations#tls-certificate "Configure Dynatrace in network-restricted environments, network-related settings and proxy configurations."). | No default (optional) | string |
-| `tolerations` | Set tolerations for the ActiveGate pods.For details, see [Taints and Tolerationsï»¿](https://dt-url.net/od03765). | No default (optional) | []Toleration |
-| `topologySpreadConstraints` | Adds [topology spread constraintsï»¿](https://dt-url.net/xc03ysw) to the ActiveGate pods. | No default (optional) | []TopologySpreadConstraint |
+| `tolerations` | Set tolerations for the ActiveGate pods.For details, see [Taints and Tolerations﻿](https://dt-url.net/od03765). | No default (optional) | []Toleration |
+| `topologySpreadConstraints` | Adds [topology spread constraints﻿](https://dt-url.net/xc03ysw) to the ActiveGate pods. | No default (optional) | []TopologySpreadConstraint |
 | `useEphemeralVolume` | Indicates whether to use ephemeral volume for storage. | No default (optional) | boolean |
 | `persistentVolumeClaim` | Describes the common attributes of storage devices and allows a Source for provider-specific attributes. | No default (optional) | PersistentVolumeClaimSpec |
 
@@ -1302,7 +1299,7 @@ Adding this section deploys the Dynatrace Collector by the Operator.
 | `priorityClassName` | If specified, indicates the Pod's priority. Name must be defined by creating a PriorityClass object with that name. If not specified the setting will be removed from the DaemonSet. | No default (optional) | string |
 | `resources` | Define resource requests and limits for Node Configuration Collector Pods. | No default (optional) | ResourceRequirements |
 | `nodeAffinity` | Define the nodeAffinity for the DaemonSet of the Node Configuration Collector | No default (optional) | NodeAffinity |
-| `tolerations` | Set tolerations for the Node Configuration Collector Pods.For details, see [Taints and Tolerationsï»¿](https://dt-url.net/od03765). | No default (optional) | []Toleration |
+| `tolerations` | Set tolerations for the Node Configuration Collector Pods.For details, see [Taints and Tolerations﻿](https://dt-url.net/od03765). | No default (optional) | []Toleration |
 | `args` | Set additional arguments for the Node Configuration Collector main container. | No default (optional) | []string |
 | `env` | Set additional environment variables for the Node Configuration Collector main container. | No default (optional) | []string |
 
@@ -1329,7 +1326,7 @@ Available with Dynatrace version 1.306 and OneAgent 1.305
 | `priorityClassName` | Assign a priority class to the LogMonitoring Pods. By default, no class is set. | No default (optional) | string |
 | `secCompProfile` | Configures a SecComp profile to enable secure computing mode for the LogMonitoring Pods. | No default (optional) | string |
 | `resources` | Define resource requests and limits for LogMonitoring's main and init-container. | No default (optional) | ResourceRequirements |
-| `tolerations` | Set tolerations for the LogMonitoring Pods.For details, see [Taints and Tolerationsï»¿](https://dt-url.net/od03765). | No default (optional) | []Toleration |
+| `tolerations` | Set tolerations for the LogMonitoring Pods.For details, see [Taints and Tolerations﻿](https://dt-url.net/od03765). | No default (optional) | []Toleration |
 | `args` | Set additional arguments for the LogMonitoring init container. | No default (optional) | []string |
 
 ## `.spec.templates.logMonitoring.imageRef`
@@ -1358,7 +1355,7 @@ Available with a future Dynatrace version.
 | `customConfig` | ConfigMap holding a custom Extension Execution Controller configuration. | No default (optional) | string |
 | `customExtensionCertificates` | Secret holding certificates that have been used to sign custom extensions. Needed for extensions signature validation by Extension Execution Controller. | No default (optional) | string |
 | `resources` | Resource settings for Extension Execution Controller Pod. | No default (optional) | ResourceRequirements |
-| `tolerations` | Tolerations for Extension Execution Controller Pod.For details, see [Taints and Tolerationsï»¿](https://dt-url.net/od03765). | No default (optional) | []Toleration |
+| `tolerations` | Tolerations for Extension Execution Controller Pod.For details, see [Taints and Tolerations﻿](https://dt-url.net/od03765). | No default (optional) | []Toleration |
 | `topologySpreadConstraints` | Topology spread constraints for Extension Execution Controller Pod. | No default (optional) | []TopologySpreadConstraint |
 | `useEphemeralVolume` | Indicates whether to use ephemeral volume for storage. | No default (optional) | boolean |
 
@@ -1385,7 +1382,7 @@ Dynatrace Operator version 1.6.0+
 | `annotations` | Annotations applied to Dynatrace Collector Pod. | No default (optional) | map[string]string |
 | `tlsRefName` | Secret containing a TLS certificate used by Dynatrace Collector to verify connections to endpoints of other components. | No default (optional) | string |
 | `resources` | Resource settings for Dynatrace Collector Pod. | No default (optional) | ResourceRequirements |
-| `tolerations` | Tolerations for Dynatrace Collector Pod.For details, see [Taints and Tolerationsï»¿](https://dt-url.net/od03765). | No default (optional) | []Toleration |
+| `tolerations` | Tolerations for Dynatrace Collector Pod.For details, see [Taints and Tolerations﻿](https://dt-url.net/od03765). | No default (optional) | []Toleration |
 | `topologySpreadConstraints` | Topology spread constraints for Dynatrace Collector Pod. | No default (optional) | []TopologySpreadConstraint |
 
 ## `.spec.templates.otelCollector.imageRef`
@@ -1406,7 +1403,7 @@ Dynatrace Operator version 1.4.0+
 
 | **Parameter** | **Description** | **Default value** | **Data type** |
 | --- | --- | --- | --- |
-| `apiUrl` | Dynatrace `apiUrl`, including the `/api` path at the end.- For SaaS, set `YOUR_ENVIRONMENT_ID` to your environment ID.- For Managed, change the `apiUrl` address.For instructions on how to determine the environment ID and how to configure the apiUrl address, see [Environment ID](/managed/discover-dynatrace/get-started/monitoring-environment "Understand and learn how to work with monitoring environments.") | No default (required) | string |
+| `apiUrl` | Dynatrace `apiUrl`, including the `/api` path at the end.- For SaaS, set `YOUR_ENVIRONMENT_ID` to your environment ID.- For Managed, change the `apiUrl` address.For instructions on how to determine the environment ID and how to configure the apiUrl address, see [Environment ID](/managed/discover-dynatrace/get-started/monitoring-environment "Learn what a Dynatrace monitoring environment is, how to find your environment ID, and how to set up and connect multiple environments.") | No default (required) | string |
 | `customPullSecret` | Defines a custom pull secret in case you use a private registry when pulling images from the Dynatrace environment.Note: For the [node image pull feature](/managed/ingest-from/setup-on-k8s/guides/deployment-and-configuration/node-image-pull "Configure node image pull") without the CSI driver, you must manually ensure that pull secrets are available on the injected pod. See [node image pull prerequisites](/managed/ingest-from/setup-on-k8s/guides/deployment-and-configuration/node-image-pull#prerequisites "Configure node image pull") for more details.To define a custom pull secret and learn about the expected behavior, see [Configure `customPullSecret`](/managed/ingest-from/setup-on-k8s/guides/container-registries/use-private-registry#create-pull-secret "Use a private registry"). | No default (optional) | string |
 | `dynatraceApiRequestThreshold` | Minimum minutes between Dynatrace API requests. | 15 | integer |
 | `enableIstio` | When enabled, and if Istio is installed on the Kubernetes environment, Dynatrace Operator will create the corresponding VirtualService and ServiceEntry objects to allow access to the Dynatrace Cluster from the OneAgent or ActiveGate.Disabled by default. | No default (optional) | boolean |
@@ -1434,17 +1431,17 @@ Recommended
 | `args` | Set additional arguments to the OneAgent installer.For available options, see [Linux custom installation](/managed/ingest-from/dynatrace-oneagent/installation-and-operation/linux/installation/customize-oneagent-installation-on-linux "Learn how to use the Linux installer with command line parameters.").For the list of limitations, see [Limitations](/managed/ingest-from/setup-on-container-platforms/docker/set-up-dynatrace-oneagent-as-docker-container#limitations "Install and update Dynatrace OneAgent as a Docker container."). | No default (optional) | []string |
 | `autoUpdate` (**deprecated**) | Deprecated field to be removed in a future release. [Pin the OneAgent version on your tenant to configure auto-update](/managed/ingest-from/setup-on-k8s/guides/deployment-and-configuration/updates-and-maintenance/auto-update-components#configure-oneagent-auto-update "Configure auto-updates for components managed by Dynatrace Operator (OneAgent, ActiveGate, and EdgeConnect).").Auto-update is disabled when the `version` or `image` fields are set. | `true` | boolean |
 | `codeModulesImage` | The OneAgent image that is used to inject into Pods | No default (optional) | string |
-| `dnsPolicy` | Set the DNS Policy for OneAgent Pods.For details, see [Pods DNS Policyï»¿](https://dt-url.net/2t2375a). | `ClusterFirstWithHostNet` | string |
+| `dnsPolicy` | Set the DNS Policy for OneAgent Pods.For details, see [Pods DNS Policy﻿](https://dt-url.net/2t2375a). | `ClusterFirstWithHostNet` | string |
 | `env` | Set additional environment variables for the OneAgent Pods. | No default (optional) | []EnvVar |
 | `image` | Use a custom OneAgent Docker image. | The image from the Dynatrace cluster. | string |
-| `initResources` | Define resources requests and limits for the initContainer. For details, see [Managing resources for containersï»¿](https://dt-url.net/atc371q). | No default (optional) | ResourceRequirements |
+| `initResources` | Define resources requests and limits for the initContainer. For details, see [Managing resources for containers﻿](https://dt-url.net/atc371q). | No default (optional) | ResourceRequirements |
 | `labels` | Your defined labels for OneAgent Pods in order to structure workloads as desired. | No default (optional) | map[string]string |
 | `namespaceSelector` | The namespaces where you want Dynatrace Operator to inject.For more information, see [Configure monitoring for namespaces and Pods](/managed/ingest-from/setup-on-k8s/guides/deployment-and-configuration/monitoring-and-instrumentation/annotate "Configure monitoring for namespaces and pods"). | No default (optional) | LabelSelector |
 | `nodeSelector` | Specify the node selector that controls on which nodes OneAgent will be deployed. | No default (optional) | map[string]string |
-| `oneAgentResources` | Resource settings for OneAgent container. Consumption of the OneAgent heavily depends on the workload to monitor. You can use the default settings in the [CRï»¿](https://dt-url.net/dynakube-samples).`resource.requests` shows the values needed to run; `resource.limits` shows the maximum limits for the Pod. | No default (optional) | ResourceRequirements |
-| `priorityClassName` | Assign a priority class to the OneAgent Pods. By default, no class is set.For details, see [Pod Priority and Preemptionï»¿](https://dt-url.net/n8437bl). | No default (optional) | string |
+| `oneAgentResources` | Resource settings for OneAgent container. Consumption of the OneAgent heavily depends on the workload to monitor. You can use the default settings in the [CR﻿](https://dt-url.net/dynakube-samples).`resource.requests` shows the values needed to run; `resource.limits` shows the maximum limits for the Pod. | No default (optional) | ResourceRequirements |
+| `priorityClassName` | Assign a priority class to the OneAgent Pods. By default, no class is set.For details, see [Pod Priority and Preemption﻿](https://dt-url.net/n8437bl). | No default (optional) | string |
 | `secCompProfile` | The SecComp Profile that will be configured in order to run in secure computing mode. | No default (optional) | string |
-| `tolerations` | Tolerations to include with the OneAgent DaemonSet.For details, see [Taints and Tolerationsï»¿](https://dt-url.net/od03765). | No default (optional) | []Toleration |
+| `tolerations` | Tolerations to include with the OneAgent DaemonSet.For details, see [Taints and Tolerations﻿](https://dt-url.net/od03765). | No default (optional) | []Toleration |
 | `version` | The OneAgent version to be used for host monitoring OneAgents running in the dedicated Pod. This setting doesn't affect the OneAgent version used for application monitoring. | The latest version is used by default. | string |
 
 ## `.spec.oneAgent.classicFullStack`
@@ -1456,15 +1453,15 @@ Recommended
 | `annotations` | Add custom OneAgent annotations. | No default (optional) | map[string]string |
 | `args` | Set additional arguments to the OneAgent installer.For available options, see [Linux custom installation](/managed/ingest-from/dynatrace-oneagent/installation-and-operation/linux/installation/customize-oneagent-installation-on-linux "Learn how to use the Linux installer with command line parameters.").For the list of limitations, see [Limitations](/managed/ingest-from/setup-on-container-platforms/docker/set-up-dynatrace-oneagent-as-docker-container#limitations "Install and update Dynatrace OneAgent as a Docker container."). | No default (optional) | []string |
 | `autoUpdate` (**deprecated**) | Deprecated field to be removed in a future release. [Pin the OneAgent version on your tenant to configure auto-update](/managed/ingest-from/setup-on-k8s/guides/deployment-and-configuration/updates-and-maintenance/auto-update-components#configure-oneagent-auto-update "Configure auto-updates for components managed by Dynatrace Operator (OneAgent, ActiveGate, and EdgeConnect).").Auto-update is disabled when the `version` or `image` fields are set. | `true` | boolean |
-| `dnsPolicy` | Set the DNS Policy for OneAgent Pods.For details, see [Pods DNS Policyï»¿](https://dt-url.net/2t2375a). | `ClusterFirstWithHostNet` | string |
+| `dnsPolicy` | Set the DNS Policy for OneAgent Pods.For details, see [Pods DNS Policy﻿](https://dt-url.net/2t2375a). | `ClusterFirstWithHostNet` | string |
 | `env` | Set additional environment variables for the OneAgent Pods. | No default (optional) | []EnvVar |
 | `image` | Use a custom OneAgent Docker image. Defaults to the image from the Dynatrace cluster. | Name of the image. | string |
 | `labels` | Your defined labels for OneAgent Pods in order to structure workloads as desired. | No default (optional) | map[string]string |
 | `nodeSelector` | Specify the node selector that controls on which nodes OneAgent will be deployed. | No default (optional) | map[string]string |
-| `oneAgentResources` | Resource settings for OneAgent container. Consumption of the OneAgent heavily depends on the workload to monitor. You can use the default settings in the [CRï»¿](https://dt-url.net/dynakube-samples).`resource.requests` shows the values needed to run; `resource.limits` shows the maximum limits for the Pod. | No default (optional) | ResourceRequirements |
-| `priorityClassName` | Assign a priority class to the OneAgent Pods. By default, no class is set.For details, see [Pod Priority and Preemptionï»¿](https://dt-url.net/n8437bl). | No default (optional) | string |
+| `oneAgentResources` | Resource settings for OneAgent container. Consumption of the OneAgent heavily depends on the workload to monitor. You can use the default settings in the [CR﻿](https://dt-url.net/dynakube-samples).`resource.requests` shows the values needed to run; `resource.limits` shows the maximum limits for the Pod. | No default (optional) | ResourceRequirements |
+| `priorityClassName` | Assign a priority class to the OneAgent Pods. By default, no class is set.For details, see [Pod Priority and Preemption﻿](https://dt-url.net/n8437bl). | No default (optional) | string |
 | `secCompProfile` | The SecComp Profile that will be configured in order to run in secure computing mode. | No default (optional) | string |
-| `tolerations` | Tolerations to include with the OneAgent DaemonSet.For details, see [Taints and Tolerationsï»¿](https://dt-url.net/od03765). | No default (optional) | []Toleration |
+| `tolerations` | Tolerations to include with the OneAgent DaemonSet.For details, see [Taints and Tolerations﻿](https://dt-url.net/od03765). | No default (optional) | []Toleration |
 | `version` | The OneAgent version to be used. | The latest version is used by default. | string |
 
 ## `.spec.oneAgent.applicationMonitoring`
@@ -1474,7 +1471,7 @@ Recommended
 | **Parameter** | **Description** | **Default value** | **Data type** |
 | --- | --- | --- | --- |
 | `codeModulesImage` | The OneAgent image that is used to inject into Pods | No default (optional) | string |
-| `initResources` | Define resources requests and limits for the initContainer. For details, see [Managing resources for containersï»¿](https://dt-url.net/atc371q). | No default (optional) | ResourceRequirements |
+| `initResources` | Define resources requests and limits for the initContainer. For details, see [Managing resources for containers﻿](https://dt-url.net/atc371q). | No default (optional) | ResourceRequirements |
 | `namespaceSelector` | The namespaces where you want Dynatrace Operator to inject.For more information, see [Configure monitoring for namespaces and Pods](/managed/ingest-from/setup-on-k8s/guides/deployment-and-configuration/monitoring-and-instrumentation/annotate "Configure monitoring for namespaces and pods"). | No default (optional) | LabelSelector |
 | `version` | The OneAgent version to be used. | The latest version is used by default. | string |
 
@@ -1487,15 +1484,15 @@ Recommended
 | `annotations` | Add custom OneAgent annotations. | No default (optional) | map[string]string |
 | `args` | Set additional arguments to the OneAgent installer.For available options, see [Linux custom installation](/managed/ingest-from/dynatrace-oneagent/installation-and-operation/linux/installation/customize-oneagent-installation-on-linux "Learn how to use the Linux installer with command line parameters.").For the list of limitations, see [Limitations](/managed/ingest-from/setup-on-container-platforms/docker/set-up-dynatrace-oneagent-as-docker-container#limitations "Install and update Dynatrace OneAgent as a Docker container."). | No default (optional) | []string |
 | `autoUpdate` (**deprecated**) | Deprecated field to be removed in a future release. [Pin the OneAgent version on your tenant to configure auto-update](/managed/ingest-from/setup-on-k8s/guides/deployment-and-configuration/updates-and-maintenance/auto-update-components#configure-oneagent-auto-update "Configure auto-updates for components managed by Dynatrace Operator (OneAgent, ActiveGate, and EdgeConnect).").Auto-update is disabled when the `version` or `image` fields are set. | `true` | boolean |
-| `dnsPolicy` | Set the DNS Policy for OneAgent Pods.For details, see [Pods DNS Policyï»¿](https://dt-url.net/2t2375a). | `ClusterFirstWithHostNet` | string |
+| `dnsPolicy` | Set the DNS Policy for OneAgent Pods.For details, see [Pods DNS Policy﻿](https://dt-url.net/2t2375a). | `ClusterFirstWithHostNet` | string |
 | `env` | Set additional environment variables for the OneAgent Pods. | No default (optional) | []EnvVar |
 | `image` | Use a custom OneAgent Docker image. | The image from the Dynatrace cluster. | string |
 | `labels` | Your defined labels for OneAgent Pods in order to structure workloads as desired. | No default (optional) | map[string]string |
 | `nodeSelector` | Specify the node selector that controls on which nodes OneAgent will be deployed. | No default (optional) | map[string]string |
-| `oneAgentResources` | Resource settings for OneAgent container. Consumption of the OneAgent heavily depends on the workload to monitor. You can use the default settings in the [CRï»¿](https://dt-url.net/dynakube-samples).`resource.requests` shows the values needed to run; `resource.limits` shows the maximum limits for the Pod. | No default (optional) | ResourceRequirements |
-| `priorityClassName` | Assign a priority class to the OneAgent Pods. By default, no class is set.For details, see [Pod Priority and Preemptionï»¿](https://dt-url.net/n8437bl). | No default (optional) | string |
+| `oneAgentResources` | Resource settings for OneAgent container. Consumption of the OneAgent heavily depends on the workload to monitor. You can use the default settings in the [CR﻿](https://dt-url.net/dynakube-samples).`resource.requests` shows the values needed to run; `resource.limits` shows the maximum limits for the Pod. | No default (optional) | ResourceRequirements |
+| `priorityClassName` | Assign a priority class to the OneAgent Pods. By default, no class is set.For details, see [Pod Priority and Preemption﻿](https://dt-url.net/n8437bl). | No default (optional) | string |
 | `secCompProfile` | The SecComp Profile that will be configured in order to run in secure computing mode. | No default (optional) | string |
-| `tolerations` | Tolerations to include with the OneAgent DaemonSet.For details, see [Taints and Tolerationsï»¿](https://dt-url.net/od03765). | No default (optional) | []Toleration |
+| `tolerations` | Tolerations to include with the OneAgent DaemonSet.For details, see [Taints and Tolerations﻿](https://dt-url.net/od03765). | No default (optional) | []Toleration |
 | `version` | The OneAgent version to be used. | The latest version is used by default. | string |
 
 ## `.spec.activeGate`
@@ -1515,12 +1512,12 @@ Recommended
 | `image` | Use a custom ActiveGate image. Defaults to the latest ActiveGate image from the Dynatrace cluster. | No default (optional) | string |
 | `labels` | Your defined labels for ActiveGate pods in order to structure workloads as desired. | No default (optional) | map[string]string |
 | `nodeSelector` | Specify the node selector that controls on which nodes ActiveGate will be deployed. | No default (optional) | map[string]string |
-| `priorityClassName` | Assign a priority class to the ActiveGate pods. By default, no class is set.For details, see [Pod Priority and Preemptionï»¿](https://dt-url.net/n8437bl). | No default (optional) | string |
+| `priorityClassName` | Assign a priority class to the ActiveGate pods. By default, no class is set.For details, see [Pod Priority and Preemption﻿](https://dt-url.net/n8437bl). | No default (optional) | string |
 | `replicas` | Number of replicas of ActiveGate pods. | 1 | int |
 | `resources` | Resource settings for ActiveGate container. Consumption of the ActiveGate heavily depends on the workload to monitor; adjust values accordingly. | No default (recommended) | ResourceRequirements |
 | `tlsSecretName` | Name of a secret containing ActiveGate TLS certificate, key, and password. If not set, a self-signed certificate is used. For details, see [How to add a custom certificate for ActiveGate](/managed/ingest-from/setup-on-k8s/guides/networking-security-compliance/network-configurations#tls-certificate "Configure Dynatrace in network-restricted environments, network-related settings and proxy configurations."). | No default (optional) | string |
-| `tolerations` | Set tolerations for the ActiveGate pods.For details, see [Taints and Tolerationsï»¿](https://dt-url.net/od03765). | No default (optional) | []Toleration |
-| `topologySpreadConstraints` | Adds [topology spread constraintsï»¿](https://dt-url.net/xc03ysw) to the ActiveGate pods. | No default (optional) | []TopologySpreadConstraint |
+| `tolerations` | Set tolerations for the ActiveGate pods.For details, see [Taints and Tolerations﻿](https://dt-url.net/od03765). | No default (optional) | []Toleration |
+| `topologySpreadConstraints` | Adds [topology spread constraints﻿](https://dt-url.net/xc03ysw) to the ActiveGate pods. | No default (optional) | []TopologySpreadConstraint |
 
 1
 
@@ -1634,7 +1631,7 @@ values:
 | `priorityClassName` | If specified, indicates the Pod's priority. Name must be defined by creating a PriorityClass object with that name. If not specified the setting will be removed from the DaemonSet. | No default (optional) | string |
 | `resources` | Define resource requests and limits for Node Configuration Collector Pods. | No default (optional) | ResourceRequirements |
 | `nodeAffinity` | Define the nodeAffinity for the DaemonSet of the Node Configuration Collector | No default (optional) | NodeAffinity |
-| `tolerations` | Set tolerations for the Node Configuration Collector Pods.For details, see [Taints and Tolerationsï»¿](https://dt-url.net/od03765). | No default (optional) | []Toleration |
+| `tolerations` | Set tolerations for the Node Configuration Collector Pods.For details, see [Taints and Tolerations﻿](https://dt-url.net/od03765). | No default (optional) | []Toleration |
 | `args` | Set additional arguments for the Node Configuration Collector main container. | No default (optional) | []string |
 | `env` | Set additional environment variables for the Node Configuration Collector main container. | No default (optional) | []string |
 
@@ -1662,7 +1659,7 @@ Available with Dynatrace version 1.306 and OneAgent 1.305
 | `secCompProfile` | Configures a SecComp profile to enable secure computing mode for the LogMonitoring Pods. | No default (optional) | string |
 | `resources` | Define resource requests and limits for LogMonitoring's main and init-container. | No default (optional) | ResourceRequirements |
 | `nodeAffinity` | Define the nodeAffinity for the DaemonSet of the NodeConfigurationCollector | No default (optional) | NodeAffinity |
-| `tolerations` | Set tolerations for the LogMonitoring Pods.For details, see [Taints and Tolerationsï»¿](https://dt-url.net/od03765). | No default (optional) | []Toleration |
+| `tolerations` | Set tolerations for the LogMonitoring Pods.For details, see [Taints and Tolerations﻿](https://dt-url.net/od03765). | No default (optional) | []Toleration |
 | `args` | Set additional arguments for the LogMonitoring init container. | No default (optional) | []string |
 | `updateStrategy` | Define the NodeConfigurationCollector daemonSet updateStrategy. | No default (optional) | DaemonSetUpdateStrategy |
 
@@ -1692,7 +1689,7 @@ Available with a future Dynatrace version.
 | `customConfig` | ConfigMap holding a custom Extension Execution Controller configuration. | No default (optional) | string |
 | `customExtensionCertificates` | Secret holding certificates that have been used to sign custom extensions. Needed for extensions signature validation by Extension Execution Controller. | No default (optional) | string |
 | `resources` | Resource settings for Extension Execution Controller Pod. | No default (optional) | ResourceRequirements |
-| `tolerations` | Tolerations for Extension Execution Controller Pod.For details, see [Taints and Tolerationsï»¿](https://dt-url.net/od03765). | No default (optional) | []Toleration |
+| `tolerations` | Tolerations for Extension Execution Controller Pod.For details, see [Taints and Tolerations﻿](https://dt-url.net/od03765). | No default (optional) | []Toleration |
 | `topologySpreadConstraints` | Topology spread constraints for Extension Execution Controller Pod. | No default (optional) | []TopologySpreadConstraint |
 
 ## `.spec.templates.extensionExecutionController.imageRef`
@@ -1718,7 +1715,7 @@ Available with a future Dynatrace version.
 | `annotations` | Annotations applied to Dynatrace Collector Pod. | No default (optional) | map[string]string |
 | `tlsRefName` | Secret containing a TLS certificate used by Dynatrace Collector to verify connections to endpoints of other components. | No default (optional) | string |
 | `resources` | Resource settings for Dynatrace Collector Pod. | No default (optional) | ResourceRequirements |
-| `tolerations` | Tolerations for Dynatrace Collector Pod.For details, see [Taints and Tolerationsï»¿](https://dt-url.net/od03765). | No default (optional) | []Toleration |
+| `tolerations` | Tolerations for Dynatrace Collector Pod.For details, see [Taints and Tolerations﻿](https://dt-url.net/od03765). | No default (optional) | []Toleration |
 | `topologySpreadConstraints` | Topology spread constraints for Dynatrace Collector Pod. | No default (optional) | []TopologySpreadConstraint |
 
 ## `.spec.templates.otelCollector.imageRef`
@@ -1743,7 +1740,7 @@ DynaKube API version `v1beta2` is no longer available with Dynatrace Operator ve
 
 | **Parameter** | **Description** | **Default value** | **Data type** |
 | --- | --- | --- | --- |
-| `apiUrl` | Dynatrace `apiUrl`, including the `/api` path at the end.- For SaaS, set `YOUR_ENVIRONMENT_ID` to your environment ID.- For Managed, change the `apiUrl` address.For instructions on how to determine the environment ID and how to configure the apiUrl address, see [Environment ID](/managed/discover-dynatrace/get-started/monitoring-environment "Understand and learn how to work with monitoring environments.") | No default (required) | string |
+| `apiUrl` | Dynatrace `apiUrl`, including the `/api` path at the end.- For SaaS, set `YOUR_ENVIRONMENT_ID` to your environment ID.- For Managed, change the `apiUrl` address.For instructions on how to determine the environment ID and how to configure the apiUrl address, see [Environment ID](/managed/discover-dynatrace/get-started/monitoring-environment "Learn what a Dynatrace monitoring environment is, how to find your environment ID, and how to set up and connect multiple environments.") | No default (required) | string |
 | `customPullSecret` | Defines a custom pull secret in case you use a private registry when pulling images from the Dynatrace environment.Note: For the [node image pull feature](/managed/ingest-from/setup-on-k8s/guides/deployment-and-configuration/node-image-pull "Configure node image pull") without the CSI driver, you must manually ensure that pull secrets are available on the injected pod. See [node image pull prerequisites](/managed/ingest-from/setup-on-k8s/guides/deployment-and-configuration/node-image-pull#prerequisites "Configure node image pull") for more details.To define a custom pull secret and learn about the expected behavior, see [Configure `customPullSecret`](/managed/ingest-from/setup-on-k8s/guides/container-registries/use-private-registry#create-pull-secret "Use a private registry"). | No default (optional) | string |
 | `dynatraceApiRequestThreshold` | Minimum minutes between Dynatrace API requests. | 15 | integer |
 | `enableIstio` | When enabled, and if Istio is installed on the Kubernetes environment, Dynatrace Operator will create the corresponding VirtualService and ServiceEntry objects to allow access to the Dynatrace Cluster from the OneAgent or ActiveGate.Disabled by default. | No default (optional) | boolean |
@@ -1771,17 +1768,17 @@ Recommended
 | `args` | Set additional arguments to the OneAgent installer.For available options, see [Linux custom installation](/managed/ingest-from/dynatrace-oneagent/installation-and-operation/linux/installation/customize-oneagent-installation-on-linux "Learn how to use the Linux installer with command line parameters.").For the list of limitations, see [Limitations](/managed/ingest-from/setup-on-container-platforms/docker/set-up-dynatrace-oneagent-as-docker-container#limitations "Install and update Dynatrace OneAgent as a Docker container."). | No default (optional) | []string |
 | `autoUpdate` (**deprecated**) | Deprecated field to be removed in a future release. [Pin the OneAgent version on your tenant to configure auto-update](/managed/ingest-from/setup-on-k8s/guides/deployment-and-configuration/updates-and-maintenance/auto-update-components#configure-oneagent-auto-update "Configure auto-updates for components managed by Dynatrace Operator (OneAgent, ActiveGate, and EdgeConnect).").Auto-update is disabled when the `version` or `image` fields are set. | `true` | boolean |
 | `codeModulesImage` | The OneAgent image that is used to inject into Pods | No default (optional) | string |
-| `dnsPolicy` | Set the DNS Policy for OneAgent Pods.For details, see [Pods DNS Policyï»¿](https://dt-url.net/2t2375a). | `ClusterFirstWithHostNet` | string |
+| `dnsPolicy` | Set the DNS Policy for OneAgent Pods.For details, see [Pods DNS Policy﻿](https://dt-url.net/2t2375a). | `ClusterFirstWithHostNet` | string |
 | `env` | Set additional environment variables for the OneAgent Pods. | No default (optional) | []EnvVar |
 | `image` | Use a custom OneAgent Docker image. | The image from the Dynatrace cluster. | string |
-| `initResources` | Define resources requests and limits for the initContainer. For details, see [Managing resources for containersï»¿](https://dt-url.net/atc371q). | No default (optional) | ResourceRequirements |
+| `initResources` | Define resources requests and limits for the initContainer. For details, see [Managing resources for containers﻿](https://dt-url.net/atc371q). | No default (optional) | ResourceRequirements |
 | `labels` | Your defined labels for OneAgent Pods in order to structure workloads as desired. | No default (optional) | map[string]string |
 | `namespaceSelector` | The namespaces where you want Dynatrace Operator to inject.For more information, see [Configure monitoring for namespaces and Pods](/managed/ingest-from/setup-on-k8s/guides/deployment-and-configuration/monitoring-and-instrumentation/annotate "Configure monitoring for namespaces and pods"). | No default (optional) | LabelSelector |
 | `nodeSelector` | Specify the node selector that controls on which nodes OneAgent will be deployed. | No default (optional) | map[string]string |
-| `oneAgentResources` | Resource settings for OneAgent container. Consumption of the OneAgent heavily depends on the workload to monitor. You can use the default settings in the [CRï»¿](https://dt-url.net/dynakube-samples).`resource.requests` shows the values needed to run; `resource.limits` shows the maximum limits for the Pod. | No default (optional) | ResourceRequirements |
-| `priorityClassName` | Assign a priority class to the OneAgent Pods. By default, no class is set.For details, see [Pod Priority and Preemptionï»¿](https://dt-url.net/n8437bl). | No default (optional) | string |
+| `oneAgentResources` | Resource settings for OneAgent container. Consumption of the OneAgent heavily depends on the workload to monitor. You can use the default settings in the [CR﻿](https://dt-url.net/dynakube-samples).`resource.requests` shows the values needed to run; `resource.limits` shows the maximum limits for the Pod. | No default (optional) | ResourceRequirements |
+| `priorityClassName` | Assign a priority class to the OneAgent Pods. By default, no class is set.For details, see [Pod Priority and Preemption﻿](https://dt-url.net/n8437bl). | No default (optional) | string |
 | `secCompProfile` | The SecComp Profile that will be configured in order to run in secure computing mode. | No default (optional) | string |
-| `tolerations` | Tolerations to include with the OneAgent DaemonSet.For details, see [Taints and Tolerationsï»¿](https://dt-url.net/od03765). | No default (optional) | []Toleration |
+| `tolerations` | Tolerations to include with the OneAgent DaemonSet.For details, see [Taints and Tolerations﻿](https://dt-url.net/od03765). | No default (optional) | []Toleration |
 | `version` | The OneAgent version to be used for host monitoring OneAgents running in the dedicated Pod. This setting doesn't affect the OneAgent version used for application monitoring. | The latest version is used by default. | string |
 
 ## `.spec.oneAgent.classicFullStack`
@@ -1793,15 +1790,15 @@ Recommended
 | `annotations` | Add custom OneAgent annotations. | No default (optional) | map[string]string |
 | `args` | Set additional arguments to the OneAgent installer.For available options, see [Linux custom installation](/managed/ingest-from/dynatrace-oneagent/installation-and-operation/linux/installation/customize-oneagent-installation-on-linux "Learn how to use the Linux installer with command line parameters.").For the list of limitations, see [Limitations](/managed/ingest-from/setup-on-container-platforms/docker/set-up-dynatrace-oneagent-as-docker-container#limitations "Install and update Dynatrace OneAgent as a Docker container."). | No default (optional) | []string |
 | `autoUpdate` (**deprecated**) | Deprecated field to be removed in a future release. [Pin the OneAgent version on your tenant to configure auto-update](/managed/ingest-from/setup-on-k8s/guides/deployment-and-configuration/updates-and-maintenance/auto-update-components#configure-oneagent-auto-update "Configure auto-updates for components managed by Dynatrace Operator (OneAgent, ActiveGate, and EdgeConnect).").Auto-update is disabled when the `version` or `image` fields are set. | `true` | boolean |
-| `dnsPolicy` | Set the DNS Policy for OneAgent Pods.For details, see [Pods DNS Policyï»¿](https://dt-url.net/2t2375a). | `ClusterFirstWithHostNet` | string |
+| `dnsPolicy` | Set the DNS Policy for OneAgent Pods.For details, see [Pods DNS Policy﻿](https://dt-url.net/2t2375a). | `ClusterFirstWithHostNet` | string |
 | `env` | Set additional environment variables for the OneAgent Pods. | No default (optional) | []EnvVar |
 | `image` | Use a custom OneAgent Docker image. Defaults to the image from the Dynatrace cluster. | Name of the image. | string |
 | `labels` | Your defined labels for OneAgent Pods in order to structure workloads as desired. | No default (optional) | map[string]string |
 | `nodeSelector` | Specify the node selector that controls on which nodes OneAgent will be deployed. | No default (optional) | map[string]string |
-| `oneAgentResources` | Resource settings for OneAgent container. Consumption of the OneAgent heavily depends on the workload to monitor. You can use the default settings in the [CRï»¿](https://dt-url.net/dynakube-samples).`resource.requests` shows the values needed to run; `resource.limits` shows the maximum limits for the Pod. | No default (optional) | ResourceRequirements |
-| `priorityClassName` | Assign a priority class to the OneAgent Pods. By default, no class is set.For details, see [Pod Priority and Preemptionï»¿](https://dt-url.net/n8437bl). | No default (optional) | string |
+| `oneAgentResources` | Resource settings for OneAgent container. Consumption of the OneAgent heavily depends on the workload to monitor. You can use the default settings in the [CR﻿](https://dt-url.net/dynakube-samples).`resource.requests` shows the values needed to run; `resource.limits` shows the maximum limits for the Pod. | No default (optional) | ResourceRequirements |
+| `priorityClassName` | Assign a priority class to the OneAgent Pods. By default, no class is set.For details, see [Pod Priority and Preemption﻿](https://dt-url.net/n8437bl). | No default (optional) | string |
 | `secCompProfile` | The SecComp Profile that will be configured in order to run in secure computing mode. | No default (optional) | string |
-| `tolerations` | Tolerations to include with the OneAgent DaemonSet.For details, see [Taints and Tolerationsï»¿](https://dt-url.net/od03765). | No default (optional) | []Toleration |
+| `tolerations` | Tolerations to include with the OneAgent DaemonSet.For details, see [Taints and Tolerations﻿](https://dt-url.net/od03765). | No default (optional) | []Toleration |
 | `version` | The OneAgent version to be used. | The latest version is used by default. | string |
 
 ## `.spec.oneAgent.applicationMonitoring`
@@ -1811,7 +1808,7 @@ Recommended
 | **Parameter** | **Description** | **Default value** | **Data type** |
 | --- | --- | --- | --- |
 | `codeModulesImage` | The OneAgent image that is used to inject into Pods | No default (optional) | string |
-| `initResources` | Define resources requests and limits for the initContainer. For details, see [Managing resources for containersï»¿](https://dt-url.net/atc371q). | No default (optional) | ResourceRequirements |
+| `initResources` | Define resources requests and limits for the initContainer. For details, see [Managing resources for containers﻿](https://dt-url.net/atc371q). | No default (optional) | ResourceRequirements |
 | `namespaceSelector` | The namespaces where you want Dynatrace Operator to inject.For more information, see [Configure monitoring for namespaces and Pods](/managed/ingest-from/setup-on-k8s/guides/deployment-and-configuration/monitoring-and-instrumentation/annotate "Configure monitoring for namespaces and pods"). | No default (optional) | LabelSelector |
 | `useCSIDriver` | Set if you want to use the CSIDriver. Don't enable it if you do not have access to Kubernetes nodes or if you lack privileges. | `false` | boolean |
 | `version` | The OneAgent version to be used. | The latest version is used by default. | string |
@@ -1825,15 +1822,15 @@ Recommended
 | `annotations` | Add custom OneAgent annotations. | No default (optional) | map[string]string |
 | `args` | Set additional arguments to the OneAgent installer.For available options, see [Linux custom installation](/managed/ingest-from/dynatrace-oneagent/installation-and-operation/linux/installation/customize-oneagent-installation-on-linux "Learn how to use the Linux installer with command line parameters.").For the list of limitations, see [Limitations](/managed/ingest-from/setup-on-container-platforms/docker/set-up-dynatrace-oneagent-as-docker-container#limitations "Install and update Dynatrace OneAgent as a Docker container."). | No default (optional) | []string |
 | `autoUpdate` (**deprecated**) | Deprecated field to be removed in a future release. [Pin the OneAgent version on your tenant to configure auto-update](/managed/ingest-from/setup-on-k8s/guides/deployment-and-configuration/updates-and-maintenance/auto-update-components#configure-oneagent-auto-update "Configure auto-updates for components managed by Dynatrace Operator (OneAgent, ActiveGate, and EdgeConnect).").Auto-update is disabled when the `version` or `image` fields are set. | `true` | boolean |
-| `dnsPolicy` | Set the DNS Policy for OneAgent Pods.For details, see [Pods DNS Policyï»¿](https://dt-url.net/2t2375a). | `ClusterFirstWithHostNet` | string |
+| `dnsPolicy` | Set the DNS Policy for OneAgent Pods.For details, see [Pods DNS Policy﻿](https://dt-url.net/2t2375a). | `ClusterFirstWithHostNet` | string |
 | `env` | Set additional environment variables for the OneAgent Pods. | No default (optional) | []EnvVar |
 | `image` | Use a custom OneAgent Docker image. | The image from the Dynatrace cluster. | string |
 | `labels` | Your defined labels for OneAgent Pods in order to structure workloads as desired. | No default (optional) | map[string]string |
 | `nodeSelector` | Specify the node selector that controls on which nodes OneAgent will be deployed. | No default (optional) | map[string]string |
-| `oneAgentResources` | Resource settings for OneAgent container. Consumption of the OneAgent heavily depends on the workload to monitor. You can use the default settings in the [CRï»¿](https://dt-url.net/dynakube-samples).`resource.requests` shows the values needed to run; `resource.limits` shows the maximum limits for the Pod. | No default (optional) | ResourceRequirements |
-| `priorityClassName` | Assign a priority class to the OneAgent Pods. By default, no class is set.For details, see [Pod Priority and Preemptionï»¿](https://dt-url.net/n8437bl). | No default (optional) | string |
+| `oneAgentResources` | Resource settings for OneAgent container. Consumption of the OneAgent heavily depends on the workload to monitor. You can use the default settings in the [CR﻿](https://dt-url.net/dynakube-samples).`resource.requests` shows the values needed to run; `resource.limits` shows the maximum limits for the Pod. | No default (optional) | ResourceRequirements |
+| `priorityClassName` | Assign a priority class to the OneAgent Pods. By default, no class is set.For details, see [Pod Priority and Preemption﻿](https://dt-url.net/n8437bl). | No default (optional) | string |
 | `secCompProfile` | The SecComp Profile that will be configured in order to run in secure computing mode. | No default (optional) | string |
-| `tolerations` | Tolerations to include with the OneAgent DaemonSet.For details, see [Taints and Tolerationsï»¿](https://dt-url.net/od03765). | No default (optional) | []Toleration |
+| `tolerations` | Tolerations to include with the OneAgent DaemonSet.For details, see [Taints and Tolerations﻿](https://dt-url.net/od03765). | No default (optional) | []Toleration |
 | `version` | The OneAgent version to be used. | The latest version is used by default. | string |
 
 ## `.spec.activeGate`
@@ -1853,12 +1850,12 @@ Recommended
 | `image` | Use a custom ActiveGate image. Defaults to the latest ActiveGate image from the Dynatrace cluster. | No default (optional) | string |
 | `labels` | Your defined labels for ActiveGate pods in order to structure workloads as desired. | No default (optional) | map[string]string |
 | `nodeSelector` | Specify the node selector that controls on which nodes ActiveGate will be deployed. | No default (optional) | map[string]string |
-| `priorityClassName` | Assign a priority class to the ActiveGate pods. By default, no class is set.For details, see [Pod Priority and Preemptionï»¿](https://dt-url.net/n8437bl). | No default (optional) | string |
+| `priorityClassName` | Assign a priority class to the ActiveGate pods. By default, no class is set.For details, see [Pod Priority and Preemption﻿](https://dt-url.net/n8437bl). | No default (optional) | string |
 | `replicas` | Number of replicas of ActiveGate pods. | 1 | int |
 | `resources` | Resource settings for ActiveGate container. Consumption of the ActiveGate heavily depends on the workload to monitor; adjust values accordingly. | No default (recommended) | ResourceRequirements |
 | `tlsSecretName` | Name of a secret containing ActiveGate TLS certificate, key, and password. If not set, a self-signed certificate is used. For details, see [How to add a custom certificate for ActiveGate](/managed/ingest-from/setup-on-k8s/guides/networking-security-compliance/network-configurations#tls-certificate "Configure Dynatrace in network-restricted environments, network-related settings and proxy configurations."). | No default (optional) | string |
-| `tolerations` | Set tolerations for the ActiveGate pods.For details, see [Taints and Tolerationsï»¿](https://dt-url.net/od03765). | No default (optional) | []Toleration |
-| `topologySpreadConstraints` | Adds [topology spread constraintsï»¿](https://dt-url.net/xc03ysw) to the ActiveGate pods. | No default (optional) | []TopologySpreadConstraint |
+| `tolerations` | Set tolerations for the ActiveGate pods.For details, see [Taints and Tolerations﻿](https://dt-url.net/od03765). | No default (optional) | []Toleration |
+| `topologySpreadConstraints` | Adds [topology spread constraints﻿](https://dt-url.net/xc03ysw) to the ActiveGate pods. | No default (optional) | []TopologySpreadConstraint |
 
 1
 
@@ -1890,7 +1887,7 @@ DynaKube API version `v1beta1` is no longer available with Dynatrace Operator ve
 
 | **Parameter** | **Description** | **Default value** | **Data type** |
 | --- | --- | --- | --- |
-| `apiUrl` | Dynatrace `apiUrl`, including the `/api` path at the end.- For SaaS, set `YOUR_ENVIRONMENT_ID` to your environment ID.- For Managed, change the `apiUrl` address.For instructions on how to determine the environment ID and how to configure the apiUrl address, see [Environment ID](/managed/discover-dynatrace/get-started/monitoring-environment "Understand and learn how to work with monitoring environments."). | No default (required) | string |
+| `apiUrl` | Dynatrace `apiUrl`, including the `/api` path at the end.- For SaaS, set `YOUR_ENVIRONMENT_ID` to your environment ID.- For Managed, change the `apiUrl` address.For instructions on how to determine the environment ID and how to configure the apiUrl address, see [Environment ID](/managed/discover-dynatrace/get-started/monitoring-environment "Learn what a Dynatrace monitoring environment is, how to find your environment ID, and how to set up and connect multiple environments."). | No default (required) | string |
 | `tokens` | Name of the secret holding the tokens. | Name of custom resource (`.metadata.name`) if unset | string |
 | `skipCertCheck` | Disable certificate check for the connection between Dynatrace Operator and the Dynatrace Cluster.Set to `true` if you want to skip certification validation checks. | `false` | boolean |
 | `proxy` | Set custom proxy settings either directly or from a secret with the field `proxy`.Applies to Dynatrace Operator, ActiveGate, and OneAgents. | No default (optional) | string |
@@ -1917,17 +1914,17 @@ Recommended
 | `image` | Use a custom OneAgent Docker image. | The image from the Dynatrace cluster. | string |
 | `codeModulesImage` | The OneAgent image that is used to inject into Pods | No default (optional) | string |
 | `version` | The OneAgent version to be used for host monitoring OneAgents running in the dedicated Pod. This setting doesn't affect the OneAgent version used for application monitoring. | The latest version is used by default. | string |
-| `tolerations` | Tolerations to include with the OneAgent DaemonSet.For details, see [Taints and Tolerationsï»¿](https://dt-url.net/od03765). | No default (optional) | []Toleration |
+| `tolerations` | Tolerations to include with the OneAgent DaemonSet.For details, see [Taints and Tolerations﻿](https://dt-url.net/od03765). | No default (optional) | []Toleration |
 | `nodeSelector` | Specify the node selector that controls on which nodes OneAgent will be deployed. | No default (optional) | map[string]string |
-| `priorityClassName` | Assign a priority class to the OneAgent Pods. By default, no class is set.For details, see [Pod Priority and Preemptionï»¿](https://dt-url.net/n8437bl). | No default (optional) | string |
-| `oneAgentResources` | Resource settings for OneAgent container. Consumption of the OneAgent heavily depends on the workload to monitor. You can use the default settings in the [CRï»¿](https://dt-url.net/dynakube-samples).`resource.requests` shows the values needed to run; `resource.limits` shows the maximum limits for the Pod. | No default (optional) | ResourceRequirements |
+| `priorityClassName` | Assign a priority class to the OneAgent Pods. By default, no class is set.For details, see [Pod Priority and Preemption﻿](https://dt-url.net/n8437bl). | No default (optional) | string |
+| `oneAgentResources` | Resource settings for OneAgent container. Consumption of the OneAgent heavily depends on the workload to monitor. You can use the default settings in the [CR﻿](https://dt-url.net/dynakube-samples).`resource.requests` shows the values needed to run; `resource.limits` shows the maximum limits for the Pod. | No default (optional) | ResourceRequirements |
 | `autoUpdate` (**deprecated**) | Deprecated field to be removed in a future release. [Pin the OneAgent version on your tenant to configure auto-update](/managed/ingest-from/setup-on-k8s/guides/deployment-and-configuration/updates-and-maintenance/auto-update-components#configure-oneagent-auto-update "Configure auto-updates for components managed by Dynatrace Operator (OneAgent, ActiveGate, and EdgeConnect).").Auto-update is disabled when the `version` or `image` fields are set. | `true` | boolean |
-| `dnsPolicy` | Set the DNS Policy for OneAgent Pods.For details, see [Pods DNS Policyï»¿](https://dt-url.net/2t2375a). | `ClusterFirstWithHostNet` | string |
+| `dnsPolicy` | Set the DNS Policy for OneAgent Pods.For details, see [Pods DNS Policy﻿](https://dt-url.net/2t2375a). | `ClusterFirstWithHostNet` | string |
 | `annotations` | Add custom OneAgent annotations. | No default (optional) | map[string]string |
 | `labels` | Your defined labels for OneAgent Pods in order to structure workloads as desired. | No default (optional) | map[string]string |
 | `env` | Set additional environment variables for the OneAgent Pods. | No default (optional) | []EnvVar |
 | `args` | Set additional arguments to the OneAgent installer.For available options, see [Linux custom installation](/managed/ingest-from/dynatrace-oneagent/installation-and-operation/linux/installation/customize-oneagent-installation-on-linux "Learn how to use the Linux installer with command line parameters.").For the list of limitations, see [Limitations](/managed/ingest-from/setup-on-container-platforms/docker/set-up-dynatrace-oneagent-as-docker-container#limitations "Install and update Dynatrace OneAgent as a Docker container."). | No default (optional) | []string |
-| `initResources` | Define resources requests and limits for the initContainer. For details, see [Managing resources for containersï»¿](https://dt-url.net/atc371q). | No default (optional) | ResourceRequirements |
+| `initResources` | Define resources requests and limits for the initContainer. For details, see [Managing resources for containers﻿](https://dt-url.net/atc371q). | No default (optional) | ResourceRequirements |
 | `namespaceSelector` | The namespaces where you want Dynatrace Operator to inject. For more information, see [Configure monitoring for namespaces and Pods](/managed/ingest-from/setup-on-k8s/guides/deployment-and-configuration/monitoring-and-instrumentation/annotate "Configure monitoring for namespaces and pods"). | No default (optional) | LabelSelector |
 
 ## `.spec.oneAgent.classicFullStack`
@@ -1938,16 +1935,16 @@ Recommended
 | --- | --- | --- | --- |
 | `version` | The OneAgent version to be used. | The latest version is used by default. | string |
 | `image` | Use a custom OneAgent Docker image. Defaults to the image from the Dynatrace cluster. | Name of the image. | string |
-| `tolerations` | Tolerations to include with the OneAgent DaemonSet.For details, see [Taints and Tolerationsï»¿](https://dt-url.net/od03765). | No default (optional) | []Toleration |
+| `tolerations` | Tolerations to include with the OneAgent DaemonSet.For details, see [Taints and Tolerations﻿](https://dt-url.net/od03765). | No default (optional) | []Toleration |
 | `autoUpdate` (**deprecated**) | Deprecated field to be removed in a future release. [Pin the OneAgent version on your tenant to configure auto-update](/managed/ingest-from/setup-on-k8s/guides/deployment-and-configuration/updates-and-maintenance/auto-update-components#configure-oneagent-auto-update "Configure auto-updates for components managed by Dynatrace Operator (OneAgent, ActiveGate, and EdgeConnect).").Auto-update is disabled when the `version` or `image` fields are set. | `true` | boolean |
-| `dnsPolicy` | Set the DNS Policy for OneAgent Pods.For details, see [Pods DNS Policyï»¿](https://dt-url.net/2t2375a). | `ClusterFirstWithHostNet` | string |
+| `dnsPolicy` | Set the DNS Policy for OneAgent Pods.For details, see [Pods DNS Policy﻿](https://dt-url.net/2t2375a). | `ClusterFirstWithHostNet` | string |
 | `annotations` | Add custom OneAgent annotations. | No default (optional) | map[string]string |
 | `labels` | Your defined labels for OneAgent Pods in order to structure workloads as desired. | No default (optional) | map[string]string |
 | `env` | Set additional environment variables for the OneAgent Pods. | No default (optional) | []EnvVar |
 | `args` | Set additional arguments to the OneAgent installer.For available options, see [Linux custom installation](/managed/ingest-from/dynatrace-oneagent/installation-and-operation/linux/installation/customize-oneagent-installation-on-linux "Learn how to use the Linux installer with command line parameters.").For the list of limitations, see [Limitations](/managed/ingest-from/setup-on-container-platforms/docker/set-up-dynatrace-oneagent-as-docker-container#limitations "Install and update Dynatrace OneAgent as a Docker container."). | No default (optional) | []string |
 | `nodeSelector` | Specify the node selector that controls on which nodes OneAgent will be deployed. | No default (optional) | map[string]string |
-| `priorityClassName` | Assign a priority class to the OneAgent Pods. By default, no class is set.For details, see [Pod Priority and Preemptionï»¿](https://dt-url.net/n8437bl). | No default (optional) | string |
-| `oneAgentResources` | Resource settings for OneAgent container. Consumption of the OneAgent heavily depends on the workload to monitor. You can use the default settings in the [CRï»¿](https://dt-url.net/dynakube-samples).`resource.requests` shows the values needed to run; `resource.limits` shows the maximum limits for the Pod. | No default (optional) | ResourceRequirements |
+| `priorityClassName` | Assign a priority class to the OneAgent Pods. By default, no class is set.For details, see [Pod Priority and Preemption﻿](https://dt-url.net/n8437bl). | No default (optional) | string |
+| `oneAgentResources` | Resource settings for OneAgent container. Consumption of the OneAgent heavily depends on the workload to monitor. You can use the default settings in the [CR﻿](https://dt-url.net/dynakube-samples).`resource.requests` shows the values needed to run; `resource.limits` shows the maximum limits for the Pod. | No default (optional) | ResourceRequirements |
 
 ## `.spec.oneAgent.applicationMonitoring`
 
@@ -1958,7 +1955,7 @@ Recommended
 | `codeModulesImage` | The OneAgent image that is used to inject into Pods | No default (optional) | string |
 | `version` | The OneAgent version to be used. | The latest version is used by default. | string |
 | `useCSIDriver` | Set if you want to use the CSI driver. Don't enable it if you do not have access to Kubernetes nodes or if you lack privileges. | `false` | boolean |
-| `initResources` | Define resources requests and limits for the initContainer. For details, see [Managing resources for containersï»¿](https://dt-url.net/atc371q). | No default (optional) | ResourceRequirements |
+| `initResources` | Define resources requests and limits for the initContainer. For details, see [Managing resources for containers﻿](https://dt-url.net/atc371q). | No default (optional) | ResourceRequirements |
 | `hostGroup` | Specify the name of the group to which you want to assign the host. This method is preferred over the now obsolete `--set-host-group` argument. If both settings are used, this field takes precedence over the `--set-host-group` argument. | No default (optional) | string |
 | `namespaceSelector` | The namespaces where you want Dynatrace Operator to inject. For more information, see [Configure monitoring for namespaces and Pods](/managed/ingest-from/setup-on-k8s/guides/deployment-and-configuration/monitoring-and-instrumentation/annotate "Configure monitoring for namespaces and pods"). | No default (optional) | LabelSelector |
 
@@ -1971,11 +1968,11 @@ Recommended
 | `version` | The OneAgent version to be used. | The latest version is used by default. | string |
 | `image` | Use a custom OneAgent Docker image. | The image from the Dynatrace cluster. | string |
 | `nodeSelector` | Specify the node selector that controls on which nodes OneAgent will be deployed. | No default (optional) | map[string]string |
-| `priorityClassName` | Assign a priority class to the OneAgent Pods. By default, no class is set.For details, see [Pod Priority and Preemptionï»¿](https://dt-url.net/n8437bl). | No default (optional) | string |
-| `tolerations` | Tolerations to include with the OneAgent DaemonSet.For details, see [Taints and Tolerationsï»¿](https://dt-url.net/od03765). | No default (optional) | []Toleration |
-| `oneAgentResources` | Resource settings for OneAgent container. Consumption of the OneAgent heavily depends on the workload to monitor. You can use the default settings in the [CRï»¿](https://dt-url.net/dynakube-samples).`resource.requests` shows the values needed to run; `resource.limits` shows the maximum limits for the Pod. | No default (optional) | ResourceRequirements |
+| `priorityClassName` | Assign a priority class to the OneAgent Pods. By default, no class is set.For details, see [Pod Priority and Preemption﻿](https://dt-url.net/n8437bl). | No default (optional) | string |
+| `tolerations` | Tolerations to include with the OneAgent DaemonSet.For details, see [Taints and Tolerations﻿](https://dt-url.net/od03765). | No default (optional) | []Toleration |
+| `oneAgentResources` | Resource settings for OneAgent container. Consumption of the OneAgent heavily depends on the workload to monitor. You can use the default settings in the [CR﻿](https://dt-url.net/dynakube-samples).`resource.requests` shows the values needed to run; `resource.limits` shows the maximum limits for the Pod. | No default (optional) | ResourceRequirements |
 | `autoUpdate` (**deprecated**) | Deprecated field to be removed in a future release. [Pin the OneAgent version on your tenant to configure auto-update](/managed/ingest-from/setup-on-k8s/guides/deployment-and-configuration/updates-and-maintenance/auto-update-components#configure-oneagent-auto-update "Configure auto-updates for components managed by Dynatrace Operator (OneAgent, ActiveGate, and EdgeConnect).").Auto-update is disabled when the `version` or `image` fields are set. | `true` | boolean |
-| `dnsPolicy` | Set the DNS Policy for OneAgent Pods.For details, see [Pods DNS Policyï»¿](https://dt-url.net/2t2375a). | `ClusterFirstWithHostNet` | string |
+| `dnsPolicy` | Set the DNS Policy for OneAgent Pods.For details, see [Pods DNS Policy﻿](https://dt-url.net/2t2375a). | `ClusterFirstWithHostNet` | string |
 | `annotations` | Add custom OneAgent annotations. | No default (optional) | map[string]string |
 | `labels` | Your defined labels for OneAgent Pods in order to structure workloads as desired. | No default (optional) | map[string]string |
 | `env` | Set additional environment variables for the OneAgent Pods. | No default (optional) | []EnvVar |
@@ -1992,7 +1989,7 @@ Recommended
 | `capabilities` | Defines the ActiveGate pod capabilities: what functionality should be enabled.Possible values:- `routing` enables OneAgent routing.- `kubernetes-monitoring` enables Kubernetes API monitoring.- `metrics-ingest`[1](#fn-7-1-def) opens the metrics ingest endpoint on the DynaKube ActiveGate and redirects all pods to it.- `dynatrace-api`[1](#fn-7-1-def) enables calling the Dynatrace API via ActiveGate.- `debugging` enables the [Live Debugging module](/managed/ingest-from/dynatrace-activegate/configuration/configure-activegate#debugging "Learn which ActiveGate properties you can configure based on your needs and requirements.") in ActiveGate. | No default (required) | string |
 | `image` | Use a custom ActiveGate image. Defaults to the latest ActiveGate image from the Dynatrace cluster. | No default (optional) | string |
 | `replicas` | Number of replicas of ActiveGate pods. | 1 | int |
-| `tolerations` | Set tolerations for the ActiveGate pods.For details, see [Taints and Tolerationsï»¿](https://dt-url.net/od03765). | No default (optional) | []Toleration |
+| `tolerations` | Set tolerations for the ActiveGate pods.For details, see [Taints and Tolerations﻿](https://dt-url.net/od03765). | No default (optional) | []Toleration |
 | `nodeSelector` | Specify the node selector that controls on which nodes ActiveGate will be deployed. | No default (optional) | map[string]string |
 | `resources` | Resource settings for ActiveGate container. Consumption of the ActiveGate heavily depends on the workload to monitor; adjust values accordingly. | No default (recommended) | ResourceRequirements |
 | `labels` | Your defined labels for ActiveGate pods in order to structure workloads as desired. | No default (optional) | map[string]string |
@@ -2001,9 +1998,9 @@ Recommended
 | `customProperties` | Add a custom properties file by providing it as a value or by referencing it from a secret.When referencing a custom properties file from a secret, make sure that the key is named `customProperties`. See [How to add a custom properties file](/managed/ingest-from/setup-on-k8s/guides/metadata-automation/custom-properties-file "Add a custom properties file") for details. | No default (optional) | string |
 | `tlsSecretName` | Name of a secret containing ActiveGate TLS certificate, key, and password. If not set, a self-signed certificate is used. For details, see [How to add a custom certificate for ActiveGate](/managed/ingest-from/setup-on-k8s/guides/networking-security-compliance/network-configurations#tls-certificate "Configure Dynatrace in network-restricted environments, network-related settings and proxy configurations."). | No default (optional) | string |
 | `dnsPolicy` | Set the DNS policy for ActiveGate pods. | `ClusterFirstWithHostNet` | string |
-| `priorityClassName` | Assign a priority class to the ActiveGate pods. By default, no class is set.For details, see [Pod Priority and Preemptionï»¿](https://dt-url.net/n8437bl). | No default (optional) | string |
+| `priorityClassName` | Assign a priority class to the ActiveGate pods. By default, no class is set.For details, see [Pod Priority and Preemption﻿](https://dt-url.net/n8437bl). | No default (optional) | string |
 | `annotations` | Add custom ActiveGate annotations. | No default (optional) | map[string]string |
-| `topologySpreadConstraints` | Adds [topology spread constraintsï»¿](https://dt-url.net/xc03ysw) to the ActiveGate pods. | No default (optional) | []TopologySpreadConstraint |
+| `topologySpreadConstraints` | Adds [topology spread constraints﻿](https://dt-url.net/xc03ysw) to the ActiveGate pods. | No default (optional) | []TopologySpreadConstraint |
 
 1
 

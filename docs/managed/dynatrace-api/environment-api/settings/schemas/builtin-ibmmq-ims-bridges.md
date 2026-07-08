@@ -1,7 +1,6 @@
 ---
 title: Settings API - IBM MQ IMS bridges schema table
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/settings/schemas/builtin-ibmmq-ims-bridges
-scraped: 2026-05-12T11:42:58.860388
 ---
 
 # Settings API - IBM MQ IMS bridges schema table

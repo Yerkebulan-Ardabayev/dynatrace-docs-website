@@ -1,7 +1,6 @@
 ---
 title: Reports API - POST unsubscribe from a report
 source: https://docs.dynatrace.com/managed/dynatrace-api/configuration-api/reports-api/unsubscribe-report
-scraped: 2026-05-12T11:15:48.355613
 ---
 
 # Reports API - POST unsubscribe from a report
@@ -108,7 +107,7 @@ The short representation of a Dynatrace entity.
 | Element | Type | Description |
 | --- | --- | --- |
 | code | integer | The HTTP status code |
-| constraintViolations | [ConstraintViolation[]](#openapi-definition-ConstraintViolation) | A list of constraint violations |
+| constraintViolations | [ConstraintViolation](#openapi-definition-ConstraintViolation)[] | A list of constraint violations |
 | message | string | The error message |
 
 #### The `ConstraintViolation` object

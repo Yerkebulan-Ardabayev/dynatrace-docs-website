@@ -1,7 +1,6 @@
 ---
 title: Dynatrace pod mutations for application workloads
 source: https://docs.dynatrace.com/managed/ingest-from/setup-on-k8s/reference/workload-mutation
-scraped: 2026-05-12T11:53:43.772625
 ---
 
 # Dynatrace pod mutations for application workloads
@@ -411,11 +410,11 @@ These `volumeMounts` are relevant for the OneAgent injection.
 
 Starting with Dynatrace Operator version 1.9.0, the `metadataEnrichment` feature is automatically enabled for namespaces with OneAgent injection, even if the `enabled` parameter in `.spec.metadataEnrichment` is set to `false`.
 
-These metadata enrichmentâspecific mutations are therefore applied to pods in namespaces with OneAgent injection, even without explicitly enabling `metadataEnrichment` in the `DynaKube`. Explicitly disabling metadata enrichment on the pod level via the `metadata-enrichment.dynatrace.com/inject: false` annotation will also have no effect.
+These metadata enrichment–specific mutations are therefore applied to pods in namespaces with OneAgent injection, even without explicitly enabling `metadataEnrichment` in the `DynaKube`. Explicitly disabling metadata enrichment on the pod level via the `metadata-enrichment.dynatrace.com/inject: false` annotation will also have no effect.
 
 In metadata-enrichment mode, Dynatrace Operator enhances pods with additional metadata.
 
-Metadata enrichmentâspecific arguments for the init-container
+Metadata enrichment–specific arguments for the init-container
 
 * `--metadata-enrichment`: Instructs the init-container to perform metadata enrichment
 * `--attribute=k8s.workload.kind=...`: The webhook determines this by following the `OwnerReferences` of the pod

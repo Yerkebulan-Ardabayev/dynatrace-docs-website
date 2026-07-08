@@ -1,7 +1,6 @@
 ---
 title: Runtime Application Protection monitoring rules
 source: https://docs.dynatrace.com/managed/secure/application-security/application-protection/application-protection-rules
-scraped: 2026-05-12T12:00:46.773146
 ---
 
 # Runtime Application Protection monitoring rules
@@ -11,9 +10,9 @@ scraped: 2026-05-12T12:00:46.773146
 * How-to guide
 * Updated on Feb 23, 2026
 
-What youâll find on this page
+What you’ll find on this page
 
-* [How to define attackâhandling rules to block, monitor, or ignore attacks](#handling-rules)
+* [How to define attack‑handling rules to block, monitor, or ignore attacks](#handling-rules)
 * [How to create exception (allowlist) rules for attacks you consider safe](#exception-rules)
 * [Frequently asked questions](#faq)
 

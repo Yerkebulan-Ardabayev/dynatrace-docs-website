@@ -1,7 +1,6 @@
 ---
 title: Amazon CloudFront monitoring
 source: https://docs.dynatrace.com/managed/ingest-from/amazon-web-services/integrate-with-aws/aws-all-services/aws-service-cloudfront
-scraped: 2026-05-12T11:30:31.674359
 ---
 
 # Amazon CloudFront monitoring
@@ -26,7 +25,7 @@ To enable monitoring for this service, you need
     For role-based access (whether in a [SaaS](/managed/ingest-from/amazon-web-services/integrate-with-aws/cloudwatch-metrics#role-based-access "Integrate metrics from Amazon CloudWatch.") or [Managed](/managed/ingest-from/amazon-web-services/set-up-aws-monitoring-with-managed#role-based-access "Connect your Amazon account with Dynatrace Managed and start monitoring.") deployment), you need an [Environment ActiveGate](/managed/ingest-from/dynatrace-activegate/installation "Learn how to configure ActiveGate") installed on an Amazon EC2 host.
 * Dynatrace version 1.182+
 * An updated [AWS monitoring policy](/managed/ingest-from/amazon-web-services/integrate-with-aws/cloudwatch-metrics#aws-policy-and-authentication "Integrate metrics from Amazon CloudWatch.") to include the additional AWS services.  
-  To [update the AWS IAM policyï»¿](https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_manage-edit.html#edit-managed-policy-console), use the JSON below, containing the monitoring policy (permissions) for all supporting services.
+  To [update the AWS IAM policy﻿](https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_manage-edit.html#edit-managed-policy-console), use the JSON below, containing the monitoring policy (permissions) for all supporting services.
 
 JSON predefined policy for all supporting services
 
@@ -829,8 +828,8 @@ To check the availability of preset dashboards for each AWS service, see the lis
 
 | Name | Description | Unit | Statistics | Dimensions | Recommended |
 | --- | --- | --- | --- | --- | --- |
-| 4xxErrorRate | The percentage of all viewer requests for which the responseâs HTTP status code is `4xx` | Percent | Average | DistributionId, Region |  |
-| 5xxErrorRate | The percentage of all viewer requests for which the responseâs HTTP status code is `5xx` | Percent | Average | DistributionId, Region |  |
+| 4xxErrorRate | The percentage of all viewer requests for which the response’s HTTP status code is `4xx` | Percent | Average | DistributionId, Region |  |
+| 5xxErrorRate | The percentage of all viewer requests for which the response’s HTTP status code is `5xx` | Percent | Average | DistributionId, Region |  |
 | BytesDownloaded | The total number of bytes downloaded by viewers for `GET`, `HEAD`, and `OPTIONS` requests | None | Sum | DistributionId, Region |  |
 | BytesUploaded | The total number of bytes that viewers uploaded to your origin with CloudFront using `POST` and `PUT` requests | None | Sum | DistributionId, Region |  |
 | Requests | The total number of viewer requests received by CloudFront for all HTTP methods and for both HTTP and HTTPS requests | None | Sum | DistributionId, Region | Applicable |

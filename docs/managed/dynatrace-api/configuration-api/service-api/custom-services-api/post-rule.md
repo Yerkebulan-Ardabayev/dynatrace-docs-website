@@ -1,7 +1,6 @@
 ---
 title: Custom services API - POST a custom service rule
 source: https://docs.dynatrace.com/managed/dynatrace-api/configuration-api/service-api/custom-services-api/post-rule
-scraped: 2026-05-12T11:18:04.212366
 ---
 
 # Custom services API - POST a custom service rule
@@ -48,7 +47,7 @@ To learn how to obtain and use it, see [Tokens and authentication](/managed/disc
 | processGroups | string[] | The list of process groups the custom service should belong to. | Optional |
 | queueEntryPoint | boolean | The queue entry point flag.  Set to `true` for custom messaging services. | Required |
 | queueEntryPointType | string | The queue entry point type.. The element can hold these values * `AWS_SQS` * `AZURE_SERVICE_BUS` * `IBM_MQ` * `JMS` * `KAFKA` * `MSMQ` * `RABBIT_MQ` | Optional |
-| rules | [DetectionRule[]](#openapi-definition-DetectionRule) | The list of rules defining the custom service. | Required |
+| rules | [DetectionRule](#openapi-definition-DetectionRule)[] | The list of rules defining the custom service. | Required |
 
 #### The `ConfigurationMetadata` object
 
@@ -71,7 +70,7 @@ Metadata useful for debugging
 | fileNameMatcher | string | Matcher applying to the file name. Default value is `ENDS_WITH` (if applicable). The element can hold these values * `ENDS_WITH` * `EQUALS` * `STARTS_WITH` | Optional |
 | id | string | The ID of the detection rule. | Optional |
 | matcher | string | Matcher applying to the class name. `STARTS_WITH` can only be used if there is at least one annotation defined. Default value is `EQUALS`. The element can hold these values * `ENDS_WITH` * `EQUALS` * `STARTS_WITH` | Optional |
-| methodRules | [MethodRule[]](#openapi-definition-MethodRule) | List of methods to instrument. | Required |
+| methodRules | [MethodRule](#openapi-definition-MethodRule)[] | List of methods to instrument. | Required |
 
 #### The `MethodRule` object
 
@@ -200,7 +199,7 @@ The short representation of a Dynatrace entity.
 | Element | Type | Description |
 | --- | --- | --- |
 | code | integer | The HTTP status code |
-| constraintViolations | [ConstraintViolation[]](#openapi-definition-ConstraintViolation) | A list of constraint violations |
+| constraintViolations | [ConstraintViolation](#openapi-definition-ConstraintViolation)[] | A list of constraint violations |
 | message | string | The error message |
 
 #### The `ConstraintViolation` object
@@ -331,7 +330,7 @@ To learn how to obtain and use it, see [Tokens and authentication](/managed/disc
 | Element | Type | Description |
 | --- | --- | --- |
 | code | integer | The HTTP status code |
-| constraintViolations | [ConstraintViolation[]](#openapi-definition-ConstraintViolation) | A list of constraint violations |
+| constraintViolations | [ConstraintViolation](#openapi-definition-ConstraintViolation)[] | A list of constraint violations |
 | message | string | The error message |
 
 #### The `ConstraintViolation` object

@@ -1,7 +1,6 @@
 ---
 title: Root cause analysis concepts
 source: https://docs.dynatrace.com/managed/dynatrace-intelligence/root-cause-analysis/concepts
-scraped: 2026-05-12T11:14:30.313086
 ---
 
 # Root cause analysis concepts
@@ -10,7 +9,7 @@ scraped: 2026-05-12T11:14:30.313086
 
 * Explanation
 * 11-min read
-* Updated on Jan 28, 2026
+* Updated on Jun 09, 2026
 
 As dynamic systems architectures increase in complexity and scale, IT teams face mounting pressure to quickly detect and react to business-critical incidents across their multi-cloud environments. Incidents might affect one or more IT components, ultimately leading to large-scale outages that take down critical business services and applications. Such services and applications (for example, accounting systems or web shops) consist of many different components that depend on each other to work reliably and to deliver excellent user experience. If a critical component fails, the ripple effect negatively influences many other dependent components, triggering a large-scale incident.
 
@@ -31,7 +30,7 @@ This page introduces the following core concepts:
 
 ## Incidents and problems
 
-An **incident** is an abnormality in your environmentâin an application, infrastructure, and so on. A **problem** is an entity that represents the incident in Dynatrace. A problem is the result of automatic Davis AI root cause and impact analysis of an incident. Problems (just like underlying incidents) can span across multiple dependent components, sharing the same impact and root cause.
+An **incident** is an abnormality in your environment—in an application, infrastructure, and so on. A **problem** is an entity that represents the incident in Dynatrace. A problem is the result of automatic Davis AI root cause and impact analysis of an incident. Problems (just like underlying incidents) can span across multiple dependent components, sharing the same impact and root cause.
 
 A problem might result from single or multiple Davis events occurring simultaneously within the same topology, which is often the case in complex environments. To prevent over-alerting, Dynatrace correlates all Davis events with the same root cause into a single problem.
 
@@ -47,13 +46,13 @@ Most Davis events don't indicate abnormal or unhealthy states, therefore only a 
 
 ## Root cause analysis
 
-Root cause analysis uses all the available context informationâsuch as topology, transaction, and code-level informationâto identify Davis events that share the same root cause and impact.
+Root cause analysis uses all the available context information—such as topology, transaction, and code-level information—to identify Davis events that share the same root cause and impact.
 
 To identify the root cause of problems, time correlation alone is not sufficient. Dynatrace follows a context-aware approach, detecting interdependent Davis events across time, processes, hosts, services, applications, and both vertical and horizontal topological monitoring perspectives. This approach combines multiple standalone anomalies into a single consistent problem, dramatically reducing the alert load.
 
 The image below illustrates how Davis AI analyzes all horizontal and vertical dependencies of a problem. In this example, the application shows abnormal behavior, while the underlying vertical stack operates normally. The analysis follows the transactions of the application, detecting dependency on a service (`Service 1`) that also shows abnormal behavior. In turn, all of the service's dependencies behave abnormally as well and are part of the same problem.
 
-![Correlation diagram](https://dt-cdn.net/images/correlation-diagram-1256-6a1abf3bdb.png)
+![Correlation diagram](https://cdn.bfldr.com/B686QPH3/as/vsm7hb9gxb3mttnm6h4wgtx/Root_cause_analysis_concepts-Correlation_diagram-Light_Mode?auto=webp&format=png&position=1)
 
 Correlation diagram
 
@@ -75,7 +74,7 @@ Davis AI context model is built on known dependency information from Smartscape,
 
 ## Impact analysis
 
-The impact of a problem is equally as important as its root cause, since both represent essential information for triaging and remediating the underlying incidentâthe problems that threaten your company's business most have higher priority to resolve.
+The impact of a problem is equally as important as its root cause, since both represent essential information for triaging and remediating the underlying incident—the problems that threaten your company's business most have higher priority to resolve.
 
 Impact analysis identifies which applications' entry-point services are affected by an incident and the size of the overall "blast radius" in terms of the total number of affected entities. Impact analysis also delivers the number of affected SLOs as well as the number of potentially affected real users.
 
@@ -89,9 +88,9 @@ A problem automatically follows a lifecycle and remains in the active state whil
 
 In the following scenario, a problem that has a performance incident in the infrastructure layer is the root cause.
 
-![Problem lifespan](https://dt-cdn.net/images/problemlifespan-2275-dfec42340b.png)
+![Problem lifecycle](https://cdn.bfldr.com/B686QPH3/as/97w9r8xk4mv754kcqhjkkrvj/Root_cause_analysis_concepts-Problem_lifecycle-Light_Mode?auto=webp&format=png&position=1)
 
-Problem lifespan
+Problem lifecycle
 
 1. Dynatrace detects an infrastructure-level performance incident and creates a new problem for tracking purposes. A notification is sent out as well.
 2. After a few minutes, the infrastructure problem leads to the appearance of a performance degradation problem in one of the application's services.
@@ -108,7 +107,7 @@ The following shows how two individual Davis events are analyzed within one prob
 * Each Davis event comes with its own start and end timestamps.
 * Each Davis event producer uses various observation sliding time windows, which we call event analysis time (shown in yellow).
 
-![Problem timing](https://dt-cdn.net/images/problem-lifecycle-drawio-2d5919c652.svg)
+![Problem timing](https://cdn.bfldr.com/B686QPH3/as/ws7g4rtr6m66rv9x24qq3jr8/Root_cause_analysis_concepts-Problem_timing-Light_Mode?auto=webp&format=png&position=1)
 
 Problem timing
 
@@ -126,7 +125,7 @@ Consider an example of a metric Davis event configured to use a five-minute slid
 * A problem lifespan is defined by the lifespans of individual Davis events in the problem.
 * A problem is closed when all Davis events in the problem are closed.
 * A closed problem can be reopened during a reopening period of 30 minutes.
-* If a problem lasts for longer than 90 minutes, no new Davis events will be merged after the 90-minute pointâa new problem will be raised instead.
+* If a problem lasts for longer than 90 minutes, no new Davis events will be merged after the 90-minute point—a new problem will be raised instead.
 * If the time gap between creation (start timestamp) of the first Davis events is longer than 5 minutes, the Davis events won't be merged into the same problem. Instead, they will be identified as two different problems.
 
 ## Duplicate problems

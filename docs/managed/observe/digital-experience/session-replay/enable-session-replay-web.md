@@ -1,12 +1,11 @@
 ---
-title: Enable Session Replay for web applications
+title: Enable Session Replay Classic for web applications
 source: https://docs.dynatrace.com/managed/observe/digital-experience/session-replay/enable-session-replay-web
-scraped: 2026-05-12T11:33:36.332544
 ---
 
-# Enable Session Replay for web applications
+# Enable Session Replay Classic for web applications
 
-# Enable Session Replay for web applications
+# Enable Session Replay Classic for web applications
 
 * How-to guide
 * 2-min read
@@ -34,7 +33,7 @@ You must store the Session Replay data in a different volume, known as the secon
 Most sessions are estimated to be around 500 kB, the default data retention period is 35 days, and it is always good to have some buffer. Using these estimates, Dynatrace recommends that you calculate the secondary storage size by applying the following formula:
 
 **Storage size =  
-Sessions per day Ã Average session size (500 kB) Ã Percentage of sessions to record Ã Retention period (35) Ã Buffer (1.5)**
+Sessions per day × Average session size (500 kB) × Percentage of sessions to record × Retention period (35) × Buffer (1.5)**
 
 To configure the secondary disk
 
@@ -45,22 +44,22 @@ To configure the secondary disk
 
 Dynatrace Managed is reconfigured and restarted. Upon restart, the new Session Replay storage location is used.
 
-## Turn on Session Replay
+## Turn on Session Replay Classic
 
 To enable Session Replay
 
 1. Go to **Web**.
 2. Select the application that you want to configure.
-3. In the upper-right corner of the application overview page, select **More** (**â¦**) > **Edit**.
+3. In the upper-right corner of the application overview page, select **More** (**…**) > **Edit**.
 4. From the application settings, select **General settings** > **Enablement and cost control**.
 5. Turn on **Enable Session Replay**.
 
-After you've enabled Session Replay, it's time to [configure it](/managed/observe/digital-experience/session-replay/configure-session-replay-web "Configure monitoring consumption and data privacy settings for Session Replay.").
+After you've enabled Session Replay, it's time to [configure it](/managed/observe/digital-experience/session-replay/configure-session-replay-web "Configure monitoring consumption and data privacy settings for Session Replay Classic.").
 
-No additional configuration is required to set up [agentless monitoring](/managed/observe/digital-experience/web-applications/initial-setup/set-up-agentless-real-user-monitoring "Set up agentless monitoring for your web applications.").
+No additional configuration is required to set up [agentless monitoring](/managed/observe/digital-experience/rum-classic/web-applications/initial-setup/set-up-agentless-real-user-monitoring "Set up agentless monitoring for your web applications.").
 
 ## Related topics
 
 * [Session Replay](/managed/observe/digital-experience/session-replay "Learn how you can use Session Replay to better understand and troubleshoot errors experienced by your customers.")
-* [Configure Session Replay for web applications](/managed/observe/digital-experience/session-replay/configure-session-replay-web "Configure monitoring consumption and data privacy settings for Session Replay.")
-* [Technical restrictions for Session Replay for web applications](/managed/observe/digital-experience/session-replay/session-replay-restrictions-web "Learn which restrictions apply to Session Replay.")
+* [Configure Session Replay Classic for web applications](/managed/observe/digital-experience/session-replay/configure-session-replay-web "Configure monitoring consumption and data privacy settings for Session Replay Classic.")
+* [Technical restrictions for Session Replay Classic for web applications](/managed/observe/digital-experience/session-replay/session-replay-restrictions-web "Learn which restrictions apply to Session Replay Classic.")

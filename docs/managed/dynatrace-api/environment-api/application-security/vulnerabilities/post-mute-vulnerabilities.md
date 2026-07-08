@@ -1,7 +1,6 @@
 ---
 title: Vulnerabilities API - POST mute vulnerabilities
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/application-security/vulnerabilities/post-mute-vulnerabilities
-scraped: 2026-05-12T11:58:54.210061
 ---
 
 # Vulnerabilities API - POST mute vulnerabilities
@@ -94,7 +93,7 @@ Response of muting several security problems.
 
 | Element | Type | Description |
 | --- | --- | --- |
-| summary | [SecurityProblemBulkMutingSummary[]](#openapi-definition-SecurityProblemBulkMutingSummary) | The summary of which security problems were muted and which already were muted previously. |
+| summary | [SecurityProblemBulkMutingSummary](#openapi-definition-SecurityProblemBulkMutingSummary)[] | The summary of which security problems were muted and which already were muted previously. |
 
 #### The `SecurityProblemBulkMutingSummary` object
 
@@ -117,7 +116,7 @@ Summary of (un-)muting a security problem.
 | Element | Type | Description |
 | --- | --- | --- |
 | code | integer | The HTTP status code |
-| constraintViolations | [ConstraintViolation[]](#openapi-definition-ConstraintViolation) | A list of constraint violations |
+| constraintViolations | [ConstraintViolation](#openapi-definition-ConstraintViolation)[] | A list of constraint violations |
 | message | string | The error message |
 
 #### The `ConstraintViolation` object

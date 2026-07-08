@@ -1,7 +1,6 @@
 ---
 title: Set up Kubernetes platform monitoring with DaemonSet
 source: https://docs.dynatrace.com/managed/ingest-from/setup-on-k8s/deployment/other/oneagent-daemonset
-scraped: 2026-05-12T11:52:06.234122
 ---
 
 # Set up Kubernetes platform monitoring with DaemonSet

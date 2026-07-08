@@ -1,7 +1,6 @@
 ---
 title: Extensions API - GET an extension
 source: https://docs.dynatrace.com/managed/dynatrace-api/configuration-api/extensions-api/get-an-extension
-scraped: 2026-05-12T11:19:51.968621
 ---
 
 # Extensions API - GET an extension
@@ -52,7 +51,7 @@ General configuration of an extension.
 | metadata | [ConfigurationMetadata](#openapi-definition-ConfigurationMetadata) | Metadata useful for debugging |
 | metricGroup | string | The metricGroup of the extension used for grouping custom metrics into a hierarchical namespace. |
 | name | string | The name of the extension, displayed in Dynatrace. |
-| properties | [ExtensionProperty[]](#openapi-definition-ExtensionProperty) | A list of extension properties. |
+| properties | [ExtensionProperty](#openapi-definition-ExtensionProperty)[] | A list of extension properties. |
 | type | string | The type of the extension. It indicates the runtime environment of the extension (for example, ACTIVEGATE). The element can hold these values * `ACTIVEGATE` * `CODEMODULE` * `JMX` * `ONEAGENT` * `PMI` * `UNKNOWN` |
 | version | string | The version of the extension, displayed in Dynatrace. |
 

@@ -1,7 +1,6 @@
 ---
 title: Set up monitoring notifications with Azure Monitor alerts
 source: https://docs.dynatrace.com/managed/ingest-from/microsoft-azure-services/azure-integrations/azure-monitoring-guide/set-up-monitoring-with-azure-alerts
-scraped: 2026-05-12T11:38:14.632026
 ---
 
 # Set up monitoring notifications with Azure Monitor alerts
@@ -41,7 +40,7 @@ You can assign multiple permissions to a single token, or you can generate sever
 
 ## Step 2 Configure one or more designated ActiveGates
 
-The ActiveGate designated to consume Azure Monitor alerts doesnât have to be the same ActiveGate that runs the Azure Monitor integration. It can be any other [Azure monitoring-enabled ActiveGate](/managed/ingest-from/dynatrace-activegate/configuration/configure-activegate#azure_mod "Learn which ActiveGate properties you can configure based on your needs and requirements.").
+The ActiveGate designated to consume Azure Monitor alerts doesn’t have to be the same ActiveGate that runs the Azure Monitor integration. It can be any other [Azure monitoring-enabled ActiveGate](/managed/ingest-from/dynatrace-activegate/configuration/configure-activegate#azure_mod "Learn which ActiveGate properties you can configure based on your needs and requirements.").
 
 To configure a designated ActiveGate to consume Azure Monitor alerts:
 
@@ -57,18 +56,18 @@ To configure a designated ActiveGate to consume Azure Monitor alerts:
    ```
 3. Give access to ActiveGate for Azure Monitor alerts source IP addresses.
 
-For more details, see [source IP address rangesï»¿](https://docs.microsoft.com/en-us/azure/azure-monitor/platform/action-groups#webhook) in Azure documentation.
+For more details, see [source IP address ranges﻿](https://docs.microsoft.com/en-us/azure/azure-monitor/platform/action-groups#webhook) in Azure documentation.
 
 ## Step 3 Configure Azure Monitor alerts via webhook
 
-Currently, the events/alerts ingested via Azure Monitor alerts webhook donât consume DDUsâalthough, it might change in the future.
+Currently, the events/alerts ingested via Azure Monitor alerts webhook don’t consume DDUs—although, it might change in the future.
 
 Azure Monitor alerts consumed via webhooks are configured in your Azure Alert Rules.
 The alerts are mapped to the closest known matching entity. This means that they either map to their related Azure resource entity or, as a fallback, to the Azure subscription of the resource.
 
 To configure Azure Monitor alerts via webhook, you need to create an alert rule and an action group that will trigger a webhook.
 
-1. In Azure Portal, go to **Home** > **Monitor** > **Alerts** > **Create** > **Alert rule**.
+1. In the Azure portal, go to **Home** > **Monitor** > **Alerts** > **Create** > **Alert rule**.
 2. Select **Scope** > **Select scope**.
 3. Filter for and select the resource you want to monitor, and then select **Done**.
 4. Select **Condition** > **Add condition**.
@@ -87,7 +86,7 @@ The common alert schema is not supported.
 
 After the action group is created, you can view and edit it in **Alerts** > **Action groups**.
 
-For more information, see [Webhook rules in Azure documentationï»¿](https://docs.microsoft.com/en-us/azure/azure-monitor/platform/action-groups#webhook).
+For more information, see [Webhook rules in Azure documentation﻿](https://docs.microsoft.com/en-us/azure/azure-monitor/platform/action-groups#webhook).
 
 ## Alert types
 
@@ -118,7 +117,7 @@ The event type is defined based on severity **Level**:
 * **Error**: `AVAILABILITY_EVENT`
 * **Default**: `CUSTOM_ANNOTATION`
 
-See [Configure resource health alerts using Azure portalï»¿](https://docs.microsoft.com/en-us/azure/service-health/resource-health-alert-monitor-guide) in Azure documentation for more information.
+See [Configure resource health alerts using Azure portal﻿](https://docs.microsoft.com/en-us/azure/service-health/resource-health-alert-monitor-guide) in Azure documentation for more information.
 
 #### Activity log service health
 
@@ -135,7 +134,7 @@ Root cause analysis
 
 Events with `Properties.stage=RCA` are skipped. We don't support stage RCA for service health.
 
-See [Create activity log alerts on service notifications using the Azure portalï»¿](https://docs.microsoft.com/en-us/azure/service-health/alerts-activity-log-service-notifications-portal) in Azure documentation for more information.
+See [Create activity log alerts on service notifications using the Azure portal﻿](https://docs.microsoft.com/en-us/azure/service-health/alerts-activity-log-service-notifications-portal) in Azure documentation for more information.
 
 #### Activity log administrative
 

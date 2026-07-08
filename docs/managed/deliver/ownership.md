@@ -1,7 +1,6 @@
 ---
 title: Ownership
 source: https://docs.dynatrace.com/managed/deliver/ownership
-scraped: 2026-05-12T11:03:55.722938
 ---
 
 # Ownership

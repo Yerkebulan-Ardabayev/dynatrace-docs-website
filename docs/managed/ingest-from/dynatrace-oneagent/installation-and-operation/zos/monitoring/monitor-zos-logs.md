@@ -1,7 +1,6 @@
 ---
 title: Monitor z/OS logs
 source: https://docs.dynatrace.com/managed/ingest-from/dynatrace-oneagent/installation-and-operation/zos/monitoring/monitor-zos-logs
-scraped: 2026-05-12T12:13:52.216822
 ---
 
 # Monitor z/OS logs
@@ -27,7 +26,7 @@ The following log sources are supported:
 Log Management and Analytics requires a license:
 
 * For Dynatrace Platform Subscription, a [Log Management and Analytics](/managed/upgrade/unavailable-in-managed "Your selection is unavailable in Dynatrace Managed.") capability.
-* For Dynatrace classic licensing, [Davis data units](/managed/license/monitoring-consumption-classic/davis-data-units "Understand how Dynatrace monitoring consumption is calculated based on Davis data units (DDU).").
+* For Dynatrace classic licensing, [Davis data units](/managed/license/classic-licensing/davis-data-units "Understand how Dynatrace monitoring consumption is calculated based on Davis data units (DDU).").
 
 ## Get started
 

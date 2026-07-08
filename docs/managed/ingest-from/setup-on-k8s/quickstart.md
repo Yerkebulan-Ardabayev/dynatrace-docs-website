@@ -1,7 +1,6 @@
 ---
 title: Quickstart
 source: https://docs.dynatrace.com/managed/ingest-from/setup-on-k8s/quickstart
-scraped: 2026-05-12T11:11:16.232515
 ---
 
 # Quickstart
@@ -25,8 +24,8 @@ Before installing Dynatrace on your Kubernetes cluster, ensure that you meet the
 * You must allow egress for Dynatrace pods (default: Dynatrace namespace) to your Dynatrace environment URL.
 
   + For Dynatrace Managed, you can optionally use a Cluster ActiveGate URL.
-* For OpenShift Dedicated, you need the [cluster-admin roleï»¿](https://docs.openshift.com/dedicated/osd_cluster_admin/osd-admin-roles.html).
-* Helm installation Use [Helm version 3ï»¿](https://dt-url.net/n5036j1).
+* For OpenShift Dedicated, you need the [cluster-admin role﻿](https://docs.openshift.com/dedicated/osd_cluster_admin/osd-admin-roles.html).
+* Helm installation Use [Helm version 3﻿](https://dt-url.net/n5036j1).
 
 ### Supported versions
 
@@ -60,4 +59,4 @@ Start to analyze your Kubernetes clusters and containerized Apps with Dynatrace 
 
 ## Related topics
 
-* [Kubernetes cluster and workload monitoringï»¿](https://www.dynatrace.com/technologies/kubernetes-monitoring/)
+* [Kubernetes cluster and workload monitoring﻿](https://www.dynatrace.com/technologies/kubernetes-monitoring/)

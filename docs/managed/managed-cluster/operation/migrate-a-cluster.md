@@ -1,7 +1,6 @@
 ---
 title: Migrate a cluster
 source: https://docs.dynatrace.com/managed/managed-cluster/operation/migrate-a-cluster
-scraped: 2026-05-12T11:53:18.517524
 ---
 
 # Migrate a cluster
@@ -88,7 +87,7 @@ To migrate Dynatrace Managed nodes using the replication method:
 2. Add new Dynatrace Managed nodes to the current cluster one at a time.
 
    Make sure that all the existing cluster nodes are healthy and reachable before adding another node. If multiple nodes are being migrated, make sure that the new node is fully started before proceeding to the next one.
-3. [Disable OneAgent traffic](/managed/managed-cluster/configuration/cluster-node-capabilities "Find out how to enable/disable a cluster node via the Web UI or API call") on the source nodes but keep them running until data replication is finished and until non-replicated transaction storage data has expired.
+3. [Disable OneAgent traffic](/managed/managed-cluster/configuration/configure-cluster-capabilities "Configure OneAgent data processing and web UI traffic on individual Managed Cluster nodes using the Cluster Management Console or REST API.") on the source nodes but keep them running until data replication is finished and until non-replicated transaction storage data has expired.
 
    To check the progress of data replication, on the new node only, execute `cassandra-nodetool.sh` with the `status` parameter:
 
@@ -111,7 +110,7 @@ To migrate Dynatrace Managed nodes using the replication method:
 
 
 
-   â Address Load Tokens Owns (effective) Host ID Rack
+   – Address Load Tokens Owns (effective) Host ID Rack
 
 
 

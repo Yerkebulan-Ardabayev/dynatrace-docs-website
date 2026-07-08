@@ -1,7 +1,6 @@
 ---
 title: Log data analysis (Logs Classic)
 source: https://docs.dynatrace.com/managed/analyze-explore-automate/log-monitoring/analyze-log-data
-scraped: 2026-05-12T11:13:30.610368
 ---
 
 # Log data analysis (Logs Classic)
@@ -46,6 +45,6 @@ In Dynatrace Log Monitoring, you can define your own custom log data attributes 
 
 ## Enriched log data analysis
 
-With enriched log data, you can check for the specific user inside your application. Use the log viewer and PurePathÂ® distributed traces link from a specific log record. You can view all logs for a particular user session to see how the user interacted with the application and, with the **Logs** tab in distributed traces, you can navigate through the trace and, based on logs associated with that trace, quickly see what happened.
+With enriched log data, you can check for the specific user inside your application. Use the log viewer and PurePath® distributed traces link from a specific log record. You can view all logs for a particular user session to see how the user interacted with the application and, with the **Logs** tab in distributed traces, you can navigate through the trace and, based on logs associated with that trace, quickly see what happened.
 
 * See [Leverage log enrichment for traces to resolve problems](/managed/observe/application-observability/distributed-traces/use-cases/problems-logs-traces "Use the log enrichment to view related log entries in the distributed traces view and enhance your analysis capabilities.")

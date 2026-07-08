@@ -1,7 +1,6 @@
 ---
 title: Settings API - IP determination schema table
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/settings/schemas/builtin-rum-ip-determination
-scraped: 2026-05-12T11:43:44.156923
 ---
 
 # Settings API - IP determination schema table

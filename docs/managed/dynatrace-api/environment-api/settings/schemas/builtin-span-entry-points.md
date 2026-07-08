@@ -1,7 +1,6 @@
 ---
 title: Settings API - Span entry points schema table
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/settings/schemas/builtin-span-entry-points
-scraped: 2026-05-12T11:41:26.783036
 ---
 
 # Settings API - Span entry points schema table

@@ -1,7 +1,6 @@
 ---
 title: SNMP traps data source
 source: https://docs.dynatrace.com/managed/ingest-from/extensions/develop-your-extensions/data-sources/snmp-extensions/snmptraps-extensions
-scraped: 2026-05-12T11:15:04.029744
 ---
 
 # SNMP traps data source
@@ -70,19 +69,19 @@ For SNMP v3, the SNMP traps data source supports the `NoAuthNoPriv`, `authNoPriv
 
 | Protocol |  | RFC |
 | --- | --- | --- |
-| MD5 | HMAC-96-MD5 | [rfc3414ï»¿](https://tools.ietf.org/html/rfc3414) |
-| SHA | HMAC-96-SHA | [rfc3414ï»¿](https://tools.ietf.org/html/rfc3414) |
-| SHA224 | HMAC-128-SHA-224 | [rfc7860ï»¿](https://tools.ietf.org/html/rfc7860) |
-| SHA256 | HMAC-192-SHA-256 | [rfc7860ï»¿](https://tools.ietf.org/html/rfc7860) |
-| SHA384 | HMAC-256-SHA-384 | [rfc7860ï»¿](https://tools.ietf.org/html/rfc7860) |
-| SHA512 | HMAC-384-SHA-512 | [rfc7860ï»¿](https://tools.ietf.org/html/rfc7860) |
+| MD5 | HMAC-96-MD5 | [rfc3414﻿](https://tools.ietf.org/html/rfc3414) |
+| SHA | HMAC-96-SHA | [rfc3414﻿](https://tools.ietf.org/html/rfc3414) |
+| SHA224 | HMAC-128-SHA-224 | [rfc7860﻿](https://tools.ietf.org/html/rfc7860) |
+| SHA256 | HMAC-192-SHA-256 | [rfc7860﻿](https://tools.ietf.org/html/rfc7860) |
+| SHA384 | HMAC-256-SHA-384 | [rfc7860﻿](https://tools.ietf.org/html/rfc7860) |
+| SHA512 | HMAC-384-SHA-512 | [rfc7860﻿](https://tools.ietf.org/html/rfc7860) |
 
 #### `authPriv`
 
 | Protocol |  | RFC | Notes |
 | --- | --- | --- | --- |
-| DES | CBC-DES | [rfc3414ï»¿](https://tools.ietf.org/html/rfc3414) |  |
-| AES | CFB128-AES-128 | [rfc3826ï»¿](https://tools.ietf.org/html/rfc3826) |  |
+| DES | CBC-DES | [rfc3414﻿](https://tools.ietf.org/html/rfc3414) |  |
+| AES | CFB128-AES-128 | [rfc3826﻿](https://tools.ietf.org/html/rfc3826) |  |
 | AES192[1](#fn-1-1-def) |  | n/a | Blumenthal key extension |
 | AES256[1](#fn-1-1-def) |  | n/a | Blumenthal key extension |
 | AES192C[1](#fn-1-1-def) |  | n/a | Reeder key extension |
@@ -90,7 +89,7 @@ For SNMP v3, the SNMP traps data source supports the `NoAuthNoPriv`, `authNoPriv
 
 1
 
-These encryption algorithms are not officially specified, but they are often supported by network devices. See [SNMPv3 with AES-256ï»¿](https://www.snmp.com/snmpv3/snmpv3_aes256.shtml).
+These encryption algorithms are not officially specified, but they are often supported by network devices. See [SNMPv3 with AES-256﻿](https://www.snmp.com/snmpv3/snmpv3_aes256.shtml).
 
 See the [Authentication](#authentication) section to learn how to define authentication in your monitoring configuration.
 
@@ -116,16 +115,16 @@ Attributes passed to the log event.
 
 #### Main
 
-* `event.type`âalways set to `LOG`
-* `log.source`âalways set to `snmptraps`
-* `loglevel`âalways set to `NONE`
-* `snmp.version`âalways set to `1`, `2c`, or `3`
+* `event.type`—always set to `LOG`
+* `log.source`—always set to `snmptraps`
+* `loglevel`—always set to `NONE`
+* `snmp.version`—always set to `1`, `2c`, or `3`
 
 ### Dynatrace
 
 Dynatrace topological properties.
 
-* `dt.source_entity`âthe ID of the device (entity) for which the log event is accounted.
+* `dt.source_entity`—the ID of the device (entity) for which the log event is accounted.
 
 ### Other
 
@@ -647,8 +646,8 @@ In some SNMP traps, variable binding OIDs have dynamic parts at the end that cha
 }
 ```
 
-* `root`âis used to match the suffix and trim it accordingly. You can specify `root` in raw (`1.3.6.1.4.1.9.9.41.1.2.3.1`) or resolved (`CISCO-SMI::ciscoMgmt.41.1.2.3.1`) format.
-* `suffixLen`âspecifies the number of octets at the end of the OID that should be trimmed.
+* `root`—is used to match the suffix and trim it accordingly. You can specify `root` in raw (`1.3.6.1.4.1.9.9.41.1.2.3.1`) or resolved (`CISCO-SMI::ciscoMgmt.41.1.2.3.1`) format.
+* `suffixLen`—specifies the number of octets at the end of the OID that should be trimmed.
 
 #### Example
 

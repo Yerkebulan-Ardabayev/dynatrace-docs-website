@@ -1,7 +1,6 @@
 ---
 title: Connect your Cloud Foundry foundations with Dynatrace
 source: https://docs.dynatrace.com/managed/ingest-from/setup-on-container-platforms/cloud-foundry/connect-your-cloud-foundry-foundations-to-dynatrace
-scraped: 2026-05-12T11:09:19.517209
 ---
 
 # Connect your Cloud Foundry foundations with Dynatrace
@@ -182,7 +181,7 @@ Alternatively, you can add the truststore file containing the Kubernetes CA cert
 
 Disabling certificate validation isn't recommended because it imposes security risks. However, if you still want to disable certificate validation for test environments, you need to do the following:
 
-1. Go to [Kubernetes overview page](/managed/observe/infrastructure-observability/container-platform-monitoring/kubernetes-monitoring/monitor-cluster-utilization-kubernetes#kubernetes-page "Monitor the health and utilization of your Kubernetes/OpenShift cluster resources."), look for your cluster and select **â¦** > **Settings** in the cluster row to edit its settings.
+1. Go to [Kubernetes overview page](/managed/observe/infrastructure-observability/container-platform-monitoring/kubernetes-monitoring/monitor-cluster-utilization-kubernetes#kubernetes-page "Monitor the health and utilization of your Kubernetes/OpenShift cluster resources."), look for your cluster and select **…** > **Settings** in the cluster row to edit its settings.
 2. Disable **Require valid certificates for communication with API server**.
 3. Disable **Verify hostname in certificate against Kubernetes API URL**.
 4. Select **Save** to save your changes.
@@ -190,7 +189,7 @@ Disabling certificate validation isn't recommended because it imposes security r
 
 ## Step 5 Connect your foundation to Dynatrace
 
-We recommend using a [Cloud Foundry admin read-only accountï»¿](https://docs.cloudfoundry.org/uaa/uaa-user-management.html#admin-read-only) that can view almost all Cloud Controller API resources, but can't modify them.
+We recommend using a [Cloud Foundry admin read-only account﻿](https://docs.cloudfoundry.org/uaa/uaa-user-management.html#admin-read-only) that can view almost all Cloud Controller API resources, but can't modify them.
 
 ```
 uaac user add ReadOnlyUser -p SecretPassword --emails something@example.com

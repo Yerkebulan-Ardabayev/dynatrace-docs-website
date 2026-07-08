@@ -1,7 +1,6 @@
 ---
 title: Update OneAgent on Cloud Foundry
 source: https://docs.dynatrace.com/managed/ingest-from/setup-on-container-platforms/cloud-foundry/update-oneagent-on-cloud-foundry
-scraped: 2026-05-12T11:09:22.027268
 ---
 
 # Update OneAgent on Cloud Foundry

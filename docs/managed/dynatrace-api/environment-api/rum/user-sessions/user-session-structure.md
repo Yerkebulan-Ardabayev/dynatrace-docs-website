@@ -1,7 +1,6 @@
 ---
 title: User sessions API - User session structure
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/rum/user-sessions/user-session-structure
-scraped: 2026-05-12T12:00:09.015548
 ---
 
 # User sessions API - User session structure
@@ -15,7 +14,7 @@ This page provides descriptions of all possible fields that a user session might
 
 #### The `UserSession` object
 
-A [user sessionï»¿](https://dt-url.net/xv183rb8), encompassing multiple user actions and additional information about a user's visit.
+A [user session﻿](https://dt-url.net/xv183rb8), encompassing multiple user actions and additional information about a user's visit.
 
 | Element | Type | Description |
 | --- | --- | --- |
@@ -35,22 +34,22 @@ A [user sessionï»¿](https://dt-url.net/xv183rb8), encompassing multiple user 
 | continent | string | The continent from which the user session originates (based on the IP address). |
 | country | string | The country from which the user session originates (based on the IP address). |
 | crashGroupId | string | If a mobile session crashed, this is the ID of the group to which the crashed session belongs.  If the session did not crash or the session is not a mobile session, it has the `null` value. |
-| dateProperties | [DateProperty[]](#openapi-definition-DateProperty) | A list of custom properties of the user session with date values. |
+| dateProperties | [DateProperty](#openapi-definition-DateProperty)[] | A list of custom properties of the user session with date values. |
 | device | string | The detected device used for the user session. |
 | displayResolution | string | The detected screen resolution of the device used for the user session. The element can hold these values * `CGA` * `DCI2K` * `DCI4K` * `DVGA` * `FHD` * `FWVGA` * `FWXGA` * `GHDPlus` * `HD` * `HQVGA` * `HQVGA2` * `HSXGA` * `HUXGA` * `HVGA` * `HXGA` * `NTSC` * `PAL` * `QHD` * `QQVGA` * `QSXGA` * `QUXGA` * `QVGA` * `QWXGA` * `QXGA` * `SVGA` * `SXGA` * `SXGAMinus` * `SXGAPlus` * `UGA` * `UHD16K` * `UHD4K` * `UHD8K` * `UHDPlus` * `UNKNOWN` * `UWQHD` * `UXGA` * `VGA` * `WHSXGA` * `WHUXGA` * `WHXGA` * `WQSXGA` * `WQUXGA` * `WQVGA` * `WQVGA2` * `WQVGA3` * `WQXGA` * `WQXGA2` * `WSVGA` * `WSVGA2` * `WSXGA` * `WSXGAPlus` * `WUXGA` * `WVGA` * `WVGA2` * `WXGA` * `WXGA2` * `WXGA3` * `WXGAPlus` * `XGA` * `XGAPLUS` * `_1280x854` * `nHD` * `qHD` |
-| doubleProperties | [DoubleProperty[]](#openapi-definition-DoubleProperty) | A list of custom properties of the user session with floating-point numerical values. |
+| doubleProperties | [DoubleProperty](#openapi-definition-DoubleProperty)[] | A list of custom properties of the user session with floating-point numerical values. |
 | duration | integer | The duration of the user session, in milliseconds.  This is calculated as the amount of time between the start of the first user action and the end of the last user action. |
 | endReason | string | The reason for the end of the user session. The element can hold these values * `DURATION_LIMIT` * `END_EVENT` * `EXTENDED_TIMEOUT` * `TEST_FAILED` * `TIMEOUT` * `USER_ACTION_LIMIT` |
 | endTime | integer | The timestamp of the last user action in the user session, in UTC milliseconds. |
-| errors | [UserSessionErrors[]](#openapi-definition-UserSessionErrors) | A list of errors recorded in the user session. |
-| events | [UserSessionEvents[]](#openapi-definition-UserSessionEvents) | A list of additional events recorded in the user session. |
+| errors | [UserSessionErrors](#openapi-definition-UserSessionErrors)[] | A list of errors recorded in the user session. |
+| events | [UserSessionEvents](#openapi-definition-UserSessionEvents)[] | A list of additional events recorded in the user session. |
 | hasCrash | boolean | The user session includes (`true`) or doesn't include (`false`) a crash. |
 | hasError | boolean | The user session includes (`true`) or doesn't include (`false`) an error. |
 | hasSessionReplay | boolean | Session Replay is (`true`) or is not (`false`) available for the session. |
 | internalUserId | string | The unique ID of the user that triggered the user session. |
 | ip | string | The IP address (IPv4 or IPv6) from which the user session originates. |
 | isp | string | The internet service provider from which the user session originates (based on the IP address). |
-| longProperties | [LongProperty[]](#openapi-definition-LongProperty) | A list of custom properties of the user session with integer (short or long) values. |
+| longProperties | [LongProperty](#openapi-definition-LongProperty)[] | A list of custom properties of the user session with integer (short or long) values. |
 | manufacturer | string | The detected manufacturer of the device used for the user session. |
 | matchingConversionGoals | string[] | A list of conversion goals achieved by the user session.  Additionally, you can define conversion goals for a single user action. |
 | matchingConversionGoalsCount | integer | The number of conversion goals achieved by the user session. |
@@ -71,13 +70,13 @@ A [user sessionï»¿](https://dt-url.net/xv183rb8), encompassing multiple user 
 | screenOrientation | string | The detected screen orientation of the device used on the device for the user session. The element can hold these values * `LANDSCAPE` * `PORTRAIT` * `UNDEFINED` |
 | screenWidth | integer | The detected screen width of the device used for the user session. |
 | startTime | integer | The timestamp of the first user action in the user session, in UTC milliseconds. |
-| stringProperties | [StringProperty[]](#openapi-definition-StringProperty) | A list of custom properties of the user session with string values. |
-| syntheticEvents | [UserSessionSyntheticEvent[]](#openapi-definition-UserSessionSyntheticEvent) | A list of synthetic events recorded in the user session. |
+| stringProperties | [StringProperty](#openapi-definition-StringProperty)[] | A list of custom properties of the user session with string values. |
+| syntheticEvents | [UserSessionSyntheticEvent](#openapi-definition-UserSessionSyntheticEvent)[] | A list of synthetic events recorded in the user session. |
 | tenantId | string | The ID of the Dynatrace environment that captured the user session.  This field can not be queried via the User Session Query Language. |
 | totalErrorCount | integer | The number of errors detected in the user session. |
-| totalLicenseCreditCount | integer | Number of resulting billed sessions: [Dynatrace classic licensingï»¿](https://dt-url.net/u24c0pga), [Dynatrace Platform Subscriptionï»¿](https://www.dynatrace.com/support/help/shortlink/dps-dem). |
+| totalLicenseCreditCount | integer | Number of resulting billed sessions: [Dynatrace classic licensing﻿](https://dt-url.net/u24c0pga), [Dynatrace Platform Subscription﻿](https://www.dynatrace.com/support/help/shortlink/dps-dem). |
 | userActionCount | integer | The number of user actions in the user session. |
-| userActions | [UserSessionUserAction[]](#openapi-definition-UserSessionUserAction) | A list of user actions recorded in the user session. |
+| userActions | [UserSessionUserAction](#openapi-definition-UserSessionUserAction)[] | A list of user actions recorded in the user session. |
 | userExperienceScore | string | The user experience score of the user session. The element can hold these values * `FRUSTRATED` * `SATISFIED` * `TOLERATED` * `UNDEFINED` |
 | userId | string | The user ID provided for the user session by session tagging. |
 | userSessionId | string | The unique ID of the user session. |
@@ -172,18 +171,18 @@ A user action is a single action performed by the user as part of a user session
 
 | Element | Type | Description |
 | --- | --- | --- |
-| apdexCategory | string | The [user experience indexï»¿](https://dt-url.net/apdexdoc) of the user action. The element can hold these values * `FRUSTRATED` * `SATISFIED` * `TOLERATING` * `UNKNOWN` |
+| apdexCategory | string | The [user experience index﻿](https://dt-url.net/apdexdoc) of the user action. The element can hold these values * `FRUSTRATED` * `SATISFIED` * `TOLERATING` * `UNKNOWN` |
 | application | string | The name of the application where the user action has been recorded. |
 | cdnBusyTime | integer | The time spent waiting for CDN resources for the user action, in milliseconds. |
 | cdnResources | integer | The number of resources fetched from a CDN for the user action. |
 | cumulativeLayoutShift | number | The cumulative layout shift (CLS) is the total amount of all individual scores for every unexpected layout shift that occurs during the entire lifespan of the page.  The CLS is an important user-centric metric for measuring visual stability. It quantifies how often users experience unexpected layout shifts. A low CLS indicates that the page is delightful. |
 | customErrorCount | integer | The total number of custom errors during the user action. |
-| dateProperties | [DateProperty[]](#openapi-definition-DateProperty) | A list of custom properties of the user session with date values. |
+| dateProperties | [DateProperty](#openapi-definition-DateProperty)[] | A list of custom properties of the user session with date values. |
 | documentInteractiveTime | integer | The amount of time spent until the document for the user action became interactive, in milliseconds. |
 | domCompleteTime | integer | The amount of time until the DOM tree is completed, in milliseconds. |
 | domContentLoadedTime | integer | The amount of time until the DOM tree is loaded, in milliseconds. |
 | domain | string | The DNS domain where the user action has been recorded. |
-| doubleProperties | [DoubleProperty[]](#openapi-definition-DoubleProperty) | A list of custom properties of the user session with floating-point numerical values. |
+| doubleProperties | [DoubleProperty](#openapi-definition-DoubleProperty)[] | A list of custom properties of the user session with floating-point numerical values. |
 | duration | integer | The duration of the user action, in milliseconds.  This is calculated as the of time between the start and the end timestamps of the user action. |
 | endTime | integer | The end timestamp of the user action, in UTC milliseconds. |
 | firstInputDelay | integer | The first input delay (FID) is the time (in milliseconds) that the browser took to respond to the first user input.  The FID is an important user-centric metric for measuring load responsiveness. It quantifies the user experience when trying to interact with unresponsive pages. A low FID indicates that the page is usable. |
@@ -198,7 +197,7 @@ A user action is a single action performed by the user as part of a user session
 | largestContentfulPaint | integer | The largest contentful paint (LCP) is the time (in milliseconds) that the largest element on the page took to render.  The LCP is an important user-centric metric for measuring load speed. It marks the point when the page's main content is likely loaded. A low LCP indicates that the page loads quickly. |
 | loadEventEnd | integer | The amount of time until the load event ended, in milliseconds. |
 | loadEventStart | integer | The amount of time until the load event started, in milliseconds. |
-| longProperties | [LongProperty[]](#openapi-definition-LongProperty) | A list of custom properties of the user session with integer (short or long) values. |
+| longProperties | [LongProperty](#openapi-definition-LongProperty)[] | A list of custom properties of the user session with integer (short or long) values. |
 | matchingConversionGoals | string[] | A list of conversion goals achieved by the user action.  Additionally, you can define conversion goals for a user session as a whole. |
 | name | string | The name of the user action.  Typically, this is the name of the page that is loaded as part of a user action or a textual description of the action, such as a mouse click. |
 | navigationStart | integer | The timestamp of the navigation start, in UTC milliseconds. |
@@ -208,19 +207,19 @@ A user action is a single action performed by the user as part of a user session
 | responseEnd | integer | The amount of time until the response ended, in milliseconds. |
 | responseStart | integer | The amount of time until the response started, in milliseconds. |
 | serverTime | integer | The amount of time spent on the server-side processing for the user action, in milliseconds. |
-| speedIndex | integer | The [speed indexï»¿](https://dt-url.net/qk1a3r19) of the user action, in milliseconds.  This is calculated as average time it takes for all visible parts of a page to display. |
+| speedIndex | integer | The [speed index﻿](https://dt-url.net/qk1a3r19) of the user action, in milliseconds.  This is calculated as average time it takes for all visible parts of a page to display. |
 | startTime | integer | The start timestamp of the user action, in UTC milliseconds. |
-| stringProperties | [StringProperty[]](#openapi-definition-StringProperty) | A list of custom properties of the user session with string values. |
-| syntheticEvent | string | The name of the [Synthetic eventï»¿](https://dt-url.net/dq1e3rmm) that triggered the user action. |
-| syntheticEventId | string | The ID of the [Synthetic eventï»¿](https://dt-url.net/dq1e3rmm) that triggered the user action. |
+| stringProperties | [StringProperty](#openapi-definition-StringProperty)[] | A list of custom properties of the user session with string values. |
+| syntheticEvent | string | The name of the [Synthetic event﻿](https://dt-url.net/dq1e3rmm) that triggered the user action. |
+| syntheticEventId | string | The ID of the [Synthetic event﻿](https://dt-url.net/dq1e3rmm) that triggered the user action. |
 | targetUrl | string | The target URL of the user action. |
 | thirdPartyBusyTime | integer | The time spent waiting for third party resources for the user action, in milliseconds. |
 | thirdPartyResources | integer | The number of third party resources loaded for the user action. |
 | ~~totalBlockingTime~~ | integer | DEPRECATED  The total blocking time is the total time (in milliseconds) between the first contentful paint and the time to interactive, during which the browser has been blocked long enough to prevent input responsiveness. |
 | type | string | The type of the user action. The element can hold these values * `Custom` * `EndVisit` * `Error` * `Load` * `RageClick` * `SyntheticHiddenAction` * `UserSessionProperties` * `VisitTag` * `Xhr` |
 | userActionPropertyCount | integer | The total number of properties in the user action. |
-| visuallyCompleteTime | integer | The amount of time until the page is [visually completeï»¿](https://dt-url.net/qk1a3r19), in milliseconds. |
+| visuallyCompleteTime | integer | The amount of time until the page is [visually complete﻿](https://dt-url.net/qk1a3r19), in milliseconds. |
 
 ## Related topics
 
-* [Custom queries, segmentation, and aggregation of session data](/managed/observe/digital-experience/session-segmentation/custom-queries-segmentation-and-aggregation-of-session-data "Learn how you can access and query user session data based on keywords, syntax, functions, and more.")
+* [Custom queries, segmentation, and aggregation of session data in RUM Classic](/managed/observe/digital-experience/rum-classic/session-segmentation/custom-queries-segmentation-and-aggregation-of-session-data "Learn how you can access and query user session data based on keywords, syntax, functions, and more.")

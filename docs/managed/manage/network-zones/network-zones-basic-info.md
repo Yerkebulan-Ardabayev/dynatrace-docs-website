@@ -1,7 +1,6 @@
 ---
 title: Get started with network zones
 source: https://docs.dynatrace.com/managed/manage/network-zones/network-zones-basic-info
-scraped: 2026-05-12T11:10:43.920108
 ---
 
 # Get started with network zones
@@ -91,7 +90,7 @@ You can add additional fields to this pattern.
 
 ## Alternative network zone
 
-For each network zone, you can configure one or more alternative zonesânetwork zones that OneAgents should use when no ActiveGate from the primary zone is available. Make sure that ActiveGates from an alternative network zone are reachable by OneAgents of the primary network zone.
+For each network zone, you can configure one or more alternative zones—network zones that OneAgents should use when no ActiveGate from the primary zone is available. Make sure that ActiveGates from an alternative network zone are reachable by OneAgents of the primary network zone.
 
 To configure alternative network zones
 

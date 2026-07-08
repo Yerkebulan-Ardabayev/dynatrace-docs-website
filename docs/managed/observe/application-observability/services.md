@@ -1,7 +1,6 @@
 ---
 title: Services
 source: https://docs.dynatrace.com/managed/observe/application-observability/services
-scraped: 2026-05-12T11:05:16.491472
 ---
 
 # Services
@@ -12,9 +11,9 @@ scraped: 2026-05-12T11:05:16.491472
 * 4-min read
 * Updated on Oct 23, 2025
 
-Services are an application's fundamental building blocks. From an observability standpoint, they provide application owners with critical metrics to monitor application health. By tracking response time, throughput, and failure rates, owners can quickly identify anomalies detected by [DavisÂ® AI](/managed/dynatrace-intelligence "Get familiar with the capabilities of Davis AI.").
+Services are an application's fundamental building blocks. From an observability standpoint, they provide application owners with critical metrics to monitor application health. By tracking response time, throughput, and failure rates, owners can quickly identify anomalies detected by [Davis® AI](/managed/dynatrace-intelligence "Learn how Davis® AI detects performance anomalies, identifies root causes, and uses AI models for adaptive thresholds across your environment.").
 
-Dynatrace offers both health monitoring and detailed analysis of services. You can investigate traces, logs, and hotspots while also using the [SmartscapeÂ® technology](/managed/analyze-explore-automate/smartscape-classic "Learn how Smartscape visualizes all the entities and dependencies in your environment.") to understand relationships between services and their underlying infrastructure, such as hosts or Kubernetes nodes.
+Dynatrace offers both health monitoring and detailed analysis of services. You can investigate traces, logs, and hotspots while also using the [Smartscape® technology](/managed/analyze-explore-automate/smartscape-classic "Learn how Smartscape visualizes all the entities and dependencies in your environment.") to understand relationships between services and their underlying infrastructure, such as hosts or Kubernetes nodes.
 
 ## Service monitoring
 

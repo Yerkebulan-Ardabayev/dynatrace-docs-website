@@ -1,7 +1,6 @@
 ---
 title: Settings API - RUM overload prevention schema table
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/settings/schemas/builtin-rum-overload-prevention
-scraped: 2026-05-12T11:44:22.217457
 ---
 
 # Settings API - RUM overload prevention schema table
@@ -34,4 +33,4 @@ To execute this request, you need an access token with **Read settings** (`setti
 
 | Property | Type | Description | Required |
 | --- | --- | --- | --- |
-| Maximum user actions per minute `overloadPreventionLimit` | integer | Once this limit is reached, Dynatrace [throttles the number of captured user sessionsï»¿](https://dt-url.net/fm3v0p7g). | Required |
+| Maximum user actions per minute `overloadPreventionLimit` | integer | Once this limit is reached, Dynatrace [throttles the number of captured user sessions﻿](https://dt-url.net/fm3v0p7g). | Required |

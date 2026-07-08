@@ -1,7 +1,6 @@
 ---
 title: Configure build label propagation
 source: https://docs.dynatrace.com/managed/ingest-from/setup-on-k8s/guides/metadata-automation/build-label-propagation
-scraped: 2026-05-12T12:07:50.118077
 ---
 
 # Configure build label propagation
@@ -15,7 +14,7 @@ Build label propagation enables you to provide build and version metadata inform
 
 ## How it works
 
-You can [reference the value of a metadata field in an environment variableï»¿](https://dt-url.net/cy035by).
+You can [reference the value of a metadata field in an environment variable﻿](https://dt-url.net/cy035by).
 
 ```
 env:
@@ -224,7 +223,7 @@ You can annotate your namespace to provide further mappings or overrule the defa
 
 * Each annotation key is mapped to a specific environment variable.
 * Each annotation value is the reference path in `fieldPath`.
-* The available information for `fieldPath` is the same as for [`fieldRef`ï»¿](https://dt-url.net/0m235nn).
+* The available information for `fieldPath` is the same as for [`fieldRef`﻿](https://dt-url.net/0m235nn).
 
 Example to overwrite the default values for `version` and `product`, and enable `stage` and `build-version`:
 

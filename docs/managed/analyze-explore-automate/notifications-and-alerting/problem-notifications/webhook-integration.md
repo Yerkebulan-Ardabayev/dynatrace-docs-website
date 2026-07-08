@@ -1,7 +1,6 @@
 ---
 title: Send Dynatrace notifications via webhooks
 source: https://docs.dynatrace.com/managed/analyze-explore-automate/notifications-and-alerting/problem-notifications/webhook-integration
-scraped: 2026-05-12T11:24:48.677530
 ---
 
 # Send Dynatrace notifications via webhooks
@@ -14,7 +13,7 @@ scraped: 2026-05-12T11:24:48.677530
 Dynatrace offers several out-of-the-box integrations that automatically push problem notifications to third-party incident-management and ChatOps systems.
 If however your third-party system isn't supported with an out-of-the-box integration, you can easily set up a customizable webhook integration. Using this approach, whenever Dynatrace detects a problem in your environment that affects real users, a webhook triggers an `HTTP POST` request to a target URL that you specify.
 
-The payload message of the `HTTP POST` request is completely customizable. By default, requests use valid JSON syntaxâexcept when you define a different HTTP content type header, in which case you define a different HTTP content type header and Dynatrace skips the JSON validation and doesn't escape the payload based on JSON syntax.
+The payload message of the `HTTP POST` request is completely customizable. By default, requests use valid JSON syntax–except when you define a different HTTP content type header, in which case you define a different HTTP content type header and Dynatrace skips the JSON validation and doesn't escape the payload based on JSON syntax.
 
 Information placeholders, such as **{ProblemTitle}** and **{State}**, are used to fill the custom JSON with the dynamic information of each detected problem.
 

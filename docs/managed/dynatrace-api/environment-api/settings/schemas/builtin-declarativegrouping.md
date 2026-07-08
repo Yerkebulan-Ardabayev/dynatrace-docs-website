@@ -1,7 +1,6 @@
 ---
 title: Settings API - Declarative process grouping schema table
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/settings/schemas/builtin-declarativegrouping
-scraped: 2026-05-12T11:48:37.867364
 ---
 
 # Settings API - Declarative process grouping schema table
@@ -18,7 +17,7 @@ To add a new process group, you must first define the technology type. The techn
 
 Next, give your process group a unique name and identifier. This name is used to identify the process group throughout your Dynatrace environment. Finally, add detection rules so that Dynatrace can automatically identify processes that belong in this group.
 
-For complete details, see [Declarative process groupingï»¿](https://dt-url.net/j142w57)
+For complete details, see [Declarative process grouping﻿](https://dt-url.net/j142w57)
 
 | Schema ID | Schema groups | Scope |
 | --- | --- | --- |
@@ -58,4 +57,4 @@ To execute this request, you need an access token with **Read settings** (`setti
 | Property | Type | Description | Required |
 | --- | --- | --- | --- |
 | Select process property `property` | enum | The element has these enums * `executable` * `executablePath` * `commandLine` | Required |
-| Condition `condition` | text | * $contains(svc) â Matches if svc appears anywhere in the process property value. * $eq(svc.exe) â Matches if svc.exe matches the process property value exactly. * $prefix(svc) â Matches if app matches the prefix of the process property value. * $suffix(svc.py) â Matches if svc.py matches the suffix of the process property value.  For example, $suffix(svc.py) would detect processes named loyaltysvc.py and paymentssvc.py.  For more details, see [Declarative process groupingï»¿](https://dt-url.net/j142w57). | Required |
+| Condition `condition` | text | * $contains(svc) – Matches if svc appears anywhere in the process property value. * $eq(svc.exe) – Matches if svc.exe matches the process property value exactly. * $prefix(svc) – Matches if app matches the prefix of the process property value. * $suffix(svc.py) – Matches if svc.py matches the suffix of the process property value.  For example, $suffix(svc.py) would detect processes named loyaltysvc.py and paymentssvc.py.  For more details, see [Declarative process grouping﻿](https://dt-url.net/j142w57). | Required |

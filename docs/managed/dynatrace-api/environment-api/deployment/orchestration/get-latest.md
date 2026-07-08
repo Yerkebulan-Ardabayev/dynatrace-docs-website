@@ -1,7 +1,6 @@
 ---
 title: Deployment API - Download the latest version of the orchestration tarball
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/deployment/orchestration/get-latest
-scraped: 2026-05-12T11:58:08.064035
 ---
 
 # Deployment API - Download the latest version of the orchestration tarball
@@ -56,7 +55,7 @@ To learn how to obtain and use it, see [Tokens and authentication](/managed/disc
 | Element | Type | Description |
 | --- | --- | --- |
 | code | integer | The HTTP status code |
-| constraintViolations | [ConstraintViolation[]](#openapi-definition-ConstraintViolation) | A list of constraint violations |
+| constraintViolations | [ConstraintViolation](#openapi-definition-ConstraintViolation)[] | A list of constraint violations |
 | message | string | The error message |
 
 #### The `ConstraintViolation` object

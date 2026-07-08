@@ -1,7 +1,6 @@
 ---
 title: User sessions API - GET Tree
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/rum/user-sessions/tree
-scraped: 2026-05-12T12:00:06.854572
 ---
 
 # User sessions API - GET Tree
@@ -11,9 +10,9 @@ scraped: 2026-05-12T12:00:06.854572
 * Reference
 * Updated on May 02, 2022
 
-Executes a USQL query and returns results as a tree structure of the requested columnsâa flat list containing the requested columns.
+Executes a USQL query and returns results as a tree structure of the requested columns—a flat list containing the requested columns.
 
-To get a proper tree structure, you need to specify grouping in the query. The fields used in the `GROUP BY` clause form the "branches" of the tree, each holding "leaves"âselected fields that have not been used for grouping.
+To get a proper tree structure, you need to specify grouping in the query. The fields used in the `GROUP BY` clause form the "branches" of the tree, each holding "leaves"—selected fields that have not been used for grouping.
 
 The request produces an `application/json` payload.
 
@@ -32,7 +31,7 @@ To learn how to obtain and use it, see [Tokens and authentication](/managed/disc
 
 | Parameter | Type | Description | In | Required |
 | --- | --- | --- | --- | --- |
-| query | string | The user session query to be executed. See [USQL documentation pageï»¿](https://dt-url.net/dtusql) for syntax details.  You can find the available columns of the **usersession** table in the `UserSession` object.  Here is an example of the query: `SELECT country, city, COUNT(*) FROM usersession GROUP BY country, city`. | query | Required |
+| query | string | The user session query to be executed. See [USQL documentation page﻿](https://dt-url.net/dtusql) for syntax details.  You can find the available columns of the **usersession** table in the `UserSession` object.  Here is an example of the query: `SELECT country, city, COUNT(*) FROM usersession GROUP BY country, city`. | query | Required |
 | startTimestamp | integer | The start timestamp of the query, in UTC milliseconds.  If not set or set as `0`, 2 hours behind the current time is used.  If the exact times are important, set the timeframe in the query itself (**query** parameter). | query | Optional |
 | endTimestamp | integer | The end timestamp of the query, in UTC milliseconds.  If not set or set as `0`, the current timestamp is used.  If the exact times are important, set the timeframe in the query itself (**query** parameter). | query | Optional |
 | offsetUTC | integer | Optional offset of local time to UTC time in minutes. Offset will be applied to Date fields encountered in the query.  Can be positive or negative. E.g. if the local time is UTC+02:00, the timeOffset is 120. If it is UTC-05:00, timeOffset is -300. | query | Optional |
@@ -66,7 +65,7 @@ The user session query result as a tree.
 | explanations | string[] | Additional information about the query and the result, that helps to understand the query and how the result was calculated.  Only appears when the **explain** parameter is set to `true`.  Example: The number of results was limited to the default of 50. Use the `LIMIT` clause to increase or decrease this limit. |
 | extrapolationLevel | integer | The extrapolation level of the result.  To improve performance, some results may be calculated from a subset of actual data. The extrapolation level indicates the share of actual data in the result.  The number is the denominator of a fraction and indicates the amount of actual data. The value `1` means that the result contains only the actual data. The value `4` means that result is calculated using 1/4 of the actual data.  If you need the analysis to be based on the actual data, reduce the timeframe of your query. For example, in case of extrapolation level of `4`, try to use 1/4 of the original timeframe. |
 | leafNames | string[] | A list of leaves on each tree branch.  Typically, these are fields from the `SELECT` clause, that have not been used in the `GROUP BY` clause. |
-| values | string | The user session query result as a tree. |
+| values | [AnyValue](#openapi-definition-AnyValue) | The user session query result as a tree. |
 
 #### The `AnyValue` object
 
@@ -339,7 +338,7 @@ https://mySampleEnv.live.dynatrace.com/api/v1/userSessionQueryLanguage/api/v1/us
 
 
 
-"GdaÅsk": [
+"Gdańsk": [
 
 
 
@@ -372,4 +371,4 @@ https://mySampleEnv.live.dynatrace.com/api/v1/userSessionQueryLanguage/api/v1/us
 
 ## Related topics
 
-* [Custom queries, segmentation, and aggregation of session data](/managed/observe/digital-experience/session-segmentation/custom-queries-segmentation-and-aggregation-of-session-data "Learn how you can access and query user session data based on keywords, syntax, functions, and more.")
+* [Custom queries, segmentation, and aggregation of session data in RUM Classic](/managed/observe/digital-experience/rum-classic/session-segmentation/custom-queries-segmentation-and-aggregation-of-session-data "Learn how you can access and query user session data based on keywords, syntax, functions, and more.")

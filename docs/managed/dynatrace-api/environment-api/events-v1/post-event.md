@@ -1,7 +1,6 @@
 ---
 title: Events API v1 - POST an event
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/events-v1/post-event
-scraped: 2026-05-12T12:13:40.104293
 ---
 
 # Events API v1 - POST an event
@@ -96,7 +95,7 @@ At least one entity ID or tag is required.
 | Element | Type | Description | Required |
 | --- | --- | --- | --- |
 | entityIds | string[] | A list of entity IDs to which the event should be attached. | Optional |
-| tagRule | [TagMatchRule[]](#openapi-definition-TagMatchRule) | A set of matching rules to dynamically pick up entities based on tags.  Only entities seen within the last **24 hours** are taken into account for tag-based matching rules. | Optional |
+| tagRule | [TagMatchRule](#openapi-definition-TagMatchRule)[] | A set of matching rules to dynamically pick up entities based on tags.  Only entities seen within the last **24 hours** are taken into account for tag-based matching rules. | Optional |
 
 #### The `TagMatchRule` object
 
@@ -105,7 +104,7 @@ The list of tags to be used for matching Dynatrace entities.
 | Element | Type | Description | Required |
 | --- | --- | --- | --- |
 | meTypes | string[] | The list of types of the Dynatrace entities (for example hosts or services) you want to pick up by matching. The element can hold these values * `APM_SECURITY_GATEWAY` * `APPLICATION` * `APPLICATION_METHOD` * `APPLICATION_METHOD_GROUP` * `APPMON_SERVER` * `APPMON_SYSTEM_PROFILE` * `AUTO_SCALING_GROUP` * `AUXILIARY_SYNTHETIC_TEST` * `AWS_APPLICATION_LOAD_BALANCER` * `AWS_AVAILABILITY_ZONE` * `AWS_CREDENTIALS` * `AWS_LAMBDA_FUNCTION` * `AWS_NETWORK_LOAD_BALANCER` * `AZURE_API_MANAGEMENT_SERVICE` * `AZURE_APPLICATION_GATEWAY` * `AZURE_APP_SERVICE_PLAN` * `AZURE_COSMOS_DB` * `AZURE_CREDENTIALS` * `AZURE_EVENT_HUB` * `AZURE_EVENT_HUB_NAMESPACE` * `AZURE_FUNCTION_APP` * `AZURE_IOT_HUB` * `AZURE_LOAD_BALANCER` * `AZURE_MGMT_GROUP` * `AZURE_REDIS_CACHE` * `AZURE_REGION` * `AZURE_SERVICE_BUS_NAMESPACE` * `AZURE_SERVICE_BUS_QUEUE` * `AZURE_SERVICE_BUS_TOPIC` * `AZURE_SQL_DATABASE` * `AZURE_SQL_ELASTIC_POOL` * `AZURE_SQL_SERVER` * `AZURE_STORAGE_ACCOUNT` * `AZURE_SUBSCRIPTION` * `AZURE_TENANT` * `AZURE_VM` * `AZURE_VM_SCALE_SET` * `AZURE_WEB_APP` * `BROWSER` * `CF_APPLICATION` * `CF_FOUNDATION` * `CINDER_VOLUME` * `CLOUD_APPLICATION` * `CLOUD_APPLICATION_INSTANCE` * `CLOUD_APPLICATION_NAMESPACE` * `CLOUD_NETWORK_INGRESS` * `CLOUD_NETWORK_POLICY` * `CONTAINER_GROUP` * `CONTAINER_GROUP_INSTANCE` * `CUSTOM_APPLICATION` * `CUSTOM_DEVICE` * `CUSTOM_DEVICE_GROUP` * `DCRUM_APPLICATION` * `DCRUM_SERVICE` * `DCRUM_SERVICE_INSTANCE` * `DEVICE_APPLICATION_METHOD` * `DEVICE_APPLICATION_METHOD_GROUP` * `DISK` * `DOCKER_CONTAINER_GROUP` * `DOCKER_CONTAINER_GROUP_INSTANCE` * `DYNAMO_DB_TABLE` * `EBS_VOLUME` * `EC2_INSTANCE` * `ELASTIC_LOAD_BALANCER` * `ENVIRONMENT` * `EXTERNAL_SYNTHETIC_TEST_STEP` * `GCP_ZONE` * `GEOLOCATION` * `GEOLOC_SITE` * `GOOGLE_COMPUTE_ENGINE` * `HOST` * `HOST_GROUP` * `HTTP_CHECK` * `HTTP_CHECK_STEP` * `HYPERVISOR` * `HYPERVISOR_CLUSTER` * `HYPERVISOR_DISK` * `KUBERNETES_CLUSTER` * `KUBERNETES_NODE` * `KUBERNETES_SERVICE` * `MOBILE_APPLICATION` * `MULTIPROTOCOL_MONITOR` * `NETWORK_INTERFACE` * `NEUTRON_SUBNET` * `OPENSTACK_PROJECT` * `OPENSTACK_REGION` * `OPENSTACK_VM` * `OS` * `PROCESS_GROUP` * `PROCESS_GROUP_INSTANCE` * `QUEUE` * `QUEUE_INSTANCE` * `RELATIONAL_DATABASE_SERVICE` * `S3BUCKET` * `SERVICE` * `SERVICE_INSTANCE` * `SERVICE_METHOD` * `SERVICE_METHOD_GROUP` * `SWIFT_CONTAINER` * `SYNTHETIC_LOCATION` * `SYNTHETIC_TEST` * `SYNTHETIC_TEST_STEP` * `VCENTER` * `VIRTUALMACHINE` * `VMWARE_DATACENTER` | Required |
-| tags | [TagInfo[]](#openapi-definition-TagInfo) | The list of tags you want to use for matching. At least one tag is required.  You can use custom tags from the UI, imported tags, and tags based on environment variables. | Required |
+| tags | [TagInfo](#openapi-definition-TagInfo)[] | The list of tags you want to use for matching. At least one tag is required.  You can use custom tags from the UI, imported tags, and tags based on environment variables. | Required |
 
 #### The `TagInfo` object
 
@@ -276,7 +275,7 @@ Contains IDs of all custom events, created by an event push call.
 | Element | Type | Description |
 | --- | --- | --- |
 | code | integer | The HTTP status code |
-| constraintViolations | [ConstraintViolation[]](#openapi-definition-ConstraintViolation) | A list of constraint violations |
+| constraintViolations | [ConstraintViolation](#openapi-definition-ConstraintViolation)[] | A list of constraint violations |
 | message | string | The error message |
 
 #### The `ConstraintViolation` object
@@ -638,4 +637,4 @@ https://mySampleEnv.live.dynatrace.com/api/v1/events
 
 * [Event categories](/managed/dynatrace-intelligence/root-cause-analysis/event-analysis-and-correlation/event-categories "Learn about different categories of events and supported event types, along with their severity levels, and the logic behind raising them.")
 * [Event analysis and correlation](/managed/dynatrace-intelligence/root-cause-analysis/event-analysis-and-correlation "Gain an understanding of the Events section on each host, process, and service overview page.")
-* [Creating a deployment event via the Dynatrace APIï»¿](https://www.youtube.com/watch?v=LDAiUMdrtvA)
+* [Creating a deployment event via the Dynatrace API﻿](https://www.youtube.com/watch?v=LDAiUMdrtvA)

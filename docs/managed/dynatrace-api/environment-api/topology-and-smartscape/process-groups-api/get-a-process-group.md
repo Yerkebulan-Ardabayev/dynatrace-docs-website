@@ -1,7 +1,6 @@
 ---
 title: Process groups API - GET a process group
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/topology-and-smartscape/process-groups-api/get-a-process-group
-scraped: 2026-05-12T12:01:47.045091
 ---
 
 # Process groups API - GET a process group
@@ -53,7 +52,6 @@ Parameters of a process group.
 
 | Element | Type | Description |
 | --- | --- | --- |
-| attributes | object | - |
 | azureHostName | string | - |
 | azureSiteName | string | - |
 | customizedName | string | The customized name of the entity |
@@ -64,15 +62,11 @@ Parameters of a process group.
 | fromRelationships | object | - |
 | lastSeenTimestamp | integer | The timestamp of when the entity was last detected, in UTC milliseconds |
 | listenPorts | integer[] | - |
-| managementZones | [EntityShortRepresentation[]](#openapi-definition-EntityShortRepresentation) | The management zones that the entity is part of. |
+| managementZones | [EntityShortRepresentation](#openapi-definition-EntityShortRepresentation)[] | The management zones that the entity is part of. |
 | metadata | object | - |
-| softwareTechnologies | [TechnologyInfo[]](#openapi-definition-TechnologyInfo) | - |
-| tags | [TagInfo[]](#openapi-definition-TagInfo) | The list of entity tags. |
+| softwareTechnologies | [TechnologyInfo](#openapi-definition-TechnologyInfo)[] | - |
+| tags | [TagInfo](#openapi-definition-TagInfo)[] | The list of entity tags. |
 | toRelationships | object | - |
-
-#### The `AnyValue` object
-
-A schema representing an arbitrary value type.
 
 #### The `EntityShortRepresentation` object
 
@@ -113,7 +107,7 @@ Tag of a Dynatrace entity.
 | Element | Type | Description |
 | --- | --- | --- |
 | code | integer | The HTTP status code |
-| constraintViolations | [ConstraintViolation[]](#openapi-definition-ConstraintViolation) | A list of constraint violations |
+| constraintViolations | [ConstraintViolation](#openapi-definition-ConstraintViolation)[] | A list of constraint violations |
 | message | string | The error message |
 
 #### The `ConstraintViolation` object
@@ -131,18 +125,6 @@ A list of constraint violations
 
 ```
 {
-
-
-
-"attributes": {
-
-
-
-"empty": true
-
-
-
-},
 
 
 

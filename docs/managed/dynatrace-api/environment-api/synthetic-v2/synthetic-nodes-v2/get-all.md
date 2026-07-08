@@ -1,7 +1,6 @@
 ---
 title: Synthetic nodes API v2 - GET all nodes
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/synthetic-v2/synthetic-nodes-v2/get-all
-scraped: 2026-05-12T11:54:30.023044
 ---
 
 # Synthetic nodes API v2 - GET all nodes
@@ -51,7 +50,7 @@ A list of synthetic nodes
 
 | Element | Type | Description |
 | --- | --- | --- |
-| nodes | [NodeCollectionElement[]](#openapi-definition-NodeCollectionElement) | A list of synthetic nodes |
+| nodes | [NodeCollectionElement](#openapi-definition-NodeCollectionElement)[] | A list of synthetic nodes |
 
 #### The `NodeCollectionElement` object
 
@@ -84,7 +83,7 @@ The short representation of a synthetic object. Only contains the ID and the dis
 | Element | Type | Description |
 | --- | --- | --- |
 | code | integer | The HTTP status code |
-| constraintViolations | [ConstraintViolation[]](#openapi-definition-ConstraintViolation) | A list of constraint violations |
+| constraintViolations | [ConstraintViolation](#openapi-definition-ConstraintViolation)[] | A list of constraint violations |
 | message | string | The error message |
 
 #### The `ConstraintViolation` object

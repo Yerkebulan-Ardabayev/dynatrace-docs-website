@@ -1,7 +1,6 @@
 ---
 title: Deployment
 source: https://docs.dynatrace.com/managed/ingest-from/setup-on-k8s/deployment
-scraped: 2026-05-12T11:11:02.252135
 ---
 
 # Deployment
@@ -12,7 +11,7 @@ scraped: 2026-05-12T11:11:02.252135
 * Updated on Jan 28, 2026
 
 Dynatrace provides a flexible approach to Kubernetes observability where you can pick and choose the level of observability you need for your Kubernetes clusters. This page gives an overview and guided path on the recommended options to cover your Kubernetes observability needs.
-All deployment options on this page leverage [Dynatrace Operatorï»¿](https://github.com/Dynatrace/dynatrace-operator). For dedicated documentation and options for the major Kubernetes distributions, see [Distributions](/managed/ingest-from/setup-on-k8s/deployment/supported-technologies "Overview of different configurations for all major Kubernetes distributions.").
+All deployment options on this page leverage [Dynatrace Operator﻿](https://github.com/Dynatrace/dynatrace-operator). For dedicated documentation and options for the major Kubernetes distributions, see [Distributions](/managed/ingest-from/setup-on-k8s/deployment/supported-technologies "Overview of different configurations for all major Kubernetes distributions.").
 
 ## Observability options
 
@@ -24,7 +23,7 @@ Get immediate insights into your Kubernetes health and out-of-the-box distribute
 
 * Recommended [Deploy Dynatrace Operator in cloud-native full-stack mode](/managed/ingest-from/setup-on-k8s/deployment/full-stack-managed "Deploy Dynatrace Operator in cloud-native full-stack mode to Kubernetes")
 * [Deploy Dynatrace Operator in classic full-stack mode](/managed/ingest-from/setup-on-k8s/deployment/other/classic-full-stack "Deploy Dynatrace Operator in classic full-stack mode to Kubernetes")  
-  Limitations: Thereâs a startup dependency between the container in which OneAgent is deployed and application containers to be instrumented (for example, containers that have deep process monitoring enabled). The OneAgent container must be started and the oneagenthelper process must be running before the application container is launched so that the application can be properly instrumented.
+  Limitations: There’s a startup dependency between the container in which OneAgent is deployed and application containers to be instrumented (for example, containers that have deep process monitoring enabled). The OneAgent container must be started and the oneagenthelper process must be running before the application container is launched so that the application can be properly instrumented.
 
 Other option
 
@@ -60,9 +59,9 @@ For the S390x architecture, [pod runtime](/managed/ingest-from/setup-on-k8s/depl
 Dynatrace supports deploying Dynatrace Operator from within the following Marketplaces:
 
 * [OpenShift OperatorHub](/managed/ingest-from/setup-on-k8s/deployment/other/ocp-operator-hub "Deploy Dynatrace Operator on OpenShift via OperatorHub.")
-* [AWS Marketplaceï»¿](https://aws.amazon.com/marketplace/pp/prodview-brb73nceicv7u)
-* [GKE Marketplaceï»¿](https://console.cloud.google.com/marketplace/product/dynatrace-marketplace-prod/dynatrace-operator)
-* [Azure Marketplaceï»¿](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/dynatrace.azure-dynatrace-operator?tab=Overview)
+* [AWS Marketplace﻿](https://aws.amazon.com/marketplace/pp/prodview-brb73nceicv7u)
+* [GKE Marketplace﻿](https://console.cloud.google.com/marketplace/product/dynatrace-marketplace-prod/dynatrace-operator)
+* [Azure Marketplace﻿](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/dynatrace.azure-dynatrace-operator?tab=Overview)
 
 ## Learn more
 

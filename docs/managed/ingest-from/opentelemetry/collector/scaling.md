@@ -1,7 +1,6 @@
 ---
 title: How to scale the OTel Collector
 source: https://docs.dynatrace.com/managed/ingest-from/opentelemetry/collector/scaling
-scraped: 2026-05-12T12:34:53.654534
 ---
 
 # How to scale the OTel Collector
@@ -22,7 +21,7 @@ specific case; you will need to analyze your systems to determine the best way
 to scale them.
 
 For more general information in the OpenTelemetry documentation, please see the
-[Scaling the OTel Collectorï»¿](https://opentelemetry.io/docs/collector/scaling/) page
+[Scaling the OTel Collector﻿](https://opentelemetry.io/docs/collector/scaling/) page
 on the OpenTelemetry website.
 
 ## Determining when to scale
@@ -34,7 +33,7 @@ available through the Collector and metrics available from the host environment
 The following are a few metrics worth paying attention to:
 
 * `otelcol_processor_refused_spans`: If you have the [Memory Limiter
-  Processorï»¿](https://github.com/open-telemetry/opentelemetry-collector/blob/v0.151.0/processor/memorylimiterprocessor)
+  Processor﻿](https://github.com/open-telemetry/opentelemetry-collector/blob/v0.155.0/processor/memorylimiterprocessor)
   enabled, this metric (or the equivalent for other signals) will indicate that
   the Collector needs more memory to continue processing its current load.
 * `otelcol_exporter_queue_capacity` and `otelcol_exporter_queue_size`: Once the
@@ -45,12 +44,12 @@ The following are a few metrics worth paying attention to:
   available to the Collector to continue processing this volume of data.
 * `k8s.resource_quota.used`: If you are monitoring your Kubernetes cluster with
   the [Kubernetes Cluster
-  Receiverï»¿](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.151.0/receiver/k8sclusterreceiver),
+  Receiver﻿](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.155.0/receiver/k8sclusterreceiver),
   this can be used to determine the amount of
   CPU/memory quota your Collector has used.
 * `container.cpu.usage` and `container.memory.usage`: If you are monitoring your
   cluster with the [Kubelet Stats
-  Receiverï»¿](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.151.0/receiver/kubeletstatsreceiver),
+  Receiver﻿](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.155.0/receiver/kubeletstatsreceiver),
   these can tell you if a given Collector container is nearing or hitting its
   quota limits.
 
@@ -70,6 +69,8 @@ Collector is sufficient for your anticipated load. Vertically scaling the
 Collector has a lower cap on the amount of processing power and memory that can
 be given to the Collector, but is also simpler. In Kubernetes, you can do this
 by raising the CPU and memory limits on the Collector pod.
+
+For scaling Prometheus scraping, we recommend using [the standard Prometheus deployment with the Target Allocator](/managed/ingest-from/opentelemetry/collector/use-cases/prometheus/standard "Deploy a tiered Target Allocator, Scraper, and Gateway architecture for production-grade Prometheus scraping with the OpenTelemetry Collector.") to handle large metric volumes.
 
 ### Scaling stateless Collectors
 
@@ -98,7 +99,7 @@ Collectors deployed through a DaemonSet, you can use a Service object with
 specialized routing settings to only send data to Collectors running on the same
 node as the source of the data. On Kubernetes version 1.26+, this is done by
 configuring a service to [only accept traffic internal to a
-nodeï»¿](https://kubernetes.io/docs/concepts/services-networking/service-traffic-policy/).
+node﻿](https://kubernetes.io/docs/concepts/services-networking/service-traffic-policy/).
 
 ### Scaling stateful processing using non-pooled Collectors
 
@@ -128,7 +129,7 @@ pattern for Collectors, or by assigning data sources to Collectors:
 
 Scaling a horizontally-scaled pool of stateful Collectors likely necessitates
 using the [Load Balancing
-Exporterï»¿](https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/v0.151.0/exporter/loadbalancingexporter).
+Exporter﻿](https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/v0.155.0/exporter/loadbalancingexporter).
 The Load Balancing Exporter turns the
 Collector into an OTLP-aware load balancer that allows you to route data to a
 specific downstream Collector based on information inside an OTLP payload such
@@ -136,7 +137,7 @@ as a metric name.
 
 Note that for metrics, the Load Balancing Exporter component has a [Development
 stability
-levelï»¿](https://github.com/open-telemetry/opentelemetry-collector/blob/v0.151.0/docs/component-stability.md).
+level﻿](https://github.com/open-telemetry/opentelemetry-collector/blob/v0.155.0/docs/component-stability.md).
 It is not recommended for production use at this time.
 
 #### Stateful processors
@@ -149,18 +150,18 @@ use. You can also configure which part of the data is used for routing. The best
 key to use depends on your use-case, but we give recommendations below.
 
 * The [Cumulative to Delta
-  Processorï»¿](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.151.0/processor/cumulativetodeltaprocessor):
+  Processor﻿](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.155.0/processor/cumulativetodeltaprocessor):
   Data points for the same metric are required to be sent to the same Collector
   for the collection period of the metric. The `metric_name` key is therefore a
   good default for routing.
 * The [Tail Sampling
-  Processorï»¿](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.151.0/processor/tailsamplingprocessor):
+  Processor﻿](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.155.0/processor/tailsamplingprocessor):
   In order to make a decision about whether to sample a trace, the processor
   must be able to see all spans within the trace. Therefore, all spans must be
   sent to the same Collector, and we recommend routing by the `traceID` key to
   accomplish this.
 * The [Span Metrics
-  Connectorï»¿](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.151.0/connector/spanmetricsconnector):
+  Connector﻿](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.155.0/connector/spanmetricsconnector):
   The connector needs to see all spans from a service in order to emit metrics
   about its performance. Therefore we highly recommend routing by the `service`
   key.
@@ -168,7 +169,7 @@ key to use depends on your use-case, but we give recommendations below.
 #### Configuring the Load Balancing Exporter
 
 There are two important elements involved with configuring the [Load Balancing
-Exporterï»¿](https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/v0.151.0/exporter/loadbalancingexporter):
+Exporter﻿](https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/v0.155.0/exporter/loadbalancingexporter):
 the key used to route the data, and the method the exporter uses to find
 Collectors in the pool.
 
@@ -204,7 +205,7 @@ The load balancing exporter comes with resiliency options to help mitigate the
 risk of data loss. These options are both for dealing with a fluctuating number of downstream
 Collectors as well as issues sending data to a particular Collector. The
 [upstream
-docsï»¿](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.151.0/exporter/loadbalancingexporter#resilience-and-scaling-considerations)
+docs﻿](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.155.0/exporter/loadbalancingexporter#resilience-and-scaling-considerations)
 cover these in detail and explain how and when to use them.
 
 #### Scaling load balancer Collectors
@@ -264,7 +265,7 @@ exporters:
 
 
 
-loadbalancing/traces:
+load_balancing/traces:
 
 
 
@@ -296,7 +297,7 @@ ports:
 
 
 
-loadbalancing/logs:
+load_balancing/logs:
 
 
 
@@ -328,7 +329,7 @@ ports:
 
 
 
-loadbalancing/metrics:
+load_balancing/metrics:
 
 
 
@@ -428,7 +429,7 @@ exporters:
 
 
 
-- loadbalancing/metrics
+- load_balancing/metrics
 
 
 
@@ -448,7 +449,7 @@ exporters:
 
 
 
-- loadbalancing/traces
+- load_balancing/traces
 
 
 
@@ -468,7 +469,7 @@ exporters:
 
 
 
-- loadbalancing/logs
+- load_balancing/logs
 ```
 
 Configuration validation
@@ -481,11 +482,11 @@ For our configuration, we use the following components.
 
 ### Receivers
 
-Under `receivers`, we configure the [`otlp` receiverï»¿](https://github.com/open-telemetry/opentelemetry-collector/tree/v0.151.0/receiver/otlpreceiver) to receive data over gRPC and HTTP.
+Under `receivers`, we configure the [`otlp` receiver﻿](https://github.com/open-telemetry/opentelemetry-collector/tree/v0.155.0/receiver/otlpreceiver) to receive data over gRPC and HTTP.
 
 ### Exporters
 
-In the `exporters` section, we configure three [`loadbalancing exporters`ï»¿](https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/v0.151.0/exporter/loadbalancingexporter),
+In the `exporters` section, we configure three [`load_balancing exporters`﻿](https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/v0.155.0/exporter/loadbalancingexporter),
 one for each signal. The exporters are all configured to use the `k8s` resolver,
 which uses a Kubernetes service to determine the pool of Collectors to send data
 to. One reason to split further processing by signal is that each signal likely

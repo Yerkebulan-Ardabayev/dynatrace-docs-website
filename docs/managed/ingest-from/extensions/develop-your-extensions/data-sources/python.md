@@ -1,7 +1,6 @@
 ---
 title: Dynatrace Extensions Python SDK
 source: https://docs.dynatrace.com/managed/ingest-from/extensions/develop-your-extensions/data-sources/python
-scraped: 2026-05-12T12:11:33.469943
 ---
 
 # Dynatrace Extensions Python SDK
@@ -24,9 +23,9 @@ This SDK offers:
 Set the filesystem flag to `exec` and not `noexec` to ensure a Python extension runs correctly. This configuration is crucial because it allows the execution of binaries and scripts within the specified filesystem. The extension can't execute properly without this setting, leading to potential errors and failures.
 
 Python 3.10 reaches end of life in October 2026. For extensions built with the Dynatrace Extensions Python SDK, the build command must use `--python-version 3.14`.
-For more information, see the [build command guideï»¿](https://github.com/dynatrace-extensions/dt-extensions-python-sdk/blob/main/docs/guides/building.rst).
+For more information, see the [build command guide﻿](https://github.com/dynatrace-extensions/dt-extensions-python-sdk/blob/main/docs/guides/building.rst).
 
 For more information, see:
 
-* [Dynatrace Extensions Python SDK documentationï»¿](https://dt-url.net/7g638yh)
-* [Dynatrace Extensions Python SDK repositoryï»¿](https://dt-url.net/jsa38pm) on Dynatrace Extensions GitHub.
+* [Dynatrace Extensions Python SDK documentation﻿](https://dt-url.net/7g638yh)
+* [Dynatrace Extensions Python SDK repository﻿](https://dt-url.net/jsa38pm) on Dynatrace Extensions GitHub.

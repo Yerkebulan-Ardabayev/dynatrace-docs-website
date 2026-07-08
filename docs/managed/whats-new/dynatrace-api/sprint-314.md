@@ -1,7 +1,6 @@
 ---
 title: Dynatrace API changelog version 1.314
 source: https://docs.dynatrace.com/managed/whats-new/dynatrace-api/sprint-314
-scraped: 2026-05-12T11:36:15.242872
 ---
 
 # Dynatrace API changelog version 1.314

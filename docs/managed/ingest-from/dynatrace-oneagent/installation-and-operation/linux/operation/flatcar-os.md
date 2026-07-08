@@ -1,7 +1,6 @@
 ---
 title: Flatcar support on SELinux
 source: https://docs.dynatrace.com/managed/ingest-from/dynatrace-oneagent/installation-and-operation/linux/operation/flatcar-os
-scraped: 2026-05-12T11:05:21.237495
 ---
 
 # Flatcar support on SELinux
@@ -11,9 +10,9 @@ scraped: 2026-05-12T11:05:21.237495
 * 1-min read
 * Published May 30, 2023
 
-OneAgent can now be deployed on [Flatcarï»¿](https://dt-url.net/u5034bo). However, due to certain limitations with how SELinux operates on this operating system, you need to address the following configuration constraints:
+OneAgent can now be deployed on [Flatcar﻿](https://dt-url.net/u5034bo). However, due to certain limitations with how SELinux operates on this operating system, you need to address the following configuration constraints:
 
-* Flatcar operates on a read-only filesystem. As a result, if you intend to use SELinux with OneAgent, it requires a specific configuration. For more information about container compatibility with SELinux policy, see the following Flatcar documentation: [Check a containerâs compatibility with SELinux policyï»¿](https://dt-url.net/ns0342m).
+* Flatcar operates on a read-only filesystem. As a result, if you intend to use SELinux with OneAgent, it requires a specific configuration. For more information about container compatibility with SELinux policy, see the following Flatcar documentation: [Check a container’s compatibility with SELinux policy﻿](https://dt-url.net/ns0342m).
 * Use a default path to install OneAgent with SELinux enabled.
 
 * By default, Flatcar uses the Multi-Category Security (MCS) policy. To ensure compatibility, you need to change this setting to the `targeted` policy in the `/etc/selinux/config` file.

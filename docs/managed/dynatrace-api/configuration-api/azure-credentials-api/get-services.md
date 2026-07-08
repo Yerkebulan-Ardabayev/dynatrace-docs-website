@@ -1,7 +1,6 @@
 ---
 title: Azure credentials API - GET monitored services
 source: https://docs.dynatrace.com/managed/dynatrace-api/configuration-api/azure-credentials-api/get-services
-scraped: 2026-05-12T11:16:32.256513
 ---
 
 # Azure credentials API - GET monitored services
@@ -47,7 +46,7 @@ To learn how to obtain and use it, see [Tokens and authentication](/managed/disc
 | Element | Type | Description |
 | --- | --- | --- |
 | metadata | [ConfigurationMetadata](#openapi-definition-ConfigurationMetadata) | Metadata useful for debugging |
-| services | [AzureSupportingService[]](#openapi-definition-AzureSupportingService) | A list of Azure services to be monitored. Available services are listed by [/azure/supportedServicesï»¿](https://dt-url.net/wt42sdq) operation.  For each service, a list of metrics and dimensions can be specified. A list of supported metrics and dimensions for a given service can be checked in [documentationï»¿](https://dt-url.net/kx2351b).  List of metrics can be skipped (set to null), resulting in recommended (default) set of metrics and dimensions being chosen for monitoring. For built-in services, adjusting the list of metrics is not supported, therefore it needs to be null. |
+| services | [AzureSupportingService](#openapi-definition-AzureSupportingService)[] | A list of Azure services to be monitored. Available services are listed by [/azure/supportedServices﻿](https://dt-url.net/wt42sdq) operation.  For each service, a list of metrics and dimensions can be specified. A list of supported metrics and dimensions for a given service can be checked in [documentation﻿](https://dt-url.net/kx2351b).  List of metrics can be skipped (set to null), resulting in recommended (default) set of metrics and dimensions being chosen for monitoring. For built-in services, adjusting the list of metrics is not supported, therefore it needs to be null. |
 
 #### The `ConfigurationMetadata` object
 
@@ -65,7 +64,7 @@ A service to be monitored.
 
 | Element | Type | Description |
 | --- | --- | --- |
-| monitoredMetrics | [AzureMonitoredMetric[]](#openapi-definition-AzureMonitoredMetric) | A list of metrics to be monitored for this service. It must include all the recommended metrics. If the list is null then recommended list of metrics for this service will be monitored. |
+| monitoredMetrics | [AzureMonitoredMetric](#openapi-definition-AzureMonitoredMetric)[] | A list of metrics to be monitored for this service. It must include all the recommended metrics. If the list is null then recommended list of metrics for this service will be monitored. |
 | name | string | The name of the service. Valid supported service names can be discovered using /azure/supportedServices restAPI |
 
 #### The `AzureMonitoredMetric` object

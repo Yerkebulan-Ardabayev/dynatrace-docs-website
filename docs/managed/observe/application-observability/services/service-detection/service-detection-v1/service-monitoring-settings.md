@@ -1,7 +1,6 @@
 ---
 title: Service monitoring settings
 source: https://docs.dynatrace.com/managed/observe/application-observability/services/service-detection/service-detection-v1/service-monitoring-settings
-scraped: 2026-05-12T11:21:59.603131
 ---
 
 # Service monitoring settings
@@ -12,7 +11,7 @@ scraped: 2026-05-12T11:21:59.603131
 * 2-min read
 * Updated on Feb 17, 2026
 
-You can modify service settings both globallyâacross all services in your environmentâor for individual services.
+You can modify service settings both globally—across all services in your environment—or for individual services.
 
 Environment
 
@@ -24,7 +23,7 @@ To define service settings for an individual service
 
 1. Go to **Services**.
 2. Select the service you want to configure.
-3. On the service overview page, select **More** (**â¦**) > **Settings**.
+3. On the service overview page, select **More** (**…**) > **Settings**.
 
 APIs are available for the majority of the settings.
 

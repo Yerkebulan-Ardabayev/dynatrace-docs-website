@@ -1,7 +1,6 @@
 ---
 title: Drill-down to service failure causes
 source: https://docs.dynatrace.com/managed/observe/application-observability/distributed-traces/use-cases/error-analysis
-scraped: 2026-05-12T12:01:22.078850
 ---
 
 # Drill-down to service failure causes
@@ -20,19 +19,19 @@ In the image below, you can see that requests to `Redis` started to fail around 
 
 ## Steps
 
-1. To find the **Failure rate** tab, go to the serviceâs details page and select a **View** button (such as **View requests**, **View dynamic requests**, or **View resource requests**).
+1. To find the **Failure rate** tab, go to the service’s details page and select a **View** button (such as **View requests**, **View dynamic requests**, or **View resource requests**).
 
    ![Distributed trace 11](https://dt-cdn.net/images/purepath11-1574-ab48d3472e.png)
 
    Distributed trace 11
 2. Select **Analyze backtrace** to see where these requests came from.
 
-   The requests originate from the `weather-express` service and nearly all failed requests to `Redis` have the same exceptionâan `AbortError` caused by a closed connection.
+   The requests originate from the `weather-express` service and nearly all failed requests to `Redis` have the same exception—an `AbortError` caused by a closed connection.
 
    ![Distributed trace 12](https://dt-cdn.net/images/purepath12-1591-7acd7c6a02.png)
 
    Distributed trace 12
-3. To analyze down to the affected `Node.js` traces, select **More** (**â¦**) > **Distributed traces**.
+3. To analyze down to the affected `Node.js` traces, select **More** (**…**) > **Distributed traces**.
 
    By looking at the `Node.js` trace and its code-level execution tree below, you can see that a `Redis` request leads to an error. You can see where this error occurs in the flow of the `Node.js` code.
 

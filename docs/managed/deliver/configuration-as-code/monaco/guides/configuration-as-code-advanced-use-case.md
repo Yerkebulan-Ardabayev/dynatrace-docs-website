@@ -1,7 +1,6 @@
 ---
 title: Advanced use cases with Go templating
 source: https://docs.dynatrace.com/managed/deliver/configuration-as-code/monaco/guides/configuration-as-code-advanced-use-case
-scraped: 2026-05-12T12:03:04.641946
 ---
 
 # Advanced use cases with Go templating
@@ -12,7 +11,7 @@ scraped: 2026-05-12T12:03:04.641946
 * 4-min read
 * Published Mar 21, 2023
 
-[Go templateï»¿](https://pkg.go.dev/text/template) is a templating language built into the Go programming language that allows you to define templates with placeholders and fill them with dynamic content. Dynatrace Configuration as Code via Monaco, when combined with Go templating, can solve advanced use cases for managing and deploying Dynatrace configurations.
+[Go template﻿](https://pkg.go.dev/text/template) is a templating language built into the Go programming language that allows you to define templates with placeholders and fill them with dynamic content. Dynatrace Configuration as Code via Monaco, when combined with Go templating, can solve advanced use cases for managing and deploying Dynatrace configurations.
 
 Go templates can be used with the [JSON template file](/managed/deliver/configuration-as-code/monaco/configuration/projects#json-template-file "Manage a project folder with Dynatrace Configuration as Code via Monaco.") to generate dynamic content based on variables and functions defined in Go.
 
@@ -22,9 +21,9 @@ While we strive to provide comprehensive support to our users, the use of Go tem
 
 ## Testing Go templating
 
-We recommend that you test the output of Go templating using the [gotemplate.ioï»¿](https://gotemplate.io/) tool.
+We recommend that you test the output of Go templating using the [gotemplate.io﻿](https://gotemplate.io/) tool.
 
-1. Transform the YAML parameter from YAML to JSON using the [YAML to JSONï»¿](https://onlineyamltools.com/convert-yaml-to-json) tool and add it to the DATA section in `gotemplate.io`.
+1. Transform the YAML parameter from YAML to JSON using the [YAML to JSON﻿](https://onlineyamltools.com/convert-yaml-to-json) tool and add it to the DATA section in `gotemplate.io`.
 
    **YAML example:**
 

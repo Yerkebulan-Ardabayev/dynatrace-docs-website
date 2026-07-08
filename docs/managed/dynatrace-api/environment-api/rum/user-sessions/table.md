@@ -1,7 +1,6 @@
 ---
 title: User sessions API - GET Table
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/rum/user-sessions/table
-scraped: 2026-05-12T12:00:04.804287
 ---
 
 # User sessions API - GET Table
@@ -32,7 +31,7 @@ To learn how to obtain and use it, see [Tokens and authentication](/managed/disc
 
 | Parameter | Type | Description | In | Required |
 | --- | --- | --- | --- | --- |
-| query | string | The user session query to be executed. See [USQL documentation pageï»¿](https://dt-url.net/dtusql) for syntax details.  You can find the available columns of the **usersession** table in the `UserSession` object.  Here is an example of the query: `SELECT country, city, COUNT(*) FROM usersession GROUP BY country, city`. | query | Required |
+| query | string | The user session query to be executed. See [USQL documentation page﻿](https://dt-url.net/dtusql) for syntax details.  You can find the available columns of the **usersession** table in the `UserSession` object.  Here is an example of the query: `SELECT country, city, COUNT(*) FROM usersession GROUP BY country, city`. | query | Required |
 | startTimestamp | integer | The start timestamp of the query, in UTC milliseconds.  If not set or set as `0`, 2 hours behind the current time is used.  If the exact times are important, set the timeframe in the query itself (**query** parameter). | query | Optional |
 | endTimestamp | integer | The end timestamp of the query, in UTC milliseconds.  If not set or set as `0`, the current timestamp is used.  If the exact times are important, set the timeframe in the query itself (**query** parameter). | query | Optional |
 | offsetUTC | integer | Optional offset of local time to UTC time in minutes. Offset will be applied to Date fields encountered in the query.  Can be positive or negative. E.g. if the local time is UTC+02:00, the timeOffset is 120. If it is UTC-05:00, timeOffset is -300. | query | Optional |
@@ -304,7 +303,7 @@ https://mySampleEnv.live.dynatrace.com/api/v1/userSessionQueryLanguage/table?que
 
 
 
-"GdaÅsk",
+"Gdańsk",
 
 
 
@@ -357,4 +356,4 @@ https://mySampleEnv.live.dynatrace.com/api/v1/userSessionQueryLanguage/table?que
 
 ## Related topics
 
-* [Custom queries, segmentation, and aggregation of session data](/managed/observe/digital-experience/session-segmentation/custom-queries-segmentation-and-aggregation-of-session-data "Learn how you can access and query user session data based on keywords, syntax, functions, and more.")
+* [Custom queries, segmentation, and aggregation of session data in RUM Classic](/managed/observe/digital-experience/rum-classic/session-segmentation/custom-queries-segmentation-and-aggregation-of-session-data "Learn how you can access and query user session data based on keywords, syntax, functions, and more.")

@@ -1,7 +1,6 @@
 ---
 title: Instrument your application
 source: https://docs.dynatrace.com/managed/ingest-from/opentelemetry/walkthroughs
-scraped: 2026-05-12T12:00:55.675037
 ---
 
 # Instrument your application

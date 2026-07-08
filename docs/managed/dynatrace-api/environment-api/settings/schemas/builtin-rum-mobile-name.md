@@ -1,7 +1,6 @@
 ---
 title: Settings API - Application name schema table
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/settings/schemas/builtin-rum-mobile-name
-scraped: 2026-05-12T11:49:18.491751
 ---
 
 # Settings API - Application name schema table

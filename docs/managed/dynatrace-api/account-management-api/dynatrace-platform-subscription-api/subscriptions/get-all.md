@@ -1,7 +1,6 @@
 ---
 title: Dynatrace Platform Subscription API - GET all subscriptions
 source: https://docs.dynatrace.com/managed/dynatrace-api/account-management-api/dynatrace-platform-subscription-api/subscriptions/get-all
-scraped: 2026-05-12T11:24:31.454641
 ---
 
 # Dynatrace Platform Subscription API - GET all subscriptions
@@ -48,7 +47,7 @@ To execute this request, you need the **Allow read access for usage and consumpt
 
 | Element | Type | Description |
 | --- | --- | --- |
-| data | [SubscriptionSummaryDto[]](#openapi-definition-SubscriptionSummaryDto) | A list of subscriptions of the account. |
+| data | [SubscriptionSummaryDto](#openapi-definition-SubscriptionSummaryDto)[] | A list of subscriptions of the account. |
 
 #### The `SubscriptionSummaryDto` object
 

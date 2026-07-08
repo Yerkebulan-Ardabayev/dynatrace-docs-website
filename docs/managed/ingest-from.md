@@ -1,89 +1,56 @@
 ---
-title: Ingest data
+title: Ingest data into Dynatrace
 source: https://docs.dynatrace.com/managed/ingest-from
-scraped: 2026-05-12T11:09:35.651088
 ---
 
-# Ingest data
+# Ingest data into Dynatrace
 
-# Ingest data
+# Ingest data into Dynatrace
 
-* Overview
-* 1-min read
-* Published Nov 15, 2017
+* Explanation
+* 2-min read
+* Updated on Jun 22, 2026
 
-Dynatrace provides infrastructure monitoring as well as full-stack monitoring of your applications and services through automatic instrumentation with our OneAgent technology. Learn how to deploy Dynatrace on the [supported platforms](/managed/ingest-from/technology-support "Find technical details related to Dynatrace support for specific platforms and development frameworks.").
+Dynatrace needs data to work. Before you can analyze performance, detect anomalies, trace requests, or trigger automation, your environment needs to send telemetry to Dynatrace. That process is ingestion: getting your data from wherever it originates into the platform.
 
-## Cloud platforms
+This section covers every supported ingestion approach: which one fits your environment, how to set it up, and what happens to your data once it arrives.
 
-[![AWS](https://dt-cdn.net/images/aws-512-eed109b7f1.png "AWS")
+## Where ingestion fits in the Dynatrace journey
 
-### AWS
+Data doesn't go directly from your environment into dashboards: it passes through a processing layer that shapes how it lands in storage and becomes available for analysis and action. Ingestion is the first step in a sequence.
 
-Set up and configure monitoring for Amazon Web Services.](/managed/ingest-from/amazon-web-services "Set up and configure monitoring for Amazon Web Services.")[![Azure](https://dt-cdn.net/images/azure-512-a93a37d351.png "Azure")
+| Stage | What happens | Where to learn more |
+| --- | --- | --- |
+| **Ingest** | Data leaves your environment via agents, SDKs, or API integrations and arrives at Dynatrace | This section |
+| **Process** | OpenPipeline routes, filters, enriches, and transforms your data before it reaches storage | [Process your data with OpenPipeline](/managed/upgrade/unavailable-in-managed "Your selection is unavailable in Dynatrace Managed.") |
+| **Store** | Processed data lands in Dynatrace for querying, alerting, and analysis | Automatic: no configuration required to get started |
+| **Analyze and act** | Data becomes insights, alerts, dashboards, and automated responses | Dynatrace platform |
 
-### Azure
+You don't need to configure every stage before you start. Default pipelines handle your data automatically once it's flowing. Configure OpenPipeline later, after ingestion is working, when you need to shape how your data lands.
 
-Set up and configure monitoring for Microsoft Azure.](/managed/ingest-from/microsoft-azure-services "Set up and configure monitoring for Microsoft Azure.")[![Google Cloud](https://dt-cdn.net/images/gcp-512-db85a455ae.webp "Google Cloud")
+## What determines the right approach
 
-### Google Cloud
+Several factors determine the right data ingestion approach for your environment, including:
 
-Set up and configure monitoring for Google Cloud.](/managed/ingest-from/google-cloud-platform "Monitor Google Cloud with Dynatrace.")
+* Your infrastructure type
+* Whether you can install software on it
+* What monitoring tools you already use
+* How you prefer to instrument
 
-## Kubernetes
+## Select your environment
 
-[![Kubernetes](https://dt-cdn.net/images/kubernetes-512-90e7075764.png "Kubernetes")
+| Section | Best for |
+| --- | --- |
+| [Servers and VMs](/managed/ingest-from/dynatrace-oneagent "Understand the important concepts related to OneAgent and find out how to install and operate OneAgent on different platforms.") | Linux, Windows, AIX, Solaris, z/OS: physical or virtual machines you manage |
+| [Kubernetes](/managed/ingest-from/setup-on-k8s "Ways to deploy and configure Dynatrace on Kubernetes") | Orchestrated containers on a K8s cluster, any cloud provider or self-managed |
+| [Containers and PaaS](/managed/ingest-from/setup-on-container-platforms "Deploy Dynatrace on various container and PaaS platforms.") | Docker on a host, Cloud Foundry, Heroku, Azure App Service: non-K8s containers and PaaS platforms |
+| [AWS Lambda](/managed/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration "AWS Lambda capabilities and integration options") | AWS serverless functions: monitored using the Dynatrace Lambda extension or OpenTelemetry |
+| [Azure Functions](/managed/ingest-from/microsoft-azure-services/azure-integrations/azure-functions "Monitor Azure Functions") | Azure serverless functions: monitored using OpenTelemetry SDKs |
+| [Microsoft Azure](/managed/ingest-from/microsoft-azure-services "Set up and configure monitoring for Microsoft Azure.") | Azure managed services: Azure SQL, Blob Storage, and Azure Monitor metrics |
+| [Google Cloud Platform](/managed/ingest-from/google-cloud-platform "Monitor Google Cloud with Dynatrace.") | GCP managed services: Cloud SQL, Cloud Storage, and GCP Operations metrics |
+| [OpenTelemetry](/managed/ingest-from/opentelemetry "Learn how to integrate and ingest OpenTelemetry data (traces, metrics, and logs) into Dynatrace.") | Existing OTel instrumentation, or a preference for open-standard SDK-based instrumentation regardless of environment |
+| [Extend and customize](/managed/ingest-from/extend-dynatrace "Learn what extension mechanisms are offered by Dynatrace.") | Custom data sources, unsupported technologies, or direct API ingestion |
 
-### Kubernetes
+## Infrastructure prerequisites
 
-Set up and configure Dynatrace on Kubernetes.](/managed/ingest-from/setup-on-k8s "Ways to deploy and configure Dynatrace on Kubernetes")
-
-## Other container and PaaS platforms
-
-[![Cloud Foundry](https://dt-cdn.net/images/cloud-foundry-512-d7620ed0ba.png "Cloud Foundry")
-
-### Cloud Foundry
-
-Set up and configure Dynatrace on Cloud Foundry.](/managed/ingest-from/setup-on-container-platforms/cloud-foundry "Set up and configure Dynatrace on Cloud Foundry.")[![Docker](https://dt-cdn.net/images/docker-512-0c0977826e.webp "Docker")
-
-### Docker
-
-Set up and configure Dynatrace on Docker.](/managed/ingest-from/setup-on-container-platforms/docker "Deploy OneAgent on Docker.")[![Heroku](https://dt-cdn.net/images/heroku-512-984aa81b41.webp "Heroku")
-
-### Heroku
-
-Deploy OneAgent to monitor applications running on Heroku.](/managed/ingest-from/setup-on-container-platforms/heroku "Install OneAgent to monitor applications running on Heroku.")[![Mesos](https://dt-cdn.net/images/mesos-512-0c28279189.webp "Mesos")
-
-### Mesos
-
-Set up and configure Dynatrace on Mesos/Marathon.](/managed/ingest-from/setup-on-container-platforms/deploy-dynatrace-oneagent-on-mesos-marathon "Learn how to deploy OneAgent on Mesos/Marathon.")
-
-## Servers
-
-[### AIX
-
-Install and use OneAgent on AIX.](/managed/ingest-from/dynatrace-oneagent/installation-and-operation/aix "Learn how to install OneAgent on AIX, how to customize installation, and more.")[### Linux
-
-Install and use OneAgent on Linux.](/managed/ingest-from/dynatrace-oneagent/installation-and-operation/linux "Learn how to install OneAgent on Linux, how to customize installation, and more.")[### Solaris
-
-Install and use OneAgent on Solaris.](/managed/ingest-from/dynatrace-oneagent/installation-and-operation/solaris "Learn how to install, update and troubleshoot OneAgent on Solaris.")[### Windows
-
-Install and use OneAgent on Windows.](/managed/ingest-from/dynatrace-oneagent/installation-and-operation/windows "Learn how to install OneAgent on Windows, how to customize installation, and more.")[### zOS
-
-Install and use OneAgent on zOS.](/managed/ingest-from/dynatrace-oneagent/installation-and-operation/zos "Install, configure, and manage Dynatrace modules on z/OS.")
-
-## Other options
-
-[![Frontend](https://dt-cdn.net/images/frontend-512-e5705a0aec.png "Frontend")
-
-### Agentless Real User Monitoring
-
-Can't install OneAgent on your application servers? Try Agentless monitoring.](/managed/observe/digital-experience/web-applications/initial-setup/set-up-agentless-real-user-monitoring "Set up agentless monitoring for your web applications.")[![Synthetic Classic](https://dt-cdn.net/images/synthetic-512-83ec796e54.png "Synthetic Classic")
-
-### Synthetic Monitoring
-
-Need to monitor the availability and performance of your applications 24/7 from global locations? Set up Synthetic Monitoring.](/managed/observe/digital-experience/synthetic-monitoring "Learn about Synthetic Monitoring and how to create a single-URL browser monitor, a browser clickpath, or an HTTP monitor.")[![Extensions Classic](https://dt-cdn.net/images/extensions-512-1b8ed0c785.png "Extensions Classic")
-
-### Extend
-
-You can extend the observability data collected out of the box with data provided by observability standards and frameworks as well Dynatrace-provided extension frameworks.](/managed/ingest-from/extend-dynatrace "Learn what extension mechanisms are offered by Dynatrace.")
+Some ingestion setups require connectivity infrastructure before data can flow, such as proxies, routing components, or network configuration for environments that can't reach Dynatrace directly. If a setup guide in this section tells you that you need an ActiveGate or specific network configuration, [ActiveGate](/managed/ingest-from/dynatrace-activegate "Understand the basic concepts related to ActiveGate.") covers what to deploy and how.

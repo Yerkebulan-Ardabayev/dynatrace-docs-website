@@ -1,7 +1,6 @@
 ---
 title: Settings API - Vulnerability alerting profiles schema table
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/settings/schemas/builtin-appsec-notification-alerting-profile
-scraped: 2026-05-12T11:49:20.284438
 ---
 
 # Settings API - Vulnerability alerting profiles schema table

@@ -1,7 +1,6 @@
 ---
 title: Settings API - Allowed URL pattern rules schema table
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/settings/schemas/builtin-dashboards-image-allowlist
-scraped: 2026-05-12T11:46:40.140552
 ---
 
 # Settings API - Allowed URL pattern rules schema table

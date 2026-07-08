@@ -1,7 +1,6 @@
 ---
 title: Access tokens and permissions
 source: https://docs.dynatrace.com/managed/ingest-from/setup-on-k8s/deployment/tokens-permissions
-scraped: 2026-05-12T12:03:32.287634
 ---
 
 # Access tokens and permissions

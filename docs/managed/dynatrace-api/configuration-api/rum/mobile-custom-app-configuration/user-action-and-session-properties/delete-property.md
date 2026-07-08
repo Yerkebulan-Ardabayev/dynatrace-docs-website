@@ -1,7 +1,6 @@
 ---
 title: Mobile and custom app API - DELETE user session property
 source: https://docs.dynatrace.com/managed/dynatrace-api/configuration-api/rum/mobile-custom-app-configuration/user-action-and-session-properties/delete-property
-scraped: 2026-05-12T11:15:34.223674
 ---
 
 # Mobile and custom app API - DELETE user session property

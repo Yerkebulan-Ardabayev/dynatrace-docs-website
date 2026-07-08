@@ -1,7 +1,6 @@
 ---
 title: Extensions API - PUT global configuration
 source: https://docs.dynatrace.com/managed/dynatrace-api/configuration-api/extensions-api/put-global-configuration
-scraped: 2026-05-12T11:19:57.434041
 ---
 
 # Extensions API - PUT global configuration
@@ -192,7 +191,7 @@ This is a model of the request body, showing the possible elements. It has to be
 | Element | Type | Description |
 | --- | --- | --- |
 | code | integer | The HTTP status code |
-| constraintViolations | [ConstraintViolation[]](#openapi-definition-ConstraintViolation) | A list of constraint violations |
+| constraintViolations | [ConstraintViolation](#openapi-definition-ConstraintViolation)[] | A list of constraint violations |
 | message | string | The error message |
 
 #### The `ConstraintViolation` object

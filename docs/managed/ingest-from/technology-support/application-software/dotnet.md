@@ -1,7 +1,6 @@
 ---
 title: .NET
 source: https://docs.dynatrace.com/managed/ingest-from/technology-support/application-software/dotnet
-scraped: 2026-05-12T11:23:02.277056
 ---
 
 # .NET
@@ -10,7 +9,7 @@ scraped: 2026-05-12T11:23:02.277056
 
 * Reference
 * 3-min read
-* Updated on Oct 23, 2025
+* Updated on Apr 30, 2026
 
 Dynatrace OneAgent instruments your .NET applications by placing trace statements at strategic locations in your code for code tracing, performance metrics, error detection, dependency tracking, and more.
 
@@ -20,12 +19,12 @@ Not every detected .NET application is instrumented by default. Dynatrace mainta
 
 Dynatrace provides extensive .NET monitoring capabilities:
 
-* [OpenTelemetry supportï»¿](https://github.com/open-telemetry/opentelemetry-dotnet) for capturing traces and ingesting metrics.  
+* [OpenTelemetry support﻿](https://github.com/open-telemetry/opentelemetry-dotnet) for capturing traces and ingesting metrics.  
   For more information, see [Instrument your .NET application with OpenTelemetry](/managed/ingest-from/opentelemetry/walkthroughs/dotnet "Learn how to instrument your .NET application using OpenTelemetry and Dynatrace.")
 * End-to-end transaction tracing of requests to web services, remoting services, queues, and databases. [Learn more about services](/managed/observe/application-observability/services "Learn how to monitor and analyze your services, define and use request attributes, and more.")
 * [OneAgent SDK](/managed/ingest-from/extend-dynatrace/extend-tracing/oneagent-sdk "The Dynatrace OneAgent SDK enables you to instrument your application manually to extend end-to-end visibility for frameworks and technologies for which there is no code module yet available.") for custom tracing
 * Garbage collection, process metrics, and much more
-* [Always-on 24x7 production grade CPU profilingï»¿](https://www.dynatrace.com/news/blog/analyze-cpu-consumption-background-threads/)
+* [Always-on 24x7 production grade CPU profiling﻿](https://www.dynatrace.com/news/blog/analyze-cpu-consumption-background-threads/)
 
 See our [supported technologies matrix](/managed/ingest-from/technology-support#net "Find technical details related to Dynatrace support for specific platforms and development frameworks.") for details on supported frameworks.
 
@@ -69,8 +68,8 @@ Limited support: Dynatrace can only solve problems that can be reproduced on sup
 
 Dynatrace is committed to support each version according to its support lifetime:
 
-* See [Microsoft support lifecycle for .NET and .NET Coreï»¿](https://docs.microsoft.com/en-us/lifecycle/products/microsoft-net-and-net-core).
-* See [Microsoft support lifecycle for .NET Frameworkï»¿](https://docs.microsoft.com/en-us/lifecycle/products/microsoft-net-framework).
+* See [Microsoft support lifecycle for .NET and .NET Core﻿](https://docs.microsoft.com/en-us/lifecycle/products/microsoft-net-and-net-core).
+* See [Microsoft support lifecycle for .NET Framework﻿](https://docs.microsoft.com/en-us/lifecycle/products/microsoft-net-framework).
 
 ## Limitations
 
@@ -98,14 +97,14 @@ Method hotspots might not be able to correctly capture stack traces on musl-libc
 
 ### Trimming
 
-The optional .NET feature [trimmed self-contained deployments and executablesï»¿](https://docs.microsoft.com/en-us/dotnet/core/deploying/trim-self-contained) was introduced to optimize the size of packaged applications.
-Trimmed applications are not supported by OneAgent therefore this option must be turned off. [UiPathï»¿](https://www.uipath.com/), for example, uses trimming, which makes it impossible to instrument with OneAgent.
+The optional .NET feature [trimmed self-contained deployments and executables﻿](https://docs.microsoft.com/en-us/dotnet/core/deploying/trim-self-contained) was introduced to optimize the size of packaged applications.
+Starting with OneAgent version 1.337+, trimmed self-contained deployments are supported when you reference the [Dynatrace.OneAgent.Trimming﻿](https://www.nuget.org/packages/Dynatrace.OneAgent.Trimming) NuGet package in your application. We strongly recommend using the latest version of the package to ensure the most recent features are available.
 
 ### Single-file applications
 
-The .NET SDK supports building your application as a [single fileï»¿](https://learn.microsoft.com/en-us/dotnet/core/deploying/single-file/overview?tabs=cli) that bundles all dependencies into one platform-dependent executable.
+The .NET SDK supports building your application as a [single file﻿](https://learn.microsoft.com/en-us/dotnet/core/deploying/single-file/overview?tabs=cli) that bundles all dependencies into one platform-dependent executable.
 
-Depending on whether you use [framework-dependent deploymentï»¿](https://learn.microsoft.com/en-us/dotnet/core/deploying/#publish-framework-dependent) or [self-contained applicationsï»¿](https://learn.microsoft.com/en-us/dotnet/core/deploying/#publish-self-contained), the runtime will also be bundled into the executable.
+Depending on whether you use [framework-dependent deployment﻿](https://learn.microsoft.com/en-us/dotnet/core/deploying/#publish-framework-dependent) or [self-contained applications﻿](https://learn.microsoft.com/en-us/dotnet/core/deploying/#publish-self-contained), the runtime will also be bundled into the executable.
 
 Consider also the following information:
 

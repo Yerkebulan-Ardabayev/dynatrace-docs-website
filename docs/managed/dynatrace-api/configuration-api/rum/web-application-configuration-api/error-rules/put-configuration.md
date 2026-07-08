@@ -1,7 +1,6 @@
 ---
 title: Web application configuration API - PUT error rules
 source: https://docs.dynatrace.com/managed/dynatrace-api/configuration-api/rum/web-application-configuration-api/error-rules/put-configuration
-scraped: 2026-05-12T11:16:50.407322
 ---
 
 # Web application configuration API - PUT error rules
@@ -41,8 +40,8 @@ Configuration of error rules in the web application.
 
 | Element | Type | Description | Required |
 | --- | --- | --- | --- |
-| customErrorRules | [CustomErrorRule[]](#openapi-definition-CustomErrorRule) | An ordered list of custom errors.  Rules are evaluated from top to bottom; the first matching rule applies. | Required |
-| httpErrorRules | [HttpErrorRule[]](#openapi-definition-HttpErrorRule) | An ordered list of HTTP errors.  Rules are evaluated from top to bottom; the first matching rule applies. | Required |
+| customErrorRules | [CustomErrorRule](#openapi-definition-CustomErrorRule)[] | An ordered list of custom errors.  Rules are evaluated from top to bottom; the first matching rule applies. | Required |
+| httpErrorRules | [HttpErrorRule](#openapi-definition-HttpErrorRule)[] | An ordered list of HTTP errors.  Rules are evaluated from top to bottom; the first matching rule applies. | Required |
 | ignoreCustomErrorsInApdexCalculation | boolean | Exclude (`true`) or include (`false`) custom errors listed in **customErrorRules** in Apdex calculation. | Required |
 | ignoreHttpErrorsInApdexCalculation | boolean | Exclude (`true`) or include (`false`) HTTP errors listed in **httpErrorRules** in Apdex calculation. | Required |
 | ignoreJavaScriptErrorsInApdexCalculation | boolean | Exclude (`true`) or include (`false`) JavaScript errors in Apdex calculation. | Required |
@@ -54,7 +53,7 @@ Configuration of the custom error in the web application.
 | Element | Type | Description | Required |
 | --- | --- | --- | --- |
 | capture | boolean | Capture (`true`) or ignore (`false`) the error. | Required |
-| customAlerting | boolean | Include (`true`) or exclude (`false`) the error in Davis AI [problem detection and analysisï»¿](https://dt-url.net/a963kd2). | Required |
+| customAlerting | boolean | Include (`true`) or exclude (`false`) the error in Davis AI [problem detection and analysis﻿](https://dt-url.net/a963kd2). | Required |
 | impactApdex | boolean | Include (`true`) or exclude (`false`) the error in Apdex calculation. | Required |
 | keyMatcher | string | The matching operation for the **keyPattern**. The element can hold these values * `BEGINS_WITH` * `CONTAINS` * `ENDS_WITH` * `EQUALS` | Optional |
 | keyPattern | string | The key of the error to look for. | Optional |
@@ -69,7 +68,7 @@ Configuration of the HTTP error in the web application.
 | --- | --- | --- | --- |
 | capture | boolean | Capture (`true`) or ignore (`false`) the error. | Required |
 | considerBlockedRequests | boolean | If `true`, match by errors that have CSP Rule violations. | Optional |
-| considerForAi | boolean | Include (`true`) or exclude (`false`) the error in Davis AI [problem detection and analysisï»¿](https://dt-url.net/a963kd2). | Required |
+| considerForAi | boolean | Include (`true`) or exclude (`false`) the error in Davis AI [problem detection and analysis﻿](https://dt-url.net/a963kd2). | Required |
 | considerUnknownErrorCode | boolean | If `true`, match by errors that have unknown HTTP status code. | Required |
 | errorCodes | string | The HTTP status code or status code range to match by.  This field is required if **considerUnknownErrorCode** AND **considerBlockedRequests** are both set to `false`. | Optional |
 | filter | string | The matching rule for the URL. The element can hold these values * `BEGINS_WITH` * `CONTAINS` * `ENDS_WITH` * `EQUALS` | Optional |
@@ -219,7 +218,7 @@ This is a model of the request body, showing the possible elements. It has to be
 | Element | Type | Description |
 | --- | --- | --- |
 | code | integer | The HTTP status code |
-| constraintViolations | [ConstraintViolation[]](#openapi-definition-ConstraintViolation) | A list of constraint violations |
+| constraintViolations | [ConstraintViolation](#openapi-definition-ConstraintViolation)[] | A list of constraint violations |
 | message | string | The error message |
 
 #### The `ConstraintViolation` object
@@ -293,4 +292,4 @@ A list of constraint violations
 
 ## Related topics
 
-* [Configure error detection for web applications](/managed/observe/digital-experience/web-applications/additional-configuration/configure-errors "Configure your application to capture or ignore request, custom, and JavaScript errors.")
+* [Configure error detection for web applications in RUM Classic](/managed/observe/digital-experience/rum-classic/web-applications/additional-configuration/configure-errors "Configure your application to capture or ignore request, custom, and JavaScript errors.")

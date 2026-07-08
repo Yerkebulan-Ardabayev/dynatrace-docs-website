@@ -1,7 +1,6 @@
 ---
 title: Regular expressions in Dynatrace
 source: https://docs.dynatrace.com/managed/manage/tags-and-metadata/reference/regular-expressions-in-dynatrace
-scraped: 2026-05-12T11:11:35.590676
 ---
 
 # Regular expressions in Dynatrace
@@ -12,11 +11,11 @@ scraped: 2026-05-12T11:11:35.590676
 * 5-min read
 * Published Mar 28, 2018
 
-Regular expressions are very powerful if you want to find or extract a certain pattern in a string. However, with great power comes great responsibility. Regular expressions can lead to unexpected results ([lazy vs greedy matchingï»¿](https://www.regular-expressions.info/repeat.html)) and they can quickly become resource intensive ([catastrophic backtrackingï»¿](https://www.regular-expressions.info/catastrophic.html) and [repeated capture groupsï»¿](https://www.regular-expressions.info/captureall.html)).
+Regular expressions are very powerful if you want to find or extract a certain pattern in a string. However, with great power comes great responsibility. Regular expressions can lead to unexpected results ([lazy vs greedy matching﻿](https://www.regular-expressions.info/repeat.html)) and they can quickly become resource intensive ([catastrophic backtracking﻿](https://www.regular-expressions.info/catastrophic.html) and [repeated capture groups﻿](https://www.regular-expressions.info/captureall.html)).
 
 Regular expressions are also often misunderstood. A small regular expression can easily consume a lot of processing power when used incorrectly. As an example, consider this regular expression `(.*)+b`. This expression may not look dangerous, but if you execute it against a larger string that doesn't contain `b`, this expression will result in a loop that lasts more than 10 seconds.
 
-For these reasons, weâve restricted regular expressions within Dynatrace. In almost all cases however, this will not restrict you in functionality. It may force you though to learn a bit more about regular expressions.
+For these reasons, we’ve restricted regular expressions within Dynatrace. In almost all cases however, this will not restrict you in functionality. It may force you though to learn a bit more about regular expressions.
 
 ## Restrictions
 
@@ -24,7 +23,7 @@ Read the restrictions provided below to understand how to use regular expression
 
 ### Quantified or repeated groups are not allowed
 
-Quantified groups usually aren't needed and, as they can easily run out of control, we don't allow them. To better understand this, go to [https://regex101.comï»¿](https://regex101.com/r/swArJ6/30) and evaluate the following regex:
+Quantified groups usually aren't needed and, as they can easily run out of control, we don't allow them. To better understand this, go to [https://regex101.com﻿](https://regex101.com/r/swArJ6/30) and evaluate the following regex:
 
 ```
 Regex: (a+)+b
@@ -38,7 +37,7 @@ You'll notice that it will timeout. In this particular case, the problem is with
 
 ### Greedy matches in capture groups vs possessive matches.
 
-Dynatrace doesnât allow greedy matches within capture groups. Use lazy or possessive matching instead.
+Dynatrace doesn’t allow greedy matches within capture groups. Use lazy or possessive matching instead.
 
 The prototypical usage of regular expression is the term `.*`. A greedy match is defined as "Matches between zero and unlimited times, as many times as possible, giving back as needed (greedy)". The problem here is the "as many times" and the "giving back". People typically use this to match something until a boundary condition is met. Consider the following regex match:
 
@@ -64,15 +63,15 @@ Value: something. key: value; something else
 
 This match will match as long as no `;` is found after `key:` . The plus also turns this into a possessive match defined as: "Matches between zero and unlimited times, as many times as possible, without giving back (possessive)". The key point here is that it doesn't backtrack. In other words once something has matched, then engine will not reconsider and will not look back but only forward. This is also why we need to refine our match from everything (`.`) to everything but not `;`. We need to tell it to match *everything but not `;`*.
 
-If you compare the [first regexï»¿](https://regex101.com/r/EG4nNO/1) against the [secondï»¿](https://regex101.com/r/Bh0tWf/1) in a regex debugger (follow the two links), you will also notice that the first takes 42 steps and the second 9! This is why we recommend that you should use possessive quantifiers in general.
+If you compare the [first regex﻿](https://regex101.com/r/EG4nNO/1) against the [second﻿](https://regex101.com/r/Bh0tWf/1) in a regex debugger (follow the two links), you will also notice that the first takes 42 steps and the second 9! This is why we recommend that you should use possessive quantifiers in general.
 
 ### Capture groups are not allowed for simple matches
 
-Capture groups in regular expressions are used to extract information. Sometimes this concept is misused for simple find matches. As this only adds overhead and is not needed, Dynatrace doesn't allow it. In most cases, you can use [atomic groupsï»¿](https://www.regular-expressions.info/atomic.html) instead. To ensure high product performance, further grouping restrictions might apply in regex definitions, for example in [request naming rules](/managed/observe/application-observability/services/service-detection/service-detection-v1/set-up-request-naming#limitations "Adjust request naming and define the operations your services offer.").
+Capture groups in regular expressions are used to extract information. Sometimes this concept is misused for simple find matches. As this only adds overhead and is not needed, Dynatrace doesn't allow it. In most cases, you can use [atomic groups﻿](https://www.regular-expressions.info/atomic.html) instead. To ensure high product performance, further grouping restrictions might apply in regex definitions, for example in [request naming rules](/managed/observe/application-observability/services/service-detection/service-detection-v1/set-up-request-naming#limitations "Adjust request naming and define the operations your services offer.").
 
 Dynatrace allows exactly one capture group in places where you need to extract a value. The logic here is that if the regular expression contains a group, Dynatrace will use it. Otherwise, the full match is used for extraction.
 
-This means that you are not required to use capture groups at all. In most extraction scenarios, it's enough to simply define what you want to get. In an extraction case the following regex will capture the valueâno capture group needed.
+This means that you are not required to use capture groups at all. In most extraction scenarios, it's enough to simply define what you want to get. In an extraction case the following regex will capture the value—no capture group needed.
 
 If you want to capture for example the Windows version from a user agent string, you can use the following regex:
 
@@ -86,7 +85,7 @@ Value: Mozilla/5.0 (Windows NT 10.0) AppleWebKit/537.36 (KHTML, like Gecko) Chro
 
 This will capture `Windows NT 10.0` and there is no need for a capture group.
 
-### Dynatrace doesnât allow backreferences
+### Dynatrace doesn’t allow backreferences
 
 Backreferences are often used to solve hierarchical or recursive matches, both of which have a high chance of being very expensive and aren't needed in Dynatrace.
 

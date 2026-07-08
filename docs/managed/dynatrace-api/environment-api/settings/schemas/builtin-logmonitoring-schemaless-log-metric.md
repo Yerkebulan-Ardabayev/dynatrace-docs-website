@@ -1,7 +1,6 @@
 ---
 title: Settings API - Log metrics schema table
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/settings/schemas/builtin-logmonitoring-schemaless-log-metric
-scraped: 2026-05-12T11:39:51.853229
 ---
 
 # Settings API - Log metrics schema table
@@ -12,7 +11,7 @@ scraped: 2026-05-12T11:39:51.853229
 
 ### Log metrics (`builtin:logmonitoring.schemaless-log-metric)`
 
-With log metrics, you can use queries to create metrics from logs data for dashboarding, analysis, and custom alerting. Log metrics consume [DavisÂ® data unitsï»¿](https://dt-url.net/vg43xi8).
+With log metrics, you can use queries to create metrics from logs data for dashboarding, analysis, and custom alerting. Log metrics consume [Davis® data units﻿](https://dt-url.net/vg43xi8).
 
 Note that newly-defined log metrics are available only for log data ingested after metric creation.
 

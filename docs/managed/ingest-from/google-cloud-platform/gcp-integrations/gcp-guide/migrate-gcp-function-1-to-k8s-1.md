@@ -1,7 +1,6 @@
 ---
 title: Migrate from Google Cloud Functions 1.0 to Google Cloud k8s 1.0
 source: https://docs.dynatrace.com/managed/ingest-from/google-cloud-platform/gcp-integrations/gcp-guide/migrate-gcp-function-1-to-k8s-1
-scraped: 2026-05-12T12:08:51.547330
 ---
 
 # Migrate from Google Cloud Functions 1.0 to Google Cloud k8s 1.0

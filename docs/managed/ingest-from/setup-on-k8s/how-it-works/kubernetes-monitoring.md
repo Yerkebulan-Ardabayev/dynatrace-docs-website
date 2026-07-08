@@ -1,7 +1,6 @@
 ---
 title: Kubernetes platform monitoring
 source: https://docs.dynatrace.com/managed/ingest-from/setup-on-k8s/how-it-works/kubernetes-monitoring
-scraped: 2026-05-12T11:54:01.558186
 ---
 
 # Kubernetes platform monitoring

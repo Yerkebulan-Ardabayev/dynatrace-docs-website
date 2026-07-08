@@ -1,7 +1,6 @@
 ---
 title: About Extensions
 source: https://docs.dynatrace.com/managed/ingest-from/extensions/concepts
-scraped: 2026-05-12T12:02:16.435697
 ---
 
 # About Extensions
@@ -18,7 +17,7 @@ Data sources
 
 ### Extension Execution Controller (EEC)
 
-The Extension Execution Controller (EEC) is the Dynatrace component running your extensions. EEC queries either your local data sources when run on OneAgent, or remote data sources when run from an ActiveGate. EEC is automatically installed and managed with each OneAgent and ActiveGate configuration. EEC also translates all the ingested data for [Dynatrace Intelligence causation analysis](/managed/dynatrace-intelligence/ai-models/causal-correlation-analysis "Learn how DavisÂ® causal correlation analysis finds related metrics across your environment."). For more information, see [Metric ingestion](/managed/ingest-from/extend-dynatrace/extend-metrics "Learn how to extend metric observability in Dynatrace.").
+The Extension Execution Controller (EEC) is the Dynatrace component running your extensions. EEC queries either your local data sources when run on OneAgent, or remote data sources when run from an ActiveGate. EEC is automatically installed and managed with each OneAgent and ActiveGate configuration. EEC also translates all the ingested data for [Dynatrace Intelligence causation analysis](/managed/dynatrace-intelligence/ai-models/causal-correlation-analysis "Learn how Davis® causal correlation analysis finds related metrics across your environment."). For more information, see [Metric ingestion](/managed/ingest-from/extend-dynatrace/extend-metrics "Learn how to extend metric observability in Dynatrace.").
 
 To run local extensions, make sure EEC is enabled at the environment, host, or host group level.
 
@@ -32,7 +31,7 @@ Enable for a single host
 
 1. Go to **Hosts**.
 2. Find and select your host to display the host overview page.
-3. In the upper-right corner of the host overview page, select **More** (**â¦**) > **Settings**.
+3. In the upper-right corner of the host overview page, select **More** (**…**) > **Settings**.
 
 4. In the host settings, select **Extension Execution Controller**.
 5. Turn on **Enable Extension Execution Controller**.
@@ -67,8 +66,8 @@ OneAgent version 1.243+ You can set your limit for resource consumption in the *
 
 CPU and RAM limits are applied to the sum of the resources consumed by the EEC and all data source processes. There are two stages:
 
-* Soft limitâEvery incoming test is rejected if consumption exceeds the limit. This stage applies to ActiveGate only.
-* Hard limitâThe most recently started task is the first to be stopped and rejected.
+* Soft limit—Every incoming test is rejected if consumption exceeds the limit. This stage applies to ActiveGate only.
+* Hard limit—The most recently started task is the first to be stopped and rejected.
 
   + For OneAgent, tasks are stopped and restarted with a delay. The delay time increases as the process restarts.
   + For ActiveGate, tasks are stopped and rejected until consumption is below the limit.
@@ -82,7 +81,7 @@ Change the performance profile at the host level
 
 1. Go to **Hosts**.
 2. Find and select your host to display the host overview page.
-3. In the upper-right corner of the host overview page, select **More** (**â¦**) > **Settings**.
+3. In the upper-right corner of the host overview page, select **More** (**…**) > **Settings**.
 
 4. In the host settings, select **Extension Execution Controller**.
 5. Set **Performance profile** to `Default` or `High limits`.
@@ -125,14 +124,14 @@ To start monitoring using the extension, you must use an API call to add a monit
 
 Without a monitoring configuration, an extension is visible in the Dynatrace platform, but it doesn't collect any data.
 
-* See [Oracle Database monitoring configuration](/managed/ingest-from/extensions/develop-your-extensions/data-sources/sql/oracle-monitoring "Create and activate a monitoring configuration for an SQL data source based extension for Oracle Database.") to learn how to create an Oracle Databaseâspecific monitoring configuration.
-* See [Microsoft SQL Server monitoring configuration](/managed/ingest-from/extensions/develop-your-extensions/data-sources/sql/microsoft-sql-monitoring "Microsoft SQL extensions in the Extensions framework.") to learn how to create a Microsoft Databaseâspecific monitoring configuration.
-* See [IBM Database monitoring configuration](/managed/ingest-from/extensions/develop-your-extensions/data-sources/sql/ibm-monitoring "IBM DB2 extensions in the Extensions framework.") to learn how to create an IBM Databaseâspecific monitoring configuration.
-* See [MySQL monitoring configuration](/managed/ingest-from/extensions/develop-your-extensions/data-sources/sql/mysql-monitoring "MySQL extensions in the Extensions framework.") to learn how to create a MySQL Databaseâspecific monitoring configuration.
-* See [PostgreSQL monitoring configuration](/managed/ingest-from/extensions/develop-your-extensions/data-sources/sql/postgresql-monitoring "PostgreSQL extensions in the Extensions framework.") to learn how to create a PostgreSQL Databaseâspecific monitoring configuration.
-* See [SAP Hana Database monitoring configuration](/managed/ingest-from/extensions/develop-your-extensions/data-sources/sql/sap-hana-monitoring "SAP Hana extensions in the Extensions framework.") to learn how to create a SAP Hana Databaseâspecific monitoring configuration.
-* See [Snowflake Database monitoring configuration](/managed/ingest-from/extensions/develop-your-extensions/data-sources/sql/snowflake-monitoring "Snowflake Database extensions in the Extensions framework.") to learn how to create a Snowflake Databaseâspecific monitoring configuration.
-* See [JDBC monitoring configuration](/managed/ingest-from/extensions/develop-your-extensions/data-sources/sql/jdbc-monitoring "JDBC extensions in the Extensions framework.") to learn how to create a JDBC Databaseâspecific monitoring configuration.
+* See [Oracle Database monitoring configuration](/managed/ingest-from/extensions/develop-your-extensions/data-sources/sql/oracle-monitoring "Create and activate a monitoring configuration for an SQL data source based extension for Oracle Database.") to learn how to create an Oracle Database–specific monitoring configuration.
+* See [Microsoft SQL Server monitoring configuration](/managed/ingest-from/extensions/develop-your-extensions/data-sources/sql/microsoft-sql-monitoring "Microsoft SQL extensions in the Extensions framework.") to learn how to create a Microsoft Database–specific monitoring configuration.
+* See [IBM Database monitoring configuration](/managed/ingest-from/extensions/develop-your-extensions/data-sources/sql/ibm-monitoring "IBM DB2 extensions in the Extensions framework.") to learn how to create an IBM Database–specific monitoring configuration.
+* See [MySQL monitoring configuration](/managed/ingest-from/extensions/develop-your-extensions/data-sources/sql/mysql-monitoring "MySQL extensions in the Extensions framework.") to learn how to create a MySQL Database–specific monitoring configuration.
+* See [PostgreSQL monitoring configuration](/managed/ingest-from/extensions/develop-your-extensions/data-sources/sql/postgresql-monitoring "PostgreSQL extensions in the Extensions framework.") to learn how to create a PostgreSQL Database–specific monitoring configuration.
+* See [SAP Hana Database monitoring configuration](/managed/ingest-from/extensions/develop-your-extensions/data-sources/sql/sap-hana-monitoring "SAP Hana extensions in the Extensions framework.") to learn how to create a SAP Hana Database–specific monitoring configuration.
+* See [Snowflake Database monitoring configuration](/managed/ingest-from/extensions/develop-your-extensions/data-sources/sql/snowflake-monitoring "Snowflake Database extensions in the Extensions framework.") to learn how to create a Snowflake Database–specific monitoring configuration.
+* See [JDBC monitoring configuration](/managed/ingest-from/extensions/develop-your-extensions/data-sources/sql/jdbc-monitoring "JDBC extensions in the Extensions framework.") to learn how to create a JDBC Database–specific monitoring configuration.
 
 ### Extension package
 
@@ -151,15 +150,15 @@ bundle.zip
 
 
 
-â   extension.zip
+│   extension.zip
 
 
 
-â   extension.zip.sig
+│   extension.zip.sig
 
 
 
-â   extension.zip.sig.tsr
+│   extension.zip.sig.tsr
 ```
 
 ### Dynatrace CLI
@@ -172,7 +171,7 @@ With Dynatrace CLI you can:
 * Generate development certificates for extension signing
 * Generate CA certificates for development
 
-For details, see [Sign extension](/managed/ingest-from/extensions/develop-your-extensions/sign-extensions "Learn how to sign an extension, upload certificates and custom extensions, and configure certificate permissions using the Dynatrace Extensions Framework.") and the [dt-cliï»¿](https://github.com/dynatrace-oss/dt-cli) project on GitHub.
+For details, see [Sign extension](/managed/ingest-from/extensions/develop-your-extensions/sign-extensions "Learn how to sign an extension, upload certificates and custom extensions, and configure certificate permissions using the Dynatrace Extensions Framework.") and the [dt-cli﻿](https://github.com/dynatrace-oss/dt-cli) project on GitHub.
 
 ### Feature sets
 

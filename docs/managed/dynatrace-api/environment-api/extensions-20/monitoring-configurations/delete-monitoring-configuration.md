@@ -1,7 +1,6 @@
 ---
 title: Extensions 2.0 API - DELETE a monitoring configuration
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/extensions-20/monitoring-configurations/delete-monitoring-configuration
-scraped: 2026-05-12T11:56:38.541073
 ---
 
 # Extensions 2.0 API - DELETE a monitoring configuration
@@ -56,7 +55,7 @@ To learn how to obtain and use it, see [Tokens and authentication](/managed/disc
 | Element | Type | Description |
 | --- | --- | --- |
 | code | integer | The HTTP status code |
-| constraintViolations | [ConstraintViolation[]](#openapi-definition-ConstraintViolation) | A list of constraint violations |
+| constraintViolations | [ConstraintViolation](#openapi-definition-ConstraintViolation)[] | A list of constraint violations |
 | message | string | The error message |
 
 #### The `ConstraintViolation` object

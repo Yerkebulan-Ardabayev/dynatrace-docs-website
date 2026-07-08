@@ -1,7 +1,6 @@
 ---
 title: Update configuration via editable properties
 source: https://docs.dynatrace.com/managed/upgrade/saas-upgrade-assistant/sua-update-editable-properties
-scraped: 2026-05-12T12:16:29.266369
 ---
 
 # Update configuration via editable properties

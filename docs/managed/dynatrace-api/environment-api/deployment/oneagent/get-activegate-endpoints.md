@@ -1,7 +1,6 @@
 ---
 title: Deployment API - View ActiveGate endpoints for OneAgent
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/deployment/oneagent/get-activegate-endpoints
-scraped: 2026-05-12T11:58:15.850316
 ---
 
 # Deployment API - View ActiveGate endpoints for OneAgent

@@ -1,7 +1,6 @@
 ---
 title: Dynatrace Platform Subscription API - GET cost per environment
 source: https://docs.dynatrace.com/managed/dynatrace-api/account-management-api/dynatrace-platform-subscription-api/cost/get-cost-environment
-scraped: 2026-05-12T11:24:35.549083
 ---
 
 # Dynatrace Platform Subscription API - GET cost per environment
@@ -28,11 +27,11 @@ To execute this request, you need the **Allow read access for usage and consumpt
 | Parameter | Type | Description | In | Required |
 | --- | --- | --- | --- | --- |
 | accountUuid | string | The ID of the required account.  You can find the UUID on the **Account Management** > **Identity & access management** > **OAuth clients** page, during creation of an OAuth client. | path | Required |
-| subscriptionUuid | string | The UUID of the requested subscription.  Fetch the list of subscriptions via the [GET all subscriptionsï»¿](https://dt-url.net/jq03jvq) request. | path | Required |
+| subscriptionUuid | string | The UUID of the requested subscription.  Fetch the list of subscriptions via the [GET all subscriptions﻿](https://dt-url.net/jq03jvq) request. | path | Required |
 | startTime | string | The start time of the query in `2021-05-01T15:11:00Z` format. Timeframe limits (startTime, endTime) are both required, unless a "page-key" is provided instead. | query | Optional |
 | endTime | string | The end time of the query in `2021-05-01T15:11:00Z` format. Timeframe limits (startTime, endTime) are both required, unless a "page-key" is provided instead. | query | Optional |
 | environmentIds | string[] | A list of environments for which you want to read the usage data. To specify several environments, separate them with a comma (`,`). | query | Optional |
-| capabilityKeys | string[] | A list of capabilities for which you want to read the usage data. To specify several capabilities, separate them with a comma (`,`).  To obtain capability keys, use the [GET subscriptionsï»¿](https://dt-url.net/qd43uld) call and look for the **capabilities** field of the response. | query | Optional |
+| capabilityKeys | string[] | A list of capabilities for which you want to read the usage data. To specify several capabilities, separate them with a comma (`,`).  To obtain capability keys, use the [GET subscriptions﻿](https://dt-url.net/qd43uld) call and look for the **capabilities** field of the response. | query | Optional |
 | clusterIds | string[] | A list of Managed clusters for which you want to read the usage data.  Not applicable to SaaS environments. | query | Optional |
 | page-key | string | The cursor for the next page of results. You can find it in the **nextPageKey** field of the previous response. | query | Optional |
 | page-size | number | Defines the requested number of entries for the next page. | query | Optional |
@@ -56,7 +55,7 @@ To execute this request, you need the **Allow read access for usage and consumpt
 
 | Element | Type | Description |
 | --- | --- | --- |
-| data | [SubscriptionEnvironmentCostV3Dto[]](#openapi-definition-SubscriptionEnvironmentCostV3Dto) | Subscription cost data |
+| data | [SubscriptionEnvironmentCostV3Dto](#openapi-definition-SubscriptionEnvironmentCostV3Dto)[] | Subscription cost data |
 | lastModifiedTime | string | The time the subscription data was last modified in `2021-05-01T15:11:00Z` format. |
 | nextPageKey | string | The next page key for pagination if next page exists |
 
@@ -66,7 +65,7 @@ To execute this request, you need the **Allow read access for usage and consumpt
 | --- | --- | --- |
 | clusterId | string | The UUID of the Managed cluster |
 | environmentId | string | The UUID of the environment. |
-| cost | [SubscriptionCapabilityCostReceivedDto[]](#openapi-definition-SubscriptionCapabilityCostReceivedDto) | Subscription costs for the environment. |
+| cost | [SubscriptionCapabilityCostReceivedDto](#openapi-definition-SubscriptionCapabilityCostReceivedDto)[] | Subscription costs for the environment. |
 
 #### The `SubscriptionCapabilityCostReceivedDto` object
 

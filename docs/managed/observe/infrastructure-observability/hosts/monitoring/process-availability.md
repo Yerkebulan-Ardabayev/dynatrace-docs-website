@@ -1,7 +1,6 @@
 ---
 title: Process availability
 source: https://docs.dynatrace.com/managed/observe/infrastructure-observability/hosts/monitoring/process-availability
-scraped: 2026-05-12T12:05:06.660174
 ---
 
 # Process availability
@@ -28,7 +27,7 @@ You can create rules to apply at the environment, host group, and host levels. L
 
    * **Environment**: go to **Settings** and select **Processes and containers** > **Process availability**.
    * **Host group**: go to the host group page at `https://your-environment/ui/settings/HOST_GROUP-NAME` and select **Process availability**.
-   * **Host**: go to the host overview page, select **More** (**â¦**), go to **Settings**, and select **Process availability**.
+   * **Host**: go to the host overview page, select **More** (**…**), go to **Settings**, and select **Process availability**.
 2. On the **Process availability** page, select **Add monitoring rule**. Process availability can comprise multiple individual detection rules. A process is identified if all of the individual detection rules match.
 3. In **Monitoring rule name**, enter the name under which the rule will be listed.
 4. Under **Operating system** (OneAgent version 1.287+), select the operating systems on which the monitoring rule should be applied. You can select more than one.
@@ -41,23 +40,23 @@ You can create rules to apply at the environment, host group, and host levels. L
 
    A single monitoring rule can have multiple detection rules. If you add more than one detection rule, a process is identified if all the detection rules match (AND relation).
 
-   * **Rule scope**âYour selection of **Process** or **Host** determines the subsequent configuration details. Expand below for more.
+   * **Rule scope**—Your selection of **Process** or **Host** determines the subsequent configuration details. Expand below for more.
 
      Process
 
-     + **Select process property**âThe object against which your detection rule will be tested:
+     + **Select process property**—The object against which your detection rule will be tested:
 
-       - **Command line - single argument**âEach command line parameter is evaluated individually. Evaluation is case-sensitive.
-       - **Command line**âOneAgent version 1.333+ The entire command line is evaluated. Evaluation is case-sensitive.
-       - **Executable**âEvaluation is case-sensitive for Linux and AIX, and **not** case-sensitive for Windows.
-       - **Executable path**âEvaluation is case-sensitive for Linux and AIX, and **not** case-sensitive for Windows.
-       - **User**âOneAgent version 1.287+ Evaluation is case-sensitive for Linux and AIX, and **not** case-sensitive for Windows.
+       - **Command line - single argument**—Each command line parameter is evaluated individually. Evaluation is case-sensitive.
+       - **Command line**—OneAgent version 1.333+ The entire command line is evaluated. Evaluation is case-sensitive.
+       - **Executable**—Evaluation is case-sensitive for Linux and AIX, and **not** case-sensitive for Windows.
+       - **Executable path**—Evaluation is case-sensitive for Linux and AIX, and **not** case-sensitive for Windows.
+       - **User**—OneAgent version 1.287+ Evaluation is case-sensitive for Linux and AIX, and **not** case-sensitive for Windows.
 
      The comparators evaluate each command line parameter individually for the **Command line - single argument** property (referred to as **Command line** in versions prior to 1.333). For example, a process `python my.py -ab -cd -ef` will be matched with a condition `$contains(cd)`, `$eq(-ab)`, but won't be matched with `$suffix(-cd -ef)` because `-cd` and `-ef` are distinct arguments, which are processed separately.
 
-     OneAgent version 1.307+ The executable is also treated as a part of the command line as its the first argument.
+     OneAgent version 1.307+ The executable is also treated as a part of the command line as it's the first argument.
 
-     + **Condition**âDepending on what you want your rule to match, you can define a string that uses:
+     + **Condition**—Depending on what you want your rule to match, you can define a string that uses:
 
        - `$contains` matches if the property contains the specified value. For example, `$contains(keepalived)` matches if `keepalived` occurs anywhere in the property.
        - `$eq` matches if the property exactly matches the specified value. For example, `$eq(-d)` matches if `-d` exactly matches the property.
@@ -75,16 +74,16 @@ You can create rules to apply at the environment, host group, and host levels. L
      + **Key** specifies the metadata key you want to match
      + **Condition** in which you can define a string that:
 
-       - `$contains(production)` â Matches if `production` appears anywhere in the host metadata value.
-       - `$eq(production)` â Matches if `production` matches the host metadata value exactly.
-       - `$prefix(production)` â Matches if `production` matches the prefix of the host metadata value.
-       - `$suffix(production)` â Matches if `production` matches the suffix of the host metadata value.
+       - `$contains(production)` – Matches if `production` appears anywhere in the host metadata value.
+       - `$eq(production)` – Matches if `production` matches the host metadata value exactly.
+       - `$prefix(production)` – Matches if `production` matches the prefix of the host metadata value.
+       - `$suffix(production)` – Matches if `production` matches the suffix of the host metadata value.
 
        Available logic operations:
 
-       - `$not($eq(production))` â Matches if the host metadata value is different from production.
-       - `$and($prefix(production),$suffix(main))` â Matches if host metadata value starts with production and ends with main.
-       - `$or($prefix(production),$suffix(main))` â Matches if host metadata value starts with production or ends with main.
+       - `$not($eq(production))` – Matches if the host metadata value is different from production.
+       - `$and($prefix(production),$suffix(main))` – Matches if host metadata value starts with production and ends with main.
+       - `$or($prefix(production),$suffix(main))` – Matches if host metadata value starts with production or ends with main.
 
        **Escape special characters**: When including special characters such as `(` and `)` within your matching expressions, escape these characters with a tilde `~`. For example, to match the metadata value `my(amazing)property`, enter `$eq(my~(amazing~)property)`.
 7. If you need to add another detection rule to this monitoring rule, repeat the previous step.

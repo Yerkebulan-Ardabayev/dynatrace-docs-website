@@ -1,7 +1,6 @@
 ---
 title: Settings API - Apdex configuration for custom actions schema table
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/settings/schemas/builtin-rum-web-key-performance-metric-custom-actions
-scraped: 2026-05-12T11:43:16.876223
 ---
 
 # Settings API - Apdex configuration for custom actions schema table
@@ -12,7 +11,7 @@ scraped: 2026-05-12T11:43:16.876223
 
 ### Apdex configuration for custom actions (`builtin:rum.web.key-performance-metric-custom-actions)`
 
-Set the Tolerating and Frustrated performance thresholds to [refine the Apdex calculationsï»¿](https://dt-url.net/apdex-thresholds) for this application.
+Set the Tolerating and Frustrated performance thresholds to [refine the Apdex calculations﻿](https://dt-url.net/apdex-thresholds) for this application.
 
 The key performance metric for custom actions is always **User action duration**.
 

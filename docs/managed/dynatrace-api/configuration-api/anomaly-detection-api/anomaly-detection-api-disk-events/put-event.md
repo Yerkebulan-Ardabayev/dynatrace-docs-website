@@ -1,7 +1,6 @@
 ---
 title: Disk events anomaly detection API - PUT an event
 source: https://docs.dynatrace.com/managed/dynatrace-api/configuration-api/anomaly-detection-api/anomaly-detection-api-disk-events/put-event
-scraped: 2026-05-12T11:20:27.866686
 ---
 
 # Disk events anomaly detection API - PUT an event
@@ -47,7 +46,7 @@ To learn how to obtain and use it, see [Tokens and authentication](/managed/disc
 | metric | string | The metric to monitor. The element can hold these values * `LOW_DISK_SPACE` * `LOW_INODES` * `READ_TIME_EXCEEDING` * `WRITE_TIME_EXCEEDING` | Required |
 | name | string | The name of the disk event rule. | Required |
 | samples | integer | The number of samples to evaluate. | Required |
-| tagFilters | [TagFilter[]](#openapi-definition-TagFilter) | Narrows the rule usage down to the hosts matching the specified tags. | Optional |
+| tagFilters | [TagFilter](#openapi-definition-TagFilter)[] | Narrows the rule usage down to the hosts matching the specified tags. | Optional |
 | threshold | number | The threshold to trigger disk event.  * A percentage for `LowDiskSpace` or `LowInodes` metrics. * In milliseconds for `ReadTimeExceeding` or `WriteTimeExceeding` metrics. | Required |
 | violatingSamples | integer | The number of samples that must violate the threshold to trigger an event. Must not exceed the number of evaluated samples. | Required |
 
@@ -246,7 +245,7 @@ The short representation of a Dynatrace entity.
 | Element | Type | Description |
 | --- | --- | --- |
 | code | integer | The HTTP status code |
-| constraintViolations | [ConstraintViolation[]](#openapi-definition-ConstraintViolation) | A list of constraint violations |
+| constraintViolations | [ConstraintViolation](#openapi-definition-ConstraintViolation)[] | A list of constraint violations |
 | message | string | The error message |
 
 #### The `ConstraintViolation` object
@@ -378,7 +377,7 @@ To learn how to obtain and use it, see [Tokens and authentication](/managed/disc
 | Element | Type | Description |
 | --- | --- | --- |
 | code | integer | The HTTP status code |
-| constraintViolations | [ConstraintViolation[]](#openapi-definition-ConstraintViolation) | A list of constraint violations |
+| constraintViolations | [ConstraintViolation](#openapi-definition-ConstraintViolation)[] | A list of constraint violations |
 | message | string | The error message |
 
 #### The `ConstraintViolation` object
@@ -606,4 +605,4 @@ Custom disk events rule - updated
 
 ## Related topics
 
-* [DavisÂ® AI](/managed/dynatrace-intelligence "Get familiar with the capabilities of Davis AI.")
+* [Davis® AI](/managed/dynatrace-intelligence "Learn how Davis® AI detects performance anomalies, identifies root causes, and uses AI models for adaptive thresholds across your environment.")

@@ -1,7 +1,6 @@
 ---
 title: Settings API - Extension Execution Controller schema table
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/settings/schemas/builtin-eec-local
-scraped: 2026-05-12T11:44:38.534632
 ---
 
 # Settings API - Extension Execution Controller schema table
@@ -37,4 +36,4 @@ To execute this request, you need an access token with **Read settings** (`setti
 | Enable Extension Execution Controller `enabled` | boolean | - | Required |
 | Enable local HTTP Metric, Log and Event Ingest API `ingestActive` | boolean | - | Required |
 | Enable Dynatrace StatsD `statsdActive` | boolean | This is applicable only to non-containerized Linux and Windows hosts | Required |
-| Performance profile `performanceProfile` | enum | Select performance profile for Extension Execution Controller [Documentationï»¿](https://www.dynatrace.com/support/help/shortlink/extensions-concepts#resource-consumption "More about performance profiles") The element has these enums * `DEFAULT` * `HIGH` | Required |
+| Performance profile `performanceProfile` | enum | Select performance profile for Extension Execution Controller [Documentation﻿](https://www.dynatrace.com/support/help/shortlink/extensions-concepts#resource-consumption "More about performance profiles") The element has these enums * `DEFAULT` * `HIGH` | Required |

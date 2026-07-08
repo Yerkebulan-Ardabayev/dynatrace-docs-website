@@ -1,7 +1,6 @@
 ---
 title: Upgrade from Managed to SaaS deployment
 source: https://docs.dynatrace.com/managed/upgrade
-scraped: 2026-05-12T11:37:10.962407
 ---
 
 # Upgrade from Managed to SaaS deployment
@@ -30,4 +29,4 @@ Find out what to do after your upgrade to Dynatrace SaaS is complete.](/managed/
 
 Questions?
 
-Visit the [Upgrade to SaaS forumï»¿](https://community.dynatrace.com/t5/Upgrade-to-SaaS/bd-p/upgrade_to_saas) to ask questions, get answers, and share what you've learned with others.
+Visit the [Upgrade to SaaS forum﻿](https://community.dynatrace.com/t5/Upgrade-to-SaaS/bd-p/upgrade_to_saas) to ask questions, get answers, and share what you've learned with others.

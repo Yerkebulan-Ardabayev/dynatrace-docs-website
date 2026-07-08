@@ -1,7 +1,6 @@
 ---
 title: Receive OpenTelemetry data with the Kafka receiver
 source: https://docs.dynatrace.com/managed/ingest-from/opentelemetry/collector/use-cases/kafka/receiver
-scraped: 2026-05-12T12:15:06.191704
 ---
 
 # Receive OpenTelemetry data with the Kafka receiver
@@ -21,9 +20,9 @@ The following configuration example shows how you configure Kafka to read data f
   + [Dynatrace Collector](/managed/ingest-from/opentelemetry/collector#dt-collector-dist "Learn how to use the OpenTelemetry Collector, including the Dynatrace OTel Collector, to ingest telemetry from OpenTelemetry.")
   + [OpenTelemetry Contrib](/managed/ingest-from/opentelemetry/collector#collector-contrib "Learn how to use the OpenTelemetry Collector, including the Dynatrace OTel Collector, to ingest telemetry from OpenTelemetry.")
   + [custom Builder version](/managed/ingest-from/opentelemetry/collector#collector-builder "Learn how to use the OpenTelemetry Collector, including the Dynatrace OTel Collector, to ingest telemetry from OpenTelemetry.")
-* The [`kafkareceiver`ï»¿](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.151.0/receiver/kafkareceiver) component.
+* The [`kafkareceiver`﻿](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.155.0/receiver/kafkareceiver) component.
 * A Kafka server deployed with a reachable `BROKER_ADDRESS`.
-  For more information, see the [Kafka Apache quickstart guideï»¿](https://kafka.apache.org/quickstart).
+  For more information, see the [Kafka Apache quickstart guide﻿](https://kafka.apache.org/quickstart).
 * The [Dynatrace API endpoint URL](/managed/ingest-from/opentelemetry/otlp-api "Learn about the OTLP API endpoints that your application uses to export OpenTelemetry data to Dynatrace.") to which the data should be exported.
 * An [API token](/managed/ingest-from/opentelemetry/otlp-api#authentication-export-to-activegate "Learn about the OTLP API endpoints that your application uses to export OpenTelemetry data to Dynatrace.") with the relevant access scope. (Only for exports to SaaS and ActiveGate.)
 
@@ -143,12 +142,12 @@ For our configuration, we configure certain components as described in the secti
 
 ### Receivers
 
-Under `receivers`, we specify [`kafka`ï»¿](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.151.0/receiver/kafkareceiver) as the active receiver component for our deployment.
+Under `receivers`, we specify [`kafka`﻿](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.155.0/receiver/kafkareceiver) as the active receiver component for our deployment.
 This is required to receive data from Kafka server.
 
 ### Exporters
 
-Under `exporters`, we specify the [`otlp_http` exporterï»¿](https://github.com/open-telemetry/opentelemetry-collector/tree/v0.151.0/exporter/otlphttpexporter) to forward data into Dynatrace.
+Under `exporters`, we specify the [`otlp_http` exporter﻿](https://github.com/open-telemetry/opentelemetry-collector/tree/v0.155.0/exporter/otlphttpexporter) to forward data into Dynatrace.
 
 For this purpose, we set the following two environment variables and reference them in the configuration values for `endpoint` and `Authorization`.
 

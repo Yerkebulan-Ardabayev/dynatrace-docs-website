@@ -1,7 +1,6 @@
 ---
 title: Share Dynatrace dashboards
 source: https://docs.dynatrace.com/managed/analyze-explore-automate/dashboards-classic/dashboards/share-dashboards
-scraped: 2026-05-12T11:14:46.952946
 ---
 
 # Share Dynatrace dashboards
@@ -29,7 +28,7 @@ To share a dashboard
 1. Display the dashboard you want to share.
 
    * To display a dashboard, go to **Dashboards** and select the name of the dashboard.
-2. Select **More** (**â¦**) > **Share** in the upper-right corner of the dashboard.
+2. Select **More** (**…**) > **Share** in the upper-right corner of the dashboard.
 3. Select **Advanced settings** to open **Dashboard settings** to the **Manage access** tab.
 4. Turn on **Share dashboard** and specify the sharing details as described below.
 
@@ -44,7 +43,7 @@ To share a dashboard
 To stop sharing a dashboard
 
 1. Go to **Dashboards** and select the name of the dashboard.
-2. Select **More** (**â¦**) > **Share** in the upper-right corner of the dashboard.
+2. Select **More** (**…**) > **Share** in the upper-right corner of the dashboard.
 3. In the pop-up, turn off **Share this dashboard**.
 
 Any share settings you made previously are preserved and will be reactivated if you turn **Share this dashboard** back on.
@@ -64,7 +63,7 @@ To grant access to an authenticated Dynatrace user
 1. Display the dashboard you want to share.
 
    * To display a dashboard, go to **Dashboards** and select the name of the dashboard.
-2. Select **More** (**â¦**) > **Share** in the upper-right corner of the dashboard.
+2. Select **More** (**…**) > **Share** in the upper-right corner of the dashboard.
 3. Select **Advanced settings** to open **Dashboard settings** to the **Manage access** tab.
 
 1. Turn on **Share dashboard**.
@@ -91,7 +90,7 @@ To grant access to everyone in a Dynatrace user group
 1. Display the dashboard you want to share.
 
    * To display a dashboard, go to **Dashboards** and select the name of the dashboard.
-2. Select **More** (**â¦**) > **Share** in the upper-right corner of the dashboard.
+2. Select **More** (**…**) > **Share** in the upper-right corner of the dashboard.
 3. Select **Advanced settings** to open **Dashboard settings** to the **Manage access** tab.
 
 1. Turn on **Share dashboard**.
@@ -118,7 +117,7 @@ To grant access to any authenticated Dynatrace user who has a copy of the shared
 1. Display the dashboard you want to share.
 
    * To display a dashboard, go to **Dashboards** and select the name of the dashboard.
-2. Select **More** (**â¦**) > **Share** in the upper-right corner of the dashboard.
+2. Select **More** (**…**) > **Share** in the upper-right corner of the dashboard.
 3. Select **Advanced settings** to open **Dashboard settings** to the **Manage access** tab.
 
 1. Turn on **Share dashboard**.
@@ -150,7 +149,7 @@ To create a shareable link to your dashboard that can be used by anyone (with no
 1. Display the dashboard you want to share.
 
    * To display a dashboard, go to **Dashboards** and select the name of the dashboard.
-2. Select **More** (**â¦**) > **Share** in the upper-right corner of the dashboard.
+2. Select **More** (**…**) > **Share** in the upper-right corner of the dashboard.
 3. Select **Advanced settings** to open **Dashboard settings** to the **Manage access** tab.
 
 1. Turn on **Share dashboard**.

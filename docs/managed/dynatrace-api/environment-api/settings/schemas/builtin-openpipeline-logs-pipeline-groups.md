@@ -1,7 +1,6 @@
 ---
 title: Settings API - Pipeline Groups configuration (logs) schema table
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-logs-pipeline-groups
-scraped: 2026-05-12T11:48:43.096354
 ---
 
 # Settings API - Pipeline Groups configuration (logs) schema table

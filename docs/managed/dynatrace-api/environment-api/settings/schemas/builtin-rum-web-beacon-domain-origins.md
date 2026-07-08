@@ -1,7 +1,6 @@
 ---
 title: Settings API - Beacon origins for CORS schema table
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/settings/schemas/builtin-rum-web-beacon-domain-origins
-scraped: 2026-05-12T11:46:58.994446
 ---
 
 # Settings API - Beacon origins for CORS schema table

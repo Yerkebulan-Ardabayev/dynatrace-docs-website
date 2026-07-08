@@ -1,7 +1,6 @@
 ---
 title: agctl - Command-line interface for ActiveGate
 source: https://docs.dynatrace.com/managed/ingest-from/dynatrace-activegate/agctl-command-line-interface
-scraped: 2026-05-12T12:09:03.572949
 ---
 
 # agctl - Command-line interface for ActiveGate

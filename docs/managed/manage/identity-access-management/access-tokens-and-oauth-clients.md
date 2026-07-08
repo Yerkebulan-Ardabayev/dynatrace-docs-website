@@ -1,7 +1,6 @@
 ---
 title: Tokens and OAuth clients
 source: https://docs.dynatrace.com/managed/manage/identity-access-management/access-tokens-and-oauth-clients
-scraped: 2026-05-12T11:06:31.533061
 ---
 
 # Tokens and OAuth clients

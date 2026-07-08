@@ -1,7 +1,6 @@
 ---
 title: Set up Dynatrace OneAgent as a Docker container
 source: https://docs.dynatrace.com/managed/ingest-from/setup-on-container-platforms/docker/set-up-dynatrace-oneagent-as-docker-container
-scraped: 2026-05-12T11:11:04.917700
 ---
 
 # Set up Dynatrace OneAgent as a Docker container
@@ -1510,7 +1509,7 @@ CONTAINER ID   IMAGE                COMMAND                  CREATED         STA
 
 
 
-e3e1e513f0ff   dynatrace/oneagent   "/bin/bash /tmp/entrâ¦"   2 minutes ago   Up 2 minutes (healthy)             stupefied_elgamal
+e3e1e513f0ff   dynatrace/oneagent   "/bin/bash /tmp/entr…"   2 minutes ago   Up 2 minutes (healthy)             stupefied_elgamal
 ```
 
 ## Deploy OneAgent via a container orchestration tool

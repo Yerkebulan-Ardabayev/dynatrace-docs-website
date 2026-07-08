@@ -1,7 +1,6 @@
 ---
 title: Reference data API
 source: https://docs.dynatrace.com/managed/dynatrace-api/account-management-api/reference-data
-scraped: 2026-05-12T11:06:34.978604
 ---
 
 # Reference data API

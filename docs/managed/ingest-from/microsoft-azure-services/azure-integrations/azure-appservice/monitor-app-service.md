@@ -1,7 +1,6 @@
 ---
 title: Monitor Azure App Service Plan metrics
 source: https://docs.dynatrace.com/managed/ingest-from/microsoft-azure-services/azure-integrations/azure-appservice/monitor-app-service
-scraped: 2026-05-12T11:25:55.744220
 ---
 
 # Monitor Azure App Service Plan metrics
@@ -42,8 +41,8 @@ If the service has a preset dashboard, you'll get a preset dashboard for the res
 
 For existing monitored services, you might need to resave your credentials for the preset dashboard to appear on the **Dashboards** page. To resave your credentials, go to **Settings** > **Cloud and virtualization** > **Azure**, select the desired Azure instance, then select **Save**.
 
-You can't make changes on a preset dashboard directly, but you can clone and edit it. To clone a dashboard, open the browse menu (**â¦**) and select **Clone**.  
-To remove a dashboard from the dashboards list, you can hide it. To hide a dashboard, open the browse menu (**â¦**) and select **Hide**.
+You can't make changes on a preset dashboard directly, but you can clone and edit it. To clone a dashboard, open the browse menu (**…**) and select **Clone**.  
+To remove a dashboard from the dashboards list, you can hide it. To hide a dashboard, open the browse menu (**…**) and select **Hide**.
 
 Hiding a dashboard doesn't affect other users.
 
@@ -59,12 +58,12 @@ App service plan
 
 | Name | Description | Dimensions | Unit | Recommended |
 | --- | --- | --- | --- | --- |
-| BytesReceived | Data in | Instance | Byte | âï¸ |
-| BytesSent | Data out | Instance | Byte | âï¸ |
-| CpuPercentage | CPU percentage | Instance | Percent | âï¸ |
-| DiskQueueLength | Disk queue length | Instance | Count | âï¸ |
-| HttpQueueLength | HTTP queue length | Instance | Count | âï¸ |
-| MemoryPercentage | Memory percentage | Instance | Percent | âï¸ |
+| BytesReceived | Data in | Instance | Byte | ✔️ |
+| BytesSent | Data out | Instance | Byte | ✔️ |
+| CpuPercentage | CPU percentage | Instance | Percent | ✔️ |
+| DiskQueueLength | Disk queue length | Instance | Count | ✔️ |
+| HttpQueueLength | HTTP queue length | Instance | Count | ✔️ |
+| MemoryPercentage | Memory percentage | Instance | Percent | ✔️ |
 | SocketInboundAll | Socket inbound all |  | Count |  |
 | SocketLoopback | Socket loopback | Instance | Count |  |
 | SocketOutboundAll | Socket Outbound All |  | Count |  |

@@ -1,7 +1,6 @@
 ---
 title: Visualize your environment through Smartscape
 source: https://docs.dynatrace.com/managed/analyze-explore-automate/smartscape-classic
-scraped: 2026-05-12T11:04:08.651241
 ---
 
 # Visualize your environment through Smartscape
@@ -98,7 +97,7 @@ Each node represents a different service with a symbol that signifies the underl
 * A connection ages out and is no longer shown in Smartscape if the connection has been inactive for more than 72 hours or if a service hasn't received any load during the last 72 hours.
 
 **Filtering your display**  
-Open the Browse (**â¦**) menu in the upper-right corner of Smartscape to hide or show:
+Open the Browse (**…**) menu in the upper-right corner of Smartscape to hide or show:
 
 * Inactive requests
 * Services that aren't connected to other services
@@ -133,7 +132,7 @@ Generic host symbols are used to signify monitoring candidates (unknown hosts th
 | --- | --- |
 |  | monitoring candidate |
 
-Inactive monitoring candidates are monitoring candidates that havenât communicated with a host. Inactive connections between hosts and connections that have timed-out are visualized with dashed lines.
+Inactive monitoring candidates are monitoring candidates that haven’t communicated with a host. Inactive connections between hosts and connections that have timed-out are visualized with dashed lines.
 
 ### Data centers
 
@@ -182,8 +181,8 @@ For more information on managing third-party vulnerabilities, see [Third-party v
 
 ## Related topics
 
-* [What is a monitoring environment?](/managed/discover-dynatrace/get-started/monitoring-environment "Understand and learn how to work with monitoring environments.")
+* [What's a monitoring environment?](/managed/discover-dynatrace/get-started/monitoring-environment "Learn what a Dynatrace monitoring environment is, how to find your environment ID, and how to set up and connect multiple environments.")
 * [Topology and Smartscape API](/managed/dynatrace-api/environment-api/topology-and-smartscape "Learn about the Dynatrace Topology and Smartscape API.")
-* [Performance analysis](/managed/observe/digital-experience/web-applications/analyze-and-use/performance-analysis "Understand the available types of performance analysis that are provided by Dynatrace.")
+* [Performance analysis in RUM Classic](/managed/observe/digital-experience/rum-classic/web-applications/analyze-and-use/performance-analysis "Understand the available types of performance analysis that are provided by Dynatrace.")
 * [Root cause analysis concepts](/managed/dynatrace-intelligence/root-cause-analysis/concepts "Get acquainted with root cause analysis concepts.")
 * [Third-party vulnerabilities](/managed/secure/application-security/vulnerability-analytics/third-party-vulnerabilities "Monitor, visualize, analyze, and remediate third-party vulnerabilities, track the remediation progress, and create monitoring rules.")

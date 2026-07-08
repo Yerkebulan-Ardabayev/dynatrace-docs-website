@@ -1,7 +1,6 @@
 ---
 title: Get started with OpenTelemetry and Dynatrace
 source: https://docs.dynatrace.com/managed/ingest-from/opentelemetry/getting-started
-scraped: 2026-05-12T12:01:24.398496
 ---
 
 # Get started with OpenTelemetry and Dynatrace

@@ -1,7 +1,6 @@
 ---
 title: Migrate from cloud-native full-stack to application monitoring mode
 source: https://docs.dynatrace.com/managed/ingest-from/setup-on-k8s/guides/migration/cloud-native-to-app-monitoring
-scraped: 2026-05-12T12:09:35.604051
 ---
 
 # Migrate from cloud-native full-stack to application monitoring mode
@@ -9,7 +8,7 @@ scraped: 2026-05-12T12:09:35.604051
 # Migrate from cloud-native full-stack to application monitoring mode
 
 * 2-min read
-* Published Apr 09, 2024
+* Updated on Jun 03, 2026
 
 Dynatrace Operator version 1.0.0+
 
@@ -26,7 +25,10 @@ To only monitor selected applications on Kubernetes, application monitoring offe
 
 * When switching to application monitoring, previously deployed OneAgents will get deactivated and deep monitoring of applications will stop. Consequently, restarting all application pods that require deep monitoring becomes mandatory. Restarting these pods ensures that applications are reinjected, allowing deep monitoring to resume.
 * In application monitoring mode, container monitoring rules are ignored. Instead, [label selectors](/managed/ingest-from/setup-on-k8s/guides/deployment-and-configuration/monitoring-and-instrumentation/annotate "Configure monitoring for namespaces and pods") should be employed to precisely manage OneAgent injection.
-* Log monitoring requires [additional setup](/managed/upgrade/unavailable-in-managed "Your selection is unavailable in Dynatrace Managed.").
+* To stream logs, you can either:
+
+  + [Unavailable in Dynatrace Managed](/managed/upgrade/unavailable-in-managed "Your selection is unavailable in Dynatrace Managed.").
+  + [Unavailable in Dynatrace Managed](/managed/upgrade/unavailable-in-managed "Your selection is unavailable in Dynatrace Managed.").
 
 ## Migrate to application monitoring mode
 
@@ -172,7 +174,7 @@ This section provides all the information needed to perform the migration from c
    - dynatrace-api
    ```
 
-   For further information on how to configure DynaKube for application monitoring mode, visit the [deployment guide](/managed/ingest-from/setup-on-k8s/deployment "Deploy Dynatrace Operator on Kubernetes") or [DynaKube parameters](/managed/ingest-from/setup-on-k8s/reference/dynakube-parameters#spec-oneagent-applicationmonitoring "List the available parameters for setting up Dynatrace Operator on Kubernetes."). Alternatively, download the [DynaKube custom resource sampleï»¿](https://dt-url.net/0w036dz) for application monitoring from GitHub and adapt the DynaKube custom resource according to your requirements.
+   For further information on how to configure DynaKube for application monitoring mode, visit the [deployment guide](/managed/ingest-from/setup-on-k8s/deployment "Deploy Dynatrace Operator on Kubernetes") or [DynaKube parameters](/managed/ingest-from/setup-on-k8s/reference/dynakube-parameters#spec-oneagent-applicationmonitoring "List the available parameters for setting up Dynatrace Operator on Kubernetes."). Alternatively, download the [DynaKube custom resource sample﻿](https://dt-url.net/0w036dz) for application monitoring from GitHub and adapt the DynaKube custom resource according to your requirements.
 2. Apply the DynaKube custom resource:
 
    Run the command below to apply the DynaKube custom resource. A validation webhook will provide helpful error messages if there's a problem.

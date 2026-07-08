@@ -1,7 +1,6 @@
 ---
 title: Install OneAgent using Ansible
 source: https://docs.dynatrace.com/managed/ingest-from/dynatrace-oneagent/deployment-orchestration/ansible
-scraped: 2026-05-12T11:35:18.354639
 ---
 
 # Install OneAgent using Ansible
@@ -28,7 +27,7 @@ Dynatrace provides an Ansible collection that you can use to orchestrate OneAgen
 
 ## Install the Dynatrace Ansible collection
 
-The Dynatrace Ansible collection project is hosted on [GitHubï»¿](https://github.com/Dynatrace/Dynatrace-OneAgent-Ansible) and available via [Ansible Galaxyï»¿](https://galaxy.ansible.com/ui/repo/published/dynatrace/oneagent/).
+The Dynatrace Ansible collection project is hosted on [GitHub﻿](https://github.com/Dynatrace/Dynatrace-OneAgent-Ansible) and available via [Ansible Galaxy﻿](https://galaxy.ansible.com/ui/repo/published/dynatrace/oneagent/).
 To install the `dynatrace.oneagent` Ansible collection, run the following command:
 
 ```
@@ -37,14 +36,14 @@ ansible-galaxy collection install dynatrace.oneagent
 
 The collection consists of a single Ansible role, which deploys OneAgent using a dedicated configuration.
 The configuration ensures that the OneAgent service remains in a running state.
-For more information, see [Using collectionsï»¿](https://docs.ansible.com/ansible/latest/user_guide/collections_using.html) in Ansible documentation.
+For more information, see [Using collections﻿](https://docs.ansible.com/ansible/latest/user_guide/collections_using.html) in Ansible documentation.
 
 ## Configure the Dynatrace Ansible collection
 
 The Ansible script requires access to the appropriate OneAgent installer files.
 
 * If your Ansible control node has access to your Dynatrace environment, you can configure the script to download the installer files directly from the Dynatrace environment.
-* Alternatively, you can download the appropriate installer files yourselfâusing the Dynatrace web UIâand upload them to the control node. This provides the script with local copies of the installers.
+* Alternatively, you can download the appropriate installer files yourself—using the Dynatrace web UI—and upload them to the control node. This provides the script with local copies of the installers.
 
 ### Option 1: Use direct download from Dynatrace environment
 
@@ -74,7 +73,7 @@ You will need to specify the variables to supply the Ansible role with the infor
     ```
 
 We recommend that you store both the PAAS-token and the environment-id securely, using encryption mechanisms such as Ansible Vault.
-For details, see [Encrypting content with Ansible Vaultï»¿](https://docs.ansible.com/ansible/latest/user_guide/vault.html).
+For details, see [Encrypting content with Ansible Vault﻿](https://docs.ansible.com/ansible/latest/user_guide/vault.html).
 
 ### Option 2: Use local installers
 
@@ -104,13 +103,13 @@ The OneAgent Ansible role supports the following variables:
 | `oneagent_local_installer` | unset | The path of the OneAgent installer stored on the control node |
 | `oneagent_installer_arch` | Linux: `x86` Windows: `x86` AIX: `ppc` | The OneAgent installer architecture |
 | `oneagent_version` | `latest` | The required version of the OneAgent in 1.199.247.20200714-111723 format |
-| `oneagent_download_dir` | Linux/AIX: `$TEMP` or `/tmp` Windows: `%TEMP%` or `C:\Windows\Temp` | The installer download directoryâfor Linux and AIX, the directory must not contain spaces. |
+| `oneagent_download_dir` | Linux/AIX: `$TEMP` or `/tmp` Windows: `%TEMP%` or `C:\Windows\Temp` | The installer download directory—for Linux and AIX, the directory must not contain spaces. |
 | `oneagent_install_args` | unset | Dynatrace OneAgent installation parameters defined as a list of items |
 | `oneagent_platform_install_args` | unset | Additional list of platform-specific installation parameters, appended to `oneagent\_install\_args' when run on the respective platform |
 | `oneagent_preserve_installer` | `false` | Option to preserve the installer on the managed node after OneAgent installation |
-| `oneagent_package_state` | `present` | Desired OneAgent package stateâspecify `present` or `latest` to install. Specify `absent` to uninstall. |
+| `oneagent_package_state` | `present` | Desired OneAgent package state—specify `present` or `latest` to install. Specify `absent` to uninstall. |
 | `oneagent_reboot_host` | `false` | Option to reboot the managed node after OneAgent installation |
-| `oneagent_validate_certs` | `true` | Option to require certificatesâif set to `false`, allows to download OneAgent from a server with an insecure SSL certificate (for example, expired or self-signed). |
+| `oneagent_validate_certs` | `true` | Option to require certificates—if set to `false`, allows to download OneAgent from a server with an insecure SSL certificate (for example, expired or self-signed). |
 | `oneagent_reboot_timeout` | 3600 | Timeout, in seconds, for rebooting the managed node |
 
 ## Logging
@@ -213,10 +212,10 @@ name: oneagent
 
 You can find more example playbooks and inventory files in the `examples` directory within the Ansible role. The directory contains the following playbooks:
 
-* `local_installer.yml` â OneAgent installation using a local installer.
-* `advanced_config.yml` â OneAgent installation with a custom installation path and a download directory.
-* `oneagentctl_config.yml` â OneAgent configuration using the `oneagentctl` command.
+* `local_installer.yml` — OneAgent installation using a local installer.
+* `advanced_config.yml` — OneAgent installation with a custom installation path and a download directory.
+* `oneagentctl_config.yml` — OneAgent configuration using the `oneagentctl` command.
 
 In addition, each directory contains an inventory file with a basic host configuration for playbooks.
 
-For path issues when installing on Windows, review [Path Formatting for Windows in Ansible documentationï»¿](https://docs.ansible.com/ansible/latest/user_guide/windows_usage.html#path-formatting-for-windows).
+For path issues when installing on Windows, review [Path Formatting for Windows in Ansible documentation﻿](https://docs.ansible.com/ansible/latest/user_guide/windows_usage.html#path-formatting-for-windows).

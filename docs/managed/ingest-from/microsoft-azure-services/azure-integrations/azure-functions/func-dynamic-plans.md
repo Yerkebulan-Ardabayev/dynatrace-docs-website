@@ -1,7 +1,6 @@
 ---
 title: Monitor Azure Functions on Consumption Plans
 source: https://docs.dynatrace.com/managed/ingest-from/microsoft-azure-services/azure-integrations/azure-functions/func-dynamic-plans
-scraped: 2026-05-12T11:38:20.602217
 ---
 
 # Monitor Azure Functions on Consumption Plans
@@ -16,7 +15,7 @@ Azure Functions let you run code without provisioning or managing servers.
 This deployment model is sometimes referred to as "serverless" or "Function as a Service" (FaaS).
 
 * An Azure Function runs in an application on a container managed by Azure. This lets you focus on writing code without worrying about the underlying application or infrastructure.
-* Azure Functions are ephemeral. This means that the underlying container can be suspended or recycled when thereâs no request pending.
+* Azure Functions are ephemeral. This means that the underlying container can be suspended or recycled when there’s no request pending.
 
 ## Integration
 
@@ -28,7 +27,7 @@ This deployment model is sometimes referred to as "serverless" or "Function as a
 
 ## Monitoring Consumption
 
-For Azure Functions, monitoring consumption is based on Davis data units. See [Serverless monitoring](/managed/license/monitoring-consumption-classic/davis-data-units/serverless-monitoring "Understand how serverless monitoring consumption is calculated.") for details.
+For Azure Functions, monitoring consumption is based on Davis data units. See [Serverless monitoring](/managed/license/classic-licensing/davis-data-units/serverless-monitoring "Understand how serverless monitoring consumption is calculated.") for details.
 
 ## Related topics
 

@@ -1,7 +1,6 @@
 ---
 title: Known limitations for Go support
 source: https://docs.dynatrace.com/managed/ingest-from/technology-support/application-software/go/support/go-known-limitations
-scraped: 2026-05-12T12:03:59.705830
 ---
 
 # Known limitations for Go support
@@ -17,12 +16,12 @@ Before you start using Go application monitoring, make sure that you are aware o
 
 Go support is limited to:
 
-* Official, stable [Go releasesï»¿](https://dt-url.net/go-releases) compiled with the Golang toolchain.
-* Stable [Go releasesï»¿](https://dt-url.net/go-releases) with [openssl-fipsï»¿](https://dt-url.net/golang-fips) modifications to support the Federal Information Processing Standards (OneAgent version 1.295+).
+* Official, stable [Go releases﻿](https://dt-url.net/go-releases) compiled with the Golang toolchain.
+* Stable [Go releases﻿](https://dt-url.net/go-releases) with [openssl-fips﻿](https://dt-url.net/golang-fips) modifications to support the Federal Information Processing Standards (OneAgent version 1.295+).
 
 OneAgent doesn't support binaries compiled using other toolchains like
 
-* [gccgo toolchainï»¿](https://dt-url.net/gccgo-toolchain)
+* [gccgo toolchain﻿](https://dt-url.net/gccgo-toolchain)
 
 ## Applications built with `-linkshared` option aren't supported
 
@@ -105,13 +104,13 @@ As a workaround, there are several options:
 
 ## Applications that load Go plugins aren't supported
 
-A [Go pluginï»¿](https://dt-url.net/eae3riv) is a package compiled using the `-buildmode=plugin` build flag to produce a shared object file. This build mode is rarely used, and OneAgent will disable deep monitoring when an application actually loads a Go plugin.
+A [Go plugin﻿](https://dt-url.net/eae3riv) is a package compiled using the `-buildmode=plugin` build flag to produce a shared object file. This build mode is rarely used, and OneAgent will disable deep monitoring when an application actually loads a Go plugin.
 
 ## Vendored third-party packages aren't supported
 
-[Go vendoringï»¿](https://dt-url.net/ubg3r7o) is used to include local copies of external dependencies in the project repository. This approach was used to pin versions of third-party packages before [Go moduleï»¿](https://dt-url.net/nci3rry) support was added.
+[Go vendoring﻿](https://dt-url.net/ubg3r7o) is used to include local copies of external dependencies in the project repository. This approach was used to pin versions of third-party packages before [Go module﻿](https://dt-url.net/nci3rry) support was added.
 
-OneAgent will not monitor vendored packages. For example, gRPC services are supported only if you use Go modules or if you import [go-grpcï»¿](https://dt-url.net/k6k3r67) directly without using a dependency management system.
+OneAgent will not monitor vendored packages. For example, gRPC services are supported only if you use Go modules or if you import [go-grpc﻿](https://dt-url.net/k6k3r67) directly without using a dependency management system.
 
 ## Possible limitations without a symbol table
 
@@ -131,12 +130,12 @@ Non-stripped binaries on AArch64 are supported starting with OneAgent version 1.
 
 ## Applications built with race detector enabled aren't supported
 
-An application built with `-race` flag contains a built-in [data race detectorï»¿](https://golang.org/doc/articles/race_detector).
+An application built with `-race` flag contains a built-in [data race detector﻿](https://golang.org/doc/articles/race_detector).
 This build mode is mostly used in a development environment and OneAgent won't inject into applications built this way.
 
 ## Creation stack profiling of OS threads is disabled
 
-OneAgent does not support the [predefined `threadcreate` profileï»¿](https://golang.org/doc/diagnostics#profiling). Thread creation profiling results of Go applications monitored by OneAgent will contain empty stack traces only.
+OneAgent does not support the [predefined `threadcreate` profile﻿](https://golang.org/doc/diagnostics#profiling). Thread creation profiling results of Go applications monitored by OneAgent will contain empty stack traces only.
 
 ## Support for statically linked binaries (Linux only)
 
@@ -235,7 +234,7 @@ Workaround when a shell is not available
 
 Applies to container images where a shell is not available.
 
-When the container image does not contain a shell, for example in [distroless imagesï»¿](https://dt-url.net/up23q6j), another option is to use a minimal `init` binary like [tiniï»¿](https://dt-url.net/he03qck).
+When the container image does not contain a shell, for example in [distroless images﻿](https://dt-url.net/up23q6j), another option is to use a minimal `init` binary like [tini﻿](https://dt-url.net/he03qck).
 By adding tini and changing the container entryproint, we obtain the following code that executes `/StaticGoMinimal` while preserving proper signal forwarding.
 
 ```
@@ -277,7 +276,7 @@ There are several variants of tini available for glibc and musl, as well as amd6
 
 * Static Go applications that use cgo are not supported.
 
-  OneAgent rejects monitoring of static Go binaries that use [cgoï»¿](https://go.dev/blog/cgo) and, therefore, have a static dependency on the C system library libc. This is because the statically linked version of libc might conflict with the one used by OneAgent.
+  OneAgent rejects monitoring of static Go binaries that use [cgo﻿](https://go.dev/blog/cgo) and, therefore, have a static dependency on the C system library libc. This is because the statically linked version of libc might conflict with the one used by OneAgent.
 
   Workaround
 
@@ -304,7 +303,7 @@ There are several variants of tini available for glibc and musl, as well as amd6
 
   To overcome this limitation, you can change the base image of a container to one that provides a C system library.
 
-  An example of a Docker image that doesn't provide a C system library is the [scratch imageï»¿](https://dt-url.net/6083rfq).
+  An example of a Docker image that doesn't provide a C system library is the [scratch image﻿](https://dt-url.net/6083rfq).
 
   ```
   FROM scratch
@@ -318,7 +317,7 @@ There are several variants of tini available for glibc and musl, as well as amd6
   CMD ["/StaticGoMinimal"]
   ```
 
-  Examples of images that provide a C system library are the [Alpine imageï»¿](https://dt-url.net/ksa3rnj) or various [distroless imagesï»¿](https://dt-url.net/up23q6j).
+  Examples of images that provide a C system library are the [Alpine image﻿](https://dt-url.net/ksa3rnj) or various [distroless images﻿](https://dt-url.net/up23q6j).
 
   ```
   FROM alpine:3.11
@@ -334,7 +333,7 @@ There are several variants of tini available for glibc and musl, as well as amd6
 
 ### Side effects
 
-The file `proc/<pId>/exe` refers to an executable named `oneagentdynamizer` instead of the Go application binary, it is contained in the [procï»¿](https://dt-url.net/94c3rfn) pseudo-filesystem that provides an interface to kernel data structures of running processes. This may cause system tools like `ps` or `top` to display `oneagentdynamizer` instead of the Go binary name in their output.
+The file `proc/<pId>/exe` refers to an executable named `oneagentdynamizer` instead of the Go application binary, it is contained in the [proc﻿](https://dt-url.net/94c3rfn) pseudo-filesystem that provides an interface to kernel data structures of running processes. This may cause system tools like `ps` or `top` to display `oneagentdynamizer` instead of the Go binary name in their output.
 
 ### OneAgent versions without support for static monitoring
 
@@ -413,13 +412,13 @@ GoMinimal: ELF 64-bit LSB executable, x86-64, version 1 (SYSV), dynamically link
 
 The musl libc library is a drop-in replacement for the glibc library. Dynatrace supports musl-based Go applications, such as those built on Alpine Linux.
 
-There is one additional requirement for building a dynamically linked application binary. You should use the [Go toolchain for alpine (golang:<version>-alpine)ï»¿](https://dt-url.net/3gm3rwp) and add `-ldflags="-linkmode=external"` (or add `-linkmode=external` to an existing `-ldflags`) to the build command line to enforce usage of the system linker. This is not required for statically linked Go applications watched by [Go static monitoring](/managed/ingest-from/technology-support/application-software/go/configuration-and-analysis/enable-go-monitoring#go-static-monitoring "Learn how you can enable Go monitoring in Dynatrace.").
+There is one additional requirement for building a dynamically linked application binary. You should use the [Go toolchain for alpine (golang:<version>-alpine)﻿](https://dt-url.net/3gm3rwp) and add `-ldflags="-linkmode=external"` (or add `-linkmode=external` to an existing `-ldflags`) to the build command line to enforce usage of the system linker. This is not required for statically linked Go applications watched by [Go static monitoring](/managed/ingest-from/technology-support/application-software/go/configuration-and-analysis/enable-go-monitoring#go-static-monitoring "Learn how you can enable Go monitoring in Dynatrace.").
 
 Details
 
-While musl libc does closely mimic the glibc functionalities, there are subtle behavioral differences between the two. Moreover, Go doesn't officially support the musl-based Go toolchain, which means Go toolchain binaries can't be downloaded from the [golang.orgï»¿](https://dt-url.net/go) website.
+While musl libc does closely mimic the glibc functionalities, there are subtle behavioral differences between the two. Moreover, Go doesn't officially support the musl-based Go toolchain, which means Go toolchain binaries can't be downloaded from the [golang.org﻿](https://dt-url.net/go) website.
 
-In addition, there is a [serious issueï»¿](https://dt-url.net/6vq3rim) with how Go uses musl libc. This limits the extent to which Dynatrace can support musl-based applications. The Go toolchain includes an internal linker that generates musl-based application binaries that don't correctly initialize musl libc at application startup. This issue prevents Dynatrace from monitoring these applications. In such a case, the following message is displayed on the relevant application process page:  
+In addition, there is a [serious issue﻿](https://dt-url.net/6vq3rim) with how Go uses musl libc. This limits the extent to which Dynatrace can support musl-based applications. The Go toolchain includes an internal linker that generates musl-based application binaries that don't correctly initialize musl libc at application startup. This issue prevents Dynatrace from monitoring these applications. In such a case, the following message is displayed on the relevant application process page:  
 **Activation of deep monitoring was unsuccessful, Monitoring of Go musl binaries built with Go internal linker is not supported**
 
 If you use the system linker to generate the application binary, it adds startup code that correctly initializes shared objects. Also, adding `-ldflags="-linkmode=external"` to the build command line enforces usage of the system linker. The resulting binary will execute with a correctly initialized libc, allowing Dynatrace to monitor such an application.
@@ -551,7 +550,7 @@ docker run --interactive gominimal-alpine
 Additionally, there is an issue with the musl malloc implementation on machines that have 64 or more CPUs, which can result in high CPU overhead. This can be resolved by either
 
 * Using a base image that uses glibc instead.
-* Preloading an alternative malloc implementation, such as [tcmallocï»¿](https://dt-url.net/xz03zxt) or [jemallocï»¿](https://dt-url.net/9523zi0), as described below.
+* Preloading an alternative malloc implementation, such as [tcmalloc﻿](https://dt-url.net/xz03zxt) or [jemalloc﻿](https://dt-url.net/9523zi0), as described below.
 
 Preloading tcmalloc
 

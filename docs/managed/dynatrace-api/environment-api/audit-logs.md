@@ -1,7 +1,6 @@
 ---
 title: Audit logs API
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/audit-logs
-scraped: 2026-05-12T11:08:28.217817
 ---
 
 # Audit logs API

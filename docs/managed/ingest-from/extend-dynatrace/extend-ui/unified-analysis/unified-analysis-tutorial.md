@@ -1,7 +1,6 @@
 ---
 title: Unified analysis tutorial
 source: https://docs.dynatrace.com/managed/ingest-from/extend-dynatrace/extend-ui/unified-analysis/unified-analysis-tutorial
-scraped: 2026-05-12T11:37:27.437875
 ---
 
 # Unified analysis tutorial
@@ -42,9 +41,9 @@ You can then define your unified analysis screens to analyze data from multiple 
 
 ## Upload sample observability data to your environment
 
-In this example, we use **Easy Taxis Fleet Simulator**âan interactive CLI app that simulates a fleet of smart taxis sending observability data to the Dynatrace environment.
+In this example, we use **Easy Taxis Fleet Simulator**—an interactive CLI app that simulates a fleet of smart taxis sending observability data to the Dynatrace environment.
 
-1. Based on your operating system, download the appropriate file from the list of [EasyTaxis executablesï»¿](https://dt-url.net/13434et) and run it.
+1. Based on your operating system, download the appropriate file from the list of [EasyTaxis executables﻿](https://dt-url.net/13434et) and run it.
 2. Type `help` to list all available commands.
 3. Use the command below to start up the fleet simulation.
 
@@ -60,7 +59,7 @@ The simulation ingests metrics, logs, and events to your Dynatrace environment.
 
 ## Build and upload the extension
 
-1. Go to the GitHub page and download the [Observability Clinic Materialsï»¿](https://dt-url.net/sl034x0).
+1. Go to the GitHub page and download the [Observability Clinic Materials﻿](https://dt-url.net/sl034x0).
 2. Open the `extensions-project-starter` folder in your preferred code environment.
 3. Go to the `scripts` folder and open the `config.yaml` file. You need to complete three mandatory fields with your environment URL, token, and schema version.
 

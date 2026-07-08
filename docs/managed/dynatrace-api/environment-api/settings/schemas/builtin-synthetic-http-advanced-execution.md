@@ -1,7 +1,6 @@
 ---
 title: Settings API - Advanced settings schema table
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/settings/schemas/builtin-synthetic-http-advanced-execution
-scraped: 2026-05-12T11:43:52.342639
 ---
 
 # Settings API - Advanced settings schema table
@@ -13,7 +12,7 @@ scraped: 2026-05-12T11:43:52.342639
 
 ### Advanced settings (`builtin:synthetic.http.advanced-execution)`
 
-Fine-tune your HTTP monitor's execution with custom settings. These settings will override the default values. For more information, visit [Advanced settings for HTTP monitorsï»¿](https://dt-url.net/wa034cl).
+Fine-tune your HTTP monitor's execution with custom settings. These settings will override the default values. For more information, visit [Advanced settings for HTTP monitors﻿](https://dt-url.net/wa034cl).
 
 | Schema ID | Schema groups | Scope |
 | --- | --- | --- |

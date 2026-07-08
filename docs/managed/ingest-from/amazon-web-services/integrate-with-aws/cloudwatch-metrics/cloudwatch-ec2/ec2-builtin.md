@@ -1,7 +1,6 @@
 ---
 title: Amazon EC2 (built-in)
 source: https://docs.dynatrace.com/managed/ingest-from/amazon-web-services/integrate-with-aws/cloudwatch-metrics/cloudwatch-ec2/ec2-builtin
-scraped: 2026-05-12T11:29:32.533556
 ---
 
 # Amazon EC2 (built-in)
@@ -22,7 +21,7 @@ To enable monitoring for this service, you need:
 
   For role-based access (whether in a [SaaS](/managed/ingest-from/amazon-web-services/integrate-with-aws/cloudwatch-metrics#role-based-access "Integrate metrics from Amazon CloudWatch.") or [Managed](/managed/ingest-from/amazon-web-services/set-up-aws-monitoring-with-managed#role-based-access "Connect your Amazon account with Dynatrace Managed and start monitoring.") deployment), you need an ActiveGate installed on an Amazon EC2 host.
 * An updated [AWS monitoring policy](/managed/ingest-from/amazon-web-services/integrate-with-aws/cloudwatch-metrics#aws-policy-and-authentication "Integrate metrics from Amazon CloudWatch.") to include the additional AWS services.  
-  To [update the AWS IAM policyï»¿](https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_manage-edit.html#edit-managed-policy-console), use the JSON below, containing the monitoring policy (permissions) for all cloud services.
+  To [update the AWS IAM policy﻿](https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_manage-edit.html#edit-managed-policy-console), use the JSON below, containing the monitoring policy (permissions) for all cloud services.
 
 JSON predefined policy for all cloud services
 

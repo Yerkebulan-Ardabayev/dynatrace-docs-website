@@ -1,7 +1,6 @@
 ---
 title: OpenTelemetry logs ingest API
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/opentelemetry/post-logs
-scraped: 2026-05-12T12:10:16.914455
 ---
 
 # OpenTelemetry logs ingest API
@@ -32,16 +31,16 @@ When using log processing with the custom processing pipeline (OpenPipeline), in
 
 | Parameter | Type | Description | In | Required |
 | --- | --- | --- | --- | --- |
-| structure | string | (Optional) Data model used for structuring the input into log records. Allowed values: `raw`, `flattened`. For more details, refer to the [documentationï»¿](https://dt-url.net/6y235qc). The element can hold these values * `raw` * `flattened` | query | Optional |
-| X-Dynatrace-Attr | string | (Optional) Contains ampersandâseparated keyâvalue pairs representing additional log attributes to be added to each ingested log record. If the same key appears multiple times, all values are captured as a multiâvalue attribute. Query parameters take precedence over values provided in this header. | header | Optional |
-| X-Dynatrace-Options | string | (Optional) Contains ampersand-separated Dynatrace-specific parameters. Supported options: (SaaS only) `structure` (values: `raw`, `flattened`) defines how input data is structured into log records. Query parameters take precedence over header values. For more details, refer to the [documentationï»¿](https://dt-url.net/6y235qc). | header | Optional |
+| structure | string | (Optional) Data model used for structuring the input into log records. Allowed values: `raw`, `flattened`. For more details, refer to the [documentation﻿](https://dt-url.net/6y235qc). The element can hold these values * `raw` * `flattened` | query | Optional |
+| X-Dynatrace-Attr | string | (Optional) Contains ampersand‑separated key–value pairs representing additional log attributes to be added to each ingested log record. If the same key appears multiple times, all values are captured as a multi‑value attribute. Query parameters take precedence over values provided in this header. For more details, refer to the [documentation﻿](https://dt-url.net/vj639p4). | header | Optional |
+| X-Dynatrace-Options | string | (Optional) Contains ampersand-separated Dynatrace-specific parameters. Supported options: (SaaS only) `structure` (values: `raw`, `flattened`) defines how input data is structured into log records. Query parameters take precedence over header values. For more details, refer to the [documentation﻿](https://dt-url.net/6y235qc). | header | Optional |
 | body | [ExportLogsServiceRequest](#openapi-definition-ExportLogsServiceRequest) | An ExportLogsServiceRequest message in binary protobuf format. | body | Required |
 
 ### Request body objects
 
 #### The `ExportLogsServiceRequest` object
 
-The [ExportLogsServiceRequestï»¿](https://github.com/open-telemetry/opentelemetry-proto/blob/v1.2.0/opentelemetry/proto/collector/logs/v1/logs_service.proto)
+The [ExportLogsServiceRequest﻿](https://github.com/open-telemetry/opentelemetry-proto/blob/v1.2.0/opentelemetry/proto/collector/logs/v1/logs_service.proto)
 protobuf request, as defined in the official OpenTelemetry specification, serves as the input type for the LogsService/Export RPC.
 
 While the protocol defines the wire format, the following properties are part of the Log Data Model, which represents the structure of log records as processed within Dynatrace:
@@ -59,9 +58,9 @@ While the protocol defines the wire format, the following properties are part of
 * Attributes: Additional information about the event.
 * EventName: Name that identifies the class/type of event.
 
-Log records are mapped to Dynatrace log records containing three special attributes: timestamp, loglevel, and content, as well as a map of other attributes. For more details, refer to the [documentationï»¿](https://dt-url.net/6y235qc).
+Log records are mapped to Dynatrace log records containing three special attributes: timestamp, loglevel, and content, as well as a map of other attributes. For more details, refer to the [documentation﻿](https://dt-url.net/6y235qc).
 
-(SaaS only) Attribute processing depends on the data model used for input processing. The effective data model for a specific request depends on the `structure` parameter or the default tenant data model, which is determined by tenant configuration. More details can be found in the [documentationï»¿](https://dt-url.net/6y235qc).
+(SaaS only) Attribute processing depends on the data model used for input processing. The effective data model for a specific request depends on the `structure` parameter or the default tenant data model, which is determined by tenant configuration. More details can be found in the [documentation﻿](https://dt-url.net/6y235qc).
 
 ## Response
 

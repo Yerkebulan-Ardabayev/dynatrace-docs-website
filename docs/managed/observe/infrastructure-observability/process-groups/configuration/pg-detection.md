@@ -1,7 +1,6 @@
 ---
 title: Process group detection
 source: https://docs.dynatrace.com/managed/observe/infrastructure-observability/process-groups/configuration/pg-detection
-scraped: 2026-05-12T11:37:44.636400
 ---
 
 # Process group detection
@@ -94,7 +93,7 @@ To create an advanced detection rule in the Dynatrace web UI
 
 #### When to enable this option
 
-Suppose you have a process group with multiple processes. Each process simultaneously performs the same function for different customers who are using your application at the same time. While each process instance has the same name, each instance runs off a unique customer-specific configuration about which Dynatrace doesnât have any information. Dynatrace therefore aggregates all related processes into a single process group in order to facilitate monitoring.
+Suppose you have a process group with multiple processes. Each process simultaneously performs the same function for different customers who are using your application at the same time. While each process instance has the same name, each instance runs off a unique customer-specific configuration about which Dynatrace doesn’t have any information. Dynatrace therefore aggregates all related processes into a single process group in order to facilitate monitoring.
 
 For cases where such grouping is inadequate, you have the option to define process-group detection rules that take into account customer-specific details. Such details can be drawn from your unique deployment scheme. If you have a directory structure that includes a customer ID (for example, `/opt/MyCustomerBasedApp/<CustomerId>/Service/MyService`), and the directory structure is the same across all your hosts, you can create a customer-specific process-group detection rule that works across all process instances.
 

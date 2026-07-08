@@ -1,7 +1,6 @@
 ---
 title: HA - Delete proxy configuration in specific data center
 source: https://docs.dynatrace.com/managed/dynatrace-api/cluster-api/cluster-api-v1/internet-proxy-v1/delete-cluster-proxy-configuration-ha
-scraped: 2026-05-12T12:12:18.228717
 ---
 
 # HA - Delete proxy configuration in specific data center

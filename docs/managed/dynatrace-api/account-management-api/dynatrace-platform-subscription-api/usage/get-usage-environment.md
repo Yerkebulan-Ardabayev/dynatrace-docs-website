@@ -1,7 +1,6 @@
 ---
 title: Dynatrace Platform Subscription API - GET usage per environment
 source: https://docs.dynatrace.com/managed/dynatrace-api/account-management-api/dynatrace-platform-subscription-api/usage/get-usage-environment
-scraped: 2026-05-12T11:24:34.119885
 ---
 
 # Dynatrace Platform Subscription API - GET usage per environment
@@ -28,11 +27,11 @@ To execute this request, you need the **Allow read access for usage and consumpt
 | Parameter | Type | Description | In | Required |
 | --- | --- | --- | --- | --- |
 | accountUuid | string | The ID of the required SaaS account.  You can find the UUID on the **Account Management** > **Identity & access management** > **OAuth clients** page, during creation of an OAuth client. | path | Required |
-| subscriptionUuid | string | The UUID of the requested subscription.  Fetch the list of subscriptions via the [GET all subscriptionsï»¿](https://dt-url.net/jq03jvq) request. | path | Required |
+| subscriptionUuid | string | The UUID of the requested subscription.  Fetch the list of subscriptions via the [GET all subscriptions﻿](https://dt-url.net/jq03jvq) request. | path | Required |
 | startTime | string | The start of the requested timeframe in `2021-05-01T15:11:00Z` format. | query | Required |
 | endTime | string | The end of the requested timeframe in `2021-05-01T15:11:00Z` format. | query | Required |
 | environmentIds | string[] | A list of environments for which you want to read the usage data. To specify several environments, separate them with a comma (`,`). | query | Optional |
-| capabilityKeys | string[] | A list of capabilities for which you want to read the usage data. To specify several capabilities, separate them with a comma (`,`).  To obtain capability keys, use the [GET subscriptionsï»¿](https://dt-url.net/qd43uld) call and look for the **capabilities** field of the response. | query | Optional |
+| capabilityKeys | string[] | A list of capabilities for which you want to read the usage data. To specify several capabilities, separate them with a comma (`,`).  To obtain capability keys, use the [GET subscriptions﻿](https://dt-url.net/qd43uld) call and look for the **capabilities** field of the response. | query | Optional |
 
 ## Response
 
@@ -53,7 +52,7 @@ To execute this request, you need the **Allow read access for usage and consumpt
 
 | Element | Type | Description |
 | --- | --- | --- |
-| data | [SubscriptionEnvironmentUsageV2Dto[]](#openapi-definition-SubscriptionEnvironmentUsageV2Dto) | Usage data of the subscription. |
+| data | [SubscriptionEnvironmentUsageV2Dto](#openapi-definition-SubscriptionEnvironmentUsageV2Dto)[] | Usage data of the subscription. |
 | lastModifiedTime | string | The time the subscription data was last modified in `2021-05-01T15:11:00Z` format. |
 
 #### The `SubscriptionEnvironmentUsageV2Dto` object
@@ -61,7 +60,7 @@ To execute this request, you need the **Allow read access for usage and consumpt
 | Element | Type | Description |
 | --- | --- | --- |
 | environmentId | string | The UUID of the environment |
-| usage | [SubscriptionUsageDto[]](#openapi-definition-SubscriptionUsageDto) | A list of subscription usage for the environment. |
+| usage | [SubscriptionUsageDto](#openapi-definition-SubscriptionUsageDto)[] | A list of subscription usage for the environment. |
 
 #### The `SubscriptionUsageDto` object
 

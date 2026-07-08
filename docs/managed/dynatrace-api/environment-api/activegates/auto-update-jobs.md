@@ -1,7 +1,6 @@
 ---
 title: ActiveGate auto-update jobs API
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/activegates/auto-update-jobs
-scraped: 2026-05-12T11:12:43.618484
 ---
 
 # ActiveGate auto-update jobs API

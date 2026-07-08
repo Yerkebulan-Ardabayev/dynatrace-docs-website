@@ -1,7 +1,6 @@
 ---
 title: Web application metrics API - DELETE a metric
 source: https://docs.dynatrace.com/managed/dynatrace-api/configuration-api/calculated-metrics/rum-metrics/del-metric
-scraped: 2026-05-12T11:17:51.663120
 ---
 
 # Web application metrics API - DELETE a metric
@@ -40,4 +39,4 @@ To learn how to obtain and use it, see [Tokens and authentication](/managed/disc
 
 ## Related topics
 
-* [Create calculated metrics for web applications](/managed/observe/digital-experience/web-applications/additional-configuration/rum-calculated-metrics-web "Create calculated metrics as well as custom charts based on calculated metrics for your web applications.")
+* [Create calculated metrics for web applications in RUM Classic](/managed/observe/digital-experience/rum-classic/web-applications/additional-configuration/rum-calculated-metrics-web "Create calculated metrics as well as custom charts based on calculated metrics for your web applications.")

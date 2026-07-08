@@ -1,7 +1,6 @@
 ---
 title: Dynatrace web UI cookies
 source: https://docs.dynatrace.com/managed/manage/data-privacy-and-security/data-privacy/web-ui-cookies
-scraped: 2026-05-12T11:08:43.725336
 ---
 
 # Dynatrace web UI cookies

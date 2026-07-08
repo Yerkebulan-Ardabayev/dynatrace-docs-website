@@ -1,7 +1,6 @@
 ---
 title: Manage WMI extensions
 source: https://docs.dynatrace.com/managed/ingest-from/extensions/supported-extensions/data-sources/wmi
-scraped: 2026-05-12T11:10:25.500038
 ---
 
 # Manage WMI extensions
@@ -14,7 +13,7 @@ scraped: 2026-05-12T11:10:25.500038
 
 Dynatrace provides you with a framework that you can use to extend your observability into data acquired directly for WMI-monitored Windows services and components. To this end, Dynatrace offers the facility to bring WMI data into Dynatrace at scale and in the context to all other data. This works best if you have OneAgent on the monitored Windows box, but it also works in an agentless manner.
 
-First, check [Dynatrace Hubï»¿](https://www.dynatrace.com/hub/?query=wmi) to see if your technology is covered by an existing extension. If it isn't, you can build your own [Dynatrace WMI extension](/managed/ingest-from/extensions/develop-your-extensions/data-sources/wmi-extensions "Learn how to create a WMI extension using the Extensions framework.") to cover your Windows technology.
+First, check [Dynatrace Hub﻿](https://www.dynatrace.com/hub/?query=wmi) to see if your technology is covered by an existing extension. If it isn't, you can build your own [Dynatrace WMI extension](/managed/ingest-from/extensions/develop-your-extensions/data-sources/wmi-extensions "Learn how to create a WMI extension using the Extensions framework.") to cover your Windows technology.
 
 ## Before you begin
 
@@ -88,4 +87,4 @@ The extension activation wizard contains a dynamically updated JSON payload with
 
 ## Related topics
 
-* [Troubleshooting extensionsï»¿](https://dt-url.net/6303zdg "Learn how to troubleshoot Dynatrace Extensions")
+* [Troubleshooting extensions﻿](https://dt-url.net/6303zdg "Learn how to troubleshoot Dynatrace Extensions")

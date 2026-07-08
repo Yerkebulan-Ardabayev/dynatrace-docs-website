@@ -1,7 +1,6 @@
 ---
 title: Set up the Dynatrace GCP metric and/or log integration in a Kubernetes container (legacy)
 source: https://docs.dynatrace.com/managed/ingest-from/google-cloud-platform/legacy/deployment-k8s-container-legacy
-scraped: 2026-05-12T12:08:47.584627
 ---
 
 # Set up the Dynatrace GCP metric and/or log integration in a Kubernetes container (legacy)
@@ -28,7 +27,7 @@ For complete observability of your workloads, be sure to set up generic log inge
 
    In the Google Cloud console
 
-   [Set up a Pub/Sub topicï»¿](https://dt-url.net/zp03r4n) and [add a subscriptionï»¿](https://dt-url.net/5c23r4h) to it.
+   [Set up a Pub/Sub topic﻿](https://dt-url.net/zp03r4n) and [add a subscription﻿](https://dt-url.net/5c23r4h) to it.
 
    When editing the subscription, we recommend the following values:
 
@@ -53,7 +52,7 @@ For complete observability of your workloads, be sure to set up generic log inge
 
    ./deploy-pubsub.sh --topic-name <your-topic-name> --subscription-name <your-subscription-name>
    ```
-2. Configure [log exportï»¿](https://dt-url.net/4743r02) to send the desired logs to the GCP Pub/Sub topic created in the previous step.
+2. Configure [log export﻿](https://dt-url.net/4743r02) to send the desired logs to the GCP Pub/Sub topic created in the previous step.
 3. If you choose to use an existing ActiveGate during deployment, [configure ActiveGate for generic log ingestion](/managed/analyze-explore-automate/log-monitoring/acquire-log-data/logs-classic-ingestion-api "Learn how Dynatrace ingests log data and what are potential limits such ingestion.").
 
 ## Prerequisites
@@ -320,16 +319,16 @@ If you run the deployment from GCP Cloud Shell, you don't need to install additi
 
 If you run the deployment from any host with bash, you need to install:
 
-* [Google Cloud SDKï»¿](https://dt-url.net/e8110336)
-* [Kubernetes CLIï»¿](https://dt-url.net/ai03q1r)
-* [Helmï»¿](https://dt-url.net/rh03rrz)
+* [Google Cloud SDK﻿](https://dt-url.net/e8110336)
+* [Kubernetes CLI﻿](https://dt-url.net/ai03q1r)
+* [Helm﻿](https://dt-url.net/rh03rrz)
 
 #### Settings
 
 If you run the deployment on an existing GKE standard cluster, you need to:
 
-* [Enable Workload Identity on a clusterï»¿](https://dt-url.net/2j23qqv)
-* [Enable `GKE_METADATA` on the GKE node poolsï»¿](https://dt-url.net/an43q2s)
+* [Enable Workload Identity on a cluster﻿](https://dt-url.net/2j23qqv)
+* [Enable `GKE_METADATA` on the GKE node pools﻿](https://dt-url.net/an43q2s)
 
 If you run the deployment on an existing GKE Autopilot cluster, or on a new Autopilot cluster that will be automatically created by deployment script, there are no additional settings.
 
@@ -348,8 +347,8 @@ For ActiveGate, you have two options:
 
 The requirements for API and PaaS tokens are as follows:
 
-* [Create an API tokenï»¿](https://dt-url.net/be03q3a)
-* [Enable the following permissions for the API tokenï»¿](https://dt-url.net/c023q1m) as needed:
+* [Create an API token﻿](https://dt-url.net/be03q3a)
+* [Enable the following permissions for the API token﻿](https://dt-url.net/c023q1m) as needed:
 
   + To ingest metrics: **Ingest metrics** (API v2), **Read configuration** (API v1), **Write configuration** (API v1)
   + To ingest logs: **Ingest logs** (API v2)
@@ -388,7 +387,7 @@ wget -q "https://github.com/dynatrace-oss/dynatrace-gcp-monitor/releases/downloa
 * For Dynatrace Managed: `https://<your-domain>/e/<your-environment-id>`
 * For ActiveGate (if you choose to use an existing ActiveGate to ingest logs): `https://<your-active-gate-IP-or-hostname>:9999/e/<your-environment-id>`
 
-To determine `<your-environment-id>`, see [environment IDï»¿](https://dt-url.net/ej43qge).
+To determine `<your-environment-id>`, see [environment ID﻿](https://dt-url.net/ej43qge).
 
 ### Step 3 Configure parameter values
 
@@ -509,7 +508,7 @@ Run the command below, making sure to replace
 gcloud container clusters get-credentials <cluster> --region <region> --project <project>
 ```
 
-For details, see [Configuring cluster access for kubectlï»¿](https://cloud.google.com/kubernetes-engine/docs/how-to/cluster-access-for-kubectl#generate_kubeconfig_entry).
+For details, see [Configuring cluster access for kubectl﻿](https://cloud.google.com/kubernetes-engine/docs/how-to/cluster-access-for-kubectl#generate_kubeconfig_entry).
 
 ### Step 5 Run the script
 

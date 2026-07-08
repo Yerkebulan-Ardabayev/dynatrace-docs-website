@@ -1,7 +1,6 @@
 ---
 title: What's new in Dynatrace Managed version 1.330
 source: https://docs.dynatrace.com/managed/whats-new/managed/sprint-330
-scraped: 2026-05-12T11:08:03.789275
 ---
 
 # What's new in Dynatrace Managed version 1.330
@@ -16,10 +15,10 @@ New versions are rolled out within configurable [maintenance windows](/managed/m
 
 |  | Rollout start | Currently supported |
 | --- | --- | --- |
+| [Version 1.340](/managed/whats-new/managed/sprint-340 "New features, changes, and resolved issues in Dynatrace Managed 1.340") | Jun 08, 2026 | Yes |
 | [Version 1.338](/managed/whats-new/managed/sprint-338 "New features, changes, and resolved issues in Dynatrace Managed 1.338") | May 11, 2026 | Yes |
 | [Version 1.336](/managed/whats-new/managed/sprint-336 "New features, changes, and resolved issues in Dynatrace Managed 1.336") | Apr 13, 2026 | Yes |
-| [Version 1.334](/managed/whats-new/managed/sprint-334 "New features, changes, and resolved issues in Dynatrace Managed 1.334") | Mar 16, 2026 | Yes |
-| [Version 1.332](/managed/whats-new/managed/sprint-332 "Release notes for Dynatrace Managed, version 1.332") | Feb 16, 2026 | Only with [Enterprise Success and Supportï»¿](https://dt-url.net/qt03zwg) |
+| [Version 1.334](/managed/whats-new/managed/sprint-334 "New features, changes, and resolved issues in Dynatrace Managed 1.334") | Mar 16, 2026 | Only with [Enterprise Success and Support﻿](https://dt-url.net/qt03zwg) |
 
 This page showcases new features, changes, and bug fixes in Dynatrace Managed version 1.330. It contains:
 
@@ -35,7 +34,7 @@ Account Management
 
 We have added a dashboard to your cluster's local self-monitoring environment, which allows you to track the license usage of your host units, Davis data units (DD), and Digital Experience Monitoring (DEM) units under classic licensing.
 
-We have also added specific billing metrics for each license unit, so you can alert on license events (for example, when units are about to run out) using metric events. For details on billing metrics and how to define license events, see [Dynatrace classic licensing](/managed/license/monitoring-consumption-classic "Understand how Dynatrace monitoring consumption is calculated for classic licensing.").
+We have also added specific billing metrics for each license unit, so you can alert on license events (for example, when units are about to run out) using metric events. For details on billing metrics and how to define license events, see [Dynatrace classic licensing](/managed/license/monitoring-consumption-classic "Understand how Dynatrace classic monitoring consumption is calculated, including host units, DDUs, DEM units, and Application Security units.").
 
 ![Cluster license usage dashboard](https://dt-cdn.net/images/managed330-cluster-license-usage-2335-1d3ae4be6a.png)
 
@@ -81,12 +80,12 @@ Platform
 
 ### New Metrics API v2 endpoint for deleting outdated metrics
 
-The [Metrics API v2](/managed/dynatrace-api/environment-api/metric-v2 "Retrieve metric information via Metrics v2 API.") now includes a new endpoint that allows you to delete metrics that haven't been written in a given number of days. Hereâs what you can do:
+The [Metrics API v2](/managed/dynatrace-api/environment-api/metric-v2 "Retrieve metric information via Metrics v2 API.") now includes a new endpoint that allows you to delete metrics that haven't been written in a given number of days. Here’s what you can do:
 
 * Use `DELETE /api/v2/metrics` to delete ingested metrics.
 * Use the `metricSelector` parameter to choose specific metrics.
 * Use wildcards to delete metrics with a prefix or all metrics by specifying `*`.
-* Use the `minUnusedDays` parameter to define how many days a metric must go unused before itâs deleted.
+* Use the `minUnusedDays` parameter to define how many days a metric must go unused before it’s deleted.
 
 Example: To delete all metrics not written in the last 60 days:
 
@@ -113,7 +112,7 @@ Platform
 
 ### Replaced in-product live chat with external link
 
-The in-product live chat has been replaced by an external link to the [Dynatrace Support Centerï»¿](https://support.dynatrace.com). In the Dynatrace Support Center, you can contact our product specialists at any time with questions about Dynatrace.
+The in-product live chat has been replaced by an external link to the [Dynatrace Support Center﻿](https://support.dynatrace.com). In the Dynatrace Support Center, you can contact our product specialists at any time with questions about Dynatrace.
 
 Platform
 
@@ -143,41 +142,23 @@ Metric key: `builtin:tech.generic.handles.fileDescriptorsPercentUsed`
 
 ### Future Dynatrace Managed operating systems support changes
 
-##### The following operating systems will no longer be supported starting 01 June 2026
-
-* Linux: Oracle Linux 9.6
-
-  + x86-64
-  + [Vendor announcementï»¿](https://www.oracle.com/a/ocom/docs/elsp-lifetime-069338.pdf)
-* Linux: Rocky Linux 9.6
-
-  + x86-64
-  + [Vendor announcementï»¿](https://endoflife.date/rocky-linux)
-
-##### The following operating systems will no longer be supported starting 01 July 2026
-
-* Linux: SUSE Enterprise Linux 15.3
-
-  + x86-64
-  + [Vendor announcementï»¿](https://www.suse.com/lifecycle/)
-
 ##### The following operating systems will no longer be supported starting 01 November 2026
 
 * Linux: Red Hat Enterprise Linux 9.4, 9.7
 
   + x86-64
-  + [Vendor announcementï»¿](https://access.redhat.com/support/policy/updates/errata)
+  + [Vendor announcement﻿](https://access.redhat.com/support/policy/updates/errata)
 * Linux: Ubuntu 16.04
 
   + x86-64
-  + [Vendor announcementï»¿](https://ubuntu.com/about/release-cycle)
+  + [Vendor announcement﻿](https://ubuntu.com/about/release-cycle)
 
 ##### The following operating systems will no longer be supported starting 01 January 2027
 
 * Linux: Amazon Linux 2
 
   + x86-64
-  + [Vendor announcementï»¿](https://aws.amazon.com/linux/)
+  + [Vendor announcement﻿](https://aws.amazon.com/linux/)
 
 ### Past Dynatrace Managed operating systems support changes
 
@@ -186,22 +167,40 @@ Metric key: `builtin:tech.generic.handles.fileDescriptorsPercentUsed`
 * Linux: Red Hat Enterprise Linux 8.8, 9.2, 9.5
 
   + x86-64
-  + [Vendor announcementï»¿](https://access.redhat.com/support/policy/updates/errata)
+  + [Vendor announcement﻿](https://access.redhat.com/support/policy/updates/errata)
 * Linux: Oracle Linux 9.5
 
   + x86-64
-  + [Vendor announcementï»¿](https://www.oracle.com/a/ocom/docs/elsp-lifetime-069338.pdf)
+  + [Vendor announcement﻿](https://www.oracle.com/a/ocom/docs/elsp-lifetime-069338.pdf)
 * Linux: Rocky Linux 9.5
 
   + x86-64
-  + [Vendor announcementï»¿](https://endoflife.date/rocky-linux)
+  + [Vendor announcement﻿](https://endoflife.date/rocky-linux)
 
 ##### The following operating systems are no longer supported since 01 January 2026
 
 * Linux: Debian 10
 
   + x86-64
-  + [Vendor announcementï»¿](https://wiki.debian.org/DebianReleases)
+  + [Vendor announcement﻿](https://wiki.debian.org/DebianReleases)
+
+##### The following operating systems are no longer supported since 01 June 2026
+
+* Linux: Oracle Linux 9.6
+
+  + x86-64
+  + [Vendor announcement﻿](https://www.oracle.com/a/ocom/docs/elsp-lifetime-069338.pdf)
+* Linux: Rocky Linux 9.6
+
+  + x86-64
+  + [Vendor announcement﻿](https://endoflife.date/rocky-linux)
+
+##### The following operating systems are no longer supported since 01 July 2026
+
+* Linux: SUSE Enterprise Linux 15.3
+
+  + x86-64
+  + [Vendor announcement﻿](https://www.suse.com/lifecycle/)
 
 ## Dynatrace API
 

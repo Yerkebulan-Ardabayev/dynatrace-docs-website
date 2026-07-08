@@ -1,7 +1,6 @@
 ---
 title: Google Cloud Pub/Sub Lite monitoring
 source: https://docs.dynatrace.com/managed/ingest-from/google-cloud-platform/gcp-integrations/gcp-supported-service-metrics-new/gcp-pub-sub-lite-monitoring
-scraped: 2026-05-12T11:51:30.867282
 ---
 
 # Google Cloud Pub/Sub Lite monitoring

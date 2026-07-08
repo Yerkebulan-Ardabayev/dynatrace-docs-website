@@ -1,7 +1,6 @@
 ---
 title: Service naming rules
 source: https://docs.dynatrace.com/managed/observe/application-observability/services/service-detection/service-detection-v1/customize-service-naming
-scraped: 2026-05-12T11:17:18.450127
 ---
 
 # Service naming rules
@@ -12,7 +11,7 @@ scraped: 2026-05-12T11:17:18.450127
 * 4-min read
 * Updated on Apr 09, 2026
 
-Dynatrace [automatically detects and names your applicationsâ server-side services](/managed/observe/application-observability/services/service-detection/service-detection-v1 "Find out how Dynatrace Service Detection v1 detects and names different types of services.") based on basic properties of your application deployment and configuration. Built-in rules define these names. These properties and the resulting service names should be intuitive to you because they reflect your service landscape. Still, you might want to customize these names. Custom service naming rules enable you to enhance automated service naming.
+Dynatrace [automatically detects and names your applications’ server-side services](/managed/observe/application-observability/services/service-detection/service-detection-v1 "Find out how Dynatrace Service Detection v1 detects and names different types of services.") based on basic properties of your application deployment and configuration. Built-in rules define these names. These properties and the resulting service names should be intuitive to you because they reflect your service landscape. Still, you might want to customize these names. Custom service naming rules enable you to enhance automated service naming.
 
 ## Built-in rules
 
@@ -33,7 +32,7 @@ To define a custom service naming rule
 5. Optional Consider restricting this naming rule to a specific process group, technology, or service type.  
    While this step is optional, it provides a quick means of reducing the number of services that a rule applies to. To reduce the list of applicable services even further, you can add **Conditions** to the new rule.
 
-   If within the name format you reference a property that doesnât exist in a service that the rule applies to, the placeholder will be replaced with an empty string. You can ensure that the rule only applies to services where the property exists by adding an `exists` condition for the desired property.
+   If within the name format you reference a property that doesn’t exist in a service that the rule applies to, the placeholder will be replaced with an empty string. You can ensure that the rule only applies to services where the property exists by adding an `exists` condition for the desired property.
 6. Select **Save**.
 
 ## Service name format

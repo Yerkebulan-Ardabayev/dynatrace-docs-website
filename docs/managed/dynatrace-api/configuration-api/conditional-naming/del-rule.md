@@ -1,7 +1,6 @@
 ---
 title: Conditional naming API - DELETE a naming rule
 source: https://docs.dynatrace.com/managed/dynatrace-api/configuration-api/conditional-naming/del-rule
-scraped: 2026-05-12T11:17:21.882545
 ---
 
 # Conditional naming API - DELETE a naming rule

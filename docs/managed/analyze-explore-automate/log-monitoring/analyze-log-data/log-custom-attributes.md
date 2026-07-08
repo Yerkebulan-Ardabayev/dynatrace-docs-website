@@ -1,7 +1,6 @@
 ---
 title: Log custom attributes (Logs Classic)
 source: https://docs.dynatrace.com/managed/analyze-explore-automate/log-monitoring/analyze-log-data/log-custom-attributes
-scraped: 2026-05-12T11:13:34.486145
 ---
 
 # Log custom attributes (Logs Classic)
@@ -37,7 +36,7 @@ Dynatrace automatically recognizes log attributes that are visible in log detail
 
    * A key can contain only alphanumeric characters, underscores ('\_'), hyphens ('-'), dots ('.') and colons (':').
    * It can't begin with a hyphen.
-   * All characters must be from the Latin alphabet, with no diacritics; characters such as 'Ã¶' are not allowed.
+   * All characters must be from the Latin alphabet, with no diacritics; characters such as 'ö' are not allowed.
 
 You can check if the custom attributes you plan to add are part of the [key-values attributes](/managed/analyze-explore-automate/log-monitoring/acquire-log-data/logs-classic-ingestion-api#semantics "Learn how Dynatrace ingests log data and what are potential limits such ingestion.") list for automatic detection. If they are present there, there is no need to add them to the custom list.
 

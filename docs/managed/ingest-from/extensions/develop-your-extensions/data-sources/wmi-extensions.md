@@ -1,7 +1,6 @@
 ---
 title: WMI data source
 source: https://docs.dynatrace.com/managed/ingest-from/extensions/develop-your-extensions/data-sources/wmi-extensions
-scraped: 2026-05-12T11:50:08.777265
 ---
 
 # WMI data source
@@ -39,12 +38,12 @@ A host you want to monitor using a remote WMI extension must meet the requiremen
 
 A monitored host must have the **Remote enable** permission set.
 
-1. In the Microsoft [Server Managerï»¿](https://docs.microsoft.com/en-us/windows-server/administration/server-manager/server-manager) console, go to **Administrative Tools** > **Computer Management**.
+1. In the Microsoft [Server Manager﻿](https://docs.microsoft.com/en-us/windows-server/administration/server-manager/server-manager) console, go to **Administrative Tools** > **Computer Management**.
 2. Expand **Services and Applications**, right-click **WMI Control**, and select **Properties**.
 3. Select the **Security** tab and then select the **Security** button.
 4. Add the user you'll use to call WMI and then select **Remote Enable** in the **Allow** column.
 
-For more information, see [Allowing Users Access to a Specific WMI Namespaceï»¿](https://docs.microsoft.com/en-us/windows/win32/wmisdk/securing-a-remote-wmi-connection#allowing-users-access-to-a-specific-wmi-namespace) in the Microsoft documentation.
+For more information, see [Allowing Users Access to a Specific WMI Namespace﻿](https://docs.microsoft.com/en-us/windows/win32/wmisdk/securing-a-remote-wmi-connection#allowing-users-access-to-a-specific-wmi-namespace) in the Microsoft documentation.
 
 #### Configure firewall to access remote WMI
 
@@ -60,7 +59,7 @@ and
 netsh firewall set service RemoteAdmin enable
 ```
 
-For more information, see [Setting up a Remote WMI Connectionï»¿](https://docs.microsoft.com/en-us/windows/win32/wmisdk/connecting-to-wmi-remotely-starting-with-vista) in the Microsoft documentation.
+For more information, see [Setting up a Remote WMI Connection﻿](https://docs.microsoft.com/en-us/windows/win32/wmisdk/connecting-to-wmi-remotely-starting-with-vista) in the Microsoft documentation.
 
 #### Disable Remote UAC
 
@@ -70,7 +69,7 @@ Disable Remote UAC when using a local administrator account (without Active Dire
 New-ItemProperty -Path HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System -Name LocalAccountTokenFilterPolicy -PropertyType DWord -Value 1 -Force
 ```
 
-For more information, see [Handling Remote Connections Under UACï»¿](https://docs.microsoft.com/en-us/windows/win32/wmisdk/user-account-control-and-wmi#handling-remote-connections-under-uac) in the Microsoft documentation.
+For more information, see [Handling Remote Connections Under UAC﻿](https://docs.microsoft.com/en-us/windows/win32/wmisdk/user-account-control-and-wmi#handling-remote-connections-under-uac) in the Microsoft documentation.
 
 #### Set up local user
 
@@ -87,9 +86,9 @@ To limit user privileges to access only a remote connection to WMI
 
 For more information, see the Microsoft documentation:
 
-* [Securing a Remote WMI Connectionï»¿](https://docs.microsoft.com/en-us/windows/win32/wmisdk/securing-a-remote-wmi-connection)
-* [Limiting access to WMI namespacesï»¿](https://docs.microsoft.com/en-us/windows/win32/wmisdk/setting-namespace-security-with-the-wmi-control)
-* [Access to WMI Namespacesï»¿](https://docs.microsoft.com/en-us/windows/win32/wmisdk/access-to-wmi-namespaces)
+* [Securing a Remote WMI Connection﻿](https://docs.microsoft.com/en-us/windows/win32/wmisdk/securing-a-remote-wmi-connection)
+* [Limiting access to WMI namespaces﻿](https://docs.microsoft.com/en-us/windows/win32/wmisdk/setting-namespace-security-with-the-wmi-control)
+* [Access to WMI Namespaces﻿](https://docs.microsoft.com/en-us/windows/win32/wmisdk/access-to-wmi-namespaces)
 
 #### Set up a fixed port for WMI
 
@@ -102,4 +101,4 @@ For more information, see the Microsoft documentation:
 4. Establish a new port number for the WMI service:  
    `netsh firewall add portopening TCP 24158 WMIFixedPort`
 
-For more information, see [Setting Up a Fixed Port for WMIï»¿](https://docs.microsoft.com/en-us/windows/win32/wmisdk/setting-up-a-fixed-port-for-wmi) in the Microsoft documentation.
+For more information, see [Setting Up a Fixed Port for WMI﻿](https://docs.microsoft.com/en-us/windows/win32/wmisdk/setting-up-a-fixed-port-for-wmi) in the Microsoft documentation.

@@ -1,7 +1,6 @@
 ---
 title: Databases
 source: https://docs.dynatrace.com/managed/observe/infrastructure-observability/databases
-scraped: 2026-05-12T12:02:46.576916
 ---
 
 # Databases

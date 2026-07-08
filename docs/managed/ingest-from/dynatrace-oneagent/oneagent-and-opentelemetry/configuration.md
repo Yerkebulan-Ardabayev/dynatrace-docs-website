@@ -1,7 +1,6 @@
 ---
 title: Enable the OpenTelemetry Span Sensor for OneAgent
 source: https://docs.dynatrace.com/managed/ingest-from/dynatrace-oneagent/oneagent-and-opentelemetry/configuration
-scraped: 2026-05-12T11:22:08.544944
 ---
 
 # Enable the OpenTelemetry Span Sensor for OneAgent
@@ -10,7 +9,7 @@ scraped: 2026-05-12T11:22:08.544944
 
 * How-to guide
 * 5-min read
-* Updated on Feb 09, 2026
+* Updated on May 19, 2026
 
 In addition to the application-side configuration, several Dynatrace-specific settings let you control how OpenTelemetry data is used in Dynatrace.
 
@@ -34,8 +33,8 @@ Python
 
 | Monitoring framework | Versions |
 | --- | --- |
-| [OpenTelemetryï»¿](https://github.com/open-telemetry/opentelemetry-java/) | 1.0 - 1.3[1](#fn-monitoring-framework-1-def), 1.4 - 1.54[1](#fn-monitoring-framework-1-def), 1.55 - 1.60 |
-| [OpenTracingï»¿](https://opentracing.io/guides/java/) | 0.33, 0.32, 0.31 |
+| [OpenTelemetry﻿](https://github.com/open-telemetry/opentelemetry-java/) | 1.0 - 1.3[1](#fn-monitoring-framework-1-def), 1.4 - 1.54[1](#fn-monitoring-framework-1-def), 1.55 - 1.60 |
+| [OpenTracing﻿](https://opentracing.io/guides/java/) | 0.33, 0.32, 0.31 |
 
 1
 
@@ -51,7 +50,7 @@ Existing tracers are replaced and will no longer work after you enable OpenTelem
 
 | Monitoring framework | Versions |
 | --- | --- |
-| [OpenTelemetryï»¿](https://github.com/open-telemetry/opentelemetry-go/) | 1.0 - 1.7[1](#fn-monitoring-framework-1-def), 1.8 - 1.11.0[1](#fn-monitoring-framework-1-def), 1.11.1 - 1.27[1](#fn-monitoring-framework-1-def), 1.28 - 1.43[1](#fn-monitoring-framework-1-def) |
+| [OpenTelemetry﻿](https://github.com/open-telemetry/opentelemetry-go/) | 1.0 - 1.7[1](#fn-monitoring-framework-1-def), 1.8 - 1.11.0[1](#fn-monitoring-framework-1-def), 1.11.1 - 1.27[1](#fn-monitoring-framework-1-def), 1.28 - 1.44[1](#fn-monitoring-framework-1-def) |
 
 1
 
@@ -74,7 +73,7 @@ OneAgent version 1.217 and earlier The OpenTelemetry Go Sensor propagates Dynatr
 
 | Monitoring framework | Versions |
 | --- | --- |
-| [OpenTelemetryï»¿](https://www.npmjs.com/package/@opentelemetry/api) | 1[1](#fn-monitoring-framework-1-def) |
+| [OpenTelemetry﻿](https://www.npmjs.com/package/@opentelemetry/api) | 1[1](#fn-monitoring-framework-1-def) |
 
 1
 
@@ -90,7 +89,7 @@ To enable OpenTelemetry Node.js:
 
 | Monitoring framework | Versions |
 | --- | --- |
-| [OpenTelemetryï»¿](https://github.com/open-telemetry/opentelemetry-php) | 1.0.0 |
+| [OpenTelemetry﻿](https://github.com/open-telemetry/opentelemetry-php) | 1.0.0 |
 
 Opt-in
 
@@ -104,11 +103,11 @@ Existing tracers are not affected by OneAgent OpenTelemetry for PHP support.
 
 | Monitoring framework | Versions |
 | --- | --- |
-| [OpenTelemetryï»¿](https://github.com/open-telemetry/opentelemetry-dotnet) | 1.0.1+[1](#fn-monitoring-framework-1-def), 1.1+[1](#fn-monitoring-framework-1-def) |
+| [OpenTelemetry﻿](https://github.com/open-telemetry/opentelemetry-dotnet) | 1.0.1+[1](#fn-monitoring-framework-1-def), 1.1+[1](#fn-monitoring-framework-1-def) |
 
 1
 
-Supported in [AWS Lambda](/managed/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration "AWS Lambda capabilities and integration options")
+Supported in [AWS Lambda](/managed/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration "AWS Lambda capabilities and integration options") with OneAgent version 1.337+
 
 Opt-in
 
@@ -122,7 +121,7 @@ Existing tracers are not affected by OneAgent OpenTelemetry for .NET support.
 
 | Monitoring framework | Versions |
 | --- | --- |
-| [OpenTelemetryï»¿](https://github.com/open-telemetry/opentelemetry-dotnet) | 1.0.1+, 1.1+ |
+| [OpenTelemetry﻿](https://github.com/open-telemetry/opentelemetry-dotnet) | 1.0.1+, 1.1+ |
 
 Opt-in
 
@@ -136,7 +135,7 @@ Existing tracers are not affected by OneAgent OpenTelemetry for .NET support.
 
 | Monitoring framework | Versions |
 | --- | --- |
-| [OpenTelemetryï»¿](https://github.com/open-telemetry/opentelemetry-python) | 1.1+ |
+| [OpenTelemetry﻿](https://github.com/open-telemetry/opentelemetry-python) | 1.1+ |
 
 Opt-in
 
@@ -197,7 +196,7 @@ For more information about the OneAgent code module's OpenTelemetry Span Sensor,
 
 ### Entry points
 
-To avoid possible conflicts with existing PurePath distributed traces, OneAgent ingests by default only spans with a [span kindï»¿](https://opentelemetry.io/docs/concepts/signals/traces/#span-kind) of `Server` or `Consumer`. This usually is not an issue, as instrumentation libraries typically configure the appropriate span kind, however something to take into account if your application fully uses manual instrumentation.
+To avoid possible conflicts with existing PurePath distributed traces, OneAgent ingests by default only spans with a [span kind﻿](https://opentelemetry.io/docs/concepts/signals/traces/#span-kind) of `Server` or `Consumer`. This usually is not an issue, as instrumentation libraries typically configure the appropriate span kind, however something to take into account if your application fully uses manual instrumentation.
 
 This behavior can be customized with an [entry point rule](/managed/ingest-from/extend-dynatrace/extend-tracing/span-settings#span-entry-points "Learn how to configure span settings for OpenTelemetry and OpenTracing."). To do that, in Dynatrace go to **Settings** > **Server-side service monitoring** > **Span entry points** and create a new rule with the appropriate action and matcher entry.
 
@@ -230,7 +229,7 @@ In that case, OneAgent may have already created a new trace object when OpenTele
 * The OpenTelemetry trace ID takes precedence in exports to third parties
 * On the Dynatrace backend, the PurePath trace ID is assigned instead
 
-To enable correlation between these two IDs, Dynatrace creates additional [span linksï»¿](https://opentelemetry.io/docs/specs/otel/overview/#links-between-spans) for each span, linking to the OpenTelemetry trace.
+To enable correlation between these two IDs, Dynatrace creates additional [span links﻿](https://opentelemetry.io/docs/specs/otel/overview/#links-between-spans) for each span, linking to the OpenTelemetry trace.
 
 The ID rewrite applies only to newly started traces (not context propagation) and to the OpenTelemetry SDKs for Go, Java, JavaScript, PHP, and Python but not to .NET.
 
@@ -274,6 +273,10 @@ The ID rewrite applies only to newly started traces (not context propagation) an
   + Disconnected distributed traces
   + Additional overhead
 
+### .NET
+
+* OneAgent version 1.339+ To avoid duplicates, OneAgent [ignores spans from some instrumentation libraries and built-in ActivitySources](#dotnet-span-dropping).
+
 ### All languages
 
 * OneAgent captures OpenTelemetry resource attributes only if they are provided via the `OTEL_SERVICE_NAME` and `OTEL_RESOURCE_ATTRIBUTES` environment variables. When using the OpenTelemetry trace ingest API, this limitation doesn't apply.
@@ -311,7 +314,7 @@ Such spans are skipped only by OneAgent. Exports to third parties (for example, 
 | io.opentelemetry.kafka-clients-2.6 | io.opentelemetry.kafka-streams-0.11 | io.opentelemetry.lettuce-5.1 |
 | io.opentelemetry.liberty | io.opentelemetry.liberty-20.0 | io.opentelemetry.mongo-3.1 |
 | io.opentelemetry.netty-3.8 | io.opentelemetry.netty-4.0 | io.opentelemetry.netty-4.1 |
-| io.opentelemetry.okhttp-2.2 | io.opentelemetry.okhttp-3.0 | io.opentelemetry.orcale-ucp-11.2 ([sic!ï»¿](https://github.com/open-telemetry/opentelemetry-java-instrumentation/blob/4fd52c5a7c73e8186a575cd08a20c55ccb8a0419/instrumentation/oracle-ucp-11.2/library/src/main/java/io/opentelemetry/instrumentation/oracleucp/v11_2/ConnectionPoolMetrics.java#L18)) |
+| io.opentelemetry.okhttp-2.2 | io.opentelemetry.okhttp-3.0 | io.opentelemetry.orcale-ucp-11.2 ([sic!﻿](https://github.com/open-telemetry/opentelemetry-java-instrumentation/blob/4fd52c5a7c73e8186a575cd08a20c55ccb8a0419/instrumentation/oracle-ucp-11.2/library/src/main/java/io/opentelemetry/instrumentation/oracleucp/v11_2/ConnectionPoolMetrics.java#L18)) |
 | io.opentelemetry.rabbitmq-2.7 | io.opentelemetry.reactor-kafka-1.0 | io.opentelemetry.reactor-netty-1.0 |
 | io.opentelemetry.resteasy-3.0 | io.opentelemetry.resteasy-3.1 | io.opentelemetry.resteasy-6.0 |
 | io.opentelemetry.rmi | io.opentelemetry.servlet-2.2 | io.opentelemetry.servlet-3.0 |
@@ -355,3 +358,37 @@ Such spans are skipped only by OneAgent. Exports to third parties (for example, 
 | io.opentelemetry.contrib.php.mongodb | io.opentelemetry.contrib.php.mysqli |
 | io.opentelemetry.contrib.php.pdo | io.opentelemetry.contrib.php.slim |
 | io.opentelemetry.contrib.php.symfony | io.opentelemetry.contrib.php.wordpress |
+
+## Prevention of span duplication in .NET
+
+OneAgent version 1.339+
+
+To avoid possible span duplicates for areas covered by OpenTelemetry and OneAgent, OneAgent skips certain spans if OneAgent is configured to instrument your .NET application and capture OpenTelemetry spans. Unlike other languages, .NET includes built-in ActivitySources in core libraries (such as `HttpClient` and ASP.NET Core) that produce spans without requiring separate instrumentation packages.
+
+OneAgent ignores spans according to the ActivitySource name and the span name, as described in the following tables. Exports to third parties (for example, other backends or the Collector) remain unaffected.
+
+| Ignored ActivitySources | OneAgent version |
+| --- | --- |
+| AWSSDK\* | 1.341+ |
+| AWSSDK.DynamoDB\* | 1.341+ |
+| AWSSDK.EventBridge\* | 1.341+ |
+| AWSSDK.Lambda\* | 1.341+ |
+| AWSSDK.SNS\* | 1.341+ |
+| AWSSDK.SQS\* | 1.341+ |
+| Experimental.System.Net.\* | 1.339+ |
+| MassTransit | 1.341+ |
+| Microsoft.AspNet\* | 1.339+ |
+| MongoDB.Driver.Core.Extensions.DiagnosticSources | 1.341+ |
+| OpenTelemetry.HttpWebRequest | 1.339+ |
+| OpenTelemetry.Instrumentation.ConfluentKafka | 1.341+ |
+| OpenTelemetry.Instrumentation.SqlClient | 1.341+ |
+| OpenTelemetry.WCF\* | 1.339+ |
+| RabbitMQ.Client.\* | 1.341+ |
+| System.Net.\* | 1.339+ |
+
+| Ignored span names | OneAgent version |
+| --- | --- |
+| Grpc.Net.Client.GrpcOut | 1.339+ |
+| Microsoft.AspNet | 1.339+ |
+| OpenTelemetry.HttpWebRequest.HttpRequestOut | 1.339+ |
+| System.Net.\* | 1.339+ |

@@ -1,7 +1,6 @@
 ---
 title: Settings API - Crash rate increase settings for custom applications schema table
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/settings/schemas/builtin-anomaly-detection-rum-custom-crash-rate-increase
-scraped: 2026-05-12T11:49:45.658502
 ---
 
 # Settings API - Crash rate increase settings for custom applications schema table
@@ -14,7 +13,7 @@ scraped: 2026-05-12T11:49:45.658502
 
 Dynatrace automatically detects application-related performance anomalies such as failure rate increases. Use these settings to configure detection sensitivity, set alert thresholds, or disable alerting for certain applications.
 
-To avoid false-positive problem notifications, [automated anomaly detectionï»¿](https://dt-url.net/op03t6j "Visit Dynatrace support center") is only available for applications and services that have run for at least 20% of a week (7 days).
+To avoid false-positive problem notifications, [automated anomaly detection﻿](https://dt-url.net/op03t6j "Visit Dynatrace support center") is only available for applications and services that have run for at least 20% of a week (7 days).
 
 | Schema ID | Schema groups | Scope |
 | --- | --- | --- |

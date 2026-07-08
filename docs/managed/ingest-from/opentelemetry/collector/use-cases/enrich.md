@@ -1,7 +1,6 @@
 ---
 title: Enrich OTLP with OneAgent data (non-containerized)
 source: https://docs.dynatrace.com/managed/ingest-from/opentelemetry/collector/use-cases/enrich
-scraped: 2026-05-12T12:10:48.299967
 ---
 
 # Enrich OTLP with OneAgent data (non-containerized)
@@ -22,7 +21,7 @@ Enrichment is specific to non-container OneAgent environments. Configuring a con
 
 ## Prerequisites
 
-* One of the following Collector distributions with the [Resource Detection processorï»¿](https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/v0.151.0/processor/resourcedetectionprocessor):
+* One of the following Collector distributions with the [Resource Detection processor﻿](https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/v0.155.0/processor/resourcedetectionprocessor):
 
   + The [Dynatrace OTel Collector](/managed/ingest-from/opentelemetry/collector#dt-collector-dist "Learn how to use the OpenTelemetry Collector, including the Dynatrace OTel Collector, to ingest telemetry from OpenTelemetry.")
   + OpenTelemetry [Contrib](/managed/ingest-from/opentelemetry/collector#collector-contrib "Learn how to use the OpenTelemetry Collector, including the Dynatrace OTel Collector, to ingest telemetry from OpenTelemetry.")
@@ -68,7 +67,7 @@ processors:
 
 
 
-resourcedetection/dynatrace:
+resource_detection/dynatrace:
 
 
 
@@ -116,7 +115,7 @@ receivers: [otlp]
 
 
 
-processors: [resourcedetection/dynatrace]
+processors: [resource_detection/dynatrace]
 
 
 
@@ -132,7 +131,7 @@ receivers: [otlp]
 
 
 
-processors: [resourcedetection/dynatrace]
+processors: [resource_detection/dynatrace]
 
 
 
@@ -148,7 +147,7 @@ receivers: [otlp]
 
 
 
-processors: [resourcedetection/dynatrace]
+processors: [resource_detection/dynatrace]
 
 
 
@@ -171,7 +170,7 @@ This is mainly for demonstration purposes. You can specify any other valid recei
 
 ### Processors
 
-Under `processors`, we specify the [`resourcedetection` processorï»¿](https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/v0.151.0/processor/resourcedetectionprocessor) and configure it with the [Dynatrace-specific detector `dynatrace`ï»¿](https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/v0.151.0/processor/resourcedetectionprocessor/README.md#dynatrace).
+Under `processors`, we specify the [`resource_detection` processor﻿](https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/v0.155.0/processor/resourcedetectionprocessor) and configure it with the [Dynatrace-specific detector `dynatrace`﻿](https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/v0.155.0/processor/resourcedetectionprocessor/README.md#dynatrace).
 
 With this configuration, the resource detector processor will attempt to load the following three attributes from the [OneAgent enrichment file](/managed/ingest-from/extend-dynatrace/extend-data#dynatrace-oneagent "Learn how to automatically enrich your telemetry data with Dynatrace-specific fields."):
 
@@ -183,7 +182,7 @@ If the resource detector could load these values successfully, it will add them 
 
 ### Exporters
 
-Under `exporters`, we specify the default [`otlp_http` exporterï»¿](https://github.com/open-telemetry/opentelemetry-collector/tree/v0.151.0/exporter/otlphttpexporter) and configure it with our Dynatrace API URL and the required authentication token.
+Under `exporters`, we specify the default [`otlp_http` exporter﻿](https://github.com/open-telemetry/opentelemetry-collector/tree/v0.155.0/exporter/otlphttpexporter) and configure it with our Dynatrace API URL and the required authentication token.
 
 For this purpose, we set the following two environment variables and reference them in the configuration values for `endpoint` and `headers`.
 

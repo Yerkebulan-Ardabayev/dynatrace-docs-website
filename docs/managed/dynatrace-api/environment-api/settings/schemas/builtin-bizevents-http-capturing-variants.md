@@ -1,7 +1,6 @@
 ---
 title: Settings API - OneAgent Business events capturing variants schema table
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/settings/schemas/builtin-bizevents-http-capturing-variants
-scraped: 2026-05-12T11:46:36.501591
 ---
 
 # Settings API - OneAgent Business events capturing variants schema table

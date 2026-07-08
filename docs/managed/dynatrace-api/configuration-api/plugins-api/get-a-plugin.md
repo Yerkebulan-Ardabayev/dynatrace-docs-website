@@ -1,7 +1,6 @@
 ---
 title: Plugins API - GET a plugin
 source: https://docs.dynatrace.com/managed/dynatrace-api/configuration-api/plugins-api/get-a-plugin
-scraped: 2026-05-12T11:20:53.014711
 ---
 
 # Plugins API - GET a plugin
@@ -52,7 +51,7 @@ General configuration of a plugin.
 | metadata | [ConfigurationMetadata](#openapi-definition-ConfigurationMetadata) | Metadata useful for debugging |
 | metricGroup | string | The metric group of the plugin. All the metrics, captured by the plugin are children of this group. |
 | name | string | The name of the plugin, displayed in Dynatrace. |
-| properties | [PluginProperty[]](#openapi-definition-PluginProperty) | A list of plugin properties. |
+| properties | [PluginProperty](#openapi-definition-PluginProperty)[] | A list of plugin properties. |
 | type | string | The type of the plugin. It indicates the runtime environment of the plugin (for example, ActiveGate). The element can hold these values * `ActiveGate` * `JMX` * `OneAgent` * `PMI` |
 | version | string | The version of the plugin, displayed in Dynatrace. |
 

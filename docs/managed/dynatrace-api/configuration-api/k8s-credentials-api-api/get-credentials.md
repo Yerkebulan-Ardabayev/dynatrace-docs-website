@@ -1,7 +1,6 @@
 ---
 title: Kubernetes credentials API - GET credentials
 source: https://docs.dynatrace.com/managed/dynatrace-api/configuration-api/k8s-credentials-api-api/get-credentials
-scraped: 2026-05-12T12:14:58.186248
 ---
 
 # Kubernetes credentials API - GET credentials
@@ -59,7 +58,7 @@ Configuration for specific Kubernetes credentials.
 | endpointStatusInfo | string | The detailed status info of the configured endpoint. |
 | endpointUrl | string | The URL of the Kubernetes API server.  It must be unique within a Dynatrace environment.  The URL must valid according to RFC 2396. Leading or trailing whitespaces are not allowed. |
 | eventAnalysisAndAlertingEnabled | boolean | [Deprecated] With 1.240 the EA events monitoring has been deprecated and replaced by the events GA version which obsoletes this property.  Corresponds to the value of `eventsIntegrationEnabled`.  The field is ignored during an update, the old value remains unaffected. |
-| eventsFieldSelectors | [KubernetesEventPattern[]](#openapi-definition-KubernetesEventPattern) | Kubernetes event filters based on field-selectors. If set to `null` on creation, no events field selectors are subscribed. If set to `null` on update, no change of stored events field selectors is applied. Set an empty list to clear all events field selectors. |
+| eventsFieldSelectors | [KubernetesEventPattern](#openapi-definition-KubernetesEventPattern)[] | Kubernetes event filters based on field-selectors. If set to `null` on creation, no events field selectors are subscribed. If set to `null` on update, no change of stored events field selectors is applied. Set an empty list to clear all events field selectors. |
 | eventsIntegrationEnabled | boolean | The monitoring of events is enabled (`true`) or disabled (`false`) for the Kubernetes cluster. Event monitoring depends on the active state of this configuration to be true.  If not set on creation, the `false` value is used.  If the field is omitted during an update, the old value remains unaffected. |
 | id | string | The ID of the given credentials configuration. |
 | label | string | The name of the Kubernetes credentials configuration.  Allowed characters are letters, numbers, whitespaces, and the following characters: `.+-_`. Leading or trailing whitespace is not allowed. |
@@ -179,4 +178,4 @@ Metadata useful for debugging
 
 ## Related topics
 
-* [Explore Kubernetes in Dynatrace Hubï»¿](https://www.dynatrace.com/hub/?filter=kubernetes&utm_source=doc&utm_medium=link&utm_campaign=cross)
+* [Explore Kubernetes in Dynatrace Hub﻿](https://www.dynatrace.com/hub/?filter=kubernetes&utm_source=doc&utm_medium=link&utm_campaign=cross)

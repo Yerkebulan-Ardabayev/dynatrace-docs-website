@@ -1,7 +1,6 @@
 ---
 title: Analyze Go metrics
 source: https://docs.dynatrace.com/managed/ingest-from/technology-support/application-software/go/configuration-and-analysis/analyze-go-metrics
-scraped: 2026-05-12T12:04:05.868300
 ---
 
 # Analyze Go metrics
@@ -13,7 +12,7 @@ scraped: 2026-05-12T12:04:05.868300
 
 Dynatrace OneAgent tracks numerous Go-related metrics.
 
-The **Go metrics** and **Go HTTP metrics** tabs on the process overview page contain the most important Go-specific and HTTP metrics. The **Go managed memory**, **Heap details**, and **Scheduling** tabsâall accessible via the **Further details** tabâbring even more valuable insights into your Go-based application performance.
+The **Go metrics** and **Go HTTP metrics** tabs on the process overview page contain the most important Go-specific and HTTP metrics. The **Go managed memory**, **Heap details**, and **Scheduling** tabs—all accessible via the **Further details** tab—bring even more valuable insights into your Go-based application performance.
 
 ## Key metrics
 

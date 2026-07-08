@@ -1,7 +1,6 @@
 ---
 title: Token rotation
 source: https://docs.dynatrace.com/managed/ingest-from/setup-on-k8s/guides/networking-security-compliance/security-configurations/token-rotation
-scraped: 2026-05-12T12:14:24.881177
 ---
 
 # Token rotation
@@ -25,9 +24,9 @@ Code modules are not restarted automatically. You must restart injected applicat
 
 Dynatrace Operator creates and manages communication tokens that enable secure communication between Dynatrace components:
 
-* ActiveGateâNode Collection Controller token
-* ActiveGateâExtension Execution Controller token
-* EECâDynatrace Collector token
+* ActiveGate—Node Collection Controller token
+* ActiveGate—Extension Execution Controller token
+* EEC—Dynatrace Collector token
 
 ## Manually rotating Operator-managed tokens
 

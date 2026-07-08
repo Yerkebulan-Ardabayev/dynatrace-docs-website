@@ -1,7 +1,6 @@
 ---
 title: Run after deployment upgrade
 source: https://docs.dynatrace.com/managed/upgrade/up-post-upgrade
-scraped: 2026-05-12T12:07:07.254893
 ---
 
 # Run after deployment upgrade
@@ -29,7 +28,7 @@ Main objectives of this step:
 
 ### On-board users
 
-Dynatrace allows you to manage user permissions based on user account membership in user groups. You can manage these accounts and groups locally or through an Identity Provider of your choice via [SAML 2.0ï»¿](https://docs.dynatrace.com/docs/shortlink/access-saml) or [SCIMï»¿](https://docs.dynatrace.com/docs/shortlink/access-scim) protocol. When your first SaaS environment is provisioned, you'll get access to the Account Management service. Then, you can start configuring your access management settings and setting up user permissions manually or automatically with [Account Management API](/managed/dynatrace-api/account-management-api "Explore endpoints of the Account Management API.").
+Dynatrace allows you to manage user permissions based on user account membership in user groups. You can manage these accounts and groups locally or through an Identity Provider of your choice via [SAML 2.0﻿](https://docs.dynatrace.com/docs/shortlink/access-saml) or [SCIM﻿](https://docs.dynatrace.com/docs/shortlink/access-scim) protocol. When your first SaaS environment is provisioned, you'll get access to the Account Management service. Then, you can start configuring your access management settings and setting up user permissions manually or automatically with [Account Management API](/managed/dynatrace-api/account-management-api "Explore endpoints of the Account Management API.").
 
 Communicate any operational differences which may impact service design for Dynatrace users. For most users, there should be no noticeable difference in transitioning from Dynatrace Managed to SaaS.
 
@@ -48,10 +47,10 @@ Main objectives of this step:
 
 ### Extend your observability services
 
-We recommend that you review [Grailï»¿](https://docs.dynatrace.com/docs/shortlink/grail). It's a database designed explicitly for observability data. It acts as a single unified storage solution for logs, metrics, traces, events, and more. All data stored in Grail is interconnected within a real-time model that reflects the topology and dependencies within a monitored environment. Plan how to apply the following capabilities:
+We recommend that you review [Grail﻿](https://docs.dynatrace.com/docs/shortlink/grail). It's a database designed explicitly for observability data. It acts as a single unified storage solution for logs, metrics, traces, events, and more. All data stored in Grail is interconnected within a real-time model that reflects the topology and dependencies within a monitored environment. Plan how to apply the following capabilities:
 
-* [Log Management and Analyticsï»¿](https://docs.dynatrace.com/docs/shortlink/log-management-and-analytics)
-* [Business Observabilityï»¿](https://docs.dynatrace.com/docs/shortlink/business-observability-hub)
+* [Log Management and Analytics﻿](https://docs.dynatrace.com/docs/shortlink/log-management-and-analytics)
+* [Business Observability﻿](https://docs.dynatrace.com/docs/shortlink/business-observability-hub)
 
 ## Step 3 - Optimize
 
@@ -92,4 +91,4 @@ Dynatrace Managed infrastructure decommissioning plan
 
 Questions?
 
-Visit the [Upgrade to SaaS forumï»¿](https://community.dynatrace.com/t5/Upgrade-to-SaaS/bd-p/upgrade_to_saas) to ask questions, get answers, and share what you've learned with others.
+Visit the [Upgrade to SaaS forum﻿](https://community.dynatrace.com/t5/Upgrade-to-SaaS/bd-p/upgrade_to_saas) to ask questions, get answers, and share what you've learned with others.

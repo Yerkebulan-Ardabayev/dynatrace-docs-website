@@ -1,7 +1,6 @@
 ---
 title: Credential vault API - GET all credentials
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/credential-vault/get-all
-scraped: 2026-05-12T11:54:23.968569
 ---
 
 # Credential vault API - GET all credentials
@@ -56,7 +55,7 @@ A list of credentials sets for Synthetic monitors.
 
 | Element | Type | Description |
 | --- | --- | --- |
-| credentials | [CredentialsResponseElement[]](#openapi-definition-CredentialsResponseElement) | A list of credentials sets for Synthetic monitors. |
+| credentials | [CredentialsResponseElement](#openapi-definition-CredentialsResponseElement)[] | A list of credentials sets for Synthetic monitors. |
 | nextPageKey | string | - |
 | pageSize | integer | - |
 | totalCount | integer | - |
@@ -68,16 +67,16 @@ Metadata of the credentials set.
 | Element | Type | Description |
 | --- | --- | --- |
 | allowContextlessRequests | boolean | Allow access without app context, for example, from ad hoc functions in Workflows (requires the APP\_ENGINE scope). |
-| allowedEntities | [CredentialAccessData[]](#openapi-definition-CredentialAccessData) | The set of entities allowed to use the credential. |
-| credentialUsageSummary | [CredentialUsageHandler[]](#openapi-definition-CredentialUsageHandler) | The list contains summary data related to the use of credentials. |
+| allowedEntities | [CredentialAccessData](#openapi-definition-CredentialAccessData)[] | The set of entities allowed to use the credential. |
+| credentialUsageSummary | [CredentialUsageHandler](#openapi-definition-CredentialUsageHandler)[] | The list contains summary data related to the use of credentials. |
 | description | string | A short description of the credentials set. |
 | externalVault | [ExternalVaultConfig](#openapi-definition-ExternalVaultConfig) | Configuration for external vault synchronization for username and password credentials. |
 | id | string | The ID of the credentials set. |
 | name | string | The name of the credentials set. |
 | owner | string | The owner of the credential (user for which used API token was created). |
 | ownerAccessOnly | boolean | Flag indicating that this credential is visible only to the owner. |
-| scope | string | The scope of the credentials set. The element can hold these values * `APP_ENGINE` * `EXTENSION` * `SYNTHETIC` |
-| scopes | string[] | The set of scopes of the credentials set. The element can hold these values * `APP_ENGINE` * `EXTENSION` * `SYNTHETIC` |
+| scope | string | The scope of the credentials set. The element can hold these values * `APP_ENGINE` * `EXTENSION` * `EXTENSION_AUTHENTICATION` * `SYNTHETIC` |
+| scopes | string[] | The set of scopes of the credentials set. The element can hold these values * `APP_ENGINE` * `EXTENSION` * `EXTENSION_AUTHENTICATION` * `SYNTHETIC` |
 | type | string | The type of the credentials set. The element can hold these values * `AWS_MONITORING_KEY_BASED` * `AWS_MONITORING_ROLE_BASED` * `CERTIFICATE` * `PUBLIC_CERTIFICATE` * `SNMPV3` * `TOKEN` * `UNKNOWN` * `USERNAME_PASSWORD` |
 
 #### The `CredentialAccessData` object
@@ -123,7 +122,7 @@ Configuration for external vault synchronization for username and password crede
 | Element | Type | Description |
 | --- | --- | --- |
 | code | integer | The HTTP status code |
-| constraintViolations | [ConstraintViolation[]](#openapi-definition-ConstraintViolation) | A list of constraint violations |
+| constraintViolations | [ConstraintViolation](#openapi-definition-ConstraintViolation)[] | A list of constraint violations |
 | message | string | The error message |
 
 #### The `ConstraintViolation` object
@@ -473,5 +472,5 @@ A list of constraint violations
 
 ## Related topics
 
-* [Configure browser monitors](/managed/observe/digital-experience/synthetic-monitoring/browser-monitors/configure-browser-monitors "Learn about configuring browser monitors and clickpaths.")
-* [Configure HTTP monitors](/managed/observe/digital-experience/synthetic-monitoring/http-monitors-classic/configure-http-monitors-classic "Learn about configuring HTTP monitors.")
+* [Configure browser monitors in Classic](/managed/observe/digital-experience/synthetic-monitoring/browser-monitors/configure-browser-monitors "Learn about configuring browser monitors and clickpaths.")
+* [Configure HTTP monitors in Classic](/managed/observe/digital-experience/synthetic-monitoring/http-monitors-classic/configure-http-monitors-classic "Learn about configuring HTTP monitors.")

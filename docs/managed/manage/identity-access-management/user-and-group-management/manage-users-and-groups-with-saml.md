@@ -1,7 +1,6 @@
 ---
 title: Manage users and groups with SAML in Dynatrace Managed
 source: https://docs.dynatrace.com/managed/manage/identity-access-management/user-and-group-management/manage-users-and-groups-with-saml
-scraped: 2026-05-12T11:24:28.009270
 ---
 
 # Manage users and groups with SAML in Dynatrace Managed
@@ -57,7 +56,7 @@ Back in the Dynatrace Managed Cluster Management Console
 
 ## Group assignment configuration
 
-Each Dynatrace Managed user must be assigned to at least one user group, with at least one associated [monitoring environment](/managed/discover-dynatrace/get-started/monitoring-environment "Understand and learn how to work with monitoring environments."). Without such a mapping, the user can't sign in to Dynatrace Managed and will instead receive an error message stating that no environment has been found.
+Each Dynatrace Managed user must be assigned to at least one user group, with at least one associated [monitoring environment](/managed/discover-dynatrace/get-started/monitoring-environment "Learn what a Dynatrace monitoring environment is, how to find your environment ID, and how to set up and connect multiple environments."). Without such a mapping, the user can't sign in to Dynatrace Managed and will instead receive an error message stating that no environment has been found.
 
 The **Assign users to groups based on SAML 2.0 response attribute** switch determines how you manage user-group assignments:
 
@@ -236,7 +235,7 @@ Our recommendation for `NameIdFormat` is:
 
 Why am I signed out from my services when I request a sign-out from Dynatrace Managed?
 
-Upon sign-out, a global sign-out is triggered, including for your IdP, which then cascades to other services. Otherwise, you would be signed out from Dynatrace Managed, but to reauthenticate it would be sufficient to either click the **Log in using SSO** link on the login page, or to enter the Dynatrace Managed WebUI URL in the browser when the login page is configured to SSO.
+Upon sign-out, a global sign-out is triggered, including for your IdP, which then cascades to other services. Otherwise, you would be signed out from Dynatrace Managed, but to reauthenticate it would be sufficient to either select the **Log in using SSO** link on the login page, or to enter the Dynatrace Managed WebUI URL in the browser when the login page is configured to SSO.
 
 If you want to disable it (not a good idea from a security standpoint), edit your metadata, remove all `SingleLogoutService` tags, and upload the updated metadata.
 

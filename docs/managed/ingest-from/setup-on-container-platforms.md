@@ -1,7 +1,6 @@
 ---
 title: Set up Dynatrace on container and PaaS platforms
 source: https://docs.dynatrace.com/managed/ingest-from/setup-on-container-platforms
-scraped: 2026-05-12T11:38:06.711760
 ---
 
 # Set up Dynatrace on container and PaaS platforms
@@ -43,7 +42,7 @@ The most comprehensive option for monitoring containers with Dynatrace is to dep
 
 This assumes full access to the underlying host.
 
-For most OneAgent deployments and Container runtimes, injection will be performed by the `oneagenthelper` process that runs as part of the OneAgent service on the host or within the OA container. However some runtimes will start the OneAgentHelper process directly or need assistance from the OneAgentâs process auto injection logic.
+For most OneAgent deployments and Container runtimes, injection will be performed by the `oneagenthelper` process that runs as part of the OneAgent service on the host or within the OA container. However some runtimes will start the OneAgentHelper process directly or need assistance from the OneAgent’s process auto injection logic.
 
 If you continue to see the `oneagenthelper` processes active on your hosts even after stopping the OneAgent Service, you may need to disable Automatic injection as outlined within our documentation here before stopping the oneagent service / container: [Infrastructure and Discovery monitoring modes](/managed/platform/oneagent/monitoring-modes/monitoring-modes#disable-auto-injection "Find out more about the available monitoring modes when using OneAgent.") or ensure that you using OneAgent version 1.281+ within your Classic Full Stack deployment.
 

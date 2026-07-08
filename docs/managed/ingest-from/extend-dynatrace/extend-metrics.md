@@ -1,7 +1,6 @@
 ---
 title: Extend metric observability
 source: https://docs.dynatrace.com/managed/ingest-from/extend-dynatrace/extend-metrics
-scraped: 2026-05-12T11:03:37.364947
 ---
 
 # Extend metric observability
@@ -69,7 +68,7 @@ Use the [GET metric data points](/managed/dynatrace-api/environment-api/metric-v
 
 Select **Create custom chart** and then select **Try it out** in the top banner. For more information, see [Data Explorer](/managed/analyze-explore-automate/explorer "Query for metrics and transform results to gain desired insights.").
 
-You can search the metric keys of all available metrics, select the metrics you want to chart, define how youâd like to analyze and chart them, and then pin your charts to a dashboard.
+You can search the metric keys of all available metrics, select the metrics you want to chart, define how you’d like to analyze and chart them, and then pin your charts to a dashboard.
 
 ## Events
 
@@ -81,12 +80,12 @@ You can also create custom alerts based on the ingested metrics. Go to **Setting
 
 ## Custom metric ingestion affects your DDU consumption
 
-Only limited custom metric ingestion and analysis is included in out-of-the-box Dynatrace technology support. Custom metrics typically consume Davis data units, but custom metrics from OneAgent-monitored hosts are first deducted from your quota of [included metrics per host unit](/managed/license/monitoring-consumption-classic/davis-data-units/metric-cost-calculation#metrics-per-host-unit "Understand how to calculate Davis data unit consumption and costs related to monitored metrics."), so they won't necessarily consume DDUs. This applies to metrics that are assigned to a host either automatically or by adding the `dt.entity.host` dimension.
+Only limited custom metric ingestion and analysis is included in out-of-the-box Dynatrace technology support. Custom metrics typically consume Davis data units, but custom metrics from OneAgent-monitored hosts are first deducted from your quota of [included metrics per host unit](/managed/license/classic-licensing/davis-data-units/metric-cost-calculation#metrics-per-host-unit "Understand how to calculate Davis data unit consumption and costs related to monitored metrics."), so they won't necessarily consume DDUs. This applies to metrics that are assigned to a host either automatically or by adding the `dt.entity.host` dimension.
 
-For details, see [DDUs for custom metrics](/managed/license/monitoring-consumption-classic/davis-data-units/metric-cost-calculation "Understand how to calculate Davis data unit consumption and costs related to monitored metrics.").
+For details, see [DDUs for custom metrics](/managed/license/classic-licensing/davis-data-units/metric-cost-calculation "Understand how to calculate Davis data unit consumption and costs related to monitored metrics.").
 
-* Each ingested metric that is subject to DDU consumption (in other words, not assigned to a host) generates one or more **metric data points**. These data points consume DDUs with a weight of 0.001. Therefore, a simple metric reported once each minute for a full year will consume 526 DDUs (`525,600 minutes Ã 0.001 â 526 DDUs`).
-* To check the DDU consumption of an environment, go to [**Account Management**ï»¿](https://myaccount.dynatrace.com/) > **License** / **Subscription** > **Overview**.
+* Each ingested metric that is subject to DDU consumption (in other words, not assigned to a host) generates one or more **metric data points**. These data points consume DDUs with a weight of 0.001. Therefore, a simple metric reported once each minute for a full year will consume 526 DDUs (`525,600 minutes × 0.001 ≈ 526 DDUs`).
+* To check the DDU consumption of an environment, go to [**Account Management**﻿](https://myaccount.dynatrace.com/) > **License** / **Subscription** > **Overview**.
 
 ### Metric dimensions also affect DDU Consumption
 
@@ -102,7 +101,7 @@ There are two additional factors to consider in determining which ingested metri
 
 For the following examples, assume that all metrics are ingested once per minute.
 
-* In this first example, the same distinct dimension tuple is reported twice within a one-minute interval. Therefore, only one (aggregated) data point is consumed (`1 data point Ã 0.001 DDUs`).
+* In this first example, the same distinct dimension tuple is reported twice within a one-minute interval. Therefore, only one (aggregated) data point is consumed (`1 data point × 0.001 DDUs`).
 
   ```
   cpu.temp,cpu=cpu1,cpu_type="INTEL" 55
@@ -111,7 +110,7 @@ For the following examples, assume that all metrics are ingested once per minute
 
   cpu.temp,cpu=cpu1,cpu_type="INTEL" 75
   ```
-* Here two distinct dimension pairs are reported within a 1-minute interval. Therefore two data points are consumed (`2 Ã 0.001 DDUs`). From a consumption perspective, this is effectively two different metrics. A two-dimension tuple like this consumes `526 Ã 2 = 1,052` DDUs per year.
+* Here two distinct dimension pairs are reported within a 1-minute interval. Therefore two data points are consumed (`2 × 0.001 DDUs`). From a consumption perspective, this is effectively two different metrics. A two-dimension tuple like this consumes `526 × 2 = 1,052` DDUs per year.
 
   ```
   cpu.temp,cpu=cpu1,cpu_type="INTEL" 55
@@ -120,7 +119,7 @@ For the following examples, assume that all metrics are ingested once per minute
 
   cpu.temp,cpu=cpu2,cpu_type="INTEL" 75
   ```
-* Here, four distinct dimension pairs are reported within a 1-minute interval. Therefore, four data points are consumed (`4 Ã 0.001 DDUs`). From a consumption perspective, this is effectively four different metrics. A four-dimension tuple like this consumes `526 Ã 4 = 2,104` DDUs per year.
+* Here, four distinct dimension pairs are reported within a 1-minute interval. Therefore, four data points are consumed (`4 × 0.001 DDUs`). From a consumption perspective, this is effectively four different metrics. A four-dimension tuple like this consumes `526 × 4 = 2,104` DDUs per year.
 
   ```
   cpu.temp,cpu=cpu1,cpu_type="INTEL" 55
@@ -138,7 +137,7 @@ For the following examples, assume that all metrics are ingested once per minute
   cpu.temp,cpu=cpu4,cpu_type="INTEL" 75
   ```
 
-Each dimensional value (in this example, each network card) generates an individual time series within the chart. Therefore, for purposes of [calculating custom-metric consumption](/managed/license/monitoring-consumption-classic/davis-data-units/metric-cost-calculation "Understand how to calculate Davis data unit consumption and costs related to monitored metrics."), each dimensional value is counted as a separate custom metric.
+Each dimensional value (in this example, each network card) generates an individual time series within the chart. Therefore, for purposes of [calculating custom-metric consumption](/managed/license/classic-licensing/davis-data-units/metric-cost-calculation "Understand how to calculate Davis data unit consumption and costs related to monitored metrics."), each dimensional value is counted as a separate custom metric.
 
 ## Limits
 

@@ -1,7 +1,6 @@
 ---
 title: Monitor container groups
 source: https://docs.dynatrace.com/managed/observe/infrastructure-observability/container-platform-monitoring/container-groups
-scraped: 2026-05-12T11:09:33.074893
 ---
 
 # Monitor container groups
@@ -35,7 +34,7 @@ The **Container groups** overview page allows you to list all the containers in 
 
 ## Container analysis
 
-To get a better understanding of container behavior, go to the **Container analysis** section. Youâll see all the containers assigned to the selected container group.
+To get a better understanding of container behavior, go to the **Container analysis** section. You’ll see all the containers assigned to the selected container group.
 
 Provided metrics include:
 
@@ -49,9 +48,9 @@ Leverage these charts
 
 Select  in the upper-right corner of a chart to:
 
-* **Show in Data Explorer**âOpens [Data Explorer](/managed/analyze-explore-automate/explorer "Query for metrics and transform results to gain desired insights.") for the associated query, so you can view the associated query, explore the data more in-depth, adjust the chart settings, and pin the chart to your own dashboard.
-* **Create metric event**âOpens the [Metric events](/managed/dynatrace-intelligence/anomaly-detection/metric-events "Learn about metric events in Dynatrace") for the selected metric.
-* **Pin to dashboard**âPins a copy of the selected chart to any classic dashboard you can edit. For example, if certain hosts are particularly important to your business, create a dashboard designated to monitoring only those hosts, and then pin charts from their host overview pages to that dashboard, all with almost no typing. For details, see [Pin tiles to your dashboard](/managed/analyze-explore-automate/dashboards-classic/charts-and-tiles/pin-tiles-to-your-dashboard "Learn to pin tiles to your dashboards.").
+* **Show in Data Explorer**—Opens [Data Explorer](/managed/analyze-explore-automate/explorer "Query for metrics and transform results to gain desired insights.") for the associated query, so you can view the associated query, explore the data more in-depth, adjust the chart settings, and pin the chart to your own dashboard.
+* **Create metric event**—Opens the [Metric events](/managed/dynatrace-intelligence/anomaly-detection/metric-events "Learn about metric events in Dynatrace") for the selected metric.
+* **Pin to dashboard**—Pins a copy of the selected chart to any classic dashboard you can edit. For example, if certain hosts are particularly important to your business, create a dashboard designated to monitoring only those hosts, and then pin charts from their host overview pages to that dashboard, all with almost no typing. For details, see [Pin tiles to your dashboard](/managed/analyze-explore-automate/dashboards-classic/charts-and-tiles/pin-tiles-to-your-dashboard "Learn to pin tiles to your dashboards.").
 
 ## Process groups
 
@@ -69,5 +68,5 @@ Leverage these charts
 
 Select  in the upper-right corner of a chart to:
 
-* **Go to Log Viewer**âOpens the [Log Viewer](/managed/analyze-explore-automate/log-monitoring/analyze-log-data/log-viewer "Learn how to use Dynatrace log viewer to analyze log data.") page filtered by the selected container group.
-* **Create metric**âOpens the [Log metrics](/managed/analyze-explore-automate/log-monitoring/analyze-log-data/log-metrics "Learn how to create and use Dynatrace log metrics to analyze log data.") page with the **Query** value set to the selected container group.
+* **Go to Log Viewer**—Opens the [Log Viewer](/managed/analyze-explore-automate/log-monitoring/analyze-log-data/log-viewer "Learn how to use Dynatrace log viewer to analyze log data.") page filtered by the selected container group.
+* **Create metric**—Opens the [Log metrics](/managed/analyze-explore-automate/log-monitoring/analyze-log-data/log-metrics "Learn how to create and use Dynatrace log metrics to analyze log data.") page with the **Query** value set to the selected container group.

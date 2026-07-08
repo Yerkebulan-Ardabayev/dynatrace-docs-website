@@ -1,7 +1,6 @@
 ---
 title: Synthetic nodes API v1
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/synthetic/synthetic-nodes
-scraped: 2026-05-12T11:11:53.241560
 ---
 
 # Synthetic nodes API v1
@@ -11,7 +10,7 @@ scraped: 2026-05-12T11:11:53.241560
 * Reference
 * Published Jan 14, 2019
 
-We have a new version of this APIâ[Synthetic API v2](/managed/dynatrace-api/environment-api/synthetic-v2 "Find out what the Dynatrace Synthetic v2 API offers."). Check it out!
+We have a new version of this API—[Synthetic API v2](/managed/dynatrace-api/environment-api/synthetic-v2 "Find out what the Dynatrace Synthetic v2 API offers."). Check it out!
 
 The **nodes** endpoints of the **Synthetic API** enable you to retrieve information about synthetic nodes.
 

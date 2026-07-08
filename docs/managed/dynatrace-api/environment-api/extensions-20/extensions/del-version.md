@@ -1,7 +1,6 @@
 ---
 title: Extensions 2.0 API - DELETE an extension version
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/extensions-20/extensions/del-version
-scraped: 2026-05-12T11:56:32.722591
 ---
 
 # Extensions 2.0 API - DELETE an extension version
@@ -79,7 +78,7 @@ Additional information about a Feature Set
 | description | string | Optional description for the feature set |
 | displayName | string | Optional display name of the feature set |
 | isRecommended | boolean | Marks the feature set as recommended (selected by default during activation) |
-| metrics | [MetricDto[]](#openapi-definition-MetricDto) | Feature set metrics |
+| metrics | [MetricDto](#openapi-definition-MetricDto)[] | Feature set metrics |
 
 #### The `MetricDto` object
 
@@ -111,7 +110,7 @@ Metric metadata
 | Element | Type | Description |
 | --- | --- | --- |
 | code | integer | The HTTP status code |
-| constraintViolations | [ConstraintViolation[]](#openapi-definition-ConstraintViolation) | A list of constraint violations |
+| constraintViolations | [ConstraintViolation](#openapi-definition-ConstraintViolation)[] | A list of constraint violations |
 | message | string | The error message |
 
 #### The `ConstraintViolation` object

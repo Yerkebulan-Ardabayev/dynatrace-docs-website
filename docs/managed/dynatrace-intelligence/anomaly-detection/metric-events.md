@@ -1,7 +1,6 @@
 ---
 title: Metric events
 source: https://docs.dynatrace.com/managed/dynatrace-intelligence/anomaly-detection/metric-events
-scraped: 2026-05-12T11:06:55.533626
 ---
 
 # Metric events
@@ -12,16 +11,16 @@ scraped: 2026-05-12T11:06:55.533626
 * 5-min read
 * Updated on Mar 04, 2024
 
-Dynatrace DavisÂ® AI automatically analyzes abnormal situations within your IT infrastructure and attempts to identify any relevant impact and root cause. Davis relies on a broad spectrum of information sources, such as a transactional view of your services and applications, as well as all events raised on individual nodes within your SmartscapeÂ® topology. One of the sources for events in Dynatrace is metric events, that is, events based on metric data. They are configured in the global settings of your environment and are visible to all Dynatrace users in your environment. There are two types of metric events based on how the metric is queried for event evaluation:
+Dynatrace Davis® AI automatically analyzes abnormal situations within your IT infrastructure and attempts to identify any relevant impact and root cause. Davis relies on a broad spectrum of information sources, such as a transactional view of your services and applications, as well as all events raised on individual nodes within your Smartscape® topology. One of the sources for events in Dynatrace is metric events, that is, events based on metric data. They are configured in the global settings of your environment and are visible to all Dynatrace users in your environment. There are two types of metric events based on how the metric is queried for event evaluation:
 
 * [Metric key](/managed/dynatrace-intelligence/anomaly-detection/metric-events/metric-key-events "Learn about metric events based on a metric key."). Metric key events evaluate the incoming measures of a single metric. You can use only static thresholds with this query type.
 * [Metric selector](/managed/dynatrace-intelligence/anomaly-detection/metric-events/metric-selector-events "Learn about metric events based on a metric selector."). Metric selector events evaluate a complex query defined by the [selector](/managed/dynatrace-api/environment-api/metric-v2/metric-selector "Configure the metric selector for the Metric v2 API."). This query type can include historical data and even [arithmetic operations](/managed/dynatrace-api/environment-api/metric-v2/metric-expressions "Use metric expressions to apply arithmetic operations in a data points query via the Metrics API v2.") with multiple metrics.
 
 Dynatrace uses three monitoring strategies for such events:
 
-* [Static threshold](/managed/dynatrace-intelligence/anomaly-detection/static-thresholds "When to use a static threshold for your anomaly detection.")âthe threshold that doesn't change over time.
-* [Auto-adaptive threshold](/managed/dynatrace-intelligence/anomaly-detection/auto-adaptive-threshold "How Dynatrace adapts thresholds for multiple entities within the scope of an anomaly detection configuration.")âDynatrace calculates the threshold automatically and adapts it dynamically to your metric's behavior.
-* [Seasonal baseline](/managed/dynatrace-intelligence/ai-models/seasonal-baseline "How Davis suggests Seasonal baseline thresholds for a scope of entities.")âDynatrace calculates a confidence band for a metric with seasonal patterns.
+* [Static threshold](/managed/dynatrace-intelligence/anomaly-detection/static-thresholds "When to use a static threshold for your anomaly detection.")—the threshold that doesn't change over time.
+* [Auto-adaptive threshold](/managed/dynatrace-intelligence/anomaly-detection/auto-adaptive-threshold "How Dynatrace adapts thresholds for multiple entities within the scope of an anomaly detection configuration.")—Dynatrace calculates the threshold automatically and adapts it dynamically to your metric's behavior.
+* [Seasonal baseline](/managed/dynatrace-intelligence/ai-models/seasonal-baseline "How Davis suggests Seasonal baseline thresholds for a scope of entities.")—Dynatrace calculates a confidence band for a metric with seasonal patterns.
 
 * Auto-adaptive thresholds and seasonal baselining are available only for metric selector events.
 * The number of metric event configurations (both metric key and metric selector) is limited to **10,000**.
@@ -56,7 +55,7 @@ Management zones set up via [dimensional data rules](/managed/manage/identity-ac
 
 ## Topology awareness
 
-Topology awareness and context are the key themes of the Dynatrace observability platform. Dataâsuch as metrics, traces, events, and logsâis not simply reported and stored within the platform. Such data is rich with references to the topology where the data originated. For example, with process metrics, each measurement references the associated hosts and processes. Davis AI uses this topological information to automatically perform root cause detection and impact analysis for detected anomalies. The same applies to all metric events in your environment.
+Topology awareness and context are the key themes of the Dynatrace observability platform. Data—such as metrics, traces, events, and logs—is not simply reported and stored within the platform. Such data is rich with references to the topology where the data originated. For example, with process metrics, each measurement references the associated hosts and processes. Davis AI uses this topological information to automatically perform root cause detection and impact analysis for detected anomalies. The same applies to all metric events in your environment.
 
 When an anomaly detection configuration raises an event, Dynatrace automatically identifies the most relevant entity to map the event to. If multiple entity references are detected, the most relevant one is automatically selected. For example, if a metric with reference to both a host and a process leads to an event, the event is raised on the process.
 
@@ -106,4 +105,4 @@ batchjob.executions,dt.entity.host=HOST-2222222,dt.entity.process_group_instance
 
 ## Related topics
 
-* [[Video] Dynatrace Metric Events: Setup anomaly detection based on your businessï»¿](https://www.youtube.com/watch?v=NVuiTwOYHQA)
+* [[Video] Dynatrace Metric Events: Setup anomaly detection based on your business﻿](https://www.youtube.com/watch?v=NVuiTwOYHQA)

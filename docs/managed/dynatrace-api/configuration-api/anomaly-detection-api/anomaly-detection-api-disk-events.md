@@ -1,7 +1,6 @@
 ---
 title: Anomaly detection API - Disk events
 source: https://docs.dynatrace.com/managed/dynatrace-api/configuration-api/anomaly-detection-api/anomaly-detection-api-disk-events
-scraped: 2026-05-12T11:04:59.950299
 ---
 
 # Anomaly detection API - Disk events
@@ -11,7 +10,7 @@ scraped: 2026-05-12T11:04:59.950299
 * Reference
 * Published Oct 30, 2018
 
-The **Anomaly detectionâDisk events** API enables you to manage the configuration of custom disk events. You can also [manage](/managed/dynatrace-intelligence/anomaly-detection/adjust-sensitivity-anomaly-detection/adjust-sensitivity-infastructure "Adjust problem detection sensitivity for infrastructure.") the same configuration in the Dynatrace web UI at **Settings > Anomaly detection > Hosts** (scroll down to the **Custom disk-detection rule** section).
+The **Anomaly detection—Disk events** API enables you to manage the configuration of custom disk events. You can also [manage](/managed/dynatrace-intelligence/anomaly-detection/adjust-sensitivity-anomaly-detection/adjust-sensitivity-infastructure "Adjust problem detection sensitivity for infrastructure.") the same configuration in the Dynatrace web UI at **Settings > Anomaly detection > Hosts** (scroll down to the **Custom disk-detection rule** section).
 
 [### List all disk events
 

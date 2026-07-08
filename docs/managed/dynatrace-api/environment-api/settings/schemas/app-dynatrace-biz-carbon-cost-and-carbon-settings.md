@@ -1,7 +1,6 @@
 ---
 title: Settings API - Cost & Carbon Optimization schema table
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/settings/schemas/app-dynatrace-biz-carbon-cost-and-carbon-settings
-scraped: 2026-05-12T11:44:13.934702
 ---
 
 # Settings API - Cost & Carbon Optimization schema table

@@ -1,7 +1,6 @@
 ---
 title: Azure Network Watcher (Connection Monitor, Connection Monitor Preview) monitoring
 source: https://docs.dynatrace.com/managed/ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics/monitor-azure-network-watcher
-scraped: 2026-05-12T11:26:50.888745
 ---
 
 # Azure Network Watcher (Connection Monitor, Connection Monitor Preview) monitoring

@@ -1,7 +1,6 @@
 ---
 title: Error events
 source: https://docs.dynatrace.com/managed/dynatrace-intelligence/root-cause-analysis/event-analysis-and-correlation/event-categories/error-events
-scraped: 2026-05-12T12:06:46.114581
 ---
 
 # Error events

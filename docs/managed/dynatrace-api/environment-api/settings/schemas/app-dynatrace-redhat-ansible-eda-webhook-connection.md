@@ -1,7 +1,6 @@
 ---
 title: Settings API - Red Hat Event-Driven Ansible Connections schema table
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/settings/schemas/app-dynatrace-redhat-ansible-eda-webhook-connection
-scraped: 2026-05-12T11:40:02.821777
 ---
 
 # Settings API - Red Hat Event-Driven Ansible Connections schema table

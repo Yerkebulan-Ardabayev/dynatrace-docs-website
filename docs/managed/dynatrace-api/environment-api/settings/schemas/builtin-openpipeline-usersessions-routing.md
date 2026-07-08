@@ -1,7 +1,6 @@
 ---
 title: Settings API - Ingest routing configuration (usersessions) schema table
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-usersessions-routing
-scraped: 2026-05-12T11:47:38.465550
 ---
 
 # Settings API - Ingest routing configuration (usersessions) schema table

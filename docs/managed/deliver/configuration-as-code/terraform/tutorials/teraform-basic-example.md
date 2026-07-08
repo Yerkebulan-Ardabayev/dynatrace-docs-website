@@ -1,7 +1,6 @@
 ---
 title: Terraform basic example
 source: https://docs.dynatrace.com/managed/deliver/configuration-as-code/terraform/tutorials/teraform-basic-example
-scraped: 2026-05-12T11:21:29.936798
 ---
 
 # Terraform basic example
@@ -39,7 +38,7 @@ Create a management zone for a web application using Terraform.
 
 1. Inside your working directory, create a `main.tf` file with the following content.
 
-   This file contains the Terraform configurationâa set of resource blocks that define the configuration. For more information on management zone resource, refer to the [Terraform Registryï»¿](https://registry.terraform.io/providers/dynatrace-oss/dynatrace/latest/docs/resources/management_zone_v2) documentation.
+   This file contains the Terraform configuration—a set of resource blocks that define the configuration. For more information on management zone resource, refer to the [Terraform Registry﻿](https://registry.terraform.io/providers/dynatrace-oss/dynatrace/latest/docs/resources/management_zone_v2) documentation.
 
    Consider using the export utility to export existing configurations from the environment.
 

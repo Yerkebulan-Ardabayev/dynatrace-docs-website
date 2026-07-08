@@ -1,7 +1,6 @@
 ---
 title: Migrate ActiveGate extension
 source: https://docs.dynatrace.com/managed/upgrade/up-execute-upgrade/up-migrate-ag-extension
-scraped: 2026-05-12T12:13:58.722587
 ---
 
 # Migrate ActiveGate extension

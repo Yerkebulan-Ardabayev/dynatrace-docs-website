@@ -1,7 +1,6 @@
 ---
 title: Update management zones for user group
 source: https://docs.dynatrace.com/managed/dynatrace-api/cluster-api/cluster-api-v1/user-groups-v1/put-update-group-mz
-scraped: 2026-05-12T12:12:45.884962
 ---
 
 # Update management zones for user group
@@ -33,14 +32,14 @@ To execute this request, you need the **Service Provider API** (`ServiceProvider
 | Element | Type | Description | Required |
 | --- | --- | --- | --- |
 | groupId | string | Group ID | Optional |
-| mzPermissionsPerEnvironment | [MzListForEnvironment[]](#openapi-definition-MzListForEnvironment) | List of management zone permissions per environment | Optional |
+| mzPermissionsPerEnvironment | [MzListForEnvironment](#openapi-definition-MzListForEnvironment)[] | List of management zone permissions per environment | Optional |
 
 #### The `MzListForEnvironment` object
 
 | Element | Type | Description | Required |
 | --- | --- | --- | --- |
 | environmentUuid | string | Environment UUID | Optional |
-| mzPermissions | [MzPermissionsList[]](#openapi-definition-MzPermissionsList) | List of management zone models with permissions | Optional |
+| mzPermissions | [MzPermissionsList](#openapi-definition-MzPermissionsList)[] | List of management zone models with permissions | Optional |
 
 #### The `MzPermissionsList` object
 

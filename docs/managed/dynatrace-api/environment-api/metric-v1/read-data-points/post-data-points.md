@@ -1,7 +1,6 @@
 ---
 title: Timeseries API v1 - POST data points
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/metric-v1/read-data-points/post-data-points
-scraped: 2026-05-12T11:58:33.933040
 ---
 
 # Timeseries API v1 - POST data points
@@ -55,7 +54,7 @@ Filtering parameters for a timeseries query.
 | Element | Type | Description | Required |
 | --- | --- | --- | --- |
 | aggregationType | string | The aggregation type for the resulting data points.  If the requested metric doesn't support the specified aggregation, the request will result in an error. The element can hold these values * `AVG` * `COUNT` * `MAX` * `MEDIAN` * `MIN` * `PERCENTILE` * `SUM` | Optional |
-| considerMaintenanceWindowsForAvailability | boolean | Exclude (`true`) or include (`false`) data points from any [maintenance windowï»¿](https://dt-url.net/b2123rg0), defined in your environment. | Optional |
+| considerMaintenanceWindowsForAvailability | boolean | Exclude (`true`) or include (`false`) data points from any [maintenance window﻿](https://dt-url.net/b2123rg0), defined in your environment. | Optional |
 | endTimestamp | integer | The start timestamp of the timeframe, in UTC milliseconds.  If later than the current time, Dynatrace automatically uses current time instead.  The timeframe must not exceed 6 months. | Optional |
 | entities | string[] | Filters requested data points by entities which should deliver them. You can specify several entities at once.  Allowed values are Dynatrace entity IDs.  If the selected entity doesn't support the requested metric, the request will result in an error. | Optional |
 | filters | object | A filter is an object, containing map of filter keys and its values. Valid filter keys are:  `processType`: Filters by process type. See Process types for allowed values. `osType`: Filters by operating system. See OS types for allowed values. `serviceType`: Filters by service type. See Service types for allowed values. `technology`: Filters by technology type. See Technology types for allowed values. `webServiceName`: Filters by web service name. `webServiceNamespace`: Filters by the web service namespace. `host`: Filters by entity ID of the host, for example HOST-007. | Optional |
@@ -171,7 +170,7 @@ List of metric's datapoints, as well as their parameters.
 | entities | object | The list of entities where the data points originate.  A JSON object that maps the entity ID in Dynatrace and the actual name of the entity. |
 | resolutionInMillisUTC | integer | The resolution of data points. |
 | timeseriesId | string | The ID of the metric. |
-| unit | string | The unit of data points. The element can hold these values * `Ampere (A)` * `Billion (Gcount)` * `Bit (bit)` * `BitPerHour (bit/h)` * `BitPerMinute (bit/min)` * `BitPerSecond (bit/s)` * `Byte (B)` * `BytePerHour (B/h)` * `BytePerMinute (B/min)` * `BytePerSecond (B/s)` * `Cores` * `Count (count)` * `Day (ds)` * `DecibelMilliWatt (dBm)` * `G` * `GibiByte (GiB)` * `GibiBytePerHour (GiB/h)` * `GibiBytePerMinute (GiB/min)` * `GibiBytePerSecond (GiB/s)` * `GigaByte (GB)` * `GigaBytePerHour (GB/h)` * `GigaBytePerMinute (GB/min)` * `GigaBytePerSecond (GB/s)` * `Hertz (Hz)` * `Hour (hs)` * `KibiByte (KiB)` * `KibiBytePerHour (KiB/h)` * `KibiBytePerMinute (KiB/min)` * `KibiBytePerSecond (KiB/s)` * `KiloByte (kB)` * `KiloBytePerHour (kB/h)` * `KiloBytePerMinute (kB/min)` * `KiloBytePerSecond (kB/s)` * `M` * `MSU` * `MebiByte (MiB)` * `MebiBytePerHour (MiB/h)` * `MebiBytePerMinute (MiB/min)` * `MebiBytePerSecond (MiB/s)` * `MegaByte (MB)` * `MegaBytePerHour (MB/h)` * `MegaBytePerMinute (MB/min)` * `MegaBytePerSecond (MB/s)` * `MicroSecond (Âµs)` * `MilliSecond (ms)` * `MilliSecondPerMinute (ms/min)` * `Million (Mcount)` * `Minute (mins)` * `Month (mos)` * `N/A` * `NanoSecond (ns)` * `NanoSecondPerMinute (ns/min)` * `PerHour (count/h)` * `PerMinute (count/min)` * `PerSecond (count/s)` * `Percent (%)` * `Pixel (px)` * `Promille (â°)` * `Ratio` * `Second (s)` * `State` * `Trillion (Tcount)` * `Unspecified` * `Volt (V)` * `Watt (W)` * `Week (ws)` * `Year (ys)` * `k` * `km/h` * `m/h` * `m/s` * `mCores` |
+| unit | string | The unit of data points. The element can hold these values * `Ampere (A)` * `Billion (Gcount)` * `Bit (bit)` * `BitPerHour (bit/h)` * `BitPerMinute (bit/min)` * `BitPerSecond (bit/s)` * `Byte (B)` * `BytePerHour (B/h)` * `BytePerMinute (B/min)` * `BytePerSecond (B/s)` * `Cores` * `Count (count)` * `Day (ds)` * `DecibelMilliWatt (dBm)` * `G` * `GibiByte (GiB)` * `GibiBytePerHour (GiB/h)` * `GibiBytePerMinute (GiB/min)` * `GibiBytePerSecond (GiB/s)` * `GigaByte (GB)` * `GigaBytePerHour (GB/h)` * `GigaBytePerMinute (GB/min)` * `GigaBytePerSecond (GB/s)` * `Hertz (Hz)` * `Hour (hs)` * `KibiByte (KiB)` * `KibiBytePerHour (KiB/h)` * `KibiBytePerMinute (KiB/min)` * `KibiBytePerSecond (KiB/s)` * `KiloByte (kB)` * `KiloBytePerHour (kB/h)` * `KiloBytePerMinute (kB/min)` * `KiloBytePerSecond (kB/s)` * `M` * `MSU` * `MebiByte (MiB)` * `MebiBytePerHour (MiB/h)` * `MebiBytePerMinute (MiB/min)` * `MebiBytePerSecond (MiB/s)` * `MegaByte (MB)` * `MegaBytePerHour (MB/h)` * `MegaBytePerMinute (MB/min)` * `MegaBytePerSecond (MB/s)` * `MicroSecond (µs)` * `MilliSecond (ms)` * `MilliSecondPerMinute (ms/min)` * `Million (Mcount)` * `Minute (mins)` * `Month (mos)` * `N/A` * `NanoSecond (ns)` * `NanoSecondPerMinute (ns/min)` * `PerHour (count/h)` * `PerMinute (count/min)` * `PerSecond (count/s)` * `Percent (%)` * `Pixel (px)` * `Promille (‰)` * `Ratio` * `Second (s)` * `State` * `Trillion (Tcount)` * `Unspecified` * `Volt (V)` * `Watt (W)` * `Week (ws)` * `Year (ys)` * `k` * `km/h` * `m/h` * `m/s` * `mCores` |
 
 #### The `ErrorEnvelope` object
 
@@ -184,7 +183,7 @@ List of metric's datapoints, as well as their parameters.
 | Element | Type | Description |
 | --- | --- | --- |
 | code | integer | The HTTP status code |
-| constraintViolations | [ConstraintViolation[]](#openapi-definition-ConstraintViolation) | A list of constraint violations |
+| constraintViolations | [ConstraintViolation](#openapi-definition-ConstraintViolation)[] | A list of constraint violations |
 | message | string | The error message |
 
 #### The `ConstraintViolation` object

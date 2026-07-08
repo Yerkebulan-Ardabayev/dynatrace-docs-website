@@ -1,7 +1,6 @@
 ---
 title: Settings API - Enablement and cost control schema table
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/settings/schemas/builtin-rum-custom-enablement
-scraped: 2026-05-12T11:46:53.331900
 ---
 
 # Settings API - Enablement and cost control schema table
@@ -34,11 +33,11 @@ To execute this request, you need an access token with **Read settings** (`setti
 
 | Property | Type | Description | Required |
 | --- | --- | --- | --- |
-| Real User Monitoring `rum` | [rum](#rum) | Capture and analyze all user actions within your application. Enable [Real User Monitoring (RUM)ï»¿](https://dt-url.net/1n2b0prq) to monitor and improve your application's performance, identify errors, and gain insight into your user's behavior and experience. | Required |
+| Real User Monitoring `rum` | [rum](#rum) | Capture and analyze all user actions within your application. Enable [Real User Monitoring (RUM)﻿](https://dt-url.net/1n2b0prq) to monitor and improve your application's performance, identify errors, and gain insight into your user's behavior and experience. | Required |
 
 ##### The `rum` object
 
 | Property | Type | Description | Required |
 | --- | --- | --- | --- |
 | Enable Real User Monitoring `enabled` | boolean | - | Required |
-| Cost and traffic control `costAndTrafficControl` | integer | Percentage of user sessions captured and analyzed  By default, Dynatrace captures all user actions and user sessions for analysis. This approach ensures complete insight into your applicationâs performance and customer experience. You can optionally reduce the granularity of user-action and user-session analysis by capturing a lower percentage of user sessions. While this approach can reduce monitoring costs, it also results in lower visibility into how your customers are using your applications. For example, a setting of 10% results in Dynatrace analyzing only every tenth user session. | Required |
+| Cost and traffic control `costAndTrafficControl` | integer | Percentage of user sessions captured and analyzed  By default, Dynatrace captures all user actions and user sessions for analysis. This approach ensures complete insight into your application’s performance and customer experience. You can optionally reduce the granularity of user-action and user-session analysis by capturing a lower percentage of user sessions. While this approach can reduce monitoring costs, it also results in lower visibility into how your customers are using your applications. For example, a setting of 10% results in Dynatrace analyzing only every tenth user session. | Required |

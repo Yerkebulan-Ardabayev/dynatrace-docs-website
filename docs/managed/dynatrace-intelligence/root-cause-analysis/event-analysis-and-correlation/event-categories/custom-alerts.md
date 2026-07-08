@@ -1,7 +1,6 @@
 ---
 title: Custom alerts
 source: https://docs.dynatrace.com/managed/dynatrace-intelligence/root-cause-analysis/event-analysis-and-correlation/event-categories/custom-alerts
-scraped: 2026-05-12T12:05:44.338676
 ---
 
 # Custom alerts

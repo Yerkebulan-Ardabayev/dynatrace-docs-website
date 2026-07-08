@@ -1,7 +1,6 @@
 ---
 title: Service backtrace
 source: https://docs.dynatrace.com/managed/observe/application-observability/services-classic/service-backtrace
-scraped: 2026-05-12T11:06:24.524391
 ---
 
 # Service backtrace
@@ -12,9 +11,9 @@ scraped: 2026-05-12T11:06:24.524391
 * 4-min read
 * Published Jul 19, 2017
 
-More than just knowing which service directly calls one of your services, it's helpful to know the sequence of service calls that leads up to each requestâall the way back up to the browser click that triggered the sequence of calls. Dynatrace **Service-level backtrace** can show you such call sequences.
+More than just knowing which service directly calls one of your services, it's helpful to know the sequence of service calls that leads up to each request—all the way back up to the browser click that triggered the sequence of calls. Dynatrace **Service-level backtrace** can show you such call sequences.
 
-Say for example that youâre analyzing a SQL database service and you want to understand the sequence of preceding service requests that ultimately triggered the incoming requests to the SQL service. With service-level backtrace you might learn that, for example, the SQL database service is called by `Service1`, while `Service1` is called by `Service2`, which in turn was triggered by a click on a login button.
+Say for example that you’re analyzing a SQL database service and you want to understand the sequence of preceding service requests that ultimately triggered the incoming requests to the SQL service. With service-level backtrace you might learn that, for example, the SQL database service is called by `Service1`, while `Service1` is called by `Service2`, which in turn was triggered by a click on a login button.
 
 To view service-level backtrace
 
@@ -34,7 +33,7 @@ When a service or an application in a backtrace hierarchy is selected, you can a
 
 Service-level backtrace
 
-In the first section, in the case of an application, you can view the list of [user actions](/managed/observe/digital-experience/rum-concepts/user-actions "Learn what user actions are and how they help you understand what users do with your application.") of this specific application that occurred within the [selected timeframe](/managed/analyze-explore-automate/dashboards-classic/dashboards/dashboard-timeframe "Learn about Dynatrace dashboard timeframe and management zone settings."). In the case of services, you can view the types of requests that were made by that particular service to the next service in the backtrace flow.
+In the first section, in the case of an application, you can view the list of [user actions](/managed/observe/digital-experience/rum-classic/rum-concepts/user-actions "Learn what user actions are and how they help you understand what users do with your application.") of this specific application that occurred within the [selected timeframe](/managed/analyze-explore-automate/dashboards-classic/dashboards/dashboard-timeframe "Learn about Dynatrace dashboard timeframe and management zone settings."). In the case of services, you can view the types of requests that were made by that particular service to the next service in the backtrace flow.
 
 The next section includes analysis data regarding the number of requests and any failures that may have occurred. Further information can be accessed by selecting the tabs:
 
@@ -83,7 +82,7 @@ To learn the root causes of detected failures, select **Analyze failure rate deg
 
 Backtrace 7
 
-Dynatrace shows you how this failed request impacted your other services and your users. You can see that all requests came from a single user action, the loading of the blog. You can also see that the `/blog` request on the web server wasnât impacted by the failed `Ads request`. Not a single `/blogs` request failedâso the error was handled gracefully.
+Dynatrace shows you how this failed request impacted your other services and your users. You can see that all requests came from a single user action, the loading of the blog. You can also see that the `/blog` request on the web server wasn’t impacted by the failed `Ads request`. Not a single `/blogs` request failed—so the error was handled gracefully.
 
 ![Backtrace 8](https://dt-cdn.net/images/backtrace08-1328-23bee447bd.png)
 

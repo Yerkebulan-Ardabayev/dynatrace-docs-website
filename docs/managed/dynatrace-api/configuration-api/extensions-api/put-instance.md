@@ -1,7 +1,6 @@
 ---
 title: Extensions API - PUT an extension's instance
 source: https://docs.dynatrace.com/managed/dynatrace-api/configuration-api/extensions-api/put-instance
-scraped: 2026-05-12T11:20:06.469478
 ---
 
 # Extensions API - PUT an extension's instance
@@ -149,7 +148,7 @@ This is a model of the request body, showing the possible elements. It has to be
 | Element | Type | Description |
 | --- | --- | --- |
 | code | integer | The HTTP status code |
-| constraintViolations | [ConstraintViolation[]](#openapi-definition-ConstraintViolation) | A list of constraint violations |
+| constraintViolations | [ConstraintViolation](#openapi-definition-ConstraintViolation)[] | A list of constraint violations |
 | message | string | The error message |
 
 #### The `ConstraintViolation` object

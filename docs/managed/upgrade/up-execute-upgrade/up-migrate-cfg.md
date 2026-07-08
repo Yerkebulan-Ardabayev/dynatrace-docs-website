@@ -1,14 +1,13 @@
 ---
 title: Migrate configuration
 source: https://docs.dynatrace.com/managed/upgrade/up-execute-upgrade/up-migrate-cfg
-scraped: 2026-05-12T12:14:05.755900
 ---
 
 # Migrate configuration
 
 # Migrate configuration
 
-* Updated on Mar 03, 2026
+* Updated on May 29, 2026
 
 Dynatrace offers several tools to help you successfully migrate your configuration from a Dynatrace Managed environment to the SaaS environment. The table below will help you select the appropriate tool for your environment, your configuration experience, and the [upgrade approach](/managed/upgrade/up-plan#which-approach "A detailed overview of what you need to plan, prepare, and consider before upgrading to Dynatrace SaaS.") you intend to follow.
 
@@ -41,7 +40,7 @@ To migrate your configuration using Monaco
 2. Create a deployment [manifest](/managed/deliver/configuration-as-code/monaco/configuration "Manage the Dynatrace configuration files using Monaco with a set of projects and a deployment manifest."): `manifest.yaml`
 3. For each environment that you want to migrate, add a configuration:
 
-   * In the environmentâs web UI, go to **Access tokens** and select **Generate new token**.
+   * In the environment’s web UI, go to **Access tokens** and select **Generate new token**.
    * Type a token name and set a feasible expiration date.
    * Select the scopes below:
 
@@ -209,9 +208,9 @@ See the [supported configuration API types](/managed/deliver/configuration-as-co
 * [Problem notifications](/managed/analyze-explore-automate/notifications-and-alerting/problem-notifications "Learn how to integrate third-party problem notification systems with Dynatrace.") integration, such as Jira, OpsGenie, PagerDuty, Trello, VictorOps, and xMatters
 * [Push notifications](/managed/analyze-explore-automate/notifications-and-alerting/push-notifications-via-the-dynatrace-mobile-app "Learn how you can connect your Dynatrace environments with the Dynatrace mobile app to receive problem alerts.") via the Dynatrace mobile app
 * [Metrics](/managed/ingest-from/extend-dynatrace/extend-metrics "Learn how to extend metric observability in Dynatrace.") not linked to instances
-* Web application usability analytics - [rage clicks](/managed/observe/digital-experience/rum-concepts/user-and-error-events#rage-event "Learn about user and error events and the types of user and error events captured by Dynatrace.")
-* [JavaScript errors](/managed/observe/digital-experience/web-applications/additional-configuration/configure-errors#configure-javascript-errors "Configure your application to capture or ignore request, custom, and JavaScript errors.")
-* [Mobile symbolication](/managed/observe/digital-experience/mobile-applications/analyze-and-use/upload-and-manage-symbol-files "Learn about deobfuscation (Android) and symbolication (iOS and tvOS) and your options for uploading and managing symbol files in Dynatrace.")
+* Web application usability analytics - [rage clicks](/managed/observe/digital-experience/rum-classic/rum-concepts/user-and-error-events#rage-event "Learn about user and error events and the types of user and error events captured by Dynatrace.")
+* [JavaScript errors](/managed/observe/digital-experience/rum-classic/web-applications/additional-configuration/configure-errors#configure-javascript-errors "Configure your application to capture or ignore request, custom, and JavaScript errors.")
+* [Mobile symbolication](/managed/observe/digital-experience/rum-classic/mobile-applications/analyze-and-use/upload-and-manage-symbol-files "Learn about deobfuscation (Android) and symbolication (iOS and tvOS) and your options for uploading and managing symbol files in Dynatrace.")
 * [Request naming](/managed/observe/application-observability/services/service-detection/service-detection-v1/set-up-request-naming "Adjust request naming and define the operations your services offer.") order
 * [Merged services](/managed/observe/application-observability/services/service-detection/service-detection-v1/service-types/merged-services "Consolidate multiple web-request services of the same process group into one service.")
 * Key requests and their references
@@ -228,6 +227,10 @@ See the [supported configuration API types](/managed/deliver/configuration-as-co
 * Tags manually applied to entities
 * Custom entity names and descriptions (e.g., [process groups](/managed/observe/infrastructure-observability/process-groups "Analyze process groups and customize process group naming, detection, and monitoring."))
 
+  Migrate process groups before upgrading
+
+  If you have simple detection rules, advanced detection rules, or declarative process grouping rules on Dynatrace Managed, you need to migrate them to [Process Grouping Rules](/managed/observe/infrastructure-observability/process-groups/configuration/unified-process-grouping/process-grouping-rules-migration "Learn how to migrate your process groups and process group instances to process grouping rules.") before upgrading to SaaS.
+
 Questions?
 
-Visit the [Upgrade to SaaS forumï»¿](https://community.dynatrace.com/t5/Upgrade-to-SaaS/bd-p/upgrade_to_saas) to ask questions, get answers, and share what you've learned with others.
+Visit the [Upgrade to SaaS forum﻿](https://community.dynatrace.com/t5/Upgrade-to-SaaS/bd-p/upgrade_to_saas) to ask questions, get answers, and share what you've learned with others.

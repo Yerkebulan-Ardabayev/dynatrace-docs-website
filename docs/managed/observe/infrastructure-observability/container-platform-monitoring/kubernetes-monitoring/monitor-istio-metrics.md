@@ -1,7 +1,6 @@
 ---
 title: Istio/Envoy proxy metrics
 source: https://docs.dynatrace.com/managed/observe/infrastructure-observability/container-platform-monitoring/kubernetes-monitoring/monitor-istio-metrics
-scraped: 2026-05-12T12:03:06.469368
 ---
 
 # Istio/Envoy proxy metrics
@@ -27,7 +26,7 @@ ActiveGate ingests Istio metrics and sends them to Dynatrace. Because Istio expo
 
 Based on the labels of ingested metrics, Dynatrace also detects the Istio topology without OneAgent. This is supported with ActiveGate version 1.261+.
 
-See [Istio Service Meshï»¿](https://www.dynatrace.com/hub/detail/istio-and-envoy-service-mesh-prometheus/) in Dynatrace Hub for details on activating the Istio extension in your environment. The recommended version is 1.1.0 or later.
+See [Istio Service Mesh﻿](https://www.dynatrace.com/hub/detail/istio-and-envoy-service-mesh-prometheus/) in Dynatrace Hub for details on activating the Istio extension in your environment. The recommended version is 1.1.0 or later.
 
 ## Prerequisites
 

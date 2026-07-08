@@ -1,7 +1,6 @@
 ---
 title: Problems API v2 - GET all comments
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/problems-v2/comments/get-all
-scraped: 2026-05-12T11:57:14.886361
 ---
 
 # Problems API v2 - GET all comments
@@ -52,7 +51,7 @@ A list of comments.
 
 | Element | Type | Description |
 | --- | --- | --- |
-| comments | [Comment[]](#openapi-definition-Comment) | The result entries. |
+| comments | [Comment](#openapi-definition-Comment)[] | The result entries. |
 | nextPageKey | string | The cursor for the next page of results. Has the value of `null` on the last page.  Use it in the **nextPageKey** query parameter to obtain subsequent pages of the result. |
 | pageSize | integer | The number of entries per page. |
 | totalCount | integer | The total number of entries in the result. |
@@ -80,7 +79,7 @@ The comment to a problem.
 | Element | Type | Description |
 | --- | --- | --- |
 | code | integer | The HTTP status code |
-| constraintViolations | [ConstraintViolation[]](#openapi-definition-ConstraintViolation) | A list of constraint violations |
+| constraintViolations | [ConstraintViolation](#openapi-definition-ConstraintViolation)[] | A list of constraint violations |
 | message | string | The error message |
 
 #### The `ConstraintViolation` object
@@ -210,4 +209,4 @@ A list of constraint violations
 
 ## Related topics
 
-* [DavisÂ® AI](/managed/dynatrace-intelligence "Get familiar with the capabilities of Davis AI.")
+* [Davis® AI](/managed/dynatrace-intelligence "Learn how Davis® AI detects performance anomalies, identifies root causes, and uses AI models for adaptive thresholds across your environment.")

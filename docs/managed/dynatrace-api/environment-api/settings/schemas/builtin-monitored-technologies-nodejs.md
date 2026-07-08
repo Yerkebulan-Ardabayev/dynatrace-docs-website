@@ -1,7 +1,6 @@
 ---
 title: Settings API - Node.js schema table
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/settings/schemas/builtin-monitored-technologies-nodejs
-scraped: 2026-05-12T11:44:53.599827
 ---
 
 # Settings API - Node.js schema table

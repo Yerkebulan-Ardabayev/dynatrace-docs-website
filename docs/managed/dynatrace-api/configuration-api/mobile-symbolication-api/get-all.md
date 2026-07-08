@@ -1,7 +1,6 @@
 ---
 title: Mobile Symbolication API - GET all
 source: https://docs.dynatrace.com/managed/dynatrace-api/configuration-api/mobile-symbolication-api/get-all
-scraped: 2026-05-12T11:19:34.382170
 ---
 
 # Mobile Symbolication API - GET all
@@ -44,7 +43,7 @@ The request doesn't provide any configurable parameters.
 
 | Element | Type | Description |
 | --- | --- | --- |
-| symbolFiles | [SymbolFile[]](#openapi-definition-SymbolFile) | A list of symbol files. |
+| symbolFiles | [SymbolFile](#openapi-definition-SymbolFile)[] | A list of symbol files. |
 
 #### The `SymbolFile` object
 
@@ -140,4 +139,4 @@ The identification info of the application to which the file belongs to.
 
 ## Related topics
 
-* [Upload and manage symbol files for mobile applications](/managed/observe/digital-experience/mobile-applications/analyze-and-use/upload-and-manage-symbol-files "Learn about deobfuscation (Android) and symbolication (iOS and tvOS) and your options for uploading and managing symbol files in Dynatrace.")
+* [Upload and manage symbol files for mobile applications in RUM Classic](/managed/observe/digital-experience/rum-classic/mobile-applications/analyze-and-use/upload-and-manage-symbol-files "Learn about deobfuscation (Android) and symbolication (iOS and tvOS) and your options for uploading and managing symbol files in Dynatrace.")

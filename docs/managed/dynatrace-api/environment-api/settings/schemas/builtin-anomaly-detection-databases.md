@@ -1,7 +1,6 @@
 ---
 title: Settings API - Anomaly detection for databases schema table
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/settings/schemas/builtin-anomaly-detection-databases
-scraped: 2026-05-12T11:40:35.881643
 ---
 
 # Settings API - Anomaly detection for databases schema table
@@ -14,9 +13,9 @@ scraped: 2026-05-12T11:40:35.881643
 
 Dynatrace automatically detects database-service related performance anomalies such as response time degradations and failure rate increases.
 
-Use these settings to configure detection sensitivity, set alert thresholds, or disable alerting for certain services. Read more about [Automated multi-dimensional baseliningï»¿](https://dt-url.net/5r5p0pnz/ "Visit Dynatrace support center").
+Use these settings to configure detection sensitivity, set alert thresholds, or disable alerting for certain services. Read more about [Automated multi-dimensional baselining﻿](https://dt-url.net/5r5p0pnz/ "Visit Dynatrace support center").
 
-To avoid false-positive problem notifications, [automated anomaly detectionï»¿](https://dt-url.net/5r5p0pnz/ "Visit Dynatrace support center") is only available for applications and services that have run for at least 20% of a week (7 days).
+To avoid false-positive problem notifications, [automated anomaly detection﻿](https://dt-url.net/5r5p0pnz/ "Visit Dynatrace support center") is only available for applications and services that have run for at least 20% of a week (7 days).
 
 | Schema ID | Schema groups | Scope |
 | --- | --- | --- |

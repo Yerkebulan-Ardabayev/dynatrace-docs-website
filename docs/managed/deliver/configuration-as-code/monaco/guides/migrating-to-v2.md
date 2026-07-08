@@ -1,7 +1,6 @@
 ---
 title: Migrate configuration from Monaco 1.x to 2.x
 source: https://docs.dynatrace.com/managed/deliver/configuration-as-code/monaco/guides/migrating-to-v2
-scraped: 2026-05-12T12:02:54.560771
 ---
 
 # Migrate configuration from Monaco 1.x to 2.x
@@ -30,7 +29,7 @@ If you use Dynatrace Configuration as Code via Monaco (Dynatrace Monaco CLI) 1.x
 
 This guide will help you convert your existing projects.
 
-To illustrate the commands, we convert a project found in the samples in the [GitHub repositoryï»¿](https://github.com/Dynatrace/dynatrace-configuration-as-code-samples).
+To illustrate the commands, we convert a project found in the samples in the [GitHub repository﻿](https://github.com/Dynatrace/dynatrace-configuration-as-code-samples).
 
 If you want to follow the exact commands of the guide, clone or download the repo and navigate into the `observability_clinic_sample` folder.
 
@@ -47,27 +46,27 @@ existing_v1_config/
 
 
 
-âââ project/
+├── project/
 
 
 
-âââ application-web/
+├── application-web/
 
 
 
-âââ auto-tag/
+├── auto-tag/
 
 
 
-âââ slo/
+├── slo/
 
 
 
-âââ synthetic-monitor/
+└── synthetic-monitor/
 
 
 
-âââ environments.yaml
+└── environments.yaml
 ```
 
 To recap how things work in Monaco 1.x, this folder contains the following:
@@ -104,27 +103,27 @@ Windows
 
 
 
-   âââ project/
+   ├── project/
 
 
 
-   âââ application-web/
+   ├── application-web/
 
 
 
-   âââ auto-tag/
+   ├── auto-tag/
 
 
 
-   âââ slo/
+   ├── slo/
 
 
 
-   âââ synthetic-monitor/
+   └── synthetic-monitor/
 
 
 
-   âââ manifest.yaml
+   └── manifest.yaml
    ```
 
 1. Open Windows PowerShell.
@@ -149,27 +148,27 @@ Windows
 
 
 
-   âââ project/
+   ├── project/
 
 
 
-   âââ application-web/
+   ├── application-web/
 
 
 
-   âââ auto-tag/
+   ├── auto-tag/
 
 
 
-   âââ slo/
+   ├── slo/
 
 
 
-   âââ synthetic-monitor/
+   └── synthetic-monitor/
 
 
 
-   âââ manifest.yaml
+   └── manifest.yaml
    ```
 
 ## Differences between 1.x and 2.x
@@ -191,27 +190,27 @@ existing_v1_config/
 
 
 
-âââ project/
+├── project/
 
 
 
-âââ application-web/
+├── application-web/
 
 
 
-âââ auto-tag/
+├── auto-tag/
 
 
 
-âââ slo/
+├── slo/
 
 
 
-âââ synthetic-monitor/
+└── synthetic-monitor/
 
 
 
-âââ environments.yaml
+└── environments.yaml
 ```
 
 ```
@@ -219,27 +218,27 @@ converted_config/
 
 
 
-âââ project/
+├── project/
 
 
 
-âââ application-web/
+├── application-web/
 
 
 
-âââ auto-tag/
+├── auto-tag/
 
 
 
-âââ slo/
+├── slo/
 
 
 
-âââ synthetic-monitor/
+└── synthetic-monitor/
 
 
 
-âââ manifest.yaml
+└── manifest.yaml
 ```
 
 ### From `environments.yaml` to `manifest.yaml`

@@ -1,7 +1,6 @@
 ---
 title: Configure OpenTelemetry tracing with Istio
 source: https://docs.dynatrace.com/managed/ingest-from/opentelemetry/integrations/istio
-scraped: 2026-05-12T12:14:32.687450
 ---
 
 # Configure OpenTelemetry tracing with Istio
@@ -18,7 +17,7 @@ This integration is based on open source code governed by the respective communi
 
 Always use the most recent release version to ensure you have the latest patches and fixes deployed.
 
-This page describes how to use Istio version 1.22+ with the [Istio OpenTelemetry extension providerï»¿](https://istio.io/latest/docs/reference/config/istio.mesh.v1alpha1/#MeshConfig-ExtensionProvider-OpenTelemetryTracingProvider), and how to configure it to export OpenTelemetry traces to Dynatrace.
+This page describes how to use Istio version 1.22+ with the [Istio OpenTelemetry extension provider﻿](https://istio.io/latest/docs/reference/config/istio.mesh.v1alpha1/#MeshConfig-ExtensionProvider-OpenTelemetryTracingProvider), and how to configure it to export OpenTelemetry traces to Dynatrace.
 
 ### System requirements
 
@@ -26,13 +25,13 @@ Istio version 1.22+ (i.e., Istio releases that ship with Envoy 1.30+) is require
 
 ## Licensing impact
 
-In certain deployment setups, tracing with Istio version 1.22+ results in consumption of the following [rate cardï»¿](https://www.dynatrace.com/pricing/) capabilities:
+In certain deployment setups, tracing with Istio version 1.22+ results in consumption of the following [rate card﻿](https://www.dynatrace.com/pricing/) capabilities:
 
 * When using the Dynatrace resource detector and sampler:
 
-  + Classic Full-Stack or cloud-native Full-Stack deployments: Usage is included in [Full-Stack Monitoring (DPS)](/managed/license/capabilities/app-infra-observability/full-stack-monitoring "Learn how your consumption of the Dynatrace Full-Stack Monitoring DPS capability is billed and charged.") and [Host Units (Dynatrace Classic License)](/managed/license/monitoring-consumption-classic/application-and-infrastructure-monitoring "Understand how Dynatrace application and infrastructure monitoring consumption is calculated based on host units.").
-  + For Application-Observability-only deployments: Usage incurs consumption of [Custom Traces Classic (DPS)](/managed/license/capabilities/platform-extensions "Learn how consumption of Dynatrace platform extensions is calculated using the Dynatrace Platform Subscription model.") or [DDUs for custom traces (Dynatrace Classic License)](/managed/license/monitoring-consumption-classic/davis-data-units/custom-traces "Understand how DDU consumption is calculated for spans ingested via the Trace API.").
-* Without the Dynatrace resource detector and sampler: Usage incurs consumption of [Custom Traces Classic (DPS)](/managed/license/capabilities/platform-extensions "Learn how consumption of Dynatrace platform extensions is calculated using the Dynatrace Platform Subscription model.") or [DDUs for custom traces (Dynatrace Classic License)](/managed/license/monitoring-consumption-classic/davis-data-units/custom-traces "Understand how DDU consumption is calculated for spans ingested via the Trace API.").
+  + Classic Full-Stack or cloud-native Full-Stack deployments: Usage is included in [Full-Stack Monitoring (DPS)](/managed/license/capabilities/app-infra-observability/full-stack-monitoring "Learn how your consumption of the Dynatrace Full-Stack Monitoring DPS capability is billed and charged.") and [Host Units (Dynatrace Classic License)](/managed/license/classic-licensing/application-and-infrastructure-monitoring "Understand how Dynatrace application and infrastructure monitoring consumption is calculated based on host units.").
+  + For Application-Observability-only deployments: Usage incurs consumption of [Custom Traces Classic (DPS)](/managed/license/capabilities/platform-extensions "Learn how consumption of Dynatrace platform extensions is calculated using the Dynatrace Platform Subscription model.") or [DDUs for custom traces (Dynatrace Classic License)](/managed/license/classic-licensing/davis-data-units/custom-traces "Understand how DDU consumption is calculated for spans ingested via the Trace API.").
+* Without the Dynatrace resource detector and sampler: Usage incurs consumption of [Custom Traces Classic (DPS)](/managed/license/capabilities/platform-extensions "Learn how consumption of Dynatrace platform extensions is calculated using the Dynatrace Platform Subscription model.") or [DDUs for custom traces (Dynatrace Classic License)](/managed/license/classic-licensing/davis-data-units/custom-traces "Understand how DDU consumption is calculated for spans ingested via the Trace API.").
 
 ## Deployment considerations
 
@@ -214,7 +213,7 @@ Standalone
 This step is only required for standalone deployment.
 No action required when using Dynatrace Operator.
 
-Next, you need to deploy the [Istio service entryï»¿](https://istio.io/latest/docs/reference/config/networking/service-entry/) manifest you obtained in step 1 using `kubectl`. Save it to `dt-serviceentry.yaml` and run the following command:
+Next, you need to deploy the [Istio service entry﻿](https://istio.io/latest/docs/reference/config/networking/service-entry/) manifest you obtained in step 1 using `kubectl`. Save it to `dt-serviceentry.yaml` and run the following command:
 
 ```
 kubectl apply -n istio-system -f dt-serviceentry.yaml
@@ -242,8 +241,4 @@ Make sure to restart all applicable Kubernetes pods, to let the changes to the m
 
 ### 6. Verify the setup
 
-Once the setup is complete and you have ingested your first data, you can verify if the traces show up in Dynatrace.
-
-![trace](https://dt-cdn.net/images/istio-otel-tracing-2513-5da62a325b.png)
-
-trace
+Once the setup is complete and you have ingested your first data, you can verify if the traces show up on the **Distributed traces** page.

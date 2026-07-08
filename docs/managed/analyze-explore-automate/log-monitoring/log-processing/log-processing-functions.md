@@ -1,7 +1,6 @@
 ---
 title: Log processing functions (Logs Classic)
 source: https://docs.dynatrace.com/managed/analyze-explore-automate/log-monitoring/log-processing/log-processing-functions
-scraped: 2026-05-12T12:00:18.926101
 ---
 
 # Log processing functions (Logs Classic)
@@ -619,7 +618,7 @@ FIELDS_ADD(int_str:STRING(i), double_str:STRING(d), ip_str:STRING(ip));
 
 **TIMESTAMP(*integer*), T(*integer*)**
 
-Converts *integer* seconds elapsed from [Unix epochï»¿](https://en.wikipedia.org/wiki/Epoch_(computing)) to `TIMESTAMP`.
+Converts *integer* seconds elapsed from [Unix epoch﻿](https://en.wikipedia.org/wiki/Epoch_(computing)) to `TIMESTAMP`.
 
 Returns NULL if *integer* evaluates to NULL.
 
@@ -638,7 +637,7 @@ FIELDS_ADD(TIMESTAMP(1552603315));
 
 **TIMESTAMP(long), T(long)**
 
-Converts *long* milliseconds elapsed from [Unix epochï»¿](https://en.wikipedia.org/wiki/Epoch_(computing)) to `TIMESTAMP`.
+Converts *long* milliseconds elapsed from [Unix epoch﻿](https://en.wikipedia.org/wiki/Epoch_(computing)) to `TIMESTAMP`.
 
 Returns NULL if *long* evaluates to NULL.
 
@@ -794,7 +793,7 @@ Result details (double click on resultset):
 
 ### TUPLE
 
-**TUPLE(*expr*, â¦)**
+**TUPLE(*expr*, …)**
 
 Converts one or more expressions returning any data type to `TUPLE`.
 
@@ -1132,7 +1131,7 @@ output type
 
 Note
 
-All members of the *list* have to be the same type as the *expr* being testedâ¦
+All members of the *list* have to be the same type as the *expr* being tested…
 
 ### FALSE\_OR\_NULL
 
@@ -1855,7 +1854,7 @@ FIELDS_ADD(SECOND(T('2016-09-23 17:58:32')));
 
 **STR\_SEC\_TO\_TIME(seconds\_str)**
 
-Converts *seconds\_str* seconds, elapsed from [Unix epochï»¿](https://en.wikipedia.org/wiki/Epoch_(computing)) to `TIMESTAMP`.
+Converts *seconds\_str* seconds, elapsed from [Unix epoch﻿](https://en.wikipedia.org/wiki/Epoch_(computing)) to `TIMESTAMP`.
 
 output\_type  
 `TIMESTAMP`
@@ -2223,7 +2222,7 @@ FIELDS_ADD(TIME_TO_STR(t, "EEEE, MMMM d 'anno domini' yyyy") );
 
 **TO\_STR\_SEC(timestamp)**
 
-Converts *timestamp* to string of floating-point seconds elapsed from [Unix epochï»¿](https://en.wikipedia.org/wiki/Epoch_(computing)) (the
+Converts *timestamp* to string of floating-point seconds elapsed from [Unix epoch﻿](https://en.wikipedia.org/wiki/Epoch_(computing)) (the
 digits in the fraction part represent nanoseconds).
 
 output\_type  
@@ -3239,7 +3238,7 @@ FIELDS_ADD(ROUND(12.436,2));
 
 **SCALB(*numeric\_expr1*, *scale\_factor*)**
 
-Returns FLOAT fÃ2scale\_factor
+Returns FLOAT f×2scale\_factor
 
 Returns NULL if either of the arguments evaluates to NULL.
 
@@ -3786,7 +3785,7 @@ FIELDS_ADD(BASE64_ENCODE('Hello World!'));
 
 ### CONCAT
 
-**CONCAT(string\_expr, â¦ )**
+**CONCAT(string\_expr, … )**
 
 Concatenates *expr* arguments and returns resulting string. Max number of arguments is 128.
 
@@ -3901,7 +3900,7 @@ FIELDS_ADD(s, INDEXOF(s,"h",0));
 
 **LDIST(string\_expr1, string\_expr2)**
 
-Computes [Levenshtein distanceï»¿](https://en.wikipedia.org/wiki/Levenshtein_distance) between *string\_expr1* and *string\_expr2*.
+Computes [Levenshtein distance﻿](https://en.wikipedia.org/wiki/Levenshtein_distance) between *string\_expr1* and *string\_expr2*.
 
 output type  
 `INTEGER`
@@ -3982,9 +3981,9 @@ FIELDS_ADD(strings: "1 out of 10; 2 out of 10; 3 out of 10")
 
 ### PRINTF
 
-**PRINTF(format, argsâ¦)**
+**PRINTF(format, args…)**
 
-Returns a formatted string using *format* string (based on [java.util.Formatter classï»¿](https://docs.oracle.com/javase/8/docs/api/java/util/Formatter.html)) and arguments.
+Returns a formatted string using *format* string (based on [java.util.Formatter class﻿](https://docs.oracle.com/javase/8/docs/api/java/util/Formatter.html)) and arguments.
 
 output type  
 `STRING`
@@ -4078,7 +4077,7 @@ FIELDS_ADD(REPLACE_PATTERN("label=valueA label=valueB", "'label=' NSPACE:exporte
 
 **SH\_ENTROPY(string\_expr)**
 
-Computes [Shannon entropyï»¿](https://en.wiktionary.org/wiki/Shannon_entropy) of *string\_expr*
+Computes [Shannon entropy﻿](https://en.wiktionary.org/wiki/Shannon_entropy) of *string\_expr*
 
 output type  
 `DOUBLE`
@@ -4236,7 +4235,7 @@ FIELDS_ADD(UNESCAPE("\""));
 
 **URLDECODE(string)**
 
-Returns [urldecodedï»¿](https://en.wikipedia.org/wiki/Percent-encoding) (also known as percent-encoding/decoding) *string*.
+Returns [urldecoded﻿](https://en.wikipedia.org/wiki/Percent-encoding) (also known as percent-encoding/decoding) *string*.
 
 output type  
 `STRING`
@@ -4286,7 +4285,7 @@ FIELDS_ADD(HTMLUNESCAPE("&lt;Fran&ccedil;ais&gt;"));
 
 | htmlunescape |
 | --- |
-| <FranÃ§ais> |
+| <Français> |
 
 ### UPPER
 
@@ -4363,7 +4362,7 @@ FIELDS_ADD(country:'Estonia', flag:FLAG('EE'));
 
 | country | flag |
 | --- | --- |
-| Estonia | ðªðª |
+| Estonia | 🇪🇪 |
 
 ### HASH64
 
@@ -4390,7 +4389,7 @@ FIELDS_ADD(s, hash64:HASH64(s));
 
 ### REMOVE\_CHILD
 
-**REMOVE\_CHILD(var\_obj, keys â¦)**
+**REMOVE\_CHILD(var\_obj, keys …)**
 
 Removes selected members (specified by one or more *keys*) from VARIANT\_OBJECT type argument *var\_obj*.
 

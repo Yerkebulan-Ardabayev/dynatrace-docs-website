@@ -1,7 +1,6 @@
 ---
 title: AWS credentials API - DELETE credentials
 source: https://docs.dynatrace.com/managed/dynatrace-api/configuration-api/aws-credentials-api/delete-credentials
-scraped: 2026-05-12T11:15:16.531034
 ---
 
 # AWS credentials API - DELETE credentials
@@ -53,9 +52,9 @@ Configuration of an AWS credentials.
 | label | string | The name of the credentials. |
 | metadata | [ConfigurationMetadata](#openapi-definition-ConfigurationMetadata) | Metadata useful for debugging |
 | partitionType | string | The type of the AWS partition. The element can hold these values * `AWS_CN` * `AWS_DEFAULT` * `AWS_US_GOV` |
-| supportingServicesToMonitor | [AwsSupportingServiceConfig[]](#openapi-definition-AwsSupportingServiceConfig) | **Deprecated**. To manage services use [/aws/credentials/{id}/servicesï»¿](https://dt-url.net/l022s6v) operation. Built-in services are not supported here.  A list of AWS services to be monitored. Available services are listed by [/aws/supportedServicesï»¿](https://dt-url.net/me02sh2) operation.  For each service, a list of metrics and dimensions can be specified. A list of supported metrics and dimensions for a given service can be checked in [documentationï»¿](https://dt-url.net/r12v0pkl).  List of metrics can be skipped (set to null), resulting in recommended (default) set of metrics and dimensions being chosen for monitoring. |
+| supportingServicesToMonitor | [AwsSupportingServiceConfig](#openapi-definition-AwsSupportingServiceConfig)[] | **Deprecated**. To manage services use [/aws/credentials/{id}/services﻿](https://dt-url.net/l022s6v) operation. Built-in services are not supported here.  A list of AWS services to be monitored. Available services are listed by [/aws/supportedServices﻿](https://dt-url.net/me02sh2) operation.  For each service, a list of metrics and dimensions can be specified. A list of supported metrics and dimensions for a given service can be checked in [documentation﻿](https://dt-url.net/r12v0pkl).  List of metrics can be skipped (set to null), resulting in recommended (default) set of metrics and dimensions being chosen for monitoring. |
 | taggedOnly | boolean | Monitor only resources which have specified AWS tags (`true`) or all resources (`false`). |
-| tagsToMonitor | [AwsConfigTag[]](#openapi-definition-AwsConfigTag) | A list of AWS tags to be monitored.  You can specify up to 10 tags.  Only applicable when the **taggedOnly** parameter is set to `true`. |
+| tagsToMonitor | [AwsConfigTag](#openapi-definition-AwsConfigTag)[] | A list of AWS tags to be monitored.  You can specify up to 10 tags.  Only applicable when the **taggedOnly** parameter is set to `true`. |
 
 #### The `AwsAuthenticationData` object
 
@@ -102,7 +101,7 @@ A service to be monitored.
 
 | Element | Type | Description |
 | --- | --- | --- |
-| monitoredMetrics | [AwsSupportingServiceMetric[]](#openapi-definition-AwsSupportingServiceMetric) | A list of metrics to be monitored for this service. If the list is null then recommended list of metrics for this service will be monitored. |
+| monitoredMetrics | [AwsSupportingServiceMetric](#openapi-definition-AwsSupportingServiceMetric)[] | A list of metrics to be monitored for this service. If the list is null then recommended list of metrics for this service will be monitored. |
 | name | string | The name of the service. Valid supported service names can be discovered using /aws/supportedServices restAPI |
 
 #### The `AwsSupportingServiceMetric` object

@@ -1,7 +1,6 @@
 ---
 title: ActiveGate on Windows
 source: https://docs.dynatrace.com/managed/ingest-from/dynatrace-activegate/installation/windows
-scraped: 2026-05-12T11:08:11.892483
 ---
 
 # ActiveGate on Windows

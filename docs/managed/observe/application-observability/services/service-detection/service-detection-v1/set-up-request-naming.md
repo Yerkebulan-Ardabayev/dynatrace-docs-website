@@ -1,7 +1,6 @@
 ---
 title: Set up request naming
 source: https://docs.dynatrace.com/managed/observe/application-observability/services/service-detection/service-detection-v1/set-up-request-naming
-scraped: 2026-05-12T11:17:42.588856
 ---
 
 # Set up request naming
@@ -10,7 +9,7 @@ scraped: 2026-05-12T11:17:42.588856
 
 * How-to guide
 * 7-min read
-* Updated on Feb 24, 2026
+* Updated on Jun 30, 2026
 
 You can use request naming rules to adjust how your requests are tracked and to define service entry and endpoints in your customer-facing workflow. With such end-to-end tracing, you can easily recognize and monitor important business transactions that are critical to the success of your digital business.
 
@@ -42,7 +41,7 @@ To create a request naming rule for your service
 1. Navigate to the (web) request naming settings page:
 
    1. Go to **Services** and select the service you want to configure.
-   2. Select **More** (**â¦**) > **Settings**, and go to **Request naming** or **Web request naming**.
+   2. Select **More** (**…**) > **Settings**, and go to **Request naming** or **Web request naming**.
 2. Select **Add rule**.
 3. Define a set of conditions that represent the criteria of your service operations.
 
@@ -95,17 +94,36 @@ Service
 4. Turn off **Use global resource request detection settings**.
 5. Enter the required filename extensions for image and binary resources.
 
+## Include low-cardinality URL path in endpoint names
+
+Dynatrace version 1.339+
+
+When you want endpoint names based on the URL path without a separate endpoint for every unique value, use the `{URL:Path-Clean}` placeholder. With this placeholder, you get per-path endpoints while keeping cardinality under control.
+
+The `{URL:Path-Clean}` placeholder works similarly to the `{URL:Path}` placeholder, except Dynatrace replaces volatile segments—UUIDs, IPv4 and IPv6 addresses, and IBANs—with stable markers before the URL path becomes the endpoint name. It applies the same logic as the [**Remove UUIDs, IP addresses and IBANs from URLs** option](#cleanup-rules) available in the request naming settings, plus any custom cleanup rules you've defined.
+
+The following table compares the output of both placeholders.
+
+| URL path | `{URL:Path}` used | `{URL:Path-Clean}` used |
+| --- | --- | --- |
+| `/api/payments/DE89370400440532013000` | `/api/payments/DE89370400440532013000` | `/api/payments/IBAN` |
+| `/users/5f2b9a3c-1234-4abc-9def-abcdef123456/profile` | `/users/5f2b9a3c-1234-4abc-9def-abcdef123456/profile` | `/users/UUID/profile` |
+
+If a volatile pattern isn't removed automatically, create a [custom placeholder](#placeholders) with a regex to extract the stable portion of the URL path.
+
 ## Additional elements for request naming
 
 ### Request attributes and placeholders
 
-You can include the value of request attributes and placeholders in naming patterns.
+You can include the values of request attributes and placeholders in request naming patterns. This lets you produce endpoint names that reflect your business operations, giving you granular visibility in dashboards, notebooks, SLOs, and alerts.
 
-* Use a **Request attribute** to create intuitive variant names for your request. The request creates a separate trackable request for each permutation of the respective request attribute.
+#### Request attributes
+
+Use a **Request attribute** to create intuitive variant names for your request. The request creates a separate trackable request for each permutation of the respective request attribute.
 
 Example: Request attributes in naming patterns
 
-Using the request attribute `easyTravel destination` in the naming pattern, a variant request is created for each destination thatâs booked by customers of `easyTravel`. The result is that this rule no longer creates a single kind of request, it now creates a separate trackable request for each booked destination.
+Using the request attribute `easyTravel destination` in the naming pattern, a variant request is created for each destination that’s booked by customers of `easyTravel`. The result is that this rule no longer creates a single kind of request, it now creates a separate trackable request for each booked destination.
 
 ![Use request attributes to set up request naming rules](https://dt-cdn.net/images/request-attributes-2002-61662e499a.png)
 
@@ -117,9 +135,13 @@ Looking at the distributed traces, the URLs are all the same but each request na
 
 Naming pattern with request attributes
 
-* **Placeholder(s)** can extract values from request attributes or URLs.
+#### Placeholders
 
-Example: Custom placeholders
+**Placeholder(s)** can extract values from request attributes or URLs.
+
+A custom placeholder is a named token that extracts a value from a source attribute, such as a URL path or a request header. You can extract text between two delimiters or with a regular expression. You then reference the placeholder in your naming pattern as `{placeholderName}`, and Dynatrace replaces it with the extracted value.
+
+Example: Extract between delimiters
 
 If the URL path contains the string `orange-booking`, the booking defined by the placeholder `stage` is extracted from the URL naming pattern and uppercased. The placeholder `stage` is defined as the text between `orange-booking-` and `.jsf` in the URL path.
 
@@ -133,8 +155,6 @@ Using this placeholder, the resulting list of request names appears as follows:
 
 Results of request naming with placeholder in the service distributed trace list
 
-By constructing your service entry and end points in this way for Dynatrace monitoring, you can track all of your organizationâs key operations, such as business transactions, at a highly granular level.
-
 ### Cleanup rules
 
 Service-level rules and settings, including web request services clean URL rules, override global request naming rules.
@@ -146,7 +166,7 @@ Accessing **Service settings** > **Web request naming**, you can:
 
 * **Remove UUIDs, IP addresses and IBANs from URLs**.
 
-  This action normalizes URL paths containing UUIDs, IP addresses, and IBANs by replacing specific values with content-related static strings, such as `UUID`, `IPv4`, and `IBAN`.
+  This action normalizes URL paths containing UUIDs, IP addresses, and IBANs by replacing specific values with content-related static strings, such as `UUID`, `IPv4`, `IPv6`, and `IBAN`.
 * **Create clean URL rule**.
 
   Define the [regular expressions](/managed/manage/tags-and-metadata/reference/regular-expressions-in-dynatrace "Learn how to use regular expressions in the context of Dynatrace.") to remove parts of a web request service URL path, such as IDs.
@@ -171,13 +191,13 @@ This will potentially expose [personal data](/managed/manage/data-privacy-and-se
 
 ## Service analysis
 
-The full value of setting up your business-critical requests in this way becomes apparent once you dig into the analysis thatâs available for each individual request on the service level.
+The full value of setting up your business-critical requests in this way becomes apparent once you dig into the analysis that’s available for each individual request on the service level.
 
 Request attributes give you absolute flexibility in identifying and naming your requests based on your business requirements. Dynatrace tracks each request from end to end and tells you how all the requests are related.
 
 Multi-tiered analysis
 
-To illustrate multi-tiered analysis, letâs add another request naming rule that splits out the booking requests based on the attribute `Loyalty`.
+To illustrate multi-tiered analysis, let’s add another request naming rule that splits out the booking requests based on the attribute `Loyalty`.
 
 ![Multi-tiered service analysis](https://dt-cdn.net/images/multi-tiered-analysis-2002-c95686fde7.png)
 
@@ -219,7 +239,7 @@ While this has been possible using request attributes alone, request naming make
 ## Related topics
 
 * [Capture request attributes based on web request data](/managed/observe/application-observability/services/request-attributes/capture-request-attributes-based-on-web-request-data "Create request attributes based on web request data.")
-* [Capture request attributes based on method arguments](/managed/observe/application-observability/services/request-attributes/capture-request-attributes-based-on-method-arguments "Learn how to create request attributes based on Java, .NET, or PHP method arguments and how to use them on the serviceâs overview page. Also find out how you can aggregate the captured values of request attributes as well as how you can access objects, in case the value to be captured is a complex object.")
+* [Capture request attributes based on method arguments](/managed/observe/application-observability/services/request-attributes/capture-request-attributes-based-on-method-arguments "Learn how to create request attributes based on Java, .NET, or PHP method arguments and how to use them on the service’s overview page. Also find out how you can aggregate the captured values of request attributes as well as how you can access objects, in case the value to be captured is a complex object.")
 * [Request attributes API](/managed/dynatrace-api/configuration-api/service-api/request-attributes-api "Learn what the Dynatrace request attribute config API offers.")
 * [Calculated metrics for services](/managed/observe/application-observability/services/calculated-service-metric "Learn how to create a calculated metric based on web requests.")
 * [Monitor key requests](/managed/observe/application-observability/services-classic/monitor-key-requests "Discover how to closely monitor requests that are critical to your business.")

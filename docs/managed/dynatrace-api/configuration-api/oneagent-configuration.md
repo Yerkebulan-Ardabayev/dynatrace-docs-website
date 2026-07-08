@@ -1,7 +1,6 @@
 ---
 title: OneAgent configuration API
 source: https://docs.dynatrace.com/managed/dynatrace-api/configuration-api/oneagent-configuration
-scraped: 2026-05-12T12:03:36.199771
 ---
 
 # OneAgent configuration API

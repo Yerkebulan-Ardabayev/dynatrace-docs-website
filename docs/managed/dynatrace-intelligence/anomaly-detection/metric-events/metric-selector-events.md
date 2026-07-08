@@ -1,7 +1,6 @@
 ---
 title: Metric selector events
 source: https://docs.dynatrace.com/managed/dynatrace-intelligence/anomaly-detection/metric-events/metric-selector-events
-scraped: 2026-05-12T11:27:50.161667
 ---
 
 # Metric selector events
@@ -55,15 +54,15 @@ If there are sparse counts across many entities (for example, an error count acr
 
    1. Choose the model type:
 
-      * Auto-adaptive thresholdâDynatrace calculates the threshold automatically and adapts it dynamically to your metric's behavior.
-      * Static thresholdâthe threshold that doesn't change over time.
-      * Seasonal BaselineâDynatrace creates a confidence band on a metric with seasonal patterns
+      * Auto-adaptive threshold—Dynatrace calculates the threshold automatically and adapts it dynamically to your metric's behavior.
+      * Static threshold—the threshold that doesn't change over time.
+      * Seasonal Baseline—Dynatrace creates a confidence band on a metric with seasonal patterns
    2. For the static threshold, specify the threshold. Select **Use suggested threshold** to use a value based on the previous data.
    3. Choose the [missing data alert](/managed/dynatrace-intelligence/anomaly-detection/anomaly-detection-configuration#missing-data "How to set up an alert for missing measurements.") behavior.  
       If the missing data alert is enabled, it is combined with the threshold condition by the **OR** logic.
    4. Select the alert condition: alert if the metric is above, below, or outside of the threshold.
    5. Optional In the **Advanced model properties** section, specify a [sliding window](/managed/dynatrace-intelligence/anomaly-detection/anomaly-detection-configuration#sliding-window "How to set up an alert for missing measurements.") for comparison.  
-      The sliding window defines how often the thresholdâwhether it is automatically calculated or manually specifiedâmust be violated within a sliding window of time to raise an event (violations don't have to be successive). This helps you to avoid overly aggressive alerting on single violations. You can set a sliding window of up to 60 minutes.
+      The sliding window defines how often the threshold—whether it is automatically calculated or manually specified—must be violated within a sliding window of time to raise an event (violations don't have to be successive). This helps you to avoid overly aggressive alerting on single violations. You can set a sliding window of up to 60 minutes.
 7. Check the preview for your alert and evaluate the effectiveness of your configuration.
 
    1. Select the dimension values that you want to see on the preview.
@@ -71,18 +70,18 @@ If there are sparse counts across many entities (for example, an error count acr
 8. Provide a **Title** for your event. The title should be a short, easy-to-read string describing the situation, such as `High network activity` or `CPU saturation`.
 9. In the **Description** section, create a meaningful event message. Event messages help you understand the nature of the event. You can use the following placeholders:
 
-   * `{alert_condition}`âthe condition of the alert (above/below the threshold).
-   * `{baseline}`âthe violated value of the baseline.
-   * `{dims}`âa list of all dimensions (and their values) of the metric that violated the threshold. You can also specify a particular dimension: `{dims:dt.entity.<entity>}`. To fetch the list of available dimensions for your metric, query it via the [GET metric descriptor](/managed/dynatrace-api/environment-api/metric-v2/get-descriptor "View the descriptor of a metric via Metrics v2 API.") request.
-   * `{entityname}`âthe name of the affected entity.
-   * `{metricname}`âthe name of the metric that violated the threshold.
-   * `{missing_data_samples}`âthe number of samples with missing data. Only available if missing data alert is enabled.
+   * `{alert_condition}`—the condition of the alert (above/below the threshold).
+   * `{baseline}`—the violated value of the baseline.
+   * `{dims}`—a list of all dimensions (and their values) of the metric that violated the threshold. You can also specify a particular dimension: `{dims:dt.entity.<entity>}`. To fetch the list of available dimensions for your metric, query it via the [GET metric descriptor](/managed/dynatrace-api/environment-api/metric-v2/get-descriptor "View the descriptor of a metric via Metrics v2 API.") request.
+   * `{entityname}`—the name of the affected entity.
+   * `{metricname}`—the name of the metric that violated the threshold.
+   * `{missing_data_samples}`—the number of samples with missing data. Only available if missing data alert is enabled.
 
      `{missing_data_samples}` in the event description
 
      We recommend including the `{missing_data_samples}` placeholder in the event description to see whether the problem is raised due to missing data samples or threshold violations.
-   * `{severity}`âthe severity of the event.
-   * `{threshold}`âthe violated value of the threshold.
+   * `{severity}`—the severity of the event.
+   * `{threshold}`—the violated value of the threshold.
 10. Select the **Event type** for triggered events.
 11. Turn **Allow merge** on or off to define the merge strategy for triggered events.  
     If **Allow merge** is turned on, Davis AI will try to merge this event into existing problems; if it's turned off, a new problem is raised each time.

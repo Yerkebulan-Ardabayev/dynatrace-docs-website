@@ -1,7 +1,6 @@
 ---
 title: Settings API - Service splitting schema table
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/settings/schemas/builtin-service-splitting-rules
-scraped: 2026-05-12T11:43:39.949574
 ---
 
 # Settings API - Service splitting schema table
@@ -12,7 +11,7 @@ scraped: 2026-05-12T11:43:39.949574
 
 ### Service splitting (`builtin:service-splitting-rules)`
 
-Define rules to split services based on resource attributes defined in the [Semantic Dictionaryï»¿](https://docs.dynatrace.com/docs/discover-dynatrace/references/semantic-dictionary/fields) and custom attributes. Rules are evaluated in order and the first matching rule applies.
+Define rules to split services based on resource attributes defined in the [Semantic Dictionary﻿](https://docs.dynatrace.com/docs/discover-dynatrace/references/semantic-dictionary/fields) and custom attributes. Rules are evaluated in order and the first matching rule applies.
 
 | Schema ID | Schema groups | Scope |
 | --- | --- | --- |
@@ -43,7 +42,7 @@ To execute this request, you need an access token with **Read settings** (`setti
 | --- | --- | --- | --- |
 | Rule name `ruleName` | text | - | Required |
 | Description `description` | text | - | Optional |
-| Matching condition `condition` | text | Limits the scope of the service splitting rule using [DQL matcherï»¿](https://dt-url.net/l603wby) conditions on resource attributes.  A rule is applied only if the condition matches, otherwise the ruleset evaluation continues.  If empty, the condition will always match. | Optional |
+| Matching condition `condition` | text | Limits the scope of the service splitting rule using [DQL matcher﻿](https://dt-url.net/l603wby) conditions on resource attributes.  A rule is applied only if the condition matches, otherwise the ruleset evaluation continues.  If empty, the condition will always match. | Optional |
 | Split services by resource attributes `serviceSplittingAttributes` | Set<[splitBy](#splitBy)> | Define the entire set of resource attributes that should split your services in the matching scope.  Each attribute that exists will contribute to the final service ID. | Required |
 
 ##### The `splitBy` object

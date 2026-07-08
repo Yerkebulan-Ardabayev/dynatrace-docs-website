@@ -1,7 +1,6 @@
 ---
 title: OTel Collector for ingesting telemetry into Dynatrace
 source: https://docs.dynatrace.com/managed/ingest-from/opentelemetry/collector
-scraped: 2026-05-12T12:00:51.847493
 ---
 
 # OTel Collector for ingesting telemetry into Dynatrace
@@ -61,17 +60,17 @@ By avoiding proprietary abstractions or hidden defaults, it enables both humans 
 
 #### Dynatrace OTel Collector support
 
-The x86â64 and ARM64 builds of the Dynatrace OTel Collector distribution are supported by the Dynatrace Support team, in accordance with the [Dynatrace support policyï»¿](https://support.dynatrace.com/).
+The x86‑64 and ARM64 builds of the Dynatrace OTel Collector distribution are supported by the Dynatrace Support team, in accordance with the [Dynatrace support policy﻿](https://support.dynatrace.com/).
 
 For full support coverage, contact Dynatrace through the official support channels.
-Issues reported via GitHub are handled on a bestâeffort basis; support contracts and SLAs don't apply.
+Issues reported via GitHub are handled on a best‑effort basis; support contracts and SLAs don't apply.
 
 Each minor version is supported for three months.
 Fixes are provided either as a patch release for the latest supported minor version or as part of a subsequent minor version release.
 
 #### Dynatrace OTel Collector components
 
-For the full list of provided components, see [Componentsï»¿](https://github.com/Dynatrace/dynatrace-otel-collector#components).
+For the full list of provided components, see [Components﻿](https://github.com/Dynatrace/dynatrace-otel-collector#components).
 
 #### Dynatrace OTel Collector use cases
 
@@ -81,7 +80,7 @@ For concrete use-case and configuration examples for the individual components, 
 
 To deploy the Dynatrace OTel Collector, follow the steps as described in [Deploy the Dynatrace OTel Collector](/managed/ingest-from/opentelemetry/collector/deployment "How to deploy the Dynatrace OpenTelemetry Collector.").
 
-The Dynatrace OTel Collector ships with specific components, which are described in the [Dynatrace OTel Collector's GitHub repoï»¿](https://github.com/Dynatrace/dynatrace-otel-collector/).
+The Dynatrace OTel Collector ships with specific components, which are described in the [Dynatrace OTel Collector's GitHub repo﻿](https://github.com/Dynatrace/dynatrace-otel-collector/).
 
 ### OpenTelemetry distributions
 
@@ -92,7 +91,7 @@ For a fully supported Collector distribution, see [Dynatrace OTel Collector](#dt
 
 #### Collector Core
 
-The [Core distributionï»¿](https://github.com/open-telemetry/opentelemetry-collector) contains the basic proxy service and a few fundamental service components.
+The [Core distribution﻿](https://github.com/open-telemetry/opentelemetry-collector) contains the basic proxy service and a few fundamental service components.
 This includes:
 
 * A receiver for OpenTelemetry protocol (OTLP) data over HTTP and gRPC.
@@ -101,7 +100,7 @@ This includes:
 
 #### Collector Contrib
 
-The [Contrib distributionï»¿](https://github.com/open-telemetry/opentelemetry-collector-contrib) builds on top of Core and enhances its functionality by shipping with a large number of additional receivers, processors, and exporters, contributed by third parties.
+The [Contrib distribution﻿](https://github.com/open-telemetry/opentelemetry-collector-contrib) builds on top of Core and enhances its functionality by shipping with a large number of additional receivers, processors, and exporters, contributed by third parties.
 
 Given that the Contrib distribution is an all-in-one package and comes with all service components pre-compiled, it may use more system resources (storage and memory) than an optimized Collector build.
 
@@ -110,7 +109,7 @@ It shouldn't be used for production environments.
 
 #### Collector Builder
 
-In addition to the two distributions, OpenTelemetry also offers the [OpenTelemetry Collector Builder (OCB)ï»¿](https://github.com/open-telemetry/opentelemetry-collector/tree/v0.151.0/cmd/builder), a command line tool that allows you to build your own customized version of the Collector.
+In addition to the two distributions, OpenTelemetry also offers the [OpenTelemetry Collector Builder (OCB)﻿](https://github.com/open-telemetry/opentelemetry-collector/tree/v0.155.0/cmd/builder), a command line tool that allows you to build your own customized version of the Collector.
 
 ## Components
 
@@ -118,19 +117,19 @@ In addition to the two distributions, OpenTelemetry also offers the [OpenTelemet
 
 A receiver is a component that allows data to come into the Collector. It can receive data from multiple sources. Many receivers come with default settings and don't need much configuration.
 
-For a list of available receivers and their basic configuration, see the official [OpenTelemetry documentation on receiversï»¿](https://opentelemetry.io/docs/collector/configuration/#receivers).
+For a list of available receivers and their basic configuration, see the official [OpenTelemetry documentation on receivers﻿](https://opentelemetry.io/docs/collector/configuration/#receivers).
 
 ### Processor Optional
 
 A processor is an optional component that transforms, filters, or enriches data before export.
 
-For a list of available processors and their basic configuration, see the official [OpenTelemetry documentation on processorsï»¿](https://opentelemetry.io/docs/collector/configuration/#processors). OpenTelemetry has a list of [recommended processorsï»¿](https://github.com/open-telemetry/opentelemetry-collector/tree/v0.151.0/processor#recommended-processors), but these are optional.
+For a list of available processors and their basic configuration, see the official [OpenTelemetry documentation on processors﻿](https://opentelemetry.io/docs/collector/configuration/#processors). OpenTelemetry has a list of [recommended processors﻿](https://github.com/open-telemetry/opentelemetry-collector/tree/v0.155.0/processor#recommended-processors), but these are optional.
 
 ### Exporter
 
 An exporter is a component that sends processed data to one or more backends. Exporters can support more than one data source.
 
-Because many exporters require additional configuration (for example, an endpoint), be sure to check the official [OpenTelemetry documentation on exportersï»¿](https://opentelemetry.io/docs/collector/configuration/#exporters) for a list of available exporters and their configurations.
+Because many exporters require additional configuration (for example, an endpoint), be sure to check the official [OpenTelemetry documentation on exporters﻿](https://opentelemetry.io/docs/collector/configuration/#exporters) for a list of available exporters and their configurations.
 
 ### Services
 

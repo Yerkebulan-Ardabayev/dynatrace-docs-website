@@ -1,7 +1,6 @@
 ---
 title: Settings API - Sensitive data masking schema table
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/settings/schemas/builtin-logmonitoring-sensitive-data-masking-settings
-scraped: 2026-05-12T11:47:08.412206
 ---
 
 # Settings API - Sensitive data masking schema table

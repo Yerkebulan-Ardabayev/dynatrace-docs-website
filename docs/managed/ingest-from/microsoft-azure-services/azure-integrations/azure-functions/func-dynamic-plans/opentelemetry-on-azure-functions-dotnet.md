@@ -1,7 +1,6 @@
 ---
 title: Trace Azure Functions written in .NET
 source: https://docs.dynatrace.com/managed/ingest-from/microsoft-azure-services/azure-integrations/azure-functions/func-dynamic-plans/opentelemetry-on-azure-functions-dotnet
-scraped: 2026-05-12T12:07:48.195414
 ---
 
 # Trace Azure Functions written in .NET
@@ -22,8 +21,8 @@ Ensure that you have followed the **initial configuration** steps described in [
 
 1. Add the following dependencies to your project.
 
-   * Required `Dynatrace.OpenTelemetry`âprovides integration of Dynatrace-specific components (for activity export and propagation) into OpenTelemetry .NET.
-   * Optional [`OpenTelemetry.Extensions.Hosting`ï»¿](https://dt-url.net/w603yxv)âuses a `TracerProvider` with a dependency injection. While the latest release is supported for worker functions, in-process functions require OpenTelemetry.Extensions.Hosting version 1.0.0-rc9.5 or earlier. For details, see [Compatibility with `dotnet` (in-process) runtime](#compatibility-with-dotnet-in-process-runtime) below.
+   * Required `Dynatrace.OpenTelemetry`—provides integration of Dynatrace-specific components (for activity export and propagation) into OpenTelemetry .NET.
+   * Optional [`OpenTelemetry.Extensions.Hosting`﻿](https://dt-url.net/w603yxv)—uses a `TracerProvider` with a dependency injection. While the latest release is supported for worker functions, in-process functions require OpenTelemetry.Extensions.Hosting version 1.0.0-rc9.5 or earlier. For details, see [Compatibility with `dotnet` (in-process) runtime](#compatibility-with-dotnet-in-process-runtime) below.
 
    Example commands to add dependencies
 
@@ -347,7 +346,7 @@ Note that this does not enable logging unless [explicitly configured](/managed/i
 
 ## Example using the dotnet-isolated runtime
 
-The following examples use the [built-in HTTP modelï»¿](https://learn.microsoft.com/en-us/azure/azure-functions/dotnet-isolated-process-guide#built-in-http-model) of Azure functions and do **not** apply to functions using the [ASP.NET core integrationï»¿](https://learn.microsoft.com/en-us/azure/azure-functions/dotnet-isolated-process-guide#aspnet-core-integration) of isolated Azure functions. See the chapter about [`ASP.NET core integration`](#asp-net-core-integration) below.
+The following examples use the [built-in HTTP model﻿](https://learn.microsoft.com/en-us/azure/azure-functions/dotnet-isolated-process-guide#built-in-http-model) of Azure functions and do **not** apply to functions using the [ASP.NET core integration﻿](https://learn.microsoft.com/en-us/azure/azure-functions/dotnet-isolated-process-guide#aspnet-core-integration) of isolated Azure functions. See the chapter about [`ASP.NET core integration`](#asp-net-core-integration) below.
 
 Your `Program.cs` could look as follows:
 
@@ -499,7 +498,7 @@ No additional code is needed to instrument functions; everything is handled by t
 
 ## ASP.NET core integration (isolated runtime)
 
-If you create a new project for Azure function .NET8 or laterâfor example, using Visual Studio templateâthen, it'll add [ASP.NET core integrationï»¿](https://learn.microsoft.com/en-us/azure/azure-functions/dotnet-isolated-process-guide#aspnet-core-integration) in Azure Function by default.
+If you create a new project for Azure function .NET8 or later—for example, using Visual Studio template—then, it'll add [ASP.NET core integration﻿](https://learn.microsoft.com/en-us/azure/azure-functions/dotnet-isolated-process-guide#aspnet-core-integration) in Azure Function by default.
 
 To enable function tracing, you need to use only the `ConfigureFunctionsWebApplication` method instead of `ConfigureFunctionsWorkerDefaults` in your initialization code given in [`ASP.NET core integration`](#asp-net-core-integration). The initialization code may look as follows:
 
@@ -580,9 +579,9 @@ host.Run();
 ### `InitializeLogging`
 
 * Calling `InitializeLogging` is required even if you don't plan to enable logging, and the actual log messages won't be logged even after calling this method, unless [configured](/managed/ingest-from/microsoft-azure-services/azure-integrations/azure-functions/func-dynamic-plans/opentelemetry-on-azure-functions "Monitor Azure Functions consumption plan with OpenTelemetry and Dynatrace.").
-* If you use the [`dotnet-isolated` runtimeï»¿](https://dt-url.net/2i23yrm) (out-of-process, worker functions), you need to call `InitializeLogging` in your `Main` method before calling `AddDynatrace`. You can pass `null` as `loggerFactory`, so that, if enabled, logging can use `Console.Out`/`Console.Error`. This is automatically forwarded to AppInsights for the `dotnet-isolated` runtime.
+* If you use the [`dotnet-isolated` runtime﻿](https://dt-url.net/2i23yrm) (out-of-process, worker functions), you need to call `InitializeLogging` in your `Main` method before calling `AddDynatrace`. You can pass `null` as `loggerFactory`, so that, if enabled, logging can use `Console.Out`/`Console.Error`. This is automatically forwarded to AppInsights for the `dotnet-isolated` runtime.
 * If you have specific requirements, you can also pass any custom `LoggingFactory`.
-* For the [`dotnet` runtimeï»¿](https://dt-url.net/2r43yf7) (in-process, class-library), sending logs to AppInsights requires using an `ILogger` or `ILoggerFactory` injected into the function with a dependency injection. Thus, you shouldn't use `null` as an argument for the `loggerFactory` parameter, but call `InitializeLogging` the first time any function in your Function App is invoked. To get the `ILoggerFactory`, simply add a parameter of that type.
+* For the [`dotnet` runtime﻿](https://dt-url.net/2r43yf7) (in-process, class-library), sending logs to AppInsights requires using an `ILogger` or `ILoggerFactory` injected into the function with a dependency injection. Thus, you shouldn't use `null` as an argument for the `loggerFactory` parameter, but call `InitializeLogging` the first time any function in your Function App is invoked. To get the `ILoggerFactory`, simply add a parameter of that type.
 * If you use the `ILoggerFactory` provided by Azure Functions, you also need to modify `host.json` to enable logging there. We recommend that you always use the `debug` log-level in `host.json`, as the actual log messages handed to the ILogger are separately configured in the Dynatrace configuration.
 
   ```
@@ -626,7 +625,7 @@ host.Run();
 * `AddDynatrace` is an extension method to OpenTelemetry's `TracerProvider`. It requires `using Dynatrace.OpenTelemetry`. Currently, there aren't any additional parameters for this function, as configuration is read from environment variables and a `dtconfig.json` file. For details, see [Set up OpenTelemetry monitoring for Azure Functions on Consumption Plan](/managed/ingest-from/microsoft-azure-services/azure-integrations/azure-functions/func-dynamic-plans/opentelemetry-on-azure-functions "Monitor Azure Functions consumption plan with OpenTelemetry and Dynatrace.").
 * `AddDynatrace` mainly adds an `ActivityProcessor` to the `TracerProvider` that will send all activities to Dynatrace. This extension:
 
-  + Sets the resources required by Dynatrace. Due to [an issue with the OpenTelemetry .NET SDKï»¿](https://github.com/open-telemetry/opentelemetry-dotnet/issues/2909), this will override any existing resources. If you need custom resources, you need to call `SetResourceBuilder` on the `TracerProvider` *after* `AddDynatrace`. Be aware that this will override the resources configured by `AddDynatrace` and you need to readd them as part of the same `SetResourceBuilder` call. You can do this by calling the OpenTelemetry SDK's `AddTelemetrySdk` extension method on the `ResourceBuilder`.
+  + Sets the resources required by Dynatrace. Due to [an issue with the OpenTelemetry .NET SDK﻿](https://github.com/open-telemetry/opentelemetry-dotnet/issues/2909), this will override any existing resources. If you need custom resources, you need to call `SetResourceBuilder` on the `TracerProvider` *after* `AddDynatrace`. Be aware that this will override the resources configured by `AddDynatrace` and you need to readd them as part of the same `SetResourceBuilder` call. You can do this by calling the OpenTelemetry SDK's `AddTelemetrySdk` extension method on the `ResourceBuilder`.
   + Exchanges the global `Propagators.DefaultTextMapPropagator` with a custom one that is based on the default W3C-format, but does additional processing of `tracestate` and additional Dynatrace-specific HTTP headers. The baggage propagator is also enabled, as is default for OpenTelemetry .NET. There's currently no way to disable it. Using another propagator isn't supported and will lead to missing links in the distributed traces.
 
 The following minimal snippet might be used to initialize a `TracerProvider` with `AddDynatrace`:
@@ -866,7 +865,7 @@ return parent;
 
 ## Instrumenting `HttpClient` calls (outgoing HTTP requests)
 
-A very common need is to trace outgoing HTTP requests. This can be achieved by using the [`OpenTelemetry.Instrumentation.Http` NuGet packageï»¿](https://www.nuget.org/packages/OpenTelemetry.Instrumentation.Http).
+A very common need is to trace outgoing HTTP requests. This can be achieved by using the [`OpenTelemetry.Instrumentation.Http` NuGet package﻿](https://www.nuget.org/packages/OpenTelemetry.Instrumentation.Http).
 
 The instrumentation then has to be added to your `TracerProvider` setup by calling `AddHttpClientInstrumentation`, for example, in `Program.cs`:
 
@@ -1004,7 +1003,7 @@ host.Run();
 
 Using a request filter as in the example above is highly recommended, as otherwise, depending on your Function Apps configuration, you might observe a large number of periodic requests to `https://rt.services.visualstudio.com/QuickPulseService.svc/ping` or similar URLs.
 
-Alternatively, you can [disable telemetry dynamicallyï»¿](https://dt-url.net/95038ca).
+Alternatively, you can [disable telemetry dynamically﻿](https://dt-url.net/95038ca).
 
 We recommend to use the helper function `AzureFunctionsCoreInstrumentation.FilterExternalTelemetry` which is available in package `Dynatrace.OpenTelemetry.Instrumentation.AzureFunctions.Core` since version 1.267. In earlier versions, you can use the following filter instead:
 
@@ -1012,7 +1011,7 @@ We recommend to use the helper function `AzureFunctionsCoreInstrumentation.Filte
 op.FilterHttpRequestMessage = req => Activity.Current?.Parent != null;
 ```
 
-Because of an [Azure Functions runtime issueï»¿](https://github.com/Azure/azure-functions-host/issues/7278), the HTTP instrumentation won't work on Azure Functions in-process version 3.x.
+Because of an [Azure Functions runtime issue﻿](https://github.com/Azure/azure-functions-host/issues/7278), the HTTP instrumentation won't work on Azure Functions in-process version 3.x.
 
 The underlying issue can also affect other instrumentations. Therefore, we do not recommend using in-process version 3 functions.
 

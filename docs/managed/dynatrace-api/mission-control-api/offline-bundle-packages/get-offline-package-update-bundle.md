@@ -1,7 +1,6 @@
 ---
 title: Get offline bundle
 source: https://docs.dynatrace.com/managed/dynatrace-api/mission-control-api/offline-bundle-packages/get-offline-package-update-bundle
-scraped: 2026-05-12T12:14:11.605256
 ---
 
 # Get offline bundle

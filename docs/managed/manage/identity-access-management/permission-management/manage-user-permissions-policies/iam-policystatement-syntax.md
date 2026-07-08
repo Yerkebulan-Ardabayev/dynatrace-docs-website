@@ -1,7 +1,6 @@
 ---
 title: IAM policy statement syntax and examples
 source: https://docs.dynatrace.com/managed/manage/identity-access-management/permission-management/manage-user-permissions-policies/iam-policystatement-syntax
-scraped: 2026-05-12T11:49:51.029568
 ---
 
 # IAM policy statement syntax and examples

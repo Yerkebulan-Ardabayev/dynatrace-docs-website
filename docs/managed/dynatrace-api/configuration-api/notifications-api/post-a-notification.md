@@ -1,7 +1,6 @@
 ---
 title: Notifications API - POST a notification configuration
 source: https://docs.dynatrace.com/managed/dynatrace-api/configuration-api/notifications-api/post-a-notification
-scraped: 2026-05-12T12:15:32.416462
 ---
 
 # Notifications API - POST a notification configuration
@@ -41,7 +40,7 @@ The body must not provide an ID. An ID is assigned automatically by Dynatrace.
 #### The `NotificationConfig` object
 
 Configuration of a notification. The actual set of fields depends on the `type` of the notification.
-See [Notifications API - JSON modelsï»¿](https://dt-url.net/9qm3k5u) in Dynatrace Documentation for example models of every notification type.
+See [Notifications API - JSON models﻿](https://dt-url.net/9qm3k5u) in Dynatrace Documentation for example models of every notification type.
 
 | Element | Type | Description | Required |
 | --- | --- | --- | --- |
@@ -133,7 +132,7 @@ This is a model of the request body, showing the possible elements. It has to be
 | Element | Type | Description |
 | --- | --- | --- |
 | code | integer | The HTTP status code |
-| constraintViolations | [ConstraintViolation[]](#openapi-definition-ConstraintViolation) | A list of constraint violations |
+| constraintViolations | [ConstraintViolation](#openapi-definition-ConstraintViolation)[] | A list of constraint violations |
 | message | string | The error message |
 
 #### The `ConstraintViolation` object
@@ -244,7 +243,7 @@ To learn how to obtain and use it, see [Tokens and authentication](/managed/disc
 | Element | Type | Description |
 | --- | --- | --- |
 | code | integer | The HTTP status code |
-| constraintViolations | [ConstraintViolation[]](#openapi-definition-ConstraintViolation) | A list of constraint violations |
+| constraintViolations | [ConstraintViolation](#openapi-definition-ConstraintViolation)[] | A list of constraint violations |
 | message | string | The error message |
 
 #### The `ConstraintViolation` object

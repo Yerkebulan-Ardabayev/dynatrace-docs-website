@@ -1,7 +1,6 @@
 ---
 title: Configure auto-update for Dynatrace Operator managed components
 source: https://docs.dynatrace.com/managed/ingest-from/setup-on-k8s/guides/deployment-and-configuration/updates-and-maintenance/auto-update-components
-scraped: 2026-05-12T12:09:16.322846
 ---
 
 # Configure auto-update for Dynatrace Operator managed components
@@ -17,7 +16,7 @@ Dynatrace Operator manages the rollout and updates of the following components i
 * ActiveGate: Configured in the DynaKube
 * EdgeConnect: Configured by the EdgeConnect Custom Resource (CR)
 
-The default settings for OneAgent and ActiveGate automatically roll out updates as soon as they become available. DynaKube also defaults to update all pods when updates are detected automatically. Note that updates may take up to 15 minutes due to Dynatrace Operator checking for updates at 15-minute intervals. If you set a custom `image` or `version`, it will disable automatic updates.
+The default settings for OneAgent and ActiveGate automatically roll out updates as soon as they become available. DynaKube also defaults to update all pods when updates are detected automatically. Note that updates may take up to 15 minutes due to Dynatrace Operator checking for updates at 15-minute intervals. If you set a custom `image`, it will disable automatic updates.
 
 ## Configure OneAgent auto-update
 
@@ -63,13 +62,43 @@ cloudNativeFullStack: {}
 
 Update windows currently do not apply in Kubernetes environments.
 
-If `autoUpdate` is set to `false` in the DynaKube, the OneAgents will not get version updates based on the target version of the Dynatrace environment after the initial deployment of the OneAgents.
+To disable auto-update, set the `image` field in the DynaKube. Omit the field to keep auto-update enabled.
 
-We do not recommend setting `autoUpdate: false` directly. To control OneAgent version updates, we recommend doing one of the following:
+```
+# Auto-update enabled (default) — omit image
 
-* Set `autoUpdate: true` and set the target version in the Dynatrace environment's web UI
-* Configure the `image` field in the DynaKube
-* Configure the `version` field in the DynaKube
+
+
+spec:
+
+
+
+oneAgent:
+
+
+
+cloudNativeFullStack: {}
+
+
+
+# Auto-update disabled — pin a specific image
+
+
+
+spec:
+
+
+
+oneAgent:
+
+
+
+cloudNativeFullStack:
+
+
+
+image: public.ecr.aws/dynatrace/dynatrace-oneagent:<tag>
+```
 
 ## Configure code module auto-update of monitored applications
 

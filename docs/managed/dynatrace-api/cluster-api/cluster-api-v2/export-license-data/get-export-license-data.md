@@ -1,7 +1,6 @@
 ---
 title: Export license data
 source: https://docs.dynatrace.com/managed/dynatrace-api/cluster-api/cluster-api-v2/export-license-data/get-export-license-data
-scraped: 2026-05-12T11:06:09.607247
 ---
 
 # Export license data
@@ -12,7 +11,7 @@ scraped: 2026-05-12T11:06:09.607247
 
 This API call exports aggregated hourly license usage of all your environments as a ZIP file.
 
-This API is only compatible with [Dynatrace classic licensing](/managed/license/monitoring-consumption-classic "Understand how Dynatrace monitoring consumption is calculated for classic licensing.") and does not contain billed usage.
+This API is only compatible with [Dynatrace classic licensing](/managed/license/monitoring-consumption-classic "Understand how Dynatrace classic monitoring consumption is calculated, including host units, DDUs, DEM units, and Application Security units.") and does not contain billed usage.
 
 ## Authentication
 

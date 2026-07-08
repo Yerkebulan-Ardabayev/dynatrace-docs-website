@@ -1,7 +1,6 @@
 ---
 title: Settings API - Built-in container monitoring rules schema table
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/settings/schemas/builtin-container-built-in-monitoring-rule
-scraped: 2026-05-12T11:39:28.410825
 ---
 
 # Settings API - Built-in container monitoring rules schema table

@@ -1,7 +1,6 @@
 ---
 title: Extension Execution Controller custom configuration
 source: https://docs.dynatrace.com/managed/ingest-from/extensions/advanced-configuration/eec-custom-configuration
-scraped: 2026-05-12T12:09:01.926190
 ---
 
 # Extension Execution Controller custom configuration
@@ -121,7 +120,7 @@ When adding more than one extension, use a comma-separated list.
 elevated_privileges_extensions=[com.dynatrace.filesystem:*, com.dynatrace.ibm-mq:1.0.1]
 ```
 
-Only Dynatrace extensions can be elevated, while custom ones cannot. In case an extension was configured to run with elevated privileges but was already executed (the process is running), itâs necessary to force the process to restart by either restarting the OneAgent service or temporarily disabling and re-enabling the extension monitoring configuration.
+Only Dynatrace extensions can be elevated, while custom ones cannot. In case an extension was configured to run with elevated privileges but was already executed (the process is running), it’s necessary to force the process to restart by either restarting the OneAgent service or temporarily disabling and re-enabling the extension monitoring configuration.
 
 ## Related topics
 

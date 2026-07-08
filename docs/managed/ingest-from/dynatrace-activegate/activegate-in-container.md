@@ -1,7 +1,6 @@
 ---
 title: ActiveGate container image
 source: https://docs.dynatrace.com/managed/ingest-from/dynatrace-activegate/activegate-in-container
-scraped: 2026-05-12T11:08:17.100809
 ---
 
 # ActiveGate container image
@@ -1581,8 +1580,8 @@ Dynatrace built-in registry
    * Optional You can change the image version by using different version tag
      Versions
 
-     + `raw`âThe latest available image
-     + `1.sprint.patchlevel-raw`âAn image for a particular ActiveGate version (for example, `1.297.0-raw`)
+     + `raw`—The latest available image
+     + `1.sprint.patchlevel-raw`—An image for a particular ActiveGate version (for example, `1.297.0-raw`)
 
    * Optional Enable AppArmor if available.
 

@@ -1,7 +1,6 @@
 ---
 title: Configure and use a graph visualization in Dynatrace
 source: https://docs.dynatrace.com/managed/analyze-explore-automate/dashboards-classic/charts-and-tiles/visualization-graph
-scraped: 2026-05-12T11:12:52.370859
 ---
 
 # Configure and use a graph visualization in Dynatrace
@@ -63,9 +62,9 @@ The baseline calculation is based on the [Seasonal baseline](/managed/dynatrace-
   | Resolution range | Resolution examples | Baseline timeframe |
   | --- | --- | --- |
   | resolution < 5 minutes | + 1 minute | **previous 14 days** |
-  | 5 minutes â¥ resolution < 1 hour | + 5 minutes + 10 minutes + 30 minutes | **previous 28 days** |
-  | 1 hour â¥ resolution < 1 day | + 1 hour + 6 hours + 12 hours | **400 days** |
-  | resolution â¥ 1 day | + 1 day + 1 week + 1 month | **5 years** |
+  | 5 minutes ≥ resolution < 1 hour | + 5 minutes + 10 minutes + 30 minutes | **previous 28 days** |
+  | 1 hour ≥ resolution < 1 day | + 1 hour + 6 hours + 12 hours | **400 days** |
+  | resolution ≥ 1 day | + 1 day + 1 week + 1 month | **5 years** |
 
 ### Add a baseline
 
@@ -119,7 +118,7 @@ Although the baseline model is based on the [seasonal baseline](/managed/dynatra
 
 ## Correlated metrics
 
-Dynatrace DavisÂ® takes domain-specific knowledge and topology into account when computing connected observability signals. Davis ranks the most relevant signals on top, and the Davis score for each detected signal indicates how closely the signal matches the reference signal's behavior during the selected timeframe. [More about DavisÂ® AI](/managed/dynatrace-intelligence "Get familiar with the capabilities of Davis AI.").
+Dynatrace Davis® takes domain-specific knowledge and topology into account when computing connected observability signals. Davis ranks the most relevant signals on top, and the Davis score for each detected signal indicates how closely the signal matches the reference signal's behavior during the selected timeframe. [More about Davis® AI](/managed/dynatrace-intelligence "Learn how Davis® AI detects performance anomalies, identifies root causes, and uses AI models for adaptive thresholds across your environment.").
 
 ### Add correlated metrics
 

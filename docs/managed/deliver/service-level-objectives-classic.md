@@ -1,7 +1,6 @@
 ---
 title: Service-Level Objectives
 source: https://docs.dynatrace.com/managed/deliver/service-level-objectives-classic
-scraped: 2026-05-12T11:09:54.409008
 ---
 
 # Service-Level Objectives
@@ -12,7 +11,7 @@ scraped: 2026-05-12T11:09:54.409008
 * 1-min read
 * Published Sep 14, 2020
 
-Dynatrace comes with native support for [service-level objective (SLO)](/managed/deliver/service-level-objectives-classic/slo-basics "Basic terminology related to service-level objectives") monitoring according to [Site Reliability Engineering (SRE) fundamentals published by Googleï»¿](https://dt-url.net/cv030av).
+Dynatrace comes with native support for [service-level objective (SLO)](/managed/deliver/service-level-objectives-classic/slo-basics "Basic terminology related to service-level objectives") monitoring according to [Site Reliability Engineering (SRE) fundamentals published by Google﻿](https://dt-url.net/cv030av).
 
 ## SLO overview
 

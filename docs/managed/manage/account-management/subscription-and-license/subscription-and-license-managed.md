@@ -1,7 +1,6 @@
 ---
 title: Dynatrace Managed license management
 source: https://docs.dynatrace.com/managed/manage/account-management/subscription-and-license/subscription-and-license-managed
-scraped: 2026-05-12T12:00:48.084850
 ---
 
 # Dynatrace Managed license management
@@ -12,7 +11,7 @@ scraped: 2026-05-12T12:00:48.084850
 
 A Dynatrace Managed deployment can have several clusters, each with its own license, and each license controls the products you can use (products may include host units, host unit hours, Digital Experience Monitoring, Davis data units, and Application security units). Account Management provides a view of license usage across clusters (**Total license usage**) and hourly/daily usage information for each cluster (**Usage details**).
 
-This page is provided for informational purposes only. The terms of the Dynatrace free trial offer and/or your Dynatrace license will be applied to any use of Dynatrace products or services. For more information, see [License Dynatrace](/managed/license "About Dynatrace Platform Subscription (DPS), the licensing model for all Dynatrace capabilities.").
+This page is provided for informational purposes only. The terms of the Dynatrace free trial offer and/or your Dynatrace license will be applied to any use of Dynatrace products or services. For more information, see [Dynatrace classic licensing](/managed/license/monitoring-consumption-classic "Understand how Dynatrace classic monitoring consumption is calculated, including host units, DDUs, DEM units, and Application Security units.").
 
 ## Total license usage
 
@@ -43,11 +42,11 @@ Use the **Usage details** charting to explore the historical consumption of your
 
 **Resolution** allows you to view consumption data in different ways:
 
-* `Daily` â provides day-by-day total usage
-* `Hourly` â view hourly cumulative totals for a selected day
-* `Total` â view cumulative usage for consumption-based licenses (host unit hours, Digital Experience Monitoring, Davis data units, Application security units)
-* `Linear forecast` â view forecast usage based on linear extrapolation from the last 30 days of usage data (Digital Experience Monitoring and Davis data units only).
-* `Seasonal forecast` â view total forecast usage based on a seasonal forecast from the last 365d of data (Digital Experience Monitoring and Davis data units only).
+* `Daily` – provides day-by-day total usage
+* `Hourly` – view hourly cumulative totals for a selected day
+* `Total` – view cumulative usage for consumption-based licenses (host unit hours, Digital Experience Monitoring, Davis data units, Application security units)
+* `Linear forecast` – view forecast usage based on linear extrapolation from the last 30 days of usage data (Digital Experience Monitoring and Davis data units only).
+* `Seasonal forecast` – view total forecast usage based on a seasonal forecast from the last 365d of data (Digital Experience Monitoring and Davis data units only).
 
 Changing chart options updates the **Cluster usage breakdown** table in the chart below. The table represents total consumption by cluster, based on cluster, product, and timeframe selections.
 

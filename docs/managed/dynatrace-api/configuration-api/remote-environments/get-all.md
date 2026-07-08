@@ -1,7 +1,6 @@
 ---
 title: Remote environments API - GET all environments
 source: https://docs.dynatrace.com/managed/dynatrace-api/configuration-api/remote-environments/get-all
-scraped: 2026-05-12T11:20:42.755090
 ---
 
 # Remote environments API - GET all environments
@@ -46,7 +45,7 @@ The request doesn't provide any configurable parameters.
 
 | Element | Type | Description |
 | --- | --- | --- |
-| values | [RemoteEnvironmentConfigStub[]](#openapi-definition-RemoteEnvironmentConfigStub) | - |
+| values | [RemoteEnvironmentConfigStub](#openapi-definition-RemoteEnvironmentConfigStub)[] | - |
 
 #### The `RemoteEnvironmentConfigStub` object
 

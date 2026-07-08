@@ -1,7 +1,6 @@
 ---
 title: Metrics API - POST ingest data points
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/metric-v2/post-ingest-metrics
-scraped: 2026-05-12T11:10:28.149778
 ---
 
 # Metrics API - POST ingest data points
@@ -28,7 +27,7 @@ You can use the dimension `dt.process.id=<PID>` to add a process group identifie
 
 For more information, see [OneAgent metric API](/managed/ingest-from/extend-dynatrace/extend-metrics/ingestion-methods/oneagent-metric-api "Use the Dynatrace API to retrieve the metrics of monitored entities.").
 
-You can't ingest metrics with key prefix of `dt.`âthese are reserved for usage by Dynatrace.
+You can't ingest metrics with key prefix of `dt.`—these are reserved for usage by Dynatrace.
 
 The request consumes a `text/plain` payload. The payload is limited to 1 MB.
 
@@ -49,7 +48,7 @@ To learn how to obtain and use it, see [Tokens and authentication](/managed/disc
 
 | Parameter | Type | Description | In | Required |
 | --- | --- | --- | --- | --- |
-| body | string | Data points, provided in the [line protocolï»¿](https://dt-url.net/5d63ic1). Each line represents a single data point. | body | Required |
+| body | string | Data points, provided in the [line protocol﻿](https://dt-url.net/5d63ic1). Each line represents a single data point. | body | Required |
 
 ### Request body objects
 
@@ -82,7 +81,7 @@ To learn how to obtain and use it, see [Tokens and authentication](/managed/disc
 | Element | Type | Description |
 | --- | --- | --- |
 | code | integer | - |
-| invalidLines | [InvalidLine[]](#openapi-definition-InvalidLine) | - |
+| invalidLines | [InvalidLine](#openapi-definition-InvalidLine)[] | - |
 | message | string | - |
 
 #### The `InvalidLine` object
@@ -96,7 +95,7 @@ To learn how to obtain and use it, see [Tokens and authentication](/managed/disc
 
 | Element | Type | Description |
 | --- | --- | --- |
-| changedMetricKeys | [WarningLine[]](#openapi-definition-WarningLine) | - |
+| changedMetricKeys | [WarningLine](#openapi-definition-WarningLine)[] | - |
 | message | string | - |
 
 #### The `WarningLine` object

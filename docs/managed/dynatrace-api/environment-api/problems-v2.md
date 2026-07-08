@@ -1,7 +1,6 @@
 ---
 title: Problems API v2
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/problems-v2
-scraped: 2026-05-12T11:12:23.893003
 ---
 
 # Problems API v2
@@ -35,4 +34,4 @@ Delete a comment from a specified problem.](/managed/dynatrace-api/environment-a
 
 ## Related topics
 
-* [DavisÂ® AI](/managed/dynatrace-intelligence "Get familiar with the capabilities of Davis AI.")
+* [Davis® AI](/managed/dynatrace-intelligence "Learn how Davis® AI detects performance anomalies, identifies root causes, and uses AI models for adaptive thresholds across your environment.")

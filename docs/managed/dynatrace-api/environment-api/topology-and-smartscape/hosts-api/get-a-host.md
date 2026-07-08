@@ -1,7 +1,6 @@
 ---
 title: Hosts API - GET a host
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/topology-and-smartscape/hosts-api/get-a-host
-scraped: 2026-05-12T12:02:02.497763
 ---
 
 # Hosts API - GET a host
@@ -55,7 +54,6 @@ Information about the host.
 | --- | --- | --- |
 | agentVersion | [AgentVersion](#openapi-definition-AgentVersion) | Defines the version of the agent currently running on the entity. |
 | amiId | string | - |
-| attributes | object | - |
 | autoInjection | string | Status of auto-injection The element can hold these values * `DISABLED_MANUALLY` * `DISABLED_ON_INSTALLATION` * `DISABLED_ON_SANITY_CHECK` * `ENABLED` * `FAILED_ON_INSTALLATION` |
 | autoScalingGroup | string | - |
 | awsInstanceId | string | - |
@@ -83,7 +81,7 @@ Information about the host.
 | boshStemcellVersion | string | The Cloud Foundry BOSH stemcell version. |
 | cloudPlatformVendorVersion | string | Defines the cloud platform vendor version. |
 | cloudType | string | -The element can hold these values * `AZURE` * `EC2` * `GOOGLE_CLOUD_PLATFORM` * `OPENSTACK` * `ORACLE` * `UNRECOGNIZED` |
-| consumedHostUnits | string | Consumed Host Units. Applicable only for [Dynatrace classic licensingï»¿](https://www.dynatrace.com/support/help/shortlink/application-and-infrastructure-host-units) |
+| consumedHostUnits | string | Consumed Host Units. Applicable only for [Dynatrace classic licensing﻿](https://www.dynatrace.com/support/help/shortlink/application-and-infrastructure-host-units) |
 | cpuCores | integer | - |
 | customizedName | string | The customized name of the entity |
 | discoveredName | string | The discovered name of the entity |
@@ -111,7 +109,7 @@ Information about the host.
 | localIp | string | - |
 | logicalCpuCores | integer | - |
 | logicalCpus | integer | The AIX instance logical CPU count. |
-| managementZones | [EntityShortRepresentation[]](#openapi-definition-EntityShortRepresentation) | The management zones that the entity is part of. |
+| managementZones | [EntityShortRepresentation](#openapi-definition-EntityShortRepresentation)[] | The management zones that the entity is part of. |
 | monitoringMode | string | -The element can hold these values * `FULL_STACK` * `INFRASTRUCTURE` * `OFF` |
 | networkZoneId | string | The ID of network zone the entity is in. |
 | oneAgentCustomHostName | string | The custom name defined in OneAgent config. |
@@ -124,15 +122,15 @@ Information about the host.
 | osArchitecture | string | -The element can hold these values * `ARM` * `IA64` * `PARISC` * `PPC` * `PPCLE` * `S390` * `SPARC` * `X86` * `ZOS` |
 | osType | string | -The element can hold these values * `AIX` * `DARWIN` * `HPUX` * `LINUX` * `SOLARIS` * `WINDOWS` * `ZOS` |
 | osVersion | string | - |
-| paasAgentVersions | [AgentVersion[]](#openapi-definition-AgentVersion) | The versions of the PaaS agents currently running on the entity. |
+| paasAgentVersions | [AgentVersion](#openapi-definition-AgentVersion)[] | The versions of the PaaS agents currently running on the entity. |
 | paasMemoryLimit | integer | - |
 | paasType | string | -The element can hold these values * `AWS_ECS_EC2` * `AWS_ECS_FARGATE` * `AWS_LAMBDA` * `AZURE_FUNCTIONS` * `AZURE_WEBSITES` * `CLOUD_FOUNDRY` * `GOOGLE_APP_ENGINE` * `GOOGLE_CLOUD_RUN` * `HEROKU` * `KUBERNETES` * `OPENSHIFT` |
 | publicHostName | string | - |
 | publicIp | string | - |
 | scaleSetName | string | - |
 | simultaneousMultithreading | integer | The AIX instance simultaneous threads count. |
-| softwareTechnologies | [TechnologyInfo[]](#openapi-definition-TechnologyInfo) | - |
-| tags | [TagInfo[]](#openapi-definition-TagInfo) | The list of entity tags. |
+| softwareTechnologies | [TechnologyInfo](#openapi-definition-TechnologyInfo)[] | - |
+| tags | [TagInfo](#openapi-definition-TagInfo)[] | The list of entity tags. |
 | toRelationships | object | - |
 | userLevel | string | -The element can hold these values * `NON_SUPERUSER` * `NON_SUPERUSER_STRICT` * `SUPERUSER` |
 | virtualCpus | integer | The AIX instance virtual CPU count. |
@@ -157,10 +155,6 @@ Defines the version of the agent currently running on the entity.
 | revision | integer | The revision number. |
 | sourceRevision | string | A string representation of the SVN revision number. |
 | timestamp | string | A timestamp string: format "yyyymmdd-hhmmss |
-
-#### The `AnyValue` object
-
-A schema representing an arbitrary value type.
 
 #### The `HostGroup` object
 
@@ -208,7 +202,7 @@ Tag of a Dynatrace entity.
 | Element | Type | Description |
 | --- | --- | --- |
 | code | integer | The HTTP status code |
-| constraintViolations | [ConstraintViolation[]](#openapi-definition-ConstraintViolation) | A list of constraint violations |
+| constraintViolations | [ConstraintViolation](#openapi-definition-ConstraintViolation)[] | A list of constraint violations |
 | message | string | The error message |
 
 #### The `ConstraintViolation` object
@@ -258,18 +252,6 @@ A list of constraint violations
 
 
 "amiId": "string",
-
-
-
-"attributes": {
-
-
-
-"empty": true
-
-
-
-},
 
 
 

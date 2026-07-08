@@ -1,7 +1,6 @@
 ---
 title: Adaptive Traffic Management for Dynatrace Managed
 source: https://docs.dynatrace.com/managed/ingest-from/dynatrace-oneagent/adaptive-traffic-management/adaptive-traffic-management-managed
-scraped: 2026-05-12T11:14:34.396853
 ---
 
 # Adaptive Traffic Management for Dynatrace Managed
@@ -15,7 +14,7 @@ Dynatrace Full-Stack Monitoring packages a variety of features, including fully 
 
 Depending on the transaction volume, OneAgent captures end-to-end traces every minute up to a peak trace per minute. This is Dynatrace's intelligent sampling mechanism that ensures that your Managed cluster cannot be owerwhelmed with trace data during peak times. You can adjust this to your needs.
 
-[PurePath](/managed/observe/application-observability/distributed-traces/use-cases/segment-request "Enhance your distributed system performance by segmenting requests with slow response time via Service flow and analyzing their distributed traces.")Â® distributed traces are end-to-end transactions captured by OneAgent. Each minute, a statistically relevant number of end-to-end distributed traces is captured within each monitored process. Each trace contains code-level and business insights derived from service-level calls to multiple tiers. Because each trace is captured fully and end-to-end, second- and third-level tiers often capture more total service calls than entry-point processes.
+[PurePath](/managed/observe/application-observability/distributed-traces/use-cases/segment-request "Enhance your distributed system performance by segmenting requests with slow response time via Service flow and analyzing their distributed traces.")® distributed traces are end-to-end transactions captured by OneAgent. Each minute, a statistically relevant number of end-to-end distributed traces is captured within each monitored process. Each trace contains code-level and business insights derived from service-level calls to multiple tiers. Because each trace is captured fully and end-to-end, second- and third-level tiers often capture more total service calls than entry-point processes.
 
 ![Each OneAgent-monitored process captures a limited number of new PurePath traces every minute](https://dt-cdn.net/images/oneagent-adaptive-traffic-management-pipe-748-5b04a011d8.png)
 
@@ -44,7 +43,7 @@ The following table represents a top-request calculation example, along with the
 | URI B | 440 | 1/2 | 220 |
 | URI C | 250 | 1 | 250 |
 | URI D | 60 | 1 | 60 |
-| â¦50 other URIs | 100 | 1 | 100 |
+| …50 other URIs | 100 | 1 | 100 |
 | **Total:** | **1500** |  | **1080** |
 
 In this example, OneAgent captures 1080 requests per minute, according to the configured target number of requests. Depending on the capture factor, URIs are captured each time (URIs C, D, and 50 other URIs) or only 50% of the time (URIs A and B).
@@ -119,7 +118,7 @@ These options should be considered whenever statistical accuracy of data capture
 
 When you increase or decrease the sampling frequency of HTTP or RPC requests, these requests are captured more or less often relative to other request types.
 
-* OneAgent version 1.331+ Reduction rules are always applied independent of the current OneAgent capture rate or adaptive trace sampling rate. This approach reduces trace volume more effectively, making it available for higherâpriority requests.
+* OneAgent version 1.331+ Reduction rules are always applied independent of the current OneAgent capture rate or adaptive trace sampling rate. This approach reduces trace volume more effectively, making it available for higher‑priority requests.
 * OneAgent version 1.329 and earlier Reduction rules generally affect sampling only when the OneAgent module initiating the distributed trace captures less than 100% of traces.
 
 ### Effect of tracing deactivation on capture rate
@@ -178,8 +177,8 @@ Kubernetes cluster or namespace
 2. Find and select the required Kubernetes cluster.
 3. Go to the cluster or namespace settings page.
 
-   * **Cluster**: In the upper-right corner of the cluster overview page, select **More** (**â¦**) > **Settings**.
-   * **Namespace**: Find and select the required namespace, and then select **More** (**â¦**) > **Settings** in the upper-right corner of the namespace overview page.
+   * **Cluster**: In the upper-right corner of the cluster overview page, select **More** (**…**) > **Settings**.
+   * **Namespace**: Find and select the required namespace, and then select **More** (**…**) > **Settings** in the upper-right corner of the namespace overview page.
 4. Select **Trace sampling for HTTP requests** or **Trace sampling for RPC requests**.
 
 ### 2. Modify trace sampling

@@ -1,7 +1,6 @@
 ---
 title: Settings API - OneAgent updates schema table
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/settings/schemas/builtin-deployment-oneagent-updates
-scraped: 2026-05-12T11:43:02.979285
 ---
 
 # Settings API - OneAgent updates schema table
@@ -12,7 +11,7 @@ scraped: 2026-05-12T11:43:02.979285
 
 ### OneAgent updates (`builtin:deployment.oneagent.updates)`
 
-Select the OneAgent target version and configure update behavior. The selected version is also used for the [Deployment APIï»¿](https://dt-url.net/hh03wzk) and OneAgent deployment pages. For more about the OneAgent target version, see [OneAgent updateï»¿](https://dt-url.net/9901p5j). To learn more about the latest updates, see the [OneAgent release notesï»¿](https://dt-url.net/release-notes-oneagent). To configure RUM JavaScript update behavior, see RUM JavaScript updates (`<your-dynatrace-url>//ui/settings/builtin:rum.web.rum-javascript-updates`).
+Select the OneAgent target version and configure update behavior. The selected version is also used for the [Deployment API﻿](https://dt-url.net/hh03wzk) and OneAgent deployment pages. For more about the OneAgent target version, see [OneAgent update﻿](https://dt-url.net/9901p5j). To learn more about the latest updates, see the [OneAgent release notes﻿](https://dt-url.net/release-notes-oneagent). To configure RUM JavaScript update behavior, see RUM JavaScript updates (`<your-dynatrace-url>//ui/settings/builtin:rum.web.rum-javascript-updates`).
 
 | Schema ID | Schema groups | Scope |
 | --- | --- | --- |

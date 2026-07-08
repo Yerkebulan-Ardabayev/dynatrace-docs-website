@@ -1,7 +1,6 @@
 ---
 title: Settings API - Enablement and cost control schema table
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/settings/schemas/builtin-rum-mobile-enablement
-scraped: 2026-05-12T11:39:24.770335
 ---
 
 # Settings API - Enablement and cost control schema table
@@ -34,8 +33,8 @@ To execute this request, you need an access token with **Read settings** (`setti
 
 | Property | Type | Description | Required |
 | --- | --- | --- | --- |
-| Real User Monitoring `rum` | [rum](#rum) | Capture and analyze all user actions within your application. Enable [Real User Monitoring (RUM)ï»¿](https://dt-url.net/1n2b0prq) to monitor and improve your application's performance, identify errors, and gain insight into your user's behavior and experience. | Required |
-| Session Replay `sessionReplay` | [sessionReplay](#sessionReplay) | [Session Replayï»¿](https://dt-url.net/session-replay) captures all user interactions within your application and replays them in a movie-like experience while providing [best-in-class security and data protectionï»¿](https://dt-url.net/b303zxj). | Required |
+| Real User Monitoring `rum` | [rum](#rum) | Capture and analyze all user actions within your application. Enable [Real User Monitoring (RUM)﻿](https://dt-url.net/1n2b0prq) to monitor and improve your application's performance, identify errors, and gain insight into your user's behavior and experience. | Required |
+| Session Replay `sessionReplay` | [sessionReplay](#sessionReplay) | [Session Replay﻿](https://dt-url.net/session-replay) captures all user interactions within your application and replays them in a movie-like experience while providing [best-in-class security and data protection﻿](https://dt-url.net/b303zxj). | Required |
 | User Interactions `experienceAnalytics` | [experienceAnalytics](#experienceAnalytics) | - | Optional |
 
 ##### The `rum` object
@@ -44,20 +43,20 @@ To execute this request, you need an access token with **Read settings** (`setti
 | --- | --- | --- | --- |
 | Enable Real User Monitoring Classic `enabled` | boolean | - | Required |
 | Enable New Real User Monitoring Experience `enabledOnGrail` | boolean | Please be aware that only mobile agents with version **8.309 or higher** can ingest Grail events | Optional |
-| Cost and traffic control `costAndTrafficControl` | integer | Percentage of user sessions captured and analyzed  By default, Dynatrace captures all user actions and user sessions for analysis. This approach ensures complete insight into your applicationâs performance and customer experience. You can optionally reduce the granularity of user-action and user-session analysis by capturing a lower percentage of user sessions. While this approach can reduce monitoring costs, it also results in lower visibility into how your customers are using your applications. For example, a setting of 10% results in Dynatrace analyzing only every tenth user session. | Required |
+| Cost and traffic control `costAndTrafficControl` | integer | Percentage of user sessions captured and analyzed  By default, Dynatrace captures all user actions and user sessions for analysis. This approach ensures complete insight into your application’s performance and customer experience. You can optionally reduce the granularity of user-action and user-session analysis by capturing a lower percentage of user sessions. While this approach can reduce monitoring costs, it also results in lower visibility into how your customers are using your applications. For example, a setting of 10% results in Dynatrace analyzing only every tenth user session. | Required |
 
 ##### The `sessionReplay` object
 
 | Property | Type | Description | Required |
 | --- | --- | --- | --- |
-| Enable Session Replay Classic `fullSessionReplay` | boolean | Before enabling, Dynatrace checks your system against the [prerequisites for Session Replayï»¿](https://dt-url.net/t23s0ppi). | Optional |
+| Enable Session Replay Classic `fullSessionReplay` | boolean | Before enabling, Dynatrace checks your system against the [prerequisites for Session Replay﻿](https://dt-url.net/t23s0ppi). | Optional |
 | Enable New Session Replay Experience `fullSessionReplayOnGrail` | boolean | - | Optional |
 | Cost and traffic control `costAndTrafficControl` | integer | Percentage of user sessions recorded with Session Replay. For example, if you have 50% for RUM and 50% for Session Replay, it results in 25% of sessions recorded with Session Replay. | Optional |
-| Enable Session Replay Classic on crashes `onCrash` | boolean | Capture screen recordings that replay the user actions preceding all detected crashes. Before enabling, Dynatrace checks your system against the [prerequisites for Session Replayï»¿](https://dt-url.net/t23s0ppi). | Required |
+| Enable Session Replay Classic on crashes `onCrash` | boolean | Capture screen recordings that replay the user actions preceding all detected crashes. Before enabling, Dynatrace checks your system against the [prerequisites for Session Replay﻿](https://dt-url.net/t23s0ppi). | Required |
 | Enable New Session Replay on Crashes Experience `onCrashOnGrail` | boolean | - | Optional |
 
 ##### The `experienceAnalytics` object
 
 | Property | Type | Description | Required |
 | --- | --- | --- | --- |
-| Enable User Interactions `enabled` | boolean | Capture user interactions within your frontend, including all clicks and taps. During the Early Access period, thereâs no cost associated with this feature. | Required |
+| Enable User Interactions `enabled` | boolean | Capture user interactions within your frontend, including all clicks and taps. During the Early Access period, there’s no cost associated with this feature. | Required |

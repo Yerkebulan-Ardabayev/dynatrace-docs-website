@@ -1,7 +1,6 @@
 ---
 title: Problem alerting profiles
 source: https://docs.dynatrace.com/managed/analyze-explore-automate/notifications-and-alerting/alerting-profiles
-scraped: 2026-05-12T11:08:23.342428
 ---
 
 # Problem alerting profiles
@@ -48,14 +47,14 @@ Severity rules filter events based on their severity level. For each alerting pr
 You can use the following criteria:
 
 * [Severity level](/managed/dynatrace-intelligence/root-cause-analysis/event-analysis-and-correlation/event-categories "Learn about different categories of events and supported event types, along with their severity levels, and the logic behind raising them.").
-* How long the problem is open before an alert is sent outâthis enables you to avoid alerts for low-severity problems that don't affect customer experience and therefore don't require immediate attention.
+* How long the problem is open before an alert is sent out—this enables you to avoid alerts for low-severity problems that don't affect customer experience and therefore don't require immediate attention.
 * Optional Monitoring entities that have any or all of the specified tags
 
 Rule criteria are combined by the **AND** logic. **All** of them must be fulfilled for the rule to be invoked.
 
 ### Event filters
 
-Event rules filter events based on their properties. For each alerting profile, you can specify up to 20 event rules. Particularly for auto-remediation use cases, itâs helpful to trigger specific actions based on detailed information thatâs captured during abnormal situations, for example, triggering alerts in cases where problems are related to process crashes.
+Event rules filter events based on their properties. For each alerting profile, you can specify up to 20 event rules. Particularly for auto-remediation use cases, it’s helpful to trigger specific actions based on detailed information that’s captured during abnormal situations, for example, triggering alerts in cases where problems are related to process crashes.
 
 You can use the following criteria:
 

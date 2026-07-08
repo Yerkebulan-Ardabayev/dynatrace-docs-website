@@ -1,7 +1,6 @@
 ---
 title: Grant access to Settings
 source: https://docs.dynatrace.com/managed/manage/identity-access-management/use-cases/access-settings
-scraped: 2026-05-12T11:24:30.055105
 ---
 
 # Grant access to Settings

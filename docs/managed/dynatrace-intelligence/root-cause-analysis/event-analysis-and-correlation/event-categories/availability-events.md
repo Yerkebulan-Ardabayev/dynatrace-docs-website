@@ -1,7 +1,6 @@
 ---
 title: Availability events
 source: https://docs.dynatrace.com/managed/dynatrace-intelligence/root-cause-analysis/event-analysis-and-correlation/event-categories/availability-events
-scraped: 2026-05-12T12:06:53.485350
 ---
 
 # Availability events
@@ -38,7 +37,7 @@ The following Dynatrace entities apply to this event:
 
 `OSI_UNEXPECTEDLY_UNAVAILABLE`
 
-This event is detected when a host is abruptly shut down or Dynatrace loses the network connection to the hostâs OneAgent. If the operating system is shut down gracefully, Dynatrace won't open a problem. Dynatrace will show the host in an unavailable state.
+This event is detected when a host is abruptly shut down or Dynatrace loses the network connection to the host’s OneAgent. If the operating system is shut down gracefully, Dynatrace won't open a problem. Dynatrace will show the host in an unavailable state.
 
 Condition:
 
@@ -66,7 +65,7 @@ However, if a process group and its availability are of high importance you can 
 
 If you intentionally shut down a process, an event will be triggered too, giving that condition is met. In that case just close the raised problem manually.
 
-To configure process group availability monitoring, click **Edit** on the process group details page and select the **Availability monitoring** item.
+To configure process group availability monitoring, select **Edit** on the process group details page and select the **Availability monitoring** item.
 
 Closing conditions:
 

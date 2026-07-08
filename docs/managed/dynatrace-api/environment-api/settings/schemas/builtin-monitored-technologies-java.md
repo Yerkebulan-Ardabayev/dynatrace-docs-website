@@ -1,7 +1,6 @@
 ---
 title: Settings API - Java schema table
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/settings/schemas/builtin-monitored-technologies-java
-scraped: 2026-05-12T11:40:22.372363
 ---
 
 # Settings API - Java schema table

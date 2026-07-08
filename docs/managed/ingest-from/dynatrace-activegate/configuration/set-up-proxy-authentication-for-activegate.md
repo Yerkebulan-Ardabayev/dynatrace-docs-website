@@ -1,7 +1,6 @@
 ---
 title: Proxy for ActiveGate
 source: https://docs.dynatrace.com/managed/ingest-from/dynatrace-activegate/configuration/set-up-proxy-authentication-for-activegate
-scraped: 2026-05-12T11:27:38.311343
 ---
 
 # Proxy for ActiveGate
@@ -9,7 +8,7 @@ scraped: 2026-05-12T11:27:38.311343
 # Proxy for ActiveGate
 
 * 5-min read
-* Updated on Apr 21, 2026
+* Updated on Jun 09, 2026
 
 Your ActiveGate connectivity configuration allows you to define one or more proxies for outgoing connections: You can use a [single proxy for all outgoing traffic](#proxy-for-cluster-aws-vmware-azure), or you can specify **different proxies for different purposes**, or you can even **define exceptions by turning off proxy use for specific connections**, while using proxies for other connections.
 
@@ -28,7 +27,7 @@ ActiveGate proxy configuration consists of the following settings. Depending on 
 | `proxy-domain` | User domain in the case of NTLM authentication |
 | `proxy-password` | Password Optional  The password provided in the `proxy-password` property is obfuscated after ActiveGate restart, and the obfuscated password is stored in the `proxy-password-encr` property.  If a comma (`,`) is part of a value, you need to add an escape backslash (`\`) before the comma. For example, `proxy-password = foo\,bar`. |
 | `proxy-off` | If set to `true`, causes proxy to be disabled for the particular type of communication. |
-| `proxy-non-proxy-hosts` | A list of hosts for communication with which proxy should not be used by ActiveGate  The hosts in the list should be separated by `|` characters. You can also use an asterisk `*` as a wildcard character to match any string. There can be only one wildcard character, either at the beginning or the end of the hostname. For example, `proxy-non-proxy-hosts=*.foo.com|localhost` indicates that every host in the `foo.com` domain and the `localhost` should be accessed directly even if a proxy server is specified. For a full description of allowed syntax, see the syntax for the `http.nonProxyHosts` parameter in [Networking Propertiesï»¿](https://dt-url.net/kk02v8r).  ActiveGate version 1.335+ CIDR notation is supported for the following technologies:  * `cloudfoundry_monitoring` * `kubernetes_monitoring`  For example, `proxy-non-proxy-hosts=10.0.0.0/8` will disable proxy for addresses in the range `10.0.0.0`â`10.255.255.255`. |
+| `proxy-non-proxy-hosts` | A list of hosts for communication with which proxy should not be used by ActiveGate  The hosts in the list should be separated by `|` characters. You can also use an asterisk `*` as a wildcard character to match any string. There can be only one wildcard character, either at the beginning or the end of the hostname. For example, `proxy-non-proxy-hosts=*.foo.com|localhost` indicates that every host in the `foo.com` domain and the `localhost` should be accessed directly even if a proxy server is specified. For a full description of allowed syntax, see the syntax for the `http.nonProxyHosts` parameter in [Networking Properties﻿](https://dt-url.net/kk02v8r).  ActiveGate version 1.335+ CIDR notation is supported for the following technologies:  * `cloudfoundry_monitoring` * `kubernetes_monitoring`  For example, `proxy-non-proxy-hosts=10.0.0.0/8` will disable proxy for addresses in the range `10.0.0.0`–`10.255.255.255`. |
 | `proxy-authentication-schemes` | ActiveGate version 1.271+  A list of proxy authentication schemes Optional  This is a prioritized list of proxy authentication schemes that ActiveGate should use when authenticating with the proxy server.  * Starting with the first scheme on the list, ActiveGate will attempt to authenticate and, in case of failure, proceed to the next scheme on the list. * If this property is not defined, ActiveGate will try to authenticate using all available schemes.  Supported values: `NTLM`, `BASIC` |
 
 ## Specify proxy configuration for ActiveGate
@@ -108,13 +107,13 @@ The following simple proxy configuration scenarios for ActiveGate are the most c
 
 ### ActiveGate proxy settings for all outgoing traffic
 
-![ActiveGate proxy settings for all outgoing traffic](https://dt-cdn.net/images/proxy-all-traffic-997-b808c95ba8.png)
+![ActiveGate proxy settings for all outgoing traffic](https://cdn.bfldr.com/B686QPH3/as/hp3r3rfrghg4g673rh5nmkv/ActiveGate-Proxy_settings_for_all_outgoing_traffic-Light_Mode?auto=webp&format=png&position=1)
 
 ActiveGate proxy settings for all outgoing traffic
 
 The following configuration covers the most common case of specifying proxy settings for ActiveGate outgoing connection to both the Dynatrace Cluster as well as monitored technologies, such as AWS, VMware, or Azure.
 
-Specify the proxy-related parameters in the `[http.client]` section of the `custom.properties` fileâ including those parameters related to authentication, if required:
+Specify the proxy-related parameters in the `[http.client]` section of the `custom.properties` file— including those parameters related to authentication, if required:
 
 agctl
 
@@ -172,7 +171,7 @@ proxy-password=password
 
 ### ActiveGate proxy settings for Dynatrace Cluster only
 
-![ActiveGate proxy settings for Dynatrace Cluster only](https://dt-cdn.net/images/proxy-cluster-997-6b188ae6f1.png)
+![ActiveGate proxy settings for Dynatrace Cluster only](https://cdn.bfldr.com/B686QPH3/as/fj8ggn9tspgv85xmmhnc8wsb/ActiveGate-Proxy_settings_for_Dynatrace_Cluster_only-Light_Mode?auto=webp&format=png&position=1)
 
 ActiveGate proxy settings for Dynatrace Cluster only
 
@@ -234,7 +233,7 @@ proxy-password=password
 
 ### ActiveGate proxy for outgoing monitoring traffic, with direct connection to Dynatrace Cluster
 
-![ActiveGate proxy for outgoing monitoring traffic only](https://dt-cdn.net/images/proxy-monitoring-997-e1fa592b43.png)
+![ActiveGate proxy for outgoing monitoring traffic only](https://cdn.bfldr.com/B686QPH3/as/t3wh55p62fbf4h9w26nrwjr/ActiveGate-Proxy_for_outgoing_monitoring_traffic-Light_Mode?auto=webp&format=png&position=1)
 
 ActiveGate proxy for outgoing monitoring traffic only
 
@@ -313,16 +312,16 @@ proxy-off=true
 
 ## Advanced proxy configuration scenarios for ActiveGate
 
-To set up a proxy for **outgoing connections from ActiveGate**âthat is for connections to monitored technologies or to the Dynatrace Clusterâedit the [`custom.properties`](/managed/ingest-from/dynatrace-activegate/configuration/configure-activegate "Learn which ActiveGate properties you can configure based on your needs and requirements.") file and set properties in the appropriate section. Depending on the configuration section in which the properties are specified, the proxy (and other communication settings) affect only selected types of connections:
+To set up a proxy for **outgoing connections from ActiveGate**—that is for connections to monitored technologies or to the Dynatrace Cluster—edit the [`custom.properties`](/managed/ingest-from/dynatrace-activegate/configuration/configure-activegate "Learn which ActiveGate properties you can configure based on your needs and requirements.") file and set properties in the appropriate section. Depending on the configuration section in which the properties are specified, the proxy (and other communication settings) affect only selected types of connections:
 
-* `[http.client]`âproxy settings for all ActiveGate outgoing connections, including the Dynatrace Cluster as well as all monitored technologies.
-* `[http.client.internal]`âproxy settings specifically for the communication with Dynatrace Cluster. These settings override the settings specified in `[http.client]`
-* `[http.client.external]`âproxy settings specifically for monitored technologies: CloudFoundry, Kubernetes, private Synthetic monitoring. These settings override the settings specified in `[http.client]`
-* `[<technology name>]`âproxy settings specifically for the particular monitored technology, such as `cloudfoundry_monitoring`, `kubernetes_monitoring`, `synthetic`. These settings override the settings specified in `[http.client]` and `[http.client.external]`. Note that Settings for many of these technologies can be specified jointly in `[http.client.external]`.
+* `[http.client]`—proxy settings for all ActiveGate outgoing connections, including the Dynatrace Cluster as well as all monitored technologies.
+* `[http.client.internal]`—proxy settings specifically for the communication with Dynatrace Cluster. These settings override the settings specified in `[http.client]`
+* `[http.client.external]`—proxy settings specifically for monitored technologies: CloudFoundry, Kubernetes, private Synthetic monitoring. These settings override the settings specified in `[http.client]`
+* `[<technology name>]`—proxy settings specifically for the particular monitored technology, such as `cloudfoundry_monitoring`, `kubernetes_monitoring`, `synthetic`. These settings override the settings specified in `[http.client]` and `[http.client.external]`. Note that Settings for many of these technologies can be specified jointly in `[http.client.external]`.
 
 This precedence and inheritance of configuration settings between different configuration sections can be pictured graphically as follows:
 
-![Proxy inheritance](https://dt-cdn.net/images/screenshot-2023-07-05-at-11-08-23-am-1092-d8b1c84a83.png)
+![Proxy inheritance](https://cdn.bfldr.com/B686QPH3/as/7qvbpp4prm5qks5b6m6x7mxv/ActiveGate-Advanced_proxy_configuration_scenarios_for_ActiveGate-Light_Mode?auto=webp&format=png&position=1)
 
 Proxy inheritance
 

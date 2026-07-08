@@ -1,7 +1,6 @@
 ---
 title: Generate SSO token
 source: https://docs.dynatrace.com/managed/dynatrace-api/mission-control-api/cluster-sso-token-generation/post-generate-sso-token
-scraped: 2026-05-12T12:14:17.193792
 ---
 
 # Generate SSO token

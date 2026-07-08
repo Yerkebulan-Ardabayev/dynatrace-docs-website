@@ -1,7 +1,6 @@
 ---
 title: Amazon EBS (Elastic Block Store) monitoring
 source: https://docs.dynatrace.com/managed/ingest-from/amazon-web-services/integrate-with-aws/aws-all-services/aws-service-ebs-new
-scraped: 2026-05-12T11:30:47.674302
 ---
 
 # Amazon EBS (Elastic Block Store) monitoring
@@ -29,7 +28,7 @@ To enable monitoring for this service, you need
 * Dynatrace version 1.200+
 * An updated [AWS monitoring policy](/managed/ingest-from/amazon-web-services/integrate-with-aws/cloudwatch-metrics#monitoring-policy "Integrate metrics from Amazon CloudWatch.") to include the additional AWS services.
 
-To [update the AWS IAM policyï»¿](https://dt-url.net/8q038eb), use the JSON below, containing the monitoring policy (permissions) for all supporting services.
+To [update the AWS IAM policy﻿](https://dt-url.net/8q038eb), use the JSON below, containing the monitoring policy (permissions) for all supporting services.
 
 JSON predefined policy for all supporting services
 

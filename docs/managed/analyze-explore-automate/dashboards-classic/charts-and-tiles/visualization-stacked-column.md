@@ -1,7 +1,6 @@
 ---
 title: Configure and use a stacked column visualization in Dynatrace
 source: https://docs.dynatrace.com/managed/analyze-explore-automate/dashboards-classic/charts-and-tiles/visualization-stacked-column
-scraped: 2026-05-12T11:12:55.252198
 ---
 
 # Configure and use a stacked column visualization in Dynatrace

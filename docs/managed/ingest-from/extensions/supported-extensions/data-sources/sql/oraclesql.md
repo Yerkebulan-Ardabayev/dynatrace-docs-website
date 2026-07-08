@@ -1,7 +1,6 @@
 ---
 title: Manage Oracle Database extensions
 source: https://docs.dynatrace.com/managed/ingest-from/extensions/supported-extensions/data-sources/sql/oraclesql
-scraped: 2026-05-12T11:10:30.584363
 ---
 
 # Manage Oracle Database extensions
@@ -14,7 +13,7 @@ scraped: 2026-05-12T11:10:30.584363
 
 Dynatrace provides you with a framework that you can use to extend your application observability into data acquired directly from your Oracle Database layer, so that you can monitor how database server tasks impact your app.
 
-To get started, check [Dynatrace Hubï»¿](https://www.dynatrace.com/hub/?query=oracle+sql) to see if the Dynatrace-provided Oracle Database extension satisfies your requirements. If this is not the case, you can build your own [Dynatrace Oracle Database extension](/managed/ingest-from/extensions/develop-your-extensions/data-sources/sql "Learn how to create an SQL data source-based extension using the Extensions framework.").
+To get started, check [Dynatrace Hub﻿](https://www.dynatrace.com/hub/?query=oracle+sql) to see if the Dynatrace-provided Oracle Database extension satisfies your requirements. If this is not the case, you can build your own [Dynatrace Oracle Database extension](/managed/ingest-from/extensions/develop-your-extensions/data-sources/sql "Learn how to create an SQL data source-based extension using the Extensions framework.").
 
 ## Before you begin
 
@@ -25,7 +24,7 @@ To get started, check [Dynatrace Hubï»¿](https://www.dynatrace.com/hub/?query
    * Oracle RAC
    * Oracle AWS RDS
 2. Designate an ActiveGate group or groups that will remotely connect to your Oracle Database server to pull data. All ActiveGates in each designated group need to be able to connect to your Oracle Database server.
-3. Create a dedicated user account for monitoring and grant it permissions as in the [Oracle Databaseï»¿](https://dt-url.net/7f03qwp) extension description under the **Get started with Oracle Database servers** section.
+3. Create a dedicated user account for monitoring and grant it permissions as in the [Oracle Database﻿](https://dt-url.net/7f03qwp) extension description under the **Get started with Oracle Database servers** section.
 
 ## Manage Oracle SQL extensions
 
@@ -50,7 +49,7 @@ Next, perform the following steps.
 
 ### Step 1 Accept Oracle JDBC driver redistribution license
 
-An Oracle Database extension requires that you accept the [Dynatrace redistribution license agreement for Oracle JDBC Driverï»¿](https://dt-url.net/0s1n0pw9).
+An Oracle Database extension requires that you accept the [Dynatrace redistribution license agreement for Oracle JDBC Driver﻿](https://dt-url.net/0s1n0pw9).
 
 ### Step 2 Define endpoints
 
@@ -86,4 +85,4 @@ The extension activation wizard contains a dynamically updated JSON payload with
 
 ## Related topics
 
-* [Troubleshooting extensionsï»¿](https://dt-url.net/6303zdg "Learn how to troubleshoot Dynatrace Extensions")
+* [Troubleshooting extensions﻿](https://dt-url.net/6303zdg "Learn how to troubleshoot Dynatrace Extensions")

@@ -1,7 +1,6 @@
 ---
 title: Google Cloud supported service metrics (legacy)
 source: https://docs.dynatrace.com/managed/ingest-from/google-cloud-platform/legacy/gcp-supported-service-metrics-legacy
-scraped: 2026-05-12T11:51:12.957059
 ---
 
 # Google Cloud supported service metrics (legacy)
@@ -24,7 +23,7 @@ Deploy Dynatrace integration [as a GCP function](/managed/ingest-from/google-clo
 
 ## Supported services
 
-After deploying the Dynatrace integration, you can start monitoring the GCP supported services. The table below shows available metrics configurations[1](#fn-1-1-def) per service, including [Davis data units (DDUs)](/managed/license/monitoring-consumption-classic/davis-data-units "Understand how Dynatrace monitoring consumption is calculated based on Davis data units (DDU).") consumption[2](#fn-1-2-def) per instance per minute.
+After deploying the Dynatrace integration, you can start monitoring the GCP supported services. The table below shows available metrics configurations[1](#fn-1-1-def) per service, including [Davis data units (DDUs)](/managed/license/classic-licensing/davis-data-units "Understand how Dynatrace monitoring consumption is calculated based on Davis data units (DDU).") consumption[2](#fn-1-2-def) per instance per minute.
 
 1
 

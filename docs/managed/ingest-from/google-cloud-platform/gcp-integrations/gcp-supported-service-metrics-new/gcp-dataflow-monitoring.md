@@ -1,7 +1,6 @@
 ---
 title: Google Cloud Dataflow monitoring
 source: https://docs.dynatrace.com/managed/ingest-from/google-cloud-platform/gcp-integrations/gcp-supported-service-metrics-new/gcp-dataflow-monitoring
-scraped: 2026-05-12T11:50:37.008041
 ---
 
 # Google Cloud Dataflow monitoring

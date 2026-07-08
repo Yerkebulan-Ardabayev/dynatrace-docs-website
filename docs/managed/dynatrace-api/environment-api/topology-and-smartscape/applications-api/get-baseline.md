@@ -1,7 +1,6 @@
 ---
 title: Applications API - GET baseline
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/topology-and-smartscape/applications-api/get-baseline
-scraped: 2026-05-12T12:01:44.023948
 ---
 
 # Applications API - GET baseline
@@ -62,14 +61,14 @@ A duration metric is one of the following:
 
 | Element | Type | Description |
 | --- | --- | --- |
-| applicationDomInteractiveBaselines | [EntityBaselineData[]](#openapi-definition-EntityBaselineData) | The baseline data for the **DOM interactive** duration metric. |
-| applicationHtmlDownloadedBaselines | [EntityBaselineData[]](#openapi-definition-EntityBaselineData) | The baseline data for the **HTML downloaded** duration metric. |
-| applicationLoadEventEndBaselines | [EntityBaselineData[]](#openapi-definition-EntityBaselineData) | The baseline data for the **Load event end** duration metric. |
-| applicationLoadEventStartBaselines | [EntityBaselineData[]](#openapi-definition-EntityBaselineData) | The baseline data for the **Load event start** duration metric. |
-| applicationResponseTimeBaselines | [EntityBaselineData[]](#openapi-definition-EntityBaselineData) | The baseline data for the **Response time** duration metric. |
-| applicationSpeedIndexBaselines | [EntityBaselineData[]](#openapi-definition-EntityBaselineData) | The baseline data for the **Speed index** duration metric. |
-| applicationTimeToFirstByteBaselines | [EntityBaselineData[]](#openapi-definition-EntityBaselineData) | The baseline data for the **Time to first byte** duration metric. |
-| applicationVisualCompleteBaselines | [EntityBaselineData[]](#openapi-definition-EntityBaselineData) | The baseline data for the **Visually complete** duration metric. |
+| applicationDomInteractiveBaselines | [EntityBaselineData](#openapi-definition-EntityBaselineData)[] | The baseline data for the **DOM interactive** duration metric. |
+| applicationHtmlDownloadedBaselines | [EntityBaselineData](#openapi-definition-EntityBaselineData)[] | The baseline data for the **HTML downloaded** duration metric. |
+| applicationLoadEventEndBaselines | [EntityBaselineData](#openapi-definition-EntityBaselineData)[] | The baseline data for the **Load event end** duration metric. |
+| applicationLoadEventStartBaselines | [EntityBaselineData](#openapi-definition-EntityBaselineData)[] | The baseline data for the **Load event start** duration metric. |
+| applicationResponseTimeBaselines | [EntityBaselineData](#openapi-definition-EntityBaselineData)[] | The baseline data for the **Response time** duration metric. |
+| applicationSpeedIndexBaselines | [EntityBaselineData](#openapi-definition-EntityBaselineData)[] | The baseline data for the **Speed index** duration metric. |
+| applicationTimeToFirstByteBaselines | [EntityBaselineData](#openapi-definition-EntityBaselineData)[] | The baseline data for the **Time to first byte** duration metric. |
+| applicationVisualCompleteBaselines | [EntityBaselineData](#openapi-definition-EntityBaselineData)[] | The baseline data for the **Visually complete** duration metric. |
 | displayName | string | The name of the application as displayed in the UI. |
 | entityId | string | The Dynatrace entity ID of the application. |
 
@@ -79,7 +78,7 @@ The baseline data for a Dynatrace entity for a specific duration metric.
 
 | Element | Type | Description |
 | --- | --- | --- |
-| childBaselines | [EntityBaselineData[]](#openapi-definition-EntityBaselineData) | The baseline data for child entities of this entity, for example a `SERVICE_METHOD` of a `SERVICE_METHOD_GROUP`. |
+| childBaselines | [EntityBaselineData](#openapi-definition-EntityBaselineData)[] | The baseline data for child entities of this entity, for example a `SERVICE_METHOD` of a `SERVICE_METHOD_GROUP`. |
 | displayName | string | The display name of the entity. |
 | entityId | string | The ID of the Dynatrace entity. |
 | errorRate | number | The error rate baseline. |
@@ -98,7 +97,7 @@ The baseline data for a Dynatrace entity for a specific duration metric.
 | Element | Type | Description |
 | --- | --- | --- |
 | code | integer | The HTTP status code |
-| constraintViolations | [ConstraintViolation[]](#openapi-definition-ConstraintViolation) | A list of constraint violations |
+| constraintViolations | [ConstraintViolation](#openapi-definition-ConstraintViolation)[] | A list of constraint violations |
 | message | string | The error message |
 
 #### The `ConstraintViolation` object
@@ -324,4 +323,4 @@ A list of constraint violations
 
 ## Related topics
 
-* [Real User Monitoring](/managed/observe/digital-experience/rum-concepts/rum-overview "Learn about Real User Monitoring, key performance metrics, mobile app monitoring, and more.")
+* [Real User Monitoring Classic](/managed/observe/digital-experience/rum-classic/rum-concepts/rum-overview "Learn about Real User Monitoring Classic, key performance metrics, mobile app monitoring, and more.")

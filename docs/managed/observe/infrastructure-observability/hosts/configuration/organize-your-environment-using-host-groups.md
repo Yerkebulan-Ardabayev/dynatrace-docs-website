@@ -1,7 +1,6 @@
 ---
 title: Organize your environment using host groups
 source: https://docs.dynatrace.com/managed/observe/infrastructure-observability/hosts/configuration/organize-your-environment-using-host-groups
-scraped: 2026-05-12T11:22:15.591894
 ---
 
 # Organize your environment using host groups
@@ -37,7 +36,7 @@ To list all hosts in a host group
 
 ## Assign a host to a host group
 
-You can assign a host to a host group during or after [OneAgent installation](/managed/ingest-from "Learn how to install and configure ActiveGate and OneAgent on various platforms.").
+You can assign a host to a host group during or after [OneAgent installation](/managed/ingest-from "Learn how data flows from your environment through OpenPipeline into Dynatrace for analysis, and find the right ingestion path for your setup.").
 
 * **During** OneAgent installation
 

@@ -1,7 +1,6 @@
 ---
 title: Migrate from manifests to Helm for Dynatrace Operator installation
 source: https://docs.dynatrace.com/managed/ingest-from/setup-on-k8s/guides/migration/migrate-to-helm
-scraped: 2026-05-12T12:09:41.583818
 ---
 
 # Migrate from manifests to Helm for Dynatrace Operator installation
@@ -26,7 +25,7 @@ To ensure a clean migration:
 
    kubectl delete dynakube --all
    ```
-2. [Uninstall Dynatrace Operator via manifests](/managed/ingest-from/setup-on-k8s/guides/deployment-and-configuration/updates-and-maintenance/update-uninstall-operator#manifest-uninstall "Upgrade and uninstallation procedures for Dynatrace Operator").
+2. [Uninstall Dynatrace Operator via manifests](/managed/ingest-from/setup-on-k8s/guides/deployment-and-configuration/updates-and-maintenance/update-uninstall-operator#manifest-uninstall "Upgrade paths, update procedures, and uninstallation guide for Dynatrace Operator.").
 
 1. Install Dynatrace Operator via Helm. For more information about install instructions, see [Get started with full observability](/managed/ingest-from/setup-on-k8s/deployment/full-stack-managed#helm "Deploy Dynatrace Operator in cloud-native full-stack mode to Kubernetes").
 

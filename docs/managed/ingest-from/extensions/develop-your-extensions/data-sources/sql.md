@@ -1,7 +1,6 @@
 ---
 title: SQL data source
 source: https://docs.dynatrace.com/managed/ingest-from/extensions/develop-your-extensions/data-sources/sql
-scraped: 2026-05-12T11:50:10.045626
 ---
 
 # SQL data source
@@ -47,11 +46,11 @@ The SQL data source supports remote database access using various authentication
 
 ## Monitoring configuration
 
-* See [Oracle Database monitoring configuration](/managed/ingest-from/extensions/develop-your-extensions/data-sources/sql/oracle-monitoring "Create and activate a monitoring configuration for an SQL data source based extension for Oracle Database.") to learn how to create an Oracle Databaseâspecific monitoring configuration.
-* See [Microsoft SQL Server monitoring configuration](/managed/ingest-from/extensions/develop-your-extensions/data-sources/sql/microsoft-sql-monitoring "Microsoft SQL extensions in the Extensions framework.") to learn how to create a Microsoft Databaseâspecific monitoring configuration.
-* See [IBM Database monitoring configuration](/managed/ingest-from/extensions/develop-your-extensions/data-sources/sql/ibm-monitoring "IBM DB2 extensions in the Extensions framework.") to learn how to create an IBM Databaseâspecific monitoring configuration.
-* See [MySQL monitoring configuration](/managed/ingest-from/extensions/develop-your-extensions/data-sources/sql/mysql-monitoring "MySQL extensions in the Extensions framework.") to learn how to create a MySQL Databaseâspecific monitoring configuration.
-* See [PostgreSQL monitoring configuration](/managed/ingest-from/extensions/develop-your-extensions/data-sources/sql/postgresql-monitoring "PostgreSQL extensions in the Extensions framework.") to learn how to create a PostgreSQL Databaseâspecific monitoring configuration.
-* See [SAP Hana Database monitoring configuration](/managed/ingest-from/extensions/develop-your-extensions/data-sources/sql/sap-hana-monitoring "SAP Hana extensions in the Extensions framework.") to learn how to create a SAP Hana Databaseâspecific monitoring configuration.
-* See [Snowflake Database monitoring configuration](/managed/ingest-from/extensions/develop-your-extensions/data-sources/sql/snowflake-monitoring "Snowflake Database extensions in the Extensions framework.") to learn how to create a Snowflake Databaseâspecific monitoring configuration.
-* See [JDBC monitoring configuration](/managed/ingest-from/extensions/develop-your-extensions/data-sources/sql/jdbc-monitoring "JDBC extensions in the Extensions framework.") to learn how to create a JDBC Databaseâspecific monitoring configuration.
+* See [Oracle Database monitoring configuration](/managed/ingest-from/extensions/develop-your-extensions/data-sources/sql/oracle-monitoring "Create and activate a monitoring configuration for an SQL data source based extension for Oracle Database.") to learn how to create an Oracle Database–specific monitoring configuration.
+* See [Microsoft SQL Server monitoring configuration](/managed/ingest-from/extensions/develop-your-extensions/data-sources/sql/microsoft-sql-monitoring "Microsoft SQL extensions in the Extensions framework.") to learn how to create a Microsoft Database–specific monitoring configuration.
+* See [IBM Database monitoring configuration](/managed/ingest-from/extensions/develop-your-extensions/data-sources/sql/ibm-monitoring "IBM DB2 extensions in the Extensions framework.") to learn how to create an IBM Database–specific monitoring configuration.
+* See [MySQL monitoring configuration](/managed/ingest-from/extensions/develop-your-extensions/data-sources/sql/mysql-monitoring "MySQL extensions in the Extensions framework.") to learn how to create a MySQL Database–specific monitoring configuration.
+* See [PostgreSQL monitoring configuration](/managed/ingest-from/extensions/develop-your-extensions/data-sources/sql/postgresql-monitoring "PostgreSQL extensions in the Extensions framework.") to learn how to create a PostgreSQL Database–specific monitoring configuration.
+* See [SAP Hana Database monitoring configuration](/managed/ingest-from/extensions/develop-your-extensions/data-sources/sql/sap-hana-monitoring "SAP Hana extensions in the Extensions framework.") to learn how to create a SAP Hana Database–specific monitoring configuration.
+* See [Snowflake Database monitoring configuration](/managed/ingest-from/extensions/develop-your-extensions/data-sources/sql/snowflake-monitoring "Snowflake Database extensions in the Extensions framework.") to learn how to create a Snowflake Database–specific monitoring configuration.
+* See [JDBC monitoring configuration](/managed/ingest-from/extensions/develop-your-extensions/data-sources/sql/jdbc-monitoring "JDBC extensions in the Extensions framework.") to learn how to create a JDBC Database–specific monitoring configuration.

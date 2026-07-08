@@ -1,7 +1,6 @@
 ---
 title: Environment API
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api
-scraped: 2026-05-12T11:03:54.479919
 ---
 
 # Environment API
@@ -182,7 +181,7 @@ scraped: 2026-05-12T11:03:54.479919
 
 ## API Explorer
 
-You can access all Dynatrace API endpoints using the API Explorer. From the [user menu](/managed/discover-dynatrace/get-started/dynatrace-ui#user-menu-previous-dynatrace "Navigate the Dynatrace Managed platform"), scroll down to **Dynatrace API** and select the API section you're interested in.
+You can access all Dynatrace API endpoints using the API Explorer. From the [user menu](/managed/discover-dynatrace/get-started/dynatrace-ui#user-menu-previous-dynatrace "Explore Dynatrace Managed, including navigation, browser requirements, timeframe selection, metric notation, and accessibility."), scroll down to **Dynatrace API** and select the API section you're interested in.
 
 Alternatively, you can access the API Explorer via the direct link `https://{your-domain}/e/{your-environment-id}/rest-api-doc/`.
 

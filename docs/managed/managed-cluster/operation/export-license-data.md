@@ -1,7 +1,6 @@
 ---
 title: Export license data
 source: https://docs.dynatrace.com/managed/managed-cluster/operation/export-license-data
-scraped: 2026-05-12T11:24:07.831735
 ---
 
 # Export license data
@@ -10,7 +9,7 @@ scraped: 2026-05-12T11:24:07.831735
 
 * Updated on Nov 25, 2025
 
-License data export allows you to export raw information about hourly license usage of all your environments during the specified period. Please note that this usage does not represent the billed usage in [Dynatrace classic licensing](/managed/license/monitoring-consumption-classic "Understand how Dynatrace monitoring consumption is calculated for classic licensing."). For Managed deployments in offline mode, it servers as an input for billing.
+License data export allows you to export raw information about hourly license usage of all your environments during the specified period. Please note that this usage does not represent the billed usage in [Dynatrace classic licensing](/managed/license/monitoring-consumption-classic "Understand how Dynatrace classic monitoring consumption is calculated, including host units, DDUs, DEM units, and Application Security units."). For Managed deployments in offline mode, it servers as an input for billing.
 
 To export license data:
 

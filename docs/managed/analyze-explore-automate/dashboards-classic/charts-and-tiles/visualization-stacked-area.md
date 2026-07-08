@@ -1,7 +1,6 @@
 ---
 title: Configure and use a stacked area visualization in Dynatrace
 source: https://docs.dynatrace.com/managed/analyze-explore-automate/dashboards-classic/charts-and-tiles/visualization-stacked-area
-scraped: 2026-05-12T11:13:02.505819
 ---
 
 # Configure and use a stacked area visualization in Dynatrace

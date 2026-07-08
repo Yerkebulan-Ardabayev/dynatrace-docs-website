@@ -1,7 +1,6 @@
 ---
 title: Top database statements
 source: https://docs.dynatrace.com/managed/observe/application-observability/multidimensional-analysis/top-database-statements
-scraped: 2026-05-12T11:21:43.680055
 ---
 
 # Top database statements
@@ -34,13 +33,13 @@ You can configure a view by adjusting **Metric** and the other parameters or by 
 
 Filter request examples
 
-The following example shows a view configured with the metric **Response time**, filtered by value range `â¥100ms`. The list shows all database statements which response took at least 100 ms.
+The following example shows a view configured with the metric **Response time**, filtered by value range `≥100ms`. The list shows all database statements which response took at least 100 ms.
 
 ![Response time filter in top database statement analysis](https://dt-cdn.net/images/response-time-filter-in-top-database-statement-analysis-3684-0962b8fba9.png)
 
 Response time filter in top database statement analysis
 
-The view in this example is configured with the metric **Fetch count** filtered by value range `â¥5`. The list shows database statement with at least 5 database fetches per execution.
+The view in this example is configured with the metric **Fetch count** filtered by value range `≥5`. The list shows database statement with at least 5 database fetches per execution.
 
 ![Fetch count in top database statements analysis](https://dt-cdn.net/images/fetch-count-in-top-database-statements-analysis-3548-bdb184cbd0.png)
 
@@ -63,11 +62,11 @@ Fetch count in top database statements analysis
 
 ## Analyze individual SQL statements
 
-To access several statement-specific analysis views, including **Service backtrace** and **Outliers** analysis, select **More** (**â¦**).
+To access several statement-specific analysis views, including **Service backtrace** and **Outliers** analysis, select **More** (**…**).
 
 ### Database statement details
 
-You can directly access analysis for individual statements by selecting **Filter**. Alternatively, select **More** (**â¦**) > **Statement details**.
+You can directly access analysis for individual statements by selecting **Filter**. Alternatively, select **More** (**…**) > **Statement details**.
 
 ![Distributed traces of individual database statement](https://dt-cdn.net/images/distributed-traces-top-database-statements-1593-b6fb81c79e.png)
 
@@ -97,15 +96,15 @@ Response time distribution of requests of a service
 
 ### View single executions
 
-To view the individual executions of each command, select **More** (**â¦**) > **Distributed traces** > **Trace**.
+To view the individual executions of each command, select **More** (**…**) > **Distributed traces** > **Trace**.
 
 The **Fetches** column shows the number of database round trips per SQL execution. Because most database drivers page result sets, roundtrips are normally fetched in sets of **Rows returned** per fetch. Therefore, if a result set has 200 rows and you have a fetch size of 50 rows per fetch, it will take 4 fetches to get all the data. More fetches mean slower response time. However, having too large of a fetch size can also lead to poor memory usage and you typically wouldn't read an entire data set anyway.
 
 Select any execution in the list to access its distributed trace.
 
-![PurePathÂ® trace of an execution](https://dt-cdn.net/images/purepath-database-statements-1597-d6db847c88.png)
+![PurePath® trace of an execution](https://dt-cdn.net/images/purepath-database-statements-1597-d6db847c88.png)
 
-PurePathÂ® trace of an execution
+PurePath® trace of an execution
 
 ## Example: Understand SQL for Service flow
 
@@ -126,7 +125,7 @@ You can perform several types of analysis:
 
 Example of SQL service multidimensional analysis
 
-3. Select **More** (**â¦**) and then:
+3. Select **More** (**…**) and then:
 
 * Select **Outliers** to see the distribution of response times.
 * Select **Distributed traces** to understand the evolution of each individual SQL statement over time, along with the average **Rows returned** count.

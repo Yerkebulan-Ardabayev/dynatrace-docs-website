@@ -1,12 +1,11 @@
 ---
-title: Configure Session Replay for web applications
+title: Configure Session Replay Classic for web applications
 source: https://docs.dynatrace.com/managed/observe/digital-experience/session-replay/configure-session-replay-web
-scraped: 2026-05-12T11:08:33.971953
 ---
 
-# Configure Session Replay for web applications
+# Configure Session Replay Classic for web applications
 
-# Configure Session Replay for web applications
+# Configure Session Replay Classic for web applications
 
 * How-to guide
 * 22-min read
@@ -35,19 +34,19 @@ To limit the number of sessions recorded with Session Replay
 
 1. Go to **Web**.
 2. Select the application that you want to configure.
-3. In the upper-right corner of the application overview page, select **More** (**â¦**) > **Edit**.
+3. In the upper-right corner of the application overview page, select **More** (**…**) > **Edit**.
 4. From the application settings, select **General settings** > **Enablement and cost control**.
 5. Under **Session Replay**, enter the new value for **Cost and traffic control**.
 
 ### Calculate number of sessions recorded with SR
 
-To determine the actual percentage of user sessions recorded with Session Replay, you should consider the [cost and traffic control for RUM](/managed/observe/digital-experience/web-applications/additional-configuration/configure-cost-and-traffic-control-web "Leverage the cost and traffic control setting in Dynatrace to reduce session usage for web applications.") setting defined for your application, which is the overall percentage of user sessions to be analyzed with RUM.
+To determine the actual percentage of user sessions recorded with Session Replay, you should consider the [cost and traffic control for RUM](/managed/observe/digital-experience/rum-classic/web-applications/additional-configuration/configure-cost-and-traffic-control-web "Leverage the cost and traffic control setting in Dynatrace to reduce session usage for web applications.") setting defined for your application, which is the overall percentage of user sessions to be analyzed with RUM.
 
 #### Formula
 
 Use the following formula to calculate the actual percentage of sessions recorded with Session Replay:
 
-**Actual percentage of sessions recorded with SR = cost and traffic control for RUM Ã cost and traffic control for Session Replay**
+**Actual percentage of sessions recorded with SR = cost and traffic control for RUM × cost and traffic control for Session Replay**
 
 #### Calculation example
 
@@ -55,10 +54,10 @@ Use the following formula to calculate the actual percentage of sessions recorde
 | --- | --- |
 | Cost and traffic control for RUM | 50% |
 | Cost and traffic control for Session Replay | 20% |
-| Actual percentage of sessions recorded with Session Replay | 50% Ã 20% = 10% |
+| Actual percentage of sessions recorded with Session Replay | 50% × 20% = 10% |
 | Total number of sessions | 2500 |
-| Number of sessions analyzed with RUM | 2500 Ã 50% = 1250 |
-| Number of sessions recorded with Session Replay | 2500 Ã 10% = 250 |
+| Number of sessions analyzed with RUM | 2500 × 50% = 1250 |
+| Number of sessions recorded with Session Replay | 2500 × 10% = 250 |
 
 ![Enablement and cost control](https://dt-cdn.net/images/enablement-and-cost-control-997-caeb5b3d6d.png)
 
@@ -82,26 +81,26 @@ Session Replay opt-in mode gives you the freedom to decide which parts of a user
 
 This mechanism enables you to implement end-user permission for session recording.
 
-When you enable Session Replay opt-in mode for your web application, recording of the active user session begins only after you invoke the [`enableSessionReplay(ignoreCostControl: boolean)`ï»¿](https://docs.dynatrace.com/javascriptapi/doc/types/dtrum.html#enablesessionreplay) method on the `dtrum` global object. The `dtrum` global object is available if the [RUM JavaScript](/managed/observe/digital-experience/web-applications/initial-setup/snippet-formats "Select a format for the RUM JavaScript snippet that best fits your specific use case") has either been [injected automatically](/managed/observe/digital-experience/web-applications/initial-setup/rum-injection "Configure automatic injection of the RUM JavaScript into the pages of your applications") or [inserted manually](/managed/observe/digital-experience/web-applications/initial-setup/set-up-agentless-real-user-monitoring "Set up agentless monitoring for your web applications.").
+When you enable Session Replay opt-in mode for your web application, recording of the active user session begins only after you invoke the [`enableSessionReplay(ignoreCostControl: boolean)`﻿](https://docs.dynatrace.com/javascriptapi/doc/types/dtrum.html#enablesessionreplay) method on the `dtrum` global object. The `dtrum` global object is available if the [RUM JavaScript](/managed/observe/digital-experience/rum-classic/web-applications/initial-setup/snippet-formats "Select a format for the RUM JavaScript snippet that best fits your specific use case") has either been [injected automatically](/managed/observe/digital-experience/rum-classic/web-applications/initial-setup/rum-injection "Configure automatic injection of the RUM JavaScript into the pages of your applications") or [inserted manually](/managed/observe/digital-experience/rum-classic/web-applications/initial-setup/set-up-agentless-real-user-monitoring "Set up agentless monitoring for your web applications.").
 
-This command starts session recording. Session Replay remains active, and recording begins automatically on all subsequent pages visited during the same session or until [`dtrum.disableSessionReplay()`ï»¿](https://docs.dynatrace.com/javascriptapi/doc/types/dtrum.html#disablesessionreplay) is called.
+This command starts session recording. Session Replay remains active, and recording begins automatically on all subsequent pages visited during the same session or until [`dtrum.disableSessionReplay()`﻿](https://docs.dynatrace.com/javascriptapi/doc/types/dtrum.html#disablesessionreplay) is called.
 
-The [`dtrum.enableSessionReplay(ignoreCostControl: boolean)`ï»¿](https://docs.dynatrace.com/javascriptapi/doc/types/dtrum.html#enablesessionreplay) method includes the `ignoreCostControl` parameter, which you can use to record certain user sessions by disregarding the value in the [Cost and traffic control](#cost-traffic-control) section of your application settings.
+The [`dtrum.enableSessionReplay(ignoreCostControl: boolean)`﻿](https://docs.dynatrace.com/javascriptapi/doc/types/dtrum.html#enablesessionreplay) method includes the `ignoreCostControl` parameter, which you can use to record certain user sessions by disregarding the value in the [Cost and traffic control](#cost-traffic-control) section of your application settings.
 
-If [Real User Monitoring opt-in mode](/managed/observe/digital-experience/web-applications/additional-configuration/configure-real-user-monitoring-according-to-gdpr#user-opt-in-mode-gdpr "Learn about the privacy settings that Dynatrace provides to ensure that your web applications comply with the data-privacy regulations of your region.") is enabled, Real User Monitoring must be enabled before you can enable Session Replay, for example:
+If [Real User Monitoring opt-in mode](/managed/observe/digital-experience/rum-classic/web-applications/additional-configuration/configure-real-user-monitoring-according-to-gdpr#user-opt-in-mode-gdpr "Learn about the privacy settings that Dynatrace provides to ensure that your web applications comply with the data-privacy regulations of your region.") is enabled, Real User Monitoring must be enabled before you can enable Session Replay, for example:
 
 `dtrum.enable();`
 `dtrum.enableSessionReplay(true);`
 
 ### Example
 
-Consider the following scenario. As an application owner, you want to record all user sessions that include **Page 2** through **Page 5** of your application. Session activities involving **Page 1** or **Page 6** of your application are to be excluded from recording. The following diagram illustrates where the [`dtrum.enableSessionReplay(ignoreCostControl: boolean)`ï»¿](https://docs.dynatrace.com/javascriptapi/doc/types/dtrum.html#enablesessionreplay) and [`dtrum.disableSessionReplay()`ï»¿](https://docs.dynatrace.com/javascriptapi/doc/types/dtrum.html#disablesessionreplay) methods are required in the sequence.
+Consider the following scenario. As an application owner, you want to record all user sessions that include **Page 2** through **Page 5** of your application. Session activities involving **Page 1** or **Page 6** of your application are to be excluded from recording. The following diagram illustrates where the [`dtrum.enableSessionReplay(ignoreCostControl: boolean)`﻿](https://docs.dynatrace.com/javascriptapi/doc/types/dtrum.html#enablesessionreplay) and [`dtrum.disableSessionReplay()`﻿](https://docs.dynatrace.com/javascriptapi/doc/types/dtrum.html#disablesessionreplay) methods are required in the sequence.
 
 ![Session recording illustration](https://dt-cdn.net/images/session-recording-illustration-568-a36c3c47ad.png)
 
 Session recording illustration
 
-In such cases, you can display a consent banner to enable session recording when the user lands on **Page 2** (see the callout at the bottom of the following image). When the user selects **Accept** to allow session recording, the application responds by invoking the [`dtrum.enableSessionReplay(ignoreCostControl: boolean)`ï»¿](https://docs.dynatrace.com/javascriptapi/doc/types/dtrum.html#enablesessionreplay) method and recording the session.
+In such cases, you can display a consent banner to enable session recording when the user lands on **Page 2** (see the callout at the bottom of the following image). When the user selects **Accept** to allow session recording, the application responds by invoking the [`dtrum.enableSessionReplay(ignoreCostControl: boolean)`﻿](https://docs.dynatrace.com/javascriptapi/doc/types/dtrum.html#enablesessionreplay) method and recording the session.
 
 ![Session Replay opt-in banner example](https://dt-cdn.net/images/banner-example-2569-b86bd49e59.png)
 
@@ -110,18 +109,18 @@ Session Replay opt-in banner example
 You can use a cookie in your application to record user content history within the browser. The content of this cookie is checked during each session to determine if the consent banner must be displayed. For example, if the cookie that stores the consent is named `sessionReplayConsent`, the application flow would be something like this:
 
 1. The application checks the value of the `sessionReplayConsent` cookie.
-2. If the value is `true`, the [`dtrum.enableSessionReplay(ignoreCostControl: boolean)`ï»¿](https://docs.dynatrace.com/javascriptapi/doc/types/dtrum.html#enablesessionreplay) call is invoked.
+2. If the value is `true`, the [`dtrum.enableSessionReplay(ignoreCostControl: boolean)`﻿](https://docs.dynatrace.com/javascriptapi/doc/types/dtrum.html#enablesessionreplay) call is invoked.
 3. If the value is `false`, the consent banner is displayed.
-4. If the user provides their consent, the [`dtrum.enableSessionReplay(ignoreCostControl: boolean)`ï»¿](https://docs.dynatrace.com/javascriptapi/doc/types/dtrum.html#enablesessionreplay) call is invoked.
+4. If the user provides their consent, the [`dtrum.enableSessionReplay(ignoreCostControl: boolean)`﻿](https://docs.dynatrace.com/javascriptapi/doc/types/dtrum.html#enablesessionreplay) call is invoked.
 5. User consent is written to the `sessionReplayConsent` cookie.
 
 With this cookie, Session Replay continues to remain active until **Page 5** of the application.
 
-Once the user leaves **Page 5**, you can use the [`dtrum.disableSessionReplay()`ï»¿](https://docs.dynatrace.com/javascriptapi/doc/types/dtrum.html#disablesessionreplay) method to stop recording the session. Then, you must remove the cookie that has been used to store the consent.
+Once the user leaves **Page 5**, you can use the [`dtrum.disableSessionReplay()`﻿](https://docs.dynatrace.com/javascriptapi/doc/types/dtrum.html#disablesessionreplay) method to stop recording the session. Then, you must remove the cookie that has been used to store the consent.
 
-You can use the JavaScript methods used for enabling and disabling Session Replay without displaying a banner to obtain consent. For example, if you wish to record a session each time any user logs in, you can use the [`dtrum.enableSessionReplay(ignoreCostControl: boolean)`ï»¿](https://docs.dynatrace.com/javascriptapi/doc/types/dtrum.html#enablesessionreplay) method to start recording and the [`dtrum.disableSessionReplay()`ï»¿](https://docs.dynatrace.com/javascriptapi/doc/types/dtrum.html#disablesessionreplay) method to stop recording following successful logout. This gives you complete control over the start and stop of Session Replay.
+You can use the JavaScript methods used for enabling and disabling Session Replay without displaying a banner to obtain consent. For example, if you wish to record a session each time any user logs in, you can use the [`dtrum.enableSessionReplay(ignoreCostControl: boolean)`﻿](https://docs.dynatrace.com/javascriptapi/doc/types/dtrum.html#enablesessionreplay) method to start recording and the [`dtrum.disableSessionReplay()`﻿](https://docs.dynatrace.com/javascriptapi/doc/types/dtrum.html#disablesessionreplay) method to stop recording following successful logout. This gives you complete control over the start and stop of Session Replay.
 
-### Enable Session Replay opt-in mode
+### Enable Session Replay Classic opt-in mode
 
 Session Replay opt-in mode is disabled by default.
 
@@ -129,13 +128,13 @@ To enable Session Replay opt-in mode
 
 1. Go to **Web**.
 2. Select the application that you want to configure.
-3. In the upper-right corner of the application overview page, select **More** (**â¦**) > **Edit**.
+3. In the upper-right corner of the application overview page, select **More** (**…**) > **Edit**.
 4. From the application settings, select **General settings** > **Data privacy** > **Session Replay**.
 5. Turn on **Enable opt-in mode for Session Replay**.
 
-With these configuration settings, Session Replay is inactive in your end users' browsers, and sessions are not recorded until the [`dtrum.enableSessionReplay(ignoreCostControl: boolean)`ï»¿](https://docs.dynatrace.com/javascriptapi/doc/types/dtrum.html#enablesessionreplay) method is called from the application.
+With these configuration settings, Session Replay is inactive in your end users' browsers, and sessions are not recorded until the [`dtrum.enableSessionReplay(ignoreCostControl: boolean)`﻿](https://docs.dynatrace.com/javascriptapi/doc/types/dtrum.html#enablesessionreplay) method is called from the application.
 
-If you choose not to **Enable opt-in mode for Session Replay**, all user sessions are recorded from the beginning until [`dtrum.disableSessionReplay()`ï»¿](https://docs.dynatrace.com/javascriptapi/doc/types/dtrum.html#disablesessionreplay) is called from the application.
+If you choose not to **Enable opt-in mode for Session Replay**, all user sessions are recorded from the beginning until [`dtrum.disableSessionReplay()`﻿](https://docs.dynatrace.com/javascriptapi/doc/types/dtrum.html#disablesessionreplay) is called from the application.
 
 ## URL exclusion
 
@@ -153,7 +152,7 @@ To exclude pages from recording
 
 1. Go to **Web**.
 2. Select the application that you want to configure.
-3. In the upper-right corner of the application overview page, select **More** (**â¦**) > **Edit**.
+3. In the upper-right corner of the application overview page, select **More** (**…**) > **Edit**.
 4. From the application settings, select **General settings** > **Data privacy** > **Session Replay**.
 5. Under **URL exclusion**, select **Add exclusion rule**.
 
@@ -182,7 +181,7 @@ Session Replay masks this data and displays asterisks in place of the nonnumeric
 
 Email field with masked content
 
-The masked dataâdisplayed in the replayed session as asterisks (`*****`) for nonnumeric input or as zeros (`0000`) for numeric inputâeither never leaves the client browser (masked at recording) or is captured but masked during playback. Note that playing back captured sessions is [permission controlled](#sr-permissions).
+The masked data—displayed in the replayed session as asterisks (`*****`) for nonnumeric input or as zeros (`0000`) for numeric input—either never leaves the client browser (masked at recording) or is captured but masked during playback. Note that playing back captured sessions is [permission controlled](#sr-permissions).
 
 Session Replay provides two options for configuring content masking.
 
@@ -209,7 +208,7 @@ To configure Session Replay masking
 
 1. Go to **Web**.
 2. Select the application that you want to configure.
-3. In the upper-right corner of the application overview page, select **More** (**â¦**) > **Edit**.
+3. In the upper-right corner of the application overview page, select **More** (**…**) > **Edit**.
 4. From the application settings, select **General settings** > **Data privacy** > **Session Replay**.
 5. Under **Content masking preferences**, select a [predefined masking option](#masking-preset-options) for recording and playback.
 6. If you selected **Allow list** or **Block list**, add the desired masking rules.
@@ -233,9 +232,9 @@ The following predefined masking options can be used to restrict capturing and p
 
 | Masking option | What is masked | When to use |
 | --- | --- | --- |
-| **Mask all** | All texts, user input, attributes values, and images | Use to test Session Replay and ensure that confidential data is not collected. You'll still be able to see how users interact with your application. Use for troubleshooting your applications when the order in which the users interact with different web UI controls is of importance. |
+| **Mask all** | All texts, user input, attributes values, and images | Use to test Session Replay and ensure that confidential data is not collected. You'll still be able to see how users interact with your application.Use for troubleshooting your applications when the order in which the users interact with different web UI controls is of importance. |
 | **Mask user input** | All user input, including options in list boxes | Select this option when confidential information comes only from user input. |
-| **Allow list** | All elements in the **Mask all** option except for the elements that you've specified | We recommend this option for most applications; it allows you to collect only the required information. This option ensures that, even with subsequent code changes, new elements that display confidential information are not recorded by the Session Replay recorder. The elements are defined by the CSS selector. |
+| **Allow list** | All elements in the **Mask all** option except for the elements that you've specified | We recommend this option for most applications; it allows you to collect only the required information.This option ensures that, even with subsequent code changes, new elements that display confidential information are not recorded by the Session Replay recorder.The elements are defined by the CSS selector. |
 | **Block list** | Only elements specified in this block list | When you select this option, a list with all the rules applied to the **Mask all** option is presented to you. Use this list to clear elements and attributes that you want to capture. You can also create your own additional block list rules. |
 
 **Mask user input** is the default masking option starting with Dynatrace version 1.262. Previously, the default option was **Mask all**.
@@ -254,7 +253,7 @@ To enable and configure resource capture
 
 1. Go to **Web**.
 2. Select the application that you want to configure.
-3. In the upper-right corner of the application overview page, select **More** (**â¦**) > **Edit**.
+3. In the upper-right corner of the application overview page, select **More** (**…**) > **Edit**.
 4. From the application settings, select **Capturing** > **Resource capture for Session Replay**.
 5. Turn on **Enable resource capture**.
 6. Optional To avoid capturing resources for certain pages, select **Add exclusion rule**, enter a regular expression, and then select **Add rule**.
@@ -268,9 +267,9 @@ To enable and configure resource capture
 ### Notes and limitations for resource capture
 
 * If a resource hasn't been captured or is unavailable in the Dynatrace resource storage, this resource is retrieved from the original source.
-* Images and fonts aren't captured. During session playback, they're retrieved from the original location, so certain [restrictions](/managed/observe/digital-experience/session-replay/session-replay-restrictions-web#resources "Learn which restrictions apply to Session Replay.") apply. To enhance Session Replay playback, use the **Session Replay browser extension**. To get started, see [What does the Session Replay browser extension do and how do I install it?](#extension).
+* Images and fonts aren't captured. During session playback, they're retrieved from the original location, so certain [restrictions](/managed/observe/digital-experience/session-replay/session-replay-restrictions-web#resources "Learn which restrictions apply to Session Replay Classic.") apply. To enhance Session Replay playback, use the **Session Replay browser extension**. To get started, see [What does the Session Replay browser extension do and how do I install it?](#extension).
 * Dynatrace doesn't capture a resource that is bigger than 3 MB.
-* The default [retention time](/managed/manage/data-privacy-and-security/data-privacy/data-retention-periods "Check retention times for various data types.") for captured resources is 35 days.
+* The default [retention time](/managed/manage/data-privacy-and-security/data-privacy/data-retention-periods "Review default and configurable retention periods for service, RUM Classic, synthetic, Log Monitoring, metric, diagnostic, and security data in Dynatrace Managed.") for captured resources is 35 days.
 * Dynatrace captures resources for up to 0.1% of user sessions recorded with Session Replay. This is usually enough to properly replay user sessions, as a resource captured for one session is reused for all other sessions. However, capturing all resources for a low-traffic application might take some time.
 
   Calculate sessions with captured resources
@@ -278,15 +277,15 @@ To enable and configure resource capture
   See the formula and example below to calculate the number of user sessions for which Dynatrace captures resources.
 
   **Sessions with captured resources =
-  Total sessions Ã RUM cost and traffic control Ã SR cost and traffic control Ã 0.1%**
+  Total sessions × RUM cost and traffic control × SR cost and traffic control × 0.1%**
 
   | Parameter | Explanation | Example value |
   | --- | --- | --- |
   | Total sessions | Total number of user sessions in your application | 1,000,000 |
-  | [RUM cost and traffic control](/managed/observe/digital-experience/web-applications/additional-configuration/configure-cost-and-traffic-control-web "Leverage the cost and traffic control setting in Dynatrace to reduce session usage for web applications.") | Percentage of user sessions captured and analyzed with RUM | 50% |
+  | [RUM cost and traffic control](/managed/observe/digital-experience/rum-classic/web-applications/additional-configuration/configure-cost-and-traffic-control-web "Leverage the cost and traffic control setting in Dynatrace to reduce session usage for web applications.") | Percentage of user sessions captured and analyzed with RUM | 50% |
   | [Session Replay cost and traffic control](#cost-traffic-control) | Percentage of user sessions recorded with Session Replay | 10% |
 
-  In our example, resources are captured for 50 user sessions (1,000,000 Ã 50% Ã 10% Ã 0.1% = 50).
+  In our example, resources are captured for 50 user sessions (1,000,000 × 50% × 10% × 0.1% = 50).
 
 ## User permissions and management zones
 
@@ -326,19 +325,19 @@ The ability to view and play back user sessions is further protected by manageme
 
 Session Replay - Management zones
 
-## Modify Content Security Policy for Session Replay
+## Modify Content Security Policy for Session Replay Classic
 
-Session Replay uses web workers to process data during recording, offloading logic from the UI thread to improve performance. The RUM JavaScript achieves this by loading the code as a blob. For this to work, you must add `blob:` to the `worker-src` directive of your CSP rules, in addition to the adaptations described in [Modify Content Security Policy for RUM](/managed/observe/digital-experience/web-applications/additional-configuration/modify-csp-for-rum "Learn how to enable and modify CSP for your RUM-monitored applications."). You can define CSP rules via the `Content-Security-Policy` HTTP response header or using a `<meta>` tag placed in the `<head>` section of the HTML document.
+Session Replay uses web workers to process data during recording, offloading logic from the UI thread to improve performance. The RUM JavaScript achieves this by loading the code as a blob. For this to work, you must add `blob:` to the `worker-src` directive of your CSP rules, in addition to the adaptations described in [Modify Content Security Policy for RUM Classic](/managed/observe/digital-experience/rum-classic/web-applications/additional-configuration/modify-csp-for-rum "Learn how to enable and modify CSP for your RUM-monitored applications."). You can define CSP rules via the `Content-Security-Policy` HTTP response header or using a `<meta>` tag placed in the `<head>` section of the HTML document.
 
-If `blob:` is not allowed in `worker-src`âor, as a fallback, in `script-src`âa CSP violation will occur when the page loads, and all code will run in the UI thread instead.
+If `blob:` is not allowed in `worker-src`—or, as a fallback, in `script-src`—a CSP violation will occur when the page loads, and all code will run in the UI thread instead.
 
-If you canât run web workers on your website or want to disable their use by Session Replay, you can do so by adding a custom configuration property.
+If you can’t run web workers on your website or want to disable their use by Session Replay, you can do so by adding a custom configuration property.
 
 To disable the use of web workers by Session Replay
 
 1. Go to **Web**.
 2. Select the application that you want to configure.
-3. In the upper-right corner of the application overview page, select **More** (**â¦**) > **Edit**.
+3. In the upper-right corner of the application overview page, select **More** (**…**) > **Edit**.
 4. From the application settings, select **Capturing** > **Custom configuration properties**.
 5. Select **Add a custom configuration property**.
 6. Enter the property `srbw=0` and save the changes.
@@ -373,7 +372,7 @@ Session Replay was designed to have a low impact on the UI thread, which impacts
 
 Are masking rules applied on the Dynatrace Server?
 
-[Recording masking rules](/managed/observe/digital-experience/session-replay/configure-session-replay-web#masking-preset-options "Configure monitoring consumption and data privacy settings for Session Replay.") are transmitted to the client. This ensures that confidential data does not leave the client browser by default. [Masking settings](/managed/observe/digital-experience/session-replay/configure-session-replay-web#sr-masking "Configure monitoring consumption and data privacy settings for Session Replay.") for recording as well as playback are configurable.
+[Recording masking rules](/managed/observe/digital-experience/session-replay/configure-session-replay-web#masking-preset-options "Configure monitoring consumption and data privacy settings for Session Replay Classic.") are transmitted to the client. This ensures that confidential data does not leave the client browser by default. [Masking settings](/managed/observe/digital-experience/session-replay/configure-session-replay-web#sr-masking "Configure monitoring consumption and data privacy settings for Session Replay Classic.") for recording as well as playback are configurable.
 
 What does the Session Replay browser extension do and how do I install it?
 
@@ -383,7 +382,7 @@ You can use the extension to enhance Session Replay playback, for example in the
 * Font and stylesheet resources are loaded from HTTPS origins.
 * Resources are loaded from HTTP origins.
 
-The extension can be installed from the Chrome Web Store: [`Session Replay browser extension`ï»¿](https://chromewebstore.google.com/detail/session-replay-browser-ex/hjbdnbhpfiionafiooklnafmaojjfljh)
+The extension can be installed from the Chrome Web Store: [`Session Replay browser extension`﻿](https://chromewebstore.google.com/detail/session-replay-browser-ex/hjbdnbhpfiionafiooklnafmaojjfljh)
 
 What are the recommendations for ensuring user privacy?
 
@@ -407,7 +406,7 @@ What is the best way to use the Mask all masking option?
 
 Why is Session Replay data partially missing when I replay a session?
 
-On the user session details page, the **Session Replay** timeline shows both [Real User Monitoring (RUM)](/managed/observe/digital-experience/rum-concepts/rum-overview "Learn about Real User Monitoring, key performance metrics, mobile app monitoring, and more.") and Session Replay events.
+On the user session details page, the **Session Replay** timeline shows both [Real User Monitoring (RUM)](/managed/observe/digital-experience/rum-classic/rum-concepts/rum-overview "Learn about Real User Monitoring Classic, key performance metrics, mobile app monitoring, and more.") and Session Replay events.
 
 When you replay a user session, you might notice that even though the timeline shows all the user actions and events, the Session Replay player skips some of the events and jumps to the end of the session. If you're not seeing the Session Replay data corresponding to all the events on the timeline, this is usually because there is no Session Replay data available for this part of the session.
 
@@ -420,5 +419,5 @@ The following are the most common reasons for partially missing Session Replay d
 ## Related topics
 
 * [Session Replay](/managed/observe/digital-experience/session-replay "Learn how you can use Session Replay to better understand and troubleshoot errors experienced by your customers.")
-* [Enable Session Replay for web applications](/managed/observe/digital-experience/session-replay/enable-session-replay-web "Learn the prerequisites and the procedure for enabling Session Replay.")
-* [Technical restrictions for Session Replay for web applications](/managed/observe/digital-experience/session-replay/session-replay-restrictions-web "Learn which restrictions apply to Session Replay.")
+* [Enable Session Replay Classic for web applications](/managed/observe/digital-experience/session-replay/enable-session-replay-web "Learn the prerequisites and the procedure for enabling Session Replay Classic.")
+* [Technical restrictions for Session Replay Classic for web applications](/managed/observe/digital-experience/session-replay/session-replay-restrictions-web "Learn which restrictions apply to Session Replay Classic.")

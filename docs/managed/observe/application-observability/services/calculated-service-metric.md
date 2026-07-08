@@ -1,7 +1,6 @@
 ---
 title: Calculated metrics for services
 source: https://docs.dynatrace.com/managed/observe/application-observability/services/calculated-service-metric
-scraped: 2026-05-12T11:06:47.007963
 ---
 
 # Calculated metrics for services
@@ -16,13 +15,13 @@ Dynatrace automatically captures important metrics for services with no configur
 
 ## Why start using OpenPipeline instead of classic calculated service metrics?
 
-* More flexible metric creation from spansâwith OpenPipeline, metrics are no longer limited to support at most 100 dimension values (âtop Xâ).
+* More flexible metric creation from spans—with OpenPipeline, metrics are no longer limited to support at most 100 dimension values (“top X”).
 
   + You can store full dimension cardinality
   + You can combine dimensions freely
   + Powerful ingestion, processing, and transformation capabilities are available via a unified solution (that works the same for other configuration scopes, such as logs and events).
-* Better scale and performanceâplatform-scale ingest and stream processing built to go beyond petabytes; no more 500 calculated service metrics limit per tenant.
-* Security, cost management, and data governanceâfilter and mask sensitive or unnecessary fields; assign cost center usage to specific metrics; route data to specific Grail buckets with controlled retention durations.
+* Better scale and performance—platform-scale ingest and stream processing built to go beyond petabytes; no more 500 calculated service metrics limit per tenant.
+* Security, cost management, and data governance—filter and mask sensitive or unnecessary fields; assign cost center usage to specific metrics; route data to specific Grail buckets with controlled retention durations.
 
 Limits
 
@@ -51,7 +50,7 @@ Limits
    3. Select the operator of the condition.
    4. If needed, specify the reference value.
 
-      Preview shows the list of services to be included to the custom metric and the estimation of [DDU consumption](/managed/license/monitoring-consumption-classic/davis-data-units/metric-cost-calculation "Understand how to calculate Davis data unit consumption and costs related to monitored metrics.").
+      Preview shows the list of services to be included to the custom metric and the estimation of [DDU consumption](/managed/license/classic-licensing/davis-data-units/metric-cost-calculation "Understand how to calculate Davis data unit consumption and costs related to monitored metrics.").
 
       Preview only considers management zone and conditions based on service attributes. These attributes are marked with `[Service property]` in the attribute list.
 6. Optional Add dimension to your new metric.

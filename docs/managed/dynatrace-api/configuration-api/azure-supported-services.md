@@ -1,7 +1,6 @@
 ---
 title: Azure supported services API
 source: https://docs.dynatrace.com/managed/dynatrace-api/configuration-api/azure-supported-services
-scraped: 2026-05-12T11:04:43.676546
 ---
 
 # Azure supported services API
@@ -46,7 +45,7 @@ A supported services metadata list
 
 | Element | Type | Description |
 | --- | --- | --- |
-| services | [CloudSupportedService[]](#openapi-definition-CloudSupportedService) | List of supported services metadata |
+| services | [CloudSupportedService](#openapi-definition-CloudSupportedService)[] | List of supported services metadata |
 
 #### The `CloudSupportedService` object
 

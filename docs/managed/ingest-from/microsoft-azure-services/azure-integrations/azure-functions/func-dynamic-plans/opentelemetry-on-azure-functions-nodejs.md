@@ -1,7 +1,6 @@
 ---
 title: Trace Azure Functions written in Node.js
 source: https://docs.dynatrace.com/managed/ingest-from/microsoft-azure-services/azure-integrations/azure-functions/func-dynamic-plans/opentelemetry-on-azure-functions-nodejs
-scraped: 2026-05-12T12:07:43.833171
 ---
 
 # Trace Azure Functions written in Node.js
@@ -12,7 +11,7 @@ scraped: 2026-05-12T12:07:43.833171
 * 6-min read
 * Updated on Nov 04, 2025
 
-The [`@dynatrace/opentelemetry-azure-functions` moduleï»¿](https://dt-url.net/9603x96) provides APIs for tracing Node.js on Azure Functions.
+The [`@dynatrace/opentelemetry-azure-functions` module﻿](https://dt-url.net/9603x96) provides APIs for tracing Node.js on Azure Functions.
 
 ## Prerequisites
 
@@ -30,23 +29,23 @@ npm install --save @dynatrace/opentelemetry-azure-functions
 
 ## Trace export
 
-Azure Functions can be developed by using either of two different [programming modelsï»¿](https://dt-url.net/9p03lmb), v3 and v4. To accommodate differences between the two models, Dynatrace provides two different ways of trace export:
+Azure Functions can be developed by using either of two different [programming models﻿](https://dt-url.net/9p03lmb), v3 and v4. To accommodate differences between the two models, Dynatrace provides two different ways of trace export:
 
 * For programming model v3, the Azure Functions handler is wrapped (with the `wrapHandler` API) to generate and export traces.
-* For programming model v4, [Azure Functions Hooksï»¿](https://dt-url.net/v323l3e) are used to achieve the same. Note that hooks are available only for the programming model v4.
+* For programming model v4, [Azure Functions Hooks﻿](https://dt-url.net/v323l3e) are used to achieve the same. Note that hooks are available only for the programming model v4.
 
 For details, see below.
 
 ### Programming model v3
 
-To export traces to Dynatrace from Azure Functions developed with [programming model v3ï»¿](https://dt-url.net/n443lxw)
+To export traces to Dynatrace from Azure Functions developed with [programming model v3﻿](https://dt-url.net/n443lxw)
 
 1. Select one of the two ways below to initialize tracing.
 
-   * `NodeTracerProvider`âmore lightweight than `NodeSDK`
-   * `NodeSDK`âtypically used if you're interested in additional OpenTelemetry signals such as metrics
+   * `NodeTracerProvider`—more lightweight than `NodeSDK`
+   * `NodeSDK`—typically used if you're interested in additional OpenTelemetry signals such as metrics
 
-   It is possible to bundle several Azure Functions into a single Azure Function app. It's therefore important to initialize tracing only once per Azure Function app instead of once per function. The simplest way to do this is to put a tracing setup code into a shared file as described in the [Azure Functions JavaScript developer guideï»¿](https://dt-url.net/t223xf2) and require it at the top of all functions.
+   It is possible to bundle several Azure Functions into a single Azure Function app. It's therefore important to initialize tracing only once per Azure Function app instead of once per function. The simplest way to do this is to put a tracing setup code into a shared file as described in the [Azure Functions JavaScript developer guide﻿](https://dt-url.net/t223xf2) and require it at the top of all functions.
 
    The tracing setup code should be implemented to set up tracing only once before any other third-party module is required.
 
@@ -261,7 +260,7 @@ To export traces to Dynatrace from Azure Functions developed with [programming m
 
 ### Programming model v4
 
-There are two ways to export traces to Dynatrace from Azure Functions developed with [programming model v4ï»¿](https://dt-url.net/7t03lem).
+There are two ways to export traces to Dynatrace from Azure Functions developed with [programming model v4﻿](https://dt-url.net/7t03lem).
 
 * Use the `initDynatrace` API.
 * Initialize tracing by registering Azure Function hooks manually.
@@ -442,7 +441,7 @@ Because Azure Function hooks are executed in the same order they are registered,
 
 Hook execution times are included in the total function execution time. If the order of the registered hooks is incorrect, the function execution time reported by our instrumentation won't be accurate either.
 
-To find out more about Azure Function hooks, see the [Azure Functions Node.js developer guideï»¿](https://dt-url.net/uo23lv1).
+To find out more about Azure Function hooks, see the [Azure Functions Node.js developer guide﻿](https://dt-url.net/uo23lv1).
 
 To order hooks as needed, you can use the `registerTraceStartHook` and `registerTraceEndHook` APIs as shown below.
 
@@ -579,11 +578,11 @@ Example:
 
 Once `@dynatrace/opentelemetry-azure-functions` is changed to use OpenTelemetry SDK V2 by default, this override won't be needed anymore.
 
-Supported [Azure Functions runtimeï»¿](https://learn.microsoft.com/en-us/azure/azure-functions/functions-versions?tabs=v4&pivots=programming-language-javascript):
+Supported [Azure Functions runtime﻿](https://learn.microsoft.com/en-us/azure/azure-functions/functions-versions?tabs=v4&pivots=programming-language-javascript):
 
 * 4.x
 
-Supported [Azure Functions programming modelï»¿](https://learn.microsoft.com/en-us/azure/azure-functions/functions-reference-node?source=recommendations&tabs=javascript%2Cwindows%2Cazure-cli&pivots=nodejs-model-v4#supported-versions):
+Supported [Azure Functions programming model﻿](https://learn.microsoft.com/en-us/azure/azure-functions/functions-reference-node?source=recommendations&tabs=javascript%2Cwindows%2Cazure-cli&pivots=nodejs-model-v4#supported-versions):
 
 * 3.x
 * 4.x @dynatrace/opentelemetry-azure-functions version 1.289+
@@ -592,11 +591,11 @@ Supported [Azure Functions programming modelï»¿](https://learn.microsoft.com/
 
 * Only `async` function handlers are supported.
 
-  + This follows the Azure recommendation to use [`async` and `await`ï»¿](https://dt-url.net/be03x31).
+  + This follows the Azure recommendation to use [`async` and `await`﻿](https://dt-url.net/be03x31).
   + `wrapHandler` returns any non-`async` function unwrapped, so the function itself will work but no span will be created.
-  + Note that async functions were introduced in ECMAScript 2017. No span will be created if an earlier version of ECMAScript is used. In case TypeScript is used, make sure [compilation targetï»¿](https://dt-url.net/df02zbc) is set to ECMAScript 2017 or higher.
-* The package supports only the [Consumption planï»¿](https://dt-url.net/ck022yx). While it may work on other plans, we cannot guarantee compatibility or performance.
-* Signaling function completion using the deprecated [`context.done()`ï»¿](https://dt-url.net/0l23xfy) or [`context.res.send()`ï»¿](https://dt-url.net/dj43xgq) calls is not supported. Either use a `$return` binding and return the result from the function handler, or use a named `out` binding and set `context.binding.<name>`. For HTTP triggers, setting `context.res` is also supported.
+  + Note that async functions were introduced in ECMAScript 2017. No span will be created if an earlier version of ECMAScript is used. In case TypeScript is used, make sure [compilation target﻿](https://dt-url.net/df02zbc) is set to ECMAScript 2017 or higher.
+* The package supports only the [Consumption plan﻿](https://dt-url.net/ck022yx). While it may work on other plans, we cannot guarantee compatibility or performance.
+* Signaling function completion using the deprecated [`context.done()`﻿](https://dt-url.net/0l23xfy) or [`context.res.send()`﻿](https://dt-url.net/dj43xgq) calls is not supported. Either use a `$return` binding and return the result from the function handler, or use a named `out` binding and set `context.binding.<name>`. For HTTP triggers, setting `context.res` is also supported.
 
 ## Related topics
 

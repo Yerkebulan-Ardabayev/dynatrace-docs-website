@@ -1,7 +1,6 @@
 ---
 title: Settings API - GitHub Connections schema table
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/settings/schemas/app-dynatrace-github-connector-connection
-scraped: 2026-05-12T11:46:12.955010
 ---
 
 # Settings API - GitHub Connections schema table

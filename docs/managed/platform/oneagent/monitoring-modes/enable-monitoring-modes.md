@@ -1,7 +1,6 @@
 ---
 title: Enable OneAgent monitoring modes
 source: https://docs.dynatrace.com/managed/platform/oneagent/monitoring-modes/enable-monitoring-modes
-scraped: 2026-05-12T11:07:16.766611
 ---
 
 # Enable OneAgent monitoring modes
@@ -10,7 +9,7 @@ scraped: 2026-05-12T11:07:16.766611
 
 * How-to guide
 * 8-min read
-* Published Nov 26, 2025
+* Updated on May 20, 2026
 
 By default, [OneAgent](/managed/ingest-from/dynatrace-oneagent "Understand the important concepts related to OneAgent and find out how to install and operate OneAgent on different platforms.") runs in Full-Stack monitoring mode, giving you complete visibility across hosts, processes, and services. If you prefer a lighter approach, you can switch to one of the two alternative modes that focus on essential infrastructure metrics:
 
@@ -23,7 +22,7 @@ You can define a default monitoring mode before installing OneAgent. This will c
 
 To define a default monitoring mode
 
-1. Go to **Settings** > **Preferences** > **OneAgent default mode**.
+1. Go to ![Settings](https://dt-cdn.net/images/settings-icon-256-38e1321b51.webp "Settings") **Settings** > **General** > **Versions and updates** > **OneAgent default mode**.
 2. Select a **OneAgent default monitoring mode** from the dropdown list.
 3. Select **Save changes**.
 
@@ -46,7 +45,7 @@ To turn on Infrastructure monitoring mode after OneAgent installation, use one o
 * In Dynatrace
 
   1. Go to **Hosts** and open a host overview page.
-  2. Select **More** (**â¦**) > **Settings** in the upper-right corner to display the **Host settings** page.
+  2. Select **More** (**…**) > **Settings** in the upper-right corner to display the **Host settings** page.
   3. Select **Host monitoring**.
   4. Go to **Monitoring Mode** and in the drop-down menu select **Infrastructure**.
   5. Select **Save changes**.
@@ -80,7 +79,7 @@ We don't recommend turning off auto-injection, but if you're required to do so d
 After OneAgent installation with UI
 
 1. Go to **Hosts** and open a host overview page.
-2. Select **More** (**â¦**) > **Settings** in the upper-right corner to display the **Host settings** page.
+2. Select **More** (**…**) > **Settings** in the upper-right corner to display the **Host settings** page.
 3. Select **Host Monitoring**.
 4. Go to **Advanced settings**.
 5. Turn off **ProcessAgent Injection**, then select **Save changes**.
@@ -98,7 +97,7 @@ Define custom process monitoring rules
 
 You can turn off process injection for particular process groups using custom process monitoring rules.
 
-Custom process monitoring rules give you fine-grained control over which processes OneAgent injects into, with an approach that scales easily within large environments. You donât need to adjust your system configuration, and a few rules can cover thousands of processes.
+Custom process monitoring rules give you fine-grained control over which processes OneAgent injects into, with an approach that scales easily within large environments. You don’t need to adjust your system configuration, and a few rules can cover thousands of processes.
 
 For more information, see [Process deep monitoring](/managed/observe/infrastructure-observability/process-groups/configuration/pg-monitoring#rules "Ways to customize process-group monitoring").
 
@@ -132,7 +131,7 @@ You can also turn off selected extensions collecting the metrics at the environm
 
    1. Go to **Hosts** and find an infrastructure-monitored host. You can filter by **Monitoring mode: Infrastructure only**.
    2. Open the host page.
-   3. Select **More** (**â¦**) > **Settings** in the upper-right corner to display the **Host settings** page.
+   3. Select **More** (**…**) > **Settings** in the upper-right corner to display the **Host settings** page.
    4. In the **Monitored technologies** table, search for extensions of type **JMX extension**, **JMX monitoring**, or **PMI extension**.
    5. Select **Edit**. Use the **Activate `<extension name>` on this host** control.
 
@@ -177,7 +176,7 @@ To turn on Discovery mode after OneAgent installation, use one of these options:
 * In Dynatrace
 
   1. Go to **Hosts** and open a host overview page.
-  2. Select **More** (**â¦**) > **Settings** in the upper-right corner to display the **Host settings** page.
+  2. Select **More** (**…**) > **Settings** in the upper-right corner to display the **Host settings** page.
   3. Select **Host monitoring**.
   4. Go to **Monitoring Mode** and in the drop-down menu select **Discovery**.
   5. Select **Save changes**.

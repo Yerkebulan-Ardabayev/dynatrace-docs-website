@@ -1,7 +1,6 @@
 ---
 title: Levels of data protection
 source: https://docs.dynatrace.com/managed/manage/data-privacy-and-security/data-privacy/levels-of-data-protection
-scraped: 2026-05-12T11:09:01.261844
 ---
 
 # Levels of data protection
@@ -9,7 +8,7 @@ scraped: 2026-05-12T11:09:01.261844
 # Levels of data protection
 
 * 2-min read
-* Updated on Dec 13, 2023
+* Updated on Jun 09, 2026
 
 Depending on your environment setup and settings, you might capture data for which you have legal obligations due to protection laws, standards, and regulations, such as GDPR, CCPA, HIPAA, LGPD, PCI-DSS and more. To address such cases, Dynatrace offers multiple layers of protection to help you fine-tune the data flows in Dynatrace.
 
@@ -17,7 +16,7 @@ Depending on your environment setup and settings, you might capture data for whi
 
 Check a flowchart below to see on what levels and entities your end users' data is masked in Dynatrace.
 
-![Dynatrace data flowchart](https://dt-cdn.net/images/data-flow-model-for-masking-6216-3bbc2bd428.png)
+![Dynatrace data flowchart](https://cdn.bfldr.com/B686QPH3/as/v34hh6h9hrx8r57th9f5hgjn/Levels_of_data_protection-Light_Mode?auto=webp&format=png&position=1)
 
 Dynatrace data flowchart
 

@@ -1,7 +1,6 @@
 ---
 title: Settings API - Pipeline Groups configuration (metrics) schema table
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-metrics-pipeline-groups
-scraped: 2026-05-12T11:42:03.687387
 ---
 
 # Settings API - Pipeline Groups configuration (metrics) schema table

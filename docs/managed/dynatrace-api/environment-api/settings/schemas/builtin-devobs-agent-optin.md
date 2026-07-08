@@ -1,7 +1,6 @@
 ---
 title: Settings API - Enable Observability For Developers schema table
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/settings/schemas/builtin-devobs-agent-optin
-scraped: 2026-05-12T11:44:54.768223
 ---
 
 # Settings API - Enable Observability For Developers schema table
@@ -16,11 +15,11 @@ Observability For Developers allows you to instantly access the code-level data 
 
 Note: Enabling Observability For Developers consumes Container Monitoring units.
 
-For further details, see the [Code Monitoring documentationï»¿](https://docs.dynatrace.com/docs/manage/dynatrace-platform-subscription/capabilities/container-monitoring#code-monitoring)
+For further details, see the [Code Monitoring documentation﻿](https://docs.dynatrace.com/docs/manage/dynatrace-platform-subscription/capabilities/container-monitoring#code-monitoring)
 
 | Schema ID | Schema groups | Scope |
 | --- | --- | --- |
-| `builtin:devobs.agent.optin` | * `group:observability-for-developers` | `PROCESS_GROUP` - Process Group  `CLOUD_APPLICATION_NAMESPACE` - Kubernetes namespace  `KUBERNETES_CLUSTER` - Kubernetes cluster  `environment` |
+| `builtin:devobs.agent.optin` | * `group:observability-for-developers` | `PROCESS_GROUP` - Process Group  `CLOUD_APPLICATION` - Kubernetes workload  `CLOUD_APPLICATION_NAMESPACE` - Kubernetes namespace  `KUBERNETES_CLUSTER` - Kubernetes cluster  `HOST_GROUP` - Host Group  `environment` |
 
 Retrieve schema via Settings API
 

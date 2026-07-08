@@ -1,7 +1,6 @@
 ---
 title: Monitor Google Compute Engine
 source: https://docs.dynatrace.com/managed/ingest-from/google-cloud-platform/gcp-integrations/google-compute-engine
-scraped: 2026-05-12T11:22:44.104171
 ---
 
 # Monitor Google Compute Engine
@@ -14,7 +13,7 @@ scraped: 2026-05-12T11:22:44.104171
 
 ## Deploy OneAgent
 
-Monitoring Google Compute Engine instances works out-of-the-box by just running the regular [Linux](/managed/ingest-from/dynatrace-oneagent/installation-and-operation/linux/installation/install-oneagent-on-linux "Learn how to download and install Dynatrace OneAgent on Linux.") and [Windows](/managed/ingest-from/dynatrace-oneagent/installation-and-operation/windows/installation/install-oneagent-on-windows "Learn how to download and install Dynatrace OneAgent on Windows.") OneAgent installers. Youâll get full-stack visibility, from hosts to processes and services layer.
+Monitoring Google Compute Engine instances works out-of-the-box by just running the regular [Linux](/managed/ingest-from/dynatrace-oneagent/installation-and-operation/linux/installation/install-oneagent-on-linux "Learn how to download and install Dynatrace OneAgent on Linux.") and [Windows](/managed/ingest-from/dynatrace-oneagent/installation-and-operation/windows/installation/install-oneagent-on-windows "Learn how to download and install Dynatrace OneAgent on Windows.") OneAgent installers. You’ll get full-stack visibility, from hosts to processes and services layer.
 
 ## Update OneAgent
 

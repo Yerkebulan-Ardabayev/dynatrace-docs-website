@@ -1,7 +1,6 @@
 ---
 title: Resource events
 source: https://docs.dynatrace.com/managed/dynatrace-intelligence/root-cause-analysis/event-analysis-and-correlation/event-categories/resource-events
-scraped: 2026-05-12T12:06:51.635617
 ---
 
 # Resource events

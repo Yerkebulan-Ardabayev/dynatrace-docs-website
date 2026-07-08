@@ -1,7 +1,6 @@
 ---
 title: VMware anomaly detection API - GET configuration
 source: https://docs.dynatrace.com/managed/dynatrace-api/configuration-api/anomaly-detection-api/anomaly-detection-api-vmware/get-config
-scraped: 2026-05-12T11:19:07.321418
 ---
 
 # VMware anomaly detection API - GET configuration
@@ -595,4 +594,4 @@ https://mySampleEnv.live.dynatrace.com/api/config/v1/anomalyDetection/vmware
 ## Related topics
 
 * [Adjust the sensitivity of anomaly detection for infrastructure](/managed/dynatrace-intelligence/anomaly-detection/adjust-sensitivity-anomaly-detection/adjust-sensitivity-infastructure "Adjust problem detection sensitivity for infrastructure.")
-* [DavisÂ® AI](/managed/dynatrace-intelligence "Get familiar with the capabilities of Davis AI.")
+* [Davis® AI](/managed/dynatrace-intelligence "Learn how Davis® AI detects performance anomalies, identifies root causes, and uses AI models for adaptive thresholds across your environment.")

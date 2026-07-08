@@ -1,7 +1,6 @@
 ---
 title: Log ingestion warnings (Logs Classic)
 source: https://docs.dynatrace.com/managed/analyze-explore-automate/log-monitoring/lmc-troubleshooting/lmc-ingest-warnings
-scraped: 2026-05-12T11:36:07.932955
 ---
 
 # Log ingestion warnings (Logs Classic)
@@ -14,7 +13,7 @@ scraped: 2026-05-12T11:36:07.932955
 
 Log Monitoring Classic
 
-If your ingested logs donât look as expected, you can check if a particular log record contains warnings regarding issues that occurred for that log in the log ingest and processing pipeline. Look for a `dt.ingest.warnings` attribute in log viewer. It lists warnings about issues that affected a particular log record.
+If your ingested logs don’t look as expected, you can check if a particular log record contains warnings regarding issues that occurred for that log in the log ingest and processing pipeline. Look for a `dt.ingest.warnings` attribute in log viewer. It lists warnings about issues that affected a particular log record.
 
 Examples of possible warnings:
 
@@ -36,4 +35,4 @@ Examples of possible warnings:
 | processing\_transformer\_error | Execution error occurred in one of the processing transformers while executing log processing rules. |
 | processing\_transformer\_throttled | Execution throttled in one of the processing transformers while executing log processing rules. |
 | processing\_output\_record\_conversion\_error | Output conversion error occurred for some records while executing log processing rules. |
-| processing\_prepare\_input\_error | âPrepare input errorâ occurred in one of the enabled log processing rules. |
+| processing\_prepare\_input\_error | “Prepare input error” occurred in one of the enabled log processing rules. |

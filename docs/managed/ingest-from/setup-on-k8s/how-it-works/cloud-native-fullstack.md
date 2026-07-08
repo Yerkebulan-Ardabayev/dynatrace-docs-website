@@ -1,7 +1,6 @@
 ---
 title: Full-stack observability
 source: https://docs.dynatrace.com/managed/ingest-from/setup-on-k8s/how-it-works/cloud-native-fullstack
-scraped: 2026-05-12T11:23:40.767870
 ---
 
 # Full-stack observability
@@ -30,6 +29,7 @@ See the [`.spec.oneAgent.cloudNativeFullStack`](/managed/ingest-from/setup-on-k8
 
   + No code module has been injected into the application Pod.
   + There is an issue with OneAgent creating the support archive.
+* On AKS, the [AKS admissions enforcer](/managed/ingest-from/setup-on-k8s/deployment/supported-technologies#aks-admission-enforcer "Overview of different configurations for all major Kubernetes distributions.") adds namespaceSelector expressions to every webhook that explicitly exclude AKS-managed namespaces (such as kube-system), causing code module injection to be skipped in those namespaces.
 
 ## Deployed resources
 

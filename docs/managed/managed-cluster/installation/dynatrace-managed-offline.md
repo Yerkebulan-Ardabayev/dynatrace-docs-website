@@ -1,7 +1,6 @@
 ---
 title: Install Dynatrace Managed in offline mode
 source: https://docs.dynatrace.com/managed/managed-cluster/installation/dynatrace-managed-offline
-scraped: 2026-05-12T11:53:33.227172
 ---
 
 # Install Dynatrace Managed in offline mode
@@ -12,7 +11,7 @@ scraped: 2026-05-12T11:53:33.227172
 * 8-min read
 * Updated on May 08, 2026
 
-Dynatrace Managed is available in an offline version. In offline mode, Dynatrace Managed uses an offline license that disables all features requiring an internet connectionâsuch as connecting to [Mission Control](/managed/managed-cluster/basics/mission-control-proactive-support "Mission Control proactively monitors your Managed Cluster, provides software updates, and keeps your installation secure and reliable.") for license reporting and health checks, or receiving automatic cluster updates.
+Dynatrace Managed is available in an offline version. In offline mode, Dynatrace Managed uses an offline license that disables all features requiring an internet connection—such as connecting to [Mission Control](/managed/managed-cluster/basics/mission-control-proactive-support "Mission Control proactively monitors your Managed Cluster, provides software updates, and keeps your installation secure and reliable.") for license reporting and health checks, or receiving automatic cluster updates.
 
 In offline mode, you're responsible for keeping Dynatrace Managed up to date and reporting license usage to Dynatrace.
 
@@ -43,7 +42,7 @@ The server verifies the license after startup (not during installation) through 
 
 3
 
-The Dynatrace Cluster doesn't include installation packages for OneAgent or ActiveGateâin online mode these are downloaded automatically from Mission Control. In offline mode, they must be added manually. Download links are provided in the activation email.
+The Dynatrace Cluster doesn't include installation packages for OneAgent or ActiveGate—in online mode these are downloaded automatically from Mission Control. In offline mode, they must be added manually. Download links are provided in the activation email.
 
 ## Install Managed Cluster in offline mode
 
@@ -69,7 +68,7 @@ To install a Managed Cluster in offline mode, follow the steps below.
 
 Ensure that your system meets the [hardware requirements](/managed/managed-cluster/installation/managed-hardware-requirements "Review the hardware sizing, storage, and multi-node cluster requirements before installing Dynatrace Managed on your infrastructure.") and [system requirements](/managed/managed-cluster/installation/operating-system-requirements "Review the operating system, host, and network requirements you need to meet before installing Dynatrace Managed on a Linux host.").
 
-Avoid installing the data stores for Dynatrace Managed components on network or remote disksâthis can cause performance and stability issues.
+Avoid installing the data stores for Dynatrace Managed components on network or remote disks—this can cause performance and stability issues.
 
 ### Step 2 Download files
 
@@ -87,7 +86,7 @@ managed-activation-email
 
 ### Step 3 Verify installer
 
-The Dynatrace Managed installer is digitally signed. Use OpenSSL and the [Dynatrace root certificateï»¿](https://ca.dynatrace.com/dt-root.cert.pem) to verify the installer's authenticity. The signature file has the same name as the installer with a `.sig` extension.
+The Dynatrace Managed installer is digitally signed. Use OpenSSL and the [Dynatrace root certificate﻿](https://ca.dynatrace.com/dt-root.cert.pem) to verify the installer's authenticity. The signature file has the same name as the installer with a `.sig` extension.
 
 1. Download the Dynatrace root certificate and the installer signature file using the links provided in the activation email.
 2. Verify the installer file signature using this command:
@@ -120,7 +119,7 @@ After the installation, activate your license.
 1. Log in to **Cluster Management Console**.
 2. Go to **Licensing** and select **Activate license**.
 
-   * If you have internet access, you're redirected to an external registration form ([https://mcsvc.dynatrace.com/register.htmlï»¿](https://mcsvc.dynatrace.com/register.html)) with all fields pre-filled. Verify the details and submit.
+   * If you have internet access, you're redirected to an external registration form ([https://mcsvc.dynatrace.com/register.html﻿](https://mcsvc.dynatrace.com/register.html)) with all fields pre-filled. Verify the details and submit.
 
      + If you don't have internet access, open `https://mcsvc.dynatrace.com/register.html` in a browser with internet access and complete the form manually.
      + Required: **License key** and **Cluster identifier**
@@ -128,7 +127,7 @@ After the installation, activate your license.
 3. Select **Activate license**. The next page confirms that the license has been activated.
 4. On the confirmation page, select **Download license file** to download the `license-activated.lic` file.
 5. Select **Go to Licensing page**.
-6. On the **Licensing** page, select **More** (**â¦**) > **Apply license** in the upper-right corner.
+6. On the **Licensing** page, select **More** (**…**) > **Apply license** in the upper-right corner.
 7. Select the `license-activated.lic` file you downloaded earlier.
 
    * After applying the license, the license status changes to **Active**.

@@ -1,7 +1,6 @@
 ---
 title: Synthetic metrics API - GET a metric
 source: https://docs.dynatrace.com/managed/dynatrace-api/configuration-api/calculated-metrics/synthetic-metrics/get-metric
-scraped: 2026-05-12T11:19:22.455973
 ---
 
 # Synthetic metrics API - GET a metric
@@ -48,7 +47,7 @@ Definition of the calculated synthetic metric.
 
 | Element | Type | Description |
 | --- | --- | --- |
-| dimensions | [SyntheticMetricDimension[]](#openapi-definition-SyntheticMetricDimension) | A list of metric dimensions. |
+| dimensions | [SyntheticMetricDimension](#openapi-definition-SyntheticMetricDimension)[] | A list of metric dimensions. |
 | enabled | boolean | The metric is enabled (`true`) or disabled (`false`). |
 | filter | [SyntheticMetricFilter](#openapi-definition-SyntheticMetricFilter) | Filter of the calculated synthetic metric. |
 | metric | string | The type of the synthetic metric. The element can hold these values * `ApplicationCache` * `Callback` * `CumulativeLayoutShift` * `DNSLookup` * `DOMComplete` * `DOMContentLoaded` * `DOMInteractive` * `FailedRequestsResources` * `FirstContentfulPaint` * `FirstInputDelay` * `FirstInputStart` * `FirstPaint` * `HTMLDownloaded` * `HttpErrors` * `JavaScriptErrors` * `LargestContentfulPaint` * `LoadEventEnd` * `LoadEventStart` * `LongTasks` * `NavigationStart` * `OnDOMContentLoaded` * `OnLoad` * `Processing` * `RedirectTime` * `Request` * `RequestStart` * `ResourceCount` * `Response` * `SecureConnect` * `SpeedIndex` * `TCPConnect` * `TimeToFirstByte` * `TotalDuration` * `TransferSize` * `UserActionDuration` * `VisuallyComplete` |
@@ -73,9 +72,9 @@ Filter of the calculated synthetic metric.
 | --- | --- | --- |
 | actionType | string | Only user actions of the specified type are included in the metric calculation. The element can hold these values * `Custom` * `Load` * `Xhr` |
 | errorCode | integer | Only executions finished with the specified error code are included in the metric calculation. |
-| event | string | Only the specified browser clickpath event is included in the metric calculation.  Specify the Dynatrace entity ID of the event here. You can fetch the list of clickpath events of the monitor with the [GET a synthetic monitorï»¿](https://dt-url.net/4oe3kka) request from the Environment API |
+| event | string | Only the specified browser clickpath event is included in the metric calculation.  Specify the Dynatrace entity ID of the event here. You can fetch the list of clickpath events of the monitor with the [GET a synthetic monitor﻿](https://dt-url.net/4oe3kka) request from the Environment API |
 | hasError | boolean | The execution status of the monitors to be included in the metric calculation:  * `true`: Only failed executions are included. * `false`: All executions are included. |
-| location | string | Only executions from the specified location are included in the metric calculation.  Specify the Dynatrace entity ID of the location here. You can fetch the list of locations the monitor is running from with the [GET a synthetic monitorï»¿](https://dt-url.net/4oe3kka) request from the Environment API. |
+| location | string | Only executions from the specified location are included in the metric calculation.  Specify the Dynatrace entity ID of the location here. You can fetch the list of locations the monitor is running from with the [GET a synthetic monitor﻿](https://dt-url.net/4oe3kka) request from the Environment API. |
 
 ### Response body JSON models
 

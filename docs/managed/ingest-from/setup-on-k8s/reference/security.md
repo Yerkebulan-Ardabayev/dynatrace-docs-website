@@ -1,7 +1,6 @@
 ---
 title: Dynatrace Operator security
 source: https://docs.dynatrace.com/managed/ingest-from/setup-on-k8s/reference/security
-scraped: 2026-05-12T11:53:39.391593
 ---
 
 # Dynatrace Operator security
@@ -274,7 +273,7 @@ Log monitoring requires [the same cluster-wide permissions as OneAgent](#oneagen
 
 * Enable [Dynatrace telemetry endpoints](/managed/ingest-from/setup-on-k8s/extend-observability-k8s/telemetry-ingest "Enable Dynatrace telemetry ingest endpoints in Kubernetes for cluster-local data ingest.") in Kubernetes for cluster-local data ingest
 
-  + Ingest data via [OTLPï»¿](https://opentelemetry.io/docs/specs/otel/protocol/), [Jaegerï»¿](https://www.jaegertracing.io/), [StatsDï»¿](https://github.com/statsd/statsd) or [Zipkinï»¿](https://zipkin.io/) endpoints
+  + Ingest data via [OTLP﻿](https://opentelemetry.io/docs/specs/otel/protocol/), [Jaeger﻿](https://www.jaegertracing.io/), [StatsD﻿](https://github.com/statsd/statsd) or [Zipkin﻿](https://zipkin.io/) endpoints
 * Analyze context-rich data with built-in apps, DQL, Notebooks and Dashboards
 
 **RBAC objects**:
@@ -455,15 +454,15 @@ Disabling this feature will make it harder to provide the necessary information 
 
 The following table presents a detailed analysis of the security controls for Kubernetes components: Dynatrace Operator, Dynatrace Operator webhook, and Dynatrace Operator CSI driver. This report is based on:
 
-* [CIS Benchmarkï»¿](https://dt-url.net/zd0368p), a globally recognized standard for securing Kubernetes deployments.
-* [POD Security Standard policiesï»¿](https://dt-url.net/mp0345l).
+* [CIS Benchmark﻿](https://dt-url.net/zd0368p), a globally recognized standard for securing Kubernetes deployments.
+* [POD Security Standard policies﻿](https://dt-url.net/mp0345l).
 * Best practices.
 
 **Standards and abbreviations**:
 
-* **CIS**: [Center for Internet Security (CIS) Kubernetes Benchmarkï»¿](https://dt-url.net/zd0368p).
-* **PSSB**: [Pod Security Standards â Baseline profileï»¿](https://kubernetes.io/docs/concepts/security/pod-security-standards/#baseline).
-* **PSSR**: [Pod Security Standards â Restricted profileï»¿](https://dt-url.net/ut4387d).
+* **CIS**: [Center for Internet Security (CIS) Kubernetes Benchmark﻿](https://dt-url.net/zd0368p).
+* **PSSB**: [Pod Security Standards – Baseline profile﻿](https://kubernetes.io/docs/concepts/security/pod-security-standards/#baseline).
+* **PSSR**: [Pod Security Standards – Restricted profile﻿](https://dt-url.net/ut4387d).
 
 The **Standard** column references these abbreviations.
 
@@ -553,12 +552,12 @@ Namespace-scoped Roles for the Operator, Webhook, and CSI driver currently allow
 1
 
 OneAgent: OneAgent DaemonSet runs with host-level privileges for full-stack visibility (network, processes, file system).  
-OneAgent Log Module: LogAgent needs to run as privileged container on OCP cluster to access its persistent storage. [OCP persistent storage using hostPathï»¿](https://docs.redhat.com/en/documentation/openshift_container_platform/4.18/html/storage/configuring-persistent-storage#persistent-storage-using-hostpath).
+OneAgent Log Module: LogAgent needs to run as privileged container on OCP cluster to access its persistent storage. [OCP persistent storage using hostPath﻿](https://docs.redhat.com/en/documentation/openshift_container_platform/4.18/html/storage/configuring-persistent-storage#persistent-storage-using-hostpath).
 
 2
 
 OneAgent: Required for init containers that instrument processes before startup.  
-OneAgent Log Module: `AllowPrivilegeEscalation` is always true when the container is run as privileged. [Configure a Security Context for a Pod or Containerï»¿](https://kubernetes.io/docs/tasks/configure-pod-container/security-context/).
+OneAgent Log Module: `AllowPrivilegeEscalation` is always true when the container is run as privileged. [Configure a Security Context for a Pod or Container﻿](https://kubernetes.io/docs/tasks/configure-pod-container/security-context/).
 
 3
 
@@ -607,17 +606,17 @@ Disallow Secrets mounted as env variable: Dynatrace Collector currently uses env
 
 ## Pod security policies
 
-These permissions used to be managed using a **PodSecurityPolicy** (PSP), but [in Kubernetes version 1.25 PSPs will be removedï»¿](https://dt-url.net/2403pxy) from the following components:
+These permissions used to be managed using a **PodSecurityPolicy** (PSP), but [in Kubernetes version 1.25 PSPs will be removed﻿](https://dt-url.net/2403pxy) from the following components:
 
-* [Dynatrace Operatorï»¿](https://dt-url.net/d7034gj) version 0.2.2
-* **LEGACY** [Dynatrace OneAgent Operatorï»¿](https://dt-url.net/3023pvs) version 0.11.0
-* [Corresponding Helm chartsï»¿](https://dt-url.net/rp43pl1)
+* [Dynatrace Operator﻿](https://dt-url.net/d7034gj) version 0.2.2
+* **LEGACY** [Dynatrace OneAgent Operator﻿](https://dt-url.net/3023pvs) version 0.11.0
+* [Corresponding Helm charts﻿](https://dt-url.net/rp43pl1)
 
 **Dynatrace Operator version 0.2.1** is the last version in which PSPs are applied by default, so it's up to you to enforce these rules. As PSP alternatives, you can use other policy enforcement tools such as:
 
-* [k-railï»¿](https://dt-url.net/qx63p3n)
-* [Kyvernoï»¿](https://dt-url.net/6m83ppk)
-* [Gatekeeperï»¿](https://dt-url.net/aha3ps4)
+* [k-rail﻿](https://dt-url.net/qx63p3n)
+* [Kyverno﻿](https://dt-url.net/6m83ppk)
+* [Gatekeeper﻿](https://dt-url.net/aha3ps4)
 
 If you choose to use a PSP alternative, be sure to provide the necessary permissions to the Dynatrace components.
 
@@ -625,7 +624,7 @@ If you choose to use a PSP alternative, be sure to provide the necessary permiss
 
 Dynatrace Operator version 0.12.0+
 
-Starting with Dynatrace Operator version 0.12.0, the built-in creation of custom security context constraints (SCCs) has been removed for Dynatrace Operator and Dynatrace Operatorâmanaged components. This change was made to reduce complications caused by custom SCCs in unique OpenShift setups.
+Starting with Dynatrace Operator version 0.12.0, the built-in creation of custom security context constraints (SCCs) has been removed for Dynatrace Operator and Dynatrace Operator–managed components. This change was made to reduce complications caused by custom SCCs in unique OpenShift setups.
 
 Despite this update, the components maintain the same permissions and security requirements as before.
 

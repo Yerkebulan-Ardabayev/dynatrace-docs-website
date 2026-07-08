@@ -1,7 +1,6 @@
 ---
 title: JMX data source
 source: https://docs.dynatrace.com/managed/ingest-from/extensions/develop-your-extensions/data-sources/jmx
-scraped: 2026-05-12T12:07:20.698039
 ---
 
 # JMX data source
@@ -12,17 +11,17 @@ scraped: 2026-05-12T12:07:20.698039
 * 2-min read
 * Published May 15, 2023
 
-Dynatrace provides a framework to create metrics from [JMX MBeansï»¿](https://en.wikipedia.org/wiki/Java_Management_Extensions). Every process monitored by OneAgent Java code module is capable of processing JMX 2.0 extensions.
+Dynatrace provides a framework to create metrics from [JMX MBeans﻿](https://en.wikipedia.org/wiki/Java_Management_Extensions). Every process monitored by OneAgent Java code module is capable of processing JMX 2.0 extensions.
 
 You need to enable the **Java Metric Extensions (JMX)** [OneAgent feature](/managed/ingest-from/dynatrace-oneagent/oneagent-features "Manage OneAgent features globally and per process group.")
 
 ## Background
 
-[JMXï»¿](https://docs.oracle.com/en/java/javase/17/docs/api/java.management/javax/management/package-summary.html) organizes data and functionality in an object oriented way. Every Java process has a [platform MBean serverï»¿](https://docs.oracle.com/en/java/javase/17/docs/api/java.management/java/lang/management/ManagementFactory.html#getPlatformMBeanServer) which manages a set of monitoring objects called MBeans.
+[JMX﻿](https://docs.oracle.com/en/java/javase/17/docs/api/java.management/javax/management/package-summary.html) organizes data and functionality in an object oriented way. Every Java process has a [platform MBean server﻿](https://docs.oracle.com/en/java/javase/17/docs/api/java.management/java/lang/management/ManagementFactory.html#getPlatformMBeanServer) which manages a set of monitoring objects called MBeans.
 
-Every MBean has a unique [object nameï»¿](https://docs.oracle.com/en/java/javase/17/docs/api/java.management/javax/management/ObjectName.html). Every object name consists of a domain name and a list of key properties. Every key property consists of a name and a (string) value.
+Every MBean has a unique [object name﻿](https://docs.oracle.com/en/java/javase/17/docs/api/java.management/javax/management/ObjectName.html). Every object name consists of a domain name and a list of key properties. Every key property consists of a name and a (string) value.
 
-JMX defines a standardized syntax to write those object names, for example, `java.lang:type=GarbageCollector,name=YoungGen`. Every MBean has 0 or more attributes (see [MBeanServer::getAttributeï»¿](https://docs.oracle.com/en/java/javase/17/docs/api/java.management/javax/management/MBeanServer.html#getAttribute(javax.management.ObjectName,java.lang.String))). Attributes can be of any Java type (including booleans, numbers and strings).
+JMX defines a standardized syntax to write those object names, for example, `java.lang:type=GarbageCollector,name=YoungGen`. Every MBean has 0 or more attributes (see [MBeanServer::getAttribute﻿](https://docs.oracle.com/en/java/javase/17/docs/api/java.management/javax/management/MBeanServer.html#getAttribute(javax.management.ObjectName,java.lang.String))). Attributes can be of any Java type (including booleans, numbers and strings).
 
 Numeric attributes can be directly used to produce metrics in Dynatrace. It's also possible to extract numeric values from complex attributes.
 
@@ -144,7 +143,7 @@ Groups and subgroups can be used to share configuration between multiple metrics
 
 ## Extract metrics from MBeans
 
-Every subgroup has to select a set of MBeans that should contribute to a metric. This is done with the `query` field and follows the standard [JMX object name syntaxï»¿](https://docs.oracle.com/en/java/javase/17/docs/api/java.management/javax/management/ObjectName.html)
+Every subgroup has to select a set of MBeans that should contribute to a metric. This is done with the `query` field and follows the standard [JMX object name syntax﻿](https://docs.oracle.com/en/java/javase/17/docs/api/java.management/javax/management/ObjectName.html)
 
 Here, the query is `java.lang:type=Threading`. This breaks down into looking for a bean in domain `java.lang` that has exactly one property with name `type` and value `Threading`.
 

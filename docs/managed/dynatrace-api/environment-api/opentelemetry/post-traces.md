@@ -1,7 +1,6 @@
 ---
 title: OpenTelemetry trace ingest API
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/opentelemetry/post-traces
-scraped: 2026-05-12T12:10:38.334723
 ---
 
 # OpenTelemetry trace ingest API
@@ -30,7 +29,7 @@ To learn how to obtain and use it, see [Tokens and authentication](/managed/disc
 
 | Parameter | Type | Description | In | Required |
 | --- | --- | --- | --- | --- |
-| body | byte[] | An [ExportTraceServiceRequestï»¿](https://github.com/open-telemetry/opentelemetry-proto/blob/v1.2.0/opentelemetry/proto/collector/trace/v1/trace_service.proto) message in binary protobuf format. | body | Required |
+| body | byte[] | An [ExportTraceServiceRequest﻿](https://github.com/open-telemetry/opentelemetry-proto/blob/v1.2.0/opentelemetry/proto/collector/trace/v1/trace_service.proto) message in binary protobuf format. | body | Required |
 
 ## Response
 
@@ -88,7 +87,7 @@ Enable for a single host
 
 1. Go to **Hosts**.
 2. Find and select your host to display the host overview page.
-3. In the upper-right corner of the host overview page, select **More** (**â¦**) > **Settings**.
+3. In the upper-right corner of the host overview page, select **More** (**…**) > **Settings**.
 
 4. In the host settings, select **Extension Execution Controller**.
 5. Turn on **Enable Extension Execution Controller**.

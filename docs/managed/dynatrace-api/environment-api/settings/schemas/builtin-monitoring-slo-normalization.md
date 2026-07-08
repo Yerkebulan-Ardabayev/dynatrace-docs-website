@@ -1,7 +1,6 @@
 ---
 title: Settings API - Service-level objective setup schema table
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/settings/schemas/builtin-monitoring-slo-normalization
-scraped: 2026-05-12T11:48:30.982744
 ---
 
 # Settings API - Service-level objective setup schema table
@@ -34,4 +33,4 @@ To execute this request, you need an access token with **Read settings** (`setti
 
 | Property | Type | Description | Required |
 | --- | --- | --- | --- |
-| Normalize error budget `normalize` | boolean | When set to true, the error budget left will be shown in percent of the total error budget. For more details see [SLO normalization helpï»¿](https://dt-url.net/slo-normalize-error-budget). | Required |
+| Normalize error budget `normalize` | boolean | When set to true, the error budget left will be shown in percent of the total error budget. For more details see [SLO normalization help﻿](https://dt-url.net/slo-normalize-error-budget). | Required |

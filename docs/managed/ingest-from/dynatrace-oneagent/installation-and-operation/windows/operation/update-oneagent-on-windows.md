@@ -1,7 +1,6 @@
 ---
 title: Update Dynatrace OneAgent on Windows
 source: https://docs.dynatrace.com/managed/ingest-from/dynatrace-oneagent/installation-and-operation/windows/operation/update-oneagent-on-windows
-scraped: 2026-05-12T11:07:38.768788
 ---
 
 # Update Dynatrace OneAgent on Windows
@@ -21,11 +20,11 @@ You can configure OneAgent update globally, per host group, and per host.
 
 Configure global OneAgent update
 
-When automatic updates are turned on globally, whenever a new version of OneAgent becomes available, all of your installed OneAgent instancesâexcept where you have turned off auto-updates at the host group or host levelâwill automatically download the update and upgrade their binaries and configuration files.
+When automatic updates are turned on globally, whenever a new version of OneAgent becomes available, all of your installed OneAgent instances—except where you have turned off auto-updates at the host group or host level—will automatically download the update and upgrade their binaries and configuration files.
 
 Automatic update settings at the host group and individual host level override global settings.
 
-1. Go to **Settings** > **Updates** > **OneAgent updates**.
+1. Go to **Settings** > **Deployment** > **OneAgent updates**.
 2. Select one of the update options:
 
    * **Automatic updates at earliest convenience**  
@@ -34,7 +33,7 @@ Automatic update settings at the host group and individual host level override g
      Update all OneAgents automatically during the selected update window.
 
      + When you choose this setting, a list of available update windows is displayed. Select one.
-     + To configure a new update window for OneAgent updates, go to **Settings** > **Updates** > **Update windows for OneAgent updates**.
+     + To configure a new update window for OneAgent updates, go to **Settings** > **Deployment** > **Update windows**.
    * **No automatic updates**  
      Do not automatically update OneAgents.
 
@@ -64,7 +63,7 @@ OneAgent update settings at the host group level override global settings and ar
      Update all OneAgents in this host group automatically during the selected update window. Ignore the global update settings.
 
      + When you choose this setting, a list of available update windows is displayed. Select one.
-     + To configure a new update window for OneAgent updates, go to **Settings** > **Updates** > **Update windows for OneAgent updates**.
+     + To configure a new update window for OneAgent updates, go to **Settings** > **Deployment** > **Update windows**.
    * **No automatic updates**  
      Do not automatically update OneAgents in this host group. Ignore the global update settings.
 
@@ -79,22 +78,22 @@ OneAgent update settings at the host level override OneAgent update settings at 
 
    * Go to **Hosts** and then select the host.
    * Go to **Settings** > **Monitoring** > **Monitoring overview**, select the **Hosts** tab, and then select the host.
-2. On the **Host** page, open the browse menu (**â¦**) and select **Settings**.
+2. On the **Host** page, open the browse menu (**…**) and select **Settings**.
 3. Select **OneAgent updates** on the left side of the page.
 4. Select one of the update options:
 
-   * **Inheritâ¦**  
+   * **Inherit…**  
      Follow the host group or global update settings for updating this OneAgent.
 
      + If the selected host belongs to a host group, the current host group setting is displayed in parentheses on this line, and the group name is a link to the host group configuration page.
-     + If the selected host does not belong to a host group, the global setting is displayed in parentheses on this line, and "global" is a link to the global configuration page (**Settings** > **Updates** > **OneAgent updates**).
+     + If the selected host does not belong to a host group, the global setting is displayed in parentheses on this line, and "global" is a link to the global configuration page (**Settings** > **Deployment** > **OneAgent updates**).
    * **Automatic updates at earliest convenience**  
      Update this OneAgent automatically, regardless of update windows. Ignore the host group update settings.
    * **Automatic updates during update windows**  
      Update this OneAgent automatically during the selected update window. Ignore the global update settings.
 
      + When you choose this setting, a list of available update windows is displayed. Select one.
-     + To configure a new update window for OneAgent updates, go to **Settings** > **Updates** > **Update windows for OneAgent updates**.
+     + To configure a new update window for OneAgent updates, go to **Settings** > **Deployment** > **Update windows**.
    * **No automatic updates**  
      Do not automatically update this OneAgent. Ignore the global update settings.
 
@@ -116,7 +115,7 @@ Select OneAgent version to install on new hosts
 
 To control which version of OneAgent is automatically installed on all new hosts:
 
-1. Go to **Settings** > **Updates** > **OneAgent updates**.
+1. Go to **Settings** > **Deployment** > **OneAgent updates**.
 2. In **Update mode**, select **No automatic updates** to disable automatic OneAgent updates.
 
    For details on how to disable OneAgent automatic updates on Paas/Kubernetes, see [DynaKube parameters for Dynatrace Operator on Kubernetes/OpenShift](/managed/ingest-from/setup-on-k8s/reference/dynakube-parameters "List the available parameters for setting up Dynatrace Operator on Kubernetes.").
@@ -128,7 +127,7 @@ Select OneAgent version to update to
 
 To select which version of OneAgent to update to
 
-1. Go to **Settings** > **Updates** > **OneAgent updates**.
+1. Go to **Settings** > **Deployment** > **OneAgent updates**.
 2. In the **Target version** list, you can specify a particular version by OneAgent version number or select a relative target version:
 
    * **Latest stable version**  
@@ -184,5 +183,5 @@ Run `oneagentctl` with the `--version` parameter. For more information, see [One
 ### Deployment status
 
 1. Go to **Deployment Status**.
-2. Click the **All hosts** or **Recently connected hosts** tab.
+2. Select the **All hosts** or **Recently connected hosts** tab.
 3. Expand the host entry you are interested in. The installed version of OneAgent is included in the information that shows up.

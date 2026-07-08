@@ -1,7 +1,6 @@
 ---
 title: Settings API - Session replay data privacy schema table
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/settings/schemas/builtin-sessionreplay-web-privacy-preferences
-scraped: 2026-05-12T11:45:53.572444
 ---
 
 # Settings API - Session replay data privacy schema table
@@ -12,7 +11,7 @@ scraped: 2026-05-12T11:45:53.572444
 
 ### Session replay data privacy (`builtin:sessionreplay.web.privacy-preferences)`
 
-[Configure Session Replayï»¿](https://dt-url.net/2i3t0pju) to restrict data capture and protect your end users' data privacy.
+[Configure Session Replay﻿](https://dt-url.net/2i3t0pju) to restrict data capture and protect your end users' data privacy.
 
 | Schema ID | Schema groups | Scope |
 | --- | --- | --- |
@@ -34,9 +33,9 @@ To execute this request, you need an access token with **Read settings** (`setti
 
 | Property | Type | Description | Required |
 | --- | --- | --- | --- |
-| Enable opt-in mode for Session Replay `enableOptInMode` | boolean | When [Session Replay opt-in modeï»¿](https://dt-url.net/sr-opt-in-mode) is turned on, Session Replay is deactivated until explicitly activated via an API call. | Required |
-| URL exclusion `urlExclusionPatternList` | set | Exclude webpages or views from Session Replay recording by adding [URL exclusion rulesï»¿](https://dt-url.net/sr-url-exclusion) | Required |
-| Content masking preferences `maskingPresets` | [MaskingPresetConfig](#MaskingPresetConfig) | To protect your end users' privacy, select or customize [predefined masking optionsï»¿](https://dt-url.net/sr-masking-preset-options) that suit your content recording and playback requirements. | Required |
+| Enable opt-in mode for Session Replay `enableOptInMode` | boolean | When [Session Replay opt-in mode﻿](https://dt-url.net/sr-opt-in-mode) is turned on, Session Replay is deactivated until explicitly activated via an API call. | Required |
+| URL exclusion `urlExclusionPatternList` | set | Exclude webpages or views from Session Replay recording by adding [URL exclusion rules﻿](https://dt-url.net/sr-url-exclusion) | Required |
+| Content masking preferences `maskingPresets` | [MaskingPresetConfig](#MaskingPresetConfig) | To protect your end users' privacy, select or customize [predefined masking options﻿](https://dt-url.net/sr-masking-preset-options) that suit your content recording and playback requirements. | Required |
 
 ##### The `MaskingPresetConfig` object
 

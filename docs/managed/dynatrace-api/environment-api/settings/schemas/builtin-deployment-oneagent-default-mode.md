@@ -1,7 +1,6 @@
 ---
 title: Settings API - OneAgent default mode schema table
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/settings/schemas/builtin-deployment-oneagent-default-mode
-scraped: 2026-05-12T11:47:04.655943
 ---
 
 # Settings API - OneAgent default mode schema table
@@ -12,7 +11,7 @@ scraped: 2026-05-12T11:47:04.655943
 
 ### OneAgent default mode (`builtin:deployment.oneagent.default-mode)`
 
-You can configure which OneAgent [monitoring modeï»¿](https://dt-url.net/8703q1z) will be used by default for OneAgent installation commands provided in the Dynatrace web UI. This does not affect OneAgent installer behavior. OneAgent installed without the monitoring mode parameter will run in Full-Stack Monitoring mode.
+You can configure which OneAgent [monitoring mode﻿](https://dt-url.net/8703q1z) will be used by default for OneAgent installation commands provided in the Dynatrace web UI. This does not affect OneAgent installer behavior. OneAgent installed without the monitoring mode parameter will run in Full-Stack Monitoring mode.
 
 | Schema ID | Schema groups | Scope |
 | --- | --- | --- |

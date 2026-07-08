@@ -1,7 +1,6 @@
 ---
 title: Settings API - Pipeline Groups configuration (spans) schema table
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-spans-pipeline-groups
-scraped: 2026-05-12T11:49:29.428281
 ---
 
 # Settings API - Pipeline Groups configuration (spans) schema table

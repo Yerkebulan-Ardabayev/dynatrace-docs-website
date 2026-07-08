@@ -1,7 +1,6 @@
 ---
 title: Set up Dynatrace on Google Cloud
 source: https://docs.dynatrace.com/managed/ingest-from/google-cloud-platform
-scraped: 2026-05-12T11:03:38.550706
 ---
 
 # Set up Dynatrace on Google Cloud
@@ -14,7 +13,7 @@ scraped: 2026-05-12T11:03:38.550706
 
 Dynatrace automatically discovers, baselines, and intelligently monitors Google Cloud environments to provide fault domain isolation and infrastructure and end-user visibility in real time.
 
-For more reasons to monitor Google Cloud with Dynatrace, see [Google Cloudï»¿](https://www.dynatrace.com/hub/detail/google-cloud-platform/) in Dynatrace Hub.
+For more reasons to monitor Google Cloud with Dynatrace, see [Google Cloud﻿](https://www.dynatrace.com/hub/detail/google-cloud-platform/) in Dynatrace Hub.
 
 ## Full-stack monitoring for Google Cloud Compute and serverless services
 
@@ -37,4 +36,4 @@ Monitor additional Google Cloud services and view their specific metrics in Dyna
 ## Related topics
 
 * [Google Cloud monitoring](/managed/observe/infrastructure-observability/cloud-platform-monitoring/gcp-monitoring "Monitor Google Cloud with Dynatrace")
-* [Serverless monitoring](/managed/discover-dynatrace/get-started/serverless-monitoring "Serverless observability with Dynatrace")
+* [Serverless monitoring](/managed/discover-dynatrace/get-started/serverless-monitoring "Monitor serverless cloud services across AWS, Azure, and Google Cloud with Dynatrace for end-to-end visibility and AI-powered analysis.")

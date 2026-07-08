@@ -1,7 +1,6 @@
 ---
 title: Anomaly detection configuration
 source: https://docs.dynatrace.com/managed/dynatrace-intelligence/anomaly-detection/anomaly-detection-configuration
-scraped: 2026-05-12T11:38:40.961946
 ---
 
 # Anomaly detection configuration
@@ -10,11 +9,11 @@ scraped: 2026-05-12T11:38:40.961946
 
 * Explanation
 * 7-min read
-* Updated on Apr 17, 2026
+* Updated on May 29, 2026
 
 An anomaly detection configuration relies on several components:
 
-* Data sourceâa time series that is evaluated. For example, a specific metric.
+* Data source—a time series that is evaluated. For example, a specific metric.
 * Analyzer type and parameters: how the data is evaluated.
 * Sliding window: a period over which the data is evaluated.
 * Event template: what kind of template is triggered by the configuration.
@@ -35,9 +34,9 @@ If your data has a latency, you need to offset it in your configuration via the 
 
 Analyzer parameters define how Davis evaluates the data provided by the data source. The exact set of parameters depends on the type of the analysis:
 
-* [Auto-adaptive threshold](/managed/dynatrace-intelligence/anomaly-detection/auto-adaptive-threshold "How Dynatrace adapts thresholds for multiple entities within the scope of an anomaly detection configuration.")âDynatrace calculates the threshold automatically and adapts it dynamically to your data's behavior.
-* [Seasonal baseline](/managed/dynatrace-intelligence/ai-models/seasonal-baseline "How Davis suggests Seasonal baseline thresholds for a scope of entities.")âDynatrace creates a confidence band for data with seasonal patterns.
-* [Static threshold](/managed/dynatrace-intelligence/anomaly-detection/static-thresholds "When to use a static threshold for your anomaly detection.")âthe threshold that doesn't change over time.
+* [Auto-adaptive threshold](/managed/dynatrace-intelligence/anomaly-detection/auto-adaptive-threshold "How Dynatrace adapts thresholds for multiple entities within the scope of an anomaly detection configuration.")—Dynatrace calculates the threshold automatically and adapts it dynamically to your data's behavior.
+* [Seasonal baseline](/managed/dynatrace-intelligence/ai-models/seasonal-baseline "How Davis suggests Seasonal baseline thresholds for a scope of entities.")—Dynatrace creates a confidence band for data with seasonal patterns.
+* [Static threshold](/managed/dynatrace-intelligence/anomaly-detection/static-thresholds "When to use a static threshold for your anomaly detection.")—the threshold that doesn't change over time.
 
 | Parameter | Description |
 | --- | --- |

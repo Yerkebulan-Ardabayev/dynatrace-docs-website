@@ -1,7 +1,6 @@
 ---
 title: Delete cluster proxy configuration
 source: https://docs.dynatrace.com/managed/dynatrace-api/cluster-api/cluster-api-v1/internet-proxy-v1/delete-cluster-proxy-configuration
-scraped: 2026-05-12T12:13:00.611439
 ---
 
 # Delete cluster proxy configuration

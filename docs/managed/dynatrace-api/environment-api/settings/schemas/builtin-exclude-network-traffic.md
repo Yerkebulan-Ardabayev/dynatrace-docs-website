@@ -1,7 +1,6 @@
 ---
 title: Settings API - Exclude network traffic schema table
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/settings/schemas/builtin-exclude-network-traffic
-scraped: 2026-05-12T11:40:31.972455
 ---
 
 # Settings API - Exclude network traffic schema table

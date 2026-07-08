@@ -1,7 +1,6 @@
 ---
 title: Settings API - Exclude XHR requests from monitoring schema table
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/settings/schemas/builtin-rum-web-xhr-exclusion
-scraped: 2026-05-12T11:40:08.551774
 ---
 
 # Settings API - Exclude XHR requests from monitoring schema table

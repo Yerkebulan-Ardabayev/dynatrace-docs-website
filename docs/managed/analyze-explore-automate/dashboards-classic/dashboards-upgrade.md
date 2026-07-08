@@ -1,7 +1,6 @@
 ---
 title: Upgrade your custom charts now
 source: https://docs.dynatrace.com/managed/analyze-explore-automate/dashboards-classic/dashboards-upgrade
-scraped: 2026-05-12T12:07:54.387363
 ---
 
 # Upgrade your custom charts now
@@ -99,7 +98,7 @@ To list dashboards by popularity
 To clone an existing dashboard
 
 1. Go to **Dashboards**.
-2. In the table of dashboards, select **More** (**â¦**) > **Clone** for the dashboard you want to copy.
+2. In the table of dashboards, select **More** (**…**) > **Clone** for the dashboard you want to copy.
 
    * The copy opens in edit mode.
    * The original dashboard is unaffected.
@@ -225,7 +224,7 @@ To upgrade one dashboard via API, use the migrate endpoint.
 https://{your-environment-id}/rest-api-doc/index.jsp?urls.primaryName=Configuration%20API#/Dashboards/migrateDashboard
 ```
 
-Make sure to replace `{your-environment-id}` with your actual [environment ID](/managed/discover-dynatrace/get-started/monitoring-environment "Understand and learn how to work with monitoring environments.").
+Make sure to replace `{your-environment-id}` with your actual [environment ID](/managed/discover-dynatrace/get-started/monitoring-environment "Learn what a Dynatrace monitoring environment is, how to find your environment ID, and how to set up and connect multiple environments.").
 
 ### Upgrade all dashboards
 
@@ -237,7 +236,7 @@ To upgrade all dashboards via API
    https://{your-environment-id}/rest-api-doc/index.jsp?urls.primaryName=Configuration%20API#/Dashboards/getDashboardStubsList
    ```
 
-   Make sure to replace `{your-environment-id}` with your actual [environment ID](/managed/discover-dynatrace/get-started/monitoring-environment "Understand and learn how to work with monitoring environments.").
+   Make sure to replace `{your-environment-id}` with your actual [environment ID](/managed/discover-dynatrace/get-started/monitoring-environment "Learn what a Dynatrace monitoring environment is, how to find your environment ID, and how to set up and connect multiple environments.").
 2. Loop over all IDs as described in [Upgrade one dashboard](#api-single) above.
 
 #### Node.js example script
@@ -246,7 +245,7 @@ To get you started quickly, feel free to adapt and use the following example Nod
 
 Before using the script, make sure you update both lines marked with `// TODO` with your own information:
 
-* Replace `{your-environment-id}` with your actual [environment ID](/managed/discover-dynatrace/get-started/monitoring-environment "Understand and learn how to work with monitoring environments.").
+* Replace `{your-environment-id}` with your actual [environment ID](/managed/discover-dynatrace/get-started/monitoring-environment "Learn what a Dynatrace monitoring environment is, how to find your environment ID, and how to set up and connect multiple environments.").
 * Replace `{your-api-token}` with a valid [API token](/managed/dynatrace-api/basics/dynatrace-api-authentication "Find out how to get authenticated to use the Dynatrace API.") with the proper scope.
 
 ```
@@ -529,7 +528,7 @@ In any case, don't worry about losing data. Dashboards and tiles are visualizati
 
 ## Where can I get more information?
 
-* There's an ongoing [Dynatrace Community threadï»¿](https://community.dynatrace.com/t5/Dashboarding/Data-explorer-upgrade-aka-Custom-chart-deprecation/td-p/194200) you are welcome to participate in.
+* There's an ongoing [Dynatrace Community thread﻿](https://community.dynatrace.com/t5/Dashboarding/Data-explorer-upgrade-aka-Custom-chart-deprecation/td-p/194200) you are welcome to participate in.
 * To start a conversation with a Dynatrace product expert, use live chat within your Dynatrace environment.
 
   ![Chat button](https://dt-cdn.net/images/chat-button-94-3f05b29976.png)

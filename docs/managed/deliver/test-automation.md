@@ -1,7 +1,6 @@
 ---
 title: Dynatrace and load testing tools integration
 source: https://docs.dynatrace.com/managed/deliver/test-automation
-scraped: 2026-05-12T11:09:55.715582
 ---
 
 # Dynatrace and load testing tools integration
@@ -28,7 +27,7 @@ Test automation involves the use of special software (separate from the software
 
 ### Tag tests with HTTP headers
 
-While executing a load test from your load testing tool of choice ([JMeter](/managed/deliver/test-automation/dynatrace-and-jmeter-integration "Learn how you can add custom HTTP headers in JMeter to tag distributed traces and requests in Dynatrace for targeted diagnostics and analysis of your load tests."), [Neotysï»¿](https://www.neotys.com/resources/whitepaper/dynatrace-integration-neoload), LoadRunner, etc) each simulated HTTP request can be tagged with additional HTTP headers that contain test-transaction information (for example, script name, test step name, and virtual user ID). Dynatrace can analyze incoming HTTP headers and extract such contextual information from the header values and tag the captured requests with [request attributes](/managed/observe/application-observability/services/request-attributes "Understand what request attributes are and learn how to use them across all levels of all service-analysis views."). Request attributes enable you to [filter your monitoring data based on defined tags](/managed/observe/application-observability/services/request-attributes/filter-monitoring-data-via-request-attributes "Use request attributes to filter your monitoring data and narrow down service analysis scope.").
+While executing a load test from your load testing tool of choice ([JMeter](/managed/deliver/test-automation/dynatrace-and-jmeter-integration "Learn how you can add custom HTTP headers in JMeter to tag distributed traces and requests in Dynatrace for targeted diagnostics and analysis of your load tests."), [Neotys﻿](https://www.neotys.com/resources/whitepaper/dynatrace-integration-neoload), LoadRunner, etc) each simulated HTTP request can be tagged with additional HTTP headers that contain test-transaction information (for example, script name, test step name, and virtual user ID). Dynatrace can analyze incoming HTTP headers and extract such contextual information from the header values and tag the captured requests with [request attributes](/managed/observe/application-observability/services/request-attributes "Understand what request attributes are and learn how to use them across all levels of all service-analysis views."). Request attributes enable you to [filter your monitoring data based on defined tags](/managed/observe/application-observability/services/request-attributes/filter-monitoring-data-via-request-attributes "Use request attributes to filter your monitoring data and narrow down service analysis scope.").
 
 ![Load Testing HTTP header](https://dt-cdn.net/images/dynatrace-loadtesting-httptagging-1186-cfea1a2702.png)
 
@@ -44,7 +43,7 @@ The header `x-dynatrace-test` is used in the following examples with the followi
 | SI | **S**ource **I**D identifies the product that triggered the request (JMeter, LoadRunner, Neotys, or other). |
 | TSN | **T**est **S**tep **N**ame is a logical test step within your load testing script (for example, `Login` or `Add to cart`). |
 | LSN | **L**oad **S**cript **N**ame - name of the load testing script. This groups a set of test steps that make up a multistep transaction (for example, an online purchase). |
-| LTN | The **L**oad **T**est **N**ame uniquely identifies a test execution (for example, `6h Load Test â June 25`). |
+| LTN | The **L**oad **T**est **N**ame uniquely identifies a test execution (for example, `6h Load Test – June 25`). |
 | PC | **P**age **C**ontext provides information about the document that is loaded in the currently processed page. |
 
 ### Push custom events
@@ -65,7 +64,7 @@ Loadtest custom annotation in chart
 
 You can also push specific metrics from your load testing tool (throughput, user load, etc.) to Dynatrace via the [custom metrics API](/managed/dynatrace-api/environment-api/metric-v1/custom-metrics "Manage custom metrics via the Timeseries v1 API.").
 
-For JMeter, there is a new [open-source pluginï»¿](https://github.com/dynatrace-oss/jmeter-dynatrace-plugin) you can use to push the metrics directly to Dynatrace via the Metrics API.
+For JMeter, there is a new [open-source plugin﻿](https://github.com/dynatrace-oss/jmeter-dynatrace-plugin) you can use to push the metrics directly to Dynatrace via the Metrics API.
 
 ## Compare & analyze
 
@@ -98,7 +97,7 @@ You can use data captured via request attributes to build your own [multidimensi
 
 ### Comparison
 
-* [Compare viewï»¿](https://www.dynatrace.com/news/blog/compare-service-request-performance-behavior-time/) enables you to compare critical service-request metrics (Response time, Failures, CPU, and Load) between two load tests.
+* [Compare view﻿](https://www.dynatrace.com/news/blog/compare-service-request-performance-behavior-time/) enables you to compare critical service-request metrics (Response time, Failures, CPU, and Load) between two load tests.
 
   ![Load testing compare](https://dt-cdn.net/images/dynatrace-loadtesting-compare-2217-2d06c0115c.png)
 
@@ -111,7 +110,7 @@ You can use data captured via request attributes to build your own [multidimensi
 
 ### Diagnostics
 
-The [top web requestsï»¿](https://www.dynatrace.com/news/blog/analyze-the-top-web-requests-across-all-your-services/) diagnostic tool can be used to analyze the top web requests across all services. Use the request attributes you've defined to filter the load test requests.
+The [top web requests﻿](https://www.dynatrace.com/news/blog/analyze-the-top-web-requests-across-all-your-services/) diagnostic tool can be used to analyze the top web requests across all services. Use the request attributes you've defined to filter the load test requests.
 
 ## Report results
 
@@ -123,11 +122,11 @@ The [Problem API](/managed/dynatrace-api/environment-api/problems "Find out what
 
 ### Maintenance windows
 
-If you run your load test in a production environment and don't want to negatively influence your overall service and application baselines, it's a good idea to define your [maintenance windows](/managed/analyze-explore-automate/notifications-and-alerting/maintenance-windows "Understand when to use a maintenance window. Read about the supported maintenance window types.") before performing any load testing. Using maintenance windows during load testing ensures that any load spikes, longer-than-usual response times, or increased error rates wonât negatively influence your overall baselining.
+If you run your load test in a production environment and don't want to negatively influence your overall service and application baselines, it's a good idea to define your [maintenance windows](/managed/analyze-explore-automate/notifications-and-alerting/maintenance-windows "Understand when to use a maintenance window. Read about the supported maintenance window types.") before performing any load testing. Using maintenance windows during load testing ensures that any load spikes, longer-than-usual response times, or increased error rates won’t negatively influence your overall baselining.
 
 Alternatively, if you have a dedicated load testing environment and want to leverage the [problem detection](/managed/observe/infrastructure-observability/hosts/configuration/anomaly-detection "Configure host anomaly detection, including problem and event thresholds.") during load tests, you shouldn't use maintenance windows during load test execution.
 
 ## Related topics
 
-* [[Blog] Load testing redefined: From KPI reporting to AI-supported performance engineeringï»¿](https://www.dynatrace.com/news/blog/load-testing-redefined-a-guide-from-kpi-reporting-to-ai-supported-performance-engineering)
-* [[Blog] Unbreakable DevOps Pipeline: Shift-Left, Shift-Right & Self-Healingï»¿](https://www.dynatrace.com/news/blog/unbreakable-devops-pipeline-shift-left-shift-right-self-healing)
+* [[Blog] Load testing redefined: From KPI reporting to AI-supported performance engineering﻿](https://www.dynatrace.com/news/blog/load-testing-redefined-a-guide-from-kpi-reporting-to-ai-supported-performance-engineering)
+* [[Blog] Unbreakable DevOps Pipeline: Shift-Left, Shift-Right & Self-Healing﻿](https://www.dynatrace.com/news/blog/unbreakable-devops-pipeline-shift-left-shift-right-self-healing)

@@ -1,7 +1,6 @@
 ---
 title: Install OneAgent on AIX
 source: https://docs.dynatrace.com/managed/ingest-from/dynatrace-oneagent/installation-and-operation/aix/installation/install-oneagent-on-aix
-scraped: 2026-05-12T11:10:53.804328
 ---
 
 # Install OneAgent on AIX
@@ -33,7 +32,7 @@ To get started, access the [Cluster Management Console and choose the environmen
 ### Limitations
 
 * OneAgent installation isn't supported on networked storage mount points that are managed by standards such as NFS or iSCSI.
-* The support for [Log management and Analyticsï»¿](https://docs.dynatrace.com/docs/shortlink/log-management-and-analytics) and [Log Monitoring Classic](/managed/analyze-explore-automate/log-monitoring "Learn how to enable Log Monitoring, the insights that Log Monitoring can provide, and more.") on AIX hosts is limited:
+* The support for [Log management and Analytics﻿](https://docs.dynatrace.com/docs/shortlink/log-management-and-analytics) and [Log Monitoring Classic](/managed/analyze-explore-automate/log-monitoring "Learn how to enable Log Monitoring, the insights that Log Monitoring can provide, and more.") on AIX hosts is limited:
 
   + log detection in log module is limited only to custom log sources.
 
@@ -51,7 +50,7 @@ Depending on your firewall policy, you may need to explicitly allow certain outg
 5. Log into your AIX host and then paste and execute the `wget` command that you just copied.
 
    * The `wget` command isn't installed on AIX by default. Either install it or use an alternative means of downloading OneAgent.
-   * If you receive an error while downloading OneAgent, install the required certificate by downloading the root CA file from [Comodoï»¿](https://support.comodo.com/index.php?/Knowledgebase/Article/View/854/75/root-addtrustexternalcaroot) and then concatenating the content of the CRT file to `/var/ssl/cert.pem`. You can alternatively skip the certificate check by adding the parameter `--no-check-certificate`.
+   * If you receive an error while downloading OneAgent, install the required certificate by downloading the root CA file from [Comodo﻿](https://support.comodo.com/index.php?/Knowledgebase/Article/View/854/75/root-addtrustexternalcaroot) and then concatenating the content of the CRT file to `/var/ssl/cert.pem`. You can alternatively skip the certificate check by adding the parameter `--no-check-certificate`.
    * If you plan to download OneAgent directly to a server, note that outdated or missing libraries (for example, CA certificates or OpenSSL) will prevent the installer from downloading. We use encrypted connections. OpenSSL is required to enable `wget` to access the server.
 6. **Verify the signature**
 
@@ -120,7 +119,7 @@ Processes that have been given special privileges using AIX's Role-Based Access 
 
 Manual OneAgent injection
 
-IBM Java 1.6 â 1.8
+IBM Java 1.6 – 1.8
 
 IBM/Apache HTTP Server
 
@@ -164,7 +163,7 @@ apachectl -c "LoadModule oneagent_module /opt/dynatrace/oneagent/agent/bin/curre
 -k start
 ```
 
-* `tenantUUID` is the [environment](/managed/discover-dynatrace/get-started/monitoring-environment "Understand and learn how to work with monitoring environments.") ID of your Dynatrace environment that should be pulled from `dynatrace-env.sh` (located in the OneAgent installation root directory). The `tenantUUID` parameter is represented in the script as `DT_TENANT`.
+* `tenantUUID` is the [environment](/managed/discover-dynatrace/get-started/monitoring-environment "Learn what a Dynatrace monitoring environment is, how to find your environment ID, and how to set up and connect multiple environments.") ID of your Dynatrace environment that should be pulled from `dynatrace-env.sh` (located in the OneAgent installation root directory). The `tenantUUID` parameter is represented in the script as `DT_TENANT`.
 * `tenantToken` is the [token](/managed/manage/identity-access-management/access-tokens-and-oauth-clients/access-tokens/rotate-tenant-token "Learn what a tenant token is and how to change it.") that OneAgent uses to send data Dynatrace. It should be pulled from `dynatrace-env.sh` (or `ruxitagent.conf`, depending on your OneAgent version), which is located in the OneAgent installation root directory. The `tenantToken` parameter is represented in the script as `DT_TENANTTOKEN`.
 
   This token should not be confused with Dynatrace API or PaaS tokens. Those tokens can't be used here.

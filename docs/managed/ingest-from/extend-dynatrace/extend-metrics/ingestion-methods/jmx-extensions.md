@@ -1,7 +1,6 @@
 ---
 title: JMX extensions
 source: https://docs.dynatrace.com/managed/ingest-from/extend-dynatrace/extend-metrics/ingestion-methods/jmx-extensions
-scraped: 2026-05-12T11:10:17.509945
 ---
 
 # JMX extensions
@@ -11,7 +10,7 @@ scraped: 2026-05-12T11:10:17.509945
 * 7-min read
 * Published Jul 19, 2017
 
-JMX ([Java Management Extensionsï»¿](https://www.oracle.com/technetwork/java/javase/tech/javamanagement-140525.html)) is ideal for monitoring applications built using Java. With Dynatrace, you can monitor any metric in your JVM that is exposed via an MBean.
+JMX ([Java Management Extensions﻿](https://www.oracle.com/technetwork/java/javase/tech/javamanagement-140525.html)) is ideal for monitoring applications built using Java. With Dynatrace, you can monitor any metric in your JVM that is exposed via an MBean.
 
 ## Infrastructure Monitoring mode
 
@@ -23,13 +22,13 @@ Dynatrace version 1.162 and later
 
 Dynatrace version 1.161 and earlier
 
-1. Sign in to Dynatrace and go to **Settings** > **Monitoring** > **Monitored technologies** and click **Add new technology monitoring**. Of the four available options, one is **Monitor Java or WebSphere based technologies**. Click **Add JMX/PMI extension**.
-2. Click **Use JMX/PMI extensions editor**.
+1. Sign in to Dynatrace and go to **Settings** > **Monitoring** > **Monitored technologies** and select **Add new technology monitoring**. Of the four available options, one is **Monitor Java or WebSphere based technologies**. Select **Add JMX/PMI extension**.
+2. Select **Use JMX/PMI extensions editor**.
 3. Type the extension name. You can only use letters `A-Z, a-z`, numbers `0-9`, or `-/_`.
 4. Add the metrics source.
 
 * Select one of the available technologies.
-* Based on your selection, the editor will suggest the Java process as a source for your metrics. This narrows the list of available MBeans or PMI modules you will use in the next step. The technology behind the process determines whether you'll browse JMX MBeans or PMI modules. Click **Add metrics source** to use a suggested source. Click ![Edit](https://dt-cdn.net/images/edit-icon-a083c62c49.svg "Edit") to select a different process. When selecting it, you can narrow the list of available processes by choosing a particular host or Management Zone.
+* Based on your selection, the editor will suggest the Java process as a source for your metrics. This narrows the list of available MBeans or PMI modules you will use in the next step. The technology behind the process determines whether you'll browse JMX MBeans or PMI modules. Select **Add metrics source** to use a suggested source. Click ![Edit](https://dt-cdn.net/images/edit-icon-a083c62c49.svg "Edit") to select a different process. When selecting it, you can narrow the list of available processes by choosing a particular host or Management Zone.
 
 Selecting the process, host, or Management Zone doesn't limit the extension monitoring scope. JMX/PMI extensions monitor all Java processes accessible to OneAgent. The metric defined for the same MBean and attribute will be also available in other Java processes across your application, which can quickly exhaust your custom metric limit.
 
@@ -38,7 +37,7 @@ You can also select individual hosts on which to run your new JMX extension, ins
 1. Immediately after you add your JMX extension, go to **Settings**> **Monitored technologies** > **Custom extensions** tab and disable it globally.
 2. Navigate to individual host pages, open the host settings, find your JMX extension and enable it.
 
-5. When the metrics list is downloaded, click the **Add metric** button to start creating your extension.
+5. When the metrics list is downloaded, select **Add metric** to start creating your extension.
 
    #### Domain
 
@@ -78,7 +77,7 @@ Creating the PMI extension is very similar to the JMX extension. PMI Module tran
 
 ## Saving the extension
 
-After you add the metric, you can still edit or delete its definition. You must click the **Save** button to register the extension and start collecting data from all Java processes that contain defined MBeans. After you save the extension, you cannot edit or delete the metrics, as this way we're able to maintain the continuity of your data. You can still add the new metrics. This time however, you won't be able to select the base Java process, because you will use a process where the extension is already deployed.
+After you add the metric, you can still edit or delete its definition. You need to select **Save** to register the extension and start collecting data from all Java processes that contain defined MBeans. After you save the extension, you can't edit or delete the metrics, as this way we're able to maintain the continuity of your data. You can still add new metrics. This time, however, you won't be able to select the base Java process, because you'll use a process where the extension is already deployed.
 
 ## Customizing your extension
 
@@ -88,7 +87,7 @@ You need to create a JSON file that describes your JMX metrics and how you want 
 
 ## Upload a JMX extension
 
-1. To add a JMX extension to Dynatrace, go to **Settings** > **Monitored technologies > Custom extensions** and click **Upload extension**.
+1. To add a JMX extension to Dynatrace, go to **Settings** > **Monitored technologies > Custom extensions** and select **Upload extension**.
 2. Select the `plugin.json` file of your JMX extension.  
    Once successfully uploaded, your extension is listed on the **Custom extensions** page. You don't need to restart your JVM to enable JMX extensions or make changes effective.
 
@@ -98,13 +97,13 @@ You need to create a JSON file that describes your JMX metrics and how you want 
 
 JMX metrics are available for all Java-based processes monitored by OneAgent.
 
-Once your extension is uploaded, Dynatrace automatically begins querying the defined metrics for all Java processes. To find the metrics, go to a relevant process page and click **Further details**.
+Once your extension is uploaded, Dynatrace automatically begins querying the defined metrics for all Java processes. To find the metrics, go to a relevant process page and select **Further details**.
 
 ![JMX metrics](https://dt-cdn.net/images/jmxeditor-1-600-91b2c04b73.png)
 
 JMX metrics
 
-For example, for a extension named `HornetQ`, go to the process you selected when creating the extension, click **Further details** and then select the **HornetQ** tab named automatically after the extension name. You'll find all the defined metrics there.
+For example, for a extension named `HornetQ`, go to the process you selected when creating the extension, select **Further details** and then select the **HornetQ** tab named automatically after the extension name. You'll find all the defined metrics there.
 
 ![JMX metrics](https://dt-cdn.net/images/jmxeditor-2-1211-ca87466d9e.png)
 
@@ -112,7 +111,7 @@ JMX metrics
 
 Not seeing a certain metric?
 
-JMX monitoring is highly dynamic. If a particular metric doesnât exist in your JVM, it's not an errorâthe metric simply isn't available.
+JMX monitoring is highly dynamic. If a particular metric doesn’t exist in your JVM, it's not an error—the metric simply isn't available.
 
 ## JMX/PMI extension custom metrics
 
@@ -226,7 +225,7 @@ The following sample shows how to define a metric that provides multiple timeser
 
 In this example, MBeans `com.sample:type=XY,name=A` and `com.sample:type=XY,name=B` will result in two timeseries metrics (`A` and `B`).
 
-Since such values typically aren't known in advance, and are subject to change, this can lead to an unexpectedly high number of [consumed custom metrics](/managed/license/monitoring-consumption-classic/davis-data-units/metric-cost-calculation "Understand how to calculate Davis data unit consumption and costs related to monitored metrics."). If the values of the property are known in advance, or if only some of the values are of interest, we recommend that you specify one metric for each value and not use splitting.
+Since such values typically aren't known in advance, and are subject to change, this can lead to an unexpectedly high number of [consumed custom metrics](/managed/license/classic-licensing/davis-data-units/metric-cost-calculation "Understand how to calculate Davis data unit consumption and costs related to monitored metrics."). If the values of the property are known in advance, or if only some of the values are of interest, we recommend that you specify one metric for each value and not use splitting.
 
 ## Metrics limit per JMX extension
 

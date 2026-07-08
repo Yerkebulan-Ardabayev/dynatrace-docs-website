@@ -1,7 +1,6 @@
 ---
 title: Vulnerabilities API - PUT mute or unmute a remediation item
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/application-security/vulnerabilities/put-remediation-items
-scraped: 2026-05-12T11:59:13.247352
 ---
 
 # Vulnerabilities API - PUT mute or unmute a remediation item
@@ -94,7 +93,7 @@ This is a model of the request body, showing the possible elements. It has to be
 | Element | Type | Description |
 | --- | --- | --- |
 | code | integer | The HTTP status code |
-| constraintViolations | [ConstraintViolation[]](#openapi-definition-ConstraintViolation) | A list of constraint violations |
+| constraintViolations | [ConstraintViolation](#openapi-definition-ConstraintViolation)[] | A list of constraint violations |
 | message | string | The error message |
 
 #### The `ConstraintViolation` object

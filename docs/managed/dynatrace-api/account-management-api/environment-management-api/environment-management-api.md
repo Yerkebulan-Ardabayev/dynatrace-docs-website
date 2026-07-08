@@ -1,7 +1,6 @@
 ---
 title: Environment management API - GET all environments of an account
 source: https://docs.dynatrace.com/managed/dynatrace-api/account-management-api/environment-management-api/environment-management-api
-scraped: 2026-05-12T11:06:36.171454
 ---
 
 # Environment management API - GET all environments of an account
@@ -43,8 +42,8 @@ To execute this request, you need the **Allow read access for environment resour
 
 | Element | Type | Description |
 | --- | --- | --- |
-| tenantResources | [TenantResourceDto[]](#openapi-definition-TenantResourceDto) | A list of environments in the account. |
-| managementZoneResources | [ManagementZoneResourceDto[]](#openapi-definition-ManagementZoneResourceDto) | A list of management zones in the account. |
+| tenantResources | [TenantResourceDto](#openapi-definition-TenantResourceDto)[] | A list of environments in the account. |
+| managementZoneResources | [ManagementZoneResourceDto](#openapi-definition-ManagementZoneResourceDto)[] | A list of management zones in the account. |
 
 #### The `TenantResourceDto` object
 

@@ -1,7 +1,6 @@
 ---
 title: ActiveGate directories
 source: https://docs.dynatrace.com/managed/ingest-from/dynatrace-activegate/configuration/where-can-i-find-activegate-files
-scraped: 2026-05-12T11:36:26.148012
 ---
 
 # ActiveGate directories
@@ -9,7 +8,7 @@ scraped: 2026-05-12T11:36:26.148012
 # ActiveGate directories
 
 * 1-min read
-* Updated on Apr 21, 2026
+* Updated on May 07, 2026
 
 Linux
 
@@ -21,10 +20,10 @@ Windows
 | [ActiveGate configuration](#ag-config) | `/var/lib/dynatrace/gateway/config` | `<CONFIG>/gateway/config` |  |
 | ActiveGate SSL folder | `/var/lib/dynatrace/gateway/ssl` | `<CONFIG>/gateway/ssl` |  |
 | ActiveGate temporary files | `/var/tmp/dynatrace/gateway` | `<TEMP>/gateway` | 4 GB (including 3 GB for cached OneAgent installers and container images) |
-| ActiveGate logs | `/var/log/dynatrace/gateway` | `<LOG>/gateway` | 500 MB |
+| ActiveGate logs | `/var/log/dynatrace/gateway` | `<LOG>/gateway` | 1.2 GB |
 | Dump files uploaded to ActiveGate by OneAgent | `/var/lib/dynatrace/gateway/dump` | `<CONFIG>/gateway/dump` | Functionality off by default. When activated, can take configurable maximum size: default 100 GB. |
-| ActiveGate packages directory for auto-update installer downloads | `/var/lib/dynatrace/packages` | `<PACKAGES_DIR>` | 500 MB. |
-| ActiveGate extensions executable files, libraries, and related files[1](#fn-1-1-def) | `/opt/dynatrace/remotepluginmodule` | `<INSTALL>/remotepluginmodule` | 350 MB |
+| ActiveGate packages directory for auto-update installer downloads | `/var/lib/dynatrace/packages` | `<PACKAGES_DIR>` | 600 MB |
+| ActiveGate extensions executable files, libraries, and related files[1](#fn-1-1-def) | `/opt/dynatrace/remotepluginmodule` | `<INSTALL>/` | 1.2 GB |
 | ActiveGate extensions configuration, logs, cache, run-time work area | `/var/lib/dynatrace/remotepluginmodule` | `<CONFIG>/remotepluginmodule` | 2 GB (for logs and crash dumps) |
 | ActiveGate extensions upload directory | `/opt/dynatrace/remotepluginmodule/plugin_deployment/` | `<INSTALL>/remotepluginmodule/plugin_deployment/` | Depending on uploaded extensions |
 | zRemote executable files, libraries, and related files | `/opt/dynatrace/zremote` | `<INSTALL>/zremote` | 50 MB |
@@ -52,10 +51,10 @@ On Windows, the `%PROGRAMDATA%` directory is usually hidden for non-privileged u
 | ActiveGate configuration | `%PROGRAMDATA%\dynatrace\gateway\config` |  |  |
 | ActiveGate SSL folder | `%PROGRAMDATA%\dynatrace\gateway\ssl` |  |  |
 | ActiveGate temporary files | `%PROGRAMDATA%\dynatrace\gateway\tmp` |  | 4 GB (including 3 GB for cached OneAgent installers and container images) |
-| ActiveGate logs | `%PROGRAMDATA%\dynatrace\gateway\log` |  | 500 MB |
+| ActiveGate logs | `%PROGRAMDATA%\dynatrace\gateway\log` |  | 1.2 GB |
 | Dump files uploaded to ActiveGate by OneAgent | `%PROGRAMDATA%\dynatrace\gateway\dump` |  | Functionality off by default. When activated, can take configurable maximum size: default 100 GB. |
-| ActiveGate packages directory for auto-update installer downloads | `%PROGRAMDATA%\dynatrace\packages` |  | 500 MB |
-| ActiveGate extensions executable files, libraries, and related files | `%PROGRAMFILES%\dynatrace\remotepluginmodule` | `<INSTALL>\remotepluginmodule` | 350 MB |
+| ActiveGate packages directory for auto-update installer downloads | `%PROGRAMDATA%\dynatrace\packages` |  | 600 MB |
+| ActiveGate extensions executable files, libraries, and related files | `%PROGRAMFILES%\dynatrace\remotepluginmodule` | `<INSTALL>\remotepluginmodule` | 1.2 GB |
 | ActiveGate extensions configuration, logs, cache, run-time work area | `%PROGRAMDATA%\dynatrace\remotepluginmodule` |  | 2 GB (for logs and crash dumps) |
 | ActiveGate extensions upload directory | `%PROGRAMFILES%\dynatrace\remotepluginmodule\plugin_deployment` | `<INSTALL>\remotepluginmodule\plugin_deployment` | Depending on uploaded extensions |
 | zRemote executable files, libraries, and related files | `%PROGRAMFILES%\dynatrace\zremote` | `<INSTALL>\zremote` | 50 MB |

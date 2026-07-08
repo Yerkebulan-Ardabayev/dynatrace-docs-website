@@ -1,7 +1,6 @@
 ---
 title: Service detection API - DELETE an opaque web service rule
 source: https://docs.dynatrace.com/managed/dynatrace-api/configuration-api/service-api/detection-rules/opaque-web-service/delete-rule
-scraped: 2026-05-12T11:18:17.470912
 ---
 
 # Service detection API - DELETE an opaque web service rule

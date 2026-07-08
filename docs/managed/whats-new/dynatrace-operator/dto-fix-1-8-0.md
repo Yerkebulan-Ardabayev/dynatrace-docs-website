@@ -1,7 +1,6 @@
 ---
 title: Dynatrace Operator release notes version 1.8.0
 source: https://docs.dynatrace.com/managed/whats-new/dynatrace-operator/dto-fix-1-8-0
-scraped: 2026-05-12T12:05:26.349587
 ---
 
 # Dynatrace Operator release notes version 1.8.0
@@ -32,9 +31,9 @@ For configuration details and examples, see the [OTLP auto-configuration guide](
 * We introduced improvements to the [RBAC model used for Kubernetes monitoring](/managed/ingest-from/setup-on-k8s/reference/security#kubernetes-monitoring "This page provides an overview of the Dynatrace components, their default configurations, and the permissions they require") via ActiveGate.
 
   + The `dynatrace-kubernetes-monitoring` ServiceAccount has been removed and replaced by the `dynatrace-activegate` ServiceAccount.
-  + You can use [Kubernetes ClusterRole aggregationï»¿](https://kubernetes.io/docs/reference/access-authn-authz/rbac/#aggregated-clusterroles) to assign additional monitoring permissions to the `dynatrace-activegate` ServiceAccount during Operator installation. For details, see the [ClusterRole aggregation documentation](/managed/ingest-from/setup-on-k8s/guides/deployment-and-configuration/cluster-role-aggregation "Understanding how the Dynatrace Operator uses ClusterRole aggregation to manage permissions for Kubernetes monitoring.").
-  + The `dynatrace-kubernetes-monitoring` ClusterRole uses [Kubernetes ClusterRole aggregationï»¿](https://kubernetes.io/docs/reference/access-authn-authz/rbac/#aggregated-clusterroles) to assign the required permissions to the ServiceAccount during Operator installation.
-  + The ServiceAccount token is only mounted to the ActiveGate statefulset if necessary. ActiveGates that no longer require the token (e.g. routingâonly ActiveGates) are restarted after Operator upgrade to ensure no ServiceAccount token remains mounted.
+  + You can use [Kubernetes ClusterRole aggregation﻿](https://kubernetes.io/docs/reference/access-authn-authz/rbac/#aggregated-clusterroles) to assign additional monitoring permissions to the `dynatrace-activegate` ServiceAccount during Operator installation. For details, see the [ClusterRole aggregation documentation](/managed/ingest-from/setup-on-k8s/guides/deployment-and-configuration/cluster-role-aggregation "Understanding how the Dynatrace Operator uses ClusterRole aggregation to manage permissions for Kubernetes monitoring.").
+  + The `dynatrace-kubernetes-monitoring` ClusterRole uses [Kubernetes ClusterRole aggregation﻿](https://kubernetes.io/docs/reference/access-authn-authz/rbac/#aggregated-clusterroles) to assign the required permissions to the ServiceAccount during Operator installation.
+  + The ServiceAccount token is only mounted to the ActiveGate statefulset if necessary. ActiveGates that no longer require the token (e.g. routing‑only ActiveGates) are restarted after Operator upgrade to ensure no ServiceAccount token remains mounted.
   + Setting `rbac.kspm.create: true` now requires `rbac.activeGate.create: true` and `rbac.kubernetesMonitoring.create: true`. **Be sure to adjust your Helm values if applicable before upgrading.**
 
 * Dynatrace Operator now emits a Kubernetes warning event when the DynaKube or EdgeConnect CRD version is not the latest one supported by this Operator release. This makes it easier to identify outdated DynaKube CRD versions.
@@ -49,7 +48,7 @@ For configuration details and examples, see the [OTLP auto-configuration guide](
 
 * Use the new pod annotation `dynatrace.com/split-mounts` to avoid conflicts with application images that already contain a `/var/lib/dynatrace` directory. This annotation is mainly intended to allow code module injection in ActiveGate pods for deep monitoring. It is enabled by default on ActiveGates managed by Dynatrace Operator.
 
-* Dynatrace Operator components are made aware of pod memory limits by setting the environment variable [`GOMEMLIMIT`ï»¿](https://pkg.go.dev/runtime#hdr-Environment_Variables). This will make them more resilient against OOM kills, because it optimizes the Go garbage collector behaviour. Memory limits are set to 90% of the limits configured for Operator components via Helm (e.g. `csidriver.provisioner.resources.limts.memory`, `webhook.limits.memory`). The values can be provided using IEC suffixes (e.g. 123Mi).
+* Dynatrace Operator components are made aware of pod memory limits by setting the environment variable [`GOMEMLIMIT`﻿](https://pkg.go.dev/runtime#hdr-Environment_Variables). This will make them more resilient against OOM kills, because it optimizes the Go garbage collector behaviour. Memory limits are set to 90% of the limits configured for Operator components via Helm (e.g. `csidriver.provisioner.resources.limts.memory`, `webhook.limits.memory`). The values can be provided using IEC suffixes (e.g. 123Mi).
 
 * Namespaces selected for monitoring (matching the configured `namespaceSelectors` of `metadataEnrichment` or `oneAgent`) are written to the DynaKube conditions and to the operator log. This makes it easier to verify and troubleshoot the configured selectors.
 
@@ -65,7 +64,7 @@ For configuration details and examples, see the [OTLP auto-configuration guide](
 
 * Handling removed API versions during Dyntrace Operator upgrade
 
-  Kubernetes records CRD versions in `.status.storedVersions`, but doesnât remove entries when versions are deleted, so old versions accumulate and can block upgrades.
+  Kubernetes records CRD versions in `.status.storedVersions`, but doesn’t remove entries when versions are deleted, so old versions accumulate and can block upgrades.
 
   In Dynatrace Operator 1.8.0 API versions `v1beta1` and `v1beta2` are removed from the Dynakube CRD. If you have been using Dynatrace operator < version 1.4.0 those versions are stored in the CRD in `.status.storedVersions` and require a clean up otherwise the upgrade to the new API version `v1beta6` will fail. With Dynatrace Operator version 1.7.3 we introduced a two-step solution to ensure smooth upgrades.
 
@@ -149,7 +148,7 @@ For configuration details and examples, see the [OTLP auto-configuration guide](
 
 * Fixed an interoperability issue related to `metadataEnrichment` and `classicFullstack`. Now `metadataEnrichment` will work with `classicFullstack`. For more information, see [Dynatrace Operator support and known issues](/managed/ingest-from/technology-support/support-model-and-issues#classic-full-stack-with-metadata-enrichment "How Dynatrace supports Kubernetes and Red Hat OpenShift versions and known issues").
 
-* Fixed a connectivity issue in Dynatrace Operator v1.7 that occurred between the OTLP exporter or CodeModules injected into application pods and the inâcluster ActiveGate when the [`automatic-tls-certificate`](/managed/ingest-from/setup-on-k8s/reference/dynakube-feature-flags "List the feature flags to configure Dynatrace Operator on Kubernetes.") feature flag was switched from `true`to `false`. Starting with Operator v1.8.0, the TLS certificate previously created for the inâcluster ActiveGate is automatically removed from injected namespaces when `automatic-tls-certificate` is disabled.
+* Fixed a connectivity issue in Dynatrace Operator v1.7 that occurred between the OTLP exporter or CodeModules injected into application pods and the in‑cluster ActiveGate when the [`automatic-tls-certificate`](/managed/ingest-from/setup-on-k8s/reference/dynakube-feature-flags "List the feature flags to configure Dynatrace Operator on Kubernetes.") feature flag was switched from `true`to `false`. Starting with Operator v1.8.0, the TLS certificate previously created for the in‑cluster ActiveGate is automatically removed from injected namespaces when `automatic-tls-certificate` is disabled.
 
 * Changed mount point of EdgeConnect custom CA certificates to prevent overwriting well-known trusted CAs. Previous versions of the operator require including CA certs for public Dynatrace endpoints in the ConfigMap if EdgeConnect `.spec.caCertsRef` is set.
 
@@ -189,7 +188,7 @@ For configuration details and examples, see the [OTLP auto-configuration guide](
 
 * The OneAgent `autoUpdate` field has been removed. Automatic updates now follow your tenant's configured target version. To disable automatic updates, set either the `version` or `image` field in the DynaKube CR.
 
-* The âMark for Terminationâ event is deprecated and will be removed in a future Operator version. This functionality is now redundant, as it has been superseded by host availability events on host shutdown and reboot introduced in OneAgent version 1.301.
+* The “Mark for Termination” event is deprecated and will be removed in a future Operator version. This functionality is now redundant, as it has been superseded by host availability events on host shutdown and reboot introduced in OneAgent version 1.301.
 
 ## Upgrade from Dynatrace Operator version 1.7
 

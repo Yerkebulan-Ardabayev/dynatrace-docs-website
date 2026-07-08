@@ -1,7 +1,6 @@
 ---
 title: Update OneAgent on Solaris
 source: https://docs.dynatrace.com/managed/ingest-from/dynatrace-oneagent/installation-and-operation/solaris/update-oneagent-on-solaris
-scraped: 2026-05-12T11:09:46.871186
 ---
 
 # Update OneAgent on Solaris
@@ -38,5 +37,5 @@ Use one of these methods to check which version of OneAgent you currently have i
 ### Deployment status
 
 1. Go to **Deployment Status**.
-2. Click the **All hosts** or **Recently connected hosts** tab.
+2. Select the **All hosts** or **Recently connected hosts** tab.
 3. Expand the host entry you are interested in. The installed version of OneAgent is included in the information that shows up.

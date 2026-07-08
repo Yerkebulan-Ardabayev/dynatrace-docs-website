@@ -1,7 +1,6 @@
 ---
 title: AWS PrivateLink API - PUT allowlist
 source: https://docs.dynatrace.com/managed/dynatrace-api/configuration-api/aws-privatelink/put-allowlist
-scraped: 2026-05-12T11:21:15.565203
 ---
 
 # AWS PrivateLink API - PUT allowlist
@@ -86,7 +85,7 @@ This is a model of the request body, showing the possible elements. It has to be
 | Element | Type | Description |
 | --- | --- | --- |
 | code | integer | The HTTP status code |
-| constraintViolations | [ConstraintViolation[]](#openapi-definition-ConstraintViolation) | A list of constraint violations |
+| constraintViolations | [ConstraintViolation](#openapi-definition-ConstraintViolation)[] | A list of constraint violations |
 | message | string | The error message |
 
 #### The `ConstraintViolation` object

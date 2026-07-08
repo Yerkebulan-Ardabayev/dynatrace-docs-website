@@ -1,7 +1,6 @@
 ---
 title: What's new in Dynatrace Managed version 1.328
 source: https://docs.dynatrace.com/managed/whats-new/managed/sprint-328
-scraped: 2026-05-12T11:07:49.394800
 ---
 
 # What's new in Dynatrace Managed version 1.328

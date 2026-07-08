@@ -1,7 +1,6 @@
 ---
 title: Apply and use management zones
 source: https://docs.dynatrace.com/managed/manage/identity-access-management/permission-management/management-zones/apply-and-use-management-zones
-scraped: 2026-05-12T12:05:02.759422
 ---
 
 # Apply and use management zones
@@ -12,7 +11,7 @@ scraped: 2026-05-12T12:05:02.759422
 * 4-min read
 * Updated on Aug 20, 2025
 
-After [setting up management zones](/managed/manage/identity-access-management/permission-management/management-zones/set-up-management-zones "Create and assign access rights to management zones."), you can [assign them to user groups](#apply) and provide the required management zoneâlevel permissions. Members of those groups can then [filter their environments based on their assigned management zones](#filter) assigned to them. You can also [use management zones to set up maintenance windows](#mw).
+After [setting up management zones](/managed/manage/identity-access-management/permission-management/management-zones/set-up-management-zones "Create and assign access rights to management zones."), you can [assign them to user groups](#apply) and provide the required management zone–level permissions. Members of those groups can then [filter their environments based on their assigned management zones](#filter) assigned to them. You can also [use management zones to set up maintenance windows](#mw).
 
 ## Apply a management zone
 
@@ -22,7 +21,7 @@ These high-level steps take you through the process of assigning a management zo
 2. In the Cluster Management Console, go to **User authentication** > **User groups**.
 3. Create or select a group to which you want to add the user.
 
-   Assign the group the required environment-level and management zoneâlevel [permissions](/managed/manage/identity-access-management/user-and-group-management/user-groups-and-permissions "Learn about the supported permissions and policies, how you can assign them to groups, and how you can manage your users and groups.") that you'd like the user to have over the entities accessible within the management zone. For example, if you want your user to create or edit synthetic monitors in a management zone, you need to provide the **Manage monitoring settings** permission at the management zone or environment level.
+   Assign the group the required environment-level and management zone–level [permissions](/managed/manage/identity-access-management/user-and-group-management/user-groups-and-permissions "Learn about the supported permissions and policies, how you can assign them to groups, and how you can manage your users and groups.") that you'd like the user to have over the entities accessible within the management zone. For example, if you want your user to create or edit synthetic monitors in a management zone, you need to provide the **Manage monitoring settings** permission at the management zone or environment level.
 4. Check that your user has **ACTIVE** status.
 5. Assign the group (with access to the management zone) from the step above to the user.
 
@@ -30,7 +29,7 @@ When the user logs in to the environment, they can use the **Filter** button  in
 
 ## Filter by a management zone
 
-Management zones are accessible as filters (via the **Filter** button  in the menu bar) to all users who are assigned to those management zonesâselect the appropriate management zone from the list.
+Management zones are accessible as filters (via the **Filter** button  in the menu bar) to all users who are assigned to those management zones—select the appropriate management zone from the list.
 
 ![Filter by management zones](https://dt-cdn.net/images/mz-filter-2560-89a3233cbf.png)
 
@@ -44,8 +43,8 @@ From within a management zone, you can only see the entities you have access to 
 
 You can see [**Dashboards**](/managed/analyze-explore-automate/dashboards-classic "Learn how to create, manage, and use Dynatrace Dashboards Classic.") created by others and create your own for the entities you have access to.
 
-Note that viewing [Real User Monitoring (RUM)](/managed/observe/digital-experience/rum-concepts/rum-overview "Learn about Real User Monitoring, key performance metrics, mobile app monitoring, and more.") data requires the **View environment** [environment-level permission](/managed/manage/identity-access-management/permission-management/role-based-permissions#permissions "Role-based permissions").
+Note that viewing [Real User Monitoring (RUM)](/managed/observe/digital-experience/rum-classic/rum-concepts/rum-overview "Learn about Real User Monitoring Classic, key performance metrics, mobile app monitoring, and more.") data requires the **View environment** [environment-level permission](/managed/manage/identity-access-management/permission-management/role-based-permissions#permissions "Role-based permissions").
 
 ## Management zones and maintenance windows
 
-You can [define maintenance windows that are filtered by management zones](/managed/analyze-explore-automate/notifications-and-alerting/maintenance-windows/define-maintenance-window#scope "Create maintenance windows and define their scope.")âentities matching the management zones are considered to be under maintenance.
+You can [define maintenance windows that are filtered by management zones](/managed/analyze-explore-automate/notifications-and-alerting/maintenance-windows/define-maintenance-window#scope "Create maintenance windows and define their scope.")—entities matching the management zones are considered to be under maintenance.

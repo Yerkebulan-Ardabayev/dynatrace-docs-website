@@ -1,7 +1,6 @@
 ---
 title: Synthetic locations API v1
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/synthetic/synthetic-locations
-scraped: 2026-05-12T11:12:11.733452
 ---
 
 # Synthetic locations API v1
@@ -11,7 +10,7 @@ scraped: 2026-05-12T11:12:11.733452
 * Reference
 * Published Sep 25, 2018
 
-We have a new version of this APIâ[Synthetic API v2](/managed/dynatrace-api/environment-api/synthetic-v2 "Find out what the Dynatrace Synthetic v2 API offers."). Check it out!
+We have a new version of this API—[Synthetic API v2](/managed/dynatrace-api/environment-api/synthetic-v2 "Find out what the Dynatrace Synthetic v2 API offers."). Check it out!
 
 The **locations** endpoints of the **Synthetic API** enable you to retrieve information about synthetic locations.
 

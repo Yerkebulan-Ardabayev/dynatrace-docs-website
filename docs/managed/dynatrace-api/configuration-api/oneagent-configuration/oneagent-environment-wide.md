@@ -1,7 +1,6 @@
 ---
 title: OneAgent environment-wide configuration API
 source: https://docs.dynatrace.com/managed/dynatrace-api/configuration-api/oneagent-configuration/oneagent-environment-wide
-scraped: 2026-05-12T11:04:17.423515
 ---
 
 # OneAgent environment-wide configuration API

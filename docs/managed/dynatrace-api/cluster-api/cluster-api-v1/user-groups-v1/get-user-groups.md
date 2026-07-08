@@ -1,7 +1,6 @@
 ---
 title: Get user groups
 source: https://docs.dynatrace.com/managed/dynatrace-api/cluster-api/cluster-api-v1/user-groups-v1/get-user-groups
-scraped: 2026-05-12T12:12:20.172147
 ---
 
 # Get user groups
@@ -30,7 +29,7 @@ The request doesn't provide any configurable parameters.
 
 | Code | Type | Description |
 | --- | --- | --- |
-| **200** | [GroupConfig[]](#openapi-definition-GroupConfig) | Success |
+| **200** | [GroupConfig](#openapi-definition-GroupConfig)[] | Success |
 
 ### Response body objects
 

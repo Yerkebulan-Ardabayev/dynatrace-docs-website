@@ -1,7 +1,6 @@
 ---
 title: Log Monitoring configuration (Logs Classic)
 source: https://docs.dynatrace.com/managed/analyze-explore-automate/log-monitoring/log-monitoring-configuration
-scraped: 2026-05-12T11:13:28.083958
 ---
 
 # Log Monitoring configuration (Logs Classic)
@@ -59,6 +58,8 @@ Similarly to checking Log Monitoring status, you can enable or disable Log Monit
 
   Restart OneAgent service to apply changes.
 
+  If Log Monitoring is unexpectedly disabled after a OneAgent upgrade, see [Troubleshooting OneAgent installation](/managed/ingest-from/dynatrace-oneagent/oneagent-troubleshooting/troubleshoot-oneagent-installation#log-monitoring-disabled-after-upgrade "Learn how to troubleshoot OneAgent installation on AIX, Linux, and Windows.").
+
 ## OneAgent settings
 
 Dynatrace Log Monitoring uses the [OneAgent log module](/managed/discover-dynatrace/get-started/glossary#glossary-oneagent-log-module "Get acquainted with Dynatrace terminology.") enabled by default with all OneAgent installations. While Log Monitoring does not require any specific configuration, you can modify some of the options available for the OneAgent log module.
@@ -79,7 +80,7 @@ You can adjust:
 ### Host-specific OneAgent settings for Log Monitoring
 
 1. Go to **Hosts** and select your Linux host.
-2. On the host overview page, select **More** (**â¦**) > **Settings** in the upper-right corner of the page.
+2. On the host overview page, select **More** (**…**) > **Settings** in the upper-right corner of the page.
 3. On the **Host settings** page, select **Log Monitoring** and **Advanced log settings**.
 4. Adjust settings and **Save changes**.
 

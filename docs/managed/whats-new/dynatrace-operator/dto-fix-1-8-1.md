@@ -1,7 +1,6 @@
 ---
 title: Dynatrace Operator release notes version 1.8.1
 source: https://docs.dynatrace.com/managed/whats-new/dynatrace-operator/dto-fix-1-8-1
-scraped: 2026-05-12T12:13:31.434897
 ---
 
 # Dynatrace Operator release notes version 1.8.1

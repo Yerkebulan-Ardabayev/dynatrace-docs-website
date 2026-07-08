@@ -1,7 +1,6 @@
 ---
 title: SLO management with management-zone permissions
 source: https://docs.dynatrace.com/managed/deliver/service-level-objectives-classic/slo-mz-permissions
-scraped: 2026-05-12T11:38:26.682970
 ---
 
 # SLO management with management-zone permissions

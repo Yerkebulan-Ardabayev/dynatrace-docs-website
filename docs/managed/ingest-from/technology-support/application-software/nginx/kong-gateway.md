@@ -1,7 +1,6 @@
 ---
 title: Kong Gateway monitoring
 source: https://docs.dynatrace.com/managed/ingest-from/technology-support/application-software/nginx/kong-gateway
-scraped: 2026-05-12T11:23:25.123310
 ---
 
 # Kong Gateway monitoring
@@ -51,11 +50,11 @@ Kong Gateway requires the configuration of two settings.
 * `tracing_instrumentations = all`
 * `tracing_sampling_rate = 1.0`
 
-For further details and option, see the [Kong Gateway documentationï»¿](https://dt-url.net/2m03q66).
+For further details and option, see the [Kong Gateway documentation﻿](https://dt-url.net/2m03q66).
 
 ## Step 2 Configure OpenTelemetry plugin
 
-1. Evaluate support for logging and tracing according to the [OpenTelemetry plugin versionï»¿](https://dt-url.net/1423wjw) installed in your environment.
+1. Evaluate support for logging and tracing according to the [OpenTelemetry plugin version﻿](https://dt-url.net/1423wjw) installed in your environment.
 2. Send the following POST request (example assumes Kong Gateway 3.8+) by replacing `{HOST}`, `{PLUGIN-INSTANCE_NAME}` and `{OPENTELEMETRY_COLLECTOR}` with proper values:
 
 ```
@@ -288,9 +287,9 @@ exporters: [otlp_http]
 
 ## Metrics
 
-Kongâs Prometheus plugin is a convenient way to collect Kong Gateway metrics. Dynatrace can collect these metrics directly from the Gateway produced by the Kong plugin. The default port and endpoint is `8001/metrics`.
+Kong’s Prometheus plugin is a convenient way to collect Kong Gateway metrics. Dynatrace can collect these metrics directly from the Gateway produced by the Kong plugin. The default port and endpoint is `8001/metrics`.
 
-For more information and a list of available metrics, see the [Kong Prometheus plugin documentationï»¿](https://dt-url.net/gp23qq7).
+For more information and a list of available metrics, see the [Kong Prometheus plugin documentation﻿](https://dt-url.net/gp23qq7).
 
 ## Step 1 Enable Kong Prometheus plugin
 
@@ -382,7 +381,7 @@ curl -i http://{HOST}:8001/metrics
 
 ## Step 2 Collect Prometheus metrics
 
-After configuring [Kong Gateway's Prometheus pluginï»¿](https://dt-url.net/gp23qq7), metrics can be collected using the Dynatrace ActiveGate (recommended) or the OpenTelemetry Collector.
+After configuring [Kong Gateway's Prometheus plugin﻿](https://dt-url.net/gp23qq7), metrics can be collected using the Dynatrace ActiveGate (recommended) or the OpenTelemetry Collector.
 
 ActiveGate
 
@@ -396,6 +395,6 @@ To learn how to collect Prometheus metrics in Kubernetes, see [Monitor Prometheu
 
 ### Scrape metrics using OpenTelemetry Collector
 
-You can also use the OpenTelemetry Collectorâs Prometheus receiver to collect metrics from the Kong Gateway. To learn how to scrape Prometheus data using an OpenTelemetry collector, see [Scrape Prometheus metrics with the OTel Collector](/managed/ingest-from/opentelemetry/collector/use-cases/prometheus "Configure the OpenTelemetry Collector to scrape your Prometheus data.").
+You can also use the OpenTelemetry Collector’s Prometheus receiver to collect metrics from the Kong Gateway. To learn how to scrape Prometheus data using an OpenTelemetry collector, see [Scrape Prometheus metrics with the OTel Collector](/managed/ingest-from/opentelemetry/collector/use-cases/prometheus "Configure the OpenTelemetry Collector to scrape Prometheus endpoints and ingest the data into Dynatrace.").
 
 If you're running on Kubernetes, you can enrich traces, metrics, and logs using the Collector's Kubernetes attribute processor. This allows Dynatrace to map the telemetry data to the correct toplogy. To learn how to enable enrichment in the OpenTelemetry Collector, see [Enrich OTLP requests with Kubernetes data](/managed/ingest-from/opentelemetry/collector/use-cases/kubernetes/k8s-enrich "Configure the OpenTelemetry Collector to enrich OTLP requests with Kubernetes data.").

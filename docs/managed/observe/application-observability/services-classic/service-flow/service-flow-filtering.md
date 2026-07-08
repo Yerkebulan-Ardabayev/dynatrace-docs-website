@@ -1,7 +1,6 @@
 ---
 title: Service flow filtering
 source: https://docs.dynatrace.com/managed/observe/application-observability/services-classic/service-flow/service-flow-filtering
-scraped: 2026-05-12T11:24:15.234747
 ---
 
 # Service flow filtering
@@ -13,7 +12,7 @@ scraped: 2026-05-12T11:24:15.234747
 
 Modern web applications typically feature complex service architectures that can process millions of different types of requests. With each unique request behaving slightly differently and triggering a slightly varied service flow, it can be a real challenge to analyze the performance and behavior of individual requests.
 
-The filtering features help you to navigate the complexity of your application's service architectureâenabling you to find the proverbial needle in the haystack. Dynatrace **Service flow** enables you to analyze subsets of requests triggered by a given service.
+The filtering features help you to navigate the complexity of your application's service architecture—enabling you to find the proverbial needle in the haystack. Dynatrace **Service flow** enables you to analyze subsets of requests triggered by a given service.
 
 The general **Service flow** filtration procedure looks like this:
 
@@ -39,7 +38,7 @@ See below for a more detailed explanation.
 
 ## Filter requests based on specific call sequences
 
-Call sequence filters are available in most service analysis views, but theyâre most obvious in the **Service flow**. As you can see in the example below, only **5.9%** of the requests to the `easyTravel Customer Frontend` service also called the `JourneyService` service. Next, **99%** of them called the `easyTravel-Business` database service.
+Call sequence filters are available in most service analysis views, but they’re most obvious in the **Service flow**. As you can see in the example below, only **5.9%** of the requests to the `easyTravel Customer Frontend` service also called the `JourneyService` service. Next, **99%** of them called the `easyTravel-Business` database service.
 
 ![Service flow - overview](https://dt-cdn.net/images/service-flow-overview-1779-2ec7d38f7d.png)
 
@@ -61,7 +60,7 @@ Let's go back to our example. A filter has been created to focus analysis only o
 
 Notice that the number of requests analyzed on `easyTravel Customer Frontend` has been reduced to **8.73k** from **156k**, as only a subset of calls is now taken into account. Consequently, the average response time now represents only those `easyTravel Customer Frontend` requests that call `JourneyService`.
 
-Now take a close look at the `JourneyService` node. Note that **35%** of the `easyTravel Customer Frontend` service's response time is taken up by `JourneyService`. **Service flow** also reveals something unexpectedâsome of the selected requests trigger the `RMI server`.
+Now take a close look at the `JourneyService` node. Note that **35%** of the `easyTravel Customer Frontend` service's response time is taken up by `JourneyService`. **Service flow** also reveals something unexpected—some of the selected requests trigger the `RMI server`.
 
 ![Service flow - filter by called service](https://dt-cdn.net/images/service-flow-filter-1621-b66825047a.png)
 
@@ -107,7 +106,7 @@ Service flow - results of filtering
 
 The true power of call-sequence filtering becomes apparent when you begin analysis of a problematic call sequence. In the example above, **Service flow** now shows us that **40%** of the `easyTravel Customer Frontend` service's response time is taken up by `JourneyService`.
 
-The next logical step is to analyze the response time of the `JourneyService` service in the context of the selected call sequence. To do this, select `JourneyService` within `Service flow`. The right pane reveals all the analysis options that you can perform on the selected serviceâall within the context of the filtered call sequence. All the filters you created in **Service flow** will also be applied to the additional analysis.
+The next logical step is to analyze the response time of the `JourneyService` service in the context of the selected call sequence. To do this, select `JourneyService` within `Service flow`. The right pane reveals all the analysis options that you can perform on the selected service—all within the context of the filtered call sequence. All the filters you created in **Service flow** will also be applied to the additional analysis.
 
 Learn more about additional analysis options in topics listed below.
 
@@ -122,4 +121,4 @@ Learn more about additional analysis options in topics listed below.
 
 ## Related topics
 
-* [Advanced service flow filteringï»¿](https://www.youtube.com/watch?v=bbZdkuClx-E)
+* [Advanced service flow filtering﻿](https://www.youtube.com/watch?v=bbZdkuClx-E)

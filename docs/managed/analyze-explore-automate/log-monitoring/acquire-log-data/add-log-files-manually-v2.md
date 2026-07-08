@@ -1,7 +1,6 @@
 ---
 title: Add log files manually (Logs Classic)
 source: https://docs.dynatrace.com/managed/analyze-explore-automate/log-monitoring/acquire-log-data/add-log-files-manually-v2
-scraped: 2026-05-12T11:13:15.972124
 ---
 
 # Add log files manually (Logs Classic)
@@ -164,9 +163,9 @@ If you have a file named `AlertServiceLog.txt`, the above scenarios apply as sho
 | --- | --- | --- |
 | AlertServiceLog.txt | NOT OK | Does not contain a full path. |
 | c:\customdir\AlertServiceLog.txt | NOT OK | Contains a full path, but no additional requirement met. |
-| c:â¦\log\AlertServiceLog.txt | OK | 1st level requirement met. |
-| c:â¦\log\app2\AlertServiceLog.txt | OK | 2nd level requirement met. |
-| c:â¦\log\app2\app22\AlertServiceLog.txt | NOT OK | level > 2 |
+| c:…\log\AlertServiceLog.txt | OK | 1st level requirement met. |
+| c:…\log\app2\AlertServiceLog.txt | OK | 2nd level requirement met. |
+| c:…\log\app2\app22\AlertServiceLog.txt | NOT OK | level > 2 |
 | c:\customdir\file.log | OK | `.log` extension |
 | c:\customdir\file-log | OK | `-log` extension |
 | /var/log/customdir/AlertServiceLog\_log\* | OK | Wild card is accepted (if at least one additional criterion is met, here: `_log` extension). |

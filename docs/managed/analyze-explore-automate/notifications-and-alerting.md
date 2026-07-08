@@ -1,7 +1,6 @@
 ---
 title: Notifications and alerting
 source: https://docs.dynatrace.com/managed/analyze-explore-automate/notifications-and-alerting
-scraped: 2026-05-12T11:03:20.620017
 ---
 
 # Notifications and alerting

@@ -1,7 +1,6 @@
 ---
 title: ActiveGate API - GET all auto-update jobs
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/activegates/auto-update-jobs/get-all-jobs
-scraped: 2026-05-12T11:59:58.656593
 ---
 
 # ActiveGate API - GET all auto-update jobs
@@ -60,7 +59,7 @@ A list of update jobs of the ActiveGate.
 | Element | Type | Description |
 | --- | --- | --- |
 | agId | string | The ID of the ActiveGate. |
-| updateJobs | [UpdateJob[]](#openapi-definition-UpdateJob) | A list of update jobs of the ActiveGate. |
+| updateJobs | [UpdateJob](#openapi-definition-UpdateJob)[] | A list of update jobs of the ActiveGate. |
 
 #### The `UpdateJob` object
 
@@ -92,7 +91,7 @@ Configuration of the ActiveGate update job.
 | Element | Type | Description |
 | --- | --- | --- |
 | code | integer | The HTTP status code |
-| constraintViolations | [ConstraintViolation[]](#openapi-definition-ConstraintViolation) | A list of constraint violations |
+| constraintViolations | [ConstraintViolation](#openapi-definition-ConstraintViolation)[] | A list of constraint violations |
 | message | string | The error message |
 
 #### The `ConstraintViolation` object

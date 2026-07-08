@@ -1,7 +1,6 @@
 ---
 title: Third-party synthetic API
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/synthetic/third-party-synthetic
-scraped: 2026-05-12T11:11:46.612098
 ---
 
 # Third-party synthetic API

@@ -1,7 +1,6 @@
 ---
 title: Settings API - Log custom attributes schema table
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/settings/schemas/builtin-logmonitoring-log-custom-attributes
-scraped: 2026-05-12T11:41:28.629265
 ---
 
 # Settings API - Log custom attributes schema table

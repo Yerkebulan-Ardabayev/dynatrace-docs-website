@@ -1,7 +1,6 @@
 ---
 title: Pin tiles to your dashboard
 source: https://docs.dynatrace.com/managed/analyze-explore-automate/dashboards-classic/charts-and-tiles/pin-tiles-to-your-dashboard
-scraped: 2026-05-12T11:13:01.058281
 ---
 
 # Pin tiles to your dashboard
@@ -31,7 +30,7 @@ We start by creating an empty dashboard.
 Now we create a tile based on a filtered view of the **Hosts** page and pin the tile to the empty dashboard.
 
 1. Go to **Hosts**.
-2. Set a filter on the list. In this example, we set `Data center: GdaÅsk, Poland`.
+2. Set a filter on the list. In this example, we set `Data center: Gdańsk, Poland`.
 
    ![Resulting filter](https://dt-cdn.net/images/filter-03-379-52198a4b6b.png)
 
@@ -75,13 +74,13 @@ Now we create a tile based on a filtered view of the **Hosts** page and pin the 
 
    Filter tiles: tile edit mode
 6. Select **Done**.  
-   The dashboard is displayed with the new tile representing hosts in GdaÅsk, Poland.
+   The dashboard is displayed with the new tile representing hosts in Gdańsk, Poland.
 
    ![Filter tiles: display mode](https://dt-cdn.net/images/filtered-tile-05-1186-285827111d.png)
 
    Filter tiles: display mode
 
-Now we have a tile that's specific to the hosts in the GdaÅsk, Poland, data center.
+Now we have a tile that's specific to the hosts in the Gdańsk, Poland, data center.
 
 * The filter is fully dynamic. If hosts are added or removed, or if their statuses change, the tile updates automatically.
 * To view the filtered **Hosts** page from which we created the tile, open the menu in the tile's upper-right corner and select **View details**.
@@ -115,13 +114,13 @@ To change the filters on your tile
 1. On your dashboard, select the tile to display the **Hosts** table with your filter applied.
 2. Add or delete filters.
 
-   In this example, we keep `Data center: GdaÅsk, Poland` and add `Operating system: Linux`. Because we have changed the filters, the **Update dashboard tile** button is enabled so you can save changes.
+   In this example, we keep `Data center: Gdańsk, Poland` and add `Operating system: Linux`. Because we have changed the filters, the **Update dashboard tile** button is enabled so you can save changes.
 
    ![Filter tiles: additional filter](https://dt-cdn.net/images/filtered-tile-06-1431-274639b9a2.png)
 
    Filter tiles: additional filter
 3. Select **Update dashboard tile**.  
-   The new filter settings are saved to the tile. In this example, the tile on your dashboard displays the health of hosts matching `Data center: GdaÅsk, Poland` and `Operating system: Linux`, and it opens the **Hosts** page with those filters.
+   The new filter settings are saved to the tile. In this example, the tile on your dashboard displays the health of hosts matching `Data center: Gdańsk, Poland` and `Operating system: Linux`, and it opens the **Hosts** page with those filters.
 4. To return to the dashboard, select the dashboard button in the upper-left corner of Dynatrace.
 
    ![Dashboard button](https://dt-cdn.net/images/dashboardbutton-28-e3cbad6cfe.png)
@@ -134,7 +133,7 @@ Instead of updating a tile, you might want to save a new copy of the tile. For e
 
 1. On the same example dashboard, open the tile menu (in the upper-right of the tile) and select **View details**.  
    The **Hosts** page opens with the same filters set.
-2. Select **More** (**â¦**) > **Pin as new tile**.
+2. Select **More** (**…**) > **Pin as new tile**.
 
    * Select a different dashboard to have copies of the same tile on two different dashboards.
    * Select the same dashboard to have two copies of the tile on the same dashboard, which might seem pointless. However:

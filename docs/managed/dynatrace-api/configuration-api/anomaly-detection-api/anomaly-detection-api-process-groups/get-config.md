@@ -1,7 +1,6 @@
 ---
 title: Process groups anomaly detection API - GET configuration
 source: https://docs.dynatrace.com/managed/dynatrace-api/configuration-api/anomaly-detection-api/anomaly-detection-api-process-groups/get-config
-scraped: 2026-05-12T11:19:14.058424
 ---
 
 # Process groups anomaly detection API - GET configuration
@@ -72,7 +71,7 @@ Configuration of the availability monitoring for the process group.
 | Element | Type | Description |
 | --- | --- | --- |
 | code | integer | The HTTP status code |
-| constraintViolations | [ConstraintViolation[]](#openapi-definition-ConstraintViolation) | A list of constraint violations |
+| constraintViolations | [ConstraintViolation](#openapi-definition-ConstraintViolation)[] | A list of constraint violations |
 | message | string | The error message |
 
 #### The `ConstraintViolation` object
@@ -228,5 +227,5 @@ https://mySampleEnv.live.dynatrace.com/api/config/v1/anomalyDetection/processGro
 
 ## Related topics
 
-* [DavisÂ® AI](/managed/dynatrace-intelligence "Get familiar with the capabilities of Davis AI.")
+* [Davis® AI](/managed/dynatrace-intelligence "Learn how Davis® AI detects performance anomalies, identifies root causes, and uses AI models for adaptive thresholds across your environment.")
 * [Process groups](/managed/observe/infrastructure-observability/process-groups "Analyze process groups and customize process group naming, detection, and monitoring.")

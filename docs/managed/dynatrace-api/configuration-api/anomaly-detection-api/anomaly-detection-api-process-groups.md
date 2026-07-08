@@ -1,7 +1,6 @@
 ---
 title: Anomaly detection API - Process groups
 source: https://docs.dynatrace.com/managed/dynatrace-api/configuration-api/anomaly-detection-api/anomaly-detection-api-process-groups
-scraped: 2026-05-12T11:04:49.074561
 ---
 
 # Anomaly detection API - Process groups
@@ -11,7 +10,7 @@ scraped: 2026-05-12T11:04:49.074561
 * Reference
 * Published Jun 03, 2020
 
-The **Anomaly detectionâProcess groups** API enables you to manage the configuration of anomaly detection for hosts. You can also manage the same configuration in the Dynatrace web UI on the **Settings > Availability monitoring** page of a process group.
+The **Anomaly detection—Process groups** API enables you to manage the configuration of anomaly detection for hosts. You can also manage the same configuration in the Dynatrace web UI on the **Settings > Availability monitoring** page of a process group.
 
 [### View configuration
 

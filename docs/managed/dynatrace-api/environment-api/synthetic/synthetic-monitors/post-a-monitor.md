@@ -1,7 +1,6 @@
 ---
 title: Synthetic monitors API - POST a monitor
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/synthetic/synthetic-monitors/post-a-monitor
-scraped: 2026-05-12T11:59:45.618734
 ---
 
 # Synthetic monitors API - POST a monitor
@@ -40,7 +39,7 @@ To find all model variations that depend on the type of the model, see [JSON mod
 
 The synthetic monitor update.
 
-The actual set of fields depends the type of the monitor. Find the list of actual objects in the description of the **type** field or see [Synthetic monitors API - JSON modelsï»¿](https://dt-url.net/2523se9).
+The actual set of fields depends the type of the monitor. Find the list of actual objects in the description of the **type** field or see [Synthetic monitors API - JSON models﻿](https://dt-url.net/2523se9).
 
 | Element | Type | Description | Required |
 | --- | --- | --- | --- |
@@ -50,8 +49,8 @@ The actual set of fields depends the type of the monitor. Find the list of actua
 | locations | string[] | A list of locations from which the monitor is executed.  To specify a location, use its entity ID. For public locations use `GEOLOCATION-9999453BE4BDB3CD` form and `SYNTHETIC_LOCATION-DF80ACFB688C583B` for private ones. | Required |
 | manuallyAssignedApps | string[] | A set of manually assigned applications. | Required |
 | name | string | The name of the monitor. | Required |
-| script | object | The script of a [browserï»¿](https://dt-url.net/9c103rda) or HTTP monitor. | Required |
-| tags | [TagWithSourceInfo[]](#openapi-definition-TagWithSourceInfo) | A set of tags assigned to the monitor.  You can specify only the value of the tag here and the `CONTEXTLESS` context and source 'USER' will be added automatically. But preferred option is usage of TagWithSourceDto model. | Required |
+| script | object | The script of a [browser﻿](https://dt-url.net/9c103rda) or HTTP monitor. | Required |
+| tags | [TagWithSourceInfo](#openapi-definition-TagWithSourceInfo)[] | A set of tags assigned to the monitor.  You can specify only the value of the tag here and the `CONTEXTLESS` context and source 'USER' will be added automatically. But preferred option is usage of TagWithSourceDto model. | Required |
 | type | string | Defines the actual set of fields depending on the value. See one of the following objects:  * `BROWSER` -> BrowserSyntheticMonitorUpdate * `HTTP` -> HttpSyntheticMonitorUpdate The element can hold these values * `BROWSER` * `HTTP` | Required |
 
 #### The `AnomalyDetection` object
@@ -70,7 +69,7 @@ Performance thresholds configuration.
 | Element | Type | Description | Required |
 | --- | --- | --- | --- |
 | enabled | boolean | Performance threshold is enabled (`true`) or disabled (`false`). | Required |
-| thresholds | [LoadingTimeThreshold[]](#openapi-definition-LoadingTimeThreshold) | The list of performance threshold rules. | Required |
+| thresholds | [LoadingTimeThreshold](#openapi-definition-LoadingTimeThreshold)[] | The list of performance threshold rules. | Required |
 
 #### The `LoadingTimeThreshold` object
 
@@ -404,7 +403,7 @@ A DTO for entity ID.
 | Element | Type | Description |
 | --- | --- | --- |
 | code | integer | The HTTP status code |
-| constraintViolations | [ConstraintViolation[]](#openapi-definition-ConstraintViolation) | A list of constraint violations |
+| constraintViolations | [ConstraintViolation](#openapi-definition-ConstraintViolation)[] | A list of constraint violations |
 | message | string | The error message |
 
 #### The `ConstraintViolation` object
@@ -492,7 +491,7 @@ A list of constraint violations
 
 In this example, the request creates a simple browser monitor that navigates to **dynatrace.com**.
 
-The monitor is executed every **10 minutes** from one location, which has the ID of **GEOLOCATION-0A41430434C388A9**. A [problem](/managed/dynatrace-intelligence "Get familiar with the capabilities of Davis AI.") will be raised if the website is unavailable for three consecutive runs. A notification is sent if the website takes longer than **500 milliseconds** to load.
+The monitor is executed every **10 minutes** from one location, which has the ID of **GEOLOCATION-0A41430434C388A9**. A [problem](/managed/dynatrace-intelligence "Learn how Davis® AI detects performance anomalies, identifies root causes, and uses AI models for adaptive thresholds across your environment.") will be raised if the website is unavailable for three consecutive runs. A notification is sent if the website takes longer than **500 milliseconds** to load.
 
 The API token is passed in the **Authorization** header.
 
@@ -739,5 +738,5 @@ https://mySampleEnv.live.dynatrace.com/api/v1/synthetic/monitors
 ## Related topics
 
 * [Synthetic Monitoring](/managed/observe/digital-experience/synthetic-monitoring "Learn about Synthetic Monitoring and how to create a single-URL browser monitor, a browser clickpath, or an HTTP monitor.")
-* [Script mode for browser monitor configuration](/managed/observe/digital-experience/synthetic-monitoring/browser-monitors/script-mode-for-browser-monitor-configuration "Create or edit your browser monitors in JSON format.")
-* [Script mode for HTTP monitor configuration](/managed/observe/digital-experience/synthetic-monitoring/http-monitors-classic/script-mode-for-http-monitor-configuration-classic "Create or edit your HTTP monitors in JSON format.")
+* [Script mode for browser monitor configuration in Classic](/managed/observe/digital-experience/synthetic-monitoring/browser-monitors/script-mode-for-browser-monitor-configuration "Create or edit your browser monitors in JSON format.")
+* [Script mode for HTTP monitor configuration in Classic](/managed/observe/digital-experience/synthetic-monitoring/http-monitors-classic/script-mode-for-http-monitor-configuration-classic "Create or edit your HTTP monitors in JSON format.")

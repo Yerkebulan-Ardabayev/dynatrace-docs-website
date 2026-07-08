@@ -1,7 +1,6 @@
 ---
 title: Custom services API - GET a custom service rule
 source: https://docs.dynatrace.com/managed/dynatrace-api/configuration-api/service-api/custom-services-api/get-rule
-scraped: 2026-05-12T11:18:08.437767
 ---
 
 # Custom services API - GET a custom service rule
@@ -56,7 +55,7 @@ To learn how to obtain and use it, see [Tokens and authentication](/managed/disc
 | processGroups | string[] | The list of process groups the custom service should belong to. |
 | queueEntryPoint | boolean | The queue entry point flag.  Set to `true` for custom messaging services. |
 | queueEntryPointType | string | The queue entry point type.. The element can hold these values * `AWS_SQS` * `AZURE_SERVICE_BUS` * `IBM_MQ` * `JMS` * `KAFKA` * `MSMQ` * `RABBIT_MQ` |
-| rules | [DetectionRule[]](#openapi-definition-DetectionRule) | The list of rules defining the custom service. |
+| rules | [DetectionRule](#openapi-definition-DetectionRule)[] | The list of rules defining the custom service. |
 
 #### The `ConfigurationMetadata` object
 
@@ -79,7 +78,7 @@ Metadata useful for debugging
 | fileNameMatcher | string | Matcher applying to the file name. Default value is `ENDS_WITH` (if applicable). The element can hold these values * `ENDS_WITH` * `EQUALS` * `STARTS_WITH` |
 | id | string | The ID of the detection rule. |
 | matcher | string | Matcher applying to the class name. `STARTS_WITH` can only be used if there is at least one annotation defined. Default value is `EQUALS`. The element can hold these values * `ENDS_WITH` * `EQUALS` * `STARTS_WITH` |
-| methodRules | [MethodRule[]](#openapi-definition-MethodRule) | List of methods to instrument. |
+| methodRules | [MethodRule](#openapi-definition-MethodRule)[] | List of methods to instrument. |
 
 #### The `MethodRule` object
 

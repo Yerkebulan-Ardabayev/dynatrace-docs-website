@@ -1,7 +1,6 @@
 ---
 title: Settings API - Configure ownership schema table
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/settings/schemas/builtin-ownership-config
-scraped: 2026-05-12T11:39:57.817239
 ---
 
 # Settings API - Configure ownership schema table
@@ -12,7 +11,7 @@ scraped: 2026-05-12T11:39:57.817239
 
 ### Configure ownership (`builtin:ownership.config)`
 
-Configure keys for ownership metadata and tags. [See documentationï»¿](https://dt-url.net/ownership-custom-keys)
+Configure keys for ownership metadata and tags. [See documentation﻿](https://dt-url.net/ownership-custom-keys)
 
 | Schema ID | Schema groups | Scope |
 | --- | --- | --- |

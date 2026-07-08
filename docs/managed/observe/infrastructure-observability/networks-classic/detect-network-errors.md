@@ -1,7 +1,6 @@
 ---
 title: Detect network errors
 source: https://docs.dynatrace.com/managed/observe/infrastructure-observability/networks-classic/detect-network-errors
-scraped: 2026-05-12T12:03:16.385013
 ---
 
 # Detect network errors
@@ -66,9 +65,9 @@ Netstat
 
 Use this tool to query and control the settings of the network interface and the network driver. It gives a detailed list of all errors that can occur on the network interface level, such as CRC and carrier errors. If there are no retransmissions on the TCP layer but `ifconfig` still returns a lot of erroneous packets, `ethtool` can help dig into the specifics. If `ethtool` returns a large number of errors, there is usually something wrong with the NIC, cable, switchport, or other hardware.
 
-![Ethanol](https://dt-cdn.net/images/ethtool-min-860-b531511ccd.png)
+![Ethtool](https://dt-cdn.net/images/ethtool-min-860-b531511ccd.png)
 
-Ethanol
+Ethtool
 
 ## Use Dynatrace to monitor
 

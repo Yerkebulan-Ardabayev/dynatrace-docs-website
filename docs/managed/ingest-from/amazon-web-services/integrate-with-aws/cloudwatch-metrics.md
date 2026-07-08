@@ -1,7 +1,6 @@
 ---
 title: Monitor Amazon Web Services with CloudWatch metrics
 source: https://docs.dynatrace.com/managed/ingest-from/amazon-web-services/integrate-with-aws/cloudwatch-metrics
-scraped: 2026-05-12T11:06:54.358122
 ---
 
 # Monitor Amazon Web Services with CloudWatch metrics
@@ -31,8 +30,8 @@ The Amazon Web Services infrastructure monitoring provides metrics from CloudWat
 
 ## Cost of monitoring
 
-* Each service monitored by Dynatrace through CloudWatch, as well as log processing and analysis, consumes [DDUs](/managed/license/monitoring-consumption-classic/davis-data-units "Understand how Dynatrace monitoring consumption is calculated based on Davis data units (DDU).").
-* Amazon may charge you extra for CloudWatch metric queries. For details on these additional costs, please consult [Amazon CloudWatch pricing online documentationï»¿](https://aws.amazon.com/cloudwatch/pricing/).
+* Each service monitored by Dynatrace through CloudWatch, as well as log processing and analysis, consumes [DDUs](/managed/license/classic-licensing/davis-data-units "Understand how Dynatrace monitoring consumption is calculated based on Davis data units (DDU).").
+* Amazon may charge you extra for CloudWatch metric queries. For details on these additional costs, please consult [Amazon CloudWatch pricing online documentation﻿](https://aws.amazon.com/cloudwatch/pricing/).
 
 ## Monitoring prerequisites
 
@@ -78,7 +77,7 @@ Starting with Dynatrace version 1.329, the AWS STS global endpoint is not suppor
 
 The `us-west-2` region is now the default region for ActiveGate. In case of connectivity issues, ensure that the `sts.us-west-2.amazonaws.com` endpoint is enabled.
 
-See [AWS STS Regionalized endpointsï»¿](https://docs.aws.amazon.com/sdkref/latest/guide/feature-sts-regionalized-endpoints.html) for details.
+See [AWS STS Regionalized endpoints﻿](https://docs.aws.amazon.com/sdkref/latest/guide/feature-sts-regionalized-endpoints.html) for details.
 
 * AWS Resource Groups Tagging
 
@@ -380,7 +379,7 @@ You will need:
 
 Create a role for ActiveGate on the account that hosts ActiveGate
 
-1. Download the [YAML file with CloudFormation templateï»¿](https://dt-url.net/pv0306t).
+1. Download the [YAML file with CloudFormation template﻿](https://dt-url.net/pv0306t).
 2. Create the stack in your Amazon Console:
 
    1. In your Amazon Console, go to CloudFormation.
@@ -419,7 +418,7 @@ Create a monitoring role for Dynatrace on your monitored account
 
 After the `Dynatrace_ActiveGate_role` is created on the account hosting the ActiveGate, create a role for the account to be monitored.
 
-1. Download a YAML file with CloudFormation template from [github role\_based\_access\_AG\_account\_template.ymlï»¿](https://dt-url.net/f30301j).
+1. Download a YAML file with CloudFormation template from [github role\_based\_access\_AG\_account\_template.yml﻿](https://dt-url.net/f30301j).
 2. Create the stack in your Amazon Console:
 
    1. In your Amazon Console, go to CloudFormation.
@@ -894,7 +893,7 @@ You'll need to generate an **Access key** and a **Secret access key** that Dynat
 
 Alternative: create AWS roles with Terraform
 
-Terraform templates are an alternative way of creating and configuring AWS roles. For detailed instructions on how to create AWS roles with Terraform, see [Configuring AWS role-based access with Terraformï»¿](https://github.com/dynatrace-oss/cloud-snippets/tree/main/aws/role-based-access/terraform-templates)
+Terraform templates are an alternative way of creating and configuring AWS roles. For detailed instructions on how to create AWS roles with Terraform, see [Configuring AWS role-based access with Terraform﻿](https://github.com/dynatrace-oss/cloud-snippets/tree/main/aws/role-based-access/terraform-templates)
 
 ## Create monitoring configuration
 
@@ -925,11 +924,11 @@ To add a new AWS connection
       * To delete an existing connection, select **Delete** ![Remove](https://dt-cdn.net/images/remove-icon-105c6a04c2.svg "Remove") in that row.
 2. Select **Connect new instance** and complete the following fields.
 
-   * **Enabled** toggleâmake sure it's selected if you want to monitor this configuration.
-   * **Connection name**âenter a descriptive name for the connection.
-   * **Authentication method**âselect `Role-based authentication`.
-   * **IAM roleâ¦**âenter the name of the role you created in Amazon for Dynatrace (either `Dynatrace_monitoring_role` or a customized role name, if you created one). Remember to always use the role that contains [all required permissions](#aws-policy-and-authentication).
-   * **Your Amazon account ID**âenter your Amazon account ID (the account you want Dynatrace to pull metrics from).
+   * **Enabled** toggle—make sure it's selected if you want to monitor this configuration.
+   * **Connection name**—enter a descriptive name for the connection.
+   * **Authentication method**—select `Role-based authentication`.
+   * **IAM role…**—enter the name of the role you created in Amazon for Dynatrace (either `Dynatrace_monitoring_role` or a customized role name, if you created one). Remember to always use the role that contains [all required permissions](#aws-policy-and-authentication).
+   * **Your Amazon account ID**—enter your Amazon account ID (the account you want Dynatrace to pull metrics from).
 3. Select **Connect** to verify and save the connection.
 
    Selecting a different AWS partition
@@ -976,7 +975,7 @@ List of AWS cloud services and collected metrics
 
 To see the complete list of AWS cloud services and learn about the metrics collected for each of them, see [All AWS cloud services](/managed/ingest-from/amazon-web-services/integrate-with-aws/aws-all-services "Monitor all AWS cloud services with Dynatrace and view available metrics.").
 
-Alternatively, you can check the list of supported AWS Services within in-product Dynatrace Hub (search for **AWS**) or in the [web version of Dynatrace Hubï»¿](https://www.dynatrace.com/hub/?query=aws).
+Alternatively, you can check the list of supported AWS Services within in-product Dynatrace Hub (search for **AWS**) or in the [web version of Dynatrace Hub﻿](https://www.dynatrace.com/hub/?query=aws).
 
 To add and configure metrics
 

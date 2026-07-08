@@ -1,7 +1,6 @@
 ---
 title: OneAgent log ingest API
 source: https://docs.dynatrace.com/managed/ingest-from/extend-dynatrace/extend-logs/oneagent-log-ingest-api
-scraped: 2026-05-12T11:15:05.309636
 ---
 
 # OneAgent log ingest API
@@ -29,7 +28,7 @@ Enable for a single host
 
 1. Go to **Hosts**.
 2. Find and select your host to display the host overview page.
-3. In the upper-right corner of the host overview page, select **More** (**â¦**) > **Settings**.
+3. In the upper-right corner of the host overview page, select **More** (**…**) > **Settings**.
 
 4. In the host settings, select **Extension Execution Controller**.
 5. Turn on **Enable Extension Execution Controller**.

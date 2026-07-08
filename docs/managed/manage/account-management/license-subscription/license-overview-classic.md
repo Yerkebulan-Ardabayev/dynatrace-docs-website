@@ -1,7 +1,6 @@
 ---
 title: License overview (Dynatrace classic licensing)
 source: https://docs.dynatrace.com/managed/manage/account-management/license-subscription/license-overview-classic
-scraped: 2026-05-12T12:07:16.845425
 ---
 
 # License overview (Dynatrace classic licensing)

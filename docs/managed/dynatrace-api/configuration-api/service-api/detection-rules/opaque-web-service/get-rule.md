@@ -1,7 +1,6 @@
 ---
 title: Service detection API - GET an opaque web service rule
 source: https://docs.dynatrace.com/managed/dynatrace-api/configuration-api/service-api/detection-rules/opaque-web-service/get-rule
-scraped: 2026-05-12T11:18:52.430715
 ---
 
 # Service detection API - GET an opaque web service rule
@@ -51,7 +50,7 @@ The service detection rule of the `OPAQUE_AND_EXTERNAL_WEB_SERVICE` type
 
 | Element | Type | Description |
 | --- | --- | --- |
-| conditions | [ConditionsOpaqueAndExternalWebServiceAttributeTypeDto[]](#openapi-definition-ConditionsOpaqueAndExternalWebServiceAttributeTypeDto) | A list of conditions of the rule.  If several conditions are specified, the AND logic applies. |
+| conditions | [ConditionsOpaqueAndExternalWebServiceAttributeTypeDto](#openapi-definition-ConditionsOpaqueAndExternalWebServiceAttributeTypeDto)[] | A list of conditions of the rule.  If several conditions are specified, the AND logic applies. |
 | description | string | A short description of the rule. |
 | detectAsWebRequestService | boolean | Detect the matching requests as web services (`false`) or web request services (`true`).  Setting this field to `true` prevents detecting of matching requests as opaque web services. An opaque web request service is created instead. If you need to further modify the resulting web request service, you need to create a separate rule of the `OPAQUE_AND_EXTERNAL_WEB_REQUEST` type.  Default is `false`, detecting matching requests as opaque web services. |
 | enabled | boolean | The rule is enabled(`true`) or disabled (`false`). |
@@ -71,13 +70,13 @@ A condition of the service detection rule.
 | Element | Type | Description |
 | --- | --- | --- |
 | attributeType | string | The type of the attribute to be checked. The element can hold these values * `ENDPOINT` * `IP` * `OPERATION_NAME` * `PG_TAG` * `URL_PATH` * `URL_PORT` |
-| compareOperations | [CompareOperation[]](#openapi-definition-CompareOperation) | A list of conditions for the rule.  If several conditions are specified, the AND logic applies. |
+| compareOperations | [CompareOperation](#openapi-definition-CompareOperation)[] | A list of conditions for the rule.  If several conditions are specified, the AND logic applies. |
 
 #### The `CompareOperation` object
 
 The condition of the rule.
 
-The actual set of fields depends on the type of the condition. Find the list of actual objects in the description of the **type** field or see [Service detection API - JSON modelsï»¿](https://dt-url.net/2ie3slq).
+The actual set of fields depends on the type of the condition. Find the list of actual objects in the description of the **type** field or see [Service detection API - JSON models﻿](https://dt-url.net/2ie3slq).
 
 | Element | Type | Description |
 | --- | --- | --- |
@@ -112,7 +111,7 @@ You have two mutually exclusive options:
 
 | Element | Type | Description |
 | --- | --- | --- |
-| transformations | [TransformationBase[]](#openapi-definition-TransformationBase) | Transformations to be applied to the detected value. |
+| transformations | [TransformationBase](#openapi-definition-TransformationBase)[] | Transformations to be applied to the detected value. |
 | valueOverride | string | The value to be used instead of the detected value. |
 
 #### The `TransformationBase` object
@@ -121,7 +120,7 @@ Configuration of transformation of the detected value.
 
 If several transformations are specified, they are handled sequentially from top to bottom. Each transformation is applied to the result of the preceding transformation. For example, the second transformation is applied to the result of the first transformation.
 
-The actual set of fields depends on the type of the transformation. Find the list of actual objects in the description of the **type** field or see [Service detection API - JSON modelsï»¿](https://dt-url.net/2ie3slq).
+The actual set of fields depends on the type of the transformation. Find the list of actual objects in the description of the **type** field or see [Service detection API - JSON models﻿](https://dt-url.net/2ie3slq).
 
 | Element | Type | Description |
 | --- | --- | --- |

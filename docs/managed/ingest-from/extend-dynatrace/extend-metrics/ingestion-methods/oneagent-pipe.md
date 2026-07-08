@@ -1,7 +1,6 @@
 ---
 title: Metric scripting integration
 source: https://docs.dynatrace.com/managed/ingest-from/extend-dynatrace/extend-metrics/ingestion-methods/oneagent-pipe
-scraped: 2026-05-12T11:10:26.780862
 ---
 
 # Metric scripting integration
@@ -27,7 +26,7 @@ Enable for a single host
 
 1. Go to **Hosts**.
 2. Find and select your host to display the host overview page.
-3. In the upper-right corner of the host overview page, select **More** (**â¦**) > **Settings**.
+3. In the upper-right corner of the host overview page, select **More** (**…**) > **Settings**.
 
 4. In the host settings, select **Extension Execution Controller**.
 5. Turn on **Enable Extension Execution Controller**.

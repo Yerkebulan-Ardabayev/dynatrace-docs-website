@@ -1,7 +1,6 @@
 ---
 title: Send OpenTelemetry data to multiple backends
 source: https://docs.dynatrace.com/managed/ingest-from/opentelemetry/collector/use-cases/multi-export
-scraped: 2026-05-12T12:10:44.284784
 ---
 
 # Send OpenTelemetry data to multiple backends
@@ -153,14 +152,14 @@ For our configuration, we configure the following components.
 
 ### Receivers
 
-Under `receivers`, we specify the [`otlp` receiverï»¿](https://github.com/open-telemetry/opentelemetry-collector/tree/v0.151.0/receiver/otlpreceiver) as the active receiver component for our Collector instance.
+Under `receivers`, we specify the [`otlp` receiver﻿](https://github.com/open-telemetry/opentelemetry-collector/tree/v0.155.0/receiver/otlpreceiver) as the active receiver component for our Collector instance.
 
 ### Exporters
 
 Under `exporters`, we specify the following exporter instances for our backends.
 
-* An [`otlp_http` exporterï»¿](https://github.com/open-telemetry/opentelemetry-collector/tree/v0.151.0/exporter/otlphttpexporter) for Dynatrace
-* A gRPC [`otlp` exporterï»¿](https://github.com/open-telemetry/opentelemetry-collector/tree/v0.151.0/exporter/otlpexporter) for the cold storage system
+* An [`otlp_http` exporter﻿](https://github.com/open-telemetry/opentelemetry-collector/tree/v0.155.0/exporter/otlphttpexporter) for Dynatrace
+* A gRPC [`otlp` exporter﻿](https://github.com/open-telemetry/opentelemetry-collector/tree/v0.155.0/exporter/otlpexporter) for the cold storage system
 
 For the Dynatrace exporter, we set the following two environment variables and reference them in the configuration values for `endpoint` and `Authorization`.
 

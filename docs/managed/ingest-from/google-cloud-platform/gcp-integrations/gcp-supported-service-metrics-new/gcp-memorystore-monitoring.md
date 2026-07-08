@@ -1,7 +1,6 @@
 ---
 title: Google Cloud Memorystore monitoring
 source: https://docs.dynatrace.com/managed/ingest-from/google-cloud-platform/gcp-integrations/gcp-supported-service-metrics-new/gcp-memorystore-monitoring
-scraped: 2026-05-12T11:51:26.983518
 ---
 
 # Google Cloud Memorystore monitoring

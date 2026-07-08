@@ -1,7 +1,6 @@
 ---
 title: What technologies underlie individual processes?
 source: https://docs.dynatrace.com/managed/observe/infrastructure-observability/process-groups/basic-concepts/what-technologies-underlie-individual-processes
-scraped: 2026-05-12T11:37:47.698559
 ---
 
 # What technologies underlie individual processes?
@@ -12,7 +11,7 @@ scraped: 2026-05-12T11:37:47.698559
 * 1-min read
 * Published Jul 19, 2017
 
-More than simply knowing the types of processes in your environment (for example, Java or .NET), Dynatrace understands the technologies that underlie those processes. For example, Dynatrace understands when a Java process is comprised of a Tomcat or a Jettyâin many cases it even knows the versions of these technologies. This information available to you on each **Process** page.
+More than simply knowing the types of processes in your environment (for example, Java or .NET), Dynatrace understands the technologies that underlie those processes. For example, Dynatrace understands when a Java process is comprised of a Tomcat or a Jetty—in many cases it even knows the versions of these technologies. This information available to you on each **Process** page.
 
 With detailed analysis of the technologies and versions underlying specific processes, you'll no longer have to wonder where varying versions have been deployed. This is a vital first step in troubleshooting problems.
 

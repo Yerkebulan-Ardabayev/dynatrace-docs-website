@@ -1,7 +1,6 @@
 ---
 title: Send Dynatrace notifications to Opsgenie
 source: https://docs.dynatrace.com/managed/analyze-explore-automate/notifications-and-alerting/problem-notifications/opsgenie-integration
-scraped: 2026-05-12T11:24:44.632987
 ---
 
 # Send Dynatrace notifications to Opsgenie
@@ -24,7 +23,7 @@ To set up Opsgenie problem-notification integration
    * **Opsgenie API key**  
      Switch over to your Opsgenie account and set up Dynatrace integration. Insert the generated Opsgenie API key into this field.
    * **Opsgenie region domain**  
-     Select any Opsgenie region by starting to type the regionâs endpoint. If this field is left empty, the US region is selected by default.
+     Select any Opsgenie region by starting to type the region’s endpoint. If this field is left empty, the US region is selected by default.
    * **Message**  
      Enter text and problem-related placeholders.
 

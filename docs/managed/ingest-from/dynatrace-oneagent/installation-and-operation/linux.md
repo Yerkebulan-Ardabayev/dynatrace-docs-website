@@ -1,7 +1,6 @@
 ---
 title: OneAgent on Linux
 source: https://docs.dynatrace.com/managed/ingest-from/dynatrace-oneagent/installation-and-operation/linux
-scraped: 2026-05-12T11:03:04.895481
 ---
 
 # OneAgent on Linux

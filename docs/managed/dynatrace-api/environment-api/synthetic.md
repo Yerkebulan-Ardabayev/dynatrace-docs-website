@@ -1,7 +1,6 @@
 ---
 title: Synthetic API v1
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/synthetic
-scraped: 2026-05-12T11:14:10.466031
 ---
 
 # Synthetic API v1

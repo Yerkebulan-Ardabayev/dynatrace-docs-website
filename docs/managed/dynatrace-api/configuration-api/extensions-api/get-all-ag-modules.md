@@ -1,7 +1,6 @@
 ---
 title: Extensions API - GET all ActiveGate extension modules
 source: https://docs.dynatrace.com/managed/dynatrace-api/configuration-api/extensions-api/get-all-ag-modules
-scraped: 2026-05-12T11:20:07.789846
 ---
 
 # Extensions API - GET all ActiveGate extension modules
@@ -48,7 +47,7 @@ An ordered list of short representations of Dynatrace entities.
 
 | Element | Type | Description |
 | --- | --- | --- |
-| values | [EntityShortRepresentation[]](#openapi-definition-EntityShortRepresentation) | An ordered list of short representations of Dynatrace entities. |
+| values | [EntityShortRepresentation](#openapi-definition-EntityShortRepresentation)[] | An ordered list of short representations of Dynatrace entities. |
 
 #### The `EntityShortRepresentation` object
 

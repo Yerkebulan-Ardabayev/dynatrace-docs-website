@@ -1,7 +1,6 @@
 ---
 title: Synthetic configuration API v2 - GET configuration
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/synthetic-v2/synthetic-configuration-v2/get-configuration
-scraped: 2026-05-12T12:05:42.549997
 ---
 
 # Synthetic configuration API v2 - GET configuration
@@ -62,7 +61,7 @@ A DTO for synthetic configuration.
 | Element | Type | Description |
 | --- | --- | --- |
 | code | integer | The HTTP status code |
-| constraintViolations | [ConstraintViolation[]](#openapi-definition-ConstraintViolation) | A list of constraint violations |
+| constraintViolations | [ConstraintViolation](#openapi-definition-ConstraintViolation)[] | A list of constraint violations |
 | message | string | The error message |
 
 #### The `ConstraintViolation` object

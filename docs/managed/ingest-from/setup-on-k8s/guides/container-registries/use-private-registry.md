@@ -1,7 +1,6 @@
 ---
 title: Use a private registry
 source: https://docs.dynatrace.com/managed/ingest-from/setup-on-k8s/guides/container-registries/use-private-registry
-scraped: 2026-05-12T12:06:16.974828
 ---
 
 # Use a private registry
@@ -9,7 +8,7 @@ scraped: 2026-05-12T12:06:16.974828
 # Use a private registry
 
 * 5-min read
-* Updated on Jan 27, 2026
+* Updated on Jun 19, 2026
 
 For users seeking greater control over their image hosting environment, Dynatrace offers the option to replicate images and signatures to private registries.
 
@@ -44,7 +43,7 @@ The pull secret (the `customPullSecret` field in a DynaKube configuration) is ge
 * When Cloud-Native Full-Stack or Application-Only monitoring with the CSI driver is configured, the CSI driver requires a pull secret to access the private registry as it attempts to directly download the Dynatrace Code Modules image from the private registry.
 * When using the [node image pull feature](/managed/ingest-from/setup-on-k8s/guides/deployment-and-configuration/node-image-pull "Configure node image pull") without the CSI driver, the `customPullSecret` field only affects components managed by Dynatrace Operator (in the `dynatrace` namespace). For injected application pods, you must manually configure pull secrets at the node, namespace, or pod level. For details, see [node image pull prerequisites](/managed/ingest-from/setup-on-k8s/guides/deployment-and-configuration/node-image-pull#prerequisites "Configure node image pull").
 
-To create a pull secret, follow this [Kubernetes documentationï»¿](https://dt-url.net/p403yu6) on how to create a Kubernetes secret based on existing credentials or by providing credentials on the command line.
+To create a pull secret, follow this [Kubernetes documentation﻿](https://dt-url.net/p403yu6) on how to create a Kubernetes secret based on existing credentials or by providing credentials on the command line.
 
 ## Deploy Dynatrace Operator with images from private registry
 
@@ -129,7 +128,7 @@ To instruct Dynatrace Operator to use container images from a private registry, 
 The following DynaKube snippet demonstrates how to configure [Cloud-Native Full-Stack monitoring setup](/managed/ingest-from/setup-on-k8s/how-it-works#cloud-native "In-depth description on how the deployment on Kubernetes works.") using Dynatrace container images from a private registry.
 
 ```
-apiVersion: dynatrace.com/v1beta5
+apiVersion: dynatrace.com/v1beta6
 
 
 
@@ -181,10 +180,6 @@ codeModulesImage: <your-private-registry>/dynatrace-codemodules:<tag>
 
 
 
-# version:         # no effect - see note below
-
-
-
 ...
 
 
@@ -204,9 +199,16 @@ image: <your-private-registry>/dynatrace-activegate:<tag>
 ...
 ```
 
-Note that the `version` field has no effect when the `image` and/or `codeModulesImage` fields are set.
-
 After configuring the required fields, the DynaKube custom resource must be applied to the Kubernetes cluster.
+
+If the [`KubeletEnsureSecretPulledImages`﻿](https://kubernetes.io/docs/concepts/containers/images/#ensureimagepullcredentialverification) feature gate is enabled on your Kubernetes cluster, you may need to ensure that all nodes are authenticated to access the registry.
+For security reasons, Dynatrace Operator does not replicate provided pull secrets into application namespaces or mount them to pods outside of Dynatrace Operator's control. Instead, you must manually configure pull secrets at one of the following levels:
+
+* **Node level**: Configure registry authentication directly on each node.
+* **Namespace level**: Add the pull secret to the namespace where application pods are deployed.
+* **Pod level**: Configure the pull secret via the `imagePullSecrets` field in the pod specification of your application pods.
+
+For more information on manual pull secret configuration, see [Kubernetes documentation on pulling images from private registries﻿](https://kubernetes.io/docs/concepts/containers/images/#using-a-private-registry).
 
 For additional information regarding `customPullSecret` field, `image` fields, or the DynaKube custom resource, see further examples below or go to the [DynaKube parameters for Dynatrace Operator](/managed/ingest-from/setup-on-k8s/reference/dynakube-parameters "List the available parameters for setting up Dynatrace Operator on Kubernetes.") reference page.
 
@@ -217,7 +219,7 @@ Looking for more examples?
 The following custom resource snippet describes how to configure DynaKube for [Application Observability and Kubernetes observability](/managed/ingest-from/setup-on-k8s/deployment "Deploy Dynatrace Operator on Kubernetes") with container images from your private registry:
 
 ```
-apiVersion: dynatrace.com/v1beta5
+apiVersion: dynatrace.com/v1beta6
 
 
 
@@ -262,10 +264,6 @@ applicationMonitoring:
 
 
 codeModulesImage: <your-private-registry>/dynatrace-codemodules:<tag>
-
-
-
-# version:         # has no effect
 
 
 

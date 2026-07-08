@@ -1,7 +1,6 @@
 ---
 title: IAM policy reference
 source: https://docs.dynatrace.com/managed/manage/identity-access-management/permission-management/manage-user-permissions-policies/advanced/iam-policystatements
-scraped: 2026-05-12T11:49:55.959406
 ---
 
 # IAM policy reference
@@ -16,7 +15,7 @@ The following is a complete reference of IAM permissions and corresponding condi
 
 ## environment
 
-Environment and management zone user permissions. See [Migrate role-based permissions to Dynatrace IAMï»¿](https://dt-url.net/3s23539) for more information.
+Environment and management zone user permissions. See [Migrate role-based permissions to Dynatrace IAM﻿](https://dt-url.net/3s23539) for more information.
 
 Role IAM permissions work the same way as classic roles do, which means that the `environment:roles:viewer` permission is a part of any other role permission. For example, a policy granting `environment:roles:manage-settings` permission also allows a user to access the web UI.
 

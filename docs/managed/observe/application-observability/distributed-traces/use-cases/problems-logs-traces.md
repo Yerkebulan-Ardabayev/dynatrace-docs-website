@@ -1,7 +1,6 @@
 ---
 title: Leverage log enrichment for traces to resolve problems
 source: https://docs.dynatrace.com/managed/observe/application-observability/distributed-traces/use-cases/problems-logs-traces
-scraped: 2026-05-12T12:00:22.434776
 ---
 
 # Leverage log enrichment for traces to resolve problems
@@ -165,7 +164,7 @@ Distributed traces - Logs for Kubernetes
 
 This reveals that the selected log entry on the Go-based `frontend` microservice is just part of a more complex error pattern. We see that it calls the `PlaceOrder` method of the `hipstershop.CheckoutService` downstream. By selecting this service, we can see that OneAgent automatically collects additional helpful information, for example, the fact that it is a gRPC call. By selecting the **Logs** tab we can see that during this call two log entries have been created, including the error message. Selecting **Show related entry 'Code level' tab**, we can also understand in which part of their Go microservice the specific logline was generated.
 
-By selecting the NGINX `frontend reverse proxy` row, we can see that the call returned a `500 â Internal Server Error` to the client, which doesn't seem to be the correct error code for wrong credit card information.
+By selecting the NGINX `frontend reverse proxy` row, we can see that the call returned a `500 – Internal Server Error` to the client, which doesn't seem to be the correct error code for wrong credit card information.
 
 ![Summary tab of frontend revers proxy](https://dt-cdn.net/images/summary-tab-2560-bc9484ed00.png)
 
@@ -185,11 +184,11 @@ You need both log monitoring and trace pricing and packaging.
 
 | Your technology is monitored via OneAgent | Learn more about pricing and packaging |
 | --- | --- |
-| Applicable | * For logs, see [Log Monitoring Classic](/managed/license/monitoring-consumption-classic/davis-data-units/log-monitoring-consumption "Understand how the volume of DDU consumption is calculated for Dynatrace Log Monitoring Classic."). * For traces (Full-Stack Monitoring), see [Application and Infrastructure Monitoring (Host Units)](/managed/license/monitoring-consumption-classic/application-and-infrastructure-monitoring "Understand how Dynatrace application and infrastructure monitoring consumption is calculated based on host units.") |
-| Not applicable | * For logs, see [Log Monitoring Classic](/managed/license/monitoring-consumption-classic/davis-data-units/log-monitoring-consumption "Understand how the volume of DDU consumption is calculated for Dynatrace Log Monitoring Classic."). * For traces (open trace ingestion with OpenTelemetry), see [DDUs for serverless functions](/managed/license/monitoring-consumption-classic/davis-data-units/serverless-monitoring "Understand how serverless monitoring consumption is calculated.") and [DDUs for custom traces (Trace API)](/managed/license/monitoring-consumption-classic/davis-data-units/custom-traces "Understand how DDU consumption is calculated for spans ingested via the Trace API.") |
+| Applicable | * For logs, see [Log Monitoring Classic](/managed/license/classic-licensing/davis-data-units/log-monitoring-consumption "Understand how the volume of DDU consumption is calculated for Dynatrace Log Monitoring Classic."). * For traces (Full-Stack Monitoring), see [Application and Infrastructure Monitoring (Host Units)](/managed/license/classic-licensing/application-and-infrastructure-monitoring "Understand how Dynatrace application and infrastructure monitoring consumption is calculated based on host units.") |
+| Not applicable | * For logs, see [Log Monitoring Classic](/managed/license/classic-licensing/davis-data-units/log-monitoring-consumption "Understand how the volume of DDU consumption is calculated for Dynatrace Log Monitoring Classic."). * For traces (open trace ingestion with OpenTelemetry), see [DDUs for serverless functions](/managed/license/classic-licensing/davis-data-units/serverless-monitoring "Understand how serverless monitoring consumption is calculated.") and [DDUs for custom traces (Trace API)](/managed/license/classic-licensing/davis-data-units/custom-traces "Understand how DDU consumption is calculated for spans ingested via the Trace API.") |
 
 ## Related topics
 
 * [Log viewer (Logs Classic)](/managed/analyze-explore-automate/log-monitoring/analyze-log-data/log-viewer "Learn how to use Dynatrace log viewer to analyze log data.")
-* [DavisÂ® AI](/managed/dynatrace-intelligence "Get familiar with the capabilities of Davis AI.")
-* [[Blog] Automatic connection of logs and traces accelerates AI-driven cloud analyticsï»¿](https://www.dynatrace.com/news/blog/automatic-connection-of-logs-and-traces-accelerates-ai-driven-cloud-analytics/)
+* [Davis® AI](/managed/dynatrace-intelligence "Learn how Davis® AI detects performance anomalies, identifies root causes, and uses AI models for adaptive thresholds across your environment.")
+* [[Blog] Automatic connection of logs and traces accelerates AI-driven cloud analytics﻿](https://www.dynatrace.com/news/blog/automatic-connection-of-logs-and-traces-accelerates-ai-driven-cloud-analytics/)

@@ -1,7 +1,6 @@
 ---
 title: Kubernetes credentials API - DELETE credentials
 source: https://docs.dynatrace.com/managed/dynatrace-api/configuration-api/k8s-credentials-api-api/delete-credentials
-scraped: 2026-05-12T12:15:00.249027
 ---
 
 # Kubernetes credentials API - DELETE credentials
@@ -54,7 +53,7 @@ To learn how to obtain and use it, see [Tokens and authentication](/managed/disc
 | Element | Type | Description |
 | --- | --- | --- |
 | code | integer | The HTTP status code |
-| constraintViolations | [ConstraintViolation[]](#openapi-definition-ConstraintViolation) | A list of constraint violations |
+| constraintViolations | [ConstraintViolation](#openapi-definition-ConstraintViolation)[] | A list of constraint violations |
 | message | string | The error message |
 
 #### The `ConstraintViolation` object
@@ -128,4 +127,4 @@ A list of constraint violations
 
 ## Related topics
 
-* [Explore Kubernetes in Dynatrace Hubï»¿](https://www.dynatrace.com/hub/?filter=kubernetes&utm_source=doc&utm_medium=link&utm_campaign=cross)
+* [Explore Kubernetes in Dynatrace Hub﻿](https://www.dynatrace.com/hub/?filter=kubernetes&utm_source=doc&utm_medium=link&utm_campaign=cross)

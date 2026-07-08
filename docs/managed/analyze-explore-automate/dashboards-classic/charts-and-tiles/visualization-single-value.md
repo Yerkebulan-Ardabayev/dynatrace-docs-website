@@ -1,7 +1,6 @@
 ---
 title: Configure and use a single-value visualization in Dynatrace
 source: https://docs.dynatrace.com/managed/analyze-explore-automate/dashboards-classic/charts-and-tiles/visualization-single-value
-scraped: 2026-05-12T11:12:53.789605
 ---
 
 # Configure and use a single-value visualization in Dynatrace

@@ -1,7 +1,6 @@
 ---
 title: Settings API - RUM monitoring code filename schema table
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/settings/schemas/builtin-rum-web-rum-javascript-file-name
-scraped: 2026-05-12T11:39:31.371084
 ---
 
 # Settings API - RUM monitoring code filename schema table
@@ -12,7 +11,7 @@ scraped: 2026-05-12T11:39:31.371084
 
 ### RUM monitoring code filename (`builtin:rum.web.rum-javascript-file-name)`
 
-Define a custom filename prefix that should be used instead of the default prefix in the RUM monitoring code filename, which is ruxitagentjs or ruxitagent, see [Configure the Real User Monitoring code sourceï»¿](https://dt-url.net/wc03z4k) for details.
+Define a custom filename prefix that should be used instead of the default prefix in the RUM monitoring code filename, which is ruxitagentjs or ruxitagent, see [Configure the Real User Monitoring code source﻿](https://dt-url.net/wc03z4k) for details.
 
 **Note:** Be aware that you may experience a temporary reduction in collected RUM data after changing the RUM monitoring code filename prefix. Therefore, this setting should not be changed frequently.
 

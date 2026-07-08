@@ -1,7 +1,6 @@
 ---
 title: Slowdown events
 source: https://docs.dynatrace.com/managed/dynatrace-intelligence/root-cause-analysis/event-analysis-and-correlation/event-categories/slowdown-events
-scraped: 2026-05-12T12:06:44.241182
 ---
 
 # Slowdown events
@@ -18,7 +17,7 @@ This page provides information about supported slowdown events and the logic beh
 
 `USER_ACTION_DURATION_DEGRADATION`
 
-User action duration degradation events are detected in multiple ways within Dynatrace. By default, Dynatrace uses automated baselining to detect degradation events of either the 50th percentile (Median) or the 90th percentile of an applicationâs user action performance.
+User action duration degradation events are detected in multiple ways within Dynatrace. By default, Dynatrace uses automated baselining to detect degradation events of either the 50th percentile (Median) or the 90th percentile of an application’s user action performance.
 
 On the application level, the baseline distinguishes between three main categories of user action:
 

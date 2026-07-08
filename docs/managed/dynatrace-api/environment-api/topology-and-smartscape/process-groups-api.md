@@ -1,7 +1,6 @@
 ---
 title: Process groups API
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/topology-and-smartscape/process-groups-api
-scraped: 2026-05-12T11:54:12.850638
 ---
 
 # Process groups API

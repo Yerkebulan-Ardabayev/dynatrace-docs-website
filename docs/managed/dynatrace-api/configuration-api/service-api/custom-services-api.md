@@ -1,7 +1,6 @@
 ---
 title: Custom services API
 source: https://docs.dynatrace.com/managed/dynatrace-api/configuration-api/service-api/custom-services-api
-scraped: 2026-05-12T11:04:39.391431
 ---
 
 # Custom services API

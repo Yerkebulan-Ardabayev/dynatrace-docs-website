@@ -1,7 +1,6 @@
 ---
 title: Security notifications for attacks
 source: https://docs.dynatrace.com/managed/secure/application-security/application-protection/security-notifications-rap
-scraped: 2026-05-12T12:00:42.105109
 ---
 
 # Security notifications for attacks
@@ -21,11 +20,11 @@ For instructions on how to integrate security notifications with Dynatrace, see 
 
 [### Webhook integration](/managed/secure/application-security/application-protection/security-notifications-rap/webhook-integration "Integrate security notifications for vulnerabilities and/or attacks using webhooks.")[### Jira integration](/managed/secure/application-security/application-protection/security-notifications-rap/jira-integration "Integrate security notifications for vulnerabilities and/or attacks using Jira.")[### Email integration](/managed/secure/application-security/application-protection/security-notifications-rap/email-integration "Integrate security notifications for attacks via email.")
 
-For more control and configuration options, check out our [open-source project Rauteeï»¿](https://github.com/dynatrace-oss/rautee). With Rautee, you can build your own automated workflows according to your needs. For details, instructions, and examples, see the documentation on GitHub.
+For more control and configuration options, check out our [open-source project Rautee﻿](https://github.com/dynatrace-oss/rautee). With Rautee, you can build your own automated workflows according to your needs. For details, instructions, and examples, see the documentation on GitHub.
 
 ## Related topics
 
-* [Application Securityï»¿](https://www.dynatrace.com/platform/application-security/)
-* [Cloud Application Security eBookï»¿](https://www.dynatrace.com/resources/ebooks/cloud-application-security/)
+* [Application Security﻿](https://www.dynatrace.com/platform/application-security/)
+* [Cloud Application Security eBook﻿](https://www.dynatrace.com/resources/ebooks/cloud-application-security/)
 * [Security notifications for vulnerabilities](/managed/secure/application-security/vulnerability-analytics/security-notifications-rva "Integrate security notifications for vulnerabilities with Dynatrace.")
 * [Application Security FAQ](/managed/secure/faq "Frequently asked questions about Dynatrace Application Security.")

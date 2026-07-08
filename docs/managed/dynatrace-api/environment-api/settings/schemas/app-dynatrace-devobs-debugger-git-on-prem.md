@@ -1,7 +1,6 @@
 ---
 title: Settings API - Git On-Premise Servers schema table
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/settings/schemas/app-dynatrace-devobs-debugger-git-on-prem
-scraped: 2026-05-12T11:40:16.692916
 ---
 
 # Settings API - Git On-Premise Servers schema table

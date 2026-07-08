@@ -1,7 +1,6 @@
 ---
 title: Classic Full-Stack monitoring
 source: https://docs.dynatrace.com/managed/ingest-from/setup-on-k8s/how-it-works/other-deployment-modes/classic-fullstack
-scraped: 2026-05-12T11:23:23.613216
 ---
 
 # Classic Full-Stack monitoring
@@ -22,7 +21,7 @@ See [`.spec.oneAgent.classicFullStack`](/managed/ingest-from/setup-on-k8s/refere
 
 ## Limitations
 
-Thereâs a startup dependency between the container where OneAgent is deployed and the application container to be instrumented (for example, containers with deep process monitoring enabled). The OneAgent container must be started, and the `oneagenthelper` process must be running before the application container is launched to ensure proper instrumentation.
+There’s a startup dependency between the container where OneAgent is deployed and the application container to be instrumented (for example, containers with deep process monitoring enabled). The OneAgent container must be started, and the `oneagenthelper` process must be running before the application container is launched to ensure proper instrumentation.
 
 ## Deployed resources
 

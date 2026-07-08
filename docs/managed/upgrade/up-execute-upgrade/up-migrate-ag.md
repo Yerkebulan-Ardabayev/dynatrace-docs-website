@@ -1,7 +1,6 @@
 ---
 title: Migrate ActiveGate
 source: https://docs.dynatrace.com/managed/upgrade/up-execute-upgrade/up-migrate-ag
-scraped: 2026-05-12T12:14:03.764840
 ---
 
 # Migrate ActiveGate

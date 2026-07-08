@@ -1,7 +1,6 @@
 ---
 title: Deploy network zones (new installation)
 source: https://docs.dynatrace.com/managed/manage/network-zones/new-installation/deploy
-scraped: 2026-05-12T11:52:32.772070
 ---
 
 # Deploy network zones (new installation)

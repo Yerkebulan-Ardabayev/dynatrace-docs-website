@@ -1,7 +1,6 @@
 ---
 title: Remove a cluster
 source: https://docs.dynatrace.com/managed/managed-cluster/operation/remove-a-cluster
-scraped: 2026-05-12T11:53:12.061318
 ---
 
 # Remove a cluster

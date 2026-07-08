@@ -1,7 +1,6 @@
 ---
 title: Analyze individual service instances
 source: https://docs.dynatrace.com/managed/observe/application-observability/services-classic/analyze-individual-service-instances
-scraped: 2026-05-12T11:21:54.278815
 ---
 
 # Analyze individual service instances
@@ -34,7 +33,7 @@ The **Service instances** section includes an entry for each instance of this se
 
 Instances 2
 
-In the example above, note the variation of total time consumption and median response time across the service instances. This means that the load isnât distributed equally across all cluster nodes.
+In the example above, note the variation of total time consumption and median response time across the service instances. This means that the load isn’t distributed equally across all cluster nodes.
 
 Select an individual service instance to display instance-specific **Response time**, **Failure rate**, **CPU** consumption, and **Throughput**. This enables you to understand if a spike in the overall service response time is occurring on all instances or only on a single instance. Note that the name of the specific instance appears as a filtering criterion.
 

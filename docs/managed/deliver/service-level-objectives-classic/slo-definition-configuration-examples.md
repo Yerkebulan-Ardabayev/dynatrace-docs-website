@@ -1,7 +1,6 @@
 ---
 title: Example configuration of service-level objective definitions
 source: https://docs.dynatrace.com/managed/deliver/service-level-objectives-classic/slo-definition-configuration-examples
-scraped: 2026-05-12T11:38:27.869025
 ---
 
 # Example configuration of service-level objective definitions
@@ -96,7 +95,7 @@ This example shows how to define a service custom metric that counts the fast se
 
 ## User experience
 
-Dynatrace offers expertise in terms of measuring the real user experience of delivered services. Dynatrace metrics such as the [Apdex (Application Performance Index)](/managed/observe/digital-experience/rum-concepts/scores-and-ratings/apdex-ratings "Learn how Dynatrace uses Apdex to measure user satisfaction with application performance.") or the [User experience score](/managed/observe/digital-experience/rum-concepts/scores-and-ratings/user-experience-score "User experience score is a metric used to categorize user sessions as Frustrating, Tolerable, or Satisfying.") can be used within an SLO definition.
+Dynatrace offers expertise in terms of measuring the real user experience of delivered services. Dynatrace metrics such as the [Apdex (Application Performance Index)](/managed/observe/digital-experience/rum-classic/rum-concepts/scores-and-ratings/apdex-ratings "Learn how Dynatrace uses Apdex to measure user satisfaction with application performance.") or the [User experience score](/managed/observe/digital-experience/rum-classic/rum-concepts/scores-and-ratings/user-experience-score "User experience score is a metric used to categorize user sessions as Frustrating, Tolerable, or Satisfying.") can be used within an SLO definition.
 
 Apdex defines a performance standard to divide your application users into three groups: **SATISFIED**, **TOLERATING**, and **FRUSTRATED**.
 
@@ -161,4 +160,4 @@ Optionally, to define the time-based availability that excludes maintenance wind
 
 ## Additional resources
 
-For additional insights into SLO, check the Dynatrace University tutorial [Getting started with SLOs in Dynatraceï»¿](https://dt-url.net/3h03row).
+For additional insights into SLO, check the Dynatrace University tutorial [Getting started with SLOs in Dynatrace﻿](https://dt-url.net/3h03row).

@@ -1,7 +1,6 @@
 ---
 title: Events API v2 - GET an event
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/events-v2/get-event
-scraped: 2026-05-12T12:01:01.653046
 ---
 
 # Events API v2 - GET an event
@@ -53,16 +52,16 @@ Configuration of an event.
 | correlationId | string | The correlation ID of the event. |
 | endTime | integer | The timestamp when the event was closed, in UTC milliseconds.  Has the value of `null` if the event is still active. |
 | entityId | [EntityStub](#openapi-definition-EntityStub) | A short representation of a monitored entity. |
-| entityTags | [METag[]](#openapi-definition-METag) | A list of tags of the related entity. |
+| entityTags | [METag](#openapi-definition-METag)[] | A list of tags of the related entity. |
 | eventId | string | The ID of the event. |
 | eventType | string | The type of the event. |
-| frequentEvent | boolean | If `true`, the event happens [frequentlyï»¿](https://dt-url.net/4da3kdg).  A frequent event doesn't raise a problem. |
-| managementZones | [ManagementZone[]](#openapi-definition-ManagementZone) | A list of all management zones that the event belongs to. |
-| properties | [EventProperty[]](#openapi-definition-EventProperty) | A list of event properties. |
+| frequentEvent | boolean | If `true`, the event happens [frequently﻿](https://dt-url.net/4da3kdg).  A frequent event doesn't raise a problem. |
+| managementZones | [ManagementZone](#openapi-definition-ManagementZone)[] | A list of all management zones that the event belongs to. |
+| properties | [EventProperty](#openapi-definition-EventProperty)[] | A list of event properties. |
 | startTime | integer | The timestamp when the event was raised, in UTC milliseconds. |
 | status | string | The status of the event. The element can hold these values * `CLOSED` * `OPEN` |
-| suppressAlert | boolean | The alerting status during a [maintenanceï»¿](https://dt-url.net/b2123rg0):  * `false`: Alerting works as usual. * `true`: Alerting is disabled. |
-| suppressProblem | boolean | The problem detection status during a [maintenanceï»¿](https://dt-url.net/b2123rg0):  * `false`: Problem detection works as usual. * `true`: Problem detection is disabled. |
+| suppressAlert | boolean | The alerting status during a [maintenance﻿](https://dt-url.net/b2123rg0):  * `false`: Alerting works as usual. * `true`: Alerting is disabled. |
+| suppressProblem | boolean | The problem detection status during a [maintenance﻿](https://dt-url.net/b2123rg0):  * `false`: Problem detection works as usual. * `true`: Problem detection is disabled. |
 | title | string | The title of the event. |
 | underMaintenance | boolean | If `true`, the event happened while the monitored system was under maintenance. |
 
@@ -124,7 +123,7 @@ A property of an event.
 | Element | Type | Description |
 | --- | --- | --- |
 | code | integer | The HTTP status code |
-| constraintViolations | [ConstraintViolation[]](#openapi-definition-ConstraintViolation) | A list of constraint violations |
+| constraintViolations | [ConstraintViolation](#openapi-definition-ConstraintViolation)[] | A list of constraint violations |
 | message | string | The error message |
 
 #### The `ConstraintViolation` object

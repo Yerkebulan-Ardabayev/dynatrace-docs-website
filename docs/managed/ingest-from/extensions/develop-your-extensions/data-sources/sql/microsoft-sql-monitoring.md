@@ -1,7 +1,6 @@
 ---
 title: Microsoft SQL Server monitoring configuration
 source: https://docs.dynatrace.com/managed/ingest-from/extensions/develop-your-extensions/data-sources/sql/microsoft-sql-monitoring
-scraped: 2026-05-12T12:08:26.392671
 ---
 
 # Microsoft SQL Server monitoring configuration
@@ -10,7 +9,7 @@ scraped: 2026-05-12T12:08:26.392671
 
 * Reference
 * 3-min read
-* Updated on Apr 09, 2026
+* Updated on Jun 30, 2026
 
 After you define the scope of your configuration, you need to identify the following:
 
@@ -297,8 +296,8 @@ Requires Active Directory domain set up. Allows you to connect to a database by 
 
 The credential vault authentication type provides a more secure approach to using extensions by securely storing and managing user credentials. To use this, you must be the owner of the credentials and have a credential vault that meets the following criteria:
 
-* **Credential type**âUser and password
-* **Credential scope**âSynthetic (in case of external vault usage) and Extension authentication scopes enabled
+* **Credential type**—User and password
+* **Credential scope**—Synthetic (in case of external vault usage) and Extension authentication scopes enabled
 * **Owner access only** is enabled only for credential owners
 
 ```
@@ -361,7 +360,7 @@ However, if you need to use a local truststore for certificates not globally rec
 
 ActiveGate version 1.269+
 
-The certificate is additionally validated with hostname, which means that the domain from the certificate must match the one from the endpoint passed in the monitoring configuration.
+The certificate is also validated against the hostname. This means the domain in the certificate must match the endpoint's domain as defined in the monitoring configuration.
 
 Enable this option when connecting to databases using custom certificates.
 

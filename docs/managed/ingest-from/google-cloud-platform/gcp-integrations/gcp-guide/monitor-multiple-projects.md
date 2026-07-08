@@ -1,7 +1,6 @@
 ---
 title: Monitor multiple Google Cloud projects
 source: https://docs.dynatrace.com/managed/ingest-from/google-cloud-platform/gcp-integrations/gcp-guide/monitor-multiple-projects
-scraped: 2026-05-12T11:51:51.977809
 ---
 
 # Monitor multiple Google Cloud projects
@@ -16,8 +15,8 @@ You can push metrics to Dynatrace from multiple Google Cloud projects. For examp
 
 There are two methods for monitoring multiple Google Cloud projects, depending on the size of the environment you want to monitor:
 
-* Large environmentsâsuggested multiproject method
-* Standard environmentsâalternative method
+* Large environments—suggested multiproject method
+* Standard environments—alternative method
 
 ## Large environments
 
@@ -30,7 +29,7 @@ To modify a metrics scope, you need to have the Monitoring Admin (roles/monitori
 3. Select **Add Cloud projects to metrics scope**.
 4. Select all the desired projects to be monitored by the main scoping project and add them.
 
-Basically, you extend the metrics visibility from the main scoping project to all the monitored projects from your Google Cloud console. For details, see [Viewing metrics for multiple projectsï»¿](https://cloud.google.com/monitoring/settings).
+Basically, you extend the metrics visibility from the main scoping project to all the monitored projects from your Google Cloud console. For details, see [Viewing metrics for multiple projects﻿](https://cloud.google.com/monitoring/settings).
 
 The next step is to deploy the Google Cloud Monitor integration with the parameter `scopingProjectSupportEnabled` set to `true` in your configuration file. See [Main deployment](/managed/ingest-from/google-cloud-platform/gcp-integrations/gcp-guide/deploy-k8 "Set up log and metric monitoring for GCP services on a new GKE Autopilot cluster.") or [Alternative deployment scenarios](/managed/ingest-from/google-cloud-platform/gcp-integrations/gcp-guide "Other options to set up log and/or metric monitoring for Google Cloud services").
 
@@ -79,7 +78,7 @@ gcloud projects add-iam-policy-binding <your-desired-project-ID> --member="servi
 3. Repeat step 1 and 2 for all the other projects you want to monitor.
 4. Enable permission for service usage booking. Optional
 
-If you want to set up service usage booking, you need to enable the [**serviceusage.services.use** permission for your IAM service accountï»¿](https://cloud.google.com/service-usage/docs/access-control#permissions).
+If you want to set up service usage booking, you need to enable the [**serviceusage.services.use** permission for your IAM service account﻿](https://cloud.google.com/service-usage/docs/access-control#permissions).
 For details about configuring `serviceUsageBooking` see [Parameters](/managed/ingest-from/google-cloud-platform/gcp-integrations/gcp-guide/deploy-k8#param "Set up log and metric monitoring for GCP services on a new GKE Autopilot cluster.").
 
 It takes about a minute for the metrics from the newly configured projects to appear in Dynatrace.

@@ -1,7 +1,6 @@
 ---
 title: Synthetic monitor executions API v2
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/synthetic-v2/synthetic-monitor-execution
-scraped: 2026-05-12T11:12:27.465704
 ---
 
 # Synthetic monitor executions API v2

@@ -1,7 +1,6 @@
 ---
 title: Manage the CICS module via DTAX transactions
 source: https://docs.dynatrace.com/managed/ingest-from/dynatrace-oneagent/installation-and-operation/zos/operation/dtax-transaction
-scraped: 2026-05-12T12:04:54.968352
 ---
 
 # Manage the CICS module via DTAX transactions

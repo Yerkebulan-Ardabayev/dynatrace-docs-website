@@ -1,7 +1,6 @@
 ---
 title: Service detection API - DELETE a full web request rule
 source: https://docs.dynatrace.com/managed/dynatrace-api/configuration-api/service-api/detection-rules/full-web-request/del-a-rule
-scraped: 2026-05-12T11:18:50.829672
 ---
 
 # Service detection API - DELETE a full web request rule

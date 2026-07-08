@@ -1,7 +1,6 @@
 ---
 title: Set up OpenTelemetry monitoring for Azure Functions on Consumption Plan
 source: https://docs.dynatrace.com/managed/ingest-from/microsoft-azure-services/azure-integrations/azure-functions/func-dynamic-plans/opentelemetry-on-azure-functions
-scraped: 2026-05-12T12:04:42.016451
 ---
 
 # Set up OpenTelemetry monitoring for Azure Functions on Consumption Plan
@@ -14,7 +13,7 @@ scraped: 2026-05-12T12:04:42.016451
 
 Dynatrace version 1.240+ OneAgent version 1.193+
 
-Dynatrace uses [OpenTelemetryï»¿](https://dt-url.net/y903u4j) to monitor Azure Functions invocations.
+Dynatrace uses [OpenTelemetry﻿](https://dt-url.net/y903u4j) to monitor Azure Functions invocations.
 For that purpose, Dynatrace provides language-specific packages, such as [`Dynatrace.OpenTelemetry.Instrumentation.AzureFunctions.Core` for .NET](/managed/ingest-from/microsoft-azure-services/azure-integrations/azure-functions/func-dynamic-plans/opentelemetry-on-azure-functions-dotnet "Monitor Azure Functions with OpenTelemetry for .NET and Dynatrace."), that can be used in combination with default OpenTelemetry SDKs and APIs.
 
 ## Installation
@@ -59,7 +58,7 @@ Copy the JSON snippet into a file named `dtconfig.json` located in the root fold
 
 On **Enable Monitoring for Azure Functions**, under **Use the following values to configure your monitored Azure Functions**, there's a snippet with all required environment variables. Be sure to add these environment variables and their values to your function app configuration:
 
-1. In Azure Portal, go to your function app.
+1. In the Azure portal, go to your function app.
 2. In **Settings**, select **Configuration**.
 3. Edit any existing environment variables so that the names and values match those in [Dynatrace](#variables-dynatrace), or, if your function app doesn't have any existing variables, select **New application setting** and add the names and values for all the variables in [Dynatrace](#variables-dynatrace).
 

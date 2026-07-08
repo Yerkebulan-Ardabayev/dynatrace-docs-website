@@ -1,7 +1,6 @@
 ---
 title: Alert on common Kubernetes/OpenShift issues
 source: https://docs.dynatrace.com/managed/observe/infrastructure-observability/container-platform-monitoring/kubernetes-monitoring/alert-on-kubernetes-issues
-scraped: 2026-05-12T12:07:39.701482
 ---
 
 # Alert on common Kubernetes/OpenShift issues
@@ -9,13 +8,13 @@ scraped: 2026-05-12T12:07:39.701482
 # Alert on common Kubernetes/OpenShift issues
 
 * 18-min read
-* Updated on Feb 21, 2025
+* Updated on Jun 02, 2026
 
 Dynatrace version 1.254+
 
 ActiveGate version 1.253+
 
-To [alert on common Kubernetes platform issuesï»¿](https://dt-url.net/zg034mg), follow the instructions below.
+To [alert on common Kubernetes platform issues﻿](https://dt-url.net/zg034mg), follow the instructions below.
 
 ## Configure
 
@@ -86,6 +85,13 @@ You can view alerts
 ## Available alerts
 
 See below for a list of available alerts.
+
+The following alerts are not reclassified as warning signals when the updated classification is enabled.
+
+* Detect cluster readiness issues
+* Detect stuck deployments
+* Detect workloads without ready pods
+* Detect pod backoff events
 
 ### Cluster alerts
 
@@ -285,8 +291,8 @@ Persistent volume claims metric and DQL expressions
 | [Detect pods stuck in pending](#detect-pods-stuck-in-pending) | 1.254 | Resource | Pods stuck in pending | Workload has pending pods. | 10 minutes | Pods metric filtered by phase 'Pending' | Kubernetes Classic, Kubernetes app |
 | [Detect pods stuck in terminating](#detect-pods-stuck-in-terminating) | 1.260 | Resource | Pods stuck in terminating | Workload has pods stuck in terminating. | 10 minutes | Pods metric filtered by status 'Terminating' | Kubernetes Classic, Kubernetes app |
 | [Detect stuck deployments](#detect-stuck-deployments) | 1.260 | Error | Deployment stuck | Deployment is stuck and therefore is no longer progressing. | 10 minutes | Workload condition metric filtered by 'not progressing' | Kubernetes Classic, Kubernetes app |
-| [Detect workloads with non-ready pods](#detect-workloads-with-non-ready-pods) | 1.258 | Error | Not all pods ready | Workload has pods that are not ready. | 10 minutes | Sum of all pending or running pods â Sum of ready pending or running pods. Pods of Jobs and CronJob are excluded. | Kubernetes Classic, Kubernetes app |
-| [Detect workloads without ready pods](#detect-workloads-without-ready-pods) | 1.254 | Error | No pod ready | Workload does not have any ready pods. | 10 minutes | Sum of all pending or running pods â Sum of non-ready pending or running pods. Pods of Jobs and CronJob are excluded. | Kubernetes Classic, Kubernetes app |
+| [Detect workloads with non-ready pods](#detect-workloads-with-non-ready-pods) | 1.258 | Error | Not all pods ready | Workload has pods that are not ready. | 10 minutes | Sum of all pending or running pods − Sum of ready pending or running pods. Pods of Jobs and CronJob are excluded. | Kubernetes Classic, Kubernetes app |
+| [Detect workloads without ready pods](#detect-workloads-without-ready-pods) | 1.254 | Error | No pod ready | Workload does not have any ready pods. | 10 minutes | Sum of all pending or running pods − Sum of non-ready pending or running pods. Pods of Jobs and CronJob are excluded. | Kubernetes Classic, Kubernetes app |
 
 Workload metric and DQL expressions
 

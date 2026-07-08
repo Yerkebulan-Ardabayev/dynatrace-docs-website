@@ -1,7 +1,6 @@
 ---
 title: Network availability monitoring
 source: https://docs.dynatrace.com/managed/observe/digital-experience/synthetic-monitoring/network-availability-monitors/nam-for-managed
-scraped: 2026-05-12T12:05:20.590724
 ---
 
 # Network availability monitoring
@@ -22,9 +21,9 @@ You can create synthetic network availability monitors of **ICMP**, **TCP**, or 
 
 There are three types of network availability monitors.
 
-* ICMPâSends pings with a configurable number of packets or size to validate if there's a network connection to the host or device. It also checks the quality of that connection.
-* TCPâEstablishes a TCP connection to a particular port. It validates if a port is open and if it accepts TCP connections. It also checks if a host is available through the network.
-* DNSâValidates if a hostname can be resolved to an IP address.
+* ICMP—Sends pings with a configurable number of packets or size to validate if there's a network connection to the host or device. It also checks the quality of that connection.
+* TCP—Establishes a TCP connection to a particular port. It validates if a port is open and if it accepts TCP connections. It also checks if a host is available through the network.
+* DNS—Validates if a hostname can be resolved to an IP address.
 
 To find out more about NAM types, see [available script configuration properties](/managed/observe/digital-experience/synthetic-monitoring/network-availability-monitors/configure-nam-managed#script-properties "Learn how to set up and manage a NAM monitor to check the performance and availability of your site.").
 
@@ -90,8 +89,8 @@ If your monitor
 1. If there's a problem with your monitor you'll see **Problems** under the monitor name. Select **Problems**, then select **Go to Problems**.
 2. In **Problems**, you'll see monitors affected by problems, where each problem consists of at least one of the follwoing
 
-   * Affected stepsâExpand the **Step Id** to see at least one of the following details request id, request type, failure reason and status message.
-   * Affected requestsâExpand the **Request target** you'll see request target address, request id, request type and failure reasons.
+   * Affected steps—Expand the **Step Id** to see at least one of the following details request id, request type, failure reason and status message.
+   * Affected requests—Expand the **Request target** you'll see request target address, request id, request type and failure reasons.
    * Affected locations.
    * Date of first failed execution.
 

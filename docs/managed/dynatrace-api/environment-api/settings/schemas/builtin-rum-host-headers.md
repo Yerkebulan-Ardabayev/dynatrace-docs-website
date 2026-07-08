@@ -1,7 +1,6 @@
 ---
 title: Settings API - Identify host names schema table
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/settings/schemas/builtin-rum-host-headers
-scraped: 2026-05-12T11:39:12.521925
 ---
 
 # Settings API - Identify host names schema table
@@ -12,9 +11,9 @@ scraped: 2026-05-12T11:39:12.521925
 
 ### Identify host names (`builtin:rum.host-headers)`
 
-Specify HTTP request headers OneAgent can use to identify your application's host names, whenever Dynatrace canât automatically identify them. Provided headers are processed sequentially, with the ones at the top of the list taking priority. Learn why it's important and when we can't identify them.
+Specify HTTP request headers OneAgent can use to identify your application's host names, whenever Dynatrace can’t automatically identify them. Provided headers are processed sequentially, with the ones at the top of the list taking priority. Learn why it's important and when we can't identify them.
 
-Dynatrace uses host names as part of the URL that is matched against your application detection rules, which control when OneAgent injects the RUM JavaScript tag. For instance, when your web server operates behind a firewall using a different host name your application detection rule wonât match and OneAgent wonât inject RUM into your application.
+Dynatrace uses host names as part of the URL that is matched against your application detection rules, which control when OneAgent injects the RUM JavaScript tag. For instance, when your web server operates behind a firewall using a different host name your application detection rule won’t match and OneAgent won’t inject RUM into your application.
 
 | Schema ID | Schema groups | Scope |
 | --- | --- | --- |

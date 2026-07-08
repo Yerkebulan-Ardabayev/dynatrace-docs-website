@@ -1,7 +1,6 @@
 ---
 title: Oracle database insights
 source: https://docs.dynatrace.com/managed/observe/infrastructure-observability/databases/database-services-classic/database-insights
-scraped: 2026-05-12T12:06:09.060504
 ---
 
 # Oracle database insights
@@ -14,8 +13,8 @@ scraped: 2026-05-12T12:06:09.060504
 
 Oracle database insights are going to be replaced with SQL data source-based extensions. For more information, see:
 
-* Product news blog post: [Intelligent observability for Oracle and SQL databasesï»¿](https://www.dynatrace.com/news/blog/intelligent-observability-for-oracle-and-sql-databases/)
-* [Oracle Databaseï»¿](https://www.dynatrace.com/hub/detail/oracle-database/) extension download in Dynatrace Hub
+* Product news blog post: [Intelligent observability for Oracle and SQL databases﻿](https://www.dynatrace.com/news/blog/intelligent-observability-for-oracle-and-sql-databases/)
+* [Oracle Database﻿](https://www.dynatrace.com/hub/detail/oracle-database/) extension download in Dynatrace Hub
 * How to [manage Oracle Database extensions](/managed/ingest-from/extensions/supported-extensions/data-sources/sql/oraclesql "Learn how to extend observability in Dynatrace with declarative metrics ingested from Oracle Database.")
 * How to extend Oracle SQL monitoring using Extensions 2.0 [SQL data source](/managed/ingest-from/extensions/develop-your-extensions/data-sources/sql "Learn how to create an SQL data source-based extension using the Extensions framework.")
 
@@ -23,7 +22,7 @@ Database insights adds an infrastructure perspective to your database monitoring
 
 ## How it works
 
-Database insights runs on an Environment ActiveGate and connects remotely to Oracle databases. With this approach, the database system platform can be of any typeâDynatrace supports all operating systems using the JDBC driver to connect to databases.
+Database insights runs on an Environment ActiveGate and connects remotely to Oracle databases. With this approach, the database system platform can be of any type—Dynatrace supports all operating systems using the JDBC driver to connect to databases.
 
 ![Oracle insights architecture](https://cdn.bfldr.com/B686QPH3/as/6r7qkpgpjzfbhxhqhjtb8mq6/Oracle_database_insights_-_Light_Mode?auto=webp&format=png&position=1)
 
@@ -51,7 +50,7 @@ You need the following to start using database insights with your Oracle databas
 
 You need to satisfy the following permissions on the Oracle server for Oracle database insights:
 
-* The user that connects to the DB instance needs to be granted the `CREATE SESSION` and `SELECT_CATALOG_ROLE` permissions. This also means the access to [Dynamic Performance Viewsï»¿](https://docs.oracle.com/database/122/CNCPT/data-dictionary-and-dynamic-performance-views.htm#CNCPT1220), which is a part of the `SELECT_CATALOG_ROLE` permission.
+* The user that connects to the DB instance needs to be granted the `CREATE SESSION` and `SELECT_CATALOG_ROLE` permissions. This also means the access to [Dynamic Performance Views﻿](https://docs.oracle.com/database/122/CNCPT/data-dictionary-and-dynamic-performance-views.htm#CNCPT1220), which is a part of the `SELECT_CATALOG_ROLE` permission.
 * `DBMS_XPLAN` package with granted `EXECUTE` permission is required to fetch execution plans.
 
 To create a user for Oracle database insights:
@@ -74,7 +73,7 @@ GRANT CREATE SESSION, SELECT_CATALOG_ROLE TO <oracleinsights>;
 
 ## Setting up Oracle database insights
 
-Setting up Oracle database insights is straightforward. All you have to do is to define an endpointâthe Oracle database that the ActiveGate will connect to. You can add as many databases from a single Oracle server as necessary.
+Setting up Oracle database insights is straightforward. All you have to do is to define an endpoint—the Oracle database that the ActiveGate will connect to. You can add as many databases from a single Oracle server as necessary.
 
 1. Optional [Install OneAgent](/managed/ingest-from/dynatrace-oneagent "Understand the important concepts related to OneAgent and find out how to install and operate OneAgent on different platforms.") on the Oracle host.
 2. Select or install and [Environment ActiveGate](/managed/ingest-from/dynatrace-activegate/installation "Learn how to configure ActiveGate") version 1.173+ that will fetch the data from your Oracle server. You can use this ActiveGate for other purposes as well. Go to **Settings** > **Deployment status** to verify if your ActiveGate is up and running. Database insights is enabled by default.
@@ -89,7 +88,7 @@ Setting up Oracle database insights is straightforward. All you have to do is to
    * **Database user** and **Database password**: For details, see the [Oracle permissions](#oracle-permissions) section.
    * **Monitored database name**: name of the database you want to monitor
 6. Select the check box to accept the redistribution license agreement for the Oracle JDBC driver. Dynatrace uses this to fetch the data from your Oracle server. Your data is secure.
-7. Click **Add database**. If Dynatrace can establish the connection using the details you've provided, Dynatrace will start monitoring your Oracle database.
+7. Select **Add database**. If Dynatrace can establish the connection using the details you've provided, Dynatrace will start monitoring your Oracle database.
 
 ## Enabling and disabling Oracle database insights
 
@@ -109,7 +108,7 @@ However, installing OneAgent on the Oracle host supplements the performance anal
 
 ### Most time-consuming Oracle statements
 
-To understand and analyze which Oracle statements are the most expensive and most frequently called, click **View statements** in the **Most time-consuming Oracle statements** section. The page lists the 100 most time consuming statements. With a single click, you can see the statements that consume the most CPU, memory, or disk storage, or that generate the most wait time. You can customize your analysis using up to three metrics available for TopN analysis.
+To understand and analyze which Oracle statements are the most expensive and most frequently called, select **View statements** in the **Most time-consuming Oracle statements** section. The page lists the 100 most time consuming statements. With a single click, you can see the statements that consume the most CPU, memory, or disk storage, or that generate the most wait time. You can customize your analysis using up to three metrics available for TopN analysis.
 
 ### Download execution plans
 
@@ -234,25 +233,25 @@ Oracle database insights metrics charts: Time breakdown
 
 #### Total wait time (all sessions)
 
-* **Total wait time** (Î¼s/min)  
+* **Total wait time** (μs/min)  
   Total time spent in all wait states except for Idle class.  
   Metric key: `builtin:tech.oracleDb.cd.io.wait`
 
 #### Time spent breakdown (all sessions)
 
-* **SQL parse** (Î¼s/min)  
+* **SQL parse** (μs/min)  
   Amount of time spent parsing SQL statements.  
   Metric key: `builtin:tech.oracleDb.cd.queries.sqlParse`
-* **SQL execution** (Î¼s/min)  
+* **SQL execution** (μs/min)  
   Amount of time spent executing SQL statements.  
   Metric key: `builtin:tech.oracleDb.cd.queries.sqlExec`
-* **PL/SQL execution** (Î¼s/min)  
+* **PL/SQL execution** (μs/min)  
   Amount of time spent running the PL/SQL interpreter.  
   Metric key: `builtin:tech.oracleDb.cd.queries.plSqlExec`
-* **Connection management** (Î¼s/min)  
+* **Connection management** (μs/min)  
   Amount of time spent performing session connect and disconnect calls.  
   Metric key: `builtin:tech.oracleDb.cd.queries.connMgmt`
-* **Other** (Î¼s/min)  
+* **Other** (μs/min)  
   Amount of time spent performing all other activities.  
   Metric key: `builtin:tech.oracleDb.cd.queries.other`
 
@@ -308,10 +307,10 @@ Oracle database insights metrics charts: SGA
 
 #### Redo log buffer spent time
 
-* **Redo log space wait time** (Î¼s/min)  
+* **Redo log space wait time** (μs/min)  
   Total elapsed time of waiting for redo log space request.  
   Metric key: `builtin:tech.oracleDb.cd.memory.sga.redoBuffer.redoLogSpaceWaitTime`
-* **Redo write time** (Î¼s/min)  
+* **Redo write time** (μs/min)  
   Total elapsed time of the write from the redo log buffer to the current redo log file.  
   Metric key: `builtin:tech.oracleDb.cd.memory.sga.redoBuffer.redoWriteTime`
 
@@ -319,7 +318,7 @@ Oracle database insights metrics charts: SGA
 
 Metrics concerning statements that take the most time to execute.
 
-To view charts of these metrics per Oracle statement, click **View statements** in the **Most time consuming Oracle statements** section, and then click **Details** for a statement.
+To view charts of these metrics per Oracle statement, select **View statements** in the **Most time consuming Oracle statements** section, and then select **Details** for a statement.
 
 #### Statements performance
 
@@ -329,16 +328,16 @@ Example chart
 
 Oracle database insights metrics charts: Time-consuming metrics: Statements performance
 
-* **Elapsed time** (Î¼s)  
+* **Elapsed time** (μs)  
   Amount of time during query execution spent for parsing, executing, and fetching.  
   Metric key: `builtin:tech.oracleDb.cd.slow.time.elapsed`
 * **Execution count** (count)  
   Total number of executions totalled over all the child cursors of the query.  
   Metric key: `builtin:tech.oracleDb.cd.slow.executions`
-* **CPU time** (Î¼s)  
+* **CPU time** (μs)  
   Amount of CPU time during query execution spent for parsing, executing, and fetching.  
   Metric key: `builtin:tech.oracleDb.cd.slow.time.cpu`
-* **Wait time** (Î¼s)  
+* **Wait time** (μs)  
   Total amount of time waited for an event.  
   Metric key: `builtin:tech.oracleDb.cd.wait.time`
 
@@ -350,16 +349,16 @@ Example chart
 
 Oracle database insights metrics charts: Time-consuming metrics: Waits
 
-* **Application wait time** (Î¼s)  
+* **Application wait time** (μs)  
   Amount of elapsed time during query execution spent in application wait class.  
   Metric key: `builtin:tech.oracleDb.cd.slow.time.application`
-* **Concurrency wait time** (Î¼s)  
+* **Concurrency wait time** (μs)  
   Amount of elapsed time during query execution spent in concurrency wait class.  
   Metric key: `builtin:tech.oracleDb.cd.slow.time.concurrency`
-* **Cluster wait time** (Î¼s)  
+* **Cluster wait time** (μs)  
   Amount of elapsed time during query execution spent in cluster wait class.  
   Metric key: `builtin:tech.oracleDb.cd.slow.time.cluster`
-* **User IO wait time** (Î¼s)  
+* **User IO wait time** (μs)  
   Amount of elapsed time during query execution spent in user I/O wait class.  
   Metric key: `builtin:tech.oracleDb.cd.slow.time.userIo`
 
@@ -412,4 +411,4 @@ No. You can only use an Environment ActiveGate that remotely connects to your Or
 
 Do I need to install OneAgent on the Oracle host?
 
-No, but we recommend it, because doing so gives you a better overall picture of your database, the server, and all the processes running on it, and even log monitoring. This way youâll be able to react to potential issues quicker, and you'll have a better understanding of the root cause.
+No, but we recommend it, because doing so gives you a better overall picture of your database, the server, and all the processes running on it, and even log monitoring. This way you’ll be able to react to potential issues quicker, and you'll have a better understanding of the root cause.

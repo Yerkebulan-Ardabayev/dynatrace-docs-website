@@ -1,7 +1,6 @@
 ---
 title: ActiveGate auto-update configuration API
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/activegates/auto-update-config
-scraped: 2026-05-12T11:12:38.365290
 ---
 
 # ActiveGate auto-update configuration API
@@ -9,7 +8,13 @@ scraped: 2026-05-12T11:12:38.365290
 # ActiveGate auto-update configuration API
 
 * Reference
-* Published Mar 15, 2021
+* Updated on Jun 23, 2026
+
+Use these endpoints to turn automatic updates for Environment ActiveGates on or off. The global endpoints read and set the environment-wide default (`globalSetting`: `ENABLED` or `DISABLED`). The per-ActiveGate endpoints read and set an override (`setting`: `ENABLED`, `DISABLED`, or `INHERITED`) and return the resulting `effectiveSetting`.
+
+To configure the ActiveGate **target version**, **update mode** (automatic at earliest convenience, automatic during an update window, or no automatic updates), and **update windows**, use the Settings API with the [`builtin:deployment.activegate.updates`](/managed/dynatrace-api/environment-api/settings/schemas/builtin-deployment-activegate-updates "View builtin:deployment.activegate.updates settings schema table of your monitoring environment via the Dynatrace API.") schema. ActiveGate and OneAgent share update windows through the [`builtin:deployment.management.update-windows`](/managed/dynatrace-api/environment-api/settings/schemas/builtin-deployment-management-update-windows "View builtin:deployment.management.update-windows settings schema table of your monitoring environment via the Dynatrace API.") schema.
+
+Per-ActiveGate settings override the environment-wide default. For the end-user workflow, see [Update ActiveGate](/managed/ingest-from/dynatrace-activegate/operation/update-activegate "Configure Environment ActiveGate automatic updates---update mode, target version, and update windows---and download or install manually.").
 
 [### View global configuration
 

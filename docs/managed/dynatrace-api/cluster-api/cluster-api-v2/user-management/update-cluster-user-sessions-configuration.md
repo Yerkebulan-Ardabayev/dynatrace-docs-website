@@ -1,7 +1,6 @@
 ---
 title: Update cluster user sessions configuration
 source: https://docs.dynatrace.com/managed/dynatrace-api/cluster-api/cluster-api-v2/user-management/update-cluster-user-sessions-configuration
-scraped: 2026-05-12T11:05:55.183707
 ---
 
 # Update cluster user sessions configuration

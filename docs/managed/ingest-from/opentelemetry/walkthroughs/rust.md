@@ -1,7 +1,6 @@
 ---
 title: Instrument your Rust application with OpenTelemetry
 source: https://docs.dynatrace.com/managed/ingest-from/opentelemetry/walkthroughs/rust
-scraped: 2026-05-12T11:22:38.119969
 ---
 
 # Instrument your Rust application with OpenTelemetry
@@ -10,7 +9,7 @@ scraped: 2026-05-12T11:22:38.119969
 
 * How-to guide
 * 5-min read
-* Updated on Jan 07, 2026
+* Updated on May 11, 2026
 
 This walkthrough shows how to add observability to your Rust application using the OpenTelemetry Rust libraries and tools.
 
@@ -26,7 +25,10 @@ This walkthrough shows how to add observability to your Rust application using t
 * Dynatrace version 1.222+
 * For tracing, W3C Trace Context is enabled
 
-  1. Go to **Settings** > **Preferences** > **OneAgent features**.
+  1. Go to the appropriate configuration page:
+
+     + In Latest Dynatrace, go to ![Settings](https://dt-cdn.net/images/settings-icon-256-38e1321b51.webp "Settings") **Settings** > **Collect and capture** > **General monitoring settings** > **OneAgent features**.
+     + In Dynatrace Classic, go to **Settings** > **Preferences** > **OneAgent features**.
   2. Turn on **Send W3C Trace Context HTTP headers**.
 
 ## Step 1 Get the Dynatrace access details
@@ -469,7 +471,7 @@ To generate an access token, in Dynatrace, go to ![Access tokens](https://dt-cdn
    In the above code, we:
 
    * Create a new span and name it "Call to /myendpoint"
-   * Add two attributes, following the [semantic naming conventionï»¿](https://opentelemetry.io/docs/specs/semconv/general/trace/), specific to the action of this span: information on the HTTP method and version
+   * Add two attributes, following the [semantic naming convention﻿](https://opentelemetry.io/docs/specs/semconv/general/trace/), specific to the action of this span: information on the HTTP method and version
    * Add a `TODO` in place of the eventual business logic
    * Call the span's `end()` method to complete the span
 
@@ -493,7 +495,7 @@ To generate an access token, in Dynatrace, go to ![Access tokens](https://dt-cdn
 
 ### Connect logs
 
-In `init_opentelemetry()`, we earlier initialized the [logï»¿](https://docs.rs/log/latest/log/) crate with its OpenTelemetry log bridge and can now call any of its [logging macrosï»¿](https://docs.rs/log/latest/log/#macros) to log directly to Dynatrace.
+In `init_opentelemetry()`, we earlier initialized the [log﻿](https://docs.rs/log/latest/log/) crate with its OpenTelemetry log bridge and can now call any of its [logging macros﻿](https://docs.rs/log/latest/log/#macros) to log directly to Dynatrace.
 
 ```
 error!("logging an error");
@@ -505,7 +507,7 @@ debug!("logging a debug message");
 
 Maximum log level
 
-Note the call to the [`log::set_max_level`ï»¿](https://docs.rs/log/latest/log/fn.set_max_level.html) method in the [initialization of OpenTelemetry](#set-up-opentelemetry) earlier. This sets the maximum log level of the log crate to `Level::Debug` and is required for the logged messages at that level to be emitted in the first place and picked up by the OpenTelemetry log bridge. Adjust this if you use a different maximum log level.
+Note the call to the [`log::set_max_level`﻿](https://docs.rs/log/latest/log/fn.set_max_level.html) method in the [initialization of OpenTelemetry](#set-up-opentelemetry) earlier. This sets the maximum log level of the log crate to `Level::Debug` and is required for the logged messages at that level to be emitted in the first place and picked up by the OpenTelemetry log bridge. Adjust this if you use a different maximum log level.
 
 ### Ensure context propagation Optional
 
@@ -539,7 +541,7 @@ propagator.extract(&HeaderExtractor(req.headers()))
 }
 ```
 
-We can then use `extract_context_from_request()` in our request handler to obtain that context and pass it as parent to our own, new [server spanï»¿](https://opentelemetry.io/docs/concepts/signals/traces/#server) using `start_with_context()`.
+We can then use `extract_context_from_request()` in our request handler to obtain that context and pass it as parent to our own, new [server span﻿](https://opentelemetry.io/docs/concepts/signals/traces/#server) using `start_with_context()`.
 
 ```
 async fn router(req: Request<Incoming>) -> Result<Response<BoxBody<Bytes, hyper::Error>>, Infallible> {
@@ -603,7 +605,7 @@ span.set_attribute(KeyValue::new("my-server-key-1", "my-server-value-1"));
 
 #### Injecting the context when sending requests
 
-To propagate the current context to another HTTP service, we inject the context information into the HTTP request headers. The following example declares the function `send_request()`, which takes the URL of the request, the request content, and sends the request using [hyperï»¿](https://docs.rs/hyper/latest/hyper/index.html).
+To propagate the current context to another HTTP service, we inject the context information into the HTTP request headers. The following example declares the function `send_request()`, which takes the URL of the request, the request content, and sends the request using [hyper﻿](https://docs.rs/hyper/latest/hyper/index.html).
 
 Once the hyper request object is initialized, we call `get_text_map_propagator()` to obtain the global `propagator` object and then use its `inject_context()` function to add the current context information to the request.
 

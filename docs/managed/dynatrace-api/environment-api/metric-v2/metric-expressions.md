@@ -1,7 +1,6 @@
 ---
 title: Metrics API - Metric expressions
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/metric-v2/metric-expressions
-scraped: 2026-05-12T11:11:42.814914
 ---
 
 # Metrics API - Metric expressions
@@ -55,7 +54,7 @@ Metric expressions are resolved as follows:
 
 ### Tuples
 
-Arithmetic operations use the data points of tuples (unique combinations of metricâdimensionâdimension value) of metrics. Identical tuples of each metric are paired and then their data points are aligned.
+Arithmetic operations use the data points of tuples (unique combinations of metric—dimension—dimension value) of metrics. Identical tuples of each metric are paired and then their data points are aligned.
 
 If one metric is dimensionless (has just one tuple without dimensions and dimension values), then this single tuple is paired with every tuple of other metrics. The same applies to numbers.
 
@@ -1301,7 +1300,7 @@ Average GC duration
 }
 ```
 
-For more examples, see the ['Metric Expressions by Example' Github pageï»¿](https://dt-url.net/metric-expressions-by-example).
+For more examples, see the ['Metric Expressions by Example' Github page﻿](https://dt-url.net/metric-expressions-by-example).
 
 ## Introductory video
 

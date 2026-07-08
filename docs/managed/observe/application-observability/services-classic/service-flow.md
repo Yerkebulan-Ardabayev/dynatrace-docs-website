@@ -1,7 +1,6 @@
 ---
 title: Service flow
 source: https://docs.dynatrace.com/managed/observe/application-observability/services-classic/service-flow
-scraped: 2026-05-12T11:06:25.675167
 ---
 
 # Service flow
@@ -12,7 +11,7 @@ scraped: 2026-05-12T11:06:25.675167
 * 2-min read
 * Published Jul 19, 2017
 
-Dynatrace understands your applicationsâ transactions from end to end. This transactional insight is visualized through **Service flow**, which illustrates the sequence of service calls that are triggered by each service request in your environment. Within a service flow, you see the flow of service calls from the perspective of a single service, request or their filtered subset. Along with the specific services that are triggered, you can also see how each component of a request contributes to the overall response time.
+Dynatrace understands your applications’ transactions from end to end. This transactional insight is visualized through **Service flow**, which illustrates the sequence of service calls that are triggered by each service request in your environment. Within a service flow, you see the flow of service calls from the perspective of a single service, request or their filtered subset. Along with the specific services that are triggered, you can also see how each component of a request contributes to the overall response time.
 
 To view the service flow triggered by a specific service
 
@@ -36,4 +35,4 @@ Aggregations are calculated dynamically based on the size of your browser window
 
 Serviceflow 2
 
-As you can see in the example above, some of the services in the above service flow appear multiple times (`easyTravel Customer Frontend` and `EasyTravelWebserver`). This is because these services were called at multiple points during the flow of this transaction. Each call performs different actions and contributes different amounts to the overall response time. Dynatrace doesnât aggregate these varying circumstances into a single metric because individually they are significant and provide valuable insight into whatâs going on at a deep level in your environment.
+As you can see in the example above, some of the services in the above service flow appear multiple times (`easyTravel Customer Frontend` and `EasyTravelWebserver`). This is because these services were called at multiple points during the flow of this transaction. Each call performs different actions and contributes different amounts to the overall response time. Dynatrace doesn’t aggregate these varying circumstances into a single metric because individually they are significant and provide valuable insight into what’s going on at a deep level in your environment.

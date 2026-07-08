@@ -1,7 +1,6 @@
 ---
 title: Settings API - Kubernetes namespace anomaly detection schema table
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/settings/schemas/builtin-anomaly-detection-kubernetes-namespace
-scraped: 2026-05-12T11:48:17.026075
 ---
 
 # Settings API - Kubernetes namespace anomaly detection schema table
@@ -12,7 +11,7 @@ scraped: 2026-05-12T11:48:17.026075
 
 ### Kubernetes namespace anomaly detection (`builtin:anomaly-detection.kubernetes.namespace)`
 
-Dynatrace automatically detects a wide range of common Kubernetes-related issues. Use these settings to configure alerts relevant to your Kubernetes namespace. Changing thresholds resets the observation period. Additional information can be found on our [documentation pageï»¿](https://dt-url.net/wq02okj#namespace).
+Dynatrace automatically detects a wide range of common Kubernetes-related issues. Use these settings to configure alerts relevant to your Kubernetes namespace. Changing thresholds resets the observation period. Additional information can be found on our [documentation page﻿](https://dt-url.net/wq02okj#namespace).
 
 | Schema ID | Schema groups | Scope |
 | --- | --- | --- |

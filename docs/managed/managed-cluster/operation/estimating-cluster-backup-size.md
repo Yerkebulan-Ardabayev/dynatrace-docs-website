@@ -1,7 +1,6 @@
 ---
 title: Estimate cluster backup size
 source: https://docs.dynatrace.com/managed/managed-cluster/operation/estimating-cluster-backup-size
-scraped: 2026-05-12T11:53:13.467444
 ---
 
 # Estimate cluster backup size

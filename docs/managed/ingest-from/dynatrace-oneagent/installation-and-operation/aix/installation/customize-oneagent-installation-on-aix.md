@@ -1,7 +1,6 @@
 ---
 title: Customize OneAgent installation on AIX
 source: https://docs.dynatrace.com/managed/ingest-from/dynatrace-oneagent/installation-and-operation/aix/installation/customize-oneagent-installation-on-aix
-scraped: 2026-05-12T11:10:59.158733
 ---
 
 # Customize OneAgent installation on AIX
@@ -19,7 +18,7 @@ The AIX installer can be used with command-line parameters when you can't use th
 For example:
 
 ```
-â-set-host-group=My.HostGroup_123-456
+–-set-host-group=My.HostGroup_123-456
 ```
 
 ## Removed installation parameters
@@ -123,7 +122,7 @@ To change the endpoint after installation, use `--set-server` in the [OneAgent c
 
 **Default value**: `environment specific`
 
-The Dynatrace [environment ID](/managed/discover-dynatrace/get-started/monitoring-environment "Understand and learn how to work with monitoring environments.") you received with your activation email. If you install OneAgent using the Dynatrace **Deploy** page, this is already set to the correct value. If you're selling Dynatrace-based services, use this option to set your customers' IDs from the pool of IDs you purchased from Dynatrace.
+The Dynatrace [environment ID](/managed/discover-dynatrace/get-started/monitoring-environment "Learn what a Dynatrace monitoring environment is, how to find your environment ID, and how to set up and connect multiple environments.") you received with your activation email. If you install OneAgent using the Dynatrace **Deploy** page, this is already set to the correct value. If you're selling Dynatrace-based services, use this option to set your customers' IDs from the pool of IDs you purchased from Dynatrace.
 
 To set the environment ID, pass it as a parameter value:
 
@@ -191,11 +190,11 @@ Starting with OneAgent version 1.301, OneAgent doesn't use the TCP ports for its
 
 Watchdog is a binary used for starting and monitoring OneAgent monitoring processes:
 
-* `oneagentos`âoperating system monitoring
-* `oneagentplugin`âmonitoring using [OneAgent extensions](/managed/ingest-from/extensions/develop-your-extensions#oneagent-extensions "Develop your own Extensions in Dynatrace.")
-* `oneagentextensions`âmonitoring using local [Extensions](/managed/ingest-from/extensions "Learn how to create and manage Dynatrace Extensions.")
-* `oneagentloganalytics`â[Log Monitoring](/managed/analyze-explore-automate/log-monitoring "Learn how to enable Log Monitoring, the insights that Log Monitoring can provide, and more.")
-* `oneagentnetwork`â[network monitoring](/managed/observe/infrastructure-observability/networks "Learn how to monitor network communications.")
+* `oneagentos`—operating system monitoring
+* `oneagentplugin`—monitoring using [OneAgent extensions](/managed/ingest-from/extensions/develop-your-extensions#oneagent-extensions "Develop your own Extensions in Dynatrace.")
+* `oneagentextensions`—monitoring using local [Extensions](/managed/ingest-from/extensions "Learn how to create and manage Dynatrace Extensions.")
+* `oneagentloganalytics`—[Log Monitoring](/managed/analyze-explore-automate/log-monitoring "Learn how to enable Log Monitoring, the insights that Log Monitoring can provide, and more.")
+* `oneagentnetwork`—[network monitoring](/managed/observe/infrastructure-observability/networks "Learn how to monitor network communications.")
 
 Use the `--set-watchdog-portrange=<arg>` parameter to change the watchdog listening port range to `<arg>`. The `<arg>` must contain two port numbers separated by a colon (`:`). For example `50000:50100`. The maximum supported port range is from 1024 to 65535. The port range must cover at least 4 ports. The port number starting the range must be lower. For example:
 
@@ -213,7 +212,7 @@ Use the `--set-auto-update-enabled=<arg>` to enable or disable OneAgent auto-upd
 --set-auto-update-enabled=true
 ```
 
-After you set the parameter to `false`, you won't be able to control OneAgent automatic updates using the Dynatrace web UI at **Settings** > **Updates** > **OneAgent updates**.
+After you set the parameter to `false`, you won't be able to control OneAgent automatic updates using the Dynatrace web UI at **Settings** > **Deployment** > **OneAgent updates**.
 
 ## Host group
 
@@ -323,10 +322,10 @@ It's particularly important to keep your host ID static in dynamic virtual envir
 
 To **define the source for host ID generation**, use `--set-host-id-source` and set it to one of the predefined values:
 
-* `auto` â Let Dynatrace generate the host ID automatically
-* `ip-addresses` â Generate host ID based on the host IP address
-* `mac-addresses` â Generate host ID based on the host's NIC MAC address
-* `fqdn` â Generate host ID based on the host fully qualified domain name (FQDN) in the `host.domain` format. If the FQDN doesn't contain a dot character, the NIC MAC address is used instead.
+* `auto` — Let Dynatrace generate the host ID automatically
+* `ip-addresses` — Generate host ID based on the host IP address
+* `mac-addresses` — Generate host ID based on the host's NIC MAC address
+* `fqdn` — Generate host ID based on the host fully qualified domain name (FQDN) in the `host.domain` format. If the FQDN doesn't contain a dot character, the NIC MAC address is used instead.
 * If you monitor multiple environments, you can split the hosts with identical IPs, MAC addresses, or FQDNs using a different namespace for each environment. The namespace can contain only alphanumeric characters, hyphens, underscores, and periods; the maximum length is 256 characters:
 
 * `ip-addresses;namespace=<namespace>`

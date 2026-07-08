@@ -1,7 +1,6 @@
 ---
 title: Queue concepts
 source: https://docs.dynatrace.com/managed/observe/infrastructure-observability/queues/queue-concepts
-scraped: 2026-05-12T11:38:04.868866
 ---
 
 # Queue concepts
@@ -53,7 +52,7 @@ Dynatrace extensions can detect queues and topics that are available on the mess
 
   + An application that asynchronously retrieves messages from a queue via a [listener](#listener-service)
   + Or an application that is subscribed to a topic via a [listener](#listener-service).
-* In a JMS-based application (Java message service), there can be also a synchronous consumer service. In this scenario, a client can request the next message from a `MessageConsumer` synchronously by using one of its [receive methodsï»¿](https://docs.oracle.com/javaee/7/api/javax/jms/MessageConsumer.html) (for example, the client can poll or wait for the next message).
+* In a JMS-based application (Java message service), there can be also a synchronous consumer service. In this scenario, a client can request the next message from a `MessageConsumer` synchronously by using one of its [receive methods﻿](https://docs.oracle.com/javaee/7/api/javax/jms/MessageConsumer.html) (for example, the client can poll or wait for the next message).
 
 To provide you with a continuous view of service flows, Dynatrace uses the following identifiers to trace messages across queues and topics
 

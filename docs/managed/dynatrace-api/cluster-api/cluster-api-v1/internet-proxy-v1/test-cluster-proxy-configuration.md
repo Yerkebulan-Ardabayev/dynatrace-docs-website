@@ -1,7 +1,6 @@
 ---
 title: Test cluster proxy configuration
 source: https://docs.dynatrace.com/managed/dynatrace-api/cluster-api/cluster-api-v1/internet-proxy-v1/test-cluster-proxy-configuration
-scraped: 2026-05-12T12:12:36.226018
 ---
 
 # Test cluster proxy configuration

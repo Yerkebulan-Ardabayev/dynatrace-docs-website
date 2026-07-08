@@ -1,7 +1,6 @@
 ---
 title: Monitor Azure Virtual Machine Scale Set (VMSS)
 source: https://docs.dynatrace.com/managed/ingest-from/microsoft-azure-services/azure-integrations/azure-vmss
-scraped: 2026-05-12T11:22:58.327127
 ---
 
 # Monitor Azure Virtual Machine Scale Set (VMSS)
@@ -19,12 +18,12 @@ scraped: 2026-05-12T11:22:58.327127
 * [Integration with Azure Monitor](/managed/ingest-from/microsoft-azure-services "Set up and configure monitoring for Microsoft Azure.")
 * Enhanced support for Azure VM Metadata such as Azure regions, AutoScale detection, and more
 
-Dynatrace provides a VM extension to install OneAgent on Azure Virtual Machine Scale Set (VMSS). The extension doesn't include the OneAgent installer. Instead, it uses the Dynatrace REST API to download the latest version from the cluster, unless a [default OneAgent versionï»¿](https://www.dynatrace.com/news/blog/define-default-version-oneagent-new-installations/) is configured. OneAgent updates are provided automatically.
+Dynatrace provides a VM extension to install OneAgent on Azure Virtual Machine Scale Set (VMSS). The extension doesn't include the OneAgent installer. Instead, it uses the Dynatrace REST API to download the latest version from the cluster, unless a [default OneAgent version﻿](https://www.dynatrace.com/news/blog/define-default-version-oneagent-new-installations/) is configured. OneAgent updates are provided automatically.
 
 ## Prerequisites
 
 * Create a [PaaS token](/managed/manage/identity-access-management/access-tokens-and-oauth-clients/access-tokens#paas-token "Learn the concept of an access token and its scopes.").
-* Determine your [environment ID](/managed/discover-dynatrace/get-started/monitoring-environment "Understand and learn how to work with monitoring environments.").
+* Determine your [environment ID](/managed/discover-dynatrace/get-started/monitoring-environment "Learn what a Dynatrace monitoring environment is, how to find your environment ID, and how to set up and connect multiple environments.").
 * Determine your server URL if required.
 
   The server URL is required only if you use either of the following:
@@ -77,7 +76,7 @@ PowerShell
    --settings "{\"tenantId\":\"<Environment-ID>\",\"token\":\"<API-Token>\", \"server\":\"<Server-Url>\", \"enableLogAnalytics\":\"yes\", \"hostGroup\":\"<Host-Group>\"}"
    ```
 
-   When using the Azure CLI within PowerShell, you need to format the settings as a [here-stringï»¿](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_quoting_rules?view=powershell-6#here-strings).
+   When using the Azure CLI within PowerShell, you need to format the settings as a [here-string﻿](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_quoting_rules?view=powershell-6#here-strings).
 
    ```
    --settings @'"{\"tenantId\":\"<Environment-ID>\",\"token\":\"<API-Token>\"}"'@

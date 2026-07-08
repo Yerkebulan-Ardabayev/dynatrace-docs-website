@@ -1,7 +1,6 @@
 ---
 title: Prometheus data source
 source: https://docs.dynatrace.com/managed/ingest-from/extensions/develop-your-extensions/data-sources/prometheus-extensions
-scraped: 2026-05-12T11:50:01.246339
 ---
 
 # Prometheus data source
@@ -10,17 +9,21 @@ scraped: 2026-05-12T11:50:01.246339
 
 * Reference
 * 2-min read
-* Updated on May 04, 2026
+* Updated on Jun 19, 2026
 
 Dynatrace provides you with a framework that you can use to extend your application and services observability into data acquired directly from Prometheus. The Dynatrace extensions framework can pull Prometheus metrics from the `/metrics` endpoint, a Prometheus API endpoint, or a data exporter (Prometheus target).
 
 Note that Dynatrace provides out-of-the-box support for ingesting metrics from [Prometheus exporters in Kubernetes](/managed/observe/infrastructure-observability/container-platform-monitoring/kubernetes-monitoring/monitor-prometheus-metrics "Metric ingestion from Prometheus endpoints in Kubernetes, metrics alerts, and monitoring consumption.").
 
+Scaling with OpenTelemetry Collector
+
+For high-volume Prometheus scraping in Kubernetes, and for new deployments, consider the [OpenTelemetry Collector](/managed/ingest-from/opentelemetry/collector/use-cases/prometheus "Configure the OpenTelemetry Collector to scrape Prometheus endpoints and ingest the data into Dynatrace."), which scales horizontally through a [Target Allocator-based deployment](/managed/ingest-from/opentelemetry/collector/use-cases/prometheus/standard "Deploy a tiered Target Allocator, Scraper, and Gateway architecture for production-grade Prometheus scraping with the OpenTelemetry Collector."). Use a Prometheus extension when you want to run collection on the Prometheus host with OneAgent host-context enrichment, or run it remotely on an ActiveGate.
+
 You can run Prometheus extensions right on the Prometheus host where you installed OneAgent, so your metrics are automatically enriched with host-specific dimensions. If, however, you can't install OneAgent on the Prometheus host, you can run extensions remotely and execute them on an ActiveGate group of your choice.
 
 We assume the following:
 
-* You possess sufficient [Prometheusï»¿](https://prometheus.io/) subject matter expertise to create an extension.
+* You possess sufficient [Prometheus﻿](https://prometheus.io/) subject matter expertise to create an extension.
 * You're familiar with [Extensions basic concepts](/managed/ingest-from/extensions/concepts "Learn more about the concept of Dynatrace Extensions.") and the general structure of the [extension YAML file](/managed/ingest-from/extensions/develop-your-extensions/extension-yaml "Learn how to create an extension YAML file using the Extensions framework.").
 
 Be sure to review all prerequisites and limits.
@@ -49,4 +52,4 @@ See [Prometheus data source reference](/managed/ingest-from/extensions/develop-y
 
 ## Related topics
 
-* [Scrape Prometheus metrics with the OTel Collector](/managed/ingest-from/opentelemetry/collector/use-cases/prometheus "Configure the OpenTelemetry Collector to scrape your Prometheus data.")
+* [Scrape Prometheus metrics with the OTel Collector](/managed/ingest-from/opentelemetry/collector/use-cases/prometheus "Configure the OpenTelemetry Collector to scrape Prometheus endpoints and ingest the data into Dynatrace.")

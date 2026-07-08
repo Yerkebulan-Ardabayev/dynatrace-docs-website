@@ -1,7 +1,6 @@
 ---
 title: Service detection API - PUT an opaque web request rule
 source: https://docs.dynatrace.com/managed/dynatrace-api/configuration-api/service-api/detection-rules/opaque-web-request/put-a-rule
-scraped: 2026-05-12T11:18:38.190459
 ---
 
 # Service detection API - PUT an opaque web request rule
@@ -13,7 +12,7 @@ scraped: 2026-05-12T11:18:38.190459
 
 Updates an existing service detection rule for opaque and external web requests.
 
-If a rule with the specified ID doesnât exist, a new rule is created and appended to the end of the rule list.
+If a rule with the specified ID doesn’t exist, a new rule is created and appended to the end of the rule list.
 
 |  |  |  |
 | --- | --- | --- |
@@ -44,7 +43,7 @@ The service detection rule of the `OPAQUE_AND_EXTERNAL_WEB_REQUEST` type.
 | Element | Type | Description | Required |
 | --- | --- | --- | --- |
 | applicationId | [ApplicationId](#openapi-definition-ApplicationId) | The contribution to the service ID calculation from the detected application ID.  You have two mutually exclusive options:  * Override the detected value with a specified static value. Specify the new value in the **valueOverride** field. * Dynamically transform the detected value. Specify the transformation parameters in the **transformations** field. | Optional |
-| conditions | [ConditionsOpaqueAndExternalWebRequestAttributeTypeDto[]](#openapi-definition-ConditionsOpaqueAndExternalWebRequestAttributeTypeDto) | A list of conditions of the rule.  If several conditions are specified, the AND logic applies. | Optional |
+| conditions | [ConditionsOpaqueAndExternalWebRequestAttributeTypeDto](#openapi-definition-ConditionsOpaqueAndExternalWebRequestAttributeTypeDto)[] | A list of conditions of the rule.  If several conditions are specified, the AND logic applies. | Optional |
 | contextRoot | [ContextRoot](#openapi-definition-ContextRoot) | The contribution to the service ID calculation from the detected context root.  The context root is the first segment of the request URL after server name. For example, in the `www.dynatrace.com/support/help/dynatrace-api/` URL the context root is `support`.  You have two options:  * Keep a part of the detected URL. Specify the number of segments to be kept in the **segmentsToCopyFromUrlPath** field. * Dynamically transform the detected URL. Specify the transformation parameters in the **transformations** field.  You can use one or both options. If you use both, the transformation applies to the modified URL. | Optional |
 | description | string | A short description of the rule. | Optional |
 | enabled | boolean | The rule is enabled(`true`) or disabled (`false`). | Required |
@@ -68,7 +67,7 @@ You have two mutually exclusive options:
 
 | Element | Type | Description | Required |
 | --- | --- | --- | --- |
-| transformations | [TransformationBase[]](#openapi-definition-TransformationBase) | Transformations to be applied to the detected value. | Optional |
+| transformations | [TransformationBase](#openapi-definition-TransformationBase)[] | Transformations to be applied to the detected value. | Optional |
 | valueOverride | string | The value to be used instead of the detected value. | Optional |
 
 #### The `TransformationBase` object
@@ -77,7 +76,7 @@ Configuration of transformation of the detected value.
 
 If several transformations are specified, they are handled sequentially from top to bottom. Each transformation is applied to the result of the preceding transformation. For example, the second transformation is applied to the result of the first transformation.
 
-The actual set of fields depends on the type of the transformation. Find the list of actual objects in the description of the **type** field or see [Service detection API - JSON modelsï»¿](https://dt-url.net/2ie3slq).
+The actual set of fields depends on the type of the transformation. Find the list of actual objects in the description of the **type** field or see [Service detection API - JSON models﻿](https://dt-url.net/2ie3slq).
 
 | Element | Type | Description | Required |
 | --- | --- | --- | --- |
@@ -90,13 +89,13 @@ A condition of the service detection rule.
 | Element | Type | Description | Required |
 | --- | --- | --- | --- |
 | attributeType | string | The type of the attribute to be checked. The element can hold these values * `IP` * `PG_TAG` * `TOP_LEVEL_DOMAIN` * `URL` * `URL_HOST_NAME` * `URL_PATH` * `URL_PORT` | Required |
-| compareOperations | [CompareOperation[]](#openapi-definition-CompareOperation) | A list of conditions for the rule.  If several conditions are specified, the AND logic applies. | Optional |
+| compareOperations | [CompareOperation](#openapi-definition-CompareOperation)[] | A list of conditions for the rule.  If several conditions are specified, the AND logic applies. | Optional |
 
 #### The `CompareOperation` object
 
 The condition of the rule.
 
-The actual set of fields depends on the type of the condition. Find the list of actual objects in the description of the **type** field or see [Service detection API - JSON modelsï»¿](https://dt-url.net/2ie3slq).
+The actual set of fields depends on the type of the condition. Find the list of actual objects in the description of the **type** field or see [Service detection API - JSON models﻿](https://dt-url.net/2ie3slq).
 
 | Element | Type | Description | Required |
 | --- | --- | --- | --- |
@@ -118,7 +117,7 @@ You can use one or both options. If you use both, the transformation applies to 
 | Element | Type | Description | Required |
 | --- | --- | --- | --- |
 | segmentsToCopyFromUrlPath | integer | The number of segments of the URL to be kept.  The URL is divided by slashes (`/`), the indexing starts with 1 at context root.  For example, if you specify `2` for the `www.dynatrace.com/support/help/dynatrace-api/` URL, the value of `support/help` is used. | Optional |
-| transformations | [ContextRootTransformation[]](#openapi-definition-ContextRootTransformation) | Transformations to be applied to the detected value. | Optional |
+| transformations | [ContextRootTransformation](#openapi-definition-ContextRootTransformation)[] | Transformations to be applied to the detected value. | Optional |
 
 #### The `ContextRootTransformation` object
 
@@ -162,7 +161,7 @@ You have two mutually exclusive options:
 | Element | Type | Description | Required |
 | --- | --- | --- | --- |
 | copyFromHostName | boolean | Use (`true`) or don't use (`false`) the detected host name as base for transformation.  Not applicable if the override is specified. | Optional |
-| transformations | [TransformationBase[]](#openapi-definition-TransformationBase) | Transformations to be applied to the detected value. | Optional |
+| transformations | [TransformationBase](#openapi-definition-TransformationBase)[] | Transformations to be applied to the detected value. | Optional |
 | valueOverride | string | The value to be used instead of the detected value. | Optional |
 
 ### Request body JSON model
@@ -394,7 +393,7 @@ The short representation of a Dynatrace entity.
 | Element | Type | Description |
 | --- | --- | --- |
 | code | integer | The HTTP status code |
-| constraintViolations | [ConstraintViolation[]](#openapi-definition-ConstraintViolation) | A list of constraint violations |
+| constraintViolations | [ConstraintViolation](#openapi-definition-ConstraintViolation)[] | A list of constraint violations |
 | message | string | The error message |
 
 #### The `ConstraintViolation` object
@@ -525,7 +524,7 @@ To learn how to obtain and use it, see [Tokens and authentication](/managed/disc
 | Element | Type | Description |
 | --- | --- | --- |
 | code | integer | The HTTP status code |
-| constraintViolations | [ConstraintViolation[]](#openapi-definition-ConstraintViolation) | A list of constraint violations |
+| constraintViolations | [ConstraintViolation](#openapi-definition-ConstraintViolation)[] | A list of constraint violations |
 | message | string | The error message |
 
 #### The `ConstraintViolation` object

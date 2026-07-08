@@ -1,7 +1,6 @@
 ---
 title: Extensions
 source: https://docs.dynatrace.com/managed/ingest-from/extensions
-scraped: 2026-05-12T11:03:25.410252
 ---
 
 # Extensions
@@ -28,7 +27,7 @@ With extensions, you can:
 
 ## Why use Extensions?
 
-Extensions are useful when you need to monitor a technology or service that Dynatrace doesnât automatically detect. They provide advanced customization and observability for nearly any data source.
+Extensions are useful when you need to monitor a technology or service that Dynatrace doesn’t automatically detect. They provide advanced customization and observability for nearly any data source.
 
 ### Key benefits
 

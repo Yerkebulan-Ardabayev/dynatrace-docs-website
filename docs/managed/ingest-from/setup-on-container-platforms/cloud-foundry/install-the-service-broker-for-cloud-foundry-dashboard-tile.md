@@ -1,7 +1,6 @@
 ---
 title: Install the Dynatrace Service Broker for Cloud Foundry dashboard tile
 source: https://docs.dynatrace.com/managed/ingest-from/setup-on-container-platforms/cloud-foundry/install-the-service-broker-for-cloud-foundry-dashboard-tile
-scraped: 2026-05-12T11:09:24.551149
 ---
 
 # Install the Dynatrace Service Broker for Cloud Foundry dashboard tile
@@ -17,7 +16,7 @@ Find out how to install and configure the Dynatrace Service Broker for VMware Ta
 
 Install the Dynatrace Service Broker tile through your **Ops Manager Installation Dashboard** by performing the following steps:
 
-1. Download the product file from [Broadcom Supportï»¿](https://dt-url.net/nb03qvh).
+1. Download the product file from [Broadcom Support﻿](https://dt-url.net/nb03qvh).
 2. Upload the product file from the **Ops Manager Installation Dashboard**.
 3. Select **Add next** to the uploaded Dynatrace Service Broker tile in the **Ops Manager Available Products view** to add it to your staging area.
 4. Select the newly added Dynatrace Service Broker tile to open the configuration options.
@@ -34,7 +33,7 @@ To configure the Dynatrace Service Broker tile, perform the following steps:
    ![Pivotal 1](https://dt-cdn.net/images/configure-broker-1-1139-b706fcc7e1.png)
 
    Pivotal 1
-2. Click **Assign AZs and Networks** to configure the network and availability zones.
+2. Select **Assign AZs and Networks** to configure the network and availability zones.
 
    ![Pivotal 2](https://dt-cdn.net/images/pivotal2-918-717f876ef5.png)
 
@@ -50,7 +49,7 @@ To configure the Dynatrace Service Broker tile, perform the following steps:
    * Enter a `Plan Name`.
    * Type your **Environment ID** and **Paas token**.
    * Type your **apiURL**.
-   * Click **Save**.
+   * Select **Save**.
 
    Adapt the `apiurl` setting according to your environment:
 
@@ -66,11 +65,11 @@ To configure the Dynatrace Service Broker tile, perform the following steps:
 
    Use `https://YourActiveGateIP:Port/api`, or `https://FQDN/e/<ENVIRONMENTID>/api`, or the server IP address of your ActiveGate to connect to your server directly.
    Depending on your settings, you may need the port as well.
-4. Click **Apply Changes**.
+4. Select **Apply Changes**.
 
 ## Set up application monitoring
 
-To set up application monitoring with the Dynatrace SaaS/Managed Service, bind the service to an application in [Apps Managerï»¿](https://dt-url.net/3j23qbc) or use the [cf CLIï»¿](https://dt-url.net/b543qgc). Run the command below to pass the parameters.
+To set up application monitoring with the Dynatrace SaaS/Managed Service, bind the service to an application in [Apps Manager﻿](https://dt-url.net/3j23qbc) or use the [cf CLI﻿](https://dt-url.net/b543qgc). Run the command below to pass the parameters.
 
 1. Create a service instance based on the plan(s) you have configured.
 
@@ -81,7 +80,7 @@ To set up application monitoring with the Dynatrace SaaS/Managed Service, bind t
    * **SERVICE** needs to be `dynatrace`.
    * **PLAN** depends on the plans that have been configured in **Ops Manager**; in the example above, this would be `planname`.
    * **SERVICE\_INSTANCE** is the name of the `cf` service that will be created and which you need to bind to the application.
-2. Bind the service to an application by using the [cf CLIï»¿](https://dt-url.net/9b63qbn) for example.
+2. Bind the service to an application by using the [cf CLI﻿](https://dt-url.net/9b63qbn) for example.
 
    ```
    cf bind-service APP_NAME SERVICE_INSTANCE
@@ -90,7 +89,7 @@ To set up application monitoring with the Dynatrace SaaS/Managed Service, bind t
    * **APP\_NAME**: the name of your App.
    * **SERVICE\_INSTANCE**: the name of the Service Instance you have created with the command above.
 
-After binding the service to an application, [start using Dynatrace SaaS/Managedï»¿](https://dt-url.net/6q03pwu).
+After binding the service to an application, [start using Dynatrace SaaS/Managed﻿](https://dt-url.net/6q03pwu).
 
 ## Related topics
 

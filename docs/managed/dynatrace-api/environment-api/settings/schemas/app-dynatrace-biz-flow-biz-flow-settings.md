@@ -1,7 +1,6 @@
 ---
 title: Settings API - Business flow schema table
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/settings/schemas/app-dynatrace-biz-flow-biz-flow-settings
-scraped: 2026-05-12T11:43:18.074294
 ---
 
 # Settings API - Business flow schema table

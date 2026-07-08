@@ -1,7 +1,6 @@
 ---
 title: Settings API - Go schema table
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/settings/schemas/builtin-monitored-technologies-go
-scraped: 2026-05-12T11:41:49.193722
 ---
 
 # Settings API - Go schema table
@@ -37,4 +36,4 @@ To execute this request, you need an access token with **Read settings** (`setti
 | Property | Type | Description | Required |
 | --- | --- | --- | --- |
 | Monitor Go `enabled` | boolean | - | Required |
-| Enable Go static application monitoring `enabledGoStaticMonitoring` | boolean | Learn more about the [known limitations for Go static monitoringï»¿](https://www.dynatrace.com/support/help/technology-support/application-software/go/support/go-known-limitations#limitations) | Required |
+| Enable Go static application monitoring `enabledGoStaticMonitoring` | boolean | Learn more about the [known limitations for Go static monitoring﻿](https://www.dynatrace.com/support/help/technology-support/application-software/go/support/go-known-limitations#limitations) | Required |

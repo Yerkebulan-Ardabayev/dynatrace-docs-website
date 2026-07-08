@@ -1,7 +1,6 @@
 ---
 title: Synthetic monitor executions API v2 - GET HTTP monitor
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/synthetic-v2/synthetic-monitor-execution/get-http-monitor
-scraped: 2026-05-12T11:57:56.285583
 ---
 
 # Synthetic monitor executions API v2 - GET HTTP monitor
@@ -56,7 +55,7 @@ Results of the execution of all HTTP monitor's requests.
 
 | Element | Type | Description |
 | --- | --- | --- |
-| locationsExecutionResults | [LocationExecutionResults[]](#openapi-definition-LocationExecutionResults) | The list with the results of the requests executed on assigned locations. |
+| locationsExecutionResults | [LocationExecutionResults](#openapi-definition-LocationExecutionResults)[] | The list with the results of the requests executed on assigned locations. |
 | monitorId | string | Monitor id. |
 
 #### The `LocationExecutionResults` object
@@ -67,7 +66,7 @@ Results of the execution HTTP monitor's requests at a given location
 | --- | --- | --- |
 | executionId | string | Execution id. |
 | locationId | string | Location id. |
-| requestResults | [MonitorRequestExecutionResult[]](#openapi-definition-MonitorRequestExecutionResult) | The list of the monitor's request results executed on this location. |
+| requestResults | [MonitorRequestExecutionResult](#openapi-definition-MonitorRequestExecutionResult)[] | The list of the monitor's request results executed on this location. |
 
 #### The `MonitorRequestExecutionResult` object
 
@@ -111,7 +110,7 @@ A header of the Http request
 | Element | Type | Description |
 | --- | --- | --- |
 | code | integer | The HTTP status code |
-| constraintViolations | [ConstraintViolation[]](#openapi-definition-ConstraintViolation) | A list of constraint violations |
+| constraintViolations | [ConstraintViolation](#openapi-definition-ConstraintViolation)[] | A list of constraint violations |
 | message | string | The error message |
 
 #### The `ConstraintViolation` object

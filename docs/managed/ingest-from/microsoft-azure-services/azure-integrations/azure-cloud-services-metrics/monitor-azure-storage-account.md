@@ -1,7 +1,6 @@
 ---
 title: Azure Storage Account (Blob, File, Queue, Table)
 source: https://docs.dynatrace.com/managed/ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics/monitor-azure-storage-account
-scraped: 2026-05-12T11:25:26.738137
 ---
 
 # Azure Storage Account (Blob, File, Queue, Table)

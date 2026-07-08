@@ -1,7 +1,6 @@
 ---
 title: Service-level objectives API - DELETE an SLO
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/service-level-objectives-classic/delete-slo
-scraped: 2026-05-12T11:57:33.093339
 ---
 
 # Service-level objectives API - DELETE an SLO
@@ -58,7 +57,7 @@ To learn how to obtain and use it, see [Tokens and authentication](/managed/disc
 | Element | Type | Description |
 | --- | --- | --- |
 | code | integer | The HTTP status code |
-| constraintViolations | [ConstraintViolation[]](#openapi-definition-ConstraintViolation) | A list of constraint violations |
+| constraintViolations | [ConstraintViolation](#openapi-definition-ConstraintViolation)[] | A list of constraint violations |
 | message | string | The error message |
 
 #### The `ConstraintViolation` object

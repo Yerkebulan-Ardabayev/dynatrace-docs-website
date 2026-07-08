@@ -1,7 +1,6 @@
 ---
 title: Getting started
 source: https://docs.dynatrace.com/managed/ingest-from/extensions/develop-your-extensions/addon-for-vscode/getting-started
-scraped: 2026-05-12T12:15:22.440198
 ---
 
 # Getting started
@@ -10,19 +9,19 @@ scraped: 2026-05-12T12:15:22.440198
 
 * How-to guide
 * 5-min read
-* Published Jun 16, 2025
+* Updated on Jul 02, 2026
 
-Get started with Dynatrace Extensions by following this guide to set up your Visual Studio Code editor and get your first extension built and uploaded to Dynatrace in 5 minutes.
+This guide walks you through installing the Dynatrace Extensions add-on for Visual Studio Code, connecting to your Dynatrace environment, and publishing your first extension using the built-in VS Code workflows.
 
 ## Before you begin
 
 ### Installation
 
-You can find **Dynatrace Extensions** in the Visual Studio Code [marketplaceï»¿](https://marketplace.visualstudio.com/items?itemName=DynatracePlatformExtensions.dynatrace-extensions). Install it from there or via the VS Code extension search.
+You can find **Dynatrace Extensions** in the Visual Studio Code [marketplace﻿](https://marketplace.visualstudio.com/items?itemName=DynatracePlatformExtensions.dynatrace-extensions). Install it from there or via the VS Code extension search.
 
 ### Access token
 
-Our VS Code add-on automates many operations around Extension 2.0 development by using the Dynatrace API.
+Our VS Code add-on automates many operations around extensions development by using the Dynatrace API.
 
 To get the most out of it, create an [API Access Token](/managed/manage/identity-access-management/access-tokens-and-oauth-clients/access-tokens#create-api-token "Learn the concept of an access token and its scopes.") with the following scopes:
 
@@ -45,67 +44,70 @@ The Dynatrace UI provides a dedicated template called **Extension Development**,
 
 ### Connectivity settings
 
-This step is only required if your Dynatrace environment is accessible through a dedicated URL that uses a custom-signed or a self-signed SSL certificate.
+Required only if your Dynatrace environment is accessible through a dedicated URL that uses a custom-signed or a self-signed SSL certificate.
 
-In this situation, you need to adapt your settings before you can continue with this guide. Go to **File > Preferences > Settings**, expand on **Extensions**, and find the **Dynatrace Extensions** section. Scroll down until you see **Tenant Connectivity Settings** and select **Edit in settings.json**.
+To configure the connectivity settings for your Dynatrace environment:
 
-Register your dedicated environment URL in the file you've opened and either provide the path to your CA file or turn off SSL verification. For example:
+1. Open the **Extensions** view in Visual Studio Code, find **Dynatrace Extensions**, select the  icon, and then select **Settings**.
 
-```
-{
+   For details, see [Settings in Visual Studio Code﻿](https://code.visualstudio.com/docs/getstarted/settings).
+2. Search for `DynatraceExtensions tenant` in the search bar to find the **Tenant Connectivity Settings**, then select **Edit in settings.json**.
+3. Register your dedicated environment URL in the file you've opened and either provide the path to your CA file or turn off SSL verification.
 
+   For example:
 
-
-"dynatraceExtensions.tenantConnectivitySettings": [
-
-
-
-{
+   ```
+   {
 
 
 
-"tenantUrl": "https://my.custom.dynatrace/e/abcd-123",
+   "dynatraceExtensions.tenantConnectivitySettings": [
 
 
 
-"certificatePath": "/tmp/certificates/ca.crt"
+   {
 
 
 
-}
+   "tenantUrl": "https://my.custom.dynatrace/e/abcd-123",
 
 
 
-]
+   "certificatePath": "/tmp/certificates/ca.crt"
 
 
 
-}
-```
+   }
 
-Explore all the [tenant connectivity settings](/managed/ingest-from/extensions/develop-your-extensions/addon-for-vscode/settings#tenant-connectivity-settings "Details of settings available to configure Dynatrace Extensions").
+
+
+   ]
+
+
+
+   }
+   ```
+
+   For more details, see [Tenant connectivity settings](/managed/ingest-from/extensions/develop-your-extensions/addon-for-vscode/settings#tenant-connectivity-settings "Details of settings available to configure Dynatrace Extensions").
 
 ## Connect to Dynatrace
 
-Begin by connecting with your Dynatrace environment. To connect, you need to do the following:
+To connect your Dynatrace environment:
 
-* Go to the Dynatrace Extensions view in the VS Code UI, then select the **Add environment** button as shown.
+1. Go to **Dynatrace Extensions** in the **Extensions** view in Visual Studio Code, then select the **Add environment** button.
+2. Provide the base URL to access Dynatrace. It should follow one of these patterns:
 
-  You'll need to provide the base URL to access Dynatrace. It should follow one of these patterns:
+   * `https://<Id>.live.dynatrace.com` for SaaS environments.
+   * `https://<Domain>/e/<Id>` for Managed environments. Replace `<Id>` with your environment ID and `<Domain>` with your managed environment domain.
+   * `https://<Id>.apps.dynatrace.com` for the latest Dynatrace Platform.
+3. Provide the **API Access Token** you prepared earlier and optionally provide a label.
+4. Set this as your current environment.
 
-  + `https://<Id>.live.dynatrace.com` for SaaS environments.
-  + `https://<Domain>/e/<Id>` for Managed environments.
-  + `https://<Id>.apps.dynatrace.com` for the latest Dynatrace Platform.
-
-  **Note**: Replace `<Id>` with your environment ID and `<Domain>` with your managed environment domain.
-* Provide the **API Access Token** you prepared earlier and optionally provide a label.
-* Set this as your current environment.
-
-The add-on displays your environment in the list and will use the current environment for all API operations. Visit [Environments](/managed/ingest-from/extensions/develop-your-extensions/addon-for-vscode/specialized-views#environments "Details about the specialized activity bar views for Dynatrace Extensions") to learn more about using the Environment view.
+The add-on displays your environment in the list and uses the current environment for all API operations. Visit [Environments](/managed/ingest-from/extensions/develop-your-extensions/addon-for-vscode/specialized-views#environments "Details about the specialized activity bar views for Dynatrace Extensions") to learn more about using the **Environment** view.
 
 ## Initialize your workspace
 
-It's time to create your first project. If you need to open a different workspace folder, select **Open folder**. Otherwise, select the **Initialize workspace** button to start.
+It's time to create your first project. If you have to open a different workspace folder, select **Open folder**. Otherwise, select the **Initialize workspace** button to start.
 
 To learn how to use the Workspaces view, visit [Extension 2.0 workspaces](/managed/ingest-from/extensions/develop-your-extensions/addon-for-vscode/specialized-views#extension-20-workspaces "Details about the specialized activity bar views for Dynatrace Extensions").
 
@@ -115,7 +117,7 @@ The workflow starts with your target schema version. Choose any from the list. I
 
 ### 2. Developer certificates
 
-Extensions use developer certificates for signing and packaging extensions. Choose **Generate new ones** to generate a new set of certificates kept in VS Code's storage.
+Developer certificates are used to sign and package your extension. Choose **Generate new ones** to generate a new set of certificates kept in VS Code's storage.
 
 Check the extension's [settings](/managed/ingest-from/extensions/develop-your-extensions/addon-for-vscode/settings "Details of settings available to configure Dynatrace Extensions") to get the exact path to where your credentials are stored.
 
@@ -141,9 +143,9 @@ To learn how to use your existing developer certificates, visit [Credentials](/m
 
 The final step of the workflow is to choose the type of project you want to start. It allows the extension to generate relevant files.
 
-Since this is your first extension, choose **Extension 2.0 â­** at this step.
+Since this is your first extension, choose **Extension 2.0 ⭐** at this step.
 
-This option is the default choice for new projects and will create the following starting setup:
+This option is the default choice for new projects and creates the following starting setup:
 
 * `extension` - the folder where all extension assets are placed.
 * `extension/extension.yaml` - this is your extension's manifest file.
@@ -189,7 +191,7 @@ Replace `<Your-Name>` with the author's name.
 
 Finally, perform the following steps to upload your extension to Dynatrace.
 
-1. Press the F1 key and choose the **Dynatrace extensions: Build** command. The workflow will build your extension, creating a package inside your `dist` folder.
+1. Select the F1 key and choose the **Dynatrace extensions: Build** command. The workflow builds your extension and creates a package inside your `dist` folder.
 2. When prompted about uploading your extension to Dynatrace, choose **Yes**.
 3. When prompted about activating this extension version, choose **Yes**.
 

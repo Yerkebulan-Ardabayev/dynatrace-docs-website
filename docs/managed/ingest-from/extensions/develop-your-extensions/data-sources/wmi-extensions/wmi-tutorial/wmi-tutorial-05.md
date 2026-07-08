@@ -1,7 +1,6 @@
 ---
 title: WMI tutorial - unified analysis
 source: https://docs.dynatrace.com/managed/ingest-from/extensions/develop-your-extensions/data-sources/wmi-extensions/wmi-tutorial/wmi-tutorial-05
-scraped: 2026-05-12T11:54:17.898448
 ---
 
 # WMI tutorial - unified analysis

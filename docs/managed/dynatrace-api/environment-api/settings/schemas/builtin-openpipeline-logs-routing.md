@@ -1,7 +1,6 @@
 ---
 title: Settings API - Ingest routing configuration (logs) schema table
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-logs-routing
-scraped: 2026-05-12T11:46:30.352698
 ---
 
 # Settings API - Ingest routing configuration (logs) schema table

@@ -1,7 +1,6 @@
 ---
 title: Subscription overview (Dynatrace Platform Subscription)
 source: https://docs.dynatrace.com/managed/manage/account-management/license-subscription/subscription-overview-dps
-scraped: 2026-05-12T11:37:24.042682
 ---
 
 # Subscription overview (Dynatrace Platform Subscription)
@@ -55,7 +54,7 @@ The Account Management Budget Summary screen for Dynatrace Platform Subscription
 * **Environment**: Cost details for each environment.
 
   + **Annual budget-to-date cost**: The cumulative cost for the given environment, measured from the start of the commitment period.
-  + **Last 0â30 days cost** and **Last 0â30 days change**: Cumulative cost and percentage change by environment for the last 30 days.
+  + **Last 0–30 days cost** and **Last 0–30 days change**: Cumulative cost and percentage change by environment for the last 30 days.
     Because environment usage may fluctuate within the commitment period, these columns help you identify the environments that currently incur the highest costs.
 * To view the cost breakdown for an environment by capability, select **Actions** > **View details**.
 
@@ -83,7 +82,7 @@ The bar chart at the top shows costs related to the environment over time.
 The tabular data beneath the chart breaks down costs at the capability level.
 
 * **Annual budget-to-date cost** is the cumulative cost for the given environment, measured from the start of the commitment period.
-* **Last 0â30 days cost** and **Last 0â30 days change** show cumulative cost and percentage change by environment for the previous 30 days.
+* **Last 0–30 days cost** and **Last 0–30 days change** show cumulative cost and percentage change by environment for the previous 30 days.
   Because environment usage may fluctuate within the commitment period, these columns help you identify the environments that currently incur the highest costs.
 * To view the cost breakdown for a capability, select **Actions** > **View details**.
 

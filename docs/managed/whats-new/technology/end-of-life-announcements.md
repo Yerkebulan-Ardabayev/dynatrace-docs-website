@@ -1,7 +1,6 @@
 ---
 title: End-of-life announcements
 source: https://docs.dynatrace.com/managed/whats-new/technology/end-of-life-announcements
-scraped: 2026-05-12T12:34:29.420873
 ---
 
 # End-of-life announcements
@@ -22,7 +21,7 @@ We communicate these changes through two milestones that help you plan ahead:
 
 * Last date on which Dynatrace provides bug fixes or security updates.
 * After EoS, the component keeps running, but maintenance stops and support is best-effort only. Features will no longer be maintained, and no critical fixes will be deployed.
-* Ongoing operation, and associated risk, becomes the customerâs responsibility.
+* Ongoing operation, and associated risk, becomes the customer’s responsibility.
 
 ### End of Life (EoL)
 
@@ -43,11 +42,11 @@ If you are running any of the OneAgent versions listed below, upgrade to a suppo
 
 1
 
-[Support policyï»¿](https://www.dynatrace.com/company/trust-center/support-policy/)
+[Support policy﻿](https://www.dynatrace.com/company/trust-center/support-policy/)
 
 ## Python Extension Framework 1.0
 
-Weâre moving away from the retired Python 3.5/3.8 runtimes to a current, fully supported Python version so your extensions stay secure and future-ready. This extension framework upgrade closes unpatched security gaps, gives you access to the latest libraries and performance gains, and ensures continued compatibility with upcoming Dynatrace features.
+We’re moving away from the retired Python 3.5/3.8 runtimes to a current, fully supported Python version so your extensions stay secure and future-ready. This extension framework upgrade closes unpatched security gaps, gives you access to the latest libraries and performance gains, and ensures continued compatibility with upcoming Dynatrace features.
 
 ### OneAgent extensions
 
@@ -68,8 +67,8 @@ ActiveGate version 1.299 is the latest release that supports Python Extensions 1
 
 Migrate all Python extensions 1.0 to the new Extensions to maintain a secure, supported environment.
 
-* [Migrate Python extensionsï»¿](https://developer.dynatrace.com/develop/extensions/dynatrace-extensions-vscode/guides/migrate/python-migrate/)
-* [Video: A Practical Guide to Building Python Based Extensions with Dynatraceï»¿](https://www.youtube.com/watch?v=g-lPIZx66BA)
+* [Migrate Python extensions﻿](https://developer.dynatrace.com/develop/extensions/dynatrace-extensions-vscode/guides/migrate/python-migrate/)
+* [Video: A Practical Guide to Building Python Based Extensions with Dynatrace﻿](https://www.youtube.com/watch?v=g-lPIZx66BA)
 
 To remain supported, [update your OneAgent](/managed/ingest-from/dynatrace-oneagent/oneagent-update "Learn how to update OneAgent.") to the latest version.
 
@@ -83,7 +82,7 @@ As part of our ongoing commitment to delivering a streamlined and consistent use
 * **Sunset date**: June 30, 2026
 * **Support ends**: June 30, 2026
 
-### Whatâs changing?
+### What’s changing?
 
 The Dynatrace native mobile apps will no longer be available for download or supported after the sunset date.
 

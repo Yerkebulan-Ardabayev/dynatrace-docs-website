@@ -1,7 +1,6 @@
 ---
 title: Settings API - Custom RUM JavaScript version schema table
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/settings/schemas/builtin-rum-web-custom-rum-javascript-version
-scraped: 2026-05-12T11:43:29.550516
 ---
 
 # Settings API - Custom RUM JavaScript version schema table

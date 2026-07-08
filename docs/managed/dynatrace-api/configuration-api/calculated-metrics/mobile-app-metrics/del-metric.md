@@ -1,7 +1,6 @@
 ---
 title: Mobile app metrics API - DELETE a metric
 source: https://docs.dynatrace.com/managed/dynatrace-api/configuration-api/calculated-metrics/mobile-app-metrics/del-metric
-scraped: 2026-05-12T11:17:30.865331
 ---
 
 # Mobile app metrics API - DELETE a metric
@@ -40,5 +39,5 @@ To learn how to obtain and use it, see [Tokens and authentication](/managed/disc
 
 ## Related topics
 
-* [Create calculated metrics for mobile applications](/managed/observe/digital-experience/mobile-applications/additional-configuration/rum-calculated-metrics-mobile "Create calculated metrics as well as custom charts based on calculated metrics for your mobile applications.")
-* [Create calculated metrics for custom applications](/managed/observe/digital-experience/custom-applications/additional-configuration/rum-calculated-metrics-custom "Create calculated metrics as well as custom charts based on calculated metrics for your custom applications.")
+* [Create calculated metrics for mobile applications in RUM Classic](/managed/observe/digital-experience/rum-classic/mobile-applications/additional-configuration/rum-calculated-metrics-mobile "Create calculated metrics as well as custom charts based on calculated metrics for your mobile applications.")
+* [Create calculated metrics for custom applications in RUM Classic](/managed/observe/digital-experience/rum-classic/custom-applications/additional-configuration/rum-calculated-metrics-custom "Create calculated metrics as well as custom charts based on calculated metrics for your custom applications.")

@@ -1,7 +1,6 @@
 ---
 title: Settings API - Kubernetes Connector schema table
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/settings/schemas/app-dynatrace-kubernetes-connector-connection
-scraped: 2026-05-12T11:42:45.297484
 ---
 
 # Settings API - Kubernetes Connector schema table
@@ -12,7 +11,7 @@ scraped: 2026-05-12T11:42:45.297484
 
 ### Kubernetes Connector (`app:dynatrace.kubernetes.connector:connection)`
 
-Available connections for [Kubernetes Connectorï»¿](https://dt-url.net/qx03q4d). A connection is bound to a Kubernetes cluster where the workflow actions operate. We recommend following the steps described [hereï»¿](https://dt-url.net/mf03qvf) using the Dynatrace Operator, which automatically creates the connection.
+Available connections for [Kubernetes Connector﻿](https://dt-url.net/qx03q4d). A connection is bound to a Kubernetes cluster where the workflow actions operate. We recommend following the steps described [here﻿](https://dt-url.net/mf03qvf) using the Dynatrace Operator, which automatically creates the connection.
 
 | Schema ID | Schema groups | Scope |
 | --- | --- | --- |

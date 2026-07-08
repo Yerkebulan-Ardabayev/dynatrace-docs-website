@@ -1,7 +1,6 @@
 ---
 title: HA - Set or update proxy configuration for specific data center
 source: https://docs.dynatrace.com/managed/dynatrace-api/cluster-api/cluster-api-v1/internet-proxy-v1/put-cluster-proxy-configuration-ha
-scraped: 2026-05-12T12:12:51.586928
 ---
 
 # HA - Set or update proxy configuration for specific data center

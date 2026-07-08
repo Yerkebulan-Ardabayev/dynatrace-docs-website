@@ -1,7 +1,6 @@
 ---
 title: VMware vSphere monitoring
 source: https://docs.dynatrace.com/managed/observe/infrastructure-observability/vmware-vsphere-monitoring
-scraped: 2026-05-12T11:09:30.612528
 ---
 
 # VMware vSphere monitoring
@@ -9,7 +8,7 @@ scraped: 2026-05-12T11:09:30.612528
 # VMware vSphere monitoring
 
 * How-to guide
-* Published Aug 12, 2021
+* Updated on Jun 09, 2026
 
 Setting up Dynatrace monitoring of a VMware platform is easy using ActiveGate as a communication gateway.
 
@@ -18,13 +17,13 @@ Setting up Dynatrace monitoring of a VMware platform is easy using ActiveGate as
 
 **Flow of monitoring data from your VMware platform to Dynatrace:**
 
-![Virtualization data flow](https://dt-cdn.net/images/virtualization-flow-1280-93a1053e89.png)
+![Flow of monitoring data from your VMware platform to Dynatrace](https://cdn.bfldr.com/B686QPH3/as/9k4mgswchhfsct9n4x6r9/VMware_vSphere_monitoring_-_Light_Mode?auto=webp&format=png&position=1)
 
-Virtualization data flow
+Flow of monitoring data from your VMware platform to Dynatrace
 
 The following applies to VMware only. For other virtualization platforms, you only need to install OneAgent for virtualized host monitoring, as the monitoring of virtualization management layers is supported only for VMware.
 
-Once Dynatrace OneAgent is installed and process monitoring is activated on a virtual machine, you can see what's happening in your operating systemâspecifically, how your host-based processes behave and communicate.
+Once Dynatrace OneAgent is installed and process monitoring is activated on a virtual machine, you can see what's happening in your operating system—specifically, how your host-based processes behave and communicate.
 
 Dynatrace collects information related to virtualized CPU usage, memory consumption, and storage-related activities. Dynatrace also detects virtual machine migrations (vMotion) and the creation of new virtual machines.
 
@@ -55,13 +54,13 @@ To connect Dynatrace to your VMware platform
    Optional You can also bypass the proxy for connecting with vCenter or ESXi when configuring the VMware integration. Modify [ActiveGate configuration](/managed/ingest-from/dynatrace-activegate/configuration/set-up-proxy-authentication-for-activegate#exclude-hosts "Learn how to configure ActiveGate properties to set up a proxy.") to exclude a specific host from the proxy.
 4. Enter the associated user credentials so that ActiveGate can sign in and collect monitoring data. The required privileges for this user are **view and read-only access**. Administrator-level access isn't required to enable monitoring (no changes to your VMware settings are required).
 
-   You donât need to add ESXi hosts individually if they're managed by a vCenter server.
+   You don’t need to add ESXi hosts individually if they're managed by a vCenter server.
 5. ActiveGate version 1.268+ Specify a filter condition to limit the number of monitored clusters:
 
-   * `$prefix(parameter)`âproperty value starts with `parameter`
-   * `$eq(parameter)`âproperty value exactly matches `parameter`
-   * `$suffix(parameter)`âproperty value ends with `parameter`
-   * `$contains(parameter)`âproperty value contains `parameter`
+   * `$prefix(parameter)`—property value starts with `parameter`
+   * `$eq(parameter)`—property value exactly matches `parameter`
+   * `$suffix(parameter)`—property value ends with `parameter`
+   * `$contains(parameter)`—property value contains `parameter`
 6. Select **Test connection** to verify that the entered data has successfully connected to your vCenter.
 
    Credentials
@@ -83,9 +82,9 @@ After you set up VMware monitoring, you might want to limit which infrastructura
 
 ## Troubleshoot VMware connection
 
-* Option 1 - [vCentre Event Consoleï»¿](https://dt-url.net/mh238c4)
-* Option 2 - [VMware PowerCLIï»¿](https://dt-url.net/ni038yh) Windows only
-* [Monitoring invalid credentialsï»¿](https://dt-url.net/fi038fn)
+* Option 1 - [vCentre Event Console﻿](https://dt-url.net/mh238c4)
+* Option 2 - [VMware PowerCLI﻿](https://dt-url.net/ni038yh) Windows only
+* [Monitoring invalid credentials﻿](https://dt-url.net/fi038fn)
 
 ## Configure vSphere monitoring using Settings API
 

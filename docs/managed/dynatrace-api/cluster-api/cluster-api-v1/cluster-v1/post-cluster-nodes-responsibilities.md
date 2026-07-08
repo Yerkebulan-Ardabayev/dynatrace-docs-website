@@ -1,7 +1,6 @@
 ---
 title: Configure cluster nodes responsibilities
 source: https://docs.dynatrace.com/managed/dynatrace-api/cluster-api/cluster-api-v1/cluster-v1/post-cluster-nodes-responsibilities
-scraped: 2026-05-12T12:09:04.775577
 ---
 
 # Configure cluster nodes responsibilities
@@ -32,7 +31,7 @@ To execute this request, you need the **Service Provider API** (`ServiceProvider
 
 | Element | Type | Description | Required |
 | --- | --- | --- | --- |
-| clusterNodes | [NodeResponsibilitiesConfigDto[]](#openapi-definition-NodeResponsibilitiesConfigDto) | - | Optional |
+| clusterNodes | [NodeResponsibilitiesConfigDto](#openapi-definition-NodeResponsibilitiesConfigDto)[] | - | Optional |
 
 #### The `NodeResponsibilitiesConfigDto` object
 

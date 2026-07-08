@@ -1,20 +1,19 @@
 ---
-title: Script mode for HTTP monitor configuration
+title: Script mode for HTTP monitor configuration in Classic
 source: https://docs.dynatrace.com/managed/observe/digital-experience/synthetic-monitoring/http-monitors-classic/script-mode-for-http-monitor-configuration-classic
-scraped: 2026-05-12T11:32:11.597881
 ---
 
-# Script mode for HTTP monitor configuration
+# Script mode for HTTP monitor configuration in Classic
 
-# Script mode for HTTP monitor configuration
+# Script mode for HTTP monitor configuration in Classic
 
 * How-to guide
 * 1-min read
 * Published Jul 17, 2019
 
-In addition to the configuration in the UI (**Visual mode**), you can use **Script mode** to configure your [HTTP monitors](/managed/observe/digital-experience/synthetic-monitoring/http-monitors-classic/create-an-http-monitor-classic "Learn how to set up an HTTP monitor to check the performance and availability of your site."). In this mode, you can access the underlying JSON script of your monitor. If you're a Synthetic Monitoring power user, this will make your life a lot easier and allow you to speed up monitor creation and management. Use the script editor to quickly find specific events (steps) or adapt locators across the entire script.
+In addition to the configuration in the UI (**Visual mode**), you can use **Script mode** to configure your [HTTP monitors](/managed/observe/digital-experience/synthetic-monitoring/http-monitors-classic/create-an-http-monitor-classic "Learn how to set up an HTTP monitor to check the performance and availability of your site."). In this mode, you can access the underlying JSON script of your monitor. If you're a Synthetic Monitoring Classic power user, this will make your life a lot easier and allow you to speed up monitor creation and management. Use the script editor to quickly find specific events (steps) or adapt locators across the entire script.
 
-You aren't limited to just one modeâyou can switch between the UI and script modes by selecting the **Visual mode**/**Script mode**.
+You aren't limited to just one mode—you can switch between the UI and script modes by selecting the **Visual mode**/**Script mode**.
 
 ## Access the script
 
@@ -29,9 +28,9 @@ To edit your HTTP monitor in script mode:
 
 You can download the script (**Download script as .json**) or just copy it from the editor and edit it in a text editor of your choice. However, you can also edit the script directly in the browser. This provides the following benefits:
 
-* Autocompleteâjust press **Ctrl+Spacebar** to see a list of suggestions.
+* Autocomplete—just press **Ctrl+Spacebar** to see a list of suggestions.
 * Syntax highlighting makes it easier for you to write script code.
-* Instant error validationâthe editor instantly shows a warning for any error in the script. Hover over the error to see what's wrong and a suggestion for how to fix it. You cannot save changes until the code is error free.
+* Instant error validation—the editor instantly shows a warning for any error in the script. Hover over the error to see what's wrong and a suggestion for how to fix it. You cannot save changes until the code is error free.
 
 Note that you need to escape all special characters and break lines with a backslash (for example, a new line is `\n`, double quotes is `\"`, and tab is `\t`).
 
@@ -47,7 +46,7 @@ Contains the monitor script.
 
 | Element | Type | Description | Required |
 | --- | --- | --- | --- |
-| `version` | string | Script versionâuse the `1.0` value here. | Required |
+| `version` | string | Script version—use the `1.0` value here. | Required |
 | `requests` | Array of:  [request](#request) | A list of HTTP requests to be performed by the monitor  The requests are executed in the order in which they appear in the script. | Required |
 
 #### The `request` object
@@ -59,7 +58,7 @@ Contains the parameters of an HTTP request.
 | `description` | string | A short description of the event to appear in the web UI | Optional |
 | `url` | string | The URL to check | Required |
 | `method` | string | The HTTP method of the request | Required |
-| `requestBody` | string | The body of the HTTP requestâyou need to escape all JSON characters.  Is set to null if the request method is GET, HEAD, or OPTIONS. | Optional |
+| `requestBody` | string | The body of the HTTP request—you need to escape all JSON characters.  Is set to null if the request method is GET, HEAD, or OPTIONS. | Optional |
 | `validation` | [requestValidation](#validation) | The validation configuration of the request  Validation helps you verify that your HTTP monitor loads the expected content. | Optional |
 | `configuration` | [requestConfiguration](#configuration) | The [setup](/managed/observe/digital-experience/synthetic-monitoring/http-monitors-classic/configure-http-monitors-classic#setup "Learn about configuring HTTP monitors.") of the monitor | Optional |
 | `preProcessingScript` | string | The [script](/managed/observe/digital-experience/synthetic-monitoring/http-monitors-classic/pre-and-post-scripting-for-http-monitors-classic "Learn how to apply pre and post scripts to your requests") executed before the request  You must escape all JSON characters and break lines with `/n`. | Optional |
@@ -89,8 +88,8 @@ Contains a validation rule.
 
 | Element | Type | Description | Required |
 | --- | --- | --- | --- |
-| `type` | string | The type of ruleâpossible values are:  * `patternConstraint`âperforms a simple content match. * `regexConstraint`âinterprets the content match as a [regular expression](/managed/manage/tags-and-metadata/reference/regular-expressions-in-dynatrace "Learn how to use regular expressions in the context of Dynatrace."). * `httpStatusesList`âvalidates a list of HTTP status codes. * `certificateExpiryDateConstraint`âchecks if certificate expiry is within a specified number of days. | Required |
-| `passIfFound` | boolean | The validation condition:  * `true`âvalidation **succeeds** if the specified content/element is found. * `false`âvalidation **fails** if the specified content/element is found.  Always specify `false` for `certificateExpiryDateConstraint` to fail the monitor if SSL certificate expiry is within the specified number of days. | Required |
+| `type` | string | The type of rule—possible values are:  * `patternConstraint`—performs a simple content match. * `regexConstraint`—interprets the content match as a [regular expression](/managed/manage/tags-and-metadata/reference/regular-expressions-in-dynatrace "Learn how to use regular expressions in the context of Dynatrace."). * `httpStatusesList`—validates a list of HTTP status codes. * `certificateExpiryDateConstraint`—checks if certificate expiry is within a specified number of days. | Required |
+| `passIfFound` | boolean | The validation condition:  * `true`—validation **succeeds** if the specified content/element is found. * `false`—validation **fails** if the specified content/element is found.  Always specify `false` for `certificateExpiryDateConstraint` to fail the monitor if SSL certificate expiry is within the specified number of days. | Required |
 | `value` | string | The content to look for | Required |
 
 #### The `requestConfiguration` object
@@ -99,7 +98,7 @@ Contains the [setup](/managed/observe/digital-experience/synthetic-monitoring/ht
 
 | Element | Type | Description | Required |
 | --- | --- | --- | --- |
-| `userAgent` | string | The [**User agent**ï»¿](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/User-Agent) of the request | Optional |
+| `userAgent` | string | The [**User agent**﻿](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/User-Agent) of the request | Optional |
 | `acceptAnyCertificate` | boolean | Accept any (`true`) or only a trusted (`false`) SSL certificate.  If set to `false`, then the monitor fails with invalid SSL certificates.  If not set, the `false` option is used. | Optional |
 | `followRedirects` | boolean | Follow (`true`) or don't follow (`false`) redirects.  If set to `false`, redirects are reported as successful requests with response code `3xx`.  If not set, the `false` option is used. | Optional |
 | `requestHeaders` | Array of:  [requestHeader](#header) | A list of additional headers for the request  By default, only the **User-Agent** header is set.  You can't set or modify this header here. Use the `userAgent` field for that. | Optional |

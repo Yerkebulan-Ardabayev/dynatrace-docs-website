@@ -1,7 +1,6 @@
 ---
 title: Failure detection API - DELETE a parameter set
 source: https://docs.dynatrace.com/managed/dynatrace-api/configuration-api/service-api/failure-detection/parameter-set/delete-parameter-set
-scraped: 2026-05-12T11:16:11.409630
 ---
 
 # Failure detection API - DELETE a parameter set

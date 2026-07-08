@@ -1,7 +1,6 @@
 ---
 title: Settings API - Salesforce Insights schema table
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/settings/schemas/app-dynatrace-biz-salesforce-insights-biz-salesforce-insights-settings
-scraped: 2026-05-12T11:48:09.269211
 ---
 
 # Settings API - Salesforce Insights schema table

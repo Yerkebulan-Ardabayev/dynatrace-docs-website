@@ -1,7 +1,6 @@
 ---
 title: New installation
 source: https://docs.dynatrace.com/managed/manage/network-zones/new-installation
-scraped: 2026-05-12T11:10:47.471157
 ---
 
 # New installation

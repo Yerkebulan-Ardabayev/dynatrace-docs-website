@@ -1,7 +1,6 @@
 ---
 title: Dashboards API - GET sharing configuration
 source: https://docs.dynatrace.com/managed/dynatrace-api/configuration-api/dashboards-api/get-sharing-config
-scraped: 2026-05-12T11:14:44.121591
 ---
 
 # Dashboards API - GET sharing configuration
@@ -50,9 +49,9 @@ Sharing configuration of the dashboard.
 | --- | --- | --- |
 | enabled | boolean | The dashboard is shared (`true`) or private (`false`). |
 | id | string | The Dynatrace entity ID of the dashboard. |
-| permissions | [DashboardSharePermissions[]](#openapi-definition-DashboardSharePermissions) | A list of permissions to access the dashboard. |
+| permissions | [DashboardSharePermissions](#openapi-definition-DashboardSharePermissions)[] | A list of permissions to access the dashboard. |
 | preset | boolean | If `true` the dashboard will be marked as preset. |
-| publicAccess | [DashboardAnonymousAccess](#openapi-definition-DashboardAnonymousAccess) | Configuration of the [anonymous accessï»¿](https://dt-url.net/ov03sf1) to the dashboard. |
+| publicAccess | [DashboardAnonymousAccess](#openapi-definition-DashboardAnonymousAccess) | Configuration of the [anonymous access﻿](https://dt-url.net/ov03sf1) to the dashboard. |
 
 #### The `DashboardSharePermissions` object
 
@@ -66,7 +65,7 @@ Access permissions of the dashboard.
 
 #### The `DashboardAnonymousAccess` object
 
-Configuration of the [anonymous accessï»¿](https://dt-url.net/ov03sf1) to the dashboard.
+Configuration of the [anonymous access﻿](https://dt-url.net/ov03sf1) to the dashboard.
 
 | Element | Type | Description |
 | --- | --- | --- |

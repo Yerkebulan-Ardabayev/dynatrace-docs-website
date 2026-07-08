@@ -1,7 +1,6 @@
 ---
 title: Data protection at Dynatrace
 source: https://docs.dynatrace.com/managed/manage/data-privacy-and-security/data-privacy/data-protection
-scraped: 2026-05-12T11:09:02.441650
 ---
 
 # Data protection at Dynatrace
@@ -17,7 +16,7 @@ Dynatrace enables you to be in full control of your data. With appropriate defau
 
 ## Data minimization strategy
 
-Dynatrace provides you with the opportunity to follow the principle of data minimization, with an aim to reduce the processing of data to a strict minimum. You control the data sent to Dynatrace with the built-in mechanisms including [data masking rules](/managed/manage/data-privacy-and-security/configuration/configure-global-privacy-settings "Learn how to set up data privacy masking for end user IP addresses, geolocations, and user action names."), [user action naming rules](/managed/observe/digital-experience/web-applications/initial-setup/create-custom-names-for-user-actions "Customize automatically generated user action names for your web applications."), [Anonymization API](/managed/dynatrace-api/environment-api/anonymization "Find out how fulfill GDPR requirements by using the Dynatrace API to remove user data."), and more. We enable you to obtain the full value of Dynatrace products and services without the necessity of sharing personal data (aside from authentication purposes) with Dynatrace.
+Dynatrace provides you with the opportunity to follow the principle of data minimization, with an aim to reduce the processing of data to a strict minimum. You control the data sent to Dynatrace with the built-in mechanisms including [data masking rules](/managed/manage/data-privacy-and-security/configuration/configure-global-privacy-settings "Learn how to set up data privacy masking for end user IP addresses, geolocations, and user action names."), [user action naming rules](/managed/observe/digital-experience/rum-classic/web-applications/initial-setup/create-custom-names-for-user-actions "Customize automatically generated user action names for your web applications."), [Anonymization API](/managed/dynatrace-api/environment-api/anonymization "Find out how fulfill GDPR requirements by using the Dynatrace API to remove user data."), and more. We enable you to obtain the full value of Dynatrace products and services without the necessity of sharing personal data (aside from authentication purposes) with Dynatrace.
 
 ## Privacy and security by design
 
@@ -41,7 +40,7 @@ At Dynatrace, we recognize that our high data privacy and security standards dep
 
 You control whether Dynatrace has access to your data. Only users who are members of the monitoring environment's administrative groups, which are tightly controlled by you, can grant or revoke access to the collected data. For information on what options you have for managing access control in Dynatrace, see [Role-based permissions](/managed/manage/identity-access-management/permission-management/role-based-permissions "Role-based permissions").
 
-When you need our support, authorized Dynatrace employeesâspecifically, second- and third-level support representativesâcan be granted access to view your data. Such access is restricted by a strong "need to access" policy. Each access is logged, time-stamped, and made available to you in an automated way via our REST API. All authorized Dynatrace employees are bound by strict confidentiality agreements.
+When you need our support, authorized Dynatrace employees—specifically, second- and third-level support representatives—can be granted access to view your data. Such access is restricted by a strong "need to access" policy. Each access is logged, time-stamped, and made available to you in an automated way via our REST API. All authorized Dynatrace employees are bound by strict confidentiality agreements.
 
 ## Monitoring and audit logging
 
@@ -49,7 +48,7 @@ All systems operated by Dynatrace are subject to health and security monitoring,
 
 ## Data retention management
 
-To perform monitoring services, Dynatrace retains only the data that you elect to share and stores it in your Dynatrace Cluster. Dynatrace automatically deletes data that is older than the configured [retention periods](/managed/manage/data-privacy-and-security/data-privacy/data-retention-periods "Check retention times for various data types."). Dynatrace also provides [Adaptive Data Retention](/managed/manage/data-privacy-and-security/data-privacy/adaptive-data-retention "Find out how the retention time for the data stored in the transaction, Session Replay, and Log monitoring storages is adjusted.") as functionality to periodically increase or decrease the data retention time when your disk space is insufficient.
+To perform monitoring services, Dynatrace retains only the data that you elect to share and stores it in your Dynatrace Cluster. Dynatrace automatically deletes data that is older than the configured [retention periods](/managed/manage/data-privacy-and-security/data-privacy/data-retention-periods "Review default and configurable retention periods for service, RUM Classic, synthetic, Log Monitoring, metric, diagnostic, and security data in Dynatrace Managed."). Dynatrace also provides [Adaptive Data Retention](/managed/manage/data-privacy-and-security/data-privacy/adaptive-data-retention "Learn how Dynatrace Managed adapts transaction, Session Replay, and Log Monitoring retention when environments exceed quota or disk limits.") as functionality to periodically increase or decrease the data retention time when your disk space is insufficient.
 
 ## Alignment with data protection laws
 

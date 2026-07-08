@@ -1,7 +1,6 @@
 ---
 title: Monitor key requests
 source: https://docs.dynatrace.com/managed/observe/application-observability/services-classic/monitor-key-requests
-scraped: 2026-05-12T11:21:48.335356
 ---
 
 # Monitor key requests
@@ -20,9 +19,9 @@ scraped: 2026-05-12T11:21:48.335356
 
   | Data type | Retention period |
   | --- | --- |
-  | [Detailed code-level data](/managed/manage/data-privacy-and-security/data-privacy/data-retention-periods#purepath "Check retention times for various data types.") | 10 days |
-  | [Aggregated code-level data](/managed/manage/data-privacy-and-security/data-privacy/data-retention-periods#request-attributes "Check retention times for various data types.") | 35 days |
-  | [Long-term metric history](/managed/manage/data-privacy-and-security/data-privacy/data-retention-periods#metrics-classic "Check retention times for various data types.") | 5 years |
+  | [Detailed code-level data](/managed/manage/data-privacy-and-security/data-privacy/data-retention-periods#purepath "Review default and configurable retention periods for service, RUM Classic, synthetic, Log Monitoring, metric, diagnostic, and security data in Dynatrace Managed.") | 10 days |
+  | [Aggregated code-level data](/managed/manage/data-privacy-and-security/data-privacy/data-retention-periods#request-attributes "Review default and configurable retention periods for service, RUM Classic, synthetic, Log Monitoring, metric, diagnostic, and security data in Dynatrace Managed.") | 35 days |
+  | [Long-term metric history](/managed/manage/data-privacy-and-security/data-privacy/data-retention-periods#metrics-classic "Review default and configurable retention periods for service, RUM Classic, synthetic, Log Monitoring, metric, diagnostic, and security data in Dynatrace Managed.") | 5 years |
 
 Key requests are highlighted in **Key requests/endpoints** of each service overview page. This visibility is particularly valuable for low-volume, high-importance requests that would otherwise appear at the bottom of **Top requests**.
 
@@ -41,7 +40,7 @@ To mark a specific request as a key request
 2. Select the relevant service from the list.
 3. On the service overview page, select a **View** button (such as **View requests**, **View dynamic requests**, or **View resource requests**).
 4. Scroll down to **Top requests** and select a request you want to mark as a key request.
-5. On the request overview page, select **More** (**â¦**) > **Mark as key request** or **Pin to dashboard**.
+5. On the request overview page, select **More** (**…**) > **Mark as key request** or **Pin to dashboard**.
 
    ![Set key request](https://dt-cdn.net/images/key-request-1000-c04070fc96.png)
 
@@ -57,7 +56,7 @@ To create a dashboard tile for a specific request
 2. Select the relevant service from the list.
 3. On the service overview page, select **View** (**View requests**, **View dynamic requests**, or **View resource requests**).
 4. Scroll down to **Key requests/endpoints** and select a request you want to show on a dashboard.
-5. On the request overview page, select **More** (**â¦**) > **Pin to dashboard**.  
+5. On the request overview page, select **More** (**…**) > **Pin to dashboard**.  
    A new request-specific tile that shows the most important metrics for that particular request is then added to your dashboard.
 
 Dashboard tiles include only data collected after the request has been marked as key request.
@@ -67,7 +66,7 @@ Dashboard tiles include only data collected after the request has been marked as
 Key request detection is name-based. When you apply a [request naming rule](/managed/observe/application-observability/services/service-detection/service-detection-v1/set-up-request-naming "Adjust request naming and define the operations your services offer."), it can affect key requests. If you want Dynatrace to continue detecting renamed requests as key requests, you need to add the new name to the list of key request names.
 
 1. Go to **Services** and select the service you want to configure.
-2. Select **More** (**â¦**) > **Settings**.
+2. Select **More** (**…**) > **Settings**.
 3. On the **Service settings** page, go to the **Key requests** tab and select **Add item** to add the name to which the request naming rules apply.
 
 ## Anomaly detection with key requests
@@ -80,7 +79,7 @@ Because certain requests may have specific response-time and failure-rate patter
 
 ## Calculated service metric
 
-As an alternative way to focus on particular requests, you can create a [calculated service metric](/managed/observe/application-observability/services/calculated-service-metric "Learn how to create a calculated metric based on web requests."), based on the requests you need. This approach provides you more flexibility with alertingâyou can use the calculated metric just like any built-in metric provided by Dynatrace.
+As an alternative way to focus on particular requests, you can create a [calculated service metric](/managed/observe/application-observability/services/calculated-service-metric "Learn how to create a calculated metric based on web requests."), based on the requests you need. This approach provides you more flexibility with alerting—you can use the calculated metric just like any built-in metric provided by Dynatrace.
 
 ## Manage key requests via Settings API
 

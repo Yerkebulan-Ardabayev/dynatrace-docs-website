@@ -1,7 +1,6 @@
 ---
 title: Plugins API - GET all plugins
 source: https://docs.dynatrace.com/managed/dynatrace-api/configuration-api/plugins-api/get-all-plugins
-scraped: 2026-05-12T11:21:08.974884
 ---
 
 # Plugins API - GET all plugins
@@ -46,7 +45,7 @@ An ordered list of short representations of Dynatrace entities.
 
 | Element | Type | Description |
 | --- | --- | --- |
-| values | [EntityShortRepresentation[]](#openapi-definition-EntityShortRepresentation) | An ordered list of short representations of Dynatrace entities. |
+| values | [EntityShortRepresentation](#openapi-definition-EntityShortRepresentation)[] | An ordered list of short representations of Dynatrace entities. |
 
 #### The `EntityShortRepresentation` object
 

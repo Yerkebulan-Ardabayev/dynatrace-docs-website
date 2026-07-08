@@ -1,7 +1,6 @@
 ---
 title: Custom Traces Classic (DPS)
 source: https://docs.dynatrace.com/managed/license/capabilities/platform-extensions/custom-traces-classic
-scraped: 2026-05-12T12:13:05.791226
 ---
 
 # Custom Traces Classic (DPS)
@@ -20,7 +19,7 @@ For an overview of the capability, including its main features, see [Custom Trac
 
 The unit of measure for Custom Traces Classic is in an ingested span.
 A span is a single operation within a distributed trace.
-To calculate the total consumption, multiply the number of ingested spans by the [price per spanï»¿](https://www.dynatrace.com/pricing/rate-card/).
+To calculate the total consumption, multiply the number of ingested spans by the [price per span﻿](https://www.dynatrace.com/pricing/rate-card/).
 
 Traces, including OpenTelemetry spans captured by OneAgent code modules or sent via the OneAgent local Trace API, are included with [Full-Stack Monitoring](/managed/license/capabilities/app-infra-observability/full-stack-monitoring "Learn how your consumption of the Dynatrace Full-Stack Monitoring DPS capability is billed and charged."), and therefore are not consumed as Custom Traces Classic.
 
@@ -86,4 +85,4 @@ Custom Traces Classic (DPS)
 ## Related topics
 
 * [Platform extensions overview (DPS)](/managed/license/capabilities/platform-extensions "Learn how consumption of Dynatrace platform extensions is calculated using the Dynatrace Platform Subscription model.")
-* [Dynatrace pricingï»¿](https://www.dynatrace.com/pricing/)
+* [Dynatrace pricing﻿](https://www.dynatrace.com/pricing/)

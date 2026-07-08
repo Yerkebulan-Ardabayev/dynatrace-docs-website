@@ -1,18 +1,17 @@
 ---
-title: Public Synthetic locations
+title: Public Synthetic locations in Classic
 source: https://docs.dynatrace.com/managed/observe/digital-experience/synthetic-monitoring/general-information/public-synthetic-locations
-scraped: 2026-05-12T11:32:01.515716
 ---
 
-# Public Synthetic locations
+# Public Synthetic locations in Classic
 
-# Public Synthetic locations
+# Public Synthetic locations in Classic
 
 * Reference
 * 8-min read
 * Updated on Feb 08, 2024
 
-Dynatrace offers a global network of public Synthetic Monitoring locations out of the box. With Dynatrace Synthetic Monitoring, you can run your monitors from public locations that are based on the infrastructure of these major cloud providers: Alibaba Cloud, Amazon AWS, Google Cloud, and Microsoft Azure.
+Dynatrace offers a global network of public Synthetic Monitoring Classic locations out of the box. With Dynatrace Synthetic Monitoring Classic, you can run your monitors from public locations that are based on the infrastructure of these major cloud providers: Alibaba Cloud, Amazon AWS, Google Cloud, and Microsoft Azure.
 
 Note that:
 
@@ -74,7 +73,7 @@ While we aim to make this transition as seamless as possible, there are specific
 
 * If you're a Dynatrace Managed user with firewall-protected clusters, please refresh the configuration to allow the alternative location to communicate with the Cluster ActiveGate.
 
-* If you have applications monitored by Dynatrace Synthetic Monitoring, you might need to adjust your firewall configuration to permit incoming traffic from your selected alternative locations to reach your websites.
+* If you have applications monitored by Dynatrace Synthetic Monitoring Classic, you might need to adjust your firewall configuration to permit incoming traffic from your selected alternative locations to reach your websites.
 * After the end of March 2024, the Alibaba Sydney and Mumbai public locations will no longer be accessible. Consequently, you'll also need to remove the associated IP addresses for these locations from your firewall configuration.
 
 For help on determining the new addresses, see [Location IP addresses](#ip-addresses).
@@ -162,8 +161,8 @@ See [Location change notice](#location-change).
 | Oslo | Microsoft Azure | GA |
 | Stavanger | Microsoft Azure | GA |
 | Stockholm | Amazon AWS | GA |
-| ZÃ¼rich | Microsoft Azure | GA |
-| ZÃ¼rich | Google Cloud | GA |
+| Zürich | Microsoft Azure | GA |
+| Zürich | Google Cloud | GA |
 
 ### North America
 
@@ -197,10 +196,10 @@ See [Location change notice](#location-change).
 
 | Location | Platform | Stage |
 | --- | --- | --- |
-| SÃ£o Paulo | Amazon AWS | GA |
-| SÃ£o Paulo | Microsoft Azure | GA |
+| São Paulo | Amazon AWS | GA |
+| São Paulo | Microsoft Azure | GA |
 
 ## Related topics
 
-* [Create a private Synthetic location](/managed/observe/digital-experience/synthetic-monitoring/private-synthetic-locations/create-a-private-synthetic-location "Learn how to create a private location for synthetic monitoring.")
+* [Create a private Synthetic location in Classic](/managed/observe/digital-experience/synthetic-monitoring/private-synthetic-locations/create-a-private-synthetic-location "Learn how to create a private location for synthetic monitoring.")
 * [Synthetic locations API - GET all locations](/managed/dynatrace-api/environment-api/synthetic/synthetic-locations/get-all-locations "List all synthetic locations via the Synthetic v1 API.")

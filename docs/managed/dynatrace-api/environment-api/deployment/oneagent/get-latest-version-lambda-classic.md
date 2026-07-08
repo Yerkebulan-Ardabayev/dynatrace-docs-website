@@ -1,7 +1,6 @@
 ---
 title: Deployment API - View the latest OneAgent version for AWS Lambda Classic
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/deployment/oneagent/get-latest-version-lambda-classic
-scraped: 2026-05-12T11:58:29.735240
 ---
 
 # Deployment API - View the latest OneAgent version for AWS Lambda Classic
@@ -69,7 +68,7 @@ Latest OneAgent lambda version names available
 | Element | Type | Description |
 | --- | --- | --- |
 | code | integer | The HTTP status code |
-| constraintViolations | [ConstraintViolation[]](#openapi-definition-ConstraintViolation) | A list of constraint violations |
+| constraintViolations | [ConstraintViolation](#openapi-definition-ConstraintViolation)[] | A list of constraint violations |
 | message | string | The error message |
 
 #### The `ConstraintViolation` object

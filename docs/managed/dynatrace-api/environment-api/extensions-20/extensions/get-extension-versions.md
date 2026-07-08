@@ -1,7 +1,6 @@
 ---
 title: Extensions 2.0 API - GET extension versions
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/extensions-20/extensions/get-extension-versions
-scraped: 2026-05-12T11:56:11.092759
 ---
 
 # Extensions 2.0 API - GET extension versions
@@ -51,7 +50,7 @@ To learn how to obtain and use it, see [Tokens and authentication](/managed/disc
 
 | Element | Type | Description |
 | --- | --- | --- |
-| extensions | [MinimalExtension[]](#openapi-definition-MinimalExtension) | A list of extensions. |
+| extensions | [MinimalExtension](#openapi-definition-MinimalExtension)[] | A list of extensions. |
 | nextPageKey | string | The cursor for the next page of results. Has the value of `null` on the last page.  Use it in the **nextPageKey** query parameter to obtain subsequent pages of the result. |
 | pageSize | integer | The number of entries per page. |
 | totalCount | integer | The total number of entries in the result. |
@@ -76,7 +75,7 @@ A list of extensions.
 | Element | Type | Description |
 | --- | --- | --- |
 | code | integer | The HTTP status code |
-| constraintViolations | [ConstraintViolation[]](#openapi-definition-ConstraintViolation) | A list of constraint violations |
+| constraintViolations | [ConstraintViolation](#openapi-definition-ConstraintViolation)[] | A list of constraint violations |
 | message | string | The error message |
 
 #### The `ConstraintViolation` object

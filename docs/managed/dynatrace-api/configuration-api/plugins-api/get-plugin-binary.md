@@ -1,7 +1,6 @@
 ---
 title: Plugins API - GET plugin ZIP file
 source: https://docs.dynatrace.com/managed/dynatrace-api/configuration-api/plugins-api/get-plugin-binary
-scraped: 2026-05-12T11:21:05.640364
 ---
 
 # Plugins API - GET plugin ZIP file

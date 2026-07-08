@@ -1,7 +1,6 @@
 ---
 title: Deploy OneAgent on Cloud Foundry for application-only monitoring
 source: https://docs.dynatrace.com/managed/ingest-from/setup-on-container-platforms/cloud-foundry/deploy-oneagent-on-cloud-foundry-for-application-only-monitoring
-scraped: 2026-05-12T11:09:23.289014
 ---
 
 # Deploy OneAgent on Cloud Foundry for application-only monitoring
@@ -11,7 +10,7 @@ scraped: 2026-05-12T11:09:23.289014
 * 2-min read
 * Published Jul 19, 2017
 
-Applications deployed on Cloud Foundry are usually run through technology-specific buildpacks that provide framework and runtime support for applications running on the Cloud Foundry platform. For complete details, see [how buildpacks workï»¿](https://docs.cloudfoundry.org/buildpacks/understand-buildpacks.html).
+Applications deployed on Cloud Foundry are usually run through technology-specific buildpacks that provide framework and runtime support for applications running on the Cloud Foundry platform. For complete details, see [how buildpacks work﻿](https://docs.cloudfoundry.org/buildpacks/understand-buildpacks.html).
 
 When deployed in application-only mode, OneAgent monitors the memory, disk, CPU, and networking of processes within the container only. Host metrics aren't monitored.
 
@@ -37,7 +36,7 @@ When deployed in application-only mode, OneAgent monitors the memory, disk, CPU,
 
    Option 2: Create a service instance via service broker
 
-   If you want to maintain Dynatrace credentials in a central location, use a service broker. For details, visit [GitHubï»¿](https://github.com/dynatrace-innovationlab/dynatrace-service-broker).
+   If you want to maintain Dynatrace credentials in a central location, use a service broker. For details, visit [GitHub﻿](https://github.com/dynatrace-innovationlab/dynatrace-service-broker).
    You need to configure and run the broker as an application, add the service broker to Cloud Foundry, enable service access to users, and finally, create the service instance.
 2. Bind Dynatrace service to your application.
 
@@ -86,6 +85,8 @@ When deployed in application-only mode, OneAgent monitors the memory, disk, CPU,
 
    - dynatrace-service
    ```
+
+   Starting end of May 2026, libbuildpack v1.9.0 and all buildpacks that include it support [file-based VCAP services﻿](https://docs.cloudfoundry.org/devguide/services/application-binding.html#file-based-vcap-services) as an alternative to environment variable-based service credentials.
 3. Optional Configure the default OneAgent log stream for Cloud Foundry.
 
    By default, OneAgent logs are written to the Cloud Foundry standard error stream. All you have to do is set the environment variable `DT_LOGSTREAM` to either `stdout` or `stderr`.

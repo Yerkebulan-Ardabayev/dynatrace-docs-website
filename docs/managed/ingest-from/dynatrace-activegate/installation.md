@@ -1,7 +1,6 @@
 ---
 title: Installation
 source: https://docs.dynatrace.com/managed/ingest-from/dynatrace-activegate/installation
-scraped: 2026-05-12T11:06:44.611441
 ---
 
 # Installation
@@ -15,8 +14,8 @@ Dynatrace offers two types of ActiveGate: Environment ActiveGate and Cluster Act
 
 An Environment ActiveGate can be installed:
 
-* using an installer, on a virtual or physical hostâthis is called **host-based deployment**
-* in a containerâthis is called **containerized deployment**
+* using an installer, on a virtual or physical host—this is called **host-based deployment**
+* in a container—this is called **containerized deployment**
 
 ## Host-based ActiveGate deployment
 

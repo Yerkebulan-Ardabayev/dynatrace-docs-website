@@ -1,7 +1,6 @@
 ---
 title: Azure credentials API
 source: https://docs.dynatrace.com/managed/dynatrace-api/configuration-api/azure-credentials-api
-scraped: 2026-05-12T11:04:25.124227
 ---
 
 # Azure credentials API

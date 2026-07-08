@@ -1,7 +1,6 @@
 ---
 title: Instrument your PHP application with OpenTelemetry
 source: https://docs.dynatrace.com/managed/ingest-from/opentelemetry/walkthroughs/php
-scraped: 2026-05-12T12:11:09.426881
 ---
 
 # Instrument your PHP application with OpenTelemetry

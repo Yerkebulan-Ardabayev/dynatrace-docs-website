@@ -1,7 +1,6 @@
 ---
 title: Settings API - Anomaly detection for infrastructure- Host schema table
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/settings/schemas/builtin-anomaly-detection-infrastructure-hosts
-scraped: 2026-05-12T11:44:49.431696
 ---
 
 # Settings API - Anomaly detection for infrastructure- Host schema table

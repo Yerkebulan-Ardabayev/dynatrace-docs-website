@@ -1,7 +1,6 @@
 ---
 title: Azure SQL Server monitoring
 source: https://docs.dynatrace.com/managed/ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics/monitor-azure-sql-server
-scraped: 2026-05-12T11:26:42.538928
 ---
 
 # Azure SQL Server monitoring

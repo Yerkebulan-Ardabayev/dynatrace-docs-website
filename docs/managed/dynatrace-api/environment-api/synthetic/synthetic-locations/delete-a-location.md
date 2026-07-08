@@ -1,7 +1,6 @@
 ---
 title: Synthetic locations API - DELETE a location
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/synthetic/synthetic-locations/delete-a-location
-scraped: 2026-05-12T11:56:53.924383
 ---
 
 # Synthetic locations API - DELETE a location
@@ -11,7 +10,7 @@ scraped: 2026-05-12T11:56:53.924383
 * Reference
 * Published Jul 26, 2019
 
-We have a new version of this APIâ[Synthetic API v2](/managed/dynatrace-api/environment-api/synthetic-v2 "Find out what the Dynatrace Synthetic v2 API offers."). Check it out!
+We have a new version of this API—[Synthetic API v2](/managed/dynatrace-api/environment-api/synthetic-v2 "Find out what the Dynatrace Synthetic v2 API offers."). Check it out!
 
 Deletes an existing **private** synthetic location. Deletion cannot be undone.
 
@@ -55,7 +54,7 @@ To learn how to obtain and use it, see [Tokens and authentication](/managed/disc
 | Element | Type | Description |
 | --- | --- | --- |
 | code | integer | The HTTP status code |
-| constraintViolations | [ConstraintViolation[]](#openapi-definition-ConstraintViolation) | A list of constraint violations |
+| constraintViolations | [ConstraintViolation](#openapi-definition-ConstraintViolation)[] | A list of constraint violations |
 | message | string | The error message |
 
 #### The `ConstraintViolation` object

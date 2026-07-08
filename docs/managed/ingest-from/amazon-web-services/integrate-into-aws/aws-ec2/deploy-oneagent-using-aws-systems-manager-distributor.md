@@ -1,7 +1,6 @@
 ---
 title: Deploy OneAgent using AWS Systems Manager Distributor
 source: https://docs.dynatrace.com/managed/ingest-from/amazon-web-services/integrate-into-aws/aws-ec2/deploy-oneagent-using-aws-systems-manager-distributor
-scraped: 2026-05-12T11:14:17.047906
 ---
 
 # Deploy OneAgent using AWS Systems Manager Distributor
@@ -12,7 +11,7 @@ scraped: 2026-05-12T11:14:17.047906
 * 8-min read
 * Updated on Jan 12, 2024
 
-With the [AWS Systems Manager Distributorï»¿](https://docs.aws.amazon.com/systems-manager/latest/userguide/distributor.html) you can distribute and automatically deploy OneAgent on your EC2 instances using the AWS Systems Manager Distributor.
+With the [AWS Systems Manager Distributor﻿](https://docs.aws.amazon.com/systems-manager/latest/userguide/distributor.html) you can distribute and automatically deploy OneAgent on your EC2 instances using the AWS Systems Manager Distributor.
 
 ## Prerequisites
 
@@ -20,11 +19,11 @@ Before you start deploying the `DynatraceOneAgent` distributor package, make sur
 
 ### AWS tags
 
-AWS tags on instance metadata are turned off by default at launch. To allow them follow the official [AWS documentationï»¿](https://dt-url.net/k2038k6).
+AWS tags on instance metadata are turned off by default at launch. To allow them follow the official [AWS documentation﻿](https://dt-url.net/k2038k6).
 
 ### AWS Systems Manager
 
-AWS Systems Manager must be set up for your AWS account and AWS Systems Manager Agent (SSM Agent) must be installed on the EC2 instances where you want to deploy `DynatraceOneAgent` distributor package. Follow the [AWS Systems Manager Quick Setupï»¿](https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-quick-setup.html) or more comprehensive [Setting up AWS Systems Managerï»¿](https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-setting-up.html).
+AWS Systems Manager must be set up for your AWS account and AWS Systems Manager Agent (SSM Agent) must be installed on the EC2 instances where you want to deploy `DynatraceOneAgent` distributor package. Follow the [AWS Systems Manager Quick Setup﻿](https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-quick-setup.html) or more comprehensive [Setting up AWS Systems Manager﻿](https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-setting-up.html).
 
 ### Supported operating systems
 
@@ -40,7 +39,7 @@ The `DynatraceOneAgent` distributor package is supported on the following operat
 
 1
 
-Support for ARM64 architecture, including [AWS Graviton processorsï»¿](https://aws.amazon.com/ec2/graviton/), is in [Early Access releaseï»¿](https://www.dynatrace.com/news/blog/get-out-of-the-box-visibility-into-your-arm-platform-early-adopter/).
+Support for ARM64 architecture, including [AWS Graviton processors﻿](https://aws.amazon.com/ec2/graviton/), is in [Early Access release﻿](https://www.dynatrace.com/news/blog/get-out-of-the-box-visibility-into-your-arm-platform-early-adopter/).
 
 ### Wget
 
@@ -60,14 +59,14 @@ Deploying OneAgent using AWS Systems Manager Distributor is currently not suppor
 
 To install the `DynatraceOneAgent` distributor package
 
-1. Open the [AWS Systems Manager consoleï»¿](https://dt-url.net/ug6387o).
+1. Open the [AWS Systems Manager console﻿](https://dt-url.net/ug6387o).
 2. In the navigation panel, select **Distributor**.
 3. On the Distributor page, select **Third party** and select the `DynatraceOneAgent` package.
-4. Select the installation mode. You can install or update the `DynatraceOneAgent` package one time or schedule the installation. For details on installing the Distributor packages, see [AWS Systems Manager Distributor documentationï»¿](https://dt-url.net/bv438ci).
+4. Select the installation mode. You can install or update the `DynatraceOneAgent` package one time or schedule the installation. For details on installing the Distributor packages, see [AWS Systems Manager Distributor documentation﻿](https://dt-url.net/bv438ci).
 5. To configure the `DynatraceOneAgent` package installation, add the [parameters](#installation-parameters) to the **Additional Arguments** field of the **Systems Manager Run Command**.
    The parameters require a [PaaS token](/managed/manage/identity-access-management/access-tokens-and-oauth-clients/access-tokens#paas-token "Learn the concept of an access token and its scopes.").
 
-   To provide a PaaS token, we recommend using a centralized cloud secret management system, such as [AWS Secrets Managerï»¿](https://dt-url.net/2803808) or [Parameter Storeï»¿](https://dt-url.net/3y238xf).
+   To provide a PaaS token, we recommend using a centralized cloud secret management system, such as [AWS Secrets Manager﻿](https://dt-url.net/2803808) or [Parameter Store﻿](https://dt-url.net/3y238xf).
 
    * Provide a PaaS token via **AWS Secrets Manager** Recommended
 
@@ -76,7 +75,7 @@ To install the `DynatraceOneAgent` distributor package
         ```
         aws secretsmanager create-secret --name dynatrace-paas-token --secret-string "paas_token_value"
         ```
-     2. Add an IAM policy to the IAM role attached to your EC2 instance(s) that grants access to retrieve the secret from the Secrets Manager. Here's an example policy that's attached to the IAM role (other options can be found in the [AWS User Guideï»¿](https://dt-url.net/7k838d2)):
+     2. Add an IAM policy to the IAM role attached to your EC2 instance(s) that grants access to retrieve the secret from the Secrets Manager. Here's an example policy that's attached to the IAM role (other options can be found in the [AWS User Guide﻿](https://dt-url.net/7k838d2)):
 
         ```
         {
@@ -118,7 +117,7 @@ To install the `DynatraceOneAgent` distributor package
         }
         ```
 
-        If your Secret is encrypted with a CMK KMS Key, you also need to grant Decrypt permissions on both: the IAM role and the KMS Key policy. For more information, check the [AWS Secrets Manager documentationï»¿](https://dt-url.net/3pa38cu).
+        If your Secret is encrypted with a CMK KMS Key, you also need to grant Decrypt permissions on both: the IAM role and the KMS Key policy. For more information, check the [AWS Secrets Manager documentation﻿](https://dt-url.net/3pa38cu).
      3. Provide the secret name via `SSM_DYNATRACE_TOKEN_SECRET_ID` on the **SSM Distributor package parameters**. Example:
 
         ```
@@ -143,7 +142,7 @@ To install the `DynatraceOneAgent` distributor package
         ```
         aws ssm put-parameter --name "dynatrace-paas-token" --value "paas_token_value" --type "SecureString"
         ```
-     2. Add an IAM policy to the IAM role attached to your EC2 instance(s) that grants access to retrieve the secret from the Parameter Store. Here's an example policy. For more information, check the [AWS Systems Manager Documentationï»¿](https://dt-url.net/3nc38v5).
+     2. Add an IAM policy to the IAM role attached to your EC2 instance(s) that grants access to retrieve the secret from the Parameter Store. Here's an example policy. For more information, check the [AWS Systems Manager Documentation﻿](https://dt-url.net/3nc38v5).
 
         ```
         {
@@ -211,7 +210,7 @@ To install the `DynatraceOneAgent` distributor package
         ```
    * Provide a PaaS token via `SSM_DYNATRACE_TOKEN` env variable. not-recommended
 
-     Using the `SSM_DYNATRACE_TOKEN` parameter is not secure because the PaaS token will be visible in the [Run Commandï»¿](https://dt-url.net/bf038x6) history.
+     Using the `SSM_DYNATRACE_TOKEN` parameter is not secure because the PaaS token will be visible in the [Run Command﻿](https://dt-url.net/bf038x6) history.
 
    Example: Additional arguments in Systems Manager Run Command
 
@@ -309,7 +308,7 @@ To install the `DynatraceOneAgent` distributor package
    ```
 
    * In Dynatrace, go to **Deployment Status**. Search for recently connected EC2 hosts to verify the result of the installation.
-7. Restart all processes that you want to monitor. Youâll be prompted with a list of the processes that need to be restarted. Note that you can restart your processes at any time, even during your organizationâs next planned maintenance period. Though until all processes have been restarted, youâll only see a limited set of metrics, for example CPU or memory consumption.
+7. Restart all processes that you want to monitor. You’ll be prompted with a list of the processes that need to be restarted. Note that you can restart your processes at any time, even during your organization’s next planned maintenance period. Though until all processes have been restarted, you’ll only see a limited set of metrics, for example CPU or memory consumption.
 
 ## Installation parameters
 
@@ -334,9 +333,9 @@ Remember that `SSM_DYNATRACE_TOKEN_PARAMETER_NAME` and `SSM_DYNATRACE_TOKEN_SECR
 
 ## Troubleshooting
 
-* [My package installation fails with 'You need to specify 'Additional Arguments' error'ï»¿](https://dt-url.net/mt638ef)
-* [My package installation fails with 'ERROR: wrong Dynatrace URL'ï»¿](https://dt-url.net/lj838gb)
-* [My package installation fails with 'ERROR: Can't retrieve Dynatrace PaaS token from secret store'ï»¿](https://dt-url.net/uga38ao)
+* [My package installation fails with 'You need to specify 'Additional Arguments' error'﻿](https://dt-url.net/mt638ef)
+* [My package installation fails with 'ERROR: wrong Dynatrace URL'﻿](https://dt-url.net/lj838gb)
+* [My package installation fails with 'ERROR: Can't retrieve Dynatrace PaaS token from secret store'﻿](https://dt-url.net/uga38ao)
 
 ## Related topics
 

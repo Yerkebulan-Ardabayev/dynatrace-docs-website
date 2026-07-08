@@ -1,7 +1,6 @@
 ---
 title: Vulnerabilities API
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/application-security/vulnerabilities
-scraped: 2026-05-12T11:12:36.017977
 ---
 
 # Vulnerabilities API

@@ -1,7 +1,6 @@
 ---
 title: Instrument your Ruby application with OpenTelemetry
 source: https://docs.dynatrace.com/managed/ingest-from/opentelemetry/walkthroughs/ruby
-scraped: 2026-05-12T11:22:10.019819
 ---
 
 # Instrument your Ruby application with OpenTelemetry
@@ -10,7 +9,7 @@ scraped: 2026-05-12T11:22:10.019819
 
 * How-to guide
 * 4-min read
-* Updated on Oct 23, 2025
+* Updated on May 11, 2026
 
 This walkthrough shows how to add observability to your Ruby application using the OpenTelemetry Ruby libraries and tools.
 
@@ -26,7 +25,10 @@ This walkthrough shows how to add observability to your Ruby application using t
 * Dynatrace version 1.222+
 * For tracing, W3C Trace Context is enabled
 
-  1. Go to **Settings** > **Preferences** > **OneAgent features**.
+  1. Go to the appropriate configuration page:
+
+     + In Latest Dynatrace, go to ![Settings](https://dt-cdn.net/images/settings-icon-256-38e1321b51.webp "Settings") **Settings** > **Collect and capture** > **General monitoring settings** > **OneAgent features**.
+     + In Dynatrace Classic, go to **Settings** > **Preferences** > **OneAgent features**.
   2. Turn on **Send W3C Trace Context HTTP headers**.
 
 ## Step 1 Get the Dynatrace access details
@@ -260,7 +262,7 @@ It's a good idea to start with automatic instrumentation and add manual instrume
    In the above code, we:
 
    * Create a new span and name it "Call to /myendpoint"
-   * Add two attributes, following the [semantic naming conventionï»¿](https://opentelemetry.io/docs/specs/semconv/general/trace/), specific to the action of this span: information on the HTTP method and version
+   * Add two attributes, following the [semantic naming convention﻿](https://opentelemetry.io/docs/specs/semconv/general/trace/), specific to the action of this span: information on the HTTP method and version
    * Add a `TODO` in place of the eventual business logic
    * Call the span's `finish()` method to complete the span (in an `ensure` block to ensure the method is called)
 
@@ -334,7 +336,7 @@ end
 
 #### Injecting the context when sending requests
 
-The following example uses Ruby's standard [Net:HTTPï»¿](https://ruby-doc.org/stdlib-2.7.0/libdoc/net/http/rdoc/Net/HTTP.html) library to call an instrumented third-party service. To add the necessary trace headers, we use the default propagator's `inject()` method.
+The following example uses Ruby's standard [Net:HTTP﻿](https://ruby-doc.org/stdlib-2.7.0/libdoc/net/http/rdoc/Net/HTTP.html) library to call an instrumented third-party service. To add the necessary trace headers, we use the default propagator's `inject()` method.
 
 ```
 request = Net::HTTP::Get.new(uri.request_uri)

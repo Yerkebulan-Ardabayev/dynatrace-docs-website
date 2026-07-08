@@ -1,7 +1,6 @@
 ---
 title: Email integration for security notifications
 source: https://docs.dynatrace.com/managed/secure/application-security/application-protection/security-notifications-rap/email-integration
-scraped: 2026-05-12T12:10:32.546438
 ---
 
 # Email integration for security notifications

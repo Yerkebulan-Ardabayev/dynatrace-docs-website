@@ -1,7 +1,6 @@
 ---
 title: Deployment API - GET checksum of a BOSH tarball
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/deployment/bosh/get-bosh-checksum
-scraped: 2026-05-12T11:55:23.339946
 ---
 
 # Deployment API - GET checksum of a BOSH tarball
@@ -31,7 +30,7 @@ To learn how to obtain and use it, see [Tokens and authentication](/managed/disc
 | Parameter | Type | Description | In | Required |
 | --- | --- | --- | --- | --- |
 | osType | string | The operating system of the installer. The element can hold these values * `windows` * `unix` | path | Required |
-| version | string | The required version of the OneAgent in the `1.155.275.20181112-084458` format.  You can retrieve the list of available versions with the [**GET available versions of BOSH tarballs**ï»¿](https://dt-url.net/j703kdn) call. | path | Required |
+| version | string | The required version of the OneAgent in the `1.155.275.20181112-084458` format.  You can retrieve the list of available versions with the [**GET available versions of BOSH tarballs**﻿](https://dt-url.net/j703kdn) call. | path | Required |
 | skipMetadata | boolean | Set `true` to omit the OneAgent connectivity information from the installer.  If not set, `false` is used. | query | Optional |
 | networkZone | string | The network zone you want the result to be configured with. | query | Optional |
 
@@ -66,7 +65,7 @@ The checksum of the BOSH release tarball.
 | Element | Type | Description |
 | --- | --- | --- |
 | code | integer | The HTTP status code |
-| constraintViolations | [ConstraintViolation[]](#openapi-definition-ConstraintViolation) | A list of constraint violations |
+| constraintViolations | [ConstraintViolation](#openapi-definition-ConstraintViolation)[] | A list of constraint violations |
 | message | string | The error message |
 
 #### The `ConstraintViolation` object

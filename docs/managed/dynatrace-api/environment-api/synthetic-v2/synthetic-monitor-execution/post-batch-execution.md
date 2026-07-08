@@ -1,7 +1,6 @@
 ---
 title: Synthetic monitor executions API v2 - POST batch execution
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/synthetic-v2/synthetic-monitor-execution/post-batch-execution
-scraped: 2026-05-12T11:57:51.920653
 ---
 
 # Synthetic monitor executions API v2 - POST batch execution
@@ -47,7 +46,7 @@ Contains parameters for the on-demand execution of monitors identified by tags, 
 | failOnSslWarning | boolean | Applies to HTTP monitors only. If true, the execution will fail in case of an SSL certificate expiration warning or if the certificate is missing. | Optional |
 | group | [SyntheticOnDemandExecutionRequestGroup](#openapi-definition-SyntheticOnDemandExecutionRequestGroup) | Contains parameters for the on-demand execution of monitors identified by tags, applications, or services. | Optional |
 | metadata | object | String to string map of metadata properties for execution | Optional |
-| monitors | [SyntheticOnDemandExecutionRequestMonitor[]](#openapi-definition-SyntheticOnDemandExecutionRequestMonitor) | List of monitors to be triggered. | Optional |
+| monitors | [SyntheticOnDemandExecutionRequestMonitor](#openapi-definition-SyntheticOnDemandExecutionRequestMonitor)[] | List of monitors to be triggered. | Optional |
 | processingMode | string | The execution's processing mode The element can hold these values * `STANDARD` * `DISABLE_PROBLEM_DETECTION` * `EXECUTIONS_DETAILS_ONLY` | Optional |
 | stopOnProblem | boolean | If true, no executions will be scheduled if a problem occurs. | Optional |
 | takeScreenshotsOnSuccess | boolean | If true, the screenshots will be taken during the execution of a browser monitor. | Optional |
@@ -308,10 +307,10 @@ The result of on-demand synthetic monitor execution.
 | Element | Type | Description |
 | --- | --- | --- |
 | batchId | string | The batch identifier of the triggered executions. |
-| triggered | [SyntheticOnDemandTriggeredMonitor[]](#openapi-definition-SyntheticOnDemandTriggeredMonitor) | Monitors for which on-demand executions were triggered. |
+| triggered | [SyntheticOnDemandTriggeredMonitor](#openapi-definition-SyntheticOnDemandTriggeredMonitor)[] | Monitors for which on-demand executions were triggered. |
 | triggeredCount | integer | The total number of the triggered executions within the batch. |
 | triggeringProblemsCount | integer | The total number of problems within the batch. |
-| triggeringProblemsDetails | [SyntheticOnDemandTriggeringProblemDetails[]](#openapi-definition-SyntheticOnDemandTriggeringProblemDetails) | List with the entities for which triggering problems occurred. |
+| triggeringProblemsDetails | [SyntheticOnDemandTriggeringProblemDetails](#openapi-definition-SyntheticOnDemandTriggeringProblemDetails)[] | List with the entities for which triggering problems occurred. |
 
 #### The `SyntheticOnDemandTriggeredMonitor` object
 
@@ -319,7 +318,7 @@ Contains the list of on-demand executions of the monitor.
 
 | Element | Type | Description |
 | --- | --- | --- |
-| executions | [SyntheticOnDemandTriggeredExecutionDetails[]](#openapi-definition-SyntheticOnDemandTriggeredExecutionDetails) | The list of triggered executions. |
+| executions | [SyntheticOnDemandTriggeredExecutionDetails](#openapi-definition-SyntheticOnDemandTriggeredExecutionDetails)[] | The list of triggered executions. |
 | monitorId | string | The monitor identifier. |
 
 #### The `SyntheticOnDemandTriggeredExecutionDetails` object
@@ -354,7 +353,7 @@ Contains the details of problems encountered while triggering on-demand executio
 | Element | Type | Description |
 | --- | --- | --- |
 | code | integer | The HTTP status code |
-| constraintViolations | [ConstraintViolation[]](#openapi-definition-ConstraintViolation) | A list of constraint violations |
+| constraintViolations | [ConstraintViolation](#openapi-definition-ConstraintViolation)[] | A list of constraint violations |
 | message | string | The error message |
 
 #### The `ConstraintViolation` object

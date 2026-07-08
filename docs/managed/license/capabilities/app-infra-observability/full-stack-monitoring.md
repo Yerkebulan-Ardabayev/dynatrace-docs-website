@@ -1,7 +1,6 @@
 ---
 title: Calculate your consumption of Full-Stack Monitoring (DPS)
 source: https://docs.dynatrace.com/managed/license/capabilities/app-infra-observability/full-stack-monitoring
-scraped: 2026-05-12T11:06:26.918934
 ---
 
 # Calculate your consumption of Full-Stack Monitoring (DPS)
@@ -10,7 +9,7 @@ scraped: 2026-05-12T11:06:26.918934
 
 * Explanation
 * 5-min read
-* Updated on Jan 26, 2026
+* Updated on Jun 09, 2026
 
 Full-Stack Monitoring for hosts and containers offers comprehensive application performance monitoring.
 Application performance monitoring includes: distributed tracing, code-level visibility, CPU profiling, memory profiling, and deep process monitoring for hosts and containers.
@@ -66,9 +65,9 @@ For example, a container with 780 MiB memory is counted as a 1 GiB container (78
 The figure below illustrates how memory is counted for GiB-hour consumption calculations at 15-minute intervals.
 Each interval is divided by four in order to reach the GiB-hour consumption unit of measure.
 
-![Full-Stack consumption](https://dt-cdn.net/images/fullstack-monitoring-consumption-5584-2d3c737d8b.jpg)
+![Full-Stack Monitoring consumption](https://cdn.bfldr.com/B686QPH3/as/24t96b8x58jjvgphb4xg5cvh/Full-Stack_Monitoring_Consumption-Light_Mode?auto=webp&format=png&position=1)
 
-Full-Stack consumption
+Full-Stack Monitoring consumption
 
 #### Memory-size calculations
 
@@ -90,8 +89,8 @@ Certain monitoring scenarios have their own calculations for GiB-hour consumptio
 
 | Scenario | Description |
 | --- | --- |
-| Azure App Services (running on the App Service (dedicated) plan for Windows) | Consumption is based on the number and memory of the plan's instances. It does not matter how many applications run on the instances.  The minimum billed memory is 256 MiB (instead of 4 GiB). |
-| Azure App Service (running on Linux OS or Linux containers) OneAgent version 1.297+ | If automatic container detection is enabled: consumption is based on the used memory of the container.  If automatic container detection is not enabled: consumption is based on the memory of the plan's instance, multiplied by the number of running containers. |
+| Azure App Services (running on the App Service (dedicated) plan for Windows) | Consumption is based on the number and memory of the plan's instances. It does not matter how many applications run on the instances.The minimum billed memory is 256 MiB (instead of 4 GiB). |
+| Azure App Service (running on Linux OS or Linux containers) OneAgent version 1.297+ | If automatic container detection is enabled: consumption is based on the used memory of the container.If automatic container detection is not enabled: consumption is based on the memory of the plan's instance, multiplied by the number of running containers. |
 | Azure App Service (running on Linux OS or Linux containers) OneAgent version <1.297 | Consumption is based on the memory of the plan's instance, multiplied by the number of running containers, regardless if automatic container detection is enabled or not. |
 | Oracle Solaris Zones | Solaris Zones are counted as hosts. |
 | Monitored containers that are not detected as containers | These containers are counted as hosts. |
@@ -99,7 +98,7 @@ Certain monitoring scenarios have their own calculations for GiB-hour consumptio
 ## Metrics
 
 This section assumes that you have followed the Dynatrace-recommended deployment options, especially regarding telemetry enrichment.
-If you implement a custom deployment, the charging of included metrics may still work as describedâbut this is not guaranteed by Dynatrace.
+If you implement a custom deployment, the charging of included metrics may still work as described—but this is not guaranteed by Dynatrace.
 
 For more information, see [Supported deployment options](#deployment-options).
 
@@ -142,10 +141,10 @@ This applies to custom metrics as described in the table below.
 
 Considering the example shown in Figure 1, here are the calculations for the included metric data point volumes for each of the four 15-minute intervals, assuming a volume of 900 included metric data points for each 15-minute interval.
 
-* First 15-minute interval: `900 (included metric data points) Ã 13.5 (GiB memory) = 12,150 included metric data points`
-* Second 15-minute interval: `900 (included metric data points) Ã 9.5 (GiB memory) = 8,550 included metric data points`
-* Third 15-minute interval: `900 (included metric data points) Ã 8.75 (GiB memory) = 7,875 included metric data points`
-* Fourth 15-minute interval: `900 (included metric data points) Ã 0.25 (GiB memory) = 225 included metric data points`
+* First 15-minute interval: `900 (included metric data points) × 13.5 (GiB memory) = 12,150 included metric data points`
+* Second 15-minute interval: `900 (included metric data points) × 9.5 (GiB memory) = 8,550 included metric data points`
+* Third 15-minute interval: `900 (included metric data points) × 8.75 (GiB memory) = 7,875 included metric data points`
+* Fourth 15-minute interval: `900 (included metric data points) × 0.25 (GiB memory) = 225 included metric data points`
 
 ### How metric data points are consumed in Full-Stack Monitoring mode
 
@@ -160,7 +159,7 @@ An equal number of data points can be consumed:
 
 Full-Stack Monitoring includes [CPU](/managed/observe/application-observability/profiling-and-optimization/cpu-profiling "Learn how you can use Dynatrace to perform enhanced code analysis."), [memory](/managed/observe/application-observability/profiling-and-optimization/memory-profiling "Analyze memory allocation with Dynatrace."), and thread profiling for technologies like Java, .NET, Go, Node.js, and PHP.
 OneAgent uses an intelligent patented mechanism to manage the volume of profiling data.
-Dynatrace [retains the total amount of ingested profiling data](/managed/manage/data-privacy-and-security/data-privacy/data-retention-periods#purepath "Check retention times for various data types.") from your environment for 10 days.
+Dynatrace [retains the total amount of ingested profiling data](/managed/manage/data-privacy-and-security/data-privacy/data-retention-periods#purepath "Review default and configurable retention periods for service, RUM Classic, synthetic, Log Monitoring, metric, diagnostic, and security data in Dynatrace Managed.") from your environment for 10 days.
 
 ## Supported deployment options
 
@@ -176,7 +175,7 @@ Automatic telemetry enrichment is enabled for:
     This includes any containers running on the monitored Kubernetes node.
 * Custom metrics that are sent from any Full-Stack monitored host via the OneAgent local metric API. For more information, see [OneAgent metric API](/managed/ingest-from/extend-dynatrace/extend-metrics/ingestion-methods/oneagent-metric-api "Use the Dynatrace API to retrieve the metrics of monitored entities.").
 
-If you implement a custom deployment, the charging of metrics may still work as describedâbut this is not guaranteed by Dynatrace.
+If you implement a custom deployment, the charging of metrics may still work as described—but this is not guaranteed by Dynatrace.
 
 ## Consumption details: Full-Stack
 
@@ -270,7 +269,6 @@ Full-Stack Monitoring (DPS)
 
 ### Monitor memory-GiB-hour consumption for Full-Stack monitored containers
 
-Platform and cluster owners can monitor their Kubernetes clusters using [Kubernetes Platform Monitoring](/managed/upgrade/unavailable-in-managed "Your selection is unavailable in Dynatrace Managed.").
 Application owners can leverage container-based Full-Stack Monitoring to monitor applications running within Kubernetes clusters.
 
 To get consumption insights for monitored Kubernetes clusters or namespaces, you can query memory-GiB-hour consumption by leveraging the "(DPS) Full-Stack Monitoring billing usage per container" metric, as shown in the following query:
@@ -322,4 +320,4 @@ Full-Stack Monitoring (DPS)
 
 * [Dynatrace OneAgent](/managed/ingest-from/dynatrace-oneagent "Understand the important concepts related to OneAgent and find out how to install and operate OneAgent on different platforms.")
 * [Application & Infrastructure Observability overview (DPS)](/managed/license/capabilities/app-infra-observability "Learn about the different Application & Infrastructure Observability options that are available with a Dynatrace Platform Subscription (DPS) license.")
-* [Dynatrace pricingï»¿](https://www.dynatrace.com/pricing/)
+* [Dynatrace pricing﻿](https://www.dynatrace.com/pricing/)

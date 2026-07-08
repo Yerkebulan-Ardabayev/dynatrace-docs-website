@@ -1,7 +1,6 @@
 ---
 title: Access tokens API
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/tokens-v2/api-tokens
-scraped: 2026-05-12T11:14:02.326588
 ---
 
 # Access tokens API

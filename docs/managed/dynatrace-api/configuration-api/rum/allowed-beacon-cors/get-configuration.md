@@ -1,7 +1,6 @@
 ---
 title: Allowed beacon domains API - GET configuration
 source: https://docs.dynatrace.com/managed/dynatrace-api/configuration-api/rum/allowed-beacon-cors/get-configuration
-scraped: 2026-05-12T11:19:45.152693
 ---
 
 # Allowed beacon domains API - GET configuration
@@ -46,7 +45,7 @@ Configuration of the allowed beacon origins for CORS requests.
 
 | Element | Type | Description |
 | --- | --- | --- |
-| allowedBeaconOrigins | [BeaconDomainPattern[]](#openapi-definition-BeaconDomainPattern) | A list of allowed beacon origins for CORS requests. |
+| allowedBeaconOrigins | [BeaconDomainPattern](#openapi-definition-BeaconDomainPattern)[] | A list of allowed beacon origins for CORS requests. |
 | metadata | [ConfigurationMetadata](#openapi-definition-ConfigurationMetadata) | Metadata useful for debugging |
 | rejectBeaconsWithoutOriginHeader | boolean | Discard (`true`) or keep (`false`) beacons without the **Origin** HTTP header on the BeaconForwarder.  If not set, `false` is used. |
 

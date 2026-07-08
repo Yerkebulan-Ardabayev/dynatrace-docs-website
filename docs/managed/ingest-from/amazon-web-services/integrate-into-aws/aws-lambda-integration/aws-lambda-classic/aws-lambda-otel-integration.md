@@ -1,7 +1,6 @@
 ---
 title: Trace .NET Lambda functions
 source: https://docs.dynatrace.com/managed/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration/aws-lambda-classic/aws-lambda-otel-integration
-scraped: 2026-05-12T12:01:28.910041
 ---
 
 # Trace .NET Lambda functions
@@ -12,7 +11,7 @@ scraped: 2026-05-12T12:01:28.910041
 * 9-min read
 * Updated on Aug 24, 2023
 
-Dynatrace uses [OpenTelemetryï»¿](https://dt-url.net/y903u4j) to monitor AWS Lambda invocations.
+Dynatrace uses [OpenTelemetry﻿](https://dt-url.net/y903u4j) to monitor AWS Lambda invocations.
 
 ## Prerequisites
 
@@ -20,9 +19,9 @@ Ensure that you use a [supported AWS Lambda runtime](/managed/ingest-from/amazon
 
 The following NuGet packages can be used to cover different aspects of AWS Lambda tracing:
 
-* Recommended OpenTelemetry.Instrumentation.AWSLambda version 1.2.0-beta.1+âcontains methods to trace incoming AWS Lambda invocations, such as calls triggered by AWS SQS/SNS messages.
-* Recommended OpenTelemetry.Instrumentation.AWS version 1.1.0-beta.1+âtraces outgoing AWS SDK calls to other AWS Lambda invocations and calls to AWS services, such as DynamoDB, SQS, and SNS.
-* Required `Dynatrace.OpenTelemetry.Instrumentation.AwsLambda`âenables linking through outgoing AWS Lambda Invoke SDK calls from one Lambda to another. This is the only way to link these kinds of requests; however, if you don't need such linking or don't use the AWS Lambda client SDK to invoke or receive other Lambda invocations, you can replace the package with `Dynatrace.OpenTelemetry`.
+* Recommended OpenTelemetry.Instrumentation.AWSLambda version 1.2.0-beta.1+—contains methods to trace incoming AWS Lambda invocations, such as calls triggered by AWS SQS/SNS messages.
+* Recommended OpenTelemetry.Instrumentation.AWS version 1.1.0-beta.1+—traces outgoing AWS SDK calls to other AWS Lambda invocations and calls to AWS services, such as DynamoDB, SQS, and SNS.
+* Required `Dynatrace.OpenTelemetry.Instrumentation.AwsLambda`—enables linking through outgoing AWS Lambda Invoke SDK calls from one Lambda to another. This is the only way to link these kinds of requests; however, if you don't need such linking or don't use the AWS Lambda client SDK to invoke or receive other Lambda invocations, you can replace the package with `Dynatrace.OpenTelemetry`.
 
 ## Installation
 
@@ -413,13 +412,13 @@ Body = "Example function result",
 
 * A parent context is extracted from the incoming request in the `Trace` (or `TraceAsync`) method.
 * An activity tracing the incoming request and the handler is created by the `Trace` method.
-* In general, the `Trace`/`TraceAsync` methods support any trigger, but extended support is available for the `APIGatewayProxyRequest` and `APIGatewayHttpApiV2ProxyRequest` trigger types. For more details about request/response types, consult the [GitHub documentationï»¿](https://dt-url.net/wm034ja).
+* In general, the `Trace`/`TraceAsync` methods support any trigger, but extended support is available for the `APIGatewayProxyRequest` and `APIGatewayHttpApiV2ProxyRequest` trigger types. For more details about request/response types, consult the [GitHub documentation﻿](https://dt-url.net/wm034ja).
 * `Trace` should only be used when you have a function returning something other than a `Task`. For the asynchronous handler, `TraceAsync` should be used instead.
 
 ### Example 3: Tracing without the `AwsLambda` package
 
-If you prefer not to use the `OpenTelemetry.Instrumentation.AWSLambda` package, you can manually create an activity for Lambda. Note that this involves quite a bit of work, as Dynatrace requires certain activity tags (span attributes) to detect the service (conforming to the OpenTelemetry FaaS [trace conventionsï»¿](https://github.com/open-telemetry/opentelemetry-specification/blob/v1.12.0/specification/trace/semantic_conventions/faas.md)
-and [resource conventionsï»¿](https://github.com/open-telemetry/opentelemetry-specification/blob/v1.12.0/specification/resource/semantic_conventions/faas.md)). You also need to manually extract the parent context.
+If you prefer not to use the `OpenTelemetry.Instrumentation.AWSLambda` package, you can manually create an activity for Lambda. Note that this involves quite a bit of work, as Dynatrace requires certain activity tags (span attributes) to detect the service (conforming to the OpenTelemetry FaaS [trace conventions﻿](https://github.com/open-telemetry/opentelemetry-specification/blob/v1.12.0/specification/trace/semantic_conventions/faas.md)
+and [resource conventions﻿](https://github.com/open-telemetry/opentelemetry-specification/blob/v1.12.0/specification/resource/semantic_conventions/faas.md)). You also need to manually extract the parent context.
 
 For this example, only the `Dynatrace.OpenTelemetry.Instrumentation.AwsLambda` package is required.
 
@@ -973,7 +972,7 @@ return Task.CompletedTask;
 
 Because with AWS Lambda the function execution environment might be suspended at any time after the function handler execution, the span export might be interrupted or delayed (for example, in some cases, the span might not be exported at all) and outgoing HTTP requests will typically appear only with the next function invocation.
 
-However, outgoing HTTP request activities related to [AWS Runtime APIï»¿](https://docs.aws.amazon.com/lambda/latest/dg/runtimes-api.html#runtimes-api-next) might be captured by [OpenTelemetry HttpClient instrumentationï»¿](https://github.com/open-telemetry/opentelemetry-dotnet/tree/main/src/OpenTelemetry.Instrumentation.Http) in the current function invocation, even if unexpected. To avoid unexpected outgoing HTTP requests in the current function invocation, we recommend configuring the following filter when initializing the HttpClient instrumentation.
+However, outgoing HTTP request activities related to [AWS Runtime API﻿](https://docs.aws.amazon.com/lambda/latest/dg/runtimes-api.html#runtimes-api-next) might be captured by [OpenTelemetry HttpClient instrumentation﻿](https://github.com/open-telemetry/opentelemetry-dotnet/tree/main/src/OpenTelemetry.Instrumentation.Http) in the current function invocation, even if unexpected. To avoid unexpected outgoing HTTP requests in the current function invocation, we recommend configuring the following filter when initializing the HttpClient instrumentation.
 
 ```
 var tracerProvider = Sdk.CreateTracerProviderBuilder()
@@ -1005,4 +1004,4 @@ op.FilterHttpRequestMessage = req => Activity.Current?.Parent?.IsAllDataRequeste
 
 ## Support of .NET Lambda functions with container images
 
-Starting from .NET 6, Lambda functions can be [built and deployed as container imagesï»¿](https://dt-url.net/yz038r7). Initialization and tracing for [Managed .NET runtime](/managed/ingest-from/technology-support/application-software/dotnet "Learn about all aspects of Dynatrace support for .NET application monitoring.") apply to container image functions without any changes.
+Starting from .NET 6, Lambda functions can be [built and deployed as container images﻿](https://dt-url.net/yz038r7). Initialization and tracing for [Managed .NET runtime](/managed/ingest-from/technology-support/application-software/dotnet "Learn about all aspects of Dynatrace support for .NET application monitoring.") apply to container image functions without any changes.

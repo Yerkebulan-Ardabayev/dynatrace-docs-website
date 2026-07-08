@@ -1,7 +1,6 @@
 ---
 title: Management zones
 source: https://docs.dynatrace.com/managed/manage/identity-access-management/permission-management/management-zones
-scraped: 2026-05-12T11:24:43.422876
 ---
 
 # Management zones
@@ -18,7 +17,7 @@ Each customizable management zone comprises a set of monitored entities or dimen
 
 Management zones may overlap, just as team responsibilities might overlap. Users may be granted access to entire environments, a specific management zone, or a subset of related management zones. Dynatrace users see auto-filtered views of their environment based on the management zones that they can access. Users who have access to multiple management zones can focus on any particular management zone and filter all Dynatrace views so that they only see the metrics that are related to the entities of that particular management zone.
 
-The [Problems page](/managed/dynatrace-intelligence/root-cause-analysis/concepts "Get acquainted with root cause analysis concepts.") is also filtered based on the selected management zoneâonly those problems that affect entities in the currently selected management zone are included. However, when a problem spans multiple management zones, users see a full end-to-end view of the problem, but can only analyze the details of the hosts, processes, services, and applications that they have permission to view within their assigned management zones. This ensures productive and effective collaboration while still enforcing rigid access restrictions where it matters.
+The [Problems page](/managed/dynatrace-intelligence/root-cause-analysis/concepts "Get acquainted with root cause analysis concepts.") is also filtered based on the selected management zone—only those problems that affect entities in the currently selected management zone are included. However, when a problem spans multiple management zones, users see a full end-to-end view of the problem, but can only analyze the details of the hosts, processes, services, and applications that they have permission to view within their assigned management zones. This ensures productive and effective collaboration while still enforcing rigid access restrictions where it matters.
 
 ### Basics
 
@@ -37,4 +36,4 @@ The [Problems page](/managed/dynatrace-intelligence/root-cause-analysis/concepts
 
 ## Related topics
 
-* [Management zonesï»¿](https://www.dynatrace.com/platform/management-zones/)
+* [Management zones﻿](https://www.dynatrace.com/platform/management-zones/)

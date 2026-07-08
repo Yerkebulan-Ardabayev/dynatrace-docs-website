@@ -1,7 +1,6 @@
 ---
 title: Frequent issue detection API - PUT configuration
 source: https://docs.dynatrace.com/managed/dynatrace-api/configuration-api/frequent-issue-detection-api/put-configuration
-scraped: 2026-05-12T12:15:28.508429
 ---
 
 # Frequent issue detection API - PUT configuration
@@ -38,7 +37,7 @@ To learn how to obtain and use it, see [Tokens and authentication](/managed/disc
 
 #### The `FrequentIssueDetectionConfig` object
 
-Parameters of the frequent issue detection. To learn more about it, see [Detection of frequent issuesï»¿](https://dt-url.net/4da3kdg) in Dynatrace Documentation.
+Parameters of the frequent issue detection. To learn more about it, see [Detection of frequent issues﻿](https://dt-url.net/4da3kdg) in Dynatrace Documentation.
 
 | Element | Type | Description | Required |
 | --- | --- | --- | --- |
@@ -108,7 +107,7 @@ This is a model of the request body, showing the possible elements. It has to be
 | Element | Type | Description |
 | --- | --- | --- |
 | code | integer | The HTTP status code |
-| constraintViolations | [ConstraintViolation[]](#openapi-definition-ConstraintViolation) | A list of constraint violations |
+| constraintViolations | [ConstraintViolation](#openapi-definition-ConstraintViolation)[] | A list of constraint violations |
 | message | string | The error message |
 
 #### The `ConstraintViolation` object
@@ -219,7 +218,7 @@ To learn how to obtain and use it, see [Tokens and authentication](/managed/disc
 | Element | Type | Description |
 | --- | --- | --- |
 | code | integer | The HTTP status code |
-| constraintViolations | [ConstraintViolation[]](#openapi-definition-ConstraintViolation) | A list of constraint violations |
+| constraintViolations | [ConstraintViolation](#openapi-definition-ConstraintViolation)[] | A list of constraint violations |
 | message | string | The error message |
 
 #### The `ConstraintViolation` object

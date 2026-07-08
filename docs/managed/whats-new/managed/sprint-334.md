@@ -1,7 +1,6 @@
 ---
 title: What's new in Dynatrace Managed 1.334
 source: https://docs.dynatrace.com/managed/whats-new/managed/sprint-334
-scraped: 2026-05-12T11:07:40.093176
 ---
 
 # What's new in Dynatrace Managed 1.334
@@ -59,7 +58,7 @@ Application Security | Vulnerabilities
 
 ### Library and Kubernetes vulnerability scanning now uses the Dynatrace Vulnerability feed
 
-Library and Kubernetes vulnerability scanning now relies on the Dynatrace Vulnerability feed. This update delivers more accurate, transparent, and threatâaware vulnerability data while preserving strong coverage of critical risks. As part of this change, a small percentage of previously detected vulnerabilities will no longer be covered and will be marked as **Deprecated**. You can review them using the **Status** > **Deprecated** filter. For more information, see [Introducing the Dynatrace Vulnerability feed: Accurate, transparent, and threat-aware.ï»¿](https://www.dynatrace.com/news/blog/introducing-the-dynatrace-vulnerability-feed-accurate-transparent-and-threat-aware/).
+Library and Kubernetes vulnerability scanning now relies on the Dynatrace Vulnerability feed. This update delivers more accurate, transparent, and threat‑aware vulnerability data while preserving strong coverage of critical risks. As part of this change, a small percentage of previously detected vulnerabilities will no longer be covered and will be marked as **Deprecated**. You can review them using the **Status** > **Deprecated** filter. For more information, see [Introducing the Dynatrace Vulnerability feed: Accurate, transparent, and threat-aware.﻿](https://www.dynatrace.com/news/blog/introducing-the-dynatrace-vulnerability-feed-accurate-transparent-and-threat-aware/).
 
 Digital Experience | Synthetic
 
@@ -108,7 +107,7 @@ Timing:
 
 Links:
 
-* Old API doc: [Dynatrace Platform Subscription API - GET events â Dynatrace Docs](/managed/dynatrace-api/account-management-api/post-notifications "List notifications for your account.")
+* Old API doc: [Dynatrace Platform Subscription API - GET events — Dynatrace Docs](/managed/dynatrace-api/account-management-api/post-notifications "List notifications for your account.")
 * New API doc: [Dynatrace Platform Subscription API - POST notifications](/managed/dynatrace-api/account-management-api/post-notifications "List notifications for your account.")
 
 ## Fixes and maintenance
@@ -123,41 +122,23 @@ Links:
 
 ### Future Dynatrace Managed operating systems support changes
 
-##### The following operating systems will no longer be supported starting 01 June 2026
-
-* Linux: Oracle Linux 9.6
-
-  + x86-64
-  + [Vendor announcementï»¿](https://www.oracle.com/a/ocom/docs/elsp-lifetime-069338.pdf)
-* Linux: Rocky Linux 9.6
-
-  + x86-64
-  + [Vendor announcementï»¿](https://endoflife.date/rocky-linux)
-
-##### The following operating systems will no longer be supported starting 01 July 2026
-
-* Linux: SUSE Enterprise Linux 15.3
-
-  + x86-64
-  + [Vendor announcementï»¿](https://www.suse.com/lifecycle/)
-
 ##### The following operating systems will no longer be supported starting 01 November 2026
 
 * Linux: Red Hat Enterprise Linux 9.4, 9.7
 
   + x86-64
-  + [Vendor announcementï»¿](https://access.redhat.com/support/policy/updates/errata)
+  + [Vendor announcement﻿](https://access.redhat.com/support/policy/updates/errata)
 * Linux: Ubuntu 16.04
 
   + x86-64
-  + [Vendor announcementï»¿](https://ubuntu.com/about/release-cycle)
+  + [Vendor announcement﻿](https://ubuntu.com/about/release-cycle)
 
 ##### The following operating systems will no longer be supported starting 01 January 2027
 
 * Linux: Amazon Linux 2
 
   + x86-64
-  + [Vendor announcementï»¿](https://aws.amazon.com/linux/)
+  + [Vendor announcement﻿](https://aws.amazon.com/linux/)
 
 ### Past Dynatrace Managed operating systems support changes
 
@@ -166,22 +147,40 @@ Links:
 * Linux: Red Hat Enterprise Linux 8.8, 9.2, 9.5
 
   + x86-64
-  + [Vendor announcementï»¿](https://access.redhat.com/support/policy/updates/errata)
+  + [Vendor announcement﻿](https://access.redhat.com/support/policy/updates/errata)
 * Linux: Oracle Linux 9.5
 
   + x86-64
-  + [Vendor announcementï»¿](https://www.oracle.com/a/ocom/docs/elsp-lifetime-069338.pdf)
+  + [Vendor announcement﻿](https://www.oracle.com/a/ocom/docs/elsp-lifetime-069338.pdf)
 * Linux: Rocky Linux 9.5
 
   + x86-64
-  + [Vendor announcementï»¿](https://endoflife.date/rocky-linux)
+  + [Vendor announcement﻿](https://endoflife.date/rocky-linux)
 
 ##### The following operating systems are no longer supported since 01 January 2026
 
 * Linux: Debian 10
 
   + x86-64
-  + [Vendor announcementï»¿](https://wiki.debian.org/DebianReleases)
+  + [Vendor announcement﻿](https://wiki.debian.org/DebianReleases)
+
+##### The following operating systems are no longer supported since 01 June 2026
+
+* Linux: Oracle Linux 9.6
+
+  + x86-64
+  + [Vendor announcement﻿](https://www.oracle.com/a/ocom/docs/elsp-lifetime-069338.pdf)
+* Linux: Rocky Linux 9.6
+
+  + x86-64
+  + [Vendor announcement﻿](https://endoflife.date/rocky-linux)
+
+##### The following operating systems are no longer supported since 01 July 2026
+
+* Linux: SUSE Enterprise Linux 15.3
+
+  + x86-64
+  + [Vendor announcement﻿](https://www.suse.com/lifecycle/)
 
 ## Dynatrace API
 

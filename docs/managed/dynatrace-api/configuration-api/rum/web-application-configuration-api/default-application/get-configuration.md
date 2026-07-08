@@ -1,7 +1,6 @@
 ---
 title: Web application configuration API - GET default application
 source: https://docs.dynatrace.com/managed/dynatrace-api/configuration-api/rum/web-application-configuration-api/default-application/get-configuration
-scraped: 2026-05-12T11:17:08.157862
 ---
 
 # Web application configuration API - GET default application
@@ -46,13 +45,13 @@ Configuration of a web application.
 
 | Element | Type | Description |
 | --- | --- | --- |
-| conversionGoals | [ConversionGoal[]](#openapi-definition-ConversionGoal) | A list of conversion goals of the application. |
+| conversionGoals | [ConversionGoal](#openapi-definition-ConversionGoal)[] | A list of conversion goals of the application. |
 | costControlUserSessionPercentage | number | Analize *X*% of user sessions. |
 | customActionApdexSettings | [Apdex](#openapi-definition-Apdex) | Defines the Apdex settings of an application. |
 | identifier | string | Dynatrace entity ID of the web application. |
 | loadActionApdexSettings | [Apdex](#openapi-definition-Apdex) | Defines the Apdex settings of an application. |
 | loadActionKeyPerformanceMetric | string | The key performance metric of load actions. The element can hold these values * `ACTION_DURATION` * `CUMULATIVE_LAYOUT_SHIFT` * `DOM_INTERACTIVE` * `FIRST_INPUT_DELAY` * `LARGEST_CONTENTFUL_PAINT` * `LOAD_EVENT_END` * `LOAD_EVENT_START` * `RESPONSE_END` * `RESPONSE_START` * `SPEED_INDEX` * `VISUALLY_COMPLETE` |
-| metaDataCaptureSettings | [MetaDataCapturing[]](#openapi-definition-MetaDataCapturing) | Java script agent meta data capture settings. |
+| metaDataCaptureSettings | [MetaDataCapturing](#openapi-definition-MetaDataCapturing)[] | Java script agent meta data capture settings. |
 | metadata | [ConfigurationMetadata](#openapi-definition-ConfigurationMetadata) | Metadata useful for debugging |
 | monitoringSettings | [MonitoringSettings](#openapi-definition-MonitoringSettings) | Real user monitoring settings. |
 | name | string | The name of the web application, displayed in the UI. |
@@ -60,9 +59,9 @@ Configuration of a web application.
 | sessionReplayConfig | [SessionReplaySetting](#openapi-definition-SessionReplaySetting) | Session replay settings |
 | type | string | The type of the web application. The element can hold these values * `AUTO_INJECTED` * `BROWSER_EXTENSION_INJECTED` * `MANUALLY_INJECTED` |
 | urlInjectionPattern | string | Url injection pattern for manual web application. |
-| userActionAndSessionProperties | [UserActionAndSessionProperties[]](#openapi-definition-UserActionAndSessionProperties) | User action and session properties settings. Empty List means no change |
+| userActionAndSessionProperties | [UserActionAndSessionProperties](#openapi-definition-UserActionAndSessionProperties)[] | User action and session properties settings. Empty List means no change |
 | userActionNamingSettings | [UserActionNamingSettings](#openapi-definition-UserActionNamingSettings) | The settings of user action naming. |
-| userTags | [UserTag[]](#openapi-definition-UserTag) | User tags settings. |
+| userTags | [UserTag](#openapi-definition-UserTag)[] | User tags settings. |
 | waterfallSettings | [WaterfallSettings](#openapi-definition-WaterfallSettings) | These settings influence the monitoring data you receive for 3rd party, CDN, and 1st party resources. |
 | xhrActionApdexSettings | [Apdex](#openapi-definition-Apdex) | Defines the Apdex settings of an application. |
 | xhrActionKeyPerformanceMetric | string | The key performance metric of XHR actions. The element can hold these values * `ACTION_DURATION` * `RESPONSE_END` * `RESPONSE_START` * `VISUALLY_COMPLETE` |
@@ -174,14 +173,14 @@ Real user monitoring settings.
 | instrumentedWebServer | boolean | Instrumented web or app server. |
 | ipAddressRestrictionSettings | [WebApplicationConfigIpAddressRestrictionSettings](#openapi-definition-WebApplicationConfigIpAddressRestrictionSettings) | Settings for restricting certain ip addresses and for introducing subnet mask. It also restricts the mode. |
 | javaScriptFrameworkSupport | [JavaScriptFrameworkSupport](#openapi-definition-JavaScriptFrameworkSupport) | Support of various JavaScript frameworks. |
-| javaScriptInjectionRules | [JavaScriptInjectionRules[]](#openapi-definition-JavaScriptInjectionRules) | Java script injection rules. |
+| javaScriptInjectionRules | [JavaScriptInjectionRules](#openapi-definition-JavaScriptInjectionRules)[] | Java script injection rules. |
 | libraryFileFromCdn | boolean | Get the JavaScript library file from the CDN.  Not supported by agentless applications and assumed to be false for auto-injected applications if omitted. |
-| libraryFileLocation | string | The location of your applicationâs custom JavaScript library file.  If nothing specified the root directory of your web server is used.  **Required** for auto-injected applications, not supported by agentless applications. |
+| libraryFileLocation | string | The location of your application’s custom JavaScript library file.  If nothing specified the root directory of your web server is used.  **Required** for auto-injected applications, not supported by agentless applications. |
 | monitoringDataPath | string | The location to send monitoring data from the JavaScript tag.  Specify either a relative or an absolute URL. If you use an absolute URL, data will be sent using CORS.  **Required** for auto-injected applications, optional for agentless applications. |
 | sameSiteCookieAttribute | string | Same site cookie attribute The element can hold these values * `LAX` * `NONE` * `STRICT` |
 | scriptTagCacheDurationInHours | integer | Time duration for the cache settings. |
 | secureCookieAttribute | boolean | Secure attribute usage for Dynatrace cookies enabled/disabled. |
-| serverRequestPathId | string | Path to identify the serverâs request ID. |
+| serverRequestPathId | string | Path to identify the server’s request ID. |
 | useCors | boolean | Send beacon data via CORS. |
 | xmlHttpRequest | boolean | `XmlHttpRequest` support enabled/disabled. |
 
@@ -254,7 +253,7 @@ Settings for restricting certain browser type, version, platform and, comparator
 
 | Element | Type | Description |
 | --- | --- | --- |
-| browserRestrictions | [WebApplicationConfigBrowserRestriction[]](#openapi-definition-WebApplicationConfigBrowserRestriction) | A list of browser restrictions. |
+| browserRestrictions | [WebApplicationConfigBrowserRestriction](#openapi-definition-WebApplicationConfigBrowserRestriction)[] | A list of browser restrictions. |
 | mode | string | The mode of the list of browser restrictions. The element can hold these values * `EXCLUDE` * `INCLUDE` |
 
 #### The `WebApplicationConfigBrowserRestriction` object
@@ -320,7 +319,7 @@ Settings for restricting certain ip addresses and for introducing subnet mask. I
 
 | Element | Type | Description |
 | --- | --- | --- |
-| ipAddressRestrictions | [IpAddressRange[]](#openapi-definition-IpAddressRange) | - |
+| ipAddressRestrictions | [IpAddressRange](#openapi-definition-IpAddressRange)[] | - |
 | mode | string | The mode of the list of ip address restrictions. The element can hold these values * `EXCLUDE` * `INCLUDE` |
 
 #### The `IpAddressRange` object
@@ -379,7 +378,7 @@ Defines userAction and session custom defined properties settings of an applicat
 | Element | Type | Description |
 | --- | --- | --- |
 | aggregation | string | The aggregation type of the property.  It defines how multiple values of the property are aggregated. The element can hold these values * `AVERAGE` * `FIRST` * `LAST` * `MAXIMUM` * `MINIMUM` * `SUM` |
-| cleanupRule | string | The cleanup rule of the property.  Defines how to extract the data you need from a string value. Specify the [regular expressionï»¿](https://dt-url.net/k9e0iaq) for the data you need there. |
+| cleanupRule | string | The cleanup rule of the property.  Defines how to extract the data you need from a string value. Specify the [regular expression﻿](https://dt-url.net/k9e0iaq) for the data you need there. |
 | displayName | string | The display name of the property. |
 | ignoreCase | boolean | If true, the value of this property will always be stored in lower case. Defaults to false. |
 | key | string | Key of the property |
@@ -398,14 +397,14 @@ The settings of user action naming.
 
 | Element | Type | Description |
 | --- | --- | --- |
-| customActionNamingRules | [UserActionNamingRule[]](#openapi-definition-UserActionNamingRule) | User action naming rules for custom actions. |
+| customActionNamingRules | [UserActionNamingRule](#openapi-definition-UserActionNamingRule)[] | User action naming rules for custom actions. |
 | ignoreCase | boolean | Case insensitive naming. |
-| loadActionNamingRules | [UserActionNamingRule[]](#openapi-definition-UserActionNamingRule) | User action naming rules for loading actions. |
-| placeholders | [UserActionNamingPlaceholder[]](#openapi-definition-UserActionNamingPlaceholder) | User action placeholders. |
+| loadActionNamingRules | [UserActionNamingRule](#openapi-definition-UserActionNamingRule)[] | User action naming rules for loading actions. |
+| placeholders | [UserActionNamingPlaceholder](#openapi-definition-UserActionNamingPlaceholder)[] | User action placeholders. |
 | queryParameterCleanups | string[] | List of parameters that should be removed from the query before using the query in the user action name. |
 | splitUserActionsByDomain | boolean | Deactivate this setting if different domains should not result in separate user actions. |
 | useFirstDetectedLoadAction | boolean | First load action found under an XHR action should be used when true. Else the deepest one under the xhr action is used |
-| xhrActionNamingRules | [UserActionNamingRule[]](#openapi-definition-UserActionNamingRule) | User action naming rules for xhr actions. |
+| xhrActionNamingRules | [UserActionNamingRule](#openapi-definition-UserActionNamingRule)[] | User action naming rules for xhr actions. |
 
 #### The `UserActionNamingRule` object
 
@@ -413,7 +412,7 @@ The settings of naming rule.
 
 | Element | Type | Description |
 | --- | --- | --- |
-| conditions | [UserActionNamingRuleCondition[]](#openapi-definition-UserActionNamingRuleCondition) | Defines the conditions when the naming rule should apply. |
+| conditions | [UserActionNamingRuleCondition](#openapi-definition-UserActionNamingRuleCondition)[] | Defines the conditions when the naming rule should apply. |
 | template | string | Naming pattern. Use Curly brackets `{}` to select placeholders. |
 | useOrConditions | boolean | If set to `true` the conditions will be connected by logical OR instead of logical AND. |
 
@@ -437,7 +436,7 @@ The placeholder settings.
 | metadataId | integer | A reference to the uniqueId of a MetadataCapturingConfig. Must be set if "Input" is of type METADATA. |
 | name | string | Placeholder name. |
 | processingPart | string | Part. The element can hold these values * `ALL` * `ANCHOR` * `PATH` |
-| processingSteps | [UserActionNamingPlaceholderProcessingStep[]](#openapi-definition-UserActionNamingPlaceholderProcessingStep) | Processing actions. |
+| processingSteps | [UserActionNamingPlaceholderProcessingStep](#openapi-definition-UserActionNamingPlaceholderProcessingStep)[] | Processing actions. |
 | useGuessedElementIdentifier | boolean | Use the element identifier that was selected by Dynatrace. |
 
 #### The `UserActionNamingPlaceholderProcessingStep` object

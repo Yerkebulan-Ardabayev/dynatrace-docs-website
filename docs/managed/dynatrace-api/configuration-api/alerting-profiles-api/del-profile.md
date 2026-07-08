@@ -1,7 +1,6 @@
 ---
 title: Alerting profiles API - DELETE a profile
 source: https://docs.dynatrace.com/managed/dynatrace-api/configuration-api/alerting-profiles-api/del-profile
-scraped: 2026-05-12T12:06:36.130651
 ---
 
 # Alerting profiles API - DELETE a profile

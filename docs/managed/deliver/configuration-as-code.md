@@ -1,7 +1,6 @@
 ---
 title: Configuration as Code overview
 source: https://docs.dynatrace.com/managed/deliver/configuration-as-code
-scraped: 2026-05-12T11:03:01.245854
 ---
 
 # Configuration as Code overview
@@ -34,7 +33,7 @@ For example:
 * SLO dashboards
 
 You can manage any Dynatrace configuration side-by-side with any source code, from within YAML files organized in Git repositories.
-Check out our [samples on GitHubï»¿](https://github.com/Dynatrace/dynatrace-configuration-as-code-samples).
+Check out our [samples on GitHub﻿](https://github.com/Dynatrace/dynatrace-configuration-as-code-samples).
 
 ## Concepts
 
@@ -109,4 +108,4 @@ Monaco provides a third-party independent solution, operating in standalone mode
 
 * [Configuration as Code via Terraform overview](/managed/deliver/configuration-as-code/terraform "Manage your Dynatrace environment using Dynatrace Configuration as Code via Terraform.")
 * [Configuration as Code via Monaco overview](/managed/deliver/configuration-as-code/monaco "Manage your Dynatrace environment using Dynatrace Configuration as Code via Monaco.")
-* [[Blog] Automated observability, security, and reliability at scaleï»¿](https://www.dynatrace.com/news/blog/automated-observability-security-and-reliability-at-scale/)
+* [[Blog] Automated observability, security, and reliability at scale﻿](https://www.dynatrace.com/news/blog/automated-observability-security-and-reliability-at-scale/)

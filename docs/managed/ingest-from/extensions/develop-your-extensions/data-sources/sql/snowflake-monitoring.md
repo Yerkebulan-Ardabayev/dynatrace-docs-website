@@ -1,7 +1,6 @@
 ---
 title: Snowflake Database monitoring configuration
 source: https://docs.dynatrace.com/managed/ingest-from/extensions/develop-your-extensions/data-sources/sql/snowflake-monitoring
-scraped: 2026-05-12T12:08:41.332921
 ---
 
 # Snowflake Database monitoring configuration
@@ -260,8 +259,8 @@ Authentication details passed to the Dynatrace API when activating monitoring co
 
 The credential vault authentication type provides a more secure approach to using extensions by securely storing and managing user credentials. To use this, you must be the owner of the credentials and have a credential vault that meets the following criteria:
 
-* **Credential type**âUser and password
-* **Credential scope**âSynthetic (in case of external vault usage) and Extension authentication scopes enabled
+* **Credential type**—User and password
+* **Credential scope**—Synthetic (in case of external vault usage) and Extension authentication scopes enabled
 * **Owner access only** is enabled only for credential owners
 
 ```

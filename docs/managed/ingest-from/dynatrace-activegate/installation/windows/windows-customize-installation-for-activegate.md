@@ -1,7 +1,6 @@
 ---
 title: Customize ActiveGate installation on Windows
 source: https://docs.dynatrace.com/managed/ingest-from/dynatrace-activegate/installation/windows/windows-customize-installation-for-activegate
-scraped: 2026-05-12T11:36:27.323624
 ---
 
 # Customize ActiveGate installation on Windows
@@ -172,6 +171,6 @@ The connection timeout, as specified by the `DYNATRACE_ACTIVEGATE_SERVER_CONNECT
 * When downloading additional (optional) capabilities.
 * When waiting for connection to the cluster at the end of ActiveGate installation: this connection is then used by ActiveGate during its normal operation.
 
-If the timeout occurs during the download of capabilities (if any), the additional capabilities will not be downloaded and the installation will fail. However, if the timeout occurs at the end of the installation processâthat is at the start of normal operation of ActiveGateâall the ActiveGate components will have been installed and ActiveGate will continue its attempts at connecting to the cluster. ActiveGate will keep trying to connect, even after the end of the installation process. If successful, ActiveGate will then operate normally.
+If the timeout occurs during the download of capabilities (if any), the additional capabilities will not be downloaded and the installation will fail. However, if the timeout occurs at the end of the installation process—that is at the start of normal operation of ActiveGate—all the ActiveGate components will have been installed and ActiveGate will continue its attempts at connecting to the cluster. ActiveGate will keep trying to connect, even after the end of the installation process. If successful, ActiveGate will then operate normally.
 
 To check if the installation and connection was successful, sign in to Dynatrace, in **Settings** select **Deployment Status**, and then select the **ActiveGates** tab.

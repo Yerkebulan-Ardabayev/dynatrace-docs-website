@@ -1,7 +1,6 @@
 ---
 title: Create user groups
 source: https://docs.dynatrace.com/managed/dynatrace-api/cluster-api/cluster-api-v1/user-groups-v1/post-create-users-groups
-scraped: 2026-05-12T12:12:31.012772
 ---
 
 # Create user groups
@@ -24,7 +23,7 @@ The `ServiceProviderAPI` (Service Provider API) Api-Token scope is required to g
 
 | Parameter | Type | Description | In | Required |
 | --- | --- | --- | --- | --- |
-| body | [GroupConfig[]](#openapi-definition-GroupConfig) | - | body | Optional |
+| body | [GroupConfig](#openapi-definition-GroupConfig)[] | - | body | Optional |
 
 ### Request body objects
 
@@ -119,9 +118,9 @@ This is a model of the request body, showing the possible elements. It has to be
 
 | Code | Type | Description |
 | --- | --- | --- |
-| **200** | [GroupConfig[]](#openapi-definition-GroupConfig) | Success |
+| **200** | [GroupConfig](#openapi-definition-GroupConfig)[] | Success |
 | **400** | - | No group information received for the create-group request |
-| **406** | [GroupConfig[]](#openapi-definition-GroupConfig) | Unacceptable or incomplete request. Some groups were added. |
+| **406** | [GroupConfig](#openapi-definition-GroupConfig)[] | Unacceptable or incomplete request. Some groups were added. |
 
 ### Response body objects
 

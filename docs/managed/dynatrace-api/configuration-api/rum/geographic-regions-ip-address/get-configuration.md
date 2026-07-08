@@ -1,7 +1,6 @@
 ---
 title: IP address mapping rules - GET configuration
 source: https://docs.dynatrace.com/managed/dynatrace-api/configuration-api/rum/geographic-regions-ip-address/get-configuration
-scraped: 2026-05-12T11:18:01.412511
 ---
 
 # IP address mapping rules - GET configuration
@@ -46,7 +45,7 @@ Configuration of the IP address mappings to geographic locations.
 
 | Element | Type | Description |
 | --- | --- | --- |
-| ipAddressMappingRules | [IpAddressMappingRule[]](#openapi-definition-IpAddressMappingRule) | A list of IP address mapping rules.  Rules are evaluated from top to bottom; the first matching rule applies. |
+| ipAddressMappingRules | [IpAddressMappingRule](#openapi-definition-IpAddressMappingRule)[] | A list of IP address mapping rules.  Rules are evaluated from top to bottom; the first matching rule applies. |
 
 #### The `IpAddressMappingRule` object
 
@@ -64,10 +63,10 @@ The location for an IP address mapping.
 | Element | Type | Description |
 | --- | --- | --- |
 | city | string | The city name of the location. |
-| countryCode | string | The country code of the location.  To fetch the list of available country codes, use the [GET all countriesï»¿](https://dt-url.net/37030go) request. |
+| countryCode | string | The country code of the location.  To fetch the list of available country codes, use the [GET all countries﻿](https://dt-url.net/37030go) request. |
 | latitude | number | The latitude of the location in `DDD.dddd` format. |
 | longitude | number | The longitude of the location in `DDD.dddd` format. |
-| regionCode | string | The region code of the location.  To fetch the list of available region codes, use the [GET regions of the countryï»¿](https://dt-url.net/az230x0) request. |
+| regionCode | string | The region code of the location.  To fetch the list of available region codes, use the [GET regions of the country﻿](https://dt-url.net/az230x0) request. |
 
 #### The `IpAddressRange` object
 
@@ -155,6 +154,6 @@ The IP address or the IP address range to be mapped to the location.
 
 ## Related topics
 
-* [Map internal IP addresses to locations for web applications](/managed/observe/digital-experience/web-applications/additional-configuration/map-internal-ip-addresses-to-locations-web "Configure Dynatrace to use local addresses to understand where the users of your web applications are.")
-* [Map internal IP addresses to locations for mobile applications](/managed/observe/digital-experience/mobile-applications/additional-configuration/map-internal-ip-addresses-to-locations-mobile "Configure Dynatrace to use local addresses to understand where the users of your mobile applications are.")
-* [Map internal IP addresses to locations for custom applications](/managed/observe/digital-experience/custom-applications/additional-configuration/map-internal-ip-addresses-to-locations-custom "Configure Dynatrace to use local addresses to understand where the users of your custom applications are.")
+* [Map internal IP addresses to locations for web applications in RUM Classic](/managed/observe/digital-experience/rum-classic/web-applications/additional-configuration/map-internal-ip-addresses-to-locations-web "Configure Dynatrace to use local addresses to understand where the users of your web applications are.")
+* [Map internal IP addresses to locations for mobile applications in RUM Classic](/managed/observe/digital-experience/rum-classic/mobile-applications/additional-configuration/map-internal-ip-addresses-to-locations-mobile "Configure Dynatrace to use local addresses to understand where the users of your mobile applications are.")
+* [Map internal IP addresses to locations for custom applications in RUM Classic](/managed/observe/digital-experience/rum-classic/custom-applications/additional-configuration/map-internal-ip-addresses-to-locations-custom "Configure Dynatrace to use local addresses to understand where the users of your custom applications are.")

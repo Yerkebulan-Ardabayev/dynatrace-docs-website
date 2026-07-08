@@ -1,7 +1,6 @@
 ---
 title: Hub capabilities API - GET a technology
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/hub/get-technology
-scraped: 2026-05-12T11:54:59.277395
 ---
 
 # Hub capabilities API - GET a technology
@@ -58,7 +57,7 @@ Public metadata for an item.
 | clusterMaxVersion | integer | The maximum supported cluster version for this item. |
 | clusterMinVersion | integer | The minimum cluster version required to use this item. |
 | description | string | Description of the item. |
-| descriptionBlocks | [DescriptionBlock[]](#openapi-definition-DescriptionBlock) | - |
+| descriptionBlocks | [DescriptionBlock](#openapi-definition-DescriptionBlock)[] | - |
 | documentationLink | string | An absolute link to a documentation page explaining the item. |
 | extension1Details | [Extension1Details](#openapi-definition-Extension1Details) | Additional details of the extension version 1. |
 | extension2Details | [Extension2Details](#openapi-definition-Extension2Details) | Additional details of the extension. |
@@ -67,7 +66,7 @@ Public metadata for an item.
 | marketingLink | string | An absolute link to a marketing page promoting how the item can be used with dynatrace. |
 | name | string | Name of the item. |
 | notCompatibleReason | string | The reason why the item is not compatible with the cluster version. |
-| relatedItems | [RelatedItem[]](#openapi-definition-RelatedItem) | Related items. |
+| relatedItems | [RelatedItem](#openapi-definition-RelatedItem)[] | Related items. |
 | tags | string[] | Grouping of items with keywords. |
 | technologyDetails | [TechnologyDetails](#openapi-definition-TechnologyDetails) | Additional details of the technology. |
 | type | string | Represents the type of item. It can be TECHNOLOGY, EXTENSION1 or EXTENSION2. The element can hold these values * `EXTENSION1` * `EXTENSION2` * `TECHNOLOGY` |
@@ -78,7 +77,7 @@ Represents a section of data describing the given capability.
 
 | Element | Type | Description |
 | --- | --- | --- |
-| images | [Image[]](#openapi-definition-Image) | Collection of images (in case of gallery). |
+| images | [Image](#openapi-definition-Image)[] | Collection of images (in case of gallery). |
 | source | string | Source of the description block (in case of markdown). |
 | sourceId | string | Optional identifier of special description blocks. |
 | title | string | Title of the description block. |
@@ -100,7 +99,7 @@ Additional details of the extension version 1.
 
 | Element | Type | Description |
 | --- | --- | --- |
-| releases | [Extension1Release[]](#openapi-definition-Extension1Release) | A list of versions for the extension version 1. |
+| releases | [Extension1Release](#openapi-definition-Extension1Release)[] | A list of versions for the extension version 1. |
 
 #### The `Extension1Release` object
 
@@ -122,7 +121,7 @@ Additional details of the extension.
 | distributed | boolean | Whether this extension is available in the central hub catalog. |
 | extensionName | string | Fully qualified name of the extension. |
 | recommendedCatalogVersion | string | Recommended version of this extension to use. This is the latest compatible published release. |
-| releases | [ExtensionRelease[]](#openapi-definition-ExtensionRelease) | Releases for the extension. |
+| releases | [ExtensionRelease](#openapi-definition-ExtensionRelease)[] | Releases for the extension. |
 
 #### The `ExtensionRelease` object
 
@@ -132,7 +131,7 @@ Extensions releases information
 | --- | --- | --- |
 | active | boolean | Represents whether this version is active version |
 | artifactSha256 | string | Sha256 hash for the distributed extension. |
-| assetsInfo | [AssetInfo[]](#openapi-definition-AssetInfo) | Assets types and its count |
+| assetsInfo | [AssetInfo](#openapi-definition-AssetInfo)[] | Assets types and its count |
 | configuredFeatureSets | string[] | Configured feature sets for an installed release |
 | dataSources | string[] | Available data sources for the given release |
 | distributed | boolean | Represents whether the release is distributed |
@@ -163,7 +162,7 @@ Additional information about a Feature Set
 | description | string | Optional description for the feature set |
 | displayName | string | Optional display name of the feature set |
 | isRecommended | boolean | Marks the feature set as recommended (selected by default during activation) |
-| metrics | [MetricDto[]](#openapi-definition-MetricDto) | Feature set metrics |
+| metrics | [MetricDto](#openapi-definition-MetricDto)[] | Feature set metrics |
 
 #### The `MetricDto` object
 
@@ -217,7 +216,7 @@ Additional details of the technology.
 | Element | Type | Description |
 | --- | --- | --- |
 | code | integer | The HTTP status code |
-| constraintViolations | [ConstraintViolation[]](#openapi-definition-ConstraintViolation) | A list of constraint violations |
+| constraintViolations | [ConstraintViolation](#openapi-definition-ConstraintViolation)[] | A list of constraint violations |
 | message | string | The error message |
 
 #### The `ConstraintViolation` object

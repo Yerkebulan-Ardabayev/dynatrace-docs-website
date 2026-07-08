@@ -1,7 +1,6 @@
 ---
 title: Settings API - Automatic injection schema table
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/settings/schemas/builtin-rum-web-automatic-injection
-scraped: 2026-05-12T11:40:49.056289
 ---
 
 # Settings API - Automatic injection schema table
@@ -35,7 +34,7 @@ To execute this request, you need an access token with **Read settings** (`setti
 | Property | Type | Description | Required |
 | --- | --- | --- | --- |
 | Real User Monitoring code source `monitoringCodeSourceSection` | [MonitoringCodeSource](#MonitoringCodeSource) | - | Required |
-| Snippet format `snippetFormat` | [SnippetFormat](#SnippetFormat) | *Code Snippet:* OneAgent injects an inline script that initializes Dynatrace and dynamically downloads the monitoring code into your application. Use when you want to inject the monitoring code in deferred mode.  *Inline Code:* OneAgent injects the configuration and the monitoring code inline into your application. Use this injection type when you need to keep the number of web requests at a minimum.  *OneAgent JavaScript Tag:* OneAgent injects a JavaScript tag into your application, containing the configuration and a link to the monitoring code. This is our default injection type, since it's most versatile.  *OneAgent JavaScript tag with SRI:* OneAgent injects the configuration, a reference to an external file containing the monitoring code, and a hash that allows the browser to verify the integrity of the monitoring code before executing it.  Compare the different [injection formatsï»¿](https://dt-url.net/vx5g0ptn). | Required |
+| Snippet format `snippetFormat` | [SnippetFormat](#SnippetFormat) | *Code Snippet:* OneAgent injects an inline script that initializes Dynatrace and dynamically downloads the monitoring code into your application. Use when you want to inject the monitoring code in deferred mode.  *Inline Code:* OneAgent injects the configuration and the monitoring code inline into your application. Use this injection type when you need to keep the number of web requests at a minimum.  *OneAgent JavaScript Tag:* OneAgent injects a JavaScript tag into your application, containing the configuration and a link to the monitoring code. This is our default injection type, since it's most versatile.  *OneAgent JavaScript tag with SRI:* OneAgent injects the configuration, a reference to an external file containing the monitoring code, and a hash that allows the browser to verify the integrity of the monitoring code before executing it.  Compare the different [injection formats﻿](https://dt-url.net/vx5g0ptn). | Required |
 | Cache control headers `cacheControlHeaders` | [CacheControlHeaders](#CacheControlHeaders) | - | Required |
 
 ##### The `MonitoringCodeSource` object
@@ -57,4 +56,4 @@ To execute this request, you need an access token with **Read settings** (`setti
 
 | Property | Type | Description | Required |
 | --- | --- | --- | --- |
-| Optimize the value of cache control headers for use with Dynatrace Real User Monitoring `cacheControlHeaders` | boolean | [How to ensure timely configuration updates for automatic injection?ï»¿](https://dt-url.net/m9039ea) | Required |
+| Optimize the value of cache control headers for use with Dynatrace Real User Monitoring `cacheControlHeaders` | boolean | [How to ensure timely configuration updates for automatic injection?﻿](https://dt-url.net/m9039ea) | Required |

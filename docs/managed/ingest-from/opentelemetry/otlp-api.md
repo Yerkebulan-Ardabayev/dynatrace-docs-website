@@ -1,7 +1,6 @@
 ---
 title: Dynatrace OTLP API endpoints
 source: https://docs.dynatrace.com/managed/ingest-from/opentelemetry/otlp-api
-scraped: 2026-05-12T11:13:55.308011
 ---
 
 # Dynatrace OTLP API endpoints
@@ -12,7 +11,7 @@ scraped: 2026-05-12T11:13:55.308011
 * 8-min read
 * Updated on Jan 09, 2026
 
-The [OpenTelemetry Protocol (OTLP)ï»¿](https://opentelemetry.io/docs/specs/otlp/) is the principal network protocol for the exchange of telemetry data between OpenTelemetry-backed services and applications.
+The [OpenTelemetry Protocol (OTLP)﻿](https://opentelemetry.io/docs/specs/otlp/) is the principal network protocol for the exchange of telemetry data between OpenTelemetry-backed services and applications.
 
 Dynatrace provides native OTLP endpoints with the following services:
 
@@ -23,7 +22,7 @@ Alternatively, you can deploy the [Dynatrace Collector](/managed/ingest-from/ope
 
 ## Default ingest paths
 
-The ingest paths used by Dynatrace for the individual signal types follow the [standard OpenTelemetry pathsï»¿](https://opentelemetry.io/docs/specs/otel/protocol/exporter/#endpoint-urls-for-otlphttp).
+The ingest paths used by Dynatrace for the individual signal types follow the [standard OpenTelemetry paths﻿](https://opentelemetry.io/docs/specs/otel/protocol/exporter/#endpoint-urls-for-otlphttp).
 
 | Signal Type | Path |
 | --- | --- |
@@ -31,13 +30,13 @@ The ingest paths used by Dynatrace for the individual signal types follow the [s
 | Metrics | `/v1/metrics` |
 | Logs | `/v1/logs` |
 
-Depending on the configuration, you may need to append these paths individually to the base URLs of the following service endpoints when specifying the export URLs. This can happen either in-code, when using [manual instrumentation](/managed/ingest-from/opentelemetry/walkthroughs "Learn how to integrate and ingest OpenTelemetry data (traces, metrics, and logs) into Dynatrace."), or using the standard [environment variablesï»¿](https://opentelemetry.io/docs/languages/sdk-configuration/otlp-exporter/#endpoint-configuration).
+Depending on the configuration, you may need to append these paths individually to the base URLs of the following service endpoints when specifying the export URLs. This can happen either in-code, when using [manual instrumentation](/managed/ingest-from/opentelemetry/walkthroughs "Learn how to integrate and ingest OpenTelemetry data (traces, metrics, and logs) into Dynatrace."), or using the standard [environment variables﻿](https://opentelemetry.io/docs/languages/sdk-configuration/otlp-exporter/#endpoint-configuration).
 
 ## Export to Dynatrace
 
 ### Base URLs
 
-The following addresses provide the base URLs for your OTLP ingest configuration. Use the URL applicable to your type of environment and replace the relevant part with your [environment ID](/managed/discover-dynatrace/get-started/monitoring-environment "Understand and learn how to work with monitoring environments.").
+The following addresses provide the base URLs for your OTLP ingest configuration. Use the URL applicable to your type of environment and replace the relevant part with your [environment ID](/managed/discover-dynatrace/get-started/monitoring-environment "Learn what a Dynatrace monitoring environment is, how to find your environment ID, and how to set up and connect multiple environments.").
 You will also use the base URL if you define the `OTEL_EXPORTER_OTLP_ENDPOINT` environment variable, see [Environment variables](#environment-variables).
 
 | API Type | Base URL |
@@ -146,7 +145,7 @@ See [Transform OTLP gRPC to HTTP with the OTel Collector](/managed/ingest-from/o
 
 ### Authentication and TLS
 
-Whether you need to use TLS and authenticate your requests against the OTel Collector depends on your particular Collector setup/configuration. By default, the [OTLP receiverï»¿](https://github.com/open-telemetry/opentelemetry-collector/blob/v0.151.0/receiver/otlpreceiver/README.md) is configured for plain-text HTTP and does not require authentication.
+Whether you need to use TLS and authenticate your requests against the OTel Collector depends on your particular Collector setup/configuration. By default, the [OTLP receiver﻿](https://github.com/open-telemetry/opentelemetry-collector/blob/v0.155.0/receiver/otlpreceiver/README.md) is configured for plain-text HTTP and does not require authentication.
 
 The eventual outbound connection from the OTel Collector to Dynatrace always requires authentication and TLS.
 

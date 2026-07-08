@@ -1,7 +1,6 @@
 ---
 title: Secure development controls
 source: https://docs.dynatrace.com/managed/manage/data-privacy-and-security/data-security/secure-development-controls
-scraped: 2026-05-12T11:08:42.517530
 ---
 
 # Secure development controls
@@ -133,7 +132,7 @@ External penetration testing
 
 ## Bug bounty program
 
-Dynatrace runs a private [bug bounty program on HackerOneï»¿](https://www.dynatrace.com/news/blog/dynatrace-incorporates-hackerones-bug-bounty-program-into-their-security-playbook/).
+Dynatrace runs a private [bug bounty program on HackerOne﻿](https://www.dynatrace.com/news/blog/dynatrace-incorporates-hackerones-bug-bounty-program-into-their-security-playbook/).
 
 ![Bug bounty program](https://cdn.bfldr.com/B686QPH3/as/6r9rgxhx72c6kwrtfg4nqk/Bug_bounty_program_-_Light_Mode?auto=webp&format=png&position=1)
 

@@ -1,7 +1,6 @@
 ---
 title: GET OneAgent JavaScript tag with SRI
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/rum/rum-manual-insertion-tags/get-oneagent-javascript-tag-with-sri
-scraped: 2026-05-12T12:05:55.370431
 ---
 
 # GET OneAgent JavaScript tag with SRI
@@ -11,7 +10,7 @@ scraped: 2026-05-12T12:05:55.370431
 * Reference
 * Updated on Sep 18, 2025
 
-Returns the most recent [OneAgent JavaScript tag with SRI](/managed/observe/digital-experience/web-applications/initial-setup/snippet-formats#oneagent-js-tag-sri "Select a format for the RUM JavaScript snippet that best fits your specific use case") for manual insertion into your web application code. It includes configuration, a reference to the monitoring code, and an integrity hash. For more information on SRI support for RUM, see [Use Subresource Integrity (SRI) for Real User Monitoring code](/managed/observe/digital-experience/web-applications/initial-setup/subresource-integrity "Use the Subresource Integrity (SRI) browser feature to ensure the integrity of Real User Monitoring code.").
+Returns the most recent [OneAgent JavaScript tag with SRI](/managed/observe/digital-experience/rum-classic/web-applications/initial-setup/snippet-formats#oneagent-js-tag-sri "Select a format for the RUM JavaScript snippet that best fits your specific use case") for manual insertion into your web application code. It includes configuration, a reference to the monitoring code, and an integrity hash. For more information on SRI support for RUM, see [Use Subresource Integrity (SRI) for Real User Monitoring Classic code](/managed/observe/digital-experience/rum-classic/web-applications/initial-setup/subresource-integrity "Use the Subresource Integrity (SRI) browser feature to ensure the integrity of Real User Monitoring Classic code.").
 
 |  |  |  |
 | --- | --- | --- |
@@ -33,4 +32,4 @@ To learn how to obtain and use it, see [Tokens and authentication](/managed/disc
 
 ## Response
 
-The response includes a `text/plain` payload containing the most recent version of the [OneAgent JavaScript tag with SRI](/managed/observe/digital-experience/web-applications/initial-setup/snippet-formats#oneagent-js-tag-sri "Select a format for the RUM JavaScript snippet that best fits your specific use case") for the specified application.
+The response includes a `text/plain` payload containing the most recent version of the [OneAgent JavaScript tag with SRI](/managed/observe/digital-experience/rum-classic/web-applications/initial-setup/snippet-formats#oneagent-js-tag-sri "Select a format for the RUM JavaScript snippet that best fits your specific use case") for the specified application.

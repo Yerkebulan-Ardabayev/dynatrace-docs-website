@@ -1,7 +1,6 @@
 ---
 title: Monitor Prometheus metrics
 source: https://docs.dynatrace.com/managed/observe/infrastructure-observability/container-platform-monitoring/kubernetes-monitoring/monitor-prometheus-metrics
-scraped: 2026-05-12T11:50:05.065392
 ---
 
 # Monitor Prometheus metrics
@@ -9,15 +8,21 @@ scraped: 2026-05-12T11:50:05.065392
 # Monitor Prometheus metrics
 
 * 14-min read
-* Updated on Apr 21, 2026
+* Updated on Jun 19, 2026
 
 Prometheus is an open-source monitoring and alerting toolkit which is popular in the Kubernetes community. Prometheus scrapes metrics from a number of HTTP(s) endpoints that expose metrics in the OpenMetrics format.
-See the list of available [exportersï»¿](https://dt-url.net/vd03n1m) in the Prometheus documentation.
+See the list of available [exporters﻿](https://dt-url.net/vd03n1m) in the Prometheus documentation.
+
+Scaling with OpenTelemetry Collector
+
+This page describes the ActiveGate Kubernetes module's Prometheus integration, which has [hard limits](#limitations) of 1,000 exporter pods, 1,000 metrics per pod, and 500,000 metric data points per pod.
+
+For new deployments, and for any setup approaching these limits, we recommend scraping Prometheus with the [OpenTelemetry Collector](/managed/ingest-from/opentelemetry/collector/use-cases/prometheus "Configure the OpenTelemetry Collector to scrape Prometheus endpoints and ingest the data into Dynatrace.") instead. It scales to large Kubernetes clusters through a [Target Allocator-based deployment](/managed/ingest-from/opentelemetry/collector/use-cases/prometheus/standard "Deploy a tiered Target Allocator, Scraper, and Gateway architecture for production-grade Prometheus scraping with the OpenTelemetry Collector."), and it can reuse your existing `metrics.dynatrace.com/scrape` pod annotations through a [`ScrapeConfig`](/managed/ingest-from/opentelemetry/collector/use-cases/prometheus/standard#scrapeconfig "Deploy a tiered Target Allocator, Scraper, and Gateway architecture for production-grade Prometheus scraping with the OpenTelemetry Collector.").
 
 ## Prometheus Metric Type Ingest
 
 Dynatrace is able to ingest Prometheus metrics [Counter](#counter), [Gauge](#gauge), [Histogram](#histogram) and [Summary](#summary)
-in Kubernetes using [Prometheus exportersï»¿](https://dt-url.net/lw02ror) and makes them available for charting, alerting and analysis.
+in Kubernetes using [Prometheus exporters﻿](https://dt-url.net/lw02ror) and makes them available for charting, alerting and analysis.
 
 ### Counter
 
@@ -34,7 +39,7 @@ The **delta encoding** used by the Dynatrace [`COUNT`](/managed/ingest-from/exte
 
 1
 
-[Prometheus official documentation: Counterï»¿](https://dt-url.net/cd02rce)
+[Prometheus official documentation: Counter﻿](https://dt-url.net/cd02rce)
 
 2
 
@@ -48,7 +53,7 @@ current memory usage or number of users online. In Dynatrace, the [`GAUGE`](/man
 
 1
 
-[Prometheus official documentation: Gaugeï»¿](https://dt-url.net/lb22r1o)
+[Prometheus official documentation: Gauge﻿](https://dt-url.net/lb22r1o)
 
 ### Histogram
 
@@ -64,7 +69,7 @@ following table.
 
 1
 
-[Prometheus official documentation: Histogramï»¿](https://dt-url.net/vc02rmb)
+[Prometheus official documentation: Histogram﻿](https://dt-url.net/vc02rmb)
 
 2
 
@@ -73,18 +78,18 @@ The metric key of a histogram metric is suffixed with `.histogram`. A histogram 
 ### Summary
 
 Like a [Histogram](#histogram), the summary metric[1](#fn-4-1-def) samples observations. In contrast to the histogram metric, a summary's buckets are
-represented by Ï-quantiles where 0 â¤ Ï â¤ 1. For a base metric name of `<basename>`, Dynatrace will ingest the data according to the
+represented by φ-quantiles where 0 ≤ φ ≤ 1. For a base metric name of `<basename>`, Dynatrace will ingest the data according to the
 following table.
 
 | Prometheus Metric | Dynatrace Ingest Type |
 | --- | --- |
-| `<basename>{quantile="<Ï>"}` | [`GAUGE`](/managed/ingest-from/extend-dynatrace/extend-metrics/reference/metric-ingestion-protocol#gauge-metric "Learn how the data ingestion protocol for Dynatrace Metrics API works.") |
+| `<basename>{quantile="<φ>"}` | [`GAUGE`](/managed/ingest-from/extend-dynatrace/extend-metrics/reference/metric-ingestion-protocol#gauge-metric "Learn how the data ingestion protocol for Dynatrace Metrics API works.") |
 | `<basename>_sum` | [`COUNT`](/managed/ingest-from/extend-dynatrace/extend-metrics/reference/metric-ingestion-protocol#count-metric "Learn how the data ingestion protocol for Dynatrace Metrics API works.") |
 | `<basename>_count` | [`COUNT`](/managed/ingest-from/extend-dynatrace/extend-metrics/reference/metric-ingestion-protocol#count-metric "Learn how the data ingestion protocol for Dynatrace Metrics API works.") |
 
 1
 
-[Prometheus official documentation: Summaryï»¿](https://dt-url.net/7g234n1).
+[Prometheus official documentation: Summary﻿](https://dt-url.net/7g234n1).
 
 ### Unsupported
 
@@ -120,7 +125,7 @@ Set `metrics.dynatrace.com/scrape` to `true` to enable Dynatrace to collect Prom
 
 By default, Prometheus metrics are available at the first exposed TCP port of the pod. Set `metrics.dynatrace.com/port` to the respective port.
 
-To determine the port value, see [Default port allocationsï»¿](https://github.com/prometheus/prometheus/wiki/Default-port-allocations) for a list of common ports for known exporters.
+To determine the port value, see [Default port allocations﻿](https://github.com/prometheus/prometheus/wiki/Default-port-allocations) for a list of common ports for known exporters.
 
 ### Path to metrics endpoint Optional
 
@@ -241,7 +246,7 @@ containers:
 image: myregistry/myimage:mytag
 ```
 
-The values of `metrics.dynatrace.com/path`, `metrics.dynatrace.com/port`, and `metrics.dynatrace.com/secure` depend on the exporter being used; adapt them to your requirements. To determine the port value, see [Default port allocationsï»¿](https://github.com/prometheus/prometheus/wiki/Default-port-allocations) for a list of common ports for known exporters.
+The values of `metrics.dynatrace.com/path`, `metrics.dynatrace.com/port`, and `metrics.dynatrace.com/secure` depend on the exporter being used; adapt them to your requirements. To determine the port value, see [Default port allocations﻿](https://github.com/prometheus/prometheus/wiki/Default-port-allocations) for a list of common ports for known exporters.
 
 ### Client authentication Optional
 
@@ -333,7 +338,7 @@ For systems that require basic HTTP authentication before scraping, you can appl
 * `metrics.dynatrace.com/http.auth.basic.username`
 * `metrics.dynatrace.com/http.auth.basic.password`
 
-The following example shows two secrets created in the `default` namespace â one for a username and one for a password.
+The following example shows two secrets created in the `default` namespace – one for a username and one for a password.
 The aforementioned annotations are then used on a pod, with the secrets referenced in the annotation values.
 
 ```
@@ -550,7 +555,7 @@ Ingesting metrics from exporters requiring Bearer token authentication is only p
 
 ### Role-based access control (RBAC) authorization for metric ingestion
 
-Exporter pods such as `node-exporter`, `kube-state-metrics`, and `openshift-state-metrics` require [RBAC authorizationï»¿](https://dt-url.net/n721pt6). For these pods, add the annotation:
+Exporter pods such as `node-exporter`, `kube-state-metrics`, and `openshift-state-metrics` require [RBAC authorization﻿](https://dt-url.net/n721pt6). For these pods, add the annotation:
 
 `metrics.dynatrace.com/http.auth: 'builtin:default'`
 
@@ -562,7 +567,7 @@ For more information on how to annotate pods, see [Annotation best practices](#b
 
 ## Annotate Kubernetes services
 
-**Requirements:** Add the permission to access **services** for the `dynatrace-kubernetes-monitoring` ClusterRole (not needed for Dynatrace Operator users, as this is enabled by default in [clusterrole-kubernetes-monitoring.yamlï»¿](https://dt-url.net/gl027s4)).
+**Requirements:** Add the permission to access **services** for the `dynatrace-kubernetes-monitoring` ClusterRole (not needed for Dynatrace Operator users, as this is enabled by default in [clusterrole-kubernetes-monitoring.yaml﻿](https://dt-url.net/gl027s4)).
 
 You can also annotate services instead of pods. Pods corresponding to the Kubernetes services are automatically discovered via the service label selector, causing scraping of all pods belonging to the service.
 
@@ -744,7 +749,7 @@ If you don't have full control over the pod template, you have the following opt
 
 Metrics from Prometheus exporters are available in Data Explorer for custom charting. Select **Create custom chart** and select **Try it out** in the top banner. For more information, see [Data Explorer](/managed/analyze-explore-automate/explorer "Query for metrics and transform results to gain desired insights.").
 
-You can simply search for metric keys of all available metrics and define how youâd like to analyze and chart your metrics. After that you can pin your charts on a dashboard.
+You can simply search for metric keys of all available metrics and define how you’d like to analyze and chart your metrics. After that you can pin your charts on a dashboard.
 
 ## Metric alerts
 
@@ -778,7 +783,7 @@ Per Kubernetes cluster, this integration supports a maximum of:
 
 There are two distinct methods of monitoring technologies:
 
-* The first method involves using the [Extensions 2.0ï»¿](https://dt-url.net/9t036yh) framework, which supports a handful of extensions for Prometheus exporters out of the box.
+* The first method involves using the [Extensions 2.0﻿](https://dt-url.net/9t036yh) framework, which supports a handful of extensions for Prometheus exporters out of the box.
 
   This method provides comprehensive monitoring features, including technology-specific dashboards, alerting capabilities, topology visualization, and entity pages. However, this method operates outside of Kubernetes.
 * The second method involves annotating Prometheus pods within Kubernetes to scrape Prometheus exporters.
@@ -793,14 +798,14 @@ If you have DPS licensing, you can get more information about your environment's
 
 * Full-Stack Monitoring [includes a fixed number of custom metric data points](/managed/license/capabilities/app-infra-observability/full-stack-monitoring#full-stack-metrics "Learn how your consumption of the Dynatrace Full-Stack Monitoring DPS capability is billed and charged.") for each GiB that contributes to your environment's GiB-hour consumption for containers with code-modules.
 
-If you have Dynatrace classic licensing, Prometheus metrics in Kubernetes environments are subject to [DDU consumption](/managed/license/monitoring-consumption-classic/davis-data-units/metric-cost-calculation "Understand how to calculate Davis data unit consumption and costs related to monitored metrics.").
+If you have Dynatrace classic licensing, Prometheus metrics in Kubernetes environments are subject to [DDU consumption](/managed/license/classic-licensing/davis-data-units/metric-cost-calculation "Understand how to calculate Davis data unit consumption and costs related to monitored metrics.").
 
-* Prometheus metrics from exporters running on hosts monitored by OneAgent are first deducted from your quota of [included metrics per host unit](/managed/license/monitoring-consumption-classic/davis-data-units/metric-cost-calculation#metrics-per-host-unit "Understand how to calculate Davis data unit consumption and costs related to monitored metrics."). After this quota is exceeded, any additional metrics consume [DDUs](/managed/license/monitoring-consumption-classic/davis-data-units/metric-cost-calculation "Understand how to calculate Davis data unit consumption and costs related to monitored metrics.").
-* Prometheus metrics from exporters running on hosts not monitored by OneAgent always consume [DDUs](/managed/license/monitoring-consumption-classic/davis-data-units/metric-cost-calculation "Understand how to calculate Davis data unit consumption and costs related to monitored metrics.").
+* Prometheus metrics from exporters running on hosts monitored by OneAgent are first deducted from your quota of [included metrics per host unit](/managed/license/classic-licensing/davis-data-units/metric-cost-calculation#metrics-per-host-unit "Understand how to calculate Davis data unit consumption and costs related to monitored metrics."). After this quota is exceeded, any additional metrics consume [DDUs](/managed/license/classic-licensing/davis-data-units/metric-cost-calculation "Understand how to calculate Davis data unit consumption and costs related to monitored metrics.").
+* Prometheus metrics from exporters running on hosts not monitored by OneAgent always consume [DDUs](/managed/license/classic-licensing/davis-data-units/metric-cost-calculation "Understand how to calculate Davis data unit consumption and costs related to monitored metrics.").
 
 ## Troubleshooting
 
-To troubleshoot Prometheus integration issues, download the [Kubernetes Monitoring Statistics extensionï»¿](https://dt-url.net/n903xmb). For more information, see the community article on [How to troubleshoot missing Prometheus metricsï»¿](https://dt-url.net/3m02ozr).
+To troubleshoot Prometheus integration issues, download the [Kubernetes Monitoring Statistics extension﻿](https://dt-url.net/n903xmb). For more information, see the community article on [How to troubleshoot missing Prometheus metrics﻿](https://dt-url.net/3m02ozr).
 
 ## Related topics
 

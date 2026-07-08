@@ -1,7 +1,6 @@
 ---
 title: Segment requests to improve response time degradation
 source: https://docs.dynatrace.com/managed/observe/application-observability/distributed-traces/use-cases/segment-request
-scraped: 2026-05-12T11:10:09.281513
 ---
 
 # Segment requests to improve response time degradation
@@ -48,7 +47,7 @@ The service `easyTravel Customer Frontend` received 249,000 requests during the 
 
    1. Select the **easyTravel Customer Frontend** node.
    2. From the **Filter requests** list, select **Response time**.
-   3. Select **greater than or equal to â¥**, type `80` in the input field, and select **Apply**.
+   3. Select **greater than or equal to ≥**, type `80` in the input field, and select **Apply**.
    4. Select **Apply**.
 
    ![Filter distributed traces](https://dt-cdn.net/images/filter-distributd-traces-1621-2d6b34444e.png)
@@ -68,6 +67,6 @@ By segmenting the requests in `easyTravel Customer Frontend` service flow and dr
 
 You can extend your analysis:
 
-* To see where the request originated, select **More** (**â¦**) > [**Service backtrace**](/managed/observe/application-observability/services-classic/service-backtrace "Trace the sequence of service calls all the way back up to the browser click that triggered the sequence of calls.").
+* To see where the request originated, select **More** (**…**) > [**Service backtrace**](/managed/observe/application-observability/services-classic/service-backtrace "Trace the sequence of service calls all the way back up to the browser click that triggered the sequence of calls.").
 * To see the entire trace from the first fully monitored process group, select **Show full trace**.
   Each distributed trace tracks a request from start to finish. This means that the traces always start at the first fully monitored process group. With this option, you can change your perspective and focus only on a service.

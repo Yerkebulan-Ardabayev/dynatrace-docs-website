@@ -1,7 +1,6 @@
 ---
 title: Metrics API examples - List all metrics
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/metric-v2/examples/list-all-metrics
-scraped: 2026-05-12T12:10:06.464368
 ---
 
 # Metrics API examples - List all metrics
@@ -17,9 +16,9 @@ This example shows how to fetch the list of all metrics in the environment with 
 
 The most important part is the metric key, as it is used to identify the metric. The key itself, however, doesn't provide much information about metric. To learn more about metrics, we can add this crucial information:
 
-* metric nameâprovides more insight into what the metric measures
-* unit of the metricâshows which unit the metric uses
-* allowed aggregationsâlists the available aggregations of the metric. The API rejects request for unsupported aggregations.
+* metric name—provides more insight into what the metric measures
+* unit of the metric—shows which unit the metric uses
+* allowed aggregations—lists the available aggregations of the metric. The API rejects request for unsupported aggregations.
 
 ## Configure the request
 

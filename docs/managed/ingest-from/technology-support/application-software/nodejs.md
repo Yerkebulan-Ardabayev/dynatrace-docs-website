@@ -1,7 +1,6 @@
 ---
 title: Node.js
 source: https://docs.dynatrace.com/managed/ingest-from/technology-support/application-software/nodejs
-scraped: 2026-05-12T11:23:12.587059
 ---
 
 # Node.js
@@ -12,7 +11,7 @@ scraped: 2026-05-12T11:23:12.587059
 * 4-min read
 * Updated on Apr 23, 2026
 
-[Node.jsï»¿](https://nodejs.org) is a server-side framework based on the [V8 JavaScript engineï»¿](https://developers.google.com/v8/) by Google. Node.js has an asynchronous execution model and is frequently used for gluing or as a proxy tier within enterprise environments.
+[Node.js﻿](https://nodejs.org) is a server-side framework based on the [V8 JavaScript engine﻿](https://developers.google.com/v8/) by Google. Node.js has an asynchronous execution model and is frequently used for gluing or as a proxy tier within enterprise environments.
 
 ## Capabilities
 
@@ -24,7 +23,7 @@ Dynatrace provides extensive Node.js monitoring capabilities:
 * Event loop metrics
 * Insights into inbound and outbound HTTP calls
 * Dedicated support for a variety of databases (includes query capture)
-* [OpenTelemetry supportï»¿](https://github.com/open-telemetry/opentelemetry-js-api/) for capturing traces and ingesting metrics.  
+* [OpenTelemetry support﻿](https://github.com/open-telemetry/opentelemetry-js-api/) for capturing traces and ingesting metrics.  
   For more information, see [Instrument your JavaScript application on Node.js with OpenTelemetry](/managed/ingest-from/opentelemetry/walkthroughs/nodejs "Learn how to instrument your JavaScript application on Node.js using OpenTelemetry and Dynatrace.")
 * [OneAgent SDK](/managed/ingest-from/extend-dynatrace/extend-tracing/oneagent-sdk "The Dynatrace OneAgent SDK enables you to instrument your application manually to extend end-to-end visibility for frameworks and technologies for which there is no code module yet available.") for custom tracing
 * [Continuous thread analysis for worker threads](#worker-threads)
@@ -33,20 +32,21 @@ See [our supported technologies matrix](/managed/ingest-from/technology-support#
 
 ## Support & desupport
 
-Node.js follows an [LTS release modelï»¿](https://github.com/nodejs/Release).
+Node.js follows an [LTS release model﻿](https://github.com/nodejs/Release).
 
 For Node.js v25 and earlier, odd-numbered versions reach EOL shortly after the next even-numbered version is released, while even-numbered versions eventually become LTS releases. For enterprise production environments, we highly recommend using LTS releases.
 
-Starting with Node.js v27, the release model changes: each major version goes through an unstable and then a stable stage, with all versions eventually becoming LTS releases and one major version released per year. For details, see [Evolving the Node.js Release Scheduleï»¿](https://nodejs.org/en/blog/announcements/evolving-the-nodejs-release-schedule).
+Starting with Node.js v27, the release model changes: each major version goes through an unstable and then a stable stage, with all versions eventually becoming LTS releases and one major version released per year. For details, see [Evolving the Node.js Release Schedule﻿](https://nodejs.org/en/blog/announcements/evolving-the-nodejs-release-schedule).
 
 Whenever a new Node.js major version is released, we add support for that version.
 
 Dynatrace extends support for each Node.js version by at least six months beyond the official end-of-life date. For LTS releases, support continues for at least one year after end-of-life, giving you more time to upgrade.
 
-Note that only [official Node.js versionsï»¿](https://nodejs.org/en/about/previous-releases) are supported.
+Note that only [official Node.js versions﻿](https://nodejs.org/en/about/previous-releases) are supported.
 
 | Node.js version | Vendor released | Vendor End of life | First supported Dynatrace OneAgent version | Last supported Dynatrace OneAgent version | Dynatrace support until | [Dynatrace support level](/managed/ingest-from/technology-support#support-levels) |
 | --- | --- | --- | --- | --- | --- | --- |
+| 26 | 2026-05-05 | 2029-04-30 | 1.341 | - | 2030-04-30 | Supported |
 | 25 | 2025-10-15 | 2026-06-01 | 1.333 | - | 2026-12-01 | Supported |
 | 24 | 2025-05-06 | 2028-04-30 | 1.329 | - | 2029-04-30 | Supported |
 | 23 | 2024-10-16 | 2025-06-01 | 1.305 | 1.329 | 2025-12-01 | Not supported |
@@ -54,7 +54,7 @@ Note that only [official Node.js versionsï»¿](https://nodejs.org/en/about/pre
 | 21 | 2023-10-17 | 2024-06-01 | 1.281 | 1.303 | 2024-12-01 | Not supported |
 | 20 | 2023-04-18 | 2026-04-30 | 1.271 | - | 2027-04-30 | Supported |
 | 19 | 2022-10-18 | 2023-06-01 | 1.257 | 1.285 | 2023-12-01 | Not supported |
-| 18 | 2022-04-19 | 2025-04-30 | 1.243 | - | 2026-04-30 | Not supported |
+| 18 | 2022-04-19 | 2025-04-30 | 1.243 | - | 2026-04-30 | Limited[1](#fn-node-js-1-def) |
 | 17 | 2021-10-19 | 2022-06-01 | 1.235 | 1.265 | 2022-12-01 | Not supported |
 | 16 | 2021-04-20 | 2023-09-11 | 1.219 | - | 2024-09-11 | Limited[1](#fn-node-js-1-def) |
 | 15 | 2020-10-20 | 2021-06-01 | 1.207 | 1.233 | 2021-12-01 | Not supported |
@@ -78,7 +78,7 @@ Not supported: Instrumentation is deprecated off by default on OneAgent version 
 
 Node.js version 12+ OneAgent version 1.251+ Dynatrace version 1.256+
 
-[Continuous thread analysis](/managed/observe/application-observability/profiling-and-optimization/continuous-thread-analysis "Continuously analyze the state of your threads and their development to quickly identify and solve performance issues in Java and Node.js processes.") for [worker threadsï»¿](https://nodejs.org/api/worker_threads.html#worker-thread) can automatically identify CPU-intensive threads and pinpoint scalability issues when work is distributed across many threads so that you can solve performance bottlenecks before your end users are impacted.
+[Continuous thread analysis](/managed/observe/application-observability/profiling-and-optimization/continuous-thread-analysis "Continuously analyze the state of your threads and their development to quickly identify and solve performance issues in Java and Node.js processes.") for [worker threads﻿](https://nodejs.org/api/worker_threads.html#worker-thread) can automatically identify CPU-intensive threads and pinpoint scalability issues when work is distributed across many threads so that you can solve performance bottlenecks before your end users are impacted.
 
 Continuous thread analysis in action
 
@@ -111,12 +111,12 @@ There is no automatic transaction tracing in place between the `main` and `worke
 * OneAgent version 1.279+ CPU times are not reported for Node.js services. These numbers were misleading, since by design a major part of any operation is handled asynchronously inside the Node.js runtime without the possibility to correlate the actual CPU time to a specific service.
 * Web Streams, WebSocket Client are not supported.
 * Node.js features marked as 'experimental' are not supported.
-* Using the NPM module [esmï»¿](https://github.com/standard-things/esm) in [variant 1 for packagesï»¿](https://github.com/standard-things/esm/tree/3.2.25#getting-started) might result in reduced visibility (especially if used for the main application script). It's preferable to use variant 2 to preload `esm` via the `-r` command line option.
-* There is currently only limited support for [ECMAScript modulesï»¿](https://nodejs.org/api/esm.html) (aka "ES6 modules"):
+* Using the NPM module [esm﻿](https://github.com/standard-things/esm) in [variant 1 for packages﻿](https://github.com/standard-things/esm/tree/3.2.25#getting-started) might result in reduced visibility (especially if used for the main application script). It's preferable to use variant 2 to preload `esm` via the `-r` command line option.
+* There is currently only limited support for [ECMAScript modules﻿](https://nodejs.org/api/esm.html) (aka "ES6 modules"):
 
   + If the main script file itself is an ECMAScript module OneAgent version 1.219+ with [Agent preloading](/managed/whats-new/preview-releases#oneagent-1-219-nodejs-agent-preloading "Learn about our Preview releases and how you can participate in them.") enabled is needed for the OneAgent to be injected into the Node.js process.
   + Instrumentation of ECMAScript modules is currently not available. This limits support for `kafkajs` in case the user defined entrypoint for the KafkaJs sensor is inside an ECMAScript module.
-* **Webpack** bundles all modules into a single file by default. OneAgent is unable to instrument bundled modules. To work around this limitation, all modules that need to be instrumented by OneAgent (such as `express`, `mongodb`, and `pg`) need to be externalized in the webpack configuration. For details, see the [webpack externalsï»¿](https://webpack.js.org/configuration/externals/) documentation.
+* **Webpack** bundles all modules into a single file by default. OneAgent is unable to instrument bundled modules. To work around this limitation, all modules that need to be instrumented by OneAgent (such as `express`, `mongodb`, and `pg`) need to be externalized in the webpack configuration. For details, see the [webpack externals﻿](https://webpack.js.org/configuration/externals/) documentation.
 * Using **Webpack** or other bundlers might also have an impact on automatic vulnerability detection. This is because the software components cannot be detected, as they are hidden behind the bundler configuration and not available at runtime. Only packages that are deployed as external packages can be detected and reported.
 
 ### Monitoring
@@ -125,6 +125,6 @@ There is no automatic transaction tracing in place between the `main` and `worke
 
 ### See also
 
-* [Blog: Understanding Garbage Collection and hunting Memory Leaks in Node.jsï»¿](https://www.dynatrace.com/news/blog/understanding-garbage-collection-and-hunting-memory-leaks-in-node-js/)
-* [Blog: How to track down CPU issues in Node.jsï»¿](https://www.dynatrace.com/news/blog/how-to-track-down-cpu-issues-in-node-js/)
-* [Blog: All you need to know to really understand the Node.js Event Loop and its Metricsï»¿](https://www.dynatrace.com/news/blog/all-you-need-to-know-to-really-understand-the-node-js-event-loop-and-its-metrics/)
+* [Blog: Understanding Garbage Collection and hunting Memory Leaks in Node.js﻿](https://www.dynatrace.com/news/blog/understanding-garbage-collection-and-hunting-memory-leaks-in-node-js/)
+* [Blog: How to track down CPU issues in Node.js﻿](https://www.dynatrace.com/news/blog/how-to-track-down-cpu-issues-in-node-js/)
+* [Blog: All you need to know to really understand the Node.js Event Loop and its Metrics﻿](https://www.dynatrace.com/news/blog/all-you-need-to-know-to-really-understand-the-node-js-event-loop-and-its-metrics/)

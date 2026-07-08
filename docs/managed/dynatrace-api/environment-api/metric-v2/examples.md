@@ -1,7 +1,6 @@
 ---
 title: Metrics API - Examples and use cases
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/metric-v2/examples
-scraped: 2026-05-12T12:00:10.780002
 ---
 
 # Metrics API - Examples and use cases

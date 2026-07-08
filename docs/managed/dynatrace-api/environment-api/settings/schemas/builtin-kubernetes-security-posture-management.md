@@ -1,7 +1,6 @@
 ---
 title: Settings API - Security Posture Management- Kubernetes schema table
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/settings/schemas/builtin-kubernetes-security-posture-management
-scraped: 2026-05-12T11:48:07.489074
 ---
 
 # Settings API - Security Posture Management- Kubernetes schema table
@@ -12,9 +11,9 @@ scraped: 2026-05-12T11:48:07.489074
 
 ### Security Posture Management: Kubernetes (`builtin:kubernetes.security-posture-management)`
 
-[Kubernetes Security Posture Management (KSPM)ï»¿](https://dt-url.net/b303utv) helps you assess and ensure the security and compliance of a Kubernetes environment by adhering to security best practices and regulatory standards.
+[Kubernetes Security Posture Management (KSPM)﻿](https://dt-url.net/b303utv) helps you assess and ensure the security and compliance of a Kubernetes environment by adhering to security best practices and regulatory standards.
 
-Note: You can [enable Kubernetes Security Posture Managementï»¿](https://dt-url.net/o003ue9) per environment or cluster.
+Note: You can [enable Kubernetes Security Posture Management﻿](https://dt-url.net/o003ue9) per environment or cluster.
 
 | Schema ID | Schema groups | Scope |
 | --- | --- | --- |
@@ -36,4 +35,4 @@ To execute this request, you need an access token with **Read settings** (`setti
 
 | Property | Type | Description | Required |
 | --- | --- | --- | --- |
-| Enable Security Posture Management `configurationDatasetPipelineEnabled` | boolean | Follow the [installation instructionsï»¿](https://dt-url.net/4x23ut5) to deploy the Security Posture Management components. | Required |
+| Enable Security Posture Management `configurationDatasetPipelineEnabled` | boolean | Follow the [installation instructions﻿](https://dt-url.net/4x23ut5) to deploy the Security Posture Management components. | Required |

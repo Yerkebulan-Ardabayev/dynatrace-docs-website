@@ -1,7 +1,6 @@
 ---
 title: NGINX
 source: https://docs.dynatrace.com/managed/ingest-from/technology-support/application-software/nginx
-scraped: 2026-05-12T11:23:44.338737
 ---
 
 # NGINX
@@ -54,10 +53,10 @@ Support for the latest NGINX release is typically included in the next subsequen
 
 | NGINX version | Vendor released | Vendor End of life | First supported Dynatrace OneAgent version | Last supported Dynatrace OneAgent version | Dynatrace support until | [Dynatrace support level](/managed/ingest-from/technology-support#support-levels) |
 | --- | --- | --- | --- | --- | --- | --- |
-| 1.30.0 | 2026-04-14 | - | 1.339 | - | - | Not supported |
-| 1.29.8 | 2026-04-07 | - | 1.339 | - | - | Not supported |
-| 1.29.7 | 2026-03-24 | - | 1.337 | - | - | Supported |
-| 1.29.6 | 2026-03-10 | - | 1.337 | - | - | Supported |
+| 1.30.0 | 2026-04-14 | - | 1.339 | - | - | Supported[1](#fn-nginx-1-def) |
+| 1.29.8 | 2026-04-07 | - | 1.339 | - | - | Supported[1](#fn-nginx-1-def) |
+| 1.29.7 | 2026-03-24 | - | 1.337 | - | - | Supported[1](#fn-nginx-1-def) |
+| 1.29.6 | 2026-03-10 | - | 1.337 | - | - | Supported[1](#fn-nginx-1-def) |
 | 1.29.5 | 2026-02-04 | - | 1.335 | - | - | Supported |
 | 1.29.4 | 2025-12-09 | - | 1.331 | - | - | Supported |
 | 1.29.3 | 2025-10-28 | - | 1.329 | - | - | Supported |
@@ -114,23 +113,27 @@ Support for the latest NGINX release is typically included in the next subsequen
 | 1.19.1 | 2020-07-07 | - | 1.197 | - | - | Supported |
 | 1.19.0 | 2020-05-26 | - | 1.193 | - | - | Supported |
 | 1.17.10 - 1.18.0 | 2020-04-14 | - | 1.191 | - | - | Supported |
-| 1.17.9 | 2020-03-03 | - | 1.189 | - | - | Supported[1](#fn-nginx-1-def) |
-| 1.17.8 | 2020-01-21 | - | 1.183 | - | - | Supported[1](#fn-nginx-1-def) |
-| 1.17.7 | 2019-12-24 | - | 1.181 | - | - | Supported[1](#fn-nginx-1-def) |
-| 1.17.4 - 1.17.6 | 2019-09-24 | - | 1.175 | - | - | Supported[1](#fn-nginx-1-def) |
-| 1.16.1 - 1.17.3 | 2019-08-13 | - | 1.173 | - | - | Supported[1](#fn-nginx-1-def) |
-| 1.15.11 - 1.16.0 | 2019-04-09 | - | 1.163 | - | - | Supported[1](#fn-nginx-1-def) |
-| 1.15.9 - 1.15.10 | 2019-02-26 | - | 1.161 | - | - | Supported[1](#fn-nginx-1-def) |
-| 1.14.1 - 1.15.8 | 2018-11-06 | - | 1.159 | - | - | Supported[1](#fn-nginx-1-def) |
-| 1.13.9 - 1.14.0 | 2018-02-20 | - | 1.143 | - | - | Supported[1](#fn-nginx-1-def) |
-| 1.11.5 - 1.13.8 | 2016-10-11 | - | 1.137 | - | - | Supported[1](#fn-nginx-1-def) |
-| 1.4 - 1.11.4 | 2013-04-24 | - | - | - | 2023-03-31 | Not supported[2](#fn-nginx-2-def) |
+| 1.17.9 | 2020-03-03 | - | 1.189 | - | - | Supported[2](#fn-nginx-2-def) |
+| 1.17.8 | 2020-01-21 | - | 1.183 | - | - | Supported[2](#fn-nginx-2-def) |
+| 1.17.7 | 2019-12-24 | - | 1.181 | - | - | Supported[2](#fn-nginx-2-def) |
+| 1.17.4 - 1.17.6 | 2019-09-24 | - | 1.175 | - | - | Supported[2](#fn-nginx-2-def) |
+| 1.16.1 - 1.17.3 | 2019-08-13 | - | 1.173 | - | - | Supported[2](#fn-nginx-2-def) |
+| 1.15.11 - 1.16.0 | 2019-04-09 | - | 1.163 | - | - | Supported[2](#fn-nginx-2-def) |
+| 1.15.9 - 1.15.10 | 2019-02-26 | - | 1.161 | - | - | Supported[2](#fn-nginx-2-def) |
+| 1.14.1 - 1.15.8 | 2018-11-06 | - | 1.159 | - | - | Supported[2](#fn-nginx-2-def) |
+| 1.13.9 - 1.14.0 | 2018-02-20 | - | 1.143 | - | - | Supported[2](#fn-nginx-2-def) |
+| 1.11.5 - 1.13.8 | 2016-10-11 | - | 1.137 | - | - | Supported[2](#fn-nginx-2-def) |
+| 1.4 - 1.11.4 | 2013-04-24 | - | - | - | 2023-03-31 | Not supported[3](#fn-nginx-3-def) |
 
 1
 
-Support for the CPU architecture PPCLE was added with OneAgent version 1.169 and ARM64 (AArch64) with OneAgent version 1.189.
+The OneAgent feature **Nginx Modules** is not supported for this NGINX version.
 
 2
+
+Support for the CPU architecture PPCLE was added with OneAgent version 1.169 and ARM64 (AArch64) with OneAgent version 1.189.
+
+3
 
 Supported if the used binary is in the list of [supported binaries](/managed/ingest-from/technology-support/application-software/nginx#nginx-supported-binaries "Learn the details of Dynatrace support for NGINX.") or the corresponding debug information is available locally.
 
@@ -6834,6 +6837,8 @@ Support for the latest OpenResty release may differ from the NGINX support lifec
 
 | OpenResty version | Vendor released | Vendor End of life | First supported Dynatrace OneAgent version | Last supported Dynatrace OneAgent version | Dynatrace support until | [Dynatrace support level](/managed/ingest-from/technology-support#support-levels) |
 | --- | --- | --- | --- | --- | --- | --- |
+| 1.29.2.3 | 2026-03-25 | - | 1.339 | - | - | Supported |
+| 1.29.2.1 | 2026-01-04 | - | 1.333 | - | - | Supported |
 | 1.27.1.2 | 2025-03-14 | - | 1.311 | - | - | Supported |
 | 1.27.1.1 | 2024-10-16 | - | 1.305 | - | - | Supported |
 | 1.25.3.2 | 2024-07-19 | - | 1.295 | - | - | Supported |
@@ -6866,7 +6871,7 @@ Support for the latest Tengine release may differ from the NGINX support lifecyc
 
 ## NGINX HTTP connection metrics
 
-The NGINX module captures HTTP connection metrics if you build your NGINX with [http\_stub\_status\_moduleï»¿](https://nginx.org/en/docs/http/ngx_http_stub_status_module.html).
+The NGINX module captures HTTP connection metrics if you build your NGINX with [http\_stub\_status\_module﻿](https://nginx.org/en/docs/http/ngx_http_stub_status_module.html).
 
 How to build NGINX with http\_stub\_status\_module
 
@@ -6879,7 +6884,7 @@ Make sure that the output contains the `--with-http_stub_status_module` paramete
 
 ## NGINX Plus metrics
 
-The NGINX module captures NGINX Plus metrics from [NGINX Plus Status API (up to R15) or NGINX Plus API (R16+)ï»¿](https://www.nginx.com/blog/transitioning-to-nginx-plus-api-configuration-monitoring/).
+The NGINX module captures NGINX Plus metrics from [NGINX Plus Status API (up to R15) or NGINX Plus API (R16+)﻿](https://www.nginx.com/blog/transitioning-to-nginx-plus-api-configuration-monitoring/).
 
 The API needs to be turned on and accessible by the NGINX module. If the API is protected by NGINX authentication, ensure it's accessible from localhost for HTTP GET requests. The Nginx module requires the API configuration to be available from the start (adding the configuration during Nginx runtime and reloading it is not supported).
 

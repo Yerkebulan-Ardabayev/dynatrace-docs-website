@@ -1,7 +1,6 @@
 ---
 title: Settings API - Metric query schema table
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/settings/schemas/builtin-metric-query
-scraped: 2026-05-12T11:43:08.488192
 ---
 
 # Settings API - Metric query schema table

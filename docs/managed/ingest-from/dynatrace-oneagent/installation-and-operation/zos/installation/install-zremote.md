@@ -1,7 +1,6 @@
 ---
 title: Install the zRemote module
 source: https://docs.dynatrace.com/managed/ingest-from/dynatrace-oneagent/installation-and-operation/zos/installation/install-zremote
-scraped: 2026-05-12T11:08:19.414306
 ---
 
 # Install the zRemote module
@@ -27,7 +26,7 @@ The hardware requirements of the machine where the zRemote module runs depend on
 | --- | --- | --- | --- | --- |
 | **Anticipated monitored CICS/IMS transactions per second** | **4,000** | **7,500** | **15,000** | **30,000** |
 | Required CPU cores on x86-64 architecture (Xeon E5-2600 series) | 2 | 4 | 8 | 16 |
-| Required [IFL processorsï»¿](https://www.ibm.com/products/integrated-facility-for-linux) on s390 architecture | 1 | 1 | 1 | 2 |
+| Required [IFL processors﻿](https://www.ibm.com/products/integrated-facility-for-linux) on s390 architecture | 1 | 1 | 1 | 2 |
 | Required memory | 4GB | 6GB | 8GB | 16GB |
 | Required disk space | 20GB | 20GB | 20GB | 20GB |
 
@@ -143,7 +142,7 @@ The actual zRemote log should contain the following messages:
 
 ## Update and maintenance
 
-To stay current, you can update the zRemote module automatically to a newer version by using the [ActiveGate auto-update procedure](/managed/ingest-from/dynatrace-activegate/operation/update-activegate "Learn how to find out which version of ActiveGate you have installed and how you can download and install the latest version.").
+To stay current, you can update the zRemote module automatically to a newer version by using the [ActiveGate auto-update procedure](/managed/ingest-from/dynatrace-activegate/operation/update-activegate "Configure Environment ActiveGate automatic updates---update mode, target version, and update windows---and download or install manually.").
 
 To manually update the zRemote module
 

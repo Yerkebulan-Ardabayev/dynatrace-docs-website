@@ -1,7 +1,6 @@
 ---
 title: Extensions API - GET extension .zip file
 source: https://docs.dynatrace.com/managed/dynatrace-api/configuration-api/extensions-api/get-extension-file
-scraped: 2026-05-12T11:20:03.285625
 ---
 
 # Extensions API - GET extension .zip file

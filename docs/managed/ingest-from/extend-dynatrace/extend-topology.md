@@ -1,7 +1,6 @@
 ---
 title: Custom topology model
 source: https://docs.dynatrace.com/managed/ingest-from/extend-dynatrace/extend-topology
-scraped: 2026-05-12T11:03:53.152481
 ---
 
 # Custom topology model
@@ -47,7 +46,7 @@ The built-in topology model automatically detects more than a hundred entity typ
 
 ## Custom topology model
 
-Once you start to send in your own data sourcesâsuch as Telegraf metric streams, StatsD application measurements, or your own business metricsâthrough the metric ingest channel, you might be interested in extending the built-in model by adding your own domain-related types and relationships.
+Once you start to send in your own data sources—such as Telegraf metric streams, StatsD application measurements, or your own business metrics—through the metric ingest channel, you might be interested in extending the built-in model by adding your own domain-related types and relationships.
 
 The extensibility of the topological model is especially interesting for IoT use cases, where you want to model your own device types (such as `cars`, `ships`, or `vending machines`) and connect them via well-defined relationships.
 

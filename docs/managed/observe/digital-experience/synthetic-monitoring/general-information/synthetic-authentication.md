@@ -1,18 +1,17 @@
 ---
-title: Supported authentication methods in Synthetic Monitoring
+title: Supported authentication methods in Synthetic Monitoring Classic
 source: https://docs.dynatrace.com/managed/observe/digital-experience/synthetic-monitoring/general-information/synthetic-authentication
-scraped: 2026-05-12T11:32:13.609593
 ---
 
-# Supported authentication methods in Synthetic Monitoring
+# Supported authentication methods in Synthetic Monitoring Classic
 
-# Supported authentication methods in Synthetic Monitoring
+# Supported authentication methods in Synthetic Monitoring Classic
 
 * How-to guide
 * 9-min read
 * Updated on Mar 30, 2026
 
-Dynatrace Synthetic Monitoring offers various methods for monitoring web applications or API endpoints that require authentication. Read on for an overview of the most common scenarios and the appropriate methods to use.
+Dynatrace Synthetic Monitoring Classic offers various methods for monitoring web applications or API endpoints that require authentication. Read on for an overview of the most common scenarios and the appropriate methods to use.
 
 ## Browser monitors
 
@@ -72,7 +71,7 @@ Transaction in a recorded clickpath
    * **Kerberos authentication** if the login happens via Kerberos protocol. Fill additional required fields:
 
      + Domain: User's domain name
-     + Auth server allow list: List of allowed servers for Kerberos authentication. Wildcards can be used. Exact details are provided in the [Chrome Enterprise documentationï»¿](https://dt-url.net/p803wkm)
+     + Auth server allow list: List of allowed servers for Kerberos authentication. Wildcards can be used. Exact details are provided in the [Chrome Enterprise documentation﻿](https://dt-url.net/p803wkm)
 4. Either use an existing credential from the [credential vault](/managed/manage/credential-vault "Store and manage credentials in the credential vault.") (**Select credentials**) or **Create new credentials**.
 5. [Complete the configuration](/managed/observe/digital-experience/synthetic-monitoring/browser-monitors/configure-browser-monitors "Learn about configuring browser monitors and clickpaths.") of your single-URL browser monitor.
 
@@ -94,7 +93,7 @@ Transaction in a recorded clickpath
    Kerberos Authentication
 
    * Domain: User's domain name
-   * Auth server allow list: List of allowed servers for Kerberos authentication. Wildcards can be used. Exact details are provided in the [Chrome Enterprise documentationï»¿](https://dt-url.net/p803wkm)
+   * Auth server allow list: List of allowed servers for Kerberos authentication. Wildcards can be used. Exact details are provided in the [Chrome Enterprise documentation﻿](https://dt-url.net/p803wkm)
 7. [Complete the configuration](/managed/observe/digital-experience/synthetic-monitoring/browser-monitors/configure-browser-monitors "Learn about configuring browser monitors and clickpaths.") of your browser clickpath.
 
 Supported username formats
@@ -105,7 +104,7 @@ Supported username formats
 
 ### Client certificate authentication for web applications
 
-Certificate authentication is available for browser monitors executed from any [public location](/managed/observe/digital-experience/synthetic-monitoring/general-information/public-synthetic-locations "Learn about all currently available public Synthetic Monitoring locations.") and on Linux-based [private locations](/managed/observe/digital-experience/synthetic-monitoring/private-synthetic-locations/create-a-private-synthetic-location "Learn how to create a private location for synthetic monitoring."). Once you set up your browser monitor, you need to specify client certificate details in the **Advanced setup** tab of monitor settings in edit mode.
+Certificate authentication is available for browser monitors executed from any [public location](/managed/observe/digital-experience/synthetic-monitoring/general-information/public-synthetic-locations "Learn about all currently available public Synthetic Monitoring Classic locations.") and on Linux-based [private locations](/managed/observe/digital-experience/synthetic-monitoring/private-synthetic-locations/create-a-private-synthetic-location "Learn how to create a private location for synthetic monitoring."). Once you set up your browser monitor, you need to specify client certificate details in the **Advanced setup** tab of monitor settings in edit mode.
 
 Monitor a single page
 

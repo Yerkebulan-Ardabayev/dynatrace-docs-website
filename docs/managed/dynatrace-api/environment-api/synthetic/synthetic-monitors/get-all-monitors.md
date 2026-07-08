@@ -1,7 +1,6 @@
 ---
 title: Synthetic monitors API - GET all monitors
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/synthetic/synthetic-monitors/get-all-monitors
-scraped: 2026-05-12T11:59:43.388358
 ---
 
 # Synthetic monitors API - GET all monitors
@@ -59,7 +58,7 @@ A list of synthetic monitors
 
 | Element | Type | Description |
 | --- | --- | --- |
-| monitors | [MonitorCollectionElement[]](#openapi-definition-MonitorCollectionElement) | The list of synthetic monitors. |
+| monitors | [MonitorCollectionElement](#openapi-definition-MonitorCollectionElement)[] | The list of synthetic monitors. |
 
 #### The `MonitorCollectionElement` object
 
@@ -83,7 +82,7 @@ The short representation of a synthetic monitor.
 | Element | Type | Description |
 | --- | --- | --- |
 | code | integer | The HTTP status code |
-| constraintViolations | [ConstraintViolation[]](#openapi-definition-ConstraintViolation) | A list of constraint violations |
+| constraintViolations | [ConstraintViolation](#openapi-definition-ConstraintViolation)[] | A list of constraint violations |
 | message | string | The error message |
 
 #### The `ConstraintViolation` object

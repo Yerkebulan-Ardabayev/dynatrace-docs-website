@@ -1,7 +1,6 @@
 ---
 title: Remote environments API - GET a remote environment configuration
 source: https://docs.dynatrace.com/managed/dynatrace-api/configuration-api/remote-environments/get-remote-environment
-scraped: 2026-05-12T11:20:41.412265
 ---
 
 # Remote environments API - GET a remote environment configuration

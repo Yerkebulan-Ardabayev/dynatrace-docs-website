@@ -1,7 +1,6 @@
 ---
 title: Amazon S3 (Simple Storage Service) monitoring
 source: https://docs.dynatrace.com/managed/ingest-from/amazon-web-services/integrate-with-aws/aws-all-services/aws-service-simple-storage-service-s3
-scraped: 2026-05-12T11:29:52.540075
 ---
 
 # Amazon S3 (Simple Storage Service) monitoring
@@ -26,7 +25,7 @@ To enable monitoring for this service, you need
     For role-based access (whether in a [SaaS](/managed/ingest-from/amazon-web-services/integrate-with-aws/cloudwatch-metrics#role-based-access "Integrate metrics from Amazon CloudWatch.") or [Managed](/managed/ingest-from/amazon-web-services/set-up-aws-monitoring-with-managed#role-based-access "Connect your Amazon account with Dynatrace Managed and start monitoring.") deployment), you need an [Environment ActiveGate](/managed/ingest-from/dynatrace-activegate/installation "Learn how to configure ActiveGate") installed on an Amazon EC2 host.
 * Dynatrace version 1.182+
 * An updated [AWS monitoring policy](/managed/ingest-from/amazon-web-services/integrate-with-aws/cloudwatch-metrics#aws-policy-and-authentication "Integrate metrics from Amazon CloudWatch.") to include the additional AWS services.  
-  To [update the AWS IAM policyï»¿](https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_manage-edit.html#edit-managed-policy-console), use the JSON below, containing the monitoring policy (permissions) for all supporting services.
+  To [update the AWS IAM policy﻿](https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_manage-edit.html#edit-managed-policy-console), use the JSON below, containing the monitoring policy (permissions) for all supporting services.
 
 JSON predefined policy for all supporting services
 
@@ -625,7 +624,7 @@ In this example, from the complete list of permissions you need to select
 * `"apigateway:GET"` for **Amazon API Gateway**
 * `"cloudwatch:GetMetricData"`, `"cloudwatch:GetMetricStatistics"`, `"cloudwatch:ListMetrics"`, `"sts:GetCallerIdentity"`, `"tag:GetResources"`, `"tag:GetTagKeys"`, and `"ec2:DescribeAvailabilityZones"` for **All AWS cloud services**.
 
-* A request metrics filter for the buckets you want to monitor. For more information, see [Creating a request metrics filter for an S3 bucketï»¿](https://docs.aws.amazon.com/AmazonS3/latest/user-guide/configure-metrics.html) in [AWS documentationï»¿](https://dt-url.net/aw030yi).
+* A request metrics filter for the buckets you want to monitor. For more information, see [Creating a request metrics filter for an S3 bucket﻿](https://docs.aws.amazon.com/AmazonS3/latest/user-guide/configure-metrics.html) in [AWS documentation﻿](https://dt-url.net/aw030yi).
 
 To monitor S3 metrics, you need to select **Amazon S3 service**, otherwise Amazon S3 (built-in) will provide only a basic count of S3 buckets in your account.
 

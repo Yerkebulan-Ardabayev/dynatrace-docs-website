@@ -1,7 +1,6 @@
 ---
 title: Settings API - Timestamp/Splitting patterns schema table
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/settings/schemas/builtin-logmonitoring-timestamp-configuration
-scraped: 2026-05-12T11:46:28.572535
 ---
 
 # Settings API - Timestamp/Splitting patterns schema table

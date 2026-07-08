@@ -1,7 +1,6 @@
 ---
 title: Dynatrace API changelog version 1.304
 source: https://docs.dynatrace.com/managed/whats-new/dynatrace-api/sprint-304
-scraped: 2026-05-12T11:36:00.267205
 ---
 
 # Dynatrace API changelog version 1.304
@@ -492,4 +491,4 @@ Rollout start: Nov 4, 2024
 
 ## Related topics
 
-* [SaaS Release Notes 1.304ï»¿](https://docs.dynatrace.com/docs/shortlink/release-notes-saas-sprint-304)
+* [SaaS Release Notes 1.304﻿](https://docs.dynatrace.com/docs/shortlink/release-notes-saas-sprint-304)

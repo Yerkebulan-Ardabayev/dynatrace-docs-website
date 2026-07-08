@@ -1,7 +1,6 @@
 ---
 title: Settings API - Business event metric extraction schema table
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/settings/schemas/builtin-bizevents-processing-metrics-rule
-scraped: 2026-05-12T11:39:21.108545
 ---
 
 # Settings API - Business event metric extraction schema table
@@ -12,14 +11,14 @@ scraped: 2026-05-12T11:39:21.108545
 
 ### Business event metric extraction (`builtin:bizevents-processing-metrics.rule)`
 
-With [business event metricsï»¿](https://dt-url.net/m3034if), you can use queries to create custom alerts representing specific business event occurrences or attribute values.
+With [business event metrics﻿](https://dt-url.net/m3034if), you can use queries to create custom alerts representing specific business event occurrences or attribute values.
 
 Note:
 
 * Newly defined business event metrics can only be applied to Business Event data ingested after metric creation.
 * Business Event metrics consume DDUs.
 
-For complete details on pricing, visit [DDUs for custom metricsï»¿](https://dt-url.net/vg43xi8).
+For complete details on pricing, visit [DDUs for custom metrics﻿](https://dt-url.net/vg43xi8).
 
 | Schema ID | Schema groups | Scope |
 | --- | --- | --- |
@@ -43,7 +42,7 @@ To execute this request, you need an access token with **Read settings** (`setti
 | --- | --- | --- | --- |
 | Enabled `enabled` | boolean | - | Required |
 | Key `key` | text | - | Required |
-| Matcher (DQL) `matcher` | text | [See our documentationï»¿](https://dt-url.net/bp234rv) | Required |
+| Matcher (DQL) `matcher` | text | [See our documentation﻿](https://dt-url.net/bp234rv) | Required |
 | Measure `measure` | enum | The element has these enums * `OCCURRENCE` * `ATTRIBUTE` | Required |
 | Attribute `measureAttribute` | text | - | Required |
 | `dimensions` | set | - | Required |

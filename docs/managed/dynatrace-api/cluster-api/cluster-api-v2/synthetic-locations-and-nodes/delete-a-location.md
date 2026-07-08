@@ -1,7 +1,6 @@
 ---
 title: Synthetic locations API v2 - DELETE a location (Dynatrace Managed)
 source: https://docs.dynatrace.com/managed/dynatrace-api/cluster-api/cluster-api-v2/synthetic-locations-and-nodes/delete-a-location
-scraped: 2026-05-12T11:05:53.990527
 ---
 
 # Synthetic locations API v2 - DELETE a location (Dynatrace Managed)
@@ -49,7 +48,7 @@ To execute this request, you need the **Service Provider API** (`ServiceProvider
 | Element | Type | Description |
 | --- | --- | --- |
 | code | integer | The HTTP status code |
-| constraintViolations | [ConstraintViolation[]](#openapi-definition-ConstraintViolation) | A list of constraint violations |
+| constraintViolations | [ConstraintViolation](#openapi-definition-ConstraintViolation)[] | A list of constraint violations |
 | message | string | The error message |
 
 #### The `ConstraintViolation` object

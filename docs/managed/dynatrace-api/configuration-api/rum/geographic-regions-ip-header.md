@@ -1,7 +1,6 @@
 ---
 title: Geographic regions - IP mapping headers API
 source: https://docs.dynatrace.com/managed/dynatrace-api/configuration-api/rum/geographic-regions-ip-header
-scraped: 2026-05-12T11:04:58.769620
 ---
 
 # Geographic regions - IP mapping headers API
@@ -21,6 +20,6 @@ Update configuration of IP address mappings.](/managed/dynatrace-api/configurati
 
 ## Related topics
 
-* [Customize IP address detection for web applications](/managed/observe/digital-experience/web-applications/additional-configuration/customize-ip-address-detection-web "Change the way Dynatrace determines client IP addresses for your web applications.")
-* [Customize IP address detection for mobile applications](/managed/observe/digital-experience/mobile-applications/additional-configuration/customize-ip-address-detection-mobile "Change the way Dynatrace determines client IP addresses for your mobile applications.")
-* [Customize IP address detection for custom applications](/managed/observe/digital-experience/custom-applications/additional-configuration/customize-ip-address-detectio-custom "Change the way Dynatrace determines client IP addresses for your custom applications.")
+* [Customize IP address detection for web applications in RUM Classic](/managed/observe/digital-experience/rum-classic/web-applications/additional-configuration/customize-ip-address-detection-web "Change the way Dynatrace determines client IP addresses for your web applications.")
+* [Customize IP address detection for mobile applications in RUM Classic](/managed/observe/digital-experience/rum-classic/mobile-applications/additional-configuration/customize-ip-address-detection-mobile "Change the way Dynatrace determines client IP addresses for your mobile applications.")
+* [Customize IP address detection for custom applications in RUM Classic](/managed/observe/digital-experience/rum-classic/custom-applications/additional-configuration/customize-ip-address-detectio-custom "Change the way Dynatrace determines client IP addresses for your custom applications.")

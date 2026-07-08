@@ -1,7 +1,6 @@
 ---
 title: Connecting log data to traces (Logs Classic)
 source: https://docs.dynatrace.com/managed/analyze-explore-automate/log-monitoring/log-monitoring-configuration/log-enrichment
-scraped: 2026-05-12T11:13:25.602284
 ---
 
 # Connecting log data to traces (Logs Classic)
@@ -9,7 +8,7 @@ scraped: 2026-05-12T11:13:25.602284
 # Connecting log data to traces (Logs Classic)
 
 * 9-min read
-* Updated on Nov 25, 2025
+* Updated on Jun 02, 2026
 
 Log Monitoring Classic
 
@@ -44,7 +43,7 @@ Kubernetes namespace
 4. Select **Save changes** to save your configuration.
 
 1. Open the Process group you are looking for.
-2. Select **More** (**â¦**) > **OneAgent features**.
+2. Select **More** (**…**) > **OneAgent features**.
 3. Filter for **enrichment**.
 4. Enable/disable each log enrichment for each technology that you use to generate ingested log data.
 5. Select **Save changes** to save your configuration.
@@ -52,7 +51,7 @@ Kubernetes namespace
 1. Go to **Infrastructure Observability** > **Kubernetes**.
 2. Select the **Namespaces** value for your Kubernetes cluster.
 3. Select the Kubernetes namespace record that you're interested in.
-4. On the top left of the page, go to **More** (**â¦**) > **Settings** > **OneAgent features**.
+4. On the top left of the page, go to **More** (**…**) > **Settings** > **OneAgent features**.
 5. Select **Add override**.
 6. Select the log enrichment technology from the **Feature** dropdown list, and make sure that the feature override toggle is turned on.
 7. Select **Save and close**.
@@ -228,6 +227,8 @@ log_format custom '$remote_addr - [$time_local] $request $status $body_bytes_sen
 
 access_log logs/access.log custom;
 ```
+
+The `$dt_trace_id`, `$dt_span_id`, and `$dt_trace_sampled` variables are injected by OneAgent at runtime. If OneAgent fails to inject them, for example, because instrumentation isn't working or you're using an older OneAgent version that doesn't support this feature, then the NGINX configuration validation commands such as `nginx -t` and `nginx -s reload` will fail. This doesn't affect your running NGINX instance and isn't a concern in production. If you experience issues, contact Dynatrace Support.
 
 The result will be an `access.log` file containing the enriched log records:
 
@@ -539,6 +540,8 @@ main-snippet: load_module /opt/dynatrace/oneagent/agent/bin/current/linux-musl-x
 
 log-format-upstream: '$remote_addr - $remote_user [$time_local] "$request" [!dt dt.trace_id=$dt_trace_id,dt.span_id=$dt_span_id,dt.trace_sampled=$dt_trace_sampled] $status $body_bytes_sent  "$http_referer" "$http_user_agent" $request_length'
 ```
+
+The `$dt_trace_id`, `$dt_span_id`, and `$dt_trace_sampled` variables are injected by OneAgent at runtime. If OneAgent fails to inject them—for example, because instrumentation isn't working or you're using an older OneAgent version that doesn't support this feature—then NGINX configuration validation commands such as `nginx -t` and `nginx -s reload` will fail. This doesn't affect your running NGINX instance and isn't a concern in production. If you experience issues, contact Dynatrace Support.
 
 Example of configmap.yaml file
 
@@ -1036,8 +1039,8 @@ For details on configuration, see [AWS Lambda logs in context of traces](/manage
 
 For instructions on how to source these attributes via OneAgent SDK:
 
-* **Go:** see the [GO documentation on GitHubï»¿](https://github.com/Dynatrace/OneAgent-SDK-for-Go)
-* **.NET:** see the [.NET documentation on GitHubï»¿](https://github.com/Dynatrace/OneAgent-SDK-for-dotnet#trace-context)
+* **Go:** see the [GO documentation on GitHub﻿](https://github.com/Dynatrace/OneAgent-SDK-for-Go)
+* **.NET:** see the [.NET documentation on GitHub﻿](https://github.com/Dynatrace/OneAgent-SDK-for-dotnet#trace-context)
 
 ## Retrieve process group instance ID
 

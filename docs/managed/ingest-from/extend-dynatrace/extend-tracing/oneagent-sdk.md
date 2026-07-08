@@ -1,7 +1,6 @@
 ---
 title: OneAgent SDK
 source: https://docs.dynatrace.com/managed/ingest-from/extend-dynatrace/extend-tracing/oneagent-sdk
-scraped: 2026-05-12T11:05:17.651275
 ---
 
 # OneAgent SDK
@@ -52,21 +51,21 @@ OneAgent automatically detects that your application is instrumented with the On
 
 The Dynatrace OneAgent SDK is published directly to GitHub together with the technical documentation. To get a detailed overview of the current features of the OneAgent SDK, check out the following links:
 
-* [Language independent documentation of the SDK's APIs and conceptsï»¿](https://github.com/Dynatrace/OneAgent-SDK)
-* [OneAgent SDK for Javaï»¿](https://github.com/Dynatrace/OneAgent-SDK-for-Java)
-* [OneAgent SDK for C/C++ï»¿](https://github.com/Dynatrace/OneAgent-SDK-for-C)
-* [OneAgent SDK for Node.jsï»¿](https://github.com/Dynatrace/OneAgent-SDK-for-NodeJs)
-* [OneAgent SDK for .NETï»¿](https://github.com/Dynatrace/OneAgent-SDK-for-dotnet)
-* [OneAgent SDK for Pythonï»¿](https://github.com/Dynatrace/OneAgent-SDK-for-Python)
-* [OneAgent SDK for PHPï»¿](https://github.com/Dynatrace/OneAgent-SDK-for-PHP)
+* [Language independent documentation of the SDK's APIs and concepts﻿](https://github.com/Dynatrace/OneAgent-SDK)
+* [OneAgent SDK for Java﻿](https://github.com/Dynatrace/OneAgent-SDK-for-Java)
+* [OneAgent SDK for C/C++﻿](https://github.com/Dynatrace/OneAgent-SDK-for-C)
+* [OneAgent SDK for Node.js﻿](https://github.com/Dynatrace/OneAgent-SDK-for-NodeJs)
+* [OneAgent SDK for .NET﻿](https://github.com/Dynatrace/OneAgent-SDK-for-dotnet)
+* [OneAgent SDK for Python﻿](https://github.com/Dynatrace/OneAgent-SDK-for-Python)
+* [OneAgent SDK for PHP﻿](https://github.com/Dynatrace/OneAgent-SDK-for-PHP)
 
 ## Further reading
 
-* [Blog: Extend AI-based root cause analysis with OneAgent SDKï»¿](https://www.dynatrace.com/news/blog/extend-ai-based-root-cause-analysis-with-oneagent-sdk)
+* [Blog: Extend AI-based root cause analysis with OneAgent SDK﻿](https://www.dynatrace.com/news/blog/extend-ai-based-root-cause-analysis-with-oneagent-sdk)
 
 ## Related topics
 
-* [Instrumentation via OneAgent SDK for Android](/managed/observe/digital-experience/mobile-applications/instrument-android-app/instrumentation-via-oneagent-sdk/oneagent-sdk-for-android "Learn how to enrich mobile user experience monitoring in Android using OneAgent SDK.")
-* [OneAgent SDK for iOS](/managed/observe/digital-experience/mobile-applications/instrument-ios-app/customization/oneagent-sdk-for-ios "Enrich mobile user experience monitoring using OneAgent SDK for iOS.")
+* [Instrumentation via OneAgent SDK for Android in RUM Classic](/managed/observe/digital-experience/rum-classic/mobile-applications/instrument-android-app/instrumentation-via-oneagent-sdk/oneagent-sdk-for-android "Learn how to enrich mobile user experience monitoring in Android using OneAgent SDK.")
+* [OneAgent SDK for iOS in RUM Classic](/managed/observe/digital-experience/rum-classic/mobile-applications/instrument-ios-app/customization/oneagent-sdk-for-ios "Enrich mobile user experience monitoring using OneAgent SDK for iOS.")
 * [OneAgent](/managed/platform/oneagent "Learn the monitoring capabilities of OneAgent.")
 * [Dynatrace OneAgent](/managed/ingest-from/dynatrace-oneagent "Understand the important concepts related to OneAgent and find out how to install and operate OneAgent on different platforms.")

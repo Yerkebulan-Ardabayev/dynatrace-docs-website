@@ -1,7 +1,6 @@
 ---
 title: Settings API - Span context propagation schema table
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/settings/schemas/builtin-span-context-propagation
-scraped: 2026-05-12T11:49:49.829771
 ---
 
 # Settings API - Span context propagation schema table

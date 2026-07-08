@@ -1,7 +1,6 @@
 ---
 title: Customize CICS and IMS monitoring
 source: https://docs.dynatrace.com/managed/ingest-from/dynatrace-oneagent/installation-and-operation/zos/operation/cics-ims-monitoring
-scraped: 2026-05-12T12:15:52.356721
 ---
 
 # Customize CICS and IMS monitoring
@@ -28,7 +27,7 @@ Define additional monitoring settings for CICS and IMS transactions.
 | Create CICS services based on transaction IDs | Enable this setting to create a CICS service for each monitored transaction ID within a process group. If disabled, a CICS service will be created for each monitored CICS region within a process group.  This setting is enabled by default. We recommend enabling it only when the CICS regions are grouped by their CICSPlex. |
 | Group IMS regions that belong to the same subsystem | Enable this setting to group IMS regions belonging to the same subsystem into a single process group. If disabled, a process group will be created for each IMS region.  This setting is enabled by default. |
 | Create IMS services based on transaction IDs | Enable this setting to create an IMS service for each monitored transaction ID within a process group. If disabled, an IMS service will be created for each monitored IMS region within a process group.  This setting is enabled by default. We recommend enabling it only when the IMS regions are grouped by their subsystem. |
-| PurePathÂ® distributed trace node limit | The maximum number of nodes in the distributed trace, which will be captured for a single CICS or IMS program call. We recommend the limit of 500, which is the default. Increasing the default limit might cause more overhead to process the additional data.  The value of `0` means unlimited number of nodes. |
+| PurePath® distributed trace node limit | The maximum number of nodes in the distributed trace, which will be captured for a single CICS or IMS program call. We recommend the limit of 500, which is the default. Increasing the default limit might cause more overhead to process the additional data.  The value of `0` means unlimited number of nodes. |
 
 ## Transaction start filters
 

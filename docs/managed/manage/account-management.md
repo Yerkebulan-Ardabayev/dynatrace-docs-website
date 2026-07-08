@@ -1,7 +1,6 @@
 ---
 title: Account Management
 source: https://docs.dynatrace.com/managed/manage/account-management
-scraped: 2026-05-12T11:04:00.388052
 ---
 
 # Account Management
@@ -30,7 +29,7 @@ Display the user menu
 
 ### Browser address
 
-To access Account Management directly from your browser address line, go to [https://myaccount.dynatrace.com/ï»¿](https://myaccount.dynatrace.com/).
+To access Account Management directly from your browser address line, go to [https://myaccount.dynatrace.com/﻿](https://myaccount.dynatrace.com/).
 
 ### Permissions
 
@@ -61,10 +60,10 @@ Account Management: My profile
 
 Use the **My profile** tab to update your user profile and notification options.
 
-* **My profile**âinformation about you, such as your name, job title, and location.
+* **My profile**—information about you, such as your name, job title, and location.
 
   The time zone setting here is informational and does not affect any Dynatrace functionality other than report generation for [dashboard subscriptions in Dashboards Classic](/managed/analyze-explore-automate/dashboards-classic/dashboards/subscribe-to-dashboard-reports "Learn how to subscribe to reports generated from Dynatrace dashboards.").
-* **Environment notifications**âlists environments for which you can enable email-based notification for outages.
+* **Environment notifications**—lists environments for which you can enable email-based notification for outages.
 
 To return to the **My profile** tab later, open  in the upper-right corner and select you account name.
 
@@ -85,8 +84,6 @@ After you select an account on the **My accounts** tab, **Account Management** s
 * On a small display, the menu bar collapses to a smaller ![Menu](https://dt-cdn.net/images/account-management-icon-hamburger-c275e8015b.svg "Menu") menu with the same options.
 * The menu options available to you depend on your deployment type, user permissions, and license model.
 
-#### Examples
-
 ![Account Management menu bar example: License](https://dt-cdn.net/images/account-management-header-license-736-374ccfea23.png)
 
 Account Management menu bar example: License
@@ -97,7 +94,7 @@ Account Management menu bar example: Subscription
 
 ### Home
 
-Select **Home** from anywhere in **Application Management** to return to the main page for the selected account.
+Select **Home** from anywhere in **Account Management** to return to the main page for the selected account.
 
 ### License / Subscription
 
@@ -211,7 +208,9 @@ Select **Back to Account Settings** to purchase or extend a Dynatrace account.
 
 ## Notifications
 
-Select ![Notifications](https://dt-cdn.net/images/account-management-icon-notifications-8f074dc2ad.svg "Notifications") **Notifications** to view the notification history for your budget and cluster or environment limits.
+Select ![Notifications](https://dt-cdn.net/images/account-management-icon-notifications-8f074dc2ad.svg "Notifications") **Notifications** to view the notification history for your budgets and cost monitors.
+
+For more information, see [Notification center](/managed/manage/account-management/notifications "Learn about Account Management notifications, for example budget alerts and cost monitor events.").
 
 ## Support resources
 

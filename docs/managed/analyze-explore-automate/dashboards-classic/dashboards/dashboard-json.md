@@ -1,7 +1,6 @@
 ---
 title: Edit Dynatrace dashboard JSON
 source: https://docs.dynatrace.com/managed/analyze-explore-automate/dashboards-classic/dashboards/dashboard-json
-scraped: 2026-05-12T11:14:45.541174
 ---
 
 # Edit Dynatrace dashboard JSON
@@ -73,7 +72,7 @@ When you import a dashboard using this procedure, you add a new dashboard to Dyn
 If you want to start from an existing dashboard definition
 
 1. Go to **Dashboards**.
-2. In the table of dashboards, select **More** (**â¦**) > **Export** for the dashboard you want to export.  
+2. In the table of dashboards, select **More** (**…**) > **Export** for the dashboard you want to export.  
    The dashboard definition is exported as a JSON file to your computer.
 
 ### Step 2 Edit the dashboard JSON file

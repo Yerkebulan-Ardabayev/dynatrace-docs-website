@@ -1,7 +1,6 @@
 ---
 title: Delete user
 source: https://docs.dynatrace.com/managed/dynatrace-api/cluster-api/cluster-api-v1/users-v1/delete-user
-scraped: 2026-05-12T12:12:34.930433
 ---
 
 # Delete user

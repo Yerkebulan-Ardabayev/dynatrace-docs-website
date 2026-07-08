@@ -1,7 +1,6 @@
 ---
 title: Migrate from classic full-stack to cloud-native full-stack mode
 source: https://docs.dynatrace.com/managed/ingest-from/setup-on-k8s/guides/migration/classic-to-cloud-native
-scraped: 2026-05-12T11:23:58.421376
 ---
 
 # Migrate from classic full-stack to cloud-native full-stack mode
@@ -207,7 +206,7 @@ If that upgrade cannot be performed, follow the [Running CRI-O with OneAgent ver
    - dynatrace-api
    ```
 
-   For further information on how to configure DynaKube for cloud-native full-stack mode, see the comparison below, visit the [deployment guide](/managed/ingest-from/setup-on-k8s/deployment/full-stack-managed "Deploy Dynatrace Operator in cloud-native full-stack mode to Kubernetes") or [DynaKube parameters](/managed/ingest-from/setup-on-k8s/reference/dynakube-parameters#spec-oneagent-cloudnativefullstack "List the available parameters for setting up Dynatrace Operator on Kubernetes."). Alternatively, download the [DynaKube custom resource sampleï»¿](https://dt-url.net/9n636jg) for cloud-native full-stack from GitHub and adapt the DynaKube custom resource according to your requirements.
+   For further information on how to configure DynaKube for cloud-native full-stack mode, see the comparison below, visit the [deployment guide](/managed/ingest-from/setup-on-k8s/deployment/full-stack-managed "Deploy Dynatrace Operator in cloud-native full-stack mode to Kubernetes") or [DynaKube parameters](/managed/ingest-from/setup-on-k8s/reference/dynakube-parameters#spec-oneagent-cloudnativefullstack "List the available parameters for setting up Dynatrace Operator on Kubernetes."). Alternatively, download the [DynaKube custom resource sample﻿](https://dt-url.net/9n636jg) for cloud-native full-stack from GitHub and adapt the DynaKube custom resource according to your requirements.
 3. Apply the DynaKube custom resource:
 
    Run the command below to apply the DynaKube custom resource. A validation webhook will provide helpful error messages if there's a problem.
@@ -228,7 +227,7 @@ If that upgrade cannot be performed, follow the [Running CRI-O with OneAgent ver
 
 This section outlines the migration procedure for Kubernetes clusters utilizing a CRI-O container runtime and running OneAgent version 279 or earlier.
 
-It is necessary to remove CRI-O hooks installed and utilized for OneAgent injection in classic full-stack mode. For additional details on CRI-O hooks, refer to this [Red Hat blog postï»¿](https://dt-url.net/fq039v2).
+It is necessary to remove CRI-O hooks installed and utilized for OneAgent injection in classic full-stack mode. For additional details on CRI-O hooks, refer to this [Red Hat blog post﻿](https://dt-url.net/fq039v2).
 
 Show step-by-step instructions
 
@@ -244,7 +243,7 @@ Follow these instructions to successfully migrate from classic full-stack mode:
 
    This action will lead to the removal of OneAgents in classic full-stack mode and subsequently result in the termination of deep monitoring for application pods shortly thereafter. Additionally, if Kubernetes monitoring is configured in the DynaKube custom resource, Kubernetes monitoring will stop instantly with the removal of the ActiveGate.
 2. Wait for the OneAgent pods to terminate.
-3. Follow the instructions in the [Cleanup nodes](/managed/ingest-from/setup-on-k8s/guides/deployment-and-configuration/updates-and-maintenance/update-uninstall-operator#cleanup-nodes "Upgrade and uninstallation procedures for Dynatrace Operator") section to remove Dynatrace CRI-O hooks from all Linux nodes.
+3. Follow the instructions in the [Cleanup nodes](/managed/ingest-from/setup-on-k8s/guides/deployment-and-configuration/updates-and-maintenance/update-uninstall-operator#cleanup-nodes "Upgrade paths, update procedures, and uninstallation guide for Dynatrace Operator.") section to remove Dynatrace CRI-O hooks from all Linux nodes.
 4. Continue with step 1 of the [standard migration procedure](#migrate).
 
 ## Changes in Kubernetes resources

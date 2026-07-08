@@ -1,7 +1,6 @@
 ---
 title: Problems API v2 - GET a comment
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/problems-v2/comments/get-comment
-scraped: 2026-05-12T11:57:29.372212
 ---
 
 # Problems API v2 - GET a comment
@@ -68,7 +67,7 @@ The comment to a problem.
 | Element | Type | Description |
 | --- | --- | --- |
 | code | integer | The HTTP status code |
-| constraintViolations | [ConstraintViolation[]](#openapi-definition-ConstraintViolation) | A list of constraint violations |
+| constraintViolations | [ConstraintViolation](#openapi-definition-ConstraintViolation)[] | A list of constraint violations |
 | message | string | The error message |
 
 #### The `ConstraintViolation` object
@@ -170,4 +169,4 @@ A list of constraint violations
 
 ## Related topics
 
-* [DavisÂ® AI](/managed/dynatrace-intelligence "Get familiar with the capabilities of Davis AI.")
+* [Davis® AI](/managed/dynatrace-intelligence "Learn how Davis® AI detects performance anomalies, identifies root causes, and uses AI models for adaptive thresholds across your environment.")

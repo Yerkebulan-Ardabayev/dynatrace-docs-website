@@ -1,7 +1,6 @@
 ---
 title: Go
 source: https://docs.dynatrace.com/managed/ingest-from/technology-support/application-software/go
-scraped: 2026-05-12T11:22:48.584864
 ---
 
 # Go
@@ -34,9 +33,9 @@ Dynatrace provides extensive Go monitoring capabilities:
   + Idle scheduling context count
 * [Incoming and outgoing web request monitoring](/managed/ingest-from/technology-support/application-software/go/configuration-and-analysis/end-to-end-request-monitoring "Find out how Dynatrace provides request-level visibility for your Go-based applications.")
 * [Custom service monitoring](/managed/observe/application-observability/services/service-detection/service-detection-v1/service-types/custom-services "Define entry points (a method, class, or interface) for custom services that don't use standard protocols.")
-* [`database/sql`ï»¿](https://dt-url.net/database-sql) service tracing  
+* [`database/sql`﻿](https://dt-url.net/database-sql) service tracing  
   For the list of supported drivers, see [Go technology support](/managed/ingest-from/technology-support#go "Find technical details related to Dynatrace support for specific platforms and development frameworks.")
-* [OpenTelemetry supportï»¿](https://github.com/open-telemetry/opentelemetry-go/) for capturing traces.  
+* [OpenTelemetry support﻿](https://github.com/open-telemetry/opentelemetry-go/) for capturing traces.  
   For more information, see [Instrument your Go application with OpenTelemetry](/managed/ingest-from/opentelemetry/walkthroughs/go "Learn how to instrument your Go application using OpenTelemetry and Dynatrace.")
 
 ### Support
@@ -53,14 +52,14 @@ Dynatrace provides extensive Go monitoring capabilities:
 
 ### See also
 
-[Blog: Introducing fully automated support for Go-based application monitoringï»¿](https://www.dynatrace.com/news/blog/introducing-fully-automated-support-for-go-based-application-monitoring/)
+[Blog: Introducing fully automated support for Go-based application monitoring﻿](https://www.dynatrace.com/news/blog/introducing-fully-automated-support-for-go-based-application-monitoring/)
 
-[Blog: End-to-end request monitoring for Go applications: No code changes requiredï»¿](https://www.dynatrace.com/news/blog/end-to-end-request-monitoring-for-go-applications-no-code-changes-required/)
+[Blog: End-to-end request monitoring for Go applications: No code changes required﻿](https://www.dynatrace.com/news/blog/end-to-end-request-monitoring-for-go-applications-no-code-changes-required/)
 
-[Blog: Full code-level visibility now available for Go-application monitoringï»¿](https://www.dynatrace.com/news/blog/full-code-level-visibility-now-available-for-go-application-monitoring/)
+[Blog: Full code-level visibility now available for Go-application monitoring﻿](https://www.dynatrace.com/news/blog/full-code-level-visibility-now-available-for-go-application-monitoring/)
 
-[Blog: Introducing custom services for Go applicationsï»¿](https://www.dynatrace.com/news/blog/introducing-custom-services-for-go-applications/)
+[Blog: Introducing custom services for Go applications﻿](https://www.dynatrace.com/news/blog/introducing-custom-services-for-go-applications/)
 
-[Blog: Get automatic code-level insights into your Go applications and cloud platform componentsï»¿](https://www.dynatrace.com/news/blog/automatic-code-level-insights-into-go-applications-without-code-changes/)
+[Blog: Get automatic code-level insights into your Go applications and cloud platform components﻿](https://www.dynatrace.com/news/blog/automatic-code-level-insights-into-go-applications-without-code-changes/)
 
-[Blog: Worldâs first and only fully automatic observability for Golang services now extended to statically linked Go applicationsï»¿](https://www.dynatrace.com/news/blog/worlds-first-and-only-fully-automatic-observability-for-golang-services-now-extended-to-statically-linked-go-applications/)
+[Blog: World’s first and only fully automatic observability for Golang services now extended to statically linked Go applications﻿](https://www.dynatrace.com/news/blog/worlds-first-and-only-fully-automatic-observability-for-golang-services-now-extended-to-statically-linked-go-applications/)

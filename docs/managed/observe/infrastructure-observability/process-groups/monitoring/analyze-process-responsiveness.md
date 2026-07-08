@@ -1,7 +1,6 @@
 ---
 title: Analyze process responsiveness
 source: https://docs.dynatrace.com/managed/observe/infrastructure-observability/process-groups/monitoring/analyze-process-responsiveness
-scraped: 2026-05-12T11:37:49.578585
 ---
 
 # Analyze process responsiveness
@@ -12,11 +11,11 @@ scraped: 2026-05-12T11:37:49.578585
 * 4-min read
 * Published Jul 19, 2017
 
-Responsiveness measurements allow you to quickly assess process health by tracking how long it takes for a process to respond to requests from other processes or clients (regardless of resource consumption). Dynatrace measures this on the TCP level, so this metric is available for any process that accepts TCP requests (for example, listening on an open port) and responds to TCP requests. Typical examples are web server processes, proxy server processes, and SQL server processes. Code-level visibility isn't required to measure process responsivenessâDynatrace only requires insight into inter-process communication to gather the information it needs. Plus, this metric is always measurableâno process restarts or special instrumentation required.
+Responsiveness measurements allow you to quickly assess process health by tracking how long it takes for a process to respond to requests from other processes or clients (regardless of resource consumption). Dynatrace measures this on the TCP level, so this metric is available for any process that accepts TCP requests (for example, listening on an open port) and responds to TCP requests. Typical examples are web server processes, proxy server processes, and SQL server processes. Code-level visibility isn't required to measure process responsiveness—Dynatrace only requires insight into inter-process communication to gather the information it needs. Plus, this metric is always measurable—no process restarts or special instrumentation required.
 
 ## Use case: using responsiveness to assess process performance
 
-Following is a use-case example that shows that it's not enough to only monitor the resource consumption of a process because a process that consumes excessive resources won't suffer from performance degradationâit's the other processes in the system that will suffer.
+Following is a use-case example that shows that it's not enough to only monitor the resource consumption of a process because a process that consumes excessive resources won't suffer from performance degradation—it's the other processes in the system that will suffer.
 
 Let's say, it's 8:15 AM and you receive a Dynatrace problem alert telling you that host **Prod** has used 99% of available CPU.
 
@@ -24,7 +23,7 @@ Let's say, it's 8:15 AM and you receive a Dynatrace problem alert telling you th
 
 Responsiveness screen 1
 
-This may indicate a serious problem, but maybe notâyou need to investigate to see what's going on. Click the **Consuming processes** button.
+This may indicate a serious problem, but maybe not—you need to investigate to see what's going on. Select **Consuming processes**.
 
 ![Responsiveness screen 2](https://dt-cdn.net/images/responsiveness-screen2-1224-df9526fc20.png)
 
@@ -34,7 +33,7 @@ You notice that the *Elasticsearch* process is consuming nearly all available CP
 
 At first glance, this may be reassuring but you still can't be sure that NGINX is performing at its baseline level of performance. Click the NGINX process link to analyze its performance over time.
 
-The **Responsiveness** confirms bad newsâyour NGINX process is in fact responding to TCP requests much slower than it was earlier in the day.
+The **Responsiveness** confirms bad news—your NGINX process is in fact responding to TCP requests much slower than it was earlier in the day.
 
 ![Responsiveness screen 3](https://dt-cdn.net/images/responsiveness-screen3-919-a5f3590f40.png)
 

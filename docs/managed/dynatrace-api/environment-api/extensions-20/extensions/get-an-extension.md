@@ -1,7 +1,6 @@
 ---
 title: Extensions 2.0 API - GET an extension
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/extensions-20/extensions/get-an-extension
-scraped: 2026-05-12T11:56:13.145764
 ---
 
 # Extensions 2.0 API - GET an extension
@@ -15,8 +14,8 @@ Lists the properties of the specified Extensions 2.0 extension or downloads the 
 
 The request produces one of the following types of payload, depending on the value of the **Accept** request header:
 
-* `application/json`âa JSON payload containing properties of the extension.
-* `application/octet-stream`âa download of the ZIP file of the extension.
+* `application/json`—a JSON payload containing properties of the extension.
+* `application/octet-stream`—a download of the ZIP file of the extension.
 
 If no **Accept** header is provided with the request, an `application/json` payload is returned.
 
@@ -83,7 +82,7 @@ Additional information about a Feature Set
 | description | string | Optional description for the feature set |
 | displayName | string | Optional display name of the feature set |
 | isRecommended | boolean | Marks the feature set as recommended (selected by default during activation) |
-| metrics | [MetricDto[]](#openapi-definition-MetricDto) | Feature set metrics |
+| metrics | [MetricDto](#openapi-definition-MetricDto)[] | Feature set metrics |
 
 #### The `MetricDto` object
 
@@ -115,7 +114,7 @@ Metric metadata
 | Element | Type | Description |
 | --- | --- | --- |
 | code | integer | The HTTP status code |
-| constraintViolations | [ConstraintViolation[]](#openapi-definition-ConstraintViolation) | A list of constraint violations |
+| constraintViolations | [ConstraintViolation](#openapi-definition-ConstraintViolation)[] | A list of constraint violations |
 | message | string | The error message |
 
 #### The `ConstraintViolation` object

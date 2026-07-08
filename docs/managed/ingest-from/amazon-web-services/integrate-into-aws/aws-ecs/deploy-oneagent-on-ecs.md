@@ -1,7 +1,6 @@
 ---
 title: Monitor Elastic Container Service (ECS) with EC2 launch type
 source: https://docs.dynatrace.com/managed/ingest-from/amazon-web-services/integrate-into-aws/aws-ecs/deploy-oneagent-on-ecs
-scraped: 2026-05-12T11:52:04.148330
 ---
 
 # Monitor Elastic Container Service (ECS) with EC2 launch type
@@ -105,7 +104,7 @@ See [Docker limitations](/managed/ingest-from/setup-on-container-platforms/docke
 
 ## Monitoring consumption
 
-For Elastic Container Service, monitoring consumption is based on hosts units. See [Application and Infrastructure Monitoring (Host Units)](/managed/license/monitoring-consumption-classic/application-and-infrastructure-monitoring "Understand how Dynatrace application and infrastructure monitoring consumption is calculated based on host units.") for details.
+For Elastic Container Service, monitoring consumption is based on hosts units. See [Application and Infrastructure Monitoring (Host Units)](/managed/license/classic-licensing/application-and-infrastructure-monitoring "Understand how Dynatrace application and infrastructure monitoring consumption is calculated based on host units.") for details.
 
 ## Related topics
 

@@ -1,7 +1,6 @@
 ---
 title: Syslog ingestion with ActiveGate (Logs Classic)
 source: https://docs.dynatrace.com/managed/analyze-explore-automate/log-monitoring/acquire-log-data/syslog
-scraped: 2026-05-12T12:00:29.234656
 ---
 
 # Syslog ingestion with ActiveGate (Logs Classic)
@@ -60,7 +59,7 @@ Enabling syslog log ingestion requires you to:
 
    You only need to modify the configuration if your syslog producers cast events on custom ports.
 
-   Show me the fileâ¦
+   Show me the file…
 
    ```
    receivers:
@@ -658,7 +657,7 @@ Enabling syslog log ingestion requires you to:
 
    The `*.*` instructs the daemon to forward all messages to the specified ActiveGate listening on the provided port and IP address. `<ActiveGate host IP>` needs to point to the IP address of a syslog-enabled ActiveGate.
 
-   For more examples, see [Syslog via OpenTelemetry Collectorï»¿](https://www.dynatrace.com/hub/detail/syslog-via-opentelemetry-collector/)
+   For more examples, see [Syslog via OpenTelemetry Collector﻿](https://www.dynatrace.com/hub/detail/syslog-via-opentelemetry-collector/)
 6. **Verify ActiveGate receives the syslog events**.
 
    After your syslog producers start to cast log records, open the latest `dynatracesourceotelcollector.*.log` file in `/var/lib/dynatrace/remotepluginmodule/agent/datasources/otelSyslog`.
@@ -710,7 +709,7 @@ Enabling syslog log ingestion requires you to:
 
 
 
-   [otelSyslog][otelSyslog][37443][err]    -> log: Map({âsource": âsyslog"})
+   [otelSyslog][otelSyslog][37443][err]    -> log: Map({“source": “syslog"})
 
 
 
@@ -733,7 +732,7 @@ Enabling syslog log ingestion requires you to:
    [otelSyslog][otelSyslog][37443][err]Flags: 0
    ```
 
-For more information on troubleshooting the syslog receiver, see [Collector troubleshootingï»¿](https://opentelemetry.io/docs/collector/troubleshooting/).
+For more information on troubleshooting the syslog receiver, see [Collector troubleshooting﻿](https://opentelemetry.io/docs/collector/troubleshooting/).
 
 ## Next steps
 
@@ -743,5 +742,5 @@ After you enable the integration, the syslog-ingested events are enriched with t
 
 Visit Dynatrace Community for troubleshooting guides, as well as see [Troubleshooting Log Monitoring (Logs Classic)](/managed/analyze-explore-automate/log-monitoring/lmc-troubleshooting "Fix issues related to the setup and configuration of Log Monitoring Classic.").
 
-* [Syslog Ingestion via ActiveGate Troubleshooting Guideï»¿](https://community.dynatrace.com/t5/Troubleshooting/Syslog-Ingestion-via-ActiveGate-Troubleshooting-Guide/ta-p/282718)
-* [Syslog Ingestion Troubleshootingï»¿](https://community.dynatrace.com/t5/Troubleshooting/Syslog-Ingestion-Troubleshooting/ta-p/264112)
+* [Syslog Ingestion via ActiveGate Troubleshooting Guide﻿](https://community.dynatrace.com/t5/Troubleshooting/Syslog-Ingestion-via-ActiveGate-Troubleshooting-Guide/ta-p/282718)
+* [Syslog Ingestion Troubleshooting﻿](https://community.dynatrace.com/t5/Troubleshooting/Syslog-Ingestion-Troubleshooting/ta-p/264112)

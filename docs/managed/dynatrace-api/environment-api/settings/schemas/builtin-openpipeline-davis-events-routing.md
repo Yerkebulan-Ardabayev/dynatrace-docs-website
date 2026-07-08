@@ -1,7 +1,6 @@
 ---
 title: Settings API - Ingest routing configuration (davis.events) schema table
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-davis-events-routing
-scraped: 2026-05-12T11:42:48.925259
 ---
 
 # Settings API - Ingest routing configuration (davis.events) schema table

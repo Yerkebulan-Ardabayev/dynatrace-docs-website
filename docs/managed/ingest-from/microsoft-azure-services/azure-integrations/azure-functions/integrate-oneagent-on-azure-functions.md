@@ -1,7 +1,6 @@
 ---
 title: Monitor Azure Functions on App Service Plan for Windows
 source: https://docs.dynatrace.com/managed/ingest-from/microsoft-azure-services/azure-integrations/azure-functions/integrate-oneagent-on-azure-functions
-scraped: 2026-05-12T11:23:31.901409
 ---
 
 # Monitor Azure Functions on App Service Plan for Windows
@@ -22,7 +21,7 @@ scraped: 2026-05-12T11:23:31.901409
 * Automatic tracing and code-profiling for .NET/.NET Core based functions
 * End-to-end tracing across multiple functions for http-based triggers and other instrumented services and applications. Other triggers such as QueueTriggers require custom trace propagation.
 
-Dynatrace provides an [Azure Site Extensionï»¿](https://github.com/projectkudu/kudu/wiki/Azure-Site-Extensions) to install OneAgent on Azure Functions. Azure Site Extensions are the native extension mechanism provided via [Kuduï»¿](https://github.com/projectkudu/kudu), which is the deployment management engine behind Azure App Services.
+Dynatrace provides an [Azure Site Extension﻿](https://github.com/projectkudu/kudu/wiki/Azure-Site-Extensions) to install OneAgent on Azure Functions. Azure Site Extensions are the native extension mechanism provided via [Kudu﻿](https://github.com/projectkudu/kudu), which is the deployment management engine behind Azure App Services.
 
 The Dynatrace OneAgent site extension doesn't include the OneAgent installer. Instead, the extension uses the Dynatrace REST API to download the installer from the cluster in the target version as set in [OneAgent updates](/managed/ingest-from/dynatrace-oneagent/oneagent-update#configure-oneagent-updates "Learn how to update OneAgent.").
 
@@ -37,7 +36,7 @@ Since Azure Functions are a fully managed hosting platform built on top of Azure
 ## Prerequisites
 
 * Create a [PaaS token](/managed/manage/identity-access-management/access-tokens-and-oauth-clients/access-tokens#paas-token "Learn the concept of an access token and its scopes.").
-* Determine your [environment ID](/managed/discover-dynatrace/get-started/monitoring-environment "Understand and learn how to work with monitoring environments.").
+* Determine your [environment ID](/managed/discover-dynatrace/get-started/monitoring-environment "Learn what a Dynatrace monitoring environment is, how to find your environment ID, and how to set up and connect multiple environments.").
 * Determine your server URL if required.
 
   The server URL is required only if you use either of the following:
@@ -56,9 +55,9 @@ Since Azure Functions are a fully managed hosting platform built on top of Azure
 
 ## Install Dynatrace OneAgent site extension
 
-There are two ways to install the Dynatrace OneAgent site extension: via Azure Portal or using an ARM template. Follow the steps below for instructions.
+There are two ways to install the Dynatrace OneAgent site extension: via Azure portal or using an ARM template. Follow the steps below for instructions.
 
-### Install Dynatrace OneAgent site extension via Azure Portal
+### Install Dynatrace OneAgent site extension via Azure portal
 
 1. In Azure Portal, go to the **App Services** and select an app service where you want to add the OneAgent extension.
 2. In the left menu, go to to **Development Tools** > **Extensions**.
@@ -84,7 +83,7 @@ After restart, OneAgent starts monitoring your application automatically.
 
 ### Install Dynatrace OneAgent site extension using an ARM template
 
-Alternatively to the main installation method via Azure Portal, you can make the Dynatrace site extension part of your ARM templates.  
+Alternatively to the main installation method via Azure portal, you can make the Dynatrace site extension part of your ARM templates.  
 Example configuration:
 
 ```
@@ -230,13 +229,13 @@ If `AlwaysOn` isn't set to `true`, the installation of OneAgent is triggered on 
 
 To check the deployment status, go to **Deployment Status**.
 
-After installation is complete, go to Azure Portal and restart the App Function application to recycle the application's worker process. Immediately after restart, OneAgent will begin monitoring your application.
+After installation is complete, go to Azure portal and restart the App Function application to recycle the application's worker process. Immediately after restart, OneAgent will begin monitoring your application.
 
 ## Automate the installation and update of Dynatrace OneAgent site extension with Kudu REST API
 
-After you install the Dynatrace OneAgent site extension, you can use the **Kudu REST API** to automate installation and update of the Dynatrace OneAgent site extension. See the [automation setup page on GitHubï»¿](https://github.com/Dynatrace/snippets/tree/master/technologies/azure/automate-appservice-siteextension-setup) for details.
+After you install the Dynatrace OneAgent site extension, you can use the **Kudu REST API** to automate installation and update of the Dynatrace OneAgent site extension. See the [automation setup page on GitHub﻿](https://github.com/Dynatrace/snippets/tree/master/technologies/azure/automate-appservice-siteextension-setup) for details.
 
-The root URL to access the REST API is `https://<Your-AppService-Subdomain>.scm.azurewebsites.net/dynatrace/`, where you need to replace `<Your-AppService-Subdomain>` with your own value. To authenticate, you can use either the user publishing credentials or the site-level credentials. See [Accessing the Kudu serviceï»¿](https://github.com/projectkudu/kudu/wiki/Accessing-the-kudu-service) for details.
+The root URL to access the REST API is `https://<Your-AppService-Subdomain>.scm.azurewebsites.net/dynatrace/`, where you need to replace `<Your-AppService-Subdomain>` with your own value. To authenticate, you can use either the user publishing credentials or the site-level credentials. See [Accessing the Kudu service﻿](https://github.com/projectkudu/kudu/wiki/Accessing-the-kudu-service) for details.
 
 | Method | Endpoint | Description | Response |
 | --- | --- | --- | --- |
@@ -250,13 +249,13 @@ To override the default configuration, you can use the following parameters.
 
 | Parameter | Description |
 | --- | --- |
-| DT\_CONNECTION\_POINT | Semicolon-separated list of communication-endpoints |
+| `DT_CONNECTION_POINT` | Semicolon-separated list of communication-endpoints |
 
-How to add the DT\_CONNECTION\_POINT parameter in Azure Portal
+How to add the DT\_CONNECTION\_POINT parameter in the Azure portal
 
-To add the DT\_CONNECTION\_POINT parameter
+To add the `DT_CONNECTION_POINT` parameter
 
-1. In Azure Portal, select the web function you want to monitor.
+1. In the Azure portal, select the web function you want to monitor.
 2. Select **Settings** > **Configuration** > **Application Settings**.
 3. Select **New application setting**.
 4. Enter the following key/value pair:
@@ -271,14 +270,14 @@ To add the DT\_CONNECTION\_POINT parameter
 
 ## Update OneAgent
 
-Dynatrace doesn't provide OneAgent updates on Azure Functions automatically. To update OneAgent on Azure Functions, go to Azure Portal, browse to your site extension, and, if an update is available, select **Update**. You can monitor the progress until the update is finished.  
+Dynatrace doesn't provide OneAgent updates on Azure Functions automatically. To update OneAgent on Azure Functions, go to Azure portal, browse to your site extension, and, if an update is available, select **Update**. You can monitor the progress until the update is finished.  
 Then restart Azure Functions to recycle the application worker process.
 
 The extension provides its own REST API for automating OneAgent updates. See [REST API](#restapi) for details.
 
 ### Update the site extension
 
-To update the site extension on Azure App Service, go to the Azure Portal, browse to your site extension, and, if an update is available, select **Update**.
+To update the site extension on Azure App Service, go to the Azure portal, browse to your site extension, and, if an update is available, select **Update**.
 
 An update to the site extension doesn't force an update to OneAgent.
 
@@ -292,7 +291,7 @@ If the application is running at the time of removal, the extension recognizes t
 
 ## Monitoring consumption
 
-See [Serverless monitoring](/managed/license/monitoring-consumption-classic/davis-data-units/serverless-monitoring "Understand how serverless monitoring consumption is calculated.") for details on monitoring consumption for Azure Functions.
+See [Serverless monitoring](/managed/license/classic-licensing/davis-data-units/serverless-monitoring "Understand how serverless monitoring consumption is calculated.") for details on monitoring consumption for Azure Functions.
 
 ## Related topics
 

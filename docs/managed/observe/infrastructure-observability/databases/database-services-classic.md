@@ -1,7 +1,6 @@
 ---
 title: Databases Services
 source: https://docs.dynatrace.com/managed/observe/infrastructure-observability/databases/database-services-classic
-scraped: 2026-05-12T12:11:50.197998
 ---
 
 # Databases Services

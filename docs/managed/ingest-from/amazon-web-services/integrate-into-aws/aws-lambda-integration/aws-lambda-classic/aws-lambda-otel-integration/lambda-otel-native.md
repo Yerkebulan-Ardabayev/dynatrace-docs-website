@@ -1,7 +1,6 @@
 ---
 title: Trace AWS Lambda .NET Core functions with OpenTelemetry .NET
 source: https://docs.dynatrace.com/managed/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration/aws-lambda-classic/aws-lambda-otel-integration/lambda-otel-native
-scraped: 2026-05-12T11:27:43.486292
 ---
 
 # Trace AWS Lambda .NET Core functions with OpenTelemetry .NET
@@ -17,7 +16,7 @@ New version available
 While you can use the vanilla OpenTelemetry capabilties to instrument your AWS Lambda functions for .NET as described within this tutorial, we recommend to follow our up-leveled version to  
 [trace AWS Lambda .NET functions](/managed/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration/aws-lambda-classic/aws-lambda-otel-integration "Trace AWS Lambda functions using a .NET runtime"), which heavily reduces instrumentation effort and gives deeper and better insights into your function invocations.
 
-In Feb 2021, AWS announced [Support for AWS Distro for OpenTelemetry .NET Tracingï»¿](https://aws.amazon.com/de/blogs/opensource/aws-distro-for-opentelemetry-adds-net-tracing-support/). For general information about AWS Distro for OpenTelemetry, see the [AWS Distro for OpenTelemetryï»¿](https://aws-otel.github.io/) page.
+In Feb 2021, AWS announced [Support for AWS Distro for OpenTelemetry .NET Tracing﻿](https://aws.amazon.com/de/blogs/opensource/aws-distro-for-opentelemetry-adds-net-tracing-support/). For general information about AWS Distro for OpenTelemetry, see the [AWS Distro for OpenTelemetry﻿](https://aws-otel.github.io/) page.
 
 For tracing AWS Lambda for other languages such as Java, Node.JS, and Python using the Dynatrace AWS Lambda Layer, see [Deploy OneAgent as Lambda extension](/managed/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration/aws-lambda-classic/aws-lambda-extension "Monitor Lambda functions written in Python, Node.js, and Java.").
 
@@ -31,7 +30,7 @@ The following prerequisites and limitations apply:
   1. Go to **Settings** > **Preferences** > **OneAgent features**.
   2. Turn on **Send W3C Trace Context HTTP headers**.
 
-The OpenTelemetry Protocol (OTLP) exporters for .NET currently support [gRPC and HTTP 1.1 with binary Protocol Buffers (Protobuf) payloadï»¿](https://github.com/open-telemetry/opentelemetry-specification/blob/main/spec-compliance-matrix.md#exporters) transports. Supported corresponding protocol values are `grpc` and `http/protobuf`. [Configuration optionsï»¿](https://github.com/open-telemetry/opentelemetry-specification/blob/main/specification/protocol/exporter.md#configuration-options) can be set either via environment variables or explicitly in code.
+The OpenTelemetry Protocol (OTLP) exporters for .NET currently support [gRPC and HTTP 1.1 with binary Protocol Buffers (Protobuf) payload﻿](https://github.com/open-telemetry/opentelemetry-specification/blob/main/spec-compliance-matrix.md#exporters) transports. Supported corresponding protocol values are `grpc` and `http/protobuf`. [Configuration options﻿](https://github.com/open-telemetry/opentelemetry-specification/blob/main/specification/protocol/exporter.md#configuration-options) can be set either via environment variables or explicitly in code.
 
 ## Instrument AWS Lambda .NET Core functions
 
@@ -53,7 +52,7 @@ gRPC export
 
 HTTP export
 
-To ingest gRPC via the Dynatrace Trace API, you need to use an [OpenTelemetry collectorï»¿](https://dt-url.net/vf23sfn) between Dynatrace and the exporter. You can choose to either self-host a collector or use the AWS Distro for OpenTelemetry Collector (ADOT Collector).
+To ingest gRPC via the Dynatrace Trace API, you need to use an [OpenTelemetry collector﻿](https://dt-url.net/vf23sfn) between Dynatrace and the exporter. You can choose to either self-host a collector or use the AWS Distro for OpenTelemetry Collector (ADOT Collector).
 
 If you use environment variables for setup, you need to set the following value:
 
@@ -67,7 +66,7 @@ Lambda layers are a rationalized resource, meaning that they can only be used in
 
 Collector layer: `aws-otel-collector-ver-0-27-0`.
 
-For a complete list of the AWS-managed OpenTelemetry Lambda layers, see [AWS Distro for OpenTelemetry - AWS Lambda repositoryï»¿](https://github.com/aws-observability/aws-otel-lambda)
+For a complete list of the AWS-managed OpenTelemetry Lambda layers, see [AWS Distro for OpenTelemetry - AWS Lambda repository﻿](https://github.com/aws-observability/aws-otel-lambda)
 
 Lambda layer ARN format is:
 
@@ -178,7 +177,7 @@ Variables:
 OPENTELEMETRY_COLLECTOR_CONFIG_FILE: /var/task/collector.yaml
 ```
 
-To ingest HTTP via the Dynatrace Trace API, you need to [configure the exporterï»¿](https://github.com/open-telemetry/opentelemetry-specification/blob/main/specification/protocol/exporter.md#configuration-options). The exporter will then directly send traces to the configured endpoint.
+To ingest HTTP via the Dynatrace Trace API, you need to [configure the exporter﻿](https://github.com/open-telemetry/opentelemetry-specification/blob/main/specification/protocol/exporter.md#configuration-options). The exporter will then directly send traces to the configured endpoint.
 
 If you use environment variables for setup, you need to set the following values:
 
@@ -188,7 +187,7 @@ If you use environment variables for setup, you need to set the following values
   + If you set the endpoint URL via environment variables, the export endpoints for traces and metrics are automatically appended by `v1/traces` for traces and `v1/metrics` for metrics. For example, if the endpoint is set to `https://<YOUR-TENANT-ID>.live.dynatrace.com/api/v2/otlp`, traces will be exported to `https://<YOUR-TENANT-ID>.live.dynatrace.com/api/v2/otlp/v1/traces`.
   + If you set the endpoint explicitly in code, it will be used as is.
 
-  For details, see [Endpoint URLs for OTLP/HTTPï»¿](https://github.com/open-telemetry/opentelemetry-specification/blob/main/specification/protocol/exporter.md#endpoint-urls-for-otlphttp).
+  For details, see [Endpoint URLs for OTLP/HTTP﻿](https://github.com/open-telemetry/opentelemetry-specification/blob/main/specification/protocol/exporter.md#endpoint-urls-for-otlphttp).
 * For `OTEL_EXPORTER_OTLP_HEADERS`: the authorization API token value in the following format: `Authorization=Api-Token <TOKEN>`.
 
 ## Step 2 Add dependencies
@@ -205,7 +204,7 @@ If you are using the AWS SDK to interact with other AWS services, you can add au
 OpenTelemetry.Contrib.Instrumentation.AWS
 ```
 
-OpenTelemetry also provides other [auto-instrumentation libraries available as NuGet packagesï»¿](https://www.nuget.org/packages?q=opentelemetry.instrumentation)
+OpenTelemetry also provides other [auto-instrumentation libraries available as NuGet packages﻿](https://www.nuget.org/packages?q=opentelemetry.instrumentation)
 
 ## Step 3 Add OpenTelemetry Tracer
 
@@ -215,9 +214,9 @@ HTTP export
 
 The AWS Distro for OpenTelemetry doesn't provide a wrapper layer for .NET as it does for other languages. You need to add a tracer to your code and create a trace root span.
 
-The following sample uses an [AWS Lambda Proxy Integrationï»¿](https://docs.aws.amazon.com/apigateway/latest/developerguide/set-up-lambda-proxy-integrations.html) and gRPC transport.
+The following sample uses an [AWS Lambda Proxy Integration﻿](https://docs.aws.amazon.com/apigateway/latest/developerguide/set-up-lambda-proxy-integrations.html) and gRPC transport.
 
-If you don't set the `Protocol` property of the `OtlpExporterOptions` class via environment variables or in code, it will be initialized as [`OtlpExportProtocol.Grpc` by defaultï»¿](https://github.com/open-telemetry/opentelemetry-dotnet/blob/main/src/OpenTelemetry.Exporter.OpenTelemetryProtocol/OtlpExporterOptions.cs#L99).
+If you don't set the `Protocol` property of the `OtlpExporterOptions` class via environment variables or in code, it will be initialized as [`OtlpExportProtocol.Grpc` by default﻿](https://github.com/open-telemetry/opentelemetry-dotnet/blob/main/src/OpenTelemetry.Exporter.OpenTelemetryProtocol/OtlpExporterOptions.cs#L99).
 
 ```
 public class Functions

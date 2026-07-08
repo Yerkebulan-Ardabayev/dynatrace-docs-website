@@ -1,7 +1,6 @@
 ---
 title: Dashboards API - PUT sharing configuration
 source: https://docs.dynatrace.com/managed/dynatrace-api/configuration-api/dashboards-api/put-sharing-config
-scraped: 2026-05-12T11:14:56.004397
 ---
 
 # Dashboards API - PUT sharing configuration
@@ -43,9 +42,9 @@ Sharing configuration of the dashboard.
 | --- | --- | --- | --- |
 | enabled | boolean | The dashboard is shared (`true`) or private (`false`). | Optional |
 | id | string | The Dynatrace entity ID of the dashboard. | Required |
-| permissions | [DashboardSharePermissions[]](#openapi-definition-DashboardSharePermissions) | A list of permissions to access the dashboard. | Required |
+| permissions | [DashboardSharePermissions](#openapi-definition-DashboardSharePermissions)[] | A list of permissions to access the dashboard. | Required |
 | preset | boolean | If `true` the dashboard will be marked as preset. | Optional |
-| publicAccess | [DashboardAnonymousAccess](#openapi-definition-DashboardAnonymousAccess) | Configuration of the [anonymous accessï»¿](https://dt-url.net/ov03sf1) to the dashboard. | Required |
+| publicAccess | [DashboardAnonymousAccess](#openapi-definition-DashboardAnonymousAccess) | Configuration of the [anonymous access﻿](https://dt-url.net/ov03sf1) to the dashboard. | Required |
 
 #### The `DashboardSharePermissions` object
 
@@ -59,7 +58,7 @@ Access permissions of the dashboard.
 
 #### The `DashboardAnonymousAccess` object
 
-Configuration of the [anonymous accessï»¿](https://dt-url.net/ov03sf1) to the dashboard.
+Configuration of the [anonymous access﻿](https://dt-url.net/ov03sf1) to the dashboard.
 
 | Element | Type | Description | Required |
 | --- | --- | --- | --- |
@@ -256,7 +255,7 @@ This is a model of the request body, showing the possible elements. It has to be
 | Element | Type | Description |
 | --- | --- | --- |
 | code | integer | The HTTP status code |
-| constraintViolations | [ConstraintViolation[]](#openapi-definition-ConstraintViolation) | A list of constraint violations |
+| constraintViolations | [ConstraintViolation](#openapi-definition-ConstraintViolation)[] | A list of constraint violations |
 | message | string | The error message |
 
 #### The `ConstraintViolation` object
@@ -367,7 +366,7 @@ To learn how to obtain and use it, see [Tokens and authentication](/managed/disc
 | Element | Type | Description |
 | --- | --- | --- |
 | code | integer | The HTTP status code |
-| constraintViolations | [ConstraintViolation[]](#openapi-definition-ConstraintViolation) | A list of constraint violations |
+| constraintViolations | [ConstraintViolation](#openapi-definition-ConstraintViolation)[] | A list of constraint violations |
 | message | string | The error message |
 
 #### The `ConstraintViolation` object

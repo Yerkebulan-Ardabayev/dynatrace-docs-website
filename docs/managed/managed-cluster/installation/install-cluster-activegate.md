@@ -1,7 +1,6 @@
 ---
 title: Install a Cluster ActiveGate
 source: https://docs.dynatrace.com/managed/managed-cluster/installation/install-cluster-activegate
-scraped: 2026-05-12T11:06:45.807451
 ---
 
 # Install a Cluster ActiveGate
@@ -28,24 +27,24 @@ To install a Cluster ActiveGate on Linux or Windows, follow the steps below.
 
 Before you install, decide on the purpose of the ActiveGate and review the corresponding requirements:
 
-* **Route OneAgent traffic**âsee [routing/monitoring requirements](/managed/ingest-from/dynatrace-activegate/installation/linux/linux-activegate-hardware-and-system-requirements "Learn what hardware and operating system requirements need to be taken into account before installing ActiveGate on Linux for routing and monitoring purposes.").
-* **Run Synthetic monitors from a private location**âSynthetic-enabled ActiveGates support a subset of operating systems and have higher [hardware and system requirements](/managed/observe/digital-experience/synthetic-monitoring/private-synthetic-locations/system-and-hardware-requirements-for-private-synthetic "Supported operating systems, Chromium versions, and hardware requirements for running synthetic monitors from private locations") than routing ActiveGates.
+* **Route OneAgent traffic**—see [routing/monitoring requirements](/managed/ingest-from/dynatrace-activegate/installation/linux/linux-activegate-hardware-and-system-requirements "Learn what hardware and operating system requirements need to be taken into account before installing ActiveGate on Linux for routing and monitoring purposes.").
+* **Run Synthetic monitors from a private location**—Synthetic-enabled ActiveGates support a subset of operating systems and have higher [hardware and system requirements](/managed/observe/digital-experience/synthetic-monitoring/private-synthetic-locations/system-and-hardware-requirements-for-private-synthetic "Supported operating systems, Chromium versions, and hardware requirements for running synthetic monitors from private locations") than routing ActiveGates.
 
 In most cases, you can install an ActiveGate at any time following OneAgent installation. In some cases, however, the installation order matters, because the OneAgent installer needs to know about your ActiveGate installation before the OneAgent can be installed.
 
 If you've already installed OneAgent
 
 In such instances, first install the ActiveGate and then download the OneAgent installer.
-For example, if you download the OneAgent installer and use it to install Dynatrace in a DMZ or network segment that has no internet access and then subsequently install an ActiveGate, youâll need to download and install OneAgent again to ensure that the installer provides the proper configuration between OneAgent and ActiveGate. This is because OneAgent needs to be automatically configured during installation to connect to your monitored environment and send monitoring data back to the Dynatrace Cluster via your ActiveGate.
+For example, if you download the OneAgent installer and use it to install Dynatrace in a DMZ or network segment that has no internet access and then subsequently install an ActiveGate, you’ll need to download and install OneAgent again to ensure that the installer provides the proper configuration between OneAgent and ActiveGate. This is because OneAgent needs to be automatically configured during installation to connect to your monitored environment and send monitoring data back to the Dynatrace Cluster via your ActiveGate.
 
 ## Step 2 Download installer
 
 1. Log in to the **Cluster Management Console**.
-2. Go to **Home**, select the browse **[â¦]** button, and choose **Add new Cluster ActiveGate**.
+2. Go to **Home**, select the browse **[…]** button, and choose **Add new Cluster ActiveGate**.
 3. Select **Windows** or **Linux**, depending on your operating system, and choose a purpose:
 
-   * **Route traffic**âroutes OneAgent, public synthetic, mobile, Real User Monitoring, and REST API traffic.
-   * **Run synthetic monitors from a private location**âruns synthetic monitors exclusively. Installing ActiveGate with this purpose disables all other ActiveGate features, including communication with OneAgents.
+   * **Route traffic**—routes OneAgent, public synthetic, mobile, Real User Monitoring, and REST API traffic.
+   * **Run synthetic monitors from a private location**—runs synthetic monitors exclusively. Installing ActiveGate with this purpose disables all other ActiveGate features, including communication with OneAgents.
 
    The selected purpose automatically sets the corresponding installer parameter (`--enable-synthetic` on Linux, `ENABLE_SYNTHETIC=true` on Windows).
 4. Download or copy the installer command for your platform.
@@ -56,7 +55,7 @@ For example, if you download the OneAgent installer and use it to install Dynatr
 
    Select the ActiveGate purpose and select **Download installer** to download it to the target machine.
 
-   Select the ActiveGate purpose, copy the `wget` command from the **Run this command on the target host** field, and paste it into your terminal. Copy the command directly from your Clusterâit contains your cluster's main address.
+   Select the ActiveGate purpose, copy the `wget` command from the **Run this command on the target host** field, and paste it into your terminal. Copy the command directly from your Cluster—it contains your cluster's main address.
 
 ## Step 3 Run installer
 

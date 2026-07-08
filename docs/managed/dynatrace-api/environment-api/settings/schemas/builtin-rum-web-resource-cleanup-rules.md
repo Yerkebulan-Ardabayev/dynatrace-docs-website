@@ -1,7 +1,6 @@
 ---
 title: Settings API - Resource URL cleanup rules schema table
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/settings/schemas/builtin-rum-web-resource-cleanup-rules
-scraped: 2026-05-12T11:48:05.682344
 ---
 
 # Settings API - Resource URL cleanup rules schema table
@@ -12,7 +11,7 @@ scraped: 2026-05-12T11:48:05.682344
 
 ### Resource URL cleanup rules (`builtin:rum.web.resource-cleanup-rules)`
 
-Resource URL cleanup rules are used to aggregate resource URLs that are otherwise identical except for dynamic elements such as IDs (for example, from REST APIs), query strings (for example, random arguments that disable caching), and other session data. Once such session-specific detail is stripped away, URLs are displayed in aggregate within waterfall analysis view. Note that resource URL cleanup rules are executed in the order specified below. For complete details about cleanup rules, visit [Define URL cleanup rulesï»¿](https://dt-url.net/resource-cleanup-rules-response-codes).
+Resource URL cleanup rules are used to aggregate resource URLs that are otherwise identical except for dynamic elements such as IDs (for example, from REST APIs), query strings (for example, random arguments that disable caching), and other session data. Once such session-specific detail is stripped away, URLs are displayed in aggregate within waterfall analysis view. Note that resource URL cleanup rules are executed in the order specified below. For complete details about cleanup rules, visit [Define URL cleanup rules﻿](https://dt-url.net/resource-cleanup-rules-response-codes).
 
 | Schema ID | Schema groups | Scope |
 | --- | --- | --- |

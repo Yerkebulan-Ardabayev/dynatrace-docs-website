@@ -1,7 +1,6 @@
 ---
 title: Push deployment events from Jenkins
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/events-v1/push-deployment-events-from-jenkins
-scraped: 2026-05-12T12:13:37.847230
 ---
 
 # Push deployment events from Jenkins
@@ -15,7 +14,7 @@ scraped: 2026-05-12T12:13:37.847230
 To configure Jenkins to push deployment events to Dynatrace.
 
 1. Generate a new [access token for the Dynatrace API](/managed/dynatrace-api/basics/dynatrace-api-authentication "Find out how to get authenticated to use the Dynatrace API.").
-2. Install the [HTTP Request Pluginï»¿](https://dt-url.net/3g23u1a) to your Jenkins installation.
+2. Install the [HTTP Request Plugin﻿](https://dt-url.net/3g23u1a) to your Jenkins installation.
 3. In the Jenkins build configuration, click **Add build step** and select **HTTP Request**.
 
 ![Jenkins - add HTTP Request as build step](https://dt-cdn.net/images/jenkins-build-addbuildstep-httprequest-2-333-fec9e1de4a.png)
@@ -120,6 +119,6 @@ Jenkins - Headers configuration
 }
 ```
 
-`${JOB_NAME}`, `${BUILD_URL}`, `${BUILD_ID}`, `${GIT_COMMIT}` are [environment variables set by Jenkinsï»¿](https://dt-url.net/x803uzw) during job execution.
+`${JOB_NAME}`, `${BUILD_URL}`, `${BUILD_ID}`, `${GIT_COMMIT}` are [environment variables set by Jenkins﻿](https://dt-url.net/x803uzw) during job execution.
 
 11. Save the build configuration. Next time you build your project, the deployment event will be pushed to the monitored entities (for example, hosts and services) you have defined in the `tagRule` of the request body.

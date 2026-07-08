@@ -1,12 +1,11 @@
 ---
-title: Installation
+title: Managed Cluster installation
 source: https://docs.dynatrace.com/managed/managed-cluster/installation
-scraped: 2026-05-12T11:11:15.011604
 ---
 
-# Installation
+# Managed Cluster installation
 
-# Installation
+# Managed Cluster installation
 
 * 1-min read
 * Updated on May 09, 2026

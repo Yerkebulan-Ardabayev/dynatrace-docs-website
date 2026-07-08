@@ -1,7 +1,6 @@
 ---
 title: Dynatrace Managed release notes version 1.320
 source: https://docs.dynatrace.com/managed/whats-new/managed/sprint-320
-scraped: 2026-05-12T11:07:52.048087
 ---
 
 # Dynatrace Managed release notes version 1.320
@@ -28,7 +27,7 @@ Starting with Cluster version 1.324, Dynatrace introduces native support for Ope
 * Existing histogram metrics will no longer be updated, but they will remain available for historical visualization on dashboards, ensuring continuity and data retention. The new native histogram metrics will be exposed under distinct metric keys, each suffixed with `.histogram`.
 * If an existing metric already ends with `.histogram` or `_histogram`, it will no longer receive new data points. To use the new histogram functionality under the same metric key, you must delete the existing metric using the [Metrics API - DELETE a custom metric](/managed/dynatrace-api/environment-api/metric-v2/delete-metric "Delete a metric ingested via Metrics v2 API."). After deletion, a new histogram metric will be automatically created under the same key.
 
-In Dynatrace, in your [**Local-Self-Monitoring** environment](/managed/managed-cluster/self-monitoring/local-self-monitoring "Learn how to use local self-monitoring environment to gain additional insights into your Dynatrace Managed cluster health."), you can use the following query in [Data Explorer](/managed/analyze-explore-automate/explorer "Query for metrics and transform results to gain desired insights.") to see which histogram metrics have been ingested:
+In Dynatrace, in your [**Local-Self-Monitoring** environment](/managed/managed-cluster/self-monitoring/local-self-monitoring "Learn about the local self-monitoring environment that collects internal Dynatrace Managed Cluster health metrics and stores all data exclusively on-premises."), you can use the following query in [Data Explorer](/managed/analyze-explore-automate/explorer "Query for metrics and transform results to gain desired insights.") to see which histogram metrics have been ingested:
 
 ```
 isfm:active_gate.metrics.ingest.explicit_bucket_histogram.layout.series
@@ -56,7 +55,7 @@ Platform | Deployment
 
 We have simplified the process of migrating multiple OneAgents across environments, enabling centralized control and reducing manual effort.
 
-This feature supports both web UIâbased workflows and REST API integration, offering flexibility for manual and automated operations.
+This feature supports both web UI–based workflows and REST API integration, offering flexibility for manual and automated operations.
 
 For details, see [Web UI procedures](/managed/ingest-from/bulk-configuration#web-ui-procedures "Perform OneAgent and ActiveGate configuration on hosts from the Deployment status page or at scale using the Dynatrace API.") and [API procedures](/managed/ingest-from/bulk-configuration#api-procedures "Perform OneAgent and ActiveGate configuration on hosts from the Deployment status page or at scale using the Dynatrace API.").
 
@@ -124,7 +123,7 @@ Platform | Data Explorer
 
 ### Fetching metric-key suggestions optimized
 
-Weâve optimized filtering for metric-key suggestions in the Data Explorer, so suggestions now appear much faster when you start typing. This ensures a smooth experience, even when working with large datasets.
+We’ve optimized filtering for metric-key suggestions in the Data Explorer, so suggestions now appear much faster when you start typing. This ensures a smooth experience, even when working with large datasets.
 
 Platform | Davis
 
@@ -144,9 +143,9 @@ Digital Experience | RUM Web
 
 To reduce parse-blocking JavaScript, you can now manage how the RUM monitoring code is loaded and executed by using the `async` or `defer` attributes. These attributes can be applied to the following snippet formats:
 
-* [JavaScript tag](/managed/observe/digital-experience/web-applications/initial-setup/snippet-formats#js-tag "Select a format for the RUM JavaScript snippet that best fits your specific use case")
-* [OneAgent JavaScript tag](/managed/observe/digital-experience/web-applications/initial-setup/snippet-formats#oneagent-js-tag "Select a format for the RUM JavaScript snippet that best fits your specific use case")
-* [OneAgent JavaScript tag with SRI](/managed/observe/digital-experience/web-applications/initial-setup/snippet-formats#oneagent-js-tag-sri "Select a format for the RUM JavaScript snippet that best fits your specific use case")
+* [JavaScript tag](/managed/observe/digital-experience/rum-classic/web-applications/initial-setup/snippet-formats#js-tag "Select a format for the RUM JavaScript snippet that best fits your specific use case")
+* [OneAgent JavaScript tag](/managed/observe/digital-experience/rum-classic/web-applications/initial-setup/snippet-formats#oneagent-js-tag "Select a format for the RUM JavaScript snippet that best fits your specific use case")
+* [OneAgent JavaScript tag with SRI](/managed/observe/digital-experience/rum-classic/web-applications/initial-setup/snippet-formats#oneagent-js-tag-sri "Select a format for the RUM JavaScript snippet that best fits your specific use case")
 
 Platform
 
@@ -196,41 +195,23 @@ To learn about changes to the Dynatrace API in this release, see:
 
 ### Future Dynatrace Managed operating systems support changes
 
-##### The following operating systems will no longer be supported starting 01 June 2026
-
-* Linux: Oracle Linux 9.6
-
-  + x86-64
-  + [Vendor announcementï»¿](https://www.oracle.com/a/ocom/docs/elsp-lifetime-069338.pdf)
-* Linux: Rocky Linux 9.6
-
-  + x86-64
-  + [Vendor announcementï»¿](https://endoflife.date/rocky-linux)
-
-##### The following operating systems will no longer be supported starting 01 July 2026
-
-* Linux: SUSE Enterprise Linux 15.3
-
-  + x86-64
-  + [Vendor announcementï»¿](https://www.suse.com/lifecycle/)
-
 ##### The following operating systems will no longer be supported starting 01 November 2026
 
 * Linux: Red Hat Enterprise Linux 9.4, 9.7
 
   + x86-64
-  + [Vendor announcementï»¿](https://access.redhat.com/support/policy/updates/errata)
+  + [Vendor announcement﻿](https://access.redhat.com/support/policy/updates/errata)
 * Linux: Ubuntu 16.04
 
   + x86-64
-  + [Vendor announcementï»¿](https://ubuntu.com/about/release-cycle)
+  + [Vendor announcement﻿](https://ubuntu.com/about/release-cycle)
 
 ##### The following operating systems will no longer be supported starting 01 January 2027
 
 * Linux: Amazon Linux 2
 
   + x86-64
-  + [Vendor announcementï»¿](https://aws.amazon.com/linux/)
+  + [Vendor announcement﻿](https://aws.amazon.com/linux/)
 
 ### Past Dynatrace Managed operating systems support changes
 
@@ -239,21 +220,39 @@ To learn about changes to the Dynatrace API in this release, see:
 * Linux: Red Hat Enterprise Linux 8.8, 9.2, 9.5
 
   + x86-64
-  + [Vendor announcementï»¿](https://access.redhat.com/support/policy/updates/errata)
+  + [Vendor announcement﻿](https://access.redhat.com/support/policy/updates/errata)
 * Linux: Oracle Linux 9.5
 
   + x86-64
-  + [Vendor announcementï»¿](https://www.oracle.com/a/ocom/docs/elsp-lifetime-069338.pdf)
+  + [Vendor announcement﻿](https://www.oracle.com/a/ocom/docs/elsp-lifetime-069338.pdf)
 * Linux: Rocky Linux 9.5
 
   + x86-64
-  + [Vendor announcementï»¿](https://endoflife.date/rocky-linux)
+  + [Vendor announcement﻿](https://endoflife.date/rocky-linux)
 
 ##### The following operating systems are no longer supported since 01 January 2026
 
 * Linux: Debian 10
 
   + x86-64
-  + [Vendor announcementï»¿](https://wiki.debian.org/DebianReleases)
+  + [Vendor announcement﻿](https://wiki.debian.org/DebianReleases)
+
+##### The following operating systems are no longer supported since 01 June 2026
+
+* Linux: Oracle Linux 9.6
+
+  + x86-64
+  + [Vendor announcement﻿](https://www.oracle.com/a/ocom/docs/elsp-lifetime-069338.pdf)
+* Linux: Rocky Linux 9.6
+
+  + x86-64
+  + [Vendor announcement﻿](https://endoflife.date/rocky-linux)
+
+##### The following operating systems are no longer supported since 01 July 2026
+
+* Linux: SUSE Enterprise Linux 15.3
+
+  + x86-64
+  + [Vendor announcement﻿](https://www.suse.com/lifecycle/)
 
 ## Resolved issues

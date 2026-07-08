@@ -1,7 +1,6 @@
 ---
 title: Synthetic locations API v2 - GET public locations status
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/synthetic-v2/synthetic-locations-v2/get-location-status
-scraped: 2026-05-12T11:59:25.545437
 ---
 
 # Synthetic locations API v2 - GET public locations status
@@ -61,7 +60,7 @@ The status of public synthetic locations.
 | Element | Type | Description |
 | --- | --- | --- |
 | code | integer | The HTTP status code |
-| constraintViolations | [ConstraintViolation[]](#openapi-definition-ConstraintViolation) | A list of constraint violations |
+| constraintViolations | [ConstraintViolation](#openapi-definition-ConstraintViolation)[] | A list of constraint violations |
 | message | string | The error message |
 
 #### The `ConstraintViolation` object

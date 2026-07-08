@@ -1,7 +1,6 @@
 ---
 title: Settings API - Connections to AWS environments schema table
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/settings/schemas/builtin-hyperscaler-authentication-connections-aws
-scraped: 2026-05-12T11:40:20.576212
 ---
 
 # Settings API - Connections to AWS environments schema table
@@ -44,11 +43,11 @@ To execute this request, you need an access token with **Read settings** (`setti
 | Property | Type | Description | Required |
 | --- | --- | --- | --- |
 | AWS IAM Role ARN `roleArn` | text | The ARN of the AWS role that should be assumed | Required |
-| Consumers `consumers` | [ConsumersOfAwsRoleBasedAuthentication](#ConsumersOfAwsRoleBasedAuthentication)[] | Dynatrace integrations that can use this connection The element has these enums * `DA` * `SVC:com.dynatrace.da` * `APP:dynatrace.biz.carbon` * `SVC:com.dynatrace.bo` * `SVC:com.dynatrace.openpipeline` * `SVC:com.dynatrace.grail` * `NONE` | Required |
+| Consumers `consumers` | [ConsumersOfAwsRoleBasedAuthentication](#ConsumersOfAwsRoleBasedAuthentication)[] | Dynatrace integrations that can use this connection The element has these enums * `DA` * `SVC:com.dynatrace.da` * `SVC:com.dynatrace.bo` * `SVC:com.dynatrace.openpipeline` * `SVC:com.dynatrace.grail` * `NONE` | Required |
 
 ##### The `AwsWebIdentity` object
 
 | Property | Type | Description | Required |
 | --- | --- | --- | --- |
 | AWS IAM Role ARN `roleArn` | text | The ARN of the AWS role that should be assumed | Required |
-| Consumers `consumers` | [ConsumersOfAwsWebIdentity](#ConsumersOfAwsWebIdentity)[] | Dynatrace integrations that can use this connection The element has these enums * `APP:dynatrace.aws.connector` * `APP:dynatrace.biz.carbon` | Required |
+| Consumers `consumers` | [ConsumersOfAwsWebIdentity](#ConsumersOfAwsWebIdentity)[] | Dynatrace integrations that can use this connection The element has these enums * `APP:dynatrace.aws.connector` | Required |

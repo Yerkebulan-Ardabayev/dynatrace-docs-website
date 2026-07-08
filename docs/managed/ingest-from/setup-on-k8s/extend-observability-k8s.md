@@ -1,7 +1,6 @@
 ---
 title: Extend observability for Kubernetes
 source: https://docs.dynatrace.com/managed/ingest-from/setup-on-k8s/extend-observability-k8s
-scraped: 2026-05-12T11:11:22.750078
 ---
 
 # Extend observability for Kubernetes

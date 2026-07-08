@@ -1,7 +1,6 @@
 ---
 title: How to integrate Dynatrace into AWS
 source: https://docs.dynatrace.com/managed/ingest-from/amazon-web-services/integrate-into-aws
-scraped: 2026-05-12T12:04:11.568049
 ---
 
 # How to integrate Dynatrace into AWS
@@ -36,5 +35,5 @@ Integrate on AWS Lambda.](/managed/ingest-from/amazon-web-services/integrate-int
 
 ## Related topics
 
-* [Serverless monitoring](/managed/discover-dynatrace/get-started/serverless-monitoring "Serverless observability with Dynatrace")
+* [Serverless monitoring](/managed/discover-dynatrace/get-started/serverless-monitoring "Monitor serverless cloud services across AWS, Azure, and Google Cloud with Dynatrace for end-to-end visibility and AI-powered analysis.")
 * [Amazon Web Services monitoring](/managed/observe/infrastructure-observability/cloud-platform-monitoring/aws-monitoring "Monitor AWS with Dynatrace")

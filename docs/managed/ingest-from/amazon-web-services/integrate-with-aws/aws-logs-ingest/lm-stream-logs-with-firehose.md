@@ -1,7 +1,6 @@
 ---
 title: Stream logs via Amazon Data Firehose (Logs Classic)
 source: https://docs.dynatrace.com/managed/ingest-from/amazon-web-services/integrate-with-aws/aws-logs-ingest/lm-stream-logs-with-firehose
-scraped: 2026-05-12T12:00:12.172240
 ---
 
 # Stream logs via Amazon Data Firehose (Logs Classic)
@@ -33,7 +32,7 @@ You need to have your Dynatrace Managed Cluster nodes open to incoming Internet 
    * **For ActiveGate** ([additional setup required](/managed/ingest-from/amazon-web-services/integrate-with-aws/aws-logs-ingest/lm-stream-logs-with-firehose#environment-activegate-support "Amazon Data Firehose integration allows ingest of cloud logs directly, without additional infrastructure needed, and at higher throughput."))
      `https://<your_active_gate_IP_or_hostname>/e/<your_environment_ID>`
 
-     To determine `<your_environment_ID>`, see [What is a monitoring environment?](/managed/discover-dynatrace/get-started/monitoring-environment#environment-id "Understand and learn how to work with monitoring environments.").
+     To determine `<your_environment_ID>`, see [What's a monitoring environment?](/managed/discover-dynatrace/get-started/monitoring-environment#environment-id "Learn what a Dynatrace monitoring environment is, how to find your environment ID, and how to set up and connect multiple environments.").
 
 ## Set up Firehose logs streaming
 
@@ -238,7 +237,7 @@ Data Firehose stream requires trust relationship with CloudWatch through an IAM 
 
 ## Stream logs from CloudWatch
 
-To learn about streaming CloudWatch Logs from log group in other region or other account, see [Cross-account cross-Region log data sharing using Firehoseï»¿](https://dt-url.net/mn03w1l).
+To learn about streaming CloudWatch Logs from log group in other region or other account, see [Cross-account cross-Region log data sharing using Firehose﻿](https://dt-url.net/mn03w1l).
 
 After creating a Firehose delivery stream and IAM role, you need to subscribe to the CloudWatch log groups whose logs you want to forward to Dynatrace.
 You can subscribe to log groups using shell script or in the AWS console. See the instructions below.
@@ -308,7 +307,7 @@ Make sure to replace `<your_log_groups_file>` with the name of the file to which
 
 ### Subscribe with a subscription filter pattern
 
-**Usage recommendation:** By default, you subscribe to all the logs in the log group. Use this option if you want to restrict the logs you subscribe to. See [Filter and Pattern Syntaxï»¿](https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/FilterAndPatternSyntax.html) for details on the pattern syntax.
+**Usage recommendation:** By default, you subscribe to all the logs in the log group. Use this option if you want to restrict the logs you subscribe to. See [Filter and Pattern Syntax﻿](https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/FilterAndPatternSyntax.html) for details on the pattern syntax.
 
 **Limitation:** You can use only two subscription filters per log group, so the possibility of creating multiple filters with different patterns is limited. If you create a subscription filter that exceeds the limit, an AWS `LimitExceededException` occurs.
 
@@ -393,10 +392,10 @@ dynatrace-firehose-logs.sh unsubscribe {--log-groups <your_log_group_list> | --l
 
 To configure logs not stored in CloudWatch for services that send them directly to Firehose, refer to specific service documentation, for example:
 
-* [Amazon Managed Streaming for Apache Kafkaï»¿](https://docs.aws.amazon.com/msk/latest/developerguide/msk-logging.html)
-* [Amazon Virtual Private Cloudï»¿](https://docs.aws.amazon.com/vpc/latest/userguide/flow-logs-firehose.html)
+* [Amazon Managed Streaming for Apache Kafka﻿](https://docs.aws.amazon.com/msk/latest/developerguide/msk-logging.html)
+* [Amazon Virtual Private Cloud﻿](https://docs.aws.amazon.com/vpc/latest/userguide/flow-logs-firehose.html)
 
-For logs from AWS services that are sent to S3ânot Firehose or CloudWatchâsee [GitHub documentationï»¿](https://github.com/dynatrace-oss/dynatrace-aws-s3-log-forwarder).
+For logs from AWS services that are sent to S3—not Firehose or CloudWatch—see [GitHub documentation﻿](https://github.com/dynatrace-oss/dynatrace-aws-s3-log-forwarder).
 
 ## View AWS logs
 
@@ -445,7 +444,7 @@ Below we have included a few examples of such configurations. Consult the docume
 
 #### Amazon Linux, RedHat Linux
 
-`firewalld` provides a dynamically managed firewall. See the [documentationï»¿](https://firewalld.org/documentation/) for details.
+`firewalld` provides a dynamically managed firewall. See the [documentation﻿](https://firewalld.org/documentation/) for details.
 
 To add port forwarding with `firewalld` (note: this actions need to be done using the root account):
 
@@ -459,11 +458,11 @@ firewall-cmd --zone=public --add-port=9999/tcp --permanent
 
 #### Ubuntu Linux
 
-The Uncomplicated Firewall (`ufw`) is a frontend for iptables. See the [documentationï»¿](https://wiki.ubuntu.com/UncomplicatedFirewall) for details.
+The Uncomplicated Firewall (`ufw`) is a frontend for iptables. See the [documentation﻿](https://wiki.ubuntu.com/UncomplicatedFirewall) for details.
 
 To add port forwarding with `ufw` (note: this actions need to be done using the root account):
 
-1. In the `/etc/ufw/before.rules` file, letâs add a NAT table after the filter table (the table that starts with `*filter` and ends with `COMMIT`):
+1. In the `/etc/ufw/before.rules` file, let’s add a NAT table after the filter table (the table that starts with `*filter` and ends with `COMMIT`):
 
 ```
 *nat
@@ -495,7 +494,7 @@ ufw allow 9999/tcp
 
 #### Windows Server 2022
 
-Network shell (netsh) is a command-line utility that allows you to configure and display the status of various network communications server roles and components. See the [documentationï»¿](https://learn.microsoft.com/en-us/windows-server/networking/technologies/netsh/netsh) for details.
+Network shell (netsh) is a command-line utility that allows you to configure and display the status of various network communications server roles and components. See the [documentation﻿](https://learn.microsoft.com/en-us/windows-server/networking/technologies/netsh/netsh) for details.
 
 To add port forwarding with `netsh interface portproxy`:
 
@@ -521,6 +520,6 @@ There should be metric data, and the `response\_code` should only have the value
 
 ## Limitations
 
-The ingest throughput is limited by Amazon Data Firehose. For more details, see [Amazon Data Firehose Quotaï»¿](https://docs.aws.amazon.com/firehose/latest/dev/limits.html). Amazon can increase firehose limits on request.
+The ingest throughput is limited by Amazon Data Firehose. For more details, see [Amazon Data Firehose Quota﻿](https://docs.aws.amazon.com/firehose/latest/dev/limits.html). Amazon can increase firehose limits on request.
 
 AWS Firehose does not support connections through VPC for HTTP endpoints.

@@ -1,7 +1,6 @@
 ---
 title: End-of-support announcements
 source: https://docs.dynatrace.com/managed/whats-new/technology/end-of-support-news
-scraped: 2026-05-12T11:23:22.390132
 ---
 
 # End-of-support announcements
@@ -47,7 +46,7 @@ Definition of the end of support version schema with examples:
 
   + Patch version 5.1.1 is end of support
   + Other patch versions are still supported like 5.1.2 and 5.1.3
-* **Version range 5.1 â 5.3 is end of support**
+* **Version range 5.1 – 5.3 is end of support**
 
   + Minor versions 5.1, 5.2, and 5.3 are end of support, including all of their patch versions like 5.1.1, 5.2.1, and 5.3.1
   + Other minor versions are still supported like 5.0 and 5.4
@@ -182,7 +181,7 @@ Definition of the end of support version schema with examples:
 
   + Vendor end of support: 2025-01-16
 
-For more details, see [Heads-Up - Upcoming changes in Istio/Envoy observability (Envoy >=1.30, Istio >= 1.22)ï»¿](https://community.dynatrace.com/t5/Product-news/Heads-Up-Upcoming-changes-in-Istio-Envoy-observability-Envoy-gt/ba-p/232535)
+For more details, see [Heads-Up - Upcoming changes in Istio/Envoy observability (Envoy >=1.30, Istio >= 1.22)﻿](https://community.dynatrace.com/t5/Product-news/Heads-Up-Upcoming-changes-in-Istio-Envoy-observability-Envoy-gt/ba-p/232535)
 
 ### 2025-12-31 End of Support
 
@@ -276,7 +275,7 @@ For more details, see [Heads-Up - Upcoming changes in Istio/Envoy observability 
   + Last supported OneAgent version: 1.309
 * Dynatrace Extension Framework 1.0
 
-  + [General guidance and how to migrateï»¿](https://www.dynatrace.com/news/blog/unmatched-scalability-and-security-of-dynatrace-extensions-now-available-for-all-supported-technologies-7-reasons-to-migrate-your-jmx-and-python-plugins/)
+  + [General guidance and how to migrate﻿](https://www.dynatrace.com/news/blog/unmatched-scalability-and-security-of-dynatrace-extensions-now-available-for-all-supported-technologies-7-reasons-to-migrate-your-jmx-and-python-plugins/)
 
 Note that JMX and PMI Extensions Framework 1.0 are supported past March 2025 but are deprecated. If you plan to use JMX and PMI EF1.0 extensions further, please contact Dynatrace.
 
@@ -328,15 +327,15 @@ Note that JMX and PMI Extensions Framework 1.0 are supported past March 2025 but
 
 * Dynatrace Extension Framework 1.0 (Python 3.8)
 
-  + [General guidance and how to migrateï»¿](https://www.dynatrace.com/news/blog/unmatched-scalability-and-security-of-dynatrace-extensions-now-available-for-all-supported-technologies-7-reasons-to-migrate-your-jmx-and-python-plugins/)
+  + [General guidance and how to migrate﻿](https://www.dynatrace.com/news/blog/unmatched-scalability-and-security-of-dynatrace-extensions-now-available-for-all-supported-technologies-7-reasons-to-migrate-your-jmx-and-python-plugins/)
   + Custom extensions:
 
-    - Python: migration available, [conversion guideï»¿](https://developer.dynatrace.com/develop/dynatrace-extensions-vscode/guides/migrate/python-migrate/)
-  + Dynatrace extensions: most of the technologies already have a migration path to Extension Framework 2.0. Check [Hubï»¿](https://www.dynatrace.com/hub/?filter=all&type=extension) for availability.
+    - Python: migration available, [conversion guide﻿](https://developer.dynatrace.com/develop/dynatrace-extensions-vscode/guides/migrate/python-migrate/)
+  + Dynatrace extensions: most of the technologies already have a migration path to Extension Framework 2.0. Check [Hub﻿](https://www.dynatrace.com/hub/?filter=all&type=extension) for availability.
     The following technologies will be removed in Oct 2024 or available on-demand (details below):
 
     - Deprecated: Hikari, Netflix OSS, Apache HTTP Server Workers, PowerDNS, AWS Managed Prometheus, Apache Cassandra (remote), Apache Storm, Generic Linux Commands, IBM Event Streams, PHP-FPM, Synthetic checks (LDAP, DNS, ping, port, SSH, SFTP), ActiveDirectory replication, Siebel, SolarWinds, Windows Server File System Quotas, Zabbix, VMware Horizon.
-* Envoy (envoyproxy) 1.26 and earlier (Envoy module). For details, see this [Dynatrace Community announcementï»¿](https://dt-url.net/ei03n96).
+* Envoy (envoyproxy) 1.26 and earlier (Envoy module). For details, see this [Dynatrace Community announcement﻿](https://dt-url.net/ei03n96).
 
   + Vendor end of support: 2024-04-18
 * Ubuntu 14.04 LTS (OS module)
@@ -354,7 +353,7 @@ Note that JMX and PMI Extensions Framework 1.0 are supported past March 2025 but
 
 ### 2024-08-31 End of support
 
-* Any version of the [OneAgent SDK for Pythonï»¿](https://github.com/Dynatrace/OneAgent-SDK-for-Python) on Python 3.7
+* Any version of the [OneAgent SDK for Python﻿](https://github.com/Dynatrace/OneAgent-SDK-for-Python) on Python 3.7
 * IBM JVM 6, 7, 8 on PPCBE (Java module)
 
   + Last supported OneAgent version: 1.297
@@ -394,9 +393,9 @@ Note that JMX and PMI Extensions Framework 1.0 are supported past March 2025 but
 
 ### 2024-05-31 End of support
 
-* [OneAgent SDK for Pythonï»¿](https://github.com/Dynatrace/OneAgent-SDK-for-Python) 1.4
+* [OneAgent SDK for Python﻿](https://github.com/Dynatrace/OneAgent-SDK-for-Python) 1.4
 
-  + Any version of the [OneAgent SDK for Pythonï»¿](https://github.com/Dynatrace/OneAgent-SDK-for-Python) on Python 3.4, 3.5, 3.6
+  + Any version of the [OneAgent SDK for Python﻿](https://github.com/Dynatrace/OneAgent-SDK-for-Python) on Python 3.4, 3.5, 3.6
 
 ### 2024-04-30 End of support
 
@@ -436,7 +435,7 @@ Note that JMX and PMI Extensions Framework 1.0 are supported past March 2025 but
 * SUSE Linux Enterprise Server 12.4 on x86-64, PPCLE (OS module)
 
   + Vendor end of support: 2023-06-30
-* Envoy (envoyproxy) 1.29+ (Envoy module). [Announcementï»¿](https://community.dynatrace.com/t5/Container-platforms/Heads-Up-Upcoming-changes-in-Istio-Envoy-observability-Envoy-gt/m-p/232535#M2120)
+* Envoy (envoyproxy) 1.29+ (Envoy module). [Announcement﻿](https://community.dynatrace.com/t5/Container-platforms/Heads-Up-Upcoming-changes-in-Istio-Envoy-observability-Envoy-gt/m-p/232535#M2120)
 
   + Vendor end of support: 2024-01-16 (expected Envoy 1.29 release date)
 
@@ -485,11 +484,11 @@ Note that JMX and PMI Extensions Framework 1.0 are supported past March 2025 but
 
   + Vendor end of support: 2022-04-30
   + Last supported OneAgent version: 1.271
-* [OneAgent SDK for Javaï»¿](https://github.com/Dynatrace/OneAgent-SDK-for-Java) 1.0, 1.1, 1.2, 1.3, 1.4, 1.6, 1.7. [Announcementï»¿](https://github.com/Dynatrace/OneAgent-SDK-for-Java/releases/tag/v1.9.0)
+* [OneAgent SDK for Java﻿](https://github.com/Dynatrace/OneAgent-SDK-for-Java) 1.0, 1.1, 1.2, 1.3, 1.4, 1.6, 1.7. [Announcement﻿](https://github.com/Dynatrace/OneAgent-SDK-for-Java/releases/tag/v1.9.0)
 
 ### 2023-07-31 End of support
 
-* [OneAgent SDK for Node.jsï»¿](https://github.com/Dynatrace/OneAgent-SDK-for-Nodejs/) 1.0, 1.1, 1.2, 1.3. [Announcementï»¿](https://github.com/Dynatrace/OneAgent-SDK-for-NodeJs/releases/tag/v1.5.0)
+* [OneAgent SDK for Node.js﻿](https://github.com/Dynatrace/OneAgent-SDK-for-Nodejs/) 1.0, 1.1, 1.2, 1.3. [Announcement﻿](https://github.com/Dynatrace/OneAgent-SDK-for-NodeJs/releases/tag/v1.5.0)
 * Red Hat Enterprise Linux CoreOS 4.8 (OS module)
 
   + Vendor end of support: 2023-01-27
@@ -507,10 +506,10 @@ Note that JMX and PMI Extensions Framework 1.0 are supported past March 2025 but
 
 * RabbitMQ client 3.3.5 - 4.0 (.NET module)
 * Microsoft Azure Service Fabric Reliable Services 2.5 - 3.4 (.NET module)
-* [OneAgent SDK for C/C++ï»¿](https://github.com/Dynatrace/OneAgent-SDK-for-C) 1.0.0, 1.1.0, 1.2.0, 1.3.1, 1.3.2, 1.4.1, 1.5.1. [Announcementï»¿](https://github.com/Dynatrace/OneAgent-SDK-for-C/releases/tag/v1.7.1)
-* [OneAgent SDK for Pythonï»¿](https://github.com/Dynatrace/OneAgent-SDK-for-Python) 1.0, 1.1, 1.2, 1.3. [Announcementï»¿](https://github.com/Dynatrace/OneAgent-SDK-for-Python/releases/tag/v1.5.0)
+* [OneAgent SDK for C/C++﻿](https://github.com/Dynatrace/OneAgent-SDK-for-C) 1.0.0, 1.1.0, 1.2.0, 1.3.1, 1.3.2, 1.4.1, 1.5.1. [Announcement﻿](https://github.com/Dynatrace/OneAgent-SDK-for-C/releases/tag/v1.7.1)
+* [OneAgent SDK for Python﻿](https://github.com/Dynatrace/OneAgent-SDK-for-Python) 1.0, 1.1, 1.2, 1.3. [Announcement﻿](https://github.com/Dynatrace/OneAgent-SDK-for-Python/releases/tag/v1.5.0)
 
-  + Any version of the [OneAgent SDK for Pythonï»¿](https://github.com/Dynatrace/OneAgent-SDK-for-Python) on Python 2.7
+  + Any version of the [OneAgent SDK for Python﻿](https://github.com/Dynatrace/OneAgent-SDK-for-Python) on Python 2.7
 
 ### 2023-05-31 End of support
 
@@ -538,7 +537,7 @@ Note that JMX and PMI Extensions Framework 1.0 are supported past March 2025 but
 * Ext JS 3.4, 4, 5, 6 (RUM JavaScript)
 * ICEfaces 1.8, 2, 3 (RUM JavaScript)
 * jQuery 1.3 - 1.12, 2.0 - 2.2, 3.0 - 3.6 (RUM JavaScript)
-* Microsoft Internet Explorer 10 (RUM JavaScript). [Announcementï»¿](https://community.dynatrace.com/t5/Real-User-Monitoring/Support-ending-for-MS-Internet-Explorer-versions-7-10-and-older/td-p/208226)
+* Microsoft Internet Explorer 10 (RUM JavaScript). [Announcement﻿](https://community.dynatrace.com/t5/Real-User-Monitoring/Support-ending-for-MS-Internet-Explorer-versions-7-10-and-older/td-p/208226)
 
   + Vendor end of support: 2020-01-31
 * MooTools 1.4.5 - 1.6.0 (RUM JavaScript)
@@ -778,147 +777,136 @@ The list of operating system versions supported by Dynatrace ActiveGate is updat
 * ActiveGate supports specific major Linux distributions. As long as the major OS version is supported by its vendor, each subsequent minor release will be supported by ActiveGate unless discontinuation is explicitly announced.
 * We announce an end-of-support (EOS) date for an OS version when its end of life (EOL) is announced by the vendor.
 * An OS version is de-supported at least 6 months after its end of life (EOL), to give you enough time to upgrade your environment.
-* When an OS version is no longer supported by ActiveGate, Dynatrace doesnât resolve any ActiveGate issues related to the operating system. This also applies to still-supported ActiveGate versions released before the end of support of the operating system version by ActiveGate.
+* When an OS version is no longer supported by ActiveGate, Dynatrace doesn’t resolve any ActiveGate issues related to the operating system. This also applies to still-supported ActiveGate versions released before the end of support of the operating system version by ActiveGate.
 
 ### Future Dynatrace ActiveGate operating systems support changes
-
-##### The following operating systems will no longer be supported starting 01 June 2026
-
-* Linux: Oracle Linux 9.6, 10.0
-
-  + x86-64
-  + [Vendor announcementï»¿](https://www.oracle.com/a/ocom/docs/elsp-lifetime-069338.pdf)
-* Linux: Rocky Linux 9.6, 10.0
-
-  + x86-64
-  + [Vendor announcementï»¿](https://endoflife.date/rocky-linux)
-
-##### The following operating systems will no longer be supported starting 01 July 2026
-
-* Linux: SUSE Enterprise Linux 15.6
-
-  + [Vendor announcementï»¿](https://www.suse.com/lifecycle/)
 
 ##### The following operating systems will no longer be supported starting 01 November 2026
 
 * Linux: Red Hat Enterprise Linux 9.4
 
-  + [Vendor announcementï»¿](https://access.redhat.com/support/policy/updates/errata)
+  + [Vendor announcement﻿](https://access.redhat.com/support/policy/updates/errata)
 * Linux: Ubuntu 16.04
 
-  + [Vendor announcementï»¿](https://ubuntu.com/about/release-cycle)
+  + [Vendor announcement﻿](https://ubuntu.com/about/release-cycle)
 
 ##### The following operating systems will no longer be supported starting 01 December 2026
 
 * Linux: Red Hat Enterprise Linux 9.7, 10.1
 
-  + [Vendor announcementï»¿](https://access.redhat.com/support/policy/updates/errata)
+  + [Vendor announcement﻿](https://access.redhat.com/support/policy/updates/errata)
 * Linux: Oracle Linux 9.7, 10.1
 
   + x86-64
-  + [Vendor announcementï»¿](https://www.oracle.com/a/ocom/docs/elsp-lifetime-069338.pdf)
+  + [Vendor announcement﻿](https://www.oracle.com/a/ocom/docs/elsp-lifetime-069338.pdf)
 * Linux: Rocky Linux 9.7, 10.1
 
   + x86-64
-  + [Vendor announcementï»¿](https://endoflife.date/rocky-linux)
+  + [Vendor announcement﻿](https://endoflife.date/rocky-linux)
 
 ##### The following operating systems will no longer be supported starting 01 January 2027
 
 * Linux: Amazon Linux 2
 
   + x86-64, ARM64 (AArch64)
-  + [Vendor announcementï»¿](https://aws.amazon.com/linux/)
+  + [Vendor announcement﻿](https://aws.amazon.com/linux/)
 
 ##### The following operating systems will no longer be supported starting 01 August 2027
 
 * Windows: Windows Server 2016
 
   + x86-64
-  + [Vendor announcementï»¿](https://docs.microsoft.com/en-us/windows-server/get-started/windows-server-release-info)
+  + [Vendor announcement﻿](https://docs.microsoft.com/en-us/windows-server/get-started/windows-server-release-info)
 
 ##### The following operating systems will no longer be supported starting 01 December 2027
 
 * Linux: Red Hat Enterprise Linux 9.6, 10.0
 
-  + [Vendor announcementï»¿](https://access.redhat.com/support/policy/updates/errata)
+  + [Vendor announcement﻿](https://access.redhat.com/support/policy/updates/errata)
 
 ##### The following operating systems will no longer be supported starting 01 October 2028
 
 * Linux: Amazon Linux 2023
 
   + x86-64, ARM64 (AArch64)
-  + [Vendor announcementï»¿](https://aws.amazon.com/linux/)
+  + [Vendor announcement﻿](https://aws.amazon.com/linux/)
 
 ##### The following operating systems will no longer be supported starting 01 November 2028
 
 * Linux: Ubuntu 18.04
 
-  + [Vendor announcementï»¿](https://ubuntu.com/about/release-cycle)
+  + [Vendor announcement﻿](https://ubuntu.com/about/release-cycle)
+
+##### The following operating systems will no longer be supported starting 01 December 2028
+
+* Linux: Red Hat Enterprise Linux 9.8, 10.2
+
+  + [Vendor announcement﻿](https://access.redhat.com/support/policy/updates/errata)
 
 ##### The following operating systems will no longer be supported starting 01 August 2029
 
 * Windows: Windows Server 2019
 
   + x86-64
-  + [Vendor announcementï»¿](https://docs.microsoft.com/en-us/windows-server/get-started/windows-server-release-info)
+  + [Vendor announcement﻿](https://docs.microsoft.com/en-us/windows-server/get-started/windows-server-release-info)
 
 ##### The following operating systems will no longer be supported starting 01 November 2029
 
 * Linux: Ubuntu 24.04
 
-  + [Vendor announcementï»¿](https://ubuntu.com/about/release-cycle)
+  + [Vendor announcement﻿](https://ubuntu.com/about/release-cycle)
 
 ##### The following operating systems will no longer be supported starting 01 December 2029
 
 * Linux: Red Hat Enterprise Linux 8.10
 
-  + [Vendor announcementï»¿](https://access.redhat.com/support/policy/updates/errata)
+  + [Vendor announcement﻿](https://access.redhat.com/support/policy/updates/errata)
 
 ##### The following operating systems will no longer be supported starting 01 February 2030
 
 * Linux: Oracle Linux 8.10
 
   + x86-64
-  + [Vendor announcementï»¿](https://www.oracle.com/a/ocom/docs/elsp-lifetime-069338.pdf)
+  + [Vendor announcement﻿](https://www.oracle.com/a/ocom/docs/elsp-lifetime-069338.pdf)
 
 ##### The following operating systems will no longer be supported starting 01 November 2030
 
 * Linux: Ubuntu 20.04
 
-  + [Vendor announcementï»¿](https://ubuntu.com/about/release-cycle)
+  + [Vendor announcement﻿](https://ubuntu.com/about/release-cycle)
 
 ##### The following operating systems will no longer be supported starting 01 February 2032
 
 * Linux: SUSE Enterprise Linux 15.7
 
-  + [Vendor announcementï»¿](https://www.suse.com/lifecycle/)
+  + [Vendor announcement﻿](https://www.suse.com/lifecycle/)
 
 ##### The following operating systems will no longer be supported starting 01 May 2032
 
 * Windows: Windows Server 2022
 
   + x86-64
-  + [Vendor announcementï»¿](https://docs.microsoft.com/en-us/windows-server/get-started/windows-server-release-info)
+  + [Vendor announcement﻿](https://docs.microsoft.com/en-us/windows-server/get-started/windows-server-release-info)
 
 ##### The following operating systems will no longer be supported starting 01 November 2032
 
 * Linux: Ubuntu 22.04
 
-  + [Vendor announcementï»¿](https://ubuntu.com/about/release-cycle)
+  + [Vendor announcement﻿](https://ubuntu.com/about/release-cycle)
 
 ##### The following operating systems will no longer be supported starting 01 December 2032
 
 * Linux: Rocky Linux 8.10
 
   + x86-64
-  + [Vendor announcementï»¿](https://endoflife.date/rocky-linux)
+  + [Vendor announcement﻿](https://endoflife.date/rocky-linux)
 
 ##### The following operating systems will no longer be supported starting 01 May 2035
 
 * Windows: Windows Server 2025
 
   + x86-64
-  + [Vendor announcementï»¿](https://docs.microsoft.com/en-us/windows-server/get-started/windows-server-release-info)
+  + [Vendor announcement﻿](https://docs.microsoft.com/en-us/windows-server/get-started/windows-server-release-info)
 
 ### Past Dynatrace ActiveGate operating systems support changes
 
@@ -927,17 +915,17 @@ The list of operating system versions supported by Dynatrace ActiveGate is updat
 * Linux: CentOS 6.x
 
   + x86-64
-  + [Vendor announcementï»¿](https://wiki.centos.org/FAQ/General)
+  + [Vendor announcement﻿](https://wiki.centos.org/FAQ/General)
   + Last compatible version: 1.215
 * Windows: Windows Server 2008, 2008 R2
 
   + x86-64
-  + [Vendor announcementï»¿](https://docs.microsoft.com/en-us/windows-server/get-started/windows-server-release-info)
+  + [Vendor announcement﻿](https://docs.microsoft.com/en-us/windows-server/get-started/windows-server-release-info)
   + Last compatible version: 1.215
 * Windows: Windows 7, 8
 
   + x86-64
-  + [Vendor announcementï»¿](https://docs.microsoft.com/en-us/windows-server/get-started/windows-server-release-info)
+  + [Vendor announcement﻿](https://docs.microsoft.com/en-us/windows-server/get-started/windows-server-release-info)
   + Last compatible version: 1.215
 
 ##### The following operating systems are no longer supported since 01 July 2022
@@ -945,22 +933,22 @@ The list of operating system versions supported by Dynatrace ActiveGate is updat
 * Linux: CentOS 7.0, 7.1, 7.2, 7.3, 7.4, 7.5, 7.6, 7.7, 7.8, 8.0, 8.1, 8.2, 8.3, 8.4
 
   + x86-64
-  + [Vendor announcementï»¿](https://wiki.centos.org/FAQ/General)
+  + [Vendor announcement﻿](https://wiki.centos.org/FAQ/General)
 * Linux: Red Hat Enterprise Linux 6.x, 7.0, 7.1, 7.2, 7.3, 7.4, 7.5, 7.6, 7.7, 7.8, 8.0, 8.1, 8.3
 
-  + [Vendor announcementï»¿](https://access.redhat.com/support/policy/updates/errata)
+  + [Vendor announcement﻿](https://access.redhat.com/support/policy/updates/errata)
 
 ##### The following operating systems are no longer supported since 01 November 2022
 
 * Linux: Red Hat Enterprise Linux 8.2
 
-  + [Vendor announcementï»¿](https://access.redhat.com/support/policy/updates/errata)
+  + [Vendor announcement﻿](https://access.redhat.com/support/policy/updates/errata)
 
 ##### The following operating systems are no longer supported since 01 February 2023
 
 * Linux: Ubuntu 14.04
 
-  + [Vendor announcementï»¿](https://ubuntu.com/about/release-cycle)
+  + [Vendor announcement﻿](https://ubuntu.com/about/release-cycle)
   + Last compatible version: 1.257
 
 ##### The following operating systems are no longer supported since 01 September 2023
@@ -968,125 +956,142 @@ The list of operating system versions supported by Dynatrace ActiveGate is updat
 * Windows: Windows 8.1
 
   + x86-64
-  + [Vendor announcementï»¿](https://docs.microsoft.com/en-us/windows-server/get-started/windows-server-release-info)
+  + [Vendor announcement﻿](https://docs.microsoft.com/en-us/windows-server/get-started/windows-server-release-info)
   + Last compatible version: 1.271
 
 ##### The following operating systems are no longer supported since 01 November 2023
 
 * Linux: SUSE Enterprise Linux 15.1, 15.2, 15.3
 
-  + [Vendor announcementï»¿](https://www.suse.com/lifecycle/)
+  + [Vendor announcement﻿](https://www.suse.com/lifecycle/)
 
 ##### The following operating systems are no longer supported since 01 December 2023
 
 * Linux: Red Hat Enterprise Linux 8.4, 8.7, 9.1
 
-  + [Vendor announcementï»¿](https://access.redhat.com/support/policy/updates/errata)
+  + [Vendor announcement﻿](https://access.redhat.com/support/policy/updates/errata)
 * Linux: Oracle Linux 8.4, 8.7, 9.1
 
   + x86-64
-  + [Vendor announcementï»¿](https://www.oracle.com/a/ocom/docs/elsp-lifetime-069338.pdf)
+  + [Vendor announcement﻿](https://www.oracle.com/a/ocom/docs/elsp-lifetime-069338.pdf)
 * Linux: Rocky Linux 9.1
 
   + x86-64
-  + [Vendor announcementï»¿](https://endoflife.date/rocky-linux)
+  + [Vendor announcement﻿](https://endoflife.date/rocky-linux)
 
 ##### The following operating systems are no longer supported since 01 January 2024
 
 * Linux: Amazon Linux AMI 2018.3
 
   + x86-64, ARM64 (AArch64)
-  + [Vendor announcementï»¿](https://aws.amazon.com/linux/)
+  + [Vendor announcement﻿](https://aws.amazon.com/linux/)
 
 ##### The following operating systems are no longer supported since 01 May 2024
 
 * Windows: Windows Server 2012, 2012 R2
 
   + x86-64
-  + [Vendor announcementï»¿](https://docs.microsoft.com/en-us/windows-server/get-started/windows-server-release-info)
+  + [Vendor announcement﻿](https://docs.microsoft.com/en-us/windows-server/get-started/windows-server-release-info)
 
 ##### The following operating systems are no longer supported since 01 June 2024
 
 * Linux: Oracle Linux 8.8, 9.2
 
   + x86-64
-  + [Vendor announcementï»¿](https://www.oracle.com/a/ocom/docs/elsp-lifetime-069338.pdf)
+  + [Vendor announcement﻿](https://www.oracle.com/a/ocom/docs/elsp-lifetime-069338.pdf)
 * Linux: Rocky Linux 9.2
 
   + x86-64
-  + [Vendor announcementï»¿](https://endoflife.date/rocky-linux)
+  + [Vendor announcement﻿](https://endoflife.date/rocky-linux)
 
 ##### The following operating systems are no longer supported since 01 July 2024
 
 * Linux: SUSE Enterprise Linux 15.4
 
-  + [Vendor announcementï»¿](https://www.suse.com/lifecycle/)
+  + [Vendor announcement﻿](https://www.suse.com/lifecycle/)
 
 ##### The following operating systems are no longer supported since 01 December 2024
 
 * Linux: Red Hat Enterprise Linux 8.6, 8.9, 9.0, 9.3
 
-  + [Vendor announcementï»¿](https://access.redhat.com/support/policy/updates/errata)
+  + [Vendor announcement﻿](https://access.redhat.com/support/policy/updates/errata)
 * Linux: Oracle Linux 8.9, 9.3
 
   + x86-64
-  + [Vendor announcementï»¿](https://www.oracle.com/a/ocom/docs/elsp-lifetime-069338.pdf)
+  + [Vendor announcement﻿](https://www.oracle.com/a/ocom/docs/elsp-lifetime-069338.pdf)
 * Linux: Rocky Linux 8.9, 9.3
 
   + x86-64
-  + [Vendor announcementï»¿](https://endoflife.date/rocky-linux)
+  + [Vendor announcement﻿](https://endoflife.date/rocky-linux)
 
 ##### The following operating systems are no longer supported since 01 January 2025
 
 * Linux: CentOS 7.9
 
   + x86-64
-  + [Vendor announcementï»¿](https://wiki.centos.org/FAQ/General)
+  + [Vendor announcement﻿](https://wiki.centos.org/FAQ/General)
 * Linux: Red Hat Enterprise Linux 7.9
 
-  + [Vendor announcementï»¿](https://access.redhat.com/support/policy/updates/errata)
+  + [Vendor announcement﻿](https://access.redhat.com/support/policy/updates/errata)
 
 ##### The following operating systems are no longer supported since 01 June 2025
 
 * Linux: Oracle Linux 9.4
 
   + x86-64
-  + [Vendor announcementï»¿](https://www.oracle.com/a/ocom/docs/elsp-lifetime-069338.pdf)
+  + [Vendor announcement﻿](https://www.oracle.com/a/ocom/docs/elsp-lifetime-069338.pdf)
 * Linux: Rocky Linux 9.4
 
   + x86-64
-  + [Vendor announcementï»¿](https://endoflife.date/rocky-linux)
+  + [Vendor announcement﻿](https://endoflife.date/rocky-linux)
 
 ##### The following operating systems are no longer supported since 01 July 2025
 
 * Linux: Oracle Linux 7.9
 
   + x86-64
-  + [Vendor announcementï»¿](https://www.oracle.com/a/ocom/docs/elsp-lifetime-069338.pdf)
+  + [Vendor announcement﻿](https://www.oracle.com/a/ocom/docs/elsp-lifetime-069338.pdf)
 * Linux: SUSE Enterprise Linux 15.5
 
-  + [Vendor announcementï»¿](https://www.suse.com/lifecycle/)
+  + [Vendor announcement﻿](https://www.suse.com/lifecycle/)
 
 ##### The following operating systems are no longer supported since 01 December 2025
 
 * Linux: Red Hat Enterprise Linux 8.8, 9.2, 9.5
 
-  + [Vendor announcementï»¿](https://access.redhat.com/support/policy/updates/errata)
+  + [Vendor announcement﻿](https://access.redhat.com/support/policy/updates/errata)
 * Linux: Oracle Linux 9.5
 
   + x86-64
-  + [Vendor announcementï»¿](https://www.oracle.com/a/ocom/docs/elsp-lifetime-069338.pdf)
+  + [Vendor announcement﻿](https://www.oracle.com/a/ocom/docs/elsp-lifetime-069338.pdf)
 * Linux: Rocky Linux 9.5
 
   + x86-64
-  + [Vendor announcementï»¿](https://endoflife.date/rocky-linux)
+  + [Vendor announcement﻿](https://endoflife.date/rocky-linux)
 
 ##### The following operating systems are no longer supported since 01 May 2026
 
 * Windows: Windows 10
 
   + x86-64
-  + [Vendor announcementï»¿](https://docs.microsoft.com/en-us/windows-server/get-started/windows-server-release-info)
+  + [Vendor announcement﻿](https://docs.microsoft.com/en-us/windows-server/get-started/windows-server-release-info)
+
+##### The following operating systems are no longer supported since 01 June 2026
+
+* Linux: Oracle Linux 9.6, 10.0
+
+  + x86-64
+  + [Vendor announcement﻿](https://www.oracle.com/a/ocom/docs/elsp-lifetime-069338.pdf)
+* Linux: Rocky Linux 9.6, 10.0
+
+  + x86-64
+  + [Vendor announcement﻿](https://endoflife.date/rocky-linux)
+
+##### The following operating systems are no longer supported since 01 July 2026
+
+* Linux: SUSE Enterprise Linux 15.6
+
+  + [Vendor announcement﻿](https://www.suse.com/lifecycle/)
 
 ## Dynatrace Managed
 
@@ -1098,101 +1103,90 @@ For currently supported OS, see [Dynatrace Managed system requirements](/managed
 
 ### Future Dynatrace Managed operating systems support changes
 
-##### The following operating systems will no longer be supported starting 01 June 2026
-
-* Linux: Oracle Linux 9.6
-
-  + x86-64
-  + [Vendor announcementï»¿](https://www.oracle.com/a/ocom/docs/elsp-lifetime-069338.pdf)
-* Linux: Rocky Linux 9.6
-
-  + x86-64
-  + [Vendor announcementï»¿](https://endoflife.date/rocky-linux)
-
-##### The following operating systems will no longer be supported starting 01 July 2026
-
-* Linux: SUSE Enterprise Linux 15.3
-
-  + x86-64
-  + [Vendor announcementï»¿](https://www.suse.com/lifecycle/)
-
 ##### The following operating systems will no longer be supported starting 01 November 2026
 
 * Linux: Red Hat Enterprise Linux 9.4, 9.7
 
   + x86-64
-  + [Vendor announcementï»¿](https://access.redhat.com/support/policy/updates/errata)
+  + [Vendor announcement﻿](https://access.redhat.com/support/policy/updates/errata)
 * Linux: Ubuntu 16.04
 
   + x86-64
-  + [Vendor announcementï»¿](https://ubuntu.com/about/release-cycle)
+  + [Vendor announcement﻿](https://ubuntu.com/about/release-cycle)
 
 ##### The following operating systems will no longer be supported starting 01 January 2027
 
 * Linux: Amazon Linux 2
 
   + x86-64
-  + [Vendor announcementï»¿](https://aws.amazon.com/linux/)
+  + [Vendor announcement﻿](https://aws.amazon.com/linux/)
 
 ##### The following operating systems will no longer be supported starting 01 July 2027
 
 * Linux: SUSE Enterprise Linux 15.4
 
   + x86-64
-  + [Vendor announcementï»¿](https://www.suse.com/lifecycle/)
+  + [Vendor announcement﻿](https://www.suse.com/lifecycle/)
 
 ##### The following operating systems will no longer be supported starting 01 November 2027
 
 * Linux: Ubuntu 22.04
 
   + x86-64
-  + [Vendor announcementï»¿](https://ubuntu.com/about/release-cycle)
+  + [Vendor announcement﻿](https://ubuntu.com/about/release-cycle)
 
 ##### The following operating systems will no longer be supported starting 01 December 2027
 
 * Linux: Red Hat Enterprise Linux 9.6
 
   + x86-64
-  + [Vendor announcementï»¿](https://access.redhat.com/support/policy/updates/errata)
+  + [Vendor announcement﻿](https://access.redhat.com/support/policy/updates/errata)
 
 ##### The following operating systems will no longer be supported starting 01 May 2028
 
 * Linux: SUSE Enterprise Linux 12.5
 
   + x86-64
-  + [Vendor announcementï»¿](https://www.suse.com/lifecycle/)
+  + [Vendor announcement﻿](https://www.suse.com/lifecycle/)
 
 ##### The following operating systems will no longer be supported starting 01 July 2028
 
 * Linux: SUSE Enterprise Linux 15.5
 
   + x86-64
-  + [Vendor announcementï»¿](https://www.suse.com/lifecycle/)
+  + [Vendor announcement﻿](https://www.suse.com/lifecycle/)
 
 ##### The following operating systems will no longer be supported starting 01 November 2028
 
 * Linux: Ubuntu 18.04
 
   + x86-64
-  + [Vendor announcementï»¿](https://ubuntu.com/about/release-cycle)
+  + [Vendor announcement﻿](https://ubuntu.com/about/release-cycle)
 
 ##### The following operating systems will no longer be supported starting 01 December 2029
 
 * Linux: Red Hat Enterprise Linux 8.10
 
   + x86-64
-  + [Vendor announcementï»¿](https://access.redhat.com/support/policy/updates/errata)
+  + [Vendor announcement﻿](https://access.redhat.com/support/policy/updates/errata)
 * Linux: Ubuntu 24.04
 
   + x86-64
-  + [Vendor announcementï»¿](https://ubuntu.com/about/release-cycle)
+  + [Vendor announcement﻿](https://ubuntu.com/about/release-cycle)
 
 ##### The following operating systems will no longer be supported starting 01 November 2030
 
 * Linux: Ubuntu 20.04
 
   + x86-64
-  + [Vendor announcementï»¿](https://ubuntu.com/about/release-cycle)
+  + [Vendor announcement﻿](https://ubuntu.com/about/release-cycle)
+
+##### The following operating systems will no longer be supported starting 01 December 2031
+
+* Linux: Ubuntu 26.04
+
+  + x86-64
+  + [Vendor announcement﻿](https://ubuntu.com/about/release-cycle)
 
 ### Past Dynatrace Managed operating systems support changes
 
@@ -1201,7 +1195,7 @@ For currently supported OS, see [Dynatrace Managed system requirements](/managed
 * Linux: SUSE Enterprise Linux 12.1
 
   + x86-64
-  + [Vendor announcementï»¿](https://www.suse.com/lifecycle/)
+  + [Vendor announcement﻿](https://www.suse.com/lifecycle/)
   + Last compatible version: 1.208
 
 ##### The following operating systems are no longer supported since 01 September 2021
@@ -1209,12 +1203,12 @@ For currently supported OS, see [Dynatrace Managed system requirements](/managed
 * Linux: Amazon Linux AMI 2017.x
 
   + x86-64
-  + [Vendor announcementï»¿](https://aws.amazon.com/linux/)
+  + [Vendor announcement﻿](https://aws.amazon.com/linux/)
   + Last compatible version: 1.212
 * Linux: openSUSE 12.x, 13.x, 14.x, 15.0
 
   + x86-64
-  + [Vendor announcementï»¿](https://en.opensuse.org/openSUSE:Roadmap)
+  + [Vendor announcement﻿](https://en.opensuse.org/openSUSE:Roadmap)
   + Last compatible version: 1.212
 
 ##### The following operating systems are no longer supported since 01 October 2021
@@ -1222,27 +1216,27 @@ For currently supported OS, see [Dynatrace Managed system requirements](/managed
 * Linux: CentOS 6.x
 
   + x86-64
-  + [Vendor announcementï»¿](https://www.centos.org/centos-linux/)
+  + [Vendor announcement﻿](https://www.centos.org/centos-linux/)
   + Last compatible version: 1.214
 * Linux: Red Hat Enterprise Linux 6.x
 
   + x86-64
-  + [Vendor announcementï»¿](https://access.redhat.com/support/policy/updates/errata)
+  + [Vendor announcement﻿](https://access.redhat.com/support/policy/updates/errata)
   + Last compatible version: 1.214
 * Linux: openSUSE 15.1
 
   + x86-64
-  + [Vendor announcementï»¿](https://en.opensuse.org/openSUSE:Roadmap)
+  + [Vendor announcement﻿](https://en.opensuse.org/openSUSE:Roadmap)
   + Last compatible version: 1.214
 * Linux: Oracle Linux 6.x
 
   + x86-64
-  + [Vendor announcementï»¿](https://www.oracle.com/a/ocom/docs/elsp-lifetime-069338.pdf)
+  + [Vendor announcement﻿](https://www.oracle.com/a/ocom/docs/elsp-lifetime-069338.pdf)
   + Last compatible version: 1.214
 * Linux: SUSE Enterprise Linux 12.2
 
   + x86-64
-  + [Vendor announcementï»¿](https://www.suse.com/lifecycle/)
+  + [Vendor announcement﻿](https://www.suse.com/lifecycle/)
   + Last compatible version: 1.222
 
 ##### The following operating systems are no longer supported since 01 November 2021
@@ -1250,7 +1244,7 @@ For currently supported OS, see [Dynatrace Managed system requirements](/managed
 * Linux: openSUSE 15.2+
 
   + x86-64
-  + [Vendor announcementï»¿](https://en.opensuse.org/openSUSE:Roadmap)
+  + [Vendor announcement﻿](https://en.opensuse.org/openSUSE:Roadmap)
   + Last compatible version: 1.216
 
 ##### The following operating systems are no longer supported since 01 February 2022
@@ -1258,22 +1252,22 @@ For currently supported OS, see [Dynatrace Managed system requirements](/managed
 * Linux: CentOS 7.0, 7.1, 7.2, 7.3, 7.4, 7.5, 8.0
 
   + x86-64
-  + [Vendor announcementï»¿](https://www.centos.org/centos-linux/)
+  + [Vendor announcement﻿](https://www.centos.org/centos-linux/)
   + Last compatible version: 1.226
 * Linux: Debian 8
 
   + x86-64
-  + [Vendor announcementï»¿](https://wiki.debian.org/DebianReleases)
+  + [Vendor announcement﻿](https://wiki.debian.org/DebianReleases)
   + Last compatible version: 1.226
 * Linux: Red Hat Enterprise Linux 7.0, 7.1, 7.2, 7.3, 7.4, 7.5, 8.0
 
   + x86-64
-  + [Vendor announcementï»¿](https://access.redhat.com/support/policy/updates/errata)
+  + [Vendor announcement﻿](https://access.redhat.com/support/policy/updates/errata)
   + Last compatible version: 1.226
 * Linux: Oracle Linux 7.0, 7.1, 7.2, 7.3, 7.4, 7.5, 8.0
 
   + x86-64
-  + [Vendor announcementï»¿](https://www.oracle.com/a/ocom/docs/elsp-lifetime-069338.pdf)
+  + [Vendor announcement﻿](https://www.oracle.com/a/ocom/docs/elsp-lifetime-069338.pdf)
   + Last compatible version: 1.226
 
 ##### The following operating systems are no longer supported since 01 March 2022
@@ -1281,17 +1275,17 @@ For currently supported OS, see [Dynatrace Managed system requirements](/managed
 * Linux: CentOS 8.3
 
   + x86-64
-  + [Vendor announcementï»¿](https://www.centos.org/centos-linux/)
+  + [Vendor announcement﻿](https://www.centos.org/centos-linux/)
   + Last compatible version: 1.228
 * Linux: Red Hat Enterprise Linux 8.3
 
   + x86-64
-  + [Vendor announcementï»¿](https://access.redhat.com/support/policy/updates/errata)
+  + [Vendor announcement﻿](https://access.redhat.com/support/policy/updates/errata)
   + Last compatible version: 1.228
 * Linux: Oracle Linux 8.3
 
   + x86-64
-  + [Vendor announcementï»¿](https://www.oracle.com/a/ocom/docs/elsp-lifetime-069338.pdf)
+  + [Vendor announcement﻿](https://www.oracle.com/a/ocom/docs/elsp-lifetime-069338.pdf)
   + Last compatible version: 1.228
 
 ##### The following operating systems are no longer supported since 01 May 2022
@@ -1299,17 +1293,17 @@ For currently supported OS, see [Dynatrace Managed system requirements](/managed
 * Linux: CentOS 7.6, 8.1
 
   + x86-64
-  + [Vendor announcementï»¿](https://www.centos.org/centos-linux/)
+  + [Vendor announcement﻿](https://www.centos.org/centos-linux/)
   + Last compatible version: 1.232
 * Linux: Red Hat Enterprise Linux 7.6, 8.1
 
   + x86-64
-  + [Vendor announcementï»¿](https://access.redhat.com/support/policy/updates/errata)
+  + [Vendor announcement﻿](https://access.redhat.com/support/policy/updates/errata)
   + Last compatible version: 1.232
 * Linux: Oracle Linux 7.6, 8.1
 
   + x86-64
-  + [Vendor announcementï»¿](https://www.oracle.com/a/ocom/docs/elsp-lifetime-069338.pdf)
+  + [Vendor announcement﻿](https://www.oracle.com/a/ocom/docs/elsp-lifetime-069338.pdf)
   + Last compatible version: 1.232
 
 ##### The following operating systems are no longer supported since 01 June 2022
@@ -1317,7 +1311,7 @@ For currently supported OS, see [Dynatrace Managed system requirements](/managed
 * Linux: Ubuntu 20.10
 
   + x86-64
-  + [Vendor announcementï»¿](https://ubuntu.com/about/release-cycle)
+  + [Vendor announcement﻿](https://ubuntu.com/about/release-cycle)
   + Last compatible version: 1.234
 
 ##### The following operating systems are no longer supported since 01 July 2022
@@ -1325,17 +1319,17 @@ For currently supported OS, see [Dynatrace Managed system requirements](/managed
 * Linux: CentOS 7.8, 8.2, 8.4
 
   + x86-64
-  + [Vendor announcementï»¿](https://www.centos.org/centos-linux/)
+  + [Vendor announcement﻿](https://www.centos.org/centos-linux/)
   + Last compatible version: 1.246
 * Linux: Red Hat Enterprise Linux 7.8
 
   + x86-64
-  + [Vendor announcementï»¿](https://access.redhat.com/support/policy/updates/errata)
+  + [Vendor announcement﻿](https://access.redhat.com/support/policy/updates/errata)
   + Last compatible version: 1.246
 * Linux: Oracle Linux 7.8
 
   + x86-64
-  + [Vendor announcementï»¿](https://www.oracle.com/a/ocom/docs/elsp-lifetime-069338.pdf)
+  + [Vendor announcement﻿](https://www.oracle.com/a/ocom/docs/elsp-lifetime-069338.pdf)
   + Last compatible version: 1.246
 
 ##### The following operating systems are no longer supported since 01 August 2022
@@ -1343,17 +1337,17 @@ For currently supported OS, see [Dynatrace Managed system requirements](/managed
 * Linux: CentOS 7.7
 
   + x86-64
-  + [Vendor announcementï»¿](https://www.centos.org/centos-linux/)
+  + [Vendor announcement﻿](https://www.centos.org/centos-linux/)
   + Last compatible version: 1.238
 * Linux: Red Hat Enterprise Linux 7.7
 
   + x86-64
-  + [Vendor announcementï»¿](https://access.redhat.com/support/policy/updates/errata)
+  + [Vendor announcement﻿](https://access.redhat.com/support/policy/updates/errata)
   + Last compatible version: 1.238
 * Linux: Oracle Linux 7.7
 
   + x86-64
-  + [Vendor announcementï»¿](https://www.oracle.com/a/ocom/docs/elsp-lifetime-069338.pdf)
+  + [Vendor announcement﻿](https://www.oracle.com/a/ocom/docs/elsp-lifetime-069338.pdf)
   + Last compatible version: 1.238
 
 ##### The following operating systems are no longer supported since 01 October 2022
@@ -1361,11 +1355,11 @@ For currently supported OS, see [Dynatrace Managed system requirements](/managed
 * Linux: SUSE Enterprise Linux 11.4
 
   + x86-64
-  + [Vendor announcementï»¿](https://www.suse.com/lifecycle/)
+  + [Vendor announcement﻿](https://www.suse.com/lifecycle/)
 * Linux: Ubuntu 21.04
 
   + x86-64
-  + [Vendor announcementï»¿](https://ubuntu.com/about/release-cycle)
+  + [Vendor announcement﻿](https://ubuntu.com/about/release-cycle)
   + Last compatible version: 1.244
 
 ##### The following operating systems are no longer supported since 01 January 2023
@@ -1373,12 +1367,12 @@ For currently supported OS, see [Dynatrace Managed system requirements](/managed
 * Linux: Debian 9
 
   + x86-64
-  + [Vendor announcementï»¿](https://wiki.debian.org/DebianReleases)
+  + [Vendor announcement﻿](https://wiki.debian.org/DebianReleases)
   + Last compatible version: 1.254
 * Linux: SUSE Enterprise Linux 12.3
 
   + x86-64
-  + [Vendor announcementï»¿](https://www.suse.com/lifecycle/)
+  + [Vendor announcement﻿](https://www.suse.com/lifecycle/)
   + Last compatible version: 1.254
 
 ##### The following operating systems are no longer supported since 01 March 2023
@@ -1386,12 +1380,12 @@ For currently supported OS, see [Dynatrace Managed system requirements](/managed
 * Linux: Red Hat Enterprise Linux 8.2
 
   + x86-64
-  + [Vendor announcementï»¿](https://access.redhat.com/support/policy/updates/errata)
+  + [Vendor announcement﻿](https://access.redhat.com/support/policy/updates/errata)
   + Last compatible version: 1.252
 * Linux: Oracle Linux 8.2
 
   + x86-64
-  + [Vendor announcementï»¿](https://www.oracle.com/a/ocom/docs/elsp-lifetime-069338.pdf)
+  + [Vendor announcement﻿](https://www.oracle.com/a/ocom/docs/elsp-lifetime-069338.pdf)
   + Last compatible version: 1.252
 
 ##### The following operating systems are no longer supported since 01 July 2023
@@ -1399,14 +1393,14 @@ For currently supported OS, see [Dynatrace Managed system requirements](/managed
 * Linux: SUSE Enterprise Linux 15.0
 
   + x86-64
-  + [Vendor announcementï»¿](https://www.suse.com/lifecycle/)
+  + [Vendor announcement﻿](https://www.suse.com/lifecycle/)
 
 ##### The following operating systems are no longer supported since 01 November 2023
 
 * Linux: SUSE Enterprise Linux 15.1
 
   + x86-64
-  + [Vendor announcementï»¿](https://www.suse.com/lifecycle/)
+  + [Vendor announcement﻿](https://www.suse.com/lifecycle/)
   + Last compatible version: 1.278
 
 ##### The following operating systems are no longer supported since 01 December 2023
@@ -1414,12 +1408,12 @@ For currently supported OS, see [Dynatrace Managed system requirements](/managed
 * Linux: Red Hat Enterprise Linux 8.7, 9.1
 
   + x86-64
-  + [Vendor announcementï»¿](https://access.redhat.com/support/policy/updates/errata)
+  + [Vendor announcement﻿](https://access.redhat.com/support/policy/updates/errata)
   + Last compatible version: 1.268
 * Linux: Oracle Linux 8.7, 9.1
 
   + x86-64
-  + [Vendor announcementï»¿](https://www.oracle.com/a/ocom/docs/elsp-lifetime-069338.pdf)
+  + [Vendor announcement﻿](https://www.oracle.com/a/ocom/docs/elsp-lifetime-069338.pdf)
   + Last compatible version: 1.268
 
 ##### The following operating systems are no longer supported since 01 January 2024
@@ -1427,22 +1421,22 @@ For currently supported OS, see [Dynatrace Managed system requirements](/managed
 * Linux: Red Hat Enterprise Linux 8.4
 
   + x86-64
-  + [Vendor announcementï»¿](https://access.redhat.com/support/policy/updates/errata)
+  + [Vendor announcement﻿](https://access.redhat.com/support/policy/updates/errata)
   + Last compatible version: 1.280
 * Linux: Oracle Linux 8.4
 
   + x86-64
-  + [Vendor announcementï»¿](https://www.oracle.com/a/ocom/docs/elsp-lifetime-069338.pdf)
+  + [Vendor announcement﻿](https://www.oracle.com/a/ocom/docs/elsp-lifetime-069338.pdf)
   + Last compatible version: 1.280
 * Linux: Rocky Linux 9.1
 
   + x86-64
-  + [Vendor announcementï»¿](https://endoflife.date/rocky-linux)
+  + [Vendor announcement﻿](https://endoflife.date/rocky-linux)
   + Last compatible version: 1.272
 * Linux: SUSE Enterprise Linux 12.4
 
   + x86-64
-  + [Vendor announcementï»¿](https://www.suse.com/lifecycle/)
+  + [Vendor announcement﻿](https://www.suse.com/lifecycle/)
   + Last compatible version: 1.280
 
 ##### The following operating systems are no longer supported since 01 July 2024
@@ -1450,7 +1444,7 @@ For currently supported OS, see [Dynatrace Managed system requirements](/managed
 * Linux: Amazon Linux AMI 2018.3
 
   + x86-64
-  + [Vendor announcementï»¿](https://aws.amazon.com/linux/)
+  + [Vendor announcement﻿](https://aws.amazon.com/linux/)
   + Last compatible version: 1.290
 
 ##### The following operating systems are no longer supported since 01 August 2024
@@ -1458,7 +1452,7 @@ For currently supported OS, see [Dynatrace Managed system requirements](/managed
 * Linux: Oracle Linux 8.9
 
   + x86-64
-  + [Vendor announcementï»¿](https://www.oracle.com/a/ocom/docs/elsp-lifetime-069338.pdf)
+  + [Vendor announcement﻿](https://www.oracle.com/a/ocom/docs/elsp-lifetime-069338.pdf)
   + Last compatible version: 1.292
 
 ##### The following operating systems are no longer supported since 01 October 2024
@@ -1466,7 +1460,7 @@ For currently supported OS, see [Dynatrace Managed system requirements](/managed
 * Linux: SUSE Enterprise Linux 15.2
 
   + x86-64
-  + [Vendor announcementï»¿](https://www.suse.com/lifecycle/)
+  + [Vendor announcement﻿](https://www.suse.com/lifecycle/)
   + Last compatible version: 1.300
 
 ##### The following operating systems are no longer supported since 01 November 2024
@@ -1474,12 +1468,12 @@ For currently supported OS, see [Dynatrace Managed system requirements](/managed
 * Linux: Oracle Linux 9.0, 9.3
 
   + x86-64
-  + [Vendor announcementï»¿](https://www.oracle.com/a/ocom/docs/elsp-lifetime-069338.pdf)
+  + [Vendor announcement﻿](https://www.oracle.com/a/ocom/docs/elsp-lifetime-069338.pdf)
   + Last compatible version: 1.302
 * Linux: Rocky Linux 9.0, 9.3
 
   + x86-64
-  + [Vendor announcementï»¿](https://endoflife.date/rocky-linux)
+  + [Vendor announcement﻿](https://endoflife.date/rocky-linux)
   + Last compatible version: 1.302
 
 ##### The following operating systems are no longer supported since 01 December 2024
@@ -1487,12 +1481,12 @@ For currently supported OS, see [Dynatrace Managed system requirements](/managed
 * Linux: Red Hat Enterprise Linux 8.6, 8.9, 9.0, 9.3
 
   + x86-64
-  + [Vendor announcementï»¿](https://access.redhat.com/support/policy/updates/errata)
+  + [Vendor announcement﻿](https://access.redhat.com/support/policy/updates/errata)
   + Last compatible version: 1.304
 * Linux: Oracle Linux 8.6
 
   + x86-64
-  + [Vendor announcementï»¿](https://www.oracle.com/a/ocom/docs/elsp-lifetime-069338.pdf)
+  + [Vendor announcement﻿](https://www.oracle.com/a/ocom/docs/elsp-lifetime-069338.pdf)
   + Last compatible version: 1.304
 
 ##### The following operating systems are no longer supported since 01 February 2025
@@ -1500,17 +1494,17 @@ For currently supported OS, see [Dynatrace Managed system requirements](/managed
 * Linux: CentOS Stream 8
 
   + x86-64
-  + [Vendor announcementï»¿](https://www.centos.org/centos-stream/)
+  + [Vendor announcement﻿](https://www.centos.org/centos-stream/)
   + Last compatible version: 1.308
 * Linux: CentOS 7.9
 
   + x86-64
-  + [Vendor announcementï»¿](https://www.centos.org/centos-linux/)
+  + [Vendor announcement﻿](https://www.centos.org/centos-linux/)
   + Last compatible version: 1.308
 * Linux: Red Hat Enterprise Linux 7.9
 
   + x86-64
-  + [Vendor announcementï»¿](https://access.redhat.com/support/policy/updates/errata)
+  + [Vendor announcement﻿](https://access.redhat.com/support/policy/updates/errata)
   + Last compatible version: 1.308
 
 ##### The following operating systems are no longer supported since 01 July 2025
@@ -1518,29 +1512,47 @@ For currently supported OS, see [Dynatrace Managed system requirements](/managed
 * Linux: Oracle Linux 7.9
 
   + x86-64
-  + [Vendor announcementï»¿](https://www.oracle.com/a/ocom/docs/elsp-lifetime-069338.pdf)
+  + [Vendor announcement﻿](https://www.oracle.com/a/ocom/docs/elsp-lifetime-069338.pdf)
 
 ##### The following operating systems are no longer supported since 01 December 2025
 
 * Linux: Red Hat Enterprise Linux 8.8, 9.2, 9.5
 
   + x86-64
-  + [Vendor announcementï»¿](https://access.redhat.com/support/policy/updates/errata)
+  + [Vendor announcement﻿](https://access.redhat.com/support/policy/updates/errata)
 * Linux: Oracle Linux 9.5
 
   + x86-64
-  + [Vendor announcementï»¿](https://www.oracle.com/a/ocom/docs/elsp-lifetime-069338.pdf)
+  + [Vendor announcement﻿](https://www.oracle.com/a/ocom/docs/elsp-lifetime-069338.pdf)
 * Linux: Rocky Linux 9.5
 
   + x86-64
-  + [Vendor announcementï»¿](https://endoflife.date/rocky-linux)
+  + [Vendor announcement﻿](https://endoflife.date/rocky-linux)
 
 ##### The following operating systems are no longer supported since 01 January 2026
 
 * Linux: Debian 10
 
   + x86-64
-  + [Vendor announcementï»¿](https://wiki.debian.org/DebianReleases)
+  + [Vendor announcement﻿](https://wiki.debian.org/DebianReleases)
+
+##### The following operating systems are no longer supported since 01 June 2026
+
+* Linux: Oracle Linux 9.6
+
+  + x86-64
+  + [Vendor announcement﻿](https://www.oracle.com/a/ocom/docs/elsp-lifetime-069338.pdf)
+* Linux: Rocky Linux 9.6
+
+  + x86-64
+  + [Vendor announcement﻿](https://endoflife.date/rocky-linux)
+
+##### The following operating systems are no longer supported since 01 July 2026
+
+* Linux: SUSE Enterprise Linux 15.3
+
+  + x86-64
+  + [Vendor announcement﻿](https://www.suse.com/lifecycle/)
 
 ## Dynatrace Operator
 
@@ -1554,33 +1566,23 @@ OpenShift
 
 | Dynatrace Operator version | End of support date | Last supported Kubernetes version | Kubernetes EOL date |
 | --- | --- | --- | --- |
-| 0.11.x | May 1, 2025 | 1.26 | March 1, 2025 |
-| 0.12.x | July 1, 2025 | 1.27 | July 1, 2025 |
-| 0.13.x | September 1, 2025 | 1.27 | July 1, 2025 |
-| 0.14.x | November 1, 2025 | 1.28 | November 1, 2025 |
-| 0.15.x | January 1, 2026 | 1.28 | November 1, 2025 |
-| 1.0.x | April 1, 2026 | 1.29 | March 1, 2026 |
-| 1.1.x | May 1, 2026 | 1.29 | March 1, 2026 |
-| 1.2.x | July 1, 2026 | 1.30 | August 1, 2026 |
-| 1.3.x | October 1, 2026 | 1.30 | August 1, 2026 |
-| 1.4.x | December 1, 2026 | 1.30 | August 1, 2026 |
-| - | - | 1.31 | January 1, 2027 |
+| 1.3.x | October 1, 2026 | 1.31 | January 1, 2027 |
+| 1.4.x | December 1, 2026 | 1.31 | January 1, 2027 |
+| 1.5.x | May 1, 2027 | 1.32 | March 1, 2027 |
+| 1.6.x | July 1, 2027 | 1.33 | July 1, 2027 |
+| 1.7.x | October 1, 2027 | 1.34 | November 1, 2027 |
+| 1.8.x | October 1, 2027 | 1.34 | November 1, 2027 |
+| 1.9.x | October 1, 2027 | 1.34 | November 1, 2027 |
 
 | Dynatrace Operator version | End of support date | Last supported OpenShift version | OpenShift EOL date |
 | --- | --- | --- | --- |
-| 0.11.x | May 1, 2025 | 4.10, 4.11 | March 1, 2025 |
-| 0.12.x | July 1, 2025 | 4.10, 4.11 | March 1, 2025 |
-| 0.13.x | September 1, 2025 | 4.10, 4.11 | March 1, 2025 |
-| 0.14.x | November 1, 2025 | 4.10, 4.11 | March 1, 2025 |
-| 0.15.x | January 1, 2026 | 4.12, 4.13 | February 1, 2026 |
-| 1.0.x | April 1, 2026 | 4.12, 4.13 | February 1, 2026 |
-| 1.1.x | May 1, 2026 | 4.12, 4.13 | February 1, 2026 |
-| 1.2.x | July 1, 2026 | 4.12, 4.13 | February 1, 2026 |
 | 1.3.x | October 1, 2026 | 4.14, 4.15 | November 1, 2026 |
-| 1.4.x | December 1, 2026 | 4.14, 4.15 | November 1, 2026 |
-| - | - | 4.14, 4.15 | November 1, 2026 |
-| - | - | 4.16 | September 1, 2027 |
-| - | - | 4.17 | July 1, 2027 |
+| 1.4.x | December 1, 2026 | 4.16 | September 1, 2027 |
+| 1.5.x | May 1, 2027 | 4.18 | August 1, 2028 |
+| 1.6.x | July 1, 2027 | 4.19 | March 1, 2028 |
+| 1.7.x | October 1, 2027 | 4.19 | March 1, 2028 |
+| 1.8.x | October 1, 2027 | 4.19 | March 1, 2028 |
+| 1.9.x | October 1, 2027 | 4.19 | March 1, 2028 |
 
 ### Past Dynatrace Operator support changes
 
@@ -1590,24 +1592,40 @@ OpenShift
 
 | Dynatrace Operator version | End of support date | Last supported Kubernetes version | Kubernetes EOL date |
 | --- | --- | --- | --- |
-| 0.1.x â 0.4.x | August 1, 2023 | 1.19, 1.20 | August 1, 2023 |
+| 0.1.x – 0.4.x | August 1, 2023 | 1.19, 1.20 | August 1, 2023 |
 | 0.5.x | October 1, 2023 | 1.21 | November 1, 2023 |
 | 0.6.x | January 1, 2024 | 1.22 | January 1, 2024 |
 | 0.7.x | April 1, 2024 | 1.23 | April 1, 2024 |
 | 0.8.x | July 1, 2024 | 1.24 | August 1, 2024 |
 | 0.9.x | September 1, 2024 | 1.25 | November 1, 2024 |
 | 0.10.x | January 1, 2025 | 1.25 | November 1, 2024 |
+| 0.11.x | May 1, 2025 | 1.26 | March 1, 2025 |
+| 0.12.x | July 1, 2025 | 1.27 | July 1, 2025 |
+| 0.13.x | September 1, 2025 | 1.27 | July 1, 2025 |
+| 0.14.x | November 1, 2025 | 1.28 | November 1, 2025 |
+| 0.15.x | January 1, 2026 | 1.28 | November 1, 2025 |
+| 1.0.x | April 1, 2026 | 1.29 | March 1, 2026 |
+| 1.1.x | May 1, 2026 | 1.29 | March 1, 2026 |
+| 1.2.x | July 1, 2026 | 1.30 | August 1, 2026 |
 | The following versions have already reached end of support. | - | Kubernetes versions earlier than 1.19 | - |
 
 | Dynatrace Operator version | End of support date | Last supported OpenShift version | OpenShift EOL date |
 | --- | --- | --- | --- |
-| 0.1.x â 0.4.x | August 1, 2023 | 4.6, 4.7 | August 1, 2023 |
+| 0.1.x – 0.4.x | August 1, 2023 | 4.6, 4.7 | August 1, 2023 |
 | 0.5.x | October 1, 2023 | 4.6, 4.7 | August 1, 2023 |
 | 0.6.x | January 1, 2024 | 4.6, 4.7 | August 1, 2023 |
 | 0.7.x | April 1, 2024 | 4.8, 4.9 | May 1, 2024 |
 | 0.8.x | July 1, 2024 | 4.8, 4.9 | May 1, 2024 |
 | 0.9.x | September 1, 2024 | 4.8, 4.9 | May 1, 2024 |
 | 0.10.x | January 1, 2025 | 4.8, 4.9 | May 1, 2024 |
+| 0.11.x | May 1, 2025 | 4.10, 4.11 | March 1, 2025 |
+| 0.12.x | July 1, 2025 | 4.10, 4.11 | March 1, 2025 |
+| 0.13.x | September 1, 2025 | 4.10, 4.11 | March 1, 2025 |
+| 0.14.x | November 1, 2025 | 4.10, 4.11 | March 1, 2025 |
+| 0.15.x | January 1, 2026 | 4.12, 4.13 | February 1, 2026 |
+| 1.0.x | April 1, 2026 | 4.12, 4.13 | February 1, 2026 |
+| 1.1.x | May 1, 2026 | 4.12, 4.13 | February 1, 2026 |
+| 1.2.x | July 1, 2026 | 4.12, 4.13 | February 1, 2026 |
 | The following versions have already reached end of support. | - | OpenShift versions earlier than 4.6 (except 3.11) | - |
 
 ## OneAgent for Mobile

@@ -1,7 +1,6 @@
 ---
 title: Sizing guide for Dynatrace ActiveGates in the Kubernetes monitoring use-case
 source: https://docs.dynatrace.com/managed/ingest-from/setup-on-k8s/guides/deployment-and-configuration/resource-management/ag-resource-limits
-scraped: 2026-05-12T12:03:34.387477
 ---
 
 # Sizing guide for Dynatrace ActiveGates in the Kubernetes monitoring use-case
@@ -14,20 +13,20 @@ scraped: 2026-05-12T12:03:34.387477
 
 Setting appropriate resource requests (and limits, when needed) keeps Dynatrace ActiveGate instances stable and predictable. This guide details sizing methods based on scale and workload.
 
-A stable, healthy ActiveGate ensures continuous gapâfree monitoring data.
+A stable, healthy ActiveGate ensures continuous gap‑free monitoring data.
 
 ## Understanding the sizing drivers
 
 Actual required resources increase with:
 
-* **Number of pods**âThe primary sizing driver is the number of monitored pods. The resource consumption (CPU and memory) for Dynatrace ActiveGate components scales with the number of pods primarily due to increased data processing and storage needs. As the number of monitored pods grows, the ActiveGate handles more entity data, events, and metrics, resulting in higher CPU load for ingestion and processing, as well as increased memory for caching pod-related information. This is the primary sizing driver, with consumption scaling proportionally to pod count.
-* **Prometheus metrics volume**âThe number of Prometheus annotated pods directly correlates with increased resource requirements for Dynatrace ActiveGate, primarily through higher CPU consumption. As the count of annotated pods rises, the volume of scraped metrics grows, demanding more CPU cycles for collection, aggregation, and forwarding tasks. Memory impact is secondary, as metrics are forwarded to the Dynatrace tenant without long-term storage on the ActiveGate, though it scales proportionally with peak ingest rates.
-* **Number of nodes**âThe resource consumption (CPU and memory) for Dynatrace ActiveGate components scales with the number of nodes primarily due to increased monitoring overhead and load from node-level system pods. As the node count grows, the ActiveGate must handle more system-level data collection, entity processing, and event ingestion, leading to higher computational demands. This is a secondary driver compared to the number of pods, but it contributes proportionally to overall resource needs, especially in larger clusters where node-level monitoring adds cumulative load.
-* **Number of clusters monitored**âA single ActiveGate can monitor multiple clusters, however, this deployment pattern is **not recommended**. Monitoring multiple clusters with a single ActiveGate increases both CPU and memory requirements proportionally for each additional cluster, as the ActiveGate must handle more data processing, entity management, and event ingestion across clusters. This can lead to resource contention, higher risk of throttling or OOM restarts, and potential gaps in monitoring data.
+* **Number of pods**–The primary sizing driver is the number of monitored pods. The resource consumption (CPU and memory) for Dynatrace ActiveGate components scales with the number of pods primarily due to increased data processing and storage needs. As the number of monitored pods grows, the ActiveGate handles more entity data, events, and metrics, resulting in higher CPU load for ingestion and processing, as well as increased memory for caching pod-related information. This is the primary sizing driver, with consumption scaling proportionally to pod count.
+* **Prometheus metrics volume**–The number of Prometheus annotated pods directly correlates with increased resource requirements for Dynatrace ActiveGate, primarily through higher CPU consumption. As the count of annotated pods rises, the volume of scraped metrics grows, demanding more CPU cycles for collection, aggregation, and forwarding tasks. Memory impact is secondary, as metrics are forwarded to the Dynatrace tenant without long-term storage on the ActiveGate, though it scales proportionally with peak ingest rates.
+* **Number of nodes**–The resource consumption (CPU and memory) for Dynatrace ActiveGate components scales with the number of nodes primarily due to increased monitoring overhead and load from node-level system pods. As the node count grows, the ActiveGate must handle more system-level data collection, entity processing, and event ingestion, leading to higher computational demands. This is a secondary driver compared to the number of pods, but it contributes proportionally to overall resource needs, especially in larger clusters where node-level monitoring adds cumulative load.
+* **Number of clusters monitored**–A single ActiveGate can monitor multiple clusters, however, this deployment pattern is **not recommended**. Monitoring multiple clusters with a single ActiveGate increases both CPU and memory requirements proportionally for each additional cluster, as the ActiveGate must handle more data processing, entity management, and event ingestion across clusters. This can lead to resource contention, higher risk of throttling or OOM restarts, and potential gaps in monitoring data.
 
 **We recommend a setup where one containerized ActiveGate is monitoring one Kubernetes cluster.**
 
-This ensures optimal performance and reliability. This approach simplifies troubleshooting, avoids resource contention, and ensures predictable scaling as each ActiveGate handles only one clusterâs workload.
+This ensures optimal performance and reliability. This approach simplifies troubleshooting, avoids resource contention, and ensures predictable scaling as each ActiveGate handles only one cluster’s workload.
 
 ## Signs of an unhealthy ActiveGate
 
@@ -46,7 +45,7 @@ ActiveGate collects different types of data independently (for example, Promethe
 Sustained high throttling means insufficient CPU. Heavy throttling can cause gaps. Minor throttling is usually harmless.
 If the throttling affects the pod serving the monitoring ActiveGate this can cause data gaps.
 
-### Outâofâmemory restarts
+### Out‑of‑memory restarts
 
 If the ActiveGate is OOM-killed, data becomes unavailable until it restarts. After a restart, repeated OOM kills are likely to occur.
 
@@ -54,12 +53,12 @@ If the ActiveGate is OOM-killed, data becomes unavailable until it restarts. Aft
 
 The following indicators can be tracked to understand if the ActiveGate is in a healthy operational state.
 
-* **CPU usage vs requests**âIf CPU utilization consistently exceeds 85% increase the CPU request.
-* **CPU throttling** (container\_cpu\_cfs\_throttled\_periods\_total / periods)âIf throttling exceeds 10% consistently, increase the CPU request.
-* **Memory working set vs requests**âIf usage consistently exceeds 80%, increase the memory requests.
-* **ActiveGate restart count**âAfter an OOM-based restart, promptly raise the configured memory to prevent recurrence.
-* **Processing duration / cycle time** âIf the execution time of pipelines consistently exceeds 50 - 60 seconds, increase the CPU request. The pipeline execution time also depends on the amount of ingested data and other factors.
-* **Garbage collection times**âIncreasing garbage collection times are a clear indicator for an under-provisioned ActiveGate.
+* **CPU usage vs requests**–If CPU utilization consistently exceeds 85% increase the CPU request.
+* **CPU throttling** (container\_cpu\_cfs\_throttled\_periods\_total / periods)–If throttling exceeds 10% consistently, increase the CPU request.
+* **Memory working set vs requests**–If usage consistently exceeds 80%, increase the memory requests.
+* **ActiveGate restart count**–After an OOM-based restart, promptly raise the configured memory to prevent recurrence.
+* **Processing duration / cycle time** –If the execution time of pipelines consistently exceeds 50 - 60 seconds, increase the CPU request. The pipeline execution time also depends on the amount of ingested data and other factors.
+* **Garbage collection times**–Increasing garbage collection times are a clear indicator for an under-provisioned ActiveGate.
 
 Metrics reference
 
@@ -94,24 +93,24 @@ Start with the recommended values below.
 
 Splitting ActiveGate responsibilities into two groups is recommended: One group handling everything related to Kubernetes platform monitoring, including KSPM, and the other managing Agent traffic routing, telemetry ingest, and extensions. This separation provides several advantages:
 
-* **Isolation**âResource contention in one module doesn't affect the other. A spike in OneAgent traffic won't slow down Kubernetes metrics collection, and vice versa.
-* **Independent scaling**âTraffic forwarding and platform monitoring have fundamentally different scaling characteristics:
+* **Isolation**–Resource contention in one module doesn't affect the other. A spike in OneAgent traffic won't slow down Kubernetes metrics collection, and vice versa.
+* **Independent scaling**–Traffic forwarding and platform monitoring have fundamentally different scaling characteristics:
 
-  + **Kubernetes platform monitoring** can only scale vertically â when cluster size grows, you increase CPU and memory resources for the corresponding ActiveGate.
-  + **OneAgent traffic routing** can be horizontally scaled â when OneAgent traffic increases, additional routing ActiveGate replicas help distribute and share the load.
+  + **Kubernetes platform monitoring** can only scale vertically — when cluster size grows, you increase CPU and memory resources for the corresponding ActiveGate.
+  + **OneAgent traffic routing** can be horizontally scaled — when OneAgent traffic increases, additional routing ActiveGate replicas help distribute and share the load.
 
-  Separate ActiveGates let you scale each dimension independently without overâprovisioning resources. For example, you can add 3 more routing replicas to handle increased application traffic without unnecessarily increasing resources for platform monitoring.
-* **Easier troubleshooting** â When issues occur, you can immediately identify whether they originate from platform monitoring or OneAgent traffic, reducing diagnosis time.
+  Separate ActiveGates let you scale each dimension independently without over‑provisioning resources. For example, you can add 3 more routing replicas to handle increased application traffic without unnecessarily increasing resources for platform monitoring.
+* **Easier troubleshooting** — When issues occur, you can immediately identify whether they originate from platform monitoring or OneAgent traffic, reducing diagnosis time.
 
 ## Sizing ActiveGate
 
 Scenarios are established based on the number of pods that are monitored by a single ActiveGate. The necessary resources can be taken from the following tables.
 
 * **Scenario S**: <1000 pods
-* **Scenario M**: 1000â5000 pods
-* **Scenario L**: 5000â20000 pods
+* **Scenario M**: 1000–5000 pods
+* **Scenario L**: 5000–20000 pods
 
-  This guide does not cover environments with more than 20,000 pods. Due to the many variables involved, providing precise recommendations for such large-scale setups isnât feasible. As a starting point, you can use the guidance for the L scenario and gradually increase resources until stable gap-free monitoring is established.
+  This guide does not cover environments with more than 20,000 pods. Due to the many variables involved, providing precise recommendations for such large-scale setups isn’t feasible. As a starting point, you can use the guidance for the L scenario and gradually increase resources until stable gap-free monitoring is established.
   For tailored advice, we recommend reaching out to Dynatrace Support to ensure the best configuration for your environment.
 
 ### Secondary factors
@@ -130,6 +129,10 @@ If your cluster has more than 100 nodes, you'll need to adjust the resource allo
 #### Amount of Prometheus metrics scraped
 
 Dynatrace supports up to 1000 pod exporters, with each exporter able to provide up to 1000 metrics. If your environment approaches these limits, you'll need to increase the resources allocated to the ActiveGate to ensure reliable performance.
+
+Recommended at scale
+
+For high-volume Prometheus scraping, and for new deployments, we recommend the [OpenTelemetry Collector](/managed/ingest-from/opentelemetry/collector/use-cases/prometheus "Configure the OpenTelemetry Collector to scrape Prometheus endpoints and ingest the data into Dynatrace."). It scales horizontally on Kubernetes through a [Target Allocator-based deployment](/managed/ingest-from/opentelemetry/collector/use-cases/prometheus/standard "Deploy a tiered Target Allocator, Scraper, and Gateway architecture for production-grade Prometheus scraping with the OpenTelemetry Collector.") and ingests Prometheus metrics into Dynatrace over OTLP.
 
 ### ActiveGate for Kubernetes platform monitoring
 
@@ -172,8 +175,8 @@ Adjust requests (and limits if required) to fit your environment.
 
 The following manifests includes two DynaKube resources for configuring ActiveGates:
 
-* **k8s-monitoring** â Configures an ActiveGate dedicated to Kubernetes platform monitoring.
-* **agents** â Configures an ActiveGate that supports OneAgent, telemetry ingest, and additional features.
+* **k8s-monitoring** — Configures an ActiveGate dedicated to Kubernetes platform monitoring.
+* **agents** — Configures an ActiveGate that supports OneAgent, telemetry ingest, and additional features.
 
 You can apply both manifests at once or apply only the DynaKube you need.
 

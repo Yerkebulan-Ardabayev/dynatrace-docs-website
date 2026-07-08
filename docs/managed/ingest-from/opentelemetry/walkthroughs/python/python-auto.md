@@ -1,7 +1,6 @@
 ---
 title: Automatically instrument your Python application with OpenTelemetry
 source: https://docs.dynatrace.com/managed/ingest-from/opentelemetry/walkthroughs/python/python-auto
-scraped: 2026-05-12T12:04:13.507851
 ---
 
 # Automatically instrument your Python application with OpenTelemetry
@@ -32,9 +31,9 @@ To generate an access token, in Dynatrace, go to ![Access tokens](https://dt-cdn
 
 ## Step 2 Instrument your application
 
-The following example uses `opentelemetry-distro` to configure all available and applicable instrumentation libraries automatically. Instead, you could also skip steps 1 and 2 and selectively add instrumentation libraries by [installing `opentelemetry-instrumentation`ï»¿](https://pypi.org/project/opentelemetry-instrumentation/) and the applicable [instrumentation librariesï»¿](https://github.com/open-telemetry/opentelemetry-python-contrib/blob/main/instrumentation/README.md) manually.
+The following example uses `opentelemetry-distro` to configure all available and applicable instrumentation libraries automatically. Instead, you could also skip steps 1 and 2 and selectively add instrumentation libraries by [installing `opentelemetry-instrumentation`﻿](https://pypi.org/project/opentelemetry-instrumentation/) and the applicable [instrumentation libraries﻿](https://github.com/open-telemetry/opentelemetry-python-contrib/blob/main/instrumentation/README.md) manually.
 
-1. Use [pipï»¿](https://pypi.org/project/pip/) to install the following packages.
+1. Use [pip﻿](https://pypi.org/project/pip/) to install the following packages.
 
    ```
    pip install opentelemetry-distro
@@ -72,7 +71,7 @@ The following example uses `opentelemetry-distro` to configure all available and
 
    URL encoding in environment variables
 
-   Please note that the space in `OTEL_EXPORTER_OTLP_HEADERS` is encoded as `%20` as the variable [follows the correlation context conventionï»¿](https://opentelemetry.io/docs/specs/otel/protocol/exporter/#specifying-headers-via-environment-variables) and its [value needs to be percent-encodedï»¿](https://github.com/w3c/baggage/blob/main/baggage/HTTP_HEADER_FORMAT.md#value).
+   Please note that the space in `OTEL_EXPORTER_OTLP_HEADERS` is encoded as `%20` as the variable [follows the correlation context convention﻿](https://opentelemetry.io/docs/specs/otel/protocol/exporter/#specifying-headers-via-environment-variables) and its [value needs to be percent-encoded﻿](https://github.com/w3c/baggage/blob/main/baggage/HTTP_HEADER_FORMAT.md#value).
 4. Run your application with the `opentelemetry-instrument` agent.
 
    ```

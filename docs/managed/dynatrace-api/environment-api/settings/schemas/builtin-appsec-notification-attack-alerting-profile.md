@@ -1,7 +1,6 @@
 ---
 title: Settings API - Attack alerting profiles schema table
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/settings/schemas/builtin-appsec-notification-attack-alerting-profile
-scraped: 2026-05-12T11:43:31.328081
 ---
 
 # Settings API - Attack alerting profiles schema table

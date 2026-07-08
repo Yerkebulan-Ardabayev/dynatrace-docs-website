@@ -1,7 +1,6 @@
 ---
 title: Pre-upgrade assessment
 source: https://docs.dynatrace.com/managed/upgrade/up-plan/feasibility-checklist
-scraped: 2026-05-12T12:13:56.351835
 ---
 
 # Pre-upgrade assessment
@@ -147,4 +146,4 @@ Before executing the upgrade of your Dynatrace Managed environments to SaaS, use
 
 Questions?
 
-Visit the [Upgrade to SaaS forumï»¿](https://community.dynatrace.com/t5/Upgrade-to-SaaS/bd-p/upgrade_to_saas) to ask questions, get answers, and share what you've learned with others.
+Visit the [Upgrade to SaaS forum﻿](https://community.dynatrace.com/t5/Upgrade-to-SaaS/bd-p/upgrade_to_saas) to ask questions, get answers, and share what you've learned with others.

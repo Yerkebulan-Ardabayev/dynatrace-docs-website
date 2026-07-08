@@ -1,7 +1,6 @@
 ---
 title: Adjust the sensitivity of anomaly detection for services
 source: https://docs.dynatrace.com/managed/dynatrace-intelligence/anomaly-detection/adjust-sensitivity-anomaly-detection/adjust-sensitivity-services
-scraped: 2026-05-12T11:20:49.401762
 ---
 
 # Adjust the sensitivity of anomaly detection for services
@@ -102,7 +101,7 @@ To configure service spikes detection
 
 Davis automatically generates baselines during a recent reference period. The default reference period is the past **7 days**.
 
-If monitoring data detected during the reference period is no longer validâfor example, if you've deployed a new version of your application that includes major changes, and you're now receiving a high number of alertsâselect **Reset** to establish a new baseline. Davis will purge the previous reference period and immediately begin collecting data for a new reference period.
+If monitoring data detected during the reference period is no longer valid—for example, if you've deployed a new version of your application that includes major changes, and you're now receiving a high number of alerts—select **Reset** to establish a new baseline. Davis will purge the previous reference period and immediately begin collecting data for a new reference period.
 
 ## Thresholds for a specific service
 
@@ -112,7 +111,7 @@ To change threshold settings for a specific service
 
 1. Go to **Services**.
 2. Select the service you want to configure.
-3. In the browse menu (**â¦**), select **Settings**.
+3. In the browse menu (**…**), select **Settings**.
 4. Select **Anomaly detection**.
 5. Turn off **Use global anomaly detection settings**.
 6. Set the service-level thresholds in the same manner as described above for global settings.
@@ -133,7 +132,7 @@ Each of these use cases can now also be achieved by setting request-level thresh
 
 1. Go to **Services**.
 2. Select the service you want to configure.
-3. In the browse menu (**â¦**), select **Settings**.
+3. In the browse menu (**…**), select **Settings**.
 4. Select **Anomaly detection**.
 5. Scroll down to the **Set thresholds on key requests** section and expand the menu of the required key request.
 6. Turn off **Use service or global settings**.

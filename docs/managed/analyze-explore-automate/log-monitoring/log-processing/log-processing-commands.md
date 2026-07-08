@@ -1,7 +1,6 @@
 ---
 title: Log processing commands (Logs Classic)
 source: https://docs.dynatrace.com/managed/analyze-explore-automate/log-monitoring/log-processing/log-processing-commands
-scraped: 2026-05-12T12:00:16.464533
 ---
 
 # Log processing commands (Logs Classic)
@@ -38,11 +37,11 @@ The `USING` command in the processor definition is an equivalent of `USING(IN co
 
 Options:
 
-* `IN`âread-only field, default option.
-* `INOUT`âwriteable field.
-* `type`âone of the following types: `STRING`, `BOOLEAN`, `INTEGER`, `LONG`, `DOUBLE`, `DURATION`, `TIMESTAMP`, `IPADDR`.
-* `[]`âmarks a field as an array, meaning that multiple values of the attribute will be passed.
-* `?`âmarks the field as optional, meaning that the transformation will be executed even if there is no such attribute in the event.
+* `IN`—read-only field, default option.
+* `INOUT`—writeable field.
+* `type`—one of the following types: `STRING`, `BOOLEAN`, `INTEGER`, `LONG`, `DOUBLE`, `DURATION`, `TIMESTAMP`, `IPADDR`.
+* `[]`—marks a field as an array, meaning that multiple values of the attribute will be passed.
+* `?`—marks the field as optional, meaning that the transformation will be executed even if there is no such attribute in the event.
 
 Example:
 
@@ -51,9 +50,9 @@ USING(content, event.type:STRING?, INOUT attribute:INT[]) | ...
 ```
 
 In this case, three fields are passed from the incoming event to a transformation:  
-`content`âread-only string field  
-`event.type`âan optional, read-only string  
-`attribute`âa writeable array of integers
+`content`—read-only string field  
+`event.type`—an optional, read-only string  
+`attribute`—a writeable array of integers
 
 ## FIELDS\_ADD
 

@@ -1,7 +1,6 @@
 ---
 title: Request naming API - GET all request naming rules
 source: https://docs.dynatrace.com/managed/dynatrace-api/configuration-api/service-api/request-naming-api/get-all
-scraped: 2026-05-12T11:17:45.455417
 ---
 
 # Request naming API - GET all request naming rules
@@ -32,7 +31,7 @@ The request doesn't provide any configurable parameters.
 
 ## Response
 
-The request returns the list of short representations of request naming rulesâjust ID, name, and description.
+The request returns the list of short representations of request naming rules—just ID, name, and description.
 
 ### Response codes
 
@@ -48,7 +47,7 @@ An ordered list of short representations of Dynatrace entities.
 
 | Element | Type | Description |
 | --- | --- | --- |
-| values | [EntityShortRepresentation[]](#openapi-definition-EntityShortRepresentation) | An ordered list of short representations of Dynatrace entities. |
+| values | [EntityShortRepresentation](#openapi-definition-EntityShortRepresentation)[] | An ordered list of short representations of Dynatrace entities. |
 
 #### The `EntityShortRepresentation` object
 

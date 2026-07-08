@@ -1,7 +1,6 @@
 ---
 title: OTel Collector use cases
 source: https://docs.dynatrace.com/managed/ingest-from/opentelemetry/collector/use-cases
-scraped: 2026-05-12T12:00:53.786681
 ---
 
 # OTel Collector use cases
@@ -9,16 +8,16 @@ scraped: 2026-05-12T12:00:53.786681
 # OTel Collector use cases
 
 * How-to guide
-* 2-min read
+* 3-min read
 * Updated on Mar 12, 2026
 
 ## Recommended configurations
 
 When using the OTel Collector, we recommend using the following features in the basic configuration, in addition to components specific to your use case.
 
-* [Batching](/managed/ingest-from/opentelemetry/collector/use-cases/batch "Configure the OpenTelemetry Collector to send data in batches to the Dynatrace backend.")âto improve network performance and throughput
-* [Memory Limitation](/managed/ingest-from/opentelemetry/collector/use-cases/memory "Configure the OpenTelemetry Collector to respect memory limits and not use excessive system resources.")âto avoid memory allocation related issues
-* [Kubernetes Enrichment](/managed/ingest-from/opentelemetry/collector/use-cases/kubernetes/k8s-enrich "Configure the OpenTelemetry Collector to enrich OTLP requests with Kubernetes data.")âto include Kubernetes-specific information in your requests and support data correlation in the Dynatrace backend
+* [Batching](/managed/ingest-from/opentelemetry/collector/use-cases/batch "Configure the OpenTelemetry Collector to send data in batches to the Dynatrace backend.")—to improve network performance and throughput
+* [Memory Limitation](/managed/ingest-from/opentelemetry/collector/use-cases/memory "Configure the OpenTelemetry Collector to respect memory limits and not use excessive system resources.")—to avoid memory allocation related issues
+* [Kubernetes Enrichment](/managed/ingest-from/opentelemetry/collector/use-cases/kubernetes/k8s-enrich "Configure the OpenTelemetry Collector to enrich OTLP requests with Kubernetes data.")—to include Kubernetes-specific information in your requests and support data correlation in the Dynatrace backend
 
 ## Use cases
 
@@ -64,7 +63,7 @@ Configure the Collector to ingest NetFlow packets.](/managed/ingest-from/opentel
 
 ### Prometheus
 
-Configure the Collector to scrape your Prometheus data.](/managed/ingest-from/opentelemetry/collector/use-cases/prometheus "Configure the OpenTelemetry Collector to scrape your Prometheus data.")[### Sampling
+Configure the Collector to scrape your Prometheus data.](/managed/ingest-from/opentelemetry/collector/use-cases/prometheus "Configure the OpenTelemetry Collector to scrape Prometheus endpoints and ingest the data into Dynatrace.")[### Sampling
 
 Configure the Collector to sample distributed traces.](/managed/ingest-from/opentelemetry/collector/use-cases/sampling "Configure the OpenTelemetry Collector to sample data using the `tail_sampling` processor.")[### StatsD
 

@@ -1,7 +1,6 @@
 ---
 title: Synthetic configuration API v2 - PUT configuration
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/synthetic-v2/synthetic-configuration-v2/put-configuration
-scraped: 2026-05-12T12:05:24.332885
 ---
 
 # Synthetic configuration API v2 - PUT configuration
@@ -86,7 +85,7 @@ This is a model of the request body, showing the possible elements. It has to be
 | Element | Type | Description |
 | --- | --- | --- |
 | code | integer | The HTTP status code |
-| constraintViolations | [ConstraintViolation[]](#openapi-definition-ConstraintViolation) | A list of constraint violations |
+| constraintViolations | [ConstraintViolation](#openapi-definition-ConstraintViolation)[] | A list of constraint violations |
 | message | string | The error message |
 
 #### The `ConstraintViolation` object
@@ -160,7 +159,7 @@ A list of constraint violations
 
 ## Example
 
-In this example, the request updates the configuration of the Synthetic monitoring from the [GET request](/managed/dynatrace-api/environment-api/synthetic-v2/synthetic-configuration-v2/get-configuration#example "View the configuration of Synthetic monitoring via the Synthetic API v2.") example. It halves the timeouts for browser monitor and browser monitor stepsâsetting them to `300,000` and `30,000` respectively.
+In this example, the request updates the configuration of the Synthetic monitoring from the [GET request](/managed/dynatrace-api/environment-api/synthetic-v2/synthetic-configuration-v2/get-configuration#example "View the configuration of Synthetic monitoring via the Synthetic API v2.") example. It halves the timeouts for browser monitor and browser monitor steps—setting them to `300,000` and `30,000` respectively.
 
 The API token is passed in the **Authorization** header.
 

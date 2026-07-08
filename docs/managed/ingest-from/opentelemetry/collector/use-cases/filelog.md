@@ -1,7 +1,6 @@
 ---
 title: Ingest logs from files with the OTel Collector
 source: https://docs.dynatrace.com/managed/ingest-from/opentelemetry/collector/use-cases/filelog
-scraped: 2026-05-12T12:06:11.003036
 ---
 
 # Ingest logs from files with the OTel Collector
@@ -16,7 +15,7 @@ The following configuration example shows how to configure a Collector instance 
 
 ## Prerequisites
 
-* One of the following Collector distributions with the [Filelog receiverï»¿](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.151.0/receiver/filelogreceiver):
+* One of the following Collector distributions with the [Filelog receiver﻿](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.155.0/receiver/filelogreceiver):
 
   + The [Dynatrace OTel Collector](/managed/ingest-from/opentelemetry/collector#dt-collector-dist "Learn how to use the OpenTelemetry Collector, including the Dynatrace OTel Collector, to ingest telemetry from OpenTelemetry.")
   + [OpenTelemetry Contrib](/managed/ingest-from/opentelemetry/collector#collector-contrib "Learn how to use the OpenTelemetry Collector, including the Dynatrace OTel Collector, to ingest telemetry from OpenTelemetry.")
@@ -150,9 +149,9 @@ We parse each line into its individual parts with the following regular expressi
 
 Apart from the two start (`^`) and end (`$`) of line assertions, we have the following named capture groups:
 
-* `(?P<time>\d{4}-\d{2}-\d{2})`âNames its capture group `time` and matches a typical ISO 8601 timestamp.
-* `(?P<sev>[A-Z]*)`âNames its capture group `sev` and matches an arbitrary number of Latin uppercase characters.
-* `(?P<msg>.*)`âNames its capture group `msg` and matches an arbitrary number of characters.
+* `(?P<time>\d{4}-\d{2}-\d{2})`—Names its capture group `time` and matches a typical ISO 8601 timestamp.
+* `(?P<sev>[A-Z]*)`—Names its capture group `sev` and matches an arbitrary number of Latin uppercase characters.
+* `(?P<msg>.*)`—Names its capture group `msg` and matches an arbitrary number of characters.
 
 ## Components
 
@@ -162,19 +161,19 @@ For our configuration, we use the following components.
 
 Under `receivers`, we specify the `filelog` receiver as active receiver component for our Collector instance.
 
-The Filelog receiver supports a number of [configuration parametersï»¿](https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/v0.151.0/receiver/filelogreceiver/README.md), which enable you to customize its behavior. For our example, we use the following:
+The Filelog receiver supports a number of [configuration parameters﻿](https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/v0.155.0/receiver/filelogreceiver/README.md), which enable you to customize its behavior. For our example, we use the following:
 
-* `include`âSpecifies the path pattern of the files we want to ingest.
-* `start_at`âSpecifies if the receiver should read from the beginning of the file or, for the most recent entries only, the end.
-* `operators`âConfigures the operators we apply to each log entry. For our example, we use the [regex\_parserï»¿](https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/v0.151.0/pkg/stanza/docs/operators/regex_parser.md) operator to extract information using a regular expression.
+* `include`—Specifies the path pattern of the files we want to ingest.
+* `start_at`—Specifies if the receiver should read from the beginning of the file or, for the most recent entries only, the end.
+* `operators`—Configures the operators we apply to each log entry. For our example, we use the [regex\_parser﻿](https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/v0.155.0/pkg/stanza/docs/operators/regex_parser.md) operator to extract information using a regular expression.
 
-  + `regex`âSpecifies the actual regular expression. By using named capture groups (`(?P<name>)`), the receiver makes the captured data available in `attributes` under the respective name.
-  + `timestamp`âSpecifies where to take the entry's timestamp from (the `time` field of the regular expression) and the date format.
-  + `severity`âSpecifies where to take the entry's severity level from (the `sev` field of the regular expression).
+  + `regex`—Specifies the actual regular expression. By using named capture groups (`(?P<name>)`), the receiver makes the captured data available in `attributes` under the respective name.
+  + `timestamp`—Specifies where to take the entry's timestamp from (the `time` field of the regular expression) and the date format.
+  + `severity`—Specifies where to take the entry's severity level from (the `sev` field of the regular expression).
 
 ### Exporters
 
-Under `exporters`, we specify the default [`otlp_http` exporterï»¿](https://github.com/open-telemetry/opentelemetry-collector/tree/v0.151.0/exporter/otlphttpexporter) and configure it with our Dynatrace API URL and the required authentication token.
+Under `exporters`, we specify the default [`otlp_http` exporter﻿](https://github.com/open-telemetry/opentelemetry-collector/tree/v0.155.0/exporter/otlphttpexporter) and configure it with our Dynatrace API URL and the required authentication token.
 
 For this purpose, we set the following two environment variables and reference them in the configuration values for `endpoint` and `Authorization`.
 

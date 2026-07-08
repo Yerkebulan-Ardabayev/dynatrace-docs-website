@@ -1,7 +1,6 @@
 ---
 title: Export utility
 source: https://docs.dynatrace.com/managed/deliver/configuration-as-code/terraform/guides/export-utility
-scraped: 2026-05-12T12:02:50.498896
 ---
 
 # Export utility

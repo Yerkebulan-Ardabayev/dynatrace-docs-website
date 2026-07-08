@@ -1,7 +1,6 @@
 ---
 title: ClusterRole aggregation for Kubernetes monitoring
 source: https://docs.dynatrace.com/managed/ingest-from/setup-on-k8s/guides/deployment-and-configuration/cluster-role-aggregation
-scraped: 2026-05-12T12:09:08.953469
 ---
 
 # ClusterRole aggregation for Kubernetes monitoring
@@ -19,7 +18,7 @@ In Dynatrace Operator version 1.8.0, the ActiveGate component uses a service acc
 
 1
 
-ClusterRole aggregation is a Kubernetes RBAC feature that allows you to combine multiple ClusterRoles into a single aggregated ClusterRole. The aggregating ClusterRole uses label selectors to identify which other ClusterRoles should be included. For more information, see [ClusterRole aggregation in Kubernetes documentationï»¿](https://kubernetes.io/docs/reference/access-authn-authz/rbac/#aggregated-clusterroles).
+ClusterRole aggregation is a Kubernetes RBAC feature that allows you to combine multiple ClusterRoles into a single aggregated ClusterRole. The aggregating ClusterRole uses label selectors to identify which other ClusterRoles should be included. For more information, see [ClusterRole aggregation in Kubernetes documentation﻿](https://kubernetes.io/docs/reference/access-authn-authz/rbac/#aggregated-clusterroles).
 
 ## Default permissions
 

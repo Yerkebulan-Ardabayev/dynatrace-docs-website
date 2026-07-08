@@ -1,7 +1,6 @@
 ---
 title: Enrich OTLP requests with Kubernetes data
 source: https://docs.dynatrace.com/managed/ingest-from/opentelemetry/collector/use-cases/kubernetes/k8s-enrich
-scraped: 2026-05-12T12:04:40.123172
 ---
 
 # Enrich OTLP requests with Kubernetes data
@@ -20,7 +19,7 @@ Deploying ActiveGate enables the Dynatrace Kubernetes application to visualize K
 ## Prerequisites
 
 * A deployed ActiveGate for Kubernetes API monitoring Optional
-* One of the following Collector distributions with the [Kubernetes Attributesï»¿](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.151.0/processor/k8sattributesprocessor) and [Transformï»¿](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.151.0/processor/transformprocessor) processors:
+* One of the following Collector distributions with the [Kubernetes Attributes﻿](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.155.0/processor/k8sattributesprocessor) and [Transform﻿](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.155.0/processor/transformprocessor) processors:
 
   + The [Dynatrace OTel Collector](/managed/ingest-from/opentelemetry/collector#dt-collector-dist "Learn how to use the OpenTelemetry Collector, including the Dynatrace OTel Collector, to ingest telemetry from OpenTelemetry.")
   + [OpenTelemetry Contrib](/managed/ingest-from/opentelemetry/collector#collector-contrib "Learn how to use the OpenTelemetry Collector, including the Dynatrace OTel Collector, to ingest telemetry from OpenTelemetry.")
@@ -36,7 +35,7 @@ See [Collector Deployment](/managed/ingest-from/opentelemetry/collector/deployme
 
 Service account
 
-In addition to the Collector configuration, be sure to also update your Kubernetes configuration to match the service account name used in the [RBAC file](#kubernetes-configuration) (see entries for [Helmï»¿](https://github.com/open-telemetry/opentelemetry-helm-charts/blob/opentelemetry-collector-0.100.0/charts/opentelemetry-collector/values.yaml#L184-L191), [Operatorï»¿](https://github.com/open-telemetry/opentelemetry-operator/blob/v0.150.0/docs/api/opentelemetrycollectors.md#opentelemetrycollectorspec)).
+In addition to the Collector configuration, be sure to also update your Kubernetes configuration to match the service account name used in the [RBAC file](#kubernetes-configuration) (see entries for [Helm﻿](https://github.com/open-telemetry/opentelemetry-helm-charts/blob/opentelemetry-collector-0.100.0/charts/opentelemetry-collector/values.yaml#L184-L191), [Operator﻿](https://github.com/open-telemetry/opentelemetry-operator/blob/v0.154.0/docs/api/opentelemetrycollectors.md#opentelemetrycollectorspec)).
 
 ```
 extensions:
@@ -686,10 +685,10 @@ This is mainly for demonstration purposes. You can specify any other valid recei
 
 ### Processors
 
-Under `processors`, we specify the [`k8sattributes` processorï»¿](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.151.0/processor/k8sattributesprocessor) with the following parameters:
+Under `processors`, we specify the [`k8sattributes` processor﻿](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.155.0/processor/k8sattributesprocessor) with the following parameters:
 
-* `extract`âSpecifies which information should be extracted.
-* `pod_association`âSpecifies how the pod information is linked to attributes.
+* `extract`—Specifies which information should be extracted.
+* `pod_association`—Specifies how the pod information is linked to attributes.
 
 Note that the `k8s.container.name` attribute will only be extracted if the pod from which the incoming
 signal has been received contains only one container, or if the ingested signal contains the `k8s.container.id` resource attribute.
@@ -697,11 +696,11 @@ Otherwise, the k8sattributes processor will not be able to correctly associate t
 
 Dynatrace Operator enriches OpenTelemetry data from Kubernetes pods with `metadata.dynatrace.com` annotations. When these annotations are present, the `k8sattributes` processor extracts them.
 
-We also configure the [`transform` processorï»¿](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.151.0/processor/transformprocessor) to have Kubernetes cluster information automatically added as resource attributes for all telemetry signals.
+We also configure the [`transform` processor﻿](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.155.0/processor/transformprocessor) to have Kubernetes cluster information automatically added as resource attributes for all telemetry signals.
 
 ### Exporters
 
-Under `exporters`, we specify the default [`otlp_http` exporterï»¿](https://github.com/open-telemetry/opentelemetry-collector/tree/v0.151.0/exporter/otlphttpexporter) and configure it with our Dynatrace API URL and the required authentication token.
+Under `exporters`, we specify the default [`otlp_http` exporter﻿](https://github.com/open-telemetry/opentelemetry-collector/tree/v0.155.0/exporter/otlphttpexporter) and configure it with our Dynatrace API URL and the required authentication token.
 
 For this purpose, we set the following two environment variables and reference them in the configuration values for `endpoint` and `Authorization`.
 

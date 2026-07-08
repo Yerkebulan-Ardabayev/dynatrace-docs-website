@@ -1,7 +1,6 @@
 ---
 title: Request attributes API - POST a request attribute
 source: https://docs.dynatrace.com/managed/dynatrace-api/configuration-api/service-api/request-attributes-api/post-request-attribute
-scraped: 2026-05-12T11:20:30.093418
 ---
 
 # Request attributes API - POST a request attribute
@@ -40,7 +39,7 @@ To learn how to obtain and use it, see [Tokens and authentication](/managed/disc
 | --- | --- | --- | --- |
 | aggregation | string | Aggregation type for the request values. The element can hold these values * `ALL_DISTINCT_VALUES` * `AVERAGE` * `COUNT_DISTINCT_VALUES` * `COUNT_VALUES` * `FIRST` * `LAST` * `MAXIMUM` * `MINIMUM` * `SUM` | Required |
 | confidential | boolean | Confidential data flag. Set `true` to treat the captured data as confidential. | Required |
-| dataSources | [DataSource[]](#openapi-definition-DataSource) | The list of data sources. | Required |
+| dataSources | [DataSource](#openapi-definition-DataSource)[] | The list of data sources. | Required |
 | dataType | string | The data type of the request attribute. The element can hold these values * `DOUBLE` * `INTEGER` * `STRING` | Required |
 | enabled | boolean | The request attribute is enabled (`true`) or disabled (`false`). | Required |
 | id | string | The ID of the request attribute. | Optional |
@@ -62,7 +61,7 @@ To learn how to obtain and use it, see [Tokens and authentication](/managed/disc
 | iibNodeType | string | The IBM integration bus node type for which the value is captured.  This, iibNodeTypeCondition (different type of the same field) or `iibMethodNodeCondition` is required if the **source** is: `IIB_NODE`.  Not applicable in other cases. The element can hold these values * `AGGREGATE_CONTROL_NODE` * `AGGREGATE_REPLY_NODE` * `AGGREGATE_REQUEST_NODE` * `CALLABLE_FLOW_REPLY_NODE` * `COLLECTOR_NODE` * `COMPUTE_NODE` * `DATABASE_NODE` * `DATABASE_RETRIEVE_NODE` * `DATABASE_ROUTE_NODE` * `DECISION_SERVICE_NODE` * `DOT_NET_COMPUTE_NODE` * `FILE_READ_NODE` * `FILTER_NODE` * `FLOW_ORDER_NODE` * `GROUP_COMPLETE_NODE` * `GROUP_GATHER_NODE` * `GROUP_SCATTER_NODE` * `HTTP_ASYNC_REQUEST` * `HTTP_ASYNC_RESPONSE` * `HTTP_HEADER` * `HTTP_INPUT` * `HTTP_REPLY` * `HTTP_REQUEST` * `JAVA_COMPUTE_NODE` * `JMS_CLIENT_RECEIVE` * `JMS_CLIENT_REPLY_NODE` * `JMS_HEADER` * `JMS_INPUT_NODE` * `JMS_OUTPUT_NODE` * `JMS_REPLY_NODE` * `MQ_GET_NODE` * `MQ_INPUT_NODE` * `MQ_OUTPUT_NODE` * `MQ_REPLY_NODE` * `PASSTHRU_NODE` * `PUBLICATION_NODE` * `RESET_CONTENT_DESCRIPTOR_NODE` * `REST_ASYNC_REQUEST_NODE` * `REST_ASYNC_RESPONSE_NODE` * `REST_REQUEST_NODE` * `RE_SEQUENCE_NODE` * `ROUTE_NODE` * `SAP_REPLY_NODE` * `SCA_REPLY_NODE` * `SECURITY_PEP` * `SEQUENCE_NODE` * `SOAP_ASYNC_REQUEST_NODE` * `SOAP_ASYNC_RESPONSE_NODE` * `SOAP_EXTRACT_NODE` * `SOAP_INPUT_NODE` * `SOAP_REPLY_NODE` * `SOAP_REQUEST_NODE` * `SOAP_WRAPPER_NODE` * `SR_RETRIEVE_ENTITY_NODE` * `SR_RETRIEVE_IT_SERVICE_NODE` * `THROW_NODE` * `TRACE_NODE` * `TRY_CATCH_NODE` * `VALIDATE_NODE` * `WS_REPLY_NODE` * `XSL_MQSI_NODE` | Optional |
 | iibNodeTypeCondition | [ValueCondition](#openapi-definition-ValueCondition) | IBM integration bus label node name condition for which the value is captured. | Optional |
 | imsTransactionCallType | string | IMS transaction call type condition for which the value is captured.  Required if the **source** is: `IMS_TRANSACTION_CALL_TYPE`.  Not applicable in other cases. The element can hold these values * `CTG` * `DPL` * `EXPLICIT_ADK` * `HTTP` * `IMS_CONNECT` * `IMS_CONNECT_API` * `IMS_ITRA` * `IMS_MSC` * `IMS_PGM_SWITCH` * `IMS_SHARED_QUEUES` * `IMS_TRANS_EXEC` * `MQ` * `SOAP` * `START` * `TTX` * `TX` * `UNKNOWN` * `ZOS_CONNECT` | Optional |
-| methods | [CapturedMethod[]](#openapi-definition-CapturedMethod) | The method specification if the **source** value is `METHOD_PARAM`.  Not applicable in other cases. | Optional |
+| methods | [CapturedMethod](#openapi-definition-CapturedMethod)[] | The method specification if the **source** value is `METHOD_PARAM`.  Not applicable in other cases. | Optional |
 | parameterName | string | The name of the web request parameter to capture.  Required if the **source** is one of the following: `POST_PARAMETER`, `GET_PARAMETER`, `REQUEST_HEADER`, `RESPONSE_HEADER`, `CUSTOM_ATTRIBUTE`.  Not applicable in other cases. | Optional |
 | scope | [ScopeConditions](#openapi-definition-ScopeConditions) | Conditions for data capturing. | Optional |
 | serverVariableTechnology | string | The technology of the server variable to capture if the **source** value is `SERVER_VARIABLE`. \n\n Not applicable in other cases. The element can hold these values * `ASP_NET` | Optional |
@@ -265,7 +264,7 @@ The short representation of a Dynatrace entity.
 | Element | Type | Description |
 | --- | --- | --- |
 | code | integer | The HTTP status code |
-| constraintViolations | [ConstraintViolation[]](#openapi-definition-ConstraintViolation) | A list of constraint violations |
+| constraintViolations | [ConstraintViolation](#openapi-definition-ConstraintViolation)[] | A list of constraint violations |
 | message | string | The error message |
 
 #### The `ConstraintViolation` object
@@ -396,7 +395,7 @@ To learn how to obtain and use it, see [Tokens and authentication](/managed/disc
 | Element | Type | Description |
 | --- | --- | --- |
 | code | integer | The HTTP status code |
-| constraintViolations | [ConstraintViolation[]](#openapi-definition-ConstraintViolation) | A list of constraint violations |
+| constraintViolations | [ConstraintViolation](#openapi-definition-ConstraintViolation)[] | A list of constraint violations |
 | message | string | The error message |
 
 #### The `ConstraintViolation` object

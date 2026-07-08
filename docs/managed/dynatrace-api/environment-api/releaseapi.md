@@ -1,7 +1,6 @@
 ---
 title: Releases API
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/releaseapi
-scraped: 2026-05-12T11:12:06.632149
 ---
 
 # Releases API
@@ -17,4 +16,4 @@ Get an overview of releases in your environment.](/managed/dynatrace-api/environ
 
 ## Related topics
 
-* [Release monitoring](/managed/deliver/release-monitoring "Detect versions of monitored applications and analyze the software product lifecycle of your releases.")
+* [Release monitoring](/managed/deliver/release-monitoring-classic "Detect versions of monitored applications and analyze the software product lifecycle of your releases.")

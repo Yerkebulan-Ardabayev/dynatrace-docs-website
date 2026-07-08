@@ -1,18 +1,17 @@
 ---
-title: Number of actions consumed by browser clickpaths
+title: Number of actions consumed by browser clickpaths in Classic
 source: https://docs.dynatrace.com/managed/observe/digital-experience/synthetic-monitoring/browser-monitors/number-of-actions-consumed-by-browser-clickpaths
-scraped: 2026-05-12T11:32:15.522695
 ---
 
-# Number of actions consumed by browser clickpaths
+# Number of actions consumed by browser clickpaths in Classic
 
-# Number of actions consumed by browser clickpaths
+# Number of actions consumed by browser clickpaths in Classic
 
 * How-to guide
 * 2-min read
 * Published May 16, 2018
 
-Dynatrace Synthetic Monitoring creates a separate synthetic action for each page interaction that triggers a web request, including a page load, navigation event, or an XHR. Synthetic actions (similar to user actions for Real User Monitoring) hold the performance data that's collected during the playback of clickpath events.
+Dynatrace Synthetic Monitoring Classic creates a separate synthetic action for each page interaction that triggers a web request, including a page load, navigation event, or an XHR. Synthetic actions (similar to user actions for Real User Monitoring) hold the performance data that's collected during the playback of clickpath events.
 
 To find out how many synthetic actions a specific browser clickpath consumes:
 
@@ -26,7 +25,7 @@ To find out how many synthetic actions a specific browser clickpath consumes:
 
    The number of actions and events, frequency, locations, and current consumption for the selected time frame are displayed. The number of actions consumed daily for this clickpath is calculated as follows.
 
-   `4 executions per hour (runs every 15 minutes) Ã 24 x 2 locations Ã 5 actions = 960 synthetic actions`
+   `4 executions per hour (runs every 15 minutes) × 24 x 2 locations × 5 actions = 960 synthetic actions`
 
    On the **Synthetic events and actions** card, you can switch between viewing all events (default) or actions only (turn on **Show events with timings only**).
 
@@ -44,7 +43,7 @@ Browser clickpath events during recording workflow
 
 Clickpath events in edit mode
 
-An event isn't the same thing as an actionâonly events that trigger web requests are actions, so your script might not have as many actions as events. Events such as clicking an input field or entering text into a form don't trigger network requests. These events are important from a functional perspective but donât generate any performance data. When first [setting up a clickpath](/managed/observe/digital-experience/synthetic-monitoring/browser-monitors/record-a-browser-clickpath "Learn how to record a browser clickpath to monitor the availability and performance of your application."), the Summary page clearly outlines the number of events versus actions in your clickpath.
+An event isn't the same thing as an action—only events that trigger web requests are actions, so your script might not have as many actions as events. Events such as clicking an input field or entering text into a form don't trigger network requests. These events are important from a functional perspective but don’t generate any performance data. When first [setting up a clickpath](/managed/observe/digital-experience/synthetic-monitoring/browser-monitors/record-a-browser-clickpath "Learn how to record a browser clickpath to monitor the availability and performance of your application."), the Summary page clearly outlines the number of events versus actions in your clickpath.
 
 ![Clickpath summary](https://dt-cdn.net/images/summaryclickpath1-1676-5c00606bdd.png)
 
@@ -54,5 +53,5 @@ You can access and edit your event list at any time: Select your monitor in **Sy
 
 ## Related topics
 
-* [Digital Experience Monitoring (DEM) overview (DPS)](/managed/license/capabilities/digital-experience-monitoring "Learn how Dynatrace Digital Experience Monitoring (DEM) consumption is calculated using the Dynatrace Platform Subscription model.")
-* [Digital Experience Monitoring (DEM units)](/managed/license/monitoring-consumption-classic/digital-experience-monitoring-units "Understand how Dynatrace Digital Experience Monitoring consumption is calculated based on DEM units.")
+* [Real User and Synthetic Monitoring overview (DPS)](/managed/license/capabilities/real-user-synthetic-monitoring "Learn how Dynatrace Real User and Synthetic Monitoring consumption is calculated using the Dynatrace Platform Subscription model.")
+* [Digital Experience Monitoring (DEM units)](/managed/license/classic-licensing/digital-experience-monitoring-units "Understand how Dynatrace Digital Experience Monitoring consumption is calculated based on DEM units.")

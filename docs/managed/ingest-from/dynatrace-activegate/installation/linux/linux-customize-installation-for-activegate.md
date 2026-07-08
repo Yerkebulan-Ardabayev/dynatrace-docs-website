@@ -1,7 +1,6 @@
 ---
 title: Customize ActiveGate installation on Linux
 source: https://docs.dynatrace.com/managed/ingest-from/dynatrace-activegate/installation/linux/linux-customize-installation-for-activegate
-scraped: 2026-05-12T11:36:30.860044
 ---
 
 # Customize ActiveGate installation on Linux
@@ -89,7 +88,7 @@ The `USER=root` parameter is not supported when installing a [synthetic-enabled 
 
 For the full list of ActiveGate directory locations, see [ActiveGate files and directories](/managed/ingest-from/dynatrace-activegate/configuration/where-can-i-find-activegate-files "Find out where ActiveGate files are stored on Windows and Linux systems.").
 
-`<customizable directory>/gateway`âthat is, `INSTALL/gateway`, `CONFIG/gateway`, `LOG/gateway`, `TEMP/gateway`, `PACKAGES_DIR/gateway`âcannot be a parent of another customizable directory, that is of `INSTALL`, `CONFIG`, `TEMP`, `LOG` or `PACKAGED_DIR`.
+`<customizable directory>/gateway`—that is, `INSTALL/gateway`, `CONFIG/gateway`, `LOG/gateway`, `TEMP/gateway`, `PACKAGES_DIR/gateway`—cannot be a parent of another customizable directory, that is of `INSTALL`, `CONFIG`, `TEMP`, `LOG` or `PACKAGED_DIR`.
 
 For example, do **not** specify:
 
@@ -357,7 +356,7 @@ The connection timeout, as specified by the `DYNATRACE_ACTIVEGATE_SERVER_CONNECT
 * When downloading additional (optional) capabilities.
 * When waiting for connection to the cluster at the end of ActiveGate installation: this connection is then used by ActiveGate during its normal operation.
 
-If the timeout occurs during the download of capabilities (if any), the additional capabilities will not be downloaded and the installation will fail. However, if the timeout occurs at the end of the installation processâthat is at the start of normal operation of ActiveGateâall the ActiveGate components will have been installed and ActiveGate will continue its attempts at connecting to the cluster. ActiveGate will keep trying to connect, even after the end of the installation process. If successful, ActiveGate will then operate normally.
+If the timeout occurs during the download of capabilities (if any), the additional capabilities will not be downloaded and the installation will fail. However, if the timeout occurs at the end of the installation process—that is at the start of normal operation of ActiveGate—all the ActiveGate components will have been installed and ActiveGate will continue its attempts at connecting to the cluster. ActiveGate will keep trying to connect, even after the end of the installation process. If successful, ActiveGate will then operate normally.
 
 To check if the installation and connection was successful, sign in to Dynatrace, in **Settings** select **Deployment Status**, and then select the **ActiveGates** tab.
 

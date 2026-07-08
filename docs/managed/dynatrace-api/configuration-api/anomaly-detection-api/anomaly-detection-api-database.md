@@ -1,7 +1,6 @@
 ---
 title: Anomaly detection API - Database services
 source: https://docs.dynatrace.com/managed/dynatrace-api/configuration-api/anomaly-detection-api/anomaly-detection-api-database
-scraped: 2026-05-12T11:04:57.549746
 ---
 
 # Anomaly detection API - Database services
@@ -11,7 +10,7 @@ scraped: 2026-05-12T11:04:57.549746
 * Reference
 * Published Oct 30, 2018
 
-The **Anomaly detectionâDatabase services** API enables you to manage the configuration of anomaly detection for database services. You can also manage the same configuration in the Dynatrace web UI at **Settings** > **Anomaly detection** > **Database services**.
+The **Anomaly detection—Database services** API enables you to manage the configuration of anomaly detection for database services. You can also manage the same configuration in the Dynatrace web UI at **Settings** > **Anomaly detection** > **Database services**.
 
 [### View configuration
 

@@ -1,7 +1,6 @@
 ---
 title: Deployment API - View process module configuration for OneAgent
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/deployment/oneagent/get-processmodule-config
-scraped: 2026-05-12T11:58:19.737818
 ---
 
 # Deployment API - View process module configuration for OneAgent
@@ -51,7 +50,7 @@ The response to a process module config request.
 
 | Element | Type | Description |
 | --- | --- | --- |
-| properties | [SectionProperty[]](#openapi-definition-SectionProperty) | The properties and their sections in this response. |
+| properties | [SectionProperty](#openapi-definition-SectionProperty)[] | The properties and their sections in this response. |
 | revision | integer | The new revision associated with the config. |
 
 #### The `SectionProperty` object
@@ -75,7 +74,7 @@ A single agent property with it's associated section.
 | Element | Type | Description |
 | --- | --- | --- |
 | code | integer | The HTTP status code |
-| constraintViolations | [ConstraintViolation[]](#openapi-definition-ConstraintViolation) | A list of constraint violations |
+| constraintViolations | [ConstraintViolation](#openapi-definition-ConstraintViolation)[] | A list of constraint violations |
 | message | string | The error message |
 
 #### The `ConstraintViolation` object

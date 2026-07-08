@@ -1,7 +1,6 @@
 ---
 title: Extensions API - DELETE extension .zip file
 source: https://docs.dynatrace.com/managed/dynatrace-api/configuration-api/extensions-api/del-extension-file
-scraped: 2026-05-12T11:19:50.410764
 ---
 
 # Extensions API - DELETE extension .zip file

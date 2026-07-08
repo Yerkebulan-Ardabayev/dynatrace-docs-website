@@ -1,7 +1,6 @@
 ---
 title: Deploy the Dynatrace Google Cloud metric integration in Google Cloud Functions
 source: https://docs.dynatrace.com/managed/ingest-from/google-cloud-platform/gcp-integrations/gcp-guide/deploy-with-google-cloud-function
-scraped: 2026-05-12T11:51:49.839631
 ---
 
 # Deploy the Dynatrace Google Cloud metric integration in Google Cloud Functions
@@ -37,7 +36,7 @@ You can deploy the Dynatrace Google Cloud integration in Google Cloud Shell or i
 
 If you use bash, you need to install:
 
-* [Google Cloud SDKï»¿](https://dt-url.net/e8110336)
+* [Google Cloud SDK﻿](https://dt-url.net/e8110336)
 
 ### Google Cloud permissions
 
@@ -222,11 +221,11 @@ To create a custom role
    gcloud iam roles create dynatrace_monitor.cloud_function_deployment --project=<your_project_ID> --file=dynatrace-gcp-monitor-cloud-function-deployment-role.yaml
    ```
 
-Be sure to add this role to your Google Cloud user. For details, see [Grant or revoke a single roleï»¿](https://dt-url.net/vx03vid).
+Be sure to add this role to your Google Cloud user. For details, see [Grant or revoke a single role﻿](https://dt-url.net/vx03vid).
 
 ### Dynatrace permissions
 
-[Create an API tokenï»¿](https://dt-url.net/be03q3a) and [enable the following permissionsï»¿](https://dt-url.net/c023q1m):
+[Create an API token﻿](https://dt-url.net/be03q3a) and [enable the following permissions﻿](https://dt-url.net/c023q1m):
 
 * API v1:
 
@@ -249,13 +248,13 @@ Determine the URL for your environment.
 * For Dynatrace SaaS: `https://<your-environment-id>.live.dynatrace.com/`
 * For Dynatrace Managed: `https://<your-domain>/e/<your-environment-id>/`
 
-To determine `<your-environment-id>`, see [environment IDï»¿](https://dt-url.net/ej43qge).
+To determine `<your-environment-id>`, see [environment ID﻿](https://dt-url.net/ej43qge).
 
 ## Install
 
 You can deploy the Dynatrace Google Cloud integration in Google Cloud Shell or in bash. To set up integration, follow the instructions below.
 
-For bash deployment, be sure to restart the console and [initialize Cloud SDKï»¿](https://dt-url.net/ac43q0f) before you start installation.
+For bash deployment, be sure to restart the console and [initialize Cloud SDK﻿](https://dt-url.net/ac43q0f) before you start installation.
 
 To initialize Cloud SDK, run
 
@@ -330,7 +329,7 @@ Adding, removing and updating versions of existing services is done by modyfing 
 
    * `service`: represents Google Cloud service name you want to monitor. Services are grouped by extensions, but you can decide what you need to monitor on a lower level (`featureSets`)
    * `featureSet`: a set of metrics for a given service. `default_metrics` is a default `featureSet` with a recommended set of metrics to be monitored. In more specific use cases, you can consider monitoring such sets as `istio featureSet` for `gae_instance service`
-   * `filter_conditions`: a service-level filter that enables you to narrow the monitoring scope. It is based on the [Google Cloud Monitoring filtersï»¿](https://cloud.google.com/monitoring/api/v3/filters?hl=en_US).  
+   * `filter_conditions`: a service-level filter that enables you to narrow the monitoring scope. It is based on the [Google Cloud Monitoring filters﻿](https://cloud.google.com/monitoring/api/v3/filters?hl=en_US).  
      Example:
 
      ```
@@ -463,7 +462,7 @@ You can find and delete relevant extensions via Dynatrace Hub.
 
 ## Monitoring consumption
 
-All cloud services consume DDUs. The amount of DDU consumption per service instance depends on the number of monitored metrics and their dimensions (each metric dimension results in the ingestion of 1 data point; 1 data point consumes 0.001 DDUs). For details, see [Extending Dynatrace (Davis data units)](/managed/license/monitoring-consumption-classic/davis-data-units "Understand how Dynatrace monitoring consumption is calculated based on Davis data units (DDU).").
+All cloud services consume DDUs. The amount of DDU consumption per service instance depends on the number of monitored metrics and their dimensions (each metric dimension results in the ingestion of 1 data point; 1 data point consumes 0.001 DDUs). For details, see [Extending Dynatrace (Davis data units)](/managed/license/classic-licensing/davis-data-units "Understand how Dynatrace monitoring consumption is calculated based on Davis data units (DDU).").
 
 ## Related topics
 

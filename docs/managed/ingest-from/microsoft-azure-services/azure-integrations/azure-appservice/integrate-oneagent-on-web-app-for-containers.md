@@ -1,7 +1,6 @@
 ---
 title: Integrate OneAgent on Azure App Service for Linux and containers
 source: https://docs.dynatrace.com/managed/ingest-from/microsoft-azure-services/azure-integrations/azure-appservice/integrate-oneagent-on-web-app-for-containers
-scraped: 2026-05-12T12:03:55.451751
 ---
 
 # Integrate OneAgent on Azure App Service for Linux and containers
@@ -30,7 +29,7 @@ App Service on Linux supports two scenarios.
 
   In the container scenario, App Service provides a host where a custom container provided by the customer can execute.
 
-  For details on the differences between the two scenarios, see [Things you should know: Web Apps on Linuxï»¿](https://dt-url.net/jm039gu).
+  For details on the differences between the two scenarios, see [Things you should know: Web Apps on Linux﻿](https://dt-url.net/jm039gu).
 
   To monitor App Services on Linux, you need to integrate OneAgent within your containerized application.
 
@@ -42,7 +41,7 @@ Custom image
 
 ## Integrate Dynatrace on built-in image
 
-Azure App Service for Linux allows you to customize its base container at runtime using a [startup script or script commandï»¿](https://dt-url.net/z2234qa) that must be executed in a bash shell or [Azure Cloud Shellï»¿](https://dt-url.net/at034yy). The script can be configured in multiple ways.
+Azure App Service for Linux allows you to customize its base container at runtime using a [startup script or script command﻿](https://dt-url.net/z2234qa) that must be executed in a bash shell or [Azure Cloud Shell﻿](https://dt-url.net/at034yy). The script can be configured in multiple ways.
 
 ### Set startup script command/file at creation time using Azure CLI
 
@@ -58,7 +57,7 @@ az webapp config set -n <my-app> -g <my-resourcegroup> --startup-file <startup-s
 
 ### Set script command/file using ARM template
 
-Use the [appCommandLineï»¿](https://docs.microsoft.com/en-us/azure/templates/microsoft.web/sites/config-web?pivots=deployment-language-arm-template#siteconfig-1) property of your ARM template to set the startup script/command.
+Use the [appCommandLine﻿](https://docs.microsoft.com/en-us/azure/templates/microsoft.web/sites/config-web?pivots=deployment-language-arm-template#siteconfig-1) property of your ARM template to set the startup script/command.
 
 ```
 {
@@ -120,7 +119,7 @@ A startup script is the same as a startup command: it's a command that executes 
 
 The script/command is executed within the container init script, which is implemented differently on each technology stack.
 
-For details on startup commands, see the Azure App Service for Linux documentation on [What are the expected values for the Startup File section when I configure the runtime stack?ï»¿](https://docs.microsoft.com/en-us/troubleshoot/azure/app-service/faqs-app-service-linux#what-are-the-expected-values-for-the-startup-file-section-when-i-configure-the-runtime-stack-)
+For details on startup commands, see the Azure App Service for Linux documentation on [What are the expected values for the Startup File section when I configure the runtime stack?﻿](https://docs.microsoft.com/en-us/troubleshoot/azure/app-service/faqs-app-service-linux#what-are-the-expected-values-for-the-startup-file-section-when-i-configure-the-runtime-stack-)
 
 ### Integrate Dynatrace using a startup script/command
 
@@ -128,10 +127,10 @@ To integrate Dynatrace, the startup script/command needs to have access to a few
 
 | Parameter | Description |
 | --- | --- |
-| `$DT_ENDPOINT` | Your Dynatrace API server endpointâuse either your environment [cluster endpoint](/managed/discover-dynatrace/get-started/monitoring-environment "Understand and learn how to work with monitoring environments.") or an [ActiveGate address](/managed/ingest-from/dynatrace-activegate "Understand the basic concepts related to ActiveGate."). |
-| `$DT_API_TOKEN` | API Token to access the Dynatrace REST APIâ[create an API Token](/managed/dynatrace-api/basics/dynatrace-api-authentication "Find out how to get authenticated to use the Dynatrace API.") with the **InstallerDownload** scope. |
+| `$DT_ENDPOINT` | Your Dynatrace API server endpoint—use either your environment [cluster endpoint](/managed/discover-dynatrace/get-started/monitoring-environment "Learn what a Dynatrace monitoring environment is, how to find your environment ID, and how to set up and connect multiple environments.") or an [ActiveGate address](/managed/ingest-from/dynatrace-activegate "Understand the basic concepts related to ActiveGate."). |
+| `$DT_API_TOKEN` | API Token to access the Dynatrace REST API—[create an API Token](/managed/dynatrace-api/basics/dynatrace-api-authentication "Find out how to get authenticated to use the Dynatrace API.") with the **InstallerDownload** scope. |
 | `$DT_INCLUDE` | Configure required code modules, depending on the used technology stack.  * `all` includes all available OneAgent code modules (`java`, `apache`, `nginx`, `nodejs`, `dotnet`, `php`, `go`, `sdk`), but it increases download package size. * Alternatively, choose identifiers appropriate to your application stack, such as `java`, `dotnet`, `nodejs`, or `php`.  For details, see [API documentation](/managed/dynatrace-api/environment-api/deployment/oneagent/download-oneagent-latest "Download the latest OneAgent installer via Dynatrace API."). |
-| `$START_APP_CMD` | The command to start your application  [What are the expected values for the Startup File section when I configure the runtime stack?ï»¿](https://docs.microsoft.com/en-us/troubleshoot/azure/app-service/faqs-app-service-linux#what-are-the-expected-values-for-the-startup-file-section-when-i-configure-the-runtime-stack-) |
+| `$START_APP_CMD` | The command to start your application  [What are the expected values for the Startup File section when I configure the runtime stack?﻿](https://docs.microsoft.com/en-us/troubleshoot/azure/app-service/faqs-app-service-linux#what-are-the-expected-values-for-the-startup-file-section-when-i-configure-the-runtime-stack-) |
 
 If you use a shell other than bash, make sure to adapt the script appropriately to the shell's character escape requirements.
 
@@ -157,7 +156,7 @@ To monitor both PHP-FPM and NGINX
 
 #### App service settings
 
-Set the values of the above parameters using [App Settingsï»¿](https://dt-url.net/da239ts)âthis is equivalent to setting environment variablesâand then run this command.
+Set the values of the above parameters using [App Settings﻿](https://dt-url.net/da239ts)—this is equivalent to setting environment variables—and then run this command.
 
 ```
 wget -O /tmp/installer-wrapper.sh -q https://raw.githubusercontent.com/dynatrace-oss/cloud-snippets/main/azure/linux-app-service/oneagent-installer.sh && sh /tmp/installer-wrapper.sh
@@ -302,12 +301,12 @@ This option requires that you have Docker v17.05+ installed on your computer.
 
    | Parameter | Description |
    | --- | --- |
-   | `<ADDRESS>` | Your Dynatrace registry endpointâuse either your environment [cluster endpoint](/managed/discover-dynatrace/get-started/monitoring-environment "Understand and learn how to work with monitoring environments.") or an [ActiveGate address](/managed/ingest-from/dynatrace-activegate "Understand the basic concepts related to ActiveGate."). |
+   | `<ADDRESS>` | Your Dynatrace registry endpoint—use either your environment [cluster endpoint](/managed/discover-dynatrace/get-started/monitoring-environment "Learn what a Dynatrace monitoring environment is, how to find your environment ID, and how to set up and connect multiple environments.") or an [ActiveGate address](/managed/ingest-from/dynatrace-activegate "Understand the basic concepts related to ActiveGate."). |
    | `<TECHNOLOGY>` | Configure required code modules, depending on the used technology stack.  * `all` includes all available OneAgent code modules (`java`, `apache`, `nginx`, `nodejs`, `dotnet`, `php`, `go`, `sdk`), but it increases download package size. * Alternatively, choose identifiers appropriate to your application stack, such as `java`, `dotnet`, `nodejs`, or `php`.  For details, see the [API documentation](/managed/dynatrace-api/environment-api/deployment/oneagent/download-oneagent-latest "Download the latest OneAgent installer via Dynatrace API."). |
 
    **What if my Docker image is based on Alpine Linux?**
 
-   Dynatrace OneAgent supports Alpine Linuxâbased environments. To use an Alpine Linux compatible OneAgent, use image name `oneagent-codemodules-musl` (as shown in the adapted template below) instead of `oneagent-codemodules`.
+   Dynatrace OneAgent supports Alpine Linux–based environments. To use an Alpine Linux compatible OneAgent, use image name `oneagent-codemodules-musl` (as shown in the adapted template below) instead of `oneagent-codemodules`.
 
    ```
    COPY --from=<ADDRESS>/linux/oneagent-codemodules-musl:<TECHNOLOGY> / /
@@ -344,9 +343,9 @@ This option requires that you have Docker v17.05+ installed on your computer.
 
    | Parameter | Description |
    | --- | --- |
-   | `<DT_ENDPOINT>` | Your Dynatrace API endpointâuse either your environment [cluster endpoint](/managed/discover-dynatrace/get-started/monitoring-environment "Understand and learn how to work with monitoring environments.") or an [ActiveGate address](/managed/ingest-from/dynatrace-activegate "Understand the basic concepts related to ActiveGate."). |
-   | `<DT_API_TOKEN>` | API Token to access the Dynatrace REST APIâ[create an API Token](/managed/dynatrace-api/basics/dynatrace-api-authentication "Find out how to get authenticated to use the Dynatrace API.") with the **InstallerDownload** scope. |
-   | `<DT_FLAVOR>` | Configure the required architecture.  * `default` for standard, glibc-based Linux images * `musl` for Alpine Linuxâbased images |
+   | `<DT_ENDPOINT>` | Your Dynatrace API endpoint—use either your environment [cluster endpoint](/managed/discover-dynatrace/get-started/monitoring-environment "Learn what a Dynatrace monitoring environment is, how to find your environment ID, and how to set up and connect multiple environments.") or an [ActiveGate address](/managed/ingest-from/dynatrace-activegate "Understand the basic concepts related to ActiveGate."). |
+   | `<DT_API_TOKEN>` | API Token to access the Dynatrace REST API—[create an API Token](/managed/dynatrace-api/basics/dynatrace-api-authentication "Find out how to get authenticated to use the Dynatrace API.") with the **InstallerDownload** scope. |
+   | `<DT_FLAVOR>` | Configure the required architecture.  * `default` for standard, glibc-based Linux images * `musl` for Alpine Linux–based images |
    | `<DT_INCLUDE>` | Configure required code modules, depending on the used technology stack.  * `all` includes all available OneAgent code modules (`java`, `apache`, `nginx`, `nodejs`, `dotnet`, `php`, `go`, `sdk`), but it increases download package size. * Alternatively, choose identifiers appropriate to your application stack, such as `java`, `dotnet`, `nodejs`, or `php`.  For details, see the [API documentation](/managed/dynatrace-api/environment-api/deployment/oneagent/download-oneagent-latest "Download the latest OneAgent installer via Dynatrace API."). |
 2. Build your application image.
 
@@ -419,7 +418,7 @@ Custom image
 
 To uninstall OneAgent
 
-1. In Azure portal, go to your web application > **Configuration** > **General settings**.
+1. In the Azure portal, go to your web application > **Configuration** > **General settings**.
 2. Remove your startup command (leave **Startup Command** empty).
 3. Select **Save**.
 

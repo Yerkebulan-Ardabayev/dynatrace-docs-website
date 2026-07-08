@@ -1,7 +1,6 @@
 ---
 title: Real User Monitoring JavaScript API
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/rum/real-user-monitoring-javascript-code
-scraped: 2026-05-12T11:12:07.824751
 ---
 
 # Real User Monitoring JavaScript API
@@ -13,7 +12,7 @@ scraped: 2026-05-12T11:12:07.824751
 
 The **Real User Monitoring JavaScript API** helps you to set up and maintain your manually injected applications.
 
-The endpoints for retrieving manual insertion tags in formats other than [code snippet](/managed/observe/digital-experience/web-applications/initial-setup/snippet-formats#code-snippet "Select a format for the RUM JavaScript snippet that best fits your specific use case") have been deprecated. For these formats, use the newer [RUM manual insertion tags API](/managed/dynatrace-api/environment-api/rum/rum-manual-insertion-tags "Learn how you can download the RUM manual insertion tags via API").
+The endpoints for retrieving manual insertion tags in formats other than [code snippet](/managed/observe/digital-experience/rum-classic/web-applications/initial-setup/snippet-formats#code-snippet "Select a format for the RUM JavaScript snippet that best fits your specific use case") have been deprecated. For these formats, use the newer [RUM manual insertion tags API](/managed/dynatrace-api/environment-api/rum/rum-manual-insertion-tags "Learn how you can download the RUM manual insertion tags via API").
 
 [### List injected applications
 

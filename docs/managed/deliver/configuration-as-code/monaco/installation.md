@@ -1,7 +1,6 @@
 ---
 title: Install Dynatrace Configuration as Code via Monaco
 source: https://docs.dynatrace.com/managed/deliver/configuration-as-code/monaco/installation
-scraped: 2026-05-12T11:21:35.690179
 ---
 
 # Install Dynatrace Configuration as Code via Monaco
@@ -306,7 +305,7 @@ Windows 32-bit
 
 A container image of the Dynatrace Monaco CLI is available to simplify usage in CI/CD pipelines.
 
-Images are available via [Docker Hubï»¿](https://dt-url.net/config-as-code-container):
+Images are available via [Docker Hub﻿](https://dt-url.net/config-as-code-container):
 
 ```
 docker pull dynatrace/dynatrace-configuration-as-code:latest
@@ -338,10 +337,10 @@ However, some CI/CD tools (for example, GitLab CI/CD) need a regular shell as en
 
 * GitLab CI/CD
 
-  For details on how to use the image with GitLab CI/CD, follow the [Override the entrypoint of an imageï»¿](https://docs.gitlab.com/ee/ci/docker/using_docker_images.html#override-the-entrypoint-of-an-image) GitLab documentation.
+  For details on how to use the image with GitLab CI/CD, follow the [Override the entrypoint of an image﻿](https://docs.gitlab.com/ee/ci/docker/using_docker_images.html#override-the-entrypoint-of-an-image) GitLab documentation.
 * `docker run`
 
-  For general information on overwriting container entrypoints when using `docker run`, see the [Docker documentationï»¿](https://docs.docker.com/engine/reference/commandline/run/).
+  For general information on overwriting container entrypoints when using `docker run`, see the [Docker documentation﻿](https://docs.docker.com/engine/reference/commandline/run/).
 
 ### Verify the image signature
 
@@ -351,12 +350,12 @@ The container image is signed to allow you to verify its authenticity.
 
 Verify the container image signature
 
-You can verify the signature using [cosignï»¿](https://docs.sigstore.dev/cosign/) and the `cosign.pub` key that can be downloaded from the [GitHub release pageï»¿](https://dt-url.net/get-configuration-as-code).
+You can verify the signature using [cosign﻿](https://docs.sigstore.dev/cosign/) and the `cosign.pub` key that can be downloaded from the [GitHub release page﻿](https://dt-url.net/get-configuration-as-code).
 
 To verify the signature of a given version
 
-1. Install the applicable version of cosign for your operating system, following the [installation instructionsï»¿](https://docs.sigstore.dev/cosign/installation/).
-2. Download the `cosign.pub` public key from the [GitHub release pageï»¿](https://dt-url.net/get-configuration-as-code) of the version you wish to verify.
+1. Install the applicable version of cosign for your operating system, following the [installation instructions﻿](https://docs.sigstore.dev/cosign/installation/).
+2. Download the `cosign.pub` public key from the [GitHub release page﻿](https://dt-url.net/get-configuration-as-code) of the version you wish to verify.
 3. Verify the container image of the version you wish to check:
 
    ```

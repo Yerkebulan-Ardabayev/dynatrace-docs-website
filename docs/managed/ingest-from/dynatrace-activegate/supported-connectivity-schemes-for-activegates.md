@@ -1,7 +1,6 @@
 ---
 title: Supported connectivity schemes for ActiveGates
 source: https://docs.dynatrace.com/managed/ingest-from/dynatrace-activegate/supported-connectivity-schemes-for-activegates
-scraped: 2026-05-12T11:08:07.634086
 ---
 
 # Supported connectivity schemes for ActiveGates
@@ -9,7 +8,7 @@ scraped: 2026-05-12T11:08:07.634086
 # Supported connectivity schemes for ActiveGates
 
 * 4-min read
-* Published Jul 17, 2018
+* Updated on Jun 09, 2026
 
 ActiveGate can be used in a **[Dynatrace Managed connectivity scheme](/managed/ingest-from/dynatrace-activegate/supported-connectivity-schemes-for-activegates#managed-scheme "Learn about the connectivity priorities between ActiveGate types as well as the priorities between ActiveGates and OneAgents.")**. The Dynatrace Managed connectivity scheme can be deployed in several different **[deployment scenarios](/managed/managed-cluster/basics/managed-deployments "Understand how Dynatrace Managed deployments evolve from a basic internal setup to a globally distributed high-availability architecture.")**.
 
@@ -17,7 +16,7 @@ Dynatrace requires certain ports and paths to be opened and accessible through t
 
 ## Dynatrace Managed connectivity scheme
 
-All possible connections for the Dynatrace Managed connectivity schemeâin all possible deployment scenariosâare shown below in one diagram.
+All possible connections for the Dynatrace Managed connectivity scheme—in all possible deployment scenarios—are shown below in one diagram.
 
 The **solid arrows** indicate the preferred paths. For example, OneAgent will connect to an Environment ActiveGate, if one is present. It will, however, connect to a Cluster ActiveGate, if no connection to an Environment ActiveGate is possible, and it can even connect directly to a Dynatrace Managed Cluster.
 The **direction of arrows** in the diagrams indicates which component initiates the connection.
@@ -42,13 +41,13 @@ For Dynatrace Managed, ActiveGate must have network access to other services as 
 
 ActiveGates exist in the following hierarchy:
 
-* Level 1âEnvironment ActiveGates
-* Level 2âCluster ActiveGates
-* Level 3âEmbedded ActiveGatesâActiveGates embedded within cluster nodes (not shown on graphs above).
+* Level 1—Environment ActiveGates
+* Level 2—Cluster ActiveGates
+* Level 3—Embedded ActiveGates—ActiveGates embedded within cluster nodes (not shown on graphs above).
 
 ActiveGates can only send data to higher hierarchy levels. It is impossible to send data to the same or lower level of the hierarchy.
 
-Environment ActiveGates, by default, connect directly to the Dynatrace Cluster (unless custom network zones are usedâsee below). This eliminates an intermediate step of connecting to a Cluster ActiveGate. Connecting through the Cluster ActiveGate needs to be arranged, if the Dynatrace Cluster is not directly reachable. For example, if the Environment ActiveGate is in a different network or different data center.
+Environment ActiveGates, by default, connect directly to the Dynatrace Cluster (unless custom network zones are used—see below). This eliminates an intermediate step of connecting to a Cluster ActiveGate. Connecting through the Cluster ActiveGate needs to be arranged, if the Dynatrace Cluster is not directly reachable. For example, if the Environment ActiveGate is in a different network or different data center.
 
 Connectivity can also depend on **[network zones](/managed/manage/network-zones "Find out how network zones work in Dynatrace.")** if such are configured. Network zone configuration means that ActiveGates and OneAgents will prefer to communicate with ActiveGates from the same zone, before connecting to ActiveGates outside of the active zone.
 
@@ -57,13 +56,13 @@ Connectivity can also depend on **[network zones](/managed/manage/network-zones 
 All Dynatrace components (OneAgents, ActiveGates, Dynatrace Cluster) detect their hostnames and distribute them as communication endpoints among each other to achieve the highest possible connection robustness.  
 This works automatically, unless there are networking devices (proxies, load balancers) in your environment, which should be taken into account, and of which Dynatrace is not aware.
 
-The diagram below shows all possible proxy and load balancer (reverse proxy) placements for an ActiveGate deployment. For simplicity, direct connectionsâthose that are not through proxies or load balancersâare not shown in this diagram. Alternative connections (those that connect through one or more proxies or load balancers), are shown as dashed lines.
+The diagram below shows all possible proxy and load balancer (reverse proxy) placements for an ActiveGate deployment. For simplicity, direct connections—those that are not through proxies or load balancers–are not shown in this diagram. Alternative connections (those that connect through one or more proxies or load balancers), are shown as dashed lines.
 
 * If there is a load balancer between OneAgents and an ActiveGate, you should specify the load balancer's address as the [`dnsEntryPoint`](/managed/ingest-from/dynatrace-activegate/configuration/set-up-reverse-proxy-for-oneagent "Configure ActiveGate properties to set up a reverse proxy or a load balancer for OneAgent.") property in the ActiveGate configuration.
 * If there is a load balancer between ActiveGate and the next communication endpoint that traffic should be routed through, configure [`seedServerUrl` and `ignoreClusterRuntimeInfo`](/managed/ingest-from/dynatrace-activegate/configuration/set-up-reverse-proxy-for-activegate "Learn how to configure ActiveGate properties to set up a reverse proxy or a load balancer.")
 * If a proxy is used to reach the Dynatrace Cluster or any of the monitored clouds, [configure a proxy](/managed/ingest-from/dynatrace-activegate/configuration/set-up-proxy-authentication-for-activegate "Learn how to configure ActiveGate properties to set up a proxy.").
 
-![Proxy and load balancer placements for ActiveGate deployments](https://dt-cdn.net/images/proxy-rev-proxy-005-1018-c916f384ca.png)
+![Proxy and load balancer placements for ActiveGate deployments](https://cdn.bfldr.com/B686QPH3/as/xfczqv8vmqmjx3nnskv2x/ActiveGate-Proxy_and_load_balancer_configuration-Light_Mode?auto=webp&format=png&position=1)
 
 Proxy and load balancer placements for ActiveGate deployments
 

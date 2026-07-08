@@ -1,7 +1,6 @@
 ---
 title: Synthetic locations API v2 - PUT a location (Dynatrace Managed)
 source: https://docs.dynatrace.com/managed/dynatrace-api/cluster-api/cluster-api-v2/synthetic-locations-and-nodes/put-a-location
-scraped: 2026-05-12T11:05:52.829766
 ---
 
 # Synthetic locations API v2 - PUT a location (Dynatrace Managed)
@@ -83,7 +82,7 @@ This is a model of the request body, showing the possible elements. It has to be
 | Element | Type | Description |
 | --- | --- | --- |
 | code | integer | The HTTP status code |
-| constraintViolations | [ConstraintViolation[]](#openapi-definition-ConstraintViolation) | A list of constraint violations |
+| constraintViolations | [ConstraintViolation](#openapi-definition-ConstraintViolation)[] | A list of constraint violations |
 | message | string | The error message |
 
 #### The `ConstraintViolation` object

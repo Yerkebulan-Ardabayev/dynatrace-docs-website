@@ -1,7 +1,6 @@
 ---
 title: Delete specific environment
 source: https://docs.dynatrace.com/managed/dynatrace-api/cluster-api/cluster-api-v2/environments/delete-specific-managed-environment
-scraped: 2026-05-12T11:05:58.749801
 ---
 
 # Delete specific environment

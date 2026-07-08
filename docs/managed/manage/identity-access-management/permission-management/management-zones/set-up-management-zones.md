@@ -1,7 +1,6 @@
 ---
 title: Set up management zones
 source: https://docs.dynatrace.com/managed/manage/identity-access-management/permission-management/management-zones/set-up-management-zones
-scraped: 2026-05-12T11:54:10.993865
 ---
 
 # Set up management zones

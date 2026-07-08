@@ -1,7 +1,6 @@
 ---
 title: Metadata and automation
 source: https://docs.dynatrace.com/managed/ingest-from/setup-on-k8s/guides/metadata-automation
-scraped: 2026-05-12T11:53:46.458227
 ---
 
 # Metadata and automation

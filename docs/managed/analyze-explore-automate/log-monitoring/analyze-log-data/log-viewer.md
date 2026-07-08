@@ -1,7 +1,6 @@
 ---
 title: Log viewer (Logs Classic)
 source: https://docs.dynatrace.com/managed/analyze-explore-automate/log-monitoring/analyze-log-data/log-viewer
-scraped: 2026-05-12T11:13:21.177741
 ---
 
 # Log viewer (Logs Classic)
@@ -30,7 +29,7 @@ In **Filter by**, you can set filters to narrow down the log events that are dis
   + If the searched attribute names differ, the **AND** operator is applied. The search results include only items that simultaneously match **all** of the specified attribute names. It narrows down the search to items that match multiple criteria.
 * With **Advanced query** selected, you can specify more complex criteria for log events by using combinations of keywords, phrases, logical operators, and parentheses (limit of 10 different attributes). The Dynatrace search query language provides you with complete flexibility over searches through log content. You can use the query entry to quickly text search the content of the log data. Any string entered in the query text box without specifying the log data attribute will be treated as a simple text search on the log data content.
 
-When filtering over log content, you can only use full tokens. The log content is split into tokens according to rules from the [Unicode Text Segmentationï»¿](https://unicode.org/reports/tr29/). Alternatively, you can use the wildcard \* at the end of the token.
+When filtering over log content, you can only use full tokens. The log content is split into tokens according to rules from the [Unicode Text Segmentation﻿](https://unicode.org/reports/tr29/). Alternatively, you can use the wildcard \* at the end of the token.
 
 You can turn **Advanced query** on and off to switch between the auto-complete and advanced modes. Dynatrace will transform the auto-complete filters to a query and vice versa provided that the query in the advanced mode can be transformed. Some complex queries with logical operators cannot be converted to auto-complete filters, in which case switching to auto-complete mode becomes unavailable.
 

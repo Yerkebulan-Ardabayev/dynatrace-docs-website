@@ -1,7 +1,6 @@
 ---
 title: Rotating cluster tokens via API
 source: https://docs.dynatrace.com/managed/dynatrace-api/cluster-api/cluster-token-rotation-api
-scraped: 2026-05-12T12:14:09.740420
 ---
 
 # Rotating cluster tokens via API

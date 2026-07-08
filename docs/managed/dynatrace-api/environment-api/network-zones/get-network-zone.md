@@ -1,7 +1,6 @@
 ---
 title: Network zones API - GET a network zone
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/network-zones/get-network-zone
-scraped: 2026-05-12T11:59:37.454056
 ---
 
 # Network zones API - GET a network zone
@@ -53,7 +52,7 @@ Configuration of a network zone.
 | id | string | The ID of the network zone. |
 | numOfConfiguredActiveGates | integer | The number of ActiveGates in the network zone. |
 | numOfConfiguredOneAgents | integer | The number of OneAgents that are configured to use the network zone as primary. |
-| numOfOneAgentsFromOtherZones | integer | The number of OneAgents from other network zones that are using ActiveGates in the network zone.  This is a fraction ofÂ **numOfOneAgentsUsing**.  One possible reason for switching to another zone is that a firewall is preventing a OneAgent from connecting to any ActiveGate in the preferred network zone. |
+| numOfOneAgentsFromOtherZones | integer | The number of OneAgents from other network zones that are using ActiveGates in the network zone.  This is a fraction of **numOfOneAgentsUsing**.  One possible reason for switching to another zone is that a firewall is preventing a OneAgent from connecting to any ActiveGate in the preferred network zone. |
 | numOfOneAgentsUsing | integer | The number of OneAgents that are using ActiveGates in the network zone. |
 | overridesGlobal | boolean | Indicates if a global network zone is overridden (managed only). |
 | scope | string | Specifies the scope of the network zone (managed only). |
@@ -69,7 +68,7 @@ Configuration of a network zone.
 | Element | Type | Description |
 | --- | --- | --- |
 | code | integer | The HTTP status code |
-| constraintViolations | [ConstraintViolation[]](#openapi-definition-ConstraintViolation) | A list of constraint violations |
+| constraintViolations | [ConstraintViolation](#openapi-definition-ConstraintViolation)[] | A list of constraint violations |
 | message | string | The error message |
 
 #### The `ConstraintViolation` object

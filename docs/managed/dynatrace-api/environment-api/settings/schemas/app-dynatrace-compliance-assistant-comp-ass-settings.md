@@ -1,7 +1,6 @@
 ---
 title: Settings API - Compliance Assistant schema table
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/settings/schemas/app-dynatrace-compliance-assistant-comp-ass-settings
-scraped: 2026-05-12T11:46:02.280597
 ---
 
 # Settings API - Compliance Assistant schema table
@@ -41,12 +40,19 @@ To execute this request, you need an access token with **Read settings** (`setti
 | Property | Type | Description | Required |
 | --- | --- | --- | --- |
 | DORA `dora` | [frameworks.dora](#frameworks.dora) | - | Optional |
+| APRA CPS 230 `apra` | [frameworks.apra](#frameworks.apra) | - | Optional |
 
 ##### The `frameworks.dora` object
 
 | Property | Type | Description | Required |
 | --- | --- | --- | --- |
 | Critical or important functions (CIFs) `cifs` | [frameworks.dora.cif](#frameworks.dora.cif)[] | - | Required |
+
+##### The `frameworks.apra` object
+
+| Property | Type | Description | Required |
+| --- | --- | --- | --- |
+| Critical operations `criticalOperations` | [frameworks.apra.criticalOperation](#frameworks.apra.criticalOperation)[] | - | Required |
 
 ##### The `frameworks.dora.cif` object
 
@@ -57,7 +63,23 @@ To execute this request, you need an access token with **Read settings** (`setti
 | Date Modified `dateModified` | zoned\_date\_time | - | Optional |
 | User Modified `userModified` | text | - | Optional |
 
+##### The `frameworks.apra.criticalOperation` object
+
+| Property | Type | Description | Required |
+| --- | --- | --- | --- |
+| ID `ID` | text | - | Optional |
+| Cost `cost` | [frameworks.apra.cost](#frameworks.apra.cost) | - | Optional |
+| Date Modified `dateModified` | zoned\_date\_time | - | Optional |
+| User Modified `userModified` | text | - | Optional |
+
 ##### The `frameworks.dora.cost` object
+
+| Property | Type | Description | Required |
+| --- | --- | --- | --- |
+| Amount `value` | float | - | Optional |
+| Currency `currency` | text | - | Optional |
+
+##### The `frameworks.apra.cost` object
 
 | Property | Type | Description | Required |
 | --- | --- | --- | --- |

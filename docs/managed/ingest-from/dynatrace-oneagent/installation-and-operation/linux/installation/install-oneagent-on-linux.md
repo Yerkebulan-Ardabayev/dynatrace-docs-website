@@ -1,7 +1,6 @@
 ---
 title: Install OneAgent on Linux
 source: https://docs.dynatrace.com/managed/ingest-from/dynatrace-oneagent/installation-and-operation/linux/installation/install-oneagent-on-linux
-scraped: 2026-05-12T11:05:24.768162
 ---
 
 # Install OneAgent on Linux
@@ -49,7 +48,7 @@ Depending on your firewall policy, you may need to explicitly allow certain outg
 4. **Select installer type**
    OneAgent supports the following CPU architectures:
 
-   * `Linux ARM` - ARM64 (AARch64) including [AWS Graviton processorsï»¿](https://aws.amazon.com/ec2/graviton/)
+   * `Linux ARM` - ARM64 (AARch64) including [AWS Graviton processors﻿](https://aws.amazon.com/ec2/graviton/)
    * `PowerPC (BE)` - 64-bit PowerPC (ppc64be) [Learn more](/managed/ingest-from/dynatrace-oneagent/installation-and-operation/linux/installation/install-oneagent-on-ppc-be-linux "Learn how to download and install Dynatrace OneAgent on PPC BE Linux.")
    * `PowerPC (LE)` - 64-bit PowerPC (ppc64le)
    * `s390` - 64-bit IBM Z mainframe (s390) [Learn more](/managed/ingest-from/dynatrace-oneagent/installation-and-operation/zos "Install, configure, and manage Dynatrace modules on z/OS.")
@@ -71,13 +70,13 @@ Depending on your firewall policy, you may need to explicitly allow certain outg
 8. **Run the installer**  
    Paste the command into your terminal window and run it. You'll need root access only to start OneAgent installation. Elevated privileges are dropped as soon as Dynatrace OneAgent is deployed.
 
-   If youâre on an Ubuntu Server
+   If you’re on an Ubuntu Server
 
    ```
    sudo /bin/sh Dynatrace-OneAgent-Linux-1.0.0.sh
    ```
 
-   If youâre using Red Hat Enterprise Linux
+   If you’re using Red Hat Enterprise Linux
 
    ```
    su -c '/bin/sh Dynatrace-OneAgent-Linux-1.0.0.sh'
@@ -99,12 +98,12 @@ Dynatrace OneAgent is a set of specialized services configured specifically for 
 During the installation process, the installer:
 
 * Installs executable code and libraries that are used by Dynatrace OneAgent. OneAgent binaries are installed in the `/opt/dynatrace/oneagent` directory and startup scripts are created in `/etc/init.d` (on systemd systems, startup scripts are created in `/etc/systemd/system/`). One of the Linux OneAgent components, `liboneagentproc.so`, is located in the system library directory (`/lib` or `/lib64` depending on your architecture) and is enabled at `/etc/ld.so.preload`.
-* Creates its own user (`dtuser`). This user is created without a password. It's not possible to login with this user. For security purposes, services that donât require root privileges will run under this user. Installation, however, still requires root access.
-* Checks the systemâs global proxy settings.
+* Creates its own user (`dtuser`). This user is created without a password. It's not possible to login with this user. For security purposes, services that don’t require root privileges will run under this user. Installation, however, still requires root access.
+* Checks the system’s global proxy settings.
 * Checks for a connection to Dynatrace Server or ActiveGate (if you installed ActiveGate and downloaded the OneAgent installer after ActiveGate was connected to Dynatrace).
 * Detects all SELinux-aware applications and adjusts the SELinux security policy accordingly.
 * Allows Dynatrace OneAgent to inject its own libraries into monitored processes.
-* Modifies the core pattern configuration so that OneAgent can detect and report process crashes. The original core\_pattern configuration will still work following installation and will be preserved in `/opt/dynatrace/oneagent/agent/conf/original_core_pattern`, where you can define your own core settings using the format as specified in [Linux Programmer's Manualï»¿](https://man7.org/linux/man-pages/man5/core.5.html).
+* Modifies the core pattern configuration so that OneAgent can detect and report process crashes. The original core\_pattern configuration will still work following installation and will be preserved in `/opt/dynatrace/oneagent/agent/conf/original_core_pattern`, where you can define your own core settings using the format as specified in [Linux Programmer's Manual﻿](https://man7.org/linux/man-pages/man5/core.5.html).
 
 For a summary of the changes made to your system by OneAgent installation, see [OneAgent security on Linux](/managed/ingest-from/dynatrace-oneagent/installation-and-operation/linux/installation/oneagent-security-linux "Learn about Dynatrace OneAgent security and modifications to your Linux-based system").
 

@@ -1,7 +1,6 @@
 ---
 title: Settings API - Process availability schema table
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/settings/schemas/builtin-processavailability
-scraped: 2026-05-12T11:47:40.357918
 ---
 
 # Settings API - Process availability schema table
@@ -16,7 +15,7 @@ This feature allows you to monitor if a minimum number of processes matching the
 
 In order to monitor the availability of a certain group of processes, you must first define a monitoring rule. Give your monitoring rule a unique name and add its detection rules to which Dynatrace will match the processes on your host.
 
-For more details, see [Process availabilityï»¿](https://dt-url.net/v923x37)
+For more details, see [Process availability﻿](https://dt-url.net/v923x37)
 
 | Schema ID | Schema groups | Scope |
 | --- | --- | --- |
@@ -43,7 +42,7 @@ To execute this request, you need an access token with **Read settings** (`setti
 | Operating system `operatingSystem` | Set<[OperatingSystem](#OperatingSystem)> | Select the operating systems on which the monitoring rule should be applied. The element has these enums * `WINDOWS` * `LINUX` * `AIX` | Required |
 | Minimum number of matching processes `minimumProcesses` | integer | Specify a minimum number of processes matching the monitoring rule. An alert is triggered if any host falls below this threshold. | Required |
 | Define detection rules `rules` | [DetectionCondition](#DetectionCondition)[] | Define process detection rules by selecting a process property and a condition. Each monitoring rule can have multiple detection rules associated with it. | Required |
-| Properties `metadata` | Set<[MetadataItem](#MetadataItem)> | Set of additional key-value properties to be attached to the triggered event. You can retrieve the available property keys using the [Events API v2ï»¿](https://dt-url.net/9622g1w). Additionally any Host resource attribute can be dynamically substituted (agent 1.325+). | Required |
+| Properties `metadata` | Set<[MetadataItem](#MetadataItem)> | Set of additional key-value properties to be attached to the triggered event. You can retrieve the available property keys using the [Events API v2﻿](https://dt-url.net/9622g1w). Additionally any Host resource attribute can be dynamically substituted (agent 1.325+). | Required |
 
 ##### The `DetectionCondition` object
 
@@ -51,8 +50,8 @@ To execute this request, you need an access token with **Read settings** (`setti
 | --- | --- | --- | --- |
 | Rule scope `ruleType` | enum | The element has these enums * `RuleTypeProcess` * `RuleTypeHost` | Required |
 | Select process property `property` | enum | The element has these enums * `executable` * `executablePath` * `commandLine` * `fullCommandLine` * `user` | Required |
-| Condition `condition` | text | * $contains(svc) â Matches if svc appears anywhere in the process property value. * $eq(svc.exe) â Matches if svc.exe matches the process property value exactly. * $prefix(svc) â Matches if app matches the prefix of the process property value. * $suffix(svc.py) â Matches if svc.py matches the suffix of the process property value.  For example, $suffix(svc.py) would detect processes named loyaltysvc.py and paymentssvc.py.  For more details, see [Process availabilityï»¿](https://dt-url.net/v923x37). | Required |
-| Resource attribute `hostMetadataCondition` | [HostMetadataCondition](#HostMetadataCondition) | Host resource attributes are dimensions enriching the host including custom metadata which are user-defined key-value pairs that you can assign to hosts monitored by Dynatrace.  By defining custom metadata, you can enrich the monitoring data with context specific to your organization's needs, such as environment names, team ownership, application versions, or any other relevant details.  See [Define tags and metadata for hostsï»¿](https://dt-url.net/w3hv0kbw).  Note: Starting from version 1.325 host resource attributes are supported in addition to host custom metadata. | Required |
+| Condition `condition` | text | * $contains(svc) – Matches if svc appears anywhere in the process property value. * $eq(svc.exe) – Matches if svc.exe matches the process property value exactly. * $prefix(svc) – Matches if app matches the prefix of the process property value. * $suffix(svc.py) – Matches if svc.py matches the suffix of the process property value.  For example, $suffix(svc.py) would detect processes named loyaltysvc.py and paymentssvc.py.  For more details, see [Process availability﻿](https://dt-url.net/v923x37). | Required |
+| Resource attribute `hostMetadataCondition` | [HostMetadataCondition](#HostMetadataCondition) | Host resource attributes are dimensions enriching the host including custom metadata which are user-defined key-value pairs that you can assign to hosts monitored by Dynatrace.  By defining custom metadata, you can enrich the monitoring data with context specific to your organization's needs, such as environment names, team ownership, application versions, or any other relevant details.  See [Define tags and metadata for hosts﻿](https://dt-url.net/w3hv0kbw).  Note: Starting from version 1.325 host resource attributes are supported in addition to host custom metadata. | Required |
 
 ##### The `MetadataItem` object
 
@@ -67,4 +66,4 @@ To execute this request, you need an access token with **Read settings** (`setti
 | --- | --- | --- | --- |
 | Key must exist `keyMustExist` | boolean | When enabled, the condition requires a resource attribute to exist and match the constraints; when disabled, the key is optional but must still match the constrains if it is present. | Required |
 | Key `metadataKey` | text | - | Required |
-| Condition `metadataCondition` | text | This string has to match a required format.  * `$match(ver*_1.2.?)` â Matches string with wildcards: `*` any number (including zero) of characters and `?` exactly one character. * `$contains(production)` â Matches if `production` appears anywhere in the host metadata value. * `$eq(production)` â Matches if `production` matches the host metadata value exactly. * `$prefix(production)` â Matches if `production` matches the prefix of the host metadata value. * `$suffix(production)` â Matches if `production` matches the suffix of the host metadata value.  Available logic operations:  * `$not($eq(production))` â Matches if the host metadata value is different from `production`. * `$and($prefix(production),$suffix(main))` â Matches if host metadata value starts with `production` and ends with `main`. * `$or($prefix(production),$suffix(main))` â Matches if host metadata value starts with `production` or ends with `main`.  Brackets **(** and **)** that are part of the matched property **must be escaped with a tilde (~)** | Required |
+| Condition `metadataCondition` | text | This string has to match a required format.  * `$match(ver*_1.2.?)` – Matches string with wildcards: `*` any number (including zero) of characters and `?` exactly one character. * `$contains(production)` – Matches if `production` appears anywhere in the host metadata value. * `$eq(production)` – Matches if `production` matches the host metadata value exactly. * `$prefix(production)` – Matches if `production` matches the prefix of the host metadata value. * `$suffix(production)` – Matches if `production` matches the suffix of the host metadata value.  Available logic operations:  * `$not($eq(production))` – Matches if the host metadata value is different from `production`. * `$and($prefix(production),$suffix(main))` – Matches if host metadata value starts with `production` and ends with `main`. * `$or($prefix(production),$suffix(main))` – Matches if host metadata value starts with `production` or ends with `main`.  Brackets **(** and **)** that are part of the matched property **must be escaped with a tilde (~)** | Required |

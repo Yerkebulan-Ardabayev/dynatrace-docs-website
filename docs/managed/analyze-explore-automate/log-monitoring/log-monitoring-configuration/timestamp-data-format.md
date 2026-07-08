@@ -1,7 +1,6 @@
 ---
 title: Supported timestamp formats (Logs Classic)
 source: https://docs.dynatrace.com/managed/analyze-explore-automate/log-monitoring/log-monitoring-configuration/timestamp-data-format
-scraped: 2026-05-12T12:00:21.214966
 ---
 
 # Supported timestamp formats (Logs Classic)
@@ -13,13 +12,13 @@ scraped: 2026-05-12T12:00:21.214966
 
 Log Monitoring Classic
 
-Timestampâincluding date, time, timezone, and offsetâis searched for in the first 64 characters of the log content (this value is configurable via **Log Monitoring** > **Timestamp/Splitting patterns**). If an offset or timezone is not found, the local timezone of a host is used.
+Timestamp—including date, time, timezone, and offset—is searched for in the first 64 characters of the log content (this value is configurable via **Log Monitoring** > **Timestamp/Splitting patterns**). If an offset or timezone is not found, the local timezone of a host is used.
 
 During log processing, each line where a supported timestamp is detected starts a new log record. A line without a timestamp is considered to be a continuation of an existing log record and appended to a line that contains a timestamp.  
 If no timestamp is present in a log file or a timestamp is not recognized due to unsupported format, each line not starting with whitespace characters, such as `space` or `tab`, starts a new log record. Each line starting with whitespace characters, such as `space` or `tab`, is treated as a log record continuation.  
 Due to multiple formats of incoming log data, Log Monitoring also enables you to define a specific date format using timestamp rules that specify what should be considered a timestamp in a log record. For more details on defining date format, see [Log timestamp configuration](/managed/upgrade/unavailable-in-managed "Your selection is unavailable in Dynatrace Managed.").
 
-The supported [timestamp formatsï»¿](https://dt-url.net/6e034iy) include:
+The supported [timestamp formats﻿](https://dt-url.net/6e034iy) include:
 
 * ISO 8601 format: `%Y-%m-%d %H:%M:%S`  
   Example: `2022-04-17 11:25:12.345`
@@ -98,7 +97,7 @@ Most of the supported timestamp formats are coupled with automatic timezone form
   `2022-04-17 11:25:12.345Z-0100`  
   `2022-04-17 11:25:12.345 UTC-01:00`  
   `2022-04-17 11:25:12.345 GMT-0100`
-* Full [IANAï»¿](https://dt-url.net/jq034g6) timezone name.  
+* Full [IANA﻿](https://dt-url.net/jq034g6) timezone name.  
   Example:  
   `2022-04-17 11:25:12.345 Europe/Warsaw`
 * Timezone name abbreviation  

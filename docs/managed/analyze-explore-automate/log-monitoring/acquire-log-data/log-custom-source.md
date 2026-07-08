@@ -1,7 +1,6 @@
 ---
 title: Custom log source (Logs Classic)
 source: https://docs.dynatrace.com/managed/analyze-explore-automate/log-monitoring/acquire-log-data/log-custom-source
-scraped: 2026-05-12T12:00:15.173962
 ---
 
 # Custom log source (Logs Classic)
@@ -62,7 +61,7 @@ To configure custom log sources at the host level
 
 1. Go to **Hosts**.
 2. Find and select your host to display the host overview page.
-3. In the upper-right corner of the host overview page, select **More** (**â¦**) > **Settings**.
+3. In the upper-right corner of the host overview page, select **More** (**…**) > **Settings**.
 
 4. From the host settings, go to **Log Monitoring** > **Custom log sources**.
 
@@ -148,7 +147,7 @@ At a glance, when you need to actively grant permissions:
 ### Linux
 
 * Log files on local drives: no action needed.
-  By default, OneAgent has the appropriate [Linux capabilitiesï»¿](https://man7.org/linux/man-pages/man7/capabilities.7.html) to read these files.
+  By default, OneAgent has the appropriate [Linux capabilities﻿](https://man7.org/linux/man-pages/man7/capabilities.7.html) to read these files.
 * Log files on a remote drive: you need to grant the following permissions for the account that OneAgent operates on (by default, this account is `dtuser`):
 
   + Read and execute `(r+x)` permissions for each directory in the log file path.
@@ -159,7 +158,7 @@ At a glance, when you need to actively grant permissions:
     The lack of permissions rights is one of the most typical root causes for the lack of log ingestion for remote drives on Linux.
 
     If you have access to the monitored host, you can quickly check if the lack of permission rights is the issue.
-    Do this by executing the `sudo âu dtuser cat /path/to/file.log` command, with the proper full path, of course, assuming `dtuser` is the account the OneAgent works on.
+    Do this by executing the `sudo —u dtuser cat /path/to/file.log` command, with the proper full path, of course, assuming `dtuser` is the account the OneAgent works on.
 
 ### Windows
 
@@ -171,7 +170,7 @@ The following permissions are typically granted automatically for log files on l
 * Read and execute permissions for directories in the path, for this account.
 
 For remote drives, it might not be set. You need to check if they're set and grant the permissions.
-For more information, see [https://www.ntfs.com/ntfs-permissions-setting.htmï»¿](https://www.ntfs.com/ntfs-permissions-setting.htm).
+For more information, see [https://www.ntfs.com/ntfs-permissions-setting.htm﻿](https://www.ntfs.com/ntfs-permissions-setting.htm).
 
 OneAgent cannot access files that require authorization via additional UI dialogs, for example a Windows Explorer pop-up.
 

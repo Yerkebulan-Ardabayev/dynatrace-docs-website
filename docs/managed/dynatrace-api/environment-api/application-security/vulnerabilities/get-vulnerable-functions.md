@@ -1,7 +1,6 @@
 ---
 title: Vulnerabilities API - GET vulnerable functions
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/application-security/vulnerabilities/get-vulnerable-functions
-scraped: 2026-05-12T11:58:45.867594
 ---
 
 # Vulnerabilities API - GET vulnerable functions
@@ -53,8 +52,8 @@ Optional: A list of vulnerable function usages per process group for a security 
 
 | Element | Type | Description |
 | --- | --- | --- |
-| vulnerableFunctions | [VulnerableFunctionProcessGroups[]](#openapi-definition-VulnerableFunctionProcessGroups) | A list of vulnerable functions, their security problem wide usages and their usages per process group. |
-| vulnerableFunctionsByProcessGroup | [ProcessGroupVulnerableFunctions[]](#openapi-definition-ProcessGroupVulnerableFunctions) | A list of vulnerable function usages per process group for a security problem. The result is sorted based on the following criteria:  * the number of vulnerable functions in use (descending). * the number of vulnerable functions not in use (descending). * the number of vulnerable functions not available (descending). * the process group identifier (ascending) |
+| vulnerableFunctions | [VulnerableFunctionProcessGroups](#openapi-definition-VulnerableFunctionProcessGroups)[] | A list of vulnerable functions, their security problem wide usages and their usages per process group. |
+| vulnerableFunctionsByProcessGroup | [ProcessGroupVulnerableFunctions](#openapi-definition-ProcessGroupVulnerableFunctions)[] | A list of vulnerable function usages per process group for a security problem. The result is sorted based on the following criteria:  * the number of vulnerable functions in use (descending). * the number of vulnerable functions not in use (descending). * the number of vulnerable functions not available (descending). * the process group identifier (ascending) |
 
 #### The `VulnerableFunctionProcessGroups` object
 
@@ -84,9 +83,9 @@ The vulnerable functions of a process group including their usage.
 
 | Element | Type | Description |
 | --- | --- | --- |
-| functionsInUse | [VulnerableFunction[]](#openapi-definition-VulnerableFunction) | A list of vulnerable functions in use. |
-| functionsNotAvailable | [VulnerableFunction[]](#openapi-definition-VulnerableFunction) | A list of vulnerable functions with unknown state. |
-| functionsNotInUse | [VulnerableFunction[]](#openapi-definition-VulnerableFunction) | A list of vulnerable functions not in use. |
+| functionsInUse | [VulnerableFunction](#openapi-definition-VulnerableFunction)[] | A list of vulnerable functions in use. |
+| functionsNotAvailable | [VulnerableFunction](#openapi-definition-VulnerableFunction)[] | A list of vulnerable functions with unknown state. |
+| functionsNotInUse | [VulnerableFunction](#openapi-definition-VulnerableFunction)[] | A list of vulnerable functions not in use. |
 | processGroup | string | The process group identifier. |
 
 #### The `ErrorEnvelope` object
@@ -100,7 +99,7 @@ The vulnerable functions of a process group including their usage.
 | Element | Type | Description |
 | --- | --- | --- |
 | code | integer | The HTTP status code |
-| constraintViolations | [ConstraintViolation[]](#openapi-definition-ConstraintViolation) | A list of constraint violations |
+| constraintViolations | [ConstraintViolation](#openapi-definition-ConstraintViolation)[] | A list of constraint violations |
 | message | string | The error message |
 
 #### The `ConstraintViolation` object

@@ -1,7 +1,6 @@
 ---
 title: Verify Dynatrace image signatures
 source: https://docs.dynatrace.com/managed/ingest-from/setup-on-k8s/guides/container-registries/verify-image-signature
-scraped: 2026-05-12T12:06:14.953057
 ---
 
 # Verify Dynatrace image signatures
@@ -19,8 +18,8 @@ This page outlines the process of verifying Dynatrace image signatures, thereby 
 
 Before you begin, be sure to meet the following prerequisites:
 
-* Required [Cosignï»¿](https://docs.sigstore.dev/cosign/system_config/installation/) for image signature verification
-* Optional [GitHub CLIï»¿](https://cli.github.com/) for SLSA provenance verification via GitHub attestation API
+* Required [Cosign﻿](https://docs.sigstore.dev/cosign/system_config/installation/) for image signature verification
+* Optional [GitHub CLI﻿](https://cli.github.com/) for SLSA provenance verification via GitHub attestation API
 * Required Read access to Dynatrace image repositories when using a private registry
 
 ## Verify image signatures using Cosign
@@ -191,7 +190,7 @@ jq '.payload | @base64d | fromjson | .predicate' > sbom.json
 
 3
 
-The [jq CLIï»¿](https://jqlang.github.io/jq/) is a useful tool for working with JSON.
+The [jq CLI﻿](https://jqlang.github.io/jq/) is a useful tool for working with JSON.
 
 Executing the command creates the `sbom.json` file in the local file system, containing the SBOM of the Dynatrace Operator image.
 
@@ -236,7 +235,7 @@ jq '.payload | @base64d | fromjson | .predicate' > sbom.json
 
 1
 
-The [jq CLIï»¿](https://jqlang.github.io/jq/) is a useful tool for working with JSON.
+The [jq CLI﻿](https://jqlang.github.io/jq/) is a useful tool for working with JSON.
 
 Executing the command creates the `sbom.json` file in the local file system, containing the SBOM of the Dynatrace ActiveGate image.
 
@@ -280,13 +279,13 @@ jq '.payload | @base64d | fromjson | .predicate' > sbom.json
 
 1
 
-The [jq CLIï»¿](https://jqlang.github.io/jq/) is a useful tool for working with JSON.
+The [jq CLI﻿](https://jqlang.github.io/jq/) is a useful tool for working with JSON.
 
 Executing the command creates the `sbom.json` file in the local file system, containing the SBOM of the Dynatrace EdgeConnect image.
 
 ## Verify SLSA Build Provenance Attestation
 
-[SLSAï»¿](https://slsa.dev) build provenance attestations provide a verifiable record of where and how a container image was built. Verifying these attestations confirms that the image was produced by the expected source repository and build workflow, protecting against tampering in the build and distribution process.
+[SLSA﻿](https://slsa.dev) build provenance attestations provide a verifiable record of where and how a container image was built. Verifying these attestations confirms that the image was produced by the expected source repository and build workflow, protecting against tampering in the build and distribution process.
 
 ### Dynatrace Operator
 
@@ -328,7 +327,7 @@ On success, Cosign confirms that the signing certificate, transparency log entry
 
 Retrieve provenance details from verification output
 
-The [SLSA Provenance v1ï»¿](https://slsa.dev/spec/v1.0/provenance) payload can be extracted from the in-toto attestation by extending the command from above with `jq`[3](#fn-6-3-def) filters:
+The [SLSA Provenance v1﻿](https://slsa.dev/spec/v1.0/provenance) payload can be extracted from the in-toto attestation by extending the command from above with `jq`[3](#fn-6-3-def) filters:
 
 ```
 cosign verify-attestation \
@@ -356,11 +355,11 @@ jq '.payload | @base64d | fromjson'
 
 3
 
-The [jq CLIï»¿](https://jqlang.github.io/jq/) is a useful tool for working with JSON.
+The [jq CLI﻿](https://jqlang.github.io/jq/) is a useful tool for working with JSON.
 
 The output contains the full SLSA Provenance v1 predicate, including the source repository, build workflow, git commit, and the GitHub Actions invocation that produced the image.
 
-Alternatively, you can use the [GitHub CLIï»¿](https://cli.github.com/) to verify the attestation directly against the GitHub attestation API:
+Alternatively, you can use the [GitHub CLI﻿](https://cli.github.com/) to verify the attestation directly against the GitHub attestation API:
 
 ```
 gh attestation verify \

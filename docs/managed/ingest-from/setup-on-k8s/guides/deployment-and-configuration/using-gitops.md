@@ -1,7 +1,6 @@
 ---
 title: Manage Dynatrace deployments using GitOps
 source: https://docs.dynatrace.com/managed/ingest-from/setup-on-k8s/guides/deployment-and-configuration/using-gitops
-scraped: 2026-05-12T12:09:22.558351
 ---
 
 # Manage Dynatrace deployments using GitOps
@@ -15,7 +14,7 @@ With many companies today adopting GitOps for streamlined Kubernetes deployments
 
 ## Using ArgoCD
 
-This section discusses deploying Dynatrace Operator and applying a DynaKube CR using [ArgoCDï»¿](https://dt-url.net/hi037z9). Additionally, it outlines options and tips for flexible integration with ArgoCD.
+This section discusses deploying Dynatrace Operator and applying a DynaKube CR using [ArgoCD﻿](https://dt-url.net/hi037z9). Additionally, it outlines options and tips for flexible integration with ArgoCD.
 
 The following three points describe Dynatrace deployment options outlined by the subsections and combinations of them.
 
@@ -89,7 +88,7 @@ targetRevision: 1.0.0
 helm: {}
 ```
 
-For deployment customization via Helm values, please refer to ArgoCD's [Helm user guideï»¿](https://argo-cd.readthedocs.io/en/stable/user-guide/helm/).
+For deployment customization via Helm values, please refer to ArgoCD's [Helm user guide﻿](https://argo-cd.readthedocs.io/en/stable/user-guide/helm/).
 
 The Application CR can be applied in the following ways:
 
@@ -98,7 +97,7 @@ The Application CR can be applied in the following ways:
 
 #### Multi-cluster deployments via ArgoCD ApplicationSet
 
-To use ApplicationSet CRs for multi-cluster deployments, use the Application CR from above as a template and integrate it into an ApplicationSet CR according to [ArgoCD's official documentationï»¿](https://argo-cd.readthedocs.io/en/stable/operator-manual/applicationset/#the-applicationset-resource).
+To use ApplicationSet CRs for multi-cluster deployments, use the Application CR from above as a template and integrate it into an ApplicationSet CR according to [ArgoCD's official documentation﻿](https://argo-cd.readthedocs.io/en/stable/operator-manual/applicationset/#the-applicationset-resource).
 
 ### Apply DynaKube custom resource
 
@@ -169,7 +168,7 @@ For details on DynaKube CR configuration, see the [deployment modes](/managed/in
 
 ### Apply the App of Apps pattern
 
-ArgoCD's [App Of Apps patternï»¿](https://dt-url.net/s963lbz) describes a very common approach in the ArgoCD community enabling automatic cluster bootstrapping. In combination with [Sync Phases and Wavesï»¿](https://argo-cd.readthedocs.io/en/stable/user-guide/sync-waves/), the App of Apps pattern provides sequential control over Application synchronization required for deploying Dynatrace Operator before applying a DynaKube CR [1](#fn-1-1-def).
+ArgoCD's [App Of Apps pattern﻿](https://dt-url.net/s963lbz) describes a very common approach in the ArgoCD community enabling automatic cluster bootstrapping. In combination with [Sync Phases and Waves﻿](https://argo-cd.readthedocs.io/en/stable/user-guide/sync-waves/), the App of Apps pattern provides sequential control over Application synchronization required for deploying Dynatrace Operator before applying a DynaKube CR [1](#fn-1-1-def).
 
 Add the `argocd.argoproj.io/sync-wave` annotation with the respective value to the Application CRs from the above sections as illustrated in the following snippet:
 
@@ -253,13 +252,13 @@ Both Application CRs are meant to be applied via the App of Apps pattern (which 
 
 1
 
-[Creating Custom Resource Definitions (CRDs)ï»¿](https://dt-url.net/8g23lou) installed via the Helm chart can take several seconds, leading to the possibility that the initial application of the DynaKube CR will fail. To circumvent the given race condition, we recommend [configuring ArgoCD for the use of App of Appsï»¿](https://dt-url.net/ci03l8w) by changing the health assessment logic for Applications. Alternatively, automatic retries of synchronizations can be configured.
+[Creating Custom Resource Definitions (CRDs)﻿](https://dt-url.net/8g23lou) installed via the Helm chart can take several seconds, leading to the possibility that the initial application of the DynaKube CR will fail. To circumvent the given race condition, we recommend [configuring ArgoCD for the use of App of Apps﻿](https://dt-url.net/ci03l8w) by changing the health assessment logic for Applications. Alternatively, automatic retries of synchronizations can be configured.
 
 ### Use multiple sources for an ArgoCD Application (beta feature)
 
 Multiple sources for an Application is an ArgoCD beta feature and is subject to change in backwards-incompatible ways, according ArgoCD documentation.
 
-[Multiple sources for an Applicationï»¿](https://argo-cd.readthedocs.io/en/stable/user-guide/multiple_sources/) enables you to use a single ArgoCD Application for deployment of Dynatrace Operator and DynaKube CR.
+[Multiple sources for an Application﻿](https://argo-cd.readthedocs.io/en/stable/user-guide/multiple_sources/) enables you to use a single ArgoCD Application for deployment of Dynatrace Operator and DynaKube CR.
 Additionally, the feature allows Helm value files to be sources from a Git repository other than the Helm chart itself, which was not possible in ArgoCD before.
 
 ```
@@ -378,7 +377,7 @@ Before applying, replace all placeholders with meaningful values and configure a
 
 2
 
-[Creating Custom Resource Definitions (CRDs)ï»¿](https://dt-url.net/id43ley) installed via the Helm chart can take several seconds, leading to the possibility of the initial application of the DynaKube resource failing. To ensure successful deployment, you need to configure retries by specifying a sync policy.
+[Creating Custom Resource Definitions (CRDs)﻿](https://dt-url.net/id43ley) installed via the Helm chart can take several seconds, leading to the possibility of the initial application of the DynaKube resource failing. To ensure successful deployment, you need to configure retries by specifying a sync policy.
 
 ## Auto-update for Dynatrace Operator
 

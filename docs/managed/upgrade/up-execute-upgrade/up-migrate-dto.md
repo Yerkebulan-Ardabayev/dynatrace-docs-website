@@ -1,7 +1,6 @@
 ---
 title: Migrate Dynatrace Operator
 source: https://docs.dynatrace.com/managed/upgrade/up-execute-upgrade/up-migrate-dto
-scraped: 2026-05-12T12:14:02.572684
 ---
 
 # Migrate Dynatrace Operator
@@ -24,8 +23,8 @@ Before installing Dynatrace on your Kubernetes cluster, ensure that you meet the
 * You must allow egress for Dynatrace pods (default: Dynatrace namespace) to your Dynatrace environment URL.
 
   + For Dynatrace Managed, you can optionally use a Cluster ActiveGate URL.
-* For OpenShift Dedicated, you need the [cluster-admin roleï»¿](https://docs.openshift.com/dedicated/osd_cluster_admin/osd-admin-roles.html).
-* Helm installation Use [Helm version 3ï»¿](https://dt-url.net/n5036j1).
+* For OpenShift Dedicated, you need the [cluster-admin role﻿](https://docs.openshift.com/dedicated/osd_cluster_admin/osd-admin-roles.html).
+* Helm installation Use [Helm version 3﻿](https://dt-url.net/n5036j1).
 
 ### Supported versions
 
@@ -78,7 +77,7 @@ Your Kubernetes cluster will then contain the new secret `saasdynakube` holding 
 
 To update an existing [DynaKube custom resource file](/managed/ingest-from/setup-on-k8s/reference/dynakube-parameters "List the available parameters for setting up Dynatrace Operator on Kubernetes.") with the new secret,
 
-1. Go to [**Account Management**ï»¿](https://myaccount.dynatrace.com/) to find your SaaS [Environment ID].
+1. Go to [**Account Management**﻿](https://myaccount.dynatrace.com/) to find your SaaS [Environment ID].
 2. To start modifying `dynakube` custom resource file, run the command below
 
    Kubernetes

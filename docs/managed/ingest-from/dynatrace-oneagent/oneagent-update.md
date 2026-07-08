@@ -1,7 +1,6 @@
 ---
 title: OneAgent update
 source: https://docs.dynatrace.com/managed/ingest-from/dynatrace-oneagent/oneagent-update
-scraped: 2026-05-12T11:22:26.591545
 ---
 
 # OneAgent update
@@ -9,13 +8,13 @@ scraped: 2026-05-12T11:22:26.591545
 # OneAgent update
 
 * 3-min read
-* Updated on Nov 06, 2025
+* Updated on Jun 23, 2026
 
 OneAgent has a built-in, configurable auto-update mechanism.
 
 OneAgent automatic updates are easy
 
-With auto-update enabled, you don't have to worry about manually updating the OneAgents running in your environment. Each time a new version is released, OneAgent automatically downloads all necessary binaries and libraries and installs them for you. No manual configuration is required.
+With auto-update turned on, you don't have to worry about manually updating the OneAgents running in your environment. Each time a new version is released, OneAgent automatically downloads all necessary binaries and libraries and installs them for you. No manual configuration is required.
 
 Following OneAgent automatic updates, you do need to restart all server processes. This is because some components of OneAgent keep running in processes that are monitored by Dynatrace (for example, Java, .NET, Apache, and IIS).
 
@@ -26,9 +25,9 @@ OneAgent automatic updates are flexible
 
 By default, global automatic OneAgent updates are turned on, but this is configurable at the global, host group, and host level. At each level, you can choose one of the following OneAgent update strategies:
 
-* Update automatically, regardless of update windows.
-* Update automatically during a selected [update window](#maintenance-windows).
-* Do not automatically update. With this option, we don't notify you when instances of OneAgent are outdated.
+* **Automatic updates at earliest convenience**: OneAgent updates as soon as a new version is available, regardless of update windows.
+* **Automatic updates during update windows**: OneAgent updates only during a configured [update window](#maintenance-windows). The same windows govern Environment ActiveGate updates, see [Configure update windows](#maintenance-windows) below.
+* **No automatic updates**: OneAgent doesn't update on its own. You aren't notified when instances are outdated.
 
 Additionally:
 
@@ -56,7 +55,7 @@ This delay is not enforced for manual updates via **Update now**, which means th
 
 ## Monitor OneAgent updates
 
-To monitor OneAgent updates, go to **Settings** > **Updates** > **OneAgent updates**.
+To monitor OneAgent updates, go to **Settings** > **Deployment** > **OneAgent updates**.
 
 * Check or change the auto-update settings on the environment level
 * Monitor the update status per operating system (Linux, AIX, and Windows)
@@ -64,7 +63,7 @@ To monitor OneAgent updates, go to **Settings** > **Updates** > **OneAgent updat
 
 Monitor global OneAgent update
 
-For environment-wide monitoring of OneAgent updates, go to **Settings** > **Updates** > **OneAgent updates**.
+For environment-wide monitoring of OneAgent updates, go to **Settings** > **Deployment** > **OneAgent updates**.
 
 #### OneAgent updates
 
@@ -76,7 +75,7 @@ Use this section to check or change the environment-level setting:
   Update all OneAgents automatically during the selected update window.
 
   + When you choose this setting, a list of available update windows is displayed. Select one.
-  + To configure a new update window for OneAgent updates, go to **Settings** > **Updates** > **Update windows for OneAgent updates**.
+  + To configure a new update window for OneAgent updates, go to **Settings** > **Deployment** > **Update windows**.
 * **No automatic updates**  
   Do not automatically update OneAgents.
 
@@ -90,15 +89,15 @@ Turn on **Automatically update real user monitoring JavaScript library** to keep
 
 OneAgent update statuses
 
-* IncompatibleâNo auto-update possible. Manual update may be needed for this host/version.
-* Update availableâThere is an update available for this OneAgent version.
-* SuppressedâNo download because auto-update is not supported for this deployment.
-* UnknownâThis may mean, for example, that the host was not found, or that no auto-update is available for it.
-* Up to dateâThe installer version is up to date.
-* Update in progressâThis host has requested and downloaded an installer, but has not reconnected with the expected new version yet.
-* Update pendingâAn update is configured for this host. It takes priority over any other activities or updates for newly seen hosts, but the update may not start immediately for reasons such as internal cluster upgrades, throttling, and stability checks.
-* Update problemâThere was a problem while performing the update. Please review the details.
-* ScheduledâAn update is scheduled to occur during a configured update window.
+* Incompatible—No auto-update possible. Manual update may be needed for this host/version.
+* Update available—There is an update available for this OneAgent version.
+* Suppressed—No download because auto-update is not supported for this deployment.
+* Unknown—This may mean, for example, that the host was not found, or that no auto-update is available for it.
+* Up to date—The installer version is up to date.
+* Update in progress—This host has requested and downloaded an installer, but has not reconnected with the expected new version yet.
+* Update pending—An update is configured for this host. It takes priority over any other activities or updates for newly seen hosts, but the update may not start immediately for reasons such as internal cluster upgrades, throttling, and stability checks.
+* Update problem—There was a problem while performing the update. Please review the details.
+* Scheduled—An update is scheduled to occur during a configured update window.
 
 ## Configure OneAgent updates
 
@@ -106,11 +105,11 @@ You can configure OneAgent update globally, per host group, and per host.
 
 Configure global OneAgent update
 
-When automatic updates are turned on globally, whenever a new version of OneAgent becomes available, all of your installed OneAgent instancesâexcept where you have turned off auto-updates at the host group or host levelâwill automatically download the update and upgrade their binaries and configuration files.
+When automatic updates are turned on globally, whenever a new version of OneAgent becomes available, all of your installed OneAgent instances—except where you have turned off auto-updates at the host group or host level—will automatically download the update and upgrade their binaries and configuration files.
 
 Automatic update settings at the host group and individual host level override global settings.
 
-1. Go to **Settings** > **Updates** > **OneAgent updates**.
+1. Go to **Settings** > **Deployment** > **OneAgent updates**.
 2. Select one of the update options:
 
    * **Automatic updates at earliest convenience**  
@@ -119,7 +118,7 @@ Automatic update settings at the host group and individual host level override g
      Update all OneAgents automatically during the selected update window.
 
      + When you choose this setting, a list of available update windows is displayed. Select one.
-     + To configure a new update window for OneAgent updates, go to **Settings** > **Updates** > **Update windows for OneAgent updates**.
+     + To configure a new update window for OneAgent updates, go to **Settings** > **Deployment** > **Update windows**.
    * **No automatic updates**  
      Do not automatically update OneAgents.
 
@@ -149,7 +148,7 @@ OneAgent update settings at the host group level override global settings and ar
      Update all OneAgents in this host group automatically during the selected update window. Ignore the global update settings.
 
      + When you choose this setting, a list of available update windows is displayed. Select one.
-     + To configure a new update window for OneAgent updates, go to **Settings** > **Updates** > **Update windows for OneAgent updates**.
+     + To configure a new update window for OneAgent updates, go to **Settings** > **Deployment** > **Update windows**.
    * **No automatic updates**  
      Do not automatically update OneAgents in this host group. Ignore the global update settings.
 
@@ -164,22 +163,22 @@ OneAgent update settings at the host level override OneAgent update settings at 
 
    * Go to **Hosts** and then select the host.
    * Go to **Settings** > **Monitoring** > **Monitoring overview**, select the **Hosts** tab, and then select the host.
-2. On the **Host** page, open the browse menu (**â¦**) and select **Settings**.
+2. On the **Host** page, open the browse menu (**…**) and select **Settings**.
 3. Select **OneAgent updates** on the left side of the page.
 4. Select one of the update options:
 
-   * **Inheritâ¦**  
+   * **Inherit…**  
      Follow the host group or global update settings for updating this OneAgent.
 
      + If the selected host belongs to a host group, the current host group setting is displayed in parentheses on this line, and the group name is a link to the host group configuration page.
-     + If the selected host does not belong to a host group, the global setting is displayed in parentheses on this line, and "global" is a link to the global configuration page (**Settings** > **Updates** > **OneAgent updates**).
+     + If the selected host does not belong to a host group, the global setting is displayed in parentheses on this line, and "global" is a link to the global configuration page (**Settings** > **Deployment** > **OneAgent updates**).
    * **Automatic updates at earliest convenience**  
      Update this OneAgent automatically, regardless of update windows. Ignore the host group update settings.
    * **Automatic updates during update windows**  
      Update this OneAgent automatically during the selected update window. Ignore the global update settings.
 
      + When you choose this setting, a list of available update windows is displayed. Select one.
-     + To configure a new update window for OneAgent updates, go to **Settings** > **Updates** > **Update windows for OneAgent updates**.
+     + To configure a new update window for OneAgent updates, go to **Settings** > **Deployment** > **Update windows**.
    * **No automatic updates**  
      Do not automatically update this OneAgent. Ignore the global update settings.
 
@@ -201,7 +200,7 @@ Select OneAgent version to install on new hosts
 
 To control which version of OneAgent is automatically installed on all new hosts:
 
-1. Go to **Settings** > **Updates** > **OneAgent updates**.
+1. Go to **Settings** > **Deployment** > **OneAgent updates**.
 2. In **Update mode**, select **No automatic updates** to disable automatic OneAgent updates.
 
    For details on how to disable OneAgent automatic updates on Paas/Kubernetes, see [DynaKube parameters for Dynatrace Operator on Kubernetes/OpenShift](/managed/ingest-from/setup-on-k8s/reference/dynakube-parameters "List the available parameters for setting up Dynatrace Operator on Kubernetes.").
@@ -213,7 +212,7 @@ Select OneAgent version to update to
 
 To select which version of OneAgent to update to
 
-1. Go to **Settings** > **Updates** > **OneAgent updates**.
+1. Go to **Settings** > **Deployment** > **OneAgent updates**.
 2. In the **Target version** list, you can specify a particular version by OneAgent version number or select a relative target version:
 
    * **Latest stable version**  
@@ -244,30 +243,35 @@ If you select an older version than a currently deployed version, you won't be a
 
 ## Configure update windows
 
-OneAgent update windows are used to schedule automatic OneAgent updates when the **Automatic updates during update windows** option is selected at the global, host group, or host level.
+Use update windows to schedule automatic OneAgent and Environment ActiveGate updates. They apply when you select **Automatic updates during update windows** for OneAgent (at the global, host group, or host level) or **Automatic (during update window)** for ActiveGate (at the environment or per-ActiveGate level). The same windows govern both products, so configuring a window once applies it to every host and Environment ActiveGate that opts in.
+
+* For procedures to list, create, edit, turn on, turn off, delete, and apply windows, see below.
+* For ActiveGate-specific update mode, target version, and concurrency rules, see [Update ActiveGate](/managed/ingest-from/dynatrace-activegate/operation/update-activegate "Configure Environment ActiveGate automatic updates---update mode, target version, and update windows---and download or install manually.").
+
+Update windows are shared with Environment ActiveGate. Creating, editing, turning off, or deleting a window also affects the ActiveGate updates that use it.
 
 Update windows currently do not apply in Kubernetes environments.
 
-List all OneAgent update windows
+List all update windows
 
-1. Go to **Settings** > **Updates** > **Update windows for OneAgent updates**.
-2. Review the list of all existing OneAgent update windows.
+1. Go to **Settings** > **Deployment** > **Update windows**.
+2. Review the list of all existing update windows.
 
-Enable or disable a OneAgent update window
+Turn an update window on or off
 
-1. Go to **Settings** > **Updates** > **Update windows for OneAgent updates**.
-2. Find the update window you want to enable or disable.
+1. Go to **Settings** > **Deployment** > **Update windows**.
+2. Find the update window you want to turn on or off.
 3. Turn the switch on or off.
 
-Delete a OneAgent update window
+Delete an update window
 
-1. Go to **Settings** > **Updates** > **Update windows for OneAgent updates**.
+1. Go to **Settings** > **Deployment** > **Update windows**.
 2. Find the update window you want to delete.
 3. Select **X** in the **Delete** column.
 
-Create or update a OneAgent update window
+Create or edit an update window
 
-1. Go to **Settings** > **Updates** > **Update windows for OneAgent updates**.
+1. Go to **Settings** > **Deployment** > **Update windows**.
 2. Open an update window for editing:
 
    * To create a new update window, select **Create update window**.
@@ -282,7 +286,7 @@ Create or update a OneAgent update window
    * To schedule an update window every x days:
 
      + Set **Recurrence** to `Daily intervals`
-     + Set **Every x days** to the number of days between updates (`1` = every day, `2` = every two days, `3` = every two days, etc.)
+     + Set **Every x days** to the number of days between updates (`1` = every day, `2` = every two days, `3` = every three days, etc.)
      + Set **Update time** to the time during the specified days when you want to update OneAgent
    * To schedule an update window every x weeks on certain days of the week:
 
@@ -299,13 +303,13 @@ Create or update a OneAgent update window
 
 After you configure an update window, you can use it to configure automatic OneAgent updates at the global, host group, or host level.
 
-Apply a OneAgent update window
+Apply an update window to OneAgent updates
 
-You can apply a OneAgent update window to automatic updates at the environment, host group, or host level.
+You can apply an update window to OneAgent automatic updates at the environment, host group, or host level.
 
 **Environment**
 
-1. Go to **Settings** > **Updates** > **OneAgent updates**.
+1. Go to **Settings** > **Deployment** > **OneAgent updates**.
 2. Select **Automatic updates during update windows**.
 3. When the list is displayed, select the update window you want to apply at this level.
 
@@ -325,7 +329,7 @@ You can apply a OneAgent update window to automatic updates at the environment, 
 
    * Go to **Hosts** and then select the host.
    * Go to **Settings** > **Monitoring** > **Monitoring overview**, select the **Hosts** tab, and then select the host.
-2. On the **Host** page, open the browse menu (**â¦**) and select **Settings**.
+2. On the **Host** page, open the browse menu (**…**) and select **Settings**.
 3. Select **OneAgent updates** on the left side of the page.
 4. Select **Automatic updates during update windows**.
 5. When the list is displayed, select the update window you want to apply at this level.
@@ -334,6 +338,6 @@ API
 
 For API equivalents, see [OneAgent configuration API](/managed/dynatrace-api/configuration-api/oneagent-configuration "Manage OneAgent configuration via the Dynatrace API.").
 
-## Disable automatic updates
+## Turn off automatic updates
 
-We don't recommend that you disable OneAgent automatic updates. For troubleshooting, you can temporarily disable automatic updates in Dynatrace at **Settings** > **Updates** > **OneAgent updates**. If you have very strict software rollout rules, however, you can disable auto-updates permanently with the [OneAgent command-line interface](/managed/ingest-from/dynatrace-oneagent/oneagent-configuration-via-command-line-interface#automatic-updates "Learn how to perform some OneAgent configuration tasks without the need to reinstall OneAgent.").
+We don't recommend that you turn off OneAgent automatic updates. For troubleshooting, you can temporarily turn off automatic updates in Dynatrace at **Settings** > **Deployment** > **OneAgent updates**. If you have very strict software rollout rules, however, you can turn off auto-updates permanently with the [OneAgent command-line interface](/managed/ingest-from/dynatrace-oneagent/oneagent-configuration-via-command-line-interface#automatic-updates "Learn how to perform some OneAgent configuration tasks without the need to reinstall OneAgent.").

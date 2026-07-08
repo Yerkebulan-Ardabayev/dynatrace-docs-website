@@ -1,7 +1,6 @@
 ---
 title: AWS credentials API - PUT monitored services
 source: https://docs.dynatrace.com/managed/dynatrace-api/configuration-api/aws-credentials-api/put-services
-scraped: 2026-05-12T11:15:06.851517
 ---
 
 # AWS credentials API - PUT monitored services
@@ -40,7 +39,7 @@ To learn how to obtain and use it, see [Tokens and authentication](/managed/disc
 | Element | Type | Description | Required |
 | --- | --- | --- | --- |
 | metadata | [ConfigurationMetadata](#openapi-definition-ConfigurationMetadata) | Metadata useful for debugging | Optional |
-| services | [AwsSupportingServiceConfig[]](#openapi-definition-AwsSupportingServiceConfig) | A list of AWS services to be monitored. Available services are listed by [/aws/supportedServicesï»¿](https://dt-url.net/me02sh2) operation.  For each service, a list of metrics and dimensions can be specified. A list of supported metrics and dimensions for a given service can be checked in [documentationï»¿](https://dt-url.net/r12v0pkl).  List of metrics can be skipped (set to null), resulting in recommended (default) set of metrics and dimensions being chosen for monitoring. For built-in services, adjusting the list of metrics is not supported, therefore it needs to be null. | Required |
+| services | [AwsSupportingServiceConfig](#openapi-definition-AwsSupportingServiceConfig)[] | A list of AWS services to be monitored. Available services are listed by [/aws/supportedServices﻿](https://dt-url.net/me02sh2) operation.  For each service, a list of metrics and dimensions can be specified. A list of supported metrics and dimensions for a given service can be checked in [documentation﻿](https://dt-url.net/r12v0pkl).  List of metrics can be skipped (set to null), resulting in recommended (default) set of metrics and dimensions being chosen for monitoring. For built-in services, adjusting the list of metrics is not supported, therefore it needs to be null. | Required |
 
 #### The `ConfigurationMetadata` object
 
@@ -58,7 +57,7 @@ A service to be monitored.
 
 | Element | Type | Description | Required |
 | --- | --- | --- | --- |
-| monitoredMetrics | [AwsSupportingServiceMetric[]](#openapi-definition-AwsSupportingServiceMetric) | A list of metrics to be monitored for this service. If the list is null then recommended list of metrics for this service will be monitored. | Optional |
+| monitoredMetrics | [AwsSupportingServiceMetric](#openapi-definition-AwsSupportingServiceMetric)[] | A list of metrics to be monitored for this service. If the list is null then recommended list of metrics for this service will be monitored. | Optional |
 | name | string | The name of the service. Valid supported service names can be discovered using /aws/supportedServices restAPI | Required |
 
 #### The `AwsSupportingServiceMetric` object
@@ -205,7 +204,7 @@ This is a model of the request body, showing the possible elements. It has to be
 | Element | Type | Description |
 | --- | --- | --- |
 | code | integer | The HTTP status code |
-| constraintViolations | [ConstraintViolation[]](#openapi-definition-ConstraintViolation) | A list of constraint violations |
+| constraintViolations | [ConstraintViolation](#openapi-definition-ConstraintViolation)[] | A list of constraint violations |
 | message | string | The error message |
 
 #### The `ConstraintViolation` object
@@ -318,7 +317,7 @@ To learn how to obtain and use it, see [Tokens and authentication](/managed/disc
 | Element | Type | Description |
 | --- | --- | --- |
 | code | integer | The HTTP status code |
-| constraintViolations | [ConstraintViolation[]](#openapi-definition-ConstraintViolation) | A list of constraint violations |
+| constraintViolations | [ConstraintViolation](#openapi-definition-ConstraintViolation)[] | A list of constraint violations |
 | message | string | The error message |
 
 #### The `ConstraintViolation` object

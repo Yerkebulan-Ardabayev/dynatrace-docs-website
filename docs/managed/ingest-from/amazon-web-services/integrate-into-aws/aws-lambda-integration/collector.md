@@ -1,7 +1,6 @@
 ---
 title: AWS Lambda log collection
 source: https://docs.dynatrace.com/managed/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration/collector
-scraped: 2026-05-12T12:00:13.526654
 ---
 
 # AWS Lambda log collection
@@ -10,7 +9,7 @@ scraped: 2026-05-12T12:00:13.526654
 
 * How-to guide
 * 7-min read
-* Updated on Dec 17, 2025
+* Updated on May 14, 2026
 
 Dynatrace version 1.263
 
@@ -33,7 +32,7 @@ To deploy the Dynatrace Lambda extension, follow the instructions from [Trace Py
 1. Under **I want to enable**, select **Traces and Logs**.
 2. Either select **Create token** to create a new access token or enter [an existing access token with the `logs.ingest` permission](/managed/dynatrace-api/basics/dynatrace-api-authentication "Find out how to get authenticated to use the Dynatrace API.") into the **Access Token** input field.
 
-If you previously used the Dynatrace Lambda extension without logging, you have to adapt the Lambda Layer Arn as well as the configuration provided in the wizardâby adding the necessary enhancements for the log collector.
+If you previously used the Dynatrace Lambda extension without logging, you have to adapt the Lambda Layer Arn as well as the configuration provided in the wizard—by adding the necessary enhancements for the log collector.
 
 Log collection for .NET Lambda functions
 
@@ -42,7 +41,7 @@ For .NET Lambda functions, follow the steps described in [Monitor AWS Lambda wit
 1. Under **I want to enable**, select **Logs**.
 2. Either select **Create token** to create a new access token or enter [an existing access token with the `logs.ingest` scope](/managed/dynatrace-api/basics/dynatrace-api-authentication "Find out how to get authenticated to use the Dynatrace API.") into the **Access Token** input field.
 
-If you previously used tracing integration without logging, you have to adapt the configuration as provided in the wizardâby adding the necessary enhancements for the log collector.
+If you previously used tracing integration without logging, you have to adapt the configuration as provided in the wizard—by adding the necessary enhancements for the log collector.
 
 Disable Firehose log streaming or CloudWatch log forwarding
 
@@ -60,7 +59,7 @@ To correlate and see application logs with traces in Dynatrace, you need to enri
 
 ### Log event types
 
-Dynatrace collects two [log event typesï»¿](https://dt-url.net/xd038u5), platform events and function logs. To configure which log event types are collected, use the following syntax.
+Dynatrace collects two [log event types﻿](https://dt-url.net/xd038u5), platform events and function logs. To configure which log event types are collected, use the following syntax.
 
 | Configure with | Location | Default value | Syntax |
 | --- | --- | --- | --- |
@@ -84,7 +83,7 @@ The endpoint that is used for exporting logs to is derived from the base URL of 
 
 Environment ActiveGate and default value
 
-If you're using an Environment ActiveGate, make sure the [environment ID](/managed/discover-dynatrace/get-started/monitoring-environment#environment-id "Understand and learn how to work with monitoring environments.") is included in the default value location or set its value to the full URL of the log ingest endpoint (for example, `https://{activegate-host}:9999/e/{your-environment-id}/api/v2/logs/ingest`).
+If you're using an Environment ActiveGate, make sure the [environment ID](/managed/discover-dynatrace/get-started/monitoring-environment#environment-id "Learn what a Dynatrace monitoring environment is, how to find your environment ID, and how to set up and connect multiple environments.") is included in the default value location or set its value to the full URL of the log ingest endpoint (for example, `https://{activegate-host}:9999/e/{your-environment-id}/api/v2/logs/ingest`).
 
 If you're using Environment ActiveGate (which is usually the case, if you deployed ActiveGate by yourself) and don't have `/e/{your-environment-id}` as part of your `DT_CONNECTION_BASE_URL` (`Connection.BaseUrl`), you need to set either the
 
@@ -92,21 +91,21 @@ If you're using Environment ActiveGate (which is usually the case, if you deploy
 * or `LogCollection.Endpoint` JSON property
 
 to the full URL of the log ingest endpoint (i.e. `https://{activegate-host}:9999/e/{your-environment-id}/api/v2/logs/ingest`).
-The [environment ID](/managed/discover-dynatrace/get-started/monitoring-environment#environment-id "Understand and learn how to work with monitoring environments.") is typically the tenant ID.
+The [environment ID](/managed/discover-dynatrace/get-started/monitoring-environment#environment-id "Learn what a Dynatrace monitoring environment is, how to find your environment ID, and how to set up and connect multiple environments.") is typically the tenant ID.
 
 ### Fetch token from AWS Secrets Manager
 
 OneAgent version 1.295+
 
-Instead of specifying the authentication token explicitly in the configuration, you can configure OneAgent to fetch a token stored in [AWS Secrets Managerï»¿](https://docs.aws.amazon.com/secretsmanager).
+Instead of specifying the authentication token explicitly in the configuration, you can configure OneAgent to fetch a token stored in [AWS Secrets Manager﻿](https://docs.aws.amazon.com/secretsmanager).
 
 Prerequisites
 
-* Make sure you granted the `secretsmanager:GetSecretValue` permission for the authentication token secret ARN to the Lambda function monitored by OneAgent. For details, see [Authentication and access control for AWS Secrets Managerï»¿](https://dt-url.net/7n03p10) in the AWS Secrets Manager documentation.
+* Make sure you granted the `secretsmanager:GetSecretValue` permission for the authentication token secret ARN to the Lambda function monitored by OneAgent. For details, see [Authentication and access control for AWS Secrets Manager﻿](https://dt-url.net/7n03p10) in the AWS Secrets Manager documentation.
 * Make sure the secret value contains only the plaintext authentication token value (without quotes). Note that
 
-  + Secrets with JSON structure are not supported. For details, see [Create an AWS Secrets Manager secretï»¿](https://dt-url.net/fy23pdx) in the AWS Secrets Manager documentation.
-  + When you retrieve the secret value, Secrets Manager returns by default only the current secret version (`AWSCURRENT` label). For details, see [What's in a Secrets Manager secret?ï»¿](https://dt-url.net/1f43pq8) in the AWS Secrets Manager documentation.
+  + Secrets with JSON structure are not supported. For details, see [Create an AWS Secrets Manager secret﻿](https://dt-url.net/fy23pdx) in the AWS Secrets Manager documentation.
+  + When you retrieve the secret value, Secrets Manager returns by default only the current secret version (`AWSCURRENT` label). For details, see [What's in a Secrets Manager secret?﻿](https://dt-url.net/1f43pq8) in the AWS Secrets Manager documentation.
 
 To fetch the token for log collection, set the token secret ARN either to the environment variable `DT_LOG_COLLECTION_AUTH_TOKEN_SECRETS_MANAGER_ARN` or the JSON property `LogCollection.AuthTokenSecretsManagerArn`.
 
@@ -129,7 +128,7 @@ By default, logs for the configured log event types are collected for all the fo
 * `ERROR`
 * `FATAL`
 
-For more information, see [AWS log-level filteringï»¿](https://dt-url.net/h503n1u).
+For more information, see [AWS log-level filtering﻿](https://dt-url.net/h503n1u).
 
 To configure from which level to start log collection, for example, starting from `WARN` level, set a filter using the following syntax.
 
@@ -143,10 +142,28 @@ For example, if `<Log level>` is `WARN`
 * Logs for `TRACE`, `DEBUG`, and `INFO` levels are not collected.
 * Logs for `WARN`, `ERROR`, and `FATAL` levels are collected.
 
-To configure log collection filters directly in AWS, see [Using Amazon CloudWatch Logs with AWS Lambdaï»¿](https://dt-url.net/h503n1u). Note that with this option
+To configure log collection filters directly in AWS, see [Using Amazon CloudWatch Logs with AWS Lambda﻿](https://dt-url.net/h503n1u). Note that with this option
 
 * Logs are not shown on CloudWatch.
 * Dynatrace will not collect logs that are already filtered out in AWS.
+
+### Log enrichment
+
+OneAgent version 1.337+
+
+You can enrich collected logs with custom tags and fields by setting the `DT_TAGS` environment variable on your Lambda function. The defined values are added as attributes to all logs collected from that function.
+
+Supported fields:
+
+* Primary tags, for example, `primary_tags.<tag>`
+* Special fields: `dt.cost.costcenter`, `dt.cost.product`, `dt.security_context`
+* Primary fields, when not auto-detected from AWS: `aws.account.id`, `aws.region`, `dt.host_group.id`
+
+**Example:**
+
+```
+DT_TAGS="primary_tags.environment=production dt.cost.costcenter=12345 aws.account.id=111122223333"
+```
 
 ## Limitations
 
@@ -160,7 +177,7 @@ To configure log collection filters directly in AWS, see [Using Amazon CloudWatc
 
 ## Troubleshooting
 
-* [Dynatrace does not ingest logs (HTTP 429)ï»¿](https://dt-url.net/hm23mng)
+* [Dynatrace does not ingest logs (HTTP 429)﻿](https://dt-url.net/hm23mng)
 
 ## Related topics
 

@@ -1,7 +1,6 @@
 ---
 title: Extend Dynatrace
 source: https://docs.dynatrace.com/managed/ingest-from/extend-dynatrace
-scraped: 2026-05-12T11:37:59.140301
 ---
 
 # Extend Dynatrace
@@ -113,7 +112,7 @@ Learn how to extend observability into your mobile and web application with Dyna
 
 ## OpenTelemetry
 
-OpenTelemetry is an observability framework for cloud-native software used for instrumenting frameworks and components and exporting telemetry data (traces, metrics and logs). [Dynatrace is a key contributorï»¿](https://www.dynatrace.com/news/blog/dynatrace-joins-the-opentelemetry-project/) to this open source project.
+OpenTelemetry is an observability framework for cloud-native software used for instrumenting frameworks and components and exporting telemetry data (traces, metrics and logs). [Dynatrace is a key contributor﻿](https://www.dynatrace.com/news/blog/dynatrace-joins-the-opentelemetry-project/) to this open source project.
 
 You can use [OpenTelemetry in Dynatrace](/managed/ingest-from/opentelemetry "Learn how to integrate and ingest OpenTelemetry data (traces, metrics, and logs) into Dynatrace.") to:
 

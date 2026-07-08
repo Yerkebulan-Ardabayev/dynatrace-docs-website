@@ -1,7 +1,6 @@
 ---
 title: Migrate OneAgent extension
 source: https://docs.dynatrace.com/managed/upgrade/up-execute-upgrade/up-migrate-oa-extension
-scraped: 2026-05-12T12:13:57.548603
 ---
 
 # Migrate OneAgent extension

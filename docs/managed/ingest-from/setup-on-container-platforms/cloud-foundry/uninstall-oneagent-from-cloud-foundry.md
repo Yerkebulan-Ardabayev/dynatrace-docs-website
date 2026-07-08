@@ -1,7 +1,6 @@
 ---
 title: Uninstall OneAgent from Cloud Foundry
 source: https://docs.dynatrace.com/managed/ingest-from/setup-on-container-platforms/cloud-foundry/uninstall-oneagent-from-cloud-foundry
-scraped: 2026-05-12T11:09:26.977333
 ---
 
 # Uninstall OneAgent from Cloud Foundry
@@ -16,7 +15,7 @@ Find out below how to uninstall OneAgent according to your particular deployment
 ## Uninstall OneAgent Operator for BOSH release
 
 1. Update the runtime configuration.  
-   Uninstalling OneAgent for BOSH add-ons requires that you update the runtime configuration with an âemptyâ manifest and redeploy all BOSH deployments that are executed by the add-ons.
+   Uninstalling OneAgent for BOSH add-ons requires that you update the runtime configuration with an “empty” manifest and redeploy all BOSH deployments that are executed by the add-ons.
 
    Example of empty runtime configuration:
 

@@ -1,7 +1,6 @@
 ---
 title: Distribute custom dashboards with your extensions
 source: https://docs.dynatrace.com/managed/ingest-from/extensions/advanced-configuration/custom-dashboards
-scraped: 2026-05-12T11:09:16.118906
 ---
 
 # Distribute custom dashboards with your extensions
@@ -23,7 +22,7 @@ After your extension starts sending data to Dynatrace, you can [create a custom 
 ### Export dashboard JSON in web UI
 
 1. Go to **Dashboards**.
-2. In the row for the dashboard you want to export, select **More** (**â¦**) > **Export**.  
+2. In the row for the dashboard you want to export, select **More** (**…**) > **Export**.  
    A JSON file with the dashboard's name is downloaded to your local machine.
    For more information, see [Edit Dynatrace dashboard JSON](/managed/analyze-explore-automate/dashboards-classic/dashboards/dashboard-json "Learn how to export, edit, and import the JSON for a Dynatrace dashboard.").
 
@@ -48,7 +47,7 @@ After your extension starts sending data to Dynatrace, you can [create a custom 
 
    Replace:
 
-   * `{env-id}` with your [Environment ID](/managed/discover-dynatrace/get-started/monitoring-environment "Understand and learn how to work with monitoring environments.").
+   * `{env-id}` with your [Environment ID](/managed/discover-dynatrace/get-started/monitoring-environment "Learn what a Dynatrace monitoring environment is, how to find your environment ID, and how to set up and connect multiple environments.").
    * `{api-token}` with an [API token](/managed/dynatrace-api/basics/dynatrace-api-authentication "Find out how to get authenticated to use the Dynatrace API.") that has the required [permissions](/managed/upgrade/unavailable-in-managed "Your selection is unavailable in Dynatrace Managed.").
    * `{dashboard-id}` with the dashboard identifier you determined in the previous step.
 4. The call returns the JSON payload containing the dashboard definition. Save it as a JSON file.
@@ -64,31 +63,31 @@ extension.zip
 
 
 
-â   extension.yaml
+│   extension.yaml
 
 
 
-â
+│
 
 
 
-ââââalerts
+└───alerts
 
 
 
-â   |   alert.json
+│   |   alert.json
 
 
 
-â
+│
 
 
 
-ââââdashboards
+└───dashboards
 
 
 
-â   dashboard.json
+│   dashboard.json
 ```
 
 Use the following reference in the top level of your [YAML file](/managed/ingest-from/extensions/develop-your-extensions/extension-yaml "Learn how to create an extension YAML file using the Extensions framework."):

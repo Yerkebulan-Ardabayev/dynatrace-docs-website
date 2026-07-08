@@ -1,7 +1,6 @@
 ---
 title: Settings API - Amazon GuardDuty schema table
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/settings/schemas/app-dynatrace-amazon-guardduty-connections
-scraped: 2026-05-12T11:42:29.918296
 ---
 
 # Settings API - Amazon GuardDuty schema table

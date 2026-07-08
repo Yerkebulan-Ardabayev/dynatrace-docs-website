@@ -1,7 +1,6 @@
 ---
 title: Custom services API - DELETE a custom service rule
 source: https://docs.dynatrace.com/managed/dynatrace-api/configuration-api/service-api/custom-services-api/del-rule
-scraped: 2026-05-12T11:18:05.455528
 ---
 
 # Custom services API - DELETE a custom service rule

@@ -1,7 +1,6 @@
 ---
 title: WMI tutorial - custom topology
 source: https://docs.dynatrace.com/managed/ingest-from/extensions/develop-your-extensions/data-sources/wmi-extensions/wmi-tutorial/wmi-tutorial-04
-scraped: 2026-05-12T11:11:38.160603
 ---
 
 # WMI tutorial - custom topology

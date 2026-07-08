@@ -1,7 +1,6 @@
 ---
 title: Unified analysis pages
 source: https://docs.dynatrace.com/managed/ingest-from/extend-dynatrace/extend-ui/unified-analysis
-scraped: 2026-05-12T11:09:14.870163
 ---
 
 # Unified analysis pages
@@ -85,7 +84,7 @@ Properties card example
 
 ### Logs
 
-Use the logs cardâwhich has the same functionalities as the [Log viewer](/managed/analyze-explore-automate/log-monitoring/analyze-log-data/log-viewer "Learn how to use Dynatrace log viewer to analyze log data.")âto display a bar chart representing different log occurrences within the selected timeframe and a detailed table where each log is an entry with additional properties such as timestamp, status, and content.
+Use the logs card—which has the same functionalities as the [Log viewer](/managed/analyze-explore-automate/log-monitoring/analyze-log-data/log-viewer "Learn how to use Dynatrace log viewer to analyze log data.")—to display a bar chart representing different log occurrences within the selected timeframe and a detailed table where each log is an entry with additional properties such as timestamp, status, and content.
 
 See [Logs cards](/managed/ingest-from/extend-dynatrace/extend-ui/unified-analysis/unified-analysis-reference#logs-cards "Learn about unified analysis syntax") for configuration details.
 
@@ -97,8 +96,8 @@ logs-card
 
 Use the message card to show information when a certain condition is satisfied. For configuration details, see [Message cards](/managed/ingest-from/extend-dynatrace/extend-ui/unified-analysis/unified-analysis-reference#message-cards "Learn about unified analysis syntax"). There are two types of message card visualization:
 
-* **Message**âa card that just displays text information.
-* **Card**âa card with a title, description, and available actions.
+* **Message**—a card that just displays text information.
+* **Card**—a card with a title, description, and available actions.
 
 For example, display the message card if OneAgent is not deployed:
 
@@ -122,10 +121,10 @@ Use the health card to display specific metrics in a visual format. By default, 
 
 Single tile reacts to certain events on connected metrics and may take different colors:
 
-* greenâthere is data on at least one connected metric
-* redâthere is an open problem related to at least one connected metric
-* grayâthere is a closed problem related to at least one connected metric
-* whiteâthere is no data for this tile in current timeframe
+* green—there is data on at least one connected metric
+* red—there is an open problem related to at least one connected metric
+* gray—there is a closed problem related to at least one connected metric
+* white—there is no data for this tile in current timeframe
 
 See [Health cards](/managed/ingest-from/extend-dynatrace/extend-ui/unified-analysis/unified-analysis-reference#health-cards "Learn about unified analysis syntax") for configuration details.
 
@@ -137,7 +136,7 @@ Health card
 
 ### Actions
 
-Actions define what happens after selecting one of the available options available from the **More** (**â¦**) menu in the upper-right corner of every card.
+Actions define what happens after selecting one of the available options available from the **More** (**…**) menu in the upper-right corner of every card.
 
 See [Actions](/managed/ingest-from/extend-dynatrace/extend-ui/unified-analysis/unified-analysis-reference#actions "Learn about unified analysis syntax") for configuration details.
 
@@ -154,6 +153,6 @@ If you want to display the cards on the page without modifying their layout, see
 
 ### Exploratory analysis
 
-The exploratory analysis analyzes only the metrics from the graph charts that are in the chart groups, entities lists, and metric tables. For more information, see [DavisÂ® causal correlation analysis](/managed/dynatrace-intelligence/ai-models/causal-correlation-analysis "Learn how DavisÂ® causal correlation analysis finds related metrics across your environment.").
+The exploratory analysis analyzes only the metrics from the graph charts that are in the chart groups, entities lists, and metric tables. For more information, see [Davis® causal correlation analysis](/managed/dynatrace-intelligence/ai-models/causal-correlation-analysis "Learn how Davis® causal correlation analysis finds related metrics across your environment.").
 
 **Next step**: [Unified analysis tutorial](/managed/ingest-from/extend-dynatrace/extend-ui/unified-analysis/unified-analysis-tutorial "Learn how to upload sample data to your Dynatrace environment and create a simple unified analysis extension.")

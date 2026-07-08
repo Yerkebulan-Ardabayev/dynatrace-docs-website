@@ -1,7 +1,6 @@
 ---
 title: Settings API - Exclude IP addresses from monitoring schema table
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/settings/schemas/builtin-rum-web-ipaddress-exclusion
-scraped: 2026-05-12T11:39:00.784810
 ---
 
 # Settings API - Exclude IP addresses from monitoring schema table

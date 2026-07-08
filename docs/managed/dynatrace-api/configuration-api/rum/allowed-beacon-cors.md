@@ -1,7 +1,6 @@
 ---
 title: Allowed beacon domains API
 source: https://docs.dynatrace.com/managed/dynatrace-api/configuration-api/rum/allowed-beacon-cors
-scraped: 2026-05-12T11:04:55.160309
 ---
 
 # Allowed beacon domains API
@@ -23,4 +22,4 @@ Update configuration of allowed beacon origins.](/managed/dynatrace-api/configur
 
 ## Related topics
 
-* [Configure beacon origin allowlist for web applications](/managed/observe/digital-experience/web-applications/additional-configuration/configure-beacon-domain-allowlist "Specify the origins from which cross-origin RUM beacons should be accepted.")
+* [Configure beacon origin allowlist for web applications in RUM Classic](/managed/observe/digital-experience/rum-classic/web-applications/additional-configuration/configure-beacon-domain-allowlist "Specify the origins from which cross-origin RUM beacons should be accepted.")

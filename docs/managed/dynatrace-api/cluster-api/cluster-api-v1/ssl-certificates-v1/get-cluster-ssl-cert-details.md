@@ -1,7 +1,6 @@
 ---
 title: Get cluster SSL certificate details
 source: https://docs.dynatrace.com/managed/dynatrace-api/cluster-api/cluster-api-v1/ssl-certificates-v1/get-cluster-ssl-cert-details
-scraped: 2026-05-12T12:12:57.209191
 ---
 
 # Get cluster SSL certificate details

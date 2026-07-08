@@ -1,7 +1,6 @@
 ---
 title: Third-party synthetic API - POST third-party monitors to Dynatrace
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/synthetic/third-party-synthetic/post-third-party-monitors
-scraped: 2026-05-12T11:54:34.790803
 ---
 
 # Third-party synthetic API - POST third-party monitors to Dynatrace
@@ -38,12 +37,12 @@ To learn how to obtain and use it, see [Tokens and authentication](/managed/disc
 
 | Element | Type | Description | Required |
 | --- | --- | --- | --- |
-| locations | [3rdPartySyntheticLocation[]](#openapi-definition-3rdPartySyntheticLocation) | The list of third-party synthetic locations. | Required |
+| locations | [3rdPartySyntheticLocation](#openapi-definition-3rdPartySyntheticLocation)[] | The list of third-party synthetic locations. | Required |
 | messageTimestamp | integer | The timestamp of the message creation, in UTC milliseconds. | Required |
 | syntheticEngineIconUrl | string | The URL of the third-party synthetic monitor icon. | Optional |
 | syntheticEngineName | string | The type of the third-party synthetic monitor. | Required |
-| testResults | [3rdPartySyntheticTestResult[]](#openapi-definition-3rdPartySyntheticTestResult) | The list of results of third-party synthetic monitor execution. | Optional |
-| tests | [3rdPartySyntheticMonitor[]](#openapi-definition-3rdPartySyntheticMonitor) | The list of third-party synthetic monitors. | Required |
+| testResults | [3rdPartySyntheticTestResult](#openapi-definition-3rdPartySyntheticTestResult)[] | The list of results of third-party synthetic monitor execution. | Optional |
+| tests | [3rdPartySyntheticMonitor](#openapi-definition-3rdPartySyntheticMonitor)[] | The list of third-party synthetic monitors. | Required |
 
 #### The `3rdPartySyntheticLocation` object
 
@@ -62,7 +61,7 @@ The results of third-party synthetic monitor execution.
 | Element | Type | Description | Required |
 | --- | --- | --- | --- |
 | id | string | The ID of the third-party synthetic monitor. | Required |
-| locationResults | [3rdPartySyntheticLocationTestResult[]](#openapi-definition-3rdPartySyntheticLocationTestResult) | Results of third-party monitor executions per location. | Required |
+| locationResults | [3rdPartySyntheticLocationTestResult](#openapi-definition-3rdPartySyntheticLocationTestResult)[] | Results of third-party monitor executions per location. | Required |
 | totalStepCount | integer | Number of steps in the monitor. Defaults to number of SyntheticTestSteps. | Optional |
 
 #### The `3rdPartySyntheticLocationTestResult` object
@@ -74,7 +73,7 @@ Results of third-party monitor executions per location.
 | id | string | The ID of the location. | Required |
 | responseTimeMillis | integer | The overall response time of the monitor from this location, in milliseconds.  If absent, it is calculated as the sum of response times of all steps. | Optional |
 | startTimestamp | integer | The timestamp of text execution start, in UTC milliseconds. | Required |
-| stepResults | [SyntheticMonitorStepResult[]](#openapi-definition-SyntheticMonitorStepResult) | Results of individual monitor steps. | Required |
+| stepResults | [SyntheticMonitorStepResult](#openapi-definition-SyntheticMonitorStepResult)[] | Results of individual monitor steps. | Required |
 | success | boolean | If the test was successful (`true`) or failed (`false`) - will influence availability timeseries. | Required |
 | successRate | number | The overall availability of the monitor from this location, percent.  If absent, calculated as the number of successful steps compared to the overall number of steps. | Optional |
 
@@ -111,10 +110,10 @@ The third-party synthetic monitor.
 | enabled | boolean | The monitor is enabled (`true`) or disabled (`false`). Default is `true`.  If `true`, set the **deleted** parameter to `false`. | Optional |
 | expirationTimestamp | integer | The timestamp of the monitor expiration, in UTC milliseconds. | Optional |
 | id | string | The ID of the monitor. | Required |
-| locations | [SyntheticTestLocation[]](#openapi-definition-SyntheticTestLocation) | Locations from which the synthetic monitor runs. | Required |
+| locations | [SyntheticTestLocation](#openapi-definition-SyntheticTestLocation)[] | Locations from which the synthetic monitor runs. | Required |
 | noDataTimeout | integer | The timeout of the monitor, in seconds. If no result is reported within this time, the availability state switches to unmonitored. Default is doubled frequency of the monitor. | Optional |
 | scheduleIntervalInSeconds | integer | The frequency of the monitor, in seconds. The monitor is repeated with the specified interval at the third-party source.  Dynatrace expects results of a monitor execution with the specified interval. If you report results to Dynatrace less often, adjust the **noDataTimeout** value accordingly. | Required |
-| steps | [SyntheticTestStep[]](#openapi-definition-SyntheticTestStep) | Steps of the third-party monitor. | Optional |
+| steps | [SyntheticTestStep](#openapi-definition-SyntheticTestStep)[] | Steps of the third-party monitor. | Optional |
 | testSetup | string | The information on monitor setup, for example `browser`. | Optional |
 | title | string | The name of the monitor. | Required |
 
@@ -424,7 +423,7 @@ This is a model of the request body, showing the possible elements. It has to be
 | Element | Type | Description |
 | --- | --- | --- |
 | code | integer | The HTTP status code |
-| constraintViolations | [ConstraintViolation[]](#openapi-definition-ConstraintViolation) | A list of constraint violations |
+| constraintViolations | [ConstraintViolation](#openapi-definition-ConstraintViolation)[] | A list of constraint violations |
 | message | string | The error message |
 
 #### The `ConstraintViolation` object

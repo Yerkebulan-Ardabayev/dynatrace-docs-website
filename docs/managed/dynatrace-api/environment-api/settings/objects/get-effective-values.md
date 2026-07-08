@@ -1,7 +1,6 @@
 ---
 title: Settings API - GET effective values
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/settings/objects/get-effective-values
-scraped: 2026-05-12T11:38:47.251777
 ---
 
 # Settings API - GET effective values
@@ -33,7 +32,7 @@ To learn how to obtain and use it, see [Tokens and authentication](/managed/disc
 | Parameter | Type | Description | In | Required |
 | --- | --- | --- | --- | --- |
 | schemaIds | string | A list of comma-separated schema IDs to which the requested objects belong.  Only considered on load of the first page, when the **nextPageKey** is not set. | query | Optional |
-| scope | string | The scope that the requested objects target.  The selection only matches objects directly targeting the specified scope. For example, `environment` will not match objects that target a host within environment. For more details, please see [Dynatrace Documentationï»¿](https://dt-url.net/ky03459).  To load the first page, when the **nextPageKey** is not set, this parameter is required. | query | Optional |
+| scope | string | The scope that the requested objects target.  The selection only matches objects directly targeting the specified scope. For example, `environment` will not match objects that target a host within environment. For more details, please see [Dynatrace Documentation﻿](https://dt-url.net/ky03459).  To load the first page, when the **nextPageKey** is not set, this parameter is required. | query | Optional |
 | fields | string | A list of fields to be included to the response. The provided set of fields replaces the default set.  Specify the required top-level fields, separated by commas (for example, `origin,value`).  Supported fields: `summary`, `searchSummary`, `created`, `modified`, `createdBy`, `modifiedBy`, `author`, `origin`, `schemaId`, `schemaVersion`, `value`, `externalId`. | query | Optional |
 | nextPageKey | string | The cursor for the next page of results. You can find it in the **nextPageKey** field of the previous response.  The first page is always returned if you don't specify the **nextPageKey** query parameter.  When the **nextPageKey** is set to obtain subsequent pages, you must omit all other query parameters. | query | Optional |
 | pageSize | integer | The amount of settings objects in a single response payload.  The maximal allowed page size is 500.  If not set, 100 is used. | query | Optional |
@@ -58,7 +57,7 @@ A list of effective settings values.
 
 | Element | Type | Description |
 | --- | --- | --- |
-| items | [EffectiveSettingsValue[]](#openapi-definition-EffectiveSettingsValue) | A list of effective settings values. |
+| items | [EffectiveSettingsValue](#openapi-definition-EffectiveSettingsValue)[] | A list of effective settings values. |
 | nextPageKey | string | The cursor for the next page of results. Has the value of `null` on the last page.  Use it in the **nextPageKey** query parameter to obtain subsequent pages of the result. |
 | pageSize | integer | The number of entries per page. |
 | totalCount | integer | The total number of entries in the result. |
@@ -78,7 +77,7 @@ An effective settings value.
 | schemaVersion | string | The version of the schema on which the object is based. |
 | searchSummary | string | A searchable summary string of the setting value. Plain text without Markdown. |
 | summary | string | A short summary of settings. This can contain Markdown and will be escaped accordingly. |
-| value | string | The value of the setting.  It defines the actual values of settings' parameters.  The actual content depends on the object's schema. |
+| value | [AnyValue](#openapi-definition-AnyValue) | The value of the setting.  It defines the actual values of settings' parameters.  The actual content depends on the object's schema. |
 
 #### The `AnyValue` object
 
@@ -95,7 +94,7 @@ A schema representing an arbitrary value type.
 | Element | Type | Description |
 | --- | --- | --- |
 | code | integer | The HTTP status code |
-| constraintViolations | [ConstraintViolation[]](#openapi-definition-ConstraintViolation) | A list of constraint violations |
+| constraintViolations | [ConstraintViolation](#openapi-definition-ConstraintViolation)[] | A list of constraint violations |
 | message | string | The error message |
 
 #### The `ConstraintViolation` object
@@ -160,7 +159,15 @@ A list of constraint violations
 
 
 
-"value": "string"
+"value": {
+
+
+
+"autoMonitoring": true
+
+
+
+}
 
 
 

@@ -1,7 +1,6 @@
 ---
 title: OneAgent files and disk space requirements on Linux
 source: https://docs.dynatrace.com/managed/ingest-from/dynatrace-oneagent/installation-and-operation/linux/installation/disk-space-requirements-for-oneagent-installation-and-update-on-linux
-scraped: 2026-05-12T11:05:33.233578
 ---
 
 # OneAgent files and disk space requirements on Linux

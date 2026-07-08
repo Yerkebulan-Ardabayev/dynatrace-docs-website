@@ -1,7 +1,6 @@
 ---
 title: Seccomp profiles
 source: https://docs.dynatrace.com/managed/ingest-from/setup-on-k8s/guides/networking-security-compliance/security-configurations/seccomp
-scraped: 2026-05-12T12:14:28.798329
 ---
 
 # Seccomp profiles
@@ -14,13 +13,13 @@ scraped: 2026-05-12T12:14:28.798329
 
 ## What is seccomp?
 
-Seccomp (secure computing mode) is a Linux kernel security feature that restricts the system calls a process is allowed to make. By applying a seccomp profile to a container, you limit which kernel-level operations it can perform, reducing the attack surface of your workloads. Kubernetes supports configuring seccomp profiles at both the pod and container level through the `securityContext` field, making it a key mechanism for meeting security standards such as the Kubernetes [Pod Security Standardsï»¿](https://kubernetes.io/docs/concepts/security/pod-security-standards/).
+Seccomp (secure computing mode) is a Linux kernel security feature that restricts the system calls a process is allowed to make. By applying a seccomp profile to a container, you limit which kernel-level operations it can perform, reducing the attack surface of your workloads. Kubernetes supports configuring seccomp profiles at both the pod and container level through the `securityContext` field, making it a key mechanism for meeting security standards such as the Kubernetes [Pod Security Standards﻿](https://kubernetes.io/docs/concepts/security/pod-security-standards/).
 
 There are three seccomp profile types in Kubernetes:
 
-* **RuntimeDefault**âThe container runtime's built-in default profile. It permits a curated set of common system calls while blocking potentially dangerous ones.
-* **Localhost**âA custom profile loaded from a JSON file on the node's filesystem.
-* **Unconfined**âNo seccomp filtering is applied; all system calls are allowed.
+* **RuntimeDefault**—The container runtime's built-in default profile. It permits a curated set of common system calls while blocking potentially dangerous ones.
+* **Localhost**—A custom profile loaded from a JSON file on the node's filesystem.
+* **Unconfined**—No seccomp filtering is applied; all system calls are allowed.
 
 All Dynatrace Operator infrastructure components (operator, webhook, and CSI driver) and operator-deployed components (ActiveGate, EdgeConnect) use the `RuntimeDefault` seccomp profile. The exception is OneAgent, which is unconfined (no seccomp profile set). The `RuntimeDefault` profile is suitable for most workloads and satisfies the **restricted** Pod Security Standard.
 
@@ -34,7 +33,7 @@ Dynatrace Operator version 1.2.0+
 
 If your security policies require a seccomp profile on the OneAgent, you can configure one using the `secCompProfile` field under the appropriate OneAgent mode in your DynaKube custom resource.
 
-**Limitation:** The OneAgent seccomp profile is always applied with the type `Localhost`. This means you must provide a custom seccomp profile JSON file on each nodeâyou cannot set the type to `RuntimeDefault` or `Unconfined` through this field.
+**Limitation:** The OneAgent seccomp profile is always applied with the type `Localhost`. This means you must provide a custom seccomp profile JSON file on each node—you cannot set the type to `RuntimeDefault` or `Unconfined` through this field.
 
 Cloud-native full stack
 
@@ -154,8 +153,8 @@ The `Localhost` type requires that the seccomp profile JSON file is present on t
 
 To learn how to create and manage `Localhost` seccomp profiles, refer to the Kubernetes documentation:
 
-* [Restrict a Container's Syscalls with seccompï»¿](https://kubernetes.io/docs/tutorials/security/seccomp/)
-* [Set the seccomp profile for a Containerï»¿](https://kubernetes.io/docs/tasks/configure-pod-container/security-context/#set-the-seccomp-profile-for-a-container)
+* [Restrict a Container's Syscalls with seccomp﻿](https://kubernetes.io/docs/tutorials/security/seccomp/)
+* [Set the seccomp profile for a Container﻿](https://kubernetes.io/docs/tasks/configure-pod-container/security-context/#set-the-seccomp-profile-for-a-container)
 
 ## Configure seccomp for the Dynatrace init container
 

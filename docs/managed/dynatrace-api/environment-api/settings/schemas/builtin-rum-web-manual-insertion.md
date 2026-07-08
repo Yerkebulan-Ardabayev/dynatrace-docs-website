@@ -1,7 +1,6 @@
 ---
 title: Settings API - Manual insertion schema table
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/settings/schemas/builtin-rum-web-manual-insertion
-scraped: 2026-05-12T11:39:14.492588
 ---
 
 # Settings API - Manual insertion schema table
@@ -12,7 +11,7 @@ scraped: 2026-05-12T11:39:14.492588
 
 ### Manual insertion (`builtin:rum.web.manual-insertion)`
 
-Manually insert one of the snippet formats below into the pages of your application. Learn more about the different [snippet formatsï»¿](https://dt-url.net/vx5g0ptn). All formats are also available via the [APIï»¿](https://dt-url.net/oz43wab), allowing you to automate their insertion as part of your build process.
+Manually insert one of the snippet formats below into the pages of your application. Learn more about the different [snippet formats﻿](https://dt-url.net/vx5g0ptn). All formats are also available via the [API﻿](https://dt-url.net/oz43wab), allowing you to automate their insertion as part of your build process.
 
 | Schema ID | Schema groups | Scope |
 | --- | --- | --- |

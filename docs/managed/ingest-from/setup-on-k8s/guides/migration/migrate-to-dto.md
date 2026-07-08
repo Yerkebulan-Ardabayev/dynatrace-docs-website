@@ -1,7 +1,6 @@
 ---
 title: Migrate from OneAgent Operator to Dynatrace Operator
 source: https://docs.dynatrace.com/managed/ingest-from/setup-on-k8s/guides/migration/migrate-to-dto
-scraped: 2026-05-12T12:08:58.025839
 ---
 
 # Migrate from OneAgent Operator to Dynatrace Operator
@@ -9,7 +8,7 @@ scraped: 2026-05-12T12:08:58.025839
 # Migrate from OneAgent Operator to Dynatrace Operator
 
 * 5-min read
-* Published Apr 01, 2021
+* Updated on Jun 09, 2026
 
 ## Understand and configure the DynaKube custom resource
 
@@ -23,7 +22,7 @@ Changing operators will change the host ID calculations for monitored hosts, whi
 
 Follow the instructions below to migrate from OneAgent Operator to Dynatrace Operator for classic full-stack injection.
 
-![Migration of properties](https://dt-cdn.net/images/classicfullstackmigration-600-fb8529d001.png)
+![Migration of properties](https://cdn.bfldr.com/B686QPH3/as/wn4ggjs69gk6km4wqt6q4h2j/Migrate_from_OneAgent_Operator_to_Dynatrace_Operator-Classic_full-stack_migration-Light_Mode?auto=webp&format=png&position=1)
 
 Migration of properties
 
@@ -70,7 +69,7 @@ All the other OneAgent parameters (such as tolerations, arguments, DNS, and reso
 
 Follow the instructions below to migrate from OneAgent Operator to Dynatrace Operator for automatic application-only injection.
 
-![Cloud native app only](https://dt-cdn.net/images/cloudnativeappo-600-de0c984048.png)
+![Cloud native app only](https://cdn.bfldr.com/B686QPH3/as/qk8rt6xnq7rhnjkgqvnpp7m/Migrate_from_OneAgent_Operator_to_Dynatrace_Operator-Application-only_migration-Light_Mode?auto=webp&format=png&position=1)
 
 Cloud native app only
 

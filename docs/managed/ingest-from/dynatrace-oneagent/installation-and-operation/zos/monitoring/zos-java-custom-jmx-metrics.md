@@ -1,7 +1,6 @@
 ---
 title: Monitor JMX metrics on z/OS
 source: https://docs.dynatrace.com/managed/ingest-from/dynatrace-oneagent/installation-and-operation/zos/monitoring/zos-java-custom-jmx-metrics
-scraped: 2026-05-12T11:24:13.931739
 ---
 
 # Monitor JMX metrics on z/OS
@@ -13,8 +12,8 @@ scraped: 2026-05-12T11:24:13.931739
 
 JMX (Java Management Extensions) is handy for monitoring applications built using Java. With the OneAgent z/OS Java code module, you can monitor any metric in your JVM that is exposed via an MBean.
 
-* Every monitored custom JMX metric consumes Davis data units. The concept of [Included metrics per host unit](/managed/license/monitoring-consumption-classic/davis-data-units/metric-cost-calculation#metrics-per-host-unit "Understand how to calculate Davis data unit consumption and costs related to monitored metrics.") isn't applicable for monitored LPARs on z/OS. To learn more about Davis data units, see [DDUs for metrics](/managed/license/monitoring-consumption-classic/davis-data-units/metric-cost-calculation "Understand how to calculate Davis data unit consumption and costs related to monitored metrics.").
-* [PMI (Performance Monitoring Infrastructure)ï»¿](https://www.ibm.com/docs/en/was/9.0.5?topic=health-performance-monitoring-infrastructure-pmi) for the IBM WebSphere Application Server is currently not supported.
+* Every monitored custom JMX metric consumes Davis data units. The concept of [Included metrics per host unit](/managed/license/classic-licensing/davis-data-units/metric-cost-calculation#metrics-per-host-unit "Understand how to calculate Davis data unit consumption and costs related to monitored metrics.") isn't applicable for monitored LPARs on z/OS. To learn more about Davis data units, see [DDUs for metrics](/managed/license/classic-licensing/davis-data-units/metric-cost-calculation "Understand how to calculate Davis data unit consumption and costs related to monitored metrics.").
+* [PMI (Performance Monitoring Infrastructure)﻿](https://www.ibm.com/docs/en/was/9.0.5?topic=health-performance-monitoring-infrastructure-pmi) for the IBM WebSphere Application Server is currently not supported.
 
 ## Definition
 

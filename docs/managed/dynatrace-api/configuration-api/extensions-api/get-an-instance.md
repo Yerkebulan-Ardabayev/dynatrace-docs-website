@@ -1,7 +1,6 @@
 ---
 title: Extensions API - GET an extension's instance
 source: https://docs.dynatrace.com/managed/dynatrace-api/configuration-api/extensions-api/get-an-instance
-scraped: 2026-05-12T11:19:48.007949
 ---
 
 # Extensions API - GET an extension's instance

@@ -1,7 +1,6 @@
 ---
 title: Processes API - GET a process
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/topology-and-smartscape/processes-api/get-a-process
-scraped: 2026-05-12T12:01:40.032874
 ---
 
 # Processes API - GET a process
@@ -53,8 +52,7 @@ Parameters of a process.
 
 | Element | Type | Description |
 | --- | --- | --- |
-| agentVersions | [AgentVersion[]](#openapi-definition-AgentVersion) | Versions of OneAgents currently running on the entity. |
-| attributes | object | - |
+| agentVersions | [AgentVersion](#openapi-definition-AgentVersion)[] | Versions of OneAgents currently running on the entity. |
 | azureHostName | string | - |
 | azureSiteName | string | - |
 | bitness | string | -The element can hold these values * `32bit` * `64bit` |
@@ -66,14 +64,14 @@ Parameters of a process.
 | fromRelationships | object | - |
 | lastSeenTimestamp | integer | The timestamp of when the entity was last detected, in UTC milliseconds |
 | listenPorts | integer[] | - |
-| managementZones | [EntityShortRepresentation[]](#openapi-definition-EntityShortRepresentation) | The management zones that the entity is part of. |
+| managementZones | [EntityShortRepresentation](#openapi-definition-EntityShortRepresentation)[] | The management zones that the entity is part of. |
 | metadata | object | - |
 | modules | string[] | - |
 | monitoringState | [MonitoringState](#openapi-definition-MonitoringState) | Defines the current monitoring state of an entity. |
-| softwareTechnologies | [TechnologyInfo[]](#openapi-definition-TechnologyInfo) | - |
-| tags | [TagInfo[]](#openapi-definition-TagInfo) | The list of entity tags. |
+| softwareTechnologies | [TechnologyInfo](#openapi-definition-TechnologyInfo)[] | - |
+| tags | [TagInfo](#openapi-definition-TagInfo)[] | The list of entity tags. |
 | toRelationships | object | - |
-| versionedModules | [ProcessGroupInstanceModule[]](#openapi-definition-ProcessGroupInstanceModule) | - |
+| versionedModules | [ProcessGroupInstanceModule](#openapi-definition-ProcessGroupInstanceModule)[] | - |
 
 #### The `AgentVersion` object
 
@@ -86,10 +84,6 @@ Defines the version of the agent currently running on the entity.
 | revision | integer | The revision number. |
 | sourceRevision | string | A string representation of the SVN revision number. |
 | timestamp | string | A timestamp string: format "yyyymmdd-hhmmss |
-
-#### The `AnyValue` object
-
-A schema representing an arbitrary value type.
 
 #### The `EntityShortRepresentation` object
 
@@ -147,7 +141,7 @@ Tag of a Dynatrace entity.
 | Element | Type | Description |
 | --- | --- | --- |
 | code | integer | The HTTP status code |
-| constraintViolations | [ConstraintViolation[]](#openapi-definition-ConstraintViolation) | A list of constraint violations |
+| constraintViolations | [ConstraintViolation](#openapi-definition-ConstraintViolation)[] | A list of constraint violations |
 | message | string | The error message |
 
 #### The `ConstraintViolation` object
@@ -201,18 +195,6 @@ A list of constraint violations
 
 
 ],
-
-
-
-"attributes": {
-
-
-
-"empty": true
-
-
-
-},
 
 
 

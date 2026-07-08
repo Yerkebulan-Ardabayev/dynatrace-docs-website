@@ -1,7 +1,6 @@
 ---
 title: Log ingest & process (Logs Classic)
 source: https://docs.dynatrace.com/managed/analyze-explore-automate/log-monitoring/acquire-log-data
-scraped: 2026-05-12T11:13:35.756005
 ---
 
 # Log ingest & process (Logs Classic)
@@ -10,7 +9,7 @@ scraped: 2026-05-12T11:13:35.756005
 
 * Overview
 * 2-min read
-* Updated on May 04, 2026
+* Updated on Jun 09, 2026
 
 Log Monitoring Classic
 
@@ -25,7 +24,7 @@ You can rely on autodiscovered or manually added log sources for OneAgent. See [
 * [Automatically discover log data](/managed/analyze-explore-automate/log-monitoring/acquire-log-data/log-content-auto-discovery-v2 "Learn about autodiscovery of log content and requirements for autodiscovery to occur.")
 * [Manually add log files](/managed/analyze-explore-automate/log-monitoring/acquire-log-data/add-log-files-manually-v2 "Learn how to manually add log files for analysis.")
 
-![LMC - OneAgent log ingestion and processing configurations at capture](https://dt-cdn.net/images/lmc-oneagent-log-ingestion-and-processing-configurations-at-capture-02-2500-c4876fc96b.png)
+![LMC - OneAgent log ingestion and processing configurations at capture](https://cdn.bfldr.com/B686QPH3/as/gshn6spgwftkcp4vhc3fn5x/LMC-OneAgent_log_ingestion_and_processing_configurations_at_capture-Light_Mode?auto=webp&format=png&position=1)
 
 LMC - OneAgent log ingestion and processing configurations at capture
 
@@ -67,8 +66,8 @@ Log ingestion API
 Dynatrace Log Monitoring incorporates reshaping the incoming log data into the form you may need for better understanding, analysis, or further processing of your log data by Dynatrace. Using Dynatrace Pattern Language (DPL), you can define patterns using matchers and create a set of rules that Log Monitoring applies to ingested log data.
 
 * [Log processing](/managed/analyze-explore-automate/log-monitoring/log-processing "Create log processing rules that reshape your incoming log data for better analysis or further processing.")
-* [Dynatrace Pattern Languageï»¿](https://docs.dynatrace.com/docs/shortlink/dpl-dynatrace-pattern-language-hub)
+* [Dynatrace Pattern Language﻿](https://docs.dynatrace.com/docs/shortlink/dpl-dynatrace-pattern-language-hub)
 
-![LMC - Log processing pipeline](https://dt-cdn.net/images/lmc-log-processing-pipeline-2500-60d2c2d7b6.png)
+![LMC - Log processing pipeline](https://cdn.bfldr.com/B686QPH3/as/5w77h72k73xk6b8k2ctq3t9r/Log_processing-Light_Mode?auto=webp&format=png&position=1)
 
 LMC - Log processing pipeline

@@ -1,7 +1,6 @@
 ---
 title: Deploy OneAgent Operator on Kubernetes (deprecated)
 source: https://docs.dynatrace.com/managed/ingest-from/setup-on-container-platforms/kubernetes/legacy/deploy-oneagent-operator-k8s-legacy
-scraped: 2026-05-12T11:52:16.378423
 ---
 
 # Deploy OneAgent Operator on Kubernetes (deprecated)
@@ -86,11 +85,11 @@ Prerequisites
    | `args` | Optional Parameters to be passed to the OneAgent installer. All the [command line parameters of the installer](/managed/ingest-from/dynatrace-oneagent/installation-and-operation/linux/installation/customize-oneagent-installation-on-linux "Learn how to use the Linux installer with command line parameters.") are supported, with the exception of `INSTALL_PATH`. |  |
    | `env` | Optional Environment variables for OneAgent container. |  |
    | `skipCertCheck` | Optional Disable certificate validation checks for installer download and API communication. Set to `true` if you want to skip any certification validation checks. | `false` |
-   | `nodeSelector` | Optional Keep empty default value. If you want to roll out OneAgent to specific nodes only, provide the `nodeSelectors` here. Refer to [Kubernetes docsï»¿](https://kubernetes.io/docs/concepts/configuration/assign-pod-node/#nodeselector) for details. |  |
-   | `tolerations` | Optional Keep default value to also roll out the OneAgent to primary nodes if possible. If you want to apply additional tolerations to OneAgent pods for tainted nodes, provide them here. Refer to [Kubernetes docsï»¿](https://kubernetes.io/docs/concepts/configuration/taint-and-toleration/) for details. |  |
-   | `image` | Optional Define the OneAgent image to be taken. Defaults to the publicly available OneAgent image on [Docker Hubï»¿](https://hub.docker.com/r/dynatrace/oneagent/). In order to use the certified [OneAgent imageï»¿](https://access.redhat.com/containers/#/registry.connect.redhat.com/dynatrace/oneagent) from [Red Hat Container Catalogï»¿](https://access.redhat.com/containers/) you need to set `.spec.image` to `registry.connect.redhat.com/dynatrace/oneagent` in the custom resource and provide image pull secrets as shown in the next step. | `docker.io/dynatrace/oneagent:latest` if unset |
+   | `nodeSelector` | Optional Keep empty default value. If you want to roll out OneAgent to specific nodes only, provide the `nodeSelectors` here. Refer to [Kubernetes docs﻿](https://kubernetes.io/docs/concepts/configuration/assign-pod-node/#nodeselector) for details. |  |
+   | `tolerations` | Optional Keep default value to also roll out the OneAgent to primary nodes if possible. If you want to apply additional tolerations to OneAgent pods for tainted nodes, provide them here. Refer to [Kubernetes docs﻿](https://kubernetes.io/docs/concepts/configuration/taint-and-toleration/) for details. |  |
+   | `image` | Optional Define the OneAgent image to be taken. Defaults to the publicly available OneAgent image on [Docker Hub﻿](https://hub.docker.com/r/dynatrace/oneagent/). In order to use the certified [OneAgent image﻿](https://access.redhat.com/containers/#/registry.connect.redhat.com/dynatrace/oneagent) from [Red Hat Container Catalog﻿](https://access.redhat.com/containers/) you need to set `.spec.image` to `registry.connect.redhat.com/dynatrace/oneagent` in the custom resource and provide image pull secrets as shown in the next step. | `docker.io/dynatrace/oneagent:latest` if unset |
    | `resources` | Optional Resource requests/limits for the OneAgent pods. These settings heavily depend on size of worker nodes and workloads. Please adjust to fit your needs. |  |
-   | `priorityClassName` | Optional Priority class for OneAgent pod. Refer to [Kubernetes docsï»¿](https://kubernetes.io/docs/concepts/configuration/pod-priority-preemption/). |  |
+   | `priorityClassName` | Optional Priority class for OneAgent pod. Refer to [Kubernetes docs﻿](https://kubernetes.io/docs/concepts/configuration/pod-priority-preemption/). |  |
    | `disableAgentUpdate` | Optional Disable the Operator's auto-update feature for OneAgent pods. | `false` |
    | `enableIstio` | Optional Enable management of Istio service entries and virtual services for Dynatrace endpoints to allow for OneAgent monitoring egress traffic to your Dynatrace environment | `false` |
    | `trustedCAs` | Optional Adds the provided CA certificates to the Operator and the OneAgent; provide the name of the configmap which holds your PEM in a field called `certs`. | If not set, the default embedded certificates on the images will be used. |
@@ -344,7 +343,7 @@ Prerequisites
   Make sure you have the **Access problem and event feed, metrics, and topology** setting enabled for the API token.
 * Pods must allow egress to your Dynatrace environment or to your Environment ActiveGate in order for metric routing to work properly.
 * See [Support lifecycle](/managed/ingest-from/technology-support/support-model-and-issues "How Dynatrace supports Kubernetes and Red Hat OpenShift versions and known issues") for supported Kubernetes versions.
-* [Install Helm version 3ï»¿](https://helm.sh/docs/intro/install/).
+* [Install Helm version 3﻿](https://helm.sh/docs/intro/install/).
 
 1. Add the Dynatrace OneAgent Helm repository.
 
@@ -590,7 +589,7 @@ For further instructions see [Deploy ActiveGate in Kubernetes as a StatefulSet](
 
 OneAgent Operator (for Kubernetes version 1.9+) automatically takes care of the lifecycle of the deployed OneAgents, so you don't need to update OneAgent pods yourself.
 
-Review the [release notesï»¿](https://github.com/Dynatrace/dynatrace-oneagent-operator/releases) of the Operator for any breaking changes on the custom resource.
+Review the [release notes﻿](https://github.com/Dynatrace/dynatrace-oneagent-operator/releases) of the Operator for any breaking changes on the custom resource.
 
 If the custom resource of the new version is compatible with the already deployed version, you can simply set the OneAgent Operator image to the new tagged version. Be sure to replace `vX.Y.Z` with the new version in the following command:
 
@@ -606,7 +605,7 @@ dynatrace-oneagent-operator *=quay.io/dynatrace/\
 dynatrace-oneagent-operator:vX.Y.Z
 ```
 
-The image version of the OneAgent Operator is independent from the OneAgent version. To check the available versions for the Operator, see the [OneAgent Operator releasesï»¿](https://github.com/Dynatrace/dynatrace-oneagent-operator/releases).
+The image version of the OneAgent Operator is independent from the OneAgent version. To check the available versions for the Operator, see the [OneAgent Operator releases﻿](https://github.com/Dynatrace/dynatrace-oneagent-operator/releases).
 
 To update OneAgent Operator, run the following command:
 
@@ -643,7 +642,7 @@ Uninstall with Helm
 
 To uninstall OneAgent Operator from Kubernetes version 1.9+
 
-1. Remove OneAgent custom resources and clean up all remaining OneAgent Operatorâspecific objects.
+1. Remove OneAgent custom resources and clean up all remaining OneAgent Operator–specific objects.
 
    ```
    kubectl delete -n dynatrace oneagent --all
@@ -655,7 +654,7 @@ To uninstall OneAgent Operator from Kubernetes version 1.9+
 2. Optional After deleting OneAgent Operator, the OneAgent binary remains on the node in an inactive state. To uninstall it completely, run the `uninstall.sh` script and delete logs and configuration files.  
    See [Linux related information](/managed/ingest-from/dynatrace-oneagent/installation-and-operation/linux/operation/uninstall-oneagent-on-linux "Learn how you can remove OneAgent from your Linux-based system.").
 
-Remove OneAgent custom resources and clean up all remaining OneAgent Operatorâspecific objects:
+Remove OneAgent custom resources and clean up all remaining OneAgent Operator–specific objects:
 
 ```
 helm uninstall dynatrace-oneagent-operator -n dynatrace

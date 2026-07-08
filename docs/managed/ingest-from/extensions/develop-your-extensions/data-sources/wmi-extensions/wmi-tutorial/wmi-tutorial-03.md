@@ -1,7 +1,6 @@
 ---
 title: WMI tutorial - metric metadata
 source: https://docs.dynatrace.com/managed/ingest-from/extensions/develop-your-extensions/data-sources/wmi-extensions/wmi-tutorial/wmi-tutorial-03
-scraped: 2026-05-12T12:16:27.449098
 ---
 
 # WMI tutorial - metric metadata

@@ -1,7 +1,6 @@
 ---
 title: Dynatrace dashboard timeframe and management zone settings
 source: https://docs.dynatrace.com/managed/analyze-explore-automate/dashboards-classic/dashboards/dashboard-timeframe
-scraped: 2026-05-12T11:14:59.909225
 ---
 
 # Dynatrace dashboard timeframe and management zone settings
@@ -31,11 +30,11 @@ Timeframe selector: menu bar
   Timeframe selector: presets
 
   + The **Presets** tab lists all standard timeframes available. Select one to change your timeframe to that preset.
-  + The **Custom** tab displays a calendar. Click a start day, click an end day, and then click **Apply** to select that range of days as your timeframe.
+  + The **Custom** tab displays a calendar. Click a start day, click an end day, and then select **Apply** to select that range of days as your timeframe.
 
     - Selected calendar intervals are set to end on start of the next day (with the time set to `00:00`). For example, if you select September 3 to September 4 on the calendar, the timeframe starts on September 3 at time `00:00` and ends on September **5** at time `00:00`, so you never miss the last minute of the time range. You can edit these displayed times.
   + The **Recent** tab displays recently used timeframes. Select one to revert to that timeframe.
-  + The **<** and **>** controls shift the timerange forward or backward in time. The increment is the length of the original timerange. For example, if the current timerange is `Last 2 hours` (the two-hour range ending now), click **<** to shift the timerange two hours back, to `-4h to -2h` (the two-hour range ending two hours ago).
+  + The **<** and **>** controls shift the timerange forward or backward in time. The increment is the length of the original timerange. For example, if the current timerange is `Last 2 hours` (the two-hour range ending now), select **<** to shift the timerange two hours back, to `-4h to -2h` (the two-hour range ending two hours ago).
   + Hover over the timeframe to see the start time, duration, and end time.
 
     ![Timeframe selector: hover](https://dt-cdn.net/images/timeframe-selector-hover-168-cfb13dc777.png)
@@ -69,7 +68,7 @@ Timeframe selector: menu bar
 
 ## Timeframe and management zone preservation
 
-Timeframe and management zone selections are stickyâthey're propagated to all pages you visit. For example, after changing the timeframe and management zone on your dashboard, the selections are preserved as you drill down from the **Applications** tile to individual application pages.
+Timeframe and management zone selections are sticky—they're propagated to all pages you visit. For example, after changing the timeframe and management zone on your dashboard, the selections are preserved as you drill down from the **Applications** tile to individual application pages.
 
 The exception is opening a new dashboard or getting back to the current dashboard by selecting **Dashboard** in the upper-left corner of the page. In that case, the timeframe and management zone are reset to the dashboard's [defaults](#default).
 

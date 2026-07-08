@@ -1,12 +1,11 @@
 ---
-title: Synthetic architecture and communication
+title: Synthetic architecture and communication in Classic
 source: https://docs.dynatrace.com/managed/observe/digital-experience/synthetic-monitoring/general-information/architecture-communication
-scraped: 2026-05-12T11:32:05.292151
 ---
 
-# Synthetic architecture and communication
+# Synthetic architecture and communication in Classic
 
-# Synthetic architecture and communication
+# Synthetic architecture and communication in Classic
 
 * Explanation
 * 3-min read
@@ -18,13 +17,13 @@ Understand synthetic architecture and how your data securely flows through it. L
 
 The following components are involved in the synthetic communication flow:
 
-* **Dynatrace Cluster**âhosts the Synthetic monitors configuration, schedules monitors executions for private locations, and sends monitor configuration to public infrastructure if necessary.
-* **Private location**âgroup of Synthetic ActiveGates, assigned to your monitor. The Dynatrace Cluster schedules executions for a private location.
-* **ActiveGate**âcomponent used by the Synthetic engine to register and communicate with The Dynatrace Cluster.
-* **Synthetic public infrastructure**âinfrastructure responsible for public location scheduling and configuration.
-* **Public location**âgroup of Synthetic engines, assigned to your monitor. The Synthetic public infrastructure schedules executions for a public location.
-* **Synthetic engine**âengine responsible for monitoring executions.
-* **Beacon forwarder**âforwards the results from Synthetic engines to The Dynatrace Cluster.
+* **Dynatrace Cluster**—hosts the Synthetic monitors configuration, schedules monitors executions for private locations, and sends monitor configuration to public infrastructure if necessary.
+* **Private location**—group of Synthetic ActiveGates, assigned to your monitor. The Dynatrace Cluster schedules executions for a private location.
+* **ActiveGate**—component used by the Synthetic engine to register and communicate with The Dynatrace Cluster.
+* **Synthetic public infrastructure**—infrastructure responsible for public location scheduling and configuration.
+* **Public location**—group of Synthetic engines, assigned to your monitor. The Synthetic public infrastructure schedules executions for a public location.
+* **Synthetic engine**—engine responsible for monitoring executions.
+* **Beacon forwarder**—forwards the results from Synthetic engines to The Dynatrace Cluster.
 
 ![Syntehtic architecture](https://cdn.bfldr.com/B686QPH3/as/gcss5ckc4txq9q5nnfh7bcz/Synthetic_architecture_and_communication_-_Light_Mode?auto=webp&format=png&position=1)
 
@@ -55,7 +54,7 @@ Public location communication
 
 5. **Dynatrace Cluster to Synthetic public infrastructure**
 
-   The cluster provides monitors definitions, maintenance windows details, and tenant stateâincluding license state. The data is encrypted through the `synthetic monitors` token. The Dynatrace Cluster generates this token on a tenant level, and it rotates every 24 hours. Once a day, tokens that are older than 48 hours get deleted. The token is provided to the engine with execution details, and the communication is secured with the [ActiveGate token](/managed/ingest-from/dynatrace-activegate/activegate-security "Secure ActiveGates with dedicated tokens.").
+   The cluster provides monitors definitions, maintenance windows details, and tenant state—including license state. The data is encrypted through the `synthetic monitors` token. The Dynatrace Cluster generates this token on a tenant level, and it rotates every 24 hours. Once a day, tokens that are older than 48 hours get deleted. The token is provided to the engine with execution details, and the communication is secured with the [ActiveGate token](/managed/ingest-from/dynatrace-activegate/activegate-security "Secure ActiveGates with dedicated tokens.").
 6. **Synthetic engine to public infrastructure**
 
    The Synthetic engine requests configuration, monitors definitions and executions from the public infrastructure, and delivers diagnostic data. The data is secured on the network level.

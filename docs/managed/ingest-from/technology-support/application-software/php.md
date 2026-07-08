@@ -1,7 +1,6 @@
 ---
 title: PHP
 source: https://docs.dynatrace.com/managed/ingest-from/technology-support/application-software/php
-scraped: 2026-05-12T11:22:35.469671
 ---
 
 # PHP
@@ -40,10 +39,10 @@ See [the environments and versions that Dynatrace supports](/managed/ingest-from
 
 ### See also
 
-[Dynatrace Open Q&A: What is the desupport policy for PHP?ï»¿](https://community.dynatrace.com/t5/Dynatrace-Open-Q-A/What-is-the-desupport-policy-for-PHP/m-p/42853)
+[Dynatrace Open Q&A: What is the desupport policy for PHP?﻿](https://community.dynatrace.com/t5/Dynatrace-Open-Q-A/What-is-the-desupport-policy-for-PHP/m-p/42853)
 
-[Blog: Monitor PHP in Windows environmentsï»¿](https://www.dynatrace.com/news/blog/monitor-php-in-windows-environments-beta/)
+[Blog: Monitor PHP in Windows environments﻿](https://www.dynatrace.com/news/blog/monitor-php-in-windows-environments-beta/)
 
-[Blog: General availability of PHP deep monitoringï»¿](https://www.dynatrace.com/news/blog/general-availability-of-php-deep-monitoring/)
+[Blog: General availability of PHP deep monitoring﻿](https://www.dynatrace.com/news/blog/general-availability-of-php-deep-monitoring/)
 
-[Blog: New response time analysis views!ï»¿](https://www.dynatrace.com/news/blog/new-response-time-analysis-views/)
+[Blog: New response time analysis views!﻿](https://www.dynatrace.com/news/blog/new-response-time-analysis-views/)

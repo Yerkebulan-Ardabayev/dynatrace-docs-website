@@ -1,7 +1,6 @@
 ---
 title: Settings API - Container monitoring rules schema table
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/settings/schemas/builtin-container-monitoring-rule
-scraped: 2026-05-12T11:43:56.451284
 ---
 
 # Settings API - Container monitoring rules schema table
@@ -16,7 +15,7 @@ Within container environments, OneAgent automatically injects code modules into 
 
 In Kubernetes, container monitoring rules are evaluated only in case of `classicFullStack` injection mode. The rules are ignored in case of `cloudNativeFullStack` or `applicationMonitoring`.
 
-Please use the annotation-based configuration option as described [hereï»¿](https://dt-url.net/k8sdtoconfig).
+Please use the annotation-based configuration option as described [here﻿](https://dt-url.net/k8sdtoconfig).
 
 | Schema ID | Schema groups | Scope |
 | --- | --- | --- |

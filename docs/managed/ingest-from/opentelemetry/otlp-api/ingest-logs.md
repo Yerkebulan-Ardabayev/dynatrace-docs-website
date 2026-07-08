@@ -1,7 +1,6 @@
 ---
 title: Ingest OTLP logs
 source: https://docs.dynatrace.com/managed/ingest-from/opentelemetry/otlp-api/ingest-logs
-scraped: 2026-05-12T12:00:26.227417
 ---
 
 # Ingest OTLP logs
@@ -30,7 +29,8 @@ Each log record from the ingested batch is mapped to a single Dynatrace log reco
   2. The attributes of the OTLP log record.
 * If the timestamp is taken from the body or OTLP log record, it is set based on the value of the first key from the following list, evaluated in the order presented in the list, and is case-insensitive: `timestamp`, `@timestamp`, `_timestamp`, `eventtime`, `date`, `published_date`, `syslog.timestamp`, `time`, `epochSecond`, `startTime`, `datetime`, `ts`, `timeMillis`, `@t`.
 
-* Supported timestamp formats: Unix epoch time in UTC (seconds, milliseconds, or seconds with a fractional part â available from Dynatrace version 1.339), `RFC3339`, and `RFC3164`.
+* Supported formats are Unix epoch time in UTC, `RFC3339`, and `RFC3164`.
+  Unix epoch time can be displayed in seconds, milliseconds, and Dynatrace version 1.339+ fractional seconds.
 * The default value is the current timestamp and the default timezone is UTC if it's missing in timestamp.
 * Log events older than the **Log Age** limit are discarded. Timestamps more than 10 minutes ahead of the current time are replaced with the current time. See the [Ingestion limits](#ingestion-limits) section for details.
 
@@ -108,7 +108,7 @@ In this case, the map attribute values are flattened, i.e. replaced with keys co
 
 | Input | Log ingestion API endpoint output |
 | --- | --- |
-| ```  body: "Hello world!"  Resource:  - "any-attr-type-3": {"3" = "c"}  Scope:  - "any-attr-type-2" : {"2" = "b"}  Attributes:  - "any-attr-type-1" : {"1" = "a"}  - "any-attr-type-4" :  [ "val1", 10, -123.456, false, 0x01020304 ] ``` | ```  âcontentâ: "Hello world!"  "any-attr-type-1.1": "a"  "any-attr-type-2.2": "b"  "any-attr-type-3.3": "c"  "any-attr-type-4":  ["val1", 10, -123.456, false, "AQIDBA=="] ``` |
+| ```  body: "Hello world!"  Resource:  - "any-attr-type-3": {"3" = "c"}  Scope:  - "any-attr-type-2" : {"2" = "b"}  Attributes:  - "any-attr-type-1" : {"1" = "a"}  - "any-attr-type-4" :  [ "val1", 10, -123.456, false, 0x01020304 ] ``` | ```  “content”: "Hello world!"  "any-attr-type-1.1": "a"  "any-attr-type-2.2": "b"  "any-attr-type-3.3": "c"  "any-attr-type-4":  ["val1", 10, -123.456, false, "AQIDBA=="] ``` |
 
 Flattening proceeds up to the maximum nesting level specified by the **Nested objects** limit. Structures nested deeper than this are replaced with the string value `<truncated due to nesting limit>`. See the [Ingestion limits](#ingestion-limits) section for details.
 
@@ -154,7 +154,7 @@ These attributes are merged with those provided in the OpenTelemetry log request
 * All query parameters passed to the Log ingestion API endpoint are added to the log record attributes.
 * If a parameter key appears multiple times, all values are captured as an array attribute.
 * Keys and values follow the same attribute parsing rules as log request attributes.
-* Certain parameters are processed by the API for internal purposes and never appear as log record attributes, even if explicitly provided (such as those used in the **XâDynatraceâOptions** header). For the complete list of reserved parameter names and their processing behavior, see the [API documentation](/managed/dynatrace-api/environment-api/opentelemetry/post-logs#parameters "Send OpenTelemetry logs to Dynatrace via API.").
+* Certain parameters are processed by the API for internal purposes and never appear as log record attributes, even if explicitly provided (such as those used in the **X‑Dynatrace‑Options** header). For the complete list of reserved parameter names and their processing behavior, see the [API documentation](/managed/dynatrace-api/environment-api/opentelemetry/post-logs#parameters "Send OpenTelemetry logs to Dynatrace via API.").
 
 #### Example
 
@@ -202,7 +202,7 @@ When attributes from query parameters or the header override log request attribu
 
 * The final attribute value is set according to the attribute source precedence rules.
 * The values already present in the log request are preserved and mirrored under `overwrittenN.<attribute_key>`.
-  Where N is an incrementing integer (1, 2, â¦) depending on how many log request-originating values had to be preserved. This ensures uniqueness, even when multiple conflicts occur.
+  Where N is an incrementing integer (1, 2, …) depending on how many log request-originating values had to be preserved. This ensures uniqueness, even when multiple conflicts occur.
 * Only values originating from the log request are preserved under the `overwrittenN.*` keys. Attributes overridden by higher-precedence sources do not generate overwritten copies.
 
 #### Example

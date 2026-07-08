@@ -1,7 +1,6 @@
 ---
 title: Tokens API v1
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/tokens-v1
-scraped: 2026-05-12T12:01:20.905613
 ---
 
 # Tokens API v1

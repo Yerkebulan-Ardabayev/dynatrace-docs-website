@@ -1,7 +1,6 @@
 ---
 title: Settings API - Process instance snapshots schema table
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/settings/schemas/builtin-process-visibility
-scraped: 2026-05-12T11:45:36.988981
 ---
 
 # Settings API - Process instance snapshots schema table
@@ -41,7 +40,7 @@ Events triggering **Process instance snapshots**:
 * Manual requests
 * Process availability events
 
-For details, see [Process instance snapshotsï»¿](https://dt-url.net/yw02uea)
+For details, see [Process instance snapshots﻿](https://dt-url.net/yw02uea)
 
 | Schema ID | Schema groups | Scope |
 | --- | --- | --- |

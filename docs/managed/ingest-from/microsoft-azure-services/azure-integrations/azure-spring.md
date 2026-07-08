@@ -1,7 +1,6 @@
 ---
 title: Monitor Azure Spring Apps
 source: https://docs.dynatrace.com/managed/ingest-from/microsoft-azure-services/azure-integrations/azure-spring
-scraped: 2026-05-12T11:23:57.070411
 ---
 
 # Monitor Azure Spring Apps
@@ -25,7 +24,7 @@ See below how you can integrate OneAgent with your Azure Spring Apps application
 ## Prerequisites
 
 * Create a [PaaS token](/managed/manage/identity-access-management/access-tokens-and-oauth-clients/access-tokens#paas-token "Learn the concept of an access token and its scopes.")
-* [Install the Azure CLIï»¿](https://dt-url.net/cf63rl6)
+* [Install the Azure CLI﻿](https://dt-url.net/cf63rl6)
 
 ## Set up integration
 
@@ -39,7 +38,7 @@ See below how you can integrate OneAgent with your Azure Spring Apps application
 
 ### Step 1 Prepare your environment in Azure
 
-1. In Azure Portal, create an Azure Spring Apps instance.
+1. In the Azure portal, create an Azure Spring Apps instance.
 2. In the new Azure Spring Apps instance, create an application that you want to report to Dynatrace by running the command below.
 
    Be sure to replace the placeholders (`<...>`) with your own values.
@@ -58,14 +57,14 @@ To set up OneAgent integration with your Azure Spring Apps instance, you need to
 
 Before you begin, collect the following information:
 
-* Your [Dynatrace environment ID](/managed/discover-dynatrace/get-started/monitoring-environment "Understand and learn how to work with monitoring environments.")
+* Your [Dynatrace environment ID](/managed/discover-dynatrace/get-started/monitoring-environment "Learn what a Dynatrace monitoring environment is, how to find your environment ID, and how to set up and connect multiple environments.")
 * Authentication
 
   + **PaaS token** authenticates you as a Dynatrace user and is required to determine the tenant token.
   + **Tenant token** allows OneAgent to report data to Dynatrace.
     For more information on tokens, see [Access tokens](/managed/manage/identity-access-management/access-tokens-and-oauth-clients/access-tokens "Learn the concept of an access token and its scopes.").
 
-1. The value for `DT_TENANT`is your [Dynatrace environment ID](/managed/discover-dynatrace/get-started/monitoring-environment "Understand and learn how to work with monitoring environments.").
+1. The value for `DT_TENANT`is your [Dynatrace environment ID](/managed/discover-dynatrace/get-started/monitoring-environment "Learn what a Dynatrace monitoring environment is, how to find your environment ID, and how to set up and connect multiple environments.").
 2. To determine the values for `DT_TENANTTOKEN` and `DT_CONNECTION_POINT`, make an API request to the [Deployment API - GET connectivity information for OneAgent](/managed/dynatrace-api/environment-api/deployment/oneagent/get-connectivity-info "View the connectivity information of OneAgent via Dynatrace API.") endpoint. The values you need are returned as `tenantToken` and `communicationEndpoints`.
 
    You can submit the call to your environment URL (SaaS or Managed) or an Environment ActiveGate URL.
@@ -78,7 +77,7 @@ Before you begin, collect the following information:
 
      Replace:
 
-     + `<your-environment-id>` with your [Dynatrace environment ID](/managed/discover-dynatrace/get-started/monitoring-environment "Understand and learn how to work with monitoring environments.")
+     + `<your-environment-id>` with your [Dynatrace environment ID](/managed/discover-dynatrace/get-started/monitoring-environment "Learn what a Dynatrace monitoring environment is, how to find your environment ID, and how to set up and connect multiple environments.")
      + `<your_PaaS_token>` with your [PaaS token](#prerequisites)
    * **Dynatrace Managed**:
 
@@ -89,7 +88,7 @@ Before you begin, collect the following information:
      Replace:
 
      + `<your-domain>` with your Managed deployment domain
-     + `<your-environment-id>` with your [Dynatrace environment ID](/managed/discover-dynatrace/get-started/monitoring-environment "Understand and learn how to work with monitoring environments.")
+     + `<your-environment-id>` with your [Dynatrace environment ID](/managed/discover-dynatrace/get-started/monitoring-environment "Learn what a Dynatrace monitoring environment is, how to find your environment ID, and how to set up and connect multiple environments.")
      + `<your_PaaS_token>` with your [PaaS token](#prerequisites)
    * **Environment ActiveGate**:
 
@@ -100,16 +99,16 @@ Before you begin, collect the following information:
      Replace
 
      + `<your-activegate-domain>` with your ActiveGate domain
-     + `<your-environment-id>` with your [Dynatrace environment ID](/managed/discover-dynatrace/get-started/monitoring-environment "Understand and learn how to work with monitoring environments.")
+     + `<your-environment-id>` with your [Dynatrace environment ID](/managed/discover-dynatrace/get-started/monitoring-environment "Learn what a Dynatrace monitoring environment is, how to find your environment ID, and how to set up and connect multiple environments.")
      + `<your_PaaS_token>` with your [PaaS token](#prerequisites)
 
 ### Step 3 Add the environment variables to your application
 
-Once you have the values for the environment variables required for OneAgent integration, you can add the respective key/value pairs to your application either on Azure Portal, or in the Azure CLI. See the instructions below for each of these options.
+Once you have the values for the environment variables required for OneAgent integration, you can add the respective key/value pairs to your application either on Azure portal, or in the Azure CLI. See the instructions below for each of these options.
 
 In the Azure CLI
 
-In Azure Portal
+In the Azure portal
 
 Run the command below, making sure to replace the placeholders (`<...>`) with your own values determined in the previous steps.
 
@@ -131,14 +130,14 @@ DT_TENANTTOKEN=<your-tenant-token> DT_CONNECTION_POINT=<your-communication-endpo
 
    | Key | Value |
    | --- | --- |
-   | `DT_TENANT` | [Your Dynatrace environment ID](/managed/discover-dynatrace/get-started/monitoring-environment "Understand and learn how to work with monitoring environments.") |
+   | `DT_TENANT` | [Your Dynatrace environment ID](/managed/discover-dynatrace/get-started/monitoring-environment "Learn what a Dynatrace monitoring environment is, how to find your environment ID, and how to set up and connect multiple environments.") |
    | `DT_TENANTTOKEN` | Your tenant token. See [Determine the values for the required environment variables](#envvar) for details. |
    | `DT_CONNECTION_POINT` | Your communication endpoint. See [Determine the values for the required environment variables](#envvar) for details. |
-4. [Create a buildpack bindingï»¿](https://dt-url.net/nu036u6) for Dynatrace using the PaaS token (API token) and API url as properties.
+4. [Create a buildpack binding﻿](https://dt-url.net/nu036u6) for Dynatrace using the PaaS token (API token) and API url as properties.
 
    | Property | Value |
    | --- | --- |
-   | `api-url` | [Your Dynatrace environment ID](/managed/discover-dynatrace/get-started/monitoring-environment "Understand and learn how to work with monitoring environments.") |
+   | `api-url` | [Your Dynatrace environment ID](/managed/discover-dynatrace/get-started/monitoring-environment "Learn what a Dynatrace monitoring environment is, how to find your environment ID, and how to set up and connect multiple environments.") |
    | `api-token` | [PaaS token](#prerequisites) |
 
 Optionally, you can customize the built-in rules for process group detection by setting another environment variable, `DT_CLUSTER_ID`. The value can be the name of the process group you want to see in Dynatrace. See [Process group detection](/managed/observe/infrastructure-observability/process-groups/configuration/pg-detection "Ways to customize process-group detection") for details.

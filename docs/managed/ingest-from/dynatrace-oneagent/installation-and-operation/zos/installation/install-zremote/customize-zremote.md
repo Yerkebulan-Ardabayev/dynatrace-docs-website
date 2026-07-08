@@ -1,7 +1,6 @@
 ---
 title: Customize the zRemote module
 source: https://docs.dynatrace.com/managed/ingest-from/dynatrace-oneagent/installation-and-operation/zos/installation/install-zremote/customize-zremote
-scraped: 2026-05-12T11:36:39.696814
 ---
 
 # Customize the zRemote module
@@ -53,11 +52,11 @@ Available parameters for configuration:
 
 Effective memory limit calculation
 
-Effective limit = percentage limit Ã available physical memory on the system + absolute limit
+Effective limit = percentage limit × available physical memory on the system + absolute limit
 
 For example:
 
-0.2 Ã 5 GiB + 500 MiB = 1.5 GiB effective memory limit
+0.2 × 5 GiB + 500 MiB = 1.5 GiB effective memory limit
 
 ## Organize LPARs with host groups
 
@@ -93,7 +92,7 @@ The following requirements apply to the `<HostGroupName>` string:
 
 Combining three LPARs to a single host group
 
-In this example, we add three LPARsâ`LPARA`, `LPARB`, and `LPARC` to a single host group `TEST_HOST`.
+In this example, we add three LPARs—`LPARA`, `LPARB`, and `LPARC` to a single host group `TEST_HOST`.
 
 ```
 [HostGroup]
@@ -173,7 +172,7 @@ zRemote SQL statement fetch on
 
 The **SQL statement fetch** feature is disabled by default. To enable it
 
-1. Install and configure the IBM Data Server Driver for ODBC and CLI software on [Linuxï»¿](https://www.ibm.com/docs/en/db2/11.5?topic=dsd-installing-data-server-driver-odbc-cli-software-linux-unix-operating-systems) or [Windowsï»¿](https://www.ibm.com/docs/en/db2/11.5?topic=dsd-installing-data-server-driver-odbc-cli-software-windows-operating-systems). Further reading: [IBM Db2 ODBC CLI driver Download and Installation informationï»¿](https://www.ibm.com/support/pages/db2-odbc-cli-driver-download-and-installation-information).
+1. Install and configure the IBM Data Server Driver for ODBC and CLI software on [Linux﻿](https://www.ibm.com/docs/en/db2/11.5?topic=dsd-installing-data-server-driver-odbc-cli-software-linux-unix-operating-systems) or [Windows﻿](https://www.ibm.com/docs/en/db2/11.5?topic=dsd-installing-data-server-driver-odbc-cli-software-windows-operating-systems). Further reading: [IBM Db2 ODBC CLI driver Download and Installation information﻿](https://www.ibm.com/support/pages/db2-odbc-cli-driver-download-and-installation-information).
 
    In the installation step take note of the location of the CLI driver library:
 
@@ -274,7 +273,7 @@ By default, the zLocal and zRemote use a proprietary communication protocol via 
 
 ### AT-TLS configuration for the zLocal
 
-Depending on your requirements, there are different ways to configure AT-TLS for zLocal. For more details, refer to [Application Transparent Transport Layer Security data protectionï»¿](https://www.ibm.com/docs/en/zos/2.5.0?topic=applications-application-transparent-transport-layer-security-data-protection) in IBM documentation. You can use the example AT-TLS configuration below as a template.
+Depending on your requirements, there are different ways to configure AT-TLS for zLocal. For more details, refer to [Application Transparent Transport Layer Security data protection﻿](https://www.ibm.com/docs/en/zos/2.5.0?topic=applications-application-transparent-transport-layer-security-data-protection) in IBM documentation. You can use the example AT-TLS configuration below as a template.
 
 Example of an AT-TLS configuration
 
@@ -480,7 +479,7 @@ To enable SSL/TLS for the zRemote
 1. Open the `zremoteagentuserconfig.conf` file.
 2. Set `sslEnabled` to `true`.
 3. Specify the absolute paths to your private key (`sslPrivateKey`) and certificate (`sslCertificate`) PEM files.
-4. Optional Define specific TLS cipher suites. For information about allowed cipher suite names and their string format, refer to [OpenSSL documentationï»¿](https://www.openssl.org/docs/man1.1.1/man1/ciphers.html).
+4. Optional Define specific TLS cipher suites. For information about allowed cipher suite names and their string format, refer to [OpenSSL documentation﻿](https://www.openssl.org/docs/man1.1.1/man1/ciphers.html).
 
 Show configuration template
 
@@ -546,7 +545,7 @@ ignoreHandshakeEndpoints=192.168.0.1;10.0.0.2
 
 zRemote module version 1.253+
 
-The IMS message processing region (MPR) process IDs could change, resulting in new process and service entities in Dynatrace. To prevent this process ID change, weâve introduced a more stable ID calculation with the consequence that all IMS MPR process and service entities will change once but then remain stable after an update of the zRemote module with version 1.253.
+The IMS message processing region (MPR) process IDs could change, resulting in new process and service entities in Dynatrace. To prevent this process ID change, we’ve introduced a more stable ID calculation with the consequence that all IMS MPR process and service entities will change once but then remain stable after an update of the zRemote module with version 1.253.
 
 To opt out of the new IMS MPR process ID calculation, set the flag `useOldImsPgiCalc` in the `zremoteagentuserconfig.conf` file to `true`.
 

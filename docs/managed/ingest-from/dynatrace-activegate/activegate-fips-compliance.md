@@ -1,20 +1,19 @@
 ---
 title: ActiveGate FIPS compliance
 source: https://docs.dynatrace.com/managed/ingest-from/dynatrace-activegate/activegate-fips-compliance
-scraped: 2026-05-12T11:36:38.406404
 ---
 
 # ActiveGate FIPS compliance
 
 # ActiveGate FIPS compliance
 
-* Updated on Jul 15, 2025
+* Updated on May 12, 2026
 
 ActiveGate version 1.315+
 
 ## What is FIPS?
 
-The Federal Information Processing Standard (FIPS) is "a standard for adoption and use by federal departments and agencies that has been developed within the Information Technology Laboratory and published by NIST, a part of the U.S. Department of Commerce. A FIPS covers some topic in information technology to achieve a common level of quality or some level of interoperability" (source: [NIST glossaryï»¿](https://csrc.nist.gov/glossary/term/federal_information_processing_standard)).
+The Federal Information Processing Standard (FIPS) is "a standard for adoption and use by federal departments and agencies that has been developed within the Information Technology Laboratory and published by NIST, a part of the U.S. Department of Commerce. A FIPS covers some topic in information technology to achieve a common level of quality or some level of interoperability" (source: [NIST glossary﻿](https://csrc.nist.gov/glossary/term/federal_information_processing_standard)).
 
 FIPS compliance means that a product adheres to all security requirements imposed by the standard.
 
@@ -22,8 +21,15 @@ FIPS compliance means that a product adheres to all security requirements impose
 
 ActiveGate deployed in FIPS-compliant mode uses FIPS-certified cryptographic libraries:
 
-* Amazon Corretto Crypto Provider 2.4.1 (which uses AWS-LC-FIPS 2.x as its cryptographic module, see [Certificate #4816ï»¿](https://csrc.nist.gov/projects/cryptographic-module-validation-program/certificate/4816))
-* BouncyCastle 2.0.0 (see [Certificate #4743ï»¿](https://csrc.nist.gov/projects/cryptographic-module-validation-program/certificate/4743))
+ActiveGate 1.341+
+
+ActiveGate up to 1.339
+
+* Amazon Corretto Crypto Provider 2.4.1 (which uses AWS-LC-FIPS 2.x as its cryptographic module; for details, see [Certificate #4816﻿](https://csrc.nist.gov/projects/cryptographic-module-validation-program/certificate/4816))
+* BouncyCastle 2.1.2 (for details, see [Certificate #4943﻿](https://csrc.nist.gov/projects/cryptographic-module-validation-program/certificate/4943))
+
+* Amazon Corretto Crypto Provider 2.4.1 (which uses AWS-LC-FIPS 2.x as its cryptographic module; for details, see [Certificate #4816﻿](https://csrc.nist.gov/projects/cryptographic-module-validation-program/certificate/4816))
+* BouncyCastle 2.0.0 (for details, see [Certificate #4743﻿](https://csrc.nist.gov/projects/cryptographic-module-validation-program/certificate/4743))
 
 ## ActiveGate purposes compatibility
 
@@ -131,13 +137,13 @@ To get logs from a specific pod, use the following command:
 
 | Cipher suite | TLS version |
 | --- | --- |
-| [`TLS_AES_256_GCM_SHA384`ï»¿](https://ciphersuite.info/cs/TLS_AES_256_GCM_SHA384) | TLS1.3 |
-| [`TLS_AES_128_GCM_SHA256`ï»¿](https://ciphersuite.info/cs/TLS_AES_128_GCM_SHA256) | TLS1.3 |
-| [`TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384`ï»¿](https://ciphersuite.info/cs/TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384) | TLS1.2, TLS1.3 |
-| [`TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256`ï»¿](https://ciphersuite.info/cs/TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256) | TLS1.2, TLS1.3 |
-| [`TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA384`ï»¿](https://ciphersuite.info/cs/TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA384) | TLS1.2, TLS1.3 |
-| [`TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA256`ï»¿](https://ciphersuite.info/cs/TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA256) | TLS1.2, TLS1.3 |
-| [`TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384`ï»¿](https://ciphersuite.info/cs/TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) | TLS1.2, TLS1.3 |
-| [`TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256`ï»¿](https://ciphersuite.info/cs/TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) | TLS1.2, TLS1.3 |
-| [`TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA384`ï»¿](https://ciphersuite.info/cs/TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA384) | TLS1.2, TLS1.3 |
-| [`TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256`ï»¿](https://ciphersuite.info/cs/TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256) | TLS1.2, TLS1.3 |
+| [`TLS_AES_256_GCM_SHA384`﻿](https://ciphersuite.info/cs/TLS_AES_256_GCM_SHA384) | TLS1.3 |
+| [`TLS_AES_128_GCM_SHA256`﻿](https://ciphersuite.info/cs/TLS_AES_128_GCM_SHA256) | TLS1.3 |
+| [`TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384`﻿](https://ciphersuite.info/cs/TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384) | TLS1.2, TLS1.3 |
+| [`TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256`﻿](https://ciphersuite.info/cs/TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256) | TLS1.2, TLS1.3 |
+| [`TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA384`﻿](https://ciphersuite.info/cs/TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA384) | TLS1.2, TLS1.3 |
+| [`TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA256`﻿](https://ciphersuite.info/cs/TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA256) | TLS1.2, TLS1.3 |
+| [`TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384`﻿](https://ciphersuite.info/cs/TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) | TLS1.2, TLS1.3 |
+| [`TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256`﻿](https://ciphersuite.info/cs/TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) | TLS1.2, TLS1.3 |
+| [`TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA384`﻿](https://ciphersuite.info/cs/TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA384) | TLS1.2, TLS1.3 |
+| [`TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256`﻿](https://ciphersuite.info/cs/TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256) | TLS1.2, TLS1.3 |

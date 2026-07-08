@@ -1,7 +1,6 @@
 ---
 title: Configure startup probes for Dynatrace Operator components
 source: https://docs.dynatrace.com/managed/ingest-from/setup-on-k8s/guides/deployment-and-configuration/configure-startup-probes
-scraped: 2026-05-12T12:09:18.163544
 ---
 
 # Configure startup probes for Dynatrace Operator components
@@ -10,13 +9,15 @@ scraped: 2026-05-12T12:09:18.163544
 
 * How-to guide
 * 1-min read
-* Published Mar 12, 2026
+* Updated on May 27, 2026
 
-## Customize startup probes for Dynatrace Operator components
+The startup probes of the Dynatrace Operator components perform a DNS lookup for `kubernetes.default.svc` to verify that cluster DNS is ready. This ensures the Operator only starts when DNS is available, preventing startup failures caused by unresolved Kubernetes API server addresses.
 
-The default startup probe configuration is suitable for most environments, but you can customize the startup probes for Dynatrace Operator components to better align with your specific environment and operational requirements. Properly tuning these probes helps ensure that components are fully initialized and ready to operate before they begin handling requests.
+## Startup probe settings
 
-Startup probe customization can easily be done via the Helm `values.yaml` for the Dynatrace Operator, Webhook, or CSI driver.
+The default startup probe configuration is suitable for most environments, but you can customize the startup probes for Dynatrace Operator components to better suit your environment. Tuning these probes ensures components are ready before handling requests.
+
+You can customize startup probes in the Helm `values.yaml` for the Dynatrace Operator, Webhook, or CSI driver.
 
 * **Dynatrace Operator**
 

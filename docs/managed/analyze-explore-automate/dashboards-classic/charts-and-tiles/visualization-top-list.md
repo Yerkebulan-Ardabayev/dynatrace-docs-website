@@ -1,7 +1,6 @@
 ---
 title: Configure a top-list visualization in Dynatrace
 source: https://docs.dynatrace.com/managed/analyze-explore-automate/dashboards-classic/charts-and-tiles/visualization-top-list
-scraped: 2026-05-12T11:12:59.701679
 ---
 
 # Configure a top-list visualization in Dynatrace

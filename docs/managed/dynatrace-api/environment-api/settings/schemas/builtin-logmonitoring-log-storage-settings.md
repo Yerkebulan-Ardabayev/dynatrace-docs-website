@@ -1,7 +1,6 @@
 ---
 title: Settings API - Log ingest rules schema table
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/settings/schemas/builtin-logmonitoring-log-storage-settings
-scraped: 2026-05-12T11:43:13.291991
 ---
 
 # Settings API - Log ingest rules schema table

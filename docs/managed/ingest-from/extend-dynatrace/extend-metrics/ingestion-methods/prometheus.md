@@ -1,21 +1,20 @@
 ---
 title: Prometheus
 source: https://docs.dynatrace.com/managed/ingest-from/extend-dynatrace/extend-metrics/ingestion-methods/prometheus
-scraped: 2026-05-12T11:10:18.691860
 ---
 
 # Prometheus
 
 # Prometheus
 
-* 1-min read
-* Published Feb 01, 2022
+* 2-min read
+* Updated on Jun 19, 2026
 
 Prometheus is an open-source monitoring and alerting toolkit that is popular in the Kubernetes community. Prometheus scrapes metrics from a number of HTTP(s) endpoints that expose metrics in the OpenMetrics format.
 
 Dynatrace provides you with a framework to easily ingest data provided by Prometheus into Dynatrace at scale and in the context to all other data.
 
-To get started, check [Dynatrace Hubï»¿](https://www.dynatrace.com/hub/) to see if your technology is already covered by an existing extension.
+To get started, check [Dynatrace Hub﻿](https://www.dynatrace.com/hub/) to see if your technology is already covered by an existing extension.
 
 If there's no extension covering your needs, Dynatrace currently provides three approaches to acquiring Prometheus data, depending on the environment.
 
@@ -23,7 +22,11 @@ If there's no extension covering your needs, Dynatrace currently provides three 
 * Prometheus outside of Kubernetes
 * Prometheus via OpenTelemetry Collector
 
-Dynatrace integrates gauge and counter metrics from Prometheus exporters and servers. These metrics are then available for charting, alerting, and analysis within Dynatrace. See the list of available Prometheus exporters in the [Prometheus documentationï»¿](https://prometheus.io/docs/instrumenting/exporters/) or in the [list maintained by the communityï»¿](https://github.com/prometheus/prometheus/wiki/Default-port-allocations).
+Recommended at scale
+
+For high-volume Prometheus scraping, and for new deployments, we recommend the [OpenTelemetry Collector](/managed/ingest-from/opentelemetry/collector/use-cases/prometheus "Configure the OpenTelemetry Collector to scrape Prometheus endpoints and ingest the data into Dynatrace."). It scales horizontally on Kubernetes through a [Target Allocator-based deployment](/managed/ingest-from/opentelemetry/collector/use-cases/prometheus/standard "Deploy a tiered Target Allocator, Scraper, and Gateway architecture for production-grade Prometheus scraping with the OpenTelemetry Collector.") and ingests Prometheus metrics into Dynatrace over OTLP.
+
+Dynatrace integrates gauge and counter metrics from Prometheus exporters and servers. These metrics are then available for charting, alerting, and analysis within Dynatrace. See the list of available Prometheus exporters in the [Prometheus documentation﻿](https://prometheus.io/docs/instrumenting/exporters/) or in the [list maintained by the community﻿](https://github.com/prometheus/prometheus/wiki/Default-port-allocations).
 
 ## Prometheus in Kubernetes
 
@@ -39,4 +42,4 @@ Dynatrace provides a scalable means to ingest Prometheus metrics directly from t
 
 ## Prometheus via OpenTelemetry Collector
 
-For environments that require greater customization, Dynatrace allows the ingestion of Prometheus metrics using the OpenTelemetry Collector. To get started, see [Scrape data from Prometheus](/managed/ingest-from/opentelemetry/collector/use-cases/prometheus "Configure the OpenTelemetry Collector to scrape your Prometheus data.").
+For environments that require greater customization, Dynatrace allows the ingestion of Prometheus metrics using the OpenTelemetry Collector. To get started, see [Scrape data from Prometheus](/managed/ingest-from/opentelemetry/collector/use-cases/prometheus "Configure the OpenTelemetry Collector to scrape Prometheus endpoints and ingest the data into Dynatrace.").

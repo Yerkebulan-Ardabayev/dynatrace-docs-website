@@ -1,7 +1,6 @@
 ---
 title: Settings API - Connectivity alerts schema table
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/settings/schemas/builtin-alerting-connectivity-alerts
-scraped: 2026-05-12T11:41:43.753922
 ---
 
 # Settings API - Connectivity alerts schema table

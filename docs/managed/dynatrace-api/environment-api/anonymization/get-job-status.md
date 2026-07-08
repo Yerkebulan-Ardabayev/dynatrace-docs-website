@@ -1,7 +1,6 @@
 ---
 title: Anonymization API - GET job status
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/anonymization/get-job-status
-scraped: 2026-05-12T11:37:09.697708
 ---
 
 # Anonymization API - GET job status

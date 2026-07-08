@@ -1,7 +1,6 @@
 ---
 title: Automatically applied tags API - POST an auto-tag
 source: https://docs.dynatrace.com/managed/dynatrace-api/configuration-api/automatically-applied-tags-api/post-auto-tag
-scraped: 2026-05-12T12:15:34.936771
 ---
 
 # Automatically applied tags API - POST an auto-tag
@@ -47,11 +46,11 @@ Configuration of an auto-tag. It defines the conditions of tag usage and the tag
 | Element | Type | Description | Required |
 | --- | --- | --- | --- |
 | description | string | The description of the auto-tag. | Optional |
-| entitySelectorBasedRules | [EntitySelectorBasedAutoTagRule[]](#openapi-definition-EntitySelectorBasedAutoTagRule) | A list of entity-selector based rules for auto tagging usage.  If several rules are specified, the **OR** logic applies. | Optional |
+| entitySelectorBasedRules | [EntitySelectorBasedAutoTagRule](#openapi-definition-EntitySelectorBasedAutoTagRule)[] | A list of entity-selector based rules for auto tagging usage.  If several rules are specified, the **OR** logic applies. | Optional |
 | id | string | The ID of the auto-tag. | Optional |
 | metadata | [ConfigurationMetadata](#openapi-definition-ConfigurationMetadata) | Metadata useful for debugging | Optional |
 | name | string | The name of the auto-tag, which is applied to entities.  Additionally you can specify a **valueFormat** in the tag rule. In that case the tag is used in the `name:valueFormat` format.  For example you can extend the `Infrastructure` tag to `Infrastructure:Windows` and `Infrastructure:Linux`. | Required |
-| rules | [AutoTagRule[]](#openapi-definition-AutoTagRule) | The list of rules for tag usage.  When there are multiple rules, the OR logic applies. | Optional |
+| rules | [AutoTagRule](#openapi-definition-AutoTagRule)[] | The list of rules for tag usage.  When there are multiple rules, the OR logic applies. | Optional |
 
 #### The `EntitySelectorBasedAutoTagRule` object
 
@@ -82,7 +81,7 @@ Defines the conditions of tag usage.
 
 | Element | Type | Description | Required |
 | --- | --- | --- | --- |
-| conditions | [EntityRuleEngineCondition[]](#openapi-definition-EntityRuleEngineCondition) | A list of matching rules for the auto-tag.  The tag applies only when **all** conditions are fulfilled. | Required |
+| conditions | [EntityRuleEngineCondition](#openapi-definition-EntityRuleEngineCondition)[] | A list of matching rules for the auto-tag.  The tag applies only when **all** conditions are fulfilled. | Required |
 | enabled | boolean | Tag rule is enabled (`true`) or disabled (`false`). | Required |
 | normalization | string | Changes applied to the value after applying the value format. Default is LEAVE\_TEXT\_AS\_IS. The element can hold these values * `LEAVE_TEXT_AS_IS` * `TO_LOWER_CASE` * `TO_UPPER_CASE` | Optional |
 | propagationTypes | string[] | How to apply the tag to underlying entities:  * `SERVICE_TO_PROCESS_GROUP_LIKE`: Apply to underlying process groups of matching services. * `SERVICE_TO_HOST_LIKE`: Apply to underlying hosts of matching services. * `PROCESS_GROUP_TO_HOST`: Apply to underlying hosts of matching process groups. * `PROCESS_GROUP_TO_SERVICE`: Apply to all services provided by the process groups. * `HOST_TO_PROCESS_GROUP_INSTANCE`: Apply to processes running on matching hosts. * `AZURE_TO_PG`: Apply to process groups connected to matching Azure entities. * `AZURE_TO_SERVICE`: Apply to services provided by matching Azure entities. The element can hold these values * `AZURE_TO_PG` * `AZURE_TO_SERVICE` * `HOST_TO_PROCESS_GROUP_INSTANCE` * `PROCESS_GROUP_TO_HOST` * `PROCESS_GROUP_TO_SERVICE` * `SERVICE_TO_HOST_LIKE` * `SERVICE_TO_PROCESS_GROUP_LIKE` | Optional |
@@ -95,21 +94,21 @@ A condition defines how to execute matching logic for an entity.
 
 | Element | Type | Description | Required |
 | --- | --- | --- | --- |
-| comparisonInfo | [ComparisonBasic](#openapi-definition-ComparisonBasic) | Defines how the matching is actually performed: what and how are we comparing.  The actual set of fields and possible values of the **operator** field depend on the type of the comparison. Find the list of actual objects in the description of the **type** field or see [JSON modelsï»¿](https://dt-url.net/0b83s6z). | Required |
-| key | [ConditionKey](#openapi-definition-ConditionKey) | The key to identify the data we're matching.  The actual set of fields and possible values depend on the type of the key. Find the list of actual objects in the description of the **type** field or see [JSON modelsï»¿](https://dt-url.net/0b83s6z). | Required |
+| comparisonInfo | [ComparisonBasic](#openapi-definition-ComparisonBasic) | Defines how the matching is actually performed: what and how are we comparing.  The actual set of fields and possible values of the **operator** field depend on the type of the comparison. Find the list of actual objects in the description of the **type** field or see [JSON models﻿](https://dt-url.net/0b83s6z). | Required |
+| key | [ConditionKey](#openapi-definition-ConditionKey) | The key to identify the data we're matching.  The actual set of fields and possible values depend on the type of the key. Find the list of actual objects in the description of the **type** field or see [JSON models﻿](https://dt-url.net/0b83s6z). | Required |
 
 #### The `ComparisonBasic` object
 
 Defines how the matching is actually performed: what and how are we comparing.
 
-The actual set of fields and possible values of the **operator** field depend on the type of the comparison. Find the list of actual objects in the description of the **type** field or see [JSON modelsï»¿](https://dt-url.net/0b83s6z).
+The actual set of fields and possible values of the **operator** field depend on the type of the comparison. Find the list of actual objects in the description of the **type** field or see [JSON models﻿](https://dt-url.net/0b83s6z).
 
 | Element | Type | Description | Required |
 | --- | --- | --- | --- |
 | negate | boolean | Reverses the comparison **operator**. For example it turns the **begins with** into **does not begin with**. | Required |
 | operator | string | Operator of the comparison. You can reverse it by setting **negate** to `true`.  Possible values depend on the **type** of the comparison. Find the list of actual models in the description of the **type** field and check the description of the model you need. | Required |
 | type | string | Defines the actual set of fields depending on the value. See one of the following objects:  * `STRING` -> StringComparison * `INDEXED_NAME` -> IndexedNameComparison * `INDEXED_STRING` -> IndexedStringComparison * `INTEGER` -> IntegerComparison * `SERVICE_TYPE` -> ServiceTypeComparison * `PAAS_TYPE` -> PaasTypeComparison * `CLOUD_TYPE` -> CloudTypeComparison * `AZURE_SKU` -> AzureSkuComparision * `AZURE_COMPUTE_MODE` -> AzureComputeModeComparison * `ENTITY_ID` -> EntityIdComparison * `SIMPLE_TECH` -> SimpleTechComparison * `SIMPLE_HOST_TECH` -> SimpleHostTechComparison * `SERVICE_TOPOLOGY` -> ServiceTopologyComparison * `DATABASE_TOPOLOGY` -> DatabaseTopologyComparison * `OS_TYPE` -> OsTypeComparison * `HYPERVISOR_TYPE` -> HypervisorTypeComparision * `IP_ADDRESS` -> IpAddressComparison * `OS_ARCHITECTURE` -> OsArchitectureComparison * `BITNESS` -> BitnessComparision * `APPLICATION_TYPE` -> ApplicationTypeComparison * `MOBILE_PLATFORM` -> MobilePlatformComparison * `CUSTOM_APPLICATION_TYPE` -> CustomApplicationTypeComparison * `DCRUM_DECODER_TYPE` -> DcrumDecoderComparison * `SYNTHETIC_ENGINE_TYPE` -> SyntheticEngineTypeComparison * `TAG` -> TagComparison * `INDEXED_TAG` -> IndexedTagComparison The element can hold these values * `APPLICATION_TYPE` * `AZURE_COMPUTE_MODE` * `AZURE_SKU` * `BITNESS` * `CLOUD_TYPE` * `CUSTOM_APPLICATION_TYPE` * `DATABASE_TOPOLOGY` * `DCRUM_DECODER_TYPE` * `ENTITY_ID` * `HYPERVISOR_TYPE` * `INDEXED_NAME` * `INDEXED_STRING` * `INDEXED_TAG` * `INTEGER` * `IP_ADDRESS` * `MOBILE_PLATFORM` * `OS_ARCHITECTURE` * `OS_TYPE` * `PAAS_TYPE` * `SERVICE_TOPOLOGY` * `SERVICE_TYPE` * `SIMPLE_HOST_TECH` * `SIMPLE_TECH` * `STRING` * `SYNTHETIC_ENGINE_TYPE` * `TAG` | Required |
-| value | string | The value to compare to. | Optional |
+| value | [AnyValue](#openapi-definition-AnyValue) | The value to compare to. | Optional |
 
 #### The `AnyValue` object
 
@@ -119,7 +118,7 @@ A schema representing an arbitrary value type.
 
 The key to identify the data we're matching.
 
-The actual set of fields and possible values depend on the type of the key. Find the list of actual objects in the description of the **type** field or see [JSON modelsï»¿](https://dt-url.net/0b83s6z).
+The actual set of fields and possible values depend on the type of the key. Find the list of actual objects in the description of the **type** field or see [JSON models﻿](https://dt-url.net/0b83s6z).
 
 | Element | Type | Description | Required |
 | --- | --- | --- | --- |
@@ -406,7 +405,7 @@ The short representation of a Dynatrace entity.
 | Element | Type | Description |
 | --- | --- | --- |
 | code | integer | The HTTP status code |
-| constraintViolations | [ConstraintViolation[]](#openapi-definition-ConstraintViolation) | A list of constraint violations |
+| constraintViolations | [ConstraintViolation](#openapi-definition-ConstraintViolation)[] | A list of constraint violations |
 | message | string | The error message |
 
 #### The `ConstraintViolation` object
@@ -537,7 +536,7 @@ To learn how to obtain and use it, see [Tokens and authentication](/managed/disc
 | Element | Type | Description |
 | --- | --- | --- |
 | code | integer | The HTTP status code |
-| constraintViolations | [ConstraintViolation[]](#openapi-definition-ConstraintViolation) | A list of constraint violations |
+| constraintViolations | [ConstraintViolation](#openapi-definition-ConstraintViolation)[] | A list of constraint violations |
 | message | string | The error message |
 
 #### The `ConstraintViolation` object

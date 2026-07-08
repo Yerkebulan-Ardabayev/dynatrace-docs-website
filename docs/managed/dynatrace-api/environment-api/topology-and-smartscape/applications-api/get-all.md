@@ -1,7 +1,6 @@
 ---
 title: Applications API - GET all apps
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/topology-and-smartscape/applications-api/get-all
-scraped: 2026-05-12T12:02:09.098603
 ---
 
 # Applications API - GET all apps
@@ -64,7 +63,7 @@ To learn how to obtain and use it, see [Tokens and authentication](/managed/disc
 
 | Code | Type | Description |
 | --- | --- | --- |
-| **200** | [Application[]](#openapi-definition-Application) | Success |
+| **200** | [Application](#openapi-definition-Application)[] | Success |
 | **400** | [ErrorEnvelope](#openapi-definition-ErrorEnvelope) | Failed. The input is invalid. |
 | **4XX** | [ErrorEnvelope](#openapi-definition-ErrorEnvelope) | Client side error. |
 | **5XX** | [ErrorEnvelope](#openapi-definition-ErrorEnvelope) | Server side error. |
@@ -79,7 +78,6 @@ To learn how to obtain and use it, see [Tokens and authentication](/managed/disc
 | --- | --- | --- |
 | applicationMatchTarget | string | -The element can hold these values * `DOMAIN` * `URL` |
 | applicationType | string | -The element can hold these values * `AGENTLESS_MONITORING` * `AUTO_INJECTED` * `DEFAULT` * `SAAS_VENDOR` |
-| attributes | object | - |
 | customizedName | string | The customized name of the entity |
 | discoveredName | string | The discovered name of the entity |
 | displayName | string | The name of the Dynatrace entity as displayed in the UI. |
@@ -87,15 +85,11 @@ To learn how to obtain and use it, see [Tokens and authentication](/managed/disc
 | firstSeenTimestamp | integer | The timestamp of when the entity was first detected, in UTC milliseconds |
 | fromRelationships | object | The list of outgoing calls from the application. |
 | lastSeenTimestamp | integer | The timestamp of when the entity was last detected, in UTC milliseconds |
-| managementZones | [EntityShortRepresentation[]](#openapi-definition-EntityShortRepresentation) | The management zones that the entity is part of. |
+| managementZones | [EntityShortRepresentation](#openapi-definition-EntityShortRepresentation)[] | The management zones that the entity is part of. |
 | ruleAppliedMatchType | string | -The element can hold these values * `ALL_URLS_AND_DOMAINS` * `CONTAINS` * `ENDS` * `EQUALS` * `MATCHES` * `STARTS` |
 | ruleAppliedPattern | string | - |
-| tags | [TagInfo[]](#openapi-definition-TagInfo) | The list of entity tags. |
+| tags | [TagInfo](#openapi-definition-TagInfo)[] | The list of entity tags. |
 | toRelationships | object | The list of incoming calls to the application. |
-
-#### The `AnyValue` object
-
-A schema representing an arbitrary value type.
 
 #### The `EntityShortRepresentation` object
 
@@ -128,7 +122,7 @@ Tag of a Dynatrace entity.
 | Element | Type | Description |
 | --- | --- | --- |
 | code | integer | The HTTP status code |
-| constraintViolations | [ConstraintViolation[]](#openapi-definition-ConstraintViolation) | A list of constraint violations |
+| constraintViolations | [ConstraintViolation](#openapi-definition-ConstraintViolation)[] | A list of constraint violations |
 | message | string | The error message |
 
 #### The `ConstraintViolation` object
@@ -158,18 +152,6 @@ A list of constraint violations
 
 
 "applicationType": "AGENTLESS_MONITORING",
-
-
-
-"attributes": {
-
-
-
-"empty": true
-
-
-
-},
 
 
 
@@ -808,4 +790,4 @@ https://mySampleEnv.live.dynatrace.com/api/v1/entity/applications
 
 ## Related topics
 
-* [Real User Monitoring](/managed/observe/digital-experience/rum-concepts/rum-overview "Learn about Real User Monitoring, key performance metrics, mobile app monitoring, and more.")
+* [Real User Monitoring Classic](/managed/observe/digital-experience/rum-classic/rum-concepts/rum-overview "Learn about Real User Monitoring Classic, key performance metrics, mobile app monitoring, and more.")

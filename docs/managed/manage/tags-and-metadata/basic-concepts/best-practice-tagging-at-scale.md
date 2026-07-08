@@ -1,7 +1,6 @@
 ---
 title: Best practices for scaling tagging and management-zone rules
 source: https://docs.dynatrace.com/managed/manage/tags-and-metadata/basic-concepts/best-practice-tagging-at-scale
-scraped: 2026-05-12T11:11:26.467632
 ---
 
 # Best practices for scaling tagging and management-zone rules
@@ -93,7 +92,7 @@ As manual tags can be used by an automatic management-zone rule, this shortcut c
 
 ### Custom tags API
 
-When there are too many entities to perform manual tagging efficiently, Dynatrace offers the Custom tags API to conveniently [assign a tag to a large group of entities within a single API call](/managed/dynatrace-api/environment-api/custom-tags/post-tags "Assign custom tags to monitored entities via Dynatrace API."). What makes this approach powerful is the standardized [entity selector](/managed/dynatrace-api/environment-api/entity-v2/entity-selector "Configure the entity selector for Environment API endpoints.")âa powerful and flexible tool for selecting entities.
+When there are too many entities to perform manual tagging efficiently, Dynatrace offers the Custom tags API to conveniently [assign a tag to a large group of entities within a single API call](/managed/dynatrace-api/environment-api/custom-tags/post-tags "Assign custom tags to monitored entities via Dynatrace API."). What makes this approach powerful is the standardized [entity selector](/managed/dynatrace-api/environment-api/entity-v2/entity-selector "Configure the entity selector for Environment API endpoints.")—a powerful and flexible tool for selecting entities.
 
 The entity selector can also contain a topology query, such as a query for all disks of a given set of hosts that can be filtered by any kind of entity attribute. See some examples of using the entity selector below.
 

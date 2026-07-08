@@ -1,7 +1,6 @@
 ---
 title: Get cluster nodes configuration
 source: https://docs.dynatrace.com/managed/dynatrace-api/cluster-api/cluster-api-v1/cluster-v1/get-cluster-nodes-configuration
-scraped: 2026-05-12T12:12:29.012269
 ---
 
 # Get cluster nodes configuration

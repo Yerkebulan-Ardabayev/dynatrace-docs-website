@@ -1,7 +1,6 @@
 ---
 title: Set up Dynatrace on Heroku
 source: https://docs.dynatrace.com/managed/ingest-from/setup-on-container-platforms/heroku
-scraped: 2026-05-12T11:03:31.428984
 ---
 
 # Set up Dynatrace on Heroku
@@ -15,11 +14,11 @@ Heroku is a cloud Platform as a Service (PaaS) that enables you to build and run
 
 ## Capabilities
 
-The Heroku buildpack for Dynatrace OneAgent is language independent and can be used with any [Dynatrace supported language](/managed/ingest-from/technology-support#applications-services-and-databases "Find technical details related to Dynatrace support for specific platforms and development frameworks."), including Node.js-based applications. If youâve used the [Dynatrace NPM module for PaaS moduleï»¿](https://www.npmjs.com/package/@dynatrace/oneagent), you can remove it from your dependencies as the buildpack discovers and instruments your Node.js applications automatically.
+The Heroku buildpack for Dynatrace OneAgent is language independent and can be used with any [Dynatrace supported language](/managed/ingest-from/technology-support#applications-services-and-databases "Find technical details related to Dynatrace support for specific platforms and development frameworks."), including Node.js-based applications. If you’ve used the [Dynatrace NPM module for PaaS module﻿](https://www.npmjs.com/package/@dynatrace/oneagent), you can remove it from your dependencies as the buildpack discovers and instruments your Node.js applications automatically.
 
-You also no longer need to rely on releases of the Dynatrace OneAgent dependencies for NPM. The Heroku buildpack for Dynatrace OneAgent automatically fetches the latest version of Dynatrace OneAgent so that you can receive potential fixes as quickly and easily as possible. If youâve specified [a default OneAgent installation version for new hosts and applications in your OneAgent update settings](/managed/ingest-from/dynatrace-oneagent/installation-and-operation/linux/operation/update-oneagent-on-linux "Learn about the different ways to update OneAgent on Linux."), the Heroku buildpack for Dynatrace OneAgent will download the defined default version of Dynatrace OneAgent.
+You also no longer need to rely on releases of the Dynatrace OneAgent dependencies for NPM. The Heroku buildpack for Dynatrace OneAgent automatically fetches the latest version of Dynatrace OneAgent so that you can receive potential fixes as quickly and easily as possible. If you’ve specified [a default OneAgent installation version for new hosts and applications in your OneAgent update settings](/managed/ingest-from/dynatrace-oneagent/installation-and-operation/linux/operation/update-oneagent-on-linux "Learn about the different ways to update OneAgent on Linux."), the Heroku buildpack for Dynatrace OneAgent will download the defined default version of Dynatrace OneAgent.
 
-The following guidelines explain how to enable Dynatrace monitoring for your [Herokuï»¿](https://www.dynatrace.com/technologies/heroku-monitoring/) applications by adding a [Dynatrace Heroku buildpackï»¿](https://github.com/Dynatrace/heroku-buildpack-dynatrace) to the Heroku configuration of your application.
+The following guidelines explain how to enable Dynatrace monitoring for your [Heroku﻿](https://www.dynatrace.com/technologies/heroku-monitoring/) applications by adding a [Dynatrace Heroku buildpack﻿](https://github.com/Dynatrace/heroku-buildpack-dynatrace) to the Heroku configuration of your application.
 
 The Dynatrace Heroku buildpack enables you to monitor all [supported languages on Linux systems](/managed/ingest-from/technology-support#applications-services-and-databases "Find technical details related to Dynatrace support for specific platforms and development frameworks.").
 
@@ -27,7 +26,7 @@ The Dynatrace Heroku buildpack enables you to monitor all [supported languages o
 
 * Create a [PaaS Token](/managed/manage/identity-access-management/access-tokens-and-oauth-clients/access-tokens#paas-token "Learn the concept of an access token and its scopes.").
 * Review the list of [supported applications and versions](/managed/ingest-from/technology-support "Find technical details related to Dynatrace support for specific platforms and development frameworks.").
-* The [OneAgent code module memory requirement](/managed/ingest-from/dynatrace-oneagent/oa-requirements#oneagent-code-module-memory-requirement "OneAgent code module requirements") is 200 MB of your [slug sizeï»¿](https://devcenter.heroku.com/articles/slug-compiler#slug-size).
+* The [OneAgent code module memory requirement](/managed/ingest-from/dynatrace-oneagent/oa-requirements#oneagent-code-module-memory-requirement "OneAgent code module requirements") is 200 MB of your [slug size﻿](https://devcenter.heroku.com/articles/slug-compiler#slug-size).
 
 ## Installation
 
@@ -35,7 +34,7 @@ These guidelines explain how to integrate Dynatrace OneAgent into your Heroku dy
 
 ### Get the Heroku CLI
 
-To configure Heroku applications to use the Dynatrace Heroku buildpack, you can either use the [Heroku CLIï»¿](https://devcenter.heroku.com/articles/heroku-cli) or you can configure your applications using the [Heroku dashboardï»¿](https://dashboard.heroku.com).
+To configure Heroku applications to use the Dynatrace Heroku buildpack, you can either use the [Heroku CLI﻿](https://devcenter.heroku.com/articles/heroku-cli) or you can configure your applications using the [Heroku dashboard﻿](https://dashboard.heroku.com).
 
 ### Add the Dynatrace Heroku buildpack
 
@@ -77,9 +76,9 @@ The Dynatrace Heroku buildpack supports the following configurations:
 
 | Environment variable | Description |
 | --- | --- |
-| DT\_TENANT | Your Dynatrace environment ID **Note:** For details on how to determine your environment ID, see [environment ID](/managed/discover-dynatrace/get-started/monitoring-environment "Understand and learn how to work with monitoring environments."). |
+| DT\_TENANT | Your Dynatrace environment ID**Note:** For details on how to determine your environment ID, see [environment ID](/managed/discover-dynatrace/get-started/monitoring-environment "Learn what a Dynatrace monitoring environment is, how to find your environment ID, and how to set up and connect multiple environments."). |
 | DT\_API\_TOKEN | The PaaS token for integrating your Dynatrace environment with Heroku. |
-| DT\_API\_URL | - For Dynatrace SaaS, where OneAgent can connect to the internet: `https://<your-environment-ID>.live.dynatrace.com/api` - For Dynatrace Managed: `https://<your-managed-cluster-domain>/e/<your-environment-ID>/api` - For environment ActiveGates (SaaS or Managed), use the following to download the OneAgent, as well as to communicate OneAgent traffic through the ActiveGate: `https://<your-ActiveGate-IP-or-FQDN>:9999/e/<your-environment-ID>/api` **Note:** For details on how to determine your environment ID, see [environment ID](/managed/discover-dynatrace/get-started/monitoring-environment "Understand and learn how to work with monitoring environments."). |
+| DT\_API\_URL | - For Dynatrace SaaS, where OneAgent can connect to the internet: `https://<your-environment-ID>.live.dynatrace.com/api`- For Dynatrace Managed: `https://<your-managed-cluster-domain>/e/<your-environment-ID>/api`- For environment ActiveGates (SaaS or Managed), use the following to download the OneAgent, as well as to communicate OneAgent traffic through the ActiveGate: `https://<your-ActiveGate-IP-or-FQDN>:9999/e/<your-environment-ID>/api`**Note:** For details on how to determine your environment ID, see [environment ID](/managed/discover-dynatrace/get-started/monitoring-environment "Learn what a Dynatrace monitoring environment is, how to find your environment ID, and how to set up and connect multiple environments."). |
 | DT\_DOWNLOAD\_URL | Optional A direct download URL for Dynatrace OneAgent. If this environment variable is set, the buildpack will download OneAgent from this location |
 | SSL\_MODE | Optional Set to `all` if you want to accept all self-signed SSL. certificates |
 | DT\_TAGS | not recommended The tags you want to add to the monitored. applications |
@@ -93,7 +92,7 @@ How to use the Heroku buildpack for Dynatrace OneAgent in place of the Dynatrace
 The Heroku buildpack for Dynatrace OneAgent requires no changes to your application source code:
 
 You no longer need to install a dependency on `@dynatrace/oneagent` in the project directory of your Node.js application.
-Also, youâre no longer required to add the following statement as the first statement of your Node.js application:
+Also, you’re no longer required to add the following statement as the first statement of your Node.js application:
 
 ```
 try {
@@ -117,7 +116,7 @@ console.log(err.toString());
 
 Because of these advantages, the Heroku buildpack for Dynatrace OneAgent supersedes the Dynatrace NPM module for PaaS and requires OneAgent version 1.141+.
 
-If youâre eager to start using the Heroku buildpack for Dynatrace OneAgent instead of the Dynatrace NPM module for PaaS, weâve got you covered. All you have to do is remove the dependency on `@dynatrace/oneagent` in your `package.json` file:
+If you’re eager to start using the Heroku buildpack for Dynatrace OneAgent instead of the Dynatrace NPM module for PaaS, we’ve got you covered. All you have to do is remove the dependency on `@dynatrace/oneagent` in your `package.json` file:
 
 ```
 $ npm uninstall --save @dynatrace/oneagent

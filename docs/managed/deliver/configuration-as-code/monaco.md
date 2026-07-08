@@ -1,7 +1,6 @@
 ---
 title: Configuration as Code via Monaco overview
 source: https://docs.dynatrace.com/managed/deliver/configuration-as-code/monaco
-scraped: 2026-05-12T11:05:11.747835
 ---
 
 # Configuration as Code via Monaco overview

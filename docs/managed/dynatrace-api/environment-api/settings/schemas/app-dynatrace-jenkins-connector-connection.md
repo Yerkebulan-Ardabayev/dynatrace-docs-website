@@ -1,7 +1,6 @@
 ---
 title: Settings API - Jenkins Connections schema table
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/settings/schemas/app-dynatrace-jenkins-connector-connection
-scraped: 2026-05-12T11:44:20.311726
 ---
 
 # Settings API - Jenkins Connections schema table

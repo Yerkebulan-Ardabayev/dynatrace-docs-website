@@ -1,7 +1,6 @@
 ---
 title: Web application metrics API - GET a metric
 source: https://docs.dynatrace.com/managed/dynatrace-api/configuration-api/calculated-metrics/rum-metrics/get-metric
-scraped: 2026-05-12T11:17:54.466478
 ---
 
 # Web application metrics API - GET a metric
@@ -49,7 +48,7 @@ Descriptor of the calculated web application metric.
 | Element | Type | Description |
 | --- | --- | --- |
 | applicationIdentifier | string | The Dynatrace entity ID of the application to which the metric belongs. |
-| dimensions | [WebApplicationDimensionDefinition[]](#openapi-definition-WebApplicationDimensionDefinition) | A list of metric dimensions. |
+| dimensions | [WebApplicationDimensionDefinition](#openapi-definition-WebApplicationDimensionDefinition)[] | A list of metric dimensions. |
 | enabled | boolean | The metric is enabled (`true`) or disabled (`false`). |
 | metricDefinition | [WebApplicationMetricDefinition](#openapi-definition-WebApplicationMetricDefinition) | Definition of the web application metric. |
 | metricKey | string | The unique key of the metric.  The key must have the `calc:apps` prefix. |
@@ -119,7 +118,7 @@ A user action must match **all** the criteria.
 | targetViewName | string | Only actions on the specified view are included in the metric calculation. |
 | targetViewNameMatchType | string | Specifies the match type of the view name filter, e.g. using `Contains` or `Equals`. Defaults to `Equals`. The element can hold these values * `Contains` * `Equals` |
 | userActionName | string | Only actions with this name are included in the metric calculation.  The EQUALS operator applies. |
-| userActionProperties | [UserActionPropertyFilter[]](#openapi-definition-UserActionPropertyFilter) | Only actions with the specified properties are included in the metric calculation. |
+| userActionProperties | [UserActionPropertyFilter](#openapi-definition-UserActionPropertyFilter)[] | Only actions with the specified properties are included in the metric calculation. |
 | xhrAction | boolean | The status of XHR actions in the metric calculation:  * `true`: XHR actions are included. * `false`: All actions are included. |
 | xhrRouteChangeAction | boolean | The status of route change actions in the metric calculation:  * `true`: Route change actions are included. * `false`: All actions are included. |
 
@@ -219,4 +218,4 @@ User action property filter.
 
 ## Related topics
 
-* [Create calculated metrics for web applications](/managed/observe/digital-experience/web-applications/additional-configuration/rum-calculated-metrics-web "Create calculated metrics as well as custom charts based on calculated metrics for your web applications.")
+* [Create calculated metrics for web applications in RUM Classic](/managed/observe/digital-experience/rum-classic/web-applications/additional-configuration/rum-calculated-metrics-web "Create calculated metrics as well as custom charts based on calculated metrics for your web applications.")

@@ -1,7 +1,6 @@
 ---
 title: Settings API - IIS schema table
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/settings/schemas/builtin-monitored-technologies-iis
-scraped: 2026-05-12T11:49:04.829677
 ---
 
 # Settings API - IIS schema table

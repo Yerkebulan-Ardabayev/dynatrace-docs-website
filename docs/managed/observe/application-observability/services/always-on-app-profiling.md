@@ -1,7 +1,6 @@
 ---
 title: Always-on app profiling
 source: https://docs.dynatrace.com/managed/observe/application-observability/services/always-on-app-profiling
-scraped: 2026-05-12T11:21:28.505623
 ---
 
 # Always-on app profiling
@@ -12,7 +11,7 @@ scraped: 2026-05-12T11:21:28.505623
 * 3-min read
 * Published Feb 01, 2024
 
-Excessive memory allocations or leaks can harm your organizationâs clusters and lead to crashes or unresponsive services. To avoid this, itâs essential to monitor your KPIs for memory allocation and object churn as measures of the performance and health of a system.
+Excessive memory allocations or leaks can harm your organization’s clusters and lead to crashes or unresponsive services. To avoid this, it’s essential to monitor your KPIs for memory allocation and object churn as measures of the performance and health of a system.
 
 ## Introduction
 

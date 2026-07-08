@@ -1,7 +1,6 @@
 ---
 title: Manage users and groups via LDAP
 source: https://docs.dynatrace.com/managed/manage/identity-access-management/user-and-group-management/manage-users-and-groups-with-ldap
-scraped: 2026-05-12T11:24:26.608946
 ---
 
 # Manage users and groups via LDAP
@@ -161,7 +160,7 @@ Users query settings
    * Configure the **Group membership attribute**. This attribute is covered in detail in [Matching users and groups](/managed/manage/identity-access-management/user-and-group-management/manage-users-and-groups-with-ldap#matching-users-and-groups "Learn how to connect your Dynatrace Server to an LDAP server to import user groups or accounts that need access to your Dynatrace Managed environment.") below.
 2. Select **Test query** to test your settings and verify that the query works.
 
-The test query options (for both groups and users) test only the correctness of Base DNs, filters, and mandatory attributesâgroup name attribute for groups and login attribute for users.
+The test query options (for both groups and users) test only the correctness of Base DNs, filters, and mandatory attributes—group name attribute for groups and login attribute for users.
 
 * Test queries don't raise errors when non-mandatory attributes are configured improperly.
 * Test queries don't check if users are assigned to groups properly.

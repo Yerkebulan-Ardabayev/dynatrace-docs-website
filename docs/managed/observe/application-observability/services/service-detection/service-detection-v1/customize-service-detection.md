@@ -1,7 +1,6 @@
 ---
 title: Service detection rules
 source: https://docs.dynatrace.com/managed/observe/application-observability/services/service-detection/service-detection-v1/customize-service-detection
-scraped: 2026-05-12T11:36:06.797426
 ---
 
 # Service detection rules
@@ -14,7 +13,7 @@ scraped: 2026-05-12T11:36:06.797426
 
 When monitoring with OneAgent, your deployed applications and related microservices are automatically detected by Dynatrace, based on specific properties of your application deployment and configuration, such as the application identifier, part of the URL, or the server name.
 
-Attributes used for detection are marked with an asterisk â± on the [service](/managed/observe/application-observability/services-classic/service-analysis-new "Learn about all the service monitoring details that Dynatrace can provide.") overview page, under **Properties and tags**.
+Attributes used for detection are marked with an asterisk ✱ on the [service](/managed/observe/application-observability/services-classic/service-analysis-new "Learn about all the service monitoring details that Dynatrace can provide.") overview page, under **Properties and tags**.
 
 In certain cases, the quality of data available to Dynatrace might be insufficient for high-precision service detection. To tailor out-of-the-box detection to your environment, you can create new rules or setup improvements.
 
@@ -53,7 +52,7 @@ To define a new service detection rule via the Dynatrace web UI
 
    1. Type a **Rule name**.
    2. To change the service detection's behavior, enable at least one of the service identifier contributors, so that the rule's triggered.
-   3. To target the rule application, in the **Conditions** section, configure restrictions related toâfor exampleâa management zone, specific conditions, or the port.
+   3. To target the rule application, in the **Conditions** section, configure restrictions related to—for example—a management zone, specific conditions, or the port.
 4. Select **Save changes**.
 
 ### Modify a rule
@@ -758,7 +757,7 @@ via API
 
 See the following [example JSON](#eg_appId).
 
-### Separate services for âpublic network servicesâ based on URL
+### Separate services for “public network services” based on URL
 
 In this example, when the top-level domain of an external web request ends with a specific wording (`dynatrace.com`), we want to detect a service, whose ID will be transformed to the first segment of the URL.
 
@@ -936,9 +935,9 @@ via API
 ]
 ```
 
-### Separate services for âpublic network servicesâ based on subdomains
+### Separate services for “public network services” based on subdomains
 
-If different endpoints shouldnât be combined in the same service (for example, `support.dynatrace.com` and `blog.dynatrace.com`), you can instruct Dynatrace to detect multiple services from the same domain, based on the detected hostname instead of the request's domain name.
+If different endpoints shouldn’t be combined in the same service (for example, `support.dynatrace.com` and `blog.dynatrace.com`), you can instruct Dynatrace to detect multiple services from the same domain, based on the detected hostname instead of the request's domain name.
 
 Rule set-up
 
@@ -1140,4 +1139,4 @@ When you create, edit, or delete a rule, data monitored after the change in serv
 * [Merged services](/managed/observe/application-observability/services/service-detection/service-detection-v1/service-types/merged-services "Consolidate multiple web-request services of the same process group into one service.")
 * [Settings API](/managed/dynatrace-api/environment-api/settings "Find out what the Dynatrace Settings API offers.")
 * [Service detection API](/managed/dynatrace-api/configuration-api/service-api/detection-rules "Learn what the Dynatrace service detection rules config API offers.")
-* [[Blog] New Dynatrace API enhances automatic service detection - with concrete examplesï»¿](https://www.dynatrace.com/news/blog/new-dynatrace-api-enhances-automatic-service-detection/#how-to-use-the-new-api)
+* [[Blog] New Dynatrace API enhances automatic service detection - with concrete examples﻿](https://www.dynatrace.com/news/blog/new-dynatrace-api-enhances-automatic-service-detection/#how-to-use-the-new-api)

@@ -1,7 +1,6 @@
 ---
 title: ActiveGate API
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/activegates
-scraped: 2026-05-12T11:14:09.287906
 ---
 
 # ActiveGate API

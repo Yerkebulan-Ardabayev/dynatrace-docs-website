@@ -1,7 +1,6 @@
 ---
 title: Kubernetes credentials API - GET all credentials
 source: https://docs.dynatrace.com/managed/dynatrace-api/configuration-api/k8s-credentials-api-api/get-all
-scraped: 2026-05-12T12:14:52.105988
 ---
 
 # Kubernetes credentials API - GET all credentials
@@ -46,7 +45,7 @@ The request doesn't provide any configurable parameters.
 
 | Element | Type | Description |
 | --- | --- | --- |
-| values | [KubernetesConfigShortRepresentation[]](#openapi-definition-KubernetesConfigShortRepresentation) | - |
+| values | [KubernetesConfigShortRepresentation](#openapi-definition-KubernetesConfigShortRepresentation)[] | - |
 
 #### The `KubernetesConfigShortRepresentation` object
 
@@ -103,4 +102,4 @@ The short representation of a kubernetes configuration.
 
 ## Related topics
 
-* [Explore Kubernetes in Dynatrace Hubï»¿](https://www.dynatrace.com/hub/?filter=kubernetes&utm_source=doc&utm_medium=link&utm_campaign=cross)
+* [Explore Kubernetes in Dynatrace Hub﻿](https://www.dynatrace.com/hub/?filter=kubernetes&utm_source=doc&utm_medium=link&utm_campaign=cross)

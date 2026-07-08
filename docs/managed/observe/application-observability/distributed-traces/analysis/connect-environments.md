@@ -1,7 +1,6 @@
 ---
 title: Set up cross-environment tracing
 source: https://docs.dynatrace.com/managed/observe/application-observability/distributed-traces/analysis/connect-environments
-scraped: 2026-05-12T11:25:07.576599
 ---
 
 # Set up cross-environment tracing
@@ -14,7 +13,7 @@ scraped: 2026-05-12T11:25:07.576599
 
 In multiple environment scenarios, data pools are separated. If a request affects services that are monitored in different Dynatrace environments, its traces aren't automatically correlated.
 
-To correlate and follow such traces, you can configure a connection between the Dynatrace environments and enable the response header and coordinated sampling switches. The service flow then represents the connection between the connected environments, distributed traces link to the connected remote environment, and you can access DavisÂ® AI analysis capabilities.
+To correlate and follow such traces, you can configure a connection between the Dynatrace environments and enable the response header and coordinated sampling switches. The service flow then represents the connection between the connected environments, distributed traces link to the connected remote environment, and you can access Davis® AI analysis capabilities.
 
 ## Configuration
 
@@ -33,8 +32,8 @@ API equivalents
 
 The procedures that follow use the Dynatrace web UI. To carry out the equivalent tasks via API, see:
 
-* [Access tokens API](/managed/dynatrace-api/environment-api/tokens-v2/api-tokens "Manage Dynatrace API authentication tokens.")âto create a token in the remote environment
-* [Remote environments API](/managed/dynatrace-api/configuration-api/remote-environments "Manage configurations of remote Dynatrace environments via the Dynatrace configuration API.")âto create a link to the remote environment from the local environment
+* [Access tokens API](/managed/dynatrace-api/environment-api/tokens-v2/api-tokens "Manage Dynatrace API authentication tokens.")—to create a token in the remote environment
+* [Remote environments API](/managed/dynatrace-api/configuration-api/remote-environments "Manage configurations of remote Dynatrace environments via the Dynatrace configuration API.")—to create a link to the remote environment from the local environment
 
 ### Steps
 
@@ -115,7 +114,7 @@ Now that you have connected your environments, you can analyze traces across cro
 
 ### Troubleshooting
 
-[`Verification failed, please check your settings: Constraints violated.` message displayed when adding a remote environmentï»¿](https://dt-url.net/t903mr6)
+[`Verification failed, please check your settings: Constraints violated.` message displayed when adding a remote environment﻿](https://dt-url.net/t903mr6)
 
 ## Analyze cross-connected remote environments
 
@@ -160,7 +159,7 @@ Remove environment in service flow analysis
 
 Once Dynatrace creates the remote environment service, problems and events are correlated to the affected remote environment service.
 
-You can use [Davis AI](/managed/dynatrace-intelligence "Get familiar with the capabilities of Davis AI.") capabilities to understand which requests are failing and discover the root cause of problems in the remote environment.
+You can use [Davis AI](/managed/dynatrace-intelligence "Learn how Davis® AI detects performance anomalies, identifies root causes, and uses AI models for adaptive thresholds across your environment.") capabilities to understand which requests are failing and discover the root cause of problems in the remote environment.
 
 ![ Davis AI problem analysis of remote environment service](https://dt-cdn.net/images/cross-environment-3-1600-8b1ae112a1.jpeg)
 
@@ -168,6 +167,6 @@ Davis AI problem analysis of remote environment service
 
 ## Related topics
 
-* [What is a monitoring environment?](/managed/discover-dynatrace/get-started/monitoring-environment "Understand and learn how to work with monitoring environments.")
+* [What's a monitoring environment?](/managed/discover-dynatrace/get-started/monitoring-environment "Learn what a Dynatrace monitoring environment is, how to find your environment ID, and how to set up and connect multiple environments.")
 * [Create remote/multi-environment Dynatrace dashboards](/managed/analyze-explore-automate/dashboards-classic/dashboards/dashboards-multi-environment "Create dashboards that display data from multiple Dynatrace environments.")
 * [Remote environments API](/managed/dynatrace-api/configuration-api/remote-environments "Manage configurations of remote Dynatrace environments via the Dynatrace configuration API.")

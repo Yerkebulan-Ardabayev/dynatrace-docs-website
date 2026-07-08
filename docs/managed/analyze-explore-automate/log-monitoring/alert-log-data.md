@@ -1,7 +1,6 @@
 ---
 title: Log data alerting
 source: https://docs.dynatrace.com/managed/analyze-explore-automate/log-monitoring/alert-log-data
-scraped: 2026-05-12T11:13:31.804728
 ---
 
 # Log data alerting

@@ -1,7 +1,6 @@
 ---
 title: Azure Storage Account Classic (Blob, File, Queue, Table) monitoring
 source: https://docs.dynatrace.com/managed/ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics/monitor-azure-storage-account-classic
-scraped: 2026-05-12T11:26:59.493569
 ---
 
 # Azure Storage Account Classic (Blob, File, Queue, Table) monitoring

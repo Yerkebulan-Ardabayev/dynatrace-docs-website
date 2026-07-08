@@ -1,7 +1,6 @@
 ---
 title: AWS credentials API - GET all credentials
 source: https://docs.dynatrace.com/managed/dynatrace-api/configuration-api/aws-credentials-api/get-all
-scraped: 2026-05-12T11:15:13.154235
 ---
 
 # AWS credentials API - GET all credentials
@@ -36,7 +35,7 @@ The request doesn't provide any configurable parameters.
 
 | Code | Type | Description |
 | --- | --- | --- |
-| **200** | [EntityShortRepresentation[]](#openapi-definition-EntityShortRepresentation) | Success |
+| **200** | [EntityShortRepresentation](#openapi-definition-EntityShortRepresentation)[] | Success |
 
 ### Response body objects
 

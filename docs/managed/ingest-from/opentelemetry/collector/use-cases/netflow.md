@@ -1,7 +1,6 @@
 ---
 title: Ingest NetFlow with the OTel Collector
 source: https://docs.dynatrace.com/managed/ingest-from/opentelemetry/collector/use-cases/netflow
-scraped: 2026-05-12T12:11:00.045039
 ---
 
 # Ingest NetFlow with the OTel Collector
@@ -10,13 +9,13 @@ scraped: 2026-05-12T12:11:00.045039
 
 * How-to guide
 * 1-min read
-* Updated on Jan 27, 2026
+* Updated on May 11, 2026
 
 The following configuration example shows how to configure a Collector instance to accept NetFlow packets and ingest them as OTLP requests into Dynatrace.
 
 ## Prerequisites
 
-* One of the following Collector distributions with the [NetFlow receiverï»¿](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.151.0/receiver/netflowreceiver):
+* One of the following Collector distributions with the [NetFlow receiver﻿](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.155.0/receiver/netflowreceiver):
 
   + [The Dynatrace Collector](/managed/ingest-from/opentelemetry/collector#dt-collector-dist "Learn how to use the OpenTelemetry Collector, including the Dynatrace OTel Collector, to ingest telemetry from OpenTelemetry.")
   + [OpenTelemetry Contrib](/managed/ingest-from/opentelemetry/collector#collector-contrib "Learn how to use the OpenTelemetry Collector, including the Dynatrace OTel Collector, to ingest telemetry from OpenTelemetry.")
@@ -58,22 +57,6 @@ workers: 4
 
 
 
-processors:
-
-
-
-batch:
-
-
-
-send_batch_size: 30
-
-
-
-timeout: 30s
-
-
-
 exporters:
 
 
@@ -91,6 +74,30 @@ headers:
 
 
 Authorization: "Api-Token ${env:DT_API_TOKEN}"
+
+
+
+sending_queue:
+
+
+
+batch:
+
+
+
+# Use default batching settings for logs.
+
+
+
+min_size: 1800
+
+
+
+max_size: 2000
+
+
+
+flush_timeout: 60s
 
 
 
@@ -117,7 +124,7 @@ processors: [batch]
 exporters: [otlp_http]
 ```
 
-Check the [NetFlow receiverï»¿](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.151.0/receiver/netflowreceiver#netflow-receiver) documentation for the available configuration options.
+Check the [NetFlow receiver﻿](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.155.0/receiver/netflowreceiver#netflow-receiver) documentation for the available configuration options.
 
 We recommend setting the `sockets` parameter to match the number of CPU cores available on the Collector instance, and the `workers` parameter to twice the number of sockets. This configuration allows the Collector to process multiple incoming NetFlow packets concurrently, which improves performance.
 
@@ -141,7 +148,7 @@ Under `processors`, we specify the `batch` processor, which batches the incoming
 
 ### Exporters
 
-Under `exporters`, we specify the default [`otlp_http` exporterï»¿](https://github.com/open-telemetry/opentelemetry-collector/tree/v0.151.0/exporter/otlphttpexporter) and configure it with our Dynatrace API URL and the required authentication token.
+Under `exporters`, we specify the default [`otlp_http` exporter﻿](https://github.com/open-telemetry/opentelemetry-collector/tree/v0.155.0/exporter/otlphttpexporter) and configure it with our Dynatrace API URL and the required authentication token.
 
 For this purpose, we set the following two environment variables and reference them in the configuration values for `endpoint` and `Authorization`.
 

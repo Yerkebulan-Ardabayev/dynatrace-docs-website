@@ -1,7 +1,6 @@
 ---
 title: Configure enrichment directory
 source: https://docs.dynatrace.com/managed/ingest-from/setup-on-k8s/guides/metadata-automation/metadata-enrichment
-scraped: 2026-05-12T11:24:18.092975
 ---
 
 # Configure enrichment directory

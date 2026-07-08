@@ -1,7 +1,6 @@
 ---
 title: Migrate OneAgent
 source: https://docs.dynatrace.com/managed/upgrade/up-execute-upgrade/up-migrate-oa
-scraped: 2026-05-12T12:14:00.644731
 ---
 
 # Migrate OneAgent
@@ -55,7 +54,7 @@ To reconfigure OneAgent in place, follow the procedure below:
 
 In your target environment:
 
-1. Create an [access token](/managed/dynatrace-api/basics/dynatrace-api-authentication "Find out how to get authenticated to use the Dynatrace API.") â scope **PaaS integration - Installer download**.
+1. Create an [access token](/managed/dynatrace-api/basics/dynatrace-api-authentication "Find out how to get authenticated to use the Dynatrace API.") – scope **PaaS integration - Installer download**.
 2. From the user menu on the right, open the interactive REST API client for **Environment API v1**.
 3. Run [Deployment API - View connectivity information for OneAgent](/managed/dynatrace-api/environment-api/deployment/oneagent/get-connectivity-info "View the connectivity information of OneAgent via Dynatrace API.") using the generated token as an authentication.
 4. Save the response from the API call. You'll need data from it in the next step.
@@ -78,4 +77,4 @@ In your target environment:
 
 Questions?
 
-Visit the [Upgrade to SaaS forumï»¿](https://community.dynatrace.com/t5/Upgrade-to-SaaS/bd-p/upgrade_to_saas) to ask questions, get answers, and share what you've learned with others.
+Visit the [Upgrade to SaaS forum﻿](https://community.dynatrace.com/t5/Upgrade-to-SaaS/bd-p/upgrade_to_saas) to ask questions, get answers, and share what you've learned with others.

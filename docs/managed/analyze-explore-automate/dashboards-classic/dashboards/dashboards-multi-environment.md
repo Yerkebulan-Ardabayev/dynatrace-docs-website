@@ -1,7 +1,6 @@
 ---
 title: Create remote/multi-environment Dynatrace dashboards
 source: https://docs.dynatrace.com/managed/analyze-explore-automate/dashboards-classic/dashboards/dashboards-multi-environment
-scraped: 2026-05-12T11:14:51.972070
 ---
 
 # Create remote/multi-environment Dynatrace dashboards
@@ -45,12 +44,12 @@ Because the remote-environment capabilities of dashboard tiles allow you to buil
 
     If a remote environment tile depends on a feature that is not supported in the remote environment, the tile displays an error message explaining the discrepancy between the local and remote environments.
   + To maintain maximum compatibility between local and remote environments, keep your Dynatrace environments on the same version.
-* Remote-environment connections donât pass user context and permissions over environment boundaries.
+* Remote-environment connections don’t pass user context and permissions over environment boundaries.
 
   For this reason, the best practice is to use management zones to segment/limit dashboard tiles when viewing remote information.
 
   Because of the above consideration, remote-environment dashboards can be configured only by environment administrators. Regular users can still view and interact with remote-environment dashboards without limitation.
-* The world map dashboard tile isnât suited for (and therefore doesnât support) remote-environment scenarios.
+* The world map dashboard tile isn’t suited for (and therefore doesn’t support) remote-environment scenarios.
 
 ## Configuration
 
@@ -64,9 +63,9 @@ API equivalents
 
 The procedures that follow use the Dynatrace web UI. To carry out the equivalent tasks via API, see:
 
-* [Access tokens API](/managed/dynatrace-api/environment-api/tokens-v2/api-tokens "Manage Dynatrace API authentication tokens.")âto create a token in the remote environment
-* [Remote environments API](/managed/dynatrace-api/configuration-api/remote-environments "Manage configurations of remote Dynatrace environments via the Dynatrace configuration API.")âto create a link to the remote environment from the local environment
-* [Dashboards API](/managed/dynatrace-api/configuration-api/dashboards-api "Find out how to manage dashboard configuration via Dynatrace Classic configuration API.")âto configure a dashboard with tiles that query the remote environment
+* [Access tokens API](/managed/dynatrace-api/environment-api/tokens-v2/api-tokens "Manage Dynatrace API authentication tokens.")—to create a token in the remote environment
+* [Remote environments API](/managed/dynatrace-api/configuration-api/remote-environments "Manage configurations of remote Dynatrace environments via the Dynatrace configuration API.")—to create a link to the remote environment from the local environment
+* [Dashboards API](/managed/dynatrace-api/configuration-api/dashboards-api "Find out how to manage dashboard configuration via Dynatrace Classic configuration API.")—to configure a dashboard with tiles that query the remote environment
 
 ### Create an access token
 
@@ -185,10 +184,10 @@ You can of course add other tile types and point to additional remote environmen
 
 ## Troubleshooting
 
-[`Verification failed, please check your settings: Constraints violated.` message displayed when adding a remote environmentï»¿](https://dt-url.net/t903mr6)
+[`Verification failed, please check your settings: Constraints violated.` message displayed when adding a remote environment﻿](https://dt-url.net/t903mr6)
 
 ## Related topics
 
 * [Dashboards API](/managed/dynatrace-api/configuration-api/dashboards-api "Find out how to manage dashboard configuration via Dynatrace Classic configuration API.")
 * [Remote environments API](/managed/dynatrace-api/configuration-api/remote-environments "Manage configurations of remote Dynatrace environments via the Dynatrace configuration API.")
-* [What is a monitoring environment?](/managed/discover-dynatrace/get-started/monitoring-environment "Understand and learn how to work with monitoring environments.")
+* [What's a monitoring environment?](/managed/discover-dynatrace/get-started/monitoring-environment "Learn what a Dynatrace monitoring environment is, how to find your environment ID, and how to set up and connect multiple environments.")

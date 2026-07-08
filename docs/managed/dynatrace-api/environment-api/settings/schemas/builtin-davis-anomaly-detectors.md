@@ -1,7 +1,6 @@
 ---
 title: Settings API - Anomaly detectors schema table
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/settings/schemas/builtin-davis-anomaly-detectors
-scraped: 2026-05-12T11:47:29.201959
 ---
 
 # Settings API - Anomaly detectors schema table

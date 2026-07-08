@@ -1,7 +1,6 @@
 ---
 title: Settings API - Ingest routing configuration (spans) schema table
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-spans-routing
-scraped: 2026-05-12T11:47:54.533246
 ---
 
 # Settings API - Ingest routing configuration (spans) schema table

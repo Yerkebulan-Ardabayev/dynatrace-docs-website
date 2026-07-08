@@ -1,7 +1,6 @@
 ---
 title: NeoLoad
 source: https://docs.dynatrace.com/managed/deliver/test-automation/neotys-integration
-scraped: 2026-05-12T11:38:37.449667
 ---
 
 # NeoLoad
@@ -36,7 +35,7 @@ Each service you want to retrieve the NeoLoad data on needs to be [tagged](/mana
 
 ## Set up NeoLoad
 
-See [Enable the integration of Dynatraceï»¿](https://documentation.tricentis.com/neoload/9.0/en/WebHelp/#5896_1.htm) in NeoLoad docs for detailed instructions on how to set the integration up in NeoLoad.
+See [Enable the integration of Dynatrace﻿](https://documentation.tricentis.com/neoload/9.0/en/WebHelp/#5896_1.htm) in NeoLoad docs for detailed instructions on how to set the integration up in NeoLoad.
 
 ## Analyze results in Dynatrace
 

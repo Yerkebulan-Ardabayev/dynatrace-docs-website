@@ -1,7 +1,6 @@
 ---
 title: Microsoft Azure Arc-enabled servers
 source: https://docs.dynatrace.com/managed/ingest-from/microsoft-azure-services/azure-integrations/azure-arc-enabled-servers
-scraped: 2026-05-12T11:38:12.172038
 ---
 
 # Microsoft Azure Arc-enabled servers
@@ -23,7 +22,7 @@ scraped: 2026-05-12T11:38:12.172038
 ## Prerequisites
 
 * Create a [PaaS token](/managed/manage/identity-access-management/access-tokens-and-oauth-clients/access-tokens#paas-token "Learn the concept of an access token and its scopes.").
-* Determine your [environment ID](/managed/discover-dynatrace/get-started/monitoring-environment "Understand and learn how to work with monitoring environments.").
+* Determine your [environment ID](/managed/discover-dynatrace/get-started/monitoring-environment "Learn what a Dynatrace monitoring environment is, how to find your environment ID, and how to set up and connect multiple environments.").
 * Determine your server URL if required.
 
   The server URL is required only if you use either of the following:
@@ -42,9 +41,9 @@ scraped: 2026-05-12T11:38:12.172038
 
 ## Install Dynatrace OneAgent VM extension
 
-There are several ways to install the Dynatrace OneAgent VM extension: through Azure Portal, Azure CLI, or PowerShell, or by using an ARM template. Follow the steps below for instructions.
+There are several ways to install the Dynatrace OneAgent VM extension: through Azure portal, Azure CLI, or PowerShell, or by using an ARM template. Follow the steps below for instructions.
 
-Azure Portal
+Azure portal
 
 Azure CLI 2.0
 
@@ -52,7 +51,7 @@ ARM template
 
 ### Add the extension to an existing VM
 
-1. In Azure Portal, go to an existing Azure Arc Machine resource.
+1. In the Azure portal, go to an existing Azure Arc Machine resource.
 2. In the left menu, go to **Settings** > **Extensions**.
 3. Select **Add**.
 4. From the list of extensions, select **Dynatrace OneAgent**.
@@ -75,7 +74,7 @@ az connectedmachine extension create
 
 
 
---name â<Extension-Type>â
+--name “<Extension-Type>”
 
 
 
@@ -109,7 +108,7 @@ az connectedmachine extension create
 
 Alternatively to the main installation methods, you can make the Dynatrace VM extension part of your ARM templates.
 
-The [JSON fileï»¿](https://dt-url.net/9f03wr8) for a virtual machine extension can be nested inside the virtual machine resource, or placed at the root or top level of a resource manager JSON template. The placement of the JSON file affects the value of the resource name and type.
+The [JSON file﻿](https://dt-url.net/9f03wr8) for a virtual machine extension can be nested inside the virtual machine resource, or placed at the root or top level of a resource manager JSON template. The placement of the JSON file affects the value of the resource name and type.
 
 Example
 
@@ -120,163 +119,163 @@ The following example assumes the OneAgent extension is nested inside the virtua
 
 
 
-â¯ â¯ "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+"$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
 
 
 
-â¯ â¯ "contentVersion": "1.0.0.0",
+"contentVersion": "1.0.0.0",
 
 
 
-â¯ â¯ "parameters": {
+"parameters": {
 
 
 
-â¯ â¯ â¯ â¯ "vmName": {
+"vmName": {
 
 
 
-â¯ â¯ â¯ â¯ â¯ â¯ "type": "string"
+"type": "string"
 
 
 
-â¯ â¯ â¯ â¯ },
+},
 
 
 
-â¯ â¯ â¯ â¯ "location": {
+"location": {
 
 
 
-â¯ â¯ â¯ â¯ â¯ â¯ "type": "string"
+"type": "string"
 
 
 
-â¯ â¯ â¯ â¯ },
+},
 
 
 
-â¯ â¯ â¯ â¯ "tenant": {
+"tenant": {
 
 
 
-â¯ â¯ â¯ â¯ â¯ â¯ "type": "string"
+"type": "string"
 
 
 
-â¯ â¯ â¯ â¯ },
+},
 
 
 
-â¯ â¯ â¯ â¯ "token": {
+"token": {
 
 
 
-â¯ â¯ â¯ â¯ â¯ â¯ "type": "securestring"
+"type": "securestring"
 
 
 
-â¯ â¯ â¯ â¯ },
+},
 
 
 
-â¯ â¯ â¯ â¯ "server": {
+"server": {
 
 
 
-â¯ â¯ â¯ â¯ â¯ â¯ "type": "string",
+"type": "string",
 
 
 
-â¯ â¯ â¯ â¯ â¯ â¯ "defaultValue": ""
+"defaultValue": ""
 
 
 
-â¯ â¯ â¯ â¯ }
+}
 
 
 
-â¯ â¯ },
+},
 
 
 
-â¯ â¯ "resources": [
+"resources": [
 
 
 
-â¯ â¯ â¯ â¯ {
+{
 
 
 
-â¯ â¯ â¯ â¯ â¯ â¯ "name": "[concat(parameters('vmName'),'/<Extension-Type>')]",
+"name": "[concat(parameters('vmName'),'/<Extension-Type>')]",
 
 
 
-â¯ â¯ â¯ â¯ â¯ â¯ "type": "Microsoft.HybridCompute/machines/extensions",
+"type": "Microsoft.HybridCompute/machines/extensions",
 
 
 
-â¯ â¯ â¯ â¯ â¯ â¯ "location": "[parameters('location')]",
+"location": "[parameters('location')]",
 
 
 
-â¯ â¯ â¯ â¯ â¯ â¯ "apiVersion": "2022-03-10",
+"apiVersion": "2022-03-10",
 
 
 
-â¯ â¯ â¯ â¯ â¯ â¯ "properties": {
+"properties": {
 
 
 
-â¯ â¯ â¯ â¯ â¯ â¯ â¯ â¯ "publisher": "dynatrace.ruxit",
+"publisher": "dynatrace.ruxit",
 
 
 
-â¯ â¯ â¯ â¯ â¯ â¯ â¯ â¯ "type": " <Extension-Type>",
+"type": " <Extension-Type>",
 
 
 
-â¯ â¯ â¯ â¯ â¯ â¯ â¯ â¯ "autoUpgradeMinorVersion": true,
+"autoUpgradeMinorVersion": true,
 
 
 
-â¯ â¯ â¯ â¯ â¯ â¯ â¯ â¯ "settings": {
+"settings": {
 
 
 
-â¯ â¯ â¯ â¯ â¯ â¯ â¯ â¯ â¯ â¯ "tenantId": "[parameters('tenant')]",
+"tenantId": "[parameters('tenant')]",
 
 
 
-â¯ â¯ â¯ â¯ â¯ â¯ â¯ â¯ â¯ â¯ "server": "[parameters('server')]"
+"server": "[parameters('server')]"
 
 
 
-â¯ â¯ â¯ â¯ â¯ â¯ â¯ â¯ },
+},
 
 
 
-â¯ â¯ â¯ â¯ â¯ â¯ â¯ â¯ "protectedSettings": {
+"protectedSettings": {
 
 
 
-â¯ â¯ â¯ â¯ â¯ â¯ â¯ â¯ â¯ â¯ "token": "[parameters('token')]"
+"token": "[parameters('token')]"
 
 
 
-â¯ â¯ â¯ â¯ â¯ â¯ â¯ â¯ }
+}
 
 
 
-â¯ â¯ â¯ â¯ â¯ â¯ }
+}
 
 
 
-â¯ â¯ â¯ â¯ }
+}
 
 
 
-â¯ â¯ ]
+]
 
 
 

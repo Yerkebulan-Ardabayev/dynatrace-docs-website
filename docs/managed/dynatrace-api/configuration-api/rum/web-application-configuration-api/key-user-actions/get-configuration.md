@@ -1,7 +1,6 @@
 ---
 title: Web application configuration API - GET key user actions
 source: https://docs.dynatrace.com/managed/dynatrace-api/configuration-api/rum/web-application-configuration-api/key-user-actions/get-configuration
-scraped: 2026-05-12T11:17:04.697696
 ---
 
 # Web application configuration API - GET key user actions
@@ -48,7 +47,7 @@ The list of key user actions in the web application
 
 | Element | Type | Description |
 | --- | --- | --- |
-| keyUserActionList | [KeyUserAction[]](#openapi-definition-KeyUserAction) | - |
+| keyUserActionList | [KeyUserAction](#openapi-definition-KeyUserAction)[] | - |
 
 #### The `KeyUserAction` object
 
@@ -105,4 +104,4 @@ Configuration of the key user action.
 
 ## Related topics
 
-* [User actions](/managed/observe/digital-experience/rum-concepts/user-actions "Learn what user actions are and how they help you understand what users do with your application.")
+* [User actions in RUM Classic](/managed/observe/digital-experience/rum-classic/rum-concepts/user-actions "Learn what user actions are and how they help you understand what users do with your application.")

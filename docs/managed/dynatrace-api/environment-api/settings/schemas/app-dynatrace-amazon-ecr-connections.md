@@ -1,7 +1,6 @@
 ---
 title: Settings API - Amazon ECR schema table
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/settings/schemas/app-dynatrace-amazon-ecr-connections
-scraped: 2026-05-12T11:39:30.210890
 ---
 
 # Settings API - Amazon ECR schema table

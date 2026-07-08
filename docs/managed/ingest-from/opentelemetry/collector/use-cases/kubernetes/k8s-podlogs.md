@@ -1,7 +1,6 @@
 ---
 title: Ingest Kubernetes pod logs with the OTel Collector
 source: https://docs.dynatrace.com/managed/ingest-from/opentelemetry/collector/use-cases/kubernetes/k8s-podlogs
-scraped: 2026-05-12T12:15:02.386958
 ---
 
 # Ingest Kubernetes pod logs with the OTel Collector
@@ -17,7 +16,7 @@ The following configuration example shows how you configure a Collector instance
 ## Prerequisites
 
 * A deployed ActiveGate for Kubernetes API monitoring
-* One of the following Collector distributions with the [Filelogï»¿](https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/v0.151.0/receiver/filelogreceiver) receiver and the [Kubernetes Attributesï»¿](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.151.0/processor/k8sattributesprocessor) processor:
+* One of the following Collector distributions with the [Filelog﻿](https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/v0.155.0/receiver/filelogreceiver) receiver and the [Kubernetes Attributes﻿](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.155.0/processor/k8sattributesprocessor) processor:
 
   + The [Dynatrace OTel Collector](/managed/ingest-from/opentelemetry/collector#dt-collector-dist "Learn how to use the OpenTelemetry Collector, including the Dynatrace OTel Collector, to ingest telemetry from OpenTelemetry.")
   + [OpenTelemetry Contrib](/managed/ingest-from/opentelemetry/collector#collector-contrib "Learn how to use the OpenTelemetry Collector, including the Dynatrace OTel Collector, to ingest telemetry from OpenTelemetry.")
@@ -38,9 +37,9 @@ This sample configuration uses the same Kubernetes enrichment approach as the us
 
 In addition to the Collector configuration, be sure to also update your Kubernetes configuration for the following components:
 
-* **Service account**: Specify the same service account name used in the [RBAC file](#kubernetes-configuration) (see entries for [Helmï»¿](https://github.com/open-telemetry/opentelemetry-helm-charts/blob/opentelemetry-collector-0.100.0/charts/opentelemetry-collector/values.yaml#L184-L191), [Operatorï»¿](https://github.com/open-telemetry/opentelemetry-operator/blob/v0.150.0/docs/api/opentelemetrycollectors.md#opentelemetrycollectorspec))
-* **Mounted volumes**: Specify the file system volumes where your Kubernetes host keeps the relevant log files (see entries for [Helmï»¿](https://github.com/open-telemetry/opentelemetry-helm-charts/blob/opentelemetry-collector-0.100.0/charts/opentelemetry-collector/values.yaml#L241), [Operatorï»¿](https://github.com/open-telemetry/opentelemetry-operator/blob/v0.150.0/docs/api/opentelemetrycollectors.md#opentelemetrycollectorspec))
-* **Mount paths**: Specify the file system paths, to which the previously configured volumes should be mounted within the container (see entries for [Helmï»¿](https://github.com/open-telemetry/opentelemetry-helm-charts/blob/opentelemetry-collector-0.100.0/charts/opentelemetry-collector/values.yaml#L244), [Operatorï»¿](https://github.com/open-telemetry/opentelemetry-operator/blob/v0.150.0/docs/api/opentelemetrycollectors.md#opentelemetrycollectorspec))
+* **Service account**: Specify the same service account name used in the [RBAC file](#kubernetes-configuration) (see entries for [Helm﻿](https://github.com/open-telemetry/opentelemetry-helm-charts/blob/opentelemetry-collector-0.100.0/charts/opentelemetry-collector/values.yaml#L184-L191), [Operator﻿](https://github.com/open-telemetry/opentelemetry-operator/blob/v0.154.0/docs/api/opentelemetrycollectors.md#opentelemetrycollectorspec))
+* **Mounted volumes**: Specify the file system volumes where your Kubernetes host keeps the relevant log files (see entries for [Helm﻿](https://github.com/open-telemetry/opentelemetry-helm-charts/blob/opentelemetry-collector-0.100.0/charts/opentelemetry-collector/values.yaml#L241), [Operator﻿](https://github.com/open-telemetry/opentelemetry-operator/blob/v0.154.0/docs/api/opentelemetrycollectors.md#opentelemetrycollectorspec))
+* **Mount paths**: Specify the file system paths, to which the previously configured volumes should be mounted within the container (see entries for [Helm﻿](https://github.com/open-telemetry/opentelemetry-helm-charts/blob/opentelemetry-collector-0.100.0/charts/opentelemetry-collector/values.yaml#L244), [Operator﻿](https://github.com/open-telemetry/opentelemetry-operator/blob/v0.154.0/docs/api/opentelemetrycollectors.md#opentelemetrycollectorspec))
 
 ```
 receivers:
@@ -785,7 +784,7 @@ fieldPath: status.podIP
 
 
 
-image: ghcr.io/dynatrace/dynatrace-otel-collector/dynatrace-otel-collector:0.48.0
+image: ghcr.io/dynatrace/dynatrace-otel-collector/dynatrace-otel-collector:0.51.0
 
 
 
@@ -884,22 +883,22 @@ For our configuration, we configured the following components.
 
 Under `receivers`, we specify the `filelog` receiver as active receiver component for our Collector instance.
 
-The Filelog receiver supports a number of [configuration parametersï»¿](https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/v0.151.0/receiver/filelogreceiver/README.md), which enable you to customize its behavior. For the example, we use the following:
+The Filelog receiver supports a number of [configuration parameters﻿](https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/v0.155.0/receiver/filelogreceiver/README.md), which enable you to customize its behavior. For the example, we use the following:
 
-* `include`âSpecifies the path pattern of the files we want to ingest.
-* `start_at`âSpecifies if the receiver should read from the beginning of the file or, for the most recent entries only, the end.
-* `operators`âConfigures the [`container`ï»¿](https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/v0.151.0/pkg/stanza/docs/operators/container.md) operator, which automatically parses each log entry.
+* `include`—Specifies the path pattern of the files we want to ingest.
+* `start_at`—Specifies if the receiver should read from the beginning of the file or, for the most recent entries only, the end.
+* `operators`—Configures the [`container`﻿](https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/v0.155.0/pkg/stanza/docs/operators/container.md) operator, which automatically parses each log entry.
 
 ### Processors
 
-Under `processors`, we specify the [`k8sattributes` processorï»¿](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.151.0/processor/k8sattributesprocessor) with the following parameters:
+Under `processors`, we specify the [`k8sattributes` processor﻿](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.155.0/processor/k8sattributesprocessor) with the following parameters:
 
-* `extract`âSpecifies which information should be extracted.
-* `pod_association`âSpecifies how the pod information is linked to attributes.
+* `extract`—Specifies which information should be extracted.
+* `pod_association`—Specifies how the pod information is linked to attributes.
 
 ### Exporters
 
-Under `exporters`, we specify the default [`otlp_http` exporterï»¿](https://github.com/open-telemetry/opentelemetry-collector/tree/v0.151.0/exporter/otlphttpexporter) and configure it with our Dynatrace API URL and the required authentication token, as set up and configured under [Kubernetes Secrets](#kubernetes-secrets).
+Under `exporters`, we specify the default [`otlp_http` exporter﻿](https://github.com/open-telemetry/opentelemetry-collector/tree/v0.155.0/exporter/otlphttpexporter) and configure it with our Dynatrace API URL and the required authentication token, as set up and configured under [Kubernetes Secrets](#kubernetes-secrets).
 
 ### Service pipelines
 

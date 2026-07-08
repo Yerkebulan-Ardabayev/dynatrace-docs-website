@@ -1,7 +1,6 @@
 ---
 title: Settings API - DELETE an object
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/settings/objects/del-object
-scraped: 2026-05-12T11:38:50.967831
 ---
 
 # Settings API - DELETE an object
@@ -56,7 +55,7 @@ The response to a creation- or update-request.
 | --- | --- | --- |
 | code | integer | The HTTP status code for the object. |
 | error | [Error](#openapi-definition-Error) | - |
-| invalidValue | string | The value of the setting.  It defines the actual values of settings' parameters.  The actual content depends on the object's schema. |
+| invalidValue | [AnyValue](#openapi-definition-AnyValue) | The value of the setting.  It defines the actual values of settings' parameters.  The actual content depends on the object's schema. |
 | objectId | string | For a successful request, the ID of the created or modified settings object. |
 
 #### The `Error` object
@@ -64,7 +63,7 @@ The response to a creation- or update-request.
 | Element | Type | Description |
 | --- | --- | --- |
 | code | integer | The HTTP status code |
-| constraintViolations | [ConstraintViolation[]](#openapi-definition-ConstraintViolation) | A list of constraint violations |
+| constraintViolations | [ConstraintViolation](#openapi-definition-ConstraintViolation)[] | A list of constraint violations |
 | message | string | The error message |
 
 #### The `ConstraintViolation` object
@@ -141,7 +140,15 @@ A schema representing an arbitrary value type.
 
 
 
-"invalidValue": "string",
+"invalidValue": {
+
+
+
+"autoMonitoring": true
+
+
+
+},
 
 
 

@@ -1,7 +1,6 @@
 ---
 title: Tags and metadata
 source: https://docs.dynatrace.com/managed/manage/tags-and-metadata
-scraped: 2026-05-12T11:03:49.334960
 ---
 
 # Tags and metadata

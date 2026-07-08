@@ -1,7 +1,6 @@
 ---
 title: Enable automatic OpenTelemetry OTLP exporter configuration
 source: https://docs.dynatrace.com/managed/ingest-from/setup-on-k8s/extend-observability-k8s/otlp-auto-config
-scraped: 2026-05-12T12:03:40.512966
 ---
 
 # Enable automatic OpenTelemetry OTLP exporter configuration
@@ -12,7 +11,7 @@ scraped: 2026-05-12T12:03:40.512966
 
 Dynatrace Operator version 1.8.0+
 
-Dynatrace Operator can automatically configure the OpenTelemetry OTLP exporter for applications instrumented with an [OpenTelemetry SDKï»¿](https://opentelemetry.io/docs/languages/). This is done by injecting environment variables into your application pods at startup, allowing telemetry data to be sent directly to Dynatrace.
+Dynatrace Operator can automatically configure the OpenTelemetry OTLP exporter for applications instrumented with an [OpenTelemetry SDK﻿](https://opentelemetry.io/docs/languages/). This is done by injecting environment variables into your application pods at startup, allowing telemetry data to be sent directly to Dynatrace.
 
 ## Enable OTLP auto-configuration
 
@@ -87,7 +86,7 @@ Secrets are updated automatically when the token or certificate changes, but onl
 **Notes**:
 
 * OTLP exporter configuration [is skipped](#verify-config) in case prerequisites are not fulfilled.
-* By default, if any `OTEL_EXPORTER_OTLP_*` environment variable is already present in the container spec, Dynatrace Operator will skip the injection of endpoint configuration (aka. `OTEL_EXPORTER_OTLP_*`) â even if the existing configuration doesn't overlap with what would be added automatically. To allow Dynatrace Operator to override the existing configuration, enable [override mode](#override). Resource attributes (`OTEL_RESOURCE_ATTRIBUTES`) are not affected by this logic and will still be set or extended.
+* By default, if any `OTEL_EXPORTER_OTLP_*` environment variable is already present in the container spec, Dynatrace Operator will skip the injection of endpoint configuration (aka. `OTEL_EXPORTER_OTLP_*`) — even if the existing configuration doesn't overlap with what would be added automatically. To allow Dynatrace Operator to override the existing configuration, enable [override mode](#override). Resource attributes (`OTEL_RESOURCE_ATTRIBUTES`) are not affected by this logic and will still be set or extended.
 
 ### Verify the auto-configuration
 
@@ -148,7 +147,7 @@ The values for those attributes are derived from the cluster and pod metadata. F
 
 Any attributes you have already set in `OTEL_RESOURCE_ATTRIBUTES` are preserved, and the above attributes are appended.
 
-Resource attributes are always injected when autoâconfiguration is enabled, regardless of existing OTLP exporter settings or whether override mode is enabled.
+Resource attributes are always injected when auto‑configuration is enabled, regardless of existing OTLP exporter settings or whether override mode is enabled.
 
 ## Limitations
 

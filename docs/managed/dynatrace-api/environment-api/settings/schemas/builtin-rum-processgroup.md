@@ -1,7 +1,6 @@
 ---
 title: Settings API - Real User Monitoring for process group schema table
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/settings/schemas/builtin-rum-processgroup
-scraped: 2026-05-12T11:40:42.325833
 ---
 
 # Settings API - Real User Monitoring for process group schema table
@@ -12,7 +11,7 @@ scraped: 2026-05-12T11:40:42.325833
 
 ### Real User Monitoring for process group (`builtin:rum.processgroup)`
 
-With [Real User Monitoringï»¿](https://dt-url.net/1n2b0prq) enabled, Dynatrace gathers details about load times and page behavior that your customers experience with your application. Only applications with injected JavaScript tags can be monitored.
+With [Real User Monitoring﻿](https://dt-url.net/1n2b0prq) enabled, Dynatrace gathers details about load times and page behavior that your customers experience with your application. Only applications with injected JavaScript tags can be monitored.
 
 | Schema ID | Schema groups | Scope |
 | --- | --- | --- |

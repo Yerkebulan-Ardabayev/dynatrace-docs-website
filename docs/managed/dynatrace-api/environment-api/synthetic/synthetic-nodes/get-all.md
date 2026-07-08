@@ -1,7 +1,6 @@
 ---
 title: Synthetic nodes API - GET all nodes
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/synthetic/synthetic-nodes/get-all
-scraped: 2026-05-12T11:24:02.860188
 ---
 
 # Synthetic nodes API - GET all nodes
@@ -11,7 +10,7 @@ scraped: 2026-05-12T11:24:02.860188
 * Reference
 * Published Jul 26, 2019
 
-We have a new version of this APIâ[Synthetic API v2](/managed/dynatrace-api/environment-api/synthetic-v2 "Find out what the Dynatrace Synthetic v2 API offers."). Check it out!
+We have a new version of this API—[Synthetic API v2](/managed/dynatrace-api/environment-api/synthetic-v2 "Find out what the Dynatrace Synthetic v2 API offers."). Check it out!
 
 Lists all synthetic nodes (and their parameters) available for your environment.
 
@@ -54,7 +53,7 @@ A list of synthetic nodes
 
 | Element | Type | Description |
 | --- | --- | --- |
-| nodes | [NodeCollectionElement[]](#openapi-definition-NodeCollectionElement) | A list of synthetic nodes |
+| nodes | [NodeCollectionElement](#openapi-definition-NodeCollectionElement)[] | A list of synthetic nodes |
 
 #### The `NodeCollectionElement` object
 
@@ -87,7 +86,7 @@ The short representation of a synthetic object. Only contains the ID and the dis
 | Element | Type | Description |
 | --- | --- | --- |
 | code | integer | The HTTP status code |
-| constraintViolations | [ConstraintViolation[]](#openapi-definition-ConstraintViolation) | A list of constraint violations |
+| constraintViolations | [ConstraintViolation](#openapi-definition-ConstraintViolation)[] | A list of constraint violations |
 | message | string | The error message |
 
 #### The `ConstraintViolation` object

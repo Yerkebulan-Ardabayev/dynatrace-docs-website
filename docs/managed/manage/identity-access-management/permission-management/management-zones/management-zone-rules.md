@@ -1,7 +1,6 @@
 ---
 title: Management-zone rules
 source: https://docs.dynatrace.com/managed/manage/identity-access-management/permission-management/management-zones/management-zone-rules
-scraped: 2026-05-12T11:36:56.000816
 ---
 
 # Management-zone rules
@@ -10,7 +9,7 @@ scraped: 2026-05-12T11:36:56.000816
 
 * How-to guide
 * 16-min read
-* Updated on Oct 03, 2025
+* Updated on May 18, 2026
 
 Management zones comprise one or more rules that define and limit the entities or dimensional data (such as logs and metrics) that can be accessed within the management zone.
 
@@ -93,7 +92,7 @@ See [Examples](#examples) for different rule types and implementations.
 8. Select **Add condition** to add another condition (or **Remove condition** to remove a condition) as required.
 
    * You need to define at least one condition per rule.
-   * Conditions are applied using the `AND` logicâall conditions need to be met for the rule to apply to an entity.
+   * Conditions are applied using the `AND` logic—all conditions need to be met for the rule to apply to an entity.
    * There's no limit on the number of conditions per rule. However, there's a limit of 100,000 conditions for all rules taken together per environment.
 9. Select **Preview** to see entities matching the rule that were active and online in the last 72 hours. Of course, when you actually apply the management zone, all entities matching the rules for the given timeframe will be displayed. Note that **Preview** is only available for entity-based rules.
 
@@ -138,7 +137,7 @@ See [Examples](#examples) for different rule types and implementations.
 6. Select **Add condition** to add another condition (or **Remove condition** to remove a condition) as required.
 
    * You need to define at least one condition per rule.
-   * Conditions are applied using the `AND` logicâall conditions need to be met for the rule to apply to an entity.
+   * Conditions are applied using the `AND` logic—all conditions need to be met for the rule to apply to an entity.
    * There's no limit on the number of conditions per rule. However, there's a limit of 100,000 conditions for all rules taken together per environment.
    * **Preview** is not available for dimensional-data rules.
 7. **Save changes**.
@@ -164,8 +163,8 @@ See [Examples](#examples) for different rule types and implementations.
      You can run the [GET entity type API call](/managed/dynatrace-api/environment-api/entity-v2/get-entity-type "View the details of a monitored entity type via Dynatrace API.") for any entity type (for example, `service`) to get a list of all its properties (for example, `serviceType`). You can also run the [GET entities list](/managed/dynatrace-api/environment-api/entity-v2/get-entities-list "View a list of monitored entities via Dynatrace API.") API call for a list of actual entities in your environment with their property values (for example, `WEB_REQUEST_SERVICE`).
    * Relationships further refine entity selection by defining an entity in terms of its relationship to another. Relationships are of two kinds.
 
-     + A `fromRelationship` implies that the direction of the relationship is **from the given entity** (that is, the entity being queried) to a related entity. When you query all the services that service A calls, this is a relationship âfrom (service A)â to other services.
-     + A `toRelationship` implies that the direction of the relationship is from a related entity **to the given entity** (that is, the entity being queried). When you query all the services that call service A, this relationship is âto (service A).â
+     + A `fromRelationship` implies that the direction of the relationship is **from the given entity** (that is, the entity being queried) to a related entity. When you query all the services that service A calls, this is a relationship “from (service A)” to other services.
+     + A `toRelationship` implies that the direction of the relationship is from a related entity **to the given entity** (that is, the entity being queried). When you query all the services that call service A, this relationship is “to (service A).”
 
      You can run the [GET entity type API call](/managed/dynatrace-api/environment-api/entity-v2/get-entity-type "View the details of a monitored entity type via Dynatrace API.") on any entity type to get a list of the entity's from/to relationships and the related entity types. You can also run the [GET entities list](/managed/dynatrace-api/environment-api/entity-v2/get-entities-list "View a list of monitored entities via Dynatrace API.") API call to get a list of the actual entities in your environment along with their relationship values (for example, a `service` entity type can have a `calls` "from relationship" to another `service`).
 4. Select **Preview** to see entities matching the rule that were active and online in the last 72 hours. (Of course, when you actually apply the management zone, all entities matching the rules for the given timeframe will be displayed.)
@@ -177,23 +176,15 @@ See [Examples](#examples) for different rule types and implementations.
 
 ## How management-zone rules are applied
 
-* Conditions are applied using the `AND` logicâall conditions within a rule need to be met for the rule to apply to an entity.
-* Rules are applied using the `OR` logicâany rule must apply for an entity to be included in a management zone.
+* Conditions are applied using the `AND` logic—all conditions within a rule need to be met for the rule to apply to an entity.
+* Rules are applied using the `OR` logic—any rule must apply for an entity to be included in a management zone.
 * When creating rules for some entities, you can propagate access to related topological entities without creating an extra rule. For example, when creating a rule for services, you can opt to add underlying hosts and process groups. See [Add a UI-based rule](#ui) above.
 
   In other cases, the propagation of access to related topological entities is implicit. For example, when you grant access to a host in a management zone, any custom metrics ingested via that host are also accessible within the management zone. Note that this does not automatically include all measurements of those custom metrics but only those measurements that were sent in for your host.
 
   In cases where such propagation isn't available, you need to explicitly create rules for the entities you wish to add to a management zone. For example, a management-zone rule that applies to **Host groups** does not automatically grant access to the hosts within those groups; you need to explicitly add rules for the **Hosts** you wish to include in the management zone, as shown in [Examples](#examples) below.
 
-  Management zones are always implicitly propagated to the following related entities. However, this does not apply to entity selector based rules.
-
-  | From | To |
-  | --- | --- |
-  | Process Group | Process Group Instance, Container Group, Container Group Instance |
-  | Hypervisor | VCenter |
-  | Host | EC2 Instance, Container Group Instance |
-  | AWS Credentials | AWS availability zone, AWS lambda function, AWS application load balancer, AWS network load balancer, EC2 instance, Custom device, Custom device group, Auto scaling group, Relational database service |
-  | Synthetic Test | Application |
+  Management zones are also implicitly propagated to a fixed set of related entity types (for example, from a process group to its instances, or from AWS credentials to the resources they discover). This does not apply to entity-selector-based rules. For the full list of propagation paths and important considerations, see [Implicit propagation of tagging and management-zone rules](/managed/manage/tags-and-metadata/basic-concepts/implicit-propagation-of-tagging-and-management-zone-rules "Learn which entity types automatically inherit tags and management zones through implicit propagation, and what to watch out for.").
 * When you add an entity using tags to a management zone as part of entity creation via API, there might be a delay in management-zone assignment depending on the number and complexity of your tagging rules. See [Best practices for scaling tagging and management-zone rules](/managed/manage/tags-and-metadata/basic-concepts/best-practice-tagging-at-scale "Optimize auto-tagging and management-zone rules to speed up the automatic assignment process.") for best practices to speed up the time taken to assign tags and management zones within your monitoring environments.
 * You cannot define management-zone rules where the entity selector for one management zone filters by another management zone. Management zone predicates such as `mzID` or `mzName` are not allowed in entity selector strings. This means, for example, that you cannot define management zone A as containing hosts belonging to management zone B. Management-zone rules based on other management zones increase the number of runs made by the conditional decision engine and can greatly delay management-zone assignment. See also [Best practices for scaling tagging and management-zone rules](/managed/manage/tags-and-metadata/basic-concepts/best-practice-tagging-at-scale "Optimize auto-tagging and management-zone rules to speed up the automatic assignment process.") for related information.
 
@@ -223,7 +214,7 @@ Example 1: Management-zone rules providing access to hosts of specific host grou
    Add a rule in this way for each set of hosts per host group.
 2. Set up a rule for host groups.
 
-   In order for users to have visibility into host groups containing the hosts in the management zone, you need to set up host group rulesâone per host group you wish to include. This ensures that users can filter by the host groups on the **Hosts** page.
+   In order for users to have visibility into host groups containing the hosts in the management zone, you need to set up host group rules—one per host group you wish to include. This ensures that users can filter by the host groups on the **Hosts** page.
 
    1. Select **Monitored entity** as the **Rule type**.
    2. Choose **Host groups** as the entity that the **Rule applies to**.
@@ -288,7 +279,7 @@ You can provide access to an ingested metric, filtered by a dimension value so t
    Dimensional metric data in a management zone
 4. **Save changes**.
 
-If your management zone already provides access to the host through which a custom metric and its measurements are ingested, you automatically provide access to that custom metric; you don't need to set up an explicit rule for the custom metric. Note that this doesnât include all measurements of that custom metric but only those measurements that were sent in for your host.
+If your management zone already provides access to the host through which a custom metric and its measurements are ingested, you automatically provide access to that custom metric; you don't need to set up an explicit rule for the custom metric. Note that this doesn’t include all measurements of that custom metric but only those measurements that were sent in for your host.
 
 Example 4: Management-zone rules providing access to specific measurements of specific ingested logs
 
@@ -332,3 +323,4 @@ Entity-selector rule based on relationships
 * [Metrics API - Metric selector](/managed/dynatrace-api/environment-api/metric-v2/metric-selector "Configure the metric selector for the Metric v2 API.")
 * [Management zones and ingested log data (Logs Classic)](/managed/analyze-explore-automate/log-monitoring/analyze-log-data/management-zones-and-log-monitoring "Find out how ingested log data is assigned to management zones.")
 * [Best practices for scaling tagging and management-zone rules](/managed/manage/tags-and-metadata/basic-concepts/best-practice-tagging-at-scale "Optimize auto-tagging and management-zone rules to speed up the automatic assignment process.")
+* [Implicit propagation of tagging and management-zone rules](/managed/manage/tags-and-metadata/basic-concepts/implicit-propagation-of-tagging-and-management-zone-rules "Learn which entity types automatically inherit tags and management zones through implicit propagation, and what to watch out for.")

@@ -1,7 +1,6 @@
 ---
 title: Settings API - Process grouping rules schema table
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/settings/schemas/builtin-process-grouping-rules
-scraped: 2026-05-12T11:45:40.909516
 ---
 
 # Settings API - Process grouping rules schema table
@@ -14,9 +13,9 @@ scraped: 2026-05-12T11:45:40.909516
 
 Dynatrace automatically monitors process groups that are of known technology types or that consume significant resources. With process grouping rules, you can automatically monitor additional technologies.
 
-For more information read the [community postï»¿](https://dt-url.net/ea2319k).
+For more information read the [community post﻿](https://dt-url.net/ea2319k).
 
-Process grouping rules also work for processes that have [deep monitoring enabledï»¿](https://dt-url.net/3203vvp).
+Process grouping rules also work for processes that have [deep monitoring enabled﻿](https://dt-url.net/3203vvp).
 
 | Schema ID | Schema groups | Scope |
 | --- | --- | --- |
@@ -59,14 +58,14 @@ To execute this request, you need an access token with **Read settings** (`setti
 | --- | --- | --- | --- |
 | 2.1. Property `property` | text | - | Required |
 | 2.2. Variable name `name` | text | If Dynatrace detects this property at startup of a process, it will be matched to this grouping rule. | Required |
-| 2.2. Condition `condition` | text | * $contains(svc) â Matches if svc appears anywhere in the process property value. * $eq(svc.exe) â Matches if svc.exe matches the process property value exactly. * $prefix(svc) â Matches if app matches the prefix of the process property value. * $suffix(svc.py) â Matches if svc.py matches the suffix of the process property value.  For example, $suffix(svc.py) would detect processes named loyaltysvc.py and paymentssvc.py.  For more details, see [documentationï»¿](https://dt-url.net/j142w57). | Required |
+| 2.2. Condition `condition` | text | * $contains(svc) – Matches if svc appears anywhere in the process property value. * $eq(svc.exe) – Matches if svc.exe matches the process property value exactly. * $prefix(svc) – Matches if app matches the prefix of the process property value. * $suffix(svc.py) – Matches if svc.py matches the suffix of the process property value.  For example, $suffix(svc.py) would detect processes named loyaltysvc.py and paymentssvc.py.  For more details, see [documentation﻿](https://dt-url.net/j142w57). | Required |
 | Case sensitive `caseSensitive` | boolean | When enabled, matching conditions are case sensitive. When disabled, matching conditions are case insensitive | Required |
 
 ##### The `GroupIdSource` object
 
 | Property | Type | Description | Required |
 | --- | --- | --- | --- |
-| Standalone rule `standaloneRule` | boolean | Valid only for **deep monitored** processes.  If this option is selected, the default Dynatrace behavior is disabled for the detected processes. Only this rule is used to separate the process group.  If this option is not selected, this rule contributes to the default Dynatrace process group detection.  [See our help page for examples.ï»¿](https://dt-url.net/1722wrz) | Required |
+| Standalone rule `standaloneRule` | boolean | Valid only for **deep monitored** processes.  If this option is selected, the default Dynatrace behavior is disabled for the detected processes. Only this rule is used to separate the process group.  If this option is not selected, this rule contributes to the default Dynatrace process group detection.  [See our help page for examples.﻿](https://dt-url.net/1722wrz) | Required |
 | 3.1.1. Id type `type` | enum | Pick which property should be used to identify your process group. You can pick a custom variable or pick an existing process property. The element has these enums * `CUSTOM` * `EXISTING` | Required |
 | 3.1.2. Process group identifier `id` | text | This identifier is used by Dynatrace to recognize this process group. | Required |
 | 3.1.2. Property `property` | text | - | Required |

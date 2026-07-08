@@ -1,7 +1,6 @@
 ---
 title: Platform Engineering
 source: https://docs.dynatrace.com/managed/discover-dynatrace/get-started/platform-engineering
-scraped: 2026-05-12T11:05:09.384615
 ---
 
 # Platform Engineering
@@ -54,7 +53,7 @@ Platform engineering also offers the ability to:
 
 Platform Engineering - Effective IDPs
 
-Source: [https://tag-app-delivery.cncf.io/whitepapers/platforms/ï»¿](https://tag-app-delivery.cncf.io/whitepapers/platforms/#capabilities-of-platforms)
+Source: [https://tag-app-delivery.cncf.io/whitepapers/platforms/﻿](https://tag-app-delivery.cncf.io/whitepapers/platforms/#capabilities-of-platforms)
 
 ## Treat your platform as a product
 
@@ -63,13 +62,13 @@ A key aspect of platform engineering is approaching your platform with a product
 ### Looking at an IDP with a product management lens
 
 * **The product**: An internal development platform (IDP) built to provide self-service for infrastructure, services, and support for the development teams as they build, test, and deploy applications at scale
-* **The customer**: Development teams who want to accelerate the production of high-quality, resilient apps â with low effort for onboarding for new applications and new developers
+* **The customer**: Development teams who want to accelerate the production of high-quality, resilient apps — with low effort for onboarding for new applications and new developers
 
 ## Maturing DevOps with platform engineering
 
-**You build it, you run it doesnât scale anymore.**
+**You build it, you run it doesn’t scale anymore.**
 
-DevOps alone doesnât meet the demands of cloud-native software development. Platform engineering is DevOps applied at cloud-native scale.
+DevOps alone doesn’t meet the demands of cloud-native software development. Platform engineering is DevOps applied at cloud-native scale.
 
 Effective DevOps supports cross-functional cooperation and boosts efficiency. Platform engineering builds on traditional DevOps practices but goes a step further.
 
@@ -77,7 +76,7 @@ By providing a framework and techstack to apply DevOps principles at scale with 
 
 In practice, maturing DevOps into platform engineering involves providing centrally maintained development tooling, templates for CI/CD toolchains, processes, and application lifecycle orchestration solutions via a unified platform that development teams can use for greater efficiency. It enables a frictionless developer experience with minimum overhead, reducing cognitive load and providing fast feedback out of the box.
 
-Platform engineeringâs standardized processes and technologies across development and operations teams lead to significant gains in developer productivity and improvements in developer experience.
+Platform engineering’s standardized processes and technologies across development and operations teams lead to significant gains in developer productivity and improvements in developer experience.
 
 Additionally, the platform engineering approach allows organizations to take advantage of economies of scale, consolidating sprawling tech stacks to:
 
@@ -95,15 +94,15 @@ To be broadly adopted by internal development teams and deliver on its promise o
 * Orchestration
 * Collaboration
 
-Top engineering teams unlock faster deployments and fewer errors by empowering developers to manage their own deployments. Enabling self-service requires developers to be able to debug code quickly, which isnât easy in complex environments. Observability makes all the difference.
+Top engineering teams unlock faster deployments and fewer errors by empowering developers to manage their own deployments. Enabling self-service requires developers to be able to debug code quickly, which isn’t easy in complex environments. Observability makes all the difference.
 
-Observability isnât just about the user-facing application. Effective platform engineeringâas DevOps at cloud-native scaleâenables self-service for developers or development teams, and that self-service often requires automation in the background. To provide guard rails and make the system governable, it must be observable.
+Observability isn’t just about the user-facing application. Effective platform engineering—as DevOps at cloud-native scale—enables self-service for developers or development teams, and that self-service often requires automation in the background. To provide guard rails and make the system governable, it must be observable.
 
 When implemented properly, platform engineering brings end-to-end observability to the full software development lifecycle, from development to release, to operation, and eventually to retirement.
 
 ### Implementation
 
-Fortunately, organizations donât have to replace every tool, vendor, and practice to implement platform engineering. DevOps and cloud-native processes often continue managing systems and pipelines and working on automation and self-service.
+Fortunately, organizations don’t have to replace every tool, vendor, and practice to implement platform engineering. DevOps and cloud-native processes often continue managing systems and pipelines and working on automation and self-service.
 
 ### Benefits
 
@@ -137,7 +136,7 @@ With a shared pool of resources for all projects, standardized practices, and th
 Effective platform engineering enables teams to keep complexity low, standardize delivery, and still allow for autonomy and freedom.
 
 * Security and compliance are built in by design of the platform components and services.
-* Golden Path templates standardize delivery â providing governance.
+* Golden Path templates standardize delivery – providing governance.
 * Identification and remediation of issues or misconfigurations across templatized and standardized services becomes quick and easy.
 
 ## The minimum viable platform: BACK stack + observability
@@ -145,18 +144,18 @@ Effective platform engineering enables teams to keep complexity low, standardize
 If you were to start from scratch, only with a Git and CI tool in place, a simple beginning could be to work with the BACK stack:
 
 Backstage
-:   [Graphical user interface (web portal)ï»¿](https://backstage.io/)
+:   [Graphical user interface (web portal)﻿](https://backstage.io/)
 
 Argo
-:   [Delivery of artifactsï»¿](https://argo-cd.readthedocs.io/en/stable/)
+:   [Delivery of artifacts﻿](https://argo-cd.readthedocs.io/en/stable/)
 
 Crossplane
-:   [APIs and CLIs for configuration automationï»¿](https://www.crossplane.io/)
+:   [APIs and CLIs for configuration automation﻿](https://www.crossplane.io/)
 
 Kyverno
-:   [Scan artifacts and enforce policiesï»¿](https://kyverno.io/)
+:   [Scan artifacts and enforce policies﻿](https://kyverno.io/)
 
-The BACK stack includes the artifact delivery and security as well as the configuration and developer portal, but thatâs not all it takes. Observing the workloads is equally important and must be included in a minimum viable platform.
+The BACK stack includes the artifact delivery and security as well as the configuration and developer portal, but that’s not all it takes. Observing the workloads is equally important and must be included in a minimum viable platform.
 
 To feed the observability and security data back to the developers, we offer a [Backstage integration](/managed/deliver/backstage-integration "Learn how to integrate Dynatrace into Backstage") with Kubernetes support by default and customizable queries.
 
@@ -166,7 +165,7 @@ OpenTelemetry offers open-source observability, and Dynatrace can be used for ob
 
 Kubernetes is a good starting point for building a platform, allowing platform engineering teams to provide self-service capabilities and features to their DevSecOps teams. However, it also introduces complexity to the cloud environment.
 
-Organizations need the automatic answers and insights that observability and security analytics provide to manage and overcome the complexity introduced by todayâs business needs and complex multi-cloud-native environments.
+Organizations need the automatic answers and insights that observability and security analytics provide to manage and overcome the complexity introduced by today’s business needs and complex multi-cloud-native environments.
 
 Follow these core principles when building your Internal Developer Platform (IDP) to manage an application or service throughout its Software Development Lifecycle (SDLC).
 
@@ -195,7 +194,7 @@ Attaching the current version and stage information to services allows for easy 
 
 While the platform tool stack monitoring outlined in the previous paragraph covers the health of the IDP, it does not yet cover the efficiency of the pipeline. This is where logs, events, and telemetry data from pipeline or workflow executions come in.
 
-By analyzing pipeline or workflow logs, events, and traces, itâs possible to create metrics (for example, DORA metrics) that can be used for benchmarking and deciding where to invest time or resources for improvement.
+By analyzing pipeline or workflow logs, events, and traces, it’s possible to create metrics (for example, DORA metrics) that can be used for benchmarking and deciding where to invest time or resources for improvement.
 
 Most used tools in a cloud-native environment already emit events or telemetry data, but this area currently lacks dedicated standards and semantic conventions.
 
@@ -219,7 +218,7 @@ We have categorized use cases with a product-lifecycle-centric view, rather than
 
 **Develop - Release - Operate - Predict - Prevent - Resolve - Protect - Improve**
 
-All of the following use cases are available to the platform engineering team to make their work observable and easier, or for the platform engineering team to provide automation and self-service capabilities to their usersâthe development teams.
+All of the following use cases are available to the platform engineering team to make their work observable and easier, or for the platform engineering team to provide automation and self-service capabilities to their users—the development teams.
 
 ### Develop
 
@@ -279,7 +278,7 @@ This category contains all activities around releasing and deploying in environm
 Goal
 :   Reduce change failure rate and reduce production deployment lead time by up to 99%
 
-Automatically validate new releases â taking downstream and upstream dependencies into account â based on baselining, observability data, SLOs, and security information. Use the results to drive meaningful follow-up actions. Providing release validation templates as part of every delivery process enables fast feedback regarding any negative side-effects of a new version. Faster feedback leads to better developer experience, higher release quality, and higher innovation pace.
+Automatically validate new releases — taking downstream and upstream dependencies into account — based on baselining, observability data, SLOs, and security information. Use the results to drive meaningful follow-up actions. Providing release validation templates as part of every delivery process enables fast feedback regarding any negative side-effects of a new version. Faster feedback leads to better developer experience, higher release quality, and higher innovation pace.
 
 Try it yourself: [Unavailable in Dynatrace Managed](/managed/upgrade/unavailable-in-managed "Your selection is unavailable in Dynatrace Managed.").
 
@@ -302,10 +301,10 @@ Based on the observability data, including SLO trends and synthetic checks, an a
 Goal
 :   100% real-time standardized coverage of your software lifecycle health.
 
-People often say, you canât manage what you canât measure. The statement holds true for the software development lifecycle as well. To calculate critical metrics, such as lead time for change, it's
+People often say, you can’t manage what you can’t measure. The statement holds true for the software development lifecycle as well. To calculate critical metrics, such as lead time for change, it's
 important to take note of the pipeline telemetry data.
 
-Using pipeline observability, the data (for example failed builds, lead time) can be calculated and acted upon automatically. With automated data, these metricsâlike the DORA metrics lead time for change, deployment frequency, change failure rate, and mean time to resolveâare readily available in several dimensions, including application/service, platform service/pipeline, and technology and
+Using pipeline observability, the data (for example failed builds, lead time) can be calculated and acted upon automatically. With automated data, these metrics—like the DORA metrics lead time for change, deployment frequency, change failure rate, and mean time to resolve—are readily available in several dimensions, including application/service, platform service/pipeline, and technology and
 ownership.
 
 In addition to metrics, logs and traces of pipeline runs can help debug erroneous pipelines or identify time-consuming hotspots that can be optimized for more efficient pipelines.
@@ -376,7 +375,7 @@ Try it yourself: [Unavailable in Dynatrace Managed](/managed/upgrade/unavailable
 
 ### Prevent
 
-Even when AI canât predict issues, it can often prevent them using observability and security data.
+Even when AI can’t predict issues, it can often prevent them using observability and security data.
 
 #### Bug prevention Preventing customer-facing bugs
 
@@ -390,7 +389,7 @@ Try it yourself: [Unavailable in Dynatrace Managed](/managed/upgrade/unavailable
 #### Unified exposure protection Unified exposure protection
 
 Goal
-:   Cut risk remediation from 96 hours to 4 hours â 95% faster.
+:   Cut risk remediation from 96 hours to 4 hours – 95% faster.
 
 Observability and security are converging to facilitate prioritization and risk assessment of security findings, resolving the most common frustration with existing tools, specifically during the software development stages. Combining this with automation leads to effective engagements with the teams who need to act on those security findings.
 
@@ -402,8 +401,8 @@ Goal
 Get a unified and prioritized view of different exposures across your different application tiers and your production and pre-production environments.
 
 * Prioritize vulnerabilities with a custom risk specific to your organization
-* Learn what remediation activities prioritize for impactâand let automation handle it
-* Learn the details of a vulnerability, such as which entities are impacted and whether thereâs any link to databases.
+* Learn what remediation activities prioritize for impact—and let automation handle it
+* Learn the details of a vulnerability, such as which entities are impacted and whether there’s any link to databases.
 
 ### Resolve
 
@@ -437,7 +436,7 @@ An easy way to focus on the right problems is to look at those actively impactin
 
 ### Protect
 
-All environments, infrastructures, and applications must be protected â with the right measures. Organizations can protect their assets more easily with a consistent Internal Developer Platform (IDP), providing governance and security.
+All environments, infrastructures, and applications must be protected — with the right measures. Organizations can protect their assets more easily with a consistent Internal Developer Platform (IDP), providing governance and security.
 
 #### Security alert noise reduction Security Operations Center (SOC) noise reduction
 
@@ -464,7 +463,7 @@ Understand the threat posed by your code, third party, and open-source libraries
 Goal
 :   From threat hypothesis to tangible evidence in minutes.
 
-Today, security takes everyone in your organization, and all your data is relevant for security. That's why it needs to be easy to ingest any data and have it available for manual detailed security analytics. At the pace of cybersecurity attacks today, there is no way around automation. By the time your valuable security analysts get in front of an incident or investigate a malicious pattern - you want to ensure it's worth their time. With data contextualization, workflow actions, and dedicated security analytics apps, you have all the tools to be proactive about security. Finding whether you have a bad actor in your system, what they are up to, and preventing them from being successful â with the merge of observability and security, it's easy to understand how to elevate your analysts by leveling up the security incident first, fully contextualizing the incident, and prioritizing based on
+Today, security takes everyone in your organization, and all your data is relevant for security. That's why it needs to be easy to ingest any data and have it available for manual detailed security analytics. At the pace of cybersecurity attacks today, there is no way around automation. By the time your valuable security analysts get in front of an incident or investigate a malicious pattern - you want to ensure it's worth their time. With data contextualization, workflow actions, and dedicated security analytics apps, you have all the tools to be proactive about security. Finding whether you have a bad actor in your system, what they are up to, and preventing them from being successful – with the merge of observability and security, it's easy to understand how to elevate your analysts by leveling up the security incident first, fully contextualizing the incident, and prioritizing based on
 importance.
 
 * Stop attackers in their tracks
@@ -505,7 +504,7 @@ It's critical to align platform engineering initiatives and work with the primar
 
 ### Governance and consistency at scale
 
-Golden Paths guide developers, saving time and reducing risks. But they're not one-size-fits-all â flexibility exists for individual customization and exploration.
+Golden Paths guide developers, saving time and reducing risks. But they're not one-size-fits-all — flexibility exists for individual customization and exploration.
 
 The result? A platform that scales effortlessly, where standardized efficiency works with developer autonomy to offer governance and consistency.
 
@@ -513,7 +512,7 @@ Applying product management principles and observability to the IDP makes it pos
 
 ### DORA metrics
 
-Googleâs DevOps Research and Assessment (DORA) team established the DORA metrics to provide key metrics on the performance of a software development team.
+Google’s DevOps Research and Assessment (DORA) team established the DORA metrics to provide key metrics on the performance of a software development team.
 
 The established four keys include:
 
@@ -538,7 +537,7 @@ Benchmarking in real-time and across dimensions (such as technologies and teams)
 
 ### Developer experience
 
-Platform engineering is ultimately about driving developer productivity. But how do you define and measure developer productivity and satisfaction? It canât be reduced to a single metric, but the SPACE framework captures critical dimensions of developer productivity:
+Platform engineering is ultimately about driving developer productivity. But how do you define and measure developer productivity and satisfaction? It can’t be reduced to a single metric, but the SPACE framework captures critical dimensions of developer productivity:
 
 * Satisfaction
 * Performance
@@ -557,7 +556,7 @@ The SPACE framework doesn't provide a ready-to-use list of metrics like the DORA
   As a Cloud Native Computing Foundation (CNCF) incubating project, OTel aims to provide unified sets of vendor-agnostic libraries and APIs, mainly for collecting data and transferring it somewhere.
 * Dynatrace, which is committed to making observability seamless for technical teams, is the only observability solution that combines high-fidelity distributed tracing, code-level visibility, and advanced diagnostics across cloud-native architectures. Data plus context are critical to supercharging observability.
 
-  By integrating OTel data seamlessly, Dynatraceâs distributed tracing technology automatically picks up OTel data and provides the instrumentation for all the essential frameworks beyond the scope of OTel.
+  By integrating OTel data seamlessly, Dynatrace’s distributed tracing technology automatically picks up OTel data and provides the instrumentation for all the essential frameworks beyond the scope of OTel.
 
 ![Dynatrace and OpenTelemetry](https://cdn.bfldr.com/B686QPH3/as/m6wc2jswn82rxs62fqbrgjq/Platform_Engineering__OpenTelemetry_-_Light_Mode?auto=webp&format=png&position=1)
 
@@ -567,7 +566,7 @@ Dynatrace and OpenTelemetry
 
 Implementing DevOps and platform engineering is not optional for organizations serious about transforming their ability to deliver value in the cloud. These practices are crucial, not just beneficial, for boosting productivity and achieving success in today's tech landscape.
 
-Dynatraceâs purpose-built solution for platform engineering reduces complexity through automated workflows, including auto-scaling, deployment validation, and anomaly remediation.
+Dynatrace’s purpose-built solution for platform engineering reduces complexity through automated workflows, including auto-scaling, deployment validation, and anomaly remediation.
 
 By leveraging the power of the Dynatrace platform and the new Kubernetes experience, platform engineers are empowered to implement the following best practices, enabling their development teams to deliver best-in-class applications and services to their customers.
 
@@ -581,7 +580,7 @@ Automation, automation, automation
 :   Adoption of GitOps practices enables platform provisioning at scale.
 
 Context
-:   Get access to not just data, but answers â reaching the right stakeholders at the right time.
+:   Get access to not just data, but answers — reaching the right stakeholders at the right time.
 
 1
 

@@ -1,7 +1,6 @@
 ---
 title: Settings API - Apdex configuration schema table
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/settings/schemas/builtin-rum-mobile-key-performance-metrics
-scraped: 2026-05-12T11:47:31.013631
 ---
 
 # Settings API - Apdex configuration schema table
@@ -12,7 +11,7 @@ scraped: 2026-05-12T11:47:31.013631
 
 ### Apdex configuration (`builtin:rum.mobile.key-performance-metrics)`
 
-[Set the user-satisfaction performance thresholdsï»¿](https://dt-url.net/4l023z2) (**Satisfactory**, **Tolerable**, and **Frustrating**) for the **User action duration** metric to refine the Apdex calculations for this app.
+[Set the user-satisfaction performance thresholds﻿](https://dt-url.net/4l023z2) (**Satisfactory**, **Tolerable**, and **Frustrating**) for the **User action duration** metric to refine the Apdex calculations for this app.
 
 | Schema ID | Schema groups | Scope |
 | --- | --- | --- |

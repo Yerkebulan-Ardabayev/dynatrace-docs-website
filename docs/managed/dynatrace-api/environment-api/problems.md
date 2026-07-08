@@ -1,7 +1,6 @@
 ---
 title: Problems API v1
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/problems
-scraped: 2026-05-12T11:38:33.700956
 ---
 
 # Problems API v1
@@ -14,7 +13,7 @@ scraped: 2026-05-12T11:38:33.700956
 
 This API is deprecated. Use the [Problems API v2](/managed/dynatrace-api/environment-api/problems-v2 "Find out what the Dynatrace Problems v2 API offers.") instead.
 
-The **Problems** API delivers details about [problems](/managed/dynatrace-intelligence "Get familiar with the capabilities of Davis AI.") that Dynatrace detects within your environment. A single problem typically contains summary information, impact analysis, and a list of any events that are correlated with the problem.
+The **Problems** API delivers details about [problems](/managed/dynatrace-intelligence "Learn how Davis® AI detects performance anomalies, identifies root causes, and uses AI models for adaptive thresholds across your environment.") that Dynatrace detects within your environment. A single problem typically contains summary information, impact analysis, and a list of any events that are correlated with the problem.
 
 [### List problem count
 
@@ -40,4 +39,4 @@ Delete a comment from a specified problem](/managed/dynatrace-api/environment-ap
 
 ## Related topics
 
-* [DavisÂ® AI](/managed/dynatrace-intelligence "Get familiar with the capabilities of Davis AI.")
+* [Davis® AI](/managed/dynatrace-intelligence "Learn how Davis® AI detects performance anomalies, identifies root causes, and uses AI models for adaptive thresholds across your environment.")

@@ -1,7 +1,6 @@
 ---
 title: Failure detection API
 source: https://docs.dynatrace.com/managed/dynatrace-api/configuration-api/service-api/failure-detection
-scraped: 2026-05-12T11:04:23.699145
 ---
 
 # Failure detection API

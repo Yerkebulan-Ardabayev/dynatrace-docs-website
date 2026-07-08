@@ -1,7 +1,6 @@
 ---
 title: Monitor Azure services with Azure Monitor metrics
 source: https://docs.dynatrace.com/managed/ingest-from/microsoft-azure-services/azure-integrations/azure-monitoring-guide
-scraped: 2026-05-12T11:09:41.501338
 ---
 
 # Monitor Azure services with Azure Monitor metrics
@@ -15,8 +14,6 @@ scraped: 2026-05-12T11:09:41.501338
 Follow this guide to start ingesting data remotely from Azure Monitor.
 
 This guide focuses on infrastructure monitoring of Azure services, specifically the monitoring of Azure cloud services via Azure Monitor. See [What's next](#next) for Full-Stack and Log Monitoring of your Azure services.
-
-Alternatively, you can configure your Dynatrace SaaS environment using [Azure Marketplace](/managed/ingest-from/microsoft-azure-services/azure-platform/azure-native-integration "Set and configure your Dynatrace SaaS environment using Azure Marketplace.").
 
 After you established the initial monitoring, you can add, remove, or modify service monitoring the Dynatrace web UI or, at scale, with the Dynatrace API.
 
@@ -33,8 +30,8 @@ The infrastructure monitoring of Azure services provides metrics from Azure Moni
 
 Factors that contribute to the cost of monitoring Azure with Dynatrace via Azure Monitor:
 
-* Each service monitored by Dynatrace through Azure Monitor, as well as log processing and analysis, causes the consumption of [Davis data units](/managed/license/monitoring-consumption-classic/davis-data-units "Understand how Dynatrace monitoring consumption is calculated based on Davis data units (DDU).").
-* Microsoft may charge you extra for Azure Monitor metric queries if you exceed 1 million API calls monthly. For the details on these additional costs, please consult [Microsoft online documentationï»¿](https://dt-url.net/ie03w85).
+* Each service monitored by Dynatrace through Azure Monitor, as well as log processing and analysis, causes the consumption of [Davis data units](/managed/license/classic-licensing/davis-data-units "Understand how Dynatrace monitoring consumption is calculated based on Davis data units (DDU).").
+* Microsoft may charge you extra for Azure Monitor metric queries if you exceed 1 million API calls monthly. For the details on these additional costs, please consult [Microsoft online documentation﻿](https://dt-url.net/ie03w85).
 * For details regarding the metric ingest costs, see [Unavailable in Dynatrace Managed](/managed/upgrade/unavailable-in-managed "Your selection is unavailable in Dynatrace Managed.").
 
 ## Monitoring prerequisites
@@ -71,10 +68,6 @@ https://management.azure.com/
 https://login.microsoftonline.com/
 ```
 
-```
-https://management.core.windows.net/
-```
-
 Proxy
 
 The most frequent cause of certificate issues with TLS interception proxy is a missing proxy's CA certificate in ActiveGate truststore.
@@ -95,13 +88,13 @@ To perform these steps, you need to have Azure admin privileges.
 Azure monitoring is performed remotely via Azure Monitor APIs that are created and exposed by Microsoft. Dynatrace needs to be able to access these APIs, so you need to configure Azure to allow for such access. You need the following:
 
 * Sufficient permissions to register an application with your Azure AD tenant and assign the application to a role in your Azure subscription
-* An Azure [service principalï»¿](https://docs.microsoft.com/en-us/azure/active-directory/develop/app-objects-and-service-principals) to access Azure APIs
+* An Azure [service principal﻿](https://docs.microsoft.com/en-us/azure/active-directory/develop/app-objects-and-service-principals) to access Azure APIs
 
 For Dynatrace to monitor your services, you need at least reader permissions. The steps below describe adding the service principal reader permissions and refer to a common, single-tenant access approach. Before that, we recommend getting familiar with our recommendations regarding [how to configure Azure service principal to avoid Azure throttling limits](/managed/ingest-from/microsoft-azure-services/azure-integrations/azure-monitoring-guide/limit-api-calls-to-azure#service-principal "Guide how to limit Azure API calls to avoid throttling limits").
 
 Dynatrace integration for Azure supports **Azure Lighthouse**, which allows Dynatrace to have multi-tenant access to Azure.
 
-1. Go to your [Azure CLI 2.0ï»¿](https://docs.microsoft.com/en-us/cli/azure/install-azure-cli) terminal.
+1. Go to your [Azure CLI 2.0﻿](https://docs.microsoft.com/en-us/cli/azure/install-azure-cli) terminal.
 2. Run the following command to list all the subscriptions so that you can select the one you want to add permissions for.
 
    ```
@@ -126,7 +119,7 @@ Create custom role via Azure CLI 2.0
 
 Another way to get reader permission is to create a custom role for Dynatrace with a predefined set of permissions for fine-grained control.
 
-1. Create a custom role by following the [Microsoft guideï»¿](https://docs.microsoft.com/en-us/azure/role-based-access-control/tutorial-custom-role-cli#create-a-custom-role). You can use the following JSON template as a base for the permissions:
+1. Create a custom role by following the [Microsoft guide﻿](https://docs.microsoft.com/en-us/azure/role-based-access-control/tutorial-custom-role-cli#create-a-custom-role). You can use the following JSON template as a base for the permissions:
 
    ```
    {
@@ -479,7 +472,7 @@ Another way to get reader permission is to create a custom role for Dynatrace wi
 
    }
    ```
-2. Go to your [Azure CLI 2.0ï»¿](https://docs.microsoft.com/en-us/cli/azure/install-azure-cli) terminal.
+2. Go to your [Azure CLI 2.0﻿](https://docs.microsoft.com/en-us/cli/azure/install-azure-cli) terminal.
 3. Run the following command to list all the subscriptions so you can select the one for which you want to add permissions.
 
    ```
@@ -499,9 +492,9 @@ Another way to get reader permission is to create a custom role for Dynatrace wi
 5. Run the edited command.
 6. Copy the credentials that are output from the command and save them for later.
 
-Create service principal via Azure Portal
+Create service principal via Azure portal
 
-To create a service principal in Azure Portal, you must register your application in the Microsoft Entra ID and grant access permissions for your service principal.
+To create a service principal in the Azure portal, you must register your application in the Microsoft Entra ID and grant access permissions for your service principal.
 
 To register your application
 
@@ -519,7 +512,7 @@ To register your application
 
 To grant access permissions for your service principal
 
-1. In Azure Portal, select **All services** > **General** > **Subscriptions**.
+1. In the Azure portal, select **All services** > **General** > **Subscriptions**.
 2. On the **Subscriptions** page, select your subscription and then select **Access control (IAM)**.
 
 Setup if you assign reader permissions
@@ -889,9 +882,9 @@ Setup if you create a custom role
 
 Create service principal via PowerShell
 
-To create a new service principal and grant it access permissions in PowerShell, see [Create an Azure service principal with Azure PowerShellï»¿](https://docs.microsoft.com/en-us/powershell/azure/create-azure-service-principal-azureps?view=azps-7.5.0&viewFallbackFrom=azps-2.0.0).
+To create a new service principal and grant it access permissions in PowerShell, see [Create an Azure service principal with Azure PowerShell﻿](https://docs.microsoft.com/en-us/powershell/azure/create-azure-service-principal-azureps?view=azps-7.5.0&viewFallbackFrom=azps-2.0.0).
 
-If you choose to create a custom [roleï»¿](https://docs.microsoft.com/en-us/azure/role-based-access-control/tutorial-custom-role-powershell), see [Create custom role via Azure CLI 2.0](#cli).
+If you choose to create a custom [role﻿](https://docs.microsoft.com/en-us/azure/role-based-access-control/tutorial-custom-role-powershell), see [Create custom role via Azure CLI 2.0](#cli).
 
 ## Create monitoring configuration
 
@@ -922,11 +915,11 @@ To add a new Azure connection
       * To delete an existing connection, select **Delete** ![Remove](https://dt-cdn.net/images/remove-icon-105c6a04c2.svg "Remove") in that row.
 2. Select **Connect new instance** and complete the configuration fields.
 
-   * **Connection ID**âtype a descriptive name for the connection.
-   * **Client ID** and **Tenant ID**âenter the values obtained when creating the Azure service principal.
+   * **Connection ID**—type a descriptive name for the connection.
+   * **Client ID** and **Tenant ID**—enter the values obtained when creating the Azure service principal.
 
      If you created the Azure service principal in PowerShell, set **Client ID** to the `ApplicationId` value.
-   * **Secret Key**âobtained when creating the Azure service principal.
+   * **Secret Key**—obtained when creating the Azure service principal.
 
      Limiting data capture
 
@@ -1001,7 +994,7 @@ List of Azure cloud services and collected metrics
 
 To see the complete list of Azure cloud services and learn about the metrics collected for each of them, see [All Azure cloud services](/managed/ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics "Monitor Azure services with Dynatrace and view available metrics.").
 
-You can check the list of supported Azure services in [Dynatrace Hubï»¿](https://www.dynatrace.com/hub/?query=azure). You can also access Dynatrace Hub from your monitoring environment and search for "Azure."
+You can check the list of supported Azure services in [Dynatrace Hub﻿](https://www.dynatrace.com/hub/?query=azure). You can also access Dynatrace Hub from your monitoring environment and search for "Azure."
 
 To add and configure metrics
 
@@ -1035,7 +1028,7 @@ Further configuration for notifications and alerts
 
 After you set up Azure monitoring, you can:
 
-* [Set up monitoring notifications with Azure Alerts](/managed/ingest-from/microsoft-azure-services/azure-integrations/azure-monitoring-guide/set-up-monitoring-with-azure-alerts "Integration with Azure Monitor alerts and supported Azure Monitor alerts types"). This allows you to apply alerts and automatically transform them into events that are leveraged by DavisÂ® AI for deeper insights.
+* [Set up monitoring notifications with Azure Alerts](/managed/ingest-from/microsoft-azure-services/azure-integrations/azure-monitoring-guide/set-up-monitoring-with-azure-alerts "Integration with Azure Monitor alerts and supported Azure Monitor alerts types"). This allows you to apply alerts and automatically transform them into events that are leveraged by Davis® AI for deeper insights.
 * [Set up metric events for alerting](/managed/ingest-from/microsoft-azure-services/azure-integrations/azure-monitoring-guide/set-up-metric-events-for-alerting "Set up and configure metric events for alerting."). This enables you to create, enable/disable, and configure recommended alerting rules.
 
 Monitoring of Azure logs

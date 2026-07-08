@@ -1,7 +1,6 @@
 ---
 title: Uninstall ActiveGate
 source: https://docs.dynatrace.com/managed/ingest-from/dynatrace-activegate/operation/uninstall-activegate
-scraped: 2026-05-12T11:52:13.361934
 ---
 
 # Uninstall ActiveGate

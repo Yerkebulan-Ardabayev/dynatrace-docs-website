@@ -1,7 +1,6 @@
 ---
 title: Cluster API - Tokens and authentication
 source: https://docs.dynatrace.com/managed/dynatrace-api/cluster-api/cluster-api-authentication
-scraped: 2026-05-12T11:24:01.272452
 ---
 
 # Cluster API - Tokens and authentication
@@ -51,7 +50,7 @@ To generate cluster API token
 1. Go to **Settings** > **API tokens**.
 2. In the **Cluster tokens** section, select **Generate token**.
 3. Enter a name for your token.
-4. Dynatrace provides the following permissions for API tokens. You can set them in the UI, as described above, or via Tokens API. You can assign multiple permissions to a single token, or you can generate several tokens, each with different access levels and use them accordinglyâcheck with your organization's security policies for the best practice. We recommend to keep tokens with a dedicated single scope to limit potential damage in case of leakage.
+4. Dynatrace provides the following permissions for API tokens. You can set them in the UI, as described above, or via Tokens API. You can assign multiple permissions to a single token, or you can generate several tokens, each with different access levels and use them accordingly—check with your organization's security policies for the best practice. We recommend to keep tokens with a dedicated single scope to limit potential damage in case of leakage.
 
    | Name | API value | Description |
    | --- | --- | --- |

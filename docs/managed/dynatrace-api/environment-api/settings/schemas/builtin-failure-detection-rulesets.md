@@ -1,7 +1,6 @@
 ---
 title: Settings API - Failure detection schema table
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/settings/schemas/builtin-failure-detection-rulesets
-scraped: 2026-05-12T11:39:10.783530
 ---
 
 # Settings API - Failure detection schema table
@@ -12,7 +11,7 @@ scraped: 2026-05-12T11:39:10.783530
 
 ### Failure detection (`builtin:failure-detection-rulesets)`
 
-Define rulesets to detect failures based on span attributes defined in the [Semantic Dictionaryï»¿](https://docs.dynatrace.com/docs/discover-dynatrace/references/semantic-dictionary/model/trace) and custom attributes. Rulesets are evaluated in order and the first matching one defines the failure detection result.
+Define rulesets to detect failures based on span attributes defined in the [Semantic Dictionary﻿](https://docs.dynatrace.com/docs/discover-dynatrace/references/semantic-dictionary/model/trace) and custom attributes. Rulesets are evaluated in order and the first matching one defines the failure detection result.
 
 | Schema ID | Schema groups | Scope |
 | --- | --- | --- |
@@ -43,7 +42,7 @@ To execute this request, you need an access token with **Read settings** (`setti
 | --- | --- | --- | --- |
 | Ruleset name `rulesetName` | text | - | Required |
 | Description `description` | text | - | Optional |
-| Matching condition `condition` | text | Limits the scope of the failure detection ruleset using [DQL matcherï»¿](https://dt-url.net/l603wby) conditions on span and resource attributes.  A ruleset is applied only if the condition matches, otherwise the evaluation continues.  If empty, the condition will always match. | Optional |
+| Matching condition `condition` | text | Limits the scope of the failure detection ruleset using [DQL matcher﻿](https://dt-url.net/l603wby) conditions on span and resource attributes.  A ruleset is applied only if the condition matches, otherwise the evaluation continues.  If empty, the condition will always match. | Optional |
 | HTTP status codes `failOnHttpResponseStatusCodes` | [failOnHttpResponseStatusCodes](#failOnHttpResponseStatusCodes) | Evaluated attribute: `http.response.status_code`  Failure detection result: `reason="http_code"`, `verdict="failure"` | Required |
 | gRPC status codes `failOnGrpcStatusCodes` | [failOnGrpcStatusCodes](#failOnGrpcStatusCodes) | Evaluated attribute: `rpc.grpc.status_code`  Failure detection result: `reason="grpc_code"`, `verdict="failure"` | Required |
 | Span status code `failOnSpanStatusError` | [failOnSpanStatusError](#failOnSpanStatusError) | Evaluated attribute: `span.status_code`  Failure detection result: `reason="span_status"`, `verdict="failure"` | Required |
@@ -82,7 +81,7 @@ To execute this request, you need an access token with **Read settings** (`setti
 | --- | --- | --- | --- |
 | Enabled `enabled` | boolean | - | Required |
 | Rule name `ruleName` | text | - | Required |
-| DQL condition `dqlCondition` | text | Custom rule based on span attributes using [DQL matcherï»¿](https://dt-url.net/l603wby). | Required |
+| DQL condition `dqlCondition` | text | Custom rule based on span attributes using [DQL matcher﻿](https://dt-url.net/l603wby). | Required |
 
 ##### The `overrides` object
 

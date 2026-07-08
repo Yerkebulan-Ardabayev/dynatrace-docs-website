@@ -1,7 +1,6 @@
 ---
 title: Configure high availability for Dynatrace Operator webhook
 source: https://docs.dynatrace.com/managed/ingest-from/setup-on-k8s/guides/high-availability/high-availability
-scraped: 2026-05-12T12:09:29.945714
 ---
 
 # Configure high availability for Dynatrace Operator webhook
@@ -134,10 +133,10 @@ Starting with Operator version 1.9.0, the `highAvailability` value is deprecated
 The legacy `highAvailability` Helm value offered the following capabilities:
 
 * Increases replicas to two replicas for webhook deployment.
-* Adds [pod topology spread constraintsï»¿](https://dt-url.net/xc03ysw):
+* Adds [pod topology spread constraints﻿](https://dt-url.net/xc03ysw):
 
   + Pods are spread across different nodes, with the nodes in different zones where possible.
   + Multiple pods are allowed in the same zone.
-* Adds [pod disruption budgetï»¿](https://dt-url.net/m303yfk):
+* Adds [pod disruption budget﻿](https://dt-url.net/m303yfk):
 
   + It restricts graceful shutdowns of the webhook pod if it's the last remaining pod.

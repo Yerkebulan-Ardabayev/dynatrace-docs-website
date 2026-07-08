@@ -1,7 +1,6 @@
 ---
 title: Dynatrace OpenKit API methods
 source: https://docs.dynatrace.com/managed/ingest-from/extend-dynatrace/openkit/dynatrace-openkit-api-methods
-scraped: 2026-05-12T11:33:50.412672
 ---
 
 # Dynatrace OpenKit API methods
@@ -119,8 +118,8 @@ const endpointURL: string = 'https://tenantid.beaconurl.com/mbeacon';
 const openkit = new OpenKitBuilder(endpointURL, applicationID, deviceID).build();
 ```
 
-* `endpointURL` is the Dynatrace endpoint that OpenKit communicates with. You can find the endpoint URL in your custom application settings. See [Instrument your application using Dynatrace OpenKit](/managed/ingest-from/extend-dynatrace/openkit/instrument-your-application-using-dynatrace-openkit "Learn how to use Dynatrace OpenKit to instrument all non-web and mobile-based digital touchpoints in your environment, whether or not theyâre traditional rich client applications, smart IoT applications, or even Alexa skills.") for more information.
-* `applicationID` is the unique identifier of the application. You can find the application ID in your custom application settings. See [Instrument your application using Dynatrace OpenKit](/managed/ingest-from/extend-dynatrace/openkit/instrument-your-application-using-dynatrace-openkit "Learn how to use Dynatrace OpenKit to instrument all non-web and mobile-based digital touchpoints in your environment, whether or not theyâre traditional rich client applications, smart IoT applications, or even Alexa skills.") for more information.
+* `endpointURL` is the Dynatrace endpoint that OpenKit communicates with. You can find the endpoint URL in your custom application settings. See [Instrument your application using Dynatrace OpenKit](/managed/ingest-from/extend-dynatrace/openkit/instrument-your-application-using-dynatrace-openkit "Learn how to use Dynatrace OpenKit to instrument all non-web and mobile-based digital touchpoints in your environment, whether or not they’re traditional rich client applications, smart IoT applications, or even Alexa skills.") for more information.
+* `applicationID` is the unique identifier of the application. You can find the application ID in your custom application settings. See [Instrument your application using Dynatrace OpenKit](/managed/ingest-from/extend-dynatrace/openkit/instrument-your-application-using-dynatrace-openkit "Learn how to use Dynatrace OpenKit to instrument all non-web and mobile-based digital touchpoints in your environment, whether or not they’re traditional rich client applications, smart IoT applications, or even Alexa skills.") for more information.
 * `deviceID` is a unique identifier, which can be used to uniquely identify a device.
 
 In addition to the mandatory parameters described above, the builder provides additional methods to further customize OpenKit. These include device-specific information like the operating system, manufacturer, or model ID.
@@ -821,7 +820,7 @@ const sessionWithoutArgument = openKit.createSession();
 
 ## Tag specific users
 
-You can tag the user assigned to a session. This enables you to search and filter specific user sessions and analyze individual user behavior over time in the backend. See [User tagging](/managed/observe/digital-experience/rum-concepts/user-and-error-events#user-tagging "Learn about user and error events and the types of user and error events captured by Dynatrace.") for more details.
+You can tag the user assigned to a session. This enables you to search and filter specific user sessions and analyze individual user behavior over time in the backend. See [User tagging](/managed/observe/digital-experience/rum-classic/rum-concepts/user-and-error-events#user-tagging "Learn about user and error events and the types of user and error events captured by Dynatrace.") for more details.
 
 Java
 
@@ -853,7 +852,7 @@ identifyUser(session, "jane.doe@example.com");
 session.identifyUser("jane.doe@example.com");
 ```
 
-When the [user opt-in mode](/managed/observe/digital-experience/mobile-applications/additional-configuration/configure-rum-privacy-mobile#opt-in-mode-mobile "Leverage privacy settings that Dynatrace provides to ensure that your mobile apps comply with the data-privacy regulations of your region.") is enabled for your application, it might affect user tagging and reporting of custom events, user actions, values, and errors. The exact data types not reported to Dynatrace depend on the data collection level set by a particular user. For details, refer to [Data collection levels](/managed/observe/digital-experience/mobile-applications/additional-configuration/configure-rum-privacy-mobile#data-collection-levels "Leverage privacy settings that Dynatrace provides to ensure that your mobile apps comply with the data-privacy regulations of your region.").
+When the [user opt-in mode](/managed/observe/digital-experience/rum-classic/mobile-applications/additional-configuration/configure-rum-privacy-mobile#opt-in-mode-mobile "Leverage privacy settings that Dynatrace provides to ensure that your mobile apps comply with the data-privacy regulations of your region.") is enabled for your application, it might affect user tagging and reporting of custom events, user actions, values, and errors. The exact data types not reported to Dynatrace depend on the data collection level set by a particular user. For details, refer to [Data collection levels](/managed/observe/digital-experience/rum-classic/mobile-applications/additional-configuration/configure-rum-privacy-mobile#data-collection-levels "Leverage privacy settings that Dynatrace provides to ensure that your mobile apps comply with the data-privacy regulations of your region.").
 
 ## Finish a session
 
@@ -907,7 +906,7 @@ session.end();
 
 ## Report a crash
 
-You can report unexpected application [crashes](/managed/observe/digital-experience/rum-concepts/user-and-error-events#crash "Learn about user and error events and the types of user and error events captured by Dynatrace.") on a session. The crash details are sent immediately after you've reported a crash.
+You can report unexpected application [crashes](/managed/observe/digital-experience/rum-classic/rum-concepts/user-and-error-events#crash "Learn about user and error events and the types of user and error events captured by Dynatrace.") on a session. The crash details are sent immediately after you've reported a crash.
 
 Java
 
@@ -1205,7 +1204,7 @@ session.reportCrash(e.name, e.message, e.stack);
 
 ## Create custom and child actions
 
-You can define and report custom actions. After you create a custom action, you can add a [child action](/managed/observe/digital-experience/rum-concepts/user-actions#child-actions "Learn what user actions are and how they help you understand what users do with your application.") to it or enhance an action with additional information before finally closing it. You should create custom actions from a session and child actions from a custom action.
+You can define and report custom actions. After you create a custom action, you can add a [child action](/managed/observe/digital-experience/rum-classic/rum-concepts/user-actions#child-actions "Learn what user actions are and how they help you understand what users do with your application.") to it or enhance an action with additional information before finally closing it. You should create custom actions from a session and child actions from a custom action.
 
 Java
 
@@ -1339,11 +1338,11 @@ const childAction = rootAction.enterAction(childActionName);
 
 The maximum duration of a user action in custom apps is 10 minutes. When a user action takes longer than this, such an action is discarded and not reported to Dynatrace.
 
-There's no limit on the number of child actions attached to a custom action. However, note that you can have only one level of child actionsâyou can't create a child action for another child action (child actions can't have their own child actions). Also, refer to [User session structure for individual user](/managed/observe/digital-experience/rum-concepts/user-session#session-structure-dep-on-app-type "Learn how a user session is defined, when a user session starts or ends, how user session duration is calculated, and more.").
+There's no limit on the number of child actions attached to a custom action. However, note that you can have only one level of child actions—you can't create a child action for another child action (child actions can't have their own child actions). Also, refer to [User session structure for individual user](/managed/observe/digital-experience/rum-classic/rum-concepts/user-session#session-structure-dep-on-app-type "Learn how a user session is defined, when a user session starts or ends, how user session duration is calculated, and more.").
 
-Child actions are not displayed on the [user session details page](/managed/observe/digital-experience/session-segmentation/new-user-sessions#session-details-page "Learn about user session segmentation and filtering attributes."), but you can view them on the [waterfall analysis page](/managed/observe/digital-experience/web-applications/analyze-and-use/waterfall-analysis "Learn how to analyze all user action monitoring data through waterfall analysis.") for a custom action to which these child actions are attached.
+Child actions are not displayed on the [user session details page](/managed/observe/digital-experience/rum-classic/session-segmentation/user-sessions#session-details-page "Learn about user session segmentation and filtering attributes."), but you can view them on the [waterfall analysis page](/managed/observe/digital-experience/rum-classic/web-applications/analyze-and-use/waterfall-analysis "Learn how to analyze all user action monitoring data through waterfall analysis.") for a custom action to which these child actions are attached.
 
-When the [user opt-in mode](/managed/observe/digital-experience/mobile-applications/additional-configuration/configure-rum-privacy-mobile#opt-in-mode-mobile "Leverage privacy settings that Dynatrace provides to ensure that your mobile apps comply with the data-privacy regulations of your region.") is enabled for your application, it might affect user tagging and reporting of custom events, user actions, values, and errors. The exact data types not reported to Dynatrace depend on the data collection level set by a particular user. For details, refer to [Data collection levels](/managed/observe/digital-experience/mobile-applications/additional-configuration/configure-rum-privacy-mobile#data-collection-levels "Leverage privacy settings that Dynatrace provides to ensure that your mobile apps comply with the data-privacy regulations of your region.").
+When the [user opt-in mode](/managed/observe/digital-experience/rum-classic/mobile-applications/additional-configuration/configure-rum-privacy-mobile#opt-in-mode-mobile "Leverage privacy settings that Dynatrace provides to ensure that your mobile apps comply with the data-privacy regulations of your region.") is enabled for your application, it might affect user tagging and reporting of custom events, user actions, values, and errors. The exact data types not reported to Dynatrace depend on the data collection level set by a particular user. For details, refer to [Data collection levels](/managed/observe/digital-experience/rum-classic/mobile-applications/additional-configuration/configure-rum-privacy-mobile#data-collection-levels "Leverage privacy settings that Dynatrace provides to ensure that your mobile apps comply with the data-privacy regulations of your region.").
 
 ## End an action
 
@@ -1537,11 +1536,11 @@ action.reportEvent(eventName);
 rootAction.reportEvent(eventName);
 ```
 
-When the [user opt-in mode](/managed/observe/digital-experience/mobile-applications/additional-configuration/configure-rum-privacy-mobile#opt-in-mode-mobile "Leverage privacy settings that Dynatrace provides to ensure that your mobile apps comply with the data-privacy regulations of your region.") is enabled for your application, it might affect user tagging and reporting of custom events, user actions, values, and errors. The exact data types not reported to Dynatrace depend on the data collection level set by a particular user. For details, refer to [Data collection levels](/managed/observe/digital-experience/mobile-applications/additional-configuration/configure-rum-privacy-mobile#data-collection-levels "Leverage privacy settings that Dynatrace provides to ensure that your mobile apps comply with the data-privacy regulations of your region.").
+When the [user opt-in mode](/managed/observe/digital-experience/rum-classic/mobile-applications/additional-configuration/configure-rum-privacy-mobile#opt-in-mode-mobile "Leverage privacy settings that Dynatrace provides to ensure that your mobile apps comply with the data-privacy regulations of your region.") is enabled for your application, it might affect user tagging and reporting of custom events, user actions, values, and errors. The exact data types not reported to Dynatrace depend on the data collection level set by a particular user. For details, refer to [Data collection levels](/managed/observe/digital-experience/rum-classic/mobile-applications/additional-configuration/configure-rum-privacy-mobile#data-collection-levels "Leverage privacy settings that Dynatrace provides to ensure that your mobile apps comply with the data-privacy regulations of your region.").
 
 ## Report a value
 
-The `reportValue` method allows you to report key-value pairs of metadata that you can later view in the Dynatrace web UI and convert into [user action and user session properties](/managed/observe/digital-experience/custom-applications/analyze-and-use/action-and-session-properties-custom "User action and session properties, which are metadata key-value pairs, provide added visibility and deeper analysis of your end users' experience. Using these properties for your applications, you can filter user sessions, add calculated metrics, create charts, and more."). The reported values must be part of a user action.
+The `reportValue` method allows you to report key-value pairs of metadata that you can later view in the Dynatrace web UI and convert into [user action and user session properties](/managed/observe/digital-experience/rum-classic/custom-applications/analyze-and-use/action-and-session-properties-custom "User action and session properties, which are metadata key-value pairs, provide added visibility and deeper analysis of your end users' experience. Using these properties for your applications, you can filter user sessions, add calculated metrics, create charts, and more."). The reported values must be part of a user action.
 
 You can report values of the following data types:
 
@@ -1854,13 +1853,13 @@ To view the reported values in Dynatrace, go to the details of the user action t
 
 User action details page with SDK-reported values
 
-To add action and session properties based on the reported values and then use these properties to create powerful queries, segmentations, and aggregations, see [Define user action and user session properties for custom applications](/managed/observe/digital-experience/custom-applications/additional-configuration/define-custom-action-and-session-properties "Send metadata to Dynatrace and define action and session properties for your monitored custom applications.").
+To add action and session properties based on the reported values and then use these properties to create powerful queries, segmentations, and aggregations, see [Define user action and user session properties for custom applications in RUM Classic](/managed/observe/digital-experience/rum-classic/custom-applications/additional-configuration/define-custom-action-and-session-properties "Send metadata to Dynatrace and define action and session properties for your monitored custom applications.").
 
-When the [user opt-in mode](/managed/observe/digital-experience/mobile-applications/additional-configuration/configure-rum-privacy-mobile#opt-in-mode-mobile "Leverage privacy settings that Dynatrace provides to ensure that your mobile apps comply with the data-privacy regulations of your region.") is enabled for your application, it might affect user tagging and reporting of custom events, user actions, values, and errors. The exact data types not reported to Dynatrace depend on the data collection level set by a particular user. For details, refer to [Data collection levels](/managed/observe/digital-experience/mobile-applications/additional-configuration/configure-rum-privacy-mobile#data-collection-levels "Leverage privacy settings that Dynatrace provides to ensure that your mobile apps comply with the data-privacy regulations of your region.").
+When the [user opt-in mode](/managed/observe/digital-experience/rum-classic/mobile-applications/additional-configuration/configure-rum-privacy-mobile#opt-in-mode-mobile "Leverage privacy settings that Dynatrace provides to ensure that your mobile apps comply with the data-privacy regulations of your region.") is enabled for your application, it might affect user tagging and reporting of custom events, user actions, values, and errors. The exact data types not reported to Dynatrace depend on the data collection level set by a particular user. For details, refer to [Data collection levels](/managed/observe/digital-experience/rum-classic/mobile-applications/additional-configuration/configure-rum-privacy-mobile#data-collection-levels "Leverage privacy settings that Dynatrace provides to ensure that your mobile apps comply with the data-privacy regulations of your region.").
 
 ## Report an error
 
-You can report an [error](/managed/observe/digital-experience/rum-concepts/user-and-error-events#error "Learn about user and error events and the types of user and error events captured by Dynatrace.") including its name (`errorName`) and error code (`errorCode`).
+You can report an [error](/managed/observe/digital-experience/rum-classic/rum-concepts/user-and-error-events#error "Learn about user and error events and the types of user and error events captured by Dynatrace.") including its name (`errorName`) and error code (`errorCode`).
 
 Java
 
@@ -1946,10 +1945,10 @@ action.reportError(errorName, errorCode);
 
 You can also report the following additional information on the error:
 
-* Required `errorName`âThe human-readable name of the error.
-* Optional `causeName`âThe cause leading to the reported error, for example, the exception's class name.
-* Optional `causeDescription`âThe description of the cause leading to the error, for example, the exception's description.
-* Optional `stackTrace` or `causeStackTrace`âThe stack trace of the cause leading to the error.
+* Required `errorName`—The human-readable name of the error.
+* Optional `causeName`—The cause leading to the reported error, for example, the exception's class name.
+* Optional `causeDescription`—The description of the cause leading to the error, for example, the exception's description.
+* Optional `stackTrace` or `causeStackTrace`—The stack trace of the cause leading to the error.
 
 The code snippet below shows how to report errors with additional information.
 
@@ -2275,7 +2274,7 @@ action.ReportError(errorName, caughtException);
 }
 ```
 
-When the [user opt-in mode](/managed/observe/digital-experience/mobile-applications/additional-configuration/configure-rum-privacy-mobile#opt-in-mode-mobile "Leverage privacy settings that Dynatrace provides to ensure that your mobile apps comply with the data-privacy regulations of your region.") is enabled for your application, it might affect user tagging and reporting of custom events, user actions, values, and errors. The exact data types not reported to Dynatrace depend on the data collection level set by a particular user. For details, refer to [Data collection levels](/managed/observe/digital-experience/mobile-applications/additional-configuration/configure-rum-privacy-mobile#data-collection-levels "Leverage privacy settings that Dynatrace provides to ensure that your mobile apps comply with the data-privacy regulations of your region.").
+When the [user opt-in mode](/managed/observe/digital-experience/rum-classic/mobile-applications/additional-configuration/configure-rum-privacy-mobile#opt-in-mode-mobile "Leverage privacy settings that Dynatrace provides to ensure that your mobile apps comply with the data-privacy regulations of your region.") is enabled for your application, it might affect user tagging and reporting of custom events, user actions, values, and errors. The exact data types not reported to Dynatrace depend on the data collection level set by a particular user. For details, refer to [Data collection levels](/managed/observe/digital-experience/rum-classic/mobile-applications/additional-configuration/configure-rum-privacy-mobile#data-collection-levels "Leverage privacy settings that Dynatrace provides to ensure that your mobile apps comply with the data-privacy regulations of your region.").
 
 ## Trace web requests
 
@@ -2673,7 +2672,7 @@ You can dynamically adjust data privacy settings and build your custom applicati
 
 ### Data collection levels
 
-The table below describes the available data collection levels and shows whether [user tags](/managed/observe/digital-experience/rum-concepts/user-and-error-events#user-tagging "Learn about user and error events and the types of user and error events captured by Dynatrace.") and custom user actions, events, values, and errors are reported for a particular level.
+The table below describes the available data collection levels and shows whether [user tags](/managed/observe/digital-experience/rum-classic/rum-concepts/user-and-error-events#user-tagging "Learn about user and error events and the types of user and error events captured by Dynatrace.") and custom user actions, events, values, and errors are reported for a particular level.
 
 | Level | Description | User tags, custom events, and custom values | Custom user actions and errors |
 | --- | --- | --- | --- |
@@ -2693,7 +2692,7 @@ If you haven't configured user tagging and custom event or value reporting, the 
 
 The following crash reporting levels are available.
 
-| Level name | Crash reporting | Use this level whenâ¦ |
+| Level name | Crash reporting | Use this level when… |
 | --- | --- | --- |
 | **Off** | Not applicable Disabled | You don't need to collect crash reports. |
 | **Opt out crashes** | Not applicable Disabled | The user of your application has disallowed the collection of crash reports. |

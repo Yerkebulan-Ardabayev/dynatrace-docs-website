@@ -1,7 +1,6 @@
 ---
 title: Settings API - Apache HTTP Server schema table
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/settings/schemas/builtin-monitored-technologies-apache
-scraped: 2026-05-12T11:41:36.393745
 ---
 
 # Settings API - Apache HTTP Server schema table

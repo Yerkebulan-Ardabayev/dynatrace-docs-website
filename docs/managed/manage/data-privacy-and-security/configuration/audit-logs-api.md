@@ -1,7 +1,6 @@
 ---
 title: Audit logs via API
 source: https://docs.dynatrace.com/managed/manage/data-privacy-and-security/configuration/audit-logs-api
-scraped: 2026-05-12T11:08:51.693218
 ---
 
 # Audit logs via API
@@ -27,7 +26,7 @@ Audit logs include personal identifiable information (PII) such as email address
 
 ## Enable audit logging
 
-ð´ Disabled by default
+🔴 Disabled by default
 
 To enable audit logging
 

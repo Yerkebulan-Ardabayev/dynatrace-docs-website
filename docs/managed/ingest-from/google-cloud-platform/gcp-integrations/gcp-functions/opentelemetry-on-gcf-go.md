@@ -1,7 +1,6 @@
 ---
 title: Integrate on Google Cloud Functions GoLang
 source: https://docs.dynatrace.com/managed/ingest-from/google-cloud-platform/gcp-integrations/gcp-functions/opentelemetry-on-gcf-go
-scraped: 2026-05-12T11:51:56.558434
 ---
 
 # Integrate on Google Cloud Functions GoLang
@@ -12,7 +11,7 @@ scraped: 2026-05-12T11:51:56.558434
 * 8-min read
 * Updated on Jun 16, 2023
 
-The [`dynatrace-oss/opentelemetry-exporter-go`ï»¿](https://dt-url.net/jq034sr) package provides an API for tracing Go code on Google Cloud Functions. This package provides a way to instrument your code with Dynatrace-enhanced OpenTelemetry traces.
+The [`dynatrace-oss/opentelemetry-exporter-go`﻿](https://dt-url.net/jq034sr) package provides an API for tracing Go code on Google Cloud Functions. This package provides a way to instrument your code with Dynatrace-enhanced OpenTelemetry traces.
 
 We recommend using this package. As an alternative, you can instrument your Google Cloud Functions with plain OpenTelemetry, see [Trace Google Cloud Functions in Go with OpenTelemetry](/managed/ingest-from/google-cloud-platform/gcp-integrations/gcp-functions/otel-gcf-go "Learn how to instrument Google Cloud Functions in Go with OpenTelemetry and export the traces to Dynatrace.").
 
@@ -29,7 +28,7 @@ Ensure that you have followed the **initial configuration** steps described in [
 
 ## Installation
 
-Run the following command in the root directory of your Google Cloud Function project to install the latest version of the [`dynatrace-oss/opentelemetry-exporter-go`ï»¿](https://dt-url.net/jq034sr) package from GitHub.
+Run the following command in the root directory of your Google Cloud Function project to install the latest version of the [`dynatrace-oss/opentelemetry-exporter-go`﻿](https://dt-url.net/jq034sr) package from GitHub.
 
 ```
 go get github.com/dynatrace-oss/opentelemetry-exporter-go/core
@@ -209,13 +208,13 @@ return tracerProvider, nil
 
 ### Step 3 Instrument the function entry point
 
-There are several trigger types for Google Cloud Functions. See below how to instrument Cloud Functions with [HTTP triggersï»¿](https://dt-url.net/al234i0) and [Pub/Sub triggersï»¿](https://dt-url.net/oq434w7).
+There are several trigger types for Google Cloud Functions. See below how to instrument Cloud Functions with [HTTP triggers﻿](https://dt-url.net/al234i0) and [Pub/Sub triggers﻿](https://dt-url.net/oq434w7).
 
 Instrument HTTP trigger
 
 Instrument Pub/Sub trigger
 
-When your Cloud Function has an HTTP trigger, you can instrument it with the help of the [`otelhttp`ï»¿](https://dt-url.net/6c634nr) package. First, install the package:
+When your Cloud Function has an HTTP trigger, you can instrument it with the help of the [`otelhttp`﻿](https://dt-url.net/6c634nr) package. First, install the package:
 
 ```
 go get go.opentelemetry.io/contrib/instrumentation/net/http/otelhttp
@@ -565,7 +564,7 @@ func handler(w http.ResponseWriter, r *http.Request) {
 }
 ```
 
-When using any version before [version 0.37.0 of the `otelhttp` packageï»¿](https://github.com/open-telemetry/opentelemetry-go-contrib/releases/tag/v1.12.0), it is required to explicitly call `w.WriteHeader(...)` or `w.Write(...)` in your HTTP function handler. Other methods which write content to the `ResponseWriter`, such as `fmt.Fprint(w, "OK")`, are also valid. Your function handler should then look something like this:
+When using any version before [version 0.37.0 of the `otelhttp` package﻿](https://github.com/open-telemetry/opentelemetry-go-contrib/releases/tag/v1.12.0), it is required to explicitly call `w.WriteHeader(...)` or `w.Write(...)` in your HTTP function handler. Other methods which write content to the `ResponseWriter`, such as `fmt.Fprint(w, "OK")`, are also valid. Your function handler should then look something like this:
 
 ```
 func handler(w http.ResponseWriter, r *http.Request) {
@@ -1207,9 +1206,9 @@ return nil
 }
 ```
 
-The code samples above apply to [CloudEvent functionsï»¿](https://dt-url.net/fm834cy). The code would require minor adaptations, such as removing the `MessagePublishedData` object and unmarshalling the event data directly to a `PubSubMessage` object, when using [*background functions*ï»¿](https://dt-url.net/83a34xp).
+The code samples above apply to [CloudEvent functions﻿](https://dt-url.net/fm834cy). The code would require minor adaptations, such as removing the `MessagePublishedData` object and unmarshalling the event data directly to a `PubSubMessage` object, when using [*background functions*﻿](https://dt-url.net/83a34xp).
 
-For instructions on how to deploy your Cloud Function, see [Create and deploy a Cloud Function by using the Google Cloud CLIï»¿](https://dt-url.net/l2c342b).
+For instructions on how to deploy your Cloud Function, see [Create and deploy a Cloud Function by using the Google Cloud CLI﻿](https://dt-url.net/l2c342b).
 
 ### Step 4 Instrument outgoing requests
 
@@ -1231,10 +1230,10 @@ Because code running outside the function execution can be terminated at any tim
 * Google Cloud Functions 2nd gen
 
   Google Cloud Functions 2nd gen can handle multiple concurrent requests in a single function instance. The flush operation of one invocation can prolong the execution time of another function invocation.
-  Because function instances usually need to be kept idle for some time to handle multiple concurrent requests, you can disable the flushing of spans to improve performance. For details, see [Instance lifecycleï»¿](https://cloud.google.com/run/docs/container-contract#lifecycle-services).
-  Note that idle function instances are not guaranteed to be allocated CPU unless their [CPU allocationï»¿](https://cloud.google.com/run/docs/configuring/cpu-allocation) mode is set to `CPU always allocated`.
+  Because function instances usually need to be kept idle for some time to handle multiple concurrent requests, you can disable the flushing of spans to improve performance. For details, see [Instance lifecycle﻿](https://cloud.google.com/run/docs/container-contract#lifecycle-services).
+  Note that idle function instances are not guaranteed to be allocated CPU unless their [CPU allocation﻿](https://cloud.google.com/run/docs/configuring/cpu-allocation) mode is set to `CPU always allocated`.
 
-  For details, see [Function execution timelineï»¿](https://cloud.google.com/functions/docs/concepts/execution-environment#execution-timeline).
+  For details, see [Function execution timeline﻿](https://cloud.google.com/functions/docs/concepts/execution-environment#execution-timeline).
 
 ## Dynatrace overhead
 
@@ -1247,4 +1246,4 @@ Because code running outside the function execution can be terminated at any tim
 * [Set up OpenTelemetry monitoring for Google Cloud Functions](/managed/ingest-from/google-cloud-platform/gcp-integrations/gcp-functions/opentelemetry-on-gcf "Monitor Google Cloud Functions with OpenTelemetry and Dynatrace.")
 * [Trace Google Cloud Functions in Go with OpenTelemetry](/managed/ingest-from/google-cloud-platform/gcp-integrations/gcp-functions/otel-gcf-go "Learn how to instrument Google Cloud Functions in Go with OpenTelemetry and export the traces to Dynatrace.")
 * [Set up Dynatrace on Google Cloud](/managed/ingest-from/google-cloud-platform "Monitor Google Cloud with Dynatrace.")
-* [Google Cloud monitoringï»¿](https://www.dynatrace.com/technologies/google-cloud-monitoring/)
+* [Google Cloud monitoring﻿](https://www.dynatrace.com/technologies/google-cloud-monitoring/)

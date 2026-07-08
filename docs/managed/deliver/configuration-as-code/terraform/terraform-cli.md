@@ -1,7 +1,6 @@
 ---
 title: Install Terraform CLI and set up Configuration as Code via Terraform
 source: https://docs.dynatrace.com/managed/deliver/configuration-as-code/terraform/terraform-cli
-scraped: 2026-05-12T11:21:31.157280
 ---
 
 # Install Terraform CLI and set up Configuration as Code via Terraform
@@ -16,7 +15,7 @@ This guide describes how to install the Terraform CLI and set up the Dynatrace T
 
 ## Install Terraform CLI
 
-Start by installing Terraform on your system as described in the [Terraform documentationï»¿](https://dt-url.net/hd037k2).
+Start by installing Terraform on your system as described in the [Terraform documentation﻿](https://dt-url.net/hd037k2).
 
 1. Download the binary according to your operating system.
 2. Set the `PATH` to ensure the Terraform binary is accessible system-wide.

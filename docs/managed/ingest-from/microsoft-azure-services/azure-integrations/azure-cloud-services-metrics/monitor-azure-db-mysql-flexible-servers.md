@@ -1,7 +1,6 @@
 ---
 title: Azure Database for MySQL Flexible Servers monitoring
 source: https://docs.dynatrace.com/managed/ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics/monitor-azure-db-mysql-flexible-servers
-scraped: 2026-05-12T11:26:18.720978
 ---
 
 # Azure Database for MySQL Flexible Servers monitoring

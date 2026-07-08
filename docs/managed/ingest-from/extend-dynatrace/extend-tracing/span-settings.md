@@ -1,7 +1,6 @@
 ---
 title: Span settings
 source: https://docs.dynatrace.com/managed/ingest-from/extend-dynatrace/extend-tracing/span-settings
-scraped: 2026-05-12T11:22:11.333263
 ---
 
 # Span settings
@@ -13,14 +12,14 @@ scraped: 2026-05-12T11:22:11.333263
 
 OneAgent version 1.215+ Dynatrace version 1.216+
 
-Dynatrace automatically captures all OpenTracing and OpenTelemetry spans, but you can control and adapt how OpenTelemetry and OpenTracing spans are combined with OneAgent data into PurePathÂ® distributed traces.
+Dynatrace automatically captures all OpenTracing and OpenTelemetry spans, but you can control and adapt how OpenTelemetry and OpenTracing spans are combined with OneAgent data into PurePath® distributed traces.
 
 The span settings are available at **Settings** > **Server-side service monitoring**. You can define rules to:
 
-* Store and mask only specific attributesâ**Attribute capturing**
-* Exclude specific spansâ**Span capturing**
-* Define spans that should be considered as entry pointsâ**Span entry points**
-* Enable context propagation for certain spansâ**Span context propagation**
+* Store and mask only specific attributes—**Attribute capturing**
+* Exclude specific spans—**Span capturing**
+* Define spans that should be considered as entry points—**Span entry points**
+* Enable context propagation for certain spans—**Span context propagation**
 
 For details, see the sections that follow.
 
@@ -77,9 +76,9 @@ To control your span capturing
    * **Attribute**
    * **Instrumentation scope name**, `OpenTelemetry`
    * **Instrumentation scope version**
-   * **Span kind**âfor example, `server`
+   * **Span kind**—for example, `server`
    * **Span name**
-7. Select the **Comparison type**âfor example, **Contains** or **Equals**.
+7. Select the **Comparison type**—for example, **Contains** or **Equals**.
 8. Enter the value for the source you specified earlier.
 9. By default, the search for key and value is not case sensitive. Turn on **Case sensitive** if you want your rule to consider key and value case.
 10. Select **Save changes**.
@@ -105,16 +104,16 @@ To control your span entry points
    * **Attribute**
    * **Instrumentation scope name**, `OpenTelemetry`
    * **Instrumentation scope version**
-   * **Span kind**âfor example, `server`
+   * **Span kind**—for example, `server`
    * **Span name**
-7. Select the **Comparison type**âfor example, **Contains** or **Equals**.
+7. Select the **Comparison type**—for example, **Contains** or **Equals**.
 8. Enter the value for the source you specified earlier.
 9. By default, the search for key and value is not case sensitive. Turn on **Case sensitive** if you want your rule to consider key and value case.
 10. Select **Save changes**.
 
 ## Span context propagation
 
-Context propagation enables you to connect distributed traces through OpenTelemetry/OpenTracing. You can connect distributed traces through any protocol and propagate the inject and extract usage to the Dynatrace PurePathÂ® distributed traces context.
+Context propagation enables you to connect distributed traces through OpenTelemetry/OpenTracing. You can connect distributed traces through any protocol and propagate the inject and extract usage to the Dynatrace PurePath® distributed traces context.
 
 To reduce the risk of context propagation conflicts with built-in sensors, context propagation is disabled by default and is limited to spans matching the criteria of your choice.
 
@@ -130,9 +129,9 @@ To define rules to enable context propagation for specific spans
    * **Attribute**
    * **Instrumentation scope name**, `OpenTelemetry`
    * **Instrumentation scope version**
-   * **Span kind**âfor example, `server`
+   * **Span kind**—for example, `server`
    * **Span name**
-7. Select the **Comparison type**âfor example, **Contains** or **Equals**.
+7. Select the **Comparison type**—for example, **Contains** or **Equals**.
 8. Add the value for the source you specified earlier.
 9. By default, the search for key and value is not case sensitive. Turn on **Case sensitive** if you want your rule to consider key and value case.
 10. Select **Save changes**.

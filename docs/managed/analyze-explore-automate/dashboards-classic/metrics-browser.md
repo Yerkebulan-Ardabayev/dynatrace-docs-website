@@ -1,7 +1,6 @@
 ---
 title: Metrics browser
 source: https://docs.dynatrace.com/managed/analyze-explore-automate/dashboards-classic/metrics-browser
-scraped: 2026-05-12T11:06:56.759696
 ---
 
 # Metrics browser
@@ -26,11 +25,11 @@ Go to **Metrics** to open the **Metrics** browser, which is a cool tool for brow
   + To unfavorite a metric, select the star again.
 * The filter bar (**Filtered by**) has the following options.
 
-  + `Text`âSelect `Text`, enter a filter string, and then press **Enter** to list metrics that include the string in **Metric name**, **Metric key**, or **Description**.
-  + `Tag`âSelect `Tag`, enter a filter string, and then select a matching tag to list metrics that include the tag in **Tags**.
-  + `Unit`âSelect `Unit`, enter a filter string, and then select a matching metric unit (for example, `Percent`) to list metrics that have the selected **Unit**.
-  + `Favorites`âSelect `Favorites` and then select `Yes` (to list only favorited metrics) or `No` (to list only metrics that are not favorited).
-  + `Dimension`âSelect `Dimension`, enter a filter string, and then select a matching metric dimension (for example, `Host`) to list metrics that have the selected dimension.
+  + `Text`—Select `Text`, enter a filter string, and then press **Enter** to list metrics that include the string in **Metric name**, **Metric key**, or **Description**.
+  + `Tag`—Select `Tag`, enter a filter string, and then select a matching tag to list metrics that include the tag in **Tags**.
+  + `Unit`—Select `Unit`, enter a filter string, and then select a matching metric unit (for example, `Percent`) to list metrics that have the selected **Unit**.
+  + `Favorites`—Select `Favorites` and then select `Yes` (to list only favorited metrics) or `No` (to list only metrics that are not favorited).
+  + `Dimension`—Select `Dimension`, enter a filter string, and then select a matching metric dimension (for example, `Host`) to list metrics that have the selected dimension.
 
     If you combine filters, they are ANDed together. For example, if you set `Dimension` to `Host` and set `Text` to `usage`, the metrics browser lists all metrics with the `Host` dimension that also include the string `usage` in the **Metric name**, **Metric key**, or **Description** field.
 * Select column header **Favorite**, **Name**, or **Key** to sort by the selected column.
@@ -51,7 +50,7 @@ Metric details available in the 'Metrics browser'
 | Tags | Tags allow further grouping of metrics. |
 | Created | The timestamp when the metric was created. |
 | Last written | The timestamp when the metric was last written. |
-| DDU billing | Whether the metric is subject to [Davis data unit (DDU) consumption](/managed/license/monitoring-consumption-classic/davis-data-units "Understand how Dynatrace monitoring consumption is calculated based on Davis data units (DDU)."). |
+| DDU billing | Whether the metric is subject to [Davis data unit (DDU) consumption](/managed/license/classic-licensing/davis-data-units "Understand how Dynatrace monitoring consumption is calculated based on Davis data units (DDU)."). |
 | Unit | The unit of the metric. |
 | Minimum value | The known lower boundary value for the metric. |
 | Maximum value | The known upper boundary value for the metric. |
@@ -79,7 +78,7 @@ Examples of order-of-magnitude notation in Dynatrace:
 | G | 10^9 | giga, billion |
 | T | 10^12 | tera, trillion |
 
-For details, see [Order-of-magnitude notation](/managed/discover-dynatrace/get-started/dynatrace-ui/order-of-magnitude-notation "Dynatrace order-of-magnitude notation for displaying metric values").
+For details, see [Order-of-magnitude notation](/managed/discover-dynatrace/get-started/dynatrace-ui/order-of-magnitude-notation "Learn how Dynatrace displays metric values using SI-based order-of-magnitude notation, and how to override the automatic unit selection.").
 
 ## Add metric to dashboard
 
@@ -118,21 +117,21 @@ To configure metric metadata for custom metrics via the web UI
 4. On the **Metric metadata** page, edit the metadata for the selected metric.  
    If the page displays a lock, you don't have the necessary write permissions to edit the selected metric's metadata.
 
-   * **Display name**âEnter a human-friendly name for the metric.
-   * **Description**âEnter a free-form description of the metric: how it is measured, etc.
-   * **Unit**âSelect a unit from the list.
+   * **Display name**—Enter a human-friendly name for the metric.
+   * **Description**—Enter a free-form description of the metric: how it is measured, etc.
+   * **Unit**—Select a unit from the list.
    * **Metric properties**
 
-     + **Minimum value**âThe lower boundary of the metric.
-     + **Maximum value**âThe upper boundary of the metric.
-     + **Root cause relevant**âA root-cause relevant metric represents a strong indicator for a faulty component.
-     + **Impact relevant**âAn impact-relevant metric is highly dependent on other metrics and changes because an underlying root-cause metric has changed.
-     + **Value type**âThe type of the metric's value. You have these options:
+     + **Minimum value**—The lower boundary of the metric.
+     + **Maximum value**—The upper boundary of the metric.
+     + **Root cause relevant**—A root-cause relevant metric represents a strong indicator for a faulty component.
+     + **Impact relevant**—An impact-relevant metric is highly dependent on other metrics and changes because an underlying root-cause metric has changed.
+     + **Value type**—The type of the metric's value. You have these options:
 
        - `score`: A score metric is a metric where high values indicate a good situation, while low values indicate trouble. An example of such a metric is a success rate.
        - `error`: An error metric is a metric where high values indicate trouble, while low values indicate a good situation. An example of such a metric is an error count.
-     + **Latency**âThe latency of the metric, in minutes. It indicates how long it takes before an ingested new metric data point is available in Dynatrace.
-   * **Metric dimensions**âTo add a dimension, select **Add dimension** and enter the **Dimension key** and **Display name** for the dimension.
-   * **Tags**âTo add a tag, select **Add tag** and enter the tag.
-   * **Source entity type**âTo configure the entity type of the metric. Only editable if the metric is ingested via an API endpoint.
+     + **Latency**—The latency of the metric, in minutes. It indicates how long it takes before an ingested new metric data point is available in Dynatrace.
+   * **Metric dimensions**—To add a dimension, select **Add dimension** and enter the **Dimension key** and **Display name** for the dimension.
+   * **Tags**—To add a tag, select **Add tag** and enter the tag.
+   * **Source entity type**—To configure the entity type of the metric. Only editable if the metric is ingested via an API endpoint.
 5. Select **Save changes** to save your edits.

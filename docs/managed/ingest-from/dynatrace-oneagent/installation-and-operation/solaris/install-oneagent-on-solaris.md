@@ -1,7 +1,6 @@
 ---
 title: Install OneAgent on Solaris
 source: https://docs.dynatrace.com/managed/ingest-from/dynatrace-oneagent/installation-and-operation/solaris/install-oneagent-on-solaris
-scraped: 2026-05-12T11:09:49.455973
 ---
 
 # Install OneAgent on Solaris
@@ -42,7 +41,7 @@ Depending on your firewall policy, you may need to explicitly allow certain outg
 2. Select **Start installation** > **Solaris**.
 3. Choose the CPU architecture of your environment.
 4. Provide a [PaaS token](/managed/manage/identity-access-management/access-tokens-and-oauth-clients/access-tokens#paas-token "Learn the concept of an access token and its scopes."). This token is required to download the OneAgent installer from your environment. If you don't have a PaaS token, you can generate one right in the UI. The token is automatically appended to the download command you'll use later.
-5. Click **Copy** to copy the `wget` command.
+5. Select **Copy** to copy the `wget` command.
 6. Log into your Solaris host and execute the `wget` command.
 
    * The `wget` command isn't installed on Solaris by default. Either install it or use an alternative means of downloading OneAgent.

@@ -1,7 +1,6 @@
 ---
 title: Synthetic monitor executions API v2 - GET all on-demand executions
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/synthetic-v2/synthetic-monitor-execution/get-all-executions
-scraped: 2026-05-12T11:57:54.237335
 ---
 
 # Synthetic monitor executions API v2 - GET all on-demand executions
@@ -66,7 +65,7 @@ Contains a list of synthetic on-demand executions.
 
 | Element | Type | Description |
 | --- | --- | --- |
-| executions | [SyntheticOnDemandExecution[]](#openapi-definition-SyntheticOnDemandExecution) | The list of executions. |
+| executions | [SyntheticOnDemandExecution](#openapi-definition-SyntheticOnDemandExecution)[] | The list of executions. |
 
 #### The `SyntheticOnDemandExecution` object
 
@@ -103,7 +102,7 @@ Contains extended monitor's execution details.
 | --- | --- | --- |
 | errorCode | string | Error code. |
 | executionStepCount | integer | Number executed steps. |
-| executionSteps | [ExecutionStep[]](#openapi-definition-ExecutionStep) | Details about the monitor's step execution. |
+| executionSteps | [ExecutionStep](#openapi-definition-ExecutionStep)[] | Details about the monitor's step execution. |
 | failedStepName | string | Failed step name. |
 | failedStepSequenceId | integer | Failed step sequence id. |
 | failureMessage | string | Failure message. |
@@ -155,7 +154,7 @@ Contains basic results of the monitor's on-demand execution.
 | Element | Type | Description |
 | --- | --- | --- |
 | code | integer | The HTTP status code |
-| constraintViolations | [ConstraintViolation[]](#openapi-definition-ConstraintViolation) | A list of constraint violations |
+| constraintViolations | [ConstraintViolation](#openapi-definition-ConstraintViolation)[] | A list of constraint violations |
 | message | string | The error message |
 
 #### The `ConstraintViolation` object

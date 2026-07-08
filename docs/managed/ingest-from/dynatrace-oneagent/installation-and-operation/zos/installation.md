@@ -1,7 +1,6 @@
 ---
 title: z/OS installation overview
 source: https://docs.dynatrace.com/managed/ingest-from/dynatrace-oneagent/installation-and-operation/zos/installation
-scraped: 2026-05-12T11:06:23.349482
 ---
 
 # z/OS installation overview
@@ -15,10 +14,10 @@ Since the z/OS modules require multiple components in both the mainframe environ
 
 Efficient z/OS module installation is typically a team effort involving the following:
 
-* **Open Systems Administrator**âInstalls the zRemote module.
-* **Mainframe Systems Programmer**âDownloads and installs the Dynatrace product datasets for z/OS.
-* **Mainframe Security Administrator**âSets up security for the zDC subsystem.
-* **Mainframe Systems Programmer**âInstalls the modules on each technology you want to monitor.
+* **Open Systems Administrator**—Installs the zRemote module.
+* **Mainframe Systems Programmer**—Downloads and installs the Dynatrace product datasets for z/OS.
+* **Mainframe Security Administrator**—Sets up security for the zDC subsystem.
+* **Mainframe Systems Programmer**—Installs the modules on each technology you want to monitor.
 
 Depending on your team, a single individual may be able to administer more than one of the required tasks.
 

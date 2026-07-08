@@ -1,0 +1,51 @@
+---
+title: Adjust Apdex settings for custom applications in RUM Classic
+source: https://docs.dynatrace.com/managed/observe/digital-experience/rum-classic/custom-applications/additional-configuration/configure-apdex-custom
+---
+
+# Adjust Apdex settings for custom applications in RUM Classic
+
+# Adjust Apdex settings for custom applications in RUM Classic
+
+* How-to guide
+* 1-min read
+* Published Jan 30, 2023
+
+[Apdex](/managed/observe/digital-experience/rum-classic/rum-concepts/scores-and-ratings/apdex-ratings "Learn how Dynatrace uses Apdex to measure user satisfaction with application performance.") is an important score that measures your application performance. You can adjust the Apdex thresholds (Satisfactory, Tolerable, and Frustrating) for your application and for its [key user actions](/managed/observe/digital-experience/rum-classic/rum-concepts/user-actions#key-user-actions "Learn what user actions are and how they help you understand what users do with your application.") to refine the Apdex calculations.
+
+The Apdex rating that is displayed for your application for a certain period of time in Applications may differ from what is displayed for the same application and the same period of time in [Data Explorer](/managed/analyze-explore-automate/explorer "Query for metrics and transform results to gain desired insights.") with the selected `Apdex (by geolocation, user type) [web]` metric.
+
+As a workaround, you can manually implement the standard Apdex calculation using the formula:
+
+```
+(((builtin:apps.web.actionCount.category:filter(and(or(eq("Apdex category",SATISFIED)),or(in("dt.entity.application",entitySelector("type(application)"))))):splitBy("dt.entity.application"):names:sort(dimension("dt.entity.application.name",descending)):limit(20))+((builtin:apps.web.actionCount.category:filter(and(or(in("dt.entity.application",entitySelector("type(application)"))),or(eq("Apdex category",TOLERATING)))):splitBy("dt.entity.application"):names:sort(dimension("dt.entity.application.name",descending)):limit(20))/2)) / (builtin:apps.web.actionCount.category:filter(and(or(in("dt.entity.application",entitySelector("type(application)"))))):splitBy("dt.entity.application"):names:sort(dimension("dt.entity.application.name",descending)):limit(20))):sort(dimension("dt.entity.application.name",descending))
+```
+
+## Configure Apdex settings for your application
+
+1. Go to **Frontend**.
+2. Select the application that you want to configure.
+3. Select **More** (**…**) > **Edit** in the upper-right corner of the tile with your application name.
+4. From the application settings, select **General** > **Key performance metrics**.
+5. Use the sliders to set the user-satisfaction performance thresholds (Satisfactory, Tolerable, and Frustrating) for the **User action duration** metric.
+6. Optional Turn on **Consider reported errors / web request errors in Apdex calculations** to rate user actions with reported errors or web request errors as Frustrating.
+
+## Configure Apdex thresholds for key user actions
+
+To change the Apdex thresholds for a key user action
+
+1. Go to **Frontend**.
+2. Select the application and scroll down to **Top 3 user actions** or **Top 3 actions**.
+3. Select **View full details** or **Analyze performance**.
+4. Search for the required key user action and select it.  
+   The user action detail page opens.
+5. In the upper-right corner of the user action detail page, do one of the following:
+
+   * For web applications, select **More** (**…**) > **Edit** > **Key performance metric**.
+   * For mobile and custom applications, select ![Expand](https://dt-cdn.net/images/expandbutton-40-e1f11ff81d.png "Expand") (**Expand**) > **Edit** > **Key performance metric**.
+6. Use the slider to adjust the Apdex thresholds.
+
+## Related topics
+
+* [Apdex ratings in RUM Classic](/managed/observe/digital-experience/rum-classic/rum-concepts/scores-and-ratings/apdex-ratings "Learn how Dynatrace uses Apdex to measure user satisfaction with application performance.")
+* [Context-based Apdex analysis in RUM Classic](/managed/observe/digital-experience/rum-classic/session-segmentation/apdex-analysis "Check Apdex rating for a user action, location, and application.")

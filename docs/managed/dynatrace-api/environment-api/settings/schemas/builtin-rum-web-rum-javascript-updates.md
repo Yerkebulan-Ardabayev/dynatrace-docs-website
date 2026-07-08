@@ -1,7 +1,6 @@
 ---
 title: Settings API - RUM JavaScript updates schema table
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/settings/schemas/builtin-rum-web-rum-javascript-updates
-scraped: 2026-05-12T11:44:45.450668
 ---
 
 # Settings API - RUM JavaScript updates schema table

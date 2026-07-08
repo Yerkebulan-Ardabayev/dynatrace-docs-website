@@ -1,7 +1,6 @@
 ---
 title: Monitor network communications
 source: https://docs.dynatrace.com/managed/observe/infrastructure-observability/networks-classic/how-to-monitor-network-communication
-scraped: 2026-05-12T12:03:20.317509
 ---
 
 # Monitor network communications
@@ -48,9 +47,9 @@ Select **Analyze process connections** to get more information about process con
 
 ## Analyze process connections
 
-You can view all connections made and received by the host. Connections are displayed in a way thatâs similar to Smartscape topology view. The middle column represents the analyzed host. The left-hand side represents the hosts and processes that connect to the analyzed host. The right-hand side shows the outbound communications of the analyzed host.
+You can view all connections made and received by the host. Connections are displayed in a way that’s similar to Smartscape topology view. The middle column represents the analyzed host. The left-hand side represents the hosts and processes that connect to the analyzed host. The right-hand side shows the outbound communications of the analyzed host.
 
-Select any process node (the middle column) to view relevant network metrics for that process' connections (displayed in the right-hand pane). For each connection, youâll see network **Transfer**, **Connectivity**, and **Retransmissions** rates.
+Select any process node (the middle column) to view relevant network metrics for that process' connections (displayed in the right-hand pane). For each connection, you’ll see network **Transfer**, **Connectivity**, and **Retransmissions** rates.
 
 ![Process connections](https://dt-cdn.net/images/screenshot-2023-09-05-at-5-04-30-pm-1441-de582694d9.png)
 

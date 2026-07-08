@@ -1,7 +1,6 @@
 ---
 title: Alerting profiles API - GET a profile
 source: https://docs.dynatrace.com/managed/dynatrace-api/configuration-api/alerting-profiles-api/get-profile
-scraped: 2026-05-12T12:06:34.264066
 ---
 
 # Alerting profiles API - GET a profile
@@ -51,11 +50,11 @@ Configuration of an alerting profile.
 | Element | Type | Description |
 | --- | --- | --- |
 | displayName | string | The name of the alerting profile, displayed in the UI. |
-| eventTypeFilters | [AlertingEventTypeFilter[]](#openapi-definition-AlertingEventTypeFilter) | The list of event filters.  For all filters that are *negated* inside of these event filters, that is all "Predefined" as well as "Custom" (Title and/or Description) ones the AND logic applies. For all *non-negated* ones the OR logic applies. Between these two groups, negated and non-negated, the AND logic applies.  If you specify both severity rule and event filter, the AND logic applies. |
+| eventTypeFilters | [AlertingEventTypeFilter](#openapi-definition-AlertingEventTypeFilter)[] | The list of event filters.  For all filters that are *negated* inside of these event filters, that is all "Predefined" as well as "Custom" (Title and/or Description) ones the AND logic applies. For all *non-negated* ones the OR logic applies. Between these two groups, negated and non-negated, the AND logic applies.  If you specify both severity rule and event filter, the AND logic applies. |
 | id | string | The ID of the alerting profile. |
 | metadata | [ConfigurationMetadata](#openapi-definition-ConfigurationMetadata) | Metadata useful for debugging |
 | mzId | string | The ID of the management zone to which the alerting profile applies. |
-| rules | [AlertingProfileSeverityRule[]](#openapi-definition-AlertingProfileSeverityRule) | A list of severity rules.  The rules are evaluated from top to bottom. The first matching rule applies and further evaluation stops.  If you specify both severity rule and event filter, the AND logic applies. |
+| rules | [AlertingProfileSeverityRule](#openapi-definition-AlertingProfileSeverityRule)[] | A list of severity rules.  The rules are evaluated from top to bottom. The first matching rule applies and further evaluation stops.  If you specify both severity rule and event filter, the AND logic applies. |
 
 #### The `AlertingEventTypeFilter` object
 
@@ -132,7 +131,7 @@ Configuration of the tag filtering of the alerting profile.
 | Element | Type | Description |
 | --- | --- | --- |
 | includeMode | string | The filtering mode:  * `INCLUDE_ANY`: The rule applies to monitored entities that have at least one of the specified tags. You can specify up to 100 tags. * `INCLUDE_ALL`: The rule applies to monitored entities that have **all** of the specified tags. You can specify up to 10 tags. * `NONE`: The rule applies to all monitored entities. The element can hold these values * `INCLUDE_ALL` * `INCLUDE_ANY` * `NONE` |
-| tagFilters | [TagFilter[]](#openapi-definition-TagFilter) | A list of required tags. |
+| tagFilters | [TagFilter](#openapi-definition-TagFilter)[] | A list of required tags. |
 
 #### The `TagFilter` object
 

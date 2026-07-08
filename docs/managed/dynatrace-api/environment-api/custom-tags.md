@@ -1,7 +1,6 @@
 ---
 title: Custom tags API
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/custom-tags
-scraped: 2026-05-12T11:12:30.141298
 ---
 
 # Custom tags API

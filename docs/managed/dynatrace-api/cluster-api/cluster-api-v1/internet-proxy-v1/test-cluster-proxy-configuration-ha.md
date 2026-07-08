@@ -1,7 +1,6 @@
 ---
 title: HA - Test proxy configuration from specific data center
 source: https://docs.dynatrace.com/managed/dynatrace-api/cluster-api/cluster-api-v1/internet-proxy-v1/test-cluster-proxy-configuration-ha
-scraped: 2026-05-12T12:12:15.862327
 ---
 
 # HA - Test proxy configuration from specific data center

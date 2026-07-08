@@ -1,7 +1,6 @@
 ---
 title: Settings API - GET an object
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/settings/objects/get-object
-scraped: 2026-05-12T11:35:54.090860
 ---
 
 # Settings API - GET an object
@@ -64,11 +63,11 @@ The response to a get by objectId request.
 | resourceContext | [ResourceContext](#openapi-definition-ResourceContext) | The resource context, which contains additional permission information about the object. |
 | schemaId | string | The schema on which the object is based. |
 | schemaVersion | string | The version of the schema on which the object is based. |
-| scope | string | The scope that the object targets. For more details, please see [Dynatrace Documentationï»¿](https://dt-url.net/ky03459). |
+| scope | string | The scope that the object targets. For more details, please see [Dynatrace Documentation﻿](https://dt-url.net/ky03459). |
 | searchSummary | string | A searchable summary string of the setting value. Plain text without Markdown. |
 | summary | string | A short summary of settings. This can contain Markdown and will be escaped accordingly. |
 | updateToken | string | The update token of the object. You can use it to detect simultaneous modifications by different users.  It is generated upon retrieval (GET requests). If set on update (PUT request) or deletion, the update/deletion will be allowed only if there wasn't any change between the retrieval and the update.  If omitted on update/deletion, the operation overrides the current value or deletes it without any checks. |
-| value | string | The value of the setting.  It defines the actual values of settings' parameters.  The actual content depends on the object's schema. |
+| value | [AnyValue](#openapi-definition-AnyValue) | The value of the setting.  It defines the actual values of settings' parameters.  The actual content depends on the object's schema. |
 
 #### The `Identity` object
 
@@ -114,7 +113,7 @@ A schema representing an arbitrary value type.
 | Element | Type | Description |
 | --- | --- | --- |
 | code | integer | The HTTP status code |
-| constraintViolations | [ConstraintViolation[]](#openapi-definition-ConstraintViolation) | A list of constraint violations |
+| constraintViolations | [ConstraintViolation](#openapi-definition-ConstraintViolation)[] | A list of constraint violations |
 | message | string | The error message |
 
 #### The `ConstraintViolation` object
@@ -263,7 +262,15 @@ A list of constraint violations
 
 
 
-"value": "string"
+"value": {
+
+
+
+"autoMonitoring": true
+
+
+
+}
 
 
 

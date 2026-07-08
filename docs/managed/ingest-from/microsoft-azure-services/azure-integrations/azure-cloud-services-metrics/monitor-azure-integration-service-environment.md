@@ -1,7 +1,6 @@
 ---
 title: Azure Integration Service Environment monitoring
 source: https://docs.dynatrace.com/managed/ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics/monitor-azure-integration-service-environment
-scraped: 2026-05-12T11:27:16.606308
 ---
 
 # Azure Integration Service Environment monitoring
@@ -55,7 +54,7 @@ Clone hide azure
 
 Azure Integration Service Environment
 
-Azure Integration Service Environment can be connected with Azure Logic Apps. For more information, see [Connect to Azure virtual networks from Azure Logic Apps by using an integration service environment](https://docs.microsoft.com/en-us/azure/logic-apps/connect-virtual-network-vnet-isolated-environment).
+Azure Integration Service Environment can be connected with Azure Logic Apps. For more information, see [Connect to Azure virtual networks from Azure Logic Apps by using an integration service environment﻿](https://docs.microsoft.com/en-us/azure/logic-apps/connect-virtual-network-vnet-isolated-environment).
 
 **Dashboard for Azure Integration Service Environment with Azure Logic Apps**
 

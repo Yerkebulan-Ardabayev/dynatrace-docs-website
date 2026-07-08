@@ -1,7 +1,6 @@
 ---
 title: Vulnerabilities API - GET vulnerabilities
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/application-security/vulnerabilities/get-vulnerabilities
-scraped: 2026-05-12T11:58:50.263120
 ---
 
 # Vulnerabilities API - GET vulnerabilities
@@ -58,7 +57,7 @@ A list of security problems.
 | --- | --- | --- |
 | nextPageKey | string | The cursor for the next page of results. Has the value of `null` on the last page.  Use it in the **nextPageKey** query parameter to obtain subsequent pages of the result. |
 | pageSize | integer | The number of entries per page. |
-| securityProblems | [SecurityProblem[]](#openapi-definition-SecurityProblem) | A list of security problems. |
+| securityProblems | [SecurityProblem](#openapi-definition-SecurityProblem)[] | A list of security problems. |
 | totalCount | integer | The total number of entries in the result. |
 
 #### The `SecurityProblem` object
@@ -76,7 +75,7 @@ Parameters of a security problem
 | lastOpenedTimestamp | integer | The timestamp when the security problem was last opened. |
 | lastResolvedTimestamp | integer | The timestamp when the security problem was last resolved. |
 | lastUpdatedTimestamp | integer | The timestamp of the most recent security problem change. |
-| managementZones | [ManagementZone[]](#openapi-definition-ManagementZone) | A list of management zones which the affected entities belong to. |
+| managementZones | [ManagementZone](#openapi-definition-ManagementZone)[] | A list of management zones which the affected entities belong to. |
 | muted | boolean | The security problem is (`true`) or is not (`false`) muted. |
 | packageName | string | The package name of the security problem. |
 | riskAssessment | [RiskAssessment](#openapi-definition-RiskAssessment) | Risk assessment of a security problem. |
@@ -107,7 +106,7 @@ Describes what got passed into the code level vulnerability.
 
 | Element | Type | Description |
 | --- | --- | --- |
-| inputSegments | [VulnerableFunctionInputSegment[]](#openapi-definition-VulnerableFunctionInputSegment) | A list of input segments. |
+| inputSegments | [VulnerableFunctionInputSegment](#openapi-definition-VulnerableFunctionInputSegment)[] | A list of input segments. |
 | type | string | The type of the input. The element can hold these values * `COMMAND` * `HTTP_CLIENT` * `JNDI` * `SQL_STATEMENT` |
 
 #### The `VulnerableFunctionInputSegment` object
@@ -185,7 +184,7 @@ The assessment accuracy details.
 | Element | Type | Description |
 | --- | --- | --- |
 | code | integer | The HTTP status code |
-| constraintViolations | [ConstraintViolation[]](#openapi-definition-ConstraintViolation) | A list of constraint violations |
+| constraintViolations | [ConstraintViolation](#openapi-definition-ConstraintViolation)[] | A list of constraint violations |
 | message | string | The error message |
 
 #### The `ConstraintViolation` object

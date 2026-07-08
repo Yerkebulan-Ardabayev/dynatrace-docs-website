@@ -1,7 +1,6 @@
 ---
 title: Send StatsD metrics to Dynatrace
 source: https://docs.dynatrace.com/managed/ingest-from/extend-dynatrace/extend-metrics/ingestion-methods/statsd
-scraped: 2026-05-12T11:10:24.262252
 ---
 
 # Send StatsD metrics to Dynatrace
@@ -60,7 +59,7 @@ To enable DynatraceStatsD metric ingestion only for selected hosts
 
 1. Go to **Hosts**.
 2. Find and select your host to display the host overview page.
-3. In the upper-right corner of the host overview page, select **More** (**â¦**) > **Settings**.
+3. In the upper-right corner of the host overview page, select **More** (**…**) > **Settings**.
 
 4. In the host settings, select **Extension Execution Controller**.
 5. Turn on **Enable Extension Execution Controller**.
@@ -176,7 +175,7 @@ The DynatraceStatsD OneAgent listener only accepts input from localhost addresse
 
 ## StatsD metric format
 
-DynatraceStatsD accepts the following metrics in the [native StatsD formatï»¿](https://github.com/statsd/statsd/blob/master/docs/metric_types.md):
+DynatraceStatsD accepts the following metrics in the [native StatsD format﻿](https://github.com/statsd/statsd/blob/master/docs/metric_types.md):
 
 * `count`
 
@@ -221,7 +220,7 @@ The limits are based on the test that deploys a Linux machine in the AWS cloud. 
 
 ### Hardware specification
 
-OneAgent and ActiveGate are installed in a Linux-based VM in Amazon EC2 [c5.largeï»¿](https://dt-url.net/rv031ec) instance type.
+OneAgent and ActiveGate are installed in a Linux-based VM in Amazon EC2 [c5.large﻿](https://dt-url.net/rv031ec) instance type.
 
 * CPU: x2
 * RAM: 4 GiB

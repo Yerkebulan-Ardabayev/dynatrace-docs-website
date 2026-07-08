@@ -1,7 +1,6 @@
 ---
 title: Metrics API - DELETE an ingested metric
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/metric-v2/delete-metric
-scraped: 2026-05-12T11:13:52.846153
 ---
 
 # Metrics API - DELETE an ingested metric

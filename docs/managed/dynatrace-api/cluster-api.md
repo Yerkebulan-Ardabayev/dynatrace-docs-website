@@ -1,7 +1,6 @@
 ---
 title: Cluster API
 source: https://docs.dynatrace.com/managed/dynatrace-api/cluster-api
-scraped: 2026-05-12T12:07:22.556223
 ---
 
 # Cluster API

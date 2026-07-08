@@ -1,7 +1,6 @@
 ---
 title: Amazon EC2 Auto Scaling (built-in)
 source: https://docs.dynatrace.com/managed/ingest-from/amazon-web-services/integrate-with-aws/cloudwatch-metrics/cloudwatch-ec2/ec2-auto-scaling-builltin
-scraped: 2026-05-12T11:28:46.145725
 ---
 
 # Amazon EC2 Auto Scaling (built-in)
@@ -24,7 +23,7 @@ To enable monitoring for this service, you need:
 
   For role-based access (whether in a [SaaS](/managed/ingest-from/amazon-web-services/integrate-with-aws/cloudwatch-metrics#role-based-access "Integrate metrics from Amazon CloudWatch.") or [Managed](/managed/ingest-from/amazon-web-services/set-up-aws-monitoring-with-managed#role-based-access "Connect your Amazon account with Dynatrace Managed and start monitoring.") deployment), you need an ActiveGate installed on an Amazon EC2 host.
 * An updated [AWS monitoring policy](/managed/ingest-from/amazon-web-services/integrate-with-aws/cloudwatch-metrics#aws-policy-and-authentication "Integrate metrics from Amazon CloudWatch.") to include the additional AWS services.  
-  To [update the AWS IAM policyï»¿](https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_manage-edit.html#edit-managed-policy-console), use the JSON below, containing the monitoring policy (permissions) for all cloud services.
+  To [update the AWS IAM policy﻿](https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_manage-edit.html#edit-managed-policy-console), use the JSON below, containing the monitoring policy (permissions) for all cloud services.
 
 JSON predefined policy for all cloud services
 
@@ -685,7 +684,7 @@ In this example, from the complete list of permissions you need to select
 
 Amazon EC2 Auto Scaling (built-in) provides only basic metrics with the count of EC2 instances in the scaling group. To fully monitor extended metrics, you need to select [Amazon EC2 Auto Scaling](/managed/ingest-from/amazon-web-services/integrate-with-aws/cloudwatch-metrics/cloudwatch-ec2/ec2-auto-scaling "Monitor Amazon EC2 Auto Scaling and view available metrics.") (non-built-in) service.
 
-Remember that if you have EC2 Auto Scaling (built-in) service configured, you canât have Amazon EC2 Auto Scaling (non-built-in) service turned on.
+Remember that if you have EC2 Auto Scaling (built-in) service configured, you can’t have Amazon EC2 Auto Scaling (non-built-in) service turned on.
 
 By default, Auto Scaling Group metrics aren't reported. To have them reported, you need to enable them in the **AWS Auto Scaling Group** console.
 

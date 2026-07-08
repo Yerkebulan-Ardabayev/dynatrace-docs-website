@@ -1,7 +1,6 @@
 ---
 title: Export license data for 1 hour
 source: https://docs.dynatrace.com/managed/dynatrace-api/cluster-api/cluster-api-v2/export-license-data/get-export-license-data-hour
-scraped: 2026-05-12T12:07:14.913245
 ---
 
 # Export license data for 1 hour
@@ -12,7 +11,7 @@ scraped: 2026-05-12T12:07:14.913245
 
 This API call exports aggregated hourly license usage of all your environments as a ZIP file for an hour.
 
-This API is only compatible with [Dynatrace classic licensing](/managed/license/monitoring-consumption-classic "Understand how Dynatrace monitoring consumption is calculated for classic licensing.") and does not contain billed usage.
+This API is only compatible with [Dynatrace classic licensing](/managed/license/monitoring-consumption-classic "Understand how Dynatrace classic monitoring consumption is calculated, including host units, DDUs, DEM units, and Application Security units.") and does not contain billed usage.
 
 ## Authentication
 
@@ -46,7 +45,7 @@ Describes an hour of license consumption for each environment in the cluster
 | Element | Type | Description |
 | --- | --- | --- |
 | clusterUuid | string | Cluster identifier |
-| environmentBillingEntries | [EnvironmentLicenseConsumption[]](#openapi-definition-EnvironmentLicenseConsumption) | Environments' consumptions |
+| environmentBillingEntries | [EnvironmentLicenseConsumption](#openapi-definition-EnvironmentLicenseConsumption)[] | Environments' consumptions |
 | timeFrameEnd | string | Consumption data export timeframe end |
 | timeFrameStart | string | Consumption data export timeframe start |
 
@@ -56,12 +55,12 @@ Describes license consumption for the environment
 
 | Element | Type | Description |
 | --- | --- | --- |
-| customMetrics | [CustomMetricDto[]](#openapi-definition-CustomMetricDto) | Custom metrics consumption |
-| davisDataUnits | [DavisDataUnitsUsageDto[]](#openapi-definition-DavisDataUnitsUsageDto) | Davis Data Units consumption |
-| downloads | [DownloadsDto[]](#openapi-definition-DownloadsDto) | Not used |
+| customMetrics | [CustomMetricDto](#openapi-definition-CustomMetricDto)[] | Custom metrics consumption |
+| davisDataUnits | [DavisDataUnitsUsageDto](#openapi-definition-DavisDataUnitsUsageDto)[] | Davis Data Units consumption |
+| downloads | [DownloadsDto](#openapi-definition-DownloadsDto)[] | Not used |
 | environmentUuid | string | Environment identifier |
 | highAvailabilityCluster | boolean | Indicates if cluster has redundancy by the high availability feature. |
-| hostUsages | [HostConsumption[]](#openapi-definition-HostConsumption) | Monitored hosts' consumption |
+| hostUsages | [HostConsumption](#openapi-definition-HostConsumption)[] | Monitored hosts' consumption |
 | internalUse | boolean | Environment is intended for internal use (e.g. self-monitoring) |
 | logStorageUsageBytes | integer | Count of Log monitoring storage usage in bytes |
 | logUploadVolumeBytes | integer | Count of Log monitoring upload volume in bytes |
@@ -69,8 +68,8 @@ Describes license consumption for the environment
 | mobileSessions | integer | Count of consumed mobile user sessions |
 | newProblems | integer | Not used |
 | sessionReplays | integer | Count of consumed user session replays |
-| syntheticBillingUsage | [SyntheticBillingUsageDto[]](#openapi-definition-SyntheticBillingUsageDto) | Synthetic monitoring consumption |
-| syntheticUsages | [SyntheticUsageDto[]](#openapi-definition-SyntheticUsageDto) | Not used |
+| syntheticBillingUsage | [SyntheticBillingUsageDto](#openapi-definition-SyntheticBillingUsageDto)[] | Synthetic monitoring consumption |
+| syntheticUsages | [SyntheticUsageDto](#openapi-definition-SyntheticUsageDto)[] | Not used |
 | totalRUMUserPropertiesUsed | integer | Count of defined user session properties |
 | trial | boolean | Environment type flag |
 | visits | integer | Count of consumed user sessions |
@@ -110,7 +109,7 @@ Describes license consumption by the monitored host.
 
 | Element | Type | Description |
 | --- | --- | --- |
-| agentUsages | [AgentConsumption[]](#openapi-definition-AgentConsumption) | Agent details |
+| agentUsages | [AgentConsumption](#openapi-definition-AgentConsumption)[] | Agent details |
 | hasContainers | boolean | Host running containers |
 | hostCategory | string | Host unit size symbol |
 | hostMemoryBytes | integer | Host's RAM in bytes |
@@ -130,7 +129,7 @@ Describes license consumption by the OneAgent.
 | --- | --- | --- |
 | agentId | integer | Agent unique identifier |
 | agentTypeId | integer | Agent type ID; 1 for OS agent |
-| agentUsageRecords | [AgentActivity[]](#openapi-definition-AgentActivity) | Agent activity periods within an hour |
+| agentUsageRecords | [AgentActivity](#openapi-definition-AgentActivity)[] | Agent activity periods within an hour |
 | networkTraffic | integer | Not used |
 
 #### The `AgentActivity` object

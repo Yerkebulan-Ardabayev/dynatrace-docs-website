@@ -1,7 +1,6 @@
 ---
 title: Settings API - Discovery findings default rules schema schema table
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/settings/schemas/app-dynatrace-discovery-coverage-discovery-findings-default-rules-schema
-scraped: 2026-05-12T11:45:09.980253
 ---
 
 # Settings API - Discovery findings default rules schema schema table

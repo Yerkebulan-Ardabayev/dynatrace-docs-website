@@ -1,7 +1,6 @@
 ---
 title: Synthetic monitors API - JSON models
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/synthetic/synthetic-monitors/models
-scraped: 2026-05-12T12:10:02.374167
 ---
 
 # Synthetic monitors API - JSON models
@@ -29,7 +28,7 @@ Browser synthetic monitor. Some fields are inherited from the base `SyntheticMon
 
 | Element | Type | Description |
 | --- | --- | --- |
-| events | [EventDto[]](#openapi-definition-EventDto) | A list of events for this monitor |
+| events | [EventDto](#openapi-definition-EventDto)[] | A list of events for this monitor |
 | keyPerformanceMetrics | [KeyPerformanceMetrics](#openapi-definition-KeyPerformanceMetrics) | The key performance metrics configuration. |
 
 #### The `EventDto` object
@@ -391,7 +390,7 @@ HTTP synthetic monitor. Some fields are inherited from base `SyntheticMonitor` m
 
 | Element | Type | Description |
 | --- | --- | --- |
-| requests | [RequestDto[]](#openapi-definition-RequestDto) | A list of events for this monitor |
+| requests | [RequestDto](#openapi-definition-RequestDto)[] | A list of events for this monitor |
 
 #### The `RequestDto` object
 
@@ -972,8 +971,8 @@ HTTP synthetic monitor update. Some fields are inherited from base `SyntheticMon
 | locations | string[] | A list of locations from which the monitor is executed.  To specify a location, use its entity ID. For public locations use `GEOLOCATION-9999453BE4BDB3CD` form and `SYNTHETIC_LOCATION-DF80ACFB688C583B` for private ones. |
 | manuallyAssignedApps | string[] | A set of manually assigned applications. |
 | name | string | The name of the monitor. |
-| script | object | The script of a [browserï»¿](https://dt-url.net/9c103rda) or HTTP monitor. |
-| tags | [TagWithSourceInfo[]](#openapi-definition-TagWithSourceInfo) | A set of tags assigned to the monitor.  You can specify only the value of the tag here and the `CONTEXTLESS` context and source 'USER' will be added automatically. But preferred option is usage of TagWithSourceDto model. |
+| script | object | The script of a [browser﻿](https://dt-url.net/9c103rda) or HTTP monitor. |
+| tags | [TagWithSourceInfo](#openapi-definition-TagWithSourceInfo)[] | A set of tags assigned to the monitor.  You can specify only the value of the tag here and the `CONTEXTLESS` context and source 'USER' will be added automatically. But preferred option is usage of TagWithSourceDto model. |
 | type | string | Defines the actual set of fields depending on the value. See one of the following objects:  * `BROWSER` -> BrowserSyntheticMonitorUpdate * `HTTP` -> HttpSyntheticMonitorUpdate The element can hold these values * `BROWSER` * `HTTP` |
 
 #### The `AnomalyDetection` object
@@ -992,7 +991,7 @@ Performance thresholds configuration.
 | Element | Type | Description |
 | --- | --- | --- |
 | enabled | boolean | Performance threshold is enabled (`true`) or disabled (`false`). |
-| thresholds | [LoadingTimeThreshold[]](#openapi-definition-LoadingTimeThreshold) | The list of performance threshold rules. |
+| thresholds | [LoadingTimeThreshold](#openapi-definition-LoadingTimeThreshold)[] | The list of performance threshold rules. |
 
 #### The `LoadingTimeThreshold` object
 

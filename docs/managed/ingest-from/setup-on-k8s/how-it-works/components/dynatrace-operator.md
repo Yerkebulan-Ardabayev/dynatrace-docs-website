@@ -1,7 +1,6 @@
 ---
 title: Dynatrace Operator
 source: https://docs.dynatrace.com/managed/ingest-from/setup-on-k8s/how-it-works/components/dynatrace-operator
-scraped: 2026-05-12T11:54:02.874533
 ---
 
 # Dynatrace Operator
@@ -85,12 +84,12 @@ Webhook configurations are managed by Dynatrace Operator and are updated periodi
 
 ### Key functions
 
-* Pod mutationâThe webhook mutates Pods by modifying their definitions to include necessary metadata for Application observability.
+* Pod mutation—The webhook mutates Pods by modifying their definitions to include necessary metadata for Application observability.
 
   + Attaches Init container to download (in case no CSI driver is used) and configure the code modules on Pod startup.
   + Attaches CSI volumes, if configured, so CSI driver can handle volume creation.
   + Modifies Pod definitions for metadata enrichment.
-* Namespace mutationâThe webhook mutates namespaces to enable the monitoring of Pods within those namespaces.
+* Namespace mutation—The webhook mutates namespaces to enable the monitoring of Pods within those namespaces.
 
   + Adds labels to namespaces so the webhook can listen to Pod `CREATE` events.
 
@@ -155,7 +154,7 @@ Ingress and egress is documented in [Network traffic](/managed/ingest-from/setup
 
 ## CSI driver
 
-The Dynatrace Operator CSI driver provides Dynatrace code modules for the application Pods, while minimizing storage usage, and load on the Dynatrace environment. In addition, it provides writable volume storage for OneAgent utilizing [ephemeral local volumesï»¿](https://dt-url.net/j9027w2).
+The Dynatrace Operator CSI driver provides Dynatrace code modules for the application Pods, while minimizing storage usage, and load on the Dynatrace environment. In addition, it provides writable volume storage for OneAgent utilizing [ephemeral local volumes﻿](https://dt-url.net/j9027w2).
 
 * For `applicationMonitoring` configurations, it provides the necessary OneAgent binary for application monitoring to the Pods on each Node as a **read-only** mount.
 * For `hostMonitoring` configurations, it provides a writable folder for the OneAgent configurations when a read-only host file system is used.
@@ -166,7 +165,7 @@ Minimizes downloads by downloading the code modules once per Node and storing th
 * With the CSI driver, injecting 100 Pods spread across three nodes would result in just 3 Code Module downloads.
 * Without the CSI driver, each Pod would need to download its own code modules, so injecting 100 Pods would result in the download of 100 code modules.
 
-Minimizes storage usage by storing the code modules on the Node's filesystem, and creating an [OverlayFsï»¿](https://dt-url.net/hf036vi) mount for each injected Pod.
+Minimizes storage usage by storing the code modules on the Node's filesystem, and creating an [OverlayFs﻿](https://dt-url.net/hf036vi) mount for each injected Pod.
 
 * With the CSI driver, injecting 100 Pods spread across three nodes would result in the storage of only 3 code modules.
 * Without the CSI driver, each Pod stores a Code Module, so injecting 100 Pods would result in the storage of 100 code modules.
@@ -254,7 +253,7 @@ memory: 100Mi
 
 ### Permissions and privileges
 
-The Dynatrace Operator CSI driver requires elevated permissions to create and manage mounts on the host system. Specifically, the [mountPropagation: Bidirectionalï»¿](https://dt-url.net/90236h3) permission is needed on the volume where the CSI driver stores the code modules. This permission is only available for privileged containers.
+The Dynatrace Operator CSI driver requires elevated permissions to create and manage mounts on the host system. Specifically, the [mountPropagation: Bidirectional﻿](https://dt-url.net/90236h3) permission is needed on the volume where the CSI driver stores the code modules. This permission is only available for privileged containers.
 
 A full list of resources that are accessed by the CSI driver can be found in the [Security documentation](/managed/ingest-from/setup-on-k8s/reference/security "This page provides an overview of the Dynatrace components, their default configurations, and the permissions they require").
 

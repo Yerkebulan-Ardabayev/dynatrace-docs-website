@@ -1,7 +1,6 @@
 ---
 title: Delete a network zone
 source: https://docs.dynatrace.com/managed/manage/network-zones/delete-network-zones
-scraped: 2026-05-12T11:10:45.135688
 ---
 
 # Delete a network zone

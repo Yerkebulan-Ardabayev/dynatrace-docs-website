@@ -1,7 +1,6 @@
 ---
 title: Host-level settings
 source: https://docs.dynatrace.com/managed/observe/infrastructure-observability/hosts/configuration
-scraped: 2026-05-12T11:25:00.856111
 ---
 
 # Host-level settings
@@ -21,7 +20,7 @@ To configure settings at the host level
 
 1. Go to **Hosts**.
 2. Find and select your host to display the host overview page.
-3. In the upper-right corner of the host overview page, select **More** (**â¦**) > **Settings**.
+3. In the upper-right corner of the host overview page, select **More** (**…**) > **Settings**.
 
 From here, select items in the left panel to navigate through the host-level settings pages. In this example, you would display the **General** settings page for HOST-001.
 
@@ -44,10 +43,10 @@ The **General** page of **Host settings** displays a table of monitored technolo
 
    The **Monitored technologies** table lists monitoring technologies on the selected host:
 
-   * **Technology**âthe name of the technology
-   * **Type**âthe type of monitoring, such as `JMX monitoring`, `OneAgent extension`, `Custom extension`, and `Service insights`
-   * **Configuration**âthe current configuration level for the selected host.
-   * **Monitoring**âthe monitoring state of this technology on the selected host.
+   * **Technology**—the name of the technology
+   * **Type**—the type of monitoring, such as `JMX monitoring`, `OneAgent extension`, `Custom extension`, and `Service insights`
+   * **Configuration**—the current configuration level for the selected host.
+   * **Monitoring**—the monitoring state of this technology on the selected host.
 2. Select in the **Edit** column to see configuration options:
 
    * **Use host configuration** determines whether to use host-level monitoring settings, overriding the equivalent environment and host group settings.
@@ -130,12 +129,12 @@ OneAgent automatically detects and monitors all of your network traffic, but you
 
    There are two sections on this page:
 
-   * **Exclude NIC**âThis section lists all network interfaces excluded from network traffic monitoring on a particular interface.
+   * **Exclude NIC**—This section lists all network interfaces excluded from network traffic monitoring on a particular interface.
 
      + To add an entry, select **Add item**
      + To delete an entry, select ![Remove](https://dt-cdn.net/images/remove-icon-105c6a04c2.svg "Remove") **Delete row**
      + To edit an entry, expand ![Expand row](https://dt-cdn.net/images/expand-row-icon-9c4950fc2e.svg "Expand row") **Details**
-   * **Exclude IP**âThis section lists all host IP addresses to exclude when calculating connectivity (other metrics will still be calculated).
+   * **Exclude IP**—This section lists all host IP addresses to exclude when calculating connectivity (other metrics will still be calculated).
 
      + To add an entry, select **Add item**
      + To delete an entry, select ![Remove](https://dt-cdn.net/images/remove-icon-105c6a04c2.svg "Remove") **Delete row**
@@ -276,7 +275,7 @@ Use **OS services monitoring** to set up alerts for OS services in undesirable s
 5. Define the alerting conditions.
 6. Select **Save changes**.
 
-For details, see [OS services monitoring](/managed/observe/infrastructure-observability/hosts/monitoring/os-services "Improve the visibility of your infrastructure by monitoring the availability of operating system services.").
+For details, see [OS services monitoring](/managed/observe/infrastructure-observability/hosts/monitoring/os-services "Monitor the availability of operating system services on your hosts to improve infrastructure visibility and detect failures in real time.").
 
 ## Extension Execution Controller
 
@@ -302,10 +301,10 @@ Use the **Log Monitoring** page to configure host-specific settings for log moni
 
    * OneAgent configuration
 
-* Custom log source configurationâfor details, see [Unavailable in Dynatrace Managed](/managed/upgrade/unavailable-in-managed "Your selection is unavailable in Dynatrace Managed.")
-* Log storage configurationâfor details, see [Unavailable in Dynatrace Managed](/managed/upgrade/unavailable-in-managed "Your selection is unavailable in Dynatrace Managed.")
-* Sensitive data maskingâfor details, see [Unavailable in Dynatrace Managed](/managed/upgrade/unavailable-in-managed "Your selection is unavailable in Dynatrace Managed.")
-* Timestamp configurationâfor details, see [Unavailable in Dynatrace Managed](/managed/upgrade/unavailable-in-managed "Your selection is unavailable in Dynatrace Managed.")
+* Custom log source configuration—for details, see [Unavailable in Dynatrace Managed](/managed/upgrade/unavailable-in-managed "Your selection is unavailable in Dynatrace Managed.")
+* Log storage configuration—for details, see [Unavailable in Dynatrace Managed](/managed/upgrade/unavailable-in-managed "Your selection is unavailable in Dynatrace Managed.")
+* Sensitive data masking—for details, see [Unavailable in Dynatrace Managed](/managed/upgrade/unavailable-in-managed "Your selection is unavailable in Dynatrace Managed.")
+* Timestamp configuration—for details, see [Unavailable in Dynatrace Managed](/managed/upgrade/unavailable-in-managed "Your selection is unavailable in Dynatrace Managed.")
 * Select **Save changes**.
 
 ## Crash dump analytics

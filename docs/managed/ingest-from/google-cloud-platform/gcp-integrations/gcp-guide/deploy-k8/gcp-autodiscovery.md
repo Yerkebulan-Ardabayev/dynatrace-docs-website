@@ -1,7 +1,6 @@
 ---
 title: Monitor Google Cloud projects using auto-discovery
 source: https://docs.dynatrace.com/managed/ingest-from/google-cloud-platform/gcp-integrations/gcp-guide/deploy-k8/gcp-autodiscovery
-scraped: 2026-05-12T12:08:45.262975
 ---
 
 # Monitor Google Cloud projects using auto-discovery
@@ -175,7 +174,7 @@ The helm deployment package contains the `autodiscovery-values.yaml` file with t
 
 ### Select resources
 
-Specify the metrics to be sent to Dynatrace by listing the resource types of the monitored resources in the `autodiscoveryResourcesYaml` section. To identify the resources for monitoring within your project, see [Google Cloud metricsï»¿](https://dt-url.net/th03qct).
+Specify the metrics to be sent to Dynatrace by listing the resource types of the monitored resources in the `autodiscoveryResourcesYaml` section. To identify the resources for monitoring within your project, see [Google Cloud metrics﻿](https://dt-url.net/th03qct).
 
 Example:
 

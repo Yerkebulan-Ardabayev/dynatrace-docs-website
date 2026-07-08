@@ -1,7 +1,6 @@
 ---
 title: Get cluster information about known cluster nodes
 source: https://docs.dynatrace.com/managed/dynatrace-api/cluster-api/cluster-api-v1/cluster-v1/get-cluster-info-known-servers
-scraped: 2026-05-12T12:12:52.806992
 ---
 
 # Get cluster information about known cluster nodes
@@ -30,7 +29,7 @@ The request doesn't provide any configurable parameters.
 
 | Code | Type | Description |
 | --- | --- | --- |
-| **200** | [Cluster[]](#openapi-definition-Cluster) | Success |
+| **200** | [Cluster](#openapi-definition-Cluster)[] | Success |
 
 ### Response body objects
 

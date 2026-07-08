@@ -1,7 +1,6 @@
 ---
 title: Metric units API - GET all units
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/metrics-units/get-all-units
-scraped: 2026-05-12T11:12:18.263732
 ---
 
 # Metric units API - GET all units
@@ -52,7 +51,7 @@ A list of units along with their properties.
 | Element | Type | Description |
 | --- | --- | --- |
 | totalCount | integer | The total number of units in the result. |
-| units | [Unit[]](#openapi-definition-Unit) | A list of units. |
+| units | [Unit](#openapi-definition-Unit)[] | A list of units. |
 
 #### The `Unit` object
 
@@ -77,7 +76,7 @@ The metadata of a unit.
 | Element | Type | Description |
 | --- | --- | --- |
 | code | integer | The HTTP status code |
-| constraintViolations | [ConstraintViolation[]](#openapi-definition-ConstraintViolation) | A list of constraint violations |
+| constraintViolations | [ConstraintViolation](#openapi-definition-ConstraintViolation)[] | A list of constraint violations |
 | message | string | The error message |
 
 #### The `ConstraintViolation` object

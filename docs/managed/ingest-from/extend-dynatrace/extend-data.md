@@ -1,7 +1,6 @@
 ---
 title: Enrich ingested data with Dynatrace-specific fields
 source: https://docs.dynatrace.com/managed/ingest-from/extend-dynatrace/extend-data
-scraped: 2026-05-12T11:24:19.310755
 ---
 
 # Enrich ingested data with Dynatrace-specific fields
@@ -11,7 +10,7 @@ scraped: 2026-05-12T11:24:19.310755
 * 4-min read
 * Published Apr 26, 2021
 
-Unlike automatic ingestion using OneAgent, data sent directly to an ActiveGate (for example, ingest APIs) is not automatically enriched with host-related information. This may incur additional charges, as it would not take into account possibly included [DDU quotas](/managed/license/monitoring-consumption-classic/davis-data-units "Understand how Dynatrace monitoring consumption is calculated based on Davis data units (DDU).").
+Unlike automatic ingestion using OneAgent, data sent directly to an ActiveGate (for example, ingest APIs) is not automatically enriched with host-related information. This may incur additional charges, as it would not take into account possibly included [DDU quotas](/managed/license/classic-licensing/davis-data-units "Understand how Dynatrace monitoring consumption is calculated based on Davis data units (DDU).").
 
 The different Dynatrace deployment options provide several Java-style properties and JSON files with sets of attributes that you can use to enrich your requests to Dynatrace and ensure Dynatrace can map the data to your infrastructure.
 

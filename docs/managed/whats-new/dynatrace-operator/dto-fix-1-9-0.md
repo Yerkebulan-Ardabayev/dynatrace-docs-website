@@ -1,7 +1,6 @@
 ---
 title: Dynatrace Operator release notes version 1.9.0
 source: https://docs.dynatrace.com/managed/whats-new/dynatrace-operator/dto-fix-1-9-0
-scraped: 2026-05-12T12:14:23.050606
 ---
 
 # Dynatrace Operator release notes version 1.9.0
@@ -13,14 +12,14 @@ scraped: 2026-05-12T12:14:23.050606
 
 Release date: April 13, 2026
 
-On this page, youâll find an overview of whatâs new and improved in Dynatrace Operator version 1.9.0.
+On this page, you’ll find an overview of what’s new and improved in Dynatrace Operator version 1.9.0.
 
 ## New features and enhancements
 
 * Metadata enrichment for OneAgent code modules:  
   When using `applicationMonitoring` or `cloudNativeFullstack`, `metadataEnrichment` is enabled automatically and does not need to be added explicitly. This ensures Kubernetes metadata is automatically added to all signals, giving full observability context without additional configuration.
 
-* The SecurityContexts of Dynatrace OpenTelemetry Collector, EdgeConnect, NodeConfigCollector, and CSI driver containers have been updated to align with the latest [CIS Kubernetes Benchmarkï»¿](https://www.cisecurity.org/benchmark/kubernetes) and [Pod Security Standards (PSS)ï»¿](https://kubernetes.io/docs/concepts/security/pod-security-standards/).
+* The SecurityContexts of Dynatrace OpenTelemetry Collector, EdgeConnect, NodeConfigCollector, and CSI driver containers have been updated to align with the latest [CIS Kubernetes Benchmark﻿](https://www.cisecurity.org/benchmark/kubernetes) and [Pod Security Standards (PSS)﻿](https://kubernetes.io/docs/concepts/security/pod-security-standards/).
 
 * When Kubernetes monitoring is first enabled (for example, when onboarding a new cluster), KSPM settings are automatically configured. New clusters no longer require manual configuration. Existing clusters and their configurations are not affected. For details, see [Unavailable in Dynatrace Managed](/managed/upgrade/unavailable-in-managed "Your selection is unavailable in Dynatrace Managed.").
 
@@ -34,7 +33,7 @@ On this page, youâll find an overview of whatâs new and improved in Dy
 
 * To improve startup times, the image pull policy now follows the Kubernetes default (`IfNotPresent` for tagged images, `Always` for `:latest` or untagged images) instead of being explicitly set to `Always`. You can configure the image pull policy in the DynaKube for operator managed components or the Helm chart for the operator itself. For configuration options, see [DynaKube parameters for Dynatrace Operator](/managed/ingest-from/setup-on-k8s/reference/dynakube-parameters "List the available parameters for setting up Dynatrace Operator on Kubernetes.").
 
-* Following changes in Kubernetes 1.31+, AppArmor profiles are now configured directly in the pod or container `securityContext` instead of using annotations. No action is required â the Dynatrace Operator automatically applies the correct method based on your cluster version. If you're on Kubernetes 1.30 or earlier, the existing Helm chart-based AppArmor configuration continues to work but is deprecated and will be removed after Kubernetes 1.30 reaches end of life. For details, see [Enable AppArmor for enhanced security](/managed/ingest-from/setup-on-k8s/guides/networking-security-compliance/security-configurations/enable-app-armor "Apply AppArmor profiles on Dynatrace components for enhanced security.").
+* Following changes in Kubernetes 1.31+, AppArmor profiles are now configured directly in the pod or container `securityContext` instead of using annotations. No action is required — the Dynatrace Operator automatically applies the correct method based on your cluster version. If you're on Kubernetes 1.30 or earlier, the existing Helm chart-based AppArmor configuration continues to work but is deprecated and will be removed after Kubernetes 1.30 reaches end of life. For details, see [Enable AppArmor for enhanced security](/managed/ingest-from/setup-on-k8s/guides/networking-security-compliance/security-configurations/enable-app-armor "Apply AppArmor profiles on Dynatrace components for enhanced security.").
 
 * You can now control rolling update behavior directly in the DynaKube individually for OneAgent, ActiveGate, and LogMonitoring using the new `rollingUpdate` field. For details, see [DynaKube parameters for Dynatrace Operator](/managed/ingest-from/setup-on-k8s/reference/dynakube-parameters "List the available parameters for setting up Dynatrace Operator on Kubernetes.").
 
@@ -56,11 +55,11 @@ On this page, youâll find an overview of whatâs new and improved in Dy
 
 * Fixed an issue where the ActiveGate TLS secret was not cleaned up correctly due to an incorrect deletion name. The correct `<dynakube>-activegate-tls` name is now used.
 
-* Fixed a connectivity issue between in-cluster ActiveGate and CodeModules agents. TLS certificate secrets in monitored namespaces are now correctly removed when no longer needed â for example, when a user disables the `automatic-tls-certificate` feature flag. Previously, stale secrets were still being mounted into application pods, causing connectivity failures due to an expired ActiveGate TLS certificate.
+* Fixed a connectivity issue between in-cluster ActiveGate and CodeModules agents. TLS certificate secrets in monitored namespaces are now correctly removed when no longer needed — for example, when a user disables the `automatic-tls-certificate` feature flag. Previously, stale secrets were still being mounted into application pods, causing connectivity failures due to an expired ActiveGate TLS certificate.
 
 * The `app.kubernetes.io/version` label on deployed Extensions Execution Controller (EEC) pods now reflects the version specified in the DynaKube. Previously, the label incorrectly contained the operator version or was empty.
 
-* The EdgeConnect AppArmor annotation that was previously set by the Operator has been removed, as it was never enforced and had no effect. Note that the annotation approach only works on Kubernetes 1.30 and earlier â on Kubernetes 1.31+, the `securityContext`-based AppArmor configuration is not yet supported for EdgeConnect. To set an AppArmor profile on Kubernetes 1.30 or earlier, use the EdgeConnect `spec.annotations` field. For details, see [Enable AppArmor for enhanced security](/managed/ingest-from/setup-on-k8s/guides/networking-security-compliance/security-configurations/enable-app-armor "Apply AppArmor profiles on Dynatrace components for enhanced security.").
+* The EdgeConnect AppArmor annotation that was previously set by the Operator has been removed, as it was never enforced and had no effect. Note that the annotation approach only works on Kubernetes 1.30 and earlier — on Kubernetes 1.31+, the `securityContext`-based AppArmor configuration is not yet supported for EdgeConnect. To set an AppArmor profile on Kubernetes 1.30 or earlier, use the EdgeConnect `spec.annotations` field. For details, see [Enable AppArmor for enhanced security](/managed/ingest-from/setup-on-k8s/guides/networking-security-compliance/security-configurations/enable-app-armor "Apply AppArmor profiles on Dynatrace components for enhanced security.").
 
 * Fixed an issue where the node-image-pull job for downloading Dynatrace code modules used a node name instead of a node selector, causing suboptimal interaction with the Kubernetes scheduler.
 

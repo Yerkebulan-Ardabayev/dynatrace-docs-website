@@ -1,7 +1,6 @@
 ---
 title: AWS PrivateLink API - GET configuration
 source: https://docs.dynatrace.com/managed/dynatrace-api/configuration-api/aws-privatelink/get-configuration
-scraped: 2026-05-12T11:21:11.724160
 ---
 
 # AWS PrivateLink API - GET configuration

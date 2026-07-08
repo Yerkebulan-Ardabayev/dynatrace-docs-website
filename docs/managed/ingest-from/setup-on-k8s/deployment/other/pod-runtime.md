@@ -1,7 +1,6 @@
 ---
 title: Application observability with Pod runtime injection
 source: https://docs.dynatrace.com/managed/ingest-from/setup-on-k8s/deployment/other/pod-runtime
-scraped: 2026-05-12T11:52:43.553445
 ---
 
 # Application observability with Pod runtime injection
@@ -27,7 +26,7 @@ This method of application instrumentation may not fully link Kubernetes workloa
 
 Pod runtime injection and cgroup v2
 
-If Pod runtime injection is used with [cgroup v2ï»¿](https://kubernetes.io/docs/concepts/architecture/cgroups/), the `builtin:containers.*` metrics are reported to Dynatrace only if all the following conditions are respected:
+If Pod runtime injection is used with [cgroup v2﻿](https://kubernetes.io/docs/concepts/architecture/cgroups/), the `builtin:containers.*` metrics are reported to Dynatrace only if all the following conditions are respected:
 
 * The **Kubernetes API** is accessible (see [Grant viewer role to service accounts](/managed/observe/infrastructure-observability/container-platform-monitoring/kubernetes-monitoring/leverage-tags-defined-in-kubernetes-deployments#viewer "Organize and filter your monitored applications by importing labels and annotations from your Kubernetes/OpenShift environment."))
 * The pod runs a **single container**
@@ -40,7 +39,7 @@ Linux
 
 Windows
 
-OneAgent is made available to the application container via an `initContainer`âyour application image remains unaffected.
+OneAgent is made available to the application container via an `initContainer`—your application image remains unaffected.
 
 To integrate OneAgent into your application at runtime, extend your deployment template as follows.
 

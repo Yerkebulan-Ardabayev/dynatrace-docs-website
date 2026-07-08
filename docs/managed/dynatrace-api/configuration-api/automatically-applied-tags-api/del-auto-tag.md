@@ -1,7 +1,6 @@
 ---
 title: Automatically applied tags API - DELETE an auto-tag
 source: https://docs.dynatrace.com/managed/dynatrace-api/configuration-api/automatically-applied-tags-api/del-auto-tag
-scraped: 2026-05-12T12:15:56.234923
 ---
 
 # Automatically applied tags API - DELETE an auto-tag

@@ -1,7 +1,6 @@
 ---
 title: Filter monitoring data via request attributes
 source: https://docs.dynatrace.com/managed/observe/application-observability/services/request-attributes/filter-monitoring-data-via-request-attributes
-scraped: 2026-05-12T11:38:31.401106
 ---
 
 # Filter monitoring data via request attributes
@@ -11,7 +10,7 @@ scraped: 2026-05-12T11:38:31.401106
 * 2-min read
 * Updated on Jul 28, 2023
 
-Once youâve defined your request attributes, they're listed in the related service analysis and indicated as labels for the respective requests.
+Once you’ve defined your request attributes, they're listed in the related service analysis and indicated as labels for the respective requests.
 
 ![Request attributes](https://dt-cdn.net/images/request-attribute-filter-1446-3c51f44605.png)
 
@@ -47,4 +46,4 @@ Request attributes
 ## Related topics
 
 * [Capture request attributes based on web request data](/managed/observe/application-observability/services/request-attributes/capture-request-attributes-based-on-web-request-data "Create request attributes based on web request data.")
-* [Capture request attributes based on method arguments](/managed/observe/application-observability/services/request-attributes/capture-request-attributes-based-on-method-arguments "Learn how to create request attributes based on Java, .NET, or PHP method arguments and how to use them on the serviceâs overview page. Also find out how you can aggregate the captured values of request attributes as well as how you can access objects, in case the value to be captured is a complex object.")
+* [Capture request attributes based on method arguments](/managed/observe/application-observability/services/request-attributes/capture-request-attributes-based-on-method-arguments "Learn how to create request attributes based on Java, .NET, or PHP method arguments and how to use them on the service’s overview page. Also find out how you can aggregate the captured values of request attributes as well as how you can access objects, in case the value to be captured is a complex object.")

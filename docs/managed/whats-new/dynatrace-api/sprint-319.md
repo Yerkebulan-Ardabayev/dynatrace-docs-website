@@ -1,7 +1,6 @@
 ---
 title: Dynatrace API changelog version 1.319
 source: https://docs.dynatrace.com/managed/whats-new/dynatrace-api/sprint-319
-scraped: 2026-05-12T11:35:56.435195
 ---
 
 # Dynatrace API changelog version 1.319

@@ -1,7 +1,6 @@
 ---
 title: Settings API - Endpoint metrics schema table
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/settings/schemas/builtin-unified-services-endpoint-metrics
-scraped: 2026-05-12T11:42:23.086620
 ---
 
 # Settings API - Endpoint metrics schema table
@@ -12,7 +11,7 @@ scraped: 2026-05-12T11:42:23.086620
 
 ### Endpoint metrics (`builtin:unified-services-endpoint-metrics)`
 
-This setting allows to turn on or off classic endpoint metrics. Please check the [documentationï»¿](https://dt-url.net/gy03cmt) for details.
+This setting allows to turn on or off classic endpoint metrics. Please check the [documentation﻿](https://dt-url.net/gy03cmt) for details.
 
 | Schema ID | Schema groups | Scope |
 | --- | --- | --- |
@@ -34,4 +33,4 @@ To execute this request, you need an access token with **Read settings** (`setti
 
 | Property | Type | Description | Required |
 | --- | --- | --- | --- |
-| Enable classic endpoint metrics `enableEndpointMetrics` | boolean | Should metrics be written for endpoints? Please be aware that this setting has billing implications and does not affect metrics on Grail. Check out this [documentationï»¿](https://dt-url.net/td23cgh) for further details. | Required |
+| Enable classic endpoint metrics `enableEndpointMetrics` | boolean | Should metrics be written for endpoints? Please be aware that this setting has billing implications and does not affect metrics on Grail. Check out this [documentation﻿](https://dt-url.net/td23cgh) for further details. | Required |

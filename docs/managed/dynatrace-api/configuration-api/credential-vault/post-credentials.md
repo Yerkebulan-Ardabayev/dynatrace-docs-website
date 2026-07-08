@@ -1,7 +1,6 @@
 ---
 title: Credential vault API - POST a set of credentials
 source: https://docs.dynatrace.com/managed/dynatrace-api/configuration-api/credential-vault/post-credentials
-scraped: 2026-05-12T12:05:36.604728
 ---
 
 # Credential vault API - POST a set of credentials
@@ -42,18 +41,18 @@ Refer to [JSON models](/managed/dynatrace-api/configuration-api/credential-vault
 
 A set of credentials for synthetic monitors.
 
-The actual set of fields depends on the type of credentials. Find the list of actual objects in the description of the **type** field or see [Credential vault API - JSON modelsï»¿](https://dt-url.net/2sa3sen).
+The actual set of fields depends on the type of credentials. Find the list of actual objects in the description of the **type** field or see [Credential vault API - JSON models﻿](https://dt-url.net/2sa3sen).
 
 | Element | Type | Description | Required |
 | --- | --- | --- | --- |
 | allowContextlessRequests | boolean | Allow ad-hoc functions to access the credential details (requires the APP\_ENGINE scope). | Optional |
-| allowedEntities | [CredentialAccessData[]](#openapi-definition-CredentialAccessData) | The set of entities allowed to use the credential. | Optional |
+| allowedEntities | [CredentialAccessData](#openapi-definition-CredentialAccessData)[] | The set of entities allowed to use the credential. | Optional |
 | description | string | A short description of the credentials set. | Optional |
 | id | string | The ID of the credentials set. | Optional |
 | name | string | The name of the credentials set. | Required |
 | ownerAccessOnly | boolean | The credentials set is available to every user (`false`) or to owner only (`true`). | Optional |
-| ~~scope~~ | string | DEPRECATED  The scope of the credentials set. The element can hold these values * `APP_ENGINE` * `EXTENSION` * `SYNTHETIC` | Optional |
-| scopes | string[] | The set of scopes of the credentials set.  Limitations: `CredentialsScope.APP_ENGINE` is only available on the new Dynatrace SaaS platform - it's not available on managed or non-Grail SaaS environments. The element can hold these values * `APP_ENGINE` * `EXTENSION` * `SYNTHETIC` | Required |
+| ~~scope~~ | string | DEPRECATED  The scope of the credentials set. The element can hold these values * `APP_ENGINE` * `EXTENSION` * `EXTENSION_AUTHENTICATION` * `SYNTHETIC` | Optional |
+| scopes | string[] | The set of scopes of the credentials set.  Limitations: `CredentialsScope.APP_ENGINE` is only available on the new Dynatrace SaaS platform - it's not available on managed or non-Grail SaaS environments. The element can hold these values * `APP_ENGINE` * `EXTENSION` * `EXTENSION_AUTHENTICATION` * `SYNTHETIC` | Required |
 | type | string | Defines the actual set of fields depending on the value. See one of the following objects:  * `CERTIFICATE` -> CertificateCredentials * `PUBLIC_CERTIFICATE` -> PublicCertificateCredentials * `USERNAME_PASSWORD` -> UserPasswordCredentials * `TOKEN` -> TokenCredentials * `SNMPV3` -> SNMPV3Credentials * `AWS_MONITORING_KEY_BASED` -> AWSKeyBasedCredentialsDto * `AWS_MONITORING_ROLE_BASED` -> AWSRoleBasedCredentials The element can hold these values * `AWS_MONITORING_KEY_BASED` * `AWS_MONITORING_ROLE_BASED` * `CERTIFICATE` * `PUBLIC_CERTIFICATE` * `SNMPV3` * `TOKEN` * `USERNAME_PASSWORD` | Required |
 
 #### The `CredentialAccessData` object
@@ -211,7 +210,7 @@ A short representation of the credentials set.
 | Element | Type | Description |
 | --- | --- | --- |
 | code | integer | The HTTP status code |
-| constraintViolations | [ConstraintViolation[]](#openapi-definition-ConstraintViolation) | A list of constraint violations |
+| constraintViolations | [ConstraintViolation](#openapi-definition-ConstraintViolation)[] | A list of constraint violations |
 | message | string | The error message |
 
 #### The `ConstraintViolation` object
@@ -413,5 +412,5 @@ https://mySampleEnv.live.dynatrace.com/api/config/v2/credentials/
 
 ## Related topics
 
-* [Configure browser monitors](/managed/observe/digital-experience/synthetic-monitoring/browser-monitors/configure-browser-monitors "Learn about configuring browser monitors and clickpaths.")
-* [Configure HTTP monitors](/managed/observe/digital-experience/synthetic-monitoring/http-monitors-classic/configure-http-monitors-classic "Learn about configuring HTTP monitors.")
+* [Configure browser monitors in Classic](/managed/observe/digital-experience/synthetic-monitoring/browser-monitors/configure-browser-monitors "Learn about configuring browser monitors and clickpaths.")
+* [Configure HTTP monitors in Classic](/managed/observe/digital-experience/synthetic-monitoring/http-monitors-classic/configure-http-monitors-classic "Learn about configuring HTTP monitors.")

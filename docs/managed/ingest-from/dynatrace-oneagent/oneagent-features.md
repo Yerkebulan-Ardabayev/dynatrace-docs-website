@@ -1,7 +1,6 @@
 ---
 title: OneAgent features
 source: https://docs.dynatrace.com/managed/ingest-from/dynatrace-oneagent/oneagent-features
-scraped: 2026-05-12T11:24:59.427513
 ---
 
 # OneAgent features
@@ -13,7 +12,7 @@ scraped: 2026-05-12T11:24:59.427513
 
 When you create your environment, OneAgent comes with a big set of features that are activated by default. Nevertheless, you always need to explicitly activate features added by newer versions of OneAgent and *opt-in* features, such as the automatic enrichment of log entries with the trace ID.
 
-New OneAgent features are fully supported and tested as soon as theyâre available.
+New OneAgent features are fully supported and tested as soon as they’re available.
 
 * For new environments, you can activate or deactivate OneAgent features (opt-in) based on the specific use case.
 * For existing environments, newly added OneAgent features still require explicit activation from users with **Write settings** (`settings.write`) permission on the [Settings API - OneAgent features schema table](/managed/dynatrace-api/environment-api/settings/schemas/builtin-oneagent-features "View builtin:oneagent.features settings schema table of your monitoring environment via the Dynatrace API.").

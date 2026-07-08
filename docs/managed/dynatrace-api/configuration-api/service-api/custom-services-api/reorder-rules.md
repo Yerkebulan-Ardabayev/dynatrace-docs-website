@@ -1,7 +1,6 @@
 ---
 title: Custom services API - PUT reorder rules
 source: https://docs.dynatrace.com/managed/dynatrace-api/configuration-api/service-api/custom-services-api/reorder-rules
-scraped: 2026-05-12T11:18:13.025244
 ---
 
 # Custom services API - PUT reorder rules
@@ -43,7 +42,7 @@ An ordered list of short representations of Dynatrace entities.
 
 | Element | Type | Description | Required |
 | --- | --- | --- | --- |
-| values | [EntityShortRepresentation[]](#openapi-definition-EntityShortRepresentation) | An ordered list of short representations of Dynatrace entities. | Required |
+| values | [EntityShortRepresentation](#openapi-definition-EntityShortRepresentation)[] | An ordered list of short representations of Dynatrace entities. | Required |
 
 #### The `EntityShortRepresentation` object
 
@@ -145,7 +144,7 @@ This is a model of the request body, showing the possible elements. It has to be
 | Element | Type | Description |
 | --- | --- | --- |
 | code | integer | The HTTP status code |
-| constraintViolations | [ConstraintViolation[]](#openapi-definition-ConstraintViolation) | A list of constraint violations |
+| constraintViolations | [ConstraintViolation](#openapi-definition-ConstraintViolation)[] | A list of constraint violations |
 | message | string | The error message |
 
 #### The `ConstraintViolation` object

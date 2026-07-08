@@ -1,7 +1,6 @@
 ---
 title: Host monitoring
 source: https://docs.dynatrace.com/managed/ingest-from/setup-on-k8s/how-it-works/other-deployment-modes/host-monitoring
-scraped: 2026-05-12T11:54:00.387980
 ---
 
 # Host monitoring

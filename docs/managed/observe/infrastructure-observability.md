@@ -1,7 +1,6 @@
 ---
 title: Infrastructure Observability
 source: https://docs.dynatrace.com/managed/observe/infrastructure-observability
-scraped: 2026-05-12T11:03:27.812323
 ---
 
 # Infrastructure Observability
@@ -40,7 +39,7 @@ Read this guide](/managed/observe/infrastructure-observability/vmware-vsphere-mo
 
 ## Related topics
 
-* [Serverless monitoring](/managed/discover-dynatrace/get-started/serverless-monitoring "Serverless observability with Dynatrace")
-* [Ingest data](/managed/ingest-from "Learn how to install and configure ActiveGate and OneAgent on various platforms.")
+* [Serverless monitoring](/managed/discover-dynatrace/get-started/serverless-monitoring "Monitor serverless cloud services across AWS, Azure, and Google Cloud with Dynatrace for end-to-end visibility and AI-powered analysis.")
+* [Ingest data into Dynatrace](/managed/ingest-from "Learn how data flows from your environment through OpenPipeline into Dynatrace for analysis, and find the right ingestion path for your setup.")
 * [Monitor container groups](/managed/observe/infrastructure-observability/container-platform-monitoring/container-groups "Overview on container groups monitoring")
 * [Container monitoring rules](/managed/observe/infrastructure-observability/container-platform-monitoring/container-monitoring-rules "Define, enable and disable container monitoring rules")

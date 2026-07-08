@@ -1,7 +1,6 @@
 ---
 title: Declarative process grouping
 source: https://docs.dynatrace.com/managed/observe/infrastructure-observability/process-groups/configuration/declarative-process-grouping
-scraped: 2026-05-12T12:07:25.643277
 ---
 
 # Declarative process grouping
@@ -14,7 +13,7 @@ scraped: 2026-05-12T12:07:25.643277
 
 OneAgent version 1.217+
 
-Within large, dynamic environments, the number of processes running on your hosts can become overwhelming. For this reason, Dynatrace automatically monitors [important process group types](/managed/observe/infrastructure-observability/process-groups/basic-concepts/which-are-the-most-important-processes "Display the most important processes for monitoring and process grouping.")âprocess groups that are either of a known technology or that consume significant resources.
+Within large, dynamic environments, the number of processes running on your hosts can become overwhelming. For this reason, Dynatrace automatically monitors [important process group types](/managed/observe/infrastructure-observability/process-groups/basic-concepts/which-are-the-most-important-processes "Display the most important processes for monitoring and process grouping.")—process groups that are either of a known technology or that consume significant resources.
 
 However, Dynatrace also provides the option of monitoring specific processes that fall into neither of these two categories. This means you can monitor processes of a technology type unknown to Dynatrace that don't consume significant resources.
 
@@ -44,9 +43,9 @@ To create a process group using the Dynatrace web UI
 6. Enter the **Process group identifier**. It's a unique string to let Dynatrace identify the process group.
 7. OneAgent version 1.259+ Select a **Report process group** option:
 
-   * **Always**âthe created process group is always reported to Dynatrace.
-   * **Never**âthe created process group is never reported to Dynatrace.
-   * **Only when resource usage is high**âthe created process group is reported if CPU, memory, or network traffic usage is over 5%. For details, refer to [Most important processes](/managed/observe/infrastructure-observability/process-groups/basic-concepts/which-are-the-most-important-processes "Display the most important processes for monitoring and process grouping.").
+   * **Always**—the created process group is always reported to Dynatrace.
+   * **Never**—the created process group is never reported to Dynatrace.
+   * **Only when resource usage is high**—the created process group is reported if CPU, memory, or network traffic usage is over 5%. For details, refer to [Most important processes](/managed/observe/infrastructure-observability/process-groups/basic-concepts/which-are-the-most-important-processes "Display the most important processes for monitoring and process grouping.").
 8. Select **Add detection rule**.
 
    1. Select the object (process property) against which your detection rule will be tested:
@@ -84,7 +83,7 @@ To create a process group using the Dynatrace web UI
       * If there are several rules that match the same process, only the first rule will be applied. This depends on the order of the rules.
 9. When you finish defining all the rules, select **Save changes**.
 
-After saving your changes, Dynatrace will automatically detect and monitor the newly defined custom process group across all hostsâeven on hosts that are launched following the definition of the custom process group.
+After saving your changes, Dynatrace will automatically detect and monitor the newly defined custom process group across all hosts—even on hosts that are launched following the definition of the custom process group.
 
 ## Manage declarative process grouping
 
@@ -96,7 +95,7 @@ To manage declarative process groups
 
    1. Go to **Hosts**.
    2. Find and select your host to display the host overview page.
-   3. In the upper-right corner of the host overview page, select **More** (**â¦**) > **Settings**.
+   3. In the upper-right corner of the host overview page, select **More** (**…**) > **Settings**.
 
    4. In the host settings, select **Declarative process grouping**.
 

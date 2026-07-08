@@ -1,7 +1,6 @@
 ---
 title: Request attributes API - GET all request attributes
 source: https://docs.dynatrace.com/managed/dynatrace-api/configuration-api/service-api/request-attributes-api/get-all
-scraped: 2026-05-12T11:20:36.341135
 ---
 
 # Request attributes API - GET all request attributes
@@ -46,7 +45,7 @@ An ordered list of short representations of Dynatrace entities.
 
 | Element | Type | Description |
 | --- | --- | --- |
-| values | [EntityShortRepresentation[]](#openapi-definition-EntityShortRepresentation) | An ordered list of short representations of Dynatrace entities. |
+| values | [EntityShortRepresentation](#openapi-definition-EntityShortRepresentation)[] | An ordered list of short representations of Dynatrace entities. |
 
 #### The `EntityShortRepresentation` object
 

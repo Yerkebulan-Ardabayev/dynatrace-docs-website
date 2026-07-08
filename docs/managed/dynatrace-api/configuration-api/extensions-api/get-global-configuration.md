@@ -1,7 +1,6 @@
 ---
 title: Extensions API - GET global configuration
 source: https://docs.dynatrace.com/managed/dynatrace-api/configuration-api/extensions-api/get-global-configuration
-scraped: 2026-05-12T11:19:54.729089
 ---
 
 # Extensions API - GET global configuration

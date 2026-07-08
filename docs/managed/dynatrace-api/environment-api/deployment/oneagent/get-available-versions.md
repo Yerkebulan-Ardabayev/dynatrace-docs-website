@@ -1,7 +1,6 @@
 ---
 title: Deployment API - List available versions of OneAgent
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/deployment/oneagent/get-available-versions
-scraped: 2026-05-12T11:58:31.687130
 ---
 
 # Deployment API - List available versions of OneAgent
@@ -66,7 +65,7 @@ A list of available versions of OneAgent installer.
 | Element | Type | Description |
 | --- | --- | --- |
 | code | integer | The HTTP status code |
-| constraintViolations | [ConstraintViolation[]](#openapi-definition-ConstraintViolation) | A list of constraint violations |
+| constraintViolations | [ConstraintViolation](#openapi-definition-ConstraintViolation)[] | A list of constraint violations |
 | message | string | The error message |
 
 #### The `ConstraintViolation` object

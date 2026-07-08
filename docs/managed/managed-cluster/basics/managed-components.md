@@ -1,7 +1,6 @@
 ---
 title: Managed components
 source: https://docs.dynatrace.com/managed/managed-cluster/basics/managed-components
-scraped: 2026-05-12T11:08:47.577972
 ---
 
 # Managed components
@@ -20,11 +19,11 @@ Managed architecture
 
 ## Managed Cluster
 
-The Managed Cluster is responsible for managing various [monitoring environments](/managed/discover-dynatrace/get-started/monitoring-environment "Understand and learn how to work with monitoring environments."). A Managed Cluster typically comprises multiple nodes. Each Managed Cluster has a dedicated Cluster Management Console.
+The Managed Cluster is responsible for managing various [monitoring environments](/managed/discover-dynatrace/get-started/monitoring-environment "Learn what a Dynatrace monitoring environment is, how to find your environment ID, and how to set up and connect multiple environments."). A Managed Cluster typically comprises multiple nodes. Each Managed Cluster has a dedicated Cluster Management Console.
 
 The Managed Cluster provides Mission Control with self-monitoring and licensing data to enable proactive support.
 
-You need to [obtain a license](/managed/discover-dynatrace/get-started "Learn how to get started with Dynatrace Managed.") every time you want to set up a new Managed Cluster.
+You need to [obtain a license](/managed/discover-dynatrace/get-started "Learn how to get started with Dynatrace Managed in a few steps, from obtaining a license and setting up a Managed Cluster to ingesting data and setting up notifications.") every time you want to set up a new Managed Cluster.
 
 ## Managed Installer
 

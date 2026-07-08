@@ -1,7 +1,6 @@
 ---
 title: Subscribe to Dynatrace dashboard reports
 source: https://docs.dynatrace.com/managed/analyze-explore-automate/dashboards-classic/dashboards/subscribe-to-dashboard-reports
-scraped: 2026-05-12T11:13:39.486146
 ---
 
 # Subscribe to Dynatrace dashboard reports
@@ -68,7 +67,7 @@ To prevent all subscribed users from receiving reports from a dashboard
 To subscribe yourself to a dashboard report
 
 1. Display the dashboard.
-2. Select **More** (**â¦**) > **Subscribe**.
+2. Select **More** (**…**) > **Subscribe**.
 
    If reports are disabled for a dashboard, you can't subscribe to it.
 

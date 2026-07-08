@@ -1,7 +1,6 @@
 ---
 title: Auto-adaptive thresholds for anomaly detection
 source: https://docs.dynatrace.com/managed/dynatrace-intelligence/anomaly-detection/auto-adaptive-threshold
-scraped: 2026-05-12T11:27:48.875308
 ---
 
 # Auto-adaptive thresholds for anomaly detection
@@ -37,7 +36,7 @@ An example of auto adaptive threshold anomaly detection of disk write time in th
 The reference values for threshold calculation are the metric data values over the last seven days.
 
 * Measurements for each minute are used to calculate the 99th percentile of all the measurements. This determines the appropriate **baseline**.
-* The interquartile range between the 25th and 75th percentiles is then used as the **signal fluctuation**, which can be added to the baseline. By using the `number of signal fluctuation` (n Ã signal fluctuation) parameter, you can control how many times the signal fluctuation is added to the baseline to produce the actual threshold for alerting.
+* The interquartile range between the 25th and 75th percentiles is then used as the **signal fluctuation**, which can be added to the baseline. By using the `number of signal fluctuation` (n × signal fluctuation) parameter, you can control how many times the signal fluctuation is added to the baseline to produce the actual threshold for alerting.
 
 Another important parameter for dynamic thresholds is the sliding window that is used to compare current measurements against the calculated threshold. It defines how often the calculated threshold must be violated within a sliding window of time to raise an event (violations don't have to be successive). This approach helps to avoid alerting too aggressively on single violations. You can set the sliding window to a maximum of 60 minutes.
 

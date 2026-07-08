@@ -1,7 +1,6 @@
 ---
 title: Classic Windows services monitoring
 source: https://docs.dynatrace.com/managed/observe/infrastructure-observability/hosts/monitoring/windows-services
-scraped: 2026-05-12T12:11:58.138818
 ---
 
 # Classic Windows services monitoring
@@ -14,7 +13,7 @@ scraped: 2026-05-12T12:11:58.138818
 
 Deprecated
 
-The Classic Windows services feature described below is deprecated. Instead, use [OS services monitoring](/managed/observe/infrastructure-observability/hosts/monitoring/os-services "Improve the visibility of your infrastructure by monitoring the availability of operating system services.").
+The Classic Windows services feature described below is deprecated. Instead, use [OS services monitoring](/managed/observe/infrastructure-observability/hosts/monitoring/os-services "Monitor the availability of operating system services on your hosts to improve infrastructure visibility and detect failures in real time.").
 
 Dynatrace provides out-of-the-box availability monitoring of Windows services.
 
@@ -71,7 +70,7 @@ To monitor an OS service
    1. Go to **Hosts**.
    2. Optional Filter by `Operating system` (Windows).
    3. Find your host and select it to display the host page.
-   4. On the host page, open the browse menu (**â¦**) and select **Settings**.
+   4. On the host page, open the browse menu (**…**) and select **Settings**.
    5. Select the **OS service monitoring** tab.
 
    Host-group level
@@ -103,7 +102,7 @@ To manage the OS services you monitor
    1. Go to **Hosts**.
    2. Optional Filter by `Operating system` (Windows).
    3. Find your host and select it to display the host page.
-   4. On the host page, open the browse menu (**â¦**) and select **Settings**.
+   4. On the host page, open the browse menu (**…**) and select **Settings**.
    5. Select the **OS service monitoring** tab.
 
    Host-group level
@@ -120,7 +119,7 @@ To manage the OS services you monitor
    Go to **Settings** > **Monitoring** > **OS services monitoring**.
 2. The OS services you monitor are displayed in a table under the **Add new service** button.
 
-   * To filter the table, type a search string in the **Filter itemsâ¦** box
+   * To filter the table, type a search string in the **Filter items…** box
    * To stop monitoring a listed service, turn the **Enabled** setting off.
    * To delete a service from the table, select the delete button in the **Delete** column
    * To view and edit details, select the expand control in the **Details** column. You can change the service name or edit the display name.

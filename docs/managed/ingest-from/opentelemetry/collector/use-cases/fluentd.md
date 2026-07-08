@@ -1,7 +1,6 @@
 ---
 title: Ingest FluentD data with the OTel Collector
 source: https://docs.dynatrace.com/managed/ingest-from/opentelemetry/collector/use-cases/fluentd
-scraped: 2026-05-12T12:06:12.932018
 ---
 
 # Ingest FluentD data with the OTel Collector
@@ -12,11 +11,11 @@ scraped: 2026-05-12T12:06:12.932018
 * 1-min read
 * Published Jan 26, 2024
 
-The following configuration example shows how to configure a Collector instance to accept FluentD events via the [Fluent Forward protocolï»¿](https://github.com/fluent/fluentd/wiki/Forward-Protocol-Specification-v1) and ingest them as OTLP requests into Dynatrace.
+The following configuration example shows how to configure a Collector instance to accept FluentD events via the [Fluent Forward protocol﻿](https://github.com/fluent/fluentd/wiki/Forward-Protocol-Specification-v1) and ingest them as OTLP requests into Dynatrace.
 
 ## Prerequisites
 
-* One of the following Collector distributions with the [Fluent Forward receiverï»¿](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.151.0/receiver/fluentforwardreceiver):
+* One of the following Collector distributions with the [Fluent Forward receiver﻿](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.155.0/receiver/fluentforwardreceiver):
 
   + The [Dynatrace OTel Collector](/managed/ingest-from/opentelemetry/collector#dt-collector-dist "Learn how to use the OpenTelemetry Collector, including the Dynatrace OTel Collector, to ingest telemetry from OpenTelemetry.")
   + [OpenTelemetry Contrib](/managed/ingest-from/opentelemetry/collector#collector-contrib "Learn how to use the OpenTelemetry Collector, including the Dynatrace OTel Collector, to ingest telemetry from OpenTelemetry.")
@@ -98,7 +97,7 @@ Under `receivers`, we specify the `fluentforward` receiver as the active receive
 
 ### Exporters
 
-Under `exporters`, we specify the default [`otlp_http` exporterï»¿](https://github.com/open-telemetry/opentelemetry-collector/tree/v0.151.0/exporter/otlphttpexporter) and configure it with our Dynatrace API URL and the required authentication token.
+Under `exporters`, we specify the default [`otlp_http` exporter﻿](https://github.com/open-telemetry/opentelemetry-collector/tree/v0.155.0/exporter/otlphttpexporter) and configure it with our Dynatrace API URL and the required authentication token.
 
 For this purpose, we set the following two environment variables and reference them in the configuration values for `endpoint` and `Authorization`.
 

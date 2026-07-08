@@ -1,7 +1,6 @@
 ---
 title: Supported PHP versions
 source: https://docs.dynatrace.com/managed/ingest-from/technology-support/application-software/php/php-supported-versions
-scraped: 2026-05-12T12:03:51.214287
 ---
 
 # Supported PHP versions
@@ -11,7 +10,7 @@ scraped: 2026-05-12T12:03:51.214287
 * 2-min read
 * Published Jun 12, 2019
 
-The different PHP versions have support timelines defined by PHP. Please refer to [Supported PHP versionsï»¿](https://php.net/supported-versions.php) at [php.netï»¿](https://php.net/) to see which versions are currently supported by PHP and when each version is planned for end of support.
+The different PHP versions have support timelines defined by PHP. Please refer to [Supported PHP versions﻿](https://php.net/supported-versions.php) at [php.net﻿](https://php.net/) to see which versions are currently supported by PHP and when each version is planned for end of support.
 
 * Deprecated versions don't receive updates or security patches, so running them in production should be avoided.
 * Dynatrace is committed to supporting each PHP version for at least as long as the vendor supports it (in most cases, support extends for at least six months beyond this point).
@@ -83,7 +82,7 @@ PHP Monitoring Process version not supported
 
 We also write the message to the error logs on the host machine.
 
-See [the environments and versions that Dynatrace supports](/managed/ingest-from/technology-support#php "Find technical details related to Dynatrace support for specific platforms and development frameworks.") in conjunction with PHP and [the PHP supported versionsï»¿](https://php.net/supported-versions.php).
+See [the environments and versions that Dynatrace supports](/managed/ingest-from/technology-support#php "Find technical details related to Dynatrace support for specific platforms and development frameworks.") in conjunction with PHP and [the PHP supported versions﻿](https://php.net/supported-versions.php).
 
 ## Known limitations
 

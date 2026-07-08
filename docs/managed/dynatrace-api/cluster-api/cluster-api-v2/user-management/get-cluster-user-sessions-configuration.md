@@ -1,7 +1,6 @@
 ---
 title: Get cluster user sessions configuration
 source: https://docs.dynatrace.com/managed/dynatrace-api/cluster-api/cluster-api-v2/user-management/get-cluster-user-sessions-configuration
-scraped: 2026-05-12T11:05:49.127124
 ---
 
 # Get cluster user sessions configuration

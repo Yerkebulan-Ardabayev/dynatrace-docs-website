@@ -1,7 +1,6 @@
 ---
 title: Integrate Dynatrace Lambda Layer on container images
 source: https://docs.dynatrace.com/managed/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration/deploy-oa-latest-lambda-container-images
-scraped: 2026-05-12T12:01:30.966151
 ---
 
 # Integrate Dynatrace Lambda Layer on container images
@@ -12,11 +11,11 @@ scraped: 2026-05-12T12:01:30.966151
 * 4-min read
 * Updated on Jan 22, 2026
 
-As an addition to Lambda function deployment as a ZIP file, AWS Lambda offers [Lambda function deployment as container imagesï»¿](https://aws.amazon.com/de/blogs/aws/new-for-aws-lambda-container-image-support/).
+As an addition to Lambda function deployment as a ZIP file, AWS Lambda offers [Lambda function deployment as container images﻿](https://aws.amazon.com/de/blogs/aws/new-for-aws-lambda-container-image-support/).
 
 The container image must include the files and configuration required to run the function code. The same applies to the files and configuration of Dynatrace AWS Lambda Layer, once monitoring is enabled for the containerized Lambda function.
 
-In a ZIP file function deployment, the Dynatrace artifacts are attached to the function with an [AWS Lambda extensionï»¿](https://docs.aws.amazon.com/lambda/latest/dg/using-extensions.html) (which is a Lambda layer with an extension-specific folder layout).
+In a ZIP file function deployment, the Dynatrace artifacts are attached to the function with an [AWS Lambda extension﻿](https://docs.aws.amazon.com/lambda/latest/dg/using-extensions.html) (which is a Lambda layer with an extension-specific folder layout).
 
 A Lambda layer, like a function bundle, is a ZIP file extracted at function cold start time to the `/opt` folder of the AWS Lambda function instance.
 
@@ -77,7 +76,7 @@ ENV DT_CONNECTION_AUTH_TOKEN=dt0a01...
    dt-awslayertool pull arn:aws:lambda:us-east-1:725887861453:layer:Dynatrace_OneAgent_1_207_6_20201127-103507_nodejs:1 --extract DynatraceOneAgentExtension
    ```
 
-   To learn more about dt-awslayertool, see [Githubï»¿](https://github.com/dynatrace-oss/dt-awslayertool).
+   To learn more about dt-awslayertool, see [Github﻿](https://github.com/dynatrace-oss/dt-awslayertool).
 
    To use the following code sample, substitute `<YOUR_LAMBDA_LAYER_ARN_SNIPPET>` with the [copied Lambda layer snippet](#copy-layer-snippet) and `<YOUR_LAMBDA_LAYER_REGION>`  with the Lambda layer region provided in the snippet.
 
@@ -101,7 +100,7 @@ ENV DT_CONNECTION_AUTH_TOKEN=dt0a01...
    unzip -d DynatraceOneAgentExtension layer.zip
    ```
 
-   To learn more about AWS CLI, see [AWS documentationï»¿](https://docs.aws.amazon.com/cli/index.html).
+   To learn more about AWS CLI, see [AWS documentation﻿](https://docs.aws.amazon.com/cli/index.html).
 2. To copy the downloaded extension content into the container image and ensure that the shell script file `/opt/dynatrace` is executable, use the following `Dockerfile` commands.
 
    ```
@@ -123,15 +122,15 @@ containerized-lambda-sample
 
 
 
-âââ Dockerfile
+├── Dockerfile
 
 
 
-âââ DynatraceOneAgentExtension
+├── DynatraceOneAgentExtension
 
 
 
-âââ index.js
+└── index.js
 ```
 
 The content of the Dynatrace AWS Lambda Layer is assumed to be downloaded and extracted (as outlined above) to the folder `DynatraceOneAgentExtension`.
@@ -218,11 +217,11 @@ CMD [ "index.handler" ]
 
 ## Limitations
 
-Monitoring via Dynatrace AWS Lambda extension on container images is supported only for images [created from an AWS base image for Lambdaï»¿](https://docs.aws.amazon.com/lambda/latest/dg/images-create.html#images-create-1) and only for [the runtimes that we support for non-containerized functions](/managed/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration#support-lifecycle "AWS Lambda capabilities and integration options").
+Monitoring via Dynatrace AWS Lambda extension on container images is supported only for images [created from an AWS base image for Lambda﻿](https://docs.aws.amazon.com/lambda/latest/dg/images-create.html#images-create-1) and only for [the runtimes that we support for non-containerized functions](/managed/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration#support-lifecycle "AWS Lambda capabilities and integration options").
 
 ## Additional resources
 
 For more information on the Lambda container images, see:
 
-* [Creating Lambda container imagesï»¿](https://docs.aws.amazon.com/lambda/latest/dg/images-create.html)
-* [Working with Lambda layers and extensions in container imagesï»¿](https://aws.amazon.com/de/blogs/compute/working-with-lambda-layers-and-extensions-in-container-images/)
+* [Creating Lambda container images﻿](https://docs.aws.amazon.com/lambda/latest/dg/images-create.html)
+* [Working with Lambda layers and extensions in container images﻿](https://aws.amazon.com/de/blogs/compute/working-with-lambda-layers-and-extensions-in-container-images/)

@@ -1,7 +1,6 @@
 ---
 title: Synthetic monitors API v2 - DELETE Synthetic monitor
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/synthetic-v2/synthetic-network-availability-monitors/delete-monitor-definition
-scraped: 2026-05-12T12:15:50.460083
 ---
 
 # Synthetic monitors API v2 - DELETE Synthetic monitor
@@ -55,7 +54,7 @@ To learn how to obtain and use it, see [Tokens and authentication](/managed/disc
 | Element | Type | Description |
 | --- | --- | --- |
 | code | integer | The HTTP status code |
-| constraintViolations | [ConstraintViolation[]](#openapi-definition-ConstraintViolation) | A list of constraint violations |
+| constraintViolations | [ConstraintViolation](#openapi-definition-ConstraintViolation)[] | A list of constraint violations |
 | message | string | The error message |
 
 #### The `ConstraintViolation` object

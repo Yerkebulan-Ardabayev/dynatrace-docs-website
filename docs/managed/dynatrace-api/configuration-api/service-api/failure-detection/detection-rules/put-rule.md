@@ -1,7 +1,6 @@
 ---
 title: Failure detection API - PUT a detection rule
 source: https://docs.dynatrace.com/managed/dynatrace-api/configuration-api/service-api/failure-detection/detection-rules/put-rule
-scraped: 2026-05-12T11:16:17.584662
 ---
 
 # Failure detection API - PUT a detection rule
@@ -47,7 +46,7 @@ Configuration of the failure detection rule.
 
 | Element | Type | Description | Required |
 | --- | --- | --- | --- |
-| conditions | [FailureDetectionCondition[]](#openapi-definition-FailureDetectionCondition) | A list of conditions of the rule.  The rule applies when **all** conditions are fulfilled. | Required |
+| conditions | [FailureDetectionCondition](#openapi-definition-FailureDetectionCondition)[] | A list of conditions of the rule.  The rule applies when **all** conditions are fulfilled. | Required |
 | description | string | A short description of the rule. | Optional |
 | enabled | boolean | The rule is enabled (`true`) or disabled (`false`). | Required |
 | fdpId | string | The failure detection parameter (FDP) set of the rule.  Specify the ID of the set here. The FDP set must exist at the time of rule creation. | Required |
@@ -61,13 +60,13 @@ The condition of the failure detection rule.
 | Element | Type | Description | Required |
 | --- | --- | --- | --- |
 | attribute | string | The attribute to be checked. The element can hold these values * `PG_NAME` * `PG_TAG` * `SERVICE_MANAGEMENT_ZONES` * `SERVICE_NAME` * `SERVICE_SERVICE_TYPE` * `SERVICE_TAG` | Optional |
-| predicate | [FdcPredicate](#openapi-definition-FdcPredicate) | The predicate that tests the value of the attribute.  The actual set of fields depends on the type of the predicate. Find the list of actual objects in the description of the **type** field or see [Failure detection API - JSON modelsï»¿](https://dt-url.net/9sg3swf). | Optional |
+| predicate | [FdcPredicate](#openapi-definition-FdcPredicate) | The predicate that tests the value of the attribute.  The actual set of fields depends on the type of the predicate. Find the list of actual objects in the description of the **type** field or see [Failure detection API - JSON models﻿](https://dt-url.net/9sg3swf). | Optional |
 
 #### The `FdcPredicate` object
 
 The predicate that tests the value of the attribute.
 
-The actual set of fields depends on the type of the predicate. Find the list of actual objects in the description of the **type** field or see [Failure detection API - JSON modelsï»¿](https://dt-url.net/9sg3swf).
+The actual set of fields depends on the type of the predicate. Find the list of actual objects in the description of the **type** field or see [Failure detection API - JSON models﻿](https://dt-url.net/9sg3swf).
 
 | Element | Type | Description | Required |
 | --- | --- | --- | --- |
@@ -190,7 +189,7 @@ The short representation of a Dynatrace entity.
 | Element | Type | Description |
 | --- | --- | --- |
 | code | integer | The HTTP status code |
-| constraintViolations | [ConstraintViolation[]](#openapi-definition-ConstraintViolation) | A list of constraint violations |
+| constraintViolations | [ConstraintViolation](#openapi-definition-ConstraintViolation)[] | A list of constraint violations |
 | message | string | The error message |
 
 #### The `ConstraintViolation` object
@@ -321,7 +320,7 @@ To learn how to obtain and use it, see [Tokens and authentication](/managed/disc
 | Element | Type | Description |
 | --- | --- | --- |
 | code | integer | The HTTP status code |
-| constraintViolations | [ConstraintViolation[]](#openapi-definition-ConstraintViolation) | A list of constraint violations |
+| constraintViolations | [ConstraintViolation](#openapi-definition-ConstraintViolation)[] | A list of constraint violations |
 | message | string | The error message |
 
 #### The `ConstraintViolation` object

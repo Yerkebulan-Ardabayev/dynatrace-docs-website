@@ -1,7 +1,6 @@
 ---
 title: OpenTelemetry and Dynatrace
 source: https://docs.dynatrace.com/managed/ingest-from/opentelemetry
-scraped: 2026-05-12T11:03:46.968454
 ---
 
 # OpenTelemetry and Dynatrace
@@ -12,7 +11,7 @@ scraped: 2026-05-12T11:03:46.968454
 * 2-min read
 * Updated on May 04, 2026
 
-[OpenTelemetry (OTel)ï»¿](https://www.opentelemetry.io) provides a standardized way of collecting and exporting telemetry data.
+[OpenTelemetry (OTel)﻿](https://www.opentelemetry.io) provides a standardized way of collecting and exporting telemetry data.
 It allows applications and infrastructure to transmit telemetry to backends (such as Dynatrace) using vendor-agnostic formats.
 These backends can then aggregate and analyze the data.
 
@@ -28,7 +27,7 @@ Choose the deployment option that best aligns with your observability strategy.
 
 OTLP: Send data to Dynatrace
 
-| Method | Best whenâ¦ | Good forâ¦ | Ideal forâ¦ |
+| Method | Best when… | Good for… | Ideal for… |
 | --- | --- | --- | --- |
 | Direct export to Dynatrace API endpoints | You want minimal complexity and infrastructure overhead. | Simple deployments with straightforward telemetry requirements. | If you don't need data processing, enrichment, or transformation capabilities. |
 | Standard OTel Collector | Your organization has already standardized on OTel Collectors. | Teams with existing OpenTelemetry expertise and tooling. | Ideal if you need compatibility with existing collector configurations or custom versions. |

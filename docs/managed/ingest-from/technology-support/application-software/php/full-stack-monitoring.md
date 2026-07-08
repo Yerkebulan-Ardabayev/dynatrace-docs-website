@@ -1,7 +1,6 @@
 ---
 title: Full-stack PHP monitoring
 source: https://docs.dynatrace.com/managed/ingest-from/technology-support/application-software/php/full-stack-monitoring
-scraped: 2026-05-12T12:03:45.548292
 ---
 
 # Full-stack PHP monitoring
@@ -11,7 +10,7 @@ scraped: 2026-05-12T12:03:45.548292
 * 4-min read
 * Updated on Nov 08, 2024
 
-You can monitor PHP on your Windows (IIS/Apache) environmentsâfull-stack monitoring is now available on Windows for Apache mod\_php applications and PHP CGI.
+You can monitor PHP on your Windows (IIS/Apache) environments—full-stack monitoring is now available on Windows for Apache mod\_php applications and PHP CGI.
 
 ## Enabling PHP monitoring
 
@@ -34,8 +33,8 @@ To enable PHP monitoring in Dynatrace
 
 The most common ways to run PHP on a web server are:
 
-* `mod_PHP`âThe default on vanilla Apache HTTP servers. PHP is run as an Apache module, meaning that a PHP request is run under the Apache process. This makes PHP perform well, but flexibility is limited by the Apache configuration, permissions, restrictions, etc.
-* `PHP_FPM`âFastCGI Process Manager (FPM) uses pool management to optimize performance. Every pool acts as a standalone PHP instance, enabling you to create an independent configuration per pool, which provides granular control and greater flexibility. This is the fastest-performing method to run PHP.
+* `mod_PHP`—The default on vanilla Apache HTTP servers. PHP is run as an Apache module, meaning that a PHP request is run under the Apache process. This makes PHP perform well, but flexibility is limited by the Apache configuration, permissions, restrictions, etc.
+* `PHP_FPM`—FastCGI Process Manager (FPM) uses pool management to optimize performance. Every pool acts as a standalone PHP instance, enabling you to create an independent configuration per pool, which provides granular control and greater flexibility. This is the fastest-performing method to run PHP.
 
 ## Monitoring PHP-CLI
 
@@ -90,7 +89,7 @@ To enable deep monitoring of your PHP-CLI applications
 
    To learn more about process monitoring rules, see:
 
-   * blog post [Automated and fine-grained control of monitoring at scaleï»¿](https://www.dynatrace.com/news/blog/automated-fine-grained-control-of-monitoring-at-scale/)
+   * blog post [Automated and fine-grained control of monitoring at scale﻿](https://www.dynatrace.com/news/blog/automated-fine-grained-control-of-monitoring-at-scale/)
    * [Set up process group monitoring](/managed/observe/infrastructure-observability/process-groups/configuration/pg-monitoring "Ways to customize process-group monitoring")
 3. Select **Save changes**.
    Your rule is listed on the **Custom process monitoring rules** page.
@@ -109,7 +108,7 @@ PHP insights: database connections, external calls, and pthreads
 
 You can also observe distributed traces when the application forks with the Swoole framework.
 
-To learn more about custom service detection for PHP, see blog post [Introducing custom service detection for PHPï»¿](https://www.dynatrace.com/news/blog/introducing-custom-service-detection-php/).
+To learn more about custom service detection for PHP, see blog post [Introducing custom service detection for PHP﻿](https://www.dynatrace.com/news/blog/introducing-custom-service-detection-php/).
 
 See whether your application manages memory properly
 

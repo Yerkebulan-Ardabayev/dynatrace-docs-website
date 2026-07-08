@@ -1,7 +1,6 @@
 ---
 title: Process deep monitoring
 source: https://docs.dynatrace.com/managed/observe/infrastructure-observability/process-groups/configuration/pg-monitoring
-scraped: 2026-05-12T11:37:45.844842
 ---
 
 # Process deep monitoring
@@ -20,7 +19,7 @@ Installing OneAgent provides you with process group monitoring capabilities such
 
 Optionally, you can set up monitoring rules to selectively specify which processes Dynatrace monitors. For example, consider the following common scenarios:
 
-* You have a number of unimportant or short-lived processes that you donât want to monitor at the code level.
+* You have a number of unimportant or short-lived processes that you don’t want to monitor at the code level.
 * You aren't able to run deep monitoring on applications that belong to your customers and are out of your control.
 * You want to have better control over which processes are monitored.
 * You want to perform deep monitoring on .NET and Go processes (Dynatrace doesn't automatically perform deep monitoring on them, as there are many arbitrary processes that rely on these processes). For instance you want to monitor all ASP.NET applications and all Go and .NET core applications running on Cloud Foundry or Kubernetes.
@@ -41,11 +40,11 @@ To disable automatic deep monitoring
 
 How process monitoring rules are applied
 
-**Enable automatic deep monitoring** doesnât take precedence over any [individual process monitoring rules](/managed/observe/infrastructure-observability/process-groups/configuration/pg-detection "Ways to customize process-group detection") you may have set up. If a process monitoring rule indicates that Dynatrace should monitor a certain process, and **Enable automatic deep monitoring** is **Off**, the individual rule will take precedence and Dynatrace will monitor the respective process. Therefore, **each process monitoring rule is an exception to the general monitoring policy**.
+**Enable automatic deep monitoring** doesn’t take precedence over any [individual process monitoring rules](/managed/observe/infrastructure-observability/process-groups/configuration/pg-detection "Ways to customize process-group detection") you may have set up. If a process monitoring rule indicates that Dynatrace should monitor a certain process, and **Enable automatic deep monitoring** is **Off**, the individual rule will take precedence and Dynatrace will monitor the respective process. Therefore, **each process monitoring rule is an exception to the general monitoring policy**.
 
 ## Define custom process monitoring rules
 
-Custom process monitoring rules give you fine-grained control over which processes OneAgent monitors with an approach that scales easily within large environments. You donât need to adjust your system configuration, and a few rules can cover thousands of processes.
+Custom process monitoring rules give you fine-grained control over which processes OneAgent monitors with an approach that scales easily within large environments. You don’t need to adjust your system configuration, and a few rules can cover thousands of processes.
 
 To add a custom monitoring rule
 
@@ -90,8 +89,8 @@ Built-in rules apply to processes that Dynatrace monitors by default:
 * All .NET and Go applications deployed in Docker containers
 * ASP.NET Core applications started by IIS
 * Core components of Cloud Foundry written in Go
-* Caddyâa web server written in Go
-* InfluxDBâa timeseries database written in Go
+* Caddy—a web server written in Go
+* InfluxDB—a timeseries database written in Go
 
 To list all built-in rules
 
@@ -102,7 +101,7 @@ All built-in rules are enabled by default. You can disable them, but you can't e
 
 These built-in rules don't cover your own .NET and Go applications unless those applications are deployed in containers, Cloud Foundry, or Kubernetes. If this is not the case for your .NET and Go applications, you should add your own .NET and Go applications as [custom monitoring rules](/managed/observe/infrastructure-observability/process-groups/configuration/pg-detection "Ways to customize process-group detection").
 
-Dynatrace doesnât automatically carry out deep monitoring of **all** .NET and Go processes. Many popular applications such as Microsoft Office make use of .NET, and many common infrastructure components are written in Go, so Dynatrace performs deep monitoring of .NET and Go processes only if you explicitly enable it or if they are covered by monitoring rules.
+Dynatrace doesn’t automatically carry out deep monitoring of **all** .NET and Go processes. Many popular applications such as Microsoft Office make use of .NET, and many common infrastructure components are written in Go, so Dynatrace performs deep monitoring of .NET and Go processes only if you explicitly enable it or if they are covered by monitoring rules.
 
 ## Set monitoring states at the host-group level
 
@@ -126,7 +125,7 @@ You can add a process group and define its monitoring states at the host level.
 
 1. Go to **Hosts**.
 2. Find and select your host to display the host overview page.
-3. In the upper-right corner of the host overview page, select **More** (**â¦**) > **Settings**.
+3. In the upper-right corner of the host overview page, select **More** (**…**) > **Settings**.
 
 4. In the host settings, select **Process group monitoring**.
 5. Select **Add process group** and choose a process group from the dropdown list.
@@ -142,8 +141,8 @@ You can add a process group and define its monitoring states at the host level.
 
 * Deep monitoring rules only affect service- and code-level monitoring.
 * Deep monitoring rules are only effective when you install OneAgent on your hosts or images.
-* Application-only integrations without a full OneAgent installation donât support monitoring rules. However, in such situations, the integrations themselves effectively provide the same level of control over your process monitoring setup.
-* Rules may work on earlier versions of OneAgent, but theyâre only supported for OneAgent version 1.151+.
+* Application-only integrations without a full OneAgent installation don’t support monitoring rules. However, in such situations, the integrations themselves effectively provide the same level of control over your process monitoring setup.
+* Rules may work on earlier versions of OneAgent, but they’re only supported for OneAgent version 1.151+.
 
 ## Enable or disable short-lived process monitoring
 

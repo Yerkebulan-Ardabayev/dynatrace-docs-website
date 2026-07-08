@@ -1,7 +1,6 @@
 ---
 title: Settings API - Enablement and cost control schema table
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/settings/schemas/builtin-rum-web-enablement
-scraped: 2026-05-12T11:46:11.140038
 ---
 
 # Settings API - Enablement and cost control schema table
@@ -34,8 +33,8 @@ To execute this request, you need an access token with **Read settings** (`setti
 
 | Property | Type | Description | Required |
 | --- | --- | --- | --- |
-| Real User Monitoring `rum` | [rum](#rum) | Capture and analyze all user actions within your application. Enable [Real User Monitoring (RUM)ï»¿](https://dt-url.net/1n2b0prq) to monitor and improve your application's performance, identify errors, and gain insight into your user's behavior and experience. | Required |
-| Session Replay `sessionReplay` | [sessionReplay](#sessionReplay) | [Session Replayï»¿](https://dt-url.net/session-replay) captures all user interactions within your application and replays them in a movie-like experience while providing [best-in-class security and data protectionï»¿](https://dt-url.net/b303zxj). | Required |
+| Real User Monitoring `rum` | [rum](#rum) | Capture and analyze all user actions within your application. Enable [Real User Monitoring (RUM)﻿](https://dt-url.net/1n2b0prq) to monitor and improve your application's performance, identify errors, and gain insight into your user's behavior and experience. | Required |
+| Session Replay `sessionReplay` | [sessionReplay](#sessionReplay) | [Session Replay﻿](https://dt-url.net/session-replay) captures all user interactions within your application and replays them in a movie-like experience while providing [best-in-class security and data protection﻿](https://dt-url.net/b303zxj). | Required |
 | User Interactions `experienceAnalytics` | [experienceAnalytics](#experienceAnalytics) | - | Optional |
 
 ##### The `rum` object
@@ -50,12 +49,12 @@ To execute this request, you need an access token with **Read settings** (`setti
 
 | Property | Type | Description | Required |
 | --- | --- | --- | --- |
-| Enable Session Replay Classic `enabled` | boolean | Before enabling, Dynatrace checks your system against the prerequisites for [Session Replay Classicï»¿](https://dt-url.net/ma3m0psf). | Required |
+| Enable Session Replay Classic `enabled` | boolean | Before enabling, Dynatrace checks your system against the prerequisites for [Session Replay Classic﻿](https://dt-url.net/ma3m0psf). | Required |
 | Enable New Session Replay Experience `enabledOnGrail` | boolean | - | Optional |
-| Cost and traffic control `costAndTrafficControl` | integer | [Percentage of user sessions recorded with Session Replay Classicï»¿](https://dt-url.net/sr-cost-traffic-control). For example, if you have 50% for RUM and 50% for Session Replay Classic, it results in 25% of sessions recorded with Session Replay Classic. | Required |
+| Cost and traffic control `costAndTrafficControl` | integer | [Percentage of user sessions recorded with Session Replay Classic﻿](https://dt-url.net/sr-cost-traffic-control). For example, if you have 50% for RUM and 50% for Session Replay Classic, it results in 25% of sessions recorded with Session Replay Classic. | Required |
 
 ##### The `experienceAnalytics` object
 
 | Property | Type | Description | Required |
 | --- | --- | --- | --- |
-| Enable User Interactions `enabled` | boolean | Capture user interactions within your frontend, including all clicks and taps. During the Early Access period, thereâs no cost associated with this feature. | Required |
+| Enable User Interactions `enabled` | boolean | Capture user interactions within your frontend, including all clicks and taps. During the Early Access period, there’s no cost associated with this feature. | Required |

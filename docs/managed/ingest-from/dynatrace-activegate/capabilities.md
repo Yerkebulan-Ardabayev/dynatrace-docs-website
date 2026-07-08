@@ -1,7 +1,6 @@
 ---
 title: ActiveGate purposes and functionality
 source: https://docs.dynatrace.com/managed/ingest-from/dynatrace-activegate/capabilities
-scraped: 2026-05-12T11:08:06.373449
 ---
 
 # ActiveGate purposes and functionality
@@ -17,7 +16,7 @@ An ActiveGate can be used for three different use cases, which we refer to as **
 * [Run Synthetic monitors from a private location](/managed/ingest-from/dynatrace-activegate/capabilities/synthetic-purpose "ActiveGates purposed for synthetic monitoring of internal and external resources from private Synthetic locations")
 * [Install the zRemote module for z/OS monitoring](/managed/ingest-from/dynatrace-activegate/capabilities/zremote-purpose "Learn about installing the zRemote module for z/OS monitoring.")
 
-Each purpose comes with a different subset of functional [modules](/managed/ingest-from/dynatrace-activegate/configuration/configure-activegate#modules "Learn which ActiveGate properties you can configure based on your needs and requirements."). Modules should not be mixed between purposesâsuch re-configuration is not supported.
+Each purpose comes with a different subset of functional [modules](/managed/ingest-from/dynatrace-activegate/configuration/configure-activegate#modules "Learn which ActiveGate properties you can configure based on your needs and requirements."). Modules should not be mixed between purposes—such re-configuration is not supported.
 
 ## Functionality available for the routing-monitoring ActiveGates
 
@@ -49,7 +48,7 @@ Log ingest API endpoint is supported on containerized ActiveGate in a number of 
 
 2
 
-We recommend [Dynatrace OTel Collector](/managed/ingest-from/opentelemetry/collector/use-cases/syslog "Configure the OpenTelemetry Collector to ingest syslog data into Dynatrace.") as an alternative, as it has a [Syslog receiverï»¿](https://github.com/Dynatrace/dynatrace-otel-collector?tab=readme-ov-file#receivers) provided by default.
+We recommend [Dynatrace OTel Collector](/managed/ingest-from/opentelemetry/collector/use-cases/syslog "Configure the OpenTelemetry Collector to ingest syslog data into Dynatrace.") as an alternative, as it has a [Syslog receiver﻿](https://github.com/Dynatrace/dynatrace-otel-collector?tab=readme-ov-file#receivers) provided by default.
 
 ## Functionality available for ActiveGates running synthetic monitors from a private location
 
@@ -60,7 +59,7 @@ We recommend [Dynatrace OTel Collector](/managed/ingest-from/opentelemetry/colle
 
 1
 
-See [Containerized, auto-scalable private Synthetic locations on Kubernetes](/managed/observe/digital-experience/synthetic-monitoring/private-synthetic-locations/containerized-locations "Deploy and manage containerized, auto-scalable private Synthetic locations on Kubernetes/RedHat OpenShift.").
+See [Containerized, auto-scalable private Synthetic locations on Kubernetes in Classic](/managed/observe/digital-experience/synthetic-monitoring/private-synthetic-locations/containerized-locations "Deploy and manage containerized, auto-scalable private Synthetic locations on Kubernetes/RedHat OpenShift.").
 
 ## Functionality available for ActiveGates with the zRemote module
 

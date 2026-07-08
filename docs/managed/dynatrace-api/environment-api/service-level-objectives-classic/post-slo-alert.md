@@ -1,7 +1,6 @@
 ---
 title: Service-level objectives API - POST an SLO alert
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/service-level-objectives-classic/post-slo-alert
-scraped: 2026-05-12T11:57:43.472211
 ---
 
 # Service-level objectives API - POST an SLO alert
@@ -107,7 +106,7 @@ The short representation of a Dynatrace entity.
 | Element | Type | Description |
 | --- | --- | --- |
 | code | integer | The HTTP status code |
-| constraintViolations | [ConstraintViolation[]](#openapi-definition-ConstraintViolation) | A list of constraint violations |
+| constraintViolations | [ConstraintViolation](#openapi-definition-ConstraintViolation)[] | A list of constraint violations |
 | message | string | The error message |
 
 #### The `ConstraintViolation` object

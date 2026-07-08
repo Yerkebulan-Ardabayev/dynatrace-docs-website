@@ -1,14 +1,13 @@
 ---
 title: Remove a cluster node
 source: https://docs.dynatrace.com/managed/managed-cluster/operation/remove-a-cluster-node
-scraped: 2026-05-12T11:53:22.332566
 ---
 
 # Remove a cluster node
 
 # Remove a cluster node
 
-* Updated on May 24, 2024
+* Updated on Jun 16, 2026
 
 You can easily remove a cluster node using the Dynatrace Managed Cluster Management Console. However, as removing a cluster node essentially means uninstalling Dynatrace Managed, you can alternatively use the command prompt to remove a cluster node. Both approaches are described below.
 
@@ -26,7 +25,7 @@ To disable a cluster node
 2. Go to **Deployment Status**.
 3. Select **Cluster nodes** and, from the nodes list, select the node on which you want to disable OneAgent traffic.
 4. Select **Configure** to view the node configuration page.
-5. Select the browse button (**â¦**) in the upper-right corner.
+5. Select the browse button (**…**) in the upper-right corner.
 6. Select **Disable OneAgent traffic** to stop monitoring data processing on the node. If you want to temporarily exclude the node from a cluster, stop here and enable the node later. Dynatrace Managed will keep running on the machine but it won't process monitoring data.
 
 ### Remove a disabled cluster node
@@ -58,12 +57,14 @@ To remove a disabled cluster node
 1. Log in as an administrator. Use your Dynatrace Managed URL or a cluster node that you want to keep (you can't remove a node while you're logged into the node).
 2. Go to **Home** to navigate to the Dynatrace Managed cluster nodes page.
 3. Select the cluster node you want to remove to access the node's overview page.
-4. Select the browse button (**â¦**) in the top right corner.
+4. Select the browse button (**…**) in the top right corner.
 5. Select **Remove node**. The node will then stop and be completely uninstalled from your server instance.
 
 Dead nodes
 
-Dynatrace Managed shows dead and removed nodes for 7 days. However even once a dead node is no longer displayed on the clusters page, the node is still registered. To remove a node entirely, use the Dynatrace API call. You can execute the Cluster Management API call to the following endpoint: `onpremise/nodeManagement/deadNodeCleaning`.
+Dynatrace Managed shows dead and removed nodes for 7 days. You don't need to use the cleanup API during regular node removal. Use it only when you need to completely remove a dead node no longer displayed on the cluster nodes page but still registered in the Managed Cluster.
+
+To clean up the dead node registration, run the Cluster Management API call to the following endpoint: `onpremise/nodeManagement/deadNodeCleaning`.
 
 See the Dynatrace API explorer in CMC for details.
 

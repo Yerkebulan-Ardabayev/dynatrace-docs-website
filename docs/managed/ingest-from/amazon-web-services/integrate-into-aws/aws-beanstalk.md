@@ -1,7 +1,6 @@
 ---
 title: Monitor AWS Elastic Beanstalk
 source: https://docs.dynatrace.com/managed/ingest-from/amazon-web-services/integrate-into-aws/aws-beanstalk
-scraped: 2026-05-12T11:14:21.482539
 ---
 
 # Monitor AWS Elastic Beanstalk
@@ -12,7 +11,7 @@ scraped: 2026-05-12T11:14:21.482539
 * 1-min read
 * Published Jul 19, 2017
 
-[AWS Elastic Beanstalkï»¿](https://aws.amazon.com/elasticbeanstalk/faqs/) is a service provided by Amazon Web Services (AWS) that gives you the option of deploying and auto-scaling applications and services.
+[AWS Elastic Beanstalk﻿](https://aws.amazon.com/elasticbeanstalk/faqs/) is a service provided by Amazon Web Services (AWS) that gives you the option of deploying and auto-scaling applications and services.
 
 As this type of installation depends heavily on user customizations, there isn't any set of steps that will work in all scenarios. The following aims to provide an overview of the entire process, with examples to help you create your own deployment.
 
@@ -74,7 +73,7 @@ For more information, see the OneAgent installation instructions for [Windows](/
 
 * Make sure the configuration files are properly formatted YAML files.
 * Don't use tabs for indentation. Only spaces are allowed.
-* The Elastic Beanstalk extension script file names are importantâthe Amazon interpreter executes them in alphabetical order.
+* The Elastic Beanstalk extension script file names are important—the Amazon interpreter executes them in alphabetical order.
 
 Linux
 
@@ -297,7 +296,7 @@ To configure network zones, use the following argument: `--set-network-zone=<you
 
 ## Monitoring consumption
 
-For AWS Elastic Beanstalk, monitoring consumption is based on hosts units. See [Application and Infrastructure Monitoring (Host Units)](/managed/license/monitoring-consumption-classic/application-and-infrastructure-monitoring "Understand how Dynatrace application and infrastructure monitoring consumption is calculated based on host units.") for details.
+For AWS Elastic Beanstalk, monitoring consumption is based on hosts units. See [Application and Infrastructure Monitoring (Host Units)](/managed/license/classic-licensing/application-and-infrastructure-monitoring "Understand how Dynatrace application and infrastructure monitoring consumption is calculated based on host units.") for details.
 
 ## Related topics
 

@@ -1,7 +1,6 @@
 ---
 title: Synthetic monitors API v2
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/synthetic-v2/synthetic-network-availability-monitors
-scraped: 2026-05-12T12:11:56.185727
 ---
 
 # Synthetic monitors API v2

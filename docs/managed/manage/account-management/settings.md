@@ -1,7 +1,6 @@
 ---
 title: Settings
 source: https://docs.dynatrace.com/managed/manage/account-management/settings
-scraped: 2026-05-12T11:13:36.952004
 ---
 
 # Settings
@@ -33,10 +32,10 @@ Use the **Security contact** tab of the **Settings** page to define where and ho
 
 The **Environments** table lists Dynatrace environments you can access.
 
-* **Environment**âautomatically generated environment ID
-* **Status**âcurrent status of the environment
-* **Friendly name**âoptional human-friendly name of the environment
-* **Time zone**ârequired time zone to associate with the environment
+* **Environment**—automatically generated environment ID
+* **Status**—current status of the environment
+* **Friendly name**—optional human-friendly name of the environment
+* **Time zone**—required time zone to associate with the environment
 
   The time zone setting here is informational and does not affect any Dynatrace functionality other than report generation for [dashboard subscriptions in Dashboards Classic](/managed/analyze-explore-automate/dashboards-classic/dashboards/subscribe-to-dashboard-reports "Learn how to subscribe to reports generated from Dynatrace dashboards.").
 
@@ -52,9 +51,9 @@ The **Edit environment** page has two tabs:
 
 Use the **General** tab to set:
 
-* Optional **Friendly name**âYou can assign a human-friendly name to each Dynatrace environment to make it easier to distinguish between multiple Dynatrace environments. If **Friendly name** is set, it's displayed in the Account Management web UI instead of, or in addition to, the environment ID.
+* Optional **Friendly name**—You can assign a human-friendly name to each Dynatrace environment to make it easier to distinguish between multiple Dynatrace environments. If **Friendly name** is set, it's displayed in the Account Management web UI instead of, or in addition to, the environment ID.
 
   For example, you might have two environments with automatically assigned environment IDs `abc12345` and `xyz54321`. To help you remember which is which, you can add explanatory names such as `Production` and `dev 1` to those environments.
-* Required **Time zone**âYou can associate a time zone with each environment.
+* Required **Time zone**—You can associate a time zone with each environment.
 
   The time zone setting here is informational and does not affect any Dynatrace functionality other than report generation for [dashboard subscriptions in Dashboards Classic](/managed/analyze-explore-automate/dashboards-classic/dashboards/subscribe-to-dashboard-reports "Learn how to subscribe to reports generated from Dynatrace dashboards.").

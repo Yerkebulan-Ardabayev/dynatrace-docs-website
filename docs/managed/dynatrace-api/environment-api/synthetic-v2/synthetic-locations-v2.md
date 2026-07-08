@@ -1,7 +1,6 @@
 ---
 title: Synthetic locations API v2
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/synthetic-v2/synthetic-locations-v2
-scraped: 2026-05-12T11:12:37.201629
 ---
 
 # Synthetic locations API v2

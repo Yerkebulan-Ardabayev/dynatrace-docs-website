@@ -1,7 +1,6 @@
 ---
 title: Dynatrace Platform Subscription API - GET usage
 source: https://docs.dynatrace.com/managed/dynatrace-api/account-management-api/dynatrace-platform-subscription-api/usage/get-usage
-scraped: 2026-05-12T11:24:39.732678
 ---
 
 # Dynatrace Platform Subscription API - GET usage
@@ -28,9 +27,9 @@ To execute this request, you need the **Allow read access for usage and consumpt
 | Parameter | Type | Description | In | Required |
 | --- | --- | --- | --- | --- |
 | accountUuid | string | The ID of the required account.  You can find the UUID on the **Account Management** > **Identity & access management** > **OAuth clients** page, during creation of an OAuth client. | path | Required |
-| subscriptionUuid | string | The UUID of the requested subscription.  Fetch the list of subscriptions via the [GET all subscriptionsï»¿](https://dt-url.net/jq03jvq) request. | path | Required |
+| subscriptionUuid | string | The UUID of the requested subscription.  Fetch the list of subscriptions via the [GET all subscriptions﻿](https://dt-url.net/jq03jvq) request. | path | Required |
 | environmentIds | string[] | A list of environments for which you want to read the usage data. To specify several environments, separate them with a comma (`,`). | query | Optional |
-| capabilityKeys | string[] | A list of capabilities for which you want to read the usage data. To specify several capabilities, separate them with a comma (`,`).  To obtain capability keys, use the [GET subscriptionsï»¿](https://dt-url.net/qd43uld) call and look for the **capabilities** field of the response. | query | Optional |
+| capabilityKeys | string[] | A list of capabilities for which you want to read the usage data. To specify several capabilities, separate them with a comma (`,`).  To obtain capability keys, use the [GET subscriptions﻿](https://dt-url.net/qd43uld) call and look for the **capabilities** field of the response. | query | Optional |
 | clusterIds | string[] | A list of Managed clusters for which you want to read the usage data.  Not applicable to SaaS environments. | query | Optional |
 
 ## Response
@@ -52,7 +51,7 @@ To execute this request, you need the **Allow read access for usage and consumpt
 
 | Element | Type | Description |
 | --- | --- | --- |
-| data | [SubscriptionUsageDto[]](#openapi-definition-SubscriptionUsageDto) | Usage data of the subscription. |
+| data | [SubscriptionUsageDto](#openapi-definition-SubscriptionUsageDto)[] | Usage data of the subscription. |
 | lastModifiedTime | string | The time the subscription data was last modified in `2021-05-01T15:11:00Z` format. |
 
 #### The `SubscriptionUsageDto` object

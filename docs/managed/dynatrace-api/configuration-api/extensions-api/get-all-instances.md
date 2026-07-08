@@ -1,7 +1,6 @@
 ---
 title: Extensions API - GET all extension's instances
 source: https://docs.dynatrace.com/managed/dynatrace-api/configuration-api/extensions-api/get-all-instances
-scraped: 2026-05-12T11:19:56.000353
 ---
 
 # Extensions API - GET all extension's instances
@@ -50,7 +49,7 @@ A list of configurations.
 
 | Element | Type | Description |
 | --- | --- | --- |
-| configurationsList | [EntityShortRepresentation[]](#openapi-definition-EntityShortRepresentation) | List of configurations. |
+| configurationsList | [EntityShortRepresentation](#openapi-definition-EntityShortRepresentation)[] | List of configurations. |
 | nextPageKey | string | The cursor for the next page of results. Has the value of `null` on the last page.  Use it in the **nextPageKey** query parameter to obtain subsequent pages of the result. |
 | totalResults | integer | The total number of entries in the result. |
 

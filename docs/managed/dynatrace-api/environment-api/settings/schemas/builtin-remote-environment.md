@@ -1,7 +1,6 @@
 ---
 title: Settings API - Remote environments schema table
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/settings/schemas/builtin-remote-environment
-scraped: 2026-05-12T11:45:35.130966
 ---
 
 # Settings API - Remote environments schema table
@@ -14,7 +13,7 @@ scraped: 2026-05-12T11:45:35.130966
 
 Configure connections to other Dynatrace environments for cross-environment capabilities (e.g. dashboards)
 
-For help on remote environments, see [Remote environment API documentationï»¿](https://dt-url.net/lc5n0p4z)
+For help on remote environments, see [Remote environment API documentation﻿](https://dt-url.net/lc5n0p4z)
 
 | Schema ID | Schema groups | Scope |
 | --- | --- | --- |

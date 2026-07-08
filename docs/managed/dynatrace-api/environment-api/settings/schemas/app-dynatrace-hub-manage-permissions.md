@@ -1,7 +1,6 @@
 ---
 title: Settings API - Hub Requests schema table
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/settings/schemas/app-dynatrace-hub-manage-permissions
-scraped: 2026-05-12T11:49:48.005356
 ---
 
 # Settings API - Hub Requests schema table

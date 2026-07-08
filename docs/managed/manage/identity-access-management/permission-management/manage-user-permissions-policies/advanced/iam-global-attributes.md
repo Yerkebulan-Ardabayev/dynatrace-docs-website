@@ -1,7 +1,6 @@
 ---
 title: Policy global attributes
 source: https://docs.dynatrace.com/managed/manage/identity-access-management/permission-management/manage-user-permissions-policies/advanced/iam-global-attributes
-scraped: 2026-05-12T11:49:54.505224
 ---
 
 # Policy global attributes
@@ -12,7 +11,7 @@ scraped: 2026-05-12T11:49:54.505224
 * 1-min read
 * Published Dec 20, 2020
 
-For some global conditions, the policy framework provides attributes that can be used in policy syntax. These attributes donât require any additional configuration in the form of defining binding parameters.
+For some global conditions, the policy framework provides attributes that can be used in policy syntax. These attributes don’t require any additional configuration in the form of defining binding parameters.
 
 List of available global attributes:
 

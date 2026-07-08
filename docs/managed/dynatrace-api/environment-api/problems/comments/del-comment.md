@@ -1,7 +1,6 @@
 ---
 title: Problems API - DELETE a comment
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/problems/comments/del-comment
-scraped: 2026-05-12T12:08:02.944413
 ---
 
 # Problems API - DELETE a comment
@@ -57,7 +56,7 @@ To learn how to obtain and use it, see [Tokens and authentication](/managed/disc
 | Element | Type | Description |
 | --- | --- | --- |
 | code | integer | The HTTP status code |
-| constraintViolations | [ConstraintViolation[]](#openapi-definition-ConstraintViolation) | A list of constraint violations |
+| constraintViolations | [ConstraintViolation](#openapi-definition-ConstraintViolation)[] | A list of constraint violations |
 | message | string | The error message |
 
 #### The `ConstraintViolation` object
@@ -161,4 +160,4 @@ https://mySampleEnv.live.dynatrace.com/api/v1/problem/details/230708741165336417
 
 ## Related topics
 
-* [DavisÂ® AI](/managed/dynatrace-intelligence "Get familiar with the capabilities of Davis AI.")
+* [Davis® AI](/managed/dynatrace-intelligence "Learn how Davis® AI detects performance anomalies, identifies root causes, and uses AI models for adaptive thresholds across your environment.")

@@ -1,7 +1,6 @@
 ---
 title: Apply memory limits to the OTel Collector
 source: https://docs.dynatrace.com/managed/ingest-from/opentelemetry/collector/use-cases/memory
-scraped: 2026-05-12T12:11:03.995208
 ---
 
 # Apply memory limits to the OTel Collector
@@ -22,7 +21,7 @@ apply this configuration with most containerized setups. See the section on
 
 ## Prerequisites
 
-* One of the following Collector distributions with the [memory limiter processorï»¿](https://github.com/open-telemetry/opentelemetry-collector/tree/v0.151.0/processor/memorylimiterprocessor):
+* One of the following Collector distributions with the [memory limiter processor﻿](https://github.com/open-telemetry/opentelemetry-collector/tree/v0.155.0/processor/memorylimiterprocessor):
 
   + The [Dynatrace OTel Collector](/managed/ingest-from/opentelemetry/collector#dt-collector-dist "Learn how to use the OpenTelemetry Collector, including the Dynatrace OTel Collector, to ingest telemetry from OpenTelemetry.")
   + OpenTelemetry [Core](/managed/ingest-from/opentelemetry/collector#collector-core "Learn how to use the OpenTelemetry Collector, including the Dynatrace OTel Collector, to ingest telemetry from OpenTelemetry.") or [Contrib](/managed/ingest-from/opentelemetry/collector#collector-contrib "Learn how to use the OpenTelemetry Collector, including the Dynatrace OTel Collector, to ingest telemetry from OpenTelemetry.")
@@ -174,7 +173,7 @@ This is mainly for demonstration purposes. You can specify any other valid recei
 
 ### Processors
 
-Under `processors`, we specify the [`memory_limiter` processorï»¿](https://github.com/open-telemetry/opentelemetry-collector/tree/v0.151.0/processor/memorylimiterprocessor) with the following parameters:
+Under `processors`, we specify the [`memory_limiter` processor﻿](https://github.com/open-telemetry/opentelemetry-collector/tree/v0.155.0/processor/memorylimiterprocessor) with the following parameters:
 
 * `check_interval` configured to check the memory status every second
 * `limit_percentage` configured to allow a maximum memory allocation of 90 percent
@@ -198,7 +197,7 @@ In addition to the memory limiter processor, we highly recommend you set the
 could set `GOMEMLIMIT=1024MiB` to start increasing the frequency of garbage
 collection cycles once the Collector reaches 1024 MiB of memory used on the Go
 VM heap. For more information, see the [Go package
-documentationï»¿](https://pkg.go.dev/runtime#hdr-Environment_Variables) describing
+documentation﻿](https://pkg.go.dev/runtime#hdr-Environment_Variables) describing
 how the environment variable works.
 
 #### Deployment considerations
@@ -213,7 +212,7 @@ given an explicit memory quota, we instead recommend you use the `limit_mib` and
 
 ### Exporters
 
-Under `exporters`, we specify the default [`otlp_http` exporterï»¿](https://github.com/open-telemetry/opentelemetry-collector/tree/v0.151.0/exporter/otlphttpexporter) and configure it with our Dynatrace API URL and the required authentication token.
+Under `exporters`, we specify the default [`otlp_http` exporter﻿](https://github.com/open-telemetry/opentelemetry-collector/tree/v0.155.0/exporter/otlphttpexporter) and configure it with our Dynatrace API URL and the required authentication token.
 
 For this purpose, we set the following two environment variables and reference them in the configuration values for `endpoint` and `Authorization`.
 

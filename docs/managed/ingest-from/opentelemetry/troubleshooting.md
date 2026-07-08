@@ -1,7 +1,6 @@
 ---
 title: Ensure success with OpenTelemetry
 source: https://docs.dynatrace.com/managed/ingest-from/opentelemetry/troubleshooting
-scraped: 2026-05-12T12:11:27.888076
 ---
 
 # Ensure success with OpenTelemetry
@@ -60,13 +59,13 @@ Latest Dynatrace
 
 ### Setup issues
 
-* [I'm having setup issues with OpenTelemetry. What should I check?ï»¿](https://dt-url.net/dm038xt)
-* [Fixing SSL Errors in OpenTelemetry SDKs when exporting to Dynatrace ActiveGateï»¿](https://community.dynatrace.com/t5/Troubleshooting/Fixing-SSL-Errors-in-OpenTelemetry-SDKs-when-exporting-to/ta-p/269404)
+* [I'm having setup issues with OpenTelemetry. What should I check?﻿](https://dt-url.net/dm038xt)
+* [Fixing SSL Errors in OpenTelemetry SDKs when exporting to Dynatrace ActiveGate﻿](https://community.dynatrace.com/t5/Troubleshooting/Fixing-SSL-Errors-in-OpenTelemetry-SDKs-when-exporting-to/ta-p/269404)
 
 ### Connection issues
 
-* [Why do I get a connection error when exporting with OTLP to ActiveGate?ï»¿](https://dt-url.net/x0238hc)
-* [Why do I get a connection error when exporting OpenTelemetry traces to OneAgent?ï»¿](https://dt-url.net/tk4384x)
+* [Why do I get a connection error when exporting with OTLP to ActiveGate?﻿](https://dt-url.net/x0238hc)
+* [Why do I get a connection error when exporting OpenTelemetry traces to OneAgent?﻿](https://dt-url.net/tk4384x)
 
 ### Authentication issues
 
@@ -75,8 +74,8 @@ Latest Dynatrace
 
 See also:
 
-* [Why does ActiveGate return a 401 Unauthorized error?ï»¿](https://dt-url.net/lg638i3)
-* [Why does ActiveGate return a 403 Forbidden error?ï»¿](https://dt-url.net/2n838im)
+* [Why does ActiveGate return a 401 Unauthorized error?﻿](https://dt-url.net/lg638i3)
+* [Why does ActiveGate return a 403 Forbidden error?﻿](https://dt-url.net/2n838im)
 
 ### Data format issues
 
@@ -90,12 +89,12 @@ See also:
 
 ### Ingestion issues
 
-* [Why does my OTLP export not work?ï»¿](https://dt-url.net/sb238k5)
+* [Why does my OTLP export not work?﻿](https://dt-url.net/sb238k5)
 * [Dynatrace OTLP API endpoints](/managed/ingest-from/opentelemetry/otlp-api "Learn about the OTLP API endpoints that your application uses to export OpenTelemetry data to Dynatrace.")
 
 ### Vertical topology
 
-* [Why is my vertical topology missing?ï»¿](https://dt-url.net/48038un)
+* [Why is my vertical topology missing?﻿](https://dt-url.net/48038un)
 
 ## Signal-specific questions
 
@@ -107,18 +106,18 @@ Specific information about ingesting each signal type is available at
 
 ### Traces
 
-* [Why are my spans not linked? Why are my spans orphaned?ï»¿](https://dt-url.net/ae038vj)
-* [Why are my OpenTelemetry span attributes missing?ï»¿](https://dt-url.net/z402yxq)
+* [Why are my spans not linked? Why are my spans orphaned?﻿](https://dt-url.net/ae038vj)
+* [Why are my OpenTelemetry span attributes missing?﻿](https://dt-url.net/z402yxq)
 
 ### Metrics
 
-* [Why are my metrics not ingested?ï»¿](https://community.dynatrace.com/t5/Troubleshooting/Why-are-my-OpenTelemetry-metrics-not-ingested/ta-p/269428)
-* [Why are my cumulative metrics not ingested?ï»¿](https://dt-url.net/s60382e)
-* [Why do I receive a "Partial Success" response?ï»¿](https://dt-url.net/0u238ec)
-* [Why are my metric attributes missing?ï»¿](https://dt-url.net/jj03800)
-* [How to set up OpenTelemetry metrics with delta temporalityï»¿](https://community.dynatrace.com/t5/Troubleshooting/How-to-set-up-OpenTelemetry-metrics-with-delta-temporality/ta-p/269292)
-* [Delay in displaying OpenTelemetry metric dimensions in Dynatraceï»¿](https://community.dynatrace.com/t5/Troubleshooting/Delay-in-displaying-OpenTelemetry-metric-dimensions-in-Dynatrace/ta-p/269732)
-* [Why are my OpenTelemetry metrics not ingestedï»¿](https://community.dynatrace.com/t5/Troubleshooting/Why-are-my-OpenTelemetry-metrics-not-ingested/ta-p/269428)
+* [Why are my metrics not ingested?﻿](https://community.dynatrace.com/t5/Troubleshooting/Why-are-my-OpenTelemetry-metrics-not-ingested/ta-p/269428)
+* [Why are my cumulative metrics not ingested?﻿](https://dt-url.net/s60382e)
+* [Why do I receive a "Partial Success" response?﻿](https://dt-url.net/0u238ec)
+* [Why are my metric attributes missing?﻿](https://dt-url.net/jj03800)
+* [How to set up OpenTelemetry metrics with delta temporality﻿](https://community.dynatrace.com/t5/Troubleshooting/How-to-set-up-OpenTelemetry-metrics-with-delta-temporality/ta-p/269292)
+* [Delay in displaying OpenTelemetry metric dimensions in Dynatrace﻿](https://community.dynatrace.com/t5/Troubleshooting/Delay-in-displaying-OpenTelemetry-metric-dimensions-in-Dynatrace/ta-p/269732)
+* [Why are my OpenTelemetry metrics not ingested﻿](https://community.dynatrace.com/t5/Troubleshooting/Why-are-my-OpenTelemetry-metrics-not-ingested/ta-p/269428)
 
 ## Best practices
 
@@ -136,7 +135,7 @@ Your dimensions should be well-annotated (recognizable, readable, understandable
 
 Dynatrace recommends that you enable `gzip` compression on your OTLP exporters.
 
-The default compression on the OTLP exporter [is not setï»¿](https://opentelemetry.io/docs/specs/otel/protocol/exporter/), but it can be configured through the following environment variables:
+The default compression on the OTLP exporter [is not set﻿](https://opentelemetry.io/docs/specs/otel/protocol/exporter/), but it can be configured through the following environment variables:
 
 * `OTEL_EXPORTER_OTLP_COMPRESSION`
 * `OTEL_EXPORTER_OTLP_TRACES_COMPRESSION`
@@ -147,8 +146,8 @@ Acceptable values are `none` or `gzip`.
 
 ### Batching
 
-If you use the OTel Collector, we highly recommend that you use a [batch processorï»¿](https://github.com/open-telemetry/opentelemetry-collector/blob/v0.151.0/processor/batchprocessor/README.md).
+If you use the OpenTelemetry Collector, we highly recommend that you use [batching﻿](https://github.com/open-telemetry/opentelemetry-collector/blob/v0.155.0/exporter/exporterhelper#sending-queue-batch-settings) in the `otlp_http` exporter.
 
 Batching helps better compress the data and reduce the number of outgoing connections required to transmit data to Dynatrace.
 
-See this [GitHub readmeï»¿](https://github.com/open-telemetry/opentelemetry-collector/blob/v0.151.0/processor/batchprocessor/README.md) for more information.
+See this [GitHub readme﻿](https://github.com/open-telemetry/opentelemetry-collector/blob/v0.155.0/processor/batchprocessor/README.md) for more information.

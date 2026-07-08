@@ -1,7 +1,6 @@
 ---
 title: Monitor Kubernetes/OpenShift metrics
 source: https://docs.dynatrace.com/managed/observe/infrastructure-observability/container-platform-monitoring/kubernetes-monitoring/monitor-metrics-kubernetes
-scraped: 2026-05-12T12:07:31.611820
 ---
 
 # Monitor Kubernetes/OpenShift metrics
@@ -35,12 +34,12 @@ Workload resource metrics rely on cAdvisor, which is only available on POSIX-bas
 
 For clusters with more than 50 nodes or 5,000 pods, resource consumption of the ActiveGate is considerably increased.
 
-The workload and node resource metrics feature aggregates container resource metrics (CPU usage, CPU throttling, and memory consumption) to the workload and node level. Workload and node resource metrics are based on the container metrics exposed by the Kubernetes cAdvisor. This feature does not require OneAgentâan ActiveGate with Kubernetes API monitoring turned on is sufficient.
+The workload and node resource metrics feature aggregates container resource metrics (CPU usage, CPU throttling, and memory consumption) to the workload and node level. Workload and node resource metrics are based on the container metrics exposed by the Kubernetes cAdvisor. This feature does not require OneAgent—an ActiveGate with Kubernetes API monitoring turned on is sufficient.
 
 To enable monitoring of workload and node resource metrics
 
 1. Go to **Kubernetes** and select the cluster name to open the Kubernetes cluster overview page.
-2. In the upper-right corner, select **More** (**â¦**) > **Settings**, select **Monitoring settings**, and turn on **Monitor workload and node resource metrics**.
+2. In the upper-right corner, select **More** (**…**) > **Settings**, select **Monitoring settings**, and turn on **Monitor workload and node resource metrics**.
 
    Monitoring **node resource metrics** requires ActiveGate version 1.271+.
 3. Optional Select **Test connection** to verify that the feature has been successfully activated.

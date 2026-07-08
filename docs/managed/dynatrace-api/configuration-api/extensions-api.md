@@ -1,7 +1,6 @@
 ---
 title: Extensions API
 source: https://docs.dynatrace.com/managed/dynatrace-api/configuration-api/extensions-api
-scraped: 2026-05-12T11:04:56.377511
 ---
 
 # Extensions API

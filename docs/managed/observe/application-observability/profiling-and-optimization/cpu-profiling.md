@@ -1,7 +1,6 @@
 ---
 title: CPU profiling
 source: https://docs.dynatrace.com/managed/observe/application-observability/profiling-and-optimization/cpu-profiling
-scraped: 2026-05-12T11:21:38.229469
 ---
 
 # CPU profiling
@@ -90,10 +89,10 @@ To download the code for an execution,
 
    The source code is directly visible in Dynatrace.
 
-   Required To convert the code into source code, use an external decompiler, such as [Bytecode Viewerï»¿](https://bytecodeviewer.com).
+   Required To convert the code into source code, use an external decompiler, such as [Bytecode Viewer﻿](https://bytecodeviewer.com).
 
-   Choose the decompiler most suited to the specific Java version youâre working with.
+   Choose the decompiler most suited to the specific Java version you’re working with.
 
-   Required To convert the code into source code, use an external decompiler, such as [dotPeakï»¿](https://www.jetbrains.com/decompiler/).
+   Required To convert the code into source code, use an external decompiler, such as [dotPeak﻿](https://www.jetbrains.com/decompiler/).
 
-   Choose the decompiler most suited to the specific .NET version youâre working with.
+   Choose the decompiler most suited to the specific .NET version you’re working with.

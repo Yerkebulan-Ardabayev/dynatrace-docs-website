@@ -1,7 +1,6 @@
 ---
 title: Dynatrace OpenKit libraries on GitHub
 source: https://docs.dynatrace.com/managed/ingest-from/extend-dynatrace/openkit/dynatrace-openkit-libraries-on-github
-scraped: 2026-05-12T11:34:09.968043
 ---
 
 # Dynatrace OpenKit libraries on GitHub

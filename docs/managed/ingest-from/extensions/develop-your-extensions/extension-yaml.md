@@ -1,7 +1,6 @@
 ---
 title: Extension YAML file
 source: https://docs.dynatrace.com/managed/ingest-from/extensions/develop-your-extensions/extension-yaml
-scraped: 2026-05-12T11:37:32.270165
 ---
 
 # Extension YAML file
@@ -26,7 +25,7 @@ This topic describes core elements of the `extension.yaml` file applicable to an
 
 When you create the `extension.yaml` file, make sure to rely on the schemas provided through the [Extensions API](/managed/dynatrace-api/environment-api/extensions-20 "Learn how to manage extensions with the Dynatrace Extensions 2.0 API."). We recommend that you use an editor supporting schema validation and snippets, which significantly simplifies `extension.yaml` editing.
 
-We recommend using the Dynatrace Extensions VS Code add-on provided by Dynatrace. For more information, see [Add-on for VS Codeï»¿](https://dt-url.net/tx03uks/).
+We recommend using the Dynatrace Extensions VS Code add-on provided by Dynatrace. For more information, see [Add-on for VS Code﻿](https://dt-url.net/tx03uks/).
 
 To download Extensions schemas:
 
@@ -147,18 +146,18 @@ To download Extensions schemas:
    -H "Authorization: Api-Token {api-token}"
    ```
 
-Alternatively, you can use the Dynatrace GitHub repository for [Extensions schemasï»¿](https://github.com/dynatrace-extensions/extensions-schemas).
+Alternatively, you can use the Dynatrace GitHub repository for [Extensions schemas﻿](https://github.com/dynatrace-extensions/extensions-schemas).
 
 ## Start extension YAML file
 
 The extension YAML file starts with basic information about the extension. It also contains optional references to [assets](/managed/ingest-from/extensions/concepts#extension-assets "Learn more about the concept of Dynatrace Extensions.") used by the extension.
 
-* `name`âthe name of your extension. A custom extension name (an extension not developed by Dynatrace) must start with `custom:`. The string must comply with the metric [ingestion protocol requirements](/managed/ingest-from/extend-dynatrace/extend-metrics/reference/metric-ingestion-protocol#dimension-optional "Learn how the data ingestion protocol for Dynatrace Metrics API works.") for dimensions.
-* `version`âthe version of your extension in `major`.`minor`.`build` format, such as `1.0.0`. Your Dynatrace environment can store 10 extension versions, but only one can be active at the time.
-* `minDynatraceVersion`âthe earliest Dynatrace version supported by the extension enclosed in quotes (`"`), such as `"1.213"`.
-* `author`âthe extension developer or company.
-* `dashboards`âthe path to the dashboard definitions in the `extension.zip` archive relative to the extension YAML file. You can add up to 10 definitions.
-* `alerts`âthe path to the custom metric events definitions in the `extension.zip` archive relative to the extension YAML file. You can add up to 10 definitions.
+* `name`—the name of your extension. A custom extension name (an extension not developed by Dynatrace) must start with `custom:`. The string must comply with the metric [ingestion protocol requirements](/managed/ingest-from/extend-dynatrace/extend-metrics/reference/metric-ingestion-protocol#dimension-optional "Learn how the data ingestion protocol for Dynatrace Metrics API works.") for dimensions.
+* `version`—the version of your extension in `major`.`minor`.`build` format, such as `1.0.0`. Your Dynatrace environment can store 10 extension versions, but only one can be active at the time.
+* `minDynatraceVersion`—the earliest Dynatrace version supported by the extension enclosed in quotes (`"`), such as `"1.213"`.
+* `author`—the extension developer or company.
+* `dashboards`—the path to the dashboard definitions in the `extension.zip` archive relative to the extension YAML file. You can add up to 10 definitions.
+* `alerts`—the path to the custom metric events definitions in the `extension.zip` archive relative to the extension YAML file. You can add up to 10 definitions.
 
 ## Groups and subgroups
 
@@ -341,7 +340,7 @@ type: text
 
 There are three types of variables that can be used in your variables definition:
 
-* `text`âallows you to provide a plain text value.
+* `text`—allows you to provide a plain text value.
 
   ```
   - id: textVariable
@@ -375,12 +374,12 @@ There are three types of variables that can be used in your variables definition
   pattern: ^#([a-fA-F0-9]{6}|[a-fA-F0-9]{3})$
   ```
 
-  + `displayName`âthe name visible in Dynatrace Hub.
-  + `maxLength`âthe maximum length of the variable value (up to 10,000).
-  + `required`âwhether providing a value is required for this variable.
-  + `defaultValue`âthe default value if no value is specified in the REST API.
-  + `pattern`âa regular expression pattern that must be fulfilled by the provided value.
-* `multiline-text`âallows you to provide plain text with the new line symbols. For details on multiline YAML syntax, see [YAML Multilineï»¿](https://dt-url.net/1m034c2).
+  + `displayName`—the name visible in Dynatrace Hub.
+  + `maxLength`—the maximum length of the variable value (up to 10,000).
+  + `required`—whether providing a value is required for this variable.
+  + `defaultValue`—the default value if no value is specified in the REST API.
+  + `pattern`—a regular expression pattern that must be fulfilled by the provided value.
+* `multiline-text`—allows you to provide plain text with the new line symbols. For details on multiline YAML syntax, see [YAML Multiline﻿](https://dt-url.net/1m034c2).
 
   ```
   - id: multilineVariable
@@ -422,10 +421,10 @@ There are three types of variables that can be used in your variables definition
   multiline
   ```
 
-  + `maxLength`âthe maximum length of a variable value (up to 10,000).
-  + `required`âwhether providing a value is required for this variable.
-  + `defaultValue`âthe default value if no value is specified in the REST API.
-* `enum`âallows you to define your own set of possible values.
+  + `maxLength`—the maximum length of a variable value (up to 10,000).
+  + `required`—whether providing a value is required for this variable.
+  + `defaultValue`—the default value if no value is specified in the REST API.
+* `enum`—allows you to define your own set of possible values.
 
   ```
   - id: Colors
@@ -471,12 +470,12 @@ There are three types of variables that can be used in your variables definition
   displayName: White as snow
   ```
 
-  + Optional `defaultValue`âif defined, sets the default value for the whole set and makes the variable required.
+  + Optional `defaultValue`—if defined, sets the default value for the whole set and makes the variable required.
 
   Define the possible values in `availableValues` list:
 
-  + `value`âthe value passed to the extension.
-  + `displayName`âthe name visible in Dynatrace Hub.
+  + `value`—the value passed to the extension.
+  + `displayName`—the name visible in Dynatrace Hub.
 
 ## Filters
 
@@ -488,22 +487,22 @@ filter: var:ifNameFilter
 
 Define the filter based on a condition as follows:
 
-* **Starts with** â use a `const:$prefix` qualifier. Example:
+* **Starts with** – use a `const:$prefix` qualifier. Example:
 
   ```
   filter: const:$prefix(xyz)
   ```
-* **Ends with** â use a `const:$suffix` qualifier. Example:
+* **Ends with** – use a `const:$suffix` qualifier. Example:
 
   ```
   filter: const:$suffix(xyz)
   ```
-* **Contains** â use a `const:$contains` qualifier. Example:
+* **Contains** – use a `const:$contains` qualifier. Example:
 
   ```
   filter: const:$contains(xyz)
   ```
-* **Equals** â use a `const:$eq` qualifier. Example:
+* **Equals** – use a `const:$eq` qualifier. Example:
 
   ```
   filter: const:$eq(xyz)
@@ -511,17 +510,17 @@ Define the filter based on a condition as follows:
 
   For the expressions mentioned above, you can also use qualifiers:
 
-  + `const:$and` â to chain two or more expressions with AND operator. Example:
+  + `const:$and` – to chain two or more expressions with AND operator. Example:
 
     ```
     filter: const:$and(<expr1>,<expr2>)
     ```
-  + a `const:$or` â to chain two or more expressions with OR operator. Example:
+  + a `const:$or` – to chain two or more expressions with OR operator. Example:
 
     ```
     filter: const:$or(<expr1>,<expr2>)
     ```
-  + a `const:$not` â to negate an expression. Example:
+  + a `const:$not` – to negate an expression. Example:
 
     ```
     filter: const:$not(<expr>)

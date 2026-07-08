@@ -1,7 +1,6 @@
 ---
 title: Supported Go versions
 source: https://docs.dynatrace.com/managed/ingest-from/technology-support/application-software/go/support/supported-go-versions
-scraped: 2026-05-12T11:23:07.122577
 ---
 
 # Supported Go versions
@@ -9,15 +8,15 @@ scraped: 2026-05-12T11:23:07.122577
 # Supported Go versions
 
 * 7-min read
-* Updated on Apr 13, 2026
+* Updated on Jun 08, 2026
 
 Whenever a new Go major version is released, Dynatrace adds support for that version. Support for each minor version is
-added tooâsee [Version matrix](#go-version-matrix) for more details.
+added too—see [Version matrix](#go-version-matrix) for more details.
 
-The [Go release policyï»¿](https://dt-url.net/uos3rmi) supports the last two major Go versions. However, Dynatrace decided
+The [Go release policy﻿](https://dt-url.net/uos3rmi) supports the last two major Go versions. However, Dynatrace decided
 to support each Go version at least half a year longer so that you have enough time for upgrades.
 
-### Official [Golang toolchainï»¿](https://dt-url.net/go)
+### Official [Golang toolchain﻿](https://dt-url.net/go)
 
 | Go version | Vendor released | Vendor End of life | First supported Dynatrace OneAgent version | Last supported Dynatrace OneAgent version | Dynatrace support until | [Dynatrace support level](/managed/ingest-from/technology-support#support-levels) |
 | --- | --- | --- | --- | --- | --- | --- |
@@ -26,7 +25,7 @@ to support each Go version at least half a year longer so that you have enough t
 | 1.24 | 2025-02-11 | 2026-02-11 | 1.311 | - | 2027-02-11 | Supported |
 | 1.23 | 2024-08-13 | 2025-08-13 | 1.301 | - | 2026-08-13 | Supported |
 
-### Golang toolchain with FIPS ([openssl-fipsï»¿](https://dt-url.net/golang-fips)) modifications
+### Golang toolchain with FIPS ([openssl-fips﻿](https://dt-url.net/golang-fips)) modifications
 
 Prerequisites
 
@@ -36,6 +35,8 @@ Prerequisites
 
 | Go version | Vendor released | Vendor End of life | First supported Dynatrace OneAgent version | Last supported Dynatrace OneAgent version | Dynatrace support until | [Dynatrace support level](/managed/ingest-from/technology-support#support-levels) |
 | --- | --- | --- | --- | --- | --- | --- |
+| 1.26.2 | 2026-02-10 | 2027-02-10 | 1.341 | - | 2028-02-10 | Supported |
+| 1.25.9 | 2025-08-12 | 2026-08-12 | 1.341 | - | 2027-08-12 | Supported |
 | 1.25.7 | 2025-08-12 | 2026-08-12 | 1.337 | - | 2027-08-12 | Supported |
 | 1.25.5 | 2025-08-12 | 2026-08-12 | 1.335 | - | 2027-08-12 | Supported |
 | 1.25.3 | 2025-08-12 | 2026-08-12 | 1.331 | - | 2027-08-12 | Supported |
@@ -51,18 +52,6 @@ the latest version that may be supported via [external metadata](#external-metad
 
 | OneAgent versions | Go 1.24 | Go 1.25 | Go 1.26 |
 | --- | --- | --- | --- |
-| v1.287 |  |  |  |
-| v1.289 |  |  |  |
-| v1.291 |  |  |  |
-| v1.293 |  |  |  |
-| v1.295 |  |  |  |
-| v1.297 |  |  |  |
-| v1.299 |  |  |  |
-| v1.301 |  |  |  |
-| v1.303 |  |  |  |
-| v1.305 |  |  |  |
-| v1.307 |  |  |  |
-| v1.309 |  |  |  |
 | v1.311 | 1.24.0 (1.24.5) |  |  |
 | v1.313 | 1.24.0 - 1.24.2 (1.24.6) |  |  |
 | v1.315 | 1.24.0 - 1.24.2 (1.24.7) |  |  |
@@ -73,9 +62,11 @@ the latest version that may be supported via [external metadata](#external-metad
 | v1.325 | 1.24.0 - 1.24.7 (1.24.13) | 1.25.0 - 1.25.1 (1.25.7) |  |
 | v1.327 | 1.24.0 - 1.24.9 (1.24.13) | 1.25.0 - 1.25.3 (1.25.8) |  |
 | v1.329 | 1.24.0 - 1.24.10 (1.24.13) | 1.25.0 - 1.25.4 (1.25.9) |  |
-| v1.331 | 1.24.0 - 1.24.11 (1.24.13) | 1.25.0 - 1.25.5 (1.25.9) |  |
-| v1.333 | 1.24.0 - 1.24.12 (1.24.13) | 1.25.0 - 1.25.6 (1.25.9) |  |
-| v1.335 | 1.24.0 - 1.24.13 | 1.25.0 - 1.25.7 (1.25.9) | 1.26.0 (1.26.2) |
+| v1.331 | 1.24.0 - 1.24.11 (1.24.13) | 1.25.0 - 1.25.5 (1.25.10) |  |
+| v1.333 | 1.24.0 - 1.24.12 (1.24.13) | 1.25.0 - 1.25.6 (1.25.11) |  |
+| v1.335 | 1.24.0 - 1.24.13 | 1.25.0 - 1.25.7 (1.25.11) | 1.26.0 (1.26.4) |
+| v1.337 | 1.24.0 - 1.24.13 | 1.25.0 - 1.25.8 (1.25.11) | 1.26.0 - 1.26.1 (1.26.4) |
+| v1.339 | 1.24.0 - 1.24.13 | 1.25.0 - 1.25.9 (1.25.11) | 1.26.0 - 1.26.2 (1.26.4) |
 
 ### Older versions
 

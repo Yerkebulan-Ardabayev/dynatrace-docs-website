@@ -1,7 +1,6 @@
 ---
 title: Azure AI - Custom Vision Prediction monitoring
 source: https://docs.dynatrace.com/managed/ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics/monitor-azure-ai-custom-vision-prediction
-scraped: 2026-05-12T11:25:30.770177
 ---
 
 # Azure AI - Custom Vision Prediction monitoring

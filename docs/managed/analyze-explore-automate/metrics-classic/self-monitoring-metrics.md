@@ -1,7 +1,6 @@
 ---
 title: Self-monitoring metrics
 source: https://docs.dynatrace.com/managed/analyze-explore-automate/metrics-classic/self-monitoring-metrics
-scraped: 2026-05-12T11:06:50.936314
 ---
 
 # Self-monitoring metrics
@@ -9,7 +8,7 @@ scraped: 2026-05-12T11:06:50.936314
 # Self-monitoring metrics
 
 * 4-min read
-* Published Dec 03, 2021
+* Updated on May 26, 2026
 
 Dynatrace offers a special self-monitoring category of metrics to provide observability into the operation and health of Dynatrace components and features. These metrics are available in every Dynatrace Managed and SaaS environment and can be identified by the `dsfm:` metric prefix.
 
@@ -54,12 +53,6 @@ To view the self-monitoring data use the following metrics:
   ```
   dsfm:server.spans.received:default(0):splitBy():sum:rate(1m)
   ```
-* `dsfm:server.rum.user_session_count` (number of user sessions)  
-  Data Explorer query example:
-
-  ```
-  dsfm:server.rum.user_session_count:default(0):splitBy():sum:rate(1m)
-  ```
 * `dsfm:server.rum.action_count` (number of user actions)  
   Data Explorer query example:
 
@@ -97,7 +90,7 @@ To view the self-monitoring data use the following metrics:
   dsfm:server.log_and_events_monitoring.events_rejected_count:splitBy():sum:auto:sort(value(sum,descending)):rate(1m)
   ```
 * `dsfm:server.log_and_events_monitoring.events_incoming_count` (The count of incoming log events)  
-  This metric can be used to to verify how many log events are incoming to the server for a given timeframe. It can include duplicates due to retransmissions. This metric contains additional dimensions: `event.sender` to identify the source of the incoming log event and `event.type` to identify the event type of the incoming log event.  
+  This metric can be used to verify how many log events are incoming to the server for a given timeframe. It can include duplicates due to retransmissions. This metric contains additional dimensions: `event.sender` to identify the source of the incoming log event and `event.type` to identify the event type of the incoming log event.  
   Data Explorer query example:
 
   ```

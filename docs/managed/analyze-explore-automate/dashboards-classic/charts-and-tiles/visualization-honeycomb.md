@@ -1,7 +1,6 @@
 ---
 title: Configure and use a honeycomb visualization in Dynatrace
 source: https://docs.dynatrace.com/managed/analyze-explore-automate/dashboards-classic/charts-and-tiles/visualization-honeycomb
-scraped: 2026-05-12T11:12:50.629761
 ---
 
 # Configure and use a honeycomb visualization in Dynatrace

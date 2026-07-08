@@ -1,7 +1,6 @@
 ---
 title: Geographic regions API - GET countries
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/rum/geographic-regions/get-countries
-scraped: 2026-05-12T11:55:31.331904
 ---
 
 # Geographic regions API - GET countries
@@ -48,7 +47,7 @@ The list of countries.
 
 | Element | Type | Description |
 | --- | --- | --- |
-| countries | [Country[]](#openapi-definition-Country) | The list of countries. |
+| countries | [Country](#openapi-definition-Country)[] | The list of countries. |
 | countryCount | integer | The number of countries. |
 
 #### The `Country` object
@@ -71,7 +70,7 @@ Information about a country.
 | Element | Type | Description |
 | --- | --- | --- |
 | code | integer | The HTTP status code |
-| constraintViolations | [ConstraintViolation[]](#openapi-definition-ConstraintViolation) | A list of constraint violations |
+| constraintViolations | [ConstraintViolation](#openapi-definition-ConstraintViolation)[] | A list of constraint violations |
 | message | string | The error message |
 
 #### The `ConstraintViolation` object
@@ -197,5 +196,5 @@ A list of constraint violations
 
 ## Related topics
 
-* [Real User Monitoring](/managed/observe/digital-experience/rum-concepts/rum-overview "Learn about Real User Monitoring, key performance metrics, mobile app monitoring, and more.")
-* [Detection of IP addresses, geolocations, and user agents](/managed/observe/digital-experience/rum-concepts/detection-of-ip-addresses-locations-and-user-agents "Dynatrace detects IP addresses and geolocations like a city, region, and country as well as browsers, devices, and operating systems.")
+* [Real User Monitoring Classic](/managed/observe/digital-experience/rum-classic/rum-concepts/rum-overview "Learn about Real User Monitoring Classic, key performance metrics, mobile app monitoring, and more.")
+* [Detection of IP addresses, geolocations, and user agents in RUM Classic](/managed/observe/digital-experience/rum-classic/rum-concepts/detection-of-ip-addresses-locations-and-user-agents "Dynatrace detects IP addresses and geolocations like a city, region, and country as well as browsers, devices, and operating systems.")

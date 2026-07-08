@@ -1,7 +1,6 @@
 ---
 title: Migration
 source: https://docs.dynatrace.com/managed/deliver/configuration-as-code/terraform/guides/migration
-scraped: 2026-05-12T12:11:52.236013
 ---
 
 # Migration
@@ -67,7 +66,7 @@ set DYNATRACE_API_TOKEN=dt0c01.########.########
 
 With this method, you use the same variables for both environments.
 
-Set the environment variables `DYNATRACE_ENV_URL` and `DYNATRACE_API_TOKEN` as the URL and API Tokenâsame variables are used for your source and target Dynatrace environment. Change the values between the invocation of the export utility and Terraform execution.
+Set the environment variables `DYNATRACE_ENV_URL` and `DYNATRACE_API_TOKEN` as the URL and API Token—same variables are used for your source and target Dynatrace environment. Change the values between the invocation of the export utility and Terraform execution.
 
 Optionally, the environment variable `DYNATRACE_TARGET_FOLDER` can be set to specify an output directory. If the variable is not set, the default `./configuration` will be used.
 
@@ -75,10 +74,10 @@ Optionally, the environment variable `DYNATRACE_TARGET_FOLDER` can be set to spe
 
 There are two main approaches for migration:
 
-* [Bulk](#bulk)âTransfer all configurations from a source to a fresh target environment.
-* [Iterative](#iterative)âTransfer configurations by resource group. Ideal for target environments with existing configurations.
+* [Bulk](#bulk)—Transfer all configurations from a source to a fresh target environment.
+* [Iterative](#iterative)—Transfer configurations by resource group. Ideal for target environments with existing configurations.
 
-  For iterative migration, use the [Terraform Migration Helperï»¿](https://dt-url.net/m5i37ar) spreadsheet. It aids in tracking migration order and completion.
+  For iterative migration, use the [Terraform Migration Helper﻿](https://dt-url.net/m5i37ar) spreadsheet. It aids in tracking migration order and completion.
 
 ### Bulk migration
 
@@ -114,4 +113,4 @@ Some resources might fail during migration. Common issues include:
 * Some API endpoints might reject outdated configurations. For instance, calculated service metrics now require a management zone or a condition marked with service property.
 * Some API endpoints validate whether entity IDs in the configuration exist. If missing in the target environment, re-apply once the entities are present.
 
-If you experience any other errors, please create a [GitHub issueï»¿](https://dt-url.net/4bg37q8).
+If you experience any other errors, please create a [GitHub issue﻿](https://dt-url.net/4bg37q8).

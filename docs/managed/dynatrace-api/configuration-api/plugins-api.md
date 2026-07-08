@@ -1,7 +1,6 @@
 ---
 title: Plugins API
 source: https://docs.dynatrace.com/managed/dynatrace-api/configuration-api/plugins-api
-scraped: 2026-05-12T11:05:04.681072
 ---
 
 # Plugins API

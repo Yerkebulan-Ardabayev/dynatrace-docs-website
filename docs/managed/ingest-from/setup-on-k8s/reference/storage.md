@@ -1,7 +1,6 @@
 ---
 title: Storage requirements
 source: https://docs.dynatrace.com/managed/ingest-from/setup-on-k8s/reference/storage
-scraped: 2026-05-12T11:53:45.304380
 ---
 
 # Storage requirements
@@ -117,7 +116,7 @@ Same disk usage as described in [plugin directory disk usage](#operator-csi-plug
 
 2
 
-More details about the format of `<size>` can be found in the [Kubernetes documentationï»¿](https://kubernetes.io/docs/concepts/configuration/manage-resources-containers/#meaning-of-memory).
+More details about the format of `<size>` can be found in the [Kubernetes documentation﻿](https://kubernetes.io/docs/concepts/configuration/manage-resources-containers/#meaning-of-memory).
 
 ## Ephemeral volumes
 
@@ -144,4 +143,4 @@ There are no default values for ephemeral storage resource configuration. They c
 | dynatrace-csi-driver | livenessprobe | `csidriver.livenessprobe.resources.requests.ephemeral-storage`  `csidriver.livenessprobe.resources.limits.ephemeral-storage` |
 | codemodule-download-<hash> | codemodule-download | `csidriver.job.resources.requests.ephemeral-storage`  `csidriver.job.resources.limits.ephemeral-storage` |
 
-The Helm switches can be used in a custom [`values.yaml`ï»¿](https://dt-url.net/helm-values) file to control the limits during Operator install with the Helm chart.
+The Helm switches can be used in a custom [`values.yaml`﻿](https://dt-url.net/helm-values) file to control the limits during Operator install with the Helm chart.

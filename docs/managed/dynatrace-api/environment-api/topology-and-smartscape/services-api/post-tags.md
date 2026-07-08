@@ -1,7 +1,6 @@
 ---
 title: Services API - POST tags
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/topology-and-smartscape/services-api/post-tags
-scraped: 2026-05-12T12:01:54.197784
 ---
 
 # Services API - POST tags
@@ -98,7 +97,7 @@ This is a model of the request body, showing the possible elements. It has to be
 | Element | Type | Description |
 | --- | --- | --- |
 | code | integer | The HTTP status code |
-| constraintViolations | [ConstraintViolation[]](#openapi-definition-ConstraintViolation) | A list of constraint violations |
+| constraintViolations | [ConstraintViolation](#openapi-definition-ConstraintViolation)[] | A list of constraint violations |
 | message | string | The error message |
 
 #### The `ConstraintViolation` object

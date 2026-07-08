@@ -1,7 +1,6 @@
 ---
 title: Set up OneAgent on containers for application-only monitoring
 source: https://docs.dynatrace.com/managed/ingest-from/setup-on-container-platforms/docker/set-up-oneagent-on-containers-for-application-only-monitoring
-scraped: 2026-05-12T11:11:06.267932
 ---
 
 # Set up OneAgent on containers for application-only monitoring
@@ -45,7 +44,7 @@ Required versions
 
 What if my Docker image is based on Alpine Linux?
 
-Dynatrace OneAgent supports Alpine Linuxâbased environments.  
+Dynatrace OneAgent supports Alpine Linux–based environments.  
 Use this syntax:
 
 ```

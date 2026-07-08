@@ -1,7 +1,6 @@
 ---
 title: Get cluster nodes configuration current status
 source: https://docs.dynatrace.com/managed/dynatrace-api/cluster-api/cluster-api-v1/cluster-v1/get-cluster-nodes-configuration-current-status
-scraped: 2026-05-12T12:12:24.698064
 ---
 
 # Get cluster nodes configuration current status

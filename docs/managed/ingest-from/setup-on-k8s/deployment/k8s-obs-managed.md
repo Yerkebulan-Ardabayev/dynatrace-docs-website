@@ -1,7 +1,6 @@
 ---
 title: Get started with Kubernetes observability
 source: https://docs.dynatrace.com/managed/ingest-from/setup-on-k8s/deployment/k8s-obs-managed
-scraped: 2026-05-12T11:52:50.677236
 ---
 
 # Get started with Kubernetes observability
@@ -12,7 +11,7 @@ scraped: 2026-05-12T11:52:50.677236
 
 This page provides instructions for deploying the Dynatrace Operator for Kubernetes observability.
 
-To gain a more comprehensive view of your environment that includes aspects such as application observability and user experience, you should consider combining Kubernetes observability with [Application Observability](/managed/ingest-from/setup-on-k8s/deployment/app-obs-managed "Deploy Dynatrace Operator in application monitoring mode to Kubernetes") if you are on a [Dynatrace Platform Subscription (DPS)](/managed/license "About Dynatrace Platform Subscription (DPS), the licensing model for all Dynatrace capabilities.") or use [cloud native full stack](/managed/ingest-from/setup-on-k8s/deployment/full-stack-managed "Deploy Dynatrace Operator in cloud-native full-stack mode to Kubernetes") mode if you are on Dynatrace classic licensing.
+To gain a more comprehensive view of your environment that includes aspects such as application observability and user experience, you should consider combining Kubernetes observability with [Application Observability](/managed/ingest-from/setup-on-k8s/deployment/app-obs-managed "Deploy Dynatrace Operator in application monitoring mode to Kubernetes") if you are on a [Dynatrace Platform Subscription (DPS)](/managed/license "Dynatrace Platform Subscription, capability rate cards, hybrid licensing, and previous license models.") or use [cloud native full stack](/managed/ingest-from/setup-on-k8s/deployment/full-stack-managed "Deploy Dynatrace Operator in cloud-native full-stack mode to Kubernetes") mode if you are on Dynatrace classic licensing.
 
 Prerequisites
 
@@ -26,8 +25,8 @@ Before installing Dynatrace on your Kubernetes cluster, ensure that you meet the
 * You must allow egress for Dynatrace pods (default: Dynatrace namespace) to your Dynatrace environment URL.
 
   + For Dynatrace Managed, you can optionally use a Cluster ActiveGate URL.
-* For OpenShift Dedicated, you need the [cluster-admin roleï»¿](https://docs.openshift.com/dedicated/osd_cluster_admin/osd-admin-roles.html).
-* Helm installation Use [Helm version 3ï»¿](https://dt-url.net/n5036j1).
+* For OpenShift Dedicated, you need the [cluster-admin role﻿](https://docs.openshift.com/dedicated/osd_cluster_admin/osd-admin-roles.html).
+* Helm installation Use [Helm version 3﻿](https://dt-url.net/n5036j1).
 
 ### Supported versions
 
@@ -75,7 +74,7 @@ helm install dynatrace-operator oci://public.ecr.aws/dynatrace/dynatrace-operato
 
 Installation with additional configuration of the Helm chart
 
-Edit the [`values.yaml`ï»¿](https://dt-url.net/helm-values) sample from GitHub, and then run the install command, passing the YAML file as an argument:
+Edit the [`values.yaml`﻿](https://dt-url.net/helm-values) sample from GitHub, and then run the install command, passing the YAML file as an argument:
 
 ```
 helm install dynatrace-operator oci://public.ecr.aws/dynatrace/dynatrace-operator \
@@ -113,7 +112,7 @@ kubectl -n dynatrace create secret generic dynakube --from-literal="apiToken=<OP
 
 3. Apply the DynaKube custom resource
 
-Download the [DynaKube custom resource sample for Kubernetes observabilityï»¿](https://dt-url.net/sa038nu) from GitHub. In addition, you can review the [available parameters](/managed/ingest-from/setup-on-k8s/reference/dynakube-parameters "List the available parameters for setting up Dynatrace Operator on Kubernetes.") or [how-to guides](/managed/ingest-from/setup-on-k8s/guides "Detailed description of installation and configuration options for specific use-cases"), and adapt the DynaKube custom resource according to your requirements.
+Download the [DynaKube custom resource sample for Kubernetes observability﻿](https://dt-url.net/sa038nu) from GitHub. In addition, you can review the [available parameters](/managed/ingest-from/setup-on-k8s/reference/dynakube-parameters "List the available parameters for setting up Dynatrace Operator on Kubernetes.") or [how-to guides](/managed/ingest-from/setup-on-k8s/guides "Detailed description of installation and configuration options for specific use-cases"), and adapt the DynaKube custom resource according to your requirements.
 
 Run the command below to apply the DynaKube custom resource, making sure to replace `<your-DynaKube-CR>` with your actual DynaKube custom resource file name. A validation webhook will provide helpful error messages if there's a problem.
 
@@ -191,7 +190,7 @@ helm install dynatrace-operator oci://public.ecr.aws/dynatrace/dynatrace-operato
 
 Installation with additional configuration of the Helm chart
 
-Edit the [`values.yaml`ï»¿](https://dt-url.net/helm-values) sample from GitHub, and then run the install command, passing the YAML file as an argument:
+Edit the [`values.yaml`﻿](https://dt-url.net/helm-values) sample from GitHub, and then run the install command, passing the YAML file as an argument:
 
 ```
 helm install dynatrace-operator oci://public.ecr.aws/dynatrace/dynatrace-operator \
@@ -229,7 +228,7 @@ oc -n dynatrace create secret generic dynakube --from-literal="apiToken=<OPERATO
 
 3. Apply the DynaKube custom resource
 
-Download the [DynaKube custom resource sample for Kubernetes observabilityï»¿](https://dt-url.net/sa038nu) from GitHub. In addition, you can review the [available parameters](/managed/ingest-from/setup-on-k8s/reference/dynakube-parameters "List the available parameters for setting up Dynatrace Operator on Kubernetes.") or [how-to guides](/managed/ingest-from/setup-on-k8s/guides "Detailed description of installation and configuration options for specific use-cases"), and adapt the DynaKube custom resource according to your requirements.
+Download the [DynaKube custom resource sample for Kubernetes observability﻿](https://dt-url.net/sa038nu) from GitHub. In addition, you can review the [available parameters](/managed/ingest-from/setup-on-k8s/reference/dynakube-parameters "List the available parameters for setting up Dynatrace Operator on Kubernetes.") or [how-to guides](/managed/ingest-from/setup-on-k8s/guides "Detailed description of installation and configuration options for specific use-cases"), and adapt the DynaKube custom resource according to your requirements.
 
 Run the command below to apply the DynaKube custom resource, making sure to replace `<your-DynaKube-CR>` with your actual DynaKube custom resource file name. A validation webhook will provide helpful error messages if there's a problem.
 
@@ -315,7 +314,7 @@ kubectl -n dynatrace create secret generic dynakube --from-literal="apiToken=<OP
 
 4. Apply the DynaKube custom resource
 
-Download the [DynaKube custom resource sample for Kubernetes observabilityï»¿](https://dt-url.net/sa038nu) from GitHub. In addition, you can review the [available parameters](/managed/ingest-from/setup-on-k8s/reference/dynakube-parameters "List the available parameters for setting up Dynatrace Operator on Kubernetes.") or [how-to guides](/managed/ingest-from/setup-on-k8s/guides "Detailed description of installation and configuration options for specific use-cases"), and adapt the DynaKube custom resource according to your requirements.
+Download the [DynaKube custom resource sample for Kubernetes observability﻿](https://dt-url.net/sa038nu) from GitHub. In addition, you can review the [available parameters](/managed/ingest-from/setup-on-k8s/reference/dynakube-parameters "List the available parameters for setting up Dynatrace Operator on Kubernetes.") or [how-to guides](/managed/ingest-from/setup-on-k8s/guides "Detailed description of installation and configuration options for specific use-cases"), and adapt the DynaKube custom resource according to your requirements.
 
 Run the command below to apply the DynaKube custom resource, making sure to replace `<your-DynaKube-CR>` with your actual DynaKube custom resource file name. A validation webhook will provide helpful error messages if there's a problem.
 
@@ -395,7 +394,7 @@ oc -n dynatrace create secret generic dynakube --from-literal="apiToken=<OPERATO
 
 4. Apply the DynaKube custom resource
 
-Download the [DynaKube custom resource sample for Kubernetes observabilityï»¿](https://dt-url.net/sa038nu) from GitHub. In addition, you can review the [available parameters](/managed/ingest-from/setup-on-k8s/reference/dynakube-parameters "List the available parameters for setting up Dynatrace Operator on Kubernetes.") or [how-to guides](/managed/ingest-from/setup-on-k8s/guides "Detailed description of installation and configuration options for specific use-cases"), and adapt the DynaKube custom resource according to your requirements.
+Download the [DynaKube custom resource sample for Kubernetes observability﻿](https://dt-url.net/sa038nu) from GitHub. In addition, you can review the [available parameters](/managed/ingest-from/setup-on-k8s/reference/dynakube-parameters "List the available parameters for setting up Dynatrace Operator on Kubernetes.") or [how-to guides](/managed/ingest-from/setup-on-k8s/guides "Detailed description of installation and configuration options for specific use-cases"), and adapt the DynaKube custom resource according to your requirements.
 
 Run the command below to apply the DynaKube custom resource, making sure to replace `<your-DynaKube-CR>` with your actual DynaKube custom resource file name. A validation webhook will provide helpful error messages if there's a problem.
 
@@ -475,7 +474,7 @@ Release notes for Dynatrace Operator
 
 Dynatrace Operator release notes](/managed/whats-new/dynatrace-operator)[#### Update or uninstall Dynatrace Operator
 
-Upgrade and uninstallation procedures for Dynatrace Operator
+Upgrade paths, update procedures, and uninstallation guide for Dynatrace Operator.
 
 Update or uninstall Dynatrace Operator](/managed/ingest-from/setup-on-k8s/guides/deployment-and-configuration/updates-and-maintenance/update-uninstall-operator)[#### Sizing guide for Dynatrace ActiveGates in the Kubernetes monitoring use-case
 

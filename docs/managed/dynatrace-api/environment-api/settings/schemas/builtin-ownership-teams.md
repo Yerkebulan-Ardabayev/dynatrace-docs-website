@@ -1,7 +1,6 @@
 ---
 title: Settings API - Ownership teams schema table
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/settings/schemas/builtin-ownership-teams
-scraped: 2026-05-12T11:44:41.584561
 ---
 
 # Settings API - Ownership teams schema table
@@ -12,7 +11,7 @@ scraped: 2026-05-12T11:44:41.584561
 
 ### Ownership teams (`builtin:ownership.teams)`
 
-Set up teams and assign responsibilities to them. Link teams to monitored entities in Dynatrace by referencing the team identifier in entity metadata. [See documentationï»¿](https://dt-url.net/ownership)
+Set up teams and assign responsibilities to them. Link teams to monitored entities in Dynatrace by referencing the team identifier in entity metadata. [See documentation﻿](https://dt-url.net/bq238bi)
 
 | Schema ID | Schema groups | Scope |
 | --- | --- | --- |
@@ -40,8 +39,8 @@ To execute this request, you need an access token with **Read settings** (`setti
 | Supplementary identifiers `supplementaryIdentifiers` | Set<[SupplementaryIdentifier](#SupplementaryIdentifier)> | The supplementary team identifiers can be optionally used in addition to the main team identifier to reference this team from any entity in Dynatrace. Up to 3 supplementary identifiers are supported. | Required |
 | Responsibilities `responsibilities` | [Responsibilities](#Responsibilities) | Turn on all responsibility assignments that apply to this team. | Required |
 | Contact details `contactDetails` | [ContactDetails](#ContactDetails)[] | Define options for messaging integration or other means of contacting this team. | Required |
-| Links `links` | [Link](#Link)[] | Include links to online resources where information relevant to this teamâs responsibilities can be found. | Required |
-| Additional information `additionalInformation` | [AdditionalInformation](#AdditionalInformation)[] | Define key/value pairs that further describe this team â for example, cost center, solution type, or business unit assignments. | Required |
+| Links `links` | [Link](#Link)[] | Include links to online resources where information relevant to this team’s responsibilities can be found. | Required |
+| Additional information `additionalInformation` | [AdditionalInformation](#AdditionalInformation)[] | Define key/value pairs that further describe this team — for example, cost center, solution type, or business unit assignments. | Required |
 | External ID `externalId` | text | This field should only be used for the automation purpose when importing team information. | Optional |
 
 ##### The `SupplementaryIdentifier` object

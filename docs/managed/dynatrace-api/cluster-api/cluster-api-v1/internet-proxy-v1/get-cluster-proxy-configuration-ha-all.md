@@ -1,7 +1,6 @@
 ---
 title: HA - Get proxy configurations for all data centers
 source: https://docs.dynatrace.com/managed/dynatrace-api/cluster-api/cluster-api-v1/internet-proxy-v1/get-cluster-proxy-configuration-ha-all
-scraped: 2026-05-12T12:12:37.448874
 ---
 
 # HA - Get proxy configurations for all data centers

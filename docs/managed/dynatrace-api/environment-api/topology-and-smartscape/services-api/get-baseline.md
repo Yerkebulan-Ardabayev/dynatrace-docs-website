@@ -1,7 +1,6 @@
 ---
 title: Services API - GET baseline
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/topology-and-smartscape/services-api/get-baseline
-scraped: 2026-05-12T12:01:49.025995
 ---
 
 # Services API - GET baseline
@@ -53,7 +52,7 @@ The baseline data for a service and its children for the **Response time** durat
 | --- | --- | --- |
 | displayName | string | The display name of the service. |
 | entityId | string | The ID of the service. |
-| serviceResponseTimeBaselines | [EntityBaselineData[]](#openapi-definition-EntityBaselineData) | The baseline data for the **Response time** duration metric. |
+| serviceResponseTimeBaselines | [EntityBaselineData](#openapi-definition-EntityBaselineData)[] | The baseline data for the **Response time** duration metric. |
 
 #### The `EntityBaselineData` object
 
@@ -61,7 +60,7 @@ The baseline data for a Dynatrace entity for a specific duration metric.
 
 | Element | Type | Description |
 | --- | --- | --- |
-| childBaselines | [EntityBaselineData[]](#openapi-definition-EntityBaselineData) | The baseline data for child entities of this entity, for example a `SERVICE_METHOD` of a `SERVICE_METHOD_GROUP`. |
+| childBaselines | [EntityBaselineData](#openapi-definition-EntityBaselineData)[] | The baseline data for child entities of this entity, for example a `SERVICE_METHOD` of a `SERVICE_METHOD_GROUP`. |
 | displayName | string | The display name of the entity. |
 | entityId | string | The ID of the Dynatrace entity. |
 | errorRate | number | The error rate baseline. |
@@ -80,7 +79,7 @@ The baseline data for a Dynatrace entity for a specific duration metric.
 | Element | Type | Description |
 | --- | --- | --- |
 | code | integer | The HTTP status code |
-| constraintViolations | [ConstraintViolation[]](#openapi-definition-ConstraintViolation) | A list of constraint violations |
+| constraintViolations | [ConstraintViolation](#openapi-definition-ConstraintViolation)[] | A list of constraint violations |
 | message | string | The error message |
 
 #### The `ConstraintViolation` object

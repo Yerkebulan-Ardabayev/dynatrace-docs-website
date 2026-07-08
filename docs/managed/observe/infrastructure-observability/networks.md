@@ -1,7 +1,6 @@
 ---
 title: Networks
 source: https://docs.dynatrace.com/managed/observe/infrastructure-observability/networks
-scraped: 2026-05-12T11:22:19.511310
 ---
 
 # Networks
@@ -58,4 +57,4 @@ Read this guide](/managed/observe/infrastructure-observability/networks-classic/
 
 ## Related topics
 
-* [Network monitoringï»¿](https://www.dynatrace.com/platform/network-monitoring/)
+* [Network monitoring﻿](https://www.dynatrace.com/platform/network-monitoring/)

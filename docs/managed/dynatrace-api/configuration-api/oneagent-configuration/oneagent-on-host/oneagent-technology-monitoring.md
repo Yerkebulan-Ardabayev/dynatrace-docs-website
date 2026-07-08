@@ -1,7 +1,6 @@
 ---
 title: OneAgent on a host API - Technology monitoring configuration
 source: https://docs.dynatrace.com/managed/dynatrace-api/configuration-api/oneagent-configuration/oneagent-on-host/oneagent-technology-monitoring
-scraped: 2026-05-12T11:21:21.952088
 ---
 
 # OneAgent on a host API - Technology monitoring configuration
@@ -49,7 +48,7 @@ A list of technology monitoring configurations.
 | Element | Type | Description |
 | --- | --- | --- |
 | metadata | [ConfigurationMetadata](#openapi-definition-ConfigurationMetadata) | Metadata useful for debugging |
-| technologies | [Technology[]](#openapi-definition-Technology) | A list of technology monitoring configurations. |
+| technologies | [Technology](#openapi-definition-Technology)[] | A list of technology monitoring configurations. |
 
 #### The `ConfigurationMetadata` object
 

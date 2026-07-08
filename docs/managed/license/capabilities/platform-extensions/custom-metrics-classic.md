@@ -1,7 +1,6 @@
 ---
 title: Custom Metrics Classic (DPS)
 source: https://docs.dynatrace.com/managed/license/capabilities/platform-extensions/custom-metrics-classic
-scraped: 2026-05-12T11:24:20.554609
 ---
 
 # Custom Metrics Classic (DPS)
@@ -31,7 +30,7 @@ Every metric data point that belongs to a custom metric consumes an additional m
 
 If you have a single custom metric that is written once per minute, annually you will consume 525.6 k metric data points:
 
-`1 metric data point Ã 60 min Ã 24 h Ã 365 days = 525.6k metric data points/year`
+`1 metric data point × 60 min × 24 h × 365 days = 525.6k metric data points/year`
 
 Note that a single custom metric may have multiple dimensions.
 For example, if you have the same custom metric for 2 instances of your cloud service, you will consume 2 metric data points:
@@ -39,7 +38,7 @@ For example, if you have the same custom metric for 2 instances of your cloud se
 1. `cloud.aws.dynamo.requests.latency, dt.entity.dynamo\_db\_table=DYNAMO\_DB\_TABLE-41043ED33F90F271 21.78`
 2. `cloud.aws.dynamo.requests.latency, dt.entity.dynamo\_db\_table=DYNAMO\_DB\_TABLE-707BF9DD5C975159 4.47`
 
-`2 instances Ã 1 metric data point Ã 60 min Ã 24 h Ã 365 days = 1,051.2k metric data points/year`
+`2 instances × 1 metric data point × 60 min × 24 h × 365 days = 1,051.2k metric data points/year`
 
 Metric data points are not billed based on the increase in dimensions, but rather by the increased number of metric data points.
 If dimensions are added, but the number of metric data points remains the same, then billable metric data points usage does not change:
@@ -151,4 +150,4 @@ For example, learn how to do that for [Azure Storage Account](/managed/ingest-fr
 ## Related topics
 
 * [Platform extensions overview (DPS)](/managed/license/capabilities/platform-extensions "Learn how consumption of Dynatrace platform extensions is calculated using the Dynatrace Platform Subscription model.")
-* [Dynatrace pricingï»¿](https://www.dynatrace.com/pricing/)
+* [Dynatrace pricing﻿](https://www.dynatrace.com/pricing/)

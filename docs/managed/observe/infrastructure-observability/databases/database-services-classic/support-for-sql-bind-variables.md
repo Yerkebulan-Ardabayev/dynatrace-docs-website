@@ -1,7 +1,6 @@
 ---
 title: Support for SQL bind variables
 source: https://docs.dynatrace.com/managed/observe/infrastructure-observability/databases/database-services-classic/support-for-sql-bind-variables
-scraped: 2026-05-12T11:37:13.329936
 ---
 
 # Support for SQL bind variables
@@ -22,7 +21,7 @@ Bind variables allow the database server to prepare the statement once and execu
 Bind variables aren't applicable to statements that use literals, such as:
 
 ```
-select count (*) from report where tenant = âxxxxâ
+select count (*) from report where tenant = ‘xxxx’
 ```
 
 These statements can't be parameterized and are reparsed and reanalyzed by the database server with each execution.

@@ -1,7 +1,6 @@
 ---
 title: Settings API - Frequency and locations schema table
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/settings/schemas/builtin-synthetic-multiprotocol-scheduling
-scraped: 2026-05-12T11:48:22.568821
 ---
 
 # Settings API - Frequency and locations schema table

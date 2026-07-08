@@ -1,7 +1,6 @@
 ---
 title: Store cluster SSL certificate
 source: https://docs.dynatrace.com/managed/dynatrace-api/cluster-api/cluster-api-v1/ssl-certificates-v1/post-cluster-ssl-cert-store-status
-scraped: 2026-05-12T12:01:04.935094
 ---
 
 # Store cluster SSL certificate

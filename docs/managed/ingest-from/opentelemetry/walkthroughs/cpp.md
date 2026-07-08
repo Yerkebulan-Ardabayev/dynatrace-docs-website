@@ -1,7 +1,6 @@
 ---
 title: Instrument your C++ application with OpenTelemetry
 source: https://docs.dynatrace.com/managed/ingest-from/opentelemetry/walkthroughs/cpp
-scraped: 2026-05-12T11:22:42.949311
 ---
 
 # Instrument your C++ application with OpenTelemetry
@@ -10,7 +9,7 @@ scraped: 2026-05-12T11:22:42.949311
 
 * How-to guide
 * 5-min read
-* Updated on Nov 12, 2025
+* Updated on May 11, 2026
 
 This walkthrough shows how to add observability to your C++ application using the OpenTelemetry C++ libraries and tools.
 
@@ -24,12 +23,15 @@ This walkthrough shows how to add observability to your C++ application using th
 ## Prerequisites
 
 * Dynatrace version 1.222+
-* A [supportedï»¿](https://github.com/open-telemetry/opentelemetry-cpp/blob/main/README.md#supported-development-platforms) C++ compiler (C++ 11 and later)
-* The [Protocol Buffers libraryï»¿](https://github.com/protocolbuffers/protobuf/blob/master/src/README.md)
-* The [OpenTelemetry libraryï»¿](https://github.com/open-telemetry/opentelemetry-cpp/blob/main/INSTALL.md)
+* A [supported﻿](https://github.com/open-telemetry/opentelemetry-cpp/blob/main/README.md#supported-development-platforms) C++ compiler (C++ 11 and later)
+* The [Protocol Buffers library﻿](https://github.com/protocolbuffers/protobuf/blob/master/src/README.md)
+* The [OpenTelemetry library﻿](https://github.com/open-telemetry/opentelemetry-cpp/blob/main/INSTALL.md)
 * For tracing, W3C Trace Context is enabled
 
-  1. Go to **Settings** > **Preferences** > **OneAgent features**.
+  1. Go to the appropriate configuration page:
+
+     + In Latest Dynatrace, go to ![Settings](https://dt-cdn.net/images/settings-icon-256-38e1321b51.webp "Settings") **Settings** > **Collect and capture** > **General monitoring settings** > **OneAgent features**.
+     + In Dynatrace Classic, go to **Settings** > **Preferences** > **OneAgent features**.
   2. Turn on **Send W3C Trace Context HTTP headers**.
 
 ## Step 1 Get the Dynatrace access details
@@ -992,7 +994,7 @@ To use OpenTelemetry, you first need to complete these two steps:
    In the above code, we:
 
    * Create a new span and name it "Call to /myendpoint"
-   * Add two attributes, following the [semantic naming conventionï»¿](https://opentelemetry.io/docs/specs/semconv/general/trace/), specific to the action of this span: information on the HTTP method and version
+   * Add two attributes, following the [semantic naming convention﻿](https://opentelemetry.io/docs/specs/semconv/general/trace/), specific to the action of this span: information on the HTTP method and version
    * Add a `TODO` in place of the eventual business logic
    * Call the span's `End()` method to complete the span
 
@@ -1049,9 +1051,9 @@ To use OpenTelemetry, you first need to complete these two steps:
 
 Context propagation is particularly important when network calls (for example, REST) are involved.
 
-In the following examples, we assume that we are handling context propagation using the standard [W3C trace contextï»¿](https://www.w3.org/TR/trace-context/) headers, and we receive and set HTTP headers with the OpenTelemetry `http_client::Headers` object.
+In the following examples, we assume that we are handling context propagation using the standard [W3C trace context﻿](https://www.w3.org/TR/trace-context/) headers, and we receive and set HTTP headers with the OpenTelemetry `http_client::Headers` object.
 
-For that purpose, we use an instance of the class `HttpTextMapCarrier`, which we defined during the setup, and which is based on the OpenTelemetry class [`TextMapCarrier`ï»¿](https://opentelemetry-cpp.readthedocs.io/en/latest/otel_docs/classopentelemetry_1_1context_1_1propagation_1_1TextMapCarrier.html#exhale-class-classopentelemetry-1-1context-1-1propagation-1-1textmapcarrier).
+For that purpose, we use an instance of the class `HttpTextMapCarrier`, which we defined during the setup, and which is based on the OpenTelemetry class [`TextMapCarrier`﻿](https://opentelemetry-cpp.readthedocs.io/en/latest/otel_docs/classopentelemetry_1_1context_1_1propagation_1_1TextMapCarrier.html#exhale-class-classopentelemetry-1-1context-1-1propagation-1-1textmapcarrier).
 
 #### Extracting the context when receiving a request
 

@@ -1,7 +1,6 @@
 ---
 title: Dynatrace API
 source: https://docs.dynatrace.com/managed/dynatrace-api
-scraped: 2026-05-12T11:37:36.983285
 ---
 
 # Dynatrace API
@@ -330,7 +329,7 @@ Configuration
 
 Account Management
 
-You can access all Dynatrace API endpoints using the API Explorer. From the [user menu](/managed/discover-dynatrace/get-started/dynatrace-ui#user-menu-previous-dynatrace "Navigate the Dynatrace Managed platform"), scroll down to **Dynatrace API** and select the API section you're interested in.
+You can access all Dynatrace API endpoints using the API Explorer. From the [user menu](/managed/discover-dynatrace/get-started/dynatrace-ui#user-menu-previous-dynatrace "Explore Dynatrace Managed, including navigation, browser requirements, timeframe selection, metric notation, and accessibility."), scroll down to **Dynatrace API** and select the API section you're interested in.
 
 Alternatively, you can access the API Explorer via the direct link `https://{your-domain}/e/{your-environment-id}/rest-api-doc/`.
 
@@ -344,7 +343,7 @@ You can also unlock all endpoints by selecting **Authorize**. In the displayed d
 
 Once you've entered your OAuth 2.0 token, you can directly execute API calls within the API explorer. Just select **Try it out** to open the parameter section of the selected API endpoint, where you can enter additional parameters and modify the request payload before executing it by selecting **Execute**.
 
-You can access all Dynatrace API endpoints using the API Explorer. From the [user menu](/managed/discover-dynatrace/get-started/dynatrace-ui#user-menu-previous-dynatrace "Navigate the Dynatrace Managed platform"), scroll down to **Dynatrace API** and select the API section you're interested in.
+You can access all Dynatrace API endpoints using the API Explorer. From the [user menu](/managed/discover-dynatrace/get-started/dynatrace-ui#user-menu-previous-dynatrace "Explore Dynatrace Managed, including navigation, browser requirements, timeframe selection, metric notation, and accessibility."), scroll down to **Dynatrace API** and select the API section you're interested in.
 
 Alternatively, you can access the API Explorer via the direct link `https://{your-domain}/e/{your-environment-id}/rest-api-doc/`.
 
@@ -360,7 +359,7 @@ Once you've entered your OAuth 2.0 token, you can directly execute API calls wit
 
 You can access all Dynatrace API endpoints using the API Explorer.
 
-1. Go to [**Account Management**ï»¿](https://myaccount.dynatrace.com/). If you have more than one account, select the account you want to manage.
+1. Go to [**Account Management**﻿](https://myaccount.dynatrace.com/). If you have more than one account, select the account you want to manage.
 2. On the top navigation bar, go to **Identity & access management** > **OAuth clients**.
 3. In the upper-right corner of the page, select **Account Management API**.
 

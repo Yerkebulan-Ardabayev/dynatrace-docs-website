@@ -1,7 +1,6 @@
 ---
 title: Dynatrace API changelog version 1.310
 source: https://docs.dynatrace.com/managed/whats-new/dynatrace-api/sprint-310
-scraped: 2026-05-12T11:35:50.465161
 ---
 
 # Dynatrace API changelog version 1.310

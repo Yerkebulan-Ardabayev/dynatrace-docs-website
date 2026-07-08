@@ -1,7 +1,6 @@
 ---
 title: Store Dynatrace images in private registries
 source: https://docs.dynatrace.com/managed/ingest-from/setup-on-k8s/guides/container-registries/prepare-private-registry
-scraped: 2026-05-12T11:36:37.178163
 ---
 
 # Store Dynatrace images in private registries
@@ -25,8 +24,8 @@ Before you begin, be sure to meet the following prerequisites:
 
 * Required Private registry
 * Required Write access to image repositories for Dynatrace images
-* Optional [Skopeoï»¿](https://github.com/containers/skopeo/blob/main/install.md) for easy copying of our multi-arch images
-* Optional [Cosignï»¿](https://docs.sigstore.dev/system_config/installation/) for image signature verification
+* Optional [Skopeo﻿](https://github.com/containers/skopeo/blob/main/install.md) for easy copying of our multi-arch images
+* Optional [Cosign﻿](https://docs.sigstore.dev/system_config/installation/) for image signature verification
 
 ## Dynatrace container images
 
@@ -94,7 +93,7 @@ Docker CLI
 
 Recommended
 
-Due to its support for easy copying of multi-arch images and signatures[1](#fn-2-1-def), we strongly recommend that you use the Skopeo CLI for copying container images. To learn more about the Skopeo CLI, see [Skopeo GitHub repositoryï»¿](https://github.com/containers/skopeo).
+Due to its support for easy copying of multi-arch images and signatures[1](#fn-2-1-def), we strongly recommend that you use the Skopeo CLI for copying container images. To learn more about the Skopeo CLI, see [Skopeo GitHub repository﻿](https://github.com/containers/skopeo).
 
 In the following instructions, be sure to always replace `<tag>` with an available version (see the [Supported public registries](/managed/ingest-from/setup-on-k8s/guides/container-registries/use-public-registry#supported-public-registries "Use a public registry") section).
 
@@ -160,11 +159,11 @@ docker://registry.my-company.com/dynatrace-k8s-node-config-collector:<tag>
 
 1
 
-Requires `use-sigstore-attachments` to be set to `true` in *Skopeo*'s [container registriesï»¿](https://github.com/containers/image/blob/main/docs/containers-registries.d.5.md#individual-configuration-sections) configuration.
+Requires `use-sigstore-attachments` to be set to `true` in *Skopeo*'s [container registries﻿](https://github.com/containers/image/blob/main/docs/containers-registries.d.5.md#individual-configuration-sections) configuration.
 
 We strongly recommend that you use the Skopeo CLI instead of Docker CLI for copying Dynatrace container images from public to private registries, as the Docker CLI does not provide an easy way to copy multi-arch images and signatures.
 
-If you still want to use Docker CLI, please refer to the [official Docker CLI documentationï»¿](https://docs.docker.com/engine/reference/commandline/cli/).
+If you still want to use Docker CLI, please refer to the [official Docker CLI documentation﻿](https://docs.docker.com/engine/reference/commandline/cli/).
 
 ### Support for Classic Full-Stack monitoring
 
@@ -185,7 +184,7 @@ Make sure you meet the following prerequisites:
 
 As the Dynatrace built-in registry requires authentication, you need to know your monitoring environment ID and provide a PaaS token for the login:
 
-* To determine `<your-environment-id>`, see [environment ID](/managed/discover-dynatrace/get-started/monitoring-environment "Understand and learn how to work with monitoring environments.").
+* To determine `<your-environment-id>`, see [environment ID](/managed/discover-dynatrace/get-started/monitoring-environment "Learn what a Dynatrace monitoring environment is, how to find your environment ID, and how to set up and connect multiple environments.").
 * To determine `<your-paas-token>`, see [PaaS token](/managed/manage/identity-access-management/access-tokens-and-oauth-clients/access-tokens#paas-token "Learn the concept of an access token and its scopes.").
 
 Example login using *Skopeo* CLI:

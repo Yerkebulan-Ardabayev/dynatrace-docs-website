@@ -1,7 +1,6 @@
 ---
 title: Service metrics API
 source: https://docs.dynatrace.com/managed/dynatrace-api/configuration-api/calculated-metrics/service-metrics
-scraped: 2026-05-12T11:04:21.131843
 ---
 
 # Service metrics API

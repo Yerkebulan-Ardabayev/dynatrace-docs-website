@@ -1,7 +1,6 @@
 ---
 title: Extend distributed tracing
 source: https://docs.dynatrace.com/managed/ingest-from/extend-dynatrace/extend-tracing
-scraped: 2026-05-12T11:03:03.677557
 ---
 
 # Extend distributed tracing

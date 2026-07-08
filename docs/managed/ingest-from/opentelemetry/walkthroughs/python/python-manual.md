@@ -1,7 +1,6 @@
 ---
 title: Manually instrument your Python application with OpenTelemetry
 source: https://docs.dynatrace.com/managed/ingest-from/opentelemetry/walkthroughs/python/python-manual
-scraped: 2026-05-12T12:04:15.770289
 ---
 
 # Manually instrument your Python application with OpenTelemetry
@@ -28,7 +27,7 @@ To generate an access token, in Dynatrace, go to ![Access tokens](https://dt-cdn
 
 ## Step 2 Instrument your application
 
-1. Use [pipï»¿](https://pypi.org/project/pip/) to install the OpenTelemetry SDK and API packages.
+1. Use [pip﻿](https://pypi.org/project/pip/) to install the OpenTelemetry SDK and API packages.
 
    ```
    pip install opentelemetry-api
@@ -400,7 +399,7 @@ To generate an access token, in Dynatrace, go to ![Access tokens](https://dt-cdn
    In the above code, we:
 
    * Create a new span and name it "Call to /myendpoint"
-   * Add two attributes, following the [semantic naming conventionï»¿](https://opentelemetry.io/docs/specs/semconv/general/trace/), specific to the action of this span: information on the HTTP method and version
+   * Add two attributes, following the [semantic naming convention﻿](https://opentelemetry.io/docs/specs/semconv/general/trace/), specific to the action of this span: information on the HTTP method and version
 
    The span will be automatically set as a current and active span until the execution flow leaves the current method scope. Subsequent spans will automatically become child spans.
 
@@ -446,7 +445,7 @@ With the `logging` variable, initialized under [Setup](#setup), we can log strai
 logging.error("Log line")
 ```
 
-Python logs are still [considered experimentalï»¿](https://opentelemetry.io/docs/languages/python/#status-and-releases) and future version may introduce incompatible changes.
+Python logs are still [considered experimental﻿](https://opentelemetry.io/docs/languages/python/#status-and-releases) and future version may introduce incompatible changes.
 
 ## Step 4 Ensure context propagation
 
@@ -486,7 +485,7 @@ span.set_attribute("my-key-1", "my-value-1")
 
 In the following example, we send a REST request to another service and provide our existing context as part of the HTTP headers of our request.
 
-To do so, we pass an empty object to `TraceContextTextMapPropagator.inject()`, which then receives the necessary `traceparent` header value. We then include that value in our [requestsï»¿](https://pypi.org/project/requests/) call to the other service.
+To do so, we pass an empty object to `TraceContextTextMapPropagator.inject()`, which then receives the necessary `traceparent` header value. We then include that value in our [requests﻿](https://pypi.org/project/requests/) call to the other service.
 
 ```
 from opentelemetry.trace.propagation.tracecontext import TraceContextTextMapPropagator

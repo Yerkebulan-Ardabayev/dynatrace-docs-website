@@ -1,7 +1,6 @@
 ---
 title: Sampling with the OTel Collector
 source: https://docs.dynatrace.com/managed/ingest-from/opentelemetry/collector/use-cases/sampling
-scraped: 2026-05-12T12:10:56.212832
 ---
 
 # Sampling with the OTel Collector
@@ -12,7 +11,7 @@ scraped: 2026-05-12T12:10:56.212832
 * 5-min read
 * Published May 28, 2024
 
-A distributed application under heavy load may generate a massive amount of observability data. This data incurs generation, processing, transmission, and storage costs. However, it's often possible to use samplingâwhere you use only a relatively small portion of the observability data and drop the restâto reduce costs and still effectively monitor your application.
+A distributed application under heavy load may generate a massive amount of observability data. This data incurs generation, processing, transmission, and storage costs. However, it's often possible to use sampling—where you use only a relatively small portion of the observability data and drop the rest—to reduce costs and still effectively monitor your application.
 
 In OpenTelemetry, there are two main sampling methods:
 
@@ -25,11 +24,11 @@ In OpenTelemetry, there are two main sampling methods:
 
   Because tail sampling typically is not random, it's important to ensure that any calculated metrics are unbiased. This can be done by calculating metrics from the full set of transactions, as shown below, or from a separate, randomly sampled stream.
 
-The following configuration example shows how to configure a Collector instance to sample trace data and import it as an OTLP request into Dynatrace. It uses the [`spanmetrics` connectorï»¿](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.151.0/connector/spanmetricsconnector) to compute service metrics from traces before sampling in order to ensure their accuracy.
+The following configuration example shows how to configure a Collector instance to sample trace data and import it as an OTLP request into Dynatrace. It uses the [`spanmetrics` connector﻿](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.155.0/connector/spanmetricsconnector) to compute service metrics from traces before sampling in order to ensure their accuracy.
 
 ## Prerequisites
 
-* One of the following Collector distributions with the [`transform`ï»¿](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.151.0/processor/transformprocessor), [`filter`ï»¿](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.151.0/processor/filterprocessor), and [`tail_sampling`ï»¿](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.151.0/processor/tailsamplingprocessor) processors, and the [`spanmetrics`ï»¿](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.151.0/connector/spanmetricsconnector) connector:
+* One of the following Collector distributions with the [`transform`﻿](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.155.0/processor/transformprocessor), [`filter`﻿](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.155.0/processor/filterprocessor), and [`tail_sampling`﻿](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.155.0/processor/tailsamplingprocessor) processors, and the [`spanmetrics`﻿](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.155.0/connector/spanmetricsconnector) connector:
 
   + The [Dynatrace OTel Collector](/managed/ingest-from/opentelemetry/collector#dt-collector-dist "Learn how to use the OpenTelemetry Collector, including the Dynatrace OTel Collector, to ingest telemetry from OpenTelemetry.")
   + The OpenTelemetry [Contrib](/managed/ingest-from/opentelemetry/collector#collector-contrib "Learn how to use the OpenTelemetry Collector, including the Dynatrace OTel Collector, to ingest telemetry from OpenTelemetry.") distribution
@@ -239,15 +238,15 @@ Under `receivers`, we specify the standard `otlp` receiver as active receiver co
 
 ### Processors
 
-* [`tail_sampling`ï»¿](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.151.0/processor/tailsamplingprocessor) to sample distributed traces based on properties of the trace.
+* [`tail_sampling`﻿](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.155.0/processor/tailsamplingprocessor) to sample distributed traces based on properties of the trace.
 
 ### Connectors
 
-Under `connectors`, we specify the [`spanmetrics` connectorï»¿](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.151.0/connector/spanmetricsconnector) to compute service metrics from spans.
+Under `connectors`, we specify the [`spanmetrics` connector﻿](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.155.0/connector/spanmetricsconnector) to compute service metrics from spans.
 
 ### Exporters
 
-Under `exporters`, we specify the default [`otlp_http` exporterï»¿](https://github.com/open-telemetry/opentelemetry-collector/tree/v0.151.0/exporter/otlphttpexporter) and configure it with our Dynatrace API URL and the required authentication token.
+Under `exporters`, we specify the default [`otlp_http` exporter﻿](https://github.com/open-telemetry/opentelemetry-collector/tree/v0.155.0/exporter/otlphttpexporter) and configure it with our Dynatrace API URL and the required authentication token.
 
 For this purpose, we set the following two environment variables and reference them in the configuration values for `endpoint` and `Authorization`.
 
@@ -276,7 +275,7 @@ If OpenTelemetry traces are sampled, the trace-derived metrics are calculated on
 
 For example, a probabilistic sampler that saves 5% of traffic will result in a throughput metric that shows 5% of the actual throughput. If you use OpenTelemetry tail-based sampling to also capture 100% of slow or error traces, your service metrics will not only show incorrect throughput, but will also incorrectly bias error rates and response times.
 
-To mitigate this, if you want to sample OpenTelemetry traces, you should calculate service metrics before sampling and use those metrics rather than the trace-derived metrics calculated by Dynatrace. If you're using the Collector for sampling, trace-derived metrics should be calculated by the Collector before applying sampling, or by the SDK. This can be done with the [`spanmetrics` connectorï»¿](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.151.0/connector/spanmetricsconnector) as shown in the example above.
+To mitigate this, if you want to sample OpenTelemetry traces, you should calculate service metrics before sampling and use those metrics rather than the trace-derived metrics calculated by Dynatrace. If you're using the Collector for sampling, trace-derived metrics should be calculated by the Collector before applying sampling, or by the SDK. This can be done with the [`spanmetrics` connector﻿](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.155.0/connector/spanmetricsconnector) as shown in the example above.
 
 ## Limits and limitations
 

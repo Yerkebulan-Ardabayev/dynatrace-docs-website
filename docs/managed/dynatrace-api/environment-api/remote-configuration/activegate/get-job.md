@@ -1,7 +1,6 @@
 ---
 title: ActiveGate remote configuration management API - GET a configuration job
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/remote-configuration/activegate/get-job
-scraped: 2026-05-12T11:55:35.335916
 ---
 
 # ActiveGate remote configuration management API - GET a configuration job
@@ -53,10 +52,10 @@ Remote configuration management job.
 | --- | --- | --- |
 | endTime | string | Date (in ISO 8601 format: yyyy-MM-dd'T'HH:mm:ss.SSS'Z') when the remote configuration management job was finished. This field is present only for finished jobs. |
 | entityType | string | Type of entities modified by remote configuration management. The element can hold these values * `ACTIVE_GATE` * `ONE_AGENT` |
-| failedEntities | [RemoteIdentityOperationFailedEntityDto[]](#openapi-definition-RemoteIdentityOperationFailedEntityDto) | A list of failed remote configuration management jobs. |
+| failedEntities | [RemoteIdentityOperationFailedEntityDto](#openapi-definition-RemoteIdentityOperationFailedEntityDto)[] | A list of failed remote configuration management jobs. |
 | id | string | The ID of the remote configuration management job. |
 | inProgressEntities | string[] | A list of in-progress remote configuration management jobs. |
-| operations | [RemoteConfigurationManagementOperation[]](#openapi-definition-RemoteConfigurationManagementOperation) | A list of executed (successful and failed) remote configuration management jobs. |
+| operations | [RemoteConfigurationManagementOperation](#openapi-definition-RemoteConfigurationManagementOperation)[] | A list of executed (successful and failed) remote configuration management jobs. |
 | processedEntitiesCount | integer | Number of entities that were already processed at the time the response was created. |
 | startTime | string | Date (in ISO 8601 format: yyyy-MM-dd'T'HH:mm:ss.SSS'Z') when the remote configuration management job was started. |
 | timeoutTime | string | Date (in ISO 8601 format: yyyy-MM-dd'T'HH:mm:ss.SSS'Z') when the running remote configuration management job will time-out. This field is present only for running jobs. |
@@ -93,7 +92,7 @@ Definition of a single remote configuration management operation.
 | Element | Type | Description |
 | --- | --- | --- |
 | code | integer | The HTTP status code |
-| constraintViolations | [ConstraintViolation[]](#openapi-definition-ConstraintViolation) | A list of constraint violations |
+| constraintViolations | [ConstraintViolation](#openapi-definition-ConstraintViolation)[] | A list of constraint violations |
 | message | string | The error message |
 
 #### The `ConstraintViolation` object

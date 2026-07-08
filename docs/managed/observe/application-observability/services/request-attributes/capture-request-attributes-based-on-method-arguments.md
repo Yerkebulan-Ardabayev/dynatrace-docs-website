@@ -1,7 +1,6 @@
 ---
 title: Capture request attributes based on method arguments
 source: https://docs.dynatrace.com/managed/observe/application-observability/services/request-attributes/capture-request-attributes-based-on-method-arguments
-scraped: 2026-05-12T12:02:34.103732
 ---
 
 # Capture request attributes based on method arguments
@@ -24,9 +23,9 @@ To create a request attribute based on a method argument
 5. Optional Define the scope of the request attribute.
 6. From the **Request attribute source** list, select **Java method parameter(s)**, **.NET method parameter(s)**, or **PHP method parameter(s)**.
 7. Select the **Select method sources** button to open the class wizard. Here you can select the class of the method upon whose argument you want to set an attribute.
-8. Select the process group that contains the classes or interfaces youâre interested in and select **Continue**.
-9. Search for the class that includes the method youâre interested in. Begin typing the class name and select **Search** button. The list may take a few seconds to populate.
-10. Select a class from the displayed list. If the list doesnât contain the class youâre looking for, refine the search string.
+8. Select the process group that contains the classes or interfaces you’re interested in and select **Continue**.
+9. Search for the class that includes the method you’re interested in. Begin typing the class name and select **Search** button. The list may take a few seconds to populate.
+10. Select a class from the displayed list. If the list doesn’t contain the class you’re looking for, refine the search string.
 
     ![Request attributes .NET](https://dt-cdn.net/images/request-attributes-dotnet-1-1326-b3cbc95405.png)
 
@@ -53,7 +52,7 @@ Once your services begin calling the respective methods, you should see the requ
 
 Request attributes .NET
 
-The code-level tree view also contains these methods. This view tells you what the value was on each specific methodâin case the method is called multiple times with different values.
+The code-level tree view also contains these methods. This view tells you what the value was on each specific method—in case the method is called multiple times with different values.
 
 ![Request attributes .NET - code level](https://dt-cdn.net/images/request-attributes-net-code-level-1804-839768da1d.png)
 
@@ -61,9 +60,9 @@ Request attributes .NET - code level
 
 ## Post processing
 
-In most cases, a captured value will contain what it is youâre looking for. However, you may not want an entire value, or even every value. With post processing you can manipulate the captured value.
+In most cases, a captured value will contain what it is you’re looking for. However, you may not want an entire value, or even every value. With post processing you can manipulate the captured value.
 
-Expand the **Optionally restrict or process the captured parameter(s) further** option to see the processing steps. The steps are executed in the presented orderâeach step is applied to the result of the previous step.
+Expand the **Optionally restrict or process the captured parameter(s) further** option to see the processing steps. The steps are executed in the presented order—each step is applied to the result of the previous step.
 
 You don't have to apply all the steps. Each step becomes active once you provide a value for it or select the option box.
 
@@ -83,7 +82,7 @@ Step 5 enables you to extract something from the resulting string based a [regul
 
 ## Numerical values and aggregations
 
-You might want to capture an argument of a method and the method is called multiple times. Sometimes youâre only interested in a specific value. In other cases, you may only want to count the executions or average the captured values. Within other values, the argument in question may be a complex object and youâre really only interested in one aspect of the object.
+You might want to capture an argument of a method and the method is called multiple times. Sometimes you’re only interested in a specific value. In other cases, you may only want to count the executions or average the captured values. Within other values, the argument in question may be a complex object and you’re really only interested in one aspect of the object.
 
 To tackle such situations, you can use the **Data type** and the **Aggregation on request** options when you define or configure a request attribute.
 
@@ -116,11 +115,11 @@ For numeric values, you can use the following aggregations:
 * Count occurrences
 * Count distinct
 
-If you choose one of these options, the data type changes to integer automatically. These settings are useful when youâre counting something.
+If you choose one of these options, the data type changes to integer automatically. These settings are useful when you’re counting something.
 
 ## Deep object access
 
-A value that youâre interested in may not be available as a simple argument, but rather as part of a complex argument object or even a member variable of a class youâre looking at. Such values can still be accessed. You can access not only argument values and return values, but also an object itself. Whenever an item to be captured (be it an argument or an object) is a complex object, you have the ability to define a method (chain) that enables deep access into the object. The example below uses the method `getBookingCode`. You can even execute a chain, for example, `getBookingCode().getCustomerCode()`.
+A value that you’re interested in may not be available as a simple argument, but rather as part of a complex argument object or even a member variable of a class you’re looking at. Such values can still be accessed. You can access not only argument values and return values, but also an object itself. Whenever an item to be captured (be it an argument or an object) is a complex object, you have the ability to define a method (chain) that enables deep access into the object. The example below uses the method `getBookingCode`. You can even execute a chain, for example, `getBookingCode().getCustomerCode()`.
 
 ![Request attributes](https://dt-cdn.net/images/deep-object-access-1157-bad06a137b.png)
 

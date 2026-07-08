@@ -1,7 +1,6 @@
 ---
 title: Install a Managed Cluster
 source: https://docs.dynatrace.com/managed/managed-cluster/installation/install-managed-cluster
-scraped: 2026-05-12T11:06:43.410216
 ---
 
 # Install a Managed Cluster
@@ -42,7 +41,7 @@ Don't install Dynatrace Managed data stores on network or remote disks. This can
 
 ## Step 3 Verify installer
 
-The Dynatrace Managed installer file is digitally signed. In conjunction with OpenSSL and the [Dynatrace root certificateï»¿](https://ca.dynatrace.com/dt-root.cert.pem), the signature file verifies the authenticity of the installer. The signature file has the same name as the installer, with a `.sig` extension.
+The Dynatrace Managed installer file is digitally signed. In conjunction with OpenSSL and the [Dynatrace root certificate﻿](https://ca.dynatrace.com/dt-root.cert.pem), the signature file verifies the authenticity of the installer. The signature file has the same name as the installer, with a `.sig` extension.
 
 1. Copy the `wget` command line for the installer file signature from the activation email you've received.
 2. Paste the `wget` command line for the installer file signature into your terminal window. Wait for the download to complete.
@@ -57,7 +56,7 @@ The Dynatrace Managed installer file is digitally signed. In conjunction with Op
 
 ## Step 4 optional Retrieve software bill of materials
 
-Dynatrace provides a [Software Bill of Materials (SBOM)ï»¿](https://www.dynatrace.com/company/trust-center/customers/reports) that includes a detailed inventory of software components and dependencies. You can retrieve the SBOM in CycloneDX format from the installer archive file.
+Dynatrace provides a [Software Bill of Materials (SBOM)﻿](https://www.dynatrace.com/company/trust-center/customers/reports) that includes a detailed inventory of software components and dependencies. You can retrieve the SBOM in CycloneDX format from the installer archive file.
 
 1. You need root rights to extract the Dynatrace Managed installer archive. You can use `su` or `sudo` to run the extraction command. To do this, type one of the following commands into the directory where you downloaded the installation script.
 
@@ -113,7 +112,7 @@ Dynatrace provides a [Software Bill of Materials (SBOM)ï»¿](https://www.dynat
      ```
 
    To view a list of all available [installation parameters](/managed/managed-cluster/installation/customize-managed-cluster-install "Use command line parameters to customize or automate a Managed Cluster installation, with options for datastores, system users, and SSL certificates."), run the installer with the parameter `--help`.
-2. Type `Accept` to agree to the Dynatrace Managed [Terms of useï»¿](https://www.dynatrace.com/eula/managed/). Installation won't continue until you complete this step. To quit, press `Ctrl+C`.
+2. Type `Accept` to agree to the Dynatrace Managed [Terms of use﻿](https://www.dynatrace.com/eula/managed/). Installation won't continue until you complete this step. To quit, press `Ctrl+C`.
 3. The Managed installer works in interactive mode. It displays prompts for values like installation path and user account. Accept the default values by pressing `Enter`. To override the values, type your choices in the terminal and press `Enter`.
 
    Have your Dynatrace Managed license key available. You can't complete installation without it.
@@ -182,7 +181,7 @@ Dynatrace provides a [Software Bill of Materials (SBOM)ï»¿](https://www.dynat
 
 ### Use a privilege management system other than sudo
 
-Yes, you can use `pbrun`, but you must grant the Dynatrace user permission to run `/opt/dtrun/dtrun *`. Specify the user who is installing Dynatrace Managed and the command that replaces `sudo`. Note that `<version>` represents the Dynatrace Managed version number.
+Yes, you can use `pbrun`, but you must grant the Dynatrace user permission to run `/opt/dtrun/dtrun *`. Specify the user who is installing Dynatrace Managed and the command that replaces `sudo`. `<version>` is the Dynatrace Managed version number.
 
 ```
 /bin/sh dynatrace-managed-<version>.sh --system-user dynatrace:dynatrace --sudo-cmd  "/usr/bin/pbrun \$CMD"
@@ -200,4 +199,4 @@ Run this command to stop all Dynatrace Managed processes on a node:
 pbrun /opt/dynatrace-managed/launcher/dynatrace.sh stop
 ```
 
-Do not remove or overwrite `dtrun`, as it is required by installation and update procedures. The installer calls `dtrun` without arguments to validate that the user has administrative privileges, but for normal operation Dynatrace calls `dtrun` with arguments to actually run commands.
+Don't remove or overwrite `dtrun`, as it's required by installation and update procedures. The installer calls `dtrun` without arguments to validate that the user has administrative privileges; during normal operation, Dynatrace calls `dtrun` with arguments to run commands.

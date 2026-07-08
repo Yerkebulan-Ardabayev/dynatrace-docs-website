@@ -1,7 +1,6 @@
 ---
 title: Web application configuration API - GET error rules
 source: https://docs.dynatrace.com/managed/dynatrace-api/configuration-api/rum/web-application-configuration-api/error-rules/get-configuration
-scraped: 2026-05-12T11:16:47.475913
 ---
 
 # Web application configuration API - GET error rules
@@ -48,8 +47,8 @@ Configuration of error rules in the web application.
 
 | Element | Type | Description |
 | --- | --- | --- |
-| customErrorRules | [CustomErrorRule[]](#openapi-definition-CustomErrorRule) | An ordered list of custom errors.  Rules are evaluated from top to bottom; the first matching rule applies. |
-| httpErrorRules | [HttpErrorRule[]](#openapi-definition-HttpErrorRule) | An ordered list of HTTP errors.  Rules are evaluated from top to bottom; the first matching rule applies. |
+| customErrorRules | [CustomErrorRule](#openapi-definition-CustomErrorRule)[] | An ordered list of custom errors.  Rules are evaluated from top to bottom; the first matching rule applies. |
+| httpErrorRules | [HttpErrorRule](#openapi-definition-HttpErrorRule)[] | An ordered list of HTTP errors.  Rules are evaluated from top to bottom; the first matching rule applies. |
 | ignoreCustomErrorsInApdexCalculation | boolean | Exclude (`true`) or include (`false`) custom errors listed in **customErrorRules** in Apdex calculation. |
 | ignoreHttpErrorsInApdexCalculation | boolean | Exclude (`true`) or include (`false`) HTTP errors listed in **httpErrorRules** in Apdex calculation. |
 | ignoreJavaScriptErrorsInApdexCalculation | boolean | Exclude (`true`) or include (`false`) JavaScript errors in Apdex calculation. |
@@ -61,7 +60,7 @@ Configuration of the custom error in the web application.
 | Element | Type | Description |
 | --- | --- | --- |
 | capture | boolean | Capture (`true`) or ignore (`false`) the error. |
-| customAlerting | boolean | Include (`true`) or exclude (`false`) the error in Davis AI [problem detection and analysisï»¿](https://dt-url.net/a963kd2). |
+| customAlerting | boolean | Include (`true`) or exclude (`false`) the error in Davis AI [problem detection and analysis﻿](https://dt-url.net/a963kd2). |
 | impactApdex | boolean | Include (`true`) or exclude (`false`) the error in Apdex calculation. |
 | keyMatcher | string | The matching operation for the **keyPattern**. The element can hold these values * `BEGINS_WITH` * `CONTAINS` * `ENDS_WITH` * `EQUALS` |
 | keyPattern | string | The key of the error to look for. |
@@ -76,7 +75,7 @@ Configuration of the HTTP error in the web application.
 | --- | --- | --- |
 | capture | boolean | Capture (`true`) or ignore (`false`) the error. |
 | considerBlockedRequests | boolean | If `true`, match by errors that have CSP Rule violations. |
-| considerForAi | boolean | Include (`true`) or exclude (`false`) the error in Davis AI [problem detection and analysisï»¿](https://dt-url.net/a963kd2). |
+| considerForAi | boolean | Include (`true`) or exclude (`false`) the error in Davis AI [problem detection and analysis﻿](https://dt-url.net/a963kd2). |
 | considerUnknownErrorCode | boolean | If `true`, match by errors that have unknown HTTP status code. |
 | errorCodes | string | The HTTP status code or status code range to match by.  This field is required if **considerUnknownErrorCode** AND **considerBlockedRequests** are both set to `false`. |
 | filter | string | The matching rule for the URL. The element can hold these values * `BEGINS_WITH` * `CONTAINS` * `ENDS_WITH` * `EQUALS` |
@@ -204,4 +203,4 @@ Configuration of the HTTP error in the web application.
 
 ## Related topics
 
-* [Configure error detection for web applications](/managed/observe/digital-experience/web-applications/additional-configuration/configure-errors "Configure your application to capture or ignore request, custom, and JavaScript errors.")
+* [Configure error detection for web applications in RUM Classic](/managed/observe/digital-experience/rum-classic/web-applications/additional-configuration/configure-errors "Configure your application to capture or ignore request, custom, and JavaScript errors.")

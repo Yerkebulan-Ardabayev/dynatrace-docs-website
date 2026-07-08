@@ -1,7 +1,6 @@
 ---
 title: Mobile Symbolication API
 source: https://docs.dynatrace.com/managed/dynatrace-api/configuration-api/mobile-symbolication-api
-scraped: 2026-05-12T11:04:53.894186
 ---
 
 # Mobile Symbolication API
@@ -43,4 +42,4 @@ Delete symbol files belonging to an app version.](/managed/dynatrace-api/configu
 
 ## Related topics
 
-* [Upload and manage symbol files for mobile applications](/managed/observe/digital-experience/mobile-applications/analyze-and-use/upload-and-manage-symbol-files "Learn about deobfuscation (Android) and symbolication (iOS and tvOS) and your options for uploading and managing symbol files in Dynatrace.")
+* [Upload and manage symbol files for mobile applications in RUM Classic](/managed/observe/digital-experience/rum-classic/mobile-applications/analyze-and-use/upload-and-manage-symbol-files "Learn about deobfuscation (Android) and symbolication (iOS and tvOS) and your options for uploading and managing symbol files in Dynatrace.")

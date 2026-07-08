@@ -1,7 +1,6 @@
 ---
 title: Settings API - Geolocation settings schema table
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/settings/schemas/builtin-geo-settings
-scraped: 2026-05-12T11:48:03.830033
 ---
 
 # Settings API - Geolocation settings schema table

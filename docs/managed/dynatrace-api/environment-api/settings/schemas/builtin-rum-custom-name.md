@@ -1,7 +1,6 @@
 ---
 title: Settings API - Application name and type schema table
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/settings/schemas/builtin-rum-custom-name
-scraped: 2026-05-12T11:49:08.484232
 ---
 
 # Settings API - Application name and type schema table

@@ -1,7 +1,6 @@
 ---
 title: Manage Microsoft SQL Server extensions
 source: https://docs.dynatrace.com/managed/ingest-from/extensions/supported-extensions/data-sources/sql/microsoft-sql
-scraped: 2026-05-12T11:10:29.358444
 ---
 
 # Manage Microsoft SQL Server extensions
@@ -14,7 +13,7 @@ scraped: 2026-05-12T11:10:29.358444
 
 Dynatrace provides you with a framework that you can use to extend your application observability into data acquired directly from your Microsoft SQL Database layer, so that you can monitor how database server tasks impact your app.
 
-Start by checking [Dynatrace Hubï»¿](https://www.dynatrace.com/hub/?query=microsoft+sql) to see if the Dynatrace-provided Microsoft SQL Server extension satisfies your requirements. If you need something different, you can build your own [Microsoft SQL Server extension](/managed/ingest-from/extensions/develop-your-extensions/data-sources/sql#microsoft-sql-monitoring "Learn how to create an SQL data source-based extension using the Extensions framework.").
+Start by checking [Dynatrace Hub﻿](https://www.dynatrace.com/hub/?query=microsoft+sql) to see if the Dynatrace-provided Microsoft SQL Server extension satisfies your requirements. If you need something different, you can build your own [Microsoft SQL Server extension](/managed/ingest-from/extensions/develop-your-extensions/data-sources/sql#microsoft-sql-monitoring "Learn how to create an SQL data source-based extension using the Extensions framework.").
 
 ## Before you begin
 
@@ -70,4 +69,4 @@ The extension activation wizard contains a dynamically updated JSON payload with
 
 ## Related topics
 
-* [Troubleshooting extensionsï»¿](https://dt-url.net/6303zdg "Learn how to troubleshoot Dynatrace Extensions")
+* [Troubleshooting extensions﻿](https://dt-url.net/6303zdg "Learn how to troubleshoot Dynatrace Extensions")

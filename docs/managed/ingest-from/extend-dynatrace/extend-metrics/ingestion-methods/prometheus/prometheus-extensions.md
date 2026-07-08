@@ -1,7 +1,6 @@
 ---
 title: Manage Prometheus extensions
 source: https://docs.dynatrace.com/managed/ingest-from/extend-dynatrace/extend-metrics/ingestion-methods/prometheus/prometheus-extensions
-scraped: 2026-05-12T12:12:12.076436
 ---
 
 # Manage Prometheus extensions
@@ -14,7 +13,7 @@ scraped: 2026-05-12T12:12:12.076436
 Dynatrace provides you with a framework that you can use to extend your observability into data acquired directly from a Prometheus endpoint. With it, you can bring the Prometheus data into Dynatrace at scale and in context with all other data.
 
 * To take full advantage of the Dynatrace Prometheus extension, you need a OneAgent on the monitored box, but it can also work in an agentless manner.
-* Check [Dynatrace Hubï»¿](https://www.dynatrace.com/hub/?query=prometheus) to see if your technology is already covered by an existing extension. If this is not the case, you can easily build your own [Dynatrace Prometheus extension](/managed/ingest-from/extensions/develop-your-extensions/data-sources/prometheus-extensions "Learn how to create a Prometheus extension using the Extensions framework.").
+* Check [Dynatrace Hub﻿](https://www.dynatrace.com/hub/?query=prometheus) to see if your technology is already covered by an existing extension. If this is not the case, you can easily build your own [Dynatrace Prometheus extension](/managed/ingest-from/extensions/develop-your-extensions/data-sources/prometheus-extensions "Learn how to create a Prometheus extension using the Extensions framework.").
 
 [![Step 1](https://dt-cdn.net/images/step-1-086e22066c.svg "Step 1")
 
@@ -102,4 +101,4 @@ The extension activation wizard contains a dynamically updated JSON payload with
 
 ## Related topics
 
-* [Troubleshooting extensionsï»¿](https://dt-url.net/6303zdg "Learn how to troubleshoot Dynatrace Extensions")
+* [Troubleshooting extensions﻿](https://dt-url.net/6303zdg "Learn how to troubleshoot Dynatrace Extensions")

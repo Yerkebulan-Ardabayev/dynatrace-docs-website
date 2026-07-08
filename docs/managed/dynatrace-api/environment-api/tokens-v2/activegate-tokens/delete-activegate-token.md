@@ -1,7 +1,6 @@
 ---
 title: ActiveGate tokens API - DELETE a token
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/tokens-v2/activegate-tokens/delete-activegate-token
-scraped: 2026-05-12T12:09:59.984198
 ---
 
 # ActiveGate tokens API - DELETE a token
@@ -28,7 +27,7 @@ To learn how to obtain and use it, see [Tokens and authentication](/managed/disc
 
 | Parameter | Type | Description | In | Required |
 | --- | --- | --- | --- | --- |
-| activeGateTokenIdentifier | string | The ActiveGate token identifier, consisting of [prefix and public partï»¿](https://dt-url.net/rn00tjg) of the token to be deleted. | path | Required |
+| activeGateTokenIdentifier | string | The ActiveGate token identifier, consisting of [prefix and public part﻿](https://dt-url.net/rn00tjg) of the token to be deleted. | path | Required |
 
 ## Response
 
@@ -55,7 +54,7 @@ To learn how to obtain and use it, see [Tokens and authentication](/managed/disc
 | Element | Type | Description |
 | --- | --- | --- |
 | code | integer | The HTTP status code |
-| constraintViolations | [ConstraintViolation[]](#openapi-definition-ConstraintViolation) | A list of constraint violations |
+| constraintViolations | [ConstraintViolation](#openapi-definition-ConstraintViolation)[] | A list of constraint violations |
 | message | string | The error message |
 
 #### The `ConstraintViolation` object

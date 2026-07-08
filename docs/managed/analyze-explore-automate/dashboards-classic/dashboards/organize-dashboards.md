@@ -1,7 +1,6 @@
 ---
 title: Organize Dynatrace dashboards
 source: https://docs.dynatrace.com/managed/analyze-explore-automate/dashboards-classic/dashboards/organize-dashboards
-scraped: 2026-05-12T11:14:40.349510
 ---
 
 # Organize Dynatrace dashboards
@@ -180,7 +179,7 @@ For details on creating dashboards, see [Create and edit Dynatrace dashboards](/
 Clone an existing dashboard
 
 1. Go to **Dashboards**.
-2. In the table of dashboards, select **More** (**â¦**) > **Clone** for the dashboard you want to copy.
+2. In the table of dashboards, select **More** (**…**) > **Clone** for the dashboard you want to copy.
 
    * The copy opens in edit mode.
    * The original dashboard is unaffected.
@@ -198,18 +197,18 @@ Edit an existing dashboard
 Hide a dashboard
 
 1. Go to **Dashboards**.
-2. In the table of dashboards, select **More** (**â¦**) > **Hide** for the dashboard you want to hide.
+2. In the table of dashboards, select **More** (**…**) > **Hide** for the dashboard you want to hide.
 
 Unhide a dashboard
 
 1. Go to **Dashboards**.
 2. Filter the table by `Hidden: Yes` to display all of your hidden dashboards.
-3. In the table of dashboards, select **More** (**â¦**) > **Unhide** for the dashboard you want to unhide.
+3. In the table of dashboards, select **More** (**…**) > **Unhide** for the dashboard you want to unhide.
 
 Delete a dashboard
 
 1. Go to **Dashboards**.
-2. In the table of dashboards, select **More** (**â¦**) > **Delete** for the dashboard you want to delete.
+2. In the table of dashboards, select **More** (**…**) > **Delete** for the dashboard you want to delete.
 
    * If you don't see a **Delete** option, you don't have permission to delete that dashboard.
 3. Confirm the deletion to remove the dashboard.

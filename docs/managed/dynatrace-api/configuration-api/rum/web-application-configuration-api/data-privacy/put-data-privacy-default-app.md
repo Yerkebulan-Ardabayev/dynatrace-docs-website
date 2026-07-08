@@ -1,7 +1,6 @@
 ---
 title: Web application configuration API - PUT data privacy of the default application
 source: https://docs.dynatrace.com/managed/dynatrace-api/configuration-api/rum/web-application-configuration-api/data-privacy/put-data-privacy-default-app
-scraped: 2026-05-12T11:16:46.070294
 ---
 
 # Web application configuration API - PUT data privacy of the default application
@@ -63,7 +62,7 @@ Data privacy settings for Session Replay.
 
 | Element | Type | Description | Required |
 | --- | --- | --- | --- |
-| contentMaskingSettings | [SessionReplayContentMaskingSettings](#openapi-definition-SessionReplayContentMaskingSettings) | Content masking settings for Session Replay.  For more details, see [Configure Session Replayï»¿](https://dt-url.net/0m03slq) in Dynatrace Documentation. | Optional |
+| contentMaskingSettings | [SessionReplayContentMaskingSettings](#openapi-definition-SessionReplayContentMaskingSettings) | Content masking settings for Session Replay.  For more details, see [Configure Session Replay﻿](https://dt-url.net/0m03slq) in Dynatrace Documentation. | Optional |
 | optInModeEnabled | boolean | If `true`, session recording is disabled until JavaScriptAPI `dtrum.enableSessionReplay()` is called. | Optional |
 | urlExclusionRules | string[] | A list of URLs to be excluded from recording. | Optional |
 
@@ -71,7 +70,7 @@ Data privacy settings for Session Replay.
 
 Content masking settings for Session Replay.
 
-For more details, see [Configure Session Replayï»¿](https://dt-url.net/0m03slq) in Dynatrace Documentation.
+For more details, see [Configure Session Replay﻿](https://dt-url.net/0m03slq) in Dynatrace Documentation.
 
 | Element | Type | Description | Required |
 | --- | --- | --- | --- |
@@ -86,7 +85,7 @@ Configuration of the Session Replay masking.
 | Element | Type | Description | Required |
 | --- | --- | --- | --- |
 | maskingPreset | string | The type of the masking:  * `MASK_ALL`: Mask all texts, user input, and images. * `MASK_USER_INPUT`: Mask all data that is provided through user input * `ALLOW_LIST`: Only elements, specified in **maskingRules** are shown, everything else is masked. * `BLOCK_LIST`: Elements, specified in **maskingRules** are masked, everything else is shown. The element can hold these values * `ALLOW_LIST` * `BLOCK_LIST` * `MASK_ALL` * `MASK_USER_INPUT` | Required |
-| maskingRules | [MaskingRule[]](#openapi-definition-MaskingRule) | A list of masking rules. | Optional |
+| maskingRules | [MaskingRule](#openapi-definition-MaskingRule)[] | A list of masking rules. | Optional |
 
 #### The `MaskingRule` object
 
@@ -95,7 +94,7 @@ The masking rule defining how data is hidden.
 | Element | Type | Description | Required |
 | --- | --- | --- | --- |
 | maskingRuleType | string | The type of the masking rule. The element can hold these values * `ATTRIBUTE` * `ELEMENT` | Required |
-| selector | string | The selector for the element or the attribute to be masked.  Specify a CSS expression for an element or a [regular expressionï»¿](https://dt-url.net/k9e0iaq) for an attribute. | Required |
+| selector | string | The selector for the element or the attribute to be masked.  Specify a CSS expression for an element or a [regular expression﻿](https://dt-url.net/k9e0iaq) for an attribute. | Required |
 | userInteractionHidden | boolean | Interactions with the element are (`true`) or are not (`false) masked. | Required |
 
 ### Request body JSON model
@@ -272,7 +271,7 @@ This is a model of the request body, showing the possible elements. It has to be
 | Element | Type | Description |
 | --- | --- | --- |
 | code | integer | The HTTP status code |
-| constraintViolations | [ConstraintViolation[]](#openapi-definition-ConstraintViolation) | A list of constraint violations |
+| constraintViolations | [ConstraintViolation](#openapi-definition-ConstraintViolation)[] | A list of constraint violations |
 | message | string | The error message |
 
 #### The `ConstraintViolation` object
@@ -383,7 +382,7 @@ To learn how to obtain and use it, see [Tokens and authentication](/managed/disc
 | Element | Type | Description |
 | --- | --- | --- |
 | code | integer | The HTTP status code |
-| constraintViolations | [ConstraintViolation[]](#openapi-definition-ConstraintViolation) | A list of constraint violations |
+| constraintViolations | [ConstraintViolation](#openapi-definition-ConstraintViolation)[] | A list of constraint violations |
 | message | string | The error message |
 
 #### The `ConstraintViolation` object

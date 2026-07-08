@@ -1,7 +1,6 @@
 ---
 title: Settings API - Pipeline Groups configuration (usersessions) schema table
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-usersessions-pipeline-groups
-scraped: 2026-05-12T11:44:35.557878
 ---
 
 # Settings API - Pipeline Groups configuration (usersessions) schema table

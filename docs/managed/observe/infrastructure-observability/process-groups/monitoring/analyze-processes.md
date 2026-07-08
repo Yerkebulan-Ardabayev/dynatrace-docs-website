@@ -1,7 +1,6 @@
 ---
 title: Analyze processes
 source: https://docs.dynatrace.com/managed/observe/infrastructure-observability/process-groups/monitoring/analyze-processes
-scraped: 2026-05-12T11:37:53.360299
 ---
 
 # Analyze processes
@@ -18,13 +17,13 @@ From any **Host** page you can view a list of the processes that contribute to e
 
 Host with consuming processes
 
-You can click the **Consuming processes** button to view the list of the processes that contributed to the selected health metric.
+To list the processes that contributed to the selected health metric, select **Consuming processes**.
 
 ![Processes table](https://dt-cdn.net/images/processes-new-2-1173-baad2315da.png)
 
 Processes table
 
-Once you've displayed the contributing processes list, click any process to explore that process in detail on a dedicated **Process** page. On each process page you'll find process-specific statistics related to CPU consumption, memory consumption, network utilization (see image below), and other [infrastructure measurements](/managed/observe/infrastructure-observability/hosts/monitoring/host-monitoring "Monitor hosts with Dynatrace."). You'll also find details regarding related events, problems, and dependencies.
+Once you display the contributing processes list, select any process to explore its details on the dedicated **Process** page. Each process page contains process-specific statistics related to CPU consumption, memory consumption, network utilization (see image below), and other [infrastructure measurements](/managed/observe/infrastructure-observability/hosts/monitoring/host-monitoring "Monitor hosts with Dynatrace."), as well as details regarding related events, problems, and dependencies.
 
 ![Host detail - process details](https://dt-cdn.net/images/hostprocesses2-1225-b7b9608767.png)
 
@@ -71,13 +70,13 @@ Root cause crashed process
 
 OneAgent version 1.291+
 
-You can track the availability of process group instances by using the `builtin:pgi.availability.state` (`dt.process.availability` on Grail) metric.
+You can track the availability of process group instances by using the `builtin:pgi.availability.state` metric.
 
 The state is indicated by the one of these values:
 
-* **Available**âThe process group instance is available and reported.
-* **Unavailable**âThe process group instance is unavailable and not reported.
-* **Unimportant**âThe process group instance is available but not reported to the cluster because it became unimportant. For more details, see [Which are the most important processes?](/managed/observe/infrastructure-observability/process-groups/basic-concepts/which-are-the-most-important-processes "Display the most important processes for monitoring and process grouping.").
+* **Available**—The process group instance is available and reported.
+* **Unavailable**—The process group instance is unavailable and not reported.
+* **Unimportant**—The process group instance is available but not reported to the cluster because it became unimportant. For more details, see [Which are the most important processes?](/managed/observe/infrastructure-observability/process-groups/basic-concepts/which-are-the-most-important-processes "Display the most important processes for monitoring and process grouping.").
 
 The metric values are sampled by OneAgent
 

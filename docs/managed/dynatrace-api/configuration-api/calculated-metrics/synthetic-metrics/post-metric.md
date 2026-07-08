@@ -1,7 +1,6 @@
 ---
 title: Synthetic metrics API - POST a metric
 source: https://docs.dynatrace.com/managed/dynatrace-api/configuration-api/calculated-metrics/synthetic-metrics/post-metric
-scraped: 2026-05-12T11:19:24.203234
 ---
 
 # Synthetic metrics API - POST a metric
@@ -40,7 +39,7 @@ Definition of the calculated synthetic metric.
 
 | Element | Type | Description | Required |
 | --- | --- | --- | --- |
-| dimensions | [SyntheticMetricDimension[]](#openapi-definition-SyntheticMetricDimension) | A list of metric dimensions. | Optional |
+| dimensions | [SyntheticMetricDimension](#openapi-definition-SyntheticMetricDimension)[] | A list of metric dimensions. | Optional |
 | enabled | boolean | The metric is enabled (`true`) or disabled (`false`). | Required |
 | filter | [SyntheticMetricFilter](#openapi-definition-SyntheticMetricFilter) | Filter of the calculated synthetic metric. | Optional |
 | metric | string | The type of the synthetic metric. The element can hold these values * `ApplicationCache` * `Callback` * `CumulativeLayoutShift` * `DNSLookup` * `DOMComplete` * `DOMContentLoaded` * `DOMInteractive` * `FailedRequestsResources` * `FirstContentfulPaint` * `FirstInputDelay` * `FirstInputStart` * `FirstPaint` * `HTMLDownloaded` * `HttpErrors` * `JavaScriptErrors` * `LargestContentfulPaint` * `LoadEventEnd` * `LoadEventStart` * `LongTasks` * `NavigationStart` * `OnDOMContentLoaded` * `OnLoad` * `Processing` * `RedirectTime` * `Request` * `RequestStart` * `ResourceCount` * `Response` * `SecureConnect` * `SpeedIndex` * `TCPConnect` * `TimeToFirstByte` * `TotalDuration` * `TransferSize` * `UserActionDuration` * `VisuallyComplete` | Required |
@@ -65,9 +64,9 @@ Filter of the calculated synthetic metric.
 | --- | --- | --- | --- |
 | actionType | string | Only user actions of the specified type are included in the metric calculation. The element can hold these values * `Custom` * `Load` * `Xhr` | Optional |
 | errorCode | integer | Only executions finished with the specified error code are included in the metric calculation. | Optional |
-| event | string | Only the specified browser clickpath event is included in the metric calculation.  Specify the Dynatrace entity ID of the event here. You can fetch the list of clickpath events of the monitor with the [GET a synthetic monitorï»¿](https://dt-url.net/4oe3kka) request from the Environment API | Optional |
+| event | string | Only the specified browser clickpath event is included in the metric calculation.  Specify the Dynatrace entity ID of the event here. You can fetch the list of clickpath events of the monitor with the [GET a synthetic monitor﻿](https://dt-url.net/4oe3kka) request from the Environment API | Optional |
 | hasError | boolean | The execution status of the monitors to be included in the metric calculation:  * `true`: Only failed executions are included. * `false`: All executions are included. | Optional |
-| location | string | Only executions from the specified location are included in the metric calculation.  Specify the Dynatrace entity ID of the location here. You can fetch the list of locations the monitor is running from with the [GET a synthetic monitorï»¿](https://dt-url.net/4oe3kka) request from the Environment API. | Optional |
+| location | string | Only executions from the specified location are included in the metric calculation.  Specify the Dynatrace entity ID of the location here. You can fetch the list of locations the monitor is running from with the [GET a synthetic monitor﻿](https://dt-url.net/4oe3kka) request from the Environment API. | Optional |
 
 ### Request body JSON model
 
@@ -169,7 +168,7 @@ The short representation of a Dynatrace entity.
 | Element | Type | Description |
 | --- | --- | --- |
 | code | integer | The HTTP status code |
-| constraintViolations | [ConstraintViolation[]](#openapi-definition-ConstraintViolation) | A list of constraint violations |
+| constraintViolations | [ConstraintViolation](#openapi-definition-ConstraintViolation)[] | A list of constraint violations |
 | message | string | The error message |
 
 #### The `ConstraintViolation` object
@@ -300,7 +299,7 @@ To learn how to obtain and use it, see [Tokens and authentication](/managed/disc
 | Element | Type | Description |
 | --- | --- | --- |
 | code | integer | The HTTP status code |
-| constraintViolations | [ConstraintViolation[]](#openapi-definition-ConstraintViolation) | A list of constraint violations |
+| constraintViolations | [ConstraintViolation](#openapi-definition-ConstraintViolation)[] | A list of constraint violations |
 | message | string | The error message |
 
 #### The `ConstraintViolation` object

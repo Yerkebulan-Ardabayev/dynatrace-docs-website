@@ -1,7 +1,6 @@
 ---
 title: Settings API - Provider breakdown schema table
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/settings/schemas/builtin-rum-provider-breakdown
-scraped: 2026-05-12T11:41:38.213402
 ---
 
 # Settings API - Provider breakdown schema table
@@ -16,7 +15,7 @@ Set up rules that define how your applications' downloaded content resources (im
 
 Dynatrace uses the provider host names of downloaded resources to categorize content resources into either third party resources, CDN resources, or first party resources.
 
-Dynatrace auto-detects over 1,000 content providers out-of-the-box, including Google, Amazon, Facebook, and many more. There's nothing you need to do to set up detection of resources. If you can't find your provider in the list below, you can add it manually. To learn more, visit [Configure 3rd-party and CDN content detectionï»¿](https://dt-url.net/on02tdo).
+Dynatrace auto-detects over 1,000 content providers out-of-the-box, including Google, Amazon, Facebook, and many more. There's nothing you need to do to set up detection of resources. If you can't find your provider in the list below, you can add it manually. To learn more, visit [Configure 3rd-party and CDN content detection﻿](https://dt-url.net/on02tdo).
 
 | Schema ID | Schema groups | Scope |
 | --- | --- | --- |

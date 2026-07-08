@@ -1,7 +1,6 @@
 ---
 title: Migrate from Azure classic (formerly 'built-in') services to cloud services
 source: https://docs.dynatrace.com/managed/ingest-from/microsoft-azure-services/azure-integrations/azure-monitoring-guide/azure-migration-guide
-scraped: 2026-05-12T11:26:11.179951
 ---
 
 # Migrate from Azure classic (formerly 'built-in') services to cloud services
@@ -16,7 +15,7 @@ From the Azure overview page, you can access Dynatrace classic services and clou
 
 ## Classic services vs cloud services
 
-As previously mentioned, classic services and cloud services share the same Azure resources. However, cloud services support a wider range of configuration options, such as new metrics and customizable monitored metrics. To give you more customization options, weâve started the following:
+As previously mentioned, classic services and cloud services share the same Azure resources. However, cloud services support a wider range of configuration options, such as new metrics and customizable monitored metrics. To give you more customization options, we’ve started the following:
 
 * Adding more services to the **Cloud services** section so you can customize which metrics and dimensions you want to monitor.
 * Adding more metrics for cloud services; not only are they configurable, but you can now monitor much more than before.
@@ -39,18 +38,18 @@ Even though classic and cloud services monitor the same Azure resources on Dynat
 You do have the option to choose from a classic or cloud service to preserve historical data, for now. But be aware of the following:
 
 * Historical data is persisted on the classic services. If you switch back, monitored data will present gaps for the period in which the resources were monitored via the cloud service.
-* You canât have both of them turned on simultaneously. Even though on Dynatrace side theyâre two different services, the legacy and new versions monitor the same Azure resource. If you had two versions switched on simultaneously, you would be charged double for polling the same data twice.
+* You can’t have both of them turned on simultaneously. Even though on Dynatrace side they’re two different services, the legacy and new versions monitor the same Azure resource. If you had two versions switched on simultaneously, you would be charged double for polling the same data twice.
 * If you turn on the new version, the classic version is turned off automatically, and vice versa.
 * There is no direct link between entities containing historical and new data.
 * Logs from [Azure log forwarder](/managed/ingest-from/microsoft-azure-services/azure-integrations/set-up-log-forwarder-azure "Use Azure log forwarding to ingest Azure logs.") are still linked to historical data and entities.
 
-To monitor cloud services, you need to have [Environment ActiveGateï»¿](https://dt-url.net/sc0396g) configured.
+To monitor cloud services, you need to have [Environment ActiveGate﻿](https://dt-url.net/sc0396g) configured.
 
 ## Changes in the UI
 
 Your Azure overview page changes after configuring a new version of a service.
 
-For example, letâs look at **Azure Storage Account**.
+For example, let’s look at **Azure Storage Account**.
 
 * If the legacy **Azure Storage Accounts** service is configured, this is what the **Storage accounts** section of the Azure overview looks like.
 

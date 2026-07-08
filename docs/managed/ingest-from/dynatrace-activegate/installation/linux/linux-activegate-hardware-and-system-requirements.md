@@ -1,7 +1,6 @@
 ---
 title: Hardware and system requirements for routing/monitoring ActiveGates on Linux
 source: https://docs.dynatrace.com/managed/ingest-from/dynatrace-activegate/installation/linux/linux-activegate-hardware-and-system-requirements
-scraped: 2026-05-12T11:08:20.855981
 ---
 
 # Hardware and system requirements for routing/monitoring ActiveGates on Linux
@@ -9,7 +8,7 @@ scraped: 2026-05-12T11:08:20.855981
 # Hardware and system requirements for routing/monitoring ActiveGates on Linux
 
 * 4-min read
-* Updated on Nov 20, 2025
+* Updated on May 07, 2026
 
 ### Hardware and system requirements: Routing OneAgent traffic to Dynatrace, monitoring cloud environments, or monitoring remote technologies with extensions
 
@@ -30,10 +29,10 @@ Refer to the [Log Monitoring default limits (Logs Classic)](/managed/analyze-exp
 You need a machine dedicated to ActiveGate that has:
 
 * 4 GB free disk space for ActiveGate and Extensions installation, configuration, and logs for auto update purposes.
-* 4 GB for ActiveGate and OneAgent cached installers and container imagesâif such will need to be stored.
-* Space for dump filesâif such will need to be stored. This functionality is turned off by default, but can be turned on in ActiveGate configuration. The maximum size of the storage space is [configurable](/managed/observe/application-observability/profiling-and-optimization/memory-dump-analysis/configure-an-activegate-for-memory-dump-storage "Learn how to enable storage of memory dumps on an ActiveGate.")â100 GB by default.
+* 4 GB for ActiveGate and OneAgent cached installers and container images—if such will need to be stored.
+* Space for dump files—if such will need to be stored. This functionality is turned off by default, but can be turned on in ActiveGate configuration. The maximum size of the storage space is [configurable](/managed/observe/application-observability/profiling-and-optimization/memory-dump-analysis/configure-an-activegate-for-memory-dump-storage "Learn how to enable storage of memory dumps on an ActiveGate.")—100 GB by default.
 * 600 MB + 1.5 GB (buffer) of free disk space for Extension Execution Controller logs retransmission persistence file.
-* Space for extension uploadsâdepending on extensions used.
+* Space for extension uploads—depending on extensions used.
 * 2 GB RAM (4 GB recommended).
 * 1 dual core processor.
 
@@ -46,7 +45,7 @@ For large environments, you may need to use a machine with additional CPU and me
 
 | **Top-level directory** | **Disk space requirements** |
 | --- | --- |
-| ActiveGate and autoupdater executable files, libraries, and related files  default: `/opt/dynatrace`  relative to installation parameter: `<INSTALL>` | 300 MB |
+| ActiveGate and autoupdater executable files, libraries, and related files  default: `/opt/dynatrace`  relative to installation parameter: `<INSTALL>` | 600 MB |
 | ActiveGate configuration and related directories  For Environment ActiveGate, it also contains Extensions configuration  default: `/var/lib/dynatrace`  relative to installation parameter: `<CONFIG>` | 2 MB |
 | For Environment ActiveGate only: Extensions executable files, libraries, and related files default: `/opt/dynatrace/remotepluginmodule`  relative to installation parameter: `<INSTALL>/remotepluginmodule` | 1.2 GB |
 
@@ -55,8 +54,8 @@ For large environments, you may need to use a machine with additional CPU and me
 
 | **Top-level directory** | **Disk space requirements** |
 | --- | --- |
-| ActiveGate and autoupdater logs  default: `/var/log/dynatrace`  installation parameter: `<LOG>` | 700 MB |
-| ActiveGate packages directory for auto-update installer downloads  default: `/var/lib/dynatrace/packages`  installation parameter: `<PACKAGES_DIR>` | 500 MB |
+| ActiveGate and autoupdater logs  default: `/var/log/dynatrace`  installation parameter: `<LOG>` | 1.2 GB |
+| ActiveGate packages directory for auto-update installer downloads  default: `/var/lib/dynatrace/packages`  installation parameter: `<PACKAGES_DIR>` | 600 MB |
 | ActiveGate temporary files  default: `/var/tmp/dynatrace/gateway`  path relative to installation parameter TEMP: `<TEMP>/gateway` | 4 GB (including 3 GB for cached OneAgent installers and container images) |
 | Dump files uploaded to ActiveGate by OneAgent  `/var/lib/dynatrace/gateway/dump` | Functionality off by default, not configurable at installation time.  When activated, can take configurable maximum size: default 100 GB. |
 | For Environment ActiveGate only: ActiveGate Extensions logs, cache, run-time work area  default: `/var/lib/dynatrace/remotepluginmodule`  path relative to installation parameter CONFIG: `<CONFIG>/remotepluginmodule` | 2 GB |
@@ -99,10 +98,10 @@ Linux configuration file: `/var/lib/dynatrace/remotepluginmodule/agent/conf/exte
 | Linux distribution | Versions | CPU architectures |
 | --- | --- | --- |
 | Amazon Linux | 2, 2023[1](#fn-linux-distribution-1-def) | ARM64 (AArch64), x86-64 |
-| Oracle Linux | 8.10, 9.6, 9.7, 10.0, 10.1 | ARM64 (AArch64), x86-64 |
-| Red Hat Enterprise Linux | 8.10, 9.4, 9.6, 9.7, 10.0, 10.1 | ARM64 (AArch64), s390, x86-64 |
-| Rocky Linux | 8.10, 9.6, 9.7, 10.0, 10.1 | ARM64 (AArch64), x86-64 |
-| SUSE Enterprise Linux | 15.6, 15.7 | ARM64 (AArch64), s390, x86-64 |
+| Oracle Linux | 8.10, 9.7, 10.1 | ARM64 (AArch64), x86-64 |
+| Red Hat Enterprise Linux | 8.10, 9.4, 9.6, 9.7, 9.8, 10.0, 10.1, 10.2 | ARM64 (AArch64), s390, x86-64 |
+| Rocky Linux | 8.10, 9.7, 10.1 | ARM64 (AArch64), x86-64 |
+| SUSE Enterprise Linux | 15.7 | ARM64 (AArch64), s390, x86-64 |
 | Ubuntu | 16.04, 18.04, 20.04, 22.04, 24.04 | x86-64 |
 | Ubuntu | 20.04, 22.04, 24.04 | ARM64 (AArch64), s390 |
 

@@ -1,7 +1,6 @@
 ---
 title: Get a list of available packages and updates
 source: https://docs.dynatrace.com/managed/dynatrace-api/mission-control-api/offline-bundle-packages/get-available-packages-updates
-scraped: 2026-05-12T12:14:13.440214
 ---
 
 # Get a list of available packages and updates

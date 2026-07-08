@@ -1,7 +1,6 @@
 ---
 title: Settings API - Muted requests schema table
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/settings/schemas/builtin-settings-mutedrequests
-scraped: 2026-05-12T11:39:16.262269
 ---
 
 # Settings API - Muted requests schema table
@@ -14,7 +13,7 @@ scraped: 2026-05-12T11:39:16.262269
 
 Configuration for specifying Muted requests for particular Service. Each Service could have several Muted requests.
 
-Dynatrace enables you to mute automatic alerts for selected, unimportant service requests. This will also exclude them from the service chart so that you can focus on the performance of requests that affect your customers. You can learn more about Muted requests in our [helpï»¿](https://dt-url.net/ze62t5p "Visit dynatrace.com")
+Dynatrace enables you to mute automatic alerts for selected, unimportant service requests. This will also exclude them from the service chart so that you can focus on the performance of requests that affect your customers. You can learn more about Muted requests in our [help﻿](https://dt-url.net/ze62t5p "Visit dynatrace.com")
 
 | Schema ID | Schema groups | Scope |
 | --- | --- | --- |

@@ -1,7 +1,6 @@
 ---
 title: Extensions 2.0 API - POST environment configuration
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/extensions-20/environment-configurations/post-activate-env-config
-scraped: 2026-05-12T11:56:09.091062
 ---
 
 # Extensions 2.0 API - POST environment configuration
@@ -66,7 +65,7 @@ This is a model of the request body, showing the possible elements. It has to be
 
 | Code | Type | Description |
 | --- | --- | --- |
-| **200** | [ExtensionEnvironmentConfigurationVersion](#openapi-definition-ExtensionEnvironmentConfigurationVersion) | Success. Environment configuration created. |
+| **200** | [ExtensionEnvironmentConfigurationVersion](#openapi-definition-ExtensionEnvironmentConfigurationVersion) | Success. Environment configuration created. If the requested version was already active, this is an idempotent no-op (no backend state changes). |
 | **400** | [ErrorEnvelope](#openapi-definition-ErrorEnvelope) | Failed. The input is invalid. |
 | **404** | [ErrorEnvelope](#openapi-definition-ErrorEnvelope) | Failed. The requested resource doesn't exist. |
 | **4XX** | [ErrorEnvelope](#openapi-definition-ErrorEnvelope) | Client side error. |
@@ -91,7 +90,7 @@ This is a model of the request body, showing the possible elements. It has to be
 | Element | Type | Description |
 | --- | --- | --- |
 | code | integer | The HTTP status code |
-| constraintViolations | [ConstraintViolation[]](#openapi-definition-ConstraintViolation) | A list of constraint violations |
+| constraintViolations | [ConstraintViolation](#openapi-definition-ConstraintViolation)[] | A list of constraint violations |
 | message | string | The error message |
 
 #### The `ConstraintViolation` object

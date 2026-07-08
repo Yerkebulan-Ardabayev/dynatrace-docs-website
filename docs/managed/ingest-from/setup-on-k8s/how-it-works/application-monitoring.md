@@ -1,7 +1,6 @@
 ---
 title: Application observability
 source: https://docs.dynatrace.com/managed/ingest-from/setup-on-k8s/how-it-works/application-monitoring
-scraped: 2026-05-12T11:23:30.246439
 ---
 
 # Application observability
@@ -9,7 +8,7 @@ scraped: 2026-05-12T11:23:30.246439
 # Application observability
 
 * 3-min read
-* Updated on May 04, 2026
+* Updated on Jun 16, 2026
 
 Application observability focuses on monitoring application-level metrics by injecting code modules into application Pods. This mode offers multiple injection strategies (automatic, runtime, and build-time) to collect application-specific metrics. For infrastructure-level insights, combine it with [Kubernetes platform monitoring](/managed/ingest-from/setup-on-k8s/how-it-works/kubernetes-monitoring "In-depth description of Kubernetes platform monitoring using Dynatrace Operator.").
 
@@ -30,6 +29,7 @@ You can use the automatic injection strategy for application Pods. Dynatrace inj
 
 * Diagnostic files (support archives) for application Pods aren't yet supported.
 * [Go static monitoring](/managed/ingest-from/technology-support/application-software/go/support/go-known-limitations#static-monitoring "Learn the limitations for Go support and their workarounds.") is partially supported.
+* On AKS, the [AKS admissions enforcer](/managed/ingest-from/setup-on-k8s/deployment/supported-technologies#aks-admission-enforcer "Overview of different configurations for all major Kubernetes distributions.") adds namespaceSelector expressions to every webhook that explicitly exclude AKS-managed namespaces (such as kube-system), causing code module injection to be skipped in those namespaces.
 
 When deployed in application monitoring, Dynatrace code modules monitor processes within the container, including disk, CPU, and networking metrics. Host metrics are not monitored. Without [Kubernetes Platform Monitoring](#kubernetes-monitoring), topology is limited to Pods and containers.
 

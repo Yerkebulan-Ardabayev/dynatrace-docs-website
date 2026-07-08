@@ -1,7 +1,6 @@
 ---
 title: Google Compute Engine with Operations suite metrics monitoring
 source: https://docs.dynatrace.com/managed/ingest-from/google-cloud-platform/gcp-integrations/google-compute-engine/compute-engine-monitoring
-scraped: 2026-05-12T11:50:27.366091
 ---
 
 # Google Compute Engine with Operations suite metrics monitoring

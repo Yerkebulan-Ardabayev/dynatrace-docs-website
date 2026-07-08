@@ -1,7 +1,6 @@
 ---
 title: Get all cluster access requests
 source: https://docs.dynatrace.com/managed/dynatrace-api/cluster-api/cluster-api-v2/remote-access/get-all-cluster-access-requests
-scraped: 2026-05-12T11:05:57.597764
 ---
 
 # Get all cluster access requests
@@ -35,7 +34,7 @@ The request doesn't provide any configurable parameters.
 
 | Code | Type | Description |
 | --- | --- | --- |
-| **200** | [AccessRequestData[]](#openapi-definition-AccessRequestData) | Successful |
+| **200** | [AccessRequestData](#openapi-definition-AccessRequestData)[] | Successful |
 | **403** | - | Approving remote access request is disabled |
 
 ### Response body objects

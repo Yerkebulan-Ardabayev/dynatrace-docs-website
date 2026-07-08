@@ -1,7 +1,6 @@
 ---
 title: Security configurations
 source: https://docs.dynatrace.com/managed/ingest-from/setup-on-k8s/guides/networking-security-compliance/security-configurations
-scraped: 2026-05-12T12:09:12.497544
 ---
 
 # Security configurations

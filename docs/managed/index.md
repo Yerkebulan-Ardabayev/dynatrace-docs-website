@@ -1,7 +1,6 @@
 ---
 title: Welcome to Dynatrace Managed Documentation
 source: https://docs.dynatrace.com/managed/
-scraped: 2026-05-12T11:02:58.762003
 ---
 
 # Welcome to Dynatrace Managed Documentation
@@ -12,10 +11,10 @@ Learn about Dynatrace Managed and explore resources to enhance your observabilit
 
 ![Dynatrace Documentation](https://dt-cdn.net/images/docs-hero-0423f9e141.svg "Dynatrace Documentation")
 
-### Get started with Dynatrace Managed or discover whatâs new
+### Get started with Dynatrace Managed or discover what’s new
 
-* New to Dynatrace? Learn how to [get started](/managed/discover-dynatrace/get-started "Learn how to get started with Dynatrace Managed.") in just a few steps.
-* Already on board? Discover whatâs new for [Managed](/managed/whats-new/managed "Release notes for Dynatrace Managed"), [OneAgent](/managed/whats-new/oneagent "Release notes for Dynatrace OneAgent") or [ActiveGate](/managed/whats-new/activegate "Release notes for Dynatrace ActiveGate").
+* New to Dynatrace? Learn how to [get started](/managed/discover-dynatrace/get-started "Learn how to get started with Dynatrace Managed in a few steps, from obtaining a license and setting up a Managed Cluster to ingesting data and setting up notifications.") in just a few steps.
+* Already on board? Discover what’s new for [Managed](/managed/whats-new/managed "Release notes for Dynatrace Managed"), [OneAgent](/managed/whats-new/oneagent "Release notes for Dynatrace OneAgent") or [ActiveGate](/managed/whats-new/activegate "Release notes for Dynatrace ActiveGate").
 
 ![Dynatrace Signet](https://dt-cdn.net/images/dt-logo-color-vertical-0a89040753.svg "Dynatrace Signet")
 
@@ -71,7 +70,7 @@ Other container platforms
 
 ---
 
-[![Hub](https://dt-cdn.net/images/hub-512-82db3c583e.png "Hub")Dynatrace Hub](https://docs.dynatrace.com/docs/shortlink/hub) [![Access tokens](https://dt-cdn.net/images/access-tokens-512-a766b810b8.png "Access tokens")Identity and access management](/managed/manage/identity-access-management) [![User profile](https://dt-cdn.net/images/user-profile-512-ca0affeacb.png "User profile")Account Management](/managed/manage/account-management) [![Configuration as Code](https://cdn.bfldr.com/B686QPH3/at/x9x8bjg9wq5v2rqtj4n3fg7/DT1098.svg?auto=webp&width=72&height=72 "Configuration as Code")Configuration as Code](/managed/deliver/configuration-as-code) [![Data privacy and security](https://cdn.bfldr.com/B686QPH3/at/f8t8r5xbxjpwns5csjnj9kpq/DT1101.svg?auto=webp&width=72&height=72 "Data privacy and security")Data privacy and security](/managed/manage/data-privacy-and-security) [![Consumption](https://dt-cdn.net/images/consumption-512-4d3a919d76.png "Consumption")Subscriptions and licensing](/managed/license) [![Network Zones](https://cdn.bfldr.com/B686QPH3/at/gm9ptmcc6w3hrvq2n5zq7c7/DT1005.svg?auto=webp&width=72&height=72 "Network Zones")Network zones](/managed/manage/network-zones) [![Ownership](https://dt-cdn.net/images/ownership-w-background-512-99cc966544.webp "Ownership")Ownership](/managed/deliver/ownership) [![Settings](https://dt-cdn.net/images/settings-icon-256-38e1321b51.webp "Settings")Settings 2.0](/managed/manage/settings/settings-20) [![Notifications](https://dt-cdn.net/images/notification-512-a99560c5a3.png "Notifications")System notifications](/managed/manage/system-notifications) [![Tags](https://cdn.bfldr.com/B686QPH3/at/cgg6h7fvpwj7gxxkhq5xj/DT0732.svg?auto=webp&width=72&height=72 "Tags")Tags and metadata](/managed/manage/tags-and-metadata) 
+[![Hub](https://dt-cdn.net/images/hub-512-82db3c583e.png "Hub")Dynatrace Hub](https://docs.dynatrace.com/docs/shortlink/hub) [![Access tokens](https://dt-cdn.net/images/access-tokens-512-a766b810b8.png "Access tokens")Identity and access management](/managed/manage/identity-access-management) [![User profile](https://dt-cdn.net/images/user-profile-512-ca0affeacb.png "User profile")Account Management](/managed/manage/account-management) [![Configuration as Code](https://cdn.bfldr.com/B686QPH3/at/x9x8bjg9wq5v2rqtj4n3fg7/DT1098.svg?auto=webp&width=72&height=72 "Configuration as Code")Configuration as Code](/managed/deliver/configuration-as-code) [![Data privacy and security](https://cdn.bfldr.com/B686QPH3/at/f8t8r5xbxjpwns5csjnj9kpq/DT1101.svg?auto=webp&width=72&height=72 "Data privacy and security")Data privacy and security](/managed/manage/data-privacy-and-security) [![Consumption](https://dt-cdn.net/images/consumption-512-4d3a919d76.png "Consumption")Subscriptions and licensing](/managed/license/monitoring-consumption-classic) [![Network Zones](https://cdn.bfldr.com/B686QPH3/at/gm9ptmcc6w3hrvq2n5zq7c7/DT1005.svg?auto=webp&width=72&height=72 "Network Zones")Network zones](/managed/manage/network-zones) [![Ownership](https://dt-cdn.net/images/ownership-w-background-512-99cc966544.webp "Ownership")Ownership](/managed/deliver/ownership) [![Settings](https://dt-cdn.net/images/settings-icon-256-38e1321b51.webp "Settings")Settings 2.0](/managed/manage/settings/settings-20) [![Notifications](https://dt-cdn.net/images/notification-512-a99560c5a3.png "Notifications")System notifications](/managed/manage/system-notifications) [![Tags](https://cdn.bfldr.com/B686QPH3/at/cgg6h7fvpwj7gxxkhq5xj/DT0732.svg?auto=webp&width=72&height=72 "Tags")Tags and metadata](/managed/manage/tags-and-metadata) 
 
 ## Dynatrace API
 

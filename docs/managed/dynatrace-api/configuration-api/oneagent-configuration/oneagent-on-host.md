@@ -1,7 +1,6 @@
 ---
 title: OneAgent configuration on a host API
 source: https://docs.dynatrace.com/managed/dynatrace-api/configuration-api/oneagent-configuration/oneagent-on-host
-scraped: 2026-05-12T11:05:06.979343
 ---
 
 # OneAgent configuration on a host API

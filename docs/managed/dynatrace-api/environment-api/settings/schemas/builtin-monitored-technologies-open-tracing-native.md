@@ -1,7 +1,6 @@
 ---
 title: Settings API - Envoy schema table
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/settings/schemas/builtin-monitored-technologies-open-tracing-native
-scraped: 2026-05-12T11:43:58.281687
 ---
 
 # Settings API - Envoy schema table

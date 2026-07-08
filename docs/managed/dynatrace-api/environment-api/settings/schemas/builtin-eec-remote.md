@@ -1,7 +1,6 @@
 ---
 title: Settings API - Extension Execution Controller schema table
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/settings/schemas/builtin-eec-remote
-scraped: 2026-05-12T11:40:40.434650
 ---
 
 # Settings API - Extension Execution Controller schema table
@@ -34,4 +33,4 @@ To execute this request, you need an access token with **Read settings** (`setti
 
 | Property | Type | Description | Required |
 | --- | --- | --- | --- |
-| Performance profile `performanceProfile` | enum | Select performance profile for Extension Execution Controller [Documentationï»¿](https://www.dynatrace.com/support/help/shortlink/extensions-concepts#resource-consumption "More about performance profiles") The element has these enums * `DEFAULT` * `HIGH` * `DEDICATED` | Required |
+| Performance profile `performanceProfile` | enum | Select performance profile for Extension Execution Controller [Documentation﻿](https://www.dynatrace.com/support/help/shortlink/extensions-concepts#resource-consumption "More about performance profiles") The element has these enums * `DEFAULT` * `HIGH` * `DEDICATED` | Required |

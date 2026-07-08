@@ -1,7 +1,6 @@
 ---
 title: Settings API - Custom units schema table
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/settings/schemas/builtin-custom-unit
-scraped: 2026-05-12T11:48:18.775401
 ---
 
 # Settings API - Custom units schema table

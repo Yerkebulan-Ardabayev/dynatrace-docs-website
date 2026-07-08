@@ -1,7 +1,6 @@
 ---
 title: Deployment API - GET available versions of BOSH tarballs
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/deployment/bosh/get-available-version
-scraped: 2026-05-12T11:55:19.477283
 ---
 
 # Deployment API - GET available versions of BOSH tarballs
@@ -63,7 +62,7 @@ A list of available OneAgent versions for BOSH release tarballs.
 | Element | Type | Description |
 | --- | --- | --- |
 | code | integer | The HTTP status code |
-| constraintViolations | [ConstraintViolation[]](#openapi-definition-ConstraintViolation) | A list of constraint violations |
+| constraintViolations | [ConstraintViolation](#openapi-definition-ConstraintViolation)[] | A list of constraint violations |
 | message | string | The error message |
 
 #### The `ConstraintViolation` object

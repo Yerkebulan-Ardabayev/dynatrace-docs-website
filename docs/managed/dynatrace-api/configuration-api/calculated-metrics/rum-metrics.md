@@ -1,7 +1,6 @@
 ---
 title: Web application metrics API
 source: https://docs.dynatrace.com/managed/dynatrace-api/configuration-api/calculated-metrics/rum-metrics
-scraped: 2026-05-12T11:04:36.810818
 ---
 
 # Web application metrics API
@@ -27,4 +26,4 @@ Delete a metric that you no longer need.](/managed/dynatrace-api/configuration-a
 
 ## Related topics
 
-* [Create calculated metrics for web applications](/managed/observe/digital-experience/web-applications/additional-configuration/rum-calculated-metrics-web "Create calculated metrics as well as custom charts based on calculated metrics for your web applications.")
+* [Create calculated metrics for web applications in RUM Classic](/managed/observe/digital-experience/rum-classic/web-applications/additional-configuration/rum-calculated-metrics-web "Create calculated metrics as well as custom charts based on calculated metrics for your web applications.")

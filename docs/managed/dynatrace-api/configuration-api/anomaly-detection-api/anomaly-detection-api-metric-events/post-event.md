@@ -1,7 +1,6 @@
 ---
 title: Metric events anomaly detection API - POST an event
 source: https://docs.dynatrace.com/managed/dynatrace-api/configuration-api/anomaly-detection-api/anomaly-detection-api-metric-events/post-event
-scraped: 2026-05-12T12:15:40.054695
 ---
 
 # Metric events anomaly detection API - POST an event
@@ -46,13 +45,13 @@ The configuration of the metric event.
 | Element | Type | Description | Required |
 | --- | --- | --- | --- |
 | aggregationType | string | How the metric data points are aggregated for the evaluation.  The timeseries must support this aggregation. The element can hold these values * `AVG` * `COUNT` * `MAX` * `MEDIAN` * `MIN` * `P90` * `SUM` * `VALUE` | Optional |
-| alertingScope | [MetricEventAlertingScope[]](#openapi-definition-MetricEventAlertingScope) | Defines the scope of the metric event. Only one filter is allowed per filter type, except for tags, where up to 3 are allowed. The filters are combined by conjunction. | Optional |
+| alertingScope | [MetricEventAlertingScope](#openapi-definition-MetricEventAlertingScope)[] | Defines the scope of the metric event. Only one filter is allowed per filter type, except for tags, where up to 3 are allowed. The filters are combined by conjunction. | Optional |
 | description | string | The description of the metric event. | Required |
 | disabledReason | string | The reason of automatic disabling.  The `NONE` means config was not disabled automatically. The element can hold these values * `METRIC_DEFINITION_INCONSISTENCY` * `NONE` * `TOO_MANY_DIMS` | Optional |
 | enabled | boolean | The metric event is enabled (`true`) or disabled (`false`). | Required |
 | id | string | The ID of the metric event. | Optional |
 | metadata | [ConfigurationMetadata](#openapi-definition-ConfigurationMetadata) | Metadata useful for debugging | Optional |
-| metricDimensions | [MetricEventDimensions[]](#openapi-definition-MetricEventDimensions) | Defines the dimensions of the metric to alert on. The filters are combined by conjunction. | Optional |
+| metricDimensions | [MetricEventDimensions](#openapi-definition-MetricEventDimensions)[] | Defines the dimensions of the metric to alert on. The filters are combined by conjunction. | Optional |
 | metricId | string | The ID of the metric evaluated by the metric event. | Optional |
 | metricSelector | string | The metric selector that should be executed. | Optional |
 | monitoringStrategy | [MetricEventMonitoringStrategy](#openapi-definition-MetricEventMonitoringStrategy) | A monitoring strategy for a metric event config.  This is the base version of the monitoring strategy, depending on the type, the actual JSON may contain additional fields. | Required |
@@ -66,7 +65,7 @@ The configuration of the metric event.
 
 A single filter for the alerting scope.
 
-The actual set of fields depends on type of the filter. Find the list of actual objects in the description of the **filterType** field or see [Metric events anomaly detection API - JSON modelsï»¿](https://dt-url.net/ql63sap).
+The actual set of fields depends on type of the filter. Find the list of actual objects in the description of the **filterType** field or see [Metric events anomaly detection API - JSON models﻿](https://dt-url.net/ql63sap).
 
 | Element | Type | Description | Required |
 | --- | --- | --- | --- |
@@ -86,7 +85,7 @@ Metadata useful for debugging
 
 A single filter for the metrics dimensions.
 
-The actual set of fields depends on type of the filter. Find the list of actual objects in the description of the **filterType** field or see [Metric events anomaly detection API - JSON modelsï»¿](https://dt-url.net/ql63sap).
+The actual set of fields depends on type of the filter. Find the list of actual objects in the description of the **filterType** field or see [Metric events anomaly detection API - JSON models﻿](https://dt-url.net/ql63sap).
 
 | Element | Type | Description | Required |
 | --- | --- | --- | --- |
@@ -340,7 +339,7 @@ The short representation of a Dynatrace entity.
 | Element | Type | Description |
 | --- | --- | --- |
 | code | integer | The HTTP status code |
-| constraintViolations | [ConstraintViolation[]](#openapi-definition-ConstraintViolation) | A list of constraint violations |
+| constraintViolations | [ConstraintViolation](#openapi-definition-ConstraintViolation)[] | A list of constraint violations |
 | message | string | The error message |
 
 #### The `ConstraintViolation` object
@@ -471,7 +470,7 @@ To learn how to obtain and use it, see [Tokens and authentication](/managed/disc
 | Element | Type | Description |
 | --- | --- | --- |
 | code | integer | The HTTP status code |
-| constraintViolations | [ConstraintViolation[]](#openapi-definition-ConstraintViolation) | A list of constraint violations |
+| constraintViolations | [ConstraintViolation](#openapi-definition-ConstraintViolation)[] | A list of constraint violations |
 | message | string | The error message |
 
 #### The `ConstraintViolation` object
@@ -729,4 +728,4 @@ Metric event rule - new
 
 ## Related topics
 
-* [DavisÂ® AI](/managed/dynatrace-intelligence "Get familiar with the capabilities of Davis AI.")
+* [Davis® AI](/managed/dynatrace-intelligence "Learn how Davis® AI detects performance anomalies, identifies root causes, and uses AI models for adaptive thresholds across your environment.")

@@ -1,7 +1,6 @@
 ---
 title: Configure node image pull
 source: https://docs.dynatrace.com/managed/ingest-from/setup-on-k8s/guides/deployment-and-configuration/node-image-pull
-scraped: 2026-05-12T12:03:38.167936
 ---
 
 # Configure node image pull
@@ -52,7 +51,7 @@ Alternatively, the following options are available for providing registry creden
   + **Namespace level**: Add the pull secret to the namespace where application pods are deployed.
   + **Pod level**: Configure the pull secret via the `imagePullSecrets` field in the pod specification of your application pods.
 
-For more information on manual pull secret configuration, see [Kubernetes documentation on pulling images from private registriesï»¿](https://kubernetes.io/docs/concepts/containers/images/#using-a-private-registry).
+For more information on manual pull secret configuration, see [Kubernetes documentation on pulling images from private registries﻿](https://kubernetes.io/docs/concepts/containers/images/#using-a-private-registry).
 
 ### Limitations
 

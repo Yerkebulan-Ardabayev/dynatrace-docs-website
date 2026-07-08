@@ -1,7 +1,6 @@
 ---
 title: OpenTracing
 source: https://docs.dynatrace.com/managed/ingest-from/extend-dynatrace/extend-tracing/opentracing
-scraped: 2026-05-12T11:05:20.088193
 ---
 
 # OpenTracing
@@ -14,10 +13,10 @@ scraped: 2026-05-12T11:05:20.088193
 
 OpenTracing is an open source project that provides APIs and instrumentation for distributed tracing. Although OpenTracing and OpenCensus merged in 2019 to form OpenTelemetry, OpenTracing instrumentations are still used by many popular frameworks, libraries, and projects.
 
-Dynatrace OneAgent for Java automatically collects OpenTracing span data and integrates it into end-to-end PurePathÂ® distributed traces.
+Dynatrace OneAgent for Java automatically collects OpenTracing span data and integrates it into end-to-end PurePath® distributed traces.
 OpenTracing with OneAgent enables you to:
 
-* Gain insights into Java third-party libraries or frameworks that arenât natively covered by OneAgent but come with OpenTracing pre-instrumentation.
+* Gain insights into Java third-party libraries or frameworks that aren’t natively covered by OneAgent but come with OpenTracing pre-instrumentation.
 * Enrich monitoring data with project-specific additions (for example, custom instrumentation that adds business data or the capture of developer-specific diagnostics points).
 * Stitch together independent, unrelated transactions to extend end-to-end distributed traces (for instance, by adding vendor-neutral custom instrumentation to gain business-process-specific or domain-specific end-to-end transactional insights).
 
@@ -31,8 +30,8 @@ The quality of the OpenTracing spans captured by OneAgent depends on the quality
 
 | Monitoring framework | Versions |
 | --- | --- |
-| [OpenTelemetryï»¿](https://github.com/open-telemetry/opentelemetry-java/) | 1.0 - 1.3[1](#fn-monitoring-framework-1-def), 1.4 - 1.54[1](#fn-monitoring-framework-1-def), 1.55 - 1.60 |
-| [OpenTracingï»¿](https://opentracing.io/guides/java/) | 0.33, 0.32, 0.31 |
+| [OpenTelemetry﻿](https://github.com/open-telemetry/opentelemetry-java/) | 1.0 - 1.3[1](#fn-monitoring-framework-1-def), 1.4 - 1.54[1](#fn-monitoring-framework-1-def), 1.55 - 1.60 |
+| [OpenTracing﻿](https://opentracing.io/guides/java/) | 0.33, 0.32, 0.31 |
 
 1
 
@@ -168,7 +167,7 @@ See [Span settings](/managed/ingest-from/extend-dynatrace/extend-tracing/span-se
 * [Span default service](/managed/observe/application-observability/services/service-detection/service-detection-v1#span-service "Find out how Dynatrace Service Detection v1 detects and names different types of services.")
 * When both OneAgent and OpenTracing instrumentation are present for the same technology (for example, incoming web requests via the Servlet API), you may experience the following limitations:
 
-  + Duplicate nodes in PurePathÂ® distributed traces
+  + Duplicate nodes in PurePath® distributed traces
   + Additional overhead
   + For JDBC, such double instrumentation may break service detection
     Be extra cautious when enabling OneAgent OpenTracing Java support for OneAgent out-of-the-box [supported technologies](/managed/ingest-from/technology-support#java "Find technical details related to Dynatrace support for specific platforms and development frameworks.").
@@ -180,4 +179,4 @@ See [Span settings](/managed/ingest-from/extend-dynatrace/extend-tracing/span-se
 Dynatrace integrates traces from any OpenTracing instrumentations. We have positively tested the instrumentation of the following libraries and frameworks:
 
 * Hazelcast for OpenTracing Java
-* Couchbase starting with [java-client version 3.1.3ï»¿](https://github.com/couchbase/couchbase-jvm-clients) for OpenTracing Java
+* Couchbase starting with [java-client version 3.1.3﻿](https://github.com/couchbase/couchbase-jvm-clients) for OpenTracing Java

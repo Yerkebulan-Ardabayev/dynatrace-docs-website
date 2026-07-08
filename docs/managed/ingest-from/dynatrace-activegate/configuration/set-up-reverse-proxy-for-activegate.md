@@ -1,7 +1,6 @@
 ---
 title: Reverse proxy or load balancer for ActiveGate
 source: https://docs.dynatrace.com/managed/ingest-from/dynatrace-activegate/configuration/set-up-reverse-proxy-for-activegate
-scraped: 2026-05-12T11:36:22.648753
 ---
 
 # Reverse proxy or load balancer for ActiveGate
@@ -9,7 +8,7 @@ scraped: 2026-05-12T11:36:22.648753
 # Reverse proxy or load balancer for ActiveGate
 
 * 1-min read
-* Updated on Feb 24, 2026
+* Updated on Jun 09, 2026
 
 A reverse proxy or a load balancer can be placed on the path from an ActiveGate to the Dynatrace Cluster. This allows your ActiveGate to connect to any available node of the Cluster, spreading the load between the nodes.  
 To do this, you need to:
@@ -17,13 +16,13 @@ To do this, you need to:
 * Provide the address of the reverse proxy/load balancer.
 * Ensure that ActiveGate will ignore any further target address information sent from the Dynatrace Cluster, and will thus connect only to the address you have specified.
 
-![ActiveGate connecting to Dynatrace Cluster via reverse proxy/load balancer](https://dt-cdn.net/images/rev-proxy-001-1000-f7d875625b.png)
+![ActiveGate connecting to Dynatrace Cluster via reverse proxy/load balancer](https://cdn.bfldr.com/B686QPH3/as/9qkt79fj2ww97xsxpxqnm6c/ActiveGate-Reverse_proxy_or_load_balancer_for_ActiveGate-Light_Mode?auto=webp&format=png&position=1)
 
 ActiveGate connecting to Dynatrace Cluster via reverse proxy/load balancer
 
 ### Option to configure during installation
 
-This configurationâto use a reverse proxy or a load balancerâcan also be applied during ActiveGate installation, by specifying installation parameters to the ActiveGate installer for [Linux](/managed/ingest-from/dynatrace-activegate/installation/linux/linux-customize-installation-for-activegate#reverse-proxy-or-load-balancer-configuration "Learn about the command-line parameters that you can use with ActiveGate on Linux.") or [Windows](/managed/ingest-from/dynatrace-activegate/installation/windows/windows-customize-installation-for-activegate#reverse-proxy-or-load-balancer-configuration "Learn about the parameters that you can use with ActiveGate on Windows.") or it can be configured later, after ActiveGate installation, as shown in the following procedure.
+This configuration—to use a reverse proxy or a load balancer—can also be applied during ActiveGate installation, by specifying installation parameters to the ActiveGate installer for [Linux](/managed/ingest-from/dynatrace-activegate/installation/linux/linux-customize-installation-for-activegate#reverse-proxy-or-load-balancer-configuration "Learn about the command-line parameters that you can use with ActiveGate on Linux.") or [Windows](/managed/ingest-from/dynatrace-activegate/installation/windows/windows-customize-installation-for-activegate#reverse-proxy-or-load-balancer-configuration "Learn about the parameters that you can use with ActiveGate on Windows.") or it can be configured later, after ActiveGate installation, as shown in the following procedure.
 
 A load balancer should not be placed between ActiveGate and OneAgent, as it can disrupt memory dump transmission and processing.
 

@@ -1,7 +1,6 @@
 ---
 title: Deployment API - GET connectivity information for ActiveGate
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/deployment/activegate/get-activegate-connectivity
-scraped: 2026-05-12T11:36:33.286160
 ---
 
 # Deployment API - GET connectivity information for ActiveGate
@@ -66,7 +65,7 @@ Connectivity information for an Environment ActiveGate (except ActiveGate tokens
 | Element | Type | Description |
 | --- | --- | --- |
 | code | integer | The HTTP status code |
-| constraintViolations | [ConstraintViolation[]](#openapi-definition-ConstraintViolation) | A list of constraint violations |
+| constraintViolations | [ConstraintViolation](#openapi-definition-ConstraintViolation)[] | A list of constraint violations |
 | message | string | The error message |
 
 #### The `ConstraintViolation` object

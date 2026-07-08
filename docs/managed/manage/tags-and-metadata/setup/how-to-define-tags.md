@@ -1,7 +1,6 @@
 ---
 title: Define and apply tags
 source: https://docs.dynatrace.com/managed/manage/tags-and-metadata/setup/how-to-define-tags
-scraped: 2026-05-12T11:11:27.945893
 ---
 
 # Define and apply tags
@@ -10,7 +9,7 @@ scraped: 2026-05-12T11:11:27.945893
 
 * How-to guide
 * 14-min read
-* Published Jul 19, 2017
+* Updated on May 18, 2026
 
 Use tags to organize monitoring data and analysis based on related entities in all environments. Tags simplify searches for related services, process groups, and hosts. They also facilitate the collection of related metrics into meaningful groups for analysis. Tags can also be used for all types of entities across your environment for the purpose of alerting, charting and window maintenance. For more details on defining maintenance windows via tags, see [How to define a maintenance window](/managed/analyze-explore-automate/notifications-and-alerting/maintenance-windows/define-maintenance-window "Create maintenance windows and define their scope.").
 
@@ -46,8 +45,8 @@ To list all tags manually applied to a certain entity (such as an application, b
 
 You can manually apply and clear tags:
 
-* From the **Manually applied tags** pageâbest for manually applying or clearing tags on multiple entities
-* From the entity pageâhandy for when you're working with a specific entity such as a single host
+* From the **Manually applied tags** page—best for manually applying or clearing tags on multiple entities
+* From the entity page—handy for when you're working with a specific entity such as a single host
 
 #### Manual tagging of multiple entities
 
@@ -93,9 +92,9 @@ To manually apply or clear a tag for multiple entities
 
    All/Tagged/Untagged options
 
-   * Allâlist all components of the selected type, regardless of whether the selected tag has been applied to them
-   * Taggedâlist all components of the selected type to which the selected tag has already been applied
-   * Untaggedâall components of the selected type to which the selected tag has NOT already been applied
+   * All—list all components of the selected type, regardless of whether the selected tag has been applied to them
+   * Tagged—list all components of the selected type to which the selected tag has already been applied
+   * Untagged—all components of the selected type to which the selected tag has NOT already been applied
 6. Optional Enter a value in the edit box.
 
    Value
@@ -128,7 +127,7 @@ For example, to tag a single host manually
 Automatic tagging is rule based:
 
 * Tags are applied automatically to new entities that match rules you've defined.
-* Automatically applied tags canât be removed manually from individual services, process groups, process group instances, applications, or hosts.
+* Automatically applied tags can’t be removed manually from individual services, process groups, process group instances, applications, or hosts.
 
 You can also set up automated tagging of the entities in your environment using:
 
@@ -153,6 +152,8 @@ To automatically apply a tag
 
    Page showing how to create rule for a new tag.
 9. You can also propagate a rule to the underlying entities (such as process groups and hosts in the case of services, or hosts in the case of process groups) by selecting the corresponding check boxes at the bottom of the rule (see image above).
+
+   Some entity types additionally inherit tags through fixed, built-in propagation paths that don't require any UI configuration. For details, see [Implicit propagation of tagging and management-zone rules](/managed/manage/tags-and-metadata/basic-concepts/implicit-propagation-of-tagging-and-management-zone-rules "Learn which entity types automatically inherit tags and management zones through implicit propagation, and what to watch out for.").
 10. Select the **Preview** button to verify the results returned by the specific rule. Note that to be tagged, an entity must meet all the specified conditions of a rule.
 11. Select **Create rule**. You can define multiple rules for each tag. Rules are executed in order. You can edit or delete a defined rule or activate/deactivate a rule at any time via the **Disable/Enable** switch.
 12. To save your tag, select **Save changes** at the bottom right corner of the page.
@@ -305,7 +306,7 @@ The example below shows a rule that applies a tag to all **Azure websites** serv
 
 Service tagging example
 
-The image below shows a rule that tags specific process groups through the selection of the check boxâthereby additionally applying the tag to the underlying hosts.
+The image below shows a rule that tags specific process groups through the selection of the check box—thereby additionally applying the tag to the underlying hosts.
 
 ![Page showing tagging rule editor.](https://dt-cdn.net/images/image-2-2834-50b14ed53f-2834-54a273c2f0.png)
 
@@ -356,3 +357,4 @@ The next time a problem notification is sent out, Dynatrace will check to see if
 ## Related topics
 
 * [Filter tiles](/managed/analyze-explore-automate/dashboards-classic/charts-and-tiles/filter-charts "Learn how to use powerful filtering options to set up dashboards in support of the unique monitoring needs of each of your organization's teams.")
+* [Implicit propagation of tagging and management-zone rules](/managed/manage/tags-and-metadata/basic-concepts/implicit-propagation-of-tagging-and-management-zone-rules "Learn which entity types automatically inherit tags and management zones through implicit propagation, and what to watch out for.")

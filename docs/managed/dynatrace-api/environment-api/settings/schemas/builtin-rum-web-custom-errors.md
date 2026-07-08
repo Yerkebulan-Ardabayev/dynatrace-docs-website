@@ -1,7 +1,6 @@
 ---
 title: Settings API - Custom errors schema table
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/settings/schemas/builtin-rum-web-custom-errors
-scraped: 2026-05-12T11:47:19.603264
 ---
 
 # Settings API - Custom errors schema table
@@ -13,7 +12,7 @@ scraped: 2026-05-12T11:47:19.603264
 ### Custom errors (`builtin:rum.web.custom-errors)`
 
 Create rules to capture custom errors and include them in your Apdex calculations or Davis AI problem detection and analysis.
-For more details, see [Configure custom errorsï»¿](https://dt-url.net/sh220gh).
+For more details, see [Configure custom errors﻿](https://dt-url.net/sh220gh).
 
 | Schema ID | Schema groups | Scope |
 | --- | --- | --- |
@@ -54,4 +53,4 @@ To execute this request, you need an access token with **Read settings** (`setti
 | --- | --- | --- | --- |
 | Capture this error `capture` | boolean | - | Required |
 | Include error in Apdex calculations `impactApdex` | boolean | - | Required |
-| Include error in Davis AI problem detection and analysis `considerForAi` | boolean | [View more detailsï»¿](https://dt-url.net/hd580p2k) | Required |
+| Include error in Davis AI problem detection and analysis `considerForAi` | boolean | [View more details﻿](https://dt-url.net/hd580p2k) | Required |

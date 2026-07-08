@@ -1,7 +1,6 @@
 ---
 title: Account Management permissions
 source: https://docs.dynatrace.com/managed/manage/identity-access-management/permission-management/account-management-permissions
-scraped: 2026-05-12T11:13:38.272826
 ---
 
 # Account Management permissions
@@ -45,7 +44,7 @@ Permissions are cumulative and are granted to the user using the appropriate Ide
 
 Managed deployments manage permissions through the Cluster Management Console, which allows you to configure the account-level permissions needed to grant access to license and Lens capabilities.
 
-A Dynatrace Managed user that needs access to the Account Management portal must have an active Dynatrace user accountâwhich is used to access online Community and Support resourcesâand the correct permissions to access their account.
+A Dynatrace Managed user that needs access to the Account Management portal must have an active Dynatrace user account—which is used to access online Community and Support resources—and the correct permissions to access their account.
 
 To provide a user with a Dynatrace user account, a **cluster administrator** must invite the user to support resources.
 
@@ -58,7 +57,7 @@ To provide a user with a Dynatrace user account, a **cluster administrator** mus
 
    An emailed invitation expires after 24 hours.
 
-Alternatively, your cluster administrator can enable a global setting to automatically invite new users to the Dynatrace Community. For details, see the [Dynatrace Community settings](/managed/managed-cluster/configuration/configure-cluster-preferences#dynatrace-community "Configure cluster preferences and privacy settings") page.
+Alternatively, your cluster administrator can enable a global setting to automatically invite new users to the Dynatrace Community. For details, see the [Dynatrace Community settings](/managed/managed-cluster/configuration/configure-cluster-preferences#dynatrace-community "Configure cluster preferences to manage proactive support reporting, remote access, data privacy, domain name, and community settings for your Managed Cluster.") page.
 
 To provide access to Account Management, a **Cluster administrator** must add the user to a **group** with either the permission **Edit billing & account info** or **Access account**, which is referred to as the **View account** permission in the [permissions table](#permissions-table) above.
 

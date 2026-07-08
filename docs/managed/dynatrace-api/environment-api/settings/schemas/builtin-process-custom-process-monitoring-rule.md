@@ -1,7 +1,6 @@
 ---
 title: Settings API - Custom process monitoring rules schema table
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/settings/schemas/builtin-process-custom-process-monitoring-rule
-scraped: 2026-05-12T11:41:20.465593
 ---
 
 # Settings API - Custom process monitoring rules schema table
@@ -14,7 +13,7 @@ scraped: 2026-05-12T11:41:20.465593
 
 Dynatrace OneAgent automatically monitors all process groups detected in your environment (processes running during OneAgent installation must be restarted to initiate monitoring).
 
-OneAgent additionally provides deep monitoring for all processes that it can monitor at the request- and PurePath levels. Define process monitoring rules below if you donât want to monitor all your processes automatically, or if you need to define an exception for specific processes.
+OneAgent additionally provides deep monitoring for all processes that it can monitor at the request- and PurePath levels. Define process monitoring rules below if you don’t want to monitor all your processes automatically, or if you need to define an exception for specific processes.
 
 | Schema ID | Schema groups | Scope |
 | --- | --- | --- |

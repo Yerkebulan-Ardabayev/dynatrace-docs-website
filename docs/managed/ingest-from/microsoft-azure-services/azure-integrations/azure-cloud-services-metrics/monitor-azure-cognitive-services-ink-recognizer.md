@@ -1,7 +1,6 @@
 ---
 title: Azure Cognitive Services - Ink Recognizer monitoring (deprecated)
 source: https://docs.dynatrace.com/managed/ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics/monitor-azure-cognitive-services-ink-recognizer
-scraped: 2026-05-12T11:26:47.322062
 ---
 
 # Azure Cognitive Services - Ink Recognizer monitoring (deprecated)

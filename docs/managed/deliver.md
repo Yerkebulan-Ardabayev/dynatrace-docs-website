@@ -1,7 +1,6 @@
 ---
 title: Software Delivery
 source: https://docs.dynatrace.com/managed/deliver
-scraped: 2026-05-12T11:03:32.603382
 ---
 
 # Software Delivery
@@ -16,7 +15,7 @@ Empower DevOps platform engineers, SREs, and development teams to deliver higher
 
 [### Release monitoring
 
-Release monitoring enables an easy evaluation of the performance of individual release versions.](/managed/deliver/release-monitoring "Detect versions of monitored applications and analyze the software product lifecycle of your releases.")[### Load testing tools integrations
+Release monitoring enables an easy evaluation of the performance of individual release versions.](/managed/deliver/release-monitoring-classic "Detect versions of monitored applications and analyze the software product lifecycle of your releases.")[### Load testing tools integrations
 
 By integrating Dynatrace into your existing load testing process, you can stop broken builds in your delivery pipeline earlier.](/managed/deliver/test-automation "Learn how you can integrate Dynatrace into your load testing process.")[![Ownership](https://dt-cdn.net/images/ownership-w-background-512-99cc966544.webp "Ownership")
 

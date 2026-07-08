@@ -1,7 +1,6 @@
 ---
 title: Plugins API - GET states of an ActiveGate plugin
 source: https://docs.dynatrace.com/managed/dynatrace-api/configuration-api/plugins-api/get-a-plugin-state
-scraped: 2026-05-12T11:20:54.392962
 ---
 
 # Plugins API - GET states of an ActiveGate plugin
@@ -50,7 +49,7 @@ A list of plugin states.
 
 | Element | Type | Description |
 | --- | --- | --- |
-| states | [PluginState[]](#openapi-definition-PluginState) | A list of plugin states. |
+| states | [PluginState](#openapi-definition-PluginState)[] | A list of plugin states. |
 
 #### The `PluginState` object
 

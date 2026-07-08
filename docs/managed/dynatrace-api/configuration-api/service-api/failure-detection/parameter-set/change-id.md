@@ -1,7 +1,6 @@
 ---
 title: Failure detection API - PUT change the ID of a parameter set
 source: https://docs.dynatrace.com/managed/dynatrace-api/configuration-api/service-api/failure-detection/parameter-set/change-id
-scraped: 2026-05-12T11:16:12.579289
 ---
 
 # Failure detection API - PUT change the ID of a parameter set
@@ -91,7 +90,7 @@ This is a model of the request body, showing the possible elements. It has to be
 | Element | Type | Description |
 | --- | --- | --- |
 | code | integer | The HTTP status code |
-| constraintViolations | [ConstraintViolation[]](#openapi-definition-ConstraintViolation) | A list of constraint violations |
+| constraintViolations | [ConstraintViolation](#openapi-definition-ConstraintViolation)[] | A list of constraint violations |
 | message | string | The error message |
 
 #### The `ConstraintViolation` object

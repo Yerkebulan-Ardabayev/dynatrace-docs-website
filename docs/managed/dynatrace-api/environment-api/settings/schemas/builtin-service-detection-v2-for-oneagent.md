@@ -1,7 +1,6 @@
 ---
 title: Settings API - Service Detection v2 for OneAgent schema table
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/settings/schemas/builtin-service-detection-v2-for-oneagent
-scraped: 2026-05-12T11:48:55.475559
 ---
 
 # Settings API - Service Detection v2 for OneAgent schema table
@@ -12,9 +11,9 @@ scraped: 2026-05-12T11:48:55.475559
 
 ### Service Detection v2 for OneAgent (`builtin:service-detection-v2-for-oneagent)`
 
-Enabling SDv2 for OneAgent will use the same attribute-based rules as OpenTelemetry for detecting services, endpoints, and failures. Refer to the [SDv2 documentationï»¿](https://dt-url.net/5e0309z) for more information.
+Enabling SDv2 for OneAgent will use the same attribute-based rules as OpenTelemetry for detecting services, endpoints, and failures. Refer to the [SDv2 documentation﻿](https://dt-url.net/5e0309z) for more information.
 
-This is a **Public Preview** feature. You must complete the [access request form and agree to preview termsï»¿](https://dt-url.net/cb300tiz) before enabling.
+This is a **Public Preview** feature. You must complete the [access request form and agree to preview terms﻿](https://dt-url.net/cb300tiz) before enabling.
 
 **Important**
 
@@ -41,7 +40,7 @@ To execute this request, you need an access token with **Read settings** (`setti
 | Property | Type | Description | Required |
 | --- | --- | --- | --- |
 | Enable Service detection v2 for Kubernetes workloads `enableSDV2ForKubernetesWorkloads` | boolean | - | Required |
-| Matching condition for Kubernetes workloads `condition` | text | Limits the opt-inâs scope by filtering with [DQL matcherï»¿](https://dt-url.net/l603wby) conditions on a selected set of attributes.  Service detection v2 is only applied if this condition matches. Allowed attributes: Resource attributes, and custom attributes. If empty, the condition will always match. | Required |
+| Matching condition for Kubernetes workloads `condition` | text | Limits the opt-in’s scope by filtering with [DQL matcher﻿](https://dt-url.net/l603wby) conditions on a selected set of attributes.  Service detection v2 is only applied if this condition matches. Allowed attributes: Resource attributes, and custom attributes. If empty, the condition will always match. | Required |
 | Enable Service detection v2 for FaaS `enableSDV2ForFaaS` | boolean | - | Optional |
-| Matching condition for FaaS `conditionForFaaS` | text | Limits the opt-inâs scope by filtering with [DQL matcherï»¿](https://dt-url.net/l603wby) conditions on a selected set of attributes.  Service detection v2 is only applied if this condition matches. Allowed attributes: Resource attributes, and custom attributes. If empty, the condition will always match. | Required |
-| Matching condition for any workload `conditionForAnyWorkload` | text | Limits the opt-inâs scope by filtering with [DQL matcherï»¿](https://dt-url.net/l603wby) conditions on a selected set of attributes. Resource attributes must be present.  Service detection v2 is only applied if this condition matches. Allowed attributes: Resource attributes, and custom attributes. If empty, the condition will always match. If the set of resource attributes is missing or empty, the condition will be considered not to match. | Required |
+| Matching condition for FaaS `conditionForFaaS` | text | Limits the opt-in’s scope by filtering with [DQL matcher﻿](https://dt-url.net/l603wby) conditions on a selected set of attributes.  Service detection v2 is only applied if this condition matches. Allowed attributes: Resource attributes, and custom attributes. If empty, the condition will always match. | Required |
+| Matching condition for any workload `conditionForAnyWorkload` | text | Limits the opt-in’s scope by filtering with [DQL matcher﻿](https://dt-url.net/l603wby) conditions on a selected set of attributes. Resource attributes must be present.  Service detection v2 is only applied if this condition matches. Allowed attributes: Resource attributes, and custom attributes. If empty, the condition will always match. If the set of resource attributes is missing or empty, the condition will be considered not to match. | Required |

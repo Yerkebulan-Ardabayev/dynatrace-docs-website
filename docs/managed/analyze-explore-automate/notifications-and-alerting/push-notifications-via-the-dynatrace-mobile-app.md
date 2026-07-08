@@ -1,7 +1,6 @@
 ---
 title: Push notifications via the Dynatrace mobile app
 source: https://docs.dynatrace.com/managed/analyze-explore-automate/notifications-and-alerting/push-notifications-via-the-dynatrace-mobile-app
-scraped: 2026-05-12T11:36:44.427630
 ---
 
 # Push notifications via the Dynatrace mobile app
@@ -23,7 +22,7 @@ As part of our ongoing commitment to delivering a streamlined and consistent use
 * **Sunset date**: June 30, 2026
 * **Support ends**: June 30, 2026
 
-#### Whatâs changing
+#### What’s changing
 
 The Dynatrace native mobile apps will no longer be available for download or supported after the sunset date.
 
@@ -51,11 +50,11 @@ For assistance with transitioning or setting up integrations, please see the Doc
 
 The rest of this page refers to the Dynatrace mobile app, which has a sunset date of June 30, 2026. See above for details.
 
-The Dynatrace mobile app is available for [iOSï»¿](https://dt-url.net/ue02yx1) and [Androidï»¿](https://dt-url.net/uf22yp6) devices. Its primary function is to deliver push notifications for issues detected within your monitoring environments. Notifications are fetched and updated in real-time, ensuring you stay informed about ongoing problems. This makes the mobile app a convenient and efficient way to manage alerts and monitor your environments when you're on the go.
+The Dynatrace mobile app is available for [iOS﻿](https://dt-url.net/ue02yx1) and [Android﻿](https://dt-url.net/uf22yp6) devices. Its primary function is to deliver push notifications for issues detected within your monitoring environments. Notifications are fetched and updated in real-time, ensuring you stay informed about ongoing problems. This makes the mobile app a convenient and efficient way to manage alerts and monitor your environments when you're on the go.
 
 Push notifications for each environment are filtered based on the management zones for which the user has at least read permissions. If a user lacks read permissions for a specific management zone, no push notifications will be sent for that zone.
 
-In addition to the management zone filter for individual users, push notifications are also filtered by the environmentâs **Default alerting profile**. Modifying the **Default alerting profile** affects all problem push notifications sent to all users within the environment.
+In addition to the management zone filter for individual users, push notifications are also filtered by the environment’s **Default alerting profile**. Modifying the **Default alerting profile** affects all problem push notifications sent to all users within the environment.
 
 **Key Features**
 
@@ -82,23 +81,23 @@ This guide is written for:
 ### Android
 
 * Android 9.0+
-* [Dynatrace mobile app for Androidï»¿](https://dt-url.net/uf22yp6) installed on your mobile device. Ensure that the device has permanent access to the Internet.
+* [Dynatrace mobile app for Android﻿](https://dt-url.net/uf22yp6) installed on your mobile device. Ensure that the device has permanent access to the Internet.
 
 ### iOS
 
 * iOS 16+
-* [Dynatrace mobile app for iOSï»¿](https://dt-url.net/ue02yx1) installed on your mobile device. Ensure that the device has permanent access to the Internet.
+* [Dynatrace mobile app for iOS﻿](https://dt-url.net/ue02yx1) installed on your mobile device. Ensure that the device has permanent access to the Internet.
 
 ### Network
 
 * If your Dynatrace Managed server is running behind a corporate firewall, you need to set up a Cluster ActiveGate that is **accessible from the internet**. The Cluster ActiveGate serves the REST API required for the mobile app. For more information on routing OneAgent traffic to Dynatrace, see [Route OneAgent traffic to Dynatrace, monitor cloud environments and remote technologies using extensions](/managed/ingest-from/dynatrace-activegate/capabilities/routing-monitoring-purpose "Learn about the routing and monitoring capabilities and uses of ActiveGate.").
 * Your firewall must allow incoming network connections to the configured Cluster ActiveGate domain on the configured port.
 * If there's a firewall in front of the Cluster ActiveGate, it must send the correct security certificates.
-* Use the [DigiCert checkerï»¿](https://www.digicert.com/help/) to verify that the certificate of your publicly accessible ActiveGate passes all validation checks. iOS and Android block unsecured communication requests without a valid domain certificate.
+* Use the [DigiCert checker﻿](https://www.digicert.com/help/) to verify that the certificate of your publicly accessible ActiveGate passes all validation checks. iOS and Android block unsecured communication requests without a valid domain certificate.
 
 ## Mobile app API access token
 
-The mobile app uses an API access token with the **Mobile** (`mobile`) scope assigned to it. To review the token, go to [user menu](/managed/discover-dynatrace/get-started/dynatrace-ui#user "Navigate the Dynatrace Managed platform") > **Personal Access Tokens**.
+The mobile app uses an API access token with the **Mobile** (`mobile`) scope assigned to it. To review the token, go to [user menu](/managed/discover-dynatrace/get-started/dynatrace-ui#user "Explore Dynatrace Managed, including navigation, browser requirements, timeframe selection, metric notation, and accessibility.") > **Personal Access Tokens**.
 
 ## Dynatrace mobile app communication with Dynatrace Managed
 
@@ -154,8 +153,8 @@ Select a problem to see a summary of the issue and details about all events coll
 
 Dynatrace mobile app problem details
 
-* **Show in Webview**âAvailable only in the Android version, as Apple store policies do not allow embedded Web links within native iOS apps.
-* **View all**âExpands the entire affected topology for large problems.
+* **Show in Webview**—Available only in the Android version, as Apple store policies do not allow embedded Web links within native iOS apps.
+* **View all**—Expands the entire affected topology for large problems.
 
 ### Step 4 View vulnerability details
 

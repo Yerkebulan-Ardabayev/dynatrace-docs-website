@@ -1,7 +1,6 @@
 ---
 title: Deploy Dynatrace alongside Istio
 source: https://docs.dynatrace.com/managed/ingest-from/setup-on-k8s/guides/deployment-and-configuration/istio-deployment
-scraped: 2026-05-12T12:09:20.464446
 ---
 
 # Deploy Dynatrace alongside Istio
@@ -26,7 +25,7 @@ For more information on communication of Dynatrace Operator and its managed comp
 This guide covers two predefined configurations of Istio, chosen for their simplicity and common use cases. While Istio offers extensive customization options, these configurations serve as a starting point. This section explains the configuration scenarios and provides guidance on selecting the right Dynatrace setup that best suits your needs. Note that Dynatrace does not impose any limitations on how you configure Istio.
 
 * **Default Istio configuration** Recommended  
-  This represents the default deployment of Istio, meaning no special mesh configuration. It's basically the result of following the official [Istio installation guideï»¿](https://dt-url.net/hm03u3r).
+  This represents the default deployment of Istio, meaning no special mesh configuration. It's basically the result of following the official [Istio installation guide﻿](https://dt-url.net/hm03u3r).
   This means Istio is installed either via Helm or `istioctl` in sidecar mode with the CNI node agent.
 
   Follow the [setup guide for the default Istio configuration](#setup-guide-for-default-istio-configuration) if Istio is deployed accordingly.
@@ -122,7 +121,7 @@ This enables all workloads and OneAgents to connect to the ActiveGate instance a
 
 To minimize the number of URLs, and therefore DNS queries, make sure the network zones in your Dynatrace environment are configured correctly. For a detailed setup description, see [Kubernetes network zone docs](/managed/ingest-from/setup-on-k8s/guides/networking-security-compliance/network-configurations/network-zones#kubernetes-cluster-with-restricted-egress "Set up and use network zones in Kubernetes environments with the Dynatrace Operator.").
 
-If this is not possible or sufficient in your environment, see [Istio DNS proxyingï»¿](https://dt-url.net/ab23uvy) for another possible mitigation.
+If this is not possible or sufficient in your environment, see [Istio DNS proxying﻿](https://dt-url.net/ab23uvy) for another possible mitigation.
 
 ### How `enableIstio` works
 
@@ -398,7 +397,7 @@ When using Istio configured to `REGISTRY_ONLY` mode with the `codeModulesImage` 
 
 Istio ambient mode does not support metric merging as it requires a sidecar proxy. However, in ambient mode it's possible for the ActiveGate to directly connect to the pod IPs and scrape the configured targets. Depending on your mTLS policy, this might only be possible for pods inside the mesh if the ActiveGate is also part of the mesh.
 
-Istio provides a feature called [metric mergingï»¿](https://dt-url.net/5y43ufx) that uses the (widely adopted) `prometheus.io/...` annotations to configure an additional endpoint in the sidecar proxy that serves Istio and Envoy metrics as well as the application metrics defined by the annotations. This newly created endpoint is excepted from mTLS and therefore reachable from outside the mesh despite having mTLS in strict mode.
+Istio provides a feature called [metric merging﻿](https://dt-url.net/5y43ufx) that uses the (widely adopted) `prometheus.io/...` annotations to configure an additional endpoint in the sidecar proxy that serves Istio and Envoy metrics as well as the application metrics defined by the annotations. This newly created endpoint is excepted from mTLS and therefore reachable from outside the mesh despite having mTLS in strict mode.
 
 You can now point the Dynatrace annotations to this endpoint to scrape metrics of Istio and the application. If you don't want to scrape the additional Istio and Envoy metrics, you can exclude them by using the `metrics.dynatrace.com/filter` annotation and excluding `istio_*` and `envoy_*` metrics.
 

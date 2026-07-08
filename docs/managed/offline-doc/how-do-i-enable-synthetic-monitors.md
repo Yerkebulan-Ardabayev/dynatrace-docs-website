@@ -1,7 +1,6 @@
 ---
 title: How do I enable synthetic monitors?
 source: https://docs.dynatrace.com/managed/offline-doc/how-do-i-enable-synthetic-monitors
-scraped: 2026-05-12T11:25:04.925366
 ---
 
 # How do I enable synthetic monitors?

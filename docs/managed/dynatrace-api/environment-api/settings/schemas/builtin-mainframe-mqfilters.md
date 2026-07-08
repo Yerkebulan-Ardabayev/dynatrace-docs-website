@@ -1,7 +1,6 @@
 ---
 title: Settings API - IBM MQ filters schema table
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/settings/schemas/builtin-mainframe-mqfilters
-scraped: 2026-05-12T11:41:19.274971
 ---
 
 # Settings API - IBM MQ filters schema table

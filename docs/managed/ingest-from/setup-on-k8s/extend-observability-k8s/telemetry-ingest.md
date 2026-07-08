@@ -1,7 +1,6 @@
 ---
 title: Enable Dynatrace telemetry ingest endpoints
 source: https://docs.dynatrace.com/managed/ingest-from/setup-on-k8s/extend-observability-k8s/telemetry-ingest
-scraped: 2026-05-12T12:03:43.598049
 ---
 
 # Enable Dynatrace telemetry ingest endpoints
@@ -14,7 +13,7 @@ Dynatrace Operator version 1.6+
 
 Enable Dynatrace telemetry endpoints in Kubernetes for cluster-local data ingest.
 
-* Ingest data via [OTLPï»¿](https://opentelemetry.io/docs/specs/otel/protocol/), [Jaegerï»¿](https://www.jaegertracing.io/), [StatsDï»¿](https://github.com/statsd/statsd) or [Zipkinï»¿](https://zipkin.io/) endpoints
+* Ingest data via [OTLP﻿](https://opentelemetry.io/docs/specs/otel/protocol/), [Jaeger﻿](https://www.jaegertracing.io/), [StatsD﻿](https://github.com/statsd/statsd) or [Zipkin﻿](https://zipkin.io/) endpoints
 * Analyze context-rich data with built-in apps, DQL, Notebooks and Dashboards
 
 ## Prerequisites
@@ -196,7 +195,7 @@ The following ports are open for telemetry data ingestion:
 
 ### Use HTTPS endpoints
 
-By default, the ingest endpoints operate in HTTP mode. If you want to encrypt the telemetry traffic by using HTTPS, you can reference a [Kubernetes TLS secretï»¿](https://dt-url.net/yw03zsm) via [`.spec.telemetryIngest.tlsRefName`](/managed/ingest-from/setup-on-k8s/reference/dynakube-parameters "List the available parameters for setting up Dynatrace Operator on Kubernetes."). The ingest endpoints will then be configured to use referenced certificates and listen for HTTPS.
+By default, the ingest endpoints operate in HTTP mode. If you want to encrypt the telemetry traffic by using HTTPS, you can reference a [Kubernetes TLS secret﻿](https://dt-url.net/yw03zsm) via [`.spec.telemetryIngest.tlsRefName`](/managed/ingest-from/setup-on-k8s/reference/dynakube-parameters "List the available parameters for setting up Dynatrace Operator on Kubernetes."). The ingest endpoints will then be configured to use referenced certificates and listen for HTTPS.
 
 Example for an OpenTelemetry instrumented application using HTTPS
 
@@ -362,7 +361,7 @@ storage: 1Gi
 
 Default storage class
 
-Please ensure a [default storage classï»¿](https://kubernetes.io/docs/concepts/storage/persistent-volumes/#class-1) is defined. Otherwise, the PersistentVolumeClaim of the ActiveGate cannot be provisioned.
+Please ensure a [default storage class﻿](https://kubernetes.io/docs/concepts/storage/persistent-volumes/#class-1) is defined. Otherwise, the PersistentVolumeClaim of the ActiveGate cannot be provisioned.
 
 A custom PersistentVolumeClaim can be configured in [`.spec.activegate.volumeClaimTemplate`](/managed/ingest-from/setup-on-k8s/reference/dynakube-parameters "List the available parameters for setting up Dynatrace Operator on Kubernetes.").
 

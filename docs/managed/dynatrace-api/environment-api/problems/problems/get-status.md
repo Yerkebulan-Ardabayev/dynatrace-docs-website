@@ -1,7 +1,6 @@
 ---
 title: Problems API - GET count
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/problems/problems/get-status
-scraped: 2026-05-12T12:07:58.972508
 ---
 
 # Problems API - GET count
@@ -71,7 +70,7 @@ The count of open problems in your environment.
 | Element | Type | Description |
 | --- | --- | --- |
 | code | integer | The HTTP status code |
-| constraintViolations | [ConstraintViolation[]](#openapi-definition-ConstraintViolation) | A list of constraint violations |
+| constraintViolations | [ConstraintViolation](#openapi-definition-ConstraintViolation)[] | A list of constraint violations |
 | message | string | The error message |
 
 #### The `ConstraintViolation` object
@@ -270,4 +269,4 @@ https://mySampleEnv.live.dynatrace.com/api/v1/problem/status
 
 ## Related topics
 
-* [DavisÂ® AI](/managed/dynatrace-intelligence "Get familiar with the capabilities of Davis AI.")
+* [Davis® AI](/managed/dynatrace-intelligence "Learn how Davis® AI detects performance anomalies, identifies root causes, and uses AI models for adaptive thresholds across your environment.")

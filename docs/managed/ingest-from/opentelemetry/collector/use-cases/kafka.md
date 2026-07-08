@@ -1,7 +1,6 @@
 ---
 title: Buffer data via Kafka with OTel Collector
 source: https://docs.dynatrace.com/managed/ingest-from/opentelemetry/collector/use-cases/kafka
-scraped: 2026-05-12T12:10:52.144934
 ---
 
 # Buffer data via Kafka with OTel Collector
@@ -21,7 +20,7 @@ This helps to:
 * Survive network and backend failures.
 * Enable fan-out to multiple downstream systems.
 
-You can reliably perform the necessary enrichment on high-volume, bursty telemetryâall while keeping your data streams protected.
+You can reliably perform the necessary enrichment on high-volume, bursty telemetry—all while keeping your data streams protected.
 
 ## Overview
 
@@ -29,7 +28,7 @@ You can configure Kafka exporter, Kafka receiver, and Kafka Metrics receiver com
 
 * Exporter: Write OTLP data as Kafka messages on a per-signal basis (`otlp_logs`, `otlp_metrics`, `otlp_spans`).
 * Receiver: Consume traces, metrics, and logs from Apache Kafka topics, and then forward these to backends such as Dynatrace.
-* Kafka metrics receiver: Collect Kafkaâs own operational metrics (for example, `broker count`) via OTLP and export them to Dynatrace.
+* Kafka metrics receiver: Collect Kafka’s own operational metrics (for example, `broker count`) via OTLP and export them to Dynatrace.
 
 Note that running Kafka may introduce additional end-to-end latencies, operational overhead, and potential bottlenecks.
 

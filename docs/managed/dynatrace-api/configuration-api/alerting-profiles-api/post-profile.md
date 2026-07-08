@@ -1,7 +1,6 @@
 ---
 title: Alerting profiles API - POST a profile
 source: https://docs.dynatrace.com/managed/dynatrace-api/configuration-api/alerting-profiles-api/post-profile
-scraped: 2026-05-12T12:06:32.138094
 ---
 
 # Alerting profiles API - POST a profile
@@ -45,11 +44,11 @@ Configuration of an alerting profile.
 | Element | Type | Description | Required |
 | --- | --- | --- | --- |
 | displayName | string | The name of the alerting profile, displayed in the UI. | Required |
-| eventTypeFilters | [AlertingEventTypeFilter[]](#openapi-definition-AlertingEventTypeFilter) | The list of event filters.  For all filters that are *negated* inside of these event filters, that is all "Predefined" as well as "Custom" (Title and/or Description) ones the AND logic applies. For all *non-negated* ones the OR logic applies. Between these two groups, negated and non-negated, the AND logic applies.  If you specify both severity rule and event filter, the AND logic applies. | Optional |
+| eventTypeFilters | [AlertingEventTypeFilter](#openapi-definition-AlertingEventTypeFilter)[] | The list of event filters.  For all filters that are *negated* inside of these event filters, that is all "Predefined" as well as "Custom" (Title and/or Description) ones the AND logic applies. For all *non-negated* ones the OR logic applies. Between these two groups, negated and non-negated, the AND logic applies.  If you specify both severity rule and event filter, the AND logic applies. | Optional |
 | id | string | The ID of the alerting profile. | Optional |
 | metadata | [ConfigurationMetadata](#openapi-definition-ConfigurationMetadata) | Metadata useful for debugging | Optional |
 | mzId | string | The ID of the management zone to which the alerting profile applies. | Optional |
-| rules | [AlertingProfileSeverityRule[]](#openapi-definition-AlertingProfileSeverityRule) | A list of severity rules.  The rules are evaluated from top to bottom. The first matching rule applies and further evaluation stops.  If you specify both severity rule and event filter, the AND logic applies. | Optional |
+| rules | [AlertingProfileSeverityRule](#openapi-definition-AlertingProfileSeverityRule)[] | A list of severity rules.  The rules are evaluated from top to bottom. The first matching rule applies and further evaluation stops.  If you specify both severity rule and event filter, the AND logic applies. | Optional |
 
 #### The `AlertingEventTypeFilter` object
 
@@ -126,7 +125,7 @@ Configuration of the tag filtering of the alerting profile.
 | Element | Type | Description | Required |
 | --- | --- | --- | --- |
 | includeMode | string | The filtering mode:  * `INCLUDE_ANY`: The rule applies to monitored entities that have at least one of the specified tags. You can specify up to 100 tags. * `INCLUDE_ALL`: The rule applies to monitored entities that have **all** of the specified tags. You can specify up to 10 tags. * `NONE`: The rule applies to all monitored entities. The element can hold these values * `INCLUDE_ALL` * `INCLUDE_ANY` * `NONE` | Required |
-| tagFilters | [TagFilter[]](#openapi-definition-TagFilter) | A list of required tags. | Optional |
+| tagFilters | [TagFilter](#openapi-definition-TagFilter)[] | A list of required tags. | Optional |
 
 #### The `TagFilter` object
 
@@ -362,7 +361,7 @@ The short representation of a Dynatrace entity.
 | Element | Type | Description |
 | --- | --- | --- |
 | code | integer | The HTTP status code |
-| constraintViolations | [ConstraintViolation[]](#openapi-definition-ConstraintViolation) | A list of constraint violations |
+| constraintViolations | [ConstraintViolation](#openapi-definition-ConstraintViolation)[] | A list of constraint violations |
 | message | string | The error message |
 
 #### The `ConstraintViolation` object
@@ -493,7 +492,7 @@ To learn how to obtain and use it, see [Tokens and authentication](/managed/disc
 | Element | Type | Description |
 | --- | --- | --- |
 | code | integer | The HTTP status code |
-| constraintViolations | [ConstraintViolation[]](#openapi-definition-ConstraintViolation) | A list of constraint violations |
+| constraintViolations | [ConstraintViolation](#openapi-definition-ConstraintViolation)[] | A list of constraint violations |
 | message | string | The error message |
 
 #### The `ConstraintViolation` object

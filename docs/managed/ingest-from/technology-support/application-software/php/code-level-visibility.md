@@ -1,7 +1,6 @@
 ---
 title: Code-level visibility for PHP
 source: https://docs.dynatrace.com/managed/ingest-from/technology-support/application-software/php/code-level-visibility
-scraped: 2026-05-12T12:03:47.392564
 ---
 
 # Code-level visibility for PHP

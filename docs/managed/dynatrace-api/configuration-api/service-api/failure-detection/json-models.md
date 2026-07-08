@@ -1,7 +1,6 @@
 ---
 title: Failure detection API - JSON models
 source: https://docs.dynatrace.com/managed/dynatrace-api/configuration-api/service-api/failure-detection/json-models
-scraped: 2026-05-12T12:02:27.166760
 ---
 
 # Failure detection API - JSON models

@@ -1,7 +1,6 @@
 ---
 title: Settings API - Span capturing schema table
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/settings/schemas/builtin-span-capturing
-scraped: 2026-05-12T11:43:10.319873
 ---
 
 # Settings API - Span capturing schema table

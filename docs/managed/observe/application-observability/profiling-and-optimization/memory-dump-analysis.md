@@ -1,7 +1,6 @@
 ---
 title: Analyze memory dumps
 source: https://docs.dynatrace.com/managed/observe/application-observability/profiling-and-optimization/memory-dump-analysis
-scraped: 2026-05-12T11:21:41.640143
 ---
 
 # Analyze memory dumps
@@ -26,7 +25,7 @@ Memory dump page
 
 * To trigger memory dumps, you need the [**View sensitive request data**](/managed/manage/identity-access-management/permission-management/role-based-permissions#environment "Role-based permissions") user permission.
 * To store memory dumps, your application server must have adequate space.
-* To access persisted memory dumps via Dynatrace web UI, [configure an ActiveGate to store memory dumps in a centralized location](/managed/observe/application-observability/profiling-and-optimization/memory-dump-analysis/configure-an-activegate-for-memory-dump-storage "Learn how to enable storage of memory dumps on an ActiveGate."). To learn more about memory dump retention time, see [Data retention periods](/managed/manage/data-privacy-and-security/data-privacy/data-retention-periods#memory-dumps "Check retention times for various data types.").
+* To access persisted memory dumps via Dynatrace web UI, [configure an ActiveGate to store memory dumps in a centralized location](/managed/observe/application-observability/profiling-and-optimization/memory-dump-analysis/configure-an-activegate-for-memory-dump-storage "Learn how to enable storage of memory dumps on an ActiveGate."). To learn more about memory dump retention time, see [Data retention periods](/managed/manage/data-privacy-and-security/data-privacy/data-retention-periods#memory-dumps "Review default and configurable retention periods for service, RUM Classic, synthetic, Log Monitoring, metric, diagnostic, and security data in Dynatrace Managed.").
 
 ## Trigger memory dumps
 
@@ -34,14 +33,14 @@ To trigger a memory dump
 
 1. Navigate to the **Memory dumps** page:
 
-   * On the page of the entity that you want to analyze, select **More** (**â¦**) > **Memory dump details**.
+   * On the page of the entity that you want to analyze, select **More** (**…**) > **Memory dump details**.
    * Go to **Profiling & Optimization** > **Memory dumps**.
 2. Select the process you want to analyze and select **Trigger new dump** to generate a new memory dump.  
    It takes a few minutes to generate a memory dump. The time required varies widely based on application type. Java applications that have multiple GBs of heap memory may take several minutes; smaller dumps are available almost immediately.
 
    Java
 
-   Dynatrace uses the [JVM Tool Interface (JVM TI)ï»¿](https://docs.oracle.com/javase/8/docs/platform/jvmti/jvmti.html) to generate memory dumps. For this reason, your JVM may stall during memory-dump generation. Please restart your Java-based application following trigger of a memory dump.
+   Dynatrace uses the [JVM Tool Interface (JVM TI)﻿](https://docs.oracle.com/javase/8/docs/platform/jvmti/jvmti.html) to generate memory dumps. For this reason, your JVM may stall during memory-dump generation. Please restart your Java-based application following trigger of a memory dump.
 3. After a few minutes, refresh the page. The newly created dump now appears in the list.
 
 ## Download and view memory dumps
@@ -50,25 +49,25 @@ To download memory dumps
 
 1. Navigate to the **Memory dumps** page:
 
-   * On the page of the entity that you want to analyze, select **More** (**â¦**) > **Memory dump details**.
+   * On the page of the entity that you want to analyze, select **More** (**…**) > **Memory dump details**.
    * Go to **Profiling & Optimization** > **Memory dumps**.
 2. Expand your memory dump record.
 3. From the **Download link** list, select the ActiveGate from where you want to download the memory dump, and select **Download**.
 
    If you can't download the memory dump via UI, download the file manually at local path indicated in the web UI. Note that memory dumps that are stored by OneAgent locally are available for a limited time; when OneAgent periodically empties the directory, the file size could be 0 bytes.
 
-In the case of Java applications, the download provides the memory dump in [hprofï»¿](https://dt-url.net/kh03s1r) format, which can be analyzed using a number of tools, including [Eclipse Memory analyzerï»¿](https://dt-url.net/uq23syk) and [VisualVMï»¿](https://dt-url.net/mz43sws). The IBM JVM doesn't support hprof, but its own format called IBM Portable Heap Dump (PHD). This can also be analyzed by the Eclipse Memory analyzer.
+In the case of Java applications, the download provides the memory dump in [hprof﻿](https://dt-url.net/kh03s1r) format, which can be analyzed using a number of tools, including [Eclipse Memory analyzer﻿](https://dt-url.net/uq23syk) and [VisualVM﻿](https://dt-url.net/mz43sws). The IBM JVM doesn't support hprof, but its own format called IBM Portable Heap Dump (PHD). This can also be analyzed by the Eclipse Memory analyzer.
 
 Node.js memory dumps can be opened in Google Chrome's integrated memory heap snapshot analysis tool.
 
-.NET memory dumps can be opened in [PerfViewï»¿](https://dt-url.net/fb03syb) or Visual Studio.
+.NET memory dumps can be opened in [PerfView﻿](https://dt-url.net/fb03syb) or Visual Studio.
 
 ## Limitations
 
 * .NET memory dumps are not supported in Alpine Linux based containers.
-* Memory dump uploads are not supported for both [Kubernetes Applicationâonly monitoring](/managed/ingest-from/setup-on-k8s/deployment/app-obs-managed "Deploy Dynatrace Operator in application monitoring mode to Kubernetes") and [Kubernetes Cloud Native Full Stack monitoring](/managed/ingest-from/setup-on-k8s/deployment/full-stack-managed "Deploy Dynatrace Operator in cloud-native full-stack mode to Kubernetes").
+* Memory dump uploads are not supported for both [Kubernetes Application‑only monitoring](/managed/ingest-from/setup-on-k8s/deployment/app-obs-managed "Deploy Dynatrace Operator in application monitoring mode to Kubernetes") and [Kubernetes Cloud Native Full Stack monitoring](/managed/ingest-from/setup-on-k8s/deployment/full-stack-managed "Deploy Dynatrace Operator in cloud-native full-stack mode to Kubernetes").
 
-  This is because OneAgent runs in a container with a readâonly filesystem (OneAgent binary directory `/opt/dynatrace/oneagent-paas` is mounted as readâonly), so Dynatrace cannot write the memory dump files it needs. At the same time, the `DATA_STORAGE` installer parameter used to override the dump directory is [not supported in containerâbased deployments](/managed/ingest-from/setup-on-container-platforms/docker/set-up-dynatrace-oneagent-as-docker-container#limitations "Install and update Dynatrace OneAgent as a Docker container."). Therefore, it's not possible to change the dump location to a writable path. As a result, memory dump collection is not possible in Kubernetes environments monitored with Applicationâonly monitoring or Cloud Native Full Stack.
+  This is because OneAgent runs in a container with a read‑only filesystem (OneAgent binary directory `/opt/dynatrace/oneagent-paas` is mounted as read‑only), so Dynatrace cannot write the memory dump files it needs. At the same time, the `DATA_STORAGE` installer parameter used to override the dump directory is [not supported in container‑based deployments](/managed/ingest-from/setup-on-container-platforms/docker/set-up-dynatrace-oneagent-as-docker-container#limitations "Install and update Dynatrace OneAgent as a Docker container."). Therefore, it's not possible to change the dump location to a writable path. As a result, memory dump collection is not possible in Kubernetes environments monitored with Application‑only monitoring or Cloud Native Full Stack.
 
 ## FAQ
 

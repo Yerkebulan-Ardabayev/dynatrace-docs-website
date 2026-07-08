@@ -1,7 +1,6 @@
 ---
 title: Settings API - NetTracer traffic schema table
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/settings/schemas/builtin-nettracer-traffic
-scraped: 2026-05-12T11:38:57.085716
 ---
 
 # Settings API - NetTracer traffic schema table

@@ -1,7 +1,6 @@
 ---
 title: Settings API - Attribute data masking schema table
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/settings/schemas/builtin-attribute-masking
-scraped: 2026-05-12T11:49:36.526822
 ---
 
 # Settings API - Attribute data masking schema table
@@ -12,7 +11,7 @@ scraped: 2026-05-12T11:49:36.526822
 
 ### Attribute data masking (`builtin:attribute-masking)`
 
-Configure the visibility of stored attribute values to to meet your privacy requirements. Users with **View sensitive request data** permissions will always see the values. For further details on Dynatrace's privacy settings, visit the [Data privacy and securityï»¿](https://dt-url.net/bo210srx) documentation.
+Configure the visibility of stored attribute values to to meet your privacy requirements. Users with **View sensitive request data** permissions will always see the values. For further details on Dynatrace's privacy settings, visit the [Data privacy and security﻿](https://dt-url.net/bo210srx) documentation.
 
 | Schema ID | Schema groups | Scope |
 | --- | --- | --- |

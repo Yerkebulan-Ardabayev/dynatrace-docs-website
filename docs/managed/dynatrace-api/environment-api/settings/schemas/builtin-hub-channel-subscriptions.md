@@ -1,7 +1,6 @@
 ---
 title: Settings API - Hub subscriptions schema table
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/settings/schemas/builtin-hub-channel-subscriptions
-scraped: 2026-05-12T11:42:28.130379
 ---
 
 # Settings API - Hub subscriptions schema table
@@ -12,7 +11,7 @@ scraped: 2026-05-12T11:42:28.130379
 
 ### Hub subscriptions (`builtin:hub-channel.subscriptions)`
 
-Here you can manage your subscriptions to extend the available apps or releases listed in [Dynatrace Hubï»¿](https://www.dynatrace.com/support/help/manage/hub). Add a new token to enroll your subscription.
+Here you can manage your subscriptions to extend the available apps or releases listed in [Dynatrace Hub﻿](https://www.dynatrace.com/support/help/manage/hub). Add a new token to enroll your subscription.
 
 | Schema ID | Schema groups | Scope |
 | --- | --- | --- |

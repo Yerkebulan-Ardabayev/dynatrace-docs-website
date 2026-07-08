@@ -1,7 +1,6 @@
 ---
 title: Settings API - Trace sampling for HTTP requests schema table
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/settings/schemas/builtin-url-based-sampling
-scraped: 2026-05-12T11:46:00.163679
 ---
 
 # Settings API - Trace sampling for HTTP requests schema table
@@ -12,7 +11,7 @@ scraped: 2026-05-12T11:46:00.163679
 
 ### Trace sampling for HTTP requests (`builtin:url-based-sampling)`
 
-This setting allows you to configure how OneAgent treats specific HTTP requests when sampling is needed. More precisely, you can advise OneAgent on the importance of specific HTTP requests in relation to other HTTP requests. HTTP requests with the URL with higher importance will be treated to be captured more often and vice versa. Additionally, you can turn off tracing for specific HTTP requests completely. Full-Stack Monitoring includes a defined amount of trace data volume. Every contributing GiB of host or application memory adds a certain amount of trace volume ingest rate to your environment. Depending on that transaction volume, OneAgent captures end-to-end traces every minute up to a peak trace volume. Adaptive Traffic management automatically adjusts the sampling rate of trace data collection so that the collected trace data doesn't exceed the included trace volume. You can learn more about this [hereï»¿](https://dt-url.net/2y23wt3)
+This setting allows you to configure how OneAgent treats specific HTTP requests when sampling is needed. More precisely, you can advise OneAgent on the importance of specific HTTP requests in relation to other HTTP requests. HTTP requests with the URL with higher importance will be treated to be captured more often and vice versa. Additionally, you can turn off tracing for specific HTTP requests completely. Full-Stack Monitoring includes a defined amount of trace data volume. Every contributing GiB of host or application memory adds a certain amount of trace volume ingest rate to your environment. Depending on that transaction volume, OneAgent captures end-to-end traces every minute up to a peak trace volume. Adaptive Traffic management automatically adjusts the sampling rate of trace data collection so that the collected trace data doesn't exceed the included trace volume. You can learn more about this [here﻿](https://dt-url.net/2y23wt3)
 
 Hint: Use this Multi-dimensional analysis (`<your-dynatrace-url>//ui/diagnostictools/mda?mdaId=atm`) to get an overview over the current sample rates per URL. Additionally use the context-menu of the URLs to up- or downscale certain URLs in a convenient way.
 

@@ -1,7 +1,6 @@
 ---
 title: Service analysis
 source: https://docs.dynatrace.com/managed/observe/application-observability/services-classic/service-analysis-new
-scraped: 2026-05-12T11:21:57.634930
 ---
 
 # Service analysis
@@ -49,7 +48,7 @@ Select **Properties and tags** on the notifications bar to display the **Propert
 * Select **Problems** on the notifications bar to display the **Problems** panel, which lists the problems.
 
   + Select a problem to display details.
-  + Select **Go to problems** to go to the [Problems](/managed/dynatrace-intelligence "Get familiar with the capabilities of Davis AI.") page filtered by the selected service.
+  + Select **Go to problems** to go to the [Problems](/managed/dynatrace-intelligence "Learn how Davis® AI detects performance anomalies, identifies root causes, and uses AI models for adaptive thresholds across your environment.") page filtered by the selected service.
 
 ### SLOs
 
@@ -111,7 +110,7 @@ You can configure the **Service overview** card to focus on various metrics of t
   + See the service in Smartscape by selecting **Smartscape view** .
   + Analyze **Response time hotspots**, **Details of failures**, and method hotspots.
   + Compare service request performance indicators, such us response time, failures, CPU, and load, based on different timeframes.
-* For each metric, you can select **More** (**â¦**) and
+* For each metric, you can select **More** (**…**) and
 
   + Analyze the metric in Data Explorer.
   + Create a metric event.
@@ -124,7 +123,7 @@ Unified service
 The **Endpoints** card offers an overview of the monitored service endpoints.
 
 * To analyze an endpoint metrics, in the **Details** column select .
-* To analyze an endpoint distributed traces, in the **Actions** column select **More** (**â¦**) > **View distributed traces**.
+* To analyze an endpoint distributed traces, in the **Actions** column select **More** (**…**) > **View distributed traces**.
 
 Data availability depends on endpoint metrics, which consume DDUs. To get started on endpoint monitoring, see [Manage endpoint monitoring](/managed/observe/application-observability/services/service-detection/service-detection-v1/service-types/unified-service#endpoint-monitoring "Define services on observability signals ingested via Trace ingest APIs.").
 

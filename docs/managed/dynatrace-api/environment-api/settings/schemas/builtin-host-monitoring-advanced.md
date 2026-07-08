@@ -1,7 +1,6 @@
 ---
 title: Settings API - Advanced Settings schema table
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/settings/schemas/builtin-host-monitoring-advanced
-scraped: 2026-05-12T11:48:28.587271
 ---
 
 # Settings API - Advanced Settings schema table
@@ -34,5 +33,5 @@ To execute this request, you need an access token with **Read settings** (`setti
 
 | Property | Type | Description | Required |
 | --- | --- | --- | --- |
-| ProcessAgent injection `processAgentInjection` | boolean | Disabling this setting disables many deep process visibility features, for example: tracing, profiling, technology-specific metrics (e.g. heap usage), JMX/PMI metrics collection, runtime vulnerability analytics, live debugging, etc. For Fullstack or Infrastructure modes, we only recommend disabling this setting for troubleshooting purposes.  Disabling automatic injection via [oneagentctlï»¿](https://dt-url.net/oneagentctl) takes precedence over this setting being enabled and cannot be changed from the Dynatrace web UI. | Required |
+| ProcessAgent injection `processAgentInjection` | boolean | Disabling this setting disables many deep process visibility features, for example: tracing, profiling, technology-specific metrics (e.g. heap usage), JMX/PMI metrics collection, runtime vulnerability analytics, live debugging, etc. For Fullstack or Infrastructure modes, we only recommend disabling this setting for troubleshooting purposes.  Disabling automatic injection via [oneagentctl﻿](https://dt-url.net/oneagentctl) takes precedence over this setting being enabled and cannot be changed from the Dynatrace web UI. | Required |
 | CodeModule injection `codeModuleInjection` | boolean | Inject CodeModules in Discovery mode. | Required |

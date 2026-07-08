@@ -1,7 +1,6 @@
 ---
 title: Anomaly detection API - AWS
 source: https://docs.dynatrace.com/managed/dynatrace-api/configuration-api/anomaly-detection-api/anomaly-detection-api-aws
-scraped: 2026-05-12T11:04:26.423792
 ---
 
 # Anomaly detection API - AWS
@@ -11,7 +10,7 @@ scraped: 2026-05-12T11:04:26.423792
 * Reference
 * Published Oct 30, 2018
 
-The **Anomaly detectionâAWS** API enables you to manage the configuration of anomaly detection for Amazon Web Services infrastructure. You can also manage the same configuration in the Dynatrace web UI at **Settings > Anomaly detection > Infrastructure > Amazon Web Services**.
+The **Anomaly detection—AWS** API enables you to manage the configuration of anomaly detection for Amazon Web Services infrastructure. You can also manage the same configuration in the Dynatrace web UI at **Settings > Anomaly detection > Infrastructure > Amazon Web Services**.
 
 [### View configuration
 

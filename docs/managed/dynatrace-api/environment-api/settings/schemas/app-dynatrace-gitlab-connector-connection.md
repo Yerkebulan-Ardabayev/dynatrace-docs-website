@@ -1,7 +1,6 @@
 ---
 title: Settings API - GitLab Connections schema table
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/settings/schemas/app-dynatrace-gitlab-connector-connection
-scraped: 2026-05-12T11:41:04.635860
 ---
 
 # Settings API - GitLab Connections schema table
@@ -14,7 +13,7 @@ scraped: 2026-05-12T11:41:04.635860
 
 Connections containing access tokens for the GitLab Platform
 
-(for more information read the [GitLab API documentationï»¿](https://docs.gitlab.com/ee/api/rest/ "Visit GitLab document"))
+(for more information read the [GitLab API documentation﻿](https://docs.gitlab.com/ee/api/rest/ "Visit GitLab document"))
 
 | Schema ID | Schema groups | Scope |
 | --- | --- | --- |

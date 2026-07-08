@@ -1,7 +1,6 @@
 ---
 title: Reference
 source: https://docs.dynatrace.com/managed/ingest-from/setup-on-k8s/reference
-scraped: 2026-05-12T11:11:17.447245
 ---
 
 # Reference

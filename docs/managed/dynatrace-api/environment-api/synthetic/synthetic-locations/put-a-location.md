@@ -1,7 +1,6 @@
 ---
 title: Synthetic locations API - PUT a location
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/synthetic/synthetic-locations/put-a-location
-scraped: 2026-05-12T11:56:58.090740
 ---
 
 # Synthetic locations API - PUT a location
@@ -11,7 +10,7 @@ scraped: 2026-05-12T11:56:58.090740
 * Reference
 * Published Jul 26, 2019
 
-We have a new version of this APIâ[Synthetic API v2](/managed/dynatrace-api/environment-api/synthetic-v2 "Find out what the Dynatrace Synthetic v2 API offers."). Check it out!
+We have a new version of this API—[Synthetic API v2](/managed/dynatrace-api/environment-api/synthetic-v2 "Find out what the Dynatrace Synthetic v2 API offers."). Check it out!
 
 Updates an existing **private** synthetic location.
 

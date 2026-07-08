@@ -1,7 +1,6 @@
 ---
 title: OneAgent
 source: https://docs.dynatrace.com/managed/platform/oneagent
-scraped: 2026-05-12T11:03:13.646558
 ---
 
 # OneAgent
@@ -9,7 +8,7 @@ scraped: 2026-05-12T11:03:13.646558
 # OneAgent
 
 * 1-min read
-* Published Mar 29, 2019
+* Updated on May 26, 2026
 
 [### Capabilities
 

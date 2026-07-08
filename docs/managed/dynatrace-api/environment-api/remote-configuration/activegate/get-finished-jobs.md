@@ -1,7 +1,6 @@
 ---
 title: ActiveGate remote configuration management API - GET finished jobs
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/remote-configuration/activegate/get-finished-jobs
-scraped: 2026-05-12T11:55:43.490190
 ---
 
 # ActiveGate remote configuration management API - GET finished jobs
@@ -51,7 +50,7 @@ A list of remote configuration management jobs.
 
 | Element | Type | Description |
 | --- | --- | --- |
-| jobs | [RemoteConfigurationManagementJobSummary[]](#openapi-definition-RemoteConfigurationManagementJobSummary) | A list of remote configuration management jobs. |
+| jobs | [RemoteConfigurationManagementJobSummary](#openapi-definition-RemoteConfigurationManagementJobSummary)[] | A list of remote configuration management jobs. |
 
 #### The `RemoteConfigurationManagementJobSummary` object
 
@@ -75,7 +74,7 @@ Remote configuration management job with basic data.
 | Element | Type | Description |
 | --- | --- | --- |
 | code | integer | The HTTP status code |
-| constraintViolations | [ConstraintViolation[]](#openapi-definition-ConstraintViolation) | A list of constraint violations |
+| constraintViolations | [ConstraintViolation](#openapi-definition-ConstraintViolation)[] | A list of constraint violations |
 | message | string | The error message |
 
 #### The `ConstraintViolation` object

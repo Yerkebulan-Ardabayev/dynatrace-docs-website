@@ -1,7 +1,6 @@
 ---
 title: Install the IMS module
 source: https://docs.dynatrace.com/managed/ingest-from/dynatrace-oneagent/installation-and-operation/zos/installation/install-ims
-scraped: 2026-05-12T11:24:22.457667
 ---
 
 # Install the IMS module
@@ -15,7 +14,7 @@ With the IMS module, you can get observability for your IMS transactions and pro
 
 | Observability for | Including |
 | --- | --- |
-| Transactions  * IMS * Fast Path * [BMPï»¿](https://www.ibm.com/docs/en/ims/15.1.0?topic=bmps-batch-message-processing-transaction-oriented) | Transactions initiated using  * IBM MQ Bridge and Trigger Monitor * IMS TM Resource Adapter, IMS SOAP Gateway, and IMS Connect * 3270 terminal |
+| Transactions  * IMS * Fast Path * [BMP﻿](https://www.ibm.com/docs/en/ims/15.1.0?topic=bmps-batch-message-processing-transaction-oriented) | Transactions initiated using  * IBM MQ Bridge and Trigger Monitor * IMS TM Resource Adapter, IMS SOAP Gateway, and IMS Connect * 3270 terminal |
 | Database calls | Database calls with their SQL statements from IMS to Db2 and IMS DB via  * the DL/I access method * the Fast Path access methods |
 
 ## Installation

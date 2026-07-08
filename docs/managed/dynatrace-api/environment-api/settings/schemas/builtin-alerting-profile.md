@@ -1,7 +1,6 @@
 ---
 title: Settings API - Problem alerting profiles schema table
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/settings/schemas/builtin-alerting-profile
-scraped: 2026-05-12T11:41:10.433090
 ---
 
 # Settings API - Problem alerting profiles schema table
@@ -35,7 +34,7 @@ To execute this request, you need an access token with **Read settings** (`setti
 | Property | Type | Description | Required |
 | --- | --- | --- | --- |
 | Name `name` | text | - | Required |
-| Management zone `managementZone` | setting | Entities which are part of the configured management zones will match this alerting profile. It is recommended to use manual tags instead.  **Note:** Management zones may experience delays or inconsistencies due to rule complexity and attribute variability. Entities may not be immediately assigned to management zones, impacting filter effectiveness.  It is recommended to use manual tags instead.  For more information, visit our [best practices for management zones documentation pageï»¿](https://dt-url.net/8203d4x). | Optional |
+| Management zone `managementZone` | setting | Entities which are part of the configured management zones will match this alerting profile. It is recommended to use manual tags instead.  **Note:** Management zones may experience delays or inconsistencies due to rule complexity and attribute variability. Entities may not be immediately assigned to management zones, impacting filter effectiveness.  It is recommended to use manual tags instead.  For more information, visit our [best practices for management zones documentation page﻿](https://dt-url.net/8203d4x). | Optional |
 | Severity rules `severityRules` | Set<[AlertingProfileSeverityRule](#AlertingProfileSeverityRule)> | Define severity rules for profile. A maximum of 100 severity rules is allowed. | Required |
 | Event filters `eventFilters` | Set<[AlertingProfileEventFilter](#AlertingProfileEventFilter)> | Define event filters for profile. A maximum of 100 event filters is allowed. | Required |
 
@@ -46,7 +45,7 @@ To execute this request, you need an access token with **Read settings** (`setti
 | Problem severity level `severityLevel` | enum | The element has these enums * `AVAILABILITY` * `CUSTOM_ALERT` * `ERRORS` * `MONITORING_UNAVAILABLE` * `PERFORMANCE` * `RESOURCE_CONTENTION` | Required |
 | Problem send delay in minutes `delayInMinutes` | integer | Send a notification if a problem remains open longer than X minutes. | Required |
 | Filter problems by tag `tagFilterIncludeMode` | enum | The element has these enums * `NONE` * `INCLUDE_ANY` * `INCLUDE_ALL` | Required |
-| Tags `tagFilter` | set | Entities which contain any/all of the configured tags will match this alerting profile. It is recommended to use manual tags.  **Note:** Automatically applied tags may experience delays or inconsistencies due to rule complexity and attribute variability. Entities may not be immediately tagged, impacting filter effectiveness.  It is recommended to use manual tags instead.  For more information, visit our [best practices for tagging documentation pageï»¿](https://dt-url.net/8203d4x). | Required |
+| Tags `tagFilter` | set | Entities which contain any/all of the configured tags will match this alerting profile. It is recommended to use manual tags.  **Note:** Automatically applied tags may experience delays or inconsistencies due to rule complexity and attribute variability. Entities may not be immediately tagged, impacting filter effectiveness.  It is recommended to use manual tags instead.  For more information, visit our [best practices for tagging documentation page﻿](https://dt-url.net/8203d4x). | Required |
 
 ##### The `AlertingProfileEventFilter` object
 

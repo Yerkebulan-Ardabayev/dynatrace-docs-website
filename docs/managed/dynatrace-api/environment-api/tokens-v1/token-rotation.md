@@ -1,7 +1,6 @@
 ---
 title: Implement token rotation
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/tokens-v1/token-rotation
-scraped: 2026-05-12T12:11:21.787932
 ---
 
 # Implement token rotation

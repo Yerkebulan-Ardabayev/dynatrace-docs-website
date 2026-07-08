@@ -1,7 +1,6 @@
 ---
 title: Deploy BOSH release for Full-Stack monitoring on Cloud Foundry
 source: https://docs.dynatrace.com/managed/ingest-from/setup-on-container-platforms/cloud-foundry/deploy-oneagent-on-cloud-foundry
-scraped: 2026-05-12T11:11:01.027325
 ---
 
 # Deploy BOSH release for Full-Stack monitoring on Cloud Foundry
@@ -9,7 +8,7 @@ scraped: 2026-05-12T11:11:01.027325
 # Deploy BOSH release for Full-Stack monitoring on Cloud Foundry
 
 * 6-min read
-* Updated on Oct 12, 2022
+* Updated on Jun 29, 2026
 
 The following guidelines apply to the deployment of Dynatrace OneAgent to Cloud Foundry VMs, including Cloud Foundry components, Diego cells, and Windows Diego cells.
 
@@ -21,7 +20,7 @@ Lightweight release
 
 1. [Create a PaaS Token](/managed/manage/identity-access-management/access-tokens-and-oauth-clients/access-tokens#paas-token "Learn the concept of an access token and its scopes.").
 2. [Deploy an Environment ActiveGate](/managed/ingest-from/dynatrace-activegate/installation "Learn how to configure ActiveGate") (SaaS customers only).
-3. Locate the download URLsâcheck documentation for the [Deployment API](/managed/dynatrace-api/environment-api/deployment "Download OneAgent and ActiveGate installers via Dynatrace API."), which is part of the Environment API v1.
+3. Locate the download URLs—check documentation for the [Deployment API](/managed/dynatrace-api/environment-api/deployment "Download OneAgent and ActiveGate installers via Dynatrace API."), which is part of the Environment API v1.
 4. Get the latest versions of the BOSH release.
 
    ```
@@ -275,15 +274,15 @@ Lightweight release
 
 
 
-   # Hand over any installer argumentâ
+   # Hand over any installer argument​
 
 
 
-   # Use either this OR the hostgroup, hosttags, infraonly, proxy properties.â
+   # Use either this OR the hostgroup, hosttags, infraonly, proxy properties.​
 
 
 
-   # Usage of 'installerargs' will overwrite the others!â
+   # Usage of 'installerargs' will overwrite the others!​
 
 
 
@@ -334,7 +333,7 @@ Lightweight release
     If you have multiple BOSH runtime configurations with different OneAgent versions, you must delete the older ones using `bosh delete-config`.
 11. Deploy your changes.
 
-    Since existing BOSH deployments wonât be automatically updated with the jobs specified in the runtime configuration, you need to redeploy them so that BOSH rolls out the OneAgent.
+    Since existing BOSH deployments won’t be automatically updated with the jobs specified in the runtime configuration, you need to redeploy them so that BOSH rolls out the OneAgent.
 
     ```
     bosh -e my-env -d deployment deploy
@@ -344,7 +343,7 @@ This version isn't recommended for controlled production environments as it auto
 
 The latest OneAgent release can be controlled in the [OneAgent updates](/managed/ingest-from/dynatrace-oneagent/installation-and-operation/linux/operation/update-oneagent-on-linux "Learn about the different ways to update OneAgent on Linux.") section of your Dynatrace environment.
 
-1. Download the lightweight OneAgent BOSH release from the Dynatrace [Github repositoryï»¿](https://github.com/Dynatrace/bosh-oneagent-release)
+1. Upload the lightweight OneAgent BOSH release as described on [bosh.io﻿](https://bosh.io/releases/github.com/Dynatrace/bosh-oneagent-release)
 2. Ensure that your BOSH CLI is successfully connected to the BOSH Director. For details, see the Cloud Foundry or VMware Tanzu documentation.
 3. Upload the BOSH release of OneAgent to the BOSH Director.
 
@@ -533,15 +532,15 @@ The latest OneAgent release can be controlled in the [OneAgent updates](/managed
 
 
 
-   # Hand over any installer argumentâ
+   # Hand over any installer argument​
 
 
 
-   # Use either this OR the hostgroup, hosttags, infraonly, proxy properties.â
+   # Use either this OR the hostgroup, hosttags, infraonly, proxy properties.​
 
 
 
-   # Usage of 'installerargs' will overwrite the others!â
+   # Usage of 'installerargs' will overwrite the others!​
 
 
 
@@ -660,7 +659,7 @@ The latest OneAgent release can be controlled in the [OneAgent updates](/managed
    If you have multiple BOSH runtime configurations with different OneAgent versions, you must delete the older ones using `bosh delete-config`.
 6. Deploy your changes.
 
-   Since existing BOSH deployments wonât be automatically updated with the jobs specified in the runtime configuration, you need to redeploy them so that BOSH rolls out the OneAgent.
+   Since existing BOSH deployments won’t be automatically updated with the jobs specified in the runtime configuration, you need to redeploy them so that BOSH rolls out the OneAgent.
 
    ```
    bosh -e my-env -d deployment deploy

@@ -1,7 +1,6 @@
 ---
 title: Dynatrace Platform Subscription API - GET forecast
 source: https://docs.dynatrace.com/managed/dynatrace-api/account-management-api/dynatrace-platform-subscription-api/cost-monitors/get-forecast
-scraped: 2026-05-12T11:24:38.413735
 ---
 
 # Dynatrace Platform Subscription API - GET forecast

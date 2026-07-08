@@ -1,7 +1,6 @@
 ---
 title: Integrate on Google Cloud Functions Node.js
 source: https://docs.dynatrace.com/managed/ingest-from/google-cloud-platform/gcp-integrations/gcp-functions/opentelemetry-on-gcf-nodejs
-scraped: 2026-05-12T11:52:01.511048
 ---
 
 # Integrate on Google Cloud Functions Node.js
@@ -12,13 +11,13 @@ scraped: 2026-05-12T11:52:01.511048
 * 4-min read
 * Updated on Sep 26, 2025
 
-The [`@dynatrace/opentelemetry-gcf`ï»¿](https://dt-url.net/zm03ye8) module provides APIs for tracing Node.js on Google Cloud Functions (GCF).
+The [`@dynatrace/opentelemetry-gcf`﻿](https://dt-url.net/zm03ye8) module provides APIs for tracing Node.js on Google Cloud Functions (GCF).
 
 ## Prerequisites
 
 Make sure you have followed the instructions on how to [integrate OpenTelemetry on Google Cloud Functions](/managed/ingest-from/google-cloud-platform/gcp-integrations/gcp-functions/opentelemetry-on-gcf "Monitor Google Cloud Functions with OpenTelemetry and Dynatrace.").
 
-* So far, only [HTTP triggersï»¿](https://dt-url.net/os23yfz) are supported.
+* So far, only [HTTP triggers﻿](https://dt-url.net/os23yfz) are supported.
 * Cloud Function product version: 1st gen, 2nd gen
 
 ## Installation
@@ -29,7 +28,7 @@ To set up OpenTelemetry Node.js integration on Google Cloud Functions, run the c
 npm install --save @dynatrace/opentelemetry-gcf
 ```
 
-This will install the latest version of the [`@dynatrace/opentelemetry-gcf`ï»¿](https://dt-url.net/zm03ye8) module from NPM. Note that this library by itself is not enough to start tracing your Google Cloud Functions.
+This will install the latest version of the [`@dynatrace/opentelemetry-gcf`﻿](https://dt-url.net/zm03ye8) module from NPM. Note that this library by itself is not enough to start tracing your Google Cloud Functions.
 See the [Usage](#usage) section below for the remaining required steps.
 
 ## Usage
@@ -449,11 +448,11 @@ Once `@dynatrace/opentelemetry-gcf` is changed to use OpenTelemetry SDK V2 by de
 
 ## Cold start
 
-Starting a Google Cloud Function span during [cold startsï»¿](https://dt-url.net/j543yr9) produces additional HTTP requests to fetch metadata from your [Google Cloud environmentï»¿](https://dt-url.net/jc83y1m) and set the attributes required for Dynatrace to process the spans.
+Starting a Google Cloud Function span during [cold starts﻿](https://dt-url.net/j543yr9) produces additional HTTP requests to fetch metadata from your [Google Cloud environment﻿](https://dt-url.net/jc83y1m) and set the attributes required for Dynatrace to process the spans.
 
 ## Span flush
 
-To ensure that spans are exported properly, you need to flush the spans before a function's response is sent to the client. For details on this limitation, see [Signalling function terminationï»¿](https://dt-url.net/5ta3ywp).
+To ensure that spans are exported properly, you need to flush the spans before a function's response is sent to the client. For details on this limitation, see [Signalling function termination﻿](https://dt-url.net/5ta3ywp).
 
 You can use `endHttpSpan()` and `flushSpans()` separately instead of `endHttpSpanAndFlush()` when needed.
 
@@ -467,10 +466,10 @@ Because code running outside the function execution can be terminated at any tim
 * Google Cloud Functions 2nd gen
 
   Google Cloud Functions 2nd gen can handle multiple concurrent requests in a single function instance. The flush operation of one invocation can prolong the execution time of another function invocation.
-  Because function instances usually need to be kept idle for some time to handle multiple concurrent requests, you can disable the flushing of spans to improve performance. For details, see [Instance lifecycleï»¿](https://cloud.google.com/run/docs/container-contract#lifecycle-services).
-  Note that idle function instances are not guaranteed to be allocated CPU unless their [CPU allocationï»¿](https://cloud.google.com/run/docs/configuring/cpu-allocation) mode is set to `CPU always allocated`.
+  Because function instances usually need to be kept idle for some time to handle multiple concurrent requests, you can disable the flushing of spans to improve performance. For details, see [Instance lifecycle﻿](https://cloud.google.com/run/docs/container-contract#lifecycle-services).
+  Note that idle function instances are not guaranteed to be allocated CPU unless their [CPU allocation﻿](https://cloud.google.com/run/docs/configuring/cpu-allocation) mode is set to `CPU always allocated`.
 
-  For details, see [Function execution timelineï»¿](https://cloud.google.com/functions/docs/concepts/execution-environment#execution-timeline).
+  For details, see [Function execution timeline﻿](https://cloud.google.com/functions/docs/concepts/execution-environment#execution-timeline).
 
 ## Caveats
 
@@ -485,4 +484,4 @@ You need to pay special attention to cases like unhandled exceptions or function
 ## Related topics
 
 * [Set up Dynatrace on Google Cloud](/managed/ingest-from/google-cloud-platform "Monitor Google Cloud with Dynatrace.")
-* [Google Cloud monitoringï»¿](https://www.dynatrace.com/technologies/google-cloud-monitoring/)
+* [Google Cloud monitoring﻿](https://www.dynatrace.com/technologies/google-cloud-monitoring/)

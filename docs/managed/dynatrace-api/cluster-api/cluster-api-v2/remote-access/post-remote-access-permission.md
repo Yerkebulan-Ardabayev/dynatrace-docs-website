@@ -1,7 +1,6 @@
 ---
 title: Grant remote access permission
 source: https://docs.dynatrace.com/managed/dynatrace-api/cluster-api/cluster-api-v2/remote-access/post-remote-access-permission
-scraped: 2026-05-12T11:06:04.910358
 ---
 
 # Grant remote access permission

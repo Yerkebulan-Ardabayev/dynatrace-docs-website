@@ -1,7 +1,6 @@
 ---
 title: Top Java memory problems
 source: https://docs.dynatrace.com/managed/ingest-from/technology-support/application-software/java/top-java-memory-problems
-scraped: 2026-05-12T12:04:30.165098
 ---
 
 # Top Java memory problems
@@ -76,7 +75,7 @@ Classloader leaks are found in application servers and OSGi containers. Classes 
 
 ## High memory usage
 
-Too much memory usage is an increasingly frequent and critical problem in todayâs enterprise applications. Although the average server often has 10, 20, or more GB of memory, a high degree of parallelism and a lack of awareness lead to memory shortages. Another issue is that while it is possible to use multiple gigabytes of memory in todayâs JVMs, the side effects a very long GC pauses. In some cases, increasing the memory can be a workaround to memory leaks or badly written software. However, more often than not, this makes things worse in the long run and not better. The following are the most common causes of high memory usage:
+Too much memory usage is an increasingly frequent and critical problem in today’s enterprise applications. Although the average server often has 10, 20, or more GB of memory, a high degree of parallelism and a lack of awareness lead to memory shortages. Another issue is that while it is possible to use multiple gigabytes of memory in today’s JVMs, the side effects a very long GC pauses. In some cases, increasing the memory can be a workaround to memory leaks or badly written software. However, more often than not, this makes things worse in the long run and not better. The following are the most common causes of high memory usage:
 
 HTTP session as cache
 
@@ -96,7 +95,7 @@ Caches are used to increase performance and scalability by loading data only onc
 
 A soft reference is a special form of object reference. While soft references can be released at any time at the discretion of the garbage collector, they are actually released only to avoid an out-of-memory error. In this respect, they differ greatly from weak references, which never prevent the garbage collection of an object. Soft references are therefore very popular in cache implementations.
 
-The cache developer correctly assumes that the cache data is to be released in the event of a memory shortage. If the cache is incorrectly configured, it will grow quickly and indefinitely until the memory is full. When a GC is initiated, all soft references in the cache are cleared and their objects garbage collected. The memory usage drops back to the base level, only to start growing again. This phenomenon can easily be mistaken to be an incorrectly configured young generation. It looks like the objects are tenured too early only to be collected by the next major GC. This kind of problem often leads to a GC tuning exercise that canât succeed.
+The cache developer correctly assumes that the cache data is to be released in the event of a memory shortage. If the cache is incorrectly configured, it will grow quickly and indefinitely until the memory is full. When a GC is initiated, all soft references in the cache are cleared and their objects garbage collected. The memory usage drops back to the base level, only to start growing again. This phenomenon can easily be mistaken to be an incorrectly configured young generation. It looks like the objects are tenured too early only to be collected by the next major GC. This kind of problem often leads to a GC tuning exercise that can’t succeed.
 
 Only proper monitoring of the cache metrics or a heap dump can help identify the root cause of the problem.
 
@@ -106,7 +105,7 @@ The generational GC is designed for a large number of very short-lived objects. 
 
 If too many objects are created in too short a time, it leads to an increased number of GCs in the young generation, which are only cheap if most objects die. If a lot of objects survive the GC, it is actually more expensive than an old generation GC would be under similar circumstances. High memory needs of single transactions therefore might not be a problem in a functional test but can quickly lead to GC thrashing under load. If the load becomes even higher, these transactional objects are promoted to the old generation as the young generation becomes too small. if the size of the young generation is increased, it would push the problem out but ultimately lead to even longer GC pauses.
 
-An out-of-memory error due to high transactional memory demand is the worst possible scenario. If memory is already tight, higher transaction load might simply max out the available heap. The tricky part is that once OutOfMemory hits, transactions that wanted to allocate objects but couldnât are aborted. Subsequently, a lot of memory is released and garbage is collected. As most memory tools only look at the Java memory every couple of seconds, they might not even show 100% memory at any point in time.
+An out-of-memory error due to high transactional memory demand is the worst possible scenario. If memory is already tight, higher transaction load might simply max out the available heap. The tricky part is that once OutOfMemory hits, transactions that wanted to allocate objects but couldn’t are aborted. Subsequently, a lot of memory is released and garbage is collected. As most memory tools only look at the Java memory every couple of seconds, they might not even show 100% memory at any point in time.
 
 Since Java 6 it is possible to trigger a heap dump in the event of an OutOfMemory which will show the root cause. If there is no OutOfMemory, trending or histo memory dumps can be used to identify the classes whose object numbers fluctuate the most, usually those that are allotted and garbage-collected a lot. The last resort is to perform a full-scale allocation analysis.
 

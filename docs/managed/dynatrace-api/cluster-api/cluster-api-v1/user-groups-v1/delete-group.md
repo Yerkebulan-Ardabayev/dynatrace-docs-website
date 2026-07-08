@@ -1,7 +1,6 @@
 ---
 title: Delete user group
 source: https://docs.dynatrace.com/managed/dynatrace-api/cluster-api/cluster-api-v1/user-groups-v1/delete-group
-scraped: 2026-05-12T12:12:43.956219
 ---
 
 # Delete user group

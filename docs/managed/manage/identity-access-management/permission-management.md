@@ -1,7 +1,6 @@
 ---
 title: Access management
 source: https://docs.dynatrace.com/managed/manage/identity-access-management/permission-management
-scraped: 2026-05-12T11:06:29.256204
 ---
 
 # Access management

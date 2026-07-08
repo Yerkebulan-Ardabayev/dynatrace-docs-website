@@ -1,7 +1,6 @@
 ---
 title: Update log events per cluster for Log Monitoring
 source: https://docs.dynatrace.com/managed/dynatrace-api/cluster-api/cluster-api-v2/log-monitoring/post-update-log-events-per-cluster-for-log-monitoring
-scraped: 2026-05-12T11:06:15.941819
 ---
 
 # Update log events per cluster for Log Monitoring

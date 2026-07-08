@@ -1,7 +1,6 @@
 ---
 title: Custom Events Classic (DPS)
 source: https://docs.dynatrace.com/managed/license/capabilities/platform-extensions/custom-events-classic
-scraped: 2026-05-12T12:13:09.459125
 ---
 
 # Custom Events Classic (DPS)
@@ -72,4 +71,4 @@ Custom Events Classic (DPS)
 ## Related topics
 
 * [Platform extensions overview (DPS)](/managed/license/capabilities/platform-extensions "Learn how consumption of Dynatrace platform extensions is calculated using the Dynatrace Platform Subscription model.")
-* [Dynatrace pricingï»¿](https://www.dynatrace.com/pricing/)
+* [Dynatrace pricing﻿](https://www.dynatrace.com/pricing/)

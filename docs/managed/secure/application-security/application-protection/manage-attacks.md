@@ -1,7 +1,6 @@
 ---
 title: Manage attacks
 source: https://docs.dynatrace.com/managed/secure/application-security/application-protection/manage-attacks
-scraped: 2026-05-12T11:37:04.319287
 ---
 
 # Manage attacks

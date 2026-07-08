@@ -1,7 +1,6 @@
 ---
 title: Deploy ActiveGate in a VM
 source: https://docs.dynatrace.com/managed/ingest-from/setup-on-k8s/deployment/other/ag-in-vm
-scraped: 2026-05-12T12:13:44.494502
 ---
 
 # Deploy ActiveGate in a VM
@@ -674,4 +673,4 @@ Disabling certificate validation isn't recommended because it imposes security r
 
 11. Select **Save changes** to save your configuration.
 
-To update ActiveGate, see [Update ActiveGate](/managed/ingest-from/dynatrace-activegate/operation/update-activegate "Learn how to find out which version of ActiveGate you have installed and how you can download and install the latest version.").
+To update ActiveGate, see [Update ActiveGate](/managed/ingest-from/dynatrace-activegate/operation/update-activegate "Configure Environment ActiveGate automatic updates---update mode, target version, and update windows---and download or install manually.").

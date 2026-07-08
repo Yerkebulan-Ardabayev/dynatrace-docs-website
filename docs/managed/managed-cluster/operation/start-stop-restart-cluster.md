@@ -1,7 +1,6 @@
 ---
 title: Start/stop/restart a cluster
 source: https://docs.dynatrace.com/managed/managed-cluster/operation/start-stop-restart-cluster
-scraped: 2026-05-12T11:53:24.883782
 ---
 
 # Start/stop/restart a cluster

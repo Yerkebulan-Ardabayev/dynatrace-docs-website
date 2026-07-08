@@ -1,7 +1,6 @@
 ---
 title: Configure read-only CSI volumes
 source: https://docs.dynatrace.com/managed/ingest-from/setup-on-k8s/guides/networking-security-compliance/advanced-security-configurations/injection-readonly-volume
-scraped: 2026-05-12T12:04:35.978215
 ---
 
 # Configure read-only CSI volumes
@@ -23,7 +22,7 @@ After Operator version 1.7.0, all the CSI volumes injected by the Operator are r
 * The Dynatrace Operator CSI driver installed on the Kubernetes cluster.
 * DynaKube configured to use the CSI driver. For example, ensure that `applicationMonitoring` is enabled with `useCSIDriver: true`.
 
-  `cloudNativeFullStack` is not supported on [BottleRocketï»¿](https://dt-url.net/4c0365f).
+  `cloudNativeFullStack` is not supported on [BottleRocket﻿](https://dt-url.net/4c0365f).
 
 ### Enable feature flag Deprecated
 
@@ -53,6 +52,6 @@ annotations:
 feature.dynatrace.com/injection-readonly-volume: "true"
 ```
 
-This enables usage of the CSI driver even on [BottleRocketï»¿](https://dt-url.net/4c0365f) platforms where host monitoring OneAgents don't work. To accommodate this feature, extra ephemeral storage is added to allow the injected OneAgent to store logs and additional configurations.
+This enables usage of the CSI driver even on [BottleRocket﻿](https://dt-url.net/4c0365f) platforms where host monitoring OneAgents don't work. To accommodate this feature, extra ephemeral storage is added to allow the injected OneAgent to store logs and additional configurations.
 
 A drawback to this approach is that if your pods terminate unexpectedly or are otherwise deleted, any logs stored in ephemeral storage will be lost.

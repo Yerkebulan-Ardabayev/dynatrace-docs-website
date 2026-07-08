@@ -1,7 +1,6 @@
 ---
 title: Synthetic Monitors API
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/synthetic/synthetic-monitors
-scraped: 2026-05-12T11:12:40.925121
 ---
 
 # Synthetic Monitors API

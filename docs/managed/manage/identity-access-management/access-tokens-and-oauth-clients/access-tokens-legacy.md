@@ -1,7 +1,6 @@
 ---
 title: Access tokens
 source: https://docs.dynatrace.com/managed/manage/identity-access-management/access-tokens-and-oauth-clients/access-tokens-legacy
-scraped: 2026-05-12T12:01:26.665309
 ---
 
 # Access tokens
@@ -10,9 +9,9 @@ scraped: 2026-05-12T12:01:26.665309
 
 * Reference
 * 3-min read
-* Published Nov 03, 2018
+* Updated on Jun 12, 2026
 
-All external access to your Dynatrace monitoring environment relies on two pieces of information: the [environment ID](/managed/discover-dynatrace/get-started/monitoring-environment "Understand and learn how to work with monitoring environments.") and an *access token*.
+All external access to your Dynatrace monitoring environment relies on two pieces of information: the [environment ID](/managed/discover-dynatrace/get-started/monitoring-environment "Learn what a Dynatrace monitoring environment is, how to find your environment ID, and how to set up and connect multiple environments.") and an *access token*.
 
 Dynatrace uses several types of tokens:
 
@@ -53,10 +52,10 @@ Dynatrace uses a unique token format consisting of three components separated by
 
 The predictable format gives you several advantages, such as:
 
-* Using Git pre-commit hooks to avoid pushing tokens to source code repositories (for example, using tools like [git-secretsï»¿](https://github.com/awslabs/git-secrets))
+* Using Git pre-commit hooks to avoid pushing tokens to source code repositories (for example, using tools like [git-secrets﻿](https://github.com/awslabs/git-secrets))
 * Defining masking rules to obfuscate the secret portions of tokens when writing log files
 * Detecting tokens in internal files or communications
-* Enabling the [GitHub secret scanning serviceï»¿](https://docs.github.com/en/free-pro-team@latest/github/administering-a-repository/about-secret-scanning#about-secret-scanning-for-public-repositories) to identify any token pushed to a public GitHub repository
+* Enabling the [GitHub secret scanning service﻿](https://docs.github.com/en/free-pro-team@latest/github/administering-a-repository/about-secret-scanning#about-secret-scanning-for-public-repositories) to identify any token pushed to a public GitHub repository
 
 Use this regular expression to look for tokens:
 
@@ -89,6 +88,7 @@ View available scopes
 | OpenPipeline - Ingest Events, Software Development Lifecycle (Custom) | `openpipeline.events_sdlc.custom` | Grants access to [POST Custom SLDC events](/managed/upgrade/unavailable-in-managed "Your selection is unavailable in Dynatrace Managed.") request of the OpenPipeline Ingest API. |
 | OpenPipeline - Ingest Security Events (Built-in) | `openpipeline.events_security` | Grants access to [POST Built-in security events](/managed/upgrade/unavailable-in-managed "Your selection is unavailable in Dynatrace Managed.") request of the OpenPipeline Ingest API. |
 | OpenPipeline - Ingest Security Events (Custom) | `openpipeline.events_security.custom` | Grants access to [POST Custom security events](/managed/upgrade/unavailable-in-managed "Your selection is unavailable in Dynatrace Managed.") request of the OpenPipeline Ingest API. |
+| OpenPipeline - Ingest Smartscape Events | `openpipeline.events_smartscape` | Grants access to [POST Built-in Smartscape events](/managed/upgrade/unavailable-in-managed "Your selection is unavailable in Dynatrace Managed.") request of the OpenPipeline Ingest API. |
 | OpenPipeline - Ingest Events (Custom) | `openpipeline.events.custom` | Grants access to [POST Custom generic event endpoint](/managed/upgrade/unavailable-in-managed "Your selection is unavailable in Dynatrace Managed.") request of the OpenPipeline Ingest API. |
 
 ### API v2
@@ -193,7 +193,7 @@ To generate an API token
 5. Select **Generate token**.
 6. Select **Copy** to copy the generated token to the clipboard. Store the token in a password manager for future use.
 
-You can assign multiple permissions to a single token, or you can generate several tokens, each with different access levels and use them accordinglyâcheck your organization's security policies for the best practice.
+You can assign multiple permissions to a single token, or you can generate several tokens, each with different access levels and use them accordingly—check your organization's security policies for the best practice.
 
 Alternatively, you can use the [POST a token](/managed/dynatrace-api/environment-api/tokens-v2/api-tokens/post-token "Create an access token via Dynatrace API.") call of the **Access tokens** API to generate a token.
 
@@ -243,7 +243,7 @@ To enable personal access tokens
 
 To generate a personal access token
 
-1. Go to **Personal Access Tokens** (accessible via the [user menu](/managed/discover-dynatrace/get-started/dynatrace-ui#user-menu-previous-dynatrace "Navigate the Dynatrace Managed platform") in the previous Dynatrace).
+1. Go to **Personal Access Tokens** (accessible via the [user menu](/managed/discover-dynatrace/get-started/dynatrace-ui#user-menu-previous-dynatrace "Explore Dynatrace Managed, including navigation, browser requirements, timeframe selection, metric notation, and accessibility.") in the previous Dynatrace).
 2. Select **Generate new token**.
 3. Enter a name for your token.  
    Dynatrace doesn't enforce unique token names. You can create multiple tokens with the same name. Be sure to provide a meaningful name for each token you generate. Proper naming helps you to efficiently manage your tokens and perhaps delete them when they're no longer needed.

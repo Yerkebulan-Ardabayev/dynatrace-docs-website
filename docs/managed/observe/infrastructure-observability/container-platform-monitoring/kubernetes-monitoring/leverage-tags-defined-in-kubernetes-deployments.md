@@ -1,7 +1,6 @@
 ---
 title: Organize Kubernetes/OpenShift deployments by tags
 source: https://docs.dynatrace.com/managed/observe/infrastructure-observability/container-platform-monitoring/kubernetes-monitoring/leverage-tags-defined-in-kubernetes-deployments
-scraped: 2026-05-12T11:11:34.364716
 ---
 
 # Organize Kubernetes/OpenShift deployments by tags
@@ -16,13 +15,13 @@ Dynatrace automatically derives tags from your Kubernetes/OpenShift labels. This
 
 ## Recommendations
 
-We recommend that you define additional metadata at the deployed system. For Kubernetes-based applications, you can simply use [Kubernetes annotationsï»¿](https://kubernetes.io/docs/concepts/overview/working-with-objects/annotations/). Dynatrace automatically detects and retrieves all Kubernetes and OpenShift annotations for pods that are monitored with a OneAgent code module. This enables you to use [automated tagging rules](/managed/manage/tags-and-metadata/setup/how-to-define-tags#automatic "Find out how to define and apply tags manually and automatically."), based on existing or custom metadata, to define your filter sets for charts, alerting, and more. These tags and rules can be changed and adapted any time and will apply almost immediately without any change to the monitored environment or applications.
+We recommend that you define additional metadata at the deployed system. For Kubernetes-based applications, you can simply use [Kubernetes annotations﻿](https://kubernetes.io/docs/concepts/overview/working-with-objects/annotations/). Dynatrace automatically detects and retrieves all Kubernetes and OpenShift annotations for pods that are monitored with a OneAgent code module. This enables you to use [automated tagging rules](/managed/manage/tags-and-metadata/setup/how-to-define-tags#automatic "Find out how to define and apply tags manually and automatically."), based on existing or custom metadata, to define your filter sets for charts, alerting, and more. These tags and rules can be changed and adapted any time and will apply almost immediately without any change to the monitored environment or applications.
 
 In Dynatrace, you can specify [entity ownership](/managed/deliver/ownership "Map team ownership to monitored entities for better collaboration, task assignment, incident and vulnerability response, and service-level management.") for different Kubernetes objects such as Deployments, Pods, Services, or namespaces. We recommend providing ownership information via Kubernetes labels or annotations (you can use either labels or annotations to attach metadata to Kubernetes objects). This ensures that Kubernetes objects have adequate ownership coverage, which is especially important for short-lived entities like Pods. See [Assign ownership teams to monitored entities](/managed/deliver/ownership/assign-ownership "Assign owners to entities using entity metadata like labels, environment variables, and tags.") for more on the correct format and examples of providing ownership information in key-value pairs in the deployment specification file.
 
 We recommend defining ownership for the Deployment and all other objects for which you want ownership coverage. See also [Best practices for entity ownership](/managed/deliver/ownership/best-practices "Tips and best practices to ensure that entities have adequate ownership coverage"). You can assign more than one team to a Kubernetes object, provided that the keys in the key-value pairs are unique.
 
-While you can also use tags (manual, automated, and via API) to apply ownership information to Kubernetes objects, this approach has its limitationsâread more in [Best practices for entity ownership](/managed/deliver/ownership/best-practices "Tips and best practices to ensure that entities have adequate ownership coverage").
+While you can also use tags (manual, automated, and via API) to apply ownership information to Kubernetes objects, this approach has its limitations—read more in [Best practices for entity ownership](/managed/deliver/ownership/best-practices "Tips and best practices to ensure that entities have adequate ownership coverage").
 
 ## Automatic detection of Kubernetes properties and annotations
 
@@ -53,9 +52,9 @@ Kubernetes
 
 OpenShift
 
-You can specify [Kubernetes labelsï»¿](https://kubernetes.io/docs/concepts/overview/working-with-objects/labels/) in the [deployment definitionï»¿](https://kubernetes.io/docs/concepts/workloads/controllers/deployment/#creating-a-deployment) of your application or you can update the labels of your Kubernetes resources using the command `kubectl label`.
+You can specify [Kubernetes labels﻿](https://kubernetes.io/docs/concepts/overview/working-with-objects/labels/) in the [deployment definition﻿](https://kubernetes.io/docs/concepts/workloads/controllers/deployment/#creating-a-deployment) of your application or you can update the labels of your Kubernetes resources using the command `kubectl label`.
 
-You can specify [OpenShift labelsï»¿](https://docs.openshift.com/enterprise/3.0/architecture/core_concepts/pods_and_services.html#labels) in the [Pod object definitionï»¿](https://docs.openshift.com/container-platform/3.10/architecture/core_concepts/pods_and_services.html) of your application or you can update the labels of your OpenShift resources using the command [oc labelï»¿](https://docs.openshift.com/enterprise/3.0/cli_reference/basic_cli_operations.html#application-modification-cli-operations).
+You can specify [OpenShift labels﻿](https://docs.openshift.com/enterprise/3.0/architecture/core_concepts/pods_and_services.html#labels) in the [Pod object definition﻿](https://docs.openshift.com/container-platform/3.10/architecture/core_concepts/pods_and_services.html) of your application or you can update the labels of your OpenShift resources using the command [oc label﻿](https://docs.openshift.com/enterprise/3.0/cli_reference/basic_cli_operations.html#application-modification-cli-operations).
 
 Dynatrace automatically detects all labels attached to pods at application deployment time. All you have to do is grant sufficient privileges to the pods that allow for reading the metadata from the Kubernetes REST API endpoint. This way, the OneAgent code modules can read these labels directly from the pod.
 

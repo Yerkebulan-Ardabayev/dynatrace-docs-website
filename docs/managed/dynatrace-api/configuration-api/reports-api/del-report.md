@@ -1,7 +1,6 @@
 ---
 title: Reports API - DELETE a report
 source: https://docs.dynatrace.com/managed/dynatrace-api/configuration-api/reports-api/del-report
-scraped: 2026-05-12T11:15:43.870402
 ---
 
 # Reports API - DELETE a report

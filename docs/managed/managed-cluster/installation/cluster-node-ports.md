@@ -1,7 +1,6 @@
 ---
 title: Cluster node ports
 source: https://docs.dynatrace.com/managed/managed-cluster/installation/cluster-node-ports
-scraped: 2026-05-12T11:22:21.997232
 ---
 
 # Cluster node ports
@@ -24,7 +23,7 @@ Dynatrace Managed requires specific network ports for operation. Configure your 
 | 8019 | Upgrade UI | Required for cluster-internal communication only. Port can be blocked for traffic from outside the cluster. |
 | 8020, 8021 | Dynatrace Managed UI and REST API | Required for cluster-internal communication only. Ports can be blocked for traffic from outside the cluster. |
 | 8022 | Dynatrace Managed UI and REST API (NGINX) | Can be used in place of port 443 when a non-privileged port is required. Ports can be blocked for traffic from outside the cluster. |
-| 8443[1](#fn-1-1-def) | Monitoring data from OneAgent, nodes within Dynatrace Managed cluster | OneAgent sends data outbound to Dynatrace Cluster onlyâno listening port is opened on the monitored host. Each host with OneAgent must have access to this port, which must also remain open for inter-node communication. |
+| 8443[1](#fn-1-1-def) | Monitoring data from OneAgent, nodes within Dynatrace Managed cluster | OneAgent sends data outbound to Dynatrace Cluster only—no listening port is opened on the monitored host. Each host with OneAgent must have access to this port, which must also remain open for inter-node communication. |
 | 9200, 9300 | Elasticsearch-based search engine | Required for cluster-internal communication only. Ports can be blocked for traffic from outside the cluster. |
 | 9998 | Embedded ActiveGate | For cluster-internal communication only. |
 
@@ -56,7 +55,7 @@ To ensure compliance with United States export restrictions[2](#fn-2-2-def), if 
 
 2
 
-The Dynatrace Software may not be exported or re-exported from the U.S. to (a) any Group E country listed in SUPPLEMENT NO. 1 TO PART 740âCOUNTRY GROUPS (Currently Syria, North Korea, Iran and Cuba) or the Crimea Region of Ukraine, or (b) any company, entity or person listed as a party of concern found [hereï»¿](https://2016.export.gov/ecr/eg_main_023148.asp) (currently including Huawei Technologies and its affiliates worldwide), or (3) for any end-use related to the development, production or use of nuclear, chemical or biological weapons or missiles. Our contracts with our customers require compliance with these and other export control laws.
+The Dynatrace Software may not be exported or re-exported from the U.S. to (a) any Group E country listed in SUPPLEMENT NO. 1 TO PART 740–COUNTRY GROUPS (Currently Syria, North Korea, Iran and Cuba) or the Crimea Region of Ukraine, or (b) any company, entity or person listed as a party of concern found [here﻿](https://2016.export.gov/ecr/eg_main_023148.asp) (currently including Huawei Technologies and its affiliates worldwide), or (3) for any end-use related to the development, production or use of nuclear, chemical or biological weapons or missiles. Our contracts with our customers require compliance with these and other export control laws.
 
 Mission Control communication uses HTTPS and WSS over port `443` with TLS v1.2. The TLS/SSL certificate is provided by Amazon and renewed automatically each year.
 

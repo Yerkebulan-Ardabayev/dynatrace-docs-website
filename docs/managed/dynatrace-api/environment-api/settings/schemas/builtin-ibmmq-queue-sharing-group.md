@@ -1,7 +1,6 @@
 ---
 title: Settings API - IBM MQ queue sharing groups schema table
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/settings/schemas/builtin-ibmmq-queue-sharing-group
-scraped: 2026-05-12T11:39:36.771316
 ---
 
 # Settings API - IBM MQ queue sharing groups schema table

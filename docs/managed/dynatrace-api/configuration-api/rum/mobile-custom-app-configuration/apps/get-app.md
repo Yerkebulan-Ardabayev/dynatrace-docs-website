@@ -1,7 +1,6 @@
 ---
 title: Mobile and custom app API - GET an app
 source: https://docs.dynatrace.com/managed/dynatrace-api/configuration-api/rum/mobile-custom-app-configuration/apps/get-app
-scraped: 2026-05-12T11:15:36.778042
 ---
 
 # Mobile and custom app API - GET an app

@@ -1,7 +1,6 @@
 ---
 title: Synthetic locations API v2 - POST a location (Dynatrace Managed)
 source: https://docs.dynatrace.com/managed/dynatrace-api/cluster-api/cluster-api-v2/synthetic-locations-and-nodes/post-a-location
-scraped: 2026-05-12T11:05:45.251091
 ---
 
 # Synthetic locations API v2 - POST a location (Dynatrace Managed)
@@ -44,7 +43,7 @@ Some fields are inherited from the base *SyntheticLocation* object.
 | availabilityNotificationsEnabled | boolean | Notifications for location and node outage are enabled (`true`) or disabled (`false`). Supported only for private Synthetic locations. | Optional |
 | browserExecutionSupported | boolean | Containerized location property. Boolean value describes if browser monitors will be executed on this location:  * `false`: Browser monitor executions disabled. * `true`: Browser monitor executions enabled. | Optional |
 | city | string | The city of the location. | Optional |
-| countryCode | string | The country code of the location.  To fetch the list of available country codes, use the [GET all countriesï»¿](https://dt-url.net/37030go) request. | Optional |
+| countryCode | string | The country code of the location.  To fetch the list of available country codes, use the [GET all countries﻿](https://dt-url.net/37030go) request. | Optional |
 | countryName | string | The country name of the location. | Optional |
 | deploymentType | string | The deployment type of the location:  * `STANDARD`: The location is deployed on Windows or Linux. * `KUBERNETES`: The location is deployed on Kubernetes. The element can hold these values * `KUBERNETES` * `OPENSHIFT` * `STANDARD` * `UNKNOWN` | Optional |
 | entityId | string | The Dynatrace entity ID of the location. | Optional |
@@ -56,8 +55,8 @@ Some fields are inherited from the base *SyntheticLocation* object.
 | namExecutionSupported | boolean | Containerized location property. Boolean value describes if icmp monitors will be executed on this location:  * `false`: Icmp monitor executions disabled. * `true`: Icmp monitor executions enabled. | Optional |
 | name | string | The name of the location. | Required |
 | nodeNames | object | A mapping id to name of the nodes belonging to the location. | Optional |
-| nodes | string[] | A list of synthetic nodes belonging to the location.  You can retrieve the list of available nodes with the [GET all nodesï»¿](https://dt-url.net/miy3rpl) call. | Required |
-| regionCode | string | The region code of the location.  To fetch the list of available region codes, use the [GET regions of the countryï»¿](https://dt-url.net/az230x0) request. | Optional |
+| nodes | string[] | A list of synthetic nodes belonging to the location.  You can retrieve the list of available nodes with the [GET all nodes﻿](https://dt-url.net/miy3rpl) call. | Required |
+| regionCode | string | The region code of the location.  To fetch the list of available region codes, use the [GET regions of the country﻿](https://dt-url.net/az230x0) request. | Optional |
 | regionName | string | The region name of the location. | Optional |
 | status | string | The status of the location:  * `ENABLED`: The location is displayed as active in the UI. You can assign monitors to the location. * `DISABLED`: The location is displayed as inactive in the UI. You can't assign monitors to the location. Monitors already assigned to the location will stay there and will be executed from the location. * `HIDDEN`: The location is not displayed in the UI. You can't assign monitors to the location. You can only set location as `HIDDEN` when no monitor is assigned to it. The element can hold these values * `DISABLED` * `ENABLED` * `HIDDEN` | Optional |
 | type | string | -The element can hold these values * `CLUSTER` * `PRIVATE` * `PUBLIC` | Required |
@@ -215,7 +214,7 @@ A DTO for synthetic Location IDs.
 | Element | Type | Description |
 | --- | --- | --- |
 | code | integer | The HTTP status code |
-| constraintViolations | [ConstraintViolation[]](#openapi-definition-ConstraintViolation) | A list of constraint violations |
+| constraintViolations | [ConstraintViolation](#openapi-definition-ConstraintViolation)[] | A list of constraint violations |
 | message | string | The error message |
 
 #### The `ConstraintViolation` object
@@ -474,4 +473,4 @@ https://mySampleEnv.live.dynatrace.com/api/v2/synthetic/locations
 ## Related topics
 
 * [Synthetic Monitoring](/managed/observe/digital-experience/synthetic-monitoring "Learn about Synthetic Monitoring and how to create a single-URL browser monitor, a browser clickpath, or an HTTP monitor.")
-* [Create a private Synthetic location](/managed/observe/digital-experience/synthetic-monitoring/private-synthetic-locations/create-a-private-synthetic-location "Learn how to create a private location for synthetic monitoring.")
+* [Create a private Synthetic location in Classic](/managed/observe/digital-experience/synthetic-monitoring/private-synthetic-locations/create-a-private-synthetic-location "Learn how to create a private location for synthetic monitoring.")

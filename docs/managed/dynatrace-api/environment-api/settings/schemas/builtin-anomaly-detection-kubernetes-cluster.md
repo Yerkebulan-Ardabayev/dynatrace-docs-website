@@ -1,7 +1,6 @@
 ---
 title: Settings API - Kubernetes cluster anomaly detection schema table
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/settings/schemas/builtin-anomaly-detection-kubernetes-cluster
-scraped: 2026-05-12T11:47:10.309083
 ---
 
 # Settings API - Kubernetes cluster anomaly detection schema table
@@ -12,7 +11,7 @@ scraped: 2026-05-12T11:47:10.309083
 
 ### Kubernetes cluster anomaly detection (`builtin:anomaly-detection.kubernetes.cluster)`
 
-Dynatrace automatically detects a wide range of common Kubernetes-related issues. Use these settings to configure alerts relevant to your Kubernetes cluster. Changing thresholds resets the observation period. Additional information can be found on our [documentation pageï»¿](https://dt-url.net/wq02okj#cluster).
+Dynatrace automatically detects a wide range of common Kubernetes-related issues. Use these settings to configure alerts relevant to your Kubernetes cluster. Changing thresholds resets the observation period. Additional information can be found on our [documentation page﻿](https://dt-url.net/wq02okj#cluster).
 
 | Schema ID | Schema groups | Scope |
 | --- | --- | --- |

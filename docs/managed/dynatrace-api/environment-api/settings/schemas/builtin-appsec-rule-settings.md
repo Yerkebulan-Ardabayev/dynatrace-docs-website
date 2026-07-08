@@ -1,7 +1,6 @@
 ---
 title: Settings API - Vulnerability Analytics- Monitoring rules for third-party vulnerabilities schema table
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/settings/schemas/builtin-appsec-rule-settings
-scraped: 2026-05-12T11:39:22.893401
 ---
 
 # Settings API - Vulnerability Analytics- Monitoring rules for third-party vulnerabilities schema table

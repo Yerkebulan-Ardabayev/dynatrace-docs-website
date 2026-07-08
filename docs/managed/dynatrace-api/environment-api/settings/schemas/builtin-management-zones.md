@@ -1,7 +1,6 @@
 ---
 title: Settings API - Management zones settings schema table
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/settings/schemas/builtin-management-zones
-scraped: 2026-05-12T11:19:05.420553
 ---
 
 # Settings API - Management zones settings schema table
@@ -54,7 +53,7 @@ To execute this request, you need an access token with **Read settings** (`setti
 | Rule type `type` | enum | The element has these enums * `ME` * `DIMENSION` * `SELECTOR` | Required |
 | `attributeRule` | [ManagementZoneAttributeRule](#ManagementZoneAttributeRule) | - | Required |
 | `dimensionRule` | [DimensionRule](#DimensionRule) | - | Required |
-| Entity selector `entitySelector` | text | Learn more about the [Entity selectorï»¿](https://dt-url.net/apientityselector). | Required |
+| Entity selector `entitySelector` | text | Learn more about the [Entity selector﻿](https://dt-url.net/apientityselector). | Required |
 
 ##### The `ManagementZoneAttributeRule` object
 

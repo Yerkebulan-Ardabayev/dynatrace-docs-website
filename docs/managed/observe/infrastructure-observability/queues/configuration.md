@@ -1,7 +1,6 @@
 ---
 title: Configure message queue monitoring
 source: https://docs.dynatrace.com/managed/observe/infrastructure-observability/queues/configuration
-scraped: 2026-05-12T11:38:01.028253
 ---
 
 # Configure message queue monitoring
@@ -18,11 +17,11 @@ Dynatrace automatically detects how messages are processed within your environme
 
 Review the following table to determine whether some manual configuration is needed.
 
-| If this is trueâ¦ | â¦then this manual configuration is needed |
+| If this is true… | …then this manual configuration is needed |
 | --- | --- |
 | The application uses non-standard or non-event-based message queue handlers. | Define a [custom messaging service](/managed/observe/application-observability/services/service-detection/service-detection-v1/service-types/define-messaging-services "Set up custom messaging services to trace message queues."). |
 | You're using IBM MQ. | Define your [IBM MQ](/managed/observe/infrastructure-observability/queues/configuration/ibm-mq-tracing "Configure Dynatrace for IBM MQ tracing.") configuration in Dynatrace to get a continuous service flow. |
-| The messaging client isn't compatible with Dynatrace, or you're using an unsupported protocol. | Extend the traces with [OpenTelemetry](/managed/ingest-from/dynatrace-oneagent/oneagent-and-opentelemetry/oneagent-otel "Learn how to send OpenTelemetry data to a Dynatrace OneAgent.") or [OneAgent SDK](/managed/ingest-from/extend-dynatrace/extend-tracing/oneagent-sdk "The Dynatrace OneAgent SDK enables you to instrument your application manually to extend end-to-end visibility for frameworks and technologies for which there is no code module yet available.") (see also [OneAgent SDK on GitHubï»¿](https://github.com/Dynatrace/OneAgent-SDK#trace-messaging)). |
+| The messaging client isn't compatible with Dynatrace, or you're using an unsupported protocol. | Extend the traces with [OpenTelemetry](/managed/ingest-from/dynatrace-oneagent/oneagent-and-opentelemetry/oneagent-otel "Learn how to send OpenTelemetry data to a Dynatrace OneAgent.") or [OneAgent SDK](/managed/ingest-from/extend-dynatrace/extend-tracing/oneagent-sdk "The Dynatrace OneAgent SDK enables you to instrument your application manually to extend end-to-end visibility for frameworks and technologies for which there is no code module yet available.") (see also [OneAgent SDK on GitHub﻿](https://github.com/Dynatrace/OneAgent-SDK#trace-messaging)). |
 
 ## Process group detection
 

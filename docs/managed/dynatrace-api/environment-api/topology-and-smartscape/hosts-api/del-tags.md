@@ -1,7 +1,6 @@
 ---
 title: Hosts API - DELETE tag
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/topology-and-smartscape/hosts-api/del-tags
-scraped: 2026-05-12T12:03:12.579507
 ---
 
 # Hosts API - DELETE tag
@@ -59,7 +58,7 @@ To learn how to obtain and use it, see [Tokens and authentication](/managed/disc
 | Element | Type | Description |
 | --- | --- | --- |
 | code | integer | The HTTP status code |
-| constraintViolations | [ConstraintViolation[]](#openapi-definition-ConstraintViolation) | A list of constraint violations |
+| constraintViolations | [ConstraintViolation](#openapi-definition-ConstraintViolation)[] | A list of constraint violations |
 | message | string | The error message |
 
 #### The `ConstraintViolation` object

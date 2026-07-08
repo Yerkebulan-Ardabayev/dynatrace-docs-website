@@ -1,7 +1,6 @@
 ---
 title: Timestamp/splitting configuration (Logs Classic)
 source: https://docs.dynatrace.com/managed/analyze-explore-automate/log-monitoring/log-monitoring-configuration/timestamp-configuration
-scraped: 2026-05-12T11:53:56.290896
 ---
 
 # Timestamp/splitting configuration (Logs Classic)
@@ -33,11 +32,11 @@ Regardless of where it occurs in a log entry, a timestamp may be written in mult
 
 Because of this, Log Monitoring also enables you to define a specific date format using timestamp rules that specify what should be considered a timestamp in a log record. These rules contain a timestamp pattern, time zone, and matchers.
 
-* **Pattern**âDefines what should be considered a timestamp in your logline.
-* **Timestamp search limit**âspecifies the count of characters in each log line, measured from the beginning of the line, where the timestamp is searched.
-* **Timestamps in indented lines**âEnable this option if you don't want to parse timestamps in lines that start with whitespace characters.
-* **Time zone**âDefines the timestamp time zone. Optional if your timestamp pattern includes the timezone indicator (`%z`).
-* **Matcher**âNarrows down the range for the rule and applies the timestamp pattern only to matched log entries. Because you can't use the `log.content` attribute in the timestamp pattern matchers, the highest granularity is a log source. Granularity is at this level because the timestamp pattern is used to split the contents of a log source into separate log records, so it is used before the `log.content` attribute's value (or any other attributes set on an individual log record's level) is determined.
+* **Pattern**—Defines what should be considered a timestamp in your logline.
+* **Timestamp search limit**—specifies the count of characters in each log line, measured from the beginning of the line, where the timestamp is searched.
+* **Timestamps in indented lines**—Enable this option if you don't want to parse timestamps in lines that start with whitespace characters.
+* **Time zone**—Defines the timestamp time zone. Optional if your timestamp pattern includes the timezone indicator (`%z`).
+* **Matcher**—Narrows down the range for the rule and applies the timestamp pattern only to matched log entries. Because you can't use the `log.content` attribute in the timestamp pattern matchers, the highest granularity is a log source. Granularity is at this level because the timestamp pattern is used to split the contents of a log source into separate log records, so it is used before the `log.content` attribute's value (or any other attributes set on an individual log record's level) is determined.
 
   + If you create multiple rules matching the same log data, all defined time formats are searched for.
   + If you have at least one rule matching a given log, predefined formats are not applied to it.
@@ -47,10 +46,10 @@ Because of this, Log Monitoring also enables you to define a specific date forma
 When ingesting log entries, OneAgent parses the log entry for a timestamp.
 To do this, it uses a list of matcher patterns.
 
-* When the log entry contains one timestamp, OneAgent evaluates the timestamp against the list of matcher patterns, starting with the first pattern in the list. If the entryâs timestamp matches one of the patterns, OneAgent uses that timestamp as the beginning of the log entry.
+* When the log entry contains one timestamp, OneAgent evaluates the timestamp against the list of matcher patterns, starting with the first pattern in the list. If the entry’s timestamp matches one of the patterns, OneAgent uses that timestamp as the beginning of the log entry.
 * When the log entry contains two or more timestamps, OneAgent evaluates the timestamp against the list of matcher patterns, starting with the pattern that was matched in the previous log entry.
 
-Therefore, it is possible that even if the log entryâs first timestamp matches the first pattern in the list of matching patterns, OneAgent will actually match the second timestampâbecause the previous log entry matched the second pattern.
+Therefore, it is possible that even if the log entry’s first timestamp matches the first pattern in the list of matching patterns, OneAgent will actually match the second timestamp—because the previous log entry matched the second pattern.
 See the code block below for an example.
 
 ```
@@ -93,7 +92,7 @@ The host scope can be accessed through the **Host settings** for a specific host
 
 1. Go to **Hosts**.
 2. Find and select your host to display the host overview page.
-3. In the upper-right corner of the host overview page, select **More** (**â¦**) > **Settings**.
+3. In the upper-right corner of the host overview page, select **More** (**…**) > **Settings**.
 
 4. In the host settings, select **Log Monitoring** > **Timestamp/Splitting patterns**.
 5. Configure data masking by adding rules with a set of matchers that specify what should be considered a timestamp in the log record.
@@ -130,7 +129,7 @@ To add a rule (on the host, host group, or environment level) that interprets th
    The name to display for your configuration.
 3. **Pattern**
 
-   Enter the pattern to be read as a date from the logs. For details on timestamp formats, see [Supported timestamp formats (Logs Classic)](/managed/analyze-explore-automate/log-monitoring/log-monitoring-configuration/timestamp-data-format "Supported timestamps for the latest version of Dynatrace Log Monitoring.") and the [Date libraryï»¿](https://dt-url.net/o8034wt).
+   Enter the pattern to be read as a date from the logs. For details on timestamp formats, see [Supported timestamp formats (Logs Classic)](/managed/analyze-explore-automate/log-monitoring/log-monitoring-configuration/timestamp-data-format "Supported timestamps for the latest version of Dynatrace Log Monitoring.") and the [Date library﻿](https://dt-url.net/o8034wt).
 
    You need to specify at least the year, month, day, hours, minutes, and seconds, although you can use alternative formats for them. You can include the time zone indicator (`%z`) or specify the time zone separately in the rule definition.
 
@@ -189,9 +188,9 @@ To check the current schema version for timestamp configuration, list all availa
 
 Timestamp configuration objects are available for configuration on the following scopes:
 
-* `environment`âconfiguration object affects all hosts in a given environment.
-* `host_group`âconfiguration object affects all hosts assigned to a given host group.
-* `host`âconfiguration object affects only the given host.
+* `environment`—configuration object affects all hosts in a given environment.
+* `host_group`—configuration object affects all hosts assigned to a given host group.
+* `host`—configuration object affects only the given host.
 
 To create a timestamp configuration using the API
 

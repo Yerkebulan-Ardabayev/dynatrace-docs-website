@@ -1,7 +1,6 @@
 ---
 title: Allowed beacon domains API - PUT configuration
 source: https://docs.dynatrace.com/managed/dynatrace-api/configuration-api/rum/allowed-beacon-cors/put-configuration
-scraped: 2026-05-12T11:19:46.665462
 ---
 
 # Allowed beacon domains API - PUT configuration
@@ -40,7 +39,7 @@ Configuration of the allowed beacon origins for CORS requests.
 
 | Element | Type | Description | Required |
 | --- | --- | --- | --- |
-| allowedBeaconOrigins | [BeaconDomainPattern[]](#openapi-definition-BeaconDomainPattern) | A list of allowed beacon origins for CORS requests. | Optional |
+| allowedBeaconOrigins | [BeaconDomainPattern](#openapi-definition-BeaconDomainPattern)[] | A list of allowed beacon origins for CORS requests. | Optional |
 | metadata | [ConfigurationMetadata](#openapi-definition-ConfigurationMetadata) | Metadata useful for debugging | Optional |
 | rejectBeaconsWithoutOriginHeader | boolean | Discard (`true`) or keep (`false`) beacons without the **Origin** HTTP header on the BeaconForwarder.  If not set, `false` is used. | Optional |
 
@@ -149,7 +148,7 @@ This is a model of the request body, showing the possible elements. It has to be
 | Element | Type | Description |
 | --- | --- | --- |
 | code | integer | The HTTP status code |
-| constraintViolations | [ConstraintViolation[]](#openapi-definition-ConstraintViolation) | A list of constraint violations |
+| constraintViolations | [ConstraintViolation](#openapi-definition-ConstraintViolation)[] | A list of constraint violations |
 | message | string | The error message |
 
 #### The `ConstraintViolation` object
@@ -260,7 +259,7 @@ To learn how to obtain and use it, see [Tokens and authentication](/managed/disc
 | Element | Type | Description |
 | --- | --- | --- |
 | code | integer | The HTTP status code |
-| constraintViolations | [ConstraintViolation[]](#openapi-definition-ConstraintViolation) | A list of constraint violations |
+| constraintViolations | [ConstraintViolation](#openapi-definition-ConstraintViolation)[] | A list of constraint violations |
 | message | string | The error message |
 
 #### The `ConstraintViolation` object

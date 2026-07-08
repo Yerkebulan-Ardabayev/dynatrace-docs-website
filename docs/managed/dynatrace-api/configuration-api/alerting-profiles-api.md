@@ -1,7 +1,6 @@
 ---
 title: Alerting profiles API
 source: https://docs.dynatrace.com/managed/dynatrace-api/configuration-api/alerting-profiles-api
-scraped: 2026-05-12T11:36:45.576948
 ---
 
 # Alerting profiles API

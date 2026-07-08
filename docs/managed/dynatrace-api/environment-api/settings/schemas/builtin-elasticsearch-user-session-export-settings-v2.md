@@ -1,7 +1,6 @@
 ---
 title: Settings API - User session exports schema table
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/settings/schemas/builtin-elasticsearch-user-session-export-settings-v2
-scraped: 2026-05-12T11:48:24.723456
 ---
 
 # Settings API - User session exports schema table
@@ -23,7 +22,7 @@ Once enabled, user session export automatically sends JSON data for all monitore
 You can also filter on a management zone per user session export.
 You can define up to three user session exports to send specific data to different endpoints.
 
-For complete details, visit [Configure user session exportsï»¿](https://dt-url.net/user-session-exports).
+For complete details, visit [Configure user session exports﻿](https://dt-url.net/user-session-exports).
 
 | Schema ID | Schema groups | Scope |
 | --- | --- | --- |

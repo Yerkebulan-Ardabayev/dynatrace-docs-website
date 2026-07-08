@@ -1,7 +1,6 @@
 ---
 title: Log data formats (Logs Classic)
 source: https://docs.dynatrace.com/managed/analyze-explore-automate/log-monitoring/log-monitoring-configuration/log-data-format
-scraped: 2026-05-12T11:13:19.851975
 ---
 
 # Log data formats (Logs Classic)

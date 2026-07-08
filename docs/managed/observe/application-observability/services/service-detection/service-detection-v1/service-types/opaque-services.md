@@ -1,7 +1,6 @@
 ---
 title: Opaque services
 source: https://docs.dynatrace.com/managed/observe/application-observability/services/service-detection/service-detection-v1/service-types/opaque-services
-scraped: 2026-05-12T11:14:26.408469
 ---
 
 # Opaque services
@@ -33,7 +32,7 @@ When a service is of an unrecognized technology or a technology that is recogniz
 
 Although deep monitoring isn't supported for such services, Dynatrace can still detect all requests to this service that are sent by fully visible services and, for example, calculate the relevant response times and failure rate.
 
-Opaque services of unrecognized or unsupported technologies are included in Smartscape. This ensures a complete representation of your infrastructureâs topology, even when your environment includes opaque services.
+Opaque services of unrecognized or unsupported technologies are included in Smartscape. This ensures a complete representation of your infrastructure’s topology, even when your environment includes opaque services.
 
 The [OneAgent SDK](/managed/ingest-from/extend-dynatrace/extend-tracing/oneagent-sdk "The Dynatrace OneAgent SDK enables you to instrument your application manually to extend end-to-end visibility for frameworks and technologies for which there is no code module yet available.") enables you to instrument your application manually to extend end-to-end visibility for unrecognized or unsupported technologies.
 
@@ -44,5 +43,5 @@ There can be cases where a service is considered opaque even when the service is
 * A process is offline but a service still makes calls to it. These opaque services are used to visualize dependencies in the context of availability problems.
 * A process never started processing a request (the calling service receives an error or timeout) and therefore Dynatrace can't track the request in the process.
 * A process hasn't completely restarted following OneAgent installation. By the time the process restarts, it should no longer appear as opaque.
-* The framework processing the request at the specific port is not currently supported by OneAgent. If this is important to you, please suggest a product idea for the specific framework and version in [Dynatrace Community product ideasï»¿](https://community.dynatrace.com/t5/Product-ideas/idb-p/DynatraceProductIdeas) (Community sign-in required).
-* The framework is supported, but OneAgent has run into a technical problem. In such a case, please [submit a Support ticketï»¿](https://www.dynatrace.com/support/contact-support/). Describe the issue as best you can and include all details regarding your underlying framework, technologies, and versions.
+* The framework processing the request at the specific port is not currently supported by OneAgent. If this is important to you, please suggest a product idea for the specific framework and version in [Dynatrace Community product ideas﻿](https://community.dynatrace.com/t5/Product-ideas/idb-p/DynatraceProductIdeas) (Community sign-in required).
+* The framework is supported, but OneAgent has run into a technical problem. In such a case, please [submit a Support ticket﻿](https://www.dynatrace.com/support/contact-support/). Describe the issue as best you can and include all details regarding your underlying framework, technologies, and versions.

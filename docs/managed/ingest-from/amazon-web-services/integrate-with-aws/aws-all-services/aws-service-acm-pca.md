@@ -1,7 +1,6 @@
 ---
 title: AWS Certificate Manager Private Certificate Authority (ACM PCA) monitoring
 source: https://docs.dynatrace.com/managed/ingest-from/amazon-web-services/integrate-with-aws/aws-all-services/aws-service-acm-pca
-scraped: 2026-05-12T11:30:24.014674
 ---
 
 # AWS Certificate Manager Private Certificate Authority (ACM PCA) monitoring
@@ -27,7 +26,7 @@ To enable monitoring for this service, you need:
 * Dynatrace version 1.217+
 * An updated [AWS monitoring policy](/managed/ingest-from/amazon-web-services/integrate-with-aws/cloudwatch-metrics#monitoring-policy "Integrate metrics from Amazon CloudWatch.") to include the additional AWS services.
 
-To [update the AWS IAM policyï»¿](https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_manage-edit.html#edit-managed-policy-console), use the JSON below, which contains the monitoring policy (permissions) for all supporting services.
+To [update the AWS IAM policy﻿](https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_manage-edit.html#edit-managed-policy-console), use the JSON below, which contains the monitoring policy (permissions) for all supporting services.
 
 JSON predefined policy for all supporting services
 

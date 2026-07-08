@@ -1,7 +1,6 @@
 ---
 title: Settings API - POST an object
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/settings/objects/post-object
-scraped: 2026-05-12T11:31:22.650832
 ---
 
 # Settings API - POST an object
@@ -32,7 +31,7 @@ To learn how to obtain and use it, see [Tokens and authentication](/managed/disc
 | --- | --- | --- | --- | --- |
 | validateOnly | boolean | If `true`, the request runs only validation of the submitted settings objects, without saving them. | query | Optional |
 | adminAccess | boolean | If set to true and user has settings:objects:admin permission, the endpoint will act as if the user is the owner of all objects | query | Optional |
-| body | [SettingsObjectCreate[]](#openapi-definition-SettingsObjectCreate) | The JSON body of the request. Contains the settings objects. | body | Optional |
+| body | [SettingsObjectCreate](#openapi-definition-SettingsObjectCreate)[] | The JSON body of the request. Contains the settings objects. | body | Optional |
 
 ### Request body objects
 
@@ -49,8 +48,8 @@ Configuration of a new settings object.
 | objectId | string | The ID of the settings object that should be replaced.  Only applicable if an external identifier is provided. | Optional |
 | schemaId | string | The schema on which the object is based. | Required |
 | schemaVersion | string | The version of the schema on which the object is based. | Optional |
-| scope | string | The scope that the object targets. For more details, please see [Dynatrace Documentationï»¿](https://dt-url.net/ky03459). | Required |
-| value | string | The value of the setting.  It defines the actual values of settings' parameters.  The actual content depends on the object's schema. | Required |
+| scope | string | The scope that the object targets. For more details, please see [Dynatrace Documentation﻿](https://dt-url.net/ky03459). | Required |
+| value | [AnyValue](#openapi-definition-AnyValue) | The value of the setting.  It defines the actual values of settings' parameters.  The actual content depends on the object's schema. | Required |
 
 #### The `AnyValue` object
 
@@ -93,7 +92,15 @@ This is a model of the request body, showing the possible elements. It has to be
 
 
 
-"value": "string"
+"value": {
+
+
+
+"autoMonitoring": true
+
+
+
+}
 
 
 
@@ -110,12 +117,12 @@ This is a model of the request body, showing the possible elements. It has to be
 
 | Code | Type | Description |
 | --- | --- | --- |
-| **200** | [SettingsObjectResponse[]](#openapi-definition-SettingsObjectResponse) | Success |
-| **207** | [SettingsObjectResponse[]](#openapi-definition-SettingsObjectResponse) | Multi-status: different objects in the payload resulted in different statuses. |
-| **400** | [SettingsObjectResponse[]](#openapi-definition-SettingsObjectResponse) | Failed. Schema validation failed. |
+| **200** | [SettingsObjectResponse](#openapi-definition-SettingsObjectResponse)[] | Success |
+| **207** | [SettingsObjectResponse](#openapi-definition-SettingsObjectResponse)[] | Multi-status: different objects in the payload resulted in different statuses. |
+| **400** | [SettingsObjectResponse](#openapi-definition-SettingsObjectResponse)[] | Failed. Schema validation failed. |
 | **403** | [ErrorEnvelope](#openapi-definition-ErrorEnvelope) | Failed. Forbidden. |
-| **404** | [SettingsObjectResponse[]](#openapi-definition-SettingsObjectResponse) | Failed. The requested resource doesn't exist. |
-| **409** | [SettingsObjectResponse[]](#openapi-definition-SettingsObjectResponse) | Failed. Conflicting resource. |
+| **404** | [SettingsObjectResponse](#openapi-definition-SettingsObjectResponse)[] | Failed. The requested resource doesn't exist. |
+| **409** | [SettingsObjectResponse](#openapi-definition-SettingsObjectResponse)[] | Failed. Conflicting resource. |
 | **4XX** | [ErrorEnvelope](#openapi-definition-ErrorEnvelope) | Client side error. |
 | **5XX** | [ErrorEnvelope](#openapi-definition-ErrorEnvelope) | Server side error. |
 
@@ -131,7 +138,7 @@ The response to a creation- or update-request.
 | --- | --- | --- |
 | code | integer | The HTTP status code for the object. |
 | error | [Error](#openapi-definition-Error) | - |
-| invalidValue | string | The value of the setting.  It defines the actual values of settings' parameters.  The actual content depends on the object's schema. |
+| invalidValue | [AnyValue](#openapi-definition-AnyValue) | The value of the setting.  It defines the actual values of settings' parameters.  The actual content depends on the object's schema. |
 | objectId | string | For a successful request, the ID of the created or modified settings object. |
 
 #### The `Error` object
@@ -139,7 +146,7 @@ The response to a creation- or update-request.
 | Element | Type | Description |
 | --- | --- | --- |
 | code | integer | The HTTP status code |
-| constraintViolations | [ConstraintViolation[]](#openapi-definition-ConstraintViolation) | A list of constraint violations |
+| constraintViolations | [ConstraintViolation](#openapi-definition-ConstraintViolation)[] | A list of constraint violations |
 | message | string | The error message |
 
 #### The `ConstraintViolation` object
@@ -167,7 +174,7 @@ The response to a creation- or update-request.
 | --- | --- | --- |
 | code | integer | The HTTP status code for the object. |
 | error | [Error](#openapi-definition-Error) | - |
-| invalidValue | string | The value of the setting.  It defines the actual values of settings' parameters.  The actual content depends on the object's schema. |
+| invalidValue | [AnyValue](#openapi-definition-AnyValue) | The value of the setting.  It defines the actual values of settings' parameters.  The actual content depends on the object's schema. |
 | objectId | string | For a successful request, the ID of the created or modified settings object. |
 
 #### The `Error` object
@@ -175,7 +182,7 @@ The response to a creation- or update-request.
 | Element | Type | Description |
 | --- | --- | --- |
 | code | integer | The HTTP status code |
-| constraintViolations | [ConstraintViolation[]](#openapi-definition-ConstraintViolation) | A list of constraint violations |
+| constraintViolations | [ConstraintViolation](#openapi-definition-ConstraintViolation)[] | A list of constraint violations |
 | message | string | The error message |
 
 #### The `ConstraintViolation` object
@@ -256,7 +263,15 @@ A schema representing an arbitrary value type.
 
 
 
-"invalidValue": "string",
+"invalidValue": {
+
+
+
+"autoMonitoring": true
+
+
+
+},
 
 
 
@@ -332,7 +347,15 @@ A schema representing an arbitrary value type.
 
 
 
-"invalidValue": "string",
+"invalidValue": {
+
+
+
+"autoMonitoring": true
+
+
+
+},
 
 
 

@@ -1,7 +1,6 @@
 ---
 title: Access control use cases
 source: https://docs.dynatrace.com/managed/manage/identity-access-management/use-cases
-scraped: 2026-05-12T11:06:32.695022
 ---
 
 # Access control use cases

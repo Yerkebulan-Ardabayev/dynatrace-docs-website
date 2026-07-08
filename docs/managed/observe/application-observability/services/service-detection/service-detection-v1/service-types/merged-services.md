@@ -1,7 +1,6 @@
 ---
 title: Merged services
 source: https://docs.dynatrace.com/managed/observe/application-observability/services/service-detection/service-detection-v1/service-types/merged-services
-scraped: 2026-05-12T12:03:08.375246
 ---
 
 # Merged services
@@ -25,10 +24,10 @@ Dynatrace automatically identifies mergeable services for you and displays them 
 
 ## Characteristics of existing merged services
 
-* Once merged, the data of individual merged services can no longer be distinguishedâmonitoring data is available only in aggregate form for all the merged services.
+* Once merged, the data of individual merged services can no longer be distinguished—monitoring data is available only in aggregate form for all the merged services.
 * The original services of a merged service are no longer updated as data sources. While historical data remains available (for example, for charting), no new data is tracked for the original services. The aggregated data is assigned to and associated with the merged service.
 * Merged services are of the same type. For example, they belong to the same process group, share the same underlying technology, or follow the same naming pattern. Multiple virtual hosts, context roots, or listen ports that represent the same logical entity can be part of a service merging.
-* Only near-identical, standalone web-request services of the same process group are mergedâmerged services are not merged into other merged services.
+* Only near-identical, standalone web-request services of the same process group are merged—merged services are not merged into other merged services.
 
 ## Split merged services
 

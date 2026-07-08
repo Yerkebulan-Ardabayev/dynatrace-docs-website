@@ -1,7 +1,6 @@
 ---
 title: Add a Managed Cluster node
 source: https://docs.dynatrace.com/managed/managed-cluster/installation/add-cluster-node
-scraped: 2026-05-12T11:06:39.697766
 ---
 
 # Add a Managed Cluster node
@@ -28,7 +27,7 @@ You can scale your Managed Cluster by adding nodes through the Cluster Managemen
 ## Step 1 Download installer
 
 1. Log in to the **Cluster Management Console**.
-2. Go to **Deployment Status** and select **Add new cluster node**.
+2. Go to **Deployment Status** and select **Install cluster node**.
 3. Copy the `wget` command line from the **Run this command on the target host** text field and paste it into your terminal window. Wait for the download to complete.
 
 ## Step 2 Run installer
@@ -52,7 +51,7 @@ You can scale your Managed Cluster by adding nodes through the Cluster Managemen
      ```
      /bin/sh dynatrace-managed-<version>.sh
      ```
-2. Type `Accept` to agree to the Dynatrace Managed [Terms of useï»¿](https://www.dynatrace.com/eula/managed/). Installation won't continue until you complete this step. To quit installation, press `Ctrl+C`.
+2. Type `Accept` to agree to the Dynatrace Managed [Terms of use﻿](https://www.dynatrace.com/eula/managed/). Installation won't continue until you complete this step. To quit installation, press `Ctrl+C`.
 3. Accept the prompts for values such as installation path and user account by pressing `Enter`. To override a value, type your choice and press `Enter`.
 
 ## Step 3 Finalize
@@ -136,7 +135,7 @@ Yes, you can add a node using the same procedure as for [installing a Managed Cl
 
 ### Using a privilege management system other than sudo
 
-Yes, you can use `pbrun`, but you must grant the Dynatrace user permission to run `/opt/dtrun/dtrun *`. Specify the user who is installing Dynatrace Managed and the command that replaces `sudo`. Note that `<version>` represents the Dynatrace Managed version number.
+Yes, you can use `pbrun`, but you must grant the Dynatrace user permission to run `/opt/dtrun/dtrun *`. Specify the user who is installing Dynatrace Managed and the command that replaces `sudo`. `<version>` is the Dynatrace Managed version number.
 
 ```
 /bin/sh dynatrace-managed-<version>.sh --system-user dynatrace:dynatrace --sudo-cmd  "/usr/bin/pbrun \$CMD"
@@ -154,4 +153,4 @@ Run this command to stop all Dynatrace Managed processes on a node:
 pbrun /opt/dynatrace-managed/launcher/dynatrace.sh stop
 ```
 
-Do not remove or overwrite `dtrun`, as it is required by installation and update procedures. The installer calls `dtrun` without arguments to validate that the user has administrative privileges, but for normal operation Dynatrace calls `dtrun` with arguments to actually run commands.
+Don't remove or overwrite `dtrun`, as it's required by installation and update procedures. The installer calls `dtrun` without arguments to validate that the user has administrative privileges; during normal operation, Dynatrace calls `dtrun` with arguments to run commands.

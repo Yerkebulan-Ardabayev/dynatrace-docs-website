@@ -1,7 +1,6 @@
 ---
 title: ActiveGate remote configuration management API - POST a job preview
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/remote-configuration/activegate/post-job-preview
-scraped: 2026-05-12T11:55:39.387768
 ---
 
 # ActiveGate remote configuration management API - POST a job preview
@@ -46,7 +45,7 @@ Remote configuration management operation creation request.
 | Element | Type | Description | Required |
 | --- | --- | --- | --- |
 | entities | string[] | A list of entities IDs for which remote configuration management is to be executed. | Required |
-| operations | [RemoteConfigurationManagementOperation[]](#openapi-definition-RemoteConfigurationManagementOperation) | A list of remote configuration management operations to be executed. | Required |
+| operations | [RemoteConfigurationManagementOperation](#openapi-definition-RemoteConfigurationManagementOperation)[] | A list of remote configuration management operations to be executed. | Required |
 
 #### The `RemoteConfigurationManagementOperation` object
 
@@ -133,7 +132,7 @@ A list of remote configuration management jobs previews.
 
 | Element | Type | Description |
 | --- | --- | --- |
-| previews | [RemoteConfigurationManagementJobPreview[]](#openapi-definition-RemoteConfigurationManagementJobPreview) | A list of remote configuration management jobs previews. |
+| previews | [RemoteConfigurationManagementJobPreview](#openapi-definition-RemoteConfigurationManagementJobPreview)[] | A list of remote configuration management jobs previews. |
 
 #### The `RemoteConfigurationManagementJobPreview` object
 
@@ -153,8 +152,8 @@ The result of remote configuration management validation.
 
 | Element | Type | Description |
 | --- | --- | --- |
-| invalidEntities | [RemoteConfigurationManagementEntityValidationError[]](#openapi-definition-RemoteConfigurationManagementEntityValidationError) | A list of validation errors for entities. |
-| invalidOperations | [RemoteConfigurationManagementOperationValidationError[]](#openapi-definition-RemoteConfigurationManagementOperationValidationError) | A list of validation errors for operations. |
+| invalidEntities | [RemoteConfigurationManagementEntityValidationError](#openapi-definition-RemoteConfigurationManagementEntityValidationError)[] | A list of validation errors for entities. |
+| invalidOperations | [RemoteConfigurationManagementOperationValidationError](#openapi-definition-RemoteConfigurationManagementOperationValidationError)[] | A list of validation errors for operations. |
 
 #### The `RemoteConfigurationManagementEntityValidationError` object
 

@@ -1,7 +1,6 @@
 ---
 title: ActiveGate tokens API - GET all tokens
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/tokens-v2/activegate-tokens/get-all-activegate-tokens
-scraped: 2026-05-12T12:09:57.836002
 ---
 
 # ActiveGate tokens API - GET all tokens
@@ -58,7 +57,7 @@ A list of ActiveGate tokens.
 
 | Element | Type | Description |
 | --- | --- | --- |
-| activeGateTokens | [ActiveGateToken[]](#openapi-definition-ActiveGateToken) | A list of ActiveGate tokens. |
+| activeGateTokens | [ActiveGateToken](#openapi-definition-ActiveGateToken)[] | A list of ActiveGate tokens. |
 | nextPageKey | string | The cursor for the next page of results. Has the value of `null` on the last page.  Use it in the **nextPageKey** query parameter to obtain subsequent pages of the result. |
 | pageSize | integer | The number of entries per page. |
 | totalCount | integer | The total number of entries in the result. |
@@ -72,7 +71,7 @@ Metadata of an ActiveGate token.
 | activeGateType | string | The type of the ActiveGate for which the token is valid. The element can hold these values * `ENVIRONMENT` * `CLUSTER` |
 | creationDate | string | The token creation date in ISO 8601 format (`yyyy-MM-dd'T'HH:mm:ss.SSS'Z'`). |
 | expirationDate | string | The token expiration date in ISO 8601 format (`yyyy-MM-dd'T'HH:mm:ss.SSS'Z'`).  If not set, the token never expires. |
-| id | string | The ActiveGate token identifier, consisting of [prefix and public partï»¿](https://dt-url.net/rn00tjg) of the token. |
+| id | string | The ActiveGate token identifier, consisting of [prefix and public part﻿](https://dt-url.net/rn00tjg) of the token. |
 | lastUsedDate | string | The token last used date in ISO 8601 format (`yyyy-MM-dd'T'HH:mm:ss.SSS'Z'`). |
 | name | string | The name of the token. |
 | owner | string | The owner of the token. |
@@ -89,7 +88,7 @@ Metadata of an ActiveGate token.
 | Element | Type | Description |
 | --- | --- | --- |
 | code | integer | The HTTP status code |
-| constraintViolations | [ConstraintViolation[]](#openapi-definition-ConstraintViolation) | A list of constraint violations |
+| constraintViolations | [ConstraintViolation](#openapi-definition-ConstraintViolation)[] | A list of constraint violations |
 | message | string | The error message |
 
 #### The `ConstraintViolation` object

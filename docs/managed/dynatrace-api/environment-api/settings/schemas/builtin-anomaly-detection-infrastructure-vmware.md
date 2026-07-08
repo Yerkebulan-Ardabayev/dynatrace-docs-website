@@ -1,7 +1,6 @@
 ---
 title: Settings API - Anomaly detection for VMware schema table
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/settings/schemas/builtin-anomaly-detection-infrastructure-vmware
-scraped: 2026-05-12T11:46:49.200874
 ---
 
 # Settings API - Anomaly detection for VMware schema table

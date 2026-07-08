@@ -1,7 +1,6 @@
 ---
 title: Kubernetes API Monitoring
 source: https://docs.dynatrace.com/managed/ingest-from/setup-on-k8s/guides/deployment-and-configuration/monitoring-and-instrumentation/k8s-api-monitoring
-scraped: 2026-05-12T12:06:19.162713
 ---
 
 # Kubernetes API Monitoring
@@ -13,7 +12,7 @@ scraped: 2026-05-12T12:06:19.162713
 
 Dynatrace obtains information about Kubernetes entities and metadata by querying the Kubernetes API. This information is used for [out-of-the-box alerting for Kubernetes](/managed/observe/infrastructure-observability/container-platform-monitoring/kubernetes-monitoring/alert-on-kubernetes-issues "Configure alerts at a Kubernetes/OpenShift cluster, node, namespace, or workload level.") and to provide all observability signals in a proper Kubernetes context within the Dynatrace platform, for example, by creating relationships among applications, (micro-)services, databases, and Kubernetes entities such as pods, namespaces, and nodes.
 
-Dynatrace Operator manages the lifecycle of all Dynatrace components within a Kubernetes cluster and can be configured by deploying a DynaKube Custom Resource. Dynatrace ActiveGateâthe Dynatrace component required to monitor the Kubernetes APIâoffers a capability for Kubernetes API Monitoring.
+Dynatrace Operator manages the lifecycle of all Dynatrace components within a Kubernetes cluster and can be configured by deploying a DynaKube Custom Resource. Dynatrace ActiveGate—the Dynatrace component required to monitor the Kubernetes API—offers a capability for Kubernetes API Monitoring.
 
 Follow the steps below to enable Kubernetes API monitoring.
 
@@ -247,7 +246,7 @@ To connect to the public Kubernetes API, follow the instructions that apply to y
    oc config view --minify -o jsonpath='{.clusters[0].cluster.server}'
    ```
 
-   If you set `enableIstio` to `true` in the [DynaKube custom resourceï»¿](https://dt-url.net/dynakube-samples), use the command below to get the Kubernetes API URL:
+   If you set `enableIstio` to `true` in the [DynaKube custom resource﻿](https://dt-url.net/dynakube-samples), use the command below to get the Kubernetes API URL:
 
    Kubernetes
 
@@ -335,7 +334,7 @@ To connect to the public Kubernetes API, follow the instructions that apply to y
    oc config view --minify -o jsonpath='{.clusters[0].cluster.server}'
    ```
 
-   If you set `enableIstio` to `true` in the [DynaKube custom resourceï»¿](https://dt-url.net/dynakube-samples), use the command below to get the Kubernetes API URL:
+   If you set `enableIstio` to `true` in the [DynaKube custom resource﻿](https://dt-url.net/dynakube-samples), use the command below to get the Kubernetes API URL:
 
    Kubernetes
 

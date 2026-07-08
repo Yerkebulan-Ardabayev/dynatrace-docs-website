@@ -1,7 +1,6 @@
 ---
 title: Reports API - POST subscribe to a report
 source: https://docs.dynatrace.com/managed/dynatrace-api/configuration-api/reports-api/subscribe-report
-scraped: 2026-05-12T11:15:41.116040
 ---
 
 # Reports API - POST subscribe to a report
@@ -108,7 +107,7 @@ The short representation of a Dynatrace entity.
 | Element | Type | Description |
 | --- | --- | --- |
 | code | integer | The HTTP status code |
-| constraintViolations | [ConstraintViolation[]](#openapi-definition-ConstraintViolation) | A list of constraint violations |
+| constraintViolations | [ConstraintViolation](#openapi-definition-ConstraintViolation)[] | A list of constraint violations |
 | message | string | The error message |
 
 #### The `ConstraintViolation` object

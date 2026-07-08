@@ -1,7 +1,6 @@
 ---
 title: Troubleshooting
 source: https://docs.dynatrace.com/managed/ingest-from/setup-on-k8s/deployment/troubleshooting
-scraped: 2026-05-12T12:03:26.248401
 ---
 
 # Troubleshooting
@@ -75,7 +74,7 @@ Example output if there are no errors for the above-mentioned fields:
 
 
 
-[namespace ]      â  using namespace 'dynatrace'
+[namespace ]      √  using namespace 'dynatrace'
 
 
 
@@ -127,7 +126,7 @@ Example output if there are no errors for the above-mentioned fields:
 
 
 
-[dynakube  ]      â  'dynatrace:dynakube' Dynakube is valid
+[dynakube  ]      √  'dynatrace:dynakube' Dynakube is valid
 
 
 
@@ -135,7 +134,7 @@ Example output if there are no errors for the above-mentioned fields:
 
 
 
-[dtcluster ]      â  tenant is accessible
+[dtcluster ]      √  tenant is accessible
 ```
 
 ### Debug logs
@@ -456,7 +455,7 @@ kubectl exec -n dynatrace deployment/dynatrace-operator -- dynatrace-operator su
 
 ### Debug configuration and monitoring issues using the Kubernetes Monitoring Statistics extension
 
-The [Kubernetes Monitoring Statistics extensionï»¿](https://dt-url.net/n903xmb) can help you:
+The [Kubernetes Monitoring Statistics extension﻿](https://dt-url.net/n903xmb) can help you:
 
 * Troubleshoot your Kubernetes Monitoring setup
 * Troubleshoot your Prometheus integration setup
@@ -507,11 +506,11 @@ See the following reason values to narrow down the root cause.
 
 | Reason | Affected components | Description | Details |
 | --- | --- | --- | --- |
-| `NoBootstrapperConfig` | * OneAgent * Metadata enrichment | The webhook canât find or create a bootstrapper config Secret in the podâs namespace at injection time. | This usually happens when DynaKube reconciliation isnât complete or configuration issues prevent reconciliation. The bootstrapper config Secret contains required configuration (such as tokens) for CodeModule and metadata enrichment injection.  Two variants exist:  * `<dynakube name>-bootstrapper-config` in Dynatrace Operator namespace (usually `dynatrace`), which is copied if needed. * `dynatrace-bootstrapper-config` in the injected podâs namespace, which is mounted into the pod and used during injection. |
-| `NoMutationNeeded` | * OneAgent * Metadata enrichment | The webhook determines that the pod doesnât require injection. | This typically occurs when injection is disabled via annotations. |
-| `OwnerLookupFailed` | * OneAgent * Metadata enrichment * OTLP exporter configuration | The webhook canât determine the pod owner (name and kind), which is required for injection. | This typically happens when the Kubernetes API is temporarily unreachable or slow to respond. |
-| `MissingTenantUUID` | OneAgent | DynaKube reconciliation isnât complete and the environment UUID hasnât been verified at injection time. | This may occur during the initial Dynatrace Operator setup or when configuration issues prevent reconciliation. |
-| `DynaKubeStatusNotReady` | OneAgent | DynaKube reconciliation isnât complete and the CodeModules-related status isnât ready at injection time. | Because the status is unavailable, the webhook canât determine which CodeModule to inject. |
-| `NoOTLPExporterConfigSecret` | OTLP exporter configuration | The webhook canât find or create an OTLP exporter configuration Secret in the podâs namespace at injection time. | This usually happens when DynaKube reconciliation isnât complete or configuration issues prevent reconciliation.  Two variants exist:  * `<dynakube name>-otlp-exporter-config` in Dynatrace Operator namespace (source Secret). * `dynatrace-otlp-exporter-config` in the injected podâs namespace, which is mounted into the pod. |
-| `NoOTLPExporterActiveGateCertSecret` | OTLP exporter configuration | The webhook canât find or create an ActiveGate certificate Secret in the podâs namespace at injection time. | This usually happens when DynaKube reconciliation isnât complete or configuration issues prevent reconciliation. This Secret is required only when the OTLP exporter communicates with ActiveGate over TLS.  Two variants exist:  * `<dynakube name>-otlp-exporter-certs` in Dynatrace Operator namespace (source Secret). * `dynatrace-otlp-exporter-certs` in the injected podâs namespace, which is mounted into the pod. |
-| `IngestEndpointUnavailable` | OTLP exporter configuration | The webhook canât construct a valid ingest endpoint URL at injection time. | Without a valid ingest endpoint URL, the OTLP exporter configuration canât be injected. |
+| `NoBootstrapperConfig` | * OneAgent * Metadata enrichment | The webhook can’t find or create a bootstrapper config Secret in the pod’s namespace at injection time. | This usually happens when DynaKube reconciliation isn’t complete or configuration issues prevent reconciliation. The bootstrapper config Secret contains required configuration (such as tokens) for CodeModule and metadata enrichment injection.  Two variants exist:  * `<dynakube name>-bootstrapper-config` in Dynatrace Operator namespace (usually `dynatrace`), which is copied if needed. * `dynatrace-bootstrapper-config` in the injected pod’s namespace, which is mounted into the pod and used during injection. |
+| `NoMutationNeeded` | * OneAgent * Metadata enrichment | The webhook determines that the pod doesn’t require injection. | This typically occurs when injection is disabled via annotations. |
+| `OwnerLookupFailed` | * OneAgent * Metadata enrichment * OTLP exporter configuration | The webhook can’t determine the pod owner (name and kind), which is required for injection. | This typically happens when the Kubernetes API is temporarily unreachable or slow to respond. |
+| `MissingTenantUUID` | OneAgent | DynaKube reconciliation isn’t complete and the environment UUID hasn’t been verified at injection time. | This may occur during the initial Dynatrace Operator setup or when configuration issues prevent reconciliation. |
+| `DynaKubeStatusNotReady` | OneAgent | DynaKube reconciliation isn’t complete and the CodeModules-related status isn’t ready at injection time. | Because the status is unavailable, the webhook can’t determine which CodeModule to inject. |
+| `NoOTLPExporterConfigSecret` | OTLP exporter configuration | The webhook can’t find or create an OTLP exporter configuration Secret in the pod’s namespace at injection time. | This usually happens when DynaKube reconciliation isn’t complete or configuration issues prevent reconciliation.  Two variants exist:  * `<dynakube name>-otlp-exporter-config` in Dynatrace Operator namespace (source Secret). * `dynatrace-otlp-exporter-config` in the injected pod’s namespace, which is mounted into the pod. |
+| `NoOTLPExporterActiveGateCertSecret` | OTLP exporter configuration | The webhook can’t find or create an ActiveGate certificate Secret in the pod’s namespace at injection time. | This usually happens when DynaKube reconciliation isn’t complete or configuration issues prevent reconciliation. This Secret is required only when the OTLP exporter communicates with ActiveGate over TLS.  Two variants exist:  * `<dynakube name>-otlp-exporter-certs` in Dynatrace Operator namespace (source Secret). * `dynatrace-otlp-exporter-certs` in the injected pod’s namespace, which is mounted into the pod. |
+| `IngestEndpointUnavailable` | OTLP exporter configuration | The webhook can’t construct a valid ingest endpoint URL at injection time. | Without a valid ingest endpoint URL, the OTLP exporter configuration can’t be injected. |

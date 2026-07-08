@@ -1,7 +1,6 @@
 ---
 title: Extensions 2.0 API - POST a monitoring configuration
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/extensions-20/monitoring-configurations/post-monitoring-configuration
-scraped: 2026-05-12T11:56:17.036489
 ---
 
 # Extensions 2.0 API - POST a monitoring configuration
@@ -31,7 +30,7 @@ To learn how to obtain and use it, see [Tokens and authentication](/managed/disc
 | Parameter | Type | Description | In | Required |
 | --- | --- | --- | --- | --- |
 | extensionName | string | The name of the requested extension 2.0. | path | Required |
-| body | [MonitoringConfigurationDto[]](#openapi-definition-MonitoringConfigurationDto) | JSON body of the request, containing monitoring configuration parameters. | body | Required |
+| body | [MonitoringConfigurationDto](#openapi-definition-MonitoringConfigurationDto)[] | JSON body of the request, containing monitoring configuration parameters. | body | Required |
 
 ### Request body objects
 
@@ -82,10 +81,10 @@ This is a model of the request body, showing the possible elements. It has to be
 
 | Code | Type | Description |
 | --- | --- | --- |
-| **200** | [MonitoringConfigurationResponse[]](#openapi-definition-MonitoringConfigurationResponse) | Success |
-| **207** | [MonitoringConfigurationResponse[]](#openapi-definition-MonitoringConfigurationResponse) | Multi-Status, if not all requests resulted in the same status |
-| **400** | [ErrorEnvelope[]](#openapi-definition-ErrorEnvelope) | Failed. The input is invalid. |
-| **404** | [ErrorEnvelope[]](#openapi-definition-ErrorEnvelope) | Failed. The requested resource doesn't exist. |
+| **200** | [MonitoringConfigurationResponse](#openapi-definition-MonitoringConfigurationResponse)[] | Success |
+| **207** | ([MonitoringConfigurationResponse](#openapi-definition-MonitoringConfigurationResponse) | [ErrorEnvelope](#openapi-definition-ErrorEnvelope))[] | Multi-Status, if not all requests resulted in the same status |
+| **400** | [ErrorEnvelope](#openapi-definition-ErrorEnvelope)[] | Failed. The input is invalid. |
+| **404** | [ErrorEnvelope](#openapi-definition-ErrorEnvelope)[] | Failed. The requested resource doesn't exist. |
 | **4XX** | [ErrorEnvelope](#openapi-definition-ErrorEnvelope) | Client side error. |
 | **5XX** | [ErrorEnvelope](#openapi-definition-ErrorEnvelope) | Server side error. |
 
@@ -113,7 +112,7 @@ This is a model of the request body, showing the possible elements. It has to be
 | Element | Type | Description |
 | --- | --- | --- |
 | code | integer | The HTTP status code |
-| constraintViolations | [ConstraintViolation[]](#openapi-definition-ConstraintViolation) | A list of constraint violations |
+| constraintViolations | [ConstraintViolation](#openapi-definition-ConstraintViolation)[] | A list of constraint violations |
 | message | string | The error message |
 
 #### The `ConstraintViolation` object

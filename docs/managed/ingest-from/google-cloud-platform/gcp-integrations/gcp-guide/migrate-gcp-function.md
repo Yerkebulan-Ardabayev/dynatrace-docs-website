@@ -1,7 +1,6 @@
 ---
 title: Migrate to Google Cloud integration version 1.0
 source: https://docs.dynatrace.com/managed/ingest-from/google-cloud-platform/gcp-integrations/gcp-guide/migrate-gcp-function
-scraped: 2026-05-12T11:51:47.072093
 ---
 
 # Migrate to Google Cloud integration version 1.0
@@ -151,7 +150,7 @@ If you created your own dashboards, alerts, or management zones based on Google 
 * To update dimensions for dashboards
 
   1. Go to **Dashboards**.
-  2. Select the dashboard for which you want to update dimensions, and then select **More** (**â¦**) > **Configure**.
+  2. Select the dashboard for which you want to update dimensions, and then select **More** (**…**) > **Configure**.
   3. Select **Dashboard JSON**.
   4. In the `"splitBy"` section, replace the old dimensions with the new values as determined from the [list of dimension changes](#dimension).
   5. Select **Save changes**.

@@ -1,7 +1,6 @@
 ---
 title: Define custom services
 source: https://docs.dynatrace.com/managed/observe/application-observability/services/service-detection/service-detection-v1/service-types/custom-services
-scraped: 2026-05-12T11:18:07.060824
 ---
 
 # Define custom services
@@ -28,7 +27,7 @@ If transactions aren't connected, creating a custom service **will not** help to
 
 ## Method delegation
 
-OneAgent understands the concept of method delegation and only records the first call in a delegation chain. For example, if you have several methods that are calling each other, you can safely mark all these methods as entry pointsâinstances where one method directly calls the other are recorded as single requests.
+OneAgent understands the concept of method delegation and only records the first call in a delegation chain. For example, if you have several methods that are calling each other, you can safely mark all these methods as entry points—instances where one method directly calls the other are recorded as single requests.
 
 ### Delegation suppression
 
@@ -38,7 +37,7 @@ OneAgent suppresses method delegation **per service**. That is, any calls betwee
 
 Java method instrumentation
 
-In Java, the entry method must terminate before the process shuts down. If the entry methodâfor example, `main()` or `execute()` that start a processâonly ends with process termination, OneAgent can't finalize and send the data.
+In Java, the entry method must terminate before the process shuts down. If the entry method—for example, `main()` or `execute()` that start a process—only ends with process termination, OneAgent can't finalize and send the data.
 
 For Java, .NET, and Go you can use search to select the entry point and methods or you can specify them manually. To create a new custom Java, .NET, or Go service:
 
@@ -94,7 +93,7 @@ Manually specify the entry point
 
 Unsupported scenario
 
-Note that some scenarios do not work in Dynatrace, like the Queue/Worker scenario. Anything that is put into a `java.util.Queue` and is handled by another worker thread, cannot be seen in the Pure Path. See [Oracle java.util Interface Queueï»¿](https://dt-url.net/xy03uja).
+Note that some scenarios do not work in Dynatrace, like the Queue/Worker scenario. Anything that is put into a `java.util.Queue` and is handled by another worker thread, cannot be seen in the Pure Path. See [Oracle java.util Interface Queue﻿](https://dt-url.net/xy03uja).
 
 ## PHP services
 
@@ -231,10 +230,10 @@ To define a custom Go service via API
 
 1. Prepare the HTTP request
 
-1. Determine the scope (`className`)âthe package or type the method is defined in.
+1. Determine the scope (`className`)—the package or type the method is defined in.
 
    In the following examples, the scope is `main.(*CronJob)` because the function is defined as a method of the `CronJob` type in the `main` package.
-2. Determine the fully qualified method name (`methodName`)âthe method name, prefixed with the scope.
+2. Determine the fully qualified method name (`methodName`)—the method name, prefixed with the scope.
 
 In the example request body below, the fully qualified method name is `main.(*CronJob).Run`. The example contains all the required parameters. To use it, adjust the values according to your request.
 
@@ -445,7 +444,7 @@ If you have several custom services defined, the evaluation goes from top to bot
 
 ## x-dynatrace header
 
-For HTTP requests, Dynatrace uses an additional HTTP header called `x-dynatrace` for transaction stitching. This header is set by OneAgent between web servers to link them with each other. PurePathÂ® technology for distributed tracing relies heavily on such headers, which is why itâs important to ensure that network components, such as firewalls and routers, are never configured to remove these headers. Incorrect configuration of network components can potentially lead to broken pure paths. Also, some of the network components completely disable such requests (and deliver HTTP 403 error) as the additional header may be considered as unsafe. In such cases, it is necessary to configure these components to accept the `x-dynatrace` header.
+For HTTP requests, Dynatrace uses an additional HTTP header called `x-dynatrace` for transaction stitching. This header is set by OneAgent between web servers to link them with each other. PurePath® technology for distributed tracing relies heavily on such headers, which is why it’s important to ensure that network components, such as firewalls and routers, are never configured to remove these headers. Incorrect configuration of network components can potentially lead to broken pure paths. Also, some of the network components completely disable such requests (and deliver HTTP 403 error) as the additional header may be considered as unsafe. In such cases, it is necessary to configure these components to accept the `x-dynatrace` header.
 
 ## Edit a custom service
 

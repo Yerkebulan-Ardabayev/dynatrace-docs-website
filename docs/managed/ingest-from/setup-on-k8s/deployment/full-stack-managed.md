@@ -1,7 +1,6 @@
 ---
 title: Get started with Full Kubernetes observability (cloud-native full-stack deployment)
 source: https://docs.dynatrace.com/managed/ingest-from/setup-on-k8s/deployment/full-stack-managed
-scraped: 2026-05-12T11:52:52.580162
 ---
 
 # Get started with Full Kubernetes observability (cloud-native full-stack deployment)
@@ -24,8 +23,8 @@ Before installing Dynatrace on your Kubernetes cluster, ensure that you meet the
 * You must allow egress for Dynatrace pods (default: Dynatrace namespace) to your Dynatrace environment URL.
 
   + For Dynatrace Managed, you can optionally use a Cluster ActiveGate URL.
-* For OpenShift Dedicated, you need the [cluster-admin roleï»¿](https://docs.openshift.com/dedicated/osd_cluster_admin/osd-admin-roles.html).
-* Helm installation Use [Helm version 3ï»¿](https://dt-url.net/n5036j1).
+* For OpenShift Dedicated, you need the [cluster-admin role﻿](https://docs.openshift.com/dedicated/osd_cluster_admin/osd-admin-roles.html).
+* Helm installation Use [Helm version 3﻿](https://dt-url.net/n5036j1).
 
 ### Supported versions
 
@@ -67,7 +66,7 @@ Quickstart
    This is relevant if you are using Dynatrace Managed with self-signed certificates.
 3. Select **Download dynakube.yaml**. Copy the code block created by Dynatrace created and **run it in your terminal**. Ensure you execute the commands in the same directory where you downloaded the YAML or adapt the command to link to the location of the YAML manifest.
 
-   The downloaded YAML file is a basic version of the DynaKube custom resource definition. To adjust values to your specific needs, refer to the [DynaKube custom resource samples for cloud-native full-stack from GitHubï»¿](https://dt-url.net/9n636jg). For more information about all configuration options, see [DynaKube parameters for Dynatrace Operator](/managed/ingest-from/setup-on-k8s/reference/dynakube-parameters "List the available parameters for setting up Dynatrace Operator on Kubernetes.").
+   The downloaded YAML file is a basic version of the DynaKube custom resource definition. To adjust values to your specific needs, refer to the [DynaKube custom resource samples for cloud-native full-stack from GitHub﻿](https://dt-url.net/9n636jg). For more information about all configuration options, see [DynaKube parameters for Dynatrace Operator](/managed/ingest-from/setup-on-k8s/reference/dynakube-parameters "List the available parameters for setting up Dynatrace Operator on Kubernetes.").
 4. Optional Verify that your DynaKube is running and all pods in your Dynatrace namespace are running and ready.
 
    ```
@@ -168,7 +167,7 @@ The installation process is independent of whether you are using Kubernetes or O
 
    Installation with additional configuration of the Helm chart
 
-   Edit the [`values.yaml`ï»¿](https://dt-url.net/helm-values) sample from GitHub, and then run the install command, passing the YAML file as an argument:
+   Edit the [`values.yaml`﻿](https://dt-url.net/helm-values) sample from GitHub, and then run the install command, passing the YAML file as an argument:
 
    ```
    helm install dynatrace-operator oci://public.ecr.aws/dynatrace/dynatrace-operator \
@@ -206,7 +205,7 @@ The installation process is independent of whether you are using Kubernetes or O
    ```
 3. Apply the DynaKube custom resource
 
-   Download the [DynaKube custom resource sample for cloud-native full-stack from GitHubï»¿](https://dt-url.net/9n636jg). In addition, you can review the [available parameters](/managed/ingest-from/setup-on-k8s/reference/dynakube-parameters "List the available parameters for setting up Dynatrace Operator on Kubernetes.") or [how-to-guides](/managed/ingest-from/setup-on-k8s/guides "Detailed description of installation and configuration options for specific use-cases"), and adapt the DynaKube custom resource according to your requirements.
+   Download the [DynaKube custom resource sample for cloud-native full-stack from GitHub﻿](https://dt-url.net/9n636jg). In addition, you can review the [available parameters](/managed/ingest-from/setup-on-k8s/reference/dynakube-parameters "List the available parameters for setting up Dynatrace Operator on Kubernetes.") or [how-to-guides](/managed/ingest-from/setup-on-k8s/guides "Detailed description of installation and configuration options for specific use-cases"), and adapt the DynaKube custom resource according to your requirements.
 
    Run the command below to apply the DynaKube custom resource, making sure to replace `<your-DynaKube-CR>` with your actual DynaKube custom resource file name. A validation webhook will provide helpful error messages if there's a problem.
 
@@ -314,7 +313,7 @@ OpenShift
    ```
 4. Apply the DynaKube custom resource
 
-   Download the [DynaKube custom resource sample for cloud-native full-stack from GitHubï»¿](https://dt-url.net/9n636jg). In addition, you can review the [available parameters](/managed/ingest-from/setup-on-k8s/reference/dynakube-parameters "List the available parameters for setting up Dynatrace Operator on Kubernetes.") or [how-to-guides](/managed/ingest-from/setup-on-k8s/guides "Detailed description of installation and configuration options for specific use-cases"), and adapt the DynaKube custom resource according to your requirements.
+   Download the [DynaKube custom resource sample for cloud-native full-stack from GitHub﻿](https://dt-url.net/9n636jg). In addition, you can review the [available parameters](/managed/ingest-from/setup-on-k8s/reference/dynakube-parameters "List the available parameters for setting up Dynatrace Operator on Kubernetes.") or [how-to-guides](/managed/ingest-from/setup-on-k8s/guides "Detailed description of installation and configuration options for specific use-cases"), and adapt the DynaKube custom resource according to your requirements.
 
    Run the command below to apply the DynaKube custom resource, making sure to replace `<your-DynaKube-CR>` with your actual DynaKube custom resource file name. A validation webhook will provide helpful error messages if there's a problem.
 
@@ -414,7 +413,7 @@ OpenShift
    ```
 4. Apply the DynaKube custom resource
 
-   Download the [DynaKube custom resource sample for cloud-native full-stack from GitHubï»¿](https://dt-url.net/9n636jg). In addition, you can review the [available parameters](/managed/ingest-from/setup-on-k8s/reference/dynakube-parameters "List the available parameters for setting up Dynatrace Operator on Kubernetes.") or [how-to-guides](/managed/ingest-from/setup-on-k8s/guides "Detailed description of installation and configuration options for specific use-cases"), and adapt the DynaKube custom resource according to your requirements.
+   Download the [DynaKube custom resource sample for cloud-native full-stack from GitHub﻿](https://dt-url.net/9n636jg). In addition, you can review the [available parameters](/managed/ingest-from/setup-on-k8s/reference/dynakube-parameters "List the available parameters for setting up Dynatrace Operator on Kubernetes.") or [how-to-guides](/managed/ingest-from/setup-on-k8s/guides "Detailed description of installation and configuration options for specific use-cases"), and adapt the DynaKube custom resource according to your requirements.
 
    Run the command below to apply the DynaKube custom resource, making sure to replace `<your-DynaKube-CR>` with your actual DynaKube custom resource file name. A validation webhook will provide helpful error messages if there's a problem.
 
@@ -517,7 +516,7 @@ Release notes for Dynatrace Operator
 
 Dynatrace Operator release notes](/managed/whats-new/dynatrace-operator)[#### Update or uninstall Dynatrace Operator
 
-Upgrade and uninstallation procedures for Dynatrace Operator
+Upgrade paths, update procedures, and uninstallation guide for Dynatrace Operator.
 
 Update or uninstall Dynatrace Operator](/managed/ingest-from/setup-on-k8s/guides/deployment-and-configuration/updates-and-maintenance/update-uninstall-operator)[#### Sizing guide for Dynatrace ActiveGates in the Kubernetes monitoring use-case
 
@@ -527,4 +526,4 @@ Sizing guide for Dynatrace ActiveGates in the Kubernetes monitoring use-case](/m
 
 ## Related topics
 
-* [Flexible, scalable, self-service Kubernetes native observability now in General Availabilityï»¿](https://www.dynatrace.com/news/blog/flexible-scalable-self-service-kubernetes-native-observability/)
+* [Flexible, scalable, self-service Kubernetes native observability now in General Availability﻿](https://www.dynatrace.com/news/blog/flexible-scalable-self-service-kubernetes-native-observability/)

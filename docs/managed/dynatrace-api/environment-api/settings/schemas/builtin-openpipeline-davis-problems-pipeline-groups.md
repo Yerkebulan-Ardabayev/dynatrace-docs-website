@@ -1,7 +1,6 @@
 ---
 title: Settings API - Pipeline Groups configuration (davis.problems) schema table
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-davis-problems-pipeline-groups
-scraped: 2026-05-12T11:47:02.780667
 ---
 
 # Settings API - Pipeline Groups configuration (davis.problems) schema table

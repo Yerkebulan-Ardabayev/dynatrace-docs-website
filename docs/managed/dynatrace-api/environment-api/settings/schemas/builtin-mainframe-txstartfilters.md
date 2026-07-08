@@ -1,7 +1,6 @@
 ---
 title: Settings API - Transaction start filters schema table
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/settings/schemas/builtin-mainframe-txstartfilters
-scraped: 2026-05-12T11:45:22.964327
 ---
 
 # Settings API - Transaction start filters schema table

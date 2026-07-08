@@ -1,7 +1,6 @@
 ---
 title: Synthetic Monitoring
 source: https://docs.dynatrace.com/managed/observe/digital-experience/synthetic-monitoring
-scraped: 2026-05-12T11:07:21.296221
 ---
 
 # Synthetic Monitoring
@@ -18,50 +17,50 @@ Dynatrace Synthetic Monitoring makes it easy for you to monitor the availability
 
 The availability and performance of your internal resources are equally important. With the ability to execute monitors from private locations, you can bring the testing capabilities available in public locations right to your own infrastructure.
 
-Dynatrace offers the following types of synthetic monitors: single-URL browser monitors, browser clickpaths, HTTP monitors and NAM monitors. Check out the links below to learn more. Licensing is based on the [consumption of Synthetic actions and requests](/managed/license "About Dynatrace Platform Subscription (DPS), the licensing model for all Dynatrace capabilities.").
+Dynatrace offers the following types of synthetic monitors: single-URL browser monitors, browser clickpaths, HTTP monitors and NAM monitors. Check out the links below to learn more. Licensing is based on the [consumption of Synthetic actions and requests](/managed/license/monitoring-consumption-classic "Understand how Dynatrace classic monitoring consumption is calculated, including host units, DDUs, DEM units, and Application Security units.").
 
 ### General information
 
-* [Types of synthetic monitors](/managed/observe/digital-experience/synthetic-monitoring/general-information/types-of-synthetic-monitors "Learn about Dynatrace synthetic monitor types.")
-* [Synthetic calculations](/managed/observe/digital-experience/synthetic-monitoring/general-information/synthetic-calculations "Understand Synthetic Monitoring metric calculations.")
-* [Supported authentication methods in Synthetic Monitoring](/managed/observe/digital-experience/synthetic-monitoring/general-information/synthetic-authentication "Learn how to configure authentication methods for monitoring web applications and API endpoints in Synthetic Monitoring.")
-* [On-demand synthetic monitor executions for CI/CD](/managed/observe/digital-experience/synthetic-monitoring/general-information/on-demand-executions "Execute synthetic monitors on demand from public or private locations")
-* [External vault integration](/managed/observe/digital-experience/synthetic-monitoring/general-information/external-vault-integration "Synchronize Synthetic Monitoring credentials with external vaults.")
-* [Public Synthetic locations](/managed/observe/digital-experience/synthetic-monitoring/general-information/public-synthetic-locations "Learn about all currently available public Synthetic Monitoring locations.")
-* [Synthetic architecture and communication](/managed/observe/digital-experience/synthetic-monitoring/general-information/architecture-communication "Detailed description of the architecture and communication infrastructure for Synthetic app")
+* [Types of synthetic monitors in Classic](/managed/observe/digital-experience/synthetic-monitoring/general-information/types-of-synthetic-monitors "Learn about Dynatrace synthetic monitor types.")
+* [Synthetic calculations in Classic](/managed/observe/digital-experience/synthetic-monitoring/general-information/synthetic-calculations "Understand Synthetic Monitoring Classic metric calculations.")
+* [Supported authentication methods in Synthetic Monitoring Classic](/managed/observe/digital-experience/synthetic-monitoring/general-information/synthetic-authentication "Learn how to configure authentication methods for monitoring web applications and API endpoints in Synthetic Monitoring Classic.")
+* [On-demand synthetic monitor executions for CI/CD in Classic](/managed/observe/digital-experience/synthetic-monitoring/general-information/on-demand-executions "Execute synthetic monitors on demand from public or private locations")
+* [External vault integration in Classic](/managed/observe/digital-experience/synthetic-monitoring/general-information/external-vault-integration "Synchronize Synthetic Monitoring Classic credentials with external vaults.")
+* [Public Synthetic locations in Classic](/managed/observe/digital-experience/synthetic-monitoring/general-information/public-synthetic-locations "Learn about all currently available public Synthetic Monitoring Classic locations.")
+* [Synthetic architecture and communication in Classic](/managed/observe/digital-experience/synthetic-monitoring/general-information/architecture-communication "Detailed description of the architecture and communication infrastructure for Synthetic app")
 
 ### HTTP monitors
 
-* [Create an HTTP monitor](/managed/observe/digital-experience/synthetic-monitoring/http-monitors-classic/create-an-http-monitor-classic "Learn how to set up an HTTP monitor to check the performance and availability of your site.")
-* [Configure HTTP monitors](/managed/observe/digital-experience/synthetic-monitoring/http-monitors-classic/configure-http-monitors-classic "Learn about configuring HTTP monitors.")
-* [Script mode for HTTP monitor configuration](/managed/observe/digital-experience/synthetic-monitoring/http-monitors-classic/script-mode-for-http-monitor-configuration-classic "Create or edit your HTTP monitors in JSON format.")
-* [Pre- and post-execution scripts for HTTP monitors](/managed/observe/digital-experience/synthetic-monitoring/http-monitors-classic/pre-and-post-scripting-for-http-monitors-classic "Learn how to apply pre and post scripts to your requests")
-* [HTTP monitor metrics](/managed/observe/digital-experience/synthetic-monitoring/http-monitors-classic/http-monitor-metrics-classic "Learn about the performance metrics collected for HTTP monitors.")
+* [Create an HTTP monitor in Classic](/managed/observe/digital-experience/synthetic-monitoring/http-monitors-classic/create-an-http-monitor-classic "Learn how to set up an HTTP monitor to check the performance and availability of your site.")
+* [Configure HTTP monitors in Classic](/managed/observe/digital-experience/synthetic-monitoring/http-monitors-classic/configure-http-monitors-classic "Learn about configuring HTTP monitors.")
+* [Script mode for HTTP monitor configuration in Classic](/managed/observe/digital-experience/synthetic-monitoring/http-monitors-classic/script-mode-for-http-monitor-configuration-classic "Create or edit your HTTP monitors in JSON format.")
+* [Pre- and post-execution scripts for HTTP monitors in Classic](/managed/observe/digital-experience/synthetic-monitoring/http-monitors-classic/pre-and-post-scripting-for-http-monitors-classic "Learn how to apply pre and post scripts to your requests")
+* [HTTP monitor metrics in Classic](/managed/observe/digital-experience/synthetic-monitoring/http-monitors-classic/http-monitor-metrics-classic "Learn about the performance metrics collected for HTTP monitors.")
 
 ### Analysis and alerting
 
-* [Synthetic alerting overview](/managed/observe/digital-experience/synthetic-monitoring/analysis-and-alerting/synthetic-alerting-overview "Learn about synthetic alerting concepts and workflow.")
-* [Synthetic details for browser monitors](/managed/observe/digital-experience/synthetic-monitoring/analysis-and-alerting/synthetic-details-for-browser-monitors "Analyze browser monitor and clickpath results on the Synthetic details page.")
-* [Multidimensional analysis for browser monitors](/managed/observe/digital-experience/synthetic-monitoring/analysis-and-alerting/multidimensional-analysis-for-browser-monitors "Learn how to analyze browser-monitor data points.")
-* [Waterfall graphs](/managed/observe/digital-experience/synthetic-monitoring/analysis-and-alerting/waterfall-graphs "How to analyze page resource downloads for browser monitors.")
-* [HTTP monitors reporting results](/managed/observe/digital-experience/synthetic-monitoring/analysis-and-alerting/synthetic-details-for-http-monitors-classic "Learn about the Synthetic details page for HTTP monitors.")
+* [Synthetic alerting overview in Classic](/managed/observe/digital-experience/synthetic-monitoring/analysis-and-alerting/synthetic-alerting-overview "Learn about synthetic alerting concepts and workflow.")
+* [Synthetic details for browser monitors in Classic](/managed/observe/digital-experience/synthetic-monitoring/analysis-and-alerting/synthetic-details-for-browser-monitors "Analyze browser monitor and clickpath results on the Synthetic details page.")
+* [Multidimensional analysis for browser monitors in Classic](/managed/observe/digital-experience/synthetic-monitoring/analysis-and-alerting/multidimensional-analysis-for-browser-monitors "Learn how to analyze browser-monitor data points.")
+* [Waterfall graphs in Classic](/managed/observe/digital-experience/synthetic-monitoring/analysis-and-alerting/waterfall-graphs "How to analyze page resource downloads for browser monitors.")
+* [HTTP monitors reporting results in Classic](/managed/observe/digital-experience/synthetic-monitoring/analysis-and-alerting/synthetic-details-for-http-monitors-classic "Learn about the Synthetic details page for HTTP monitors.")
 
 ### Browser monitors
 
-* [Create a single-URL browser monitor](/managed/observe/digital-experience/synthetic-monitoring/browser-monitors/create-a-single-url-browser-monitor "Learn how to set up a single-URL browser monitor to check the availability of your site.")
-* [Record a browser clickpath](/managed/observe/digital-experience/synthetic-monitoring/browser-monitors/record-a-browser-clickpath "Learn how to record a browser clickpath to monitor the availability and performance of your application.")
-* [Configure browser monitors](/managed/observe/digital-experience/synthetic-monitoring/browser-monitors/configure-browser-monitors "Learn about configuring browser monitors and clickpaths.")
-* [Browser clickpath events](/managed/observe/digital-experience/synthetic-monitoring/browser-monitors/browser-clickpath-events "Learn about the event types created when recording a browser clickpath.")
-* [Script mode for browser monitor configuration](/managed/observe/digital-experience/synthetic-monitoring/browser-monitors/script-mode-for-browser-monitor-configuration "Create or edit your browser monitors in JSON format.")
-* [Number of actions consumed by browser clickpaths](/managed/observe/digital-experience/synthetic-monitoring/browser-monitors/number-of-actions-consumed-by-browser-clickpaths "Find out how many actions are consumed by a browser clickpath and how they differ from events.")
+* [Create a single-URL browser monitor in Classic](/managed/observe/digital-experience/synthetic-monitoring/browser-monitors/create-a-single-url-browser-monitor "Learn how to set up a single-URL browser monitor to check the availability of your site.")
+* [Record a browser clickpath in Classic](/managed/observe/digital-experience/synthetic-monitoring/browser-monitors/record-a-browser-clickpath "Learn how to record a browser clickpath to monitor the availability and performance of your application.")
+* [Configure browser monitors in Classic](/managed/observe/digital-experience/synthetic-monitoring/browser-monitors/configure-browser-monitors "Learn about configuring browser monitors and clickpaths.")
+* [Browser clickpath events in Classic](/managed/observe/digital-experience/synthetic-monitoring/browser-monitors/browser-clickpath-events "Learn about the event types created when recording a browser clickpath.")
+* [Script mode for browser monitor configuration in Classic](/managed/observe/digital-experience/synthetic-monitoring/browser-monitors/script-mode-for-browser-monitor-configuration "Create or edit your browser monitors in JSON format.")
+* [Number of actions consumed by browser clickpaths in Classic](/managed/observe/digital-experience/synthetic-monitoring/browser-monitors/number-of-actions-consumed-by-browser-clickpaths "Find out how many actions are consumed by a browser clickpath and how they differ from events.")
 
 ### Private Synthetic locations
 
-* [Create a private Synthetic location](/managed/observe/digital-experience/synthetic-monitoring/private-synthetic-locations/create-a-private-synthetic-location "Learn how to create a private location for synthetic monitoring.")
-* [Requirements for private Synthetic locations](/managed/observe/digital-experience/synthetic-monitoring/private-synthetic-locations/system-and-hardware-requirements-for-private-synthetic "Supported operating systems, Chromium versions, and hardware requirements for running synthetic monitors from private locations")
-* [Set up a proxy for private synthetic monitoring](/managed/observe/digital-experience/synthetic-monitoring/private-synthetic-locations/setting-up-proxy-for-private-synthetic "Learn how to configure ActiveGate properties to set up a proxy for private synthetic monitoring.")
-* [Containerized, auto-scalable private Synthetic locations on Kubernetes](/managed/observe/digital-experience/synthetic-monitoring/private-synthetic-locations/containerized-locations "Deploy and manage containerized, auto-scalable private Synthetic locations on Kubernetes/RedHat OpenShift.")
-* [Manage private Synthetic locations](/managed/observe/digital-experience/synthetic-monitoring/private-synthetic-locations/manage-private-synthetic-locations "Analyze and manage capacity usage at your private Synthetic locations.")
+* [Create a private Synthetic location in Classic](/managed/observe/digital-experience/synthetic-monitoring/private-synthetic-locations/create-a-private-synthetic-location "Learn how to create a private location for synthetic monitoring.")
+* [Requirements for private Synthetic locations in Classic](/managed/observe/digital-experience/synthetic-monitoring/private-synthetic-locations/system-and-hardware-requirements-for-private-synthetic "Supported operating systems, Chromium versions, and hardware requirements for running synthetic monitors from private locations")
+* [Set up a proxy for private synthetic monitoring in Classic](/managed/observe/digital-experience/synthetic-monitoring/private-synthetic-locations/setting-up-proxy-for-private-synthetic "Learn how to configure ActiveGate properties to set up a proxy for private synthetic monitoring.")
+* [Containerized, auto-scalable private Synthetic locations on Kubernetes in Classic](/managed/observe/digital-experience/synthetic-monitoring/private-synthetic-locations/containerized-locations "Deploy and manage containerized, auto-scalable private Synthetic locations on Kubernetes/RedHat OpenShift.")
+* [Manage private Synthetic locations in Classic](/managed/observe/digital-experience/synthetic-monitoring/private-synthetic-locations/manage-private-synthetic-locations "Analyze and manage capacity usage at your private Synthetic locations.")
 
 ### API
 
@@ -72,4 +71,4 @@ Dynatrace offers the following types of synthetic monitors: single-URL browser m
 
 ## Related topics
 
-* [Synthetic Monitoringï»¿](https://www.dynatrace.com/platform/synthetic-monitoring/)
+* [Synthetic Monitoring﻿](https://www.dynatrace.com/platform/synthetic-monitoring/)

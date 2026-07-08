@@ -1,7 +1,6 @@
 ---
 title: Configure ActiveGate for memory dump storage
 source: https://docs.dynatrace.com/managed/observe/application-observability/profiling-and-optimization/memory-dump-analysis/configure-an-activegate-for-memory-dump-storage
-scraped: 2026-05-12T11:36:24.968279
 ---
 
 # Configure ActiveGate for memory dump storage
@@ -16,7 +15,7 @@ Applicable to Environment ActiveGate and Cluster ActiveGate
 
 The following configuration of ActiveGate for memory dump storage is applicable to both Environment ActiveGate and Cluster ActiveGate.
 
-When your application experiences memory leaks or high object churn, itâs important that you get memory dumps so you can analyze these issues. In production environments, this is often a challenge when you canât log into the environment and you have no other means of triggering memory dumps. Dynatrace enables you to both trigger and securely download memory dumps to the analysis tool of your choice. To enable memory dumps, you need to configure your ActiveGate as described below.
+When your application experiences memory leaks or high object churn, it’s important that you get memory dumps so you can analyze these issues. In production environments, this is often a challenge when you can’t log into the environment and you have no other means of triggering memory dumps. Dynatrace enables you to both trigger and securely download memory dumps to the analysis tool of your choice. To enable memory dumps, you need to configure your ActiveGate as described below.
 
 If you configure an ActiveGate to collect memory dumps, and then restart the ActiveGate service, all instances of OneAgent will automatically reconnect and recognize that the ActiveGate can now store memory dumps. From now on, whenever a memory dump is successfully triggered, the dump will be uploaded automatically to the correct ActiveGate. Once safely stored on the ActiveGate, the OneAgent deletes the local file from its storage. Note that OneAgent automatically deletes a memory dump on the original host after one hour.
 

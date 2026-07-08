@@ -1,66 +1,58 @@
 ---
-title: Local self-monitoring environment
+title: Local self-monitoring
 source: https://docs.dynatrace.com/managed/managed-cluster/self-monitoring/local-self-monitoring
-scraped: 2026-05-12T11:35:52.806748
 ---
 
-# Local self-monitoring environment
+# Local self-monitoring
 
-# Local self-monitoring environment
+# Local self-monitoring
 
-* Extension
-* Published Nov 16, 2021
+* Explanation
+* 2-min read
+* Updated on Jun 11, 2026
 
-A Dynatrace Managed cluster includes a dedicated local self-monitoring environment that collects internal deployment self-monitoring metrics. This environment is a fully working and accessible Dynatrace environment. It includes all the self-monitoring metrics collected and aggregated from the other environments on your Dynatrace Managed cluster. Data is exclusively stored on premises on your cluster. For details, see [Self-monitoring metrics](/managed/analyze-explore-automate/metrics-classic/self-monitoring-metrics "Explore the complete list of self-monitoring Dynatrace metrics.").
-
-## Details
-
-The extension is intended for users who are responsible for monitoring health and size of the Dynatrace Managed Cluster
-
-**The extension enables you to**:
-
-* Get an overview of current Dynatrace cluster utilization.
-* Check if Dynatrace cluster is properly sized to handle current load.
-* Review current and past ingest of data into the Dynatrace cluster, e.g. service calls or user sessions / actions.
-* View number of connected OneAgents to the Dynatrace cluster over time
-
-### Self-monitoring environment
-
-You can navigate to the self-monitoring environment from the [user menu](/managed/discover-dynatrace/get-started/dynatrace-ui#user "Navigate the Dynatrace Managed platform"), just as you would to any other environment. The local self-monitoring environment is named **Local-Self-Monitoring**. It is also displayed in the Cluster Management Console so you can assign user permissions to it.
-
-### Explore self-monitoring metrics
-
-For an overview of the currently implemented self-monitoring metrics, filter for metrics prefixed with `dsfm:` in the [metrics browser](/managed/analyze-explore-automate/dashboards-classic/metrics-browser "Browse metrics with the Dynatrace metrics browser."). The metrics description provides details. You can use the self-monitoring environment to set up proper alerting or further dashboarding. The environment is protected from deletion.
-
-### Licensing
+A Dynatrace Managed Cluster includes a dedicated local self-monitoring environment that collects internal deployment self-monitoring metrics. The local self-monitoring environment is a fully working Dynatrace environment. The self-monitoring environment includes all the self-monitoring metrics collected and aggregated from the other environments on your Dynatrace Managed Cluster. Dynatrace Managed stores all data exclusively on-premises.
 
 No contribution to license consumption
 
-The self-monitoring environment is excluded from license consumption. Certain functionality is restricted in this self-monitoring. For example, it is not possible to connect OneAgents to the self-monitoring environment.
+* The self-monitoring environment doesn't count toward license consumption. Certain functionality is unavailable in this environment. For example, you can't connect OneAgents to the self-monitoring environment.
+* The self-monitoring environment is available only for Dynatrace Managed customers using DDU licensing.
 
-**Requires DDU licensing**  
-For technical reasons, the self-monitoring environment is enabled only for Dynatrace Managed customers using DDU licensing, although the self-monitoring environment is excluded from all license consumption.
+## Self-monitoring environment
 
-### Cluster deployment health and utilization dashboard
+You can navigate to the self-monitoring environment from the [user menu](/managed/discover-dynatrace/get-started/dynatrace-ui#user "Explore Dynatrace Managed, including navigation, browser requirements, timeframe selection, metric notation, and accessibility.") as you would to any other environment. The local self-monitoring environment has the name **Local-Self-Monitoring**. The self-monitoring environment also appears in the Cluster Management Console so you can assign user permissions to it.
 
-The dashboard shows aggregated data for the environments in your managed cluster. It gives you an impression of the current utilization of your cluster and whether your cluster is still properly sized to cope with the current load.
+## Explore self-monitoring metrics
 
-This dashboard provides
+For an overview of the currently implemented self-monitoring metrics, filter for metrics prefixed with `dsfm:` in the [metric browser](/managed/analyze-explore-automate/dashboards-classic/metrics-browser "Browse metrics with the Dynatrace metrics browser."). The metric description provides details. You can use the self-monitoring environment to set up alerting or further dashboarding. Dynatrace protects this environment from deletion.
 
-* Insights into the current utilization of your managed cluster and Dynatrace server.
-* An overview of the different data ingest channels and the current capture rate.
-* An overview of the Dynatrace OneAgents connected.
+## Extension capabilities
 
-The self-monitoring dashboard is available for Dynatrace Managed clusters to be used in the self-monitoring environment of the cluster. Although it can be used in other environments (Managed and SaaS), some of the data shown may be inaccurate for these.
+The Dynatrace Self-Monitoring (Managed) extension targets users who monitor health and size of the Managed Cluster.
 
-## Get started
+The extension lets you:
+
+* Get an overview of current Managed Cluster utilization.
+* Check whether the Managed Cluster has sufficient capacity for the current load.
+* Review current and past ingest of data into the Managed Cluster, for example service calls or user sessions and actions.
+* View the number of connected OneAgents to the Managed Cluster over time.
+
+## Activate extension
 
 1. Go to the Dynatrace Managed self-monitoring environment in which you want to install the dashboard.
 2. In Dynatrace Hub, select **Dynatrace Self-Monitoring (Managed)**.
 3. Select **Add to environment** in the lower-right corner to install the self-monitoring extension in your environment.
 
-![Self-monitoirng dashboard for Managed in Dynatrace Hub.](https://dt-cdn.net/images/hub-man-self-monitoring-612-11745c5b8b.png)
+The Dynatrace Self-Monitoring (Managed) extension adds a dashboard for the self-monitoring environment on the Managed Cluster, showing Managed Cluster utilization and data ingest.
 
-Self-monitoirng dashboard for Managed in Dynatrace Hub.
+### Cluster deployment health and utilization dashboard
 
-This extension enables a dashboard for the self-monitoring environment on the Managed cluster showing cluster utilization and data ingest on cluster.
+The dashboard shows aggregated data for all environments in your Managed Cluster, including current utilization and an indicator of whether your Managed Cluster has sufficient capacity for the current load.
+
+The Cluster deployment health and utilization dashboard provides:
+
+* Insights into the current utilization of your Managed Cluster.
+* An overview of the different data ingest channels and the current capture rate.
+* An overview of the connected Dynatrace OneAgents.
+
+The self-monitoring dashboard targets the self-monitoring environment of Dynatrace Managed Clusters. You can also use it in other environments (Managed and SaaS), but some data shown may be inaccurate for these.

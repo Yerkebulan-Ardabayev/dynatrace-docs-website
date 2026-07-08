@@ -1,7 +1,6 @@
 ---
 title: Ingest JSON and TXT logs (Logs Classic)
 source: https://docs.dynatrace.com/managed/analyze-explore-automate/log-monitoring/acquire-log-data/logs-classic-ingestion-api/log-classic-ingest-json-txt-logs
-scraped: 2026-05-12T12:00:27.809331
 ---
 
 # Ingest JSON and TXT logs (Logs Classic)
@@ -31,7 +30,8 @@ The Log ingestion API collects and attempts to automatically transform log data.
 ### Timestamp
 
 * `timestamp` is set based on the value of the first found key from the following list, evaluated in the order presented in the list: `timestamp`, `@timestamp`, `_timestamp`, `eventtime`, `date`, `published_date`, `syslog.timestamp`, `time`, `epochSecond`, `startTime`, `datetime`, `ts`, `timeMillis`, `@t`.
-* Supported formats are: Unix epoch time in UTC (seconds, milliseconds, or seconds with a fractional part â available from Dynatrace version 1.339), `RFC3339`, and `RFC3164`.
+* Supported formats are Unix epoch time in UTC, `RFC3339`, and `RFC3164`.
+  Unix epoch time can be displayed in seconds, milliseconds, and Dynatrace version 1.339+ fractional seconds.
 
   For unsupported timestamp formats, the current timestamp is used, and the value of the unsupported format is stored in the `unparsed_timestamp` attribute.
 * Log records older than the [log age limit](/managed/analyze-explore-automate/log-monitoring/log-monitoring-limits "Default limits for the latest version of Dynatrace Log Monitoring.") are discarded. Timestamps more than 10 minutes ahead of the current time are replaced with the current time.
@@ -122,7 +122,7 @@ These attributes are merged with those provided in the log record body according
 * All query parameters passed to the Log ingestion API endpoint are added to the log record body attributes.
 * If a parameter key appears multiple times, all values are captured as a multivalue attribute.
 * Keys and values follow the same attribute parsing rules as body attributes.
-* Certain parameters are processed by the API for internal purposes and never appear as log record attributes, even if explicitly provided (such as those used in the **XâDynatraceâOptions** header). For the complete list of reserved parameter names and their processing behavior, see the [API documentation](/managed/dynatrace-api/environment-api/log-monitoring-v2/post-ingest-logs#parameters "Push custom logs to Dynatrace via the Log Monitoring API v2.").
+* Certain parameters are processed by the API for internal purposes and never appear as log record attributes, even if explicitly provided (such as those used in the **X‑Dynatrace‑Options** header). For the complete list of reserved parameter names and their processing behavior, see the [API documentation](/managed/dynatrace-api/environment-api/log-monitoring-v2/post-ingest-logs#parameters "Push custom logs to Dynatrace via the Log Monitoring API v2.").
 
 #### Example
 
@@ -156,7 +156,7 @@ When attributes from query parameters or the header override body attributes:
 
 * The final attribute value is set according to the attribute source precedence rules.
 * The values already present in the log body are preserved and mirrored under `overwrittenN.<attribute_key>`.
-  Where N is an incrementing integer (1, 2, â¦) depending on how many body-originating values had to be preserved. This ensures uniqueness even when multiple conflicts occur.
+  Where N is an incrementing integer (1, 2, …) depending on how many body-originating values had to be preserved. This ensures uniqueness even when multiple conflicts occur.
 * Only values originating from the log body are preserved under the `overwrittenN.*` keys. Attributes overridden by higher-precedence sources do not generate overwritten copies.
 
 #### Example

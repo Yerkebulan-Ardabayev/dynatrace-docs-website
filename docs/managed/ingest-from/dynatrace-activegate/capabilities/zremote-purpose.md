@@ -1,7 +1,6 @@
 ---
 title: Install the zRemote module for z/OS monitoring
 source: https://docs.dynatrace.com/managed/ingest-from/dynatrace-activegate/capabilities/zremote-purpose
-scraped: 2026-05-12T11:08:13.083223
 ---
 
 # Install the zRemote module for z/OS monitoring

@@ -1,7 +1,6 @@
 ---
 title: Management zones and ingested log data (Logs Classic)
 source: https://docs.dynatrace.com/managed/analyze-explore-automate/log-monitoring/analyze-log-data/management-zones-and-log-monitoring
-scraped: 2026-05-12T11:08:37.139615
 ---
 
 # Management zones and ingested log data (Logs Classic)
@@ -21,9 +20,9 @@ Management zones are an information-partitioning mechanism that allow you to foc
 
 If you use the Log ingestion API via the [Log Monitoring API v2](/managed/dynatrace-api/environment-api/log-monitoring-v2/post-ingest-logs "Push custom logs to Dynatrace via the Log Monitoring API v2."), you can send an object representing a single event or an array of objects representing multiple events. The object must contain at least one of the following attribute keys, which define the entity types for which log data is ingested.
 
-* `dt.entity.process_group_instance`âProcess group instances
-* `dt.entity.custom_device`âCustom devices
-* `dt.entity.host`âHosts
+* `dt.entity.process_group_instance`—Process group instances
+* `dt.entity.custom_device`—Custom devices
+* `dt.entity.host`—Hosts
 
 Log Monitoring Classic checks, in the order listed above, if the log event attribute value (and, therefore, the corresponding entity) belongs to a given management zone. At the first match, Log Monitoring Classic stops checking and assigns the log data to the management zone that the matched entity belongs to.
 

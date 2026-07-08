@@ -1,7 +1,6 @@
 ---
 title: Extensions 2.0 API - GET all schemas
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/extensions-20/schemas/get-all-schemas
-scraped: 2026-05-12T11:56:25.161025
 ---
 
 # Extensions 2.0 API - GET all schemas
@@ -59,7 +58,7 @@ The request doesn't provide any configurable parameters.
 | Element | Type | Description |
 | --- | --- | --- |
 | code | integer | The HTTP status code |
-| constraintViolations | [ConstraintViolation[]](#openapi-definition-ConstraintViolation) | A list of constraint violations |
+| constraintViolations | [ConstraintViolation](#openapi-definition-ConstraintViolation)[] | A list of constraint violations |
 | message | string | The error message |
 
 #### The `ConstraintViolation` object

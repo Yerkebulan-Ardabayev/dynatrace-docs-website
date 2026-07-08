@@ -1,7 +1,6 @@
 ---
 title: Extensions limits
 source: https://docs.dynatrace.com/managed/ingest-from/extensions/extension-limits
-scraped: 2026-05-12T12:08:20.384157
 ---
 
 # Extensions limits

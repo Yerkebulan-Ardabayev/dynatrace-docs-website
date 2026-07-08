@@ -1,7 +1,6 @@
 ---
 title: Releases API - GET releases
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/releaseapi/get-releaseall
-scraped: 2026-05-12T11:55:50.023568
 ---
 
 # Releases API - GET releases
@@ -59,7 +58,7 @@ A list of releases.
 | --- | --- | --- |
 | nextPageKey | string | The cursor for the next page of results. Has the value of `null` on the last page.  Use it in the **nextPageKey** query parameter to obtain subsequent pages of the result. |
 | pageSize | integer | The number of entries per page. |
-| releases | [Release[]](#openapi-definition-Release) | A list of releases. |
+| releases | [Release](#openapi-definition-Release)[] | A list of releases. |
 | releasesWithProblems | integer | Number of releases with problems. |
 | totalCount | integer | The total number of entries in the result. |
 
@@ -76,7 +75,7 @@ The tuple <name, product, stage, version> is always unique.
 | --- | --- | --- |
 | affectedByProblems | boolean | The entity has one or more problems |
 | affectedBySecurityVulnerabilities | boolean | The entity has one or more security vulnerabilities |
-| instances | [ReleaseInstance[]](#openapi-definition-ReleaseInstance) | The instances entityIds included in this release |
+| instances | [ReleaseInstance](#openapi-definition-ReleaseInstance)[] | The instances entityIds included in this release |
 | name | string | The entity name |
 | problemCount | integer | The number of problems of the entity |
 | product | string | The product name |
@@ -84,7 +83,7 @@ The tuple <name, product, stage, version> is always unique.
 | running | boolean | The related PGI is still running/monitored |
 | securityVulnerabilitiesCount | integer | The number of security vulnerabilities of the entity |
 | securityVulnerabilitiesEnabled | boolean | Indicates that the security vulnerabilities feature is enabled |
-| softwareTechs | [SoftwareTechs[]](#openapi-definition-SoftwareTechs) | The software technologies of the release |
+| softwareTechs | [SoftwareTechs](#openapi-definition-SoftwareTechs)[] | The software technologies of the release |
 | stage | string | The stage name |
 | throughput | number | The count of bytes per second of the entity |
 | version | string | The identified release version |
@@ -123,7 +122,7 @@ Contains information about the used software technology.
 | Element | Type | Description |
 | --- | --- | --- |
 | code | integer | The HTTP status code |
-| constraintViolations | [ConstraintViolation[]](#openapi-definition-ConstraintViolation) | A list of constraint violations |
+| constraintViolations | [ConstraintViolation](#openapi-definition-ConstraintViolation)[] | A list of constraint violations |
 | message | string | The error message |
 
 #### The `ConstraintViolation` object
@@ -333,4 +332,4 @@ A list of constraint violations
 
 ## Related topics
 
-* [Release monitoring](/managed/deliver/release-monitoring "Detect versions of monitored applications and analyze the software product lifecycle of your releases.")
+* [Release monitoring](/managed/deliver/release-monitoring-classic "Detect versions of monitored applications and analyze the software product lifecycle of your releases.")

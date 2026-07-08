@@ -1,7 +1,6 @@
 ---
 title: Maintenance windows API - DELETE a maintenance window
 source: https://docs.dynatrace.com/managed/dynatrace-api/configuration-api/maintenance-windows-api/delete-mw
-scraped: 2026-05-12T12:06:25.720905
 ---
 
 # Maintenance windows API - DELETE a maintenance window

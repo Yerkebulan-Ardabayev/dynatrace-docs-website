@@ -1,7 +1,6 @@
 ---
 title: Settings API - Ingest routing configuration (metrics) schema table
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-metrics-routing
-scraped: 2026-05-12T11:47:52.608898
 ---
 
 # Settings API - Ingest routing configuration (metrics) schema table

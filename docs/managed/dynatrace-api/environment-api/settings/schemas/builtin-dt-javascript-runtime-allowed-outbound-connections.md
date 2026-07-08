@@ -1,7 +1,6 @@
 ---
 title: Settings API - Limit outbound connections schema table
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/settings/schemas/builtin-dt-javascript-runtime-allowed-outbound-connections
-scraped: 2026-05-12T11:43:19.870451
 ---
 
 # Settings API - Limit outbound connections schema table

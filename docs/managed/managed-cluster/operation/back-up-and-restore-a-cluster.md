@@ -1,7 +1,6 @@
 ---
 title: Backup and restore a cluster
 source: https://docs.dynatrace.com/managed/managed-cluster/operation/back-up-and-restore-a-cluster
-scraped: 2026-05-12T11:36:53.336962
 ---
 
 # Backup and restore a cluster
@@ -20,7 +19,7 @@ To configure automatic backup for a Dynatrace Managed cluster
      **Exclude user sessions from the backup to remain compliant with GDPR**.
    * Exclude timeseries metric data from the backup if your historical data isn't relevant and you only want to retain configuration data.
    * Include backup of Log Monitoring events.
-4. (Optional) Select data center. This step is required only if you have multiple data center deployment (Premium High Availability deployment). For more information on Premium High Availability deployments, see [High availability for multi-data centers](/managed/managed-cluster/high-availability/premium-high-availability "Learn how Dynatrace Premium High Availability provides near-zero downtime and data resilience through multi-data-center deployments for Managed Clusters.") and [Disaster recovery from backup](/managed/managed-cluster/high-availability/data-center-disaster-recovery-from-backup "Learn how to recover lost data center from backup in a multiple data center deployment.")
+4. (Optional) Select data center. This step is required only if you have multiple data center deployment (Premium High Availability deployment). For more information on Premium High Availability deployments, see [High availability for multi-data centers](/managed/managed-cluster/high-availability/multi-data-centers "Understand how Dynatrace Managed Premium High Availability provides failover, data resilience, and data routing across data centers.") and [Disaster recovery from backup](/managed/managed-cluster/high-availability/recover-from-backup "Learn how to restore a Premium High Availability data center from backup in a Dynatrace Managed multi-DC deployment after a data center loss.")
 5. Provide a full path to the mounted network file storage where backup archives are stored.
 6. Configure start time.
 
@@ -28,7 +27,7 @@ To configure automatic backup for a Dynatrace Managed cluster
 
 You can automatically back up Dynatrace Managed configuration data (naming rules, tags, management zones, alerting profiles, and more), time series metric data, and user sessions. To maximize resilience, save your backup files to an off-site location.
 
-* Each node needs to be connected to the shared file systemâfor example, Network File Sharing (NFS)âand the shared file system needs to be mounted **at the same shared directory on each node**.  
+* Each node needs to be connected to the shared file system—for example, Network File Sharing (NFS)—and the shared file system needs to be mounted **at the same shared directory on each node**.  
   To test your user permissions, run the following command on each node:
 
   ```

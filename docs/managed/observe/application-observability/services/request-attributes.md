@@ -1,7 +1,6 @@
 ---
 title: Request attributes
 source: https://docs.dynatrace.com/managed/observe/application-observability/services/request-attributes
-scraped: 2026-05-12T11:20:38.782968
 ---
 
 # Request attributes
@@ -13,7 +12,7 @@ scraped: 2026-05-12T11:20:38.782968
 
 Dynatrace tracks all requests, from end to end, and automatically monitors the services that underlie each transaction. The performance and attributes of each request can be analyzed in detail. You're not limited to just certain predefined attributes. You can also configure custom *request attributes* that you can use to improve filtering and analysis of web requests.
 
-Request attributes are essentially key/value pairs that are associated with a particular service request. For example, if you have a travel website that tracks the destinations of each of your customersâ bookings, you can set up a destination attribute for each service request. The specific value of the destination attribute of each request is populated for you automatically on all calls that include a destination attribute (see the `destination` attribute example below). A single request might have multiple request attributes.
+Request attributes are essentially key/value pairs that are associated with a particular service request. For example, if you have a travel website that tracks the destinations of each of your customers’ bookings, you can set up a destination attribute for each service request. The specific value of the destination attribute of each request is populated for you automatically on all calls that include a destination attribute (see the `destination` attribute example below). A single request might have multiple request attributes.
 
 ![Request attributes](https://dt-cdn.net/images/request-attributes-1575-7055953a5c.png)
 
@@ -26,7 +25,7 @@ Multiple requests within a single distributed trace might have the same attribut
 You can capture request attributes based on:
 
 * [Web request data](/managed/observe/application-observability/services/request-attributes/capture-request-attributes-based-on-web-request-data "Create request attributes based on web request data.")
-* [Java, .NET, and PHP method arguments](/managed/observe/application-observability/services/request-attributes/capture-request-attributes-based-on-method-arguments "Learn how to create request attributes based on Java, .NET, or PHP method arguments and how to use them on the serviceâs overview page. Also find out how you can aggregate the captured values of request attributes as well as how you can access objects, in case the value to be captured is a complex object.")
+* [Java, .NET, and PHP method arguments](/managed/observe/application-observability/services/request-attributes/capture-request-attributes-based-on-method-arguments "Learn how to create request attributes based on Java, .NET, or PHP method arguments and how to use them on the service’s overview page. Also find out how you can aggregate the captured values of request attributes as well as how you can access objects, in case the value to be captured is a complex object.")
 * Any data captured with the [OneAgent SDK](/managed/ingest-from/extend-dynatrace/extend-tracing/oneagent-sdk "The Dynatrace OneAgent SDK enables you to instrument your application manually to extend end-to-end visibility for frameworks and technologies for which there is no code module yet available.")
 
 ## Confidential request attributes
@@ -48,7 +47,7 @@ Here are some examples of how you can use request attributes:
 * [Set up detection of business-logic related errors](/managed/observe/application-observability/services/service-detection/service-detection-v1/configure-service-failure-detection#detection-of-business-logic-related-errors-using-request-attributes "Discover which service error types Dynatrace automatically detects and learn how to adjust failure detection settings to meet your specific requirements.")
 * [Enrich distributed traces analysis by adding metadata to distributed traces](/managed/observe/application-observability/distributed-traces/use-cases/segment-request "Enhance your distributed system performance by segmenting requests with slow response time via Service flow and analyzing their distributed traces.")
 * [Create calculated metrics](/managed/dynatrace-api/configuration-api/calculated-metrics "Learn what the Dynatrace calculated metrics config API offers.")
-* [Create custom queries, segmentation, and aggregation of session data with User Session Query Language](/managed/observe/digital-experience/session-segmentation/custom-queries-segmentation-and-aggregation-of-session-data "Learn how you can access and query user session data based on keywords, syntax, functions, and more.")
+* [Create custom queries, segmentation, and aggregation of session data with User Session Query Language](/managed/observe/digital-experience/rum-classic/session-segmentation/custom-queries-segmentation-and-aggregation-of-session-data "Learn how you can access and query user session data based on keywords, syntax, functions, and more.")
 
 ## Limits
 

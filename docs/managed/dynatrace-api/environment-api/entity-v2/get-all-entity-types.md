@@ -1,7 +1,6 @@
 ---
 title: Monitored entities API - GET all entity types
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/entity-v2/get-all-entity-types
-scraped: 2026-05-12T11:57:10.598292
 ---
 
 # Monitored entities API - GET all entity types
@@ -62,7 +61,7 @@ A list of properties of all available entity types.
 | nextPageKey | string | The cursor for the next page of results. Has the value of `null` on the last page.  Use it in the **nextPageKey** query parameter to obtain subsequent pages of the result. |
 | pageSize | integer | The number of entries per page. |
 | totalCount | integer | The total number of entries in the result. |
-| types | [EntityType[]](#openapi-definition-EntityType) | The list of meta information for all available entity-types |
+| types | [EntityType](#openapi-definition-EntityType)[] | The list of meta information for all available entity-types |
 
 #### The `EntityType` object
 
@@ -73,11 +72,11 @@ A list of properties of the monitored entity type.
 | dimensionKey | string | The dimension key used within metrics for this monitored entity. |
 | displayName | string | The display name of the monitored entity. |
 | entityLimitExceeded | boolean | Indicates whether the entity creation limit for this type has been exceeded. When true, Dynatrace automatically triggers a cleanup process for this entity type. New entities will still be created, and no action is required. This applies only for builtin-types. For generic types creation and update gets blocked. You can recognize a generic type by containing ':' in the name for example my:type. |
-| fromRelationships | [ToPosition[]](#openapi-definition-ToPosition) | A list of possible relationships where the monitored entity type occupies the FROM position |
+| fromRelationships | [ToPosition](#openapi-definition-ToPosition)[] | A list of possible relationships where the monitored entity type occupies the FROM position |
 | managementZones | string | The placeholder for the list of management zones of an actual entity. |
-| properties | [EntityTypePropertyDto[]](#openapi-definition-EntityTypePropertyDto) | A list of additional properties of the monitored entity type. |
+| properties | [EntityTypePropertyDto](#openapi-definition-EntityTypePropertyDto)[] | A list of additional properties of the monitored entity type. |
 | tags | string | The placeholder for the list of tags of an actual entity. |
-| toRelationships | [FromPosition[]](#openapi-definition-FromPosition) | A list of possible relationships where the monitored entity type occupies the TO position. |
+| toRelationships | [FromPosition](#openapi-definition-FromPosition)[] | A list of possible relationships where the monitored entity type occupies the TO position. |
 | type | string | The type of the monitored entity. |
 
 #### The `ToPosition` object

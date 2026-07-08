@@ -1,7 +1,6 @@
 ---
 title: Get Log Monitoring status
 source: https://docs.dynatrace.com/managed/dynatrace-api/cluster-api/cluster-api-v2/log-monitoring/get-log-monitoring-status
-scraped: 2026-05-12T11:06:08.449485
 ---
 
 # Get Log Monitoring status

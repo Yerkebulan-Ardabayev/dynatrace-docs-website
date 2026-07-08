@@ -1,7 +1,6 @@
 ---
 title: Automatically instrument your PHP application with OpenTelemetry
 source: https://docs.dynatrace.com/managed/ingest-from/opentelemetry/walkthroughs/php/php-auto
-scraped: 2026-05-12T12:15:16.706329
 ---
 
 # Automatically instrument your PHP application with OpenTelemetry
@@ -33,7 +32,7 @@ To generate an access token, in Dynatrace, go to ![Access tokens](https://dt-cdn
 ## Step 2 Instrument your application
 
 1. Ensure you have an adequate build environment for your system set up, consisting of GCC, Make, and Autoconfig.
-2. Build and install the instrumentation library, using [pickleï»¿](https://github.com/FriendsOfPHP/pickle).
+2. Build and install the instrumentation library, using [pickle﻿](https://github.com/FriendsOfPHP/pickle).
 
    ```
    php pickle.phar install opentelemetry
@@ -49,9 +48,9 @@ To generate an access token, in Dynatrace, go to ![Access tokens](https://dt-cdn
    * As part of a web server, by calling `phpinfo()`
 5. Install the SDK and other dependencies.
 
-   * Required Install the [SDK for OpenTelemetry PHPï»¿](https://dt-url.net/41039bh).
-   * Optional Depending on the libraries your application is using, you might want to add other instrumentation libraries to the dependencies. You'll find the list of supported libraries in the [OpenTelemetry Registryï»¿](https://dt-url.net/zf239yc).
-   * Required You must use [composer autoloadingï»¿](https://dt-url.net/s2439p5), as this is the mechanism that all auto-instrumentation packages use to register themselves.
+   * Required Install the [SDK for OpenTelemetry PHP﻿](https://dt-url.net/41039bh).
+   * Optional Depending on the libraries your application is using, you might want to add other instrumentation libraries to the dependencies. You'll find the list of supported libraries in the [OpenTelemetry Registry﻿](https://dt-url.net/zf239yc).
+   * Required You must use [composer autoloading﻿](https://dt-url.net/s2439p5), as this is the mechanism that all auto-instrumentation packages use to register themselves.
 6. Configure the following environment variables.
 
    ```

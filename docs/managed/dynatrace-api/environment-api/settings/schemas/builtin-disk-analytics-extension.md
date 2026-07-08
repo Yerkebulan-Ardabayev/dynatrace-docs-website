@@ -1,7 +1,6 @@
 ---
 title: Settings API - Disk Analytics Extension schema table
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/settings/schemas/builtin-disk-analytics-extension
-scraped: 2026-05-12T11:39:48.861679
 ---
 
 # Settings API - Disk Analytics Extension schema table
@@ -34,4 +33,4 @@ To execute this request, you need an access token with **Read settings** (`setti
 
 | Property | Type | Description | Required |
 | --- | --- | --- | --- |
-| Enable Disk Analytics data collection `diskDeviceMonitoringExtensionActive` | boolean | The Disk Analytics feature requires an extension to be added to your environment. You can add the Disk Analytics extension to your environment from Dynatrace Hub (`<your-dynatrace-url>//ui/hub/ext/com.dynatrace.extension.disk-devices#information`). The Disk Analytics extension consumes custom metrics and [Davis data unitsï»¿](https://www.dynatrace.com/support/help/shortlink/metric-cost-calculation).  After you have added the Disk Analytics extension, you can enable the Data Collection in host or host-group level settings. If you enable the Data Collection without adding the extension the data is only visible in the data explorer.  For details, see [Disk Analytics extension documentationï»¿](https://dt-url.net/3a03v9v). | Required |
+| Enable Disk Analytics data collection `diskDeviceMonitoringExtensionActive` | boolean | The Disk Analytics feature requires an extension to be added to your environment. You can add the Disk Analytics extension to your environment from Dynatrace Hub (`<your-dynatrace-url>//ui/hub/ext/com.dynatrace.extension.disk-devices#information`). The Disk Analytics extension consumes custom metrics and [Davis data units﻿](https://www.dynatrace.com/support/help/shortlink/metric-cost-calculation).  After you have added the Disk Analytics extension, you can enable the Data Collection in host or host-group level settings. If you enable the Data Collection without adding the extension the data is only visible in the data explorer.  For details, see [Disk Analytics extension documentation﻿](https://dt-url.net/3a03v9v). | Required |

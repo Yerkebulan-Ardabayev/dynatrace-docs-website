@@ -1,7 +1,6 @@
 ---
 title: Integrate on Google Cloud Functions Python
 source: https://docs.dynatrace.com/managed/ingest-from/google-cloud-platform/gcp-integrations/gcp-functions/opentelemetry-on-gcf-python
-scraped: 2026-05-12T11:51:58.800080
 ---
 
 # Integrate on Google Cloud Functions Python
@@ -12,7 +11,7 @@ scraped: 2026-05-12T11:51:58.800080
 * 3-min read
 * Updated on Jun 16, 2023
 
-The `dynatrace-opentelemetry-gcf` [packageï»¿](https://pypi.org/project/dynatrace-opentelemetry-gcf) provides APIs for tracing Python Google Cloud Functions (GCF).
+The `dynatrace-opentelemetry-gcf` [package﻿](https://pypi.org/project/dynatrace-opentelemetry-gcf) provides APIs for tracing Python Google Cloud Functions (GCF).
 
 ## Prerequisites
 
@@ -29,7 +28,7 @@ To set up OpenTelemetry Python integration on Google Cloud Functions, add the fo
 dynatrace-opentelemetry-gcf
 ```
 
-This adds the latest version of the `dynatrace-opentelemetry-gcf` package as a dependency to your function. For more information about managing dependencies, consult the [GCF documentation for Pythonï»¿](https://cloud.google.com/functions/docs/writing/specifying-dependencies-python).
+This adds the latest version of the `dynatrace-opentelemetry-gcf` package as a dependency to your function. For more information about managing dependencies, consult the [GCF documentation for Python﻿](https://cloud.google.com/functions/docs/writing/specifying-dependencies-python).
 
 ## Trace export
 
@@ -39,7 +38,7 @@ To export traces to Dynatrace, you need to [initialize tracing](#initialize) and
 
 Select one of the following ways to initialize tracing:
 
-* `configure_dynatrace` functionâThis is the recommended option unless you need to manually set up tracing components.
+* `configure_dynatrace` function—This is the recommended option unless you need to manually set up tracing components.
 
   Example with `configure_dynatrace` (recommended)
 
@@ -66,7 +65,7 @@ Select one of the following ways to initialize tracing:
 
   )
   ```
-* Manual tracing setupâThis allows for a more fine-grained setup of tracing components.
+* Manual tracing setup—This allows for a more fine-grained setup of tracing components.
 
   Example with manual tracing setup
 
@@ -142,7 +141,7 @@ Select one of the following ways to initialize tracing:
   set_tracer_provider(tracer_provider)
   ```
 
-The tracing setup code should be implemented to set up tracing only once before any other third-party module is imported. If you use `isort` to sort your imports, we suggest that you [deactivate itï»¿](https://pycqa.github.io/isort/docs/configuration/action_comments.html#isort-off) while importing the tracing setup module, as shown in the following example:
+The tracing setup code should be implemented to set up tracing only once before any other third-party module is imported. If you use `isort` to sort your imports, we suggest that you [deactivate it﻿](https://pycqa.github.io/isort/docs/configuration/action_comments.html#isort-off) while importing the tracing setup module, as shown in the following example:
 
 ```
 # isort: off
@@ -194,7 +193,7 @@ return flask.Response("Hello World", 200)
 
 ## Cold start
 
-When the wrapped handler is invoked for the first time after [cold startï»¿](https://cloud.google.com/functions/docs/concepts/exec#cold_starts), the decorator will make additional HTTP requests to fetch metadata from your [Google Cloud environmentï»¿](https://cloud.google.com/compute/docs/metadata/overview). This metadata is used to set the required attributes for Dynatrace to process the span.
+When the wrapped handler is invoked for the first time after [cold start﻿](https://cloud.google.com/functions/docs/concepts/exec#cold_starts), the decorator will make additional HTTP requests to fetch metadata from your [Google Cloud environment﻿](https://cloud.google.com/compute/docs/metadata/overview). This metadata is used to set the required attributes for Dynatrace to process the span.
 
 ## Span flush
 
@@ -210,10 +209,10 @@ Because code running outside the function execution can be terminated at any tim
 * Google Cloud Functions 2nd gen
 
   Google Cloud Functions 2nd gen can handle multiple concurrent requests in a single function instance. The flush operation of one invocation can prolong the execution time of another function invocation.
-  Because function instances usually need to be kept idle for some time to handle multiple concurrent requests, you can disable the flushing of spans to improve performance. For details, see [Instance lifecycleï»¿](https://cloud.google.com/run/docs/container-contract#lifecycle-services).
-  Note that idle function instances are not guaranteed to be allocated CPU unless their [CPU allocationï»¿](https://cloud.google.com/run/docs/configuring/cpu-allocation) mode is set to `CPU always allocated`.
+  Because function instances usually need to be kept idle for some time to handle multiple concurrent requests, you can disable the flushing of spans to improve performance. For details, see [Instance lifecycle﻿](https://cloud.google.com/run/docs/container-contract#lifecycle-services).
+  Note that idle function instances are not guaranteed to be allocated CPU unless their [CPU allocation﻿](https://cloud.google.com/run/docs/configuring/cpu-allocation) mode is set to `CPU always allocated`.
 
-  For details, see [Function execution timelineï»¿](https://cloud.google.com/functions/docs/concepts/execution-environment#execution-timeline).
+  For details, see [Function execution timeline﻿](https://cloud.google.com/functions/docs/concepts/execution-environment#execution-timeline).
 
 ## Dynatrace overhead
 
@@ -228,4 +227,4 @@ Because code running outside the function execution can be terminated at any tim
 ## Related topics
 
 * [Set up Dynatrace on Google Cloud](/managed/ingest-from/google-cloud-platform "Monitor Google Cloud with Dynatrace.")
-* [Google Cloud monitoringï»¿](https://www.dynatrace.com/technologies/google-cloud-monitoring/)
+* [Google Cloud monitoring﻿](https://www.dynatrace.com/technologies/google-cloud-monitoring/)

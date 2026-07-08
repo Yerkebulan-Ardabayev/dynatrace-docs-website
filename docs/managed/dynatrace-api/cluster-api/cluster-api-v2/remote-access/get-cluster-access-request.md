@@ -1,7 +1,6 @@
 ---
 title: Get cluster access request
 source: https://docs.dynatrace.com/managed/dynatrace-api/cluster-api/cluster-api-v2/remote-access/get-cluster-access-request
-scraped: 2026-05-12T11:05:56.405367
 ---
 
 # Get cluster access request

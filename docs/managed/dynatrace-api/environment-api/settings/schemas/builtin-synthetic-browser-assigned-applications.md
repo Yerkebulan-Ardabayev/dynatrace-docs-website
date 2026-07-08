@@ -1,7 +1,6 @@
 ---
 title: Settings API - Assign synthetic monitor to web applications schema table
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/settings/schemas/builtin-synthetic-browser-assigned-applications
-scraped: 2026-05-12T11:48:00.225877
 ---
 
 # Settings API - Assign synthetic monitor to web applications schema table

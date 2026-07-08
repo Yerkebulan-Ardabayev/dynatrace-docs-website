@@ -1,7 +1,6 @@
 ---
 title: Red Hat Quarkus native applications monitoring
 source: https://docs.dynatrace.com/managed/ingest-from/technology-support/application-software/java/quarkus
-scraped: 2026-05-12T12:04:34.218723
 ---
 
 # Red Hat Quarkus native applications monitoring
@@ -11,14 +10,14 @@ scraped: 2026-05-12T12:04:34.218723
 * 3-min read
 * Updated on Jan 28, 2026
 
-[Red Hat Quarkusï»¿](https://www.redhat.com/en/topics/cloud-native-apps/what-is-quarkus) is an open source Java framework optimized for GraalVM Native Images to make Java a valuable citizen in the world of microservices. Quarkus belongs to the family of full-stack frameworks tailored for Kubernetes. It includes modern Java libraries and follows the latest Java standards.
+[Red Hat Quarkus﻿](https://www.redhat.com/en/topics/cloud-native-apps/what-is-quarkus) is an open source Java framework optimized for GraalVM Native Images to make Java a valuable citizen in the world of microservices. Quarkus belongs to the family of full-stack frameworks tailored for Kubernetes. It includes modern Java libraries and follows the latest Java standards.
 
 Learn how Dynatrace can trace native Java applications and monitor metrics and logs of a Quarkus application compiled as a native image.
 
 ## Prerequisites
 
 * Your GraalVM version is [supported by Dynatrace](/managed/ingest-from/technology-support#java-native-image "Find technical details related to Dynatrace support for specific platforms and development frameworks.").
-* GraalVM is configured to build native images. For details, see the [Building a native executableï»¿](https://quarkus.io/guides/building-native-image) Quarkus guide.
+* GraalVM is configured to build native images. For details, see the [Building a native executable﻿](https://quarkus.io/guides/building-native-image) Quarkus guide.
 * OneAgent or Dynatrace Operator is installed on the machine where the application is about to be executed.
 
   The required installation depends on your application:
@@ -47,9 +46,9 @@ If your environment is monitored by OneAgent, you have those simplified configur
 
 If you prefer a OneAgent-based method, skip the manual configuration below.
 
-If you prefer manual configuration or donât use OneAgent, follow the steps below.
+If you prefer manual configuration or don’t use OneAgent, follow the steps below.
 
-To manually configure OpenTelemetry export, use the [Quarkus-specific configuration parametersï»¿](https://dt-url.net/3g039zt) to configure the exporter to send trace data to one of the two available endpoints, [ActiveGate or OneAgent](/managed/ingest-from/opentelemetry/otlp-api "Learn about the OTLP API endpoints that your application uses to export OpenTelemetry data to Dynatrace.").
+To manually configure OpenTelemetry export, use the [Quarkus-specific configuration parameters﻿](https://dt-url.net/3g039zt) to configure the exporter to send trace data to one of the two available endpoints, [ActiveGate or OneAgent](/managed/ingest-from/opentelemetry/otlp-api "Learn about the OTLP API endpoints that your application uses to export OpenTelemetry data to Dynatrace.").
 
 The following example shows how to configure `application.properties` to export to a Dynatrace SaaS endpoint. It specifies the API URL and the necessary, percent-encoded [`Authorization` header](/managed/ingest-from/opentelemetry/otlp-api#authentication-export-to-activegate "Learn about the OTLP API endpoints that your application uses to export OpenTelemetry data to Dynatrace.") with the API token.
 
@@ -73,7 +72,7 @@ quarkus.log.console.format=%d{HH:mm:ss} %-5p traceId=%X{traceId}, parentId=%X{pa
 
 Red Hat recommends that you obtain metrics from Quarkus via the `quarkus-micrometer-registry-prometheus` library.
 
-To learn how to utilize Micrometer metrics in your Quarkus application, see the [Micrometer metricsï»¿](https://quarkus.io/guides/micrometer) Quarkus guide.
+To learn how to utilize Micrometer metrics in your Quarkus application, see the [Micrometer metrics﻿](https://quarkus.io/guides/micrometer) Quarkus guide.
 
 Dynatrace offers two approaches for obtaining Micrometer metrics from Prometheus: via API or via an extension.
 
@@ -87,7 +86,7 @@ For natively built applications, be sure to follow the [Directly in Micrometer](
 
 ### Ingest Micrometer metrics via an extension
 
-Use the Dynatrace [Extension 2.0 Framework](/managed/ingest-from/extensions "Learn how to create and manage Dynatrace Extensions.") to ingest Micrometer metrics obtained from the [Prometheus data source](/managed/ingest-from/extensions/develop-your-extensions/data-sources/prometheus-extensions "Learn how to create a Prometheus extension using the Extensions framework.")âyou need to create a custom extension for that.
+Use the Dynatrace [Extension 2.0 Framework](/managed/ingest-from/extensions "Learn how to create and manage Dynatrace Extensions.") to ingest Micrometer metrics obtained from the [Prometheus data source](/managed/ingest-from/extensions/develop-your-extensions/data-sources/prometheus-extensions "Learn how to create a Prometheus extension using the Extensions framework.")—you need to create a custom extension for that.
 
 As a starting point, you can use the custom extension example below. It's tailored to the `quarkus-micrometer-registry-prometheus` library. Be sure to use the correct metrics endpoint in your configuration. The default endpoint is `localhost:8080/q/metrics`.
 
@@ -745,7 +744,7 @@ featureSet: global
 
 Dynatrace offers [various options](/managed/ingest-from/extend-dynatrace/extend-logs "Learn how to extend log observability in Dynatrace.") for collecting logs from your applications and environments.
 
-To learn how to set up logging in your Quarkus application, see the [Configuring loggingï»¿](https://quarkus.io/guides/logging) Quarkus guide.
+To learn how to set up logging in your Quarkus application, see the [Configuring logging﻿](https://quarkus.io/guides/logging) Quarkus guide.
 
 For the procedure below, we assume your application writes logs to the `/var/log/quarkus-app.log` file.
 

@@ -1,7 +1,6 @@
 ---
 title: Calculate your consumption of Security Posture Management (SPM) (DPS)
 source: https://docs.dynatrace.com/managed/license/capabilities/application-security/security-posture-management
-scraped: 2026-05-12T12:00:43.264559
 ---
 
 # Calculate your consumption of Security Posture Management (SPM) (DPS)
@@ -39,7 +38,7 @@ This section describes the different Dynatrace tools that you can use to track c
 
 You can also track your usage in Account Management.
 
-1. Go to [**Account Management**ï»¿](https://myaccount.dynatrace.com/) > **Subscription** > **Overview**.
+1. Go to [**Account Management**﻿](https://myaccount.dynatrace.com/) > **Subscription** > **Overview**.
 2. In **Cost and usage details**, select **Usage summary**.
 3. Search for `Security Posture Management` and select **View details**.
 
@@ -54,6 +53,6 @@ You can query metrics via the [Environment API - Metrics API v2](/managed/dynatr
 ## Related topics
 
 * [Unavailable in Dynatrace Managed](/managed/upgrade/unavailable-in-managed "Your selection is unavailable in Dynatrace Managed.")
-* [License Dynatrace](/managed/license "About Dynatrace Platform Subscription (DPS), the licensing model for all Dynatrace capabilities.")
+* [License Dynatrace](/managed/license "Dynatrace Platform Subscription, capability rate cards, hybrid licensing, and previous license models.")
 * [Application Security overview (DPS)](/managed/license/capabilities/application-security "Learn how Dynatrace Application Security monitoring consumption is calculated using the Dynatrace Platform Subscription model.")
-* [Dynatrace pricingï»¿](https://www.dynatrace.com/pricing/)
+* [Dynatrace pricing﻿](https://www.dynatrace.com/pricing/)

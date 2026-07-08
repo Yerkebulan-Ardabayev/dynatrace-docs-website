@@ -1,7 +1,6 @@
 ---
 title: ActiveGate group
 source: https://docs.dynatrace.com/managed/ingest-from/dynatrace-activegate/activegate-group
-scraped: 2026-05-12T11:37:35.788222
 ---
 
 # ActiveGate group

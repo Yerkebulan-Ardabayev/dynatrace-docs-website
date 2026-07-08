@@ -1,7 +1,6 @@
 ---
 title: Synthetic locations API - GET a location
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/synthetic/synthetic-locations/get-a-location
-scraped: 2026-05-12T11:56:51.982082
 ---
 
 # Synthetic locations API - GET a location
@@ -11,7 +10,7 @@ scraped: 2026-05-12T11:56:51.982082
 * Reference
 * Published Jul 26, 2019
 
-We have a new version of this APIâ[Synthetic API v2](/managed/dynatrace-api/environment-api/synthetic-v2 "Find out what the Dynatrace Synthetic v2 API offers."). Check it out!
+We have a new version of this API—[Synthetic API v2](/managed/dynatrace-api/environment-api/synthetic-v2 "Find out what the Dynatrace Synthetic v2 API offers."). Check it out!
 
 Gets parameters of the specified location.
 
@@ -58,18 +57,18 @@ Configuration of a synthetic location.
 
 **countryCode**, **regionCode**, **city** parameters are optional as they can be retrieved based on **latitude** and **longitude** of location.
 
-The actual set of fields depends on the type of the location. Find the list of actual objects in the description of the **type** field or see [Synthetic locations API v2 - JSON modelsï»¿](https://dt-url.net/3n43szj).
+The actual set of fields depends on the type of the location. Find the list of actual objects in the description of the **type** field or see [Synthetic locations API v2 - JSON models﻿](https://dt-url.net/3n43szj).
 
 | Element | Type | Description |
 | --- | --- | --- |
 | city | string | The city of the location. |
-| countryCode | string | The country code of the location.  To fetch the list of available country codes, use the [GET all countriesï»¿](https://dt-url.net/37030go) request. |
+| countryCode | string | The country code of the location.  To fetch the list of available country codes, use the [GET all countries﻿](https://dt-url.net/37030go) request. |
 | countryName | string | The country name of the location. |
 | entityId | string | The Dynatrace entity ID of the location. |
 | latitude | number | The latitude of the location in `DDD.dddd` format. |
 | longitude | number | The longitude of the location in `DDD.dddd` format. |
 | name | string | The name of the location. |
-| regionCode | string | The region code of the location.  To fetch the list of available region codes, use the [GET regions of the countryï»¿](https://dt-url.net/az230x0) request. |
+| regionCode | string | The region code of the location.  To fetch the list of available region codes, use the [GET regions of the country﻿](https://dt-url.net/az230x0) request. |
 | regionName | string | The region name of the location. |
 | status | string | The status of the location:  * `ENABLED`: The location is displayed as active in the UI. You can assign monitors to the location. * `DISABLED`: The location is displayed as inactive in the UI. You can't assign monitors to the location. Monitors already assigned to the location will stay there and will be executed from the location. * `HIDDEN`: The location is not displayed in the UI. You can't assign monitors to the location. You can only set location as `HIDDEN` when no monitor is assigned to it. The element can hold these values * `DISABLED` * `ENABLED` * `HIDDEN` |
 | type | string | Defines the actual set of fields depending on the value. See one of the following objects:  * `PUBLIC` -> PublicSyntheticLocation * `PRIVATE` -> PrivateSyntheticLocation * `CLUSTER` -> PrivateSyntheticLocation The element can hold these values * `CLUSTER` * `PRIVATE` * `PUBLIC` |
@@ -85,7 +84,7 @@ The actual set of fields depends on the type of the location. Find the list of a
 | Element | Type | Description |
 | --- | --- | --- |
 | code | integer | The HTTP status code |
-| constraintViolations | [ConstraintViolation[]](#openapi-definition-ConstraintViolation) | A list of constraint violations |
+| constraintViolations | [ConstraintViolation](#openapi-definition-ConstraintViolation)[] | A list of constraint violations |
 | message | string | The error message |
 
 #### The `ConstraintViolation` object
@@ -354,7 +353,7 @@ https://mySampleEnv.live.dynatrace.com/api/v1/synthetic/locations/SYNTHETIC_LOCA
 
 
 
-"city": "GdaÅsk",
+"city": "Gdańsk",
 
 
 

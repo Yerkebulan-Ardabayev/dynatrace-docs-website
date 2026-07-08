@@ -1,7 +1,6 @@
 ---
 title: Google Cloud integrations
 source: https://docs.dynatrace.com/managed/ingest-from/google-cloud-platform/gcp-integrations
-scraped: 2026-05-12T11:10:37.847699
 ---
 
 # Google Cloud integrations
@@ -31,4 +30,4 @@ Dynatrace OneAgent provides full-stack monitoring on Google Compute Engine and G
 ## Related topics
 
 * [Set up Dynatrace on Google Cloud](/managed/ingest-from/google-cloud-platform "Monitor Google Cloud with Dynatrace.")
-* [Google Cloud monitoringï»¿](https://www.dynatrace.com/technologies/google-cloud-monitoring/)
+* [Google Cloud monitoring﻿](https://www.dynatrace.com/technologies/google-cloud-monitoring/)

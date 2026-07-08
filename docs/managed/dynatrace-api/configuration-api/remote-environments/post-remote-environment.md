@@ -1,7 +1,6 @@
 ---
 title: Remote environments API - POST a remote environment configuration
 source: https://docs.dynatrace.com/managed/dynatrace-api/configuration-api/remote-environments/post-remote-environment
-scraped: 2026-05-12T11:20:44.494690
 ---
 
 # Remote environments API - POST a remote environment configuration
@@ -115,7 +114,7 @@ The short representation of a remote environment.
 | Element | Type | Description |
 | --- | --- | --- |
 | code | integer | The HTTP status code |
-| constraintViolations | [ConstraintViolation[]](#openapi-definition-ConstraintViolation) | A list of constraint violations |
+| constraintViolations | [ConstraintViolation](#openapi-definition-ConstraintViolation)[] | A list of constraint violations |
 | message | string | The error message |
 
 #### The `ConstraintViolation` object
@@ -250,7 +249,7 @@ To learn how to obtain and use it, see [Tokens and authentication](/managed/disc
 | Element | Type | Description |
 | --- | --- | --- |
 | code | integer | The HTTP status code |
-| constraintViolations | [ConstraintViolation[]](#openapi-definition-ConstraintViolation) | A list of constraint violations |
+| constraintViolations | [ConstraintViolation](#openapi-definition-ConstraintViolation)[] | A list of constraint violations |
 | message | string | The error message |
 
 #### The `ConstraintViolation` object

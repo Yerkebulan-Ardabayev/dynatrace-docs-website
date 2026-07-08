@@ -1,7 +1,6 @@
 ---
 title: Settings API - Beacon endpoint settings schema table
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/settings/schemas/builtin-rum-web-beacon-endpoint
-scraped: 2026-05-12T11:40:14.837782
 ---
 
 # Settings API - Beacon endpoint settings schema table
@@ -13,7 +12,7 @@ scraped: 2026-05-12T11:40:14.837782
 ### Beacon endpoint settings (`builtin:rum.web.beacon-endpoint)`
 
 Define where OneAgent is to send your web application monitoring data.
-Learn more about how to [configure the beacon endpointï»¿](https://dt-url.net/yp036lb).
+Learn more about how to [configure the beacon endpoint﻿](https://dt-url.net/yp036lb).
 
 | Schema ID | Schema groups | Scope |
 | --- | --- | --- |
@@ -37,4 +36,4 @@ To execute this request, you need an access token with **Read settings** (`setti
 | --- | --- | --- | --- |
 | Type `type` | enum | The element has these enums * `DEFAULT_CONFIG` * `ACTIVEGATE` * `ONEAGENT` | Required |
 | URL `url` | text | You can specify either path segments or an absolute URL. | Required |
-| Send beacon data via CORS `useCors` | boolean | Learn more about [sending beacon data via CORSï»¿](https://dt-url.net/r7038sa) | Required |
+| Send beacon data via CORS `useCors` | boolean | Learn more about [sending beacon data via CORS﻿](https://dt-url.net/r7038sa) | Required |

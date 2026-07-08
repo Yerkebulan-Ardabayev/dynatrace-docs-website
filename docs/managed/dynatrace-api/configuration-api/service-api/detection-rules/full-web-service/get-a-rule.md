@@ -1,7 +1,6 @@
 ---
 title: Service detection API - GET a full web service rule
 source: https://docs.dynatrace.com/managed/dynatrace-api/configuration-api/service-api/detection-rules/full-web-service/get-a-rule
-scraped: 2026-05-12T11:18:43.828077
 ---
 
 # Service detection API - GET a full web service rule
@@ -70,7 +69,7 @@ If you have a condition with the **attributeType** set to `FRAMEWORK`, the **val
 | Element | Type | Description |
 | --- | --- | --- |
 | applicationId | [ApplicationId](#openapi-definition-ApplicationId) | The contribution to the service ID calculation from the detected application ID.  You have two mutually exclusive options:  * Override the detected value with a specified static value. Specify the new value in the **valueOverride** field. * Dynamically transform the detected value. Specify the transformation parameters in the **transformations** field. |
-| conditions | [ConditionsFullWebServiceAttributeTypeDto[]](#openapi-definition-ConditionsFullWebServiceAttributeTypeDto) | A list of conditions of the rule.  If several conditions are specified, the AND logic applies. |
+| conditions | [ConditionsFullWebServiceAttributeTypeDto](#openapi-definition-ConditionsFullWebServiceAttributeTypeDto)[] | A list of conditions of the rule.  If several conditions are specified, the AND logic applies. |
 | contextRoot | [ContextRoot](#openapi-definition-ContextRoot) | The contribution to the service ID calculation from the detected context root.  The context root is the first segment of the request URL after server name. For example, in the `www.dynatrace.com/support/help/dynatrace-api/` URL the context root is `support`.  You have two options:  * Keep a part of the detected URL. Specify the number of segments to be kept in the **segmentsToCopyFromUrlPath** field. * Dynamically transform the detected URL. Specify the transformation parameters in the **transformations** field.  You can use one or both options. If you use both, the transformation applies to the modified URL. |
 | description | string | A short description of the rule. |
 | detectAsWebRequestService | boolean | Detect the matching requests as full web services (`false`) or web request services (`true`).  Setting this field to `true` prevents detecting of matching requests as full web services. A web request service is created instead. If you need to further modify the resulting web request service, you need to create a separate rule of the `FULL_WEB_REQUEST` type.  Default is `false`, detecting matching requests as full web services. |
@@ -96,7 +95,7 @@ You have two mutually exclusive options:
 
 | Element | Type | Description |
 | --- | --- | --- |
-| transformations | [TransformationBase[]](#openapi-definition-TransformationBase) | Transformations to be applied to the detected value. |
+| transformations | [TransformationBase](#openapi-definition-TransformationBase)[] | Transformations to be applied to the detected value. |
 | valueOverride | string | The value to be used instead of the detected value. |
 
 #### The `TransformationBase` object
@@ -105,7 +104,7 @@ Configuration of transformation of the detected value.
 
 If several transformations are specified, they are handled sequentially from top to bottom. Each transformation is applied to the result of the preceding transformation. For example, the second transformation is applied to the result of the first transformation.
 
-The actual set of fields depends on the type of the transformation. Find the list of actual objects in the description of the **type** field or see [Service detection API - JSON modelsï»¿](https://dt-url.net/2ie3slq).
+The actual set of fields depends on the type of the transformation. Find the list of actual objects in the description of the **type** field or see [Service detection API - JSON models﻿](https://dt-url.net/2ie3slq).
 
 | Element | Type | Description |
 | --- | --- | --- |
@@ -118,13 +117,13 @@ A condition of the service detection rule.
 | Element | Type | Description |
 | --- | --- | --- |
 | attributeType | string | The type of the attribute to be checked. The element can hold these values * `APPLICATION_ID` * `CONTEXT_ROOT` * `FRAMEWORK` * `IS_SOAP_SERVICE` * `PG_TAG` * `SERVER_NAME` * `URL_HOST_NAME` * `URL_PATH` * `WEBSERVICE_METHOD` * `WEBSERVICE_NAME` * `WEBSERVICE_NAMESPACE` |
-| compareOperations | [CompareOperation[]](#openapi-definition-CompareOperation) | A list of conditions for the rule.  If several conditions are specified, the AND logic applies. |
+| compareOperations | [CompareOperation](#openapi-definition-CompareOperation)[] | A list of conditions for the rule.  If several conditions are specified, the AND logic applies. |
 
 #### The `CompareOperation` object
 
 The condition of the rule.
 
-The actual set of fields depends on the type of the condition. Find the list of actual objects in the description of the **type** field or see [Service detection API - JSON modelsï»¿](https://dt-url.net/2ie3slq).
+The actual set of fields depends on the type of the condition. Find the list of actual objects in the description of the **type** field or see [Service detection API - JSON models﻿](https://dt-url.net/2ie3slq).
 
 | Element | Type | Description |
 | --- | --- | --- |
@@ -146,7 +145,7 @@ You can use one or both options. If you use both, the transformation applies to 
 | Element | Type | Description |
 | --- | --- | --- |
 | segmentsToCopyFromUrlPath | integer | The number of segments of the URL to be kept.  The URL is divided by slashes (`/`), the indexing starts with 1 at context root.  For example, if you specify `2` for the `www.dynatrace.com/support/help/dynatrace-api/` URL, the value of `support/help` is used. |
-| transformations | [ContextRootTransformation[]](#openapi-definition-ContextRootTransformation) | Transformations to be applied to the detected value. |
+| transformations | [ContextRootTransformation](#openapi-definition-ContextRootTransformation)[] | Transformations to be applied to the detected value. |
 
 #### The `ContextRootTransformation` object
 
@@ -181,7 +180,7 @@ You have two mutually exclusive options:
 
 | Element | Type | Description |
 | --- | --- | --- |
-| transformations | [TransformationBase[]](#openapi-definition-TransformationBase) | Transformations to be applied to the detected value. |
+| transformations | [TransformationBase](#openapi-definition-TransformationBase)[] | Transformations to be applied to the detected value. |
 | valueOverride | string | The value to be used instead of the detected value. |
 
 #### The `WebServiceName` object
@@ -195,7 +194,7 @@ You have two mutually exclusive options:
 
 | Element | Type | Description |
 | --- | --- | --- |
-| transformations | [TransformationBase[]](#openapi-definition-TransformationBase) | Transformations to be applied to the detected value. |
+| transformations | [TransformationBase](#openapi-definition-TransformationBase)[] | Transformations to be applied to the detected value. |
 | valueOverride | string | The value to be used instead of the detected value. |
 
 #### The `WebServiceNameSpace` object
@@ -209,7 +208,7 @@ You have two mutually exclusive options:
 
 | Element | Type | Description |
 | --- | --- | --- |
-| transformations | [TransformationBase[]](#openapi-definition-TransformationBase) | Transformations to be applied to the detected value. |
+| transformations | [TransformationBase](#openapi-definition-TransformationBase)[] | Transformations to be applied to the detected value. |
 | valueOverride | string | The value to be used instead of the detected value. |
 
 ### Response body JSON models

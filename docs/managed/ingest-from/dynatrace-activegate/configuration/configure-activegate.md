@@ -1,7 +1,6 @@
 ---
 title: Configuration properties and parameters of ActiveGate
 source: https://docs.dynatrace.com/managed/ingest-from/dynatrace-activegate/configuration/configure-activegate
-scraped: 2026-05-12T11:52:23.117753
 ---
 
 # Configuration properties and parameters of ActiveGate
@@ -9,13 +8,13 @@ scraped: 2026-05-12T11:52:23.117753
 # Configuration properties and parameters of ActiveGate
 
 * 17-min read
-* Updated on Feb 24, 2026
+* Updated on May 19, 2026
 
 ## Before you begin
 
 Understand the basic ActiveGate configuration concepts related to the property files.
 
-Host-based ActiveGatesâthat is ActiveGates Module: OTLP Ingest deployed in a conventional manner, using an installerâand containerized ActiveGates use the same configuration properties, stored in the same configuration files. However, the actual values of these properties may differ and the properties are set or modified using different mechanisms: Host-based ActiveGates are configured directly on the host where ActiveGate is running, whereas containerized ActiveGates are configured using the configuration mechanism for your cloud platform.
+Host-based ActiveGates—that is ActiveGates Module: OTLP Ingest deployed in a conventional manner, using an installer—and containerized ActiveGates use the same configuration properties, stored in the same configuration files. However, the actual values of these properties may differ and the properties are set or modified using different mechanisms: Host-based ActiveGates are configured directly on the host where ActiveGate is running, whereas containerized ActiveGates are configured using the configuration mechanism for your cloud platform.
 
 * [How to deploy and configure a containerized ActiveGate in Kubernetes](/managed/ingest-from/dynatrace-activegate/activegate-in-container "Deploy a containerized ActiveGate.")
 
@@ -85,12 +84,48 @@ Starting with ActiveGate version 1.333, you can use the `agctl` command-line int
 
 For details on all available commands, parameters, and examples, see [agctl command-line interface](/managed/ingest-from/dynatrace-activegate/agctl-command-line-interface "Learn how to use agctl to configure and manage ActiveGate from the command line").
 
+## Example usage of `agctl` to manage ActiveGate configuration
+
+ActiveGate version 1.333+
+
+In this example, let's change the log data queue path on a host-based ActiveGate.
+
+For a host-based Environment or Cluster ActiveGate, you can change the path used for the log data queue with [agctl](/managed/ingest-from/dynatrace-activegate/agctl-command-line-interface#property "Learn how to use agctl to configure and manage ActiveGate from the command line"). The following steps use `/var/disk_queue` as an example for the new path.
+
+1. Get familiar with the [`agctl` command-line interface prerequisites](/managed/ingest-from/dynatrace-activegate/agctl-command-line-interface#prerequisites "Learn how to use agctl to configure and manage ActiveGate from the command line").
+2. Connect to the host via SSH.
+3. Stop the ActiveGate service:
+
+```
+systemctl stop dynatracegateway
+```
+
+4. Read the current path:
+
+```
+agctl property get --section=generic_ingest --key=disk_queue_path
+```
+
+5. Make sure the target directory `/var/disk_queue` exists, is writable, and has at least `disk_queue_max_size_mb` MB of free disk space available.
+6. Change the path:
+
+```
+agctl property set --section=generic_ingest --key=disk_queue_path --value=/var/disk_queue
+```
+
+7. Optional: remove the directory pointed to by the old path.
+8. Start the ActiveGate service:
+
+```
+systemctl start dynatracegateway
+```
+
 ## ActiveGate memory limits
 
 Memory usage limits for ActiveGate can be specified in the launcher configuration file `launcheruserconfig.conf` with the following properties:
 
-* `-java.xmx.relative_part`âpercentage of available RAM
-* `-java.xmx.absolute_part`âabsolute value of memory size, in MB
+* `-java.xmx.relative_part`—percentage of available RAM
+* `-java.xmx.absolute_part`—absolute value of memory size, in MB
 
 The configuration may include any combination of those properties, and the resulting memory limit is the sum of absolute part and relative part (calculated based on the available RAM).
 
@@ -179,7 +214,7 @@ For example:
 Different functional features provided by ActiveGate are referred to as **[modules](/managed/ingest-from/dynatrace-activegate/capabilities#functional_tbl "Learn the capabilities and uses of ActiveGate.")**. When you are installing ActiveGate for a specific [purpose](/managed/ingest-from/dynatrace-activegate/capabilities "Learn the capabilities and uses of ActiveGate."), a different set of modules is installed or enabled.
 
 A module is active if the corresponding configuration property is listed with value `true` in the configuration section dedicated to the module. Note, however, that you can't enable all modules using `custom.properties` simply by changing the value of a property: if you installed your ActiveGate to serve as a private Synthetic location or to monitor mainframe, and you need to change your ActiveGate purpose, you have to reinstall the ActiveGate.  
-Active modules are listed on the [Deployment status](/managed/ingest-from/dynatrace-activegate/operation/update-activegate "Learn how to find out which version of ActiveGate you have installed and how you can download and install the latest version.") page.
+Active modules are listed on the [Deployment status](/managed/ingest-from/dynatrace-activegate/operation/update-activegate "Configure Environment ActiveGate automatic updates---update mode, target version, and update windows---and download or install manually.") page.
 
 Each module has a corresponding section in the configuration
 
@@ -290,7 +325,7 @@ ActiveGate version 1.247 and earlier If you have a `[kubernetes_monitoring]` sec
 
 **Section: [generic\_ingest]**
 
-Specifically for Log Monitoring, when configuring Log ingestion API, you can customize the log data queue properties. You can specify the temporary folder where the queued log data will be stored (default is the temporary folder currently configured on your system) and, change the maximum size of the queue that will be used in that folder (default size is 300 MB).
+Specifically for Log Monitoring, when configuring Log ingestion API, you can customize the log data queue properties. You can specify the temporary folder where the queued log data will be stored. The default is the temporary folder currently configured on your system (see [ActiveGate directories](/managed/ingest-from/dynatrace-activegate/configuration/where-can-i-find-activegate-files "Find out where ActiveGate files are stored on Windows and Linux systems.")). You can also change the maximum size of the queue that is used in that folder (the default size is 300 MB).
 
 | Property | Default value | Description |
 | --- | --- | --- |
@@ -374,7 +409,7 @@ Using ActiveGate for Real User Monitoring
 
 | Property | Description |
 | --- | --- |
-| `beacon_forwarder_enabled` | Enables the [Beacon forwarder module](/managed/observe/digital-experience/web-applications/additional-configuration/beacon-endpoint "Change the default beacon endpoint URL and send RUM beacons to Dynatrace infrastructure or another instrumented web server."). Possible values: `true` or `false`. |
+| `beacon_forwarder_enabled` | Enables the [Beacon forwarder module](/managed/observe/digital-experience/rum-classic/web-applications/additional-configuration/beacon-endpoint "Change the default beacon endpoint URL and send RUM beacons to Dynatrace infrastructure or another instrumented web server."). Possible values: `true` or `false`. |
 
 ## Module: HTTP Metric API
 
@@ -394,7 +429,7 @@ Triggering and downloading of memory dumps
 | --- | --- |
 | `DumpSupported` | Enables the [memory dumps module](/managed/observe/application-observability/profiling-and-optimization/memory-dump-analysis/configure-an-activegate-for-memory-dump-storage "Learn how to enable storage of memory dumps on an ActiveGate."). Possible values: `true` or `false`. |
 
-When your application experiences memory leaks or high object churn, itâs important that you get memory dumps so you can analyze these issues. In production environments, this is often a challenge when you canât log into the environment and you have no other means of triggering memory dumps. Dynatrace enables you to both trigger and securely download memory dumps to the analysis tool of your choice.  
+When your application experiences memory leaks or high object churn, it’s important that you get memory dumps so you can analyze these issues. In production environments, this is often a challenge when you can’t log into the environment and you have no other means of triggering memory dumps. Dynatrace enables you to both trigger and securely download memory dumps to the analysis tool of your choice.  
 See [Configure ActiveGate for memory dump storage](/managed/observe/application-observability/profiling-and-optimization/memory-dump-analysis/configure-an-activegate-for-memory-dump-storage "Learn how to enable storage of memory dumps on an ActiveGate.").
 
 ## Module: OneAgent routing
@@ -501,9 +536,9 @@ If the value contains a comma character, it must be escaped with a single backsl
 
 | Property | Default value | Description |
 | --- | --- | --- |
-| `port-ssl` | `9999` | The port on which the ActiveGate listens for traffic from OneAgentâused for the HTTPS connection. You can configure this using the [agctl ssl-port](/managed/ingest-from/dynatrace-activegate/agctl-command-line-interface#ssl-port "Learn how to use agctl to configure and manage ActiveGate from the command line") command. If you need to change the port value, see [Develop your own Extensions](/managed/ingest-from/extensions/develop-your-extensions "Develop your own Extensions in Dynatrace.") and [Extension Execution Controller custom configuration](/managed/ingest-from/extensions/advanced-configuration/eec-custom-configuration "Configure the Extension Execution Controller (EEC)."). |
-| `port` | unset | The port on which the ActiveGate listens for traffic from OneAgentâused for the HTTP connection. It is disabled by default. On Linux, a value > 1024 is recommended to ensure no root privileges are required. |
-| `ssl-protocols` | `TLSv1.2`, `TLSv1.3` | Supported SSL protocols. Can be one or a comma-separated list of values. Note that specifying a particular version does not automatically imply support for all the previous/lower versionsâso you need to specify each version explicitly. The allowed values are `TLSv1.2` and `TLSv1.3` |
+| `port-ssl` | `9999` | The port on which the ActiveGate listens for traffic from OneAgent—used for the HTTPS connection. You can configure this using the [agctl ssl-port](/managed/ingest-from/dynatrace-activegate/agctl-command-line-interface#ssl-port "Learn how to use agctl to configure and manage ActiveGate from the command line") command. If you need to change the port value, see [Develop your own Extensions](/managed/ingest-from/extensions/develop-your-extensions "Develop your own Extensions in Dynatrace.") and [Extension Execution Controller custom configuration](/managed/ingest-from/extensions/advanced-configuration/eec-custom-configuration "Configure the Extension Execution Controller (EEC)."). |
+| `port` | unset | The port on which the ActiveGate listens for traffic from OneAgent—used for the HTTP connection. It is disabled by default. On Linux, a value > 1024 is recommended to ensure no root privileges are required. |
+| `ssl-protocols` | `TLSv1.2`, `TLSv1.3` | Supported SSL protocols. Can be one or a comma-separated list of values. Note that specifying a particular version does not automatically imply support for all the previous/lower versions—so you need to specify each version explicitly. The allowed values are `TLSv1.2` and `TLSv1.3` |
 | `excluded-ciphers` | unset | A list of excluded ciphers. Ciphers are defined by a substring matching at least a part of the cipher name, for example: `excluded-ciphers = TLS_RSA_WITH,SHA$,TLS_ECDH` |
 | `certificate-file` | unset | Path of the `PKCS#12` file containing certificates to be used by the ActiveGate web server. Also see [Configuration of custom SSL certificate on ActiveGate](/managed/ingest-from/dynatrace-activegate/configuration/configure-custom-ssl-certificate-on-activegate "Learn how to configure the SSL certificate on your ActiveGate."). |
 | `certificate-password` | unset | Password for the certificate file. |
@@ -544,7 +579,7 @@ If this section contains `proxy-off = true`, then there is no proxy for the modu
 
 ActiveGate version 1.247 and earlier
 
-Communication settings specified in `[http.client]` are **not always** used as defaults for the modules: If a particular communication setting is **not** specified in `[http.client.external]`, then that settingâfor Cloud Foundry, Kubernetes or Synthetic Monitoringâwill revert to its factory default value, rather than to the value specified in `[http.client]`.
+Communication settings specified in `[http.client]` are **not always** used as defaults for the modules: If a particular communication setting is **not** specified in `[http.client.external]`, then that setting—for Cloud Foundry, Kubernetes or Synthetic Monitoring—will revert to its factory default value, rather than to the value specified in `[http.client]`.
 
 Similarly, the entire `[http.client.external]` section does not exist, then all of the communication settings for Kubernetes and Cloud Foundry will revert to their factory default values; however, settings for Synthetic Monitoring will assume values as specified in the `[http.client]` section.
 

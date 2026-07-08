@@ -1,7 +1,6 @@
 ---
 title: Management zones API - GET all
 source: https://docs.dynatrace.com/managed/dynatrace-api/configuration-api/management-zones-api/get-all
-scraped: 2026-05-12T12:06:05.034834
 ---
 
 # Management zones API - GET all
@@ -50,7 +49,7 @@ An ordered list of short representations of Dynatrace entities.
 
 | Element | Type | Description |
 | --- | --- | --- |
-| values | [EntityShortRepresentation[]](#openapi-definition-EntityShortRepresentation) | An ordered list of short representations of Dynatrace entities. |
+| values | [EntityShortRepresentation](#openapi-definition-EntityShortRepresentation)[] | An ordered list of short representations of Dynatrace entities. |
 
 #### The `EntityShortRepresentation` object
 

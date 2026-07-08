@@ -1,7 +1,6 @@
 ---
 title: Upgrade your deployment
 source: https://docs.dynatrace.com/managed/upgrade/up-execute-upgrade
-scraped: 2026-05-12T12:07:09.123083
 ---
 
 # Upgrade your deployment
@@ -36,7 +35,7 @@ Dynatrace provisions new SaaS environments in your account for you in the availa
 
 After the SaaS environment is provisioned, environment pre-configuration is addressed. This includes:
 
-* Configuring your accountâSSO, users, and permissions
+* Configuring your account—SSO, users, and permissions
 * Configuring proxy, DNS, and corporate firewalls if needed
 * Checking with the Dynatrace Support team if custom feature flags have to be set
 * Validating that licensing is correctly set up for all of your environments
@@ -123,8 +122,8 @@ All third-party integrations previously used with the Dynatrace Managed cluster 
 
 ### Update automation that uses Dynatrace API
 
-Any API access should be updated to use the new environment. This requires the generation of new API tokens, as existing tokens canât be migrated due to security reasons.
+Any API access should be updated to use the new environment. This requires the generation of new API tokens, as existing tokens can’t be migrated due to security reasons.
 
 Questions?
 
-Visit the [Upgrade to SaaS forumï»¿](https://community.dynatrace.com/t5/Upgrade-to-SaaS/bd-p/upgrade_to_saas) to ask questions, get answers, and share what you've learned with others.
+Visit the [Upgrade to SaaS forum﻿](https://community.dynatrace.com/t5/Upgrade-to-SaaS/bd-p/upgrade_to_saas) to ask questions, get answers, and share what you've learned with others.

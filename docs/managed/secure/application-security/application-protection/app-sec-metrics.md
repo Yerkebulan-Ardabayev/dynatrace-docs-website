@@ -1,7 +1,6 @@
 ---
 title: Metrics Classic for Dynatrace Runtime Application Protection
 source: https://docs.dynatrace.com/managed/secure/application-security/application-protection/app-sec-metrics
-scraped: 2026-05-12T11:25:14.396989
 ---
 
 # Metrics Classic for Dynatrace Runtime Application Protection
@@ -25,7 +24,7 @@ The following Application Security metrics are available for Runtime Application
 
 * Status (`Blocked`, `Allowlisted`, `Exploited`)
 * Type (`SQL injection`, `CMD injection`, `JNDI injection`, `SSRF`)
-* Process group (`builtin` â primary entity for the management zone selector)
+* Process group (`builtin` — primary entity for the management zone selector)
 
 ## View
 

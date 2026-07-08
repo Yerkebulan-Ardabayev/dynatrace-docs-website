@@ -1,7 +1,6 @@
 ---
 title: Alerting profiles API - GET all profiles
 source: https://docs.dynatrace.com/managed/dynatrace-api/configuration-api/alerting-profiles-api/get-all
-scraped: 2026-05-12T12:06:38.267009
 ---
 
 # Alerting profiles API - GET all profiles
@@ -48,7 +47,7 @@ An ordered list of short representations of Dynatrace entities.
 
 | Element | Type | Description |
 | --- | --- | --- |
-| values | [EntityShortRepresentation[]](#openapi-definition-EntityShortRepresentation) | An ordered list of short representations of Dynatrace entities. |
+| values | [EntityShortRepresentation](#openapi-definition-EntityShortRepresentation)[] | An ordered list of short representations of Dynatrace entities. |
 
 #### The `EntityShortRepresentation` object
 

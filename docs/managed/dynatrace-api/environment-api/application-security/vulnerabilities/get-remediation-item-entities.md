@@ -1,7 +1,6 @@
 ---
 title: Vulnerabilities API - GET remediation item entities
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/application-security/vulnerabilities/get-remediation-item-entities
-scraped: 2026-05-12T11:58:47.953075
 ---
 
 # Vulnerabilities API - GET remediation item entities
@@ -52,7 +51,7 @@ A list of remediation progress entities.
 
 | Element | Type | Description |
 | --- | --- | --- |
-| remediationProgressEntities | [RemediationProgressEntity[]](#openapi-definition-RemediationProgressEntity) | A list of remediation progress entities. |
+| remediationProgressEntities | [RemediationProgressEntity](#openapi-definition-RemediationProgressEntity)[] | A list of remediation progress entities. |
 
 #### The `RemediationProgressEntity` object
 
@@ -65,7 +64,7 @@ An affected or unaffected entity of a remediation for a security problem.
 | id | string | The ID of the remediation progress entity. |
 | name | string | The name of the remediation progress entity. |
 | state | string | The current state of the remediation progress entity. The element can hold these values * `AFFECTED` * `UNAFFECTED` |
-| vulnerableComponents | [RemediationProgressVulnerableComponent[]](#openapi-definition-RemediationProgressVulnerableComponent) | A list of vulnerable components of the remediation item.  A vulnerable component is what causes the security problem. |
+| vulnerableComponents | [RemediationProgressVulnerableComponent](#openapi-definition-RemediationProgressVulnerableComponent)[] | A list of vulnerable components of the remediation item.  A vulnerable component is what causes the security problem. |
 
 #### The `RemediationProgressEntityAssessment` object
 
@@ -75,9 +74,9 @@ Assessment of the remediation progress entity.
 | --- | --- | --- |
 | vulnerableFunctionRestartRequired | boolean | Whether a restart is required for the latest vulnerable function data. |
 | vulnerableFunctionUsage | string | The usage of vulnerable functions The element can hold these values * `IN_USE` * `NOT_AVAILABLE` * `NOT_IN_USE` |
-| vulnerableFunctionsInUse | [VulnerableFunction[]](#openapi-definition-VulnerableFunction) | A list of vulnerable functions that are in use. |
-| vulnerableFunctionsNotAvailable | [VulnerableFunction[]](#openapi-definition-VulnerableFunction) | A list of vulnerable functions that are not available. |
-| vulnerableFunctionsNotInUse | [VulnerableFunction[]](#openapi-definition-VulnerableFunction) | A list of vulnerable functions that are not in use. |
+| vulnerableFunctionsInUse | [VulnerableFunction](#openapi-definition-VulnerableFunction)[] | A list of vulnerable functions that are in use. |
+| vulnerableFunctionsNotAvailable | [VulnerableFunction](#openapi-definition-VulnerableFunction)[] | A list of vulnerable functions that are not available. |
+| vulnerableFunctionsNotInUse | [VulnerableFunction](#openapi-definition-VulnerableFunction)[] | A list of vulnerable functions that are not in use. |
 
 #### The `VulnerableFunction` object
 
@@ -112,7 +111,7 @@ A vulnerable component with details for a remediation progress entity (PGI).
 | Element | Type | Description |
 | --- | --- | --- |
 | code | integer | The HTTP status code |
-| constraintViolations | [ConstraintViolation[]](#openapi-definition-ConstraintViolation) | A list of constraint violations |
+| constraintViolations | [ConstraintViolation](#openapi-definition-ConstraintViolation)[] | A list of constraint violations |
 | message | string | The error message |
 
 #### The `ConstraintViolation` object

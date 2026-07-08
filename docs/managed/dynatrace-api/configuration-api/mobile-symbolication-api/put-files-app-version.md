@@ -1,7 +1,6 @@
 ---
 title: Mobile Symbolication API - PUT upload file for an app version
 source: https://docs.dynatrace.com/managed/dynatrace-api/configuration-api/mobile-symbolication-api/put-files-app-version
-scraped: 2026-05-12T11:19:31.742052
 ---
 
 # Mobile Symbolication API - PUT upload file for an app version
@@ -13,11 +12,11 @@ scraped: 2026-05-12T11:19:31.742052
 
 Uploads a symbol file (Android mapping file and iOS/tvOS symbol extract file) for the specified version of a mobile app.
 
-* For iOS apps, you must preprocess the dSYM files via the DSSClient before transferring them to Dynatrace. For more details, see [Upload symbol files via REST API](/managed/observe/digital-experience/mobile-applications/analyze-and-use/upload-and-manage-symbol-files#ios-api "Learn about deobfuscation (Android) and symbolication (iOS and tvOS) and your options for uploading and managing symbol files in Dynatrace.").
+* For iOS apps, you must preprocess the dSYM files via the DSSClient before transferring them to Dynatrace. For more details, see [Upload symbol files via REST API](/managed/observe/digital-experience/rum-classic/mobile-applications/analyze-and-use/upload-and-manage-symbol-files#ios-api "Learn about deobfuscation (Android) and symbolication (iOS and tvOS) and your options for uploading and managing symbol files in Dynatrace.").
 * You can upload a symbol file in any supported format (compressed or uncompressed). Note the following limits:
 
-  + Uploaded fileâmust not exceed 100 MiB.
-  + Uncompressed fileâmust not exceed 500 MiB after decompression (if compressed).
+  + Uploaded file—must not exceed 100 MiB.
+  + Uncompressed file—must not exceed 500 MiB after decompression (if compressed).
 
   If your file is too large, try compressing it to stay within the 100 MiB upload limit.
 
@@ -78,7 +77,7 @@ To learn how to obtain and use it, see [Tokens and authentication](/managed/disc
 | Element | Type | Description |
 | --- | --- | --- |
 | code | integer | The HTTP status code |
-| constraintViolations | [ConstraintViolation[]](#openapi-definition-ConstraintViolation) | A list of constraint violations |
+| constraintViolations | [ConstraintViolation](#openapi-definition-ConstraintViolation)[] | A list of constraint violations |
 | message | string | The error message |
 
 #### The `ConstraintViolation` object
@@ -152,4 +151,4 @@ A list of constraint violations
 
 ## Related topics
 
-* [Upload and manage symbol files for mobile applications](/managed/observe/digital-experience/mobile-applications/analyze-and-use/upload-and-manage-symbol-files "Learn about deobfuscation (Android) and symbolication (iOS and tvOS) and your options for uploading and managing symbol files in Dynatrace.")
+* [Upload and manage symbol files for mobile applications in RUM Classic](/managed/observe/digital-experience/rum-classic/mobile-applications/analyze-and-use/upload-and-manage-symbol-files "Learn about deobfuscation (Android) and symbolication (iOS and tvOS) and your options for uploading and managing symbol files in Dynatrace.")

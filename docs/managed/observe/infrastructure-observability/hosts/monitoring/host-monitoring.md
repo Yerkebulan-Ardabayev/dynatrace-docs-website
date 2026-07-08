@@ -1,7 +1,6 @@
 ---
 title: Host monitoring with Dynatrace
 source: https://docs.dynatrace.com/managed/observe/infrastructure-observability/hosts/monitoring/host-monitoring
-scraped: 2026-05-12T11:37:30.789664
 ---
 
 # Host monitoring with Dynatrace
@@ -12,7 +11,7 @@ scraped: 2026-05-12T11:37:30.789664
 * 1-min read
 * Updated on Jun 15, 2022
 
-As soon as data about hosts is collected, Dynatrace DavisÂ® AI starts baselining the data instantly. Each metric displayed on the host overview page is part of Davis AI source data used for automatically identifying potential performance issues at the infrastructure or full-stack level.
+As soon as data about hosts is collected, Dynatrace Davis® AI starts baselining the data instantly. Each metric displayed on the host overview page is part of Davis AI source data used for automatically identifying potential performance issues at the infrastructure or full-stack level.
 
 How to get there:
 
@@ -38,7 +37,7 @@ Select **Properties and tags** on the notifications bar to display the **Propert
 * Select **Problems** on the notifications bar to display the **Problems** panel, which lists the problems.
 
   + Select a problem to display details.
-  + Select **Go to problems** to go to the [Problems](/managed/dynatrace-intelligence "Get familiar with the capabilities of Davis AI.") page filtered by the selected host.
+  + Select **Go to problems** to go to the [Problems](/managed/dynatrace-intelligence "Learn how Davis® AI detects performance anomalies, identifies root causes, and uses AI models for adaptive thresholds across your environment.") page filtered by the selected host.
 
 ### Vulnerabilities
 
@@ -147,8 +146,8 @@ Leverage these charts
 
 Select  in the upper-right corner of a chart to:
 
-* **Show in Data Explorer**âOpens [Data Explorer](/managed/analyze-explore-automate/explorer "Query for metrics and transform results to gain desired insights.") for the associated query, so you can view the associated query, explore the data more in-depth, adjust the chart settings, and pin the chart to your own dashboard.
-* **Pin to dashboard**âPins a copy of the selected chart to any classic dashboard you can edit. For example, if certain hosts are particularly important to your business, create a dashboard designated to monitoring only those hosts, and then pin charts from their host overview pages to that dashboard, all with almost no typing. For details, see [Pin tiles to your dashboard](/managed/analyze-explore-automate/dashboards-classic/charts-and-tiles/pin-tiles-to-your-dashboard "Learn to pin tiles to your dashboards.").
+* **Show in Data Explorer**—Opens [Data Explorer](/managed/analyze-explore-automate/explorer "Query for metrics and transform results to gain desired insights.") for the associated query, so you can view the associated query, explore the data more in-depth, adjust the chart settings, and pin the chart to your own dashboard.
+* **Pin to dashboard**—Pins a copy of the selected chart to any classic dashboard you can edit. For example, if certain hosts are particularly important to your business, create a dashboard designated to monitoring only those hosts, and then pin charts from their host overview pages to that dashboard, all with almost no typing. For details, see [Pin tiles to your dashboard](/managed/analyze-explore-automate/dashboards-classic/charts-and-tiles/pin-tiles-to-your-dashboard "Learn to pin tiles to your dashboards.").
 
 ![Host overview: host performance](https://dt-cdn.net/images/host-performance-1597-05b7f2365c.png)
 
@@ -162,8 +161,8 @@ Leverage these charts
 
 Select  in the upper-right corner of a chart to:
 
-* **Show in Data Explorer**âOpens [Data Explorer](/managed/analyze-explore-automate/explorer "Query for metrics and transform results to gain desired insights.") for the associated query, so you can view the associated query, explore the data more in-depth, adjust the chart settings, and pin the chart to your own dashboard.
-* **Pin to dashboard**âPins a copy of the selected chart to any classic dashboard you can edit. For example, if certain hosts are particularly important to your business, create a dashboard designated to monitoring only those hosts, and then pin charts from their host overview pages to that dashboard, all with almost no typing. For details, see [Pin tiles to your dashboard](/managed/analyze-explore-automate/dashboards-classic/charts-and-tiles/pin-tiles-to-your-dashboard "Learn to pin tiles to your dashboards.").
+* **Show in Data Explorer**—Opens [Data Explorer](/managed/analyze-explore-automate/explorer "Query for metrics and transform results to gain desired insights.") for the associated query, so you can view the associated query, explore the data more in-depth, adjust the chart settings, and pin the chart to your own dashboard.
+* **Pin to dashboard**—Pins a copy of the selected chart to any classic dashboard you can edit. For example, if certain hosts are particularly important to your business, create a dashboard designated to monitoring only those hosts, and then pin charts from their host overview pages to that dashboard, all with almost no typing. For details, see [Pin tiles to your dashboard](/managed/analyze-explore-automate/dashboards-classic/charts-and-tiles/pin-tiles-to-your-dashboard "Learn to pin tiles to your dashboards.").
 
 ![Host overview: process analysis](https://dt-cdn.net/images/process-analysis-1599-d637b524c6.png)
 
@@ -173,12 +172,12 @@ Host overview: process analysis
 
 This feature is available for Linux and Windows operating systems only.
 
-The **OS services analysis** section lists the operating system services monitored for availability. For a service to be monitored, you need at least one policy with rules matching the properties of the service. For more information on creating monitoring policies for OS services, see [OS services monitoring](/managed/observe/infrastructure-observability/hosts/monitoring/os-services "Improve the visibility of your infrastructure by monitoring the availability of operating system services.").
+The **OS services analysis** section lists the operating system services monitored for availability. For a service to be monitored, you need at least one policy with rules matching the properties of the service. For more information on creating monitoring policies for OS services, see [OS services monitoring](/managed/observe/infrastructure-observability/hosts/monitoring/os-services "Monitor the availability of operating system services on your hosts to improve infrastructure visibility and detect failures in real time.").
 
 * Select any host to go to its overview page, then go to the **OS services analysis** section.
 * Select a service name from the list to open the **Service overview** page, which displays the selected service's properties and a service availability chart.
 
-To set up policies for OS services for Windows and Linux operating systems, select  > **OS services monitoring settings** to display the [OS services monitoring](/managed/observe/infrastructure-observability/hosts/monitoring/os-services "Improve the visibility of your infrastructure by monitoring the availability of operating system services.") page.
+To set up policies for OS services for Windows and Linux operating systems, select  > **OS services monitoring settings** to display the [OS services monitoring](/managed/observe/infrastructure-observability/hosts/monitoring/os-services "Monitor the availability of operating system services on your hosts to improve infrastructure visibility and detect failures in real time.") page.
 
 ### Process instance snapshots
 
@@ -219,8 +218,8 @@ Leverage these charts
 
 Select  in the upper-right corner of a chart to:
 
-* **Show in Data Explorer**âOpens [Data Explorer](/managed/analyze-explore-automate/explorer "Query for metrics and transform results to gain desired insights.") for the associated query, so you can view the associated query, explore the data more in-depth, adjust the chart settings, and pin the chart to your own dashboard.
-* **Pin to dashboard**âPins a copy of the selected chart to any classic dashboard you can edit. For example, if certain hosts are particularly important to your business, create a dashboard designated to monitoring only those hosts, and then pin charts from their host overview pages to that dashboard, all with almost no typing. For details, see [Pin tiles to your dashboard](/managed/analyze-explore-automate/dashboards-classic/charts-and-tiles/pin-tiles-to-your-dashboard "Learn to pin tiles to your dashboards.").
+* **Show in Data Explorer**—Opens [Data Explorer](/managed/analyze-explore-automate/explorer "Query for metrics and transform results to gain desired insights.") for the associated query, so you can view the associated query, explore the data more in-depth, adjust the chart settings, and pin the chart to your own dashboard.
+* **Pin to dashboard**—Pins a copy of the selected chart to any classic dashboard you can edit. For example, if certain hosts are particularly important to your business, create a dashboard designated to monitoring only those hosts, and then pin charts from their host overview pages to that dashboard, all with almost no typing. For details, see [Pin tiles to your dashboard](/managed/analyze-explore-automate/dashboards-classic/charts-and-tiles/pin-tiles-to-your-dashboard "Learn to pin tiles to your dashboards.").
 
 ![Host overview: disk analysis](https://dt-cdn.net/images/disk-analysis-1599-236d782165.png)
 
@@ -278,7 +277,7 @@ The available settings for disks are:
   + Solaris doesn't provide any Disk I/O information.
   + AIX reports only the Disk I/O information about `Disk read bytes per second` and `Disk write bytes per second`.
 
-Windows only The disk page shows only local disks with a letter and/or a mount point. For remote disks, the system recognizes and displays only the shares with CIFS protocol. For details, see [https://dt-url.net/jw03uorï»¿](https://dt-url.net/jw03uor).
+Windows only The disk page shows only local disks with a letter and/or a mount point. For remote disks, the system recognizes and displays only the shares with CIFS protocol. For details, see [https://dt-url.net/jw03uor﻿](https://dt-url.net/jw03uor).
 
 #### Disable monitoring for specific disks
 
@@ -355,8 +354,8 @@ Leverage these charts
 
 Select  in the upper-right corner of a chart to:
 
-* **Show in Data Explorer**âOpens [Data Explorer](/managed/analyze-explore-automate/explorer "Query for metrics and transform results to gain desired insights.") for the associated query, so you can view the associated query, explore the data more in-depth, adjust the chart settings, and pin the chart to your own dashboard.
-* **Pin to dashboard**âPins a copy of the selected chart to any classic dashboard you can edit. For example, if certain hosts are particularly important to your business, create a dashboard designated to monitoring only those hosts, and then pin charts from their host overview pages to that dashboard, all with almost no typing. For details, see [Pin tiles to your dashboard](/managed/analyze-explore-automate/dashboards-classic/charts-and-tiles/pin-tiles-to-your-dashboard "Learn to pin tiles to your dashboards.").
+* **Show in Data Explorer**—Opens [Data Explorer](/managed/analyze-explore-automate/explorer "Query for metrics and transform results to gain desired insights.") for the associated query, so you can view the associated query, explore the data more in-depth, adjust the chart settings, and pin the chart to your own dashboard.
+* **Pin to dashboard**—Pins a copy of the selected chart to any classic dashboard you can edit. For example, if certain hosts are particularly important to your business, create a dashboard designated to monitoring only those hosts, and then pin charts from their host overview pages to that dashboard, all with almost no typing. For details, see [Pin tiles to your dashboard](/managed/analyze-explore-automate/dashboards-classic/charts-and-tiles/pin-tiles-to-your-dashboard "Learn to pin tiles to your dashboards.").
 
 ![Host overview: network analysis](https://dt-cdn.net/images/network-analysis-1597-a3306f3237.png)
 
@@ -366,22 +365,22 @@ Host overview: network analysis
 
 Use the **Memory analysis** section to analyze:
 
-* Memory usageâtotal memory, memory used, and memory reclaimable
-* Page faultsâpage faults per second
-* Swap usageâswap total and swap used
+* Memory usage—total memory, memory used, and memory reclaimable
+* Page faults—page faults per second
+* Swap usage—swap total and swap used
 
 Leverage these charts
 
 Select  in the upper-right corner of a chart to:
 
-* **Show in Data Explorer**âOpens [Data Explorer](/managed/analyze-explore-automate/explorer "Query for metrics and transform results to gain desired insights.") for the associated query, so you can view the associated query, explore the data more in-depth, adjust the chart settings, and pin the chart to your own dashboard.
-* **Pin to dashboard**âPins a copy of the selected chart to any classic dashboard you can edit. For example, if certain hosts are particularly important to your business, create a dashboard designated to monitoring only those hosts, and then pin charts from their host overview pages to that dashboard, all with almost no typing. For details, see [Pin tiles to your dashboard](/managed/analyze-explore-automate/dashboards-classic/charts-and-tiles/pin-tiles-to-your-dashboard "Learn to pin tiles to your dashboards.").
+* **Show in Data Explorer**—Opens [Data Explorer](/managed/analyze-explore-automate/explorer "Query for metrics and transform results to gain desired insights.") for the associated query, so you can view the associated query, explore the data more in-depth, adjust the chart settings, and pin the chart to your own dashboard.
+* **Pin to dashboard**—Pins a copy of the selected chart to any classic dashboard you can edit. For example, if certain hosts are particularly important to your business, create a dashboard designated to monitoring only those hosts, and then pin charts from their host overview pages to that dashboard, all with almost no typing. For details, see [Pin tiles to your dashboard](/managed/analyze-explore-automate/dashboards-classic/charts-and-tiles/pin-tiles-to-your-dashboard "Learn to pin tiles to your dashboards.").
 
 ### Events
 
 The events section displays recent host events that Davis AI has generated, with a clear timeline view to quickly identify critical events. The timeline view is interactive, filtering events around a specific moment, making it easier to isolate a particular event. In addition, different event types are color-coded for easier and faster identification and browsing.
 
-* **Show single card**âOpens an **Events** card for the selected host.
+* **Show single card**—Opens an **Events** card for the selected host.
 
 ### Logs
 
@@ -394,5 +393,5 @@ Leverage this information
 
 Select  in the upper-right corner of the **Logs** section to:
 
-* **Go to Log Viewer**âOpens the **Log Viewer** page filtered by the selected host.
-* **Create metric**âOpens the **Log metrics** page with the **Query** value set to the selected host.
+* **Go to Log Viewer**—Opens the **Log Viewer** page filtered by the selected host.
+* **Create metric**—Opens the **Log metrics** page with the **Query** value set to the selected host.

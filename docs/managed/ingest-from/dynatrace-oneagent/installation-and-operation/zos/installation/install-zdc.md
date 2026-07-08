@@ -1,7 +1,6 @@
 ---
 title: Install the zDC subsystem
 source: https://docs.dynatrace.com/managed/ingest-from/dynatrace-oneagent/installation-and-operation/zos/installation/install-zdc
-scraped: 2026-05-12T11:24:11.231792
 ---
 
 # Install the zDC subsystem
@@ -13,7 +12,7 @@ scraped: 2026-05-12T11:24:11.231792
 
 The z/OS Data Collection (zDC) subsystem interacts with the CICS, IMS, and z/OS Java modules via shared memory object (SMO) on a LPAR. The zDC subsystem maintains this SMO, and the modules write their monitoring data to it.
 
-The zLocal (`libdtzagent.so`), hosted in the z/OS [Unix System Servicesï»¿](https://www.ibm.com/docs/en/zos/2.5.0?topic=zos-unix-system-services) (USS) environment, runs as part of the zDC. It manages the TCP/IP socket connection to the zRemote module, reads monitoring data from SMO, and transfers these data to the zRemote.
+The zLocal (`libdtzagent.so`), hosted in the z/OS [Unix System Services﻿](https://www.ibm.com/docs/en/zos/2.5.0?topic=zos-unix-system-services) (USS) environment, runs as part of the zDC. It manages the TCP/IP socket connection to the zRemote module, reads monitoring data from SMO, and transfers these data to the zRemote.
 
 The bootstrapper (`dtzagent`), hosted in the z/OS USS environment, runs as part of the zDC. It manages the update process of the zLocal.
 
@@ -112,7 +111,7 @@ A zDC subsystem must be installed on each LPAR you want to monitor.
 
    | OneAgent version | Exit(s) | Additional notes |
    | --- | --- | --- |
-   | OneAgent version 1.300+ | U86 | * Required You need to be running z/OS 2.3 or later. * Required The U86 exit is required to report LPAR usage for DPS metrics and billing. + OneAgent version 1.300âOneAgent version 1.314: Dynatrace may suspend tracing without DPS metrics.   + OneAgent version 1.315+: Tracing will be automatically suspended if a `host.zos.msu_hours` metric is not received for 12 consecutive hours.  When this occurs, the following message is recorded in the zRemote log:  `Tracing has been disabled. The LPAR[LPAR] has not sent valid billing metrics.`  Tracing will be automatically re-enabled once valid `host.zos.msu_hours` metrics are received again. |
+   | OneAgent version 1.300+ | U86 | * Required You need to be running z/OS 2.3 or later. * Required The U86 exit is required to report LPAR usage for DPS metrics and billing. + OneAgent version 1.300—OneAgent version 1.314: Dynatrace may suspend tracing without DPS metrics.   + OneAgent version 1.315+: Tracing will be automatically suspended if a `host.zos.msu_hours` metric is not received for 12 consecutive hours.  When this occurs, the following message is recorded in the zRemote log:  `Tracing has been disabled. The LPAR[LPAR] has not sent valid billing metrics.`  Tracing will be automatically re-enabled once valid `host.zos.msu_hours` metrics are received again. |
    | OneAgent version 1.300 and earlier | U83 |  |
 
    To verify that SMF exit U86 is active, run the following command:
@@ -427,7 +426,7 @@ ACCESS INTENT(READ ) ACCESS ALLOWED(NONE )
 And the associated messages appear in the zLocal log file:
 
 ```
-JJJJ-MM-DD HH:MM:SS  3f8bbe02Â¨ info  nativeÂ¨ Server requests us to use Agent
+JJJJ-MM-DD HH:MM:SS  3f8bbe02¨ info  native¨ Server requests us to use Agent
 
 
 
@@ -435,11 +434,11 @@ dTMajor.dTMinorVersion.0.dTBuild with a hash of 0317af199c1ab1a03dda2cee90c2ea61
 
 
 
-JJJJ-MM-DD HH:MM:SS  3f8bbe02Â¨ info  nativeÂ¨ Requesting Agent library from Server
+JJJJ-MM-DD HH:MM:SS  3f8bbe02¨ info  native¨ Requesting Agent library from Server
 
 
 
-JJJJ-MM-DD HH:MM:SS  3f8bbe02Â¨ info  nativeÂ¨ Error setting Agent library program
+JJJJ-MM-DD HH:MM:SS  3f8bbe02¨ info  native¨ Error setting Agent library program
 
 
 
@@ -447,7 +446,7 @@ controlled: EDC5139I Operation not permitted.
 
 
 
-JJJJ-MM-DD HH:MM:SS  3f8bbe02Â¨ info  nativeÂ¨ Loading Agent
+JJJJ-MM-DD HH:MM:SS  3f8bbe02¨ info  native¨ Loading Agent
 
 
 
@@ -629,4 +628,4 @@ A zDC may terminate with a user abend due to internal errors and initialization 
 
 ## Troubleshooting
 
-* [zDC subsystem troubleshootingï»¿](https://dt-url.net/al03k4i)
+* [zDC subsystem troubleshooting﻿](https://dt-url.net/al03k4i)

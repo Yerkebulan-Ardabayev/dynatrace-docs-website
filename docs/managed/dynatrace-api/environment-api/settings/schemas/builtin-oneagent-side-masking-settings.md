@@ -1,7 +1,6 @@
 ---
 title: Settings API - OneAgent side masking schema table
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/settings/schemas/builtin-oneagent-side-masking-settings
-scraped: 2026-05-12T11:47:16.311990
 ---
 
 # Settings API - OneAgent side masking schema table
@@ -16,7 +15,7 @@ Use the settings on this page to exclude sensitive data from exceptions and URLs
 
 Note: The RUM JavaScript is **not** affected by these settings!
 
-A detailed reference and change log can be found [hereï»¿](https://dt-url.net/kd039dm).
+A detailed reference and change log can be found [here﻿](https://dt-url.net/kd039dm).
 
 | Schema ID | Schema groups | Scope |
 | --- | --- | --- |

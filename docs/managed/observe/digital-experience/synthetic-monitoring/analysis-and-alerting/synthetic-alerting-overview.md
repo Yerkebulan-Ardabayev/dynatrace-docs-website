@@ -1,12 +1,11 @@
 ---
-title: Synthetic alerting overview
+title: Synthetic alerting overview in Classic
 source: https://docs.dynatrace.com/managed/observe/digital-experience/synthetic-monitoring/analysis-and-alerting/synthetic-alerting-overview
-scraped: 2026-05-12T11:32:07.273784
 ---
 
-# Synthetic alerting overview
+# Synthetic alerting overview in Classic
 
-# Synthetic alerting overview
+# Synthetic alerting overview in Classic
 
 * Explanation
 * 7-min read
@@ -23,9 +22,9 @@ You can set up problem notification as follows:
 
 * Even if you do not set up any integrations, problems are automatically displayed on the **Problems** page, the [Synthetic details page](/managed/observe/digital-experience/synthetic-monitoring/analysis-and-alerting/synthetic-details-for-browser-monitors "Analyze browser monitor and clickpath results on the Synthetic details page.") for the affected monitor, and in the [Dynatrace mobile app](/managed/analyze-explore-automate/notifications-and-alerting/push-notifications-via-the-dynatrace-mobile-app "Learn how you can connect your Dynatrace environments with the Dynatrace mobile app to receive problem alerts.").
 * Whether or not you see problems and receive alert notifications during maintenance windows depends on how you [configure the maintenance windows](/managed/analyze-explore-automate/notifications-and-alerting/maintenance-windows/define-maintenance-window "Create maintenance windows and define their scope.").
-* You can apply a [global setting to always exclude maintenance windows from synthetic availability calculations](/managed/observe/digital-experience/synthetic-monitoring/general-information/synthetic-calculations#m-windows-availability "Understand Synthetic Monitoring metric calculations.") for the maintenance periods.
+* You can apply a [global setting to always exclude maintenance windows from synthetic availability calculations](/managed/observe/digital-experience/synthetic-monitoring/general-information/synthetic-calculations#m-windows-availability "Understand Synthetic Monitoring Classic metric calculations.") for the maintenance periods.
 
-The alerting potential of Dynatrace Synthetic Monitoring is fully realized when combined with [Real User Monitoring](/managed/observe/digital-experience/rum-concepts/rum-overview "Learn about Real User Monitoring, key performance metrics, mobile app monitoring, and more.")ânot only are you notified that there is a problem, but you can also see which real users are impacted and where the root cause of the issue is in your application stack.
+The alerting potential of Dynatrace Synthetic Monitoring Classic is fully realized when combined with [Real User Monitoring](/managed/observe/digital-experience/rum-classic/rum-concepts/rum-overview "Learn about Real User Monitoring Classic, key performance metrics, mobile app monitoring, and more.")—not only are you notified that there is a problem, but you can also see which real users are impacted and where the root cause of the issue is in your application stack.
 
 ## Thresholds
 
@@ -45,7 +44,7 @@ Additionally, you can:
 * Enable retry on error for browser monitors.
 * Exclude specific HTTP status codes from generating outages/errors in browser monitor settings.
 
-See [Configure browser monitors](/managed/observe/digital-experience/synthetic-monitoring/browser-monitors/configure-browser-monitors#outage-handling "Learn about configuring browser monitors and clickpaths.") and [Synthetic calculations](/managed/observe/digital-experience/synthetic-monitoring/general-information/synthetic-calculations#availability-problems "Understand Synthetic Monitoring metric calculations.") for details about outage problem generation and resolution.
+See [Configure browser monitors](/managed/observe/digital-experience/synthetic-monitoring/browser-monitors/configure-browser-monitors#outage-handling "Learn about configuring browser monitors and clickpaths.") and [Synthetic calculations](/managed/observe/digital-experience/synthetic-monitoring/general-information/synthetic-calculations#availability-problems "Understand Synthetic Monitoring Classic metric calculations.") for details about outage problem generation and resolution.
 
 ### Performance
 
@@ -61,11 +60,11 @@ Performance thresholds
 
 We recommend you set these thresholds at least 24 hours after monitor activation so you can refer to the average performance data displayed here.
 
-See [Configure browser monitors](/managed/observe/digital-experience/synthetic-monitoring/browser-monitors/configure-browser-monitors#performance-thresholds "Learn about configuring browser monitors and clickpaths.") and [Synthetic calculations](/managed/observe/digital-experience/synthetic-monitoring/general-information/synthetic-calculations#performance-problems "Understand Synthetic Monitoring metric calculations.") for details about performance problem generation and resolution.
+See [Configure browser monitors](/managed/observe/digital-experience/synthetic-monitoring/browser-monitors/configure-browser-monitors#performance-thresholds "Learn about configuring browser monitors and clickpaths.") and [Synthetic calculations](/managed/observe/digital-experience/synthetic-monitoring/general-information/synthetic-calculations#performance-problems "Understand Synthetic Monitoring Classic metric calculations.") for details about performance problem generation and resolution.
 
 ## Problems
 
-A synthetic monitor in violation of a threshold generates a [problem](/managed/dynatrace-intelligence "Get familiar with the capabilities of Davis AI."). A monitor in violation of a single availability threshold (global availability or consecutive failures at a selected number of locations) generates one problem, regardless of the number of occurrences. If a monitor violates two thresholds, two problems are generated.
+A synthetic monitor in violation of a threshold generates a [problem](/managed/dynatrace-intelligence "Learn how Davis® AI detects performance anomalies, identifies root causes, and uses AI models for adaptive thresholds across your environment."). A monitor in violation of a single availability threshold (global availability or consecutive failures at a selected number of locations) generates one problem, regardless of the number of occurrences. If a monitor violates two thresholds, two problems are generated.
 
 A monitor violating performance thresholds for the monitor as a whole and/or individual actions generates a single problem per location. For example, if your monitor violates thresholds for the sum of all actions as well as an individual action at two different monitoring locations, you see two performance problems, one for each location.
 
@@ -121,7 +120,7 @@ Create an alerting profile
 
 From here, you can name and create a new alerting profile (select **Add alerting profile**). Expand an existing profile to edit it. Alerting profiles created here are listed to choose from when setting up [integrations](#integrations) for problem notifications.
 
-**Availability** and **Slowdown** alerts (**Problem severity level**) pertain to Synthetic Monitoring.
+**Availability** and **Slowdown** alerts (**Problem severity level**) pertain to Synthetic Monitoring Classic.
 
 ![Add severity rules to an alerting profile](https://dt-cdn.net/images/severityrulecreation-2592-b2a4dc6251.png)
 
@@ -137,7 +136,7 @@ You can also use tags to determine which monitors should trigger these alerts. F
 
 ## Integrations
 
-Synthetic Monitoring allows you to integrate with many third-party systems such as email for problem notifications. Go to **Settings** > **Integrations** > **Problem notifications** > **Add notification** to set up an integration.
+Synthetic Monitoring Classic allows you to integrate with many third-party systems such as email for problem notifications. Go to **Settings** > **Integrations** > **Problem notifications** > **Add notification** to set up an integration.
 
 ![Add a notification for an integration](https://dt-cdn.net/images/notificationsetup-2642-de99d1c606.png)
 

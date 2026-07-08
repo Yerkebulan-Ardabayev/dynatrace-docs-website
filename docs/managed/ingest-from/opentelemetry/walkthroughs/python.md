@@ -1,7 +1,6 @@
 ---
 title: Instrument your Python application with OpenTelemetry
 source: https://docs.dynatrace.com/managed/ingest-from/opentelemetry/walkthroughs/python
-scraped: 2026-05-12T11:22:59.520419
 ---
 
 # Instrument your Python application with OpenTelemetry

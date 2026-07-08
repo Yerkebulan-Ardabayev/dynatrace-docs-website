@@ -1,12 +1,11 @@
 ---
-title: Configure Session Replay for Android
+title: Configure Session Replay Classic for Android
 source: https://docs.dynatrace.com/managed/observe/digital-experience/session-replay/session-replay-android
-scraped: 2026-05-12T11:33:32.742794
 ---
 
-# Configure Session Replay for Android
+# Configure Session Replay Classic for Android
 
-# Configure Session Replay for Android
+# Configure Session Replay Classic for Android
 
 * How-to guide
 * 7-min read
@@ -14,13 +13,13 @@ scraped: 2026-05-12T11:33:32.742794
 
 This page describes how to enable and customize Session Replay for your Android apps.
 
-## Full Session Replay
+## Full Session Replay Classic
 
 [Session Replay](/managed/observe/digital-experience/session-replay "Learn how you can use Session Replay to better understand and troubleshoot errors experienced by your customers.") on Android enables you to capture your customers' interactions with your mobile application and replay each tap, swipe, screen rotation in a movie-like experience.
 
-## Session Replay on crashes
+## Session Replay Classic on crashes
 
-Additionally, you can use it to get additional context for crash analysis in the form of video-like screen recordings that replay the user actions preceding a detected [crash](/managed/observe/digital-experience/rum-concepts/user-and-error-events#crash "Learn about user and error events and the types of user and error events captured by Dynatrace.")
+Additionally, you can use it to get additional context for crash analysis in the form of video-like screen recordings that replay the user actions preceding a detected [crash](/managed/observe/digital-experience/rum-classic/rum-concepts/user-and-error-events#crash "Learn about user and error events and the types of user and error events captured by Dynatrace.")
 
 ## Prerequisites
 
@@ -44,9 +43,9 @@ Make sure that your system meets the following requirements:
 * For a hybrid app, Session Replay is supported only for the native part of the app. Session Replay is not supported for the browser part of a hybrid app.
 * Only AndroidX support libraries are supported. Classes such as Activity or Fragment in com.android.support are not supported.
 * We recommend not using other crash reporting tools together with Dynatrace Session Replay.
-* Session Replay can capture only certain events. However, if you need to track a specific view or event that is not supported by default, you can [capture a custom event](/managed/observe/digital-experience/session-replay/session-replay-android#capture-custom-events "Set up Session Replay for your Android apps to learn which actions your users perform.").
-* You can play back the user sessions recorded with Session Replay only in [certain browsers](/managed/discover-dynatrace/get-started/dynatrace-ui/dynatrace-web-ui-requirements#session-replay "Find out which browsers Dynatrace Managed can run on.").
-* See [Technical restrictions for Session Replay for web applications](/managed/observe/digital-experience/session-replay/session-replay-restrictions-web "Learn which restrictions apply to Session Replay.") for more information.
+* Session Replay can capture only certain events. However, if you need to track a specific view or event that is not supported by default, you can [capture a custom event](/managed/observe/digital-experience/session-replay/session-replay-android#capture-custom-events "Set up Session Replay Classic for your Android apps to learn which actions your users perform.").
+* You can play back the user sessions recorded with Session Replay only in [certain browsers](/managed/discover-dynatrace/get-started/dynatrace-ui/dynatrace-web-ui-requirements#session-replay "Browser and TLS requirements for the Dynatrace Managed web UI, including supported browsers for Session Replay and Synthetic Monitoring.").
+* See [Technical restrictions for Session Replay for web applications](/managed/observe/digital-experience/session-replay/session-replay-restrictions-web "Learn which restrictions apply to Session Replay Classic.") for more information.
 
 Session Replay is a video-like reconstruction of the user interaction with mobile application, that uses captured events and data. Because of this approach replayed session can differ from the actual user experience. Known issues
 
@@ -54,13 +53,13 @@ Session Replay is a video-like reconstruction of the user interaction with mobil
 * Floating action buttons can cause data masking issues.
 * The inputType attribute within the Button component might result in buttons appearing without text when captured.
 
-## Enable Session Replay on Android
+## Enable Session Replay Classic on Android
 
 If you haven't done so already, complete all steps described in the instrumentation wizard.
 
 1. Go to **Mobile**.
 2. Select the mobile application that you want to configure.
-3. Select **More** (**â¦**) > **Edit** in the upper-right corner of the tile with your application name.
+3. Select **More** (**…**) > **Edit** in the upper-right corner of the tile with your application name.
 4. From the application settings, select **General** > **Enablement and cost control**.
 5. Turn on **Enable Full Session Replay** or **Enable Session Replay on crashes**. You have the following options:
 
@@ -96,9 +95,9 @@ For Android Gradle plugin 4.2+, Java 8 is used by default, so no configuration c
 
 Session Replay on comes with three predefined masking levels:
 
-* **Safest**âall the editable text fields, images, labels, web views, and switches are masked.
-* **Safe**âall the editable text fields are masked.
-* **Custom**âby default, masks the same elements as **Safest**, but you can decide exactly which application components or views should be masked. See [Configure custom masking](#custom-masking) for details.
+* **Safest**—all the editable text fields, images, labels, web views, and switches are masked.
+* **Safe**—all the editable text fields are masked.
+* **Custom**—by default, masks the same elements as **Safest**, but you can decide exactly which application components or views should be masked. See [Configure custom masking](#custom-masking) for details.
 
 ### Change masking level
 
@@ -186,7 +185,7 @@ If you set the [data masking level](#masking-levels) to **Custom**, you can use 
 You can enable or disable masking globally or for the selected components, such as text fields, images, labels, web views, and switches.
 
 ```
-Set&lt;Class<? extends View&gt;> set = new HashSet&lt;Class<? extends View&gt;>()\\{{
+Set<Class<? extends View>> set = new HashSet<Class<? extends View>>() {
 
 
 
@@ -198,7 +197,7 @@ add(WebView.class);
 
 
 
-}};
+};
 
 
 
@@ -224,7 +223,7 @@ You need to apply the custom masking configuration for it to take effect. See [C
 You can also enable or disable masking of the selected views based on their `android:tag`.
 
 ```
-Set&lt;Integer&gt; set = new HashSet&lt;Integer&gt;()\\{{
+Set<Integer> set = new HashSet<Integer>() {
 
 
 
@@ -236,7 +235,7 @@ add(R.id.view_id2);
 
 
 
-}};
+};
 
 
 
@@ -305,9 +304,9 @@ modifier = Modifier.dtMask()
 }
 ```
 
-## Enable Session Replay logs
+## Enable Session Replay Classic logs
 
-You can enable Session Replay logs the same way as for OneAgent. See [Enable debug logging for Dynatrace Android Gradle plugin or OneAgent SDK](/managed/observe/digital-experience/mobile-applications/instrument-android-app/debug-logging-oneagent "Activate the debug logs from OneAgent.") for more information.
+You can enable Session Replay logs the same way as for OneAgent. See [Enable debug logging for Dynatrace Android Gradle plugin or OneAgent SDK](/managed/observe/digital-experience/rum-classic/mobile-applications/instrument-android-app/debug-logging-oneagent "Activate the debug logs from OneAgent.") for more information.
 
 ## Capture custom events
 
@@ -319,7 +318,7 @@ DynatraceSessionReplay.trackCustomEvent("User logged")
 
 ## Change transmission mode to Wi-Fi for images
 
-By default, all dataâinformation on captured events and imagesâis sent over any connection. However, you can opt to transfer images only when the users are connected to Wi-Fi to save their mobile data.
+By default, all data—information on captured events and images—is sent over any connection. However, you can opt to transfer images only when the users are connected to Wi-Fi to save their mobile data.
 
 ```
 DynatraceSessionReplay.setConfiguration(
@@ -343,10 +342,10 @@ Configuration.builder()
 
 ## Troubleshooting
 
-* [User sessions are not recorded at allï»¿](https://dt-url.net/cp2385m)
-* [User sessions are recorded, but Session Replay is not availableï»¿](https://dt-url.net/4m038d9)
+* [User sessions are not recorded at all﻿](https://dt-url.net/cp2385m)
+* [User sessions are recorded, but Session Replay is not available﻿](https://dt-url.net/4m038d9)
 
 ## Related topics
 
 * [Session Replay](/managed/observe/digital-experience/session-replay "Learn how you can use Session Replay to better understand and troubleshoot errors experienced by your customers.")
-* [View crash reports for mobile applications](/managed/observe/digital-experience/mobile-applications/analyze-and-use/crash-reports-mobile "Check the latest crash reports for your mobile applications.")
+* [View crash reports for mobile applications in RUM Classic](/managed/observe/digital-experience/rum-classic/mobile-applications/analyze-and-use/crash-reports-mobile "Check the latest crash reports for your mobile applications.")

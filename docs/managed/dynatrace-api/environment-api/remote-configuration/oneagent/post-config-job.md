@@ -1,7 +1,6 @@
 ---
 title: OneAgent remote configuration management API - POST a configuration job
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/remote-configuration/oneagent/post-config-job
-scraped: 2026-05-12T11:55:04.939406
 ---
 
 # OneAgent remote configuration management API - POST a configuration job
@@ -42,7 +41,7 @@ Remote configuration management operation creation request.
 | Element | Type | Description | Required |
 | --- | --- | --- | --- |
 | entities | string[] | A list of entities IDs for which remote configuration management is to be executed. | Required |
-| operations | [RemoteConfigurationManagementOperation[]](#openapi-definition-RemoteConfigurationManagementOperation) | A list of remote configuration management operations to be executed. | Required |
+| operations | [RemoteConfigurationManagementOperation](#openapi-definition-RemoteConfigurationManagementOperation)[] | A list of remote configuration management operations to be executed. | Required |
 
 #### The `RemoteConfigurationManagementOperation` object
 
@@ -132,10 +131,10 @@ Remote configuration management job.
 | --- | --- | --- |
 | endTime | string | Date (in ISO 8601 format: yyyy-MM-dd'T'HH:mm:ss.SSS'Z') when the remote configuration management job was finished. This field is present only for finished jobs. |
 | entityType | string | Type of entities modified by remote configuration management. The element can hold these values * `ACTIVE_GATE` * `ONE_AGENT` |
-| failedEntities | [RemoteIdentityOperationFailedEntityDto[]](#openapi-definition-RemoteIdentityOperationFailedEntityDto) | A list of failed remote configuration management jobs. |
+| failedEntities | [RemoteIdentityOperationFailedEntityDto](#openapi-definition-RemoteIdentityOperationFailedEntityDto)[] | A list of failed remote configuration management jobs. |
 | id | string | The ID of the remote configuration management job. |
 | inProgressEntities | string[] | A list of in-progress remote configuration management jobs. |
-| operations | [RemoteConfigurationManagementOperation[]](#openapi-definition-RemoteConfigurationManagementOperation) | A list of executed (successful and failed) remote configuration management jobs. |
+| operations | [RemoteConfigurationManagementOperation](#openapi-definition-RemoteConfigurationManagementOperation)[] | A list of executed (successful and failed) remote configuration management jobs. |
 | processedEntitiesCount | integer | Number of entities that were already processed at the time the response was created. |
 | startTime | string | Date (in ISO 8601 format: yyyy-MM-dd'T'HH:mm:ss.SSS'Z') when the remote configuration management job was started. |
 | timeoutTime | string | Date (in ISO 8601 format: yyyy-MM-dd'T'HH:mm:ss.SSS'Z') when the running remote configuration management job will time-out. This field is present only for running jobs. |
@@ -167,8 +166,8 @@ The result of remote configuration management validation.
 
 | Element | Type | Description |
 | --- | --- | --- |
-| invalidEntities | [RemoteConfigurationManagementEntityValidationError[]](#openapi-definition-RemoteConfigurationManagementEntityValidationError) | A list of validation errors for entities. |
-| invalidOperations | [RemoteConfigurationManagementOperationValidationError[]](#openapi-definition-RemoteConfigurationManagementOperationValidationError) | A list of validation errors for operations. |
+| invalidEntities | [RemoteConfigurationManagementEntityValidationError](#openapi-definition-RemoteConfigurationManagementEntityValidationError)[] | A list of validation errors for entities. |
+| invalidOperations | [RemoteConfigurationManagementOperationValidationError](#openapi-definition-RemoteConfigurationManagementOperationValidationError)[] | A list of validation errors for operations. |
 
 #### The `RemoteConfigurationManagementEntityValidationError` object
 
@@ -406,8 +405,8 @@ The result of remote configuration management validation.
 
 | Element | Type | Description |
 | --- | --- | --- |
-| invalidEntities | [RemoteConfigurationManagementEntityValidationError[]](#openapi-definition-RemoteConfigurationManagementEntityValidationError) | A list of validation errors for entities. |
-| invalidOperations | [RemoteConfigurationManagementOperationValidationError[]](#openapi-definition-RemoteConfigurationManagementOperationValidationError) | A list of validation errors for operations. |
+| invalidEntities | [RemoteConfigurationManagementEntityValidationError](#openapi-definition-RemoteConfigurationManagementEntityValidationError)[] | A list of validation errors for entities. |
+| invalidOperations | [RemoteConfigurationManagementOperationValidationError](#openapi-definition-RemoteConfigurationManagementOperationValidationError)[] | A list of validation errors for operations. |
 
 #### The `RemoteConfigurationManagementEntityValidationError` object
 

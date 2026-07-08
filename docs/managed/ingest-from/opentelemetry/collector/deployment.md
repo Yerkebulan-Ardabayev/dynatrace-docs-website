@@ -1,7 +1,6 @@
 ---
 title: Deploy the Dynatrace OTel Collector
 source: https://docs.dynatrace.com/managed/ingest-from/opentelemetry/collector/deployment
-scraped: 2026-05-12T11:37:08.504826
 ---
 
 # Deploy the Dynatrace OTel Collector
@@ -16,7 +15,7 @@ This page describes how to deploy the Dynatrace distribution of the OTel Collect
 
 ## Deployment modes
 
-The Dynatrace OTel Collector can be [deployedï»¿](https://opentelemetry.io/docs/collector/quick-start/) as a standalone agent or gateway.
+The Dynatrace OTel Collector can be [deployed﻿](https://opentelemetry.io/docs/collector/quick-start/) as a standalone agent or gateway.
 
 For illustrative purposes, the graphics below show the modes in a Kubernetes setup, but the same modes can also be used outside of Kubernetes.
 
@@ -77,17 +76,17 @@ Raw manifest
 
 #### Prerequisites
 
-If you haven't installed OpenTelemetry Operator yet, first make sure [cert-managerï»¿](https://cert-manager.io/docs/installation/) is installed. Afterwards, you can deploy Operator with the following `kubectl` command:
+If you haven't installed OpenTelemetry Operator yet, first make sure [cert-manager﻿](https://cert-manager.io/docs/installation/) is installed. Afterwards, you can deploy Operator with the following `kubectl` command:
 
 ```
-kubectl apply -f https://github.com/open-telemetry/opentelemetry-operator/releases/download/v0.150.0/opentelemetry-operator.yaml
+kubectl apply -f https://github.com/open-telemetry/opentelemetry-operator/releases/download/v0.154.0/opentelemetry-operator.yaml
 ```
 
 After the installation, deploy the Dynatrace OTel Collector either in [gateway or agent deployment mode](#deployment-modes), with one of the following configuration samples. Save it as `crd-dynatrace-collector.yaml` and deploy it with `kubectl apply`.
 
 Custom Resource Definition
 
-The Kubernetes CRD of the Operator can be found on [GitHubï»¿](https://github.com/open-telemetry/opentelemetry-operator/blob/v0.150.0/docs/api/opentelemetrycollectors.md).
+The Kubernetes CRD of the Operator can be found on [GitHub﻿](https://github.com/open-telemetry/opentelemetry-operator/blob/v0.154.0/docs/api/opentelemetrycollectors.md).
 
 Deploy as a gateway (Deployment)
 
@@ -148,7 +147,7 @@ mode: "deployment"
 
 
 
-image: "ghcr.io/dynatrace/dynatrace-otel-collector/dynatrace-otel-collector:0.48.0"
+image: "ghcr.io/dynatrace/dynatrace-otel-collector/dynatrace-otel-collector:0.51.0"
 
 
 
@@ -330,7 +329,7 @@ mode: "daemonset"
 
 
 
-image: "ghcr.io/dynatrace/dynatrace-otel-collector/dynatrace-otel-collector:0.48.0"
+image: "ghcr.io/dynatrace/dynatrace-otel-collector/dynatrace-otel-collector:0.51.0"
 
 
 
@@ -474,7 +473,7 @@ Deploy as a gateway (Deployment)
 
 
 
-   tag: 0.48.0
+   tag: 0.51.0
 
 
 
@@ -699,7 +698,7 @@ Deploy as an agent (DaemonSet)
 
 
 
-   tag: 0.48.0
+   tag: 0.51.0
 
 
 
@@ -905,7 +904,7 @@ Deploy as an agent (DaemonSet)
 
 Network ports
 
-Make sure to configure and forward all relevant network ports, using the [`ports` configuration valueï»¿](https://github.com/open-telemetry/opentelemetry-helm-charts/blob/opentelemetry-collector-0.106.0/charts/opentelemetry-collector/values.yaml#L266-L313).
+Make sure to configure and forward all relevant network ports, using the [`ports` configuration value﻿](https://github.com/open-telemetry/opentelemetry-helm-charts/blob/opentelemetry-collector-0.106.0/charts/opentelemetry-collector/values.yaml#L266-L313).
 
 Service
 
@@ -1352,7 +1351,7 @@ key: DT_API_TOKEN
 
 
 
-image: ghcr.io/dynatrace/dynatrace-otel-collector/dynatrace-otel-collector:0.48.0
+image: ghcr.io/dynatrace/dynatrace-otel-collector/dynatrace-otel-collector:0.51.0
 
 
 
@@ -1426,18 +1425,18 @@ For raw manifests, this needs to be configured manually by adding a `spec.servic
 Run the following command to download the most recent Dynatrace OTel Collector image:
 
 ```
-docker pull ghcr.io/dynatrace/dynatrace-otel-collector/dynatrace-otel-collector:0.48.0
+docker pull ghcr.io/dynatrace/dynatrace-otel-collector/dynatrace-otel-collector:0.51.0
 ```
 
 Next, ensure that the [Dynatrace OTel Collector configuration file](/managed/ingest-from/opentelemetry/collector/configuration "How to configure the OpenTelemetry Collector.") exists in the current working directory and run the Dynatrace OTel Collector image with the following command:
 
 ```
-docker run -v $(pwd)/otel-collector-config.yaml:/etc/otelcol/otel-collector-config.yaml ghcr.io/dynatrace/dynatrace-otel-collector/dynatrace-otel-collector:0.48.0 --config=/etc/otelcol/otel-collector-config.yaml
+docker run -v $(pwd)/otel-collector-config.yaml:/etc/otelcol/otel-collector-config.yaml ghcr.io/dynatrace/dynatrace-otel-collector/dynatrace-otel-collector:0.51.0 --config=/etc/otelcol/otel-collector-config.yaml
 ```
 
 The `-v` parameter maps the local configuration file to the given container path, which is subsequently passed to the `--config` parameter.
 
-Make sure to map all required network ports with the [`-p` parameterï»¿](https://docs.docker.com/reference/cli/docker/container/run/#publish). For example, if you accept OTLP gRPC requests on the default port, you need to specify port 4317. For OTLP over HTTP specify port 4318.
+Make sure to map all required network ports with the [`-p` parameter﻿](https://docs.docker.com/reference/cli/docker/container/run/#publish). For example, if you accept OTLP gRPC requests on the default port, you need to specify port 4317. For OTLP over HTTP specify port 4318.
 
 #### Docker compose
 
@@ -1456,7 +1455,7 @@ collector:
 
 
 
-image: ghcr.io/dynatrace/dynatrace-otel-collector/dynatrace-otel-collector:0.48.0
+image: ghcr.io/dynatrace/dynatrace-otel-collector/dynatrace-otel-collector:0.51.0
 
 
 
@@ -1489,7 +1488,7 @@ In the example above, `ports` is configured for gRPC and HTTP. Adjust the list o
 
 To install the Dynatrace OTel Collector binary manually:
 
-1. Download the [dynatrace-otel-collectorï»¿](https://github.com/Dynatrace/dynatrace-otel-collector/releases/v0.48.0) for your operating system from GitHub.
+1. Download the [dynatrace-otel-collector﻿](https://github.com/Dynatrace/dynatrace-otel-collector/releases/v0.51.0) for your operating system from GitHub.
 2. Decompress the archive file.
 3. Set up the desired configuration and save it to `otel-collector-config.yaml`.
 4. Run the `dynatrace-otel-collector` binary and pass the path to the configuration file using the `--config` parameter.
@@ -1506,7 +1505,7 @@ Required init system
 
 The installer packages require Systemd to be the active init system.
 
-To deploy the Dynatrace OTel Collector using an installer package, download the [dynatrace-otel-collectorï»¿](https://github.com/Dynatrace/dynatrace-otel-collector/releases/v0.48.0) for your operating system from GitHub, and install it using root privileges and the following commands.
+To deploy the Dynatrace OTel Collector using an installer package, download the [dynatrace-otel-collector﻿](https://github.com/Dynatrace/dynatrace-otel-collector/releases/v0.51.0) for your operating system from GitHub, and install it using root privileges and the following commands.
 
 Replace the following two placeholders in the commands with their actual content:
 
@@ -1545,7 +1544,7 @@ If you wish to use a different path, you can override the default path with the 
 OTELCOL_OPTIONS="--config=<HERE-PATH-TO-CONFIG-FILE>"
 ```
 
-Subsequent package updates will replace this file, so be sure to back up and restore its content during an update of the Dynatrace OTel Collector package. Alternatively, you can override the configuration with the [`systemctl edit` commandï»¿](https://docs.fedoraproject.org/en-US/quick-docs/systemd-understanding-and-administering/#_modifying_existing_systemd_services).
+Subsequent package updates will replace this file, so be sure to back up and restore its content during an update of the Dynatrace OTel Collector package. Alternatively, you can override the configuration with the [`systemctl edit` command﻿](https://docs.fedoraproject.org/en-US/quick-docs/systemd-understanding-and-administering/#_modifying_existing_systemd_services).
 
 To see all available configuration options, run the Dynatrace OTel Collector binary with the `--help` parameter.
 
@@ -1573,12 +1572,12 @@ journalctl -u dynatrace-otel-collector
 
 Container images for the Dynatrace OTel Collector:
 
-* [GitHub Container Registry (GHCR)ï»¿](https://github.com/Dynatrace/dynatrace-otel-collector/pkgs/container/dynatrace-otel-collector%2Fdynatrace-otel-collector)
+* [GitHub Container Registry (GHCR)﻿](https://github.com/Dynatrace/dynatrace-otel-collector/pkgs/container/dynatrace-otel-collector%2Fdynatrace-otel-collector)
 
-  + `ghcr.io/dynatrace/dynatrace-otel-collector/dynatrace-otel-collector:0.48.0`
-* [Amazon Elastic Container Registry (Amazon ECR)ï»¿](https://gallery.ecr.aws/dynatrace/dynatrace-otel-collector)
+  + `ghcr.io/dynatrace/dynatrace-otel-collector/dynatrace-otel-collector:0.51.0`
+* [Amazon Elastic Container Registry (Amazon ECR)﻿](https://gallery.ecr.aws/dynatrace/dynatrace-otel-collector)
 
-  + `public.ecr.aws/dynatrace/dynatrace-otel-collector:0.48.0`
-* [Docker Hub Container Registryï»¿](https://hub.docker.com/r/dynatrace/dynatrace-otel-collector)
+  + `public.ecr.aws/dynatrace/dynatrace-otel-collector:0.51.0`
+* [Docker Hub Container Registry﻿](https://hub.docker.com/r/dynatrace/dynatrace-otel-collector)
 
-  + `dynatrace/dynatrace-otel-collector:0.48.0`
+  + `dynatrace/dynatrace-otel-collector:0.51.0`

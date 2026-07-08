@@ -1,7 +1,6 @@
 ---
 title: Google Cloud supported services
 source: https://docs.dynatrace.com/managed/ingest-from/google-cloud-platform/gcp-integrations/gcp-supported-service-metrics-new
-scraped: 2026-05-12T11:10:35.442784
 ---
 
 # Google Cloud supported services
@@ -79,7 +78,7 @@ Services might have one entity, several entities, or none.
 
 To check available metrics for a service, you need to
 
-1. Find the extension in the [Hubï»¿](https://www.dynatrace.com/hub/?query=google&filter=all) and select it to open the overview page. See example: [Google Cloud Functionsï»¿](https://www.dynatrace.com/hub/detail/google-functions/?query=cloud+function&filter=all).
+1. Find the extension in the [Hub﻿](https://www.dynatrace.com/hub/?query=google&filter=all) and select it to open the overview page. See example: [Google Cloud Functions﻿](https://www.dynatrace.com/hub/detail/google-functions/?query=cloud+function&filter=all).
 2. Scroll down to the bottom of the overview page of the extension to find the **Feature sets** section.
 3. In the table, select the **default\_metrics** dropdown.
 4. Now, you can check all available metrics for the chosen service.
@@ -88,11 +87,11 @@ To check available metrics for a service, you need to
 
 ### Metric ingestion
 
-All cloud services consume DDUs. The amount of DDU consumption per service instance depends on the number of monitored metrics and their dimensions (each metric dimension results in the ingestion of 1 data point; 1 data point consumes 0.001 DDUs). For details, see [Extending Dynatrace (Davis data units)](/managed/license/monitoring-consumption-classic/davis-data-units "Understand how Dynatrace monitoring consumption is calculated based on Davis data units (DDU).").
+All cloud services consume DDUs. The amount of DDU consumption per service instance depends on the number of monitored metrics and their dimensions (each metric dimension results in the ingestion of 1 data point; 1 data point consumes 0.001 DDUs). For details, see [Extending Dynatrace (Davis data units)](/managed/license/classic-licensing/davis-data-units "Understand how Dynatrace monitoring consumption is calculated based on Davis data units (DDU).").
 
 ### Log ingestion
 
-DDU consumption applies to cloud Log Monitoring. See [DDUs for Log Monitoring](/managed/license/monitoring-consumption-classic/davis-data-units/log-monitoring-consumption "Understand how the volume of DDU consumption is calculated for Dynatrace Log Monitoring Classic.") for details.
+DDU consumption applies to cloud Log Monitoring. See [DDUs for Log Monitoring](/managed/license/classic-licensing/davis-data-units/log-monitoring-consumption "Understand how the volume of DDU consumption is calculated for Dynatrace Log Monitoring Classic.") for details.
 
 ## Related topics
 

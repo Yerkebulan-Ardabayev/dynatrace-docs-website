@@ -1,7 +1,6 @@
 ---
 title: Ingest StatsD data with the OTel Collector
 source: https://docs.dynatrace.com/managed/ingest-from/opentelemetry/collector/use-cases/statsd
-scraped: 2026-05-12T11:50:07.550301
 ---
 
 # Ingest StatsD data with the OTel Collector
@@ -16,8 +15,8 @@ The following configuration example shows how you configure a Collector instance
 
 ## Prerequisites
 
-* An application generating [StatsD messagesï»¿](https://github.com/statsd/statsd/blob/master/docs/metric_types.md)
-* One of the following Collector distributions with the [StatsD receiverï»¿](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.151.0/receiver/statsdreceiver), [transform processorï»¿](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.151.0/processor/transformprocessor), and [filter processorï»¿](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.151.0/processor/filterprocessor):
+* An application generating [StatsD messages﻿](https://github.com/statsd/statsd/blob/master/docs/metric_types.md)
+* One of the following Collector distributions with the [StatsD receiver﻿](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.155.0/receiver/statsdreceiver), [transform processor﻿](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.155.0/processor/transformprocessor), and [filter processor﻿](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.155.0/processor/filterprocessor):
 
   + The [Dynatrace OTel Collector](/managed/ingest-from/opentelemetry/collector#dt-collector-dist "Learn how to use the OpenTelemetry Collector, including the Dynatrace OTel Collector, to ingest telemetry from OpenTelemetry.")
   + OpenTelemetry [Contrib](/managed/ingest-from/opentelemetry/collector#collector-contrib "Learn how to use the OpenTelemetry Collector, including the Dynatrace OTel Collector, to ingest telemetry from OpenTelemetry.")
@@ -155,11 +154,11 @@ Under `receivers`, we specify the `statsd` receiver as active receiver component
 
 The receiver is configured to aggregate histogram, timer, and distribution messages into exponential histograms, which are later processed for Dynatrace ingestion. The receiver uses auto-scaling exponential histograms, and we have selected a maximum size of `100`. This means that the histogram will begin with very granular bucket boundaries and automatically re-scale itself if it receives data points that would result in more than `100` buckets.
 
-For a full list of configuration parameters and supported StatsD metric types, see the [StatsD receiver documentationï»¿](https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/v0.151.0/receiver/statsdreceiver/README.md).
+For a full list of configuration parameters and supported StatsD metric types, see the [StatsD receiver documentation﻿](https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/v0.155.0/receiver/statsdreceiver/README.md).
 
 ### Exporters
 
-Under `exporters`, we specify the default [`otlp_http` exporterï»¿](https://github.com/open-telemetry/opentelemetry-collector/tree/v0.151.0/exporter/otlphttpexporter) and configure it with our Dynatrace API URL and the required authentication token.
+Under `exporters`, we specify the default [`otlp_http` exporter﻿](https://github.com/open-telemetry/opentelemetry-collector/tree/v0.155.0/exporter/otlphttpexporter) and configure it with our Dynatrace API URL and the required authentication token.
 
 For this purpose, we set the following two environment variables and reference them in the configuration values for `endpoint` and `headers`.
 
@@ -180,4 +179,4 @@ For more information see:
 
 ## Related topics
 
-* [Scrape Prometheus metrics with the OTel Collector](/managed/ingest-from/opentelemetry/collector/use-cases/prometheus "Configure the OpenTelemetry Collector to scrape your Prometheus data.")
+* [Scrape Prometheus metrics with the OTel Collector](/managed/ingest-from/opentelemetry/collector/use-cases/prometheus "Configure the OpenTelemetry Collector to scrape Prometheus endpoints and ingest the data into Dynatrace.")

@@ -1,7 +1,6 @@
 ---
 title: Manage a Monaco project
 source: https://docs.dynatrace.com/managed/deliver/configuration-as-code/monaco/configuration/projects
-scraped: 2026-05-12T12:02:52.411398
 ---
 
 # Manage a Monaco project

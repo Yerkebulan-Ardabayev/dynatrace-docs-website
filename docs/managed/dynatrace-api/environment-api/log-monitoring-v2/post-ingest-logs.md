@@ -1,7 +1,6 @@
 ---
 title: Log Monitoring API v2 - POST ingest logs
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/log-monitoring-v2/post-ingest-logs
-scraped: 2026-05-12T11:14:01.154743
 ---
 
 # Log Monitoring API v2 - POST ingest logs
@@ -17,8 +16,8 @@ This endpoint is available in your SaaS environment, or as an alternative, you c
 
 The request consumes one of the following payload types:
 
-* `text/plain`âlimited to a single log event.
-* `application/json`, `application/jsonl`, `application/jsonlines`, `application/jsonlines+json`, `application/x-ndjson`, `application/x-jsonlines`âsupport multiple log events in a single payload.
+* `text/plain`—limited to a single log event.
+* `application/json`, `application/jsonl`, `application/jsonlines`, `application/jsonlines+json`, `application/x-ndjson`, `application/x-jsonlines`—support multiple log events in a single payload.
 
 Be sure to set the correct **Content-Type** header and encode payload with **UTF-8**, for example: `application/json; charset=utf-8`.
 
@@ -40,9 +39,9 @@ When using log processing with the custom processing pipeline (OpenPipeline), in
 | Parameter | Type | Description | In | Required |
 | --- | --- | --- | --- | --- |
 | content-type | string | (Optional) Allows to provide content type with query parameter. Has priority over value provided in Content-Type header. | query | Optional |
-| structure | string | (Optional) Data model used for structuring the input into log records. Allowed values: `raw`, `flattened`. For more details, refer to the [documentationï»¿](https://dt-url.net/lyi2yte). The element can hold these values * `raw` * `flattened` | query | Optional |
-| X-Dynatrace-Attr | string | (Optional) Contains ampersandâseparated keyâvalue pairs representing additional log attributes to be added to each ingested log record. If the same key appears multiple times, all values are captured as a multiâvalue attribute. Query parameters take precedence over values provided in this header. | header | Optional |
-| X-Dynatrace-Options | string | (Optional) Contains ampersand-separated Dynatrace-specific parameters. Supported options: (SaaS only) `structure` (values: `raw`, `flattened`) defines how input data is structured into log records. Query parameters take precedence over header values. For more details, refer to the [documentationï»¿](https://dt-url.net/lyi2yte). | header | Optional |
+| structure | string | (Optional) Data model used for structuring the input into log records. Allowed values: `raw`, `flattened`. For more details, refer to the [documentation﻿](https://dt-url.net/lyi2yte). The element can hold these values * `raw` * `flattened` | query | Optional |
+| X-Dynatrace-Attr | string | (Optional) Contains ampersand‑separated key–value pairs representing additional log attributes to be added to each ingested log record. If the same key appears multiple times, all values are captured as a multi‑value attribute. Query parameters take precedence over values provided in this header. For more details, refer to the [documentation﻿](https://dt-url.net/2f4394a). | header | Optional |
+| X-Dynatrace-Options | string | (Optional) Contains ampersand-separated Dynatrace-specific parameters. Supported options: (SaaS only) `structure` (values: `raw`, `flattened`) defines how input data is structured into log records. Query parameters take precedence over header values. For more details, refer to the [documentation﻿](https://dt-url.net/lyi2yte). | header | Optional |
 | body | [LogMessageJson](#openapi-definition-LogMessageJson) | The body of the request. Contains one or more log events to be ingested.  The endpoint accepts one of the following payload types, defined by the **Accept** header:  * `text/plain`: supports only one log event. * `application/json`: supports multiple log events in a single JSON array payload. * `application/jsonl`, `application/jsonlines`, `application/x-ndjson`, `application/jsonlines+json`, or `application/x-jsonlines`: supports multiple log events as JSON-lines payload (one JSON object per line). | body | Optional |
 
 ### Request body objects
@@ -69,9 +68,9 @@ A set of one or more log events:
   { "message": "2" }
   ```
 
-Log events from the input are mapped to Dynatrace log records containing three special attributes: timestamp, loglevel, and content, as well as a map of other attributes. These four properties are set based on keys present in the input JSON object. For more details, refer to the [documentationï»¿](https://dt-url.net/lyi2yte).
+Log events from the input are mapped to Dynatrace log records containing three special attributes: timestamp, loglevel, and content, as well as a map of other attributes. These four properties are set based on keys present in the input JSON object. For more details, refer to the [documentation﻿](https://dt-url.net/lyi2yte).
 
-(SaaS only) Attribute processing depends on the data model used for input processing. The effective data model for a specific request depends on the `structure` parameter or the default tenant data model, which is determined by tenant configuration. More details can be found in the [documentationï»¿](https://dt-url.net/lyi2yte).
+(SaaS only) Attribute processing depends on the data model used for input processing. The effective data model for a specific request depends on the `structure` parameter or the default tenant data model, which is determined by tenant configuration. More details can be found in the [documentation﻿](https://dt-url.net/lyi2yte).
 
 ### Request body JSON model
 
@@ -242,7 +241,7 @@ true,
 | **200** | [SuccessEnvelope](#openapi-definition-SuccessEnvelope) | Only a part of input events were ingested due to event invalidity. For details, check the response body. |
 | **204** | - | Success. Response doesn't have a body. |
 | **400** | [ErrorEnvelope](#openapi-definition-ErrorEnvelope) | Failed. The input is invalid. |
-| **402** | [ErrorEnvelope](#openapi-definition-ErrorEnvelope) | Failed. This is due either to the status of your licensing agreement or because you've exhausted your [DPS licenseï»¿](https://www.dynatrace.com/support/help/shortlink/dynatrace-platform-subscription). |
+| **402** | [ErrorEnvelope](#openapi-definition-ErrorEnvelope) | Failed. This is due either to the status of your licensing agreement or because you've exhausted your [DPS license﻿](https://www.dynatrace.com/support/help/shortlink/dynatrace-platform-subscription). |
 | **404** | [ErrorEnvelope](#openapi-definition-ErrorEnvelope) | Failed. The requested resource doesn't exist. This may happen when no ActiveGate is available with the Log Analytics Collector module enabled. |
 | **413** | [ErrorEnvelope](#openapi-definition-ErrorEnvelope) | Failed. Request payload size is too big. This may happen when the payload byte size exceeds the limit or when the ingested payload is a JSON array with the size exceeding the limit. |
 | **429** | [ErrorEnvelope](#openapi-definition-ErrorEnvelope) | Failed. Too Many Requests. This may happen when ActiveGate is unable to process more requests at the moment or when log ingest is disabled. Retryable with exponential backoff strategy. |
@@ -279,7 +278,7 @@ true,
 | Element | Type | Description |
 | --- | --- | --- |
 | code | integer | The HTTP status code |
-| constraintViolations | [ConstraintViolation[]](#openapi-definition-ConstraintViolation) | A list of constraint violations |
+| constraintViolations | [ConstraintViolation](#openapi-definition-ConstraintViolation)[] | A list of constraint violations |
 | message | string | The error message |
 
 #### The `ConstraintViolation` object

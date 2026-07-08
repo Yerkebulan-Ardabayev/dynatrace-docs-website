@@ -1,7 +1,6 @@
 ---
 title: Log monitoring with AWS log forwarder
 source: https://docs.dynatrace.com/managed/ingest-from/amazon-web-services/integrate-with-aws/aws-logs-ingest/aws-log-forwarder
-scraped: 2026-05-12T11:35:40.596484
 ---
 
 # Log monitoring with AWS log forwarder
@@ -21,7 +20,7 @@ End of support for the Dynatrace AWS log forwarder is planned for Dec 31, 2024.
 
 DDU consumption for Log Monitoring
 
-DDU pricing applies to cloud Log Monitoring. See [DDUs for Log Monitoring](/managed/license/monitoring-consumption-classic/davis-data-units/log-monitoring-consumption "Understand how the volume of DDU consumption is calculated for Dynatrace Log Monitoring Classic.") for details.
+DDU pricing applies to cloud Log Monitoring. See [DDUs for Log Monitoring](/managed/license/classic-licensing/davis-data-units/log-monitoring-consumption "Understand how the volume of DDU consumption is calculated for Dynatrace Log Monitoring Classic.") for details.
 
 AWS log forwarding allows you to stream logs from Amazon CloudWatch into Dynatrace logs via an ActiveGate.
 
@@ -69,8 +68,8 @@ If you're using an earlier version of Dynatrace, see [Alternative deployments](#
 
 The deployment script uses the default AWS CLI profile configuration. The profile will determine the AWS account and region. To change the account or region:
 
-* Use a different profile - in this case, you need to [update your configuration fileï»¿](https://dt-url.net/le03r5f).
-* Overwrite the default profile temporarily (this option is limited to your shell session) using [environment variablesï»¿](https://dt-url.net/3823r6v).
+* Use a different profile - in this case, you need to [update your configuration file﻿](https://dt-url.net/le03r5f).
+* Overwrite the default profile temporarily (this option is limited to your shell session) using [environment variables﻿](https://dt-url.net/3823r6v).
 
 ### Permission policy
 
@@ -242,7 +241,7 @@ Permissions policy for deployment
 
 1. Set the following environment variables, making sure to replace the placeholders (`<...>`) with your own values.
 
-   * For `TARGET_URL`, enter your environment URL: `https://<your_environment_ID>.live.dynatrace.com`. To learn how to determine your environment ID for the SaaS or Managed deployment, see [environment ID](/managed/discover-dynatrace/get-started/monitoring-environment "Understand and learn how to work with monitoring environments.").
+   * For `TARGET_URL`, enter your environment URL: `https://<your_environment_ID>.live.dynatrace.com`. To learn how to determine your environment ID for the SaaS or Managed deployment, see [environment ID](/managed/discover-dynatrace/get-started/monitoring-environment "Learn what a Dynatrace monitoring environment is, how to find your environment ID, and how to set up and connect multiple environments.").
    * For `TARGET_API_TOKEN`, enter your API token. For instructions, see [Prerequisites](#dynatrace).
    * Optional For `STACK_NAME`, the default value is `dynatrace-aws-logs`. To provide another name for the CloudFormation stack where you want to deploy the resources, replace the default value with your own.
 
@@ -315,7 +314,7 @@ Be sure to replace `<your_log_groups_file>` with the name of the file to which y
 
 ### Subscribe with a subscription filter pattern
 
-**Usage recommendation:** By default, you subscribe to all the logs in the log group. Use this option if you want to restrict the logs you subscribe to. See [Filter and Pattern Syntaxï»¿](https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/FilterAndPatternSyntax.html) for details on the pattern syntax.
+**Usage recommendation:** By default, you subscribe to all the logs in the log group. Use this option if you want to restrict the logs you subscribe to. See [Filter and Pattern Syntax﻿](https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/FilterAndPatternSyntax.html) for details on the pattern syntax.
 
 **Limitation:** You can use only two subscription filters per log group, so the possibility of creating multiple filters with different patterns is limited. If you create a subscription filter that exceeds the limit, an AWS `LimitExceededException` occurs.
 
@@ -574,7 +573,7 @@ Permissions policy for deployment with an existing ActiveGate
 
 1. Set the following environment variables, making sure to replace the placeholders (`<...>`) with your own values, as follows.
 
-   * For `TARGET_URL`, enter the API URL of your ActiveGate endpoint: `https://<your_activegate_IP_or_hostname>:9999/e/<your_environment_ID>`. To learn how to determine your environment ID, see [environment IDï»¿](https://dt-url.net/ej43qge).
+   * For `TARGET_URL`, enter the API URL of your ActiveGate endpoint: `https://<your_activegate_IP_or_hostname>:9999/e/<your_environment_ID>`. To learn how to determine your environment ID, see [environment ID﻿](https://dt-url.net/ej43qge).
    * For `TARGET_API_TOKEN`, enter your API token. For instructions, see [Prerequisites](#dynatrace).
 
    If you want Dynatrace to verify the SSL certificate of your Dynatrace environment URL, you can set `REQUIRE_VALID_CERTIFICATE` to `true`.
@@ -618,12 +617,12 @@ For a complete list of parameters, see the deploy table below.
 
 | **Command-line parameter** | **Environment variable** | **Description** | **Default value** |  |  |  |  |
 | --- | --- | --- | --- | --- | --- | --- | --- |
-| `--target-url` | `TARGET_URL` | Required The API URL to your Dynatrace SaaS environment logs ingest target. If you choose to use an existing environment ActiveGate, set it to your ActiveGate endpoint: `https://<your_activegate_IP_or_hostname>:9999/e/<your_environment_ID>` **Note:** To determine `<your_environment_ID>`, see [environment ID](/managed/discover-dynatrace/get-started/monitoring-environment "Understand and learn how to work with monitoring environments."). |  |  |  |  |  |
+| `--target-url` | `TARGET_URL` | Required The API URL to your Dynatrace SaaS environment logs ingest target. If you choose to use an existing environment ActiveGate, set it to your ActiveGate endpoint: `https://<your_activegate_IP_or_hostname>:9999/e/<your_environment_ID>` **Note:** To determine `<your_environment_ID>`, see [environment ID](/managed/discover-dynatrace/get-started/monitoring-environment "Learn what a Dynatrace monitoring environment is, how to find your environment ID, and how to set up and connect multiple environments."). |  |  |  |  |  |
 | `--target-api-token` | `TARGET_API_TOKEN` | Required Your API token. For instructions, see [Prerequisites](#dynatrace). |  |  |  |  |  |
 | `--require-valid-certificate` | `REQUIRE_VALID_CERTIFICATE` | Optional If `true`, the log forwarder Lambda function verifies the SSL certificate of your Dynatrace environment URL. | `false` |  |  |  |  |
 | `--stack-name` | `STACK_NAME` | Optional The name of the CloudFormation stack where you want to deploy the resources. | `dynatrace-aws-logs` |  |  |  |  |
-| `--max-log-length` | `MAX_LOG_CONTENT_LENGTH` | Optional Log content's max length. If log exceeds this length it will be truncated. For values over 8192 there's also a change in Dynatrace settings neededâyou need to contact a Dynatrace product expert via live chat within your environment. | `8192` |  |  |  |  |
-| `--tags` | `TAGS` | Optional A list of tags to associate with the stack that is created or updated. Syntax: TagKey1=TagValue1 TagKey2=TagValue2 â¦ |  |  |  |  |  |
+| `--max-log-length` | `MAX_LOG_CONTENT_LENGTH` | Optional Log content's max length. If log exceeds this length it will be truncated. For values over 8192 there's also a change in Dynatrace settings needed—you need to contact a Dynatrace product expert via live chat within your environment. | `8192` |  |  |  |  |
+| `--tags` | `TAGS` | Optional A list of tags to associate with the stack that is created or updated. Syntax: TagKey1=TagValue1 TagKey2=TagValue2 … |  |  |  |  |  |
 
 ## Verification
 

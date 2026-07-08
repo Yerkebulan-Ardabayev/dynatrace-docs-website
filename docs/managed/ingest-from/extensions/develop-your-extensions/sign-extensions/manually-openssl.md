@@ -1,7 +1,6 @@
 ---
 title: Sign extensions manually with OpenSSL
 source: https://docs.dynatrace.com/managed/ingest-from/extensions/develop-your-extensions/sign-extensions/manually-openssl
-scraped: 2026-05-12T12:11:37.267488
 ---
 
 # Sign extensions manually with OpenSSL
@@ -14,7 +13,7 @@ scraped: 2026-05-12T12:11:37.267488
 
 ## Use OpenSSL
 
-To sign your extension manually, use OpenSSL. For Windows, you need to download and install an [OpenSSL binaryï»¿](https://wiki.openssl.org/index.php/Binaries) of your choice. We tested the procedure with OpenSSL 1.1.1k.
+To sign your extension manually, use OpenSSL. For Windows, you need to download and install an [OpenSSL binary﻿](https://wiki.openssl.org/index.php/Binaries) of your choice. We tested the procedure with OpenSSL 1.1.1k.
 
 [![Step 1](https://dt-cdn.net/images/step-1-086e22066c.svg "Step 1")
 

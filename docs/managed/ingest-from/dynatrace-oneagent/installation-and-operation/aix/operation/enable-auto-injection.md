@@ -1,7 +1,6 @@
 ---
 title: Automated injection of deep-code monitoring on AIX
 source: https://docs.dynatrace.com/managed/ingest-from/dynatrace-oneagent/installation-and-operation/aix/operation/enable-auto-injection
-scraped: 2026-05-12T11:10:51.299729
 ---
 
 # Automated injection of deep-code monitoring on AIX
@@ -19,7 +18,7 @@ On AIX, Dynatrace supports deep-code monitoring for Java, Apache, WebLogic and W
 To enable automated injection
 
 1. After you install OneAgent and it successfully connects to Dynatrace, in Dynatrace, go to **Hosts** and select your AIX host.
-2. On the host details page, select **More** (**â¦**) > **Settings**.
+2. On the host details page, select **More** (**…**) > **Settings**.
 3. Select the **AIX kernel extension** tab.
 4. Turn on **Allow AIX kernel extension**.  
    OneAgent will then begin collecting deep-code monitoring data.

@@ -1,7 +1,6 @@
 ---
 title: Top web requests
 source: https://docs.dynatrace.com/managed/observe/application-observability/multidimensional-analysis/top-web-requests
-scraped: 2026-05-12T11:21:44.923850
 ---
 
 # Top web requests
@@ -17,7 +16,7 @@ The highly flexible **Top web requests** view enables you to analyze the top web
 To access the **Top web requests** analysis page
 
 1. Go to **Multidimensional Analysis**.
-2. Click the **Top web requests** tile.
+2. Select the **Top web requests** tile.
 
 ![Top web requests page](https://dt-cdn.net/images/top-web-requests-page-3518-5c4cc7fb02.png)
 
@@ -29,9 +28,9 @@ The **Top web requests** page lists all web requests that occurred during the se
 
 | Parameter | Description |
 | --- | --- |
-| Metric | The metric to be analyzedâset by default to **Request count**. |
-| Aggregation | How the metric values are aggregatedâavailable aggregations depend on the selected metric. |
-| Split mode | How dimensions specified in **Split by dimension** are treated.  * **Split by services**âeach dimension is displayed separately for each service. * **Merge by services**âsame dimensions from different services are merged into one. |
+| Metric | The metric to be analyzed—set by default to **Request count**. |
+| Aggregation | How the metric values are aggregated—available aggregations depend on the selected metric. |
+| Split mode | How dimensions specified in **Split by dimension** are treated.  * **Split by services**—each dimension is displayed separately for each service. * **Merge by services**—same dimensions from different services are merged into one. |
 | Split by dimension | A list of dimensions by which the requests are split. By default the request name (`{Request:Name}`) dimension is set.  You can specify several dimensions. Place your cursor in the input field to see the available options. The requests are split by dimension in the specified order. |
 | Filter requests | Filter the requests to be included to the view. By default the following criteria are set:  * **Service type**: `Web service` * **Service type**: `Web request service`  You can provide additional criteria. Place your cursor in the input field to see the available options.  Criteria of the same type are grouped by the OR logic. Criteria of different types are grouped by the AND logic. |
 
@@ -60,7 +59,7 @@ You can export the table data in a comma-separated values (CSV) file.
 * In the **Actions** column of the table, you can select:
 
   + **Filter** ![Filter](https://dt-cdn.net/images/filter-icon-41ddd02d66.svg "Filter") to filter the view for the specified dimension.
-  + **More** (**â¦**) to access further analysis options from the [**Analyze** menu](/managed/observe/application-observability/services-classic/context-specific-drill-down#analyze-menu "Learn about easy navigation and filtering for services analysis.").
+  + **More** (**…**) to access further analysis options from the [**Analyze** menu](/managed/observe/application-observability/services-classic/context-specific-drill-down#analyze-menu "Learn about easy navigation and filtering for services analysis.").
 
 ## Example use cases
 

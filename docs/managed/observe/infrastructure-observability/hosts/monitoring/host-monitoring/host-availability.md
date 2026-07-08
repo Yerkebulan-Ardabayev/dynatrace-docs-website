@@ -1,7 +1,6 @@
 ---
 title: Host availability
 source: https://docs.dynatrace.com/managed/observe/infrastructure-observability/hosts/monitoring/host-monitoring/host-availability
-scraped: 2026-05-12T12:07:18.763522
 ---
 
 # Host availability
@@ -105,7 +104,7 @@ K8s node termination is supported on the Linux operating system. This event is g
 
 Make sure OneAgent has sufficient rights to register the inhibitor lock.
 
-If your Linux distribution experiences connections problems or the network manager is turned off faster than the event is sent, the shutdown event might not be sent on time.
+If your Linux distribution experiences connection problems or the network manager is turned off faster than the event is sent, the shutdown event might not be sent on time.
 
 ![Host availability event - Kubernetes node shutdown](https://dt-cdn.net/images/host-availability-k8s-node-shutdown-969-3fd821c153.png)
 

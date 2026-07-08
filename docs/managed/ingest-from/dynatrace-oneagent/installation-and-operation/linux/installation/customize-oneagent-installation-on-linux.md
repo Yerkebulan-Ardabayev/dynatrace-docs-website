@@ -1,7 +1,6 @@
 ---
 title: Customize OneAgent installation on Linux
 source: https://docs.dynatrace.com/managed/ingest-from/dynatrace-oneagent/installation-and-operation/linux/installation/customize-oneagent-installation-on-linux
-scraped: 2026-05-12T11:05:42.800759
 ---
 
 # Customize OneAgent installation on Linux
@@ -138,7 +137,7 @@ To change the endpoint after installation, use `--set-server` in the [OneAgent c
 
 **Default value**: `environment specific`
 
-The Dynatrace [environment ID](/managed/discover-dynatrace/get-started/monitoring-environment "Understand and learn how to work with monitoring environments.") you received with your activation email. If you install OneAgent using the Dynatrace **Deploy** page, this is already set to the correct value. If you're selling Dynatrace-based services, use this option to set your customers' IDs from the pool of IDs you purchased from Dynatrace.
+The Dynatrace [environment ID](/managed/discover-dynatrace/get-started/monitoring-environment "Learn what a Dynatrace monitoring environment is, how to find your environment ID, and how to set up and connect multiple environments.") you received with your activation email. If you install OneAgent using the Dynatrace **Deploy** page, this is already set to the correct value. If you're selling Dynatrace-based services, use this option to set your customers' IDs from the pool of IDs you purchased from Dynatrace.
 
 To set the environment ID, pass it as a parameter value:
 
@@ -206,11 +205,11 @@ Starting with OneAgent version 1.301, OneAgent doesn't use the TCP ports for its
 
 Watchdog is a binary used for starting and monitoring OneAgent monitoring processes:
 
-* `oneagentos`âoperating system monitoring
-* `oneagentplugin`âmonitoring using [OneAgent extensions](/managed/ingest-from/extensions/develop-your-extensions#oneagent-extensions "Develop your own Extensions in Dynatrace.")
-* `oneagentextensions`âmonitoring using local [Extensions](/managed/ingest-from/extensions "Learn how to create and manage Dynatrace Extensions.")
-* `oneagentloganalytics`â[Log Monitoring](/managed/analyze-explore-automate/log-monitoring "Learn how to enable Log Monitoring, the insights that Log Monitoring can provide, and more.")
-* `oneagentnetwork`â[network monitoring](/managed/observe/infrastructure-observability/networks "Learn how to monitor network communications.")
+* `oneagentos`—operating system monitoring
+* `oneagentplugin`—monitoring using [OneAgent extensions](/managed/ingest-from/extensions/develop-your-extensions#oneagent-extensions "Develop your own Extensions in Dynatrace.")
+* `oneagentextensions`—monitoring using local [Extensions](/managed/ingest-from/extensions "Learn how to create and manage Dynatrace Extensions.")
+* `oneagentloganalytics`—[Log Monitoring](/managed/analyze-explore-automate/log-monitoring "Learn how to enable Log Monitoring, the insights that Log Monitoring can provide, and more.")
+* `oneagentnetwork`—[network monitoring](/managed/observe/infrastructure-observability/networks "Learn how to monitor network communications.")
 
 Use the `--set-watchdog-portrange=<arg>` parameter to change the watchdog listening port range to `<arg>`. The `<arg>` must contain two port numbers separated by a colon (`:`). For example `50000:50100`. The maximum supported port range is from 1024 to 65535. The port range must cover at least 4 ports. The port number starting the range must be lower. For example:
 
@@ -228,7 +227,7 @@ Use the `--set-auto-update-enabled=<arg>` to enable or disable OneAgent auto-upd
 --set-auto-update-enabled=true
 ```
 
-After you set the parameter to `false`, you won't be able to control OneAgent automatic updates using the Dynatrace web UI at **Settings** > **Updates** > **OneAgent updates**.
+After you set the parameter to `false`, you won't be able to control OneAgent automatic updates using the Dynatrace web UI at **Settings** > **Deployment** > **OneAgent updates**.
 
 ## Host group
 
@@ -338,10 +337,10 @@ It's particularly important to keep your host ID static in dynamic virtual envir
 
 To **define the source for host ID generation**, use `--set-host-id-source` and set it to one of the predefined values:
 
-* `auto` â Let Dynatrace generate the host ID automatically
-* `ip-addresses` â Generate host ID based on the host IP address
-* `mac-addresses` â Generate host ID based on the host's NIC MAC address
-* `fqdn` â Generate host ID based on the host fully qualified domain name (FQDN) in the `host.domain` format. If the FQDN doesn't contain a dot character, the NIC MAC address is used instead.
+* `auto` — Let Dynatrace generate the host ID automatically
+* `ip-addresses` — Generate host ID based on the host IP address
+* `mac-addresses` — Generate host ID based on the host's NIC MAC address
+* `fqdn` — Generate host ID based on the host fully qualified domain name (FQDN) in the `host.domain` format. If the FQDN doesn't contain a dot character, the NIC MAC address is used instead.
 * If you monitor multiple environments, you can split the hosts with identical IPs, MAC addresses, or FQDNs using a different namespace for each environment. The namespace can contain only alphanumeric characters, hyphens, underscores, and periods; the maximum length is 256 characters:
 
 * `ip-addresses;namespace=<namespace>`
@@ -430,7 +429,7 @@ For more information, see [Automatic injection](/managed/ingest-from/dynatrace-o
 
 ## Local metric ingestion
 
-**Default value**: `14449`
+**Default value**: `14499`
 
 You can use the `--set-extensions-ingest-port=<arg>` parameter to change the default communication port used for local metric ingestion. The port is used by [OneAgent REST API](/managed/ingest-from/extend-dynatrace/extend-metrics/ingestion-methods/oneagent-metric-api "Use the Dynatrace API to retrieve the metrics of monitored entities."), [Scripting integration](/managed/ingest-from/extend-dynatrace/extend-metrics/ingestion-methods/oneagent-pipe "Learn how to ingest metrics using local scripting integration.") (`dynatrace_ingest`), and [Telegraf](/managed/ingest-from/extend-dynatrace/extend-metrics/ingestion-methods/telegraf "Ingest Telegraf metrics into Dynatrace.").
 
@@ -494,14 +493,14 @@ In either case, the Dynatrace installer checks whether a required user (`dtuser`
 
 * If a user and a group with the same name both exist and this user has that group set as its primary one, the user is used to start the OneAgent network and plugin modules.
 * If a user doesn't exist, the Dynatrace installer creates this user and group and later starts these unprivileged processes with this new user.
-* If a user exists in the system but doesn't have a group with the same name set as its primary one, the installation is abortedâto use a group with a different name, you must use the `GROUP` parameter.
+* If a user exists in the system but doesn't have a group with the same name set as its primary one, the installation is aborted—to use a group with a different name, you must use the `GROUP` parameter.
 
 `USER` string requirements:
 
 * Can contain only alphanumeric characters, hyphen `-`, underscore `_`, and dot `.`
 * Minimum length is 3 characters
 * Maximum length is 32 characters
-* Can't be a [user identifierï»¿](https://man7.org/linux/man-pages/man7/credentials.7.html) string
+* Can't be a [user identifier﻿](https://man7.org/linux/man-pages/man7/credentials.7.html) string
 
 ### **`GROUP`**
 
@@ -514,7 +513,7 @@ Can only be used in conjunction with the `USER` parameter and is used to specify
 * Can contain only alphanumeric characters, hyphen `-`, underscore `_`, and dot `.`
 * Minimum length is 3 characters
 * Maximum length is 32 characters
-* Can't be a [group identifierï»¿](https://man7.org/linux/man-pages/man7/credentials.7.html) string
+* Can't be a [group identifier﻿](https://man7.org/linux/man-pages/man7/credentials.7.html) string
 
 ## Skipping operating system support check
 

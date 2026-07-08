@@ -1,7 +1,6 @@
 ---
 title: Dashboards API - GET all dashboards
 source: https://docs.dynatrace.com/managed/dynatrace-api/configuration-api/dashboards-api/get-all
-scraped: 2026-05-12T11:14:58.562006
 ---
 
 # Dashboards API - GET all dashboards
@@ -49,7 +48,7 @@ A list of short representations of dashboards.
 
 | Element | Type | Description |
 | --- | --- | --- |
-| dashboards | [DashboardStub[]](#openapi-definition-DashboardStub) | A list of short representations of dashboards. |
+| dashboards | [DashboardStub](#openapi-definition-DashboardStub)[] | A list of short representations of dashboards. |
 
 #### The `DashboardStub` object
 
@@ -57,9 +56,13 @@ A short representation of a dashboard.
 
 | Element | Type | Description |
 | --- | --- | --- |
+| created | integer | The timestamp of dashboard creation, in UTC milliseconds. |
 | id | string | The ID of the dashboard. |
+| lastModified | integer | The timestamp of the last dashboard modification, in UTC milliseconds. |
+| lastViewed | integer | The timestamp of the last dashboard view, in UTC milliseconds. |
 | name | string | The name of the dashboard. |
 | owner | string | The owner of the dashboard. |
+| popularity | integer | The popularity of the dashboard, from 0 (least popular) to 10 (most popular). |
 
 ### Response body JSON models
 
@@ -76,7 +79,19 @@ A short representation of a dashboard.
 
 
 
+"created": 1776772474839,
+
+
+
 "id": "d6740373-ff26-4681-b95f-fd5b858c97f7",
+
+
+
+"lastModified": 1776858899692,
+
+
+
+"lastViewed": 1776945274839,
 
 
 
@@ -84,7 +99,11 @@ A short representation of a dashboard.
 
 
 
-"owner": "admin"
+"owner": "admin",
+
+
+
+"popularity": 5
 
 
 
@@ -96,7 +115,15 @@ A short representation of a dashboard.
 
 
 
+"created": 1776772474839,
+
+
+
 "id": "54b34dbb-2ae7-4c27-9dbc-90a4f4c68b10",
+
+
+
+"lastModified": 1776858899692,
 
 
 

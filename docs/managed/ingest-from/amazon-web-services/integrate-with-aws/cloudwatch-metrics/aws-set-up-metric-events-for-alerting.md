@@ -1,7 +1,6 @@
 ---
 title: Set up metric events for alerting
 source: https://docs.dynatrace.com/managed/ingest-from/amazon-web-services/integrate-with-aws/cloudwatch-metrics/aws-set-up-metric-events-for-alerting
-scraped: 2026-05-12T11:27:37.022242
 ---
 
 # Set up metric events for alerting

@@ -1,7 +1,6 @@
 ---
 title: Migrate deprecated configuration types
 source: https://docs.dynatrace.com/managed/deliver/configuration-as-code/monaco/guides/deprecated-migration
-scraped: 2026-05-12T12:02:58.718740
 ---
 
 # Migrate deprecated configuration types

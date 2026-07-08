@@ -1,7 +1,6 @@
 ---
 title: OpenTelemetry metrics ingest API
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/opentelemetry/post-metrics
-scraped: 2026-05-12T12:10:36.394933
 ---
 
 # OpenTelemetry metrics ingest API
@@ -30,7 +29,7 @@ To learn how to obtain and use it, see [Tokens and authentication](/managed/disc
 
 | Parameter | Type | Description | In | Required |
 | --- | --- | --- | --- | --- |
-| body | byte[] | An [ExportMetricsServiceRequestï»¿](https://github.com/open-telemetry/opentelemetry-proto/blob/v1.2.0/opentelemetry/proto/collector/metrics/v1/metrics_service.proto) message in binary protobuf format. | body | Required |
+| body | byte[] | An [ExportMetricsServiceRequest﻿](https://github.com/open-telemetry/opentelemetry-proto/blob/v1.2.0/opentelemetry/proto/collector/metrics/v1/metrics_service.proto) message in binary protobuf format. | body | Required |
 
 ## Response
 

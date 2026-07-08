@@ -1,7 +1,6 @@
 ---
 title: Set up CORS on Amazon S3
 source: https://docs.dynatrace.com/managed/ingest-from/amazon-web-services/aws-platform/set-up-cors-in-amazon-s3
-scraped: 2026-05-12T11:23:54.488303
 ---
 
 # Set up CORS on Amazon S3
@@ -12,7 +11,7 @@ scraped: 2026-05-12T11:23:54.488303
 * 3-min read
 * Published Jul 19, 2017
 
-Use these guidelines to set up CORS (cross-origin HTTP requests) in AWS for buckets within Amazon S3 (Simple Storage Service). To learn more about CORS and how it works, see [HTTP access control (CORS)ï»¿](https://developer.mozilla.org/en-US/docs/Web/HTTP/Access_control_CORS).
+Use these guidelines to set up CORS (cross-origin HTTP requests) in AWS for buckets within Amazon S3 (Simple Storage Service). To learn more about CORS and how it works, see [HTTP access control (CORS)﻿](https://developer.mozilla.org/en-US/docs/Web/HTTP/Access_control_CORS).
 
 ## Introduction
 
@@ -97,7 +96,7 @@ The first step is to input CORS settings for your resources on S3. This is done 
    ]
    ```
 
-   See [Creating a cross-origin resource sharing (CORS) configurationï»¿](https://docs.aws.amazon.com/AmazonS3/latest/userguide/ManageCorsUsing.html) for details.
+   See [Creating a cross-origin resource sharing (CORS) configuration﻿](https://docs.aws.amazon.com/AmazonS3/latest/userguide/ManageCorsUsing.html) for details.
 6. Select **Save changes** to save your configuration.
 
 ### Configure CloudFront
@@ -109,13 +108,13 @@ With Amazon S3 configured, it's now time to enable CORS headers in CloudFront. O
    ![AWS cors 3](https://dt-cdn.net/images/aws-cors-3-1652-d619805ef5.png)
 
    AWS cors 3
-2. Now you should see your distribution. Click the **Behaviors** tab. Find the behavior entry for your resource, described in the **Path Pattern** column. Select the pattern and click **Edit**. If the behavior entry doesn't exist, you must create it.
+2. Now you should see your distribution. Select the **Behaviors** tab. Find the behavior entry for your resource, described in the **Path Pattern** column. Select the pattern and select **Edit**. If the behavior entry doesn't exist, you need to create it.
 
    ![AWS cors 4](https://dt-cdn.net/images/aws-cors-4-968-4f0dee4542.png)
 
    AWS cors 4
 3. Now we can edit the behavior settings. All CORS-relevant elements are highlighted in red below. First you must choose which HTTP method will be available for this behavior. For **Allowed HTTP Methods**, we recommend that you select the second or third option and select the **OPTIONS** check box, otherwise you won't be able to use CORS for REST calls, which use preflighted requests.
-4. From the **Forward Headers** list, select **Allowlist**. You should then see the **Allowlist headers** menu. Select a particular header from the left listbox and click **Add**. If you don't see a particular header you can input it into **Filter headersâ¦** textbox and click **Add custom**. For CORS, the most important headers are `Origin` and `Access-Control-Allow-Origin`. Other headers are optional and dependent on what you want to achieve.
+4. From the **Forward Headers** list, select **Allowlist**. You should then see the **Allowlist headers** menu. Select a particular header from the left listbox and select **Add**. If you don't see a particular header you can input it into **Filter headers…** textbox and select **Add custom**. For CORS, the most important headers are `Origin` and `Access-Control-Allow-Origin`. Other headers are optional and dependent on what you want to achieve.
 5. Confirm your changes by clicking **Yes, Edit**.
 
    ![AWS cors 5](https://dt-cdn.net/images/aws-cors-5-953-60dec24e19.png)

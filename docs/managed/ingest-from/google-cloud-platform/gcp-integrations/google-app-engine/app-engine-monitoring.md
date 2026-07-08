@@ -1,7 +1,6 @@
 ---
 title: Google App Engine with Operations suite metrics monitoring
 source: https://docs.dynatrace.com/managed/ingest-from/google-cloud-platform/gcp-integrations/google-app-engine/app-engine-monitoring
-scraped: 2026-05-12T11:50:23.325781
 ---
 
 # Google App Engine with Operations suite metrics monitoring

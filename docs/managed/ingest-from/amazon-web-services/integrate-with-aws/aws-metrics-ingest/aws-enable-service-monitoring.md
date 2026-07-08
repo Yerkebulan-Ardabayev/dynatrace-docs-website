@@ -1,7 +1,6 @@
 ---
 title: Enable service monitoring
 source: https://docs.dynatrace.com/managed/ingest-from/amazon-web-services/integrate-with-aws/aws-metrics-ingest/aws-enable-service-monitoring
-scraped: 2026-05-12T12:05:14.495477
 ---
 
 # Enable service monitoring
@@ -30,7 +29,7 @@ To add a service to monitoring
 
 Cloud-service monitoring consumption
 
-All cloud services consume [Davis data units (DDUs)](/managed/license/monitoring-consumption-classic/davis-data-units "Understand how Dynatrace monitoring consumption is calculated based on Davis data units (DDU)."). The amount of DDU consumption per service instance depends on the number of monitored metrics and their dimensions (each metric dimension results in the ingestion of 1 data point; 1 data point consumes 0.001 DDUs).
+All cloud services consume [Davis data units (DDUs)](/managed/license/classic-licensing/davis-data-units "Understand how Dynatrace monitoring consumption is calculated based on Davis data units (DDU)."). The amount of DDU consumption per service instance depends on the number of monitored metrics and their dimensions (each metric dimension results in the ingestion of 1 data point; 1 data point consumes 0.001 DDUs).
 
 Once AWS cloud services are added to monitoring, you might have to wait 15-20 minutes before the metric values are displayed.
 

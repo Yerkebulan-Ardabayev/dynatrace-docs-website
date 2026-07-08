@@ -1,7 +1,6 @@
 ---
 title: Network zones API - GET global configuration
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/network-zones/get-global-config
-scraped: 2026-05-12T11:59:41.355643
 ---
 
 # Network zones API - GET global configuration
@@ -58,7 +57,7 @@ Global network zone configuration.
 | Element | Type | Description |
 | --- | --- | --- |
 | code | integer | The HTTP status code |
-| constraintViolations | [ConstraintViolation[]](#openapi-definition-ConstraintViolation) | A list of constraint violations |
+| constraintViolations | [ConstraintViolation](#openapi-definition-ConstraintViolation)[] | A list of constraint violations |
 | message | string | The error message |
 
 #### The `ConstraintViolation` object

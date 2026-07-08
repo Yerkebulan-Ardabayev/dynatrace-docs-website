@@ -1,12 +1,11 @@
 ---
-title: Configure HTTP monitors
+title: Configure HTTP monitors in Classic
 source: https://docs.dynatrace.com/managed/observe/digital-experience/synthetic-monitoring/http-monitors-classic/configure-http-monitors-classic
-scraped: 2026-05-12T11:31:48.513342
 ---
 
-# Configure HTTP monitors
+# Configure HTTP monitors in Classic
 
-# Configure HTTP monitors
+# Configure HTTP monitors in Classic
 
 * How-to guide
 * 16-min read
@@ -16,7 +15,7 @@ Dynatrace allows you to easily configure your HTTP monitors when first setting t
 
 During HTTP monitor creation, configuration settings appear after you've selected **Create an HTTP monitor**. These settings are a subset of the full set available in edit mode (described below) after the monitor has been deployed. If you're creating a new HTTP monitor, see [Create an HTTP monitor](/managed/observe/digital-experience/synthetic-monitoring/http-monitors-classic/create-an-http-monitor-classic "Learn how to set up an HTTP monitor to check the performance and availability of your site.").
 
-HTTP monitors can be run from our global [public](/managed/observe/digital-experience/synthetic-monitoring/general-information/public-synthetic-locations "Learn about all currently available public Synthetic Monitoring locations.") or [private Synthetic locations](/managed/observe/digital-experience/synthetic-monitoring/private-synthetic-locations/create-a-private-synthetic-location "Learn how to create a private location for synthetic monitoring."), or from cluster-wide locations in Dynatrace Managed. See [Create a private Synthetic location](/managed/observe/digital-experience/synthetic-monitoring/private-synthetic-locations/create-a-private-synthetic-location "Learn how to create a private location for synthetic monitoring.") for details on using ActiveGate for Synthetic Monitoring. See [Requirements for private Synthetic locations](/managed/observe/digital-experience/synthetic-monitoring/private-synthetic-locations/system-and-hardware-requirements-for-private-synthetic "Supported operating systems, Chromium versions, and hardware requirements for running synthetic monitors from private locations") for more information on supported Windows and Linux versions.
+HTTP monitors can be run from our global [public](/managed/observe/digital-experience/synthetic-monitoring/general-information/public-synthetic-locations "Learn about all currently available public Synthetic Monitoring Classic locations.") or [private Synthetic locations](/managed/observe/digital-experience/synthetic-monitoring/private-synthetic-locations/create-a-private-synthetic-location "Learn how to create a private location for synthetic monitoring."), or from cluster-wide locations in Dynatrace Managed. See [Create a private Synthetic location](/managed/observe/digital-experience/synthetic-monitoring/private-synthetic-locations/create-a-private-synthetic-location "Learn how to create a private location for synthetic monitoring.") for details on using ActiveGate for Synthetic Monitoring Classic. See [Requirements for private Synthetic locations](/managed/observe/digital-experience/synthetic-monitoring/private-synthetic-locations/system-and-hardware-requirements-for-private-synthetic "Supported operating systems, Chromium versions, and hardware requirements for running synthetic monitors from private locations") for more information on supported Windows and Linux versions.
 
 ## Configure an existing HTTP monitor
 
@@ -27,7 +26,7 @@ To configure an existing HTTP monitor
 3. Select **Edit** from the quick links in the upper-left corner to go to monitor settings.
 
    Alternatively, you can go to **Synthetic Classic** in list view, select the check box next the monitor you want to edit > **Edit** in the lower-left corner.
-4. Browse through the **Monitor settings** tabs on the left to configure settings (detailed explanations belowâa subset of these settings are available when you first create an HTTP monitor).
+4. Browse through the **Monitor settings** tabs on the left to configure settings (detailed explanations below—a subset of these settings are available when you first create an HTTP monitor).
 
    * [General](#setup)
    * [HTTP requests](#http-requests)
@@ -73,7 +72,7 @@ Select **Assign to application** and choose an application from the list. You ca
 
 You can assign an HTTP monitor to a web, mobile, or custom application.
 
-Note that you cannot block Synthetic Monitoring traffic for RUM applications by [excluding bots, spiders, or the IP addresses of Synthetic locations](/managed/observe/digital-experience/web-applications/additional-configuration/exclude-browsers-robots-and-spiders-from-monitoring "Disable Real User Monitoring for certain IP addresses, browsers, bots, and spiders.").
+Note that you cannot block Synthetic Monitoring traffic for RUM applications by [excluding bots, spiders, or the IP addresses of Synthetic locations](/managed/observe/digital-experience/rum-classic/web-applications/additional-configuration/exclude-browsers-robots-and-spiders-from-monitoring "Disable Real User Monitoring Classic for certain IP addresses, browsers, bots, and spiders.").
 
 ## HTTP requests
 
@@ -86,17 +85,17 @@ In **Visual mode**:
 * If necessary, you can delete requests from your monitor by selecting **x** under **Delete** for the respective request.
 * Use the **Move up/down** arrows ![Move up](https://dt-cdn.net/images/sorter-move-up-6275b6459e.svg "Move up") ![Move down](https://dt-cdn.net/images/sorter-move-down-710c5d6229.svg "Move down") to reorder requests.
 
-You aren't limited to just one mode to view and edit your HTTP requestsâyou can switch back and forth between the UI and script modes by selecting **Visual mode** or **Script mode**. For details on editing your HTTP monitor in JSON format, see [Script mode for HTTP monitor configuration](/managed/observe/digital-experience/synthetic-monitoring/http-monitors-classic/script-mode-for-http-monitor-configuration-classic "Create or edit your HTTP monitors in JSON format.").
+You aren't limited to just one mode to view and edit your HTTP requests—you can switch back and forth between the UI and script modes by selecting **Visual mode** or **Script mode**. For details on editing your HTTP monitor in JSON format, see [Script mode for HTTP monitor configuration](/managed/observe/digital-experience/synthetic-monitoring/http-monitors-classic/script-mode-for-http-monitor-configuration-classic "Create or edit your HTTP monitors in JSON format.").
 
 ### Basic request settings
 
-These settings are available for [OAuth2 authorization requests](/managed/observe/digital-experience/synthetic-monitoring/general-information/synthetic-authentication#oauth2 "Learn how to configure authentication methods for monitoring web applications and API endpoints in Synthetic Monitoring.") as well as all [HTTP methods](#http-methods) in HTTP requests:
+These settings are available for [OAuth2 authorization requests](/managed/observe/digital-experience/synthetic-monitoring/general-information/synthetic-authentication#oauth2 "Learn how to configure authentication methods for monitoring web applications and API endpoints in Synthetic Monitoring Classic.") as well as all [HTTP methods](#http-methods) in HTTP requests:
 
 * **HTTP request URL**
 
   To enhance synthetic monitor security, Dynatrace blocks monitors from sending requests to a local host (for example, `localhost` or `127.0.0.1`).
 
-  You can add [token credentials](/managed/manage/credential-vault#token "Store and manage credentials in the credential vault.") to the **HTTP request URL**âbegin by typing `{cr` to view a list of autocomplete credential suggestions. This list only has credentials that you have permission to use, that is, public credentials or owner-only credentials that you created.
+  You can add [token credentials](/managed/manage/credential-vault#token "Store and manage credentials in the credential vault.") to the **HTTP request URL**—begin by typing `{cr` to view a list of autocomplete credential suggestions. This list only has credentials that you have permission to use, that is, public credentials or owner-only credentials that you created.
 
   + In fields where you can manually insert a reference to a credential (as in the request URL) by copying the credential ID from the vault, use the format `{<credential ID>|token}`, `{<credential ID>|username}`, or `{<credential ID>|password}`, as appropriate for the type of credential you're inserting. You can only copy and paste credentials to which you have access.
   + Who can edit a monitor that has associated credentials?
@@ -112,7 +111,7 @@ These settings are available for [OAuth2 authorization requests](/managed/observ
     Read more about credential permissions in [Credential vault for synthetic monitors](/managed/manage/credential-vault "Store and manage credentials in the credential vault.").
 * **Add authorization data to**
 
-  This field is only available in the **OAuth2 authorization request** typeâsee [Supported authentication methods in Synthetic Monitoring](/managed/observe/digital-experience/synthetic-monitoring/general-information/synthetic-authentication#oauth2 "Learn how to configure authentication methods for monitoring web applications and API endpoints in Synthetic Monitoring.").
+  This field is only available in the **OAuth2 authorization request** type—see [Supported authentication methods in Synthetic Monitoring Classic](/managed/observe/digital-experience/synthetic-monitoring/general-information/synthetic-authentication#oauth2 "Learn how to configure authentication methods for monitoring web applications and API endpoints in Synthetic Monitoring Classic.").
 
 * **HTTP method**
 
@@ -125,7 +124,7 @@ These settings are available for [OAuth2 authorization requests](/managed/observ
   + HEAD
   + PATCH
   + OPTIONS
-* Optional [**User agent**ï»¿](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/User-Agent)
+* Optional [**User agent**﻿](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/User-Agent)
 
   The default user agent is in the format `DynatraceSynthetic/{version}`, where `{version}` is the current version of the Synthetic engine executing the monitor. Even if you define a custom user agent, Dynatrace automatically appends `DynatraceSynthetic/{version}` to the user agent to make sure that synthetic monitoring traffic can be identified. **Do not** use `DynatraceSynthetic/` in your custom user agent; this is reserved for Dynatrace use.
 * **Response status code verification**
@@ -172,7 +171,7 @@ For more information and a method reference, see [Pre- and post-execution script
 
 Note that this setting is called **Set token request authentication** in the **OAuth2 authorization request** type.
 
-Enable this and provide a username/password pair to automate the login process for password-protected sites via **Basic**, **NTLM**, or **Kerberos** authentication. Dynatrace automatically generates the required `Authorization` header with the information you've provided. (Read more about [Supported authentication methods in Synthetic Monitoring](/managed/observe/digital-experience/synthetic-monitoring/general-information/synthetic-authentication "Learn how to configure authentication methods for monitoring web applications and API endpoints in Synthetic Monitoring.").)
+Enable this and provide a username/password pair to automate the login process for password-protected sites via **Basic**, **NTLM**, or **Kerberos** authentication. Dynatrace automatically generates the required `Authorization` header with the information you've provided. (Read more about [Supported authentication methods in Synthetic Monitoring Classic](/managed/observe/digital-experience/synthetic-monitoring/general-information/synthetic-authentication "Learn how to configure authentication methods for monitoring web applications and API endpoints in Synthetic Monitoring Classic.").)
 
 Kerberos authentication isn't supported for monitors assigned to private Synthetic locations, where the ActiveGates handling monitor executions use a proxy to connect to the tested resources.
 
@@ -192,13 +191,13 @@ The credentials you create this way are automatically set to owner-only permissi
 
 #### Add client certificate
 
-Use this option to enable client-side certificate authentication. (Read more about [Supported authentication methods in Synthetic Monitoring](/managed/observe/digital-experience/synthetic-monitoring/general-information/synthetic-authentication "Learn how to configure authentication methods for monitoring web applications and API endpoints in Synthetic Monitoring.").)
+Use this option to enable client-side certificate authentication. (Read more about [Supported authentication methods in Synthetic Monitoring Classic](/managed/observe/digital-experience/synthetic-monitoring/general-information/synthetic-authentication "Learn how to configure authentication methods for monitoring web applications and API endpoints in Synthetic Monitoring Classic.").)
 
 Dynatrace stores and manages all Synthetic Monitoring credentials in a credential vault. Credentials are access controlled and can be designated as owner only or public.
 
 You can choose an existing credential (**Select credentials**). You can only see the credentials that you have access to in this list, that is, public credentials or owner-only credentials created by you.
 
-You can **Create new credentials**âsimply upload a **Certificate file** (in PFX, P12, or PEM format) and enter a **Certificate password**. Provide a **Credential name** and **Save to vault**. The credentials you create this way are automatically set to owner-only permissions and can only be used by you. Note that you can create credentials this way in a new or existing HTTP monitor even if you don't have permissions to access credential management in the [credential vault](/managed/manage/credential-vault "Store and manage credentials in the credential vault.").
+You can **Create new credentials**—simply upload a **Certificate file** (in PFX, P12, or PEM format) and enter a **Certificate password**. Provide a **Credential name** and **Save to vault**. The credentials you create this way are automatically set to owner-only permissions and can only be used by you. Note that you can create credentials this way in a new or existing HTTP monitor even if you don't have permissions to access credential management in the [credential vault](/managed/manage/credential-vault "Store and manage credentials in the credential vault.").
 
 ![Upload a certificate via an HTTP monitor](https://dt-cdn.net/images/httpmonitoruploadcertificatecv-849-c7d1436e3b.png)
 
@@ -214,9 +213,9 @@ The monitor is created with a bare minimum set of headers required by the protoc
 2. Enter a **Header** name and **Value**.
 3. **Add another header** as needed.
 
-Use HTTP headers to implement bearer or token authenticationâread more in [Supported authentication methods in Synthetic Monitoring](/managed/observe/digital-experience/synthetic-monitoring/general-information/synthetic-authentication#bearer-token "Learn how to configure authentication methods for monitoring web applications and API endpoints in Synthetic Monitoring.").)
+Use HTTP headers to implement bearer or token authentication—read more in [Supported authentication methods in Synthetic Monitoring Classic](/managed/observe/digital-experience/synthetic-monitoring/general-information/synthetic-authentication#bearer-token "Learn how to configure authentication methods for monitoring web applications and API endpoints in Synthetic Monitoring Classic.").)
 
-You can add token credentials to the header **Value**âbegin by typing `{cr` to view a list of autocomplete credential suggestions. You can only see the credentials that you have access to in this list, that is, public credentials or owner-only credentials created by you.
+You can add token credentials to the header **Value**—begin by typing `{cr` to view a list of autocomplete credential suggestions. You can only see the credentials that you have access to in this list, that is, public credentials or owner-only credentials created by you.
 
 * In fields where you can manually insert a reference to a credential (as in the header value) by copying the credential ID from the vault, use the format `{<credential ID>|token}`, `{<credential ID>|username}`, or `{<credential ID>|password}`, as appropriate for the type of credential you're inserting. You can only copy and paste credentials to which you have access.
 * Default HTTP headers
@@ -238,12 +237,12 @@ You can add token credentials to the header **Value**âbegin by typing `{cr`
 
 #### Request body
 
-You can send a payload with your **POST**, **PUT**, **DELETE**, and **PATCH** requests. You can add token credentials to the request bodyâbegin by typing `{cr` to view a list of autocomplete credential suggestions. You can only see the credentials that you have access to in this list, that is, public credentials or owner-only credentials created by you. If this field contains an [owner-only token](/managed/manage/credential-vault#owner-shared-public "Store and manage credentials in the credential vault."), it cannot be edited by other users.
+You can send a payload with your **POST**, **PUT**, **DELETE**, and **PATCH** requests. You can add token credentials to the request body—begin by typing `{cr` to view a list of autocomplete credential suggestions. You can only see the credentials that you have access to in this list, that is, public credentials or owner-only credentials created by you. If this field contains an [owner-only token](/managed/manage/credential-vault#owner-shared-public "Store and manage credentials in the credential vault."), it cannot be edited by other users.
 
 Specify the request body format and contents:
 
-* **x-www-form-urlencoded**âSelect **Add property** and enter one or more pairs of property keys and values.
-* **raw**âEnter the request body in the edit box.
+* **x-www-form-urlencoded**—Select **Add property** and enter one or more pairs of property keys and values.
+* **raw**—Enter the request body in the edit box.
 
 In fields where you can manually insert a reference to a credential (as in the **Value** of a key-value pair in the request body) by copying the credential ID from the vault, use the format `{<credential ID>|token}`, `{<credential ID>|username}`, or `{<credential ID>|password}`, as appropriate for the type of credential you're inserting. You can only copy and paste credentials to which you have access.
 
@@ -342,7 +341,7 @@ Turn on this option to hide potentially sensitive information (contained in, say
 
 You need to do this for each request you wish to limit the display of. Request and response bodies, values of request and response headers, and peer certificate details are then replaced by placeholder text.
 
-This option is automatically turned on for OAuth 2.0 requests and [external vault synchronization monitors](/managed/observe/digital-experience/synthetic-monitoring/general-information/external-vault-integration "Synchronize Synthetic Monitoring credentials with external vaults."). Users with access to any credentials contained in the monitor may disable it.
+This option is automatically turned on for OAuth 2.0 requests and [external vault synchronization monitors](/managed/observe/digital-experience/synthetic-monitoring/general-information/external-vault-integration "Synchronize Synthetic Monitoring Classic credentials with external vaults."). Users with access to any credentials contained in the monitor may disable it.
 
 #### Adapt request timeout
 
@@ -352,10 +351,10 @@ Enable this option to edit the request timeout. Note that the default request ti
 
 Two factors make up your monitoring schedule:
 
-* **Frequency**âselect how frequently your HTTP monitor is executed from each location: every `1`, `2`, `5`, `10`, `15`, `30`, or `60` minutes. You can also set up your monitor to be executed [**On demand only**](/managed/observe/digital-experience/synthetic-monitoring/general-information/on-demand-executions "Execute synthetic monitors on demand from public or private locations").
+* **Frequency**—select how frequently your HTTP monitor is executed from each location: every `1`, `2`, `5`, `10`, `15`, `30`, or `60` minutes. You can also set up your monitor to be executed [**On demand only**](/managed/observe/digital-experience/synthetic-monitoring/general-information/on-demand-executions "Execute synthetic monitors on demand from public or private locations").
 * **Location** selections specify the locations from which the monitor is executed.
 
-  HTTP monitors can be executed from our global [public](/managed/observe/digital-experience/synthetic-monitoring/general-information/public-synthetic-locations "Learn about all currently available public Synthetic Monitoring locations.") or [private Synthetic locations](/managed/observe/digital-experience/synthetic-monitoring/private-synthetic-locations/create-a-private-synthetic-location "Learn how to create a private location for synthetic monitoring."), or from cluster-wide locations in Dynatrace Managed.
+  HTTP monitors can be executed from our global [public](/managed/observe/digital-experience/synthetic-monitoring/general-information/public-synthetic-locations "Learn about all currently available public Synthetic Monitoring Classic locations.") or [private Synthetic locations](/managed/observe/digital-experience/synthetic-monitoring/private-synthetic-locations/create-a-private-synthetic-location "Learn how to create a private location for synthetic monitoring."), or from cluster-wide locations in Dynatrace Managed.
 
 Together, these factors determine the number of HTTP monitor executions per hour. For example, running a monitor from 3 locations every 15 minutes results in 12 executions per hour (4 times per hour from each of the 3 locations). Monitor executions are evenly spaced within the selected interval. That is, for a monitor running from 3 locations every 15 minutes, executions are triggered at 5-minute intervals.
 
@@ -363,7 +362,7 @@ Note that all public Synthetic locations are set to Coordinated Universal Time, 
 
 ## Outage handling
 
-Outage handling settings determine what to do in the event of monitor failures (availability outages). Default outage handling behavior can be defined at the environment level for all browser monitors or all HTTP monitorsâgo to **Settings** > **Web and mobile monitoring** and select the respective **Outage handling** tab. You can opt to use Dynatrace-provided defaults (**Use defaults**) to define environment-level outage handling. When enabled, these defaults apply for all browser or HTTP monitors that do not override them with monitor-level outage handling settings.
+Outage handling settings determine what to do in the event of monitor failures (availability outages). Default outage handling behavior can be defined at the environment level for all browser monitors or all HTTP monitors—go to **Settings** > **Web and mobile monitoring** and select the respective **Outage handling** tab. You can opt to use Dynatrace-provided defaults (**Use defaults**) to define environment-level outage handling. When enabled, these defaults apply for all browser or HTTP monitors that do not override them with monitor-level outage handling settings.
 
 At the monitor level, this setting is available in edit mode only. The outage handling options available at the environment or the monitor level are the same. You can override the default, environment-wide settings at the monitor level. You can also restore environment-level defaults (**Remove override**).
 
@@ -384,14 +383,14 @@ You can disable problem generation for global and local outages if you're testin
 
 Outage handling
 
-An outage problem is resolved when there are as many consecutive successful executions as the configured number of failed executions for generating the problem. The successful executions must occur on the number of locations that = the total number of locationsâthe number of locations required for the problem+1.
+An outage problem is resolved when there are as many consecutive successful executions as the configured number of failed executions for generating the problem. The successful executions must occur on the number of locations that = the total number of locations–the number of locations required for the problem+1.
 
 Note that when a global outage problem is resolved, you might still have one or more locations experiencing monitor failure. Set up local outage rules to be alerted on these.
 
-See [Synthetic calculations](/managed/observe/digital-experience/synthetic-monitoring/general-information/synthetic-calculations "Understand Synthetic Monitoring metric calculations.") for more information on:
+See [Synthetic calculations](/managed/observe/digital-experience/synthetic-monitoring/general-information/synthetic-calculations "Understand Synthetic Monitoring Classic metric calculations.") for more information on:
 
-* The difference between [outage resolution and timeouts](/managed/observe/digital-experience/synthetic-monitoring/general-information/synthetic-calculations#availability-problems "Understand Synthetic Monitoring metric calculations.").
-* [Excluding synthetic monitor executions during maintenance windows from availability calculations](/managed/observe/digital-experience/synthetic-monitoring/general-information/synthetic-calculations#m-windows-availability "Understand Synthetic Monitoring metric calculations.").
+* The difference between [outage resolution and timeouts](/managed/observe/digital-experience/synthetic-monitoring/general-information/synthetic-calculations#availability-problems "Understand Synthetic Monitoring Classic metric calculations.").
+* [Excluding synthetic monitor executions during maintenance windows from availability calculations](/managed/observe/digital-experience/synthetic-monitoring/general-information/synthetic-calculations#m-windows-availability "Understand Synthetic Monitoring Classic metric calculations.").
 
 Retry on error is not available for HTTP monitors.
 
@@ -404,13 +403,13 @@ Performance thresholds enable you to be proactive about site latency.
 3. Select one of the requests in your monitor or **Sum of all requests**.
 4. Set **Threshold value** to the threshold time in seconds. You can see the 24-hour average performance up until that point to help you set a threshold. Then select **Add threshold**.
 
-   You can set multiple performance thresholdsâfor the monitor as a whole as well as for individual requests. Performance thresholds are defined as the **Response time** of the monitor or of individual requests.
+   You can set multiple performance thresholds—for the monitor as a whole as well as for individual requests. Performance thresholds are defined as the **Response time** of the monitor or of individual requests.
 
 Dynatrace generates a performance problem if a monitor at a given location violates **any** of the defined performance thresholds in 3 of the 5 most recent executions, unless there is an open maintenance window for the monitor. That is, the violations must occur at the same location. Multiple locations can have such violations and be included in a problem.
 
 The problem is closed if the performance thresholds are not violated in the 5 most recent executions at each of the previously affected locations.
 
-See [Synthetic calculations](/managed/observe/digital-experience/synthetic-monitoring/general-information/synthetic-calculations#performance-problems "Understand Synthetic Monitoring metric calculations.") for more information.
+See [Synthetic calculations](/managed/observe/digital-experience/synthetic-monitoring/general-information/synthetic-calculations#performance-problems "Understand Synthetic Monitoring Classic metric calculations.") for more information.
 
 ## Related topics
 

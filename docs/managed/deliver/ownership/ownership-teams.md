@@ -1,7 +1,6 @@
 ---
 title: Create and manage teams for entity ownership
 source: https://docs.dynatrace.com/managed/deliver/ownership/ownership-teams
-scraped: 2026-05-12T11:12:47.416400
 ---
 
 # Create and manage teams for entity ownership
@@ -59,11 +58,11 @@ To create a team via the Dynatrace web UI
    * Unlike the main team identifier, supplementary identifiers **may be edited and deleted**.
 7. Select all **Responsibilities** that apply to the team. Although optional, these toggles provide critical metadata at a glance and help you specify the appropriate contact details.
 
-   * **Development**âTeams responsible for developing and maintaining the underlying software code
-   * **Security**âTeams tasked with assessing the impact and priority of vulnerabilities and responding to them
-   * **Operations**âTeams that deploy and manage software, with a focus on performance and availability
-   * **Infrastructure**âTeams responsible for installing and maintaining IT hardware
-   * **Line of business**âTeams responsible for meeting customer and business goals
+   * **Development**—Teams responsible for developing and maintaining the underlying software code
+   * **Security**—Teams tasked with assessing the impact and priority of vulnerabilities and responding to them
+   * **Operations**—Teams that deploy and manage software, with a focus on performance and availability
+   * **Infrastructure**—Teams responsible for installing and maintaining IT hardware
+   * **Line of business**—Teams responsible for meeting customer and business goals
 8. Add all **Contact details** that apply to the team. You can provide specific routing information for targeted notifications via email, Jira, Microsoft Teams, and Slack.
 
    You can add as many entries as required. Create a separate entry for each email address, Slack channel, Microsoft team, or Jira project you want to add.
@@ -72,10 +71,10 @@ To create a team via the Dynatrace web UI
    2. Select an **Integration type**.
    3. Provide details as follows:
 
-      * **Email**âProvide a single **Email** address.
-      * **Jira**âEnter the Jira **Project** name, **Default assignee** Required, and project **URL**.
-      * **MS Teams**âProvide the **Team** name and **URL** (you can provide the link to a team channel from MS Teams).
-      * **Slack**âProvide the **Channel** name and **URL**.
+      * **Email**—Provide a single **Email** address.
+      * **Jira**—Enter the Jira **Project** name, **Default assignee** Required, and project **URL**.
+      * **MS Teams**—Provide the **Team** name and **URL** (you can provide the link to a team channel from MS Teams).
+      * **Slack**—Provide the **Channel** name and **URL**.
 9. Provide any other **Links** describing the team or its responsibilities.
 10. Select **Add link**.
 11. Select the link **Type**, for example, **Documentation** or **Wiki**.
@@ -86,7 +85,7 @@ To create a team via the Dynatrace web UI
 
     Keys for additional information:
 
-    * Must be 1â100 characters long.
+    * Must be 1–100 characters long.
     * Can contain letters, numbers, special characters, and spaces.
 14. Provide an **External ID** to be used only for automation purposes such as importing or updating team information. For example, use this field to store the unique ID assigned to a team in an external system such as Active Directory.
 
@@ -133,7 +132,7 @@ Revision simple view
 
 Revision YAML view
 
-You can also filter revision history for a specific teamâpaste any setting ID **Key** into the **Filter** field .
+You can also filter revision history for a specific team—paste any setting ID **Key** into the **Filter** field .
 
 ### Additional team management
 

@@ -1,7 +1,6 @@
 ---
 title: Data privacy API
 source: https://docs.dynatrace.com/managed/dynatrace-api/configuration-api/data-privacy-api
-scraped: 2026-05-12T11:04:32.944249
 ---
 
 # Data privacy API

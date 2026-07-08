@@ -1,7 +1,6 @@
 ---
 title: Dashboards API - POST a dashboard
 source: https://docs.dynatrace.com/managed/dynatrace-api/configuration-api/dashboards-api/post-dashboard
-scraped: 2026-05-12T11:14:42.629636
 ---
 
 # Dashboards API - POST a dashboard
@@ -47,7 +46,7 @@ Configuration of a dashboard.
 | dashboardMetadata | [DashboardMetadata](#openapi-definition-DashboardMetadata) | Parameters of a dashboard. | Required |
 | id | string | The ID of the dashboard. | Optional |
 | metadata | [ConfigurationMetadata](#openapi-definition-ConfigurationMetadata) | Metadata useful for debugging | Optional |
-| tiles | [Tile[]](#openapi-definition-Tile) | The list of tiles on the dashboard. | Required |
+| tiles | [Tile](#openapi-definition-Tile)[] | The list of tiles on the dashboard. | Required |
 
 #### The `DashboardMetadata` object
 
@@ -91,7 +90,7 @@ Dashboard filter configuration of a dashboard.
 | Element | Type | Description | Required |
 | --- | --- | --- | --- |
 | filters | string[] | A set of all possible global dashboard filters that can be applied to a dashboard  Currently supported values are:  ```  OS_TYPE,  SERVICE_TYPE,  DEPLOYMENT_TYPE,  APPLICATION_INJECTION_TYPE,  PAAS_VENDOR_TYPE,  DATABASE_VENDOR,  HOST_VIRTUALIZATION_TYPE,  HOST_MONITORING_MODE,  KUBERNETES_CLUSTER,  RELATED_CLOUD_APPLICATION,  RELATED_NAMESPACE,  SERVICE_TAG_KEY:<tagname>,  HOST_TAG_KEY:<tagname>,  APPLICATION_TAG_KEY:<tagname>,  CUSTOM_DIMENSION:<key>,  PROCESS_GROUP_TAG_KEY:<tagname>,  PROCESS_GROUP_INSTANCE_TAG_KEY:<tagname> ``` | Required |
-| genericTagFilters | [DashboardGenericTagFilter[]](#openapi-definition-DashboardGenericTagFilter) | A set of generic tag filters that can be applied to a dashboard | Required |
+| genericTagFilters | [DashboardGenericTagFilter](#openapi-definition-DashboardGenericTagFilter)[] | A set of generic tag filters that can be applied to a dashboard | Required |
 
 #### The `DashboardGenericTagFilter` object
 
@@ -118,7 +117,7 @@ Metadata useful for debugging
 
 Configuration of a tile.
 
-The actual set of fields depends on the type of the tile. Find the list of actual objects in the description of the **tileType** field or see [Dashboards API - Tile JSON modelsï»¿](https://dt-url.net/2wc3spx).
+The actual set of fields depends on the type of the tile. Find the list of actual objects in the description of the **tileType** field or see [Dashboards API - Tile JSON models﻿](https://dt-url.net/2wc3spx).
 
 | Element | Type | Description | Required |
 | --- | --- | --- | --- |
@@ -540,7 +539,7 @@ The short representation of a Dynatrace entity.
 | Element | Type | Description |
 | --- | --- | --- |
 | code | integer | The HTTP status code |
-| constraintViolations | [ConstraintViolation[]](#openapi-definition-ConstraintViolation) | A list of constraint violations |
+| constraintViolations | [ConstraintViolation](#openapi-definition-ConstraintViolation)[] | A list of constraint violations |
 | message | string | The error message |
 
 #### The `ConstraintViolation` object
@@ -671,7 +670,7 @@ To learn how to obtain and use it, see [Tokens and authentication](/managed/disc
 | Element | Type | Description |
 | --- | --- | --- |
 | code | integer | The HTTP status code |
-| constraintViolations | [ConstraintViolation[]](#openapi-definition-ConstraintViolation) | A list of constraint violations |
+| constraintViolations | [ConstraintViolation](#openapi-definition-ConstraintViolation)[] | A list of constraint violations |
 | message | string | The error message |
 
 #### The `ConstraintViolation` object
@@ -747,7 +746,7 @@ A list of constraint violations
 
 In this example, the request creates a new dashboard with the **REST example** name. The dashboard shows data for the **Easytravel** management zone in the time frame of **last 2 hours**.
 
-The dashboard contains just one tileâa **User Session Query** tile that queries for all user actions that, according to their Apdex status, are either **tolerating** or **frustrated**.
+The dashboard contains just one tile—a **User Session Query** tile that queries for all user actions that, according to their Apdex status, are either **tolerating** or **frustrated**.
 
 The API token is passed in the **Authorization** header.
 

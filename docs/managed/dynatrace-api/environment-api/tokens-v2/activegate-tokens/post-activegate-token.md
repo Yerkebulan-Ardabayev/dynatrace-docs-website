@@ -1,7 +1,6 @@
 ---
 title: ActiveGate tokens API - POST a token
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/tokens-v2/activegate-tokens/post-activegate-token
-scraped: 2026-05-12T12:09:53.794174
 ---
 
 # ActiveGate tokens API - POST a token
@@ -98,7 +97,7 @@ The newly created ActiveGate token.
 | Element | Type | Description |
 | --- | --- | --- |
 | expirationDate | string | The token expiration date in ISO 8601 format (`yyyy-MM-dd'T'HH:mm:ss.SSS'Z'`). |
-| id | string | The ActiveGate token identifier, consisting of [prefix and public partï»¿](https://dt-url.net/rn00tjg) of the token. |
+| id | string | The ActiveGate token identifier, consisting of [prefix and public part﻿](https://dt-url.net/rn00tjg) of the token. |
 | token | string | The secret of the token. |
 
 #### The `ErrorEnvelope` object
@@ -112,7 +111,7 @@ The newly created ActiveGate token.
 | Element | Type | Description |
 | --- | --- | --- |
 | code | integer | The HTTP status code |
-| constraintViolations | [ConstraintViolation[]](#openapi-definition-ConstraintViolation) | A list of constraint violations |
+| constraintViolations | [ConstraintViolation](#openapi-definition-ConstraintViolation)[] | A list of constraint violations |
 | message | string | The error message |
 
 #### The `ConstraintViolation` object

@@ -1,7 +1,6 @@
 ---
 title: OneAgent requirements
 source: https://docs.dynatrace.com/managed/ingest-from/dynatrace-oneagent/oa-requirements
-scraped: 2026-05-12T11:14:35.604873
 ---
 
 # OneAgent requirements
@@ -25,25 +24,25 @@ The Dynatrace OneAgent version where this is enforced is will be announced in a 
 
 #### Intel
 
-Nehalem was the first Intel architecture to fully support the x86-64-v2 baseline. Please consult the [Intel product specificationï»¿](https://www.intel.com/content/www/us/en/products/overview.html) for further information.
+Nehalem was the first Intel architecture to fully support the x86-64-v2 baseline. Please consult the [Intel product specification﻿](https://www.intel.com/content/www/us/en/products/overview.html) for further information.
 
 **Example Intel CPUs:**
 
-* **Intel Core i7-920** â Desktop (LGA 1366)
-* **Intel Xeon X5550** â Server (LGA 1366)
-* **Intel Core i5-750** â Mainstream desktop (LGA 1156)
-* **Intel Xeon L5520** â Low-power server CPU
+* **Intel Core i7-920** – Desktop (LGA 1366)
+* **Intel Xeon X5550** – Server (LGA 1366)
+* **Intel Core i5-750** – Mainstream desktop (LGA 1156)
+* **Intel Xeon L5520** – Low-power server CPU
 
 #### AMD
 
-Bulldozer and its successors support the x86-64-v2 baseline. For some CPUs, support was added at a specific stepping. Please consult the [AMD product specificationï»¿](https://www.amd.com/en/products/specifications.html) for further information.
+Bulldozer and its successors support the x86-64-v2 baseline. For some CPUs, support was added at a specific stepping. Please consult the [AMD product specification﻿](https://www.amd.com/en/products/specifications.html) for further information.
 
 **Example AMD CPUs:**
 
-* **AMD FX-4100** â Desktop (AM3+)
-* **AMD Opteron 6200 Series** â Server (Socket G34)
-* **AMD A8-3870K** â APU (FM1)
-* **AMD FX-8350** â High-performance desktop (AM3+)
+* **AMD FX-4100** – Desktop (AM3+)
+* **AMD Opteron 6200 Series** – Server (Socket G34)
+* **AMD A8-3870K** – APU (FM1)
+* **AMD FX-8350** – High-performance desktop (AM3+)
 
 * **x86-64-v2** is a baseline that includes support for SSE3, SSSE3, SSE4.1, SSE4.2, POPCNT, and CMPXCHG16B instructions.
 * Systems not meeting the x86-64-v2 baseline will not be able to run the Dynatrace OneAgent.
@@ -73,7 +72,7 @@ OneAgent code module deep monitoring memory demand can't be expressed exactly as
 
 #### Application dependent memory demand
 
-Code level visibility and hotspot analysis mandate the recording of function execution time and frequency. Therefore, the number of functions in the application and their execution defines the number data items and ultimately the memory footprint needed to measure function performance. The same applies to distributed traces informationâthe memory demand for gathering distributed traces information depends on the number of concurrent requests processed by the application and the complexity (i.e., the length of the PurePath) of the executions triggered by these requests.
+Code level visibility and hotspot analysis mandate the recording of function execution time and frequency. Therefore, the number of functions in the application and their execution defines the number data items and ultimately the memory footprint needed to measure function performance. The same applies to distributed traces information—the memory demand for gathering distributed traces information depends on the number of concurrent requests processed by the application and the complexity (i.e., the length of the PurePath) of the executions triggered by these requests.
 
 #### Configuration dependent memory demand
 

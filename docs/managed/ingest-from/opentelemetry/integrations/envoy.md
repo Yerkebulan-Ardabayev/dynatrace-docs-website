@@ -1,7 +1,6 @@
 ---
 title: Configure OpenTelemetry tracing with Envoy
 source: https://docs.dynatrace.com/managed/ingest-from/opentelemetry/integrations/envoy
-scraped: 2026-05-12T11:23:45.595247
 ---
 
 # Configure OpenTelemetry tracing with Envoy
@@ -10,7 +9,7 @@ scraped: 2026-05-12T11:23:45.595247
 
 * How-to guide
 * 4-min read
-* Updated on Apr 07, 2026
+* Updated on May 11, 2026
 
 Support statement
 
@@ -28,7 +27,10 @@ This page describes how to configure your Envoy version 1.30+ instance to export
 
   1. Go to the applicable configuration page:
 
-     + For the entire environment, go to **Settings** > **Monitoring** > **Monitored technologies**.
+     + For the entire environment:
+
+       - In Latest Dynatrace, go to ![Settings](https://dt-cdn.net/images/settings-icon-256-38e1321b51.webp "Settings") **Settings** > **Collect and capture** > **General monitoring settings** > **Monitored technologies**.
+       - In Dynatrace Classic, go to **Settings** > **Monitoring** > **Monitored technologies**.
      + For a particular host, go to **Your host** > **Host settings** > **General**.
   2. Find **Envoy** in the list of monitored technologies and select  **Edit**.
   3. Select the **Monitor Envoy** toggle, as appropriate, to disable the OneAgent Envoy code module.
@@ -45,11 +47,11 @@ This page describes how to configure your Envoy version 1.30+ instance to export
 
 2. Add Dynatrace cluster entry for OpenTelemetry export
 
-For Envoy to send traces to Dynatrace, you first need to configure a [clusterï»¿](https://www.envoyproxy.io/docs/envoy/latest/intro/arch_overview/intro/terminology) entry for Dynatrace in the Envoy configuration file. For that, add the [cluster configuration entry as obtained in step 2](#snippets) under the top-level `clusters` key.
+For Envoy to send traces to Dynatrace, you first need to configure a [cluster﻿](https://www.envoyproxy.io/docs/envoy/latest/intro/arch_overview/intro/terminology) entry for Dynatrace in the Envoy configuration file. For that, add the [cluster configuration entry as obtained in step 2](#snippets) under the top-level `clusters` key.
 
 3. Dynatrace-specific configuration for the OpenTelemetry tracer
 
-Next, you need to add the tracing provider to the [HTTP connection manager filterï»¿](https://www.envoyproxy.io/docs/envoy/latest/intro/arch_overview/http/http_connection_management#http-connection-management) in the [Envoy configuration fileï»¿](https://www.envoyproxy.io/docs/envoy/latest/start/quick-start/configuration-static#listeners).
+Next, you need to add the tracing provider to the [HTTP connection manager filter﻿](https://www.envoyproxy.io/docs/envoy/latest/intro/arch_overview/http/http_connection_management#http-connection-management) in the [Envoy configuration file﻿](https://www.envoyproxy.io/docs/envoy/latest/start/quick-start/configuration-static#listeners).
 
 Use the [tracer configuration entry you obtained in step 2](#snippets), configure the [API token](#prerequisites) under `tracing` - `provider` - `typed_config` - `http_service` - `request_headers_to_add` - `header` - `value` (the correct syntax is `value: "Api-Token YOUR_API_TOKEN_HERE"`), and add the tracer configuration under aforementioned `filters` entry.
 

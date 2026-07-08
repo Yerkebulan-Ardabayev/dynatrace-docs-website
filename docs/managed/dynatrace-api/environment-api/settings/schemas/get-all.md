@@ -1,7 +1,6 @@
 ---
 title: Settings API - GET all schemas
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/settings/schemas/get-all
-scraped: 2026-05-12T11:38:44.544349
 ---
 
 # Settings API - GET all schemas
@@ -50,7 +49,7 @@ The list of available settings schemas.
 
 | Element | Type | Description |
 | --- | --- | --- |
-| items | [SchemaStub[]](#openapi-definition-SchemaStub) | A list of settings schemas. |
+| items | [SchemaStub](#openapi-definition-SchemaStub)[] | A list of settings schemas. |
 | totalCount | integer | The number of schemas in the list. |
 
 #### The `SchemaStub` object
@@ -78,7 +77,7 @@ The short representation of the settings schema.
 | Element | Type | Description |
 | --- | --- | --- |
 | code | integer | The HTTP status code |
-| constraintViolations | [ConstraintViolation[]](#openapi-definition-ConstraintViolation) | A list of constraint violations |
+| constraintViolations | [ConstraintViolation](#openapi-definition-ConstraintViolation)[] | A list of constraint violations |
 | message | string | The error message |
 
 #### The `ConstraintViolation` object

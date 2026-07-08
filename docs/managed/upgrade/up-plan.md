@@ -1,7 +1,6 @@
 ---
 title: Plan deployment upgrade
 source: https://docs.dynatrace.com/managed/upgrade/up-plan
-scraped: 2026-05-12T12:07:05.314906
 ---
 
 # Plan deployment upgrade
@@ -39,7 +38,7 @@ To provide value to its customers, Dynatrace collects large amounts of data, oft
 
 A use-case-centric approach enables you to configure Dynatrace to your specific needs and compliance requirements, including GDPR and CCPA compliance. You may exclude confidential data, including personal data, at capture with ease of configuration and strong defaults to automatically exclude data, including IBANs and payment card numbers for PCI-DSS compliance.
 
-You may instead choose to process confidential data on the cluster to benefit from the initial analysis of the data, without storing the data on the clusterâthe data is excluded at storage, with easy configuration and helpful defaults.
+You may instead choose to process confidential data on the cluster to benefit from the initial analysis of the data, without storing the data on the cluster—the data is excluded at storage, with easy configuration and helpful defaults.
 
 Additionally, you have fine-grained control over access to your data and the ability to automate transparency into access events via an audit log API that enables you to integrate audit log events with your internal SIEM (security information and event management) solutions and a permission management API to automate restrictions in access in response to SIEM.
 
@@ -58,7 +57,7 @@ Strong privacy-by-design and privacy-by-default enable you to configure Dynatrac
 * Session Replay
 * Real User Monitoring
 
-Information about each of these topics can be found at the [Dynatrace Trust Centerï»¿](https://www.dynatrace.com/company/trust-center/). In particular, please review these topics:
+Information about each of these topics can be found at the [Dynatrace Trust Center﻿](https://www.dynatrace.com/company/trust-center/). In particular, please review these topics:
 
 * [Personal data captured by Dynatrace](/managed/manage/data-privacy-and-security/data-privacy/personal-data-captured-by-dynatrace "Find out what types of end-user data may be captured during Dynatrace monitoring and the methods that are available for masking personal end-user data.")
 * [Levels of data protection](/managed/manage/data-privacy-and-security/data-privacy/levels-of-data-protection "Learn how Dynatrace protects end-user information by applying situation-dependent levels of protection.")
@@ -75,7 +74,7 @@ For each safeguard, Dynatrace defines a default and a hard limit. On SaaS, setti
 
 If data retention limits need to be increased above the default SaaS limit, we recommend that you verify increased limit requirements with your Dynatrace team ahead of the planned upgrade and clarify any potential implications due to requesting limit increases.
 
-Limits generally cannot be increased above the hard limit and if there is a requirement to exceed a hard limit, please reach out to [Dynatrace Supportï»¿](https://www.dynatrace.com/services-support/).
+Limits generally cannot be increased above the hard limit and if there is a requirement to exceed a hard limit, please reach out to [Dynatrace Support﻿](https://www.dynatrace.com/services-support/).
 
 ### SQL bind variables
 
@@ -87,15 +86,15 @@ You can use the Dynatrace API to automate your monitoring tasks and export diffe
 
 ### Dynatrace software updates
 
-In Dynatrace SaaS, all cluster software upgrades are managed by Dynatrace, automatically ensuring the most secure and optimized version of Dynatrace, as well as access to all of the latest advances, including Early Access features. SaaS updates take place automatically with no interruptions or downtime to monitoring and have been designed to be seamless. Dynatrace SaaS clusters are upgraded approximately once every two weeks. While the cluster will be automatically updated, you retain full control over [OneAgent update](/managed/ingest-from/dynatrace-oneagent/oneagent-update "Learn how to update OneAgent.") and [ActiveGate update settings](/managed/ingest-from/dynatrace-activegate/operation/update-activegate "Learn how to find out which version of ActiveGate you have installed and how you can download and install the latest version.").
+In Dynatrace SaaS, all cluster software upgrades are managed by Dynatrace, automatically ensuring the most secure and optimized version of Dynatrace, as well as access to all of the latest advances, including Early Access features. SaaS updates take place automatically with no interruptions or downtime to monitoring and have been designed to be seamless. Dynatrace SaaS clusters are upgraded approximately once every two weeks. While the cluster will be automatically updated, you retain full control over [OneAgent update](/managed/ingest-from/dynatrace-oneagent/oneagent-update "Learn how to update OneAgent.") and [ActiveGate update settings](/managed/ingest-from/dynatrace-activegate/operation/update-activegate "Configure Environment ActiveGate automatic updates---update mode, target version, and update windows---and download or install manually.").
 
 ### Adaptive Traffic Management
 
-One of the core capabilities of Dynatrace is the automatic capture of distributed traces. Dynatrace protects the performance and availability of the platform by proactively managing the rate of traffic capture. The method of Adaptive Traffic Management on Dynatrace SaaS is different from Dynatrace Managed: Automatically adapted and tuned with less dependency on the individual monitored application architecture. Safeguards are applied to the overall volume sent to the Dynatrace environment, enabling limits to scale with licensing and allowing high-volume entry points to send more traffic. For in-depth information, read [Upgrade to Dynatrace SaaSï»¿](https://docs.dynatrace.com/docs/shortlink/up-upgrade) and note the specified limits.
+One of the core capabilities of Dynatrace is the automatic capture of distributed traces. Dynatrace protects the performance and availability of the platform by proactively managing the rate of traffic capture. The method of Adaptive Traffic Management on Dynatrace SaaS is different from Dynatrace Managed: Automatically adapted and tuned with less dependency on the individual monitored application architecture. Safeguards are applied to the overall volume sent to the Dynatrace environment, enabling limits to scale with licensing and allowing high-volume entry points to send more traffic. For in-depth information, read [Upgrade to Dynatrace SaaS﻿](https://docs.dynatrace.com/docs/shortlink/up-upgrade) and note the specified limits.
 
 ### RUM overload prevention
 
-You can control the count of captured web, mobile, and OpenKit app user actions by setting the maximum user actions per minute limit. Once this limit is reached, Dynatrace automatically throttles the number of user sessions captured until the number of user actions returns to within licensed limits. Plan to set up RUM overload prevention to match your requirements in your Dynatrace SaaS environment. For details, see [RUM: What does a 'Max. user actions per minute exceeded' message mean?ï»¿](https://dt-url.net/h92389d) in the Dynatrace Community.
+You can control the count of captured web, mobile, and OpenKit app user actions by setting the maximum user actions per minute limit. Once this limit is reached, Dynatrace automatically throttles the number of user sessions captured until the number of user actions returns to within licensed limits. Plan to set up RUM overload prevention to match your requirements in your Dynatrace SaaS environment. For details, see [RUM: What does a 'Max. user actions per minute exceeded' message mean?﻿](https://dt-url.net/h92389d) in the Dynatrace Community.
 
 If any additional information is needed to ensure that data security, privacy, compliance and governance concerns have been addressed, please contact your Dynatrace Sales team.
 
@@ -242,7 +241,7 @@ OneAgent update
 
 #### Decide on the migration approach: self-service or with Dynatrace ACE Services
 
-Dynatrace offers different levels of [ACE serviceï»¿](https://www.dynatrace.com/services-support/ace-services/) engagements. If you want assistance from Dynatrace experts for upgrading to SaaS, please reach out to your Sales representative.
+Dynatrace offers different levels of [ACE service﻿](https://www.dynatrace.com/services-support/ace-services/) engagements. If you want assistance from Dynatrace experts for upgrading to SaaS, please reach out to your Sales representative.
 
 ### Create an upgrade plan
 
@@ -292,7 +291,7 @@ Adjust existing processes and workflows, including any integrations with ITOM/IT
 
 #### Firewall constraints for RUM
 
-The configuration of your firewalls, proxies, and web servers will require adjustment since cookie names have environment specific suffixes. For details, see [Firewall constraints for RUM](/managed/observe/digital-experience/web-applications/initial-setup/firewall-constraints-for-rum#cookies "Find out how to make sure that Real User Monitoring data passes through your firewall.").
+The configuration of your firewalls, proxies, and web servers will require adjustment since cookie names have environment specific suffixes. For details, see [Infrastructure pass-through requirements for RUM Classic](/managed/observe/digital-experience/rum-classic/web-applications/initial-setup/infrastructure-pass-through-requirements-classic#cookies-web "Learn which requests, headers, and cookies must pass through your infrastructure for RUM to work as expected.").
 
 ## Step 3 - Design
 
@@ -304,13 +303,13 @@ Main objectives of this step are to
 * Review constraints that might impact the upgrade
 * Define the target architecture
 
-The output of this step might be a single diagram, a high- or low-level architectural design document, or a written specification summaryâdepending on governance, processes, and your requirements.
+The output of this step might be a single diagram, a high- or low-level architectural design document, or a written specification summary—depending on governance, processes, and your requirements.
 
 During the Design step, the following considerations should be covered:
 
 ### Consolidated SaaS environment
 
-In Dynatrace Managed, you have control to create environments as required. However, in Dynatrace SaaS, it's important to establish a target design of environments. The sizing and configuration of environments will be required input when the SaaS environment is provisionedâthis will be valuable input when considering configuration optimizations. You can also opt to consolidate multiple Dynatrace Clusters into a single tenant which provides benefits but also a few considerations:
+In Dynatrace Managed, you have control to create environments as required. However, in Dynatrace SaaS, it's important to establish a target design of environments. The sizing and configuration of environments will be required input when the SaaS environment is provisioned—this will be valuable input when considering configuration optimizations. You can also opt to consolidate multiple Dynatrace Clusters into a single tenant which provides benefits but also a few considerations:
 
 * A single source for configuration, dashboards, and maintenance windows greatly reduces administrative overhead.
 * A single fault domain allows Dynatrace Davis AI to provide a more complete analysis, as well as have a single place to view complete traces from multi-region applications.
@@ -356,7 +355,7 @@ Moving from Dynatrace Managed to a SaaS deployment might require changes to your
 
 ### Define the target architecture
 
-The target design for the Dynatrace platform is created. In addition to configuring and setting up a new Dynatrace environment, the surrounding technical architectureâfor example, network design, capacity, and operational impactâneeds to be considered and specified to enable the provisioning and deployment steps in subsequent phases.
+The target design for the Dynatrace platform is created. In addition to configuring and setting up a new Dynatrace environment, the surrounding technical architecture—for example, network design, capacity, and operational impact—needs to be considered and specified to enable the provisioning and deployment steps in subsequent phases.
 
 The output of the design phase may be a single diagram, a high-level or low-level architectural design document, or a written specification summary, depending on your governance, processes, and requirements. You can find a sample target architecture diagram for a basic Dynatrace Managed deployment below. We've used the following assumptions:
 
@@ -384,7 +383,7 @@ Learn more about the following aspects that should be taken care of when upgradi
 
 Questions?
 
-Visit the [Upgrade to SaaS forumï»¿](https://community.dynatrace.com/t5/Upgrade-to-SaaS/bd-p/upgrade_to_saas) to ask questions, get answers, and share what you've learned with others.
+Visit the [Upgrade to SaaS forum﻿](https://community.dynatrace.com/t5/Upgrade-to-SaaS/bd-p/upgrade_to_saas) to ask questions, get answers, and share what you've learned with others.
 
 ## Related topics
 

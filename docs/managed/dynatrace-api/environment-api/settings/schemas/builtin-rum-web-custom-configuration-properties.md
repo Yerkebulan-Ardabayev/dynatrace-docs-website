@@ -1,7 +1,6 @@
 ---
 title: Settings API - Custom configuration properties schema table
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/settings/schemas/builtin-rum-web-custom-configuration-properties
-scraped: 2026-05-12T11:48:29.764407
 ---
 
 # Settings API - Custom configuration properties schema table

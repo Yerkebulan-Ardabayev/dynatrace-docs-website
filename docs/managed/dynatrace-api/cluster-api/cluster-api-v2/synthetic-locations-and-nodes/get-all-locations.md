@@ -1,7 +1,6 @@
 ---
 title: Synthetic locations API v2 - GET all locations (Dynatrace Managed)
 source: https://docs.dynatrace.com/managed/dynatrace-api/cluster-api/cluster-api-v2/synthetic-locations-and-nodes/get-all-locations
-scraped: 2026-05-12T11:06:01.235883
 ---
 
 # Synthetic locations API v2 - GET all locations (Dynatrace Managed)
@@ -46,7 +45,7 @@ A list of synthetic locations.
 
 | Element | Type | Description |
 | --- | --- | --- |
-| locations | [LocationCollectionElement[]](#openapi-definition-LocationCollectionElement) | A list of synthetic locations. |
+| locations | [LocationCollectionElement](#openapi-definition-LocationCollectionElement)[] | A list of synthetic locations. |
 
 #### The `LocationCollectionElement` object
 
@@ -67,7 +66,7 @@ A synthetic location.
 | ips | string[] | The list of IP addresses assigned to the location.  Only applicable to `PUBLIC` locations. |
 | lastModificationTimestamp | integer | The timestamp of the last modification of the location. |
 | name | string | The name of the location. |
-| nodes | string[] | A list of synthetic nodes belonging to the location.  You can retrieve the list of available nodes with the [GET all nodesï»¿](https://dt-url.net/miy3rpl) call. |
+| nodes | string[] | A list of synthetic nodes belonging to the location.  You can retrieve the list of available nodes with the [GET all nodes﻿](https://dt-url.net/miy3rpl) call. |
 | stage | string | The release stage of the location. The element can hold these values * `BETA` * `COMING_SOON` * `DELETED` * `GA` |
 | status | string | The status of the location. The element can hold these values * `DISABLED` * `ENABLED` * `HIDDEN` |
 | type | string | The type of the location. The element can hold these values * `CLUSTER` * `PRIVATE` * `PUBLIC` |
@@ -83,7 +82,7 @@ A synthetic location.
 | Element | Type | Description |
 | --- | --- | --- |
 | code | integer | The HTTP status code |
-| constraintViolations | [ConstraintViolation[]](#openapi-definition-ConstraintViolation) | A list of constraint violations |
+| constraintViolations | [ConstraintViolation](#openapi-definition-ConstraintViolation)[] | A list of constraint violations |
 | message | string | The error message |
 
 #### The `ConstraintViolation` object
@@ -394,7 +393,7 @@ https://mySampleEnv.live.dynatrace.com/api/v2/synthetic/locations
 
 
 
-"name": "GdaÅsk",
+"name": "Gdańsk",
 
 
 

@@ -1,7 +1,6 @@
 ---
 title: Settings API - HTTP failure detection parameters schema table
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/settings/schemas/builtin-failure-detection-service-http-parameters
-scraped: 2026-05-12T11:45:17.410118
 ---
 
 # Settings API - HTTP failure detection parameters schema table
@@ -12,7 +11,7 @@ scraped: 2026-05-12T11:45:17.410118
 
 ### HTTP failure detection parameters (`builtin:failure-detection.service.http-parameters)`
 
-Dynatrace failure detection automatically detects the vast majority of error conditions in your environment. However, detected service errors don't necessarily mean that the underlying requests have failed. There may be cases where the default service failure detection settings don't meet your particular needs. In such cases, you can configure the settings provided below. Please note that these settings are not applicable to services of type 'Span service'. For complete details, see [configure service failure detectionï»¿](https://dt-url.net/ys5k0p4y).
+Dynatrace failure detection automatically detects the vast majority of error conditions in your environment. However, detected service errors don't necessarily mean that the underlying requests have failed. There may be cases where the default service failure detection settings don't meet your particular needs. In such cases, you can configure the settings provided below. Please note that these settings are not applicable to services of type 'Span service'. For complete details, see [configure service failure detection﻿](https://dt-url.net/ys5k0p4y).
 
 | Schema ID | Schema groups | Scope |
 | --- | --- | --- |
@@ -42,14 +41,14 @@ To execute this request, you need an access token with **Read settings** (`setti
 
 | Property | Type | Description | Required |
 | --- | --- | --- | --- |
-| HTTP response codes which indicate an error on the server side `serverSideErrors` | text | - | Required |
-| Treat missing HTTP response code as server side errors `failOnMissingResponseCodeServerSide` | boolean | - | Required |
-| HTTP response codes which indicate client side errors `clientSideErrors` | text | - | Required |
-| Treat missing HTTP response code as client side error `failOnMissingResponseCodeClientSide` | boolean | - | Required |
+| HTTP response codes which indicate an error on the server side `serverSideErrors` | text | A list of HTTP response code ranges and individual values that are treated as server-side errors. The format is a comma-separated list of ranges and values (e.g., `500-599, 402, 405-499`). Default: `500-599`. | Required |
+| Treat missing HTTP response code as server side errors `failOnMissingResponseCodeServerSide` | boolean | If `true`, a missing HTTP response code on the server side is treated as a failure. Missing response codes can indicate a fire-and-forget call, a timeout, or an error. Default: `false`. | Required |
+| HTTP response codes which indicate client side errors `clientSideErrors` | text | A list of HTTP response code ranges and individual values that are treated as client-side errors. The format is a comma-separated list of ranges and values (e.g., `400-499, 503, 510-599`). Default: `400-599`. | Required |
+| Treat missing HTTP response code as client side error `failOnMissingResponseCodeClientSide` | boolean | If `true`, a missing HTTP response code on the client side is treated as a failure. Missing response codes can indicate a fire-and-forget call, a timeout, or an error. Default: `false`. | Required |
 
 ##### The `brokenLinks` object
 
 | Property | Type | Description | Required |
 | --- | --- | --- | --- |
-| Consider 404 HTTP response codes as failures `http404NotFoundFailures` | boolean | - | Required |
+| Consider 404 HTTP response codes as failures `http404NotFoundFailures` | boolean | If `true`, HTTP 404 response codes are treated as server-side service failures. Only applicable when 404 is not already in the list of failing server-side HTTP response codes. Default: `false`. | Required |
 | Rules for broken links to related domains `brokenLinkDomains` | set | If your application relies on other hosts at other domains, add the associated domain names here. Once configured, Dynatrace will consider 404s thrown by hosts at these domains to be service failures related to your application. | Required |

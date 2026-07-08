@@ -1,7 +1,6 @@
 ---
 title: Get management zones for user group
 source: https://docs.dynatrace.com/managed/dynatrace-api/cluster-api/cluster-api-v1/user-groups-v1/get-group-mz
-scraped: 2026-05-12T12:12:27.836583
 ---
 
 # Get management zones for user group
@@ -44,14 +43,14 @@ To execute this request, you need the **Service Provider API** (`ServiceProvider
 | Element | Type | Description |
 | --- | --- | --- |
 | groupId | string | Group ID |
-| mzPermissionsPerEnvironment | [MzListForEnvironment[]](#openapi-definition-MzListForEnvironment) | List of management zone permissions per environment |
+| mzPermissionsPerEnvironment | [MzListForEnvironment](#openapi-definition-MzListForEnvironment)[] | List of management zone permissions per environment |
 
 #### The `MzListForEnvironment` object
 
 | Element | Type | Description |
 | --- | --- | --- |
 | environmentUuid | string | Environment UUID |
-| mzPermissions | [MzPermissionsList[]](#openapi-definition-MzPermissionsList) | List of management zone models with permissions |
+| mzPermissions | [MzPermissionsList](#openapi-definition-MzPermissionsList)[] | List of management zone models with permissions |
 
 #### The `MzPermissionsList` object
 

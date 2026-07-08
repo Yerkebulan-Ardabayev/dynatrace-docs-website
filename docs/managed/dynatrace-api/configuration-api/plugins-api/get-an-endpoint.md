@@ -1,7 +1,6 @@
 ---
 title: Plugins API - GET a plugin's endpoint
 source: https://docs.dynatrace.com/managed/dynatrace-api/configuration-api/plugins-api/get-an-endpoint
-scraped: 2026-05-12T11:20:55.857720
 ---
 
 # Plugins API - GET a plugin's endpoint

@@ -1,7 +1,6 @@
 ---
 title: Dynatrace API - Tokens and authentication
 source: https://docs.dynatrace.com/managed/discover-dynatrace/references/dynatrace-api/basics/dynatrace-api-authentication
-scraped: 2026-05-12T11:19:02.313552
 ---
 
 # Dynatrace API - Tokens and authentication
@@ -9,7 +8,7 @@ scraped: 2026-05-12T11:19:02.313552
 # Dynatrace API - Tokens and authentication
 
 * Reference
-* Published Aug 23, 2018
+* Updated on Jun 12, 2026
 
 To be authenticated to use the Dynatrace API, you need a valid [access token](/managed/manage/identity-access-management/access-tokens-and-oauth-clients/access-tokens "Learn the concept of an access token and its scopes.") or a valid [personal access token](/managed/manage/identity-access-management/access-tokens-and-oauth-clients/access-tokens/personal-access-token "Learn the concept of a personal access token and its scopes."). Access to the API is fine-grained, meaning that you also need the proper scopes assigned to the token. See the description of each request to find out which scopes are required to use it.
 
@@ -65,7 +64,7 @@ To generate an access token:
 
 To generate a personal access token
 
-1. Go to **Personal Access Tokens** (accessible via the [user menu](/managed/discover-dynatrace/get-started/dynatrace-ui#user-menu-previous-dynatrace "Navigate the Dynatrace Managed platform") in the previous Dynatrace).
+1. Go to **Personal Access Tokens** (accessible via the [user menu](/managed/discover-dynatrace/get-started/dynatrace-ui#user-menu-previous-dynatrace "Explore Dynatrace Managed, including navigation, browser requirements, timeframe selection, metric notation, and accessibility.") in the previous Dynatrace).
 2. Select **Generate new token**.
 3. Enter a name for your token.  
    Dynatrace doesn't enforce unique token names. You can create multiple tokens with the same name. Be sure to provide a meaningful name for each token you generate. Proper naming helps you to efficiently manage your tokens and perhaps delete them when they're no longer needed.
@@ -75,7 +74,7 @@ To generate a personal access token
 
    You can only access your token once upon creation. You can't reveal it afterward.
 
-You can assign multiple scopes to a single token, or you can generate several tokens, each with different access levels and use them accordinglyâcheck your organization's security policies for the best practice.
+You can assign multiple scopes to a single token, or you can generate several tokens, each with different access levels and use them accordingly—check your organization's security policies for the best practice.
 
 To change the scope of an existing token, use the [PUT a token call](/managed/dynatrace-api/environment-api/tokens-v2/api-tokens/put-token "Update an access token via Dynatrace API.") of the Access tokens API. Note that you need to submit the existing scopes if you want to keep them. Any existing scope missing in the payload is removed.
 
@@ -96,6 +95,7 @@ Personal access token
 | OpenPipeline - Ingest Events, Software Development Lifecycle (Custom) | `openpipeline.events_sdlc.custom` | Grants access to [POST Custom SLDC events](/managed/upgrade/unavailable-in-managed "Your selection is unavailable in Dynatrace Managed.") request of the OpenPipeline Ingest API. |
 | OpenPipeline - Ingest Security Events (Built-in) | `openpipeline.events_security` | Grants access to [POST Built-in security events](/managed/upgrade/unavailable-in-managed "Your selection is unavailable in Dynatrace Managed.") request of the OpenPipeline Ingest API. |
 | OpenPipeline - Ingest Security Events (Custom) | `openpipeline.events_security.custom` | Grants access to [POST Custom security events](/managed/upgrade/unavailable-in-managed "Your selection is unavailable in Dynatrace Managed.") request of the OpenPipeline Ingest API. |
+| OpenPipeline - Ingest Smartscape Events | `openpipeline.events_smartscape` | Grants access to [POST Built-in Smartscape events](/managed/upgrade/unavailable-in-managed "Your selection is unavailable in Dynatrace Managed.") request of the OpenPipeline Ingest API. |
 | OpenPipeline - Ingest Events (Custom) | `openpipeline.events.custom` | Grants access to [POST Custom generic event endpoint](/managed/upgrade/unavailable-in-managed "Your selection is unavailable in Dynatrace Managed.") request of the OpenPipeline Ingest API. |
 
 ### API v2

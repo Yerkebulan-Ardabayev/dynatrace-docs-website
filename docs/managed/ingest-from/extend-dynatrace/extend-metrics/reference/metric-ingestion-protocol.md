@@ -1,7 +1,6 @@
 ---
 title: Metric ingestion protocol
 source: https://docs.dynatrace.com/managed/ingest-from/extend-dynatrace/extend-metrics/reference/metric-ingestion-protocol
-scraped: 2026-05-12T11:07:11.427252
 ---
 
 # Metric ingestion protocol
@@ -27,7 +26,7 @@ The key of the metric you're submitting. It consists of sections, separated by d
 
 Allowed characters are lowercase and uppercase letters, numbers, hyphens (`-`), and underscores (`_`). The following restrictions apply:
 
-* Non-latin letters (like `Ã¶`) are not allowed.
+* Non-latin letters (like `ö`) are not allowed.
 * Metric keys cannot start with a number or a hyphen (`-`).
 * Sections cannot start with a hyphen (`-`).
 * The length of the key must be in range from 3 to 255 characters.
@@ -44,7 +43,7 @@ If you want to omit dimensions, provide the payload right after the metric key, 
 
 Dimensions are specified as `key="value"` pairs. You can specify up to 50 dimensions, separated by commas (`,`).
 
-Allowed characters for the key are lowercase letters, numbers, hyphens (`-`), periods (`.`), colons (`:`) and underscores (`_`). Special letters (like `Ã¶`) are not allowed. The key can be in the `key.key-section` format.
+Allowed characters for the key are lowercase letters, numbers, hyphens (`-`), periods (`.`), colons (`:`) and underscores (`_`). Special letters (like `ö`) are not allowed. The key can be in the `key.key-section` format.
 
 Pass the dimension value as a quoted string. If you want to pass quotes (`"`) and/or backslashes (`\`) in a dimension value, make sure you escape them with a backslash (`\`). For example:
 
@@ -83,7 +82,7 @@ For the gauge format, you can specify the following statistic summaries:
 * `min`
 * `max`
 * `sum`
-* `count`âthe number of measurements included in the data point.
+* `count`—the number of measurements included in the data point.
 
 You can omit the format if you're using a single value gauge payload. In that case, the provided value is used for all summaries and the count is set to `1`.
 
@@ -121,7 +120,7 @@ The following properties are available. To specify several properties, separate 
 | --- | --- | --- |
 | dt.meta.displayName | string | The name of the metric in the user interface. |
 | dt.meta.description | string | A short description of the metric. |
-| dt.meta.unit | string | The unit of the metric. Find the possible unit values in the [Dynatrace Developerï»¿](https://developer.dynatrace.com/reference/units/) documentation. |
+| dt.meta.unit | string | The unit of the metric. Find the possible unit values in the [Dynatrace Developer﻿](https://developer.dynatrace.com/reference/units/) documentation. |
 
 ## Examples
 

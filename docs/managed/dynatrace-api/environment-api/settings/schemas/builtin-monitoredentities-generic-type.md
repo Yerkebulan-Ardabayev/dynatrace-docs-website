@@ -1,7 +1,6 @@
 ---
 title: Settings API - Generic types schema table
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/settings/schemas/builtin-monitoredentities-generic-type
-scraped: 2026-05-12T11:44:33.661297
 ---
 
 # Settings API - Generic types schema table
@@ -12,7 +11,7 @@ scraped: 2026-05-12T11:44:33.661297
 
 ### Generic types (`builtin:monitoredentities.generic.type)`
 
-Looking for topology extraction support? Find the [topology modelï»¿](https://www.dynatrace.com/support/help/shortlink/topology-model#custom-topology-model "Visit Dynatrace support center") help page here.
+Looking for topology extraction support? Find the [topology model﻿](https://www.dynatrace.com/support/help/shortlink/topology-model#custom-topology-model "Visit Dynatrace support center") help page here.
 
 A generic type allows to define rules for creating custom monitored entities based on ingest data.
 

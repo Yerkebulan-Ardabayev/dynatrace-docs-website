@@ -1,12 +1,11 @@
 ---
-title: Services
+title: Services page
 source: https://docs.dynatrace.com/managed/observe/application-observability/services-classic
-scraped: 2026-05-12T11:05:15.337107
 ---
 
-# Services
+# Services page
 
-# Services
+# Services page
 
 * Overview
 * 4-min read

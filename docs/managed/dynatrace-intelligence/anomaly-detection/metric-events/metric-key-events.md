@@ -1,7 +1,6 @@
 ---
 title: Metric key events
 source: https://docs.dynatrace.com/managed/dynatrace-intelligence/anomaly-detection/metric-events/metric-key-events
-scraped: 2026-05-12T11:27:47.632044
 ---
 
 # Metric key events
@@ -23,7 +22,7 @@ Many Dynatrace metrics are delivered by multiple entities; the count can easily 
 Two types of filters are available:
 
 * **Entity filters** narrow the scope based on the provided criteria (for example, entity name or tag). The actual set of available criteria depends on the metric. If multiple filters are specified, the **AND** logic applies.
-* **Dimension filters** filter out entities based on provided tuples (unique combinations of metricâdimension keyâdimension value). If multiple filters are specified, the **AND** logic applies. For example, you can set a dimension filter that selects only user actions coming from iOS devices for your metric event based on the **Action count** metric.
+* **Dimension filters** filter out entities based on provided tuples (unique combinations of metric—dimension key—dimension value). If multiple filters are specified, the **AND** logic applies. For example, you can set a dimension filter that selects only user actions coming from iOS devices for your metric event based on the **Action count** metric.
 
 ![Metric key example](https://dt-cdn.net/images/metric-key-example-1309-8338cbabbd.png)
 
@@ -59,21 +58,21 @@ Metric key example
 9. Provide a **title** for your event. The title should be a short, easy-to-read string describing the situation, such as `High network activity` or `CPU saturation`.
 10. In the **Description** section, create a meaningful event message. Event messages help you understand the nature of the event. You can use the following placeholders:
 
-    * `{alert_condition}`âthe condition of the alert (above/below the threshold).
-    * `{baseline}`âthe violated value of the baseline.
-    * `{dims}`âa list of all dimensions (and their values) of the metric that violated the threshold. You can also specify a particular dimension: `{dims:dt.entity.<entity>}`. To fetch the list of available dimensions for your metric, query it via the [GET metric descriptor](/managed/dynatrace-api/environment-api/metric-v2/get-descriptor "View the descriptor of a metric via Metrics v2 API.") request.
-    * `{entityname}`âthe name of the affected entity.
-    * `{metricname}`âthe name of the metric that violated the threshold.
-    * `{missing_data_samples}`âthe number of samples with missing data. Only available if missing data alert is enabled.
+    * `{alert_condition}`—the condition of the alert (above/below the threshold).
+    * `{baseline}`—the violated value of the baseline.
+    * `{dims}`—a list of all dimensions (and their values) of the metric that violated the threshold. You can also specify a particular dimension: `{dims:dt.entity.<entity>}`. To fetch the list of available dimensions for your metric, query it via the [GET metric descriptor](/managed/dynatrace-api/environment-api/metric-v2/get-descriptor "View the descriptor of a metric via Metrics v2 API.") request.
+    * `{entityname}`—the name of the affected entity.
+    * `{metricname}`—the name of the metric that violated the threshold.
+    * `{missing_data_samples}`—the number of samples with missing data. Only available if missing data alert is enabled.
 
       `{missing_data_samples}` in the event description
 
       We recommend including the `{missing_data_samples}` placeholder in the event description to see whether the problem is raised due to missing data samples or threshold violations.
-    * `{severity}`âthe severity of the event.
-    * `{threshold}`âthe violated value of the threshold.
+    * `{severity}`—the severity of the event.
+    * `{threshold}`—the violated value of the threshold.
 11. Select the type for triggered events.
 12. Define the **merge** strategy for triggered events.  
-    If the merge is allowed, DavisÂ® AI will try to merge this event into existing problems; otherwise, a new problem is raised each time.
+    If the merge is allowed, Davis® AI will try to merge this event into existing problems; otherwise, a new problem is raised each time.
 13. Optional Set additional key-value properties to be attached to the event.
 14. Select **Save changes**.
 

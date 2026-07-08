@@ -1,7 +1,6 @@
 ---
 title: Instrument your Go application with OpenTelemetry
 source: https://docs.dynatrace.com/managed/ingest-from/opentelemetry/walkthroughs/go
-scraped: 2026-05-12T12:04:03.912527
 ---
 
 # Instrument your Go application with OpenTelemetry
@@ -10,7 +9,7 @@ scraped: 2026-05-12T12:04:03.912527
 
 * How-to guide
 * 5-min read
-* Published Apr 20, 2023
+* Updated on May 11, 2026
 
 This walkthrough shows how to add observability to your Go application using the OpenTelemetry Go libraries and tools.
 
@@ -26,7 +25,10 @@ This walkthrough shows how to add observability to your Go application using the
 * Dynatrace version 1.222+
 * For tracing, W3C Trace Context is enabled
 
-  1. Go to **Settings** > **Preferences** > **OneAgent features**.
+  1. Go to the appropriate configuration page:
+
+     + In Latest Dynatrace, go to ![Settings](https://dt-cdn.net/images/settings-icon-256-38e1321b51.webp "Settings") **Settings** > **Collect and capture** > **General monitoring settings** > **OneAgent features**.
+     + In Dynatrace Classic, go to **Settings** > **Preferences** > **OneAgent features**.
   2. Turn on **Send W3C Trace Context HTTP headers**.
 
 ## Step 1 Get the Dynatrace access details
@@ -140,7 +142,7 @@ It's a good idea to start with automatic instrumentation and add manual instrume
 
    )
    ```
-2. Run Go's [`mod tidy` commandï»¿](https://go.dev/ref/mod#go-mod-tidy) to install the dependencies.
+2. Run Go's [`mod tidy` command﻿](https://go.dev/ref/mod#go-mod-tidy) to install the dependencies.
 
    ```
    go mod tidy
@@ -445,7 +447,7 @@ It's a good idea to start with automatic instrumentation and add manual instrume
 
 ## Step 4 optional Automatically instrument your application Optional
 
-1. Browse the [OpenTelemetry registryï»¿](https://opentelemetry.io/ecosystem/registry/?language=go&component=instrumentation) and pick the instrumentation libraries matching your application libraries.
+1. Browse the [OpenTelemetry registry﻿](https://opentelemetry.io/ecosystem/registry/?language=go&component=instrumentation) and pick the instrumentation libraries matching your application libraries.
 2. Add the relevant packages to your import statements.
 
    ```
@@ -459,7 +461,7 @@ It's a good idea to start with automatic instrumentation and add manual instrume
 
    )
    ```
-3. Run Go's [`mod tiny` commandï»¿](https://go.dev/ref/mod#go-mod-tidy) to install the dependencies.
+3. Run Go's [`mod tiny` command﻿](https://go.dev/ref/mod#go-mod-tidy) to install the dependencies.
 
    ```
    go mod tidy
@@ -468,7 +470,7 @@ It's a good idea to start with automatic instrumentation and add manual instrume
 
 ### Example for `net/http`
 
-1. Install the [instrumentation library for `net/http`ï»¿](https://pkg.go.dev/go.opentelemetry.io/contrib/instrumentation/net/http/otelhttp).
+1. Install the [instrumentation library for `net/http`﻿](https://pkg.go.dev/go.opentelemetry.io/contrib/instrumentation/net/http/otelhttp).
 2. Add the package to your import statements.
 
    ```
@@ -535,7 +537,7 @@ It's a good idea to start with automatic instrumentation and add manual instrume
 
    * Create a new span and name it "Call to /myendpoint"
    * Schedule a deferred call to `End()`, to ensure the span is properly closed when the function returns
-   * Add two attributes, following the [semantic naming conventionï»¿](https://opentelemetry.io/docs/specs/semconv/general/trace/), specific to the action of this span: information on the HTTP method and version
+   * Add two attributes, following the [semantic naming convention﻿](https://opentelemetry.io/docs/specs/semconv/general/trace/), specific to the action of this span: information on the HTTP method and version
    * Add a `TODO` in place of the eventual business logic
 
 ### Collect metrics
@@ -558,7 +560,7 @@ It's a good idea to start with automatic instrumentation and add manual instrume
 
 ### Connect logs
 
-With OpenTelemetry logging initialized in `InitOpenTelemetry()` and set as default logger for [slogï»¿](https://pkg.go.dev/log/slog), we can now call any of slog's log functions (for example, [`Info()`ï»¿](https://pkg.go.dev/log/slog#Info)) to send our log information to Dynatrace.
+With OpenTelemetry logging initialized in `InitOpenTelemetry()` and set as default logger for [slog﻿](https://pkg.go.dev/log/slog), we can now call any of slog's log functions (for example, [`Info()`﻿](https://pkg.go.dev/log/slog#Info)) to send our log information to Dynatrace.
 
 ```
 slog.Info("an info message")
@@ -578,7 +580,7 @@ Context propagation is particularly important when network calls (for example, R
 
 #### Extracting the context when receiving a request
 
-In the following example, we assume that we have received a network call via the [`net/http`ï»¿](https://pkg.go.dev/net/http) library and its [`Request`ï»¿](https://pkg.go.dev/net/http#Request) type.
+In the following example, we assume that we have received a network call via the [`net/http`﻿](https://pkg.go.dev/net/http) library and its [`Request`﻿](https://pkg.go.dev/net/http#Request) type.
 
 To obtain a handle to the original context (which was provided by the calling service), we pass the HTTP header object (`r.Header`) to the `Extract` function of the global propagator singleton, which instantiates that context and returns in `parentCtx`. This allows us to continue the previous trace with our own spans.
 
@@ -636,7 +638,7 @@ defer span.End()
 
 #### Injecting the context when sending requests
 
-In the following example, we set up a new instance of [`Request`ï»¿](https://pkg.go.dev/net/http#Request) and pass the object to the `Inject` call of the global propagator singleton. This adds the necessary HTTP headers to the request object, which we eventually pass to `Do` to execute the network request.
+In the following example, we set up a new instance of [`Request`﻿](https://pkg.go.dev/net/http#Request) and pass the object to the `Inject` call of the global propagator singleton. This adds the necessary HTTP headers to the request object, which we eventually pass to `Do` to execute the network request.
 
 ```
 client := http.Client{}

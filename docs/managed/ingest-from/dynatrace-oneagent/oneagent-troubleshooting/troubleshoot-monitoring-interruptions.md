@@ -1,7 +1,6 @@
 ---
 title: Troubleshooting monitoring interruptions
 source: https://docs.dynatrace.com/managed/ingest-from/dynatrace-oneagent/oneagent-troubleshooting/troubleshoot-monitoring-interruptions
-scraped: 2026-05-12T12:13:48.167125
 ---
 
 # Troubleshooting monitoring interruptions
@@ -15,7 +14,7 @@ A monitoring interruption is a situation where the majority of your installed On
 
 This doesn't necessarily mean an outage of your servers though. In case of a monitoring interruption, Dynatrace automatically suppresses all **Host unavailable** problems and alerts you to the monitoring interruption. All hosts are set to the availability state **Unmonitored** for the duration of the monitoring outage. Monitoring interruption alerts do have a special severity filter within your alerting profiles. The `Monitoring unavailable alert` severity level allows you to create a filter and then deliver these highly critical alerts to your monitoring operations teams.
 
-Monitoring interruptions can have different root causes depending on the type of Dynatrace deployment you're running. Dynatrace SaaS environments are administered by the Dynatrace DevOps team, who post all operational issues to [dynatrace.status.ioï»¿](https://dynatrace.status.io/). For environments running in Dynatrace Managed deployments, it's most likely that the monitoring interruption is caused by an issue within your own data center or network configuration.
+Monitoring interruptions can have different root causes depending on the type of Dynatrace deployment you're running. Dynatrace SaaS environments are administered by the Dynatrace DevOps team, who post all operational issues to [dynatrace.status.io﻿](https://dynatrace.status.io/). For environments running in Dynatrace Managed deployments, it's most likely that the monitoring interruption is caused by an issue within your own data center or network configuration.
 
 Regardless of the type of Dynatrace deployment, a common cause of monitoring interruptions is ActiveGate operating issues. To minimize the risk of interruptions caused by ActiveGate, you can use [ActiveGate self-monitoring metrics](/managed/ingest-from/dynatrace-activegate/activegate-sfm-metrics "Explore ActiveGate self-monitoring  metrics.") to assess the health of your ActiveGates in a timely manner.
 

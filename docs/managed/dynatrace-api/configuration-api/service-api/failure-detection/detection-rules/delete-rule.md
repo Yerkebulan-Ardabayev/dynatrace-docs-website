@@ -1,7 +1,6 @@
 ---
 title: Failure detection API - DELETE a detection rule
 source: https://docs.dynatrace.com/managed/dynatrace-api/configuration-api/service-api/failure-detection/detection-rules/delete-rule
-scraped: 2026-05-12T11:16:22.329260
 ---
 
 # Failure detection API - DELETE a detection rule

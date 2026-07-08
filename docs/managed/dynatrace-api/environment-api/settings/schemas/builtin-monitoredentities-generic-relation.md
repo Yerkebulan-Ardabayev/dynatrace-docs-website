@@ -1,7 +1,6 @@
 ---
 title: Settings API - Generic relationships schema table
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/settings/schemas/builtin-monitoredentities-generic-relation
-scraped: 2026-05-12T11:42:40.817185
 ---
 
 # Settings API - Generic relationships schema table
@@ -12,7 +11,7 @@ scraped: 2026-05-12T11:42:40.817185
 
 ### Generic relationships (`builtin:monitoredentities.generic.relation)`
 
-Looking for topology extraction support? Find the [topology modelï»¿](https://www.dynatrace.com/support/help/shortlink/topology-model#custom-topology-model "Visit Dynatrace support center") help page here.
+Looking for topology extraction support? Find the [topology model﻿](https://www.dynatrace.com/support/help/shortlink/topology-model#custom-topology-model "Visit Dynatrace support center") help page here.
 
 Entity types can be related to each other. The relationship registry contains rules by which relationships between related entities are automatically established.
 

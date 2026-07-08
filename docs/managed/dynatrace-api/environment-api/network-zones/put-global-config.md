@@ -1,7 +1,6 @@
 ---
 title: Network zones API - PUT global configuration
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/network-zones/put-global-config
-scraped: 2026-05-12T11:52:18.691610
 ---
 
 # Network zones API - PUT global configuration
@@ -78,7 +77,7 @@ This is a model of the request body, showing the possible elements. It has to be
 | Element | Type | Description |
 | --- | --- | --- |
 | code | integer | The HTTP status code |
-| constraintViolations | [ConstraintViolation[]](#openapi-definition-ConstraintViolation) | A list of constraint violations |
+| constraintViolations | [ConstraintViolation](#openapi-definition-ConstraintViolation)[] | A list of constraint violations |
 | message | string | The error message |
 
 #### The `ConstraintViolation` object

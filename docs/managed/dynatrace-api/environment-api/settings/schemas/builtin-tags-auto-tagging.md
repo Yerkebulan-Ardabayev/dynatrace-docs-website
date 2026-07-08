@@ -1,7 +1,6 @@
 ---
 title: Settings API - Automatically applied tags schema table
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/settings/schemas/builtin-tags-auto-tagging
-scraped: 2026-05-12T11:47:25.213450
 ---
 
 # Settings API - Automatically applied tags schema table
@@ -57,7 +56,7 @@ To execute this request, you need an access token with **Read settings** (`setti
 | Value Normalization `valueNormalization` | enum | The element has these enums * `Leave text as-is` * `To upper case` * `To lower case` | Required |
 | Rule type `type` | enum | The element has these enums * `ME` * `SELECTOR` | Required |
 | `attributeRule` | [AutoTagAttributeRule](#AutoTagAttributeRule) | - | Required |
-| Entity selector `entitySelector` | text | Learn more about the [Entity selectorï»¿](https://dt-url.net/apientityselector). | Required |
+| Entity selector `entitySelector` | text | Learn more about the [Entity selector﻿](https://dt-url.net/apientityselector). | Required |
 
 ##### The `AutoTagAttributeRule` object
 

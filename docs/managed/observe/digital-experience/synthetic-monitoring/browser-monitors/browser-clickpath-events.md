@@ -1,12 +1,11 @@
 ---
-title: Browser clickpath events
+title: Browser clickpath events in Classic
 source: https://docs.dynatrace.com/managed/observe/digital-experience/synthetic-monitoring/browser-monitors/browser-clickpath-events
-scraped: 2026-05-12T11:31:56.001733
 ---
 
-# Browser clickpath events
+# Browser clickpath events in Classic
 
-# Browser clickpath events
+# Browser clickpath events in Classic
 
 * Explanation
 * 18-min read
@@ -24,7 +23,7 @@ Clickpath events during recording workflow
 
 Clickpath events in edit mode
 
-A Synthetic script event is not the same thing as an actionâonly events that trigger web requests contain one or more actions. The [Synthetic events and actions](/managed/observe/digital-experience/synthetic-monitoring/analysis-and-alerting/synthetic-details-for-browser-monitors#events-actions "Analyze browser monitor and clickpath results on the Synthetic details page.") card on the Synthetic details page helps you distinguish between script events with and without timings. Synthetic actions (similar to [user actions](/managed/observe/digital-experience/rum-concepts/user-actions "Learn what user actions are and how they help you understand what users do with your application.") in Real User Monitoring) hold the performance data collected during clickpath executions.
+A Synthetic script event is not the same thing as an action—only events that trigger web requests contain one or more actions. The [Synthetic events and actions](/managed/observe/digital-experience/synthetic-monitoring/analysis-and-alerting/synthetic-details-for-browser-monitors#events-actions "Analyze browser monitor and clickpath results on the Synthetic details page.") card on the Synthetic details page helps you distinguish between script events with and without timings. Synthetic actions (similar to [user actions](/managed/observe/digital-experience/rum-classic/rum-concepts/user-actions "Learn what user actions are and how they help you understand what users do with your application.") in Real User Monitoring) hold the performance data collected during clickpath executions.
 
 ## Navigate
 
@@ -44,9 +43,9 @@ See the sections below on [wait](#wait) and [validation](#validate) controls.
 
 ### HTTP authentication
 
-For browser clickpaths, you can automate signing in to the specified URL using HTTP-based authenticationâturn on **Enable HTTP authentication**. Supported authentication methods are basic, digest, NTLM, and Negotiate.
+For browser clickpaths, you can automate signing in to the specified URL using HTTP-based authentication—turn on **Enable HTTP authentication**. Supported authentication methods are basic, digest, NTLM, and Negotiate.
 
-For web form-based authentication in a clickpath, you can simply record entering the credentials used for authentication; Dynatrace automatically captures the credentials. After recording, you have the option of storing the credentials to the [credential vault](/managed/manage/credential-vault "Store and manage credentials in the credential vault.") so that signing in is automated during monitor executionsâsee [Supported authentication methods in Synthetic Monitoring](/managed/observe/digital-experience/synthetic-monitoring/general-information/synthetic-authentication "Learn how to configure authentication methods for monitoring web applications and API endpoints in Synthetic Monitoring.") for more information. See the [Keystroke event](#keystroke) for information on recording data entry, including user credentials, into fields.
+For web form-based authentication in a clickpath, you can simply record entering the credentials used for authentication; Dynatrace automatically captures the credentials. After recording, you have the option of storing the credentials to the [credential vault](/managed/manage/credential-vault "Store and manage credentials in the credential vault.") so that signing in is automated during monitor executions—see [Supported authentication methods in Synthetic Monitoring Classic](/managed/observe/digital-experience/synthetic-monitoring/general-information/synthetic-authentication "Learn how to configure authentication methods for monitoring web applications and API endpoints in Synthetic Monitoring Classic.") for more information. See the [Keystroke event](#keystroke) for information on recording data entry, including user credentials, into fields.
 
 Dynatrace stores and manages all Synthetic Monitoring credentials in a credential vault. Credentials are access controlled and can be designated as owner only or public.
 
@@ -68,7 +67,7 @@ Who can edit a monitor that has associated credentials?
 
 * If a browser monitor (clickpath or single URL) is associated with a restricted credential (owner only or shared with a few users), any user can make changes to certain fields, even if they don't have access to the credential used. You can edit monitor name, device emulation settings, wait conditions, frequency, locations, outage alerting, performance thresholds, metrics, connected applications, validation, and HTTP status codes to be ignored. And, of course, you can change a token or user ID/password credential. You can create a credential within monitor settings in edit mode. You'll need to change all credentials in the monitor to ones that you have access to. Note that replacing another user's credential with one you have access to is irreversible.
 
-  Controls that you cannot editâsuch as the URL, switching on/off HTTP authentication, adding or deleting clickpath events, data entry in Keystroke, and **Advanced setup** in monitor settingsâare grayed out or display an error message when you attempt to save changes, whether in script or UI mode.
+  Controls that you cannot edit—such as the URL, switching on/off HTTP authentication, adding or deleting clickpath events, data entry in Keystroke, and **Advanced setup** in monitor settings—are grayed out or display an error message when you attempt to save changes, whether in script or UI mode.
 
 * You can enable/disable or delete a synthetic monitor that's secured by another user's owner-only credentials.
 
@@ -112,7 +111,7 @@ The Keystroke event captures the string you type in a field on a web page.
 
   + If a browser monitor (clickpath or single URL) is associated with a restricted credential (owner only or shared with a few users), any user can make changes to certain fields, even if they don't have access to the credential used. You can edit monitor name, device emulation settings, wait conditions, frequency, locations, outage alerting, performance thresholds, metrics, connected applications, validation, and HTTP status codes to be ignored. And, of course, you can change a token or user ID/password credential. You can create a credential within monitor settings in edit mode. You'll need to change all credentials in the monitor to ones that you have access to. Note that replacing another user's credential with one you have access to is irreversible.
 
-    Controls that you cannot editâsuch as the URL, switching on/off HTTP authentication, adding or deleting clickpath events, data entry in Keystroke, and **Advanced setup** in monitor settingsâare grayed out or display an error message when you attempt to save changes, whether in script or UI mode.
+    Controls that you cannot edit—such as the URL, switching on/off HTTP authentication, adding or deleting clickpath events, data entry in Keystroke, and **Advanced setup** in monitor settings—are grayed out or display an error message when you attempt to save changes, whether in script or UI mode.
 
   + You can enable/disable or delete a synthetic monitor that's secured by another user's owner-only credentials.
 
@@ -124,7 +123,7 @@ The Keystroke event captures the string you type in a field on a web page.
 
 ### Capturing or setting a password in Keystroke
 
-In a Keystroke event, a recorded password is captured by default as **Plain text**. You can **Save to credential vault**âthe data type automatically changes to **Credentials**.
+In a Keystroke event, a recorded password is captured by default as **Plain text**. You can **Save to credential vault**—the data type automatically changes to **Credentials**.
 
 **Reset text value** only if you want to clear the captured credential and convert the field to unencrypted text.
 
@@ -168,7 +167,7 @@ The Select option event describes the use of lists in a clickpath.
 
 The **Index** describes the position of the chosen item from the top; the first item in a list is always annotated `0`. The **Value** field shows the text value of the item selected.
 
-Click **Add another selection** to add another item to select in the same list. You can delete selected options as required.
+Select **Add another selection** to add another item to select in the same list. You can delete selected options as required.
 
 See the sections below on [wait](#wait) and [validation](#validate) controls.
 
@@ -230,9 +229,9 @@ The JavaScript event offers a basic API for the following operations.
 
 #### Store and retrieve values across monitor events
 
-* `api.setValue(key, value)`âSets a `value` for the `key`. Use a separate instance of `api.setValue()` for each key-value pair you wish to specify.
-* `api.getValue(key)`âGets the value of the `key` previously set by `api.setValue()`.
-* `api.getValues()`âReturns an object holding the key-value pairs that were previously set by `api.setValue()`.
+* `api.setValue(key, value)`—Sets a `value` for the `key`. Use a separate instance of `api.setValue()` for each key-value pair you wish to specify.
+* `api.getValue(key)`—Gets the value of the `key` previously set by `api.setValue()`.
+* `api.getValues()`—Returns an object holding the key-value pairs that were previously set by `api.setValue()`.
 
 Variables can be passed only in the context of a single execution of browser clickpath. You also need to make sure that when you refer to a variable, the data behind it is logically available to the monitor.
 
@@ -242,24 +241,24 @@ Variable and key names have a 100-character limit. Global variable values have a
 
 #### Mark events as failed or finished
 
-* `api.fail(message)`âMarks the request as failed, providing the `message` as the reason, and marks the monitor execution as failed. `message` appears as the **Failure reason** for the execution in the [Multidimensional analysis page](/managed/observe/digital-experience/synthetic-monitoring/analysis-and-alerting/multidimensional-analysis-for-browser-monitors "Learn how to analyze browser-monitor data points."). The `message` parameter has a 200-character limit.
-* `api.finish()`âFinishes the JavaScript event so that the next event is executed.
-* `api.startAsyncSyntheticEvent()`âCauses the JavaScript event to wait for a later call of `api.finish()` or `api.fail()` to end it. As the use of this method overrides the wait condition, we recommend setting the wait time to **None**.
+* `api.fail(message)`—Marks the request as failed, providing the `message` as the reason, and marks the monitor execution as failed. `message` appears as the **Failure reason** for the execution in the [Multidimensional analysis page](/managed/observe/digital-experience/synthetic-monitoring/analysis-and-alerting/multidimensional-analysis-for-browser-monitors "Learn how to analyze browser-monitor data points."). The `message` parameter has a 200-character limit.
+* `api.finish()`—Finishes the JavaScript event so that the next event is executed.
+* `api.startAsyncSyntheticEvent()`—Causes the JavaScript event to wait for a later call of `api.finish()` or `api.fail()` to end it. As the use of this method overrides the wait condition, we recommend setting the wait time to **None**.
 
 #### Skip clickpath events
 
 These methods skip events after completion of the current event.
 
-* `api.skipNextSyntheticEvent()`âSkips execution of the next event.
-* `api.skipNextSyntheticEvents(n)`âSkips execution of the next `n` consecutive events.
-* `api.skipSyntheticEvent(eventIndex)`âSkips execution of the event with the index `eventIndex`. Event index numbers start at `1` and match the event numbers displayed in the web UI.
-* `api.skipSyntheticEvents(eventIndexes)`âSkips execution of multiple events; the array `eventIndexes` specifies the indexes of events to skip, for example, `api.skipSyntheticEvents([8, 9])`.
+* `api.skipNextSyntheticEvent()`—Skips execution of the next event.
+* `api.skipNextSyntheticEvents(n)`—Skips execution of the next `n` consecutive events.
+* `api.skipSyntheticEvent(eventIndex)`—Skips execution of the event with the index `eventIndex`. Event index numbers start at `1` and match the event numbers displayed in the web UI.
+* `api.skipSyntheticEvents(eventIndexes)`—Skips execution of multiple events; the array `eventIndexes` specifies the indexes of events to skip, for example, `api.skipSyntheticEvents([8, 9])`.
 
 #### Basic logging
 
-* `api.info(message)`âLogs a `message` using the `info` log level.
-* `api.warn(message)`âLogs a `message` using the `warning` log level.
-* `api.error(message)`âLogs a `message` using the `error` log level.
+* `api.info(message)`—Logs a `message` using the `info` log level.
+* `api.warn(message)`—Logs a `message` using the `warning` log level.
+* `api.error(message)`—Logs a `message` using the `error` log level.
 
 The `message` parameter has a 200-character limit. After local playback, logging appears at the bottom of the Dynatrace web UI. Select **Show full log** as shown in the image below. When executing monitors from [private Synthetic locations](/managed/observe/digital-experience/synthetic-monitoring/private-synthetic-locations/create-a-private-synthetic-location "Learn how to create a private location for synthetic monitoring."), log lines (with the `[CUSTOM]` prefix) can be found in the VUC test execution file.
 
@@ -269,15 +268,15 @@ Log file for local playback
 
 #### Retrieve data
 
-* `api.getCredential(id, type)`âRetrieves a credential value, given the credential ID (`id`) and (`type`), which can be `username`, `password`, or `token`. You must provide the exact value of one of the autocomplete suggestions for the credential ID; using dynamic identifiers like variables is not supported. The list consists of only those [credentials to which you have access](/managed/manage/credential-vault#owner-shared-public "Store and manage credentials in the credential vault.").
+* `api.getCredential(id, type)`—Retrieves a credential value, given the credential ID (`id`) and (`type`), which can be `username`, `password`, or `token`. You must provide the exact value of one of the autocomplete suggestions for the credential ID; using dynamic identifiers like variables is not supported. The list consists of only those [credentials to which you have access](/managed/manage/credential-vault#owner-shared-public "Store and manage credentials in the credential vault.").
 
   Requires ActiveGate version 1.212+ for [private Synthetic locations](/managed/observe/digital-experience/synthetic-monitoring/private-synthetic-locations/create-a-private-synthetic-location "Learn how to create a private location for synthetic monitoring.").
 
   As a security best practice, we recommend that you use only dedicated test credentials for synthetic monitors.
 * `api.getContext().location`
 
-  + `api.getContext().location.name`âReturns the name of the private or public location from where the monitor is executed. This is helpful when applying conditional logic such as displaying localized pages or using different login information per location.
-  + `api.getContext().location.cloudPlatform`âReturns the name of the cloud platform on which a [public Synthetic location](/managed/observe/digital-experience/synthetic-monitoring/general-information/public-synthetic-locations "Learn about all currently available public Synthetic Monitoring locations.") is deployed.
+  + `api.getContext().location.name`—Returns the name of the private or public location from where the monitor is executed. This is helpful when applying conditional logic such as displaying localized pages or using different login information per location.
+  + `api.getContext().location.cloudPlatform`—Returns the name of the cloud platform on which a [public Synthetic location](/managed/observe/digital-experience/synthetic-monitoring/general-information/public-synthetic-locations "Learn about all currently available public Synthetic Monitoring Classic locations.") is deployed.
 
   During local playback, properties of the context are undefined. We recommend setting a default value to cover this scenario.
 
@@ -609,7 +608,7 @@ You might prefer to set up advanced, custom DOM locators for your elements. The 
 
 * To **identify an element**, you can do either of the following.
 
-  + Begin the DOM locator with [`document.`ï»¿](https://dt-url.net/vf02y15).
+  + Begin the DOM locator with [`document.`﻿](https://dt-url.net/vf02y15).
 
     ```
     document.forms[0][1].options[0]
@@ -631,7 +630,7 @@ You might prefer to set up advanced, custom DOM locators for your elements. The 
     ```
 * **XPath expressions are supported**.
 
-  Your DOM locator beginning with `document.` can contain an XPath expression in the `xpathExpression` parameter of the [`evaluate()` methodï»¿](https://dt-url.net/9x22yb8). In the example below, the XPath expression is `'//form[@id=\\'ctl00\\']/div[4]/div[3]/span'`.
+  Your DOM locator beginning with `document.` can contain an XPath expression in the `xpathExpression` parameter of the [`evaluate()` method﻿](https://dt-url.net/9x22yb8). In the example below, the XPath expression is `'//form[@id=\\'ctl00\\']/div[4]/div[3]/span'`.
 
   ```
   document.evaluate('//form[@id=\\'ctl00\\']/div[4]/div[3]/span', document, null, XPathResult.ANY_TYPE, null).iterateNext()
@@ -660,7 +659,7 @@ You might prefer to set up advanced, custom DOM locators for your elements. The 
   + `null`
   + `undefined`
   + `document`
-  + [`XPathResult.*`ï»¿](https://dt-url.net/kr42yx2)
+  + [`XPathResult.*`﻿](https://dt-url.net/kr42yx2)
 
   ```
   document.method("str1")

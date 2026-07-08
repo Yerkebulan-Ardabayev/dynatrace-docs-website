@@ -1,7 +1,6 @@
 ---
 title: Configure data privacy settings
 source: https://docs.dynatrace.com/managed/manage/data-privacy-and-security/configuration/configure-global-privacy-settings
-scraped: 2026-05-12T11:08:50.508899
 ---
 
 # Configure data privacy settings
@@ -14,7 +13,7 @@ scraped: 2026-05-12T11:08:50.508899
 
 Dynatrace allows you to granularly control what data you would like to capture. Depending on your use cases, you can configure Dynatrace to provide you with the right amount of [data from your monitored environments](/managed/manage/data-privacy-and-security/data-privacy/personal-data-captured-by-dynatrace "Find out what types of end-user data may be captured during Dynatrace monitoring and the methods that are available for masking personal end-user data."). However, keep in mind that it's your responsibility to protect your customers' personal data while using Dynatrace.
 
-We offer multiple masking layers either configured in the environment-wide settingsâwhich apply to your whole tenantâor more fine-grained configuration for the following monitored entities.
+We offer multiple masking layers either configured in the environment-wide settings—which apply to your whole tenant—or more fine-grained configuration for the following monitored entities.
 
 * Applications
 * Services (process groups)
@@ -42,7 +41,7 @@ OneAgent version 1.285+ for exception messages
 
 To access this setting, go to **Settings** > **Preferences** > **Data privacy** > **OneAgent-side masking**.
 
-ð´ Disabled by default
+🔴 Disabled by default
 
 OneAgent can mask sensitive data points at first contact. The configuration is executed directly on OneAgent; the configured data points are not sent to the Dynatrace servers and are no longer available.
 
@@ -65,7 +64,7 @@ You can apply these settings to specific monitored process groups or globally to
 * Process group-specific Go to **Technologies & Processes** > process group category > process group > **Settings** > **OneAgent-side masking**.
 * Environment-wide Go to **Settings** > **Preferences** > **Data privacy** > **OneAgent-side masking**.
 
-OneAgent-side masking settings do not affect the [Dynatrace RUM JavaScript](/managed/observe/digital-experience/rum-concepts/applications#web "Learn about monitored applications in Real User Monitoring and the different application types supported by Dynatrace."). For web applications, use the [**Mask personal data in URIs** option](/managed/observe/digital-experience/web-applications/additional-configuration/configure-real-user-monitoring-according-to-gdpr#mask-uris "Learn about the privacy settings that Dynatrace provides to ensure that your web applications comply with the data-privacy regulations of your region.") to control sensitive data point masking for URLs.
+OneAgent-side masking settings do not affect the [Dynatrace RUM JavaScript](/managed/observe/digital-experience/rum-classic/rum-concepts/applications#web "Learn about monitored applications in Real User Monitoring Classic and the different application types supported by Dynatrace."). For web applications, use the [**Mask personal data in URIs** option](/managed/observe/digital-experience/rum-classic/web-applications/additional-configuration/configure-real-user-monitoring-according-to-gdpr#mask-uris "Learn about the privacy settings that Dynatrace provides to ensure that your web applications comply with the data-privacy regulations of your region.") to control sensitive data point masking for URLs.
 
 To enable the benefit of multiple layers of protection, configure the masking at capture settings independently from the masking at storage and masking at display settings. Note that data points masked at capture are no longer available. Additionally applying the masking at storage settings creates a second protection layer that might be beneficial for various compliance frameworks.
 
@@ -77,21 +76,21 @@ In Log Management and Analytics, you can benefit from [fully configurable maskin
 
 To access this setting, go to **Settings** > **Preferences** > **Data privacy** > **IP masking**.
 
-ð¢ Enabled by default
+🟢 Enabled by default
 
 Dynatrace captures IP addresses and GPS coordinates of end users to determine the region from which they access your application.
 
 With the **Mask end-user IP addresses and GPS coordinates** option turned on, Dynatrace masks end user IP addresses and GPS coordinates captured by Real User Monitoring and server-side monitoring. The last octet of monitored IPv4 addresses and the last 80 bits of IPv6 addresses are replaced with zeroes. GPS coordinates are rounded up to 1 decimal place (~10 km). The masking occurs within the application, monitored process, or beacon endpoint so that the data is already masked before it's sent (data in transit) to the Dynatrace cluster. Location lookups are made using anonymized IP addresses and GPS coordinates.
 
-The **Mask end-user IP addresses and GPS coordinates** â **Mask all IP addresses** option is enabled by default for new environments.
+The **Mask end-user IP addresses and GPS coordinates** — **Mask all IP addresses** option is enabled by default for new environments.
 
-For mobile applications, Dynatrace uses the coordinates from the device by using GPS or Wi-Fi. If the application has the permission to use this geolocation information, Dynatrace uses it to calculate the city that is closest to the reported GPS location. If not, Dynatrace uses [MaxMind Geo2 Databaseï»¿](https://www.maxmind.com/).
+For mobile applications, Dynatrace uses the coordinates from the device by using GPS or Wi-Fi. If the application has the permission to use this geolocation information, Dynatrace uses it to calculate the city that is closest to the reported GPS location. If not, Dynatrace uses [MaxMind Geo2 Database﻿](https://www.maxmind.com/).
 
 ### User action masking
 
 To access this setting, go to **Settings** > **Preferences** > **Data privacy** > **General**.
 
-ð´ Disabled by default
+🔴 Disabled by default
 
 The **Mask user actions (web applications only)** option affects Real User Monitoring only for web applications. With this option enabled, Dynatrace uses generic values for user action names.
 
@@ -114,7 +113,7 @@ With user action name masking enabled, the user action names listed above appear
 * `keypress on TEXTAREA on page /contact.html`
 * `touch on DIV of page /list.jsf`
 
-To avoid capturing personal information for user actions in your mobile applications, check the information on [mobile user action masking](/managed/observe/digital-experience/mobile-applications/additional-configuration/configure-rum-privacy-mobile#user-action-masking "Leverage privacy settings that Dynatrace provides to ensure that your mobile apps comply with the data-privacy regulations of your region.").
+To avoid capturing personal information for user actions in your mobile applications, check the information on [mobile user action masking](/managed/observe/digital-experience/rum-classic/mobile-applications/additional-configuration/configure-rum-privacy-mobile#user-action-masking "Leverage privacy settings that Dynatrace provides to ensure that your mobile apps comply with the data-privacy regulations of your region.").
 
 ## Masking at storage
 
@@ -124,11 +123,11 @@ When masking at storage is implemented, data is sent to the Dynatrace server for
 
 To access this setting, go to **Settings** > **Preferences** > **Data privacy** > **General**.
 
-ð´ Disabled by default
+🔴 Disabled by default
 
 Dynatrace captures full URIs of requests that are sent from desktop and mobile browsers, as well as URIs of requests that are sent and received within monitored server-side processes. URIs may contain personal data, such as user names, passwords, or IDs.
 
-When **Mask personal data in URIs** is turned on, Dynatrace detects personal dataâemail addresses, IBANs, payment card numbers, IP addresses, UUIDs, and other IDsâin URIs, headers, exception messages, and data captured for request attributes. It masks this data at storage by replacing it with the `<masked>` string. It also replaces query parameter values with the `<masked>` string. IDs and numbers must have at least 5 decimal or hexadecimal digits to be masked.
+When **Mask personal data in URIs** is turned on, Dynatrace detects personal data—email addresses, IBANs, payment card numbers, IP addresses, UUIDs, and other IDs—in URIs, headers, exception messages, and data captured for request attributes. It masks this data at storage by replacing it with the `<masked>` string. It also replaces query parameter values with the `<masked>` string. IDs and numbers must have at least 5 decimal or hexadecimal digits to be masked.
 
 URI masking examples
 
@@ -173,36 +172,36 @@ Dynatrace allows you to decide whether a request attribute should be [marked as 
 
 To access this setting, go to **Settings** > **Preferences** > **Data privacy** > **General**.
 
-ð´ Disabled by default
+🔴 Disabled by default
 
 To give your end users the ability to decide whether their activities should be tracked or not, enable opt-in mode.
 
-By default, RUM automatically creates [cookies](/managed/manage/data-privacy-and-security/data-privacy/rum-cookies-and-web-storage#dynatrace-rum-cookies "Learn how Dynatrace RUM and Session Replay use cookies, web storage, and IndexedDB."). When **Data-collection and opt-in mode** is turned on, neither OneAgent nor the RUM JavaScript sets cookies, and the RUM JavaScript doesn't capture any data. After an end user accepts your cookie policy, you can activate RUM for that user via the [`dtrum.enable()`ï»¿](https://docs.dynatrace.com/javascriptapi/doc/types/dtrum.html#enable) JavaScript API call. Using the [`dtrum.disable()`ï»¿](https://docs.dynatrace.com/javascriptapi/doc/types/dtrum.html#disable) API call, you can implement a dialog that allows end users to stop sending monitoring data to Dynatrace even after they've previously agreed to it and `dtrum.enable()` has already been called.
+By default, RUM automatically creates [cookies](/managed/manage/data-privacy-and-security/data-privacy/rum-cookies-and-web-storage#dynatrace-rum-cookies "Learn how Dynatrace RUM and Session Replay use cookies, web storage, and IndexedDB."). When **Data-collection and opt-in mode** is turned on, neither OneAgent nor the RUM JavaScript sets cookies, and the RUM JavaScript doesn't capture any data. After an end user accepts your cookie policy, you can activate RUM for that user via the [`dtrum.enable()`﻿](https://docs.dynatrace.com/javascriptapi/doc/types/dtrum.html#enable) JavaScript API call. Using the [`dtrum.disable()`﻿](https://docs.dynatrace.com/javascriptapi/doc/types/dtrum.html#disable) API call, you can implement a dialog that allows end users to stop sending monitoring data to Dynatrace even after they've previously agreed to it and `dtrum.enable()` has already been called.
 
 ## Do Not Track
 
 To access this setting, go to **Settings** > **Preferences** > **Data privacy** > **General**.
 
-ð¢ Enabled by default
+🟢 Enabled by default
 
 Another technique for protecting end-user privacy is the "Do Not Track" feature. When a user enables this feature, their browser adds the `DNT` HTTP request header to all outgoing web requests. This header specifies that the user prefers not to be tracked.
 
 After you turn on **Comply with "Do Not Track" browser settings**, you can select between two options:
 
-* **Capture anonymous user sessions for "Do Not Track"-enabled browsers**: When the `DNT` header is detected, Dynatrace captures RUM data but excludes all personal information that could lead to the identification of the user. The IP address is masked, and no [user tag](/managed/observe/digital-experience/rum-concepts/user-and-error-events#user-tagging "Learn about user and error events and the types of user and error events captured by Dynatrace.") information is sent.
+* **Capture anonymous user sessions for "Do Not Track"-enabled browsers**: When the `DNT` header is detected, Dynatrace captures RUM data but excludes all personal information that could lead to the identification of the user. The IP address is masked, and no [user tag](/managed/observe/digital-experience/rum-classic/rum-concepts/user-and-error-events#user-tagging "Learn about user and error events and the types of user and error events captured by Dynatrace.") information is sent.
 
   With the [**User tracking** setting](#user-tracking) enabled, Dynatrace still sets a persistent cookie to detect returning users.
 * **Turn Real User Monitoring off for "Do Not Track"-enabled browsers**: When the `DNT` header is detected, Dynatrace doesn't capture any data from browsers that have the "Do Not Track" setting enabled.
 
 If you turn off **Comply with "Do Not Track" browser settings**, Dynatrace ignores the browser's "Do Not Track" setting and the `DNT` header.
 
-The **Comply with "Do Not Track" browser settings** â **Capture anonymous user sessions for "Do Not Track"-enabled browsers** option is enabled by default for all environments and applications.
+The **Comply with "Do Not Track" browser settings** — **Capture anonymous user sessions for "Do Not Track"-enabled browsers** option is enabled by default for all environments and applications.
 
 ## User tracking
 
 To access this setting, go to **Settings** > **Preferences** > **Data privacy** > **General**.
 
-ð´ Disabled by default
+🔴 Disabled by default
 
 The **Use persistent cookies for user tracking** setting allows you to enable or disable the use of persistent cookies for identifying returning users.
 

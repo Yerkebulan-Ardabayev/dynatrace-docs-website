@@ -1,7 +1,6 @@
 ---
 title: Microsoft Azure monitoring
 source: https://docs.dynatrace.com/managed/observe/infrastructure-observability/cloud-platform-monitoring/azure-monitoring
-scraped: 2026-05-12T11:09:45.700598
 ---
 
 # Microsoft Azure monitoring
@@ -10,7 +9,7 @@ scraped: 2026-05-12T11:09:45.700598
 
 * Explanation
 * 2-min read
-* Updated on Jan 28, 2026
+* Updated on Jul 03, 2026
 
 Dynatrace automatically discovers, baselines, and intelligently monitors Microsoft Azure cloud environments.
 
@@ -36,7 +35,7 @@ It is possible to choose monitoring metrics for each of the supporting services.
 
 ## Hybrid environments
 
-Tracking of services and dependencies is not limited to Azure. Thanks to DavisÂ® and its ability to process data from all types of environments, Dynatrace is optimized for monitoring hybrid environments, including business applications spanning across multiple cloud and virtualization platforms such as AWS, Google Cloud, VMware, Kubernetes, Openshift, and on-premises infrastructure.
+Tracking of services and dependencies is not limited to Azure. Thanks to Davis® and its ability to process data from all types of environments, Dynatrace is optimized for monitoring hybrid environments, including business applications spanning across multiple cloud and virtualization platforms such as AWS, Google Cloud, VMware, Kubernetes, Openshift, and on-premises infrastructure.
 
 ## Related topics
 

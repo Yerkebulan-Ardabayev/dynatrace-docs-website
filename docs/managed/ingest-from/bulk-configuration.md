@@ -1,7 +1,6 @@
 ---
 title: Remote configuration management of OneAgents and ActiveGates
 source: https://docs.dynatrace.com/managed/ingest-from/bulk-configuration
-scraped: 2026-05-12T11:55:00.738795
 ---
 
 # Remote configuration management of OneAgents and ActiveGates
@@ -78,8 +77,8 @@ For more information on Dynatrace IAM permissions, see [Working with policies](/
 
 To make configuration changes using the Dynatrace API, you need an [access token](/managed/manage/identity-access-management/access-tokens-and-oauth-clients/access-tokens "Learn the concept of an access token and its scopes.") with the following scopes:
 
-* **Write OneAgents** (`oneAgents.write`)âto validate the payload, generate a preview, and trigger a configuration change for OneAgents
-* **Write ActiveGates** (`activeGates.write`)âto validate the payload, generate a preview, and trigger a configuration change for ActiveGates
+* **Write OneAgents** (`oneAgents.write`)—to validate the payload, generate a preview, and trigger a configuration change for OneAgents
+* **Write ActiveGates** (`activeGates.write`)—to validate the payload, generate a preview, and trigger a configuration change for ActiveGates
 
 ### Cluster administrators
 

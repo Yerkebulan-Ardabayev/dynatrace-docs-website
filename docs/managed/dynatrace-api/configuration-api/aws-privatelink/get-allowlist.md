@@ -1,7 +1,6 @@
 ---
 title: AWS PrivateLink API - GET allowlist
 source: https://docs.dynatrace.com/managed/dynatrace-api/configuration-api/aws-privatelink/get-allowlist
-scraped: 2026-05-12T11:21:12.958184
 ---
 
 # AWS PrivateLink API - GET allowlist
@@ -44,7 +43,7 @@ The request doesn't provide any configurable parameters.
 
 | Element | Type | Description |
 | --- | --- | --- |
-| values | [AllowlistedAwsAccount[]](#openapi-definition-AllowlistedAwsAccount) | - |
+| values | [AllowlistedAwsAccount](#openapi-definition-AllowlistedAwsAccount)[] | - |
 
 #### The `AllowlistedAwsAccount` object
 

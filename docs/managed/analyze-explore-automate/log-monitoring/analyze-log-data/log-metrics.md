@@ -1,7 +1,6 @@
 ---
 title: Log metrics (Logs Classic)
 source: https://docs.dynatrace.com/managed/analyze-explore-automate/log-monitoring/analyze-log-data/log-metrics
-scraped: 2026-05-12T11:06:52.107008
 ---
 
 # Log metrics (Logs Classic)
@@ -16,7 +15,7 @@ Log Monitoring Classic
 
 Dynatrace Log Monitoring gives you the ability not only to view and analyze logs, but also to create metrics based on log data and use them throughout Dynatrace like any other metric. You can add them to your dashboard, include them in an analysis, and even create custom alerts.
 
-Log metric pricing is based on the Davis data units (DDUs) model. Check [DDUs for metrics](/managed/license/monitoring-consumption-classic/davis-data-units/metric-cost-calculation "Understand how to calculate Davis data unit consumption and costs related to monitored metrics.") to find out how you can estimate and track DDU consumption for log metrics.
+Log metric pricing is based on the Davis data units (DDUs) model. Check [DDUs for metrics](/managed/license/classic-licensing/davis-data-units/metric-cost-calculation "Understand how to calculate Davis data unit consumption and costs related to monitored metrics.") to find out how you can estimate and track DDU consumption for log metrics.
 
 Depending on the options you select during log metric creation, the new metric value can represent:
 
@@ -60,8 +59,8 @@ There are two ways to create a metric based on log data:
 3. In **Matcher**, enter the Log Monitoring query to filter the log data for your metric. For details, see [Log viewer](/managed/analyze-explore-automate/log-monitoring/analyze-log-data/log-viewer#query-syntax "Learn how to use Dynatrace log viewer to analyze log data.").
 4. Select a **Measure**:
 
-   * **Occurrence of log records**âa count of occurrences of log records that match the query.
-   * **Attribute value**âthe collection of measures for the attribute value of log records that match the query. If you select this option, you need to also set **Attribute** to the attribute whose values will be gauged.
+   * **Occurrence of log records**—a count of occurrences of log records that match the query.
+   * **Attribute value**—the collection of measures for the attribute value of log records that match the query. If you select this option, you need to also set **Attribute** to the attribute whose values will be gauged.
 5. Optional Select **Add dimension** one or more times to add dimensions for your query result.  
    Adding dimensions allows you to split the log metric occurrences by a specific log data attribute. If the attribute contains more than one value, the first attribute value will act as the metric dimension. For details, see [Log viewer](/managed/analyze-explore-automate/log-monitoring/analyze-log-data/log-viewer#log-dimensions "Learn how to use Dynatrace log viewer to analyze log data.").
 6. Select **Save changes** to create the log metric.
@@ -136,6 +135,6 @@ In this example, we create and chart a log metric, save it to a dashboard, and c
 
 Now that you have defined the metric, you can chart it, pin it to a dashboard, and even create an alert based on it.
 
-* **Chart:** Go to **Data Explorer**, set **Select metricâ¦** to `log.error_PGI`, and select **Run query**.
+* **Chart:** Go to **Data Explorer**, set **Select metric…** to `log.error_PGI`, and select **Run query**.
 * **Dashboard:** After you create a chart, select **Pin to dashboard** to add the chart to one of your classic dashboards. For details, see [Pin tiles to your dashboard](/managed/analyze-explore-automate/dashboards-classic/charts-and-tiles/pin-tiles-to-your-dashboard "Learn to pin tiles to your dashboards.").
 * **Alert:** Go to **Settings** > **Anomaly detection** > **Metric events**, select **Add metric event**, and create a custom event based on `log.error_PGI`.

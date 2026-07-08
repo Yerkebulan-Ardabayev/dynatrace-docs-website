@@ -1,7 +1,6 @@
 ---
 title: Mobile and custom app API - DELETE an app
 source: https://docs.dynatrace.com/managed/dynatrace-api/configuration-api/rum/mobile-custom-app-configuration/apps/delete-app
-scraped: 2026-05-12T11:15:27.684812
 ---
 
 # Mobile and custom app API - DELETE an app
@@ -41,5 +40,5 @@ To learn how to obtain and use it, see [Tokens and authentication](/managed/disc
 
 ## Related topics
 
-* [Delete a mobile application](/managed/observe/digital-experience/mobile-applications/additional-configuration/delete-application-mobile "Delete your mobile applications via the Dynatrace web UI or API.")
-* [Delete a custom application](/managed/observe/digital-experience/custom-applications/additional-configuration/delete-application-custom "Delete your custom applications via the Dynatrace web UI or API.")
+* [Delete a mobile application in RUM Classic](/managed/observe/digital-experience/rum-classic/mobile-applications/additional-configuration/delete-application-mobile "Delete your mobile applications via the Dynatrace web UI or API.")
+* [Delete a custom application in RUM Classic](/managed/observe/digital-experience/rum-classic/custom-applications/additional-configuration/delete-application-custom "Delete your custom applications via the Dynatrace web UI or API.")

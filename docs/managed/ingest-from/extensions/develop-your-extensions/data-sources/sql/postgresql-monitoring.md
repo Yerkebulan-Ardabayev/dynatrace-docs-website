@@ -1,7 +1,6 @@
 ---
 title: PostgreSQL monitoring configuration
 source: https://docs.dynatrace.com/managed/ingest-from/extensions/develop-your-extensions/data-sources/sql/postgresql-monitoring
-scraped: 2026-05-12T12:08:39.320814
 ---
 
 # PostgreSQL monitoring configuration
@@ -10,7 +9,7 @@ scraped: 2026-05-12T12:08:39.320814
 
 * Reference
 * 2-min read
-* Updated on Apr 09, 2026
+* Updated on Jun 30, 2026
 
 After you define the scope of your configuration, you need to identify the following:
 
@@ -300,8 +299,8 @@ The ActiveGate uses the IAM role assigned to it to authenticate, so there's no n
 
 The credential vault authentication type provides a more secure approach to using extensions by securely storing and managing user credentials. To use this, you must be the owner of the credentials and have a credential vault that meets the following criteria:
 
-* **Credential type**âUser and password
-* **Credential scope**âSynthetic (in case of external vault usage) and Extension authentication scopes enabled
+* **Credential type**—User and password
+* **Credential scope**—Synthetic (in case of external vault usage) and Extension authentication scopes enabled
 * **Owner access only** is enabled only for credential owners
 
 ```
@@ -360,16 +359,18 @@ However, if you need to use a local truststore for certificates not globally rec
    keytool -import -keystore sqlds_truststore -file .\ora.crt -alias oracle
    ```
 
-#### Validate SSL certificates
+#### Certificate validation mode
 
-ActiveGate version 1.269+
+Use `certificatesValidation` to control how the server certificate is verified when SSL is enabled. The default mode is `full`.
 
-The certificate is additionally validated with hostname, which means that the domain from the certificate must match the one from the endpoint passed in the monitoring configuration.
-
-Enable this option when connecting to databases using custom certificates.
+| Value | Description |
+| --- | --- |
+| `full` | Validates both the certificate chain and hostname. The domain in the certificate must match the endpoint hostname. |
+| `skip_hostname_validation` | Validates the certificate chain but skips hostname matching. Useful when the certificate's CN/SAN doesn't match the hostname. |
+| `encryption_only` | Encrypts the connection without validating the certificate. Use only in environments where certificate validation isn't possible. |
 
 ```
-"validateCertificates": true
+"certificatesValidation": "full"
 ```
 
 Client certificates are not supported for SQL data sources. To authenticate securely, use basic authentication with SSL enabled. For details, see [Authentication](#authentication).

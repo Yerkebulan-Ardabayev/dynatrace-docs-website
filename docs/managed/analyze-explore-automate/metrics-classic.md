@@ -1,7 +1,6 @@
 ---
 title: Metrics
 source: https://docs.dynatrace.com/managed/analyze-explore-automate/metrics-classic
-scraped: 2026-05-12T11:03:12.472970
 ---
 
 # Metrics
@@ -49,19 +48,19 @@ Get an overview of all metrics available in your environment.](/managed/analyze-
 
 [Synthetic](/managed/observe/digital-experience/synthetic-monitoring/analysis-and-alerting/multidimensional-analysis-for-browser-monitors#calculated-metrics "Learn how to analyze browser-monitor data points.")
 
-[RUM - web applications](/managed/observe/digital-experience/web-applications/additional-configuration/rum-calculated-metrics-web "Create calculated metrics as well as custom charts based on calculated metrics for your web applications.")
+[RUM - web applications](/managed/observe/digital-experience/rum-classic/web-applications/additional-configuration/rum-calculated-metrics-web "Create calculated metrics as well as custom charts based on calculated metrics for your web applications.")
 
-[RUM - mobile applications](/managed/observe/digital-experience/mobile-applications/additional-configuration/rum-calculated-metrics-mobile "Create calculated metrics as well as custom charts based on calculated metrics for your mobile applications.")
+[RUM - mobile applications](/managed/observe/digital-experience/rum-classic/mobile-applications/additional-configuration/rum-calculated-metrics-mobile "Create calculated metrics as well as custom charts based on calculated metrics for your mobile applications.")
 
-[RUM - custom applications](/managed/observe/digital-experience/custom-applications/additional-configuration/rum-calculated-metrics-custom "Create calculated metrics as well as custom charts based on calculated metrics for your custom applications.")
+[RUM - custom applications](/managed/observe/digital-experience/rum-classic/custom-applications/additional-configuration/rum-calculated-metrics-custom "Create calculated metrics as well as custom charts based on calculated metrics for your custom applications.")
 
 ### USQL custom metrics
 
-[RUM - web applications](/managed/observe/digital-experience/web-applications/additional-configuration/custom-metrics-from-user-sessions "Every time a user session is closed, Dynatrace can extract metrics and store them as time series. Learn how to set up and use USQL custom metrics for web applications.")
+[RUM - web applications](/managed/observe/digital-experience/rum-classic/web-applications/additional-configuration/custom-metrics-from-user-sessions "Every time a user session is closed, Dynatrace can extract metrics and store them as time series. Learn how to set up and use USQL custom metrics for web applications.")
 
-[RUM - mobile applications](/managed/observe/digital-experience/mobile-applications/additional-configuration/custom-metrics-from-user-sessions-mobile-apps "Every time a user session is closed, Dynatrace can extract metrics and store them as time series. Learn how to set up and use USQL custom metrics for mobile applications.")
+[RUM - mobile applications](/managed/observe/digital-experience/rum-classic/mobile-applications/additional-configuration/custom-metrics-from-user-sessions-mobile-apps "Every time a user session is closed, Dynatrace can extract metrics and store them as time series. Learn how to set up and use USQL custom metrics for mobile applications.")
 
-[RUM - custom applications](/managed/observe/digital-experience/custom-applications/additional-configuration/custom-metrics-from-user-sessions-custom-apps "Every time a user session is closed, Dynatrace can extract metrics and store them as time series. Learn how to set up and use USQL custom metrics for custom applications.")
+[RUM - custom applications](/managed/observe/digital-experience/rum-classic/custom-applications/additional-configuration/custom-metrics-from-user-sessions-custom-apps "Every time a user session is closed, Dynatrace can extract metrics and store them as time series. Learn how to set up and use USQL custom metrics for custom applications.")
 
 ### Metric sources
 

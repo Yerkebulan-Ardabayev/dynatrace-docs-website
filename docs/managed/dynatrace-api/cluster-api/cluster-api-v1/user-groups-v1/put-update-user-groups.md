@@ -1,7 +1,6 @@
 ---
 title: Update user group
 source: https://docs.dynatrace.com/managed/dynatrace-api/cluster-api/cluster-api-v1/user-groups-v1/put-update-user-groups
-scraped: 2026-05-12T12:12:32.982816
 ---
 
 # Update user group

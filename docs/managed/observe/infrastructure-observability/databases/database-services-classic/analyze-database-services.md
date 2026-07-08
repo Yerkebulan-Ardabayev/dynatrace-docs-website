@@ -1,7 +1,6 @@
 ---
 title: Analyze database services (classic page)
 source: https://docs.dynatrace.com/managed/observe/infrastructure-observability/databases/database-services-classic/analyze-database-services
-scraped: 2026-05-12T12:15:26.387759
 ---
 
 # Analyze database services (classic page)
@@ -51,7 +50,7 @@ By default, the length of database statements is limited to 4KB (KiloBytes). Thi
 To access backtrace analysis for a certain statement
 
 1. In the database statements list, go to the row of the statement you want to analyze.
-2. Select **More** (**â¦**) > **Service backtrace**.
+2. Select **More** (**…**) > **Service backtrace**.
 
 ![Database service-level backtrace - application](https://dt-cdn.net/images/database-service-level-backtrace-application-1490-89f24b7b0f.png)
 
@@ -159,7 +158,7 @@ To view the database statements that were executed by the selected flow within t
 
 Multidimesional analysis of top dimensions
 
-For one of the **top dimensions**, select **More** (**â¦**) and then
+For one of the **top dimensions**, select **More** (**…**) and then
 
 * Select **Outliers** to understand the spread of response times.
 * Select **Statement details** to understand the evolution of each SQL statement over time, along with the average **Rows returned** count.

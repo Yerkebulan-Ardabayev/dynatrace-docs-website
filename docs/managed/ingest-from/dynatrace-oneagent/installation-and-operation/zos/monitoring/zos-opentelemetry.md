@@ -1,7 +1,6 @@
 ---
 title: Extend traces using OpenTelemetry
 source: https://docs.dynatrace.com/managed/ingest-from/dynatrace-oneagent/installation-and-operation/zos/monitoring/zos-opentelemetry
-scraped: 2026-05-12T11:06:19.794008
 ---
 
 # Extend traces using OpenTelemetry
@@ -11,7 +10,7 @@ scraped: 2026-05-12T11:06:19.794008
 * 7-min read
 * Updated on Sep 23, 2022
 
-[OpenTelemetryï»¿](https://dt-url.net/y903u4j) is a collection of tools, APIs, and SDKs that enable you to use telemetry data (distributed traces, metrics, and logs) to get insights into your application's performance and behavior.
+[OpenTelemetry﻿](https://dt-url.net/y903u4j) is a collection of tools, APIs, and SDKs that enable you to use telemetry data (distributed traces, metrics, and logs) to get insights into your application's performance and behavior.
 
 OpenTelemetry with the z/OS Java code module enables you to enrich or extend distributed traces.
 
@@ -30,7 +29,7 @@ OpenTelemetry version 1.0+
 
 Enabling OpenTelemetry interoperability connects the z/OS Java code module to the OpenTelemetry API. When enabled, the code module redirects certain OpenTelemetry API usage (for example, `GlobalOpenTelemetry`) to the internal Dynatrace OpenTelemetry SDK.
 
-The z/OS Java code module forwards the captured [OpenTelemetry Spansï»¿](https://opentelemetry.io/docs/concepts/signals/traces/#spans-in-opentelemetry), via the [zDC subsystem](/managed/ingest-from/dynatrace-oneagent/installation-and-operation/zos/installation/install-zos-java "Set up Java monitoring on z/OS using the Java module.") and [zRemote module](/managed/ingest-from/dynatrace-oneagent/installation-and-operation/zos/installation/install-zremote "Prepare and install the zRemote for z/OS monitoring."), to your Dynatrace environment.
+The z/OS Java code module forwards the captured [OpenTelemetry Spans﻿](https://opentelemetry.io/docs/concepts/signals/traces/#spans-in-opentelemetry), via the [zDC subsystem](/managed/ingest-from/dynatrace-oneagent/installation-and-operation/zos/installation/install-zos-java "Set up Java monitoring on z/OS using the Java module.") and [zRemote module](/managed/ingest-from/dynatrace-oneagent/installation-and-operation/zos/installation/install-zremote "Prepare and install the zRemote for z/OS monitoring."), to your Dynatrace environment.
 
 ![z/OS Java OpenTelemetry](https://dt-cdn.net/images/zos-java-otel-1369-e7b35738b0.png)
 
@@ -72,9 +71,9 @@ Alternatively, you can add the `open-telemetry-enable-integration` option to the
 
 ## OpenTelemetry instrumentation samples
 
-To support various use cases, OpenTelemetry enables you to add vendor-neutral custom instrumentation to your applications. Instrumenting applications with OpenTelemetry requires programming knowledge and access to the applicationâs code. To learn how to instrument your application, refer to [OpenTelemetry documentationï»¿](https://dt-url.net/7603uf3) and [OpenTelemetry Java documentationï»¿](https://dt-url.net/n823ur4).
+To support various use cases, OpenTelemetry enables you to add vendor-neutral custom instrumentation to your applications. Instrumenting applications with OpenTelemetry requires programming knowledge and access to the application’s code. To learn how to instrument your application, refer to [OpenTelemetry documentation﻿](https://dt-url.net/7603uf3) and [OpenTelemetry Java documentation﻿](https://dt-url.net/n823ur4).
 
-See the examples below for using [OpenTelemetry Javaï»¿](https://dt-url.net/yo43um9).
+See the examples below for using [OpenTelemetry Java﻿](https://dt-url.net/yo43um9).
 
 Enrich traces with project-specific additions
 
@@ -217,7 +216,7 @@ Extend end-to-end traces
 
 This example shows how you can trace an audit service running on a WebSphere Application Server (monitored by Dynatrace) that uses a Java transport that is not supported out of the box. We use Java serialization (object output streams) as an example for such an unsupported Java transport.
 
-To learn more about context propagation, refer to the official [OpenTelemetry Context Propagation documentationï»¿](https://dt-url.net/j503uhz).
+To learn more about context propagation, refer to the official [OpenTelemetry Context Propagation documentation﻿](https://dt-url.net/j503uhz).
 
 **Service A** writes an audit entry to the `ObjectOutputStream`:
 

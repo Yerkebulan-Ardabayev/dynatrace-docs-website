@@ -1,7 +1,6 @@
 ---
 title: Cloud Foundry metrics overview
 source: https://docs.dynatrace.com/managed/observe/infrastructure-observability/container-platform-monitoring/cloud-foundry-monitoring/cloud-foundry-metrics
-scraped: 2026-05-12T11:37:33.432161
 ---
 
 # Cloud Foundry metrics overview
@@ -52,12 +51,12 @@ The **Diego cells** tile offers standard performance metrics such as memory usag
 ## Organizations, spaces, applications
 
 The Cloud Foundry overview page also includes Cloud Foundry concepts like **organizations** and **spaces** for holding your applications.
-We recommend using the concept of [Management zonesï»¿](https://www.dynatrace.com/news/blog/organize-your-cloud-foundry-foundations-with-management-zones-beta/) for organizing Cloud Foundry organizations, spaces, and applications.  
-See [process group metadata for Cloud Foundry applicationsï»¿](https://www.dynatrace.com/news/blog/define-process-group-metadata-for-cloud-foundry-applications/) for information about auto-detection of these and other tags.
+We recommend using the concept of [Management zones﻿](https://www.dynatrace.com/news/blog/organize-your-cloud-foundry-foundations-with-management-zones-beta/) for organizing Cloud Foundry organizations, spaces, and applications.  
+See [process group metadata for Cloud Foundry applications﻿](https://www.dynatrace.com/news/blog/define-process-group-metadata-for-cloud-foundry-applications/) for information about auto-detection of these and other tags.
 
 ## Properties
 
-The Cloud Foundry overview page provides an expandable **Properties and tags** section (see above) where youâll find the Cloud Foundry API version as well as the Cloud Foundry Build version (which represents the Cloud Foundry foundation version). These properties are gathered from the Cloud Foundry API endpoint.
+The Cloud Foundry overview page provides an expandable **Properties and tags** section (see above) where you’ll find the Cloud Foundry API version as well as the Cloud Foundry Build version (which represents the Cloud Foundry foundation version). These properties are gathered from the Cloud Foundry API endpoint.
 
 ## Limitations
 

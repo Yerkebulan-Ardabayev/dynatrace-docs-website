@@ -1,7 +1,6 @@
 ---
 title: Platform extensions overview (DPS)
 source: https://docs.dynatrace.com/managed/license/capabilities/platform-extensions
-scraped: 2026-05-12T12:04:51.279123
 ---
 
 # Platform extensions overview (DPS)
@@ -66,4 +65,4 @@ Dynatrace also allows you to ingest logs from your serverless cloud functions.
 
 ## Related topics
 
-* [Dynatrace pricingï»¿](https://www.dynatrace.com/pricing/)
+* [Dynatrace pricing﻿](https://www.dynatrace.com/pricing/)

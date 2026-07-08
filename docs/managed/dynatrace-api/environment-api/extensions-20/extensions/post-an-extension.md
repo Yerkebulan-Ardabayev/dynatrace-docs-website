@@ -1,7 +1,6 @@
 ---
 title: Extensions 2.0 API - POST an extension file
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/extensions-20/extensions/post-an-extension
-scraped: 2026-05-12T11:56:23.057646
 ---
 
 # Extensions 2.0 API - POST an extension file
@@ -55,7 +54,7 @@ Extension 2.0 package file (`*.zip`) to be uploaded.
 
 | Element | Type | Description |
 | --- | --- | --- |
-| assetsInfo | [AssetInfo[]](#openapi-definition-AssetInfo) | Information about extension assets included |
+| assetsInfo | [AssetInfo](#openapi-definition-AssetInfo)[] | Information about extension assets included |
 | author | [AuthorDto](#openapi-definition-AuthorDto) | Extension author |
 | dataSources | string[] | Data sources that extension uses to gather data |
 | extensionName | string | Extension name |
@@ -93,7 +92,7 @@ Additional information about a Feature Set
 | description | string | Optional description for the feature set |
 | displayName | string | Optional display name of the feature set |
 | isRecommended | boolean | Marks the feature set as recommended (selected by default during activation) |
-| metrics | [MetricDto[]](#openapi-definition-MetricDto) | Feature set metrics |
+| metrics | [MetricDto](#openapi-definition-MetricDto)[] | Feature set metrics |
 
 #### The `MetricDto` object
 
@@ -125,7 +124,7 @@ Metric metadata
 | Element | Type | Description |
 | --- | --- | --- |
 | code | integer | The HTTP status code |
-| constraintViolations | [ConstraintViolation[]](#openapi-definition-ConstraintViolation) | A list of constraint violations |
+| constraintViolations | [ConstraintViolation](#openapi-definition-ConstraintViolation)[] | A list of constraint violations |
 | message | string | The error message |
 
 #### The `ConstraintViolation` object

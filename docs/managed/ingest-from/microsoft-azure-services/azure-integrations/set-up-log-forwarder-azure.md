@@ -1,7 +1,6 @@
 ---
 title: Azure Logs
 source: https://docs.dynatrace.com/managed/ingest-from/microsoft-azure-services/azure-integrations/set-up-log-forwarder-azure
-scraped: 2026-05-12T11:09:44.541233
 ---
 
 # Azure Logs
@@ -10,11 +9,11 @@ scraped: 2026-05-12T11:09:44.541233
 
 * How-to guide
 * 17-min read
-* Updated on Oct 17, 2025
+* Updated on Jun 30, 2026
 
 DDU consumption for Log Monitoring
 
-DDU pricing applies to cloud Log Monitoring. See [DDUs for Log Monitoring](/managed/license/monitoring-consumption-classic/davis-data-units/log-monitoring-consumption "Understand how the volume of DDU consumption is calculated for Dynatrace Log Monitoring Classic.") for details.
+DDU pricing applies to cloud Log Monitoring. See [DDUs for Log Monitoring](/managed/license/classic-licensing/davis-data-units/log-monitoring-consumption "Understand how the volume of DDU consumption is calculated for Dynatrace Log Monitoring Classic.") for details.
 
 Azure log forwarding allows you to stream Azure logs from Azure Event Hubs into Dynatrace logs via an Azure Function App instance. It supports Azure resource logs, activity logs, and Entra ID sign-in logs.
 
@@ -31,7 +30,7 @@ Deployment of Azure log forwarder results in creating the following resources:
 
 Azure log forwarder uses Linux based Azure function by default. Windows based function is not supported.
 
-For details about the resources created, see the [Azure Resource Manager file on GitHubï»¿](https://github.com/dynatrace-oss/dynatrace-azure-log-forwarder/blob/master/deployment/dynatrace-azure-forwarder.json)
+For details about the resources created, see the [Azure Resource Manager file on GitHub﻿](https://github.com/dynatrace-oss/dynatrace-azure-log-forwarder/blob/master/deployment/dynatrace-azure-forwarder.json)
 
 ## Limitations
 
@@ -55,7 +54,7 @@ If you're using an earlier version of Dynatrace, see [Alternative deployments](#
 
 ### Azure
 
-1. In each Azure location from where you want to pull logs [Create a resource group & Set up an Azure Event Hubs instanceï»¿](https://dt-url.net/8w03rs3).
+1. In each Azure location from where you want to pull logs [Create a resource group & Set up an Azure Event Hubs instance﻿](https://dt-url.net/8w03rs3).
 
    To be able to send logs,
 
@@ -71,11 +70,11 @@ If you're using an earlier version of Dynatrace, see [Alternative deployments](#
    ```
    az eventhubs eventhub authorization-rule keys list --resource-group <your_resource_group> --namespace-name <your_event_hub_namespace> --eventhub-name <your_event_hub_instance> --name <your_authorization_rule_name>
    ```
-4. Configure the [diagnostic settingsï»¿](https://dt-url.net/se83r02) to stream both resource-related and Entra ID sign-in logs to the Azure Event Hub instances.
+4. Configure the [diagnostic settings﻿](https://dt-url.net/se83r02) to stream both resource-related and Entra ID sign-in logs to the Azure Event Hub instances.
 
 ### CLI
 
-You can run Azure log forwarding deployment using Azure Portal Cloud Shell (Bash) or from any machine with [Azure CLIï»¿](https://dt-url.net/cf63rl6) and Bash shell (Linux or Windows WSL).
+You can run Azure log forwarding deployment using Azure portal Cloud Shell (Bash) or from any machine with [Azure CLI﻿](https://dt-url.net/cf63rl6) and Bash shell (Linux or Windows WSL).
 
 ## Deploy
 
@@ -83,9 +82,9 @@ You can run Azure log forwarding deployment using Azure Portal Cloud Shell (Bash
 
    * For `DEPLOYMENT_NAME`, enter your deployment name between 3 and 20 characters long. You can use lowercase letters and numbers.
 
-     **Note:** The name needs to be globally uniqueâit is appended to the created Azure resources.
+     **Note:** The name needs to be globally unique—it is appended to the created Azure resources.
 
-* For `TARGET_URL`, enter your environment URL: `https://{your-domain}/e/{your-environment-id}/e/{your-environment-id}/`. To learn how to determine your environment ID for the Managed deployment, see [environment ID](/managed/discover-dynatrace/get-started/monitoring-environment "Understand and learn how to work with monitoring environments.").
+* For `TARGET_URL`, enter your environment URL: `https://{your-domain}/e/{your-environment-id}/e/{your-environment-id}/`. To learn how to determine your environment ID for the Managed deployment, see [environment ID](/managed/discover-dynatrace/get-started/monitoring-environment "Learn what a Dynatrace monitoring environment is, how to find your environment ID, and how to set up and connect multiple environments.").
 
 * For `TARGET_API_TOKEN`, enter your API token. See [Dynatrace requirements](#dynatrace) for details.
 * For `RESOURCE_GROUP`, enter the name of the Azure resource group in which deployment will run. See [Azure requirements](#azure) for details.
@@ -157,16 +156,16 @@ Self-monitoring allows a quick diagnosis to see if your function processes and s
 To enable self-monitoring, you have two options:
 
 * **During deployment:** Set the [`--enable-self-monitoring` parameter](#par) (or the [`SFM_ENABLED` environment variable](#var)) to `true`.
-* **After deployment:** In Azure Portal, go to the configuration of your deployed Function App instance and set `SELF_MONITORING_ENABLED` to `true`.
+* **After deployment:** In the Azure portal, go to the configuration of your deployed Function App instance and set `SELF_MONITORING_ENABLED` to `true`.
 
 Enable managed identity
 
-After enabling self-monitoring, you need to enable [managed identityï»¿](https://dt-url.net/qj23rie) for
+After enabling self-monitoring, you need to enable [managed identity﻿](https://dt-url.net/qj23rie) for
 your Function App instance created during deployment, and configure it to allow pushing metrics to the resource.
 
 To set up managed identity
 
-1. In Azure Portal, go to the **Settings** of your Function App instance created during deployment, and select **Identity**.
+1. In the Azure portal, go to the **Settings** of your Function App instance created during deployment, and select **Identity**.
 2. Select **Yes** to **Enable system assigned managed identity**.
 3. Go to your resource group where Function App is deployed and select **Access control (IAM)**.
 4. Select **Add** to add a role assignment.
@@ -179,20 +178,18 @@ Once you enable self-monitoring, you can view the following metrics in your `dyn
 
 | Metric name | Description | Dimension |
 | --- | --- | --- |
-| `all_requests` | All requests sent to Dynatrace. |  |
-| `dynatrace_connectivity_failures` | Reported when any Dynatrace connectivity issues occurred. | `connectivity_status` |
-| `parsing_errors` | Reported when any parsing errors occurred during log processing. |  |
-| `processing_time` | Time needed to process all logs. |  |
-| `sending_time` | Time needed to send all requests. |  |
-| `too_long_content_size` | Reported when content of log is too long. The content will be trimmed. |  |
-| `too_old_records` | Reported when logs received from Event Hubs are too old. |  |
+| `all_requests` | All requests sent to Dynatrace. | `dynatrace_connectivity_failures` |
+| Reported when any Dynatrace connectivity issues occurred. | `connectivity_status` | `parsing_errors` |
+| Reported when any parsing errors occurred during log processing. | `processing_time` | Time needed to process all logs. |
+| `sending_time` | Time needed to send all requests. | `too_long_content_size` |
+| Reported when content of log is too long. The content will be trimmed. | `too_old_records` | Reported when logs received from Event Hubs are too old. |
 
 ## Log filtering Optional
 
 To reduce the number of logs that are sent to Dynatrace, you can apply filters.  
 To apply filters you have two options:
 
-* **During deployment:** Set the `FILTER_CONFIG` environment variable in Azure Portal Cloud Shell (Bash) before running the deployment script.
+* **During deployment:** Set the `FILTER_CONFIG` environment variable In the Azure portal Cloud Shell (Bash) before running the deployment script.
 
   1. Add the `FILTER_CONFIG` environment variable to the list of environment variables needed for the deployment script.
 
@@ -203,9 +200,9 @@ To apply filters you have two options:
      ```
   2. Set the environment variables.
   3. Download the `azure-log-forwarder-function` script and deploy the infrastructure.
-* **After deployment:** Add `FILTER_CONFIG` in Azure Portal.
+* **After deployment:** Add `FILTER_CONFIG` In the Azure portal.
 
-  1. In Azure Portal, go to **Environment variables** of your deployed Function App instance.
+  1. In the Azure portal, go to **Environment variables** of your deployed Function App instance.
   2. In **App settings**, search and select **FILTER\_CONFIG**.
 
      **FILTER\_CONFIG** will appear in Azure after running the deployment script.
@@ -258,7 +255,7 @@ In the example above, all logs from instances with resource type `MICROSOFT.WEB/
 
 #### Filter type: `CONTAINS_PATTERN`
 
-This filter type allows you to collect logs containing a particular text. We use fnmatch that provides support for Unix shellâstyle wildcards. See [Unix filename pattern matchingï»¿](https://docs.python.org/3/library/fnmatch.html) for details.
+This filter type allows you to collect logs containing a particular text. We use fnmatch that provides support for Unix shell–style wildcards. See [Unix filename pattern matching﻿](https://docs.python.org/3/library/fnmatch.html) for details.
 
 Syntax options are:
 
@@ -274,7 +271,7 @@ This filter is set for all logs.
 
 This filter is used only for logs coming from resources of the given Azure resource type, such as `Microsoft.Compute/virtualMachines`.
 
-You can find the resource type in Azure Portal, in your resource's **Properties**.
+You can find the resource type in the Azure portal, in your resource's **Properties**.
 
 If the **Type** field doesn't appear in **Properties**, you can extract it from the resource ID string.
 
@@ -286,7 +283,7 @@ The resource type will be the part between `/providers/` and `/resourceName/`.
 
 This filter is used only for logs coming from the given resource that is identified by the Azure resource ID.
 
-You can look for the resource type in Azure Portal, in your resource's **Properties**.
+You can look for the resource type in the Azure portal, in your resource's **Properties**.
 
 ### Filter rules
 
@@ -302,7 +299,7 @@ You can look for the resource type in Azure Portal, in your resource's **Propert
 
 To update Azure log forwarding
 
-1. You need a package that contains the source code of Azure log forwarderâdownload the latest Dynatrace version.
+1. You need a package that contains the source code of Azure log forwarder—download the latest Dynatrace version.
 
    ```
    wget https://github.com/dynatrace-oss/dynatrace-azure-log-forwarder/releases/latest/download/dynatrace-azure-log-forwarder.zip
@@ -313,7 +310,7 @@ To update Azure log forwarding
    az webapp deployment source config-zip -g <your_resource_group_name> -n <application_name> --src <zip_file_path>
    ```
 
-Some Azure log forwarder releases include changes that require full reinstallation. For more details, refer to the [GitHub releases pageï»¿](https://github.com/dynatrace-oss/dynatrace-azure-log-forwarder/releases).
+Some Azure log forwarder releases include changes that require full reinstallation. For more details, refer to the [GitHub releases page﻿](https://github.com/dynatrace-oss/dynatrace-azure-log-forwarder/releases).
 
 ## Alternative deployments
 
@@ -336,7 +333,7 @@ Dynatrace version 1.217+
 1. Set the following environment variables, making sure to replace the placeholders (`<...>`) with your own values.
 
    * For `DEPLOYMENT_NAME`, enter your deployment name (lowercase only).
-   * For `TARGET_URL`, enter the API URL of your ActiveGate endpoint: `https://<your_activegate_IP_or_hostname>:9999/e/<your_environment_ID>`. To learn how to determine your environment ID, see [environment ID](/managed/discover-dynatrace/get-started/monitoring-environment "Understand and learn how to work with monitoring environments.").
+   * For `TARGET_URL`, enter the API URL of your ActiveGate endpoint: `https://<your_activegate_IP_or_hostname>:9999/e/<your_environment_ID>`. To learn how to determine your environment ID, see [environment ID](/managed/discover-dynatrace/get-started/monitoring-environment "Learn what a Dynatrace monitoring environment is, how to find your environment ID, and how to set up and connect multiple environments.").
    * For `TARGET_API_TOKEN`, enter your API token. For details, see the prerequisites above.
    * For `RESOURCE_GROUP`, enter the name of the Azure resource group in which deployment will run. See [Azure requirements](#azure) for details.
    * For `EVENT_HUB_CONNECTION_STRING`, enter the connection string for the Azure Event Hubs instances configured for receiving logs. See [Azure requirements](#azure) for details.
@@ -396,7 +393,7 @@ Dynatrace version 1.217+
 * [Azure requirements](#azure) listed above
 * [CLI requirements](#cli) listed above
 
-In addition to the [Azure requirements](#azure) listed above, you should also create a user-assigned managed identity in Azure Portal.
+In addition to the [Azure requirements](#azure) listed above, you should also create a user-assigned managed identity in the Azure portal.
 
 Add Event Hubs roles in the user-assigned managed identity. For the event hub trigger binding, you need to assign corresponding built-in roles. The built-in roles are **Azure Event Hubs Data Receiver** and **Azure Event Hubs Data Owner**.
 
@@ -450,7 +447,7 @@ Add Event Hubs roles in the user-assigned managed identity. For the event hub tr
 
    * For `DEPLOYMENT_NAME`, enter your deployment name (lowercase only).
 
-* For `TARGET_URL`, enter your environment URL: `https://{your-domain}/e/{your-environment-id}/e/{your-environment-id}/`. To learn how to determine your environment ID for a Managed deployment, see [environment ID](/managed/discover-dynatrace/get-started/monitoring-environment "Understand and learn how to work with monitoring environments.").
+* For `TARGET_URL`, enter your environment URL: `https://{your-domain}/e/{your-environment-id}/e/{your-environment-id}/`. To learn how to determine your environment ID for a Managed deployment, see [environment ID](/managed/discover-dynatrace/get-started/monitoring-environment "Learn what a Dynatrace monitoring environment is, how to find your environment ID, and how to set up and connect multiple environments.").
 
 * For `TARGET_API_TOKEN`, enter your API token. For details, see the prerequisites above.
 * For `RESOURCE_GROUP`, enter the name of the Azure resource group in which deployment will run. See [Azure requirements](#azure) for details.
@@ -482,23 +479,28 @@ Optional You can enable [self-monitoring](#sfm) and/or [log filtering](#filter) 
 
 For a complete list of parameters, see the deploy table below.
 
-| **Command-line parameter** | **Environment variable** | **Description** |  |
-| --- | --- | --- | --- |
-| `--deployment-name` | `DEPLOYMENT_NAME` | Required Your deployment name. Lowercase only. |  |
-| `--target-url` | `TARGET_URL` | Required Your Dynatrace environment where you want to set up generic log ingestion. |  |
-| `--target-api-token` | `TARGET_API_TOKEN` | Required Your API token. |  |
-| `--resource-group` | `RESOURCE_GROUP` | Required Name of the Azure resource group in which the deployment will run. |  |
-| `--event-hub-connection-string` | `EVENT_HUB_CONNECTION_STRING` | Required The connection string for the Azure Event Hubs instance configured for receiving logs. (Azure Event Hubs name that is configured for receiving logs.) |  |
-| `--event-hub-name` | `EVENT_HUB_NAME` | Optional Optional by default. If a user-assigned managed identity is your method of authentication, then Required. |  |
-| `--require-valid-certificate` | `REQUIRE_VALID_CERTIFICATE` | Optional If set to `true`, the log forwarder verifies the SSL certificate of your ActiveGate. By default, certificates are validated. |  |
-| `--enable-self-monitoring` | `SFM_ENABLED` | Optional If set to `true`, Dynatrace sends custom metrics to Azure. See [Enable self-monitoring](#sfm) for details. By default, custom metrics aren't sent to Azure. |  |
-| `--filter-config` | `FILTER_CONFIG` | Optional Apply filters to reduce the number of logs sent to Dynatrace. See [Log filtering](#filter) for details. |  |
-| `--tags` | `TAGS` | Optional Apply Azure tags to newly created resources in comma-separated key:value pair format (for example, `"tag:value,tag2:value2"`). The following characters are not supported in a tag key: `,:<>%&\?/` |  |
-| `--enable-user-assigned-managed-identity` | `ENABLE_USER_ASSIGNED_MANAGED_IDENTITY` | Optional If set to `true`, options `--eventhub-connection-client-id`, `--managed-identity-resource-name`, `--eventhub-connection-fully-qualified-namespace`, `--event-hub-name` are Required. Enables usage of a user-assigned managed identity instead of a system-assigned managed identity. |  |
-| `--custom-consumer-group` | `CONSUMER_GROUP` | Optional If provided, this value will be used as the name of a default consumer group. Leave empty to apply the default Azure value. |  |
-| `--eventhub-connection-client-id` | `EVENT_HUB_CONNECTION_CLIENT_ID` | Optional `Client ID` of the created managed identity. Example value: `d8916c27-4c4r-482o-895b-doe0b48c76f7` |  |
-| `--managed-identity-resource-name` | `MANAGED_IDENTITY_RESOURCE_NAME` | Optional Resource name of the created managed identity. Example value: `test-managed-identity` |  |
-| `--eventhub-connection-fully-qualified-namespace` | `EVENT_HUB_CONNECTION_FULLY_QUALIFIED_NAMESPACE` | Optional `Host name` of the Azure Event Hubs namespace. Example value: `sample-eventhub-namespace.servicebus.windows.net` |  |
+| **Command-line parameter** | **Environment variable** | **Description** |
+| --- | --- | --- |
+| `--deployment-name` | `DEPLOYMENT_NAME` | Required Your deployment name. Lowercase only. |
+| `--target-url` | `TARGET_URL` | Required Your Dynatrace environment where you want to set up generic log ingestion. |
+| `--target-api-token` | `TARGET_API_TOKEN` | Required Your API token. |
+| `--resource-group` | `RESOURCE_GROUP` | Required Name of the Azure resource group in which the deployment will run. |
+| `--event-hub-connection-string` | `EVENT_HUB_CONNECTION_STRING` | Required The connection string for the Azure Event Hubs instance configured for receiving logs. (Azure Event Hubs name that is configured for receiving logs). |
+| `--event-hub-name` | `EVENT_HUB_NAME` | Optional Optional by default. If a user-assigned managed identity is your method of authentication, then Required. |
+| `--require-valid-certificate` | `REQUIRE_VALID_CERTIFICATE` | Optional If set to `true`, the log forwarder verifies the SSL certificate of your ActiveGate. By default, certificates are validated. |
+| `--enable-self-monitoring` | `SFM_ENABLED` | Optional If set to `true`, Dynatrace sends custom metrics to Azure. See [Enable self-monitoring](#sfm) for details. By default, custom metrics aren't sent to Azure. |
+| `--filter-config` | `FILTER_CONFIG` | Optional Apply filters to reduce the number of logs sent to Dynatrace. See [Log filtering](#filter) for details. |
+| `--tags` | `TAGS` | Optional Apply Azure tags to newly created resources in comma-separated key:value pair format (for example, `"tag:value,tag2:value2"`). The following characters are not supported in a tag key: `,:<>%&\?/` |
+| `--enable-user-assigned-managed-identity` | `ENABLE_USER_ASSIGNED_MANAGED_IDENTITY` | Optional If set to `true`, options `--eventhub-connection-client-id`, `--managed-identity-resource-name`, `--eventhub-connection-fully-qualified-namespace`, `--event-hub-name` are Required. Enables usage of a user-assigned managed identity instead of a system-assigned managed identity. |
+| `--custom-consumer-group` | `CONSUMER_GROUP` | Optional If provided, this value will be used as the name of a default consumer group. Leave empty to apply the default Azure value. |
+| `--eventhub-connection-client-id` | `EVENT_HUB_CONNECTION_CLIENT_ID` | Optional `Client ID` of the created managed identity. Example value: `d8916c27-4c4r-482o-895b-doe0b48c76f7` |
+| `--managed-identity-resource-name` | `MANAGED_IDENTITY_RESOURCE_NAME` | Optional Resource name of the created managed identity. Example value: `test-managed-identity` |
+| `--eventhub-connection-fully-qualified-namespace` | `EVENT_HUB_CONNECTION_FULLY_QUALIFIED_NAMESPACE` | Optional `Host name` of the Azure Event Hubs namespace. Example value: `sample-eventhub-namespace.servicebus.windows.net` |
+| `--app-service-plan-sku-name` | `APP_SERVICE_PLAN_SKU_NAME` | Optional App Service Plan SKU name (e.g., S1, S2, S3, P1v2, P2v2, P3v2). Default: `S1` |
+| `--app-service-plan-sku-tier` | `APP_SERVICE_PLAN_SKU_TIER` | Optional App Service Plan SKU tier (e.g., Standard, Premium, PremiumV2). Default: `Standard` |
+| `--app-service-plan-sku-size` | `APP_SERVICE_PLAN_SKU_SIZE` | Optional App Service Plan SKU size (e.g., S1, S2, S3, P1v2, P2v2, P3v2). Default: `S1` |
+| `--app-service-plan-sku-family` | `APP_SERVICE_PLAN_SKU_FAMILY` | Optional App Service Plan SKU family (e.g., S, P, Pv2). Default: `S` |
+| `--app-service-plan-sku-capacity` | `APP_SERVICE_PLAN_SKU_CAPACITY` | Optional App Service Plan instance count. Default: `1` |
 
 ## Verification
 
@@ -511,9 +513,9 @@ Log line
 In around 10 minutes, further logs should start coming in. If no logs are coming in, make sure that:
 
 * The Event Hubs instances and the resource group in which the deployment will run are in the same region
-* You carefully followed the steps to [Configure diagnostic settingsï»¿](https://dt-url.net/se83r02)
+* You carefully followed the steps to [Configure diagnostic settings﻿](https://dt-url.net/se83r02)
 
-Furthermore, you can read Azure Function logs in which the Azure-log-forwarder is running. [Enable streaming execution logs in Azure Functionsï»¿](https://learn.microsoft.com/en-us/azure/azure-functions/streaming-logs)
+Furthermore, you can read Azure Function logs in which the Azure-log-forwarder is running. [Enable streaming execution logs in Azure Functions﻿](https://learn.microsoft.com/en-us/azure/azure-functions/streaming-logs)
 
 SNAT port exhaustion: Azure Functions have a limited number of ports that can be opened at a time (128). The number of instances, the number of worker processes, and the number of concurrent calls are the factors that contribute to the open connections. If the limit is reached, see the [scaling guide](#scalingguide) below.
 
@@ -521,7 +523,7 @@ SNAT port exhaustion: Azure Functions have a limited number of ports that can be
 
 To check the version of the currently deployed Azure log forwarder
 
-1. Open Azure Portal and go to **Subscriptions**.
+1. Open Azure portal and go to **Subscriptions**.
 2. Select your subscription.
 3. Go to **Resource groups**.
 4. Choose the resource group that contains the function.
@@ -534,7 +536,7 @@ To check the version of the currently deployed Azure log forwarder
 
 ## Scaling guide
 
-The recommended way of scaling up the default throughput of 70 MB/min is to upgrade the App Service plan, increase the number of App Service instances respectively, increase `FUNCTIONS_WORKER_PROCESS_COUNT` (default is 1), increase `NUMBER_OF_CONCURRENT_SEND_CALLS` (default is 2). You can add `FUNCTIONS_WORKER_PROCESS_COUNT` and `NUMBER_OF_CONCURRENT_SEND_CALLS` as **New application setting** in Azure Portal (**Azure function** > **Configuration** > **New application setting**).
+The recommended way of scaling up the default throughput of 70 MB/min is to upgrade the App Service plan, increase the number of App Service instances respectively, increase `FUNCTIONS_WORKER_PROCESS_COUNT` (default is 1), increase `NUMBER_OF_CONCURRENT_SEND_CALLS` (default is 2). You can add `FUNCTIONS_WORKER_PROCESS_COUNT` and `NUMBER_OF_CONCURRENT_SEND_CALLS` as **New application setting** in the Azure portal (**Azure function** > **Configuration** > **New application setting**).
 
 Please note that the performance of the log forwarder may vary depending on the log content (size/ processing complexity).
 
@@ -551,7 +553,7 @@ As a last resort, scale horizontally: deploy more integrations and distribute th
 
 To uninstall the Dynatrace Azure log forwarder
 
-1. In Azure Portal, go to the resource group used for installation.
+1. In the Azure portal, go to the resource group used for installation.
 2. Filter resources by tag.
 
    The deployment script tags all created resources with `LogsForwarderDeployment = <your_deployment_name>`.
@@ -560,4 +562,4 @@ To uninstall the Dynatrace Azure log forwarder
 ## Related topics
 
 * [Microsoft Azure Integrations](/managed/ingest-from/microsoft-azure-services/azure-integrations "Set up Dynatrace deep code monitoring on Azure using OneAgent or OpenTelemetry.")
-* [Azure Log Forwarder Troubleshootingï»¿](https://community.dynatrace.com/t5/Troubleshooting/Azure-Log-Forwarder-Troubleshooting/ta-p/243797)
+* [Azure Log Forwarder Troubleshooting﻿](https://community.dynatrace.com/t5/Troubleshooting/Azure-Log-Forwarder-Troubleshooting/ta-p/243797)

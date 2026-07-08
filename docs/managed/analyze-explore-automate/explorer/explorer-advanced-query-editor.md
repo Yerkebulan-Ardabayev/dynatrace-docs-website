@@ -1,7 +1,6 @@
 ---
 title: Data Explorer Advanced mode query editor
 source: https://docs.dynatrace.com/managed/analyze-explore-automate/explorer/explorer-advanced-query-editor
-scraped: 2026-05-12T11:13:08.239485
 ---
 
 # Data Explorer Advanced mode query editor
@@ -53,15 +52,15 @@ For a detailed description of the individual transformations, see [metric select
 
 Turning advanced mode off is possible only if the transformations you edited in advanced mode were added when advanced mode was off.
 
-For example, if you initially applied a sort transformation with advanced mode off, you can change the sort order from `ascending` to `descending` with advanced mode on and then switch advanced mode back off. However, once you add new parts to the queryâfor example, by adding transformations like a timeshift or metric expressions, which aren't yet possible with advanced mode turned offâyou can't switch advanced mode back off and continue working.
+For example, if you initially applied a sort transformation with advanced mode off, you can change the sort order from `ascending` to `descending` with advanced mode on and then switch advanced mode back off. However, once you add new parts to the query—for example, by adding transformations like a timeshift or metric expressions, which aren't yet possible with advanced mode turned off—you can't switch advanced mode back off and continue working.
 
 ## Edit a query
 
 The main functions of the query editor are the same whether **Advanced mode** is turned on or off:
 
 * To add a metric, select **Add metric** to add a row (another metric) to the query.
-* To duplicate a metric, select **More** (**â¦**) > **Duplicate** in a row to duplicate that row (metric).
-* To delete a metric, select **More** (**â¦**) > **Delete** in a row to delete that row (metric).
+* To duplicate a metric, select **More** (**…**) > **Duplicate** in a row to duplicate that row (metric).
+* To delete a metric, select **More** (**…**) > **Delete** in a row to delete that row (metric).
 * To reorder metrics, select and drag the metric to a new position in the list of metrics. Rerun the query to see your changes.
 
   ![Drag metric to reorder list](https://dt-cdn.net/images/data-explorer-drag-metric-69-84144c5cd2.png)
@@ -162,7 +161,7 @@ Building on the example above, we have the following basic components to work wi
 * Arithmetic operators: `+`, `-`, `*`, `/`
 * Negation: `-()`
 
-Arithmetic operations use the data points of tuples (unique combinations of metricâdimensionâdimension value) of metrics. Identical tuples of each metric are paired and then their data points are aligned. For details, see [Metrics API - Metric expressions](/managed/dynatrace-api/environment-api/metric-v2/metric-expressions#tuples "Use metric expressions to apply arithmetic operations in a data points query via the Metrics API v2.").
+Arithmetic operations use the data points of tuples (unique combinations of metric—dimension—dimension value) of metrics. Identical tuples of each metric are paired and then their data points are aligned. For details, see [Metrics API - Metric expressions](/managed/dynatrace-api/environment-api/metric-v2/metric-expressions#tuples "Use metric expressions to apply arithmetic operations in a data points query via the Metrics API v2.").
 
 ## Example: delta
 
@@ -288,12 +287,12 @@ Learn how to add context to your visualizations such as line charts in order to 
 When looking at data on your dashboards, the lines or single values alone often are quite useless, particularly to new users, who may lack the expertise and experience to quickly judge whether a spike on a line chart or a certain number can be considered an anomoly. Adding context to your visualizations can make all the difference to enabling better and faster interpretation.
 
 In this example, we learn how to duplicate your metric and then apply the `:timeshift` transformation to add context to your line charts.
-We start with `builtin:apps.web.largestContentfulPaint.load.browser`, a built-in [Core web vitalï»¿](https://web.dev/vitals/#core-web-vitals) metric that gives you the largest contentful paint measurements for all load actions for all your web applications.
+We start with `builtin:apps.web.largestContentfulPaint.load.browser`, a built-in [Core web vital﻿](https://web.dev/vitals/#core-web-vitals) metric that gives you the largest contentful paint measurements for all load actions for all your web applications.
 
 We can create this query with almost no typing.
 
 1. With **Advanced mode** turned off, select the metric, splits, aggregations, and filters.
-2. Duplicate the metric by selecting **More** (**â¦**) > **Duplicate** for that row.
+2. Duplicate the metric by selecting **More** (**…**) > **Duplicate** for that row.
 3. Turn on **Advanced mode** to view the query code.
 4. Add **timeshift(-1w)** at the end of the second (B) query.
 5. Run the query.

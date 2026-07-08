@@ -1,7 +1,6 @@
 ---
 title: Update Cluster ActiveGate
 source: https://docs.dynatrace.com/managed/managed-cluster/operation/update-dynatrace-managed-activegate
-scraped: 2026-05-12T11:53:10.081085
 ---
 
 # Update Cluster ActiveGate
@@ -66,7 +65,7 @@ Possible problems are:
 * ActiveGate downloaded the new installer but then failed to re-connect to the server (was lost).
   Check the ActiveGate installer logs for the reason why the installation failed.
 * There are no installers available for ActiveGate.
-* Update is on hold becauseâon another Environmentâthere were update problems with the offered version of ActiveGate.
+* Update is on hold because—on another Environment—there were update problems with the offered version of ActiveGate.
 
 **Unknown**  
 The connection to this ActiveGate has been lost and no status can be determined.  

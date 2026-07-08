@@ -1,7 +1,6 @@
 ---
 title: Hub capabilities API - GET items
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/hub/get-items
-scraped: 2026-05-12T11:54:47.112052
 ---
 
 # Hub capabilities API - GET items
@@ -55,7 +54,7 @@ To learn how to obtain and use it, see [Tokens and authentication](/managed/disc
 
 | Element | Type | Description |
 | --- | --- | --- |
-| items | [ItemOverview[]](#openapi-definition-ItemOverview) | A list of available items. |
+| items | [ItemOverview](#openapi-definition-ItemOverview)[] | A list of available items. |
 | nextPageKey | string | The cursor for the next page of results. Has the value of `null` on the last page.  Use it in the **nextPageKey** query parameter to obtain subsequent pages of the result. |
 | pageSize | integer | The number of entries per page. |
 | totalCount | integer | The total number of entries in the result. |
@@ -94,7 +93,7 @@ Overview of an item.
 | Element | Type | Description |
 | --- | --- | --- |
 | code | integer | The HTTP status code |
-| constraintViolations | [ConstraintViolation[]](#openapi-definition-ConstraintViolation) | A list of constraint violations |
+| constraintViolations | [ConstraintViolation](#openapi-definition-ConstraintViolation)[] | A list of constraint violations |
 | message | string | The error message |
 
 #### The `ConstraintViolation` object

@@ -1,7 +1,6 @@
 ---
 title: Send Dynatrace notifications to Slack
 source: https://docs.dynatrace.com/managed/analyze-explore-automate/notifications-and-alerting/problem-notifications/slack-integration
-scraped: 2026-05-12T11:24:54.325253
 ---
 
 # Send Dynatrace notifications to Slack
@@ -15,7 +14,7 @@ With a Slack problem-notification integration, your teams will always be aware o
 
 ## Set up Slack integration
 
-1. In Slack, create an Incoming Webhook, as [described in the Slack documentationï»¿](https://api.slack.com/messaging/webhooks).
+1. In Slack, create an Incoming Webhook, as [described in the Slack documentation﻿](https://api.slack.com/messaging/webhooks).
 2. Copy the generated Webhook URL to your clipboard. The Webhook URL should look like this: `https://hooks.slack.com/services/T00000000/B00000000/XXXXXXXXXXXXXXXXXXXXXXXX`.
 3. In Dynatrace, go to **Settings** > **Integration** > **Problem notifications**.
 4. Select **Add notification**.
@@ -48,4 +47,4 @@ An example of Slack integration
 
 ## Troubleshooting
 
-* [Slack problem notifications from Dynatrace don't arriveï»¿](https://dt-url.net/ti03ks4)
+* [Slack problem notifications from Dynatrace don't arrive﻿](https://dt-url.net/ti03ks4)

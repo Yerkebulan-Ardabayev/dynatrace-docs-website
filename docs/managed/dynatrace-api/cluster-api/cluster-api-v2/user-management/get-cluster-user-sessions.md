@@ -1,7 +1,6 @@
 ---
 title: Get cluster user sessions
 source: https://docs.dynatrace.com/managed/dynatrace-api/cluster-api/cluster-api-v2/user-management/get-cluster-user-sessions
-scraped: 2026-05-12T11:05:50.330586
 ---
 
 # Get cluster user sessions
@@ -32,7 +31,7 @@ To execute this request, you need the **Service Provider API** (`ServiceProvider
 
 | Code | Type | Description |
 | --- | --- | --- |
-| **200** | [UserSession[]](#openapi-definition-UserSession) | Success |
+| **200** | [UserSession](#openapi-definition-UserSession)[] | Success |
 | **500** | - | Operation failed |
 
 ### Response body objects

@@ -1,7 +1,6 @@
 ---
 title: Settings API - Dynatrace mobile app schema table
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/settings/schemas/builtin-mobile-notifications
-scraped: 2026-05-12T11:39:35.004404
 ---
 
 # Settings API - Dynatrace mobile app schema table
@@ -34,4 +33,4 @@ To execute this request, you need an access token with **Read settings** (`setti
 
 | Property | Type | Description | Required |
 | --- | --- | --- | --- |
-| Enabled `enabled` | boolean | Enables mobile push notifications for DavisÂ® problems. On Dynatrace Managed environments, additionally enables mobile QR code generation. | Required |
+| Enabled `enabled` | boolean | Enables mobile push notifications for Davis® problems. On Dynatrace Managed environments, additionally enables mobile QR code generation. | Required |

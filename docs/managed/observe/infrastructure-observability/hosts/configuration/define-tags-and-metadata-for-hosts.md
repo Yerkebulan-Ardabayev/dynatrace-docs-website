@@ -1,7 +1,6 @@
 ---
 title: Define tags and metadata for hosts
 source: https://docs.dynatrace.com/managed/observe/infrastructure-observability/hosts/configuration/define-tags-and-metadata-for-hosts
-scraped: 2026-05-12T11:11:31.664841
 ---
 
 # Define tags and metadata for hosts
@@ -90,9 +89,9 @@ To add or change host properties, run the following command:
 To set a security context for your host, use the following command:
 
 * **Linux** and **AIX**  
-  `./oneagentctl --set-host-property=dt.security_context=easytrade_sec`
+  `./oneagentctl --set-host-tag=dt.security_context=easytrade_sec`
 * **Windows**  
-  `.\oneagentctl.exe --set-host-property=dt.security_context=easytrade_sec`
+  `.\oneagentctl.exe --set-host-tag=dt.security_context=easytrade_sec`
 
 To **remove host properties**, run the following command:
 

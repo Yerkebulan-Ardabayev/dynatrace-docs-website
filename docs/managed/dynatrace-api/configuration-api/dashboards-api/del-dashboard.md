@@ -1,7 +1,6 @@
 ---
 title: Dashboards API - DELETE a dashboard
 source: https://docs.dynatrace.com/managed/dynatrace-api/configuration-api/dashboards-api/del-dashboard
-scraped: 2026-05-12T11:14:57.205468
 ---
 
 # Dashboards API - DELETE a dashboard

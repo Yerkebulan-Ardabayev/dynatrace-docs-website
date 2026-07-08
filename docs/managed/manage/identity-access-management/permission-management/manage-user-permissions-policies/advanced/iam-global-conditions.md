@@ -1,7 +1,6 @@
 ---
 title: Policy global conditions
 source: https://docs.dynatrace.com/managed/manage/identity-access-management/permission-management/manage-user-permissions-policies/advanced/iam-global-conditions
-scraped: 2026-05-12T11:49:52.174517
 ---
 
 # Policy global conditions
@@ -94,7 +93,7 @@ See **Date and time formats** below for details on date and time formats.
 
 ### Date and time formats
 
-For `global:date`, `global:date-time`, and `global:time-of-day`, specify the value with a time zone according to [ISO/WD 8601-1ï»¿](https://dt-url.net/bi03p33), where the character `Z` is used to designate that the date is in UTC.
+For `global:date`, `global:date-time`, and `global:time-of-day`, specify the value with a time zone according to [ISO/WD 8601-1﻿](https://dt-url.net/bi03p33), where the character `Z` is used to designate that the date is in UTC.
 
 Format: day of week
 

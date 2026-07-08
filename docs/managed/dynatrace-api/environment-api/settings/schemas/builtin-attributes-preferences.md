@@ -1,7 +1,6 @@
 ---
 title: Settings API - Preferences schema table
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/settings/schemas/builtin-attributes-preferences
-scraped: 2026-05-12T11:40:33.794350
 ---
 
 # Settings API - Preferences schema table

@@ -1,7 +1,6 @@
 ---
 title: Continuous thread analysis
 source: https://docs.dynatrace.com/managed/observe/application-observability/profiling-and-optimization/continuous-thread-analysis
-scraped: 2026-05-12T12:02:48.541969
 ---
 
 # Continuous thread analysis
@@ -14,7 +13,7 @@ scraped: 2026-05-12T12:02:48.541969
 
 Multiple-thread architectures can easily scale, as the distribution of work allows CPUs to remain active and continue running code. However, when systems need to coordinate work across multiple threads, locks increase and reductions in code run might occur.
 
-In Dynatrace, such behavior is automatically and continuously detected by OneAgent. With continuous thread analysis, data is continuously available, with historical context, and doesnât need to be triggered if a problem occurs. You can receive alerts on trends, analyze thread dumps, and directly start improving code, when and where it's needed, to prevent bottlenecks.
+In Dynatrace, such behavior is automatically and continuously detected by OneAgent. With continuous thread analysis, data is continuously available, with historical context, and doesn’t need to be triggered if a problem occurs. You can receive alerts on trends, analyze thread dumps, and directly start improving code, when and where it's needed, to prevent bottlenecks.
 
 ## Before you begin
 
@@ -37,7 +36,7 @@ Due to a known issue with Java 11, continuous thread analysis of JVM threads is 
 To start analyzing thread dumps
 
 1. Go to **Profiling & Optimization** > **Continuous CPU profiling**.
-2. For the process group that you want to analyze, select **More** (**â¦**) > **Threads**.
+2. For the process group that you want to analyze, select **More** (**…**) > **Threads**.
 3. On the **Thread analysis** page, you can:
 
    * Analyze the thread breakdown by thread states or by estimated CPU time.
@@ -49,7 +48,7 @@ To start analyzing thread dumps
      + By request thread-group name.  
        Select the thread-group name. The segmentation of thread groups takes into account the fact that they typically run different functionalities, and gives you quick means to identify CPU consumers.
    * Analyze the method hotspots of a thread group.  
-     In the thread group **Actions** column, select **More** (**â¦**) > **Method hotspots**.
+     In the thread group **Actions** column, select **More** (**…**) > **Method hotspots**.
 
 ## Use cases
 
@@ -74,9 +73,9 @@ We see that the system is not in bad shape, but there is still locking behavior 
 
 Analysis of locking time in Java process group
 
-For the thread group `JobScheduler FJ pool`, a considerable amount of time (almost half: `46.1%`) is continuously spent in locking, and it's distributed across `15` threads. This indicates a general lock affecting all of those threads. We want to avoid this behavior because it limits both speed and the ability to increase throughput by adding resources. Ultimately, it can lead to a state where the system wonât be able to process more data even if we add more hardware.
+For the thread group `JobScheduler FJ pool`, a considerable amount of time (almost half: `46.1%`) is continuously spent in locking, and it's distributed across `15` threads. This indicates a general lock affecting all of those threads. We want to avoid this behavior because it limits both speed and the ability to increase throughput by adding resources. Ultimately, it can lead to a state where the system won’t be able to process more data even if we add more hardware.
 
-To get to the root cause, we select **More** (**â¦**) > **Method hotspots**.
+To get to the root cause, we select **More** (**…**) > **Method hotspots**.
 
 ![Method hotspost analysis for locking time in Java process group](https://dt-cdn.net/images/locking-usercase-thread-analysis-3-1158-1e89cbdec0.png)
 
@@ -106,7 +105,7 @@ We want to identify which code is executed and how it impacts CPU consumption. A
 
 Thread analysis drill down - Cassandra
 
-To see a list of hotspots, we select **More** (**â¦**) > **Method hotspots** for `MutationStage-2`.
+To see a list of hotspots, we select **More** (**…**) > **Method hotspots** for `MutationStage-2`.
 
 ![Hotspots - Cassandra thread group](https://dt-cdn.net/images/cassandra-thread-analysis-3815-8e250538fe.png)
 
@@ -118,4 +117,4 @@ We now see that `Unsafe.unpark` contributes `30.1%` to code execution and is a g
 
 Is the retention period for continuous thread analysis related to the code-level retention period?
 
-Yes, the data retention period for continuous thread analysis is the same as for [distributed traces, code-level insights, and errors](/managed/manage/data-privacy-and-security/data-privacy/data-retention-periods#purepath "Check retention times for various data types.").
+Yes, the data retention period for continuous thread analysis is the same as for [distributed traces, code-level insights, and errors](/managed/manage/data-privacy-and-security/data-privacy/data-retention-periods#purepath "Review default and configurable retention periods for service, RUM Classic, synthetic, Log Monitoring, metric, diagnostic, and security data in Dynatrace Managed.").

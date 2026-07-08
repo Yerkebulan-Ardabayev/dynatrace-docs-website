@@ -1,7 +1,6 @@
 ---
 title: OpenTelemetry interoperability in Node.js
 source: https://docs.dynatrace.com/managed/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration/aws-lambda-classic/opentelemetry-interoperability/lambda-otel-bridge-nodejs
-scraped: 2026-05-12T12:15:12.275412
 ---
 
 # OpenTelemetry interoperability in Node.js
@@ -37,15 +36,15 @@ OpenTelemetry interoperability connects the [Dynatrace AWS Lambda extension](/ma
 
 When using an OpenTelemetry Node.js instrumentation, the configuration of all necessary OpenTelemetry SDK components and the registration of a TracerProvider are automatically handled by the Dynatrace AWS Lambda extension, so you don't need to register another TracerProvider.
 
-Instrumentation packages for JavaScript can be found in the [OpenTelemetry JavaScript contributions repositoryï»¿](https://github.com/open-telemetry/opentelemetry-js-contrib). Note that
+Instrumentation packages for JavaScript can be found in the [OpenTelemetry JavaScript contributions repository﻿](https://github.com/open-telemetry/opentelemetry-js-contrib). Note that
 
-* Some instrumentations might interfere with the Dynatrace HTTP and Lambda instrumentations and are automatically suppressed. These include [@opentelemetry/instrumentation-httpï»¿](https://github.com/open-telemetry/opentelemetry-js/tree/main/experimental/packages/opentelemetry-instrumentation-http) and [@opentelemetry/instrumentation-aws-lambdaï»¿](https://github.com/open-telemetry/opentelemetry-js-contrib/tree/main/plugins/node/opentelemetry-instrumentation-aws-lambda).
-* [@opentelemetry/auto-instrumentations-nodeï»¿](https://github.com/open-telemetry/opentelemetry-js-contrib/tree/instrumentation-aws-lambda-v0.26.0/metapackages/auto-instrumentations-node) use is discouraged, as it includes many different instrumentations.
-* If [`opentelemetry/instrumentation-aws-sdk`ï»¿](https://www.npmjs.com/package/@opentelemetry/instrumentation-aws-sdk) is used to instrument [AWS SDK V3ï»¿](https://github.com/aws/aws-sdk-js-v3), provided by the Node.js v18 and v20 Lambda runtimes, it will work for instrumentation version 0.36.0+.
+* Some instrumentations might interfere with the Dynatrace HTTP and Lambda instrumentations and are automatically suppressed. These include [@opentelemetry/instrumentation-http﻿](https://github.com/open-telemetry/opentelemetry-js/tree/main/experimental/packages/opentelemetry-instrumentation-http) and [@opentelemetry/instrumentation-aws-lambda﻿](https://github.com/open-telemetry/opentelemetry-js-contrib/tree/main/plugins/node/opentelemetry-instrumentation-aws-lambda).
+* [@opentelemetry/auto-instrumentations-node﻿](https://github.com/open-telemetry/opentelemetry-js-contrib/tree/instrumentation-aws-lambda-v0.26.0/metapackages/auto-instrumentations-node) use is discouraged, as it includes many different instrumentations.
+* If [`opentelemetry/instrumentation-aws-sdk`﻿](https://www.npmjs.com/package/@opentelemetry/instrumentation-aws-sdk) is used to instrument [AWS SDK V3﻿](https://github.com/aws/aws-sdk-js-v3), provided by the Node.js v18 and v20 Lambda runtimes, it will work for instrumentation version 0.36.0+.
 
 Example: Instrument calls in your Node.js Lambda function via instrumentation package
 
-The following code example shows how to instrument [PostgreSQLï»¿](https://www.postgresql.org/) calls in your Node.js Lambda function by using the [opentelemetry-instrumentation-pgï»¿](https://github.com/open-telemetry/opentelemetry-js-contrib/tree/main/plugins/node/opentelemetry-instrumentation-pg) instrumentation package.
+The following code example shows how to instrument [PostgreSQL﻿](https://www.postgresql.org/) calls in your Node.js Lambda function by using the [opentelemetry-instrumentation-pg﻿](https://github.com/open-telemetry/opentelemetry-js-contrib/tree/main/plugins/node/opentelemetry-instrumentation-pg) instrumentation package.
 
 ```
 const { registerInstrumentations } = require('@opentelemetry/instrumentation');
@@ -131,11 +130,11 @@ client?.end();
 }
 ```
 
-To instrument the [AWS SDK for JavaScriptï»¿](https://aws.amazon.com/sdk-for-javascript/), OpenTelemetry provides the [`opentelemetry/instrumentation-aws-sdk`ï»¿](https://www.npmjs.com/package/@opentelemetry/instrumentation-aws-sdk) instrumentation package.
+To instrument the [AWS SDK for JavaScript﻿](https://aws.amazon.com/sdk-for-javascript/), OpenTelemetry provides the [`opentelemetry/instrumentation-aws-sdk`﻿](https://www.npmjs.com/package/@opentelemetry/instrumentation-aws-sdk) instrumentation package.
 
 Example: Instrument AWS SDK for JavaScript to monitor a DynamoDB database
 
-The following code example shows how the [`opentelemetry/instrumentation-aws-sdk`ï»¿](https://www.npmjs.com/package/@opentelemetry/instrumentation-aws-sdk) instrumentation package can be used to add observability for calls to a DynamoDB database (Dynatrace version 1.244+).
+The following code example shows how the [`opentelemetry/instrumentation-aws-sdk`﻿](https://www.npmjs.com/package/@opentelemetry/instrumentation-aws-sdk) instrumentation package can be used to add observability for calls to a DynamoDB database (Dynatrace version 1.244+).
 
 ```
 const AWS = require('aws-sdk');
@@ -235,7 +234,7 @@ console.log('Success', data.Item);
 
 ## Use OpenTelemetry Node.js API
 
-[OpenTelemetry JavaScriptï»¿](https://github.com/open-telemetry/opentelemetry-js) can be used in an SDK-like approach to trace additional operations that aren't covered by an instrumentation package.
+[OpenTelemetry JavaScript﻿](https://github.com/open-telemetry/opentelemetry-js) can be used in an SDK-like approach to trace additional operations that aren't covered by an instrumentation package.
 
 ```
 const opentelemetry = require('@opentelemetry/api');
@@ -297,7 +296,7 @@ return response;
 
 OneAgent version 1.253+ for SQS OneAgent version 1.257+ for SNS
 
-You can use [@opentelemetry/instrumentation-aws-sdkï»¿](https://www.npmjs.com/package/@opentelemetry/instrumentation-aws-sdk) package to trace AWS SQS and SNS messages and collect the traces via Dynatrace AWS Lambda extension.
+You can use [@opentelemetry/instrumentation-aws-sdk﻿](https://www.npmjs.com/package/@opentelemetry/instrumentation-aws-sdk) package to trace AWS SQS and SNS messages and collect the traces via Dynatrace AWS Lambda extension.
 
 [![Step 1](https://dt-cdn.net/images/step-1-086e22066c.svg "Step 1")
 
@@ -521,7 +520,7 @@ const AWS = require('aws-sdk');
   });
   ```
 
-  The second node in the distributed trace named `sqs-minimal-sample-nodejs-receiver-trigger send` represents the sent SQS message and is generated by the [aws-sdkï»¿](https://www.npmjs.com/package/aws-sdk) instrumentation.
+  The second node in the distributed trace named `sqs-minimal-sample-nodejs-receiver-trigger send` represents the sent SQS message and is generated by the [aws-sdk﻿](https://www.npmjs.com/package/aws-sdk) instrumentation.
 
   Because `aws-sdk` package uses HTTP requests to send SQS messages, there is a call to `Requests to public networks`, which are captured by the OneAgent HTTP instrumentation. The call `invoke` comes from the AWS Lambda function subscribed to the SQS queue, which is monitored by the Dynatrace AWS Lambda extension.
 * Via AWS Lambda function
@@ -761,7 +760,7 @@ You can trace SQS messages forwarded from
   Then new spans can be created with the parent span extracted from each received SQS message.
 * An SNS topic
 
-  For SNS messages that are forwarded to SQS, the message format depends on the [raw message deliveryï»¿](https://docs.aws.amazon.com/sns/latest/dg/sns-large-payload-raw-message-delivery.html) configuration on the SNS subscription.
+  For SNS messages that are forwarded to SQS, the message format depends on the [raw message delivery﻿](https://docs.aws.amazon.com/sns/latest/dg/sns-large-payload-raw-message-delivery.html) configuration on the SNS subscription.
 
   | Raw message delivery | Message format | Example |
   | --- | --- | --- |

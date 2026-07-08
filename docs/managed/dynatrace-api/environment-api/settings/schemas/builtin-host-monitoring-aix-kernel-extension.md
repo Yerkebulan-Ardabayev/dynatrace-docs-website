@@ -1,7 +1,6 @@
 ---
 title: Settings API - AIX kernel extension schema table
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/settings/schemas/builtin-host-monitoring-aix-kernel-extension
-scraped: 2026-05-12T11:45:44.619720
 ---
 
 # Settings API - AIX kernel extension schema table
@@ -12,7 +11,7 @@ scraped: 2026-05-12T11:45:44.619720
 
 ### AIX kernel extension (`builtin:host.monitoring.aix-kernel-extension)`
 
-Dynatrace can automatically inject OneAgent deep code-monitoring modules for AIX monitoring. Otherwise, manual instrumentation is required for the monitoring of Java, Apache, WebLogic, and Websphere applications on AIX. For details, see [Install OneAgent on AIXï»¿](https://dt-url.net/l24t0pm1).
+Dynatrace can automatically inject OneAgent deep code-monitoring modules for AIX monitoring. Otherwise, manual instrumentation is required for the monitoring of Java, Apache, WebLogic, and Websphere applications on AIX. For details, see [Install OneAgent on AIX﻿](https://dt-url.net/l24t0pm1).
 
 | Schema ID | Schema groups | Scope |
 | --- | --- | --- |

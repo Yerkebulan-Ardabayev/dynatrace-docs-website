@@ -1,7 +1,6 @@
 ---
 title: Vulnerabilities API - POST remediation item tracking links
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/application-security/vulnerabilities/post-remediation-item-tracking-link
-scraped: 2026-05-12T11:58:56.243299
 ---
 
 # Vulnerabilities API - POST remediation item tracking links
@@ -104,7 +103,7 @@ This is a model of the request body, showing the possible elements. It has to be
 | Element | Type | Description |
 | --- | --- | --- |
 | code | integer | The HTTP status code |
-| constraintViolations | [ConstraintViolation[]](#openapi-definition-ConstraintViolation) | A list of constraint violations |
+| constraintViolations | [ConstraintViolation](#openapi-definition-ConstraintViolation)[] | A list of constraint violations |
 | message | string | The error message |
 
 #### The `ConstraintViolation` object

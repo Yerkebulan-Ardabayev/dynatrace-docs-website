@@ -1,7 +1,6 @@
 ---
 title: ActiveGate security
 source: https://docs.dynatrace.com/managed/ingest-from/dynatrace-activegate/activegate-security
-scraped: 2026-05-12T12:05:30.331384
 ---
 
 # ActiveGate security
@@ -66,8 +65,8 @@ Manual ActiveGate token enforcement
 
 ActiveGate tokens come in two types:
 
-* **Seed token**âAn ActiveGate seed token is automatically customized into the ActiveGate installer when you download the installer via the Dynatrace web UI or [Dynatrace API](/managed/dynatrace-api/environment-api/deployment/activegate "Download ActiveGate installers via Dynatrace API.").
-* **Individual token**âDuring the first ActiveGate connection to the Dynatrace Cluster, the initial ActiveGate seed token is replaced with an automatically generated, individual ActiveGate token. The same installer can be used multiple times; the initial ActiveGate seed token is allowed to create multiple individual ActiveGate tokens.
+* **Seed token**—An ActiveGate seed token is automatically customized into the ActiveGate installer when you download the installer via the Dynatrace web UI or [Dynatrace API](/managed/dynatrace-api/environment-api/deployment/activegate "Download ActiveGate installers via Dynatrace API.").
+* **Individual token**—During the first ActiveGate connection to the Dynatrace Cluster, the initial ActiveGate seed token is replaced with an automatically generated, individual ActiveGate token. The same installer can be used multiple times; the initial ActiveGate seed token is allowed to create multiple individual ActiveGate tokens.
 
 ### ActiveGate token structure
 
@@ -120,7 +119,7 @@ The transitional period of 30 days is designed to prevent data loss from ActiveG
 During that period, if any attempt to connect without an ActiveGate token is detected:
 
 * ActiveGate token enforcement won't be switched on and all ActiveGates will be allowed to connect to the Dynatrace cluster (only tenant tokens will be required).
-* The transitional period is reset to 30 daysâActiveGate token enforcement will be switched on automatically no sooner than 30 days from that point.
+* The transitional period is reset to 30 days—ActiveGate token enforcement will be switched on automatically no sooner than 30 days from that point.
 
 ### ActiveGate token status
 
@@ -165,7 +164,7 @@ The ActiveGate is version 1.223 or earlier; ActiveGate token-based network secur
   + An ActiveGate token can be shared among ActiveGates within the same environment.
 * If your ActiveGate is deployed by using [Dynatrace Operator](/managed/ingest-from/setup-on-k8s/deployment "Deploy Dynatrace Operator on Kubernetes"), Dynatrace Operator handles the authorization token. Starting with Dynatrace Operator version 0.9.0+, you must enable the **Create ActiveGate tokens** (`activeGateTokenManagement.create`) scope. For details, see [Access tokens and permissions](/managed/ingest-from/setup-on-k8s/deployment/tokens-permissions "Configure tokens and permissions to monitor your Kubernetes cluster").
 
-  For issues with your ActiveGate token, see [Problem with ActiveGate tokenï»¿](https://dt-url.net/ym238od) in Dynatrace Community.
+  For issues with your ActiveGate token, see [Problem with ActiveGate token﻿](https://dt-url.net/ym238od) in Dynatrace Community.
 * All host-based ActiveGates installed via the Dynatrace web UI or Dynatrace API already have an automatically generated ActiveGate token. However, you may sometimes need to [generate an ActiveGate token](#generate-individual) and [configure it in the `authorization.properties` file](#configure-hostbased).
 
 #### Generate ActiveGate token
@@ -229,7 +228,7 @@ The ActiveGate is version 1.223 or earlier; ActiveGate token-based network secur
 
    Replace:
 
-   * `{your-environment-id}` with your [Environment ID](/managed/discover-dynatrace/get-started/monitoring-environment "Understand and learn how to work with monitoring environments.")
+   * `{your-environment-id}` with your [Environment ID](/managed/discover-dynatrace/get-started/monitoring-environment "Learn what a Dynatrace monitoring environment is, how to find your environment ID, and how to set up and connect multiple environments.")
    * `{api-token}` with an [API token](/managed/dynatrace-api/basics/dynatrace-api-authentication "Find out how to get authenticated to use the Dynatrace API.") set to one of the following scopes: **Create ActiveGate tokens** or **Write ActiveGate tokens**.
 
    **Response body example:**
@@ -268,12 +267,12 @@ The ActiveGate is version 1.223 or earlier; ActiveGate token-based network secur
 
 Besides setting up your internal mechanism for rotating ActiveGate tokens before their expiration date, you can set up notifications about expiring ActiveGate tokens. To do so, create a problem notification integration (for example, [Email](/managed/analyze-explore-automate/notifications-and-alerting/problem-notifications/email-integration "Get email whenever Dynatrace detects a problem in your environment that affects real users.")) using the built-in **Default for ActiveGate Token Expiry** alerting profile.
 
-For Dynatrace Managed, [emergency contacts](/managed/managed-cluster/configuration/configure-emergency-contacts-managed "Learn how to configure emergency contacts in Dynatrace Managed.") also receive token expiry notifications.
+For Dynatrace Managed, [emergency contacts](/managed/managed-cluster/configuration/configure-cluster-event-notifications "Configure Dynatrace Managed Cluster event notification recipients, emergency contacts, and which Managed Cluster events trigger email notifications.") also receive token expiry notifications.
 
 To stop notifications
 
 1. In Dynatrace, go to **Deployment Status** > **ActiveGates**.
-2. Select **More** (**â¦**), then select **ActiveGate token enforcement settings**.
+2. Select **More** (**…**), then select **ActiveGate token enforcement settings**.
 3. Turn off **Enable notifications about ActiveGate tokens expiration dates**.
 4. Select **Save changes**.
 
@@ -281,7 +280,7 @@ To stop notifications
 
 Dynatrace version 1.272+
 
-Dynatrace performs an automatic cleanup of unused ActiveGate tokens. The token is considered unused after two years from the last usage. You can check your tokens via the [GET all tokens](/managed/dynatrace-api/environment-api/tokens-v2/activegate-tokens/get-all-activegate-tokens "List all ActiveGate tokens available for your monitoring environment via Dynatrace API.") request of the Tokens APIâlook for the **lastUsedDate** field.
+Dynatrace performs an automatic cleanup of unused ActiveGate tokens. The token is considered unused after two years from the last usage. You can check your tokens via the [GET all tokens](/managed/dynatrace-api/environment-api/tokens-v2/activegate-tokens/get-all-activegate-tokens "List all ActiveGate tokens available for your monitoring environment via Dynatrace API.") request of the Tokens API—look for the **lastUsedDate** field.
 
 Sample API payload
 

@@ -1,7 +1,6 @@
 ---
 title: Monitor Kubernetes/OpenShift workloads
 source: https://docs.dynatrace.com/managed/observe/infrastructure-observability/container-platform-monitoring/kubernetes-monitoring/monitor-workloads-kubernetes
-scraped: 2026-05-12T12:07:27.566020
 ---
 
 # Monitor Kubernetes/OpenShift workloads
@@ -18,7 +17,7 @@ When deployed in application-only mode, OneAgent monitors the memory, disk, CPU,
 ## Prerequisites
 
 * ActiveGate with the Kubernetes API monitoring enabled
-* [Latest OneAgent image from Docker Hub with tag 1.38.1000+ï»¿](https://hub.docker.com/r/dynatrace/oneagent)
+* [Latest OneAgent image from Docker Hub with tag 1.38.1000+﻿](https://hub.docker.com/r/dynatrace/oneagent)
 * In Dynatrace, go to your Kubernetes cluster settings page and make sure that **Monitor Kubernetes namespaces, services, workloads, and pods** is turned on.
 
 ## Get an instant overview of your Kubernetes environment
@@ -33,7 +32,7 @@ The unified analysis view enables you to examine all the namespace-related data 
 
 Customized unified analysis
 
-To customize the information you receive on the unified analysis page, select **More** (**â¦**) in the upper-right corner of any section. The different selections on the unified analysis page (**View all namespaces**, **View all workloads**, **View all pods**, and so on) enable you to jump directly to any specific section or subsection you want to customize.
+To customize the information you receive on the unified analysis page, select **More** (**…**) in the upper-right corner of any section. The different selections on the unified analysis page (**View all namespaces**, **View all workloads**, **View all pods**, and so on) enable you to jump directly to any specific section or subsection you want to customize.
 
 ### Namespaces
 

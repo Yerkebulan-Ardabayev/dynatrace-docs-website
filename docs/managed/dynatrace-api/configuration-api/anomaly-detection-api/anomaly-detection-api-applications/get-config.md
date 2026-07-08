@@ -1,7 +1,6 @@
 ---
 title: Application anomaly detection API - GET configuration
 source: https://docs.dynatrace.com/managed/dynatrace-api/configuration-api/anomaly-detection-api/anomaly-detection-api-applications/get-config
-scraped: 2026-05-12T11:21:27.272677
 ---
 
 # Application anomaly detection API - GET configuration
@@ -428,4 +427,4 @@ https://mySampleEnv.live.dynatrace.com/api/config/v1/anomalyDetection/applicatio
 ## Related topics
 
 * [Adjust the sensitivity of anomaly detection for applications](/managed/dynatrace-intelligence/anomaly-detection/adjust-sensitivity-anomaly-detection/adjust-sensitivity-applications "Learn how to adapt the sensitivity of problem detection for applications.")
-* [DavisÂ® AI](/managed/dynatrace-intelligence "Get familiar with the capabilities of Davis AI.")
+* [Davis® AI](/managed/dynatrace-intelligence "Learn how Davis® AI detects performance anomalies, identifies root causes, and uses AI models for adaptive thresholds across your environment.")

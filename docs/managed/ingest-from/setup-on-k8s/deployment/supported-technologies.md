@@ -1,7 +1,6 @@
 ---
 title: Supported distributions
 source: https://docs.dynatrace.com/managed/ingest-from/setup-on-k8s/deployment/supported-technologies
-scraped: 2026-05-12T11:23:15.589141
 ---
 
 # Supported distributions
@@ -9,7 +8,7 @@ scraped: 2026-05-12T11:23:15.589141
 # Supported distributions
 
 * 6-min read
-* Updated on Feb 19, 2026
+* Updated on Jun 16, 2026
 
 This page gives an overview and documents the different configurations for all major Kubernetes distributions.
 
@@ -108,6 +107,60 @@ cloudNativeFullStack classicFullStack applicationMonitoring hostMonitoring
 
 No specific configuration is required for AKS.
 
+### AKS admissions enforcer
+
+applicationMonitoring cloudNativeFullStack
+
+Code module injection is skipped in AKS-managed namespaces because the AKS admissions enforcer appends `namespaceSelector` expressions to every `MutatingWebhookConfiguration` and `ValidatingWebhookCOnfiguration` which explicitly exclude namespaces labeled `kubernetes.azure.com/managedby: aks`.
+
+```
+- key: control-plane
+
+
+
+operator: NotIn
+
+
+
+values: ["true"]
+
+
+
+- key: kubernetes.azure.com/managedby
+
+
+
+operator: NotIn
+
+
+
+values: ["aks"]
+```
+
+Because the Dynatrace Operator webhook ships with only `dynakube.internal.dynatrace.com/instance: Exists` in its namespace selector, any namespace labeled `kubernetes.azure.com/managedby: aks` is excluded from injection after the enforcer modifies the webhook configuration.
+
+To check whether the admissions enforcer has modified the Dynatrace webhook configuration, run:
+
+```
+kubectl get mutatingwebhookconfiguration dynatrace-webhook -o yaml
+```
+
+If the enforcer has run, the output contains additional entries under `namespaceSelector.matchExpressions` for `control-plane` and `kubernetes.azure.com/managedby`.
+
+If you need injection in a namespace labeled `kubernetes.azure.com/managedby: aks`, annotate the `MutatingWebhookConfiguration` to opt it out of the enforcer:
+
+```
+kubectl annotate mutatingwebhookconfiguration dynatrace-webhook \
+
+
+
+admissions.enforcer/disabled=true
+```
+
+The annotation does not remove selectors the enforcer already added. Remove the `control-plane` and `kubernetes.azure.com/managedby` entries manually from `namespaceSelector.matchExpressions` on the `mutatingwebhookconfiguration`.
+
+If the Dynatrace Operator re-creates the `MutatingWebhookConfiguration` — for example, after an operator upgrade — the `admissions.enforcer/disabled=true` annotation is lost. Note that the Dynatrace webhook will never block pod scheduling. If it is unavailable, Kubernetes will ignore the failure and schedule pods as normal. For details, see the [AKS FAQ﻿](https://learn.microsoft.com/azure/aks/faq).
+
 ## Google Kubernetes Engine (GKE)
 
 cloudNativeFullStack classicFullStack applicationMonitoring hostMonitoring
@@ -194,7 +247,7 @@ CSI driver Standalone LogMonitoring
 Starting with GKE Autopilot version 1.32.1-gke.1376000 a `WorkloadAllowlist` explicitly permits security exceptions (for example, allowing the Dynatrace Operator CSI driver to run privileged workloads).
 Dynatrace is working with Google to roll out these `WorkloadAllowlists` in a timely manner for each release.
 
-Further details on the process can be found on the official [Google Cloud docsï»¿](https://cloud.google.com/kubernetes-engine/docs/resources/autopilot-partners).
+Further details on the process can be found on the official [Google Cloud docs﻿](https://cloud.google.com/kubernetes-engine/docs/resources/autopilot-partners).
 
 Deploying and managing the AllowlistSynchronizer will be automated in Dynatrace Operator version 1.5.0+. For versions 1.4.1 - 1.4.X you will have to apply such manifest yourself.
 
@@ -258,7 +311,7 @@ Set the `image` value in your helm `values.yaml` to one of the supported reposit
 
 #### Manifests
 
-1. Instead of applying the manifest, the manifests (`kubernetes-csi.yaml`) have to be downloaded from the [release pageï»¿](https://github.com/Dynatrace/dynatrace-operator/releases).
+1. Instead of applying the manifest, the manifests (`kubernetes-csi.yaml`) have to be downloaded from the [release page﻿](https://github.com/Dynatrace/dynatrace-operator/releases).
 2. Replace the value `public.ecr.aws/dynatrace/dynatrace-operator` in the image fields with `docker.io/dynatrace/dynatrace-operator`.
 3. Apply the changed manifest. Use the appropriate one depending on if you want to use the CSI driver or not.
 
@@ -276,7 +329,7 @@ For OpenShift, you need to [configure Security Context Constraints (SCC)](/manag
 
 For managed OpenShift implementations such as AWS ROSA and Azure Red Hat OpenShift (ARO), Dynatrace supports the same features as dedicated OpenShift.
 
-For OpenShift Dedicated, you need the [cluster-admin roleï»¿](https://dt-url.net/a2038v8).
+For OpenShift Dedicated, you need the [cluster-admin role﻿](https://dt-url.net/a2038v8).
 
 ## Rancher Kubernetes Engine 2 (RKE2)
 

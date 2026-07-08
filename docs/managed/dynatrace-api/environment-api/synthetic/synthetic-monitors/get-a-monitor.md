@@ -1,7 +1,6 @@
 ---
 title: Synthetic monitors API - GET a monitor
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/synthetic/synthetic-monitors/get-a-monitor
-scraped: 2026-05-12T11:59:52.446088
 ---
 
 # Synthetic monitors API - GET a monitor
@@ -51,7 +50,7 @@ To find all model variations that depend on the type of the model, see [JSON mod
 
 The synthetic monitor.
 
-The actual set of fields depends the type of the monitor. Find the list of actual objects in the description of the **type** field or see [Synthetic monitors API - JSON modelsï»¿](https://dt-url.net/2523se9).
+The actual set of fields depends the type of the monitor. Find the list of actual objects in the description of the **type** field or see [Synthetic monitors API - JSON models﻿](https://dt-url.net/2523se9).
 
 | Element | Type | Description |
 | --- | --- | --- |
@@ -62,11 +61,11 @@ The actual set of fields depends the type of the monitor. Find the list of actua
 | entityId | string | The entity ID of the monitor. |
 | frequencyMin | integer | The frequency of the monitor, in minutes.  You can use one of the following values: `5`, `10`, `15`, `30`, and `60`. |
 | locations | string[] | A list of locations from which the monitor is executed.  To specify a location, use its entity ID. For public locations in `GEOLOCATION-9999453BE4BDB3CD` form and `SYNTHETIC_LOCATION-DF80ACFB688C583B` for private ones. |
-| managementZones | [ManagementZone[]](#openapi-definition-ManagementZone) | A set of management zones to which the monitor belongs to. |
+| managementZones | [ManagementZone](#openapi-definition-ManagementZone)[] | A set of management zones to which the monitor belongs to. |
 | manuallyAssignedApps | string[] | A set of manually assigned applications. |
 | name | string | The name of the monitor. |
-| script | object | The script of a [browserï»¿](https://dt-url.net/9c103rda) or HTTP monitor. |
-| tags | [TagWithSourceInfo[]](#openapi-definition-TagWithSourceInfo) | A set of tags assigned to the monitor. |
+| script | object | The script of a [browser﻿](https://dt-url.net/9c103rda) or HTTP monitor. |
+| tags | [TagWithSourceInfo](#openapi-definition-TagWithSourceInfo)[] | A set of tags assigned to the monitor. |
 | type | string | Defines the actual set of fields depending on the value. See one of the following objects:  * `BROWSER` -> BrowserSyntheticMonitor * `HTTP` -> HttpSyntheticMonitor The element can hold these values * `BROWSER` * `HTTP` |
 
 #### The `AnomalyDetection` object
@@ -85,7 +84,7 @@ Performance thresholds configuration.
 | Element | Type | Description |
 | --- | --- | --- |
 | enabled | boolean | Performance threshold is enabled (`true`) or disabled (`false`). |
-| thresholds | [LoadingTimeThreshold[]](#openapi-definition-LoadingTimeThreshold) | The list of performance threshold rules. |
+| thresholds | [LoadingTimeThreshold](#openapi-definition-LoadingTimeThreshold)[] | The list of performance threshold rules. |
 
 #### The `LoadingTimeThreshold` object
 
@@ -160,7 +159,7 @@ Tag with source of a Dynatrace entity.
 | Element | Type | Description |
 | --- | --- | --- |
 | code | integer | The HTTP status code |
-| constraintViolations | [ConstraintViolation[]](#openapi-definition-ConstraintViolation) | A list of constraint violations |
+| constraintViolations | [ConstraintViolation](#openapi-definition-ConstraintViolation)[] | A list of constraint violations |
 | message | string | The error message |
 
 #### The `ConstraintViolation` object
@@ -462,7 +461,7 @@ A list of constraint violations
 
 ## Example
 
-In this example, the request lists the parameters of the **dynatrace.com** monitor, which is a **browser clickpath** that navigates to [https://www.dynatrace.com/ï»¿](https://www.dynatrace.com/) and signs up for a free trial.
+In this example, the request lists the parameters of the **dynatrace.com** monitor, which is a **browser clickpath** that navigates to [https://www.dynatrace.com/﻿](https://www.dynatrace.com/) and signs up for a free trial.
 
 The API token is passed in the **Authorization** header.
 
@@ -1183,5 +1182,5 @@ https://mySampleEnv.live.dynatrace.com/api/v1/synthetic/monitors/SYNTHETIC_TEST-
 ## Related topics
 
 * [Synthetic Monitoring](/managed/observe/digital-experience/synthetic-monitoring "Learn about Synthetic Monitoring and how to create a single-URL browser monitor, a browser clickpath, or an HTTP monitor.")
-* [Script mode for browser monitor configuration](/managed/observe/digital-experience/synthetic-monitoring/browser-monitors/script-mode-for-browser-monitor-configuration "Create or edit your browser monitors in JSON format.")
-* [Script mode for HTTP monitor configuration](/managed/observe/digital-experience/synthetic-monitoring/http-monitors-classic/script-mode-for-http-monitor-configuration-classic "Create or edit your HTTP monitors in JSON format.")
+* [Script mode for browser monitor configuration in Classic](/managed/observe/digital-experience/synthetic-monitoring/browser-monitors/script-mode-for-browser-monitor-configuration "Create or edit your browser monitors in JSON format.")
+* [Script mode for HTTP monitor configuration in Classic](/managed/observe/digital-experience/synthetic-monitoring/http-monitors-classic/script-mode-for-http-monitor-configuration-classic "Create or edit your HTTP monitors in JSON format.")

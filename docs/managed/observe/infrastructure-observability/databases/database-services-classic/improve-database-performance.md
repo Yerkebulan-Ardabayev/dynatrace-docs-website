@@ -1,7 +1,6 @@
 ---
 title: Improve database performance
 source: https://docs.dynatrace.com/managed/observe/infrastructure-observability/databases/database-services-classic/improve-database-performance
-scraped: 2026-05-12T12:15:24.448253
 ---
 
 # Improve database performance
@@ -83,7 +82,7 @@ The first step is to ensure that the host serving your database process has suff
 
 ## Step 2 Understand how your database is accessed
 
-Once your database resides on healthy hardware, take a look at the applications that access it. If you know of an application or service that has bad database performance, donât assume that it's the application that's affecting the performance of your databaseâit may be another application or service entirely.
+Once your database resides on healthy hardware, take a look at the applications that access it. If you know of an application or service that has bad database performance, don’t assume that it's the application that's affecting the performance of your database—it may be another application or service entirely.
 
 ![Database overview | Unified analysis](https://dt-cdn.net/images/database-ua-overview-3502-2a520ae771.png)
 
@@ -92,7 +91,7 @@ Database overview | Unified analysis
 Reduction in database performance can affect the entire database or a single client.
 
 * If all clients experience bad performance, check if the host is healthy. In most cases, the cause is hardware that isn't capable of handling the work.
-* If only a single service suffers from poor response times, dig deeper into the serviceâs metrics to find the root cause of the problem.
+* If only a single service suffers from poor response times, dig deeper into the service’s metrics to find the root cause of the problem.
 
 ## Step 3 Understand the load and individual response time of each service instance
 
@@ -108,22 +107,22 @@ Database details page
 
 ## Step 4 Check the number of database connections
 
-You might continue to face poor database performance even when database queries are correctly configured. In such cases, check that the applicationâs database connection pool is correctly sized.
+You might continue to face poor database performance even when database queries are correctly configured. In such cases, check that the application’s database connection pool is correctly sized.
 
 When configuring a connection pool, consider the following:
 
 * The maximum number of connections the database can handle
 * The correct size connection pool required for the application
 
-Because your application may not be the only client connected to the database, ensure that the connection pool size isn't set to the maximum. If the application takes up all the connections, the database server wonât perform as expected.
+Because your application may not be the only client connected to the database, ensure that the connection pool size isn't set to the maximum. If the application takes up all the connections, the database server won’t perform as expected.
 
 How to determine the maximum number of connections
 
 The maximum number of connections to the database is a function of the resources in the database. To find the maximum number of connections, gradually increase the load and the number of allowed connections to your database.
 
-While doing this, keep an eye on your database serverâs metrics: CPU, memory, and disk performance. Once any of these maxes out, youâve reached the limit. If the number of available connections isn't enough for your application, consider upgrading your hardware.
+While doing this, keep an eye on your database server’s metrics: CPU, memory, and disk performance. Once any of these maxes out, you’ve reached the limit. If the number of available connections isn't enough for your application, consider upgrading your hardware.
 
-To learn more about the database connection pool size, see [About Pool Sizingï»¿](https://github.com/brettwooldridge/HikariCP/wiki/About-Pool-Sizing).
+To learn more about the database connection pool size, see [About Pool Sizing﻿](https://github.com/brettwooldridge/HikariCP/wiki/About-Pool-Sizing).
 
 How to determine the correct size for your application connection pool
 
@@ -131,7 +130,7 @@ The number of allowed concurrent connections to your database is equivalent to t
 
 Increasing the load leads to higher transaction response times, even if your database server is healthy. Measure the transaction response time from end-to-end to see if **Connection acquisition** time increases under heavy load. If that's the case, your connection pool may be exhausted. If not, review your database server metrics to determine the maximum number of connections that your database can handle.
 
-A connection poolâs size should be constant. Therefore, set the minimum and maximum pool sizes to the same value.
+A connection pool’s size should be constant. Therefore, set the minimum and maximum pool sizes to the same value.
 
 ## Step 5 Check your network
 

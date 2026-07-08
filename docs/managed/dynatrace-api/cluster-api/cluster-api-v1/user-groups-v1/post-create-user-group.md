@@ -1,7 +1,6 @@
 ---
 title: Create user group
 source: https://docs.dynatrace.com/managed/dynatrace-api/cluster-api/cluster-api-v1/user-groups-v1/post-create-user-group
-scraped: 2026-05-12T12:12:49.149039
 ---
 
 # Create user group

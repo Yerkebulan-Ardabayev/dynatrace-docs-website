@@ -1,7 +1,6 @@
 ---
 title: Settings API - GET a schema
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/settings/schemas/get-schema
-scraped: 2026-05-12T11:31:24.476700
 ---
 
 # Settings API - GET a schema
@@ -52,8 +51,8 @@ To learn how to obtain and use it, see [Tokens and authentication](/managed/disc
 | Element | Type | Description |
 | --- | --- | --- |
 | allowedScopes | string[] | A list of scopes where the schema can be used. |
-| constraints | [ComplexConstraint[]](#openapi-definition-ComplexConstraint) | A list of constrains limiting the values to be accepted by the schema. |
-| deletionConstraints | [DeletionConstraint[]](#openapi-definition-DeletionConstraint) | Constraints limiting the values to be deleted. |
+| constraints | [ComplexConstraint](#openapi-definition-ComplexConstraint)[] | A list of constrains limiting the values to be accepted by the schema. |
+| deletionConstraints | [DeletionConstraint](#openapi-definition-DeletionConstraint)[] | Constraints limiting the values to be deleted. |
 | description | string | A short description of the schema. |
 | displayName | string | The display name of the schema. |
 | documentation | string | An extended description of the schema and/or links to documentation. |
@@ -66,7 +65,7 @@ To learn how to obtain and use it, see [Tokens and authentication](/managed/disc
 | multiObject | boolean | Multiple (`true`) objects per scope are permitted or a single (`false`) object per scope is permitted. |
 | ordered | boolean | If `true` the order of objects has semantic significance.  Only applicable when **multiObject** is set to `true`. |
 | properties | object | A list of schema's properties. |
-| schemaConstraints | [SchemaConstraintRestDto[]](#openapi-definition-SchemaConstraintRestDto) | Constraints limiting the values as a whole to be accepted in this configuration element. |
+| schemaConstraints | [SchemaConstraintRestDto](#openapi-definition-SchemaConstraintRestDto)[] | Constraints limiting the values as a whole to be accepted in this configuration element. |
 | schemaGroups | string[] | Names of the groups, which the schema belongs to. |
 | schemaId | string | The ID of the schema. |
 | tableColumns | object | Table column definitions for use in the ui. |
@@ -112,7 +111,7 @@ Definition of an enum property.
 | displayName | string | The display name of the property. |
 | documentation | string | An extended description and/or links to documentation. |
 | enumClass | string | An existing Java enum class that holds the allowed values of the enum. |
-| items | [EnumValue[]](#openapi-definition-EnumValue) | A list of allowed values of the enum. |
+| items | [EnumValue](#openapi-definition-EnumValue)[] | A list of allowed values of the enum. |
 | type | string | The type of the property. The element can hold these values * `enum` |
 
 #### The `EnumValue` object
@@ -125,7 +124,7 @@ An allowed value for an enum property.
 | displayName | string | The display name of the value. |
 | enumInstance | string | The name of the value in an existing Java enum class. |
 | icon | string | The icon of the value. |
-| value | string | The allowed value of the enum. |
+| value | [AnyValue](#openapi-definition-AnyValue) | The allowed value of the enum. |
 
 #### The `AnyValue` object
 
@@ -137,9 +136,9 @@ Configuration of a property in a settings schema.
 
 | Element | Type | Description |
 | --- | --- | --- |
-| constraints | [Constraint[]](#openapi-definition-Constraint) | A list of constraints limiting the values to be accepted. |
+| constraints | [Constraint](#openapi-definition-Constraint)[] | A list of constraints limiting the values to be accepted. |
 | datasource | [DatasourceDefinition](#openapi-definition-DatasourceDefinition) | Configuration of a datasource for a property. |
-| default | string | The default value to be used when no value is provided.  If a non-singleton has the value of `null`, it means an empty collection. |
+| default | [AnyValue](#openapi-definition-AnyValue) | The default value to be used when no value is provided.  If a non-singleton has the value of `null`, it means an empty collection. |
 | description | string | A short description of the property. |
 | displayName | string | The display name of the property. |
 | documentation | string | An extended description and/or links to documentation. |
@@ -154,7 +153,7 @@ Configuration of a property in a settings schema.
 | precondition | [Precondition](#openapi-definition-Precondition) | A precondition for visibility of a property. |
 | referencedType | string | The type referenced by the property value |
 | subType | string | The subtype of the property's value. |
-| type | string | The type of the property's value. |
+| type | [AnyValue](#openapi-definition-AnyValue) | The type of the property's value. |
 | uiCustomization | [UiCustomization](#openapi-definition-UiCustomization) | Customization for UI elements |
 
 #### The `Constraint` object
@@ -195,7 +194,7 @@ An item of a collection property.
 
 | Element | Type | Description |
 | --- | --- | --- |
-| constraints | [Constraint[]](#openapi-definition-Constraint) | A list of constraints limiting the values to be accepted. |
+| constraints | [Constraint](#openapi-definition-Constraint)[] | A list of constraints limiting the values to be accepted. |
 | datasource | [DatasourceDefinition](#openapi-definition-DatasourceDefinition) | Configuration of a datasource for a property. |
 | description | string | A short description of the item. |
 | displayName | string | The display name of the item. |
@@ -203,8 +202,16 @@ An item of a collection property.
 | metadata | object | Metadata of the items. |
 | referencedType | string | The type referenced by the item's value. |
 | subType | string | The subtype of the item's value. |
-| type | string | The type of the item's value. |
+| type | [AnyValue](#openapi-definition-AnyValue) | The type of the item's value. |
 | uiCustomization | [UiCustomization](#openapi-definition-UiCustomization) | Customization for UI elements |
+
+#### The `RefPointer` object
+
+Object with a pointer to a JSON object
+
+| Element | Type | Description |
+| --- | --- | --- |
+| $ref | string | Pointer to a JSON object this object should be logically replaced with. |
 
 #### The `UiCustomization` object
 
@@ -223,7 +230,7 @@ UI customization options for defining custom callbacks
 
 | Element | Type | Description |
 | --- | --- | --- |
-| buttons | [UiButtonCustomization[]](#openapi-definition-UiButtonCustomization) | UI customization for defining buttons that call functions when pressed |
+| buttons | [UiButtonCustomization](#openapi-definition-UiButtonCustomization)[] | UI customization for defining buttons that call functions when pressed |
 
 #### The `UiButtonCustomization` object
 
@@ -234,7 +241,15 @@ UI customization for defining a button that calls a function when pressed
 | description | string | The description to be shown in a tooltip when hovering over the button |
 | displayName | string | The label of the button |
 | identifier | string | The identifier of the function to be called when the button is pressed |
-| insert | string | The position where the button should be shown in the UI The element can hold these values * `FIRST` * `LAST` |
+| insert | [AnyValue](#openapi-definition-AnyValue) | The position where the button should be shown in the UI |
+
+#### The `InsertPosition` object
+
+The position where the button should be shown relative to a property in the UI
+
+| Element | Type | Description |
+| --- | --- | --- |
+| after | string | The path of a property after which the button should be shown in the UI |
 
 #### The `UiExpandableCustomization` object
 
@@ -244,7 +259,7 @@ UI customization for expandable section
 | --- | --- | --- |
 | displayName | string | The display name |
 | expanded | boolean | Defines if the item should be expanded by default |
-| sections | [UiExpandableSectionCustomization[]](#openapi-definition-UiExpandableSectionCustomization) | A list of sections |
+| sections | [UiExpandableSectionCustomization](#openapi-definition-UiExpandableSectionCustomization)[] | A list of sections |
 
 #### The `UiExpandableSectionCustomization` object
 
@@ -263,7 +278,7 @@ Customization for UI tables
 
 | Element | Type | Description |
 | --- | --- | --- |
-| columns | [UiTableColumnCustomization[]](#openapi-definition-UiTableColumnCustomization) | A list of columns for the UI table |
+| columns | [UiTableColumnCustomization](#openapi-definition-UiTableColumnCustomization)[] | A list of columns for the UI table |
 | emptyState | [UiEmptyStateCustomization](#openapi-definition-UiEmptyStateCustomization) | UI customization for empty state in a table |
 
 #### The `UiTableColumnCustomization` object
@@ -276,7 +291,7 @@ Customization for UI table columns
 | columnRef | string | The referenced column from the 'tableColumns' property of the schema for this column. |
 | displayName | string | The display name for this column. |
 | id | string | The id for this column used for filtering. Required for conflicting or pathed columns - otherwise the ref is used. |
-| items | [UiTableColumnItemCustomization[]](#openapi-definition-UiTableColumnItemCustomization) | The possible items of this column. |
+| items | [UiTableColumnItemCustomization](#openapi-definition-UiTableColumnItemCustomization)[] | The possible items of this column. |
 | propertyRef | string | The referenced property for this column. |
 | type | string | The ui specific type for this column. |
 | width | string | The width this column should take up on the table. |
@@ -305,7 +320,7 @@ UI customization for tabs
 
 | Element | Type | Description |
 | --- | --- | --- |
-| groups | [UiTabGroupCustomization[]](#openapi-definition-UiTabGroupCustomization) | A list of groups |
+| groups | [UiTabGroupCustomization](#openapi-definition-UiTabGroupCustomization)[] | A list of groups |
 
 #### The `UiTabGroupCustomization` object
 
@@ -323,11 +338,11 @@ A precondition for visibility of a property.
 
 | Element | Type | Description |
 | --- | --- | --- |
-| expectedValue | string | The expected value of the property.  Only applicable to properties of the `EQUALS` type. |
-| expectedValues | - | A list of valid values of the property.  Only applicable to properties of the `IN` type. |
+| expectedValue | [AnyValue](#openapi-definition-AnyValue) | The expected value of the property.  Only applicable to properties of the `EQUALS` type. |
+| expectedValues | [AnyValue](#openapi-definition-AnyValue)[] | A list of valid values of the property.  Only applicable to properties of the `IN` type. |
 | pattern | string | The Regular expression which is matched against the property.  Only applicable to properties of the `REGEX_MATCH` type. |
 | precondition | [Precondition](#openapi-definition-Precondition) | A precondition for visibility of a property. |
-| preconditions | [Precondition[]](#openapi-definition-Precondition) | A list of child preconditions to be evaluated.  Only applicable to properties of the `AND` and `OR` types. |
+| preconditions | [Precondition](#openapi-definition-Precondition)[] | A list of child preconditions to be evaluated.  Only applicable to properties of the `AND` and `OR` types. |
 | property | string | The property to be evaluated. |
 | type | string | The type of the precondition. The element can hold these values * `AND` * `EQUALS` * `IN` * `NOT` * `NULL` * `OR` * `REGEX_MATCH` |
 
@@ -359,7 +374,7 @@ A type is a complex property that contains its own set of subproperties.
 
 | Element | Type | Description |
 | --- | --- | --- |
-| constraints | [ComplexConstraint[]](#openapi-definition-ComplexConstraint) | A list of constraints limiting the values to be accepted. |
+| constraints | [ComplexConstraint](#openapi-definition-ComplexConstraint)[] | A list of constraints limiting the values to be accepted. |
 | description | string | A short description of the property. |
 | displayName | string | The display name of the property. |
 | documentation | string | An extended description and/or links to documentation. |
@@ -381,7 +396,7 @@ A type is a complex property that contains its own set of subproperties.
 | Element | Type | Description |
 | --- | --- | --- |
 | code | integer | The HTTP status code |
-| constraintViolations | [ConstraintViolation[]](#openapi-definition-ConstraintViolation) | A list of constraint violations |
+| constraintViolations | [ConstraintViolation](#openapi-definition-ConstraintViolation)[] | A list of constraint violations |
 | message | string | The error message |
 
 #### The `ConstraintViolation` object

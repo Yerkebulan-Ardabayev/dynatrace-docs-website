@@ -1,7 +1,6 @@
 ---
 title: Integrate on Google Cloud Functions .NET
 source: https://docs.dynatrace.com/managed/ingest-from/google-cloud-platform/gcp-integrations/gcp-functions/opentelemetry-on-gcf-dotnet
-scraped: 2026-05-12T11:51:54.147702
 ---
 
 # Integrate on Google Cloud Functions .NET
@@ -178,8 +177,8 @@ return Task.CompletedTask;
 
 ## Cold start
 
-When the function handler is invoked for the first time after a [cold startï»¿](https://cloud.google.com/functions/docs/concepts/exec#cold_starts), the instrumentation initialization method `AddGoogleCloudFunctionsInstrumentation`
-makes additional HTTP requests to fetch metadata from your [Google Cloud environmentï»¿](https://cloud.google.com/compute/docs/metadata/overview). This metadata is used to set the required attributes for Dynatrace to process
+When the function handler is invoked for the first time after a [cold start﻿](https://cloud.google.com/functions/docs/concepts/exec#cold_starts), the instrumentation initialization method `AddGoogleCloudFunctionsInstrumentation`
+makes additional HTTP requests to fetch metadata from your [Google Cloud environment﻿](https://cloud.google.com/compute/docs/metadata/overview). This metadata is used to set the required attributes for Dynatrace to process
 the span ("Activity" in .NET terminology).
 
 ### Limitations
@@ -220,10 +219,10 @@ Because code running outside the function execution can be terminated at any tim
 * Google Cloud Functions 2nd gen
 
   Google Cloud Functions 2nd gen can handle multiple concurrent requests in a single function instance. The flush operation of one invocation can prolong the execution time of another function invocation.
-  Because function instances usually need to be kept idle for some time to handle multiple concurrent requests, you can disable the flushing of spans to improve performance. For details, see [Instance lifecycleï»¿](https://cloud.google.com/run/docs/container-contract#lifecycle-services).
-  Note that idle function instances are not guaranteed to be allocated CPU unless their [CPU allocationï»¿](https://cloud.google.com/run/docs/configuring/cpu-allocation) mode is set to `CPU always allocated`.
+  Because function instances usually need to be kept idle for some time to handle multiple concurrent requests, you can disable the flushing of spans to improve performance. For details, see [Instance lifecycle﻿](https://cloud.google.com/run/docs/container-contract#lifecycle-services).
+  Note that idle function instances are not guaranteed to be allocated CPU unless their [CPU allocation﻿](https://cloud.google.com/run/docs/configuring/cpu-allocation) mode is set to `CPU always allocated`.
 
-  For details, see [Function execution timelineï»¿](https://cloud.google.com/functions/docs/concepts/execution-environment#execution-timeline).
+  For details, see [Function execution timeline﻿](https://cloud.google.com/functions/docs/concepts/execution-environment#execution-timeline).
 
 ## Dynatrace overhead
 
@@ -234,4 +233,4 @@ Because code running outside the function execution can be terminated at any tim
 ## Related topics
 
 * [Set up Dynatrace on Google Cloud](/managed/ingest-from/google-cloud-platform "Monitor Google Cloud with Dynatrace.")
-* [Google Cloud monitoringï»¿](https://www.dynatrace.com/technologies/google-cloud-monitoring/)
+* [Google Cloud monitoring﻿](https://www.dynatrace.com/technologies/google-cloud-monitoring/)

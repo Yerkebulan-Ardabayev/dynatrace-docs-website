@@ -1,7 +1,6 @@
 ---
 title: Detection of frequent issues
 source: https://docs.dynatrace.com/managed/dynatrace-intelligence/root-cause-analysis/detection-of-frequent-issues
-scraped: 2026-05-12T11:38:39.781889
 ---
 
 # Detection of frequent issues
@@ -81,18 +80,18 @@ For the sake of simplicity, this example only considers the 24-hours set. In thi
 
 Historic events for the last 24 hours have the following durations and severities:
 
-Event1â45 seconds, 95.5%  
-Event2â15 seconds, 99%  
-Event3â35 seconds, 98%  
-Event4â30 seconds, 97%  
-Event5â60 seconds, 96%
+Event1—45 seconds, 95.5%  
+Event2—15 seconds, 99%  
+Event3—35 seconds, 98%  
+Event4—30 seconds, 97%  
+Event5—60 seconds, 96%
 
 The sorted sets look like this:
 
 Duration: {Event2, Event4, Event3, Event1, Event5}  
 Severity: {Event1, Event5, Event4, Event3, Event2}
 
-A new event arrives: EventNEWâ28 seconds, 95%. It takes the following positions in sorted sets:
+A new event arrives: EventNEW—28 seconds, 95%. It takes the following positions in sorted sets:
 
 Duration: {Event2, **EventNEW**, Event4, Event3, Event1, Event5}  
 Severity: {**EventNEW**, Event1, Event5, Event4, Event3, Event2}

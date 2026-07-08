@@ -1,7 +1,6 @@
 ---
 title: ActiveGate API - POST an auto-update job
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/activegates/auto-update-jobs/post-job
-scraped: 2026-05-12T12:00:02.830137
 ---
 
 # ActiveGate API - POST an auto-update job
@@ -167,7 +166,7 @@ Configuration of the ActiveGate update job.
 | Element | Type | Description |
 | --- | --- | --- |
 | code | integer | The HTTP status code |
-| constraintViolations | [ConstraintViolation[]](#openapi-definition-ConstraintViolation) | A list of constraint violations |
+| constraintViolations | [ConstraintViolation](#openapi-definition-ConstraintViolation)[] | A list of constraint violations |
 | message | string | The error message |
 
 #### The `ConstraintViolation` object
@@ -344,7 +343,7 @@ To learn how to obtain and use it, see [Tokens and authentication](/managed/disc
 | Element | Type | Description |
 | --- | --- | --- |
 | code | integer | The HTTP status code |
-| constraintViolations | [ConstraintViolation[]](#openapi-definition-ConstraintViolation) | A list of constraint violations |
+| constraintViolations | [ConstraintViolation](#openapi-definition-ConstraintViolation)[] | A list of constraint violations |
 | message | string | The error message |
 
 #### The `ConstraintViolation` object

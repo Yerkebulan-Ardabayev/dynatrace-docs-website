@@ -1,7 +1,6 @@
 ---
 title: Settings API - Kubernetes workload anomaly detection schema table
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/settings/schemas/builtin-anomaly-detection-kubernetes-workload
-scraped: 2026-05-12T11:39:08.790681
 ---
 
 # Settings API - Kubernetes workload anomaly detection schema table
@@ -12,7 +11,7 @@ scraped: 2026-05-12T11:39:08.790681
 
 ### Kubernetes workload anomaly detection (`builtin:anomaly-detection.kubernetes.workload)`
 
-Dynatrace automatically detects a wide range of common Kubernetes-related issues. Use these settings to configure alerts relevant to your Kubernetes workload. Changing thresholds resets the observation period. Additional information can be found on our [documentation pageï»¿](https://dt-url.net/wq02okj#workload).
+Dynatrace automatically detects a wide range of common Kubernetes-related issues. Use these settings to configure alerts relevant to your Kubernetes workload. Changing thresholds resets the observation period. Additional information can be found on our [documentation page﻿](https://dt-url.net/wq02okj#workload).
 
 | Schema ID | Schema groups | Scope |
 | --- | --- | --- |
@@ -117,30 +116,35 @@ To execute this request, you need an access token with **Read settings** (`setti
 | Property | Type | Description | Required |
 | --- | --- | --- | --- |
 | Detect out-of-memory kills `enabled` | boolean | - | Required |
+| `configuration` | [OOMKillsConfig](#OOMKillsConfig) | Alert if | Required |
 
 ##### The `JobFailureEvents` object
 
 | Property | Type | Description | Required |
 | --- | --- | --- | --- |
 | Detect job failure events `enabled` | boolean | Alerts on any occurrence of Kubernetes events with reason 'BackoffLimitExceeded', 'DeadlineExceeded', or 'PodFailurePolicy'.  If 'Filter events' is enabled, make certain that you ingest events with the aforementioned reasons in order to receive alerts. | Required |
+| `configuration` | [JobFailureEventsConfig](#JobFailureEventsConfig) | Alert if | Required |
 
 ##### The `PodBackoffEvents` object
 
 | Property | Type | Description | Required |
 | --- | --- | --- | --- |
 | Detect pod backoff events `enabled` | boolean | Alerts on any occurrence of Kubernetes events with reason 'BackOff', as observed on pod statuses 'ImagePullBackOff', and 'CrashLoopBackOff'.  If 'Filter events' is enabled, make certain that you ingest events with the aforementioned reasons in order to receive alerts. | Required |
+| `configuration` | [PodBackoffEventsConfig](#PodBackoffEventsConfig) | Alert if | Required |
 
 ##### The `PodEvictionEvents` object
 
 | Property | Type | Description | Required |
 | --- | --- | --- | --- |
 | Detect pod eviction events `enabled` | boolean | Eviction is the process of terminating one or more pods on a node to free up resources.  Alerts on any occurrence of Kubernetes events with reason 'Evicted'.  If 'Filter events' is enabled, make certain that you ingest events with the aforementioned reasons in order to receive alerts. | Required |
+| `configuration` | [PodEvictionEventsConfig](#PodEvictionEventsConfig) | Alert if | Required |
 
 ##### The `PodPreemptionEvents` object
 
 | Property | Type | Description | Required |
 | --- | --- | --- | --- |
 | Detect pod preemption events `enabled` | boolean | Preemption is the process of terminating pods with lower priority so that pods with higher priority can be scheduled on a node.  Alerts on any occurrence of Kubernetes events with reason 'Preempted', or 'Preempting'.  If 'Filter events' is enabled, make certain that you ingest events with the aforementioned reasons in order to receive alerts. | Required |
+| `configuration` | [PodPreemptionEventsConfig](#PodPreemptionEventsConfig) | Alert if | Required |
 
 ##### The `ContainerRestartsConfig` object
 
@@ -208,4 +212,39 @@ To execute this request, you need an access token with **Read settings** (`setti
 | --- | --- | --- | --- |
 | amount of CPU throttling is above `threshold` | integer | - | Required |
 | of CPU usage for at least `samplePeriodInMinutes` | integer | - | Required |
+| within the last `observationPeriodInMinutes` | integer | - | Required |
+
+##### The `OOMKillsConfig` object
+
+| Property | Type | Description | Required |
+| --- | --- | --- | --- |
+| events occurred within any `samplePeriodInMinutes` | integer | - | Required |
+| within the last `observationPeriodInMinutes` | integer | - | Required |
+
+##### The `JobFailureEventsConfig` object
+
+| Property | Type | Description | Required |
+| --- | --- | --- | --- |
+| events occurred within any `samplePeriodInMinutes` | integer | - | Required |
+| within the last `observationPeriodInMinutes` | integer | - | Required |
+
+##### The `PodBackoffEventsConfig` object
+
+| Property | Type | Description | Required |
+| --- | --- | --- | --- |
+| events occurred within any `samplePeriodInMinutes` | integer | - | Required |
+| within the last `observationPeriodInMinutes` | integer | - | Required |
+
+##### The `PodEvictionEventsConfig` object
+
+| Property | Type | Description | Required |
+| --- | --- | --- | --- |
+| events occurred within any `samplePeriodInMinutes` | integer | - | Required |
+| within the last `observationPeriodInMinutes` | integer | - | Required |
+
+##### The `PodPreemptionEventsConfig` object
+
+| Property | Type | Description | Required |
+| --- | --- | --- | --- |
+| events occurred within any `samplePeriodInMinutes` | integer | - | Required |
 | within the last `observationPeriodInMinutes` | integer | - | Required |

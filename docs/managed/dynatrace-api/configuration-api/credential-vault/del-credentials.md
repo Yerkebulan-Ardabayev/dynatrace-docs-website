@@ -1,7 +1,6 @@
 ---
 title: Credential vault API - DELETE a set of credentials
 source: https://docs.dynatrace.com/managed/dynatrace-api/configuration-api/credential-vault/del-credentials
-scraped: 2026-05-12T12:05:40.550208
 ---
 
 # Credential vault API - DELETE a set of credentials
@@ -72,5 +71,5 @@ https://mySampleEnv.live.dynatrace.com/api/config/v1/credentials/CREDENTIALS_VAU
 
 ## Related topics
 
-* [Configure browser monitors](/managed/observe/digital-experience/synthetic-monitoring/browser-monitors/configure-browser-monitors "Learn about configuring browser monitors and clickpaths.")
-* [Configure HTTP monitors](/managed/observe/digital-experience/synthetic-monitoring/http-monitors-classic/configure-http-monitors-classic "Learn about configuring HTTP monitors.")
+* [Configure browser monitors in Classic](/managed/observe/digital-experience/synthetic-monitoring/browser-monitors/configure-browser-monitors "Learn about configuring browser monitors and clickpaths.")
+* [Configure HTTP monitors in Classic](/managed/observe/digital-experience/synthetic-monitoring/http-monitors-classic/configure-http-monitors-classic "Learn about configuring HTTP monitors.")

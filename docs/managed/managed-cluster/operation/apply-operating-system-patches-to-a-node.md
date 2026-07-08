@@ -1,7 +1,6 @@
 ---
 title: Apply operating system patches to a node
 source: https://docs.dynatrace.com/managed/managed-cluster/operation/apply-operating-system-patches-to-a-node
-scraped: 2026-05-12T11:53:20.400695
 ---
 
 # Apply operating system patches to a node

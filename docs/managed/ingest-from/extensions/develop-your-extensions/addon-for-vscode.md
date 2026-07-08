@@ -1,7 +1,6 @@
 ---
 title: Add-on for VS Code
 source: https://docs.dynatrace.com/managed/ingest-from/extensions/develop-your-extensions/addon-for-vscode
-scraped: 2026-05-12T12:11:35.362205
 ---
 
 # Add-on for VS Code
@@ -12,7 +11,7 @@ scraped: 2026-05-12T12:11:35.362205
 * 2-min read
 * Published Jun 16, 2025
 
-**Dynatrace Extensions** is an add-on for Visual Studio Code that supports all aspects of developing Extensions running on Dynatrace. Find it by searching the [VS Code extensions marketplaceï»¿](https://marketplace.visualstudio.com/items?itemName=DynatracePlatformExtensions.dynatrace-extensions).
+**Dynatrace Extensions** is an add-on for Visual Studio Code that supports all aspects of developing Extensions running on Dynatrace. Find it by searching the [VS Code extensions marketplace﻿](https://marketplace.visualstudio.com/items?itemName=DynatracePlatformExtensions.dynatrace-extensions).
 
 It gives you access to a specialized toolkit that's ready to use and helps you out with the following:
 
@@ -20,7 +19,7 @@ It gives you access to a specialized toolkit that's ready to use and helps you o
 2. Content creation
 3. Content validation
 
-Check out the instructions for [getting started](/managed/ingest-from/extensions/develop-your-extensions/addon-for-vscode/getting-started "Set up your Visual Studio Code editor and get your first extension built and uploaded to Dynatrace in 5 minutes."), or keep reading to learn some of its features.
+Check out the instructions for [getting started](/managed/ingest-from/extensions/develop-your-extensions/addon-for-vscode/getting-started "Set up the Dynatrace Extensions add-on for Visual Studio Code and build your first extension ready for upload in five minutes."), or keep reading to learn some of its features.
 
 ## Features
 
@@ -60,4 +59,4 @@ You can use the Dynatrace Extensions to validate your extension manifest early. 
 
 This open source project relies on community feedback and contribution and isn't officially supported by Dynatrace.
 
-For any issues, concerns, or contributions, leverage the [issues pageï»¿](https://github.com/dynatrace-extensions/dynatrace-extensions-vscode/issues) of the GitHub repository hosting this project.
+For any issues, concerns, or contributions, leverage the [issues page﻿](https://github.com/dynatrace-extensions/dynatrace-extensions-vscode/issues) of the GitHub repository hosting this project.

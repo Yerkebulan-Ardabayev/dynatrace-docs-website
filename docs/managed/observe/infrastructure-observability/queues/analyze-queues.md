@@ -1,7 +1,6 @@
 ---
 title: Analyze queues
 source: https://docs.dynatrace.com/managed/observe/infrastructure-observability/queues/analyze-queues
-scraped: 2026-05-12T11:38:02.976196
 ---
 
 # Analyze queues
@@ -36,15 +35,15 @@ To analyze queues and topics
    The number of incoming and outgoing messages per queue or topic is calculated based on the data provided by monitored producer and consumer services. If a producer or consumer service isn't monitored, the number of messages per queue or per topic reported in Dynatrace might be lower than the actual number of processed messages.
 2. Select the **Name** of a queue or topic from the table to access its analytics view with additional details related to anomalies.
 
-   In each analytics view, you'll find information about anomalies detected by DavisÂ® AI. It also displays the message throughput per queue or topic, along with the connected producer and consumer services. Events highlight any availability changes of your message queue, while logs can reveal internal problems.
+   In each analytics view, you'll find information about anomalies detected by Davis® AI. It also displays the message throughput per queue or topic, along with the connected producer and consumer services. Events highlight any availability changes of your message queue, while logs can reveal internal problems.
 
    ![Analytics view](https://dt-cdn.net/images/ibm-mq-1748-8930daa8a4.png)
 
    Analytics view
 
-   Different service metricsâsuch as response time, failure rate, throughput, and CPU consumptionâallow you to draw detailed conclusions about the root cause of asynchronous service-to-service communication anomalies. You can switch quickly between the available metrics, apply different aggregation functions, or define metric-specific alerts.
+   Different service metrics—such as response time, failure rate, throughput, and CPU consumption—allow you to draw detailed conclusions about the root cause of asynchronous service-to-service communication anomalies. You can switch quickly between the available metrics, apply different aggregation functions, or define metric-specific alerts.
 
-   To define an alert for a metric, select **Set alert** from the **More** (**â¦**) menu in the upper-right corner of the chart.
+   To define an alert for a metric, select **Set alert** from the **More** (**…**) menu in the upper-right corner of the chart.
 
    To view details at the service and code levels, select a specific service from the producer or consumer list.
 
@@ -64,15 +63,15 @@ To analyze queues and topics
 
    Queue distributed traces
 
-## DavisÂ® AI for queues
+## Davis® AI for queues
 
-Dynatrace version 1.243+ DavisÂ® AI considers queues and topics during its fault domain isolation, and applies its anomaly detection to producer and consumer services.
+Dynatrace version 1.243+ Davis® AI considers queues and topics during its fault domain isolation, and applies its anomaly detection to producer and consumer services.
 
 ### Automatic fault domain isolation
 
 While monitoring individual queues or topics with custom alerts works for specific use cases, enterprise environments with hundreds or thousands of different queues and topics must rely on automatic fault domain isolation to quickly determine the root-cause of a problem.
 
-DavisÂ® AI baselines all incoming and outgoing messages and checks all queue-related events of the underlying infrastructure. In case of detected problems, the respective queues or topics are immediately flagged, and a problem card is opened.
+Davis® AI baselines all incoming and outgoing messages and checks all queue-related events of the underlying infrastructure. In case of detected problems, the respective queues or topics are immediately flagged, and a problem card is opened.
 
 ![Problem card for queues](https://dt-cdn.net/images/queue-problem-1768-5913af60a4.png)
 
@@ -85,7 +84,7 @@ Decoupled service-to-service communications are challenging to troubleshoot due 
 * When the producer service can't send messages to a queue, resulting in an **Unexpected low load** on the consumer service.
 * When the producer service sends more messages to a queue, resulting in an **Unexpected high load** on the consumer service.
 
-DavisÂ® AI anomaly detection can automatically detect unexpected load scenarios of asynchronous services.
+Davis® AI anomaly detection can automatically detect unexpected load scenarios of asynchronous services.
 
 To automatically detect load drops or load spikes
 

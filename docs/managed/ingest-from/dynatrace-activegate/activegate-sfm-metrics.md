@@ -1,7 +1,6 @@
 ---
 title: ActiveGate self-monitoring metrics
 source: https://docs.dynatrace.com/managed/ingest-from/dynatrace-activegate/activegate-sfm-metrics
-scraped: 2026-05-12T12:13:50.279924
 ---
 
 # ActiveGate self-monitoring metrics
@@ -45,10 +44,6 @@ Following is the list of self-monitoring metrics that can be used to get insight
 | dsfm:active\_gate.communication.messages.rejected | Active Gate - Communication - Messages - Rejected  Number of messages rejected due to authorization issues. Non-zero value indicates data loss. | Count | autovalue |
 | dsfm:active\_gate.communication.messages.resent | Active Gate - Communication - Messages - Resent  Number of messages resent by ActiveGate. Indicates communication issue that may eventually result in `dsfm:active_gate.communication.messages.dropped` | Count | autovalue |
 | dsfm:active\_gate.communication.queue.outgoing.usage | Active Gate - Communication - Queue - Outgoing - Usage  Number of messages queued. Growing value indicates messages are being received at a faster pace than sent out. Network performance is often a common root cause of this issue. | Count | autoavgcountmaxminsum |
-| dsfm:active\_gate.communication.dropped\_messages | Active Gate - Communication - Dropped Messages  Deprecated. To be removed. Use: `dsfm:active_gate.communication.messages.dropped`. | Count | autovalue |
-| dsfm:active\_gate.communication.incoming\_traffic | Active Gate - Communication - Incoming Traffic  Deprecated. To be removed. Use: `dsfm:active_gate.traffic.server.received` and `dsfm:active_gate.traffic.client.received` respectively. | Kibibyte | autovalue |
-| dsfm:active\_gate.communication.outgoing\_traffic | Active Gate - Communication - Outgoing Traffic  Deprecated. To be removed. Use: `dsfm:active_gate.traffic.server.sent` and `dsfm:active_gate.traffic.client.sent` respectively. | Kibibyte | autovalue |
-| dsfm:active\_gate.communication.resent\_messages | Active Gate - Communication - Resent Messages  Deprecated. To be removed. Use: `dsfm:active_gate.communication.messages.resent`. | Count | autovalue |
 | dsfm:active\_gate.communication.traffic\_in | Active Gate - Communication - Traffic In  Deprecated. To be removed. Use: `dsfm:active_gate.traffic.server.received` and `dsfm:active_gate.traffic.client.received` respectively. | Kibibyte | autovalue |
 | dsfm:active\_gate.communication.traffic\_out | Active Gate - Communication - Traffic Out  Deprecated. To be removed. Use: `dsfm:active_gate.traffic.server.sent` and `dsfm:active_gate.traffic.client.sent` respectively. | Kibibyte | autovalue |
 

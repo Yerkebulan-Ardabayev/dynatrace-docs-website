@@ -1,7 +1,6 @@
 ---
 title: ActiveGate diagnostics
 source: https://docs.dynatrace.com/managed/ingest-from/dynatrace-activegate/activegate-diagnostics
-scraped: 2026-05-12T12:14:21.170061
 ---
 
 # ActiveGate diagnostics
@@ -11,7 +10,7 @@ scraped: 2026-05-12T12:14:21.170061
 * 9-min read
 * Updated on Feb 24, 2026
 
-You can run fully automated ActiveGate troubleshooting for Dynatrace SaaS and Managed environments.
+You can run fully automated ActiveGate troubleshooting for Dynatrace environments.
 
 The workflow enables you to:
 
@@ -35,7 +34,7 @@ If you prefer to collect and review the data before manually submitting it to Dy
 
 1. Go to **Deployment Status** > **ActiveGates**.
 2. Expand the ActiveGate entry you want to troubleshoot and select **Run ActiveGate diagnostics**.
-3. On the **Run Dynatrace ActiveGate diagnostics** page, briefly describe what isnât working as expected from your point of view.
+3. On the **Run Dynatrace ActiveGate diagnostics** page, briefly describe what isn’t working as expected from your point of view.
 4. Optional By default, 7 days of data is collected for analysis. If you need more data, select the **Advanced options** link, change the number of days, and select **Apply**.
 5. Select **Start analysis**.
 
@@ -124,7 +123,7 @@ If you instead want to collect data and submit it to Dynatrace automatically for
 
 1. Go to **Deployment Status** > **ActiveGates**.
 2. Expand the ActiveGate entry you want to troubleshoot and select **Run ActiveGate diagnostics**.
-3. On the **Run Dynatrace ActiveGate diagnostics** page, briefly describe what isnât working as expected from your point of view.
+3. On the **Run Dynatrace ActiveGate diagnostics** page, briefly describe what isn’t working as expected from your point of view.
 4. Select the **Advanced options** link.
 5. Select **and store locally**.
 
@@ -396,7 +395,7 @@ To comply with regional data protection and privacy regulations, Dynatrace autom
 
 You can choose to delete collected diagnostic data earlier. To ensure transparency, Dynatrace keeps only a small set of information about who, when, where, and why the diagnostic data was collected.
 
-For related details on Dynatrace data privacy, see [Data retention periods](/managed/manage/data-privacy-and-security/data-privacy/data-retention-periods#diagnostics "Check retention times for various data types.").
+For related details on Dynatrace data privacy, see [Data retention periods](/managed/manage/data-privacy-and-security/data-privacy/data-retention-periods#diagnostics "Review default and configurable retention periods for service, RUM Classic, synthetic, Log Monitoring, metric, diagnostic, and security data in Dynatrace Managed.").
 
 ## Troubleshooting
 
@@ -404,10 +403,10 @@ Analyze automatically
 
 agctl
 
-* [Status: 'Collecting of the diagnostic data wasnât possible within 20 minutes.'ï»¿](https://dt-url.net/zl237tu)
-* ['State' appears to be frozen.ï»¿](https://dt-url.net/ua437h4)
+* [Status: 'Collecting of the diagnostic data wasn’t possible within 20 minutes.'﻿](https://dt-url.net/zl237tu)
+* ['State' appears to be frozen.﻿](https://dt-url.net/ua437h4)
 
-* [Message: 'Unexpected response status code = 500, cannot create SupportArchive file.'ï»¿](https://dt-url.net/zl037au)
+* [Message: 'Unexpected response status code = 500, cannot create SupportArchive file.'﻿](https://dt-url.net/zl037au)
 
 ## FAQ
 

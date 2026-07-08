@@ -1,7 +1,6 @@
 ---
 title: Start/stop/restart a node
 source: https://docs.dynatrace.com/managed/managed-cluster/operation/start-stop-restart-node
-scraped: 2026-05-12T11:53:15.065043
 ---
 
 # Start/stop/restart a node
@@ -51,7 +50,7 @@ You can execute the `dynatrace.sh` script with a parameter (`start`, `stop`, `re
   Example of dynatrace.sh status output
 
   ```
-  â dynatrace-firewall.service - Dynatrace Firewall settings
+  ● dynatrace-firewall.service - Dynatrace Firewall settings
 
 
 
@@ -87,7 +86,7 @@ You can execute the `dynatrace.sh` script with a parameter (`start`, `stop`, `re
 
 
 
-  â dynatrace-nodekeeper.service - Dynatrace Nodekeeper
+  ● dynatrace-nodekeeper.service - Dynatrace Nodekeeper
 
 
 
@@ -115,15 +114,15 @@ You can execute the `dynatrace.sh` script with a parameter (`start`, `stop`, `re
 
 
 
-  ââ  552 /opt/managed/nodekeeper/jre/bin/java -Xms239M -Xmx239M -XX:+UseConcMarkSweepGC -XX:CMSInitiatingOccupancyFraction=60 -Duser.language=EN -Djava.io.tmpdir=...
+  ├─  552 /opt/managed/nodekeeper/jre/bin/java -Xms239M -Xmx239M -XX:+UseConcMarkSweepGC -XX:CMSInitiatingOccupancyFraction=60 -Duser.language=EN -Djava.io.tmpdir=...
 
 
 
-  ââ  966 /bin/sh /opt/managed/nodekeeper/services/watchdog.sh watch /opt/managed/nodekeeper/services/nodekeeper.sh
+  ├─  966 /bin/sh /opt/managed/nodekeeper/services/watchdog.sh watch /opt/managed/nodekeeper/services/nodekeeper.sh
 
 
 
-  ââ22167 sleep 60
+  └─22167 sleep 60
 
 
 
@@ -131,7 +130,7 @@ You can execute the `dynatrace.sh` script with a parameter (`start`, `stop`, `re
 
 
 
-  â dynatrace-cassandra.service - Dynatrace Cassandra
+  ● dynatrace-cassandra.service - Dynatrace Cassandra
 
 
 
@@ -159,15 +158,15 @@ You can execute the `dynatrace.sh` script with a parameter (`start`, `stop`, `re
 
 
 
-  ââ13690 /opt/managed/jre/bin/java -javaagent:/opt/managed/cassandra/bin/../lib/jamm-0.3.0.jar -XX:+CMSClassUnloadingEnabled -XX:+UseThreadPriorities -XX:ThreadPr...
+  ├─13690 /opt/managed/jre/bin/java -javaagent:/opt/managed/cassandra/bin/../lib/jamm-0.3.0.jar -XX:+CMSClassUnloadingEnabled -XX:+UseThreadPriorities -XX:ThreadPr...
 
 
 
-  ââ13721 /bin/sh /opt/managed/services/watchdog.sh watch /opt/managed/services/cassandra.sh
+  ├─13721 /bin/sh /opt/managed/services/watchdog.sh watch /opt/managed/services/cassandra.sh
 
 
 
-  ââ22197 sleep 60
+  └─22197 sleep 60
 
 
 
@@ -175,7 +174,7 @@ You can execute the `dynatrace.sh` script with a parameter (`start`, `stop`, `re
 
 
 
-  â dynatrace-elasticsearch.service - Dynatrace Elasticsearch
+  ● dynatrace-elasticsearch.service - Dynatrace Elasticsearch
 
 
 
@@ -203,15 +202,15 @@ You can execute the `dynatrace.sh` script with a parameter (`start`, `stop`, `re
 
 
 
-  ââ14802 /opt/managed/jre/bin/java -Xms558M -Xmx558M -XX:+UseConcMarkSweepGC -XX:CMSInitiatingOccupancyFraction=75 -XX:+UseCMSInitiatingOccupancyOnly -XX:+AlwaysP...
+  ├─14802 /opt/managed/jre/bin/java -Xms558M -Xmx558M -XX:+UseConcMarkSweepGC -XX:CMSInitiatingOccupancyFraction=75 -XX:+UseCMSInitiatingOccupancyOnly -XX:+AlwaysP...
 
 
 
-  ââ14834 /bin/sh /opt/managed/services/watchdog.sh watch /opt/managed/services/elasticsearch.sh
+  ├─14834 /bin/sh /opt/managed/services/watchdog.sh watch /opt/managed/services/elasticsearch.sh
 
 
 
-  ââ21975 sleep 60
+  └─21975 sleep 60
 
 
 
@@ -219,7 +218,7 @@ You can execute the `dynatrace.sh` script with a parameter (`start`, `stop`, `re
 
 
 
-  â dynatrace-server.service - Dynatrace Server
+  ● dynatrace-server.service - Dynatrace Server
 
 
 
@@ -251,11 +250,11 @@ You can execute the `dynatrace.sh` script with a parameter (`start`, `stop`, `re
 
 
 
-  ââ15294 /opt/managed/server/dynatraceserver -vm=/opt/managed/jre/bin/java -vmargs -Xms2873M -Xmx2873M -XX:-OmitStackTraceInFastThrow -XX:+UseConcMarkSweepGC -XX:...
+  ├─15294 /opt/managed/server/dynatraceserver -vm=/opt/managed/jre/bin/java -vmargs -Xms2873M -Xmx2873M -XX:-OmitStackTraceInFastThrow -XX:+UseConcMarkSweepGC -XX:...
 
 
 
-  ââ15302 /opt/managed/jre/bin/java -Dcom.compuware.apm.WatchDogPort=50004 -classpath :/opt/managed/server/lib/ace-1.4.4-dt-2.0.jar:/opt/managed/server/lib/acme4j-...
+  └─15302 /opt/managed/jre/bin/java -Dcom.compuware.apm.WatchDogPort=50004 -classpath :/opt/managed/server/lib/ace-1.4.4-dt-2.0.jar:/opt/managed/server/lib/acme4j-...
 
 
 
@@ -303,7 +302,7 @@ You can execute the `dynatrace.sh` script with a parameter (`start`, `stop`, `re
 
 
 
-  â dynatrace-security-gateway.service - Dynatrace Active Gate
+  ● dynatrace-security-gateway.service - Dynatrace Active Gate
 
 
 
@@ -335,11 +334,11 @@ You can execute the `dynatrace.sh` script with a parameter (`start`, `stop`, `re
 
 
 
-  ââ16173 /opt/managed/security-Gateway/launcher/dynatracegateway -bg -vm=/opt/managed/jre/bin/java -vmargs -Xms638M -Xmx638M -XX:+UseConcMarkSweepGC -XX:CMSInitia...
+  ├─16173 /opt/managed/security-Gateway/launcher/dynatracegateway -bg -vm=/opt/managed/jre/bin/java -vmargs -Xms638M -Xmx638M -XX:+UseConcMarkSweepGC -XX:CMSInitia...
 
 
 
-  ââ16182 /opt/managed/jre/bin/java -Dcom.compuware.apm.WatchDogPort=50005 -classpath /opt/managed/security-Gateway/lib/* -XX:ErrorFile=/var/opt/managed/log/securi...
+  └─16182 /opt/managed/jre/bin/java -Dcom.compuware.apm.WatchDogPort=50005 -classpath /opt/managed/security-Gateway/lib/* -XX:ErrorFile=/var/opt/managed/log/securi...
 
 
 
@@ -347,7 +346,7 @@ You can execute the `dynatrace.sh` script with a parameter (`start`, `stop`, `re
 
 
 
-  â dynatrace-nginx.service - Dynatrace NGINX
+  ● dynatrace-nginx.service - Dynatrace NGINX
 
 
 
@@ -375,27 +374,27 @@ You can execute the `dynatrace.sh` script with a parameter (`start`, `stop`, `re
 
 
 
-  ââ17152 nginx: OneAgent companion process
+  ├─17152 nginx: OneAgent companion process
 
 
 
-  ââ17153 nginx: master process /opt/managed/nginx/sbin/nginx -c /opt/managed/nginx/conf/nginx.conf
+  ├─17153 nginx: master process /opt/managed/nginx/sbin/nginx -c /opt/managed/nginx/conf/nginx.conf
 
 
 
-  ââ17155 nginx: worker process
+  ├─17155 nginx: worker process
 
 
 
-  ââ17156 nginx: worker process
+  ├─17156 nginx: worker process
 
 
 
-  ââ17164 /bin/bash /opt/managed/services/logs-watcher.sh watch-nginx /var/opt/managed/log/nginx/access.log /var/opt/managed/log/nginx/error.log
+  ├─17164 /bin/bash /opt/managed/services/logs-watcher.sh watch-nginx /var/opt/managed/log/nginx/access.log /var/opt/managed/log/nginx/error.log
 
 
 
-  ââ19214 sleep 600
+  └─19214 sleep 600
 
 
 

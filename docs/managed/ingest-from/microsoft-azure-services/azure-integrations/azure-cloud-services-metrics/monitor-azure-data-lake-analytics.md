@@ -1,7 +1,6 @@
 ---
 title: Azure Data Lake Analytics monitoring
 source: https://docs.dynatrace.com/managed/ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics/monitor-azure-data-lake-analytics
-scraped: 2026-05-12T11:25:42.333484
 ---
 
 # Azure Data Lake Analytics monitoring

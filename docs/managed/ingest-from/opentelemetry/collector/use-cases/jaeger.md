@@ -1,7 +1,6 @@
 ---
 title: Ingest Jaeger data with the OTel Collector
 source: https://docs.dynatrace.com/managed/ingest-from/opentelemetry/collector/use-cases/jaeger
-scraped: 2026-05-12T12:10:40.324970
 ---
 
 # Ingest Jaeger data with the OTel Collector
@@ -16,7 +15,7 @@ The following configuration example shows how you configure a Collector instance
 
 ## Prerequisites
 
-* One of the following Collector distributions with the [Jaeger receiverï»¿](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.151.0/receiver/jaegerreceiver):
+* One of the following Collector distributions with the [Jaeger receiver﻿](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.155.0/receiver/jaegerreceiver):
 
   + The [Dynatrace OTel Collector](/managed/ingest-from/opentelemetry/collector#dt-collector-dist "Learn how to use the OpenTelemetry Collector, including the Dynatrace OTel Collector, to ingest telemetry from OpenTelemetry.")
   + [OpenTelemetry Contrib](/managed/ingest-from/opentelemetry/collector#collector-contrib "Learn how to use the OpenTelemetry Collector, including the Dynatrace OTel Collector, to ingest telemetry from OpenTelemetry.")
@@ -100,11 +99,11 @@ For our configuration, we configure the following components.
 
 Under `receivers`, we specify the `jaeger` receiver as active receiver component for our Collector instance.
 
-The Jaeger receiver can be customized with [a few more attributesï»¿](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.151.0/receiver/jaegerreceiver), which we leave with their default values in our example.
+The Jaeger receiver can be customized with [a few more attributes﻿](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.155.0/receiver/jaegerreceiver), which we leave with their default values in our example.
 
 ### Exporters
 
-Under `exporters`, we specify the default [`otlp_http` exporterï»¿](https://github.com/open-telemetry/opentelemetry-collector/tree/v0.151.0/exporter/otlphttpexporter) and configure it with our Dynatrace API URL and the required authentication token.
+Under `exporters`, we specify the default [`otlp_http` exporter﻿](https://github.com/open-telemetry/opentelemetry-collector/tree/v0.155.0/exporter/otlphttpexporter) and configure it with our Dynatrace API URL and the required authentication token.
 
 For this purpose, we set the following two environment variables and reference them in the configuration values for `endpoint` and `Authorization`.
 

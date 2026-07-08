@@ -1,7 +1,6 @@
 ---
 title: Settings API - Apdex configuration for XHR actions schema table
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/settings/schemas/builtin-rum-web-key-performance-metric-xhr-actions
-scraped: 2026-05-12T11:41:55.426214
 ---
 
 # Settings API - Apdex configuration for XHR actions schema table
@@ -12,7 +11,7 @@ scraped: 2026-05-12T11:41:55.426214
 
 ### Apdex configuration for XHR actions (`builtin:rum.web.key-performance-metric-xhr-actions)`
 
-Select a key performance metric and set the Tolerating and Frustrated performance thresholds to [refine the Apdex calculationsï»¿](https://dt-url.net/apdex-thresholds) for this application.
+Select a key performance metric and set the Tolerating and Frustrated performance thresholds to [refine the Apdex calculations﻿](https://dt-url.net/apdex-thresholds) for this application.
 
 | Schema ID | Schema groups | Scope |
 | --- | --- | --- |

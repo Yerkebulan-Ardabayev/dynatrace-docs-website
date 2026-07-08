@@ -1,12 +1,11 @@
 ---
-title: Waterfall graphs
+title: Waterfall graphs in Classic
 source: https://docs.dynatrace.com/managed/observe/digital-experience/synthetic-monitoring/analysis-and-alerting/waterfall-graphs
-scraped: 2026-05-12T11:31:36.926847
 ---
 
-# Waterfall graphs
+# Waterfall graphs in Classic
 
-# Waterfall graphs
+# Waterfall graphs in Classic
 
 * Explanation
 * 11-min read
@@ -14,7 +13,7 @@ scraped: 2026-05-12T11:31:36.926847
 
 Sometimes it's necessary to analyze individual browser monitor executions to understand the impact of certain locations, local CDN partners, or other variables. Waterfall analysis is a great tool for viewing detailed information about the various resources that comprise a specific load or XHR action in an execution.
 
-A waterfall graph is a graphical display of every request and resource downloaded for an action, which can be an entire page load (load action) or the update of a specific in-page context without navigating to a new URL (XHR action). Resource- and page-level analysis is based on [W3C timings](/managed/observe/digital-experience/rum-concepts/user-action-metrics "Learn what metrics Dynatrace calculates for user actions and find out what each metric indicates.").
+A waterfall graph is a graphical display of every request and resource downloaded for an action, which can be an entire page load (load action) or the update of a specific in-page context without navigating to a new URL (XHR action). Resource- and page-level analysis is based on [W3C timings](/managed/observe/digital-experience/rum-classic/rum-concepts/user-action-metrics "Learn what metrics Dynatrace calculates for user actions and find out what each metric indicates.").
 
 Waterfall graphs are available on the Synthetic [**Multidimensional analysis** page](/managed/observe/digital-experience/synthetic-monitoring/analysis-and-alerting/multidimensional-analysis-for-browser-monitors "Learn how to analyze browser-monitor data points.") for every [action](/managed/observe/digital-experience/synthetic-monitoring/browser-monitors/number-of-actions-consumed-by-browser-clickpaths "Find out how many actions are consumed by a browser clickpath and how they differ from events.") in events with timings in browser monitor [executions](/managed/observe/digital-experience/synthetic-monitoring/analysis-and-alerting/multidimensional-analysis-for-browser-monitors#data-points "Learn how to analyze browser-monitor data points.") (both single URL and clickpaths).
 
@@ -60,7 +59,7 @@ If there's a redirect in place for the page you navigate to, the document reques
 
 Hover over the entry to see a breakdown of its load time into components. The Processing, OnDOMContentLoaded, and OnLoad components are only applicable to the base page.
 
-Dynatrace Synthetic Monitoring includes processing time in its waterfall display and calculation. Processing time, which is time spent in JavaScript execution or simply browser overhead, is represented by the gap between the end of one resource and the start of another. Processing time is shown as a component of base page load time.
+Dynatrace Synthetic Monitoring Classic includes processing time in its waterfall display and calculation. Processing time, which is time spent in JavaScript execution or simply browser overhead, is represented by the gap between the end of one resource and the start of another. Processing time is shown as a component of base page load time.
 
 ![Base page](https://dt-cdn.net/images/waterfallloadactionbasepage1-1406-9cc7f0b23f.png)
 
@@ -72,7 +71,7 @@ Load actions as well as XHR actions can contain XHR/fetch calls, or resource req
 
 The initial XHR in an XHR action is highlighted in purple, and its timings are displayed as page-level timings in vertical lines. XHR actions have a different set of [page-level timing events](#filters) compared to load actions.
 
-XHR entries display W3C resource timings as well as any JavaScript callback timesâin the Callback component. The Callback component is only applicable to XHRs.
+XHR entries display W3C resource timings as well as any JavaScript callback times—in the Callback component. The Callback component is only applicable to XHRs.
 
 ![Component timings for an XHR](https://dt-cdn.net/images/waterfallxhractioninitialcomponenttimings-586-2be36bf9a7.png)
 
@@ -106,7 +105,7 @@ Analyze a request over time
 
 ## Findings
 
-Davis, the Dynatrace AI causation engine, automatically detects top findings for each waterfall. Findings are key statistics and tips that capture how resources can impact page-level W3C timings of the initial request of an actionâthe base page in the case of load actions or the initial XHR in the case of XHR actions. Initial requests drive the first impressions of new visitors. Top findings are tools that help you identify which resources can be optimized, such as the resources impacting Visually complete (the user's above-the-fold experience), uncompressed text resources, large resources, or slow CDN resources.
+Davis, the Dynatrace AI causation engine, automatically detects top findings for each waterfall. Findings are key statistics and tips that capture how resources can impact page-level W3C timings of the initial request of an action—the base page in the case of load actions or the initial XHR in the case of XHR actions. Initial requests drive the first impressions of new visitors. Top findings are tools that help you identify which resources can be optimized, such as the resources impacting Visually complete (the user's above-the-fold experience), uncompressed text resources, large resources, or slow CDN resources.
 
 Select **Show all findings** to expand the list of findings above a waterfall. Select a finding to highlight the associated resources in the waterfall graph.
 
@@ -120,7 +119,7 @@ The **Visually complete** finding compares the action timing to any configured t
 
 Visually complete finding
 
-Another finding highlights uncompressed text resources; if an uncompressed text resource is larger than 860 bytes, the hover data on compression is highlighted in red. This threshold may be configurableâ[see below](#finding-thresholds).
+Another finding highlights uncompressed text resources; if an uncompressed text resource is larger than 860 bytes, the hover data on compression is highlighted in red. This threshold may be configurable—[see below](#finding-thresholds).
 
 ![Uncompressed resource](https://dt-cdn.net/images/waterfalluncompressedresource-586-e65284b928.png)
 
@@ -136,15 +135,15 @@ To configure waterfall finding thresholds
 
 1. Go to **Web**.
 2. Select the application that you want to configure.
-3. In the upper-right corner of the application overview page, select **More** (**â¦**) > **Edit**.
+3. In the upper-right corner of the application overview page, select **More** (**…**) > **Edit**.
 4. From the application settings, select **Capturing** > **Advanced setup**.
 5. Adjust the required thresholds under **Waterfall finding thresholds**.
 
-### PurePathÂ® distributed traces for visibility into application infrastructure
+### PurePath® distributed traces for visibility into application infrastructure
 
 The **Traces** finding is displayed when your browser monitor runs against a web application with a [OneAgent](/managed/ingest-from/dynatrace-oneagent "Understand the important concepts related to OneAgent and find out how to install and operate OneAgent on different platforms.") instance installed on the server side and that has the relevant server-side monitoring. The finding displays the linked service calls. If the monitor is associated with a web application that doesn't have the relevant server-side monitoring, the **Traces** finding is not displayed, as there are no underlying monitored services.
 
-PurePathÂ® technology traces a web request through your application infrastructure so you can see what is driving performance behind the scenes at the application level. If you see that one or two requests are taking the majority of the time on a slow page, you can drill into the distributed trace to see, for example, if there are too many database requests or just one slow request. You can then use this information to drive performance improvements or error analysis.
+PurePath® technology traces a web request through your application infrastructure so you can see what is driving performance behind the scenes at the application level. If you see that one or two requests are taking the majority of the time on a slow page, you can drill into the distributed trace to see, for example, if there are too many database requests or just one slow request. You can then use this information to drive performance improvements or error analysis.
 
 When you select the finding, the associated requests and resources are highlighted in the waterfall. You can select the link provided in the top finding to access all available distributed traces or hover over an individual request to drill into a specific distributed trace. You'll probably want to analyze distributed traces for your [dynamic requests](/managed/discover-dynatrace/get-started/glossary#request "Get acquainted with Dynatrace terminology."), ([document requests](#document-requests), or [XHRs](#xhr-requests)) rather than individual resources. In the image below, hovering over the document request displays the **View trace** link for that request.
 
@@ -160,7 +159,7 @@ Traces accessed from Synthetic waterfall
 
 * For processes that are under heavy load, Dynatrace OneAgent automatically adjusts the data sent. Therefore, certain distributed traces may not be available. In such cases, you'll see a message about [Adaptive Traffic Management](/managed/ingest-from/dynatrace-oneagent/adaptive-traffic-management/adaptive-traffic-management-managed "Improve your Dynatrace Managed environment health and performance with the adaptive features of traffic management, load reduction, and capture control.") in the **Traces** finding.
 
-* Drilling down from an individual resource (based on W3C resource timings) to a distributed trace (captured by OneAgent) is enabled by comparing URLs. If there are any rewrite rules or if parts of the URL arenât identical on the client and server sides, the **View trace** button for the resource wonât be displayed. In such cases, you can get to all your distributed traces from the **Traces** finding.
+* Drilling down from an individual resource (based on W3C resource timings) to a distributed trace (captured by OneAgent) is enabled by comparing URLs. If there are any rewrite rules or if parts of the URL aren’t identical on the client and server sides, the **View trace** button for the resource won’t be displayed. In such cases, you can get to all your distributed traces from the **Traces** finding.
 
 ## JavaScript errors
 
@@ -184,7 +183,7 @@ Grouping and filtering tools help you focus on the waterfall requests that matte
 
 **Grouping by domain** organizes resources into first-party, third-party, and CDN domains. You can see the load order and timing details for specific domains.
 
-**Grouping by type** allows you to see the main categories of first-party, third-party, and CDN resourcesâimage, script (JavaScript), CSS, and others.
+**Grouping by type** allows you to see the main categories of first-party, third-party, and CDN resources—image, script (JavaScript), CSS, and others.
 
 ![Group resources by type](https://dt-cdn.net/images/waterfallgroupbytype1-1206-c6a1a11b85.png)
 
@@ -218,9 +217,9 @@ Legend for XHR actions
 
 The Dynatrace Synthetic Recorder, which is a Google Chrome browser extension, is transitioning to Manifest Version 3 (MV3), which is the latest iteration of the Chrome extension platform. As a result of this required transition, there are changes in the operation of the Synthetic Recorder that might require workarounds in your browser monitor configurations or application code.
 
-Check out the following articles in the [Troubleshooting forum in the Dynatrace Communityï»¿](https://dt-url.net/dy122xtf).
+Check out the following articles in the [Troubleshooting forum in the Dynatrace Community﻿](https://dt-url.net/dy122xtf).
 
-* [Missing XHR actions for third-party iframesï»¿](https://dt-url.net/2zg2xr6)
-* [Unable to block specific requests owing to limitations on the length of regular expressionsï»¿](https://dt-url.net/w0i2xhk)
-* [`window.dispatchEvent` and `window.addEventListener` functions in application codeï»¿](https://dt-url.net/1ck2xb1)
-* [401 failures on challenge-response pagesï»¿](https://dt-url.net/62m2x72)
+* [Missing XHR actions for third-party iframes﻿](https://dt-url.net/2zg2xr6)
+* [Unable to block specific requests owing to limitations on the length of regular expressions﻿](https://dt-url.net/w0i2xhk)
+* [`window.dispatchEvent` and `window.addEventListener` functions in application code﻿](https://dt-url.net/1ck2xb1)
+* [401 failures on challenge-response pages﻿](https://dt-url.net/62m2x72)

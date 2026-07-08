@@ -1,7 +1,6 @@
 ---
 title: Management zones API - POST a management zone
 source: https://docs.dynatrace.com/managed/dynatrace-api/configuration-api/management-zones-api/post-mz
-scraped: 2026-05-12T12:15:37.676547
 ---
 
 # Management zones API - POST a management zone
@@ -47,12 +46,12 @@ The configuration of the management zone. It defines how the management zone app
 | Element | Type | Description | Required |
 | --- | --- | --- | --- |
 | description | string | The description of the management zone. | Optional |
-| dimensionalRules | [MzDimensionalRule[]](#openapi-definition-MzDimensionalRule) | A list of dimensional data rules for management zone usage.  If several rules are specified, the **OR** logic applies. | Optional |
-| entitySelectorBasedRules | [EntitySelectorBasedMzRule[]](#openapi-definition-EntitySelectorBasedMzRule) | A list of entity-selector based rules for management zone usage.  If several rules are specified, the **OR** logic applies. | Optional |
+| dimensionalRules | [MzDimensionalRule](#openapi-definition-MzDimensionalRule)[] | A list of dimensional data rules for management zone usage.  If several rules are specified, the **OR** logic applies. | Optional |
+| entitySelectorBasedRules | [EntitySelectorBasedMzRule](#openapi-definition-EntitySelectorBasedMzRule)[] | A list of entity-selector based rules for management zone usage.  If several rules are specified, the **OR** logic applies. | Optional |
 | id | string | The ID of the management zone. | Optional |
 | metadata | [ConfigurationMetadata](#openapi-definition-ConfigurationMetadata) | Metadata useful for debugging | Optional |
 | name | string | The name of the management zone. | Required |
-| rules | [MzRule[]](#openapi-definition-MzRule) | A list of rules for management zone usage.  If several rules are specified, the **OR** logic applies. | Optional |
+| rules | [MzRule](#openapi-definition-MzRule)[] | A list of rules for management zone usage.  If several rules are specified, the **OR** logic applies. | Optional |
 
 #### The `MzDimensionalRule` object
 
@@ -63,7 +62,7 @@ Each rule is evaluated independently of all other rules.
 | Element | Type | Description | Required |
 | --- | --- | --- | --- |
 | appliesTo | string | The target of the rule. The element can hold these values * `ANY` * `LOG` * `METRIC` | Required |
-| conditions | [MzDimensionalRuleCondition[]](#openapi-definition-MzDimensionalRuleCondition) | A list of conditions for the management zone.  The management zone applies only if **all** conditions are fulfilled. | Required |
+| conditions | [MzDimensionalRuleCondition](#openapi-definition-MzDimensionalRuleCondition)[] | A list of conditions for the management zone.  The management zone applies only if **all** conditions are fulfilled. | Required |
 | enabled | boolean | The rule is enabled (`true`) or disabled (`false`). | Required |
 
 #### The `MzDimensionalRuleCondition` object
@@ -104,7 +103,7 @@ Each rule is evaluated independently of all other rules.
 
 | Element | Type | Description | Required |
 | --- | --- | --- | --- |
-| conditions | [EntityRuleEngineCondition[]](#openapi-definition-EntityRuleEngineCondition) | A list of matching rules for the management zone.  The management zone applies only if **all** conditions are fulfilled. | Required |
+| conditions | [EntityRuleEngineCondition](#openapi-definition-EntityRuleEngineCondition)[] | A list of matching rules for the management zone.  The management zone applies only if **all** conditions are fulfilled. | Required |
 | enabled | boolean | The rule is enabled (`true`) or disabled (`false`). | Required |
 | propagationTypes | string[] | How to apply the management zone to underlying entities:  * `SERVICE_TO_HOST_LIKE`: Apply to underlying hosts of matching services. * `SERVICE_TO_PROCESS_GROUP_LIKE`: Apply to underlying process groups of matching services. * `PROCESS_GROUP_TO_HOST`: Apply to underlying hosts of matching process groups. * `PROCESS_GROUP_TO_SERVICE`: Apply to all services provided by matching process groups. * `HOST_TO_PROCESS_GROUP_INSTANCE`: Apply to processes running on matching hosts. * `CUSTOM_DEVICE_GROUP_TO_CUSTOM_DEVICE`: Apply to custom devices in matching custom device groups. * `AZURE_TO_PG`: Apply to process groups connected to matching Azure entities. * `AZURE_TO_SERVICE`: Apply to services provided by matching Azure entities. The element can hold these values * `AZURE_TO_PG` * `AZURE_TO_SERVICE` * `CUSTOM_DEVICE_GROUP_TO_CUSTOM_DEVICE` * `HOST_TO_PROCESS_GROUP_INSTANCE` * `PROCESS_GROUP_TO_HOST` * `PROCESS_GROUP_TO_SERVICE` * `SERVICE_TO_HOST_LIKE` * `SERVICE_TO_PROCESS_GROUP_LIKE` | Optional |
 | type | string | The type of Dynatrace entities the management zone can be applied to. The element can hold these values * `APPMON_SERVER` * `APPMON_SYSTEM_PROFILE` * `AWS_ACCOUNT` * `AWS_APPLICATION_LOAD_BALANCER` * `AWS_AUTO_SCALING_GROUP` * `AWS_CLASSIC_LOAD_BALANCER` * `AWS_NETWORK_LOAD_BALANCER` * `AWS_RELATIONAL_DATABASE_SERVICE` * `AZURE` * `BROWSER_MONITOR` * `CLOUD_APPLICATION` * `CLOUD_APPLICATION_NAMESPACE` * `CLOUD_FOUNDRY_FOUNDATION` * `CUSTOM_APPLICATION` * `CUSTOM_DEVICE` * `CUSTOM_DEVICE_GROUP` * `DATA_CENTER_SERVICE` * `ENTERPRISE_APPLICATION` * `ESXI_HOST` * `EXTERNAL_MONITOR` * `HOST` * `HOST_GROUP` * `HTTP_MONITOR` * `KUBERNETES_CLUSTER` * `KUBERNETES_SERVICE` * `MOBILE_APPLICATION` * `MULTIPROTOCOL_MONITOR` * `OPENSTACK_ACCOUNT` * `PROCESS_GROUP` * `QUEUE` * `SERVICE` * `WEB_APPLICATION` | Required |
@@ -115,21 +114,21 @@ A condition defines how to execute matching logic for an entity.
 
 | Element | Type | Description | Required |
 | --- | --- | --- | --- |
-| comparisonInfo | [ComparisonBasic](#openapi-definition-ComparisonBasic) | Defines how the matching is actually performed: what and how are we comparing.  The actual set of fields and possible values of the **operator** field depend on the type of the comparison. Find the list of actual objects in the description of the **type** field or see [JSON modelsï»¿](https://dt-url.net/0b83s6z). | Required |
-| key | [ConditionKey](#openapi-definition-ConditionKey) | The key to identify the data we're matching.  The actual set of fields and possible values depend on the type of the key. Find the list of actual objects in the description of the **type** field or see [JSON modelsï»¿](https://dt-url.net/0b83s6z). | Required |
+| comparisonInfo | [ComparisonBasic](#openapi-definition-ComparisonBasic) | Defines how the matching is actually performed: what and how are we comparing.  The actual set of fields and possible values of the **operator** field depend on the type of the comparison. Find the list of actual objects in the description of the **type** field or see [JSON models﻿](https://dt-url.net/0b83s6z). | Required |
+| key | [ConditionKey](#openapi-definition-ConditionKey) | The key to identify the data we're matching.  The actual set of fields and possible values depend on the type of the key. Find the list of actual objects in the description of the **type** field or see [JSON models﻿](https://dt-url.net/0b83s6z). | Required |
 
 #### The `ComparisonBasic` object
 
 Defines how the matching is actually performed: what and how are we comparing.
 
-The actual set of fields and possible values of the **operator** field depend on the type of the comparison. Find the list of actual objects in the description of the **type** field or see [JSON modelsï»¿](https://dt-url.net/0b83s6z).
+The actual set of fields and possible values of the **operator** field depend on the type of the comparison. Find the list of actual objects in the description of the **type** field or see [JSON models﻿](https://dt-url.net/0b83s6z).
 
 | Element | Type | Description | Required |
 | --- | --- | --- | --- |
 | negate | boolean | Reverses the comparison **operator**. For example it turns the **begins with** into **does not begin with**. | Required |
 | operator | string | Operator of the comparison. You can reverse it by setting **negate** to `true`.  Possible values depend on the **type** of the comparison. Find the list of actual models in the description of the **type** field and check the description of the model you need. | Required |
 | type | string | Defines the actual set of fields depending on the value. See one of the following objects:  * `STRING` -> StringComparison * `INDEXED_NAME` -> IndexedNameComparison * `INDEXED_STRING` -> IndexedStringComparison * `INTEGER` -> IntegerComparison * `SERVICE_TYPE` -> ServiceTypeComparison * `PAAS_TYPE` -> PaasTypeComparison * `CLOUD_TYPE` -> CloudTypeComparison * `AZURE_SKU` -> AzureSkuComparision * `AZURE_COMPUTE_MODE` -> AzureComputeModeComparison * `ENTITY_ID` -> EntityIdComparison * `SIMPLE_TECH` -> SimpleTechComparison * `SIMPLE_HOST_TECH` -> SimpleHostTechComparison * `SERVICE_TOPOLOGY` -> ServiceTopologyComparison * `DATABASE_TOPOLOGY` -> DatabaseTopologyComparison * `OS_TYPE` -> OsTypeComparison * `HYPERVISOR_TYPE` -> HypervisorTypeComparision * `IP_ADDRESS` -> IpAddressComparison * `OS_ARCHITECTURE` -> OsArchitectureComparison * `BITNESS` -> BitnessComparision * `APPLICATION_TYPE` -> ApplicationTypeComparison * `MOBILE_PLATFORM` -> MobilePlatformComparison * `CUSTOM_APPLICATION_TYPE` -> CustomApplicationTypeComparison * `DCRUM_DECODER_TYPE` -> DcrumDecoderComparison * `SYNTHETIC_ENGINE_TYPE` -> SyntheticEngineTypeComparison * `TAG` -> TagComparison * `INDEXED_TAG` -> IndexedTagComparison The element can hold these values * `APPLICATION_TYPE` * `AZURE_COMPUTE_MODE` * `AZURE_SKU` * `BITNESS` * `CLOUD_TYPE` * `CUSTOM_APPLICATION_TYPE` * `DATABASE_TOPOLOGY` * `DCRUM_DECODER_TYPE` * `ENTITY_ID` * `HYPERVISOR_TYPE` * `INDEXED_NAME` * `INDEXED_STRING` * `INDEXED_TAG` * `INTEGER` * `IP_ADDRESS` * `MOBILE_PLATFORM` * `OS_ARCHITECTURE` * `OS_TYPE` * `PAAS_TYPE` * `SERVICE_TOPOLOGY` * `SERVICE_TYPE` * `SIMPLE_HOST_TECH` * `SIMPLE_TECH` * `STRING` * `SYNTHETIC_ENGINE_TYPE` * `TAG` | Required |
-| value | string | The value to compare to. | Optional |
+| value | [AnyValue](#openapi-definition-AnyValue) | The value to compare to. | Optional |
 
 #### The `AnyValue` object
 
@@ -139,7 +138,7 @@ A schema representing an arbitrary value type.
 
 The key to identify the data we're matching.
 
-The actual set of fields and possible values depend on the type of the key. Find the list of actual objects in the description of the **type** field or see [JSON modelsï»¿](https://dt-url.net/0b83s6z).
+The actual set of fields and possible values depend on the type of the key. Find the list of actual objects in the description of the **type** field or see [JSON models﻿](https://dt-url.net/0b83s6z).
 
 | Element | Type | Description | Required |
 | --- | --- | --- | --- |
@@ -478,7 +477,7 @@ The short representation of a Dynatrace entity.
 | Element | Type | Description |
 | --- | --- | --- |
 | code | integer | The HTTP status code |
-| constraintViolations | [ConstraintViolation[]](#openapi-definition-ConstraintViolation) | A list of constraint violations |
+| constraintViolations | [ConstraintViolation](#openapi-definition-ConstraintViolation)[] | A list of constraint violations |
 | message | string | The error message |
 
 #### The `ConstraintViolation` object
@@ -609,7 +608,7 @@ To learn how to obtain and use it, see [Tokens and authentication](/managed/disc
 | Element | Type | Description |
 | --- | --- | --- |
 | code | integer | The HTTP status code |
-| constraintViolations | [ConstraintViolation[]](#openapi-definition-ConstraintViolation) | A list of constraint violations |
+| constraintViolations | [ConstraintViolation](#openapi-definition-ConstraintViolation)[] | A list of constraint violations |
 | message | string | The error message |
 
 #### The `ConstraintViolation` object

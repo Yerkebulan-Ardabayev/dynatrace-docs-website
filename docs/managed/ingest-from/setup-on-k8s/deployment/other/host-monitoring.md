@@ -1,7 +1,6 @@
 ---
 title: Get started with host monitoring
 source: https://docs.dynatrace.com/managed/ingest-from/setup-on-k8s/deployment/other/host-monitoring
-scraped: 2026-05-12T12:04:46.293381
 ---
 
 # Get started with host monitoring
@@ -27,8 +26,8 @@ Before installing Dynatrace on your Kubernetes cluster, ensure that you meet the
 * You must allow egress for Dynatrace pods (default: Dynatrace namespace) to your Dynatrace environment URL.
 
   + For Dynatrace Managed, you can optionally use a Cluster ActiveGate URL.
-* For OpenShift Dedicated, you need the [cluster-admin roleï»¿](https://docs.openshift.com/dedicated/osd_cluster_admin/osd-admin-roles.html).
-* Helm installation Use [Helm version 3ï»¿](https://dt-url.net/n5036j1).
+* For OpenShift Dedicated, you need the [cluster-admin role﻿](https://docs.openshift.com/dedicated/osd_cluster_admin/osd-admin-roles.html).
+* Helm installation Use [Helm version 3﻿](https://dt-url.net/n5036j1).
 
 ### Supported versions
 
@@ -72,7 +71,7 @@ Dynatrace Operator version 0.8.0+
 
    Installation with additional configuration of the Helm chart
 
-   Edit the [`values.yaml`ï»¿](https://github.com/Dynatrace/dynatrace-operator/blob/v1.9.0/config/helm/chart/default/values.yaml) sample from GitHub, and then run the install command, passing the YAML file as an argument:
+   Edit the [`values.yaml`﻿](https://github.com/Dynatrace/dynatrace-operator/blob/v1.9.0/config/helm/chart/default/values.yaml) sample from GitHub, and then run the install command, passing the YAML file as an argument:
 
    ```
    helm install dynatrace-operator oci://public.ecr.aws/dynatrace/dynatrace-operator \
@@ -108,7 +107,7 @@ Dynatrace Operator version 0.8.0+
    ```
 3. Apply the DynaKube custom resource
 
-   Download the [DynaKube custom resource sample for host monitoring from GitHubï»¿](https://dt-url.net/qx8363l). In addition, you can review the [available parameters](/managed/ingest-from/setup-on-k8s/reference/dynakube-parameters "List the available parameters for setting up Dynatrace Operator on Kubernetes.") or [how-to guides](/managed/ingest-from/setup-on-k8s/guides "Detailed description of installation and configuration options for specific use-cases"), and adapt the DynaKube custom resource according to your requirements.
+   Download the [DynaKube custom resource sample for host monitoring from GitHub﻿](https://dt-url.net/qx8363l). In addition, you can review the [available parameters](/managed/ingest-from/setup-on-k8s/reference/dynakube-parameters "List the available parameters for setting up Dynatrace Operator on Kubernetes.") or [how-to guides](/managed/ingest-from/setup-on-k8s/guides "Detailed description of installation and configuration options for specific use-cases"), and adapt the DynaKube custom resource according to your requirements.
 
    Run the command below to apply the DynaKube custom resource, making sure to replace `<your-DynaKube-CR>` with your actual DynaKube custom resource file name. A validation webhook will provide helpful error messages if there's a problem.
 
@@ -214,7 +213,7 @@ OpenShift
    ```
 4. Apply the DynaKube custom resource
 
-   Download the [DynaKube custom resource sample for host monitoring from GitHubï»¿](https://dt-url.net/qx8363l). In addition, you can review the [available parameters](/managed/ingest-from/setup-on-k8s/reference/dynakube-parameters "List the available parameters for setting up Dynatrace Operator on Kubernetes.") or [how-to guides](/managed/ingest-from/setup-on-k8s/guides "Detailed description of installation and configuration options for specific use-cases"), and adapt the DynaKube custom resource according to your requirements.
+   Download the [DynaKube custom resource sample for host monitoring from GitHub﻿](https://dt-url.net/qx8363l). In addition, you can review the [available parameters](/managed/ingest-from/setup-on-k8s/reference/dynakube-parameters "List the available parameters for setting up Dynatrace Operator on Kubernetes.") or [how-to guides](/managed/ingest-from/setup-on-k8s/guides "Detailed description of installation and configuration options for specific use-cases"), and adapt the DynaKube custom resource according to your requirements.
 
    If you want to reduce billed units, enable Infrastructure Monitoring mode in your DynaKube configuration.
 
@@ -332,7 +331,7 @@ OpenShift
    ```
 4. Apply the DynaKube custom resource
 
-   Download the [DynaKube custom resource sample for host monitoring from GitHubï»¿](https://dt-url.net/qx8363l). In addition, you can review the [available parameters](/managed/ingest-from/setup-on-k8s/reference/dynakube-parameters "List the available parameters for setting up Dynatrace Operator on Kubernetes.") or [how-to guides](/managed/ingest-from/setup-on-k8s/guides "Detailed description of installation and configuration options for specific use-cases"), and adapt the DynaKube custom resource according to your requirements.
+   Download the [DynaKube custom resource sample for host monitoring from GitHub﻿](https://dt-url.net/qx8363l). In addition, you can review the [available parameters](/managed/ingest-from/setup-on-k8s/reference/dynakube-parameters "List the available parameters for setting up Dynatrace Operator on Kubernetes.") or [how-to guides](/managed/ingest-from/setup-on-k8s/guides "Detailed description of installation and configuration options for specific use-cases"), and adapt the DynaKube custom resource according to your requirements.
 
    Run the command below to apply the DynaKube custom resource, making sure to replace `<your-DynaKube-CR>` with your actual DynaKube custom resource file name. A validation webhook will provide helpful error messages if there's a problem.
 
@@ -435,7 +434,7 @@ Release notes for Dynatrace Operator
 
 Dynatrace Operator release notes](/managed/whats-new/dynatrace-operator)[#### Update or uninstall Dynatrace Operator
 
-Upgrade and uninstallation procedures for Dynatrace Operator
+Upgrade paths, update procedures, and uninstallation guide for Dynatrace Operator.
 
 Update or uninstall Dynatrace Operator](/managed/ingest-from/setup-on-k8s/guides/deployment-and-configuration/updates-and-maintenance/update-uninstall-operator)[#### Sizing guide for Dynatrace ActiveGates in the Kubernetes monitoring use-case
 

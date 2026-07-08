@@ -1,7 +1,6 @@
 ---
 title: Update user
 source: https://docs.dynatrace.com/managed/dynatrace-api/cluster-api/cluster-api-v1/users-v1/put-update-user
-scraped: 2026-05-12T12:12:38.690970
 ---
 
 # Update user

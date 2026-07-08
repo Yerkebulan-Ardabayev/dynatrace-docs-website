@@ -1,0 +1,26 @@
+---
+title: Configure cost and traffic control for web applications in RUM Classic
+source: https://docs.dynatrace.com/managed/observe/digital-experience/rum-classic/web-applications/additional-configuration/configure-cost-and-traffic-control-web
+---
+
+# Configure cost and traffic control for web applications in RUM Classic
+
+# Configure cost and traffic control for web applications in RUM Classic
+
+* How-to guide
+* 1-min read
+* Published Sep 29, 2021
+
+By default, Dynatrace captures all user actions and user sessions for analysis. This approach ensures complete insight into your application's performance and customer experience. With the **Cost and traffic control** setting, you can reduce the granularity of user action and user session analysis by instructing Dynatrace to capture a lower percentage of user sessions.
+
+While this setting can reduce [monitoring costs](/managed/license/classic-licensing/digital-experience-monitoring-units "Understand how Dynatrace Digital Experience Monitoring consumption is calculated based on DEM units."), it also results in lower visibility into how your customers are using your web applications. For example, a setting of `10%` results in Dynatrace analyzing only every tenth user session.
+
+To limit the number of user sessions to be analyzed
+
+1. Go to **Web**.
+2. Select the application that you want to configure.
+3. In the upper-right corner of the application overview page, select **More** (**…**) > **Edit**.
+4. From the application settings, select **General settings** > **Enablement and cost control**.
+5. Under **Real User Monitoring**, enter a value of less than `100` in the **Cost and traffic control** field. The default value of this field is `100`.
+
+With this setting defined, Dynatrace analyzes an evenly distributed number of user sessions that equates to the percentage of user sessions that you've specified.

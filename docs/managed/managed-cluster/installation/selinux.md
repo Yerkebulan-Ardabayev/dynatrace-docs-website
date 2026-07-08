@@ -1,7 +1,6 @@
 ---
 title: Configure SELinux
 source: https://docs.dynatrace.com/managed/managed-cluster/installation/selinux
-scraped: 2026-05-12T11:53:36.960187
 ---
 
 # Configure SELinux
@@ -16,13 +15,13 @@ SELinux (Security-Enhanced Linux) is a Linux kernel security module that uses ma
 
 Dynatrace Managed automatically detects the SELinux mode during installation and applies the correct file contexts so its services can run in `enforcing` mode. This requires the `semanage` utility on your system. Installation fails if the package is missing.
 
-* **New installations**âno additional steps required.
-* **Existing installations**âafter enabling SELinux, run the `reconfigure.sh` script:
+* **New installations**—no additional steps required.
+* **Existing installations**—after enabling SELinux, run the `reconfigure.sh` script:
 
   ```
   /opt/dynatrace-managed/installer/reconfigure.sh
   ```
-* **Older versions**âchange SELinux mode to `permissive`.
+* **Older versions**—change SELinux mode to `permissive`.
 
 ## Enable SELinux
 

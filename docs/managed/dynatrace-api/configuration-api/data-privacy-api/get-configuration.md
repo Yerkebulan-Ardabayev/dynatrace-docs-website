@@ -1,7 +1,6 @@
 ---
 title: Data privacy API - GET configuration
 source: https://docs.dynatrace.com/managed/dynatrace-api/configuration-api/data-privacy-api/get-configuration
-scraped: 2026-05-12T11:17:39.954620
 ---
 
 # Data privacy API - GET configuration

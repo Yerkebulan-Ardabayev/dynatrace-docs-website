@@ -1,7 +1,6 @@
 ---
 title: Overview
 source: https://docs.dynatrace.com/managed/upgrade/up-get-started
-scraped: 2026-05-12T12:07:10.899832
 ---
 
 # Overview
@@ -38,7 +37,7 @@ During the planning phase, you learn about the benefits of Dynatrace SaaS and ho
 
 Assess your current Dynatrace Managed deployment and the feasibility of upgrading to Dynatrace SaaS. Create a list of requirements and goals to perform a successful deployment.
 
-#### Step 2 â Strategize
+#### Step 2 – Strategize
 
 Define your approach. Based on your current usage of Dynatrace Managed, identify the scope of the upgrade, catalog and evaluate existing Dynatrace environments, and determine what must be upgraded.
 
@@ -54,11 +53,11 @@ Prepare your new Dynatrace SaaS environment and migrate configuration and monito
 
 Dynatrace sets up licensing for your environments in the desired hyper-scaler region. You prepare and deploy required infrastructure components and configurations to support ActiveGates for required network flows.
 
-#### Step 2 â Execute
+#### Step 2 – Execute
 
 During this step, you migrate the configuration, followed by redirection of monitoring traffic from the Dynatrace Managed to the Dynatrace SaaS.
 
-#### Step 3 â Integrate
+#### Step 3 – Integrate
 
 All third-party integrations with external systems previously linked to the Dynatrace Managed Cluster must be updated and validated to work with your new Dynatrace SaaS environment.
 
@@ -80,7 +79,7 @@ Review and optimize for your use cases and internal processes. Finally, it's tim
 
 Questions?
 
-Visit the [Upgrade to SaaS forumï»¿](https://community.dynatrace.com/t5/Upgrade-to-SaaS/bd-p/upgrade_to_saas) to ask questions, get answers, and share what you've learned with others.
+Visit the [Upgrade to SaaS forum﻿](https://community.dynatrace.com/t5/Upgrade-to-SaaS/bd-p/upgrade_to_saas) to ask questions, get answers, and share what you've learned with others.
 
 ## Related topics
 

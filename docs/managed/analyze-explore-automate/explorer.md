@@ -1,7 +1,6 @@
 ---
 title: Data Explorer
 source: https://docs.dynatrace.com/managed/analyze-explore-automate/explorer
-scraped: 2026-05-12T11:03:57.692659
 ---
 
 # Data Explorer
@@ -56,7 +55,7 @@ Data Explorer: Query editor: Info pop-up
 
 ### Metric name
 
-In the query editor, select the metric name from the list displayed in the **Select metricâ¦** box. This can be a built-in metric or a metric ingested from a channel such as StatsD, Prometheus, or Telegraf over our metrics API.
+In the query editor, select the metric name from the list displayed in the **Select metric…** box. This can be a built-in metric or a metric ingested from a channel such as StatsD, Prometheus, or Telegraf over our metrics API.
 
 To select the metric
 
@@ -232,7 +231,7 @@ To add or remove metric transformations for a row in the query editor, select  a
 
 Metric Plus button
 
-* **All**âdisplay all available fields (see below)
+* **All**—display all available fields (see below)
 * [Default](#default)
 * [Filter by](#filter-by)
 * [Limit](#limit)
@@ -335,9 +334,9 @@ The baseline calculation is based on the [Seasonal baseline](/managed/dynatrace-
   | Resolution range | Resolution examples | Baseline timeframe |
   | --- | --- | --- |
   | resolution < 5 minutes | + 1 minute | **previous 14 days** |
-  | 5 minutes â¥ resolution < 1 hour | + 5 minutes + 10 minutes + 30 minutes | **previous 28 days** |
-  | 1 hour â¥ resolution < 1 day | + 1 hour + 6 hours + 12 hours | **400 days** |
-  | resolution â¥ 1 day | + 1 day + 1 week + 1 month | **5 years** |
+  | 5 minutes ≥ resolution < 1 hour | + 5 minutes + 10 minutes + 30 minutes | **previous 28 days** |
+  | 1 hour ≥ resolution < 1 day | + 1 hour + 6 hours + 12 hours | **400 days** |
+  | resolution ≥ 1 day | + 1 day + 1 week + 1 month | **5 years** |
 
 ### Add a baseline
 
@@ -391,7 +390,7 @@ Although the baseline model is based on the [seasonal baseline](/managed/dynatra
 
 ## Correlated metrics
 
-Dynatrace DavisÂ® takes domain-specific knowledge and topology into account when computing connected observability signals. Davis ranks the most relevant signals on top, and the Davis score for each detected signal indicates how closely the signal matches the reference signal's behavior during the selected timeframe. [More about DavisÂ® AI](/managed/dynatrace-intelligence "Get familiar with the capabilities of Davis AI.").
+Dynatrace Davis® takes domain-specific knowledge and topology into account when computing connected observability signals. Davis ranks the most relevant signals on top, and the Davis score for each detected signal indicates how closely the signal matches the reference signal's behavior during the selected timeframe. [More about Davis® AI](/managed/dynatrace-intelligence "Learn how Davis® AI detects performance anomalies, identifies root causes, and uses AI models for adaptive thresholds across your environment.").
 
 ### Add correlated metrics
 
@@ -494,7 +493,7 @@ The **Result** section displays the selected visualization of your query results
 
 You can hover over and select visualization elements to view details, drill down to relevant Dynatrace pages, and alter the visualization to help you identify problems.
 
-In this exampleâa `Graph` visualization showing a line chart of the `CPU usage %` metric for hostsâthe visualization was showing a host behaving erratically, so we selected it to see details about the host in a pop-up window.
+In this example—a `Graph` visualization showing a line chart of the `CPU usage %` metric for hosts—the visualization was showing a host behaving erratically, so we selected it to see details about the host in a pop-up window.
 
 ![Data Explorer line graph pop-up](https://dt-cdn.net/images/graph-pop-up-options-391-827a7747d3.png)
 
@@ -546,8 +545,8 @@ The file name indicates the metrics, date, and timeframe.
 
 For example:
 
-* `CPU usage % (May 24, 2022, 11_41 - 13_41).csv`âcontains results from metric `CPU usage %`, run on May 24, 2022, for a two-hour timeframe of 11:41-13:41.
-* `CPU usage % +1 (May 24, 2022, 13_19 - 13_49).csv`âcontains results from metric `CPU usage %` and one more metric, run on May 24, 2022, for a half-hour timeframe of 13:19-13:49.
+* `CPU usage % (May 24, 2022, 11_41 - 13_41).csv`—contains results from metric `CPU usage %`, run on May 24, 2022, for a two-hour timeframe of 11:41-13:41.
+* `CPU usage % +1 (May 24, 2022, 13_19 - 13_49).csv`—contains results from metric `CPU usage %` and one more metric, run on May 24, 2022, for a half-hour timeframe of 13:19-13:49.
 
 ### Use in API
 
@@ -713,7 +712,7 @@ In this variation, the host metric is extended by host group.
   | G | 10^9 | giga, billion |
   | T | 10^12 | tera, trillion |
 
-  For details, see [Order-of-magnitude notation](/managed/discover-dynatrace/get-started/dynatrace-ui/order-of-magnitude-notation "Dynatrace order-of-magnitude notation for displaying metric values").
+  For details, see [Order-of-magnitude notation](/managed/discover-dynatrace/get-started/dynatrace-ui/order-of-magnitude-notation "Learn how Dynatrace displays metric values using SI-based order-of-magnitude notation, and how to override the automatic unit selection.").
 
 ### Fold transformation and resolution
 

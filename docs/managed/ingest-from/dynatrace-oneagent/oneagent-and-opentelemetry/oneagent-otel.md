@@ -1,7 +1,6 @@
 ---
 title: Use OneAgent with OpenTelemetry data
 source: https://docs.dynatrace.com/managed/ingest-from/dynatrace-oneagent/oneagent-and-opentelemetry/oneagent-otel
-scraped: 2026-05-12T11:05:18.873836
 ---
 
 # Use OneAgent with OpenTelemetry data
@@ -10,14 +9,14 @@ scraped: 2026-05-12T11:05:18.873836
 
 * How-to guide
 * 3-min read
-* Published Sep 30, 2025
+* Updated on Jun 09, 2026
 
 There are two ways to use OneAgent with OpenTelemetry:
 
 * Send OpenTelemetry traces to the [Dynatrace OTLP API endpoints](/managed/ingest-from/opentelemetry/otlp-api "Learn about the OTLP API endpoints that your application uses to export OpenTelemetry data to Dynatrace.").
 * Detect OpenTelemetry spans from trace data, using the OneAgent code module's OpenTelemetry Span Sensor.
 
-![OneAgent send data to Dynatrace](https://dt-cdn.net/images/screenshot-2025-09-30-at-12-44-35-2430-bc1bd03d62.png)
+![OneAgent send data to Dynatrace](https://cdn.bfldr.com/B686QPH3/as/7kc4t3tkf35j8bt2xwmt5p8/Ways_to_use_OneAgent_with_OpenTelemetry-Light_Mode?auto=webp&format=png&position=1)
 
 OneAgent send data to Dynatrace
 
@@ -33,7 +32,7 @@ This is shown in the figure above, where the application uses the local-only OTL
 
 Content encoding support
 
-OneAgent does not support content compression using the HTTP header [`Content-Encoding`ï»¿](https://developer.mozilla.org/docs/Web/HTTP/Headers/Content-Encoding) yet. Pay particular attention to that when [instrumenting a Ruby application](/managed/ingest-from/opentelemetry/walkthroughs/ruby "Learn how to instrument your Ruby application using OpenTelemetry and Dynatrace.") as the OpenTelemetry SDK for Ruby uses by default `Content-Encoding: gzip`.
+OneAgent does not support content compression using the HTTP header [`Content-Encoding`﻿](https://developer.mozilla.org/docs/Web/HTTP/Headers/Content-Encoding) yet. Pay particular attention to that when [instrumenting a Ruby application](/managed/ingest-from/opentelemetry/walkthroughs/ruby "Learn how to instrument your Ruby application using OpenTelemetry and Dynatrace.") as the OpenTelemetry SDK for Ruby uses by default `Content-Encoding: gzip`.
 
 If you need to use content compression, please export to SaaS, the Collector, or ActiveGate.
 
@@ -65,7 +64,7 @@ Enable for a single host
 
 1. Go to **Hosts**.
 2. Find and select your host to display the host overview page.
-3. In the upper-right corner of the host overview page, select **More** (**â¦**) > **Settings**.
+3. In the upper-right corner of the host overview page, select **More** (**…**) > **Settings**.
 
 4. In the host settings, select **Extension Execution Controller**.
 5. Turn on **Enable Extension Execution Controller**.
@@ -82,8 +81,8 @@ The EEC ingestion endpoint is only available with [Full-Stack and Infrastructure
 
 Calls to these API endpoints need to adhere to the following protocol details:
 
-* Use of HTTPâgRPC is not yet supported
-* Use of the binary format of Protocol BuffersâJSON is not yet supported
+* Use of HTTP—gRPC is not yet supported
+* Use of the binary format of Protocol Buffers—JSON is not yet supported
 * Does not support content compression using the `Content-Encoding` header
 
 ### Authentication
@@ -126,23 +125,23 @@ GET /calculate-price/ABC123  # OneAgent
 
 
 
-âââ SELECT FROM products     # OneAgent
+├── SELECT FROM products     # OneAgent
 
 
 
-âââ calculate-discount       # OpenTelemetry
+├── calculate-discount       # OpenTelemetry
 
 
 
-â   âââ seasonal-rules       # OpenTelemetry
+│   ├── seasonal-rules       # OpenTelemetry
 
 
 
-â   âââ loyalty-calculation  # OpenTelemetry
+│   └── loyalty-calculation  # OpenTelemetry
 
 
 
-âââ INSERT INTO prices       # OneAgent
+└── INSERT INTO prices       # OneAgent
 ```
 
 These auto-instrumented spans are woven together with your manual OpenTelemetry spans into a single trace.

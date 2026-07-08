@@ -1,7 +1,6 @@
 ---
 title: Amazon AppStream 2.0 monitoring
 source: https://docs.dynatrace.com/managed/ingest-from/amazon-web-services/integrate-with-aws/aws-all-services/aws-service-appstream-2
-scraped: 2026-05-12T11:29:26.651965
 ---
 
 # Amazon AppStream 2.0 monitoring
@@ -27,7 +26,7 @@ For role-based access in a [Managed](/managed/ingest-from/amazon-web-services/se
 * Dynatrace version 1.201+
 * An updated [AWS monitoring policy](/managed/ingest-from/amazon-web-services/integrate-with-aws/cloudwatch-metrics#monitoring-policy "Integrate metrics from Amazon CloudWatch.") to include the additional AWS services.
 
-To [update the AWS IAM policyï»¿](https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_manage-edit.html#edit-managed-policy-console), use the JSON below, containing the monitoring policy (permissions) for all supporting services.
+To [update the AWS IAM policy﻿](https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_manage-edit.html#edit-managed-policy-console), use the JSON below, containing the monitoring policy (permissions) for all supporting services.
 
 JSON predefined policy for all supporting services
 
@@ -712,9 +711,9 @@ AWS presets
 
 For existing monitored services, you might need to resave your credentials for the preset dashboard to appear on the **Dashboards** page. To resave your credentials, go to **Settings** > **Cloud and virtualization** > **AWS**, select the desired AWS instance, and then select **Save**.
 
-You can't make changes on a preset dashboard directly, but you can clone and edit it. To clone a dashboard, open the browse menu (**â¦**) and select **Clone**.
+You can't make changes on a preset dashboard directly, but you can clone and edit it. To clone a dashboard, open the browse menu (**…**) and select **Clone**.
 
-To remove a dashboard from the dashboards page, you can hide it. To hide a dashboard, open the browse menu (**â¦**) and select **Hide**.
+To remove a dashboard from the dashboards page, you can hide it. To hide a dashboard, open the browse menu (**…**) and select **Hide**.
 
 Hiding a dashboard doesn't affect other users.
 
@@ -846,7 +845,7 @@ Appstream
 | --- | --- | --- | --- | --- | --- |
 | ActualCapacity | The total number of instances that are available for streaming or are currently streaming. `ActualCapacity` = `AvailableCapacity` + `InUseCapacity`. | Count | Multi | Fleet | Applicable |
 | AvailableCapacity | The number of idle instances currently available for user sessions. `AvailableCapacity` = `ActualCapacity` - `InUseCapacity`. | Count | Multi | Fleet | Applicable |
-| CapacityUtilization | The percentage of instances in a fleet that are being used, using the following formula. `CapacityUtilization` = (`InUseCapacity`/`ActualCapacity`) Ã 100. | Percent | Multi | Fleet | Applicable |
+| CapacityUtilization | The percentage of instances in a fleet that are being used, using the following formula. `CapacityUtilization` = (`InUseCapacity`/`ActualCapacity`) × 100. | Percent | Multi | Fleet | Applicable |
 | DesiredCapacity | The total number of instances that are either running or pending. This represents the total number of concurrent streaming sessions your fleet can support in a steady state. `DesiredCapacity` = `ActualCapacity` + `PendingCapacity`. | Count | Multi | Fleet | Applicable |
 | InUseCapacity | The number of instances currently being used for streaming sessions. One `InUseCapacity` count represents one streaming session. | Count | Multi | Fleet | Applicable |
 | InsufficientCapacityError | The number of session requests rejected due to lack of capacity. | Count | Sum | Fleet |  |

@@ -1,7 +1,6 @@
 ---
 title: Set or update cluster proxy configuration
 source: https://docs.dynatrace.com/managed/dynatrace-api/cluster-api/cluster-api-v1/internet-proxy-v1/put-cluster-proxy-configuration
-scraped: 2026-05-12T12:06:58.940572
 ---
 
 # Set or update cluster proxy configuration

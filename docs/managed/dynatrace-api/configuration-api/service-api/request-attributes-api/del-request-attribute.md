@@ -1,7 +1,6 @@
 ---
 title: Request attributes API - DELETE a request attribute
 source: https://docs.dynatrace.com/managed/dynatrace-api/configuration-api/service-api/request-attributes-api/del-request-attribute
-scraped: 2026-05-12T11:20:37.572797
 ---
 
 # Request attributes API - DELETE a request attribute

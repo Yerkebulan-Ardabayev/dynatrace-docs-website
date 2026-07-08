@@ -1,7 +1,6 @@
 ---
 title: List properties for specific environment
 source: https://docs.dynatrace.com/managed/dynatrace-api/cluster-api/cluster-api-v2/environments/list-specific-managed-environment
-scraped: 2026-05-12T11:05:47.962469
 ---
 
 # List properties for specific environment

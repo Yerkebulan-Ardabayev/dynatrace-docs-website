@@ -1,7 +1,6 @@
 ---
 title: Mobile and custom app API - GET all user session properties
 source: https://docs.dynatrace.com/managed/dynatrace-api/configuration-api/rum/mobile-custom-app-configuration/user-action-and-session-properties/get-all
-scraped: 2026-05-12T11:15:35.461976
 ---
 
 # Mobile and custom app API - GET all user session properties
@@ -48,8 +47,8 @@ Contains lists of short representations of mobile session properties and mobile 
 
 | Element | Type | Description |
 | --- | --- | --- |
-| sessionProperties | [MobileSessionUserActionPropertyShort[]](#openapi-definition-MobileSessionUserActionPropertyShort) | A list of short representations of mobile session properties. |
-| userActionProperties | [MobileSessionUserActionPropertyShort[]](#openapi-definition-MobileSessionUserActionPropertyShort) | A list of short representations of mobile user action properties. |
+| sessionProperties | [MobileSessionUserActionPropertyShort](#openapi-definition-MobileSessionUserActionPropertyShort)[] | A list of short representations of mobile session properties. |
+| userActionProperties | [MobileSessionUserActionPropertyShort](#openapi-definition-MobileSessionUserActionPropertyShort)[] | A list of short representations of mobile user action properties. |
 
 #### The `MobileSessionUserActionPropertyShort` object
 

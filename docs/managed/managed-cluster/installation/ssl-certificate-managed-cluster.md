@@ -1,7 +1,6 @@
 ---
 title: Configure SSL certificate for Managed Cluster
 source: https://docs.dynatrace.com/managed/managed-cluster/installation/ssl-certificate-managed-cluster
-scraped: 2026-05-12T11:25:06.214839
 ---
 
 # Configure SSL certificate for Managed Cluster
@@ -12,7 +11,7 @@ scraped: 2026-05-12T11:25:06.214839
 * 3-min read
 * Updated on May 08, 2026
 
-By default, Dynatrace manages SSL for youâeach Managed Cluster receives a dedicated subdomain of `dynatrace-managed.com` with a trusted SSL certificate. To use your own certificate instead, follow the steps below.
+By default, Dynatrace manages SSL for you—each Managed Cluster receives a dedicated subdomain of `dynatrace-managed.com` with a trusted SSL certificate. To use your own certificate instead, follow the steps below.
 
 As of **April 17, 2025**, Chinese regulations require an ICP (Internet Content Provider) certification for all publicly accessible services using the `dynatrace-managed.com` domain. Since Dynatrace doesn't hold an ICP certificate due to the lack of a legal entity in China, the affected domains have been blocked by local network providers.
 
@@ -55,7 +54,7 @@ To disable automatic certificate management:
 1. Log in to the **Cluster Management Console**.
 2. Go to **Settings > Preferences** and disable **Manage domain name and SSL certificates**.
 
-Without automatic certificate management, Dynatrace falls back to a self-signed certificate. Self-signed certificates aren't trusted by browsers by defaultâon first access you'll see a security warning. Accept the exception in your browser's security settings to proceed, then install your trusted certificate as described in the next step.
+Without automatic certificate management, Dynatrace falls back to a self-signed certificate. Self-signed certificates aren't trusted by browsers by default—on first access you'll see a security warning. Accept the exception in your browser's security settings to proceed, then install your trusted certificate as described in the next step.
 
 ## Step 3 Upload your certificate
 

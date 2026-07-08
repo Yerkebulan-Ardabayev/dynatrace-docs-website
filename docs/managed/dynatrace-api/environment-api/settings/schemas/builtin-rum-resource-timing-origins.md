@@ -1,7 +1,6 @@
 ---
 title: Settings API - Advanced correlation schema table
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/settings/schemas/builtin-rum-resource-timing-origins
-scraped: 2026-05-12T11:44:11.937165
 ---
 
 # Settings API - Advanced correlation schema table

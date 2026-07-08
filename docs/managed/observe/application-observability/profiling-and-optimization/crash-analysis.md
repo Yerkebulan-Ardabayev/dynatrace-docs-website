@@ -1,7 +1,6 @@
 ---
 title: Crash analysis
 source: https://docs.dynatrace.com/managed/observe/application-observability/profiling-and-optimization/crash-analysis
-scraped: 2026-05-12T11:21:40.362862
 ---
 
 # Crash analysis
@@ -10,21 +9,21 @@ scraped: 2026-05-12T11:21:40.362862
 
 * How-to guide
 * 7-min read
-* Published Jul 19, 2017
+* Updated on Jul 01, 2026
 
-Processes crash for a multitude of reasons and itâs often difficult to understand the root causes that contribute to such crashes. When a monitored process crashes, youâll see a process crash entry in the **Events** section of each affected process and host page. The example process below has some availability problems (shown in red on the timeline). By selecting the affected timeframe in the timeline, the **Events** section shows you the number of process crashes that occurred during that timeframe (1 crash in this example).
+Processes crash for a multitude of reasons and it’s often difficult to understand the root causes that contribute to such crashes. When a monitored process crashes, you’ll see a process crash entry in the **Events** section of each affected process and host page. The example process below has some availability problems (shown in red on the timeline). By selecting the affected timeframe in the timeline, the **Events** section shows you the number of process crashes that occurred during that timeframe (1 crash in this example).
 
 ![Event details](https://dt-cdn.net/images/event-details-3321-d2e1237b17.png)
 
 Event details
 
-Select **Process crash details** to view a detailed list of the crashes that occurred during the selected timeframe. Here youâll find all details related to why each process crashed.
+Select **Process crash details** to view a detailed list of the crashes that occurred during the selected timeframe. Here you’ll find all details related to why each process crashed.
 
 ![Process crash](https://dt-cdn.net/images/process-crash-1418-427d215ec4.png)
 
 Process crash
 
-The provided crash details include the signal that killed the process (for example, `Segmentation fault` or `Abort`), the execution stack frame that crashed, and more. The crash typeâsuch as a native core dump, Java core dump, or abnormal program exit due to an exceptionâdetermines which crash details are available.
+The provided crash details include the signal that killed the process (for example, `Segmentation fault` or `Abort`), the execution stack frame that crashed, and more. The crash type—such as a native core dump, Java core dump, or abnormal program exit due to an exception—determines which crash details are available.
 
 This functionality works for all processes on each monitored host.
 
@@ -184,11 +183,11 @@ When a crash occurs on Windows, a dialog appears, asking if you want to debug or
 
 Process crashes 8
 
-You can learn about other valuable settings related to Windows Error Reporting by visiting [Microsoft documentationï»¿](https://msdn.microsoft.com/en-us/library/windows/desktop/bb513638(v=vs.85).aspx).
+You can learn about other valuable settings related to Windows Error Reporting by visiting [Microsoft documentation﻿](https://msdn.microsoft.com/en-us/library/windows/desktop/bb513638(v=vs.85).aspx).
 
 ## Linux core dump handling
 
-In Linux, the way the kernel handles the core dump is set in `/proc/sys/kernel/core_pattern`. Beginning with kernel 2.6.19 (1), there are two methods of dealing with application crashes. The core dump might be written to a file pointed to by the `/proc/sys/kernel/core_pattern` entry or pushed to an applicationâthe entry must be prefixed with a vertical slash character (`|`) character.
+In Linux, the way the kernel handles the core dump is set in `/proc/sys/kernel/core_pattern`. Beginning with kernel 2.6.19 (1), there are two methods of dealing with application crashes. The core dump might be written to a file pointed to by the `/proc/sys/kernel/core_pattern` entry or pushed to an application—the entry must be prefixed with a vertical slash character (`|`) character.
 
 Because Suse Linux uses the first method, the entry is similar to
 `/proc/sys/kernel/core_pattern:core`. This means that a file with the name `core` is written in the current working directory of the crashed process.
@@ -199,7 +198,7 @@ or
 `|/usr/libexec/abrt-hook-ccpp %s %c %p %u %g %t e`
 
 In the last example, when a program crashes, the `coredump` output is pushed to `stdin` of the application given in the first parameter. Moreover, the kernel fills the values of any parameters formatted as `%[a-zA-Z]`. The `apport` reporting service overwrites the file `/proc/sys/kernel/core_pattern`. If `apport` is enabled (in `/etc/default/apport`), then the `/proc/sys/kernel/core_pattern` configuration setting is set when the `apport` crash reporting service starts on system boot.
-[Read moreâ¦ï»¿](https://askubuntu.com/questions/420410/how-to-permanently-edit-the-core-pattern-file)
+[Read more…﻿](https://askubuntu.com/questions/420410/how-to-permanently-edit-the-core-pattern-file)
 
 ### Operating system changes
 
@@ -207,7 +206,7 @@ OneAgent installer performs the following changes to your system to handle core 
 
 #### Disabling ABRT and Apport
 
-[ABRTï»¿](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/6/html/deployment_guide/ch-abrt) (Red Hat) and [Apportï»¿](https://launchpad.net/ubuntu/+source/apport) (Debian) services are stopped and disabled.
+[ABRT﻿](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/6/html/deployment_guide/ch-abrt) (Red Hat) and [Apport﻿](https://launchpad.net/ubuntu/+source/apport) (Debian) services are stopped and disabled.
 
 Both services are re-enabled during [OneAgent uninstallation](/managed/ingest-from/dynatrace-oneagent/installation-and-operation/linux/operation/uninstall-oneagent-on-linux "Learn how you can remove OneAgent from your Linux-based system.").
 
@@ -217,22 +216,30 @@ For more information, see [OneAgent security on Linux](/managed/ingest-from/dyna
 
 The OneAgent installer overwrites the core pattern with its own command but preserves the original pattern.
 
+Starting with Debian 13, `systemd-sysctl` no longer reads `/etc/sysctl.conf`. Default settings are provided in `/usr/lib/sysctl.d/50-default.conf`, and local overrides are typically stored in `/etc/sysctl.d/*.conf`.
+
 * The content of the original `/proc/sys/kernel/core_pattern` file is copied to:
 
   + OneAgent version 1.301 and earlier `/opt/dynatrace/oneagent/agent/conf/original_core_pattern`
   + OneAgent version 1.302+ `/var/lib/dynatrace/oneagent/agent/backup/original_core_pattern`
 
   When OneAgent is uninstalled, the original core pattern present in this file, is restored to `/proc/sys/kernel/core_pattern`.
-* The content of the original `kernel.core_pattern` option of `/etc/sysctl.conf` is copied to:
+* Up until OneAgent version 1.333, the content of the original `kernel.core_pattern` option of `/etc/sysctl.conf` is copied to:
 
   + OneAgent version 1.301 and earlier `/opt/dynatrace/oneagent/agent/conf/original.sysctl.corepattern`
   + OneAgent version 1.302+ `/var/lib/dynatrace/oneagent/agent/backup/original.sysctl.corepattern`
 
-  When OneAgent is uninstalled, the original core pattern present in this file is restored to `kernel.core_pattern` in `/etc/sysctl.conf`. If `kernel.core_pattern` was not present in `/etc/sysctl.conf` before OneAgent installation, the backup file is not created.
+  When OneAgent is uninstalled, the original core pattern present in this file is restored to `kernel.core_pattern` in `/etc/sysctl.conf`. If `kernel.core_pattern` was not present in `/etc/sysctl.conf` before OneAgent installation, or if `/etc/sysctl.conf` doesn't exist on the system, the backup file is not created and there's nothing to restore during uninstallation.
+* Starting with OneAgent version 1.334, OneAgent persists the core pattern by creating a `99-coredump-dynatrace.conf` file in the first existing directory from the following list. No backup is created in this case.
+
+  + `/etc/sysctl.d/`
+  + `/run/sysctl.d/`
+  + `/usr/local/lib/sysctl.d/`
+  + `/usr/lib/sysctl.d/`
 
 Depending on the original entry in `core_pattern`, Dynatrace will write different patterns to `core_pattern`. The possible configurations and expected entries after installation are listed below:
 
-| Original core\_pattern entry | core\_pattern after ruxitdumpproc installation | Comment |
+| Original `core_pattern` entry | `core_pattern` after ruxitdumpproc installation | Comment |
 | --- | --- | --- |
 | core | /opt/dynatrace/oneagent/agent/rdp -p %p -e %e -s %s | Simple core dump without parameters. |
 | core\_%s\_%e | /opt/dynatrace/oneagent/agent/rdp -p %p -e %e -s %s -kp %s,%e | Simple core dump with parameters in the filename. The `-kp` parameter is appended along with all kernel parameters needed for Dynatrace to substitute in the original filename. |
@@ -265,6 +272,6 @@ The log and support alert directories are cleaned up automatically.
 
 ## Related topics
 
-* [View crash reports for mobile applications](/managed/observe/digital-experience/mobile-applications/analyze-and-use/crash-reports-mobile "Check the latest crash reports for your mobile applications.")
-* [View crash reports for custom applications](/managed/observe/digital-experience/custom-applications/analyze-and-use/crash-reports-custom "Check the latest crash reports for your custom applications.")
-* [New: User session analysis](/managed/observe/digital-experience/session-segmentation/new-user-sessions "Learn about user session segmentation and filtering attributes.")
+* [View crash reports for mobile applications in RUM Classic](/managed/observe/digital-experience/rum-classic/mobile-applications/analyze-and-use/crash-reports-mobile "Check the latest crash reports for your mobile applications.")
+* [View crash reports for custom applications in RUM Classic](/managed/observe/digital-experience/rum-classic/custom-applications/analyze-and-use/crash-reports-custom "Check the latest crash reports for your custom applications.")
+* [User session analysis in RUM Classic](/managed/observe/digital-experience/rum-classic/session-segmentation/user-sessions "Learn about user session segmentation and filtering attributes.")

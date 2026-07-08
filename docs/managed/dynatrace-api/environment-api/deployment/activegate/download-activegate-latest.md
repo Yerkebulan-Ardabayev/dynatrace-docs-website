@@ -1,7 +1,6 @@
 ---
 title: Deployment API - Download latest ActiveGate
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/deployment/activegate/download-activegate-latest
-scraped: 2026-05-12T11:56:46.281287
 ---
 
 # Deployment API - Download latest ActiveGate
@@ -9,9 +8,11 @@ scraped: 2026-05-12T11:56:46.281287
 # Deployment API - Download latest ActiveGate
 
 * Reference
-* Published Aug 28, 2019
+* Updated on Jun 23, 2026
 
 Downloads the configured standard ActiveGate installer of the latest version for the specified OS.
+
+In Dynatrace Managed version 1.344+, this endpoint returns the **configured target version** for the environment when one is set under [ActiveGate auto-update configuration](/managed/dynatrace-api/environment-api/activegates/auto-update-config "Manage auto-update configuration of your Environment ActiveGates via the Dynatrace API.") (`Latest stable`, `Previous stable`, `Older stable`, or a specific main version). When no target version is configured, the response is the cluster-wide latest version, preserving the previous behavior. The companion endpoint `GET /api/v1/deployment/installer/gateway/{osType}/latest/metainfo` follows the same rule. For end-user details, see [Update ActiveGate](/managed/ingest-from/dynatrace-activegate/operation/update-activegate "Configure Environment ActiveGate automatic updates---update mode, target version, and update windows---and download or install manually.").
 
 |  |  |  |
 | --- | --- | --- |
@@ -59,7 +60,7 @@ To learn how to obtain and use it, see [Tokens and authentication](/managed/disc
 | Element | Type | Description |
 | --- | --- | --- |
 | code | integer | The HTTP status code |
-| constraintViolations | [ConstraintViolation[]](#openapi-definition-ConstraintViolation) | A list of constraint violations |
+| constraintViolations | [ConstraintViolation](#openapi-definition-ConstraintViolation)[] | A list of constraint violations |
 | message | string | The error message |
 
 #### The `ConstraintViolation` object

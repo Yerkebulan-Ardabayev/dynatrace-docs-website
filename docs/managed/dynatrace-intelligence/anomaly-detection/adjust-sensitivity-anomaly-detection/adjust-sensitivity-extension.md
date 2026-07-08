@@ -1,7 +1,6 @@
 ---
 title: Adjust the sensitivity of anomaly detection for extension events
 source: https://docs.dynatrace.com/managed/dynatrace-intelligence/anomaly-detection/adjust-sensitivity-anomaly-detection/adjust-sensitivity-extension
-scraped: 2026-05-12T12:08:13.802468
 ---
 
 # Adjust the sensitivity of anomaly detection for extension events

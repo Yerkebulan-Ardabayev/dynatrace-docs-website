@@ -1,7 +1,6 @@
 ---
 title: Create user
 source: https://docs.dynatrace.com/managed/dynatrace-api/cluster-api/cluster-api-v1/users-v1/post-create-user
-scraped: 2026-05-12T12:13:01.851525
 ---
 
 # Create user

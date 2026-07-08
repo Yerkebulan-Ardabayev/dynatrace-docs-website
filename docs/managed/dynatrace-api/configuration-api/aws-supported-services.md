@@ -1,7 +1,6 @@
 ---
 title: AWS supported services API
 source: https://docs.dynatrace.com/managed/dynatrace-api/configuration-api/aws-supported-services
-scraped: 2026-05-12T11:04:45.318300
 ---
 
 # AWS supported services API
@@ -46,7 +45,7 @@ A supported services metadata list
 
 | Element | Type | Description |
 | --- | --- | --- |
-| services | [CloudSupportedService[]](#openapi-definition-CloudSupportedService) | List of supported services metadata |
+| services | [CloudSupportedService](#openapi-definition-CloudSupportedService)[] | List of supported services metadata |
 
 #### The `CloudSupportedService` object
 

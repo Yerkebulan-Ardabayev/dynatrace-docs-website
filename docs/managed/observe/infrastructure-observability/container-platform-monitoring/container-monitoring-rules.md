@@ -1,7 +1,6 @@
 ---
 title: Container monitoring rules
 source: https://docs.dynatrace.com/managed/observe/infrastructure-observability/container-platform-monitoring/container-monitoring-rules
-scraped: 2026-05-12T11:09:31.866788
 ---
 
 # Container monitoring rules
@@ -45,8 +44,8 @@ The container monitoring rules define if deep monitoring is enabled for processe
 
 There are two categories of container monitoring rules that you can enable or disable by default:
 
-* Custom rulesâcreated by you
-* Built-in rulesâdefined by Dynatrace
+* Custom rules—created by you
+* Built-in rules—defined by Dynatrace
 
 **To enable/disable a custom monitoring rule**
 
@@ -69,7 +68,7 @@ Built-in rules are enabled by default. You can choose to disable them, but you c
 ## Limitations
 
 * Container monitoring rules are effective only when you install OneAgent on your hosts.
-* Application-only integrations without a full OneAgent installation donât support monitoring rules. However, in such situations, the integrations themselves effectively provide the same level of control over your container monitoring setup.
+* Application-only integrations without a full OneAgent installation don’t support monitoring rules. However, in such situations, the integrations themselves effectively provide the same level of control over your container monitoring setup.
 * In Kubernetes, container monitoring rules apply only to the `classicFullStack` injection mode.
 
   Container monitoring rules are ignored for webhook-based injection modes (`cloudNativeFullStack` or `applicationMonitoring`). For these modes, use the annotation-based configuration option as described in [Configure monitoring for namespaces and pods](/managed/ingest-from/setup-on-k8s/guides/deployment-and-configuration/monitoring-and-instrumentation/annotate "Configure monitoring for namespaces and pods").

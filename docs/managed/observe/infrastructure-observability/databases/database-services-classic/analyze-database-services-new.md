@@ -1,7 +1,6 @@
 ---
 title: Analyze database services (new page)
 source: https://docs.dynatrace.com/managed/observe/infrastructure-observability/databases/database-services-classic/analyze-database-services-new
-scraped: 2026-05-12T12:13:21.836526
 ---
 
 # Analyze database services (new page)
@@ -15,7 +14,7 @@ scraped: 2026-05-12T12:13:21.836526
 We have redesigned the database overview page.
 
 * This documentation describes the new design.
-* If you want to revert to the classic database page, on the database overview page select **More** (**â¦**) > **Return to classic page** and then refer to the [documentation for the classic database page](/managed/observe/infrastructure-observability/databases/database-services-classic/analyze-database-services "Analyze your database services with Dynatrace (classic page).").
+* If you want to revert to the classic database page, on the database overview page select **More** (**…**) > **Return to classic page** and then refer to the [documentation for the classic database page](/managed/observe/infrastructure-observability/databases/database-services-classic/analyze-database-services "Analyze your database services with Dynatrace (classic page).").
 
 All databases detected by Dynatrace in your environment are displayed on the **Databases** page. You can analyze each database and drill down to code-level information.
 
@@ -50,7 +49,7 @@ Select **Properties and tags** on the notifications bar to display the **Propert
 * Select **Problems** on the notifications bar to display the **Problems** panel, which lists the problems.
 
   + Select a problem to display details.
-  + Select **Go to problems** to go to the [Problems](/managed/dynatrace-intelligence "Get familiar with the capabilities of Davis AI.") page filtered by the selected database.
+  + Select **Go to problems** to go to the [Problems](/managed/dynatrace-intelligence "Learn how Davis® AI detects performance anomalies, identifies root causes, and uses AI models for adaptive thresholds across your environment.") page filtered by the selected database.
 
 ### SLOs
 
@@ -109,7 +108,7 @@ Select **Owners** on the notifications bar to display the **Ownership** panel, w
 
 ### Database service overview
 
-You can configure the **Database service overview** section to focus on various metrics of the database performance. For each metric, you can select **More** (**â¦**) and
+You can configure the **Database service overview** section to focus on various metrics of the database performance. For each metric, you can select **More** (**…**) and
 
 * Analyze the metric in Data Explorer.
 * Create a metric event.

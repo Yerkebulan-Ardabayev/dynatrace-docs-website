@@ -1,7 +1,6 @@
 ---
 title: Route OneAgent traffic to Dynatrace, monitor cloud environments and remote technologies using extensions
 source: https://docs.dynatrace.com/managed/ingest-from/dynatrace-activegate/capabilities/routing-monitoring-purpose
-scraped: 2026-05-12T11:36:18.837695
 ---
 
 # Route OneAgent traffic to Dynatrace, monitor cloud environments and remote technologies using extensions
@@ -15,7 +14,7 @@ The functionality offered by these types of ActiveGates depends on the functiona
 
 ## Route OneAgent traffic
 
-A Dynatrace ActiveGate establishes Dynatrace presenceâa Dynatrace componentâin your local network. In this way Dynatrace ActiveGate allows you to reduce your interaction with Dynatrace to one single pointâavailable locally.
+A Dynatrace ActiveGate establishes Dynatrace presence—a Dynatrace component—in your local network. In this way Dynatrace ActiveGate allows you to reduce your interaction with Dynatrace to one single point—available locally.
 Besides convenience, this solution also optimizes traffic volume and reduces the complexity of network connections, and consequently reduces cost. It also ensures the security of sealed networks.
 
 ### Message routing functionality and modules
@@ -108,7 +107,7 @@ With [Log Monitoring](/managed/analyze-explore-automate/log-monitoring "Learn ho
 #### OpenTelemetry trace ingestion
 
 (module: [OTLP Ingest](/managed/ingest-from/dynatrace-activegate/configuration/configure-activegate#otlp_ingest_mod "Learn which ActiveGate properties you can configure based on your needs and requirements."))
-You can send [OpenTelemetry trace data](/managed/ingest-from/opentelemetry/otlp-api "Learn about the OTLP API endpoints that your application uses to export OpenTelemetry data to Dynatrace.") (traces and spans) in OTLP format to Dynatrace via an API available on Dynatrace ActiveGate. The ingested spans are integrated into PurePathÂ® distributed traces.
+You can send [OpenTelemetry trace data](/managed/ingest-from/opentelemetry/otlp-api "Learn about the OTLP API endpoints that your application uses to export OpenTelemetry data to Dynatrace.") (traces and spans) in OTLP format to Dynatrace via an API available on Dynatrace ActiveGate. The ingested spans are integrated into PurePath® distributed traces.
 
 #### OpenTelemetry metric ingestion
 
@@ -123,4 +122,4 @@ You can send [OpenTelemetry log data](/managed/ingest-from/opentelemetry/otlp-ap
 #### Real User Monitoring
 
 (module: [Beacon forwarder](/managed/ingest-from/dynatrace-activegate/configuration/configure-activegate#bf_mod "Learn which ActiveGate properties you can configure based on your needs and requirements."))
-Dynatrace infrastructure can be used as the default [beacon endpoint for the agentless monitoring of your applications](/managed/observe/digital-experience/web-applications/additional-configuration/beacon-endpoint "Change the default beacon endpoint URL and send RUM beacons to Dynatrace infrastructure or another instrumented web server."). Auto-injected applications send the beacon back to the customer's web server, bypassing the need for a third-party domain. However, when required, such applications can also use the Dynatrace infrastructure as an endpoint for RUM monitoring signals.
+Dynatrace infrastructure can be used as the default [beacon endpoint for the agentless monitoring of your applications](/managed/observe/digital-experience/rum-classic/web-applications/additional-configuration/beacon-endpoint "Change the default beacon endpoint URL and send RUM beacons to Dynatrace infrastructure or another instrumented web server."). Auto-injected applications send the beacon back to the customer's web server, bypassing the need for a third-party domain. However, when required, such applications can also use the Dynatrace infrastructure as an endpoint for RUM monitoring signals.

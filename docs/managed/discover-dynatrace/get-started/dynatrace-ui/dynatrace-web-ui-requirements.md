@@ -1,7 +1,6 @@
 ---
 title: Dynatrace web UI requirements
 source: https://docs.dynatrace.com/managed/discover-dynatrace/get-started/dynatrace-ui/dynatrace-web-ui-requirements
-scraped: 2026-05-12T12:05:49.920004
 ---
 
 # Dynatrace web UI requirements
@@ -10,13 +9,15 @@ scraped: 2026-05-12T12:05:49.920004
 
 * Reference
 * 2-min read
-* Published Dec 19, 2025
-
-Learn about the browser requirements to use Dynatrace.
+* Updated on May 15, 2026
 
 ## Supported browsers for Dynatrace UI
 
 You can access the Dynatrace web UI using the following browsers.
+
+HTTPS requirements
+
+Enable the TLS 1.2 protocol in your browser to access the Dynatrace web UI. All modern browsers use TLS 1.2 by default.
 
 | Browser | Versions |
 | --- | --- |
@@ -25,15 +26,9 @@ You can access the Dynatrace web UI using the following browsers.
 | Google Chrome | Latest version (desktop and mobile) |
 | Safari | Latest version (OS X and iOS) |
 
-### HTTPS requirements
-
-As of June 30, 2019, you must enable the TLS 1.2 protocol in your browser to access the Dynatrace web UI. All modern browsers use TLS 1.2 by default.
-
-After June 30, 2019, you won't be able to access the Dynatrace web UI using TLS 1.0 or TLS 1.1.
-
 ## Supported browsers for Session Replay
 
-You can use any browser supported for Dynatrace web UI to play back the user sessions recorded with [Session Replay](/managed/observe/digital-experience/session-replay "Learn how you can use Session Replay to better understand and troubleshoot errors experienced by your customers.").
+To play back sessions recorded with [Session Replay](/managed/observe/digital-experience/session-replay "Learn how you can use Session Replay to better understand and troubleshoot errors experienced by your customers."), use any browser listed above.
 
 ## Supported browsers for Synthetic Monitoring
 

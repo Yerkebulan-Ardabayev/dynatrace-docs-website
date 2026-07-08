@@ -1,7 +1,6 @@
 ---
 title: Analyze network for network zones deployment (migration)
 source: https://docs.dynatrace.com/managed/manage/network-zones/migration/analyze
-scraped: 2026-05-12T11:52:28.752500
 ---
 
 # Analyze network for network zones deployment (migration)

@@ -1,7 +1,6 @@
 ---
 title: OneAgent monitoring capabilities
 source: https://docs.dynatrace.com/managed/platform/oneagent/supported-monitoring-types
-scraped: 2026-05-12T11:07:17.901698
 ---
 
 # OneAgent monitoring capabilities
@@ -15,11 +14,11 @@ OneAgent offers a rich set of monitoring capabilities.
 
 ## Real User Monitoring
 
-Real User Monitoring analyzes the performance of all user interaction with your applications, whether the interactions take place in a browser or on a mobile device. Real user monitoring also enables application availability monitoring, verification of correct display of UI elements, third-party content provider performance analysis, backend service performance analysis (down to the code level), and performance analysis of all underlying infrastructure. For details, see [Real User Monitoring](/managed/observe/digital-experience/rum-concepts/rum-overview "Learn about Real User Monitoring, key performance metrics, mobile app monitoring, and more.").
+Real User Monitoring analyzes the performance of all user interaction with your applications, whether the interactions take place in a browser or on a mobile device. Real user monitoring also enables application availability monitoring, verification of correct display of UI elements, third-party content provider performance analysis, backend service performance analysis (down to the code level), and performance analysis of all underlying infrastructure. For details, see [Real User Monitoring Classic](/managed/observe/digital-experience/rum-classic/rum-concepts/rum-overview "Learn about Real User Monitoring Classic, key performance metrics, mobile app monitoring, and more.").
 
 ## Mobile app monitoring
 
-OneAgent supports real user monitoring for mobile applications as well. The process of monitoring the user experience of your native mobile applications is fundamentally different from monitoring browser-based web applications. This is because mobile-app monitoring involves the compilation, packaging, and shipment of a monitoring library along with your own mobile application package. The process of instrumenting your mobile application largely depends on the platform of your mobile application. Dynatrace supports both Android and iOS platforms. For details, see [Real User Monitoring](/managed/observe/digital-experience/rum-concepts/rum-overview "Learn about Real User Monitoring, key performance metrics, mobile app monitoring, and more.").
+OneAgent supports real user monitoring for mobile applications as well. The process of monitoring the user experience of your native mobile applications is fundamentally different from monitoring browser-based web applications. This is because mobile-app monitoring involves the compilation, packaging, and shipment of a monitoring library along with your own mobile application package. The process of instrumenting your mobile application largely depends on the platform of your mobile application. Dynatrace supports both Android and iOS platforms. For details, see [Real User Monitoring Classic](/managed/observe/digital-experience/rum-classic/rum-concepts/rum-overview "Learn about Real User Monitoring Classic, key performance metrics, mobile app monitoring, and more.").
 
 ## Server-side service monitoring
 
@@ -35,10 +34,10 @@ OneAgent monitors your entire stack, including private, public, and hybrid cloud
 
 ## Docker container monitoring
 
-OneAgent seamlessly integrates with existing Docker environments and automatically monitors your containerized applications and services. Thereâs no need to modify your Docker images, modify run commands, or create additional containers to enable Docker monitoring. Simply install OneAgent on your hosts that serve containerized applications and services. OneAgent automatically detects the creation and termination of containers and monitors the applications and services contained within those containers. For details, see [Monitor container groups](/managed/observe/infrastructure-observability/container-platform-monitoring/container-groups "Overview on container groups monitoring").
+OneAgent seamlessly integrates with existing Docker environments and automatically monitors your containerized applications and services. There’s no need to modify your Docker images, modify run commands, or create additional containers to enable Docker monitoring. Simply install OneAgent on your hosts that serve containerized applications and services. OneAgent automatically detects the creation and termination of containers and monitors the applications and services contained within those containers. For details, see [Monitor container groups](/managed/observe/infrastructure-observability/container-platform-monitoring/container-groups "Overview on container groups monitoring").
 
 ## Root-cause analysis
 
-A key feature of OneAgent is the ability to continuously monitor every aspect of your applications, services, and infrastructure and to automatically learn the baseline performance metrics related to these components. Dynatrace also automatically learns the baseline response times and failure rates of all requests that are vital to the success of your business. Based on these baseline values, Dynatrace determines when a detected slowdown or error-rate increase justifies the generation of a new problem event. For details, see [DavisÂ® AI](/managed/dynatrace-intelligence "Get familiar with the capabilities of Davis AI.").
+A key feature of OneAgent is the ability to continuously monitor every aspect of your applications, services, and infrastructure and to automatically learn the baseline performance metrics related to these components. Dynatrace also automatically learns the baseline response times and failure rates of all requests that are vital to the success of your business. Based on these baseline values, Dynatrace determines when a detected slowdown or error-rate increase justifies the generation of a new problem event. For details, see [Davis® AI](/managed/dynatrace-intelligence "Learn how Davis® AI detects performance anomalies, identifies root causes, and uses AI models for adaptive thresholds across your environment.").
 
 For a complete list of the technologies that can be monitored by OneAgent, please see [OneAgent capabilities](/managed/ingest-from/technology-support/oneagent-platform-and-capability-support-matrix "Learn which capabilities are supported by OneAgent on different operating systems and platforms.").

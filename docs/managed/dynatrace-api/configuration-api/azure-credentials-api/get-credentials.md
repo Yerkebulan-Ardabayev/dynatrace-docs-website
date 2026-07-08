@@ -1,7 +1,6 @@
 ---
 title: Azure credentials API - GET credentials
 source: https://docs.dynatrace.com/managed/dynatrace-api/configuration-api/azure-credentials-api/get-credentials
-scraped: 2026-05-12T11:16:35.158582
 ---
 
 # Azure credentials API - GET credentials
@@ -56,10 +55,10 @@ Configuration of Azure app-level credentials.
 | key | string | The secret key associated with the application ID.  For security reasons, GET requests return this field as `null`.  Submit your key on creation or update of the configuration.  The field is **required** when creating a new credentials configuration. If the field is omitted during an update, the old value remains unaffected. |
 | label | string | The unique name of the Azure credentials configuration.  Allowed characters are letters, numbers, and spaces. Also the special characters `.+-_` are allowed. |
 | metadata | [ConfigurationMetadata](#openapi-definition-ConfigurationMetadata) | Metadata useful for debugging |
-| monitorOnlyExcludingTagPairs | [CloudTag[]](#openapi-definition-CloudTag) | A list of Azure tags to be excluded from monitoring.  You can specify up to 20 tags. A resource tagged with *any* of the specified tags will not be monitored.  Only applicable when the **monitorOnlyTaggedEntities** parameter is set to `true`. |
-| monitorOnlyTagPairs | [CloudTag[]](#openapi-definition-CloudTag) | A list of Azure tags to be monitored.  You can specify up to 20 tags. A resource tagged with *any* of the specified tags is monitored.  Only applicable when the **monitorOnlyTaggedEntities** parameter is set to `true`. |
+| monitorOnlyExcludingTagPairs | [CloudTag](#openapi-definition-CloudTag)[] | A list of Azure tags to be excluded from monitoring.  You can specify up to 20 tags. A resource tagged with *any* of the specified tags will not be monitored.  Only applicable when the **monitorOnlyTaggedEntities** parameter is set to `true`. |
+| monitorOnlyTagPairs | [CloudTag](#openapi-definition-CloudTag)[] | A list of Azure tags to be monitored.  You can specify up to 20 tags. A resource tagged with *any* of the specified tags is monitored.  Only applicable when the **monitorOnlyTaggedEntities** parameter is set to `true`. |
 | monitorOnlyTaggedEntities | boolean | Monitor only resources that have specified Azure tags (`true`) or all resources (`false`). |
-| supportingServices | [AzureSupportingService[]](#openapi-definition-AzureSupportingService) | **Deprecated**. To manage services use [/azure/credentials/{id}/servicesï»¿](https://dt-url.net/1w62s27) operation. Built-in services are not supported here.  A list of Azure services to be monitored. Available services are listed by [/azure/supportedServicesï»¿](https://dt-url.net/wt42sdq) operation.  For each service, a list of metrics and dimensions can be specified. A list of supported metrics and dimensions for a given service can be checked in [documentationï»¿](https://dt-url.net/kx2351b).  List of metrics can be skipped (set to null), resulting in recommended (default) set of metrics and dimensions being chosen for monitoring. |
+| supportingServices | [AzureSupportingService](#openapi-definition-AzureSupportingService)[] | **Deprecated**. To manage services use [/azure/credentials/{id}/services﻿](https://dt-url.net/1w62s27) operation. Built-in services are not supported here.  A list of Azure services to be monitored. Available services are listed by [/azure/supportedServices﻿](https://dt-url.net/wt42sdq) operation.  For each service, a list of metrics and dimensions can be specified. A list of supported metrics and dimensions for a given service can be checked in [documentation﻿](https://dt-url.net/kx2351b).  List of metrics can be skipped (set to null), resulting in recommended (default) set of metrics and dimensions being chosen for monitoring. |
 
 #### The `ConfigurationMetadata` object
 
@@ -86,7 +85,7 @@ A service to be monitored.
 
 | Element | Type | Description |
 | --- | --- | --- |
-| monitoredMetrics | [AzureMonitoredMetric[]](#openapi-definition-AzureMonitoredMetric) | A list of metrics to be monitored for this service. It must include all the recommended metrics. If the list is null then recommended list of metrics for this service will be monitored. |
+| monitoredMetrics | [AzureMonitoredMetric](#openapi-definition-AzureMonitoredMetric)[] | A list of metrics to be monitored for this service. It must include all the recommended metrics. If the list is null then recommended list of metrics for this service will be monitored. |
 | name | string | The name of the service. Valid supported service names can be discovered using /azure/supportedServices restAPI |
 
 #### The `AzureMonitoredMetric` object

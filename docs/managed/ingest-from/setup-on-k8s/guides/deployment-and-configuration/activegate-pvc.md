@@ -1,7 +1,6 @@
 ---
 title: Configure persistent storage for the ActiveGate
 source: https://docs.dynatrace.com/managed/ingest-from/setup-on-k8s/guides/deployment-and-configuration/activegate-pvc
-scraped: 2026-05-12T11:36:21.361977
 ---
 
 # Configure persistent storage for the ActiveGate
@@ -11,7 +10,7 @@ scraped: 2026-05-12T11:36:21.361977
 * 1-min read
 * Updated on Feb 04, 2026
 
-The [`log_analytics_collector`](/managed/ingest-from/dynatrace-activegate/configuration/configure-activegate#logdiskbuffer "Learn which ActiveGate properties you can configure based on your needs and requirements.") ActiveGate module utilizes disk buffers to temporarily store data. To avoid data loss across ActiveGate restarts, we recommend attaching a [PersistentVolumeClaimï»¿](https://kubernetes.io/docs/concepts/storage/persistent-volumes) (PVC) to the ActiveGate.
+The [`log_analytics_collector`](/managed/ingest-from/dynatrace-activegate/configuration/configure-activegate#logdiskbuffer "Learn which ActiveGate properties you can configure based on your needs and requirements.") ActiveGate module utilizes disk buffers to temporarily store data. To avoid data loss across ActiveGate restarts, we recommend attaching a [PersistentVolumeClaim﻿](https://kubernetes.io/docs/concepts/storage/persistent-volumes) (PVC) to the ActiveGate.
 
 ## Adding a PersistentVolumeClaim
 

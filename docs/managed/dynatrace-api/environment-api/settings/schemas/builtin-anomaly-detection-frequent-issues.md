@@ -1,7 +1,6 @@
 ---
 title: Settings API - Frequent issue detection schema table
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/settings/schemas/builtin-anomaly-detection-frequent-issues
-scraped: 2026-05-12T11:47:34.594146
 ---
 
 # Settings API - Frequent issue detection schema table
@@ -13,7 +12,7 @@ scraped: 2026-05-12T11:47:34.594146
 ### Frequent issue detection (`builtin:anomaly-detection.frequent-issues)`
 
 Dynatrace is automatically detecting frequent issues over a period of one week. A problem is automatically converted into a frequent issue if the problem is detected multiple times throughout a day and over a weeks period of time and if it is not getting worse. Once it's classified as a frequent issue alerting is automatically disabled. In case that the frequent issue is getting worse problem alerts are again sent out. Within this page you can disable the frequent issue detection for all topological levels.  
-See our [help documentationï»¿](https://dt-url.net/ex4v0pcw) about frequent issue detection.
+See our [help documentation﻿](https://dt-url.net/ex4v0pcw) about frequent issue detection.
 
 | Schema ID | Schema groups | Scope |
 | --- | --- | --- |

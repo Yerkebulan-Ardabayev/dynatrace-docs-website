@@ -1,7 +1,6 @@
 ---
 title: Service-level Objectives API - GET an SLO
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/service-level-objectives-classic/get-slo
-scraped: 2026-05-12T11:57:37.162047
 ---
 
 # Service-level Objectives API - GET an SLO
@@ -67,7 +66,7 @@ Parameters of a service-level objective (SLO).
 | errorBudgetMetricKey | string | The key for the SLO's error budget func metric. |
 | evaluatedPercentage | number | The calculated status value of the SLO. Has the value of the evaluated SLO status or the value of `-1`:  * If there is an error with the SLO calculation; in that case check the value of the **error** property. * If the evaluate parameter has not been set to `true`; in that case the **error** property will contain no error. |
 | evaluationType | string | The evaluation type of the SLO. The element can hold these values * `AGGREGATE` |
-| filter | string | The entity filter for the SLO evaluation. The total length of the entitySelector string in SLOs is limited to 1,000 characters. Use the [syntax of entity selectorï»¿](https://dt-url.net/entityselector). |
+| filter | string | The entity filter for the SLO evaluation. The total length of the entitySelector string in SLOs is limited to 1,000 characters. Use the [syntax of entity selector﻿](https://dt-url.net/entityselector). |
 | id | string | The ID of the SLO |
 | ~~metricDenominator~~ | string | DEPRECATED  The total count metric (the denominator in rate calculation).  Required when the **useRateMetric** is set to `false`. |
 | metricExpression | string | The percentage-based metric expression for the calculation of the SLO. |
@@ -84,7 +83,7 @@ Parameters of a service-level objective (SLO).
 | status | string | The status of the calculated SLO. The element can hold these values * `FAILURE` * `SUCCESS` * `WARNING` |
 | target | number | The target value of the SLO. |
 | timeframe | string | The timeframe for the SLO evaluation. Use the syntax of the global timeframe selector. |
-| ~~useRateMetric~~ | boolean | DEPRECATED  The type of the metric to use for SLO calculation:  * `true`: An existing percentage-based metric. * `false`: A ratio of two metrics.  For a list of available metrics, see [Built-in metric pageï»¿](https://dt-url.net/be03kow) or try the [GET metricsï»¿](https://dt-url.net/8e43kxf) API call. |
+| ~~useRateMetric~~ | boolean | DEPRECATED  The type of the metric to use for SLO calculation:  * `true`: An existing percentage-based metric. * `false`: A ratio of two metrics.  For a list of available metrics, see [Built-in metric page﻿](https://dt-url.net/be03kow) or try the [GET metrics﻿](https://dt-url.net/8e43kxf) API call. |
 | warning | number | The warning value of the SLO.  At warning state the SLO is still fulfilled but is getting close to failure. |
 
 #### The `SloBurnRate` object
@@ -111,7 +110,7 @@ Error budget burn rate evaluation of a service-level objective (SLO).
 | Element | Type | Description |
 | --- | --- | --- |
 | code | integer | The HTTP status code |
-| constraintViolations | [ConstraintViolation[]](#openapi-definition-ConstraintViolation) | A list of constraint violations |
+| constraintViolations | [ConstraintViolation](#openapi-definition-ConstraintViolation)[] | A list of constraint violations |
 | message | string | The error message |
 
 #### The `ConstraintViolation` object

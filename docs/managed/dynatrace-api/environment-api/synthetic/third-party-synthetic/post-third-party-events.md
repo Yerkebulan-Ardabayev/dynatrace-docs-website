@@ -1,7 +1,6 @@
 ---
 title: Third-party synthetic API - POST third-party events to Dynatrace
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/synthetic/third-party-synthetic/post-third-party-events
-scraped: 2026-05-12T11:54:36.809237
 ---
 
 # Third-party synthetic API - POST third-party events to Dynatrace
@@ -40,8 +39,8 @@ The list of third-party synthetic events.
 
 | Element | Type | Description | Required |
 | --- | --- | --- | --- |
-| open | [3rdPartyEventOpenNotification[]](#openapi-definition-3rdPartyEventOpenNotification) | The list of open third-party synthetic events. | Optional |
-| resolved | [3rdPartyEventResolvedNotification[]](#openapi-definition-3rdPartyEventResolvedNotification) | The list of closed third-party synthetic events. | Optional |
+| open | [3rdPartyEventOpenNotification](#openapi-definition-3rdPartyEventOpenNotification)[] | The list of open third-party synthetic events. | Optional |
+| resolved | [3rdPartyEventResolvedNotification](#openapi-definition-3rdPartyEventResolvedNotification)[] | The list of closed third-party synthetic events. | Optional |
 | syntheticEngineName | string | The type of the third-party synthetic monitor. | Required |
 
 #### The `3rdPartyEventOpenNotification` object
@@ -188,7 +187,7 @@ This is a model of the request body, showing the possible elements. It has to be
 | Element | Type | Description |
 | --- | --- | --- |
 | code | integer | The HTTP status code |
-| constraintViolations | [ConstraintViolation[]](#openapi-definition-ConstraintViolation) | A list of constraint violations |
+| constraintViolations | [ConstraintViolation](#openapi-definition-ConstraintViolation)[] | A list of constraint violations |
 | message | string | The error message |
 
 #### The `ConstraintViolation` object

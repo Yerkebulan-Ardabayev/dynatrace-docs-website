@@ -1,7 +1,6 @@
 ---
 title: Settings API - Jira Connections schema table
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/settings/schemas/app-dynatrace-jira-connection
-scraped: 2026-05-12T11:49:01.133821
 ---
 
 # Settings API - Jira Connections schema table

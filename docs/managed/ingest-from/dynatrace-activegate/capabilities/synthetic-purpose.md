@@ -1,7 +1,6 @@
 ---
 title: Execute synthetic monitors from private locations
 source: https://docs.dynatrace.com/managed/ingest-from/dynatrace-activegate/capabilities/synthetic-purpose
-scraped: 2026-05-12T11:08:04.971251
 ---
 
 # Execute synthetic monitors from private locations
@@ -33,13 +32,13 @@ Synthetic-enabled ActiveGates are more demanding in terms of hardware requiremen
 
 Any Synthetic-enabled ActiveGate is able to execute **both [browser as well as HTTP monitors](/managed/observe/digital-experience/synthetic-monitoring/general-information/types-of-synthetic-monitors "Learn about Dynatrace synthetic monitor types.")**.
 
-Additionally on private locations, capacity usage is tracked separately for high-resource HTTP monitorsâthese monitors have special resource-intensive features.
+Additionally on private locations, capacity usage is tracked separately for high-resource HTTP monitors—these monitors have special resource-intensive features.
 
 To run browser monitors from a private location, you must first satisfy the engine dependencies before you install the Environment or Cluster ActiveGate. See [Create a private Synthetic location](/managed/observe/digital-experience/synthetic-monitoring/private-synthetic-locations/create-a-private-synthetic-location "Learn how to create a private location for synthetic monitoring.") for detailed instructions.
 
 ### Use cases
 
-Private locations enable you to run monitors in your internal network when you cannot use Dynatrace [public Synthetic locations](/managed/observe/digital-experience/synthetic-monitoring/general-information/public-synthetic-locations "Learn about all currently available public Synthetic Monitoring locations.") for synthetic monitoring. With private locations you can:
+Private locations enable you to run monitors in your internal network when you cannot use Dynatrace [public Synthetic locations](/managed/observe/digital-experience/synthetic-monitoring/general-information/public-synthetic-locations "Learn about all currently available public Synthetic Monitoring Classic locations.") for synthetic monitoring. With private locations you can:
 
 * Measure internal web page performance and availability.
 * Measure complex internal applications with browser clickpath monitors.

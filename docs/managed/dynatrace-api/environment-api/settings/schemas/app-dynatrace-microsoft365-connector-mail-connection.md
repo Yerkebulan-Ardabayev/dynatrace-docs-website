@@ -1,7 +1,6 @@
 ---
 title: Settings API - Microsoft 365 Email Connections schema table
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/settings/schemas/app-dynatrace-microsoft365-connector-mail-connection
-scraped: 2026-05-12T11:44:01.988138
 ---
 
 # Settings API - Microsoft 365 Email Connections schema table

@@ -1,7 +1,6 @@
 ---
 title: Settings API - Frequency and locations schema table
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/settings/schemas/builtin-synthetic-browser-scheduling
-scraped: 2026-05-12T11:44:24.889743
 ---
 
 # Settings API - Frequency and locations schema table
@@ -12,7 +11,7 @@ scraped: 2026-05-12T11:44:24.889743
 
 ### Frequency and locations (`builtin:synthetic.browser.scheduling)`
 
-Select how frequently this monitor should run at each enabled location. For more information, see [how do I create a browser monitor?ï»¿](https://dt-url.net/qj1p0p2b)
+Select how frequently this monitor should run at each enabled location. For more information, see [how do I create a browser monitor?﻿](https://dt-url.net/qj1p0p2b)
 
 | Schema ID | Schema groups | Scope |
 | --- | --- | --- |

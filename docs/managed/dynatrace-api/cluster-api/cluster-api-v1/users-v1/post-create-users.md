@@ -1,7 +1,6 @@
 ---
 title: Create cluster user accounts
 source: https://docs.dynatrace.com/managed/dynatrace-api/cluster-api/cluster-api-v1/users-v1/post-create-users
-scraped: 2026-05-12T12:12:39.936973
 ---
 
 # Create cluster user accounts
@@ -24,7 +23,7 @@ The `ServiceProviderAPI` (Service Provider API) Api-Token scope is required to g
 
 | Parameter | Type | Description | In | Required |
 | --- | --- | --- | --- | --- |
-| body | [UserConfig[]](#openapi-definition-UserConfig) | The JSON body of the request, containing parameters of the users. | body | Optional |
+| body | [UserConfig](#openapi-definition-UserConfig)[] | The JSON body of the request, containing parameters of the users. | body | Optional |
 
 ### Request body objects
 
@@ -101,10 +100,10 @@ This is a model of the request body, showing the possible elements. It has to be
 
 | Code | Type | Description |
 | --- | --- | --- |
-| **200** | [UserConfig[]](#openapi-definition-UserConfig) | Success |
+| **200** | [UserConfig](#openapi-definition-UserConfig)[] | Success |
 | **400** | - | Operation failed. The input is invalid. Possible reasons:  * no user information received for the create-users request * all required values (ID, email, first name, last name) must be set * invalid user data * input contains duplicated IDs * input contains duplicated email addresses * user ID already exists * user email address already assigned * user group ID does not exist |
 | **403** | - | Operation forbidden - either LDAP or SSO with group assignment integration is turned on |
-| **406** | [UserConfig[]](#openapi-definition-UserConfig) | Unacceptable or incomplete request. Some users added |
+| **406** | [UserConfig](#openapi-definition-UserConfig)[] | Unacceptable or incomplete request. Some users added |
 
 ### Response body objects
 

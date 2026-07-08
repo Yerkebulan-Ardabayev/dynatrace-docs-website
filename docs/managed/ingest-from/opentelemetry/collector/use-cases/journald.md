@@ -1,7 +1,6 @@
 ---
 title: Use journald to ingest systemd journal logs with the OTel Collector
 source: https://docs.dynatrace.com/managed/ingest-from/opentelemetry/collector/use-cases/journald
-scraped: 2026-05-12T12:10:46.344931
 ---
 
 # Use journald to ingest systemd journal logs with the OTel Collector
@@ -12,7 +11,7 @@ scraped: 2026-05-12T12:10:46.344931
 * 4-min read
 * Published Mar 12, 2026
 
-The journald receiver reads log entries from the [systemd journalï»¿](https://wiki.archlinux.org/title/Systemd/Journal) by invoking `journalctl` as a subprocess and streaming its output into the OTel Collector pipeline.
+The journald receiver reads log entries from the [systemd journal﻿](https://wiki.archlinux.org/title/Systemd/Journal) by invoking `journalctl` as a subprocess and streaming its output into the OTel Collector pipeline.
 
 Each journal entry becomes an OTLP log record where journal fields are mapped to log attributes.
 You can use [operators](#operators) to rename or transform these attributes to align with OpenTelemetry semantic conventions.
@@ -25,7 +24,7 @@ Use the journald receiver when:
 
 ## Prerequisites
 
-* One of the following Collector distributions with the [journald receiverï»¿](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.151.0/receiver/journaldreceiver).
+* One of the following Collector distributions with the [journald receiver﻿](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.155.0/receiver/journaldreceiver).
 
   + [Dynatrace Collector](/managed/ingest-from/opentelemetry/collector#collector-distro "Learn how to use the OpenTelemetry Collector, including the Dynatrace OTel Collector, to ingest telemetry from OpenTelemetry.")
   + [OpenTelemetry Contrib](/managed/ingest-from/opentelemetry/collector#collector-contrib "Learn how to use the OpenTelemetry Collector, including the Dynatrace OTel Collector, to ingest telemetry from OpenTelemetry.")
@@ -201,13 +200,13 @@ Remove it to collect logs from all units on the host.
 For more granular filtering use the `matches` parameter instead.
 For example, you can combine unit names with specific journal field values.
 
-See the [journald receiver documentationï»¿](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.151.0/receiver/journaldreceiver#configuration) for a full parameter reference, filtering examples, and performance considerations for `start_at` and `priority`.
+See the [journald receiver documentation﻿](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.155.0/receiver/journaldreceiver#configuration) for a full parameter reference, filtering examples, and performance considerations for `start_at` and `priority`.
 
 #### Operators
 
-The `operators` parameter accepts an array of [stanza operatorsï»¿](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.151.0/pkg/stanza/docs/operators/README.md) applied to each log entry as it enters the pipeline.
+The `operators` parameter accepts an array of [stanza operators﻿](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.155.0/pkg/stanza/docs/operators/README.md) applied to each log entry as it enters the pipeline.
 
-In this configuration, we use [`move` operatorsï»¿](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.151.0/pkg/stanza/docs/operators/move.md) to rename specific journal fields and promote `_EXE` to a log attribute aligned with the [OpenTelemetry process semantic conventionsï»¿](https://opentelemetry.io/docs/specs/semconv/registry/attributes/process/).
+In this configuration, we use [`move` operators﻿](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.155.0/pkg/stanza/docs/operators/move.md) to rename specific journal fields and promote `_EXE` to a log attribute aligned with the [OpenTelemetry process semantic conventions﻿](https://opentelemetry.io/docs/specs/semconv/registry/attributes/process/).
 
 * `body._PID` is renamed to `body.pid`.
 * `body._EXE` is renamed to `attributes["process.executable.name"]`.
@@ -215,7 +214,7 @@ In this configuration, we use [`move` operatorsï»¿](https://github.com/open-t
 
 ### Exporters
 
-Under `exporters`, we specify the default [`otlp_http` exporterï»¿](https://github.com/open-telemetry/opentelemetry-collector/tree/v0.151.0/exporter/otlphttpexporter) and configure it with our Dynatrace API URL and the required authentication token.
+Under `exporters`, we specify the default [`otlp_http` exporter﻿](https://github.com/open-telemetry/opentelemetry-collector/tree/v0.155.0/exporter/otlphttpexporter) and configure it with our Dynatrace API URL and the required authentication token.
 
 For this purpose, we set the following two environment variables and reference them in the configuration values for `endpoint` and `Authorization`.
 
@@ -240,7 +239,7 @@ This limits the security footprint of running the Collector as root.
 
 As said in [Prerequisites](#prerequisites), the Collector container must include `journalctl` to access the systemd journal.
 
-For more information, see the [OTel upstream documentationï»¿](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.151.0/receiver/journaldreceiver/examples/container).
+For more information, see the [OTel upstream documentation﻿](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.155.0/receiver/journaldreceiver/examples/container).
 
 ### Security context
 

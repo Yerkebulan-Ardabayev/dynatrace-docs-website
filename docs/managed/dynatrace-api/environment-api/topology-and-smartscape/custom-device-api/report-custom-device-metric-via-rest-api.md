@@ -1,7 +1,6 @@
 ---
 title: Report custom device metric via Dynatrace API
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/topology-and-smartscape/custom-device-api/report-custom-device-metric-via-rest-api
-scraped: 2026-05-12T11:10:12.265310
 ---
 
 # Report custom device metric via Dynatrace API
@@ -18,7 +17,7 @@ The metric you're reporting must already exist in Dynatrace.
 
 See [Create custom device via the Dynatrace API](/managed/dynatrace-api/environment-api/topology-and-smartscape/custom-device-api/create-custom-device-via-dynatrace-api "Learn how you can use the Dynatrace API to create a custom device.") to learn how to create a custom device without sending data to it.
 
-You can send data to the custom device retrospectivelyâthe **custom device** endpoint supports the reporting of data up to one hour in the past. However, to ensure the proper functioning of AI root-cause analysis and metric-based alerting, we recommend that data be sent in real time.
+You can send data to the custom device retrospectively—the **custom device** endpoint supports the reporting of data up to one hour in the past. However, to ensure the proper functioning of AI root-cause analysis and metric-based alerting, we recommend that data be sent in real time.
 
 For this use case, the **series** element of the request body is **required**.
 
@@ -58,7 +57,7 @@ Configuration of a custom device.
 | ipAddresses | string[] | The list of IP addresses that belong to the custom device.  These addresses are used to automatically discover the horizontal communication relationship between this component and all other observed components within Smartscape. Once a connection is discovered, it is automatically mapped and shown within Smartscape.  If you send a value (including an empty value), the existing values will be overwritten.  If you send `null` or omit this field, the existing values will be kept. | Optional |
 | listenPorts | integer[] | The list of ports the custom devices listens to.  These ports are used to discover the horizontal communication relationship between this component and all other observed components within Smartscape.  Once a connection is discovered, it is automatically mapped and shown within Smartscape.  If ports are specified, you should also add at least one IP address or a host name for the custom device.  If you send a value, the existing values will be overwritten.  If you send `null`, or an empty value, or omit this field, the existing values will be kept. | Optional |
 | properties | object | The list of key-value pair properties that will be shown beneath the infographics of your custom device. | Optional |
-| series | [EntityTimeseriesData[]](#openapi-definition-EntityTimeseriesData) | The list of metric values that are reported for the custom device.  The metric you're reporting must already exist in Dynatrace. To learn how to create a custom metric, see [Timeseries API v1 - PUT a custom metricï»¿](https://dt-url.net/5k143rzb).  Dynatrace aggregates all the values you report for a custom device.  If you send a value (including an empty value), it will be added to the set of existing values.  If you send `null` or omit this field, the set of existing values won't change. | Optional |
+| series | [EntityTimeseriesData](#openapi-definition-EntityTimeseriesData)[] | The list of metric values that are reported for the custom device.  The metric you're reporting must already exist in Dynatrace. To learn how to create a custom metric, see [Timeseries API v1 - PUT a custom metric﻿](https://dt-url.net/5k143rzb).  Dynatrace aggregates all the values you report for a custom device.  If you send a value (including an empty value), it will be added to the set of existing values.  If you send `null` or omit this field, the set of existing values won't change. | Optional |
 | tags | string[] | List of custom tags that you want to attach to your custom device. | Optional |
 | type | string | The technology type definition of the custom device.  It must be the same technology type of the metric you're reporting.  If you send a value, the existing value will be overwritten.  If you send `null`, empty or omit this field, the existing value will be kept. | Optional |
 
@@ -245,7 +244,7 @@ The result of a custom device push request. The entity ID is calculated automati
 | Element | Type | Description |
 | --- | --- | --- |
 | code | integer | The HTTP status code |
-| constraintViolations | [ConstraintViolation[]](#openapi-definition-ConstraintViolation) | A list of constraint violations |
+| constraintViolations | [ConstraintViolation](#openapi-definition-ConstraintViolation)[] | A list of constraint violations |
 | message | string | The error message |
 
 #### The `ConstraintViolation` object

@@ -1,7 +1,6 @@
 ---
 title: Settings API - Maintenance windows schema table
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/settings/schemas/builtin-alerting-maintenance-window
-scraped: 2026-05-12T11:44:43.607307
 ---
 
 # Settings API - Maintenance windows schema table
@@ -12,7 +11,7 @@ scraped: 2026-05-12T11:44:43.607307
 
 ### Maintenance windows (`builtin:alerting.maintenance-window)`
 
-Maintenance windows are typically planned, recurring periods of system downtime during which your DevOps team can perform preventative maintenance and system upgrades outside of peak traffic hours. [Documentationï»¿](https://dt-url.net/5902ho9 "How to define a maintenance window")
+Maintenance windows are typically planned, recurring periods of system downtime during which your DevOps team can perform preventative maintenance and system upgrades outside of peak traffic hours. [Documentation﻿](https://dt-url.net/5902ho9 "How to define a maintenance window")
 
 To avoid having Dynatrace report on any performance anomalies that may result from such events, set up maintenance windows below that correspond with your organization's maintenance window schedule.
 
@@ -49,7 +48,7 @@ To execute this request, you need an access token with **Read settings** (`setti
 | Description `description` | text | A short description of the maintenance purpose. | Optional |
 | Maintenance type `maintenanceType` | enum | Whether the maintenance is planned or unplanned. The element has these enums * `PLANNED` * `UNPLANNED` | Required |
 | Problem detection and alerting `suppression` | enum | Defines if alerting or problem generation is disabled.  * **Detect problems and alert**: Problems are generated and alerted. * **Detect problems but don't alert**: Problems are generated but no alerts are sent out. * **Disable problem detection during maintenance**: Neither problems are generated nor alerts are sent out. The element has these enums * `DETECT_PROBLEMS_AND_ALERT` * `DETECT_PROBLEMS_DONT_ALERT` * `DONT_DETECT_PROBLEMS` | Required |
-| Disable synthetic monitor execution `disableSyntheticMonitorExecution` | boolean | Disables the execution of the synthetic monitors that are within [the scope of this maintenance windowï»¿](https://dt-url.net/0e0341m). | Required |
+| Disable synthetic monitor execution `disableSyntheticMonitorExecution` | boolean | Disables the execution of the synthetic monitors that are within [the scope of this maintenance window﻿](https://dt-url.net/0e0341m). | Required |
 
 ##### The `Schedule` object
 
@@ -67,8 +66,8 @@ To execute this request, you need an access token with **Read settings** (`setti
 | --- | --- | --- | --- |
 | Entity type `entityType` | text | Type of entities this maintenance window should match.  If no entity type is selected all entities regardless of the type will match. | Optional |
 | Entity `entityId` | text | A specific entity that should match this maintenance window.  **Note**: If an entity type filter value is set, it must be equal to the type of the selected entity. Otherwise this maintenance window will not match. | Optional |
-| Entity tags `entityTags` | set | Entities which contain all of the configured tags will match this maintenance window. It is recommended to use manual tags.  **Note:** Automatically applied tags may experience delays or inconsistencies due to rule complexity and attribute variability. Entities may not be immediately tagged, impacting filter effectiveness.  It is recommended to use manual tags instead.  For more information, visit our [best practices for tagging documentation pageï»¿](https://dt-url.net/8203d4x). | Required |
-| Management zones `managementZones` | set | Entities which are part of all the configured management zones will match this maintenance window. It is recommended to use manual tags instead.  **Note:** Management zones may experience delays or inconsistencies due to rule complexity and attribute variability. Entities may not be immediately assigned to management zones, impacting filter effectiveness.  It is recommended to use manual tags instead.  For more information, visit our [best practices for management zones documentation pageï»¿](https://dt-url.net/8203d4x). | Required |
+| Entity tags `entityTags` | set | Entities which contain all of the configured tags will match this maintenance window. It is recommended to use manual tags.  **Note:** Automatically applied tags may experience delays or inconsistencies due to rule complexity and attribute variability. Entities may not be immediately tagged, impacting filter effectiveness.  It is recommended to use manual tags instead.  For more information, visit our [best practices for tagging documentation page﻿](https://dt-url.net/8203d4x). | Required |
+| Management zones `managementZones` | set | Entities which are part of all the configured management zones will match this maintenance window. It is recommended to use manual tags instead.  **Note:** Management zones may experience delays or inconsistencies due to rule complexity and attribute variability. Entities may not be immediately assigned to management zones, impacting filter effectiveness.  It is recommended to use manual tags instead.  For more information, visit our [best practices for management zones documentation page﻿](https://dt-url.net/8203d4x). | Required |
 
 ##### The `OnceRecurrence` object
 

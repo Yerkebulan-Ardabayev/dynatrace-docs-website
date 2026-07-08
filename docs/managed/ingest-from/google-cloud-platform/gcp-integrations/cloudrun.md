@@ -1,7 +1,6 @@
 ---
 title: Monitor Google Cloud Run managed
 source: https://docs.dynatrace.com/managed/ingest-from/google-cloud-platform/gcp-integrations/cloudrun
-scraped: 2026-05-12T11:24:00.043583
 ---
 
 # Monitor Google Cloud Run managed
@@ -12,13 +11,13 @@ scraped: 2026-05-12T11:24:00.043583
 * 11-min read
 * Updated on Apr 22, 2026
 
-Google [Cloud Runï»¿](https://cloud.google.com/run) managed is a compute platform for running containers in a serverless environment. To monitor services running on Google Cloud Run managed using Dynatrace, you need to integrate OneAgent within your containerized application.
+Google [Cloud Run﻿](https://cloud.google.com/run) managed is a compute platform for running containers in a serverless environment. To monitor services running on Google Cloud Run managed using Dynatrace, you need to integrate OneAgent within your containerized application.
 
-Support for Cloud Run managed in the [first generation and second generationï»¿](https://cloud.google.com/run/docs/about-execution-environments) execution environments is currently limited to **Java** and **Node.js**.
+Support for Cloud Run managed in the [first generation and second generation﻿](https://cloud.google.com/run/docs/about-execution-environments) execution environments is currently limited to **Java** and **Node.js**.
 
 ## Integrate Dynatrace into your containers
 
-There are several ways to build and deploy containers to Cloud Run, such as with [Cloud Buildï»¿](https://cloud.google.com/build).
+There are several ways to build and deploy containers to Cloud Run, such as with [Cloud Build﻿](https://cloud.google.com/build).
 
 While the instructions to integrate Dynatrace may differ depending on the technology stack used to build and deploy, the integration of Dynatrace independently follows the same approach:
 
@@ -33,13 +32,13 @@ Before you begin, you need to take care of the following:
 * Get an **access token** to download the Dynatrace OneAgent with `InstallerDownload` scope. For details on access tokens, see [Dynatrace API - Tokens and authentication](/managed/dynatrace-api/basics/dynatrace-api-authentication "Find out how to get authenticated to use the Dynatrace API.").
 
   In the procedures that follow, replace `<DT_TOKEN>` with your actual access token.
-* Get the **environment ID**. For details on environment IDs, see [What is a monitoring environment?](/managed/discover-dynatrace/get-started/monitoring-environment "Understand and learn how to work with monitoring environments.").
+* Get the **environment ID**. For details on environment IDs, see [What's a monitoring environment?](/managed/discover-dynatrace/get-started/monitoring-environment "Learn what a Dynatrace monitoring environment is, how to find your environment ID, and how to set up and connect multiple environments.").
 
   In the procedures that follow, replace `<DT_ENV_ID>` with your actual environment ID.
-* Get your Dynatrace API endpoint as defined by your [Environment URL](/managed/discover-dynatrace/get-started/monitoring-environment "Understand and learn how to work with monitoring environments.") or alternatively an [ActiveGate address](/managed/ingest-from/dynatrace-activegate "Understand the basic concepts related to ActiveGate.").
+* Get your Dynatrace API endpoint as defined by your [Environment URL](/managed/discover-dynatrace/get-started/monitoring-environment "Learn what a Dynatrace monitoring environment is, how to find your environment ID, and how to set up and connect multiple environments.") or alternatively an [ActiveGate address](/managed/ingest-from/dynatrace-activegate "Understand the basic concepts related to ActiveGate.").
 
   In the procedures that follow, replace `<DT_ENV_FQDN>` with the actual Dynatrace API endpoint.
-* Install [gcloud CLIï»¿](https://cloud.google.com/sdk/docs/install)
+* Install [gcloud CLI﻿](https://cloud.google.com/sdk/docs/install)
 
 After you have completed the above prerequisites, follow one of these procedures (select a tab) to integrate Dynatrace into your containers.
 
@@ -268,7 +267,7 @@ ENTRYPOINT ["java", "-jar", "/hello-world.jar"]
 
 #### Step 2 Adjust your Google Cloud Build configuration file
 
-Open your [cloudbuild.yamlï»¿](https://cloud.google.com/build/docs/deploying-builds/deploy-cloud-run#continuous_deployment) file and add the following environment variables and bash commands to the build step:
+Open your [cloudbuild.yaml﻿](https://cloud.google.com/build/docs/deploying-builds/deploy-cloud-run#continuous_deployment) file and add the following environment variables and bash commands to the build step:
 
 ```
 # Build the container image
@@ -362,7 +361,7 @@ DT_LOGLEVELCON=INFO
 
 Make sure to substitute the placeholders with your actual values.
 
-* `<GCP_PROJECT_ID>` is the name of your [Google Cloud projectï»¿](https://cloud.google.com/resource-manager/docs/creating-managing-projects)
+* `<GCP_PROJECT_ID>` is the name of your [Google Cloud project﻿](https://cloud.google.com/resource-manager/docs/creating-managing-projects)
 * `<YOUR_IMAGE_NAME_AND_TAG>` is the name and the tag of your image to be built
 * `<ENVIRONMENT>` is the execution environment you want to use. Valid options are `gen1` for first generation and `gen2` for second generation.
 
@@ -423,7 +422,7 @@ _GCP_REGION=<GCP_REGION>,\" \
 Make sure to substitute the placeholders with your actual values.
 
 * `<SAMPLE_NAME>`is the name of your Cloud Run Service
-* `<GCP_PROJECT_ID>` is the name of your [Google Cloud projectï»¿](https://cloud.google.com/resource-manager/docs/creating-managing-projects)
+* `<GCP_PROJECT_ID>` is the name of your [Google Cloud project﻿](https://cloud.google.com/resource-manager/docs/creating-managing-projects)
 * `<YOUR_IMAGE_NAME_AND_TAG>` is the name and the tag of your image to be built
 
 ### Integrate into cloud built without `cloudbuild.yaml`
@@ -501,7 +500,7 @@ Make sure to substitute the placeholders with your actual values.
 * `<DT_ENV_FQDN>` is your actual Dynatrace API endpoint as described in the [Prerequisites](#prerequisites).
 * `<DT_TOKEN>` is your actual token as described in the [Prerequisites](#prerequisites).
 
-* Technology support is enabled via `include` parameters. For Alpine Linuxâbased environments, use `flavor=musl&include=java`.
+* Technology support is enabled via `include` parameters. For Alpine Linux–based environments, use `flavor=musl&include=java`.
 * The `wget` and `unzip` commands above might fail if they aren't provided by the base image.
 
 Example
@@ -652,16 +651,16 @@ gcloud run deploy <YOUR_SERVICE_NAME> --image gcr.io/<GCP_PROJECT_ID>/<YOUR_IMAG
 
 Make sure to substitute the placeholders with your actual values.
 
-* `<GCP_REGION>` is the name of the [Google Cloud regionï»¿](https://cloud.google.com/compute/docs/regions-zones) you deploy
-* `<GCP_PROJECT_ID>` is the name of your [Google Cloud projectï»¿](https://cloud.google.com/resource-manager/docs/creating-managing-projects)
+* `<GCP_REGION>` is the name of the [Google Cloud region﻿](https://cloud.google.com/compute/docs/regions-zones) you deploy
+* `<GCP_PROJECT_ID>` is the name of your [Google Cloud project﻿](https://cloud.google.com/resource-manager/docs/creating-managing-projects)
 * `<YOUR_IMAGE_NAME_AND_TAG>` is the name and the tag of your image to be built
 * `<YOUR_SERVICE_NAME>` is the name of the service that will be displayed in Dynatrace
 
 ### Integrate using Jib container tool
 
-Google's [Jibï»¿](https://github.com/GoogleContainerTools/jib) container tool builds optimized Docker and OCI images for your Java applications without a Docker daemonâand without requiring deep mastery of Docker best practices. It is available as plugins for Maven and Gradle and as a Java library.
+Google's [Jib﻿](https://github.com/GoogleContainerTools/jib) container tool builds optimized Docker and OCI images for your Java applications without a Docker daemon—and without requiring deep mastery of Docker best practices. It is available as plugins for Maven and Gradle and as a Java library.
 
-In the GitHub repository for Jib, you can find a [sample integration for the Google StackDriver Java agentï»¿](https://github.com/GoogleContainerTools/jib/blob/master/examples/java-agent/build.gradle) that follows the same pattern as the Dynatrace integration (Download, Configure, and Inject). You can adapt this blueprint to your needs for integrating Dynatrace using jib.
+In the GitHub repository for Jib, you can find a [sample integration for the Google StackDriver Java agent﻿](https://github.com/GoogleContainerTools/jib/blob/master/examples/java-agent/build.gradle) that follows the same pattern as the Dynatrace integration (Download, Configure, and Inject). You can adapt this blueprint to your needs for integrating Dynatrace using jib.
 
 ## Additional configuration
 

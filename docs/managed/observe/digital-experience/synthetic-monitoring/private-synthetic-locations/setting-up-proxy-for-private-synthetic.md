@@ -1,12 +1,11 @@
 ---
-title: Set up a proxy for private synthetic monitoring
+title: Set up a proxy for private synthetic monitoring in Classic
 source: https://docs.dynatrace.com/managed/observe/digital-experience/synthetic-monitoring/private-synthetic-locations/setting-up-proxy-for-private-synthetic
-scraped: 2026-05-12T11:32:09.378104
 ---
 
-# Set up a proxy for private synthetic monitoring
+# Set up a proxy for private synthetic monitoring in Classic
 
-# Set up a proxy for private synthetic monitoring
+# Set up a proxy for private synthetic monitoring in Classic
 
 * How-to guide
 * 3-min read
@@ -31,7 +30,7 @@ You can use the following properties when configuring a proxy for your Synthetic
 | `proxy-domain` | User domain in the case of NTLM authentication |
 | `proxy-password` | Password Optional  The password provided in the `proxy-password` property is obfuscated after ActiveGate restart, and the obfuscated password is stored in the `proxy-password-encr` property.  If a comma (`,`) is part of a value, you need to add an escape backslash (`\`) before the comma. For example, `proxy-password = foo\,bar`. |
 | `proxy-off` | If set to `true`, causes proxy to be disabled for the particular type of communication. |
-| `proxy-non-proxy-hosts` | A list of hosts for communication with which proxy should not be used by ActiveGate  The hosts in the list should be separated by `|` characters. You can also use an asterisk `*` as a wildcard character to match any string. There can be only one wildcard character, either at the beginning or the end of the hostname. For example, `proxy-non-proxy-hosts=*.foo.com|localhost` indicates that every host in the `foo.com` domain and the `localhost` should be accessed directly even if a proxy server is specified. For a full description of allowed syntax, see the syntax for the `http.nonProxyHosts` parameter in [Networking Propertiesï»¿](https://dt-url.net/kk02v8r). |
+| `proxy-non-proxy-hosts` | A list of hosts for communication with which proxy should not be used by ActiveGate  The hosts in the list should be separated by `|` characters. You can also use an asterisk `*` as a wildcard character to match any string. There can be only one wildcard character, either at the beginning or the end of the hostname. For example, `proxy-non-proxy-hosts=*.foo.com|localhost` indicates that every host in the `foo.com` domain and the `localhost` should be accessed directly even if a proxy server is specified. For a full description of allowed syntax, see the syntax for the `http.nonProxyHosts` parameter in [Networking Properties﻿](https://dt-url.net/kk02v8r). |
 | `proxy-authentication-schemes` | ActiveGate version 1.271+  A list of proxy authentication schemes Optional  This is a prioritized list of proxy authentication schemes that ActiveGate should use when authenticating with the proxy server.  * Starting with the first scheme on the list, ActiveGate will attempt to authenticate and, in case of failure, proceed to the next scheme on the list. * If this property is not defined, ActiveGate will try to authenticate using all available schemes.  Supported values: `NTLM`, `BASIC` |
 
 ## Proxy connection scenarios
@@ -193,7 +192,7 @@ You can use Proxy Auto-Configuration (PAC) files to handle complex proxy configu
 
 ### What is a PAC file?
 
-A Proxy Auto-Configuration (PAC) file is a JavaScript function that determines whether web browser requests (HTTP, HTTPS, and FTP) go directly to the destination or are forwarded to a web proxy server (for details, see [Proxy Auto-Configuration (PAC) fileï»¿](https://developer.mozilla.org/en-US/docs/Web/HTTP/Proxy_servers_and_tunneling/Proxy_Auto-Configuration_%28PAC%29_file) on [developer.mozilla.orgï»¿](https://developer.mozilla.org/en-US/)).
+A Proxy Auto-Configuration (PAC) file is a JavaScript function that determines whether web browser requests (HTTP, HTTPS, and FTP) go directly to the destination or are forwarded to a web proxy server (for details, see [Proxy Auto-Configuration (PAC) file﻿](https://developer.mozilla.org/en-US/docs/Web/HTTP/Proxy_servers_and_tunneling/Proxy_Auto-Configuration_%28PAC%29_file) on [developer.mozilla.org﻿](https://developer.mozilla.org/en-US/)).
 
 ### How to provide a PAC file to your browser monitors
 
@@ -206,7 +205,7 @@ Use the [script mode](/managed/observe/digital-experience/synthetic-monitoring/b
 
   For existing single-URL browser monitors, select **Monitor script**.
 
-Youâll need to add the following in the `configuration` object of the JSON file:
+You’ll need to add the following in the `configuration` object of the JSON file:
 
 ```
 "proxy": {
@@ -231,7 +230,7 @@ For more information on script mode, see [Script mode for browser monitor config
 ### PAC file configuration compatibility
 
 * PAC file configuration only applies to private Synthetic locations, not public locations.
-* PAC file configuration applies only to the monitor you configureâeach individual monitor must have the PAC file configured in its script; there is no global setting for all monitors to use a PAC file for proxy services.
+* PAC file configuration applies only to the monitor you configure—each individual monitor must have the PAC file configured in its script; there is no global setting for all monitors to use a PAC file for proxy services.
 
 * When you set a PAC file proxy for one synthetic monitor script, it only applies to that monitor.
 
@@ -261,7 +260,7 @@ In this example setup, we use the Squid proxy linked to the system's OpenSSL lib
    ```
    sudo apt install squid-openssl
    ```
-2. Provide CA certificate for [re-signingï»¿](https://wiki.squid-cache.org/Features/DynamicSslCert) intercepted requests:
+2. Provide CA certificate for [re-signing﻿](https://wiki.squid-cache.org/Features/DynamicSslCert) intercepted requests:
 
    Red Hat
 
@@ -307,7 +306,7 @@ In this example setup, we use the Squid proxy linked to the system's OpenSSL lib
    sudo chmod 600 /etc/squid/ssl_cert/squid.pem
    ```
 
-If SELinux is enabled, you may need to adjust file labels. For details, see the Red Hat Documentation for [Red Hat Enterprise Linux 8ï»¿](https://dt-url.net/wx039i1) or [Red Hat Enterprise Linux 9ï»¿](https://dt-url.net/b62392n).
+If SELinux is enabled, you may need to adjust file labels. For details, see the Red Hat Documentation for [Red Hat Enterprise Linux 8﻿](https://dt-url.net/wx039i1) or [Red Hat Enterprise Linux 9﻿](https://dt-url.net/b62392n).
 
 3. Create temporary certificate cache:
 
@@ -330,7 +329,7 @@ If SELinux is enabled, you may need to adjust file labels. For details, see the 
 
    sudo chown --recursive proxy:proxy /var/spool/squid/ssl_db
    ```
-4. Configure the proxy to perform [SSL interceptionï»¿](https://wiki.squid-cache.org/Features/SslPeekAndSplice) (by default, `/etc/squid/squid.conf`):
+4. Configure the proxy to perform [SSL interception﻿](https://wiki.squid-cache.org/Features/SslPeekAndSplice) (by default, `/etc/squid/squid.conf`):
 
    ```
    acl SSL_ports port 443
@@ -533,7 +532,7 @@ If you're using a different proxy software, this might not be applicable to you.
 
    WantedBy=multi-user.target
    ```
-3. Create a second proxy configuration (`/etc/squid/squid2.conf`) and provide your corporate proxy host, port and [authenticationï»¿](https://www.squid-cache.org/Doc/config/cache_peer):
+3. Create a second proxy configuration (`/etc/squid/squid2.conf`) and provide your corporate proxy host, port and [authentication﻿](https://www.squid-cache.org/Doc/config/cache_peer):
 
    ```
    acl SSL_ports port 443
@@ -594,7 +593,7 @@ If you're using a different proxy software, this might not be applicable to you.
 
    cache deny all
    ```
-4. Update first proxy configuration (`/etc/squid/squid.conf`) to use the second proxy as [parent proxyï»¿](https://wiki.squid-cache.org/Features/CacheHierarchy) by appending the following lines:
+4. Update first proxy configuration (`/etc/squid/squid.conf`) to use the second proxy as [parent proxy﻿](https://wiki.squid-cache.org/Features/CacheHierarchy) by appending the following lines:
 
    ```
    cache_peer localhost parent 3129 0 default no-digest proxy-only

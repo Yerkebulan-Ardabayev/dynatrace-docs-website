@@ -1,7 +1,6 @@
 ---
 title: Settings API - Trace sampling for RPC requests schema table
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/settings/schemas/builtin-rpc-based-sampling
-scraped: 2026-05-12T11:45:54.821599
 ---
 
 # Settings API - Trace sampling for RPC requests schema table
@@ -12,7 +11,7 @@ scraped: 2026-05-12T11:45:54.821599
 
 ### Trace sampling for RPC requests (`builtin:rpc-based-sampling)`
 
-This setting allows you to configure how OneAgent treats specific Remote Procedure Calls (RPCs) when sampling is needed. More precisely, you can advise OneAgent on the importance of specific RPCs in relation to other RPCs. RPCs with higher importance will be treated to be captured more often and vice versa. Additionally, you can turn off tracing for specific RPCs completely. Full-Stack Monitoring includes a defined amount of trace data volume. Every contributing GiB of host or application memory adds a certain amount of trace volume ingest rate to your environment. Depending on that transaction volume, OneAgent captures end-to-end traces every minute up to a peak trace volume. Adaptive Traffic management automatically adjusts the sampling rate of trace data collection so that the collected trace data doesn't exceed the included trace volume. You can learn more about this [hereï»¿](https://dt-url.net/na03wq0)
+This setting allows you to configure how OneAgent treats specific Remote Procedure Calls (RPCs) when sampling is needed. More precisely, you can advise OneAgent on the importance of specific RPCs in relation to other RPCs. RPCs with higher importance will be treated to be captured more often and vice versa. Additionally, you can turn off tracing for specific RPCs completely. Full-Stack Monitoring includes a defined amount of trace data volume. Every contributing GiB of host or application memory adds a certain amount of trace volume ingest rate to your environment. Depending on that transaction volume, OneAgent captures end-to-end traces every minute up to a peak trace volume. Adaptive Traffic management automatically adjusts the sampling rate of trace data collection so that the collected trace data doesn't exceed the included trace volume. You can learn more about this [here﻿](https://dt-url.net/na03wq0)
 
 This configuration represents an ordered list of rules. Each rule has conditions, based on protocol, remote operation name, remote service name or endpoint name of the RPC. The first rule where all conditions are met will be applied. Each non-matching rule adds an overhead of a microsecond to the monitored process. All string comparisons of the conditions are case sensitive. Use the switch in the "Enabled" column to turn a rule on or off.
 

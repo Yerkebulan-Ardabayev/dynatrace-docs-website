@@ -1,7 +1,6 @@
 ---
 title: Mobile app metrics API - POST a metric
 source: https://docs.dynatrace.com/managed/dynatrace-api/configuration-api/calculated-metrics/mobile-app-metrics/post-metric
-scraped: 2026-05-12T11:17:33.916529
 ---
 
 # Mobile app metrics API - POST a metric
@@ -41,7 +40,7 @@ Definition of the calculated metric for mobile or custom app.
 | Element | Type | Description | Required |
 | --- | --- | --- | --- |
 | applicationIdentifier | string | The Dynatrace entity ID of the application to which the metric belongs. | Required |
-| dimensions | [CalculatedMobileMetricDimension[]](#openapi-definition-CalculatedMobileMetricDimension) | A list of metric dimensions. | Optional |
+| dimensions | [CalculatedMobileMetricDimension](#openapi-definition-CalculatedMobileMetricDimension)[] | A list of metric dimensions. | Optional |
 | enabled | boolean | The metric is enabled (`true`) or disabled (`false`). | Required |
 | metricKey | string | The unique key of the metric.  The key must have the `calc:apps` prefix. | Required |
 | metricType | string | The type of the metric. The element can hold these values * `REPORTED_ERROR_COUNT` * `USER_ACTION_DURATION` * `WEB_REQUEST_COUNT` * `WEB_REQUEST_ERROR_COUNT` | Required |
@@ -193,7 +192,7 @@ The short representation of a Dynatrace entity.
 | Element | Type | Description |
 | --- | --- | --- |
 | code | integer | The HTTP status code |
-| constraintViolations | [ConstraintViolation[]](#openapi-definition-ConstraintViolation) | A list of constraint violations |
+| constraintViolations | [ConstraintViolation](#openapi-definition-ConstraintViolation)[] | A list of constraint violations |
 | message | string | The error message |
 
 #### The `ConstraintViolation` object
@@ -324,7 +323,7 @@ To learn how to obtain and use it, see [Tokens and authentication](/managed/disc
 | Element | Type | Description |
 | --- | --- | --- |
 | code | integer | The HTTP status code |
-| constraintViolations | [ConstraintViolation[]](#openapi-definition-ConstraintViolation) | A list of constraint violations |
+| constraintViolations | [ConstraintViolation](#openapi-definition-ConstraintViolation)[] | A list of constraint violations |
 | message | string | The error message |
 
 #### The `ConstraintViolation` object
@@ -398,5 +397,5 @@ A list of constraint violations
 
 ## Related topics
 
-* [Create calculated metrics for mobile applications](/managed/observe/digital-experience/mobile-applications/additional-configuration/rum-calculated-metrics-mobile "Create calculated metrics as well as custom charts based on calculated metrics for your mobile applications.")
-* [Create calculated metrics for custom applications](/managed/observe/digital-experience/custom-applications/additional-configuration/rum-calculated-metrics-custom "Create calculated metrics as well as custom charts based on calculated metrics for your custom applications.")
+* [Create calculated metrics for mobile applications in RUM Classic](/managed/observe/digital-experience/rum-classic/mobile-applications/additional-configuration/rum-calculated-metrics-mobile "Create calculated metrics as well as custom charts based on calculated metrics for your mobile applications.")
+* [Create calculated metrics for custom applications in RUM Classic](/managed/observe/digital-experience/rum-classic/custom-applications/additional-configuration/rum-calculated-metrics-custom "Create calculated metrics as well as custom charts based on calculated metrics for your custom applications.")

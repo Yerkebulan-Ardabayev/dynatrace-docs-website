@@ -1,7 +1,6 @@
 ---
 title: Sign extensions
 source: https://docs.dynatrace.com/managed/ingest-from/extensions/develop-your-extensions/sign-extensions
-scraped: 2026-05-12T12:02:17.580563
 ---
 
 # Sign extensions
@@ -21,7 +20,7 @@ Before uploading an extension to your Dynatrace environment, sign it to verify i
 
 Depending on your needs, choose one of the following methods to sign and build your extension:
 
-* [`dt-extensions-sdk`ï»¿](https://dynatrace-extensions.github.io/dt-extensions-python-sdk/cli/sign.html) - an all-in-one CLI tool Recommended
+* [`dt-extensions-sdk`﻿](https://dynatrace-extensions.github.io/dt-extensions-python-sdk/cli/sign.html) - an all-in-one CLI tool Recommended
 * [VSCode Extension](/managed/ingest-from/extensions/develop-your-extensions/addon-for-vscode "Introduction to the Dynatrace Extensions add-on for VS Code") - an all-in-one editor-based tool Recommended
 * [Use OpenSSL](/managed/ingest-from/extensions/develop-your-extensions/sign-extensions/manually-openssl "Sign an extension manually with OpenSSL.") - a standard crypto library for manual control
 
@@ -29,7 +28,7 @@ Dynatrace CLI
 
 You can also use the Dynatrace CLI (`dt-cli`) to sign your extension. Since its features are fully contained within `dt-extensions-sdk` CLI, only use it as a lighter alternative for CI/CD environments.
 
-Read more about [`dt-cli` on GitHubï»¿](https://github.com/dynatrace-oss/dt-cli).
+Read more about [`dt-cli` on GitHub﻿](https://github.com/dynatrace-oss/dt-cli).
 
 ## Upload your root certificate
 

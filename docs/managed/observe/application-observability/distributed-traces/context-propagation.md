@@ -1,7 +1,6 @@
 ---
 title: Span and trace context propagation in Distributed Traces Classic
 source: https://docs.dynatrace.com/managed/observe/application-observability/distributed-traces/context-propagation
-scraped: 2026-05-12T12:01:23.243568
 ---
 
 # Span and trace context propagation in Distributed Traces Classic
@@ -10,7 +9,7 @@ scraped: 2026-05-12T12:01:23.243568
 
 * Explanation
 * 2-min read
-* Published Feb 02, 2026
+* Updated on May 29, 2026
 
 ## Trace context across services
 
@@ -29,9 +28,9 @@ When you install OneAgent, it automatically:
 
 Dynatrace employs several mechanisms to maintain trace context:
 
-* **x-dynatrace**âfor various communication protocols. This format is proprietary to Dynatrace.
-* **traceparent** and **tracestate**âW3C standard format used by both OneAgent and OpenTelemetry.
-* **dtdTraceTagInfo**âcustom property for various messaging systems.
+* **x-dynatrace**—for various communication protocols. This format is proprietary to Dynatrace.
+* **traceparent** and **tracestate**—W3C standard format used by both OneAgent and OpenTelemetry.
+* **dtdTraceTagInfo**—custom property for various messaging systems.
 
 The exact implementation varies by technology: sometimes using HTTPS headers, SQS message properties, or AWS EventBridge payload injection.
 
@@ -48,15 +47,15 @@ In mixed environments with both OneAgent and OpenTelemetry instrumentation, trac
 
 There are several reasons to turn on W3C trace context in Dynatrace:
 
-* Industry standard compatibilityâit aligns with W3C specification.
-* Vendor-agnostic tracingâit works in heterogeneous environments with multiple monitoring solutions.
-* Future-proofingâit matches industry direction for distributed tracing.
+* Industry standard compatibility—it aligns with W3C specification.
+* Vendor-agnostic tracing—it works in heterogeneous environments with multiple monitoring solutions.
+* Future-proofing—it matches industry direction for distributed tracing.
 
 ### Considerations when using W3C trace context
 
-* Interoperability challengesâdespite being a standard, real-world implementation can vary.
-* Browser and app behaviorâsome clients may send the same traceId repeatedly, affecting trace quality.
-* Tool conflictsâmultiple APM tools in the same process may overwrite each other's context.
+* Interoperability challenges—despite being a standard, real-world implementation can vary.
+* Browser and app behavior—some clients may send the same traceId repeatedly, affecting trace quality.
+* Tool conflicts—multiple APM tools in the same process may overwrite each other's context.
 
 ### Set up W3C trace context
 
@@ -66,3 +65,13 @@ To turn W3C trace context on
 2. Turn on **Send W3C Trace Context HTTP headers** and **Send W3C Trace Context gRPC headers**.
 
 While the W3C standard formally specifies HTTP propagation, Dynatrace and the broader industry apply these concepts to other communication protocols.
+
+## Supplementary custom headers
+
+In addition to the main propagation mechanisms, the code modules for some technologies set additional custom HTTP request headers in the context of distributed tracing. Ensure that your infrastructure allows them to pass through unaltered.
+
+| Header | Purpose |
+| --- | --- |
+| `X-dynaTrace-RequestState` | Used by the Apache, NGINX, and IIS code modules to track the depth of a subpath tree, preventing endless distributed traces. |
+| `X-ruxit-Apache-ServerNamePorts` | Used by the Apache code module to synchronize service naming with the PHP code module. |
+| `X-Ruxit-Forwarded-For` | Used by the NGINX code module to track proxy scenarios. |

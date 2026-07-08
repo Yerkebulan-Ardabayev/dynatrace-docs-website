@@ -1,7 +1,6 @@
 ---
 title: Amazon CloudWatch Metric Streams
 source: https://docs.dynatrace.com/managed/ingest-from/amazon-web-services/integrate-with-aws/aws-metrics-ingest/cloudwatch-metric-streams
-scraped: 2026-05-12T11:14:18.734303
 ---
 
 # Amazon CloudWatch Metric Streams
@@ -20,15 +19,15 @@ Differences between [AWS default integration](/managed/ingest-from/amazon-web-se
 
 |  | AWS Default integration | AWS Metric Streams |
 | --- | --- | --- |
-| ActiveGate | Required for non-built-in services or monitored environments bigger than 2000 instancesï¸ | Not required |
+| ActiveGate | Required for non-built-in services or monitored environments bigger than 2000 instances️ | Not required |
 | Firehose | Not required | Required |
 | Dynatrace tenant open to incoming HTTPS Internet traffic | Not required | Required |
-| Available metrics | Selected Amazon CloudWatch metricsï¸ | All available Amazon CloudWatch metricsï¸ |
-| Metrics selection | In Dynatraceï¸ | In Amazon CloudWatch consoleï¸ |
-| Metrics selection scope | Monitored metrics selection possible at the level of a single metric and its statisticsï¸ | Monitored metrics selection possible only at the level of the whole namespaceï¸ |
-| Metrics key prefix | `ext:cloud.aws.<service>`ï¸ [1](#fn-1-1-def) | `cloud.aws.<service>`ï¸ |
-| Topology attributes (Dynatrace Entities) | Available | Available once the [AWS Entities for Metric Streamingï»¿](https://dt-url.net/x6038p6) extension is enabled |
-| Tags (Dynatrace Entities) | Available | Not available |
+| Available metrics | Selected Amazon CloudWatch metrics️ | All available Amazon CloudWatch metrics️ |
+| Metrics selection | In Dynatrace️ | In Amazon CloudWatch console️ |
+| Metrics selection scope | Monitored metrics selection possible at the level of a single metric and its statistics️ | Monitored metrics selection possible only at the level of the whole namespace️ |
+| Metrics key prefix | `ext:cloud.aws.<service>`️ [1](#fn-1-1-def) | `cloud.aws.<service>`️ |
+| Topology attributes (Dynatrace Entities) | Available | Available once the [AWS Entities for Metric Streaming﻿](https://dt-url.net/x6038p6) extension is enabled |
+| Tags(Dynatrace Entities) | Available | Not available |
 | Predefined alerts | Available | Not available |
 | Predefined dashboards | Available | Available |
 | PrivateLink support | Not available | Not available |
@@ -52,7 +51,7 @@ Despite the naming similarities, AWS integration metrics are **not** based on ex
   + **For ActiveGate**  
     `https://<your_active_gate_IP_or_hostname>:9999/e/<your_environment_ID>`
 
-To determine `<your_environment_ID>`, see [environment ID](/managed/discover-dynatrace/get-started/monitoring-environment "Understand and learn how to work with monitoring environments.").
+To determine `<your_environment_ID>`, see [environment ID](/managed/discover-dynatrace/get-started/monitoring-environment "Learn what a Dynatrace monitoring environment is, how to find your environment ID, and how to set up and connect multiple environments.").
 
 To receive the AWS metrics, the previously selected endpoint needs to be open to incoming Internet traffic. Restrictive firewalls might block the streaming service.
 
@@ -92,7 +91,7 @@ To fetch the CloudFormation template and deploy it to your AWS account, run the 
 
 If you have AWS CLI configured, you can use a Bash-compliant shell. Otherwise, you can use CloudShell, which is available in the AWS console.
 
-Parametersâ¦
+Parameters…
 
 | Parameter | Description | Default value |
 | --- | --- | --- |
@@ -100,7 +99,7 @@ Parametersâ¦
 | `DYNATRACE_API_KEY` | Required Your API token. See [Prerequisites](#prerequisites) for instructions. |  |
 | `STACK_NAME` | Required The name of your client stack. | `dynatrace-aws-metric-streams-client` |
 | `REQUIRE_VALID_CERTIFICATE` | Optional If set to `true`, Dynatrace verifies the SSL certificate of your Dynatrace environment URL. | `true` |
-| `DELIVERY_ENDPOINT` | Optional One of these Metric Streams endpoints for Dynatrace: Global: `https://aws.cloud.dynatrace.com/` US: `https://us.aws.cloud.dynatrace.com/` EU: `https://eu.aws.cloud.dynatrace.com/` | `https://aws.cloud.dynatrace.com/` |
+| `DELIVERY_ENDPOINT` | Optional One of these Metric Streams endpoints for Dynatrace:Global: `https://aws.cloud.dynatrace.com/`US: `https://us.aws.cloud.dynatrace.com/`EU: `https://eu.aws.cloud.dynatrace.com/` | `https://aws.cloud.dynatrace.com/` |
 
 ```
 DYNATRACE_ENV_URL=<your_API_URL>
@@ -132,7 +131,7 @@ aws cloudformation deploy --capabilities CAPABILITY_NAMED_IAM --template-file ./
 
 ### Deploy the Metric Streams client for other regions
 
-The command above uses the default AWS CLI profile and its default region. To change the profile and region, you can export additional variables such as `AWS_DEFAULT_REGION` and `AWS_PROFILE` and rerun the deployment command. If you are using CloudShell, you can change the region in the AWS console instead. For details on how to configure the AWS CLI, see [Environment variables to configure the AWS CLIï»¿](https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-envvars.html).
+The command above uses the default AWS CLI profile and its default region. To change the profile and region, you can export additional variables such as `AWS_DEFAULT_REGION` and `AWS_PROFILE` and rerun the deployment command. If you are using CloudShell, you can change the region in the AWS console instead. For details on how to configure the AWS CLI, see [Environment variables to configure the AWS CLI﻿](https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-envvars.html).
 
 Monitor multiple AWS accounts with Cross-account cross-Region CloudWatch
 
@@ -229,22 +228,22 @@ For each region that you want to monitor, you need to repeat the entire procedur
 
 OpenTelemetry 0.7
 
-We recommend using OpenTelemetry 1.0 since it's a default version that allows you to fetch new metrics and is fully compatible with the 0.7 versionâwhich will still be supported.
+We recommend using OpenTelemetry 1.0 since it's a default version that allows you to fetch new metrics and is fully compatible with the 0.7 version—which will still be supported.
 
 6. Under **Metrics to be streamed**, select one of the following options:
 
-   * **All metrics**âif you want to stream all metrics from namespaces automatically.
-   * **Select metrics**âif you want to exclude metrics for each namespace manually.
+   * **All metrics**—if you want to stream all metrics from namespaces automatically.
+   * **Select metrics**—if you want to exclude metrics for each namespace manually.
 7. In **Custom metric stream name**, enter a name for your metric stream.
 8. Select **Create metric stream**.
 
 ## View metrics using preset dashboards
 
-Once you deploy the Metric Streams client, you can use the [predefined dashboards from the GitHub repositoryï»¿](https://dt-url.net/ev03qe5) in Dynatrace to visualize your ingested data.
+Once you deploy the Metric Streams client, you can use the [predefined dashboards from the GitHub repository﻿](https://dt-url.net/ev03qe5) in Dynatrace to visualize your ingested data.
 
 Prerequisites
 
-* Install [Python 3ï»¿](https://www.python.org/downloads/) (no additional libraries are required)
+* Install [Python 3﻿](https://www.python.org/downloads/) (no additional libraries are required)
 * Enable the **Read configuration** and **Write configuration** permissions for your [API token](/managed/dynatrace-api/basics/dynatrace-api-authentication "Find out how to get authenticated to use the Dynatrace API.")
 
 To upload preset dashboards from GitHub
@@ -258,10 +257,10 @@ curl -o upload_dashboards.py https://raw.githubusercontent.com/Dynatrace/snippet
 2. Create a `dashboards` directory next to `upload_dashboards.py`.
 3. Add any dashboard definition from GitHub to your `dashboards` directory.
 
-   Each dashboard definition is a single JSON file located in the folders of the [GitHub repositoryï»¿](https://dt-url.net/ev03qe5).
+   Each dashboard definition is a single JSON file located in the folders of the [GitHub repository﻿](https://dt-url.net/ev03qe5).
 4. Run the script below. Be sure to replace `<your_dynatrace_cluster_version>`, `<your_API_token>`, and `<your_API_URL>` with your own values. Consult the parameters table that follows for details.
 
-Parametersâ¦
+Parameters…
 
 | Parameter | Description |
 | --- | --- |
@@ -298,4 +297,4 @@ If you deployed the Metric Streams client through the AWS console, delete all th
 
 A metric won't be streamed if it is more than two hours old. You can determine a metric's age by graphing it in the CloudWatch console and checking the age of the last datapoint displayed.
 
-For more limitations, see [Amazon CloudWatch troubleshooting pageï»¿](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-metric-streams-troubleshoot.html)
+For more limitations, see [Amazon CloudWatch troubleshooting page﻿](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-metric-streams-troubleshoot.html)

@@ -1,7 +1,6 @@
 ---
 title: Troubleshooting OneAgent installation on Solaris
 source: https://docs.dynatrace.com/managed/ingest-from/dynatrace-oneagent/installation-and-operation/solaris/troubleshoot-oneagent-installation-on-solaris
-scraped: 2026-05-12T11:09:50.774322
 ---
 
 # Troubleshooting OneAgent installation on Solaris
@@ -113,13 +112,13 @@ ld.so.1: sudo: warning: /opt/dynatrace/oneagent/agent/lib/liboneagentproc.so: op
 
 You may encounter an error like this when you set `LD_PRELOAD` in your execution environment and call sudo or su. This happens because OneAgent isn't installed in the secure `ld_preload` directory. This error message has no negative impact and can be ignored. To avoid this, ensure that you don't set `LD_PRELOAD` in an execution context where you want to use sudo.
 
-See [Further detail on this topicï»¿](https://docs.oracle.com/cd/E19253-01/816-5165/ld.so.1-1/index.html#Security)
+See [Further detail on this topic﻿](https://docs.oracle.com/cd/E19253-01/816-5165/ld.so.1-1/index.html#Security)
 
 Why doesn't OneAgent start to monitor Apache process after restart?
 
-Following installation of OneAgent, your Apache web server must be *completely* restarted to enable monitoring. To do this correctly, it's important to understand the difference between "partial" and "complete" restarts. In the case of partial restarts, the main Apache process re-reads its configuration files, re-opens its log files, and then restarts its worker processes. OneAgent however, requires a complete Apache web server restart in which all workers andâmost importantlyâthe main Apache process are shut down entirely and then restarted.
+Following installation of OneAgent, your Apache web server must be *completely* restarted to enable monitoring. To do this correctly, it's important to understand the difference between "partial" and "complete" restarts. In the case of partial restarts, the main Apache process re-reads its configuration files, re-opens its log files, and then restarts its worker processes. OneAgent however, requires a complete Apache web server restart in which all workers and—most importantly—the main Apache process are shut down entirely and then restarted.
 
-See [Stopping and Restarting Apache HTTP Serverï»¿](https://httpd.apache.org/docs/2.4/stopping.html) for more information on the different types of available restarts.
+See [Stopping and Restarting Apache HTTP Server﻿](https://httpd.apache.org/docs/2.4/stopping.html) for more information on the different types of available restarts.
 
 ## How to perform a complete restart
 

@@ -1,7 +1,6 @@
 ---
 title: Monitor Amazon Elastic Container Service (ECS)
 source: https://docs.dynatrace.com/managed/ingest-from/amazon-web-services/integrate-into-aws/aws-ecs
-scraped: 2026-05-12T11:14:24.040122
 ---
 
 # Monitor Amazon Elastic Container Service (ECS)
@@ -19,7 +18,7 @@ To deploy OneAgent on AWS Elastic Container Service (ECS) clusters with EC2 laun
 * Create a [PaaS Token](/managed/manage/identity-access-management/access-tokens-and-oauth-clients/access-tokens#paas-token "Learn the concept of an access token and its scopes.").
 * ECS cluster with **Linux-based container instances**.
 * Review the list of [supported applications and versions](/managed/ingest-from/technology-support "Find technical details related to Dynatrace support for specific platforms and development frameworks.").
-* An IAM role for your container instances should attach the `AmazonEC2ContainerServiceforEC2Role` managed policy. Instructions for creating this role, named `ecsInstanceRole`, are provided in the [AWS documentationï»¿](https://dt-url.net/y923usz).
+* An IAM role for your container instances should attach the `AmazonEC2ContainerServiceforEC2Role` managed policy. Instructions for creating this role, named `ecsInstanceRole`, are provided in the [AWS documentation﻿](https://dt-url.net/y923usz).
 
 ## Deploy OneAgent as a daemon service
 
@@ -124,7 +123,7 @@ See [Docker limitations](/managed/ingest-from/setup-on-container-platforms/docke
 
 ## Monitoring consumption
 
-For Elastic Container Service, monitoring consumption is based on host units. See [Application and Infrastructure Monitoring (Host Units)](/managed/license/monitoring-consumption-classic/application-and-infrastructure-monitoring "Understand how Dynatrace application and infrastructure monitoring consumption is calculated based on host units.") for details.
+For Elastic Container Service, monitoring consumption is based on host units. See [Application and Infrastructure Monitoring (Host Units)](/managed/license/classic-licensing/application-and-infrastructure-monitoring "Understand how Dynatrace application and infrastructure monitoring consumption is calculated based on host units.") for details.
 
 ## Related topics
 

@@ -1,7 +1,6 @@
 ---
 title: Settings API - GET objects
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/settings/objects/get-objects
-scraped: 2026-05-12T11:38:45.914164
 ---
 
 # Settings API - GET objects
@@ -31,11 +30,11 @@ To learn how to obtain and use it, see [Tokens and authentication](/managed/disc
 | Parameter | Type | Description | In | Required |
 | --- | --- | --- | --- | --- |
 | schemaIds | string | A list of comma-separated schema IDs to which the requested objects belong.  To load the first page, when the **nextPageKey** is not set, either this parameter or **scopes** is required.  To load all objects belonging to the given schema IDs leave the **scopes** parameter empty. | query | Optional |
-| scopes | string | A list of comma-separated scopes, that the requested objects target.  The selection only matches objects directly targeting the specified scopes. For example, `environment` will not match objects that target a host within environment. For more details, please see [Dynatrace Documentationï»¿](https://dt-url.net/ky03459).  To load the first page, when the **nextPageKey** is not set, either this parameter or **schemaIds** is required.  To load all objects belonging to the given scopes leave the **schemaIds** parameter empty. | query | Optional |
+| scopes | string | A list of comma-separated scopes, that the requested objects target.  The selection only matches objects directly targeting the specified scopes. For example, `environment` will not match objects that target a host within environment. For more details, please see [Dynatrace Documentation﻿](https://dt-url.net/ky03459).  To load the first page, when the **nextPageKey** is not set, either this parameter or **schemaIds** is required.  To load all objects belonging to the given scopes leave the **schemaIds** parameter empty. | query | Optional |
 | externalIds | string | A list of comma-separated external IDs that the requested objects have.  Each external ID has a maximum length of 500 characters.  Only considered on load of the first page, when the **nextPageKey** is not set. | query | Optional |
 | fields | string | A list of fields to be included to the response. The provided set of fields replaces the default set.  Specify the required top-level fields, separated by commas (for example, `objectId,value`).  Supported fields: `objectId`, `summary`, `searchSummary`, `created`, `modified`, `createdBy`, `modifiedBy`, `author`, `updateToken`, `scope`, `modificationInfo` (deprecated), `resourceContext`, `owner`, `schemaId`, `schemaVersion`, `value`, `externalId`. | query | Optional |
-| filter | string | The filter parameter, as explained [hereï»¿](https://dt-url.net/platform-services-filtering).  Filtering is supported on the following fields:  * `created` * `modified` * `createdBy` * `modifiedBy` * `author` (deprecated, will not work for future schemas) * `value` with properties and sub-properties separated by dot (for example, `value.owningApp = 'Notebooks'`)  If this parameter is omitted, all settings objects will be returned. The maximum nesting depth (via parentheses) is 5. The maximum expression length is 1024 characters.  Note that only fields included to the response via `fields` can be used for filtering. | query | Optional |
-| sort | string | The sort parameter, as explained [hereï»¿](https://dt-url.net/platform-services-filtering).  Sorting is supported on the following fields:  * `created` * `modified` * `createdBy` * `modifiedBy` * `author` (deprecated, will not work for future schemas) * `value` with properties and sub-properties separated by dot (for example, `value.owningApp`)  Note that only fields included to the response via `fields` can be used for sorting. | query | Optional |
+| filter | string | The filter parameter, as explained [here﻿](https://dt-url.net/platform-services-filtering).  Filtering is supported on the following fields:  * `created` * `modified` * `createdBy` * `modifiedBy` * `author` (deprecated, will not work for future schemas) * `value` with properties and sub-properties separated by dot (for example, `value.owningApp = 'Notebooks'`)  If this parameter is omitted, all settings objects will be returned. The maximum nesting depth (via parentheses) is 5. The maximum expression length is 1024 characters.  Note that only fields included to the response via `fields` can be used for filtering. | query | Optional |
+| sort | string | The sort parameter, as explained [here﻿](https://dt-url.net/platform-services-filtering).  Sorting is supported on the following fields:  * `created` * `modified` * `createdBy` * `modifiedBy` * `author` (deprecated, will not work for future schemas) * `value` with properties and sub-properties separated by dot (for example, `value.owningApp`)  Note that only fields included to the response via `fields` can be used for sorting. | query | Optional |
 | nextPageKey | string | The cursor for the next page of results. You can find it in the **nextPageKey** field of the previous response.  The first page is always returned if you don't specify the **nextPageKey** query parameter.  When the **nextPageKey** is set to obtain subsequent pages, you must omit all other query parameters. | query | Optional |
 | pageSize | integer | The amount of settings objects in a single response payload.  The maximal allowed page size is 500.  If not set, 100 is used. | query | Optional |
 | adminAccess | boolean | If set to true and user has settings:objects:admin permission, the endpoint will act as if the user is the owner of all objects | query | Optional |
@@ -60,7 +59,7 @@ A list of settings objects.
 
 | Element | Type | Description |
 | --- | --- | --- |
-| items | [SettingsObject[]](#openapi-definition-SettingsObject) | A list of settings objects. |
+| items | [SettingsObject](#openapi-definition-SettingsObject)[] | A list of settings objects. |
 | nextPageKey | string | The cursor for the next page of results. Has the value of `null` on the last page.  Use it in the **nextPageKey** query parameter to obtain subsequent pages of the result. |
 | pageSize | integer | The number of entries per page. |
 | totalCount | integer | The total number of entries in the result. |
@@ -83,11 +82,11 @@ A settings object.
 | resourceContext | [ResourceContext](#openapi-definition-ResourceContext) | The resource context, which contains additional permission information about the object. |
 | schemaId | string | The schema on which the object is based. |
 | schemaVersion | string | The version of the schema on which the object is based. |
-| scope | string | The scope that the object targets. For more details, please see [Dynatrace Documentationï»¿](https://dt-url.net/ky03459). |
+| scope | string | The scope that the object targets. For more details, please see [Dynatrace Documentation﻿](https://dt-url.net/ky03459). |
 | searchSummary | string | A searchable summary string of the setting value. Plain text without Markdown. |
 | summary | string | A short summary of settings. This can contain Markdown and will be escaped accordingly. |
 | updateToken | string | The update token of the object. You can use it to detect simultaneous modifications by different users.  It is generated upon retrieval (GET requests). If set on update (PUT request) or deletion, the update/deletion will be allowed only if there wasn't any change between the retrieval and the update.  If omitted on update/deletion, the operation overrides the current value or deletes it without any checks. |
-| value | string | The value of the setting.  It defines the actual values of settings' parameters.  The actual content depends on the object's schema. |
+| value | [AnyValue](#openapi-definition-AnyValue) | The value of the setting.  It defines the actual values of settings' parameters.  The actual content depends on the object's schema. |
 
 #### The `ModificationInfo` object
 
@@ -146,7 +145,7 @@ A schema representing an arbitrary value type.
 | Element | Type | Description |
 | --- | --- | --- |
 | code | integer | The HTTP status code |
-| constraintViolations | [ConstraintViolation[]](#openapi-definition-ConstraintViolation) | A list of constraint violations |
+| constraintViolations | [ConstraintViolation](#openapi-definition-ConstraintViolation)[] | A list of constraint violations |
 | message | string | The error message |
 
 #### The `ConstraintViolation` object
@@ -351,7 +350,15 @@ A list of constraint violations
 
 
 
-"value": "string"
+"value": {
+
+
+
+"autoMonitoring": true
+
+
+
+}
 
 
 

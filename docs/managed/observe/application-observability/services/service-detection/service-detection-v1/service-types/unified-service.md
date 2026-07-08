@@ -1,7 +1,6 @@
 ---
 title: Unified services
 source: https://docs.dynatrace.com/managed/observe/application-observability/services/service-detection/service-detection-v1/service-types/unified-service
-scraped: 2026-05-12T12:02:24.401298
 ---
 
 # Unified services
@@ -35,7 +34,7 @@ Legacy **span:services** were automatically migrated to SDv2 (**Unified service*
 
 This affects **span:services** (OTLP API ingested services) only, not **span (default) services** detected by OneAgent with the OpenTelemetry sensor, which will remain unchanged.
 
-For details, see the [Service Detection V2 (SDv2) Overviewï»¿](https://dt-url.net/b4030ff) post in the Dynatrace Community.
+For details, see the [Service Detection V2 (SDv2) Overview﻿](https://dt-url.net/b4030ff) post in the Dynatrace Community.
 
 ## Manage endpoint monitoring
 
@@ -45,7 +44,7 @@ Changes to endpoint metric-collection settings have billing implications.
 
 Metrics Classic billing
 
-The following table lists endpoint classic metrics; metrics that [consume DDUs](/managed/license/monitoring-consumption-classic/davis-data-units "Understand how Dynatrace monitoring consumption is calculated based on Davis data units (DDU).") are billed. For OneAgent-based data, these metrics aren't written.
+The following table lists endpoint classic metrics; metrics that [consume DDUs](/managed/license/classic-licensing/davis-data-units "Understand how Dynatrace monitoring consumption is calculated based on Davis data units (DDU).") are billed. For OneAgent-based data, these metrics aren't written.
 
 | Metric key | Name and description | Unit | Aggregations | Monitoring consumption |
 | --- | --- | --- | --- | --- |
@@ -64,6 +63,6 @@ To override endpoint monitoring for a specific unified service
 1. Go to **Services**.
 2. Optional On the **Services** page, in the **Service type** column, select the **Unified service** checkbox.
 3. Find and select the service for which you want to configure endpoint monitoring.
-4. On the service overview page, select **More** (**â¦**) > **Settings**.
+4. On the service overview page, select **More** (**…**) > **Settings**.
 5. On the **Service settings** page, select **Endpoint metrics**.
 6. On the **Unified services endpoint metrics** page, turn on/off **Enable endpoint metrics**.

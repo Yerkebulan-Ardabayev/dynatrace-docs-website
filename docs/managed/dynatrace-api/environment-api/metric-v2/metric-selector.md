@@ -1,7 +1,6 @@
 ---
 title: Metrics API - Metric selector
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/metric-v2/metric-selector
-scraped: 2026-05-12T11:12:04.270625
 ---
 
 # Metrics API - Metric selector
@@ -29,7 +28,7 @@ Many Dynatrace metrics can be referenced with finer granularity using dimensions
 * The primary dimension is **Host**
 * The secondary dimension is **Disk**
 
-Query a metric with the [GET metric descriptor](/managed/dynatrace-api/environment-api/metric-v2/get-descriptor "View the descriptor of a metric via Metrics v2 API.") call to obtain information about available dimensionsâyou can find them in the **dimensionDefinitions** field of the metric descriptor.
+Query a metric with the [GET metric descriptor](/managed/dynatrace-api/environment-api/metric-v2/get-descriptor "View the descriptor of a metric via Metrics v2 API.") call to obtain information about available dimensions—you can find them in the **dimensionDefinitions** field of the metric descriptor.
 
 Show descriptor example
 
@@ -121,9 +120,9 @@ The amount of raw data available in Dynatrace makes it challenging to present th
 
 Even if you don't specify any aggregation transformation, some aggregation applies nevertheless, using the *default transformation* of the metric. Applying the `auto` transformation has the same effect.
 
-Available aggregations vary for each metric. You can check the available aggregations (and the default aggregation) via the [GET metric descriptor](/managed/dynatrace-api/environment-api/metric-v2/get-descriptor "View the descriptor of a metric via Metrics v2 API.") callâlook for the **aggregationTypes** and **defaultAggregation** fields.
+Available aggregations vary for each metric. You can check the available aggregations (and the default aggregation) via the [GET metric descriptor](/managed/dynatrace-api/environment-api/metric-v2/get-descriptor "View the descriptor of a metric via Metrics v2 API.") call—look for the **aggregationTypes** and **defaultAggregation** fields.
 
-The resolution of the resulting time series depends on factors such as the query timeframe and the age of the data. You can, to an extent, control the resolution via the **resolution** query parameter of the [GET metric data points](/managed/dynatrace-api/environment-api/metric-v2/get-data-points "Read data points of one or multiple metrics via Metrics v2 API.") request. The finest available resolution is one minute. Additionally, you can aggregate all data points of a time series into a single data pointâuse the [**fold** transformation](#fold) for that.
+The resolution of the resulting time series depends on factors such as the query timeframe and the age of the data. You can, to an extent, control the resolution via the **resolution** query parameter of the [GET metric data points](/managed/dynatrace-api/environment-api/metric-v2/get-data-points "Read data points of one or multiple metrics via Metrics v2 API.") request. The finest available resolution is one minute. Additionally, you can aggregate all data points of a time series into a single data point—use the [**fold** transformation](#fold) for that.
 
 #### Example
 
@@ -717,7 +716,7 @@ builtin:host.cpu.usage:splitBy()
 
 ### Data filtering
 
-Another way to narrow down the data output is by applying the [**filter** transformation](#filter). For example, you can filter time series based on a certain thresholdâfor details, see the description of the [`series` condition](#series-condition).
+Another way to narrow down the data output is by applying the [**filter** transformation](#filter). For example, you can filter time series based on a certain threshold—for details, see the description of the [`series` condition](#series-condition).
 
 In combination with space aggregation, you can build powerful selectors like the one below, which reads the maximum pod count for the `preproduction` Kubernetes cluster split by a cloud application.
 
@@ -1550,7 +1549,7 @@ After fold transformation
 
 The **last** transformation returns the most recent data point from the query timeframe. To get the result in a specific aggregation, specify the aggregation as an argument. If the specified aggregation is not supported, the default aggregation is used. For example, `:last(median)` on a gauge metric equals to `:last(avg)` because median is not supported and avg is the default. If an aggregation has been applied in the transformation chain before, the argument is ignored.
 
-If the metric before transformation contains multiple tuples (unique combinations of metricâdimensionâdimension value), the most recent timestamp is applied for all tuples. To obtain the actual last timestamp, use the `lastReal` operator.
+If the metric before transformation contains multiple tuples (unique combinations of metric—dimension—dimension value), the most recent timestamp is applied for all tuples. To obtain the actual last timestamp, use the `lastReal` operator.
 
 Show example
 
@@ -1869,7 +1868,7 @@ After last transformation
 | Syntax | `:limit(2)` |
 | Argument | The maximum number of tuples in the result. |
 
-The **limit** transformation limits the number of tuples (unique combinations of metricâdimensionâdimension value) in the response. Only the first X tuples are included in the response; the rest are discarded.
+The **limit** transformation limits the number of tuples (unique combinations of metric—dimension—dimension value) in the response. Only the first X tuples are included in the response; the rest are discarded.
 
 To ensure that the required tuples are at the top of the result, apply the [**sort** transformation](#sort) before using the limit.
 
@@ -2487,7 +2486,7 @@ After parents transformation
 |  |  |
 | --- | --- |
 | Syntax | `:partition("<partition dimension key>",<partition1>,<partitionN>)` |
-| Arguments | * The key of the partition dimensionâthis is **not** an existing dimension, but a new one that the transformation will create.  Quotes (`"`) and tildes (`~`) that are part of the dimension key must be escaped with a tilde (`~`). * A list of partitions to be appliedâto learn how to specify them, see the [Partition syntax](#partition-syntax) section below. |
+| Arguments | * The key of the partition dimension—this is **not** an existing dimension, but a new one that the transformation will create.  Quotes (`"`) and tildes (`~`) that are part of the dimension key must be escaped with a tilde (`~`). * A list of partitions to be applied—to learn how to specify them, see the [Partition syntax](#partition-syntax) section below. |
 
 The **partition** transformation splits data points of a series based on the specified criteria. It introduces a new dimension (the partition dimension), with the value determined by a partition criterion. Data points from the original series are distributed between one or several new series according to partition criteria. In each new series, data points that don't pass the criterion or are already taken by another criterion are replaced with `null`.
 
@@ -2536,7 +2535,7 @@ The following criteria are available.
 | `suffix("<dimension>","<expected suffix>")` | Matches if the value of the specified dimension ends with the expected suffix. |
 | `contains("<dimension>","<expected contained>")` | Matches if the value of the specified dimension contains the expected value. |
 | `eq("<dimension>","<expected value>")` | Matches if the value of the specified dimension equals the expected value. |
-| `ne("<dimension>","<value to be excluded>")` | The reverse of the `eq` conditionâthe dimension with the specified name is **excluded** from the response. |
+| `ne("<dimension>","<value to be excluded>")` | The reverse of the `eq` condition—the dimension with the specified name is **excluded** from the response. |
 | `or(<criterion1>,<criterionN>)` | At least one sub-criterion must be fulfilled. |
 | `and(<criterion1>,<criterionN>)` | All sub-criteria must be fulfilled. |
 | `not(<criterion>)` | Negated criterion matching all values that **do not** fulfill the criterion |
@@ -2547,7 +2546,7 @@ The following criteria are available.
 otherwise("<partition dimension value>")
 ```
 
-A universal operator matching all valuesâuse it at the end of a partition chain as the default case.
+A universal operator matching all values—use it at the end of a partition chain as the default case.
 
 Show example
 
@@ -3168,7 +3167,7 @@ After smooth transformation
 | Syntax | `:sort(<sorting key 1>,<sorting key 2>)` |
 | Arguments | One or several sorting keys. |
 
-The **sort** transformation specifies the order of tuples (unique combinations of metricâdimensionâdimension value) in the response. You can specify one or several sorting criteria. The first criterion is used for sorting. Further criteria are used for tie-breaking. You can choose the direction of the sort:
+The **sort** transformation specifies the order of tuples (unique combinations of metric—dimension—dimension value) in the response. You can specify one or several sorting criteria. The first criterion is used for sorting. Further criteria are used for tie-breaking. You can choose the direction of the sort:
 
 * `ascending`
 * `descending`
@@ -4098,4 +4097,4 @@ You must apply an [aggregation transformation](#aggregation) before using the un
 
 * [Data Explorer](/managed/analyze-explore-automate/explorer "Query for metrics and transform results to gain desired insights.")
 * [Environment API v2 - Entity selector](/managed/dynatrace-api/environment-api/entity-v2/entity-selector "Configure the entity selector for Environment API endpoints.")
-* [[GitHub] Examples of metric selector queriesï»¿](https://dt-url.net/metric-selector-by-example)
+* [[GitHub] Examples of metric selector queries﻿](https://dt-url.net/metric-selector-by-example)

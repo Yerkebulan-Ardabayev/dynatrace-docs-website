@@ -1,7 +1,6 @@
 ---
 title: Monitor AWS Fargate
 source: https://docs.dynatrace.com/managed/ingest-from/amazon-web-services/integrate-into-aws/aws-fargate
-scraped: 2026-05-12T11:11:07.901539
 ---
 
 # Monitor AWS Fargate
@@ -34,7 +33,7 @@ Kubernetes version 1.20+
 
 On AWS Fargate, only the `applicationMonitoring` deployment without the CSI driver is supported.
 
-Before you start installation, make sure you have a running AWS Fargate cluster. For details, see [Getting started with AWS Fargate using Amazon EKSï»¿](https://dt-url.net/zg034ha).
+Before you start installation, make sure you have a running AWS Fargate cluster. For details, see [Getting started with AWS Fargate using Amazon EKS﻿](https://dt-url.net/zg034ha).
 
 1. Add a Fargate profile to define the Dynatrace Operator deployment.
 
@@ -56,7 +55,7 @@ Before you start installation, make sure you have a running AWS Fargate cluster.
    ```
    kubectl -n dynatrace create secret generic dynakube --from-literal="apiToken=<API_TOKEN>"
    ```
-5. Download the [preconfigured DynaKube custom resource sample file from GitHubï»¿](https://dt-url.net/dynakube-applicationmonitoring).
+5. Download the [preconfigured DynaKube custom resource sample file from GitHub﻿](https://dt-url.net/dynakube-applicationmonitoring).
 6. Review the [available parameters](/managed/ingest-from/setup-on-k8s/reference/dynakube-parameters "List the available parameters for setting up Dynatrace Operator on Kubernetes."), and adapt the DynaKube custom resource according to your requirements.
 7. Apply the DynaKube custom resource.
 
@@ -347,11 +346,11 @@ See [network zones](/managed/manage/network-zones "Find out how network zones wo
 
 ## Monitoring consumption
 
-For AWS Fargate, monitoring consumption is based on host units. To learn how host units are calculated for Dynatrace application and infrastructure monitoring, see [Application and Infrastructure Monitoring (Host Units)](/managed/license/monitoring-consumption-classic/application-and-infrastructure-monitoring "Understand how Dynatrace application and infrastructure monitoring consumption is calculated based on host units.").
+For AWS Fargate, monitoring consumption is based on host units. To learn how host units are calculated for Dynatrace application and infrastructure monitoring, see [Application and Infrastructure Monitoring (Host Units)](/managed/license/classic-licensing/application-and-infrastructure-monitoring "Understand how Dynatrace application and infrastructure monitoring consumption is calculated based on host units.").
 
 ## Troubleshooting
 
-* [Application image OneAgent integration problemsï»¿](https://dt-url.net/yu23mli)
+* [Application image OneAgent integration problems﻿](https://dt-url.net/yu23mli)
 
 ## Related topics
 

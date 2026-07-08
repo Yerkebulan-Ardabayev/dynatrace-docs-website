@@ -1,7 +1,6 @@
 ---
 title: Monitored entities API - GET entity type
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/entity-v2/get-entity-type
-scraped: 2026-05-12T11:57:08.321457
 ---
 
 # Monitored entities API - GET entity type
@@ -54,11 +53,11 @@ A list of properties of the monitored entity type.
 | dimensionKey | string | The dimension key used within metrics for this monitored entity. |
 | displayName | string | The display name of the monitored entity. |
 | entityLimitExceeded | boolean | Indicates whether the entity creation limit for this type has been exceeded. When true, Dynatrace automatically triggers a cleanup process for this entity type. New entities will still be created, and no action is required. This applies only for builtin-types. For generic types creation and update gets blocked. You can recognize a generic type by containing ':' in the name for example my:type. |
-| fromRelationships | [ToPosition[]](#openapi-definition-ToPosition) | A list of possible relationships where the monitored entity type occupies the FROM position |
+| fromRelationships | [ToPosition](#openapi-definition-ToPosition)[] | A list of possible relationships where the monitored entity type occupies the FROM position |
 | managementZones | string | The placeholder for the list of management zones of an actual entity. |
-| properties | [EntityTypePropertyDto[]](#openapi-definition-EntityTypePropertyDto) | A list of additional properties of the monitored entity type. |
+| properties | [EntityTypePropertyDto](#openapi-definition-EntityTypePropertyDto)[] | A list of additional properties of the monitored entity type. |
 | tags | string | The placeholder for the list of tags of an actual entity. |
-| toRelationships | [FromPosition[]](#openapi-definition-FromPosition) | A list of possible relationships where the monitored entity type occupies the TO position. |
+| toRelationships | [FromPosition](#openapi-definition-FromPosition)[] | A list of possible relationships where the monitored entity type occupies the TO position. |
 | type | string | The type of the monitored entity. |
 
 #### The `ToPosition` object

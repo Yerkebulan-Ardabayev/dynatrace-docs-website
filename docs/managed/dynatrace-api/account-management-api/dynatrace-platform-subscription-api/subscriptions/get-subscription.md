@@ -1,7 +1,6 @@
 ---
 title: Dynatrace Platform Subscription API - GET a subscription
 source: https://docs.dynatrace.com/managed/dynatrace-api/account-management-api/dynatrace-platform-subscription-api/subscriptions/get-subscription
-scraped: 2026-05-12T11:24:37.078632
 ---
 
 # Dynatrace Platform Subscription API - GET a subscription
@@ -28,7 +27,7 @@ To execute this request, you need the **Allow read access for usage and consumpt
 | Parameter | Type | Description | In | Required |
 | --- | --- | --- | --- | --- |
 | accountUuid | string | The ID of the required account.  You can find the UUID on the **Account Management** > **Identity & access management** > **OAuth clients** page, during creation of an OAuth client. | path | Required |
-| subscriptionUuid | string | The UUID of the requested subscription.  Fetch the list of subscriptions via the [GET all subscriptionsï»¿](https://dt-url.net/jq03jvq) request. | path | Required |
+| subscriptionUuid | string | The UUID of the requested subscription.  Fetch the list of subscriptions via the [GET all subscriptions﻿](https://dt-url.net/jq03jvq) request. | path | Required |
 
 ## Response
 
@@ -59,8 +58,8 @@ To execute this request, you need the **Allow read access for usage and consumpt
 | account | [SubscriptionAccountDto](#openapi-definition-SubscriptionAccountDto) | The account associated with the subscription. |
 | budget | [SubscriptionBudgetDto](#openapi-definition-SubscriptionBudgetDto) | The budget associated with the subscription. |
 | currentPeriod | [SubscriptionCurrentPeriodDto](#openapi-definition-SubscriptionCurrentPeriodDto) | The current period associated with the subscription. |
-| periods | [SubscriptionPeriodDto[]](#openapi-definition-SubscriptionPeriodDto) | A list of subscription periods. |
-| capabilities | [SubscriptionCapabilityDto[]](#openapi-definition-SubscriptionCapabilityDto) | A list of subscription capabilities. |
+| periods | [SubscriptionPeriodDto](#openapi-definition-SubscriptionPeriodDto)[] | A list of subscription periods. |
+| capabilities | [SubscriptionCapabilityDto](#openapi-definition-SubscriptionCapabilityDto)[] | A list of subscription capabilities. |
 
 #### The `SubscriptionAccountDto` object
 

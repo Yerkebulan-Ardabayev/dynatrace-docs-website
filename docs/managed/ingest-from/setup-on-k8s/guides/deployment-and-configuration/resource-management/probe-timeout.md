@@ -1,7 +1,6 @@
 ---
 title: Fix probe timeouts due to OneAgent injection
 source: https://docs.dynatrace.com/managed/ingest-from/setup-on-k8s/guides/deployment-and-configuration/resource-management/probe-timeout
-scraped: 2026-05-12T12:09:24.365725
 ---
 
 # Fix probe timeouts due to OneAgent injection

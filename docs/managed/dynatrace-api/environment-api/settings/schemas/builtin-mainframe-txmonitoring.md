@@ -1,7 +1,6 @@
 ---
 title: Settings API - Transaction monitoring schema table
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/settings/schemas/builtin-mainframe-txmonitoring
-scraped: 2026-05-12T11:40:01.635572
 ---
 
 # Settings API - Transaction monitoring schema table

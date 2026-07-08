@@ -1,7 +1,6 @@
 ---
 title: Mobile app metrics API
 source: https://docs.dynatrace.com/managed/dynatrace-api/configuration-api/calculated-metrics/mobile-app-metrics
-scraped: 2026-05-12T11:04:30.404212
 ---
 
 # Mobile app metrics API

@@ -1,7 +1,6 @@
 ---
 title: Settings API - Connections to Azure environments schema table
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/settings/schemas/builtin-hyperscaler-authentication-connections-azure
-scraped: 2026-05-12T11:41:34.393766
 ---
 
 # Settings API - Connections to Azure environments schema table

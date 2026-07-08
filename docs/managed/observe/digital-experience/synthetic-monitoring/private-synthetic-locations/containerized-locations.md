@@ -1,16 +1,15 @@
 ---
-title: Containerized, auto-scalable private Synthetic locations on Kubernetes
+title: Containerized, auto-scalable private Synthetic locations on Kubernetes in Classic
 source: https://docs.dynatrace.com/managed/observe/digital-experience/synthetic-monitoring/private-synthetic-locations/containerized-locations
-scraped: 2026-05-12T11:32:00.213007
 ---
 
-# Containerized, auto-scalable private Synthetic locations on Kubernetes
+# Containerized, auto-scalable private Synthetic locations on Kubernetes in Classic
 
-# Containerized, auto-scalable private Synthetic locations on Kubernetes
+# Containerized, auto-scalable private Synthetic locations on Kubernetes in Classic
 
 * How-to guide
 * 26-min read
-* Updated on May 04, 2026
+* Updated on Jun 24, 2026
 
 Dynatrace version 1.264+
 
@@ -50,14 +49,14 @@ Locations are scaled automatically by adjusting the number of ActiveGates per lo
 
   The metric adapter is configured to communicate with a single Dynatrace environment.
 
-  Installing a Synthetic metric adapter requires [super-user roles in Kubernetesï»¿](https://kubernetes.io/docs/reference/access-authn-authz/rbac/#user-facing-roles)âsee [Install a containerized location](#install) below.
+  Installing a Synthetic metric adapter requires [super-user roles in Kubernetes﻿](https://kubernetes.io/docs/reference/access-authn-authz/rbac/#user-facing-roles)—see [Install a containerized location](#install) below.
 * The **horizontal pod auto-scaler** scales a location by adjusting the number of ActiveGates based on the utilization data it receives from the Synthetic metric adapter.
 
   There is one horizontal pod auto-scaler per location.
 
-![Containerized locations for Synthetic Monitoring](https://cdn.bfldr.com/B686QPH3/as/skwmcbgm4knw3kshcxp34gq/Containerized_locations_for_synthetic_monitoring_-_Light_Mode?auto=webp&format=png&position=1)
+![Containerized locations for Synthetic Monitoring Classic](https://cdn.bfldr.com/B686QPH3/as/skwmcbgm4knw3kshcxp34gq/Containerized_locations_for_synthetic_monitoring_-_Light_Mode?auto=webp&format=png&position=1)
 
-Containerized locations for Synthetic Monitoring
+Containerized locations for Synthetic Monitoring Classic
 
 ## Requirements
 
@@ -67,7 +66,7 @@ Containerized private Synthetic locations are supported with Dynatrace version 1
 * All kinds of Kubernetes implementations are supported, whether cloud or local (for example, Amazon EKS or Minikube).
 * OpenShift versions compatible with the supported Kubernetes versions are supported.
 
-Internet connectivity is required to access the public repositories where Docker images for the Synthetic-enabled ActiveGate and Synthetic metric adapter are available. These image locations are referenced in the respective template filesâsee [Install a containerized location](#install) and [Update a containerized location](#update) below.
+Internet connectivity is required to access the public repositories where Docker images for the Synthetic-enabled ActiveGate and Synthetic metric adapter are available. These image locations are referenced in the respective template files—see [Install a containerized location](#install) and [Update a containerized location](#update) below.
 
 ### Sizing guide
 
@@ -87,33 +86,33 @@ M node
 |  | Browser-supporting pod | Browserless pod | Browser-supporting pod in FIPS mode | Browser-supporting pod in FIPS mode with corporate proxy |  | ActiveGate | Synthetic Engine | Browser worker | FIPS proxy | FIPS peer |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | Containers | 4 | 2 | 5 | 6 |  | 1 | 1 | 2 | 1 | 1 |
-| CPU requests | 1.4 vCPU | 0.4 vCPU | 1.9 vCPU | 2.05 vCPU |  | 0.3 vCPU | 0.25 vCPU | 2 Ã 0.5 vCPU | 0.5 vCPU | 0.15 vCPU |
-| CPU limits | 3.8 vCPU | 0.8 vCPU | 5.3 vCPU | 5.6 vCPU |  | 0.3 vCPU | 0.5 vCPU | 2 Ã 1.5 vCPU | 1.5 vCPU | 0.3 vCPU |
-| RAM requests | 3.25 GiB | 1.25 GiB | 3.5 GiB | 3.75 GiB |  | 0.25 GiB | 1 GiB | 2 Ã 1 GiB | 0.25 GiB | 0.25 GiB |
-| RAM limits | 7 GiB | 3 GiB | 7.5 GiB | 8 GiB |  | 1 GiB | 2 GiB | 2 Ã 2 GiB | 0.5 GiB | 0.5 GiB |
-| Ephemeral storage | 1.5 GiB | 1.3 GiB | 1.6 GiB | 1.7 GiB |  | 1.2 GiB | 0.1 GiB | 2 Ã 0.1 GiB | 0.1 GiB | 0.1 GiB |
+| CPU requests | 1.4 vCPU | 0.4 vCPU | 1.9 vCPU | 2.05 vCPU |  | 0.3 vCPU | 0.25 vCPU | 2 × 0.5 vCPU | 0.5 vCPU | 0.15 vCPU |
+| CPU limits | 3.8 vCPU | 0.8 vCPU | 5.3 vCPU | 5.6 vCPU |  | 0.3 vCPU | 0.5 vCPU | 2 × 1.5 vCPU | 1.5 vCPU | 0.3 vCPU |
+| RAM requests | 3.25 GiB | 1.25 GiB | 3.5 GiB | 3.75 GiB |  | 0.25 GiB | 1 GiB | 2 × 1 GiB | 0.25 GiB | 0.25 GiB |
+| RAM limits | 7 GiB | 3 GiB | 7.5 GiB | 8 GiB |  | 1 GiB | 2 GiB | 2 × 2 GiB | 0.5 GiB | 0.5 GiB |
+| Ephemeral storage | 1.5 GiB | 1.3 GiB | 1.6 GiB | 1.7 GiB |  | 1.2 GiB | 0.1 GiB | 2 × 0.1 GiB | 0.1 GiB | 0.1 GiB |
 | Persistent storage | 3 GiB | 3 GiB | 3 GiB | 3 GiB |  |  |  |  |  |  |
 | RAM disk | 1 GiB | - | 1 GiB | 1 GiB |  |  |  |  |  |  |
 
 |  | Browser-supporting pod | Browserless pod | Browser-supporting pod in FIPS mode | Browser-supporting pod in FIPS mode with corporate proxy |  | ActiveGate | Synthetic Engine | Browser worker | FIPS proxy | FIPS peer |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | Containers | 6 | 2 | 7 | 8 |  | 1 | 1 | 4 | 1 | 1 |
-| CPU requests | 2.65 vCPU | 0.65 vCPU | 3.15 vCPU | 3.3 vCPU |  | 0.3 vCPU | 0.5 vCPU | 4 Ã 0.5 vCPU | 0.5 vCPU | 0.15 vCPU |
-| CPU limits | 7.3 vCPU | 1.3 vCPU | 8.8 vCPU | 9.1 vCPU |  | 0.3 vCPU | 1 vCPU | 4 Ã 1.5 vCPU | 1.5 vCPU | 0.3 vCPU |
-| RAM requests | 5.75 GiB | 1.75 GiB | 6 GiB | 6.25 GiB |  | 0.25 GiB | 1.5 GiB | 4 Ã 1 GiB | 0.25 GiB | 0.25 GiB |
-| RAM limits | 12 GiB | 4 GiB | 12.5 GiB | 13 GiB |  | 1 GiB | 3 GiB | 4 Ã 2 GiB | 0.5 GiB | 0.5 GiB |
-| Ephemeral storage | 1.7 GiB | 1.3 GiB | 1.8 GiB | 1.9 GiB |  | 1.2 GiB | 0.1 GiB | 4 Ã 0.1 GiB | 0.1 GiB | 0.1 GiB |
+| CPU requests | 2.65 vCPU | 0.65 vCPU | 3.15 vCPU | 3.3 vCPU |  | 0.3 vCPU | 0.5 vCPU | 4 × 0.5 vCPU | 0.5 vCPU | 0.15 vCPU |
+| CPU limits | 7.3 vCPU | 1.3 vCPU | 8.8 vCPU | 9.1 vCPU |  | 0.3 vCPU | 1 vCPU | 4 × 1.5 vCPU | 1.5 vCPU | 0.3 vCPU |
+| RAM requests | 5.75 GiB | 1.75 GiB | 6 GiB | 6.25 GiB |  | 0.25 GiB | 1.5 GiB | 4 × 1 GiB | 0.25 GiB | 0.25 GiB |
+| RAM limits | 12 GiB | 4 GiB | 12.5 GiB | 13 GiB |  | 1 GiB | 3 GiB | 4 × 2 GiB | 0.5 GiB | 0.5 GiB |
+| Ephemeral storage | 1.7 GiB | 1.3 GiB | 1.8 GiB | 1.9 GiB |  | 1.2 GiB | 0.1 GiB | 4 × 0.1 GiB | 0.1 GiB | 0.1 GiB |
 | Persistent storage | 6 GiB | 6 GiB | 6 GiB | 6 GiB |  |  |  |  |  |  |
 | RAM disk | 2 GiB | - | 2 GiB | 2 GiB |  |  |  |  |  |  |
 
 |  | Browser-supporting pod | Browserless pod | Browser-supporting pod in FIPS mode | Browser-supporting pod in FIPS mode with corporate proxy |  | ActiveGate | Synthetic Engine | Browser worker | FIPS proxy | FIPS peer |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | Containers | 14 | 2 | 15 | 16 |  | 1 | 1 | 12 | 1 | 1 |
-| CPU requests | 7.15 vCPU | 1.15 vCPU | 7.65 vCPU | 7.8 vCPU |  | 0.3 vCPU | 1 vCPU | 12 Ã 0.5 vCPU | 0.5 vCPU | 0.15 vCPU |
-| CPU limits | 20.3 vCPU | 2.3 vCPU | 21.8 vCPU | 22.1 vCPU |  | 0.3 vCPU | 2 vCPU | 12 Ã 1.5 vCPU | 1.5 vCPU | 0.3 vCPU |
-| RAM requests | 14.25 GiB | 2.25 GiB | 14.5 GiB | 14.75 GiB |  | 0.25 GiB | 2 GiB | 12 Ã 1 GiB | 0.25 GiB | 0.25 GiB |
-| RAM limits | 29 GiB | 5 GiB | 29.5 GiB | 30 GiB |  | 1 GiB | 4 GiB | 12 Ã 2 GiB | 0.5 GiB | 0.5 GiB |
-| Ephemeral storage | 2.5 GiB | 1.3 GiB | 2.6 GiB | 2.7 GiB |  | 1.2 GiB | 0.1 GiB | 12 Ã 0.1 GiB | 0.1 GiB | 0.1 GiB |
+| CPU requests | 7.15 vCPU | 1.15 vCPU | 7.65 vCPU | 7.8 vCPU |  | 0.3 vCPU | 1 vCPU | 12 × 0.5 vCPU | 0.5 vCPU | 0.15 vCPU |
+| CPU limits | 20.3 vCPU | 2.3 vCPU | 21.8 vCPU | 22.1 vCPU |  | 0.3 vCPU | 2 vCPU | 12 × 1.5 vCPU | 1.5 vCPU | 0.3 vCPU |
+| RAM requests | 14.25 GiB | 2.25 GiB | 14.5 GiB | 14.75 GiB |  | 0.25 GiB | 2 GiB | 12 × 1 GiB | 0.25 GiB | 0.25 GiB |
+| RAM limits | 29 GiB | 5 GiB | 29.5 GiB | 30 GiB |  | 1 GiB | 4 GiB | 12 × 2 GiB | 0.5 GiB | 0.5 GiB |
+| Ephemeral storage | 2.5 GiB | 1.3 GiB | 2.6 GiB | 2.7 GiB |  | 1.2 GiB | 0.1 GiB | 12 × 0.1 GiB | 0.1 GiB | 0.1 GiB |
 | Persistent storage | 12 GiB | 12 GiB | 12 GiB | 12 GiB |  |  |  |  |  |  |
 | RAM disk | 4 GiB | - | 4 GiB | 4 GiB |  |  |  |  |  |  |
 
@@ -132,7 +131,7 @@ M node
 #### Locations
 
 * We recommend installing each location in its own namespace.
-* If deploying more than one location per namespace, use different names for the respective ActiveGate resourcesâsee [Install a containerized location](#install) below.
+* If deploying more than one location per namespace, use different names for the respective ActiveGate resources—see [Install a containerized location](#install) below.
 * Locations that share a single Kubernetes namespace must be connected to the same Dynatrace environment as the Synthetic metric adapter in order to be auto-scalable. For example, assume that Location A and the metric adapter are configured for Environment X. However, Location A shares a namespace with Location B, which is configured for Environment Y. In such a case, Location A is auto-scalable; Location B is not auto-scalable.
 * If you want to install a location in the same namespace as other Dynatrace resources such as [Dynatrace Operator](/managed/ingest-from/setup-on-k8s/guides/deployment-and-configuration/resource-management/dto-resource-limits "Set resource limits for Dynatrace Operator components."), be aware of the more demanding [hardware and system requirements](#requirements) for containerized Synthetic-enabled ActiveGates.
 
@@ -144,9 +143,9 @@ M node
 
 ### Auto-scaling specifics
 
-For auto-scaling purposes, the Synthetic metric adapter needs access to and extends the Kubernetes API by specifying a new API serviceâ`v1beta1.external.metrics.k8s.io`.
+For auto-scaling purposes, the Synthetic metric adapter needs access to and extends the Kubernetes API by specifying a new API service—`v1beta1.external.metrics.k8s.io`.
 
-This API service is defined in the Synthetic metric adapter templateâsee [Install and deploy a containerized location](#install) below.
+This API service is defined in the Synthetic metric adapter template—see [Install and deploy a containerized location](#install) below.
 
 API service definition in the metric adapter template
 
@@ -202,7 +201,7 @@ groupPriorityMinimum: 100
 versionPriority: 100
 ```
 
-The Synthetic metric adapter also modifies an existing resource in its templateâthe `horizontal-pod-autoscaler` ServiceAccount in `kube-system` namespace.
+The Synthetic metric adapter also modifies an existing resource in its template—the `horizontal-pod-autoscaler` ServiceAccount in `kube-system` namespace.
 
 Existing resource modification in the metric adapter template
 
@@ -260,8 +259,6 @@ Note that only one external metric server is allowed in the Kubernetes cluster. 
 
 ## Install a containerized location
 
-You can install a containerized location only in the previous Dynatrace. In the latest Dynatrace, the containerized locations are available only in view mode.
-
 Set up and manage a containerized location in the Dynatrace web UI at **Settings** > **Web and Mobile monitoring** > **Private Synthetic locations**.
 
 ### 1. Initial setup for a Kubernetes/OpenShift location
@@ -274,7 +271,7 @@ Set up and manage a containerized location in the Dynatrace web UI at **Settings
    1. Specify a **Minimum** and **Maximum number of ActiveGates** for your location. These settings are the auto-scaling parameters that the [horizontal pod auto-scaler](#architecture) uses.
    2. Select an ActiveGate **Node size** (`XS`, `S`, or `M`). See also [Requirements](#requirements) and [Best practices and caveats](#recommend).
    3. The **Deployment platform** is preselected based on your selection of Kubernetes or OpenShift.
-5. Kubernetes only If your Kubernetes implementation is based on a later release than 1.21â1.25, turn on **Use Kubernetes version 1.26+**. See also [Requirements](#requirements) and [Best practices and caveats](#recommend).
+5. Kubernetes only If your Kubernetes implementation is based on a later release than 1.21–1.25, turn on **Use Kubernetes version 1.26+**. See also [Requirements](#requirements) and [Best practices and caveats](#recommend).
 
    If you change this setting after downloading the location template, you need to repeat the deployment procedure.
 6. Optional You can turn off support for browser monitors. If you do so, the ActiveGate node will be treated as [browserless](#browserless).
@@ -332,7 +329,7 @@ Select your location in **Private Synthetic locations** to download the location
 This procedure generates a separate template for the Synthetic metric adapter. You then execute generated commands on your Kubernetes cluster to deploy the metric adapter.
 
 * You need to deploy the Synthetic metric adapter just once per Kubernetes cluster.
-* Installing a Synthetic metric adapter requires a [Kubernetes super-user roleï»¿](https://kubernetes.io/docs/reference/access-authn-authz/rbac/#user-facing-roles) to create ClusterRoles and ClusterRoleBindings.
+* Installing a Synthetic metric adapter requires a [Kubernetes super-user role﻿](https://kubernetes.io/docs/reference/access-authn-authz/rbac/#user-facing-roles) to create ClusterRoles and ClusterRoleBindings.
 
 1. In the **Deployment** section, create a **Metrics token** (**Create token**) or paste an existing token. The metric token is an [access token](/managed/manage/identity-access-management/access-tokens-and-oauth-clients/access-tokens "Learn the concept of an access token and its scopes.") for fetching utilization data from Dynatrace. Existing tokens are listed on the **Access tokens** page.
 2. Provide a **Metric adapter namespace** name or use the default. (Leave the **Location namespace** and **ActiveGate name** as is. These fields are only necessary for generating the [template for the location](#deploy-location).)
@@ -397,8 +394,6 @@ This procedure generates a separate template for the Synthetic metric adapter. Y
 
 ## Update a containerized location or its ActiveGates
 
-You can update a containerized location or its ActiveGates only in the previous Dynatrace. In the latest Dynatrace, the containerized locations are available only in view mode.
-
 Any updates to a location require that you download the location template file again and apply the changes via kubectl.
 
 **To update ActiveGate versions**
@@ -421,8 +416,6 @@ Any update redeploys ActiveGates in the reverse order of their deployment. For e
 The redeployed ActiveGate pod uses the same persistent volume deployed for log continuity.
 
 ## Delete a location or metric adapter on Kubernetes
-
-The snippets for deleting a location or a metric adapter on Kubernetes can be generated only in the previous Dynatrace.
 
 The commands generated when [deploying a location](#deploy-location) and [the Synthetic metric adapter](#deploy-adapter) also include code snippets for deleting them on Kubernetes. You may copy and store these commands for future reference.
 
@@ -511,12 +504,12 @@ Nodes with the same zone label will be deployed in the same availability zone an
 
 Each cloud service provides its own shared storage systems options. To explain how to use shared storage systems, we will use AWS EFS as the example. For information about storage systems used by other cloud storage providers, see:
 
-* Google Cloud: [About Filestore support for Google Kubernetes Engineï»¿](https://cloud.google.com/kubernetes-engine/docs/concepts/filestore-for-gke)
-* Azure Storage: [What is Azure Files?ï»¿](https://learn.microsoft.com/en-us/azure/storage/files/storage-files-introduction)
+* Google Cloud: [About Filestore support for Google Kubernetes Engine﻿](https://cloud.google.com/kubernetes-engine/docs/concepts/filestore-for-gke)
+* Azure Storage: [What is Azure Files?﻿](https://learn.microsoft.com/en-us/azure/storage/files/storage-files-introduction)
 
-  The standard SMB/CIFS driver is not supported for Azure Files. For details, see [Pod crashes when modifying file permissions when backed by Azure Files storageï»¿](https://access.redhat.com/solutions/7078656).
+  The standard SMB/CIFS driver is not supported for Azure Files. For details, see [Pod crashes when modifying file permissions when backed by Azure Files storage﻿](https://access.redhat.com/solutions/7078656).
 
-We assume that you already have EFS that you can use. If you don't, see [Getting started with Amazon EFSï»¿](https://dt-url.net/vq02epe) to learn how to set up EFS.
+We assume that you already have EFS that you can use. If you don't, see [Getting started with Amazon EFS﻿](https://dt-url.net/vq02epe) to learn how to set up EFS.
 
 Be aware that EFS may be more expensive than EBS. Check pricing.
 
@@ -847,7 +840,7 @@ The recommended solution is to prepare a custom Security Context Constraint.
 If the OpenShift cluster is deployed as an Azure Red Hat OpenShift (ARO) resource, by default, the Network Security Group won't allow ICMP traffic outside the cluster.
 
 The AROs Network Security Group is not modifiable, but a custom NSG can be created and imported during the ARO cluster creation.
-To learn more about it, see [Bring your own Network Security Group (NSG) to an Azure Red Hat OpenShift (ARO) clusterï»¿](https://learn.microsoft.com/en-us/azure/openshift/howto-bring-nsg).
+To learn more about it, see [Bring your own Network Security Group (NSG) to an Azure Red Hat OpenShift (ARO) cluster﻿](https://learn.microsoft.com/en-us/azure/openshift/howto-bring-nsg).
 
 Running the cluster with default settings will only allow for using ICMP NAM monitors for resources inside the OpenShift cluster. Any requests going outside the cluster will fail.
 
@@ -964,7 +957,7 @@ In general, we recommend the deployment of complete synthetic private locations 
 
 If you don't need to run browser monitors, consider deploying your location in browserless mode. This mode deploys the location (or ActiveGate belonging to it) without a browser, reducing hardware requirements. However, browser monitors can't run on a browserless location.
 
-Consider browserless locations as an alternative to synthetic private locations with browser monitor support when youâre focused purely on:
+Consider browserless locations as an alternative to synthetic private locations with browser monitor support when you’re focused purely on:
 
 * Network and infrastructure use cases (using NAM monitors)
 * API monitoring (using HTTP monitors)
@@ -1182,7 +1175,7 @@ value: "http://proxyuser:proxypass@10.102.43.210:3128"
 value: "172.20.0.0/16"  # do not proxy internal calls to Kubernetes cluster
 ```
 
-For more details about these environment variables see [Go httpproxy package documentationï»¿](https://pkg.go.dev/golang.org/x/net/http/httpproxy#Config).
+For more details about these environment variables see [Go httpproxy package documentation﻿](https://pkg.go.dev/golang.org/x/net/http/httpproxy#Config).
 
 The way of obtaining Service CIDR depends on Kubernetes distribution, for example for AWS EKS the following command can be used:
 

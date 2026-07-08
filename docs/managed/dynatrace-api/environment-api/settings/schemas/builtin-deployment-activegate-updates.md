@@ -1,7 +1,6 @@
 ---
 title: Settings API - ActiveGate updates schema table
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/settings/schemas/builtin-deployment-activegate-updates
-scraped: 2026-05-12T11:39:02.591534
 ---
 
 # Settings API - ActiveGate updates schema table
@@ -12,7 +11,7 @@ scraped: 2026-05-12T11:39:02.591534
 
 ### ActiveGate updates (`builtin:deployment.activegate.updates)`
 
-Configure ActiveGate update behavior. To learn more about the latest updates, visit [ActiveGate release notesï»¿](https://dt-url.net/release-notes-activegate).
+Configure ActiveGate update behavior. To learn more about the latest updates, visit [ActiveGate release notes﻿](https://dt-url.net/release-notes-activegate).
 
 | Schema ID | Schema groups | Scope |
 | --- | --- | --- |

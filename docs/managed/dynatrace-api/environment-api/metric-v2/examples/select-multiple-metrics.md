@@ -1,7 +1,6 @@
 ---
 title: Metrics API examples - Select multiple metrics
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/metric-v2/examples/select-multiple-metrics
-scraped: 2026-05-12T12:10:04.516117
 ---
 
 # Metrics API examples - Select multiple metrics

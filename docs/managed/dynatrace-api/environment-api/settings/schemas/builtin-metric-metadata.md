@@ -1,7 +1,6 @@
 ---
 title: Settings API - Metric metadata schema table
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/settings/schemas/builtin-metric-metadata
-scraped: 2026-05-12T11:49:06.700625
 ---
 
 # Settings API - Metric metadata schema table
@@ -12,7 +11,7 @@ scraped: 2026-05-12T11:49:06.700625
 
 ### Metric metadata (`builtin:metric.metadata)`
 
-[Custom metrics metadataï»¿](https://dt-url.net/k603stq "Custom metrics metadata") allows you to provide additional information for your metric.
+[Custom metrics metadata﻿](https://dt-url.net/k603stq "Custom metrics metadata") allows you to provide additional information for your metric.
 
 | Schema ID | Schema groups | Scope |
 | --- | --- | --- |

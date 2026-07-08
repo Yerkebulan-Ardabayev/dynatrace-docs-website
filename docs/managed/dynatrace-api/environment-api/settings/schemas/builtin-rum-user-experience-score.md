@@ -1,7 +1,6 @@
 ---
 title: Settings API - User experience score schema table
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/settings/schemas/builtin-rum-user-experience-score
-scraped: 2026-05-12T11:45:48.369609
 ---
 
 # Settings API - User experience score schema table
@@ -12,7 +11,7 @@ scraped: 2026-05-12T11:45:48.369609
 
 ### User experience score (`builtin:rum.user-experience-score)`
 
-A [user experience scoreï»¿](https://dt-url.net/39034wt) is calculated for each user session. Scores reflect the overall performance, usability, and detected errors of each session. Experiences are classified as either Satisfying, Tolerable, or Frustrating.
+A [user experience score﻿](https://dt-url.net/39034wt) is calculated for each user session. Scores reflect the overall performance, usability, and detected errors of each session. Experiences are classified as either Satisfying, Tolerable, or Frustrating.
 
 | Schema ID | Schema groups | Scope |
 | --- | --- | --- |

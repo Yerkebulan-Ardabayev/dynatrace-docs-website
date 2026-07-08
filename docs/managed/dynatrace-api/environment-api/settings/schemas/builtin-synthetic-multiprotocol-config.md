@@ -1,7 +1,6 @@
 ---
 title: Settings API - Network Availability monitor config schema table
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/settings/schemas/builtin-synthetic-multiprotocol-config
-scraped: 2026-05-12T11:40:04.728920
 ---
 
 # Settings API - Network Availability monitor config schema table
@@ -44,12 +43,12 @@ To execute this request, you need an access token with **Read settings** (`setti
 | Property | Type | Description | Required |
 | --- | --- | --- | --- |
 | Step name `name` | text | - | Required |
-| Request type `requestType` | enum | All steps in the monitor must be the same request type. Learn more about request types in [Dynatrace documentationï»¿](https://dt-url.net/0803zt8 "Visit Dynatrace documentation") The element has these enums * `ICMP` * `TCP` * `DNS` | Required |
+| Request type `requestType` | enum | All steps in the monitor must be the same request type. Learn more about request types in [Dynatrace documentation﻿](https://dt-url.net/0803zt8 "Visit Dynatrace documentation") The element has these enums * `ICMP` * `TCP` * `DNS` | Required |
 | Target list `targetList` | set | - | Required |
-| Target filter `targetFilter` | text | See syntax and examples in [Dynatrace documentationï»¿](https://dt-url.net/3443zor "Visit Dynatrace documentation") | Optional |
-| Configuration properties `properties` | Set<[Property](#Property)> | See possible configuration properties in [Dynatrace documentationï»¿](https://dt-url.net/gq83z4l "Visit Dynatrace documentation") | Required |
-| Step-level constraints `constraints` | Set<[Constraint](#Constraint)> | See possible step-level constraints in [Dynatrace documentationï»¿](https://dt-url.net/x3a3zev "Visit Dynatrace documentation") | Required |
-| Request-level configuration `requestConfigurations` | Set<[RequestConfiguration](#RequestConfiguration)> | See possible request-level configurations in [Dynatrace documentationï»¿](https://dt-url.net/b803zmi "Visit Dynatrace documentation") | Required |
+| Target filter `targetFilter` | text | See syntax and examples in [Dynatrace documentation﻿](https://dt-url.net/3443zor "Visit Dynatrace documentation") | Optional |
+| Configuration properties `properties` | Set<[Property](#Property)> | See possible configuration properties in [Dynatrace documentation﻿](https://dt-url.net/gq83z4l "Visit Dynatrace documentation") | Required |
+| Step-level constraints `constraints` | Set<[Constraint](#Constraint)> | See possible step-level constraints in [Dynatrace documentation﻿](https://dt-url.net/x3a3zev "Visit Dynatrace documentation") | Required |
+| Request-level configuration `requestConfigurations` | Set<[RequestConfiguration](#RequestConfiguration)> | See possible request-level configurations in [Dynatrace documentation﻿](https://dt-url.net/b803zmi "Visit Dynatrace documentation") | Required |
 | Pre-execution script `preScript` | text | Option not supported yet | Optional |
 | Post-execution script `postScript` | text | Option not supported yet | Optional |
 

@@ -1,7 +1,6 @@
 ---
 title: Content resources API - PUT configuration
 source: https://docs.dynatrace.com/managed/dynatrace-api/configuration-api/rum/content-resources/put-configuration
-scraped: 2026-05-12T11:18:55.563947
 ---
 
 # Content resources API - PUT configuration
@@ -40,9 +39,9 @@ The configuration of content resources.
 
 | Element | Type | Description | Required |
 | --- | --- | --- | --- |
-| resourceProviders | [ResourceProvider[]](#openapi-definition-ResourceProvider) | An ordered list of manually added content providers.  Rules are evaluated from top to bottom; the first matching rules applies. | Optional |
-| resourceTypes | [ResourceType[]](#openapi-definition-ResourceType) | An ordered list of manually defined resource types.  Rules are evaluated from top to bottom; the first matching rules applies. | Optional |
-| resourceUrlCleanupRules | [ResourceUrlCleanupRule[]](#openapi-definition-ResourceUrlCleanupRule) | An ordered list of resource URL cleanup rules.  Rules are evaluated from top to bottom; the first matching rules applies. | Optional |
+| resourceProviders | [ResourceProvider](#openapi-definition-ResourceProvider)[] | An ordered list of manually added content providers.  Rules are evaluated from top to bottom; the first matching rules applies. | Optional |
+| resourceTypes | [ResourceType](#openapi-definition-ResourceType)[] | An ordered list of manually defined resource types.  Rules are evaluated from top to bottom; the first matching rules applies. | Optional |
+| resourceUrlCleanupRules | [ResourceUrlCleanupRule](#openapi-definition-ResourceUrlCleanupRule)[] | An ordered list of resource URL cleanup rules.  Rules are evaluated from top to bottom; the first matching rules applies. | Optional |
 
 #### The `ResourceProvider` object
 
@@ -205,7 +204,7 @@ This is a model of the request body, showing the possible elements. It has to be
 | Element | Type | Description |
 | --- | --- | --- |
 | code | integer | The HTTP status code |
-| constraintViolations | [ConstraintViolation[]](#openapi-definition-ConstraintViolation) | A list of constraint violations |
+| constraintViolations | [ConstraintViolation](#openapi-definition-ConstraintViolation)[] | A list of constraint violations |
 | message | string | The error message |
 
 #### The `ConstraintViolation` object
@@ -316,7 +315,7 @@ To learn how to obtain and use it, see [Tokens and authentication](/managed/disc
 | Element | Type | Description |
 | --- | --- | --- |
 | code | integer | The HTTP status code |
-| constraintViolations | [ConstraintViolation[]](#openapi-definition-ConstraintViolation) | A list of constraint violations |
+| constraintViolations | [ConstraintViolation](#openapi-definition-ConstraintViolation)[] | A list of constraint violations |
 | message | string | The error message |
 
 #### The `ConstraintViolation` object
@@ -390,6 +389,6 @@ A list of constraint violations
 
 ## Related topics
 
-* [Configure first-party, third-party, and CDN resource detection for web applications](/managed/observe/digital-experience/web-applications/additional-configuration/configure-third-party-and-cdn-content-detection-web "Manually define third-party and CDN providers along with auto-detected providers for your web applications.")
-* [Configure first-party, third-party, and CDN resource detection for mobile applications](/managed/observe/digital-experience/mobile-applications/additional-configuration/configure-third-party-and-cdn-content-detection-mobile "Manually define third-party and CDN providers along with auto-detected providers for your mobile applications.")
-* [Configure first-party, third-party, and CDN resource detection for custom applications](/managed/observe/digital-experience/custom-applications/additional-configuration/configure-third-party-and-cdn-content-detection-custom "Manually define third-party and CDN providers along with auto-detected providers for your custom applications.")
+* [Configure first-party, third-party, and CDN resource detection for web applications in RUM Classic](/managed/observe/digital-experience/rum-classic/web-applications/additional-configuration/configure-third-party-and-cdn-content-detection-web "Manually define third-party and CDN providers along with auto-detected providers for your web applications.")
+* [Configure first-party, third-party, and CDN resource detection for mobile applications in RUM Classic](/managed/observe/digital-experience/rum-classic/mobile-applications/additional-configuration/configure-third-party-and-cdn-content-detection-mobile "Manually define third-party and CDN providers along with auto-detected providers for your mobile applications.")
+* [Configure first-party, third-party, and CDN resource detection for custom applications in RUM Classic](/managed/observe/digital-experience/rum-classic/custom-applications/additional-configuration/configure-third-party-and-cdn-content-detection-custom "Manually define third-party and CDN providers along with auto-detected providers for your custom applications.")

@@ -1,7 +1,6 @@
 ---
 title: Instrument your Erlang application with OpenTelemetry
 source: https://docs.dynatrace.com/managed/ingest-from/opentelemetry/walkthroughs/erlang
-scraped: 2026-05-12T11:23:08.656499
 ---
 
 # Instrument your Erlang application with OpenTelemetry
@@ -10,7 +9,7 @@ scraped: 2026-05-12T11:23:08.656499
 
 * How-to guide
 * 4-min read
-* Published Apr 20, 2023
+* Updated on May 11, 2026
 
 This walkthrough shows how to add observability to your Erlang application using the OpenTelemetry Erlang libraries and tools.
 
@@ -26,7 +25,10 @@ This walkthrough shows how to add observability to your Erlang application using
 * Dynatrace version 1.222+
 * For tracing, W3C Trace Context is enabled
 
-  1. Go to **Settings** > **Preferences** > **OneAgent features**.
+  1. Go to the appropriate configuration page:
+
+     + In Latest Dynatrace, go to ![Settings](https://dt-cdn.net/images/settings-icon-256-38e1321b51.webp "Settings") **Settings** > **Collect and capture** > **General monitoring settings** > **OneAgent features**.
+     + In Dynatrace Classic, go to **Settings** > **Preferences** > **OneAgent features**.
   2. Turn on **Send W3C Trace Context HTTP headers**.
 
 ## Step 1 Get the Dynatrace access details
@@ -45,7 +47,7 @@ To generate an access token, in Dynatrace, go to ![Access tokens](https://dt-cdn
 
 ## Step 2 Set up OpenTelemetry
 
-1. Add the current versions of the [following dependenciesï»¿](https://hex.pm/packages?search=opentelemetry&sort=recent_downloads) to `rebar.config`.
+1. Add the current versions of the [following dependencies﻿](https://hex.pm/packages?search=opentelemetry&sort=recent_downloads) to `rebar.config`.
 
    ```
    {deps, [
@@ -276,7 +278,7 @@ To generate an access token, in Dynatrace, go to ![Access tokens](https://dt-cdn
 
 ### Add tracing
 
-Spans are started with the macro [`with_span`ï»¿](https://hexdocs.pm/opentelemetry_api/OpenTelemetry.Tracer.html#with_span/3) and accept an optional list of span attributes, as well as the code block for this span. The span will automatically finish when the code block returns.
+Spans are started with the macro [`with_span`﻿](https://hexdocs.pm/opentelemetry_api/OpenTelemetry.Tracer.html#with_span/3) and accept an optional list of span attributes, as well as the code block for this span. The span will automatically finish when the code block returns.
 
 ```
 -export([init/2]).

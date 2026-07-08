@@ -1,7 +1,6 @@
 ---
 title: Manually instrument your PHP application with OpenTelemetry
 source: https://docs.dynatrace.com/managed/ingest-from/opentelemetry/walkthroughs/php/php-manual
-scraped: 2026-05-12T12:15:18.706114
 ---
 
 # Manually instrument your PHP application with OpenTelemetry
@@ -28,10 +27,10 @@ To generate an access token, in Dynatrace, go to ![Access tokens](https://dt-cdn
 
 ## Step 2 Instrument your application
 
-1. Use [composerï»¿](https://getcomposer.org) to install the following two dependencies.
+1. Use [composer﻿](https://getcomposer.org) to install the following two dependencies.
 
-   * [php-http/guzzle7-adapterï»¿](https://packagist.org/packages/php-http/guzzle7-adapter)
-   * [open-telemetry/opentelemetryï»¿](https://packagist.org/packages/open-telemetry/opentelemetry)
+   * [php-http/guzzle7-adapter﻿](https://packagist.org/packages/php-http/guzzle7-adapter)
+   * [open-telemetry/opentelemetry﻿](https://packagist.org/packages/open-telemetry/opentelemetry)
 
    ```
    composer require php-http/guzzle7-adapter
@@ -380,7 +379,7 @@ To generate an access token, in Dynatrace, go to ![Access tokens](https://dt-cdn
    In the above code, we:
 
    * Create a new span and name it "Call to /myendpoint"
-   * Add two attributes, following the [semantic naming conventionï»¿](https://opentelemetry.io/docs/specs/semconv/general/trace/), specific to the action of this span: information on the HTTP method and version
+   * Add two attributes, following the [semantic naming convention﻿](https://opentelemetry.io/docs/specs/semconv/general/trace/), specific to the action of this span: information on the HTTP method and version
    * Add a `TODO` in place of the eventual business logic
    * Call the span's `end()` method to close the span (in a `finally` block to ensure the method is called)
 
@@ -423,13 +422,13 @@ $monolog->info('your log info message');
 
 Context propagation is particularly important when network calls (for example, REST) are involved.
 
-If you are using automatic instrumentation, and your network libraries adhere to [PSR-15ï»¿](https://www.php-fig.org/psr/psr-15/) (extraction for inbound request) and [PSR-18ï»¿](https://www.php-fig.org/psr/psr-18/) (injection for outbound requests), context propagation will be automatically handled. Otherwise, your code needs to take this into account.
+If you are using automatic instrumentation, and your network libraries adhere to [PSR-15﻿](https://www.php-fig.org/psr/psr-15/) (extraction for inbound request) and [PSR-18﻿](https://www.php-fig.org/psr/psr-18/) (injection for outbound requests), context propagation will be automatically handled. Otherwise, your code needs to take this into account.
 
 ### Extracting the context when receiving a request
 
 In the following example, we assume that we have received an HTTP request with embedded context information, which we are going to extract, to continue the trace.
 
-For this, we first create a `request` object with [`ServerRequestCreator::createFromGlobals()`ï»¿](https://packagist.org/packages/httpsoft/http-server-request).
+For this, we first create a `request` object with [`ServerRequestCreator::createFromGlobals()`﻿](https://packagist.org/packages/httpsoft/http-server-request).
 
 Next, we obtain a propagator object from `TraceContextPropagator` and pass our `request` object to its `extract()` method. This returns a context object (based on the information provided to us via the HTTP call), which we can use subsequently to continue that trace with our own spans.
 
@@ -519,7 +518,7 @@ $scope->detach();
 
 ### Injecting the context when sending requests
 
-In the following example, we use [PHP's cURL libraryï»¿](https://www.php.net/manual/book.curl.php) to send an HTTP request to another service and provide our existing context as part of the HTTP headers of our request.
+In the following example, we use [PHP's cURL library﻿](https://www.php.net/manual/book.curl.php) to send an HTTP request to another service and provide our existing context as part of the HTTP headers of our request.
 
 To do so, we first obtain a `TraceContextPropagator` instance, on which we call the `inject` method and pass the empty array `$traceContext`. This call populates the array with the applicable header data in an associative fashion.
 

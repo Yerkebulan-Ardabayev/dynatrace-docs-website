@@ -1,7 +1,6 @@
 ---
 title: PHP-FPM monitoring
 source: https://docs.dynatrace.com/managed/ingest-from/technology-support/application-software/php/php-fpm
-scraped: 2026-05-12T12:03:49.299724
 ---
 
 # PHP-FPM monitoring
@@ -17,7 +16,7 @@ Dynatrace PHP-FPM monitoring provides information about connections, slow reques
 
 * Linux or Windows
 * PHP version 7.1.0+
-* The **PHP-FPM** status page needs to be enabled on all nodes that you want to monitor and the PHP-FPM status page needs to be enabled for access from `localhost` over HTTP(S). For full instructions, please see the [PHP documentationï»¿](https://www.php.net/manual/en/fpm.status.php), but note that the default URL path is now `/status` (it is no longer `/fpm-status` as shown in their example).
+* The **PHP-FPM** status page needs to be enabled on all nodes that you want to monitor and the PHP-FPM status page needs to be enabled for access from `localhost` over HTTP(S). For full instructions, please see the [PHP documentation﻿](https://www.php.net/manual/en/fpm.status.php), but note that the default URL path is now `/status` (it is no longer `/fpm-status` as shown in their example).
 
 ## Enable PHP-FPM monitoring globally
 
@@ -40,7 +39,7 @@ Dynatrace provides the option of enabling PHP-FPM monitoring for specific hosts 
 2. Go to **Hosts**.
 3. In the **All hosts** table, find and select the host you want to configure.  
    The host page is displayed.
-4. Select **More** (**â¦**) > **Settings**.
+4. Select **More** (**…**) > **Settings**.
 5. In the **Monitored technologies** table, find **PHP-FPM** and turn it on.
 
 ## Monitor PHP-FPM

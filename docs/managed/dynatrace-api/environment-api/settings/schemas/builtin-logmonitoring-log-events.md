@@ -1,7 +1,6 @@
 ---
 title: Settings API - Log events schema table
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/settings/schemas/builtin-logmonitoring-log-events
-scraped: 2026-05-12T11:49:23.296096
 ---
 
 # Settings API - Log events schema table
@@ -12,7 +11,7 @@ scraped: 2026-05-12T11:49:23.296096
 
 ### Log events (`builtin:logmonitoring.log-events)`
 
-Configure log patterns that trigger events for alerting and DavisÂ® analysis. Note that log event detection incurs [billing costsï»¿](https://dt-url.net/hk03ulj)
+Configure log patterns that trigger events for alerting and Davis® analysis. Note that log event detection incurs [billing costs﻿](https://dt-url.net/hk03ulj)
 
 | Schema ID | Schema groups | Scope |
 | --- | --- | --- |
@@ -46,8 +45,8 @@ To execute this request, you need an access token with **Read settings** (`setti
 | Title `title` | text | The title of the event to trigger. Type '{' for placeholder hints. | Required |
 | Description `description` | text | The description of the event to trigger. Type '{' for placeholder hints. | Required |
 | Event type `eventType` | enum | The event type to trigger. The element has these enums * `INFO` * `ERROR` * `AVAILABILITY` * `SLOWDOWN` * `RESOURCE` * `CUSTOM_ALERT` * `CUSTOM_ANNOTATION` * `CUSTOM_CONFIGURATION` * `CUSTOM_DEPLOYMENT` * `MARKED_FOR_TERMINATION` * `WARNING` | Required |
-| Allow merge `davisMerge` | boolean | DavisÂ® AI will try to merge this event into existing problems, otherwise a new problem will always be created. | Required |
-| Properties `metadata` | Set<[MetadataItem](#MetadataItem)> | Set of additional key-value properties to be attached to the triggered event. You can retrieve the available property keys using the [Events API v2ï»¿](https://dt-url.net/9622g1w). | Required |
+| Allow merge `davisMerge` | boolean | Davis® AI will try to merge this event into existing problems, otherwise a new problem will always be created. | Required |
+| Properties `metadata` | Set<[MetadataItem](#MetadataItem)> | Set of additional key-value properties to be attached to the triggered event. You can retrieve the available property keys using the [Events API v2﻿](https://dt-url.net/9622g1w). | Required |
 
 ##### The `MetadataItem` object
 

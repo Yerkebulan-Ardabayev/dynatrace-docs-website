@@ -1,7 +1,6 @@
 ---
 title: Events API v2 - GET an event type
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/events-v2/get-event-type
-scraped: 2026-05-12T12:00:59.547632
 ---
 
 # Events API v2 - GET an event type
@@ -66,7 +65,7 @@ Configuration of an event type.
 | Element | Type | Description |
 | --- | --- | --- |
 | code | integer | The HTTP status code |
-| constraintViolations | [ConstraintViolation[]](#openapi-definition-ConstraintViolation) | A list of constraint violations |
+| constraintViolations | [ConstraintViolation](#openapi-definition-ConstraintViolation)[] | A list of constraint violations |
 | message | string | The error message |
 
 #### The `ConstraintViolation` object

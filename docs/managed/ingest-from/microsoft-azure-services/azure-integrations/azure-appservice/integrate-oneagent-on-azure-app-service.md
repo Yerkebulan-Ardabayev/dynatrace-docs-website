@@ -1,7 +1,6 @@
 ---
 title: Integrate OneAgent on Azure App Service for Windows
 source: https://docs.dynatrace.com/managed/ingest-from/microsoft-azure-services/azure-integrations/azure-appservice/integrate-oneagent-on-azure-app-service
-scraped: 2026-05-12T11:23:53.114700
 ---
 
 # Integrate OneAgent on Azure App Service for Windows
@@ -12,7 +11,7 @@ scraped: 2026-05-12T11:23:53.114700
 * 9-min read
 * Published Oct 16, 2018
 
-Azure App Service provides many different hosting options for Windows, Linux, and containers with shared infrastructure ([App Service planï»¿](https://dt-url.net/f4031wl)), or fully isolated and dedicated infrastructure ([Azure App Service Environmentï»¿](https://dt-url.net/u0231c3)).
+Azure App Service provides many different hosting options for Windows, Linux, and containers with shared infrastructure ([App Service plan﻿](https://dt-url.net/f4031wl)), or fully isolated and dedicated infrastructure ([Azure App Service Environment﻿](https://dt-url.net/u0231c3)).
 
 ## Capabilities
 
@@ -37,17 +36,17 @@ Since Azure App Service is a fully managed hosting platform, applications are de
 
 Windows only
 
-Dynatrace provides a [site extensionï»¿](https://github.com/projectkudu/kudu/wiki/Azure-Site-Extensions) to install OneAgent on Azure App Services on Windows.
+Dynatrace provides a [site extension﻿](https://github.com/projectkudu/kudu/wiki/Azure-Site-Extensions) to install OneAgent on Azure App Services on Windows.
 
 For Azure App Service on Linux or containers, see [Integration for OneAgent on Azure App Service on Linux and containers](/managed/ingest-from/microsoft-azure-services/azure-integrations/azure-appservice/integrate-oneagent-on-web-app-for-containers "Learn how to install, configure, update, and uninstall OneAgent in containerized applications on Linux.").
 
-Site extension is the native extension mechanism provided via [Kuduï»¿](https://github.com/projectkudu/kudu), which is the deployment management engine behind Azure App Services.
+Site extension is the native extension mechanism provided via [Kudu﻿](https://github.com/projectkudu/kudu), which is the deployment management engine behind Azure App Services.
 
 The Dynatrace OneAgent site extension doesn't include the OneAgent installer. Instead, the extension uses the Dynatrace REST API to download the installer from the cluster in the target version as set in [OneAgent updates](/managed/ingest-from/dynatrace-oneagent/oneagent-update#configure-oneagent-updates "Learn how to update OneAgent.").
 
 There are multiple ways to install the Dynatrace OneAgent site extension:
 
-* [Manually, via Azure Portal](#portal)
+* [Manually, via Azure portal](#portal)
 * [Automatically, using an ARM template](#arm)
 * [By automating the setup with a custom PowerShell script](#script)
 
@@ -56,7 +55,7 @@ See below for instructions.
 ### Prerequisites
 
 * Create a [PaaS token](/managed/manage/identity-access-management/access-tokens-and-oauth-clients/access-tokens#paas-token "Learn the concept of an access token and its scopes.").
-* Determine your [environment ID](/managed/discover-dynatrace/get-started/monitoring-environment "Understand and learn how to work with monitoring environments.").
+* Determine your [environment ID](/managed/discover-dynatrace/get-started/monitoring-environment "Learn what a Dynatrace monitoring environment is, how to find your environment ID, and how to set up and connect multiple environments.").
 * Determine your server URL if required.
 
   The server URL is required only if you use either of the following:
@@ -73,7 +72,7 @@ See below for instructions.
 
   If you're using Dynatrace Managed, or if your cluster traffic should be routed through an [ActiveGate](/managed/ingest-from/dynatrace-activegate "Understand the basic concepts related to ActiveGate."), you need to configure the API endpoint used by the extension for downloading OneAgent.
 
-### Manual install via Azure Portal
+### Manual install via Azure portal
 
 1. In Azure Portal, go to the **App Services** and select an app service where you want to add the OneAgent extension.
 2. In the left menu, go to to **Development Tools** > **Extensions**.
@@ -99,7 +98,7 @@ After restart, OneAgent starts monitoring your application automatically.
 
 ### Automatic install using an ARM template
 
-As an alternative to installing via Azure Portal, you can make the Dynatrace site extension part of your ARM templates.
+As an alternative to installing via Azure portal, you can make the Dynatrace site extension part of your ARM templates.
 
 ARM Template
 
@@ -728,9 +727,9 @@ dynatrace-oneagent-site-extension.json
 | WebApp parameter | Requirement | Description |
 | --- | --- | --- |
 | siteName | Required | WebApp name where you would like to install extension. |
-| location | Required | Region of your WebApp. For available regions, see [Azure documentationï»¿](https://azure.microsoft.com/en-us/global-infrastructure/services/?products=app-service). |
+| location | Required | Region of your WebApp. For available regions, see [Azure documentation﻿](https://azure.microsoft.com/en-us/global-infrastructure/services/?products=app-service). |
 | skuCapacity | Optional | How many instances you can run under your plan. |
-| skuName | Optional | The plan's pricing tier and instance size. For pricing details, see [Azure documentationï»¿](https://azure.microsoft.com/en-us/pricing/details/app-service/). |
+| skuName | Optional | The plan's pricing tier and instance size. For pricing details, see [Azure documentation﻿](https://azure.microsoft.com/en-us/pricing/details/app-service/). |
 | webAppAlwaysOn | Optional | If `AlwaysOn` isn't set to `true`, OneAgent installation is triggered at startup (on the first request to Kudu). |
 
 | Dynatrace parameter | Requirement | Description |
@@ -748,34 +747,34 @@ After installation is complete, restart the App Service application to recycle t
 
 ### Automate the installation using a PowerShell script
 
-You can automate the installation with a PowerShell script that uses the [Kudu REST APIï»¿](https://dt-url.net/0h031rk), [OneAgent site extension REST API](#restapi), as well as the [Azure CLIï»¿](https://dt-url.net/4j2318w). A sample implementation is available in the [Dynatrace GitHub repositoryï»¿](https://dt-url.net/9s031v4).
+You can automate the installation with a PowerShell script that uses the [Kudu REST API﻿](https://dt-url.net/0h031rk), [OneAgent site extension REST API](#restapi), as well as the [Azure CLI﻿](https://dt-url.net/4j2318w). A sample implementation is available in the [Dynatrace GitHub repository﻿](https://dt-url.net/9s031v4).
 
 ## Dynatrace OneAgent site extension REST API
 
 The Dynatrace OneAgent site extension provides a REST API to automate OneAgent installation, configuration, and update.
 
-The root URL to access the REST API is `https://<Your-AppService-Subdomain>.scm.azurewebsites.net/dynatrace/`, where you need to replace `<Your-AppService-Subdomain>` with your own value. To authenticate, you can use either the user publishing credentials or the site-level credentials. For details, see [Accessing the Kudu serviceï»¿](https://dt-url.net/em4316d).
+The root URL to access the REST API is `https://<Your-AppService-Subdomain>.scm.azurewebsites.net/dynatrace/`, where you need to replace `<Your-AppService-Subdomain>` with your own value. To authenticate, you can use either the user publishing credentials or the site-level credentials. For details, see [Accessing the Kudu service﻿](https://dt-url.net/em4316d).
 
 | Method | Endpoint | Description | Response |
 | --- | --- | --- | --- |
-| GET | /api/status | Returns the current status of the OneAgent installation.  The returned `state` field can be: - `NotInstalled` - `Downloading` - `Installing` - `Installed` - `Failed`  For automation purposes, use the **isAgentInstalled** and **isUpgradeAvailable** fields to check whether the OneAgent is installed and whether an upgrade is available. | `{`  `"state": "Installed",`  `"message": "OneAgent installed",`  `"version": "1.157",`  `"isAgentInstalled": true,`  `"isUpgradeAvailable": false,`  `"isFunction": false,`  `"functionAppSettings": null` `}` |
-| GET | /api/settings | Returns the current settings, including Dynatrace credentials. | `{` `"apiUrl": "",` `"apiToken": "<your-api-token>",` `"environmentId": "<your-environment-id>",` `"sslMode": "Default"` `}` |
-| PUT | /api/settings | Starts OneAgent installation with the given settings. These settings are stored only if the installation finishes successfully.  In the payload, you need to send the data in the same format as received by the `GET /dynatrace/api/settings` request.  If there's an update available in the status request, this `PUT` request can be used to start the upgrade. **Notes:** \* The value for `apiUrl` can be left empty for a SaaS environment. \* For `sslMode`, if you want to validate the HTTPS connection, leave it as `Default`. If you don't want to validate the HTTPS connection, set it to `AcceptAll`. | Empty response |
+| GET | /api/status | Returns the current status of the OneAgent installation.The returned `state` field can be:- `NotInstalled`- `Downloading`- `Installing`- `Installed`- `Failed`For automation purposes, use the **isAgentInstalled** and **isUpgradeAvailable** fields to check whether the OneAgent is installed and whether an upgrade is available. | ``` {`` "state": "Installed",`` "message": "OneAgent installed",`` "version": "1.157",`` "isAgentInstalled": true,`` "isUpgradeAvailable": false,`` "isFunction": false,`` "functionAppSettings": null``} ``` |
+| GET | /api/settings | Returns the current settings, including Dynatrace credentials. | ``` {``"apiUrl": "",``"apiToken": "<your-api-token>",``"environmentId": "<your-environment-id>",``"sslMode": "Default"``} ``` |
+| PUT | /api/settings | Starts OneAgent installation with the given settings. These settings are stored only if the installation finishes successfully.In the payload, you need to send the data in the same format as received by the `GET /dynatrace/api/settings` request.If there's an update available in the status request, this `PUT` request can be used to start the upgrade.**Notes:**\* The value for `apiUrl` can be left empty for a SaaS environment.\* For `sslMode`, if you want to validate the HTTPS connection, leave it as `Default`. If you don't want to validate the HTTPS connection, set it to `AcceptAll`. | Empty response |
 
 ## Using multiple deployment slots
 
 Because Azure App Service deployment slots are treated like full-fledged application service instances, you need to enable the site extension for OneAgent on each deployment slot you want to monitor with Dynatrace.
 
-For details on configuring deployment slots, consult the [Microsoft documentationï»¿](https://dt-url.net/uo631ry).
+For details on configuring deployment slots, consult the [Microsoft documentation﻿](https://dt-url.net/uo631ry).
 
 If you're using application settings to additionally configure certain OneAgent options, make sure the additional settings are also applied to the deployment slots.
 
 ## Using App Service built-in authentication and authorization
 
-If you use App Service [built-in authentication and authorization capabiltiesï»¿](https://dt-url.net/m2831x1) (also referred to as "Easy Auth"), App Service starts an additional .NET CLR instance, which makes OneAgent instrument the Easy Auth module instead of your application's instance as the leading instance.
+If you use App Service [built-in authentication and authorization capabilties﻿](https://dt-url.net/m2831x1) (also referred to as "Easy Auth"), App Service starts an additional .NET CLR instance, which makes OneAgent instrument the Easy Auth module instead of your application's instance as the leading instance.
 
 In this case, if your application process isn't instrumented, you need to set the `DT_MONITORED_CLR` environment variable to instance that your application is running on: `clr` or `coreclr`.
-You can set this variable in Azure Portal (**Settings** > **Configuration** > **Application Settings**).
+You can set this variable in the Azure portal (**Settings** > **Configuration** > **Application Settings**).
 
 ## Override OneAgent configuration
 
@@ -786,9 +785,9 @@ To override the default configuration, you can use the following parameters.
 | DT\_CONNECTION\_POINT | Semicolon-separated list of communication endpoints |
 | DT\_MONITORED\_CLR | Variable to instrument a specific .NET/.NET Core CLR instance |
 
-How to add the `DT_CONNECTION_POINT` parameter in Azure Portal
+How to add the `DT_CONNECTION_POINT` parameter in the Azure portal
 
-1. In Azure Portal, select the web application you want to monitor.
+1. In the Azure portal, select the web application you want to monitor.
 2. Select **Settings** > **Configuration** > **Application Settings**.
 3. Select **New application setting**.
 4. Enter the configuration key/value pair like this.
@@ -805,7 +804,7 @@ How to add the `DT_CONNECTION_POINT` parameter in Azure Portal
 
 OneAgent may not be able to instrument your .NET/.NET Core application if you use Application Insights with runtime instrumentation enabled. This is because OneAgent and Application Insights try to use the same interface to inject at runtime.
 
-Please review your Application Insights configuration for Asp.Net, where you can [turn off runtime instrumentationï»¿](https://dt-url.net/z1a31yy) or [Asp.Net Core auto-instrumentationï»¿](https://dt-url.net/ikc31s6).
+Please review your Application Insights configuration for Asp.Net, where you can [turn off runtime instrumentation﻿](https://dt-url.net/z1a31yy) or [Asp.Net Core auto-instrumentation﻿](https://dt-url.net/ikc31s6).
 
 While you may still be able to use Application Insights in basic mode or SDK in parallel with Dynatrace OneAgent, please note that this may cause other issues or significant monitoring overhead to your applications and isn't recommended.
 
@@ -813,7 +812,7 @@ While you may still be able to use Application Insights in basic mode or SDK in 
 
 To update the Dynatrace OneAgent site extension
 
-1. In Azure Portal, go to your Azure App Service with Dynatrace OneAgent site extension.
+1. In the Azure portal, go to your Azure App Service with Dynatrace OneAgent site extension.
 2. If an update is available, select **Update**.
 
 When upgrading the extension from version 1.x to version 2.x, if you have **Always On** selected on your App Service, the upgrade of OneAgent is either triggered automatically or on the first request to the UI extension. If you don't have **Always On** selected, you must restart App Service, so that the extension process starts.
@@ -824,7 +823,7 @@ An update to the Dynatrace OneAgent site extension doesn't force a OneAgent upda
 
 The Dynatrace OneAgent site extension doesn't provide Dynatrace OneAgent updates automatically. To update Dynatrace OneAgent on Azure App Service
 
-1. In Azure Portal, go to your Azure App Service with Dynatrace OneAgent site extension.
+1. In the Azure portal, go to your Azure App Service with Dynatrace OneAgent site extension.
 2. In the **Development Tools** section, choose **Advanced Tools** and select **Go**. This will redirect you to the KUDU website.
 3. Go to **Site extensions** > **Installed** > **Dynatrace**.
 4. If an update is available, select **Upgrade OneAgent**.
@@ -842,15 +841,15 @@ If the application is running at the time of removal, the site extension recogni
 
 ## Monitoring consumption
 
-For Azure App Service, monitoring consumption is based on host units. See [Application and Infrastructure Monitoring (Host Units)](/managed/license/monitoring-consumption-classic/application-and-infrastructure-monitoring "Understand how Dynatrace application and infrastructure monitoring consumption is calculated based on host units.") for details.
+For Azure App Service, monitoring consumption is based on host units. See [Application and Infrastructure Monitoring (Host Units)](/managed/license/classic-licensing/application-and-infrastructure-monitoring "Understand how Dynatrace application and infrastructure monitoring consumption is calculated based on host units.") for details.
 
 ## Troubleshooting
 
-* [No route registered for /dynatrace/ when accessing the site extensionï»¿](https://dt-url.net/44038l8)
-* [503 Service Unavailable for Web App and Kuduï»¿](https://dt-url.net/o62387e)
-* [Node.js app does not get instrumentedï»¿](https://dt-url.net/n7238ds)
-* [Site extension overrides JAVA\_OPTSï»¿](https://dt-url.net/rt438wk)
-* [Failed to install: Could not find fileï»¿](https://dt-url.net/wr438gk)
+* [No route registered for /dynatrace/ when accessing the site extension﻿](https://dt-url.net/44038l8)
+* [503 Service Unavailable for Web App and Kudu﻿](https://dt-url.net/o62387e)
+* [Node.js app does not get instrumented﻿](https://dt-url.net/n7238ds)
+* [Site extension overrides JAVA\_OPTS﻿](https://dt-url.net/rt438wk)
+* [Failed to install: Could not find file﻿](https://dt-url.net/wr438gk)
 
 Location of log files
 

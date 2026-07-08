@@ -1,7 +1,6 @@
 ---
 title: Settings API - Advanced detection rules schema table
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/settings/schemas/builtin-process-group-advanced-detection-rule
-scraped: 2026-05-12T11:46:20.996175
 ---
 
 # Settings API - Advanced detection rules schema table
@@ -14,7 +13,7 @@ scraped: 2026-05-12T11:46:20.996175
 
 Advanced process group detection rules enable you to adapt the detection logic for deep monitored processes by **leveraging properties that are automatically detected** by OneAgent during the startup of a process.
 
-Advanced detection rules are capable to extract additional process group and instance identifier from processes to fine tune the automatic detection logic of OneAgent. [More about custom process-group detectionï»¿](https://dt-url.net/1722wrz)
+Advanced detection rules are capable to extract additional process group and instance identifier from processes to fine tune the automatic detection logic of OneAgent. [More about custom process-group detection﻿](https://dt-url.net/1722wrz)
 
 Note: Detection rules change the composition, makeup, and identity of a process group, not just the name. If you only need to change default name use the naming rules (`<your-dynatrace-url>//#settings/pgnamingsettings "Visit Naming rules page"`) instead.
 
@@ -59,7 +58,7 @@ To execute this request, you need an access token with **Read settings** (`setti
 | --- | --- | --- | --- |
 | Property `property` | text | - | Required |
 | `delimiter` | [delimiter](#delimiter) | Optionally delimit this property between *From* and *To*. | Required |
-| Standalone rule `standaloneRule` | boolean | If this option is selected, the default Dynatrace behavior is disabled for these detected processes. Only this rule is used to separate the process group.  If this option is not selected, this rule contributes to the default Dynatrace process group detection.  [See our help page for examples.ï»¿](https://dt-url.net/1722wrz) | Required |
+| Standalone rule `standaloneRule` | boolean | If this option is selected, the default Dynatrace behavior is disabled for these detected processes. Only this rule is used to separate the process group.  If this option is not selected, this rule contributes to the default Dynatrace process group detection.  [See our help page for examples.﻿](https://dt-url.net/1722wrz) | Required |
 
 ##### The `processInstanceExtraction` object
 

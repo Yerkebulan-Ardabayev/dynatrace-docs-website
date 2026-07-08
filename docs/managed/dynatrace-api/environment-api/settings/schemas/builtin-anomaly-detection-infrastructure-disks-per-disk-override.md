@@ -1,7 +1,6 @@
 ---
 title: Settings API - Anomaly detection for infrastructure schema table
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/settings/schemas/builtin-anomaly-detection-infrastructure-disks-per-disk-override
-scraped: 2026-05-12T11:45:28.988371
 ---
 
 # Settings API - Anomaly detection for infrastructure schema table

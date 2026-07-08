@@ -1,7 +1,6 @@
 ---
 title: Dynatrace support model for VMware Tanzu Application Service
 source: https://docs.dynatrace.com/managed/ingest-from/technology-support/support-model-for-pivotal-platform
-scraped: 2026-05-12T11:23:00.965605
 ---
 
 # Dynatrace support model for VMware Tanzu Application Service
@@ -11,9 +10,9 @@ scraped: 2026-05-12T11:23:00.965605
 * 5-min read
 * Updated on Apr 28, 2026
 
-Broadcom supports N, N-1, and N-2 releases of Tanzu Application Service (TAS). You can find further details in the Broadcom [support policyï»¿](https://tanzu.vmware.com/support/lifecycle_policy).
+Broadcom supports N, N-1, and N-2 releases of Tanzu Application Service (TAS). You can find further details in the Broadcom [support policy﻿](https://tanzu.vmware.com/support/lifecycle_policy).
 
-Dynatrace follows the same [support modelï»¿](https://d1fto35gcfffzn.cloudfront.net/support/PivotalLifecycleMatrix.pdf) as Broadcom, ensuring a consistent upgrade cadence. However, OneAgent and [Dynatrace Service Broker](/managed/ingest-from/setup-on-container-platforms/cloud-foundry/install-the-service-broker-for-cloud-foundry-dashboard-tile "Install and configure the Dynatrace Service Broker for VMware Tanzu Platform dashboard tile.") support for Tanzu may trail behind Broadcom releases to allow for adequate testing.
+Dynatrace follows the same [support model﻿](https://d1fto35gcfffzn.cloudfront.net/support/PivotalLifecycleMatrix.pdf) as Broadcom, ensuring a consistent upgrade cadence. However, OneAgent and [Dynatrace Service Broker](/managed/ingest-from/setup-on-container-platforms/cloud-foundry/install-the-service-broker-for-cloud-foundry-dashboard-tile "Install and configure the Dynatrace Service Broker for VMware Tanzu Platform dashboard tile.") support for Tanzu may trail behind Broadcom releases to allow for adequate testing.
 
 For details, see [end of support announcements](/managed/whats-new/technology/end-of-support-news "End of support announcements for technologies supported by Dynatrace.") for OneAgent.
 
@@ -33,7 +32,7 @@ The support for a specific TAS version depends on the Go version used by the Clo
 
 |  |  |
 | --- | --- |
-| Future **Future** | Technology support will be added in a future OneAgent version |
+| Future**Future** | Technology support will be added in a future OneAgent version |
 
 ### Version 10.0.x
 
@@ -121,7 +120,7 @@ The support for a specific TAS version depends on the Go version used by the Clo
 | 2.11.1 | 2021-05-27 | 1.15.8 | 1.213.0 |
 | 2.11.0 | 2021-03-30 | 1.15.6 | 1.213.0 |
 
-There are two flavors of the [Dynatrace OneAgent BOSH Releaseï»¿](https://github.com/Dynatrace/bosh-oneagent-release). The full BOSH OneAgent release doesn't contain the OneAgent installer. Instead, the installer is downloaded from your Dynatrace environment during the release deployment. We recommend that you use the latest release of the Dynatrace OneAgent BOSH add-on because it contains the latest improvements. However, we've also listed the minimum required BOSH Release versions per VMware Tanzu application service version above.
+There are two flavors of the [Dynatrace OneAgent BOSH Release﻿](https://github.com/Dynatrace/bosh-oneagent-release). The full BOSH OneAgent release doesn't contain the OneAgent installer. Instead, the installer is downloaded from your Dynatrace environment during the release deployment. We recommend that you use the latest release of the Dynatrace OneAgent BOSH add-on because it contains the latest improvements. However, we've also listed the minimum required BOSH Release versions per VMware Tanzu application service version above.
 
 1
 

@@ -1,7 +1,6 @@
 ---
 title: Mobile app metrics API - GET a metric
 source: https://docs.dynatrace.com/managed/dynatrace-api/configuration-api/calculated-metrics/mobile-app-metrics/get-metric
-scraped: 2026-05-12T11:17:28.090113
 ---
 
 # Mobile app metrics API - GET a metric
@@ -49,7 +48,7 @@ Definition of the calculated metric for mobile or custom app.
 | Element | Type | Description |
 | --- | --- | --- |
 | applicationIdentifier | string | The Dynatrace entity ID of the application to which the metric belongs. |
-| dimensions | [CalculatedMobileMetricDimension[]](#openapi-definition-CalculatedMobileMetricDimension) | A list of metric dimensions. |
+| dimensions | [CalculatedMobileMetricDimension](#openapi-definition-CalculatedMobileMetricDimension)[] | A list of metric dimensions. |
 | enabled | boolean | The metric is enabled (`true`) or disabled (`false`). |
 | metricKey | string | The unique key of the metric.  The key must have the `calc:apps` prefix. |
 | metricType | string | The type of the metric. The element can hold these values * `REPORTED_ERROR_COUNT` * `USER_ACTION_DURATION` * `WEB_REQUEST_COUNT` * `WEB_REQUEST_ERROR_COUNT` |
@@ -169,5 +168,5 @@ User actions filter of the calculated metric for mobile or custom app.
 
 ## Related topics
 
-* [Create calculated metrics for mobile applications](/managed/observe/digital-experience/mobile-applications/additional-configuration/rum-calculated-metrics-mobile "Create calculated metrics as well as custom charts based on calculated metrics for your mobile applications.")
-* [Create calculated metrics for custom applications](/managed/observe/digital-experience/custom-applications/additional-configuration/rum-calculated-metrics-custom "Create calculated metrics as well as custom charts based on calculated metrics for your custom applications.")
+* [Create calculated metrics for mobile applications in RUM Classic](/managed/observe/digital-experience/rum-classic/mobile-applications/additional-configuration/rum-calculated-metrics-mobile "Create calculated metrics as well as custom charts based on calculated metrics for your mobile applications.")
+* [Create calculated metrics for custom applications in RUM Classic](/managed/observe/digital-experience/rum-classic/custom-applications/additional-configuration/rum-calculated-metrics-custom "Create calculated metrics as well as custom charts based on calculated metrics for your custom applications.")

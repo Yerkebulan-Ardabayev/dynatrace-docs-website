@@ -1,7 +1,6 @@
 ---
 title: Best practices and recommendations for tagging
 source: https://docs.dynatrace.com/managed/manage/tags-and-metadata/basic-concepts/best-practices-and-recommendations-for-tagging
-scraped: 2026-05-12T11:11:25.139814
 ---
 
 # Best practices and recommendations for tagging
@@ -59,10 +58,10 @@ The best way to create management zones is to define rules based on your entitie
 
 ## Problems, management zones, and tags
 
-[Problems](/managed/dynatrace-intelligence "Get familiar with the capabilities of Davis AI.") can also be filtered by tags. This basically means that one can focus on problems related to entities with a specific tag. This is also how notification integration can leverage tags. One can define to only send problems that concern entities with a certain tag to a specific [notification integration](/managed/analyze-explore-automate/notifications-and-alerting/problem-notifications "Learn how to integrate third-party problem notification systems with Dynatrace.").
+[Problems](/managed/dynatrace-intelligence "Learn how Davis® AI detects performance anomalies, identifies root causes, and uses AI models for adaptive thresholds across your environment.") can also be filtered by tags. This basically means that one can focus on problems related to entities with a specific tag. This is also how notification integration can leverage tags. One can define to only send problems that concern entities with a certain tag to a specific [notification integration](/managed/analyze-explore-automate/notifications-and-alerting/problem-notifications "Learn how to integrate third-party problem notification systems with Dynatrace.").
 
 ## Naming rules and naming conventions
 
-Dynatrace automatically provides names, but they donât enable you to quickly identify where an application or service belongs to. To achieve this, it's recommended that you use [service naming rules](/managed/observe/application-observability/services/service-detection/service-detection-v1/customize-service-naming "Use naming rules to customize and enhance the automated naming of your services.") and [process group naming rules](/managed/observe/infrastructure-observability/process-groups/configuration/pg-naming "Ways to customize process-group naming"). This can be done in Dynatrace using metadata imported from the monitored applications.
+Dynatrace automatically provides names, but they don’t enable you to quickly identify where an application or service belongs to. To achieve this, it's recommended that you use [service naming rules](/managed/observe/application-observability/services/service-detection/service-detection-v1/customize-service-naming "Use naming rules to customize and enhance the automated naming of your services.") and [process group naming rules](/managed/observe/infrastructure-observability/process-groups/configuration/pg-naming "Ways to customize process-group naming"). This can be done in Dynatrace using metadata imported from the monitored applications.
 
 It's highly recommended that you prefix process groups and applications with a designation related to business units (`BU` or `LOB`) or other owner designation. Such naming standard will be applied automatically to new and existing entities and can be enhanced in the future based on newly arising needs. This is also one of the reasons why it makes sense to define a minimal set of metadata that every application can provide.

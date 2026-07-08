@@ -1,7 +1,6 @@
 ---
 title: Static thresholds for infrastructure monitoring
 source: https://docs.dynatrace.com/managed/dynatrace-intelligence/anomaly-detection/static-thresholds-infrastructure
-scraped: 2026-05-12T12:06:01.002586
 ---
 
 # Static thresholds for infrastructure monitoring

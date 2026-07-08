@@ -1,7 +1,6 @@
 ---
 title: Problems API - GET feed
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/problems/problems/get-feed
-scraped: 2026-05-12T12:08:07.912666
 ---
 
 # Problems API - GET feed
@@ -18,7 +17,7 @@ Lists the problems (and their details) observed by Dynatrace during a relative p
 
 A problem is included in the response if either the start or end timestamp of the problem is within the defined timeframe.
 
-The output is limited to **5,000** problems. You can narrow it down by specifying filtering criteriaâsee the [**Parameters** section](#parameters).
+The output is limited to **5,000** problems. You can narrow it down by specifying filtering criteria—see the [**Parameters** section](#parameters).
 
 The request produces an `application/json` payload.
 
@@ -71,7 +70,7 @@ Details on open problems in your environment.
 | Element | Type | Description |
 | --- | --- | --- |
 | monitored | object | The number of monitored entities per impact level. |
-| problems | [Problem[]](#openapi-definition-Problem) | The list of problems and their details.  Contains all problems within specified timeframe, open and closed. |
+| problems | [Problem](#openapi-definition-Problem)[] | The list of problems and their details.  Contains all problems within specified timeframe, open and closed. |
 
 #### The `Problem` object
 
@@ -86,13 +85,13 @@ The properties of a problem.
 | hasRootCause | boolean | Indicates whether Dynatrace has found at least one possible root cause for the problem. |
 | id | string | The ID of the problem. |
 | impactLevel | string | The impact level of the problem. It shows what is affected by the problem: infrastructure, service, or application. The element can hold these values * `APPLICATION` * `ENVIRONMENT` * `INFRASTRUCTURE` * `SERVICE` |
-| rankedEvents | [Event[]](#openapi-definition-Event) | The list of events related to the problem. |
-| rankedImpacts | [EventRestImpact[]](#openapi-definition-EventRestImpact) | Provides impact information of the events in an aggregated form. For a more detailed impact analysis, see `rankedEvents`. |
+| rankedEvents | [Event](#openapi-definition-Event)[] | The list of events related to the problem. |
+| rankedImpacts | [EventRestImpact](#openapi-definition-EventRestImpact)[] | Provides impact information of the events in an aggregated form. For a more detailed impact analysis, see `rankedEvents`. |
 | recoveredCounts | object | The number of entities that were affected, but recovered, per impact level. |
 | severityLevel | string | The severity of the problem. The element can hold these values * `AVAILABILITY` * `CUSTOM_ALERT` * `ERROR` * `MONITORING_UNAVAILABLE` * `PERFORMANCE` * `RESOURCE_CONTENTION` |
 | startTime | integer | The start timestamp of the problem, in UTC milliseconds. |
 | status | string | The status of the problem. The element can hold these values * `CLOSED` * `OPEN` |
-| tagsOfAffectedEntities | [TagInfo[]](#openapi-definition-TagInfo) | Tags of entities affected by the problem. |
+| tagsOfAffectedEntities | [TagInfo](#openapi-definition-TagInfo)[] | Tags of entities affected by the problem. |
 
 #### The `Event` object
 
@@ -100,7 +99,7 @@ The properties of an event.
 
 | Element | Type | Description |
 | --- | --- | --- |
-| activeMaintenanceWindows | [EntityShortRepresentation[]](#openapi-definition-EntityShortRepresentation) | - |
+| activeMaintenanceWindows | [EntityShortRepresentation](#openapi-definition-EntityShortRepresentation)[] | - |
 | affectedPrivateSyntheticLocations | string[] | - |
 | affectedRequestsPerMinute | number | - |
 | affectedSyntheticActions | string[] | If the event type is one of the synthetic event types then we may have information on which synthetic actions are affected by the event. The names of those are returned in this field. |
@@ -130,7 +129,6 @@ The properties of an event.
 | impactLevel | string | The impact level of the event. It shows what is affected by the problem: infrastructure, service, or application. The element can hold these values * `APPLICATION` * `ENVIRONMENT` * `INFRASTRUCTURE` * `SERVICE` |
 | isClusterWide | boolean | For events with event type `MONITORING_UNAVAILABLE`, it may be that the event is occurring on the entire Dynatrace cluster. If this is true, it could be that there are problems on the Dynatrace side. |
 | isRootCause | boolean | Indicates if the event is the root cause of a problem. |
-| metadata | object | The metadata of the event. |
 | minimumProcessGroupInstanceCountThreshold | integer | - |
 | mobileAppVersion | string | - |
 | operatingSystem | string | - |
@@ -144,7 +142,7 @@ The properties of an event.
 | service | string | - |
 | serviceMethod | string | - |
 | serviceMethodGroup | string | - |
-| severities | [EventSeverity[]](#openapi-definition-EventSeverity) | Additional data on the event severity. |
+| severities | [EventSeverity](#openapi-definition-EventSeverity)[] | Additional data on the event severity. |
 | severityLevel | string | The severity of the event. The element can hold these values * `AVAILABILITY` * `CUSTOM_ALERT` * `ERROR` * `MONITORING_UNAVAILABLE` * `PERFORMANCE` * `RESOURCE_CONTENTION` |
 | source | string | - |
 | startTime | integer | The timestamp of the event detection, in UTC milliseconds. |
@@ -165,10 +163,6 @@ The short representation of a Dynatrace entity.
 | id | string | The ID of the Dynatrace entity. |
 | name | string | The name of the Dynatrace entity. |
 
-#### The `AnyValue` object
-
-A schema representing an arbitrary value type.
-
 #### The `EventSeverity` object
 
 Additional data on the event severity.
@@ -176,7 +170,7 @@ Additional data on the event severity.
 | Element | Type | Description |
 | --- | --- | --- |
 | context | string | The metric used in the event severity calculation. The element can hold these values * `COMMAND_ABORT` * `CPU_READY_TIME` * `CPU_USAGE` * `CRASH_RATE` * `FAILURE_RATE` * `HYPERVISOR_PACKETS_RECEIVED_DROPPED` * `HYPERVISOR_PACKETS_TRANSMITTED_DROPPED` * `MEMORY_COMPRESSION_RATE` * `MEMORY_DECOMPRESSION_RATE` * `MEMORY_SWAP_IN_RATE` * `MEMORY_SWAP_OUT_RATE` * `MEMORY_USAGE` * `NETWORK_HIGH_RECEIVED_UTILIZATION_RATE` * `NETWORK_HIGH_TRANSMITTED_UTILIZATION_RATE` * `NETWORK_PACKETS_RECEIVED_DROPPED` * `NETWORK_PACKETS_TRANSMITTED_DROPPED` * `NETWORK_RECEIVED_ERROR_RATE` * `NETWORK_TRANSMITTED_ERROR_RATE` * `PAGE_FAULTS` * `PG_AVAILABLE` * `RESPONSE_TIME_50TH_PERCENTILE` * `RESPONSE_TIME_90TH_PERCENTILE` |
-| unit | string | The unit of the severity value. The element can hold these values * `Ampere (A)` * `Billion (Gcount)` * `Bit (bit)` * `BitPerHour (bit/h)` * `BitPerMinute (bit/min)` * `BitPerSecond (bit/s)` * `Byte (B)` * `BytePerHour (B/h)` * `BytePerMinute (B/min)` * `BytePerSecond (B/s)` * `Cores` * `Count (count)` * `Day (ds)` * `DecibelMilliWatt (dBm)` * `G` * `GibiByte (GiB)` * `GibiBytePerHour (GiB/h)` * `GibiBytePerMinute (GiB/min)` * `GibiBytePerSecond (GiB/s)` * `GigaByte (GB)` * `GigaBytePerHour (GB/h)` * `GigaBytePerMinute (GB/min)` * `GigaBytePerSecond (GB/s)` * `Hertz (Hz)` * `Hour (hs)` * `KibiByte (KiB)` * `KibiBytePerHour (KiB/h)` * `KibiBytePerMinute (KiB/min)` * `KibiBytePerSecond (KiB/s)` * `KiloByte (kB)` * `KiloBytePerHour (kB/h)` * `KiloBytePerMinute (kB/min)` * `KiloBytePerSecond (kB/s)` * `M` * `MSU` * `MebiByte (MiB)` * `MebiBytePerHour (MiB/h)` * `MebiBytePerMinute (MiB/min)` * `MebiBytePerSecond (MiB/s)` * `MegaByte (MB)` * `MegaBytePerHour (MB/h)` * `MegaBytePerMinute (MB/min)` * `MegaBytePerSecond (MB/s)` * `MicroSecond (Âµs)` * `MilliSecond (ms)` * `MilliSecondPerMinute (ms/min)` * `Million (Mcount)` * `Minute (mins)` * `Month (mos)` * `N/A` * `NanoSecond (ns)` * `NanoSecondPerMinute (ns/min)` * `PerHour (count/h)` * `PerMinute (count/min)` * `PerSecond (count/s)` * `Percent (%)` * `Pixel (px)` * `Promille (â°)` * `Ratio` * `Second (s)` * `State` * `Trillion (Tcount)` * `Unspecified` * `Volt (V)` * `Watt (W)` * `Week (ws)` * `Year (ys)` * `k` * `km/h` * `m/h` * `m/s` * `mCores` |
+| unit | string | The unit of the severity value. The element can hold these values * `Ampere (A)` * `Billion (Gcount)` * `Bit (bit)` * `BitPerHour (bit/h)` * `BitPerMinute (bit/min)` * `BitPerSecond (bit/s)` * `Byte (B)` * `BytePerHour (B/h)` * `BytePerMinute (B/min)` * `BytePerSecond (B/s)` * `Cores` * `Count (count)` * `Day (ds)` * `DecibelMilliWatt (dBm)` * `G` * `GibiByte (GiB)` * `GibiBytePerHour (GiB/h)` * `GibiBytePerMinute (GiB/min)` * `GibiBytePerSecond (GiB/s)` * `GigaByte (GB)` * `GigaBytePerHour (GB/h)` * `GigaBytePerMinute (GB/min)` * `GigaBytePerSecond (GB/s)` * `Hertz (Hz)` * `Hour (hs)` * `KibiByte (KiB)` * `KibiBytePerHour (KiB/h)` * `KibiBytePerMinute (KiB/min)` * `KibiBytePerSecond (KiB/s)` * `KiloByte (kB)` * `KiloBytePerHour (kB/h)` * `KiloBytePerMinute (kB/min)` * `KiloBytePerSecond (kB/s)` * `M` * `MSU` * `MebiByte (MiB)` * `MebiBytePerHour (MiB/h)` * `MebiBytePerMinute (MiB/min)` * `MebiBytePerSecond (MiB/s)` * `MegaByte (MB)` * `MegaBytePerHour (MB/h)` * `MegaBytePerMinute (MB/min)` * `MegaBytePerSecond (MB/s)` * `MicroSecond (µs)` * `MilliSecond (ms)` * `MilliSecondPerMinute (ms/min)` * `Million (Mcount)` * `Minute (mins)` * `Month (mos)` * `N/A` * `NanoSecond (ns)` * `NanoSecondPerMinute (ns/min)` * `PerHour (count/h)` * `PerMinute (count/min)` * `PerSecond (count/s)` * `Percent (%)` * `Pixel (px)` * `Promille (‰)` * `Ratio` * `Second (s)` * `State` * `Trillion (Tcount)` * `Unspecified` * `Volt (V)` * `Watt (W)` * `Week (ws)` * `Year (ys)` * `k` * `km/h` * `m/h` * `m/s` * `mCores` |
 | value | number | The value of the severity. |
 
 #### The `EventRestImpact` object
@@ -214,7 +208,7 @@ Tag of a Dynatrace entity.
 | Element | Type | Description |
 | --- | --- | --- |
 | code | integer | The HTTP status code |
-| constraintViolations | [ConstraintViolation[]](#openapi-definition-ConstraintViolation) | A list of constraint violations |
+| constraintViolations | [ConstraintViolation](#openapi-definition-ConstraintViolation)[] | A list of constraint violations |
 | message | string | The error message |
 
 #### The `ConstraintViolation` object
@@ -492,18 +486,6 @@ A list of constraint violations
 
 
 "isRootCause": true,
-
-
-
-"metadata": {
-
-
-
-"empty": true
-
-
-
-},
 
 
 
@@ -1266,4 +1248,4 @@ https://mySampleEnv.live.dynatrace.com/api/v1/problem/feed?impactLevel=INFRASTRU
 
 ## Related topics
 
-* [DavisÂ® AI](/managed/dynatrace-intelligence "Get familiar with the capabilities of Davis AI.")
+* [Davis® AI](/managed/dynatrace-intelligence "Learn how Davis® AI detects performance anomalies, identifies root causes, and uses AI models for adaptive thresholds across your environment.")

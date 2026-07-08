@@ -1,7 +1,6 @@
 ---
 title: Disk events anomaly detection API - GET an event
 source: https://docs.dynatrace.com/managed/dynatrace-api/configuration-api/anomaly-detection-api/anomaly-detection-api-disk-events/get-event
-scraped: 2026-05-12T11:20:23.825410
 ---
 
 # Disk events anomaly detection API - GET an event
@@ -54,7 +53,7 @@ To learn how to obtain and use it, see [Tokens and authentication](/managed/disc
 | metric | string | The metric to monitor. The element can hold these values * `LOW_DISK_SPACE` * `LOW_INODES` * `READ_TIME_EXCEEDING` * `WRITE_TIME_EXCEEDING` |
 | name | string | The name of the disk event rule. |
 | samples | integer | The number of samples to evaluate. |
-| tagFilters | [TagFilter[]](#openapi-definition-TagFilter) | Narrows the rule usage down to the hosts matching the specified tags. |
+| tagFilters | [TagFilter](#openapi-definition-TagFilter)[] | Narrows the rule usage down to the hosts matching the specified tags. |
 | threshold | number | The threshold to trigger disk event.  * A percentage for `LowDiskSpace` or `LowInodes` metrics. * In milliseconds for `ReadTimeExceeding` or `WriteTimeExceeding` metrics. |
 | violatingSamples | integer | The number of samples that must violate the threshold to trigger an event. Must not exceed the number of evaluated samples. |
 
@@ -325,4 +324,4 @@ https://mySampleEnv.live.dynatrace.com/api/config/v1/anomalyDetection/diskEvents
 
 ## Related topics
 
-* [DavisÂ® AI](/managed/dynatrace-intelligence "Get familiar with the capabilities of Davis AI.")
+* [Davis® AI](/managed/dynatrace-intelligence "Learn how Davis® AI detects performance anomalies, identifies root causes, and uses AI models for adaptive thresholds across your environment.")

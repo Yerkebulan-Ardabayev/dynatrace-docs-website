@@ -1,7 +1,6 @@
 ---
 title: Settings API - Network security schema table
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/settings/schemas/builtin-activegate-token
-scraped: 2026-05-12T11:49:27.585943
 ---
 
 # Settings API - Network security schema table
@@ -12,7 +11,7 @@ scraped: 2026-05-12T11:49:27.585943
 
 ### Network security (`builtin:activegate-token)`
 
-Dynatrace assures out-of-the-box connection security between Dynatrace environmentâs elements.
+Dynatrace assures out-of-the-box connection security between Dynatrace environment’s elements.
 
 | Schema ID | Schema groups | Scope |
 | --- | --- | --- |

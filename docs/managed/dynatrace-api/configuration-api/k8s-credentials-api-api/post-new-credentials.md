@@ -1,7 +1,6 @@
 ---
 title: Kubernetes credentials API - POST new credentials
 source: https://docs.dynatrace.com/managed/dynatrace-api/configuration-api/k8s-credentials-api-api/post-new-credentials
-scraped: 2026-05-12T12:14:54.136925
 ---
 
 # Kubernetes credentials API - POST new credentials
@@ -53,7 +52,7 @@ Configuration for specific Kubernetes credentials.
 | endpointStatusInfo | string | The detailed status info of the configured endpoint. | Optional |
 | endpointUrl | string | The URL of the Kubernetes API server.  It must be unique within a Dynatrace environment.  The URL must valid according to RFC 2396. Leading or trailing whitespaces are not allowed. | Required |
 | eventAnalysisAndAlertingEnabled | boolean | [Deprecated] With 1.240 the EA events monitoring has been deprecated and replaced by the events GA version which obsoletes this property.  Corresponds to the value of `eventsIntegrationEnabled`.  The field is ignored during an update, the old value remains unaffected. | Optional |
-| eventsFieldSelectors | [KubernetesEventPattern[]](#openapi-definition-KubernetesEventPattern) | Kubernetes event filters based on field-selectors. If set to `null` on creation, no events field selectors are subscribed. If set to `null` on update, no change of stored events field selectors is applied. Set an empty list to clear all events field selectors. | Optional |
+| eventsFieldSelectors | [KubernetesEventPattern](#openapi-definition-KubernetesEventPattern)[] | Kubernetes event filters based on field-selectors. If set to `null` on creation, no events field selectors are subscribed. If set to `null` on update, no change of stored events field selectors is applied. Set an empty list to clear all events field selectors. | Optional |
 | eventsIntegrationEnabled | boolean | The monitoring of events is enabled (`true`) or disabled (`false`) for the Kubernetes cluster. Event monitoring depends on the active state of this configuration to be true.  If not set on creation, the `false` value is used.  If the field is omitted during an update, the old value remains unaffected. | Optional |
 | id | string | The ID of the given credentials configuration. | Optional |
 | label | string | The name of the Kubernetes credentials configuration.  Allowed characters are letters, numbers, whitespaces, and the following characters: `.+-_`. Leading or trailing whitespace is not allowed. | Required |
@@ -205,7 +204,7 @@ The short representation of a Dynatrace entity.
 | Element | Type | Description |
 | --- | --- | --- |
 | code | integer | The HTTP status code |
-| constraintViolations | [ConstraintViolation[]](#openapi-definition-ConstraintViolation) | A list of constraint violations |
+| constraintViolations | [ConstraintViolation](#openapi-definition-ConstraintViolation)[] | A list of constraint violations |
 | message | string | The error message |
 
 #### The `ConstraintViolation` object
@@ -336,7 +335,7 @@ To learn how to obtain and use it, see [Tokens and authentication](/managed/disc
 | Element | Type | Description |
 | --- | --- | --- |
 | code | integer | The HTTP status code |
-| constraintViolations | [ConstraintViolation[]](#openapi-definition-ConstraintViolation) | A list of constraint violations |
+| constraintViolations | [ConstraintViolation](#openapi-definition-ConstraintViolation)[] | A list of constraint violations |
 | message | string | The error message |
 
 #### The `ConstraintViolation` object
@@ -410,4 +409,4 @@ A list of constraint violations
 
 ## Related topics
 
-* [Explore Kubernetes in Dynatrace Hubï»¿](https://www.dynatrace.com/hub/?filter=kubernetes&utm_source=doc&utm_medium=link&utm_campaign=cross)
+* [Explore Kubernetes in Dynatrace Hub﻿](https://www.dynatrace.com/hub/?filter=kubernetes&utm_source=doc&utm_medium=link&utm_campaign=cross)

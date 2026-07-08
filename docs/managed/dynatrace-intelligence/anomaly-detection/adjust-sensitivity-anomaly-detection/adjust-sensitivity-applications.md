@@ -1,7 +1,6 @@
 ---
 title: Adjust the sensitivity of anomaly detection for applications
 source: https://docs.dynatrace.com/managed/dynatrace-intelligence/anomaly-detection/adjust-sensitivity-anomaly-detection/adjust-sensitivity-applications
-scraped: 2026-05-12T11:21:23.199175
 ---
 
 # Adjust the sensitivity of anomaly detection for applications
@@ -20,9 +19,9 @@ To adjust global configuration of anomaly detection for applications
 
 ## Key performance metric degradation
 
-This type of anomaly detection observes [key performance metrics](/managed/observe/digital-experience/rum-concepts/user-action-metrics#kpm "Learn what metrics Dynatrace calculates for user actions and find out what each metric indicates.") and triggers an alert if a metric violates the specified threshold. Dynatrace can detect degradation based on automatic baselining or fixed thresholds.
+This type of anomaly detection observes [key performance metrics](/managed/observe/digital-experience/rum-classic/rum-concepts/user-action-metrics#kpm "Learn what metrics Dynatrace calculates for user actions and find out what each metric indicates.") and triggers an alert if a metric violates the specified threshold. Dynatrace can detect degradation based on automatic baselining or fixed thresholds.
 
-Dynatrace evaluates degradation for two categoriesâall actions and the slowest 10%âand triggers an alert if **any** metric violates the threshold.
+Dynatrace evaluates degradation for two categories—all actions and the slowest 10%—and triggers an alert if **any** metric violates the threshold.
 
 To configure key performance metric degradation detection
 
@@ -96,7 +95,7 @@ For fixed thresholds, the problem impact includes the fixed threshold and the am
 
 Davis automatically generates baselines during a recent reference period. The default reference period is the past **7 days**.
 
-If monitoring data detected during the reference period is no longer validâfor example, if you've deployed a new version of your application that includes major changes, and you're now receiving a high number of alertsâselect **Reset** to establish a new baseline. Davis will purge the previous reference period and immediately begin collecting data for a new reference period.
+If monitoring data detected during the reference period is no longer valid—for example, if you've deployed a new version of your application that includes major changes, and you're now receiving a high number of alerts—select **Reset** to establish a new baseline. Davis will purge the previous reference period and immediately begin collecting data for a new reference period.
 
 ## Thresholds for a specific application
 
@@ -106,7 +105,7 @@ To change threshold settings for a specific application
 
 1. Go to **Web**, **Mobile**, **Frontend**, or **Custom Applications**, depending on the application type.
 2. Select the application you want to configure.
-3. In the browse menu (**â¦**), select **Edit**.
+3. In the browse menu (**…**), select **Edit**.
 4. Select **Anomaly detection**.
 5. Turn off **Use global anomaly detection settings**.
 6. Set the application-level thresholds in the same manner as described above for global settings.
@@ -114,4 +113,4 @@ To change threshold settings for a specific application
 ## Related topics
 
 * [Anomaly detection API - Applications](/managed/dynatrace-api/configuration-api/anomaly-detection-api/anomaly-detection-api-applications "Learn what the Dynatrace Anomaly detection API for applications offers.")
-* [Work with key performance metrics](/managed/observe/digital-experience/web-applications/analyze-and-use/work-with-key-performance-metrics "Learn how to use the right key performance metrics to optimize user experience data for each of your applications.")
+* [Work with key performance metrics in RUM Classic](/managed/observe/digital-experience/rum-classic/web-applications/analyze-and-use/work-with-key-performance-metrics "Learn how to use the right key performance metrics to optimize user experience data for each of your applications.")

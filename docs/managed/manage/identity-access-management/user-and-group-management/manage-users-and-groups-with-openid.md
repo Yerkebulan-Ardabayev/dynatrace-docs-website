@@ -1,7 +1,6 @@
 ---
 title: Manage users and groups with OpenID in Dynatrace Managed
 source: https://docs.dynatrace.com/managed/manage/identity-access-management/user-and-group-management/manage-users-and-groups-with-openid
-scraped: 2026-05-12T11:24:25.249468
 ---
 
 # Manage users and groups with OpenID in Dynatrace Managed
@@ -10,7 +9,7 @@ scraped: 2026-05-12T11:24:25.249468
 
 * Published Jul 17, 2018
 
-Dynatrace Managed supports integration with [OpenIDï»¿](https://openid.net/what-is-openid/) as an SSO IdP (Single Sign-On Identity Provider) for the management of users and groups. We support standard claims (email, profile, address) as defined in the [OpenID Connect Core 1.0 specificationï»¿](https://openid.net/specs/openid-connect-core-1_0.html#StandardClaims).
+Dynatrace Managed supports integration with [OpenID﻿](https://openid.net/what-is-openid/) as an SSO IdP (Single Sign-On Identity Provider) for the management of users and groups. We support standard claims (email, profile, address) as defined in the [OpenID Connect Core 1.0 specification﻿](https://openid.net/specs/openid-connect-core-1_0.html#StandardClaims).
 
 ## Configure redirect\_uri
 
@@ -32,7 +31,7 @@ You need to configure these URIs in your OpenID provider's client:
 
 ## Set up OpenID integration
 
-1. In the [user menu](/managed/discover-dynatrace/get-started/dynatrace-ui#user "Navigate the Dynatrace Managed platform"), go to **Cluster Management**.
+1. In the [user menu](/managed/discover-dynatrace/get-started/dynatrace-ui#user "Explore Dynatrace Managed, including navigation, browser requirements, timeframe selection, metric notation, and accessibility."), go to **Cluster Management**.
 2. Select **User authentication** > **Single sign-on settings**.
 3. In **Select single sign-on technology**, select **OpenID Connect**.
 4. From **Select login page**, select the login options you want to offer users:
@@ -47,7 +46,7 @@ You need to configure these URIs in your OpenID provider's client:
 
 ## Group assignment configuration
 
-Each Dynatrace Managed user must be assigned to at least one user group, with at least one associated [monitoring environment](/managed/discover-dynatrace/get-started/monitoring-environment "Understand and learn how to work with monitoring environments."). Without such a mapping, the user can't sign in to Dynatrace Managed and will receive an error message stating that no environment has been found.
+Each Dynatrace Managed user must be assigned to at least one user group, with at least one associated [monitoring environment](/managed/discover-dynatrace/get-started/monitoring-environment "Learn what a Dynatrace monitoring environment is, how to find your environment ID, and how to set up and connect multiple environments."). Without such a mapping, the user can't sign in to Dynatrace Managed and will receive an error message stating that no environment has been found.
 
 The **Assign users to groups based on UserInfo response attribute** switch determines how you manage user-group assignments:
 

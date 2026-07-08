@@ -1,7 +1,6 @@
 ---
 title: Synthetic metrics API - DELETE a metric
 source: https://docs.dynatrace.com/managed/dynatrace-api/configuration-api/calculated-metrics/synthetic-metrics/del-metric
-scraped: 2026-05-12T11:19:19.488919
 ---
 
 # Synthetic metrics API - DELETE a metric

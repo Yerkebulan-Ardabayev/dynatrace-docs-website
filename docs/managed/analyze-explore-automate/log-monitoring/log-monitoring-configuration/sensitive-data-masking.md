@@ -1,7 +1,6 @@
 ---
 title: Sensitive data masking (Logs Classic)
 source: https://docs.dynatrace.com/managed/analyze-explore-automate/log-monitoring/log-monitoring-configuration/sensitive-data-masking
-scraped: 2026-05-12T11:08:35.950620
 ---
 
 # Sensitive data masking (Logs Classic)
@@ -37,7 +36,7 @@ The host configuration rules can be accessed through the **Host settings** for a
 
 1. Go to **Hosts**.
 2. Find and select your host to display the host overview page.
-3. In the upper-right corner of the host overview page, select **More** (**â¦**) > **Settings**.
+3. In the upper-right corner of the host overview page, select **More** (**…**) > **Settings**.
 
 4. From the host settings, go to **Log Monitoring** > **Sensitive data masking**.
 5. Configure data masking by adding rules with a set of matchers that identify your sensitive data.
@@ -119,9 +118,9 @@ You can use the Settings API to manage your sensitive data masking configuration
 
 To check the current schema version for sensitive data masking configuration, list all available schemas and look for the `builtin:logmonitoring.sensitive-data-masking-settings` schema identifier. Sensitive data masking configuration objects are available for configuration on the following scopes:
 
-* `tenant`âconfiguration object affects all hosts in a given environment.
-* `host_group`âconfiguration object affects all hosts assigned to a given host group.
-* `host`âconfiguration object affects only the given host.
+* `tenant`—configuration object affects all hosts in a given environment.
+* `host_group`—configuration object affects all hosts assigned to a given host group.
+* `host`—configuration object affects only the given host.
 
 To create a sensitive data masking configuration using the API
 

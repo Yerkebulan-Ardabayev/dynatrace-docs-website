@@ -1,7 +1,6 @@
 ---
 title: Self-monitoring for the Dynatrace GCP integration
 source: https://docs.dynatrace.com/managed/ingest-from/google-cloud-platform/gcp-integrations/gcp-guide/deploy-k8/self-monitoring-gcp
-scraped: 2026-05-12T11:51:36.733054
 ---
 
 # Self-monitoring for the Dynatrace GCP integration
@@ -53,7 +52,7 @@ The Dynatrace GCP Monitor deployment reports self-monitoring metrics as Google C
 | --- | --- |
 | MINT lines ingested | The number of data points (metrics with dimensions) ingested by Dynatrace Metrics API v2 in a given interval. |
 | Dynatrace connectivity | The connectivity status (`1` = **OK**) between the monitoring function and Dynatrace. Connectivity can be broken due to an incorrect Dynatrace URL, an incorrect API token, or network connectivity issues. |
-| Dynatrace failed requests count | The number of requests rejected by Dynatrace Metrics API v2. The reason for failure can be that the data point value doesn't comply with the [metric ingestion protocol syntaxï»¿](https://dt-url.net/0903q6o), or that the [limit for metric ingestion is exceededï»¿](https://dt-url.net/fx03vuq). |
+| Dynatrace failed requests count | The number of requests rejected by Dynatrace Metrics API v2. The reason for failure can be that the data point value doesn't comply with the [metric ingestion protocol syntax﻿](https://dt-url.net/0903q6o), or that the [limit for metric ingestion is exceeded﻿](https://dt-url.net/fx03vuq). |
 | Dynatrace requests count | The number of requests sent to Dynatrace. |
 
 **Log ingestion**
@@ -78,7 +77,7 @@ The Dynatrace GCP Monitor deployment reports self-monitoring metrics as Google C
 | --- | --- |
 | MINT lines ingested | The number of data points (metrics with dimensions) ingested by Dynatrace Metrics API v2 in a given interval. |
 | Dynatrace connectivity | The connectivity status (`1` = **OK**) between the monitoring function and Dynatrace. Connectivity can be broken due to an incorrect Dynatrace URL, an incorrect API token, or network connectivity issues. |
-| Dynatrace failed requests count | The number of requests rejected by Dynatrace Metrics API v2. The reason for failure can be that the data point value doesn't comply with the [metric ingestion protocol syntaxï»¿](https://dt-url.net/0903q6o), or that the [limit for metric ingestion is exceededï»¿](https://dt-url.net/fx03vuq). |
+| Dynatrace failed requests count | The number of requests rejected by Dynatrace Metrics API v2. The reason for failure can be that the data point value doesn't comply with the [metric ingestion protocol syntax﻿](https://dt-url.net/0903q6o), or that the [limit for metric ingestion is exceeded﻿](https://dt-url.net/fx03vuq). |
 | Dynatrace requests count | The number of requests sent to Dynatrace. |
 
 ## View self-monitoring metrics

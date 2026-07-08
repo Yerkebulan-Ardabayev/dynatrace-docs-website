@@ -1,7 +1,6 @@
 ---
 title: Settings API - Monitor name schema table
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/settings/schemas/builtin-synthetic-http-name
-scraped: 2026-05-12T11:39:26.602996
 ---
 
 # Settings API - Monitor name schema table

@@ -1,7 +1,6 @@
 ---
 title: OpenTelemetry interoperability
 source: https://docs.dynatrace.com/managed/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration/aws-lambda-classic/opentelemetry-interoperability
-scraped: 2026-05-12T12:11:07.637749
 ---
 
 # OpenTelemetry interoperability
@@ -13,7 +12,7 @@ scraped: 2026-05-12T12:11:07.637749
 
 With Dynatrace interoperability for OpenTelemetry, you can use the instrumentation packages available from OpenTelemetry to monitor technologies (like databases or messaging frameworks) that aren't supported by the Dynatrace AWS Lambda extension out-of-the box. The Dynatrace AWS Lambda extension automatically captures the additional span instrumentation and integrates it with any other telemetry captured without any need to configure additional OpenTelemetry exporters.
 
-[OpenTelemetryï»¿](https://dt-url.net/y903u4j) is a collection of tools, APIs, and SDKs. You can use it to instrument, generate, collect, and export telemetry data (metrics, logs, and traces) for analysis to get insights into your software's performance and behavior. OpenTelemetry interoperability connects [Dynatrace AWS Lambda extension](/managed/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration/aws-lambda-classic/aws-lambda-extension "Monitor Lambda functions written in Python, Node.js, and Java.") to OpenTelemetry API for the respective instrumentation.
+[OpenTelemetry﻿](https://dt-url.net/y903u4j) is a collection of tools, APIs, and SDKs. You can use it to instrument, generate, collect, and export telemetry data (metrics, logs, and traces) for analysis to get insights into your software's performance and behavior. OpenTelemetry interoperability connects [Dynatrace AWS Lambda extension](/managed/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration/aws-lambda-classic/aws-lambda-extension "Monitor Lambda functions written in Python, Node.js, and Java.") to OpenTelemetry API for the respective instrumentation.
 
 ## Enable OpenTelemetry interoperability
 

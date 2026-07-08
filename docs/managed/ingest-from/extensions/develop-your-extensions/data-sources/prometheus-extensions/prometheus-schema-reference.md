@@ -1,7 +1,6 @@
 ---
 title: Prometheus data source reference
 source: https://docs.dynatrace.com/managed/ingest-from/extensions/develop-your-extensions/data-sources/prometheus-extensions/prometheus-schema-reference
-scraped: 2026-05-12T12:08:18.392397
 ---
 
 # Prometheus data source reference
@@ -213,7 +212,7 @@ You can use the following methods to define dimensions for your metrics:
 
   value: Joe.Doe@somedomain.com
   ```
-* [Prometheus labelï»¿](https://prometheus.io/docs/practices/naming/#metric-and-label-naming)
+* [Prometheus label﻿](https://prometheus.io/docs/practices/naming/#metric-and-label-naming)
 
   ```
   dimensions:
@@ -242,22 +241,22 @@ When extracting metric lines, you can add filtering logic that will result in re
 
 Define the filter based on a condition as follows:
 
-* **Starts with** â use a `const:$prefix` qualifier. Example:
+* **Starts with** – use a `const:$prefix` qualifier. Example:
 
   ```
   filter: const:$prefix(xyz)
   ```
-* **Ends with** â use a `const:$suffix` qualifier. Example:
+* **Ends with** – use a `const:$suffix` qualifier. Example:
 
   ```
   filter: const:$suffix(xyz)
   ```
-* **Contains** â use a `const:$contains` qualifier. Example:
+* **Contains** – use a `const:$contains` qualifier. Example:
 
   ```
   filter: const:$contains(xyz)
   ```
-* **Equals** â use a `const:$eq` qualifier. Example:
+* **Equals** – use a `const:$eq` qualifier. Example:
 
   ```
   filter: const:$eq(xyz)
@@ -265,17 +264,17 @@ Define the filter based on a condition as follows:
 
   For the expressions mentioned above, you can also use qualifiers:
 
-  + `const:$and` â to chain two or more expressions with AND operator. Example:
+  + `const:$and` – to chain two or more expressions with AND operator. Example:
 
     ```
     filter: const:$and(<expr1>,<expr2>)
     ```
-  + a `const:$or` â to chain two or more expressions with OR operator. Example:
+  + a `const:$or` – to chain two or more expressions with OR operator. Example:
 
     ```
     filter: const:$or(<expr1>,<expr2>)
     ```
-  + a `const:$not` â to negate an expression. Example:
+  + a `const:$not` – to negate an expression. Example:
 
     ```
     filter: const:$not(<expr>)
@@ -409,10 +408,10 @@ The Dynatrace Extensions framework supports all original Prometheus metric paylo
 
 | Prometheus exposed type | Dynatrace ingest |
 | --- | --- |
-| [Counterï»¿](https://dt-url.net/hq634n9) | `count` |
-| [Gaugeï»¿](https://dt-url.net/a2434zx) | `gauge` |
-| [Histogramï»¿](https://dt-url.net/5x034gl) | **Note**: The [timeseries percentile](/managed/upgrade/unavailable-in-managed "Your selection is unavailable in Dynatrace Managed.") is only available to DPS customers with the **Metrics powered by Grail** rate card. The function calculates the requested percentile of the expression value in each bucket, so it naturally used with histograms.  * Count part as `<metric-key>_count` * Total sum part as `<metric-key>_sum.count` * Individual buckets split by the `le` dimension indicating the bucket identifier as `<metric-key>_bucket.count`  Individual bucket metrics ingestion is disabled by default. For details on how to enable it, refer to the [advanced extension monitoring configuration description](/managed/ingest-from/extensions/develop-your-extensions/data-sources/prometheus-extensions/prometheus-schema-reference#advanced "Learn about Prometheus extensions in the Extensions framework."). Histogram code samples A standard Prometheus histogram metric includes:  * `HELP` and `TYPE` * Bucket data and summary metrics for `sum` and `count`  ```  # HELP http_response_time_seconds Time to respond to request  # TYPE http_response_time_seconds histogram  http_response_time_seconds_bucket{code="200",method="GET",path="/banners/post-auth",service="platform",le="0.005"} 1  ...  http_response_time_seconds_sum{code="404",method="POST",path="/revoke",service="platform"} 0.016945976  http_response_time_seconds_count{code="404",method="POST",path="/revoke",service="platform"} 1 ```  You can define metric metadata in the `extensions.yaml` file as shown below:  ```  metrics:  - key: http_response_time_seconds_count  metadata:  displayName: HTTP response time (Histogram count of observed events)  description: Time to respond to request  - key: http_response_time_seconds_sum.count  metadata:  displayName: HTTP response time (Histogram total sum of all observed values)  description: Time to respond to request  unit: Second  - key: http_response_time_seconds_bucket.count  metadata:  displayName: HTTP response time (Histogram buckets split by le)  description: Time to respond to request  unit: Second ```  To ingest histogram metrics in the Prometheus data source section of the `extensions.yaml` file:  * Use the base name of the metric without any summary suffix * Specify the type as `histogram`  ```  prometheus:  - group: CipherTrust Metrics  subgroups:  - subgroup: HTTP Traffic  featureSet: HTTP_Traffic  metrics:  - key: http_response_time_seconds  value: metric:http_response_time_seconds  type: histogram ``` |
-| [Summaryï»¿](https://dt-url.net/7g234n1) | * Count part as `<metric-key>_count` * Total sum part as `<metric-key>_sum.count` * Individual quantiles split by the quantile dimension indicating the quantile as `<metric-key>` |
+| [Counter﻿](https://dt-url.net/hq634n9) | `count` |
+| [Gauge﻿](https://dt-url.net/a2434zx) | `gauge` |
+| [Histogram﻿](https://dt-url.net/5x034gl) | **Note**: The [timeseries percentile](/managed/upgrade/unavailable-in-managed "Your selection is unavailable in Dynatrace Managed.") is only available to DPS customers with the **Metrics powered by Grail** rate card. The function calculates the requested percentile of the expression value in each bucket, so it naturally used with histograms.  * Count part as `<metric-key>_count` * Total sum part as `<metric-key>_sum.count` * Individual buckets split by the `le` dimension indicating the bucket identifier as `<metric-key>_bucket.count`  Individual bucket metrics ingestion is disabled by default. For details on how to enable it, refer to the [advanced extension monitoring configuration description](/managed/ingest-from/extensions/develop-your-extensions/data-sources/prometheus-extensions/prometheus-schema-reference#advanced "Learn about Prometheus extensions in the Extensions framework."). Histogram code samples A standard Prometheus histogram metric includes:  * `HELP` and `TYPE` * Bucket data and summary metrics for `sum` and `count`  ```  # HELP http_response_time_seconds Time to respond to request  # TYPE http_response_time_seconds histogram  http_response_time_seconds_bucket{code="200",method="GET",path="/banners/post-auth",service="platform",le="0.005"} 1  ...  http_response_time_seconds_sum{code="404",method="POST",path="/revoke",service="platform"} 0.016945976  http_response_time_seconds_count{code="404",method="POST",path="/revoke",service="platform"} 1 ```  You can define metric metadata in the `extensions.yaml` file as shown below:  ```  metrics:  - key: http_response_time_seconds_count  metadata:  displayName: HTTP response time (Histogram count of observed events)  description: Time to respond to request  - key: http_response_time_seconds_sum.count  metadata:  displayName: HTTP response time (Histogram total sum of all observed values)  description: Time to respond to request  unit: Second  - key: http_response_time_seconds_bucket.count  metadata:  displayName: HTTP response time (Histogram buckets split by le)  description: Time to respond to request  unit: Second ```  To ingest histogram metrics in the Prometheus data source section of the `extensions.yaml` file:  * Use the base name of the metric without any summary suffix * Specify the type as `histogram`  ```  prometheus:  - group: CipherTrust Metrics  subgroups:  - subgroup: HTTP Traffic  featureSet: HTTP_Traffic  metrics:  - key: http_response_time_seconds  value: metric:http_response_time_seconds  type: histogram ``` |
+| [Summary﻿](https://dt-url.net/7g234n1) | * Count part as `<metric-key>_count` * Total sum part as `<metric-key>_sum.count` * Individual quantiles split by the quantile dimension indicating the quantile as `<metric-key>` |
 
 ## Metric metadata
 
@@ -504,7 +503,7 @@ value: prometheus.net
 featureSet: prometheus_net_metrics
 ```
 
-When activating your extension using [monitoring configuration](#monitoring-configuration), you can limit monitoring to one of the feature sets. To work properly, the extension has to collect at least one metric after the activation.
+When activating your extension using a monitoring configuration, you can limit monitoring to one of the feature sets. To work properly, the extension has to collect at least one metric after the activation.
 
 In highly segmented networks, feature sets can reflect the segments of your environment. Then, when you create a monitoring configuration, you can select a feature set and a corresponding ActiveGate group that can connect to this particular segment.
 
@@ -851,8 +850,8 @@ The URL is the Prometheus endpoint from which your extension pulls the metrics. 
 
 You can define the following endpoint types:
 
-* `/metrics` â returns metrics in plain text Prometheus format.
-* `/api/v1/` â API path that could be followed directly by a `query` or `metadata` endpoint.
+* `/metrics` – returns metrics in plain text Prometheus format.
+* `/api/v1/` – API path that could be followed directly by a `query` or `metadata` endpoint.
 
 If you gather the same metrics from different endpoints (either Prometheus server or data exporter), some metrics could be overwritten, as the keys would be identical regardless of the endpoint. To avoid this, we automatically add an extra `activation_endpoint` dimension to each metric.
 
@@ -980,8 +979,8 @@ Remote monitoring only
 
 The credential vault authentication type provides a more secure approach to using extensions by securely storing and managing user credentials. To use this, you must be the owner of the credentials and have a credential vault that meets the following criteria:
 
-* **Credential type**âUser and password
-* **Credential scope**âSynthetic (in case of external vault usage) and Extension authentication scopes enabled
+* **Credential type**—User and password
+* **Credential scope**—Synthetic (in case of external vault usage) and Extension authentication scopes enabled
 * **Owner access only** is enabled only for credential owners
 
 ```
@@ -1094,7 +1093,7 @@ Autodiscovery is a feature that automatically resolves the DNS endpoints. If aut
 
 ## Resource consumption
 
-Resource consumption depends on the number of Prometheus endpoints. The first endpoint consumes 25 MB of RAM and 0.2%â0.5% of CPU. Every following endpoint consumes 0.5 MB of RAM and ~0.2% of CPU.
+Resource consumption depends on the number of Prometheus endpoints. The first endpoint consumes 25 MB of RAM and 0.2%–0.5% of CPU. Every following endpoint consumes 0.5 MB of RAM and ~0.2% of CPU.
 
 | Endpoints | Average CPU | Max CPU | RAM (MB) | Host (EC2 instance type) |
 | --- | --- | --- | --- | --- |

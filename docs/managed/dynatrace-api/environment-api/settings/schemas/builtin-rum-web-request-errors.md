@@ -1,7 +1,6 @@
 ---
 title: Settings API - Request errors schema table
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/settings/schemas/builtin-rum-web-request-errors
-scraped: 2026-05-12T11:42:18.893365
 ---
 
 # Settings API - Request errors schema table
@@ -13,7 +12,7 @@ scraped: 2026-05-12T11:42:18.893365
 ### Request errors (`builtin:rum.web.request-errors)`
 
 Create capture and detection rules to include request errors in your Apdex calculations or Davis AI problem detection and analysis.
-For more details, see [Configure request errorsï»¿](https://dt-url.net/13020hh).
+For more details, see [Configure request errors﻿](https://dt-url.net/13020hh).
 
 | Schema ID | Schema groups | Scope |
 | --- | --- | --- |
@@ -61,4 +60,4 @@ To execute this request, you need an access token with **Read settings** (`setti
 | --- | --- | --- | --- |
 | Capture this error `capture` | boolean | - | Required |
 | Include error in Apdex calculations `impactApdex` | boolean | - | Required |
-| Include error in Davis AI problem detection and analysis `considerForAi` | boolean | [View more detailsï»¿](https://dt-url.net/hd580p2k) | Required |
+| Include error in Davis AI problem detection and analysis `considerForAi` | boolean | [View more details﻿](https://dt-url.net/hd580p2k) | Required |

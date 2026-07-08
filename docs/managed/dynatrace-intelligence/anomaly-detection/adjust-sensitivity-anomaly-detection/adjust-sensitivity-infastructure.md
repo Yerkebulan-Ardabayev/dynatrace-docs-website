@@ -1,7 +1,6 @@
 ---
 title: Adjust the sensitivity of anomaly detection for infrastructure
 source: https://docs.dynatrace.com/managed/dynatrace-intelligence/anomaly-detection/adjust-sensitivity-anomaly-detection/adjust-sensitivity-infastructure
-scraped: 2026-05-12T11:16:37.832175
 ---
 
 # Adjust the sensitivity of anomaly detection for infrastructure
@@ -63,7 +62,7 @@ To change threshold settings for a group of disks
 
 ### Anomaly detection configuration hierarchy
 
-You can configure anomaly detection on multiple levelsâenvironment, host group, host, and so on. When you have multiple rules affecting the same entity, the most specific rule prevails over more generic rules, as described on the diagram below.
+You can configure anomaly detection on multiple levels—environment, host group, host, and so on. When you have multiple rules affecting the same entity, the most specific rule prevails over more generic rules, as described on the diagram below.
 
 ![Disk alerting override scheme](https://cdn.bfldr.com/B686QPH3/as/jkx5b8wwwf7sjkhnv9bx9q/Anomaly_detection_configuration_hierarchy_-_Light_Mode?auto=webp&format=png&position=1)
 
@@ -92,7 +91,7 @@ To change threshold settings for a specific host
 
 1. Go to **Hosts**.
 2. Select the host you want to configure.
-3. In the upper-right corner of the page, select **More** (**â¦**) > **Settings**.
+3. In the upper-right corner of the page, select **More** (**…**) > **Settings**.
 4. Go to **Anomaly detection** > **Infrastructure** to customize the configuration.
 
 ## Related topics

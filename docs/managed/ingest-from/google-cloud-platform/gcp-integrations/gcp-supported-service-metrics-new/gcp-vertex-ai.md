@@ -1,7 +1,6 @@
 ---
 title: Google Vertex AI monitoring
 source: https://docs.dynatrace.com/managed/ingest-from/google-cloud-platform/gcp-integrations/gcp-supported-service-metrics-new/gcp-vertex-ai
-scraped: 2026-05-12T11:51:15.199172
 ---
 
 # Google Vertex AI monitoring

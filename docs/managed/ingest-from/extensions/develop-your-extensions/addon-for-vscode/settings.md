@@ -1,7 +1,6 @@
 ---
 title: Settings
 source: https://docs.dynatrace.com/managed/ingest-from/extensions/develop-your-extensions/addon-for-vscode/settings
-scraped: 2026-05-12T12:16:06.470993
 ---
 
 # Settings
@@ -14,7 +13,7 @@ scraped: 2026-05-12T12:16:06.470993
 
 You can define all settings either globally or for each workspace.
 
-You can learn more about accessing these settings in Visual Studio Code's [official documentationï»¿](https://code.visualstudio.com/docs/getstarted/settings).
+You can learn more about accessing these settings in Visual Studio Code's [official documentation﻿](https://code.visualstudio.com/docs/getstarted/settings).
 
 ## Credentials
 
@@ -83,7 +82,7 @@ The add-on aims to allow users to customize their extension development experien
 
 ### Tenant Connectivity Settings
 
-The add-on always performs web requests to your Dynatrace environment over HTTPS. In specific scenariosâfor example, in Dynatrace Managedâyour environment may be accessible through a dedicated endpoint that uses either a custom-signed or a self-signed SSL certificate. While valid for encryption, most frameworks and browsers don't recognize these certificates as trusted, which causes requests to fail.
+The add-on always performs web requests to your Dynatrace environment over HTTPS. In specific scenarios—for example, in Dynatrace Managed—your environment may be accessible through a dedicated endpoint that uses either a custom-signed or a self-signed SSL certificate. While valid for encryption, most frameworks and browsers don't recognize these certificates as trusted, which causes requests to fail.
 
 The `dynatraceExtensions.tenantConnectivitySettings` setting is only available from your `settings.json` file and represents an array of environment endpoints that require special settings for HTTPS connectivity. Each entry in the array is an object with the following details:
 

@@ -1,7 +1,6 @@
 ---
 title: Stream logs to Dynatrace with Fluent Bit (Logs Classic)
 source: https://docs.dynatrace.com/managed/analyze-explore-automate/log-monitoring/acquire-log-data/stream-logs-with-fluent-bit
-scraped: 2026-05-12T12:09:43.487287
 ---
 
 # Stream logs to Dynatrace with Fluent Bit (Logs Classic)
@@ -27,8 +26,8 @@ You can send logs to Dynatrace using Fluent Bit. Configure Fluent Bit to send lo
 The Fluent Bit `http output` plugin allows you to forward your logs to the Dynatrace Log ingestion endpoint.
 
 1. Get a [Dynatrace API token](/managed/dynatrace-api/basics/dynatrace-api-authentication "Find out how to get authenticated to use the Dynatrace API.") with the `logs.ingest` (Ingest Logs) scope.
-2. [Deploy Fluent Bitï»¿](https://dt-url.net/zd034je).
-3. To send logs into the Dynatrace [Log ingestion](/managed/analyze-explore-automate/log-monitoring/acquire-log-data/logs-classic-ingestion-api "Learn how Dynatrace ingests log data and what are potential limits such ingestion.") endpoint, configure the [http output pluginï»¿](https://dt-url.net/0z034x4) through the configuration file.
+2. [Deploy Fluent Bit﻿](https://dt-url.net/zd034je).
+3. To send logs into the Dynatrace [Log ingestion](/managed/analyze-explore-automate/log-monitoring/acquire-log-data/logs-classic-ingestion-api "Learn how Dynatrace ingests log data and what are potential limits such ingestion.") endpoint, configure the [http output plugin﻿](https://dt-url.net/0z034x4) through the configuration file.
 4. In your main Fluent Bit configuration file, append the Output section with the following parameters:
 
 ```
@@ -163,15 +162,15 @@ Json_Date_Format": "iso8601"
 Json_Date_Key": "timestamp"
 ```
 
-To avoid publishing the token in plaintext, follow the directions from [AWS Secrets Managerï»¿](https://dt-url.net/r5234z4).
+To avoid publishing the token in plaintext, follow the directions from [AWS Secrets Manager﻿](https://dt-url.net/r5234z4).
 Once your application starts publishing logs, you can view them in the Dynatrace UI.
 
-Refer to [AWS sample repositoryï»¿](https://dt-url.net/3j0348v) for the task definition JSON with Dynatrace configuration.
+Refer to [AWS sample repository﻿](https://dt-url.net/3j0348v) for the task definition JSON with Dynatrace configuration.
 
-For more configuration details, see [Amazon ECS Developer Guideï»¿](https://dt-url.net/cf4349a).
+For more configuration details, see [Amazon ECS Developer Guide﻿](https://dt-url.net/cf4349a).
 
 ## Troubleshooting
 
 Visit Dynatrace Community for troubleshooting guides, as well as see [Troubleshooting Log Monitoring (Logs Classic)](/managed/analyze-explore-automate/log-monitoring/lmc-troubleshooting "Fix issues related to the setup and configuration of Log Monitoring Classic.").
 
-* [Troubleshooting logs ingested via Fluent Bitï»¿](https://community.dynatrace.com/t5/Troubleshooting/Troubleshooting-logs-ingested-via-Fluent-Bit/ta-p/283718)
+* [Troubleshooting logs ingested via Fluent Bit﻿](https://community.dynatrace.com/t5/Troubleshooting/Troubleshooting-logs-ingested-via-Fluent-Bit/ta-p/283718)

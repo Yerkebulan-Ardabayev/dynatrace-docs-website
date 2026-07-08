@@ -1,7 +1,6 @@
 ---
 title: Plugins API - DELETE plugin ZIP file
 source: https://docs.dynatrace.com/managed/dynatrace-api/configuration-api/plugins-api/delete-plugin-binary
-scraped: 2026-05-12T11:21:03.233727
 ---
 
 # Plugins API - DELETE plugin ZIP file

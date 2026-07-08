@@ -1,7 +1,6 @@
 ---
 title: Log sources and storage (Logs Classic)
 source: https://docs.dynatrace.com/managed/analyze-explore-automate/log-monitoring/acquire-log-data/add-log-files-sources-v2
-scraped: 2026-05-12T11:13:26.805420
 ---
 
 # Log sources and storage (Logs Classic)

@@ -1,7 +1,6 @@
 ---
 title: Dynatrace Managed release notes
 source: https://docs.dynatrace.com/managed/whats-new/managed
-scraped: 2026-05-12T11:03:18.320307
 ---
 
 # Dynatrace Managed release notes
@@ -9,21 +8,22 @@ scraped: 2026-05-12T11:03:18.320307
 # Dynatrace Managed release notes
 
 * Release notes
-* Updated on May 07, 2026
+* Updated on Jun 01, 2026
 
 New versions are rolled out within configurable [maintenance windows](/managed/managed-cluster/operation/update-cluster "Learn how to update a Managed cluster and how to schedule an automatic update.").
 
 |  | Rollout start | Currently supported |
 | --- | --- | --- |
+| [Version 1.340](/managed/whats-new/managed/sprint-340 "New features, changes, and resolved issues in Dynatrace Managed 1.340") | Jun 08, 2026 | Yes |
 | [Version 1.338](/managed/whats-new/managed/sprint-338 "New features, changes, and resolved issues in Dynatrace Managed 1.338") | May 11, 2026 | Yes |
 | [Version 1.336](/managed/whats-new/managed/sprint-336 "New features, changes, and resolved issues in Dynatrace Managed 1.336") | Apr 13, 2026 | Yes |
-| [Version 1.334](/managed/whats-new/managed/sprint-334 "New features, changes, and resolved issues in Dynatrace Managed 1.334") | Mar 16, 2026 | Yes |
-| [Version 1.332](/managed/whats-new/managed/sprint-332 "Release notes for Dynatrace Managed, version 1.332") | Feb 16, 2026 | Only with [Enterprise Success and Supportï»¿](https://dt-url.net/qt03zwg) |
+| [Version 1.334](/managed/whats-new/managed/sprint-334 "New features, changes, and resolved issues in Dynatrace Managed 1.334") | Mar 16, 2026 | Only with [Enterprise Success and Support﻿](https://dt-url.net/qt03zwg) |
 
 Show previous versions
 
-|  | Rollout start | Standard support ended | [Enterprise Success and Supportï»¿](https://dt-url.net/qt03zwg) ended |
+|  | Rollout start | Standard support ended | [Enterprise Success and Support﻿](https://dt-url.net/qt03zwg) ended |
 | --- | --- | --- | --- |
+| [Version 1.332](/managed/whats-new/managed/sprint-332 "Release notes for Dynatrace Managed, version 1.332") | Feb 16, 2026 | May 11, 2026 | Jun 08, 2026 |
 | [Version 1.330](/managed/whats-new/managed/sprint-330 "Release notes for Dynatrace Managed, version 1.330") | Jan 19, 2026 | Apr 13, 2026 | May 11, 2026 |
 | [Version 1.328](/managed/whats-new/managed/sprint-328 "Release notes for Dynatrace Managed, version 1.328") | Dec 02, 2025 | Mar 16, 2026 | Apr 13, 2026 |
 | [Version 1.326](/managed/whats-new/managed/sprint-326 "Release notes for Dynatrace Managed, version 1.326") | Oct 27, 2025 | Feb 16, 2026 | Mar 16, 2026 |

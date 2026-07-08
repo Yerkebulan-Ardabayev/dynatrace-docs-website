@@ -1,7 +1,6 @@
 ---
 title: Distributed traces concepts
 source: https://docs.dynatrace.com/managed/observe/application-observability/distributed-traces/concepts
-scraped: 2026-05-12T11:14:13.215079
 ---
 
 # Distributed traces concepts
@@ -31,11 +30,11 @@ A distributed trace is a sequence of spans, identified by a unique trace ID, tha
 
 ### Span
 
-A span represents a single operation within a distributed trace, capturing the details of the request's journey through multiple services. Each span includes attributes such as the name, the start timestamp, a list of span events (such as exceptions), the parent's span identifier, and the span kind. This informationâ**span context**â helps to put all spans and events in context with each other, so that you can trace and understand the performance and behavior of individual operations within the distributed system.
+A span represents a single operation within a distributed trace, capturing the details of the request's journey through multiple services. Each span includes attributes such as the name, the start timestamp, a list of span events (such as exceptions), the parent's span identifier, and the span kind. This information—**span context**— helps to put all spans and events in context with each other, so that you can trace and understand the performance and behavior of individual operations within the distributed system.
 
-Within a trace, when the activityâ*parent span*âis completed, the next activity passes to its *child span*. A span without a parent span is called a trace *root span* and indicates the start of a trace.
+Within a trace, when the activity—*parent span*—is completed, the next activity passes to its *child span*. A span without a parent span is called a trace *root span* and indicates the start of a trace.
 
-The span context allows a child span to relate to the trace and its parent span. Therefore, the context needs to be propagated within a service (across different threads) but also across services and process boundaries. This typically happens via HTTP headers (like the [W3C trace contextï»¿](https://www.w3.org/TR/trace-context/)) or via unique IDs in messaging systems. To learn more about context propagation, see [Span and trace context propagation in Distributed Traces Classic](/managed/observe/application-observability/distributed-traces/context-propagation "Understand span and trace context propagation in Dynatrace and how to set them up.").
+The span context allows a child span to relate to the trace and its parent span. Therefore, the context needs to be propagated within a service (across different threads) but also across services and process boundaries. This typically happens via HTTP headers (like the [W3C trace context﻿](https://www.w3.org/TR/trace-context/)) or via unique IDs in messaging systems. To learn more about context propagation, see [Span and trace context propagation in Distributed Traces Classic](/managed/observe/application-observability/distributed-traces/context-propagation "Understand span and trace context propagation in Dynatrace and how to set them up.").
 
 ### Attribute
 
@@ -67,7 +66,7 @@ Services are traversed by distributed traces. On horizontally scaled services, s
 
 ### Data collection and context propagation
 
-You can integrate OpenTelemetry and OneAgent to collect trace dataâlike request status, response time, versions, infrastructure information, and other relevant metadata as attributes. The trace context, including the unique trace ID, is then propagated across your apps and microservices.
+You can integrate OpenTelemetry and OneAgent to collect trace data—like request status, response time, versions, infrastructure information, and other relevant metadata as attributes. The trace context, including the unique trace ID, is then propagated across your apps and microservices.
 
 #### Best practices
 
@@ -87,9 +86,9 @@ To get started see
 
 Use OpenTelemetry in combination with OneAgent to enhance your observability coverage, using the best of both.
 
-### PurePathÂ® technology
+### PurePath® technology
 
-Dynatrace patented PurePathÂ® technology for distributed tracing, since 2006. PurePathÂ® technology combines distributed tracing information with additional insights like user experience information, logs, metrics, topology information, metadata, and even code-level profiling information to provide the highest level of data fidelity and granularity.
+Dynatrace patented PurePath® technology for distributed tracing, since 2006. PurePath® technology combines distributed tracing information with additional insights like user experience information, logs, metrics, topology information, metadata, and even code-level profiling information to provide the highest level of data fidelity and granularity.
 
 #### Use cases
 

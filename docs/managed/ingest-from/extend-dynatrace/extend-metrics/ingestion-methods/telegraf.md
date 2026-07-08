@@ -1,7 +1,6 @@
 ---
 title: Send Telegraf metrics to Dynatrace
 source: https://docs.dynatrace.com/managed/ingest-from/extend-dynatrace/extend-metrics/ingestion-methods/telegraf
-scraped: 2026-05-12T11:10:34.100194
 ---
 
 # Send Telegraf metrics to Dynatrace
@@ -11,7 +10,7 @@ scraped: 2026-05-12T11:10:34.100194
 * 2-min read
 * Published Oct 15, 2020
 
-[Telegrafï»¿](https://github.com/influxdata/telegraf) is a plugin-driven server agent for collecting, processing, aggregating, and writing metrics. Telegraf comes with the Dynatrace Output Plugin that enables you to easily send Telegraf metrics to Dynatrace.
+[Telegraf﻿](https://github.com/influxdata/telegraf) is a plugin-driven server agent for collecting, processing, aggregating, and writing metrics. Telegraf comes with the Dynatrace Output Plugin that enables you to easily send Telegraf metrics to Dynatrace.
 
 ## Enable Telegraf ingestion
 
@@ -21,7 +20,7 @@ Enable the Dynatrace Output Plugin in Telegraf configuration
 
 ### Telegraf and OneAgent on the same host
 
-1. Edit `telegraf.conf`, the [Telegraf configuration fileï»¿](https://docs.influxdata.com/telegraf/v1.16/administration/configuration/).
+1. Edit `telegraf.conf`, the [Telegraf configuration file﻿](https://docs.influxdata.com/telegraf/v1.16/administration/configuration/).
 2. Uncomment the `[[outputs.dynatrace]]` line.
 3. Optional Uncomment the `prefix = "telegraf."` line and set the prefix to easily find the Telegraf ingested metrics. The prefix will also be visible in the Dynatrace metric key.
 4. Save the file.
@@ -157,9 +156,9 @@ If you can't install OneAgent on the Telegraf-monitored host, you can configure 
 #### Prerequisites
 
 * [API token](/managed/manage/identity-access-management/access-tokens-and-oauth-clients/access-tokens#create-api-token "Learn the concept of an access token and its scopes.") with the **Ingest metrics data points** scope.
-* Your [Environment ID](/managed/discover-dynatrace/get-started/monitoring-environment "Understand and learn how to work with monitoring environments.").
+* Your [Environment ID](/managed/discover-dynatrace/get-started/monitoring-environment "Learn what a Dynatrace monitoring environment is, how to find your environment ID, and how to set up and connect multiple environments.").
 
-1. Edit `telegraf.conf`, the [Telegraf configuration fileï»¿](https://docs.influxdata.com/telegraf/v1.15/administration/configuration/).
+1. Edit `telegraf.conf`, the [Telegraf configuration file﻿](https://docs.influxdata.com/telegraf/v1.15/administration/configuration/).
 2. Uncomment the `# [[outputs.dynatrace]]` line.
 3. Optional Uncomment the `# prefix = "telegraf."` line and set the prefix to easily find the Telegraf ingested metrics. The prefix will also be visible in the Dynatrace metric key.
 4. Uncomment the `# api_token = ""` line and add your API token, for example `api_token = "abcdefjhij1234567890"`
@@ -303,7 +302,7 @@ Enable for a single host
 
 1. Go to **Hosts**.
 2. Find and select your host to display the host overview page.
-3. In the upper-right corner of the host overview page, select **More** (**â¦**) > **Settings**.
+3. In the upper-right corner of the host overview page, select **More** (**…**) > **Settings**.
 
 4. In the host settings, select **Extension Execution Controller**.
 5. Turn on **Enable Extension Execution Controller**.
@@ -362,7 +361,7 @@ Configure your host proxy to allow localhost traffic going to the metric ingesti
 
 If you change the default OneAgent communication port, make sure you also update the Telegraf configuration.
 
-1. Edit `telegraf.conf`, the [Telegraf configuration fileï»¿](https://docs.influxdata.com/telegraf/v1.15/administration/configuration/).
+1. Edit `telegraf.conf`, the [Telegraf configuration file﻿](https://docs.influxdata.com/telegraf/v1.15/administration/configuration/).
 2. Set the `url` property to `url = "http://127.0.0.1:<your-custom-port>/metrics/ingest"`.
 3. Save the file.
 

@@ -1,7 +1,6 @@
 ---
 title: Install the z/OS Java module
 source: https://docs.dynatrace.com/managed/ingest-from/dynatrace-oneagent/installation-and-operation/zos/installation/install-zos-java
-scraped: 2026-05-12T11:24:09.591624
 ---
 
 # Install the z/OS Java module
@@ -120,7 +119,7 @@ Activate the [OneAgent feature](/managed/ingest-from/dynatrace-oneagent/oneagent
 ## Download
 
 1. [Download z/OS product datasets](/managed/ingest-from/dynatrace-oneagent/installation-and-operation/zos/installation/zosmf-installer/download-zos-datasets "Download and install the Dynatrace product datasets for z/OS.") and extract the JAR file (`dynatrace-oneagent-zos-java.jar`).
-2. Transfer the JAR file to your z/OS [Unix System Servicesï»¿](https://www.ibm.com/docs/en/zos/2.5.0?topic=zos-unix-system-services) (USS) environment in binary mode.
+2. Transfer the JAR file to your z/OS [Unix System Services﻿](https://www.ibm.com/docs/en/zos/2.5.0?topic=zos-unix-system-services) (USS) environment in binary mode.
 3. Create a new file with the name `dtconfig.json` in the z/OS USS folder where the module is located.
 
    A minimal `dtconfig.json` file contains your Dynatrace environment ID (**Tenant**), cluster ID (**ClusterID**), and the zDC subsystem name (**ZdcName**). For example:

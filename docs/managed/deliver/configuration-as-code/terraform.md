@@ -1,7 +1,6 @@
 ---
 title: Configuration as Code via Terraform overview
 source: https://docs.dynatrace.com/managed/deliver/configuration-as-code/terraform
-scraped: 2026-05-12T11:05:10.610759
 ---
 
 # Configuration as Code via Terraform overview
@@ -12,11 +11,11 @@ scraped: 2026-05-12T11:05:10.610759
 * 2-min read
 * Updated on Jul 01, 2024
 
-Dynatrace offers a dedicated [Terraform providerï»¿](https://registry.terraform.io/providers/dynatrace-oss/dynatrace/latest) to manage your monitoring environment.
+Dynatrace offers a dedicated [Terraform provider﻿](https://registry.terraform.io/providers/dynatrace-oss/dynatrace/latest) to manage your monitoring environment.
 
 ## Terraform overview
 
-[Terraformï»¿](https://developer.hashicorp.com/terraform), by HashiCorp, is a widely adopted Infrastructure-as-Code (IaC) tool.
+[Terraform﻿](https://developer.hashicorp.com/terraform), by HashiCorp, is a widely adopted Infrastructure-as-Code (IaC) tool.
 
 The Dynatrace Terraform provider is a library that allows you to use the Terraform syntax and functionalities to create a custom configuration (resource), such as a Dynatrace dashboard, workflow, or custom alert.
 
@@ -44,12 +43,12 @@ The Dynatrace Terraform provider allows you to pull information from these data 
 
 Official Terraform documentation:
 
-* [Terraform Documentationï»¿](https://developer.hashicorp.com/terraform/docs)
-* [Terraform Tutorialsï»¿](https://developer.hashicorp.com/terraform/tutorials)
+* [Terraform Documentation﻿](https://developer.hashicorp.com/terraform/docs)
+* [Terraform Tutorials﻿](https://developer.hashicorp.com/terraform/tutorials)
 
 Further Dynatrace documentation and material:
 
-* [GitHub Repository: `terraform-provider-dynatrace`ï»¿](https://github.com/dynatrace-oss/terraform-provider-dynatrace)
-* [Terraform Registry: Dynatrace Terraform Providerï»¿](https://registry.terraform.io/providers/dynatrace-oss/dynatrace/latest/docs)
+* [GitHub Repository: `terraform-provider-dynatrace`﻿](https://github.com/dynatrace-oss/terraform-provider-dynatrace)
+* [Terraform Registry: Dynatrace Terraform Provider﻿](https://registry.terraform.io/providers/dynatrace-oss/dynatrace/latest/docs)
 
 Getting Started with Dynatrace Terraform

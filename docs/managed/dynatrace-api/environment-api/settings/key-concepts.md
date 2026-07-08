@@ -1,7 +1,6 @@
 ---
 title: Settings API key concepts
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/settings/key-concepts
-scraped: 2026-05-12T11:38:49.757612
 ---
 
 # Settings API key concepts
@@ -41,8 +40,8 @@ Use [List objects](/managed/dynatrace-api/environment-api/settings/objects/get-o
 
 Settings schemas come in two flavors, controlled by the `multiObject` property on the schema definition:
 
-* **Single-value** (`multiObject: false`)âno more than one object exists per scope. Absence means the schema default or the value set on a parent scope is in effect.
-* **Multi-value** (`multiObject: true`)âzero or more objects can coexist on the same scope, up to the limit set by `maxObjects`. When the schema's `ordered` property is `true`, item order has semantic significance; use `insertAfter` and `insertBefore` on create/update requests to control positioning.
+* **Single-value** (`multiObject: false`)—no more than one object exists per scope. Absence means the schema default or the value set on a parent scope is in effect.
+* **Multi-value** (`multiObject: true`)—zero or more objects can coexist on the same scope, up to the limit set by `maxObjects`. When the schema's `ordered` property is `true`, item order has semantic significance; use `insertAfter` and `insertBefore` on create/update requests to control positioning.
 
 ### Scopes
 
@@ -76,7 +75,7 @@ All list endpoints use cursor-based pagination via `nextPageKey`. The cursor app
 
 ### Sparse fieldsets (`fields` parameter)
 
-The `fields` query parameter lets you limit which top-level fields are returned in a response. When provided, it replaces the default field set entirelyâit is not additive. If you specify `fields=objectId,value`, you will get only those two fields; any other fields from the default set (such as `scope` or `schemaId`) are excluded.
+The `fields` query parameter lets you limit which top-level fields are returned in a response. When provided, it replaces the default field set entirely—it is not additive. If you specify `fields=objectId,value`, you will get only those two fields; any other fields from the default set (such as `scope` or `schemaId`) are excluded.
 
 Responses don't include `updateToken` by default. If you need it for optimistic locking, request it explicitly: `fields=objectId,value,scope,updateToken`.
 
@@ -84,11 +83,11 @@ Responses don't include `updateToken` by default. If you need it for optimistic 
 
 **Relevant endpoint:** [Edit an object](/managed/dynatrace-api/environment-api/settings/objects/put-object "Edit a settings object via the Dynatrace API.")
 
-The API masks properties of type `secret` in `GET` responses. On `PUT`, you can either send the plaintext value to update a secret, or send back the masked value to keep it unchangedâunless the schema restricts this for specific non-secret properties.
+The API masks properties of type `secret` in `GET` responses. On `PUT`, you can either send the plaintext value to update a secret, or send back the masked value to keep it unchanged—unless the schema restricts this for specific non-secret properties.
 
-Some non-secret property definitions carry a `forceSecretResubmission` field. When `forceSecretResubmission: true`, you cannot update that non-secret property while keeping secrets masked â the API requires you to provide plaintext values for all secret properties in the same schema alongside that change.
+Some non-secret property definitions carry a `forceSecretResubmission` field. When `forceSecretResubmission: true`, you cannot update that non-secret property while keeping secrets masked — the API requires you to provide plaintext values for all secret properties in the same schema alongside that change.
 
-This restriction closes a potential exfiltration vector. Consider a schema that stores both a secret (for example, an API key) and a destination URL. Without `forceSecretResubmission: true` on the URL property, an attacker with write access could change only the URL to a server they control while leaving the secrets maskedâthe server would silently re-use the stored plaintext the next time it called the API, forwarding the credential to the attacker. By requiring secret resubmission when the URL changes, the schema ensures the caller already knows the secrets before they can submit a valid update.
+This restriction closes a potential exfiltration vector. Consider a schema that stores both a secret (for example, an API key) and a destination URL. Without `forceSecretResubmission: true` on the URL property, an attacker with write access could change only the URL to a server they control while leaving the secrets masked—the server would silently re-use the stored plaintext the next time it called the API, forwarding the credential to the attacker. By requiring secret resubmission when the URL changes, the schema ensures the caller already knows the secrets before they can submit a valid update.
 
 For non-secret properties where `forceSecretResubmission` is absent or `false`, you can update them freely while sending back masked values for secret properties. To check whether a specific non-secret property carries this restriction, inspect its definition in the schema.
 

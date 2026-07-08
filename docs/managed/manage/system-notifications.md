@@ -1,7 +1,6 @@
 ---
 title: System notifications
 source: https://docs.dynatrace.com/managed/manage/system-notifications
-scraped: 2026-05-12T11:03:14.799003
 ---
 
 # System notifications
@@ -31,8 +30,8 @@ To filter the table, set a filter in the filter bar:
 
 To sort the table, select the appropriate column header. You can sort by:
 
-* **Received**âthe date and time on which the notification was received
-* **Severity**âthe severity assigned to the notification (`SEVERE`, `WARNING`, or `INFO`)
+* **Received**—the date and time on which the notification was received
+* **Severity**—the severity assigned to the notification (`SEVERE`, `WARNING`, or `INFO`)
 
 ## Resolve issues
 

@@ -1,7 +1,6 @@
 ---
 title: Deployment API - GET available versions of ActiveGate
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/deployment/activegate/get-activegate-versions
-scraped: 2026-05-12T11:56:48.102976
 ---
 
 # Deployment API - GET available versions of ActiveGate

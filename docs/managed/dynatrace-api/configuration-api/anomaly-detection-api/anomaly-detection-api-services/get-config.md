@@ -1,7 +1,6 @@
 ---
 title: Services anomaly detection API - GET configuration
 source: https://docs.dynatrace.com/managed/dynatrace-api/configuration-api/anomaly-detection-api/anomaly-detection-api-services/get-config
-scraped: 2026-05-12T11:20:48.082221
 ---
 
 # Services anomaly detection API - GET configuration
@@ -434,5 +433,5 @@ https://mySampleEnv.live.dynatrace.com/api/config/v1/anomalyDetection/services
 ## Related topics
 
 * [Adjust the sensitivity of anomaly detection for services](/managed/dynatrace-intelligence/anomaly-detection/adjust-sensitivity-anomaly-detection/adjust-sensitivity-services "Learn how to adapt the sensitivity of problem detection for services.")
-* [DavisÂ® AI](/managed/dynatrace-intelligence "Get familiar with the capabilities of Davis AI.")
+* [Davis® AI](/managed/dynatrace-intelligence "Learn how Davis® AI detects performance anomalies, identifies root causes, and uses AI models for adaptive thresholds across your environment.")
 * [Services](/managed/observe/application-observability/services "Learn how to monitor and analyze your services, define and use request attributes, and more.")

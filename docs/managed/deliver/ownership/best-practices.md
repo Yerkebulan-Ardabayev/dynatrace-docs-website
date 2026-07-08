@@ -1,7 +1,6 @@
 ---
 title: Best practices for entity ownership
 source: https://docs.dynatrace.com/managed/deliver/ownership/best-practices
-scraped: 2026-05-12T11:12:46.095289
 ---
 
 # Best practices for entity ownership
@@ -158,7 +157,7 @@ value: 'dt.owner-1=my-team-1' # Ownership defined for the process
 #### Important considerations when using tags for ownership
 
 * **Manual tagging** doesn't **scale** adequately for assigning ownership in large, dynamic monitoring environments. Manual tags can also be removed manually.
-* While (web UIâbased) **automatic tagging rules** are designed for complexity, automatic tagging runs can take a **long time** to be completed, depending on the complexity of your rules and the size of your environment. Meanwhile, a critical entity experiencing an issue could miss being tagged with ownership. Read more about optimizing tagging in [Best practices for scaling tagging and management-zone rules](/managed/manage/tags-and-metadata/basic-concepts/best-practice-tagging-at-scale "Optimize auto-tagging and management-zone rules to speed up the automatic assignment process.").
+* While (web UI–based) **automatic tagging rules** are designed for complexity, automatic tagging runs can take a **long time** to be completed, depending on the complexity of your rules and the size of your environment. Meanwhile, a critical entity experiencing an issue could miss being tagged with ownership. Read more about optimizing tagging in [Best practices for scaling tagging and management-zone rules](/managed/manage/tags-and-metadata/basic-concepts/best-practice-tagging-at-scale "Optimize auto-tagging and management-zone rules to speed up the automatic assignment process.").
 * While the **Custom tags API call** is executed immediately, the tradeoff is that it's a **one-time operation**. Depending on the frequency of your tagging runs, new or short-lived entities could miss being tagged with ownership information entirely, making it difficult to find owners in case of vulnerabilities or outages.
 * We **do not recommend** using tags to apply ownership to processes or process groups.
 
@@ -167,15 +166,15 @@ value: 'dt.owner-1=my-team-1' # Ownership defined for the process
 While only the **Team name** and **Team identifier** fields are required for creating an [ownership team](/managed/deliver/ownership/ownership-teams "Define teams with team identifiers, descriptions, responsibilities, and routing information for entity ownership."), here are some suggestions and best uses of other fields.
 
 * When defining [custom keys](/managed/deliver/ownership/assign-ownership#custom-keys "Assign owners to entities using entity metadata like labels, environment variables, and tags.") for ownership identifiers, use specific, easily understandable names that are not likely to be used for other tagging needs.
-* Always add a team **Description**âthis is displayed along with the team name on the **Ownership teams** settings page and helps to differentiate teams at a glance. Teams with no description or a poor name (team 1) offer no clues as to their role in your organization. Teams with descriptions (2 and 3) are more identifiable.
+* Always add a team **Description**—this is displayed along with the team name on the **Ownership teams** settings page and helps to differentiate teams at a glance. Teams with no description or a poor name (team 1) offer no clues as to their role in your organization. Teams with descriptions (2 and 3) are more identifiable.
 
   ![Team definitions](https://dt-cdn.net/images/ownership-team-definitions-1888-78e12327f8.png)
 
   Team definitions
-* **Supplementary identifiers**âyou can define up to three per teamâare especially useful when:
+* **Supplementary identifiers**—you can define up to three per team—are especially useful when:
 
-  + Your team name changesâyou can add a supplementary identifier to reflect the name change while leaving the main team identifier unchanged. (Once created, the main team identifier cannot be edited or changed.)
-  + You want to define sub-teams. Create a supplementary ID for each sub-teamâyou can use the main team ID as a prefix. For example, for the main team ID `team1`, create the supplementary IDs `team1-taskforce` and `team1-planning`.
+  + Your team name changes—you can add a supplementary identifier to reflect the name change while leaving the main team identifier unchanged. (Once created, the main team identifier cannot be edited or changed.)
+  + You want to define sub-teams. Create a supplementary ID for each sub-team—you can use the main team ID as a prefix. For example, for the main team ID `team1`, create the supplementary IDs `team1-taskforce` and `team1-planning`.
 
   Supplementary identifiers give you more flexibility.
 

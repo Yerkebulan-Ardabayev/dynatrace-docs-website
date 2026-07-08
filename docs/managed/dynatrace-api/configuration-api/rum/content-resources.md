@@ -1,7 +1,6 @@
 ---
 title: Content resources API
 source: https://docs.dynatrace.com/managed/dynatrace-api/configuration-api/rum/content-resources
-scraped: 2026-05-12T11:04:42.057681
 ---
 
 # Content resources API
@@ -21,6 +20,6 @@ Update configuration of content providers.](/managed/dynatrace-api/configuration
 
 ## Related topics
 
-* [Configure first-party, third-party, and CDN resource detection for web applications](/managed/observe/digital-experience/web-applications/additional-configuration/configure-third-party-and-cdn-content-detection-web "Manually define third-party and CDN providers along with auto-detected providers for your web applications.")
-* [Configure first-party, third-party, and CDN resource detection for mobile applications](/managed/observe/digital-experience/mobile-applications/additional-configuration/configure-third-party-and-cdn-content-detection-mobile "Manually define third-party and CDN providers along with auto-detected providers for your mobile applications.")
-* [Configure first-party, third-party, and CDN resource detection for custom applications](/managed/observe/digital-experience/custom-applications/additional-configuration/configure-third-party-and-cdn-content-detection-custom "Manually define third-party and CDN providers along with auto-detected providers for your custom applications.")
+* [Configure first-party, third-party, and CDN resource detection for web applications in RUM Classic](/managed/observe/digital-experience/rum-classic/web-applications/additional-configuration/configure-third-party-and-cdn-content-detection-web "Manually define third-party and CDN providers along with auto-detected providers for your web applications.")
+* [Configure first-party, third-party, and CDN resource detection for mobile applications in RUM Classic](/managed/observe/digital-experience/rum-classic/mobile-applications/additional-configuration/configure-third-party-and-cdn-content-detection-mobile "Manually define third-party and CDN providers along with auto-detected providers for your mobile applications.")
+* [Configure first-party, third-party, and CDN resource detection for custom applications in RUM Classic](/managed/observe/digital-experience/rum-classic/custom-applications/additional-configuration/configure-third-party-and-cdn-content-detection-custom "Manually define third-party and CDN providers along with auto-detected providers for your custom applications.")

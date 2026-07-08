@@ -1,7 +1,6 @@
 ---
 title: Settings API - Cookies schema table
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/settings/schemas/builtin-synthetic-http-cookies
-scraped: 2026-05-12T11:44:47.289010
 ---
 
 # Settings API - Cookies schema table

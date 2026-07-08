@@ -1,7 +1,6 @@
 ---
 title: Synthetic locations API - POST a location
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/synthetic/synthetic-locations/post-a-location
-scraped: 2026-05-12T11:56:55.967195
 ---
 
 # Synthetic locations API - POST a location
@@ -11,7 +10,7 @@ scraped: 2026-05-12T11:56:55.967195
 * Reference
 * Published Mar 13, 2019
 
-We have a new version of this APIâ[Synthetic API v2](/managed/dynatrace-api/environment-api/synthetic-v2 "Find out what the Dynatrace Synthetic v2 API offers."). Check it out!
+We have a new version of this API—[Synthetic API v2](/managed/dynatrace-api/environment-api/synthetic-v2 "Find out what the Dynatrace Synthetic v2 API offers."). Check it out!
 
 Creates a new **private** Synthetic location. For more details about synthetic location creation, see [Create a private Synthetic location](/managed/observe/digital-experience/synthetic-monitoring/private-synthetic-locations/create-a-private-synthetic-location "Learn how to create a private location for synthetic monitoring.").
 
@@ -44,7 +43,7 @@ Configuration of a synthetic location.
 
 **countryCode**, **regionCode**, **city** parameters are optional as they can be retrieved based on **latitude** and **longitude** of location.
 
-The actual set of fields depends on the type of the location. Find the list of actual objects in the description of the **type** field or see [Synthetic locations API v2 - JSON modelsï»¿](https://dt-url.net/3n43szj).
+The actual set of fields depends on the type of the location. Find the list of actual objects in the description of the **type** field or see [Synthetic locations API v2 - JSON models﻿](https://dt-url.net/3n43szj).
 
 | Element | Type | Description | Required |
 | --- | --- | --- | --- |
@@ -60,7 +59,7 @@ The actual set of fields depends on the type of the location. Find the list of a
 | minActiveGateCount | integer | Containerized location property. The minimum number of ActiveGates deployed for the location (required for a Kubernetes location). | Optional |
 | namExecutionSupported | boolean | Containerized location property. Boolean value describes if icmp monitors will be executed on this location:  * `false`: Icmp monitor executions disabled. * `true`: Icmp monitor executions enabled. | Optional |
 | nodeSize | string | Containerized location property. The size of a containerized node deployed for the location (required for a Kubernetes location). Accepted values:  * `XS`: extra small * `S`: small * `M`: medium   The node size `L` is not supported in containerized locations. The element can hold these values * `M` * `S` * `UNSUPPORTED` * `XS` | Optional |
-| nodes | string[] | A list of synthetic nodes belonging to the location.  You can retrieve the list of available nodes with the [GET all nodesï»¿](https://dt-url.net/miy3rpl) call. | Optional |
+| nodes | string[] | A list of synthetic nodes belonging to the location.  You can retrieve the list of available nodes with the [GET all nodes﻿](https://dt-url.net/miy3rpl) call. | Optional |
 | useNewKubernetesVersion | boolean | Containerized location property. Boolean value describes which kubernetes version will be used:  * `false`: Version 1.23+ that is older than 1.26 * `true`: Version 1.26+. | Optional |
 
 ### Request body JSON model
@@ -170,7 +169,7 @@ A DTO for entity ID.
 | Element | Type | Description |
 | --- | --- | --- |
 | code | integer | The HTTP status code |
-| constraintViolations | [ConstraintViolation[]](#openapi-definition-ConstraintViolation) | A list of constraint violations |
+| constraintViolations | [ConstraintViolation](#openapi-definition-ConstraintViolation)[] | A list of constraint violations |
 | message | string | The error message |
 
 #### The `ConstraintViolation` object
@@ -401,4 +400,4 @@ https://mySampleEnv.live.dynatrace.com/api/v1/synthetic/locations
 ## Related topics
 
 * [Synthetic Monitoring](/managed/observe/digital-experience/synthetic-monitoring "Learn about Synthetic Monitoring and how to create a single-URL browser monitor, a browser clickpath, or an HTTP monitor.")
-* [Create a private Synthetic location](/managed/observe/digital-experience/synthetic-monitoring/private-synthetic-locations/create-a-private-synthetic-location "Learn how to create a private location for synthetic monitoring.")
+* [Create a private Synthetic location in Classic](/managed/observe/digital-experience/synthetic-monitoring/private-synthetic-locations/create-a-private-synthetic-location "Learn how to create a private location for synthetic monitoring.")

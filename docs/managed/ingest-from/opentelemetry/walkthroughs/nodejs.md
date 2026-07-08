@@ -1,7 +1,6 @@
 ---
 title: Instrument your JavaScript application on Node.js with OpenTelemetry
 source: https://docs.dynatrace.com/managed/ingest-from/opentelemetry/walkthroughs/nodejs
-scraped: 2026-05-12T12:04:22.354571
 ---
 
 # Instrument your JavaScript application on Node.js with OpenTelemetry
@@ -10,7 +9,7 @@ scraped: 2026-05-12T12:04:22.354571
 
 * How-to guide
 * 5-min read
-* Updated on Nov 14, 2023
+* Updated on May 11, 2026
 
 This walkthrough shows how to add observability to your JavaScript application using the OpenTelemetry JavaScript libraries and tools.
 
@@ -26,7 +25,10 @@ This walkthrough shows how to add observability to your JavaScript application u
 * Dynatrace version 1.222+
 * For tracing, W3C Trace Context is enabled
 
-  1. Go to **Settings** > **Preferences** > **OneAgent features**.
+  1. Go to the appropriate configuration page:
+
+     + In Latest Dynatrace, go to ![Settings](https://dt-cdn.net/images/settings-icon-256-38e1321b51.webp "Settings") **Settings** > **Collect and capture** > **General monitoring settings** > **OneAgent features**.
+     + In Dynatrace Classic, go to **Settings** > **Preferences** > **OneAgent features**.
   2. Turn on **Send W3C Trace Context HTTP headers**.
 
 ## Step 1 Get the Dynatrace access details
@@ -81,7 +83,7 @@ To generate an access token, in Dynatrace, go to ![Access tokens](https://dt-cdn
    @opentelemetry/semantic-conventions
    ```
 
-   Depending on the libraries your application is using, there may be also additional instrumentation support libraries that you want to add to the dependencies. A list of support libraries can be found [hereï»¿](https://www.npmjs.com/search?q=%40opentelemetry%2Finstrumentation). Common examples would be [@opentelemetry/instrumentation-httpï»¿](https://www.npmjs.com/package/@opentelemetry/instrumentation-http) and [@opentelemetry/instrumentation-netï»¿](https://www.npmjs.com/package/@opentelemetry/instrumentation-net) for the HTTP and network libraries.
+   Depending on the libraries your application is using, there may be also additional instrumentation support libraries that you want to add to the dependencies. A list of support libraries can be found [here﻿](https://www.npmjs.com/search?q=%40opentelemetry%2Finstrumentation). Common examples would be [@opentelemetry/instrumentation-http﻿](https://www.npmjs.com/package/@opentelemetry/instrumentation-http) and [@opentelemetry/instrumentation-net﻿](https://www.npmjs.com/package/@opentelemetry/instrumentation-net) for the HTTP and network libraries.
 2. Create a file named `otel.js` in your application directory and save the following content.
 
    ```
@@ -326,7 +328,7 @@ To generate an access token, in Dynatrace, go to ![Access tokens](https://dt-cdn
    Value injection
 
    Instead of hardcoding the URL and token, you might also consider reading them from storage specific to your application framework (for example, environment variables or framework secrets).
-4. Adjust the Node.js call for your application to include the [ârequireï»¿](https://nodejs.org/api/cli.html#-r---require-module) command line parameter and point it towards `otel.js`.
+4. Adjust the Node.js call for your application to include the [–require﻿](https://nodejs.org/api/cli.html#-r---require-module) command line parameter and point it towards `otel.js`.
 
    ```
    node --require ./otel.js ./myapplication.js
@@ -371,7 +373,7 @@ To generate an access token, in Dynatrace, go to ![Access tokens](https://dt-cdn
    In the above code, we:
 
    * Create a new span and name it "Call to /myendpoint"
-   * Add two attributes, following the [semantic naming conventionï»¿](https://opentelemetry.io/docs/specs/semconv/general/trace/), specific to the action of this span: information on the HTTP method and version
+   * Add two attributes, following the [semantic naming convention﻿](https://opentelemetry.io/docs/specs/semconv/general/trace/), specific to the action of this span: information on the HTTP method and version
    * Add a `TODO` in place of the eventual business logic
    * Call the span's `end()` method to complete the span
 
@@ -440,7 +442,7 @@ If you are using automatic instrumentation and your networking libraries are cov
 
 #### Extracting the context when receiving a request
 
-The following examples assume that we received a network call via [`ClientRequest`ï»¿](https://nodejs.org/api/http.html#class-httpclientrequest) and uses `extract()` to create the context object `remoteCtx`, based on the context information received from the HTTP headers. This allows us to continue the previous trace with our spans.
+The following examples assume that we received a network call via [`ClientRequest`﻿](https://nodejs.org/api/http.html#class-httpclientrequest) and uses `extract()` to create the context object `remoteCtx`, based on the context information received from the HTTP headers. This allows us to continue the previous trace with our spans.
 
 ```
 //Extract context from incoming headers
@@ -484,7 +486,7 @@ attributes: {
 
 #### Injecting the context when sending requests
 
-In the following example, we use the [axiosï»¿](https://www.npmjs.com/package/axios) HTTP client to send a REST request to another service and provide our existing context as part of the HTTP headers of our request.
+In the following example, we use the [axios﻿](https://www.npmjs.com/package/axios) HTTP client to send a REST request to another service and provide our existing context as part of the HTTP headers of our request.
 
 To do so, we create a `ctx` object, pass it the current span, and mark it as active. Then we pass that context object and an empty `my_headers` object to `inject()` and, once the call is returned, we have the appropriate headers in `my_headers`, which we can eventually pass to our HTTP call.
 

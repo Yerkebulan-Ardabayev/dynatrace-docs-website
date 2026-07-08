@@ -1,7 +1,6 @@
 ---
 title: RUM JavaScript API - GET current version
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/rum/real-user-monitoring-javascript-code/get-current-version
-scraped: 2026-05-12T11:55:51.891871
 ---
 
 # RUM JavaScript API - GET current version
@@ -34,7 +33,7 @@ To learn how to obtain and use it, see [Tokens and authentication](/managed/disc
 
 | Parameter | Type | Description | In | Required |
 | --- | --- | --- | --- | --- |
-| entity | string | The Dynatrace entity ID of the application.  You can obtain it from the response of the [GET the list of manually injected applicationsï»¿](https://dt-url.net/dl03sgo) call. | path | Required |
+| entity | string | The Dynatrace entity ID of the application.  You can obtain it from the response of the [GET the list of manually injected applications﻿](https://dt-url.net/dl03sgo) call. | path | Required |
 
 ## Response
 

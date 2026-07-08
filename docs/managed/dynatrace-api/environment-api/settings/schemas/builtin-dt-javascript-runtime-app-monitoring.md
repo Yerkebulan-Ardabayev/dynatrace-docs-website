@@ -1,7 +1,6 @@
 ---
 title: Settings API - App Monitoring schema table
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/settings/schemas/builtin-dt-javascript-runtime-app-monitoring
-scraped: 2026-05-12T11:39:50.701244
 ---
 
 # Settings API - App Monitoring schema table
@@ -14,7 +13,7 @@ scraped: 2026-05-12T11:39:50.701244
 
 Set up the monitoring parameters for your custom Dynatrace applications. These parameters will establish the default behavior for logging and tracing within this environment.
 
-[Discover more about App functions and their monitoring.ï»¿](https://dt-url.net/dz23v17).
+[Discover more about App functions and their monitoring.﻿](https://dt-url.net/dz23v17).
 
 | Schema ID | Schema groups | Scope |
 | --- | --- | --- |

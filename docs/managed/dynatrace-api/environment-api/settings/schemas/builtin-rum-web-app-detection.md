@@ -1,7 +1,6 @@
 ---
 title: Settings API - Application detection schema table
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/settings/schemas/builtin-rum-web-app-detection
-scraped: 2026-05-12T11:47:12.243425
 ---
 
 # Settings API - Application detection schema table
@@ -12,15 +11,15 @@ scraped: 2026-05-12T11:47:12.243425
 
 ### Application detection (`builtin:rum.web.app-detection)`
 
-Define new applications for Real User Monitoring (RUM) using [application detection rulesï»¿](https://dt-url.net/wb3f0pfr), check how your existing rules map to your applications.
+Define new applications for Real User Monitoring (RUM) using [application detection rules﻿](https://dt-url.net/wb3f0pfr), check how your existing rules map to your applications.
 
 By default, Dynatrace associates all your monitoring data with a placeholder application (`<your-dynatrace-url>//#uemapplications/uemappmetrics;uemapplicationId=APPLICATION-EA7C4B59F27D43EB`). Define your own detection rules for grouping your monitoring data into distinct applications in Dynatrace.
 
-If you haven't done so already, deploy OneAgent (`<your-dynatrace-url>//#install`). After the deployment [RUMï»¿](https://dt-url.net/1n2b0prq) is enabled by default for all web applications that are auto-detected by OneAgent. OneAgent [automatically injectsï»¿](https://dt-url.net/kp5f0p5z) a JavaScript code snippet into the HTML of all the pages of your monitored web applications so that it can capture monitoring data and ensure end-to-end monitoring visibility.
+If you haven't done so already, deploy OneAgent (`<your-dynatrace-url>//#install`). After the deployment [RUM﻿](https://dt-url.net/1n2b0prq) is enabled by default for all web applications that are auto-detected by OneAgent. OneAgent [automatically injects﻿](https://dt-url.net/kp5f0p5z) a JavaScript code snippet into the HTML of all the pages of your monitored web applications so that it can capture monitoring data and ensure end-to-end monitoring visibility.
 
 * Rules are applied sequentially, with rules at the top taking priority over lower rules.
-* [Not seeing your applications or RUM data?ï»¿](https://dt-url.net/kl2a0pm4)
-* More details on [defining your web applicationï»¿](https://dt-url.net/r63b0pgq).
+* [Not seeing your applications or RUM data?﻿](https://dt-url.net/kl2a0pm4)
+* More details on [defining your web application﻿](https://dt-url.net/r63b0pgq).
 
 Given a set of URLs:
 

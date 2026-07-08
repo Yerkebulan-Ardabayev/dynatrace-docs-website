@@ -1,7 +1,6 @@
 ---
 title: Deploy OneAgent on Mesos/Marathon
 source: https://docs.dynatrace.com/managed/ingest-from/setup-on-container-platforms/deploy-dynatrace-oneagent-on-mesos-marathon
-scraped: 2026-05-12T11:04:10.043839
 ---
 
 # Deploy OneAgent on Mesos/Marathon
@@ -13,7 +12,7 @@ scraped: 2026-05-12T11:04:10.043839
 
 Mesos is a generic cluster resource manager which can be used together with the Marathon framework to run containers in distributed environments.
 
-To monitor applications running in [Mesos clustersï»¿](https://www.dynatrace.com/technologies/mesos-monitoring/), we recommend that you deploy OneAgent on all Mesos agent nodes by means of a Marathon application deployment. Following this, install OneAgent on the Mesos master nodes, as explained on this page.
+To monitor applications running in [Mesos clusters﻿](https://www.dynatrace.com/technologies/mesos-monitoring/), we recommend that you deploy OneAgent on all Mesos agent nodes by means of a Marathon application deployment. Following this, install OneAgent on the Mesos master nodes, as explained on this page.
 
 ## Locate your OneAgent installer URL
 
@@ -64,9 +63,9 @@ This is your `ONEAGENT_INSTALLER_SCRIPT_URL`.
 
    If you don't use DC/OS
 
-   If you're using [DC/OSï»¿](https://www.dynatrace.com/technologies/dcos-monitoring/) to manage your Mesos cluster, you can take advantage of the Dynatrace package in the DC/OS universe. The universe package will automatically deploy Dynatrace to all your Mesos agent nodes.
+   If you're using [DC/OS﻿](https://www.dynatrace.com/technologies/dcos-monitoring/) to manage your Mesos cluster, you can take advantage of the Dynatrace package in the DC/OS universe. The universe package will automatically deploy Dynatrace to all your Mesos agent nodes.
 
-   If you're not using [DC/OSï»¿](https://www.dynatrace.com/technologies/dcos-monitoring), you can run OneAgent as a Marathon application by following this example.
+   If you're not using [DC/OS﻿](https://www.dynatrace.com/technologies/dcos-monitoring), you can run OneAgent as a Marathon application by following this example.
 
    * Use the `cat` command to create the `dynatrace-oneagent.json` file. Before you run it, edit the JSON part from the example below and replace the two placeholders with your Mesos cluster specific data:
 

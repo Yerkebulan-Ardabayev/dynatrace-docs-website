@@ -1,7 +1,6 @@
 ---
 title: Process groups
 source: https://docs.dynatrace.com/managed/observe/infrastructure-observability/process-groups
-scraped: 2026-05-12T11:09:34.422097
 ---
 
 # Process groups
@@ -12,9 +11,9 @@ scraped: 2026-05-12T11:09:34.422097
 * 3-min read
 * Published Jan 08, 2019
 
-Dynatrace automatically merges related processes into process groups. A âprocess groupâ is a logical cluster of processes that belong to the same application or deployment unit and perform the same function across multiple hosts. Process groups are key building blocks of most modern web-based applications.
+Dynatrace automatically merges related processes into process groups. A “process group” is a logical cluster of processes that belong to the same application or deployment unit and perform the same function across multiple hosts. Process groups are key building blocks of most modern web-based applications.
 
-Show moreâ¦
+Show more…
 
 Dynatrace automatically [detects application types](/managed/observe/infrastructure-observability/process-groups/basic-concepts/what-technologies-underlie-individual-processes "The technologies and versions behind a process") such as Tomcat, JBoss, Apache HTTP Server, MongoDB, and many others technologies. To create process groups, Dynatrace uses specific process properties. For Tomcat, Dynatrace uses `CATALINA_HOME` and `CATALINA_BASE` to distinguish between different Tomcat clusters. For JBoss, Dynatrace uses `JBOSS_HOME` and the JBoss cluster configuration. For generic Java processes, Dynatrace uses the JAR file or the main class used to start the process. There are also many specialized detection mechanisms. For example, Dynatrace can detect:
 
@@ -26,7 +25,7 @@ Dynatrace automatically [detects application types](/managed/observe/infrastruct
 * OpenShift apps
 * Cloud Foundry apps
 * Azure Web Apps
-* And moreâ¦
+* And more…
 
 On each process overview page you'll find the properties if you expand **Properties and tags**.
 

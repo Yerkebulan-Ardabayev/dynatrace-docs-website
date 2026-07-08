@@ -1,7 +1,6 @@
 ---
 title: Settings API - Outage handling schema table
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/settings/schemas/builtin-synthetic-browser-outage-handling
-scraped: 2026-05-12T11:42:07.288409
 ---
 
 # Settings API - Outage handling schema table

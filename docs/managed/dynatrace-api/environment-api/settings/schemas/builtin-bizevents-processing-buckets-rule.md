@@ -1,7 +1,6 @@
 ---
 title: Settings API - Business event bucket assignment schema table
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/settings/schemas/builtin-bizevents-processing-buckets-rule
-scraped: 2026-05-12T11:47:23.219520
 ---
 
 # Settings API - Business event bucket assignment schema table
@@ -14,7 +13,7 @@ scraped: 2026-05-12T11:47:23.219520
 
 Business events can be stored in different buckets. The first user-defined rule that matches will determine bucket assignment. If no rules match, the default bucket will be used.
 
-Learn to create custom buckets and more by visiting [our documentationï»¿](https://dt-url.net/4c034xt).
+Learn to create custom buckets and more by visiting [our documentation﻿](https://dt-url.net/4c034xt).
 
 | Schema ID | Schema groups | Scope |
 | --- | --- | --- |
@@ -39,4 +38,4 @@ To execute this request, you need an access token with **Read settings** (`setti
 | Enabled `enabled` | boolean | - | Required |
 | Rule name `ruleName` | text | - | Required |
 | Bucket `bucketName` | text | Events will be stored in the selected bucket. Analyze bucket contents in the log & event viewer. (`<your-dynatrace-url>//ui/logs-events?advancedQueryMode=true&query=fetch+bizevents`) | Required |
-| Matcher (DQL) `matcher` | text | [See our documentationï»¿](https://dt-url.net/bp234rv) | Required |
+| Matcher (DQL) `matcher` | text | [See our documentation﻿](https://dt-url.net/bp234rv) | Required |

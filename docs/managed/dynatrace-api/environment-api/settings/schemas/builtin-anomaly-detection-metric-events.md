@@ -1,7 +1,6 @@
 ---
 title: Settings API - Metric events schema table
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/settings/schemas/builtin-anomaly-detection-metric-events
-scraped: 2026-05-12T11:49:26.446943
 ---
 
 # Settings API - Metric events schema table
@@ -47,7 +46,7 @@ To execute this request, you need an access token with **Read settings** (`setti
 | Property | Type | Description | Required |
 | --- | --- | --- | --- |
 | Type `type` | enum | The element has these enums * `METRIC_KEY` * `METRIC_SELECTOR` | Required |
-| Metric selector `metricSelector` | text | To learn more, visit [Metric Selectorï»¿](https://dt-url.net/metselad) | Required |
+| Metric selector `metricSelector` | text | To learn more, visit [Metric Selector﻿](https://dt-url.net/metselad) | Required |
 | Metric key `metricKey` | text | - | Required |
 | Aggregation `aggregation` | enum | The element has these enums * `MIN` * `MAX` * `SUM` * `COUNT` * `AVG` * `VALUE` * `MEDIAN` * `PERCENTILE90` | Required |
 | Management zone `managementZone` | text | - | Optional |
@@ -61,7 +60,7 @@ To execute this request, you need an access token with **Read settings** (`setti
 | --- | --- | --- | --- |
 | Model type `type` | enum | Metric-key-based query definitions only support static thresholds. The element has these enums * `STATIC_THRESHOLD` * `AUTO_ADAPTIVE_THRESHOLD` * `SEASONAL_BASELINE` | Required |
 | Threshold `threshold` | float | Raise an event if this value is violated | Required |
-| Alert on missing data `alertOnNoData` | boolean | The ability to set an alert on missing data in a metric. When enabled, missing data samples will be treated as violating samples defined in the advanced model properties. When disabled, missing data is not treated as a violation but will still contribute to dealerting. We recommend disabling alerting on missing data for sparse timeseries to avoid false alerts. To learn more, visit [anomaly detection configurationï»¿](https://dt-url.net/lz02mwi). | Required |
+| Alert on missing data `alertOnNoData` | boolean | The ability to set an alert on missing data in a metric. When enabled, missing data samples will be treated as violating samples defined in the advanced model properties. When disabled, missing data is not treated as a violation but will still contribute to dealerting. We recommend disabling alerting on missing data for sparse timeseries to avoid false alerts. To learn more, visit [anomaly detection configuration﻿](https://dt-url.net/lz02mwi). | Required |
 | Number of signal fluctuations `signalFluctuation` | float | Controls how many times the signal fluctuation is added to the baseline to produce the actual threshold for alerting | Required |
 | Tolerance `tolerance` | float | Controls the width of the confidence band and larger values lead to a less sensitive model | Required |
 | Alert condition `alertCondition` | enum | The element has these enums * `ABOVE` * `BELOW` * `OUTSIDE` | Required |
@@ -76,8 +75,8 @@ To execute this request, you need an access token with **Read settings** (`setti
 | Title `title` | text | The title of the event to trigger. Type '{' for placeholder hints. | Required |
 | Description `description` | text | The description of the event to trigger. Type '{' for placeholder hints. | Required |
 | Event type `eventType` | enum | The event type to trigger. The element has these enums * `INFO` * `ERROR` * `AVAILABILITY` * `SLOWDOWN` * `RESOURCE` * `CUSTOM_ALERT` * `CUSTOM_ANNOTATION` * `CUSTOM_CONFIGURATION` * `CUSTOM_DEPLOYMENT` * `MARKED_FOR_TERMINATION` * `WARNING` | Required |
-| Allow merge `davisMerge` | boolean | DavisÂ® AI will try to merge this event into existing problems, otherwise a new problem will always be created. | Required |
-| Properties `metadata` | Set<[MetadataItem](#MetadataItem)> | Set of additional key-value properties to be attached to the triggered event. You can retrieve the available property keys using the [Events API v2ï»¿](https://dt-url.net/9622g1w). | Required |
+| Allow merge `davisMerge` | boolean | Davis® AI will try to merge this event into existing problems, otherwise a new problem will always be created. | Required |
+| Properties `metadata` | Set<[MetadataItem](#MetadataItem)> | Set of additional key-value properties to be attached to the triggered event. You can retrieve the available property keys using the [Events API v2﻿](https://dt-url.net/9622g1w). | Required |
 
 ##### The `EntityFilter` object
 

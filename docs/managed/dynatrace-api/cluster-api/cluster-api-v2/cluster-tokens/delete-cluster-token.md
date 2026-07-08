@@ -1,7 +1,6 @@
 ---
 title: Delete Cluster token
 source: https://docs.dynatrace.com/managed/dynatrace-api/cluster-api/cluster-api-v2/cluster-tokens/delete-cluster-token
-scraped: 2026-05-12T11:05:43.993140
 ---
 
 # Delete Cluster token
@@ -49,7 +48,7 @@ To execute this request, you need the **Cluster token management** (`ClusterToke
 | Element | Type | Description |
 | --- | --- | --- |
 | code | integer | The HTTP status code |
-| constraintViolations | [ConstraintViolation[]](#openapi-definition-ConstraintViolation) | A list of constraint violations |
+| constraintViolations | [ConstraintViolation](#openapi-definition-ConstraintViolation)[] | A list of constraint violations |
 | message | string | The error message |
 
 #### The `ConstraintViolation` object

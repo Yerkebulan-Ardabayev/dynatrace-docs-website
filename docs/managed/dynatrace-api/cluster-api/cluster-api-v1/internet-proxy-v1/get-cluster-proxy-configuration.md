@@ -1,7 +1,6 @@
 ---
 title: Get cluster proxy configuration
 source: https://docs.dynatrace.com/managed/dynatrace-api/cluster-api/cluster-api-v1/internet-proxy-v1/get-cluster-proxy-configuration
-scraped: 2026-05-12T12:12:25.876559
 ---
 
 # Get cluster proxy configuration

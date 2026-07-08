@@ -1,7 +1,6 @@
 ---
 title: Amazon Web Services monitoring
 source: https://docs.dynatrace.com/managed/observe/infrastructure-observability/cloud-platform-monitoring/aws-monitoring
-scraped: 2026-05-12T11:14:25.225001
 ---
 
 # Amazon Web Services monitoring
@@ -10,7 +9,7 @@ scraped: 2026-05-12T11:14:25.225001
 
 * Explanation
 * 2-min read
-* Updated on Jan 28, 2026
+* Updated on Jul 03, 2026
 
 Dynatrace automatically discovers, baselines, and intelligently monitors Amazon Web Services cloud environments.
 
@@ -36,4 +35,8 @@ It is possible to choose monitoring metrics for each of the supporting services.
 
 ## Hybrid environments
 
-Tracking of services and dependencies is not limited to AWS. Thanks to DavisÂ® and its ability to process data from all types of environments, Dynatrace is optimized for monitoring hybrid environments, including business applications spanning across multiple cloud and virtualization platforms such as Microsoft Azure, Google Cloud, VMware, Kubernetes, Openshift, and on-premises infrastructure.
+Tracking of services and dependencies is not limited to AWS. Thanks to Davis® and its ability to process data from all types of environments, Dynatrace is optimized for monitoring hybrid environments, including business applications spanning across multiple cloud and virtualization platforms such as Microsoft Azure, Google Cloud, VMware, Kubernetes, Openshift, and on-premises infrastructure.
+
+## Get started with AWS monitoring
+
+To start monitoring your AWS environment, follow the step-by-step [AWS monitoring guide](/managed/ingest-from/amazon-web-services/set-up-aws-monitoring-with-managed "Connect your Amazon account with Dynatrace Managed and start monitoring.") to connect your AWS account, configure credential management, and enable monitoring for your services.

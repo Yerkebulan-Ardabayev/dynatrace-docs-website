@@ -1,7 +1,6 @@
 ---
 title: RUM manual insertion tags API
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/rum/rum-manual-insertion-tags
-scraped: 2026-05-12T11:56:03.238302
 ---
 
 # RUM manual insertion tags API
@@ -12,12 +11,12 @@ scraped: 2026-05-12T11:56:03.238302
 
 The **RUM manual insertion tags API** allows you to retrieve the RUM JavaScript for two different manual insertion scenarios:
 
-* [Agentless monitoring](/managed/observe/digital-experience/web-applications/initial-setup/set-up-agentless-real-user-monitoring "Set up agentless monitoring for your web applications.") and
-* [Manual insertion for pages of an auto-injected application](/managed/observe/digital-experience/web-applications/initial-setup/rum-injection#manual-insertion-using-oneagent "Configure automatic injection of the RUM JavaScript into the pages of your applications").
+* [Agentless monitoring](/managed/observe/digital-experience/rum-classic/web-applications/initial-setup/set-up-agentless-real-user-monitoring "Set up agentless monitoring for your web applications.") and
+* [Manual insertion for pages of an auto-injected application](/managed/observe/digital-experience/rum-classic/web-applications/initial-setup/rum-injection#manual-insertion-using-oneagent "Configure automatic injection of the RUM JavaScript into the pages of your applications").
 
-Different [snippet formats](/managed/observe/digital-experience/web-applications/initial-setup/snippet-formats "Select a format for the RUM JavaScript snippet that best fits your specific use case") are available, and supported tag attributes can be controlled via API parameters. By integrating this API into your build scripts, you can automate the insertion of the RUM JavaScript and ensure that your application always uses the current configuration.
+Different [snippet formats](/managed/observe/digital-experience/rum-classic/web-applications/initial-setup/snippet-formats "Select a format for the RUM JavaScript snippet that best fits your specific use case") are available, and supported tag attributes can be controlled via API parameters. By integrating this API into your build scripts, you can automate the insertion of the RUM JavaScript and ensure that your application always uses the current configuration.
 
-To retrieve the snippet format [code snippet](/managed/observe/digital-experience/web-applications/initial-setup/snippet-formats#code-snippet "Select a format for the RUM JavaScript snippet that best fits your specific use case"), use the [Real User Monitoring JavaScript API](/managed/dynatrace-api/environment-api/rum/real-user-monitoring-javascript-code "Learn how you can use the Dynatrace API to set up and maintain your manually injected applications using the Real User Monitoring JavaScript API.").
+To retrieve the snippet format [code snippet](/managed/observe/digital-experience/rum-classic/web-applications/initial-setup/snippet-formats#code-snippet "Select a format for the RUM JavaScript snippet that best fits your specific use case"), use the [Real User Monitoring JavaScript API](/managed/dynatrace-api/environment-api/rum/real-user-monitoring-javascript-code "Learn how you can use the Dynatrace API to set up and maintain your manually injected applications using the Real User Monitoring JavaScript API.").
 
 [### Get JavaScript tag
 

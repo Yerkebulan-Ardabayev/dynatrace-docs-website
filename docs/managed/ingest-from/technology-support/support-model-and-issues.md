@@ -1,7 +1,6 @@
 ---
 title: Dynatrace Operator support and known issues
 source: https://docs.dynatrace.com/managed/ingest-from/technology-support/support-model-and-issues
-scraped: 2026-05-12T11:23:46.957201
 ---
 
 # Dynatrace Operator support and known issues
@@ -17,24 +16,16 @@ The table below lists the verified and tested release versions:
 
 | Kubernetes upstream version | OpenShift version | Minimum OneAgent version | Minimum ActiveGate version | Minimum Dynatrace Operator version | Recommended Dynatrace Operator version | End of support (Kubernetes) | End of support (OpenShift) |
 | --- | --- | --- | --- | --- | --- | --- | --- |
-| 1.35 |  | 1.329 | 1.329 | v1.6.x | v1.8.0+ | Apr 1, 2028 |  |
-| 1.34 | 4.21[4](#fn-1-4-def) | 1.321 | 1.321 | v1.6.x | v1.8.0+ | Nov 1, 2027 | Oct 1, 2028 |
-| 1.33 | 4.20[4](#fn-1-4-def) | 1.319 | 1.319 | v1.1.x | v1.8.0+ | Jul 1, 2027 | Mar 1, 2028 |
-| 1.32 | 4.19[4](#fn-1-4-def) | 1.309 | 1.309 | v1.1.x | v1.8.0+ | Mar 1, 2027 | Mar 1, 2028 |
-| 1.31 | 4.18[3](#fn-1-3-def) | 1.297 | 1.297 | v1.1.x | v1.8.0+ | Jan 1, 2027 | Aug 1, 2028 |
-| 1.30 | 4.17[3](#fn-1-3-def) | 1.291 | 1.291 | v1.1.x | v1.8.0+ | Aug 1, 2026 | Jul 1, 2027 |
-| 1.29 | 4.16[3](#fn-1-3-def) | 1.281 | 1.281 | v0.14.x | v1.8.0+ | Mar 1, 2026 | Sep 1, 2027 |
-| 1.28 | 4.15 | 1.275 | 1.275 | v0.12.x | v1.8.0+ | Nov 1, 2025 | Nov 1, 2026 |
-| 1.27 | 4.14 | 1.269 | 1.269 | v0.10.x | v1.8.0+ | Jul 1, 2025 | Nov 1, 2026 |
-| 1.26 | 4.13 | 1.259 | 1.257 | v0.10.x | v1.8.0+ | Mar 1, 2025 | Feb 1, 2026 |
-| 1.25 | 4.12 | 1.249 | 1.251 | v0.8.x | v1.4.2+ | Nov 1, 2024 | Feb 1, 2026 |
-| 1.24 | 4.11 | 1.241 | 1.243 | v0.7.x | v1.3.2+ | Aug 1, 2024 | Mar 1, 2025 |
-| 1.23 | 4.10 | 1.233 | 1.233 | v0.4.x | v1.0.1[2](#fn-1-2-def) | Apr 1, 2024 | Mar 1, 2025 |
-| 1.22 | 4.9 | 1.227 | 1.223 | v0.3.x | v1.0.1[2](#fn-1-2-def) | Jan 1, 2024 | May 1, 2024 |
-| 1.21 | 4.8 | 1.217 | 1.215 | v0.3.x | v0.12.1[1](#fn-1-1-def) | Nov 1, 2023 | May 1, 2024 |
-| 1.20 | 4.7 | 1.207 | 1.211 | v0.3.x | v0.6.0 | Aug 1, 2023 | Aug 1, 2023 |
-| 1.19 | 4.6 | 1.199 | 1.205 | v0.3.x | v0.6.0 | Aug 1, 2023 | Aug 1, 2023 |
-|  | 3.11 |  |  | v0.2.2 | v0.2.2 | Aug 1, 2023 | Aug 1, 2023 |
+| 1.36 |  | 1.335 | 1.335 | v1.6.x | v1.9.0+ | Jul 1, 2028 |  |
+| 1.35 | 4.22[4](#fn-1-4-def) | 1.329 | 1.329 | v1.6.x | v1.9.0+ | Apr 1, 2028 | Nov 1, 2028 |
+| 1.34 | 4.21[4](#fn-1-4-def) | 1.321 | 1.321 | v1.6.x | v1.9.0+ | Nov 1, 2027 | Oct 1, 2028 |
+| 1.33 | 4.20[4](#fn-1-4-def) | 1.319 | 1.319 | v1.1.x | v1.9.0+ | Jul 1, 2027 | Mar 1, 2028 |
+| 1.32 | 4.19[4](#fn-1-4-def) | 1.309 | 1.309 | v1.1.x | v1.9.0+ | Mar 1, 2027 | Mar 1, 2028 |
+| 1.31 | 4.18[3](#fn-1-3-def) | 1.297 | 1.297 | v1.1.x | v1.9.0+ | Jan 1, 2027 | Aug 1, 2028 |
+| 1.30 | 4.17[3](#fn-1-3-def) | 1.291 | 1.291 | v1.1.x | v1.9.0+ | Aug 1, 2026 | Jul 1, 2027 |
+| 1.29 | 4.16[3](#fn-1-3-def) | 1.281 | 1.281 | v0.14.x | v1.9.0+ | Mar 1, 2026 | Sep 1, 2027 |
+| 1.28 | 4.15 | 1.275 | 1.275 | v0.12.x | v1.9.0+ | Nov 1, 2025 | Nov 1, 2026 |
+| 1.27 | 4.14 | 1.269 | 1.269 | v0.10.x | v1.9.0+ | Jul 1, 2025 | Nov 1, 2026 |
 
 1
 
@@ -50,7 +41,7 @@ Dynatrace Operator version 1.0.1 is recommended for Kubernetes 1.22 and 1.23. Up
 
 4
 
-Only [Application observability](/managed/ingest-from/setup-on-k8s/how-it-works/application-monitoring "In-depth description of Application observability using the Dynatrace Operator.") and [Full-stack observability](/managed/ingest-from/setup-on-k8s/how-it-works/cloud-native-fullstack "In-depth description of full-stack observability using Dynatrace Operator.") are supported. This is because worker nodes can run only Red Hat Enterprise Linux CoreOS. To learn more, see [Red Hat release notes (1.5.13.2)ï»¿](https://docs.redhat.com/en/documentation/openshift_container_platform/4.19/html/release_notes/ocp-4-19-release-notes#ocp-4-19-rhel-worker-nodes-removed_release-notes).
+Only [Application observability](/managed/ingest-from/setup-on-k8s/how-it-works/application-monitoring "In-depth description of Application observability using the Dynatrace Operator.") and [Full-stack observability](/managed/ingest-from/setup-on-k8s/how-it-works/cloud-native-fullstack "In-depth description of full-stack observability using Dynatrace Operator.") are supported. This is because worker nodes can run only Red Hat Enterprise Linux CoreOS. To learn more, see [Red Hat release notes (1.5.13.2)﻿](https://docs.redhat.com/en/documentation/openshift_container_platform/4.19/html/release_notes/ocp-4-19-release-notes#ocp-4-19-rhel-worker-nodes-removed_release-notes).
 
 Full support is provided until a Kubernetes or OpenShift version reaches end of life. After that, Dynatrace provides maintenance support for approximately one year. End-of-support dates are announced in [End-of-support announcements](/managed/whats-new/technology/end-of-support-news#dto "End of support announcements for technologies supported by Dynatrace.").
 
@@ -71,9 +62,9 @@ The Dynatrace Operator is available on the following architectures:
 
 Only the [cloud native full stack deployment](/managed/ingest-from/setup-on-k8s/deployment/full-stack-managed "Deploy Dynatrace Operator in cloud-native full-stack mode to Kubernetes"), [application monitoring](/managed/ingest-from/setup-on-k8s/deployment/app-obs-managed "Deploy Dynatrace Operator in application monitoring mode to Kubernetes"), and [host monitoring](/managed/ingest-from/setup-on-k8s/deployment/other/host-monitoring "Deploy Dynatrace Operator in host monitoring mode to Kubernetes") are supported.
 
-In cases where issues related to the Dynatrace Operator cannot be replicated by Dynatrace on x86 or ARM architectures and are identified as specific to ppc64le, you need to reach out to `dt-operator@ibm.com` for further support. Additional information can be found in the associated open-source pull request for the Dynatrace Operator on [GitHubï»¿](https://dt-url.net/ev034k3).
+In cases where issues related to the Dynatrace Operator cannot be replicated by Dynatrace on x86 or ARM architectures and are identified as specific to ppc64le, you need to reach out to `dt-operator@ibm.com` for further support. Additional information can be found in the associated open-source pull request for the Dynatrace Operator on [GitHub﻿](https://dt-url.net/ev034k3).
 
-Dynatrace Operator is responsible for rollout and lifecycle management of various Dynatrace components in Kubernetes and OpenShift (including ActiveGate and OneAgent). Dynatrace Operator is an open-source project maintained on [GitHubï»¿](https://dt-url.net/d7034gj). It follows the `major.minor.patch` [semantic versioningï»¿](https://semver.org/) schema, with a release cadence of minor versions being released roughly every 2â3 months.
+Dynatrace Operator is responsible for rollout and lifecycle management of various Dynatrace components in Kubernetes and OpenShift (including ActiveGate and OneAgent). Dynatrace Operator is an open-source project maintained on [GitHub﻿](https://dt-url.net/d7034gj). It follows the `major.minor.patch` [semantic versioning﻿](https://semver.org/) schema, with a release cadence of minor versions being released roughly every 2–3 months.
 
 The three latest Dynatrace Operator versions are tested with the latest Kubernetes and OpenShift versions. Additionally, we perform a backport assessment for any bug or vulnerability to analyze the severity and change risk of the fix. We recommend that you use the latest patch version, as the newly implemented features increment the minor version. For details, see the [Dynatrace Operator release notes](/managed/whats-new/dynatrace-operator "Release notes for Dynatrace Operator").
 
@@ -124,7 +115,7 @@ Dynatrace Operator version 1.6.0 Dynatrace Operator version 1.6.1 Dynatrace Oper
 
 #### Issue
 
-* In Kubernetes environments â especially those utilizing auto-scalers â there are challenges in reliably determining whether a node was intentionally removed or has failed unexpectedly. This ambiguity can lead to a high number of false-positive âHost is unavailableâ alerts, impacting monitoring accuracy and alerting quality.
+* In Kubernetes environments — especially those utilizing auto-scalers — there are challenges in reliably determining whether a node was intentionally removed or has failed unexpectedly. This ambiguity can lead to a high number of false-positive “Host is unavailable” alerts, impacting monitoring accuracy and alerting quality.
 
 #### Resolution
 
@@ -136,7 +127,7 @@ Dynatrace Operator version 1.5.0 Dynatrace Operator version 1.5.1 Dynatrace Oper
 
 #### Issue
 
-When switching from using the CSI driver without `codeModulesImage` to using it with [node image pull](/managed/ingest-from/setup-on-k8s/guides/deployment-and-configuration/node-image-pull "Configure node image pull"), ensure that the CSI driverâs filesystem does not contain a code module for the specified DynaKube. If it does, the CSI driver will fail and require manual intervention to recover.
+When switching from using the CSI driver without `codeModulesImage` to using it with [node image pull](/managed/ingest-from/setup-on-k8s/guides/deployment-and-configuration/node-image-pull "Configure node image pull"), ensure that the CSI driver’s filesystem does not contain a code module for the specified DynaKube. If it does, the CSI driver will fail and require manual intervention to recover.
 
 * If this issue is encountered, reverting back to not using the `codeModulesImage` will make the CSI driver operational again.
 * You can use the `find` command to check for the downloaded code module for a DynaKube in the filesystem of the CSI `server` container:

@@ -1,7 +1,6 @@
 ---
 title: Enable AppArmor for enhanced security
 source: https://docs.dynatrace.com/managed/ingest-from/setup-on-k8s/guides/networking-security-compliance/security-configurations/enable-app-armor
-scraped: 2026-05-12T12:14:30.813706
 ---
 
 # Enable AppArmor for enhanced security
@@ -11,7 +10,7 @@ scraped: 2026-05-12T12:14:30.813706
 * 2-min read
 * Updated on Mar 09, 2026
 
-You can make Dynatrace Operator more secure by enabling [AppArmorï»¿](https://dt-url.net/3403y6b).
+You can make Dynatrace Operator more secure by enabling [AppArmor﻿](https://dt-url.net/3403y6b).
 
 ## Enable AppArmor for Dynatrace Operator, Webhook, and CSI driver
 
@@ -368,7 +367,7 @@ feature.dynatrace.com/activegate-apparmor: true
 
 ### OneAgent
 
-On Kubernetes 1.31+, the Operator automatically applies AppArmor via `securityContext` â no user action is required. On Kubernetes 1.30 and earlier, AppArmor for OneAgent is not automatically applied. To use a custom AppArmor profile on older clusters, see [Enable a custom AppArmor profile for OneAgent](#custom-apparmor).
+On Kubernetes 1.31+, the Operator automatically applies AppArmor via `securityContext` — no user action is required. On Kubernetes 1.30 and earlier, AppArmor for OneAgent is not automatically applied. To use a custom AppArmor profile on older clusters, see [Enable a custom AppArmor profile for OneAgent](#custom-apparmor).
 
 ### EdgeConnect
 
@@ -432,7 +431,7 @@ See [Run OneAgent as a Docker container](/managed/ingest-from/setup-on-container
 
 OneAgent is deployed as a daemonset by default, which means pods that use the AppArmor profile will be used on every node. You therefore need to install the OneAgent AppArmor profile **on all nodes**.
 
-Depending on the environment, this can be done in several ways, such as by using the [kube-apparmor-managerï»¿](https://dt-url.net/5g034s7) or the [security-profiles-operatorï»¿](https://dt-url.net/uz23475). Please refer to the official documentation of these tools on how to apply them in your cluster.
+Depending on the environment, this can be done in several ways, such as by using the [kube-apparmor-manager﻿](https://dt-url.net/5g034s7) or the [security-profiles-operator﻿](https://dt-url.net/uz23475). Please refer to the official documentation of these tools on how to apply them in your cluster.
 
 #### Step 3 Enforce the profile on all OneAgent pods
 

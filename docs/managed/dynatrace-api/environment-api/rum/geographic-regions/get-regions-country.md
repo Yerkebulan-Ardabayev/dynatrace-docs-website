@@ -1,7 +1,6 @@
 ---
 title: Geographic regions API - GET regions of a country
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/rum/geographic-regions/get-regions-country
-scraped: 2026-05-12T11:55:33.271595
 ---
 
 # Geographic regions API - GET regions of a country
@@ -30,7 +29,7 @@ To learn how to obtain and use it, see [Tokens and authentication](/managed/disc
 
 | Parameter | Type | Description | In | Required |
 | --- | --- | --- | --- | --- |
-| countryCode | string | The ISO code of the required country.  To fetch the list of available country codes, use the [GET all countriesï»¿](https://dt-url.net/37030go) request. | path | Required |
+| countryCode | string | The ISO code of the required country.  To fetch the list of available country codes, use the [GET all countries﻿](https://dt-url.net/37030go) request. | path | Required |
 
 ## Response
 
@@ -54,7 +53,7 @@ Information about a country.
 | countryCode | string | The ISO code of the country. |
 | countryName | string | The name of the country. |
 | regionCount | integer | The number of regions in the country. |
-| regions | [Region[]](#openapi-definition-Region) | The list of regions in the country. |
+| regions | [Region](#openapi-definition-Region)[] | The list of regions in the country. |
 
 #### The `Region` object
 
@@ -76,7 +75,7 @@ Information about a country's region.
 | Element | Type | Description |
 | --- | --- | --- |
 | code | integer | The HTTP status code |
-| constraintViolations | [ConstraintViolation[]](#openapi-definition-ConstraintViolation) | A list of constraint violations |
+| constraintViolations | [ConstraintViolation](#openapi-definition-ConstraintViolation)[] | A list of constraint violations |
 | message | string | The error message |
 
 #### The `ConstraintViolation` object
@@ -210,5 +209,5 @@ A list of constraint violations
 
 ## Related topics
 
-* [Real User Monitoring](/managed/observe/digital-experience/rum-concepts/rum-overview "Learn about Real User Monitoring, key performance metrics, mobile app monitoring, and more.")
-* [Detection of IP addresses, geolocations, and user agents](/managed/observe/digital-experience/rum-concepts/detection-of-ip-addresses-locations-and-user-agents "Dynatrace detects IP addresses and geolocations like a city, region, and country as well as browsers, devices, and operating systems.")
+* [Real User Monitoring Classic](/managed/observe/digital-experience/rum-classic/rum-concepts/rum-overview "Learn about Real User Monitoring Classic, key performance metrics, mobile app monitoring, and more.")
+* [Detection of IP addresses, geolocations, and user agents in RUM Classic](/managed/observe/digital-experience/rum-classic/rum-concepts/detection-of-ip-addresses-locations-and-user-agents "Dynatrace detects IP addresses and geolocations like a city, region, and country as well as browsers, devices, and operating systems.")

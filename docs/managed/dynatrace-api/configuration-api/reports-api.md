@@ -1,7 +1,6 @@
 ---
 title: Reports API
 source: https://docs.dynatrace.com/managed/dynatrace-api/configuration-api/reports-api
-scraped: 2026-05-12T11:04:19.906747
 ---
 
 # Reports API

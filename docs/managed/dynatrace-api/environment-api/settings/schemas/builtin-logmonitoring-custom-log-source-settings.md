@@ -1,7 +1,6 @@
 ---
 title: Settings API - Custom log sources schema table
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/settings/schemas/builtin-logmonitoring-custom-log-source-settings
-scraped: 2026-05-12T11:49:40.248333
 ---
 
 # Settings API - Custom log sources schema table

@@ -1,7 +1,6 @@
 ---
 title: Adjust the sensitivity of anomaly detection for database services
 source: https://docs.dynatrace.com/managed/dynatrace-intelligence/anomaly-detection/adjust-sensitivity-anomaly-detection/adjust-sensitivity-services-database
-scraped: 2026-05-12T11:20:10.822612
 ---
 
 # Adjust the sensitivity of anomaly detection for database services
@@ -23,7 +22,7 @@ To adjust global configuration of anomaly detection for database services
 
 This type of anomaly detection observes the response time of your databases and triggers an alert if a metric violates the specified thresholds. Dynatrace can detect degradation based on automatic baselining or fixed thresholds.
 
-Dynatrace evaluates degradation for two categoriesâall responses and the slowest 10%âand triggers an alert if **any** response time violates the threshold.
+Dynatrace evaluates degradation for two categories—all responses and the slowest 10%—and triggers an alert if **any** response time violates the threshold.
 
 To configure the response time degradation detection
 
@@ -99,7 +98,7 @@ To configure the database service spikes detection
 
 Davis automatically generates baselines during a recent reference period. The default reference period is the past **7 days**.
 
-If monitoring data detected during the reference period is no longer validâfor example, if you've deployed a new version of your application that includes major changes, and you're now receiving a high number of alertsâselect **Reset** to establish a new baseline. Davis will purge the previous reference period and immediately begin collecting data for a new reference period.
+If monitoring data detected during the reference period is no longer valid—for example, if you've deployed a new version of your application that includes major changes, and you're now receiving a high number of alerts—select **Reset** to establish a new baseline. Davis will purge the previous reference period and immediately begin collecting data for a new reference period.
 
 ## Thresholds for a specific database service
 
@@ -109,7 +108,7 @@ To change threshold settings for a specific database service
 
 1. Go to **Database Services**.
 2. Select the database you want to configure.
-3. In the browse menu (**â¦**), select **Edit**.
+3. In the browse menu (**…**), select **Edit**.
 4. Select **Anomaly detection**.
 5. Turn off **Use global anomaly detection settings**.
 6. Set the database-level thresholds in the same manner as described above for global settings.
@@ -122,7 +121,7 @@ To configure threshold for a key statement
 
 1. Go to **Database Services**.
 2. Select the database you want to configure.
-3. In the browse menu (**â¦**), select **Edit**.
+3. In the browse menu (**…**), select **Edit**.
 4. Select **Anomaly detection**.
 5. Scroll down to the **Set thresholds on key requests** section and expand the menu of the required key statement.
 6. Turn off **Use service or global settings**.

@@ -1,7 +1,6 @@
 ---
 title: Stop/restart OneAgent on AIX
 source: https://docs.dynatrace.com/managed/ingest-from/dynatrace-oneagent/installation-and-operation/aix/operation/stop-restart-oneagent-on-aix
-scraped: 2026-05-12T11:10:50.109101
 ---
 
 # Stop/restart OneAgent on AIX
@@ -15,7 +14,7 @@ scraped: 2026-05-12T11:10:50.109101
 In case you don't want to use OneAgent inside a particular Java (or other) process, you can easily disable Dynatrace monitoring for individual hosts, process groups, or applications:
 
 1. Go to **Settings > Monitoring overview**.
-2. Click the **Hosts**, **Process groups**, or **Applications** tab to access the monitoring switches for individual entities.
+2. Select the **Hosts**, **Process groups**, or **Applications** tab to access the monitoring switches for individual entities.
 3. Slide the **Monitoring** switch to the **Off** position.
 4. Restart all processes for which monitoring has been disabled.
 

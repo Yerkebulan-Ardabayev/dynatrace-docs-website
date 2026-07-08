@@ -1,7 +1,6 @@
 ---
 title: Get users
 source: https://docs.dynatrace.com/managed/dynatrace-api/cluster-api/cluster-api-v1/users-v1/get-users
-scraped: 2026-05-12T12:12:50.359018
 ---
 
 # Get users
@@ -30,7 +29,7 @@ The request doesn't provide any configurable parameters.
 
 | Code | Type | Description |
 | --- | --- | --- |
-| **200** | [UserConfig[]](#openapi-definition-UserConfig) | Success |
+| **200** | [UserConfig](#openapi-definition-UserConfig)[] | Success |
 
 ### Response body objects
 

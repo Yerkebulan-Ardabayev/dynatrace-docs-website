@@ -1,7 +1,6 @@
 ---
 title: Settings API - Varnish Cache schema table
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/settings/schemas/builtin-monitored-technologies-varnish
-scraped: 2026-05-12T11:48:51.809657
 ---
 
 # Settings API - Varnish Cache schema table

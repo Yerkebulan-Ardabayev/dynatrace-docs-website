@@ -1,7 +1,6 @@
 ---
 title: Access tokens
 source: https://docs.dynatrace.com/managed/manage/identity-access-management/access-tokens-and-oauth-clients/access-tokens
-scraped: 2026-05-12T11:14:08.123186
 ---
 
 # Access tokens
@@ -12,7 +11,7 @@ scraped: 2026-05-12T11:14:08.123186
 * 2-min read
 * Updated on Oct 25, 2023
 
-All external access to your Dynatrace monitoring environment relies on two pieces of information: the [environment ID](/managed/discover-dynatrace/get-started/monitoring-environment "Understand and learn how to work with monitoring environments.") and an *access token*.
+All external access to your Dynatrace monitoring environment relies on two pieces of information: the [environment ID](/managed/discover-dynatrace/get-started/monitoring-environment "Learn what a Dynatrace monitoring environment is, how to find your environment ID, and how to set up and connect multiple environments.") and an *access token*.
 
 Dynatrace uses several types of tokens:
 
@@ -55,10 +54,10 @@ Dynatrace uses a unique token format consisting of three components separated by
 
 This predictable format offers you several capabilities:
 
-* Use Git pre-commit hooks to avoid pushing tokens to source code repositories (for example, using tools like [git-secretsï»¿](https://github.com/awslabs/git-secrets))
+* Use Git pre-commit hooks to avoid pushing tokens to source code repositories (for example, using tools like [git-secrets﻿](https://github.com/awslabs/git-secrets))
 * Define masking rules to obfuscate the secret portions of tokens when writing log files
 * Detect tokens in internal files or communications
-* Enable the [GitHub secret scanning serviceï»¿](https://docs.github.com/en/free-pro-team@latest/github/administering-a-repository/about-secret-scanning#about-secret-scanning-for-public-repositories) to identify any token pushed to a public GitHub repository
+* Enable the [GitHub secret scanning service﻿](https://docs.github.com/en/free-pro-team@latest/github/administering-a-repository/about-secret-scanning#about-secret-scanning-for-public-repositories) to identify any token pushed to a public GitHub repository
 
 Use this regular expression to look for tokens:
 
@@ -104,6 +103,7 @@ Access tokens have fine-grained scopes to limit access to specific product funct
 | OpenPipeline - Ingest Events, Software Development Lifecycle (Custom) | `openpipeline.events_sdlc.custom` | Grants access to [POST Custom SLDC events](/managed/upgrade/unavailable-in-managed "Your selection is unavailable in Dynatrace Managed.") request of the OpenPipeline Ingest API. |
 | OpenPipeline - Ingest Security Events (Built-in) | `openpipeline.events_security` | Grants access to [POST Built-in security events](/managed/upgrade/unavailable-in-managed "Your selection is unavailable in Dynatrace Managed.") request of the OpenPipeline Ingest API. |
 | OpenPipeline - Ingest Security Events (Custom) | `openpipeline.events_security.custom` | Grants access to [POST Custom security events](/managed/upgrade/unavailable-in-managed "Your selection is unavailable in Dynatrace Managed.") request of the OpenPipeline Ingest API. |
+| OpenPipeline - Ingest Smartscape Events | `openpipeline.events_smartscape` | Grants access to [POST Built-in Smartscape events](/managed/upgrade/unavailable-in-managed "Your selection is unavailable in Dynatrace Managed.") request of the OpenPipeline Ingest API. |
 | OpenPipeline - Ingest Events (Custom) | `openpipeline.events.custom` | Grants access to [POST Custom generic event endpoint](/managed/upgrade/unavailable-in-managed "Your selection is unavailable in Dynatrace Managed.") request of the OpenPipeline Ingest API. |
 
 ### API v2

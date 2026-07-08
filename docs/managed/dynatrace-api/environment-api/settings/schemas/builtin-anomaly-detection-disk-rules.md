@@ -1,7 +1,6 @@
 ---
 title: Settings API - Disk anomaly detection rules schema table
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/settings/schemas/builtin-anomaly-detection-disk-rules
-scraped: 2026-05-12T11:44:52.451281
 ---
 
 # Settings API - Disk anomaly detection rules schema table

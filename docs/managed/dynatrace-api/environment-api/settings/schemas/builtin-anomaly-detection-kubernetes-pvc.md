@@ -1,7 +1,6 @@
 ---
 title: Settings API - Kubernetes persistent volume claim anomaly detection schema table
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/settings/schemas/builtin-anomaly-detection-kubernetes-pvc
-scraped: 2026-05-12T11:43:48.390360
 ---
 
 # Settings API - Kubernetes persistent volume claim anomaly detection schema table
@@ -12,7 +11,7 @@ scraped: 2026-05-12T11:43:48.390360
 
 ### Kubernetes persistent volume claim anomaly detection (`builtin:anomaly-detection.kubernetes.pvc)`
 
-Dynatrace automatically detects a wide range of common Kubernetes-related issues. Use these settings to configure alerts relevant to your Kubernetes persistent volume claims. Changing thresholds resets the observation period. Additional information can be found on our [documentation pageï»¿](https://dt-url.net/wq02okj#persistent-volume-claims).
+Dynatrace automatically detects a wide range of common Kubernetes-related issues. Use these settings to configure alerts relevant to your Kubernetes persistent volume claims. Changing thresholds resets the observation period. Additional information can be found on our [documentation page﻿](https://dt-url.net/wq02okj#persistent-volume-claims).
 
 | Schema ID | Schema groups | Scope |
 | --- | --- | --- |

@@ -1,7 +1,6 @@
 ---
 title: Rename a network zone
 source: https://docs.dynatrace.com/managed/manage/network-zones/rename-network-zone
-scraped: 2026-05-12T11:10:42.650724
 ---
 
 # Rename a network zone

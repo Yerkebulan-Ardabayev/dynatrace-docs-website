@@ -1,0 +1,31 @@
+---
+title: Analyze user sessions of custom applications in RUM Classic
+source: https://docs.dynatrace.com/managed/observe/digital-experience/rum-classic/custom-applications/analyze-and-use/user-session-analysis-custom
+---
+
+# Analyze user sessions of custom applications in RUM Classic
+
+# Analyze user sessions of custom applications in RUM Classic
+
+* How-to guide
+* 1-min read
+* Published Jan 30, 2023
+
+Having an ability to view and analyze user sessions within your custom applications is imperative in today's digital consumer environment.
+
+By default, user session analysis shows all of the user sessions in your environment—across web, mobile, and custom applications. To focus your analysis only on custom applications, you need to add one filters.
+
+To view user sessions captured in custom applications
+
+1. Go to **Session Segmentation**. The **User sessions** page opens.
+2. In the **Filter by** box, select **Application type:** `Custom` to get user sessions captured in custom applications.
+3. Optional To further focus your analysis, you can add more filters, such as operating system version, manufacturer, error count, and user experience score.
+4. Select a timestamp of the required user session to navigate to the user session details page.
+
+Dynatrace captures user sessions from custom applications as mobile user sessions. Built-in metrics are captured without the indication whether it's a mobile or a custom application. For more details, see [Built-in metrics](/managed/analyze-explore-automate/metrics-classic/built-in-metrics "Explore the complete list of built-in Dynatrace metrics.").
+
+For further details, see [User session analysis in RUM Classic](/managed/observe/digital-experience/rum-classic/session-segmentation/user-sessions "Learn about user session segmentation and filtering attributes.").
+
+## Related topics
+
+* [User session analysis in RUM Classic](/managed/observe/digital-experience/rum-classic/session-segmentation/user-sessions "Learn about user session segmentation and filtering attributes.")

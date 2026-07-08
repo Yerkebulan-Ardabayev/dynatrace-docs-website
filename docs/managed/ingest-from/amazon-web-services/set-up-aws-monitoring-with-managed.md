@@ -1,7 +1,6 @@
 ---
 title: Set up Dynatrace Managed for AWS monitoring
 source: https://docs.dynatrace.com/managed/ingest-from/amazon-web-services/set-up-aws-monitoring-with-managed
-scraped: 2026-05-12T12:13:23.222603
 ---
 
 # Set up Dynatrace Managed for AWS monitoring
@@ -10,7 +9,7 @@ scraped: 2026-05-12T12:13:23.222603
 
 * Updated on Jun 27, 2022
 
-You can integrate Dynatrace with [Amazon Web Services (AWS)ï»¿](https://www.dynatrace.com/technologies/aws-monitoring/) for intelligent monitoring of services running in the Amazon Cloud. AWS integration helps you stay on top of the dynamics of your data center in the cloud.
+You can integrate Dynatrace with [Amazon Web Services (AWS)﻿](https://www.dynatrace.com/technologies/aws-monitoring/) for intelligent monitoring of services running in the Amazon Cloud. AWS integration helps you stay on top of the dynamics of your data center in the cloud.
 
 Dynatrace can be deployed with or without Environment ActiveGate.
 While using the role-based access method, make sure that you meet one of the following deployment requirements:
@@ -28,7 +27,7 @@ Follow these basic steps to integrate Dynatrace Managed with Amazon Web Services
 
 Cloud-service monitoring consumption
 
-All cloud services consume [Davis data units (DDUs)](/managed/license/monitoring-consumption-classic/davis-data-units "Understand how Dynatrace monitoring consumption is calculated based on Davis data units (DDU)."). The amount of DDU consumption per service instance depends on the number of monitored metrics and their dimensions (each metric dimension results in the ingestion of 1 data point; 1 data point consumes 0.001 DDUs).
+All cloud services consume [Davis data units (DDUs)](/managed/license/classic-licensing/davis-data-units "Understand how Dynatrace monitoring consumption is calculated based on Davis data units (DDU)."). The amount of DDU consumption per service instance depends on the number of monitored metrics and their dimensions (each metric dimension results in the ingestion of 1 data point; 1 data point consumes 0.001 DDUs).
 
 ### AWS costs
 
@@ -178,7 +177,7 @@ Permissions required for AWS monitoring integration:
 
 To get the information required for comprehensive AWS cloud-computing monitoring, Dynatrace needs to identify all the virtualized infrastructure components in your AWS environment and collect performance metrics related to those components. We use this information to understand the context of your applications, services, and hosts. For this to happen, you need to authorize Dynatrace to access your Amazon metrics.
 
-Make sure that your Environment ActiveGate or Managed Cluster has a working connection to AWS. Configure your proxy for [Managed](/managed/managed-cluster/configuration/internet-proxy "Configure a proxy connection for your Managed Cluster if you don't have direct internet access.") or [ActiveGate](/managed/ingest-from/dynatrace-activegate/configuration/set-up-proxy-authentication-for-activegate "Learn how to configure ActiveGate properties to set up a proxy."), or allow access to `*.amazonaws.com` in your firewall settings.
+Make sure that your Environment ActiveGate or Managed Cluster has a working connection to AWS. Configure your proxy for [Managed](/managed/managed-cluster/configuration/configure-internet-proxy "Configure a proxy connection for your Managed Cluster if you don't have direct internet access. Supported protocols include Basic and NTLMv1.") or [ActiveGate](/managed/ingest-from/dynatrace-activegate/configuration/set-up-proxy-authentication-for-activegate "Learn how to configure ActiveGate properties to set up a proxy."), or allow access to `*.amazonaws.com` in your firewall settings.
 
 ## Role-based access with Environment ActiveGate or Dynatrace Managed Server
 
@@ -224,7 +223,7 @@ To enable access to your Amazon account using role-based access, follow the step
 
 ### Step 1 Create a role for ActiveGate on the account that hosts ActiveGate
 
-1. Create a YAML file and paste the contents of [github `role_based_access_AG_account_template.yml`ï»¿](https://dt-url.net/2t03ydj).
+1. Create a YAML file and paste the contents of [github `role_based_access_AG_account_template.yml`﻿](https://dt-url.net/2t03ydj).
 
 For multiple monitored accounts
 
@@ -276,7 +275,7 @@ aws cloudformation create-stack \
 
 After the `Dynatrace_ActiveGate_role` is created on the account hosting the ActiveGate, create a role for the account to be monitored.
 
-1. Create a YAML file and paste the content from the [github `role_based_access_monitored_account_template.yml`ï»¿](https://dt-url.net/pm03yni).
+1. Create a YAML file and paste the content from the [github `role_based_access_monitored_account_template.yml`﻿](https://dt-url.net/pm03yni).
 2. Create the stack in your Amazon Console or using the CLI.
 
    In the Amazon Console

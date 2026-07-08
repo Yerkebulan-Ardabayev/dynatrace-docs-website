@@ -1,7 +1,6 @@
 ---
 title: Configure a NAM monitor
 source: https://docs.dynatrace.com/managed/observe/digital-experience/synthetic-monitoring/network-availability-monitors/configure-nam-managed
-scraped: 2026-05-12T12:13:29.504436
 ---
 
 # Configure a NAM monitor
@@ -34,7 +33,7 @@ NAM offers you the possibility of addressing this in multiple ways:
 
   Finally, filters offer defining tests against dynamically changing structure, for example if you want to define ICMP tests against a given host group, you don't need to adjust the NAM monitor test after the host group configuration change.
 
-You need to define constraints for each monitor. Constraints are conditions that need to be met to consider the monitorâs execution successful. It is obligatory to define the **Success rate** constraint. See [Step-level constraints](/managed/observe/digital-experience/synthetic-monitoring/network-availability-monitors/configure-nam-managed#step-level-constraints "Learn how to set up and manage a NAM monitor to check the performance and availability of your site.") to learn more.
+You need to define constraints for each monitor. Constraints are conditions that need to be met to consider the monitor’s execution successful. It is obligatory to define the **Success rate** constraint. See [Step-level constraints](/managed/observe/digital-experience/synthetic-monitoring/network-availability-monitors/configure-nam-managed#step-level-constraints "Learn how to set up and manage a NAM monitor to check the performance and availability of your site.") to learn more.
 
 ## Manage NAM monitors with API
 
@@ -266,13 +265,13 @@ Duration format examples
 
 | Name | Type | Description | Values | Default value |
 | --- | --- | --- | --- | --- |
-| `EXECUTION_TIMEOUT` | string:duration | Timeout for the execution of a single request. | Valid duration, for example, `PT1S`.  Range = `0`â`PT2M` | `ICMP_NUMBER_OF_PACKETS` Ã `ICMP_TIMEOUT_FOR_REPLY` + `1s` |
-| `ICMP_NUMBER_OF_PACKETS` | integer | Number of echo requests. The equivalent of the ping process are the `-c` (Linux) and `-n` (Windows) parameters. | Range = `1`â`10` | `1` |
-| `ICMP_PACKET_SIZE` | integer | Data length. The equivalent of the ping process are the `-s` (Linux) and `-l` (Windows) parameters. | Range = `0`â`65500` | `32` |
-| `ICMP_TIME_TO_LIVE` | integer | Time to live (TTL). The equivalent of the ping process are the `-t` (Linux) and `-i` (Windows) parameters. | Range = `1`â`255` |  |
-| `ICMP_TYPE_OF_SERVICE` | integer | Type of service. The equivalent of the ping process are the `-Q` (Linux) and `-v` (Windows) parameters. | Range = `0`â`255` |  |
+| `EXECUTION_TIMEOUT` | string:duration | Timeout for the execution of a single request. | Valid duration, for example, `PT1S`.  Range = `0`–`PT2M` | `ICMP_NUMBER_OF_PACKETS` × `ICMP_TIMEOUT_FOR_REPLY` + `1s` |
+| `ICMP_NUMBER_OF_PACKETS` | integer | Number of echo requests. The equivalent of the ping process are the `-c` (Linux) and `-n` (Windows) parameters. | Range = `1`–`10` | `1` |
+| `ICMP_PACKET_SIZE` | integer | Data length. The equivalent of the ping process are the `-s` (Linux) and `-l` (Windows) parameters. | Range = `0`–`65500` | `32` |
+| `ICMP_TIME_TO_LIVE` | integer | Time to live (TTL). The equivalent of the ping process are the `-t` (Linux) and `-i` (Windows) parameters. | Range = `1`–`255` |  |
+| `ICMP_TYPE_OF_SERVICE` | integer | Type of service. The equivalent of the ping process are the `-Q` (Linux) and `-v` (Windows) parameters. | Range = `0`–`255` |  |
 | `ICMP_DO_NOT_FRAGMENT_DATA` | boolean | Do not fragment. The equivalent of the ping process are the `-M do` (Linux) and `-f` (Windows) parameters. | `true` or `false` |  |
-| `ICMP_TIMEOUT_FOR_REPLY` | string:duration | Wait for the echo reply message.  The equivalent of the ping process are the `-W` (Linux) and `-w` (Windows) parameters. | Valid duration, for example, `PT1S`. On Windows values like `PT1.1S` are accepted (granularity in milliseconds).  On Linux, values like `PT1S` are required (granularity in seconds).  Range = `PT1S`â`PT2S` | `PT1S` |
+| `ICMP_TIMEOUT_FOR_REPLY` | string:duration | Wait for the echo reply message.  The equivalent of the ping process are the `-W` (Linux) and `-w` (Windows) parameters. | Valid duration, for example, `PT1S`. On Windows values like `PT1.1S` are accepted (granularity in milliseconds).  On Linux, values like `PT1S` are required (granularity in seconds).  Range = `PT1S`–`PT2S` | `PT1S` |
 
 The packet transmission interval is hardcoded to `200ms`, which corresponds to the minimum value allowed for the `-i` option of the Linux ping command without requiring elevated privileges.
 
@@ -281,20 +280,20 @@ The packet transmission interval is hardcoded to `200ms`, which corresponds to t
 | Name | Type | Description | Values | Default value |
 | --- | --- | --- | --- | --- |
 | `TCP_PORT_RANGES` | string | Comma-separated list of port ranges  A single range can be either a single port number or a range of ports, defined as two port numbers with a hyphen.  The final list of requests to be executed is the product of all defined ports and target hosts. For example, if a step has two target hosts (`1.1.1.1` and `2.2.2.2`) and a range of two ports (`80-81`), four requests are executed within such a step.  * Request to `1.1.1.1` on port `80` * Request to `1.1.1.1` on port `81` * Request to `2.2.2.2` on port `80` * Request to `2.2.2.2` on port `81` | Sample values  * `8080` * `8000-9000` * `80,443,90-100` |  |
-| `EXECUTION_TIMEOUT` | string:duration | Connection timeout | Valid duration, for example, `PT1S`  Range = `0`â`PT2M` | `1s` |
+| `EXECUTION_TIMEOUT` | string:duration | Connection timeout | Valid duration, for example, `PT1S`  Range = `0`–`PT2M` | `1s` |
 
 ### DNS
 
 | Name | Type | Description | Values | Default value |
 | --- | --- | --- | --- | --- |
 | `DNS_RECORD_TYPES` | string | Comma-separated list of DNS record types.  The final list of requests executed is the product of all defined record types and target hosts. For example, if a step has two record types (`A,AAAA`) and two target hosts (`host1.domain.com` and `host2.domain.com`), four requests are executed within such a step.  * Request for `A` record contents for `host1.domain.com` * Request for `AAAA` record contents for `host1.domain.com` * Request for `A` record contents for `host2.domain.com` * Request or `AAAA` record contents for `host2.domain.com` | Sample values  * `A` * `A,AAAA` * `A,AAAA,CNAME` |  |
-| `EXECUTION_TIMEOUT` | string:duration | Connection timeout | Valid duration, for example, `PT1S`  Range = `0`â`PT2M` | `2s` |
+| `EXECUTION_TIMEOUT` | string:duration | Connection timeout | Valid duration, for example, `PT1S`  Range = `0`–`PT2M` | `2s` |
 | `DNS_SERVER` | string | Address of the DNS server to query, with optional port  If a hostname is provided, it's resolved to an IP address using the system default DNS server. | Valid address, such as:  * `1.1.1.1` * `8.4.4.8:53` * `dns.google` * `dns9.quad9.net:53` | If only host is provided, the default port `53` is used.  If no value is provided, the system default DNS server and port are used. |
 | `DNS_FORCE_TCP` | boolean | By default, the DNS server is queried over a UDP connection, unless the message is too large to fit the UDP datagram. This option allows you to specify a TCP connection instead. | `true` or `false` | `false` |
 
 ## Script configuration constraints
 
-Constraints are conditions that need to be met to consider monitorâs execution successful. You need to define constraints for each monitor.
+Constraints are conditions that need to be met to consider monitor’s execution successful. You need to define constraints for each monitor.
 
 ### Step-level constraints
 
@@ -313,7 +312,7 @@ For example, if 1 request out of 6 has failed, the ratio is (6-1)/6 = 83.33%.
 | Property | Type | Description | Value | Default value |
 | --- | --- | --- | --- | --- |
 | `operator` | string | Comparison operator to compare actual and expected value | `>=`, `>`, `<=`, `<`, `=`, or `!=` | `>=` |
-| `value` | integer | Expected value of success rate to use for comparison | Range = `0`â`100` | `80` |
+| `value` | integer | Expected value of success rate to use for comparison | Range = `0`–`100` | `80` |
 
 ```
 {
@@ -364,7 +363,7 @@ For example, if 5 packets were sent and 4 packets were received, the ratio is 4/
 | Property | Type | Description | Value | Default value |
 | --- | --- | --- | --- | --- |
 | `operator` | string | Comparison operator to compare actual and expected value | `>=`, `>`, `<=`, `<`, `=`, or `!=` | `>=` |
-| `value` | integer | Expected value of success rate to use for comparison | Range = `0`â`100` | `80` |
+| `value` | integer | Expected value of success rate to use for comparison | Range = `0`–`100` | `80` |
 
 ```
 {
@@ -440,7 +439,7 @@ DNS constraints are **optional**, but at least one must be defined to indicate w
 | Property | Type | Description | Value | Default value |
 | --- | --- | --- | --- | --- |
 | `operator` | string | Comparison operator to compare actual and expected value | `=` or `!=` | `=` |
-| `statusCode` | integer | Numeric code indicating status of DNS response Exclusive with `status` | Valid code, for example, `0` Range = `0`â`65535` | `0` |
+| `statusCode` | integer | Numeric code indicating status of DNS response Exclusive with `status` | Valid code, for example, `0` Range = `0`–`65535` | `0` |
 | `status` | string | Mnemonic representing DNS status code Exclusive with `statusCode` | Valid status, for example, `NOERROR` | `NOERROR` |
 
 ```
@@ -591,7 +590,7 @@ Verifies the count of records of a given type.
 | --- | --- | --- | --- | --- |
 | `operator` | string | Comparison operator | `>=`, `>`, `<=`, `<`, `=`, or `!=` | `>` |
 | `recordType` | string | DNS record type | Valid record type, for example, `MX` |  |
-| `value` | integer | Expected record count | Valid count, for example `2` Range = `0`â`65535` | `80` |
+| `value` | integer | Expected record count | Valid count, for example `2` Range = `0`–`65535` | `80` |
 
 ```
 {
@@ -634,7 +633,7 @@ Verifies the time to live (TTL) of records of a given type.
 | `quantifier` | string | How many records must match the condition for the constraint to pass | `any` (at least one) or `all` | `any` |
 | `operator` | string | Comparison operator | `>=`, `>`, `<=`, `<`, `=`, or `!=` | `>` |
 | `recordType` | string | DNS record type | Valid record type, for example, `NS` |  |
-| `value` | integer | Expected TTL in seconds | Valid TTL, for example `3600` Range = `0`â`2147483647` | `80` |
+| `value` | integer | Expected TTL in seconds | Valid TTL, for example `3600` Range = `0`–`2147483647` | `80` |
 
 ```
 {

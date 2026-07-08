@@ -1,7 +1,6 @@
 ---
 title: User and group management
 source: https://docs.dynatrace.com/managed/manage/identity-access-management/user-and-group-management
-scraped: 2026-05-12T11:06:30.402488
 ---
 
 # User and group management

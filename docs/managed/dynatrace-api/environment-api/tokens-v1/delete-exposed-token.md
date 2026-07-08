@@ -1,7 +1,6 @@
 ---
 title: Find and replace an exposed token
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/tokens-v1/delete-exposed-token
-scraped: 2026-05-12T12:11:19.795699
 ---
 
 # Find and replace an exposed token

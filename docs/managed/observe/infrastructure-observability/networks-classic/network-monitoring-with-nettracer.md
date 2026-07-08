@@ -1,7 +1,6 @@
 ---
 title: Extended network monitoring
 source: https://docs.dynatrace.com/managed/observe/infrastructure-observability/networks-classic/network-monitoring-with-nettracer
-scraped: 2026-05-12T12:03:18.394064
 ---
 
 # Extended network monitoring
@@ -14,7 +13,7 @@ scraped: 2026-05-12T12:03:18.394064
 
 Extend network monitoring with network traffic metrics in containerized Linux hosts.
 
-With network metrics added to your containerized hosts, DavisÂ® root cause analysis will leverage them and extend analysis to provide visibility into network-related issues. Extensive network traffic on particular nodes is a sign that you should consider scaling up the cluster.
+With network metrics added to your containerized hosts, Davis® root cause analysis will leverage them and extend analysis to provide visibility into network-related issues. Extensive network traffic on particular nodes is a sign that you should consider scaling up the cluster.
 
 ## NetTracer
 
@@ -27,9 +26,9 @@ Advantages:
 
 * It can trace TCP events: **connect**, **accept**, and **close**
 * It can collect metrics about each traced connection
-* It's a high performance applicaton (written in C and C++)
+* It's a high performance application (written in C and C++)
 * It's independent from kernel version and configuration (Linux kernel 4.15 and higher)
-* It's an open source project ([NetTracerï»¿](https://github.com/dynatrace-oss/nettracer-bpf))
+* It's an open source project ([NetTracer﻿](https://github.com/dynatrace-oss/nettracer-bpf))
 
 NetTracer defines an IPv4 and IPv6 TCP connection by source address and port, destination address and port, PID of the communicating process, and network namespace.
 
@@ -62,7 +61,7 @@ When enabled, OneAgent will use NetTracer to collect network data from container
 To enable NetTracer on a specific Linux host
 
 1. Go to **Hosts** and select your Linux host.
-2. On the host overview page, select **More** (**â¦**) > **Settings** in the upper-right corner of the page.
+2. On the host overview page, select **More** (**…**) > **Settings** in the upper-right corner of the page.
 3. On the **Host settings** page, select **NetTracer traffic** and turn on **Enable NetTracer traffic network monitoring**.
 
 To enable NetTracer globally on all your Linux hosts
@@ -93,7 +92,7 @@ The following metrics available for NetTracer are calculated:
 
 * `builtin:tech.nettracer.retr_percentage` (Retransmission)
 
-  Retransmission = retransmitted packets / (retransmitted packets + packets transmitted) Ã 100
+  Retransmission = retransmitted packets / (retransmitted packets + packets transmitted) × 100
 * `builtin:tech.nettracer.traffic_rx` (Incoming traffic)
 
   Incoming traffic = (sum of bytes received \* 8) per second
@@ -113,7 +112,7 @@ The following metrics available for NetTracer are calculated:
 | `builtin:tech.nettracer.pkts_rx` | `dt.entity.process_group_instance`  `dt.entity.process_group`  `dt.entity.host` | Count, sending deltas/resetting counter | Count |
 | `builtin:tech.nettracer.pkts_tx` | `dt.entity.process_group_instance`  `dt.entity.process_group`  `dt.entity.host` | Count, sending deltas/resetting counter | Count |
 | `builtin:tech.nettracer.pkts_retr` | `dt.entity.process_group_instance`  `dt.entity.process_group`  `dt.entity.host` | Count, sending deltas/resetting counter | Count |
-| `builtin:tech.nettracer.rtt` | `dt.entity.process_group_instance`  `dt.entity.process_group`  `dt.entity.host` | Gauge | Miliseconds |
+| `builtin:tech.nettracer.rtt` | `dt.entity.process_group_instance`  `dt.entity.process_group`  `dt.entity.host` | Gauge | Milliseconds |
 
 ### Container dimensions for NetTracer
 

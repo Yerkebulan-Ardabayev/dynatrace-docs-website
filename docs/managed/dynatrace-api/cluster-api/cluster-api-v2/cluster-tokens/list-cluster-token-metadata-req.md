@@ -1,7 +1,6 @@
 ---
 title: List Cluster token metadata with request
 source: https://docs.dynatrace.com/managed/dynatrace-api/cluster-api/cluster-api-v2/cluster-tokens/list-cluster-token-metadata-req
-scraped: 2026-05-12T11:06:14.793639
 ---
 
 # List Cluster token metadata with request
@@ -71,7 +70,7 @@ Metadata of a token.
 | id | string | The ID of the token. |
 | lastUse | integer | The unix timestamp in milliseconds when the token was last used. |
 | name | string | The name of the token. |
-| personalAccessToken | boolean | The token is a [personal access tokenï»¿](https://dt-url.net/wm03sop) (`true`) or an API token (`false`). |
+| personalAccessToken | boolean | The token is a [personal access token﻿](https://dt-url.net/wm03sop) (`true`) or an API token (`false`). |
 | revoked | boolean | Revocation status of the token. Revoked tokens are disabled. |
 | scopes | string[] | A list of scopes assigned to the token. The element can hold these values * `ClusterTokenManagement` * `ControlManagement` * `DiagnosticExport` * `EnvironmentTokenManagement` * `ExternalSyntheticIntegration` * `Nodekeeper` * `ReadSyntheticData` * `ServiceProviderAPI` * `UnattendedInstall` * `activeGateTokenManagement.create` * `activeGateTokenManagement.read` * `activeGateTokenManagement.write` * `apiTokens.read` * `apiTokens.write` * `settings.read` * `settings.write` |
 | userId | string | The owner of the token. |

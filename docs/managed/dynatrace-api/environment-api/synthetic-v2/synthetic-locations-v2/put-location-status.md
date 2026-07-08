@@ -1,7 +1,6 @@
 ---
 title: Synthetic locations API v2 - PUT public locations status
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/synthetic-v2/synthetic-locations-v2/put-location-status
-scraped: 2026-05-12T11:59:17.283607
 ---
 
 # Synthetic locations API v2 - PUT public locations status
@@ -82,7 +81,7 @@ This is a model of the request body, showing the possible elements. It has to be
 | Element | Type | Description |
 | --- | --- | --- |
 | code | integer | The HTTP status code |
-| constraintViolations | [ConstraintViolation[]](#openapi-definition-ConstraintViolation) | A list of constraint violations |
+| constraintViolations | [ConstraintViolation](#openapi-definition-ConstraintViolation)[] | A list of constraint violations |
 | message | string | The error message |
 
 #### The `ConstraintViolation` object

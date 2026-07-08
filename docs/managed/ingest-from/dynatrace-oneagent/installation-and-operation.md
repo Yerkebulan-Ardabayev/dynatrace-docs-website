@@ -1,7 +1,6 @@
 ---
 title: Install OneAgent on a server
 source: https://docs.dynatrace.com/managed/ingest-from/dynatrace-oneagent/installation-and-operation
-scraped: 2026-05-12T11:06:38.497546
 ---
 
 # Install OneAgent on a server
@@ -77,7 +76,7 @@ To download and install OneAgent on a host:
     If everything is working as expected, you'll see the name of your host in the **Hosts** table.
     See the screenshot below for an example.
 
-OneAgent is now set up and monitoring your host. See [Get started](/managed/discover-dynatrace/get-started "Learn how to get started with Dynatrace Managed.") to continue your first journey with Dynatrace.
+OneAgent is now set up and monitoring your host. See [Get started](/managed/discover-dynatrace/get-started "Learn how to get started with Dynatrace Managed in a few steps, from obtaining a license and setting up a Managed Cluster to ingesting data and setting up notifications.") to continue your first journey with Dynatrace.
 
 ## Related topics
 

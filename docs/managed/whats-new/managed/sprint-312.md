@@ -1,7 +1,6 @@
 ---
 title: Dynatrace Managed release notes version 1.312
 source: https://docs.dynatrace.com/managed/whats-new/managed/sprint-312
-scraped: 2026-05-12T11:07:59.887613
 ---
 
 # Dynatrace Managed release notes version 1.312
@@ -30,7 +29,7 @@ Digital Experience | RUM Web
 
 ### Assess website's overall responsiveness with Interaction to Next Paint
 
-Interaction to Next Paint (INP) has replaced First Input Delay (FID) in Googleâs Core Web Vitals. Dynatrace now offers the ability to monitor and analyze INP for your monitored websites. While FID was used to measure the responsiveness of the initial interaction on a website, INP allows to assess the latency across interactions on a website during a visit.
+Interaction to Next Paint (INP) has replaced First Input Delay (FID) in Google’s Core Web Vitals. Dynatrace now offers the ability to monitor and analyze INP for your monitored websites. While FID was used to measure the responsiveness of the initial interaction on a website, INP allows to assess the latency across interactions on a website during a visit.
 
 You can put our [INP metric](/managed/analyze-explore-automate/metrics-classic/built-in-metrics#web-applications "Explore the complete list of built-in Dynatrace metrics.") (`builtin:apps.web.interactionToNextPaint`) on dashboards across various dimensions, such as frontend applications, browsers, and locations.
 
@@ -73,7 +72,7 @@ Digital Experience | RUM Web
 
 You can now leverage the subresource integrity browser feature to ensure the integrity of the RUM monitoring code that is automatically injected or manually inserted into your web application.
 
-For more information, see [Use Subresource Integrity (SRI) for Real User Monitoring code](/managed/observe/digital-experience/web-applications/initial-setup/subresource-integrity "Use the Subresource Integrity (SRI) browser feature to ensure the integrity of Real User Monitoring code.").
+For more information, see [Use Subresource Integrity (SRI) for Real User Monitoring Classic code](/managed/observe/digital-experience/rum-classic/web-applications/initial-setup/subresource-integrity "Use the Subresource Integrity (SRI) browser feature to ensure the integrity of Real User Monitoring Classic code.").
 
 Digital Experience | Synthetic
 
@@ -116,41 +115,23 @@ To learn about changes to the Dynatrace API in this release, see:
 
 ### Future Dynatrace Managed operating systems support changes
 
-##### The following operating systems will no longer be supported starting 01 June 2026
-
-* Linux: Oracle Linux 9.6
-
-  + x86-64
-  + [Vendor announcementï»¿](https://www.oracle.com/a/ocom/docs/elsp-lifetime-069338.pdf)
-* Linux: Rocky Linux 9.6
-
-  + x86-64
-  + [Vendor announcementï»¿](https://endoflife.date/rocky-linux)
-
-##### The following operating systems will no longer be supported starting 01 July 2026
-
-* Linux: SUSE Enterprise Linux 15.3
-
-  + x86-64
-  + [Vendor announcementï»¿](https://www.suse.com/lifecycle/)
-
 ##### The following operating systems will no longer be supported starting 01 November 2026
 
 * Linux: Red Hat Enterprise Linux 9.4, 9.7
 
   + x86-64
-  + [Vendor announcementï»¿](https://access.redhat.com/support/policy/updates/errata)
+  + [Vendor announcement﻿](https://access.redhat.com/support/policy/updates/errata)
 * Linux: Ubuntu 16.04
 
   + x86-64
-  + [Vendor announcementï»¿](https://ubuntu.com/about/release-cycle)
+  + [Vendor announcement﻿](https://ubuntu.com/about/release-cycle)
 
 ##### The following operating systems will no longer be supported starting 01 January 2027
 
 * Linux: Amazon Linux 2
 
   + x86-64
-  + [Vendor announcementï»¿](https://aws.amazon.com/linux/)
+  + [Vendor announcement﻿](https://aws.amazon.com/linux/)
 
 ### Past Dynatrace Managed operating systems support changes
 
@@ -159,22 +140,40 @@ To learn about changes to the Dynatrace API in this release, see:
 * Linux: Red Hat Enterprise Linux 8.8, 9.2, 9.5
 
   + x86-64
-  + [Vendor announcementï»¿](https://access.redhat.com/support/policy/updates/errata)
+  + [Vendor announcement﻿](https://access.redhat.com/support/policy/updates/errata)
 * Linux: Oracle Linux 9.5
 
   + x86-64
-  + [Vendor announcementï»¿](https://www.oracle.com/a/ocom/docs/elsp-lifetime-069338.pdf)
+  + [Vendor announcement﻿](https://www.oracle.com/a/ocom/docs/elsp-lifetime-069338.pdf)
 * Linux: Rocky Linux 9.5
 
   + x86-64
-  + [Vendor announcementï»¿](https://endoflife.date/rocky-linux)
+  + [Vendor announcement﻿](https://endoflife.date/rocky-linux)
 
 ##### The following operating systems are no longer supported since 01 January 2026
 
 * Linux: Debian 10
 
   + x86-64
-  + [Vendor announcementï»¿](https://wiki.debian.org/DebianReleases)
+  + [Vendor announcement﻿](https://wiki.debian.org/DebianReleases)
+
+##### The following operating systems are no longer supported since 01 June 2026
+
+* Linux: Oracle Linux 9.6
+
+  + x86-64
+  + [Vendor announcement﻿](https://www.oracle.com/a/ocom/docs/elsp-lifetime-069338.pdf)
+* Linux: Rocky Linux 9.6
+
+  + x86-64
+  + [Vendor announcement﻿](https://endoflife.date/rocky-linux)
+
+##### The following operating systems are no longer supported since 01 July 2026
+
+* Linux: SUSE Enterprise Linux 15.3
+
+  + x86-64
+  + [Vendor announcement﻿](https://www.suse.com/lifecycle/)
 
 ## Resolved issues
 

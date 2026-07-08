@@ -1,7 +1,6 @@
 ---
 title: Dynatrace API changelog version 1.337
 source: https://docs.dynatrace.com/managed/whats-new/dynatrace-api/sprint-337
-scraped: 2026-05-12T11:35:46.914996
 ---
 
 # Dynatrace API changelog version 1.337

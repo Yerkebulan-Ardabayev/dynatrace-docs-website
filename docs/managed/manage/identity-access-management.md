@@ -1,7 +1,6 @@
 ---
 title: Identity and access management (IAM)
 source: https://docs.dynatrace.com/managed/manage/identity-access-management
-scraped: 2026-05-12T11:03:08.888734
 ---
 
 # Identity and access management (IAM)

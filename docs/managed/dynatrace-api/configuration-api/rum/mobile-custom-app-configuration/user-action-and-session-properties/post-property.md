@@ -1,7 +1,6 @@
 ---
 title: Mobile and custom app API - POST user session property
 source: https://docs.dynatrace.com/managed/dynatrace-api/configuration-api/rum/mobile-custom-app-configuration/user-action-and-session-properties/post-property
-scraped: 2026-05-12T11:15:26.476462
 ---
 
 # Mobile and custom app API - POST user session property
@@ -42,7 +41,7 @@ Configuration of the mobile session or user action property.
 | Element | Type | Description | Required |
 | --- | --- | --- | --- |
 | aggregation | string | The aggregation type of the property.  It defines how multiple values of the property are aggregated. The element can hold these values * `AVERAGE` * `FIRST` * `LAST` * `MAX` * `MIN` * `SUM` | Optional |
-| cleanupRule | string | The cleanup rule of the property.  Defines how to extract the data you need from a string value. Specify the [regular expressionï»¿](https://dt-url.net/k9e0iaq) for the data you need there. | Optional |
+| cleanupRule | string | The cleanup rule of the property.  Defines how to extract the data you need from a string value. Specify the [regular expression﻿](https://dt-url.net/k9e0iaq) for the data you need there. | Optional |
 | displayName | string | The display name of the property. | Optional |
 | key | string | The unique key of the mobile session or user action property. | Required |
 | name | string | The name of the reported value.  Only applicable when the **origin** is set to `API`. | Optional |
@@ -135,7 +134,7 @@ A short representation of mobile session or user action property.
 | Element | Type | Description |
 | --- | --- | --- |
 | code | integer | The HTTP status code |
-| constraintViolations | [ConstraintViolation[]](#openapi-definition-ConstraintViolation) | A list of constraint violations |
+| constraintViolations | [ConstraintViolation](#openapi-definition-ConstraintViolation)[] | A list of constraint violations |
 | message | string | The error message |
 
 #### The `ConstraintViolation` object
@@ -262,7 +261,7 @@ To learn how to obtain and use it, see [Tokens and authentication](/managed/disc
 | Element | Type | Description |
 | --- | --- | --- |
 | code | integer | The HTTP status code |
-| constraintViolations | [ConstraintViolation[]](#openapi-definition-ConstraintViolation) | A list of constraint violations |
+| constraintViolations | [ConstraintViolation](#openapi-definition-ConstraintViolation)[] | A list of constraint violations |
 | message | string | The error message |
 
 #### The `ConstraintViolation` object

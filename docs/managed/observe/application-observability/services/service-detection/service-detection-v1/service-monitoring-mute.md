@@ -1,7 +1,6 @@
 ---
 title: Mute monitoring of service requests
 source: https://docs.dynatrace.com/managed/observe/application-observability/services/service-detection/service-detection-v1/service-monitoring-mute
-scraped: 2026-05-12T11:25:13.147558
 ---
 
 # Mute monitoring of service requests
@@ -29,21 +28,21 @@ Muting requests or endpoints for unified services is not supported.
 2. On the **Services** page, select the service that receives the request you want to mute.
 3. Select **View requests**.
 4. Select the request you want to mute.
-5. On the request **Details** page, select **More** (**â¦**) > **Mute**.
+5. On the request **Details** page, select **More** (**…**) > **Mute**.
 
-The requestâs **Details** page displays the message **This request has been muted.** Going forward, Dynatrace will not alert on this request and record its data separately.
+The request’s **Details** page displays the message **This request has been muted.** Going forward, Dynatrace will not alert on this request and record its data separately.
 
 Muted service requests remain accessible (and even remain visible in request lists for a limited period of time) but their response times are no longer factored into overall metrics and charts.
 
 ## Adjust reference periods for alerting
 
-In some cases, muting a high-volume request can result in fake response-time degradation alerts. This only happens in rare cases and the reason is the displayed shift in the median and the corresponding change in the underlying request distribution. If this happens, itâs best to reset the reference period for alerts on this service. By doing this, Dynatrace will establish new performance baselines that exclude the muted request.
+In some cases, muting a high-volume request can result in fake response-time degradation alerts. This only happens in rare cases and the reason is the displayed shift in the median and the corresponding change in the underlying request distribution. If this happens, it’s best to reset the reference period for alerts on this service. By doing this, Dynatrace will establish new performance baselines that exclude the muted request.
 
 To adjust alerting reference periods for your specific service
 
 1. Go to **Services**.
-2. On the **Services** page, select the service that receives the request youâve muted.
-3. On the service page, select **More** (**â¦**) > **Edit**.
+2. On the **Services** page, select the service that receives the request you’ve muted.
+3. On the service page, select **More** (**…**) > **Edit**.
 4. Select **Anomaly detection**.
 5. In the **Reference period** section, select **Reset**.
 
@@ -54,14 +53,14 @@ Data for muted requests is still being recorded, but in a separate place.
 To list all muted requests
 
 1. Go to **Services**.
-2. On the **Services** page, select the service that receives the request youâve muted.
+2. On the **Services** page, select the service that receives the request you’ve muted.
 3. In the **Muted requests** section, select **View muted requests**.  
    Here you have access to all previously muted requests.
 
 To unmute a request
 
 1. Select the muted request.
-2. On the **Details** page, select **More** (**â¦**) > **Unmute**.
+2. On the **Details** page, select **More** (**…**) > **Unmute**.
 
 The request is removed from the muted request list, new data is recorded normally again, and alerting is re-enabled for that request.
 

@@ -1,7 +1,6 @@
 ---
 title: Stream Kubernetes logs with Fluent Bit (Logs Classic)
 source: https://docs.dynatrace.com/managed/analyze-explore-automate/log-monitoring/acquire-log-data/lm-fluent-bit-logs-k8s
-scraped: 2026-05-12T11:53:59.210110
 ---
 
 # Stream Kubernetes logs with Fluent Bit (Logs Classic)
@@ -18,8 +17,8 @@ This page provides instructions for deploying and configuring Fluent Bit in your
 
 ## Prerequisites
 
-* Setup [security context constraints (SCC)ï»¿](https://dt-url.net/fb02ljw) properly if you use OpenShift.
-* Helm is required. Use [Helm version 3ï»¿](https://dt-url.net/n5036j1).
+* Setup [security context constraints (SCC)﻿](https://dt-url.net/fb02ljw) properly if you use OpenShift.
+* Helm is required. Use [Helm version 3﻿](https://dt-url.net/n5036j1).
 * Egress traffic must be allowed from the namespace in which Fluent Bit is installed (`dynatrace-fluent-bit`), to Dynatrace.
 * For workload enrichment, Dynatrace Operator version 1.1.0+ is required.
 
@@ -648,7 +647,7 @@ Follow the step-by-step guide to prepare the configuration for Fluent Bit.
    ```
 2. Get a [Dynatrace API token](/managed/dynatrace-api/basics/dynatrace-api-authentication "Find out how to get authenticated to use the Dynatrace API.") with the `logs.ingest` (Ingest Logs) scope for the `DT_INGEST_TOKEN` environment variable.
 3. Update the `K8S_CLUSTER_NAME`, `DT_INGEST_HOST`, and `DT_INGEST_TOKEN` environment variables in the `values.yaml` file. Use the same cluster name that you have configured in Dynatrace for `K8S_CLUSTER_NAME`, and specify your SaaS or Managed endpoint as `DT_INGEST_HOST`.
-4. Optional Adapt the filter section in the `values.yaml` file to target specific namespaces or pods, as described in the [Fluent Bit Filter sectionï»¿](https://dt-url.net/m903n8q) for details.
+4. Optional Adapt the filter section in the `values.yaml` file to target specific namespaces or pods, as described in the [Fluent Bit Filter section﻿](https://dt-url.net/m903n8q) for details.
 5. Optional Ensure to remove or mask any sensitive information in the logs.
 6. Save the file.
 
@@ -699,7 +698,7 @@ Logs
 
 ## Troubleshooting
 
-Visit [Troubleshooting logs ingested via Fluent Bitï»¿](https://community.dynatrace.com/t5/Troubleshooting/Troubleshooting-logs-ingested-via-Fluent-Bit/ta-p/283718) in the Dynatrace Community, as well as see [Troubleshooting Log Monitoring (Logs Classic)](/managed/analyze-explore-automate/log-monitoring/lmc-troubleshooting "Fix issues related to the setup and configuration of Log Monitoring Classic.").
+Visit [Troubleshooting logs ingested via Fluent Bit﻿](https://community.dynatrace.com/t5/Troubleshooting/Troubleshooting-logs-ingested-via-Fluent-Bit/ta-p/283718) in the Dynatrace Community, as well as see [Troubleshooting Log Monitoring (Logs Classic)](/managed/analyze-explore-automate/log-monitoring/lmc-troubleshooting "Fix issues related to the setup and configuration of Log Monitoring Classic.").
 
 ### Check that Fluent Bit pods are running
 
@@ -731,7 +730,7 @@ kubectl logs fluent-bit-5jzlr -n dynatrace-fluent-bit
 
 ### Check Fluent Bit health and metrics
 
-[Fluent Bit metricsï»¿](https://dt-url.net/nh43pqz) give you insights into how the logs are being collected (`fluentbit_input_*`), filtered (`fluentbit_filter_*`) and sent to Dynatrace (`fluentbit_output_*`).
+[Fluent Bit metrics﻿](https://dt-url.net/nh43pqz) give you insights into how the logs are being collected (`fluentbit_input_*`), filtered (`fluentbit_filter_*`) and sent to Dynatrace (`fluentbit_output_*`).
 
 1. Find the node on which the pod you are troubleshooting is running.
 
@@ -797,7 +796,7 @@ kubectl logs fluent-bit-5jzlr -n dynatrace-fluent-bit
 
    2024-06-11T07:05:37.257418778Z fluentbit_output_proc_bytes_total{name="http.0"} = 359630
    ```
-6. When `fluentbit_output_errors_total` or `fluentbit_output_retries_failed_total` metrics indicate problems, a potential reason is that you have reached [log monitoring limitsï»¿](https://dt-url.net/vj23poy).
+6. When `fluentbit_output_errors_total` or `fluentbit_output_retries_failed_total` metrics indicate problems, a potential reason is that you have reached [log monitoring limits﻿](https://dt-url.net/vj23poy).
 
 ## Related topics
 

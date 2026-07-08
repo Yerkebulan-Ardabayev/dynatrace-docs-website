@@ -1,7 +1,6 @@
 ---
 title: Monitor AWS Lambda with OpenTelemetry
 source: https://docs.dynatrace.com/managed/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration/aws-lambda-classic/aws-lambda-otel-integration/aws-lambda-otel-setup
-scraped: 2026-05-12T12:10:10.459384
 ---
 
 # Monitor AWS Lambda with OpenTelemetry
@@ -62,7 +61,7 @@ Copy the JSON snippet into a file named `dtconfig.json` located in the root fold
 
 Configure with environment variables
 
-On **Enable Monitoring for AWS Lambda Functions**, under **Use the following values to define environment variables for your AWS Lambda function**, there's a snippet with all required environment variables. Be sure to add these environment variables and their values to your Lambda function configuration. For details, see [Configuring environment variablesï»¿](https://docs.aws.amazon.com/lambda/latest/dg/configuration-envvars.html#configuration-envvars-config).
+On **Enable Monitoring for AWS Lambda Functions**, under **Use the following values to define environment variables for your AWS Lambda function**, there's a snippet with all required environment variables. Be sure to add these environment variables and their values to your Lambda function configuration. For details, see [Configuring environment variables﻿](https://docs.aws.amazon.com/lambda/latest/dg/configuration-envvars.html#configuration-envvars-config).
 
 ## Step 4 Instrument the function code
 

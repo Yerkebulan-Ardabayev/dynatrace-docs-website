@@ -1,7 +1,6 @@
 ---
 title: About OTLP metrics ingest
 source: https://docs.dynatrace.com/managed/ingest-from/opentelemetry/otlp-api/ingest-otlp-metrics/about-metrics-ingest
-scraped: 2026-05-12T12:08:22.335347
 ---
 
 # About OTLP metrics ingest
@@ -10,14 +9,14 @@ scraped: 2026-05-12T12:08:22.335347
 
 * Explanation
 * 2-min read
-* Updated on Mar 11, 2026
+* Updated on Jun 11, 2026
 
 This page provides information about how Dynatrace ingests and enriches OpenTelemetry metrics.
 
 Migrate from the Dynatrace OpenTelemetry metrics exporter
 
 If you're still using the Dynatrace OpenTelemetry metrics exporter, we recommend that you migrate to the OTLP metrics exporter.
-For more information, see [Migrating from the Dynatrace OTel metrics exporter to standard OTLP metrics exporterï»¿](https://community.dynatrace.com/t5/Open-Q-A/Migrating-from-the-Dynatrace-OTel-metrics-exporter-to-standard/m-p/286986/thread-id/37689#M37690).
+For more information, see [Migrating from the Dynatrace OTel metrics exporter to standard OTLP metrics exporter﻿](https://community.dynatrace.com/t5/Open-Q-A/Migrating-from-the-Dynatrace-OTel-metrics-exporter-to-standard/m-p/286986/thread-id/37689#M37690).
 
 ## Dynatrace-specific mapping
 
@@ -28,8 +27,8 @@ Dynatrace maps the individual OpenTelemetry instruments to the following Dynatra
 | Counter | Delta | Counter |
 | Counter | Cumulative | N/A |
 | Gauge | N/A | Gauge |
-| Explicit bucket histogram [1](#fn-1-1-def) | Delta | Histogram |
-| Exponential histogram [2](#fn-1-2-def) | Delta | Exponential histogram |
+| [Explicit bucket histogram](/managed/ingest-from/opentelemetry/otlp-api/ingest-otlp-metrics/about-metrics-ingest#histograms "Learn how Dynatrace ingests OpenTelemetry metrics and what limitations apply.") [1](#fn-1-1-def) | Delta | Histogram |
+| [Exponential histogram](/managed/ingest-from/opentelemetry/otlp-api/ingest-otlp-metrics/about-metrics-ingest#histograms "Learn how Dynatrace ingests OpenTelemetry metrics and what limitations apply.") | Delta | Gauge |
 | UpDownCounter | Delta | Counter |
 | UpDownCounter | Cumulative | Gauge |
 | Summary | N/A | N/A |
@@ -38,15 +37,11 @@ Dynatrace maps the individual OpenTelemetry instruments to the following Dynatra
 
 Explicit bucket histograms are supported with Dynatrace Managed version 1.324+ and ActiveGate version 1.321+.
 
-2
-
-For exponential histograms, Dynatrace ingests the histogram's `min|max|sum|count` but doesn't ingest the buckets.
-
 ## API limits and validations
 
-When ingesting OpenTelemetry metrics, limits and validations apply as described in the tables below.
+When ingesting OpenTelemetry metrics, limits and validations apply as described in the table below.
 
-| Entity | Limit | Description |
+| Entity | Default limit | Description |
 | --- | --- | --- |
 | Metric key length, characters | Min: 2, Max: 255 | The length of a metric key. |
 | Dimension key length, characters | Min: 1, Max: 100 | The length of a dimension key. If the maximum length is exceeded, the key is truncated at the upper limit. |
@@ -77,7 +72,7 @@ Similarly, if a scope and resource attribute share the same name, Dynatrace will
 ### Aggregation temporality
 
 The Dynatrace backend exclusively works with delta values and requires the respective aggregation temporality.
-Please ensure your metrics exporter is accordingly configured or set the [`OTEL_EXPORTER_OTLP_METRICS_TEMPORALITY_PREFERENCE`ï»¿](https://opentelemetry.io/docs/specs/otel/metrics/sdk_exporters/otlp/) environment variable to `DELTA`.
+Please ensure your metrics exporter is accordingly configured or set the [`OTEL_EXPORTER_OTLP_METRICS_TEMPORALITY_PREFERENCE`﻿](https://opentelemetry.io/docs/specs/otel/metrics/sdk_exporters/otlp/) environment variable to `DELTA`.
 
 For examples on how to set the temporality under each individual language, see the [integration walkthroughs](/managed/ingest-from/opentelemetry/walkthroughs "Learn how to integrate and ingest OpenTelemetry data (traces, metrics, and logs) into Dynatrace.").
 
@@ -86,7 +81,7 @@ For examples on how to set the temporality under each individual language, see t
 * A metric key consists of sections separated by dots (for example, `dt.metrics`).
 * A metric key can contain lowercase and uppercase letters, numbers, hyphens (`-`), and underscores (`_`).
 * A metric key must start with a letter character.
-* A metric key must not contain non-Latin characters (such as `Ã¤`, `Ã¶`, and `Ã¼`).
+* A metric key must not contain non-Latin characters (such as `ä`, `ö`, and `ü`).
 * A metric key may be suffixed automatically depending on the payload (for example, `.count` for counters and `.gauge` for gauges).
 
 If you use characters that are invalid according to the rules above, they will be replaced with underscores.
@@ -94,21 +89,21 @@ If your metric key does not have at least one valid character, the data point wi
 
 ### Dimension keys
 
-* Dimensions are comparable to span or resources attributes.
-* A dimension key can contain only lowercase letters (not uppercase letters), numbers, hyphens (`-`), periods (`.`), and underscores (`_`).
+Dimensions are comparable to span or resources attributes. Based on the settings of your environment, different validations apply to dimension keys:
+
+* A dimension key can contain only lowercase letters, numbers, hyphens (`-`), periods (`.`), and underscores (`_`).
+
+  + Uppercase letters are converted to lowercase upon ingest.
 * A dimension key must start with a letter character.
-* A dimension key must not contain non-Latin characters (such as `Ã¤`, `Ã¶`, and `Ã¼`).
+* A dimension key must not contain non-Latin characters (such as `ä`, `ö`, and `ü`).
 * A dimension key can be in the `key.key-section` format.
-* You can specify up to 50 dimensions.
 * If the same dimension key is specified multiple times in a single payload, only the value that occurs first is accepted.
 
 If you use characters that are invalid according to the rules above, they will be replaced with underscores.
 If your dimension key does not have at least one valid character, the key will be dropped.
 
 Dimension values must be passed as a string, Boolean, or integer.
-
 Dynatrace does not support non-string dimensions and will convert Booleans and integers to strings upon ingest.
-
 If any other type is used, the entire dimension will be dropped.
 
 ### Histograms
@@ -117,7 +112,7 @@ For exponential histograms, Dynatrace ingests the histogram's `min|max|sum|count
 
 For explicit bucket histograms, there are a few things to consider:
 
-* Dynatrace adds to the metric key of a histogram metric the suffix `.histogram`.
+* Dynatrace appends the `.histogram` suffix to the metric key.
 * A histogram metric is billed like a count or gauge metric; the individual buckets are not billed separately.
 * Only 12 buckets per histogram datapoint are stored.
 * Negative bucket boundaries are not supported.

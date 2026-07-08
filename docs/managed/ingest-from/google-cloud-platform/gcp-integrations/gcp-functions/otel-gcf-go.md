@@ -1,7 +1,6 @@
 ---
 title: Trace Google Cloud Functions in Go with OpenTelemetry
 source: https://docs.dynatrace.com/managed/ingest-from/google-cloud-platform/gcp-integrations/gcp-functions/otel-gcf-go
-scraped: 2026-05-12T12:08:56.043316
 ---
 
 # Trace Google Cloud Functions in Go with OpenTelemetry
@@ -246,9 +245,9 @@ Alternatively, the endpoint and authentication token can be configured in code b
 To instrument invocations to a Google Cloud Function with OpenTelemetry, you need to
 
 1. Create a span around the entry point of the function to trace invocations.
-2. Extract and link the parent span from the propagated context. (To learn about W3C Trace Context, see our [W3C Trace Contextï»¿](https://engineering.dynatrace.com/open-source/standards/w3c-trace-context/) introduction.)
+2. Extract and link the parent span from the propagated context. (To learn about W3C Trace Context, see our [W3C Trace Context﻿](https://engineering.dynatrace.com/open-source/standards/w3c-trace-context/) introduction.)
 
-For certain libraries, OpenTelemetry Go already provides [instrumentationsï»¿](https://github.com/open-telemetry/opentelemetry-go-contrib/tree/main/instrumentation) that you can use to take care of these things.
+For certain libraries, OpenTelemetry Go already provides [instrumentations﻿](https://github.com/open-telemetry/opentelemetry-go-contrib/tree/main/instrumentation) that you can use to take care of these things.
 
 The following sections show you how to instrument certain types of Google Cloud Functions:
 
@@ -441,7 +440,7 @@ When deploying your function to GCP, make sure to use `InstrumentedHandler` as t
 
 #### Instrument a Pub/Sub Google Cloud Function
 
-A Pub/Sub Google Cloud Function is triggered by the [Pub/Sub messageï»¿](https://cloud.google.com/pubsub/docs/reference/rest/v1/PubsubMessage) event. The event is unmarshalled by GCP into a message object that matches the type you defined in the entry point of your function. This type usually looks similar to the following:
+A Pub/Sub Google Cloud Function is triggered by the [Pub/Sub message﻿](https://cloud.google.com/pubsub/docs/reference/rest/v1/PubsubMessage) event. The event is unmarshalled by GCP into a message object that matches the type you defined in the entry point of your function. This type usually looks similar to the following:
 
 ```
 type PubSubMessage struct {

@@ -1,7 +1,6 @@
 ---
 title: Extend log observability
 source: https://docs.dynatrace.com/managed/ingest-from/extend-dynatrace/extend-logs
-scraped: 2026-05-12T11:04:14.517538
 ---
 
 # Extend log observability

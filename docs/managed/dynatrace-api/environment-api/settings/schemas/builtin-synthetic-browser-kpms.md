@@ -1,7 +1,6 @@
 ---
 title: Settings API - Key performance metrics schema table
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/settings/schemas/builtin-synthetic-browser-kpms
-scraped: 2026-05-12T11:46:38.360970
 ---
 
 # Settings API - Key performance metrics schema table
@@ -12,9 +11,9 @@ scraped: 2026-05-12T11:46:38.360970
 
 ### Key performance metrics (`builtin:synthetic.browser.kpms)`
 
-Select the [key performance metricï»¿](https://dt-url.net/kpms) that best represents the user experience of this synthetic monitor.
+Select the [key performance metric﻿](https://dt-url.net/kpms) that best represents the user experience of this synthetic monitor.
 
-**Visually complete** is the default metric for load and XHR actions. It measures how long it takes for the visible portion of each userâs browser screen to be fully rendered.
+**Visually complete** is the default metric for load and XHR actions. It measures how long it takes for the visible portion of each user’s browser screen to be fully rendered.
 
 The key performance metric for custom actions is always **User action duration**.
 

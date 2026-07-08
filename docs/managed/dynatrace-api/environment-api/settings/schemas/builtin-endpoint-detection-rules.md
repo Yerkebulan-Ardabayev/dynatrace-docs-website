@@ -1,7 +1,6 @@
 ---
 title: Settings API - Endpoint detection schema table
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/settings/schemas/builtin-endpoint-detection-rules
-scraped: 2026-05-12T11:44:40.360963
 ---
 
 # Settings API - Endpoint detection schema table
@@ -12,7 +11,7 @@ scraped: 2026-05-12T11:44:40.360963
 
 ### Endpoint detection (`builtin:endpoint-detection-rules)`
 
-Define rules to detect requests on endpoints based on span attributes defined in the [Semantic Dictionaryï»¿](https://docs.dynatrace.com/docs/discover-dynatrace/references/semantic-dictionary/fields) and custom attributes. Rules are evaluated in order and the first matching rule applies.
+Define rules to detect requests on endpoints based on span attributes defined in the [Semantic Dictionary﻿](https://docs.dynatrace.com/docs/discover-dynatrace/references/semantic-dictionary/fields) and custom attributes. Rules are evaluated in order and the first matching rule applies.
 
 | Schema ID | Schema groups | Scope |
 | --- | --- | --- |
@@ -43,6 +42,6 @@ To execute this request, you need an access token with **Read settings** (`setti
 | --- | --- | --- | --- |
 | Rule name `ruleName` | text | - | Required |
 | Description `description` | text | - | Optional |
-| Matching condition `condition` | text | Limits the scope of the endpoint detection rule using [DQL matcherï»¿](https://dt-url.net/l603wby) conditions on span and resource attributes.  A rule is applied only if the condition matches, otherwise the ruleset evaluation continues.  If empty, the condition will always match. | Optional |
+| Matching condition `condition` | text | Limits the scope of the endpoint detection rule using [DQL matcher﻿](https://dt-url.net/l603wby) conditions on span and resource attributes.  A rule is applied only if the condition matches, otherwise the ruleset evaluation continues.  If empty, the condition will always match. | Optional |
 | If condition matches `ifConditionMatches` | enum | The element has these enums * `DETECT_REQUEST_ON_ENDPOINT` * `SUPPRESS_REQUEST` | Required |
 | Endpoint name template `endpointNameTemplate` | text | Specify attribute placeholders in curly braces, e.g. {http.route} or {rpc.method}.  Attribute value placeholders should be specified in curly braces, e.g. {http.route}, {rpc.method}. All attributes used in the placeholder are required for the rule to apply. If any of them is missing, the rule will not be applied and ruleset evaluation continues.  If the resolved endpoint name on a given span is empty, the request will be ignored. | Required |

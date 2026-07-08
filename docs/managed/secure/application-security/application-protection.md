@@ -1,7 +1,6 @@
 ---
 title: Runtime Application Protection
 source: https://docs.dynatrace.com/managed/secure/application-security/application-protection
-scraped: 2026-05-12T11:13:50.353848
 ---
 
 # Runtime Application Protection
@@ -11,7 +10,7 @@ scraped: 2026-05-12T11:13:50.353848
 * How-to guide
 * Updated on Feb 23, 2026
 
-What youâll find on this page
+What you’ll find on this page
 
 * [Explore Runtime Application Protection capabilities](#capabilities)
 * [How RAP detects and analyzes attacks](#mechanism)
@@ -37,7 +36,7 @@ Dynatrace Runtime Application Protection leverages code-level insights and trans
 
 Runtime Application Protection (RAP) uses runtime instrumentation to detect and optionally block exploit attempts. When your application receives a web request, [Dynatrace OneAgent](/managed/platform/oneagent "Learn the monitoring capabilities of OneAgent.") tracks user input and analyzes how it interacts with sensitive code paths, such as SQL queries, OS commands, or JNDI lookups. If the behavior matches a known attack pattern, Dynatrace reports it as a security finding. If attack blocking is enabled, OneAgent throws an exception to stop the malicious request before it executes. RAP is lightweight and safe for use in production environments.
 
-For a quick walk-through, see the [Dynatrace University Runtime Application Protection tutorialï»¿](https://university.dynatrace.com/learn/course/external/view/elearning/89/runtime-application-protection).
+For a quick walk-through, see the [Dynatrace University Runtime Application Protection tutorial﻿](https://university.dynatrace.com/learn/course/external/view/elearning/89/runtime-application-protection).
 
 ## Prerequisites
 
@@ -52,7 +51,7 @@ Before you begin, ensure your environment meets the necessary requirements:
 Application Security isn't supported
 
 * In offline mode.
-* On the Dynatrace mobile app ([iOSï»¿](https://itunes.apple.com/app/ruxit/id1567881685) or [Androidï»¿](https://play.google.com/store/apps/details?id=com.dynatrace.alert)).
+* On the Dynatrace mobile app ([iOS﻿](https://itunes.apple.com/app/ruxit/id1567881685) or [Android﻿](https://play.google.com/store/apps/details?id=com.dynatrace.alert)).
 
 ## Permissions
 
@@ -106,9 +105,9 @@ To define the global attack control for all process groups
 1. Go to **Settings** and select **Application security** > **Application Protection** > **General settings**.
 2. Under **Define global incoming attack control**, select the desired mode per technology:
 
-   * **Off; incoming attacks NOT detected or blocked.**âMonitoring is disabled; no attacks in the selected technology are reported.
-   * **Monitor; incoming attacks detected only.**âMonitoring is enabled; no attacks in the selected technology are blocked.
-   * **Block; incoming attacks detected and blocked.**âMonitoring is enabled; attacks in the selected technology are blocked at runtime.
+   * **Off; incoming attacks NOT detected or blocked.**—Monitoring is disabled; no attacks in the selected technology are reported.
+   * **Monitor; incoming attacks detected only.**—Monitoring is enabled; no attacks in the selected technology are blocked.
+   * **Block; incoming attacks detected and blocked.**—Monitoring is enabled; attacks in the selected technology are blocked at runtime.
 
 If you define [custom monitoring rules](/managed/secure/application-security/application-protection/application-protection-rules#handling-rules "Create, modify, and delete rules for specific attacks.") based on certain process groups or vulnerability types, the custom rules override the global attack control for the selected technology, and Runtime Application Protection continues to monitor the attacks based on your rules.
 
@@ -141,8 +140,8 @@ After you set up Runtime Application Protection, you can
 
 Runtime Application Protection consumption depends on your Dynatrace licensing model:
 
-* [Dynatrace Platform Subscription (DPS)](/managed/license "About Dynatrace Platform Subscription (DPS), the licensing model for all Dynatrace capabilities."): measured in GiBâhours. For details, see [Calculate your consumption of Runtime Application Protection (RAP) (DPS)](/managed/license/capabilities/application-security/runtime-application-protection "Learn how how your consumption of the Runtime Application Protection (RAP) DPS capability is billed and charged.").
-* [Dynatrace classic licensing](/managed/license/monitoring-consumption-classic "Understand how Dynatrace monitoring consumption is calculated for classic licensing."): measured in Application Security units (ASUs). For details, see [Application Security monitoring (ASUs)](/managed/license/monitoring-consumption-classic/application-security-units "Understand how Dynatrace Application Security and Runecast SPM consumption are calculated.").
+* [Dynatrace Platform Subscription (DPS)](/managed/license "Dynatrace Platform Subscription, capability rate cards, hybrid licensing, and previous license models."): measured in GiB‑hours. For details, see [Calculate your consumption of Runtime Application Protection (RAP) (DPS)](/managed/license/capabilities/application-security/runtime-application-protection "Learn how how your consumption of the Runtime Application Protection (RAP) DPS capability is billed and charged.").
+* [Dynatrace classic licensing](/managed/license/monitoring-consumption-classic "Understand how Dynatrace classic monitoring consumption is calculated, including host units, DDUs, DEM units, and Application Security units."): measured in Application Security units (ASUs). For details, see [Application Security monitoring (ASUs)](/managed/license/classic-licensing/application-security-units "Understand how Dynatrace Application Security and Runecast SPM consumption are calculated.").
 
 ## Related topics
 

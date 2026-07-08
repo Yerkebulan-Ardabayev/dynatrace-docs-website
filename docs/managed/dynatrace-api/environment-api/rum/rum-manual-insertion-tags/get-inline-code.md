@@ -1,7 +1,6 @@
 ---
 title: GET inline code
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/rum/rum-manual-insertion-tags/get-inline-code
-scraped: 2026-05-12T12:05:53.574118
 ---
 
 # GET inline code
@@ -11,7 +10,7 @@ scraped: 2026-05-12T12:05:53.574118
 * Reference
 * Updated on Sep 18, 2025
 
-Returns the most recent [inline code](/managed/observe/digital-experience/web-applications/initial-setup/snippet-formats#inline-code "Select a format for the RUM JavaScript snippet that best fits your specific use case") for manual insertion into your web application code. It includes both the configuration and the RUM monitoring code.
+Returns the most recent [inline code](/managed/observe/digital-experience/rum-classic/web-applications/initial-setup/snippet-formats#inline-code "Select a format for the RUM JavaScript snippet that best fits your specific use case") for manual insertion into your web application code. It includes both the configuration and the RUM monitoring code.
 
 |  |  |  |
 | --- | --- | --- |
@@ -32,4 +31,4 @@ To learn how to obtain and use it, see [Tokens and authentication](/managed/disc
 
 ## Response
 
-The response includes a `text/plain` payload containing the most recent version of the [inline code](/managed/observe/digital-experience/web-applications/initial-setup/snippet-formats#inline-code "Select a format for the RUM JavaScript snippet that best fits your specific use case") for the specified application.
+The response includes a `text/plain` payload containing the most recent version of the [inline code](/managed/observe/digital-experience/rum-classic/web-applications/initial-setup/snippet-formats#inline-code "Select a format for the RUM JavaScript snippet that best fits your specific use case") for the specified application.

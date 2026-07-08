@@ -1,7 +1,6 @@
 ---
 title: Failure detection API - GET a detection rule
 source: https://docs.dynatrace.com/managed/dynatrace-api/configuration-api/service-api/failure-detection/detection-rules/get-rule
-scraped: 2026-05-12T11:16:19.930786
 ---
 
 # Failure detection API - GET a detection rule
@@ -51,7 +50,7 @@ Configuration of the failure detection rule.
 
 | Element | Type | Description |
 | --- | --- | --- |
-| conditions | [FailureDetectionCondition[]](#openapi-definition-FailureDetectionCondition) | A list of conditions of the rule.  The rule applies when **all** conditions are fulfilled. |
+| conditions | [FailureDetectionCondition](#openapi-definition-FailureDetectionCondition)[] | A list of conditions of the rule.  The rule applies when **all** conditions are fulfilled. |
 | description | string | A short description of the rule. |
 | enabled | boolean | The rule is enabled (`true`) or disabled (`false`). |
 | fdpId | string | The failure detection parameter (FDP) set of the rule.  Specify the ID of the set here. The FDP set must exist at the time of rule creation. |
@@ -65,13 +64,13 @@ The condition of the failure detection rule.
 | Element | Type | Description |
 | --- | --- | --- |
 | attribute | string | The attribute to be checked. The element can hold these values * `PG_NAME` * `PG_TAG` * `SERVICE_MANAGEMENT_ZONES` * `SERVICE_NAME` * `SERVICE_SERVICE_TYPE` * `SERVICE_TAG` |
-| predicate | [FdcPredicate](#openapi-definition-FdcPredicate) | The predicate that tests the value of the attribute.  The actual set of fields depends on the type of the predicate. Find the list of actual objects in the description of the **type** field or see [Failure detection API - JSON modelsï»¿](https://dt-url.net/9sg3swf). |
+| predicate | [FdcPredicate](#openapi-definition-FdcPredicate) | The predicate that tests the value of the attribute.  The actual set of fields depends on the type of the predicate. Find the list of actual objects in the description of the **type** field or see [Failure detection API - JSON models﻿](https://dt-url.net/9sg3swf). |
 
 #### The `FdcPredicate` object
 
 The predicate that tests the value of the attribute.
 
-The actual set of fields depends on the type of the predicate. Find the list of actual objects in the description of the **type** field or see [Failure detection API - JSON modelsï»¿](https://dt-url.net/9sg3swf).
+The actual set of fields depends on the type of the predicate. Find the list of actual objects in the description of the **type** field or see [Failure detection API - JSON models﻿](https://dt-url.net/9sg3swf).
 
 | Element | Type | Description |
 | --- | --- | --- |

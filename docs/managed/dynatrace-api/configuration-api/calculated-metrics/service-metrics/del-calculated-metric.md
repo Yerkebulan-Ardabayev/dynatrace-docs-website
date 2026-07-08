@@ -1,7 +1,6 @@
 ---
 title: Service metrics API - DELETE a metric
 source: https://docs.dynatrace.com/managed/dynatrace-api/configuration-api/calculated-metrics/service-metrics/del-calculated-metric
-scraped: 2026-05-12T11:15:55.235200
 ---
 
 # Service metrics API - DELETE a metric

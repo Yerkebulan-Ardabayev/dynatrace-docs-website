@@ -1,7 +1,6 @@
 ---
 title: Customize Managed Cluster installation
 source: https://docs.dynatrace.com/managed/managed-cluster/installation/customize-managed-cluster-install
-scraped: 2026-05-12T11:25:09.126557
 ---
 
 # Customize Managed Cluster installation
@@ -12,7 +11,7 @@ scraped: 2026-05-12T11:25:09.126557
 * 9-min read
 * Updated on May 08, 2026
 
-Use command line parameters to override default settings of a Managed Cluster installation. By default, no parameters are requiredâthe Managed installer runs in interactive mode, prompting you to confirm or override default settings. Values entered interactively always take precedence over command line parameter values.
+Use command line parameters to override default settings of a Managed Cluster installation. By default, no parameters are required—the Managed installer runs in interactive mode, prompting you to confirm or override default settings. Values entered interactively always take precedence over command line parameter values.
 
 When you run the installer in interactive mode with command line parameters, the parameter values are presented as prompts instead of defaults. Any values entered at that point take precedence.
 
@@ -58,7 +57,7 @@ Use these parameters for initial server configuration. When specified, the insta
 | `--self-check` | Verifies that the installer file isn't corrupt. |
 | `--backup-file <path>` | Full path to the backup file containing configuration and data. Used with `--restore`. |
 | `--timeouts <component:value, ..>` | Extends timeouts for specified components. Use when:  * A specific component needs a longer timeout (for example, your OS firewall startup takes several minutes). * You have many environments and need more time for Server startup. |
-| `--drop-x-forwarded-for` | Dynatrace uses the `X-Forwarded-For` header for features such as logging. Handle these headers according to security best practicesâincorrect handling may result in displaying and logging incorrect data if an attacker adds manipulated `X-Forwarded-For` headers to requests. |
+| `--drop-x-forwarded-for` | Dynatrace uses the `X-Forwarded-For` header for features such as logging. Handle these headers according to security best practices—incorrect handling may result in displaying and logging incorrect data if an attacker adds manipulated `X-Forwarded-For` headers to requests. |
 
 Proxy configuration
 

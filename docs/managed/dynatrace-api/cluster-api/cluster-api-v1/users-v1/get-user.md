@@ -1,7 +1,6 @@
 ---
 title: Get user
 source: https://docs.dynatrace.com/managed/dynatrace-api/cluster-api/cluster-api-v1/users-v1/get-user
-scraped: 2026-05-12T12:12:14.511582
 ---
 
 # Get user

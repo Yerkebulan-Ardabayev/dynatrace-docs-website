@@ -1,7 +1,6 @@
 ---
 title: Events API v2 - GET all event types
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/events-v2/get-event-types
-scraped: 2026-05-12T11:12:42.431255
 ---
 
 # Events API v2 - GET all event types
@@ -51,7 +50,7 @@ A list of event types.
 
 | Element | Type | Description |
 | --- | --- | --- |
-| eventTypeInfos | [EventType[]](#openapi-definition-EventType) | A list of event types. |
+| eventTypeInfos | [EventType](#openapi-definition-EventType)[] | A list of event types. |
 | nextPageKey | string | The cursor for the next page of results. Has the value of `null` on the last page.  Use it in the **nextPageKey** query parameter to obtain subsequent pages of the result. |
 | pageSize | integer | The number of entries per page. |
 | totalCount | integer | The total number of entries in the result. |
@@ -78,7 +77,7 @@ Configuration of an event type.
 | Element | Type | Description |
 | --- | --- | --- |
 | code | integer | The HTTP status code |
-| constraintViolations | [ConstraintViolation[]](#openapi-definition-ConstraintViolation) | A list of constraint violations |
+| constraintViolations | [ConstraintViolation](#openapi-definition-ConstraintViolation)[] | A list of constraint violations |
 | message | string | The error message |
 
 #### The `ConstraintViolation` object

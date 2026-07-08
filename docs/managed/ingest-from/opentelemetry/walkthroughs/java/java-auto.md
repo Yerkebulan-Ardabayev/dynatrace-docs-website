@@ -1,7 +1,6 @@
 ---
 title: Automatically instrument your Java application with OpenTelemetry
 source: https://docs.dynatrace.com/managed/ingest-from/opentelemetry/walkthroughs/java/java-auto
-scraped: 2026-05-12T12:12:08.020183
 ---
 
 # Automatically instrument your Java application with OpenTelemetry
@@ -34,7 +33,7 @@ To generate an access token, in Dynatrace, go to ![Access tokens](https://dt-cdn
 
 ## Step 2 Instrument your application
 
-1. Download the [latest `opentelemetry-javaagent.jar`ï»¿](https://github.com/open-telemetry/opentelemetry-java-instrumentation/releases/latest/download/opentelemetry-javaagent.jar) agent file and save it to a directory accessible to your application (for example, `libs`).
+1. Download the [latest `opentelemetry-javaagent.jar`﻿](https://github.com/open-telemetry/opentelemetry-java-instrumentation/releases/latest/download/opentelemetry-javaagent.jar) agent file and save it to a directory accessible to your application (for example, `libs`).
 2. Configure the following environment variables to set the service and protocol details. If you export using OTLP, also set the URL and token variables to [the respective values](#dynatrace-docs--otlp-export).
 
    ```

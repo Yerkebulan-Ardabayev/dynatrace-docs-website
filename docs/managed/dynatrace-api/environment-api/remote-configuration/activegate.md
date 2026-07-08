@@ -1,7 +1,6 @@
 ---
 title: ActiveGate remote configuration management API
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/remote-configuration/activegate
-scraped: 2026-05-12T11:11:56.883077
 ---
 
 # ActiveGate remote configuration management API

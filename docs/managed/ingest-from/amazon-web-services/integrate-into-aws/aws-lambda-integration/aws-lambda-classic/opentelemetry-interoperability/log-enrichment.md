@@ -1,7 +1,6 @@
 ---
 title: AWS Lambda logs in context of traces
 source: https://docs.dynatrace.com/managed/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration/aws-lambda-classic/opentelemetry-interoperability/log-enrichment
-scraped: 2026-05-12T12:00:24.886809
 ---
 
 # AWS Lambda logs in context of traces
@@ -162,9 +161,9 @@ Logs created by some commonly used Node.js logging frameworks are automatically 
 
 | Node.js logging framework | OpenTelemetry instrumentation |
 | --- | --- |
-| [winstonï»¿](https://www.npmjs.com/package/winston) | [@opentelemetry/instrumentation-winstonï»¿](https://www.npmjs.com/package/@opentelemetry/instrumentation-winston) |
-| [pinoï»¿](https://www.npmjs.com/package/pino) | [@opentelemetry/instrumentation-pinoï»¿](https://www.npmjs.com/package/@opentelemetry/instrumentation-pino) |
-| [bunyanï»¿](https://www.npmjs.com/package/bunyan) | [@opentelemetry/instrumentation-bunyanï»¿](https://www.npmjs.com/package/@opentelemetry/instrumentation-bunyan) |
+| [winston﻿](https://www.npmjs.com/package/winston) | [@opentelemetry/instrumentation-winston﻿](https://www.npmjs.com/package/@opentelemetry/instrumentation-winston) |
+| [pino﻿](https://www.npmjs.com/package/pino) | [@opentelemetry/instrumentation-pino﻿](https://www.npmjs.com/package/@opentelemetry/instrumentation-pino) |
+| [bunyan﻿](https://www.npmjs.com/package/bunyan) | [@opentelemetry/instrumentation-bunyan﻿](https://www.npmjs.com/package/@opentelemetry/instrumentation-bunyan) |
 
 In the example below, the winston instrumentation is used to enrich a winston info log with TraceId and SpanId. The created log is associated with the currently active span in Dynatrace.
 

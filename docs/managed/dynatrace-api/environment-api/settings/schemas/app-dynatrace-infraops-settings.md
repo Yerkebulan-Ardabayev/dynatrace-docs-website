@@ -1,7 +1,6 @@
 ---
 title: Settings API - Infrastructure & Operations app settings schema table
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/settings/schemas/app-dynatrace-infraops-settings
-scraped: 2026-05-12T11:42:17.034795
 ---
 
 # Settings API - Infrastructure & Operations app settings schema table
@@ -38,4 +37,3 @@ To execute this request, you need an access token with **Read settings** (`setti
 | Show app only hosts `show.standalone.hosts` | boolean | When set to true, the app will display app only hosts in the Hosts table | Required |
 | Network interface saturation threshold `interface.saturation.threshold` | float | The threshold at which a network device interface is deemed to be saturated. | Required |
 | Limit the number of entities in main inventories `invex.dql.query.limit` | integer | Limit the number of results returned from Grail for Host, Network device, and Extensions entities. | Required |
-| Limit the number of sortable rows in inventories `invex.dql.sort.limit` | integer | Limit for server-side sorting in Host, Network device and Extensions inventories. Sorting is disabled when the row count exceeds the configured threshold. | Required |

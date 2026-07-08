@@ -1,7 +1,6 @@
 ---
 title: Monitored entities API - GET an entity
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/entity-v2/get-entity
-scraped: 2026-05-12T11:54:07.138149
 ---
 
 # Monitored entities API - GET an entity
@@ -33,7 +32,7 @@ To learn how to obtain and use it, see [Tokens and authentication](/managed/disc
 | entityId | string | The ID of the required entity. | path | Required |
 | from | string | The start of the requested timeframe.  You can use one of the following formats:  * Timestamp in UTC milliseconds. * Human-readable format of `2021-01-25T05:57:01.123+01:00`. If no time zone is specified, UTC is used. You can use a space character instead of the `T`. Seconds and fractions of a second are optional. * Relative timeframe, back from now. The format is `now-NU/A`, where `N` is the amount of time, `U` is the unit of time, and `A` is an alignment. The alignment rounds all the smaller values to the nearest zero in the past. For example, `now-1y/w` is one year back, aligned by a week.   You can also specify relative timeframe without an alignment: `now-NU`.   Supported time units for the relative timeframe are: + `m`: minutes   + `h`: hours   + `d`: days   + `w`: weeks   + `M`: months   + `y`: years  If not set, the relative timeframe of three days is used (`now-3d`). | query | Optional |
 | to | string | The end of the requested timeframe.  You can use one of the following formats:  * Timestamp in UTC milliseconds. * Human-readable format of `2021-01-25T05:57:01.123+01:00`. If no time zone is specified, UTC is used. You can use a space character instead of the `T`. Seconds and fractions of a second are optional. * Relative timeframe, back from now. The format is `now-NU/A`, where `N` is the amount of time, `U` is the unit of time, and `A` is an alignment. The alignment rounds all the smaller values to the nearest zero in the past. For example, `now-1y/w` is one year back, aligned by a week.   You can also specify relative timeframe without an alignment: `now-NU`.   Supported time units for the relative timeframe are: + `m`: minutes   + `h`: hours   + `d`: days   + `w`: weeks   + `M`: months   + `y`: years  If not set, the current timestamp is used. | query | Optional |
-| fields | string | Defines the list of entity properties included in the response. The ID and the name of an entity are **always** included to the response.  To add properties, list them with leading plus `+`. You can specify several properties, separated by a comma (for example `fields=+lastSeenTms,+properties.BITNESS`).  Use the [GET entity typeï»¿](https://dt-url.net/2ka3ivt) request to fetch the list of properties available for your entity type. Fields from the **properties** object must be specified in the `properties.FIELD` format (for example, `properties.BITNESS`).  When requesting large amounts of relationship fields, throttling can apply. | query | Optional |
+| fields | string | Defines the list of entity properties included in the response. The ID and the name of an entity are **always** included to the response.  To add properties, list them with leading plus `+`. You can specify several properties, separated by a comma (for example `fields=+lastSeenTms,+properties.BITNESS`).  Use the [GET entity type﻿](https://dt-url.net/2ka3ivt) request to fetch the list of properties available for your entity type. Fields from the **properties** object must be specified in the `properties.FIELD` format (for example, `properties.BITNESS`).  When requesting large amounts of relationship fields, throttling can apply. | query | Optional |
 
 ## Response
 
@@ -59,9 +58,9 @@ The properties of a monitored entity.
 | fromRelationships | object | A list of relationships where the entity occupies the FROM position. |
 | icon | [EntityIcon](#openapi-definition-EntityIcon) | The icon of a monitored entity. |
 | lastSeenTms | integer | The timestamp at which the entity was last seen, in UTC milliseconds. |
-| managementZones | [EnrichedManagementZoneDto[]](#openapi-definition-EnrichedManagementZoneDto) | A set of management zones to which the entity belongs. |
+| managementZones | [EnrichedManagementZoneDto](#openapi-definition-EnrichedManagementZoneDto)[] | A set of management zones to which the entity belongs. |
 | properties | object | A list of additional properties of the entity. |
-| tags | [EnrichedTagDto[]](#openapi-definition-EnrichedTagDto) | A set of tags assigned to the entity. |
+| tags | [EnrichedTagDto](#openapi-definition-EnrichedTagDto)[] | A set of tags assigned to the entity. |
 | toRelationships | object | A list of relationships where the entity occupies the TO position. |
 | type | string | The type of the entity. |
 
@@ -80,9 +79,9 @@ The icon of a monitored entity.
 
 | Element | Type | Description |
 | --- | --- | --- |
-| customIconPath | string | The user-defined icon of the entity.  Specify the [baristaï»¿](https://dt-url.net/u403suy) ID of the icon or a URL of your own icon. |
-| primaryIconType | string | The primary icon of the entity.  Specified by the [baristaï»¿](https://dt-url.net/u403suy) ID of the icon. |
-| secondaryIconType | string | The secondary icon of the entity.  Specified by the [baristaï»¿](https://dt-url.net/u403suy) ID of the icon. |
+| customIconPath | string | The user-defined icon of the entity.  Specify the [barista﻿](https://dt-url.net/u403suy) ID of the icon or a URL of your own icon. |
+| primaryIconType | string | The primary icon of the entity.  Specified by the [barista﻿](https://dt-url.net/u403suy) ID of the icon. |
+| secondaryIconType | string | The secondary icon of the entity.  Specified by the [barista﻿](https://dt-url.net/u403suy) ID of the icon. |
 
 #### The `EnrichedManagementZoneDto` object
 
@@ -114,7 +113,7 @@ The icon of a monitored entity.
 | Element | Type | Description |
 | --- | --- | --- |
 | code | integer | The HTTP status code |
-| constraintViolations | [ConstraintViolation[]](#openapi-definition-ConstraintViolation) | A list of constraint violations |
+| constraintViolations | [ConstraintViolation](#openapi-definition-ConstraintViolation)[] | A list of constraint violations |
 | message | string | The error message |
 
 #### The `ConstraintViolation` object

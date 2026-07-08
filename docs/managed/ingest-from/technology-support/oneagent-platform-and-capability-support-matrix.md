@@ -1,7 +1,6 @@
 ---
 title: OneAgent platform and capability support matrix
 source: https://docs.dynatrace.com/managed/ingest-from/technology-support/oneagent-platform-and-capability-support-matrix
-scraped: 2026-05-12T11:05:41.462872
 ---
 
 # OneAgent platform and capability support matrix
@@ -9,7 +8,7 @@ scraped: 2026-05-12T11:05:41.462872
 # OneAgent platform and capability support matrix
 
 * 13-min read
-* Updated on Mar 25, 2026
+* Updated on May 29, 2026
 
 This page describes which capabilities are supported by OneAgent on different operating systems and platforms.
 
@@ -188,7 +187,7 @@ The tables below contain information about the supported OneAgent capabilities f
 
 1
 
-Both 64-bit ARM ([AWS Graviton2 processorsï»¿](https://aws.amazon.com/ec2/graviton/)) and 64-bit x86 architectures are supported.
+Both 64-bit ARM ([AWS Graviton2 processors﻿](https://aws.amazon.com/ec2/graviton/)) and 64-bit x86 architectures are supported.
 
 2
 
@@ -223,6 +222,25 @@ The following limitations apply:
   ```
   guardrailConfig={"guardrailIdentifier": "...", "guardrailVersion": "5", "trace": "enabled"},
   ```
+
+### Experimental AI technology sensors
+
+Experimental sensors are enabled via individual feature controllers in OneAgent settings.
+They are functional but delivered on an accelerated schedule to extend GenAI observability to additional AI providers.
+Attribute collection is best-effort. Completeness and schema may change in future releases without prior notice.
+
+Experimental sensors are not covered by Dynatrace support SLAs.
+
+The following AI providers are available as experimental Python sensors.
+
+* Anthropic
+* Cohere
+* CrewAI
+* Groq
+* Haystack
+* Mistral AI
+* Ollama
+* Google GenAI
 
 ## Auto-injection of code modules
 

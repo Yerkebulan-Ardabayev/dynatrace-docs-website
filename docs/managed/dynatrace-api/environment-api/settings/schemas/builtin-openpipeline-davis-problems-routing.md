@@ -1,7 +1,6 @@
 ---
 title: Settings API - Ingest routing configuration (davis.problems) schema table
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-davis-problems-routing
-scraped: 2026-05-12T11:39:40.444088
 ---
 
 # Settings API - Ingest routing configuration (davis.problems) schema table

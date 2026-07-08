@@ -1,7 +1,6 @@
 ---
 title: Monaco configuration overview
 source: https://docs.dynatrace.com/managed/deliver/configuration-as-code/monaco/configuration
-scraped: 2026-05-12T11:21:33.862666
 ---
 
 # Monaco configuration overview
@@ -197,11 +196,11 @@ general/
 
 
 
-âââ infrastructure/
+├── infrastructure/
 
 
 
-âââ zones/
+└── zones/
 ```
 
 The following project definition:
@@ -281,14 +280,14 @@ value: YOUR_URL_ENV_VAR
 
 Access tokens for the Dynatrace Monaco CLI always require at least the following permission to query general information about your environment:
 
-* **Access problem and event feed, metrics, and topology** (`DataExport`)âAPI v1
+* **Access problem and event feed, metrics, and topology** (`DataExport`)—API v1
 
 In most cases, you will require an access token with at least these permissions:
 
-* **Access problem and event feed, metrics, and topology** (`DataExport`)âAPI v1
-* **Read configuration** (`ReadConfig`)âAPI v1
-* **Write configuration** (`WriteConfig`)âAPI v1
-* **Read settings** (`settings.read`)âAPI v2
-* **Write settings** (`settings.write`)âAPI v2
+* **Access problem and event feed, metrics, and topology** (`DataExport`)—API v1
+* **Read configuration** (`ReadConfig`)—API v1
+* **Write configuration** (`WriteConfig`)—API v1
+* **Read settings** (`settings.read`)—API v2
+* **Write settings** (`settings.write`)—API v2
 
 For general information on access token authentication, see [Dynatrace API - Tokens and authentication](/managed/dynatrace-api/basics/dynatrace-api-authentication "Find out how to get authenticated to use the Dynatrace API.").

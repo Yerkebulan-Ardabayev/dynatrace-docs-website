@@ -1,7 +1,6 @@
 ---
 title: Monitor persistent volume claims on Kubernetes/OpenShift
 source: https://docs.dynatrace.com/managed/observe/infrastructure-observability/container-platform-monitoring/kubernetes-monitoring/monitor-pvc-metrics
-scraped: 2026-05-12T12:07:35.418094
 ---
 
 # Monitor persistent volume claims on Kubernetes/OpenShift
@@ -17,7 +16,7 @@ Dynatrace version 1.294 +
 
 ActiveGate version 1.289+
 
-In Kubernetes, persistent data is stored in [persistent volume claims (PVCs)ï»¿](https://dt-url.net/n403y11). Dynatrace provides you the needed insights into your persistent volume claims capacity.
+In Kubernetes, persistent data is stored in [persistent volume claims (PVCs)﻿](https://dt-url.net/n403y11). Dynatrace provides you the needed insights into your persistent volume claims capacity.
 
 * Dynatrace provides **Kubernetes persistent volume claims** preset dashboards that allow you to analyze your persistent volume claims based on total capacity, usage, remaining free space, and growth rates.
 * Templates for custom alerts enable you to alert on related issues, such as persistent volume claims running out of free space or growing in an unusual manner.

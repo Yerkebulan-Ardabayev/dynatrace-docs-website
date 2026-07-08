@@ -1,7 +1,6 @@
 ---
 title: Deployment API - BOSH tarballs
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/deployment/bosh
-scraped: 2026-05-12T11:11:54.405547
 ---
 
 # Deployment API - BOSH tarballs

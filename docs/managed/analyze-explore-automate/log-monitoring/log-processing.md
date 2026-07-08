@@ -1,7 +1,6 @@
 ---
 title: Log processing (Logs Classic)
 source: https://docs.dynatrace.com/managed/analyze-explore-automate/log-monitoring/log-processing
-scraped: 2026-05-12T11:13:17.187857
 ---
 
 # Log processing (Logs Classic)
@@ -20,7 +19,7 @@ Information can be logged in a very wide variety of formats depending on the app
 
 For example, you can extract numerical values from log line via log processing, turn these into metrics on Dynatrace Platform, and include them in dashboards and problem detection.
 
-Log processing does not affect [DDU](/managed/license/monitoring-consumption-classic/davis-data-units/log-monitoring-consumption "Understand how the volume of DDU consumption is calculated for Dynatrace Log Monitoring Classic.") consumption of log ingest.
+Log processing does not affect [DDU](/managed/license/classic-licensing/davis-data-units/log-monitoring-consumption "Understand how the volume of DDU consumption is calculated for Dynatrace Log Monitoring Classic.") consumption of log ingest.
 
 ## Log processing rules
 

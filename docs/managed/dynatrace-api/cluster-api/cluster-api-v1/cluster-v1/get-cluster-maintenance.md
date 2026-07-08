@@ -1,7 +1,6 @@
 ---
 title: Get details about the current cluster maintenance state
 source: https://docs.dynatrace.com/managed/dynatrace-api/cluster-api/cluster-api-v1/cluster-v1/get-cluster-maintenance
-scraped: 2026-05-12T12:12:41.958990
 ---
 
 # Get details about the current cluster maintenance state
@@ -30,7 +29,7 @@ The request doesn't provide any configurable parameters.
 
 | Code | Type | Description |
 | --- | --- | --- |
-| **200** | [IPMigrationMaintenanceMode](#openapi-definition-IPMigrationMaintenanceMode) | Success |
+| **200** | [IPMigrationMaintenanceMode](#openapi-definition-IPMigrationMaintenanceMode) | [NoCurrentMaintenanceResponseDto](#openapi-definition-NoCurrentMaintenanceResponseDto) | Success |
 
 ### Response body objects
 
@@ -64,6 +63,12 @@ Optional metadata
 | --- | --- | --- |
 | newIp | string | - |
 | oldIp | string | - |
+
+#### The `NoCurrentMaintenanceResponseDto` object
+
+| Element | Type | Description |
+| --- | --- | --- |
+| message | string | - |
 
 ### Response body JSON models
 

@@ -1,7 +1,6 @@
 ---
 title: Azure Container Registry monitoring
 source: https://docs.dynatrace.com/managed/ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics/monitor-azure-container-registry
-scraped: 2026-05-12T11:26:27.353952
 ---
 
 # Azure Container Registry monitoring

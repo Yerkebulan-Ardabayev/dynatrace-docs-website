@@ -1,7 +1,6 @@
 ---
 title: What's new in Dynatrace Managed version 1.332
 source: https://docs.dynatrace.com/managed/whats-new/managed/sprint-332
-scraped: 2026-05-12T11:07:44.261845
 ---
 
 # What's new in Dynatrace Managed version 1.332
@@ -44,7 +43,7 @@ This prevents connection issues and ensures proper OneAgent communication.
 
 This ensures users always configure a valid endpoint.
 
-#### Classic Lambda monitoring behavior for Managedâoffline
+#### Classic Lambda monitoring behavior for Managed‑offline
 
 * Classic Lambda monitoring is now **always enabled**.
 * The **Enable Classic Lambda monitoring** checkbox has been **removed** from the UI to prevent accidental disabling.
@@ -54,7 +53,7 @@ Application Observability | Distributed Tracing
 
 ### Improved service correlation for AWS Lambda function messaging triggers
 
-Weâve improved the service correlation for messaging triggers in AWS Lambda functions that are monitored by the OneAgent AWS Lambda Layer.
+We’ve improved the service correlation for messaging triggers in AWS Lambda functions that are monitored by the OneAgent AWS Lambda Layer.
 
 Application Observability | Services
 
@@ -70,9 +69,9 @@ Application Security | Vulnerabilities
 
 ### Application Security now uses the Dynatrace vulnerability feed
 
-With Dynatrace Managed version 1.334, the Third-party vulnerability detection will be upgraded to use the Dynatrace vulnerability feed. This upgrade provides more accurate, transparent, and threatâaware vulnerability data while maintaining strong coverage of critical risks.
+With Dynatrace Managed version 1.334, the Third-party vulnerability detection will be upgraded to use the Dynatrace vulnerability feed. This upgrade provides more accurate, transparent, and threat‑aware vulnerability data while maintaining strong coverage of critical risks.
 
-As part of this change, a small percentage of previously detected vulnerabilities will no longer be covered and will be marked as deprecated. After the switch, you can review these items in Third-party vulnerability detection using the **Status** > **Deprecated** filter. For details, see [Introducing the Dynatrace Vulnerability feed: Accurate, transparent, and threat-awareï»¿](https://www.dynatrace.com/news/blog/introducing-the-dynatrace-vulnerability-feed-accurate-transparent-and-threat-aware/).
+As part of this change, a small percentage of previously detected vulnerabilities will no longer be covered and will be marked as deprecated. After the switch, you can review these items in Third-party vulnerability detection using the **Status** > **Deprecated** filter. For details, see [Introducing the Dynatrace Vulnerability feed: Accurate, transparent, and threat-aware﻿](https://www.dynatrace.com/news/blog/introducing-the-dynatrace-vulnerability-feed-accurate-transparent-and-threat-aware/).
 
 FinOps
 
@@ -90,7 +89,7 @@ Infrastructure Observability | Clouds
 
 The following new metrics are now available for Amazon CloudWatch and Azure Monitor.
 
-#### Azure DB for PostgreSQL â Flexible Server
+#### Azure DB for PostgreSQL — Flexible Server
 
 | **Metric** | **Display Name** | **Resolution** | **Aggregations** |
 | --- | --- | --- | --- |
@@ -104,7 +103,7 @@ The following new metrics are now available for Amazon CloudWatch and Azure Moni
 
 The connection pool metrics (`client_connections_*`, `num_pools`, `server_connections_*`, `total_pooled_connections`) are dimensioned by **DatabaseName** and **ServerName**; `max_connections` is dimensioned by **ServerName** only.
 
-#### Azure SQL Database â Hyperscale
+#### Azure SQL Database — Hyperscale
 
 | **Metric** | **Display Name** | **Resolution** | **Unit** | **Aggregations** |
 | --- | --- | --- | --- | --- |
@@ -178,7 +177,7 @@ Platform | OneAgent
 
 ### tmpfs monitoring via OneAgent available as opt-in behavior
 
-Weâve updated OneAgent so it can now monitor tmpfs data on Linux systems. You can activate this monitoring on an opt-in basis, at **Settings** > **Collect and capture** > **Infrastructure** > **OS** > **Enable tmpfs disk monitoring**.
+We’ve updated OneAgent so it can now monitor tmpfs data on Linux systems. You can activate this monitoring on an opt-in basis, at **Settings** > **Collect and capture** > **Infrastructure** > **OS** > **Enable tmpfs disk monitoring**.
 
 ## Breaking changes
 
@@ -210,7 +209,7 @@ As part of our ongoing commitment to delivering a streamlined and consistent use
 * **Sunset date**: June 30, 2026
 * **Support ends**: June 30, 2026
 
-#### Whatâs changing?
+#### What’s changing?
 
 The Dynatrace native mobile apps will no longer be available for download or supported after the sunset date.
 
@@ -243,11 +242,11 @@ For assistance with transitioning or setting up integrations, see the documentat
 * Fixed an issue where reopening the global timeframe selector caused timezone row duplication. (MGD-9441)
 * Updated the log4j library for CVE-2025-68161 to avoid false positives in security scanners. Dynatrace server is not affected by this CVE security notice. (MGD-9264)
 * Fixed a problem with the NGINX health check module, which is responsible for redirecting traffic between cluster nodes. (MGD-9000)
-* Previously, the ![Data Explorer](https://dt-cdn.net/images/data-explorer-512-743267b1fc.png "Data Explorer") **Data Explorer** search filter provided empty suggestions in certain scenarios. Weâve resolved this error so that the search filter always shows the relevant suggestions. (MGD-8961)
+* Previously, the ![Data Explorer](https://dt-cdn.net/images/data-explorer-512-743267b1fc.png "Data Explorer") **Data Explorer** search filter provided empty suggestions in certain scenarios. We’ve resolved this error so that the search filter always shows the relevant suggestions. (MGD-8961)
 * Previously, ![Data Explorer](https://dt-cdn.net/images/data-explorer-512-743267b1fc.png "Data Explorer") **Data Explorer** showed the local timeframe for unsupported visualization types or even when it was deactivated. This behavior has been fixed so the local timeframe is now visible only when activated, and only for supported visualization types. (MGD-8770)
 * The timeframe visualization for the tiles in the Data Explorer and Dashboards has been corrected. Time periods extending into the future are now limited to the present time. (MGD-7906)
 * Previously, email notifications about Synthetic monitoring entities, such as impacted network availability monitors, displayed the affected entities in green text when they should have been displayed in red. This behavior is now fixed, and affected entities are always shown in red. (DI-24639)
-* **Vulnerability**: We introduced additional access controls for an internal Hub API endpoint that is routed through Mission Controlâs reverse proxy. This endpoint is intended for managed nodes and was not designed for public use. The backport adds authentication to prevent unintended access and reduce residual security risk. (ASDY-3035)
+* **Vulnerability**: We introduced additional access controls for an internal Hub API endpoint that is routed through Mission Control’s reverse proxy. This endpoint is intended for managed nodes and was not designed for public use. The backport adds authentication to prevent unintended access and reduce residual security risk. (ASDY-3035)
 
 ## Dynatrace API
 
@@ -260,41 +259,23 @@ To learn about changes to the Dynatrace API in this release, see:
 
 ### Future Dynatrace Managed operating systems support changes
 
-##### The following operating systems will no longer be supported starting 01 June 2026
-
-* Linux: Oracle Linux 9.6
-
-  + x86-64
-  + [Vendor announcementï»¿](https://www.oracle.com/a/ocom/docs/elsp-lifetime-069338.pdf)
-* Linux: Rocky Linux 9.6
-
-  + x86-64
-  + [Vendor announcementï»¿](https://endoflife.date/rocky-linux)
-
-##### The following operating systems will no longer be supported starting 01 July 2026
-
-* Linux: SUSE Enterprise Linux 15.3
-
-  + x86-64
-  + [Vendor announcementï»¿](https://www.suse.com/lifecycle/)
-
 ##### The following operating systems will no longer be supported starting 01 November 2026
 
 * Linux: Red Hat Enterprise Linux 9.4, 9.7
 
   + x86-64
-  + [Vendor announcementï»¿](https://access.redhat.com/support/policy/updates/errata)
+  + [Vendor announcement﻿](https://access.redhat.com/support/policy/updates/errata)
 * Linux: Ubuntu 16.04
 
   + x86-64
-  + [Vendor announcementï»¿](https://ubuntu.com/about/release-cycle)
+  + [Vendor announcement﻿](https://ubuntu.com/about/release-cycle)
 
 ##### The following operating systems will no longer be supported starting 01 January 2027
 
 * Linux: Amazon Linux 2
 
   + x86-64
-  + [Vendor announcementï»¿](https://aws.amazon.com/linux/)
+  + [Vendor announcement﻿](https://aws.amazon.com/linux/)
 
 ### Past Dynatrace Managed operating systems support changes
 
@@ -303,19 +284,37 @@ To learn about changes to the Dynatrace API in this release, see:
 * Linux: Red Hat Enterprise Linux 8.8, 9.2, 9.5
 
   + x86-64
-  + [Vendor announcementï»¿](https://access.redhat.com/support/policy/updates/errata)
+  + [Vendor announcement﻿](https://access.redhat.com/support/policy/updates/errata)
 * Linux: Oracle Linux 9.5
 
   + x86-64
-  + [Vendor announcementï»¿](https://www.oracle.com/a/ocom/docs/elsp-lifetime-069338.pdf)
+  + [Vendor announcement﻿](https://www.oracle.com/a/ocom/docs/elsp-lifetime-069338.pdf)
 * Linux: Rocky Linux 9.5
 
   + x86-64
-  + [Vendor announcementï»¿](https://endoflife.date/rocky-linux)
+  + [Vendor announcement﻿](https://endoflife.date/rocky-linux)
 
 ##### The following operating systems are no longer supported since 01 January 2026
 
 * Linux: Debian 10
 
   + x86-64
-  + [Vendor announcementï»¿](https://wiki.debian.org/DebianReleases)
+  + [Vendor announcement﻿](https://wiki.debian.org/DebianReleases)
+
+##### The following operating systems are no longer supported since 01 June 2026
+
+* Linux: Oracle Linux 9.6
+
+  + x86-64
+  + [Vendor announcement﻿](https://www.oracle.com/a/ocom/docs/elsp-lifetime-069338.pdf)
+* Linux: Rocky Linux 9.6
+
+  + x86-64
+  + [Vendor announcement﻿](https://endoflife.date/rocky-linux)
+
+##### The following operating systems are no longer supported since 01 July 2026
+
+* Linux: SUSE Enterprise Linux 15.3
+
+  + x86-64
+  + [Vendor announcement﻿](https://www.suse.com/lifecycle/)

@@ -1,7 +1,6 @@
 ---
 title: Overview of all technologies running in your environment
 source: https://docs.dynatrace.com/managed/observe/infrastructure-observability/process-groups/monitoring/overview-of-all-technologies-running-in-my-environment
-scraped: 2026-05-12T11:37:43.160579
 ---
 
 # Overview of all technologies running in your environment
@@ -13,7 +12,7 @@ scraped: 2026-05-12T11:37:43.160579
 
 The **Technology overview** page provides a consolidated overview of the health and performance of all monitored technologies in your environment. This saves you the effort of browsing multiple technology-specific analysis views to get the information you need. To access the **Technology overview** page, go to **Technologies & Processes**.
 
-The Technology overview page is organized around tilesâ1 tile for each technology-specific process group in your environment. Each process group represents a set of processes that perform the same function across multiple hosts, for example Cassandra or ElasticSearch clusters.
+The Technology overview page is organized around tiles—1 tile for each technology-specific process group in your environment. Each process group represents a set of processes that perform the same function across multiple hosts, for example Cassandra or ElasticSearch clusters.
 
 For each process group you get visibility into the number of instances and their resource-usage distribution, including an indication of minimum and maximum metric values.
 

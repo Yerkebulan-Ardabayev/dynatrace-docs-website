@@ -1,7 +1,6 @@
 ---
 title: Create a new request naming rule
 source: https://docs.dynatrace.com/managed/dynatrace-api/configuration-api/service-api/request-naming-api/create-a-new-request-naming-rule
-scraped: 2026-05-12T12:02:32.173138
 ---
 
 # Create a new request naming rule
@@ -89,12 +88,12 @@ The configuration for such a rule looks like this:
 
 The important components are:
 
-* **conditions**âdefines which requests will be renamed.
-* **namingPattern**âdefines the resulting name.
+* **conditions**—defines which requests will be renamed.
+* **namingPattern**—defines the resulting name.
 
 You can find descriptions of other fields in the **Parameters** section of the [**POST a new request naming rule** topic](/managed/dynatrace-api/configuration-api/service-api/request-naming-api/post-new-rule "Create a request naming rule via the Dynatrace API.").
 
-Now let's submit this configuration in an API call. How you execute REST calls is up to youâyou can use any REST client or you can write a script like the one provided below. You can also use the Dynatrace [API Explorer](/managed/dynatrace-api#api-explorer "Find out what you need to use the Dynatrace API.") to familiarize yourself with endpoints and execute all the required requests.
+Now let's submit this configuration in an API call. How you execute REST calls is up to you—you can use any REST client or you can write a script like the one provided below. You can also use the Dynatrace [API Explorer](/managed/dynatrace-api#api-explorer "Find out what you need to use the Dynatrace API.") to familiarize yourself with endpoints and execute all the required requests.
 
 REST client
 
@@ -104,20 +103,20 @@ Dynatrace API Explorer
 2. Execute the [**POST a new request naming rule** request](/managed/dynatrace-api/configuration-api/service-api/request-naming-api/post-new-rule "Create a request naming rule via the Dynatrace API.") with the token you created in the first step and the JSON configuration of the request naming rule from an example above as a payload.
 
 1. Generate a new [access token for the Dynatrace API](/managed/dynatrace-api/basics/dynatrace-api-authentication "Find out how to get authenticated to use the Dynatrace API."). Be sure to assign **Read configuration** and **Write configuration** scopes to it.
-2. Open the [user menu](/managed/discover-dynatrace/get-started/dynatrace-ui#user "Navigate the Dynatrace Managed platform") from the previous Dynatrace web UI, and select **Dynatrace API > Configuration API**.
+2. Open the [user menu](/managed/discover-dynatrace/get-started/dynatrace-ui#user "Explore Dynatrace Managed, including navigation, browser requirements, timeframe selection, metric notation, and accessibility.") from the previous Dynatrace web UI, and select **Dynatrace API > Configuration API**.
 
    ![Access API explorer](https://dt-cdn.net/images/mz-1-1313-ec4939b8c8.png)
 
    Access API explorer
 3. In the API Explorer, select **Authorize**.  
    The **Available authorizations** dialog appears.
-4. Paste your token into the **ReadConfigToken** and **WriteConfigToken** fields and click **Authorize**.
-5. Expand the **POST /service/requestNaming/** request and click **Try it out**.
+4. Paste your token into the **ReadConfigToken** and **WriteConfigToken** fields and select **Authorize**.
+5. Expand the **POST /service/requestNaming/** request and select **Try it out**.
 
    ![Try it out](https://dt-cdn.net/images/create-rnr-1-1460-fa51d43874.png)
 
    Try it out
-6. Paste the JSON configuration of the request naming rule (see above) into the **body** field and click **Execute**.
+6. Paste the JSON configuration of the request naming rule (see above) into the **body** field and select **Execute**.
 
    ![The payload](https://dt-cdn.net/images/create-rnr-2-1441-10b7c61eb9.png)
 

@@ -1,7 +1,6 @@
 ---
 title: OneAgent environment-wide configuration API - GET Technology monitoring configuration
 source: https://docs.dynatrace.com/managed/dynatrace-api/configuration-api/oneagent-configuration/oneagent-environment-wide/get-technology-monitoring
-scraped: 2026-05-12T11:15:20.826336
 ---
 
 # OneAgent environment-wide configuration API - GET Technology monitoring configuration
@@ -47,7 +46,7 @@ A list of technology monitoring configurations.
 | Element | Type | Description |
 | --- | --- | --- |
 | metadata | [ConfigurationMetadata](#openapi-definition-ConfigurationMetadata) | Metadata useful for debugging |
-| technologies | [Technology[]](#openapi-definition-Technology) | A list of technology monitoring configurations. |
+| technologies | [Technology](#openapi-definition-Technology)[] | A list of technology monitoring configurations. |
 
 #### The `ConfigurationMetadata` object
 

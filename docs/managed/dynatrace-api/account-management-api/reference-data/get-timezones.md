@@ -1,7 +1,6 @@
 ---
 title: Reference data API - GET time zones
 source: https://docs.dynatrace.com/managed/dynatrace-api/account-management-api/reference-data/get-timezones
-scraped: 2026-05-12T11:24:40.979212
 ---
 
 # Reference data API - GET time zones
@@ -33,7 +32,7 @@ The request doesn't provide any configurable parameters.
 
 | Code | Type | Description |
 | --- | --- | --- |
-| **200** | [TimeZoneDto[]](#openapi-definition-TimeZoneDto) | Success. The response contains the list of time zones. |
+| **200** | [TimeZoneDto](#openapi-definition-TimeZoneDto)[] | Success. The response contains the list of time zones. |
 
 ### Response body objects
 

@@ -1,7 +1,6 @@
 ---
 title: Get cluster nodes configuration request status
 source: https://docs.dynatrace.com/managed/dynatrace-api/cluster-api/cluster-api-v1/cluster-v1/get-cluster-nodes-configuration-request-status
-scraped: 2026-05-12T12:12:21.416593
 ---
 
 # Get cluster nodes configuration request status

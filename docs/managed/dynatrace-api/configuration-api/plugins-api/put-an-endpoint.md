@@ -1,7 +1,6 @@
 ---
 title: Plugins API - PUT an endpoint of a plugin
 source: https://docs.dynatrace.com/managed/dynatrace-api/configuration-api/plugins-api/put-an-endpoint
-scraped: 2026-05-12T11:21:00.315706
 ---
 
 # Plugins API - PUT an endpoint of a plugin
@@ -145,7 +144,7 @@ This is a model of the request body, showing the possible elements. It has to be
 | Element | Type | Description |
 | --- | --- | --- |
 | code | integer | The HTTP status code |
-| constraintViolations | [ConstraintViolation[]](#openapi-definition-ConstraintViolation) | A list of constraint violations |
+| constraintViolations | [ConstraintViolation](#openapi-definition-ConstraintViolation)[] | A list of constraint violations |
 | message | string | The error message |
 
 #### The `ConstraintViolation` object

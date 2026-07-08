@@ -1,7 +1,6 @@
 ---
 title: Web application configuration API - DELETE a web application
 source: https://docs.dynatrace.com/managed/dynatrace-api/configuration-api/rum/web-application-configuration-api/web-application/del-web-application
-scraped: 2026-05-12T11:16:51.645643
 ---
 
 # Web application configuration API - DELETE a web application
@@ -42,4 +41,4 @@ To learn how to obtain and use it, see [Tokens and authentication](/managed/disc
 
 ## Related topics
 
-* [Delete a web application](/managed/observe/digital-experience/web-applications/additional-configuration/delete-application-web "Delete your web applications via the Dynatrace web UI or API.")
+* [Delete a web application in RUM Classic](/managed/observe/digital-experience/rum-classic/web-applications/additional-configuration/delete-application-web "Delete your web applications via the Dynatrace web UI or API.")

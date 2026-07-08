@@ -1,7 +1,6 @@
 ---
 title: Settings API - IBM Integration Bus | IBM App Connect Enterprise schema table
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/settings/schemas/builtin-monitored-technologies-wsmb
-scraped: 2026-05-12T11:46:19.086330
 ---
 
 # Settings API - IBM Integration Bus | IBM App Connect Enterprise schema table

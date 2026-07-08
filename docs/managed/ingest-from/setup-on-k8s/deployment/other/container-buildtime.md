@@ -1,7 +1,6 @@
 ---
 title: Application observability via container build-time injection
 source: https://docs.dynatrace.com/managed/ingest-from/setup-on-k8s/deployment/other/container-buildtime
-scraped: 2026-05-12T11:52:45.250678
 ---
 
 # Application observability via container build-time injection
@@ -28,7 +27,7 @@ This method of application instrumentation has limitations in linking Kubernetes
 
 Container buildtime injection and cgroup v2
 
-If Container buildtime injection is used with [cgroup v2ï»¿](https://kubernetes.io/docs/concepts/architecture/cgroups/), the `builtin:containers.*` metrics are reported to Dynatrace only if all the following conditions are respected:
+If Container buildtime injection is used with [cgroup v2﻿](https://kubernetes.io/docs/concepts/architecture/cgroups/), the `builtin:containers.*` metrics are reported to Dynatrace only if all the following conditions are respected:
 
 * The **Kubernetes API** is accessible (see [Grant viewer role to service accounts](/managed/observe/infrastructure-observability/container-platform-monitoring/kubernetes-monitoring/leverage-tags-defined-in-kubernetes-deployments#viewer "Organize and filter your monitored applications by importing labels and annotations from your Kubernetes/OpenShift environment."))
 * The pod runs a **single container**
@@ -58,7 +57,7 @@ ARM
    ENV LD_PRELOAD /opt/dynatrace/oneagent/agent/lib64/liboneagentproc.so
    ```
 
-   * `<technology>`âOneAgent code module required for your application. Available options are `all`, `java`, `apache`, `nginx`, `nodejs`, `dotnet`, `php`, `go`, and `sdk`. You can specify several code modules, separated by hyphen (`-`), for example `java-go`. Including specific technology-support options, rather than support for all technology options, results in a smaller OneAgent package.
+   * `<technology>`—OneAgent code module required for your application. Available options are `all`, `java`, `apache`, `nginx`, `nodejs`, `dotnet`, `php`, `go`, and `sdk`. You can specify several code modules, separated by hyphen (`-`), for example `java-go`. Including specific technology-support options, rather than support for all technology options, results in a smaller OneAgent package.
 
 What if my Docker image is based on Alpine Linux?
 
@@ -130,7 +129,7 @@ See [network zones](/managed/manage/network-zones "Find out how network zones wo
    ENV DT_HOME="/opt/dynatrace/oneagent"
    ```
 
-   * You can override the default values within the OpenShift `BuildConfig`. Replace `<environmentID>` with your Dynatrace environment ID. If youâre using Dynatrace Managed, you need to provide your Dynatrace Server URL (`https://<YourDynatraceServerURL>/e/<environmentID>/api`). Replace `<token>` with the PaaS token mentioned above.
+   * You can override the default values within the OpenShift `BuildConfig`. Replace `<environmentID>` with your Dynatrace environment ID. If you’re using Dynatrace Managed, you need to provide your Dynatrace Server URL (`https://<YourDynatraceServerURL>/e/<environmentID>/api`). Replace `<token>` with the PaaS token mentioned above.
    * Technology support is enabled via `include` parameters. Valid options for `flavor=default` are `all`, `java`, `apache`, `nginx`, `nodejs`, `dotnet`, `php`, `go`, and `sdk`. Including specific technology-support options, rather than support for all technology options, results in a smaller OneAgent package.
 
    What if my Docker image is based on Alpine Linux?

@@ -1,7 +1,6 @@
 ---
 title: Synthetic monitor executions API v2 - GET summary of a batch execution
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/synthetic-v2/synthetic-monitor-execution/get-batch-summary
-scraped: 2026-05-12T11:57:45.502000
 ---
 
 # Synthetic monitor executions API v2 - GET summary of a batch execution
@@ -60,12 +59,12 @@ Contains information about on-demand executions triggered within the batch.
 | batchStatus | string | The status of the batch. The element can hold these values * `FAILED` * `FAILED_TO_EXECUTE` * `NOT_TRIGGERED` * `RUNNING` * `SUCCESS` |
 | executedCount | integer | The number of triggered executions with the result SUCCESS or FAILED. |
 | failedCount | integer | The number of triggered executions with the result FAILED. |
-| failedExecutions | [SyntheticOnDemandFailedExecutionStatus[]](#openapi-definition-SyntheticOnDemandFailedExecutionStatus) | - |
-| failedToExecute | [SyntheticOnDemandFailedExecutionStatus[]](#openapi-definition-SyntheticOnDemandFailedExecutionStatus) | - |
+| failedExecutions | [SyntheticOnDemandFailedExecutionStatus](#openapi-definition-SyntheticOnDemandFailedExecutionStatus)[] | - |
+| failedToExecute | [SyntheticOnDemandFailedExecutionStatus](#openapi-definition-SyntheticOnDemandFailedExecutionStatus)[] | - |
 | failedToExecuteCount | integer | The number of executions that were triggered and timed out because of a problem with the Synthetic engine. |
 | metadata | object | String to string map of metadata properties for batch |
 | triggeredCount | integer | The number of triggered executions within the batch. |
-| triggeringProblems | [SyntheticOnDemandTriggeringProblemDetails[]](#openapi-definition-SyntheticOnDemandTriggeringProblemDetails) | - |
+| triggeringProblems | [SyntheticOnDemandTriggeringProblemDetails](#openapi-definition-SyntheticOnDemandTriggeringProblemDetails)[] | - |
 | triggeringProblemsCount | integer | The number of executions that were not triggered due to some problems. |
 | userId | string | The name of the user who triggered execution of the batch. |
 
@@ -106,7 +105,7 @@ Contains the details of problems encountered while triggering on-demand executio
 | Element | Type | Description |
 | --- | --- | --- |
 | code | integer | The HTTP status code |
-| constraintViolations | [ConstraintViolation[]](#openapi-definition-ConstraintViolation) | A list of constraint violations |
+| constraintViolations | [ConstraintViolation](#openapi-definition-ConstraintViolation)[] | A list of constraint violations |
 | message | string | The error message |
 
 #### The `ConstraintViolation` object

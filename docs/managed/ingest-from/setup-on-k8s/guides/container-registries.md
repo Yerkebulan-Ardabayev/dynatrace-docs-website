@@ -1,7 +1,6 @@
 ---
 title: Container registries
 source: https://docs.dynatrace.com/managed/ingest-from/setup-on-k8s/guides/container-registries
-scraped: 2026-05-12T11:53:48.761743
 ---
 
 # Container registries

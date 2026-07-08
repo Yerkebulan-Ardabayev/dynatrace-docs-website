@@ -1,7 +1,6 @@
 ---
 title: Settings API - Request errors schema table
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/settings/schemas/builtin-rum-mobile-request-errors
-scraped: 2026-05-12T11:44:19.073340
 ---
 
 # Settings API - Request errors schema table

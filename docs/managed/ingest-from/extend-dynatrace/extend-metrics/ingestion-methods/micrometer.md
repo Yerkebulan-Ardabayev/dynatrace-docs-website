@@ -1,7 +1,6 @@
 ---
 title: Send Micrometer metrics to Dynatrace
 source: https://docs.dynatrace.com/managed/ingest-from/extend-dynatrace/extend-metrics/ingestion-methods/micrometer
-scraped: 2026-05-12T11:10:32.730519
 ---
 
 # Send Micrometer metrics to Dynatrace
@@ -11,7 +10,7 @@ scraped: 2026-05-12T11:10:32.730519
 * 7-min read
 * Updated on May 11, 2026
 
-[Micrometerï»¿](https://dt-url.net/7u039ck) is an open source instrumentation framework for JVM-based application metrics. It's used by [Spring Bootï»¿](https://dt-url.net/ba239ye) to record a wide range of metrics. You can ingest Micrometer and Spring Boot metrics and analyze them with Dynatrace DavisÂ® AI end-to-end in the context of your trace, log, and diagnostics data. With Dynatrace, you get intelligent AI-based observability and automatic root cause analysis for Spring Boot, 15+ pre-instrumented JVM-based frameworks and servers, and custom metrics.
+[Micrometer﻿](https://dt-url.net/7u039ck) is an open source instrumentation framework for JVM-based application metrics. It's used by [Spring Boot﻿](https://dt-url.net/ba239ye) to record a wide range of metrics. You can ingest Micrometer and Spring Boot metrics and analyze them with Dynatrace Davis® AI end-to-end in the context of your trace, log, and diagnostics data. With Dynatrace, you get intelligent AI-based observability and automatic root cause analysis for Spring Boot, 15+ pre-instrumented JVM-based frameworks and servers, and custom metrics.
 
 You can use Micrometer in Dynatrace to:
 
@@ -19,7 +18,7 @@ You can use Micrometer in Dynatrace to:
 * Ingest pre-instrumented metrics from JVM-based frameworks, servers, and cache systems
 * Define and ingest custom metrics
 
-Metrics ingested from Micrometer consume [DDUs for custom metrics](/managed/license/monitoring-consumption-classic/davis-data-units/metric-cost-calculation "Understand how to calculate Davis data unit consumption and costs related to monitored metrics.").
+Metrics ingested from Micrometer consume [DDUs for custom metrics](/managed/license/classic-licensing/davis-data-units/metric-cost-calculation "Understand how to calculate Davis data unit consumption and costs related to monitored metrics.").
 
 There are two ways of using Micrometer:
 
@@ -45,7 +44,7 @@ There are two ways of using Micrometer:
   Maven
 
   Replace `{micrometer.version}` with the latest version of Micrometer or a specific version that you want to use.
-  A list of released versions is available on [Maven Centralï»¿](https://dt-url.net/ay439b4).
+  A list of released versions is available on [Maven Central﻿](https://dt-url.net/ay439b4).
   We recommend that you use the latest version.
 
   ```
@@ -100,14 +99,14 @@ There are two ways of using Micrometer:
 
 You can use one of the following ingestion channels to send your Micrometer metrics:
 
-* [OneAgent metric API](/managed/ingest-from/extend-dynatrace/extend-metrics/ingestion-methods/oneagent-metric-api "Use the Dynatrace API to retrieve the metrics of monitored entities.")âneeds OneAgent installed on the monitored host.
+* [OneAgent metric API](/managed/ingest-from/extend-dynatrace/extend-metrics/ingestion-methods/oneagent-metric-api "Use the Dynatrace API to retrieve the metrics of monitored entities.")—needs OneAgent installed on the monitored host.
 * [Metrics API v2](/managed/dynatrace-api/environment-api/metric-v2 "Retrieve metric information via Metrics v2 API.").
 
 ## Dynatrace Micrometer registry
 
 Micrometer uses the concept of a registry to export metrics to monitoring systems.
 
-* For Micrometer version 1.8.0 or later, [Dynatrace Registry v2ï»¿](https://micrometer.io/docs/registry/dynatrace) is available. It exports metrics via the [Metrics API v2](/managed/dynatrace-api/environment-api/metric-v2 "Retrieve metric information via Metrics v2 API."). All new integrations of Micrometer and Dynatrace must use this version.
+* For Micrometer version 1.8.0 or later, [Dynatrace Registry v2﻿](https://micrometer.io/docs/registry/dynatrace) is available. It exports metrics via the [Metrics API v2](/managed/dynatrace-api/environment-api/metric-v2 "Retrieve metric information via Metrics v2 API."). All new integrations of Micrometer and Dynatrace must use this version.
 * Older Micrometer versions are no longer supported (see [Dynatrace Micrometer registry v1 (legacy)](#registry-v1) below).
 
 ## Ingest metrics from Spring Boot apps
@@ -127,7 +126,7 @@ Without OneAgent
 
 OneAgent on Kubernetes nodes does not support the ingestion of Micrometer metrics directly. See [Sending Metrics from Kubernetes](#k8s-metrics) for more details. If you're using Dynatrace on Kubernetes, we recommend using Dynatrace Operator, which provides autoconfiguration.
 
-For hosts that are monitored by OneAgent, automatic configuration is available. You don't need to specify the API endpoint to ingest the metricâif the **uri** parameter is not set in the configuration, the metric will be ingested via the [OneAgent metric API](/managed/ingest-from/extend-dynatrace/extend-metrics/ingestion-methods/oneagent-metric-api "Use the Dynatrace API to retrieve the metrics of monitored entities.").
+For hosts that are monitored by OneAgent, automatic configuration is available. You don't need to specify the API endpoint to ingest the metric—if the **uri** parameter is not set in the configuration, the metric will be ingested via the [OneAgent metric API](/managed/ingest-from/extend-dynatrace/extend-metrics/ingestion-methods/oneagent-metric-api "Use the Dynatrace API to retrieve the metrics of monitored entities.").
 
 YAML
 
@@ -177,7 +176,7 @@ management.dynatrace.metrics.export.v2.default-dimensions.stack=prod
 management.dynatrace.metrics.export.v2.default-dimensions.region=us-east-1
 ```
 
-Dynatrace Operator configures Dynatrace Micrometer registry by providing ingest URL, credentials and Kubernetes metadata. For configuration examples, see our [Dynakube examplesï»¿](https://github.com/Dynatrace/dynatrace-operator/tree/main/assets/samples/dynakube).
+Dynatrace Operator configures Dynatrace Micrometer registry by providing ingest URL, credentials and Kubernetes metadata. For configuration examples, see our [Dynakube examples﻿](https://github.com/Dynatrace/dynatrace-operator/tree/main/assets/samples/dynakube).
 For more information about metadata enrichment, see [the documentation on enrichment files](/managed/ingest-from/extend-dynatrace/extend-data#operator-enrichment-directory "Learn how to automatically enrich your telemetry data with Dynatrace-specific fields.").
 
 * This feature is available when using Dynatrace Micrometer registry versions 1.9.0 and above.
@@ -316,7 +315,7 @@ With Dynatrace Operator for Kubernetes
 
 Without OneAgent
 
-For hosts that are monitored by OneAgent, automatic configuration is available. You don't need to specify the API endpoint to ingest the metricâif the **uri** parameter is not set in the configuration, the metric will be ingested via the [OneAgent metric API](/managed/ingest-from/extend-dynatrace/extend-metrics/ingestion-methods/oneagent-metric-api "Use the Dynatrace API to retrieve the metrics of monitored entities.").
+For hosts that are monitored by OneAgent, automatic configuration is available. You don't need to specify the API endpoint to ingest the metric—if the **uri** parameter is not set in the configuration, the metric will be ingested via the [OneAgent metric API](/managed/ingest-from/extend-dynatrace/extend-metrics/ingestion-methods/oneagent-metric-api "Use the Dynatrace API to retrieve the metrics of monitored entities.").
 
 View auto-configuration code
 
@@ -360,7 +359,7 @@ return null;
 DynatraceMeterRegistry registry = DynatraceMeterRegistry.builder(config).build();
 ```
 
-Dynatrace Operator configures Dynatrace Micrometer registry by providing ingest URL, credentials and Kubernetes metadata. For configuration examples, see our [Dynakube examplesï»¿](https://github.com/Dynatrace/dynatrace-operator/tree/main/assets/samples/dynakube).
+Dynatrace Operator configures Dynatrace Micrometer registry by providing ingest URL, credentials and Kubernetes metadata. For configuration examples, see our [Dynakube examples﻿](https://github.com/Dynatrace/dynatrace-operator/tree/main/assets/samples/dynakube).
 For more information about metadata enrichment, see [the documentation on enrichment files](/managed/ingest-from/extend-dynatrace/extend-data#operator-enrichment-directory "Learn how to automatically enrich your telemetry data with Dynatrace-specific fields.").
 
 * This feature is available when using Dynatrace Micrometer registry versions 1.9.0 and above.
@@ -898,7 +897,7 @@ OneAgent cannot be used for Micrometer metric ingestion on Kubernetes nodes. You
 
 ### Capture JVM metrics in Micrometer
 
-By default, JVM metrics are turned off when running Micrometer without Spring Boot. To learn how to enable them, see the [Micrometer documentationï»¿](https://docs.micrometer.io/micrometer/reference/reference/jvm.html). After they are enabled and registered with the Dynatrace registry (`DynatraceMeterRegistry`), JVM metrics are recorded and sent to Dynatrace automatically.
+By default, JVM metrics are turned off when running Micrometer without Spring Boot. To learn how to enable them, see the [Micrometer documentation﻿](https://docs.micrometer.io/micrometer/reference/reference/jvm.html). After they are enabled and registered with the Dynatrace registry (`DynatraceMeterRegistry`), JVM metrics are recorded and sent to Dynatrace automatically.
 
 On hosts that are monitored by OneAgent, these metrics might already be captured by OneAgent.
 
@@ -908,9 +907,9 @@ Spring Boot
 
 Directly in Micrometer
 
-When running Micrometer in Spring Boot, [many metricsï»¿](https://docs.spring.io/spring-boot/docs/current/reference/html/actuator.html#actuator.metrics.supported) are automatically created and sent to Dynatrace, including JVM, process, and disk metrics.
+When running Micrometer in Spring Boot, [many metrics﻿](https://docs.spring.io/spring-boot/docs/current/reference/html/actuator.html#actuator.metrics.supported) are automatically created and sent to Dynatrace, including JVM, process, and disk metrics.
 
-To see all metrics created by your Spring Boot application, navigate to the [actuator endpoint on your Spring Boot appï»¿](https://docs.spring.io/spring-boot/docs/current/reference/html/actuator.html#actuator.enabling) (`/actuator/metrics`). Some of these metrics might already be captured by OneAgent.
+To see all metrics created by your Spring Boot application, navigate to the [actuator endpoint on your Spring Boot app﻿](https://docs.spring.io/spring-boot/docs/current/reference/html/actuator.html#actuator.enabling) (`/actuator/metrics`). Some of these metrics might already be captured by OneAgent.
 
 ### Disable metrics with Spring properties
 
@@ -1000,7 +999,7 @@ management.metrics.enable.jvm=true
 
 ### Disable metrics in code
 
-Micrometer provides [meter filtersï»¿](https://docs.micrometer.io/micrometer/reference/concepts/meter-filters.html) to disable metrics based on a variety of conditions. Meter filters can also be configured via Spring Boot with the `@Configuration` annotation.
+Micrometer provides [meter filters﻿](https://docs.micrometer.io/micrometer/reference/concepts/meter-filters.html) to disable metrics based on a variety of conditions. Meter filters can also be configured via Spring Boot with the `@Configuration` annotation.
 
 Show code snippet
 
@@ -1040,7 +1039,7 @@ The metric prefix configured for the Dynatrace registry will be applied after fi
 
 Register MeterFilters before creating or [turning on additional metrics](#add-automatically-created-metrics), as the `MeterFilter` will only be evaluated when the metric is added to the `MeterRegistry`.
 
-You can configure the registry to filter out specific metrics by name and/or tags (for example, metrics that are already captured by OneAgent). To achieve that, use Micrometer's [meter filtersï»¿](https://micrometer.io/docs/concepts#_meter_filters). You need to add meter filters before you enable [capture of JVM metrics](#add-automatically-created-metrics), otherwise filters will be overridden.
+You can configure the registry to filter out specific metrics by name and/or tags (for example, metrics that are already captured by OneAgent). To achieve that, use Micrometer's [meter filters﻿](https://micrometer.io/docs/concepts#_meter_filters). You need to add meter filters before you enable [capture of JVM metrics](#add-automatically-created-metrics), otherwise filters will be overridden.
 
 The metric prefix configured for the Dynatrace registry will be applied after filtering, so `meterFilters` have to be specified using the original metric key without this prefix.
 
@@ -1078,8 +1077,8 @@ logging.level.io.micrometer.dynatrace: DEBUG
 logging.level.io.micrometer.dynatrace=DEBUG
 ```
 
-Micrometer and the Dynatrace Micrometer registry use [slf4jï»¿](https://www.slf4j.org/) internally to log events, such as the lines that are sent to Dynatrace.
-If you want to get this information, set up your project with the logging framework of your choice (for example, [logbackï»¿](https://logback.qos.ch/manual/configuration.html#automaticConf)) and set the log level to `debug`.
+Micrometer and the Dynatrace Micrometer registry use [slf4j﻿](https://www.slf4j.org/) internally to log events, such as the lines that are sent to Dynatrace.
+If you want to get this information, set up your project with the logging framework of your choice (for example, [logback﻿](https://logback.qos.ch/manual/configuration.html#automaticConf)) and set the log level to `debug`.
 
 Debug logging with logback
 

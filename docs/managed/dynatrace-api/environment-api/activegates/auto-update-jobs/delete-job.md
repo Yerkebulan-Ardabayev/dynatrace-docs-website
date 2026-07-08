@@ -1,7 +1,6 @@
 ---
 title: ActiveGate API - DELETE an auto-update job
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/activegates/auto-update-jobs/delete-job
-scraped: 2026-05-12T12:00:00.646530
 ---
 
 # ActiveGate API - DELETE an auto-update job
@@ -56,7 +55,7 @@ To learn how to obtain and use it, see [Tokens and authentication](/managed/disc
 | Element | Type | Description |
 | --- | --- | --- |
 | code | integer | The HTTP status code |
-| constraintViolations | [ConstraintViolation[]](#openapi-definition-ConstraintViolation) | A list of constraint violations |
+| constraintViolations | [ConstraintViolation](#openapi-definition-ConstraintViolation)[] | A list of constraint violations |
 | message | string | The error message |
 
 #### The `ConstraintViolation` object

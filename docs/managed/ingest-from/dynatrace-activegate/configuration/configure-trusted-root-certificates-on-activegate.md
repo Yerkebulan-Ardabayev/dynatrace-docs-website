@@ -1,7 +1,6 @@
 ---
 title: Trusted root certificates for ActiveGate
 source: https://docs.dynatrace.com/managed/ingest-from/dynatrace-activegate/configuration/configure-trusted-root-certificates-on-activegate
-scraped: 2026-05-12T11:27:41.983574
 ---
 
 # Trusted root certificates for ActiveGate
@@ -213,7 +212,7 @@ If the above command presents a full certificate chain then you must add the roo
 
 If the above command does not present a full certificate chain, then the root of the chain must be obtained elsewhere.
 
-For example, the endpoint of the `openssl` request to this serverâsee belowâonly returns the server certificate, and not the root certificate.
+For example, the endpoint of the `openssl` request to this server—see below—only returns the server certificate, and not the root certificate.
 You know that this server only presents a server certificate and not a root certificate because the error says `unable to get local issuer certificate`. If the root certificate were present, the error message would say "Self-signed certificate in certificate chain".
 To create a valid SSL connection to this endpoint, you must obtain the root certificate separately.
 

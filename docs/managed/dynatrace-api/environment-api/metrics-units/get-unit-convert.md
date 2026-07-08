@@ -1,7 +1,6 @@
 ---
 title: Metric units API - GET convert units
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/metrics-units/get-unit-convert
-scraped: 2026-05-12T11:12:19.497120
 ---
 
 # Metric units API - GET convert units

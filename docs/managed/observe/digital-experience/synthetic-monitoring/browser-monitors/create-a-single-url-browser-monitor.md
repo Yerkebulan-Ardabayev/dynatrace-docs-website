@@ -1,18 +1,17 @@
 ---
-title: Create a single-URL browser monitor
+title: Create a single-URL browser monitor in Classic
 source: https://docs.dynatrace.com/managed/observe/digital-experience/synthetic-monitoring/browser-monitors/create-a-single-url-browser-monitor
-scraped: 2026-05-12T11:31:43.050448
 ---
 
-# Create a single-URL browser monitor
+# Create a single-URL browser monitor in Classic
 
-# Create a single-URL browser monitor
+# Create a single-URL browser monitor in Classic
 
 * How-to guide
 * 3-min read
 * Updated on Aug 19, 2025
 
-Synthetic monitoring gives you the option of creating two kinds of browser monitorsâsingle-URL and clickpathsâto check the availability and performance of your web application at regular intervals. Single-URL browser monitors conduct availability tests of a single page of your website or web application. You also have the option of checking performance.
+Synthetic Monitoring Classic gives you the option of creating two kinds of browser monitors—single-URL and clickpaths—to check the availability and performance of your web application at regular intervals. Single-URL browser monitors conduct availability tests of a single page of your website or web application. You also have the option of checking performance.
 
 ## Create a single-URL browser monitor
 
@@ -33,7 +32,7 @@ Synthetic monitoring gives you the option of creating two kinds of browser monit
    Re-recording is required if you want to modify any part of your monitor's configuration. You can no longer save changes in their current format.
 
    Starting from Dynatrace version 1.324+, the single-URL monitors with the web form login will be automatically updated by adding a free JavaScript step to support the login process.
-6. Choose **Next** to continue configurationâselect monitor locations and frequency. See [Configure browser monitors](/managed/observe/digital-experience/synthetic-monitoring/browser-monitors/configure-browser-monitors "Learn about configuring browser monitors and clickpaths.") for details.
+6. Choose **Next** to continue configuration—select monitor locations and frequency. See [Configure browser monitors](/managed/observe/digital-experience/synthetic-monitoring/browser-monitors/configure-browser-monitors "Learn about configuring browser monitors and clickpaths.") for details.
 
    ![Monitor frequency and locations](https://dt-cdn.net/images/syntheticfrequencylocations2-2223-297d2c4656.png)
 
@@ -60,7 +59,7 @@ The details page of each monitor provides detailed results, for example, availab
 
 Monitors are enabled by default when you create them.
 
-Disabling a synthetic monitor suspends further executions but retains the monitor and its measurement data. Any open performance and availability problems time out when a monitor is disabled (see [Synthetic calculations](/managed/observe/digital-experience/synthetic-monitoring/general-information/synthetic-calculations "Understand Synthetic Monitoring metric calculations.") for details). Deletion removes a monitor and its associated measurement data; this is irreversible. Before deleting a monitor, we recommend that you disable it first and ensure that you no longer require its measurement data.
+Disabling a synthetic monitor suspends further executions but retains the monitor and its measurement data. Any open performance and availability problems time out when a monitor is disabled (see [Synthetic calculations](/managed/observe/digital-experience/synthetic-monitoring/general-information/synthetic-calculations "Understand Synthetic Monitoring Classic metric calculations.") for details). Deletion removes a monitor and its associated measurement data; this is irreversible. Before deleting a monitor, we recommend that you disable it first and ensure that you no longer require its measurement data.
 
 To disable or delete a monitor
 
@@ -77,9 +76,9 @@ You can also disable or delete a monitor from the [details page](/managed/observ
 
 1. Go to **Synthetic Classic**.
 2. Select the monitor you're interested in.
-3. Select the **Browse** button (**â¦**) and select either **Disable** or **Delete**.
+3. Select the **Browse** button (**…**) and select either **Disable** or **Delete**.
 
-[Synthetic monitor execution may be disabled during a maintenance window](/managed/observe/digital-experience/synthetic-monitoring/general-information/synthetic-calculations#m-windows-availability "Understand Synthetic Monitoring metric calculations.") in maintenance window settings.
+[Synthetic monitor execution may be disabled during a maintenance window](/managed/observe/digital-experience/synthetic-monitoring/general-information/synthetic-calculations#m-windows-availability "Understand Synthetic Monitoring Classic metric calculations.") in maintenance window settings.
 
 ## Related topics
 

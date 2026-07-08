@@ -1,7 +1,6 @@
 ---
 title: Monitor AWS Lambda
 source: https://docs.dynatrace.com/managed/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration
-scraped: 2026-05-12T11:14:22.725864
 ---
 
 # Monitor AWS Lambda
@@ -10,7 +9,7 @@ scraped: 2026-05-12T11:14:22.725864
 
 * Explanation
 * 3-min read
-* Updated on Feb 17, 2026
+* Updated on May 05, 2026
 
 Dynatrace provides end-to-end observability for AWS Lambda functions through distributed tracing, log correlation, and AI-powered insights using auto-instrumentation without code changes. The OneAgent AWS Lambda extension collects logs directly from Lambda functions, offering an alternative to CloudWatch via Firehose with lower cost, lower latency, and easier setup.
 
@@ -20,13 +19,7 @@ Monitor AWS Lambda functions.
 
 * How-to guide
 
-Read this guide](/managed/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration/trace-lambda-functions)[#### Trace .NET Lambda functions
-
-Trace AWS Lambda functions using a .NET runtime
-
-* How-to guide
-
-Read this guide](/managed/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration/aws-lambda-classic/aws-lambda-otel-integration)
+Read this guide](/managed/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration/trace-lambda-functions)
 
 [#### AWS Lambda log collection
 
@@ -59,7 +52,7 @@ AWS Lambda instrumentation is available for the following runtimes:
 | Python | 1.321 (or later) | Yes |
 | Node.js | 1.319 (or later) | Yes |
 | Java | 1.319 (or later) | Yes |
-| .NET | Coming soon | Yes |
+| .NET | 1.335 (or later) | Yes |
 | Go | 1.333 (or later) | Log Monitoring only |
 
 1
@@ -70,7 +63,7 @@ For more details, see [Technology support](/managed/ingest-from/technology-suppo
 
 ## Monitoring consumption
 
-For AWS Lambda, monitoring consumption is based on Davis data units. See [Serverless monitoring](/managed/license/monitoring-consumption-classic/davis-data-units/serverless-monitoring "Understand how serverless monitoring consumption is calculated.") for details.
+For AWS Lambda, monitoring consumption is based on Davis data units. See [Serverless monitoring](/managed/license/classic-licensing/davis-data-units/serverless-monitoring "Understand how serverless monitoring consumption is calculated.") for details.
 
 ## Related topics
 

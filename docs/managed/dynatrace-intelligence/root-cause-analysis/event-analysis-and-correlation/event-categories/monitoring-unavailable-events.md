@@ -1,7 +1,6 @@
 ---
 title: Monitoring unavailable events
 source: https://docs.dynatrace.com/managed/dynatrace-intelligence/root-cause-analysis/event-analysis-and-correlation/event-categories/monitoring-unavailable-events
-scraped: 2026-05-12T12:06:42.345262
 ---
 
 # Monitoring unavailable events
@@ -25,7 +24,7 @@ This usually manifests itself as a lack of visibility in terms of both availabil
 
 Monitoring interruptions can have different root causes depending on the type of Dynatrace deployment you're running:
 
-* Dynatrace SaaS environments are administered by the Dynatrace DevOps team, who post all operational issues to [dynatrace.status.ioï»¿](https://dynatrace.status.io/).
+* Dynatrace SaaS environments are administered by the Dynatrace DevOps team, who post all operational issues to [dynatrace.status.io﻿](https://dynatrace.status.io/).
 * For environments running in Dynatrace Managed deployments, it's most likely that the monitoring interruption is caused by an issue within your own data center or network configuration.
 
 Regardless of the type of Dynatrace deployment, a common cause of monitoring interruptions is ActiveGate operating issues. To minimize the risk of interruptions caused by ActiveGate, you can use [ActiveGate self-monitoring metrics](/managed/ingest-from/dynatrace-activegate/activegate-sfm-metrics "Explore ActiveGate self-monitoring  metrics.") to assess the health of your ActiveGates in a timely manner.
@@ -45,4 +44,4 @@ To view `monitoring unavailable` problems
 1. Go to **Problems**.
 2. In the **Filter by** box, select `Severity`: `Monitoring unavailable`.
 
-For more on problems, see [DavisÂ® AI](/managed/dynatrace-intelligence "Get familiar with the capabilities of Davis AI.").
+For more on problems, see [Davis® AI](/managed/dynatrace-intelligence "Learn how Davis® AI detects performance anomalies, identifies root causes, and uses AI models for adaptive thresholds across your environment.").

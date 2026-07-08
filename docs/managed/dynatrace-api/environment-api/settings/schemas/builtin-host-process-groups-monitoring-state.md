@@ -1,7 +1,6 @@
 ---
 title: Settings API - Process group monitoring schema table
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/settings/schemas/builtin-host-process-groups-monitoring-state
-scraped: 2026-05-12T11:44:16.924875
 ---
 
 # Settings API - Process group monitoring schema table

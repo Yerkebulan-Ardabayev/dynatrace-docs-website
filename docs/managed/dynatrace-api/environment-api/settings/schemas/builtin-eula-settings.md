@@ -1,7 +1,6 @@
 ---
 title: Settings API - Terms of use schema table
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/settings/schemas/builtin-eula-settings
-scraped: 2026-05-12T11:42:01.853647
 ---
 
 # Settings API - Terms of use schema table

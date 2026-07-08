@@ -1,7 +1,6 @@
 ---
 title: Hardware requirements for Dynatrace Monaco CLI
 source: https://docs.dynatrace.com/managed/deliver/configuration-as-code/monaco/reference/hardware-requirements
-scraped: 2026-05-12T12:02:56.741394
 ---
 
 # Hardware requirements for Dynatrace Monaco CLI
@@ -63,7 +62,7 @@ Dynatrace Monaco CLI version 2.9.0 or earlier
 
 ### Memory limits
 
-You can configure a soft memory limit for the Dynatrace Monaco CLI by setting the `GOMEMLIMIT` [environment variableï»¿](https://pkg.go.dev/runtime#hdr-Environment_Variables).
+You can configure a soft memory limit for the Dynatrace Monaco CLI by setting the `GOMEMLIMIT` [environment variable﻿](https://pkg.go.dev/runtime#hdr-Environment_Variables).
 
 `GOMEMLIMIT` is a numeric value with an optional unit suffix of `B`, `KiB`, `MiB`, `GiB`, or `TiB`.
 If no suffix is supplied, the value is assumed to be in bytes (`B`).
@@ -110,7 +109,7 @@ CLI version 2.6.0 or earlier
 
 Dynatrace Monaco CLI version 2.7.0+
 
-This table demonstrates that deployment time doesn't grow linearly with the size of your projects. This is because of the behavior of the Dynatrace API as the number of requests and existing configurations increasesâthis causes increased rate limiting and processing time when adding configurations.
+This table demonstrates that deployment time doesn't grow linearly with the size of your projects. This is because of the behavior of the Dynatrace API as the number of requests and existing configurations increases—this causes increased rate limiting and processing time when adding configurations.
 
 | Project size / Number of configurations | Estimated deployment time |
 | --- | --- |

@@ -1,16 +1,15 @@
 ---
-title: Requirements for private Synthetic locations
+title: Requirements for private Synthetic locations in Classic
 source: https://docs.dynatrace.com/managed/observe/digital-experience/synthetic-monitoring/private-synthetic-locations/system-and-hardware-requirements-for-private-synthetic
-scraped: 2026-05-12T11:08:10.710699
 ---
 
-# Requirements for private Synthetic locations
+# Requirements for private Synthetic locations in Classic
 
-# Requirements for private Synthetic locations
+# Requirements for private Synthetic locations in Classic
 
 * Reference
 * 15-min read
-* Updated on Apr 28, 2026
+* Updated on Jun 29, 2026
 
 Ensure that the host you want to use for your private location complies with the following requirements.
 
@@ -32,7 +31,7 @@ Antivirus and anti-malware software can negatively impact Dynatrace Synthetic mo
 Such software might block the browser or Dynatrace processes that execute synthetic monitors, cause Synthetic-enabled ActiveGate installation or update failures, interfere with network communication, and impact the reliability of measurements.
 
 To maintain stability and performance, consider adding the directories and processes listed below to the allowlist or exclude them from the policy.
-Keep in mind that antivirus exclusions typically prevent file scanning but donât disable behavioral monitoring or kernel-level hooks. These remain active and can affect how the Synthetic Engine and browser interact with system libraries.
+Keep in mind that antivirus exclusions typically prevent file scanning but don’t disable behavioral monitoring or kernel-level hooks. These remain active and can affect how the Synthetic Engine and browser interact with system libraries.
 As a result, even excluded processes can experience access violations or heap corruption.
 
 Before contacting Dynatrace Support to troubleshoot issues with your private synthetic locations, ensure that antivirus or anti-malware software has been ruled out as a potential cause.
@@ -61,7 +60,7 @@ A freshly installed ActiveGate can run your private synthetic monitors (both HTT
 
 | Windows OS | Versions |
 | --- | --- |
-| Windows Server | 2016, 2019, 2022 |
+| Windows Server | 2016, 2019, 2022, 2025 |
 
 #### Browser versions on Windows
 
@@ -69,6 +68,8 @@ On Windows, the ActiveGate installer package includes the Chromium browser used 
 
 | ActiveGate version | Included browser version |
 | --- | --- |
+| 1.341 | 148 |
+| 1.339 | 147 |
 | 1.337 | 146 |
 | 1.335 | 146 |
 | 1.333 | 144 |
@@ -80,14 +81,12 @@ On Windows, the ActiveGate installer package includes the Chromium browser used 
 | 1.321 | 138 |
 | 1.319 | 138 |
 | 1.317 | 137 |
-| 1.315 | 136 |
-| 1.313 | 135 |
 
 #### Unsupported Windows versions for testing purposes only
 
 If you only want to test private Synthetic locations on a non-production host, for example, your own desktop, you can install a Synthetic-enabled ActiveGate on unsupported Windows versions such as Windows 10 or Windows 11.
 
-As of ActiveGate version 1.263+, Synthetic-enabled ActiveGates no longer work on Windows Server 2012 for testing purposes. [Google has dropped support for Windows 2012 Server with Chromium 110ï»¿](https://dt-url.net/e2026id), which is bundled with the [ActiveGate version 1.263 installation package](#browser-windows).
+As of ActiveGate version 1.263+, Synthetic-enabled ActiveGates no longer work on Windows Server 2012 for testing purposes. [Google has dropped support for Windows 2012 Server with Chromium 110﻿](https://dt-url.net/e2026id), which is bundled with the [ActiveGate version 1.263 installation package](#browser-windows).
 
 ### Linux
 
@@ -99,19 +98,19 @@ As of ActiveGate version 1.263+, Synthetic-enabled ActiveGates no longer work on
 | Ubuntu | 20.04, 22.04, 24.04 |
 | Amazon Linux | 2023 |
 | Oracle Linux[2](#fn-1-2-def) | 9.6, 9.7 |
-| Rocky Linux[3](#fn-1-3-def) | 9.7 |
+| Rocky Linux[3](#fn-1-3-def) | 9.8 |
 
 1
 
-The Synthetic installer can be installed on all minor releases of Red Hat Enterprise Linux 9. However, we recommend using the versions listed in this table, as they have Extended Life-cycle Support (ELS) according to [Red Hat Enterprise Linux Life Cycleï»¿](https://access.redhat.com/support/policy/updates/errata).
+The Synthetic installer can be installed on all minor releases of Red Hat Enterprise Linux 9. However, we recommend using the versions listed in this table, as they have Extended Life-cycle Support (ELS) according to [Red Hat Enterprise Linux Life Cycle﻿](https://access.redhat.com/support/policy/updates/errata).
 
 2
 
-The Synthetic installer can be installed on all minor releases of Oracle Linux 9. However, we recommend using the latest currently supported versions according to documentation for [Oracle Linux 9ï»¿](https://docs.oracle.com/en/operating-systems/oracle-linux/9/).
+The Synthetic installer can be installed on all minor releases of Oracle Linux 9. However, we recommend using the latest currently supported versions according to documentation for [Oracle Linux 9﻿](https://docs.oracle.com/en/operating-systems/oracle-linux/9/).
 
 3
 
-The Synthetic installer can be installed on all minor releases of Rocky Linux 9. However, we recommend using the latest currently supported versions according to [Rocky Linux Release and Version Guideï»¿](https://wiki.rockylinux.org/rocky/version/#current-supported-releases).
+The Synthetic installer can be installed on all minor releases of Rocky Linux 9. However, we recommend using the latest currently supported versions according to [Rocky Linux Release and Version Guide﻿](https://wiki.rockylinux.org/rocky/version/#current-supported-releases).
 
 #### Deprecated operating systems
 
@@ -139,43 +138,35 @@ ActiveGate version 1.325 is the last Synthetic-enabled ActiveGate to support Red
 
 #### Browser versions on Linux
 
-We strongly recommend that you keep your Linux-based Synthetic-enabled ActiveGates and browser versions updatedâDynatrace supports browser versions that are no more than two versions behind the latest Dynatrace-supported version for a specific ActiveGate release. For example, if the latest supported browser version is 103, Dynatrace supports up to browser version 101. If the provided browser version is significantly older for a specific OS, we support only the provided version. See information on updating browser [automatically](/managed/observe/digital-experience/synthetic-monitoring/private-synthetic-locations/manage-private-synthetic-locations#browser "Analyze and manage capacity usage at your private Synthetic locations.") and [manually](/managed/observe/digital-experience/synthetic-monitoring/private-synthetic-locations/manage-private-synthetic-locations#browser-manual "Analyze and manage capacity usage at your private Synthetic locations.").
+We strongly recommend that you keep your Linux-based Synthetic-enabled ActiveGates and browser versions updated—Dynatrace supports browser versions that are no more than two versions behind the latest Dynatrace-supported version for a specific ActiveGate release. For example, if the latest supported browser version is 103, Dynatrace supports up to browser version 101. If the provided browser version is significantly older for a specific OS, we support only the provided version. See information on updating browser [automatically](/managed/observe/digital-experience/synthetic-monitoring/private-synthetic-locations/manage-private-synthetic-locations#browser "Analyze and manage capacity usage at your private Synthetic locations.") and [manually](/managed/observe/digital-experience/synthetic-monitoring/private-synthetic-locations/manage-private-synthetic-locations#browser-manual "Analyze and manage capacity usage at your private Synthetic locations.").
 
 On Linux, the ActiveGate installer downloads the browser dependencies that are required by the Synthetic engine. On Red Hat and Rocky, you need to enable particular repositories from which the installer downloads the dependencies. The Dynatrace web UI provides you with all the required commands. For detailed instructions, see [Create a private synthetic location](/managed/observe/digital-experience/synthetic-monitoring/private-synthetic-locations/create-a-private-synthetic-location "Learn how to create a private location for synthetic monitoring.").
 
 When [installing ActiveGate and the browser from a custom, local repository](/managed/observe/digital-experience/synthetic-monitoring/private-synthetic-locations/create-a-private-synthetic-location#custom-repo "Learn how to create a private location for synthetic monitoring."), you need to resolve all dependencies and enable repositories as required; the custom repository can be used only for browser packages, not their dependencies. Place the browser package archive and the signature file in the custom repository for installation. If your package archive file is `https://synthetic-packages.s3.amazonaws.com/Chrome/chrome-for-testing-linux64/chrome-for-testing-linux64-143.0.7499.192.zip` (Chrome for Testing 143 for Ubuntu on ActiveGate version 1.333), you can find the signature file by appending `.sig` to the URL: `https://synthetic-packages.s3.amazonaws.com/Chrome/chrome-for-testing-linux64/chrome-for-testing-linux64-143.0.7499.192.zip.sig`.
 
 Due to changes in `libdav1d.so.6` packet availability Chromium versions older than 130 cannot be installed on Red Hat/Rocky Linux 9.
-Please refer to [troubleshooting guideï»¿](https://dt-url.net/x303x5f) for details.
+Please refer to [troubleshooting guide﻿](https://dt-url.net/x303x5f) for details.
 
-| ActiveGate version | Latest supported Chromium version Red Hat/Rocky Linux 9 | Latest supported Chrome for Testing version Amazon Linux 2023, Ubuntu, Oracle Linux 9 |
+| ActiveGate version | Latest supported Chromium versionRed Hat/Rocky Linux 9 | Latest supported Chrome for Testing versionAmazon Linux 2023, Ubuntu, Oracle Linux 9 |
 | --- | --- | --- |
-| 1.337 | 146 [Red Hat/Rocky Linux 9ï»¿](https://synthetic-packages.s3.amazonaws.com/Chromium/rpm/chromium-146.0.7680.177-1.el9.tgz) | [146ï»¿](https://synthetic-packages.s3.amazonaws.com/Chrome/chrome-for-testing-linux64/chrome-for-testing-linux64-146.0.7680.178.zip) |
-| 1.335 | 146 [Red Hat/Rocky Linux 9ï»¿](https://synthetic-packages.s3.amazonaws.com/Chromium/rpm/chromium-146.0.7680.177-1.el9.tgz) | [146ï»¿](https://synthetic-packages.s3.amazonaws.com/Chrome/chrome-for-testing-linux64/chrome-for-testing-linux64-146.0.7680.178.zip) |
-| 1.333 | 144 [Red Hat/Rocky Linux 9ï»¿](https://synthetic-packages.s3.amazonaws.com/Chromium/rpm/chromium-144.0.7559.132-1.el9.tgz) | [144ï»¿](https://synthetic-packages.s3.amazonaws.com/Chrome/chrome-for-testing-linux64/chrome-for-testing-linux64-144.0.7559.133.zip) |
-| 1.331[3](#fn-3-3-def) | 143 [Red Hat/Rocky Linux 9ï»¿](https://synthetic-packages.s3.amazonaws.com/Chromium/rpm/chromium-143.0.7499.192-1.el9.tgz) | [143ï»¿](https://synthetic-packages.s3.amazonaws.com/Chrome/chrome-for-testing-linux64/chrome-for-testing-linux64-143.0.7499.192.zip) |
+| 1.341 | 148 [Red Hat/Rocky Linux 9﻿](https://synthetic-packages.s3.amazonaws.com/Chromium/rpm/chromium-148.0.7778.215-1.el9.tgz) | [148﻿](https://synthetic-packages.s3.amazonaws.com/Chrome/chrome-for-testing-linux64/chrome-for-testing-linux64-148.0.7778.215.zip) |
+| 1.339 | 147 [Red Hat/Rocky Linux 9﻿](https://synthetic-packages.s3.amazonaws.com/Chromium/rpm/chromium-147.0.7727.137-1.el9.tgz) | [147﻿](https://synthetic-packages.s3.amazonaws.com/Chrome/chrome-for-testing-linux64/chrome-for-testing-linux64-147.0.7727.137.zip) |
+| 1.337 | 146 [Red Hat/Rocky Linux 9﻿](https://synthetic-packages.s3.amazonaws.com/Chromium/rpm/chromium-146.0.7680.177-1.el9.tgz) | [146﻿](https://synthetic-packages.s3.amazonaws.com/Chrome/chrome-for-testing-linux64/chrome-for-testing-linux64-146.0.7680.178.zip) |
+| 1.335 | 146 [Red Hat/Rocky Linux 9﻿](https://synthetic-packages.s3.amazonaws.com/Chromium/rpm/chromium-146.0.7680.177-1.el9.tgz) | [146﻿](https://synthetic-packages.s3.amazonaws.com/Chrome/chrome-for-testing-linux64/chrome-for-testing-linux64-146.0.7680.178.zip) |
+| 1.333 | 144 [Red Hat/Rocky Linux 9﻿](https://synthetic-packages.s3.amazonaws.com/Chromium/rpm/chromium-144.0.7559.132-1.el9.tgz) | [144﻿](https://synthetic-packages.s3.amazonaws.com/Chrome/chrome-for-testing-linux64/chrome-for-testing-linux64-144.0.7559.133.zip) |
+| 1.331[1](#fn-3-1-def) | 143 [Red Hat/Rocky Linux 9﻿](https://synthetic-packages.s3.amazonaws.com/Chromium/rpm/chromium-143.0.7499.192-1.el9.tgz) | [143﻿](https://synthetic-packages.s3.amazonaws.com/Chrome/chrome-for-testing-linux64/chrome-for-testing-linux64-143.0.7499.192.zip) |
 
-| ActiveGate version | Latest supported Chromium version Red Hat/Oracle/Rocky Linux | Latest supported Chromium version Ubuntu 20 and 22 | Latest supported Chrome for Testing version Amazon Linux 2023, Ubuntu 24, Oracle Linux 9 |
+| ActiveGate version | Latest supported Chromium versionRed Hat/Oracle/Rocky Linux | Latest supported Chromium versionUbuntu 20 and 22 | Latest supported Chrome for Testing versionAmazon Linux 2023, Ubuntu 24, Oracle Linux 9 |
 | --- | --- | --- | --- |
-| 1.329 | 142 [Red Hat/Rocky Linux 9ï»¿](https://synthetic-packages.s3.amazonaws.com/Chromium/rpm/chromium-142.0.7444.175-2.el9.tgz) | 142 [Ubuntu 20.04 and 22.04ï»¿](https://synthetic-packages.s3.amazonaws.com/Chromium/snap/chromium-142.0.7444.175-3313.tgz) | [142ï»¿](https://synthetic-packages.s3.amazonaws.com/Chrome/chrome-for-testing-linux64/chrome-for-testing-linux64-142.0.7444.175.zip) |
-| 1.327 | 141 [Red Hat/Rocky Linux 9ï»¿](https://synthetic-packages.s3.amazonaws.com/Chromium/rpm/chromium-141.0.7390.122-1.el9.tgz) | 141 [Ubuntu 20.04 and 22.04ï»¿](https://synthetic-packages.s3.amazonaws.com/Chromium/snap/chromium-141.0.7390.122-3285.tgz) | [141ï»¿](https://synthetic-packages.s3.amazonaws.com/Chrome/chrome-for-testing-linux64/chrome-for-testing-linux64-141.0.7390.122.zip) |
-| 1.325 | 133 [Red Hat/Oracle/Rocky Linux 8ï»¿](https://synthetic-packages.s3.amazonaws.com/Chromium/rpm/chromium-133.0.6943.141-1.el8.tgz), 140 [Red Hat/Rocky Linux 9ï»¿](https://synthetic-packages.s3.amazonaws.com/Chromium/rpm/chromium-140.0.7339.185-1.el9.tgz) | 140 [Ubuntu 20.04 and 22.04ï»¿](https://synthetic-packages.s3.amazonaws.com/Chromium/snap/chromium-140.0.7339.185-3251.tgz) | 140 |
-| 1.323 | 133 [Red Hat/Oracle/Rocky Linux 8ï»¿](https://synthetic-packages.s3.amazonaws.com/Chromium/rpm/chromium-133.0.6943.141-1.el8.tgz), 139 [Red Hat/Rocky Linux 9ï»¿](https://synthetic-packages.s3.amazonaws.com/Chromium/rpm/chromium-139.0.7258.138-1.el9.tgz) | 139 [Ubuntu 20.04 and 22.04ï»¿](https://synthetic-packages.s3.amazonaws.com/Chromium/snap/chromium-139.0.7258.138-3235.tgz) | 139 |
-| 1.321 | 133 [Red Hat/Oracle/Rocky Linux 8ï»¿](https://synthetic-packages.s3.amazonaws.com/Chromium/rpm/chromium-133.0.6943.141-1.el8.tgz), 138 [Red Hat/Rocky Linux 9ï»¿](https://synthetic-packages.s3.amazonaws.com/Chromium/rpm/chromium-138.0.7204.157-1.el9.tgz) | 138 [Ubuntu 20.04 and 22.04ï»¿](https://synthetic-packages.s3.amazonaws.com/Chromium/snap/chromium-138.0.7204.157-3203.tgz) | 138 |
-| 1.319 | 133 [Red Hat/Oracle/Rocky Linux 8ï»¿](https://synthetic-packages.s3.amazonaws.com/Chromium/rpm/chromium-133.0.6943.141-1.el8.tgz), 138 [Red Hat/Rocky Linux 9ï»¿](https://synthetic-packages.s3.amazonaws.com/Chromium/rpm/chromium-138.0.7204.100-1.el9.tgz) | 138 [Ubuntu 20.04 and 22.04ï»¿](https://synthetic-packages.s3.amazonaws.com/Chromium/snap/chromium-138.0.7204.100-3199.tgz) | 138 |
-| 1.317 | 133 [Red Hat/Oracle/Rocky Linux 8ï»¿](https://synthetic-packages.s3.amazonaws.com/Chromium/rpm/chromium-133.0.6943.141-1.el8.tgz), 137 [Red Hat/Rocky Linux 9ï»¿](https://synthetic-packages.s3.amazonaws.com/Chromium/rpm/chromium-137.0.7151.103-1.el9.tgz) | 137 [Ubuntu 20.04 and 22.04ï»¿](https://synthetic-packages.s3.amazonaws.com/Chromium/snap/chromium-137.0.7151.103-3169.tgz) | 137 |
-| 1.315 | 133 [Red Hat/Oracle/Rocky Linux 8ï»¿](https://synthetic-packages.s3.amazonaws.com/Chromium/rpm/chromium-133.0.6943.141-1.el8.tgz), 136 [Red Hat/Rocky Linux 9ï»¿](https://synthetic-packages.s3.amazonaws.com/Chromium/rpm/chromium-136.0.7103.59-1.el9.tgz) | 136 [Ubuntu 20.04 and 22.04ï»¿](https://synthetic-packages.s3.amazonaws.com/Chromium/snap/chromium-136.0.7103.59-3121.tgz) | 136 |
-| 1.313[2](#fn-3-2-def) | 133 [Red Hat/Oracle/Rocky Linux 8ï»¿](https://synthetic-packages.s3.amazonaws.com/Chromium/rpm/chromium-133.0.6943.141-1.el8.tgz), 135 [Red Hat/Rocky Linux 9ï»¿](https://synthetic-packages.s3.amazonaws.com/Chromium/rpm/chromium-135.0.7049.95-1.el9.tgz) | 135 [Ubuntu 20.04 and 22.04ï»¿](https://synthetic-packages.s3.amazonaws.com/Chromium/snap/chromium-135.0.7049.95-3110.tgz) | 135 |
+| 1.329 | 142 [Red Hat/Rocky Linux 9﻿](https://synthetic-packages.s3.amazonaws.com/Chromium/rpm/chromium-142.0.7444.175-2.el9.tgz) | 142 [Ubuntu 20.04 and 22.04﻿](https://synthetic-packages.s3.amazonaws.com/Chromium/snap/chromium-142.0.7444.175-3313.tgz) | [142﻿](https://synthetic-packages.s3.amazonaws.com/Chrome/chrome-for-testing-linux64/chrome-for-testing-linux64-142.0.7444.175.zip) |
+| 1.327 | 141 [Red Hat/Rocky Linux 9﻿](https://synthetic-packages.s3.amazonaws.com/Chromium/rpm/chromium-141.0.7390.122-1.el9.tgz) | 141 [Ubuntu 20.04 and 22.04﻿](https://synthetic-packages.s3.amazonaws.com/Chromium/snap/chromium-141.0.7390.122-3285.tgz) | [141﻿](https://synthetic-packages.s3.amazonaws.com/Chrome/chrome-for-testing-linux64/chrome-for-testing-linux64-141.0.7390.122.zip) |
+| 1.325 | 133 [Red Hat/Oracle/Rocky Linux 8﻿](https://synthetic-packages.s3.amazonaws.com/Chromium/rpm/chromium-133.0.6943.141-1.el8.tgz), 140 [Red Hat/Rocky Linux 9﻿](https://synthetic-packages.s3.amazonaws.com/Chromium/rpm/chromium-140.0.7339.185-1.el9.tgz) | 140 [Ubuntu 20.04 and 22.04﻿](https://synthetic-packages.s3.amazonaws.com/Chromium/snap/chromium-140.0.7339.185-3251.tgz) | 140 |
+| 1.323 | 133 [Red Hat/Oracle/Rocky Linux 8﻿](https://synthetic-packages.s3.amazonaws.com/Chromium/rpm/chromium-133.0.6943.141-1.el8.tgz), 139 [Red Hat/Rocky Linux 9﻿](https://synthetic-packages.s3.amazonaws.com/Chromium/rpm/chromium-139.0.7258.138-1.el9.tgz) | 139 [Ubuntu 20.04 and 22.04﻿](https://synthetic-packages.s3.amazonaws.com/Chromium/snap/chromium-139.0.7258.138-3235.tgz) | 139 |
+| 1.321 | 133 [Red Hat/Oracle/Rocky Linux 8﻿](https://synthetic-packages.s3.amazonaws.com/Chromium/rpm/chromium-133.0.6943.141-1.el8.tgz), 138 [Red Hat/Rocky Linux 9﻿](https://synthetic-packages.s3.amazonaws.com/Chromium/rpm/chromium-138.0.7204.157-1.el9.tgz) | 138 [Ubuntu 20.04 and 22.04﻿](https://synthetic-packages.s3.amazonaws.com/Chromium/snap/chromium-138.0.7204.157-3203.tgz) | 138 |
+| 1.319 | 133 [Red Hat/Oracle/Rocky Linux 8﻿](https://synthetic-packages.s3.amazonaws.com/Chromium/rpm/chromium-133.0.6943.141-1.el8.tgz), 138 [Red Hat/Rocky Linux 9﻿](https://synthetic-packages.s3.amazonaws.com/Chromium/rpm/chromium-138.0.7204.100-1.el9.tgz) | 138 [Ubuntu 20.04 and 22.04﻿](https://synthetic-packages.s3.amazonaws.com/Chromium/snap/chromium-138.0.7204.100-3199.tgz) | 138 |
+| 1.317 | 133 [Red Hat/Oracle/Rocky Linux 8﻿](https://synthetic-packages.s3.amazonaws.com/Chromium/rpm/chromium-133.0.6943.141-1.el8.tgz), 137 [Red Hat/Rocky Linux 9﻿](https://synthetic-packages.s3.amazonaws.com/Chromium/rpm/chromium-137.0.7151.103-1.el9.tgz) | 137 [Ubuntu 20.04 and 22.04﻿](https://synthetic-packages.s3.amazonaws.com/Chromium/snap/chromium-137.0.7151.103-3169.tgz) | 137 |
 
 1
-
-Introduced support for Ubuntu 24.
-
-2
-
-Introduced support for Oracle Linux 9.
-
-3
 
 Ubuntu Server 20.04 and 22.04 migrated to use Chrome for Testing.
 
@@ -183,9 +174,9 @@ Ubuntu Server 20.04 and 22.04 migrated to use Chrome for Testing.
 
 If not configured correctly, the File Access Policy Daemon (`fapolicyd`) can potentially affect Dynatrace Synthetic monitoring capabilities. Similarly to antivirus or anti-malware software, `fapolicyd` might block the browser or Dynatrace processes responsible for executing synthetic monitors.
 
-To ensure proper stability and performance, consider adding directories and processes to the allowed list or excluding them from the policy. For more detailed information, refer to the [Red Hat documentation on fapolicydï»¿](https://dt-url.net/tn1v0z1x). Prior to contacting Dynatrace support to troubleshoot issues with your private synthetic locations, make sure that `fapolicyd` was excluded as a source of problems.
+To ensure proper stability and performance, consider adding directories and processes to the allowed list or excluding them from the policy. For more detailed information, refer to the [Red Hat documentation on fapolicyd﻿](https://dt-url.net/tn1v0z1x). Prior to contacting Dynatrace support to troubleshoot issues with your private synthetic locations, make sure that `fapolicyd` was excluded as a source of problems.
 
-File Access Policy Daemon framework can be run in debug mode where all denials are logged, making tracking down missing rules and troubleshooting issues easier. For more detailed information about its debug mode, refer to the [documentation on troubleshooting problems related to fapolicydï»¿](https://dt-url.net/e943wcc)
+File Access Policy Daemon framework can be run in debug mode where all denials are logged, making tracking down missing rules and troubleshooting issues easier. For more detailed information about its debug mode, refer to the [documentation on troubleshooting problems related to fapolicyd﻿](https://dt-url.net/e943wcc)
 
 ## Hardware requirements
 
@@ -434,7 +425,7 @@ The table below shows the default installation locations (Linux and Windows) of 
 
 1
 
-For an XS ActiveGateâmore space is required for execution logs on larger ActiveGates.
+For an XS ActiveGate—more space is required for execution logs on larger ActiveGates.
 
 #### Permissions for `/tmp`
 

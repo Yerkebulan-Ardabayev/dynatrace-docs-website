@@ -1,7 +1,6 @@
 ---
 title: Mission Control API
 source: https://docs.dynatrace.com/managed/dynatrace-api/mission-control-api
-scraped: 2026-05-12T12:07:23.732507
 ---
 
 # Mission Control API

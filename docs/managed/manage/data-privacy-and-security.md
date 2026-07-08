@@ -1,7 +1,6 @@
 ---
 title: Data privacy and security
 source: https://docs.dynatrace.com/managed/manage/data-privacy-and-security
-scraped: 2026-05-12T11:03:21.782738
 ---
 
 # Data privacy and security
@@ -18,7 +17,7 @@ At Dynatrace, we take our responsibility to safeguard your data seriously. Have 
 
 ### Data privacy overview
 
-[Dynatrace policies in Trust Centerï»¿](https://www.dynatrace.com/company/trust-center/#general-data-protection-regulation-gdpr)
+[Dynatrace policies in Trust Center﻿](https://www.dynatrace.com/company/trust-center/#general-data-protection-regulation-gdpr)
 
 [Data protection at Dynatrace](/managed/manage/data-privacy-and-security/data-privacy/data-protection "Find out how Dynatrace ensures that your data is secured.")
 
@@ -46,29 +45,29 @@ At Dynatrace, we take our responsibility to safeguard your data seriously. Have 
 
 [Dynatrace web UI cookies](/managed/manage/data-privacy-and-security/data-privacy/web-ui-cookies "Learn about the cookies used by Dynatrace web UI.")
 
-[Data retention periods](/managed/manage/data-privacy-and-security/data-privacy/data-retention-periods "Check retention times for various data types.")
+[Data retention periods](/managed/manage/data-privacy-and-security/data-privacy/data-retention-periods "Review default and configurable retention periods for service, RUM Classic, synthetic, Log Monitoring, metric, diagnostic, and security data in Dynatrace Managed.")
 
-[Adaptive Data Retention](/managed/manage/data-privacy-and-security/data-privacy/adaptive-data-retention "Find out how the retention time for the data stored in the transaction, Session Replay, and Log monitoring storages is adjusted.")
+[Adaptive data retention](/managed/manage/data-privacy-and-security/data-privacy/adaptive-data-retention "Learn how Dynatrace Managed adapts transaction, Session Replay, and Log Monitoring retention when environments exceed quota or disk limits.")
 
 ### Real User Monitoring
 
-[Configure data privacy settings for web applications](/managed/observe/digital-experience/web-applications/additional-configuration/configure-real-user-monitoring-according-to-gdpr "Learn about the privacy settings that Dynatrace provides to ensure that your web applications comply with the data-privacy regulations of your region.")
+[Configure data privacy settings for web applications in RUM Classic](/managed/observe/digital-experience/rum-classic/web-applications/additional-configuration/configure-real-user-monitoring-according-to-gdpr "Learn about the privacy settings that Dynatrace provides to ensure that your web applications comply with the data-privacy regulations of your region.")
 
-[Configure data privacy settings for mobile applications](/managed/observe/digital-experience/mobile-applications/additional-configuration/configure-rum-privacy-mobile "Leverage privacy settings that Dynatrace provides to ensure that your mobile apps comply with the data-privacy regulations of your region.")
+[Configure data privacy settings for mobile applications in RUM Classic](/managed/observe/digital-experience/rum-classic/mobile-applications/additional-configuration/configure-rum-privacy-mobile "Leverage privacy settings that Dynatrace provides to ensure that your mobile apps comply with the data-privacy regulations of your region.")
 
 [Cookies and client-side storage for RUM and Session Replay](/managed/manage/data-privacy-and-security/data-privacy/rum-cookies-and-web-storage "Learn how Dynatrace RUM and Session Replay use cookies, web storage, and IndexedDB.")
 
-[Define URL cleanup rules](/managed/observe/digital-experience/web-applications/analyze-and-use/waterfall-analysis#define-url-cleanup-rules "Learn how to analyze all user action monitoring data through waterfall analysis.")
+[Define URL cleanup rules](/managed/observe/digital-experience/rum-classic/web-applications/analyze-and-use/waterfall-analysis#define-url-cleanup-rules "Learn how to analyze all user action monitoring data through waterfall analysis.")
 
-[Create custom user action names for web applications](/managed/observe/digital-experience/web-applications/initial-setup/create-custom-names-for-user-actions "Customize automatically generated user action names for your web applications.")
+[Create custom user action names for web applications in RUM Classic](/managed/observe/digital-experience/rum-classic/web-applications/initial-setup/create-custom-names-for-user-actions "Customize automatically generated user action names for your web applications.")
 
 [Personal data captured for RUM](/managed/manage/data-privacy-and-security/data-privacy/personal-data-captured-by-dynatrace#real-user-monitoring-rum "Find out what types of end-user data may be captured during Dynatrace monitoring and the methods that are available for masking personal end-user data.")
 
-[Data retention periods](/managed/manage/data-privacy-and-security/data-privacy/data-retention-periods "Check retention times for various data types.")
+[Data retention periods](/managed/manage/data-privacy-and-security/data-privacy/data-retention-periods "Review default and configurable retention periods for service, RUM Classic, synthetic, Log Monitoring, metric, diagnostic, and security data in Dynatrace Managed.")
 
-[Detection of IP addresses, geolocations, and user agents](/managed/observe/digital-experience/rum-concepts/detection-of-ip-addresses-locations-and-user-agents "Dynatrace detects IP addresses and geolocations like a city, region, and country as well as browsers, devices, and operating systems.")
+[Detection of IP addresses, geolocations, and user agents in RUM Classic](/managed/observe/digital-experience/rum-classic/rum-concepts/detection-of-ip-addresses-locations-and-user-agents "Dynatrace detects IP addresses and geolocations like a city, region, and country as well as browsers, devices, and operating systems.")
 
-[Firewall constraints for RUM](/managed/observe/digital-experience/web-applications/initial-setup/firewall-constraints-for-rum#cookies "Find out how to make sure that Real User Monitoring data passes through your firewall.")
+[Infrastructure pass-through requirements for RUM Classic](/managed/observe/digital-experience/rum-classic/web-applications/initial-setup/infrastructure-pass-through-requirements-classic#cookies-web "Learn which requests, headers, and cookies must pass through your infrastructure for RUM to work as expected.")
 
 [User privacy for iOS](/managed/manage/data-privacy-and-security/data-privacy/user-privacy-for-ios "Learn about what kind of data OneAgent collects when you need to report your app privacy to Apple.")
 
@@ -76,15 +75,15 @@ At Dynatrace, we take our responsibility to safeguard your data seriously. Have 
 
 ### Session Replay
 
-[Configure Session Replay for web applications](/managed/observe/digital-experience/session-replay/configure-session-replay-web "Configure monitoring consumption and data privacy settings for Session Replay.")
+[Configure Session Replay Classic for web applications](/managed/observe/digital-experience/session-replay/configure-session-replay-web "Configure monitoring consumption and data privacy settings for Session Replay Classic.")
 
-[Mask sensitive data for Session Replay on iOS](/managed/observe/digital-experience/session-replay/session-replay-ios#mask-sensitive-data "Prerequisites and the procedure for enabling Session Replay for your iOS apps.")
+[Mask sensitive data for Session Replay on iOS](/managed/observe/digital-experience/session-replay/session-replay-ios#mask-sensitive-data "Prerequisites and the procedure for enabling Session Replay Classic for your iOS apps.")
 
-[Mask sensitive data for Session Replay on Android](/managed/observe/digital-experience/session-replay/session-replay-android#mask-sensitive-data "Set up Session Replay for your Android apps to learn which actions your users perform.")
+[Mask sensitive data for Session Replay on Android](/managed/observe/digital-experience/session-replay/session-replay-android#mask-sensitive-data "Set up Session Replay Classic for your Android apps to learn which actions your users perform.")
 
 [Personal data captured for Session Replay](/managed/manage/data-privacy-and-security/data-privacy/personal-data-captured-by-dynatrace#session-replay "Find out what types of end-user data may be captured during Dynatrace monitoring and the methods that are available for masking personal end-user data.")
 
-[Data retention periods](/managed/manage/data-privacy-and-security/data-privacy/data-retention-periods#rum-session-replay "Check retention times for various data types.")
+[Data retention periods](/managed/manage/data-privacy-and-security/data-privacy/data-retention-periods#rum-session-replay "Review default and configurable retention periods for service, RUM Classic, synthetic, Log Monitoring, metric, diagnostic, and security data in Dynatrace Managed.")
 
 ### Data privacy APIs
 

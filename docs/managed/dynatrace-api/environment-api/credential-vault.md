@@ -1,7 +1,6 @@
 ---
 title: Credential vault API
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/credential-vault
-scraped: 2026-05-12T11:11:40.650904
 ---
 
 # Credential vault API
@@ -29,5 +28,5 @@ Delete the configuration of credentials you no longer need.](/managed/dynatrace-
 
 ## Related topics
 
-* [Configure browser monitors](/managed/observe/digital-experience/synthetic-monitoring/browser-monitors/configure-browser-monitors "Learn about configuring browser monitors and clickpaths.")
-* [Configure HTTP monitors](/managed/observe/digital-experience/synthetic-monitoring/http-monitors-classic/configure-http-monitors-classic "Learn about configuring HTTP monitors.")
+* [Configure browser monitors in Classic](/managed/observe/digital-experience/synthetic-monitoring/browser-monitors/configure-browser-monitors "Learn about configuring browser monitors and clickpaths.")
+* [Configure HTTP monitors in Classic](/managed/observe/digital-experience/synthetic-monitoring/http-monitors-classic/configure-http-monitors-classic "Learn about configuring HTTP monitors.")

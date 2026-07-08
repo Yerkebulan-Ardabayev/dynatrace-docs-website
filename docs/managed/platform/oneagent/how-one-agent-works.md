@@ -1,7 +1,6 @@
 ---
 title: How OneAgent works
 source: https://docs.dynatrace.com/managed/platform/oneagent/how-one-agent-works
-scraped: 2026-05-12T11:07:19.030752
 ---
 
 # How OneAgent works
@@ -19,7 +18,7 @@ In addition, OneAgent detects which processes run on each host and collects perf
 
 ## Real user monitoring
 
-To deliver Real User Monitoring, OneAgent injects a JavaScript tag into the HTML of each application page that is rendered by your web servers. With these JavaScript tags in placeâalong with a corresponding module that is automatically installed on your web server and requires no configurationâOneAgent is able to monitor the response times and performance experienced by your customers in their mobile and desktop browsers.
+To deliver Real User Monitoring, OneAgent injects a JavaScript tag into the HTML of each application page that is rendered by your web servers. With these JavaScript tags in place—along with a corresponding module that is automatically installed on your web server and requires no configuration—OneAgent is able to monitor the response times and performance experienced by your customers in their mobile and desktop browsers.
 
 ## Log monitoring
 

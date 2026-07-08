@@ -1,7 +1,6 @@
 ---
 title: Log events (Logs Classic)
 source: https://docs.dynatrace.com/managed/analyze-explore-automate/log-monitoring/analyze-log-data/log-events
-scraped: 2026-05-12T11:13:18.643861
 ---
 
 # Log events (Logs Classic)
@@ -16,7 +15,7 @@ Log Monitoring Classic
 
 Dynatrace Log Monitoring gives you the ability to create log events based on log data and use them in problem detection.
 
-Log event pricing is based on the Davis data units (DDUs) model. Check [DDUs for custom Davis events](/managed/license/monitoring-consumption-classic/davis-data-units/ddu-events "Understand how to calculate Davis data unit consumption and costs related to custom-configured and custom-ingested events.") to find out how you can estimate and track DDU consumption for log events.
+Log event pricing is based on the Davis data units (DDUs) model. Check [DDUs for custom Davis events](/managed/license/classic-licensing/davis-data-units/ddu-events "Understand how to calculate Davis data unit consumption and costs related to custom-configured and custom-ingested events.") to find out how you can estimate and track DDU consumption for log events.
 
 When Dynatrace ingests log data, it applies the query specified in the log event definition. Every matched occurrence triggers a log event that can be configured to individually create a problem for each triggered log event or can be merged into one problem.
 

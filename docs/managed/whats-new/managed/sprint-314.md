@@ -1,7 +1,6 @@
 ---
 title: Dynatrace Managed release notes version 1.314
 source: https://docs.dynatrace.com/managed/whats-new/managed/sprint-314
-scraped: 2026-05-12T11:08:02.406747
 ---
 
 # Dynatrace Managed release notes version 1.314
@@ -68,7 +67,7 @@ Application Observability
 
 ### Improved management of calculated service metrics
 
-Managing and browsing your calculated service metrics is now easier and more efficientâespecially for environments with many metrics. Hereâs whatâs new in the Calculated service metrics settings:
+Managing and browsing your calculated service metrics is now easier and more efficient—especially for environments with many metrics. Here’s what’s new in the Calculated service metrics settings:
 
 * **Filter by status**: Quickly identify calculated service metrics that are enabled or disabled.
 * **Sort effortlessly**: Sort your metrics based on their status or Grail enablement.
@@ -92,7 +91,7 @@ In general, we recommend the deployment of complete synthetic private locations 
 
 If you don't need to run browser monitors, consider deploying your location in browserless mode. This mode deploys the location (or ActiveGate belonging to it) without a browser, reducing hardware requirements. However, browser monitors can't run on a browserless location.
 
-Consider browserless locations as an alternative to standard synthetic private locations when youâre focused purely on:
+Consider browserless locations as an alternative to standard synthetic private locations when you’re focused purely on:
 
 * Network and infrastructure use cases (using NAM monitors)
 * API monitoring (using HTTP monitors)
@@ -108,41 +107,23 @@ To learn about changes to the Dynatrace API in this release, see:
 
 ### Future Dynatrace Managed operating systems support changes
 
-##### The following operating systems will no longer be supported starting 01 June 2026
-
-* Linux: Oracle Linux 9.6
-
-  + x86-64
-  + [Vendor announcementï»¿](https://www.oracle.com/a/ocom/docs/elsp-lifetime-069338.pdf)
-* Linux: Rocky Linux 9.6
-
-  + x86-64
-  + [Vendor announcementï»¿](https://endoflife.date/rocky-linux)
-
-##### The following operating systems will no longer be supported starting 01 July 2026
-
-* Linux: SUSE Enterprise Linux 15.3
-
-  + x86-64
-  + [Vendor announcementï»¿](https://www.suse.com/lifecycle/)
-
 ##### The following operating systems will no longer be supported starting 01 November 2026
 
 * Linux: Red Hat Enterprise Linux 9.4, 9.7
 
   + x86-64
-  + [Vendor announcementï»¿](https://access.redhat.com/support/policy/updates/errata)
+  + [Vendor announcement﻿](https://access.redhat.com/support/policy/updates/errata)
 * Linux: Ubuntu 16.04
 
   + x86-64
-  + [Vendor announcementï»¿](https://ubuntu.com/about/release-cycle)
+  + [Vendor announcement﻿](https://ubuntu.com/about/release-cycle)
 
 ##### The following operating systems will no longer be supported starting 01 January 2027
 
 * Linux: Amazon Linux 2
 
   + x86-64
-  + [Vendor announcementï»¿](https://aws.amazon.com/linux/)
+  + [Vendor announcement﻿](https://aws.amazon.com/linux/)
 
 ### Past Dynatrace Managed operating systems support changes
 
@@ -151,21 +132,39 @@ To learn about changes to the Dynatrace API in this release, see:
 * Linux: Red Hat Enterprise Linux 8.8, 9.2, 9.5
 
   + x86-64
-  + [Vendor announcementï»¿](https://access.redhat.com/support/policy/updates/errata)
+  + [Vendor announcement﻿](https://access.redhat.com/support/policy/updates/errata)
 * Linux: Oracle Linux 9.5
 
   + x86-64
-  + [Vendor announcementï»¿](https://www.oracle.com/a/ocom/docs/elsp-lifetime-069338.pdf)
+  + [Vendor announcement﻿](https://www.oracle.com/a/ocom/docs/elsp-lifetime-069338.pdf)
 * Linux: Rocky Linux 9.5
 
   + x86-64
-  + [Vendor announcementï»¿](https://endoflife.date/rocky-linux)
+  + [Vendor announcement﻿](https://endoflife.date/rocky-linux)
 
 ##### The following operating systems are no longer supported since 01 January 2026
 
 * Linux: Debian 10
 
   + x86-64
-  + [Vendor announcementï»¿](https://wiki.debian.org/DebianReleases)
+  + [Vendor announcement﻿](https://wiki.debian.org/DebianReleases)
+
+##### The following operating systems are no longer supported since 01 June 2026
+
+* Linux: Oracle Linux 9.6
+
+  + x86-64
+  + [Vendor announcement﻿](https://www.oracle.com/a/ocom/docs/elsp-lifetime-069338.pdf)
+* Linux: Rocky Linux 9.6
+
+  + x86-64
+  + [Vendor announcement﻿](https://endoflife.date/rocky-linux)
+
+##### The following operating systems are no longer supported since 01 July 2026
+
+* Linux: SUSE Enterprise Linux 15.3
+
+  + x86-64
+  + [Vendor announcement﻿](https://www.suse.com/lifecycle/)
 
 ## Resolved issues

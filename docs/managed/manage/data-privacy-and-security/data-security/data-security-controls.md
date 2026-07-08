@@ -1,7 +1,6 @@
 ---
 title: Data security controls
 source: https://docs.dynatrace.com/managed/manage/data-privacy-and-security/data-security/data-security-controls
-scraped: 2026-05-12T11:08:29.544606
 ---
 
 # Data security controls
@@ -15,7 +14,7 @@ scraped: 2026-05-12T11:08:29.544606
 
 Your monitoring data remains in your own on-premise data center.
 
-Also see [Data retention periods](/managed/manage/data-privacy-and-security/data-privacy/data-retention-periods "Check retention times for various data types.").
+Also see [Data retention periods](/managed/manage/data-privacy-and-security/data-privacy/data-retention-periods "Review default and configurable retention periods for service, RUM Classic, synthetic, Log Monitoring, metric, diagnostic, and security data in Dynatrace Managed.").
 
 ## Dynatrace components
 
@@ -65,7 +64,7 @@ Integrity verification of Dynatrace components
 
 ## Business continuity and high availability
 
-A high-availability setup can be achieved by setting up multiple cluster nodes. The Dynatrace Mission Control team monitors the service quality and hardware utilization of Dynatrace Managed clusters. It uses high-availability multi-node setup and sends alerts when additional hardware is required for monitoring the environment. For more details, download the [Managed SLAï»¿](https://www.dynatrace.com/company/trust-center/sla/managed/).
+A high-availability setup can be achieved by setting up multiple cluster nodes. The Dynatrace Mission Control team monitors the service quality and hardware utilization of Dynatrace Managed clusters. It uses high-availability multi-node setup and sends alerts when additional hardware is required for monitoring the environment. For more details, download the [Managed SLA﻿](https://www.dynatrace.com/company/trust-center/sla/managed/).
 
 ## Data backups and disaster recovery
 
@@ -91,7 +90,7 @@ Rollout of updates and hot fixes
 
 ## Data access for Dynatrace Support
 
-You have complete control over the [remote access](/managed/managed-cluster/configuration/cluster-remote-access "Learn how to grant permission for remote access.") to your cluster in case support is required. You can turn off remote access or configure it to require approval before access is granted. Dynatrace Support has access to Dynatrace Managed software (application-level) only, not to your underlying infrastructure or the system level.
+You have complete control over the [remote access](/managed/managed-cluster/configuration/configure-cluster-remote-access "Configure remote access permissions for your Managed Cluster, including scope options and role assignments for Dynatrace product experts.") to your cluster in case support is required. You can turn off remote access or configure it to require approval before access is granted. Dynatrace Support has access to Dynatrace Managed software (application-level) only, not to your underlying infrastructure or the system level.
 
 Remote access is established by Dynatrace Mission Control, which is only accessible from within the Dynatrace corporate network. Remote access by Dynatrace Mission Control requires multi-factor authentication. Each access and any changes made are audit-logged and fully accessible.
 
@@ -117,4 +116,4 @@ Having achieved several global and local certifications and accreditations demon
 
 Dynatrace also benefits from secure Amazon, Azure, and Google data centers that are certified for ISO 27001, PCI-DSS Level 1, and SOC 1/SSAE-16.
 
-For the full list of certifications, see [Trust Centerï»¿](https://www.dynatrace.com/company/trust-center/).
+For the full list of certifications, see [Trust Center﻿](https://www.dynatrace.com/company/trust-center/).

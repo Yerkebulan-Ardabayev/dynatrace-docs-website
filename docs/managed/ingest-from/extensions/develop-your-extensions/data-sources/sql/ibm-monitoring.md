@@ -1,7 +1,6 @@
 ---
 title: IBM Database monitoring configuration
 source: https://docs.dynatrace.com/managed/ingest-from/extensions/develop-your-extensions/data-sources/sql/ibm-monitoring
-scraped: 2026-05-12T12:08:24.344520
 ---
 
 # IBM Database monitoring configuration
@@ -246,8 +245,8 @@ Authentication details passed to the Dynatrace API when activating monitoring co
 
 The credential vault authentication type provides a more secure approach to using extensions by securely storing and managing user credentials. To use this, you must be the owner of the credentials and have a credential vault that meets the following criteria:
 
-* **Credential type**âUser and password
-* **Credential scope**âSynthetic (in case of external vault usage) and Extension authentication scopes enabled
+* **Credential type**—User and password
+* **Credential scope**—Synthetic (in case of external vault usage) and Extension authentication scopes enabled
 * **Owner access only** is enabled only for credential owners
 
 ```
@@ -305,18 +304,6 @@ However, if you need to use a local truststore for certificates not globally rec
    ```
    keytool -import -keystore sqlds_truststore -file .\ora.crt -alias oracle
    ```
-
-#### Validate SSL certificates
-
-ActiveGate version 1.269+
-
-The certificate is additionally validated with hostname, which means that the domain from the certificate must match the one from the endpoint passed in the monitoring configuration.
-
-Enable this option when connecting to databases using custom certificates.
-
-```
-"validateCertificates": true
-```
 
 Client certificates are not supported for SQL data sources. To authenticate securely, use basic authentication with SSL enabled. For details, see [Authentication](#authentication).
 

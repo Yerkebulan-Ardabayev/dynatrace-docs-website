@@ -1,7 +1,6 @@
 ---
 title: Configure monitoring for namespaces and pods
 source: https://docs.dynatrace.com/managed/ingest-from/setup-on-k8s/guides/deployment-and-configuration/monitoring-and-instrumentation/annotate
-scraped: 2026-05-12T11:37:42.018570
 ---
 
 # Configure monitoring for namespaces and pods
@@ -146,7 +145,7 @@ matchLabels:
 dt-monitoring: "true"
 ```
 
-For more details about configuring labels for selective monitoring, see [Labels and selectorsï»¿](https://dt-url.net/vj038vk).
+For more details about configuring labels for selective monitoring, see [Labels and selectors﻿](https://dt-url.net/vj038vk).
 
 To add exceptions for specific pods within the selected namespaces, you can [annotate the respective pods](#podexclusion).
 
@@ -237,7 +236,7 @@ values:
 
 The webhook will inject every namespace that matches all `namespaceselector`.
 
-For more details, see [Resources that support set-based requirementsï»¿](https://dt-url.net/hi03yvm).
+For more details, see [Resources that support set-based requirements﻿](https://dt-url.net/hi03yvm).
 
 ## Exclude specific pods in monitored namespaces
 

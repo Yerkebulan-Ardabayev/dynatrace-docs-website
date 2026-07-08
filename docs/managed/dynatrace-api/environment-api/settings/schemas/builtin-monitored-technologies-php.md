@@ -1,7 +1,6 @@
 ---
 title: Settings API - PHP schema table
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/settings/schemas/builtin-monitored-technologies-php
-scraped: 2026-05-12T11:42:37.679277
 ---
 
 # Settings API - PHP schema table

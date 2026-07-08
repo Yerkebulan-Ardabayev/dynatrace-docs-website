@@ -1,7 +1,6 @@
 ---
 title: Log Monitoring
 source: https://docs.dynatrace.com/managed/analyze-explore-automate/log-monitoring
-scraped: 2026-05-12T11:03:59.010459
 ---
 
 # Log Monitoring
@@ -9,13 +8,13 @@ scraped: 2026-05-12T11:03:59.010459
 # Log Monitoring
 
 * 2-min read
-* Updated on Nov 20, 2025
+* Updated on Jun 09, 2026
 
 With Log Monitoring as a part of the Dynatrace platform, you gain direct access to the log content of all your mission-critical applications, infrastructure and cloud platforms. You can create custom log metrics for smarter and faster troubleshooting. You will be able to understand log data in the context of your full stack, including real user impacts.
 
-![LMC - Ingestion channel overview](https://dt-cdn.net/images/lmc-ingestion-channel-overview-2500-abfee3614c.png)
+![Ingestion channel overview](https://cdn.bfldr.com/B686QPH3/as/7xtvrh2vnw8k2grsfqvzmn9r/Ingestion_channel_overview_-_Light_Mode?auto=webp&format=png&position=1)
 
-LMC - Ingestion channel overview
+Ingestion channel overview
 
 [### Ingest & Processing
 
@@ -71,5 +70,5 @@ Use the Dynatrace API to send log data to Dynatrace and quickly search, aggregat
 
 ## Related topics
 
-* [Log monitoringï»¿](https://www.dynatrace.com/platform/log-monitoring/)
-* [DDUs for Log Monitoring Classic](/managed/license/monitoring-consumption-classic/davis-data-units/log-monitoring-consumption "Understand how the volume of DDU consumption is calculated for Dynatrace Log Monitoring Classic.")
+* [Log monitoring﻿](https://www.dynatrace.com/platform/log-monitoring/)
+* [DDUs for Log Monitoring Classic](/managed/license/classic-licensing/davis-data-units/log-monitoring-consumption "Understand how the volume of DDU consumption is calculated for Dynatrace Log Monitoring Classic.")

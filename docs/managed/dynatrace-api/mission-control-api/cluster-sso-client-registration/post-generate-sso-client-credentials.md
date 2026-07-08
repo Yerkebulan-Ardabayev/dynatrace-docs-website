@@ -1,7 +1,6 @@
 ---
 title: Generate SSO client credentials
 source: https://docs.dynatrace.com/managed/dynatrace-api/mission-control-api/cluster-sso-client-registration/post-generate-sso-client-credentials
-scraped: 2026-05-12T12:14:15.317269
 ---
 
 # Generate SSO client credentials

@@ -1,7 +1,6 @@
 ---
 title: Subscription overview (Dynatrace Platform Subscription pre-2023)
 source: https://docs.dynatrace.com/managed/manage/account-management/license-subscription/subscription-overview-dps-la
-scraped: 2026-05-12T11:37:18.051600
 ---
 
 # Subscription overview (Dynatrace Platform Subscription pre-2023)

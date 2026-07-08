@@ -1,7 +1,6 @@
 ---
 title: Guides to using Dynatrace Configuration as Code via Monaco
 source: https://docs.dynatrace.com/managed/deliver/configuration-as-code/monaco/guides
-scraped: 2026-05-12T11:21:36.901219
 ---
 
 # Guides to using Dynatrace Configuration as Code via Monaco

@@ -1,7 +1,6 @@
 ---
 title: Preview and Early Access releases for Dynatrace API
 source: https://docs.dynatrace.com/managed/dynatrace-api/basics/preview-early-access
-scraped: 2026-05-12T11:04:50.307576
 ---
 
 # Preview and Early Access releases for Dynatrace API
@@ -29,7 +28,7 @@ Early Access
 
 A Preview provides you with access to new features so that we can hear your feedback and ultimately deliver features that exactly meet your needs. Preview requests aren't meant to be used in production environments.
 
-Preview requests aren't publicly availableâyou need to sign up for the respective Preview. See [Preview and Early Access releases](/managed/whats-new/preview-releases "Learn about our Preview releases and how you can participate in them.") to learn more about conditions and how to sign up.
+Preview requests aren't publicly available—you need to sign up for the respective Preview. See [Preview and Early Access releases](/managed/whats-new/preview-releases "Learn about our Preview releases and how you can participate in them.") to learn more about conditions and how to sign up.
 
 Preview requests have this mark in the API Explorer:
 

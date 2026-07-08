@@ -1,7 +1,6 @@
 ---
 title: Settings API - Container monitoring schema table
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/settings/schemas/builtin-container-technology
-scraped: 2026-05-12T11:47:42.869431
 ---
 
 # Settings API - Container monitoring schema table
@@ -14,7 +13,7 @@ scraped: 2026-05-12T11:47:42.869431
 
 Enable/disable automatic injection of code modules into specific containers.
 
-Dynatrace OneAgent automatically monitors all processes that are running on your monitored hosts. Within container environments (for example, Kubernetes, OpenShift, Cloud Foundry, or Docker), OneAgent automatically injects code modules into containerized processes to provide out of the box full-stack visibility into applications running within containers. Enabling auto-injection provides deep monitoring for all processes within containers, at both the request- and PurePath levels. If disabled, OneAgent will not inject into a container of a specific type at all. Dynatrace provides complete control over automatic injection of code modules into the container technologies listed below. For full details see [Supported container versionsï»¿](https://dt-url.net/lmy0p0j "Visit Dynatrace support center").
+Dynatrace OneAgent automatically monitors all processes that are running on your monitored hosts. Within container environments (for example, Kubernetes, OpenShift, Cloud Foundry, or Docker), OneAgent automatically injects code modules into containerized processes to provide out of the box full-stack visibility into applications running within containers. Enabling auto-injection provides deep monitoring for all processes within containers, at both the request- and PurePath levels. If disabled, OneAgent will not inject into a container of a specific type at all. Dynatrace provides complete control over automatic injection of code modules into the container technologies listed below. For full details see [Supported container versions﻿](https://dt-url.net/lmy0p0j "Visit Dynatrace support center").
 
 | Schema ID | Schema groups | Scope |
 | --- | --- | --- |

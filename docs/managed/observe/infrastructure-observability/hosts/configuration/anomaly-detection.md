@@ -1,7 +1,6 @@
 ---
 title: Host anomaly detection
 source: https://docs.dynatrace.com/managed/observe/infrastructure-observability/hosts/configuration/anomaly-detection
-scraped: 2026-05-12T11:38:34.936539
 ---
 
 # Host anomaly detection
@@ -21,7 +20,7 @@ You can configure host anomaly detection, including problem and event thresholds
 
 ## Access anomaly detection
 
-In Dynatrace, you can configure anomaly detection at multiple levelsâenvironment, host, host group, or for specific disks.
+In Dynatrace, you can configure anomaly detection at multiple levels—environment, host, host group, or for specific disks.
 
 Host level
 
@@ -31,7 +30,7 @@ Environment level
 
 1. Go to **Hosts**.
 2. Find and select your host to display the host overview page.
-3. In the upper-right corner of the host overview page, select **More** (**â¦**) > **Settings**.
+3. In the upper-right corner of the host overview page, select **More** (**…**) > **Settings**.
 
 4. In the host settings, select **Anomaly detection** > **Infrastructure**.
 
@@ -78,8 +77,8 @@ You can set the alerting/dealerting event thresholds for the anomaly detection s
 
 ### Alerting event thresholds
 
-* **Violating samples**âThe number of violating 10-second samples that raise an alert. The value must be higher than the number of samples.
-* **Evaluation window size for violating samples**âThe number of 10-second samples that form the sliding evaluation window to detect violating samples.
+* **Violating samples**—The number of violating 10-second samples that raise an alert. The value must be higher than the number of samples.
+* **Evaluation window size for violating samples**—The number of 10-second samples that form the sliding evaluation window to detect violating samples.
 
 Examples
 
@@ -98,8 +97,8 @@ Examples
 
 ### Dealerting event thresholds
 
-* **Dealerting samples**âThe number of non-violating 10-second samples that deactivate the alert. The value must be lower than the number of samples.
-* **Evaluation window size for dealerting samples**âThe number of 10-second samples that form the sliding evaluation window to detect deactivated samples.
+* **Dealerting samples**—The number of non-violating 10-second samples that deactivate the alert. The value must be lower than the number of samples.
+* **Evaluation window size for dealerting samples**—The number of 10-second samples that form the sliding evaluation window to detect deactivated samples.
 
 The event thresholds are not available for the **Detect host or monitoring connection lost problems** and **Detect high retransmission rate** settings.
 
@@ -189,7 +188,7 @@ You can define policies on the host, host group, and environment levels.
 
 ## Anomaly detection configuration hierarchy
 
-You can configure anomaly detection rules and policies on multiple levelsâhost, host group, environment.
+You can configure anomaly detection rules and policies on multiple levels—host, host group, environment.
 
 When you have multiple rules affecting the same entity, the most specific rule prevails over more generic rules.
 

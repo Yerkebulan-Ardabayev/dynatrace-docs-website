@@ -1,7 +1,6 @@
 ---
 title: Deploy the Dynatrace Google Cloud metric integration using a Google Cloud Function (legacy)
 source: https://docs.dynatrace.com/managed/ingest-from/google-cloud-platform/legacy/deploy-with-google-cloud-function-legacy
-scraped: 2026-05-12T12:08:49.693134
 ---
 
 # Deploy the Dynatrace Google Cloud metric integration using a Google Cloud Function (legacy)
@@ -28,21 +27,21 @@ Deploy in bash
 
 ### Prerequisites
 
-* [Install yq version 4.9.8ï»¿](https://dt-url.net/411p0nlq)  
+* [Install yq version 4.9.8﻿](https://dt-url.net/411p0nlq)  
   **Example command to install yq:**
 
   ```
   sudo wget https://github.com/mikefarah/yq/releases/download/v4.9.8/yq_linux_amd64 -O /usr/bin/yq && sudo chmod +x /usr/bin/yq
   ```
-* [Install jqï»¿](https://dt-url.net/cl1203zc)
-* [Create an API tokenï»¿](https://dt-url.net/be03q3a)
-* [Enable the following permissions for the API tokenï»¿](https://dt-url.net/c023q1m): `Ingest metrics` (API v2), `Read configuration` (API v1), and `Write configuration` (API v1)
+* [Install jq﻿](https://dt-url.net/cl1203zc)
+* [Create an API token﻿](https://dt-url.net/be03q3a)
+* [Enable the following permissions for the API token﻿](https://dt-url.net/c023q1m): `Ingest metrics` (API v2), `Read configuration` (API v1), and `Write configuration` (API v1)
 * Determine the URL for your environment.
 
   + For Dynatrace SaaS: `https://<your-environment-id>.live.dynatrace.com/`
   + For Dynatrace Managed: `https://<your-domain>/e/<your-environment-id>/`
 
-  To determine `<your-environment-id>`, see [environment IDï»¿](https://dt-url.net/ej43qge).
+  To determine `<your-environment-id>`, see [environment ID﻿](https://dt-url.net/ej43qge).
 * Running the deployment script requires a list of permissions. You can create a custom role (instruction below) and use it to deploy `dynatrace-gcp-monitor`.
 
 1. Create a YAML file named `dynatrace-gcp-monitor-cloud-function-deployment-role.yaml` with the following content:
@@ -233,7 +232,7 @@ Be sure to choose one of the versions before `release-1.0.0`, as the newer versi
 wget -q "https://github.com/dynatrace-oss/dynatrace-gcp-monitor/releases/download/release-<VERSION>/setup.sh" -O setup.sh; chmod a+x *.sh; ./setup.sh
 ```
 
-The Dynatrace GCP Monitor uses [Cloud Schedulerï»¿](https://dt-url.net/n483qgj), which requires the App Engine application. If you don't have App Engine installed, the installer script will prompt you to create App Engine and select the region where you want the installer script to run.
+The Dynatrace GCP Monitor uses [Cloud Scheduler﻿](https://dt-url.net/n483qgj), which requires the App Engine application. If you don't have App Engine installed, the installer script will prompt you to create App Engine and select the region where you want the installer script to run.
 
 The installation script will prompt for the following parameters:
 
@@ -250,16 +249,16 @@ The installation script will prompt for the following parameters:
 
 ### Prerequisites
 
-* [Install jqï»¿](https://dt-url.net/cl1203zc)
-* [Install yq 4.9.xï»¿](https://dt-url.net/411p0nlq)  
+* [Install jq﻿](https://dt-url.net/cl1203zc)
+* [Install yq 4.9.x﻿](https://dt-url.net/411p0nlq)  
   **Example command to install yq:**
 
   ```
   sudo wget https://github.com/mikefarah/yq/releases/download/v4.9.8/yq_linux_amd64 -O /usr/bin/yq && sudo chmod +x /usr/bin/yq
   ```
-* [Install Google Cloud SDKï»¿](https://dt-url.net/e8110336)
-* [Create an API tokenï»¿](https://dt-url.net/be03q3a)
-* [Enable the `Ingest metrics`, `Read configuration`, and `Write configuration` permissions for the API tokenï»¿](https://dt-url.net/c023q1m)
+* [Install Google Cloud SDK﻿](https://dt-url.net/e8110336)
+* [Create an API token﻿](https://dt-url.net/be03q3a)
+* [Enable the `Ingest metrics`, `Read configuration`, and `Write configuration` permissions for the API token﻿](https://dt-url.net/c023q1m)
 * Determine the URL for your environment.
 
 **For SaaS:**  
@@ -268,7 +267,7 @@ The installation script will prompt for the following parameters:
 **For Managed:**  
 `https://<your-domain>/e/<your-environment-id>/`
 
-To determine `<your-environment-id>`, see [environment IDï»¿](https://dt-url.net/ej43qge).
+To determine `<your-environment-id>`, see [environment ID﻿](https://dt-url.net/ej43qge).
 
 * Running the deployment script requires a list of permissions. You can create a custom role (instruction below) and use it to deploy `dynatrace-gcp-monitor`.
 
@@ -454,7 +453,7 @@ Be sure to add this role to your GCP user.
 
 To deploy the Dynatrace GCP function in bash
 
-1. Restart the console and [initialize Cloud SDKï»¿](https://dt-url.net/ac43q0f).
+1. Restart the console and [initialize Cloud SDK﻿](https://dt-url.net/ac43q0f).
 
 ```
 gcloud init
@@ -466,7 +465,7 @@ gcloud init
 wget -q "https://github.com/dynatrace-oss/dynatrace-gcp-monitor/releases/download/release-<VERSION>/setup.sh" -O setup.sh; chmod a+x *.sh; ./setup.sh
 ```
 
-The Dynatrace GCP Monitor uses [Cloud Schedulerï»¿](https://dt-url.net/n483qgj), which requires the App Engine application. If you don't have App Engine installed, the installer script will prompt you to create App Engine and select the region where you want the installer script to run.
+The Dynatrace GCP Monitor uses [Cloud Scheduler﻿](https://dt-url.net/n483qgj), which requires the App Engine application. If you don't have App Engine installed, the installer script will prompt you to create App Engine and select the region where you want the installer script to run.
 
 The installation script will prompt for the following parameters:
 

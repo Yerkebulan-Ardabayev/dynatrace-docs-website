@@ -1,7 +1,6 @@
 ---
 title: Global default monitoring settings for Kubernetes/OpenShift
 source: https://docs.dynatrace.com/managed/observe/infrastructure-observability/container-platform-monitoring/kubernetes-monitoring/default-monitoring-settings
-scraped: 2026-05-12T12:07:41.616771
 ---
 
 # Global default monitoring settings for Kubernetes/OpenShift
@@ -37,7 +36,7 @@ These environment-level settings will be used as default values for all clusters
 
 To see which clusters are currently overriding these settings
 
-1. On the environment-level **Monitoring settings** page, select **More** (**â¦**) > **Hierarchy and overrides** in the upper-right corner.
+1. On the environment-level **Monitoring settings** page, select **More** (**…**) > **Hierarchy and overrides** in the upper-right corner.
 2. Review the **Hierarchy and overrides** table.
 
 For details on the settings hierarchy, see [Settings documentation](/managed/manage/settings/settings-20#scope-and-hierarchy-of-settings "Introduction to the Settings 2.0 framework").

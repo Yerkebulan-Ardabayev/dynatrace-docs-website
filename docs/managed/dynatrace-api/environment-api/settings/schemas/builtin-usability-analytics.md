@@ -1,7 +1,6 @@
 ---
 title: Settings API - Usability analytics schema table
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/settings/schemas/builtin-usability-analytics
-scraped: 2026-05-12T11:44:15.102734
 ---
 
 # Settings API - Usability analytics schema table
@@ -36,4 +35,4 @@ To execute this request, you need an access token with **Read settings** (`setti
 
 | Property | Type | Description | Required |
 | --- | --- | --- | --- |
-| Detect rage clicks `detectRageClicks` | boolean | Three or more rapid clicks within the same area of a web page are considered to be rage clicks. Rage clicks commonly reflect slow-loading or failed page resources. Rage click counts are compiled for each session and considered in the [User Experience Scoreï»¿](https://dt-url.net/39034wt) . With this setting enabled, a rage click count is compiled for each monitored user session. | Required |
+| Detect rage clicks `detectRageClicks` | boolean | Three or more rapid clicks within the same area of a web page are considered to be rage clicks. Rage clicks commonly reflect slow-loading or failed page resources. Rage click counts are compiled for each session and considered in the [User Experience Score﻿](https://dt-url.net/39034wt) . With this setting enabled, a rage click count is compiled for each monitored user session. | Required |

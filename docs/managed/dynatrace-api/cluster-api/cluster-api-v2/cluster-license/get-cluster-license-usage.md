@@ -1,7 +1,6 @@
 ---
 title: GET cluster license and billed usage
 source: https://docs.dynatrace.com/managed/dynatrace-api/cluster-api/cluster-api-v2/cluster-license/get-cluster-license-usage
-scraped: 2026-05-12T11:35:23.340597
 ---
 
 # GET cluster license and billed usage

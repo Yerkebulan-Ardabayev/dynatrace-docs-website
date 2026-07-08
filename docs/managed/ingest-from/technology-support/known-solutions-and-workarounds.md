@@ -1,7 +1,6 @@
 ---
 title: Known solutions and workarounds
 source: https://docs.dynatrace.com/managed/ingest-from/technology-support/known-solutions-and-workarounds
-scraped: 2026-05-12T11:23:17.169999
 ---
 
 # Known solutions and workarounds
@@ -21,7 +20,7 @@ OneAgent prevents startup of Elasticsearch 8.18+
 
 **Solution:**
 
-For more information, kindly visit [this pageï»¿](https://community.dynatrace.com/t5/Heads-up-from-Dynatrace/OneAgent-prevents-startup-of-Elasticsearch-8-18/ta-p/278744)
+For more information, kindly visit [this page﻿](https://community.dynatrace.com/t5/Heads-up-from-Dynatrace/OneAgent-prevents-startup-of-Elasticsearch-8-18/ta-p/278744)
 
 ## OneAgent on a SAP HANA host
 
@@ -58,7 +57,7 @@ For more information, see [OneAgent configuration via command-line interface](/m
 
 1. Go to **Hosts**.
 2. Find your HANA host and select it.
-3. Select **More** (**â¦**) > **Settings** > **Monitoring**.
+3. Select **More** (**…**) > **Settings** > **Monitoring**.
 4. Turn off **Full-stack monitoring** and **Auto-injection**.
 
 ## Alpine Linux/musl-libc, Memory allocation
@@ -137,7 +136,7 @@ Due to compile optimization changes in the C runtime packages provided with Ubun
 Update to OneAgent version 1.103.237 or higher. This version of OneAgent will be available to all Dynatrace environments by October 20th, 2016. Here are the instructions for upgrading OneAgent:
 
 1. Go to **Settings** > **Preferences** (only visible to environment admins).
-2. Ensure that the **Automatically update OneAgent instances** setting is enabled. OneAgent version 1.103.237 will be automatically deployed once itâs available on your environment.
+2. Ensure that the **Automatically update OneAgent instances** setting is enabled. OneAgent version 1.103.237 will be automatically deployed once it’s available on your environment.
    If **Automatically update One Agent instances** is disabled, select **OneAgent version 1.103.237 or higher** and click **Update now**.
 
 ## Java, IBM J9
@@ -156,7 +155,7 @@ Fixed since IBM J9
 
 **Source:**
 
-* [IBM 1IV68110ï»¿](https://www-01.ibm.com/support/docview.wss?uid=swg1IV68110)
+* [IBM 1IV68110﻿](https://www-01.ibm.com/support/docview.wss?uid=swg1IV68110)
 
 ## Java, WebSphere MQ , JMS
 
@@ -166,7 +165,7 @@ When using WebSphere MQ via JMS, Dynatrace isn't always able to determine the qu
 
 **Solution:**
 
-Follow the IBM documentation for [mapping JMS messages onto IBM MQ messagesï»¿](https://www.ibm.com/support/knowledgecenter/SSFKSJ_8.0.0/com.ibm.mq.dev.doc/q031990_.htm). Once the `MQRFH2` header has been properly mapped, Dynatrace will pick up the correct queue name.
+Follow the IBM documentation for [mapping JMS messages onto IBM MQ messages﻿](https://www.ibm.com/support/knowledgecenter/SSFKSJ_8.0.0/com.ibm.mq.dev.doc/q031990_.htm). Once the `MQRFH2` header has been properly mapped, Dynatrace will pick up the correct queue name.
 
 ## Java, Oracle HotSpot/OpenJDK
 
@@ -180,13 +179,13 @@ Fixed in Oracle HotSpot 6u38/7u40 and OpenJDK 7u45
 
 **Source:**
 
-* [Source Oracle HotSpot 6 (bug 7196045))ï»¿](https://bugs.java.com/bugdatabase/view_bug.do?bug_id=7196045)
-* [Source Oracle HotSpot 7 (bug 8005479)ï»¿](https://bugs.java.com/bugdatabase/view_bug.do?bug_id=8005479)
-* [Source OpenJDK (JDK-7196045)ï»¿](https://bugs.openjdk.java.net/browse/JDK-7196045)
+* [Source Oracle HotSpot 6 (bug 7196045))﻿](https://bugs.java.com/bugdatabase/view_bug.do?bug_id=7196045)
+* [Source Oracle HotSpot 7 (bug 8005479)﻿](https://bugs.java.com/bugdatabase/view_bug.do?bug_id=8005479)
+* [Source OpenJDK (JDK-7196045)﻿](https://bugs.openjdk.java.net/browse/JDK-7196045)
 
 **Issue:**
 
-A known issue in Oracle HotSpot and OpenJDK can lead to a JVM crash when a JVMTI agent is loaded, [class data sharingï»¿](https://docs.oracle.com/en/java/javase/11/vm/class-data-sharing.html#GUID-7EAA3411-8CF0-4D19-BD05-DF5E1780AA91) is turned on, and the `classes.jsa` file exists. This is not normally the case, but it does occur in Docker environments, especially with Java 11 where class data sharing is set to `auto`.
+A known issue in Oracle HotSpot and OpenJDK can lead to a JVM crash when a JVMTI agent is loaded, [class data sharing﻿](https://docs.oracle.com/en/java/javase/11/vm/class-data-sharing.html#GUID-7EAA3411-8CF0-4D19-BD05-DF5E1780AA91) is turned on, and the `classes.jsa` file exists. This is not normally the case, but it does occur in Docker environments, especially with Java 11 where class data sharing is set to `auto`.
 
 **Solution:**
 
@@ -194,7 +193,7 @@ Change the java command line to turn off class data sharing via -Xshare:off.
 
 **Source:**
 
-* [Source OpenJDK (JDK-8212200)ï»¿](https://bugs.openjdk.java.net/browse/JDK-8212200)
+* [Source OpenJDK (JDK-8212200)﻿](https://bugs.openjdk.java.net/browse/JDK-8212200)
 
 ## Java, Spring, AspectJ
 
@@ -218,7 +217,7 @@ Fixed since Spring 2.5.4/AspectJ 1.6
 
 **Source:**
 
-* [SPR-4390ï»¿](https://jira.spring.io/browse/SPR-4390)
+* [SPR-4390﻿](https://jira.spring.io/browse/SPR-4390)
 
 ## Java/Real User Monitoring/Apigee
 
@@ -226,7 +225,7 @@ Fixed since Spring 2.5.4/AspectJ 1.6
 
 Real User Monitoring of Java applications may trigger a `ClassCastException` error upon a type cast to the implemented `HttpServletRequest` interface because Dynatrace replaces the original `HttpServletRequest` implementation with a `RequestWrapper` for automatic RUM JavaScript injection.
 
-This crash also occurs for customers using [Apigeeï»¿](https://apigee.com).
+This crash also occurs for customers using [Apigee﻿](https://apigee.com).
 
 **Solution:**
 
@@ -235,7 +234,7 @@ You have a few options:
 1. Change your source code so that it doesn't expect a specific implementation of the `HttpServletRequest` interface.
 2. If you're using a 3rd party framework, you can reach out to your framework vendor.
 3. For Apigee, we've disabled Real User Monitoring auto-injection. Manual Real User Monitoring injection isn't affected and can be used as a workaround.
-4. You can use a web server in front of Javaâthe web server will auto-inject the Real User Monitoring JavaScript and thereby avoid the crash.
+4. You can use a web server in front of Java—the web server will auto-inject the Real User Monitoring JavaScript and thereby avoid the crash.
 
 **Source:**  
 n/a
@@ -252,7 +251,7 @@ Solution is to upgrade to Preview for JBoss and/or contact RedHat.
 
 **Source:**
 
-* [Bug 1367784ï»¿](https://bugzilla.redhat.com/show_bug.cgi?id=1367784)
+* [Bug 1367784﻿](https://bugzilla.redhat.com/show_bug.cgi?id=1367784)
 
 ## UI/Docker
 
@@ -266,7 +265,7 @@ Fixed since Docker 1.12. Upgrade to Docker 1.12.
 
 **Source:**
 
-* [Issue 22655ï»¿](https://github.com/docker/docker/issues/22655)
+* [Issue 22655﻿](https://github.com/docker/docker/issues/22655)
 
 ## UI/IIS
 
@@ -286,7 +285,7 @@ Consult Microsoft technical documentation to rebuild the performance libraries i
 
 **Source:**
 
-* [KB 00956ï»¿](https://support.microsoft.com/en-us/kb/300956)
+* [KB 00956﻿](https://support.microsoft.com/en-us/kb/300956)
 
 ## .NET, IIS
 
@@ -304,7 +303,7 @@ Message: `System.NullReferenceException at`
 
 Fixed since .NET 4.6.
 
-* [Sourceï»¿](https://connect.microsoft.com/VisualStudio/feedbackdetail/view/967133/roles-getrolesforuser-throw-a-nullreferenceexception-in-a-wcf-service-which-is-hosted-in-asp-net-with-the-aspnetcompatibilityenabled-define-to-false)
+* [Source﻿](https://connect.microsoft.com/VisualStudio/feedbackdetail/view/967133/roles-getrolesforuser-throw-a-nullreferenceexception-in-a-wcf-service-which-is-hosted-in-asp-net-with-the-aspnetcompatibilityenabled-define-to-false)
 
 ## .NET, Cassette
 
@@ -330,7 +329,7 @@ Potentially fixed in v2.4.1
 
 **Source:**
 
-* [Pull 441ï»¿](https://github.com/andrewdavey/cassette/pull/441)
+* [Pull 441﻿](https://github.com/andrewdavey/cassette/pull/441)
 
 ## .NET, ConfuserEx
 
@@ -350,7 +349,7 @@ Disable ConfuserEx obfuscation or disable Dynatrace monitoring at the process le
 
 **Source:**
 
-* [Sourceï»¿](https://github.com/yck1509/ConfuserEx/blob/816172adcb1ea2a6c74a964274373987fc2e9fe5/Confuser.Runtime/AntiDebug.Antinet.cs)
+* [Source﻿](https://github.com/yck1509/ConfuserEx/blob/816172adcb1ea2a6c74a964274373987fc2e9fe5/Confuser.Runtime/AntiDebug.Antinet.cs)
 
 ## Real User Monitoring, Chrome
 
@@ -372,14 +371,14 @@ To disable W3C resource timing for third party/CDN:
 
 1. Go to **Frontend**.
 2. Select the application you want to edit.
-3. Click the **More** (**â¦**) button.
+3. Click the **More** (**…**) button.
 4. Click **Edit**.
 5. Click **Content capture**.
 6. Set the **W3C resource timing for third party/CDN** switch to **Off**.
 
 **Source:**
 
-* [Issue 586443ï»¿](https://bugs.chromium.org/p/chromium/issues/detail?id=586443)
+* [Issue 586443﻿](https://bugs.chromium.org/p/chromium/issues/detail?id=586443)
 
 ## Agentless Real User Monitoring, Chrome
 
@@ -394,7 +393,7 @@ Message:
 
 1. Go to **Frontend**.
 2. Select the application you want to configure.
-3. Click the **Browse (â¦)** button and select **Edit**.
+3. Click the **Browse (…)** button and select **Edit**.
 4. In the **Setup** section, select **Agentless monitoring setup**.
 5. Disable the **Easy monitoring** switch.
 
@@ -402,7 +401,7 @@ The only downside of this change is that every time you make a configuration cha
 
 **Source:**
 
-* [Update 2016/08ï»¿](https://developers.google.com/web/updates/2016/08/removing-document-write)
+* [Update 2016/08﻿](https://developers.google.com/web/updates/2016/08/removing-document-write)
 
 ## Real User Monitoring, jQuery
 
@@ -418,7 +417,7 @@ To disable JQuery detection and enable basic XHR detection:
 
 1. Go to **Frontend**.
 2. Select the application you want to edit.
-3. Click the **More** (**â¦**) button.
+3. Click the **More** (**…**) button.
 4. Click **Edit**.
 5. Click **XHR (Ajax)** detection.
 6. Set the **JQuery, Backbone.js** switch to **Off**.
@@ -426,7 +425,7 @@ To disable JQuery detection and enable basic XHR detection:
 
 **Source:**
 
-* [Ticket 9613ï»¿](https://bugs.jquery.com/ticket/9613)
+* [Ticket 9613﻿](https://bugs.jquery.com/ticket/9613)
 
 ## Real User Monitoring, Ext JS
 
@@ -440,7 +439,7 @@ Turn off extended Ext JS event capturing in Real User Monitoring settings.
 
 1. Go to **Web**.
 2. Select the application that you want to configure.
-3. In the upper-right corner of the application overview page, select **More** (**â¦**) > **Edit**.
+3. In the upper-right corner of the application overview page, select **More** (**…**) > **Edit**.
 4. From the application settings, select **Capturing** > **Custom configuration properties**.
 5. Select **Add a custom configuration property** and enter `exteventsoff=1`.
 
@@ -449,7 +448,7 @@ If certain user actions are not captured afterwards, use the JavaScript API to t
 ## Real User Monitoring, Salesforce
 
 **Issue:**
-When [injecting RUM](/managed/observe/digital-experience/web-applications/initial-setup/rum-injection "Configure automatic injection of the RUM JavaScript into the pages of your applications") into Salesforce, you may experience the application stuck in "loading" when viewing records from a search result. When this happens, browser debugging displays the JavaScript error: `Wrong number of arguments or invalid property assignment on b.b.open,arguments,b.b`.
+When [injecting RUM](/managed/observe/digital-experience/rum-classic/web-applications/initial-setup/rum-injection "Configure automatic injection of the RUM JavaScript into the pages of your applications") into Salesforce, you may experience the application stuck in "loading" when viewing records from a search result. When this happens, browser debugging displays the JavaScript error: `Wrong number of arguments or invalid property assignment on b.b.open,arguments,b.b`.
 
 This occurs when the RUM JavaScript is not the first JavaScript loaded on the page. There can be JavaScript code loading in the heading that has a negative impact on the RUM JavaScript.
 
@@ -457,9 +456,9 @@ This occurs when the RUM JavaScript is not the first JavaScript loaded on the pa
 Shifting the RUM JavaScript to load before any JavaScript resolves this issue.
 
 **Issue:**
-Dynatrace RUM isn't working for Salesforce applications based on the [Lightning Component Frameworkï»¿](https://developer.salesforce.com/docs/atlas.en-us.lightning.meta/lightning/intro_framework.htm).
+Dynatrace RUM isn't working for Salesforce applications based on the [Lightning Component Framework﻿](https://developer.salesforce.com/docs/atlas.en-us.lightning.meta/lightning/intro_framework.htm).
 
-The reason for this is that many Salesforce applications and offerings are based on [Lightning Component Frameworkï»¿](https://developer.salesforce.com/docs/atlas.en-us.lightning.meta/lightning/intro_framework.htm). This framework has a security architecture called [Lightning Lockerï»¿](https://developer.salesforce.com/docs/atlas.en-us.lightning.meta/lightning/security_code.htm), which restricts access to DOM elements and therefore influences the Dynatrace RUM JavaScript. Whenever the Locker code is loaded and executed before the Dynatrace RUM JavaScript, monitoring won't work, independently of whether you add the [RUM JavaScript](/managed/observe/digital-experience/web-applications/initial-setup/rum-injection "Configure automatic injection of the RUM JavaScript into the pages of your applications").
+The reason for this is that many Salesforce applications and offerings are based on [Lightning Component Framework﻿](https://developer.salesforce.com/docs/atlas.en-us.lightning.meta/lightning/intro_framework.htm). This framework has a security architecture called [Lightning Locker﻿](https://developer.salesforce.com/docs/atlas.en-us.lightning.meta/lightning/security_code.htm), which restricts access to DOM elements and therefore influences the Dynatrace RUM JavaScript. Whenever the Locker code is loaded and executed before the Dynatrace RUM JavaScript, monitoring won't work, independently of whether you add the [RUM JavaScript](/managed/observe/digital-experience/rum-classic/web-applications/initial-setup/rum-injection "Configure automatic injection of the RUM JavaScript into the pages of your applications").
 
 **Solution:**
 There is currently no solution from the Dynatrace side. Please contact Salesforce support. Perhaps there is a way to allow the Dynatrace RUM JavaScript.
@@ -478,11 +477,11 @@ Replace `#` with `${'#'}` in the Dynatrace RUM JavaScript.
 
 **Issue:**
 
-Enabling the [**Visually complete**](/managed/observe/digital-experience/web-applications/analyze-and-use/how-to-use-visually-complete-and-speed-index-metrics "Learn how to use 'Visually complete' and 'Speed index' metrics.") application setting while using Dynatrace with Internet Explorer 11 can lead to a complete page crash or hanging in cases where heavy `<table>` or table-like (using the style attribute `display:table`) DOM mutations occur. This tends to be more common with single-page applications. Simply monitoring mutations with the MutationObserver, as is done for Visually complete, can crash the page once it's loaded. Here is a [simple reproduction of the issueï»¿](https://jsfiddle.net/gd88q1n3/2/) with a table-like element mutation crash.
+Enabling the [**Visually complete**](/managed/observe/digital-experience/rum-classic/web-applications/analyze-and-use/how-to-use-visually-complete-and-speed-index-metrics "Learn how to use 'Visually complete' and 'Speed index' metrics.") application setting while using Dynatrace with Internet Explorer 11 can lead to a complete page crash or hanging in cases where heavy `<table>` or table-like (using the style attribute `display:table`) DOM mutations occur. This tends to be more common with single-page applications. Simply monitoring mutations with the MutationObserver, as is done for Visually complete, can crash the page once it's loaded. Here is a [simple reproduction of the issue﻿](https://jsfiddle.net/gd88q1n3/2/) with a table-like element mutation crash.
 
 #### More information on Visually complete and Speed index
 
-Speed index and Visually complete metrics are only available on browsers that support [`mutationobservers`ï»¿](https://developers.google.com/web/updates/2012/02/Detect-DOM-changes-with-Mutation-Observers). This includes the following browsers:
+Speed index and Visually complete metrics are only available on browsers that support [`mutationobservers`﻿](https://developers.google.com/web/updates/2012/02/Detect-DOM-changes-with-Mutation-Observers). This includes the following browsers:
 
 * Microsoft Internet Explorer 11
 * Microsoft Edge 15 or later
@@ -493,7 +492,7 @@ Speed index is available only for load actions. Visually complete is available f
 
 **Solution:**
 
-Microsoft fixed the bulk of this issue for `<table>` element mutations in a [recent updateï»¿](https://support.microsoft.com/en-za/help/4025252/cumulative-security-update-for-internet-explorer-july-11-2017). Update Internet Explorer 11 to this version to fix this issue in most cases.
+Microsoft fixed the bulk of this issue for `<table>` element mutations in a [recent update﻿](https://support.microsoft.com/en-za/help/4025252/cumulative-security-update-for-internet-explorer-july-11-2017). Update Internet Explorer 11 to this version to fix this issue in most cases.
 
 Elements with the style attribute `display:table` still run into this problem following update of Internet Explorer 11. For this reason, we've created a feature flag you can use to disable Visually complete within Internet Explorer 11 only. To enable this feature flag, Please contact a Dynatrace product expert via live chat within your environment..
 
@@ -607,7 +606,7 @@ Create a file `/etc/fonts/local.conf` with the content shown below to explicitly
 
 **Source:**
 
-* [Bug 1484079ï»¿](https://bugzilla.redhat.com/show_bug.cgi?id=1484079#c8)
+* [Bug 1484079﻿](https://bugzilla.redhat.com/show_bug.cgi?id=1484079#c8)
 
 ## IBM HTTP Server (IHS) 8.5
 
@@ -621,7 +620,7 @@ Disable prelink on IHS server.
 
 **Source:**
 
-* [Sourceï»¿](https://www.google.at/search?q=prelink+crash)
+* [Source﻿](https://www.google.at/search?q=prelink+crash)
 
 ## Adobe Dispatcher
 

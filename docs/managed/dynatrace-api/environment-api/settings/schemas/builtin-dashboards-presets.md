@@ -1,7 +1,6 @@
 ---
 title: Settings API - Preset settings schema table
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/settings/schemas/builtin-dashboards-presets
-scraped: 2026-05-12T11:43:36.889533
 ---
 
 # Settings API - Preset settings schema table

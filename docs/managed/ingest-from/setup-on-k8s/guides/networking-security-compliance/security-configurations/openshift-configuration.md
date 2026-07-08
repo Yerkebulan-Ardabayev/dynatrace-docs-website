@@ -1,7 +1,6 @@
 ---
 title: Additional OpenShift configurations
 source: https://docs.dynatrace.com/managed/ingest-from/setup-on-k8s/guides/networking-security-compliance/security-configurations/openshift-configuration
-scraped: 2026-05-12T12:03:30.389988
 ---
 
 # Additional OpenShift configurations
@@ -11,7 +10,7 @@ scraped: 2026-05-12T12:03:30.389988
 * 3-min read
 * Updated on Feb 27, 2026
 
-Integrating Dynatrace Operator into OpenShift environments requires understanding the specifics of both platforms. This guide depicts the necessary configurations, focusing on [Security Context Constraints (SCCs)ï»¿](https://dt-url.net/sl0340s) and the use of Dynatrace Operator CSI driver in various scenarios.
+Integrating Dynatrace Operator into OpenShift environments requires understanding the specifics of both platforms. This guide depicts the necessary configurations, focusing on [Security Context Constraints (SCCs)﻿](https://dt-url.net/sl0340s) and the use of Dynatrace Operator CSI driver in various scenarios.
 
 ## Security Context Constraints (SCCs)
 
@@ -23,7 +22,7 @@ To get an overview of all default and custom SCCs in an OpenShift cluster, execu
 oc get scc
 ```
 
-OpenShift provides [default SCCsï»¿](https://dt-url.net/e5027ls) for a more standardized approach, while also supporting custom SCCs to cover more specific requirements.
+OpenShift provides [default SCCs﻿](https://dt-url.net/e5027ls) for a more standardized approach, while also supporting custom SCCs to cover more specific requirements.
 
 ### Dynatrace Operator
 
@@ -58,6 +57,6 @@ If you want to use a custom SCC for your application pods, ensure it allows `sec
 
 OpenShift version 4.13+
 
-The CSI driver requires specific labeling for validation by the [CSI Volume Admission pluginï»¿](https://dt-url.net/2l038e8).
+The CSI driver requires specific labeling for validation by the [CSI Volume Admission plugin﻿](https://dt-url.net/2l038e8).
 
-[The necessary label is automatically added to the `csidriver` resourceï»¿](https://dt-url.net/ry238f0). It is required for enabling CSI volumes injected by Dynatrace Operator using Webhook-based injection modes.
+[The necessary label is automatically added to the `csidriver` resource﻿](https://dt-url.net/ry238f0). It is required for enabling CSI volumes injected by Dynatrace Operator using Webhook-based injection modes.

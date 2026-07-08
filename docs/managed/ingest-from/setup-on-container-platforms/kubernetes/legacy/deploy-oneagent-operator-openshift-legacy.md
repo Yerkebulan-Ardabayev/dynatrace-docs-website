@@ -1,7 +1,6 @@
 ---
 title: Deploy OneAgent Operator on OpenShift (deprecated)
 source: https://docs.dynatrace.com/managed/ingest-from/setup-on-container-platforms/kubernetes/legacy/deploy-oneagent-operator-openshift-legacy
-scraped: 2026-05-12T11:52:11.430297
 ---
 
 # Deploy OneAgent Operator on OpenShift (deprecated)
@@ -16,7 +15,7 @@ This procedure is deprecated.
 * If you are making a fresh installation, you should [set up OpenShift monitoring using Dynatrace Operator](/managed/ingest-from/setup-on-k8s/deployment "Deploy Dynatrace Operator on Kubernetes").
 * If you already have OneAgent installed using OneAgent Operator, please see the [instructions for migrating to Dynatrace Operator](/managed/ingest-from/setup-on-k8s/guides/migration/migrate-to-dto "Detailed instructions how to migrate from deprecated OneAgent Operator to Dynatrace Operator using kubectl/oc").
 
-The instructions below apply to **OpenShift Dedicated** as well. For OpenShift Dedicated, you need [cluster-admin privilegesï»¿](https://docs.openshift.com/dedicated/4/administering_a_cluster/cluster-admin-role.html).
+The instructions below apply to **OpenShift Dedicated** as well. For OpenShift Dedicated, you need [cluster-admin privileges﻿](https://docs.openshift.com/dedicated/4/administering_a_cluster/cluster-admin-role.html).
 
 ## Installation
 
@@ -41,7 +40,7 @@ Prerequisites
    ```
 2. OCP version 3.11 Provide image pull secrets.  
    Skip this step if you're using a later version.  
-   In order to use the certified [OneAgent Operatorï»¿](https://access.redhat.com/containers/#/registry.connect.redhat.com/dynatrace/dynatrace-oneagent-operator) and [OneAgentï»¿](https://access.redhat.com/containers/#/registry.connect.redhat.com/dynatrace/oneagent) images from [Red Hat Container Catalogï»¿](https://access.redhat.com/containers/) (RHCC), you need to [provide image pull secretsï»¿](https://access.redhat.com/documentation/en-us/openshift_container_platform/3.9/html/developer_guide/dev-guide-managing-images#pulling-private-registries-delegated-auth). The Service Accounts on the `openshift.yaml` manifest already have links to the secrets to be created below.
+   In order to use the certified [OneAgent Operator﻿](https://access.redhat.com/containers/#/registry.connect.redhat.com/dynatrace/dynatrace-oneagent-operator) and [OneAgent﻿](https://access.redhat.com/containers/#/registry.connect.redhat.com/dynatrace/oneagent) images from [Red Hat Container Catalog﻿](https://access.redhat.com/containers/) (RHCC), you need to [provide image pull secrets﻿](https://access.redhat.com/documentation/en-us/openshift_container_platform/3.9/html/developer_guide/dev-guide-managing-images#pulling-private-registries-delegated-auth). The Service Accounts on the `openshift.yaml` manifest already have links to the secrets to be created below.
 
    ```
    # For OCP 3.11
@@ -64,7 +63,7 @@ Prerequisites
    oc -n dynatrace logs -f deployment/dynatrace-oneagent-operator
    ```
 
-   For OpenShift versions **earlier than 3.11.188** you need to **delete the** `type: object` **line beneath the required spec validation in** `openshift.yaml` **before deploying the** `CustomResourceDefinition` ([OpenShift known bugï»¿](https://github.com/openshift/origin/pull/24540)).
+   For OpenShift versions **earlier than 3.11.188** you need to **delete the** `type: object` **line beneath the required spec validation in** `openshift.yaml` **before deploying the** `CustomResourceDefinition` ([OpenShift known bug﻿](https://github.com/openshift/origin/pull/24540)).
 
    ```
    required:
@@ -114,11 +113,11 @@ Prerequisites
 | `args` | Optional Parameters to be passed to the OneAgent installer. All the [command line parameters of the installer](/managed/ingest-from/dynatrace-oneagent/installation-and-operation/linux/installation/customize-oneagent-installation-on-linux "Learn how to use the Linux installer with command line parameters.") are supported, with the exception of `INSTALL_PATH`. |  |
 | `env` | Optional Environment variables for OneAgent container. |  |
 | `skipCertCheck` | Optional Disable certificate validation checks for installer download and API communication. Set to `true` if you want to skip any certification validation checks. | `false` |
-| `nodeSelector` | Optional Keep empty default value. If you want to roll out OneAgent to specific nodes only, provide the `nodeSelectors` here. Refer to [Kubernetes docsï»¿](https://kubernetes.io/docs/concepts/configuration/assign-pod-node/#nodeselector) for details. |  |
-| `tolerations` | Optional Keep default value to also roll out the OneAgent to master nodes if possible. If you want to apply additional tolerations to OneAgent pods for tainted nodes, provide them here. Refer to [Kubernetes docsï»¿](https://kubernetes.io/docs/concepts/configuration/taint-and-toleration/) for details. |  |
-| `image` | Optional Define the OneAgent image to be taken. Defaults to the publicly available OneAgent image on [Docker Hubï»¿](https://hub.docker.com/r/dynatrace/oneagent/). In order to use the certified [OneAgent imageï»¿](https://access.redhat.com/containers/#/registry.connect.redhat.com/dynatrace/oneagent) from [Red Hat Container Catalogï»¿](https://access.redhat.com/containers/) you need to set `.spec.image` to `registry.connect.redhat.com/dynatrace/oneagent` in the custom resource and provide image pull secrets as shown in the next step. | `docker.io/dynatrace/oneagent:latest` if unset |
+| `nodeSelector` | Optional Keep empty default value. If you want to roll out OneAgent to specific nodes only, provide the `nodeSelectors` here. Refer to [Kubernetes docs﻿](https://kubernetes.io/docs/concepts/configuration/assign-pod-node/#nodeselector) for details. |  |
+| `tolerations` | Optional Keep default value to also roll out the OneAgent to master nodes if possible. If you want to apply additional tolerations to OneAgent pods for tainted nodes, provide them here. Refer to [Kubernetes docs﻿](https://kubernetes.io/docs/concepts/configuration/taint-and-toleration/) for details. |  |
+| `image` | Optional Define the OneAgent image to be taken. Defaults to the publicly available OneAgent image on [Docker Hub﻿](https://hub.docker.com/r/dynatrace/oneagent/). In order to use the certified [OneAgent image﻿](https://access.redhat.com/containers/#/registry.connect.redhat.com/dynatrace/oneagent) from [Red Hat Container Catalog﻿](https://access.redhat.com/containers/) you need to set `.spec.image` to `registry.connect.redhat.com/dynatrace/oneagent` in the custom resource and provide image pull secrets as shown in the next step. | `docker.io/dynatrace/oneagent:latest` if unset |
 | `resources` | Optional Resource requests/limits for the OneAgent pods. These settings heavily depend on size of worker nodes and workloads. Please adjust to fit your needs. |  |
-| `priorityClassName` | Optional Priority class for OneAgent pod. Refer to [Kubernetes docsï»¿](https://kubernetes.io/docs/concepts/configuration/pod-priority-preemption/). |  |
+| `priorityClassName` | Optional Priority class for OneAgent pod. Refer to [Kubernetes docs﻿](https://kubernetes.io/docs/concepts/configuration/pod-priority-preemption/). |  |
 | `disableAgentUpdate` | Optional Disable the Operator's auto-update feature for OneAgent pods. | `false` |
 | `enableIstio` | Optional Enable management of Istio service entries and virtual services for Dynatrace endpoints to allow for OneAgent monitoring egress traffic to your Dynatrace environment | `false` |
 | `trustedCAs` | Optional Name of the ConfigMap containing the custom CA certificates. The ConfigMap must have a field called `certs` with the content of the PEM bundle. These custom certificates will be used by both the OneAgent Operator and the OneAgent. | If not set, the default embedded certificates on the images will be used. |
@@ -297,7 +296,7 @@ Prerequisites
   Make sure you have the **Access problem and event feed, metrics, and topology** setting enabled for the API token.
 * Pods must allow egress to your Dynatrace environment or to your Environment ActiveGate in order for metric routing to work properly.
 * See [Support lifecycle](/managed/ingest-from/technology-support/support-model-and-issues "How Dynatrace supports Kubernetes and Red Hat OpenShift versions and known issues") for supported OpenShift versions.
-* [Install Helm version 3ï»¿](https://helm.sh/docs/intro/install/).
+* [Install Helm version 3﻿](https://helm.sh/docs/intro/install/).
 * We recommend installing a **recent version** of the Helm chart.
 
 1. Add a new project called `dynatrace`.
@@ -444,7 +443,7 @@ Prerequisites
 
    See [network zones](/managed/manage/network-zones "Find out how network zones work in Dynatrace.") for more information.
 
-   For OpenShift versions **earlier than 3.11.188** you need to **delete the** `type: object` **line beneath the required spec validation in** `openshift.yaml` **before deploying the** `CustomResourceDefinition` ([OpenShift known bugï»¿](https://github.com/openshift/origin/pull/24540)).
+   For OpenShift versions **earlier than 3.11.188** you need to **delete the** `type: object` **line beneath the required spec validation in** `openshift.yaml` **before deploying the** `CustomResourceDefinition` ([OpenShift known bug﻿](https://github.com/openshift/origin/pull/24540)).
 
    ```
    required:
@@ -501,7 +500,7 @@ For further instructions see [Deploy ActiveGate in OpenShift as a StatefulSet](/
 
 OneAgent Operator for OpenShift version 3.9+ automatically takes care of the lifecycle of the deployed OneAgents, so you don't need to update OneAgent pods yourself.
 
-Review the [release notesï»¿](https://github.com/Dynatrace/dynatrace-oneagent-operator/releases) of the Operator for any breaking changes of the custom resource.
+Review the [release notes﻿](https://github.com/Dynatrace/dynatrace-oneagent-operator/releases) of the Operator for any breaking changes of the custom resource.
 
 To update OneAgent Operator, run the following command:
 
@@ -538,7 +537,7 @@ Uninstall with Helm
 
 To uninstall OneAgent Operator from OpenShift version 3.9+
 
-1. Remove OneAgent custom resources and clean up all remaining OneAgent Operatorâspecific objects.
+1. Remove OneAgent custom resources and clean up all remaining OneAgent Operator–specific objects.
 
    ```
    oc delete -n dynatrace oneagent --all
@@ -550,7 +549,7 @@ To uninstall OneAgent Operator from OpenShift version 3.9+
 2. Optional After you delete OneAgent Operator, the OneAgent binary remains on the node in an inactive state. To uninstall it completely, run the `uninstall.sh` script and delete logs and configuration files.  
    See [Linux related information](/managed/ingest-from/dynatrace-oneagent/installation-and-operation/linux/operation/uninstall-oneagent-on-linux "Learn how you can remove OneAgent from your Linux-based system.").
 
-Remove OneAgent custom resources and clean up all remaining OneAgent Operatorâspecific objects:
+Remove OneAgent custom resources and clean up all remaining OneAgent Operator–specific objects:
 
 ```
 helm uninstall dynatrace-oneagent-operator -n dynatrace

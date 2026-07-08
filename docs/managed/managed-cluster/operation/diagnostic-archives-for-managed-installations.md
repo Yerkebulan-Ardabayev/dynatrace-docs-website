@@ -1,7 +1,6 @@
 ---
 title: Diagnostic archives for Dynatrace Managed installations
 source: https://docs.dynatrace.com/managed/managed-cluster/operation/diagnostic-archives-for-managed-installations
-scraped: 2026-05-12T11:53:23.675181
 ---
 
 # Diagnostic archives for Dynatrace Managed installations
@@ -21,14 +20,14 @@ By default, Dynatrace collects diagnostics data for a cluster and immediately an
 
 If you prefer to collect and review the data before manually submitting it to Dynatrace for analysis, see [Collect and review locally](#cluster-collect-and-review-locally).
 
-1. On the Dynatrace Managed **Home** page, select **More** (**â¦**) > **Run Cluster diagnostics**.
+1. On the Dynatrace Managed **Home** page, select **More** (**…**) > **Run Cluster diagnostics**.
 
    Example menu selection
 
    ![Cluster Management Console home page displaying Run Cluster diagnostics button.](https://dt-cdn.net/images/man-diag-enter-1401-b9076df6dc.png)
 
    Cluster Management Console home page displaying Run Cluster diagnostics button.
-2. On the **Run Cluster diagnostics** page, briefly describe what isnât working as expected from your point of view.
+2. On the **Run Cluster diagnostics** page, briefly describe what isn’t working as expected from your point of view.
 
    Example cluster diagnostics page
 
@@ -121,14 +120,14 @@ This procedure describes how to collect diagnostics data for a host or process l
 
 If you instead want to collect data and submit it to Dynatrace automatically for analysis, see [Analyze automatically](#cluster-analyze-automatically).
 
-1. On the Dynatrace Managed **Home** page, select **More** (**â¦**) > **Run Cluster diagnostics**.
+1. On the Dynatrace Managed **Home** page, select **More** (**…**) > **Run Cluster diagnostics**.
 
    Example menu selection
 
    ![Cluster Management Console home page displaying Run Cluster diagnostics button.](https://dt-cdn.net/images/man-diag-enter-1401-b9076df6dc.png)
 
    Cluster Management Console home page displaying Run Cluster diagnostics button.
-2. On the **Run Cluster diagnostics** page, briefly describe what isnât working as expected from your point of view.
+2. On the **Run Cluster diagnostics** page, briefly describe what isn’t working as expected from your point of view.
 
    Example cluster diagnostics page
 
@@ -185,7 +184,7 @@ Now that the data is collected, you can:
 
 For an overview of all cluster troubleshooting runs in your environment
 
-1. On the Dynatrace Managed **Home** page, select **More** (**â¦**) > **Run Cluster diagnostics**.
+1. On the Dynatrace Managed **Home** page, select **More** (**…**) > **Run Cluster diagnostics**.
 2. The **Run Cluster diagnostics** page lists all diagnostics activity in your cluster.
 
    * Expand any entry to see details.
@@ -230,11 +229,11 @@ You can choose to delete collected diagnostic data earlier. To ensure transparen
 For related details on Dynatrace data privacy, see:
 
 * [Personal data captured by Dynatrace](/managed/manage/data-privacy-and-security/data-privacy/personal-data-captured-by-dynatrace#oneagent-diagnostics "Find out what types of end-user data may be captured during Dynatrace monitoring and the methods that are available for masking personal end-user data.")
-* [Data retention periods](/managed/manage/data-privacy-and-security/data-privacy/data-retention-periods#diagnostics "Check retention times for various data types.")
+* [Data retention periods](/managed/manage/data-privacy-and-security/data-privacy/data-retention-periods#diagnostics "Review default and configurable retention periods for service, RUM Classic, synthetic, Log Monitoring, metric, diagnostic, and security data in Dynatrace Managed.")
 
 ## Troubleshooting
 
-Status: `Collecting of the diagnostic data wasnât possible within 20 minutes.`
+Status: `Collecting of the diagnostic data wasn’t possible within 20 minutes.`
 
 * If Dynatrace cannot collect diagnostic data within 20 minutes, it automatically tries again.
 * If the retry fails as well, we suggest that you contact a Dynatrace product expert via live chat.

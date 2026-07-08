@@ -1,7 +1,6 @@
 ---
 title: Service response time hotspots
 source: https://docs.dynatrace.com/managed/observe/application-observability/services-classic/service-response-time-hotspots
-scraped: 2026-05-12T11:21:49.633081
 ---
 
 # Service response time hotspots
@@ -53,7 +52,7 @@ On the left side you see how often the analyzed service calls other services and
 
 Hotspots 3
 
-In the example above, we see that `EasytravelWebserver:8079` calls the URL `/orange.jsf` on `easytravel Customer Frontend` in only 7.46% of the overall requests it initiatesâexactly once each time. We see that the response time of `/orange.jsf` is `255 ms` on average. However, because this is called only rarely, it contributes only `19 ms` to the average response time of `EasytravelWebserver:8079`.
+In the example above, we see that `EasytravelWebserver:8079` calls the URL `/orange.jsf` on `easytravel Customer Frontend` in only 7.46% of the overall requests it initiates—exactly once each time. We see that the response time of `/orange.jsf` is `255 ms` on average. However, because this is called only rarely, it contributes only `19 ms` to the average response time of `EasytravelWebserver:8079`.
 
 If you select the arrow button on the left boundary of the **Interaction with services and queues** section, you can again move upwards in the hierarchy.
 
@@ -112,13 +111,13 @@ To download the code for an execution,
 
    The source code is directly visible in Dynatrace.
 
-   Required To convert the code into source code, use an external decompiler, such as [Bytecode Viewerï»¿](https://bytecodeviewer.com).
+   Required To convert the code into source code, use an external decompiler, such as [Bytecode Viewer﻿](https://bytecodeviewer.com).
 
-   Choose the decompiler most suited to the specific Java version youâre working with.
+   Choose the decompiler most suited to the specific Java version you’re working with.
 
-   Required To convert the code into source code, use an external decompiler, such as [dotPeakï»¿](https://www.jetbrains.com/decompiler/).
+   Required To convert the code into source code, use an external decompiler, such as [dotPeak﻿](https://www.jetbrains.com/decompiler/).
 
-   Choose the decompiler most suited to the specific .NET version youâre working with.
+   Choose the decompiler most suited to the specific .NET version you’re working with.
 
 ## Automatic Hotspots
 

@@ -1,7 +1,6 @@
 ---
 title: Settings API - Pipeline Groups configuration (bizevents) schema table
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-bizevents-pipeline-groups
-scraped: 2026-05-12T11:48:39.057978
 ---
 
 # Settings API - Pipeline Groups configuration (bizevents) schema table

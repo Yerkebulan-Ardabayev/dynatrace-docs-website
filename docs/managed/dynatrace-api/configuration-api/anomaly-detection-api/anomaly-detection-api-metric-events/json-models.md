@@ -1,7 +1,6 @@
 ---
 title: Metric events anomaly detection API - JSON models
 source: https://docs.dynatrace.com/managed/dynatrace-api/configuration-api/anomaly-detection-api/anomaly-detection-api-metric-events/json-models
-scraped: 2026-05-12T12:16:15.089523
 ---
 
 # Metric events anomaly detection API - JSON models

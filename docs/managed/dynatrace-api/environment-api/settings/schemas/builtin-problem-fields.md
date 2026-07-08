@@ -1,7 +1,6 @@
 ---
 title: Settings API - Problem fields schema table
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/settings/schemas/builtin-problem-fields
-scraped: 2026-05-12T11:41:02.842604
 ---
 
 # Settings API - Problem fields schema table

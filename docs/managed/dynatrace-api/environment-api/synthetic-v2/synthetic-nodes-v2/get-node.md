@@ -1,7 +1,6 @@
 ---
 title: Synthetic nodes API v2 - GET a node
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/synthetic-v2/synthetic-nodes-v2/get-node
-scraped: 2026-05-12T11:54:32.192717
 ---
 
 # Synthetic nodes API v2 - GET a node
@@ -79,7 +78,7 @@ A *synthetic node* is an ActiveGate that is able to execute synthetic monitors.
 | Element | Type | Description |
 | --- | --- | --- |
 | code | integer | The HTTP status code |
-| constraintViolations | [ConstraintViolation[]](#openapi-definition-ConstraintViolation) | A list of constraint violations |
+| constraintViolations | [ConstraintViolation](#openapi-definition-ConstraintViolation)[] | A list of constraint violations |
 | message | string | The error message |
 
 #### The `ConstraintViolation` object

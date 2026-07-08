@@ -1,7 +1,6 @@
 ---
 title: Send Dynatrace notifications to ServiceNow
 source: https://docs.dynatrace.com/managed/analyze-explore-automate/notifications-and-alerting/problem-notifications/servicenow-integration
-scraped: 2026-05-12T11:24:47.273920
 ---
 
 # Send Dynatrace notifications to ServiceNow
@@ -38,7 +37,7 @@ If you have installed the ServiceNow Service Graph Connector for Dynatrace, the 
 
 #### Set up a ServiceNow configuration
 
-1. Go to [Dynatrace Incident Integration page in the ServiceNow Storeï»¿](https://dt-url.net/fg03qnx) and select **Get** to install Dynatrace Incident Integration in your ServiceNow instance.
+1. Go to [Dynatrace Incident Integration page in the ServiceNow Store﻿](https://dt-url.net/fg03qnx) and select **Get** to install Dynatrace Incident Integration in your ServiceNow instance.
 2. Follow the **Guided Setup** for an initial configuration of the application.
 
    ![Guided setup](https://dt-cdn.net/images/2020-11-20-09-31-17-1232-dfc605d001.png)
@@ -65,7 +64,7 @@ To create a ServiceNow problem notification
 4. In **Notification type**, select **ServiceNow**.
 5. Enter the requested information::
 
-   * **ServiceNow instance identifier** refers to the "instance identifier" part of your own ServiceNow URL (`https://<instance indentifier>.service-now.com`) that is used by the ServiceNow API call. This ServiceNow instance identifier is mutually exclusive to the OnPremise URL field, so you can only use one of them.
+   * **ServiceNow instance identifier** refers to the "instance identifier" part of your own ServiceNow URL (`https://<instance identifier>.service-now.com`) that is used by the ServiceNow API call. This ServiceNow instance identifier is mutually exclusive to the OnPremise URL field, so you can only use one of them.
    * In the **Description field**, you can customize the text message associated with problem notifications by combining any of the placeholders from **Available placeholders** list in any order according to your needs.
 6. Turn on **Send incidents into ServiceNow ITSM**.
 7. Select **Send test notification** to make sure your ServiceNow integration is working.
@@ -86,13 +85,13 @@ This configuration uses a custom integration Dynatrace problem notifications. Yo
 
 When configured, the Dynatrace problem notification will send grouped events related to a problem.
 
-If you have **ServiceNow Service Graph Connector for Observability - Dynatrace**, see [Set up push notifications from Dynatraceï»¿](https://www.servicenow.com/docs/bundle/xanadu-servicenow-platform/page/product/configuration-management/task/setup-push-notifications-dynatrace.html) for configuration and usage details. Otherwise, see [Integrate Dynatrace platform eventsï»¿](https://www.servicenow.com/docs/bundle/xanadu-it-operations-management/page/product/event-management/concept/dynatrace-events-integration.html).
+If you have **ServiceNow Service Graph Connector for Observability - Dynatrace**, see [Set up push notifications from Dynatrace﻿](https://www.servicenow.com/docs/bundle/xanadu-servicenow-platform/page/product/configuration-management/task/setup-push-notifications-dynatrace.html) for configuration and usage details. Otherwise, see [Integrate Dynatrace platform events﻿](https://www.servicenow.com/docs/bundle/xanadu-it-operations-management/page/product/event-management/concept/dynatrace-events-integration.html).
 
 ### Send events using Dynatrace ServiceNow problem notifications
 
 ServiceNow Event Management provides a general purpose webhook API for receiving events the populates the ServiceNow ITOM event table (`em_event`).
 
-This configuration uses a ServiceNow Dynatrace problem notification. You can configure ServiceNow notification with the ServiceNow webhook API URL and the JSON payload it expects. For more information about the webhook API, see [Pushing events to the instance using web service APIï»¿](https://www.servicenow.com/docs/csh?topicname=send-events-via-web-service.html).
+This configuration uses a ServiceNow Dynatrace problem notification. You can configure ServiceNow notification with the ServiceNow webhook API URL and the JSON payload it expects. For more information about the webhook API, see [Pushing events to the instance using web service API﻿](https://www.servicenow.com/docs/csh?topicname=send-events-via-web-service.html).
 
 When configured, the Dynatrace problem notification will send all events related to a problem.
 
@@ -113,7 +112,7 @@ Your ServiceNow ITOM module and license need to be active to use this integratio
 3. In **Notification type**, select **ServiceNow**.
 4. Enter the requested information:
 
-   * **ServiceNow instance identifier** refers to the "instance identifierâ part of your own ServiceNow URL and is used by the ServiceNow API call `https://<instance indentifier>.service-now.com`. This ServiceNow instance identifier is mutually exclusive to the OnPremise URL field, so you can only use one of them.
+   * **ServiceNow instance identifier** refers to the "instance identifier” part of your own ServiceNow URL and is used by the ServiceNow API call `https://<instance identifier>.service-now.com`. This ServiceNow instance identifier is mutually exclusive to the OnPremise URL field, so you can only use one of them.
 5. Turn on **Send events into ServiceNow ITOM**
 6. Select **Send test notification**.
 7. Select **Save changes**.
@@ -130,9 +129,9 @@ Events-SN
 
 ## Configuration Management Database (CMDB) integration
 
-ServiceNow offers a dedicated **Service Graph Connector for Observability â Dynatrace** application for pulling Dynatrace observability information into your ServiceNow CMDB.
+ServiceNow offers a dedicated **Service Graph Connector for Observability – Dynatrace** application for pulling Dynatrace observability information into your ServiceNow CMDB.
 
-**Service Graph Connector for Observability â Dynatrace** pulls the following types of topology information data:
+**Service Graph Connector for Observability – Dynatrace** pulls the following types of topology information data:
 
 * Hosts
 * Processes
@@ -141,7 +140,7 @@ ServiceNow offers a dedicated **Service Graph Connector for Observability â
 
 Service Graph Connector for Observability uses the relationship between various applications, application services, and infrastructure elements to create a Service Map.
 
-Some of the Dynatrace entity types are not imported into ServiceNow. For configuration and usage details, see [Service Graph Connector for Observability - Dynatraceï»¿](https://www.servicenow.com/docs/bundle/xanadu-servicenow-platform/page/product/configuration-management/concept/cmdb-integration-dynatrace.html).
+Some of the Dynatrace entity types are not imported into ServiceNow. For configuration and usage details, see [Service Graph Connector for Observability - Dynatrace﻿](https://www.servicenow.com/docs/bundle/xanadu-servicenow-platform/page/product/configuration-management/concept/cmdb-integration-dynatrace.html).
 
 ## FAQ
 
@@ -227,20 +226,20 @@ Deduplication is done through **ServiceNow CMDB Identification and Reconciliatio
 
 ## Troubleshoot
 
-Check out the following articles in the [Troubleshooting forum in the Dynatrace Communityï»¿](https://dt-url.net/dy122xtf).
+Check out the following articles in the [Troubleshooting forum in the Dynatrace Community﻿](https://dt-url.net/dy122xtf).
 
 ### General
 
-* [Events don't show up in the ITOM events tableï»¿](https://dt-url.net/7t42xdu)
-* [HTTP 403 Forbidden Access Restricted Not Authorized Error when sending a test notificationï»¿](https://dt-url.net/eq62xe9)
-* [Problem link is broken in the ServiceNow incidentï»¿](https://dt-url.net/fcc2x29)
+* [Events don't show up in the ITOM events table﻿](https://dt-url.net/7t42xdu)
+* [HTTP 403 Forbidden Access Restricted Not Authorized Error when sending a test notification﻿](https://dt-url.net/eq62xe9)
+* [Problem link is broken in the ServiceNow incident﻿](https://dt-url.net/fcc2x29)
 
 ### Dynatrace Incident integration
 
-* [Incidents aren't created correctlyï»¿](https://dt-url.net/o682xbl)
+* [Incidents aren't created correctly﻿](https://dt-url.net/o682xbl)
 
 ### Configuration Management Database (CMDB) integration
 
-* [Dynatrace-detected hosts, process groups, applications and services don't show up in the CMDBï»¿](https://dt-url.net/km02xrc)
-* [Dynatrace-monitored servers don't show up in the CMDBï»¿](https://dt-url.net/n222x11)
-* [Incoming incidents aren't mapped to the affected server in the CMDBï»¿](https://dt-url.net/8ia2xbr)
+* [Dynatrace-detected hosts, process groups, applications and services don't show up in the CMDB﻿](https://dt-url.net/km02xrc)
+* [Dynatrace-monitored servers don't show up in the CMDB﻿](https://dt-url.net/n222x11)
+* [Incoming incidents aren't mapped to the affected server in the CMDB﻿](https://dt-url.net/8ia2xbr)

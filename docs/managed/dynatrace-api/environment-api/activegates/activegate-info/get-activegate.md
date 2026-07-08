@@ -1,7 +1,6 @@
 ---
 title: ActiveGate API - GET an ActiveGate
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/activegates/activegate-info/get-activegate
-scraped: 2026-05-12T11:55:45.610208
 ---
 
 # ActiveGate API - GET an ActiveGate
@@ -51,7 +50,7 @@ Parameters of the ActiveGate.
 
 | Element | Type | Description |
 | --- | --- | --- |
-| activeGateTokens | [ActiveGateTokenInfoDto[]](#openapi-definition-ActiveGateTokenInfoDto) | A list of the ActiveGate tokens. |
+| activeGateTokens | [ActiveGateTokenInfoDto](#openapi-definition-ActiveGateTokenInfoDto)[] | A list of the ActiveGate tokens. |
 | autoUpdateSettings | [ActiveGateAutoUpdateConfig](#openapi-definition-ActiveGateAutoUpdateConfig) | Configuration of the ActiveGate auto-updates. |
 | autoUpdateStatus | string | The current status of auto-updates of the ActiveGate. The element can hold these values * `INCOMPATIBLE` * `OUTDATED` * `SCHEDULED` * `SUPPRESSED` * `UNKNOWN` * `UP2DATE` * `UPDATE_IN_PROGRESS` * `UPDATE_PENDING` * `UPDATE_PROBLEM` |
 | connectedHosts | [ActiveGateConnectedHosts](#openapi-definition-ActiveGateConnectedHosts) | Information about hosts currently connected to the ActiveGate |
@@ -63,7 +62,7 @@ Parameters of the ActiveGate.
 | id | string | The ID of the ActiveGate. |
 | loadBalancerAddresses | string[] | A list of Load Balancer addresses of the ActiveGate. |
 | mainEnvironment | string | The ID of the main environment for a multi-environment ActiveGate. |
-| modules | [ActiveGateModule[]](#openapi-definition-ActiveGateModule) | A list of modules of the ActiveGate. |
+| modules | [ActiveGateModule](#openapi-definition-ActiveGateModule)[] | A list of modules of the ActiveGate. |
 | networkAddresses | string[] | A list of network addresses of the ActiveGate. |
 | networkZone | string | The network zone of the ActiveGate. |
 | offlineSince | integer | The timestamp since when the ActiveGate is offline.  The `null` value means the ActiveGate is online. |
@@ -80,7 +79,7 @@ Information about ActiveGate token.
 | Element | Type | Description |
 | --- | --- | --- |
 | environmentId | string | The environment ID to which the token belongs.  Only available if more than one environment is supported. |
-| id | string | The ActiveGate token identifier, consisting of [prefix and public partï»¿](https://dt-url.net/rn00tjg) of the token. |
+| id | string | The ActiveGate token identifier, consisting of [prefix and public part﻿](https://dt-url.net/rn00tjg) of the token. |
 | state | string | State of the ActiveGate token. The element can hold these values * `ABSENT` * `EXPIRING` * `INVALID` * `UNKNOWN` * `UNSUPPORTED` * `VALID` |
 
 #### The `ActiveGateAutoUpdateConfig` object
@@ -123,7 +122,7 @@ Information about ActiveGate module
 | Element | Type | Description |
 | --- | --- | --- |
 | code | integer | The HTTP status code |
-| constraintViolations | [ConstraintViolation[]](#openapi-definition-ConstraintViolation) | A list of constraint violations |
+| constraintViolations | [ConstraintViolation](#openapi-definition-ConstraintViolation)[] | A list of constraint violations |
 | message | string | The error message |
 
 #### The `ConstraintViolation` object

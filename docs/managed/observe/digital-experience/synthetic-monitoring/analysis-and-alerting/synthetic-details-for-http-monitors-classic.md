@@ -1,12 +1,11 @@
 ---
-title: HTTP monitors reporting results
+title: HTTP monitors reporting results in Classic
 source: https://docs.dynatrace.com/managed/observe/digital-experience/synthetic-monitoring/analysis-and-alerting/synthetic-details-for-http-monitors-classic
-scraped: 2026-05-12T11:31:51.761442
 ---
 
-# HTTP monitors reporting results
+# HTTP monitors reporting results in Classic
 
-# HTTP monitors reporting results
+# HTTP monitors reporting results in Classic
 
 * Explanation
 * 13-min read
@@ -35,13 +34,13 @@ Purple bars above the availability or performance timelines indicate maintenance
 HTTP details with maintenance window
 
 * Whether or not you see problems and receive alert notifications during maintenance windows depends on how you [configure the maintenance windows](/managed/analyze-explore-automate/notifications-and-alerting/maintenance-windows/define-maintenance-window "Create maintenance windows and define their scope.").
-* [Maintenance windows may be excluded from availability calculations](/managed/observe/digital-experience/synthetic-monitoring/general-information/synthetic-calculations#m-windows-availability "Understand Synthetic Monitoring metric calculations.") by applying a global setting.
+* [Maintenance windows may be excluded from availability calculations](/managed/observe/digital-experience/synthetic-monitoring/general-information/synthetic-calculations#m-windows-availability "Understand Synthetic Monitoring Classic metric calculations.") by applying a global setting.
 
 ## Availability
 
 The availability infographics at the top of the page display the monitor's availability for the selected timeframe, with details of downtime and affected locations, if any. Outage (downtime) duration and affected locations infographics are displayed if the monitor is down (unavailable) at one or more locations. The number of affected locations is also displayed if there's no data from any locations for any reason.
 
-Note that a monitor can be down at one or all locations even if no [outage thresholds (global or local)](/managed/observe/digital-experience/synthetic-monitoring/http-monitors-classic/configure-http-monitors-classic#outage-handling "Learn about configuring HTTP monitors.") have been set up. The outage duration is the sum of all downtimes in the selected timeframe, not counting overlapping downtimes. See [Synthetic calculations](/managed/observe/digital-experience/synthetic-monitoring/general-information/synthetic-calculations "Understand Synthetic Monitoring metric calculations.") for details on how availability and downtime are calculated.
+Note that a monitor can be down at one or all locations even if no [outage thresholds (global or local)](/managed/observe/digital-experience/synthetic-monitoring/http-monitors-classic/configure-http-monitors-classic#outage-handling "Learn about configuring HTTP monitors.") have been set up. The outage duration is the sum of all downtimes in the selected timeframe, not counting overlapping downtimes. See [Synthetic calculations](/managed/observe/digital-experience/synthetic-monitoring/general-information/synthetic-calculations "Understand Synthetic Monitoring Classic metric calculations.") for details on how availability and downtime are calculated.
 
 The **Availability** card shows overall availability across all monitor locations, with annotations for global/local outages and global/local missing data (as when the monitor is disabled).
 
@@ -101,19 +100,19 @@ The **On-demand execution** tab is overwritten with each on-demand execution. Us
 
 ### Filters and comparisions
 
-Use the filter bar at the top and left of each tab to narrow down execution detailsâyou can have different filters for each tab. You can select from provided options to filter by **Locations**, **Requests**, and JSON **Attributes** (either individually or in groupsâsee below).
+Use the filter bar at the top and left of each tab to narrow down execution details—you can have different filters for each tab. You can select from provided options to filter by **Locations**, **Requests**, and JSON **Attributes** (either individually or in groups—see below).
 
 ![Filtered JSON](https://dt-cdn.net/images/analyze-last-execution-filters2-1600-0085726604.png)
 
 Filtered JSON
 
-In the top filter bar, you can also search for specific contentâsimply enter the string (not case sensitive) to look for. In the left bar, you can search for specific filter criteria.
+In the top filter bar, you can also search for specific content—simply enter the string (not case sensitive) to look for. In the left bar, you can search for specific filter criteria.
 
 ![Filters and search fields](https://dt-cdn.net/images/analyze-last-execution-filters-945-b19d004f3d.png)
 
 Filters and search fields
 
-The **Executions difference** tab enables you to view a color-coded, object-by-object comparison of two executionsâthe last failed and successful executions for each assigned location or any on-demand execution within the last six hours. Any filters apply to both compared executionsâthis is especially useful to compare executions by an entire attribute group like **Execution** (see below).
+The **Executions difference** tab enables you to view a color-coded, object-by-object comparison of two executions—the last failed and successful executions for each assigned location or any on-demand execution within the last six hours. Any filters apply to both compared executions—this is especially useful to compare executions by an entire attribute group like **Execution** (see below).
 
 ![Filter and compare executions](https://dt-cdn.net/images/http-analyze-execution-compare1-2215-e9094d193a.png)
 
@@ -183,17 +182,17 @@ HTTP monitors enable you to monitor internal resources and API endpoints, for ex
 
 Link an application
 
-If [Real User Monitoring (RUM)](/managed/observe/digital-experience/rum-concepts/rum-overview "Learn about Real User Monitoring, key performance metrics, mobile app monitoring, and more.") is enabled for the applications your synthetic monitor runs against, Dynatrace automatically links the RUM applications to the monitor, and the **Monitored applications** card is displayed. You can see the key metrics of the application and jump directly to RUM data from here.
+If [Real User Monitoring (RUM)](/managed/observe/digital-experience/rum-classic/rum-concepts/rum-overview "Learn about Real User Monitoring Classic, key performance metrics, mobile app monitoring, and more.") is enabled for the applications your synthetic monitor runs against, Dynatrace automatically links the RUM applications to the monitor, and the **Monitored applications** card is displayed. You can see the key metrics of the application and jump directly to RUM data from here.
 
 After you've linked an HTTP monitor to an application, synthetic monitor availability is displayed directly in application details, and Davis automatically associates detected synthetic monitoring problems with the linked application.
 
-Note that you cannot block Synthetic Monitoring traffic for RUM applications by [excluding bots, spiders, or the IP addresses of Synthetic locations](/managed/observe/digital-experience/web-applications/additional-configuration/exclude-browsers-robots-and-spiders-from-monitoring "Disable Real User Monitoring for certain IP addresses, browsers, bots, and spiders.").
+Note that you cannot block Synthetic Monitoring traffic for RUM applications by [excluding bots, spiders, or the IP addresses of Synthetic locations](/managed/observe/digital-experience/rum-classic/web-applications/additional-configuration/exclude-browsers-robots-and-spiders-from-monitoring "Disable Real User Monitoring Classic for certain IP addresses, browsers, bots, and spiders.").
 
 ## Problems
 
 The **Problems** card shows performance (threshold violation) and availability (local or global outage) problems when you enable the respective thresholds in [monitor settings](/managed/observe/digital-experience/synthetic-monitoring/http-monitors-classic/configure-http-monitors-classic "Learn about configuring HTTP monitors."). Expand the card to see active as well as resolved problems for the selected timeframe.
 
-See [Configure HTTP monitors](/managed/observe/digital-experience/synthetic-monitoring/http-monitors-classic/configure-http-monitors-classic "Learn about configuring HTTP monitors.") for information on how to define performance and availability thresholds. See [Synthetic calculations](/managed/observe/digital-experience/synthetic-monitoring/general-information/synthetic-calculations "Understand Synthetic Monitoring metric calculations.") for how availability and performance are calculated and how problems are generated and dismissed. See the [Synthetic alerting overview](/managed/observe/digital-experience/synthetic-monitoring/analysis-and-alerting/synthetic-alerting-overview "Learn about synthetic alerting concepts and workflow.") for alerting workflow and concepts, including setting up notification profiles and templates.
+See [Configure HTTP monitors](/managed/observe/digital-experience/synthetic-monitoring/http-monitors-classic/configure-http-monitors-classic "Learn about configuring HTTP monitors.") for information on how to define performance and availability thresholds. See [Synthetic calculations](/managed/observe/digital-experience/synthetic-monitoring/general-information/synthetic-calculations "Understand Synthetic Monitoring Classic metric calculations.") for how availability and performance are calculated and how problems are generated and dismissed. See the [Synthetic alerting overview](/managed/observe/digital-experience/synthetic-monitoring/analysis-and-alerting/synthetic-alerting-overview "Learn about synthetic alerting concepts and workflow.") for alerting workflow and concepts, including setting up notification profiles and templates.
 
 There are three main problem types for HTTP monitors:
 
@@ -236,7 +235,7 @@ Event type selected
 
 ## Failed requests
 
-The **Failed requests** card shows the count of every failed request in your HTTP monitor executions within the selected timeframe, broken down by request name and error code. The timeline graph shows the count of error codesâhover over any time slot to see the count of different status codes in that interval. Select an error code in the legend to hide/show it in the graph.
+The **Failed requests** card shows the count of every failed request in your HTTP monitor executions within the selected timeframe, broken down by request name and error code. The timeline graph shows the count of error codes—hover over any time slot to see the count of different status codes in that interval. Select an error code in the legend to hide/show it in the graph.
 
 Select a request name to edit it in [monitor settings](/managed/observe/digital-experience/synthetic-monitoring/http-monitors-classic/configure-http-monitors-classic "Learn about configuring HTTP monitors."). Select [**Analyze last failed execution**](#analyze-last-execution) to see the most recent failed and successful executions in JSON format.
 

@@ -1,7 +1,6 @@
 ---
 title: Anonymization API - PUT anonymization job
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/anonymization/put-job
-scraped: 2026-05-12T11:35:36.664786
 ---
 
 # Anonymization API - PUT anonymization job
@@ -65,7 +64,7 @@ To learn how to obtain and use it, see [Tokens and authentication](/managed/disc
 
 | Element | Type | Description |
 | --- | --- | --- |
-| clusterRequestIds | [AnonymizationClusterRequestID[]](#openapi-definition-AnonymizationClusterRequestID) | A list of tuples of request ID and cluster name |
+| clusterRequestIds | [AnonymizationClusterRequestID](#openapi-definition-AnonymizationClusterRequestID)[] | A list of tuples of request ID and cluster name |
 | requestId | string | The ID of the newly created anonymization job. If multiple datacenters are involved a list separated by "|" will be returned |
 
 #### The `AnonymizationClusterRequestID` object

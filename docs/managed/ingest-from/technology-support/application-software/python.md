@@ -1,7 +1,6 @@
 ---
 title: Python
 source: https://docs.dynatrace.com/managed/ingest-from/technology-support/application-software/python
-scraped: 2026-05-12T11:23:55.741326
 ---
 
 # Python
@@ -12,7 +11,7 @@ scraped: 2026-05-12T11:23:55.741326
 * 2-min read
 * Updated on Nov 05, 2025
 
-You can send data from your [Pythonï»¿](https://python.org) application to Dynatrace. Python is a versatile, high-level programming language known for its readability and simplicity, often used for web development, data analysis, artificial intelligence, and scientific computing due to its extensive libraries and community support.
+You can send data from your [Python﻿](https://python.org) application to Dynatrace. Python is a versatile, high-level programming language known for its readability and simplicity, often used for web development, data analysis, artificial intelligence, and scientific computing due to its extensive libraries and community support.
 
 ## Capabilities
 
@@ -24,10 +23,10 @@ You can send data from your [Pythonï»¿](https://python.org) application to Dy
 * Generates diagnostic data for troubleshooting, including support archives accessible via the [OneAgent Diagnostics](/managed/ingest-from/dynatrace-oneagent/oneagent-troubleshooting/oneagent-diagnostics "Learn how to run OneAgent diagnostics") UI.
 * Comprehensive end-to-end transaction tracing for requests to web services, remote services, message queues, databases, and others. For more information, see [Services](/managed/observe/application-observability/services "Learn how to monitor and analyze your services, define and use request attributes, and more.").
 * Third-party vulnerability detection. For more information, see [Runtime Vulnerability Analytics](/managed/secure/application-security/vulnerability-analytics "Monitor, visualize, analyze, and remediate third-party and code-level vulnerabilities, track the remediation progress, and create monitoring rules.").
-* [OpenTelemetry supportï»¿](https://github.com/open-telemetry/opentelemetry-python/) for capturing traces. For more information, see [Instrument your Python application with OpenTelemetry](/managed/ingest-from/opentelemetry/walkthroughs/python "Learn how to instrument your Python application using OpenTelemetry and Dynatrace.").
+* [OpenTelemetry support﻿](https://github.com/open-telemetry/opentelemetry-python/) for capturing traces. For more information, see [Instrument your Python application with OpenTelemetry](/managed/ingest-from/opentelemetry/walkthroughs/python "Learn how to instrument your Python application using OpenTelemetry and Dynatrace.").
 * [OneAgent SDK](/managed/ingest-from/extend-dynatrace/extend-tracing/oneagent-sdk "The Dynatrace OneAgent SDK enables you to instrument your application manually to extend end-to-end visibility for frameworks and technologies for which there is no code module yet available.") for custom tracing.
 
-  If you already use the [OneAgent SDK for Pythonï»¿](https://github.com/Dynatrace/OneAgent-SDK-for-Python) or [OneAgent SDK Python auto-instrumentationï»¿](https://github.com/dynatrace-oss/OneAgent-SDK-Python-AutoInstrumentation), we recommend migrating to enable auto-instrumentation using OneAgent for Python.
+  If you already use the [OneAgent SDK for Python﻿](https://github.com/Dynatrace/OneAgent-SDK-for-Python) or [OneAgent SDK Python auto-instrumentation﻿](https://github.com/dynatrace-oss/OneAgent-SDK-Python-AutoInstrumentation), we recommend migrating to enable auto-instrumentation using OneAgent for Python.
 
 See our [supported technologies matrix](/managed/ingest-from/technology-support#python "Find technical details related to Dynatrace support for specific platforms and development frameworks.") for details on supported technologies used in conjunction with Python.
 
@@ -57,7 +56,7 @@ To activate Python monitoring
 ## OneAgent Python code module and OneAgent SDK for Python compatibility
 
 The OneAgent Python code module supports applications instrumented by the OneAgent SDK for Python. Both can work together in the same application.  
-The [Dynatrace OneAgent SDK for Pythonï»¿](https://github.com/Dynatrace/OneAgent-SDK-for-Python) is a wrapper of the Dynatrace OneAgent SDK for C/C++.
+The [Dynatrace OneAgent SDK for Python﻿](https://github.com/Dynatrace/OneAgent-SDK-for-Python) is a wrapper of the Dynatrace OneAgent SDK for C/C++.
 
 When the Python code module is installed, it replaces Dynatrace OneAgent SDK for C/C++ internally and collects data produced by OneAgent SDK for Python. This means that traces produced by the SDK will be linked with those produced by the Python code module itself.
 
@@ -88,7 +87,7 @@ These features are Python queue, Python threading, and Python subprocess.
 
 ### Python queue
 
-Use this feature to trace task flow between producers and consumers using Pythonâs standard `queue.Queue` library.
+Use this feature to trace task flow between producers and consumers using Python’s standard `queue.Queue` library.
 
 Enable it if the following applies:
 
@@ -98,7 +97,7 @@ Enable it if the following applies:
 Do not enable it in case:
 
 * The consumer performs unrelated work after retrieving the item from the queue.
-* You or a library youâre using uses queues in non-standard ways.
+* You or a library you’re using uses queues in non-standard ways.
 * You use queue APIs that are not documented in the Python standard library for `queue.Queue`.
 
 ### Python threading
@@ -133,11 +132,11 @@ When the monitored application fails to meet the requirements for a feature acro
 
 ## Limitations
 
-* Only the standard CPython interpreter is supported (the implementation from [Python.orgï»¿](https://python.org)).
+* Only the standard CPython interpreter is supported (the implementation from [Python.org﻿](https://python.org)).
 * No-GIL (nogil) builds are not supported. The binary names of the nogil version have the `t` suffix, for example, `Python3.13t`.
-* [PEP 703 - Making the Global Interpreter Lock Optional in Pythonï»¿](https://peps.python.org/pep-0703/) is not supported.
-* Monitoring of processes with [Geventï»¿](https://www.gevent.org/) package installed in versions lower than 20.9.0 is not supported.
-* For applications creating [forkedï»¿](https://docs.python.org/3/library/os.html#os.fork) child processes: The code module uses background threads. To support applications using process forking,
+* [PEP 703 - Making the Global Interpreter Lock Optional in Python﻿](https://peps.python.org/pep-0703/) is not supported.
+* Monitoring of processes with [Gevent﻿](https://www.gevent.org/) package installed in versions lower than 20.9.0 is not supported.
+* For applications creating [forked﻿](https://docs.python.org/3/library/os.html#os.fork) child processes: The code module uses background threads. To support applications using process forking,
   the code module usually ensures that its background threads are shut down before a fork and restarted afterwards. The following limitations apply:
 
   + On Python 3.12 and newer, the Python interpreter will log a warning like
@@ -146,7 +145,7 @@ When the monitored application fails to meet the requirements for a feature acro
     If the warning only appears with the Python code module and not if it is removed,
     it is a false positive and can be ignored.
     Otherwise, it may indicate a problem in application code and should be taken seriously.
-  + When forking without invoking [Python fork handlersï»¿](https://docs.python.org/3/library/os.html#os.register_at_fork),
+  + When forking without invoking [Python fork handlers﻿](https://docs.python.org/3/library/os.html#os.register_at_fork),
     the code module does not shut down its threads.
     This makes the parent process a multi-threaded process, with all the usual consequences this has for forking.
     For typical applications this is not relevant, but custom native extension modules calling lower-level forking APIs

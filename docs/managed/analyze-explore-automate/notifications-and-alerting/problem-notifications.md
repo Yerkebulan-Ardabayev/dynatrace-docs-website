@@ -1,7 +1,6 @@
 ---
 title: Problem notifications
 source: https://docs.dynatrace.com/managed/analyze-explore-automate/notifications-and-alerting/problem-notifications
-scraped: 2026-05-12T11:06:37.331814
 ---
 
 # Problem notifications
@@ -9,9 +8,9 @@ scraped: 2026-05-12T11:06:37.331814
 # Problem notifications
 
 * 2-min read
-* Updated on Oct 10, 2022
+* Updated on May 25, 2026
 
-Dynatrace provides full-stack monitoring insights into your complete IT operation and automatically detects if any part of your deployment doesnât fulfill the required quality in terms of performance or error rates. Whenever Dynatrace detects such abnormal system behavior, it creates a single problem that contains all incidents that share the same root cause.
+Dynatrace provides full-stack monitoring insights into your complete IT operation and automatically detects if any part of your deployment doesn’t fulfill the required quality in terms of performance or error rates. Whenever Dynatrace detects such abnormal system behavior, it creates a single problem that contains all incidents that share the same root cause.
 
 Dynatrace enables you to automatically push problem notifications to your preferred third-party incident management or ChatOps service. Open problems are continuously updated based on evolving impact and correlating events. To avoid notification spam, problem notifications are only pushed to third-party systems when problems are initially detected and when they are ultimately resolved.
 
@@ -27,14 +26,14 @@ These systems help organizations manage large amounts of incidents across multip
 
 [Jira](/managed/analyze-explore-automate/notifications-and-alerting/problem-notifications/jira-integration) [Opsgenie](/managed/analyze-explore-automate/notifications-and-alerting/problem-notifications/opsgenie-integration) [PagerDuty](/managed/analyze-explore-automate/notifications-and-alerting/problem-notifications/pagerduty-integration) [Trello](/managed/analyze-explore-automate/notifications-and-alerting/problem-notifications/trello-integration) [VictorOps](/managed/analyze-explore-automate/notifications-and-alerting/problem-notifications/victorops-integration) [xMatters](/managed/analyze-explore-automate/notifications-and-alerting/problem-notifications/xmatters-integration)
 
-Today, chat systems are widely used by DevOps teams to triage incoming issues, discuss follow-up actions and to archive lessons learned. Dynatrace offers out-of-the-box integrations for popular ChatOps systems such as [Slack](/managed/analyze-explore-automate/notifications-and-alerting/problem-notifications/slack-integration "Set up a Slack problem-notification integration that can keep you updated on all Dynatrace problems.") and [Microsoft Teams](/managed/analyze-explore-automate/notifications-and-alerting/problem-notifications/microsoft-teams-integration "Set up a Microsoft Teams problem-notification integration that can keep you updated on all Dynatrace-detected problems.").
+Today, chat systems are widely used by DevOps teams to triage incoming issues, discuss follow-up actions and to archive lessons learned. Dynatrace offers out-of-the-box integrations for popular ChatOps systems such as [Slack](/managed/analyze-explore-automate/notifications-and-alerting/problem-notifications/slack-integration "Set up a Slack problem-notification integration that can keep you updated on all Dynatrace problems.").
 
-[Microsoft Teams](/managed/analyze-explore-automate/notifications-and-alerting/problem-notifications/microsoft-teams-integration) [Slack](/managed/analyze-explore-automate/notifications-and-alerting/problem-notifications/slack-integration)
+[Slack](/managed/analyze-explore-automate/notifications-and-alerting/problem-notifications/slack-integration)
 
 Enterprise service-management systems are widely used by large enterprises to organize all types of IT and non-IT related services and resources. These systems are used by companies to organize their IT services according to global standards, such as ITIL (Information Technology Infrastructure Library). All hardware and software service-related incidents are tracked and trigger workflows. Dynatrace offers a certified integration with [ServiceNow](/managed/analyze-explore-automate/notifications-and-alerting/problem-notifications/servicenow-integration "Connect your monitoring environment with your ServiceNow instance."), the most popular SaaS enterprise service-management system.
 
 [ServiceNow](/managed/analyze-explore-automate/notifications-and-alerting/problem-notifications/servicenow-integration)
 
-If Dynatrace doesnât yet offer an out-of-the-box integration for your specific system, you can set up an [email integration](/managed/analyze-explore-automate/notifications-and-alerting/problem-notifications/email-integration "Get email whenever Dynatrace detects a problem in your environment that affects real users.") or [webhook integration](/managed/analyze-explore-automate/notifications-and-alerting/problem-notifications/webhook-integration "Learn how to integrate problem-notifications using a custom webhook.").
+If Dynatrace doesn’t yet offer an out-of-the-box integration for your specific system, you can set up an [email integration](/managed/analyze-explore-automate/notifications-and-alerting/problem-notifications/email-integration "Get email whenever Dynatrace detects a problem in your environment that affects real users.") or [webhook integration](/managed/analyze-explore-automate/notifications-and-alerting/problem-notifications/webhook-integration "Learn how to integrate problem-notifications using a custom webhook.").
 
 [Email](/managed/analyze-explore-automate/notifications-and-alerting/problem-notifications/email-integration) [Webhook](/managed/analyze-explore-automate/notifications-and-alerting/problem-notifications/webhook-integration)

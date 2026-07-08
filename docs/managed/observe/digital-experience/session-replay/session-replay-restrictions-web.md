@@ -1,12 +1,11 @@
 ---
-title: Technical restrictions for Session Replay for web applications
+title: Technical restrictions for Session Replay Classic for web applications
 source: https://docs.dynatrace.com/managed/observe/digital-experience/session-replay/session-replay-restrictions-web
-scraped: 2026-05-12T11:33:33.912266
 ---
 
-# Technical restrictions for Session Replay for web applications
+# Technical restrictions for Session Replay Classic for web applications
 
-# Technical restrictions for Session Replay for web applications
+# Technical restrictions for Session Replay Classic for web applications
 
 * Explanation
 * 4-min read
@@ -17,7 +16,7 @@ Session Replay is compatible with page-based applications, single-page applicati
 ## Browser support
 
 * [Supported browser versions for session recording](/managed/ingest-from/technology-support#supported-browsers "Find technical details related to Dynatrace support for specific platforms and development frameworks.")
-* [Supported browser versions for Session Replay](/managed/discover-dynatrace/get-started/dynatrace-ui/dynatrace-web-ui-requirements "Find out which browsers Dynatrace Managed can run on.")
+* [Supported browser versions for Session Replay](/managed/discover-dynatrace/get-started/dynatrace-ui/dynatrace-web-ui-requirements "Browser and TLS requirements for the Dynatrace Managed web UI, including supported browsers for Session Replay and Synthetic Monitoring.")
 
 ## Technology restrictions
 
@@ -42,19 +41,19 @@ IFrame and nested IFrame recording are supported. However, the following restric
 
 ## Resources
 
-By default, Session Replay [captures and stores CSS resources](/managed/observe/digital-experience/session-replay/configure-session-replay-web#sr-resource-capturing "Configure monitoring consumption and data privacy settings for Session Replay.") during the user session recording. However, Session Replay can't reproduce [blob/object URLsï»¿](https://w3c.github.io/FileAPI/#DefinitionOfScheme).
+By default, Session Replay [captures and stores CSS resources](/managed/observe/digital-experience/session-replay/configure-session-replay-web#sr-resource-capturing "Configure monitoring consumption and data privacy settings for Session Replay Classic.") during the user session recording. However, Session Replay can't reproduce [blob/object URLs﻿](https://w3c.github.io/FileAPI/#DefinitionOfScheme).
 
-If you disable [resource capture for Session Replay](/managed/observe/digital-experience/session-replay/configure-session-replay-web#sr-resource-capturing "Configure monitoring consumption and data privacy settings for Session Replay."), the following restrictions apply. These restrictions also apply to images and fonts even when resource capture for Session Replay is enabled.
+If you disable [resource capture for Session Replay](/managed/observe/digital-experience/session-replay/configure-session-replay-web#sr-resource-capturing "Configure monitoring consumption and data privacy settings for Session Replay Classic."), the following restrictions apply. These restrictions also apply to images and fonts even when resource capture for Session Replay is enabled.
 
 * Resources must be available on the browser that's used for replay. There must be a direct connection to the server that serves the resources.
 * Resources can't be protected. If resources are protected, ensure that the player can access them without authentication.
 * Resources can't be personalized. This applies to resources that are different for each user but are served by the same URL. However, the restriction doesn't apply to URLs that are different for each personalized resource. An example of this is avatar images that use the same URL to deliver different avatars for different users.
 
-To overcome these restrictions, we recommend that you [enable resource capture for Session Replay](/managed/observe/digital-experience/session-replay/configure-session-replay-web#sr-resource-capturing "Configure monitoring consumption and data privacy settings for Session Replay.").
+To overcome these restrictions, we recommend that you [enable resource capture for Session Replay](/managed/observe/digital-experience/session-replay/configure-session-replay-web#sr-resource-capturing "Configure monitoring consumption and data privacy settings for Session Replay Classic.").
 
 ## Dynamic forms
 
-If you're dynamically updating the values in your form, and they're not being displayed in your Session Replay recording, check your application code and verify how you're effecting the updateâyou might be updating the `.value` property of your form element. While we understand that this is a valid update method, it doesn't trigger any events on the page, so Dynatrace doesn't know that something has changed. As an alternative solution, we suggest updating the attribute value (in case of `<input>` elements) or the `.textContent` property (in case of `<textarea>` elements). This way, Dynatrace will be notified of the changes and will record them correctly.
+If you're dynamically updating the values in your form, and they're not being displayed in your Session Replay recording, check your application code and verify how you're effecting the update—you might be updating the `.value` property of your form element. While we understand that this is a valid update method, it doesn't trigger any events on the page, so Dynatrace doesn't know that something has changed. As an alternative solution, we suggest updating the attribute value (in case of `<input>` elements) or the `.textContent` property (in case of `<textarea>` elements). This way, Dynatrace will be notified of the changes and will record them correctly.
 
 ## Volume
 
@@ -85,5 +84,5 @@ Session Replay must send data from client browsers to your Dynatrace Cluster. Da
 ## Related topics
 
 * [Session Replay](/managed/observe/digital-experience/session-replay "Learn how you can use Session Replay to better understand and troubleshoot errors experienced by your customers.")
-* [Enable Session Replay for web applications](/managed/observe/digital-experience/session-replay/enable-session-replay-web "Learn the prerequisites and the procedure for enabling Session Replay.")
-* [Configure Session Replay for web applications](/managed/observe/digital-experience/session-replay/configure-session-replay-web "Configure monitoring consumption and data privacy settings for Session Replay.")
+* [Enable Session Replay Classic for web applications](/managed/observe/digital-experience/session-replay/enable-session-replay-web "Learn the prerequisites and the procedure for enabling Session Replay Classic.")
+* [Configure Session Replay Classic for web applications](/managed/observe/digital-experience/session-replay/configure-session-replay-web "Configure monitoring consumption and data privacy settings for Session Replay Classic.")

@@ -1,7 +1,6 @@
 ---
 title: Monitor Kubernetes/OpenShift cluster utilization
 source: https://docs.dynatrace.com/managed/observe/infrastructure-observability/container-platform-monitoring/kubernetes-monitoring/monitor-cluster-utilization-kubernetes
-scraped: 2026-05-12T12:06:06.956676
 ---
 
 # Monitor Kubernetes/OpenShift cluster utilization
@@ -19,7 +18,7 @@ Dynatrace version 1.232+
 
 ## Kubernetes page
 
-After enabling access to the Kubernetes overview page for a specific Kubernetes cluster, the specific cluster will appear on the **Kubernetes** page. The Kubernetes page provides an overview of all Kubernetes clusters showing monitoring data like the clustersâ sizing and utilization.  
+After enabling access to the Kubernetes overview page for a specific Kubernetes cluster, the specific cluster will appear on the **Kubernetes** page. The Kubernetes page provides an overview of all Kubernetes clusters showing monitoring data like the clusters’ sizing and utilization.  
 To access this page, go to **Kubernetes**.
 
 ![Cluster utilization](https://dt-cdn.net/images/cluster-list-3710-4c21475cfb.png)

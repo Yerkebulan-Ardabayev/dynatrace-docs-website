@@ -1,7 +1,6 @@
 ---
 title: AWS credentials API
 source: https://docs.dynatrace.com/managed/dynatrace-api/configuration-api/aws-credentials-api
-scraped: 2026-05-12T11:04:15.802985
 ---
 
 # AWS credentials API

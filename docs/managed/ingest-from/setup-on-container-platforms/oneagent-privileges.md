@@ -1,7 +1,6 @@
 ---
 title: OneAgent privileges for container monitoring
 source: https://docs.dynatrace.com/managed/ingest-from/setup-on-container-platforms/oneagent-privileges
-scraped: 2026-05-12T11:52:53.896688
 ---
 
 # OneAgent privileges for container monitoring
@@ -15,7 +14,7 @@ Dynatrace supports Full-Stack Monitoring for container platforms, from the appli
 
 However, if you don't want to grant elevated privileges to OneAgent, or you don't have access to the infrastructure layer, you can go with application-only monitoring.
 
-For Kubernetes, Dynatrace Operatorâbased application-only monitoring still provides you with a good scope of data, such as node-level insights (basic metrics and alerting) based on data retrieved by the ActiveGate from Kubernetes API, or Prometheus metrics.
+For Kubernetes, Dynatrace Operator–based application-only monitoring still provides you with a good scope of data, such as node-level insights (basic metrics and alerting) based on data retrieved by the ActiveGate from Kubernetes API, or Prometheus metrics.
 
 ## Full-stack injection
 

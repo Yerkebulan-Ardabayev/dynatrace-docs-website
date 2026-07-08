@@ -1,7 +1,6 @@
 ---
 title: RUM JavaScript API - GET list of injected applications
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/rum/real-user-monitoring-javascript-code/get-list-injected-applications
-scraped: 2026-05-12T11:56:05.190452
 ---
 
 # RUM JavaScript API - GET list of injected applications
@@ -36,7 +35,7 @@ The request doesn't provide any configurable parameters.
 
 | Code | Type | Description |
 | --- | --- | --- |
-| **200** | [ManualApplication[]](#openapi-definition-ManualApplication) | Success |
+| **200** | [ManualApplication](#openapi-definition-ManualApplication)[] | Success |
 | **4XX** | [ErrorEnvelope](#openapi-definition-ErrorEnvelope) | Client side error. |
 | **5XX** | [ErrorEnvelope](#openapi-definition-ErrorEnvelope) | Server side error. |
 
@@ -66,7 +65,7 @@ Parameters of a manually injected application.
 | Element | Type | Description |
 | --- | --- | --- |
 | code | integer | The HTTP status code |
-| constraintViolations | [ConstraintViolation[]](#openapi-definition-ConstraintViolation) | A list of constraint violations |
+| constraintViolations | [ConstraintViolation](#openapi-definition-ConstraintViolation)[] | A list of constraint violations |
 | message | string | The error message |
 
 #### The `ConstraintViolation` object

@@ -1,7 +1,6 @@
 ---
 title: WMI tutorial - extension package
 source: https://docs.dynatrace.com/managed/ingest-from/extensions/develop-your-extensions/data-sources/wmi-extensions/wmi-tutorial/wmi-tutorial-01
-scraped: 2026-05-12T12:15:54.373149
 ---
 
 # WMI tutorial - extension package
@@ -60,11 +59,11 @@ my-sample-extension/
 
 
 
-âââ src/
+└── src/
 
 
 
-âââ extension.yaml
+├── extension.yaml
 
 
 
@@ -72,7 +71,7 @@ dashboards/
 
 
 
-âââ dashboard.json
+└── dashboard.json
 
 
 
@@ -80,7 +79,7 @@ alerts/
 
 
 
-âââ alert.json
+└── alert.json
 ```
 
 ## Step 2 Build and sign your extension package

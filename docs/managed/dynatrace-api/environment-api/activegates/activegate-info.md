@@ -1,7 +1,6 @@
 ---
 title: ActiveGate information API
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/activegates/activegate-info
-scraped: 2026-05-12T11:12:05.451143
 ---
 
 # ActiveGate information API

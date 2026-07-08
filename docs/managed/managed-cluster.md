@@ -1,7 +1,6 @@
 ---
 title: Set up a Managed cluster
 source: https://docs.dynatrace.com/managed/managed-cluster
-scraped: 2026-05-12T11:03:45.742509
 ---
 
 # Set up a Managed cluster
@@ -21,12 +20,12 @@ Learn about the basics of Dynatrace Managed and Mission Control.](/managed/manag
 
 Install a Managed Cluster.](/managed/managed-cluster/installation "Review requirements and install a Dynatrace Managed Cluster, Cluster ActiveGate, and SSL certificates, or run an offline installation.")[### Configuration
 
-Configure a Managed Cluster.](/managed/managed-cluster/configuration)[### Operation
+Configure a Managed Cluster.](/managed/managed-cluster/configuration "Configure your Dynatrace Managed Cluster, including preferences, certificates, SMTP, DNS, proxy, load balancer, and access settings.")[### Operation
 
 Operate a Managed Cluster.](/managed/managed-cluster/operation)
 
 [### High availability
 
-Set up a Premium High Availability Cluster.](/managed/managed-cluster/high-availability "Understand how Dynatrace Managed achieves high availability through data replication, node redundancy, and multi-data center failover.")[### Self-monitoring
+Set up a Premium High Availability Cluster.](/managed/managed-cluster/high-availability "Explore Dynatrace Managed high availability options, including Premium High Availability across data centers and rack-aware deployment.")[### Self-monitoring
 
-Monitor the health, performance, and utilization of your Managed Clusters.](/managed/managed-cluster/self-monitoring "Find out about self-monitoring capabilities in Dynatrace Managed")
+Monitor the health, performance, and utilization of your Managed Clusters.](/managed/managed-cluster/self-monitoring "Dynatrace Managed collects health statistics, performance metrics, and service utilization from all deployment components through self-monitoring.")

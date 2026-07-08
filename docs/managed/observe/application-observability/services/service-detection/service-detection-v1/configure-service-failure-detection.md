@@ -1,7 +1,6 @@
 ---
 title: Configure service failure detection
 source: https://docs.dynatrace.com/managed/observe/application-observability/services/service-detection/service-detection-v1/configure-service-failure-detection
-scraped: 2026-05-12T11:16:15.032793
 ---
 
 # Configure service failure detection
@@ -20,8 +19,8 @@ By default, Dynatrace detects:
 
 * Programming exceptions (Java, .NET, Node.js, and PHP) as the reason for failed requests when exceptions result in the abort of service calls.
 * Error pages provided by many web containers for the handled exceptions.
-* HTTP `500`â`599` error codes for web requests interpreted as errors on the server side.
-* HTTP `400`â`599` error codes for web requests interpreted as errors on the client side.
+* HTTP `500`–`599` error codes for web requests interpreted as errors on the server side.
+* HTTP `400`–`599` error codes for web requests interpreted as errors on the client side.
 
 Why does client side include 5xx codes?
 
@@ -62,7 +61,7 @@ To configure service failure detection globally
 To configure service failure for a specific service
 
 1. Go to **Services** and select the service for which you need to adapt failure detection.
-2. Select **More** (**â¦**) > **Settings**.
+2. Select **More** (**…**) > **Settings**.
 3. Select **Failure detection** and then **HTTP parameters** or **General parameters**, depending on the parameters you want to configure.
 4. Turn on **Override global failure detection settings** (see **1** in the graphic).  
    If a failure detection rule applies, from here you can access both the rule (see **3** in the graphic) and the parameters (see **2** in the graphic).
@@ -81,10 +80,10 @@ Failure detection - HTTP parameters
 
   `HTTP-4XX` response codes usually indicate client-side errors, not server-side errors. You can specify which missing HTTP response codes should be treated as server-side errors and which as client-side errors. You can define multiple ranges separated by commas (for example, `400-402, 405-417`).
 
-  Depending on your application, missing response codes might indicate a "fire and forget" call that didnât return a response at all, a timeout, or an error situation. Dynatrace considers missing response codes as special cases and doesnât report them as a default behavior. You can change this by enabling **Treat missing HTTP response code as server side errors** or **Treat missing HTTP response code as client side errors**.
+  Depending on your application, missing response codes might indicate a "fire and forget" call that didn’t return a response at all, a timeout, or an error situation. Dynatrace considers missing response codes as special cases and doesn’t report them as a default behavior. You can change this by enabling **Treat missing HTTP response code as server side errors** or **Treat missing HTTP response code as client side errors**.
 * **HTTP 404 - broken link configuration**
 
-  When a web server canât find a certain page, it returns an `HTTP 404` response code. Usually, this indicates a problem on the calling side. When the calling side belongs to the same website, this would be considered a broken link.
+  When a web server can’t find a certain page, it returns an `HTTP 404` response code. Usually, this indicates a problem on the calling side. When the calling side belongs to the same website, this would be considered a broken link.
 
   Because most customers don't consider broken links to be a problem on their server, Dynatrace classifies broken links as client-side problems and not automatically as failures on the server side. However, you can enable the **Consider 404 HTTP response codes as failures** switch to classify broken links as server-side failures. After doing so, you can associate additional hosts at other domains to your application by adding the name of the host under **Add other application domain**.
 
@@ -95,19 +94,19 @@ Failure detection - HTTP parameters
   These exceptions indicate that a service call should not be considered as failed, for example, because the client aborted the operation. Although they are technical errors, in principle they don't count as failed requests because they aren't caused by faults with the service. If a request encounters such an exception in the root call of the service, Dynatrace considers the request to be successful, regardless of the HTTP error code or any other information. You can select **Add exception** to add exception classes that indicate such situations.
 * **Ignored exceptions**
 
-  There are situations in which your code (or third-party code that you don't control) returns exceptions that indicate a certain response and not an error. For example, the Thrift client for Cassandra returns a `NotFoundException` response when a row isnât found. This isnât an error, but simply a response code.
+  There are situations in which your code (or third-party code that you don't control) returns exceptions that indicate a certain response and not an error. For example, the Thrift client for Cassandra returns a `NotFoundException` response when a row isn’t found. This isn’t an error, but simply a response code.
 
   You can select **Add exception** to configure Dynatrace to not consider such exceptions as failed request indicators. Additionally, you can define a string that must be found within an exception message for the exception to be ignored. If the HTTP response code for the same call shows an error, Dynatrace considers the request as failed. To consider a request successful regardless of the HTTP error code or any other information, see **Success forcing exceptions**.
 * **Custom handled exceptions**
 
-  There are situations in which application code handles exceptions gracefully in a manner that isnât automatically detected by Dynatrace. When this happens, Dynatrace doesnât detect failed requests or alert you to errors.
+  There are situations in which application code handles exceptions gracefully in a manner that isn’t automatically detected by Dynatrace. When this happens, Dynatrace doesn’t detect failed requests or alert you to errors.
 
   You can remedy such situations by specifying an exception class that should result in a failed request. Optionally, you can define a string that must be found in the exception message. If this string isn't found, the exception won't lead to a failed request.  
   If Dynatrace finds the defined exception (and the optionally-defined exception message) on a request, Dynatrace marks the request as failed.  
   Note that this doesn't work if you exclude the exception class from capture in [Deep process monitoring settings](/managed/observe/infrastructure-observability/process-groups/configuration/pg-monitoring#deep-monitoring "Ways to customize process-group monitoring").
 * **Ignore all exceptions**
 
-  When **Ignore all exceptions** is enabled, Dynatrace ignores **Success forcing exceptions**, **Ignored Exceptions** and **Custom handled exceptions** for the services to which the parameters applyâthe specific service if the switch is enabled on the service-level or the services that match the global rule.
+  When **Ignore all exceptions** is enabled, Dynatrace ignores **Success forcing exceptions**, **Ignored Exceptions** and **Custom handled exceptions** for the services to which the parameters apply—the specific service if the switch is enabled on the service-level or the services that match the global rule.
   Because exceptions are still tracked, they appear in distributed traces, but you don't receive alerts for them and requests aren't labeled as failed.
 * **Custom errors via request attributes**
 
@@ -115,7 +114,7 @@ Failure detection - HTTP parameters
 
   Example: Use request attributes to detect business logic-related errors
 
-  Requests might fail for reasons related to business logic. These situations often arenât detectable via exceptions or HTTP response codes. Nevertheless, they are indicative of problems and might be even more important than situations detected via exceptions and response codes. For example, you might have a business function in your Java code that indicates an error via a return value or you might have your own error-handling functionality that, when called, indicates a functional business error.
+  Requests might fail for reasons related to business logic. These situations often aren’t detectable via exceptions or HTTP response codes. Nevertheless, they are indicative of problems and might be even more important than situations detected via exceptions and response codes. For example, you might have a business function in your Java code that indicates an error via a return value or you might have your own error-handling functionality that, when called, indicates a functional business error.
 
   Such situations can be captured via [request attributes](/managed/observe/application-observability/services/request-attributes "Understand what request attributes are and learn how to use them across all levels of all service-analysis views."), which you can use as indicators for error situations.
 
@@ -123,7 +122,7 @@ Failure detection - HTTP parameters
 
   1. Go to **Services**.
   2. Select the service for which you need to adapt failure detection.
-  3. Select **More** (**â¦**) > **Settings**.
+  3. Select **More** (**…**) > **Settings**.
   4. Select **Failure detection** > **General parameters**
   5. Under **Custom error rules**, select **Add custom error rule**.
   6. Select a request attribute from the displayed list.
@@ -140,7 +139,7 @@ Failure detection - HTTP parameters
 
 ## Schema info
 
-On the service level, you can visualize the **Schema ID** by selecting **More** (**â¦**) > **Schema info** in the upper-right corner of the **HTTP parameters** or **General parameters** page.
+On the service level, you can visualize the **Schema ID** by selecting **More** (**…**) > **Schema info** in the upper-right corner of the **HTTP parameters** or **General parameters** page.
 
 ## Settings API reference
 
@@ -613,7 +612,7 @@ Each failure detection rule contains a list of conditions. All conditions must b
 | `SERVICE_MANAGEMENT_ZONE` | Matches service management zones. | `MANAGEMENT_ZONES_CONTAINS_ALL` |
 | `SERVICE_TAG` | Matches service tags. | `TAG_EQUALS`, `TAG_KEY_EQUALS` |
 
-For environments with pure Latest Dynatrace experience, the `SERVICE_MANAGEMENT_ZONE` and `SERVICE_TAG` condition attributes are no longer available, and failure detection rules using them are ignored at runtime.
+For environments with the latest Dynatrace SaaS experience, the `SERVICE_MANAGEMENT_ZONE` and `SERVICE_TAG` condition attributes are no longer available, and failure detection rules using them are ignored at runtime.
 
 Moreover, the `PG_TAG` condition attribute is no longer evaluated. Instead, you can use this field to match based on the primary tags defined in the deployment of your application.
 Inputs starting with `primary_tags.` are matched against the primary tags on the input data.

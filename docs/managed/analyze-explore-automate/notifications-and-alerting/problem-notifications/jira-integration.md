@@ -1,7 +1,6 @@
 ---
 title: Send Dynatrace notifications to Jira
 source: https://docs.dynatrace.com/managed/analyze-explore-automate/notifications-and-alerting/problem-notifications/jira-integration
-scraped: 2026-05-12T11:24:58.060106
 ---
 
 # Send Dynatrace notifications to Jira
@@ -23,12 +22,12 @@ This integration supports Jira REST API v2. Jira REST API v3 isn't supported.
 
 To configure Jira integration with Dynatrace
 
-1. Go to **Settings** > **Integration** > **Problem notifications**.
+1. Go to **Settings Classic** > **Integration** > **Problem notifications**.
 2. Select **Add notification**.
 3. Select **Jira** from the available notification types.
 4. Configure the notification:
 
-   * Enter a **Display name** for this integration. This is the freeform name of this integration that will be displayed in Dynatrace on **Settings** > **Integration** > **Problem notifications** when you finish this configuration.
+   * Enter a **Display name** for this integration. This is the freeform name of this integration that will be displayed in Dynatrace on **Settings Classic** > **Integration** > **Problem notifications** when you finish this configuration.
    * Enter the **Jira endpoint URI**.
    * Enter the corresponding **Username** and **API token** for this Jira project.
 

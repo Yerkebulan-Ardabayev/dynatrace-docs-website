@@ -1,7 +1,6 @@
 ---
 title: Azure Network Interface monitoring
 source: https://docs.dynatrace.com/managed/ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics/monitor-azure-network-interface
-scraped: 2026-05-12T11:27:21.389744
 ---
 
 # Azure Network Interface monitoring

@@ -1,7 +1,6 @@
 ---
 title: Failure detection API - GET a parameter set
 source: https://docs.dynatrace.com/managed/dynatrace-api/configuration-api/service-api/failure-detection/parameter-set/get-parameter-set
-scraped: 2026-05-12T11:16:27.247447
 ---
 
 # Failure detection API - GET a parameter set
@@ -56,18 +55,18 @@ These parameters define the conditions of failure and success.
 | brokenLinkDomains | string[] | A list of domains for the special handling of the 404 HTTP response code.  If the top domain of the *Referer* is presented in the list OR equals the top domain of the request's host, the 404 code is considered a failure.  Only applicable when **isHttp404NotFoundFailureEnabled** is set to `true`. |
 | clientSideMissingHttpCodeIsFailure | boolean | The missing HTTP response code on the client side is a failure (`true`) or a success (`false`).  If not set, `false` is used. |
 | description | string | A short description of the FDP set. |
-| exceptionOnAnyNodeExceptionPatterns | [ExceptionPattern[]](#openapi-definition-ExceptionPattern) | A list of faulty exceptions.  If an exception on *any* node of the service matches *any* of these patterns it is considered a failure. |
+| exceptionOnAnyNodeExceptionPatterns | [ExceptionPattern](#openapi-definition-ExceptionPattern)[] | A list of faulty exceptions.  If an exception on *any* node of the service matches *any* of these patterns it is considered a failure. |
 | failingHttpCodesClientSide | string | A list of client side HTTP response codes that are considered a failure.  The format is a list of ranges and individual values (for example, `500-599, 400-499, 1008`).  If not set, the range of `400-599` is used. |
 | failingHttpCodesServerSide | string | A list of server side HTTP response codes that are considered a failure.  The format is a list of ranges and individual values (for example, `500-599, 400-499, 1008`).If not set, the range of `500-599` is used. |
 | http404NotFoundFailureEnabled | boolean | Special handling of the 404 HTTP response code is enabled (`true`) or disabled (`false`). See **brokenLinkDomains** for special handling details.  Only applicable when 404 is NOT in the list of failing HTTP response codes and only for the server side.  If not set, `false` is used. |
 | id | string | The ID of the parameter set. |
 | ignoreAllExceptions | boolean | If set to true all exceptions will be ignored. Which means defined exception patterns will not have any effect. |
 | ignoreSpanFailureDetection | boolean | If set to true span failure detection will be ignored. |
-| ignoredExceptionPatterns | [ExceptionPattern[]](#openapi-definition-ExceptionPattern) | A list of ignored exceptions.  If an exception on the entry node of the service matches *any* of these patterns it is ignored by failure detection. |
+| ignoredExceptionPatterns | [ExceptionPattern](#openapi-definition-ExceptionPattern)[] | A list of ignored exceptions.  If an exception on the entry node of the service matches *any* of these patterns it is ignored by failure detection. |
 | name | string | The display name of the FDP set.  The length of the name is limited to 150 characters. |
 | serverSideMissingHttpCodeIsFailure | boolean | The missing HTTP response code on the server side is a failure (`true`) or a success (`false`).  If not set, `false` is used. |
-| successForcingExceptionPatterns | [ExceptionPattern[]](#openapi-definition-ExceptionPattern) | A list of success exceptions.  If an exception on the entry node of the service matches *any* of these patterns it is considered a success. |
-| tagConditions | [FdpTagCondition[]](#openapi-definition-FdpTagCondition) | A list of tag-based conditions.  If *any* condition is fulfilled the request is considered a failure. |
+| successForcingExceptionPatterns | [ExceptionPattern](#openapi-definition-ExceptionPattern)[] | A list of success exceptions.  If an exception on the entry node of the service matches *any* of these patterns it is considered a success. |
+| tagConditions | [FdpTagCondition](#openapi-definition-FdpTagCondition)[] | A list of tag-based conditions.  If *any* condition is fulfilled the request is considered a failure. |
 
 #### The `ExceptionPattern` object
 
@@ -86,14 +85,14 @@ Configuration of the tag condition in the FDP set.
 
 | Element | Type | Description |
 | --- | --- | --- |
-| predicate | [FdpTagPredicate](#openapi-definition-FdpTagPredicate) | The predicate that tests the value of the tag.  The actual set of fields depends on the type of the predicate. Find the list of actual objects in the description of the **type** field or see [Failure detection API - JSON modelsï»¿](https://dt-url.net/9sg3swf). |
+| predicate | [FdpTagPredicate](#openapi-definition-FdpTagPredicate) | The predicate that tests the value of the tag.  The actual set of fields depends on the type of the predicate. Find the list of actual objects in the description of the **type** field or see [Failure detection API - JSON models﻿](https://dt-url.net/9sg3swf). |
 | tagKey | string | The key of the tag to be checked. |
 
 #### The `FdpTagPredicate` object
 
 The predicate that tests the value of the tag.
 
-The actual set of fields depends on the type of the predicate. Find the list of actual objects in the description of the **type** field or see [Failure detection API - JSON modelsï»¿](https://dt-url.net/9sg3swf).
+The actual set of fields depends on the type of the predicate. Find the list of actual objects in the description of the **type** field or see [Failure detection API - JSON models﻿](https://dt-url.net/9sg3swf).
 
 | Element | Type | Description |
 | --- | --- | --- |

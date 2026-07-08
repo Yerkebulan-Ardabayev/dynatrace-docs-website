@@ -1,7 +1,6 @@
 ---
 title: OpenTelemetry interoperability in Python
 source: https://docs.dynatrace.com/managed/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration/aws-lambda-classic/opentelemetry-interoperability/lambda-otel-bridge-python
-scraped: 2026-05-12T12:15:14.790590
 ---
 
 # OpenTelemetry interoperability in Python
@@ -10,7 +9,7 @@ scraped: 2026-05-12T12:15:14.790590
 
 * How-to guide
 * 10-min read
-* Updated on Apr 28, 2026
+* Updated on May 11, 2026
 
 OpenTelemetry interoperability connects the [Dynatrace AWS Lambda extension](/managed/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration/aws-lambda-classic/aws-lambda-extension "Monitor Lambda functions written in Python, Node.js, and Java.") to the OpenTelemetry Python instrumentation to use the instrumentation packages and extensions. You can then monitor technologies like databases or messaging frameworks that aren't supported by Dynatrace AWS Lambda extension out of the box.
 
@@ -21,6 +20,7 @@ OpenTelemetry interoperability connects the [Dynatrace AWS Lambda extension](/ma
 
   | OneAgent version | Maximum OpenTelemetry API version |
   | --- | --- |
+  | 1.341+ | 1.41.x |
   | 1.331+ | 1.39.x |
   | 1.329+ | 1.38.x |
   | 1.323+ | 1.36.x |
@@ -32,11 +32,11 @@ OpenTelemetry interoperability connects the [Dynatrace AWS Lambda extension](/ma
 
 ## Use OpenTelemetry Python instrumentation
 
-OpenTelemetry for Python provides several instrumentation packages in their [OpenTelemetry Python contributions repositoryï»¿](https://opentelemetry-python-contrib.readthedocs.io/).
+OpenTelemetry for Python provides several instrumentation packages in their [OpenTelemetry Python contributions repository﻿](https://opentelemetry-python-contrib.readthedocs.io/).
 
 Example: Instrument package in a Python Lambda function via instrumentation package
 
-The following code example shows how to instrument [PostgreSQLï»¿](https://www.postgresql.org/) queries in a Python Lambda function by using the [aiopgï»¿](https://opentelemetry-python-contrib.readthedocs.io/en/latest/instrumentation/aiopg/aiopg.html) instrumentation package.
+The following code example shows how to instrument [PostgreSQL﻿](https://www.postgresql.org/) queries in a Python Lambda function by using the [aiopg﻿](https://opentelemetry-python-contrib.readthedocs.io/en/latest/instrumentation/aiopg/aiopg.html) instrumentation package.
 
 ```
 import json
@@ -106,11 +106,11 @@ result.append(row)
 return result
 ```
 
-To instrument [boto3ï»¿](https://boto3.readthedocs.io), the AWS SDK for Python, OpenTelemetry provides the [botocoreï»¿](https://opentelemetry-python-contrib.readthedocs.io/en/latest/instrumentation/botocore/botocore.html) instrumentation package.
+To instrument [boto3﻿](https://boto3.readthedocs.io), the AWS SDK for Python, OpenTelemetry provides the [botocore﻿](https://opentelemetry-python-contrib.readthedocs.io/en/latest/instrumentation/botocore/botocore.html) instrumentation package.
 
 Example: Instrument AWS SDK for Python to monitor a DynamoDB database
 
-The code example below shows how the `botocore` instrumentation can be used to add observability for calls to a [DynamoDBï»¿](https://aws.amazon.com/dynamodb/) database (Dynatrace version 1.244+).
+The code example below shows how the `botocore` instrumentation can be used to add observability for calls to a [DynamoDB﻿](https://aws.amazon.com/dynamodb/) database (Dynatrace version 1.244+).
 
 ```
 import boto3
@@ -162,7 +162,7 @@ return {
 
 ## Use OpenTelemetry Python API
 
-[OpenTelemetry Pythonï»¿](https://github.com/open-telemetry/opentelemetry-python) can be used in an SDK-like approach to trace additional operations that aren't covered by an instrumentation package.
+[OpenTelemetry Python﻿](https://github.com/open-telemetry/opentelemetry-python) can be used in an SDK-like approach to trace additional operations that aren't covered by an instrumentation package.
 
 ```
 import json
@@ -240,7 +240,7 @@ SNS
 pip install -U "opentelemetry-api>=1.12" "opentelemetry-instrumentation-boto3sqs>=0.34b0"
 ```
 
-At this point, [`opentelemetry-instrumentation-boto3sqs`ï»¿](https://pypi.org/project/opentelemetry-instrumentation-boto3sqs/) is a separate package from [`opentelemetry-instrumentation-botocore`ï»¿](https://pypi.org/project/opentelemetry-instrumentation-botocore/). The latter instruments all AWS SDK calls, but lacks enhanced support for SQS.
+At this point, [`opentelemetry-instrumentation-boto3sqs`﻿](https://pypi.org/project/opentelemetry-instrumentation-boto3sqs/) is a separate package from [`opentelemetry-instrumentation-botocore`﻿](https://pypi.org/project/opentelemetry-instrumentation-botocore/). The latter instruments all AWS SDK calls, but lacks enhanced support for SQS.
 
 If you install the dependencies into a Lambda function or layer, you can use the `-t` option to specify a target directory where the installed packages should be copied.
 
@@ -250,7 +250,7 @@ pip install -U "opentelemetry-instrumentation-botocore>=0.36b0"
 
 ### Step 2 Send an SQS/SNS message
 
-The [boto3ï»¿](https://pypi.org/project/boto3/) package is available out of the box if the code runs in AWS Lambda, but you can also install it using `pip install -U boto3`.
+The [boto3﻿](https://pypi.org/project/boto3/) package is available out of the box if the code runs in AWS Lambda, but you can also install it using `pip install -U boto3`.
 
 This code defining a function named `lambda_handler` can be used
 
@@ -566,10 +566,10 @@ You can trace SQS messages forwarded from
   return propagate.extract(carrier)
   ```
 
-  The invoked Lambda function is a child of one of the messages by which it's triggered. Since there can only be one parent, the other manual-triggerâprocess spans aren't linked directly to the Lambda invocation in which they are handled. Often, there's more than one Lambda invocation node for a batch of messages. In those cases, AWS distributed the batch over multiple Lambda invocations. This can happen even if the messages are delivered within your configured batch window time and number less than your configured batch size.
+  The invoked Lambda function is a child of one of the messages by which it's triggered. Since there can only be one parent, the other manual-trigger–process spans aren't linked directly to the Lambda invocation in which they are handled. Often, there's more than one Lambda invocation node for a batch of messages. In those cases, AWS distributed the batch over multiple Lambda invocations. This can happen even if the messages are delivered within your configured batch window time and number less than your configured batch size.
 * **An SNS topic**
 
-  For SNS messages that are forwarded to SQS, the message format depends on the [raw message deliveryï»¿](https://docs.aws.amazon.com/sns/latest/dg/sns-large-payload-raw-message-delivery.html) configuration on the SNS subscription.
+  For SNS messages that are forwarded to SQS, the message format depends on the [raw message delivery﻿](https://docs.aws.amazon.com/sns/latest/dg/sns-large-payload-raw-message-delivery.html) configuration on the SNS subscription.
 
   | Raw message delivery | Message format | Example |
   | --- | --- | --- |

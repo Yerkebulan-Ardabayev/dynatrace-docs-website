@@ -1,7 +1,6 @@
 ---
 title: Mainframe technology support
 source: https://docs.dynatrace.com/managed/ingest-from/technology-support/mainframe-technology-support
-scraped: 2026-05-12T11:06:28.120870
 ---
 
 # Mainframe technology support
@@ -9,7 +8,7 @@ scraped: 2026-05-12T11:06:28.120870
 # Mainframe technology support
 
 * 3-min read
-* Updated on Apr 07, 2026
+* Updated on Jun 24, 2026
 
 Dynatrace supports monitoring of the technologies and versions listed below on IBM z/OS.
 
@@ -31,7 +30,7 @@ Definition of the technology support version schema with examples:
 
   + Patch version 5.1.1 is supported
   + Other patch versions are not supported like 5.1.2 and 5.1.3
-* **Version range 5.1 â 5.3 is supported**
+* **Version range 5.1 – 5.3 is supported**
 
   + Minor versions 5.1, 5.2, and 5.3 are supported, including all of their patch versions like 5.1.1, 5.2.1, and 5.3.1
   + Other minor versions are not supported like 5.0 and 5.4
@@ -76,7 +75,7 @@ The database access method DL/I is supported.
 
 | Messaging client | Versions |
 | --- | --- |
-| IBM MQ | 8.0, 9.0, 9.1, 9.2, 9.3 |
+| IBM MQ | 8.0, 9.0, 9.1, 9.2, 9.3, 9.4 |
 
 ## IBM IMS
 
@@ -109,7 +108,7 @@ The database access methods DL/I and Fast Path are supported.
 
 | Messaging client | Versions |
 | --- | --- |
-| IBM MQ | 8.0, 9.0, 9.1, 9.2, 9.3 |
+| IBM MQ | 8.0, 9.0, 9.1, 9.2, 9.3, 9.4 |
 
 ## z/OS Java
 
@@ -135,7 +134,7 @@ In some cases, a manual Java runtime upgrade may be required to remain supported
 | IBM WebSphere Application Server | 8.5.5, 9.0 |
 | IBM WebSphere Liberty | 18, 19, 20, 21, 22, 23, 24, 25, 26 |
 | IBM z/OS Connect [1](#fn-6-1-def)[2](#fn-6-2-def) | 3.0.30+ |
-| IBM CICS Transaction Gateway [3](#fn-6-3-def)[4](#fn-6-4-def) | 9.0, 9.1, 9.2, 9.3 |
+| IBM CICS Transaction Gateway [3](#fn-6-3-def)[4](#fn-6-4-def) | 9.0, 9.1, 9.2, 9.3, 10.1 |
 | IBM IMS SOAP Gateway [5](#fn-6-5-def) | 3.2 |
 | Apache HttpClient | 3.1, 4, 5 |
 
@@ -165,7 +164,7 @@ Only inbound tracing is supported.
 
 1
 
-Only the [Db2 JDBC driver typesï»¿](https://www.ibm.com/docs/en/sdi/7.2.0.3?topic=drivers-connecting-db2) 2 and 4 are supported.
+Only the [Db2 JDBC driver types﻿](https://www.ibm.com/docs/en/sdi/7.2.0.3?topic=drivers-connecting-db2) 2 and 4 are supported.
 
 | Messaging client | Versions |
 | --- | --- |

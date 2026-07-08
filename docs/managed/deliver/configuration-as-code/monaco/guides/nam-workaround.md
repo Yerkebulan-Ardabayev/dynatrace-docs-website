@@ -1,7 +1,6 @@
 ---
 title: Configure network availability monitoring (NAM) via Settings 2.0 API (workaround)
 source: https://docs.dynatrace.com/managed/deliver/configuration-as-code/monaco/guides/nam-workaround
-scraped: 2026-05-12T12:03:02.647092
 ---
 
 # Configure network availability monitoring (NAM) via Settings 2.0 API (workaround)

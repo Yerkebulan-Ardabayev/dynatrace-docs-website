@@ -1,7 +1,6 @@
 ---
 title: Monitor Kubernetes/OpenShift services
 source: https://docs.dynatrace.com/managed/observe/infrastructure-observability/container-platform-monitoring/kubernetes-monitoring/monitor-services-kubernetes
-scraped: 2026-05-12T12:07:33.553748
 ---
 
 # Monitor Kubernetes/OpenShift services
@@ -21,7 +20,7 @@ k8s-services
 
 The Kubernetes services from Infrastructure Monitoring and the services from Applications & Microservices are two fundamentally different concepts.
 
-* A [Kubernetes serviceï»¿](https://dt-url.net/x3034x8) (entity type: `KUBERNETES_SERVICE`) is a Kubernetes-specific concept. It usually exposes a set of pods on the network level. Pods can be served by multiple Kubernetes services.
+* A [Kubernetes service﻿](https://dt-url.net/x3034x8) (entity type: `KUBERNETES_SERVICE`) is a Kubernetes-specific concept. It usually exposes a set of pods on the network level. Pods can be served by multiple Kubernetes services.
 * A [service](/managed/observe/application-observability/services "Learn how to monitor and analyze your services, define and use request attributes, and more.")(entity type: `SERVICE`) is automatically detected by Dynatrace based on the properties of your application deployment and configuration. Depending on technologies and configuration, Dynatrace can either detect multiple services per pod, or services that span across multiple pods.
 
 ## Prerequisites
@@ -29,7 +28,7 @@ The Kubernetes services from Infrastructure Monitoring and the services from App
 * ActiveGate version 1.251+ with Kubernetes API monitoring enabled
 * In Dynatrace, go to your Kubernetes cluster settings page and make sure that **Monitor Kubernetes namespaces, services, workloads, and pods** is turned on.
 
-If you're not using Dynatrace Operator, you also need to enable the `list services` and `get services` permissions on your [service accountï»¿](https://dt-url.net/ov034vn) used to connect to the Kubernetes API.
+If you're not using Dynatrace Operator, you also need to enable the `list services` and `get services` permissions on your [service account﻿](https://dt-url.net/ov034vn) used to connect to the Kubernetes API.
 
 ## Access Kubernetes services
 

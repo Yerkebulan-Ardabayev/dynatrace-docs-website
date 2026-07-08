@@ -1,7 +1,6 @@
 ---
 title: Update a cluster
 source: https://docs.dynatrace.com/managed/managed-cluster/operation/update-cluster
-scraped: 2026-05-12T11:07:54.718319
 ---
 
 # Update a cluster
@@ -83,7 +82,7 @@ Define a suitable maintenance window in which the automatic update should run.
 You can trigger the update manually at any time outside the defined maintenance window via:
 
 * the **Automatic update** in the **Cluster Management Console**.
-* the **Cluster API v1 â Updates â Trigger Upgrade**.
+* the **Cluster API v1 – Updates – Trigger Upgrade**.
 
 If you have turned off **Install Dynatrace cluster updates automatically during the selected maintenance window**, you must trigger the update always manually.
 

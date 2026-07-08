@@ -1,7 +1,6 @@
 ---
 title: Application Security overview (DPS)
 source: https://docs.dynatrace.com/managed/license/capabilities/application-security
-scraped: 2026-05-12T12:00:44.405027
 ---
 
 # Application Security overview (DPS)
@@ -38,7 +37,7 @@ These vulnerabilities include
 
 ## Security Posture Management (SPM)
 
-[Security Posture Management (SPM)](/managed/upgrade/unavailable-in-managed "Your selection is unavailable in Dynatrace Managed.") provides ongoing monitoring and automated assessment for KubernetesÂ® environments.
+[Security Posture Management (SPM)](/managed/upgrade/unavailable-in-managed "Your selection is unavailable in Dynatrace Managed.") provides ongoing monitoring and automated assessment for Kubernetes® environments.
 With insights into configuration, compliance issues, and risk management, customers can maintain a strong security posture.
 
 This includes [Kubernetes Security Posture Management (KSPM)](/managed/upgrade/unavailable-in-managed "Your selection is unavailable in Dynatrace Managed."), which focuses on identifying and mitigating security risks in your Kubernetes clusters.
@@ -48,4 +47,4 @@ This includes [Kubernetes Security Posture Management (KSPM)](/managed/upgrade/u
 * [Runtime Vulnerability Analytics](/managed/secure/application-security/vulnerability-analytics "Monitor, visualize, analyze, and remediate third-party and code-level vulnerabilities, track the remediation progress, and create monitoring rules.")
 * [Runtime Application Protection](/managed/secure/application-security/application-protection "Set up and configure Dynatrace Runtime Application Protection to monitor attacks and attack-generated code-level vulnerabilities.")
 * [Unavailable in Dynatrace Managed](/managed/upgrade/unavailable-in-managed "Your selection is unavailable in Dynatrace Managed.")
-* [Dynatrace pricingï»¿](https://www.dynatrace.com/pricing/)
+* [Dynatrace pricing﻿](https://www.dynatrace.com/pricing/)

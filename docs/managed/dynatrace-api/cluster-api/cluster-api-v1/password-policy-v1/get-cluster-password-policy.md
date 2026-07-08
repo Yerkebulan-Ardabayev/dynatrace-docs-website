@@ -1,7 +1,6 @@
 ---
 title: Get cluster password policy
 source: https://docs.dynatrace.com/managed/dynatrace-api/cluster-api/cluster-api-v1/password-policy-v1/get-cluster-password-policy
-scraped: 2026-05-12T12:12:17.046187
 ---
 
 # Get cluster password policy

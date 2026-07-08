@@ -1,7 +1,6 @@
 ---
 title: Upgrade role-based permissions to Dynatrace IAM policies
 source: https://docs.dynatrace.com/managed/manage/identity-access-management/permission-management/manage-user-permissions-policies/advanced/migrate-roles
-scraped: 2026-05-12T11:37:03.067298
 ---
 
 # Upgrade role-based permissions to Dynatrace IAM policies
@@ -59,7 +58,7 @@ For example, to create a policy for a typical application developer, you'd want 
    ![Full access](https://dt-cdn.net/images/roles-808-c081787446.png)
 
    Full access
-2. Modify the policy to limit access to selected management zones based on name prefix (in this example, `â[Kubernetes]â`).
+2. Modify the policy to limit access to selected management zones based on name prefix (in this example, `“[Kubernetes]”`).
 
    ```
    ALLOW environment:roles:viewer, environment:roles:manage-settings
@@ -69,7 +68,7 @@ For example, to create a policy for a typical application developer, you'd want 
    WHERE environment:management-zone startsWith "[Kubernetes]";
    ```
 
-   Now the user has access only to the management zones with names starting with `â[Kubernetes]â`.
+   Now the user has access only to the management zones with names starting with `“[Kubernetes]”`.
 
    ![Roles limited access](https://dt-cdn.net/images/roles-limit-808-c095b9bcf9.png)
 

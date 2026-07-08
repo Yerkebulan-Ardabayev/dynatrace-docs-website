@@ -1,7 +1,6 @@
 ---
 title: Manually instrument your Java application with OpenTelemetry
 source: https://docs.dynatrace.com/managed/ingest-from/opentelemetry/walkthroughs/java/java-manual
-scraped: 2026-05-12T12:12:10.192247
 ---
 
 # Manually instrument your Java application with OpenTelemetry
@@ -36,9 +35,9 @@ Without SDK auto-configuration
 
 1. Add the current versions of the following packages to your package configuration (e.g, Maven, Gradle).
 
-   * [opentelemetry-sdk-extension-autoconfigureï»¿](https://central.sonatype.com/artifact/io.opentelemetry/opentelemetry-sdk-extension-autoconfigure)
-   * [opentelemetry-exporter-otlpï»¿](https://central.sonatype.com/artifact/io.opentelemetry/opentelemetry-exporter-otlp)
-   * [opentelemetry-semconvï»¿](https://central.sonatype.com/artifact/io.opentelemetry.semconv/opentelemetry-semconv)
+   * [opentelemetry-sdk-extension-autoconfigure﻿](https://central.sonatype.com/artifact/io.opentelemetry/opentelemetry-sdk-extension-autoconfigure)
+   * [opentelemetry-exporter-otlp﻿](https://central.sonatype.com/artifact/io.opentelemetry/opentelemetry-exporter-otlp)
+   * [opentelemetry-semconv﻿](https://central.sonatype.com/artifact/io.opentelemetry.semconv/opentelemetry-semconv)
 2. Configure the following environment variables to set the temporality preference to `delta` and define the export parameters, substituting `[URL]` and `[TOKEN]` with the values for the [base URL](#base-url) and [access token](#access-token).
 
    ```
@@ -159,11 +158,11 @@ Without SDK auto-configuration
 
 1. Add the current versions of the following packages to your package configuration (e.g, Maven, Gradle).
 
-   * [opentelemetry-apiï»¿](https://central.sonatype.com/artifact/io.opentelemetry/opentelemetry-api/)
-   * [opentelemetry-sdkï»¿](https://central.sonatype.com/artifact/io.opentelemetry/opentelemetry-sdk/)
-   * [opentelemetry-exporter-otlpï»¿](https://central.sonatype.com/artifact/io.opentelemetry/opentelemetry-exporter-otlp)
-   * [opentelemetry-semconvï»¿](https://central.sonatype.com/artifact/io.opentelemetry.semconv/opentelemetry-semconv)
-2. Add the current version of [opentelemetry-log4j-appender-2.17ï»¿](https://central.sonatype.com/artifact/io.opentelemetry.instrumentation/opentelemetry-log4j-appender-2.17) as a runtime library to your package configuration(a `runtime` scope for Maven, `runtimeOnly` for Gradle).
+   * [opentelemetry-api﻿](https://central.sonatype.com/artifact/io.opentelemetry/opentelemetry-api/)
+   * [opentelemetry-sdk﻿](https://central.sonatype.com/artifact/io.opentelemetry/opentelemetry-sdk/)
+   * [opentelemetry-exporter-otlp﻿](https://central.sonatype.com/artifact/io.opentelemetry/opentelemetry-exporter-otlp)
+   * [opentelemetry-semconv﻿](https://central.sonatype.com/artifact/io.opentelemetry.semconv/opentelemetry-semconv)
+2. Add the current version of [opentelemetry-log4j-appender-2.17﻿](https://central.sonatype.com/artifact/io.opentelemetry.instrumentation/opentelemetry-log4j-appender-2.17) as a runtime library to your package configuration(a `runtime` scope for Maven, `runtimeOnly` for Gradle).
 3. Add the following import statements to the startup class, which bootstraps your application.
 
    ```
@@ -685,7 +684,7 @@ Without SDK auto-configuration
    In the code above, we:
 
    * Create a new span and name it "Call to /myendpoint"
-   * Add two attributes, following the [semantic naming conventionï»¿](https://opentelemetry.io/docs/specs/semconv/general/trace/), specific to the action of this span: information on the HTTP method and version
+   * Add two attributes, following the [semantic naming convention﻿](https://opentelemetry.io/docs/specs/semconv/general/trace/), specific to the action of this span: information on the HTTP method and version
    * Use the span's `makeCurrent()` method to mark it as active span and parent of future spans (until the span finished)
    * Call the span's `end()` method to complete the span (in a `finally` block to ensure the method is called)
 
