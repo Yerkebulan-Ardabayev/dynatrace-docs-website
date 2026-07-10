@@ -77,7 +77,7 @@ The performance threshold rule.
 | samples | integer | Number of request executions in analyzed sliding window (sliding window size). | Optional |
 | stepIndex | integer | Specify the step's index to which a threshold applies. If threshold is monitor-level, no index is needed. | Optional |
 | threshold | number | Notify if monitor request takes longer than *X* time units to execute. For network availability monitors the time unit is milliseconds, for browser and HTTP monitors - seconds. | Required |
-| type | string | Type of performance threshold. The element can hold these values * `MONITOR` * `STEP` | Optional |
+| type | string | Type of performance threshold The element can hold these values * `STEP` * `MONITOR` | Optional |
 | violatingSamples | integer | Number of violating request executions in analyzed sliding window. | Optional |
 
 #### The `SyntheticMonitorPrimaryGrailTagDto` object

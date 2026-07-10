@@ -58,8 +58,8 @@ Make sure that your system meets the following requirements:
 ### Technical limitations
 
 * iOS 12.0+ is supported.
-* Swift 5+
-* Xcode 15+
+* Swift 5+.
+* Xcode 15+.
 * SwiftUI is supported.
 * Session Replay is not available for tvOS and iPadOS.
 * Session Replay is not available for cross-platform frameworks such as Cordova, React Native, Flutter, Xamarin, and similar.
@@ -68,8 +68,6 @@ Make sure that your system meets the following requirements:
 * Session Replay can capture only certain events. However, if you need to track a specific view or event that is not supported by default, you can [capture a custom event](#capture-custom-events).
 * You can only play back the user sessions recorded with Session Replay in [certain browsers](/managed/discover-dynatrace/get-started/dynatrace-ui/dynatrace-web-ui-requirements#session-replay "Browser and TLS requirements for the Dynatrace Managed web UI, including supported browsers for Session Replay and Synthetic Monitoring.").
 * For iOS 26 applications generated with Xcode 26, masking functionality is only available with OneAgent for iOS version 8.323+.
-
-See [Technical restrictions for Session Replay for web applications](/managed/observe/digital-experience/session-replay/session-replay-restrictions-web "Learn which restrictions apply to Session Replay Classic.") for more information.
 
 Session Replay is a video-like reconstruction of the user interactions with mobile applications that use captured events and data. Because of this approach, replayed sessions can differ from the actual user experience. Known issues
 

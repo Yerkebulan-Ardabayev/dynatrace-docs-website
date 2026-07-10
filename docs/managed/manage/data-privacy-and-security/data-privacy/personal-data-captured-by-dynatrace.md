@@ -71,7 +71,7 @@ Literals that are part of the `WHERE` clause of an SQL statement are replaced wi
 
 7
 
-Bind variables support availability [depends on your deployment and license](/managed/observe/infrastructure-observability/databases/database-services-classic/support-for-sql-bind-variables#availability "Learn how you can enable Dynatrace OneAgent to capture the values of bind variables."). To learn how to start capturing SQL bind values, see [Support for SQL bind variables](/managed/observe/infrastructure-observability/databases/database-services-classic/support-for-sql-bind-variables "Learn how you can enable Dynatrace OneAgent to capture the values of bind variables."). SQL bind values are replaced with `*****`. Only users who have permission to view a specific entity or management zone can view unmasked bind values within that entity or zone.
+Bind variables support availability [depends on your deployment and license](/managed/observe/infrastructure-observability/database-services-classic/support-for-sql-bind-variables#availability "Learn how you can enable Dynatrace OneAgent to capture the values of bind variables."). To learn how to start capturing SQL bind values, see [Support for SQL bind variables](/managed/observe/infrastructure-observability/database-services-classic/support-for-sql-bind-variables "Learn how you can enable Dynatrace OneAgent to capture the values of bind variables."). SQL bind values are replaced with `*****`. Only users who have permission to view a specific entity or management zone can view unmasked bind values within that entity or zone.
 
 8
 

@@ -78,14 +78,14 @@ Configuration of the tag condition in the FDP set.
 
 | Element | Type | Description | Required |
 | --- | --- | --- | --- |
-| predicate | [FdpTagPredicate](#openapi-definition-FdpTagPredicate) | The predicate that tests the value of the tag.  The actual set of fields depends on the type of the predicate. Find the list of actual objects in the description of the **type** field or see [Failure detection API - JSON models﻿](https://dt-url.net/9sg3swf). | Required |
+| predicate | [FdpTagPredicate](#openapi-definition-FdpTagPredicate) | The predicate that tests the value of the tag.  The actual set of fields depends on the type of the predicate. Find the list of actual objects in the description of the **type** field or see [Failure detection API - JSON models﻿](https://dt-url.net/9sg3swf?dt=m). | Required |
 | tagKey | string | The key of the tag to be checked. | Required |
 
 #### The `FdpTagPredicate` object
 
 The predicate that tests the value of the tag.
 
-The actual set of fields depends on the type of the predicate. Find the list of actual objects in the description of the **type** field or see [Failure detection API - JSON models﻿](https://dt-url.net/9sg3swf).
+The actual set of fields depends on the type of the predicate. Find the list of actual objects in the description of the **type** field or see [Failure detection API - JSON models﻿](https://dt-url.net/9sg3swf?dt=m).
 
 | Element | Type | Description | Required |
 | --- | --- | --- | --- |

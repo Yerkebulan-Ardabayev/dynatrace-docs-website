@@ -68,12 +68,12 @@ Security advice from the Davis security advisor.
 | Element | Type | Description |
 | --- | --- | --- |
 | adviceType | string | The type of the advice. The element can hold these values * `UPGRADE` |
-| critical | string[] | IDs of `critical` level [security problems﻿](https://dt-url.net/p103u1h) caused by vulnerable component. |
-| high | string[] | IDs of `high` level [security problems﻿](https://dt-url.net/p103u1h) caused by vulnerable component. |
-| low | string[] | IDs of `low` level [security problems﻿](https://dt-url.net/p103u1h) caused by vulnerable component. |
-| medium | string[] | IDs of `medium` level [security problems﻿](https://dt-url.net/p103u1h) caused by vulnerable component. |
+| critical | string[] | IDs of `critical` level [security problems﻿](https://dt-url.net/p103u1h?dt=m) caused by vulnerable component. |
+| high | string[] | IDs of `high` level [security problems﻿](https://dt-url.net/p103u1h?dt=m) caused by vulnerable component. |
+| low | string[] | IDs of `low` level [security problems﻿](https://dt-url.net/p103u1h?dt=m) caused by vulnerable component. |
+| medium | string[] | IDs of `medium` level [security problems﻿](https://dt-url.net/p103u1h?dt=m) caused by vulnerable component. |
 | name | string | The name of the advice. |
-| none | string[] | IDs of `none` level [security problems﻿](https://dt-url.net/p103u1h) caused by vulnerable component. |
+| none | string[] | IDs of `none` level [security problems﻿](https://dt-url.net/p103u1h?dt=m) caused by vulnerable component. |
 | technology | string | The technology of the vulnerable component. The element can hold these values * `DOTNET` * `GO` * `JAVA` * `KUBERNETES` * `NODE_JS` * `PHP` * `PYTHON` |
 | vulnerableComponent | string | The vulnerable component to which advice applies. |
 

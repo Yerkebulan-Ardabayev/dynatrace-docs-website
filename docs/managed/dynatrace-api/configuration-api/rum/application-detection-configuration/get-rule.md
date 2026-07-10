@@ -47,7 +47,7 @@ Application detection rule.
 
 | Element | Type | Description |
 | --- | --- | --- |
-| applicationIdentifier | string | The Dynatrace entity ID of the application, for example `APPLICATION-4A3B43`.  You must use an existing ID. If you need to create a rule for an application that doesn't exist yet, [create an application first﻿](https://dt-url.net/vt03khh) and then configure detection rules for it. |
+| applicationIdentifier | string | The Dynatrace entity ID of the application, for example `APPLICATION-4A3B43`.  You must use an existing ID. If you need to create a rule for an application that doesn't exist yet, [create an application first﻿](https://dt-url.net/vt03khh?dt=m) and then configure detection rules for it. |
 | filterConfig | [ApplicationFilter](#openapi-definition-ApplicationFilter) | The condition of an application detection rule. |
 | id | string | The ID of the rule. |
 | metadata | [ConfigurationMetadataDtoImpl](#openapi-definition-ConfigurationMetadataDtoImpl) | Metadata useful for debugging. |

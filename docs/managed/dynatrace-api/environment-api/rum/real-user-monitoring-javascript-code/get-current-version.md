@@ -33,7 +33,7 @@ To learn how to obtain and use it, see [Tokens and authentication](/managed/disc
 
 | Parameter | Type | Description | In | Required |
 | --- | --- | --- | --- | --- |
-| entity | string | The Dynatrace entity ID of the application.  You can obtain it from the response of the [GET the list of manually injected applications﻿](https://dt-url.net/dl03sgo) call. | path | Required |
+| entity | string | The Dynatrace entity ID of the application.  You can obtain it from the response of the [GET the list of manually injected applications﻿](https://dt-url.net/dl03sgo?dt=m) call. | path | Required |
 
 ## Response
 

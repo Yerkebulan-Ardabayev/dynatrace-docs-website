@@ -76,7 +76,7 @@ A condition of the service detection rule.
 
 The condition of the rule.
 
-The actual set of fields depends on the type of the condition. Find the list of actual objects in the description of the **type** field or see [Service detection API - JSON models﻿](https://dt-url.net/2ie3slq).
+The actual set of fields depends on the type of the condition. Find the list of actual objects in the description of the **type** field or see [Service detection API - JSON models﻿](https://dt-url.net/2ie3slq?dt=m).
 
 | Element | Type | Description |
 | --- | --- | --- |
@@ -120,7 +120,7 @@ Configuration of transformation of the detected value.
 
 If several transformations are specified, they are handled sequentially from top to bottom. Each transformation is applied to the result of the preceding transformation. For example, the second transformation is applied to the result of the first transformation.
 
-The actual set of fields depends on the type of the transformation. Find the list of actual objects in the description of the **type** field or see [Service detection API - JSON models﻿](https://dt-url.net/2ie3slq).
+The actual set of fields depends on the type of the transformation. Find the list of actual objects in the description of the **type** field or see [Service detection API - JSON models﻿](https://dt-url.net/2ie3slq?dt=m).
 
 | Element | Type | Description |
 | --- | --- | --- |

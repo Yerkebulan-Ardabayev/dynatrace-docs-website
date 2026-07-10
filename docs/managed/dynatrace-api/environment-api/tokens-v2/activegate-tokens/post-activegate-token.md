@@ -97,7 +97,7 @@ The newly created ActiveGate token.
 | Element | Type | Description |
 | --- | --- | --- |
 | expirationDate | string | The token expiration date in ISO 8601 format (`yyyy-MM-dd'T'HH:mm:ss.SSS'Z'`). |
-| id | string | The ActiveGate token identifier, consisting of [prefix and public part﻿](https://dt-url.net/rn00tjg) of the token. |
+| id | string | The ActiveGate token identifier, consisting of [prefix and public part﻿](https://dt-url.net/rn00tjg?dt=m) of the token. |
 | token | string | The secret of the token. |
 
 #### The `ErrorEnvelope` object

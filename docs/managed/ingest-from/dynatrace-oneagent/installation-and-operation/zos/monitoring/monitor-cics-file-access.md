@@ -10,7 +10,7 @@ source: https://docs.dynatrace.com/managed/ingest-from/dynatrace-oneagent/instal
 * 1-min read
 * Published Jan 13, 2023
 
-With Dynatrace, you can monitor the VSAM and BDAM file access calls from your CICS applications using the CICS module. Each accessed file in a CICS region is represented as a database service on the [Databases](/managed/observe/infrastructure-observability/databases "Track the database performance and resources to create and maintain a high performing and available application infrastructure.") page, including metrics like response time, failure rate, and throughput.
+With Dynatrace, you can monitor the VSAM and BDAM file access calls from your CICS applications using the CICS module. Each accessed file in a CICS region is represented as a database service on the [Databases Services](/managed/observe/infrastructure-observability/databases "Learn how to automatically detect database services, how to analyze database services, and more.") page, including metrics like response time, failure rate, and throughput.
 
 ![File access on the Database page](https://dt-cdn.net/images/file-sensor-db-3052-6d5ec51cdd.png)
 

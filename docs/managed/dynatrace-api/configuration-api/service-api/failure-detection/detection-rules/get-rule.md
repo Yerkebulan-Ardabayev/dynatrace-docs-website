@@ -64,13 +64,13 @@ The condition of the failure detection rule.
 | Element | Type | Description |
 | --- | --- | --- |
 | attribute | string | The attribute to be checked. The element can hold these values * `PG_NAME` * `PG_TAG` * `SERVICE_MANAGEMENT_ZONES` * `SERVICE_NAME` * `SERVICE_SERVICE_TYPE` * `SERVICE_TAG` |
-| predicate | [FdcPredicate](#openapi-definition-FdcPredicate) | The predicate that tests the value of the attribute.  The actual set of fields depends on the type of the predicate. Find the list of actual objects in the description of the **type** field or see [Failure detection API - JSON models﻿](https://dt-url.net/9sg3swf). |
+| predicate | [FdcPredicate](#openapi-definition-FdcPredicate) | The predicate that tests the value of the attribute.  The actual set of fields depends on the type of the predicate. Find the list of actual objects in the description of the **type** field or see [Failure detection API - JSON models﻿](https://dt-url.net/9sg3swf?dt=m). |
 
 #### The `FdcPredicate` object
 
 The predicate that tests the value of the attribute.
 
-The actual set of fields depends on the type of the predicate. Find the list of actual objects in the description of the **type** field or see [Failure detection API - JSON models﻿](https://dt-url.net/9sg3swf).
+The actual set of fields depends on the type of the predicate. Find the list of actual objects in the description of the **type** field or see [Failure detection API - JSON models﻿](https://dt-url.net/9sg3swf?dt=m).
 
 | Element | Type | Description |
 | --- | --- | --- |

@@ -82,7 +82,7 @@ With [ActiveGate extensions](/managed/ingest-from/extend-dynatrace "Learn what e
 #### Oracle database insights
 
 (module: [Database insights](/managed/ingest-from/dynatrace-activegate/configuration/configure-activegate#oracle_mod "Learn which ActiveGate properties you can configure based on your needs and requirements."))
-[Database insights](/managed/observe/infrastructure-observability/databases/database-services-classic/database-insights "Learn how to extend your database monitoring to the database infrastructure layer.") adds an infrastructure perspective to your database monitoring. With additional data fetched from the database layer, you are able to resolve performance problems that are rooted deep in the database.
+[Database insights](/managed/observe/infrastructure-observability/database-services-classic/database-insights "Learn how to extend your database monitoring to the database infrastructure layer.") adds an infrastructure perspective to your database monitoring. With additional data fetched from the database layer, you are able to resolve performance problems that are rooted deep in the database.
 
 #### Monitoring virtualized infrastructure
 

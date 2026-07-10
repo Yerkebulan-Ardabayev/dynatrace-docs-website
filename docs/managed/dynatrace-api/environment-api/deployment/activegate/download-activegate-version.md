@@ -31,7 +31,7 @@ To learn how to obtain and use it, see [Tokens and authentication](/managed/disc
 | --- | --- | --- | --- | --- |
 | If-None-Match | string | The ETag of the previous request. Do not download if it matches the ETag of the installer. | header | Optional |
 | osType | string | The operating system of the installer. The element can hold these values * `windows` * `unix` | path | Required |
-| version | string | The required version of the ActiveGate installer, in `1.155.275.20181112-084458` format.  You can retrieve the list of available versions with the [**GET available versions of ActiveGate**﻿](https://dt-url.net/kh43rha) call. | path | Required |
+| version | string | The required version of the ActiveGate installer, in `1.155.275.20181112-084458` format.  You can retrieve the list of available versions with the [**GET available versions of ActiveGate**﻿](https://dt-url.net/kh43rha?dt=m) call. | path | Required |
 | networkZone | string | The network zone you want the result to be configured with. Provided network zone must exist, otherwise the request will fail. Requires at least ActiveGate version 1.247. | query | Optional |
 | arch | string | The architecture of your OS:  * `all`: Defaults to `amd64`. * `amd64`: amd64 architecture. * `s390`: S/390 architecture, only supported for Linux. * `arm64`: arm64 architecture, only supported for Linux. The element can hold these values * `all` * `amd64` * `arm64` * `s390` | query | Optional |
 

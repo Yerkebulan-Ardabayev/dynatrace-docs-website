@@ -51,19 +51,19 @@ Configuration of a synthetic location.
 
 **countryCode**, **regionCode**, **city** parameters are optional as they can be retrieved based on **latitude** and **longitude** of location.
 
-The actual set of fields depends on the type of the location. Find the list of actual objects in the description of the **type** field or see [Synthetic locations API v2 - JSON models﻿](https://dt-url.net/3n43szj).
+The actual set of fields depends on the type of the location. Find the list of actual objects in the description of the **type** field or see [Synthetic locations API v2 - JSON models﻿](https://dt-url.net/3n43szj?dt=m).
 
 | Element | Type | Description |
 | --- | --- | --- |
 | city | string | The city of the location. |
-| countryCode | string | The country code of the location.  To fetch the list of available country codes, use the [GET all countries﻿](https://dt-url.net/37030go) request. |
+| countryCode | string | The country code of the location.  To fetch the list of available country codes, use the [GET all countries﻿](https://dt-url.net/37030go?dt=m) request. |
 | countryName | string | The country name of the location. |
 | entityId | string | The Dynatrace entity ID of the location. |
 | geoLocationId | string | The Dynatrace GeoLocation ID of the location. |
 | latitude | number | The latitude of the location in `DDD.dddd` format. |
 | longitude | number | The longitude of the location in `DDD.dddd` format. |
 | name | string | The name of the location. |
-| regionCode | string | The region code of the location.  To fetch the list of available region codes, use the [GET regions of the country﻿](https://dt-url.net/az230x0) request. |
+| regionCode | string | The region code of the location.  To fetch the list of available region codes, use the [GET regions of the country﻿](https://dt-url.net/az230x0?dt=m) request. |
 | regionName | string | The region name of the location. |
 | status | string | The status of the location:  * `ENABLED`: The location is displayed as active in the UI. You can assign monitors to the location. * `DISABLED`: The location is displayed as inactive in the UI. You can't assign monitors to the location. Monitors already assigned to the location will stay there and will be executed from the location. * `HIDDEN`: The location is not displayed in the UI. You can't assign monitors to the location. You can only set location as `HIDDEN` when no monitor is assigned to it. The element can hold these values * `DISABLED` * `ENABLED` * `HIDDEN` |
 | type | string | Defines the actual set of fields depending on the value. See one of the following objects:  * `PUBLIC` -> PublicSyntheticLocation * `PRIVATE` -> PrivateSyntheticLocation * `CLUSTER` -> PrivateSyntheticLocation The element can hold these values * `CLUSTER` * `PRIVATE` * `PUBLIC` |
@@ -82,7 +82,7 @@ Some fields are inherited from the base *SyntheticLocation* object.
 | availabilityNotificationsEnabled | boolean | Notifications for location and node outage are enabled (`true`) or disabled (`false`). Supported only for private Synthetic locations. |
 | browserExecutionSupported | boolean | Containerized location property. Boolean value describes if browser monitors will be executed on this location:  * `false`: Browser monitor executions disabled. * `true`: Browser monitor executions enabled. |
 | city | string | The city of the location. |
-| countryCode | string | The country code of the location.  To fetch the list of available country codes, use the [GET all countries﻿](https://dt-url.net/37030go) request. |
+| countryCode | string | The country code of the location.  To fetch the list of available country codes, use the [GET all countries﻿](https://dt-url.net/37030go?dt=m) request. |
 | countryName | string | The country name of the location. |
 | deploymentType | string | The deployment type of the location:  * `STANDARD`: The location is deployed on Windows or Linux. * `KUBERNETES`: The location is deployed on Kubernetes. The element can hold these values * `KUBERNETES` * `OPENSHIFT` * `STANDARD` * `UNKNOWN` |
 | entityId | string | The Dynatrace entity ID of the location. |
@@ -94,8 +94,8 @@ Some fields are inherited from the base *SyntheticLocation* object.
 | namExecutionSupported | boolean | Containerized location property. Boolean value describes if icmp monitors will be executed on this location:  * `false`: Icmp monitor executions disabled. * `true`: Icmp monitor executions enabled. |
 | name | string | The name of the location. |
 | nodeNames | object | A mapping id to name of the nodes belonging to the location. |
-| nodes | string[] | A list of synthetic nodes belonging to the location.  You can retrieve the list of available nodes with the [GET all nodes﻿](https://dt-url.net/miy3rpl) call. |
-| regionCode | string | The region code of the location.  To fetch the list of available region codes, use the [GET regions of the country﻿](https://dt-url.net/az230x0) request. |
+| nodes | string[] | A list of synthetic nodes belonging to the location.  You can retrieve the list of available nodes with the [GET all nodes﻿](https://dt-url.net/miy3rpl?dt=m) call. |
+| regionCode | string | The region code of the location.  To fetch the list of available region codes, use the [GET regions of the country﻿](https://dt-url.net/az230x0?dt=m) request. |
 | regionName | string | The region name of the location. |
 | status | string | The status of the location:  * `ENABLED`: The location is displayed as active in the UI. You can assign monitors to the location. * `DISABLED`: The location is displayed as inactive in the UI. You can't assign monitors to the location. Monitors already assigned to the location will stay there and will be executed from the location. * `HIDDEN`: The location is not displayed in the UI. You can't assign monitors to the location. You can only set location as `HIDDEN` when no monitor is assigned to it. The element can hold these values * `DISABLED` * `ENABLED` * `HIDDEN` |
 | type | string | -The element can hold these values * `CLUSTER` * `PRIVATE` * `PUBLIC` |

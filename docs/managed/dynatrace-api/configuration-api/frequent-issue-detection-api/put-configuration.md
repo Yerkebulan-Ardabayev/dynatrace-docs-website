@@ -37,7 +37,7 @@ To learn how to obtain and use it, see [Tokens and authentication](/managed/disc
 
 #### The `FrequentIssueDetectionConfig` object
 
-Parameters of the frequent issue detection. To learn more about it, see [Detection of frequent issues﻿](https://dt-url.net/4da3kdg) in Dynatrace Documentation.
+Parameters of the frequent issue detection. To learn more about it, see [Detection of frequent issues﻿](https://dt-url.net/4da3kdg?dt=m) in Dynatrace Documentation.
 
 | Element | Type | Description | Required |
 | --- | --- | --- | --- |

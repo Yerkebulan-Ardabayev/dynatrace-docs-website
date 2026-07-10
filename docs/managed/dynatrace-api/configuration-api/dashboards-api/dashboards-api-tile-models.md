@@ -1796,7 +1796,7 @@ JSON model
 
 Configuration of a tile.
 
-The actual set of fields depends on the type of the tile. Find the list of actual objects in the description of the **tileType** field or see [Dashboards API - Tile JSON models﻿](https://dt-url.net/2wc3spx).
+The actual set of fields depends on the type of the tile. Find the list of actual objects in the description of the **tileType** field or see [Dashboards API - Tile JSON models﻿](https://dt-url.net/2wc3spx?dt=m).
 
 | Element | Type | Description |
 | --- | --- | --- |
@@ -1924,7 +1924,7 @@ Configuration of a User session query tile.
 | --- | --- | --- |
 | customName | string | The name of the tile, set by user. |
 | limit | integer | The limit of the results, if not set will use the default value of the system |
-| query | string | A [user session query﻿](https://dt-url.net/dtusql) executed by the tile. |
+| query | string | A [user session query﻿](https://dt-url.net/dtusql?dt=m) executed by the tile. |
 | timeFrameShift | string | The comparison timeframe of the query.  If specified, you additionally get the results of the same query with the specified time shift. |
 | type | string | The visualization of the tile. The element can hold these values * `COLUMN_CHART` * `FUNNEL` * `LINE_CHART` * `NOT_CONFIGURED` * `PIE_CHART` * `SINGLE_VALUE` * `TABLE` |
 | visualizationConfig | [UserSessionQueryTileConfiguration](#openapi-definition-UserSessionQueryTileConfiguration) | Configuration of a User session query visualization tile. |

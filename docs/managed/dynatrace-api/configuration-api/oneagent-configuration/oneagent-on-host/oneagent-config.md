@@ -68,7 +68,7 @@ Configuration of OneAgent auto-update.
 | setting | string | The auto-update state of OneAgents on the host:  * `ENABLED`: OneAgent automatically updates to the most recent version. * `DISABLED`: OneAgent updates to the version specified in the **version** field. * `INHERITED`: The setting from the host group (if the host is a member of a host group) or the environment-wide configuration (if the host doesn't belong to a host group) is used. The element can hold these values * `DISABLED` * `ENABLED` * `INHERITED` |
 | targetVersion | string | Version to update a OneAgent to when automatic updates are enabled.  Supports relative versions `latest`, `previous` and `older` as well as specific version in `<major>.<minor>` format (for example `1.261`) or `<major>.<minor>.<revision>.<timestamp>` format (for example `1.261.178.20230313-090930`).  Only applicable when the **setting** parameter is set to `ENABLED`. |
 | updateWindows | [UpdateWindowsConfig](#openapi-definition-UpdateWindowsConfig) | Basic information about all configured update windows |
-| version | string | The version to which the OneAgent must be updated.  Specify the version in the `<major>.<minor>.<revision>.<timestamp>` format (for example `1.191.0.20200326-161115`). You can fetch the list of available versions with the [GET available versions﻿](https://dt-url.net/fo23rb5) call.  If no suitable installer is found for the provided version or the value is set to `null`, OneAgent won't be updated.  Only applicable when the **effectiveSetting** value is `DISABLED`.  If the **setting** parameter is set to `INHERITED` but the **version** is still set, it will result in a one-time update: OneAgent will be updated to the specified version and the **version** value will be set to `null`. For further updates the parent setting will be used. |
+| version | string | The version to which the OneAgent must be updated.  Specify the version in the `<major>.<minor>.<revision>.<timestamp>` format (for example `1.191.0.20200326-161115`). You can fetch the list of available versions with the [GET available versions﻿](https://dt-url.net/fo23rb5?dt=m) call.  If no suitable installer is found for the provided version or the value is set to `null`, OneAgent won't be updated.  Only applicable when the **effectiveSetting** value is `DISABLED`.  If the **setting** parameter is set to `INHERITED` but the **version** is still set, it will result in a one-time update: OneAgent will be updated to the specified version and the **version** value will be set to `null`. For further updates the parent setting will be used. |
 
 #### The `ConfigurationMetadata` object
 
@@ -103,7 +103,7 @@ Monitoring configuration of OneAgent.
 
 | Element | Type | Description |
 | --- | --- | --- |
-| autoInjectionEnabled | boolean | Code modules will be injected automatically into monitored applications if this setting is enabled. This setting won't apply if auto-injection is disabled via oneagentctl (see https://dt-url.net/oneagentctl). |
+| autoInjectionEnabled | boolean | Code modules will be injected automatically into monitored applications if this setting is enabled. This setting won't apply if auto-injection is disabled via oneagentctl (see https://dt-url.net/oneagentctl?dt=m). |
 | id | string | The Dynatrace entity ID of the host where OneAgent is deployed. |
 | metadata | [ConfigurationMetadata](#openapi-definition-ConfigurationMetadata) | Metadata useful for debugging |
 | monitoringEnabled | boolean | The monitoring is enabled (`true`) or disabled (`false`). |

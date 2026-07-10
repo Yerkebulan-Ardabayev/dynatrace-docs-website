@@ -116,7 +116,7 @@ The evidence details of a problem.
 
 An evidence of a root cause.
 
-The actual set of fields depends on the type of the evidence. Find the list of actual objects in the description of the **evidenceType** field or see [Problems API v2 - JSON models﻿](https://dt-url.net/we03sp2).
+The actual set of fields depends on the type of the evidence. Find the list of actual objects in the description of the **evidenceType** field or see [Problems API v2 - JSON models﻿](https://dt-url.net/we03sp2?dt=m).
 
 | Element | Type | Description |
 | --- | --- | --- |
@@ -139,7 +139,7 @@ A list of all impacts of the problem.
 
 The impact analysis of the problem on other entities/users.
 
-The actual set of fields depends on the type of the impact. Find the list of actual objects in the description of the **impactType** field or see [Problems API v2 - JSON models﻿](https://dt-url.net/we03sp2).
+The actual set of fields depends on the type of the impact. Find the list of actual objects in the description of the **impactType** field or see [Problems API v2 - JSON models﻿](https://dt-url.net/we03sp2?dt=m).
 
 | Element | Type | Description |
 | --- | --- | --- |

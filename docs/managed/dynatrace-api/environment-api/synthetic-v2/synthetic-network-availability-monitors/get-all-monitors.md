@@ -62,7 +62,7 @@ Basic monitor data.
 | enabled | boolean | If true, the monitor is enabled. |
 | entityId | string | The entity id of the monitor. |
 | name | string | The name of the monitor. |
-| type | string | -The element can hold these values * `BROWSER` * `HTTP` * `MULTI_PROTOCOL` * `THIRD_PARTY` |
+| type | string | The type of the monitor. The element can hold these values * `MULTI_PROTOCOL` * `BROWSER` * `HTTP` |
 
 #### The `ErrorEnvelope` object
 

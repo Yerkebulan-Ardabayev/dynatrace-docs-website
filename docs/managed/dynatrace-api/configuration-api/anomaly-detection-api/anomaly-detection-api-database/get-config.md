@@ -430,4 +430,5 @@ https://mySampleEnv.live.dynatrace.com/api/config/v1/anomalyDetection/databaseSe
 ## Related topics
 
 * [Adjust the sensitivity of anomaly detection for database services](/managed/dynatrace-intelligence/anomaly-detection/adjust-sensitivity-anomaly-detection/adjust-sensitivity-services-database "Learn how to adapt the sensitivity of problem detection for database services.")
-* [Databases](/managed/observe/infrastructure-observability/databases "Track the database performance and resources to create and maintain a high performing and available application infrastructure.")
+* [Unavailable in Dynatrace Managed](/managed/upgrade/unavailable-in-managed "Your selection is unavailable in Dynatrace Managed.")
+* [Databases Services](/managed/observe/infrastructure-observability/databases "Learn how to automatically detect database services, how to analyze database services, and more.")

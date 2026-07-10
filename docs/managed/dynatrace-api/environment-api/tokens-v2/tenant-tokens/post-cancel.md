@@ -44,7 +44,7 @@ The request doesn't provide any configurable parameters.
 
 #### The `TenantTokenConfig` object
 
-Configuration of a [tenant token﻿](https://dt-url.net/b403ss9).
+Configuration of a [tenant token﻿](https://dt-url.net/b403ss9?dt=m).
 
 | Element | Type | Description |
 | --- | --- | --- |

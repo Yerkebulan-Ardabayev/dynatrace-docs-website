@@ -64,9 +64,9 @@ Filter of the calculated synthetic metric.
 | --- | --- | --- | --- |
 | actionType | string | Only user actions of the specified type are included in the metric calculation. The element can hold these values * `Custom` * `Load` * `Xhr` | Optional |
 | errorCode | integer | Only executions finished with the specified error code are included in the metric calculation. | Optional |
-| event | string | Only the specified browser clickpath event is included in the metric calculation.  Specify the Dynatrace entity ID of the event here. You can fetch the list of clickpath events of the monitor with the [GET a synthetic monitor﻿](https://dt-url.net/4oe3kka) request from the Environment API | Optional |
+| event | string | Only the specified browser clickpath event is included in the metric calculation.  Specify the Dynatrace entity ID of the event here. You can fetch the list of clickpath events of the monitor with the [GET a synthetic monitor﻿](https://dt-url.net/4oe3kka?dt=m) request from the Environment API | Optional |
 | hasError | boolean | The execution status of the monitors to be included in the metric calculation:  * `true`: Only failed executions are included. * `false`: All executions are included. | Optional |
-| location | string | Only executions from the specified location are included in the metric calculation.  Specify the Dynatrace entity ID of the location here. You can fetch the list of locations the monitor is running from with the [GET a synthetic monitor﻿](https://dt-url.net/4oe3kka) request from the Environment API. | Optional |
+| location | string | Only executions from the specified location are included in the metric calculation.  Specify the Dynatrace entity ID of the location here. You can fetch the list of locations the monitor is running from with the [GET a synthetic monitor﻿](https://dt-url.net/4oe3kka?dt=m) request from the Environment API. | Optional |
 
 ### Request body JSON model
 

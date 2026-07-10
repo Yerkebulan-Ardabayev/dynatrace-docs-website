@@ -39,7 +39,7 @@ To learn how to obtain and use it, see [Tokens and authentication](/managed/disc
 | Element | Type | Description | Required |
 | --- | --- | --- | --- |
 | metadata | [ConfigurationMetadata](#openapi-definition-ConfigurationMetadata) | Metadata useful for debugging | Optional |
-| services | [AzureSupportingService](#openapi-definition-AzureSupportingService)[] | A list of Azure services to be monitored. Available services are listed by [/azure/supportedServices﻿](https://dt-url.net/wt42sdq) operation.  For each service, a list of metrics and dimensions can be specified. A list of supported metrics and dimensions for a given service can be checked in [documentation﻿](https://dt-url.net/kx2351b).  List of metrics can be skipped (set to null), resulting in recommended (default) set of metrics and dimensions being chosen for monitoring. For built-in services, adjusting the list of metrics is not supported, therefore it needs to be null. | Required |
+| services | [AzureSupportingService](#openapi-definition-AzureSupportingService)[] | A list of Azure services to be monitored. Available services are listed by [/azure/supportedServices﻿](https://dt-url.net/wt42sdq?dt=m) operation.  For each service, a list of metrics and dimensions can be specified. A list of supported metrics and dimensions for a given service can be checked in [documentation﻿](https://dt-url.net/kx2351b?dt=m).  List of metrics can be skipped (set to null), resulting in recommended (default) set of metrics and dimensions being chosen for monitoring. For built-in services, adjusting the list of metrics is not supported, therefore it needs to be null. | Required |
 
 #### The `ConfigurationMetadata` object
 

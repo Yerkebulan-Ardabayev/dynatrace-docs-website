@@ -30,7 +30,7 @@ To learn how to obtain and use it, see [Tokens and authentication](/managed/disc
 | Parameter | Type | Description | In | Required |
 | --- | --- | --- | --- | --- |
 | osType | string | The operating system of the installer. The element can hold these values * `windows` * `unix` | path | Required |
-| version | string | The required version of the OneAgent in the `1.155.275.20181112-084458` format.  You can retrieve the list of available versions with the [**GET available versions of BOSH tarballs**﻿](https://dt-url.net/j703kdn) call. | path | Required |
+| version | string | The required version of the OneAgent in the `1.155.275.20181112-084458` format.  You can retrieve the list of available versions with the [**GET available versions of BOSH tarballs**﻿](https://dt-url.net/j703kdn?dt=m) call. | path | Required |
 | skipMetadata | boolean | Set `true` to omit the OneAgent connectivity information from the installer.  If not set, `false` is used. | query | Optional |
 | networkZone | string | The network zone you want the result to be configured with. | query | Optional |
 

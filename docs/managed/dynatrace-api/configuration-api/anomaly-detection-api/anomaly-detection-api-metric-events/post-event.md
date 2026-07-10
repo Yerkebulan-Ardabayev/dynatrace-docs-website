@@ -65,7 +65,7 @@ The configuration of the metric event.
 
 A single filter for the alerting scope.
 
-The actual set of fields depends on type of the filter. Find the list of actual objects in the description of the **filterType** field or see [Metric events anomaly detection API - JSON models﻿](https://dt-url.net/ql63sap).
+The actual set of fields depends on type of the filter. Find the list of actual objects in the description of the **filterType** field or see [Metric events anomaly detection API - JSON models﻿](https://dt-url.net/ql63sap?dt=m).
 
 | Element | Type | Description | Required |
 | --- | --- | --- | --- |
@@ -85,7 +85,7 @@ Metadata useful for debugging
 
 A single filter for the metrics dimensions.
 
-The actual set of fields depends on type of the filter. Find the list of actual objects in the description of the **filterType** field or see [Metric events anomaly detection API - JSON models﻿](https://dt-url.net/ql63sap).
+The actual set of fields depends on type of the filter. Find the list of actual objects in the description of the **filterType** field or see [Metric events anomaly detection API - JSON models﻿](https://dt-url.net/ql63sap?dt=m).
 
 | Element | Type | Description | Required |
 | --- | --- | --- | --- |

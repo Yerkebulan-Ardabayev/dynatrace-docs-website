@@ -48,7 +48,7 @@ To learn how to obtain and use it, see [Tokens and authentication](/managed/disc
 
 | Parameter | Type | Description | In | Required |
 | --- | --- | --- | --- | --- |
-| body | string | Data points, provided in the [line protocol﻿](https://dt-url.net/5d63ic1). Each line represents a single data point. | body | Required |
+| body | string | Data points, provided in the [line protocol﻿](https://dt-url.net/5d63ic1?dt=m). Each line represents a single data point. | body | Required |
 
 ### Request body objects
 

@@ -64,7 +64,7 @@ Network availability monitor.
 | steps | [SyntheticMultiProtocolMonitorStepDto](#openapi-definition-SyntheticMultiProtocolMonitorStepDto)[] | The steps of the monitor. |
 | syntheticMonitorOutageHandlingSettings | [SyntheticMonitorOutageHandlingSettingsDto](#openapi-definition-SyntheticMonitorOutageHandlingSettingsDto) | Outage handling configuration. |
 | tags | [SyntheticTagWithSourceDto](#openapi-definition-SyntheticTagWithSourceDto)[] | A set of tags assigned to the monitor.  You can specify only the value of the tag here and the `CONTEXTLESS` context and source 'USER' will be added automatically. But preferred option is usage of SyntheticTagWithSourceDto model. |
-| type | string | Monitor type. The element can hold these values * `MULTI_PROTOCOL` * `BROWSER` |
+| type | string | Monitor type. The element can hold these values * `MULTI_PROTOCOL` * `BROWSER` * `HTTP` |
 
 #### The `SyntheticMonitorPerformanceThresholdsDto` object
 
@@ -86,7 +86,7 @@ The performance threshold rule.
 | samples | integer | Number of request executions in analyzed sliding window (sliding window size). |
 | stepIndex | integer | Specify the step's index to which a threshold applies. If threshold is monitor-level, no index is needed. |
 | threshold | number | Notify if monitor request takes longer than *X* time units to execute. For network availability monitors the time unit is milliseconds, for browser and HTTP monitors - seconds. |
-| type | string | Type of performance threshold. The element can hold these values * `MONITOR` * `STEP` |
+| type | string | Type of performance threshold The element can hold these values * `STEP` * `MONITOR` |
 | violatingSamples | integer | Number of violating request executions in analyzed sliding window. |
 
 #### The `SyntheticMonitorPrimaryGrailTagDto` object
@@ -177,7 +177,7 @@ Browser Monitor.
 | steps | [SyntheticBrowserMonitorStepDto](#openapi-definition-SyntheticBrowserMonitorStepDto)[] | The steps of the monitor. |
 | syntheticMonitorOutageHandlingSettings | [SyntheticMonitorOutageHandlingSettingsDto](#openapi-definition-SyntheticMonitorOutageHandlingSettingsDto) | Outage handling configuration. |
 | tags | [SyntheticTagWithSourceDto](#openapi-definition-SyntheticTagWithSourceDto)[] | A set of tags assigned to the monitor.  You can specify only the value of the tag here and the `CONTEXTLESS` context and source 'USER' will be added automatically. But preferred option is usage of SyntheticTagWithSourceDto model. |
-| type | string | Monitor type. The element can hold these values * `MULTI_PROTOCOL` * `BROWSER` |
+| type | string | Monitor type. The element can hold these values * `MULTI_PROTOCOL` * `BROWSER` * `HTTP` |
 
 #### The `SyntheticBrowserMonitorConfigurationDto` object
 
@@ -439,7 +439,7 @@ Http monitor.
 | steps | [SyntheticHttpMonitorStepDto](#openapi-definition-SyntheticHttpMonitorStepDto)[] | The steps of the monitor. |
 | syntheticMonitorOutageHandlingSettings | [SyntheticMonitorOutageHandlingSettingsDto](#openapi-definition-SyntheticMonitorOutageHandlingSettingsDto) | Outage handling configuration. |
 | tags | [SyntheticTagWithSourceDto](#openapi-definition-SyntheticTagWithSourceDto)[] | A set of tags assigned to the monitor.  You can specify only the value of the tag here and the `CONTEXTLESS` context and source 'USER' will be added automatically. But preferred option is usage of SyntheticTagWithSourceDto model. |
-| type | string | Monitor type. The element can hold these values * `MULTI_PROTOCOL` * `BROWSER` |
+| type | string | Monitor type. The element can hold these values * `MULTI_PROTOCOL` * `BROWSER` * `HTTP` |
 
 #### The `SyntheticHttpMonitorAdvancedDto` object
 

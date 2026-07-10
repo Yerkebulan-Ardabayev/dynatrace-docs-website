@@ -48,7 +48,7 @@ Configuration of a new settings object.
 | objectId | string | The ID of the settings object that should be replaced.  Only applicable if an external identifier is provided. | Optional |
 | schemaId | string | The schema on which the object is based. | Required |
 | schemaVersion | string | The version of the schema on which the object is based. | Optional |
-| scope | string | The scope that the object targets. For more details, please see [Dynatrace Documentation﻿](https://dt-url.net/ky03459). | Required |
+| scope | string | The scope that the object targets. For more details, please see [Dynatrace Documentation﻿](https://dt-url.net/ky03459?dt=m). | Required |
 | value | [AnyValue](#openapi-definition-AnyValue) | The value of the setting.  It defines the actual values of settings' parameters.  The actual content depends on the object's schema. | Required |
 
 #### The `AnyValue` object

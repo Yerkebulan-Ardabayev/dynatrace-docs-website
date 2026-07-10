@@ -44,7 +44,7 @@ An update of a mobile session or user action property.
 | Element | Type | Description | Required |
 | --- | --- | --- | --- |
 | aggregation | string | The aggregation type of the property.  It defines how multiple values of the property are aggregated. The element can hold these values * `AVERAGE` * `FIRST` * `LAST` * `MAX` * `MIN` * `SUM` | Optional |
-| cleanupRule | string | The cleanup rule of the property.  Defines how to extract the data you need from a string value. Specify the [regular expression﻿](https://dt-url.net/k9e0iaq) for the data you need there. | Optional |
+| cleanupRule | string | The cleanup rule of the property.  Defines how to extract the data you need from a string value. Specify the [regular expression﻿](https://dt-url.net/k9e0iaq?dt=m) for the data you need there. | Optional |
 | displayName | string | The display name of the property. | Optional |
 | name | string | The name of the reported value.  Only applicable when the **origin** is set to `API`. | Optional |
 | origin | string | The origin of the property The element can hold these values * `API` * `SERVER_SIDE_REQUEST_ATTRIBUTE` | Required |

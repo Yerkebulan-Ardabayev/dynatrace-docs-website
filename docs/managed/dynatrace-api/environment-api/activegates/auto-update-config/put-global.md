@@ -41,6 +41,8 @@ Global configuration of ActiveGates auto-update.
 | --- | --- | --- | --- |
 | globalSetting | string | The state of auto-updates for all ActiveGates connected to the environment or Managed cluster.  This setting is inherited by all ActiveGates that have the `INHERITED` setting. The element can hold these values * `ENABLED` * `DISABLED` | Required |
 | metadata | [ConfigurationMetadata](#openapi-definition-ConfigurationMetadata) | Metadata useful for debugging | Optional |
+| targetVersion | string | Version to update a ActiveGate to when automatic updates are enabled.  Supports relative versions `latest`, `previous` and `older` as well as specific version in `<major>.<minor>` format (for example `1.261`).  Only applicable when the **setting** parameter is set to `ENABLED`. | Optional |
+| updateWindows | [UpdateWindowsConfig](#openapi-definition-UpdateWindowsConfig) | Basic information about all configured update windows | Optional |
 
 #### The `ConfigurationMetadata` object
 
@@ -51,6 +53,23 @@ Metadata useful for debugging
 | clusterVersion | string | Dynatrace version. | Optional |
 | configurationVersions | integer[] | A sorted list of the version numbers of the configuration. | Optional |
 | currentConfigurationVersions | string[] | A sorted list of version numbers of the configuration. | Optional |
+
+#### The `UpdateWindowsConfig` object
+
+Basic information about all configured update windows
+
+| Element | Type | Description | Required |
+| --- | --- | --- | --- |
+| windows | [UpdateWindow](#openapi-definition-UpdateWindow)[] | List of update windows when the OneAgent update can start. If there is no value and update should be performed, the update will start at earliest convenience. | Required |
+
+#### The `UpdateWindow` object
+
+Basic information about one maintenance window
+
+| Element | Type | Description | Required |
+| --- | --- | --- | --- |
+| id | string | Identifier of maintenance window | Required |
+| name | string | The name of maintenance window | Optional |
 
 ### Request body JSON model
 
@@ -98,6 +117,42 @@ This is a model of the request body, showing the possible elements. It has to be
 
 
 "1.23"
+
+
+
+]
+
+
+
+},
+
+
+
+"targetVersion": "latest",
+
+
+
+"updateWindows": {
+
+
+
+"windows": [
+
+
+
+{
+
+
+
+"id": "vu9U3hXa3q0AAAABADdkeW5hdHJhY2Uuc2V0dGluZ3MuZGVwbG95bWVudC5tYW5h",
+
+
+
+"name": "Daily maintenance window"
+
+
+
+}
 
 
 

@@ -34,7 +34,7 @@ To find all model variations that depend on the type of the model, see [JSON mod
 | Parameter | Type | Description | In | Required |
 | --- | --- | --- | --- | --- |
 | monitorId | string | The ID of the synthetic monitor to be updated. | path | Required |
-| body | [SyntheticMonitorUpdate](#openapi-definition-SyntheticMonitorUpdate) | The synthetic monitor update.  The actual set of fields depends the type of the monitor. Find the list of actual objects in the description of the **type** field or see [Synthetic monitors API - JSON models﻿](https://dt-url.net/2523se9). | body | Optional |
+| body | [SyntheticMonitorUpdate](#openapi-definition-SyntheticMonitorUpdate) | The synthetic monitor update.  The actual set of fields depends the type of the monitor. Find the list of actual objects in the description of the **type** field or see [Synthetic monitors API - JSON models﻿](https://dt-url.net/2523se9?dt=m). | body | Optional |
 
 ### Request body objects
 
@@ -42,7 +42,7 @@ To find all model variations that depend on the type of the model, see [JSON mod
 
 The synthetic monitor update.
 
-The actual set of fields depends the type of the monitor. Find the list of actual objects in the description of the **type** field or see [Synthetic monitors API - JSON models﻿](https://dt-url.net/2523se9).
+The actual set of fields depends the type of the monitor. Find the list of actual objects in the description of the **type** field or see [Synthetic monitors API - JSON models﻿](https://dt-url.net/2523se9?dt=m).
 
 | Element | Type | Description | Required |
 | --- | --- | --- | --- |
@@ -52,7 +52,7 @@ The actual set of fields depends the type of the monitor. Find the list of actua
 | locations | string[] | A list of locations from which the monitor is executed.  To specify a location, use its entity ID. For public locations use `GEOLOCATION-9999453BE4BDB3CD` form and `SYNTHETIC_LOCATION-DF80ACFB688C583B` for private ones. | Required |
 | manuallyAssignedApps | string[] | A set of manually assigned applications. | Required |
 | name | string | The name of the monitor. | Required |
-| script | object | The script of a [browser﻿](https://dt-url.net/9c103rda) or HTTP monitor. | Required |
+| script | object | The script of a [browser﻿](https://dt-url.net/9c103rda?dt=m) or HTTP monitor. | Required |
 | tags | [TagWithSourceInfo](#openapi-definition-TagWithSourceInfo)[] | A set of tags assigned to the monitor.  You can specify only the value of the tag here and the `CONTEXTLESS` context and source 'USER' will be added automatically. But preferred option is usage of TagWithSourceDto model. | Required |
 | type | string | Defines the actual set of fields depending on the value. See one of the following objects:  * `BROWSER` -> BrowserSyntheticMonitorUpdate * `HTTP` -> HttpSyntheticMonitorUpdate The element can hold these values * `BROWSER` * `HTTP` | Required |
 

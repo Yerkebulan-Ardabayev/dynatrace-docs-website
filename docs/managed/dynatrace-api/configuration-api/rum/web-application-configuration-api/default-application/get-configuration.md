@@ -378,7 +378,7 @@ Defines userAction and session custom defined properties settings of an applicat
 | Element | Type | Description |
 | --- | --- | --- |
 | aggregation | string | The aggregation type of the property.  It defines how multiple values of the property are aggregated. The element can hold these values * `AVERAGE` * `FIRST` * `LAST` * `MAXIMUM` * `MINIMUM` * `SUM` |
-| cleanupRule | string | The cleanup rule of the property.  Defines how to extract the data you need from a string value. Specify the [regular expression﻿](https://dt-url.net/k9e0iaq) for the data you need there. |
+| cleanupRule | string | The cleanup rule of the property.  Defines how to extract the data you need from a string value. Specify the [regular expression﻿](https://dt-url.net/k9e0iaq?dt=m) for the data you need there. |
 | displayName | string | The display name of the property. |
 | ignoreCase | boolean | If true, the value of this property will always be stored in lower case. Defaults to false. |
 | key | string | Key of the property |

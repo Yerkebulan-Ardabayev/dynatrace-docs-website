@@ -27,7 +27,7 @@ To learn how to obtain and use it, see [Tokens and authentication](/managed/disc
 
 | Parameter | Type | Description | In | Required |
 | --- | --- | --- | --- | --- |
-| activeGateTokenIdentifier | string | The ActiveGate token identifier, consisting of [prefix and public part﻿](https://dt-url.net/rn00tjg) of the token to be deleted. | path | Required |
+| activeGateTokenIdentifier | string | The ActiveGate token identifier, consisting of [prefix and public part﻿](https://dt-url.net/rn00tjg?dt=m) of the token to be deleted. | path | Required |
 
 ## Response
 

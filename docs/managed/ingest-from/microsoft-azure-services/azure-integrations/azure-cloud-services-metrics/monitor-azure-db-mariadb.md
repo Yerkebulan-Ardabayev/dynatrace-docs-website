@@ -22,7 +22,7 @@ On the Azure Database for MariaDB overview page you can see if you’re running 
 
 To learn how to enable service monitoring, see [Enable service monitoring](/managed/ingest-from/microsoft-azure-services/azure-integrations/azure-monitoring-guide/azure-enable-service-monitoring "Enable Azure monitoring in Dynatrace.").
 
-Optionally, for OneAgent integration, see [how database activity is monitored](/managed/observe/infrastructure-observability/databases/database-services-classic/how-database-activity-is-monitored "Learn about automatic detection and monitoring of database services in your application environment.").
+Optionally, for OneAgent integration, see [how database activity is monitored](/managed/observe/infrastructure-observability/database-services-classic/how-database-activity-is-monitored "Learn about automatic detection and monitoring of database services in your application environment.").
 
 ## View service metrics
 

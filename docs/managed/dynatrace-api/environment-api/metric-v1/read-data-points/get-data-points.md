@@ -56,7 +56,7 @@ The maximum allowed timeframe is 6 months.
 | tag | string[] | Filters requested data points by entity which should deliver them. Only data from entities with the specified tag is delivered.  You can specify several tags in the following format: `tag=tag1&tag=tag2`. The entity has to match **all** the specified tags.  In case of key-value tags, such as imported AWS or CloudFoundry tags use the `key:value` format. If there's also a context, use the `[context]key:value` format. | query | Optional |
 | percentile | integer | Specifies which percentile of the selected response time metric should be delivered.  Applicable only to the `PERCENTILE` aggregation type.  Valid values for percentile are between 1 and 99.  Keep in mind that percentile export is possible only for response-time-based metrics such as application and service response times. | query | Optional |
 | includeParentIds | boolean | If set to true the result exposes dimension mappings between parent entities and their children.  For instance: SERVICE-0000000000000001, SERVICE\_METHOD-0000000000000001 | query | Optional |
-| considerMaintenanceWindowsForAvailability | boolean | Exclude (`true`) or include (`false`) data points from any [maintenance window﻿](https://dt-url.net/b2123rg0), defined in your environment. | query | Optional |
+| considerMaintenanceWindowsForAvailability | boolean | Exclude (`true`) or include (`false`) data points from any [maintenance window﻿](https://dt-url.net/b2123rg0?dt=m), defined in your environment. | query | Optional |
 
 ## Response
 

@@ -43,7 +43,7 @@ Configuration of a synthetic location.
 
 **countryCode**, **regionCode**, **city** parameters are optional as they can be retrieved based on **latitude** and **longitude** of location.
 
-The actual set of fields depends on the type of the location. Find the list of actual objects in the description of the **type** field or see [Synthetic locations API v2 - JSON models﻿](https://dt-url.net/3n43szj).
+The actual set of fields depends on the type of the location. Find the list of actual objects in the description of the **type** field or see [Synthetic locations API v2 - JSON models﻿](https://dt-url.net/3n43szj?dt=m).
 
 | Element | Type | Description | Required |
 | --- | --- | --- | --- |
@@ -59,7 +59,7 @@ The actual set of fields depends on the type of the location. Find the list of a
 | minActiveGateCount | integer | Containerized location property. The minimum number of ActiveGates deployed for the location (required for a Kubernetes location). | Optional |
 | namExecutionSupported | boolean | Containerized location property. Boolean value describes if icmp monitors will be executed on this location:  * `false`: Icmp monitor executions disabled. * `true`: Icmp monitor executions enabled. | Optional |
 | nodeSize | string | Containerized location property. The size of a containerized node deployed for the location (required for a Kubernetes location). Accepted values:  * `XS`: extra small * `S`: small * `M`: medium   The node size `L` is not supported in containerized locations. The element can hold these values * `M` * `S` * `UNSUPPORTED` * `XS` | Optional |
-| nodes | string[] | A list of synthetic nodes belonging to the location.  You can retrieve the list of available nodes with the [GET all nodes﻿](https://dt-url.net/miy3rpl) call. | Optional |
+| nodes | string[] | A list of synthetic nodes belonging to the location.  You can retrieve the list of available nodes with the [GET all nodes﻿](https://dt-url.net/miy3rpl?dt=m) call. | Optional |
 | useNewKubernetesVersion | boolean | Containerized location property. Boolean value describes which kubernetes version will be used:  * `false`: Version 1.23+ that is older than 1.26 * `true`: Version 1.26+. | Optional |
 
 ### Request body JSON model

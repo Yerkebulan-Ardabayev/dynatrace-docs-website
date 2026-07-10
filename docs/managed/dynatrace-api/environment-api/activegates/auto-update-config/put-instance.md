@@ -42,6 +42,25 @@ Configuration of the ActiveGate auto-updates.
 | --- | --- | --- | --- |
 | effectiveSetting | string | The actual state of the ActiveGate auto-update.  Applicable only if the **setting** parameter is set to `INHERITED`. In that case, the value is taken from the parent setting. Otherwise, it's just a duplicate of the **setting** value. The element can hold these values * `ENABLED` * `DISABLED` | Optional |
 | setting | string | The state of the ActiveGate auto-update: enabled, disabled, or inherited.  If set to `INHERITED`, the setting is inherited from the global configuration set on the environment or Managed cluster level. The element can hold these values * `DISABLED` * `ENABLED` * `INHERITED` | Required |
+| targetVersion | string | The target version of the ActiveGate.  Specify the version in the `<major>.<minor>` format (for example `1.342`) or `latest`, `previous`, or `older`. | Optional |
+| updateWindows | [UpdateWindowsConfig](#openapi-definition-UpdateWindowsConfig) | Basic information about all configured update windows | Optional |
+
+#### The `UpdateWindowsConfig` object
+
+Basic information about all configured update windows
+
+| Element | Type | Description | Required |
+| --- | --- | --- | --- |
+| windows | [UpdateWindow](#openapi-definition-UpdateWindow)[] | List of update windows when the OneAgent update can start. If there is no value and update should be performed, the update will start at earliest convenience. | Required |
+
+#### The `UpdateWindow` object
+
+Basic information about one maintenance window
+
+| Element | Type | Description | Required |
+| --- | --- | --- | --- |
+| id | string | Identifier of maintenance window | Required |
+| name | string | The name of maintenance window | Optional |
 
 ### Request body JSON model
 
@@ -56,7 +75,43 @@ This is a model of the request body, showing the possible elements. It has to be
 
 
 
-"setting": "INHERITED"
+"setting": "INHERITED",
+
+
+
+"targetVersion": "latest",
+
+
+
+"updateWindows": {
+
+
+
+"windows": [
+
+
+
+{
+
+
+
+"id": "vu9U3hXa3q0AAAABADdkeW5hdHJhY2Uuc2V0dGluZ3MuZGVwbG95bWVudC5tYW5h",
+
+
+
+"name": "Daily maintenance window"
+
+
+
+}
+
+
+
+]
+
+
+
+}
 
 
 

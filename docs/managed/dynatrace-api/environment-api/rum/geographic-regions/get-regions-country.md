@@ -29,7 +29,7 @@ To learn how to obtain and use it, see [Tokens and authentication](/managed/disc
 
 | Parameter | Type | Description | In | Required |
 | --- | --- | --- | --- | --- |
-| countryCode | string | The ISO code of the required country.  To fetch the list of available country codes, use the [GET all countries﻿](https://dt-url.net/37030go) request. | path | Required |
+| countryCode | string | The ISO code of the required country.  To fetch the list of available country codes, use the [GET all countries﻿](https://dt-url.net/37030go?dt=m) request. | path | Required |
 
 ## Response
 

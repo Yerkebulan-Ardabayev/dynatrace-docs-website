@@ -42,7 +42,7 @@ Refer to [JSON models](/managed/dynatrace-api/configuration-api/credential-vault
 
 A set of credentials for synthetic monitors.
 
-The actual set of fields depends on the type of credentials. Find the list of actual objects in the description of the **type** field or see [Credential vault API - JSON models﻿](https://dt-url.net/2sa3sen).
+The actual set of fields depends on the type of credentials. Find the list of actual objects in the description of the **type** field or see [Credential vault API - JSON models﻿](https://dt-url.net/2sa3sen?dt=m).
 
 | Element | Type | Description | Required |
 | --- | --- | --- | --- |

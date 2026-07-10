@@ -50,7 +50,7 @@ To find all model variations that depend on the type of the model, see [JSON mod
 
 The synthetic monitor.
 
-The actual set of fields depends the type of the monitor. Find the list of actual objects in the description of the **type** field or see [Synthetic monitors API - JSON models﻿](https://dt-url.net/2523se9).
+The actual set of fields depends the type of the monitor. Find the list of actual objects in the description of the **type** field or see [Synthetic monitors API - JSON models﻿](https://dt-url.net/2523se9?dt=m).
 
 | Element | Type | Description |
 | --- | --- | --- |
@@ -64,7 +64,7 @@ The actual set of fields depends the type of the monitor. Find the list of actua
 | managementZones | [ManagementZone](#openapi-definition-ManagementZone)[] | A set of management zones to which the monitor belongs to. |
 | manuallyAssignedApps | string[] | A set of manually assigned applications. |
 | name | string | The name of the monitor. |
-| script | object | The script of a [browser﻿](https://dt-url.net/9c103rda) or HTTP monitor. |
+| script | object | The script of a [browser﻿](https://dt-url.net/9c103rda?dt=m) or HTTP monitor. |
 | tags | [TagWithSourceInfo](#openapi-definition-TagWithSourceInfo)[] | A set of tags assigned to the monitor. |
 | type | string | Defines the actual set of fields depending on the value. See one of the following objects:  * `BROWSER` -> BrowserSyntheticMonitor * `HTTP` -> HttpSyntheticMonitor The element can hold these values * `BROWSER` * `HTTP` |
 

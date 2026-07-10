@@ -52,6 +52,25 @@ Configuration of the ActiveGate auto-updates.
 | --- | --- | --- |
 | effectiveSetting | string | The actual state of the ActiveGate auto-update.  Applicable only if the **setting** parameter is set to `INHERITED`. In that case, the value is taken from the parent setting. Otherwise, it's just a duplicate of the **setting** value. The element can hold these values * `ENABLED` * `DISABLED` |
 | setting | string | The state of the ActiveGate auto-update: enabled, disabled, or inherited.  If set to `INHERITED`, the setting is inherited from the global configuration set on the environment or Managed cluster level. The element can hold these values * `DISABLED` * `ENABLED` * `INHERITED` |
+| targetVersion | string | The target version of the ActiveGate.  Specify the version in the `<major>.<minor>` format (for example `1.342`) or `latest`, `previous`, or `older`. |
+| updateWindows | [UpdateWindowsConfig](#openapi-definition-UpdateWindowsConfig) | Basic information about all configured update windows |
+
+#### The `UpdateWindowsConfig` object
+
+Basic information about all configured update windows
+
+| Element | Type | Description |
+| --- | --- | --- |
+| windows | [UpdateWindow](#openapi-definition-UpdateWindow)[] | List of update windows when the OneAgent update can start. If there is no value and update should be performed, the update will start at earliest convenience. |
+
+#### The `UpdateWindow` object
+
+Basic information about one maintenance window
+
+| Element | Type | Description |
+| --- | --- | --- |
+| id | string | Identifier of maintenance window |
+| name | string | The name of maintenance window |
 
 #### The `ErrorEnvelope` object
 
@@ -89,7 +108,43 @@ A list of constraint violations
 
 
 
-"setting": "INHERITED"
+"setting": "INHERITED",
+
+
+
+"targetVersion": "latest",
+
+
+
+"updateWindows": {
+
+
+
+"windows": [
+
+
+
+{
+
+
+
+"id": "vu9U3hXa3q0AAAABADdkeW5hdHJhY2Uuc2V0dGluZ3MuZGVwbG95bWVudC5tYW5h",
+
+
+
+"name": "Daily maintenance window"
+
+
+
+}
+
+
+
+]
+
+
+
+}
 
 
 

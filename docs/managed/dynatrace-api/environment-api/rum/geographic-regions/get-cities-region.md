@@ -29,8 +29,8 @@ To learn how to obtain and use it, see [Tokens and authentication](/managed/disc
 
 | Parameter | Type | Description | In | Required |
 | --- | --- | --- | --- | --- |
-| countryCode | string | The ISO code of the required country.  To fetch the list of available country codes, use the [GET all countries﻿](https://dt-url.net/37030go) request. | path | Required |
-| regionCode | string | The code of the required region.  To fetch the list of available region codes, use the [GET regions of the country﻿](https://dt-url.net/az230x0) request. | path | Required |
+| countryCode | string | The ISO code of the required country.  To fetch the list of available country codes, use the [GET all countries﻿](https://dt-url.net/37030go?dt=m) request. | path | Required |
+| regionCode | string | The code of the required region.  To fetch the list of available region codes, use the [GET regions of the country﻿](https://dt-url.net/az230x0?dt=m) request. | path | Required |
 
 ## Response
 

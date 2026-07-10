@@ -117,7 +117,7 @@ Metadata useful for debugging
 
 Configuration of a tile.
 
-The actual set of fields depends on the type of the tile. Find the list of actual objects in the description of the **tileType** field or see [Dashboards API - Tile JSON models﻿](https://dt-url.net/2wc3spx).
+The actual set of fields depends on the type of the tile. Find the list of actual objects in the description of the **tileType** field or see [Dashboards API - Tile JSON models﻿](https://dt-url.net/2wc3spx?dt=m).
 
 | Element | Type | Description | Required |
 | --- | --- | --- | --- |

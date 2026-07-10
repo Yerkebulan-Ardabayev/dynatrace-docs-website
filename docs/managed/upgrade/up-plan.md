@@ -78,7 +78,7 @@ Limits generally cannot be increased above the hard limit and if there is a requ
 
 ### SQL bind variables
 
-Bind variables generate high network and storage demands, so the capture of SQL bind variables is not enabled by default. To learn Dynatrace SaaS deployment availability conditions and how to get started, see [Support for SQL bind variables](/managed/observe/infrastructure-observability/databases/database-services-classic/support-for-sql-bind-variables "Learn how you can enable Dynatrace OneAgent to capture the values of bind variables.").
+Bind variables generate high network and storage demands, so the capture of SQL bind variables is not enabled by default. To learn Dynatrace SaaS deployment availability conditions and how to get started, see [Support for SQL bind variables](/managed/observe/infrastructure-observability/database-services-classic/support-for-sql-bind-variables "Learn how you can enable Dynatrace OneAgent to capture the values of bind variables.").
 
 ### API limits
 

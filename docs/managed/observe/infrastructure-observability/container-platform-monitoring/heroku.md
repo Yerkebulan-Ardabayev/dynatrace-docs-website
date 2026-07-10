@@ -15,7 +15,7 @@ With Dynatrace cloud-native monitoring enabled for your Heroku applications, you
 
 * Deep application monitoring and code-level details for Java, PHP, Node.js and more – with just a single, language-independent buildpack
 * [Automatic root cause analysis](/managed/dynatrace-intelligence/root-cause-analysis/concepts "Get acquainted with root cause analysis concepts.") of your Heroku web applications
-* Insights into how your Heroku applications use [databases](/managed/observe/infrastructure-observability/databases "Track the database performance and resources to create and maintain a high performing and available application infrastructure.")—including detailed metrics for each database statement
+* Insights into how your Heroku applications use [Databases Services](/managed/observe/infrastructure-observability/databases "Learn how to automatically detect database services, how to analyze database services, and more."),—including detailed metrics for each database statement
 * [Real User Monitoring](/managed/observe/digital-experience/rum-classic/rum-concepts/rum-overview "Learn about Real User Monitoring Classic, key performance metrics, mobile app monitoring, and more.") data on customers’ web browser and mobile device behavior
 * Automated external and third-party service monitoring (for example, calls to external REST APIs)
 

@@ -348,7 +348,7 @@ Oracle database insights
 
 | Property | Description |
 | --- | --- |
-| `dbAgent_enabled` | Enables [Oracle database insights](/managed/observe/infrastructure-observability/databases/database-services-classic/database-insights "Learn how to extend your database monitoring to the database infrastructure layer.") module. Possible values: `true` or `false`. |
+| `dbAgent_enabled` | Enables [Oracle database insights](/managed/observe/infrastructure-observability/database-services-classic/database-insights "Learn how to extend your database monitoring to the database infrastructure layer.") module. Possible values: `true` or `false`. |
 
 ## Module: Extensions
 

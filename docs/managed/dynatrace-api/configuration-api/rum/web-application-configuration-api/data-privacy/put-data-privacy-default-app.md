@@ -62,7 +62,7 @@ Data privacy settings for Session Replay.
 
 | Element | Type | Description | Required |
 | --- | --- | --- | --- |
-| contentMaskingSettings | [SessionReplayContentMaskingSettings](#openapi-definition-SessionReplayContentMaskingSettings) | Content masking settings for Session Replay.  For more details, see [Configure Session Replay﻿](https://dt-url.net/0m03slq) in Dynatrace Documentation. | Optional |
+| contentMaskingSettings | [SessionReplayContentMaskingSettings](#openapi-definition-SessionReplayContentMaskingSettings) | Content masking settings for Session Replay.  For more details, see [Configure Session Replay﻿](https://dt-url.net/0m03slq?dt=m) in Dynatrace Documentation. | Optional |
 | optInModeEnabled | boolean | If `true`, session recording is disabled until JavaScriptAPI `dtrum.enableSessionReplay()` is called. | Optional |
 | urlExclusionRules | string[] | A list of URLs to be excluded from recording. | Optional |
 
@@ -70,7 +70,7 @@ Data privacy settings for Session Replay.
 
 Content masking settings for Session Replay.
 
-For more details, see [Configure Session Replay﻿](https://dt-url.net/0m03slq) in Dynatrace Documentation.
+For more details, see [Configure Session Replay﻿](https://dt-url.net/0m03slq?dt=m) in Dynatrace Documentation.
 
 | Element | Type | Description | Required |
 | --- | --- | --- | --- |
@@ -94,7 +94,7 @@ The masking rule defining how data is hidden.
 | Element | Type | Description | Required |
 | --- | --- | --- | --- |
 | maskingRuleType | string | The type of the masking rule. The element can hold these values * `ATTRIBUTE` * `ELEMENT` | Required |
-| selector | string | The selector for the element or the attribute to be masked.  Specify a CSS expression for an element or a [regular expression﻿](https://dt-url.net/k9e0iaq) for an attribute. | Required |
+| selector | string | The selector for the element or the attribute to be masked.  Specify a CSS expression for an element or a [regular expression﻿](https://dt-url.net/k9e0iaq?dt=m) for an attribute. | Required |
 | userInteractionHidden | boolean | Interactions with the element are (`true`) or are not (`false) masked. | Required |
 
 ### Request body JSON model

@@ -50,7 +50,7 @@ Configuration of the mobile session or user action property.
 | Element | Type | Description |
 | --- | --- | --- |
 | aggregation | string | The aggregation type of the property.  It defines how multiple values of the property are aggregated. The element can hold these values * `AVERAGE` * `FIRST` * `LAST` * `MAX` * `MIN` * `SUM` |
-| cleanupRule | string | The cleanup rule of the property.  Defines how to extract the data you need from a string value. Specify the [regular expression﻿](https://dt-url.net/k9e0iaq) for the data you need there. |
+| cleanupRule | string | The cleanup rule of the property.  Defines how to extract the data you need from a string value. Specify the [regular expression﻿](https://dt-url.net/k9e0iaq?dt=m) for the data you need there. |
 | displayName | string | The display name of the property. |
 | key | string | The unique key of the mobile session or user action property. |
 | name | string | The name of the reported value.  Only applicable when the **origin** is set to `API`. |

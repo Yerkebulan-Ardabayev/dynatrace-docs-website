@@ -95,14 +95,14 @@ A condition defines how to execute matching logic for an entity.
 
 | Element | Type | Description | Required |
 | --- | --- | --- | --- |
-| comparisonInfo | [ComparisonBasic](#openapi-definition-ComparisonBasic) | Defines how the matching is actually performed: what and how are we comparing.  The actual set of fields and possible values of the **operator** field depend on the type of the comparison. Find the list of actual objects in the description of the **type** field or see [JSON models﻿](https://dt-url.net/0b83s6z). | Required |
-| key | [ConditionKey](#openapi-definition-ConditionKey) | The key to identify the data we're matching.  The actual set of fields and possible values depend on the type of the key. Find the list of actual objects in the description of the **type** field or see [JSON models﻿](https://dt-url.net/0b83s6z). | Required |
+| comparisonInfo | [ComparisonBasic](#openapi-definition-ComparisonBasic) | Defines how the matching is actually performed: what and how are we comparing.  The actual set of fields and possible values of the **operator** field depend on the type of the comparison. Find the list of actual objects in the description of the **type** field or see [JSON models﻿](https://dt-url.net/0b83s6z?dt=m). | Required |
+| key | [ConditionKey](#openapi-definition-ConditionKey) | The key to identify the data we're matching.  The actual set of fields and possible values depend on the type of the key. Find the list of actual objects in the description of the **type** field or see [JSON models﻿](https://dt-url.net/0b83s6z?dt=m). | Required |
 
 #### The `ComparisonBasic` object
 
 Defines how the matching is actually performed: what and how are we comparing.
 
-The actual set of fields and possible values of the **operator** field depend on the type of the comparison. Find the list of actual objects in the description of the **type** field or see [JSON models﻿](https://dt-url.net/0b83s6z).
+The actual set of fields and possible values of the **operator** field depend on the type of the comparison. Find the list of actual objects in the description of the **type** field or see [JSON models﻿](https://dt-url.net/0b83s6z?dt=m).
 
 | Element | Type | Description | Required |
 | --- | --- | --- | --- |
@@ -119,7 +119,7 @@ A schema representing an arbitrary value type.
 
 The key to identify the data we're matching.
 
-The actual set of fields and possible values depend on the type of the key. Find the list of actual objects in the description of the **type** field or see [JSON models﻿](https://dt-url.net/0b83s6z).
+The actual set of fields and possible values depend on the type of the key. Find the list of actual objects in the description of the **type** field or see [JSON models﻿](https://dt-url.net/0b83s6z?dt=m).
 
 | Element | Type | Description | Required |
 | --- | --- | --- | --- |

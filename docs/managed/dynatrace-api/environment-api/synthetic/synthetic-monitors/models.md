@@ -971,7 +971,7 @@ HTTP synthetic monitor update. Some fields are inherited from base `SyntheticMon
 | locations | string[] | A list of locations from which the monitor is executed.  To specify a location, use its entity ID. For public locations use `GEOLOCATION-9999453BE4BDB3CD` form and `SYNTHETIC_LOCATION-DF80ACFB688C583B` for private ones. |
 | manuallyAssignedApps | string[] | A set of manually assigned applications. |
 | name | string | The name of the monitor. |
-| script | object | The script of a [browser﻿](https://dt-url.net/9c103rda) or HTTP monitor. |
+| script | object | The script of a [browser﻿](https://dt-url.net/9c103rda?dt=m) or HTTP monitor. |
 | tags | [TagWithSourceInfo](#openapi-definition-TagWithSourceInfo)[] | A set of tags assigned to the monitor.  You can specify only the value of the tag here and the `CONTEXTLESS` context and source 'USER' will be added automatically. But preferred option is usage of TagWithSourceDto model. |
 | type | string | Defines the actual set of fields depending on the value. See one of the following objects:  * `BROWSER` -> BrowserSyntheticMonitorUpdate * `HTTP` -> HttpSyntheticMonitorUpdate The element can hold these values * `BROWSER` * `HTTP` |
 

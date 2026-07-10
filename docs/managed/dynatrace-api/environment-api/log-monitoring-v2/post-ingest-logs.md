@@ -39,9 +39,9 @@ When using log processing with the custom processing pipeline (OpenPipeline), in
 | Parameter | Type | Description | In | Required |
 | --- | --- | --- | --- | --- |
 | content-type | string | (Optional) Allows to provide content type with query parameter. Has priority over value provided in Content-Type header. | query | Optional |
-| structure | string | (Optional) Data model used for structuring the input into log records. Allowed values: `raw`, `flattened`. For more details, refer to the [documentation﻿](https://dt-url.net/lyi2yte). The element can hold these values * `raw` * `flattened` | query | Optional |
-| X-Dynatrace-Attr | string | (Optional) Contains ampersand‑separated key–value pairs representing additional log attributes to be added to each ingested log record. If the same key appears multiple times, all values are captured as a multi‑value attribute. Query parameters take precedence over values provided in this header. For more details, refer to the [documentation﻿](https://dt-url.net/2f4394a). | header | Optional |
-| X-Dynatrace-Options | string | (Optional) Contains ampersand-separated Dynatrace-specific parameters. Supported options: (SaaS only) `structure` (values: `raw`, `flattened`) defines how input data is structured into log records. Query parameters take precedence over header values. For more details, refer to the [documentation﻿](https://dt-url.net/lyi2yte). | header | Optional |
+| structure | string | (Optional) Data model used for structuring the input into log records. Allowed values: `raw`, `flattened`. For more details, refer to the [documentation﻿](https://dt-url.net/lyi2yte?dt=m). The element can hold these values * `raw` * `flattened` | query | Optional |
+| X-Dynatrace-Attr | string | (Optional) Contains ampersand‑separated key–value pairs representing additional log attributes to be added to each ingested log record. If the same key appears multiple times, all values are captured as a multi‑value attribute. Query parameters take precedence over values provided in this header. For more details, refer to the [documentation﻿](https://dt-url.net/2f4394a?dt=m). | header | Optional |
+| X-Dynatrace-Options | string | (Optional) Contains ampersand-separated Dynatrace-specific parameters. Supported options: (SaaS only) `structure` (values: `raw`, `flattened`) defines how input data is structured into log records. Query parameters take precedence over header values. For more details, refer to the [documentation﻿](https://dt-url.net/lyi2yte?dt=m). | header | Optional |
 | body | [LogMessageJson](#openapi-definition-LogMessageJson) | The body of the request. Contains one or more log events to be ingested.  The endpoint accepts one of the following payload types, defined by the **Accept** header:  * `text/plain`: supports only one log event. * `application/json`: supports multiple log events in a single JSON array payload. * `application/jsonl`, `application/jsonlines`, `application/x-ndjson`, `application/jsonlines+json`, or `application/x-jsonlines`: supports multiple log events as JSON-lines payload (one JSON object per line). | body | Optional |
 
 ### Request body objects
@@ -68,9 +68,9 @@ A set of one or more log events:
   { "message": "2" }
   ```
 
-Log events from the input are mapped to Dynatrace log records containing three special attributes: timestamp, loglevel, and content, as well as a map of other attributes. These four properties are set based on keys present in the input JSON object. For more details, refer to the [documentation﻿](https://dt-url.net/lyi2yte).
+Log events from the input are mapped to Dynatrace log records containing three special attributes: timestamp, loglevel, and content, as well as a map of other attributes. These four properties are set based on keys present in the input JSON object. For more details, refer to the [documentation﻿](https://dt-url.net/lyi2yte?dt=m).
 
-(SaaS only) Attribute processing depends on the data model used for input processing. The effective data model for a specific request depends on the `structure` parameter or the default tenant data model, which is determined by tenant configuration. More details can be found in the [documentation﻿](https://dt-url.net/lyi2yte).
+(SaaS only) Attribute processing depends on the data model used for input processing. The effective data model for a specific request depends on the `structure` parameter or the default tenant data model, which is determined by tenant configuration. More details can be found in the [documentation﻿](https://dt-url.net/lyi2yte?dt=m).
 
 ### Request body JSON model
 

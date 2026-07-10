@@ -29,7 +29,7 @@ To learn how to obtain and use it, see [Tokens and authentication](/managed/disc
 
 | Parameter | Type | Description | In | Required |
 | --- | --- | --- | --- | --- |
-| activeGateTokenIdentifier | string | The ActiveGate token identifier, consisting of [prefix and public part﻿](https://dt-url.net/rn00tjg) of the token. | path | Required |
+| activeGateTokenIdentifier | string | The ActiveGate token identifier, consisting of [prefix and public part﻿](https://dt-url.net/rn00tjg?dt=m) of the token. | path | Required |
 
 ## Response
 
@@ -54,7 +54,7 @@ Metadata of an ActiveGate token.
 | activeGateType | string | The type of the ActiveGate for which the token is valid. The element can hold these values * `ENVIRONMENT` * `CLUSTER` |
 | creationDate | string | The token creation date in ISO 8601 format (`yyyy-MM-dd'T'HH:mm:ss.SSS'Z'`). |
 | expirationDate | string | The token expiration date in ISO 8601 format (`yyyy-MM-dd'T'HH:mm:ss.SSS'Z'`).  If not set, the token never expires. |
-| id | string | The ActiveGate token identifier, consisting of [prefix and public part﻿](https://dt-url.net/rn00tjg) of the token. |
+| id | string | The ActiveGate token identifier, consisting of [prefix and public part﻿](https://dt-url.net/rn00tjg?dt=m) of the token. |
 | lastUsedDate | string | The token last used date in ISO 8601 format (`yyyy-MM-dd'T'HH:mm:ss.SSS'Z'`). |
 | name | string | The name of the token. |
 | owner | string | The owner of the token. |

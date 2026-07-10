@@ -14,7 +14,7 @@ This page provides descriptions of all possible fields that a user session might
 
 #### The `UserSession` object
 
-A [user session﻿](https://dt-url.net/xv183rb8), encompassing multiple user actions and additional information about a user's visit.
+A [user session﻿](https://dt-url.net/xv183rb8?dt=m), encompassing multiple user actions and additional information about a user's visit.
 
 | Element | Type | Description |
 | --- | --- | --- |
@@ -74,7 +74,7 @@ A [user session﻿](https://dt-url.net/xv183rb8), encompassing multiple user act
 | syntheticEvents | [UserSessionSyntheticEvent](#openapi-definition-UserSessionSyntheticEvent)[] | A list of synthetic events recorded in the user session. |
 | tenantId | string | The ID of the Dynatrace environment that captured the user session.  This field can not be queried via the User Session Query Language. |
 | totalErrorCount | integer | The number of errors detected in the user session. |
-| totalLicenseCreditCount | integer | Number of resulting billed sessions: [Dynatrace classic licensing﻿](https://dt-url.net/u24c0pga), [Dynatrace Platform Subscription﻿](https://www.dynatrace.com/support/help/shortlink/dps-dem). |
+| totalLicenseCreditCount | integer | Number of resulting billed sessions: [Dynatrace classic licensing﻿](https://dt-url.net/u24c0pga?dt=m), [Dynatrace Platform Subscription﻿](https://www.dynatrace.com/support/help/shortlink/dps-dem). |
 | userActionCount | integer | The number of user actions in the user session. |
 | userActions | [UserSessionUserAction](#openapi-definition-UserSessionUserAction)[] | A list of user actions recorded in the user session. |
 | userExperienceScore | string | The user experience score of the user session. The element can hold these values * `FRUSTRATED` * `SATISFIED` * `TOLERATED` * `UNDEFINED` |
@@ -171,7 +171,7 @@ A user action is a single action performed by the user as part of a user session
 
 | Element | Type | Description |
 | --- | --- | --- |
-| apdexCategory | string | The [user experience index﻿](https://dt-url.net/apdexdoc) of the user action. The element can hold these values * `FRUSTRATED` * `SATISFIED` * `TOLERATING` * `UNKNOWN` |
+| apdexCategory | string | The [user experience index﻿](https://dt-url.net/apdexdoc?dt=m) of the user action. The element can hold these values * `FRUSTRATED` * `SATISFIED` * `TOLERATING` * `UNKNOWN` |
 | application | string | The name of the application where the user action has been recorded. |
 | cdnBusyTime | integer | The time spent waiting for CDN resources for the user action, in milliseconds. |
 | cdnResources | integer | The number of resources fetched from a CDN for the user action. |
@@ -207,18 +207,18 @@ A user action is a single action performed by the user as part of a user session
 | responseEnd | integer | The amount of time until the response ended, in milliseconds. |
 | responseStart | integer | The amount of time until the response started, in milliseconds. |
 | serverTime | integer | The amount of time spent on the server-side processing for the user action, in milliseconds. |
-| speedIndex | integer | The [speed index﻿](https://dt-url.net/qk1a3r19) of the user action, in milliseconds.  This is calculated as average time it takes for all visible parts of a page to display. |
+| speedIndex | integer | The [speed index﻿](https://dt-url.net/qk1a3r19?dt=m) of the user action, in milliseconds.  This is calculated as average time it takes for all visible parts of a page to display. |
 | startTime | integer | The start timestamp of the user action, in UTC milliseconds. |
 | stringProperties | [StringProperty](#openapi-definition-StringProperty)[] | A list of custom properties of the user session with string values. |
-| syntheticEvent | string | The name of the [Synthetic event﻿](https://dt-url.net/dq1e3rmm) that triggered the user action. |
-| syntheticEventId | string | The ID of the [Synthetic event﻿](https://dt-url.net/dq1e3rmm) that triggered the user action. |
+| syntheticEvent | string | The name of the [Synthetic event﻿](https://dt-url.net/dq1e3rmm?dt=m) that triggered the user action. |
+| syntheticEventId | string | The ID of the [Synthetic event﻿](https://dt-url.net/dq1e3rmm?dt=m) that triggered the user action. |
 | targetUrl | string | The target URL of the user action. |
 | thirdPartyBusyTime | integer | The time spent waiting for third party resources for the user action, in milliseconds. |
 | thirdPartyResources | integer | The number of third party resources loaded for the user action. |
 | ~~totalBlockingTime~~ | integer | DEPRECATED  The total blocking time is the total time (in milliseconds) between the first contentful paint and the time to interactive, during which the browser has been blocked long enough to prevent input responsiveness. |
 | type | string | The type of the user action. The element can hold these values * `Custom` * `EndVisit` * `Error` * `Load` * `RageClick` * `SyntheticHiddenAction` * `UserSessionProperties` * `VisitTag` * `Xhr` |
 | userActionPropertyCount | integer | The total number of properties in the user action. |
-| visuallyCompleteTime | integer | The amount of time until the page is [visually complete﻿](https://dt-url.net/qk1a3r19), in milliseconds. |
+| visuallyCompleteTime | integer | The amount of time until the page is [visually complete﻿](https://dt-url.net/qk1a3r19?dt=m), in milliseconds. |
 
 ## Related topics
 

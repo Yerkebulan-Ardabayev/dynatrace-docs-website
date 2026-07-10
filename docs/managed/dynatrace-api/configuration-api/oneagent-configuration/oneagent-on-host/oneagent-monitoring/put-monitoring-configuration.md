@@ -43,7 +43,7 @@ Monitoring configuration of OneAgent.
 
 | Element | Type | Description | Required |
 | --- | --- | --- | --- |
-| autoInjectionEnabled | boolean | Code modules will be injected automatically into monitored applications if this setting is enabled. This setting won't apply if auto-injection is disabled via oneagentctl (see https://dt-url.net/oneagentctl). | Optional |
+| autoInjectionEnabled | boolean | Code modules will be injected automatically into monitored applications if this setting is enabled. This setting won't apply if auto-injection is disabled via oneagentctl (see https://dt-url.net/oneagentctl?dt=m). | Optional |
 | id | string | The Dynatrace entity ID of the host where OneAgent is deployed. | Optional |
 | metadata | [ConfigurationMetadata](#openapi-definition-ConfigurationMetadata) | Metadata useful for debugging | Optional |
 | monitoringEnabled | boolean | The monitoring is enabled (`true`) or disabled (`false`). | Required |

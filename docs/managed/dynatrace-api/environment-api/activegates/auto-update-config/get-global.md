@@ -49,6 +49,8 @@ Global configuration of ActiveGates auto-update.
 | --- | --- | --- |
 | globalSetting | string | The state of auto-updates for all ActiveGates connected to the environment or Managed cluster.  This setting is inherited by all ActiveGates that have the `INHERITED` setting. The element can hold these values * `ENABLED` * `DISABLED` |
 | metadata | [ConfigurationMetadata](#openapi-definition-ConfigurationMetadata) | Metadata useful for debugging |
+| targetVersion | string | Version to update a ActiveGate to when automatic updates are enabled.  Supports relative versions `latest`, `previous` and `older` as well as specific version in `<major>.<minor>` format (for example `1.261`).  Only applicable when the **setting** parameter is set to `ENABLED`. |
+| updateWindows | [UpdateWindowsConfig](#openapi-definition-UpdateWindowsConfig) | Basic information about all configured update windows |
 
 #### The `ConfigurationMetadata` object
 
@@ -59,6 +61,23 @@ Metadata useful for debugging
 | clusterVersion | string | Dynatrace version. |
 | configurationVersions | integer[] | A sorted list of the version numbers of the configuration. |
 | currentConfigurationVersions | string[] | A sorted list of version numbers of the configuration. |
+
+#### The `UpdateWindowsConfig` object
+
+Basic information about all configured update windows
+
+| Element | Type | Description |
+| --- | --- | --- |
+| windows | [UpdateWindow](#openapi-definition-UpdateWindow)[] | List of update windows when the OneAgent update can start. If there is no value and update should be performed, the update will start at earliest convenience. |
+
+#### The `UpdateWindow` object
+
+Basic information about one maintenance window
+
+| Element | Type | Description |
+| --- | --- | --- |
+| id | string | Identifier of maintenance window |
+| name | string | The name of maintenance window |
 
 #### The `ErrorEnvelope` object
 
@@ -129,6 +148,42 @@ A list of constraint violations
 
 
 "1.23"
+
+
+
+]
+
+
+
+},
+
+
+
+"targetVersion": "latest",
+
+
+
+"updateWindows": {
+
+
+
+"windows": [
+
+
+
+{
+
+
+
+"id": "vu9U3hXa3q0AAAABADdkeW5hdHJhY2Uuc2V0dGluZ3MuZGVwbG95bWVudC5tYW5h",
+
+
+
+"name": "Daily maintenance window"
+
+
+
+}
 
 
 

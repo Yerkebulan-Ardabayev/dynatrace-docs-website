@@ -57,10 +57,10 @@ The location for an IP address mapping.
 | Element | Type | Description | Required |
 | --- | --- | --- | --- |
 | city | string | The city name of the location. | Optional |
-| countryCode | string | The country code of the location.  To fetch the list of available country codes, use the [GET all countries﻿](https://dt-url.net/37030go) request. | Required |
+| countryCode | string | The country code of the location.  To fetch the list of available country codes, use the [GET all countries﻿](https://dt-url.net/37030go?dt=m) request. | Required |
 | latitude | number | The latitude of the location in `DDD.dddd` format. | Optional |
 | longitude | number | The longitude of the location in `DDD.dddd` format. | Optional |
-| regionCode | string | The region code of the location.  To fetch the list of available region codes, use the [GET regions of the country﻿](https://dt-url.net/az230x0) request. | Optional |
+| regionCode | string | The region code of the location.  To fetch the list of available region codes, use the [GET regions of the country﻿](https://dt-url.net/az230x0?dt=m) request. | Optional |
 
 #### The `IpAddressRange` object
 

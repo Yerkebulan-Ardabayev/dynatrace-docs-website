@@ -51,7 +51,7 @@ Sharing configuration of the dashboard.
 | id | string | The Dynatrace entity ID of the dashboard. |
 | permissions | [DashboardSharePermissions](#openapi-definition-DashboardSharePermissions)[] | A list of permissions to access the dashboard. |
 | preset | boolean | If `true` the dashboard will be marked as preset. |
-| publicAccess | [DashboardAnonymousAccess](#openapi-definition-DashboardAnonymousAccess) | Configuration of the [anonymous access﻿](https://dt-url.net/ov03sf1) to the dashboard. |
+| publicAccess | [DashboardAnonymousAccess](#openapi-definition-DashboardAnonymousAccess) | Configuration of the [anonymous access﻿](https://dt-url.net/ov03sf1?dt=m) to the dashboard. |
 
 #### The `DashboardSharePermissions` object
 
@@ -65,7 +65,7 @@ Access permissions of the dashboard.
 
 #### The `DashboardAnonymousAccess` object
 
-Configuration of the [anonymous access﻿](https://dt-url.net/ov03sf1) to the dashboard.
+Configuration of the [anonymous access﻿](https://dt-url.net/ov03sf1?dt=m) to the dashboard.
 
 | Element | Type | Description |
 | --- | --- | --- |

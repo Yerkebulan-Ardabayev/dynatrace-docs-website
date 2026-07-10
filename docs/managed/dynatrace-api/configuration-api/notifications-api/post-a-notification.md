@@ -40,7 +40,7 @@ The body must not provide an ID. An ID is assigned automatically by Dynatrace.
 #### The `NotificationConfig` object
 
 Configuration of a notification. The actual set of fields depends on the `type` of the notification.
-See [Notifications API - JSON models﻿](https://dt-url.net/9qm3k5u) in Dynatrace Documentation for example models of every notification type.
+See [Notifications API - JSON models﻿](https://dt-url.net/9qm3k5u?dt=m) in Dynatrace Documentation for example models of every notification type.
 
 | Element | Type | Description | Required |
 | --- | --- | --- | --- |
