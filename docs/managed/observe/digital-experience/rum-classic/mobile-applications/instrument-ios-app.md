@@ -9,7 +9,7 @@ source: https://docs.dynatrace.com/managed/observe/digital-experience/rum-classi
 
 * Overview
 * 1-min read
-* Updated on Jun 10, 2026
+* Updated on Jul 10, 2026
 
 The process of monitoring the user experience of your native mobile apps is fundamentally different from monitoring browser-based web applications. This is because mobile-app monitoring involves the compilation, packaging, and shipment of a monitoring library along with your own mobile application package.
 
@@ -43,9 +43,3 @@ Starting with OneAgent for iOS version 8.335, Dynatrace stopped supporting Xcode
 Also, be aware that [Apple's App Store submission guidelines﻿](https://dt-url.net/we038fb) will restrict support to applications built with a minimum of Xcode 26 around April 2026.
 
 Starting with OneAgent for iOS version 8.343, Dynatrace will stop supporting iOS 12, iOS 13, and iOS 14. The new minimum supported version is iOS 15. Version 8.341 is the last OneAgent for iOS version to support iOS 12 - 14.
-
-Starting with OneAgent for iOS version 8.323, Dynatrace will stop supporting `static builds` and `Carthage` as integration methods.
-
-We recommend migrating to a supported alternative like Swift Package Manager to ensure continued compatibility and updates.
-
-OneAgent for iOS version 8.249 is the last version that supports the 32-bit architecture.

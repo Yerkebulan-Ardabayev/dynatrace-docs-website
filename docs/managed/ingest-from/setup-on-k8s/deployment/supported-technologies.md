@@ -8,7 +8,7 @@ source: https://docs.dynatrace.com/managed/ingest-from/setup-on-k8s/deployment/s
 # Supported distributions
 
 * 6-min read
-* Updated on Jun 16, 2026
+* Updated on Jun 24, 2026
 
 This page gives an overview and documents the different configurations for all major Kubernetes distributions.
 
@@ -235,7 +235,12 @@ For GKE Autopilot, you can [install Dynatrace for App Observability](/managed/in
 * `docker.io/dynatrace/dynatrace-operator`
 * `public.ecr.aws/dynatrace/dynatrace-operator`
 
-Standalone LogMonitoring on GKE Autopilot is fully supported since Dynatrace Operator version 1.4.2 with the following repository source support:
+**Code modules**: On GKE Autopilot with the Dynatrace Operator CSI driver and the [node image pull](/managed/ingest-from/setup-on-k8s/guides/deployment-and-configuration/node-image-pull "Configure node image pull") feature enabled for Application observability, `codeModulesImage` in your DynaKube must reference one of the following repositories:
+
+* `docker.io/dynatrace/dynatrace-codemodules`
+* `public.ecr.aws/dynatrace/dynatrace-codemodules`
+
+**Standalone log monitoring**: Fully supported on GKE Autopilot since Dynatrace Operator version 1.4.2 from the following repositories:
 
 * `docker.io/dynatrace/dynatrace-logmodule`
 * `public.ecr.aws/dynatrace/dynatrace-logmodule`

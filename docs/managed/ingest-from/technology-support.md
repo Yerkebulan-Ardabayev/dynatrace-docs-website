@@ -8,7 +8,7 @@ source: https://docs.dynatrace.com/managed/ingest-from/technology-support
 # Technology support
 
 * 17-min read
-* Updated on Jun 29, 2026
+* Updated on Jul 10, 2026
 
 Dynatrace supports monitoring of the technologies and versions listed on this page. For serverless monitoring, see [Serverless compute support matrix](/managed/ingest-from/technology-support/serverless-compute-services "Learn which features and capabilities Dynatrace supports for serverless compute services for functions (FaaS)."). For mainframe, see [Mainframe technology support](/managed/ingest-from/technology-support/mainframe-technology-support "Learn which technologies Dynatrace supports for Mainframe monitoring.").
 
@@ -1603,7 +1603,6 @@ Dynatrace will deprecate the Dynatrace Xamarin NuGet package in May 2024 and des
 
 #### OneAgent for iOS
 
-* **32-bit devices**: OneAgent for iOS version 8.249 is the last version that supports 32-bit devices.
 * **Xcode**: We support only the Xcode versions that Apple allows for App Store submission. Check [Submit your iOS apps to the App Store﻿](https://developer.apple.com/ios/submit/) on the Apple Developer site to learn which Xcode versions are currently supported.
 
 Starting with OneAgent for iOS version 8.335, Dynatrace stopped supporting Xcode 16. We only support Xcode 26+.
@@ -1611,10 +1610,6 @@ Starting with OneAgent for iOS version 8.335, Dynatrace stopped supporting Xcode
 Also, be aware that [Apple's App Store submission guidelines﻿](https://dt-url.net/we038fb) will restrict support to applications built with a minimum of Xcode 26 around April 2026.
 
 Starting with OneAgent for iOS version 8.343, Dynatrace will stop supporting iOS 12, iOS 13, and iOS 14. The new minimum supported version is iOS 15. Version 8.341 is the last OneAgent for iOS version to support iOS 12 - 14.
-
-Starting with OneAgent for iOS version 8.323, Dynatrace will stop supporting `static builds` and `Carthage` as integration methods.
-
-We recommend migrating to a supported alternative like Swift Package Manager to ensure continued compatibility and updates.
 
 #### Dynatrace Android Gradle plugin
 

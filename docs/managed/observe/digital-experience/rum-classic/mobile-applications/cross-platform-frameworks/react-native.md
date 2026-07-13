@@ -9,7 +9,7 @@ source: https://docs.dynatrace.com/managed/observe/digital-experience/rum-classi
 
 * How-to guide
 * 4-min read
-* Updated on Nov 26, 2024
+* Updated on Jul 10, 2026
 
 Our React Native plugin allows you to auto-instrument your React Native apps with Dynatrace OneAgent for Android and iOS. The plugin provides an API to add manual instrumentation and is compatible with raw, ejected React Native projects.
 
@@ -52,42 +52,12 @@ To create a mobile application in Dynatrace
 
    * Call `npm install @dynatrace/react-native-plugin`.
    * iOS only If you use pods, go to the `ios` directory and execute `pod install` to install the new Dynatrace dependency to your Xcode project.
-3. Register the Dynatrace transformer: in the project's root, either create or extend `metro.config.js` so that it contains the `transformer.babelTransformerPath` property:
+3. From the instrumentation wizard, download the `dynatrace.config.js` file and place it into the root directory of your project next to `app.json`. If you're upgrading from a previous version of the Dynatrace React Native plugin, copy the old configuration values from `dynatrace.config` to the new `dynatrace.config.js` file.
+4. Add the `@dynatrace/react-native-plugin/instrumentation/BabelPluginDynatrace` babel plugin and the `@dynatrace/react-native-plugin` JSX runtime to your `babel.config.js` file:
 
-   ```
-   module.exports = {
-
-
-
-   transformer: {
-
-
-
-   babelTransformerPath: require.resolve('@dynatrace/react-native-plugin/lib/dynatrace-transformer')
-
-
-
-   },
-
-
-
-   reporter: require("@dynatrace/react-native-plugin/lib/dynatrace-reporter")
-
-
-
-   };
-   ```
-4. From the instrumentation wizard, download the `dynatrace.config.js` file and place it into the root directory of your project next to `app.json`. If you're upgrading from a previous version of the Dynatrace React Native plugin, copy the old configuration values from `dynatrace.config` to the new `dynatrace.config.js` file.
-5. Update the Babel configuration in the `babel.config.js` file if you're using the following versions of Metro or Expo:
-
-   * Metro 0.72.0+
-   * Expo 44.0.0+ or babel-preset-expo 9.0.0+
-
-   Metro
+   @babel/plugin-transform-react-jsx
 
    Expo
-
-   Using `metro-react-native-babel-preset`:
 
    ```
    module.exports = {
@@ -98,7 +68,7 @@ To create a mobile application in Dynatrace
 
 
 
-   ['module:metro-react-native-babel-preset'],
+   ['module:@react-native/babel-preset'], // or 'module:metro-react-native-babel-preset'
 
 
 
@@ -107,6 +77,10 @@ To create a mobile application in Dynatrace
 
 
    plugins: [
+
+
+
+   '@dynatrace/react-native-plugin/instrumentation/BabelPluginDynatrace',
 
 
 
@@ -145,10 +119,16 @@ To create a mobile application in Dynatrace
    };
    ```
 
-   Using `babel-preset-expo`:
-
    ```
-   module.exports = {
+   module.exports = function (api) {
+
+
+
+   api.cache(true);
+
+
+
+   return {
 
 
 
@@ -184,7 +164,56 @@ To create a mobile application in Dynatrace
 
 
 
+   plugins: [
+
+
+
+   '@dynatrace/react-native-plugin/instrumentation/BabelPluginDynatrace',
+
+
+
+   ],
+
+
+
    };
+
+
+
+   };
+   ```
+5. Enable user opt-in mode: your app should include a privacy notice for users to configure their privacy preferences. You can insert the following API call to enable Dynatrace monitoring:
+
+   ```
+   import { Dynatrace, DataCollectionLevel, UserPrivacyOptions } from '@dynatrace/react-native-plugin';
+
+
+
+   // Privacy settings configured below are only provided
+
+
+
+   // to allow a quick start with capturing monitoring data.
+
+
+
+   // This has to be requested from the user
+
+
+
+   // (for example, in a privacy settings screen) and the user decision
+
+
+
+   // has to be applied similar to this example.
+
+
+
+   const privacyConfig = new UserPrivacyOptions(DataCollectionLevel.UserBehavior, true);
+
+
+
+   Dynatrace.applyUserPrivacyOptions(privacyConfig);
    ```
 
 ## Step 3 Build and run your app

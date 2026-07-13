@@ -25,17 +25,13 @@ In a standard Dynatrace Managed high availability deployment, you need at least 
 
 The same concept applies to PHA Managed deployments. Using rack-aware Managed Cluster deployments in separate data centers increases your resilience to data loss.
 
-![Diagram - Premium High Availability Managed deployment with no data loss](https://dt-cdn.net/images/4man-ha-no-data-loss-54863cd646.svg)
+![Premium High Availability Managed deployment with no data loss](https://cdn.bfldr.com/B686QPH3/as/kq99pm9bftxrgfbtp3s4rg6p/Premium_high_availability_Managed_deployment_with_no_data_loss-Light_Mode?auto=webp&format=png&position=1)
 
-Diagram - Premium High Availability Managed deployment with no data loss
-
-PHA Managed deployment.
+Premium High Availability Managed deployment with no data loss
 
 ![Premium High Availability rack-aware Managed deployment with no data loss](https://cdn.bfldr.com/B686QPH3/as/ngjgbptj3nb5jm7g7pqxf23/Premium_high_availability_rack_aware_Managed_deployment_with_no_data_loss-Light_Mode?auto=webp&format=png&position=1)
 
 Premium High Availability rack-aware Managed deployment with no data loss
-
-PHA rack-aware Managed deployment.
 
 For the ultimate high availability and redundancy, use the PHA deployment that's rack-aware.
 
