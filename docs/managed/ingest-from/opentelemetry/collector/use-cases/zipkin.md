@@ -39,7 +39,7 @@ Make sure to route all related Zipkin/B3 spans via the same Collector instance, 
 
 ## Prerequisites
 
-* One of the following Collector distributions with the [Zipkin receiver﻿](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.155.0/receiver/zipkinreceiver):
+* One of the following Collector distributions with the [Zipkin receiver﻿](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.156.0/receiver/zipkinreceiver):
 
   + The [Dynatrace OTel Collector](/managed/ingest-from/opentelemetry/collector#dt-collector-dist "Learn how to use the OpenTelemetry Collector, including the Dynatrace OTel Collector, to ingest telemetry from OpenTelemetry.")
   + OpenTelemetry [Contrib](/managed/ingest-from/opentelemetry/collector#collector-contrib "Learn how to use the OpenTelemetry Collector, including the Dynatrace OTel Collector, to ingest telemetry from OpenTelemetry.")
@@ -115,11 +115,11 @@ For our configuration, we configure the following components.
 
 Under `receivers`, we specify the `zipkin` receiver as active receiver component for our Collector instance.
 
-The Zipkin receiver can be customized with [a few more attributes﻿](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.155.0/receiver/zipkinreceiver), which we leave with their default values in our example.
+The Zipkin receiver can be customized with [a few more attributes﻿](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.156.0/receiver/zipkinreceiver), which we leave with their default values in our example.
 
 ### Exporters
 
-Under `exporters`, we specify the default [`otlp_http` exporter﻿](https://github.com/open-telemetry/opentelemetry-collector/tree/v0.155.0/exporter/otlphttpexporter) and configure it with our Dynatrace API URL and the required authentication token.
+Under `exporters`, we specify the default [`otlp_http` exporter﻿](https://github.com/open-telemetry/opentelemetry-collector/tree/v0.156.0/exporter/otlphttpexporter) and configure it with our Dynatrace API URL and the required authentication token.
 
 For this purpose, we set the following two environment variables and reference them in the configuration values for `endpoint` and `Authorization`.
 

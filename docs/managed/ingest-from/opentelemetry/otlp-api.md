@@ -145,7 +145,7 @@ See [Transform OTLP gRPC to HTTP with the OTel Collector](/managed/ingest-from/o
 
 ### Authentication and TLS
 
-Whether you need to use TLS and authenticate your requests against the OTel Collector depends on your particular Collector setup/configuration. By default, the [OTLP receiver﻿](https://github.com/open-telemetry/opentelemetry-collector/blob/v0.155.0/receiver/otlpreceiver/README.md) is configured for plain-text HTTP and does not require authentication.
+Whether you need to use TLS and authenticate your requests against the OTel Collector depends on your particular Collector setup/configuration. By default, the [OTLP receiver﻿](https://github.com/open-telemetry/opentelemetry-collector/blob/v0.156.0/receiver/otlpreceiver/README.md) is configured for plain-text HTTP and does not require authentication.
 
 The eventual outbound connection from the OTel Collector to Dynatrace always requires authentication and TLS.
 

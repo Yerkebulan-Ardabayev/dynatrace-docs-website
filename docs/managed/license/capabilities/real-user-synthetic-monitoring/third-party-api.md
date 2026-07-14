@@ -170,23 +170,23 @@ Example DQL queries are provided in [Query billing usage events with DQL](#rum-d
 
 ## FAQs
 
-### Do failed third-party test results count toward consumption?
+Do failed third-party test results count toward consumption?
 
 Yes.
 Each ingested result is counted once, whether it succeeded or failed.
 
-### Does Dynatrace charge per step within a multi-step external test?
+Does Dynatrace charge per step within a multi-step external test?
 
 No.
 Dynatrace only charges for the ingest of test execution results.
 Therefore, it doesn't matter how many steps the external vendor executed to get the result.
 
-### What if a third-party test runs but doesn't send its result to Dynatrace?
+What if a third-party test runs but doesn't send its result to Dynatrace?
 
 Only results that are ingested count toward consumption.
 Missed or unsent runs do not contribute to usage.
 
-### Can I control how many results my vendor sends to Dynatrace?
+Can I control how many results my vendor sends to Dynatrace?
 
 Many external vendors allow you to configure test frequency or conditional reporting.
 These settings directly influence consumption.

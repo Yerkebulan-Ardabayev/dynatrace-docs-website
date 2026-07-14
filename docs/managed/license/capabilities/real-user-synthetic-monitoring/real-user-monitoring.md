@@ -413,29 +413,29 @@ Example DQL queries are provided in [Query billing usage events with DQL](#rum-d
 
 ## FAQs
 
-### Are bounced sessions counted toward RUM consumption?
+Are bounced sessions counted toward RUM consumption?
 
 No.
 Sessions that include only a single user action (for example, a page load without further interaction) are considered bounced.
 Bounced sessions are filtered out and do not contribute toward RUM consumption.
 
-### How does Dynatrace count sessions when a visit spans multiple applications?
+How does Dynatrace count sessions when a visit spans multiple applications?
 
 If a user interacts with more than one application during their visit (for example, both a web application and a mobile component), each application counts as one session.
 
 Exception: An interaction with a hybrid mobile application, which spans both mobile and web technologies, is counted as a single session.
 
-### When do additional RUM session charges apply for properties?
+When do additional RUM session charges apply for properties?
 
 Each application includes up to 20 properties at no additional cost.
 Each property beyond these 20 is billed one time for every session in which that property appears.
 
-### Does enabling Session Replay increase consumption?
+Does enabling Session Replay increase consumption?
 
 Yes.
 Sessions with Session Replay enabled are billed according to the **Real User Monitoring with Session Replay** item on your rate card.
 
-### What happens if a session lasts longer than one hour?
+What happens if a session lasts longer than one hour?
 
 Dynatrace counts an additional session every time a new hour of activity begins.
 For example, a 2.5‑hour visit to the same application counts as three sessions.

@@ -152,14 +152,14 @@ For our configuration, we configure the following components.
 
 ### Receivers
 
-Under `receivers`, we specify the [`otlp` receiver﻿](https://github.com/open-telemetry/opentelemetry-collector/tree/v0.155.0/receiver/otlpreceiver) as the active receiver component for our Collector instance.
+Under `receivers`, we specify the [`otlp` receiver﻿](https://github.com/open-telemetry/opentelemetry-collector/tree/v0.156.0/receiver/otlpreceiver) as the active receiver component for our Collector instance.
 
 ### Exporters
 
 Under `exporters`, we specify the following exporter instances for our backends.
 
-* An [`otlp_http` exporter﻿](https://github.com/open-telemetry/opentelemetry-collector/tree/v0.155.0/exporter/otlphttpexporter) for Dynatrace
-* A gRPC [`otlp` exporter﻿](https://github.com/open-telemetry/opentelemetry-collector/tree/v0.155.0/exporter/otlpexporter) for the cold storage system
+* An [`otlp_http` exporter﻿](https://github.com/open-telemetry/opentelemetry-collector/tree/v0.156.0/exporter/otlphttpexporter) for Dynatrace
+* A gRPC [`otlp` exporter﻿](https://github.com/open-telemetry/opentelemetry-collector/tree/v0.156.0/exporter/otlpexporter) for the cold storage system
 
 For the Dynatrace exporter, we set the following two environment variables and reference them in the configuration values for `endpoint` and `Authorization`.
 

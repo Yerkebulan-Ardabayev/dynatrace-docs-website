@@ -205,23 +205,23 @@ Example DQL queries are provided in [Query billing usage events with DQL](#rum-d
 
 ## FAQs
 
-### Do failed requests still consume synthetic requests?
+Do failed requests still consume synthetic requests?
 
 Yes.
 A request is counted once it starts executing.
 Skipped requests caused by a failure are not counted.
 
-### Do custom authentication, headers, or certificates increase consumption?
+Do custom authentication, headers, or certificates increase consumption?
 
 No.
 Only executed HTTP requests count.
 
-### How are redirects counted?
+How are redirects counted?
 
 If redirect-following is enabled, each redirect is an additional synthetic request.
 If disabled, only the initial request counts.
 
-### Do on-demand executions consume requests?
+Do on-demand executions consume requests?
 
 Yes.
 Manual executions consume synthetic requests the same way scheduled executions do.

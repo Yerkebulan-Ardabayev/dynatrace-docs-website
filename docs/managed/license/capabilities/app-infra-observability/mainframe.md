@@ -1,11 +1,11 @@
 ---
-title: Calculate your consumption of Mainframe Monitoring (DPS)
+title: Understand and manage your consumption of Mainframe Monitoring (DPS)
 source: https://docs.dynatrace.com/managed/license/capabilities/app-infra-observability/mainframe
 ---
 
-# Calculate your consumption of Mainframe Monitoring (DPS)
+# Understand and manage your consumption of Mainframe Monitoring (DPS)
 
-# Calculate your consumption of Mainframe Monitoring (DPS)
+# Understand and manage your consumption of Mainframe Monitoring (DPS)
 
 * Explanation
 * 1-min read

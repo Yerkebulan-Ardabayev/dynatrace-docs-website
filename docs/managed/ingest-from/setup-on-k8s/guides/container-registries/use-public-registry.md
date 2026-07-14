@@ -8,7 +8,7 @@ source: https://docs.dynatrace.com/managed/ingest-from/setup-on-k8s/guides/conta
 # Use a public registry
 
 * 5-min read
-* Updated on Sep 05, 2025
+* Updated on Jun 24, 2026
 
 To accommodate diverse infrastructure requirements and organizational preferences, Dynatrace images are available on selected public registries. These images adhere to best practices, ensuring immutability and signing for enhanced security and resilience against potential supply chain risks.
 
@@ -66,7 +66,8 @@ Dynatrace employs version-based image tagging for its container images and does 
 
 ## Deploy Dynatrace Operator with images from public registry
 
-By default, the Dynatrace Operator image `dynatrace/dynatrace-operator` is served by the public registry on AWS ECR.
+The Dynatrace Operator Helm chart is available as an OCI artifact from both Amazon ECR and Docker Hub.
+Regardless of which registry you use to pull the chart, container image references default to Amazon ECR. If you install the chart from Docker Hub and want all images pulled from Docker Hub as well, you can use `--set imageRef.repository=docker.io/dynatrace/dynatrace-operator` with your `helm install` or `helm upgrade` command.
 
 Dynatrace Operator consists of multiple components (operator, webhook, CSI driver), all of which use the same `dynatrace-operator` image with specific deployment configurations per component.
 
@@ -93,7 +94,7 @@ helm install dynatrace-operator oci://public.ecr.aws/dynatrace/dynatrace-operato
 
 
 
---atomic \
+--atomic
 ```
 
 Alternatively, an existing installation can be upgraded as follows:
@@ -107,11 +108,11 @@ helm upgrade dynatrace-operator oci://public.ecr.aws/dynatrace/dynatrace-operato
 
 
 
---atomic \
+--namespace dynatrace \
 
 
 
---namespace dynatrace
+--atomic
 ```
 
 Use the following kustomization to conveniently install or update Dynatrace Operator by applying the necessary manifests.

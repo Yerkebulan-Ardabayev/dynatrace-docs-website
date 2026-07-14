@@ -9,7 +9,7 @@ source: https://docs.dynatrace.com/managed/whats-new/managed/sprint-342
 
 * Release notes
 * 5-min read
-* Published Jun 18, 2026
+* Published Jul 06, 2026
 * Rollout start on Jul 06, 2026
 
 This page showcases new features, changes, and bug fixes in Dynatrace Managed version 1.342. It contains:

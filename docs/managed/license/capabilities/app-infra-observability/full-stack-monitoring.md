@@ -1,11 +1,11 @@
 ---
-title: Calculate your consumption of Full-Stack Monitoring (DPS)
+title: Understand and manage your consumption of Full-Stack Monitoring (DPS)
 source: https://docs.dynatrace.com/managed/license/capabilities/app-infra-observability/full-stack-monitoring
 ---
 
-# Calculate your consumption of Full-Stack Monitoring (DPS)
+# Understand and manage your consumption of Full-Stack Monitoring (DPS)
 
-# Calculate your consumption of Full-Stack Monitoring (DPS)
+# Understand and manage your consumption of Full-Stack Monitoring (DPS)
 
 * Explanation
 * 5-min read

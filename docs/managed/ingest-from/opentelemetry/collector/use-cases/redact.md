@@ -17,7 +17,7 @@ This page shows sample Collector configurations for the redaction of specific se
 
 ## Prerequisites
 
-* One of the following Collector distributions with the [transform﻿](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.155.0/processor/transformprocessor) and/or [redaction﻿](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.155.0/processor/redactionprocessor) processors:
+* One of the following Collector distributions with the [transform﻿](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.156.0/processor/transformprocessor) and/or [redaction﻿](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.156.0/processor/redactionprocessor) processors:
 
   + The [Dynatrace OTel Collector](/managed/ingest-from/opentelemetry/collector#dt-collector-dist "Learn how to use the OpenTelemetry Collector, including the Dynatrace OTel Collector, to ingest telemetry from OpenTelemetry.")
   + [OpenTelemetry Contrib](/managed/ingest-from/opentelemetry/collector#collector-contrib "Learn how to use the OpenTelemetry Collector, including the Dynatrace OTel Collector, to ingest telemetry from OpenTelemetry.")
@@ -31,8 +31,8 @@ See [Collector Deployment](/managed/ingest-from/opentelemetry/collector/deployme
 
 The following examples make use of these two Collector [processors﻿](https://opentelemetry.io/docs/collector/architecture/#processors):
 
-* the [transform processor﻿](https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/v0.155.0/processor/transformprocessor/README.md)
-* the [redaction processor﻿](https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/v0.155.0/processor/redactionprocessor/README.md)
+* the [transform processor﻿](https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/v0.156.0/processor/transformprocessor/README.md)
+* the [redaction processor﻿](https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/v0.156.0/processor/redactionprocessor/README.md)
 
 While the following examples use both processors to mask data, each processor has its own distinct purpose. The redaction processor is straightforward and takes a list of values, based on which matching data will be completely redacted. On the other hand, the purpose of the transform processor is more versatile and goes beyond mere data redaction.
 
@@ -170,7 +170,7 @@ Make sure to replace the placeholder values in the document with the respective 
 
 ### IP addresses
 
-Using the transform processor, we mask the attribute `client.address` with the [`set` statement﻿](https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/v0.155.0/pkg/ottl/ottlfuncs/README.md#set).
+Using the transform processor, we mask the attribute `client.address` with the [`set` statement﻿](https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/v0.156.0/pkg/ottl/ottlfuncs/README.md#set).
 
 ```
 transform:
@@ -230,7 +230,7 @@ statements: *filter-statements
 
 ### Email addresses
 
-Using the transform processor, we mask the attribute `user.email` with the [`set` statement﻿](https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/v0.155.0/pkg/ottl/ottlfuncs/README.md#set).
+Using the transform processor, we mask the attribute `user.email` with the [`set` statement﻿](https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/v0.156.0/pkg/ottl/ottlfuncs/README.md#set).
 
 ```
 transform:
@@ -306,7 +306,7 @@ summary: info
 
 ### Usernames
 
-Using the transform processor, we mask the attributes `user.id`, `user.name`, and `user.full_name` with the [`set` statement﻿](https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/v0.155.0/pkg/ottl/ottlfuncs/README.md#set).
+Using the transform processor, we mask the attributes `user.id`, `user.name`, and `user.full_name` with the [`set` statement﻿](https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/v0.156.0/pkg/ottl/ottlfuncs/README.md#set).
 
 ```
 transform:
@@ -366,7 +366,7 @@ statements: *filter-statements
 
 ### Credit card numbers
 
-Using the transform processor, we configure three [`replace_all_patterns` statements﻿](https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/v0.155.0/pkg/ottl/ottlfuncs/README.md#replace_all_patterns) to mask any occurrences of credit card numbers and mask everything but the last four digits.
+Using the transform processor, we configure three [`replace_all_patterns` statements﻿](https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/v0.156.0/pkg/ottl/ottlfuncs/README.md#replace_all_patterns) to mask any occurrences of credit card numbers and mask everything but the last four digits.
 
 ```
 transform:
@@ -424,7 +424,7 @@ log_statements:
 statements: *filter-statements
 ```
 
-For credit card numbers, it is also possible to use the built-in, [standard OTTL function `IsValidLuhn()`﻿](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.155.0/pkg/ottl/ottlfuncs#isvalidluhn) instead of regular expressions, if you prefer to block values altogether instead of just masking them.
+For credit card numbers, it is also possible to use the built-in, [standard OTTL function `IsValidLuhn()`﻿](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.156.0/pkg/ottl/ottlfuncs#isvalidluhn) instead of regular expressions, if you prefer to block values altogether instead of just masking them.
 
 ### IBAN numbers
 
@@ -461,7 +461,7 @@ Recommended
 
 `set_semconv_span_name` is available from Collector Contrib version 0.142.0 and Dynatrace Collector version 0.42.0.
 
-Use the transform processor's [`set_semconv_span_name`﻿](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.155.0/processor/transformprocessor#set_semconv_span_name) to derive a low-cardinality name that is compliant with OpenTelemetry semantic conventions. This will use the (low-cardinality) `http.request.method` and `http.route` to generate a new span name. It keeps the name consistent with HTTP/RPC/messaging/database conventions and avoids leaking identifiers.
+Use the transform processor's [`set_semconv_span_name`﻿](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.156.0/processor/transformprocessor#set_semconv_span_name) to derive a low-cardinality name that is compliant with OpenTelemetry semantic conventions. This will use the (low-cardinality) `http.request.method` and `http.route` to generate a new span name. It keeps the name consistent with HTTP/RPC/messaging/database conventions and avoids leaking identifiers.
 
 ```
 transform:
@@ -531,7 +531,7 @@ Under `processors`, we place the configuration for the relevant processor instan
 
 ### Exporters
 
-Under `exporters`, we specify the default [`otlp_http` exporter﻿](https://github.com/open-telemetry/opentelemetry-collector/tree/v0.155.0/exporter/otlphttpexporter) and configure it with our Dynatrace API URL and the required authentication token.
+Under `exporters`, we specify the default [`otlp_http` exporter﻿](https://github.com/open-telemetry/opentelemetry-collector/tree/v0.156.0/exporter/otlphttpexporter) and configure it with our Dynatrace API URL and the required authentication token.
 
 For this purpose, we set the following two environment variables and reference them in the configuration values for `endpoint` and `Authorization`.
 

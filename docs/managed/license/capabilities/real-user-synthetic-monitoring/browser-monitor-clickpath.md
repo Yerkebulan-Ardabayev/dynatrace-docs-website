@@ -193,23 +193,23 @@ Example DQL queries are provided in [Query billing usage events with DQL](#rum-d
 
 ## FAQs
 
-### Are synthetic actions consumed when I run tests on demand?
+Are synthetic actions consumed when I run tests on demand?
 
 Yes.
 On-demand executions from assigned locations count the same as scheduled executions.
 
-### Do failed actions still consume actions?
+Do failed actions still consume actions?
 
 Yes.
 Actions are counted once they start executing.
 However, any steps that are skipped due to failure do not consume actions.
 
-### Does Dynatrace count internal browser network calls as actions?
+Does Dynatrace count internal browser network calls as actions?
 
 No.
 Only web requests triggered directly by synthetic user actions (such as page loads or explicit XHR triggers) are counted.
 
-### Do disabled monitors consume actions?
+Do disabled monitors consume actions?
 
 No.
 Disabled monitors stop all executions and do not generate any consumption.

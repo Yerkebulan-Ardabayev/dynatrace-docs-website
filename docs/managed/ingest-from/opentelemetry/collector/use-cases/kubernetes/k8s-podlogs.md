@@ -16,7 +16,7 @@ The following configuration example shows how you configure a Collector instance
 ## Prerequisites
 
 * A deployed ActiveGate for Kubernetes API monitoring
-* One of the following Collector distributions with the [Filelog﻿](https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/v0.155.0/receiver/filelogreceiver) receiver and the [Kubernetes Attributes﻿](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.155.0/processor/k8sattributesprocessor) processor:
+* One of the following Collector distributions with the [Filelog﻿](https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/v0.156.0/receiver/filelogreceiver) receiver and the [Kubernetes Attributes﻿](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.156.0/processor/k8sattributesprocessor) processor:
 
   + The [Dynatrace OTel Collector](/managed/ingest-from/opentelemetry/collector#dt-collector-dist "Learn how to use the OpenTelemetry Collector, including the Dynatrace OTel Collector, to ingest telemetry from OpenTelemetry.")
   + [OpenTelemetry Contrib](/managed/ingest-from/opentelemetry/collector#collector-contrib "Learn how to use the OpenTelemetry Collector, including the Dynatrace OTel Collector, to ingest telemetry from OpenTelemetry.")
@@ -784,7 +784,7 @@ fieldPath: status.podIP
 
 
 
-image: ghcr.io/dynatrace/dynatrace-otel-collector/dynatrace-otel-collector:0.51.0
+image: ghcr.io/dynatrace/dynatrace-otel-collector/dynatrace-otel-collector:0.52.0
 
 
 
@@ -883,22 +883,22 @@ For our configuration, we configured the following components.
 
 Under `receivers`, we specify the `filelog` receiver as active receiver component for our Collector instance.
 
-The Filelog receiver supports a number of [configuration parameters﻿](https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/v0.155.0/receiver/filelogreceiver/README.md), which enable you to customize its behavior. For the example, we use the following:
+The Filelog receiver supports a number of [configuration parameters﻿](https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/v0.156.0/receiver/filelogreceiver/README.md), which enable you to customize its behavior. For the example, we use the following:
 
 * `include`—Specifies the path pattern of the files we want to ingest.
 * `start_at`—Specifies if the receiver should read from the beginning of the file or, for the most recent entries only, the end.
-* `operators`—Configures the [`container`﻿](https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/v0.155.0/pkg/stanza/docs/operators/container.md) operator, which automatically parses each log entry.
+* `operators`—Configures the [`container`﻿](https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/v0.156.0/pkg/stanza/docs/operators/container.md) operator, which automatically parses each log entry.
 
 ### Processors
 
-Under `processors`, we specify the [`k8sattributes` processor﻿](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.155.0/processor/k8sattributesprocessor) with the following parameters:
+Under `processors`, we specify the [`k8sattributes` processor﻿](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.156.0/processor/k8sattributesprocessor) with the following parameters:
 
 * `extract`—Specifies which information should be extracted.
 * `pod_association`—Specifies how the pod information is linked to attributes.
 
 ### Exporters
 
-Under `exporters`, we specify the default [`otlp_http` exporter﻿](https://github.com/open-telemetry/opentelemetry-collector/tree/v0.155.0/exporter/otlphttpexporter) and configure it with our Dynatrace API URL and the required authentication token, as set up and configured under [Kubernetes Secrets](#kubernetes-secrets).
+Under `exporters`, we specify the default [`otlp_http` exporter﻿](https://github.com/open-telemetry/opentelemetry-collector/tree/v0.156.0/exporter/otlphttpexporter) and configure it with our Dynatrace API URL and the required authentication token, as set up and configured under [Kubernetes Secrets](#kubernetes-secrets).
 
 ### Service pipelines
 

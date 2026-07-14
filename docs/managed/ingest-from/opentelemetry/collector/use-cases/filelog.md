@@ -15,7 +15,7 @@ The following configuration example shows how to configure a Collector instance 
 
 ## Prerequisites
 
-* One of the following Collector distributions with the [Filelog receiver﻿](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.155.0/receiver/filelogreceiver):
+* One of the following Collector distributions with the [Filelog receiver﻿](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.156.0/receiver/filelogreceiver):
 
   + The [Dynatrace OTel Collector](/managed/ingest-from/opentelemetry/collector#dt-collector-dist "Learn how to use the OpenTelemetry Collector, including the Dynatrace OTel Collector, to ingest telemetry from OpenTelemetry.")
   + [OpenTelemetry Contrib](/managed/ingest-from/opentelemetry/collector#collector-contrib "Learn how to use the OpenTelemetry Collector, including the Dynatrace OTel Collector, to ingest telemetry from OpenTelemetry.")
@@ -161,11 +161,11 @@ For our configuration, we use the following components.
 
 Under `receivers`, we specify the `filelog` receiver as active receiver component for our Collector instance.
 
-The Filelog receiver supports a number of [configuration parameters﻿](https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/v0.155.0/receiver/filelogreceiver/README.md), which enable you to customize its behavior. For our example, we use the following:
+The Filelog receiver supports a number of [configuration parameters﻿](https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/v0.156.0/receiver/filelogreceiver/README.md), which enable you to customize its behavior. For our example, we use the following:
 
 * `include`—Specifies the path pattern of the files we want to ingest.
 * `start_at`—Specifies if the receiver should read from the beginning of the file or, for the most recent entries only, the end.
-* `operators`—Configures the operators we apply to each log entry. For our example, we use the [regex\_parser﻿](https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/v0.155.0/pkg/stanza/docs/operators/regex_parser.md) operator to extract information using a regular expression.
+* `operators`—Configures the operators we apply to each log entry. For our example, we use the [regex\_parser﻿](https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/v0.156.0/pkg/stanza/docs/operators/regex_parser.md) operator to extract information using a regular expression.
 
   + `regex`—Specifies the actual regular expression. By using named capture groups (`(?P<name>)`), the receiver makes the captured data available in `attributes` under the respective name.
   + `timestamp`—Specifies where to take the entry's timestamp from (the `time` field of the regular expression) and the date format.
@@ -173,7 +173,7 @@ The Filelog receiver supports a number of [configuration parameters﻿](https://
 
 ### Exporters
 
-Under `exporters`, we specify the default [`otlp_http` exporter﻿](https://github.com/open-telemetry/opentelemetry-collector/tree/v0.155.0/exporter/otlphttpexporter) and configure it with our Dynatrace API URL and the required authentication token.
+Under `exporters`, we specify the default [`otlp_http` exporter﻿](https://github.com/open-telemetry/opentelemetry-collector/tree/v0.156.0/exporter/otlphttpexporter) and configure it with our Dynatrace API URL and the required authentication token.
 
 For this purpose, we set the following two environment variables and reference them in the configuration values for `endpoint` and `Authorization`.
 

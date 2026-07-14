@@ -20,7 +20,7 @@ The following configuration example shows how you configure a Collector instance
   + [Dynatrace Collector](/managed/ingest-from/opentelemetry/collector#dt-collector-dist "Learn how to use the OpenTelemetry Collector, including the Dynatrace OTel Collector, to ingest telemetry from OpenTelemetry.")
   + [OpenTelemetry Contrib](/managed/ingest-from/opentelemetry/collector#collector-contrib "Learn how to use the OpenTelemetry Collector, including the Dynatrace OTel Collector, to ingest telemetry from OpenTelemetry.")
   + [custom Builder version](/managed/ingest-from/opentelemetry/collector#collector-builder "Learn how to use the OpenTelemetry Collector, including the Dynatrace OTel Collector, to ingest telemetry from OpenTelemetry.")
-* The [`kafkaexporter`﻿](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.155.0/exporter/kafkaexporter) component.
+* The [`kafkaexporter`﻿](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.156.0/exporter/kafkaexporter) component.
 * A Kafka server deployed with a reachable `BROKER_ADDRESS`.
   For more information, see the [Kafka Apache quickstart guide﻿](https://kafka.apache.org/quickstart).
 
@@ -181,19 +181,19 @@ For our configuration, we configure certain components as described in the secti
 
 ### Receivers
 
-Under `receivers`, we specify [`otlp`﻿](https://github.com/open-telemetry/opentelemetry-collector/tree/v0.155.0/receiver/otlpreceiver) as the active receiver component for our deployment.
+Under `receivers`, we specify [`otlp`﻿](https://github.com/open-telemetry/opentelemetry-collector/tree/v0.156.0/receiver/otlpreceiver) as the active receiver component for our deployment.
 This is required to accept OTLP data.
 
 ### Processors
 
 Under `processors`, we specify:
 
-* [`memory_limiter` processor﻿](https://github.com/open-telemetry/opentelemetry-collector/tree/v0.155.0/processor/memorylimiterprocessor).
-* [`batch` processor﻿](https://github.com/open-telemetry/opentelemetry-collector/tree/v0.155.0/processor/batchprocessor) as per [recommendation for the kafka exporter﻿](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.155.0/exporter/kafkaexporter#readme).
+* [`memory_limiter` processor﻿](https://github.com/open-telemetry/opentelemetry-collector/tree/v0.156.0/processor/memorylimiterprocessor).
+* [`batch` processor﻿](https://github.com/open-telemetry/opentelemetry-collector/tree/v0.156.0/processor/batchprocessor) as per [recommendation for the kafka exporter﻿](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.156.0/exporter/kafkaexporter#readme).
 
 ### Exporters
 
-Under `exporters`, we specify the [`kafka` exporter﻿](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.155.0/exporter/kafkaexporter) to forward data to the Kafka server.
+Under `exporters`, we specify the [`kafka` exporter﻿](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.156.0/exporter/kafkaexporter) to forward data to the Kafka server.
 
 ### Service pipeline
 

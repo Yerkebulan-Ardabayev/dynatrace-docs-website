@@ -234,14 +234,14 @@ This is for demonstration purposes. You can specify any other valid receiver her
 
 ### Exporters
 
-Under `exporters`, we specify an [`otlp_http` exporter﻿](https://github.com/open-telemetry/opentelemetry-collector/tree/v0.155.0/exporter/otlphttpexporter) for each signal and configure it with the appropriate batching settings as well as our Dynatrace API URL and the required authentication token.
+Under `exporters`, we specify an [`otlp_http` exporter﻿](https://github.com/open-telemetry/opentelemetry-collector/tree/v0.156.0/exporter/otlphttpexporter) for each signal and configure it with the appropriate batching settings as well as our Dynatrace API URL and the required authentication token.
 
 For this purpose, we set the following two environment variables and reference them in the configuration values for `endpoint` and `Authorization`.
 
 * `DT_ENDPOINT` contains the [base URL of the Dynatrace API endpoint](/managed/ingest-from/opentelemetry/otlp-api#export-to-activegate "Learn about the OTLP API endpoints that your application uses to export OpenTelemetry data to Dynatrace.") (for example, `https://{your-environment-id}.live.dynatrace.com/api/v2/otlp`)
 * `DT_API_TOKEN` contains the [API token](/managed/ingest-from/opentelemetry/otlp-api#authentication-export-to-activegate "Learn about the OTLP API endpoints that your application uses to export OpenTelemetry data to Dynatrace.")
 
-Under the `sending_queue` section of the exporter's config, we specify a different [`batch` section﻿](https://github.com/open-telemetry/opentelemetry-collector/tree/v0.155.0/exporter/exporterhelper#sending-queue-batch-settings)
+Under the `sending_queue` section of the exporter's config, we specify a different [`batch` section﻿](https://github.com/open-telemetry/opentelemetry-collector/tree/v0.156.0/exporter/exporterhelper#sending-queue-batch-settings)
 for each telemetry signal, with the following parameters:
 
 * `min_size`: sets the minimum number of entries the processor will queue before sending the whole batch.

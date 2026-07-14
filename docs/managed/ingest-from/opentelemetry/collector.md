@@ -109,7 +109,7 @@ It shouldn't be used for production environments.
 
 #### Collector Builder
 
-In addition to the two distributions, OpenTelemetry also offers the [OpenTelemetry Collector Builder (OCB)﻿](https://github.com/open-telemetry/opentelemetry-collector/tree/v0.155.0/cmd/builder), a command line tool that allows you to build your own customized version of the Collector.
+In addition to the two distributions, OpenTelemetry also offers the [OpenTelemetry Collector Builder (OCB)﻿](https://github.com/open-telemetry/opentelemetry-collector/tree/v0.156.0/cmd/builder), a command line tool that allows you to build your own customized version of the Collector.
 
 ## Components
 
@@ -123,7 +123,7 @@ For a list of available receivers and their basic configuration, see the officia
 
 A processor is an optional component that transforms, filters, or enriches data before export.
 
-For a list of available processors and their basic configuration, see the official [OpenTelemetry documentation on processors﻿](https://opentelemetry.io/docs/collector/configuration/#processors). OpenTelemetry has a list of [recommended processors﻿](https://github.com/open-telemetry/opentelemetry-collector/tree/v0.155.0/processor#recommended-processors), but these are optional.
+For a list of available processors and their basic configuration, see the official [OpenTelemetry documentation on processors﻿](https://opentelemetry.io/docs/collector/configuration/#processors). OpenTelemetry has a list of [recommended processors﻿](https://github.com/open-telemetry/opentelemetry-collector/tree/v0.156.0/processor#recommended-processors), but these are optional.
 
 ### Exporter
 

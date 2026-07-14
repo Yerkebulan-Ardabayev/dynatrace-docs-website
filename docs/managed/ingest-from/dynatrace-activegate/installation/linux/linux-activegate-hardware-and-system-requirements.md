@@ -8,7 +8,7 @@ source: https://docs.dynatrace.com/managed/ingest-from/dynatrace-activegate/inst
 # Hardware and system requirements for routing/monitoring ActiveGates on Linux
 
 * 4-min read
-* Updated on May 07, 2026
+* Updated on Jul 07, 2026
 
 ### Hardware and system requirements: Routing OneAgent traffic to Dynatrace, monitoring cloud environments, or monitoring remote technologies with extensions
 
@@ -47,7 +47,7 @@ For large environments, you may need to use a machine with additional CPU and me
 | --- | --- |
 | ActiveGate and autoupdater executable files, libraries, and related files  default: `/opt/dynatrace`  relative to installation parameter: `<INSTALL>` | 600 MB |
 | ActiveGate configuration and related directories  For Environment ActiveGate, it also contains Extensions configuration  default: `/var/lib/dynatrace`  relative to installation parameter: `<CONFIG>` | 2 MB |
-| For Environment ActiveGate only: Extensions executable files, libraries, and related files default: `/opt/dynatrace/remotepluginmodule`  relative to installation parameter: `<INSTALL>/remotepluginmodule` | 1.2 GB |
+| For Environment ActiveGate only: Extensions executable files, libraries, and related files default: `/opt/dynatrace/remotepluginmodule`  relative to installation parameter: `<INSTALL>/remotepluginmodule` | 2 GB |
 
 **Space allocation per directory, for ActiveGate operation:**  
 **(for more detailed allocation, refer to [ActiveGate directories](/managed/ingest-from/dynatrace-activegate/configuration/where-can-i-find-activegate-files "Find out where ActiveGate files are stored on Windows and Linux systems."))**

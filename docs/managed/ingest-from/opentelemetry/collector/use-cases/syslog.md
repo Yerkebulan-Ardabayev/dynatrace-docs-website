@@ -15,7 +15,7 @@ The following configuration example shows how to configure a Collector instance 
 
 ## Prerequisites
 
-* One of the following Collector distributions with the [attributes processor﻿](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.155.0/processor/attributesprocessor) and the [Syslog receiver﻿](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.155.0/receiver/syslogreceiver):
+* One of the following Collector distributions with the [attributes processor﻿](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.156.0/processor/attributesprocessor) and the [Syslog receiver﻿](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.156.0/receiver/syslogreceiver):
 
   + The [Dynatrace OTel Collector](/managed/ingest-from/opentelemetry/collector#dt-collector-dist "Learn how to use the OpenTelemetry Collector, including the Dynatrace OTel Collector, to ingest telemetry from OpenTelemetry.")
   + OpenTelemetry [Contrib](/managed/ingest-from/opentelemetry/collector#collector-contrib "Learn how to use the OpenTelemetry Collector, including the Dynatrace OTel Collector, to ingest telemetry from OpenTelemetry.")
@@ -419,11 +419,11 @@ For our configuration, we use the following components.
 
 Under `receivers`, we specify two instances of the `syslog` receiver as active receiver components for our Collector instance.
 
-The Syslog receiver supports a number of [configuration parameters﻿](https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/v0.155.0/receiver/syslogreceiver/README.md), which enable you to customize its behavior. For our example, we use the following:
+The Syslog receiver supports a number of [configuration parameters﻿](https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/v0.156.0/receiver/syslogreceiver/README.md), which enable you to customize its behavior. For our example, we use the following:
 
 * `tcp`—Specifies a TCP listener for the receiver and configures ports 54526 and 54527
 * `protocol`—Specifies the RFC 5424 implementation for our receiver (alternatively, RFC 3164 is also supported)
-* `operators`—Configures the operators we apply to each log entry. For our example, we use the [add﻿](https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/v0.155.0/pkg/stanza/docs/operators/add.md) operator to add additional information.
+* `operators`—Configures the operators we apply to each log entry. For our example, we use the [add﻿](https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/v0.156.0/pkg/stanza/docs/operators/add.md) operator to add additional information.
 
   + `field`—Specifies the name of value we are adding
   + `value`—Specifies the content of the value we are adding
@@ -434,7 +434,7 @@ Under `processors`, we configure the `attributes` processor to drop and adjust t
 
 ### Exporters
 
-Under `exporters`, we specify the default [`otlp_http` exporter﻿](https://github.com/open-telemetry/opentelemetry-collector/tree/v0.155.0/exporter/otlphttpexporter) and configure it with our Dynatrace API URL and the required authentication token.
+Under `exporters`, we specify the default [`otlp_http` exporter﻿](https://github.com/open-telemetry/opentelemetry-collector/tree/v0.156.0/exporter/otlphttpexporter) and configure it with our Dynatrace API URL and the required authentication token.
 
 For this purpose, we set the following two environment variables and reference them in the configuration values for `endpoint` and `Authorization`.
 

@@ -16,7 +16,7 @@ The following configuration example shows how you configure a Collector instance
 ## Prerequisites
 
 * An application generating [StatsD messages﻿](https://github.com/statsd/statsd/blob/master/docs/metric_types.md)
-* One of the following Collector distributions with the [StatsD receiver﻿](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.155.0/receiver/statsdreceiver), [transform processor﻿](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.155.0/processor/transformprocessor), and [filter processor﻿](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.155.0/processor/filterprocessor):
+* One of the following Collector distributions with the [StatsD receiver﻿](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.156.0/receiver/statsdreceiver), [transform processor﻿](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.156.0/processor/transformprocessor), and [filter processor﻿](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.156.0/processor/filterprocessor):
 
   + The [Dynatrace OTel Collector](/managed/ingest-from/opentelemetry/collector#dt-collector-dist "Learn how to use the OpenTelemetry Collector, including the Dynatrace OTel Collector, to ingest telemetry from OpenTelemetry.")
   + OpenTelemetry [Contrib](/managed/ingest-from/opentelemetry/collector#collector-contrib "Learn how to use the OpenTelemetry Collector, including the Dynatrace OTel Collector, to ingest telemetry from OpenTelemetry.")
@@ -154,11 +154,11 @@ Under `receivers`, we specify the `statsd` receiver as active receiver component
 
 The receiver is configured to aggregate histogram, timer, and distribution messages into exponential histograms, which are later processed for Dynatrace ingestion. The receiver uses auto-scaling exponential histograms, and we have selected a maximum size of `100`. This means that the histogram will begin with very granular bucket boundaries and automatically re-scale itself if it receives data points that would result in more than `100` buckets.
 
-For a full list of configuration parameters and supported StatsD metric types, see the [StatsD receiver documentation﻿](https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/v0.155.0/receiver/statsdreceiver/README.md).
+For a full list of configuration parameters and supported StatsD metric types, see the [StatsD receiver documentation﻿](https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/v0.156.0/receiver/statsdreceiver/README.md).
 
 ### Exporters
 
-Under `exporters`, we specify the default [`otlp_http` exporter﻿](https://github.com/open-telemetry/opentelemetry-collector/tree/v0.155.0/exporter/otlphttpexporter) and configure it with our Dynatrace API URL and the required authentication token.
+Under `exporters`, we specify the default [`otlp_http` exporter﻿](https://github.com/open-telemetry/opentelemetry-collector/tree/v0.156.0/exporter/otlphttpexporter) and configure it with our Dynatrace API URL and the required authentication token.
 
 For this purpose, we set the following two environment variables and reference them in the configuration values for `endpoint` and `headers`.
 

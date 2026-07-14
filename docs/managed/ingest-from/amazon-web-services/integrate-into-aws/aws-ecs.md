@@ -1,15 +1,15 @@
 ---
-title: Monitor Amazon Elastic Container Service (ECS)
+title: Monitor Amazon ECS on EC2
 source: https://docs.dynatrace.com/managed/ingest-from/amazon-web-services/integrate-into-aws/aws-ecs
 ---
 
-# Monitor Amazon Elastic Container Service (ECS)
+# Monitor Amazon ECS on EC2
 
-# Monitor Amazon Elastic Container Service (ECS)
+# Monitor Amazon ECS on EC2
 
 * How-to guide
 * 1-min read
-* Published Jan 16, 2023
+* Updated on Jun 03, 2026
 
 To deploy OneAgent on AWS Elastic Container Service (ECS) clusters with EC2 launch type, follow the instructions below.
 
@@ -24,7 +24,7 @@ To deploy OneAgent on AWS Elastic Container Service (ECS) clusters with EC2 laun
 
 This approach describes the installation of OneAgent as a daemon service in its own container. ECS orchestrates the execution of the OneAgent task on each container instance that is part of the cluster.
 
-Privileged mode and volume parameters are prerequisites for this deployment method. As a result, this can only be done using JSON revisions. Consider using [build-time injection](/managed/ingest-from/amazon-web-services/integrate-into-aws/aws-fargate#buildtime "Install OneAgent on AWS Fargate.") instead.
+Privileged mode and volume parameters are prerequisites for this deployment method. As a result, this can only be done using JSON revisions. Consider using [build-time injection](/managed/ingest-from/setup-on-container-platforms/docker/set-up-oneagent-on-containers-for-application-only-monitoring "Install, update, and uninstall OneAgent on containers for application-only monitoring.") instead.
 
 1. On the ECS console, go to **Task Definitions** > **Create new task definition** > **Create new task definition with JSON**.
 2. Edit the task definition JSON:

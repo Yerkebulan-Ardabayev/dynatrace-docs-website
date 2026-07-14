@@ -19,7 +19,7 @@ Deploying ActiveGate enables the Dynatrace Kubernetes application to visualize K
 ## Prerequisites
 
 * A deployed ActiveGate for Kubernetes API monitoring Optional
-* One of the following Collector distributions with the [Kubernetes Attributes﻿](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.155.0/processor/k8sattributesprocessor) and [Transform﻿](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.155.0/processor/transformprocessor) processors:
+* One of the following Collector distributions with the [Kubernetes Attributes﻿](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.156.0/processor/k8sattributesprocessor) and [Transform﻿](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.156.0/processor/transformprocessor) processors:
 
   + The [Dynatrace OTel Collector](/managed/ingest-from/opentelemetry/collector#dt-collector-dist "Learn how to use the OpenTelemetry Collector, including the Dynatrace OTel Collector, to ingest telemetry from OpenTelemetry.")
   + [OpenTelemetry Contrib](/managed/ingest-from/opentelemetry/collector#collector-contrib "Learn how to use the OpenTelemetry Collector, including the Dynatrace OTel Collector, to ingest telemetry from OpenTelemetry.")
@@ -685,7 +685,7 @@ This is mainly for demonstration purposes. You can specify any other valid recei
 
 ### Processors
 
-Under `processors`, we specify the [`k8sattributes` processor﻿](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.155.0/processor/k8sattributesprocessor) with the following parameters:
+Under `processors`, we specify the [`k8sattributes` processor﻿](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.156.0/processor/k8sattributesprocessor) with the following parameters:
 
 * `extract`—Specifies which information should be extracted.
 * `pod_association`—Specifies how the pod information is linked to attributes.
@@ -696,11 +696,11 @@ Otherwise, the k8sattributes processor will not be able to correctly associate t
 
 Dynatrace Operator enriches OpenTelemetry data from Kubernetes pods with `metadata.dynatrace.com` annotations. When these annotations are present, the `k8sattributes` processor extracts them.
 
-We also configure the [`transform` processor﻿](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.155.0/processor/transformprocessor) to have Kubernetes cluster information automatically added as resource attributes for all telemetry signals.
+We also configure the [`transform` processor﻿](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.156.0/processor/transformprocessor) to have Kubernetes cluster information automatically added as resource attributes for all telemetry signals.
 
 ### Exporters
 
-Under `exporters`, we specify the default [`otlp_http` exporter﻿](https://github.com/open-telemetry/opentelemetry-collector/tree/v0.155.0/exporter/otlphttpexporter) and configure it with our Dynatrace API URL and the required authentication token.
+Under `exporters`, we specify the default [`otlp_http` exporter﻿](https://github.com/open-telemetry/opentelemetry-collector/tree/v0.156.0/exporter/otlphttpexporter) and configure it with our Dynatrace API URL and the required authentication token.
 
 For this purpose, we set the following two environment variables and reference them in the configuration values for `endpoint` and `Authorization`.
 

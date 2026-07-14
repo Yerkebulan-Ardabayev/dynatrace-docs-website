@@ -28,7 +28,7 @@ This use case and its reference configuration are designed primarily for VMs and
 
 This use case assumes that you have:
 
-* One of the following Collector distributions with the [`hostmetrics`﻿](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.155.0/receiver/hostmetricsreceiver) and [`journald`﻿](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.155.0/receiver/journaldreceiver) receivers, and the [`resource_detection`﻿](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.155.0/processor/resourcedetectionprocessor), [`filter`﻿](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.155.0/processor/filterprocessor), and [`transform`﻿](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.155.0/processor/transformprocessor) processors.
+* One of the following Collector distributions with the [`hostmetrics`﻿](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.156.0/receiver/hostmetricsreceiver) and [`journald`﻿](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.156.0/receiver/journaldreceiver) receivers, and the [`resource_detection`﻿](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.156.0/processor/resourcedetectionprocessor), [`filter`﻿](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.156.0/processor/filterprocessor), and [`transform`﻿](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.156.0/processor/transformprocessor) processors.
 
   + The [Dynatrace OTel Collector](/managed/ingest-from/opentelemetry/collector#dt-collector-dist "Learn how to use the OpenTelemetry Collector, including the Dynatrace OTel Collector, to ingest telemetry from OpenTelemetry.")
   + [OTel Collector Contrib](/managed/ingest-from/opentelemetry/collector#collector-contrib "Learn how to use the OpenTelemetry Collector, including the Dynatrace OTel Collector, to ingest telemetry from OpenTelemetry.")
@@ -50,12 +50,12 @@ For our configuration, we configured the following components that are specific 
 
 Under `receivers`, we specify the following receivers:
 
-* [`hostmetrics`﻿](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.155.0/receiver/hostmetricsreceiver)
-* [`journald`﻿](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.155.0/receiver/journaldreceiver)
+* [`hostmetrics`﻿](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.156.0/receiver/hostmetricsreceiver)
+* [`journald`﻿](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.156.0/receiver/journaldreceiver)
 
 #### hostmetrics
 
-The [`hostmetrics` receiver﻿](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.155.0/receiver/hostmetricsreceiver) collects host-level metrics.
+The [`hostmetrics` receiver﻿](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.156.0/receiver/hostmetricsreceiver) collects host-level metrics.
 It is configured with three collection intervals: 10 seconds, 5 minutes, and 1 hour.
 
 * Use short intervals for the most important metrics to ensure that Dynatrace provides fast alerts for important changes.
@@ -63,7 +63,7 @@ It is configured with three collection intervals: 10 seconds, 5 minutes, and 1 h
 
 #### journald
 
-The [`journald` receiver﻿](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.155.0/receiver/journaldreceiver) collects systemd journal logs from the host and ingests them into the logs pipeline alongside your metrics.
+The [`journald` receiver﻿](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.156.0/receiver/journaldreceiver) collects systemd journal logs from the host and ingests them into the logs pipeline alongside your metrics.
 It is configured to read from `/var/log/journal` (the default persistent journal path on Linux hosts) and applies `move` operators to rename journal fields to OpenTelemetry semantic conventions.
 
 * `body._PID` is renamed to `body.pid`
@@ -83,13 +83,13 @@ For full details, see [Use journald to ingest systemd journal logs with the OTel
 
 Under `processors`, we specify the following processors:
 
-* [`resource_detection` processor﻿](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.155.0/processor/resourcedetectionprocessor), which can be used to detect resource information from the host, in a format that conforms to the OpenTelemetry resource semantic conventions, and append or override the resource value in telemetry data with this information.
-* [`filter`﻿](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.155.0/processor/filterprocessor) is used twice: once to clean up unnecessary metrics dimensions, and secondly to (optionally) filter out unneeded process metrics.
-* [`transform`﻿](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.155.0/processor/transformprocessor).
+* [`resource_detection` processor﻿](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.156.0/processor/resourcedetectionprocessor), which can be used to detect resource information from the host, in a format that conforms to the OpenTelemetry resource semantic conventions, and append or override the resource value in telemetry data with this information.
+* [`filter`﻿](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.156.0/processor/filterprocessor) is used twice: once to clean up unnecessary metrics dimensions, and secondly to (optionally) filter out unneeded process metrics.
+* [`transform`﻿](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.156.0/processor/transformprocessor).
 
 ### Exporters
 
-Under `exporters`, we specify the [`otlp_http` exporter﻿](https://github.com/open-telemetry/opentelemetry-collector/tree/v0.155.0/exporter/otlphttpexporter) and configure it with our Dynatrace API URL and the required authentication token.
+Under `exporters`, we specify the [`otlp_http` exporter﻿](https://github.com/open-telemetry/opentelemetry-collector/tree/v0.156.0/exporter/otlphttpexporter) and configure it with our Dynatrace API URL and the required authentication token.
 
 For this purpose, we set the following two environment variables and reference them in the configuration values for `endpoint` and `Authorization`.
 
@@ -227,7 +227,7 @@ The following table shows common overlapping metrics:
 | `system.filesystem.*` | `k8s.node.filesystem.*` | Node filesystem usage |
 | `system.network.*` | `k8s.node.network.*` | Node network I/O |
 
-This overlapp occurs because the Kubernetes monitoring use case uses the [`kubelet_stats` receiver﻿](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.155.0/receiver/kubeletstatsreceiver), which reports node-level resource metrics that represent the same underlying data as the `hostmetrics` receiver.
+This overlapp occurs because the Kubernetes monitoring use case uses the [`kubelet_stats` receiver﻿](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.156.0/receiver/kubeletstatsreceiver), which reports node-level resource metrics that represent the same underlying data as the `hostmetrics` receiver.
 
 To avoid unnecessary duplication on Kubernetes, use only Kubernetes monitoring or only OTel host monitoring, if possible:
 

@@ -21,7 +21,7 @@ apply this configuration with most containerized setups. See the section on
 
 ## Prerequisites
 
-* One of the following Collector distributions with the [memory limiter processor﻿](https://github.com/open-telemetry/opentelemetry-collector/tree/v0.155.0/processor/memorylimiterprocessor):
+* One of the following Collector distributions with the [memory limiter processor﻿](https://github.com/open-telemetry/opentelemetry-collector/tree/v0.156.0/processor/memorylimiterprocessor):
 
   + The [Dynatrace OTel Collector](/managed/ingest-from/opentelemetry/collector#dt-collector-dist "Learn how to use the OpenTelemetry Collector, including the Dynatrace OTel Collector, to ingest telemetry from OpenTelemetry.")
   + OpenTelemetry [Core](/managed/ingest-from/opentelemetry/collector#collector-core "Learn how to use the OpenTelemetry Collector, including the Dynatrace OTel Collector, to ingest telemetry from OpenTelemetry.") or [Contrib](/managed/ingest-from/opentelemetry/collector#collector-contrib "Learn how to use the OpenTelemetry Collector, including the Dynatrace OTel Collector, to ingest telemetry from OpenTelemetry.")
@@ -173,7 +173,7 @@ This is mainly for demonstration purposes. You can specify any other valid recei
 
 ### Processors
 
-Under `processors`, we specify the [`memory_limiter` processor﻿](https://github.com/open-telemetry/opentelemetry-collector/tree/v0.155.0/processor/memorylimiterprocessor) with the following parameters:
+Under `processors`, we specify the [`memory_limiter` processor﻿](https://github.com/open-telemetry/opentelemetry-collector/tree/v0.156.0/processor/memorylimiterprocessor) with the following parameters:
 
 * `check_interval` configured to check the memory status every second
 * `limit_percentage` configured to allow a maximum memory allocation of 90 percent
@@ -212,7 +212,7 @@ given an explicit memory quota, we instead recommend you use the `limit_mib` and
 
 ### Exporters
 
-Under `exporters`, we specify the default [`otlp_http` exporter﻿](https://github.com/open-telemetry/opentelemetry-collector/tree/v0.155.0/exporter/otlphttpexporter) and configure it with our Dynatrace API URL and the required authentication token.
+Under `exporters`, we specify the default [`otlp_http` exporter﻿](https://github.com/open-telemetry/opentelemetry-collector/tree/v0.156.0/exporter/otlphttpexporter) and configure it with our Dynatrace API URL and the required authentication token.
 
 For this purpose, we set the following two environment variables and reference them in the configuration values for `endpoint` and `Authorization`.
 

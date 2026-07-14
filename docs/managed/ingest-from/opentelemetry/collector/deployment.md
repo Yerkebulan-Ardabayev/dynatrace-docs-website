@@ -147,7 +147,7 @@ mode: "deployment"
 
 
 
-image: "ghcr.io/dynatrace/dynatrace-otel-collector/dynatrace-otel-collector:0.51.0"
+image: "ghcr.io/dynatrace/dynatrace-otel-collector/dynatrace-otel-collector:0.52.0"
 
 
 
@@ -329,7 +329,7 @@ mode: "daemonset"
 
 
 
-image: "ghcr.io/dynatrace/dynatrace-otel-collector/dynatrace-otel-collector:0.51.0"
+image: "ghcr.io/dynatrace/dynatrace-otel-collector/dynatrace-otel-collector:0.52.0"
 
 
 
@@ -473,7 +473,7 @@ Deploy as a gateway (Deployment)
 
 
 
-   tag: 0.51.0
+   tag: 0.52.0
 
 
 
@@ -698,7 +698,7 @@ Deploy as an agent (DaemonSet)
 
 
 
-   tag: 0.51.0
+   tag: 0.52.0
 
 
 
@@ -1351,7 +1351,7 @@ key: DT_API_TOKEN
 
 
 
-image: ghcr.io/dynatrace/dynatrace-otel-collector/dynatrace-otel-collector:0.51.0
+image: ghcr.io/dynatrace/dynatrace-otel-collector/dynatrace-otel-collector:0.52.0
 
 
 
@@ -1425,13 +1425,13 @@ For raw manifests, this needs to be configured manually by adding a `spec.servic
 Run the following command to download the most recent Dynatrace OTel Collector image:
 
 ```
-docker pull ghcr.io/dynatrace/dynatrace-otel-collector/dynatrace-otel-collector:0.51.0
+docker pull ghcr.io/dynatrace/dynatrace-otel-collector/dynatrace-otel-collector:0.52.0
 ```
 
 Next, ensure that the [Dynatrace OTel Collector configuration file](/managed/ingest-from/opentelemetry/collector/configuration "How to configure the OpenTelemetry Collector.") exists in the current working directory and run the Dynatrace OTel Collector image with the following command:
 
 ```
-docker run -v $(pwd)/otel-collector-config.yaml:/etc/otelcol/otel-collector-config.yaml ghcr.io/dynatrace/dynatrace-otel-collector/dynatrace-otel-collector:0.51.0 --config=/etc/otelcol/otel-collector-config.yaml
+docker run -v $(pwd)/otel-collector-config.yaml:/etc/otelcol/otel-collector-config.yaml ghcr.io/dynatrace/dynatrace-otel-collector/dynatrace-otel-collector:0.52.0 --config=/etc/otelcol/otel-collector-config.yaml
 ```
 
 The `-v` parameter maps the local configuration file to the given container path, which is subsequently passed to the `--config` parameter.
@@ -1455,7 +1455,7 @@ collector:
 
 
 
-image: ghcr.io/dynatrace/dynatrace-otel-collector/dynatrace-otel-collector:0.51.0
+image: ghcr.io/dynatrace/dynatrace-otel-collector/dynatrace-otel-collector:0.52.0
 
 
 
@@ -1488,7 +1488,7 @@ In the example above, `ports` is configured for gRPC and HTTP. Adjust the list o
 
 To install the Dynatrace OTel Collector binary manually:
 
-1. Download the [dynatrace-otel-collector﻿](https://github.com/Dynatrace/dynatrace-otel-collector/releases/v0.51.0) for your operating system from GitHub.
+1. Download the [dynatrace-otel-collector﻿](https://github.com/Dynatrace/dynatrace-otel-collector/releases/v0.52.0) for your operating system from GitHub.
 2. Decompress the archive file.
 3. Set up the desired configuration and save it to `otel-collector-config.yaml`.
 4. Run the `dynatrace-otel-collector` binary and pass the path to the configuration file using the `--config` parameter.
@@ -1505,7 +1505,7 @@ Required init system
 
 The installer packages require Systemd to be the active init system.
 
-To deploy the Dynatrace OTel Collector using an installer package, download the [dynatrace-otel-collector﻿](https://github.com/Dynatrace/dynatrace-otel-collector/releases/v0.51.0) for your operating system from GitHub, and install it using root privileges and the following commands.
+To deploy the Dynatrace OTel Collector using an installer package, download the [dynatrace-otel-collector﻿](https://github.com/Dynatrace/dynatrace-otel-collector/releases/v0.52.0) for your operating system from GitHub, and install it using root privileges and the following commands.
 
 Replace the following two placeholders in the commands with their actual content:
 
@@ -1574,10 +1574,10 @@ Container images for the Dynatrace OTel Collector:
 
 * [GitHub Container Registry (GHCR)﻿](https://github.com/Dynatrace/dynatrace-otel-collector/pkgs/container/dynatrace-otel-collector%2Fdynatrace-otel-collector)
 
-  + `ghcr.io/dynatrace/dynatrace-otel-collector/dynatrace-otel-collector:0.51.0`
+  + `ghcr.io/dynatrace/dynatrace-otel-collector/dynatrace-otel-collector:0.52.0`
 * [Amazon Elastic Container Registry (Amazon ECR)﻿](https://gallery.ecr.aws/dynatrace/dynatrace-otel-collector)
 
-  + `public.ecr.aws/dynatrace/dynatrace-otel-collector:0.51.0`
+  + `public.ecr.aws/dynatrace/dynatrace-otel-collector:0.52.0`
 * [Docker Hub Container Registry﻿](https://hub.docker.com/r/dynatrace/dynatrace-otel-collector)
 
-  + `dynatrace/dynatrace-otel-collector:0.51.0`
+  + `dynatrace/dynatrace-otel-collector:0.52.0`

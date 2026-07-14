@@ -37,7 +37,7 @@ Learn how to integrate Dynatrace into AWS platform with OneAgent.
 
 Distribute and automatically deploy OneAgent on your EC2 instances using the AWS Systems Manager Distributor.](/managed/ingest-from/amazon-web-services/integrate-into-aws/aws-ec2/deploy-oneagent-using-aws-systems-manager-distributor "Install OneAgent on your EC2 instances using the Dynatrace AWS Systems Manager Distributor package.")[### Amazon ECS
 
-Deploy OneAgent on Elastic Container Service.](/managed/ingest-from/amazon-web-services/integrate-into-aws/aws-ecs "Monitor Amazon Elastic Container Service (ECS)")[### Amazon EKS
+Deploy OneAgent on Elastic Container Service.](/managed/ingest-from/amazon-web-services/integrate-into-aws/aws-ecs "Monitor Amazon Elastic Container Service (ECS) with the EC2 launch type using OneAgent as a daemon service and view metrics.")[### Amazon EKS
 
 Deploy OneAgent and Monitor Amazon Elastic Kubernetes Service.](/managed/ingest-from/amazon-web-services/integrate-into-aws/aws-eks "Install OneAgent on Elastic Kubernetes Service.")[### AWS App Runner
 

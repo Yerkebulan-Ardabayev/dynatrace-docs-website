@@ -74,7 +74,7 @@ Use application-only injection if you don't have access to underlying hosts. You
 The most efficient option is automated application-only injection for Kubernetes-based platforms. This injects OneAgent code modules using Kubernetes-native admission controllers.
 
 * For Kubernetes, see [Get started with Application observability](/managed/ingest-from/setup-on-k8s/deployment/app-obs-managed#automatic "Deploy Dynatrace Operator in application monitoring mode to Kubernetes").
-* For AWS Fargate, see [Monitor AWS Fargate](/managed/ingest-from/amazon-web-services/integrate-into-aws/aws-fargate#autoinjection "Install OneAgent on AWS Fargate.")
+* For AWS Fargate on EKS, see [Install Dynatrace Operator add-on for AWS Elastic Kubernetes Service (AWS EKS)](/managed/ingest-from/setup-on-k8s/deployment/marketplaces/eks-dto#fargate "Deploy and configure Dynatrace Operator add-on for AWS Elastic Kubernetes Service (AWS EKS) environment.")
 
 ### Runtime injection
 
@@ -90,7 +90,6 @@ Inject OneAgent code modules into a container as it builds.
 
 * For Docker outside container platforms, see [Set up OneAgent on containers for application-only monitoring](/managed/ingest-from/setup-on-container-platforms/docker/set-up-oneagent-on-containers-for-application-only-monitoring "Install, update, and uninstall OneAgent on containers for application-only monitoring.")
 * For Kubernetes/OpenShift, see [Kubernetes container build-time application-only injection](/managed/ingest-from/setup-on-k8s/deployment/app-obs-managed#build-time "Deploy Dynatrace Operator in application monitoring mode to Kubernetes")
-* For AWS Fargate, see [Monitor AWS Fargate](/managed/ingest-from/amazon-web-services/integrate-into-aws/aws-fargate#buildtime "Install OneAgent on AWS Fargate.")
 
 ## Related topics
 

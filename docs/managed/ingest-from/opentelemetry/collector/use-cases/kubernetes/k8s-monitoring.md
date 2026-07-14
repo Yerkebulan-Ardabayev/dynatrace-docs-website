@@ -23,7 +23,7 @@ Setting up the Collector as described below will make Kubernetes monitoring data
 
 ## Prerequisites
 
-* One of the following Collector distributions with the [Kubernetes Cluster﻿](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.155.0/receiver/k8sclusterreceiver), [Kubernetes Events﻿](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.155.0/receiver/k8seventsreceiver), and [Kubelet Stats﻿](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.155.0/receiver/kubeletstatsreceiver) receivers:
+* One of the following Collector distributions with the [Kubernetes Cluster﻿](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.156.0/receiver/k8sclusterreceiver), [Kubernetes Events﻿](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.156.0/receiver/k8seventsreceiver), and [Kubelet Stats﻿](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.156.0/receiver/kubeletstatsreceiver) receivers:
 
   + The [Dynatrace OTel Collector](/managed/ingest-from/opentelemetry/collector#dt-collector-dist "Learn how to use the OpenTelemetry Collector, including the Dynatrace OTel Collector, to ingest telemetry from OpenTelemetry.")
   + [OTel Collector Contrib](/managed/ingest-from/opentelemetry/collector#collector-contrib "Learn how to use the OpenTelemetry Collector, including the Dynatrace OTel Collector, to ingest telemetry from OpenTelemetry.")
@@ -1118,7 +1118,7 @@ Configuration validation
 
 Cumulativetodelta processor recommendation
 
-It is recommended to set the `max_staleness` parameter of the [cumulativetodelta processor﻿](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.155.0/processor/cumulativetodeltaprocessor) to a value higher than how often the Collector receives metrics (e.g., how often metrics via OTLP are received, or how long the Prometheus scrape interval is). This ensures that no references to abandoned metric streams accumulate in memory over time.
+It is recommended to set the `max_staleness` parameter of the [cumulativetodelta processor﻿](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.156.0/processor/cumulativetodeltaprocessor) to a value higher than how often the Collector receives metrics (e.g., how often metrics via OTLP are received, or how long the Prometheus scrape interval is). This ensures that no references to abandoned metric streams accumulate in memory over time.
 
 ## Components
 
@@ -1128,10 +1128,10 @@ For our configuration, we configured the following components:
 
 Under `receivers`, we specify the following receivers as active receiver components for our deployment:
 
-* [`otlp`﻿](https://github.com/open-telemetry/opentelemetry-collector/tree/v0.155.0/receiver/otlpreceiver): To accept OTLP traces.
-* [`k8sevents`﻿](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.155.0/receiver/k8seventsreceiver): To receive Kubernetes events from the Kubernetes API server. [1](#fn-1-1-def)
-* [`k8s_cluster`﻿](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.155.0/receiver/k8sclusterreceiver): To receive cluster-level metrics and entity events from the Kubernetes API server.
-* [`kubelet_stats`﻿](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.155.0/receiver/kubeletstatsreceiver): To receive node-level metrics. This receiver requires the environment variable `K8S_NODE_NAME` to be set to `spec.nodeName` using the [Kubernetes Downward API﻿](https://kubernetes.io/docs/concepts/workloads/pods/downward-api/) (see [example﻿](https://kubernetes.io/docs/tasks/inject-data-application/environment-variable-expose-pod-information/)).
+* [`otlp`﻿](https://github.com/open-telemetry/opentelemetry-collector/tree/v0.156.0/receiver/otlpreceiver): To accept OTLP traces.
+* [`k8sevents`﻿](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.156.0/receiver/k8seventsreceiver): To receive Kubernetes events from the Kubernetes API server. [1](#fn-1-1-def)
+* [`k8s_cluster`﻿](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.156.0/receiver/k8sclusterreceiver): To receive cluster-level metrics and entity events from the Kubernetes API server.
+* [`kubelet_stats`﻿](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.156.0/receiver/kubeletstatsreceiver): To receive node-level metrics. This receiver requires the environment variable `K8S_NODE_NAME` to be set to `spec.nodeName` using the [Kubernetes Downward API﻿](https://kubernetes.io/docs/concepts/workloads/pods/downward-api/) (see [example﻿](https://kubernetes.io/docs/tasks/inject-data-application/environment-variable-expose-pod-information/)).
 
 1
 
@@ -1141,14 +1141,14 @@ The `k8sevents` receiver is currently in alpha stage and may undergo significant
 
 Under `processors`, we specify the following processors:
 
-* [`filter`﻿](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.155.0/processor/filterprocessor): To filter Kubernetes attributes.
-* [`k8sattributes`﻿](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.155.0/processor/k8sattributesprocessor): To extract and provide pod data.
-* [`transform`﻿](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.155.0/processor/transformprocessor): To transform Kubernetes metrics. This requires the environment variable `CLUSTER_NAME` to be set with the name of the cluster. Set the variable value to an arbitrary name that you want your cluster to show up with inside Dynatrace.
-* [`cumulativetodelta`﻿](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.155.0/processor/cumulativetodeltaprocessor): To enable conversion of cumulative metrics.
+* [`filter`﻿](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.156.0/processor/filterprocessor): To filter Kubernetes attributes.
+* [`k8sattributes`﻿](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.156.0/processor/k8sattributesprocessor): To extract and provide pod data.
+* [`transform`﻿](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.156.0/processor/transformprocessor): To transform Kubernetes metrics. This requires the environment variable `CLUSTER_NAME` to be set with the name of the cluster. Set the variable value to an arbitrary name that you want your cluster to show up with inside Dynatrace.
+* [`cumulativetodelta`﻿](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.156.0/processor/cumulativetodeltaprocessor): To enable conversion of cumulative metrics.
 
 #### Exporters
 
-Under `exporters`, we specify the [`otlp_http` exporter﻿](https://github.com/open-telemetry/opentelemetry-collector/tree/v0.155.0/exporter/otlphttpexporter) and configure it with our Dynatrace API URL and the required authentication token.
+Under `exporters`, we specify the [`otlp_http` exporter﻿](https://github.com/open-telemetry/opentelemetry-collector/tree/v0.156.0/exporter/otlphttpexporter) and configure it with our Dynatrace API URL and the required authentication token.
 
 For this purpose, we set the following two environment variables and reference them in the configuration values for `endpoint` and `Authorization`.
 
@@ -1157,7 +1157,7 @@ For this purpose, we set the following two environment variables and reference t
 
 #### Extensions
 
-Under `extensions`, we specify the [`k8sleaderelector` extension﻿](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.155.0/extension/k8sleaderelector) to choose the leader of the agent replicas, which is going to scrape and export cluster-level telemetry.
+Under `extensions`, we specify the [`k8sleaderelector` extension﻿](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.156.0/extension/k8sleaderelector) to choose the leader of the agent replicas, which is going to scrape and export cluster-level telemetry.
 This ensures that only one collector instance scrapes the data at a time to avoid telemetry duplication.
 
 #### Service pipelines

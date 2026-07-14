@@ -146,8 +146,8 @@ Acceptable values are `none` or `gzip`.
 
 ### Batching
 
-If you use the OpenTelemetry Collector, we highly recommend that you use [batching﻿](https://github.com/open-telemetry/opentelemetry-collector/blob/v0.155.0/exporter/exporterhelper#sending-queue-batch-settings) in the `otlp_http` exporter.
+If you use the OpenTelemetry Collector, we highly recommend that you use [batching﻿](https://github.com/open-telemetry/opentelemetry-collector/blob/v0.156.0/exporter/exporterhelper#sending-queue-batch-settings) in the `otlp_http` exporter.
 
 Batching helps better compress the data and reduce the number of outgoing connections required to transmit data to Dynatrace.
 
-See this [GitHub readme﻿](https://github.com/open-telemetry/opentelemetry-collector/blob/v0.155.0/processor/batchprocessor/README.md) for more information.
+See this [GitHub readme﻿](https://github.com/open-telemetry/opentelemetry-collector/blob/v0.156.0/processor/batchprocessor/README.md) for more information.

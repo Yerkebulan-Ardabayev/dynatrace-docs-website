@@ -9,7 +9,7 @@ source: https://docs.dynatrace.com/managed/ingest-from/microsoft-azure-services/
 
 * How-to guide
 * 11-min read
-* Updated on Apr 22, 2026
+* Updated on May 20, 2026
 
 Linux only
 
@@ -31,13 +31,72 @@ App Service on Linux supports two scenarios.
 
   For details on the differences between the two scenarios, see [Things you should know: Web Apps on Linux﻿](https://dt-url.net/jm039gu).
 
-  To monitor App Services on Linux, you need to integrate OneAgent within your containerized application.
+  To monitor App Services on Linux, integrate OneAgent with your containerized application environment.
 
-  Follow the procedure on the **Custom image** tab.
+  Follow the procedure on the **Bootstrapper sidecar** tab (recommended) or the **Custom image** tab. The Bootstrapper sidecar method is recommended because it doesn't require modifications to your application image.
+
+Bootstrapper sidecar
 
 Built-in image
 
 Custom image
+
+## Integrate Dynatrace using the bootstrapper sidecar
+
+Recommended OneAgent 1.333+
+
+The `dynatrace/dynatrace-codemodules` public image runs as a sidecar container alongside your web app. It copies OneAgent to persistent shared storage at `/home/dynatrace/oneagent`, and `LD_PRELOAD` loads it into your application on restart. This approach doesn't require modifications to your application image.
+
+### Prerequisites
+
+* A Linux Web App configured with **Operating System: Linux** and **Publish: Container**
+* Persistent shared storage enabled—set `WEBSITES_ENABLE_APP_SERVICE_STORAGE` to `true`. The bootstrapper writes OneAgent to `/home/dynatrace/oneagent`; without this storage mounted, OneAgent won't persist across restarts.
+
+### 1. Azure portal: Configure environment variables
+
+In the Azure portal, go to your web app > **Settings** > **Environment variables** and add the following:
+
+| Variable | Description |
+| --- | --- |
+| `DT_CONNECTION_POINT` | Your Dynatrace connection endpoint address. |
+| `DT_TENANT` | Your tenant environment ID. |
+| `DT_TENANTTOKEN` | PaaS token for your Dynatrace environment. |
+| `LD_PRELOAD` | `/home/dynatrace/oneagent/active/agent/lib64/liboneagentproc.so` |
+
+### 2. Azure portal: Add the bootstrapper sidecar container
+
+1. In the Azure portal, go to your web app > **Deployment** > **Deployment Center**.
+2. Select **Add** > **Custom container** and configure the following:
+
+   | Setting | Value |
+   | --- | --- |
+   | Image source | Other container registries |
+   | Image type | Public |
+   | Registry server URL | `index.docker.io` |
+   | Image and Tag | `dynatrace/dynatrace-codemodules:<version>`  (for example, `dynatrace/dynatrace-codemodules:1.327.64.20260122-030637`) |
+   | Startup command | `serverless --keep-alive --target /home/dynatrace/` |
+3. Select **Save**.
+
+#### Recommended Deploy only specific technologies
+
+By default, the bootstrapper deploys all available CodeModule technologies. To reduce container startup time, deploy only the technology your application uses by appending the `--technology` flag to the startup command.
+
+For example, to deploy only the Go CodeModule:
+
+```
+serverless --keep-alive --target /home/dynatrace/ --technology=go
+```
+
+### 3. Azure portal: Verify deployment and restart
+
+1. In Deployment Center, select **View logs** on the bootstrapper container. Wait for the log entry `"msg":"OneAgent has been successfully deployed"`, refreshing periodically as deployment may take several minutes.
+2. Go to **Overview** and select **Restart** to restart the web app.
+
+### Known limitations
+
+**Persistent shared storage required** — `WEBSITES_ENABLE_APP_SERVICE_STORAGE` must be set to `true` so the bootstrapper can write OneAgent to `/home/dynatrace/oneagent`. If it's set to `false`, the bootstrapper skips deployment entirely.
+
+**No automatic cleanup of older versions** — After upgrading, older OneAgent versions remain on shared storage. You need to clean them up manually.
 
 ## Integrate Dynatrace on built-in image
 
@@ -400,9 +459,16 @@ This section contains variables only relevant for **.NET environments**.
 
 ## Update OneAgent
 
+Bootstrapper sidecar
+
 Built-in image
 
 Custom image
+
+1. In the Azure portal, go to your web app > **Deployment** > **Deployment Center**.
+2. Select the bootstrapper container.
+3. Update the tag in the **Image and Tag** field to the new OneAgent version and select **Apply**.
+4. Verify deployment and restart the web app as described in Step 3 of the **Bootstrapper sidecar** tab on the Install section.
 
 When an update is available, restart your application to update OneAgent.
 
