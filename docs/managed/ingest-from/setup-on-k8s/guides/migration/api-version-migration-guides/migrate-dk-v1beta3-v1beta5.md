@@ -35,7 +35,7 @@ When migrating your DynaKube, remember to update the `apiVersion` field as well 
 
 #### OneAgent `autoUpdate`
 
-The `spec.oneAgent.<mode>.autoUpdate: true/false` field is [deprecated](/managed/ingest-from/setup-on-k8s/guides/deployment-and-configuration/updates-and-maintenance/auto-update-components "Configure auto-updates for components managed by Dynatrace Operator (OneAgent, ActiveGate, and EdgeConnect).") in `v1beta5`, so it shouldn't be used.
+The `spec.oneAgent.<mode>.autoUpdate: true/false` field is [deprecated](/managed/ingest-from/setup-on-k8s/guides/deployment-and-configuration/updates-and-maintenance/auto-update-components "Configure auto-updates for all components managed by Dynatrace Operator") in `v1beta5`, so it shouldn't be used.
 
 We recommend the following:
 

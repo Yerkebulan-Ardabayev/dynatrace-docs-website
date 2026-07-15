@@ -368,10 +368,10 @@ In OneAgent injection mode, the mutations focus on enabling full-stack monitorin
 
 OneAgent injection specific arguments for the init-container
 
-* `--source=/opt/dynatrace/oneagent`: (Only relevant for [node-image-pull](/managed/ingest-from/setup-on-k8s/guides/deployment-and-configuration/node-image-pull "Configure node image pull")) Source path for copying OneAgent binaries
+* `--source=/opt/dynatrace/oneagent`: (Only relevant for [node-image-pull](/managed/ingest-from/setup-on-k8s/reference/code-modules-delivery-modes "Reference for how Dynatrace Operator delivers OneAgent code modules to application pods, including ephemeral volumes, CSI driver image pull, and ZIP download.")) Source path for copying OneAgent binaries
 * `--target=/mnt/bin`: Destination path for copying OneAgent binaries
 * `--install-path=/opt/dynatrace/oneagent-paas`: Installation path where OneAgent binaries will be mounted in the user container (used for configuring the `ld.so.preload` file)
-* `--technology=...`: (Only relevant for [node-image-pull](/managed/ingest-from/setup-on-k8s/guides/deployment-and-configuration/node-image-pull "Configure node image pull") or when init-container downloads OneAgent) Specifies the OneAgent type to download/copy for reducing binary size (configured via pod or DynaKube annotations)
+* `--technology=...`: (Only relevant for [node-image-pull](/managed/ingest-from/setup-on-k8s/reference/code-modules-delivery-modes "Reference for how Dynatrace Operator delivers OneAgent code modules to application pods, including ephemeral volumes, CSI driver image pull, and ZIP download.") or when init-container downloads OneAgent) Specifies the OneAgent type to download/copy for reducing binary size (configured via pod or DynaKube annotations)
 * `--flavor=...`: (Only relevant when init-container downloads OneAgent) Specifies the OneAgent flavor to download/copy for reducing binary size (configured via pod annotations)
 
 ### `annotations`
@@ -431,7 +431,7 @@ Metadata enrichment–specific arguments for the init-container
 
 ## Pod mutation for OneAgent injection with node-image-pull
 
-In OneAgent injection mode with [node-image-pull](/managed/ingest-from/setup-on-k8s/guides/deployment-and-configuration/node-image-pull "Configure node image pull"), the Dynatrace Operator combines full-stack monitoring with metadata enrichment capabilities.
+In OneAgent injection mode with [node-image-pull](/managed/ingest-from/setup-on-k8s/reference/code-modules-delivery-modes "Reference for how Dynatrace Operator delivers OneAgent code modules to application pods, including ephemeral volumes, CSI driver image pull, and ZIP download."), the Dynatrace Operator combines full-stack monitoring with metadata enrichment capabilities.
 
 ### `initContainers`
 

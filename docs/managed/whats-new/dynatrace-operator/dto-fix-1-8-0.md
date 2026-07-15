@@ -8,7 +8,7 @@ source: https://docs.dynatrace.com/managed/whats-new/dynatrace-operator/dto-fix-
 # Dynatrace Operator release notes version 1.8.0
 
 * Release notes
-* Updated on Mar 31, 2026
+* Updated on Apr 23, 2026
 
 Release date: January 27th, 2026
 
@@ -17,6 +17,8 @@ Upgrade to 1.8.1
 If you're running Dynatrace Operator version 1.8, we recommend upgrading to version 1.8.1 to receive the latest important patches.
 
 ## Announcements
+
+Dynatrace Operator version 1.8.0 requires additional deployment permissions compared to prior and future releases. The introduction of [ClusterRole aggregation](/managed/ingest-from/setup-on-k8s/guides/deployment-and-configuration/cluster-role-aggregation "Understanding how the Dynatrace Operator uses ClusterRole aggregation to manage permissions for Kubernetes monitoring.") for Kubernetes monitoring means the deployer needs permissions to create aggregated ClusterRoles. This particularly affects tooling such as ArgoCD that manages workloads without `cluster-admin` permissions. For a full list of required deployment permissions, see [Deployment permissions](/managed/ingest-from/setup-on-k8s/reference/security#deployment-permissions "This page provides an overview of the Dynatrace components, their default configurations, and the permissions they require").
 
 Dynatrace Operator version 1.8 introduces a new default and recommended DynaKube CRD version `v1beta6`. We encourage you to update your existing DynaKube resources to this latest version to take advantage of new features and enhancements.
 
@@ -42,7 +44,7 @@ For configuration details and examples, see the [OTLP auto-configuration guide](
 
 * The Dynatrace Operator now uses the CA certificates provided via `.spec.caCertsRef` in requests to the Dynatrace API when rolling out EdgeConnect.
 
-* The jobs the CSI driver creates for the [node image pull feature](/managed/ingest-from/setup-on-k8s/guides/deployment-and-configuration/node-image-pull "Configure node image pull") now use the same PriorityClass as the CSI driver to ensure fast scheduling and allow preemption on congested nodes. The priority is configurable via the Helm value `csidriver.priorityClassValue`. For guidance, see [Use priorityClass for critical Dynatrace components](/managed/ingest-from/setup-on-k8s/guides/high-availability/priority "Use priorityClass for critical Dynatrace components").
+* The jobs the CSI driver creates for the [node image pull feature](/managed/ingest-from/setup-on-k8s/reference/code-modules-delivery-modes "Reference for how Dynatrace Operator delivers OneAgent code modules to application pods, including ephemeral volumes, CSI driver image pull, and ZIP download.") now use the same PriorityClass as the CSI driver to ensure fast scheduling and allow preemption on congested nodes. The priority is configurable via the Helm value `csidriver.priorityClassValue`. For guidance, see [Use priorityClass for critical Dynatrace components](/managed/ingest-from/setup-on-k8s/guides/high-availability/priority "Use priorityClass for critical Dynatrace components").
 
 * Specifying an image in `.spec.templates.otelCollector.imageRef` is now mandatory when [telemetry ingest](/managed/ingest-from/setup-on-k8s/extend-observability-k8s/telemetry-ingest "Enable Dynatrace telemetry ingest endpoints in Kubernetes for cluster-local data ingest.") is enabled.
 
@@ -58,7 +60,7 @@ For configuration details and examples, see the [OTLP auto-configuration guide](
 
 * Dynatrace Operator managed ActiveGate now use a liveness probe to improve detection of broken states.
 
-* Default resource requirements for the jobs created by the CSI driver for the [node image pull feature](/managed/ingest-from/setup-on-k8s/guides/deployment-and-configuration/node-image-pull "Configure node image pull") have been lowered. For guidance, see [Set resource limits for Dynatrace Operator components](/managed/ingest-from/setup-on-k8s/guides/deployment-and-configuration/resource-management/dto-resource-limits "Set resource limits for Dynatrace Operator components.")
+* Default resource requirements for the jobs created by the CSI driver for the [node image pull feature](/managed/ingest-from/setup-on-k8s/reference/code-modules-delivery-modes "Reference for how Dynatrace Operator delivers OneAgent code modules to application pods, including ephemeral volumes, CSI driver image pull, and ZIP download.") have been lowered. For guidance, see [Set resource limits for Dynatrace Operator components](/managed/ingest-from/setup-on-k8s/guides/deployment-and-configuration/resource-management/dto-resource-limits "Set resource limits for Dynatrace Operator components.")
 
 ## Resolved issues
 

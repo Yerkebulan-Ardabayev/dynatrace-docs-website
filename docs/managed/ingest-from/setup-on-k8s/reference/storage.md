@@ -112,7 +112,7 @@ These directories are specific to Dynatrace. They are injected into workloads by
 
 1
 
-Same disk usage as described in [plugin directory disk usage](#operator-csi-plugin-dir). You can save storage by configuring the [node image pull](/managed/ingest-from/setup-on-k8s/guides/deployment-and-configuration/node-image-pull "Configure node image pull") feature.
+Same disk usage as described in [plugin directory disk usage](#operator-csi-plugin-dir). You can save storage by configuring the [node image pull](/managed/ingest-from/setup-on-k8s/reference/code-modules-delivery-modes "Reference for how Dynatrace Operator delivers OneAgent code modules to application pods, including ephemeral volumes, CSI driver image pull, and ZIP download.") feature.
 
 2
 

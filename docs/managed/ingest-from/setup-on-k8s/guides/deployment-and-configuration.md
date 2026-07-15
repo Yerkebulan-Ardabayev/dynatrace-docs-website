@@ -16,9 +16,7 @@ Explore a range of operational tasks and procedures related to Dynatrace.
 
 Deployment of Dynatrace Operator alongside Istio in various scenarios.](/managed/ingest-from/setup-on-k8s/guides/deployment-and-configuration/istio-deployment "Deployment of Dynatrace Operator alongside Istio in various scenarios")[### Manage Dynatrace deployments using GitOps
 
-Learn how to manage Dynatrace Operator and DynaKube using GitOps.](/managed/ingest-from/setup-on-k8s/guides/deployment-and-configuration/using-gitops "How to deploy Dynatrace Operator and DynaKube using GitOps.")[### Configure node image pull
-
-Configure node image pull with or without CSI driver.](/managed/ingest-from/setup-on-k8s/guides/deployment-and-configuration/node-image-pull "Configure node image pull")[### Instrument ingress-nginx
+Learn how to manage Dynatrace Operator and DynaKube using GitOps.](/managed/ingest-from/setup-on-k8s/guides/deployment-and-configuration/using-gitops "How to deploy Dynatrace Operator and DynaKube using GitOps.")[### Instrument ingress-nginx
 
 Instrument ingress-nginx on Kubernetes.](/managed/ingest-from/setup-on-k8s/guides/deployment-and-configuration/monitoring-and-instrumentation/instrument-nginx "Instrument ingress-nginx on Kubernetes")[### Kubernetes API Monitoring
 
@@ -34,8 +32,10 @@ Upgrade and uninstallation procedures for Dynatrace Operator.](/managed/ingest-f
 
 Enable automatic updates of Dynatrace Operator following a GitOps approach.](/managed/ingest-from/setup-on-k8s/guides/deployment-and-configuration/updates-and-maintenance/dto-auto-update "Enable automatic updates of Dynatrace Operator following a GitOps approach.")[### Configure auto-update for Dynatrace Operator components
 
-Configure auto-updates for components managed by Dynatrace Operator.](/managed/ingest-from/setup-on-k8s/guides/deployment-and-configuration/updates-and-maintenance/auto-update-components "Configure auto-updates for components managed by Dynatrace Operator (OneAgent, ActiveGate, and EdgeConnect).")[### Dynatrace ActiveGate sizing guide
+Configure auto-updates for components managed by Dynatrace Operator.](/managed/ingest-from/setup-on-k8s/guides/deployment-and-configuration/updates-and-maintenance/auto-update-components "Configure auto-updates for all components managed by Dynatrace Operator")[### Dynatrace ActiveGate sizing guide
 
 Sizing guide for Dynatrace ActiveGate components](/managed/ingest-from/setup-on-k8s/guides/deployment-and-configuration/resource-management/ag-resource-limits "Set resource limits for Dynatrace ActiveGates")[### Configure startup probes for Dynatrace Operator
 
-Configure startup probes for Dynatrace Operator, Webhook, and CSI Driver.](/managed/ingest-from/setup-on-k8s/guides/deployment-and-configuration/configure-startup-probes "Set up and customize startup probes for Dynatrace Operator, Webhook, and CSI driver components to match your environment's requirements.")
+Configure startup probes for Dynatrace Operator, Webhook, and CSI Driver.](/managed/ingest-from/setup-on-k8s/guides/deployment-and-configuration/configure-startup-probes "Set up and customize startup probes for Dynatrace Operator, Webhook, and CSI driver components to match your environment's requirements.")[### ActiveGate `custom.properties`
+
+Configure ActiveGate via `custom.properties`.](/managed/ingest-from/setup-on-k8s/guides/metadata-automation/custom-properties-file "Add a custom properties file")

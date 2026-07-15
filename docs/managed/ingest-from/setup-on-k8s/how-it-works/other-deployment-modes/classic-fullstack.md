@@ -21,6 +21,8 @@ See [`.spec.oneAgent.classicFullStack`](/managed/ingest-from/setup-on-k8s/refere
 
 ## Limitations
 
+Classic Full-Stack mode is not supported when using a [platform token](/managed/upgrade/unavailable-in-managed "Your selection is unavailable in Dynatrace Managed.").
+
 There’s a startup dependency between the container where OneAgent is deployed and the application container to be instrumented (for example, containers with deep process monitoring enabled). The OneAgent container must be started, and the `oneagenthelper` process must be running before the application container is launched to ensure proper instrumentation.
 
 ## Deployed resources

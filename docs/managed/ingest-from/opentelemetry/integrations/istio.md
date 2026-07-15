@@ -39,7 +39,7 @@ It's possible to configure Istio OpenTelemetry tracing in a standalone deploymen
 
 ### Deployment in combination with Dynatrace Operator Recommended
 
-We recommend using the Istio OpenTelemetry integration in combination with a Dynatrace Operator deployment with [metadata enrichment](/managed/ingest-from/setup-on-k8s/guides/metadata-automation/metadata-enrichment "Metadata enrichment in the Dynatrace Operator adds context to Kubernetes pods by attaching relevant metadata to entities like pods, hosts, and processes for better observability.") and [telemetry ingest endpoints](/managed/ingest-from/setup-on-k8s/extend-observability-k8s/telemetry-ingest "Enable Dynatrace telemetry ingest endpoints in Kubernetes for cluster-local data ingest.") enabled. Other features like OneAgent or ActiveGate are not required.
+We recommend using the Istio OpenTelemetry integration in combination with a Dynatrace Operator deployment with [metadata enrichment](/managed/ingest-from/setup-on-k8s/guides/metadata-automation/metadata-enrichment "Configure metadata enrichment in Dynatrace Operator to attach Kubernetes metadata to telemetry signals using OneAgent, OTLP exporter, or standalone enrichment.") and [telemetry ingest endpoints](/managed/ingest-from/setup-on-k8s/extend-observability-k8s/telemetry-ingest "Enable Dynatrace telemetry ingest endpoints in Kubernetes for cluster-local data ingest.") enabled. Other features like OneAgent or ActiveGate are not required.
 
 This provides the following benefits compared to standalone usage:
 

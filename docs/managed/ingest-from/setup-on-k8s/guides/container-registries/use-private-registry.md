@@ -8,7 +8,7 @@ source: https://docs.dynatrace.com/managed/ingest-from/setup-on-k8s/guides/conta
 # Use a private registry
 
 * 5-min read
-* Updated on Jun 19, 2026
+* Updated on Jul 10, 2026
 
 For users seeking greater control over their image hosting environment, Dynatrace offers the option to replicate images and signatures to private registries.
 
@@ -31,25 +31,45 @@ For guidance on storing Dynatrace images in your private registry, see [Store Dy
 
 ## Create a pull secret
 
-When Dynatrace container images are served by a private registry requiring authentication, a pull secret is **required** if node image pull is not used and any of the following conditions apply:
+When your private registry requires authentication, Dynatrace Operator needs credentials to pull the images. You provide these credentials as a Kubernetes pull secret.
 
-* DynaKube configured for Full Observability ([Cloud-Native Full-Stack](/managed/ingest-from/setup-on-k8s/how-it-works#cloud-native "In-depth description on how the deployment on Kubernetes works.") monitoring)
-* DynaKube configured for Application Observability ([Application-Only](/managed/ingest-from/setup-on-k8s/how-it-works#auto "In-depth description on how the deployment on Kubernetes works.") monitoring) **with** CSI driver enabled
+The `customPullSecret` field in a DynaKube configuration authenticates **only the components that Dynatrace Operator manages in the `dynatrace` namespace**.
 
-Since Dynatrace Operator version 0.14.0, `customPullSecret` field is required unless [node image pull](/managed/ingest-from/setup-on-k8s/guides/deployment-and-configuration/node-image-pull "Configure node image pull") feature is used.
+Dynatrace Operator does **not** copy this pull secret into your application namespaces or add it to your injected application pods. Following the principle of least privilege, and to limit the security exposure of your registry credentials, Dynatrace Operator does not replicate the pull secret outside the `dynatrace` namespace. Injected pods require the pull secret because of the added init container, so it needs to be distributed to either the node, serviceAccount or pod directly.
 
-The pull secret (the `customPullSecret` field in a DynaKube configuration) is generally used for authenticating against the private registry and accessing its artifacts (images). The following points describe the requirements for a pull secret in more detail:
+### Where the pull secret applies
 
-* When Cloud-Native Full-Stack or Application-Only monitoring with the CSI driver is configured, the CSI driver requires a pull secret to access the private registry as it attempts to directly download the Dynatrace Code Modules image from the private registry.
-* When using the [node image pull feature](/managed/ingest-from/setup-on-k8s/guides/deployment-and-configuration/node-image-pull "Configure node image pull") without the CSI driver, the `customPullSecret` field only affects components managed by Dynatrace Operator (in the `dynatrace` namespace). For injected application pods, you must manually configure pull secrets at the node, namespace, or pod level. For details, see [node image pull prerequisites](/managed/ingest-from/setup-on-k8s/guides/deployment-and-configuration/node-image-pull#prerequisites "Configure node image pull").
+The following table shows which image the Kubernetes node pulls in each scenario, whether the DynaKube `customPullSecret` covers it, and what you need to configure.
 
-To create a pull secret, follow this [Kubernetes documentation﻿](https://dt-url.net/p403yu6) on how to create a Kubernetes secret based on existing credentials or by providing credentials on the command line.
+| Scenario | Image the node pulls for the pod | Is `customPullSecret` enough? | What you need to configure |
+| --- | --- | --- | --- |
+| Operator-managed components in the `dynatrace` namespace | Dynatrace Operator image | Yes | Set `customPullSecret` in the DynaKube. |
+| Injected application pods with node image pull ([ephemeral volume](/managed/ingest-from/setup-on-k8s/reference/code-modules-delivery-modes#ephemeral-node-image-pull "Reference for how Dynatrace Operator delivers OneAgent code modules to application pods, including ephemeral volumes, CSI driver image pull, and ZIP download.") or [via CSI volume](/managed/ingest-from/setup-on-k8s/reference/code-modules-delivery-modes#csi-node-image-pull "Reference for how Dynatrace Operator delivers OneAgent code modules to application pods, including ephemeral volumes, CSI driver image pull, and ZIP download.")) | OneAgent code modules image (init container) | No | Distribute a pull secret to your application namespace, node, or pod. See [Provide pull secrets for injected workloads](#injected-workloads). |
+| Injected application pods with [CSI driver image pull](/managed/ingest-from/setup-on-k8s/reference/code-modules-delivery-modes#csi-image-pull "Reference for how Dynatrace Operator delivers OneAgent code modules to application pods, including ephemeral volumes, CSI driver image pull, and ZIP download."), [CSI driver ZIP download](/managed/ingest-from/setup-on-k8s/reference/code-modules-delivery-modes#csi-zip "Reference for how Dynatrace Operator delivers OneAgent code modules to application pods, including ephemeral volumes, CSI driver image pull, and ZIP download."), or [ZIP download](/managed/ingest-from/setup-on-k8s/reference/code-modules-delivery-modes#zip-download "Reference for how Dynatrace Operator delivers OneAgent code modules to application pods, including ephemeral volumes, CSI driver image pull, and ZIP download.") | Dynatrace Operator image (init container) | No | Distribute a pull secret to your application namespace, node, or pod. See [Provide pull secrets for injected workloads](#injected-workloads). |
+
+For [CSI driver image pull](/managed/ingest-from/setup-on-k8s/reference/code-modules-delivery-modes#csi-image-pull "Reference for how Dynatrace Operator delivers OneAgent code modules to application pods, including ephemeral volumes, CSI driver image pull, and ZIP download."), `customPullSecret` additionally covers the OneAgent code modules image, which the CSI driver pulls in the `dynatrace` namespace. The injected pods still need their own pull secret for the init container image.
+
+### Create the pull secret
+
+To create a pull secret for the operator-managed components, follow this [Kubernetes documentation﻿](https://dt-url.net/p403yu6) on how to create a Kubernetes secret based on existing credentials or by providing credentials on the command line. Reference it through the `customPullSecret` field in your DynaKube, as shown in [Configure DynaKube to use images from private registry](#configure-dynakube).
+
+### Provide pull secrets for injected workloads
+
+Injected pods run a Dynatrace init container whose image the Kubernetes node must pull. Because Dynatrace Operator does not distribute the `customPullSecret` outside the `dynatrace` namespace, you must provide these credentials yourself at one of the following levels:
+
+* **Node level**: Configure registry authentication directly on each node.
+* **Namespace level**: Add the pull secret to every namespace and the respective serviceAccounts where injected application pods run. Pull secrets are only valid in their own namespace, so repeat this for each application namespace.
+* **Pod level**: Configure the pull secret through the `imagePullSecrets` field in the pod specification of your application pods.
+
+For details, see the [Kubernetes documentation on pulling images from private registries﻿](https://kubernetes.io/docs/concepts/containers/images/#using-a-private-registry).
+
+Previously, an application pod could reuse an image that another pod had already pulled onto the same node, even without its own credentials. Since Kubernetes 1.35, the [`KubeletEnsureSecretPulledImages`﻿](https://kubernetes.io/docs/concepts/containers/images/#ensureimagepullcredentialverification) feature gate is enabled by default and the kubelet verifies pull credentials per pod, even for images already cached on the node. If you don't distribute pull secrets as described above, injected pods fail with `ImagePullBackOff`.
 
 ## Deploy Dynatrace Operator with images from private registry
 
 This section guides you through deploying Dynatrace Operator with its container image coming from a private registry.
 
-Dynatrace Operator consists of multiple components (operator, webhook, CSI driver), all of which use the same `dynatrace-operator` image with specific deployment configurations per component.
+Dynatrace Operator consists of multiple components, all of which use the same `dynatrace-operator` image with specific deployment configurations per component.
 
 Helm
 
@@ -110,7 +130,7 @@ helm upgrade dynatrace-operator oci://public.ecr.aws/dynatrace/dynatrace-operato
 
 
 
---reuse-values
+--reset-then-reuse-values \
 
 
 
@@ -123,7 +143,7 @@ If you prefer to make your modifications directly, however, be sure to adjust th
 
 ## Configure DynaKube to use images from private registry
 
-To instruct Dynatrace Operator to use container images from a private registry, just configure a pull secret via the `customPullSecret` field for registry authentification and respective `image` fields in the DynaKube custom resource. The configured images will be deployed to your Kubernetes cluster to set up monitoring components.
+To instruct Dynatrace Operator to use container images from a private registry, configure the respective `image` fields in the DynaKube custom resource. The configured images will be deployed to your Kubernetes cluster to set up monitoring components.
 
 The following DynaKube snippet demonstrates how to configure [Cloud-Native Full-Stack monitoring setup](/managed/ingest-from/setup-on-k8s/how-it-works#cloud-native "In-depth description on how the deployment on Kubernetes works.") using Dynatrace container images from a private registry.
 
@@ -201,14 +221,7 @@ image: <your-private-registry>/dynatrace-activegate:<tag>
 
 After configuring the required fields, the DynaKube custom resource must be applied to the Kubernetes cluster.
 
-If the [`KubeletEnsureSecretPulledImages`﻿](https://kubernetes.io/docs/concepts/containers/images/#ensureimagepullcredentialverification) feature gate is enabled on your Kubernetes cluster, you may need to ensure that all nodes are authenticated to access the registry.
-For security reasons, Dynatrace Operator does not replicate provided pull secrets into application namespaces or mount them to pods outside of Dynatrace Operator's control. Instead, you must manually configure pull secrets at one of the following levels:
-
-* **Node level**: Configure registry authentication directly on each node.
-* **Namespace level**: Add the pull secret to the namespace where application pods are deployed.
-* **Pod level**: Configure the pull secret via the `imagePullSecrets` field in the pod specification of your application pods.
-
-For more information on manual pull secret configuration, see [Kubernetes documentation on pulling images from private registries﻿](https://kubernetes.io/docs/concepts/containers/images/#using-a-private-registry).
+The `customPullSecret` field authenticates only the operator-managed components in the `dynatrace` namespace. If the Kubernetes node pulls the OneAgent code modules image for your injected application pods, you must provide the pull secret yourself. For details, see [Provide pull secrets for injected workloads](#injected-workloads).
 
 For additional information regarding `customPullSecret` field, `image` fields, or the DynaKube custom resource, see further examples below or go to the [DynaKube parameters for Dynatrace Operator](/managed/ingest-from/setup-on-k8s/reference/dynakube-parameters "List the available parameters for setting up Dynatrace Operator on Kubernetes.") reference page.
 
@@ -293,4 +306,4 @@ All of our immutable and signed container images adhere to best practices, enhan
 ## Related topics
 
 * [Store Dynatrace images in private registries](/managed/ingest-from/setup-on-k8s/guides/container-registries/prepare-private-registry "Store Dynatrace images in private registries")
-* [Use a public registry](/managed/ingest-from/setup-on-k8s/guides/container-registries/use-public-registry "Use a public registry")
+* [Use a public registry](/managed/ingest-from/setup-on-k8s/guides/container-registries/use-public-registry "Configure the Dynatrace Operator to use public registry images for itself and its managed components. This can be done manually or through automatic resolution from your Dynatrace environment.")

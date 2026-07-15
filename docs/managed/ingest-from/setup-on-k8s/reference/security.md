@@ -7,12 +7,110 @@ source: https://docs.dynatrace.com/managed/ingest-from/setup-on-k8s/reference/se
 
 # Dynatrace Operator security
 
+* Reference
 * 16-min read
-* Updated on Mar 10, 2026
+* Updated on May 20, 2026
 
 Kubernetes observability relies on components with different purposes, default configurations, and permissions. These different components need permissions to perform and maintain operational function of Dynatrace within your cluster.
 
 While Dynatrace permissions adhere to the principle of least privilege, make sure to secure the `dynatrace` namespace and limit access to a closed group of administrators and operators.
+
+## Deployment permissions
+
+Installing and upgrading Dynatrace Operator require administrative privileges. If you don't use the `cluster-admin` cluster role, ensure the deploying subject has the permissions listed in this section. The required permissions also include `patch` to support `helm upgrade` and permissions to manage `DynaKube` and `EdgeConnect` custom resources.
+
+These permissions are required only for deploying (installing) the Operator. For the permissions required during runtime refer to [Permission list](#permission-list).
+
+### Cluster-scoped resources
+
+The deploying user or service account must be able to **create, update, patch, and delete** the following cluster-scoped resource types:
+
+| Resource type | API group | Verbs | Resource names | Notes |
+| --- | --- | --- | --- | --- |
+| `CustomResourceDefinition` | `apiextensions.k8s.io` | `create`, `update`, `patch`, `delete` | `dynakubes.dynatrace.com`, `edgeconnects.dynatrace.com` | Required to install Dynatrace CRDs |
+| `ClusterRole` | `rbac.authorization.k8s.io` | `create`, `update`, `patch`, `delete`, `escalate`, `bind` |  | **Important:** Requires `escalate` or equivalent permissions. See [Deployer RBAC verbs](#deployment-rbac-verbs). |
+| `ClusterRoleBinding` | `rbac.authorization.k8s.io` | `create`, `update`, `patch`, `delete` |  |  |
+| `MutatingWebhookConfiguration` | `admissionregistration.k8s.io` | `create`, `update`, `patch`, `delete` | `dynatrace-webhook` |  |
+| `ValidatingWebhookConfiguration` | `admissionregistration.k8s.io` | `create`, `update`, `patch`, `delete` | `dynatrace-webhook` |  |
+| `CSIDriver` | `storage.k8s.io` | `create`, `update`, `patch`, `delete` |  | Required for CSI driver |
+| `PriorityClass` | `scheduling.k8s.io` | `create`, `update`, `patch`, `delete` |  | Required for CSI driver |
+| `Namespace` | `""` | `create` |  | Required for `helm install --create-namespace` |
+
+### Namespace-scoped resources
+
+The deploying user or service account must be able to **create, update, patch, and delete** the following resource types in the operator namespace:
+
+| Resource type | API group | Verbs |
+| --- | --- | --- |
+| `ServiceAccount` | `""` | `create`, `update`, `patch`, `delete` |
+| `Role` | `rbac.authorization.k8s.io` | `create`, `update`, `patch`, `delete` |
+| `RoleBinding` | `rbac.authorization.k8s.io` | `create`, `update`, `patch`, `delete` |
+| `Deployment` | `apps` | `create`, `update`, `patch`, `delete` |
+| `DaemonSet` | `apps` | `create`, `update`, `patch`, `delete` |
+| `Service` | `""` | `create`, `update`, `patch`, `delete` |
+| `Secret` | `""` | `create`, `update`, `patch`, `delete` |
+| `ConfigMap` | `""` | `create`, `update`, `patch`, `delete` |
+| `PodDisruptionBudget` | `policy` | `create`, `update`, `patch`, `delete` |
+| `DynaKube` | `dynatrace.com` | `create`, `update`, `patch`, `delete` |
+| `EdgeConnect` | `dynatrace.com` | `create`, `update`, `patch`, `delete` |
+| `Job` | `batch` | `create`, `update`, `patch`, `delete` |
+
+For links to ClusterRole manifests for deploying Dynatrace Operator, see [Deployer RBAC verbs](#deployment-rbac-verbs).
+
+### Platform-specific resources
+
+Depending on the target platform, the Helm chart creates additional resources that require extra deployer permissions.
+
+#### GKE Autopilot
+
+On GKE Autopilot clusters, the Helm chart automatically detects the `auto.gke.io/v1/AllowlistSynchronizer` API and creates an `AllowlistSynchronizer` resource as a Helm pre-install hook. This allowlists the CSI driver, log monitoring, and CSI job workloads required by the Operator.
+
+The deploying user or service account needs the following additional permission:
+
+| API group | Resource | Verbs |
+| --- | --- | --- |
+| `auto.gke.io` | `allowlistsynchronizers` | `create`, `get`, `update`, `patch`, `delete`, `list` |
+
+#### OpenShift
+
+On OpenShift clusters (detected via the `security.openshift.io/v1` API or `--set platform=openshift`), the Helm chart creates additional ClusterRoles that grant `use` access to SecurityContextConstraints (`privileged`, `nonroot`, `nonroot-v2`). No additional deployer permissions are required if you use the recommended `escalate` approach described in [Deployer RBAC verbs](#deployment-rbac-verbs).
+
+### Deployer RBAC verbs: `bind` and `escalate`
+
+Kubernetes enforces [privilege escalation prevention﻿](https://kubernetes.io/docs/reference/access-authn-authz/rbac/#privilege-escalation-prevention-and-bootstrapping): you can't create a ClusterRole granting permissions you don't already hold, and you can't create a ClusterRoleBinding referencing a ClusterRole whose permissions you don't hold.
+
+The Dynatrace Operator Helm chart creates several ClusterRoles (for example, reading nodes, pods, and metrics). The deployer account needs to be able to create these ClusterRoles and their bindings. There are two approaches:
+
+The sample deployer ClusterRole manifests below include permissions to manage `DynaKube` and `EdgeConnect` custom resources. This assumes the same service account used for deploying the Operator is also used to deploy the custom resources that configure it. The samples also include platform-specific resources for GKE Autopilot and OpenShift.
+
+These sample manifests match the permissions for the **current** Operator version. When upgrading to a new Operator version, use the manifests from the corresponding [release tag﻿](https://github.com/Dynatrace/dynatrace-operator/tags).
+
+#### Option A: Use `escalate` and `bind`
+
+Grant the `escalate` and `bind` verbs on RBAC resources to the deployer. This is a low-maintenance approach because the deployer's permissions don't need to be updated when the Operator's ClusterRoles change across versions.
+
+* **`escalate`** on `clusterroles` allows creating or updating ClusterRole objects that contain permissions the deployer doesn't hold. It does **not** grant those permissions to the deployer itself—it only allows managing ClusterRole resources.
+* **`bind`** on `clusterroles` and `clusterrolebindings` allows creating ClusterRoleBindings that reference ClusterRoles with permissions the deployer doesn't hold.
+
+Granting `escalate` and `bind` disables Kubernetes privilege escalation prevention for the deployer, meaning it can create ClusterRoles with any permissions and bind them to any subject. These risks can be mitigated by using admission control policies that restrict which ClusterRoles and ClusterRoleBindings the deployer can create.
+
+Sample deployer ClusterRole manifest (includes CSI driver, GKE Autopilot, and OpenShift permissions):
+
+[With CSI driver﻿](https://github.com/Dynatrace/dynatrace-operator/blob/v1.10.0/assets/samples/deployer/deployer-clusterrole-with-csi.yaml)
+
+If you don't deploy the CSI driver, use [Without CSI driver﻿](https://github.com/Dynatrace/dynatrace-operator/blob/v1.10.0/assets/samples/deployer/deployer-clusterrole-no-csi.yaml) instead — it omits the `CSIDriver` and `PriorityClass` permissions.
+
+#### Option B: Expanded permissions if `escalate` or `bind` are prohibited
+
+If your security policies prohibit the `escalate` or `bind` verbs, the deployer must already hold every permission that the Operator's runtime ClusterRoles grant. This means enumerating all Dynatrace Operator permissions in the deployer ClusterRole so that Kubernetes escalation prevention is never triggered.
+
+The no-escalate ClusterRole directly grants all runtime permissions—secrets read/write, pods/exec, webhook mutation, DaemonSet management, and more. This makes the deployer itself a high-privilege principal with broad cluster access. Admission control is still recommended to limit what RBAC resources the deployer can create.
+
+Sample deployer ClusterRole manifest (no escalate, includes CSI driver, GKE Autopilot, and OpenShift permissions):
+
+[With CSI driver﻿](https://github.com/Dynatrace/dynatrace-operator/blob/v1.10.0/assets/samples/deployer/deployer-clusterrole-no-escalate-with-csi.yaml)
+
+If you don't deploy the CSI driver, use [Without CSI driver﻿](https://github.com/Dynatrace/dynatrace-operator/blob/v1.10.0/assets/samples/deployer/deployer-clusterrole-no-escalate-no-csi.yaml) instead — it omits the `CSIDriver` and `PriorityClass` permissions.
 
 ## Permission list
 
@@ -30,41 +128,41 @@ While Dynatrace permissions adhere to the principle of least privilege, make sur
 
 #### Cluster-wide permissions
 
-| Resources accessed | API group | APIs used | Resource names |
+| Resources accessed | API group | Verbs | Resource names |
 | --- | --- | --- | --- |
-| `nodes` | `""` | Get/List/Watch |  |
-| `namespaces` | `""` | Get/List/Watch/Update |  |
+| `nodes` | `""` | Get, List, Watch |  |
+| `namespaces` | `""` | Get, List, Watch, Update |  |
 | `secrets` | `""` | Create |  |
-| `secrets` | `""` | Get/Update/Delete/List | ``` dynatrace-dynakube-config``dynatrace-bootstrapper-config``dynatrace-bootstrapper-certs``dynatrace-metadata-enrichment-endpoint``dynatrace-otlp-exporter-config``dynatrace-otlp-exporter-certs ``` |
-| `mutatingwebhookconfigurations` | `admissionregistration.k8s.io` | Get/Update | `dynatrace-webhook` |
-| `validatingwebhookconfigurations` | `admissionregistration.k8s.io` | Get/Update | `dynatrace-webhook` |
-| `customresourcedefinitions` | `apiextensions.k8s.io` | Get/Update | ``` dynakubes.dynatrace.com``edgeconnects.dynatrace.com ``` |
-| `customresourcedefinitions/status` | `apiextensions.k8s.io` | Get/Update | ``` dynakubes.dynatrace.com``edgeconnects.dynatrace.com ``` |
+| `secrets` | `""` | Get, Update, Delete, List | ``` dynatrace-dynakube-config``dynatrace-bootstrapper-config``dynatrace-bootstrapper-certs``dynatrace-metadata-enrichment-endpoint``dynatrace-otlp-exporter-config``dynatrace-otlp-exporter-certs ``` |
+| `mutatingwebhookconfigurations` | `admissionregistration.k8s.io` | Get, Update | `dynatrace-webhook` |
+| `validatingwebhookconfigurations` | `admissionregistration.k8s.io` | Get, Update | `dynatrace-webhook` |
+| `customresourcedefinitions` | `apiextensions.k8s.io` | Get, Update | ``` dynakubes.dynatrace.com``edgeconnects.dynatrace.com ``` |
+| `customresourcedefinitions/status` | `apiextensions.k8s.io` | Get, Update | ``` dynakubes.dynatrace.com``edgeconnects.dynatrace.com ``` |
 | `securitycontextconstraints` | `security.openshift.io` | Use | ``` privileged``nonroot-v2 ``` |
 
 #### Namespace `dynatrace` permissions
 
-| Resources accessed | API group | APIs used | Resource names |
+| Resources accessed | API group | Verbs | Resource names |
 | --- | --- | --- | --- |
-| `dynakubes` | `dynatrace.com` | Get/List/Watch/Update |  |
-| `edgeconnects` | `dynatrace.com` | Get/List/Watch/Update |  |
+| `dynakubes` | `dynatrace.com` | Get, List, Watch, Update |  |
+| `edgeconnects` | `dynatrace.com` | Get, List, Watch, Update |  |
 | `dynakubes/finalizers` | `dynatrace.com` | Update |  |
 | `edgeconnects/finalizers` | `dynatrace.com` | Update |  |
 | `dynakubes/status` | `dynatrace.com` | Update |  |
 | `edgeconnects/status` | `dynatrace.com` | Update |  |
-| `statefulsets` | `apps` | Get/List/Watch/Create/Update/Delete |  |
-| `daemonsets` | `apps` | Get/List/Watch/Create/Update/Delete |  |
-| `replicasets` | `apps` | Get/List/Watch/Create/Update/Delete |  |
-| `deployments` | `apps` | Get/List/Watch/Create/Update/Delete |  |
+| `statefulsets` | `apps` | Get, List, Watch, Create, Update, Delete |  |
+| `daemonsets` | `apps` | Get, List, Watch, Create, Update, Delete |  |
+| `replicasets` | `apps` | Get, List, Watch, Create, Update, Delete |  |
+| `deployments` | `apps` | Get, List, Watch, Create, Update, Delete |  |
 | `deployments/finalizers` | `apps` | Update |  |
-| `configmaps` | `""` | Get/List/Watch/Create/Update/Delete |  |
-| `pods` | `""` | Get/List/Watch |  |
-| `secrets` | `""` | Get/List/Watch/Create/Update/Delete |  |
-| `events` | `""` | Create/Get/List/Patch |  |
-| `services` | `""` | Create/Update/Delete/Get/List/Watch |  |
-| `serviceentries` | `networking.istio.io` | Get/List/Create/Update/Delete |  |
-| `virtualservices` | `networking.istio.io` | Get/List/Create/Update/Delete |  |
-| `leases` | `coordination.k8s.io` | Get/Update/Create |  |
+| `configmaps` | `""` | Get, List, Watch, Create, Update, Delete |  |
+| `pods` | `""` | Get, List, Watch |  |
+| `secrets` | `""` | Get, List, Watch, Create, Update, Delete |  |
+| `events` | `""` | Create, Get, List, Patch |  |
+| `services` | `""` | Create, Update, Delete, Get, List, Watch |  |
+| `serviceentries` | `networking.istio.io` | Get, List, Create, Update, Delete |  |
+| `virtualservices` | `networking.istio.io` | Get, List, Create, Update, Delete |  |
+| `leases` | `coordination.k8s.io` | Get, Update, Create |  |
 
 ### Dynatrace Operator Webhook Server
 
@@ -84,11 +182,11 @@ While Dynatrace permissions adhere to the principle of least privilege, make sur
 
 #### Cluster-wide permissions
 
-| Resources accessed | API group | APIs used | Resource names |
+| Resources accessed | API group | Verbs | Resource names |
 | --- | --- | --- | --- |
-| `namespaces` | `""` | Get/List/Watch/Update |  |
+| `namespaces` | `""` | Get, List, Watch, Update |  |
 | `secrets` | `""` | Create |  |
-| `secrets` | `""` | Get/List/Watch/Update | ``` dynatrace-dynakube-config``dynatrace-bootstrapper-config``dynatrace-bootstrapper-certs``dynatrace-metadata-enrichment-endpoint``dynatrace-otlp-exporter-config``dynatrace-otlp-exporter-certs ``` |
+| `secrets` | `""` | Get, List, Watch, Update | ``` dynatrace-dynakube-config``dynatrace-bootstrapper-config``dynatrace-bootstrapper-certs``dynatrace-metadata-enrichment-endpoint``dynatrace-otlp-exporter-config``dynatrace-otlp-exporter-certs ``` |
 | `replicationcontrollers` | `""` | Get |  |
 | `replicasets` | `apps` | Get |  |
 | `statefulsets` | `apps` | Get |  |
@@ -101,12 +199,12 @@ While Dynatrace permissions adhere to the principle of least privilege, make sur
 
 #### Namespace `dynatrace` permissions
 
-| Resources accessed | API group | APIs used | Resource names |
+| Resources accessed | API group | Verbs | Resource names |
 | --- | --- | --- | --- |
-| `events` | `""` | Create/Patch |  |
-| `secrets` | `""` | Get/List/Watch |  |
-| `configmaps` | `""` | Get/List/Watch |  |
-| `dynakubes` | `dynatrace.com` | Get/List/Watch |  |
+| `events` | `""` | Create, Patch |  |
+| `secrets` | `""` | Get, List, Watch |  |
+| `configmaps` | `""` | Get, List, Watch |  |
+| `dynakubes` | `dynatrace.com` | Get, List, Watch |  |
 
 ### Dynatrace Operator CSI driver
 
@@ -126,20 +224,20 @@ While Dynatrace permissions adhere to the principle of least privilege, make sur
 
 #### Cluster-wide permission
 
-| Resources accessed | API group | APIs used | Resource names |
+| Resources accessed | API group | Verbs | Resource names |
 | --- | --- | --- | --- |
 | `securitycontextconstraints` | `security.openshift.io` | Use | `privileged` |
 
 #### Namespace `dynatrace` permissions
 
-| Resources accessed | API group | APIs used | Resource names |
+| Resources accessed | API group | Verbs | Resource names |
 | --- | --- | --- | --- |
-| `dynakubes` | `dynatrace.com` | Get/List/Watch |  |
-| `secrets` | `""` | Get/List/Watch |  |
-| `configmaps` | `""` | Get/List/Watch |  |
+| `dynakubes` | `dynatrace.com` | Get, List, Watch |  |
+| `secrets` | `""` | Get, List, Watch |  |
+| `configmaps` | `""` | Get, List, Watch |  |
 | `dynakubes/finalizers` | `dynatrace.com` | Update |  |
-| `jobs` | `batch` | Get/List/Create/Delete/Watch |  |
-| `events` | `""` | Create/Patch |  |
+| `jobs` | `batch` | Get, List, Create, Delete, Watch |  |
+| `events` | `""` | Create, Patch |  |
 
 ### ActiveGate
 
@@ -158,33 +256,33 @@ In Dynatrace Operator version 1.8, `dynatrace-kubernetes-monitoring` was an aggr
 
 ##### Cluster-wide permissions
 
-| Resources accessed | API group | APIs used | Resource names |
+| Resources accessed | API group | Verbs | Resource names |
 | --- | --- | --- | --- |
-| `nodes` | `""` | List/Watch/Get |  |
-| `pods` | `""` | List/Watch/Get |  |
-| `namespaces` | `""` | List/Watch/Get |  |
-| `replicationcontrollers` | `""` | List/Watch/Get |  |
-| `events` | `""` | List/Watch/Get |  |
-| `resourcequotas` | `""` | List/Watch/Get |  |
-| `pods/proxy` | `""` | List/Watch/Get |  |
-| `nodes/proxy` | `""` | List/Watch/Get |  |
-| `nodes/metrics` | `""` | List/Watch/Get |  |
-| `services` | `""` | List/Watch/Get |  |
-| `persistentvolumeclaims` | `""` | List/Watch/Get |  |
-| `persistentvolumes` | `""` | List/Watch/Get |  |
-| `jobs` | `batch` | List/Watch/Get |  |
-| `cronjobs` | `batch` | List/Watch/Get |  |
-| `deployments` | `apps` | List/Watch/Get |  |
-| `replicasets` | `apps` | List/Watch/Get |  |
-| `statefulsets` | `apps` | List/Watch/Get |  |
-| `daemonsets` | `apps` | List/Watch/Get |  |
-| `deploymentconfigs` | `apps.openshift.io` | List/Watch/Get |  |
-| `clusterversions` | `config.openshift.io` | List/Watch/Get |  |
-| `dynakubes` | `dynatrace.com` | List/Watch/Get |  |
-| `edgeconnects` | `dynatrace.com` | List/Watch/Get |  |
-| `customresourcedefinitions` | `apiextensions.k8s.io` | List/Watch/Get |  |
-| `ingresses` | `networking.k8s.io` | List/Watch/Get |  |
-| `networkpolicies` | `networking.k8s.io` | List/Watch/Get |  |
+| `nodes` | `""` | List, Watch, Get |  |
+| `pods` | `""` | List, Watch, Get |  |
+| `namespaces` | `""` | List, Watch, Get |  |
+| `replicationcontrollers` | `""` | List, Watch, Get |  |
+| `events` | `""` | List, Watch, Get |  |
+| `resourcequotas` | `""` | List, Watch, Get |  |
+| `pods/proxy` | `""` | List, Watch, Get |  |
+| `nodes/proxy` | `""` | List, Watch, Get |  |
+| `nodes/metrics` | `""` | List, Watch, Get |  |
+| `services` | `""` | List, Watch, Get |  |
+| `persistentvolumeclaims` | `""` | List, Watch, Get |  |
+| `persistentvolumes` | `""` | List, Watch, Get |  |
+| `jobs` | `batch` | List, Watch, Get |  |
+| `cronjobs` | `batch` | List, Watch, Get |  |
+| `deployments` | `apps` | List, Watch, Get |  |
+| `replicasets` | `apps` | List, Watch, Get |  |
+| `statefulsets` | `apps` | List, Watch, Get |  |
+| `daemonsets` | `apps` | List, Watch, Get |  |
+| `deploymentconfigs` | `apps.openshift.io` | List, Watch, Get |  |
+| `clusterversions` | `config.openshift.io` | List, Watch, Get |  |
+| `dynakubes` | `dynatrace.com` | List, Watch, Get |  |
+| `edgeconnects` | `dynatrace.com` | List, Watch, Get |  |
+| `customresourcedefinitions` | `apiextensions.k8s.io` | List, Watch, Get |  |
+| `ingresses` | `networking.k8s.io` | List, Watch, Get |  |
+| `networkpolicies` | `networking.k8s.io` | List, Watch, Get |  |
 | `securitycontextconstraints` | `security.openshift.io` | Use | ``` privileged``nonroot-v2 ``` |
 
 #### Dynatrace Kubernetes Security Posture Management (KSPM)
@@ -203,25 +301,25 @@ In Dynatrace Operator version 1.8, `dynatrace-kubernetes-monitoring-kspm` was ag
 
 ##### Cluster-wide permissions
 
-| Resources accessed | API group | APIs used | Resource names |
+| Resources accessed | API group | Verbs | Resource names |
 | --- | --- | --- | --- |
-| `namespaces` | `""` | Get/List/Watch |  |
-| `nodes` | `""` | Get/List/Watch |  |
-| `pods` | `""` | Get/List/Watch |  |
-| `replicationcontrollers` | `""` | Get/List/Watch |  |
-| `serviceaccounts` | `""` | Get/List/Watch |  |
-| `services` | `""` | Get/List/Watch |  |
-| `cronjobs` | `batch` | Get/List/Watch |  |
-| `jobs` | `batch` | Get/List/Watch |  |
-| `daemonsets` | `apps` | Get/List/Watch |  |
-| `deployments` | `apps` | Get/List/Watch |  |
-| `replicasets` | `apps` | Get/List/Watch |  |
-| `statefulsets` | `apps` | Get/List/Watch |  |
-| `networkpolicies` | `networking.k8s.io` | Get/List/Watch |  |
-| `clusterrolebindings` | `rbac.authorization.k8s.io` | Get/List/Watch |  |
-| `clusterroles` | `rbac.authorization.k8s.io` | Get/List/Watch |  |
-| `rolebindings` | `rbac.authorization.k8s.io` | Get/List/Watch |  |
-| `roles` | `rbac.authorization.k8s.io` | Get/List/Watch |  |
+| `namespaces` | `""` | Get, List, Watch |  |
+| `nodes` | `""` | Get, List, Watch |  |
+| `pods` | `""` | Get, List, Watch |  |
+| `replicationcontrollers` | `""` | Get, List, Watch |  |
+| `serviceaccounts` | `""` | Get, List, Watch |  |
+| `services` | `""` | Get, List, Watch |  |
+| `cronjobs` | `batch` | Get, List, Watch |  |
+| `jobs` | `batch` | Get, List, Watch |  |
+| `daemonsets` | `apps` | Get, List, Watch |  |
+| `deployments` | `apps` | Get, List, Watch |  |
+| `replicasets` | `apps` | Get, List, Watch |  |
+| `statefulsets` | `apps` | Get, List, Watch |  |
+| `networkpolicies` | `networking.k8s.io` | Get, List, Watch |  |
+| `clusterrolebindings` | `rbac.authorization.k8s.io` | Get, List, Watch |  |
+| `clusterroles` | `rbac.authorization.k8s.io` | Get, List, Watch |  |
+| `rolebindings` | `rbac.authorization.k8s.io` | Get, List, Watch |  |
+| `roles` | `rbac.authorization.k8s.io` | Get, List, Watch |  |
 
 ### OneAgent
 
@@ -245,7 +343,7 @@ In Dynatrace Operator version 1.8, `dynatrace-kubernetes-monitoring-kspm` was ag
 
 #### Cluster-wide permissions
 
-| Resources accessed | API group | APIs used | Resource names |
+| Resources accessed | API group | Verbs | Resource names |
 | --- | --- | --- | --- |
 | `nodes/proxy` | `""` | Get |  |
 | `securitycontextconstraints` | `security.openshift.io` | Use | `privileged` |
@@ -287,12 +385,12 @@ Log monitoring requires [the same cluster-wide permissions as OneAgent](#oneagen
 
 #### Cluster-wide permissions
 
-| Resources accessed | API group | APIs used | Resource names |
+| Resources accessed | API group | Verbs | Resource names |
 | --- | --- | --- | --- |
-| `pods` | `""` | Get/Watch/List |  |
-| `namespaces` | `""` | Get/Watch/List |  |
-| `nodes` | `""` | Get/Watch/List |  |
-| `replicasets` | `apps` | Get/List/Watch |  |
+| `pods` | `""` | Get, Watch, List |  |
+| `namespaces` | `""` | Get, Watch, List |  |
+| `nodes` | `""` | Get, Watch, List |  |
+| `replicasets` | `apps` | Get, List, Watch |  |
 | `securitycontextconstraints` | `security.openshift.io` | Use | `privileged` |
 
 ### Extensions
@@ -313,24 +411,33 @@ Depending on the used extension, the following RBAC objects are required.
 
 * Service Accounts
 
-  + `dynatrace-extension-controller-prometheus`
-  + `dynatrace-extension-controller-database`
+  + `dynatrace-extension-controller`
+* ClusterRoles
+
+  + `dynatrace-extension-controller`
 * Roles
 
   + `dynatrace-extension-controller-prometheus`
   + `dynatrace-extension-controller-database`
 
+##### Cluster-wide permissions
+
+| Resources accessed | API group | Verbs | Resource names |
+| --- | --- | --- | --- |
+| `pods` | `""` | List, Watch |  |
+| `services` | `""` | List, Watch |  |
+
 ##### Namespace `dynatrace` permissions
 
 *Prometheus extension*
 
-| Resources accessed | API group | APIs used | Resource names |
+| Resources accessed | API group | Verbs | Resource names |
 | --- | --- | --- | --- |
 | `securitycontextconstraints` | `security.openshift.io` | Use | `privileged` |
 
 *Database extension*
 
-| Resources accessed | API group | APIs used | Resource names |
+| Resources accessed | API group | Verbs | Resource names |
 | --- | --- | --- | --- |
 | `pods` | `""` | List |  |
 | `securitycontextconstraints` | `security.openshift.io` | Use | `nonroot-v2` |
@@ -356,18 +463,18 @@ Depending on the used extension, the following RBAC objects are required.
 
 ##### Cluster-wide permissions
 
-| Resources accessed | API group | APIs used | Resource names |
+| Resources accessed | API group | Verbs | Resource names |
 | --- | --- | --- | --- |
-| `pods` | `""` | Get/List/Watch |  |
-| `namespaces` | `""` | Get/List/Watch |  |
-| `endpoints` | `""` | Get/List/Watch |  |
-| `services` | `""` | Get/List/Watch |  |
-| `nodes` | `""` | Get/List/Watch |  |
-| `nodes/metrics` | `""` | Get/List/Watch |  |
-| `deployments` | `apps` | Get/List/Watch |  |
-| `daemonsets` | `apps` | Get/List/Watch |  |
-| `replicasets` | `apps` | Get/List/Watch |  |
-| `statefulsets` | `apps` | Get/List/Watch |  |
+| `pods` | `""` | Get, List, Watch |  |
+| `namespaces` | `""` | Get, List, Watch |  |
+| `endpoints` | `""` | Get, List, Watch |  |
+| `services` | `""` | Get, List, Watch |  |
+| `nodes` | `""` | Get, List, Watch |  |
+| `nodes/metrics` | `""` | Get, List, Watch |  |
+| `deployments` | `apps` | Get, List, Watch |  |
+| `daemonsets` | `apps` | Get, List, Watch |  |
+| `replicasets` | `apps` | Get, List, Watch |  |
+| `statefulsets` | `apps` | Get, List, Watch |  |
 | `securitycontextconstraints` | `security.openshift.io` | Use | `privileged` |
 
 #### Database extension
@@ -391,7 +498,7 @@ Depending on the used extension, the following RBAC objects are required.
 
 ##### Namespace `dynatrace` permissions
 
-| Resources accessed | API group | APIs used | Resource names |
+| Resources accessed | API group | Verbs | Resource names |
 | --- | --- | --- | --- |
 | `pods` | `""` | List |  |
 
@@ -413,11 +520,11 @@ Disabling this feature will make it harder to provide the necessary information 
 
 #### Namespace `dynatrace` permissions
 
-| Resources accessed | API group | APIs used | Resource names |
+| Resources accessed | API group | Verbs | Resource names |
 | --- | --- | --- | --- |
 | `pods/log` | `""` | Get |  |
 | `pods/exec` | `""` | Create |  |
-| `jobs` | `batch` | Get/List |  |
+| `jobs` | `batch` | Get, List |  |
 
 ### Dynatrace Operator API upgrade support
 
@@ -437,18 +544,18 @@ Disabling this feature will make it harder to provide the necessary information 
 
 #### Cluster wide permissions
 
-| Resources accessed | API group | APIs used | Resource names |
+| Resources accessed | API group | Verbs | Resource names |
 | --- | --- | --- | --- |
-| `customresourcedefinitions` | `apiextensions.k8s.io` | Get/Update | ``` dynakubes.dynatrace.com``edgeconnects.dynatrace.com ``` |
-| `customresourcedefinitions/status` | `apiextensions.k8s.io` | Get/Update | ``` dynakubes.dynatrace.com``edgeconnects.dynatrace.com ``` |
+| `customresourcedefinitions` | `apiextensions.k8s.io` | Get, Update | ``` dynakubes.dynatrace.com``edgeconnects.dynatrace.com ``` |
+| `customresourcedefinitions/status` | `apiextensions.k8s.io` | Get, Update | ``` dynakubes.dynatrace.com``edgeconnects.dynatrace.com ``` |
 | `securitycontextconstraints` | `security.openshift.io` | Use | `nonroot-v2` |
 
 #### Namespace `dynatrace` permissions
 
-| Resources accessed | API group | APIs used | Resource names |
+| Resources accessed | API group | Verbs | Resource names |
 | --- | --- | --- | --- |
-| `dynakubes` | `dynatrace.com` | Get/List/Watch/Update |  |
-| `edgeconnects` | `dynatrace.com` | Get/List/Watch/Update |  |
+| `dynakubes` | `dynatrace.com` | Get, List, Watch, Update |  |
+| `edgeconnects` | `dynatrace.com` | Get, List, Watch, Update |  |
 
 ## Security Controls of Dynatrace Operator components
 

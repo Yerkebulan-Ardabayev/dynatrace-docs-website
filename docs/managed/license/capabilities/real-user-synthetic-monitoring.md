@@ -16,7 +16,7 @@ Real User and Synthetic Monitoring in Dynatrace consists of two capability areas
 * **Real User Monitoring (RUM)** captures and analyzes actual end‑user interactions across web, mobile, and hybrid applications.
 * **Synthetic Monitoring** uses automated, scripted tests to simulate user behavior and proactively detect performance or availability issues.
 
-This page provides an overview of hwo these capabilities work together. For more information about how consumption is calculated, and how to view and control your costs, visit the capability-specific pages linked below.
+This page provides an overview of how these capabilities work together. For more information about how consumption is calculated, and how to view and control your costs, visit the capability-specific pages linked below.
 
 ## Real User Monitoring overview
 

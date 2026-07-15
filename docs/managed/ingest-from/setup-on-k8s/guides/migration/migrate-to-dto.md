@@ -56,7 +56,7 @@ A new section for the full-stack OneAgent is located at `.spec.oneAgent.classicF
 1
 
 Previously, this was `disableAgentUpdate` in the OneAgent CR.  
-The `autoUpdate` field has been removed. [Pin the OneAgent version on your tenant to configure auto-update](/managed/ingest-from/setup-on-k8s/guides/deployment-and-configuration/updates-and-maintenance/auto-update-components#configure-oneagent-auto-update "Configure auto-updates for components managed by Dynatrace Operator (OneAgent, ActiveGate, and EdgeConnect).").  
+The `autoUpdate` field has been removed. [Pin the OneAgent version on your tenant to configure auto-update](/managed/ingest-from/setup-on-k8s/guides/deployment-and-configuration/updates-and-maintenance/auto-update-components#configure-oneagent-auto-update "Configure auto-updates for all components managed by Dynatrace Operator").  
 Auto-update is disabled when either the `version` or `image` fields are set.
 
 2

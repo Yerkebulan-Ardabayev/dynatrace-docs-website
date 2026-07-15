@@ -26,7 +26,7 @@ Nevertheless, the concurrent retrieval of multiple images from the Dynatrace bui
 
 ## Public registries
 
-To accommodate diverse infrastructure requirements and organizational preferences, Dynatrace images are available on [selected public registries](/managed/ingest-from/setup-on-k8s/guides/container-registries/use-public-registry#supported-public-registries "Use a public registry"). These images adhere to best practices, ensuring immutability and signing for enhanced security and resilience against potential supply chain risks.
+To accommodate diverse infrastructure requirements and organizational preferences, Dynatrace images are available on [selected public registries](/managed/ingest-from/setup-on-k8s/guides/container-registries/use-public-registry#supported-public-registries "Configure the Dynatrace Operator to use public registry images for itself and its managed components. This can be done manually or through automatic resolution from your Dynatrace environment."). These images adhere to best practices, ensuring immutability and signing for enhanced security and resilience against potential supply chain risks.
 
 If you seek greater control over your image hosting environment, Dynatrace offers the option to replicate images and signatures to private registries.
 
@@ -42,7 +42,7 @@ By replicating Dynatrace images to your private registry, you can seamlessly mer
 
 [### Use Dynatrace public registry
 
-Configure Dynatrace Operator and DynaKube to use images from our supported public registries.](/managed/ingest-from/setup-on-k8s/guides/container-registries/use-public-registry "Use a public registry")[### Use your own private registry
+Configure Dynatrace Operator and DynaKube to use images from our supported public registries.](/managed/ingest-from/setup-on-k8s/guides/container-registries/use-public-registry "Configure the Dynatrace Operator to use public registry images for itself and its managed components. This can be done manually or through automatic resolution from your Dynatrace environment.")[### Use your own private registry
 
 Configure Dynatrace Operator and DynaKube to use images from your own private registry.](/managed/ingest-from/setup-on-k8s/guides/container-registries/use-private-registry "Use a private registry")[### Store Dynatrace images in private registries
 

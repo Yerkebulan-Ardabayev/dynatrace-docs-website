@@ -11,100 +11,24 @@ source: https://docs.dynatrace.com/managed/license
 * 1-min read
 * Published May 04, 2026
 
-Learn how Dynatrace monitoring consumption is calculated using the Dynatrace Platform Subscription model.
+Dynatrace Platform Subscription (DPS) is a consumption-based licensing model designed for flexibility.
 
-Not yet using Dynatrace?
+You sign an agreement (typically 1–3 years) with a minimum annual commitment.
+As your organization uses Dynatrace capabilities, consumption accrues against that commitment based on a rate card that defines the price per unit for each capability.
+Once your annual commitment is reached, you can continue to use Dynatrace while incurring on-demand usage with no overage premiums.
 
-To get started using Dynatrace, [contact Dynatrace Sales﻿](https://www.dynatrace.com/contact/).
+Use the pages in this section to learn more about how DPS works.
 
-## Overview
+[### Capability billing details
 
-The Dynatrace Platform Subscription (DPS) is more than a licensing model—it's a strategic enabler for modern observability.
-DPS empowers organizations to consume any Dynatrace capability, at any volume, at any time, under a single, transparent commitment.
-It’s designed to eliminate friction, simplify operations, and scale effortlessly with your business.
+See how consumption for each rate-card capability is calculated and billed.](/managed/license/capabilities "How different DPS capabilities work and how consumption is calculated and billed.")[### DPS permissions
 
-| Feature | Benefit |
-| --- | --- |
-| Simplicity | One contract, one rate card, one platform. No SKU juggling. No surprises. |
-| Scalability | DPS scales with your needs—across modules, teams, and geographies. |
-| Frictionless use | No pre-allocation. No per-user costs. No overage penalties. Just use what you need, when you need it. |
-| Transparency | Real-time usage and cost visibility via Account Management and DPS APIs. |
-| Flexibility | Supports all deployments, trials, and evolving pricing models. |
+Look up permissions for cost and subscription data.](/managed/license/dps-permissions "What permissions are required to view DPS consumption data in Account Management, DQL, the API, and Cost Allocation.")[### DPS for Hybrid
 
-Prerequisites
+License a hybrid setup with multiple SaaS and/or Managed deployments.](/managed/license/dps-for-hybrid "DPS for Hybrid lets you share one subscription across multiple accounts.")[### Key concepts
 
-* Unless otherwise stated, the consumption details explained here apply to the current Dynatrace Platform Subscription.
+Terminology and definitions for the Dynatrace Platform Subscription.](/managed/license/concepts "Terminology and definitions for the Dynatrace Platform Subscription model.")[### Frequently asked questions
 
-  + If you had early access to DPS licensing (prior to April 2023), please refer to the [earlier version of DPS documentation](/managed/license/classic-licensing/subscription-and-license-dps "View license and subscription usage and consumption history Dynatrace Platform subscription licenses that were signed prior to April, 2023.").
-  + If you have a Dynatrace classic licensing agreement, please refer to [classic licensing documentation](/managed/license/monitoring-consumption-classic "Understand how Dynatrace classic monitoring consumption is calculated, including host units, DDUs, DEM units, and Application Security units.").
+Answers to common questions about the Dynatrace Platform Subscription.](/managed/license/faq "Answers to common questions about the Dynatrace Platform Subscription model.")[### Subscription overview
 
-* Dynatrace Platform Subscription works best when you have permanent usage upload configured between your Dynatrace Managed cluster and Dynatrace Mission Control.
-  This ensures your costs are booked on the same day the corresponding monitoring is consumed, which leads to more accurate cost and forecast calculations.
-
-* Certain features of DPS, especially those related to **Account Management**, require specific [DPS permissions](/managed/license/dps-permissions "What permissions are required to view DPS consumption data in Account Management, DQL, the API, and Cost Allocation.").
-
-Dynatrace meters usage based on Coordinated Universal Time (UTC).
-All references to time and date are therefore to be understood as UTC+00:00.
-
-## Concepts
-
-Account Management
-:   Account Management provides forecasting, alerting, drill-downs and real-time insights into your usage patterns. You can also manage Dynatrace license and subscriptions, Dynatrace users, SSO access, and monitor Dynatrace platform adoption and environment health.
-
-Annual commitment
-:   An annual commitment is the minimum amount of money a customer agrees to spend each year as part of their DPS contract. A Dynatrace Platform Subscription agreement is typically signed for 1–3 years, with a minimum annual commitment.
-
-Billing usage events
-:   The usage of Dynatrace capabilities are recorded as Billing Usage Events (BUEs) in Grail. Further usage details are stored there as BUE attributes. You can access those via Account Management, or by building your own dashboards that have DQL queries.
-
-Capability
-:   Dynatrace licensing costs are calculated based on an environment's consumption of Dynatrace capabilities. For example, the Application & Infrastructure Observability category includes four capabilities: Full-Stack Monitoring, Infrastructure Monitoring, Mainframe Monitoring, and Foundation & Discovery. You can find them on your rate card.
-
-Consumption
-:   The use of Dynatrace leads to consumption of capabilities, which we measure in different units of measurement.
-
-Costs
-:   All usage is collected and rated using the subscription’s rate card. As a result, usage is transferred into costs, expressed as a monetary value. Cost is the result of usage multiplied by the price point on your rate card of the respective Dynatrace capability.
-
-Forecast
-:   Your Dynatrace Platform Subscription provides a budget summary that forecasts costs through the end of the subscription period. The algorithms use seasonal forecasting techniques, looking at past usage and predicting future usage based on repeating usage patterns and costs.
-
-Metered usage
-:   Usage is metered each time that a Dynatrace capability is used. Usage counts the amount of units the customer consumes for a specific Dynatrace capability. Each capability has a different unit of measurement, for example, "memory-gibibyte-hours" for Full-Stack Monitoring.
-
-On-demand usage
-:   On-demand usage occurs after the minimum annual commit is reached. Dynatrace never charges penalty-style overages. Instead, customers who consume more than their minimum annual spend commitment can continue to use the platform on an on-demand basis, billed monthly at the same rates as pre-paid consumption.
-
-Rate card
-:   The rate card is a structured pricing list that outlines the cost per capabilities under the DPS model. Your individual rate card is part of your purchase order and is accessible in the Account Management portal. Each platform capability has a price point defined in the rate card.
-
-Subscription term
-:   A Dynatrace Platform Subscription agreement is typically signed for 1–3 years, with a minimum annual commitment. Each platform capability has a price point defined in the rate card that's included with your agreement.
-
-## FAQ
-
-### How can I manage my consumption and control my costs?
-
-You get complete transparency into your usage through a suite of tools in the Dynatrace Account Management.
-In addition to raw data, the tools provide forecasting, alerting, and drill-downs that give real-time insights into your usage patterns.
-
-### I get access to all platform capabilities in a Dynatrace Platform Subscription contract?
-
-Yes, the Dynatrace Platform Subscription gives you access to all platform capabilities when you sign the order form.
-You can find them on your rate card.
-
-### When does Dynatrace charge for overages?
-
-A: Dynatrace never charges penalty-style overages.
-Instead, customers who consume more than their minimum annual spend commitment can continue to use the platform on an on-demand basis, billed monthly at the same rates as pre-paid consumption.
-Customers can alternatively increase their commitment spend to attain a higher discount.
-
-### How is monitoring consumption calculated when capabilities are used for less than an hour?
-
-When Dynatrace capabilities are used for a fraction of an hour, we round up to the nearest 15 minutes for billing purposes (for example, one minute of usage is billed as 15 minutes; an hour and three minutes of usage is billed as 1.25 hours).
-This billing model is intended to be advantageous in cloud native environments where hosts and services are rapidly spun up and destroyed.
-
-### How can I manage who can access consumption information?
-
-This is simple to manage via permissions.
-Dynatrace permissions are structured across three levels, giving flexibility and transparency on access rights across the organization.
+Get your DPS budget summary, cost and usage breakdowns, and cost and usage analysis.](/managed/manage/account-management/license-subscription/subscription-overview-dps "View your Dynatrace Platform Subscription budget summary and cost analysis.")

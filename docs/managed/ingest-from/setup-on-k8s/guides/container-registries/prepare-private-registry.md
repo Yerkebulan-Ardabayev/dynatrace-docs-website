@@ -29,7 +29,7 @@ Before you begin, be sure to meet the following prerequisites:
 
 ## Dynatrace container images
 
-Dynatrace immutable and signed container images are available on various container registries. For more details on repositories and tag information, explore our [supported public registries](/managed/ingest-from/setup-on-k8s/guides/container-registries/use-public-registry#supported-public-registries "Use a public registry").
+Dynatrace immutable and signed container images are available on various container registries. For more details on repositories and tag information, explore our [supported public registries](/managed/ingest-from/setup-on-k8s/guides/container-registries/use-public-registry#supported-public-registries "Configure the Dynatrace Operator to use public registry images for itself and its managed components. This can be done manually or through automatic resolution from your Dynatrace environment.").
 
 We strongly recommend choosing one of our supported public registries from which to copy container images.
 
@@ -95,7 +95,7 @@ Recommended
 
 Due to its support for easy copying of multi-arch images and signatures[1](#fn-2-1-def), we strongly recommend that you use the Skopeo CLI for copying container images. To learn more about the Skopeo CLI, see [Skopeo GitHub repository﻿](https://github.com/containers/skopeo).
 
-In the following instructions, be sure to always replace `<tag>` with an available version (see the [Supported public registries](/managed/ingest-from/setup-on-k8s/guides/container-registries/use-public-registry#supported-public-registries "Use a public registry") section).
+In the following instructions, be sure to always replace `<tag>` with an available version (see the [Supported public registries](/managed/ingest-from/setup-on-k8s/guides/container-registries/use-public-registry#supported-public-registries "Configure the Dynatrace Operator to use public registry images for itself and its managed components. This can be done manually or through automatic resolution from your Dynatrace environment.") section).
 
 #### Copy Dynatrace Operator image
 

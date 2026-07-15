@@ -68,11 +68,11 @@ Containerized ActiveGate deployments rely on FIPS-compliant images, which are av
 
 #### Container registries
 
-FIPS-compliant ActiveGate images are available in our [supported public registries](/managed/ingest-from/setup-on-k8s/guides/container-registries/use-public-registry#supported-public-registries "Use a public registry") with the image tag suffix `-fips`.
+FIPS-compliant ActiveGate images are available in our [supported public registries](/managed/ingest-from/setup-on-k8s/guides/container-registries/use-public-registry#supported-public-registries "Configure the Dynatrace Operator to use public registry images for itself and its managed components. This can be done manually or through automatic resolution from your Dynatrace environment.") with the image tag suffix `-fips`.
 
 Example: `public.ecr.aws/dynatrace/dynatrace-activegate:1.315.70.20241127-162512-fips`
 
-See [Configure DynaKube to use images from public registry](/managed/ingest-from/setup-on-k8s/guides/container-registries/use-public-registry#configure-dynakube-to-use-images-from-public-registry "Use a public registry") for details on how to instruct Dynatrace Operator to use images from the public registry.
+See [Configure DynaKube to use images from public registry](/managed/ingest-from/setup-on-k8s/guides/container-registries/use-public-registry#configure-dynakube-to-use-images-from-public-registry "Configure the Dynatrace Operator to use public registry images for itself and its managed components. This can be done manually or through automatic resolution from your Dynatrace environment.") for details on how to instruct Dynatrace Operator to use images from the public registry.
 
 ### Verification of FIPS-compliant mode
 

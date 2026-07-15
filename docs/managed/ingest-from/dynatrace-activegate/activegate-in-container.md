@@ -50,10 +50,10 @@ Images are available for the following architectures:
 To prioritize seamless integration with your tooling and adaptability to your needs, we offer our container images in various ways to maximize flexibility:
 
 * [Dynatrace built-in registry](/managed/ingest-from/setup-on-k8s/guides/container-registries#default "Manage container registries with Dynatrace") default
-* [Public registries](/managed/ingest-from/setup-on-k8s/guides/container-registries/use-public-registry#supported-public-registries "Use a public registry")
+* [Public registries](/managed/ingest-from/setup-on-k8s/guides/container-registries/use-public-registry#supported-public-registries "Configure the Dynatrace Operator to use public registry images for itself and its managed components. This can be done manually or through automatic resolution from your Dynatrace environment.")
 * [Bring your own private registry](/managed/ingest-from/setup-on-k8s/guides/container-registries/prepare-private-registry "Store Dynatrace images in private registries") Recommended
 
-Please note that multi-arch Dynatrace container images, ensuring compatibility across various platforms are available from [public registries only](/managed/ingest-from/setup-on-k8s/guides/container-registries/use-public-registry#supported-public-registries "Use a public registry"). Dynatrace built-in registry provides only x86-64 images.
+Please note that multi-arch Dynatrace container images, ensuring compatibility across various platforms are available from [public registries only](/managed/ingest-from/setup-on-k8s/guides/container-registries/use-public-registry#supported-public-registries "Configure the Dynatrace Operator to use public registry images for itself and its managed components. This can be done manually or through automatic resolution from your Dynatrace environment."). Dynatrace built-in registry provides only x86-64 images.
 
 ## Deployment
 
@@ -748,7 +748,7 @@ Dynatrace built-in registry
    Add environment configuration details to the `ag-deployment-example.yaml` file, making sure to replace:
 
    * `CPU_ARCHITECTURE` with your CPU architecture. Possible values are `amd64`, `arm64`, `s390x`, and `ppcle64`
-   * `<REPOSITORY_URL>` with one of the [supported registries](/managed/ingest-from/setup-on-k8s/guides/container-registries/use-public-registry#supported-public-registries "Use a public registry")
+   * `<REPOSITORY_URL>` with one of the [supported registries](/managed/ingest-from/setup-on-k8s/guides/container-registries/use-public-registry#supported-public-registries "Configure the Dynatrace Operator to use public registry images for itself and its managed components. This can be done manually or through automatic resolution from your Dynatrace environment.")
    * `<IMAGE_TAG>` with correct image tag ([examples](/managed/ingest-from/setup-on-k8s/guides/container-registries/prepare-private-registry#image-tags "Store Dynatrace images in private registries"))
    * `<YOUR_ENVIRONMENT_ID>` with your environment ID
 

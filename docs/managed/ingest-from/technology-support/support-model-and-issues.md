@@ -127,7 +127,7 @@ Dynatrace Operator version 1.5.0 Dynatrace Operator version 1.5.1 Dynatrace Oper
 
 #### Issue
 
-When switching from using the CSI driver without `codeModulesImage` to using it with [node image pull](/managed/ingest-from/setup-on-k8s/guides/deployment-and-configuration/node-image-pull "Configure node image pull"), ensure that the CSI driver’s filesystem does not contain a code module for the specified DynaKube. If it does, the CSI driver will fail and require manual intervention to recover.
+When switching from using the CSI driver without `codeModulesImage` to using it with [node image pull](/managed/ingest-from/setup-on-k8s/reference/code-modules-delivery-modes "Reference for how Dynatrace Operator delivers OneAgent code modules to application pods, including ephemeral volumes, CSI driver image pull, and ZIP download."), ensure that the CSI driver’s filesystem does not contain a code module for the specified DynaKube. If it does, the CSI driver will fail and require manual intervention to recover.
 
 * If this issue is encountered, reverting back to not using the `codeModulesImage` will make the CSI driver operational again.
 * You can use the `find` command to check for the downloaded code module for a DynaKube in the filesystem of the CSI `server` container:

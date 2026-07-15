@@ -33,11 +33,11 @@ Kubernetes
 OpenShift
 
 ```
-kubectl apply -f https://github.com/Dynatrace/dynatrace-operator/releases/download/v1.9.0/kubernetes.yaml
+kubectl apply -f https://github.com/Dynatrace/dynatrace-operator/releases/download/v1.10.0/kubernetes.yaml
 ```
 
 ```
-oc apply -f https://github.com/Dynatrace/dynatrace-operator/releases/download/v1.9.0/openshift.yaml
+oc apply -f https://github.com/Dynatrace/dynatrace-operator/releases/download/v1.10.0/openshift.yaml
 ```
 
 Starting with Dynatrace Operator version 1.4.0, the `kubernetes-csi.yaml` includes all Dynatrace Operator components. For more details, see [Dynatrace Operator release notes version 1.4.0](/managed/whats-new/dynatrace-operator/dto-fix-1-4-0#upgrade-from-dynatrace-operator-version-1-3-0 "Release notes for Dynatrace Operator, version 1.4.0").
@@ -49,11 +49,11 @@ Kubernetes
 OpenShift
 
 ```
-kubectl apply -f https://github.com/Dynatrace/dynatrace-operator/releases/download/v1.9.0/kubernetes-csi.yaml
+kubectl apply -f https://github.com/Dynatrace/dynatrace-operator/releases/download/v1.10.0/kubernetes-csi.yaml
 ```
 
 ```
-oc apply -f https://github.com/Dynatrace/dynatrace-operator/releases/download/v1.9.0/openshift-csi.yaml
+oc apply -f https://github.com/Dynatrace/dynatrace-operator/releases/download/v1.10.0/openshift-csi.yaml
 ```
 
 ### Helm
@@ -66,6 +66,10 @@ oc apply -f https://github.com/Dynatrace/dynatrace-operator/releases/download/v1
 
 
    --namespace dynatrace \
+
+
+
+   --reset-then-reuse-values \
 
 
 
@@ -90,6 +94,10 @@ oc apply -f https://github.com/Dynatrace/dynatrace-operator/releases/download/v1
 
 
    --namespace dynatrace \
+
+
+
+   --reset-then-reuse-values \
 
 
 
@@ -129,6 +137,10 @@ oc apply -f https://github.com/Dynatrace/dynatrace-operator/releases/download/v1
 
 
 
+   --reset-then-reuse-values \
+
+
+
    --install
    ```
 
@@ -143,11 +155,11 @@ oc apply -f https://github.com/Dynatrace/dynatrace-operator/releases/download/v1
    OpenShift
 
    ```
-   kubectl apply -f https://github.com/Dynatrace/dynatrace-operator/releases/download/v1.9.0/dynatrace-operator-crd.yaml
+   kubectl apply -f https://github.com/Dynatrace/dynatrace-operator/releases/download/v1.10.0/dynatrace-operator-crd.yaml
    ```
 
    ```
-   oc apply -f https://github.com/Dynatrace/dynatrace-operator/releases/download/v1.9.0/dynatrace-operator-crd.yaml
+   oc apply -f https://github.com/Dynatrace/dynatrace-operator/releases/download/v1.10.0/dynatrace-operator-crd.yaml
    ```
 
 ## Update ActiveGate pods
@@ -367,23 +379,23 @@ After all Dynatrace Operator–managed components have been successfully removed
    * If the CSI driver was **not** installed (you used `kubernetes.yaml` during installation):
 
      ```
-     kubectl delete -f https://github.com/Dynatrace/dynatrace-operator/releases/download/v1.9.0/kubernetes.yaml
+     kubectl delete -f https://github.com/Dynatrace/dynatrace-operator/releases/download/v1.10.0/kubernetes.yaml
      ```
    * If the CSI driver **was** installed (you used `kubernetes-csi.yaml` during installation):
 
      ```
-     kubectl delete -f https://github.com/Dynatrace/dynatrace-operator/releases/download/v1.9.0/kubernetes-csi.yaml
+     kubectl delete -f https://github.com/Dynatrace/dynatrace-operator/releases/download/v1.10.0/kubernetes-csi.yaml
      ```
 
    * If the CSI driver was **not** installed (you used `openshift.yaml` during installation):
 
      ```
-     oc delete -f https://github.com/Dynatrace/dynatrace-operator/releases/download/v1.9.0/openshift.yaml
+     oc delete -f https://github.com/Dynatrace/dynatrace-operator/releases/download/v1.10.0/openshift.yaml
      ```
    * If the CSI driver **was** installed (you used `openshift-csi.yaml` during installation):
 
      ```
-     oc delete -f https://github.com/Dynatrace/dynatrace-operator/releases/download/v1.9.0/openshift-csi.yaml
+     oc delete -f https://github.com/Dynatrace/dynatrace-operator/releases/download/v1.10.0/openshift-csi.yaml
      ```
 2. Delete the namespace.
 
@@ -410,7 +422,7 @@ Before running the node cleanup, ensure that no DynaKube is deployed and all mon
 1. Download the script.
 
 ```
-curl -O https://raw.githubusercontent.com/Dynatrace/dynatrace-operator/refs/tags/v1.9.0/hack/cluster/cleanup-node-fs.sh
+curl -O https://raw.githubusercontent.com/Dynatrace/dynatrace-operator/refs/tags/v1.10.0/hack/cluster/cleanup-node-fs.sh
 ```
 
 2. Make the script executable.
@@ -487,8 +499,8 @@ Every API version listed in `.status.storedVersions` must still be served by the
 | DynaKube API version | Introduced | Deprecated | Not served [1](#fn-1-1-def) | Removed | Migration guides |
 | --- | --- | --- | --- | --- | --- |
 | v1beta6 | 1.8.0 |  |  |  |  |
-| v1beta5 | 1.6.0 |  |  |  | [to v1beta6](/managed/ingest-from/setup-on-k8s/guides/migration/api-version-migration-guides/migrate-dk-v1beta5-v1beta6 "Migrate your v1beta5 DynaKube CR to the v1beta6 apiVersions.") |
-| v1beta4 | 1.5.0 | 1.9.0 |  |  | [to v1beta6](/managed/ingest-from/setup-on-k8s/guides/migration/api-version-migration-guides/migrate-dk-v1beta4-v1beta6 "Migrate your v1beta4 DynaKube CR to the v1beta6 apiVersions."), [to v1beta5](/managed/ingest-from/setup-on-k8s/guides/migration/api-version-migration-guides/migrate-dk-v1beta4-v1beta5 "Migrate your v1beta4 DynaKube CR to the v1beta5 apiVersions.") |
+| v1beta5 | 1.6.0 | 1.10.0 |  |  | [to v1beta6](/managed/ingest-from/setup-on-k8s/guides/migration/api-version-migration-guides/migrate-dk-v1beta5-v1beta6 "Migrate your v1beta5 DynaKube CR to the v1beta6 apiVersions.") |
+| v1beta4 | 1.5.0 | 1.9.0 | 1.10.0 |  | [to v1beta6](/managed/ingest-from/setup-on-k8s/guides/migration/api-version-migration-guides/migrate-dk-v1beta4-v1beta6 "Migrate your v1beta4 DynaKube CR to the v1beta6 apiVersions."), [to v1beta5](/managed/ingest-from/setup-on-k8s/guides/migration/api-version-migration-guides/migrate-dk-v1beta4-v1beta5 "Migrate your v1beta4 DynaKube CR to the v1beta5 apiVersions.") |
 | v1beta3 | 1.4.0 | 1.7.0 | 1.8.0 | 1.9.0 | [to v1beta5](/managed/ingest-from/setup-on-k8s/guides/migration/api-version-migration-guides/migrate-dk-v1beta3-v1beta5 "Migrate your v1beta3 DynaKube CR to the v1beta5 apiVersions."), [to v1beta4](/managed/ingest-from/setup-on-k8s/guides/migration/api-version-migration-guides/migrate-dk-v1beta3-v1beta4 "Migrate your v1beta3 DynaKube CR to the v1beta4 apiVersions.") |
 | v1beta2 | 1.2.0 | 1.6.0 | 1.7.0 | 1.8.0 | [to v1beta5](/managed/ingest-from/setup-on-k8s/guides/migration/api-version-migration-guides/migrate-dk-v1beta2-v1beta5 "Migrate your v1beta2 DynaKube CR to the v1beta5 apiVersions."), [to v1beta4](/managed/ingest-from/setup-on-k8s/guides/migration/api-version-migration-guides/migrate-dk-v1beta2-v1beta4 "Migrate your v1beta2 DynaKube CR to the v1beta4 apiVersions.") |
 | v1beta1 | 0.3.0 | 1.6.0 | 1.7.0 | 1.8.0 | [to v1beta5](/managed/ingest-from/setup-on-k8s/guides/migration/api-version-migration-guides/migrate-dk-v1beta1-v1beta5 "Migrate your v1beta1 DynaKube CR to the v1beta5 apiVersions."), [to v1beta4](/managed/ingest-from/setup-on-k8s/guides/migration/api-version-migration-guides/migrate-dk-v1beta1-v1beta4 "Migrate your v1beta1 DynaKube CR to the v1beta4 apiVersions.") |

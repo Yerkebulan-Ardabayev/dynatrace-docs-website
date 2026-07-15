@@ -8,7 +8,7 @@ source: https://docs.dynatrace.com/managed/ingest-from/setup-on-k8s/guides/deplo
 # Configure monitoring for namespaces and pods
 
 * 5-min read
-* Updated on Mar 19, 2026
+* Updated on Jun 25, 2026
 
 cloudNativeFullStack
 
@@ -393,11 +393,11 @@ Dynatrace Operator can be set to monitor namespaces without injecting into any p
 
 ## Fine-tuning of injection for `applicationMonitoring` without CSI driver
 
-This section has been deprecated with Dynatrace Operator version 1.5.0 and superseded by the new [node image pull](/managed/ingest-from/setup-on-k8s/guides/deployment-and-configuration/node-image-pull "Configure node image pull") feature.
+This section has been deprecated with Dynatrace Operator version 1.5.0 and superseded by [node image pull via ephemeral volume](/managed/ingest-from/setup-on-k8s/reference/code-modules-delivery-modes#ephemeral-node-image-pull "Reference for how Dynatrace Operator delivers OneAgent code modules to application pods, including ephemeral volumes, CSI driver image pull, and ZIP download.").
 
 * `oneagent.dynatrace.com/flavor`: Set to `default` or `musl` to specify the binary compatibility. This indicates whether `glibc` or `musl` binaries should be downloaded, with `glibc` as the default setting. For containers based on `musl` (for example, Alpine), specify this annotation to ensure proper monitoring.
 
-  + Ignored if the CSI volume is or the [node image pull](/managed/ingest-from/setup-on-k8s/guides/deployment-and-configuration/node-image-pull "Configure node image pull") feature is used.
+  + Ignored if the CSI volume is used or [node image pull via ephemeral volume](/managed/ingest-from/setup-on-k8s/reference/code-modules-delivery-modes#ephemeral-node-image-pull "Reference for how Dynatrace Operator delivers OneAgent code modules to application pods, including ephemeral volumes, CSI driver image pull, and ZIP download.") is used.
 * `oneagent.dynatrace.com/technologies`: A comma-separated list of technologies. This filters the code modules to be downloaded, defaulting to `all`. Use this to tailor the OneAgent to monitor specific technologies within your application.
 
   + Ignored if the CSI volume is used.

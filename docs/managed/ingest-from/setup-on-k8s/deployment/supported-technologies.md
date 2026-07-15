@@ -235,7 +235,7 @@ For GKE Autopilot, you can [install Dynatrace for App Observability](/managed/in
 * `docker.io/dynatrace/dynatrace-operator`
 * `public.ecr.aws/dynatrace/dynatrace-operator`
 
-**Code modules**: On GKE Autopilot with the Dynatrace Operator CSI driver and the [node image pull](/managed/ingest-from/setup-on-k8s/guides/deployment-and-configuration/node-image-pull "Configure node image pull") feature enabled for Application observability, `codeModulesImage` in your DynaKube must reference one of the following repositories:
+**Code modules**: On GKE Autopilot with the Dynatrace Operator CSI driver and the [node image pull](/managed/ingest-from/setup-on-k8s/reference/code-modules-delivery-modes "Reference for how Dynatrace Operator delivers OneAgent code modules to application pods, including ephemeral volumes, CSI driver image pull, and ZIP download.") feature enabled for Application observability, `codeModulesImage` in your DynaKube must reference one of the following repositories:
 
 * `docker.io/dynatrace/dynatrace-codemodules`
 * `public.ecr.aws/dynatrace/dynatrace-codemodules`

@@ -9,7 +9,7 @@ source: https://docs.dynatrace.com/managed/ingest-from/setup-on-k8s/guides/deplo
 
 * Reference
 * 5-min read
-* Updated on Feb 18, 2026
+* Updated on Jun 15, 2026
 
 Setting appropriate resource requests (and limits, when needed) keeps Dynatrace ActiveGate instances stable and predictable. This guide details sizing methods based on scale and workload.
 
@@ -205,14 +205,6 @@ name: k8s-monitoring
 
 
 namespace: dynatrace
-
-
-
-annotations:
-
-
-
-feature.dynatrace.com/k8s-app-enabled: "true"
 
 
 

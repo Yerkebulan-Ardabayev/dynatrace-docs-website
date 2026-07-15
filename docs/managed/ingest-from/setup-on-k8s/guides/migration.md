@@ -26,4 +26,8 @@ Migrate from deprecated OneAgent Operator to Dynatrace Operator.](/managed/inges
 
 Migrate from manifests to Helm for Dynatrace Operator installation.](/managed/ingest-from/setup-on-k8s/guides/migration/migrate-to-helm "Migrate from manifests to Helm for Dynatrace Operator installation.")[### Migrate DynaKube to newer apiVersion
 
-Migrate from your old `DynaKube` with an older `apiVersion` to the newest supported for a given Dynatrace Operator version.](/managed/ingest-from/setup-on-k8s/guides/migration/dynakube "Migrate your DynaKube CR to newer apiVersions based on the Operator Version you are using.")
+Migrate from your old `DynaKube` with an older `apiVersion` to the newest supported for a given Dynatrace Operator version.](/managed/ingest-from/setup-on-k8s/guides/migration/dynakube "Migrate your DynaKube CR to newer apiVersions based on the Operator Version you are using.")[### Migrate from CSI driver to ephemeral volumes
+
+Migrate from CSI-based injection to ephemeral-volume injection with minimal disruption.](/managed/ingest-from/setup-on-k8s/guides/migration/csi-to-ephemeral-volumes "Migrate your Dynatrace deployment from CSI-based injection to ephemeral-volume injection with minimal disruption.")[### Migrate to public registry
+
+Migrate an existing Dynatrace Operator installation to use automatic public registry image resolution.](/managed/ingest-from/setup-on-k8s/guides/migration/migrate-to-public-registry "How to migrate an existing Dynatrace Operator installation to use automatic public registry image resolution.")

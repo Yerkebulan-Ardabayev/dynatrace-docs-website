@@ -17,7 +17,7 @@ Prerequisites
 Before installing Dynatrace on your Kubernetes cluster, ensure that you meet the following requirements:
 
 * Your `kubectl` CLI is connected to the Kubernetes cluster that you want to monitor.
-* You have sufficient privileges on the monitored cluster to run `kubectl` or `oc` commands.
+* You have sufficient privileges on the monitored cluster to run `kubectl` or `oc` commands. If you don't use the `cluster-admin` cluster role, see [deployment permissions](/managed/ingest-from/setup-on-k8s/reference/security#deployment-permissions "This page provides an overview of the Dynatrace components, their default configurations, and the permissions they require") for the required permissions.
 
 ### Cluster setup and configuration
 

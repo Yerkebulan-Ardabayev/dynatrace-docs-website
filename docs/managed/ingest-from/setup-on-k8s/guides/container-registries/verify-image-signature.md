@@ -26,7 +26,7 @@ Before you begin, be sure to meet the following prerequisites:
 
 The following sections describe how Dynatrace image signatures can be verified using Cosign. For simplicity, all examples reference Dynatrace component repositories on public Amazon ECR, but are valid and applicable to any registry holding Dynatrace images.
 
-If you are looking for alternatives to Amazon ECR, see [Supported public registries](/managed/ingest-from/setup-on-k8s/guides/container-registries/use-public-registry#supported-public-registries "Use a public registry").
+If you are looking for alternatives to Amazon ECR, see [Supported public registries](/managed/ingest-from/setup-on-k8s/guides/container-registries/use-public-registry#supported-public-registries "Configure the Dynatrace Operator to use public registry images for itself and its managed components. This can be done manually or through automatic resolution from your Dynatrace environment.").
 
 Image signing is only performed on Dynatrace images of supported public registries. Images on the Dynatrace built-in registry are not signed.
 
@@ -158,7 +158,7 @@ Supported from Dynatrace Operator version 0.12.0.
 
 2
 
-Dynatrace Operator image is available on Amazon ECR from version 1.0.0. For more information, see [supported public registries](/managed/ingest-from/setup-on-k8s/guides/container-registries/use-public-registry#supported-public-registries "Use a public registry").
+Dynatrace Operator image is available on Amazon ECR from version 1.0.0. For more information, see [supported public registries](/managed/ingest-from/setup-on-k8s/guides/container-registries/use-public-registry#supported-public-registries "Configure the Dynatrace Operator to use public registry images for itself and its managed components. This can be done manually or through automatic resolution from your Dynatrace environment.").
 
 Retrieve SBOM file from verification output
 
@@ -321,7 +321,7 @@ Supported from Dynatrace Operator version 1.9.0.
 
 2
 
-Dynatrace Operator image is available on Amazon ECR from version 1.0.0. For more information, see [supported public registries](/managed/ingest-from/setup-on-k8s/guides/container-registries/use-public-registry#supported-public-registries "Use a public registry").
+Dynatrace Operator image is available on Amazon ECR from version 1.0.0. For more information, see [supported public registries](/managed/ingest-from/setup-on-k8s/guides/container-registries/use-public-registry#supported-public-registries "Configure the Dynatrace Operator to use public registry images for itself and its managed components. This can be done manually or through automatic resolution from your Dynatrace environment.").
 
 On success, Cosign confirms that the signing certificate, transparency log entry, and OIDC issuer are valid, and that the attestation was produced by a trusted Dynatrace build workflow.
 
@@ -377,6 +377,6 @@ On success, the command prints `Verification succeeded!` and lists the matched a
 
 ## Related topics
 
-* [Use a public registry](/managed/ingest-from/setup-on-k8s/guides/container-registries/use-public-registry "Use a public registry")
+* [Use a public registry](/managed/ingest-from/setup-on-k8s/guides/container-registries/use-public-registry "Configure the Dynatrace Operator to use public registry images for itself and its managed components. This can be done manually or through automatic resolution from your Dynatrace environment.")
 * [Use a private registry](/managed/ingest-from/setup-on-k8s/guides/container-registries/use-private-registry "Use a private registry")
 * [Store Dynatrace images in private registries](/managed/ingest-from/setup-on-k8s/guides/container-registries/prepare-private-registry "Store Dynatrace images in private registries")

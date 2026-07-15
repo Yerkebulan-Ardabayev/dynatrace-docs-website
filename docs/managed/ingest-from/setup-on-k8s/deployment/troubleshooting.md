@@ -8,7 +8,7 @@ source: https://docs.dynatrace.com/managed/ingest-from/setup-on-k8s/deployment/t
 # Troubleshooting
 
 * 7-min read
-* Updated on Feb 23, 2026
+* Updated on Jul 10, 2026
 
 This page provides a comprehensive guide to help you diagnose and resolve common problems.
 
@@ -514,3 +514,13 @@ See the following reason values to narrow down the root cause.
 | `NoOTLPExporterConfigSecret` | OTLP exporter configuration | The webhook can’t find or create an OTLP exporter configuration Secret in the pod’s namespace at injection time. | This usually happens when DynaKube reconciliation isn’t complete or configuration issues prevent reconciliation.  Two variants exist:  * `<dynakube name>-otlp-exporter-config` in Dynatrace Operator namespace (source Secret). * `dynatrace-otlp-exporter-config` in the injected pod’s namespace, which is mounted into the pod. |
 | `NoOTLPExporterActiveGateCertSecret` | OTLP exporter configuration | The webhook can’t find or create an ActiveGate certificate Secret in the pod’s namespace at injection time. | This usually happens when DynaKube reconciliation isn’t complete or configuration issues prevent reconciliation. This Secret is required only when the OTLP exporter communicates with ActiveGate over TLS.  Two variants exist:  * `<dynakube name>-otlp-exporter-certs` in Dynatrace Operator namespace (source Secret). * `dynatrace-otlp-exporter-certs` in the injected pod’s namespace, which is mounted into the pod. |
 | `IngestEndpointUnavailable` | OTLP exporter configuration | The webhook can’t construct a valid ingest endpoint URL at injection time. | Without a valid ingest endpoint URL, the OTLP exporter configuration can’t be injected. |
+
+### Injected pods fail with `ImagePullBackOff` on a private registry
+
+If injected application pods fail to start with `ImagePullBackOff` while pulling the init container image from a private registry, the pods are missing valid registry credentials.
+
+The DynaKube `customPullSecret` authenticates only the operator-managed components in the `dynatrace` namespace. It is not distributed to injected application pods. Every injected pod runs a Dynatrace init container (the Dynatrace Operator image, or the OneAgent code modules image for [node image pull](/managed/ingest-from/setup-on-k8s/reference/code-modules-delivery-modes "Reference for how Dynatrace Operator delivers OneAgent code modules to application pods, including ephemeral volumes, CSI driver image pull, and ZIP download.")) that the Kubernetes node must pull, so you must provide the pull secret yourself.
+
+This often surfaces after upgrading to Kubernetes 1.35, where the [`KubeletEnsureSecretPulledImages`﻿](https://kubernetes.io/docs/concepts/containers/images/#ensureimagepullcredentialverification) feature gate is enabled by default. The kubelet then verifies pull credentials per pod, even for images already cached on the node, so pods that previously reused a cached image now fail without their own credentials.
+
+To resolve this, distribute a pull secret to your application namespaces, nodes, or pods. For details, see [Provide pull secrets for injected workloads](/managed/ingest-from/setup-on-k8s/guides/container-registries/use-private-registry#injected-workloads "Use a private registry").

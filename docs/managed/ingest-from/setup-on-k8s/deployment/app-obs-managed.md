@@ -16,7 +16,7 @@ Prerequisites
 Before installing Dynatrace on your Kubernetes cluster, ensure that you meet the following requirements:
 
 * Your `kubectl` CLI is connected to the Kubernetes cluster that you want to monitor.
-* You have sufficient privileges on the monitored cluster to run `kubectl` or `oc` commands.
+* You have sufficient privileges on the monitored cluster to run `kubectl` or `oc` commands. If you don't use the `cluster-admin` cluster role, see [deployment permissions](/managed/ingest-from/setup-on-k8s/reference/security#deployment-permissions "This page provides an overview of the Dynatrace components, their default configurations, and the permissions they require") for the required permissions.
 
 ### Cluster setup and configuration
 
@@ -105,7 +105,7 @@ The installation process is independent of whether you are using Kubernetes or O
    If `installCRD` is set to `false`, you need to create the custom resource definition manually before starting the Helm installation:
 
    ```
-   kubectl apply -f https://github.com/Dynatrace/dynatrace-operator/releases/download/v1.9.0/dynatrace-operator-crd.yaml
+   kubectl apply -f https://github.com/Dynatrace/dynatrace-operator/releases/download/v1.10.0/dynatrace-operator-crd.yaml
    ```
 
    VMware Tanzu Kubernetes (TKGI) and IBM Kubernetes Service (IKS) require [additional configuration](/managed/ingest-from/setup-on-k8s/deployment/supported-technologies "Overview of different configurations for all major Kubernetes distributions.").
@@ -195,13 +195,13 @@ OpenShift
 2. Install Dynatrace Operator
 
    ```
-   kubectl apply -f https://github.com/Dynatrace/dynatrace-operator/releases/download/v1.9.0/kubernetes-csi.yaml
+   kubectl apply -f https://github.com/Dynatrace/dynatrace-operator/releases/download/v1.10.0/kubernetes-csi.yaml
    ```
 
    Without CSI driver
 
    ```
-   kubectl apply -f https://github.com/Dynatrace/dynatrace-operator/releases/download/v1.9.0/kubernetes.yaml
+   kubectl apply -f https://github.com/Dynatrace/dynatrace-operator/releases/download/v1.10.0/kubernetes.yaml
    ```
 
    VMware Tanzu Kubernetes (TKGI) and IBM Kubernetes Service (IKS) require [additional configuration](/managed/ingest-from/setup-on-k8s/deployment/supported-technologies "Overview of different configurations for all major Kubernetes distributions.").
@@ -291,13 +291,13 @@ OpenShift
 2. Install Dynatrace Operator
 
    ```
-   oc apply -f https://github.com/Dynatrace/dynatrace-operator/releases/download/v1.9.0/openshift-csi.yaml
+   oc apply -f https://github.com/Dynatrace/dynatrace-operator/releases/download/v1.10.0/openshift-csi.yaml
    ```
 
    Without CSI driver
 
    ```
-   oc apply -f https://github.com/Dynatrace/dynatrace-operator/releases/download/v1.9.0/openshift.yaml
+   oc apply -f https://github.com/Dynatrace/dynatrace-operator/releases/download/v1.10.0/openshift.yaml
    ```
 
    Run the following command to see when Dynatrace Operator components finish initialization:

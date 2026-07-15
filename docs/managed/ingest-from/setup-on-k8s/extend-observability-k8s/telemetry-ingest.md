@@ -156,7 +156,7 @@ tag: <tag>
 
 OTel collector image
 
-OTel collector image is sourced from our [supported public registries](/managed/ingest-from/setup-on-k8s/guides/container-registries/use-public-registry#supported-public-registries "Use a public registry"), make sure the used `tag` exists! Alternatively, you can use your [private registry](/managed/ingest-from/setup-on-k8s/guides/container-registries/use-private-registry "Use a private registry").
+OTel collector image is sourced from our [supported public registries](/managed/ingest-from/setup-on-k8s/guides/container-registries/use-public-registry#supported-public-registries "Configure the Dynatrace Operator to use public registry images for itself and its managed components. This can be done manually or through automatic resolution from your Dynatrace environment."), make sure the used `tag` exists! Alternatively, you can use your [private registry](/managed/ingest-from/setup-on-k8s/guides/container-registries/use-private-registry "Use a private registry").
 
 2. Configure applications
 
@@ -301,7 +301,7 @@ tag: <tag>
 
 OTel collector image
 
-OTel collector image is sourced from our [supported public registries](/managed/ingest-from/setup-on-k8s/guides/container-registries/use-public-registry#supported-public-registries "Use a public registry"), make sure the used `tag` exists! Alternatively, you can use your [private registry](/managed/ingest-from/setup-on-k8s/guides/container-registries/use-private-registry "Use a private registry").
+OTel collector image is sourced from our [supported public registries](/managed/ingest-from/setup-on-k8s/guides/container-registries/use-public-registry#supported-public-registries "Configure the Dynatrace Operator to use public registry images for itself and its managed components. This can be done manually or through automatic resolution from your Dynatrace environment."), make sure the used `tag` exists! Alternatively, you can use your [private registry](/managed/ingest-from/setup-on-k8s/guides/container-registries/use-private-registry "Use a private registry").
 
 ### Proxy settings
 

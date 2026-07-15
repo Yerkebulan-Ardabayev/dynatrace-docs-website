@@ -26,4 +26,6 @@ Storage required by Dynatrace components.](/managed/ingest-from/setup-on-k8s/ref
 
 Dynatrace operation in your Kubernetes cluster requires various components with distinct roles, default settings, and permissions.](/managed/ingest-from/setup-on-k8s/reference/security "This page provides an overview of the Dynatrace components, their default configurations, and the permissions they require")[### Workload mutation on injection mode
 
-Application Pod mutations when data ingest is enabled.](/managed/ingest-from/setup-on-k8s/reference/workload-mutation "Pod mutations applied by Dynatrace Operator when OneAgent injection or metadata enrichment is enabled.")
+Application Pod mutations when data ingest is enabled.](/managed/ingest-from/setup-on-k8s/reference/workload-mutation "Pod mutations applied by Dynatrace Operator when OneAgent injection or metadata enrichment is enabled.")[### Code modules delivery modes
+
+How Dynatrace Operator delivers OneAgent code modules to application pods, including ephemeral volumes, CSI driver image pull, and ZIP download.](/managed/ingest-from/setup-on-k8s/reference/code-modules-delivery-modes "Reference for how Dynatrace Operator delivers OneAgent code modules to application pods, including ephemeral volumes, CSI driver image pull, and ZIP download.")

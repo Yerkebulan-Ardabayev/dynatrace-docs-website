@@ -7,17 +7,18 @@ source: https://docs.dynatrace.com/managed/ingest-from/setup-on-k8s/extend-obser
 
 # Enable automatic OpenTelemetry OTLP exporter configuration
 
+* How-to guide
 * Published Nov 24, 2025
 
-Dynatrace Operator version 1.8.0+
-
 Dynatrace Operator can automatically configure the OpenTelemetry OTLP exporter for applications instrumented with an [OpenTelemetry SDK﻿](https://opentelemetry.io/docs/languages/). This is done by injecting environment variables into your application pods at startup, allowing telemetry data to be sent directly to Dynatrace.
+
+Dynatrace Operator version 1.8.0+
 
 ## Enable OTLP auto-configuration
 
 ### Provide a data ingest token
 
-You need to provide a [data ingest token](/managed/ingest-from/setup-on-k8s/deployment/tokens-permissions#dataIngestToken "Configure tokens and permissions to monitor your Kubernetes cluster") to the Dynatrace Operator. This token is passed to your application as part of the OTLP exporter configuration.
+You need to provide a [data ingest token](/managed/ingest-from/setup-on-k8s/deployment/tokens-permissions "Configure tokens and permissions to monitor your Kubernetes cluster") to the Dynatrace Operator. This token is passed to your application as part of the OTLP exporter configuration.
 
 ### Update your DynaKube resource
 
@@ -79,7 +80,7 @@ The following secrets are created in each [injected namespace](#namespace-select
 
   + The TLS certificate for the ActiveGate.
   + Certificates contained in `.spec.trustedCAs`, if provided and no ActiveGate with TLS certificates is available.
-* `dynatrace-otlp-exporter-config` holds a copy of the [data ingest token](/managed/ingest-from/setup-on-k8s/deployment/tokens-permissions#dataIngestToken "Configure tokens and permissions to monitor your Kubernetes cluster").
+* `dynatrace-otlp-exporter-config` holds a copy of the [data ingest token](/managed/ingest-from/setup-on-k8s/deployment/tokens-permissions "Configure tokens and permissions to monitor your Kubernetes cluster").
 
 Secrets are updated automatically when the token or certificate changes, but only new pods will receive updated values. Restart your application pods subsequent to a change to avoid authentication or communication issues.
 
@@ -149,6 +150,12 @@ Any attributes you have already set in `OTEL_RESOURCE_ATTRIBUTES` are preserved,
 
 Resource attributes are always injected when auto‑configuration is enabled, regardless of existing OTLP exporter settings or whether override mode is enabled.
 
+### Additional resource attributes
+
+Dynatrace Operator version 1.10+
+
+You can define additional resource attributes in your DynaKube that Dynatrace Operator appends to `OTEL_RESOURCE_ATTRIBUTES` alongside the automatically derived attributes. For the full field reference, propagation details, and known limitations, see [Set resource attributes in the DynaKube](/managed/ingest-from/setup-on-k8s/guides/metadata-automation/metadata-enrichment#resource-attributes "Configure metadata enrichment in Dynatrace Operator to attach Kubernetes metadata to telemetry signals using OneAgent, OTLP exporter, or standalone enrichment.").
+
 ## Limitations
 
 ### Application pods using `envFrom`
@@ -211,7 +218,7 @@ matchLabels:
 
 
 
-my.app.com/otel: "true"
+example.com/source: otel
 
 
 

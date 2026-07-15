@@ -43,7 +43,7 @@ The following files are available in the [enrichment directory](#enrichment-dire
 
 Both files contain the same data in different formats. For an example of how to load the JSON file, see the [Python example](#python-example) below.
 
-Please visit the [Configure enrichment directory](/managed/ingest-from/setup-on-k8s/guides/metadata-automation/metadata-enrichment "Metadata enrichment in the Dynatrace Operator adds context to Kubernetes pods by attaching relevant metadata to entities like pods, hosts, and processes for better observability.") guide for configuration instructions.
+Please visit the [Configure enrichment directory](/managed/ingest-from/setup-on-k8s/guides/metadata-automation/metadata-enrichment "Configure metadata enrichment in Dynatrace Operator to attach Kubernetes metadata to telemetry signals using OneAgent, OTLP exporter, or standalone enrichment.") guide for configuration instructions.
 
 ## OneAgent virtual files
 

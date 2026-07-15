@@ -162,7 +162,7 @@ The ActiveGate is version 1.223 or earlier; ActiveGate token-based network secur
 
   + An ActiveGate seed token can't be used for containerized ActiveGates.
   + An ActiveGate token can be shared among ActiveGates within the same environment.
-* If your ActiveGate is deployed by using [Dynatrace Operator](/managed/ingest-from/setup-on-k8s/deployment "Deploy Dynatrace Operator on Kubernetes"), Dynatrace Operator handles the authorization token. Starting with Dynatrace Operator version 0.9.0+, you must enable the **Create ActiveGate tokens** (`activeGateTokenManagement.create`) scope. For details, see [Access tokens and permissions](/managed/ingest-from/setup-on-k8s/deployment/tokens-permissions "Configure tokens and permissions to monitor your Kubernetes cluster").
+* If your ActiveGate is deployed by using [Dynatrace Operator](/managed/ingest-from/setup-on-k8s/deployment "Deploy Dynatrace Operator on Kubernetes"), Dynatrace Operator handles the authorization token. Starting with Dynatrace Operator version 0.9.0+, you must enable the **Create ActiveGate tokens** (`activeGateTokenManagement.create`) scope. For details, see [Tokens and permissions](/managed/ingest-from/setup-on-k8s/deployment/tokens-permissions "Configure tokens and permissions to monitor your Kubernetes cluster").
 
   For issues with your ActiveGate token, see [Problem with ActiveGate token﻿](https://dt-url.net/ym238od) in Dynatrace Community.
 * All host-based ActiveGates installed via the Dynatrace web UI or Dynatrace API already have an automatically generated ActiveGate token. However, you may sometimes need to [generate an ActiveGate token](#generate-individual) and [configure it in the `authorization.properties` file](#configure-hostbased).

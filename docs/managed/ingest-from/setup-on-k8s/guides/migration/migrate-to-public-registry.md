@@ -1,33 +1,23 @@
 ---
-title: Configure auto-update for Dynatrace Operator managed components
-source: https://docs.dynatrace.com/managed/ingest-from/setup-on-k8s/guides/deployment-and-configuration/updates-and-maintenance/auto-update-components
+title: Migrate to public registry
+source: https://docs.dynatrace.com/managed/ingest-from/setup-on-k8s/guides/migration/migrate-to-public-registry
 ---
 
-# Configure auto-update for Dynatrace Operator managed components
+# Migrate to public registry
 
-# Configure auto-update for Dynatrace Operator managed components
+# Migrate to public registry
 
 * How-to guide
-* 2-min read
-* Updated on Jul 01, 2026
+* 3-min read
+* Published Jul 01, 2026
 
-Dynatrace Operator manages the rollout and updates of the following components in Kubernetes:
+To switch an existing Dynatrace Operator installation to automatic public registry image resolution, see [Automatic Image Resolution with Dynatrace Operator](/managed/ingest-from/setup-on-k8s/guides/container-registries/use-public-registry#automatic-public-registry "Configure the Dynatrace Operator to use public registry images for itself and its managed components. This can be done manually or through automatic resolution from your Dynatrace environment.").
 
-* OneAgent
-* ActiveGate
-* CodeModules
-* Extension Execution Controller (EEC)
-* Standalone Log Module
-* SQL Extension Executor
-* EdgeConnect (configured via the EdgeConnect Custom Resource)
+## Prerequisites
 
-The default settings for OneAgent and ActiveGate automatically roll out updates as soon as they become available. DynaKube also updates all pods automatically when it detects updates. Note that updates may take up to 15 minutes due to Dynatrace Operator checking for updates at 15-minute intervals. Setting a custom `image` disables automatic updates.
-
-Update windows do not apply in Kubernetes environments.
-
-## Automatic updates with public registry images
-
-Dynatrace Operator version 1.10.0+
+* Dynatrace Operator version 1.10.0 or later
+* Access to a [supported public registry](/managed/ingest-from/setup-on-k8s/guides/container-registries/use-public-registry#supported-public-registries "Configure the Dynatrace Operator to use public registry images for itself and its managed components. This can be done manually or through automatic resolution from your Dynatrace environment.")
+* Dynatrace SaaS 1.343 or later
 
 Dynatrace Operator can automatically resolve the latest public image URIs for managed components from your Dynatrace environment, without manual `image` field configuration.
 
@@ -102,178 +92,7 @@ kubectl get dynakube <dynakube-name> -n dynatrace -o jsonpath='{.status.activeGa
 
 A value of `public-registry` confirms the ActiveGate image was resolved from the public registry. Check `status.oneAgent.source` and `status.codeModules.source` similarly for OneAgent and CodeModules.
 
-## Automatic updates with image from the Dynatrace built-in registry
+## Related topics
 
-### Configure OneAgent auto-update
-
-Set the target version on the Dynatrace Server to a relative version, for example, `Latest stable version`. Dynatrace Operator will periodically check for updates and propagate them to the Kubernetes environment. Updating the OneAgent version always restarts the OneAgent pods.
-
-Minimal DynaKube configuration that uses auto-update:
-
-```
-apiVersion: dynatrace.com/v1beta5
-
-
-
-kind: DynaKube
-
-
-
-metadata:
-
-
-
-name: dynakube
-
-
-
-namespace: dynatrace
-
-
-
-spec:
-
-
-
-apiUrl: https://ENVIRONMENTID.live.dynatrace.com/api
-
-
-
-oneAgent:
-
-
-
-cloudNativeFullStack: {}
-```
-
-To disable auto-update, set the `image` field in the DynaKube. Omit the field to keep auto-update enabled.
-
-```
-# Auto-update enabled (default) — omit image
-
-
-
-spec:
-
-
-
-oneAgent:
-
-
-
-cloudNativeFullStack: {}
-
-
-
-# Auto-update disabled — pin a specific image
-
-
-
-spec:
-
-
-
-oneAgent:
-
-
-
-cloudNativeFullStack:
-
-
-
-image: public.ecr.aws/dynatrace/dynatrace-oneagent:<tag>
-```
-
-For CodeModules, while Dynatrace Operator downloads new images, applications update only when they restart. Keep in mind that autoscaling also injects the most recent CodeModule.
-
-### Configure ActiveGate auto-update
-
-The ActiveGate target version configured in Dynatrace determines the image used by Dynatrace Operator. Dynatrace Operator periodically checks for updates and applies them automatically.
-
-Minimal DynaKube configuration that uses auto-update:
-
-```
-apiVersion: dynatrace.com/v1beta5
-
-
-
-kind: DynaKube
-
-
-
-metadata:
-
-
-
-name: dynakube
-
-
-
-namespace: dynatrace
-
-
-
-spec:
-
-
-
-apiUrl: https://ENVIRONMENTID.live.dynatrace.com/api
-
-
-
-activeGate:
-
-
-
-capabilities:
-
-
-
-- kubernetes-monitoring
-```
-
-To disable auto-update, set the `image` field in the DynaKube. Omit the field to keep auto-update enabled.
-
-```
-# Auto-update enabled (default) — omit image
-
-
-
-spec:
-
-
-
-activeGate:
-
-
-
-capabilities:
-
-
-
-- kubernetes-monitoring
-
-
-
-# Auto-update disabled — pin a specific image
-
-
-
-spec:
-
-
-
-activeGate:
-
-
-
-capabilities:
-
-
-
-- kubernetes-monitoring
-
-
-
-image: public.ecr.aws/dynatrace/dynatrace-activegate:<tag>
-```
+* [Use a public registry](/managed/ingest-from/setup-on-k8s/guides/container-registries/use-public-registry "Configure the Dynatrace Operator to use public registry images for itself and its managed components. This can be done manually or through automatic resolution from your Dynatrace environment.")
+* [Configure auto-update for Dynatrace Operator managed components](/managed/ingest-from/setup-on-k8s/guides/deployment-and-configuration/updates-and-maintenance/auto-update-components "Configure auto-updates for all components managed by Dynatrace Operator")

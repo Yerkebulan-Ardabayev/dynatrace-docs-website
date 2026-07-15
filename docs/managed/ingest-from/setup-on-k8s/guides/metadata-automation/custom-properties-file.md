@@ -12,6 +12,8 @@ source: https://docs.dynatrace.com/managed/ingest-from/setup-on-k8s/guides/metad
 
 As part of getting started with Kubernetes platform monitoring, you might want to add a custom properties file.
 
+The custom properties file is applied to the ActiveGate. For general ActiveGate configuration, see [Configure ActiveGate](/managed/ingest-from/dynatrace-activegate/configuration/configure-activegate "Learn which ActiveGate properties you can configure based on your needs and requirements.").
+
 You can add a custom properties file by providing it as a value or by referencing it from a secret.
 
 ## Add the custom properties file as a value

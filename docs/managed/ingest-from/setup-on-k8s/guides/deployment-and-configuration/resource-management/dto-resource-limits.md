@@ -337,7 +337,7 @@ Modify `values.yaml` to set resource limits for Dynatrace Operator, webhook, or 
 
 The CSI driver `provisioner` and `job` components do not have default resource limits specified. This allows them to use additional resources when available, improving performance.
 
-The `job` component is only used with [node-image-pull](/managed/ingest-from/setup-on-k8s/guides/deployment-and-configuration/node-image-pull "Configure node image pull").
+The `job` component is only used with [node-image-pull](/managed/ingest-from/setup-on-k8s/reference/code-modules-delivery-modes "Reference for how Dynatrace Operator delivers OneAgent code modules to application pods, including ephemeral volumes, CSI driver image pull, and ZIP download.").
 
 Note that if the limits are set too low, this can lead to increased pod startup times due to CPU throttling or, OOM kills in the CSI driver due to insufficient memory, which can prevent applications from starting.
 

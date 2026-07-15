@@ -7,8 +7,8 @@ source: https://docs.dynatrace.com/managed/ingest-from/setup-on-k8s/guides/conta
 
 # Use a public registry
 
-* 5-min read
-* Updated on Jun 24, 2026
+* 6-min read
+* Updated on Jul 01, 2026
 
 To accommodate diverse infrastructure requirements and organizational preferences, Dynatrace images are available on selected public registries. These images adhere to best practices, ensuring immutability and signing for enhanced security and resilience against potential supply chain risks.
 
@@ -16,58 +16,133 @@ Explore our supported public registries with multi-arch Dynatrace container imag
 
 This page provides instructions for using Dynatrace signed and immutable container images hosted on supported public registries.
 
+Start using these fortified images today for a safer and more efficient containerized monitoring experience:
+
+* [Resolve public registry images automatically](#automatic-public-registry) for Dynatrace Operator managed components
+* [Deploy Dynatrace Operator](#deploy-dynatrace-operator-with-images-from-public-registry) with container images from a public registry
+* [Configure DynaKube](#configure-dynakube-to-use-images-from-public-registry) to use container images from a public registry for monitoring components
+
 ## Prerequisites
 
 Before you begin, be sure to meet the following prerequisites:
 
-* Required Dynatrace Operator version is v0.11 or later
-* Required Target CPU architectures are ARM64 (AArch64), x86-64, s390x, and/or ppc64le
-* Required Allow egress traffic to public registry
+* Dynatrace SaaS version 1.343+
+* Dynatrace Operator version 0.11+
+* Target CPU architectures are ARM64 (AArch64), x86-64, s390x, and/or ppc64le
+* Allow egress traffic to public registry
 
-#### Limitations
+### Limitations
 
 Note that the following configurations are not supported in combination with public registries:
 
-* Application monitoring without CSI driver
-* Host monitoring without CSI driver
-* Classic Full-Stack monitoring - Alternatively, use a private registry for [Classic Full-Stack monitoring](/managed/ingest-from/setup-on-k8s/guides/container-registries/prepare-private-registry#classic-full-stack "Store Dynatrace images in private registries")
-
-Start using these fortified images today for a safer and more efficient containerized monitoring experience:
-
-* [Deploy Dynatrace Operator](#deploy-dynatrace-operator-with-images-from-public-registry) with container images from a public registry
-* [Configure DynaKube](#configure-dynakube-to-use-images-from-public-registry) to use container images from a public registry for monitoring components
+* Classic Full-Stack monitoring
 
 ## Supported public registries
 
-Dynatrace publishes its container images to [Amazon ECR﻿](https://gallery.ecr.aws/dynatrace) and [Docker Hub﻿](https://hub.docker.com/u/dynatrace):
+Dynatrace publishes its container images to [Amazon ECR Public﻿](https://gallery.ecr.aws/dynatrace) and [Docker Hub﻿](https://hub.docker.com/u/dynatrace). When using [automatic image resolution](#automatic-public-registry), set `spec.publicRegistryOverride` to `public.ecr.aws` for Amazon ECR Public or `registry-1.docker.io` for Docker Hub to request images from a specific registry.
 
-| Amazon ECR | Docker Hub |
+| Amazon ECR Public | Docker Hub |
 | --- | --- |
-| public.ecr.aws/dynatrace/dynatrace-activegate | dynatrace/dynatrace-activegate |
-| public.ecr.aws/dynatrace/dynatrace-codemodules | dynatrace/dynatrace-codemodules |
-| public.ecr.aws/dynatrace/dynatrace-k8s-node-config-collector | dynatrace/dynatrace-k8s-node-config-collector |
-| public.ecr.aws/dynatrace/dynatrace-logmodule | dynatrace/dynatrace-logmodule |
-| public.ecr.aws/dynatrace/dynatrace-oneagent | dynatrace/dynatrace-oneagent |
-| public.ecr.aws/dynatrace/dynatrace-operator[1](#fn-1-1-def) | dynatrace/dynatrace-operator |
-| public.ecr.aws/dynatrace/dynatrace-otel-collector | dynatrace/dynatrace-otel-collector |
-| public.ecr.aws/dynatrace/edgeconnect | dynatrace/edgeconnect |
-
-1
-
-Available from Dynatrace Operator version 1.0.0
+| public.ecr.aws/registry-1.docker.io/dynatrace/dynatrace-activegate | registry-1.docker.io/dynatrace/dynatrace-activegate |
+| public.ecr.aws/registry-1.docker.io/dynatrace/dynatrace-codemodules | registry-1.docker.io/dynatrace/dynatrace-codemodules |
+| public.ecr.aws/registry-1.docker.io/dynatrace/dynatrace-eec | registry-1.docker.io/dynatrace/dynatrace-eec |
+| public.ecr.aws/registry-1.docker.io/dynatrace/dynatrace-k8s-node-config-collector | registry-1.docker.io/dynatrace/dynatrace-k8s-node-config-collector |
+| public.ecr.aws/registry-1.docker.io/dynatrace/dynatrace-logmodule | registry-1.docker.io/dynatrace/dynatrace-logmodule |
+| public.ecr.aws/registry-1.docker.io/dynatrace/dynatrace-oneagent | registry-1.docker.io/dynatrace/dynatrace-oneagent |
+| public.ecr.aws/registry-1.docker.io/dynatrace/dynatrace-operator | registry-1.docker.io/dynatrace/dynatrace-operator |
+| public.ecr.aws/registry-1.docker.io/dynatrace/dynatrace-otel-collector | registry-1.docker.io/dynatrace/dynatrace-otel-collector |
+| public.ecr.aws/registry-1.docker.io/dynatrace/dynatrace-sql-extension-executor | registry-1.docker.io/dynatrace/dynatrace-sql-extension-executor |
+| public.ecr.aws/registry-1.docker.io/dynatrace/edgeconnect | registry-1.docker.io/dynatrace/edgeconnect |
 
 Rate limiting
 
-Be aware that, when accessing public registries, there is a potential risk of encountering rate limiting. To ensure a smoother experience and reduce this risk, we recommend using a private registry or authenticating against the respective registry.
+Be aware that, when accessing public registries, there is a potential risk of encountering rate limiting. To ensure a smoother experience and reduce this risk, we recommend using a private registry.
 
 Image tagging
 
 Dynatrace employs version-based image tagging for its container images and does **not** use mutable image tags like `latest`. For more information on tags, please visit the respective public registry repository.
 
+## Automatic Image Resolution with Dynatrace Operator
+
+Dynatrace Operator version 1.10.0+
+
+Dynatrace Operator can automatically resolve the latest public image URIs for managed components from your Dynatrace environment, without manual `image` field configuration.
+
+When this feature is active, Dynatrace Operator periodically syncs the image references for each component from your Dynatrace environment and applies them automatically.
+
+### Enable automatic image resolution
+
+1. Remove the `image` and `codeModulesImage` fields from your DynaKube if set — their values take precedence over automatically resolved images for the affected component.
+2. Set the `feature.dynatrace.com/use-public-registry` annotation on your DynaKube:
+
+   ```
+   apiVersion: dynatrace.com/v1beta6
+
+
+
+   kind: DynaKube
+
+
+
+   metadata:
+
+
+
+   name: dynakube
+
+
+
+   namespace: dynatrace
+
+
+
+   annotations:
+
+
+
+   feature.dynatrace.com/use-public-registry: "true"
+
+
+
+   spec:
+
+
+
+   apiUrl: https://ENVIRONMENTID.live.dynatrace.com/api
+
+
+
+   ...
+   ```
+
+Enable automatically with a platform token
+
+When your DynaKube uses a platform token, Dynatrace Operator enables public registry resolution automatically. No annotation is required. You can set `spec.publicRegistryOverride` to use a specific supported public registry.
+
+Override the registry host
+
+To request images from a specific supported public registry, set `spec.publicRegistryOverride` to one of the registry hosts listed in [Supported public registries](/managed/ingest-from/setup-on-k8s/guides/container-registries/use-public-registry#supported-public-registries "Configure the Dynatrace Operator to use public registry images for itself and its managed components. This can be done manually or through automatic resolution from your Dynatrace environment.") — for example, `public.ecr.aws` for Amazon ECR Public or `registry-1.docker.io` for Docker Hub. Dynatrace Operator forwards the host to your Dynatrace environment when resolving image URIs.
+
+### What changes when the feature is enabled
+
+* **Component images**: Dynatrace Operator resolves image references from your Dynatrace environment for OneAgent, ActiveGate, and CodeModules. Components without a default image source (Extension Execution Controller, Standalone Log Module, SQL Extension Executor) always require a custom image in the respective `spec.templates` field.
+* **Pod restarts**: All managed component pods restart when the feature is first enabled.
+* **Application injection**: The init container image injected into application pods changes on the pod's next restart, if you are not using the CSI driver or if you use [node image pull via ephemeral volume](/managed/ingest-from/setup-on-k8s/reference/code-modules-delivery-modes#ephemeral-node-image-pull "Reference for how Dynatrace Operator delivers OneAgent code modules to application pods, including ephemeral volumes, CSI driver image pull, and ZIP download."). In both cases the webhook switches from ZIP-download mode to self-extracting mode using the CodeModules image.
+
+### Verify
+
+After enabling, confirm that Dynatrace Operator is resolving images from the public registry:
+
+```
+kubectl get dynakube <dynakube-name> -n dynatrace -o jsonpath='{.status.activeGate.source}'
+```
+
+A value of `public-registry` confirms the ActiveGate image was resolved from the public registry. Check `status.oneAgent.source` and `status.codeModules.source` similarly for OneAgent and CodeModules.
+
 ## Deploy Dynatrace Operator with images from public registry
 
 The Dynatrace Operator Helm chart is available as an OCI artifact from both Amazon ECR and Docker Hub.
-Regardless of which registry you use to pull the chart, container image references default to Amazon ECR. If you install the chart from Docker Hub and want all images pulled from Docker Hub as well, you can use `--set imageRef.repository=docker.io/dynatrace/dynatrace-operator` with your `helm install` or `helm upgrade` command.
+Regardless of which registry you use to pull the chart, container image references default to Amazon ECR. If you install the chart from Docker Hub and want all images pulled from Docker Hub as well, you can use `--set imageRef.repository=docker.io/registry-1.docker.io/dynatrace/dynatrace-operator` with your `helm install` or `helm upgrade` command.
 
 Dynatrace Operator consists of multiple components (operator, webhook, CSI driver), all of which use the same `dynatrace-operator` image with specific deployment configurations per component.
 
@@ -82,7 +157,7 @@ If you are using Helm version 4.0+, you must use `--rollback-on-failure` instead
 The following command installs Dynatrace Operator and configures container images to be pulled from a public registry:
 
 ```
-helm install dynatrace-operator oci://public.ecr.aws/dynatrace/dynatrace-operator \
+helm install dynatrace-operator oci://public.ecr.aws/registry-1.docker.io/dynatrace/dynatrace-operator \
 
 
 
@@ -100,19 +175,19 @@ helm install dynatrace-operator oci://public.ecr.aws/dynatrace/dynatrace-operato
 Alternatively, an existing installation can be upgraded as follows:
 
 ```
-helm upgrade dynatrace-operator oci://public.ecr.aws/dynatrace/dynatrace-operator \
+helm upgrade dynatrace-operator oci://public.ecr.aws/registry-1.docker.io/dynatrace/dynatrace-operator \
 
 
 
---reuse-values \
+--reset-then-reuse-values \
 
 
 
---namespace dynatrace \
+--atomic \
 
 
 
---atomic
+--namespace dynatrace
 ```
 
 Use the following kustomization to conveniently install or update Dynatrace Operator by applying the necessary manifests.
@@ -151,7 +226,7 @@ If you prefer to make your modifications directly, however, be sure to adjust th
 
 For PPC64le architecture, additional configuration is required. For details, see [ActiveGate container image](/managed/ingest-from/dynatrace-activegate/activegate-in-container#additional-configuration "Deploy a containerized ActiveGate.").
 
-The Dynatrace Operator can easily be instructed to use images from a public registry by configuring the respective `image` fields in the DynaKube custom resource. The configured images will be deployed to your Kubernetes cluster to set up monitoring components.
+To use images from a public registry, configure the respective `image` fields in the DynaKube custom resource. Dynatrace Operator then deploys the configured images to your Kubernetes cluster to set up monitoring components. Alternatively, Dynatrace Operator can [resolve public image references automatically](#automatic-public-registry) from your Dynatrace environment, without manual configuration.
 
 The following DynaKube snippet demonstrates how to configure [Cloud-Native Full-Stack monitoring setup](/managed/ingest-from/setup-on-k8s/how-it-works#cloud-native "In-depth description on how the deployment on Kubernetes works.") leveraging the public Amazon ECR registry.
 
@@ -196,11 +271,11 @@ cloudNativeFullstack:
 
 
 
-image: public.ecr.aws/dynatrace/dynatrace-oneagent:<tag>
+image: public.ecr.aws/registry-1.docker.io/dynatrace/dynatrace-oneagent:<tag>
 
 
 
-codeModulesImage: public.ecr.aws/dynatrace/dynatrace-codemodules:<tag>
+codeModulesImage: public.ecr.aws/registry-1.docker.io/dynatrace/dynatrace-codemodules:<tag>
 
 
 
@@ -220,7 +295,7 @@ activeGate:
 
 
 
-image: public.ecr.aws/dynatrace/dynatrace-activegate:<tag>
+image: public.ecr.aws/registry-1.docker.io/dynatrace/dynatrace-activegate:<tag>
 
 
 
@@ -278,7 +353,7 @@ applicationMonitoring:
 
 
 
-codeModulesImage: public.ecr.aws/dynatrace/dynatrace-codemodules:<tag>
+codeModulesImage: public.ecr.aws/registry-1.docker.io/dynatrace/dynatrace-codemodules:<tag>
 
 
 
@@ -298,7 +373,7 @@ activeGate:
 
 
 
-image: public.ecr.aws/dynatrace/dynatrace-activegate:<tag>
+image: public.ecr.aws/registry-1.docker.io/dynatrace/dynatrace-activegate:<tag>
 
 
 
@@ -313,3 +388,5 @@ All of our immutable and signed container images adhere to best practices, enhan
 
 * [Use a private registry](/managed/ingest-from/setup-on-k8s/guides/container-registries/use-private-registry "Use a private registry")
 * [Store Dynatrace images in private registries](/managed/ingest-from/setup-on-k8s/guides/container-registries/prepare-private-registry "Store Dynatrace images in private registries")
+* [DynaKube feature flags for Dynatrace Operator](/managed/ingest-from/setup-on-k8s/reference/dynakube-feature-flags "List the feature flags to configure Dynatrace Operator on Kubernetes.")
+* [Configure auto-update for Dynatrace Operator managed components](/managed/ingest-from/setup-on-k8s/guides/deployment-and-configuration/updates-and-maintenance/auto-update-components "Configure auto-updates for all components managed by Dynatrace Operator")
