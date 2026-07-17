@@ -8,7 +8,7 @@ source: https://docs.dynatrace.com/managed/ingest-from/technology-support/mainfr
 # Mainframe technology support
 
 * 3-min read
-* Updated on Jun 24, 2026
+* Updated on Jul 14, 2026
 
 Dynatrace supports monitoring of the technologies and versions listed below on IBM z/OS.
 
@@ -75,7 +75,7 @@ The database access method DL/I is supported.
 
 | Messaging client | Versions |
 | --- | --- |
-| IBM MQ | 8.0, 9.0, 9.1, 9.2, 9.3, 9.4 |
+| IBM MQ | 8.0, 9.0, 9.1, 9.2, 9.3, 9.4, 10 |
 
 ## IBM IMS
 
@@ -108,7 +108,7 @@ The database access methods DL/I and Fast Path are supported.
 
 | Messaging client | Versions |
 | --- | --- |
-| IBM MQ | 8.0, 9.0, 9.1, 9.2, 9.3, 9.4 |
+| IBM MQ | 8.0, 9.0, 9.1, 9.2, 9.3, 9.4, 10 |
 
 ## z/OS Java
 

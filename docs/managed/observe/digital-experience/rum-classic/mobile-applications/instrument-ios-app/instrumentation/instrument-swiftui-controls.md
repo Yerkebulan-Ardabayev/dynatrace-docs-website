@@ -9,7 +9,7 @@ source: https://docs.dynatrace.com/managed/observe/digital-experience/rum-classi
 
 * How-to guide
 * 13-min read
-* Updated on Feb 27, 2026
+* Updated on Jul 10, 2026
 
 OneAgent for iOS version 8.249+
 
@@ -115,8 +115,9 @@ Homebrew
 Manual
 
 1. Run `brew tap dynatrace/tools` to add one of the Dynatrace taps.
-2. Run `brew install DTSwiftInstrumentor` to install our SwiftUI instrumentor.
-3. Quit Xcode and execute `DTSwiftInstrumentor install`.
+2. Required **Homebrew 6.0.0 and later only.** Run `brew trust dynatrace/tools/DTSwiftInstrumentor` to explicitly trust the formulae. Starting with Homebrew 6.0.0, Homebrew requires you to trust formulae from non-official taps before installation as a supply-chain security measure. For more details, see [Homebrew Tap Trust﻿](https://docs.brew.sh/Tap-Trust). This step is safe to run on earlier Homebrew versions.
+3. Run `brew install DTSwiftInstrumentor` to install our SwiftUI instrumentor.
+4. Quit Xcode and execute `DTSwiftInstrumentor install`.
 
    * Optional Additionally, you can specify `<PROJECT.xcodeproj> --scheme <SCHEME> --target <TARGET>`. If no project details are provided, the tool tries to auto-detect the available targets and schemes and start an interactive selection.
 

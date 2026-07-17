@@ -8,7 +8,7 @@ source: https://docs.dynatrace.com/managed/whats-new/dynatrace-operator/dto-fix-
 # Dynatrace Operator release notes version 1.9.0
 
 * Release notes
-* Published Mar 19, 2026
+* Updated on Jul 16, 2026
 
 Release date: April 13, 2026
 
@@ -68,6 +68,12 @@ On this page, you’ll find an overview of what’s new and improved in Dynatrac
 * Fixed an issue where the ActiveGate entered an initial `Error` phase during deployment before reconciling successfully.
 
 * Aggregated ClusterRoles are no longer used. This resolves a known incompatibility with OperatorHub and aligns with least-privilege principles, as their use requires additional permissions during Dynatrace Operator installation. The Dynatrace Operator deployment now uses standard ClusterRoles exclusively. For details, see [ClusterRole aggregation](/managed/ingest-from/setup-on-k8s/guides/deployment-and-configuration/cluster-role-aggregation "Understanding how the Dynatrace Operator uses ClusterRole aggregation to manage permissions for Kubernetes monitoring.").
+
+## Known issues
+
+* If Dynatrace Operator injects a seccomp profile into an application pod in OpenShift, [SecurityContextConstraints (SCCs)﻿](https://docs.redhat.com/en/documentation/openshift_container_platform/4.22/html/authentication_and_authorization/managing-pod-security-policies) that prevent seccomp profile usage — such as `anyuid`, `restricted`, or `nonroot` — will no longer apply. The system will instead fall back to another SCC (for example `restricted-v2`), which may render pods unschedulable or cause workload degradation.
+
+  [Disable seccomp profile for Dynatrace init containers](/managed/ingest-from/setup-on-k8s/guides/networking-security-compliance/security-configurations/seccomp#init-container "Overview of seccomp profile configuration for Dynatrace components.") if you are affected.
 
 ## Removal and deprecation notices
 

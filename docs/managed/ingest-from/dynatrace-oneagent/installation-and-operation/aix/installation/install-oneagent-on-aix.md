@@ -26,7 +26,8 @@ To get started, access the [Cluster Management Console and choose the environmen
 ### Resources
 
 * Check the [disk space requirements](/managed/ingest-from/dynatrace-oneagent/installation-and-operation/aix/installation/disk-space-requirements-for-oneagent-installation-and-update-on-aix "Find out what the disk space requirements are for OneAgent installation on AIX.").
-* Your host requires 200 MB free memory to run OneAgent installation and update.
+* Your host requires at least 256 MB of free memory to run OneAgent installation and update.
+* The installation process requires at least 256 MB of virtual memory.
 * All hosts that are to be monitored need to be able to send data to the Dynatrace cluster. All hosts that are to be monitored need to be able to send data to the Dynatrace cluster. Depending on your Dynatrace deployment and on your network layout and security settings, you may choose to either provide direct access to Dynatrace cluster or to [set up an ActiveGate](/managed/ingest-from/dynatrace-activegate "Understand the basic concepts related to ActiveGate.").
 
 ### Limitations

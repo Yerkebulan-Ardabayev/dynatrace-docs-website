@@ -23,6 +23,10 @@ There are three seccomp profile types in Kubernetes:
 
 All Dynatrace Operator infrastructure components (operator, webhook, and CSI driver) and operator-deployed components (ActiveGate, EdgeConnect) use the `RuntimeDefault` seccomp profile. The exception is OneAgent, which is unconfined (no seccomp profile set). The `RuntimeDefault` profile is suitable for most workloads and satisfies the **restricted** Pod Security Standard.
 
+Using seccomp on OpenShift
+
+If Dynatrace Operator injects a seccomp profile into an application pod in OpenShift, [SecurityContextConstraints (SCCs)﻿](https://docs.redhat.com/en/documentation/openshift_container_platform/4.22/html/authentication_and_authorization/managing-pod-security-policies) that prevent seccomp profile usage — such as `anyuid`, `restricted`, or `nonroot` — will no longer apply. The system will instead fall back to another SCC (for example `restricted-v2`), which may render pods unschedulable or cause workload degradation.
+
 ## OneAgent seccomp profile
 
 The OneAgent runs without a seccomp profile (unconfined) by default. This default was chosen to ensure compatibility with the widest range of platforms and container runtimes, as the OneAgent requires access to a broader set of system calls for deep host-level monitoring.

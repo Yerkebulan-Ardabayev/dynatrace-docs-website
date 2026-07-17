@@ -9,22 +9,22 @@ source: https://docs.dynatrace.com/managed/whats-new/managed/sprint-342
 
 * Release notes
 * 5-min read
-* Published Jul 06, 2026
+* Updated on Jul 16, 2026
 * Rollout start on Jul 06, 2026
 
 This page showcases new features, changes, and bug fixes in Dynatrace Managed version 1.342. It contains:
 
-* [Feature updates](#updates): 4
+* [Feature updates](#updates): 3
 * [Breaking changes](#breaking): 1
-* [Fixes and maintenance](#fixes): 8
+* [Fixes and maintenance](#fixes): 6
 
 ## Feature updates
 
-Infrastructure Observability | Infrastructure & Operations
+Platform
 
-### New REST API serving public URIs for Dynatrace images
+### New availability metrics without maintenance windows
 
-We have added a new REST API to provide URIs for the images used in Dynatrace components.
+Two new metrics — `builtin:host.availabilityWithoutMaintenance` and `builtin:pgi.availabilityWithoutMaintenance` — let you calculate host and process group instance availability without counting maintenance window time. This gives you a cleaner picture of true operational availability, separate from planned downtime. The existing `host.availability.percent` and `pgi.availability.percent` metrics continue to reflect complete availability.
 
 Platform
 
@@ -41,12 +41,6 @@ Platform | Dashboards
 ### Selectable text in Dashboard markdown tiles
 
 Text in Dashboard markdown tiles can now be selected and copied — making it easier to reuse content from dashboards in other documents and tools.
-
-Software Delivery
-
-### Updated NGINX, OpenSSL, and OpenSSL FIPS
-
-We have updated NGINX to 1.30.x, OpenSSL to 3.5.x, and OpenSSL FIPS to 3.1.x.
 
 ## Breaking changes
 
@@ -68,6 +62,7 @@ For details, see [End-of-life announcements](/managed/whats-new/technology/end-o
 * Fixed a bug on the Oracle Insights **View Statements** page. (MGD-11991)
 * Fixed the Maintenance Window filter entity type lookup to avoid matching all entities for unknown entity types. (DI-28768)
 * Fixed repeated `WARNING` logs from `DavisGenericEventBuilder` about `smartscape.rootcause_entity` not being part of the `davis.event` Semantic Dictionary model during problem update ingestion. (DI-28569)
+* Fixed various charts which lead to crashes in the UI (DEM-28819)
 * The extensions `/monitoring-configurations` endpoint now accepts only fully-formed semver version properties when creating a new monitoring configuration. (DAQ-24971)
 
 ## Operating systems support

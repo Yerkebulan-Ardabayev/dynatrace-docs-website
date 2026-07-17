@@ -486,7 +486,7 @@ Bellsoft Liberica v21+ 32-bit are not supported
 | [IBM WebSphere Application Server﻿](https://www.ibm.com/products/software) | 8.5.5, 9.0, 8.5[3](#fn-application-servers-3-def) |
 | [IBM WebSphere Liberty﻿](https://developer.ibm.com/wasdev/websphere-liberty/) | 8.5 - 26[4](#fn-application-servers-4-def) |
 | [JBoss Enterprise Application Platform﻿](https://developers.redhat.com/products/eap/overview) | 7, 8 |
-| [Oracle WebLogic﻿](https://www.oracle.com/middleware/technologies/weblogic.html) | 11g[5](#fn-application-servers-5-def), 12c, 14c |
+| [Oracle WebLogic﻿](https://www.oracle.com/middleware/technologies/weblogic.html) | 11g[5](#fn-application-servers-5-def), 12c, 14c, 15.1.1[6](#fn-application-servers-6-def) |
 | [Payara﻿](https://www.payara.fish/) | 5, 6, 7 |
 | [WildFly﻿](https://wildfly.org/) | 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18 - 26, 27 - 40 |
 
@@ -509,6 +509,10 @@ Websphere Liberty's servlet 5 engine is supported since OneAgent version 1.259
 5
 
 10.3 = 11g
+
+6
+
+WebLogic thin client jar (wlthint3client.jar) is not supported. IIOP has known vendor issues in WebLogic 15.1.1; T3 is supported as a workaround for server-to-server connections only.
 
 | ESBs and SOA | Versions |
 | --- | --- |
@@ -680,7 +684,7 @@ Tracing is only supported via JMS.
 | [Akka Remoting﻿](https://doc.akka.io/docs/akka/2.5/remoting.html) | 2.4[2](#fn-remoting-frameworks-2-def), 2.5[2](#fn-remoting-frameworks-2-def), 2.3[3](#fn-remoting-frameworks-3-def), 2.6[3](#fn-remoting-frameworks-3-def), 2.7[3](#fn-remoting-frameworks-3-def) |
 | [Amazon AWS Lambda SDK﻿](https://aws.amazon.com/en/sdk-for-java/) | 1[1](#fn-remoting-frameworks-1-def), 2[1](#fn-remoting-frameworks-1-def) |
 | Amazon AWS SDK | 1[2](#fn-remoting-frameworks-2-def), 2[2](#fn-remoting-frameworks-2-def) |
-| [Apache Pekko Remoting﻿](https://pekko.apache.org/docs/pekko/current/remoting.html#classic-remoting-deprecated-) | 1.0.0 - 1.2.0[5](#fn-remoting-frameworks-5-def) |
+| [Apache Pekko Remoting﻿](https://pekko.apache.org/docs/pekko/current/remoting.html#classic-remoting-deprecated-) | 1.0.0 - 1.2.0[6](#fn-remoting-frameworks-6-def) |
 | [Apache Thrift﻿](https://thrift.apache.org/) | 0.7 - 0.13 |
 | [Azure SDK﻿](https://github.com/Azure/azure-sdk-for-java) | 1.2.9+ (Azure SDK BOM) |
 | Glassfish RMI-IIOP | All versions supported |
@@ -691,7 +695,7 @@ Tracing is only supported via JMS.
 | Java IMS TM Resource Adapter | All versions supported |
 | Java RMI-JRMP | All versions supported |
 | OpenJDK/Oracle JVM RMI-IIOP | All versions supported |
-| WebLogic RMI-IIOP | All versions supported |
+| WebLogic RMI-IIOP | All versions supported[5](#fn-remoting-frameworks-5-def) |
 | WebSphere Liberty RMI-IIOP | All versions supported |
 | WebSphere RMI-IIOP | All versions supported |
 | [gRPC﻿](https://grpc.github.io/grpc-java/javadoc/index.html) | 1.18 - 1.81[4](#fn-remoting-frameworks-4-def) |
@@ -713,6 +717,10 @@ Only supported when Netty is used; not supported when using Artery. Supported in
 gRPC client calls supported in [AWS Lambda](/managed/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration "AWS Lambda capabilities and integration options").
 
 5
+
+WebLogic 15.1.1 has known vendor IIOP issues. T3 is supported as a workaround for server-to-server connections only; thin client connections are not supported.
+
+6
 
 Only supported when classic-remoting is used; not supported when using Artery. Supported in [AWS Lambda](/managed/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration "AWS Lambda capabilities and integration options").
 
