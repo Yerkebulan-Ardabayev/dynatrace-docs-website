@@ -1,11 +1,11 @@
 ---
-title: Subscription overview (DPS for Hybrid)
+title: Overview (DPS for Hybrid)
 source: https://docs.dynatrace.com/managed/manage/account-management/license-subscription/subscription-overview-dps-hybrid
 ---
 
-# Subscription overview (DPS for Hybrid)
+# Overview (DPS for Hybrid)
 
-# Subscription overview (DPS for Hybrid)
+# Overview (DPS for Hybrid)
 
 * Explanation
 * 3-min read
@@ -14,7 +14,7 @@ source: https://docs.dynatrace.com/managed/manage/account-management/license-sub
 
 This page is specifically for customers with a DPS for Hybrid setup, see [DPS for Hybrid](/managed/license/dps-for-hybrid "DPS for Hybrid lets you share one subscription across multiple accounts.").
 
-If you do not share your DPS license with other accounts, see [Subscription (DPS)](/managed/manage/account-management/license-subscription/subscription-overview-dps "View your Dynatrace Platform Subscription budget summary and cost analysis.") for a description of your **Overview** view.
+If you do not share your DPS license with other accounts, see [Subscription (DPS)](/managed/manage/account-management/license-subscription/subscription-overview-dps "View your Dynatrace Platform Subscription (DPS) budget summary and cost analysis.") for a description of your **Overview** view.
 
 View access for subscription overview
 
@@ -97,7 +97,7 @@ This is the same information as shown at in the subscription overview view, see 
 
 The **Cost distribution** pane gives you insights into the account's consumption of different Dynatrace rate-card capabilities.
 
-Select **View details** to see the **Cost and usage details** page, see [Cost and usage](/managed/manage/account-management/license-subscription/subscription-overview-dps#dps-cost-and-usage "View your Dynatrace Platform Subscription budget summary and cost analysis.").
+Select **View details** to see the **Cost and usage details** page, see [Cost and usage](/managed/manage/account-management/license-subscription/subscription-overview-dps#dps-cost-and-usage "View your Dynatrace Platform Subscription (DPS) budget summary and cost analysis.").
 
 ### Cost Forecast
 
@@ -115,3 +115,9 @@ It does not guarantee future costs.
 
 The **Events** pane shows projected on-demand usage increase (percentage and cost) that you're forecast to incur at the end of the annual commitment period.
 When usage is forecasted to exceeds the annual commitment, the panel shows the specific date at which the forecasted usage exceeds the annual commitment.
+
+## Related topics
+
+* [Subscription (DPS) or License (classic license)](/managed/manage/account-management/license-subscription "View your Dynatrace license information, including budgets, cost analysis, and historical usage, for all license models.")
+* [License Dynatrace](/managed/license "Dynatrace Platform Subscription, capability rate cards, hybrid licensing, and previous license models.")
+* [Dynatrace pricing﻿](https://www.dynatrace.com/pricing/)

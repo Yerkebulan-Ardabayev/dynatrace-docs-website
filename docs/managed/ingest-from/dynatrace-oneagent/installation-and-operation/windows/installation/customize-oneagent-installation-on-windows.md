@@ -330,6 +330,8 @@ To change the host name after installation, use `--set-host-name` in the [OneAge
 
 Once configured, custom metadata is displayed as a set of properties at the bottom of the **Properties and tags** section of the host overview page. The property values must not contain the `=` (except key-value delimiter) and whitespace characters. The maximum length is 256 characters including the key-value delimiter.
 
+When custom host metadata is used to enrich metrics and other telemetry, the keys and values might be adjusted to meet normalization requirements: keys are converted to lowercase, unsupported characters are replaced with an underscore (`_`), and keys or values that exceed the maximum length are truncated. As a result, an enriched value can differ from what you set here.
+
 To add or change host properties:
 
 ```

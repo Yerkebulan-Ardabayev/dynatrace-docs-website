@@ -79,14 +79,14 @@ Raw manifest
 If you haven't installed OpenTelemetry Operator yet, first make sure [cert-manager﻿](https://cert-manager.io/docs/installation/) is installed. Afterwards, you can deploy Operator with the following `kubectl` command:
 
 ```
-kubectl apply -f https://github.com/open-telemetry/opentelemetry-operator/releases/download/v0.154.0/opentelemetry-operator.yaml
+kubectl apply -f https://github.com/open-telemetry/opentelemetry-operator/releases/download/v0.156.0/opentelemetry-operator.yaml
 ```
 
 After the installation, deploy the Dynatrace OTel Collector either in [gateway or agent deployment mode](#deployment-modes), with one of the following configuration samples. Save it as `crd-dynatrace-collector.yaml` and deploy it with `kubectl apply`.
 
 Custom Resource Definition
 
-The Kubernetes CRD of the Operator can be found on [GitHub﻿](https://github.com/open-telemetry/opentelemetry-operator/blob/v0.154.0/docs/api/opentelemetrycollectors.md).
+The Kubernetes CRD of the Operator can be found on [GitHub﻿](https://github.com/open-telemetry/opentelemetry-operator/blob/v0.156.0/docs/api/opentelemetrycollectors.md).
 
 Deploy as a gateway (Deployment)
 

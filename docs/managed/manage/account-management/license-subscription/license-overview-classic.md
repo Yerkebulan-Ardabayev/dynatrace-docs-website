@@ -1,11 +1,11 @@
 ---
-title: License overview (Dynatrace classic licensing)
+title: Overview (Dynatrace classic licensing)
 source: https://docs.dynatrace.com/managed/manage/account-management/license-subscription/license-overview-classic
 ---
 
-# License overview (Dynatrace classic licensing)
+# Overview (Dynatrace classic licensing)
 
-# License overview (Dynatrace classic licensing)
+# Overview (Dynatrace classic licensing)
 
 * Explanation
 * 3-min read
@@ -17,7 +17,7 @@ Historical analysis is available at the daily or hourly level.
 
 You can access this information at **Account Management** > **License**.
 
-If you see **Account Management** > **Subscription**, please refer to our [Dynatrace Platform Subscription documentation](/managed/manage/account-management/license-subscription/subscription-overview-dps "View your Dynatrace Platform Subscription budget summary and cost analysis.") instead.
+If you see **Account Management** > **Subscription**, please refer to our [Dynatrace Platform Subscription documentation](/managed/manage/account-management/license-subscription/subscription-overview-dps "View your Dynatrace Platform Subscription (DPS) budget summary and cost analysis.") instead.
 
 ## Total license usage
 

@@ -9,7 +9,7 @@ source: https://docs.dynatrace.com/managed/observe/digital-experience/rum-classi
 
 * How-to guide
 * 12-min read
-* Updated on Apr 16, 2024
+* Updated on Jun 22, 2026
 
 The Dynatrace Xamarin NuGet package helps auto-instrument your Xamarin app with OneAgent for Android and iOS as well as provides an API for [manual instrumentation](#usage-mobile-agent). The package is compatible with `Xamarin.iOS`, `Xamarin.Android`, and `Xamarin.Forms` projects.
 
@@ -44,9 +44,9 @@ We recommend that you [upgrade your Xamarin projects to .NET﻿](https://learn.m
 
 * **For Android:**
 
-  + Android version 5.0+ (API 21+)
+  + Android version 6.0+ (API 23+)
   + Xamarin.Android SDK version 10.1.x+
-* **For iOS:** iOS version 12+
+* **For iOS:** iOS version 15+
 * **For Xamarin.Forms:** .NET Standard version 2.0+
 
 ## Set up the package

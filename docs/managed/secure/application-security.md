@@ -94,7 +94,7 @@ Same capabilities as Full-Stack Monitoring mode.
 
 #### Consumption
 
-* If you're using the [Dynatrace Platform Subscription (DPS) licensing model](/managed/license "Dynatrace Platform Subscription, capability rate cards, hybrid licensing, and previous license models."), see [Host monitoring (DPS): Infrastructure Monitoring](/managed/license/capabilities/app-infra-observability/infrastructure-monitoring "Learn how your consumption of the Dynatrace Infrastructure Monitoring DPS capability is billed and charged.").
+* If you're using the [Dynatrace Platform Subscription (DPS) licensing model](/managed/license "Dynatrace Platform Subscription, capability rate cards, hybrid licensing, and previous license models."), see [Host monitoring (DPS): Infrastructure Monitoring](/managed/license/capabilities/app-infra-observability/infrastructure-monitoring "Learn how Infrastructure Monitoring consumption is calculated, how to track and analyze your usage, and how to optimize your spend.").
 * If you're using the [Dynatrace classic licensing](/managed/license/monitoring-consumption-classic "Understand how Dynatrace classic monitoring consumption is calculated, including host units, DDUs, DEM units, and Application Security units."), see [Application and Infrastructure Monitoring (Host Units)](/managed/license/classic-licensing/application-and-infrastructure-monitoring "Understand how Dynatrace application and infrastructure monitoring consumption is calculated based on host units.").
 
 ### Discovery mode

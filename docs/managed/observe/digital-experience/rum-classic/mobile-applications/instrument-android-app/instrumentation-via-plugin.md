@@ -9,7 +9,7 @@ source: https://docs.dynatrace.com/managed/observe/digital-experience/rum-classi
 
 * Overview
 * 6-min read
-* Updated on Mar 05, 2026
+* Updated on Jun 22, 2026
 
 You can use the Dynatrace Android Gradle plugin only for Android projects that use the [Android Gradle plugin﻿](https://developer.android.com/studio/build/index.html) to build the app. You should apply the Dynatrace Android Gradle to the [top-level build file﻿](https://dt-url.net/top-level-build-file) (either `build.gradle` or `build.gradle.kts`), which is located in the root project directory. This approach allows the plugin to properly configure the Android subprojects and establish the auto-instrumentation process as part of the Android build process.
 
@@ -21,9 +21,9 @@ In a couple of months, we'll stop setting cookies to file scheme domains for hyb
 
 ## Requirements
 
-* Gradle version 7.0.2+
-* Android Gradle plugin version 7.0+
-* JVM: Java 11+
+* Gradle version 8.0+
+* Android Gradle plugin version 8.1.1+
+* JVM: Java 17+
 
 ## Instrumentation
 

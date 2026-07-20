@@ -44,7 +44,7 @@ The Account Management Budget Summary screen for Dynatrace Platform Subscription
 * **Cost and usage breakdown**: a detailed cost and usage breakdown for the last 30 days, including consumption by capability and by environment.
 * **Cost and usage analysis**: a flexible drill-down view where you can compare time periods, filter by environment or capability, and identify cost drivers and trends.
 
-For a detailed walkthrough of the UI, see [Subscription overview (Dynatrace Platform Subscription)](/managed/manage/account-management/license-subscription/subscription-overview-dps "View your Dynatrace Platform Subscription budget summary and cost analysis.").
+For a detailed walkthrough of the UI, see [Overview (Dynatrace Platform Subscription)](/managed/manage/account-management/license-subscription/subscription-overview-dps "View your Dynatrace Platform Subscription (DPS) budget summary and cost analysis.").
 
 Costs are calculated daily at 02:00:00 UTC based upon the availability of on-premise clusters and an active connection to Dynatrace.
 When clusters are unavailable, this results in late delivery of usage data for cost calculations and delays budget notifications.

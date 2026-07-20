@@ -25,7 +25,7 @@ On startup, Dynatrace Operator registers the [webhook](#webhook) with the Kubern
 * Manage workloads
 * Register components on the Dynatrace server
 
-This functionality is constrained to the namespace where Dynatrace Operator is deployed.
+Dynatrace Operator reconciles its own custom resources only within its deployment namespace.
 
 Namespaces monitored by Dynatrace Operator should be configured as follows:
 

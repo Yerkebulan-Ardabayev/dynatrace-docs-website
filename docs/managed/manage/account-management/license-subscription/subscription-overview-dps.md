@@ -1,11 +1,11 @@
 ---
-title: Subscription overview (Dynatrace Platform Subscription)
+title: Overview (Dynatrace Platform Subscription)
 source: https://docs.dynatrace.com/managed/manage/account-management/license-subscription/subscription-overview-dps
 ---
 
-# Subscription overview (Dynatrace Platform Subscription)
+# Overview (Dynatrace Platform Subscription)
 
-# Subscription overview (Dynatrace Platform Subscription)
+# Overview (Dynatrace Platform Subscription)
 
 * Explanation
 * 3-min read
@@ -123,3 +123,9 @@ To view the environment cost and usage analysis for any environment, select **Ac
 This page is a variant of the **Capability cost and usage analysis** page, which displays cumulative cost and usage by capability.
 
 Select a capability from the filter above the chart to view usage for the selected time frame.
+
+## Related topics
+
+* [Subscription (DPS) or License (classic license)](/managed/manage/account-management/license-subscription "View your Dynatrace license information, including budgets, cost analysis, and historical usage, for all license models.")
+* [License Dynatrace](/managed/license "Dynatrace Platform Subscription, capability rate cards, hybrid licensing, and previous license models.")
+* [Dynatrace pricing﻿](https://www.dynatrace.com/pricing/)

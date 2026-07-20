@@ -31,4 +31,4 @@ Terminology and definitions for the Dynatrace Platform Subscription.](/managed/l
 
 Answers to common questions about the Dynatrace Platform Subscription.](/managed/license/faq "Answers to common questions about the Dynatrace Platform Subscription model.")[### Subscription overview
 
-Get your DPS budget summary, cost and usage breakdowns, and cost and usage analysis.](/managed/manage/account-management/license-subscription/subscription-overview-dps "View your Dynatrace Platform Subscription budget summary and cost analysis.")
+Get your DPS budget summary, cost and usage breakdowns, and cost and usage analysis.](/managed/manage/account-management/license-subscription/subscription-overview-dps "View your Dynatrace Platform Subscription (DPS) budget summary and cost analysis.")

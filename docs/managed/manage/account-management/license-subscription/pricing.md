@@ -1,11 +1,11 @@
 ---
-title: Pricing (DPS)
+title: Pricing
 source: https://docs.dynatrace.com/managed/manage/account-management/license-subscription/pricing
 ---
 
-# Pricing (DPS)
+# Pricing
 
-# Pricing (DPS)
+# Pricing
 
 * Explanation
 * 3-min read
@@ -38,6 +38,6 @@ Capabilities that have been removed from your subscription continue to appear wi
 
 ## Related topics
 
-* [Subscription or license overview](/managed/manage/account-management/license-subscription "View your Dynatrace license information, including budgets, cost analysis, and historical usage, for all license models.")
+* [Subscription (DPS) or License (classic license)](/managed/manage/account-management/license-subscription "View your Dynatrace license information, including budgets, cost analysis, and historical usage, for all license models.")
 * [License Dynatrace](/managed/license "Dynatrace Platform Subscription, capability rate cards, hybrid licensing, and previous license models.")
 * [Dynatrace pricing﻿](https://www.dynatrace.com/pricing/)

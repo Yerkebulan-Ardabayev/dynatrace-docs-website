@@ -9,7 +9,7 @@ source: https://docs.dynatrace.com/managed/ingest-from/dynatrace-oneagent/oneage
 
 * Reference
 * 20-min read
-* Updated on Jun 23, 2026
+* Updated on Jul 13, 2026
 
 Use the `oneagentctl` command-line interface to perform some post-installation OneAgent configuration at the individual host level.
 
@@ -488,6 +488,8 @@ To show the host name:
 ### Custom host metadata
 
 Once configured, custom metadata is displayed as a set of properties at the bottom of the **Properties and tags** section of the host overview page. The property values must not contain an `=` character (unless used as a key-value delimiter) or whitespace characters. The maximum length is 256 characters, including the key-value delimiter. The key name must not start with a `#` character.
+
+When custom host metadata is used to enrich metrics and other telemetry, the keys and values might be adjusted to meet normalization requirements: keys are converted to lowercase, unsupported characters are replaced with an underscore (`_`), and keys or values that exceed the maximum length are truncated. As a result, an enriched value can differ from what you set here.
 
 Alternatively, to modify host metadata centrally from the Dynatrace Cluster, you can use [Remote configuration management](/managed/ingest-from/bulk-configuration#configure-oneagents "Perform OneAgent and ActiveGate configuration on hosts from the Deployment status page or at scale using the Dynatrace API.") (select the **modify host properties** action).
 

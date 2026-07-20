@@ -86,6 +86,8 @@ To add or change host properties, run the following command:
   `.\oneagentctl.exe --set-host-property=AppName=easyTravel --set-host-property=Environment=Dev`
   You can add or change more than one property in the same command.
 
+When custom host metadata is used to enrich metrics and other telemetry, the keys and values might be adjusted to meet normalization requirements: keys are converted to lowercase, unsupported characters are replaced with an underscore (`_`), and keys or values that exceed the maximum length are truncated. As a result, an enriched value can differ from what you set here.
+
 To set a security context for your host, use the following command:
 
 * **Linux** and **AIX**  

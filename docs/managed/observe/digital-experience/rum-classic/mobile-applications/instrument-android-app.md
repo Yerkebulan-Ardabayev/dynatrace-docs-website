@@ -48,8 +48,6 @@ Jetpack Compose auto-instrumentation for [Session Replay](/managed/observe/digit
 
 [Mobile applications: Build issues with Dynatrace Android Gradle plugin﻿](https://dt-url.net/wd438of)
 
-We no longer support Java 8 for the [Dynatrace Android Gradle plugin version 8.261+](/managed/observe/digital-experience/rum-classic/mobile-applications/instrument-android-app/instrumentation-via-plugin "Learn how the Dynatrace Android Gradle plugin can auto-instrument your Android application project."), as Java 11 is required for the latest version of the Android Gradle plugin API.
-
 ## Related topics
 
 * [Configure Session Replay Classic for Android](/managed/observe/digital-experience/session-replay/session-replay-android "Set up Session Replay Classic for your Android apps to learn which actions your users perform.")

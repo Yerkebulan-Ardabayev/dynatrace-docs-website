@@ -251,7 +251,7 @@ Make sure to use the command prompt (`cmd.exe`) on Windows; PowerShell isn't sup
 
 Dynatrace Operator version 1.0.0+
 
-If the `operator` pod is not functioning due to severe startup issues, you can run the `support-archive` command in a standalone Pod using the following command. Keep in mind that running this command in a standalone pod is recommended only as a last resort.
+If the `operator` pod is not functioning due to severe startup issues or terminates unexpectedly, you can run the `support-archive` command in a standalone Pod using the following command. Keep in mind that running this command in a standalone pod is recommended only as a last resort.
 
 ```
 kubectl run -n dynatrace support-archive --rm -i --overrides='{ "spec": { "serviceAccount": "dynatrace-operator" }  }' --restart Never --image <operator-image> -- support-archive --delay 10 --stdout > support-archive.zip
@@ -260,6 +260,8 @@ kubectl run -n dynatrace support-archive --rm -i --overrides='{ "spec": { "servi
 * Ensure that you use the same image as the `operator` pod.
 * The `--delay 10` parameter is important because `kubectl run` tends to miss the first few lines of output, which could lead to corruption of the support archive.
 * Specify the `serviceAccount` as `dynatrace-operator` in the command as it allows the standalone pod to access all necessary logs and Kubernetes manifests required for compiling the support archive. Note that this method relies on the Dynatrace Operator resources still being installed and available on the cluster.
+
+Out-of-memory (OOM) kills may occur on large clusters where the volume of collected pod data causes the Dynatrace Operator to exceed its memory limit. This is more likely when the Dynatrace Operator is not sized appropriately for the cluster. If this is the case, the standalone pod method above can help collect the archive.
 
 #### Sample output
 

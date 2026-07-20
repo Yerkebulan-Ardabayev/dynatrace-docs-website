@@ -1462,7 +1462,7 @@ As of version 1.29, Envoy exports data using [OpenTelemetry](/managed/ingest-fro
 | Servers | Versions | Platforms |
 | --- | --- | --- |
 | [Kong Gateway](/managed/ingest-from/technology-support/application-software/nginx/kong-gateway "Learn how to monitor the Kong Gateway with Dynatrace.") | 2.8 - 3.6[3](#fn-servers-3-def), 3.7 - 3.9[4](#fn-servers-4-def), 3.10 - 3.14[4](#fn-servers-4-def) | Alpine Linux 64-bit (ARM64 (AArch64), x86-64), Linux (ARM64 (AArch64), x86-64) |
-| [NGINX](/managed/ingest-from/technology-support/application-software/nginx#nginx-versions "Learn the details of Dynatrace support for NGINX.") | 1.11.5 - 1.13.8[1](#fn-servers-1-def), 1.13.9 - 1.14.0[1](#fn-servers-1-def), 1.14.1 - 1.15.8[1](#fn-servers-1-def), 1.15.9 - 1.15.10[1](#fn-servers-1-def), 1.15.11 - 1.16.0[1](#fn-servers-1-def), 1.16.1 - 1.17.3[1](#fn-servers-1-def), 1.17.4 - 1.17.6[1](#fn-servers-1-def), 1.17.7[1](#fn-servers-1-def), 1.17.8[1](#fn-servers-1-def), 1.17.9[1](#fn-servers-1-def), 1.17.10 - 1.18.0, 1.19.0, 1.19.1, 1.19.2, 1.19.3, 1.19.4, 1.19.5, 1.19.6, 1.19.7, 1.19.8, 1.19.9, 1.19.10, 1.20.0, 1.20.1, 1.20.2, 1.21.0, 1.21.1, 1.21.2, 1.21.3, 1.21.4, 1.21.5, 1.21.6, 1.22.0, 1.22.1, 1.23.0, 1.23.1, 1.23.2, 1.23.3, 1.23.4, 1.24.0, 1.25.0, 1.25.1, 1.25.2, 1.25.3, 1.25.4, 1.25.5, 1.26.0, 1.26.1, 1.26.2, 1.26.3, 1.27.0, 1.27.1, 1.27.2, 1.27.3, 1.27.4, 1.27.5, 1.28.0, 1.28.1, 1.28.2, 1.28.3, 1.29.0, 1.29.1, 1.29.2, 1.29.3, 1.29.4, 1.29.5, 1.29.6[2](#fn-servers-2-def), 1.29.7[2](#fn-servers-2-def), 1.29.8[2](#fn-servers-2-def), 1.30.0[2](#fn-servers-2-def) | Alpine Linux 64-bit (ARM64 (AArch64), x86-64), Linux (ARM64 (AArch64), x86-64, PPCLE) |
+| [NGINX](/managed/ingest-from/technology-support/application-software/nginx#nginx-versions "Learn the details of Dynatrace support for NGINX.") | 1.11.5 - 1.13.8[1](#fn-servers-1-def), 1.13.9 - 1.14.0[1](#fn-servers-1-def), 1.14.1 - 1.15.8[1](#fn-servers-1-def), 1.15.9 - 1.15.10[1](#fn-servers-1-def), 1.15.11 - 1.16.0[1](#fn-servers-1-def), 1.16.1 - 1.17.3[1](#fn-servers-1-def), 1.17.4 - 1.17.6[1](#fn-servers-1-def), 1.17.7[1](#fn-servers-1-def), 1.17.8[1](#fn-servers-1-def), 1.17.9[1](#fn-servers-1-def), 1.17.10 - 1.18.0, 1.19.0, 1.19.1, 1.19.2, 1.19.3, 1.19.4, 1.19.5, 1.19.6, 1.19.7, 1.19.8, 1.19.9, 1.19.10, 1.20.0, 1.20.1, 1.20.2, 1.21.0, 1.21.1, 1.21.2, 1.21.3, 1.21.4, 1.21.5, 1.21.6, 1.22.0, 1.22.1, 1.23.0, 1.23.1, 1.23.2, 1.23.3, 1.23.4, 1.24.0, 1.25.0, 1.25.1, 1.25.2, 1.25.3, 1.25.4, 1.25.5, 1.26.0, 1.26.1, 1.26.2, 1.26.3, 1.27.0, 1.27.1, 1.27.2, 1.27.3, 1.27.4, 1.27.5, 1.28.0, 1.28.1, 1.28.2, 1.28.3, 1.29.0, 1.29.1, 1.29.2, 1.29.3, 1.29.4, 1.29.5, 1.29.6[2](#fn-servers-2-def), 1.29.7[2](#fn-servers-2-def), 1.29.8[2](#fn-servers-2-def), 1.30.0[2](#fn-servers-2-def), 1.30.1[2](#fn-servers-2-def), 1.31.0[2](#fn-servers-2-def) | Alpine Linux 64-bit (ARM64 (AArch64), x86-64), Linux (ARM64 (AArch64), x86-64, PPCLE) |
 | [NGINX Plus](/managed/ingest-from/technology-support/application-software/nginx#nginx-plus-versions "Learn the details of Dynatrace support for NGINX.") | R11 - R14[2](#fn-servers-2-def), R15[2](#fn-servers-2-def), R16 - R17[2](#fn-servers-2-def), R18[2](#fn-servers-2-def), R19[2](#fn-servers-2-def), R20[2](#fn-servers-2-def), R21[2](#fn-servers-2-def), R22, R23, R24, R25, R26, R27, R28, R29, R30, R31, R32, R33, R34, R35, R36 | Alpine Linux 64-bit (x86-64), Linux (x86-64, ARM64 (AArch64), PPCLE) |
 | [OpenResty](/managed/ingest-from/technology-support/application-software/nginx#openresty-versions "Learn the details of Dynatrace support for NGINX.") | 1.13.6, 1.15.8, 1.17.8, 1.19.3, 1.19.9, 1.21.4.1, 1.21.4.2, 1.21.4.3, 1.25.3.1, 1.25.3.2, 1.27.1.1, 1.27.1.2, 1.29.2.1, 1.29.2.3 | Alpine Linux 64-bit (ARM64 (AArch64), x86-64), Linux (ARM64 (AArch64), x86-64) |
 | [Tengine](/managed/ingest-from/technology-support/application-software/nginx#tengineversions "Learn the details of Dynatrace support for NGINX.") | 1.4.2 - 2.2.3, 2.3.0 - 2.3.3, 2.3.4, 2.4.0, 2.4.1 | Alpine Linux 64-bit (x86-64), Linux (x86-64) |
@@ -1581,9 +1581,9 @@ To enable this as a OneAgent feature, go to **Settings** > **Preferences** > **O
 
 | Operating systems | Versions |
 | --- | --- |
-| [Android](/managed/observe/digital-experience/rum-classic/mobile-applications/instrument-android-app "Learn how to instrument mobile application monitoring on Android, how to customize instrumentation and more.") | 5.0+ (API 21+) |
-| [iOS](/managed/observe/digital-experience/rum-classic/mobile-applications/instrument-ios-app "Instrument mobile application monitoring for iOS apps, customize the auto-instrumentation, and capture additional data via manual instrumentation.") | 12+ |
-| [tvOS](/managed/observe/digital-experience/rum-classic/mobile-applications/instrument-ios-app "Instrument mobile application monitoring for iOS apps, customize the auto-instrumentation, and capture additional data via manual instrumentation.") | 12+ |
+| [Android](/managed/observe/digital-experience/rum-classic/mobile-applications/instrument-android-app "Learn how to instrument mobile application monitoring on Android, how to customize instrumentation and more.") | 6.0+ (API 23+) |
+| [iOS](/managed/observe/digital-experience/rum-classic/mobile-applications/instrument-ios-app "Instrument mobile application monitoring for iOS apps, customize the auto-instrumentation, and capture additional data via manual instrumentation.") | 15+ |
+| [tvOS](/managed/observe/digital-experience/rum-classic/mobile-applications/instrument-ios-app "Instrument mobile application monitoring for iOS apps, customize the auto-instrumentation, and capture additional data via manual instrumentation.") | 15+ |
 
 #### Frameworks
 
@@ -1617,12 +1617,12 @@ Starting with OneAgent for iOS version 8.335, Dynatrace stopped supporting Xcode
 
 Also, be aware that [Apple's App Store submission guidelines﻿](https://dt-url.net/we038fb) will restrict support to applications built with a minimum of Xcode 26 around April 2026.
 
-Starting with OneAgent for iOS version 8.343, Dynatrace will stop supporting iOS 12, iOS 13, and iOS 14. The new minimum supported version is iOS 15. Version 8.341 is the last OneAgent for iOS version to support iOS 12 - 14.
+Starting with OneAgent for iOS version 8.343, Dynatrace stopped supporting iOS 12, iOS 13, and iOS 14. The minimum supported version is iOS 15. Version 8.341 is the last OneAgent for iOS version to support iOS 12 - 14.
 
 #### Dynatrace Android Gradle plugin
 
-* Gradle version 7.0.2+
-* Android Gradle plugin version 7.0+
+* Gradle version 8.0+
+* Android Gradle plugin version 8.1.1+
 
 For more details, check [Dynatrace Android Gradle plugin in RUM Classic](/managed/observe/digital-experience/rum-classic/mobile-applications/instrument-android-app/instrumentation-via-plugin "Learn how the Dynatrace Android Gradle plugin can auto-instrument your Android application project.").
 

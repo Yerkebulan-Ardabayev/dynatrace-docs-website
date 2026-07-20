@@ -9,7 +9,7 @@ source: https://docs.dynatrace.com/managed/observe/application-observability/ser
 
 * Overview
 * 1-min read
-* Updated on Jun 17, 2026
+* Updated on Jul 14, 2026
 
 Cluster version 1.318+
 

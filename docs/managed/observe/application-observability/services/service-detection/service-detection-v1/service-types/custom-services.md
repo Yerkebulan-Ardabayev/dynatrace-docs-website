@@ -9,7 +9,7 @@ source: https://docs.dynatrace.com/managed/observe/application-observability/ser
 
 * How-to guide
 * 9-min read
-* Updated on Sep 17, 2025
+* Updated on Jul 14, 2026
 
 A custom service is a service that has a manually defined entry point, such as a method, class, or interface. You can define custom services for Java, .NET, Go, and PHP. Each custom service may contain multiple entry points.
 
@@ -24,6 +24,12 @@ Dynatrace allows you to define any method, class, or interface as the entry poin
 Dissociated transactions
 
 If transactions aren't connected, creating a custom service **will not** help to stitch them. A custom service will create a new entry point.
+
+## Custom service behavior in SDv1 and SDv2
+
+In [Service Detection v1 (SDv1)](/managed/observe/application-observability/services/service-detection/service-detection-v1 "Find out how Dynatrace Service Detection v1 detects and names different types of services."), each custom service is a separate service entity.
+
+In [Service Detection v2 (SDv2)](/managed/observe/application-observability/services/service-detection/service-detection-v2 "Find out how to detect, name, and split services from OpenTelemetry and OneAgent spans."), defining a custom service does not create a new service entity. Instead, the selected class or method becomes a span on the existing service the code runs in. This is by design: SDv2 is built on the one-service-per-process model, so an internal operation is part of a service, not a service of its own.
 
 ## Method delegation
 

@@ -42,4 +42,4 @@ Starting with OneAgent for iOS version 8.335, Dynatrace stopped supporting Xcode
 
 Also, be aware that [Apple's App Store submission guidelines﻿](https://dt-url.net/we038fb) will restrict support to applications built with a minimum of Xcode 26 around April 2026.
 
-Starting with OneAgent for iOS version 8.343, Dynatrace will stop supporting iOS 12, iOS 13, and iOS 14. The new minimum supported version is iOS 15. Version 8.341 is the last OneAgent for iOS version to support iOS 12 - 14.
+Starting with OneAgent for iOS version 8.343, Dynatrace stopped supporting iOS 12, iOS 13, and iOS 14. The minimum supported version is iOS 15. Version 8.341 is the last OneAgent for iOS version to support iOS 12 - 14.

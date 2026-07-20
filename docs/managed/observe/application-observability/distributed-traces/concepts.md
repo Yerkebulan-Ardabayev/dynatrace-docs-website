@@ -44,7 +44,7 @@ Attributes are key-value pairs that provide details about a span, request, or re
 
 Dynatrace uses attribute metadata to
 
-* [Detect and name services](/managed/observe/application-observability/services/service-detection/service-detection-v1 "Find out how Dynatrace Service Detection v1 detects and names different types of services.").
+* [Detect and name services](/managed/observe/application-observability/services/service-detection "Understand the two approaches that Dynatrace uses for service detection.").
 * Gather data on the trace context and relationships with other entities for [Smartscape topology](/managed/analyze-explore-automate/smartscape-classic "Learn how Smartscape visualizes all the entities and dependencies in your environment.").
 * Connect log data to traces for [Logs Classic](/managed/analyze-explore-automate/log-monitoring/log-monitoring-configuration/log-enrichment "Learn how you can connect your incoming log data to traces for more precise Dynatrace analysis.").
 * Understand how the duration of a span is affected by [service timings](/managed/observe/application-observability/services-classic/service-analysis-timing "Find out what each time in service analysis means.") (for example, CPU time, network time, or just waiting for other threads) and analyze which code was executed in the context of the span.

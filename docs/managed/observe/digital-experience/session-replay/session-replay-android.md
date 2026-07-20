@@ -9,7 +9,7 @@ source: https://docs.dynatrace.com/managed/observe/digital-experience/session-re
 
 * How-to guide
 * 7-min read
-* Updated on Feb 18, 2026
+* Updated on Jun 22, 2026
 
 This page describes how to enable and customize Session Replay for your Android apps.
 
@@ -33,18 +33,17 @@ Make sure that your system meets the following requirements:
 
 ## Supported technologies and known limitations
 
-* Android 5.0+ (API level 21+) is supported.
-* Android Gradle plugin 7.0+ is supported.
-* Kotlin version 1.9+ is supported.
-
-  + Kotlin version 1.8 is supported for Kotlin compatibility.
+* Android 6.0+ (API level 23+) is supported.
+* Android Gradle plugin 8.1.1+ is supported.
+* Kotlin version 2.1.0+ is supported.
 * Jetpack Compose version 1.4+ is supported starting with OneAgent for Android version 8.325.
-* Session Replay is not available for cross-platform frameworks such as Cordova, React Native, Flutter, Xamarin, and similar.
+* Session Replay is not available for cross-platform frameworks such as Cordova, React Native, Flutter, Xamarin, and more
 * For a hybrid app, Session Replay is supported only for the native part of the app. Session Replay is not supported for the browser part of a hybrid app.
 * Only AndroidX support libraries are supported. Classes such as Activity or Fragment in com.android.support are not supported.
 * We recommend not using other crash reporting tools together with Dynatrace Session Replay.
-* Session Replay can capture only certain events. However, if you need to track a specific view or event that is not supported by default, you can [capture a custom event](#capture-custom-events).
-* You can only play back the user sessions recorded with Session Replay in [certain browsers](/managed/discover-dynatrace/get-started/dynatrace-ui/dynatrace-web-ui-requirements#session-replay "Browser and TLS requirements for the Dynatrace Managed web UI, including supported browsers for Session Replay and Synthetic Monitoring.").
+* Session Replay can capture only certain events. However, if you need to track a specific view or event that is not supported by default, you can [capture a custom event](/managed/observe/digital-experience/session-replay/session-replay-android#capture-custom-events "Set up Session Replay Classic for your Android apps to learn which actions your users perform.").
+* You can play back the user sessions recorded with Session Replay only in [certain browsers](/managed/discover-dynatrace/get-started/dynatrace-ui/dynatrace-web-ui-requirements#session-replay "Browser and TLS requirements for the Dynatrace Managed web UI, including supported browsers for Session Replay and Synthetic Monitoring.").
+* See [Technical restrictions for Session Replay for web applications](/managed/observe/digital-experience/session-replay/session-replay-restrictions-web "Learn which restrictions apply to Session Replay Classic.") for more information.
 
 Session Replay is a video-like reconstruction of the user interaction with mobile application, that uses captured events and data. Because of this approach replayed session can differ from the actual user experience. Known issues
 

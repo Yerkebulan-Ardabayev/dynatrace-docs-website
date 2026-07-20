@@ -116,7 +116,7 @@ Yes. You can add additional accounts at any time.
 
 Where can I see the data across all accounts?
 
-Once you're set up with DPS for Hybrid, you can see all license- and account-level information in Account Management, see [Subscription overview (DPS for Hybrid)](/managed/manage/account-management/license-subscription/subscription-overview-dps-hybrid "View your DPS for Hybrid budget summary and cost analysis.").
+Once you're set up with DPS for Hybrid, you can see all license- and account-level information in Account Management, see [Overview (DPS for Hybrid)](/managed/manage/account-management/license-subscription/subscription-overview-dps-hybrid "View your DPS for Hybrid budget summary and cost analysis.").
 This offers insights and information similar to the Subscription Overview for standard DPS licenses.
 
 So, every account has its budget, and then there is one commit above?
@@ -140,5 +140,5 @@ This contains all relevant Managed and/or SaaS capabilities.
 
 ## Related topics
 
-* [Subscription overview (DPS for Hybrid)](/managed/manage/account-management/license-subscription/subscription-overview-dps-hybrid "View your DPS for Hybrid budget summary and cost analysis.")
+* [Overview (DPS for Hybrid)](/managed/manage/account-management/license-subscription/subscription-overview-dps-hybrid "View your DPS for Hybrid budget summary and cost analysis.")
 * [License Dynatrace](/managed/license "Dynatrace Platform Subscription, capability rate cards, hybrid licensing, and previous license models.")

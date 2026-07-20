@@ -32,7 +32,7 @@ In most cases, exactly one account (through its associated environments) consume
 With [DPS for Hybrid](/managed/license/dps-for-hybrid "DPS for Hybrid lets you share one subscription across multiple accounts."), it's also possible in certain cases to have multiple accounts consume from a single subscription.
 
 Account administrators can use **Account Management** to view information about licenses or subscriptions.
-For more information, see [Subscription or license overview](/managed/manage/account-management/license-subscription "View your Dynatrace license information, including budgets, cost analysis, and historical usage, for all license models.").
+For more information, see [Subscription (DPS) or License (classic license)](/managed/manage/account-management/license-subscription "View your Dynatrace license information, including budgets, cost analysis, and historical usage, for all license models.").
 Usage is continuously metered, and you can monitor consumption, forecast costs, and manage budgets across environments and accounts.
 
 ## What is a Dynatrace account?

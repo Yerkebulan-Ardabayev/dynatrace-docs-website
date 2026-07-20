@@ -9,7 +9,7 @@ source: https://docs.dynatrace.com/managed/observe/digital-experience/rum-classi
 
 * How-to guide
 * 10-min read
-* Updated on Apr 03, 2026
+* Updated on Jun 22, 2026
 
 Dynatrace version 1.265+
 
@@ -38,8 +38,8 @@ The Dynatrace .NET MAUI NuGet package is available for Android and iOS. You cann
 
 ## Requirements
 
-* **For Android:** Android version 5.0+ (API 21+)
-* **For iOS:** iOS version 12+
+* **For Android:** Android version 6.0+ (API 23+)
+* **For iOS:** iOS version 15+
 
 ## Set up the package
 

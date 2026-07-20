@@ -29,11 +29,11 @@ Follow the steps below to set up the Dynatrace React Native plugin for your mobi
 
 * React 16.8+
 * React Native 0.60+
-* Android version 5.0+ (API 21+)
-* Gradle version 7.0+
-* Android Gradle plugin version 7.0+
-* Java 11
-* iOS version 12+
+* Android version 6.0+ (API 23+)
+* Gradle version 8.0+
+* Android Gradle plugin version 8.1.1+
+* Java 17
+* iOS version 15+
 
 ## Step 1 Create a mobile application in Dynatrace
 
