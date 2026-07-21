@@ -1,48 +1,47 @@
 ---
-title: Access tokens API - POST поиск токена
+title: Access tokens API - POST token lookup
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/tokens-v2/api-tokens/post-token-lookup
-scraped: 2026-05-12T12:01:13.018046
 ---
 
-# Access tokens API - POST поиск токена
+# Access tokens API - POST token lookup
 
-# Access tokens API - POST поиск токена
+# Access tokens API - POST token lookup
 
-* Reference
-* Published Mar 15, 2021
+* Справочник
+* Опубликовано 15 марта 2021 г.
 
-Возвращает метаданные API-токена по его секрету.
+Получает метаданные токена API по его секрету.
 
-Запрос принимает и возвращает payload в формате `application/json`.
+Запрос принимает и возвращает данные в формате `application/json`.
 
 |  |  |  |
 | --- | --- | --- |
 | POST | ManagedDynatrace for Government | `https://{your-domain}/e/{your-environment-id}/api/v2/apiTokens/lookup` |
-| POST | Environment and Cluster ActiveGate (default port 9999) | `https://{your-activegate-domain}:9999/e/{your-environment-id}/api/v2/apiTokens/lookup` |
+| POST | Environment и Cluster ActiveGate (порт по умолчанию 9999) | `https://{your-activegate-domain}:9999/e/{your-environment-id}/api/v2/apiTokens/lookup` |
 
 ## Аутентификация
 
-Для выполнения запроса необходим access token с **любым** scope.
+Для выполнения этого запроса нужен токен доступа с **любым** scope.
 
-О том, как получить и использовать токен, см. [Токены и аутентификация](/managed/discover-dynatrace/references/dynatrace-api/basics/dynatrace-api-authentication).
+Подробнее о том, как получить и использовать его, см. [Tokens and authentication](/managed/discover-dynatrace/references/dynatrace-api/basics/dynatrace-api-authentication).
 
 ## Параметры
 
-| Параметр | Тип | Описание | В | Обязательность |
+| Параметр | Тип | Описание | В | Обязательный |
 | --- | --- | --- | --- | --- |
-| body | [ApiTokenSecret](#openapi-definition-ApiTokenSecret) | JSON-тело запроса. Содержит искомый токен. | body | Обязательный |
+| body | [ApiTokenSecret](#openapi-definition-ApiTokenSecret) | Тело JSON запроса. Содержит требуемый токен. | body | Обязательный |
 
 ### Объекты тела запроса
 
 #### Объект `ApiTokenSecret`
 
-| Элемент | Тип | Описание | Обязательность |
+| Элемент | Тип | Описание | Обязательный |
 | --- | --- | --- | --- |
-| token | string | API-токен. | Обязательный |
+| token | string | Токен API. | Обязательный |
 
-### JSON-модель тела запроса
+### Модель JSON тела запроса
 
-Это модель тела запроса, показывающая возможные элементы. Её нужно адаптировать для реального запроса.
+Это модель тела запроса, показывающая возможные элементы. Её нужно скорректировать для использования в реальном запросе.
 
 ```
 {
@@ -62,8 +61,8 @@ scraped: 2026-05-12T12:01:13.018046
 
 | Код | Тип | Описание |
 | --- | --- | --- |
-| **200** | [ApiToken](#openapi-definition-ApiToken) | Успех |
-| **404** | - | Неудача. Запрошенный ресурс не существует. |
+| **200** | [ApiToken](#openapi-definition-ApiToken) | Успешно |
+| **404** | - | Ошибка. Запрошенный ресурс не существует. |
 | **4XX** | [ErrorEnvelope](#openapi-definition-ErrorEnvelope) | Ошибка на стороне клиента. |
 | **5XX** | [ErrorEnvelope](#openapi-definition-ErrorEnvelope) | Ошибка на стороне сервера. |
 
@@ -71,24 +70,24 @@ scraped: 2026-05-12T12:01:13.018046
 
 #### Объект `ApiToken`
 
-Метаданные API-токена.
+Метаданные токена API.
 
 | Элемент | Тип | Описание |
 | --- | --- | --- |
-| additionalMetadata | object | Содержит дополнительные свойства для определённых типов токенов. Примеры:  * Свойство `dashboardId` для токенов общего доступа к дашборду. * Свойство `reportId` для токенов общего доступа к отчёту |
+| additionalMetadata | object | Содержит дополнительные свойства для отдельных видов токенов. Примеры:  * Свойство `dashboardId` для токенов совместного доступа к дашбордам. * Свойство `reportId` для токенов совместного доступа к отчётам |
 | creationDate | string | Дата создания токена в формате ISO 8601 (`yyyy-MM-dd'T'HH:mm:ss.SSS'Z'`) |
 | enabled | boolean | Токен включён (`true`) или отключён (`false`). |
-| expirationDate | string | Дата истечения срока действия токена в формате ISO 8601 (`yyyy-MM-dd'T'HH:mm:ss.SSS'Z'`).  Если не задано, токен не истекает. |
-| id | string | Идентификатор токена, состоящий из префикса и публичной части токена. |
+| expirationDate | string | Дата истечения срока действия токена в формате ISO 8601 (`yyyy-MM-dd'T'HH:mm:ss.SSS'Z'`).  Если не задана, срок действия токена не ограничен. |
+| id | string | ID токена, состоящий из префикса и публичной части токена. |
 | lastUsedDate | string | Дата последнего использования токена в формате ISO 8601 (`yyyy-MM-dd'T'HH:mm:ss.SSS'Z'`) |
 | lastUsedIpAddress | string | IP-адрес последнего использования токена. |
-| modifiedDate | string | Дата последнего изменения токена в формате ISO 8601 (`yyyy-MM-dd'T'HH:mm:ss.SSS'Z'`). Обновление scope или имени считается изменением, включение или отключение токена нет. |
+| modifiedDate | string | Дата последнего изменения токена в формате ISO 8601 (`yyyy-MM-dd'T'HH:mm:ss.SSS'Z'`). Обновление scopes или имени считается изменением, включение или отключение токена, нет. |
 | name | string | Имя токена. |
 | owner | string | Владелец токена. |
-| personalAccessToken | boolean | Токен является [персональным access-токеном](https://dt-url.net/wm03sop) (`true`) или API-токеном (`false`). |
-| scopes | string[] | Список scope, назначенных токену. Элемент может принимать значения * `ActiveGateCertManagement` * `AdvancedSyntheticIntegration` * `CaptureRequestData` * `DTAQLAccess` * `DataExport` * `DataImport` * `DataPrivacy` * `Davis` * `DiagnosticExport` * `DssFileManagement` * `ExternalSyntheticIntegration` * `InstallerDownload` * `LogExport` * `MemoryDump` * `Mobile` * `PluginUpload` * `ReadConfig` * `ReadSyntheticData` * `RestRequestForwarding` * `RumBrowserExtension` * `RumJavaScriptTagManagement` * `SupportAlert` * `TenantTokenManagement` * `UserSessionAnonymization` * `ViewDashboard` * `ViewReport` * `WriteConfig` * `WriteSyntheticData` * `activeGateTokenManagement.create` * `activeGateTokenManagement.read` * `activeGateTokenManagement.write` * `activeGates.read` * `activeGates.write` * `adaptiveTrafficManagement.read` * `agentTokenManagement.read` * `apiTokens.read` * `apiTokens.write` * `attacks.read` * `attacks.write` * `auditLogs.read` * `bizevents.ingest` * `credentialVault.read` * `credentialVault.write` * `entities.read` * `entities.write` * `events.ingest` * `events.read` * `extensionConfigurationActions.write` * `extensionConfigurations.read` * `extensionConfigurations.write` * `extensionDiscoveryJmx.read` * `extensionEnvironment.read` * `extensionEnvironment.write` * `extensions.read` * `extensions.write` * `geographicRegions.read` * `hub.install` * `hub.read` * `hub.write` * `javaScriptMappingFiles.read` * `javaScriptMappingFiles.write` * `logs.ingest` * `logs.read` * `metrics.ingest` * `metrics.read` * `metrics.write` * `networkZones.read` * `networkZones.write` * `oneAgents.read` * `oneAgents.write` * `openTelemetryTrace.ingest` * `openpipeline.events` * `openpipeline.events.custom` * `openpipeline.events_sdlc` * `openpipeline.events_sdlc.custom` * `openpipeline.events_security` * `openpipeline.events_security.custom` * `problems.read` * `problems.write` * `releases.read` * `rumCookieNames.read` * `rumManualInsertionTags.read` * `securityProblems.read` * `securityProblems.write` * `settings.read` * `settings.write` * `slo.read` * `slo.write` * `syntheticExecutions.read` * `syntheticExecutions.write` * `syntheticLocations.read` * `syntheticLocations.write` * `tenantTokenRotation.write` * `traces.lookup` * `unifiedAnalysis.read` |
+| personalAccessToken | boolean | Токен является [personal access token﻿](https://dt-url.net/wm03sop?dt=m) (`true`) или токеном API (`false`). |
+| scopes | string[] | Список scope, назначенных токену. Элемент может принимать следующие значения * `ActiveGateCertManagement` * `AdvancedSyntheticIntegration` * `CaptureRequestData` * `DTAQLAccess` * `DataExport` * `DataImport` * `DataPrivacy` * `Davis` * `DiagnosticExport` * `DssFileManagement` * `ExternalSyntheticIntegration` * `InstallerDownload` * `LogExport` * `MemoryDump` * `Mobile` * `PluginUpload` * `ReadConfig` * `ReadSyntheticData` * `RestRequestForwarding` * `RumBrowserExtension` * `RumJavaScriptTagManagement` * `SupportAlert` * `TenantTokenManagement` * `UserSessionAnonymization` * `ViewDashboard` * `ViewReport` * `WriteConfig` * `WriteSyntheticData` * `activeGateTokenManagement.create` * `activeGateTokenManagement.read` * `activeGateTokenManagement.write` * `activeGates.read` * `activeGates.write` * `adaptiveTrafficManagement.read` * `agentTokenManagement.read` * `apiTokens.read` * `apiTokens.write` * `attacks.read` * `attacks.write` * `auditLogs.read` * `bizevents.ingest` * `credentialVault.read` * `credentialVault.write` * `entities.read` * `entities.write` * `events.ingest` * `events.read` * `extensionConfigurationActions.write` * `extensionConfigurations.read` * `extensionConfigurations.write` * `extensionDiscoveryJmx.read` * `extensionDiscoveryPmi.read` * `extensionEnvironment.read` * `extensionEnvironment.write` * `extensions.read` * `extensions.write` * `geographicRegions.read` * `hub.install` * `hub.read` * `hub.write` * `javaScriptMappingFiles.read` * `javaScriptMappingFiles.write` * `logs.ingest` * `logs.read` * `metrics.ingest` * `metrics.read` * `metrics.write` * `networkZones.read` * `networkZones.write` * `oneAgents.read` * `oneAgents.write` * `openTelemetryTrace.ingest` * `openpipeline.events` * `openpipeline.events.custom` * `openpipeline.events_sdlc` * `openpipeline.events_sdlc.custom` * `openpipeline.events_security` * `openpipeline.events_security.custom` * `openpipeline.events_smartscape` * `problems.read` * `problems.write` * `releases.read` * `rumCookieNames.read` * `rumManualInsertionTags.read` * `securityProblems.read` * `securityProblems.write` * `settings.read` * `settings.write` * `slo.read` * `slo.write` * `syntheticExecutions.read` * `syntheticExecutions.write` * `syntheticLocations.read` * `syntheticLocations.write` * `tenantTokenRotation.write` * `traces.lookup` * `unifiedAnalysis.read` |
 
-### JSON-модели тела ответа
+### Модели JSON тела ответа
 
 ```
 {
@@ -162,6 +161,6 @@ scraped: 2026-05-12T12:01:13.018046
 }
 ```
 
-## Связанные темы
+## Похожие темы
 
-* [Access tokens](/managed/manage/identity-access-management/access-tokens-and-oauth-clients/access-tokens "Концепция access-токена и его scope.")
+* [Access tokens](/managed/manage/identity-access-management/access-tokens-and-oauth-clients/access-tokens "Learn the concept of an access token and its scopes.")

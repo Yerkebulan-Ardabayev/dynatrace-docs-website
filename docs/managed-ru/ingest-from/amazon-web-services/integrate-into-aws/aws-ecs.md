@@ -1,40 +1,39 @@
 ---
-title: Мониторинг Amazon Elastic Container Service (ECS)
+title: Мониторинг Amazon ECS на EC2
 source: https://docs.dynatrace.com/managed/ingest-from/amazon-web-services/integrate-into-aws/aws-ecs
-scraped: 2026-05-12T11:14:24.040122
 ---
 
-# Мониторинг Amazon Elastic Container Service (ECS)
+# Мониторинг Amazon ECS на EC2
 
-# Мониторинг Amazon Elastic Container Service (ECS)
+# Мониторинг Amazon ECS на EC2
 
 * Практическое руководство
-* Чтение: 1 мин
-* Опубликовано 16 января 2023 г.
+* 1 минута на чтение
+* Обновлено 03 июн. 2026 г.
 
-Чтобы развернуть OneAgent в кластерах AWS Elastic Container Service (ECS) с типом запуска EC2, следуйте приведённым ниже инструкциям.
+Чтобы развернуть OneAgent на кластерах AWS Elastic Container Service (ECS) с типом запуска EC2, следуй приведённым ниже инструкциям.
 
 ## Предварительные требования
 
-* Создайте [PaaS-токен](/managed/manage/identity-access-management/access-tokens-and-oauth-clients/access-tokens#paas-token "Изучите концепцию токена доступа и его области действия.").
-* ECS-кластер с **Linux-инстансами контейнеров**.
-* Ознакомьтесь со списком [поддерживаемых приложений и версий](/managed/ingest-from/technology-support "Найдите технические сведения о поддержке Dynatrace для конкретных платформ и фреймворков разработки.").
-* К IAM-роли ваших инстансов контейнеров должна быть прикреплена управляемая политика `AmazonEC2ContainerServiceforEC2Role`. Инструкции по созданию этой роли с именем `ecsInstanceRole` приведены в [документации AWS](https://dt-url.net/y923usz).
+* Создать [PaaS Token](/managed/manage/identity-access-management/access-tokens-and-oauth-clients/access-tokens#paas-token "Изучить концепцию токена доступа и его области действия.").
+* Кластер ECS с **контейнерными инстансами на базе Linux**.
+* Ознакомиться со списком [поддерживаемых приложений и версий](/managed/ingest-from/technology-support "Найти технические подробности о поддержке Dynatrace для конкретных платформ и фреймворков разработки.").
+* К роли IAM для контейнерных инстансов должна быть подключена управляемая политика `AmazonEC2ContainerServiceforEC2Role`. Инструкции по созданию этой роли, названной `ecsInstanceRole`, приведены в [документации AWS﻿](https://dt-url.net/y923usz).
 
-## Развёртывание OneAgent в виде daemon-сервиса
+## Развёртывание OneAgent как службы-демона
 
-Этот подход описывает установку OneAgent как daemon-сервиса в собственном контейнере. ECS оркестрирует выполнение задачи OneAgent на каждом инстансе контейнера, входящем в кластер.
+Этот подход описывает установку OneAgent как службы-демона в собственном контейнере. ECS оркестрирует выполнение задачи OneAgent на каждом контейнерном инстансе, входящем в состав кластера.
 
-Привилегированный режим и параметры томов являются обязательными для этого метода развёртывания. Поэтому это можно сделать только через JSON-ревизии. Рассмотрите вариант с [внедрением на этапе сборки](/managed/ingest-from/amazon-web-services/integrate-into-aws/aws-fargate#buildtime "Установка OneAgent в AWS Fargate.").
+Привилегированный режим и параметры томов, это предварительные условия для этого метода развёртывания. Из-за этого выполнить его можно только с помощью ревизий JSON. Вместо этого стоит рассмотреть [внедрение на этапе сборки](/managed/ingest-from/setup-on-container-platforms/docker/set-up-oneagent-on-containers-for-application-only-monitoring "Установка, обновление и удаление OneAgent на контейнерах для мониторинга уровня приложений.").
 
-1. В консоли ECS перейдите в **Task Definitions** > **Create new task definition** > **Create new task definition with JSON**.
-2. Отредактируйте JSON определения задачи:
+1. В консоли ECS перейти в **Task Definitions** > **Create new task definition** > **Create new task definition with JSON**.
+2. Отредактировать определение задачи JSON:
 
-   * Установите `requiresCompatibilities` в `["EC2"]`
-   * Установите `family` в выбранное вами уникальное имя для определения задачи, например `oneagent`
-   * Добавьте `ipcMode` и установите в `host`
-   * Добавьте `pidMode` и установите в `host`
-   * Установите `containerDefinitions[0]` в
+   * Установить `requiresCompatibilities` в значение `["EC2"]`
+   * Установить `family` в уникальное имя по своему выбору для определения задачи, например `oneagent`
+   * Добавить `ipcMode` и установить значение `host`
+   * Добавить `pidMode` и установить значение `host`
+   * Установить `containerDefinitions[0]` в
 
      ```
      {
@@ -59,7 +58,7 @@ scraped: 2026-05-12T11:14:24.040122
 
      }
      ```
-   * Создайте новый словарь в массиве `volumes`:
+   * Создать новый словарь в массиве `volumes`:
 
      ```
      {
@@ -72,60 +71,60 @@ scraped: 2026-05-12T11:14:24.040122
 
      }
      ```
-3. Нажмите **Create**.
-4. Нажмите **Create new revision** > **Create new revision**.
-5. В разделе **Infrastructure requirements** перейдите к **Network Mode** и выберите `host`.
-6. Прокрутите до **Container - 1**, перейдите в **Resource allocation limits** и задайте лимиты памяти при необходимости.
+3. Выбрать **Create**.
+4. Выбрать **Create new revision** > **Create new revision**.
+5. В **Infrastructure requirements** перейти в **Network Mode** и выбрать `host`.
+6. Прокрутить до **Container - 1**, перейти в **Resource allocation limits** и задать лимиты памяти по необходимости
 
-   Существует два типа лимитов памяти: soft и hard. ECS требует, чтобы вы определили лимит хотя бы для одного типа памяти. Мы рекомендуем использовать настройку по умолчанию (soft-лимит 256 MiB), так как она менее ограничительна, но вы можете изменить эту настройку при необходимости.
-7. В разделе **Environment variables** перейдите в **Add individually** и определите `ONEAGENT_INSTALLER_SCRIPT_URL` в зависимости от того, как вы подключаетесь к Dynatrace:
+   Есть два типа лимитов памяти: мягкий и жёсткий. ECS требует определить лимит хотя бы для одного типа памяти. Рекомендуется использовать значение по умолчанию (мягкий лимит 256 МиБ), так как оно менее ограничительное, но при необходимости этот параметр можно скорректировать.
+7. В разделе **Переменные Environment** перейти в **Add individually** и определить `ONEAGENT_INSTALLER_SCRIPT_URL` в зависимости от способа подключения к Dynatrace:
 
    * Для Dynatrace Managed: `https://<your-domain>/e/<your-environment-id>/api/v1/deployment/installer/agent/unix/default/latest?arch=x86&flavor=default&Api-Token=<paas_token>`
    * Для ActiveGate: `https://<your-active-gate-ip-or-hostname>:9999/e/<your-environment-id>/api/v1/deployment/installer/agent/unix/default/latest?arch=x86&flavor=default&Api-Token=<paas_token>`
 
-   Если вы подключаетесь через ActiveGate, можно пропустить проверку сертификата, добавив ключ `ONEAGENT_INSTALLER_SKIP_CERT_CHECK` со значением `true`.
-8. Опционально. Добавьте параметры установщика OneAgent.
+   При подключении через ActiveGate можно пропустить проверку сертификата, добавив ключ `ONEAGENT_INSTALLER_SKIP_CERT_CHECK` со значением `true`.
+8. Опционально Добавить параметры установщика OneAgent.
 
-   Оставаясь в **Environment variables**, вы можете [настроить установку OneAgent](/managed/ingest-from/dynatrace-oneagent/installation-and-operation/linux/installation/customize-oneagent-installation-on-linux "Узнайте, как использовать установщик Linux с параметрами командной строки."), добавив несколько параметров установщика OneAgent в текстовое поле команды. Убедитесь, что параметры разделены пробелом. Например, `--set-monitoring-mode=infra-only --set-app-log-content-access=false --set-network-zone=<your.network.zone>`.
+   Оставаясь в разделе **Переменные Environment**, можно [настроить установку OneAgent](/managed/ingest-from/dynatrace-oneagent/installation-and-operation/linux/installation/customize-oneagent-installation-on-linux "Узнать, как использовать установщик для Linux с параметрами командной строки.") добавив несколько параметров установщика OneAgent в текстовое поле команды. Каждый параметр нужно разделять пробелом. Например, `--set-monitoring-mode=infra-only --set-app-log-content-access=false --set-network-zone=<your.network.zone>`.
 
-   Установите параметр `--set-network-zone=<your.network.zone>`, если хотите настроить сетевые зоны. Подробнее см. в разделе [сетевые зоны](/managed/manage/network-zones "Узнайте, как работают сетевые зоны в Dynatrace.").
-9. Прокрутите вниз до **Storage** > **Volume - 1** и установите **Source path** в `/`
-10. Перейдите в **Container mount points**, нажмите **Add mount point** и введите следующие значения:
+   Задать параметр `--set-network-zone=<your.network.zone>`, если нужно настроить сетевые зоны. Подробнее см. [сетевые зоны](/managed/manage/network-zones "Узнать, как работают сетевые зоны в Dynatrace.").
+9. Прокрутить вниз до **Storage** > **Volume - 1** и установить **Source path** в значение `/`
+10. Перейти в **Container mount points**, выбрать **Add mount point** и ввести следующие значения:
 
     * **Container**: `oneagent`
     * **Source volume**: `oneagent`
     * **Container path**: `/mnt/root`
-11. Нажмите **Create**, чтобы сохранить определение задачи.
-12. В меню **Task definitions** выберите вновь созданную задачу OneAgent, затем нажмите **Deploy** > **Create service**. Это создаст сервис для выполнения вашей задачи.
-13. В **Compute configuration** выберите **Launch type** и для **Launch type** выберите `EC2`.
-14. В **Deployment configuration** выполните следующие действия:
+11. Выбрать **Create**, чтобы сохранить определение задачи.
+12. В меню **Task definitions** выбрать только что созданную задачу OneAgent, а затем **Deploy** > **Create service**. Это создаст службу для выполнения задачи.
+13. В **Compute configuration** выбрать **Launch type** и для **Launch type** выбрать `EC2`.
+14. В **Deployment configuration** выполнить следующие действия:
 
-    * **Service name**: задайте имя сервиса.
-    * **Service type**: выберите `Daemon`.
+    * **Service name**: указать имя службы.
+    * **Service type**: выбрать `Daemon`.
 
-    Остальные настройки оставьте по умолчанию. Следуйте оставшимся шагам, пока не дойдёте до **Create** и не нажмёте её.
+    Остальные настройки оставить как есть по умолчанию. Пройти оставшиеся шаги, пока не дойдёшь до кнопки **Create**, и выбрать её.
 
-    После создания сервиса связанные с ним задачи будут выполнены. Сервис `oneagent` создаёт задачу для развёртывания OneAgent на каждом инстансе контейнера вашего кластера.
+    После создания службы будут выполнены связанные с ней задачи. Служба `oneagent` создаёт задачу для развёртывания OneAgent на каждом контейнерном инстансе кластера.
 
-    Вы можете увидеть инстансы контейнеров на дашборде кластера ECS и соответствующие хосты в вашей среде мониторинга Dynatrace.
+    Контейнерные инстансы отображаются на панели кластера ECS, а соответствующие хосты, в среде мониторинга Dynatrace.
 
-    ![ECS hosts](https://dt-cdn.net/images/hosts-ecs-1359-df8cef7810.png)
+    ![Хосты ECS](https://dt-cdn.net/images/hosts-ecs-1359-df8cef7810.png)
 
     Хосты ECS
-15. После развёртывания OneAgent перезапустите запущенные задачи приложений, чтобы получить видимость на уровне сервисов.
+15. После развёртывания OneAgent нужно перезапустить выполняющиеся задачи приложений, чтобы получить видимость на уровне сервисов.
 
-## Влияние на безопасность
+## Последствия для безопасности
 
-Подробнее см. в разделе [Влияние Docker на безопасность](/managed/ingest-from/setup-on-container-platforms/docker/set-up-dynatrace-oneagent-as-docker-container#security "Установка и обновление Dynatrace OneAgent как Docker-контейнера.").
+Подробности см. в разделе [последствия для безопасности Docker](/managed/ingest-from/setup-on-container-platforms/docker/set-up-dynatrace-oneagent-as-docker-container#security "Установка и обновление OneAgent Dynatrace в виде контейнера Docker.").
 
 ## Ограничения
 
-Подробнее см. в разделе [Ограничения Docker](/managed/ingest-from/setup-on-container-platforms/docker/set-up-dynatrace-oneagent-as-docker-container#limitations "Установка и обновление Dynatrace OneAgent как Docker-контейнера.").
+Подробности см. в разделе [ограничения Docker](/managed/ingest-from/setup-on-container-platforms/docker/set-up-dynatrace-oneagent-as-docker-container#limitations "Установка и обновление OneAgent Dynatrace в виде контейнера Docker.").
 
-## Потребление ресурсов мониторинга
+## Потребление мониторинга
 
-Для Elastic Container Service потребление ресурсов мониторинга рассчитывается на основе host units. Подробности см. в разделе [Мониторинг приложений и инфраструктуры (Host Units)](/managed/license/monitoring-consumption-classic/application-and-infrastructure-monitoring "Узнайте, как рассчитывается потребление мониторинга приложений и инфраструктуры Dynatrace на основе host units.").
+Для Elastic Container Service потребление мониторинга рассчитывается на основе host units. Подробности см. в разделе [Application and Infrastructure Monitoring (Host Units)](/managed/license/classic-licensing/application-and-infrastructure-monitoring "Понять, как рассчитывается потребление мониторинга приложений и инфраструктуры Dynatrace на основе host units.").
 
-## Связанные темы
+## Похожие темы
 
-* [Матрица поддержки платформ и возможностей OneAgent](/managed/ingest-from/technology-support/oneagent-platform-and-capability-support-matrix "Узнайте, какие возможности поддерживаются OneAgent в различных операционных системах и на различных платформах.")
+* [Матрица поддержки платформ и возможностей OneAgent](/managed/ingest-from/technology-support/oneagent-platform-and-capability-support-matrix "Узнать, какие возможности поддерживаются OneAgent на разных операционных системах и платформах.")

@@ -1,40 +1,39 @@
 ---
-title: Как интегрировать Dynatrace с AWS
+title: Как интегрировать Dynatrace в AWS
 source: https://docs.dynatrace.com/managed/ingest-from/amazon-web-services/integrate-into-aws
-scraped: 2026-05-12T12:04:11.568049
 ---
 
-# Как интегрировать Dynatrace с AWS
+# Как интегрировать Dynatrace в AWS
 
-# Как интегрировать Dynatrace с AWS
+# Как интегрировать Dynatrace в AWS
 
 * Обзор
-* Чтение: 1 мин
+* 1 минута на чтение
 * Опубликовано 04 сентября 2024 г.
 
-Dynatrace обеспечивает комплексную поддержку мониторинга AWS благодаря интеграции с OneAgent и Amazon CloudWatch.
+Dynatrace обеспечивает комплексную поддержку мониторинга для AWS путём интеграции как с OneAgent, так и с Amazon CloudWatch.
 
-## Полностековая наблюдаемость вычислительных и бессерверных сервисов AWS
+## Полная observability для вычислительных и serverless-сервисов AWS
 
-Узнайте, как интегрировать Dynatrace с платформой AWS с помощью OneAgent.
+Узнай, как интегрировать Dynatrace в платформу AWS с помощью OneAgent.
 
 [### Amazon EC2
 
-Распространяйте и автоматически разворачивайте OneAgent на инстансах EC2 с помощью AWS Systems Manager Distributor.](/managed/ingest-from/amazon-web-services/integrate-into-aws/aws-ec2/deploy-oneagent-using-aws-systems-manager-distributor "Установите OneAgent на инстансы EC2 с помощью пакета Dynatrace для AWS Systems Manager Distributor.")[### Amazon ECS
+Распространяй и автоматически разворачивай OneAgent на своих EC2-инстансах с помощью AWS Systems Manager Distributor.](/managed/ingest-from/amazon-web-services/integrate-into-aws/aws-ec2/deploy-oneagent-using-aws-systems-manager-distributor "Установи OneAgent на своих EC2-инстансах с помощью пакета Dynatrace AWS Systems Manager Distributor.")[### Amazon ECS
 
-Разверните OneAgent в Elastic Container Service.](/managed/ingest-from/amazon-web-services/integrate-into-aws/aws-ecs "Мониторинг Amazon Elastic Container Service (ECS)")[### Amazon EKS
+Разверни OneAgent в Elastic Container Service.](/managed/ingest-from/amazon-web-services/integrate-into-aws/aws-ecs "Мониторь Amazon Elastic Container Service (ECS) с типом запуска EC2 с помощью OneAgent в качестве daemon-сервиса и просматривай метрики.")[### Amazon EKS
 
-Разверните OneAgent и наблюдайте за Amazon Elastic Kubernetes Service.](/managed/ingest-from/amazon-web-services/integrate-into-aws/aws-eks "Установите OneAgent на Elastic Kubernetes Service.")[### AWS App Runner
+Разверни OneAgent и мониторь Amazon Elastic Kubernetes Service.](/managed/ingest-from/amazon-web-services/integrate-into-aws/aws-eks "Установи OneAgent в Elastic Kubernetes Service.")[### AWS App Runner
 
-Разверните OneAgent на AWS App Runner.](/managed/ingest-from/amazon-web-services/integrate-into-aws/app-runner "Установите OneAgent на AWS App Runner.")[### AWS Elastic Beanstalk
+Разверни OneAgent в AWS App Runner.](/managed/ingest-from/amazon-web-services/integrate-into-aws/app-runner "Установи OneAgent в AWS App Runner.")[### AWS Elastic Beanstalk
 
-Разверните OneAgent на AWS Elastic Beanstalk.](/managed/ingest-from/amazon-web-services/integrate-into-aws/aws-beanstalk "Установите OneAgent на AWS Elastic Beanstalk.")[### AWS Fargate
+Разверни OneAgent в AWS Elastic Beanstalk.](/managed/ingest-from/amazon-web-services/integrate-into-aws/aws-beanstalk "Установи OneAgent в AWS Elastic Beanstalk.")[### AWS Fargate
 
-Разверните OneAgent на AWS Fargate.](/managed/ingest-from/amazon-web-services/integrate-into-aws/aws-fargate "Установите OneAgent на AWS Fargate.")[### AWS Lambda
+Разверни OneAgent в AWS Fargate.](/managed/ingest-from/amazon-web-services/integrate-into-aws/aws-fargate "Установи OneAgent в AWS Fargate.")[### AWS Lambda
 
-Интегрируйте с AWS Lambda.](/managed/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration "Возможности AWS Lambda и варианты интеграции")
+Интегрируй в AWS Lambda.](/managed/ingest-from/amazon-web-services/integrate-into-aws/aws-lambda-integration "Возможности и варианты интеграции AWS Lambda")
 
-## Связанные темы
+## Похожие темы
 
-* [Бессерверный мониторинг](/managed/discover-dynatrace/get-started/serverless-monitoring "Бессерверная наблюдаемость с Dynatrace")
-* [Мониторинг Amazon Web Services](/managed/observe/infrastructure-observability/cloud-platform-monitoring/aws-monitoring "Мониторинг AWS с помощью Dynatrace")
+* [Мониторинг serverless](/managed/discover-dynatrace/get-started/serverless-monitoring "Мониторь serverless-облачные сервисы в AWS, Azure и Google Cloud с помощью Dynatrace для сквозной видимости и анализа на основе ИИ.")
+* [Мониторинг Amazon Web Services](/managed/observe/infrastructure-observability/cloud-platform-monitoring/aws-monitoring "Мониторь AWS с помощью Dynatrace")

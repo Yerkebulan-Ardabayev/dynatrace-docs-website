@@ -1,81 +1,95 @@
 ---
-title: FIPS-совместимость ActiveGate
+title: Соответствие FIPS для ActiveGate
 source: https://docs.dynatrace.com/managed/ingest-from/dynatrace-activegate/activegate-fips-compliance
-scraped: 2026-05-12T11:36:38.406404
 ---
 
-# FIPS-совместимость ActiveGate
+# Соответствие FIPS для ActiveGate
 
-# FIPS-совместимость ActiveGate
+# Соответствие FIPS для ActiveGate
 
-* Updated on Jul 15, 2025
+* Обновлено 12 мая 2026 г.
 
 ActiveGate версии 1.315+
 
 ## Что такое FIPS?
 
-Federal Information Processing Standard (FIPS) — «стандарт для принятия и использования федеральными департаментами и агентствами, разработанный в Information Technology Laboratory и опубликованный NIST, частью Министерства торговли США. FIPS охватывает некоторую тему в информационных технологиях для достижения общего уровня качества или определённого уровня совместимости» (источник: [Глоссарий NIST](https://csrc.nist.gov/glossary/term/federal_information_processing_standard)).
+Federal Information Processing Standard (FIPS), это «стандарт для принятия и использования федеральными департаментами и агентствами, разработанный в Information Technology Laboratory и опубликованный NIST, подразделением Министерства торговли США. FIPS охватывает ту или иную тему в области информационных технологий для достижения единого уровня качества или определённого уровня совместимости» (источник: [глоссарий NIST﻿](https://csrc.nist.gov/glossary/term/federal_information_processing_standard)).
 
-FIPS-совместимость означает, что продукт соответствует всем требованиям безопасности, предусмотренным стандартом.
+Соответствие FIPS означает, что продукт отвечает всем требованиям безопасности, установленным этим стандартом.
 
-## Режим FIPS-совместимости ActiveGate
+## Режим ActiveGate, совместимый с FIPS
 
-ActiveGate, развёрнутый в режиме FIPS-совместимости, использует FIPS-сертифицированные криптографические библиотеки:
+ActiveGate, развёрнутый в режиме, совместимом с FIPS, использует криптографические библиотеки, сертифицированные по FIPS:
 
-* Amazon Corretto Crypto Provider 2.4.1 (использует AWS-LC-FIPS 2.x в качестве криптографического модуля, смотрите [Сертификат #4816](https://csrc.nist.gov/projects/cryptographic-module-validation-program/certificate/4816))
-* BouncyCastle 2.0.0 (смотрите [Сертификат #4743](https://csrc.nist.gov/projects/cryptographic-module-validation-program/certificate/4743))
+ActiveGate 1.341+
+
+ActiveGate до версии 1.339
+
+* Amazon Corretto Crypto Provider 2.4.1 (использует AWS-LC-FIPS 2.x в качестве криптографического модуля; подробности см. в [сертификате №4816﻿](https://csrc.nist.gov/projects/cryptographic-module-validation-program/certificate/4816))
+* BouncyCastle 2.1.2 (подробности см. в [сертификате №4943﻿](https://csrc.nist.gov/projects/cryptographic-module-validation-program/certificate/4943))
+
+* Amazon Corretto Crypto Provider 2.4.1 (использует AWS-LC-FIPS 2.x в качестве криптографического модуля; подробности см. в [сертификате №4816﻿](https://csrc.nist.gov/projects/cryptographic-module-validation-program/certificate/4816))
+* BouncyCastle 2.0.0 (подробности см. в [сертификате №4743﻿](https://csrc.nist.gov/projects/cryptographic-module-validation-program/certificate/4743))
 
 ## Совместимость назначений ActiveGate
 
 | Назначение | x86-64 | arm64 |
 | --- | --- | --- |
-| [Routing-monitoring](/managed/ingest-from/dynatrace-activegate/capabilities#functional_tbl) | Применимо | Применимо (кроме Extension Execution Controller) |
-| [Синтетический мониторинг в частном расположении](/managed/ingest-from/dynatrace-activegate/capabilities/synthetic-purpose) | Применимо (см. ограничения) | Не применимо |
-| [Мониторинг z/OS](/managed/ingest-from/dynatrace-activegate/capabilities/zremote-purpose) | Применимо | Не применимо |
+| [Routing-monitoring](/managed/ingest-from/dynatrace-activegate/capabilities#functional_tbl "Узнайте о возможностях и способах использования ActiveGate.") | Применимо | Применимо[1](#fn-1-1-def) |
+| [Synthetic monitoring в приватной локации](/managed/ingest-from/dynatrace-activegate/capabilities/synthetic-purpose "ActiveGate, предназначенные для synthetic-мониторинга внутренних и внешних ресурсов из приватных Synthetic-локаций") | Применимо[2](#fn-1-2-def) | Не применимо |
+| [Мониторинг z/OS](/managed/ingest-from/dynatrace-activegate/capabilities/zremote-purpose "Узнайте об установке модуля zRemote для мониторинга z/OS.") | Применимо | Не применимо |
 
-### Развёртывание ActiveGate на основе хоста
+1
 
-Режим FIPS-совместимости можно включить во время установки ActiveGate. Подробнее смотрите в разделе [Настройка установки ActiveGate на Linux](/managed/ingest-from/dynatrace-activegate/installation/linux/linux-customize-installation-for-activegate#fips-compliant-mode "Узнайте о параметрах командной строки, которые можно использовать с ActiveGate на Linux.").
+за исключением модуля [Extension Execution Controller](/managed/ingest-from/dynatrace-activegate/capabilities/routing-monitoring-purpose#extn "Узнайте о возможностях маршрутизации и мониторинга и способах использования ActiveGate.") (так же, как и для обычного, не-FIPS ActiveGate).
+
+2
+
+требования и ограничения для соответствия FIPS в Synthetic см. в разделе [Требования и ограничения](/managed/observe/digital-experience/synthetic-monitoring/private-synthetic-locations/create-a-private-synthetic-location#fips-compliant-limitation "Узнайте, как создать приватную локацию для synthetic-мониторинга.").
+
+### Развёртывание ActiveGate на хосте
+
+Режим, совместимый с FIPS, можно включить во время установки ActiveGate. Подробности см. в разделе [Настройка установки ActiveGate в Linux](/managed/ingest-from/dynatrace-activegate/installation/linux/linux-customize-installation-for-activegate#fips-compliant-mode "Узнайте о параметрах командной строки, которые можно использовать с ActiveGate в Linux.").
 
 #### Требования
 
 * Linux x86-64 или ARM64 (AArch64)
-* Операционная система с включённым режимом FIPS-совместимости
+* Операционная система с включённым режимом, совместимым с FIPS
 
-  + Установщик ActiveGate проверяет конфигурацию ОС, проверяя, равно ли значение статуса режима FIPS-совместимости, хранящегося в `/proc/sys/crypto/fips_enabled`, значению `1`
-  + Если установщик ActiveGate запущен в режиме FIPS-совместимости, а ОС не имеет включённого режима FIPS-совместимости, установщик останавливается и завершается с ошибкой
+  + Установщик ActiveGate проверяет конфигурацию операционной системы, проверяя, равен ли статус режима, совместимого с FIPS, хранящийся в `/proc/sys/crypto/fips_enabled`, значению `1`
+  + Если установщик ActiveGate запущен в режиме, совместимом с FIPS, а в операционной системе этот режим не включён, установщик останавливается и завершается с ошибкой
 
-### Контейнерное развёртывание ActiveGate
+### Контейнеризованное развёртывание ActiveGate
 
-Контейнерные развёртывания ActiveGate используют FIPS-совместимые образы, доступные для следующих архитектур:
+Контейнеризованные развёртывания ActiveGate опираются на образы, совместимые с FIPS, доступные для следующих архитектур:
 
 * x86-64
 * ARM64 (AArch64)
 
 #### Реестры контейнеров
 
-FIPS-совместимые образы ActiveGate доступны в поддерживаемых [публичных реестрах](/managed/ingest-from/setup-on-k8s/guides/container-registries/use-public-registry#supported-public-registries "Использовать публичный реестр") с суффиксом тега образа `-fips`.
+Образы ActiveGate, совместимые с FIPS, доступны в наших [поддерживаемых публичных реестрах](/managed/ingest-from/setup-on-k8s/guides/container-registries/use-public-registry#supported-public-registries "Настройте Operator Dynatrace на использование образов из публичного реестра для себя и своих управляемых компонентов. Это можно сделать вручную или через автоматическое разрешение из вашего окружения Dynatrace.") с суффиксом тега образа `-fips`.
 
 Пример: `public.ecr.aws/dynatrace/dynatrace-activegate:1.315.70.20241127-162512-fips`
 
-Подробнее о настройке DynaKube для использования образов из публичного реестра смотрите в разделе [Настройка DynaKube для использования образов из публичного реестра](/managed/ingest-from/setup-on-k8s/guides/container-registries/use-public-registry#configure-dynakube-to-use-images-from-public-registry "Использовать публичный реестр").
+Подробности о том, как указать Operator Dynatrace использовать образы из публичного реестра, см. в разделе [Настройка DynaKube на использование образов из публичного реестра](/managed/ingest-from/setup-on-k8s/guides/container-registries/use-public-registry#configure-dynakube-to-use-images-from-public-registry "Настройте Operator Dynatrace на использование образов из публичного реестра для себя и своих управляемых компонентов. Это можно сделать вручную или через автоматическое разрешение из вашего окружения Dynatrace.").
 
-### Проверка режима FIPS-совместимости
+### Проверка режима, совместимого с FIPS
 
-### Веб-интерфейс
+### Web UI
 
 Dynatrace версии 1.317+
 
-Чтобы проверить, работает ли ActiveGate в режиме FIPS-совместимости:
+Чтобы проверить, работает ли ActiveGate в режиме, совместимом с FIPS
 
 1. Перейдите в **Deployment Status** > **ActiveGates**.
-2. Найдите интересующий ActiveGate и разверните строку таблицы.
+2. Найдите нужный ActiveGate и разверните строку таблицы.
 3. Найдите свойство **FIPS mode**.
 
-   * Если вы находите **FIPS mode** со значением `True`, ActiveGate работает в режиме FIPS-совместимости.
-   * Если **FIPS mode** не найден, ActiveGate не работает в режиме FIPS-совместимости.
+   * Если свойство **FIPS mode** имеет значение `True`, ActiveGate работает в режиме, совместимом с FIPS.
+   * Если свойство **FIPS mode** отсутствует, ActiveGate не работает в режиме, совместимом с FIPS.
 
-Чтобы получить список всех ActiveGate, работающих в режиме FIPS-совместимости:
+Чтобы вывести список всех ActiveGate, работающих в режиме, совместимом с FIPS
 
 1. Перейдите в **Deployment Status** > **ActiveGates**.
 2. В строке фильтра выберите фильтр **FIPS mode** и затем выберите `True`.
@@ -84,51 +98,52 @@ Dynatrace версии 1.317+
 
 Dynatrace версии 1.317+
 
-Для проверки через Dynatrace API, работает ли конкретный ActiveGate в режиме FIPS-совместимости, используйте [GET an ActiveGate](/managed/dynatrace-api/environment-api/activegates/activegate-info/get-activegate "Просмотрите конфигурацию указанного ActiveGate через Dynatrace API.") и проверьте значение поля `fipsMode`.
+Чтобы с помощью API Dynatrace проверить, работает ли конкретный ActiveGate в режиме, совместимом с FIPS, используйте [GET an ActiveGate](/managed/dynatrace-api/environment-api/activegates/activegate-info/get-activegate "Просмотрите конфигурацию указанного ActiveGate через API Dynatrace.") и проверьте значение поля `fipsMode`.
 
-Для получения списка всех ActiveGate, работающих в режиме FIPS-совместимости, используйте [GET all ActiveGates](/managed/dynatrace-api/environment-api/activegates/activegate-info/get-all "Список всех ActiveGate, подключённых или недавно подключавшихся к окружению.") с параметром запроса `fipsMode`.
+Чтобы с помощью API Dynatrace вывести список всех ActiveGate, работающих в режиме, совместимом с FIPS, используйте [GET all ActiveGates](/managed/dynatrace-api/environment-api/activegates/activegate-info/get-all "Выведите список всех ActiveGate, которые в настоящее время или недавно были подключены к окружению.") с параметром запроса `fipsMode`.
 
 ### Логи
 
-Для проверки режима FIPS-совместимости ActiveGate найдите следующую запись в логах ActiveGate:
+Чтобы проверить, работает ли ActiveGate в режиме, совместимом с FIPS, найдите следующую запись в логах ActiveGate (ниже описано, как получить доступ к логам в зависимости от типа развёртывания ActiveGate):
 
 ```
 2025-06-10 12:16:14 UTC INFO    [<tenant>] [FipsDetector] FIPS mode active: true
 ```
 
-Когда `FIPS mode active` имеет значение `true`, все библиотеки и конфигурации, связанные с FIPS-совместимостью, правильно инициализированы и ActiveGate работает в режиме FIPS-совместимости.
+Если `FIPS mode active` имеет значение `true`, все библиотеки и конфигурация, связанные с соответствием FIPS, корректно инициализированы, и ActiveGate работает в режиме, совместимом с FIPS.
 
-Если ActiveGate был установлен в режиме FIPS-совместимости или использовался FIPS-совместимый образ, но инициализация FIPS-библиотек завершилась неудачей или необходимая конфигурация отсутствует, ActiveGate отменяет запуск и записывает в лог файл следующие записи:
+Если ActiveGate был установлен в режиме, совместимом с FIPS, или использовался образ, совместимый с FIPS, но инициализация библиотек FIPS завершилась ошибкой либо отсутствует необходимая конфигурация, ActiveGate прерывает запуск и записывает в лог-файл следующие строки:
 
 ```
 ActiveGate FIPS mode initialization failed
 ```
 
-Дополнительно в строке лога описывается конкретная причина сбоя инициализации.
+Дополнительно строка лога описывает конкретную причину ошибки инициализации.
 
-#### Доступ к логам при развёртывании на основе хоста
+#### Доступ к логам при развёртывании на хосте
 
-Файлы логов ActiveGate имеют шаблон `dynatracegateway.0.<number>.log` и находятся в директории логов ActiveGate (смотрите [Директории ActiveGate](/managed/ingest-from/dynatrace-activegate/configuration/where-can-i-find-activegate-files#default-activegate-directories "Узнайте, где хранятся файлы ActiveGate на Windows и Linux.")).
+Файлы логов ActiveGate имеют шаблон имени `dynatracegateway.0.<number>.log` и находятся в каталоге логов ActiveGate (см. [Каталоги ActiveGate](/managed/ingest-from/dynatrace-activegate/configuration/where-can-i-find-activegate-files#default-activegate-directories "Узнайте, где хранятся файлы ActiveGate в системах Windows и Linux.")).
 
-#### Доступ к логам при контейнерном развёртывании
+#### Доступ к логам при контейнеризованном развёртывании
 
-Логи контейнерных ActiveGate можно получить следующей командой:
+Логи контейнеризованных ActiveGate можно получить с помощью следующей команды:
 `kubectl -n <NAMESPACE> logs statefulset.apps/<DYNAKUBE_NAME>-activegate`
+Если настроено несколько реплик, будут возвращены логи одного пода.
 
-Для получения логов из конкретного пода:
+Чтобы получить логи конкретного пода, используйте следующую команду:
 `kubectl -n <NAMESPACE> logs pod/<DYNAKUBE_NAME>-activegate-<REPLICA_NUMBER>`
 
 ## Поддерживаемые наборы шифров
 
 | Набор шифров | Версия TLS |
 | --- | --- |
-| `TLS_AES_256_GCM_SHA384` | TLS1.3 |
-| `TLS_AES_128_GCM_SHA256` | TLS1.3 |
-| `TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384` | TLS1.2, TLS1.3 |
-| `TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256` | TLS1.2, TLS1.3 |
-| `TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA384` | TLS1.2, TLS1.3 |
-| `TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA256` | TLS1.2, TLS1.3 |
-| `TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384` | TLS1.2, TLS1.3 |
-| `TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256` | TLS1.2, TLS1.3 |
-| `TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA384` | TLS1.2, TLS1.3 |
-| `TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256` | TLS1.2, TLS1.3 |
+| [`TLS_AES_256_GCM_SHA384`﻿](https://ciphersuite.info/cs/TLS_AES_256_GCM_SHA384) | TLS1.3 |
+| [`TLS_AES_128_GCM_SHA256`﻿](https://ciphersuite.info/cs/TLS_AES_128_GCM_SHA256) | TLS1.3 |
+| [`TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384`﻿](https://ciphersuite.info/cs/TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384) | TLS1.2, TLS1.3 |
+| [`TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256`﻿](https://ciphersuite.info/cs/TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256) | TLS1.2, TLS1.3 |
+| [`TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA384`﻿](https://ciphersuite.info/cs/TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA384) | TLS1.2, TLS1.3 |
+| [`TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA256`﻿](https://ciphersuite.info/cs/TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA256) | TLS1.2, TLS1.3 |
+| [`TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384`﻿](https://ciphersuite.info/cs/TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) | TLS1.2, TLS1.3 |
+| [`TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256`﻿](https://ciphersuite.info/cs/TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) | TLS1.2, TLS1.3 |
+| [`TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA384`﻿](https://ciphersuite.info/cs/TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA384) | TLS1.2, TLS1.3 |
+| [`TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256`﻿](https://ciphersuite.info/cs/TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256) | TLS1.2, TLS1.3 |

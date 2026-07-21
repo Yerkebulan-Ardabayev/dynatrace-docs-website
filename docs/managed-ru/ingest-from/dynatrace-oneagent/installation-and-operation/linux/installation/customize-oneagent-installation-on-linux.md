@@ -1,21 +1,20 @@
 ---
-title: Настройка установки OneAgent на Linux
+title: Настройка установки OneAgent в Linux
 source: https://docs.dynatrace.com/managed/ingest-from/dynatrace-oneagent/installation-and-operation/linux/installation/customize-oneagent-installation-on-linux
-scraped: 2026-05-12T11:05:42.800759
 ---
 
-# Настройка установки OneAgent на Linux
+# Настройка установки OneAgent в Linux
 
-# Настройка установки OneAgent на Linux
+# Настройка установки OneAgent в Linux
 
 * Чтение: 7 мин
-* Опубликовано 19 сентября 2018 г.
+* Опубликовано 19 сент. 2018 г.
 
-Установщик Linux можно использовать с параметрами командной строки, когда настройки по умолчанию не подходят. Обратите внимание, что все перечисленные ниже параметры необязательны.
+Установщик для Linux можно запускать с параметрами командной строки, если настройки по умолчанию не подходят. Все параметры, перечисленные ниже, необязательны.
 
 ## Передача параметров установки
 
-Чтобы передать параметры, добавьте их к команде установщика, разделяя пробелами.
+Чтобы передать параметры, добавь их к команде установщика через пробел.
 
 Например:
 
@@ -25,7 +24,7 @@ Dynatrace-OneAgent-Linux.sh --set-host-group=my_host_group --set-monitoring-mode
 
 ## Удалённые параметры установки
 
-Перейдите на новые параметры `--set-param=<value>` сейчас. Эквивалентные параметры `PARAM=<value>` не поддерживаются установщиком OneAgent начиная с версии 1.213.
+Нужно перейти на новые параметры `--set-param=<value>`. Эквивалентные параметры `PARAM=<value>` больше не поддерживаются установщиком OneAgent начиная с версии 1.213.
 
 | Удалённый параметр `PARAM=<value>` | Новый параметр `--set-param=<value>` |
 | --- | --- |
@@ -37,73 +36,73 @@ Dynatrace-OneAgent-Linux.sh --set-host-group=my_host_group --set-monitoring-mode
 | `APP_LOG_CONTENT_ACCESS` | `--set-app-log-content-access` |
 | `DISABLE_SYSTEM_LOGS_ACCESS` | `--set-system-logs-access-enabled` |
 
-Если вы смешиваете эквивалентные настройки `PARAM=<value>` и `--set-param=<value>`, настройка `--set-param=<value>` переопределяет настройку `PARAM=<value>`.
+При одновременном использовании эквивалентных настроек `PARAM=<value>` и `--set-param=<value>` настройка `--set-param=<value>` переопределяет `PARAM=<value>`.
 
 ## Путь установки
 
 **Значение по умолчанию**: `/opt/dynatrace/oneagent`
 
-**Предварительное условие**: для использования этого параметра при включённом SELinux в системе должна быть доступна утилита semanage.
+**Предварительное условие**: при использовании этого параметра с включённым SELinux в системе должна быть доступна утилита semanage.
 
-Параметр **`INSTALL_PATH`** позволяет выполнить установку в другой каталог. Например:
+Параметр **`INSTALL_PATH`** позволяет установить OneAgent в другой каталог. Например:
 
 ```
 /bin/sh Dynatrace-OneAgent-Linux-1.0.0.sh INSTALL_PATH=/data/dynatrace/agent
 ```
 
-Установщик создаёт символическую ссылку `/opt/dynatrace/oneagent` > `/data/dynatrace/agent`, и файлы установки OneAgent помещаются в указанный каталог (в этом примере `/data/dynatrace/agent`). Обратите внимание, что эту символическую ссылку нужно удалить вручную после удаления OneAgent.
+Установщик создаёт символическую ссылку `/opt/dynatrace/oneagent` > `/data/dynatrace/agent`, а файлы установки OneAgent размещаются в указанном каталоге (в этом примере, `/data/dynatrace/agent`). Обрати внимание: эту символическую ссылку нужно удалить вручную после удаления OneAgent.
 
-Параметр `INSTALL_PATH` не управляет каталогами [файлов логов и конфигурации](/managed/ingest-from/dynatrace-oneagent/installation-and-operation/linux/installation/disk-space-requirements-for-oneagent-installation-and-update-on-linux "Узнайте о структуре каталогов OneAgent и требованиях к дисковому пространству для установки OneAgent на Linux.") OneAgent. Чтобы настроить путь к логам, используйте параметр `LOG_PATH`.
+Параметр `INSTALL_PATH` не управляет каталогами [журналов и конфигурационных файлов](/managed/ingest-from/dynatrace-oneagent/installation-and-operation/linux/installation/disk-space-requirements-for-oneagent-installation-and-update-on-linux "Узнай про структуру каталогов OneAgent и требования к дисковому пространству для установки OneAgent в Linux.") OneAgent. Чтобы настроить путь для журналов, используй параметр `LOG_PATH`.
 
-Кроме того, пути установки по умолчанию не должны быть символическими ссылками. В частности, `/var/lib/dynatrace` нельзя изменить, за исключением части `/var/lib/dynatrace/oneagent/datastorage`, которую можно изменить с помощью параметра `DATA_STORAGE`.
+Кроме того, пути установки по умолчанию не должны быть символическими ссылками. В частности, `/var/lib/dynatrace` изменять нельзя, за исключением части `/var/lib/dynatrace/oneagent/datastorage`, которую можно изменить с помощью опции `DATA_STORAGE`.
 
 Каталог установки
 
-ActiveGate и OneAgent, установленные на одном хосте, **не** должны использовать один и тот же каталог установки.
+ActiveGate и OneAgent, установленные на одном хосте, **не должны** использовать один и тот же каталог установки.
 
-### Требования к пользовательскому каталогу
+### Требования к произвольному каталогу
 
-Убедитесь, что путь к вашему пользовательскому каталогу установки соответствует следующим требованиям:
+Убедись, что путь произвольного каталога установки соответствует следующим требованиям:
 
-* Каталог должен использоваться исключительно для нужд OneAgent. Никакое другое программное обеспечение не должно иметь к нему доступа. Одна причина связана с безопасностью, другая с автоматической очисткой, периодически выполняемой OneAgent, которая может удалить файлы, созданные другими приложениями.
-* Нельзя делать общими или вкладывать друг в друга каталоги [установки](#installation-path), [хранилища](#data-storage) и [логов](#log-path).
-* Значение должно быть абсолютным путём и не должно указывать на каталог корневого тома.
+* Каталог должен использоваться исключительно для нужд OneAgent. Никакое другое ПО не должно иметь к нему доступ. Причина в том числе в безопасности, а также в автоматической очистке, периодически выполняемой OneAgent, которая может удалить файлы, созданные другими приложениями.
+* Каталоги [установки](#installation-path), [хранилища](#data-storage) и [журналов](#log-path) не должны совпадать друг с другом или быть вложенными друг в друга.
+* Значение должно быть абсолютным путём и не должно указывать на корневой каталог тома.
 
 * Значение не должно быть уже существующей символической ссылкой.
 * Значение не должно быть дочерним каталогом `/var/lib/dynatrace`.
 
-## Путь к логам
+## Путь для журналов
 
 **Значение по умолчанию**: `/var/log/dynatrace/oneagent`
 
-**Предварительное условие**: для использования этого параметра при включённом SELinux в системе должна быть доступна утилита semanage.
+**Предварительное условие**: при использовании этого параметра с включённым SELinux в системе должна быть доступна утилита semanage.
 
-Параметр **`LOG_PATH`** позволяет настроить каталог логов OneAgent. Например:
+Параметр **`LOG_PATH`** позволяет настроить каталог журналов OneAgent. Например:
 
 ```
 /bin/sh Dynatrace-OneAgent-Linux-1.0.0.sh LOG_PATH=/data/dynatrace/logs
 ```
 
-### Требования к пользовательскому каталогу
+### Требования к произвольному каталогу
 
-Убедитесь, что путь к вашим пользовательским логам соответствует следующим требованиям:
+Убедись, что путь произвольного каталога журналов соответствует следующим требованиям:
 
-* Каталог должен использоваться исключительно для нужд OneAgent. Никакое другое программное обеспечение не должно иметь к нему доступа. Одна причина связана с безопасностью, другая с автоматической очисткой, периодически выполняемой OneAgent, которая может удалить файлы, созданные другими приложениями.
-* Нельзя делать общими или вкладывать друг в друга каталоги [установки](#installation-path), [хранилища](#data-storage) и [логов](#log-path).
-* Значение должно быть абсолютным путём и не должно указывать на каталог корневого тома.
+* Каталог должен использоваться исключительно для нужд OneAgent. Никакое другое ПО не должно иметь к нему доступ. Причина в том числе в безопасности, а также в автоматической очистке, периодически выполняемой OneAgent, которая может удалить файлы, созданные другими приложениями.
+* Каталоги [установки](#installation-path), [хранилища](#data-storage) и [журналов](#log-path) не должны совпадать друг с другом или быть вложенными друг в друга.
+* Значение должно быть абсолютным путём и не должно указывать на корневой каталог тома.
 
 * Значение не должно быть уже существующей символической ссылкой.
 * Значение не должно быть дочерним каталогом `/var/lib/dynatrace`.
 
-* Избегайте использования `/opt/dynatrace/oneagent/log`, которое является расположением логов по умолчанию для версий OneAgent ранее 1.203.
+* Не следует использовать `/opt/dynatrace/oneagent/log`, поскольку это расположение журналов по умолчанию для версий OneAgent раньше 1.203.
 
 ### Изменение расположения
 
-Если вы используете этот параметр, чтобы изменить расположение для уже установленного OneAgent:
+Если параметр используется для изменения расположения уже установленного OneAgent:
 
 * Существующие файлы не переносятся в новое расположение
 
-* После установки или изменения параметра `LOG_PATH` необходимо перезапустить процессы с глубоким мониторингом, чтобы наблюдающие за ними OneAgent восприняли новый путь для хранения логов. Вы получите уведомление о необходимости перезапустить соответствующий процесс на странице **Process overview**.
+* После установки или изменения параметра `LOG_PATH` нужно перезапустить процессы с глубоким мониторингом, чтобы отслеживающие их OneAgent могли применить новый путь для хранения журналов. Уведомление о необходимости перезапустить соответствующий процесс появится на странице **Process overview**.
 
 ## Хранилище данных
 
@@ -111,82 +110,82 @@ OneAgent версии 1.199
 
 **Значение по умолчанию**: `/var/lib/dynatrace/oneagent/datastorage`
 
-**Предварительное условие**: для использования этого параметра при включённом SELinux в системе должна быть доступна утилита semanage.
+**Предварительное условие**: при использовании этого параметра с включённым SELinux в системе должна быть доступна утилита semanage.
 
-Параметр **`DATA_STORAGE`** позволяет задать каталог, выделенный для хранения крупных данных времени выполнения, создаваемых OneAgent в режиме Full-Stack Monitoring, таких как отчёты о сбоях или дампы памяти.
+Параметр **`DATA_STORAGE`** позволяет задать каталог, предназначенный для хранения больших объёмов runtime-данных, создаваемых OneAgent в режиме полного мониторинга (full-stack monitoring), таких как отчёты о сбоях или дампы памяти.
 Например:
 
 `/bin/sh Dynatrace-OneAgent-Linux.sh DATA_STORAGE=/data/dynatrace/runtime`
 
-## Эндпоинт связи
+## Конечная точка связи
 
-**Значение по умолчанию**: `environment specific`
+**Значение по умолчанию**: `зависит от среды`
 
-Адрес эндпоинта связи OneAgent, компонента Dynatrace, которому OneAgent отправляет данные. В зависимости от вашего развёртывания это может быть Dynatrace Cluster или ActiveGate. Если вы устанавливаете OneAgent через страницу **Deploy** в Dynatrace, он уже задан правильным значением. Чтобы изменить его, используйте IP-адрес или имя. Добавьте номер порта после двоеточия.
+Адрес конечной точки связи OneAgent, компонента Dynatrace, которому OneAgent отправляет данные. В зависимости от развёртывания это может быть Dynatrace Cluster или ActiveGate. Если OneAgent устанавливается со страницы **Deploy** Dynatrace, это значение уже задано корректно. Чтобы изменить его, используй IP-адрес или имя. Номер порта добавляется после двоеточия.
 
-Чтобы задать эндпоинт связи, передайте его как значение параметра:
+Чтобы задать конечную точку связи, передай её как значение параметра:
 
 ```
 --set-server=https://100.20.10.1:443
 ```
 
-OneAgent и Dynatrace Cluster автоматически поддерживают рабочее соединение. Если меняется какая-либо деталь эндпоинта, кластер уведомляет OneAgent об изменении, и OneAgent автоматически обновляет эндпоинт, заданный вами через `--set-server`, на новое рабочее значение.
+OneAgent и Dynatrace Cluster автоматически поддерживают рабочее соединение. Если реквизиты конечной точки меняются, кластер уведомляет об этом OneAgent, и OneAgent автоматически обновляет конечную точку, заданную через `--set-server`, на новое рабочее значение.
 
-Чтобы изменить эндпоинт после установки, используйте `--set-server` в [интерфейсе командной строки OneAgent](/managed/ingest-from/dynatrace-oneagent/oneagent-configuration-via-command-line-interface "Узнайте, как выполнять некоторые задачи настройки OneAgent без переустановки OneAgent.").
+Чтобы изменить конечную точку после установки, используй `--set-server` в [интерфейсе командной строки OneAgent](/managed/ingest-from/dynatrace-oneagent/oneagent-configuration-via-command-line-interface "Узнай, как выполнить некоторые задачи конфигурации OneAgent без необходимости переустановки OneAgent.").
 
-## Идентификатор окружения
+## ID Environment
 
-**Значение по умолчанию**: `environment specific`
+**Значение по умолчанию**: `зависит от среды`
 
-[Идентификатор окружения](/managed/discover-dynatrace/get-started/monitoring-environment "Разберитесь и научитесь работать с окружениями мониторинга.") Dynatrace, который вы получили в письме об активации. Если вы устанавливаете OneAgent через страницу **Deploy** в Dynatrace, он уже задан правильным значением. Если вы продаёте услуги на базе Dynatrace, используйте эту опцию, чтобы задавать идентификаторы ваших клиентов из пула идентификаторов, приобретённых у Dynatrace.
+[ID окружения](/managed/discover-dynatrace/get-started/monitoring-environment "Узнай, что такое среда мониторинга Dynatrace, как найти ID своей среды, а также как настроить и подключить несколько сред.") Dynatrace, полученный в письме об активации. Если OneAgent устанавливается со страницы **Deploy** Dynatrace, это значение уже задано корректно. Если продаются сервисы на базе Dynatrace, используй эту опцию, чтобы задавать ID клиентов из пула ID, приобретённого у Dynatrace.
 
-Чтобы задать идентификатор окружения, передайте его как значение параметра:
+Чтобы задать ID окружения, передай его как значение параметра:
 
 ```
 --set-tenant=mySampleEnv
 ```
 
-Чтобы изменить tenant после установки, используйте `--set-tenant` в [интерфейсе командной строки OneAgent](/managed/ingest-from/dynatrace-oneagent/oneagent-configuration-via-command-line-interface "Узнайте, как выполнять некоторые задачи настройки OneAgent без переустановки OneAgent.").
+Чтобы изменить tenant после установки, используй `--set-tenant` в [интерфейсе командной строки OneAgent](/managed/ingest-from/dynatrace-oneagent/oneagent-configuration-via-command-line-interface "Узнай, как выполнить некоторые задачи конфигурации OneAgent без необходимости переустановки OneAgent.").
 
 ## Токен
 
-**Значение по умолчанию**: `environment specific`
+**Значение по умолчанию**: `зависит от среды`
 
-Tenant-токен, используемый для аутентификации, когда OneAgent подключается к эндпоинту связи для отправки данных. Если вы устанавливаете OneAgent через страницу **Deploy** в Dynatrace, он уже задан правильным значением.
+Токен tenant, используемый для аутентификации при подключении OneAgent к конечной точке связи для отправки данных. Если OneAgent устанавливается со страницы **Deploy** Dynatrace, это значение уже задано корректно.
 
-Чтобы задать токен, передайте его как значение параметра:
+Чтобы задать токен, передай его как значение параметра:
 
 ```
 --set-tenant-token=abcdefghij123456
 ```
 
-См. [Токены доступа](/managed/manage/identity-access-management/access-tokens-and-oauth-clients/access-tokens/rotate-tenant-token "Узнайте, что такое tenant-токен и как его изменить."), чтобы узнать, как получить токен.
+О том, как получить токен, читай в разделе [Access tokens](/managed/manage/identity-access-management/access-tokens-and-oauth-clients/access-tokens/rotate-tenant-token "Узнай, что такое токен tenant и как его изменить.").
 
-Чтобы изменить tenant-токен после установки, используйте `--set-tenant-token` в [интерфейсе командной строки OneAgent](/managed/ingest-from/dynatrace-oneagent/oneagent-configuration-via-command-line-interface "Узнайте, как выполнять некоторые задачи настройки OneAgent без переустановки OneAgent.").
+Чтобы изменить токен tenant после установки, используй `--set-tenant-token` в [интерфейсе командной строки OneAgent](/managed/ingest-from/dynatrace-oneagent/oneagent-configuration-via-command-line-interface "Узнай, как выполнить некоторые задачи конфигурации OneAgent без необходимости переустановки OneAgent.").
 
 ## Сетевые зоны
 
-**Значение по умолчанию**: `unset`
+**Значение по умолчанию**: `не задано`
 
-Сведения о правилах именования сетевых зон и другую справочную информацию см. в [Сетевые зоны](/managed/manage/network-zones "Узнайте, как работают сетевые зоны в Dynatrace.").
+О правилах именования сетевых зон и другой справочной информации читай в разделе [Network zones](/managed/manage/network-zones "Узнай, как работают сетевые зоны в Dynatrace.").
 
-Используйте параметр `--set-network-zone`, чтобы указать OneAgent взаимодействовать через заданную сетевую зону:
+Используй параметр `--set-network-zone`, чтобы указать OneAgent взаимодействовать через определённую сетевую зону:
 
 ```
 --set-network-zone=your.network.zone
 ```
 
-Чтобы изменить или очистить назначение сетевой зоны после установки, используйте [Удалённое управление конфигурацией](/managed/ingest-from/bulk-configuration#configure-oneagents "Выполняйте настройку OneAgent и ActiveGate на хостах со страницы Deployment status или массово с помощью Dynatrace API.") (выберите действие **modify network zone**).
+Чтобы изменить или сбросить назначение сетевой зоны после установки, используй [Remote configuration management](/managed/ingest-from/bulk-configuration#configure-oneagents "Выполняй конфигурацию OneAgent и ActiveGate на хостах со страницы Deployment status или в массовом режиме с помощью Dynatrace API.") (выбери действие **modify network zone**).
 
-Как вариант, можно использовать `--set-network-zone` в [интерфейсе командной строки OneAgent](/managed/ingest-from/dynatrace-oneagent/oneagent-configuration-via-command-line-interface#nz "Узнайте, как выполнять некоторые задачи настройки OneAgent без переустановки OneAgent.").
+Также можно использовать `--set-network-zone` в [интерфейсе командной строки OneAgent](/managed/ingest-from/dynatrace-oneagent/oneagent-configuration-via-command-line-interface#nz "Узнай, как выполнить некоторые задачи конфигурации OneAgent без необходимости переустановки OneAgent.").
 
 ## Прокси
 
 **Значение по умолчанию**: `unset`
 
-Адрес прокси-сервера. Используйте IP-адрес или имя и добавьте номер порта после двоеточия. Для прокси с аутентификацией можно указать имя пользователя и пароль так: `username:password@172.1.1.128:8080`, где и имя пользователя, и пароль должны быть в URL-кодировке.
+Адрес прокси-сервера. Используется IP-адрес или имя, а после двоеточия указывается номер порта. Для прокси с аутентификацией можно указать имя пользователя и пароль в формате `username:password@172.1.1.128:8080`, где и имя пользователя, и пароль должны быть в URL-кодировке.
 
-Чтобы задать прокси, передайте его как значение параметра:
+Чтобы настроить прокси, передай его как значение параметра:
 
 ```
 --set-proxy=172.1.1.128:8080
@@ -194,63 +193,63 @@ Tenant-токен, используемый для аутентификации,
 
 Dynatrace также поддерживает адреса IPv6.
 
-Чтобы изменить или очистить адрес прокси после установки, используйте `--set-proxy` в [интерфейсе командной строки OneAgent](/managed/ingest-from/dynatrace-oneagent/oneagent-configuration-via-command-line-interface "Узнайте, как выполнять некоторые задачи настройки OneAgent без переустановки OneAgent.").
+Чтобы изменить или очистить адрес прокси после установки, используй `--set-proxy` в [интерфейсе командной строки OneAgent](/managed/ingest-from/dynatrace-oneagent/oneagent-configuration-via-command-line-interface "Learn how to perform some OneAgent configuration tasks without the need to reinstall OneAgent.").
 
 ## Диапазон портов
 
 Устарело
 
-Начиная с OneAgent версии 1.301, OneAgent не использует TCP-порты для собственного межпроцессного взаимодействия. Если OneAgent занимает порты ваших приложений, обновите OneAgent до версии 1.301+.
+Начиная с версии OneAgent 1.301, OneAgent не использует TCP-порты для собственного межпроцессного взаимодействия. Если OneAgent занимает порты приложений, нужно обновить OneAgent до версии 1.301 и выше.
 
 **Значение по умолчанию**: `50000:50100`
 
-Watchdog представляет собой бинарный файл, используемый для запуска и мониторинга процессов мониторинга OneAgent:
+Watchdog, это бинарный файл, используемый для запуска и мониторинга процессов мониторинга OneAgent:
 
-* `oneagentos` – мониторинг операционной системы
-* `oneagentplugin` – мониторинг с помощью [расширений OneAgent](/managed/ingest-from/extensions/develop-your-extensions#oneagent-extensions "Разрабатывайте собственные расширения в Dynatrace.")
-* `oneagentextensions` – мониторинг с помощью локальных [Extensions](/managed/ingest-from/extensions "Узнайте, как создавать расширения Dynatrace и управлять ими.")
-* `oneagentloganalytics` – [Log Monitoring](/managed/analyze-explore-automate/log-monitoring "Узнайте, как включить Log Monitoring, какие сведения он может предоставить, и многое другое.")
-* `oneagentnetwork` – [мониторинг сети](/managed/observe/infrastructure-observability/networks "Узнайте, как мониторить сетевые коммуникации.")
+* `oneagentos`, мониторинг операционной системы
+* `oneagentplugin`, мониторинг с использованием [расширений OneAgent](/managed/ingest-from/extensions/develop-your-extensions#oneagent-extensions "Develop your own Extensions in Dynatrace.")
+* `oneagentextensions`, мониторинг с использованием локальных [Extensions](/managed/ingest-from/extensions "Learn how to create and manage Dynatrace Extensions.")
+* `oneagentloganalytics`, [Log Monitoring](/managed/analyze-explore-automate/log-monitoring "Learn how to enable Log Monitoring, the insights that Log Monitoring can provide, and more.")
+* `oneagentnetwork`, [мониторинг сети](/managed/observe/infrastructure-observability/networks "Learn how to monitor network communications.")
 
-Используйте параметр `--set-watchdog-portrange=<arg>`, чтобы изменить диапазон портов прослушивания watchdog на `<arg>`. `<arg>` должен содержать два номера портов, разделённых двоеточием (`:`). Например `50000:50100`. Максимальный поддерживаемый диапазон портов от 1024 до 65535. Диапазон портов должен охватывать не менее 4 портов. Номер порта, с которого начинается диапазон, должен быть меньше. Например:
+Используй параметр `--set-watchdog-portrange=<arg>`, чтобы изменить диапазон портов прослушивания watchdog на `<arg>`. В `<arg>` нужно указать два номера портов, разделённых двоеточием (`:`), например `50000:50100`. Максимально поддерживаемый диапазон портов: от 1024 до 65535. Диапазон портов должен охватывать не менее 4 портов. Номер порта, с которого начинается диапазон, должен быть меньше. Например:
 
 ```
 --set-watchdog-portrange=50000:50100
 ```
 
-Чтобы изменить диапазон портов после установки, используйте `--set-watchdog-portrange` в [интерфейсе командной строки OneAgent](/managed/ingest-from/dynatrace-oneagent/oneagent-configuration-via-command-line-interface#portrange "Узнайте, как выполнять некоторые задачи настройки OneAgent без переустановки OneAgent.").
+Чтобы изменить диапазон портов после установки, используй `--set-watchdog-portrange` в [интерфейсе командной строки OneAgent](/managed/ingest-from/dynatrace-oneagent/oneagent-configuration-via-command-line-interface#portrange "Learn how to perform some OneAgent configuration tasks without the need to reinstall OneAgent.").
 
 ## Автообновление
 
-Используйте `--set-auto-update-enabled=<arg>`, чтобы включить или отключить автообновление OneAgent. Например:
+Используй `--set-auto-update-enabled=<arg>`, чтобы включить или отключить автообновление OneAgent. Например:
 
 ```
 --set-auto-update-enabled=true
 ```
 
-После установки параметра в `false` вы не сможете управлять автоматическими обновлениями OneAgent через веб-интерфейс Dynatrace в **Settings** > **Updates** > **OneAgent updates**.
+После того как параметр установлен в `false`, управлять автоматическими обновлениями OneAgent через веб-интерфейс Dynatrace на странице **Settings** > **Deployment** > **OneAgent updates** будет нельзя.
 
-## Группа хостов
+## Host group
 
 **Значение по умолчанию**: `unset`
 
-Имя группы, которой требуется назначить хост. Подробнее см. [Организация окружения с помощью групп хостов](/managed/observe/infrastructure-observability/hosts/configuration/organize-your-environment-using-host-groups "Узнайте, как Dynatrace позволяет организовывать хосты, процессы и сервисы с помощью групп хостов."). Требования к строке группы хостов:
+Имя группы, к которой нужно отнести хост. Подробности см. в разделе [Организация окружения с помощью host group](/managed/observe/infrastructure-observability/hosts/configuration/organize-your-environment-using-host-groups "Find out how Dynatrace enables you to organize your hosts, processes, and services using host groups."). Требования к строке host group:
 
 * Может содержать только буквенно-цифровые символы, дефисы, подчёркивания и точки
-* Не должно начинаться с `dt.`
-* Максимальная длина 100 символов
+* Не должна начинаться с `dt.`
+* Максимальная длина, 100 символов
 
-Чтобы назначить хост группе хостов, передайте имя группы хостов как значение параметра:
+Чтобы отнести хост к host group, передай имя host group как значение параметра:
 
 ```
 --set-host-group=My.HostGroup_123-456
 ```
 
-Чтобы удалить хост из группы, нужно [удалить OneAgent](/managed/ingest-from/dynatrace-oneagent/installation-and-operation/linux/operation/uninstall-oneagent-on-linux "Узнайте, как удалить OneAgent из вашей системы на базе Linux.") или передать пустое значение `--set-host-group=""` при запуске обновления OneAgent. Удалить хост из группы с помощью параметра `HOST_GROUP` при обновлении OneAgent нельзя.
+Чтобы убрать хост из группы, нужно [удалить OneAgent](/managed/ingest-from/dynatrace-oneagent/installation-and-operation/linux/operation/uninstall-oneagent-on-linux "Learn how you can remove OneAgent from your Linux-based system.") или передать пустое значение `--set-host-group=""` при выполнении обновления OneAgent. Убрать хост из группы с помощью параметра `HOST_GROUP` при обновлении OneAgent нельзя.
 
-Чтобы изменить или очистить назначение группы хостов после установки, используйте [Удалённое управление конфигурацией](/managed/ingest-from/bulk-configuration#configure-oneagents "Выполняйте настройку OneAgent и ActiveGate на хостах со страницы Deployment status или массово с помощью Dynatrace API.") (выберите действие **modify host group**).
+Чтобы изменить или очистить привязку к host group после установки, используй [Remote configuration management](/managed/ingest-from/bulk-configuration#configure-oneagents "Perform OneAgent and ActiveGate configuration on hosts from the Deployment status page or at scale using the Dynatrace API.") (выбери действие **modify host group**).
 
-Как вариант, можно использовать `--set-host-group` в [интерфейсе командной строки OneAgent](/managed/ingest-from/dynatrace-oneagent/oneagent-configuration-via-command-line-interface#host-groups "Узнайте, как выполнять некоторые задачи настройки OneAgent без переустановки OneAgent.").
+Также можно использовать `--set-host-group` в [интерфейсе командной строки OneAgent](/managed/ingest-from/dynatrace-oneagent/oneagent-configuration-via-command-line-interface#host-groups "Learn how to perform some OneAgent configuration tasks without the need to reinstall OneAgent.").
 
 ## Режим мониторинга
 
@@ -262,7 +261,7 @@ Watchdog представляет собой бинарный файл, испо
 * `infra-only`: Infrastructure Monitoring
 * `discovery`: Discovery
 
-Чтобы включить определённый режим мониторинга, задайте параметру `--set-monitoring-mode` одно из следующих значений:
+Чтобы включить определённый режим мониторинга, установи параметр `--set-monitoring-mode` в одно из следующих значений:
 
 * `fullstack`
 * `infra-only`
@@ -274,15 +273,15 @@ Watchdog представляет собой бинарный файл, испо
 --set-monitoring-mode=infra-only
 ```
 
-Чтобы изменить режим мониторинга после установки, используйте `--set-monitoring-mode` в [интерфейсе командной строки OneAgent](/managed/ingest-from/dynatrace-oneagent/oneagent-configuration-via-command-line-interface#infrastructure-monitoring "Узнайте, как выполнять некоторые задачи настройки OneAgent без переустановки OneAgent.") или задайте его на странице [Host settings](/managed/platform/oneagent/monitoring-modes/monitoring-modes "Узнайте больше о доступных режимах мониторинга при использовании OneAgent.").
+Чтобы изменить режим мониторинга после установки, используй `--set-monitoring-mode` в [интерфейсе командной строки OneAgent](/managed/ingest-from/dynatrace-oneagent/oneagent-configuration-via-command-line-interface#infrastructure-monitoring "Learn how to perform some OneAgent configuration tasks without the need to reinstall OneAgent.") или настрой его на странице [Host settings](/managed/platform/oneagent/monitoring-modes/monitoring-modes "Find out more about the available monitoring modes when using OneAgent.").
 
 ## Пользовательское имя хоста
 
 **Значение по умолчанию**: `unset`
 
-Используйте `--set-host-name`, чтобы переопределить автоматически определённое имя хоста. Значение имени хоста не должно содержать символы `<`, `>`, `&`, `CR` (возврат каретки) и `LF` (перевод строки), а максимальная длина составляет 256 символов.
+Используй `--set-host-name`, чтобы переопределить автоматически определённое имя хоста. Значение имени хоста не должно содержать символы `<`, `>`, `&`, `CR` (возврат каретки) и `LF` (перевод строки), максимальная длина, 256 символов.
 
-Эта команда добавляет пользовательское имя хоста для отображения в интерфейсе, но определённое имя хоста не меняется. Подробнее см. [Задание пользовательских имён хостов](/managed/observe/infrastructure-observability/hosts/configuration/set-custom-host-names-in-dynamic-environments "Узнайте, как изменить имя мониторируемого хоста.").
+Эта команда добавляет пользовательское имя хоста для отображения в UI, но определённое имя хоста при этом не меняется. Подробности см. в разделе [Настройка пользовательских имён хостов](/managed/observe/infrastructure-observability/hosts/configuration/set-custom-host-names-in-dynamic-environments "Learn how to change a monitored host name.").
 
 Чтобы задать имя хоста:
 
@@ -290,13 +289,15 @@ Watchdog представляет собой бинарный файл, испо
 --set-host-name=myhostname
 ```
 
-Чтобы изменить имя хоста после установки, используйте `--set-host-name` в [интерфейсе командной строки OneAgent](/managed/ingest-from/dynatrace-oneagent/oneagent-configuration-via-command-line-interface "Узнайте, как выполнять некоторые задачи настройки OneAgent без переустановки OneAgent.").
+Чтобы изменить имя хоста после установки, используй `--set-host-name` в [интерфейсе командной строки OneAgent](/managed/ingest-from/dynatrace-oneagent/oneagent-configuration-via-command-line-interface "Learn how to perform some OneAgent configuration tasks without the need to reinstall OneAgent.").
 
 ## Пользовательские метаданные хоста
 
 **Значение по умолчанию**: `unset`
 
-После настройки пользовательские метаданные отображаются в виде набора свойств в нижней части раздела **Properties and tags** на странице обзора хоста. Значения свойств не должны содержать символ `=` (кроме разделителя ключ-значение) и пробельные символы. Максимальная длина составляет 256 символов, включая разделитель ключ-значение.
+После настройки пользовательские метаданные отображаются в виде набора свойств внизу раздела **Properties and tags** на странице обзора хоста. Значения свойств не должны содержать символ `=` (кроме как разделитель ключ-значение) и пробельные символы. Максимальная длина, 256 символов, включая разделитель ключ-значение.
+
+Когда пользовательские метаданные хоста используются для обогащения метрик и прочей телеметрии, ключи и значения могут корректироваться для соответствия требованиям нормализации: ключи приводятся к нижнему регистру, неподдерживаемые символы заменяются на подчёркивание (`_`), а ключи или значения, превышающие максимальную длину, обрезаются. В результате обогащённое значение может отличаться от того, что задано здесь.
 
 Чтобы добавить или изменить свойства хоста:
 
@@ -306,15 +307,15 @@ Watchdog представляет собой бинарный файл, испо
 
 В одной команде можно добавить или изменить несколько свойств.
 
-Чтобы изменить метаданные хоста после установки, используйте [Удалённое управление конфигурацией](/managed/ingest-from/bulk-configuration#configure-oneagents "Выполняйте настройку OneAgent и ActiveGate на хостах со страницы Deployment status или массово с помощью Dynatrace API.") (выберите действие **modify host properties**).
+Чтобы изменить метаданные хоста после установки, используй [Remote configuration management](/managed/ingest-from/bulk-configuration#configure-oneagents "Perform OneAgent and ActiveGate configuration on hosts from the Deployment status page or at scale using the Dynatrace API.") (выбери действие **modify host properties**).
 
-Как вариант, можно использовать `--set-host-property` в [интерфейсе командной строки OneAgent](/managed/ingest-from/dynatrace-oneagent/oneagent-configuration-via-command-line-interface "Узнайте, как выполнять некоторые задачи настройки OneAgent без переустановки OneAgent.").
+Также можно использовать `--set-host-property` в [интерфейсе командной строки OneAgent](/managed/ingest-from/dynatrace-oneagent/oneagent-configuration-via-command-line-interface "Learn how to perform some OneAgent configuration tasks without the need to reinstall OneAgent.").
 
 ## Пользовательские теги хоста
 
 **Значение по умолчанию**: `unset`
 
-После настройки теги отображаются в верхней части раздела **Properties and tags** на странице обзора хоста. Значения свойств не должны содержать символ `=` (кроме разделителя ключ-значение) и пробельные символы. Максимальная длина составляет 256 символов, включая разделитель ключ-значение.
+После настройки теги отображаются вверху раздела **Properties and tags** на странице обзора хоста. Значения свойств не должны содержать символ `=` (кроме как разделитель ключ-значение) и пробельные символы. Максимальная длина, 256 символов, включая разделитель ключ-значение.
 
 Чтобы добавить или изменить теги хоста:
 
@@ -322,39 +323,39 @@ Watchdog представляет собой бинарный файл, испо
 --set-host-tag=TestHost --set-host-tag=role=fallback --set-host-tag=Gdansk
 ```
 
-В одной команде можно добавить или изменить несколько тегов. Допускается задавать теги с одинаковым ключом, но разными значениями.
+В одной команде можно добавить или изменить несколько тегов. Допускается определять теги с одинаковым ключом, но разными значениями.
 
-Чтобы изменить теги хоста после установки, используйте [Удалённое управление конфигурацией](/managed/ingest-from/bulk-configuration#configure-oneagents "Выполняйте настройку OneAgent и ActiveGate на хостах со страницы Deployment status или массово с помощью Dynatrace API.") (выберите действие **modify host tags**).
+Чтобы изменить теги хоста после установки, используй [Remote configuration management](/managed/ingest-from/bulk-configuration#configure-oneagents "Perform OneAgent and ActiveGate configuration on hosts from the Deployment status page or at scale using the Dynatrace API.") (выбери действие **modify host tags**).
 
-Как вариант, можно использовать `--set-host-tag` в [интерфейсе командной строки OneAgent](/managed/ingest-from/dynatrace-oneagent/oneagent-configuration-via-command-line-interface "Узнайте, как выполнять некоторые задачи настройки OneAgent без переустановки OneAgent.").
+Также можно использовать `--set-host-tag` в [интерфейсе командной строки OneAgent](/managed/ingest-from/dynatrace-oneagent/oneagent-configuration-via-command-line-interface "Learn how to perform some OneAgent configuration tasks without the need to reinstall OneAgent.").
 
-## Источник идентификатора хоста
+## Источник ID хоста
 
 **Значение по умолчанию**: `auto`
 
-Доступно на всех поддерживаемых платформах для OneAgent версии 1.223+. Для OneAgent версии 1.221 и более ранних эта возможность поддерживается только для Citrix Virtual Apps and Desktops.
+Доступно на всех поддерживаемых платформах для OneAgent версии 1.223+. Для OneAgent версии 1.221 и более ранних эта функция поддерживается только для Citrix Virtual Apps and Desktops.
 
-Особенно важно сохранять статичный идентификатор хоста в динамичных виртуальных окружениях, где хосты пересоздаются ежедневно.
+Особенно важно поддерживать статичный ID хоста в динамических виртуальных средах, где хосты пересоздаются ежедневно.
 
-Чтобы **задать источник для генерации идентификатора хоста**, используйте `--set-host-id-source` и установите одно из предопределённых значений:
+Чтобы **задать источник генерации ID хоста**, используй `--set-host-id-source` и укажи одно из предопределённых значений:
 
-* `auto` – Позволяет Dynatrace генерировать идентификатор хоста автоматически
-* `ip-addresses` – Генерация идентификатора хоста на основе IP-адреса хоста
-* `mac-addresses` – Генерация идентификатора хоста на основе MAC-адреса сетевой карты хоста
-* `fqdn` – Генерация идентификатора хоста на основе полного доменного имени хоста (FQDN) в формате `host.domain`. Если FQDN не содержит точку, вместо него используется MAC-адрес сетевой карты.
-* Если вы мониторите несколько окружений, можно разделить хосты с одинаковыми IP-адресами, MAC-адресами или FQDN, используя отдельное пространство имён для каждого окружения. Пространство имён может содержать только буквенно-цифровые символы, дефисы, подчёркивания и точки; максимальная длина 256 символов:
+* `auto`, предоставить Dynatrace генерировать ID хоста автоматически
+* `ip-addresses`, генерировать ID хоста на основе IP-адреса хоста
+* `mac-addresses`, генерировать ID хоста на основе MAC-адреса сетевого адаптера хоста
+* `fqdn`, генерировать ID хоста на основе полного доменного имени хоста (FQDN) в формате `host.domain`. Если FQDN не содержит символа точки, вместо него используется MAC-адрес сетевого адаптера.
+* Если отслеживается несколько сред, можно разделить хосты с одинаковыми IP-адресами, MAC-адресами или FQDN, используя для каждой среды отдельное пространство имён. Пространство имён может содержать только буквенно-цифровые символы, дефисы, символы подчёркивания и точки; максимальная длина, 256 символов:
 
 * `ip-addresses;namespace=<namespace>`
 * `mac-addresses;namespace=<namespace>`
 * `fqdn;namespace=<namespace>`
 
-Например, чтобы задать источник идентификатора хоста `ip-addresses` и назначить его пространству имён `test`, запустите установщик OneAgent со следующим параметром:
+Например, чтобы задать источник ID хоста как `ip-addresses` и присвоить его пространству имён `test`, запусти установщик OneAgent со следующим параметром:
 
 ```
 --set-host-id-source="ip-addresses;namespace=test"
 ```
 
-Чтобы установить OneAgent на хост Citrix, задайте источник идентификатора хоста `FQDN`:
+Чтобы установить OneAgent на хост Citrix, задай источник ID хоста как `FQDN`:
 
 ```
 --set-host-id-source="fqdn;namespace=test"
@@ -362,28 +363,28 @@ Watchdog представляет собой бинарный файл, испо
 
 ### Требования к пользовательскому каталогу
 
-Убедитесь, что путь к вашему пользовательскому хранилищу данных соответствует следующим требованиям:
+Нужно убедиться, что пользовательский путь хранения данных отвечает следующим требованиям:
 
-* Каталог должен использоваться исключительно для нужд OneAgent. Никакое другое программное обеспечение не должно иметь к нему доступа. Одна причина связана с безопасностью, другая с автоматической очисткой, периодически выполняемой OneAgent, которая может удалить файлы, созданные другими приложениями.
-* Нельзя делать общими или вкладывать друг в друга каталоги [установки](#installation-path), [хранилища](#data-storage) и [логов](#log-path).
-* Значение должно быть абсолютным путём и не должно указывать на каталог корневого тома.
+* Каталог должен быть выделен исключительно для нужд OneAgent. Никакое другое ПО не должно иметь к нему доступа. Одна причина, это безопасность, другая, периодическая автоматическая очистка, выполняемая OneAgent, которая может удалить файлы, созданные другими приложениями.
+* Нельзя использовать совместно или вкладывать друг в друга каталоги [установки](#installation-path), [хранения](#data-storage) и [логов](#log-path).
+* Значение должно быть абсолютным путём и не должно указывать на корневой каталог тома.
 
 * Значение не должно быть уже существующей символической ссылкой.
 * Значение не должно быть дочерним каталогом `/var/lib/dynatrace`.
 
 ### Изменение расположения
 
-Если вы используете параметр для изменения расположения уже установленного OneAgent:
+Если используется параметр для изменения расположения уже установленного OneAgent:
 
 * Существующие файлы не переносятся в новое расположение
 
-* После установки или изменения параметра `DATA_STORAGE` необходимо перезапустить процессы с глубоким мониторингом, чтобы наблюдающие за ними OneAgent могли применить новый путь для хранения данных времени выполнения. Иначе дампы памяти и другие данные времени выполнения не будут сохраняться. На странице **Process overview** вы получите уведомление о необходимости перезапустить соответствующий процесс.
+* После задания или изменения параметра `DATA_STORAGE` нужно перезапустить процессы с глубоким мониторингом, чтобы отслеживающие их OneAgent смогли получить новый путь для хранения runtime-данных. В противном случае дампы памяти и другие runtime-данные не будут сохраняться. На странице **Process overview** появится уведомление о необходимости перезапуска соответствующего процесса.
 
 ## Доступ к системным логам
 
 **Значение по умолчанию**: `true`
 
-OneAgent скачивает системные логи Linux с целью диагностики проблем, которые могут быть вызваны условиями в вашем окружении. Подробнее см. [Системные логи, скачиваемые OneAgent](/managed/ingest-from/dynatrace-oneagent/installation-and-operation/linux/installation/oneagent-security-linux#system-logs "Узнайте о безопасности Dynatrace OneAgent и изменениях, вносимых в вашу систему на базе Linux").
+OneAgent загружает системные логи Linux для диагностики проблем, которые могут быть вызваны условиями в среде. Подробнее см. [Системные логи, загружаемые OneAgent](/managed/ingest-from/dynatrace-oneagent/installation-and-operation/linux/installation/oneagent-security-linux#system-logs "Узнай о безопасности Dynatrace OneAgent и изменениях, вносимых в систему на базе Linux").
 
 Чтобы отключить доступ к логам:
 
@@ -397,86 +398,86 @@ OneAgent скачивает системные логи Linux с целью ди
 --set-system-logs-access-enabled=true
 ```
 
-Если вам нужно изменить этот доступ после установки, используйте [интерфейс командной строки OneAgent](/managed/ingest-from/dynatrace-oneagent/oneagent-configuration-via-command-line-interface "Узнайте, как выполнять некоторые задачи настройки OneAgent без переустановки OneAgent."):
+Если нужно изменить этот доступ после установки, используй [интерфейс командной строки OneAgent](/managed/ingest-from/dynatrace-oneagent/oneagent-configuration-via-command-line-interface "Узнай, как выполнить некоторые задачи настройки OneAgent без необходимости переустановки OneAgent."):
 
-Обратите внимание, что это настройка самодиагностики, не связанная с [Log Monitoring](/managed/analyze-explore-automate/log-monitoring "Узнайте, как включить Log Monitoring, какие сведения он может предоставить, и многое другое.").
+Обрати внимание, что это настройка самодиагностики, не связанная с [Log Monitoring](/managed/analyze-explore-automate/log-monitoring "Узнай, как включить Log Monitoring, какие данные предоставляет Log Monitoring, и многое другое.").
 
 ## Log Monitoring
 
 **Значение по умолчанию**: `true`
 
-Если установлено в `true`, позволяет OneAgent получать доступ к файлам логов для целей Log Monitoring. Допустимые значения: (`true`, `false`) или (`1`, `0`).
+При значении `true` разрешает OneAgent доступ к файлам логов для целей Log Monitoring. Допустимые значения: (`true`, `false`) или (`1`, `0`).
 
-Также можно включить или отключить этот параметр конфигурации в ![Discovery & Coverage](https://dt-cdn.net/images/discovery-coverage-256-a20d5afa78.png "Discovery & Coverage") **Discovery & Coverage**.
+Также можно включить или отключить эту настройку в ![Discovery & Coverage](https://dt-cdn.net/images/discovery-coverage-256-a20d5afa78.png "Discovery & Coverage") **Discovery & Coverage**.
 
-1. Выберите **Install**, затем выберите **Install OneAgent**.
-2. Разверните раскрывающийся список **Optional parameters**.
-3. Включите или отключите параметр **Enable access to application log-file content on this host for problem analysis**.
+1. Выбери **Install** и укажи **Install OneAgent**.
+2. Разверни выпадающий список **Optional parameters**.
+3. Включи/отключи опцию **Enable access to application log-file content on this host for problem analysis**.
 
 Например:
 `--set-app-log-content-access=true`
 
-Если вам нужно включить или отключить Log Monitoring после установки, используйте `-set-app-log-content-access` в [интерфейсе командной строки OneAgent](/managed/ingest-from/dynatrace-oneagent/oneagent-configuration-via-command-line-interface "Узнайте, как выполнять некоторые задачи настройки OneAgent без переустановки OneAgent.").
+Если нужно включить или отключить Log Monitoring после установки, используй `-set-app-log-content-access` в [интерфейсе командной строки OneAgent](/managed/ingest-from/dynatrace-oneagent/oneagent-configuration-via-command-line-interface "Узнай, как выполнить некоторые задачи настройки OneAgent без необходимости переустановки OneAgent.").
 
-## Автоматическая инъекция
+## Автоматическое внедрение
 
-Не устанавливайте этот параметр в `true` во время процесса установки.
+Не устанавливай этот параметр в `true` во время процесса установки.
 
 **Значение по умолчанию**: `true`
 
-Параметр `--set-auto-injection-enabled=<arg>` можно установить в `true` или `false`, чтобы отключить или включить автоматическую инъекцию OneAgent.
+Можно задать параметр `--set-auto-injection-enabled=<arg>` в `true` или `false`, чтобы отключить или включить авто-внедрение OneAgent.
 
-Дополнительные сведения см. в [Автоматическая инъекция](/managed/ingest-from/dynatrace-oneagent/oneagent-configuration-via-command-line-interface#injection-toggle "Узнайте, как выполнять некоторые задачи настройки OneAgent без переустановки OneAgent.").
+Подробнее см. [Автоматическое внедрение](/managed/ingest-from/dynatrace-oneagent/oneagent-configuration-via-command-line-interface#injection-toggle "Узнай, как выполнить некоторые задачи настройки OneAgent без необходимости переустановки OneAgent.").
 
 ## Локальный приём метрик
 
-**Значение по умолчанию**: `14449`
+**Значение по умолчанию**: `14499`
 
-Параметр `--set-extensions-ingest-port=<arg>` можно использовать, чтобы изменить порт связи по умолчанию, используемый для локального приёма метрик. Этот порт используется [OneAgent REST API](/managed/ingest-from/extend-dynatrace/extend-metrics/ingestion-methods/oneagent-metric-api "Используйте Dynatrace API для получения метрик мониторируемых сущностей."), [интеграцией со скриптами](/managed/ingest-from/extend-dynatrace/extend-metrics/ingestion-methods/oneagent-pipe "Узнайте, как принимать метрики с помощью локальной интеграции со скриптами.") (`dynatrace_ingest`) и [Telegraf](/managed/ingest-from/extend-dynatrace/extend-metrics/ingestion-methods/telegraf "Принимайте метрики Telegraf в Dynatrace.").
+Можно использовать параметр `--set-extensions-ingest-port=<arg>`, чтобы изменить порт связи по умолчанию, используемый для локального приёма метрик. Этот порт используется [OneAgent REST API](/managed/ingest-from/extend-dynatrace/extend-metrics/ingestion-methods/oneagent-metric-api "Используй Dynatrace API для получения метрик отслеживаемых сущностей."), [Scripting integration](/managed/ingest-from/extend-dynatrace/extend-metrics/ingestion-methods/oneagent-pipe "Узнай, как принимать метрики с помощью локальной интеграции скриптов.") (`dynatrace_ingest`) и [Telegraf](/managed/ingest-from/extend-dynatrace/extend-metrics/ingestion-methods/telegraf "Принимай метрики Telegraf в Dynatrace.").
 
-Дополнительные сведения см. в [Приём метрик](/managed/ingest-from/extend-dynatrace/extend-metrics "Узнайте, как расширить наблюдаемость метрик в Dynatrace.").
+Подробнее см. [Приём метрик](/managed/ingest-from/extend-dynatrace/extend-metrics "Узнай, как расширить наблюдаемость метрик в Dynatrace.").
 
 ## Приём метрик StatsD
 
 **Значение по умолчанию**: `18125`
 
-Параметр `--set-extensions-statsd-port=<arg>` можно использовать, чтобы изменить UDP-порт прослушивания [DynatraceStatsD](/managed/ingest-from/extend-dynatrace/extend-metrics/ingestion-methods/statsd "Принимайте метрики в Dynatrace с помощью OneAgent и клиента StatsD на ActiveGate.") по умолчанию.
+Можно использовать параметр `--set-extensions-statsd-port=<arg>`, чтобы изменить порт прослушивания UDP по умолчанию для [DynatraceStatsD](/managed/ingest-from/extend-dynatrace/extend-metrics/ingestion-methods/statsd "Принимай метрики в Dynatrace с помощью OneAgent и клиента ActiveGate StatsD.").
 
-Дополнительные сведения см. в [Приём метрик](/managed/ingest-from/extend-dynatrace/extend-metrics "Узнайте, как расширить наблюдаемость метрик в Dynatrace.").
+Подробнее см. [Приём метрик](/managed/ingest-from/extend-dynatrace/extend-metrics "Узнай, как расширить наблюдаемость метрик в Dynatrace.").
 
 ## Непривилегированный режим
 
 ### **`NON_ROOT_MODE`**
 
-**Значение по умолчанию**: `1` (OneAgent версии 1.193+. Для более ранних версий `0`)
+**Значение по умолчанию**: `1` (OneAgent версии 1.193+. Для более ранних версий, `0`)
 
-При установке OneAgent в непривилегированном режиме повышенные привилегии нужно предоставить OneAgent только во время установки. Повышенные привилегии сбрасываются, как только OneAgent развёрнут.
+При установке OneAgent в непривилегированном режиме повышенные привилегии нужно предоставлять OneAgent только во время установки. Повышенные привилегии сбрасываются сразу после развёртывания OneAgent.
 
-Начиная с версии 1.193, OneAgent по умолчанию устанавливается в непривилегированном режиме. Существующие установки не переключаются в непривилегированный режим.
+Начиная с версии 1.193, OneAgent устанавливается в непривилегированном режиме по умолчанию. Существующие установки не переключаются в непривилегированный режим автоматически.
 
-Чтобы переключить установленный OneAgent в непривилегированный режим, необходимо вручную добавить параметр `NON_ROOT_MODE=1` к команде установки. Пример:
+Чтобы переключить установленный OneAgent в непривилегированный режим, нужно вручную добавить параметр `NON_ROOT_MODE=1` к команде установки. Пример:
 `sudo /bin/sh Dynatrace-Agent-Linux-1.0.0.sh NON_ROOT_MODE=1`  
-Чтобы вернуть установщик в режим по умолчанию для последующих обновлений, запустите его с `NON_ROOT_MODE=0`.
+Чтобы вернуть установщик к режиму по умолчанию для последующих обновлений, запусти его с `NON_ROOT_MODE=0`.
 
-Обратите внимание, что непривилегированный режим требует возможностей ядра Linux, доступных в этих версиях:
+Обрати внимание, что непривилегированный режим требует возможностей ядра Linux (kernel capabilities), доступных в следующих версиях:
 
-* Версия ядра Linux 2.6.26+ для установки OneAgent без привилегий root.
-* Версия ядра Linux 4.3+ (рекомендуется systemd версии 221+) для автоматических обновлений и полноценной работы OneAgent без привилегий root.
-  Дополнительные сведения см. в [Непривилегированный режим Linux](/managed/ingest-from/dynatrace-oneagent/installation-and-operation/linux/installation/linux-non-privileged "Узнайте, когда Dynatrace OneAgent требует привилегий root на Linux.")
+* Версия ядра Linux 2.6.26+ для установки OneAgent без root-привилегий.
+* Версия ядра Linux 4.3+ (рекомендуется systemd версии 221+) для автоматических обновлений OneAgent и полноценной работы без root-привилегий.
+  Подробнее см. [Непривилегированный режим Linux](/managed/ingest-from/dynatrace-oneagent/installation-and-operation/linux/installation/linux-non-privileged "Узнай, когда Dynatrace OneAgent требует root-привилегии в Linux.")
 
 ### **`DISABLE_ROOT_FALLBACK`**
 
 **Значение по умолчанию**: `0`
 
-Используется вместе с параметром `NON_ROOT_MODE` для блокировки уровня разрешений суперпользователя для OneAgent, работающего в непривилегированном режиме. Привилегии root требуются для автоматических обновлений и отдельных операций на версиях ядра между 2.6.26 и 4.3, то есть версиях без поддержки Linux ambient capabilities.
+Используется совместно с параметром `NON_ROOT_MODE`, чтобы заблокировать уровень прав суперпользователя для OneAgent, работающего в непривилегированном режиме. Root-привилегии требуются для автоматических обновлений и отдельных операций на версиях ядра между 2.6.26 и 4.3, то есть версиях без поддержки Linux ambient capabilities.
 
 `sudo /bin/sh Dynatrace-OneAgent-Linux-1.0.0.sh NON_ROOT_MODE=1 DISABLE_ROOT_FALLBACK=1`
 
-Чтобы вернуть установщик к использованию уровня разрешений суперпользователя для последующих обновлений, запустите его с `DISABLE_ROOT_FALLBACK=0`.
+Чтобы вернуть установщик к использованию уровня прав суперпользователя для последующих обновлений, запусти его с `DISABLE_ROOT_FALLBACK=0`.
 
-Дополнительные сведения см. в [требованиях к разрешениям для установки и эксплуатации OneAgent на Linux](/managed/ingest-from/dynatrace-oneagent/installation-and-operation/linux/installation/linux-non-privileged "Узнайте, когда Dynatrace OneAgent требует привилегий root на Linux.").
+Подробнее см. [требования к правам для установки и работы OneAgent в Linux](/managed/ingest-from/dynatrace-oneagent/installation-and-operation/linux/installation/linux-non-privileged "Узнай, когда Dynatrace OneAgent требует root-привилегии в Linux.").
 
-* Процесс удаления не удаляет непривилегированного пользователя из системы (независимо от того, является ли это `dtuser` или пользователь, заданный параметром `USER parameter`).
+* Процесс удаления не удаляет непривилегированного пользователя из системы (независимо от того, `dtuser` это или указан параметром `USER`).
 * Непривилегированное `username` сохраняется при обновлениях, если только при обновлении не указано новое имя пользователя.
 
 ## Указание непривилегированного пользователя и группы
@@ -485,48 +486,48 @@ OneAgent скачивает системные логи Linux с целью ди
 
 **Значение по умолчанию**: `dtuser`
 
-Указывает имя непривилегированного пользователя, от имени которого работают непривилегированные процессы OneAgent. Непривилегированными являются процессы, которым не нужны привилегии root. Эти процессы на Linux называются `Network OneAgent` и `Plugin OneAgent`.
+Задаёт имя непривилегированного пользователя, который используется непривилегированными процессами OneAgent. Непривилегированные процессы, это процессы, которым не нужны права root. В Linux эти процессы называются `Network OneAgent` и `Plugin OneAgent`.
 
-* По умолчанию установщик Dynatrace использует `dtuser` в качестве имени непривилегированного пользователя.
-* Если задан параметр `USER=<username>`, установщик использует `<username>` в качестве имени непривилегированного пользователя.
+* По умолчанию установщик Dynatrace использует имя `dtuser` для непривилегированного пользователя.
+* Если указан параметр `USER=<username>`, установщик использует `<username>` в качестве имени непривилегированного пользователя.
 
-В любом случае установщик Dynatrace проверяет, существует ли уже в системе требуемый пользователь (`dtuser` или пользователь, заданный параметром `USER`).
+В обоих случаях установщик Dynatrace проверяет, существует ли уже в системе требуемый пользователь (`dtuser` или пользователь, указанный параметром `USER`).
 
-* Если пользователь и группа с одинаковым именем оба существуют и для этого пользователя данная группа задана как основная, этот пользователь используется для запуска сетевого и плагинного модулей OneAgent.
-* Если пользователь не существует, установщик Dynatrace создаёт этого пользователя и группу и затем запускает эти непривилегированные процессы от имени нового пользователя.
-* Если пользователь существует в системе, но не имеет группы с тем же именем, заданной как основная, установка прерывается; чтобы использовать группу с другим именем, необходимо использовать параметр `GROUP`.
+* Если существуют и пользователь, и группа с тем же именем, и у этого пользователя эта группа задана как основная, для запуска сетевого и плагин-модуля OneAgent используется этот пользователь.
+* Если пользователь не существует, установщик Dynatrace создаёт этого пользователя и группу и впоследствии запускает эти непривилегированные процессы от имени нового пользователя.
+* Если пользователь существует в системе, но у него нет группы с тем же именем, заданной как основная, установка прерывается: чтобы использовать группу с другим именем, нужно использовать параметр `GROUP`.
 
 Требования к строке `USER`:
 
 * Может содержать только буквенно-цифровые символы, дефис `-`, подчёркивание `_` и точку `.`
-* Минимальная длина 3 символа
-* Максимальная длина 32 символа
-* Не может быть строкой [идентификатора пользователя](https://man7.org/linux/man-pages/man7/credentials.7.html)
+* Минимальная длина, 3 символа
+* Максимальная длина, 32 символа
+* Не может быть строкой [идентификатора пользователя﻿](https://man7.org/linux/man-pages/man7/credentials.7.html)
 
 ### **`GROUP`**
 
 **Значение по умолчанию**: `dtuser`
 
-Может использоваться только вместе с параметром `USER` и служит для указания основной группы пользователя, переданного через параметр `USER`. Если вы не указываете параметр `GROUP`, установщик предполагает, что она совпадает с `USER`, как для существующих, так и для несуществующих пользователей. Если вы указываете группу с помощью параметра `GROUP`, а пользователь не существует, установщик создаёт пользователя и назначает ему указанную группу. Параметр `GROUP` также используется для указания непривилегированного пользователя, принадлежащего определённой группе с именем, отличным от имени пользователя. Для усиления безопасности вашей системы мы настоятельно рекомендуем использовать выделенную группу пользователей для запуска процессов OneAgent.
+Может использоваться только вместе с параметром `USER` и служит для указания основной группы пользователя, переданного через параметр `USER`. Если параметр `GROUP` не указан, установщик считает её совпадающей с `USER`, как для существующих, так и для несуществующих пользователей. Если группа указана через параметр `GROUP` и пользователь не существует, установщик создаёт пользователя и назначает его в указанную группу. Параметр `GROUP` также используется для указания непривилегированного пользователя, принадлежащего определённой группе с именем, отличным от имени пользователя. Для повышения безопасности системы настоятельно рекомендуется использовать выделенную группу пользователей для запуска процессов OneAgent.
 
 Требования к строке `GROUP`:
 
 * Может содержать только буквенно-цифровые символы, дефис `-`, подчёркивание `_` и точку `.`
-* Минимальная длина 3 символа
-* Максимальная длина 32 символа
-* Не может быть строкой [идентификатора группы](https://man7.org/linux/man-pages/man7/credentials.7.html)
+* Минимальная длина, 3 символа
+* Максимальная длина, 32 символа
+* Не может быть строкой [идентификатора группы﻿](https://man7.org/linux/man-pages/man7/credentials.7.html)
 
 ## Пропуск проверки поддержки операционной системы
 
-Установка этого параметра в `true` позволит установить OneAgent на платформе, которая иначе не поддерживается. Dynatrace не несёт ответственности за такие установки.
+Установка этого параметра в `true` разрешит установку OneAgent на платформе, которая иначе не поддерживается. Dynatrace не несёт ответственности за такие установки.
 
 Этот параметр не сохраняется при автоматических обновлениях.
 
-Сведения о механизме автообновления OneAgent см. в [Обновление OneAgent на Linux](/managed/ingest-from/dynatrace-oneagent/installation-and-operation/linux/operation/update-oneagent-on-linux "Узнайте о различных способах обновления OneAgent на Linux.").
+Информацию о механизме автообновления OneAgent см. в разделе [Обновление OneAgent в Linux](/managed/ingest-from/dynatrace-oneagent/installation-and-operation/linux/operation/update-oneagent-on-linux "Learn about the different ways to update OneAgent on Linux.").
 
 **Значение по умолчанию**: `false`
 
-Параметр **`SKIP_OS_SUPPORT_CHECK`** позволяет принудительно установить OneAgent на платформе, которая иначе не поддерживается.
+Параметр **`SKIP_OS_SUPPORT_CHECK`** позволяет принудительно выполнить установку OneAgent на платформе, которая иначе не поддерживается.
 
 Например:
 
@@ -534,4 +535,4 @@ OneAgent скачивает системные логи Linux с целью ди
 /bin/sh Dynatrace-OneAgent-Linux-1.0.0.sh SKIP_OS_SUPPORT_CHECK=true
 ```
 
-Поддерживаемые платформы см. в [Поддержка технологий](/managed/ingest-from/technology-support#linux "Найдите технические подробности о поддержке Dynatrace конкретных платформ и фреймворков разработки.").
+Список поддерживаемых платформ см. в разделе [Поддержка технологий](/managed/ingest-from/technology-support#linux "Find technical details related to Dynatrace support for specific platforms and development frameworks.").

@@ -1,7 +1,6 @@
 ---
 title: Мониторинг AWS Fargate
 source: https://docs.dynatrace.com/managed/ingest-from/amazon-web-services/integrate-into-aws/aws-fargate
-scraped: 2026-05-12T11:11:07.901539
 ---
 
 # Мониторинг AWS Fargate
@@ -9,350 +8,523 @@ scraped: 2026-05-12T11:11:07.901539
 # Мониторинг AWS Fargate
 
 * Практическое руководство
-* Чтение: 1 мин
-* Обновлено 14 октября 2025 г.
+* 1 минута на чтение
+* Обновлено 08 июня 2026 г.
 
-Чтобы развернуть OneAgent в AWS Fargate, ознакомьтесь с приведёнными ниже инструкциями.
+Для мониторинга рабочих нагрузок AWS Fargate нужно развернуть Dynatrace OneAgent, как описано ниже.
 
-## Предварительные требования
+## Необходимые условия
 
-* [Создайте API-токен](/managed/manage/identity-access-management/access-tokens-and-oauth-clients/access-tokens#create-api-token "Изучите концепцию токена доступа и его области действия.") в вашей среде Dynatrace и включите следующие разрешения:
+* [Создать токен API](/managed/manage/identity-access-management/access-tokens-and-oauth-clients/access-tokens#create-api-token "Learn the concept of an access token and its scopes.") в среде Dynatrace и включить следующие права:
 
   + **Access problem and event feed, metrics, and topology** (API v1)
   + **PaaS integration - Installer download**
-* Ознакомьтесь со списком [поддерживаемых приложений и версий](/managed/ingest-from/technology-support "Найдите технические сведения о поддержке Dynatrace для конкретных платформ и фреймворков разработки.").
+* Ознакомиться со списком [поддерживаемых приложений и версий](/managed/ingest-from/technology-support "Find technical details related to Dynatrace support for specific platforms and development frameworks.").
 
-## Интеграция OneAgent в образ приложения
+## Интеграция во время выполнения
 
-Существует три способа интеграции OneAgent с приложениями AWS Fargate.
+Эта инструкция описывает, как интегрировать модули кода Dynatrace OneAgent в задачи Fargate с помощью initContainer. initContainer копирует артефакты OneAgent в общий эфемерный том, после чего переменные окружения настраивают и активируют OneAgent.
 
-### Автоматическое внедрение EKS
+Dynatrace предоставляет образы модулей кода OneAgent в публичных реестрах, например:
 
-При автоматическом внедрении вы можете управлять обновлениями и жизненным циклом.
+* [Теги образов Dynatrace Code Modules﻿](https://gallery.ecr.aws/dynatrace/dynatrace-codemodules).
 
-Kubernetes версии 1.20+
+Такой образ можно использовать для контейнерных сервисов, поддерживающих initContainer. Образ `dynatrace-codemodules` содержит артефакты OneAgent и небольшой CLI, `dynatrace-bootstrapper`, который выполняется при запуске и копирует артефакты в том, общий с контейнером приложения.
 
-В AWS Fargate поддерживается только развёртывание `applicationMonitoring` без CSI-драйвера.
+### Выбор образа
 
-Прежде чем приступить к установке, убедитесь, что у вас есть работающий кластер AWS Fargate. Подробнее см. в разделе [Начало работы с AWS Fargate на базе Amazon EKS](https://dt-url.net/zg034ha).
+Доступны следующие форматы тегов образов:
 
-1. Добавьте Fargate profile для определения развёртывания Dynatrace Operator.
+* **Неизменяемые теги (immutable tags)**, содержат модули кода конкретного релиза, например `1.327.51.20251205-162230`
+* **Плавающие теги (rolling tags)** (major.minor), например `1.327`
+* **Технологически-специфичные образы**, доступны как с неизменяемыми, так и с плавающими тегами, например `1.327-java`, `1.327-dotnet`
 
-   Убедитесь, что он соответствует namespace `dynatrace`, в котором будет развёрнут Dynatrace Operator.
-2. Создайте namespace `dynatrace`.
+**Плавающие теги** (например, `1.333`) автоматически получают patch-обновления при перезапуске контейнера. Новые задачи подхватывают последнюю patch-версию без изменений в определении задачи. Плавающие теги стоит использовать, когда в приоритете автоматическая доставка исправлений.
 
-   ```
-   kubectl create namespace dynatrace
-   ```
-3. Установите Dynatrace Operator.
+**Неизменяемые теги** (например, `1.333.17.20250601-120000`) закрепляют задачи за конкретной версией, обеспечивая детерминированные развёртывания и понятный путь отката. Неизменяемые теги стоит использовать, когда требуется строгий контроль версий или соблюдение требований комплаенса.
 
-   ```
-   kubectl apply -f https://github.com/Dynatrace/dynatrace-operator/releases/download/v1.9.0/kubernetes.yaml
-   ```
-4. Создайте secret с API-токеном для аутентификации в кластере Dynatrace.
+**Технологически-специфичные образы** (например, `1.333-java`, `1.333-dotnet`) содержат модули кода только для одной среды выполнения, за счёт чего образ получается меньше, а загрузка и запуск быстрее. Технологически-специфичных образов стоит избегать, если контейнер использует несколько сред выполнения, которые нужно инструментировать одновременно, например PHP, работающий за NGINX.
 
-   Не забудьте заменить `<API_TOKEN>` своим значением.
+### Безопасное хранение учётных данных
 
-   ```
-   kubectl -n dynatrace create secret generic dynakube --from-literal="apiToken=<API_TOKEN>"
-   ```
-5. Скачайте [предварительно настроенный пример файла custom resource DynaKube с GitHub](https://dt-url.net/dynakube-applicationmonitoring).
-6. Изучите [доступные параметры](/managed/ingest-from/setup-on-k8s/reference/dynakube-parameters "Список доступных параметров для настройки Dynatrace Operator в Kubernetes.") и адаптируйте custom resource DynaKube под свои требования.
-7. Примените custom resource DynaKube.
+Учётные данные Dynatrace нужно хранить как секреты и ссылаться на них в поле `secrets` определения задачи. Можно использовать любое решение для хранения секретов, подходящее под конкретную конфигурацию, например AWS Secrets Manager.
 
-   ```
-   kubectl apply -f applicationMonitoring.yaml
-   ```
+### Настройка определения задачи
 
-### Внедрение на этапе сборки EKS и ECS
+Нужно создать файл определения задачи (например, `task-definition.json`) со следующей структурой. Контейнер `initoneagent` запускается первым, копирует артефакты OneAgent в общий эфемерный том и завершает работу. После этого запускается контейнер приложения и загружает OneAgent через `LD_PRELOAD`.
 
-При внедрении на этапе сборки вы можете встроить OneAgent в образ контейнера.
-
-Многоэтапная сборка Docker-образов
-
-Классическая интеграция
-
-Для использования этого варианта вам потребуется:
-
-* Docker версии 17.05+
-* OneAgent версии 1.155+
-
-1. Войдите в Docker, используя ID вашей среды Dynatrace в качестве имени пользователя и PaaS-токен в качестве пароля.
-
-   ```
-   docker login -u <your-environment-id> <your-environment-url>
-   ```
-
-* Замените `<your-environment-url>` URL-адресом или IP-адресом вашей среды или ActiveGate.
-
-  + Dynatrace SaaS {your-environment-id}.live.dynatrace.com[1](#fn-1-1-def)
-  + Dynatrace Managed {your-domain}/e/{your-environment-id}[1](#fn-1-1-def)
-
-    1
-
-    Если вы используете собственный environment ActiveGate, используйте формат `<ip-address>:9999` или `<hostname>:9999`.
-* Добавьте две дополнительные строки кода в образ приложения после последней команды `FROM`:
-
-  ```
-  COPY --from=<your-environment-url>/linux/oneagent-codemodules:<technology> / /
-
-
-
-  ENV LD_PRELOAD /opt/dynatrace/oneagent/agent/lib64/liboneagentproc.so
-  ```
-
-* Замените `<technology>` кодовым модулем, необходимым для вашего приложения. Допустимые варианты: `all`, `java`, `apache`, `nginx`, `nodejs`, `dotnet`, `php`, `python`, `sdk` и `go`. Можно указать несколько кодовых модулей через дефис (`-`), например `java-go`. Выбор конкретных опций поддержки технологий вместо поддержки всех технологий даёт меньший пакет OneAgent.
-
-Что если мой Docker-образ основан на Alpine Linux?
-
-Dynatrace OneAgent поддерживает окружения на базе Alpine Linux. Используйте следующий синтаксис:
+Нужно заменить `<your-application-image>`, `<your-account-id>`, `<your-region>` и `<your-secret-name>` на собственные значения.
 
 ```
-COPY --from=<your-activegate>/linux/oneagent-codemodules-musl:<technology> / /
+{
 
 
 
-ENV LD_PRELOAD /opt/dynatrace/oneagent/agent/lib64/liboneagentproc.so
+"family": "<your-task-family>",
+
+
+
+"requiresCompatibilities": ["FARGATE"],
+
+
+
+"networkMode": "awsvpc",
+
+
+
+"cpu": "256",
+
+
+
+"memory": "512",
+
+
+
+"taskRoleArn": "arn:aws:iam::<your-account-id>:role/<your-task-role>",
+
+
+
+"executionRoleArn": "arn:aws:iam::<your-account-id>:role/<your-task-execution-role>",
+
+
+
+"containerDefinitions": [
+
+
+
+{
+
+
+
+"name": "initoneagent",
+
+
+
+"image": "public.ecr.aws/dynatrace/dynatrace-codemodules:1.333",
+
+
+
+"essential": false,
+
+
+
+"user": "0:0",
+
+
+
+"command": [
+
+
+
+"--source=/opt/dynatrace/oneagent",
+
+
+
+"--target=/mnt/dynatrace/oneagent",
+
+
+
+"--technology=<your-technology>"
+
+
+
+],
+
+
+
+"environment": [
+
+
+
+{ "name": "DT_ONEAGENT_OPTIONS", "value": "flavor=default&include=all" }
+
+
+
+],
+
+
+
+"secrets": [
+
+
+
+{
+
+
+
+"name": "DT_API_URL",
+
+
+
+"valueFrom": "arn:aws:secretsmanager:<your-region>:<your-account-id>:secret:<your-secret-name>:DT_API_URL::"
+
+
+
+},
+
+
+
+{
+
+
+
+"name": "DT_PAAS_TOKEN",
+
+
+
+"valueFrom": "arn:aws:secretsmanager:<your-region>:<your-account-id>:secret:<your-secret-name>:DT_PAAS_TOKEN::"
+
+
+
+}
+
+
+
+],
+
+
+
+"mountPoints": [
+
+
+
+{
+
+
+
+"sourceVolume": "oneagent",
+
+
+
+"containerPath": "/mnt",
+
+
+
+"readOnly": false
+
+
+
+}
+
+
+
+],
+
+
+
+"logConfiguration": {
+
+
+
+"logDriver": "awslogs",
+
+
+
+"options": {
+
+
+
+"awslogs-group": "<your-log-group>",
+
+
+
+"awslogs-region": "<your-region>",
+
+
+
+"awslogs-stream-prefix": "ecs"
+
+
+
+}
+
+
+
+}
+
+
+
+},
+
+
+
+{
+
+
+
+"name": "<your-application-container>",
+
+
+
+"image": "<your-application-image>",
+
+
+
+"essential": true,
+
+
+
+"linuxParameters": {
+
+
+
+"initProcessEnabled": true
+
+
+
+},
+
+
+
+"environment": [
+
+
+
+{ "name": "LD_PRELOAD", "value": "/mnt/dynatrace/oneagent/agent/lib64/liboneagentproc.so" }
+
+
+
+],
+
+
+
+"secrets": [
+
+
+
+{
+
+
+
+"name": "DT_TENANT",
+
+
+
+"valueFrom": "arn:aws:secretsmanager:<your-region>:<your-account-id>:secret:<your-secret-name>:DT_TENANT::"
+
+
+
+},
+
+
+
+{
+
+
+
+"name": "DT_TENANTTOKEN",
+
+
+
+"valueFrom": "arn:aws:secretsmanager:<your-region>:<your-account-id>:secret:<your-secret-name>:DT_TENANTTOKEN::"
+
+
+
+},
+
+
+
+{
+
+
+
+"name": "DT_CONNECTION_POINT",
+
+
+
+"valueFrom": "arn:aws:secretsmanager:<your-region>:<your-account-id>:secret:<your-secret-name>:DT_CONNECTION_POINT::"
+
+
+
+}
+
+
+
+],
+
+
+
+"mountPoints": [
+
+
+
+{
+
+
+
+"sourceVolume": "oneagent",
+
+
+
+"containerPath": "/mnt",
+
+
+
+"readOnly": false
+
+
+
+}
+
+
+
+],
+
+
+
+"dependsOn": [
+
+
+
+{
+
+
+
+"containerName": "initoneagent",
+
+
+
+"condition": "COMPLETE"
+
+
+
+}
+
+
+
+],
+
+
+
+"logConfiguration": {
+
+
+
+"logDriver": "awslogs",
+
+
+
+"options": {
+
+
+
+"awslogs-group": "<your-log-group>",
+
+
+
+"awslogs-region": "<your-region>",
+
+
+
+"awslogs-stream-prefix": "ecs"
+
+
+
+}
+
+
+
+}
+
+
+
+}
+
+
+
+],
+
+
+
+"volumes": [
+
+
+
+{
+
+
+
+"name": "oneagent",
+
+
+
+"host": {}
+
+
+
+}
+
+
+
+]
+
+
+
+}
 ```
 
-Допустимые варианты здесь: `all`, `go`, `java`, `apache`, `nginx`, `nodejs` и `python`.
+Нужно заменить `<your-technology>` на среду выполнения приложения (допустимые значения: `python`, `java`, `dotnet`, `nodejs`, `php`, `go`, `apache`, `nginx`, `all`).
 
-3. Соберите образ вашего приложения.
-
-   Соберите Docker-образ из вашего dockerfile, чтобы использовать его в Kubernetes-окружении:
+1. Зарегистрировать определение задачи:
 
    ```
-   docker build -t yourapp .
+   aws ecs register-task-definition --cli-input-json file://task-definition.json
    ```
-
-   Вы можете мониторить контейнеры вашего приложения с другой средой Dynatrace. Для этого ознакомьтесь с инструкциями ниже:
-
-   Для OneAgent версии 1.139+, если у вас уже есть образ приложения, в который добавлены кодовые модули OneAgent для определённой среды Dynatrace, вы можете заставить OneAgent отправлять данные в другую среду Dynatrace без пересборки образа приложения.
-
-   Для этого нужно сделать вызов к REST-endpoint вашей второй среды Dynatrace. Не забудьте заменить плейсхолдеры `<your-environment-id>` и `<your-paas-token>`.
+2. Обновить сервис ECS для использования новой ревизии:
 
    ```
-   curl "https://<your-environment-id>.live.dynatrace.com/api/v1/deployment/installer/agent/connectioninfo?Api-Token=<your-paas-token>"
+   aws ecs update-service \
+
+
+
+   --cluster <your-cluster-name> \
+
+
+
+   --service <your-service-name> \
+
+
+
+   --task-definition <your-task-family>
    ```
 
-   В ответ вы получите JSON-объект, содержащий требуемую информацию, которую необходимо передать в виде переменных окружения в контейнер приложения. Убедитесь, что вы установили следующие переменные окружения контейнера приложения:
+## Альтернативные пути интеграции
 
-   * `DT_TENANT`: равно `tenantUUID`
-   * `DT_TENANTTOKEN`: равно `tenantToken`
-   * `DT_CONNECTION_POINT`: список `communicationEndpoints` через точку с запятой
+* **EKS on Fargate**, можно запускать на Amazon EKS с типом запуска Fargate, используя внедрение только уровня приложения с помощью Dynatrace Operator. См. [Установка на EKS Fargate](/managed/ingest-from/setup-on-k8s/deployment/marketplaces/eks-dto#fargate "Deploy and configure Dynatrace Operator add-on for AWS Elastic Kubernetes Service (AWS EKS) environment.").
+* **Внедрение на этапе сборки контейнера**, чтобы встроить OneAgent в образ контейнера на этапе сборки с помощью многоступенчатой сборки Docker, см. [Настройка OneAgent на контейнерах для мониторинга только приложения](/managed/ingest-from/setup-on-container-platforms/docker/set-up-oneagent-on-containers-for-application-only-monitoring "Install, update, and uninstall OneAgent on containers for application-only monitoring.").
 
-Чтобы использовать distroless-образы (урезанные версии обычных Docker-образов, содержащие только самое необходимое для запуска приложения), OneAgent должен вызываться в исполняемой форме через инструкцию `CMD`, а не `ENTRYPOINT`.
+## Дополнительная настройка
 
-1. Установите следующие переменные окружения.
+После интеграции OneAgent можно настроить его поведение, добавив переменные окружения в контейнер приложения.
 
-   * `DT_API_URL="https://<your-environment-id>.live.dynatrace.com/api"`
-   * `DT_API_TOKEN="<your-paas-token>"`
-   * `ARCH="<x86|arm>"`
-   * `DT_ONEAGENT_OPTIONS="flavor=default&include=<technology1>&include=<technology2>"`
-   * `DT_HOME="/opt/dynatrace/oneagent"`
+### Маршрутизация логов OneAgent в stdout
 
-   Переменные окружения нужно установить:
+Чтобы направлять диагностические логи OneAgent в stdout вместе с логами приложения, нужно добавить следующие переменные окружения в контейнер приложения:
 
-   * В вашем текущем Dockerfile, чтобы интегрировать OneAgent и активировать инструментацию вашего приложения.
-     Определите переменные с опциональными значениями по умолчанию через инструкции `ARG`.
-     В блоке кода ниже приведён шаблон для установки этих переменных окружения.
-   * В контейнере runtime injection.
+* `DT_LOGSTREAM=stdout`, направляет диагностический вывод OneAgent в стандартный вывод
+* `DT_LOGLEVELCON=INFO`, задаёт уровень детализации логов
 
-   ```
-   ARG DT_API_URL="https://<YourDynatraceServerURL>/e/<your-environment-id>/api"
+При настройке лог-драйвера `awslogs` для контейнеров (как показано в примере определения задачи) [CloudWatch Logs](/managed/ingest-from/amazon-web-services/integrate-with-aws/aws-all-services/aws-service-cloudwatch-logs "Monitor Amazon CloudWatch Logs and view available metrics.") собирает логи приложения и диагностические логи OneAgent в единый поток.
 
+### Настройка сетевых зон
 
+Сетевые зоны можно настроить как переменную окружения:
 
-   ARG DT_API_TOKEN="<your-paas-token>"
+* `DT_NETWORK_ZONE`: равна `your.network.zone`
 
+Дополнительную информацию см. в разделе [сетевые зоны](/managed/manage/network-zones "Find out how network zones work in Dynatrace.").
 
+## Мониторинг потребления
 
-   ARG ARCH="<x86|arm>"
+Расчёт потребления при мониторинге зависит от модели лицензирования:
 
-
-
-   ARG DT_ONEAGENT_OPTIONS="flavor=default&include=<technology1>&include=<technology2>"
-
-
-
-   ENV DT_HOME="/opt/dynatrace/oneagent"
-
-
-
-   RUN mkdir -p "$DT_HOME" && \
-
-
-
-   wget -O "$DT_HOME/oneagent.zip" "$DT_API_URL/v1/deployment/installer/agent/unix/paas/latest?arch=$ARCH&Api-Token=$DT_API_TOKEN&$DT_ONEAGENT_OPTIONS" && \
-
-
-
-   unzip -d "$DT_HOME" "$DT_HOME/oneagent.zip" && \
-
-
-
-   rm "$DT_HOME/oneagent.zip"
-
-
-
-   ENTRYPOINT [ "/opt/dynatrace/oneagent/dynatrace-agent64.sh" ]
-
-
-
-   CMD [ "executable", "param1", "param2" ] # команда вашего приложения, например, Java
-   ```
-
-   * Команды выше, использующие `wget` и `unzip`, могут завершиться сбоем, если они не предоставляются базовым образом.
-   * Замените `<your-paas-token>` своим PaaS-токеном.
-   * `DT_ONEAGENT_OPTIONS`, это flavor (допустимые варианты: `default` или `musl` для Alpine-образов) и технология (кодовый модуль).
-
-     + Синтаксис для `default`: `flavor=default&include=all`.
-     + Синтаксис для `musl`: `flavor=musl&include=all`.
-
-   **Что если мой Docker-образ основан на Alpine Linux?**
-
-   Dynatrace OneAgent поддерживает flavor `musl` для окружений на базе Alpine Linux. Допустимые варианты для `flavor=musl`: `all`, `go`, `java`, `apache`, `nginx` и `nodejs`.
-2. Соберите образ вашего приложения.
-
-   Соберите Docker-образ из вашего dockerfile, чтобы использовать его в Kubernetes-окружении:
-
-   ```
-   docker build -t yourapp .
-   ```
-
-   Вы можете мониторить контейнеры вашего приложения с другой средой Dynatrace. Для этого ознакомьтесь с инструкциями ниже:
-
-   Для OneAgent версии 1.139+, если у вас уже есть образ приложения, в который добавлены кодовые модули OneAgent для определённой среды Dynatrace, вы можете заставить OneAgent отправлять данные в другую среду Dynatrace без пересборки образа приложения.
-
-   Для этого нужно сделать вызов к REST-endpoint вашей второй среды Dynatrace. Не забудьте заменить плейсхолдеры `<your-environment-id>` и `<your-paas-token>`.
-
-   ```
-   curl "https://<your-environment-id>.live.dynatrace.com/api/v1/deployment/installer/agent/connectioninfo?Api-Token=<your-paas-token>"
-   ```
-
-   В ответ вы получите JSON-объект, содержащий требуемую информацию, которую необходимо передать в виде переменных окружения в контейнер приложения. Убедитесь, что вы установили следующие переменные окружения контейнера приложения:
-
-   * `DT_TENANT`: равно `tenantUUID`
-   * `DT_TENANTTOKEN`: равно `tenantToken`
-   * `DT_CONNECTION_POINT`: список `communicationEndpoints` через точку с запятой
-
-### Runtime injection ECS
-
-При runtime injection OneAgent загружается при запуске контейнера. Чтобы установить Dynatrace OneAgent во время выполнения, нужно развернуть приложение через задачу с двумя определениями контейнеров. Один используется для загрузки и распаковки OneAgent в общий том, другой, это ваш контейнер приложения, который должен монтировать тот же том.
-
-Для runtime injection выполните следующие шаги.
-
-1. Перейдите в **Fargate Task Definition** > **Create New Task Definition** и выберите **AWS Fargate** в разделе **Infrastructure requirements > Launch type**.
-2. Задайте имя задачи, при необходимости установите роли и размеры, затем прокрутите вниз до **Storage - optional** > **Volumes** и нажмите **Add volume**. Добавьте том типа `Bind Mount` с именем `oneagent`.
-
-   Том необходимо создать **до** создания определений контейнеров, чтобы установить общий том в каждом контейнере.
-3. Прокрутите до низа **Container - 1** и нажмите **Add container**.
-
-   * В подразделе **Container details**:
-
-     + Добавьте контейнер с именем `install-oneagent`
-     + Установите образ в Alpine версии 3.8+ ("alpine:3")
-     + выберите **No** в поле **Essential container**
-   * В подразделе **Resource allocation limits - conditional**:
-
-     + Выберите лимиты CPU и памяти.
-
-   Существует два типа лимитов памяти: soft и hard. ECS требует, чтобы вы определили лимит хотя бы для одного типа памяти. Мы рекомендуем использовать настройку по умолчанию (soft-лимит 128 MiB), так как она менее ограничительна, но вы можете изменить её при необходимости.
-4. В подразделе **Docker configuration - optional**:
-
-   * В поле **Entry point** введите `/bin/sh,-c`.
-   * В поле **Command** введите `ARCHIVE=$(mktemp) && wget -O $ARCHIVE "$DT_API_URL/v1/deployment/installer/agent/unix/paas/latest?arch=$ARCH&Api-Token=$DT_PAAS_TOKEN&$DT_ONEAGENT_OPTIONS" && unzip -o -d /opt/dynatrace/oneagent $ARCHIVE && rm -f $ARCHIVE`.
-5. В подразделе **Environment variables** определите:
-
-   * `DT_API_URL`, это API URL вашей среды Dynatrace.
-
-     + Для SaaS: `https://<your-environment-id>.live.dynatrace.com/api`
-     + Для Managed: `https://<cluster>/e/<your-environment-id>/api`
-     + Для ActiveGate: `https://<your-active-gate-IP-or-hostname>:9999/e/<your-environment-id>/api`.
-   * `DT_ONEAGENT_OPTIONS`, это flavor (допустимые варианты: `default` или `musl` для Alpine-образов) и технология (кодовый модуль).
-
-     + Синтаксис для `default`: `flavor=default&include=all`.
-     + Синтаксис для `musl`: `flavor=musl&include=all`.
-   * `DT_PAAS_TOKEN`, это ваш PaaS-токен для загрузки кодовых модулей OneAgent.
-   * `ARCH`, архитектура CPU.
-
-     + для x86\_64: `x86`
-     + для arm64: `arm`
-
-       Автоматическое определение архитектуры
-
-       Используйте следующий скрипт для определения архитектуры CPU на Linux.
-
-       ```
-       ARCH=$(uname -p);
-
-
-
-       export ARCH;
-
-
-
-       if [ "$ARCH" = "arm" ] || [ "$ARCH" = "arm64" ] || [ "$ARCH" = "aarch64" ]; then
-
-
-
-       export ARCH="arm";
-
-
-
-       else
-
-
-
-       export ARCH="x86";
-
-
-
-       fi
-       ```
-6. Снова выберите **Add container**, на этот раз для определения вашего приложения, и заполните поля в подразделе **Standard** в соответствии с требованиями вашего приложения.
-7. Прокрутите до **Environment** и в **Environment variable** определите `LD_PRELOAD` со значением `/opt/dynatrace/oneagent/agent/lib64/liboneagentproc.so`.
-8. Прокрутите до **Startup Dependency Ordering** и введите имя контейнера `install-oneagent` и условие `Complete`.
-9. Прокрутите до раздела **Storage - optional**.
-
-   * Создайте новый том и назовите его `oneagent`
-   * Создайте точку монтирования:
-
-     + Выберите **Add mount point**
-     + Выберите `install-oneagent` в поле **Container**
-     + Выберите `oneagent` в поле **Source volume**
-     + Установите `/opt/dynatrace/oneagent` в **Container path**
-10. Нажмите **Create** внизу экрана, чтобы создать определение задачи и развернуть его в ECS-кластере.
-
-Проверьте вкладку **Logs**
-
-* Для контейнера `install-oneagent` вы увидите, как ZIP-файл кодовых модулей загружается через wget и распаковывается.
-* Для контейнера рабочей нагрузки вашего приложения вы увидите, как кодовый модуль загружается процессом.
-
-В Dynatrace контейнер рабочей нагрузки вашего Fargate-приложения отобразится в разделе **Hosts**. Инструментированный процесс отобразится в **Processes** как типичный Docker-контейнер.
-
-![Fargate](https://dt-cdn.net/images/fargate-1165-0748c0cf29.png)
-
-Fargate
-
-Подход с runtime требует Fargate версии 1.3+. Для более ранних версий выберите подход build-time.
-
-### Настройка сетевых зон Опционально
-
-Сетевые зоны можно настроить через переменную окружения:
-
-* `DT_NETWORK_ZONE`: равно `your.network.zone`
-
-Подробнее см. в разделе [сетевые зоны](/managed/manage/network-zones "Узнайте, как работают сетевые зоны в Dynatrace.").
-
-## Потребление ресурсов мониторинга
-
-Для AWS Fargate потребление ресурсов мониторинга рассчитывается на основе host units. Чтобы узнать, как рассчитываются host units для мониторинга приложений и инфраструктуры Dynatrace, см. [Мониторинг приложений и инфраструктуры (Host Units)](/managed/license/monitoring-consumption-classic/application-and-infrastructure-monitoring "Узнайте, как рассчитывается потребление мониторинга приложений и инфраструктуры Dynatrace на основе host units.").
+* Dynatrace Platform Subscription (DPS): потребление тарифицируется в ГиБ-часах, см. [Расчёт потребления Full-Stack Monitoring](/managed/license/capabilities/app-infra-observability/full-stack-monitoring#app-only-gib-hour "Learn how your consumption of the Dynatrace Full-Stack Monitoring DPS capability is billed and charged.").
+* Классическое лицензирование Dynatrace: потребление тарифицируется в host unit'ах, см. [Application and Infrastructure Monitoring (Host Units)](/managed/license/classic-licensing/application-and-infrastructure-monitoring "Understand how Dynatrace application and infrastructure monitoring consumption is calculated based on host units.").
 
 ## Устранение неполадок
 
-* [Проблемы интеграции OneAgent в образ приложения](https://dt-url.net/yu23mli)
+По проблемам интеграции OneAgent см. [Проблемы интеграции OneAgent в образ приложения﻿](https://dt-url.net/yu23mli).
 
-## Связанные темы
+## Похожие темы
 
-* [Матрица поддержки платформ и возможностей OneAgent](/managed/ingest-from/technology-support/oneagent-platform-and-capability-support-matrix "Узнайте, какие возможности поддерживаются OneAgent в различных операционных системах и на различных платформах.")
+* [Матрица поддержки платформ и возможностей OneAgent](/managed/ingest-from/technology-support/oneagent-platform-and-capability-support-matrix "Learn which capabilities are supported by OneAgent on different operating systems and platforms.")
