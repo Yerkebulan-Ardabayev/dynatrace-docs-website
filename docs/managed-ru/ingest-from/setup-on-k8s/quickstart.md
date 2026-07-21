@@ -1,44 +1,43 @@
 ---
 title: Быстрый старт
 source: https://docs.dynatrace.com/managed/ingest-from/setup-on-k8s/quickstart
-scraped: 2026-05-12T11:11:16.232515
 ---
 
 # Быстрый старт
 
 # Быстрый старт
 
-* Чтение: 2 мин
-* Обновлено 18 декабря 2024 г.
+* Чтение 2 мин
+* Обновлено 18 дек. 2024 г.
 
-Эта страница поможет вам за минуту установить компоненты Dynatrace в вашем кластере Kubernetes, чтобы быстро начать пользоваться платформой observability и аналитики Dynatrace.
+Эта страница поможет установить компоненты Dynatrace в течение минуты на кластере Kubernetes, чтобы быстро получить пользу от платформы наблюдаемости и аналитики Dynatrace.
 
 Предварительные требования
 
-Перед установкой Dynatrace в кластере Kubernetes убедитесь, что вы соответствуете следующим требованиям:
+Перед установкой Dynatrace на кластере Kubernetes убедись, что выполнены следующие требования:
 
-* Ваш CLI `kubectl` подключён к кластеру Kubernetes, который вы хотите мониторить.
-* У вас достаточно прав на отслеживаемом кластере для запуска команд `kubectl` или `oc`.
+* CLI `kubectl` подключён к кластеру Kubernetes, который нужно мониторить.
+* Есть достаточные привилегии на мониторируемом кластере для выполнения команд `kubectl` или `oc`. Если не используется роль кластера `cluster-admin`, см. [права доступа для развёртывания](/managed/ingest-from/setup-on-k8s/reference/security#deployment-permissions "Эта страница содержит обзор компонентов Dynatrace, их конфигураций по умолчанию и требуемых прав доступа") для необходимых разрешений.
 
 ### Настройка и конфигурация кластера
 
-* Необходимо разрешить исходящий трафик для подов Dynatrace (по умолчанию: пространство имён Dynatrace) к URL вашего окружения Dynatrace.
+* Необходимо разрешить исходящий трафик (egress) для подов Dynatrace (по умолчанию: пространство имён Dynatrace) до URL среды Dynatrace.
 
-  + Для Dynatrace Managed дополнительно можно использовать URL Cluster ActiveGate.
-* Для OpenShift Dedicated необходима [роль cluster-adminï»¿](https://docs.openshift.com/dedicated/osd_cluster_admin/osd-admin-roles.html).
-* Установка Helm: используйте [Helm версии 3ï»¿](https://dt-url.net/n5036j1).
+  + Для Dynatrace Managed можно опционально использовать URL кластера ActiveGate.
+* Для OpenShift Dedicated нужна [роль cluster-admin﻿](https://docs.openshift.com/dedicated/osd_cluster_admin/osd-admin-roles.html).
+* Установка Helm Используй [Helm версии 3﻿](https://dt-url.net/n5036j1).
 
 ### Поддерживаемые версии
 
-См. поддерживаемые [версии платформ](/managed/ingest-from/technology-support/support-model-and-issues "Как Dynatrace поддерживает версии Kubernetes и Red Hat OpenShift, а также известные проблемы") и [дистрибутивы](/managed/ingest-from/setup-on-k8s/deployment/supported-technologies "Обзор различных конфигураций для всех основных дистрибутивов Kubernetes.") Kubernetes/OpenShift.
+См. поддерживаемые [версии платформы](/managed/ingest-from/technology-support/support-model-and-issues "Как Dynatrace поддерживает версии Kubernetes и Red Hat OpenShift, а также известные проблемы") Kubernetes/OpenShift и [дистрибутивы](/managed/ingest-from/setup-on-k8s/deployment/supported-technologies "Обзор различных конфигураций для всех основных дистрибутивов Kubernetes.").
 
-## Разверните Dynatrace Operator
+## Развёртывание Dynatrace Operator
 
-Вы получите инсайты и actionable answers по вашей платформе Kubernetes, а также по вашим контейнерным приложениям, [развернув Dynatrace для Full Kubernetes Observability](/managed/ingest-from/setup-on-k8s/deployment#fullObs "Разверните Dynatrace Operator в Kubernetes") в режиме cloud-native full-stack.
+Получить аналитику и практические ответы по платформе Kubernetes, а также по контейнеризованным приложениям можно, [развернув Dynatrace для полной наблюдаемости Kubernetes](/managed/ingest-from/setup-on-k8s/deployment#fullObs "Развёртывание Dynatrace Operator на Kubernetes") в режиме cloud-native full-stack.
 
-1. Перейдите в **Kubernetes**.
-2. Выберите **Connect automatically via Dynatrace Operator**.
-3. Следуйте инструкциям на экране.
+1. Перейди в **Kubernetes**.
+2. Выбери **Connect automatically via Dynatrace Operator**.
+3. Следуй инструкциям на экране.
 
 ![quickstart](https://dt-cdn.net/images/quickstart-2nd-gen-2976-cd3bfad512.png)
 
@@ -48,16 +47,16 @@ quickstart
 
 [### Режим развёртывания
 
-Определите рекомендуемый режим развёртывания для вашей установки с учётом ваших требований.](/managed/ingest-from/setup-on-k8s/deployment "Разверните Dynatrace Operator в Kubernetes")[### Интеграции
+Определи рекомендуемый режим развёртывания для нужной конфигурации на основе требований.](/managed/ingest-from/setup-on-k8s/deployment "Развёртывание Dynatrace Operator на Kubernetes")[### Интеграции
 
-Используйте open source компоненты для приёма дополнительных сигналов observability в Dynatrace.](/managed/ingest-from/setup-on-k8s/extend-observability-k8s "Как расширить приём данных с помощью open source компонентов")[### Как это работает
+Используй компоненты с открытым исходным кодом для приёма дополнительных сигналов наблюдаемости в Dynatrace.](/managed/ingest-from/setup-on-k8s/extend-observability-k8s "Как приём данных можно расширить с помощью компонентов с открытым исходным кодом")[### Как это работает
 
-Ознакомьтесь с компонентами Dynatrace, которые разворачиваются в вашем кластере Kubernetes.](/managed/ingest-from/setup-on-k8s/how-it-works "Подробное описание того, как работает развёртывание в Kubernetes.")[### Руководства
+Ознакомься с компонентами Dynatrace, которые развёртываются в кластере Kubernetes.](/managed/ingest-from/setup-on-k8s/how-it-works "Подробное описание того, как работает развёртывание на Kubernetes.")[### Руководства
 
-Узнайте, как настроить Dynatrace Operator под конкретные сценарии использования.](/managed/ingest-from/setup-on-k8s/guides "Подробное описание вариантов установки и настройки для конкретных сценариев")[### Получите actionable answers
+Узнай, как настроить Dynatrace Operator для поддержки конкретных сценариев использования.](/managed/ingest-from/setup-on-k8s/guides "Подробное описание вариантов установки и настройки для конкретных сценариев использования")[### Получить практические ответы
 
-Начните анализировать ваши кластеры Kubernetes и контейнерные приложения с Dynatrace и пользуйтесь actionable answers.](/managed/observe/infrastructure-observability/container-platform-monitoring/kubernetes-monitoring "Мониторинг Kubernetes/OpenShift с помощью Dynatrace.")
+Начни анализировать кластеры Kubernetes и контейнеризованные приложения с помощью Dynatrace и получай пользу от практических ответов.](/managed/observe/infrastructure-observability/container-platform-monitoring/kubernetes-monitoring "Мониторинг Kubernetes/OpenShift с помощью Dynatrace.")
 
 ## Связанные темы
 
-* [Мониторинг кластеров и нагрузок Kubernetesï»¿](https://www.dynatrace.com/technologies/kubernetes-monitoring/)
+* [Мониторинг кластера и рабочих нагрузок Kubernetes﻿](https://www.dynatrace.com/technologies/kubernetes-monitoring/)

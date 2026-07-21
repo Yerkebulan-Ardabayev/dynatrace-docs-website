@@ -1,192 +1,159 @@
 ---
-title: Расчёт потребления Infrastructure Monitoring (DPS)
+title: Понимание и управление потреблением Infrastructure Monitoring (DPS)
 source: https://docs.dynatrace.com/managed/license/capabilities/app-infra-observability/infrastructure-monitoring
-scraped: 2026-05-12T11:13:43.319125
 ---
 
-# Расчёт потребления Infrastructure Monitoring (DPS)
+# Понимание и управление потреблением Infrastructure Monitoring (DPS)
 
-# Расчёт потребления Infrastructure Monitoring (DPS)
+# Понимание и управление потреблением Infrastructure Monitoring (DPS)
 
-* Explanation
-* 1-min read
-* Updated on Dec 10, 2025
+* Пояснение
+* Чтение за 1 минуту
+* Обновлено 01 июня 2026 г.
 
-Dynatrace OneAgent можно настроить в режиме Infrastructure Monitoring, который обеспечивает комплексный мониторинг хостов для физических и виртуальных серверов.
+Dynatrace Infrastructure Monitoring, это OneAgent режим мониторинга, обеспечивающий полную наблюдаемость на уровне хостов для физических и виртуальных машин. На этой странице описано, как рассчитывается потребление Infrastructure Monitoring, как отслеживать и анализировать своё использование и как оптимизировать расходы.
 
-В дополнение ко всем функциям [Foundation & Discovery](/managed/license/capabilities/app-infra-observability/foundation-and-discovery "Learn how your consumption of the Dynatrace Foundation & Discovery DPS capability is billed and charged."), Infrastructure Monitoring также включает детальные метрики производительности процессов, метрики производительности дисков, анализ сети между процессами и анализ памяти по процессам.
-На хостах в режиме Infrastructure Monitoring можно включать расширения Dynatrace Extensions, которые могут потреблять [точки данных пользовательских метрик](/managed/license/capabilities/app-infra-observability/infrastructure-monitoring#infra-metrics "Learn how your consumption of the Dynatrace Infrastructure Monitoring DPS capability is billed and charged.").
+Помимо всех возможностей [Foundation & Discovery](/managed/license/capabilities/app-infra-observability/foundation-and-discovery "Узнайте, как выставляется счёт и рассчитывается плата за потребление возможности Dynatrace Foundation & Discovery DPS."), Infrastructure Monitoring также включает детализированные метрики производительности процессов, метрики производительности диска, анализ сетевого взаимодействия между процессами и анализ использования памяти по процессам.
+Dynatrace Extensions можно включить на хостах с режимом Infrastructure Monitoring, при этом они могут потреблять [точки данных пользовательских метрик](/managed/license/capabilities/app-infra-observability/infrastructure-monitoring#infra-metrics "Узнайте, как рассчитывается потребление Infrastructure Monitoring, как отслеживать и анализировать своё использование и как оптимизировать расходы.").
 
-### Хост-часы
+## Как рассчитывается потребление
 
-Единица измерения для расчёта потребления мониторинга хостов в режиме Infrastructure Monitoring — хост-час.
-Каждый экземпляр Dynatrace OneAgent, установленный и запущенный на экземпляре операционной системы (например, на физической или виртуальной машине) с включённым режимом Infrastructure Monitoring, потребляет хост-часы.
-Чем дольше мониторируется хост, тем больше хост-часов потребляется.
-Потребление не зависит от объёма памяти хоста.
+Потребление Infrastructure Monitoring измеряется в **часах хоста** с использованием позиции тарифного плана **Infrastructure Monitoring**.
 
-### Детализация тарификации потребления хост-часов
+### Ключевые термины
 
-Dynatrace создан для динамичных облачных сред, где хосты и сервисы быстро запускаются и уничтожаются.
-Поэтому детализация тарификации потребления хост-часов рассчитывается в 15-минутных интервалах.
-Если хост отслеживается менее 15 минут в интервале, потребление хост-часов округляется до 15 минут перед расчётом.
+Хост
+:   Экземпляр операционной системы (физическая или виртуальная машина), на котором установлен и работает Dynatrace OneAgent.
 
-На рисунке ниже показан расчёт потребления хост-часов на хост в 15-минутных интервалах.
+Точка данных метрики
+:   Отдельное значение измерения, хранящееся в Dynatrace, относящееся к метрике, определяемой ключом метрики, и имеющее временную метку.
 
-![Infrastructure Monitoring consumption](https://dt-cdn.net/images/infrastructure-monitoring-consumption-5843-2c70d0f91c.jpg)
+### Правила подсчёта и исключения
 
-Потребление Infrastructure Monitoring
+Час хоста представляет собой один час активного мониторинга для одного хоста.
 
-### Метрики
+Потребление не зависит от объёма памяти хоста. Каждый отслеживаемый хост даёт один час хоста за час независимо от того, сколько у него ОЗУ.
 
-Этот раздел предполагает, что вы следовали рекомендуемым Dynatrace вариантам развёртывания.
-При реализации пользовательского развёртывания тарификация включённых метрик может работать так, как описано, — но это не гарантируется Dynatrace.
+### Гранулярность биллинга
 
-Dynatrace Infrastructure Monitoring включает метрики Infrastructure Monitoring и [другие встроенные метрики](/managed/analyze-explore-automate/metrics-classic/built-in-metrics "Explore the complete list of built-in Dynatrace metrics.").
-Эти метрики включены и никогда не тарифицируются.
+Dynatrace создан для динамичных облачных сред, где хосты и сервисы быстро создаются и уничтожаются.
+Поэтому гранулярность биллинга для потребления часов хоста рассчитывается с интервалом 15 минут.
+Если хост отслеживался менее 15 минут в интервале, потребление часов хоста округляется до 15 минут перед расчётом потребления.
 
-Infrastructure Monitoring также включает определённый объём точек данных пользовательских метрик.
-Каждый хост добавляет 1 500 точек данных пользовательских метрик в каждом 15-минутном интервале.
-Включённые точки данных метрик, не использованные в 15-минутном интервале предоставления, не переносятся на последующие интервалы.
-Включённые точки данных метрик окружения автоматически применяются к метрикам, происходящим с хостов, мониторируемых OneAgent в режиме Infrastructure Monitoring.
-Это применяется к пользовательским метрикам, как описано в таблице ниже.
+На рисунке ниже показано, как рассчитывается потребление часов хоста для каждого хоста с интервалом в 15 минут.
 
-Точки данных пользовательских метрик, превышающие включённый объём, тарифицируются как [Custom Metrics Classic](/managed/license/capabilities/platform-extensions/custom-metrics-classic "Learn how your consumption of the Dynatrace Custom Metrics Classic DPS capability is billed and charged.").
+![Пример потребления Infrastructure Monitoring](https://dt-cdn.net/images/infrastructure-monitoring-consumption-light-mode-3840-23a7d10898.png)
+
+Пример потребления Infrastructure Monitoring
+
+### Включённая функциональность
+
+В этом разделе предполагается, что использовались рекомендованные Dynatrace варианты развёртывания.
+При использовании собственного развёртывания начисление платы за включённые метрики может по-прежнему работать так, как описано, но это не гарантируется Dynatrace.
+
+Использование метрик Infrastructure Monitoring и [других встроенных метрик](/managed/analyze-explore-automate/metrics-classic/built-in-metrics "Ознакомьтесь с полным списком встроенных метрик Dynatrace.") включено без дополнительной платы на хостах с включённым Infrastructure Monitoring.
+
+Каждый хост также включает 1500 точек данных пользовательских метрик за каждый 15-минутный интервал. Неиспользованные точки данных пользовательских метрик не переносятся на следующие интервалы.
+
+Включённые точки данных метрик применяются автоматически к метрикам, поступающим с хостов, которые отслеживаются OneAgent в режиме Infrastructure Monitoring. Это относится к пользовательским метрикам, как описано в таблице ниже.
+
+Точки данных пользовательских метрик, превышающие включённый объём точек данных метрик, тарифицируются как [Custom Metrics Classic](/managed/license/capabilities/platform-extensions/custom-metrics-classic "Узнайте, как выставляется счёт и рассчитывается плата за потребление возможности Dynatrace Custom Metrics Classic DPS.").
 
 | Источник | Примеры (включая, но не ограничиваясь) |
 | --- | --- |
-| Хост с Infrastructure Monitoring, отправляющий данные через [OneAgent metric API](/managed/ingest-from/extend-dynatrace/extend-metrics/ingestion-methods/oneagent-metric-api "Use the Dynatrace API to retrieve the metrics of monitored entities.") | * OpenTelemetry метрики * Spring Micrometer * StatsD * JMX * Расширения, запущенные локально на хосте OneAgent * локальный на хосте Telegraf |
-| Узел Kubernetes с Infrastructure Monitoring | * OpenTelemetry метрики * Spring Micrometer * JMX * [Метрики Prometheus через ActiveGate](/managed/observe/infrastructure-observability/container-platform-monitoring/kubernetes-monitoring/monitor-prometheus-metrics "Metric ingestion from Prometheus endpoints in Kubernetes, metrics alerts, and monitoring consumption.") * Не включает метрики, отправленные через Dynatrace Collector или OpenTelemetry Collector. |
+| Хост, отслеживаемый Infrastructure Monitoring, и отправленные через [API метрик OneAgent](/managed/ingest-from/extend-dynatrace/extend-metrics/ingestion-methods/oneagent-metric-api "Используйте API метрик Dynatrace для получения метрик отслеживаемых сущностей.") | * Метрики OpenTelemetry * Spring Micrometer * StatsD * JMX * Extensions, запущенные локально на хосте через OneAgent * локальный на хосте Telegraf |
+| Узел Kubernetes, отслеживаемый Infrastructure Monitoring | * Метрики OpenTelemetry * Spring Micrometer * JMX * [Метрики Prometheus через ActiveGate](/managed/observe/infrastructure-observability/container-platform-monitoring/kubernetes-monitoring/monitor-prometheus-metrics "Приём метрик из эндпоинтов Prometheus в Kubernetes, оповещения по метрикам и потребление мониторинга.")  * Сюда не входят метрики, отправленные через Dynatrace Collector или OpenTelemetry Collector. |
 
-На основе Рисунка 2 выше приведён включённый объём точек данных пользовательских метрик для четырёх 15-минутных интервалов.
+#### Пример расчёта включённых точек данных пользовательских метрик
 
-### Пример расчёта включённых точек данных пользовательских метрик
+* Первый 15-минутный интервал: `1 (отслеживаемых хостов) × 1500 (точек данных метрик) = 1500 включённых точек данных пользовательских метрик`
+* Второй 15-минутный интервал: `2 (отслеживаемых хостов) × 1500 (точек данных метрик) = 3000 включённых точек данных пользовательских метрик`
+* Третий 15-минутный интервал: `1 (отслеживаемых хостов) × 1500 (точек данных метрик) = 1500 включённых точек данных пользовательских метрик`
+* Четвёртый 15-минутный интервал: `1 (отслеживаемых хостов) × 1500 (точек данных метрик) = 1500 включённых точек данных пользовательских метрик`
 
-* Первый 15-минутный интервал: `1 (мониторируемый хост) × 1 500 (точки данных) = 1 500 включённых точек данных`
-* Второй 15-минутный интервал: `2 (мониторируемых хоста) × 1 500 (точки данных) = 3 000 включённых точек данных`
-* Третий 15-минутный интервал: `1 (мониторируемый хост) × 1 500 (точки данных) = 1 500 включённых точек данных`
-* Четвёртый 15-минутный интервал: `1 (мониторируемый хост) × 1 500 (точки данных) = 1 500 включённых точек данных`
+Потребление точек данных пользовательских метрик принимает разные формы.
+Одинаковое количество точек данных пользовательских метрик может расходоваться:
 
-### Как потребляются точки данных пользовательских метрик в режиме Infrastructure Monitoring
+* Небольшим числом метрик высокого разрешения или множеством метрик низкого разрешения.
+* Равномерно в течение нескольких 15-минутных интервалов или всё сразу в течение одной минуты.
+* Всеми хостами с Infrastructure Monitoring, подмножеством всех таких хостов или одним отдельным хостом с Infrastructure Monitoring.
 
-Потребление точек данных пользовательских метрик может принимать различные формы.
-Одинаковое число точек данных может потребляться:
+## Отслеживание потребления
 
-* Несколькими метриками с высоким разрешением или многочисленными метриками с низким разрешением.
-* Равномерно в нескольких 15-минутных интервалах или всё сразу за одну минуту.
-* Всеми хостами с Infrastructure Monitoring, частью хостов или одним хостом.
+Dynatrace предоставляет различные возможности, которые помогают понять и проанализировать потребление Infrastructure Monitoring вашей организацией.
 
-## Детали потребления: Infrastructure Monitoring
+### Данные через Account Management
 
-Dynatrace предоставляет встроенные метрики использования, помогающие понять и анализировать потребление Infrastructure Monitoring в вашей организации.
-Чтобы использовать эти метрики, в ![Data Explorer](https://dt-cdn.net/images/data-explorer-512-743267b1fc.png "Data Explorer") **Data Explorer** введите `DPS` в поле **Search**.
-Эти метрики также доступны через Environment API и в Account Management (**Usage summary** > **Infrastructure Monitoring** > **Actions** > **View details**).
+Менеджеры лицензий могут просматривать использование и затраты в [**Account Management**﻿](https://myaccount.dynatrace.com/).
 
-Ниже перечислены метрики для мониторинга деталей потребления Infrastructure Monitoring.
+![Сведения о стоимости и использовании Infrastructure Monitoring](https://dt-cdn.net/images/screenshot-2026-06-11-at-15-48-1822-293540e773.png)
 
-(DPS) Infrastructure Monitoring billing usage
-:   Ключ: `builtin:billing.infrastructure_monitoring.usage`
+Сведения о стоимости и использовании Infrastructure Monitoring
 
-    Измерение: Count
+1. Перейти в [**Account Management**﻿](https://myaccount.dynatrace.com/) > **Subscription** > **Overview** > **Cost and usage details** > **Usage summary**.
+2. Выбрать возможность **Infrastructure Monitoring**.
+3. На этом экране также можно детализировать данные об использовании на уровне возможности и среды.
 
-    Разрешение: 15 мин
+   * Уровень возможности: выбрать **View Details** рядом с нужной возможностью.
+   * Уровень Environment: в таблице **Environments** выбрать **…** > **Open details with Notebooks**.
 
-    Описание: Общее число хост-часов, потреблённых в режиме Infrastructure Monitoring.
+Дополнительная информация: [Overview (Dynatrace Platform Subscription)](/managed/manage/account-management/license-subscription/subscription-overview-dps "Просмотр сводки бюджета и анализа затрат по Dynatrace Platform Subscription (DPS).").
 
-(DPS) Infrastructure Monitoring billing usage per host
-:   Ключ: `builtin:billing.infrastructure_monitoring.usage_per_host`
+## Оптимизация потребления
 
-    Измерение: Хост (`dt.entity.host`)
+### Рекомендации по конфигурации
 
-    Разрешение: 15 мин
+* Отслеживать бюджет включённых пользовательских метрик. Каждый хост включает 1500 точек данных пользовательских метрик за 15-минутный интервал. Если расширения или пользовательская инструментация регулярно генерируют больше, стоит проверить, действительно ли нужны все метрики, и рассмотреть удаление малополезных метрик.
+* Регулярно проверять инвентарь хостов. Искать выведенные из эксплуатации хосты, дублирующиеся экземпляры OneAgent или хосты, уменьшенные автомасштабированием и более не активные. Удаление неактивных хостов немедленно останавливает потребление.
 
-    Описание: Потреблённые хост-часы в режиме Infrastructure Monitoring на хост.
+### Постоянная оптимизация
 
-(DPS) Total metric data points reported by Infrastructure hosts
-:   Ключ: `builtin:billing.infrastructure_monitoring.metric_data_points.ingested`
+* Использовать метрику `builtin:billing.infrastructure_monitoring.metric_data_points.ingested_by_host` для выявления хостов с высоким потреблением и сопоставления с их ценностью для бизнеса.
+* Отключать OneAgent на простаивающих непроизводственных хостах (например, на staging-средах вне рабочего времени), чтобы не платить за неиспользуемый мониторинг.
+* Проверять Dynatrace Extensions, работающие на хостах с Infrastructure Monitoring. Каждое расширение может генерировать точки данных пользовательских метрик. Отключать расширения, которые больше не приносят пользы.
 
-    Измерение: Count
+### Автоматизация
 
-    Разрешение: 15 мин
+Dynatrace можно использовать для автоматизации части работы по оптимизации:
 
-    Описание: Число точек данных метрик, потреблённых всеми хостами с Infrastructure Monitoring.
+* Оповещения об аномалиях: получать уведомления о неожиданных скачках потребления часов хоста Infrastructure Monitoring. Для этого настроить [Cost Monitors](/managed/manage-your-costs/control/cost-monitors "Узнайте, как использовать функцию Cost Monitors для прогнозов и событий затрат.") в [**Account Management**﻿](https://myaccount.dynatrace.com/).
+* Отчёты по расписанию: регулярно доставлять автоматические отчёты о потреблении заинтересованным сторонам. Для этого использовать ![Notebooks](https://dt-cdn.net/images/notebooks-768-046137830a.webp "Notebooks") **Notebooks** и ![Workflows](https://dt-cdn.net/images/workflows-1024-b5708f3cf9.webp "Workflows") **Workflows**.
+* Рабочие процессы устранения: автоматически реагировать на события превышения порога затрат, например отключать некритичные хосты при достижении лимита бюджета. Для этого использовать [AutomationEngine](/managed/upgrade/unavailable-in-managed "Ваш выбор недоступен в Dynatrace Managed.").
 
-(DPS) Metric data points reported and split by Infrastructure hosts
-:   Ключ: `builtin:billing.infrastructure_monitoring.metric_data_points.ingested_by_host`
+## Частые вопросы
 
-    Измерение: Хост (`dt.entity.host`)
+### Влияет ли объём памяти хоста на потребление Infrastructure Monitoring?
 
-    Разрешение: 15 мин
+Нет. Потребление часов хоста не зависит от объёма памяти хоста. Каждый отслеживаемый хост даёт один час хоста за каждый час мониторинга независимо от того, сколько у него ОЗУ. Это отличается от Full-Stack Monitoring, потребление которого масштабируется в зависимости от памяти.
 
-    Описание: Число точек данных метрик с разбивкой по хостам с Infrastructure Monitoring.
+### Как Infrastructure Monitoring соотносится с Foundation & Discovery?
 
-(DPS) Available included metric data points for Infrastructure-monitored hosts
-:   Ключ: `builtin:billing.infrastructure_monitoring.metric_data_points.included`
+Оба варианта используют часы хостов в качестве единицы измерения, но Infrastructure Monitoring обеспечивает значительно более глубокую наблюдаемость:
 
-    Измерение: Count
+* Foundation & Discovery: базовое состояние хоста, статус служб ОС, обнаружение топологии и процессов. Без пользовательских метрик. Более низкая стоимость за час хоста.
+* Infrastructure Monitoring: всё, что есть в Foundation & Discovery, плюс подробные метрики производительности процессов, производительность диска, анализ сетевого трафика, анализ памяти по процессам, а также 1 500 включённых точек данных пользовательских метрик на хост за 15 минут.
 
-    Разрешение: 15 мин
+### Что происходит, если количество точек данных пользовательских метрик превышает включённую квоту?
 
-    Описание: Общее число включённых точек данных метрик, вычитаемых из точек данных, зафиксированных всеми хостами с Infrastructure Monitoring.
+Точки данных сверх 1 500 на хост за 15-минутный интервал тарифицируются как [Custom Metrics Classic](/managed/license/capabilities/platform-extensions/custom-metrics-classic "Learn how your consumption of the Dynatrace Custom Metrics Classic DPS capability is billed and charged.").
 
-(DPS) Consumed included metric data points for Infrastructure hosts
-:   Ключ: `builtin:billing.infrastructure_monitoring.metric_data_points.included_used`
+* Используй `builtin:billing.infrastructure_monitoring.metric_data_points.included` и `builtin:billing.infrastructure_monitoring.metric_data_points.ingested`, чтобы оставаться в рамках бюджета.
+* Используй `builtin:billing.infrastructure_monitoring.metric_data_points.ingested_by_host`, чтобы определить, какие хосты являются источником превышения.
 
-    Измерение: Count
+### Как работает детализация тарификации?
 
-    Разрешение: 15 мин
+Потребление рассчитывается 15-минутными интервалами. Если хост мониторится менее 15 минут в течение заданного интервала, его потребление округляется до 15 минут. Это обеспечивает точную тарификацию для короткоживущих облачных инстансов.
 
-    Описание: Число использованных включённых точек данных метрик хостов с Infrastructure Monitoring.
+### Включает ли Infrastructure Monitoring приём логов?
 
-(DPS) Total metric data points billed for Infrastructure hosts
-:   Ключ: `builtin:billing.custom_metrics_classic.usage.infrastructure_hosts`
+OneAgent автоматически принимает логи во всех режимах мониторинга, включая Infrastructure Monitoring. Однако приём логов не расходует часы хостов Infrastructure Monitoring, он тарифицируется отдельно как [Log Management and Analytics](/managed/upgrade/unavailable-in-managed "Your selection is unavailable in Dynatrace Managed.").
 
-    Измерение: Count
+### Можно ли использовать Dynatrace Extensions вместе с Infrastructure Monitoring?
 
-    Разрешение: 15 мин
-
-    Описание: Число тарифицируемых точек данных метрик для всех хостов с Infrastructure Monitoring.
-
-### Мониторинг потребления хост-часов
-
-Вы можете отслеживать суммарное потребление хост-часов для различных интервалов (15 мин, час, день или неделя) и любого выбранного временного диапазона, используя метрику «(DPS) Infrastructure Monitoring billing usage».
-В примере ниже показано, что 5 хостов мониторировались, и общее потребление составило 5 хост-часов за каждый час.
-
-![Infrastructure Monitoring (DPS)](https://dt-cdn.net/images/image011-1099-50bac22dd0.png)
-
-Infrastructure Monitoring (DPS)
-
-Можно детализировать суммарное потребление хост-часов с помощью метрики «(DPS) Infrastructure Monitoring billing usage per host».
-В примере ниже показан список всех хостов, зафиксировавших потребление.
-
-![Infrastructure Monitoring (DPS)](https://dt-cdn.net/images/image013-1099-cb1470f609.png)
-
-Infrastructure Monitoring (DPS)
-
-### Мониторинг потребления метрик для хостов с Infrastructure Monitoring
-
-Используйте метрику «(DPS) Total metric data points billed for Infrastructure hosts» для мониторинга числа тарифицируемых точек данных метрик хостов с Infrastructure Monitoring, как показано в примере ниже.
-
-![Infrastructure Monitoring (DPS)](https://dt-cdn.net/images/image015-1101-5c4b7620a4.png)
-
-Infrastructure Monitoring (DPS)
-
-Для управления бюджетом метрик можно сравнивать число доступных включённых точек данных с общим числом потреблённых точек данных, используя метрики «(DPS) Available included metric data points for Infrastructure hosts» и «(DPS) Total metric data points reported by Infrastructure hosts».
-В примере ниже показано, что было потреблено больше точек данных метрик, чем включено для этих хостов с Infrastructure Monitoring.
-
-![Infrastructure Monitoring (DPS)](https://dt-cdn.net/images/image017-1100-7b133be12d.png)
-
-Infrastructure Monitoring (DPS)
-
-Вы можете использовать метрику «(DPS) Metric data points reported and split by Infrastructure hosts» для отслеживания числа точек данных метрик, потреблённых каждым хостом с Infrastructure Monitoring.
-Представление с разбивкой помогает выявить хосты с наибольшим потреблением точек данных метрик.
-В примере ниже показано, что один из хостов с Infrastructure Monitoring зафиксировал значительно больше точек данных метрик, чем остальные.
-
-![Infrastructure Monitoring (DPS)](https://dt-cdn.net/images/image019-1768-c4ed044b93.png)
-
-Infrastructure Monitoring (DPS)
+Да. Dynatrace Extensions можно включить на хостах Infrastructure Monitoring. Extensions может генерировать точки данных пользовательских метрик, которые засчитываются в квоту 1 500 включённых точек данных на хост за 15-минутный интервал. Любое превышение тарифицируется отдельно.
 
 ## Связанные темы
 
 * [Dynatrace OneAgent](/managed/ingest-from/dynatrace-oneagent "Understand the important concepts related to OneAgent and find out how to install and operate OneAgent on different platforms.")
 * [Обзор Application & Infrastructure Observability (DPS)](/managed/license/capabilities/app-infra-observability "Learn about the different Application & Infrastructure Observability options that are available with a Dynatrace Platform Subscription (DPS) license.")
-* [Ценообразование Dynatrace](https://www.dynatrace.com/pricing/)
+* [Цены Dynatrace﻿](https://www.dynatrace.com/pricing/)

@@ -1,74 +1,73 @@
 ---
-title: Мутации подов Dynatrace для прикладных рабочих нагрузок
+title: Мутации подов Dynatrace для приложений
 source: https://docs.dynatrace.com/managed/ingest-from/setup-on-k8s/reference/workload-mutation
-scraped: 2026-05-12T11:53:43.772625
 ---
 
-# Мутации подов Dynatrace для прикладных рабочих нагрузок
+# Мутации подов Dynatrace для приложений
 
-# Мутации подов Dynatrace для прикладных рабочих нагрузок
+# Мутации подов Dynatrace для приложений
 
-* Чтение: 3 мин
-* Обновлено 4 декабря 2025 г.
+* Чтение 3 мин
+* Обновлено 04 дек 2025
 
-Когда вы включаете обогащение метаданными или OneAgent для прикладных подов, Dynatrace Operator использует вебхук для перехвата событий создания рабочих нагрузок и применяет мутации к создаваемым подам. Эти мутации изменяют спецификацию пода, чтобы включить возможности мониторинга.
+Когда включается обогащение метаданными или OneAgent для подов приложений, Operator Dynatrace использует webhook, чтобы перехватывать события создания workload и применять мутации к получившимся подам. Эти мутации изменяют спецификацию пода для включения возможностей мониторинга.
 
 ## Общие компоненты
 
-Начиная с Operator v1.7, механизмы внедрения были унифицированы для повышения эффективности за счёт сокращения монтирований томов и отказа от переменных окружения в пользу улучшенного подхода с init-контейнером.
+Начиная с Operator v1.7, механизмы внедрения были унифицированы для повышения эффективности за счёт сокращения volume mount'ов и отказа от переменных окружения в пользу улучшенного подхода на основе init-контейнера.
 
 ### `annotations`
 
-Эти `annotations` относятся ко всем типам внедрений через вебхук Dynatrace.
+Эти `annotations` актуальны для всех типов внедрений webhook Dynatrace.
 
-| Имя | Примеры значений | Описание |
+| Имя | Пример значений | Описание |
 | --- | --- | --- |
-| `dynakube.dynatrace.com/injected` | `true` | Указывает, что вебхук обработал под и либо внедрил его, либо пропустил внедрение |
-| `dynakube.dynatrace.com/reason` | `"NoBootstrapperConfig"` | Присутствует только при `dynakube.dynatrace.com/injected: false`, предоставляет дополнительную информацию о том, почему внедрение было пропущено |
+| `dynakube.dynatrace.com/injected` | `true` | Указывает, что webhook обработал под и либо внедрил в него изменения, либо пропустил внедрение |
+| `dynakube.dynatrace.com/reason` | `"NoBootstrapperConfig"` | Присутствует только при `dynakube.dynatrace.com/injected: false`, содержит дополнительную информацию о причине пропуска внедрения |
 
 Возможные значения для `dynakube.dynatrace.com/reason`:
 
-* `NoBootstrapperConfig`: Dynatrace Operator должен предоставлять конфигурацию каждому отслеживаемому пространству имён через секреты с именами `dynatrace-bootstrapper-config` и `dynatrace-bootstrapper-certs`. Если приложение планируется до создания этих секретов, вебхук должен пропустить внедрение.
-* `NoMutationNeeded`: [Существует несколько способов исключить под из внедрения в пространстве имён, которое в остальном отслеживается.](/managed/ingest-from/setup-on-k8s/guides/deployment-and-configuration/monitoring-and-instrumentation/annotate "Настройте мониторинг для пространств имён и подов") Для таких подов это значение задаётся как `reason` для отсутствия внедрения.
+* `NoBootstrapperConfig`: Operator Dynatrace должен предоставлять конфигурацию каждому отслеживаемому namespace через секреты `dynatrace-bootstrapper-config` и `dynatrace-bootstrapper-certs`. Если приложение запланировано до создания этих секретов, webhook должен пропустить внедрение.
+* `NoMutationNeeded`: [есть несколько способов исключить под из внедрения в otherwise отслеживаемом namespace.](/managed/ingest-from/setup-on-k8s/guides/deployment-and-configuration/monitoring-and-instrumentation/annotate "Configure monitoring for namespaces and pods") Для таких подов это значение устанавливается как `reason` отсутствия внедрения.
 
 ### `volumes`
 
-Эти `volumes` относятся ко всем типам внедрений через вебхук Dynatrace.
+Эти `volumes` актуальны для всех типов внедрений Webhook Dynatrace.
 
 | `name` | `type` |
 | --- | --- |
-| `dynatrace-input` | `projected` с `dynatrace-bootstrapper-config`(обязательный `Secret`) и `dynatrace-bootstrapper-certs`(необязательный `Secret`) |
+| `dynatrace-input` | `projected` с `dynatrace-bootstrapper-config` (обязательный `Secret`) и `dynatrace-bootstrapper-certs` (опциональный `Secret`) |
 | `dynatrace-config` | `emptyDir` |
 
 Том `dynatrace-input` используется исключительно внедрённым init-контейнером и содержит:
 
-* Конфигурацию, необходимую для внедрения, в секрете `dynatrace-bootstrapper-config`
-* Необходимые сертификаты в секрете `dynatrace-bootstrapper-certs`
+* конфигурацию, необходимую для внедрения, в секрете `dynatrace-bootstrapper-config`;
+* необходимые сертификаты в секрете `dynatrace-bootstrapper-certs`.
 
-  + Точное содержимое секретов зависит от того, что настроено в `DynaKube`
-  + Том `projected` используется, чтобы не превысить ограничение на размер секретов, когда пользователи предоставляют большое количество сертификатов
+  + Точное содержимое секретов зависит от того, что настроено в `DynaKube`.
+  + Том `projected` используется, чтобы не упереться в ограничение размера секретов, когда пользователи указывают большое количество сертификатов.
 
 Том `dynatrace-config` содержит всю необходимую конфигурацию для внедрения после настройки init-контейнером.
 
 ### `volumeMounts`
 
-Каждый пользовательский контейнер, независимо от типа внедрения, будет иметь это монтирование тома.
+Каждый пользовательский контейнер, независимо от типа внедрения, будет иметь этот volume mount.
 
 | `mountPath` | `name` | `subPath` |
 | --- | --- | --- |
 | `/var/lib/dynatrace` | `dynatrace-config` | `<container-name>` |
 
-Том `dynatrace-config` после настройки init-контейнером содержит все необходимые файловые конфигурации для включения возможностей мониторинга. OneAgent также использует этот том для хранения.
+Том `dynatrace-config` после настройки init-контейнером содержит все необходимые файловые конфигурации для включения возможностей мониторинга. OneAgent также использует этот том для хранения данных.
 
 #### `volumeMounts` в режиме `split-mounts`
 
-Начиная с Operator версии 1.8.0, к поду можно применить необязательную аннотацию `dynatrace.com/split-mounts`, чтобы включить режим `split-mounts`.
+Начиная с Operator версии 1.8.0, к поду можно применить опциональную аннотацию `dynatrace.com/split-mounts`, чтобы включить режим `split-mounts`.
 
-| Имя | Примеры значений | Описание |
+| Имя | Пример значений | Описание |
 | --- | --- | --- |
-| `dynatrace.com/split-mounts` | `true` | позволяет выполнять внедрение в рабочие нагрузки Dynatrace (например, ActiveGate) |
+| `dynatrace.com/split-mounts` | `true` | позволяет внедрять в workload'ы Dynatrace (такие как ActiveGate) |
 
-При включённом режиме `split-mounts` вместо `/var/lib/dynatrace` используются четыре пути монтирования. Это предотвращает конфликты между образами приложений Dynatrace и внедрённым монтированием тома `/var/lib/dynatrace`.
+При включённом режиме `split-mounts` вместо `/var/lib/dynatrace` используется четыре пути монтирования. Это предотвращает конфликты между образами приложений Dynatrace и внедрённым volumeMount `/var/lib/dynatrace`.
 
 В случае ActiveGate подкаталог `/var/lib/dynatrace/gateway/config_template` становится недоступным при использовании пути монтирования `/var/lib/dynatrace`.
 
@@ -79,25 +78,25 @@ scraped: 2026-05-12T11:53:43.772625
 | `/var/lib/dynatrace/enrichment/dt_metadata.properties` | `dynatrace-config` | `<container-name>/enrichment/dt_metadata.properties` |
 | `/var/lib/dynatrace/enrichment/endpoint` | `dynatrace-config` | `<container-name>/enrichment/endpoint` |
 
-Режим `split-mounts` всегда включён для ActiveGate, которыми управляет Dynatrace Operator.
+Режим `split-mounts` всегда включён для ActiveGate, управляемых Operator Dynatrace.
 
 ### `initContainers`
 
-Init-контейнер с именем `dynatrace-operator` добавляется для обогащения контейнера метаданными и/или внедрения OneAgent.
+Добавляется init-контейнер с именем `dynatrace-operator`, чтобы обогатить контейнер метаданными и/или внедрить OneAgent.
 
-* Использует конфигурацию пода и кластера (включая имя пода, UID и идентификатор кластера) как часть своей конфигурации.
-* Использует контекст безопасности по умолчанию или копирует securityContext пода.
-* Использует лимиты ресурсов в зависимости от типа внедрения:
+* Использует конфигурацию пода и кластера (включая имя пода, UID и ID кластера) как часть своей конфигурации.
+* Использует контекст безопасности по умолчанию либо копирует securityContext пода.
+* Использует ограничения ресурсов в зависимости от типа внедрения:
 
-  + (автономное) Метаданные: задаются значения по умолчанию
+  + (standalone) Метаданные: устанавливаются значения по умолчанию.
   + OneAgent: можно настроить в `DynaKube`, иначе
 
-    - без CSI: значения по умолчанию не заданы
-    - с CSI: задаются значения по умолчанию
+    - без CSI: значений по умолчанию нет;
+    - с CSI: устанавливаются значения по умолчанию.
 
 Пример YAML
 
-В этом примере включены и внедрение OneAgent, и обогащение метаданными:
+Этот пример показывает одновременно включённые внедрение OneAgent и обогащение метаданными:
 
 ```
 initContainers:
@@ -363,38 +362,38 @@ name: kube-api-access-jtkxm
 readOnly: true
 ```
 
-## Мутация рабочей нагрузки в режиме внедрения OneAgent
+## Мутация workload в режиме внедрения OneAgent
 
-В режиме внедрения OneAgent мутации направлены на включение возможностей full-stack мониторинга. Этот режим внедряет OneAgent в ваши прикладные поды, чтобы обеспечить комплексный мониторинг приложений и глубокую видимость.
+В режиме внедрения OneAgent мутации сосредоточены на включении возможностей full-stack мониторинга. Этот режим внедряет OneAgent в поды приложений, чтобы обеспечить всесторонний мониторинг приложений и глубокую видимость.
 
 Аргументы init-контейнера, специфичные для внедрения OneAgent
 
-* `--source=/opt/dynatrace/oneagent`: (Относится только к [node-image-pull](/managed/ingest-from/setup-on-k8s/guides/deployment-and-configuration/node-image-pull "Настройте загрузку образа на узле")) Исходный путь для копирования двоичных файлов OneAgent
-* `--target=/mnt/bin`: Путь назначения для копирования двоичных файлов OneAgent
-* `--install-path=/opt/dynatrace/oneagent-paas`: Путь установки, по которому двоичные файлы OneAgent будут смонтированы в пользовательском контейнере (используется для настройки файла `ld.so.preload`)
-* `--technology=...`: (Относится только к [node-image-pull](/managed/ingest-from/setup-on-k8s/guides/deployment-and-configuration/node-image-pull "Настройте загрузку образа на узле") или когда init-контейнер загружает OneAgent) Указывает тип OneAgent для загрузки/копирования с целью уменьшения размера двоичного файла (настраивается через аннотации пода или DynaKube)
-* `--flavor=...`: (Относится только к случаю, когда init-контейнер загружает OneAgent) Указывает разновидность OneAgent для загрузки/копирования с целью уменьшения размера двоичного файла (настраивается через аннотации пода)
+* `--source=/opt/dynatrace/oneagent`: (актуально только для [node-image-pull](/managed/ingest-from/setup-on-k8s/reference/code-modules-delivery-modes "Reference for how Dynatrace Operator delivers OneAgent code modules to application pods, including ephemeral volumes, CSI driver image pull, and ZIP download.")) путь источника для копирования бинарных файлов OneAgent
+* `--target=/mnt/bin`: путь назначения для копирования бинарных файлов OneAgent
+* `--install-path=/opt/dynatrace/oneagent-paas`: путь установки, куда бинарные файлы OneAgent будут смонтированы в пользовательском контейнере (используется для настройки файла `ld.so.preload`)
+* `--technology=...`: (актуально только для [node-image-pull](/managed/ingest-from/setup-on-k8s/reference/code-modules-delivery-modes "Reference for how Dynatrace Operator delivers OneAgent code modules to application pods, including ephemeral volumes, CSI driver image pull, and ZIP download.") или когда init-контейнер скачивает OneAgent) указывает тип OneAgent для скачивания/копирования, чтобы уменьшить размер бинарных файлов (настраивается через аннотации пода или DynaKube)
+* `--flavor=...`: (актуально только когда init-контейнер скачивает OneAgent) указывает flavor OneAgent для скачивания/копирования, чтобы уменьшить размер бинарных файлов (настраивается через аннотации пода)
 
 ### `annotations`
 
-| Имя | Примеры значений |
+| Имя | Пример значений |
 | --- | --- |
 | `oneagent.dynatrace.com/injected` | `true` |
 
 ### `env`
 
-| Имя | Примеры значений | Описание |
+| Имя | Пример значений | Описание |
 | --- | --- | --- |
 | `DT_DEPLOYMENT_METADATA` | `orchestration_tech=Operator-cloud_native_fullstack;script_version=snapshot;orchestrator_id=b9c38fb3-6c0f-45f6-8c25-9eb3b4b5af2a` | Содержит метаданные развёртывания для OneAgent |
-| `LD_PRELOAD` | `/opt/dynatrace/oneagent-paas/agent/lib64/liboneagentproc.so` | Предварительно загружает библиотеку OneAgent для мониторинга |
+| `LD_PRELOAD` | `/opt/dynatrace/oneagent-paas/agent/lib64/liboneagentproc.so` | Предзагружает библиотеку OneAgent для мониторинга |
 
 ### `volumes`
 
-Эти `volumes` относятся к внедрению OneAgent.
+Эти `volumes` актуальны для внедрения OneAgent.
 
 | `name` | `type` | Описание |
 | --- | --- | --- |
-| `oneagent-bin` | `csi` или `emptyDir` | Содержит двоичные файлы OneAgent |
+| `oneagent-bin` | `csi` или `emptyDir` | Содержит бинарные файлы OneAgent |
 
 Монтирование `csi` использует драйвер `csi.oneagent.dynatrace.com` и всегда доступно только для чтения.
 
@@ -405,34 +404,34 @@ readOnly: true
 | `mountPath` | `name` | `subPath` | `readOnly` | Описание |
 | --- | --- | --- | --- | --- |
 | `/opt/dynatrace/oneagent-paas` | `oneagent-bin` |  | `true` | Каталог установки OneAgent |
-| `/etc/ld.so.preload` | `dynatrace-config` | `oneagent/ld.so.preload` | `false` | Конфигурация предварительной загрузки библиотеки |
+| `/etc/ld.so.preload` | `dynatrace-config` | `oneagent/ld.so.preload` | `false` | Конфигурация предзагрузки библиотек |
 
-## Мутация пода для обогащения метаданными
+## Мутация Pod для обогащения метаданных
 
-Начиная с Dynatrace Operator версии 1.9.0, функция `metadataEnrichment` автоматически включается для пространств имён с внедрением OneAgent, даже если параметр `enabled` в `.spec.metadataEnrichment` имеет значение `false`.
+Начиная с версии 1.9.0 Dynatrace Operator, функция `metadataEnrichment` автоматически включается для namespace'ов с внедрением OneAgent, даже если параметр `enabled` в `.spec.metadataEnrichment` установлен в `false`.
 
-Поэтому эти специфичные для обогащения метаданными мутации применяются к подам в пространствах имён с внедрением OneAgent, даже без явного включения `metadataEnrichment` в `DynaKube`. Явное отключение обогащения метаданными на уровне пода через аннотацию `metadata-enrichment.dynatrace.com/inject: false` также не будет иметь эффекта.
+Поэтому эти специфичные для обогащения метаданных мутации применяются к pod'ам в namespace'ах с внедрением OneAgent даже без явного включения `metadataEnrichment` в `DynaKube`. Явное отключение обогащения метаданных на уровне pod через аннотацию `metadata-enrichment.dynatrace.com/inject: false` также не даст эффекта.
 
-В режиме обогащения метаданными Dynatrace Operator дополняет поды дополнительными метаданными.
+В режиме обогащения метаданных Dynatrace Operator дополняет pod'ы дополнительными метаданными.
 
-Аргументы init-контейнера, специфичные для обогащения метаданными
+Специфичные для обогащения метаданных аргументы для init-контейнера
 
-* `--metadata-enrichment`: Указывает init-контейнеру выполнить обогащение метаданными
-* `--attribute=k8s.workload.kind=...`: Вебхук определяет это, следуя `OwnerReferences` пода
-* `--attribute=k8s.workload.name=...`: Вебхук определяет это, следуя `OwnerReferences` пода
-* `--attribute=...`: Метаданные, распространённые из аннотаций пространства имён пода, появляются как атрибуты
+* `--metadata-enrichment`: указывает init-контейнеру выполнить обогащение метаданных
+* `--attribute=k8s.workload.kind=...`: webhook определяет это, следуя `OwnerReferences` pod'а
+* `--attribute=k8s.workload.name=...`: webhook определяет это, следуя `OwnerReferences` pod'а
+* `--attribute=...`: метаданные, распространяемые из аннотаций namespace pod'а, появляются как атрибуты
 
 ### `annotations`
 
-| Имя | Примеры значений |
+| Имя | Пример значений |
 | --- | --- |
 | `metadata.dynatrace.com/k8s.workload.kind` | `deployment` |
 | `metadata.dynatrace.com/k8s.workload.name` | `example-app` |
 | `metadata-enrichment.dynatrace.com/injected` | `true` |
 
-## Мутация пода для внедрения OneAgent с node-image-pull
+## Мутация Pod для внедрения OneAgent с node-image-pull
 
-В режиме внедрения OneAgent с [node-image-pull](/managed/ingest-from/setup-on-k8s/guides/deployment-and-configuration/node-image-pull "Настройте загрузку образа на узле") Dynatrace Operator сочетает full-stack мониторинг с возможностями обогащения метаданными.
+В режиме внедрения OneAgent с [node-image-pull](/managed/ingest-from/setup-on-k8s/reference/code-modules-delivery-modes "Reference for how Dynatrace Operator delivers OneAgent code modules to application pods, including ephemeral volumes, CSI driver image pull, and ZIP download."), Dynatrace Operator сочетает полный мониторинг стека (full-stack monitoring) с возможностями обогащения метаданных.
 
 ### `initContainers`
 
@@ -440,7 +439,7 @@ readOnly: true
 
 Пример YAML
 
-Поскольку `image` Operator/Webhook не используется, аргумент `bootstrap` отсутствует в init-контейнере, так как он не нужен.
+Поскольку `image` Operator/Webhook не используется, аргумент `bootstrap` в init-контейнере отсутствует, так как в нём нет необходимости.
 
 ```
 initContainers:

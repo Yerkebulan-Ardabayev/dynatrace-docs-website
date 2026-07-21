@@ -1,19 +1,18 @@
 ---
 title: Поддержка технологий мейнфрейма
 source: https://docs.dynatrace.com/managed/ingest-from/technology-support/mainframe-technology-support
-scraped: 2026-05-12T11:06:28.120870
 ---
 
 # Поддержка технологий мейнфрейма
 
 # Поддержка технологий мейнфрейма
 
-* Чтение: 3 мин
-* Обновлено 7 апреля 2026 г.
+* Чтение за 3 минуты
+* Обновлено 14 июля 2026 г.
 
-Dynatrace поддерживает мониторинг перечисленных ниже технологий и версий на IBM z/OS.
+Dynatrace поддерживает мониторинг технологий и версий, перечисленных ниже, на IBM z/OS.
 
-Поддерживаемые операционные системы модуля zRemote перечислены в разделе [Системные требования](/managed/ingest-from/dynatrace-oneagent/installation-and-operation/zos/installation/install-zremote#system-requirements "Подготовка и установка zRemote для мониторинга z/OS.").
+Поддерживаемые операционные системы для модуля zRemote указаны в разделе [Системные требования](/managed/ingest-from/dynatrace-oneagent/installation-and-operation/zos/installation/install-zremote#system-requirements "Prepare and install the zRemote for z/OS monitoring.").
 
 Схема версий поддержки технологий
 
@@ -21,27 +20,27 @@ Dynatrace поддерживает мониторинг перечисленны
 
 * **Поддерживается мажорная версия 5**
 
-  + Поддерживается мажорная версия 5, включая все её минорные версии, такие как 5.1 и 5.2
+  + Мажорная версия 5 поддерживается, включая все её минорные версии, например 5.1 и 5.2
   + Другие мажорные версии не поддерживаются, например 6 и 7
 * **Поддерживается минорная версия 5.1**
 
-  + Поддерживается минорная версия 5.1, включая все её патч-версии, такие как 5.1.1 и 5.1.2
+  + Минорная версия 5.1 поддерживается, включая все её патч-версии, например 5.1.1 и 5.1.2
   + Другие минорные версии не поддерживаются, например 5.2 и 5.3
 * **Поддерживается патч-версия 5.1.1**
 
-  + Поддерживается патч-версия 5.1.1
+  + Патч-версия 5.1.1 поддерживается
   + Другие патч-версии не поддерживаются, например 5.1.2 и 5.1.3
 * **Поддерживается диапазон версий 5.1 – 5.3**
 
-  + Поддерживаются минорные версии 5.1, 5.2 и 5.3, включая все их патч-версии, такие как 5.1.1, 5.2.1 и 5.3.1
+  + Минорные версии 5.1, 5.2 и 5.3 поддерживаются, включая все их патч-версии, например 5.1.1, 5.2.1 и 5.3.1
   + Другие минорные версии не поддерживаются, например 5.0 и 5.4
-* **Минимально требуемая версия: 5+**
+* **Минимально необходимая версия 5+**
 
-  + Поддерживаются все мажорные, минорные и патч-версии начиная с версии 5, такие как 5, 5.1, 5.1.1 и 6
+  + Все мажорные, минорные и патч-версии начиная с версии 5 поддерживаются, например 5, 5.1, 5.1.1 и 6
 
 ## IBM z/OS
 
-Чтобы начать мониторинг, см. [Dynatrace для z/OS](/managed/ingest-from/dynatrace-oneagent/installation-and-operation/zos "Установка, настройка и управление модулями Dynatrace на z/OS.").
+Чтобы начать работу с мониторингом, см. [Dynatrace для z/OS](/managed/ingest-from/dynatrace-oneagent/installation-and-operation/zos "Install, configure, and manage Dynatrace modules on z/OS.").
 
 | Операционная система | Версии |
 | --- | --- |
@@ -49,7 +48,7 @@ Dynatrace поддерживает мониторинг перечисленны
 
 ## IBM CICS
 
-Чтобы начать мониторинг, см. [Установка модуля CICS](/managed/ingest-from/dynatrace-oneagent/installation-and-operation/zos/installation/install-cics "Установка модуля Dynatrace CICS.").
+Чтобы начать работу с мониторингом, см. [Установка модуля CICS](/managed/ingest-from/dynatrace-oneagent/installation-and-operation/zos/installation/install-cics "Install the Dynatrace CICS module.").
 
 | IBM CICS | Версии |
 | --- | --- |
@@ -57,13 +56,13 @@ Dynatrace поддерживает мониторинг перечисленны
 | CICS MQ Bridge |  |
 | CICS MQ Trigger Monitor |  |
 | CICS HTTP/S |  |
-| CICS JSON (non-Java JSON pipeline) |  |
-| CICS SOAP (over HTTP) |  |
-| CICS file access[1](#fn-1-1-def) |  |
+| CICS JSON (не-Java пайплайн JSON) |  |
+| CICS SOAP (через HTTP) |  |
+| Доступ к файлам CICS[1](#fn-1-1-def) |  |
 
 1
 
-Поддерживаются методы доступа к файлам CICS: VSAM и BDAM.
+Поддерживаются методы доступа к файлам CICS VSAM и BDAM.
 
 | Клиент базы данных | Версии |
 | --- | --- |
@@ -76,11 +75,11 @@ Dynatrace поддерживает мониторинг перечисленны
 
 | Клиент обмена сообщениями | Версии |
 | --- | --- |
-| IBM MQ | 8.0, 9.0, 9.1, 9.2, 9.3 |
+| IBM MQ | 8.0, 9.0, 9.1, 9.2, 9.3, 9.4, 10 |
 
 ## IBM IMS
 
-Чтобы начать мониторинг, см. [Установка модуля IMS](/managed/ingest-from/dynatrace-oneagent/installation-and-operation/zos/installation/install-ims "Установка модуля Dynatrace IMS.").
+Чтобы начать работу с мониторингом, см. [Установка модуля IMS](/managed/ingest-from/dynatrace-oneagent/installation-and-operation/zos/installation/install-ims "Install the Dynatrace IMS module.").
 
 | IBM IMS | Версии |
 | --- | --- |
@@ -109,18 +108,18 @@ Dynatrace поддерживает мониторинг перечисленны
 
 | Клиент обмена сообщениями | Версии |
 | --- | --- |
-| IBM MQ | 8.0, 9.0, 9.1, 9.2, 9.3 |
+| IBM MQ | 8.0, 9.0, 9.1, 9.2, 9.3, 9.4, 10 |
 
 ## z/OS Java
 
-Чтобы начать мониторинг, см. [Установка модуля z/OS Java](/managed/ingest-from/dynatrace-oneagent/installation-and-operation/zos/installation/install-zos-java "Настройка мониторинга Java на z/OS с помощью модуля Java.").
+Чтобы начать работу с мониторингом, см. [Установка модуля z/OS Java](/managed/ingest-from/dynatrace-oneagent/installation-and-operation/zos/installation/install-zos-java "Set up Java monitoring on z/OS using the Java module.").
 
 | Среда выполнения Java | Версии |
 | --- | --- |
-| IBM JVM for z/OS | 8 |
-| IBM Semeru for z/OS | 11 |
-| IBM Semeru for z/OS | 17 |
-| IBM Semeru for z/OS[1](#fn-5-1-def) | 21 |
+| IBM JVM для z/OS | 8 |
+| IBM Semeru для z/OS | 11 |
+| IBM Semeru для z/OS | 17 |
+| IBM Semeru для z/OS[1](#fn-5-1-def) | 21 |
 
 1
 
@@ -128,14 +127,14 @@ Virtual Threads в настоящее время не поддерживаютс
 
 Перечисленные ниже технологии поддерживаются только при использовании с поддерживаемой средой выполнения Java.
 В некоторых случаях для сохранения поддержки может потребоваться ручное обновление среды выполнения Java
-(например, IBM CICS Transaction Gateway версии ниже 9.2).
+(например, для IBM CICS Transaction Gateway версии ниже 9.2).
 
 | Технология | Версии |
 | --- | --- |
 | IBM WebSphere Application Server | 8.5.5, 9.0 |
 | IBM WebSphere Liberty | 18, 19, 20, 21, 22, 23, 24, 25, 26 |
 | IBM z/OS Connect [1](#fn-6-1-def)[2](#fn-6-2-def) | 3.0.30+ |
-| IBM CICS Transaction Gateway [3](#fn-6-3-def)[4](#fn-6-4-def) | 9.0, 9.1, 9.2, 9.3 |
+| IBM CICS Transaction Gateway [3](#fn-6-3-def)[4](#fn-6-4-def) | 9.0, 9.1, 9.2, 9.3, 10.1 |
 | IBM IMS SOAP Gateway [5](#fn-6-5-def) | 3.2 |
 | Apache HttpClient | 3.1, 4, 5 |
 
@@ -145,7 +144,7 @@ Virtual Threads в настоящее время не поддерживаютс
 
 2
 
-Поддерживаются только поставщики услуг CICS, IMS и IBM MQ.
+Поддерживаются только провайдеры служб CICS, IMS и IBM MQ.
 
 3
 
@@ -153,7 +152,7 @@ Virtual Threads в настоящее время не поддерживаютс
 
 4
 
-Конфигурация WAS в локальном режиме не поддерживается.
+Конфигурация локального режима WAS не поддерживается.
 
 5
 
@@ -165,7 +164,7 @@ Virtual Threads в настоящее время не поддерживаютс
 
 1
 
-Поддерживаются только [типы драйверов Db2 JDBC](https://www.ibm.com/docs/en/sdi/7.2.0.3?topic=drivers-connecting-db2) 2 и 4.
+Поддерживаются только [драйверы Db2 JDBC типов﻿](https://www.ibm.com/docs/en/sdi/7.2.0.3?topic=drivers-connecting-db2) 2 и 4.
 
 | Клиент обмена сообщениями | Версии |
 | --- | --- |
@@ -174,4 +173,4 @@ Virtual Threads в настоящее время не поддерживаютс
 
 | Фреймворк мониторинга | Версии |
 | --- | --- |
-| [JMX](/managed/ingest-from/dynatrace-oneagent/installation-and-operation/zos/monitoring/zos-java-custom-jmx-metrics "Узнайте, как настроить мониторинг метрик JMX для ваших Java-приложений на z/OS.") | 1.0+ |
+| [JMX](/managed/ingest-from/dynatrace-oneagent/installation-and-operation/zos/monitoring/zos-java-custom-jmx-metrics "Learn how to set up JMX metrics monitoring for your Java applications on z/OS.") | 1.0+ |

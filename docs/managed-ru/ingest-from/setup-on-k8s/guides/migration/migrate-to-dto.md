@@ -1,29 +1,28 @@
 ---
-title: Миграция с OneAgent Operator на Dynatrace Operator
+title: Миграция с оператора OneAgent на оператор Dynatrace
 source: https://docs.dynatrace.com/managed/ingest-from/setup-on-k8s/guides/migration/migrate-to-dto
-scraped: 2026-05-12T12:08:58.025839
 ---
 
-# Миграция с OneAgent Operator на Dynatrace Operator
+# Миграция с оператора OneAgent на оператор Dynatrace
 
-# Миграция с OneAgent Operator на Dynatrace Operator
+# Миграция с оператора OneAgent на оператор Dynatrace
 
-* Чтение: 5 мин
-* Опубликовано 1 апреля 2021 г.
+* 5 мин чтения
+* Обновлено 09 июня 2026 г.
 
-## Описание и настройка пользовательского ресурса DynaKube
+## Понимание и настройка пользовательского ресурса DynaKube
 
-Пользовательский ресурс DynaKube (CR) заменяет пользовательский ресурс OneAgent. Ресурс DynaKube CR следует принципу "don't repeat yourself" (DRY) для развёртывания ряда различных компонентов в вашем кластере Kubernetes.
+Пользовательский ресурс (CR) DynaKube заменяет пользовательский ресурс OneAgent. CR DynaKube следует принципу «don't repeat yourself» (DRY), чтобы разворачивать ряд различных компонентов в кластере Kubernetes.
 
-Каждый раздел содержит иллюстрацию различий между двумя пользовательскими ресурсами: что меняется при переходе от старого пользовательского ресурса к новому (отмечено зелёным) и что остаётся неизменным в обоих пользовательских ресурсах (отмечено синим).
+В каждом разделе приведена иллюстрация различий между двумя пользовательскими ресурсами: что меняется при переходе от старого пользовательского ресурса к новому (отмечено зелёным) и что остаётся одинаковым в обоих пользовательских ресурсах (отмечено синим).
 
-Смена операторов изменит вычисление идентификаторов хостов для отслеживаемых хостов, что приведёт к аномалиям мониторинга в интерфейсе Dynatrace.
+Смена операторов изменит расчёт host ID для отслеживаемых хостов, что приведёт к аномалиям мониторинга в интерфейсе Dynatrace.
 
 ### Миграция классического full-stack
 
-Следуйте приведённым ниже инструкциям, чтобы выполнить миграцию с OneAgent Operator на Dynatrace Operator для классического внедрения full-stack.
+Следуй инструкциям ниже, чтобы перейти с оператора OneAgent на оператор Dynatrace для классического full-stack внедрения.
 
-![Migration of properties](https://dt-cdn.net/images/classicfullstackmigration-600-fb8529d001.png)
+![Migration of properties](https://cdn.bfldr.com/B686QPH3/as/wn4ggjs69gk6km4wqt6q4h2j/Migrate_from_OneAgent_Operator_to_Dynatrace_Operator-Classic_full-stack_migration-Light_Mode?auto=webp&format=png&position=1)
 
 Миграция свойств
 
@@ -32,7 +31,7 @@ scraped: 2026-05-12T12:08:58.025839
 Что меняется
 
 **Глобальные параметры (`spec`)**  
-Следующие настройки являются глобальными, общими для всех компонентов и находятся в `spec`.
+Следующие настройки являются глобальными, общими для каждого компонента, и находятся в `spec`.
 
 * `apiUrl`
 * `tokens`[1](#fn-1-1-def)
@@ -56,30 +55,30 @@ scraped: 2026-05-12T12:08:58.025839
 
 1
 
-Ранее это был `disableAgentUpdate` в OneAgent CR.  
-Поле `autoUpdate` было удалено. [Закрепите версию OneAgent в вашем тенанте, чтобы настроить автообновление](/managed/ingest-from/setup-on-k8s/guides/deployment-and-configuration/updates-and-maintenance/auto-update-components#configure-oneagent-auto-update "Настройка автообновлений для компонентов, управляемых Dynatrace Operator (OneAgent, ActiveGate и EdgeConnect).").  
+Раньше это было `disableAgentUpdate` в CR OneAgent.  
+Поле `autoUpdate` удалено. [Закрепи версию OneAgent в своём тенанте, чтобы настроить автообновление](/managed/ingest-from/setup-on-k8s/guides/deployment-and-configuration/updates-and-maintenance/auto-update-components#configure-oneagent-auto-update "Настройка автообновлений для всех компонентов, управляемых оператором Dynatrace").  
 Автообновление отключается, если задано поле `version` или `image`.
 
 2
 
-Это был `agentVersion` в OneAgent CR.
+В CR OneAgent это было `agentVersion`.
 
-Все остальные параметры OneAgent (такие как tolerations, аргументы, DNS и настройки ресурсов) также находятся в разделе `.spec.oneAgent.classicFullStack` и уникальны для установки full-stack.
+Все остальные параметры OneAgent (такие как tolerations, аргументы, DNS и настройки ресурсов) также находятся в разделе `.spec.oneAgent.classicFullStack` и уникальны для full-stack установки.
 
-### Миграция только приложений
+### Миграция только приложений (application-only)
 
-Следуйте приведённым ниже инструкциям, чтобы выполнить миграцию с OneAgent Operator на Dynatrace Operator для автоматического внедрения только в приложения.
+Следуй инструкциям ниже, чтобы перейти с оператора OneAgent на оператор Dynatrace для автоматического внедрения только в приложения.
 
-![Cloud native app only](https://dt-cdn.net/images/cloudnativeappo-600-de0c984048.png)
+![Cloud native app only](https://cdn.bfldr.com/B686QPH3/as/qk8rt6xnq7rhnjkgqvnpp7m/Migrate_from_OneAgent_Operator_to_Dynatrace_Operator-Application-only_migration-Light_Mode?auto=webp&format=png&position=1)
 
-Только приложения (cloud-native)
+Только облачное приложение (cloud native)
 
 Что остаётся неизменным
 
 Что меняется
 
 **Глобальные параметры (`spec`)**  
-Следующие настройки являются глобальными, общими для всех компонентов и находятся в `spec`.
+Следующие настройки являются глобальными, общими для каждого компонента, и находятся в `spec`.
 
 * `apiUrl`
 * `tokens`[1](#fn-3-1-def)
@@ -102,21 +101,21 @@ scraped: 2026-05-12T12:08:58.025839
 
 1
 
-Это был `agentVersion` в OneAgent CR.
+В CR OneAgent это было `agentVersion`.
 
 2
 
-Этот новый параметр будет автоматически доставлять двоичные файлы в поды и устранит требования к хранилищу на подах. Доступен только в режиме предварительного просмотра, по умолчанию `false`.
+Этот новый параметр будет автоматически доставлять бинарные файлы в поды и устранит требования к хранилищу в подах. Пока это только в статусе preview и по умолчанию имеет значение `false`.
 
-Параметр `image` больше недоступен. Эта функциональность будет восстановлена в будущем. На данный момент все поды загружаются из API URL.
+Параметр `image` больше недоступен. Эта функциональность будет возвращена в будущем. Пока все поды загружаются с URL API.
 
-## Миграция с OneAgent Operator на Dynatrace Operator
+## Миграция с оператора OneAgent на оператор Dynatrace
 
-Можно выполнить миграцию с устаревшего OneAgent Operator на новый Dynatrace Operator, который управляет жизненным циклом нескольких компонентов Dynatrace, таких как OneAgent, маршрутизация и Kubernetes API Monitor. По мере появления новых возможностей наблюдаемости будут добавляться дополнительные компоненты.
+С устаревшего оператора OneAgent можно перейти на новый оператор Dynatrace, который управляет жизненным циклом нескольких компонентов Dynatrace, таких как OneAgent, маршрутизация и монитор Kubernetes API. По мере появления новых функций observability будут добавляться дополнительные компоненты.
 
-Выберите **один из следующих вариантов** в зависимости от методов развёртывания.
+Выбери **один из следующих вариантов** в зависимости от способа развёртывания.
 
-[**Manifest**](#manifest)[![Helm](https://dt-cdn.net/images/helm-1-f86d0c89ed.svg "Helm")
+[**Манифест**](#manifest)[![Helm](https://dt-cdn.net/images/helm-1-f86d0c89ed.svg "Helm")
 
 **Helm**](#helm)
 
@@ -126,7 +125,7 @@ Kubernetes
 
 OpenShift
 
-1. Удалите OneAgent Operator и пространство имён/проект `dynatrace`.
+1. Удали оператор OneAgent и пространство имён/проект `dynatrace`.
 
    ```
    kubectl delete -f https://github.com/Dynatrace/dynatrace-oneagent-operator/releases/download/<version>/kubernetes.yaml
@@ -135,9 +134,9 @@ OpenShift
 
    kubectl delete namespace dynatrace
    ```
-2. [Настройте мониторинг с помощью Dynatrace Operator](/managed/ingest-from/setup-on-k8s/deployment "Развёртывание Dynatrace Operator в Kubernetes").
+2. [Настрой мониторинг с оператором Dynatrace](/managed/ingest-from/setup-on-k8s/deployment "Развёртывание оператора Dynatrace на Kubernetes").
 
-1. Удалите OneAgent Operator и пространство имён/проект `dynatrace`.
+1. Удали оператор OneAgent и пространство имён/проект `dynatrace`.
 
    ```
    oc delete -f https://github.com/Dynatrace/dynatrace-oneagent-operator/releases/download/<version>/openshift.yaml
@@ -146,15 +145,15 @@ OpenShift
 
    oc delete project dynatrace
    ```
-2. [Настройте мониторинг с помощью Dynatrace Operator](/managed/ingest-from/setup-on-k8s/deployment "Развёртывание Dynatrace Operator в Kubernetes").
+2. [Настрой мониторинг с оператором Dynatrace](/managed/ingest-from/setup-on-k8s/deployment "Развёртывание оператора Dynatrace на Kubernetes").
 
-### Миграция с помощью Helm
+### Миграция с Helm
 
 Kubernetes
 
 OpenShift
 
-1. Удалите OneAgent Operator, репозиторий Helm и пространство имён/проект `dynatrace`.
+1. Удали оператор OneAgent, репозиторий Helm и пространство имён/проект `dynatrace`.
 
    ```
    helm uninstall dynatrace-oneagent-operator
@@ -175,9 +174,9 @@ OpenShift
 
    kubectl delete namespace dynatrace
    ```
-2. [Настройте мониторинг с помощью Dynatrace Operator](/managed/ingest-from/setup-on-k8s/deployment "Развёртывание Dynatrace Operator в Kubernetes").
+2. [Настрой мониторинг с оператором Dynatrace](/managed/ingest-from/setup-on-k8s/deployment "Развёртывание оператора Dynatrace на Kubernetes").
 
-1. Удалите OneAgent Operator, репозиторий Helm и пространство имён/проект `dynatrace`.
+1. Удали оператор OneAgent, репозиторий Helm и пространство имён/проект `dynatrace`.
 
    ```
    helm uninstall dynatrace-oneagent-operator
@@ -198,4 +197,4 @@ OpenShift
 
    oc delete project dynatrace
    ```
-2. [Настройте мониторинг с помощью Dynatrace Operator](/managed/ingest-from/setup-on-k8s/deployment "Развёртывание Dynatrace Operator в Kubernetes").
+2. [Настрой мониторинг с оператором Dynatrace](/managed/ingest-from/setup-on-k8s/deployment "Развёртывание оператора Dynatrace на Kubernetes").
