@@ -119,9 +119,9 @@ Dynatrace предоставляет различные варианты, кот
 
 Подробнее см. [Overview (Dynatrace Platform Subscription)](/managed/manage/account-management/license-subscription/subscription-overview-dps "View your Dynatrace Platform Subscription (DPS) budget summary and cost analysis.").
 
-![Диаграмма — пример использования для Real User Monitoring, видимый в Account Management](https://dt-cdn.net/images/rum-usage-overview-account-management-2910-7a5d37e705.png)
+![Диаграмма - пример использования для Real User Monitoring, видимый в Account Management](https://dt-cdn.net/images/rum-usage-overview-account-management-2910-7a5d37e705.png)
 
-Диаграмма — пример использования для Real User Monitoring, видимый в Account Management
+Диаграмма - пример использования для Real User Monitoring, видимый в Account Management
 
 ### Аналитика через billing usage events
 

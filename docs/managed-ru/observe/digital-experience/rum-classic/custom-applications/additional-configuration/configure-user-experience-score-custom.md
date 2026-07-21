@@ -11,7 +11,7 @@ source: https://docs.dynatrace.com/managed/observe/digital-experience/rum-classi
 * Чтение за 1 минуту
 * Опубликовано 30 января 2023 г.
 
-[Оценка пользовательского опыта](/managed/observe/digital-experience/rum-classic/rum-concepts/scores-and-ratings/user-experience-score "User experience score is a metric used to categorize user sessions as Frustrating, Tolerable, or Satisfying.") — важная метрика, которая отражает общую производительность, удобство использования и обнаруженные ошибки каждой сессии. Пороговые значения оценки пользовательского опыта для приложений можно настраивать.
+[Оценка пользовательского опыта](/managed/observe/digital-experience/rum-classic/rum-concepts/scores-and-ratings/user-experience-score "User experience score is a metric used to categorize user sessions as Frustrating, Tolerable, or Satisfying."), важная метрика, которая отражает общую производительность, удобство использования и обнаруженные ошибки каждой сессии. Пороговые значения оценки пользовательского опыта для приложений можно настраивать.
 
 Чтобы настроить пороговые значения оценки пользовательского опыта
 

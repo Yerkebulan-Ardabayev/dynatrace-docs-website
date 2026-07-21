@@ -63,6 +63,31 @@ _INVISIBLE = re.compile(r"[﻿​‎‏]")
 _URL_RE = re.compile(r"https?://[^\s\[\]()<>\"']+")
 
 
+def _normalize_dashes(source: str, translated: str) -> str:
+    """Убирает длинные тире из перевода, не трогая код.
+
+    Правило проекта: длинных тире в тексте нет. Модель ставит их сама даже там,
+    где в оригинале обычный дефис (12 штук в статье при 0 в оригинале), и на
+    повторные попытки с подсказкой не реагирует, поэтому чиним детерминированно,
+    а не уговорами. Если оригинал разделяет дефисом, ставим дефис (так вернее),
+    иначе запятую, а после жирного лейбла двоеточие.
+    """
+    if "—" not in translated:
+        return translated
+
+    def fix(seg: str) -> str:
+        if " - " in source:
+            seg = seg.replace(" — ", " - ")
+        seg = re.sub(r"(\*\*|`)\s+—\s+", r"\1: ", seg)
+        seg = seg.replace(" — это ", ", это ")
+        seg = seg.replace(" — ", ", ")
+        return seg.replace("—", "-")
+
+    parts = re.split(r"(```.*?```|`[^`\n]*`)", translated, flags=re.DOTALL)
+    parts[::2] = [fix(p) for p in parts[::2]]
+    return "".join(parts)
+
+
 def _structure_defect(source: str, translated: str) -> str:
     """Структурные расхождения перевода с оригиналом. Пусто, если всё сошлось.
 
@@ -82,6 +107,14 @@ def _structure_defect(source: str, translated: str) -> str:
     lost = sorted(set(_URL_RE.findall(src)) - set(_URL_RE.findall(dst)))
     if lost:
         return f"потеряны URL ({len(lost)}), первый: {lost[0][:60]}"
+
+    # Длинные тире в русском тексте запрещены (правило оформления проекта).
+    # Промпт про это говорит, но модель изредка их всё равно ставит: за день
+    # просочилось 54 штуки в 12 статей, и заметил это человек, а не проверка.
+    # В коде тире законно, поэтому смотрим текст без код-блоков.
+    dashes = dst.count("—")
+    if dashes:
+        return f"длинные тире в переводе ({dashes} шт.), заменяются запятой или двоеточием"
 
     # Заголовки строго 1:1, включая повторы. Скрейпер дублирует H1 почти во всех
     # статьях (2881 файл), и корпус этот повтор сохраняет (2746 из 2762), а модель
@@ -194,6 +227,7 @@ def _translate_whole(content: str, en_file: Path, extra_rules: str,
             if candidate is None:
                 print(f"  FAILED chunk {i}")
                 return None
+            candidate = _normalize_dashes(chunk, candidate)
             defect = _structure_defect(chunk, candidate)
             if not defect:
                 result = candidate
@@ -225,6 +259,7 @@ def translate_single_file(en_file: Path, ru_file: Path, extra_rules: str = "") -
         )
         if candidate is None:
             return False
+        candidate = _normalize_dashes(content, candidate)
         defect = _structure_defect(content, candidate)
         if not defect:
             translated = candidate

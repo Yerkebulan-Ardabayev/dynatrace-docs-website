@@ -441,7 +441,7 @@ source: https://docs.dynatrace.com/managed/dynatrace-api/cluster-api/cluster-api
 }
 ```
 
-## Пример — публичная локация
+## Пример - публичная локация
 
 В этом примере запрос получает детали публичной локации **Amazon US East (N. Virginia)** с ID **SYNTHETIC\_LOCATION-0000000000000064**.
 
@@ -579,7 +579,7 @@ https://mySampleEnv.live.dynatrace.com/api/v2/synthetic/locations/SYNTHETIC_LOCA
 
 200
 
-## Пример — приватная локация
+## Пример - приватная локация
 
 В этом примере запрос получает данные приватной локации **Linz HTTP** с идентификатором **SYNTHETIC\_LOCATION-BB5EE23C1D48AFF5**.
 

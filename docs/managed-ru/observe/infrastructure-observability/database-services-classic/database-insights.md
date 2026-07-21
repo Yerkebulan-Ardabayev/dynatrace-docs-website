@@ -1,29 +1,29 @@
 ---
-title: Аналитика базы данных Oracle
+title: Oracle database insights
 source: https://docs.dynatrace.com/managed/observe/infrastructure-observability/database-services-classic/database-insights
 ---
 
-# Аналитика базы данных Oracle
+# Oracle database insights
 
-# Аналитика базы данных Oracle
+# Oracle database insights
 
 * Практическое руководство
-* Чтение 13 мин.
+* Чтение 13 мин
 * Обновлено 10 апр. 2026 г.
-* Будет устаревшим
+* Будет объявлено устаревшим
 
-Аналитика базы данных Oracle будет заменена расширениями на основе источника данных SQL. Подробнее:
+Oracle database insights заменяется расширениями на основе SQL data source. Подробнее см.:
 
-* Запись в блоге о новостях продукта: [Intelligent observability for Oracle and SQL databases﻿](https://www.dynatrace.com/news/blog/intelligent-observability-for-oracle-and-sql-databases/)
+* Блог о новостях продукта: [Intelligent observability for Oracle and SQL databases﻿](https://www.dynatrace.com/news/blog/intelligent-observability-for-oracle-and-sql-databases/)
 * Загрузка расширения [Oracle Database﻿](https://www.dynatrace.com/hub/detail/oracle-database/) в Dynatrace Hub
 * Как [управлять расширениями Oracle Database](/managed/ingest-from/extensions/supported-extensions/data-sources/sql/oraclesql "Learn how to extend observability in Dynatrace with declarative metrics ingested from Oracle Database.")
-* Как расширить мониторинг Oracle SQL с помощью [источника данных SQL](/managed/ingest-from/extensions/develop-your-extensions/data-sources/sql "Learn how to create an SQL data source-based extension using the Extensions framework.") Extensions 2.0
+* Как расширить мониторинг Oracle SQL с помощью [SQL data source](/managed/ingest-from/extensions/develop-your-extensions/data-sources/sql "Learn how to create an SQL data source-based extension using the Extensions framework.") Extensions 2.0
 
-Аналитика базы данных добавляет к мониторингу базы данных инфраструктурную перспективу. С дополнительными данными, полученными с уровня базы данных, можно решать проблемы производительности, коренящиеся глубоко в базе данных, например, понимать, почему конкретный запрос выполняется медленно.
+Database insights добавляет инфраструктурный ракурс к мониторингу базы данных. С дополнительными данными, получаемыми с уровня базы данных, можно устранять проблемы производительности, коренящиеся глубоко в базе данных, например, понять, почему конкретный оператор выполняется медленно.
 
 ## Как это работает
 
-Аналитика базы данных работает на Environment ActiveGate и удалённо подключается к базам данных Oracle. При таком подходе платформа системы базы данных может быть любого типа, Dynatrace поддерживает все операционные системы, используя драйвер JDBC для подключения к базам данных.
+Database insights работает на Environment ActiveGate и подключается удалённо к базам данных Oracle. При таком подходе платформа системы базы данных может быть любого типа: Dynatrace поддерживает все операционные системы, используя JDBC-драйвер для подключения к базам данных.
 
 ![Oracle insights architecture](https://cdn.bfldr.com/B686QPH3/as/6r7qkpgpjzfbhxhqhjtb8mq6/Oracle_database_insights_-_Light_Mode?auto=webp&format=png&position=1)
 
@@ -31,30 +31,30 @@ source: https://docs.dynatrace.com/managed/observe/infrastructure-observability/
 
 ## Предварительные требования
 
-Для начала работы с аналитикой базы данных Oracle нужно следующее:
+Для начала работы с database insights для базы данных Oracle нужно следующее:
 
-* Установленный Environment ActiveGate версии 1.173+ в режиме по умолчанию. Аналитика базы данных не поддерживает ActiveGate, настроенный для [поддержки нескольких сред](/managed/ingest-from/dynatrace-activegate/configuration/configure-an-environment-activegate-for-multi-environment-support "Read the step-by-step procedure for configuring a single Environment ActiveGate for multi-environment support.").
-* Аналитике базы данных требуется 2,5 МБ ОЗУ на каждую конечную точку базы данных Oracle, что даёт возможность мониторить несколько сотен баз данных при установке ActiveGate на инстансе EC2 micro.
+* Environment ActiveGate версии 1.173+, установленный в режиме по умолчанию. Database insights не поддерживает ActiveGate, настроенный для [поддержки нескольких сред](/managed/ingest-from/dynatrace-activegate/configuration/configure-an-environment-activegate-for-multi-environment-support "Read the step-by-step procedure for configuring a single Environment ActiveGate for multi-environment support.").
+* Database insights требует 2,5 МБ ОЗУ на каждую конечную точку базы данных Oracle, что соответствует возможности мониторинга нескольких сотен баз данных при установке ActiveGate на инстансе EC2 micro.
 * Dynatrace Server версии 1.173+.
 * Сетевое взаимодействие между ActiveGate и Oracle Server.
 * Oracle версии от 11g до 19c, включая поддержку:
 
   + **Oracle Multitenant**  
-    Результаты мониторинга могут отличаться между конечными точками на основе SID и на основе ServiceName. Для конечных точек на основе SID Dynatrace мониторит подключения к многопользовательской контейнерной базе данных (CDB). Для конечных точек на основе ServiceName Dynatrace мониторит подключения к связанным подключаемым базам данных (PDB).
+    Результаты мониторинга могут отличаться для конечных точек на основе SID и на основе ServiceName. Для конечных точек на основе SID Dynatrace отслеживает подключения к многоарендной контейнерной базе данных (CDB). Для конечных точек на основе ServiceName Dynatrace отслеживает подключения к связанным подключаемым базам данных (PDB).
   + **Oracle RAC**  
-    Dynatrace мониторит только отдельные экземпляры узлов (SID). Аналитику базы данных нельзя использовать для мониторинга кластера или мониторинга отдельных узлов на основе связанной с ними службы базы данных.
+    Dynatrace отслеживает только отдельные экземпляры узлов (SID). Database insights нельзя использовать для мониторинга кластера или для мониторинга отдельных узлов на основе службы базы данных, с которой они связаны.
   + **AWS Oracle RDS**
-* Опционально установленный OneAgent на хосте Oracle.
-* Пользователь базы данных Oracle с правами доступа, перечисленными ниже.
+* Опционально OneAgent, установленный на хосте Oracle.
+* Пользователь базы данных Oracle с разрешениями, перечисленными ниже.
 
-## Права доступа Oracle
+## Разрешения Oracle
 
-Для аналитики базы данных Oracle на сервере Oracle нужно выполнить следующие требования по правам доступа:
+Для Oracle database insights на сервере Oracle нужно выполнить следующие требования по разрешениям:
 
-* Пользователю, который подключается к экземпляру БД, нужно предоставить права `CREATE SESSION` и `SELECT_CATALOG_ROLE`. Это также означает доступ к [Dynamic Performance Views﻿](https://docs.oracle.com/database/122/CNCPT/data-dictionary-and-dynamic-performance-views.htm#CNCPT1220), который входит в право `SELECT_CATALOG_ROLE`.
-* Для получения планов выполнения нужен пакет `DBMS_XPLAN` с предоставленным правом `EXECUTE`.
+* Пользователю, который подключается к экземпляру БД, нужно предоставить разрешения `CREATE SESSION` и `SELECT_CATALOG_ROLE`. Это также означает доступ к [Dynamic Performance Views﻿](https://docs.oracle.com/database/122/CNCPT/data-dictionary-and-dynamic-performance-views.htm#CNCPT1220), который является частью разрешения `SELECT_CATALOG_ROLE`.
+* Для получения планов выполнения требуется пакет `DBMS_XPLAN` с предоставленным разрешением `EXECUTE`.
 
-Чтобы создать пользователя для аналитики базы данных Oracle:
+Чтобы создать пользователя для Oracle database insights:
 
 ```
 CREATE USER oracleinsights IDENTIFIED BY password
@@ -72,91 +72,91 @@ temporary tablespace temp;
 GRANT CREATE SESSION, SELECT_CATALOG_ROLE TO <oracleinsights>;
 ```
 
-## Настройка аналитики базы данных Oracle
+## Настройка Oracle database insights
 
-Настройка аналитики базы данных Oracle не представляет сложности. Всё, что нужно сделать, это определить конечную точку, базу данных Oracle, к которой будет подключаться ActiveGate. Можно добавить сколько угодно баз данных с одного сервера Oracle.
+Настройка Oracle database insights несложная. Всё, что нужно сделать, это определить конечную точку, базу данных Oracle, к которой будет подключаться ActiveGate. Можно добавить сколько угодно баз данных с одного сервера Oracle.
 
-1. Опционально: [установить OneAgent](/managed/ingest-from/dynatrace-oneagent "Understand the important concepts related to OneAgent and find out how to install and operate OneAgent on different platforms.") на хосте Oracle.
-2. Выбрать или установить и [Environment ActiveGate](/managed/ingest-from/dynatrace-activegate/installation "Learn how to configure ActiveGate") версии 1.173+, который будет получать данные с сервера Oracle. Этот ActiveGate можно использовать и для других целей. Перейти в **Settings** > **Deployment status**, чтобы проверить, работает ли ActiveGate. Аналитика базы данных включена по умолчанию.
+1. Опционально [установить OneAgent](/managed/ingest-from/dynatrace-oneagent "Understand the important concepts related to OneAgent and find out how to install and operate OneAgent on different platforms.") на хосте Oracle.
+2. Выбрать или установить и [Environment ActiveGate](/managed/ingest-from/dynatrace-activegate/installation "Learn how to configure ActiveGate") версии 1.173+, который будет получать данные с сервера Oracle. Этот ActiveGate можно использовать и для других целей. Перейти в **Settings** > **Deployment status**, чтобы проверить, работает ли ActiveGate. Database insights по умолчанию включён.
 3. Перейти в **Settings > Monitoring > Monitored Technologies**.
-4. Найти строку **Database Insights: Oracle** и нажать значок карандаша для редактирования.
+4. Найти строку **Database Insights: Oracle** и нажать значок карандаша, чтобы её редактировать.
 5. Определить конечную точку базы данных Oracle. Все поля обязательны:
 
    * **Oracle host**
-   * **Port**: значение по умолчанию — `1521`
+   * **Port**: по умолчанию = `1521`
    * **Connection type**: `Service` или `SID`
    * **Service/SID**: идентификатор базы данных
-   * **Database user** и **Database password**: подробнее см. раздел [Права доступа Oracle](#oracle-permissions).
-   * **Monitored database name**: имя базы данных, которую нужно мониторить
-6. Установить флажок, чтобы принять лицензионное соглашение о распространении для драйвера Oracle JDBC. Dynatrace использует его для получения данных с сервера Oracle. Данные защищены.
-7. Выбрать **Add database**. Если Dynatrace сможет установить соединение по указанным данным, Dynatrace начнёт мониторить базу данных Oracle.
+   * **Database user** и **Database password**: подробнее см. раздел [Разрешения Oracle](#oracle-permissions).
+   * **Monitored database name**: имя базы данных, которую нужно отслеживать
+6. Установить флажок, чтобы принять лицензионное соглашение о распространении для JDBC-драйвера Oracle. Dynatrace использует его для получения данных с сервера Oracle. Данные защищены.
+7. Выбрать **Add database**. Если Dynatrace сможет установить соединение по указанным данным, Dynatrace начнёт отслеживать базу данных Oracle.
 
-## Включение и отключение аналитики базы данных Oracle
+## Включение и отключение Oracle database insights
 
-Чтобы отключить или включить аналитику базы данных Oracle для отдельной мониторимой базы данных
+Чтобы отключить или включить Oracle database insights для каждой отслеживаемой базы данных
 
 1. Перейти в **Settings > Monitoring > Monitored Technologies**.
-2. Найти строку **Database Insights: Oracle** и нажать значок карандаша для редактирования.
+2. Найти строку **Database Insights: Oracle** и нажать значок карандаша, чтобы её редактировать.
 3. Установить переключатель **Monitoring off/on** для каждой базы данных.
 
-## Модель мониторинга аналитики базы данных Oracle
+## Модель мониторинга Oracle database insights
 
-Установка OneAgent на хосте Oracle для аналитики базы данных опциональна. Независимо от того, установлен он или нет, все метрики отражаются в разделе **Custom device**, чтобы показать логическую структуру экземпляра сервера БД, работающих служб, контейнеров и подключённых баз данных.
+Установка OneAgent на хосте Oracle для database insights опциональна. Независимо от того, установлен он или нет, все метрики отображаются под **Custom device**, отражая логическую структуру инстанса сервера БД, работающих служб, контейнеров и подключённых баз данных.
 
-Однако установка OneAgent на хосте Oracle дополняет анализ производительности сервера всеми метриками процессов ОС, которые отражаются в группе процессов и их экземплярах с разбивкой по экземплярам сервера (SID) и процессам listener.
+Однако установка OneAgent на хосте Oracle дополняет анализ производительности сервера всеми метриками процессов ОС, которые сообщаются для группы процессов и их экземпляров, разделённых по экземплярам сервера (SID) и процессам listener.
 
-## Возможности аналитики базы данных Oracle
+## Возможности Oracle database insights
 
-### Наиболее затратные по времени операторы Oracle
+### Самые затратные по времени операторы Oracle
 
-Чтобы понять и проанализировать, какие операторы Oracle наиболее затратны и наиболее часто вызываются, выбрать **View statements** в разделе **Most time-consuming Oracle statements**. На странице перечислены 100 наиболее затратных по времени операторов. Одним щелчком можно увидеть операторы, потребляющие больше всего CPU, памяти или дискового пространства, либо генерирующие наибольшее время ожидания. Анализ можно настроить, используя до трёх метрик, доступных для анализа TopN.
+Чтобы понять и проанализировать, какие операторы Oracle являются самыми затратными и наиболее часто вызываемыми, выбрать **View statements** в разделе **Most time-consuming Oracle statements**. На странице перечислены 100 самых затратных по времени операторов. Одним щелчком можно увидеть операторы, потребляющие больше всего CPU, памяти или дискового хранилища, или создающие наибольшее время ожидания. Анализ можно настраивать, используя до трёх метрик, доступных для TopN-анализа.
 
 ### Загрузка планов выполнения
 
-При анализе характеристик производительности оператора SQL часто возникает необходимость сформировать и отобразить план выполнения этого оператора SQL. План выполнения Oracle можно загрузить прямо из интерфейса Dynatrace.
+При анализе характеристик производительности SQL-оператора часто возникает необходимость сформировать и отобразить план выполнения этого SQL-оператора. План выполнения Oracle можно скачать прямо из интерфейса Dynatrace.
 
 ### Метрики памяти и кэша
 
-Аналитика базы данных Oracle предоставляет дополнительные метрики Oracle, связанные с памятью и кэшами, что позволяет точно определять операторы, интенсивно использующие ОЗУ.
+Oracle database insights предоставляет дополнительные метрики Oracle, связанные с памятью и кэшами, что позволяет точно определить операторы, интенсивно использующие ОЗУ.
 
 ### Data Explorer
 
-Все метрики Oracle, получаемые аналитикой базы данных Oracle, доступны в [Data Explorer](/managed/analyze-explore-automate/explorer "Query for metrics and transform results to gain desired insights.").
+Все метрики Oracle, получаемые Oracle database insights, доступны в [Data Explorer](/managed/analyze-explore-automate/explorer "Query for metrics and transform results to gain desired insights.").
 
 ### Метрики ожидания и табличного пространства
 
-Также можно обращаться к метрикам ожидания и табличного пространства, которые доступны для использования в [Data Explorer](/managed/analyze-explore-automate/explorer "Query for metrics and transform results to gain desired insights.").
+Также можно обращаться к метрикам ожидания и табличного пространства, доступным для использования в [Data Explorer](/managed/analyze-explore-automate/explorer "Query for metrics and transform results to gain desired insights.").
 
 ### Группы процессов Oracle
 
-Dynatrace связывает данные, полученные аналитикой базы данных Oracle, с процессами Oracle, обнаруженными OneAgent. Начиная с версии OneAgent 1.173, каждая группа процессов Oracle представляет один SID Oracle (уникальный идентификатор для каждого экземпляра БД Oracle). SID входит в имя группы процессов и извлекается из имён процессов (Unix) или описания службы (Windows). Процессы Oracle, не связанные ни с одним SID, образуют группу прочих процессов Oracle. Сюда входит процесс взаимодействия TNS Listener, поэтому весь входящий и исходящий трафик связан с этой группой.
+Dynatrace связывает данные, получаемые Oracle database insights, с процессами Oracle, обнаруженными OneAgent. Начиная с версии OneAgent 1.173, каждая группа процессов Oracle представляет один Oracle SID (уникальный идентификатор для каждого инстанса БД Oracle). SID является частью имени группы процессов и извлекается из имён процессов (Unix) или описания службы (Windows). Процессы Oracle, не связанные ни с одним SID, образуют группу прочих процессов Oracle. Сюда входит процесс связи TNS Listener, поэтому весь входящий и исходящий трафик связан с этой группой.
 
-Опционально можно изменить группы процессов базы данных Oracle и listener, разбив их по SID Oracle для баз данных или по имени для listener'ов.
+Опционально можно изменить группы процессов базы данных Oracle и listener, разделив их по Oracle SID для баз данных или по имени для listener.
 
-Разбить группы процессов по SID Oracle
-
-1. Перейти в **Settings** > **Processes and containers** > **Built-in detection rules**.
-2. Версия OneAgent 1.231+: выбрать **Group Oracle database processes by SID**.
-
-Группа процессов базы данных Oracle будет разбита на несколько групп процессов с именем в формате `Oracle Database <SID>`.
-
-Разбить группы процессов по listener Oracle
+Разделение групп процессов по Oracle SID
 
 1. Перейти в **Settings** > **Processes and containers** > **Built-in detection rules**.
-2. Версия OneAgent 1.243+: выбрать **Group Oracle listener processes by name**.
+2. Версия OneAgent 1.231+ Выбрать **Group Oracle database processes by SID**.
 
-Группа процессов listener Oracle будет разбита на несколько групп процессов с именем в формате `Oracle Listener <listener-name>`.
+Группа процессов базы данных Oracle будет разделена на несколько групп процессов с именем в формате `Oracle Database <SID>`.
+
+Разделение групп процессов по Oracle listener
+
+1. Перейти в **Settings** > **Processes and containers** > **Built-in detection rules**.
+2. Версия OneAgent 1.243+ Выбрать **Group Oracle listener processes by name**.
+
+Группа процессов listener Oracle будет разделена на несколько групп процессов с именем в формате `Oracle Listener <listener-name>`.
 
 ## Метрики
 
 В этом разделе описываются метрики базы данных Oracle, доступные через Dynatrace:
 
 * [Графики производительности](#performance)
-* [Графики разбивки по времени](#time-breakdown)
+* [Графики распределения времени](#time-breakdown)
 * [Графики памяти PGA](#pga-memory)
 * [Графики памяти SGA](#sga-memory)
 * [Наиболее затратные по времени операторы Oracle](#most-time-consuming-oracle-statements-1)
-* Метрики только для API, эти метрики не отображаются на графиках в Dynatrace, но доступны через API Dynatrace.
+* Метрики только API, эти метрики не отображаются на графиках в Dynatrace, но доступны через API Dynatrace.
 
 ### Производительность
 
@@ -171,34 +171,34 @@ Oracle database insights metrics charts: Performance
 #### Пропускная способность
 
 * **Total user calls** (количество)  
-  Общее количество входов в систему, разборов запросов или вызовов выполнения.  
+  Общее число входов в систему, разборов запросов или вызовов выполнения.  
   Ключ метрики: `builtin:tech.oracleDb.cd.sessions.userCalls`
 * **Active sessions** (количество)  
-  Общее количество активных сессий, не отнесённых к классу ожидания Idle.  
+  Общее число активных сессий, не отнесённых к классу ожидания Idle.  
   Ключ метрики: `builtin:tech.oracleDb.cd.sessions.active`
 
-#### ЦП
+#### CPU
 
 * **CPU background usage** (%)  
-  Среднее использование ЦП фоновыми процессами на один ЦП.  
+  Среднее использование CPU фоновыми процессами на одно ядро CPU.  
   Ключ метрики: `builtin:tech.oracleDb.cd.cpu.background`
 * **CPU foreground usage** (%)  
-  Среднее использование ЦП процессами переднего плана на один ЦП.  
+  Среднее использование CPU процессами переднего плана на одно ядро CPU.  
   Ключ метрики: `builtin:tech.oracleDb.cd.cpu.foreground`
 * **CPU other processes** (%)  
-  Среднее использование ЦП другими процессами на один ЦП (за исключением процессов переднего плана и фоновых процессов).  
+  Среднее использование CPU прочими процессами на одно ядро CPU (не считая процессов переднего плана и фоновых процессов).  
   Ключ метрики: `builtin:tech.oracleDb.cd.cpu.other`
 * **CPU idle** (%)  
-  Средняя доступность ЦП хоста на один ЦП.  
+  Средняя доступность CPU хоста на одно ядро CPU.  
   Ключ метрики: `builtin:tech.oracleDb.cd.cpu.idle`
 
 #### Диск
 
 * **Read** (Б/мин)  
-  Общий объём в байтах всех операций чтения с диска для экземпляра базы данных, включая обращения приложений, резервное копирование и восстановление, а также другие утилиты.  
+  Общий размер в байтах всех операций чтения с диска для экземпляра базы данных, включая чтение приложениями, резервное копирование и восстановление, а также другие утилиты.  
   Ключ метрики: `builtin:tech.oracleDb.cd.io.bytesRead`
 * **Write** (Б/мин)  
-  Общий объём в байтах всех операций записи на диск для экземпляра базы данных, включая активность приложений, резервное копирование и восстановление, а также другие утилиты.  
+  Общий размер в байтах всех операций записи на диск для экземпляра базы данных, включая активность приложений, резервное копирование и восстановление, а также другие утилиты.  
   Ключ метрики: `builtin:tech.oracleDb.cd.io.bytesWritten`
 
 #### Табличное пространство
@@ -213,7 +213,7 @@ Oracle database insights metrics charts: Performance
 #### Попадания в буферный кэш
 
 * **Buffer cache hit** (%)  
-  Отражает эффективность буферного кэша блоков данных, как долю блоков данных, требуемых в памяти.  
+  Отражает эффективность буферного кэша блоков данных, как долю блоков данных, необходимых в памяти.  
   Ключ метрики: `builtin:tech.oracleDb.cd.memory.bufferCacheHit`
 
 #### Сортировки в памяти
@@ -222,9 +222,9 @@ Oracle database insights metrics charts: Performance
   Процент сортировок (из предложений ORDER BY или построения индексов), выполняемых в памяти (в отличие от сортировок на диске).  
   Ключ метрики: `builtin:tech.oracleDb.cd.memory.sortsInMemory`
 
-### Разбивка по времени
+### Распределение времени
 
-Метрики, касающиеся времени, затраченного на различные операции.
+Метрики, касающиеся времени, затраченного на различные виды деятельности.
 
 Примеры графиков
 
@@ -238,22 +238,22 @@ Oracle database insights metrics charts: Time breakdown
   Общее время, проведённое во всех состояниях ожидания, кроме класса Idle.  
   Ключ метрики: `builtin:tech.oracleDb.cd.io.wait`
 
-#### Разбивка затраченного времени (все сессии)
+#### Распределение затраченного времени (все сессии)
 
 * **SQL parse** (мкс/мин)  
-  Объём времени, затраченного на разбор SQL-операторов.  
+  Время, затраченное на разбор SQL-операторов.  
   Ключ метрики: `builtin:tech.oracleDb.cd.queries.sqlParse`
 * **SQL execution** (мкс/мин)  
-  Объём времени, затраченного на выполнение SQL-операторов.  
+  Время, затраченное на выполнение SQL-операторов.  
   Ключ метрики: `builtin:tech.oracleDb.cd.queries.sqlExec`
 * **PL/SQL execution** (мкс/мин)  
-  Объём времени, затраченного на работу интерпретатора PL/SQL.  
+  Время, затраченное на работу интерпретатора PL/SQL.  
   Ключ метрики: `builtin:tech.oracleDb.cd.queries.plSqlExec`
 * **Connection management** (мкс/мин)  
-  Объём времени, затраченного на выполнение вызовов подключения и отключения сессий.  
+  Время, затраченное на выполнение вызовов подключения и отключения сессии.  
   Ключ метрики: `builtin:tech.oracleDb.cd.queries.connMgmt`
 * **Other** (мкс/мин)  
-  Объём времени, затраченного на выполнение всех прочих операций.  
+  Время, затраченное на выполнение всех прочих операций.  
   Ключ метрики: `builtin:tech.oracleDb.cd.queries.other`
 
 ### Память PGA
@@ -269,19 +269,19 @@ Oracle database insights metrics charts: PGA
 #### PGA, используемая для рабочих областей
 
 * **PGA used for work areas** (%)  
-  Объём выделенной памяти PGA, который в текущий момент потребляется рабочими областями. Может использоваться для определения того, сколько памяти потребляется другими потребителями памяти PGA (например, PL/SQL или Java).  
+  Объём выделенной памяти PGA, потребляемой в текущий момент рабочими областями. Может использоваться для определения того, сколько памяти потребляется другими потребителями памяти PGA (например, PL/SQL или Java).  
   Ключ метрики: `builtin:tech.oracleDb.cd.memory.pga.usedForWorkAreas`
 
 #### Размер PGA
 
 * **Allocated PGA** (Б)  
-  Текущий объём памяти PGA, выделенной экземпляром. Oracle Database стремится удерживать это значение ниже значения параметра инициализации **PGA aggregate target** (см. ниже). Однако возможно, что выделенная PGA превысит целевое значение на небольшой процент и на короткий период времени, когда нагрузка на рабочую область растёт очень быстро или когда целевое значение низкое.  
+  Текущий объём памяти PGA, выделенной экземпляром. Oracle Database стремится удерживать это значение ниже значения параметра инициализации **PGA aggregate target** (см. ниже). Тем не менее, выделенная PGA может превышать целевое значение на небольшой процент и в течение короткого периода времени, когда нагрузка рабочих областей растёт очень быстро или когда целевое значение низкое.  
   Ключ метрики: `builtin:tech.oracleDb.cd.memory.pga.size.allocated`
 * **PGA aggregate target** (Б)  
-  Целевой совокупный объём памяти PGA, доступный всем серверным процессам, подключённым к экземпляру.  
+  Целевой суммарный объём памяти PGA, доступный всем серверным процессам, подключённым к экземпляру.  
   Ключ метрики: `builtin:tech.oracleDb.cd.memory.pga.size.pgaAggregateTarget`
 * **PGA aggregate limit** (Б)  
-  Ограничение на совокупный объём памяти PGA, потребляемый экземпляром.  
+  Предел суммарного объёма памяти PGA, потребляемой экземпляром.  
   Ключ метрики: `builtin:tech.oracleDb.cd.memory.pga.size.pgaAggregateLimit`
 
 ### Память SGA
@@ -294,32 +294,32 @@ Oracle database insights metrics charts: PGA
 
 Oracle database insights metrics charts: SGA
 
-#### Общий пул (shared pool)
+#### Общий пул (Shared pool)
 
 * **Shared pool free** (%)  
-  Объём свободной памяти системной глобальной области (SGA), доступной в общем пуле (shared pool).  
+  Объём свободной памяти системной глобальной области (SGA), доступной в общем пуле.  
   Ключ метрики: `builtin:tech.oracleDb.cd.memory.sga.cacheBuffer.sharedPoolFree`
 
-#### Буфер журнала повторного выполнения (redo log)
+#### Буфер журнала повторного выполнения (Redo log buffer)
 
 * **Redo size increase** (Б/мин)  
-  Общий объём сгенерированного redo в байтах.  
+  Общий объём сгенерированных данных повторного выполнения в байтах.  
   Ключ метрики: `builtin:tech.oracleDb.cd.memory.sga.redoBuffer.redoSizeIncrease`
 
 #### Время, затраченное на буфер журнала повторного выполнения
 
 * **Redo log space wait time** (мкс/мин)  
-  Общее прошедшее время ожидания запроса на пространство журнала повторного выполнения.  
+  Общее истёкшее время ожидания запроса на пространство журнала повторного выполнения.  
   Ключ метрики: `builtin:tech.oracleDb.cd.memory.sga.redoBuffer.redoLogSpaceWaitTime`
 * **Redo write time** (мкс/мин)  
-  Общее прошедшее время записи из буфера журнала повторного выполнения в текущий файл журнала повторного выполнения.  
+  Общее истёкшее время записи из буфера журнала повторного выполнения в текущий файл журнала повторного выполнения.  
   Ключ метрики: `builtin:tech.oracleDb.cd.memory.sga.redoBuffer.redoWriteTime`
 
-### Наиболее затратные по времени операторы Oracle
+### Наиболее ресурсоёмкие Oracle-выражения
 
-Метрики, касающиеся операторов, выполнение которых занимает больше всего времени.
+Метрики выражений, требующих наибольшего времени выполнения.
 
-Чтобы просмотреть графики этих метрик по каждому оператору Oracle, нужно выбрать **View statements** в разделе **Most time consuming Oracle statements**, а затем выбрать **Details** для нужного оператора.
+Чтобы посмотреть графики этих метрик по конкретному Oracle-выражению, нужно выбрать **View statements** в разделе **Most time consuming Oracle statements**, а затем выбрать **Details** для нужного выражения.
 
 #### Statements performance
 
@@ -329,17 +329,17 @@ Oracle database insights metrics charts: SGA
 
 Oracle database insights metrics charts: Time-consuming metrics: Statements performance
 
-* **Elapsed time** (мкс)
-  Время, затраченное во время выполнения запроса на разбор, выполнение и извлечение данных.
+* **Elapsed time** (μs)
+  Время, затраченное во время выполнения запроса на разбор (parsing), выполнение и получение данных (fetching).
   Ключ метрики: `builtin:tech.oracleDb.cd.slow.time.elapsed`
-* **Execution count** (количество)
-  Общее число выполнений, суммированное по всем дочерним курсорам запроса.
+* **Execution count** (count)
+  Общее число выполнений, просуммированное по всем дочерним курсорам запроса.
   Ключ метрики: `builtin:tech.oracleDb.cd.slow.executions`
-* **CPU time** (мкс)
-  Время процессора, затраченное во время выполнения запроса на разбор, выполнение и извлечение данных.
+* **CPU time** (μs)
+  Время CPU, затраченное во время выполнения запроса на разбор, выполнение и получение данных.
   Ключ метрики: `builtin:tech.oracleDb.cd.slow.time.cpu`
-* **Wait time** (мкс)
-  Общее время ожидания события.
+* **Wait time** (μs)
+  Суммарное время ожидания события.
   Ключ метрики: `builtin:tech.oracleDb.cd.wait.time`
 
 #### Waits
@@ -350,17 +350,17 @@ Oracle database insights metrics charts: Time-consuming metrics: Statements perf
 
 Oracle database insights metrics charts: Time-consuming metrics: Waits
 
-* **Application wait time** (мкс)
-  Время выполнения запроса, затраченное в классе ожидания application.
+* **Application wait time** (μs)
+  Время, прошедшее во время выполнения запроса в классе ожидания application.
   Ключ метрики: `builtin:tech.oracleDb.cd.slow.time.application`
-* **Concurrency wait time** (мкс)
-  Время выполнения запроса, затраченное в классе ожидания concurrency.
+* **Concurrency wait time** (μs)
+  Время, прошедшее во время выполнения запроса в классе ожидания concurrency.
   Ключ метрики: `builtin:tech.oracleDb.cd.slow.time.concurrency`
-* **Cluster wait time** (мкс)
-  Время выполнения запроса, затраченное в классе ожидания cluster.
+* **Cluster wait time** (μs)
+  Время, прошедшее во время выполнения запроса в классе ожидания cluster.
   Ключ метрики: `builtin:tech.oracleDb.cd.slow.time.cluster`
-* **User IO wait time** (мкс)
-  Время выполнения запроса, затраченное в классе ожидания user I/O.
+* **User IO wait time** (μs)
+  Время, прошедшее во время выполнения запроса в классе ожидания user I/O.
   Ключ метрики: `builtin:tech.oracleDb.cd.slow.time.userIo`
 
 #### Execution details
@@ -371,28 +371,28 @@ Oracle database insights metrics charts: Time-consuming metrics: Waits
 
 Oracle database insights metrics charts: Time-consuming metrics: Execution details
 
-* **All sessions** (количество)
+* **All sessions** (count)
   Общее число всех сессий независимо от их состояния и класса ожидания.
   Ключ метрики: `builtin:tech.oracleDb.cd.sessions.all`
-* **Executions** (количество)
-  Общее число выполнений, суммированное по всем дочерним курсорам запроса.
+* **Executions** (count)
+  Общее число выполнений, просуммированное по всем дочерним курсорам запроса.
   Ключ метрики: `builtin:tech.oracleDb.cd.slow.executions`
-* **Processed rows** (количество)
+* **Processed rows** (count)
   Общее число строк, обработанных запросом.
   Ключ метрики: `builtin:tech.oracleDb.cd.slow.rowsProcessed`
-* **Buffer gets** (количество)
-  Сумма обращений к буферу по всем дочерним курсорам запроса.
+* **Buffer gets** (count)
+  Сумма buffer gets по всем дочерним курсорам запроса.
   Ключ метрики: `builtin:tech.oracleDb.cd.slow.bufferGets`
-* **Disk reads** (количество)
+* **Disk reads** (count)
   Сумма числа операций чтения с диска по всем дочерним курсорам запроса.
   Ключ метрики: `builtin:tech.oracleDb.cd.slow.diskReads`
-* **Direct writes** (количество)
-  Сумма числа прямых операций записи по всем дочерним курсорам запроса.
+* **Direct writes** (count)
+  Сумма числа прямых записей по всем дочерним курсорам запроса.
   Ключ метрики: `builtin:tech.oracleDb.cd.slow.directWrites`
-* **Parse SQL calls** (количество)
-  Сумма всех вызовов разбора по всем дочерним курсорам запроса.
+* **Parse SQL calls** (count)
+  Сумма всех вызовов разбора (parse calls) по всем дочерним курсорам запроса.
   Ключ метрики: `builtin:tech.oracleDb.cd.slow.parseCalls`
-* **Number of wait events** (количество)
+* **Number of wait events** (count)
   Общее число ожиданий события.
   Ключ метрики: `builtin:tech.oracleDb.cd.wait.count`
 
@@ -404,12 +404,12 @@ Oracle database insights metrics charts: Time-consuming metrics: Execution detai
 
 Какая модель лицензирования?
 
-Текущий Early Access релиз database insights бесплатный, доступен с каждой версией сервера ActiveGate и Dynatrace 1.173+. В будущем цена будет зависеть от количества потребляемых метрик.
+Текущий Early Access релиз database insights бесплатен и доступен с любой версией сервера ActiveGate и Dynatrace 1.173+. В будущем цена будет основана на числе потребляемых метрик.
 
 Можно ли использовать Cluster ActiveGate для Oracle database insights?
 
-Нет. Можно использовать только Environment ActiveGate, который удалённо подключается к серверу Oracle и получает метрики и свойства каждую минуту. Поскольку Environment ActiveGate устанавливается в локальном окружении, это усиливает безопасность и минимизирует нагрузку на трафик в сети. Нужно учитывать, что основное назначение Cluster ActiveGate, это маршрутизация трафика OneAgent.
+Нет. Можно использовать только Environment ActiveGate, который удалённо подключается к серверу Oracle и получает метрики и свойства каждую минуту. Поскольку Environment ActiveGate устанавливается в локальной среде, это усиливает безопасность и минимизирует нагрузку на трафик в сети. Стоит учитывать, что основное назначение Cluster ActiveGate, это маршрутизация трафика OneAgent.
 
 Нужно ли устанавливать OneAgent на хост Oracle?
 
-Нет, но это рекомендуется, потому что это даёт более полную картину базы данных, сервера и всех процессов, выполняющихся на нём, а также мониторинг логов. Так можно быстрее реагировать на потенциальные проблемы и лучше понимать первопричину.
+Нет, но это рекомендуется, поскольку так можно получить более полную картину базы данных, сервера и всех процессов, запущенных на нём, включая мониторинг логов. Благодаря этому реагировать на потенциальные проблемы можно быстрее, а первопричину понимать лучше.

@@ -31,25 +31,25 @@ source: https://docs.dynatrace.com/managed/observe/digital-experience/rum-classi
 
 График **Apdex rating** показывает тренды среднего [рейтинга Apdex](/managed/observe/digital-experience/rum-classic/rum-concepts/scores-and-ratings/apdex-ratings "Узнать, как Dynatrace использует Apdex для измерения удовлетворённости пользователей производительностью приложения.") приложения за выбранный период.
 
-![Раздел User experience — Apdex rating](https://dt-cdn.net/images/user-experience-apdex-rating-847-ca725a074c.png)
+![Раздел User experience - Apdex rating](https://dt-cdn.net/images/user-experience-apdex-rating-847-ca725a074c.png)
 
-Раздел User experience — Apdex rating
+Раздел User experience - Apdex rating
 
 ## User actions и Users
 
 График **User actions and Users** сравнивает количество пользовательских действий с количеством активных пользователей за выбранный период.
 
-![Раздел User experience — User actions and Users](https://dt-cdn.net/images/user-experience-user-actions-and-users-848-27d7bac217.png)
+![Раздел User experience - User actions and Users](https://dt-cdn.net/images/user-experience-user-actions-and-users-848-27d7bac217.png)
 
-Раздел User experience — User actions and Users
+Раздел User experience - User actions and Users
 
 ## New users
 
 График **New users** показывает, сколько пользователей запустили приложение впервые за выбранный период. Эта метрика учитывает только первую сессию после запуска инструментированного приложения. Обновления приложения и обновления библиотеки Dynatrace не вызывают сброс состояния для возвращающихся пользователей. Эта метрика привязана к конкретным устройствам, поэтому пользователи учитываются несколько раз, если они устанавливают приложение на несколько устройств.
 
-![Раздел User experience — New users](https://dt-cdn.net/images/user-experience-new-users-2-848-df286583cc.png)
+![Раздел User experience - New users](https://dt-cdn.net/images/user-experience-new-users-2-848-df286583cc.png)
 
-Раздел User experience — New users
+Раздел User experience - New users
 
 Метрика **New users** не различает нескольких пользователей, использующих одно и то же устройство и одну и ту же установку приложения.
 
@@ -57,17 +57,17 @@ source: https://docs.dynatrace.com/managed/observe/digital-experience/rum-classi
 
 График **App version distribution** отражает скорость перехода на новую версию, сравнивая количество сессий приложения, происходящих из разных версий приложения. Этот график особенно интересен после выпуска новых версий приложения, поскольку позволяет отслеживать переход на последнюю версию.
 
-![Раздел User experience — App versions](https://dt-cdn.net/images/app-version-distribution-848-03883e6518.png)
+![Раздел User experience - App versions](https://dt-cdn.net/images/app-version-distribution-848-03883e6518.png)
 
-Раздел User experience — App versions
+Раздел User experience - App versions
 
 ## Top 3 actions
 
 Список показывает три главных действия на основе продолжительности пользовательского действия и частоты пользовательских действий.
 
-![Раздел User experience — Top 3 actions](https://dt-cdn.net/images/user-experience-top-3-actions-848-b804aa48cd.png)
+![Раздел User experience - Top 3 actions](https://dt-cdn.net/images/user-experience-top-3-actions-848-b804aa48cd.png)
 
-Раздел User experience — Top 3 actions
+Раздел User experience - Top 3 actions
 
 ### Страница обзора пользовательского действия
 
@@ -119,8 +119,8 @@ Analyze error в разделе MDA
 
 Карта мира **Geographic regions** на странице обзора приложения визуализирует все географические регионы, из которых происходят пользователи. Для каждой страны можно посмотреть количество активных сессий, активных пользователей и сбоев, а также общий рейтинг Apdex.
 
-![Раздел User experience — Geo regions](https://dt-cdn.net/images/user-experience-geo-regions-848-7ae15779b9.png)
+![Раздел User experience - Geo regions](https://dt-cdn.net/images/user-experience-geo-regions-848-7ae15779b9.png)
 
-Раздел User experience — Geo regions
+Раздел User experience - Geo regions
 
 Если данные на карте мира не отображаются, может потребоваться [сопоставить внутренние IP-адреса с местоположениями](/managed/observe/digital-experience/rum-classic/mobile-applications/additional-configuration/map-internal-ip-addresses-to-locations-mobile "Настроить Dynatrace на использование локальных адресов, чтобы понимать, откуда происходят пользователи мобильных приложений.").

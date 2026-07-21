@@ -89,7 +89,7 @@ Dynatrace Environment API
 
 Вызовы API можно выполнять с помощью предпочитаемого клиента. Соответствующую документацию API можно найти в разделе [User sessions API](/managed/dynatrace-api/environment-api/rum/user-sessions "Узнать, что предлагает язык запросов User Sessions Dynatrace API.").
 
-Для выполнения этих вызовов токену API нужно назначить разрешение **User sessions** (`DTAQLAccess`). Сведения о том, как получить и использовать токен, см. в разделе [Dynatrace API — токены и аутентификация](/managed/dynatrace-api/basics/dynatrace-api-authentication "Узнать, как пройти аутентификацию для использования Dynatrace API.").
+Для выполнения этих вызовов токену API нужно назначить разрешение **User sessions** (`DTAQLAccess`). Сведения о том, как получить и использовать токен, см. в разделе [Dynatrace API - токены и аутентификация](/managed/dynatrace-api/basics/dynatrace-api-authentication "Узнать, как пройти аутентификацию для использования Dynatrace API.").
 
 ### Временные диапазоны в Environment API
 
@@ -993,7 +993,7 @@ SELECT city FROM usersession WHERE userId STARTSWITH "dynatrace"
 
 | Формат | Описание | Пример |
 | --- | --- | --- |
-| — | Unix-время в виде числа в миллисекундах | `1514152800000` |
+| - | Unix-время в виде числа в миллисекундах | `1514152800000` |
 | `yyyy-MM-dd'T'HH:mm:ssZ` | ISO datetime с часовым поясом | `2017-12-24T21:00:00+01:00` |
 | `yyyy-MM-dd HH:mm:ss` | Дата с необязательным временем | `2017-12-24 21:00` |
 | `yyyy/MM/dd HH:mm:ss` | Дата с необязательным временем | `2017/12/24 21` |
