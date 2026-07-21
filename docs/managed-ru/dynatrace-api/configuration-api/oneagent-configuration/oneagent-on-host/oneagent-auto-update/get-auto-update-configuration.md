@@ -1,19 +1,18 @@
 ---
 title: OneAgent auto-update API - GET configuration
 source: https://docs.dynatrace.com/managed/dynatrace-api/configuration-api/oneagent-configuration/oneagent-on-host/oneagent-auto-update/get-auto-update-configuration
-scraped: 2026-05-12T11:21:18.649214
 ---
 
 # OneAgent auto-update API - GET configuration
 
 # OneAgent auto-update API - GET configuration
 
-* Reference
-* Published Feb 03, 2020
+* Справочник
+* Опубликовано 03 февраля 2020 г.
 
-Возвращает конфигурацию авто-обновления OneAgent на указанном хосте.
+Получает конфигурацию автообновления OneAgent на указанном хосте.
 
-Запрос возвращает payload `application/json`.
+Запрос формирует полезную нагрузку `application/json`.
 
 |  |  |  |
 | --- | --- | --- |
@@ -22,15 +21,15 @@ scraped: 2026-05-12T11:21:18.649214
 
 ## Аутентификация
 
-Для выполнения этого запроса нужен access token со scope `ReadConfig`.
+Для выполнения этого запроса нужен токен доступа с областью действия `ReadConfig`.
 
-Как его получить и использовать, смотрите [Tokens and authentication](/managed/discover-dynatrace/references/dynatrace-api/basics/dynatrace-api-authentication).
+О том, как получить и использовать токен, читай в разделе [Tokens and authentication](/managed/discover-dynatrace/references/dynatrace-api/basics/dynatrace-api-authentication).
 
 ## Параметры
 
-| Параметр | Тип | Описание | Где | Обязательный |
+| Параметр | Тип | Описание | Расположение | Обязательный |
 | --- | --- | --- | --- | --- |
-| id | string | ID сущности Dynatrace требуемого хоста. | path | Required |
+| id | string | ID сущности Dynatrace нужного хоста. | path | Обязательный |
 
 ## Ответ
 
@@ -44,22 +43,22 @@ scraped: 2026-05-12T11:21:18.649214
 
 #### Объект `HostAutoUpdateConfig`
 
-Конфигурация авто-обновления OneAgent.
+Конфигурация автообновления OneAgent.
 
 | Элемент | Тип | Описание |
 | --- | --- | --- |
-| effectiveSetting | string | Фактическое состояние авто-обновления на хосте.  Применяется только если параметр **setting** имеет значение `INHERITED`. В этом случае значение берётся из конфигурации группы хостов или для всего окружения. Возможные значения: * `ENABLED` * `DISABLED` |
-| effectiveVersion | string | Фактическая версия, до которой должен быть обновлён OneAgent.  Применяется только если параметр **setting** имеет значение `INHERITED`, а параметр **version** имеет значение `null`. В этом случае значение берётся из конфигурации группы хостов или для всего окружения. |
-| id | string | ID сущности Dynatrace хоста, где развёрнут OneAgent. |
-| metadata | [ConfigurationMetadata](#openapi-definition-ConfigurationMetadata) | Метаданные для отладки |
-| setting | string | Состояние авто-обновления OneAgent на хосте:  * `ENABLED`: OneAgent автоматически обновляется до последней версии. * `DISABLED`: OneAgent обновляется до версии, указанной в поле **version**. * `INHERITED`: используется настройка из группы хостов (если хост входит в группу хостов) или конфигурации для всего окружения (если хост не принадлежит группе хостов). Возможные значения: * `DISABLED` * `ENABLED` * `INHERITED` |
-| targetVersion | string | Версия, до которой обновлять OneAgent при включённых автоматических обновлениях.  Поддерживаются относительные версии `latest`, `previous` и `older`, а также конкретная версия в формате `<major>.<minor>` (например `1.261`) или `<major>.<minor>.<revision>.<timestamp>` (например `1.261.178.20230313-090930`).  Применяется только когда параметр **setting** имеет значение `ENABLED`. |
+| effectiveSetting | string | Фактическое состояние автообновления на хосте.  Применимо, только если параметр **setting** имеет значение `INHERITED`. В этом случае значение берётся из группы хостов или общей конфигурации окружения. Элемент может принимать следующие значения * `ENABLED` * `DISABLED` |
+| effectiveVersion | string | Фактическая версия, до которой должен быть обновлён OneAgent.  Применимо, только если параметр **setting** имеет значение `INHERITED`, а параметр **version** имеет значение `null`. В этом случае значение берётся из группы хостов или общей конфигурации окружения. |
+| id | string | ID сущности Dynatrace хоста, на котором развёрнут OneAgent. |
+| metadata | [ConfigurationMetadata](#openapi-definition-ConfigurationMetadata) | Метаданные, полезные для отладки |
+| setting | string | Состояние автообновления OneAgent на хосте:  * `ENABLED`: OneAgent автоматически обновляется до самой свежей версии. * `DISABLED`: OneAgent обновляется до версии, указанной в поле **version**. * `INHERITED`: используется настройка из группы хостов (если хост входит в группу хостов) или общая конфигурация окружения (если хост не принадлежит группе хостов). Элемент может принимать следующие значения * `DISABLED` * `ENABLED` * `INHERITED` |
+| targetVersion | string | Версия, до которой обновляется OneAgent при включённом автообновлении.  Поддерживает относительные версии `latest`, `previous` и `older`, а также конкретную версию в формате `<major>.<minor>` (например, `1.261`) или `<major>.<minor>.<revision>.<timestamp>` (например, `1.261.178.20230313-090930`).  Применимо, только если параметр **setting** имеет значение `ENABLED`. |
 | updateWindows | [UpdateWindowsConfig](#openapi-definition-UpdateWindowsConfig) | Базовая информация обо всех настроенных окнах обновления |
-| version | string | Версия, до которой должен быть обновлён OneAgent.  Укажите версию в формате `<major>.<minor>.<revision>.<timestamp>` (например `1.191.0.20200326-161115`). Список доступных версий можно получить вызовом [GET available versions](https://dt-url.net/fo23rb5).  Если для указанной версии не найден подходящий установщик или значение равно `null`, OneAgent не будет обновлён.  Применяется только когда значение **effectiveSetting** равно `DISABLED`.  Если параметр **setting** имеет значение `INHERITED`, но **version** всё ещё задан, это приведёт к разовому обновлению: OneAgent будет обновлён до указанной версии, а значение **version** будет установлено в `null`. Для дальнейших обновлений будет использоваться родительская настройка. |
+| version | string | Версия, до которой должен быть обновлён OneAgent.  Укажи версию в формате `<major>.<minor>.<revision>.<timestamp>` (например, `1.191.0.20200326-161115`). Список доступных версий можно получить вызовом [GET available versions﻿](https://dt-url.net/fo23rb5?dt=m).  Если подходящий инсталлятор для указанной версии не найден или значение установлено в `null`, OneAgent не будет обновлён.  Применимо, только если значение **effectiveSetting** равно `DISABLED`.  Если параметр **setting** имеет значение `INHERITED`, но при этом задан параметр **version**, это приведёт к разовому обновлению: OneAgent будет обновлён до указанной версии, после чего значение **version** будет установлено в `null`. Для последующих обновлений будет использоваться родительская настройка. |
 
 #### Объект `ConfigurationMetadata`
 
-Метаданные для отладки
+Метаданные, полезные для отладки
 
 | Элемент | Тип | Описание |
 | --- | --- | --- |
@@ -73,18 +72,18 @@ scraped: 2026-05-12T11:21:18.649214
 
 | Элемент | Тип | Описание |
 | --- | --- | --- |
-| windows | [UpdateWindow[]](#openapi-definition-UpdateWindow) | Список окон обновления, когда может начаться обновление OneAgent. Если значение отсутствует, а обновление должно быть выполнено, оно начнётся при первой возможности. |
+| windows | [UpdateWindow](#openapi-definition-UpdateWindow)[] | Список окон обновления, в которые может начаться обновление OneAgent. Если значение отсутствует, а обновление должно быть выполнено, оно начнётся при первой возможности. |
 
 #### Объект `UpdateWindow`
 
-Базовая информация об одном maintenance window
+Базовая информация об одном окне обслуживания
 
 | Элемент | Тип | Описание |
 | --- | --- | --- |
-| id | string | Идентификатор maintenance window |
-| name | string | Имя maintenance window |
+| id | string | Идентификатор окна обслуживания |
+| name | string | Название окна обслуживания |
 
-### JSON-модели тела ответа
+### Примеры моделей тела ответа JSON
 
 ```
 {

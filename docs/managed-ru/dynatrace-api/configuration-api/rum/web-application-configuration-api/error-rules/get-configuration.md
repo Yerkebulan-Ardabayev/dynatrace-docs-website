@@ -1,36 +1,35 @@
 ---
 title: Web application configuration API - GET error rules
 source: https://docs.dynatrace.com/managed/dynatrace-api/configuration-api/rum/web-application-configuration-api/error-rules/get-configuration
-scraped: 2026-05-12T11:16:47.475913
 ---
 
 # Web application configuration API - GET error rules
 
 # Web application configuration API - GET error rules
 
-* Reference
-* Published Sep 24, 2020
+* Справка
+* Опубликовано 24 сен. 2020 г.
 
-Возвращает конфигурацию правил ошибок в указанном приложении.
+Получение конфигурации правил ошибок в указанном приложении.
 
-Запрос возвращает payload `application/json`.
+Запрос формирует полезную нагрузку `application/json`.
 
 |  |  |  |
 | --- | --- | --- |
-| GET | ManagedDynatrace for Government | `https://{your-domain}/e/{your-environment-id}/api/config/v1/applications/web/{id}/errorRules` |
+| GET | ManagedDynatrace для Government | `https://{your-domain}/e/{your-environment-id}/api/config/v1/applications/web/{id}/errorRules` |
 | GET | Environment ActiveGate | `https://{your-activegate-domain}/e/{your-environment-id}/api/config/v1/applications/web/{id}/errorRules` |
 
 ## Аутентификация
 
-Для выполнения этого запроса нужен access token со scope `ReadConfig`.
+Для выполнения этого запроса нужен токен доступа с областью действия `ReadConfig`.
 
-Как его получить и использовать, смотрите [Tokens and authentication](/managed/discover-dynatrace/references/dynatrace-api/basics/dynatrace-api-authentication).
+Подробнее о том, как получить и использовать токен, см. в разделе [Токены и аутентификация](/managed/discover-dynatrace/references/dynatrace-api/basics/dynatrace-api-authentication).
 
 ## Параметры
 
-| Параметр | Тип | Описание | Где | Обязательный |
+| Параметр | Тип | Описание | В | Обязательный |
 | --- | --- | --- | --- | --- |
-| id | string | ID нужного веб-приложения. | path | Required |
+| id | string | ID нужного веб-приложения. | путь | Обязательный |
 
 ## Ответ
 
@@ -38,7 +37,7 @@ scraped: 2026-05-12T11:16:47.475913
 
 | Код | Тип | Описание |
 | --- | --- | --- |
-| **200** | [ApplicationErrorRules](#openapi-definition-ApplicationErrorRules) | Успех |
+| **200** | [ApplicationErrorRules](#openapi-definition-ApplicationErrorRules) | Успешно |
 
 ### Объекты тела ответа
 
@@ -48,11 +47,11 @@ scraped: 2026-05-12T11:16:47.475913
 
 | Элемент | Тип | Описание |
 | --- | --- | --- |
-| customErrorRules | [CustomErrorRule[]](#openapi-definition-CustomErrorRule) | Упорядоченный список пользовательских ошибок.  Правила оцениваются сверху вниз; применяется первое подходящее правило. |
-| httpErrorRules | [HttpErrorRule[]](#openapi-definition-HttpErrorRule) | Упорядоченный список HTTP-ошибок.  Правила оцениваются сверху вниз; применяется первое подходящее правило. |
-| ignoreCustomErrorsInApdexCalculation | boolean | Исключить (`true`) или включить (`false`) пользовательские ошибки, перечисленные в **customErrorRules**, в расчёт Apdex. |
-| ignoreHttpErrorsInApdexCalculation | boolean | Исключить (`true`) или включить (`false`) HTTP-ошибки, перечисленные в **httpErrorRules**, в расчёт Apdex. |
-| ignoreJavaScriptErrorsInApdexCalculation | boolean | Исключить (`true`) или включить (`false`) ошибки JavaScript в расчёт Apdex. |
+| customErrorRules | [CustomErrorRule](#openapi-definition-CustomErrorRule)[] | Упорядоченный список пользовательских ошибок. Правила проверяются сверху вниз, применяется первое совпавшее правило. |
+| httpErrorRules | [HttpErrorRule](#openapi-definition-HttpErrorRule)[] | Упорядоченный список ошибок HTTP. Правила проверяются сверху вниз, применяется первое совпавшее правило. |
+| ignoreCustomErrorsInApdexCalculation | boolean | Исключить (`true`) или включить (`false`) в расчёт Apdex пользовательские ошибки, перечисленные в **customErrorRules**. |
+| ignoreHttpErrorsInApdexCalculation | boolean | Исключить (`true`) или включить (`false`) в расчёт Apdex ошибки HTTP, перечисленные в **httpErrorRules**. |
+| ignoreJavaScriptErrorsInApdexCalculation | boolean | Исключить (`true`) или включить (`false`) в расчёт Apdex ошибки JavaScript. |
 
 #### Объект `CustomErrorRule`
 
@@ -60,31 +59,31 @@ scraped: 2026-05-12T11:16:47.475913
 
 | Элемент | Тип | Описание |
 | --- | --- | --- |
-| capture | boolean | Перехватывать (`true`) или игнорировать (`false`) ошибку. |
-| customAlerting | boolean | Включить (`true`) или исключить (`false`) ошибку в [обнаружение и анализ проблем](https://dt-url.net/a963kd2) Davis AI. |
-| impactApdex | boolean | Включить (`true`) или исключить (`false`) ошибку в расчёт Apdex. |
-| keyMatcher | string | Операция сопоставления для **keyPattern**. Возможные значения: * `BEGINS_WITH` * `CONTAINS` * `ENDS_WITH` * `EQUALS` |
-| keyPattern | string | Ключ искомой ошибки. |
-| valueMatcher | string | Операция сопоставления для **valuePattern**. Возможные значения: * `BEGINS_WITH` * `CONTAINS` * `ENDS_WITH` * `EQUALS` |
-| valuePattern | string | Значение искомой ошибки. |
+| capture | boolean | Захватывать (`true`) или игнорировать (`false`) ошибку. |
+| customAlerting | boolean | Учитывать (`true`) или не учитывать (`false`) ошибку в Davis AI [обнаружении и анализе проблем﻿](https://dt-url.net/a963kd2?dt=m). |
+| impactApdex | boolean | Учитывать (`true`) или не учитывать (`false`) ошибку в расчёте Apdex. |
+| keyMatcher | string | Операция сопоставления для **keyPattern**. Элемент может принимать следующие значения * `BEGINS_WITH` * `CONTAINS` * `ENDS_WITH` * `EQUALS` |
+| keyPattern | string | Ключ ошибки для поиска. |
+| valueMatcher | string | Операция сопоставления для **valuePattern**. Элемент может принимать следующие значения * `BEGINS_WITH` * `CONTAINS` * `ENDS_WITH` * `EQUALS` |
+| valuePattern | string | Значение ошибки для поиска. |
 
 #### Объект `HttpErrorRule`
 
-Конфигурация HTTP-ошибки в веб-приложении.
+Конфигурация ошибки HTTP в веб-приложении.
 
 | Элемент | Тип | Описание |
 | --- | --- | --- |
-| capture | boolean | Перехватывать (`true`) или игнорировать (`false`) ошибку. |
-| considerBlockedRequests | boolean | Если `true`, сопоставлять по ошибкам с нарушениями правила CSP. |
-| considerForAi | boolean | Включить (`true`) или исключить (`false`) ошибку в [обнаружение и анализ проблем](https://dt-url.net/a963kd2) Davis AI. |
-| considerUnknownErrorCode | boolean | Если `true`, сопоставлять по ошибкам с неизвестным HTTP-кодом статуса. |
-| errorCodes | string | HTTP-код статуса или диапазон кодов статуса для сопоставления.  Это поле обязательно, если **considerUnknownErrorCode** И **considerBlockedRequests** оба установлены в `false`. |
-| filter | string | Правило сопоставления для URL. Возможные значения: * `BEGINS_WITH` * `CONTAINS` * `ENDS_WITH` * `EQUALS` |
+| capture | boolean | Захватывать (`true`) или игнорировать (`false`) ошибку. |
+| considerBlockedRequests | boolean | Если `true`, сопоставлять по ошибкам, у которых есть нарушения правил CSP. |
+| considerForAi | boolean | Учитывать (`true`) или не учитывать (`false`) ошибку в Davis AI [обнаружении и анализе проблем﻿](https://dt-url.net/a963kd2?dt=m). |
+| considerUnknownErrorCode | boolean | Если `true`, сопоставлять по ошибкам с неизвестным кодом статуса HTTP. |
+| errorCodes | string | Код статуса HTTP или диапазон кодов статуса для сопоставления. Это поле обязательно, если **considerUnknownErrorCode** И **considerBlockedRequests** оба установлены в `false`. |
+| filter | string | Правило сопоставления для URL. Элемент может принимать следующие значения * `BEGINS_WITH` * `CONTAINS` * `ENDS_WITH` * `EQUALS` |
 | filterByUrl | boolean | Если `true`, фильтровать ошибки по URL. |
-| impactApdex | boolean | Включить (`true`) или исключить (`false`) ошибку в расчёт Apdex. |
-| url | string | Искомый URL. |
+| impactApdex | boolean | Учитывать (`true`) или не учитывать (`false`) ошибку в расчёте Apdex. |
+| url | string | URL для поиска. |
 
-### JSON-модели тела ответа
+### Модели JSON тела ответа
 
 ```
 {
@@ -202,6 +201,6 @@ scraped: 2026-05-12T11:16:47.475913
 }
 ```
 
-## Связанные темы
+## Похожие темы
 
-* [Настройка обнаружения ошибок для веб-приложений](/managed/observe/digital-experience/web-applications/additional-configuration/configure-errors "Настройте захват или игнорирование ошибок запросов, пользовательских и JavaScript-ошибок.")
+* [Настройка обнаружения ошибок для веб-приложений в RUM Classic](/managed/observe/digital-experience/rum-classic/web-applications/additional-configuration/configure-errors "Настройте приложение для захвата или игнорирования ошибок запросов, пользовательских ошибок и ошибок JavaScript.")

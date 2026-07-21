@@ -1,21 +1,21 @@
 ---
 title: OneAgent monitoring configuration API - PUT configuration
 source: https://docs.dynatrace.com/managed/dynatrace-api/configuration-api/oneagent-configuration/oneagent-on-host/oneagent-monitoring/put-monitoring-configuration
-scraped: 2026-05-12T11:31:27.966602
 ---
 
 # OneAgent monitoring configuration API - PUT configuration
 
 # OneAgent monitoring configuration API - PUT configuration
 
-* Reference
-* Updated on Jun 23, 2022
+* Справка
+* Обновлено 23 июня 2022 г.
+* Устарело
 
-Этот API устарел. Используйте [Settings API](/managed/dynatrace-api/environment-api/settings "Узнайте, что предлагает Dynatrace Settings API.") со schema **Monitoring** (`builtin:host.monitoring`).
+Этот API устарел. Вместо него используй [Settings API](/managed/dynatrace-api/environment-api/settings "Find out what the Dynatrace Settings API offers.") со схемой **Monitoring** (`builtin:host.monitoring`).
 
 Обновляет конфигурацию мониторинга OneAgent на указанном хосте.
 
-Запрос принимает payload `application/json`.
+Запрос принимает полезную нагрузку `application/json`.
 
 |  |  |  |
 | --- | --- | --- |
@@ -24,16 +24,16 @@ scraped: 2026-05-12T11:31:27.966602
 
 ## Аутентификация
 
-Для выполнения этого запроса нужен access token со scope `WriteConfig`.
+Для выполнения этого запроса нужен токен доступа с областью действия `WriteConfig`.
 
-Как его получить и использовать, смотрите [Tokens and authentication](/managed/discover-dynatrace/references/dynatrace-api/basics/dynatrace-api-authentication).
+О том, как его получить и использовать, читай в разделе [Tokens and authentication](/managed/discover-dynatrace/references/dynatrace-api/basics/dynatrace-api-authentication).
 
 ## Параметры
 
-| Параметр | Тип | Описание | Где | Обязательный |
+| Параметр | Тип | Описание | Расположение | Обязательный |
 | --- | --- | --- | --- | --- |
-| id | string | ID сущности Dynatrace требуемого хоста. | path | Required |
-| body | [MonitoringConfig](#openapi-definition-MonitoringConfig) | JSON-тело запроса. Содержит параметры мониторинга OneAgent. | body | Optional |
+| id | string | ID сущности Dynatrace нужного хоста. | path | Обязательный |
+| body | [MonitoringConfig](#openapi-definition-MonitoringConfig) | Тело JSON запроса. Содержит параметры мониторинга OneAgent. | body | Опциональный |
 
 ### Объекты тела запроса
 
@@ -43,25 +43,25 @@ scraped: 2026-05-12T11:31:27.966602
 
 | Элемент | Тип | Описание | Обязательный |
 | --- | --- | --- | --- |
-| autoInjectionEnabled | boolean | Кодовые модули будут автоматически внедряться в отслеживаемые приложения, если эта настройка включена. Эта настройка не применяется, если авто-внедрение отключено через oneagentctl (см. https://dt-url.net/oneagentctl). | Optional |
-| id | string | ID сущности Dynatrace хоста, где развёрнут OneAgent. | Optional |
-| metadata | [ConfigurationMetadata](#openapi-definition-ConfigurationMetadata) | Метаданные для отладки | Optional |
-| monitoringEnabled | boolean | Мониторинг включён (`true`) или отключён (`false`). | Required |
-| monitoringMode | string | Режим мониторинга хоста: полный стек или только инфраструктура. Возможные значения: * `CLOUD_INFRASTRUCTURE` * `DISCOVERY` * `FULL_STACK` | Required |
+| autoInjectionEnabled | boolean | Если этот параметр включён, модули кода будут внедряться в отслеживаемые приложения автоматически. Этот параметр не применяется, если автовнедрение отключено через oneagentctl (см. https://dt-url.net/oneagentctl?dt=m). | Опциональный |
+| id | string | ID сущности Dynatrace хоста, на котором развёрнут OneAgent. | Опциональный |
+| metadata | [ConfigurationMetadata](#openapi-definition-ConfigurationMetadata) | Метаданные, полезные для отладки | Опциональный |
+| monitoringEnabled | boolean | Мониторинг включён (`true`) или отключён (`false`). | Обязательный |
+| monitoringMode | string | Режим мониторинга хоста: полный стек или только инфраструктура. Элемент может принимать следующие значения * `CLOUD_INFRASTRUCTURE` * `DISCOVERY` * `FULL_STACK` | Обязательный |
 
 #### Объект `ConfigurationMetadata`
 
-Метаданные для отладки
+Метаданные, полезные для отладки
 
 | Элемент | Тип | Описание | Обязательный |
 | --- | --- | --- | --- |
-| clusterVersion | string | Версия Dynatrace. | Optional |
-| configurationVersions | integer[] | Отсортированный список номеров версий конфигурации. | Optional |
-| currentConfigurationVersions | string[] | Отсортированный список номеров версий конфигурации. | Optional |
+| clusterVersion | string | Версия Dynatrace. | Опциональный |
+| configurationVersions | integer[] | Отсортированный список номеров версий конфигурации. | Опциональный |
+| currentConfigurationVersions | string[] | Отсортированный список номеров версий конфигурации. | Опциональный |
 
 ### JSON-модель тела запроса
 
-Это модель тела запроса, показывающая возможные элементы. Её нужно адаптировать под реальный запрос.
+Это модель тела запроса, показывающая возможные элементы. Её нужно скорректировать перед использованием в реальном запросе.
 
 ```
 {
@@ -137,8 +137,8 @@ scraped: 2026-05-12T11:31:27.966602
 
 | Код | Тип | Описание |
 | --- | --- | --- |
-| **204** | - | Успех. Конфигурация обновлена. Ответ без тела. |
-| **400** | [ErrorEnvelope](#openapi-definition-ErrorEnvelope) | Сбой. Невалидный ввод |
+| **204** | - | Успешно. Конфигурация обновлена. Ответ не содержит тела. |
+| **400** | [ErrorEnvelope](#openapi-definition-ErrorEnvelope) | Ошибка. Входные данные некорректны |
 
 ### Объекты тела ответа
 
@@ -152,8 +152,8 @@ scraped: 2026-05-12T11:31:27.966602
 
 | Элемент | Тип | Описание |
 | --- | --- | --- |
-| code | integer | HTTP-код статуса |
-| constraintViolations | [ConstraintViolation[]](#openapi-definition-ConstraintViolation) | Список нарушений ограничений |
+| code | integer | Код статуса HTTP |
+| constraintViolations | [ConstraintViolation](#openapi-definition-ConstraintViolation)[] | Список нарушений ограничений |
 | message | string | Сообщение об ошибке |
 
 #### Объект `ConstraintViolation`
@@ -164,7 +164,7 @@ scraped: 2026-05-12T11:31:27.966602
 | --- | --- | --- |
 | location | string | - |
 | message | string | - |
-| parameterLocation | string | -Возможные значения: * `HEADER` * `PATH` * `PAYLOAD_BODY` * `QUERY` |
+| parameterLocation | string | -Элемент может принимать следующие значения * `HEADER` * `PATH` * `PAYLOAD_BODY` * `QUERY` |
 | path | string | - |
 
 ### JSON-модели тела ответа
@@ -225,11 +225,11 @@ scraped: 2026-05-12T11:31:27.966602
 }
 ```
 
-## Validate payload
+## Проверка полезной нагрузки
 
-Рекомендуется валидировать payload перед отправкой реального запроса. Код ответа **204** означает валидный payload.
+Рекомендуется проверить полезную нагрузку перед её отправкой в реальном запросе. Код ответа **204** указывает на корректную полезную нагрузку.
 
-Запрос принимает payload `application/json`.
+Запрос принимает полезную нагрузку `application/json`.
 
 |  |  |  |
 | --- | --- | --- |
@@ -238,9 +238,9 @@ scraped: 2026-05-12T11:31:27.966602
 
 ### Аутентификация
 
-Для выполнения этого запроса нужен access token со scope `WriteConfig`.
+Для выполнения этого запроса нужен токен доступа с областью действия `WriteConfig`.
 
-Как его получить и использовать, смотрите [Tokens and authentication](/managed/discover-dynatrace/references/dynatrace-api/basics/dynatrace-api-authentication).
+О том, как его получить и использовать, читай в разделе [Tokens and authentication](/managed/discover-dynatrace/references/dynatrace-api/basics/dynatrace-api-authentication).
 
 ### Ответ
 
@@ -248,8 +248,8 @@ scraped: 2026-05-12T11:31:27.966602
 
 | Код | Тип | Описание |
 | --- | --- | --- |
-| **204** | - | Validated. Переданная конфигурация валидна. Ответ без тела. |
-| **400** | [ErrorEnvelope](#openapi-definition-ErrorEnvelope) | Сбой. Невалидный ввод |
+| **204** | - | Проверено. Отправленная конфигурация корректна. Ответ не содержит тела. |
+| **400** | [ErrorEnvelope](#openapi-definition-ErrorEnvelope) | Ошибка. Входные данные некорректны |
 
 #### Объекты тела ответа
 
@@ -263,8 +263,8 @@ scraped: 2026-05-12T11:31:27.966602
 
 | Элемент | Тип | Описание |
 | --- | --- | --- |
-| code | integer | HTTP-код статуса |
-| constraintViolations | [ConstraintViolation[]](#openapi-definition-ConstraintViolation) | Список нарушений ограничений |
+| code | integer | Код статуса HTTP |
+| constraintViolations | [ConstraintViolation](#openapi-definition-ConstraintViolation)[] | Список нарушений ограничений |
 | message | string | Сообщение об ошибке |
 
 #### Объект `ConstraintViolation`
@@ -275,7 +275,7 @@ scraped: 2026-05-12T11:31:27.966602
 | --- | --- | --- |
 | location | string | - |
 | message | string | - |
-| parameterLocation | string | -Возможные значения: * `HEADER` * `PATH` * `PAYLOAD_BODY` * `QUERY` |
+| parameterLocation | string | -Элемент может принимать следующие значения * `HEADER` * `PATH` * `PAYLOAD_BODY` * `QUERY` |
 | path | string | - |
 
 #### JSON-модели тела ответа

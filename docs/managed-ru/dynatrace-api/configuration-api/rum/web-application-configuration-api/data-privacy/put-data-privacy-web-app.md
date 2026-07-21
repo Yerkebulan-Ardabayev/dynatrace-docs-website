@@ -1,21 +1,20 @@
 ---
 title: Web application configuration API - PUT data privacy of a web application
 source: https://docs.dynatrace.com/managed/dynatrace-api/configuration-api/rum/web-application-configuration-api/data-privacy/put-data-privacy-web-app
-scraped: 2026-05-12T11:16:55.047267
 ---
 
 # Web application configuration API - PUT data privacy of a web application
 
 # Web application configuration API - PUT data privacy of a web application
 
-* Reference
-* Published Sep 03, 2019
+* Справка
+* Опубликовано 03 сентября 2019 г.
 
 Обновляет параметры конфиденциальности данных указанного веб-приложения.
 
-Этот API поддерживает только веб-приложения. Для мобильных и пользовательских приложений смотрите [Mobile and custom app API](/managed/dynatrace-api/configuration-api/rum/mobile-custom-app-configuration "Узнайте, что предлагает Dynatrace mobile и custom app config API.").
+Этот API поддерживает только веб-приложения. Для мобильных и пользовательских приложений см. [Mobile and custom app API](/managed/dynatrace-api/configuration-api/rum/mobile-custom-app-configuration "Learn what the Dynatrace mobile and custom app config API offers.").
 
-Запрос принимает и возвращает payload `application/json`.
+Запрос принимает и возвращает данные в формате `application/json`.
 
 |  |  |  |
 | --- | --- | --- |
@@ -24,16 +23,16 @@ scraped: 2026-05-12T11:16:55.047267
 
 ## Аутентификация
 
-Для выполнения этого запроса нужен access token со scope `DataPrivacy`.
+Для выполнения этого запроса нужен токен доступа со скоупом `DataPrivacy`.
 
-Как его получить и использовать, смотрите [Tokens and authentication](/managed/discover-dynatrace/references/dynatrace-api/basics/dynatrace-api-authentication).
+О том, как его получить и использовать, см. [Токены и аутентификация](/managed/discover-dynatrace/references/dynatrace-api/basics/dynatrace-api-authentication).
 
 ## Параметры
 
-| Параметр | Тип | Описание | Где | Обязательный |
+| Параметр | Тип | Описание | В | Обязательный |
 | --- | --- | --- | --- | --- |
-| id | string | ID веб-приложения, для которого нужно обновить настройки конфиденциальности данных. | path | Required |
-| body | [ApplicationDataPrivacy](#openapi-definition-ApplicationDataPrivacy) | JSON-тело запроса с новыми настройками конфиденциальности данных. | body | Optional |
+| id | string | ID веб-приложения, для которого нужно обновить настройки конфиденциальности данных. | path | Обязательный |
+| body | [ApplicationDataPrivacy](#openapi-definition-ApplicationDataPrivacy) | JSON тело запроса, содержащее новые настройки конфиденциальности данных. | body | Необязательный |
 
 ### Объекты тела запроса
 
@@ -43,22 +42,22 @@ scraped: 2026-05-12T11:16:55.047267
 
 | Элемент | Тип | Описание | Обязательный |
 | --- | --- | --- | --- |
-| dataCaptureOptInEnabled | boolean | Установите `true`, чтобы отключить сбор данных и cookie, пока не будет вызван JavaScriptAPI `dtrum.enable()`. | Required |
-| doNotTrackBehaviour | string | Как обрабатывать заголовок "Do Not Track":  * `IGNORE_DO_NOT_TRACK`: игнорировать заголовок и собирать данные. * `CAPTURE_ANONYMIZED`: собирать данные, но не связывать их с пользователем. * `DO_NOT_CAPTURE`: учитывать заголовок и не собирать. Возможные значения: * `CAPTURE_ANONYMIZED` * `DO_NOT_CAPTURE` * `IGNORE_DO_NOT_TRACK` | Required |
-| identifier | string | ID сущности Dynatrace для веб-приложения. | Optional |
-| metadata | [ConfigurationMetadata](#openapi-definition-ConfigurationMetadata) | Метаданные для отладки | Optional |
-| persistentCookieForUserTracking | boolean | Установите `true`, чтобы задать постоянный cookie для распознавания возвращающихся устройств. | Required |
-| sessionReplayDataPrivacy | [SessionReplayDataPrivacySettings](#openapi-definition-SessionReplayDataPrivacySettings) | Настройки конфиденциальности данных для Session Replay. | Optional |
+| dataCaptureOptInEnabled | boolean | Установить значение `true`, чтобы отключить захват данных и cookie до вызова JavaScriptAPI `dtrum.enable()`. | Обязательный |
+| doNotTrackBehaviour | string | Как обрабатывать заголовок "Do Not Track":  * `IGNORE_DO_NOT_TRACK`: игнорировать заголовок и захватывать данные. * `CAPTURE_ANONYMIZED`: захватывать данные, но не привязывать их к пользователю. * `DO_NOT_CAPTURE`: соблюдать заголовок и не захватывать данные. Элемент может принимать следующие значения * `CAPTURE_ANONYMIZED` * `DO_NOT_CAPTURE` * `IGNORE_DO_NOT_TRACK` | Обязательный |
+| identifier | string | Dynatrace ID сущности веб-приложения. | Необязательный |
+| metadata | [ConfigurationMetadata](#openapi-definition-ConfigurationMetadata) | Метаданные, полезные для отладки | Необязательный |
+| persistentCookieForUserTracking | boolean | Установить значение `true`, чтобы устанавливать постоянный cookie для распознавания повторно заходящих устройств. | Обязательный |
+| sessionReplayDataPrivacy | [SessionReplayDataPrivacySettings](#openapi-definition-SessionReplayDataPrivacySettings) | Настройки конфиденциальности данных для Session Replay. | Необязательный |
 
 #### Объект `ConfigurationMetadata`
 
-Метаданные для отладки
+Метаданные, полезные для отладки
 
 | Элемент | Тип | Описание | Обязательный |
 | --- | --- | --- | --- |
-| clusterVersion | string | Версия Dynatrace. | Optional |
-| configurationVersions | integer[] | Отсортированный список номеров версий конфигурации. | Optional |
-| currentConfigurationVersions | string[] | Отсортированный список номеров версий конфигурации. | Optional |
+| clusterVersion | string | Версия Dynatrace. | Необязательный |
+| configurationVersions | integer[] | Отсортированный список номеров версий конфигурации. | Необязательный |
+| currentConfigurationVersions | string[] | Отсортированный список номеров версий конфигурации. | Необязательный |
 
 #### Объект `SessionReplayDataPrivacySettings`
 
@@ -66,21 +65,21 @@ scraped: 2026-05-12T11:16:55.047267
 
 | Элемент | Тип | Описание | Обязательный |
 | --- | --- | --- | --- |
-| contentMaskingSettings | [SessionReplayContentMaskingSettings](#openapi-definition-SessionReplayContentMaskingSettings) | Настройки маскирования контента для Session Replay.  Подробнее смотрите [Configure Session Replay](https://dt-url.net/0m03slq) в документации Dynatrace. | Optional |
-| optInModeEnabled | boolean | Если `true`, запись сессий отключена, пока не будет вызван JavaScriptAPI `dtrum.enableSessionReplay()`. | Optional |
-| urlExclusionRules | string[] | Список URL, исключаемых из записи. | Optional |
+| contentMaskingSettings | [SessionReplayContentMaskingSettings](#openapi-definition-SessionReplayContentMaskingSettings) | Настройки маскирования содержимого для Session Replay.  Подробнее см. [Configure Session Replay﻿](https://dt-url.net/0m03slq?dt=m) в документации Dynatrace. | Необязательный |
+| optInModeEnabled | boolean | Если `true`, запись сессий отключена до вызова JavaScriptAPI `dtrum.enableSessionReplay()`. | Необязательный |
+| urlExclusionRules | string[] | Список URL, которые нужно исключить из записи. | Необязательный |
 
 #### Объект `SessionReplayContentMaskingSettings`
 
-Настройки маскирования контента для Session Replay.
+Настройки маскирования содержимого для Session Replay.
 
-Подробнее смотрите [Configure Session Replay](https://dt-url.net/0m03slq) в документации Dynatrace.
+Подробнее см. [Configure Session Replay﻿](https://dt-url.net/0m03slq?dt=m) в документации Dynatrace.
 
 | Элемент | Тип | Описание | Обязательный |
 | --- | --- | --- | --- |
-| playbackMaskingSettings | [SessionReplayMaskingSetting](#openapi-definition-SessionReplayMaskingSetting) | Конфигурация маскирования Session Replay. | Optional |
-| recordingMaskingSettings | [SessionReplayMaskingSetting](#openapi-definition-SessionReplayMaskingSetting) | Конфигурация маскирования Session Replay. | Optional |
-| recordingMaskingSettingsVersion | integer | Версия маскирования контента.  Этот API можно использовать только с версией 2.  Если вы используете версию 1, задайте в этом поле `2` в PUT-запросе, чтобы переключиться на версию 2. | Required |
+| playbackMaskingSettings | [SessionReplayMaskingSetting](#openapi-definition-SessionReplayMaskingSetting) | Конфигурация маскирования Session Replay. | Необязательный |
+| recordingMaskingSettings | [SessionReplayMaskingSetting](#openapi-definition-SessionReplayMaskingSetting) | Конфигурация маскирования Session Replay. | Необязательный |
+| recordingMaskingSettingsVersion | integer | Версия маскирования содержимого.  Этот API можно использовать только с версией 2.  Если используется версия 1, установите в этом поле значение `2` в PUT-запросе, чтобы переключиться на версию 2. | Обязательный |
 
 #### Объект `SessionReplayMaskingSetting`
 
@@ -88,8 +87,8 @@ scraped: 2026-05-12T11:16:55.047267
 
 | Элемент | Тип | Описание | Обязательный |
 | --- | --- | --- | --- |
-| maskingPreset | string | Тип маскирования:  * `MASK_ALL`: маскировать весь текст, пользовательский ввод и изображения. * `MASK_USER_INPUT`: маскировать все данные, предоставленные через пользовательский ввод * `ALLOW_LIST`: показываются только элементы, заданные в **maskingRules**, всё остальное маскируется. * `BLOCK_LIST`: элементы, заданные в **maskingRules**, маскируются, всё остальное показывается. Возможные значения: * `ALLOW_LIST` * `BLOCK_LIST` * `MASK_ALL` * `MASK_USER_INPUT` | Required |
-| maskingRules | [MaskingRule[]](#openapi-definition-MaskingRule) | Список правил маскирования. | Optional |
+| maskingPreset | string | Тип маскирования:  * `MASK_ALL`: маскировать весь текст, пользовательский ввод и изображения. * `MASK_USER_INPUT`: маскировать все данные, введённые пользователем * `ALLOW_LIST`: показываются только элементы, указанные в **maskingRules**, всё остальное маскируется. * `BLOCK_LIST`: элементы, указанные в **maskingRules**, маскируются, всё остальное отображается. Элемент может принимать следующие значения * `ALLOW_LIST` * `BLOCK_LIST` * `MASK_ALL` * `MASK_USER_INPUT` | Обязательный |
+| maskingRules | [MaskingRule](#openapi-definition-MaskingRule)[] | Список правил маскирования. | Необязательный |
 
 #### Объект `MaskingRule`
 
@@ -97,13 +96,13 @@ scraped: 2026-05-12T11:16:55.047267
 
 | Элемент | Тип | Описание | Обязательный |
 | --- | --- | --- | --- |
-| maskingRuleType | string | Тип правила маскирования. Возможные значения: * `ATTRIBUTE` * `ELEMENT` | Required |
-| selector | string | Селектор маскируемого элемента или атрибута.  Укажите CSS-выражение для элемента или [регулярное выражение](https://dt-url.net/k9e0iaq) для атрибута. | Required |
-| userInteractionHidden | boolean | Взаимодействия с элементом маскируются (`true`) или не маскируются (`false). | Required |
+| maskingRuleType | string | Тип правила маскирования. Элемент может принимать следующие значения * `ATTRIBUTE` * `ELEMENT` | Обязательный |
+| selector | string | Селектор элемента или атрибута, который нужно маскировать.  Укажите CSS-выражение для элемента или [регулярное выражение﻿](https://dt-url.net/k9e0iaq?dt=m) для атрибута. | Обязательный |
+| userInteractionHidden | boolean | Взаимодействия с элементом маскируются (`true`) или не маскируются (`false`). | Обязательный |
 
-### JSON-модель тела запроса
+### JSON модель тела запроса
 
-Это модель тела запроса со всеми возможными элементами. При использовании в реальном запросе её нужно адаптировать.
+Это модель тела запроса, показывающая возможные элементы. Её нужно адаптировать для использования в реальном запросе.
 
 ```
 {
@@ -259,8 +258,8 @@ scraped: 2026-05-12T11:16:55.047267
 
 | Код | Тип | Описание |
 | --- | --- | --- |
-| **204** | - | Успех. Настройки конфиденциальности данных обновлены. Ответ без тела. |
-| **400** | [ErrorEnvelope](#openapi-definition-ErrorEnvelope) | Сбой. Невалидный ввод |
+| **204** | - | Успешно. Настройки конфиденциальности данных обновлены. Ответ не содержит тела. |
+| **400** | [ErrorEnvelope](#openapi-definition-ErrorEnvelope) | Ошибка. Введённые данные недействительны. |
 
 ### Объекты тела ответа
 
@@ -274,8 +273,8 @@ scraped: 2026-05-12T11:16:55.047267
 
 | Элемент | Тип | Описание |
 | --- | --- | --- |
-| code | integer | HTTP-код статуса |
-| constraintViolations | [ConstraintViolation[]](#openapi-definition-ConstraintViolation) | Список нарушений ограничений |
+| code | integer | Код статуса HTTP |
+| constraintViolations | [ConstraintViolation](#openapi-definition-ConstraintViolation)[] | Список нарушений ограничений |
 | message | string | Сообщение об ошибке |
 
 #### Объект `ConstraintViolation`
@@ -286,10 +285,10 @@ scraped: 2026-05-12T11:16:55.047267
 | --- | --- | --- |
 | location | string | - |
 | message | string | - |
-| parameterLocation | string | -Возможные значения: * `HEADER` * `PATH` * `PAYLOAD_BODY` * `QUERY` |
+| parameterLocation | string | -Элемент может принимать следующие значения * `HEADER` * `PATH` * `PAYLOAD_BODY` * `QUERY` |
 | path | string | - |
 
-### JSON-модели тела ответа
+### JSON модели тела ответа
 
 ```
 {
@@ -347,11 +346,11 @@ scraped: 2026-05-12T11:16:55.047267
 }
 ```
 
-## Validate payload
+## Проверка payload
 
-Рекомендуется проверить payload перед его отправкой в реальном запросе. Код ответа **204** означает, что payload корректен.
+Рекомендуется проверять payload перед его отправкой в составе реального запроса. Код ответа **204** означает, что payload действителен.
 
-Запрос принимает payload `application/json`.
+Запрос принимает данные в формате `application/json`.
 
 |  |  |  |
 | --- | --- | --- |
@@ -360,9 +359,9 @@ scraped: 2026-05-12T11:16:55.047267
 
 ### Аутентификация
 
-Для выполнения этого запроса нужен access token со scope `DataPrivacy`.
+Для выполнения этого запроса нужен токен доступа со скоупом `DataPrivacy`.
 
-Как его получить и использовать, смотрите [Tokens and authentication](/managed/discover-dynatrace/references/dynatrace-api/basics/dynatrace-api-authentication).
+О том, как его получить и использовать, см. [Токены и аутентификация](/managed/discover-dynatrace/references/dynatrace-api/basics/dynatrace-api-authentication).
 
 ### Ответ
 
@@ -370,8 +369,8 @@ scraped: 2026-05-12T11:16:55.047267
 
 | Код | Тип | Описание |
 | --- | --- | --- |
-| **204** | - | Validated. Переданная конфигурация валидна. Ответ без тела. |
-| **400** | [ErrorEnvelope](#openapi-definition-ErrorEnvelope) | Сбой. Невалидный ввод |
+| **204** | - | Проверено. Отправленная конфигурация действительна. Ответ не содержит тела. |
+| **400** | [ErrorEnvelope](#openapi-definition-ErrorEnvelope) | Ошибка. Введённые данные недействительны. |
 
 #### Объекты тела ответа
 
@@ -385,8 +384,8 @@ scraped: 2026-05-12T11:16:55.047267
 
 | Элемент | Тип | Описание |
 | --- | --- | --- |
-| code | integer | HTTP-код статуса |
-| constraintViolations | [ConstraintViolation[]](#openapi-definition-ConstraintViolation) | Список нарушений ограничений |
+| code | integer | Код статуса HTTP |
+| constraintViolations | [ConstraintViolation](#openapi-definition-ConstraintViolation)[] | Список нарушений ограничений |
 | message | string | Сообщение об ошибке |
 
 #### Объект `ConstraintViolation`
@@ -397,10 +396,10 @@ scraped: 2026-05-12T11:16:55.047267
 | --- | --- | --- |
 | location | string | - |
 | message | string | - |
-| parameterLocation | string | -Возможные значения: * `HEADER` * `PATH` * `PAYLOAD_BODY` * `QUERY` |
+| parameterLocation | string | -Элемент может принимать следующие значения * `HEADER` * `PATH` * `PAYLOAD_BODY` * `QUERY` |
 | path | string | - |
 
-#### JSON-модели тела ответа
+#### Модели тела ответа JSON
 
 ```
 {

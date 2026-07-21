@@ -1,23 +1,22 @@
 ---
 title: Applications detection rules API - PUT a rule
 source: https://docs.dynatrace.com/managed/dynatrace-api/configuration-api/rum/application-detection-configuration/put-rule
-scraped: 2026-05-12T11:16:00.038945
 ---
 
 # Applications detection rules API - PUT a rule
 
 # Applications detection rules API - PUT a rule
 
-* Reference
-* Published Aug 30, 2019
+* Справка
+* Опубликовано 30 августа 2019 г.
 
 Обновляет указанное правило обнаружения приложений.
 
 Если правило обнаружения приложений с указанным ID не существует, создаётся новое правило и добавляется в конец списка правил.
 
-Если для существующего правила задан параметр order, запрос использует это значение. Иначе сохраняется текущий порядок правил.
+Если для существующего правила задан параметр order, запрос использует это значение. В противном случае сохраняется существующий порядок правил.
 
-Запрос принимает и возвращает payload `application/json`.
+Запрос принимает и возвращает данные в формате `application/json`.
 
 |  |  |  |
 | --- | --- | --- |
@@ -26,16 +25,16 @@ scraped: 2026-05-12T11:16:00.038945
 
 ## Аутентификация
 
-Для выполнения этого запроса нужен access token со scope `WriteConfig`.
+Для выполнения этого запроса нужен токен доступа с областью действия `WriteConfig`.
 
-Как его получить и использовать, смотрите [Tokens and authentication](/managed/discover-dynatrace/references/dynatrace-api/basics/dynatrace-api-authentication).
+О том, как получить и использовать токен, читай в разделе [Токены и аутентификация](/managed/discover-dynatrace/references/dynatrace-api/basics/dynatrace-api-authentication).
 
 ## Параметры
 
-| Параметр | Тип | Описание | Где | Обязательный |
+| Параметр | Тип | Описание | Расположение | Обязательный |
 | --- | --- | --- | --- | --- |
-| id | string | ID обновляемого правила обнаружения приложений.  Если ID указан также в теле, он должен совпадать с этим ID. | path | Required |
-| body | [ApplicationDetectionRuleConfig](#openapi-definition-ApplicationDetectionRuleConfig) | JSON-тело запроса. Содержит обновлённые параметры правила обнаружения приложений.  Если задан параметр **order**, правило помещается на эту позицию. | body | Optional |
+| id | string | ID правила обнаружения приложений, которое нужно обновить.  Если ID задан также в теле запроса, он должен совпадать с этим ID. | путь | Обязательный |
+| body | [ApplicationDetectionRuleConfig](#openapi-definition-ApplicationDetectionRuleConfig) | Тело JSON запроса. Содержит обновлённые параметры правила обнаружения приложений.  Если задан параметр **order**, правило размещается в эту позицию. | тело | Необязательный |
 
 ### Объекты тела запроса
 
@@ -45,12 +44,12 @@ scraped: 2026-05-12T11:16:00.038945
 
 | Элемент | Тип | Описание | Обязательный |
 | --- | --- | --- | --- |
-| applicationIdentifier | string | ID сущности Dynatrace для приложения, например `APPLICATION-4A3B43`.  Нужно использовать существующий ID. Если нужно создать правило для ещё не существующего приложения, [сначала создайте приложение](https://dt-url.net/vt03khh), а затем настройте для него правила обнаружения. | Required |
-| filterConfig | [ApplicationFilter](#openapi-definition-ApplicationFilter) | Условие правила обнаружения приложений. | Required |
-| id | string | ID правила. | Optional |
-| metadata | [ConfigurationMetadataDtoImpl](#openapi-definition-ConfigurationMetadataDtoImpl) | Метаданные для отладки. | Optional |
-| name | string | Уникальное имя правила обнаружения приложений. | Optional |
-| order | string | Порядок правила в списке правил.  Правила оцениваются сверху вниз. Применяется первое подходящее правило. | Optional |
+| applicationIdentifier | string | ID Dynatrace-сущности приложения, например `APPLICATION-4A3B43`.  Нужно использовать существующий ID. Если требуется создать правило для приложения, которого ещё не существует, [сначала создай приложение﻿](https://dt-url.net/vt03khh?dt=m), а затем настрой для него правила обнаружения. | Обязательный |
+| filterConfig | [ApplicationFilter](#openapi-definition-ApplicationFilter) | Условие правила обнаружения приложений. | Обязательный |
+| id | string | ID правила. | Необязательный |
+| metadata | [ConfigurationMetadataDtoImpl](#openapi-definition-ConfigurationMetadataDtoImpl) | Метаданные, полезные для отладки. | Необязательный |
+| name | string | Уникальное имя правила обнаружения приложений. | Необязательный |
+| order | string | Порядок правила в списке правил.  Правила оцениваются сверху вниз. Применяется первое подходящее правило. | Необязательный |
 
 #### Объект `ApplicationFilter`
 
@@ -58,23 +57,23 @@ scraped: 2026-05-12T11:16:00.038945
 
 | Элемент | Тип | Описание | Обязательный |
 | --- | --- | --- | --- |
-| applicationMatchTarget | string | Где искать значение **pattern**. Возможные значения: * `DOMAIN` * `URL` | Required |
-| applicationMatchType | string | Оператор сопоставления. Возможные значения: * `BEGINS_WITH` * `CONTAINS` * `ENDS_WITH` * `EQUALS` * `MATCHES` | Required |
-| pattern | string | Значение для поиска. | Required |
+| applicationMatchTarget | string | Где искать значение **pattern**. Элемент может принимать следующие значения * `DOMAIN` * `URL` | Обязательный |
+| applicationMatchType | string | Оператор сопоставления. Элемент может принимать следующие значения * `BEGINS_WITH` * `CONTAINS` * `ENDS_WITH` * `EQUALS` * `MATCHES` | Обязательный |
+| pattern | string | Значение для поиска. | Обязательный |
 
 #### Объект `ConfigurationMetadataDtoImpl`
 
-Метаданные для отладки.
+Метаданные, полезные для отладки.
 
 | Элемент | Тип | Описание | Обязательный |
 | --- | --- | --- | --- |
-| clusterVersion | string | Версия Dynatrace. | Optional |
-| configurationVersions | integer[] | Отсортированный список номеров версий конфигурации. | Optional |
-| currentConfigurationVersions | string[] | Отсортированный список номеров версий конфигурации. | Optional |
+| clusterVersion | string | Версия Dynatrace. | Необязательный |
+| configurationVersions | integer[] | Отсортированный список номеров версий конфигурации. | Необязательный |
+| currentConfigurationVersions | string[] | Отсортированный список номеров версий конфигурации. | Необязательный |
 
-### JSON-модель тела запроса
+### Модель тела JSON запроса
 
-Это модель тела запроса со всеми возможными элементами. При использовании в реальном запросе её нужно адаптировать.
+Это модель тела запроса, показывающая возможные элементы. Её нужно скорректировать для использования в реальном запросе.
 
 ```
 {
@@ -150,21 +149,21 @@ scraped: 2026-05-12T11:16:00.038945
 
 | Код | Тип | Описание |
 | --- | --- | --- |
-| **201** | [EntityShortRepresentation](#openapi-definition-EntityShortRepresentation) | Успех. Правило обнаружения приложений создано. Ответ содержит ID нового правила. |
-| **204** | - | Успех. Правило обнаружения приложений обновлено. Ответ без тела. |
-| **400** | [ErrorEnvelope](#openapi-definition-ErrorEnvelope) | Сбой. Невалидный ввод. |
+| **201** | [EntityShortRepresentation](#openapi-definition-EntityShortRepresentation) | Успешно. Правило обнаружения приложений создано. Ответ содержит ID нового правила. |
+| **204** | - | Успешно. Правило обнаружения приложений обновлено. Ответ не содержит тела. |
+| **400** | [ErrorEnvelope](#openapi-definition-ErrorEnvelope) | Ошибка. Введённые данные недопустимы. |
 
 ### Объекты тела ответа
 
 #### Объект `EntityShortRepresentation`
 
-Краткое представление сущности Dynatrace.
+Краткое представление Dynatrace-сущности.
 
 | Элемент | Тип | Описание |
 | --- | --- | --- |
-| description | string | Краткое описание сущности Dynatrace. |
-| id | string | ID сущности Dynatrace. |
-| name | string | Имя сущности Dynatrace. |
+| description | string | Краткое описание Dynatrace-сущности. |
+| id | string | ID Dynatrace-сущности. |
+| name | string | Имя Dynatrace-сущности. |
 
 #### Объект `ErrorEnvelope`
 
@@ -176,8 +175,8 @@ scraped: 2026-05-12T11:16:00.038945
 
 | Элемент | Тип | Описание |
 | --- | --- | --- |
-| code | integer | HTTP-код статуса |
-| constraintViolations | [ConstraintViolation[]](#openapi-definition-ConstraintViolation) | Список нарушений ограничений |
+| code | integer | Код статуса HTTP |
+| constraintViolations | [ConstraintViolation](#openapi-definition-ConstraintViolation)[] | Список нарушений ограничений |
 | message | string | Сообщение об ошибке |
 
 #### Объект `ConstraintViolation`
@@ -188,10 +187,10 @@ scraped: 2026-05-12T11:16:00.038945
 | --- | --- | --- |
 | location | string | - |
 | message | string | - |
-| parameterLocation | string | -Возможные значения: * `HEADER` * `PATH` * `PAYLOAD_BODY` * `QUERY` |
+| parameterLocation | string | -Элемент может принимать следующие значения * `HEADER` * `PATH` * `PAYLOAD_BODY` * `QUERY` |
 | path | string | - |
 
-### JSON-модели тела ответа
+### Модели тела JSON ответа
 
 ```
 {
@@ -269,11 +268,11 @@ scraped: 2026-05-12T11:16:00.038945
 }
 ```
 
-## Validate payload
+## Проверка данных
 
-Рекомендуется проверить payload перед его отправкой в реальном запросе. Код ответа **204** означает, что payload корректен.
+Рекомендуется проверять данные перед отправкой их в реальном запросе. Код ответа **204** означает, что данные корректны.
 
-Запрос принимает payload `application/json`.
+Запрос принимает данные в формате `application/json`.
 
 |  |  |  |
 | --- | --- | --- |
@@ -282,9 +281,9 @@ scraped: 2026-05-12T11:16:00.038945
 
 ### Аутентификация
 
-Для выполнения этого запроса нужен access token со scope `WriteConfig`.
+Для выполнения этого запроса нужен токен доступа с областью действия `WriteConfig`.
 
-Как его получить и использовать, смотрите [Tokens and authentication](/managed/discover-dynatrace/references/dynatrace-api/basics/dynatrace-api-authentication).
+О том, как получить и использовать токен, читай в разделе [Токены и аутентификация](/managed/discover-dynatrace/references/dynatrace-api/basics/dynatrace-api-authentication).
 
 ### Ответ
 
@@ -292,8 +291,8 @@ scraped: 2026-05-12T11:16:00.038945
 
 | Код | Тип | Описание |
 | --- | --- | --- |
-| **204** | - | Validated. Переданная конфигурация валидна. Ответ без тела. |
-| **400** | [ErrorEnvelope](#openapi-definition-ErrorEnvelope) | Сбой. Невалидный ввод. |
+| **204** | - | Проверено. Отправленная конфигурация корректна. Ответ не содержит тела. |
+| **400** | [ErrorEnvelope](#openapi-definition-ErrorEnvelope) | Ошибка. Введённые данные недопустимы. |
 
 #### Объекты тела ответа
 
@@ -307,8 +306,8 @@ scraped: 2026-05-12T11:16:00.038945
 
 | Элемент | Тип | Описание |
 | --- | --- | --- |
-| code | integer | HTTP-код статуса |
-| constraintViolations | [ConstraintViolation[]](#openapi-definition-ConstraintViolation) | Список нарушений ограничений |
+| code | integer | Код статуса HTTP |
+| constraintViolations | [ConstraintViolation](#openapi-definition-ConstraintViolation)[] | Список нарушений ограничений |
 | message | string | Сообщение об ошибке |
 
 #### Объект `ConstraintViolation`
@@ -319,10 +318,10 @@ scraped: 2026-05-12T11:16:00.038945
 | --- | --- | --- |
 | location | string | - |
 | message | string | - |
-| parameterLocation | string | -Возможные значения: * `HEADER` * `PATH` * `PAYLOAD_BODY` * `QUERY` |
+| parameterLocation | string | -Элемент может принимать следующие значения * `HEADER` * `PATH` * `PAYLOAD_BODY` * `QUERY` |
 | path | string | - |
 
-#### JSON-модели тела ответа
+#### Модели тела JSON ответа
 
 ```
 {
@@ -382,11 +381,11 @@ scraped: 2026-05-12T11:16:00.038945
 
 ## Пример
 
-В этом примере запрос обновляет правило обнаружения приложений из примера [POST request](/managed/dynatrace-api/configuration-api/rum/application-detection-configuration/post-rule#example "Создание правила обнаружения приложений через Dynatrace API."). Он меняет **order** правила на позицию **two** и меняет условие правила на **domain**, который **contains** шаблон **booking.easyTravel**.
+В этом примере запрос обновляет правило распознавания приложения из [примера POST-запроса](/managed/dynatrace-api/configuration-api/rum/application-detection-configuration/post-rule#example "Create an application detection rule via the Dynatrace API."). Он меняет **order** правила на позицию **два** и меняет условие правила на **domain**, который **содержит** паттерн **booking.easyTravel**.
 
-API-токен передаётся в заголовке **Authorization**.
+Токен API передаётся в заголовке **Authorization**.
 
-Тело запроса усечено в разделе **Curl**. Полное тело смотрите в разделе **Request body**. Вы можете скачать или скопировать пример тела запроса, чтобы попробовать его самостоятельно. Обязательно используйте ID приложения, доступного в вашем окружении.
+Тело запроса усечено в разделе **Curl**. Полное тело смотри в разделе **Request body**. Пример тела запроса можно скачать или скопировать, чтобы попробовать самостоятельно. Нужно использовать ID приложения, доступный в своей среде.
 
 #### Curl
 
@@ -410,13 +409,13 @@ https://mySampleEnv.live.dynatrace.com/api/config/v1/applicationDetectionRules/9
 -d '{ <truncated - see the Request body section > }'
 ```
 
-#### URL запроса
+#### Request URL
 
 ```
 https://mySampleEnv.live.dynatrace.com/api/config/v1/applicationDetectionRules/9568a82b-73d8-4b18-be1a-4289433e2619
 ```
 
-#### Тело запроса
+#### Request body
 
 ```
 {
@@ -458,12 +457,12 @@ https://mySampleEnv.live.dynatrace.com/api/config/v1/applicationDetectionRules/9
 }
 ```
 
-#### Код ответа
+#### Response code
 
 204
 
-## Связанные темы
+## Похожие темы
 
-* [Мониторинг реальных пользователей](/managed/observe/digital-experience/rum-concepts/rum-overview "Узнайте о мониторинге реальных пользователей, ключевых метриках производительности, мониторинге мобильных приложений и многом другом.")
-* [Проверка правил обнаружения приложений](/managed/observe/digital-experience/web-applications/additional-configuration/application-detection-rules "Легко разберитесь в правилах обнаружения вашего RUM-приложения.")
-* [Определение приложений для Real User Monitoring](/managed/observe/digital-experience/web-applications/initial-setup/define-your-applications-via-the-my-web-application-placeholder "Узнайте, как определять приложения с использованием предложенного, ручного подхода или правил обнаружения приложений.")
+* [Real User Monitoring Classic](/managed/observe/digital-experience/rum-classic/rum-concepts/rum-overview "Learn about Real User Monitoring Classic, key performance metrics, mobile app monitoring, and more.")
+* [Проверка правил распознавания приложений в RUM Classic](/managed/observe/digital-experience/rum-classic/web-applications/additional-configuration/application-detection-rules "Easily understand the detection rules of your RUM application.")
+* [Определение приложений для Real User Monitoring Classic](/managed/observe/digital-experience/rum-classic/web-applications/initial-setup/define-your-applications-via-the-my-web-application-placeholder "Learn how to define your applications following the suggested, manual, or application detection rules approach.")

@@ -1,19 +1,18 @@
 ---
 title: Mobile and custom app API - GET user session property
 source: https://docs.dynatrace.com/managed/dynatrace-api/configuration-api/rum/mobile-custom-app-configuration/user-action-and-session-properties/get-property
-scraped: 2026-05-12T11:15:23.703299
 ---
 
 # Mobile and custom app API - GET user session property
 
 # Mobile and custom app API - GET user session property
 
-* Reference
-* Published Nov 05, 2020
+* Справочник
+* Опубликовано 05 нояб. 2020 г.
 
-Возвращает параметры указанного свойства пользовательской сессии приложения.
+Получает параметры указанного свойства пользовательской сессии приложения.
 
-Запрос возвращает payload `application/json`.
+Запрос формирует полезную нагрузку `application/json`.
 
 |  |  |  |
 | --- | --- | --- |
@@ -22,16 +21,16 @@ scraped: 2026-05-12T11:15:23.703299
 
 ## Аутентификация
 
-Для выполнения этого запроса нужен access token со scope `ReadConfig`.
+Для выполнения этого запроса нужен токен доступа с областью действия `ReadConfig`.
 
-Как его получить и использовать, смотрите [Tokens and authentication](/managed/discover-dynatrace/references/dynatrace-api/basics/dynatrace-api-authentication).
+О том, как получить и использовать его, читай в разделе [Tokens and authentication](/managed/discover-dynatrace/references/dynatrace-api/basics/dynatrace-api-authentication).
 
 ## Параметры
 
-| Параметр | Тип | Описание | Где | Обязательный |
+| Параметр | Тип | Описание | В | Обязательный |
 | --- | --- | --- | --- | --- |
-| applicationId | string | UUID нужного мобильного или пользовательского приложения. Его можно найти в мастере инструментирования вашего приложения. | path | Required |
-| key | string | Ключ нужного свойства мобильной сессии или пользовательского действия. | path | Required |
+| applicationId | string | UUID нужного мобильного или кастомного приложения. Его можно найти в Instrumentation Wizard приложения. | путь | Обязательный |
+| key | string | Ключ нужного свойства мобильной сессии или пользовательского действия. | путь | Обязательный |
 
 ## Ответ
 
@@ -39,8 +38,8 @@ scraped: 2026-05-12T11:15:23.703299
 
 | Код | Тип | Описание |
 | --- | --- | --- |
-| **200** | [MobileSessionUserActionProperty](#openapi-definition-MobileSessionUserActionProperty) | Успех |
-| **404** | - | Сбой. Указанная сущность не существует. |
+| **200** | [MobileSessionUserActionProperty](#openapi-definition-MobileSessionUserActionProperty) | Успешно |
+| **404** | - | Ошибка. Указанная сущность не существует. |
 
 ### Объекты тела ответа
 
@@ -50,18 +49,18 @@ scraped: 2026-05-12T11:15:23.703299
 
 | Элемент | Тип | Описание |
 | --- | --- | --- |
-| aggregation | string | Тип агрегации свойства.  Определяет, как агрегируются несколько значений свойства. Возможные значения: * `AVERAGE` * `FIRST` * `LAST` * `MAX` * `MIN` * `SUM` |
-| cleanupRule | string | Правило очистки свойства.  Определяет, как извлечь нужные данные из строкового значения. Укажите [регулярное выражение](https://dt-url.net/k9e0iaq) для нужных вам данных. |
+| aggregation | string | Тип агрегации свойства.  Определяет, как агрегируются несколько значений свойства. Элемент может принимать следующие значения * `AVERAGE` * `FIRST` * `LAST` * `MAX` * `MIN` * `SUM` |
+| cleanupRule | string | Правило очистки свойства.  Определяет, как извлечь нужные данные из строкового значения. Укажи в нём [регулярное выражение﻿](https://dt-url.net/k9e0iaq?dt=m) для нужных данных. |
 | displayName | string | Отображаемое имя свойства. |
 | key | string | Уникальный ключ свойства мобильной сессии или пользовательского действия. |
-| name | string | Имя передаваемого значения.  Применимо только когда **origin** установлен в `API`. |
-| origin | string | Источник свойства Возможные значения: * `API` * `SERVER_SIDE_REQUEST_ATTRIBUTE` |
-| serverSideRequestAttribute | string | ID атрибута запроса.  Применимо только когда **origin** установлен в `SERVER_SIDE_REQUEST_ATTRIBUTE`. |
-| storeAsSessionProperty | boolean | Если `true`, свойство хранится как свойство сессии |
-| storeAsUserActionProperty | boolean | Если `true`, свойство хранится как свойство пользовательского действия |
-| type | string | Тип данных свойства. Возможные значения: * `DOUBLE` * `LONG` * `STRING` |
+| name | string | Имя передаваемого значения.  Применимо только если **origin** установлено в `API`. |
+| origin | string | Источник свойства Элемент может принимать следующие значения * `API` * `SERVER_SIDE_REQUEST_ATTRIBUTE` |
+| serverSideRequestAttribute | string | ID атрибута запроса.  Применимо только если **origin** установлено в `SERVER_SIDE_REQUEST_ATTRIBUTE`. |
+| storeAsSessionProperty | boolean | Если `true`, свойство сохраняется как свойство сессии |
+| storeAsUserActionProperty | boolean | Если `true`, свойство сохраняется как свойство пользовательского действия |
+| type | string | Тип данных свойства. Элемент может принимать следующие значения * `DOUBLE` * `LONG` * `STRING` |
 
-### JSON-модели тела ответа
+### Модели тела ответа JSON
 
 ```
 {

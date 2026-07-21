@@ -1,19 +1,18 @@
 ---
 title: Applications detection rules API - GET a rule
 source: https://docs.dynatrace.com/managed/dynatrace-api/configuration-api/rum/application-detection-configuration/get-rule
-scraped: 2026-05-12T11:16:04.817144
 ---
 
 # Applications detection rules API - GET a rule
 
 # Applications detection rules API - GET a rule
 
-* Reference
-* Published Aug 30, 2019
+* Справка
+* Опубликовано 30 авг. 2019 г.
 
-Возвращает параметры указанного правила обнаружения приложений.
+Получает параметры указанного правила обнаружения приложения.
 
-Запрос возвращает payload `application/json`.
+Запрос выдаёт полезную нагрузку `application/json`.
 
 |  |  |  |
 | --- | --- | --- |
@@ -22,15 +21,15 @@ scraped: 2026-05-12T11:16:04.817144
 
 ## Аутентификация
 
-Для выполнения этого запроса нужен access token со scope `ReadConfig`.
+Для выполнения этого запроса нужен токен доступа с областью действия `ReadConfig`.
 
-Как его получить и использовать, смотрите [Tokens and authentication](/managed/discover-dynatrace/references/dynatrace-api/basics/dynatrace-api-authentication).
+О том, как его получить и использовать, читай в разделе [Tokens and authentication](/managed/discover-dynatrace/references/dynatrace-api/basics/dynatrace-api-authentication).
 
 ## Параметры
 
-| Параметр | Тип | Описание | Где | Обязательный |
+| Параметр | Тип | Описание | В | Обязательный |
 | --- | --- | --- | --- | --- |
-| id | string | ID нужного правила обнаружения приложений. | path | Required |
+| id | string | ID нужного правила обнаружения приложения. | path | Обязательный |
 
 ## Ответ
 
@@ -44,30 +43,30 @@ scraped: 2026-05-12T11:16:04.817144
 
 #### Объект `ApplicationDetectionRuleConfig`
 
-Правило обнаружения приложений.
+Правило обнаружения приложения.
 
 | Элемент | Тип | Описание |
 | --- | --- | --- |
-| applicationIdentifier | string | ID сущности Dynatrace для приложения, например `APPLICATION-4A3B43`.  Нужно использовать существующий ID. Если нужно создать правило для ещё не существующего приложения, [сначала создайте приложение](https://dt-url.net/vt03khh), а затем настройте для него правила обнаружения. |
-| filterConfig | [ApplicationFilter](#openapi-definition-ApplicationFilter) | Условие правила обнаружения приложений. |
+| applicationIdentifier | string | ID сущности Dynatrace приложения, например `APPLICATION-4A3B43`.  Нужно использовать существующий ID. Если нужно создать правило для приложения, которое ещё не существует, сначала [создай приложение﻿](https://dt-url.net/vt03khh?dt=m), а затем настрой для него правила обнаружения. |
+| filterConfig | [ApplicationFilter](#openapi-definition-ApplicationFilter) | Условие правила обнаружения приложения. |
 | id | string | ID правила. |
-| metadata | [ConfigurationMetadataDtoImpl](#openapi-definition-ConfigurationMetadataDtoImpl) | Метаданные для отладки. |
-| name | string | Уникальное имя правила обнаружения приложений. |
-| order | string | Порядок правила в списке правил.  Правила оцениваются сверху вниз. Применяется первое подходящее правило. |
+| metadata | [ConfigurationMetadataDtoImpl](#openapi-definition-ConfigurationMetadataDtoImpl) | Метаданные, полезные для отладки. |
+| name | string | Уникальное имя правила обнаружения приложения. |
+| order | string | Порядок правила в списке правил.  Правила оцениваются сверху вниз. Применяется первое совпавшее правило. |
 
 #### Объект `ApplicationFilter`
 
-Условие правила обнаружения приложений.
+Условие правила обнаружения приложения.
 
 | Элемент | Тип | Описание |
 | --- | --- | --- |
-| applicationMatchTarget | string | Где искать значение **pattern**. Возможные значения: * `DOMAIN` * `URL` |
-| applicationMatchType | string | Оператор сопоставления. Возможные значения: * `BEGINS_WITH` * `CONTAINS` * `ENDS_WITH` * `EQUALS` * `MATCHES` |
+| applicationMatchTarget | string | Где искать значение **pattern**. Элемент может содержать эти значения * `DOMAIN` * `URL` |
+| applicationMatchType | string | Оператор сопоставления. Элемент может содержать эти значения * `BEGINS_WITH` * `CONTAINS` * `ENDS_WITH` * `EQUALS` * `MATCHES` |
 | pattern | string | Значение для поиска. |
 
 #### Объект `ConfigurationMetadataDtoImpl`
 
-Метаданные для отладки.
+Метаданные, полезные для отладки.
 
 | Элемент | Тип | Описание |
 | --- | --- | --- |
@@ -75,7 +74,7 @@ scraped: 2026-05-12T11:16:04.817144
 | configurationVersions | integer[] | Отсортированный список номеров версий конфигурации. |
 | currentConfigurationVersions | string[] | Отсортированный список номеров версий конфигурации. |
 
-### JSON-модели тела ответа
+### Модели JSON тела ответа
 
 ```
 {
@@ -149,7 +148,7 @@ scraped: 2026-05-12T11:16:04.817144
 
 В этом примере запрос получает свойства правила **easyTravel** с ID **95b22afb-4e3d-4f9f-a37d-81bc3d388a33**.
 
-API-токен передаётся в заголовке **Authorization**.
+Токен API передаётся в заголовке **Authorization**.
 
 #### Curl
 
@@ -237,8 +236,8 @@ https://mySampleEnv.live.dynatrace.com/api/config/v1/applicationDetectionRules/9
 
 200
 
-## Связанные темы
+## Похожие темы
 
-* [Мониторинг реальных пользователей](/managed/observe/digital-experience/rum-concepts/rum-overview "Узнайте о мониторинге реальных пользователей, ключевых метриках производительности, мониторинге мобильных приложений и многом другом.")
-* [Проверка правил обнаружения приложений](/managed/observe/digital-experience/web-applications/additional-configuration/application-detection-rules "Легко разберитесь в правилах обнаружения вашего RUM-приложения.")
-* [Определение приложений для Real User Monitoring](/managed/observe/digital-experience/web-applications/initial-setup/define-your-applications-via-the-my-web-application-placeholder "Узнайте, как определять приложения с использованием предложенного, ручного подхода или правил обнаружения приложений.")
+* [Real User Monitoring Classic](/managed/observe/digital-experience/rum-classic/rum-concepts/rum-overview "Узнай о Real User Monitoring Classic, ключевых показателях производительности, мониторинге мобильных приложений и многом другом.")
+* [Проверка правил обнаружения приложений в RUM Classic](/managed/observe/digital-experience/rum-classic/web-applications/additional-configuration/application-detection-rules "Легко разберись в правилах обнаружения твоего RUM-приложения.")
+* [Определение приложений для Real User Monitoring Classic](/managed/observe/digital-experience/rum-classic/web-applications/initial-setup/define-your-applications-via-the-my-web-application-placeholder "Узнай, как определить свои приложения, следуя предложенному, ручному подходу или подходу с правилами обнаружения приложений.")
