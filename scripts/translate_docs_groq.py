@@ -2,10 +2,18 @@
 # -*- coding: utf-8 -*-
 """
 Перевод документации Dynatrace
-Основной: Google Gemini Flash (1500 req/day бесплатно)
-Fallback:  Groq Llama 3.3 70B (100K tokens/day бесплатно)
 
-Ключи берутся ТОЛЬКО из переменных окружения (никогда не в коде):
+Порядок провайдеров:
+  1. claude -p  (подписка Claude Code, основной)
+  2. Google Gemini Flash (1500 req/day бесплатно)
+  3. Groq Llama 3.3 70B (100K tokens/day бесплатно)
+  4. OpenRouter (бесплатные модели)
+
+Каждый следующий включается, только если предыдущий недоступен, поэтому при
+живой подписке переводит она, а бесплатные ключи это запасной вариант.
+
+Авторизация и ключи берутся ТОЛЬКО из окружения / .env (никогда не в коде):
+  CLAUDE_CODE_OAUTH_TOKEN — токен из `claude setup-token` (headless-режим)
   GEMINI_API_KEY  — https://aistudio.google.com/apikey
   GROQ_API_KEY    — https://console.groq.com
 """
@@ -15,9 +23,18 @@ import sys
 import io
 import json
 import time
+import shutil
 import hashlib
-import requests
+import subprocess
 from pathlib import Path
+
+# requests нужен ТОЛЬКО запасным HTTP-провайдерам (Gemini/Groq/OpenRouter).
+# Основной путь идёт через claude -p, поэтому отсутствие библиотеки не должно
+# ронять перевод целиком: провайдеры, которым она нужна, просто отключатся.
+try:
+    import requests
+except ImportError:
+    requests = None
 
 # Fix Windows encoding (cp1251 can't handle emoji)
 if sys.platform == 'win32':
@@ -57,6 +74,16 @@ GEMINI_API_KEYS = [val for key, val in os.environ.items() if key.startswith('GEM
 GEMINI_API_KEY = GEMINI_API_KEYS[0] if GEMINI_API_KEYS else ''
 GROQ_API_KEY   = os.environ.get('GROQ_API_KEY', '')
 OPENROUTER_API_KEY = os.environ.get('OPENROUTER_API_KEY', '')
+
+# --- claude -p (подписка Claude Code) ---
+# Авторизация headless-вызова идёт через CLAUDE_CODE_OAUTH_TOKEN (`claude setup-token`).
+# Без токена CLI отвечает "Not logged in", провайдер отдаёт None и включается fallback.
+CLAUDE_ENABLED = os.environ.get('CLAUDE_TRANSLATE', '1') != '0'
+CLAUDE_BIN     = os.environ.get('CLAUDE_BIN', 'claude')
+CLAUDE_MODEL   = os.environ.get('CLAUDE_TRANSLATE_MODEL', 'sonnet')
+CLAUDE_TIMEOUT = int(os.environ.get('CLAUDE_TRANSLATE_TIMEOUT', '600'))
+# Пауза при упоре в лимит подписки, потом одна повторная попытка.
+CLAUDE_LIMIT_WAIT = int(os.environ.get('CLAUDE_TRANSLATE_LIMIT_WAIT', '300'))
 
 GROQ_API_URL   = 'https://api.groq.com/openai/v1/chat/completions'
 GEMINI_API_URL = 'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent'
@@ -194,9 +221,98 @@ def split_into_chunks(text: str, max_chars: int = MAX_CHUNK_CHARS) -> list:
     return final_chunks
 
 
+CLAUDE_SYSTEM_PROMPT = """Ты профессиональный технический переводчик документации Dynatrace с английского на русский.
+Ты работаешь как чистый преобразователь текста: на вход markdown, на выход только его перевод.
+
+ЖЁСТКИЕ ПРАВИЛА:
+1. Структура сохраняется 1:1: YAML frontmatter, уровни заголовков, списки, таблицы, порядок строк.
+2. Содержимое блоков кода (```), inline-кода (`...`), URL, якорей и путей файлов НЕ переводится, копируется байт в байт.
+3. Плейсхолдеры вида __KEEP000__ копируются как есть.
+4. Названия продуктов и компонентов Dynatrace остаются английскими (OneAgent, ActiveGate, PurePath, Smartscape, Davis AI, Cluster Management Console). Названия элементов интерфейса и ключей конфигурации тоже остаются английскими.
+5. Длинные тире запрещены. Определения пишутся через запятую: «X, это Y». Допустимы запятая, двоеточие, точка, скобки.
+6. Живой технический русский, без канцелярита и без калек «вы можете», пиши безлично: «можно», «нужно».
+7. Ошибки и опечатки оригинала переводятся как есть, молча их не исправляй.
+8. В ответе только перевод. Никаких вводных фраз, комментариев, объяснений и markdown-обёрток вокруг ответа."""
+
+# Ответы CLI, по которым видно, что дело не в конкретном тексте, а в доступе.
+_CLAUDE_AUTH_MARKERS  = ('not logged in', 'please run /login', 'invalid api key',
+                         'authentication_error', 'oauth token')
+_CLAUDE_LIMIT_MARKERS = ('usage limit', 'limit reached', 'rate limit',
+                         'rate_limit_error', 'overloaded')
+
+
+def claude_available() -> bool:
+    """Есть ли смысл вообще дёргать claude -p (включён и бинарь на месте)."""
+    return bool(CLAUDE_ENABLED and shutil.which(CLAUDE_BIN))
+
+
+def translate_via_claude_cli(text: str, extra_rules: str = '') -> str | None:
+    """Перевод через `claude -p` по подписке. None при ошибке/лимите → fallback.
+
+    Вызов намеренно стерильный: свой system prompt вместо агентского, инструменты
+    запрещены, MCP и слэш-команды выключены, рабочая директория вне репозитория,
+    чтобы модель не подтягивала контекст проекта и просто переводила текст.
+
+    extra_rules — правила под конкретный файл (например, норма заголовков в этом
+    разделе корпуса), они дописываются к системному промпту.
+    """
+    if not claude_available():
+        return None
+
+    system_prompt = CLAUDE_SYSTEM_PROMPT
+    if extra_rules:
+        system_prompt += f"\n\nНОРМА ЭТОГО РАЗДЕЛА КОРПУСА (важнее общих правил):\n{extra_rules}"
+
+    cmd = [
+        CLAUDE_BIN, '-p',
+        '--model', CLAUDE_MODEL,
+        '--system-prompt', system_prompt,
+        '--disallowed-tools', 'Bash,Read,Write,Edit,Glob,Grep,WebFetch,WebSearch,Task,NotebookEdit',
+        '--strict-mcp-config',
+        '--disable-slash-commands',
+        '--output-format', 'text',
+    ]
+    prompt = f"Переведи на русский:\n\n{text}"
+
+    for attempt in range(2):
+        try:
+            proc = subprocess.run(
+                cmd, input=prompt, capture_output=True, text=True,
+                timeout=CLAUDE_TIMEOUT, cwd='/tmp',
+            )
+        except subprocess.TimeoutExpired:
+            print(f"  ⏱️  claude -p: таймаут {CLAUDE_TIMEOUT}с")
+            return None
+        except Exception as e:
+            print(f"  ❌ claude -p: не удалось запустить ({e})")
+            return None
+
+        out = (proc.stdout or '').strip()
+        # Причина ошибки у CLI приходит и в stdout, и в stderr — смотрим оба.
+        diag = f"{out}\n{(proc.stderr or '').strip()}".lower()
+
+        if proc.returncode == 0 and out:
+            return out
+
+        if any(m in diag for m in _CLAUDE_AUTH_MARKERS):
+            print("  🔑 claude -p: нет авторизации (нужен CLAUDE_CODE_OAUTH_TOKEN "
+                  "из `claude setup-token`) — перехожу на запасные ключи")
+            return None
+
+        if any(m in diag for m in _CLAUDE_LIMIT_MARKERS) and attempt == 0:
+            print(f"  ⏳ claude -p: лимит подписки, жду {CLAUDE_LIMIT_WAIT}с и пробую ещё раз")
+            time.sleep(CLAUDE_LIMIT_WAIT)
+            continue
+
+        print(f"  ❌ claude -p: rc={proc.returncode} {diag.strip()[:200]}")
+        return None
+
+    return None
+
+
 def translate_via_gemini(text: str) -> str | None:
     """Перевод через Gemini Flash. Возвращает None при ошибке/лимите."""
-    if not GEMINI_API_KEYS:
+    if requests is None or not GEMINI_API_KEYS:
         return None
 
     prompt = TRANSLATION_PROMPT.format(text=text)
@@ -272,7 +388,7 @@ def translate_via_gemini(text: str) -> str | None:
 
 def translate_via_groq(text: str) -> str | None:
     """Перевод через Groq Llama. Возвращает None при ошибке/лимите."""
-    if not GROQ_API_KEY:
+    if requests is None or not GROQ_API_KEY:
         return None
 
     prompt = TRANSLATION_PROMPT.format(text=text)
@@ -344,7 +460,7 @@ def translate_via_groq(text: str) -> str | None:
 def translate_via_openrouter(text: str) -> str | None:
     """Перевод через OpenRouter (бесплатные модели). 3-й fallback.
     Перебирает несколько бесплатных моделей при rate limit."""
-    if not OPENROUTER_API_KEY:
+    if requests is None or not OPENROUTER_API_KEY:
         return None
 
     prompt = TRANSLATION_PROMPT.format(text=text)
@@ -405,18 +521,21 @@ def translate_via_openrouter(text: str) -> str | None:
     return None
 
 
-def translate_text(text: str, source_file: str) -> str:
+def translate_text(text: str, source_file: str, extra_rules: str = '') -> str:
     """
     Переводит текст. Стратегия:
     1. Проверяем кеш
     2. Защищаем brand-термины плейсхолдерами
-    3. Пробуем Gemini Flash (основной)
-    4. Fallback на Groq (если Gemini недоступен)
-    5. Fallback на OpenRouter (если Groq недоступен)
+    3. Пробуем claude -p по подписке (основной)
+    4. Fallback на Gemini Flash (если подписка недоступна)
+    5. Fallback на Groq, затем на OpenRouter
     6. Восстанавливаем термины + пост-фикс ошибок
-    6. Возвращаем оригинал если оба недоступны
+    7. Возвращаем None если недоступны все (файл не трогаем)
     """
-    cache_key = f"{source_file}:{hashlib.sha256(text.encode('utf-8')).hexdigest()[:16]}"
+    # Правила раздела входят в ключ: один и тот же текст с другой нормой
+    # заголовков должен переводиться заново, а не браться из кеша.
+    key_src = f"{text}\x00{extra_rules}"
+    cache_key = f"{source_file}:{hashlib.sha256(key_src.encode('utf-8')).hexdigest()[:16]}"
     if cache_key in cache:
         print(f"  ↻ Из кеша")
         # Пост-фикс даже для кешированных (на случай старых ошибок)
@@ -427,28 +546,35 @@ def translate_text(text: str, source_file: str) -> str:
 
     translation = None
 
-    # 1. Пробуем Gemini
-    if GEMINI_API_KEY:
-        print(f"  🌟 Перевод через Gemini Flash...")
+    # 1. Основной путь — подписка Claude Code
+    if claude_available():
+        print(f"  🤖 Перевод через claude -p ({CLAUDE_MODEL})...")
+        translation = translate_via_claude_cli(protected_text, extra_rules)
+        if translation:
+            print(f"  ✅ claude успешно!")
+
+    # 2. Fallback на Gemini (бесплатный ключ)
+    if translation is None and GEMINI_API_KEY:
+        print(f"  🌟 Fallback: Gemini Flash...")
         translation = translate_via_gemini(protected_text)
         if translation:
             print(f"  ✅ Gemini успешно!")
 
-    # 2. Fallback на Groq
+    # 3. Fallback на Groq
     if translation is None and GROQ_API_KEY:
         print(f"  🔄 Fallback: Groq Llama 3.3 70B...")
         translation = translate_via_groq(protected_text)
         if translation:
             print(f"  ✅ Groq успешно!")
 
-    # 3. Fallback на OpenRouter (бесплатные модели)
+    # 4. Fallback на OpenRouter (бесплатные модели)
     if translation is None and OPENROUTER_API_KEY:
-        print(f"  🔄 Fallback 2: OpenRouter (Llama 3.3 70B free)...")
+        print(f"  🔄 Fallback: OpenRouter (Llama 3.3 70B free)...")
         translation = translate_via_openrouter(protected_text)
         if translation:
             print(f"  ✅ OpenRouter успешно!")
 
-    # 4. Все API недоступны — возвращаем None (НЕ записываем оригинал!)
+    # 5. Все провайдеры недоступны — возвращаем None (НЕ записываем оригинал!)
     if translation is None:
         print(f"  ⚠️  Все API недоступны — пропускаю файл")
         return None

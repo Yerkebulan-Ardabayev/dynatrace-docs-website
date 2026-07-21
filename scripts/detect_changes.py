@@ -171,6 +171,8 @@ def detect_changes(source_dir: Path, target_dir: Path) -> dict:
 
     new_articles = []
     updated_articles = []
+    # Статьи, по которым работа ещё НЕ сделана: их запись в реестре не двигаем.
+    pending = set()
 
     # Scan all English source files
     if not source_dir.exists():
@@ -209,6 +211,7 @@ def detect_changes(source_dir: Path, target_dir: Path) -> dict:
         if not ru_file.exists():
             article_info["type"] = "new"
             new_articles.append(article_info)
+            pending.add(rel)
             continue
 
         # Case 2: English file changed since last sync → UPDATED
@@ -217,6 +220,7 @@ def detect_changes(source_dir: Path, target_dir: Path) -> dict:
             article_info["type"] = "updated"
             article_info["prev_hash"] = prev_hash
             updated_articles.append(article_info)
+            pending.add(rel)
             continue
 
         # Case 3 (mtime-эвристика) УДАЛЕНА (B7/P1-9 аудита): в CI git ставит время
@@ -226,8 +230,19 @@ def detect_changes(source_dir: Path, target_dir: Path) -> dict:
         # актуальными, а реальные апстрим-изменения ловятся хэшем на следующих
         # прогонах (реестр переживает прогоны через стабильный cache key).
 
-    # Save current hashes for next run
-    save_hash_registry(current_hashes)
+    # Реестр означает «от какого EN-хэша сделан текущий RU», а НЕ «что скрейпер
+    # видел в прошлый раз». Поэтому запись двигаем только для статей, по которым
+    # работы нет; для new/updated оставляем прежнее значение, а актуальный хэш
+    # проставит translate_changed.py после успешного перевода.
+    #
+    # Раньше реестр двигался здесь для ВСЕХ файлов, поэтому один прогон без
+    # перевода стирал дрейф из радара навсегда: 904 статьи 08.07 и 327 статей
+    # 20.07 были показаны в issue ровно один раз и больше никогда не всплывали.
+    next_hashes = {
+        rel: (prev_hashes.get(rel, h) if rel in pending else h)
+        for rel, h in current_hashes.items()
+    }
+    save_hash_registry(next_hashes)
 
     result = {
         "new_articles": new_articles,

@@ -24,8 +24,12 @@ sys.path.insert(0, str(Path(__file__).parent))
 from translate_docs_groq import (
     translate_text, split_into_chunks, post_fix_known_errors,
     cache, CACHE_FILE, MAX_CHUNK_CHARS,
+    claude_available, CLAUDE_MODEL,
     GEMINI_API_KEY, GROQ_API_KEY, OPENROUTER_API_KEY,
 )
+# Реестр хэшей ведём здесь: запись «RU сделан от этого EN» имеет право появиться
+# только после успешного перевода (см. комментарий в detect_changes.py).
+from detect_changes import file_hash, load_hash_registry, save_hash_registry
 
 # Канонический корпус — Dynatrace MANAGED. Пишем перевод ТОЛЬКО в docs/managed-ru
 # и только для реально изменившихся файлов, с гейтом _validate_translation ПЕРЕД
@@ -61,7 +65,51 @@ def _validate_translation(source: str, translated: str) -> tuple[bool, str]:
     return True, "ok"
 
 
-def translate_single_file(en_file: Path, ru_file: Path) -> bool:
+_ZONE_HEADING_NORM: dict | None = None
+
+
+def zone_heading_norm() -> dict:
+    """Доля русских H1 по разделам уже переведённого корпуса.
+
+    Норма НЕ единая: в `deliver` и `dynatrace-api` заголовки исторически
+    остаются английскими (0% и 16% русских H1), в `analyze-explore-automate`
+    и `manage` переводятся почти всегда (99% и 97%). Поэтому правило берём из
+    самого корпуса, а не из общих соображений, иначе свежий перевод начнёт
+    расходиться с сотнями готовых соседей.
+    """
+    global _ZONE_HEADING_NORM
+    if _ZONE_HEADING_NORM is None:
+        stats: dict[str, list[int]] = {}
+        for f in RU_DIR.rglob("*.md"):
+            m = re.search(r"^# (.+)$", f.read_text(encoding="utf-8", errors="replace"), re.M)
+            if not m:
+                continue
+            zone = f.relative_to(RU_DIR).parts[0]
+            pair = stats.setdefault(zone, [0, 0])
+            pair[0 if re.search(r"[а-яё]", m.group(1), re.I) else 1] += 1
+        _ZONE_HEADING_NORM = {
+            z: ru / (ru + en) for z, (ru, en) in stats.items() if (ru + en) >= 5
+        }
+    return _ZONE_HEADING_NORM
+
+
+def heading_rule_for(rel_path: str) -> str:
+    """Правило по заголовкам для конкретной статьи (пусто, если норма размыта)."""
+    zone = Path(rel_path).parts[0]
+    share = zone_heading_norm().get(zone)
+    if share is None:
+        return ""
+    if share >= 0.7:
+        return ("Заголовок H1 и поле title во frontmatter переводи на русский "
+                "(в этом разделе так сделано в большинстве готовых статей).")
+    if share <= 0.3:
+        return ("Заголовок H1 и поле title во frontmatter оставь английскими, "
+                "как в оригинале (в этом разделе так сделано во всех готовых статьях). "
+                "Текст статьи при этом переводится полностью.")
+    return ""
+
+
+def translate_single_file(en_file: Path, ru_file: Path, extra_rules: str = "") -> bool:
     """Translate a single file. Returns True on success."""
     try:
         content = en_file.read_text(encoding="utf-8")
@@ -74,14 +122,17 @@ def translate_single_file(en_file: Path, ru_file: Path) -> bool:
         parts = []
         for i, chunk in enumerate(chunks, 1):
             print(f"  chunk {i}/{len(chunks)}...")
-            result = translate_text(chunk, f"{en_file.name}#chunk{i}")
+            # Правило заголовков осмысленно только для первого чанка: H1 и
+            # frontmatter живут там, дальше пойдут подзаголовки тела.
+            result = translate_text(chunk, f"{en_file.name}#chunk{i}",
+                                    extra_rules if i == 1 else "")
             if result is None:
                 print(f"  FAILED chunk {i}")
                 return False
             parts.append(result)
         translated = "\n\n".join(parts)
     else:
-        translated = translate_text(content, str(en_file.name))
+        translated = translate_text(content, str(en_file.name), extra_rules)
         if translated is None:
             return False
 
@@ -113,10 +164,11 @@ def main():
 
     report = json.load(open(report_path, "r", encoding="utf-8"))
 
-    # Check API keys
-    has_api = GEMINI_API_KEY or GROQ_API_KEY or OPENROUTER_API_KEY
+    # Есть ли хоть один рабочий провайдер: подписка Claude или запасной ключ
+    has_api = claude_available() or GEMINI_API_KEY or GROQ_API_KEY or OPENROUTER_API_KEY
     if not has_api:
-        print("WARNING: No API keys set (GEMINI_API_KEY, GROQ_API_KEY, OPENROUTER_API_KEY)")
+        print("WARNING: нет ни claude CLI, ни ключей "
+              "(GEMINI_API_KEY, GROQ_API_KEY, OPENROUTER_API_KEY)")
         print("Translation skipped.")
         json.dump({"translated_count": 0, "skipped": "no_api_keys"},
                   open("translation_result.json", "w"))
@@ -133,7 +185,8 @@ def main():
     articles = articles[:max_articles]
 
     print(f"Translating {len(articles)} articles...")
-    print(f"API: Gemini={'ON' if GEMINI_API_KEY else 'OFF'}"
+    print(f"Провайдеры: claude={CLAUDE_MODEL if claude_available() else 'OFF'}"
+          f" | Gemini={'ON' if GEMINI_API_KEY else 'OFF'}"
           f" | Groq={'ON' if GROQ_API_KEY else 'OFF'}"
           f" | OpenRouter={'ON' if OPENROUTER_API_KEY else 'OFF'}")
     print()
@@ -141,6 +194,7 @@ def main():
     translated_count = 0
     failed_count = 0
     translated_files = []
+    registry = load_hash_registry()
     start = time.time()
 
     for i, article in enumerate(articles, 1):
@@ -154,23 +208,29 @@ def main():
 
         print(f"[{i}/{len(articles)}] {rel_path}")
 
-        ok = translate_single_file(en_file, ru_file)
+        ok = translate_single_file(en_file, ru_file, heading_rule_for(rel_path))
         if ok:
             translated_count += 1
             translated_files.append(rel_path)
+            # Фиксируем, от какого EN-состояния сделан этот перевод. Хэш берём с
+            # диска ПОСЛЕ перевода: если апстрим успел уехать, статья честно
+            # останется в очереди на следующий прогон.
+            registry[rel_path] = file_hash(en_file)
             print(f"  OK")
         else:
             failed_count += 1
             print(f"  FAILED")
 
-        # Save cache periodically
+        # Периодическое сохранение: длинный прогон должен переживать обрыв
         if i % 5 == 0:
             with open(CACHE_FILE, "w", encoding="utf-8") as f:
                 json.dump(cache, f, ensure_ascii=False, indent=2)
+            save_hash_registry(registry)
 
     # Final cache save
     with open(CACHE_FILE, "w", encoding="utf-8") as f:
         json.dump(cache, f, ensure_ascii=False, indent=2)
+    save_hash_registry(registry)
 
     elapsed = time.time() - start
     print()

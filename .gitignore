@@ -82,3 +82,7 @@ scripts/.change_tracking/*.tmp
 changes_report.json
 changes_report.md
 translation_result.json
+
+# Локальный ночной перевод (scripts/run_local_translate.sh)
+logs/
+.translate.lock/
