@@ -180,9 +180,27 @@ def _translate_whole(content: str, en_file: Path, extra_rules: str,
         # Правило заголовков осмысленно только для первого чанка: H1 и
         # frontmatter живут там, дальше пойдут подзаголовки тела.
         rules = (extra_rules if i == 1 else "") + retry_hint
-        result = translate_text(chunk, f"{en_file.name}#chunk{i}", rules)
+
+        # Сверяем и перезапрашиваем КАЖДЫЙ чанк отдельно. Иначе один сорвавшийся
+        # кусок заставлял переводить статью целиком заново, и на длинных текстах
+        # это не сходилось никогда: шанс, что все девять чанков подряд выйдут
+        # чистыми, мал, а стоимость попытки максимальная.
+        result = None
+        for attempt in (1, 2, 3):
+            candidate = translate_text(
+                chunk, f"{en_file.name}#chunk{i}",
+                rules if attempt == 1 else rules + _RETRY_HINT,
+            )
+            if candidate is None:
+                print(f"  FAILED chunk {i}")
+                return None
+            defect = _structure_defect(chunk, candidate)
+            if not defect:
+                result = candidate
+                break
+            print(f"    чанк {i}: {defect}, попытка {attempt}/3")
         if result is None:
-            print(f"  FAILED chunk {i}")
+            print(f"  FAILED chunk {i}: структура не выправилась за 3 попытки")
             return None
         parts.append(result)
     return "\n\n".join(parts)

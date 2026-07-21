@@ -191,14 +191,17 @@ def split_into_chunks(text: str, max_chars: int = MAX_CHUNK_CHARS) -> list:
         return [text]
 
     chunks = []
-    sections = re.split(r'(^#{1,3} .+$)', text, flags=re.MULTILINE)
+    # Границы секций ищем ТОЛЬКО вне блоков кода: строка вида `# установка пакета`
+    # внутри ``` это комментарий шелла, а не заголовок, и раньше по ней резали
+    # блок кода пополам (11 крупных статей корпуса, включая agctl и quarkus).
+    sections = _split_outside_code(text, lambda ln: re.match(r'^#{1,3} ', ln))
     current_chunk = ""
     for section in sections:
         if len(current_chunk) + len(section) > max_chars and current_chunk:
             chunks.append(current_chunk)
             current_chunk = section
         else:
-            current_chunk += section
+            current_chunk += ('\n' if current_chunk else '') + section
     if current_chunk:
         chunks.append(current_chunk)
 
@@ -207,9 +210,13 @@ def split_into_chunks(text: str, max_chars: int = MAX_CHUNK_CHARS) -> list:
         if len(chunk) <= max_chars:
             final_chunks.append(chunk)
         else:
-            paragraphs = chunk.split('\n\n')
+            # Дробим по абзацам, но НИКОГДА не режем внутри блока кода. Блоки кода
+            # содержат пустые строки, поэтому наивное деление по '\n\n' разрывало
+            # ``` пополам: чанк получал незакрытый фенс, модель закрывала его
+            # по-своему, и статья вечно падала на сверке («было 22, стало 21»).
+            # Так намертво зациклились две большие статьи session-data-export.
             sub_chunk = ""
-            for para in paragraphs:
+            for para in _paragraphs_keeping_code(chunk):
                 if len(sub_chunk) + len(para) + 2 > max_chars and sub_chunk:
                     final_chunks.append(sub_chunk)
                     sub_chunk = para
@@ -219,6 +226,31 @@ def split_into_chunks(text: str, max_chars: int = MAX_CHUNK_CHARS) -> list:
                 final_chunks.append(sub_chunk)
 
     return final_chunks
+
+
+def _split_outside_code(text: str, is_boundary) -> list:
+    """Режет текст по строкам-границам, никогда не заходя внутрь ```-блока.
+
+    Блок кода остаётся целым куском: незакрытый фенс в чанке модель закрывает
+    по-своему, и статья потом не проходит сверку структуры.
+    """
+    parts, buf, in_code = [], [], False
+    for line in text.split('\n'):
+        fence = line.lstrip().startswith('```')
+        if not in_code and not fence and is_boundary(line) and buf:
+            parts.append('\n'.join(buf))
+            buf = []
+        if fence:
+            in_code = not in_code
+        buf.append(line)
+    if buf:
+        parts.append('\n'.join(buf))
+    return parts
+
+
+def _paragraphs_keeping_code(text: str) -> list:
+    """Абзацы текста, где каждый блок ``` остаётся одним неделимым куском."""
+    return [p for p in _split_outside_code(text, lambda ln: ln.strip() == '') if p.strip()]
 
 
 CLAUDE_SYSTEM_PROMPT = """Ты профессиональный технический переводчик документации Dynatrace с английского на русский.
