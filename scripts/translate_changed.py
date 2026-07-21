@@ -71,6 +71,14 @@ def _structure_defect(source: str, translated: str) -> str:
     lost = sorted(set(url_re.findall(source)) - set(url_re.findall(translated)))
     if lost:
         return f"потеряны URL ({len(lost)}), первый: {lost[0][:60]}"
+
+    # Заголовки строго 1:1, включая повторы. Скрейпер дублирует H1 почти во всех
+    # статьях (2881 файл), и корпус этот повтор сохраняет (2746 из 2762), а модель
+    # иногда «прибирается» и схлопывает два заголовка в один.
+    h_src = len(re.findall(r"^#{1,6} ", src, re.M))
+    h_dst = len(re.findall(r"^#{1,6} ", dst, re.M))
+    if h_src != h_dst:
+        return f"заголовков было {h_src}, стало {h_dst}"
     return ""
 
 
