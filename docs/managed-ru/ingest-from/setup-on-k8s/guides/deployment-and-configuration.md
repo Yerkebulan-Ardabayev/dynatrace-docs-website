@@ -1,42 +1,41 @@
 ---
 title: Развёртывание и настройка
 source: https://docs.dynatrace.com/managed/ingest-from/setup-on-k8s/guides/deployment-and-configuration
-scraped: 2026-05-12T11:53:49.933362
 ---
 
 # Развёртывание и настройка
 
 # Развёртывание и настройка
 
-* Чтение: 1 мин
+* 1 мин на чтение
 * Обновлено 12 марта 2026 г.
 
-Изучите ряд эксплуатационных задач и процедур, связанных с Dynatrace.
+Обзор ряда операционных задач и процедур, связанных с Dynatrace.
 
 [### Развёртывание Dynatrace вместе с Istio
 
-Развёртывание Dynatrace Operator вместе с Istio в различных сценариях.](/managed/ingest-from/setup-on-k8s/guides/deployment-and-configuration/istio-deployment "Развёртывание Dynatrace Operator вместе с Istio в различных сценариях")[### Управление развёртываниями Dynatrace с помощью GitOps
+Развёртывание Dynatrace Operator вместе с Istio в различных сценариях.](/managed/ingest-from/setup-on-k8s/guides/deployment-and-configuration/istio-deployment "Deployment of Dynatrace Operator alongside Istio in various scenarios")[### Управление развёртываниями Dynatrace с помощью GitOps
 
-Узнайте, как управлять Dynatrace Operator и DynaKube с помощью GitOps.](/managed/ingest-from/setup-on-k8s/guides/deployment-and-configuration/using-gitops "Как развернуть Dynatrace Operator и DynaKube с помощью GitOps.")[### Настройка загрузки образов на узлах
+Как управлять Dynatrace Operator и DynaKube с помощью GitOps.](/managed/ingest-from/setup-on-k8s/guides/deployment-and-configuration/using-gitops "How to deploy Dynatrace Operator and DynaKube using GitOps.")[### Инструментирование ingress-nginx
 
-Настройте загрузку образов на узлах с CSI driver или без него.](/managed/ingest-from/setup-on-k8s/guides/deployment-and-configuration/node-image-pull "Настройка загрузки образов на узлах")[### Инструментирование ingress-nginx
+Инструментирование ingress-nginx на Kubernetes.](/managed/ingest-from/setup-on-k8s/guides/deployment-and-configuration/monitoring-and-instrumentation/instrument-nginx "Instrument ingress-nginx on Kubernetes")[### Мониторинг Kubernetes API
 
-Инструментируйте ingress-nginx в Kubernetes.](/managed/ingest-from/setup-on-k8s/guides/deployment-and-configuration/monitoring-and-instrumentation/instrument-nginx "Инструментирование ingress-nginx в Kubernetes")[### Мониторинг Kubernetes API
+Мониторинг Kubernetes API с помощью Dynatrace.](/managed/ingest-from/setup-on-k8s/guides/deployment-and-configuration/monitoring-and-instrumentation/k8s-api-monitoring "Monitor the Kubernetes API using Dynatrace")[### Настройка мониторинга для namespaces и pods
 
-Отслеживайте Kubernetes API с помощью Dynatrace.](/managed/ingest-from/setup-on-k8s/guides/deployment-and-configuration/monitoring-and-instrumentation/k8s-api-monitoring "Мониторинг Kubernetes API с помощью Dynatrace")[### Настройка мониторинга для пространств имён и подов
+Настройка мониторинга для namespaces и pods Dynatrace.](/managed/ingest-from/setup-on-k8s/guides/deployment-and-configuration/monitoring-and-instrumentation/annotate "Configure monitoring for namespaces and pods")[### Ограничения ресурсов Dynatrace Operator
 
-Настройте мониторинг для пространств имён и подов Dynatrace.](/managed/ingest-from/setup-on-k8s/guides/deployment-and-configuration/monitoring-and-instrumentation/annotate "Настройка мониторинга для пространств имён и подов")[### Лимиты ресурсов Dynatrace Operator
+Настройка ограничений ресурсов для компонентов Dynatrace Operator.](/managed/ingest-from/setup-on-k8s/guides/deployment-and-configuration/resource-management/dto-resource-limits "Set resource limits for Dynatrace Operator components.")[### Таймауты проб (probe timeouts)
 
-Задайте лимиты ресурсов для компонентов Dynatrace Operator.](/managed/ingest-from/setup-on-k8s/guides/deployment-and-configuration/resource-management/dto-resource-limits "Задайте лимиты ресурсов для компонентов Dynatrace Operator.")[### Тайм-ауты проверок работоспособности
+Решение проблем с таймаутами в readiness- или liveness-пробах, вызванных внедрением OneAgent.](/managed/ingest-from/setup-on-k8s/guides/deployment-and-configuration/resource-management/probe-timeout "Resolve timeout issues in readiness- or liveness-probes caused by OneAgent injection.")[### Обновление или удаление Dynatrace Operator
 
-Устраните проблемы тайм-аутов в readiness- или liveness-проверках, вызванные внедрением OneAgent.](/managed/ingest-from/setup-on-k8s/guides/deployment-and-configuration/resource-management/probe-timeout "Устраните проблемы тайм-аутов в readiness- или liveness-проверках, вызванные внедрением OneAgent.")[### Обновление или удаление Dynatrace Operator
+Процедуры обновления и удаления Dynatrace Operator.](/managed/ingest-from/setup-on-k8s/guides/deployment-and-configuration/updates-and-maintenance/update-uninstall-operator "Upgrade paths, update procedures, and uninstallation guide for Dynatrace Operator.")[### Автообновление Dynatrace Operator
 
-Процедуры обновления и удаления Dynatrace Operator.](/managed/ingest-from/setup-on-k8s/guides/deployment-and-configuration/updates-and-maintenance/update-uninstall-operator "Процедуры обновления и удаления Dynatrace Operator")[### Автообновление Dynatrace Operator
+Включение автоматических обновлений Dynatrace Operator по подходу GitOps.](/managed/ingest-from/setup-on-k8s/guides/deployment-and-configuration/updates-and-maintenance/dto-auto-update "Enable automatic updates of Dynatrace Operator following a GitOps approach.")[### Настройка автообновления для компонентов Dynatrace Operator
 
-Включите автоматические обновления Dynatrace Operator, следуя подходу GitOps.](/managed/ingest-from/setup-on-k8s/guides/deployment-and-configuration/updates-and-maintenance/dto-auto-update "Включите автоматические обновления Dynatrace Operator, следуя подходу GitOps.")[### Настройка автообновления для компонентов Dynatrace Operator
+Настройка автообновлений для компонентов, управляемых Dynatrace Operator.](/managed/ingest-from/setup-on-k8s/guides/deployment-and-configuration/updates-and-maintenance/auto-update-components "Configure auto-updates for all components managed by Dynatrace Operator")[### Руководство по расчёту размера Dynatrace ActiveGate
 
-Настройте автоматические обновления для компонентов, управляемых Dynatrace Operator.](/managed/ingest-from/setup-on-k8s/guides/deployment-and-configuration/updates-and-maintenance/auto-update-components "Настройте автоматические обновления для компонентов, управляемых Dynatrace Operator (OneAgent, ActiveGate и EdgeConnect).")[### Руководство по выбору размера Dynatrace ActiveGate
+Руководство по расчёту размера для компонентов Dynatrace ActiveGate](/managed/ingest-from/setup-on-k8s/guides/deployment-and-configuration/resource-management/ag-resource-limits "Set resource limits for Dynatrace ActiveGates")[### Настройка startup-проб для Dynatrace Operator
 
-Руководство по выбору размера для компонентов Dynatrace ActiveGate](/managed/ingest-from/setup-on-k8s/guides/deployment-and-configuration/resource-management/ag-resource-limits "Задайте лимиты ресурсов для Dynatrace ActiveGate")[### Настройка startup-проверок для Dynatrace Operator
+Настройка startup-проб для Dynatrace Operator, Webhook и CSI Driver.](/managed/ingest-from/setup-on-k8s/guides/deployment-and-configuration/configure-startup-probes "Set up and customize startup probes for Dynatrace Operator, Webhook, and CSI driver components to match your environment's requirements.")[### `custom.properties` для ActiveGate
 
-Настройте startup-проверки для Dynatrace Operator, Webhook и CSI Driver.](/managed/ingest-from/setup-on-k8s/guides/deployment-and-configuration/configure-startup-probes "Настройка startup-проверок для компонентов, управляемых Dynatrace Operator.")
+Настройка ActiveGate через `custom.properties`.](/managed/ingest-from/setup-on-k8s/guides/metadata-automation/custom-properties-file "Add a custom properties file")

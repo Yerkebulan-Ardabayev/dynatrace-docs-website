@@ -1,7 +1,6 @@
 ---
 title: Миграция DynaKube с v1beta1 на v1beta5
 source: https://docs.dynatrace.com/managed/ingest-from/setup-on-k8s/guides/migration/api-version-migration-guides/migrate-dk-v1beta1-v1beta5
-scraped: 2026-05-12T12:14:50.289595
 ---
 
 # Миграция DynaKube с v1beta1 на v1beta5
@@ -9,24 +8,24 @@ scraped: 2026-05-12T12:14:50.289595
 # Миграция DynaKube с v1beta1 на v1beta5
 
 * Справочник
-* Чтение: 10 мин
+* Чтение: 10 минут
 * Обновлено 30 октября 2025 г.
 
-В этом руководстве показано, как вручную выполнить миграцию с `apiVersion: dynatrace.com/v1beta1` на `apiVersion: dynatrace.com/v1beta5` для `DynaKube`.
+Это руководство показывает, как вручную перейти с `apiVersion: dynatrace.com/v1beta1` на `apiVersion: dynatrace.com/v1beta5` для `DynaKube`.
 
 ## Жизненный цикл поддержки
 
 ### v1beta1
 
-**Введено в**: Dynatrace Operator версии 0.3.0
+**Введена в**: Dynatrace Operator версии 0.3.0
 
-**Устарело в**: Dynatrace Operator версии 1.6.0
+**Устарела в**: Dynatrace Operator версии 1.6.0
 
-**Последняя поддержка в**: Dynatrace Operator версии 1.6.2
+**Последняя поддерживаемая версия**: Dynatrace Operator версии 1.6.2
 
 ### v1beta5
 
-**Введено в**: Dynatrace Operator версии 1.6.0
+**Введена в**: Dynatrace Operator версии 1.6.0
 
 ## Изменения
 
@@ -36,18 +35,18 @@ scraped: 2026-05-12T12:14:50.289595
 
 ### Подготовка к удалению apiVersion v1beta1
 
-Примечание
+Уведомление
 
-apiVersion v1beta1 в DynaKube CRD будет удалён в будущем выпуске. Рекомендуем подготовиться к этому заранее.
-Действие пользователя потребуется при обновлении с Dynatrace Operator версии 1.1.0 и более ранних.
+apiVersion v1beta1 CRD DynaKube будет удалён в одном из следующих релизов. Рекомендуется подготовиться к этому заранее.
+Действия пользователя потребуются при обновлении с Dynatrace Operator версии 1.1.0 и более ранних.
 
-Запросите текущую версию хранилища DynaKube CRD:
+Запрос текущей версии хранения CRD DynaKube:
 
 ```
 kubectl get customresourcedefinitions dynakubes.dynatrace.com -o jsonpath='{.spec.versions[?(@.storage==true)].name}'
 ```
 
-Запросите сохранённые версии DynaKube CRD:
+Запрос сохранённых версий CRD DynaKube:
 
 ```
 kubectl get customresourcedefinitions dynakubes.dynatrace.com -o jsonpath='{.status.storedVersions}'
@@ -55,10 +54,10 @@ kubectl get customresourcedefinitions dynakubes.dynatrace.com -o jsonpath='{.sta
 
 Если **список сохранённых версий** содержит версии, которые будут удалены при обновлении CRD, **требуется вмешательство пользователя**.
 
-Убедитесь, что старый apiVersion больше не используется ни в одном манифесте. Это включает ресурсы, которые загружают манифесты из внешних источников, такие как релизы Helm или приложения ArgoCD.
-При использовании GitOps всегда проверяйте источник, из которого синхронизируются манифесты, поскольку при вычислении различий может учитываться преобразование.
+Нужно убедиться, что старый apiVersion больше нигде не упоминается ни в одном манифесте. Это касается и ресурсов, которые загружают манифесты из внешних источников, например релизов Helm или приложений ArgoCD.
+При использовании GitOps всегда нужно проверять источник, из которого синхронизируются манифесты, так как при формировании diff может учитываться преобразование версий.
 
-Чтобы убедиться, что бэкенд хранилища Kubernetes больше не содержит устаревших объектов DynaKube, рекомендуем обновить их на месте.
+Чтобы убедиться, что бэкенд хранения Kubernetes больше не содержит устаревших объектов DynaKube, рекомендуется обновить их на месте.
 
 ```
 for item in $(kubectl get dynakubes.dynatrace.com -A -o jsonpath='{range .items[*]}{.metadata.namespace}{"/"}{.metadata.name}{"\n"}{end}'); do
@@ -80,19 +79,19 @@ kubectl get dynakubes.dynatrace.com -n $namespace $name -o yaml | kubectl replac
 done
 ```
 
-Не используйте команду `kubectl apply`, поскольку она записывает данные только при обнаружении изменений.
+Не используйте команду `kubectl apply`, так как она записывает данные, только если обнаружены изменения.
 
-Как только старый apiVersion больше не используется, можно безопасно обновить статус CRD.
+После того как старый apiVersion больше нигде не упоминается, можно безопасно обновить статус CRD.
 
 ```
 kubectl patch customresourcedefinitions dynakubes.dynatrace.com --subresource status --type merge -p '{"status":{"storedVersions":["<current storage version>"]}}'
 ```
 
-### Заменённые флаги функций
+### Заменённые feature flags
 
-#### Выделенный раздел `metadataEnrichment`
+#### Отдельный раздел `metadataEnrichment`
 
-Флаг функции для включения обогащения метаданными (`feature.dynatrace.com/metadata-enrichment: true/false`) был перемещён в выделенное поле:
+Feature flag для включения обогащения метаданных (`feature.dynatrace.com/metadata-enrichment: true/false`) перенесён в отдельное поле:
 
 ```
 apiVersion: dynatrace.com/v1beta4
@@ -123,16 +122,16 @@ metadataEnrichment:
 
 
 
-enabled: true # replaces feature.dynatrace.com/metadata-enrichment: true
+enabled: true # заменяет feature.dynatrace.com/metadata-enrichment: true
 
 
 
 #...
 ```
 
-#### Выделенное поле `dynatraceApiRequestThreshold`
+#### Отдельное поле `dynatraceApiRequestThreshold`
 
-Флаг функции для управления тем, как часто Dynatrace Operator может обращаться к Dynatrace API (`feature.dynatrace.com/dynatrace-api-request-threshold: <number>`), был перемещён в выделенное поле:
+Feature flag, управляющий тем, как часто Dynatrace Operator может опрашивать Dynatrace API (`feature.dynatrace.com/dynatrace-api-request-threshold: <number>`), перенесён в отдельное поле:
 
 ```
 apiVersion: dynatrace.com/v1beta4
@@ -159,16 +158,16 @@ spec:
 
 
 
-dynatraceApiRequestThreshold: 10 # replaces feature.dynatrace.com/dynatrace-api-request-threshold: "10"
+dynatraceApiRequestThreshold: 10 # заменяет feature.dynatrace.com/dynatrace-api-request-threshold: "10"
 
 
 
 #...
 ```
 
-#### Выделенное поле `secCompProfile` для OneAgent
+#### Отдельное поле `secCompProfile` для OneAgent
 
-Флаг функции, который управляет тем, какой профиль seccomp использует OneAgent DaemonSet (`feature.dynatrace.com/oneagent-seccomp-profile:example`), был перемещён в выделенное поле:
+Feature flag, управляющий тем, какой seccomp-профиль использует DaemonSet OneAgent (`feature.dynatrace.com/oneagent-seccomp-profile:example`), перенесён в отдельное поле:
 
 Host monitoring
 
@@ -209,7 +208,7 @@ hostMonitoring:
 
 
 
-secCompProfile: example # replaces feature.dynatrace.com/oneagent-seccomp-profile: "example"
+secCompProfile: example # заменяет feature.dynatrace.com/oneagent-seccomp-profile: "example"
 
 
 
@@ -249,7 +248,7 @@ classicFullStack:
 
 
 
-secCompProfile: example # replaces feature.dynatrace.com/oneagent-seccomp-profile: "example"
+secCompProfile: example # заменяет feature.dynatrace.com/oneagent-seccomp-profile: "example"
 
 
 
@@ -289,26 +288,26 @@ cloudNativeFullstack:
 
 
 
-secCompProfile: example # replaces feature.dynatrace.com/oneagent-seccomp-profile: "example"
+secCompProfile: example # заменяет feature.dynatrace.com/oneagent-seccomp-profile: "example"
 
 
 
 #...
 ```
 
-#### Новый флаг функции тайм-аута монтирования CSI
+#### Новый feature flag тайм-аута монтирования CSI
 
-Флаг функции, который определял, сколько попыток монтирования делает CSI driver перед остановкой (`feature.dynatrace.com/max-csi-mount-attempts: 5`), заменён флагом функции на основе тайм-аута. Это сделано из-за сложности определения того, скольким попыткам соответствует заданный тайм-аут.
+Feature flag, контролировавший, сколько попыток монтирования выполнит CSI-драйвер перед остановкой (`feature.dynatrace.com/max-csi-mount-attempts: 5`), заменён на feature flag на основе тайм-аута. Это сделано из-за сложности определения того, скольким попыткам соответствует тот или иной тайм-аут.
 
 ```
-feature.dynatrace.com/max-csi-mount-timeout: "8m" # replaces feature.dynatrace.com/max-csi-mount-attempts: "10"
+feature.dynatrace.com/max-csi-mount-timeout: "8m" # заменяет feature.dynatrace.com/max-csi-mount-attempts: "10"
 ```
 
 ### Перемещённые поля
 
 #### `spec.namespaceSelector`
 
-Поле `spec.namespaceSelector` было перемещено в каждый подраздел функции, на который оно влияет.
+Поле `spec.namespaceSelector` перенесено в каждый подраздел функции, на который оно влияет.
 
 Cloud native fullstack
 
@@ -349,7 +348,7 @@ cloudNativeFullstack:
 
 
 
-namespaceSelector: ... # replaces spec.namespaceSelector
+namespaceSelector: ... # заменяет spec.namespaceSelector
 
 
 
@@ -389,7 +388,7 @@ applicationMonitoring:
 
 
 
-namespaceSelector: ... # replaces spec.namespaceSelector
+namespaceSelector: ... # заменяет spec.namespaceSelector
 
 
 
@@ -425,7 +424,7 @@ metadataEnrichment:
 
 
 
-namespaceSelector: ... # replaces spec.namespaceSelector
+namespaceSelector: ... # заменяет spec.namespaceSelector
 
 
 
@@ -434,13 +433,13 @@ namespaceSelector: ... # replaces spec.namespaceSelector
 
 ### Устаревшие поля
 
-#### OneAgent `autoUpdate`
+#### `autoUpdate` для OneAgent
 
-Поле `spec.oneAgent.<mode>.autoUpdate: true/false` [устарело](/managed/ingest-from/setup-on-k8s/guides/deployment-and-configuration/updates-and-maintenance/auto-update-components "Настройка автообновлений для компонентов, управляемых Dynatrace Operator (OneAgent, ActiveGate и EdgeConnect).") в `v1beta5`, поэтому его не следует использовать.
+Поле `spec.oneAgent.<mode>.autoUpdate: true/false` [устарело](/managed/ingest-from/setup-on-k8s/guides/deployment-and-configuration/updates-and-maintenance/auto-update-components "Configure auto-updates for all components managed by Dynatrace Operator") в `v1beta5`, поэтому его не следует использовать.
 
-Рекомендуем следующее:
+Рекомендуется следующее:
 
-* Если вам нужно `autoUpdate: true`, не задавайте `image`, `codeModulesImage` или `version`.
+* Если нужен `autoUpdate: true`, не задавайте `image`, `codeModulesImage` или `version`.
 
   ```
   apiVersion: dynatrace.com/v1beta5
@@ -471,13 +470,13 @@ namespaceSelector: ... # replaces spec.namespaceSelector
 
 
 
-  cloudNativeFullstack: {} # same as autoUpdate: true
+  cloudNativeFullstack: {} # то же самое, что autoUpdate: true
 
 
 
   # ...
   ```
-* Если вам нужно `autoUpdate: false`, задайте `image`, `codeModulesImage` или `version`
+* Если нужен `autoUpdate: false`, задайте `image`, `codeModulesImage` или `version`
 
   ```
   apiVersion: dynatrace.com/v1beta5
@@ -512,11 +511,11 @@ namespaceSelector: ... # replaces spec.namespaceSelector
 
 
 
-  image: ... # same effect as autoUpdate: false
+  image: ... # даёт тот же эффект, что и autoUpdate: false
 
 
 
-  codeModulesImage: # same effect as autoUpdate: false
+  codeModulesImage: # даёт тот же эффект, что и autoUpdate: false
 
 
 
@@ -560,7 +559,7 @@ namespaceSelector: ... # replaces spec.namespaceSelector
 
 
 
-  version: ... # replaces autoUpdate: false
+  version: ... # заменяет autoUpdate: false
 
 
 
@@ -571,13 +570,13 @@ namespaceSelector: ... # replaces spec.namespaceSelector
 
 #### `spec.applicationMonitoring.useCSIDriver`
 
-Поле `spec.applicationMonitoring.useCSIDriver: true/false` было удалено.
+Поле `spec.applicationMonitoring.useCSIDriver: true/false` удалено.
 
-CSI driver теперь используется, если он установлен в составе Dynatrace Operator.
+CSI-драйвер теперь используется, когда он установлен как часть установки Dynatrace Operator.
 
 #### `spec.kubernetesMonitoring`
 
-Устаревшее поле `spec.kubernetesMonitoring` было удалено в пользу использования текущего раздела `spec.activeGate`. В этом примере показано до и после:
+Устаревшее поле `spec.kubernetesMonitoring` удалено в пользу использования текущего раздела `spec.activeGate`. В этом примере показано состояние до и после:
 
 **До**
 
@@ -688,7 +687,7 @@ capabilities:
 
 
 
-- kubernetes-monitoring #<-- explicitly enable Kubernetes monitoring
+- kubernetes-monitoring #<-- явно включить мониторинг Kubernetes
 
 
 
@@ -733,7 +732,7 @@ env: ...
 
 #### `spec.routing`
 
-Устаревшее поле `spec.routing` было удалено в пользу использования текущего раздела `spec.activeGate`. В этом примере показано до и после:
+Устаревшее поле `spec.routing` удалено в пользу использования текущего раздела `spec.activeGate`. В этом примере показано состояние до и после:
 
 **До**
 
@@ -844,7 +843,7 @@ capabilities:
 
 
 
-- routing #<-- explicitly enable routing
+- routing #<-- явно включить routing
 
 
 

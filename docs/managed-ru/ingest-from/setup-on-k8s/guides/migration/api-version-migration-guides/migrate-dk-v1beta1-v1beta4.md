@@ -1,18 +1,17 @@
 ---
-title: Миграция DynaKube с v1beta1 на v1beta4
+title: Миграция DynaKube v1beta1 на v1beta4
 source: https://docs.dynatrace.com/managed/ingest-from/setup-on-k8s/guides/migration/api-version-migration-guides/migrate-dk-v1beta1-v1beta4
-scraped: 2026-05-12T12:14:36.723814
 ---
 
-# Миграция DynaKube с v1beta1 на v1beta4
+# Миграция DynaKube v1beta1 на v1beta4
 
-# Миграция DynaKube с v1beta1 на v1beta4
+# Миграция DynaKube v1beta1 на v1beta4
 
-* Справочник
+* Справка
 * Чтение: 10 мин
 * Обновлено 22 октября 2025 г.
 
-В этом руководстве показано, как вручную выполнить миграцию с `apiVersion: dynatrace.com/v1beta1` на `apiVersion: dynatrace.com/v1beta4` для `DynaKube`.
+В этом руководстве показано, как вручную перейти с `apiVersion: dynatrace.com/v1beta1` на `apiVersion: dynatrace.com/v1beta4` для `DynaKube`.
 
 ## Жизненный цикл поддержки
 
@@ -22,7 +21,7 @@ scraped: 2026-05-12T12:14:36.723814
 
 **Устарело в**: Dynatrace Operator версии 1.6.0
 
-**Последняя поддержка в**: Dynatrace Operator версии 1.6.2
+**Последняя поддерживаемая версия**: Dynatrace Operator 1.6.2
 
 ### v1beta4
 
@@ -34,13 +33,13 @@ scraped: 2026-05-12T12:14:36.723814
 
 Напоминание
 
-При миграции DynaKube не забудьте обновить поле `apiVersion`, а также все остальные поля, которые изменились
+При миграции DynaKube не забудь обновить поле `apiVersion`, а также все остальные поля, которые изменились
 
-### Заменённые флаги функций
+### Заменённые feature flag
 
-#### Выделенный раздел `metadataEnrichment`
+#### Отдельный раздел `metadataEnrichment`
 
-Флаг функции для включения обогащения метаданными (`feature.dynatrace.com/metadata-enrichment: true/false`) был перемещён в выделенное поле:
+Feature flag для включения обогащения метаданных (`feature.dynatrace.com/metadata-enrichment: true/false`) перенесён в отдельное поле:
 
 ```
 apiVersion: dynatrace.com/v1beta4
@@ -78,9 +77,9 @@ enabled: true # replaces feature.dynatrace.com/metadata-enrichment: true
 #...
 ```
 
-#### Выделенное поле `dynatraceApiRequestThreshold`
+#### Отдельное поле `dynatraceApiRequestThreshold`
 
-Флаг функции для управления тем, как часто Dynatrace Operator может обращаться к Dynatrace API (`feature.dynatrace.com/dynatrace-api-request-threshold: <number>`), был перемещён в выделенное поле:
+Feature flag, управляющий тем, как часто Dynatrace Operator может обращаться к Dynatrace API (`feature.dynatrace.com/dynatrace-api-request-threshold: <number>`), перенесён в отдельное поле:
 
 ```
 apiVersion: dynatrace.com/v1beta4
@@ -114,9 +113,9 @@ dynatraceApiRequestThreshold: 10 # replaces feature.dynatrace.com/dynatrace-api-
 #...
 ```
 
-#### Выделенное поле `secCompProfile` для OneAgent
+#### Отдельное поле `secCompProfile` для OneAgent
 
-Флаг функции, который управляет тем, какой профиль seccomp использует OneAgent DaemonSet (`feature.dynatrace.com/oneagent-seccomp-profile:example`), был перемещён в выделенное поле:
+Feature flag, определяющий, какой seccomp-профиль использует DaemonSet OneAgent (`feature.dynatrace.com/oneagent-seccomp-profile:example`), перенесён в отдельное поле:
 
 Host monitoring
 
@@ -244,19 +243,19 @@ secCompProfile: example # replaces feature.dynatrace.com/oneagent-seccomp-profil
 #...
 ```
 
-#### Новый флаг функции тайм-аута монтирования CSI
+#### Новый feature flag для тайм-аута монтирования CSI
 
-Флаг функции, который определял, сколько попыток монтирования делает CSI driver перед остановкой (`feature.dynatrace.com/max-csi-mount-attempts: 5`), заменён флагом функции на основе тайм-аута. Это сделано из-за сложности определения того, скольким попыткам соответствует заданный тайм-аут.
+Feature flag, управлявший тем, сколько попыток монтирования делает CSI-драйвер перед остановкой (`feature.dynatrace.com/max-csi-mount-attempts: 5`), заменён на feature flag, основанный на тайм-ауте. Это сделано из-за сложности определения того, сколько попыток соответствует заданному тайм-ауту.
 
 ```
 feature.dynatrace.com/max-csi-mount-timeout: "8m" # replaces feature.dynatrace.com/max-csi-mount-attempts: "10"
 ```
 
-### Перемещённые поля
+### Перенесённые поля
 
 #### `spec.namespaceSelector`
 
-Поле `spec.namespaceSelector` было перемещено в каждый подраздел функции, на который оно влияет.
+Поле `spec.namespaceSelector` перенесено в каждый подраздел функции, на которую оно влияет.
 
 Cloud native fullstack
 
@@ -384,11 +383,11 @@ namespaceSelector: ... # replaces spec.namespaceSelector
 
 #### OneAgent `autoUpdate`
 
-Поле `spec.oneAgent.<mode>.autoUpdate: true/false` [устарело](/managed/ingest-from/setup-on-k8s/guides/deployment-and-configuration/updates-and-maintenance/auto-update-components "Настройка автообновлений для компонентов, управляемых Dynatrace Operator (OneAgent, ActiveGate и EdgeConnect).") в `v1beta5`, поэтому его не следует использовать.
+Поле `spec.oneAgent.<mode>.autoUpdate: true/false` [устарело](/managed/ingest-from/setup-on-k8s/guides/deployment-and-configuration/updates-and-maintenance/auto-update-components "Configure auto-updates for all components managed by Dynatrace Operator") в `v1beta5`, поэтому его не следует использовать.
 
-Рекомендуем следующее:
+Рекомендуется следующее:
 
-* Если вам нужно `autoUpdate: true`, не задавайте `image`, `codeModulesImage` или `version`.
+* Если нужен `autoUpdate: true`, не задавай `image`, `codeModulesImage` или `version`.
 
   ```
   apiVersion: dynatrace.com/v1beta5
@@ -425,7 +424,7 @@ namespaceSelector: ... # replaces spec.namespaceSelector
 
   # ...
   ```
-* Если вам нужно `autoUpdate: false`, задайте `image`, `codeModulesImage` или `version`
+* Если нужен `autoUpdate: false`, задай `image`, `codeModulesImage` или `version`
 
   ```
   apiVersion: dynatrace.com/v1beta5
@@ -519,13 +518,13 @@ namespaceSelector: ... # replaces spec.namespaceSelector
 
 #### `spec.applicationMonitoring.useCSIDriver`
 
-Поле `spec.applicationMonitoring.useCSIDriver: true/false` было удалено.
+Поле `spec.applicationMonitoring.useCSIDriver: true/false` удалено.
 
-CSI driver теперь используется, если он установлен в составе Dynatrace Operator.
+Теперь CSI-драйвер используется, когда он установлен как часть установки Dynatrace Operator.
 
 #### `spec.kubernetesMonitoring`
 
-Устаревшее поле `spec.kubernetesMonitoring` было удалено в пользу использования текущего раздела `spec.activeGate`. В этом примере показано до и после:
+Устаревшее поле `spec.kubernetesMonitoring` удалено в пользу использования текущего раздела `spec.activeGate`. Пример показывает состояние до и после:
 
 **До**
 
@@ -681,7 +680,7 @@ env: ...
 
 #### `spec.routing`
 
-Устаревшее поле `spec.routing` было удалено в пользу использования текущего раздела `spec.activeGate`. В этом примере показано до и после:
+Устаревшее поле `spec.routing` удалено в пользу использования текущего раздела `spec.activeGate`. Пример показывает состояние до и после:
 
 **До**
 

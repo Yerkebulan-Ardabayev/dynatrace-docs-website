@@ -1,7 +1,6 @@
 ---
 title: Проверка подписей образов Dynatrace
 source: https://docs.dynatrace.com/managed/ingest-from/setup-on-k8s/guides/container-registries/verify-image-signature
-scraped: 2026-05-12T12:06:14.953057
 ---
 
 # Проверка подписей образов Dynatrace
@@ -11,37 +10,37 @@ scraped: 2026-05-12T12:06:14.953057
 * Чтение: 4 мин
 * Обновлено 16 апреля 2026 г.
 
-В современных условиях атаки на цепочку поставок стали распространённым вектором угроз. Наш подход к противодействию этому риску заключается в поставке неизменяемых и подписанных образов, которые служат основой для усиления мер безопасности.
+В современных условиях атаки на цепочку поставок стали распространённым вектором угроз. Наш подход к противодействию этому риску заключается в поставке неизменяемых и подписанных образов, что служит основой для усиления мер безопасности.
 
-На этой странице описан процесс проверки подписей образов Dynatrace, что позволяет установить подлинность и защитить целостность ПО.
+На этой странице описан процесс проверки подписей образов Dynatrace, который устанавливает подлинность и обеспечивает целостность программного обеспечения.
 
 ## Предварительные требования
 
-Прежде чем начать, убедитесь, что выполнены следующие предварительные требования:
+Прежде чем начать, убедись, что выполнены следующие предварительные требования:
 
-* Обязательно [Cosign](https://docs.sigstore.dev/cosign/system_config/installation/) для проверки подписи образов
-* Необязательно [GitHub CLI](https://cli.github.com/) для проверки происхождения SLSA через GitHub attestation API
-* Обязательно Доступ на чтение к репозиториям образов Dynatrace при использовании частного реестра
+* Обязательно: [Cosign﻿](https://docs.sigstore.dev/cosign/system_config/installation/) для проверки подписи образа
+* Опционально: [GitHub CLI﻿](https://cli.github.com/) для проверки происхождения SLSA через GitHub attestation API
+* Обязательно: доступ на чтение к репозиториям образов Dynatrace при использовании приватного реестра
 
 ## Проверка подписей образов с помощью Cosign
 
-В следующих разделах описано, как проверять подписи образов Dynatrace с помощью Cosign. Для простоты во всех примерах используются репозитории компонентов Dynatrace в публичном Amazon ECR, однако они верны и применимы к любому реестру, содержащему образы Dynatrace.
+В следующих разделах описано, как можно проверить подписи образов Dynatrace с помощью Cosign. Для простоты во всех примерах используются репозитории компонентов Dynatrace в публичном Amazon ECR, но они действительны и применимы к любому реестру, содержащему образы Dynatrace.
 
-Если вы ищете альтернативы Amazon ECR, см. [Поддерживаемые публичные реестры](/managed/ingest-from/setup-on-k8s/guides/container-registries/use-public-registry#supported-public-registries "Использование публичного реестра").
+Если нужны альтернативы Amazon ECR, см. [Поддерживаемые публичные реестры](/managed/ingest-from/setup-on-k8s/guides/container-registries/use-public-registry#supported-public-registries "Настройка Dynatrace Operator для использования образов из публичного реестра для себя самого и управляемых им компонентов. Это можно сделать вручную или через автоматическое определение из окружения Dynatrace.").
 
 Подписание образов выполняется только для образов Dynatrace из поддерживаемых публичных реестров. Образы во встроенном реестре Dynatrace не подписываются.
 
-Dynatrace подписывает образы с помощью Cosign, но в публичный журнал прозрачности Sigstore выгружаются данные о подписи только для Dynatrace Operator. Это позволяет выполнять стандартную проверку для Operator. Для остальных образов при проверке требуется флаг `--insecure-ignore-tlog`.
+Dynatrace подписывает образы с помощью Cosign, но только данные подписи для Dynatrace Operator загружаются в публичный журнал прозрачности Sigstore. Это позволяет выполнять стандартную проверку для Operator. Для остальных образов при проверке требуется флаг `--insecure-ignore-tlog`.
 
 ### Dynatrace Operator
 
-Dynatrace Operator является проектом с открытым исходным кодом, который размещается и собирается на GitHub. Поэтому подписание и проверка немного отличаются от других компонентов Dynatrace.
+Dynatrace Operator, это проект с открытым исходным кодом, размещённый и собираемый на GitHub. Из-за этого подписание и проверка немного отличаются от других компонентов Dynatrace.
 
 Проверка без ключа
 
-Проверка по открытому ключу
+Проверка по публичному ключу
 
-Следующая команда показывает способ проверки подписи образа Dynatrace Operator без ключа:
+Следующая команда показывает способ проверки подписи образа Dynatrace Operator без использования ключа:
 
 ```
 cosign verify --certificate-identity-regexp 'https://github\.com/Dynatrace/dynatrace-operator/\.github/workflows/.+' \
@@ -55,7 +54,7 @@ cosign verify --certificate-identity-regexp 'https://github\.com/Dynatrace/dynat
 public.ecr.aws/dynatrace/dynatrace-operator:<tag>
 ```
 
-Следующая команда показывает, как проверить подпись образа Dynatrace Operator с помощью открытого ключа соответствующего релиза GitHub:
+Следующая команда показывает, как проверить подпись образа Dynatrace Operator с помощью публичного ключа соответствующего релиза GitHub:
 
 ```
 cosign verify --key https://github.com/Dynatrace/dynatrace-operator/releases/download/<tag>/cosign.pub \
@@ -67,7 +66,7 @@ public.ecr.aws/dynatrace/dynatrace-operator:<tag>
 
 ### Dynatrace ActiveGate
 
-Следующая команда показывает, как проверить подпись образа Dynatrace ActiveGate с помощью открытого ключа из `ca.dynatrace.com`:
+Следующая команда показывает, как проверить подпись образа Dynatrace ActiveGate с помощью публичного ключа с `ca.dynatrace.com`:
 
 ```
 cosign verify --insecure-ignore-tlog --key https://ca.dynatrace.com/v1/cosign.pub \
@@ -79,7 +78,7 @@ public.ecr.aws/dynatrace/dynatrace-activegate:<tag>
 
 ### Dynatrace Code Modules
 
-Следующая команда показывает, как проверить подпись образа Dynatrace Code Modules с помощью открытого ключа из `ca.dynatrace.com`:
+Следующая команда показывает, как проверить подпись образа Dynatrace Code Modules с помощью публичного ключа с `ca.dynatrace.com`:
 
 ```
 cosign verify --insecure-ignore-tlog --key https://ca.dynatrace.com/v1/cosign.pub \
@@ -91,7 +90,7 @@ public.ecr.aws/dynatrace/dynatrace-codemodules:<tag>
 
 ### Dynatrace OneAgent
 
-Следующая команда показывает, как проверить подпись образа Dynatrace OneAgent с помощью открытого ключа из `ca.dynatrace.com`:
+Следующая команда показывает, как проверить подпись образа Dynatrace OneAgent с помощью публичного ключа с `ca.dynatrace.com`:
 
 ```
 cosign verify --insecure-ignore-tlog --key https://ca.dynatrace.com/v1/cosign.pub \
@@ -103,7 +102,7 @@ public.ecr.aws/dynatrace/dynatrace-oneagent:<tag>
 
 ### Dynatrace Kubernetes Node Configuration Collector
 
-Следующая команда показывает, как проверить подпись образа Dynatrace Kubernetes Node Configuration Collector с помощью открытого ключа из `ca.dynatrace.com`:
+Следующая команда показывает, как проверить подпись образа Dynatrace Kubernetes Node Configuration Collector с помощью публичного ключа с `ca.dynatrace.com`:
 
 ```
 cosign verify --insecure-ignore-tlog --key https://ca.dynatrace.com/v1/cosign.pub \
@@ -115,7 +114,7 @@ public.ecr.aws/dynatrace/dynatrace-k8s-node-config-collector:<tag>
 
 ### Dynatrace EdgeConnect
 
-Следующая команда показывает, как проверить подпись образа Dynatrace EdgeConnect с помощью открытого ключа из `ca.dynatrace.com`:
+Следующая команда показывает, как проверить подпись образа Dynatrace EdgeConnect с помощью публичного ключа с `ca.dynatrace.com`:
 
 ```
 cosign verify --insecure-ignore-tlog --key https://ca.dynatrace.com/v1/cosign-edgeconnect.pub \
@@ -125,13 +124,13 @@ cosign verify --insecure-ignore-tlog --key https://ca.dynatrace.com/v1/cosign-ed
 public.ecr.aws/dynatrace/edgeconnect:<tag>
 ```
 
-## Проверка аттестации спецификации состава ПО (SBOM)
+## Проверка Attestation Software Bill of Materials (SBOM)
 
-Аттестации позволяют пользователям подтвердить, что спецификация состава ПО (SBOM) поступает из доверенного источника в цепочке поставок ПО. Доверяя заявлению производителя образа контейнера о включённом ПО, пользователи могут безопасно интегрировать SBOM в свои рабочие процессы.
+Attestation позволяет пользователям убедиться, что Software Bill of Materials (SBOM) поступает из доверенного источника в цепочке поставок программного обеспечения. Доверяя заявлению производителя образа контейнера о включённом ПО, пользователи могут безопасно интегрировать SBOM в свои рабочие процессы.
 
 ### Dynatrace Operator
 
-Используйте следующую команду для проверки аттестации спецификации состава ПО (SBOM)[1](#fn-1-1-def) образа Dynatrace Operator[2](#fn-1-2-def):
+Используй следующую команду для проверки attestation Software Bill of Materials (SBOM)[1](#fn-1-1-def) образа Dynatrace Operator[2](#fn-1-2-def):
 
 ```
 cosign verify-attestation \
@@ -155,15 +154,15 @@ public.ecr.aws/dynatrace/dynatrace-operator:<tag>
 
 1
 
-Поддерживается с версии Dynatrace Operator 0.12.0.
+Поддерживается начиная с Dynatrace Operator версии 0.12.0.
 
 2
 
-Образ Dynatrace Operator доступен в Amazon ECR начиная с версии 1.0.0. Дополнительные сведения см. в разделе [Поддерживаемые публичные реестры](/managed/ingest-from/setup-on-k8s/guides/container-registries/use-public-registry#supported-public-registries "Использование публичного реестра").
+Образ Dynatrace Operator доступен в Amazon ECR начиная с версии 1.0.0. Подробнее см. [поддерживаемые публичные реестры](/managed/ingest-from/setup-on-k8s/guides/container-registries/use-public-registry#supported-public-registries "Настройка Dynatrace Operator для использования образов из публичного реестра для себя самого и управляемых им компонентов. Это можно сделать вручную или через автоматическое определение из окружения Dynatrace.").
 
-Извлечение файла SBOM из вывода проверки
+Получение файла SBOM из результата проверки
 
-SBOM в формате CycloneDX можно извлечь из аттестации in-toto, дополнив приведённую выше команду фильтрами `jq`[3](#fn-2-3-def):
+SBOM в формате CycloneDX можно извлечь из attestation in-toto, дополнив приведённую выше команду фильтрами `jq`[3](#fn-2-3-def):
 
 ```
 cosign verify-attestation \
@@ -191,7 +190,7 @@ jq '.payload | @base64d | fromjson | .predicate' > sbom.json
 
 3
 
-[jq CLI](https://jqlang.github.io/jq/) является полезным инструментом для работы с JSON.
+[jq CLI﻿](https://jqlang.github.io/jq/), это полезный инструмент для работы с JSON.
 
 Выполнение команды создаёт файл `sbom.json` в локальной файловой системе, содержащий SBOM образа Dynatrace Operator.
 
@@ -199,8 +198,8 @@ jq '.payload | @base64d | fromjson | .predicate' > sbom.json
 
 ActiveGate версии 1.303+
 
-Используйте следующую команду для проверки аттестации спецификации состава ПО (SBOM) образа Dynatrace ActiveGate.
-Обязательно укажите нужную архитектуру ЦП. Доступны варианты `amd64`, `arm64` и `s390x`.
+Используй следующую команду для проверки attestation Software Bill of Materials (SBOM) образа Dynatrace ActiveGate.
+Обязательно укажи нужную архитектуру CPU. Варианты: `amd64`, `arm64` и `s390x`.
 
 ```
 digest=$(docker manifest inspect public.ecr.aws/dynatrace/dynatrace-activegate:<tag> | \
@@ -218,9 +217,9 @@ cosign verify-attestation --insecure-ignore-tlog --key https://ca.dynatrace.com/
 public.ecr.aws/dynatrace/dynatrace-activegate@$digest
 ```
 
-Извлечение файла SBOM из вывода проверки
+Получение файла SBOM из результата проверки
 
-SBOM в формате CycloneDX можно извлечь из аттестации in-toto, дополнив приведённую выше команду фильтрами `jq`[1](#fn-3-1-def):
+SBOM в формате CycloneDX можно извлечь из attestation in-toto, дополнив приведённую выше команду фильтрами `jq`[1](#fn-3-1-def):
 
 ```
 cosign verify-attestation --insecure-ignore-tlog --key https://ca.dynatrace.com/v1/cosign.pub --type cyclonedx \
@@ -236,7 +235,7 @@ jq '.payload | @base64d | fromjson | .predicate' > sbom.json
 
 1
 
-[jq CLI](https://jqlang.github.io/jq/) является полезным инструментом для работы с JSON.
+[jq CLI﻿](https://jqlang.github.io/jq/), это полезный инструмент для работы с JSON.
 
 Выполнение команды создаёт файл `sbom.json` в локальной файловой системе, содержащий SBOM образа Dynatrace ActiveGate.
 
@@ -244,7 +243,7 @@ jq '.payload | @base64d | fromjson | .predicate' > sbom.json
 
 EdgeConnect версии 1.473+
 
-Используйте следующую команду для проверки аттестации спецификации состава ПО (SBOM) образа Dynatrace EdgeConnect.
+Используй следующую команду для проверки attestation Software Bill of Materials (SBOM) образа Dynatrace EdgeConnect.
 
 ```
 cosign verify-attestation \
@@ -258,9 +257,9 @@ cosign verify-attestation \
 public.ecr.aws/dynatrace/edgeconnect:<tag>
 ```
 
-Извлечение файла SBOM из вывода проверки
+Получение файла SBOM из результата проверки
 
-SBOM в формате CycloneDX можно извлечь из аттестации in-toto, дополнив приведённую выше команду фильтрами `jq`[1](#fn-4-1-def):
+SBOM в формате CycloneDX можно извлечь из attestation in-toto, дополнив приведённую выше команду фильтрами `jq`[1](#fn-4-1-def):
 
 ```
 cosign verify-attestation \
@@ -280,21 +279,21 @@ jq '.payload | @base64d | fromjson | .predicate' > sbom.json
 
 1
 
-[jq CLI](https://jqlang.github.io/jq/) является полезным инструментом для работы с JSON.
+[jq CLI﻿](https://jqlang.github.io/jq/), это полезный инструмент для работы с JSON.
 
 Выполнение команды создаёт файл `sbom.json` в локальной файловой системе, содержащий SBOM образа Dynatrace EdgeConnect.
 
-## Проверка аттестации происхождения сборки SLSA
+## Проверка Attestation происхождения сборки SLSA
 
-Аттестации происхождения сборки [SLSA](https://slsa.dev) предоставляют проверяемую запись о том, где и как был собран образ контейнера. Проверка этих аттестаций подтверждает, что образ создан ожидаемым исходным репозиторием и рабочим процессом сборки, защищая от подмены в процессе сборки и распространения.
+Attestation происхождения сборки [SLSA﻿](https://slsa.dev) предоставляет проверяемую запись о том, где и как был собран образ контейнера. Проверка таких attestation подтверждает, что образ был создан ожидаемым исходным репозиторием и рабочим процессом сборки, защищая от подделки в процессе сборки и распространения.
 
-### Dynatrace Operator
+### Оператор Dynatrace
 
 Cosign
 
 GitHub CLI
 
-Используйте следующую команду для проверки аттестации происхождения сборки SLSA[1](#fn-5-1-def) образа Dynatrace Operator[2](#fn-5-2-def):
+Используй следующую команду, чтобы проверить SLSA build provenance attestation[1](#fn-5-1-def) образа Dynatrace Operator[2](#fn-5-2-def):
 
 ```
 cosign verify-attestation \
@@ -318,17 +317,17 @@ public.ecr.aws/dynatrace/dynatrace-operator:<tag>
 
 1
 
-Поддерживается с версии Dynatrace Operator 1.9.0.
+Поддерживается начиная с Dynatrace Operator версии 1.9.0.
 
 2
 
-Образ Dynatrace Operator доступен в Amazon ECR начиная с версии 1.0.0. Дополнительные сведения см. в разделе [Поддерживаемые публичные реестры](/managed/ingest-from/setup-on-k8s/guides/container-registries/use-public-registry#supported-public-registries "Использование публичного реестра").
+Образ Dynatrace Operator доступен на Amazon ECR начиная с версии 1.0.0. Подробнее см. [поддерживаемые публичные реестры](/managed/ingest-from/setup-on-k8s/guides/container-registries/use-public-registry#supported-public-registries "Configure the Dynatrace Operator to use public registry images for itself and its managed components. This can be done manually or through automatic resolution from your Dynatrace environment.").
 
-В случае успеха Cosign подтверждает, что сертификат подписи, запись в журнале прозрачности и издатель OIDC действительны, а аттестация создана доверенным рабочим процессом сборки Dynatrace.
+При успешном выполнении Cosign подтверждает, что сертификат подписи, запись в журнале прозрачности и OIDC-издатель действительны, и что attestation создан доверенным build workflow Dynatrace.
 
-Извлечение сведений о происхождении из вывода проверки
+Получение сведений о происхождении из вывода проверки
 
-Полезную нагрузку [SLSA Provenance v1](https://slsa.dev/spec/v1.0/provenance) можно извлечь из аттестации in-toto, дополнив приведённую выше команду фильтрами `jq`[3](#fn-6-3-def):
+Полезную нагрузку [SLSA Provenance v1﻿](https://slsa.dev/spec/v1.0/provenance) можно извлечь из in-toto attestation, дополнив приведённую выше команду фильтрами `jq`[3](#fn-6-3-def):
 
 ```
 cosign verify-attestation \
@@ -356,11 +355,11 @@ jq '.payload | @base64d | fromjson'
 
 3
 
-[jq CLI](https://jqlang.github.io/jq/) является полезным инструментом для работы с JSON.
+[jq CLI﻿](https://jqlang.github.io/jq/), это полезный инструмент для работы с JSON.
 
-Вывод содержит полный предикат SLSA Provenance v1, включая исходный репозиторий, рабочий процесс сборки, git-коммит и вызов GitHub Actions, создавший образ.
+Вывод содержит полный предикат SLSA Provenance v1, включая репозиторий исходного кода, build workflow, git-коммит и вызов GitHub Actions, который создал образ.
 
-Кроме того, можно использовать [GitHub CLI](https://cli.github.com/) для проверки аттестации напрямую через GitHub attestation API:
+В качестве альтернативы можно использовать [GitHub CLI﻿](https://cli.github.com/), чтобы проверить attestation напрямую по GitHub attestation API:
 
 ```
 gh attestation verify \
@@ -374,10 +373,10 @@ gh attestation verify \
 oci://public.ecr.aws/dynatrace/dynatrace-operator:<tag>
 ```
 
-В случае успеха команда выводит `Verification succeeded!` и перечисляет совпавшие аттестации, включая репозиторий сборки, рабочий процесс и идентификацию подписавшего.
+При успешном выполнении команда выводит `Verification succeeded!` и перечисляет совпавшие attestation, включая репозиторий сборки, workflow и идентификатор подписавшего.
 
 ## Связанные темы
 
-* [Использование публичного реестра](/managed/ingest-from/setup-on-k8s/guides/container-registries/use-public-registry "Использование публичного реестра")
-* [Использование частного реестра](/managed/ingest-from/setup-on-k8s/guides/container-registries/use-private-registry "Использование частного реестра")
-* [Хранение образов Dynatrace в частных реестрах](/managed/ingest-from/setup-on-k8s/guides/container-registries/prepare-private-registry "Хранение образов Dynatrace в частных реестрах")
+* [Использование публичного реестра](/managed/ingest-from/setup-on-k8s/guides/container-registries/use-public-registry "Configure the Dynatrace Operator to use public registry images for itself and its managed components. This can be done manually or through automatic resolution from your Dynatrace environment.")
+* [Использование приватного реестра](/managed/ingest-from/setup-on-k8s/guides/container-registries/use-private-registry "Use a private registry")
+* [Хранение образов Dynatrace в приватных реестрах](/managed/ingest-from/setup-on-k8s/guides/container-registries/prepare-private-registry "Store Dynatrace images in private registries")
