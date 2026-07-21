@@ -1,19 +1,18 @@
 ---
 title: Azure credentials API - GET monitored services
 source: https://docs.dynatrace.com/managed/dynatrace-api/configuration-api/azure-credentials-api/get-services
-scraped: 2026-05-12T11:16:32.256513
 ---
 
 # Azure credentials API - GET monitored services
 
 # Azure credentials API - GET monitored services
 
-* Reference
-* Published Jul 28, 2022
+* Справочник
+* Опубликовано 28 июля 2022
 
-Возвращает список Azure-сервисов, которые мониторятся Azure-конфигурацией.
+Выводит список сервисов Azure, которые отслеживает конфигурация Azure.
 
-Запрос возвращает payload `application/json`.
+Запрос возвращает данные в формате `application/json`.
 
 |  |  |  |
 | --- | --- | --- |
@@ -22,15 +21,15 @@ scraped: 2026-05-12T11:16:32.256513
 
 ## Аутентификация
 
-Для выполнения этого запроса нужен access token со scope `ReadConfig`.
+Для выполнения этого запроса нужен токен доступа с областью действия `ReadConfig`.
 
-Как его получить и использовать, смотрите [Tokens and authentication](/managed/discover-dynatrace/references/dynatrace-api/basics/dynatrace-api-authentication).
+О том, как его получить и использовать, читай в разделе [Tokens and authentication](/managed/discover-dynatrace/references/dynatrace-api/basics/dynatrace-api-authentication).
 
 ## Параметры
 
-| Параметр | Тип | Описание | Где | Обязательный |
+| Параметр | Тип | Описание | В | Обязательный |
 | --- | --- | --- | --- | --- |
-| id | string | ID указанной конфигурации Azure credentials. | path | Required |
+| id | string | ID нужной конфигурации учётных данных Azure. | path | Обязательный |
 
 ## Ответ
 
@@ -38,7 +37,7 @@ scraped: 2026-05-12T11:16:32.256513
 
 | Код | Тип | Описание |
 | --- | --- | --- |
-| **200** | [AzureMonitoredServicesDto](#openapi-definition-AzureMonitoredServicesDto) | Успех |
+| **200** | [AzureMonitoredServicesDto](#openapi-definition-AzureMonitoredServicesDto) | Успешно |
 
 ### Объекты тела ответа
 
@@ -46,12 +45,12 @@ scraped: 2026-05-12T11:16:32.256513
 
 | Элемент | Тип | Описание |
 | --- | --- | --- |
-| metadata | [ConfigurationMetadata](#openapi-definition-ConfigurationMetadata) | Метаданные для отладки |
-| services | [AzureSupportingService[]](#openapi-definition-AzureSupportingService) | Список Azure-сервисов для мониторинга. Доступные сервисы перечислены операцией [/azure/supportedServices](https://dt-url.net/wt42sdq).  Для каждого сервиса можно указать список метрик и измерений. Список поддерживаемых метрик и измерений для конкретного сервиса можно посмотреть в [документации](https://dt-url.net/kx2351b).  Список метрик можно пропустить (задать null), тогда для мониторинга будет выбран рекомендуемый (по умолчанию) набор метрик и измерений. Для встроенных сервисов изменение списка метрик не поддерживается, поэтому он должен быть null. |
+| metadata | [ConfigurationMetadata](#openapi-definition-ConfigurationMetadata) | Метаданные, полезные для отладки |
+| services | [AzureSupportingService](#openapi-definition-AzureSupportingService)[] | Список отслеживаемых сервисов Azure. Доступные сервисы перечислены операцией [/azure/supportedServices﻿](https://dt-url.net/wt42sdq?dt=m).  Для каждого сервиса можно указать список метрик и измерений. Список поддерживаемых метрик и измерений для конкретного сервиса можно посмотреть в [документации﻿](https://dt-url.net/kx2351b?dt=m).  Список метрик можно пропустить (задать значение null), в этом случае для мониторинга будет выбран рекомендуемый (по умолчанию) набор метрик и измерений. Для встроенных сервисов изменение списка метрик не поддерживается, поэтому для них значение должно быть null. |
 
 #### Объект `ConfigurationMetadata`
 
-Метаданные для отладки
+Метаданные, полезные для отладки
 
 | Элемент | Тип | Описание |
 | --- | --- | --- |
@@ -61,23 +60,23 @@ scraped: 2026-05-12T11:16:32.256513
 
 #### Объект `AzureSupportingService`
 
-Сервис для мониторинга.
+Сервис, который нужно отслеживать.
 
 | Элемент | Тип | Описание |
 | --- | --- | --- |
-| monitoredMetrics | [AzureMonitoredMetric[]](#openapi-definition-AzureMonitoredMetric) | Список метрик для мониторинга этого сервиса. Он должен включать все рекомендуемые метрики. Если список null, для мониторинга используется рекомендуемый список метрик для этого сервиса. |
-| name | string | Имя сервиса. Допустимые имена поддерживаемых сервисов можно узнать через restAPI /azure/supportedServices |
+| monitoredMetrics | [AzureMonitoredMetric](#openapi-definition-AzureMonitoredMetric)[] | Список метрик, которые нужно отслеживать для этого сервиса. Он должен включать все рекомендуемые метрики. Если список равен null, для этого сервиса будет отслеживаться рекомендуемый список метрик. |
+| name | string | Название сервиса. Действующие поддерживаемые названия сервисов можно узнать с помощью /azure/supportedServices restAPI |
 
 #### Объект `AzureMonitoredMetric`
 
-Метрика сервиса для мониторинга.
+Метрика сервиса, которую нужно отслеживать.
 
 | Элемент | Тип | Описание |
 | --- | --- | --- |
-| dimensions | string[] | Список имён измерений метрики. Он должен включать все рекомендуемые измерения. |
-| name | string | Имя метрики сервиса. |
+| dimensions | string[] | Список названий измерений метрики. Он должен включать все рекомендуемые измерения. |
+| name | string | Название метрики сервиса. |
 
-### JSON-модели тела ответа
+### Модели тела ответа JSON
 
 ```
 {
@@ -183,6 +182,6 @@ scraped: 2026-05-12T11:16:32.256513
 }
 ```
 
-## Связанные темы
+## Похожие темы
 
-* [Microsoft Azure Integrations](/managed/ingest-from/microsoft-azure-services/azure-integrations "Настройка глубокого мониторинга кода Dynatrace в Azure с помощью OneAgent или OpenTelemetry.")
+* [Microsoft Azure Integrations](/managed/ingest-from/microsoft-azure-services/azure-integrations "Настрой глубокий мониторинг кода Dynatrace в Azure с помощью OneAgent или OpenTelemetry.")

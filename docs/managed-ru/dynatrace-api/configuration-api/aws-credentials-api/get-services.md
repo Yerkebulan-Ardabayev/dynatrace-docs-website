@@ -1,19 +1,18 @@
 ---
 title: AWS credentials API - GET monitored services
 source: https://docs.dynatrace.com/managed/dynatrace-api/configuration-api/aws-credentials-api/get-services
-scraped: 2026-05-12T11:15:10.208971
 ---
 
 # AWS credentials API - GET monitored services
 
 # AWS credentials API - GET monitored services
 
-* Reference
-* Published Jul 28, 2022
+* Справка
+* Опубликовано 28 июля 2022 г.
 
-Возвращает список AWS-сервисов, которые мониторятся AWS-конфигурацией.
+Выводит список сервисов AWS, которые отслеживаются конфигурацией AWS.
 
-Запрос возвращает payload `application/json`.
+Запрос выдаёт полезную нагрузку `application/json`.
 
 |  |  |  |
 | --- | --- | --- |
@@ -22,15 +21,15 @@ scraped: 2026-05-12T11:15:10.208971
 
 ## Аутентификация
 
-Для выполнения этого запроса нужен access token со scope `ReadConfig`.
+Для выполнения этого запроса нужен токен доступа с областью действия `ReadConfig`.
 
-Как его получить и использовать, смотрите [Tokens and authentication](/managed/discover-dynatrace/references/dynatrace-api/basics/dynatrace-api-authentication).
+О том, как получить и использовать такой токен, рассказано в разделе [Tokens and authentication](/managed/discover-dynatrace/references/dynatrace-api/basics/dynatrace-api-authentication).
 
 ## Параметры
 
-| Параметр | Тип | Описание | Где | Обязательный |
+| Параметр | Тип | Описание | Расположение | Обязательный |
 | --- | --- | --- | --- | --- |
-| id | string | ID указанной конфигурации AWS credentials. | path | Required |
+| id | string | ID указанной конфигурации учётных данных AWS. | path | Обязательный |
 
 ## Ответ
 
@@ -46,12 +45,12 @@ scraped: 2026-05-12T11:15:10.208971
 
 | Элемент | Тип | Описание |
 | --- | --- | --- |
-| metadata | [ConfigurationMetadata](#openapi-definition-ConfigurationMetadata) | Метаданные для отладки |
-| services | [AwsSupportingServiceConfig[]](#openapi-definition-AwsSupportingServiceConfig) | Список AWS-сервисов для мониторинга. Доступные сервисы перечислены операцией [/aws/supportedServices](https://dt-url.net/me02sh2).  Для каждого сервиса можно указать список метрик и измерений. Список поддерживаемых метрик и измерений для конкретного сервиса можно посмотреть в [документации](https://dt-url.net/r12v0pkl).  Список метрик можно пропустить (задать null), тогда для мониторинга будет выбран рекомендуемый (по умолчанию) набор метрик и измерений. Для встроенных сервисов изменение списка метрик не поддерживается, поэтому он должен быть null. |
+| metadata | [ConfigurationMetadata](#openapi-definition-ConfigurationMetadata) | Метаданные, полезные для отладки |
+| services | [AwsSupportingServiceConfig](#openapi-definition-AwsSupportingServiceConfig)[] | Список сервисов AWS, которые нужно отслеживать. Доступные сервисы перечислены в операции [/aws/supportedServices﻿](https://dt-url.net/me02sh2?dt=m).  Для каждого сервиса можно указать список метрик и измерений. Список поддерживаемых метрик и измерений для конкретного сервиса можно посмотреть в [документации﻿](https://dt-url.net/r12v0pkl?dt=m).  Список метрик можно пропустить (задать null), тогда для мониторинга будет выбран рекомендуемый (по умолчанию) набор метрик и измерений. Для встроенных сервисов настройка списка метрик не поддерживается, поэтому значение должно быть null. |
 
 #### Объект `ConfigurationMetadata`
 
-Метаданные для отладки
+Метаданные, полезные для отладки
 
 | Элемент | Тип | Описание |
 | --- | --- | --- |
@@ -61,24 +60,24 @@ scraped: 2026-05-12T11:15:10.208971
 
 #### Объект `AwsSupportingServiceConfig`
 
-Сервис для мониторинга.
+Сервис, который нужно отслеживать.
 
 | Элемент | Тип | Описание |
 | --- | --- | --- |
-| monitoredMetrics | [AwsSupportingServiceMetric[]](#openapi-definition-AwsSupportingServiceMetric) | Список метрик для мониторинга этого сервиса. Если список null, мониторится рекомендуемый список метрик для этого сервиса. |
-| name | string | Имя сервиса. Допустимые имена поддерживаемых сервисов можно узнать через restAPI /aws/supportedServices |
+| monitoredMetrics | [AwsSupportingServiceMetric](#openapi-definition-AwsSupportingServiceMetric)[] | Список метрик, которые нужно отслеживать для этого сервиса. Если список равен null, для этого сервиса будет отслеживаться рекомендуемый список метрик. |
+| name | string | Название сервиса. Допустимые поддерживаемые названия сервисов можно узнать через /aws/supportedServices restAPI |
 
 #### Объект `AwsSupportingServiceMetric`
 
-Метрика сервиса для мониторинга.
+Метрика сервиса, которую нужно отслеживать.
 
 | Элемент | Тип | Описание |
 | --- | --- | --- |
-| dimensions | string[] | Список имён измерений метрики. |
-| name | string | Имя метрики сервиса. |
-| statistic | string | Статистика (агрегация), используемая для метрики. Значение AVG\_MIN\_MAX это 3 статистики сразу: AVERAGE, MINIMUM и MAXIMUM Возможные значения: * `AVERAGE` * `AVG_MIN_MAX` * `MAXIMUM` * `MINIMUM` * `SAMPLE_COUNT` * `SUM` |
+| dimensions | string[] | Список названий измерений метрики. |
+| name | string | Название метрики сервиса. |
+| statistic | string | Статистика (агрегация), которая будет использоваться для метрики. Значение AVG\_MIN\_MAX это сразу 3 статистики: AVERAGE, MINIMUM и MAXIMUM. Элемент может принимать следующие значения * `AVERAGE` * `AVG_MIN_MAX` * `MAXIMUM` * `MINIMUM` * `SAMPLE_COUNT` * `SUM` |
 
-### JSON-модели тела ответа
+### Модели тела ответа JSON
 
 ```
 {

@@ -1,17 +1,16 @@
 ---
 title: Azure credentials API - DELETE credentials
 source: https://docs.dynatrace.com/managed/dynatrace-api/configuration-api/azure-credentials-api/delete-credentials
-scraped: 2026-05-12T11:16:36.595837
 ---
 
 # Azure credentials API - DELETE credentials
 
 # Azure credentials API - DELETE credentials
 
-* Reference
-* Published Feb 25, 2020
+* Справка
+* Опубликовано 25 февр. 2020 г.
 
-Удаляет указанную конфигурацию Azure credentials. Удаление нельзя отменить.
+Удаляет указанную конфигурацию учётных данных Azure. Отменить удаление нельзя.
 
 |  |  |  |
 | --- | --- | --- |
@@ -20,15 +19,15 @@ scraped: 2026-05-12T11:16:36.595837
 
 ## Аутентификация
 
-Для выполнения этого запроса нужен access token со scope `WriteConfig`.
+Для выполнения этого запроса нужен токен доступа с областью действия `WriteConfig`.
 
-Как его получить и использовать, смотрите [Tokens and authentication](/managed/discover-dynatrace/references/dynatrace-api/basics/dynatrace-api-authentication).
+О том, как получить и использовать токен, читай в разделе [Токены и аутентификация](/managed/discover-dynatrace/references/dynatrace-api/basics/dynatrace-api-authentication).
 
 ## Параметры
 
-| Параметр | Тип | Описание | Где | Обязательный |
+| Параметр | Тип | Описание | Расположение | Обязательный |
 | --- | --- | --- | --- | --- |
-| id | string | ID указанной конфигурации Azure credentials. | path | Required |
+| id | string | ID нужной конфигурации учётных данных Azure. | path | Обязательный |
 
 ## Ответ
 
@@ -42,26 +41,26 @@ scraped: 2026-05-12T11:16:36.595837
 
 #### Объект `AzureCredentials`
 
-Конфигурация Azure credentials уровня приложения.
+Конфигурация учётных данных уровня приложения Azure.
 
 | Элемент | Тип | Описание |
 | --- | --- | --- |
-| active | boolean | Мониторинг включён (`true`) или выключен (`false`).  Если не задано при создании, используется значение `true`.  Если поле опущено при обновлении, прежнее значение сохраняется. |
-| appId | string | ID приложения (также называется client ID).  Поле **обязательно** при создании новой конфигурации credentials.  Поле игнорируется при обновлении, прежнее значение сохраняется. |
-| autoTagging | boolean | Автоматический сбор Azure-тегов включён (`true`) или выключен (`false`). |
-| directoryId | string | ID каталога (также называется tenant ID).  Поле **обязательно** при создании новой конфигурации credentials.  Поле игнорируется при обновлении, прежнее значение сохраняется. |
-| id | string | ID сущности Dynatrace для конфигурации Azure credentials. |
-| key | string | Секретный ключ, связанный с ID приложения.  По соображениям безопасности GET-запросы возвращают это поле как `null`.  Отправляйте ключ при создании или обновлении конфигурации.  Поле **обязательно** при создании новой конфигурации credentials. Если поле опущено при обновлении, прежнее значение сохраняется. |
-| label | string | Уникальное имя конфигурации Azure credentials.  Допустимые символы: буквы, цифры и пробелы. Также разрешены специальные символы `.+-_`. |
-| metadata | [ConfigurationMetadata](#openapi-definition-ConfigurationMetadata) | Метаданные для отладки |
-| monitorOnlyExcludingTagPairs | [CloudTag[]](#openapi-definition-CloudTag) | Список Azure-тегов, исключаемых из мониторинга.  Можно указать до 20 тегов. Ресурс, помеченный *любым* из указанных тегов, не мониторится.  Применяется только когда параметр **monitorOnlyTaggedEntities** установлен в `true`. |
-| monitorOnlyTagPairs | [CloudTag[]](#openapi-definition-CloudTag) | Список Azure-тегов для мониторинга.  Можно указать до 20 тегов. Ресурс, помеченный *любым* из указанных тегов, мониторится.  Применяется только когда параметр **monitorOnlyTaggedEntities** установлен в `true`. |
-| monitorOnlyTaggedEntities | boolean | Мониторить только ресурсы с указанными Azure-тегами (`true`) или все ресурсы (`false`). |
-| supportingServices | [AzureSupportingService[]](#openapi-definition-AzureSupportingService) | **Устарело**. Для управления сервисами используйте операцию [/azure/credentials/{id}/services](https://dt-url.net/1w62s27). Встроенные сервисы здесь не поддерживаются.  Список Azure-сервисов для мониторинга. Доступные сервисы перечислены операцией [/azure/supportedServices](https://dt-url.net/wt42sdq).  Для каждого сервиса можно указать список метрик и измерений. Список поддерживаемых метрик и измерений для конкретного сервиса можно посмотреть в [документации](https://dt-url.net/kx2351b).  Список метрик можно пропустить (задать null), тогда для мониторинга будет выбран рекомендуемый (по умолчанию) набор метрик и измерений. |
+| active | boolean | Мониторинг включён (`true`) или выключен (`false`).  Если не задано при создании, используется значение `true`.  Если поле не указано при обновлении, старое значение сохраняется без изменений. |
+| appId | string | ID приложения (также называется client ID).  Поле **обязательно** при создании новой конфигурации учётных данных.  При обновлении поле игнорируется, старое значение сохраняется без изменений. |
+| autoTagging | boolean | Автоматический захват тегов Azure включён (`true`) или выключен (`false`). |
+| directoryId | string | ID каталога (также называется tenant ID).  Поле **обязательно** при создании новой конфигурации учётных данных.  При обновлении поле игнорируется, старое значение сохраняется без изменений. |
+| id | string | ID сущности Dynatrace конфигурации учётных данных Azure. |
+| key | string | Секретный ключ, связанный с ID приложения.  По соображениям безопасности GET-запросы возвращают это поле как `null`.  Ключ нужно передавать при создании или обновлении конфигурации.  Поле **обязательно** при создании новой конфигурации учётных данных. Если поле не указано при обновлении, старое значение сохраняется без изменений. |
+| label | string | Уникальное имя конфигурации учётных данных Azure.  Разрешены буквы, цифры и пробелы, а также специальные символы `.+-_`. |
+| metadata | [ConfigurationMetadata](#openapi-definition-ConfigurationMetadata) | Метаданные, полезные для отладки |
+| monitorOnlyExcludingTagPairs | [CloudTag](#openapi-definition-CloudTag)[] | Список тегов Azure, которые нужно исключить из мониторинга.  Можно указать до 20 тегов. Ресурс, помеченный *любым* из указанных тегов, не будет мониториться.  Применимо только если параметр **monitorOnlyTaggedEntities** установлен в `true`. |
+| monitorOnlyTagPairs | [CloudTag](#openapi-definition-CloudTag)[] | Список тегов Azure, которые нужно мониторить.  Можно указать до 20 тегов. Ресурс, помеченный *любым* из указанных тегов, мониторится.  Применимо только если параметр **monitorOnlyTaggedEntities** установлен в `true`. |
+| monitorOnlyTaggedEntities | boolean | Мониторить только ресурсы с указанными тегами Azure (`true`) или все ресурсы (`false`). |
+| supportingServices | [AzureSupportingService](#openapi-definition-AzureSupportingService)[] | **Устарело**. Для управления сервисами используй операцию [/azure/credentials/{id}/services﻿](https://dt-url.net/1w62s27?dt=m). Встроенные сервисы здесь не поддерживаются.  Список сервисов Azure, которые нужно мониторить. Доступные сервисы перечислены операцией [/azure/supportedServices﻿](https://dt-url.net/wt42sdq?dt=m).  Для каждого сервиса можно указать список метрик и измерений. Список поддерживаемых метрик и измерений для конкретного сервиса можно посмотреть в [документации﻿](https://dt-url.net/kx2351b?dt=m).  Список метрик можно не указывать (значение null), тогда для мониторинга выбирается рекомендуемый (стандартный) набор метрик и измерений. |
 
 #### Объект `ConfigurationMetadata`
 
-Метаданные для отладки
+Метаданные, полезные для отладки
 
 | Элемент | Тип | Описание |
 | --- | --- | --- |
@@ -76,27 +75,27 @@ scraped: 2026-05-12T11:16:36.595837
 | Элемент | Тип | Описание |
 | --- | --- | --- |
 | name | string | Имя тега. |
-| value | string | Значение тега.  Если задано `null` или `""`, мониторятся ресурсы с любым значением тега. |
+| value | string | Значение тега.  Если установлено в `null` или `""`, мониторятся ресурсы с любым значением тега. |
 
 #### Объект `AzureSupportingService`
 
-Сервис для мониторинга.
+Сервис, который нужно мониторить.
 
 | Элемент | Тип | Описание |
 | --- | --- | --- |
-| monitoredMetrics | [AzureMonitoredMetric[]](#openapi-definition-AzureMonitoredMetric) | Список метрик для мониторинга этого сервиса. Он должен включать все рекомендуемые метрики. Если список null, для мониторинга используется рекомендуемый список метрик для этого сервиса. |
-| name | string | Имя сервиса. Допустимые имена поддерживаемых сервисов можно узнать через restAPI /azure/supportedServices |
+| monitoredMetrics | [AzureMonitoredMetric](#openapi-definition-AzureMonitoredMetric)[] | Список метрик, которые нужно мониторить для этого сервиса. Должен включать все рекомендуемые метрики. Если список равен null, для мониторинга будет использован рекомендуемый список метрик для этого сервиса. |
+| name | string | Имя сервиса. Допустимые поддерживаемые имена сервисов можно узнать через /azure/supportedServices restAPI |
 
 #### Объект `AzureMonitoredMetric`
 
-Метрика сервиса для мониторинга.
+Метрика сервиса, которую нужно мониторить.
 
 | Элемент | Тип | Описание |
 | --- | --- | --- |
-| dimensions | string[] | Список имён измерений метрики. Он должен включать все рекомендуемые измерения. |
+| dimensions | string[] | Список имён измерений метрики. Должен включать все рекомендуемые измерения. |
 | name | string | Имя метрики сервиса. |
 
-### JSON-модели тела ответа
+### Модели тела ответа JSON
 
 ```
 {
@@ -272,9 +271,9 @@ scraped: 2026-05-12T11:16:36.595837
 
 ## Пример
 
-В этом примере запрос удаляет Azure credentials уровня приложения из примера [POST request](/managed/dynatrace-api/configuration-api/azure-credentials-api/post-new-credentials#example "Создание конфигурации Azure credentials через Dynatrace API."). Код ответа **204** означает, что удаление прошло успешно.
+В этом примере запрос удаляет учётные данные уровня приложения Azure из [примера POST-запроса](/managed/dynatrace-api/configuration-api/azure-credentials-api/post-new-credentials#example "Создание конфигурации учётных данных Azure через Dynatrace API."). Код ответа **204** означает, что удаление выполнено успешно.
 
-API-токен передаётся в заголовке **Authorization**.
+Токен API передаётся в заголовке **Authorization**.
 
 #### Curl
 
@@ -300,6 +299,6 @@ https://mySampleEnv.live.dynatrace.com/api/config/v1/azure/credentials/AZURE_CRE
 
 204
 
-## Связанные темы
+## Похожие темы
 
-* [Microsoft Azure Integrations](/managed/ingest-from/microsoft-azure-services/azure-integrations "Настройка глубокого мониторинга кода Dynatrace в Azure с помощью OneAgent или OpenTelemetry.")
+* [Интеграции Microsoft Azure](/managed/ingest-from/microsoft-azure-services/azure-integrations "Настройка глубокого мониторинга кода Dynatrace в Azure с помощью OneAgent или OpenTelemetry.")

@@ -1,22 +1,21 @@
 ---
 title: Metric events anomaly detection API - POST an event
 source: https://docs.dynatrace.com/managed/dynatrace-api/configuration-api/anomaly-detection-api/anomaly-detection-api-metric-events/post-event
-scraped: 2026-05-12T12:15:40.054695
 ---
 
 # Metric events anomaly detection API - POST an event
 
 # Metric events anomaly detection API - POST an event
 
-* Reference
-* Updated on Apr 26, 2023
-* Deprecated
+* Справка
+* Обновлено 26 апр. 2023 г.
+* Устарело
 
-Этот API устарел. Используйте [Settings API](/managed/dynatrace-api/environment-api/settings "Узнайте, что предлагает Dynatrace Settings API."). Ищите schema **Metric events** (`builtin:anomaly-detection.metric-events`).
+Этот API устарел. Вместо него используй [Settings API](/managed/dynatrace-api/environment-api/settings "Find out what the Dynatrace Settings API offers."). Ищи схему **Metric events** (`builtin:anomaly-detection.metric-events`).
 
-Создаёт новое правило metric event.
+Создаёт новое правило метрик-события.
 
-Запрос принимает и возвращает payload `application/json`.
+Запрос принимает и возвращает данные в формате `application/json`.
 
 |  |  |  |
 | --- | --- | --- |
@@ -25,52 +24,52 @@ scraped: 2026-05-12T12:15:40.054695
 
 ## Аутентификация
 
-Для выполнения этого запроса нужен access token со scope `WriteConfig`.
+Для выполнения этого запроса нужен токен доступа со scope `WriteConfig`.
 
-Как его получить и использовать, смотрите [Tokens and authentication](/managed/discover-dynatrace/references/dynatrace-api/basics/dynatrace-api-authentication).
+О том, как получить и использовать токен, читай в разделе [Tokens and authentication](/managed/discover-dynatrace/references/dynatrace-api/basics/dynatrace-api-authentication).
 
 ## Параметры
 
-Все JSON-модели, зависящие от типа модели, смотрите в [JSON models](/managed/dynatrace-api/configuration-api/anomaly-detection-api/anomaly-detection-api-metric-events/json-models "Изучите вариации моделей в правилах metric event через Dynatrace API.").
+Все модели JSON, зависящие от типа модели, перечислены в разделе [JSON models](/managed/dynatrace-api/configuration-api/anomaly-detection-api/anomaly-detection-api-metric-events/json-models "Learn the variations of models in metric event rules via the Dynatrace API.").
 
-| Параметр | Тип | Описание | Где | Обязательный |
+| Параметр | Тип | Описание | В | Обязательный |
 | --- | --- | --- | --- | --- |
-| body | [MetricEvent](#openapi-definition-MetricEvent) | JSON-тело запроса. Содержит параметры нового metric event. | body | Optional |
+| body | [MetricEvent](#openapi-definition-MetricEvent) | Тело JSON запроса. Содержит параметры нового метрик-события. | body | Опционально |
 
 ### Объекты тела запроса
 
 #### Объект `MetricEvent`
 
-Конфигурация metric event.
+Конфигурация метрик-события.
 
 | Элемент | Тип | Описание | Обязательный |
 | --- | --- | --- | --- |
-| aggregationType | string | Как точки метрики агрегируются для оценки.  Временной ряд должен поддерживать эту агрегацию. Возможные значения: * `AVG` * `COUNT` * `MAX` * `MEDIAN` * `MIN` * `P90` * `SUM` * `VALUE` | Optional |
-| alertingScope | [MetricEventAlertingScope[]](#openapi-definition-MetricEventAlertingScope) | Определяет область действия metric event. Допускается только один фильтр на каждый тип фильтра, кроме тегов, где допускается до 3. Фильтры объединяются по конъюнкции. | Optional |
-| description | string | Описание metric event. | Required |
-| disabledReason | string | Причина автоматического отключения.  `NONE` означает, что конфигурация не была отключена автоматически. Возможные значения: * `METRIC_DEFINITION_INCONSISTENCY` * `NONE` * `TOO_MANY_DIMS` | Optional |
-| enabled | boolean | Metric event включён (`true`) или отключён (`false`). | Required |
-| id | string | ID metric event. | Optional |
-| metadata | [ConfigurationMetadata](#openapi-definition-ConfigurationMetadata) | Метаданные, полезные для отладки | Optional |
-| metricDimensions | [MetricEventDimensions[]](#openapi-definition-MetricEventDimensions) | Определяет измерения метрики, по которым оповещать. Фильтры объединяются по конъюнкции. | Optional |
-| metricId | string | ID метрики, оцениваемой metric event. | Optional |
-| metricSelector | string | Селектор метрики, который должен быть выполнен. | Optional |
-| monitoringStrategy | [MetricEventMonitoringStrategy](#openapi-definition-MetricEventMonitoringStrategy) | Стратегия мониторинга для конфигурации metric event.  Это базовая версия стратегии мониторинга, в зависимости от типа фактический JSON может содержать дополнительные поля. | Required |
-| name | string | Имя metric event, отображаемое в UI. | Required |
-| primaryDimensionKey | string | Определяет, какой ключ измерения использовать для **alertingScope**. | Optional |
-| queryOffset | integer | Определяет смещение запроса для адаптации интервала оценки под известную задержку метрики. | Optional |
-| severity | string | Тип события для срабатывания при нарушении порога.  Тип `CUSTOM_ALERT` не коррелируется с другими оповещениями. Тип `INFO` не открывает проблему. Возможные значения: * `AVAILABILITY` * `CUSTOM_ALERT` * `ERROR` * `INFO` * `PERFORMANCE` * `RESOURCE_CONTENTION` | Optional |
-| warningReason | string | Причина предупреждения, установленного на конфигурацию.  `NONE` означает, что у конфигурации нет предупреждений. Возможные значения: * `NONE` | Optional |
+| aggregationType | string | Способ агрегации точек данных метрики для оценки. Временной ряд должен поддерживать эту агрегацию. Элемент может принимать значения * `AVG` * `COUNT` * `MAX` * `MEDIAN` * `MIN` * `P90` * `SUM` * `VALUE` | Опционально |
+| alertingScope | [MetricEventAlertingScope](#openapi-definition-MetricEventAlertingScope)[] | Определяет область действия метрик-события. Допустим только один фильтр на тип фильтра, кроме тегов, где допускается до 3. Фильтры комбинируются через конъюнкцию. | Опционально |
+| description | string | Описание метрик-события. | Обязательно |
+| disabledReason | string | Причина автоматического отключения. Значение `NONE` означает, что конфигурация не была отключена автоматически. Элемент может принимать значения * `METRIC_DEFINITION_INCONSISTENCY` * `NONE` * `TOO_MANY_DIMS` | Опционально |
+| enabled | boolean | Метрик-событие включено (`true`) или отключено (`false`). | Обязательно |
+| id | string | ID метрик-события. | Опционально |
+| metadata | [ConfigurationMetadata](#openapi-definition-ConfigurationMetadata) | Метаданные, полезные для отладки | Опционально |
+| metricDimensions | [MetricEventDimensions](#openapi-definition-MetricEventDimensions)[] | Определяет измерения метрики, по которым срабатывает оповещение. Фильтры комбинируются через конъюнкцию. | Опционально |
+| metricId | string | ID метрики, оцениваемой метрик-событием. | Опционально |
+| metricSelector | string | Селектор метрики, который нужно выполнить. | Опционально |
+| monitoringStrategy | [MetricEventMonitoringStrategy](#openapi-definition-MetricEventMonitoringStrategy) | Стратегия мониторинга для конфигурации метрик-события. Это базовая версия стратегии мониторинга, в зависимости от типа фактическая модель JSON может содержать дополнительные поля. | Обязательно |
+| name | string | Название метрик-события, отображаемое в интерфейсе. | Обязательно |
+| primaryDimensionKey | string | Определяет, какой ключ измерения нужно использовать для **alertingScope**. | Опционально |
+| queryOffset | integer | Определяет смещение запроса для адаптации периода оценки под известную задержку метрики. | Опционально |
+| severity | string | Тип события, срабатывающего при нарушении порога. Тип `CUSTOM_ALERT` не коррелирует с другими оповещениями. Тип `INFO` не открывает проблему. Элемент может принимать значения * `AVAILABILITY` * `CUSTOM_ALERT` * `ERROR` * `INFO` * `PERFORMANCE` * `RESOURCE_CONTENTION` | Опционально |
+| warningReason | string | Причина предупреждения, установленного для конфигурации. Значение `NONE` означает, что у конфигурации нет предупреждений. Элемент может принимать значения * `NONE` | Опционально |
 
 #### Объект `MetricEventAlertingScope`
 
-Одиночный фильтр области действия оповещения.
+Один фильтр для области действия оповещения.
 
-Фактический набор полей зависит от типа фильтра. Список фактических объектов смотрите в описании поля **filterType** или в [Metric events anomaly detection API - JSON models](https://dt-url.net/ql63sap).
+Фактический набор полей зависит от типа фильтра. Список фактических объектов см. в описании поля **filterType** или в разделе [Metric events anomaly detection API - JSON models﻿](https://dt-url.net/ql63sap?dt=m).
 
 | Элемент | Тип | Описание | Обязательный |
 | --- | --- | --- | --- |
-| filterType | string | Определяет фактический набор полей в зависимости от значения. Смотрите один из следующих объектов:  * `ENTITY_ID` -> EntityIdAlertingScope * `MANAGEMENT_ZONE` -> ManagementZoneAlertingScope * `TAG` -> TagFilterAlertingScope * `NAME` -> NameAlertingScope * `CUSTOM_DEVICE_GROUP_NAME` -> CustomDeviceGroupNameAlertingScope * `HOST_GROUP_NAME` -> HostGroupNameAlertingScope * `HOST_NAME` -> HostNameAlertingScope * `PROCESS_GROUP_ID` -> ProcessGroupIdAlertingScope * `PROCESS_GROUP_NAME` -> ProcessGroupNameAlertingScope Возможные значения: * `CUSTOM_DEVICE_GROUP_NAME` * `ENTITY_ID` * `HOST_GROUP_NAME` * `HOST_NAME` * `MANAGEMENT_ZONE` * `NAME` * `PROCESS_GROUP_ID` * `PROCESS_GROUP_NAME` * `TAG` | Required |
+| filterType | string | Определяет фактический набор полей в зависимости от значения. См. один из следующих объектов:  * `ENTITY_ID` -> EntityIdAlertingScope * `MANAGEMENT_ZONE` -> ManagementZoneAlertingScope * `TAG` -> TagFilterAlertingScope * `NAME` -> NameAlertingScope * `CUSTOM_DEVICE_GROUP_NAME` -> CustomDeviceGroupNameAlertingScope * `HOST_GROUP_NAME` -> HostGroupNameAlertingScope * `HOST_NAME` -> HostNameAlertingScope * `PROCESS_GROUP_ID` -> ProcessGroupIdAlertingScope * `PROCESS_GROUP_NAME` -> ProcessGroupNameAlertingScope Элемент может принимать значения * `CUSTOM_DEVICE_GROUP_NAME` * `ENTITY_ID` * `HOST_GROUP_NAME` * `HOST_NAME` * `MANAGEMENT_ZONE` * `NAME` * `PROCESS_GROUP_ID` * `PROCESS_GROUP_NAME` * `TAG` | Обязательно |
 
 #### Объект `ConfigurationMetadata`
 
@@ -78,35 +77,35 @@ scraped: 2026-05-12T12:15:40.054695
 
 | Элемент | Тип | Описание | Обязательный |
 | --- | --- | --- | --- |
-| clusterVersion | string | Версия Dynatrace. | Optional |
-| configurationVersions | integer[] | Отсортированный список номеров версий конфигурации. | Optional |
-| currentConfigurationVersions | string[] | Отсортированный список номеров версий конфигурации. | Optional |
+| clusterVersion | string | Версия Dynatrace. | Опционально |
+| configurationVersions | integer[] | Отсортированный список номеров версий конфигурации. | Опционально |
+| currentConfigurationVersions | string[] | Отсортированный список номеров версий конфигурации. | Опционально |
 
 #### Объект `MetricEventDimensions`
 
-Одиночный фильтр измерений метрик.
+Один фильтр для измерений метрики.
 
-Фактический набор полей зависит от типа фильтра. Список фактических объектов смотрите в описании поля **filterType** или в [Metric events anomaly detection API - JSON models](https://dt-url.net/ql63sap).
+Фактический набор полей зависит от типа фильтра. Список фактических объектов см. в описании поля **filterType** или в разделе [Metric events anomaly detection API - JSON models﻿](https://dt-url.net/ql63sap?dt=m).
 
 | Элемент | Тип | Описание | Обязательный |
 | --- | --- | --- | --- |
-| filterType | string | Определяет фактический набор полей в зависимости от значения. Смотрите один из следующих объектов:  * `ENTITY` -> MetricEventEntityDimensions * `STRING` -> MetricEventStringDimensions Возможные значения: * `ENTITY` * `STRING` | Required |
-| key | string | Ключ измерений метрики. | Optional |
+| filterType | string | Определяет фактический набор полей в зависимости от значения. См. один из следующих объектов:  * `ENTITY` -> MetricEventEntityDimensions * `STRING` -> MetricEventStringDimensions Элемент может принимать значения * `ENTITY` * `STRING` | Обязательно |
+| key | string | Ключ измерения на метрике. | Опционально |
 
 #### Объект `MetricEventMonitoringStrategy`
 
-Стратегия мониторинга для конфигурации metric event.
+Стратегия мониторинга для конфигурации метрик-события.
 
 Это базовая версия стратегии мониторинга, в зависимости от типа
-фактический JSON может содержать дополнительные поля.
+фактическая модель JSON может содержать дополнительные поля.
 
 | Элемент | Тип | Описание | Обязательный |
 | --- | --- | --- | --- |
-| type | string | Определяет фактический набор полей в зависимости от значения. Смотрите один из следующих объектов:  * `STATIC_THRESHOLD` -> MetricEventStaticThresholdMonitoringStrategy * `AUTO_ADAPTIVE_BASELINE` -> MetricEventAutoAdaptiveBaselineMonitoringStrategy Возможные значения: * `AUTO_ADAPTIVE_BASELINE` * `STATIC_THRESHOLD` | Required |
+| type | string | Определяет фактический набор полей в зависимости от значения. См. один из следующих объектов:  * `STATIC_THRESHOLD` -> MetricEventStaticThresholdMonitoringStrategy * `AUTO_ADAPTIVE_BASELINE` -> MetricEventAutoAdaptiveBaselineMonitoringStrategy Элемент может принимать значения * `AUTO_ADAPTIVE_BASELINE` * `STATIC_THRESHOLD` | Обязательно |
 
-### JSON-модель тела запроса
+### Модель JSON тела запроса
 
-Это модель тела запроса со всеми возможными элементами. При использовании в реальном запросе её нужно адаптировать.
+Это модель тела запроса, показывающая возможные элементы. Её нужно адаптировать для использования в реальном запросе.
 
 ```
 {
@@ -314,8 +313,8 @@ scraped: 2026-05-12T12:15:40.054695
 
 | Код | Тип | Описание |
 | --- | --- | --- |
-| **201** | [EntityShortRepresentation](#openapi-definition-EntityShortRepresentation) | Успех. Metric event создан. Ответ содержит ID и имя только что созданного metric event |
-| **400** | [ErrorEnvelope](#openapi-definition-ErrorEnvelope) | Сбой. Невалидный ввод. |
+| **201** | [EntityShortRepresentation](#openapi-definition-EntityShortRepresentation) | Успех. Метрик-событие создано. Ответ содержит ID и название только что созданного метрик-события |
+| **400** | [ErrorEnvelope](#openapi-definition-ErrorEnvelope) | Ошибка. Входные данные недействительны. |
 
 ### Объекты тела ответа
 
@@ -340,7 +339,7 @@ scraped: 2026-05-12T12:15:40.054695
 | Элемент | Тип | Описание |
 | --- | --- | --- |
 | code | integer | HTTP-код статуса |
-| constraintViolations | [ConstraintViolation[]](#openapi-definition-ConstraintViolation) | Список нарушений ограничений |
+| constraintViolations | [ConstraintViolation](#openapi-definition-ConstraintViolation)[] | Список нарушений ограничений |
 | message | string | Сообщение об ошибке |
 
 #### Объект `ConstraintViolation`
@@ -351,10 +350,10 @@ scraped: 2026-05-12T12:15:40.054695
 | --- | --- | --- |
 | location | string | - |
 | message | string | - |
-| parameterLocation | string | -Возможные значения: * `HEADER` * `PATH` * `PAYLOAD_BODY` * `QUERY` |
+| parameterLocation | string | -Элемент может принимать следующие значения * `HEADER` * `PATH` * `PAYLOAD_BODY` * `QUERY` |
 | path | string | - |
 
-### JSON-модели тела ответа
+### Модели тела ответа JSON
 
 ```
 {
@@ -432,9 +431,9 @@ scraped: 2026-05-12T12:15:40.054695
 }
 ```
 
-## Validate payload
+## Проверка payload
 
-Рекомендуется валидировать payload перед отправкой реального запроса. Код ответа **204** означает валидный payload.
+Рекомендуется проверить payload перед отправкой с фактическим запросом. Код ответа **204** означает, что payload корректен.
 
 Запрос принимает payload `application/json`.
 
@@ -445,9 +444,9 @@ scraped: 2026-05-12T12:15:40.054695
 
 ### Аутентификация
 
-Для выполнения этого запроса нужен access token со scope `WriteConfig`.
+Для выполнения этого запроса нужен токен доступа с областью действия `WriteConfig`.
 
-Как его получить и использовать, смотрите [Tokens and authentication](/managed/discover-dynatrace/references/dynatrace-api/basics/dynatrace-api-authentication).
+О том, как получить и использовать его, читай в разделе [Токены и аутентификация](/managed/discover-dynatrace/references/dynatrace-api/basics/dynatrace-api-authentication).
 
 ### Ответ
 
@@ -455,8 +454,8 @@ scraped: 2026-05-12T12:15:40.054695
 
 | Код | Тип | Описание |
 | --- | --- | --- |
-| **204** | - | Validated. Переданная конфигурация валидна. Ответ без тела. |
-| **400** | [ErrorEnvelope](#openapi-definition-ErrorEnvelope) | Сбой. Невалидный ввод. |
+| **204** | - | Проверено. Отправленная конфигурация корректна. Ответ не содержит тела. |
+| **400** | [ErrorEnvelope](#openapi-definition-ErrorEnvelope) | Ошибка. Входные данные некорректны. |
 
 #### Объекты тела ответа
 
@@ -471,7 +470,7 @@ scraped: 2026-05-12T12:15:40.054695
 | Элемент | Тип | Описание |
 | --- | --- | --- |
 | code | integer | HTTP-код статуса |
-| constraintViolations | [ConstraintViolation[]](#openapi-definition-ConstraintViolation) | Список нарушений ограничений |
+| constraintViolations | [ConstraintViolation](#openapi-definition-ConstraintViolation)[] | Список нарушений ограничений |
 | message | string | Сообщение об ошибке |
 
 #### Объект `ConstraintViolation`
@@ -482,10 +481,10 @@ scraped: 2026-05-12T12:15:40.054695
 | --- | --- | --- |
 | location | string | - |
 | message | string | - |
-| parameterLocation | string | -Возможные значения: * `HEADER` * `PATH` * `PAYLOAD_BODY` * `QUERY` |
+| parameterLocation | string | -Элемент может принимать следующие значения * `HEADER` * `PATH` * `PAYLOAD_BODY` * `QUERY` |
 | path | string | - |
 
-#### JSON-модели тела ответа
+#### Модели тела ответа JSON
 
 ```
 {
@@ -545,11 +544,11 @@ scraped: 2026-05-12T12:15:40.054695
 
 ## Пример
 
-В этом примере запрос создаёт **custom alert**, который срабатывает, если **free disk space** падает ниже **3%** в **3** из **5** замеров. Область действия оповещения это **все** хосты.
+В этом примере запрос создаёт **пользовательское оповещение** (custom alert), которое срабатывает, если **свободное место на диске** опускается ниже **3%** в **3** из **5** выборок. Область действия оповещения, все хосты.
 
-API-токен передаётся в заголовке **Authorization**.
+Токен API передаётся в заголовке **Authorization**.
 
-Вы можете скачать или скопировать пример тела запроса, чтобы попробовать его самостоятельно.
+Можно скачать или скопировать тело примера запроса, чтобы опробовать его самостоятельно.
 
 #### Curl
 
@@ -727,6 +726,6 @@ https://mySampleEnv.live.dynatrace.com/api/config/v1/anomalyDetection/metricEven
 
 Metric event rule - new
 
-## Связанные темы
+## Похожие темы
 
-* [Davis® AI](/managed/dynatrace-intelligence "Познакомьтесь с возможностями Davis AI.")
+* [Davis® AI](/managed/dynatrace-intelligence "Learn how Davis® AI detects performance anomalies, identifies root causes, and uses AI models for adaptive thresholds across your environment.")

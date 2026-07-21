@@ -1,21 +1,20 @@
 ---
 title: AWS credentials API - POST new credentials
 source: https://docs.dynatrace.com/managed/dynatrace-api/configuration-api/aws-credentials-api/post-new-credentials
-scraped: 2026-05-12T11:15:08.851216
 ---
 
 # AWS credentials API - POST new credentials
 
 # AWS credentials API - POST new credentials
 
-* Reference
-* Published Jun 27, 2019
+* Справка
+* Опубликовано 27 июня 2019
 
-Создаёт новую конфигурацию AWS credentials. Проверьте статус подключения для этих credentials через 10 минут запросом [GET credentials](/managed/dynatrace-api/configuration-api/aws-credentials-api/get-credentials "Просмотр конфигурации AWS credentials через Dynatrace API.").
+Создаёт новую конфигурацию учётных данных AWS. Статус подключения для этих учётных данных нужно проверять через 10 минут с помощью запроса [GET credentials](/managed/dynatrace-api/configuration-api/aws-credentials-api/get-credentials "View an AWS credentials configuration via the Dynatrace API.").
 
-В теле не должно быть ID. Dynatrace Server назначает ID автоматически.
+Тело запроса не должно содержать ID. Сервер Dynatrace назначает ID автоматически.
 
-Запрос принимает и возвращает payload `application/json`.
+Запрос принимает и возвращает содержимое в формате `application/json`.
 
 |  |  |  |
 | --- | --- | --- |
@@ -24,105 +23,105 @@ scraped: 2026-05-12T11:15:08.851216
 
 ## Аутентификация
 
-Для выполнения этого запроса нужен access token со scope `WriteConfig`.
+Для выполнения этого запроса нужен токен доступа с областью действия `WriteConfig`.
 
-Как его получить и использовать, смотрите [Tokens and authentication](/managed/discover-dynatrace/references/dynatrace-api/basics/dynatrace-api-authentication).
+Подробнее о том, как получить и использовать токен, см. в разделе [Tokens and authentication](/managed/discover-dynatrace/references/dynatrace-api/basics/dynatrace-api-authentication).
 
 ## Параметры
 
-| Параметр | Тип | Описание | Где | Обязательный |
+| Параметр | Тип | Описание | В | Обязательный |
 | --- | --- | --- | --- | --- |
-| body | [AwsCredentialsConfig](#openapi-definition-AwsCredentialsConfig) | JSON-тело запроса. Содержит параметры новой конфигурации AWS credentials. | body | Optional |
+| body | [AwsCredentialsConfig](#openapi-definition-AwsCredentialsConfig) | Тело JSON запроса. Содержит параметры новой конфигурации учётных данных AWS. | body | Необязательный |
 
 ### Объекты тела запроса
 
 #### Объект `AwsCredentialsConfig`
 
-Конфигурация AWS credentials.
+Конфигурация учётных данных AWS.
 
 | Элемент | Тип | Описание | Обязательный |
 | --- | --- | --- | --- |
-| authenticationData | [AwsAuthenticationData](#openapi-definition-AwsAuthenticationData) | Credentials для AWS-аутентификации. | Required |
-| connectionStatus | string | Статус подключения к AWS-окружению.  * `CONNECTED`: было подключение в течение последних 10 минут. * `DISCONNECTED`: возникла проблема при установке подключения с этими credentials. Проверьте корректность данных. * `UNINITIALIZED`: успешное подключение для этих credentials никогда не устанавливалось. Возможные значения: * `CONNECTED` * `DISCONNECTED` * `UNINITIALIZED` | Optional |
-| credentialsEnabled | boolean | Включить мониторинг credentials. | Optional |
-| id | string | Уникальный ID credentials. | Optional |
-| label | string | Имя credentials. | Required |
-| metadata | [ConfigurationMetadata](#openapi-definition-ConfigurationMetadata) | Метаданные для отладки | Optional |
-| partitionType | string | Тип AWS-partition. Возможные значения: * `AWS_CN` * `AWS_DEFAULT` * `AWS_US_GOV` | Required |
-| supportingServicesToMonitor | [AwsSupportingServiceConfig[]](#openapi-definition-AwsSupportingServiceConfig) | **Устарело**. Для управления сервисами используйте операцию [/aws/credentials/{id}/services](https://dt-url.net/l022s6v). Встроенные сервисы здесь не поддерживаются.  Список AWS-сервисов для мониторинга. Доступные сервисы перечислены операцией [/aws/supportedServices](https://dt-url.net/me02sh2).  Для каждого сервиса можно указать список метрик и измерений. Список поддерживаемых метрик и измерений для конкретного сервиса можно посмотреть в [документации](https://dt-url.net/r12v0pkl).  Список метрик можно пропустить (задать null), тогда для мониторинга будет выбран рекомендуемый (по умолчанию) набор метрик и измерений. | Optional |
-| taggedOnly | boolean | Мониторить только ресурсы с указанными AWS-тегами (`true`) или все ресурсы (`false`). | Optional |
-| tagsToMonitor | [AwsConfigTag[]](#openapi-definition-AwsConfigTag) | Список AWS-тегов для мониторинга.  Можно указать до 10 тегов.  Применяется только когда параметр **taggedOnly** установлен в `true`. | Optional |
+| authenticationData | [AwsAuthenticationData](#openapi-definition-AwsAuthenticationData) | Учётные данные для аутентификации AWS. | Обязательный |
+| connectionStatus | string | Статус подключения к окружению AWS.  * `CONNECTED`: подключение устанавливалось в течение последних 10 минут. * `DISCONNECTED`: возникла проблема при установке подключения с использованием этих учётных данных. Нужно проверить корректность данных. * `UNINITIALIZED`: успешное подключение для этих учётных данных никогда не устанавливалось. Элемент может принимать следующие значения * `CONNECTED` * `DISCONNECTED` * `UNINITIALIZED` | Необязательный |
+| credentialsEnabled | boolean | Включить мониторинг учётных данных. | Необязательный |
+| id | string | Уникальный ID учётных данных. | Необязательный |
+| label | string | Имя учётных данных. | Обязательный |
+| metadata | [ConfigurationMetadata](#openapi-definition-ConfigurationMetadata) | Метаданные, полезные для отладки | Необязательный |
+| partitionType | string | Тип раздела AWS. Элемент может принимать следующие значения * `AWS_CN` * `AWS_DEFAULT` * `AWS_US_GOV` | Обязательный |
+| supportingServicesToMonitor | [AwsSupportingServiceConfig](#openapi-definition-AwsSupportingServiceConfig)[] | **Устарело**. Для управления сервисами нужно использовать операцию [/aws/credentials/{id}/services﻿](https://dt-url.net/l022s6v?dt=m). Встроенные сервисы здесь не поддерживаются.  Список сервисов AWS, за которыми ведётся мониторинг. Доступные сервисы перечислены в операции [/aws/supportedServices﻿](https://dt-url.net/me02sh2?dt=m).  Для каждого сервиса можно указать список метрик и измерений. Список поддерживаемых метрик и измерений для конкретного сервиса можно посмотреть в [документации﻿](https://dt-url.net/r12v0pkl?dt=m).  Список метрик можно пропустить (задать значение null), в этом случае для мониторинга будет выбран рекомендуемый (по умолчанию) набор метрик и измерений. | Необязательный |
+| taggedOnly | boolean | Отслеживать только ресурсы с указанными тегами AWS (`true`) или все ресурсы (`false`). | Необязательный |
+| tagsToMonitor | [AwsConfigTag](#openapi-definition-AwsConfigTag)[] | Список тегов AWS, за которыми ведётся мониторинг.  Можно указать до 10 тегов.  Применимо только если параметр **taggedOnly** установлен в `true`. | Необязательный |
 
 #### Объект `AwsAuthenticationData`
 
-Credentials для AWS-аутентификации.
+Учётные данные для аутентификации AWS.
 
 | Элемент | Тип | Описание | Обязательный |
 | --- | --- | --- | --- |
-| keyBasedAuthentication | [KeyBasedAuthentication](#openapi-definition-KeyBasedAuthentication) | **Устарело**. Credentials для аутентификации по ключу. | Optional |
-| roleBasedAuthentication | [RoleBasedAuthentication](#openapi-definition-RoleBasedAuthentication) | Credentials для аутентификации по роли. | Optional |
-| type | string | Тип аутентификации: по роли или по ключу. Возможные значения: * `KEYS` * `ROLE` | Required |
+| keyBasedAuthentication | [KeyBasedAuthentication](#openapi-definition-KeyBasedAuthentication) | **Устарело**. Учётные данные для аутентификации на основе ключа. | Необязательный |
+| roleBasedAuthentication | [RoleBasedAuthentication](#openapi-definition-RoleBasedAuthentication) | Учётные данные для аутентификации на основе роли. | Необязательный |
+| type | string | Тип аутентификации: на основе роли или на основе ключа. Элемент может принимать следующие значения * `KEYS` * `ROLE` | Обязательный |
 
 #### Объект `KeyBasedAuthentication`
 
-**Устарело**. Credentials для аутентификации по ключу.
+**Устарело**. Учётные данные для аутентификации на основе ключа.
 
 | Элемент | Тип | Описание | Обязательный |
 | --- | --- | --- | --- |
-| accessKey | string | ID access key. | Required |
-| secretKey | string | Secret access key. | Required |
+| accessKey | string | ID ключа доступа. | Обязательный |
+| secretKey | string | Секретный ключ доступа. | Обязательный |
 
 #### Объект `RoleBasedAuthentication`
 
-Credentials для аутентификации по роли.
+Учётные данные для аутентификации на основе роли.
 
 | Элемент | Тип | Описание | Обязательный |
 | --- | --- | --- | --- |
-| accountId | string | ID аккаунта Amazon. | Required |
-| externalId | string | Токен external ID для настройки IAM-роли.  Его можно получить запросом `GET /aws/iamExternalId`. | Optional |
-| iamRole | string | IAM-роль, используемая Dynatrace для получения данных мониторинга. | Required |
+| accountId | string | ID учётной записи Amazon. | Обязательный |
+| externalId | string | Внешний ID-токен для настройки роли IAM.  Его можно получить с помощью запроса `GET /aws/iamExternalId`. | Необязательный |
+| iamRole | string | Роль IAM, которую Dynatrace будет использовать для получения данных мониторинга. | Обязательный |
 
 #### Объект `ConfigurationMetadata`
 
-Метаданные для отладки
+Метаданные, полезные для отладки
 
 | Элемент | Тип | Описание | Обязательный |
 | --- | --- | --- | --- |
-| clusterVersion | string | Версия Dynatrace. | Optional |
-| configurationVersions | integer[] | Отсортированный список номеров версий конфигурации. | Optional |
-| currentConfigurationVersions | string[] | Отсортированный список номеров версий конфигурации. | Optional |
+| clusterVersion | string | Версия Dynatrace. | Необязательный |
+| configurationVersions | integer[] | Отсортированный список номеров версий конфигурации. | Необязательный |
+| currentConfigurationVersions | string[] | Отсортированный список номеров версий конфигурации. | Необязательный |
 
 #### Объект `AwsSupportingServiceConfig`
 
-Сервис для мониторинга.
+Сервис, за которым ведётся мониторинг.
 
 | Элемент | Тип | Описание | Обязательный |
 | --- | --- | --- | --- |
-| monitoredMetrics | [AwsSupportingServiceMetric[]](#openapi-definition-AwsSupportingServiceMetric) | Список метрик для мониторинга этого сервиса. Если список null, мониторится рекомендуемый список метрик для этого сервиса. | Optional |
-| name | string | Имя сервиса. Допустимые имена поддерживаемых сервисов можно узнать через restAPI /aws/supportedServices | Required |
+| monitoredMetrics | [AwsSupportingServiceMetric](#openapi-definition-AwsSupportingServiceMetric)[] | Список метрик, за которыми ведётся мониторинг для данного сервиса. Если список равен null, для мониторинга будет использован рекомендуемый список метрик для этого сервиса. | Необязательный |
+| name | string | Имя сервиса. Допустимые имена поддерживаемых сервисов можно узнать с помощью restAPI /aws/supportedServices | Обязательный |
 
 #### Объект `AwsSupportingServiceMetric`
 
-Метрика сервиса для мониторинга.
+Метрика сервиса, за которой ведётся мониторинг.
 
 | Элемент | Тип | Описание | Обязательный |
 | --- | --- | --- | --- |
-| dimensions | string[] | Список имён измерений метрики. | Required |
-| name | string | Имя метрики сервиса. | Required |
-| statistic | string | Статистика (агрегация), используемая для метрики. Значение AVG\_MIN\_MAX это 3 статистики сразу: AVERAGE, MINIMUM и MAXIMUM Возможные значения: * `AVERAGE` * `AVG_MIN_MAX` * `MAXIMUM` * `MINIMUM` * `SAMPLE_COUNT` * `SUM` | Required |
+| dimensions | string[] | Список имён измерений метрики. | Обязательный |
+| name | string | Имя метрики сервиса. | Обязательный |
+| statistic | string | Статистика (агрегация), используемая для метрики. Значение AVG\_MIN\_MAX означает сразу 3 статистики: AVERAGE, MINIMUM и MAXIMUM Элемент может принимать следующие значения * `AVERAGE` * `AVG_MIN_MAX` * `MAXIMUM` * `MINIMUM` * `SAMPLE_COUNT` * `SUM` | Обязательный |
 
 #### Объект `AwsConfigTag`
 
-AWS-тег ресурса для мониторинга.
+Тег AWS ресурса, за которым ведётся мониторинг.
 
 | Элемент | Тип | Описание | Обязательный |
 | --- | --- | --- | --- |
-| name | string | Ключ AWS-тега. | Required |
-| value | string | Значение AWS-тега. | Required |
+| name | string | Ключ тега AWS. | Обязательный |
+| value | string | Значение тега AWS. | Обязательный |
 
-### JSON-модель тела запроса
+### Модель тела JSON запроса
 
-Это модель тела запроса со всеми возможными элементами. При использовании в реальном запросе её нужно адаптировать.
+Это модель тела запроса, показывающая возможные элементы. Её нужно адаптировать для использования в реальном запросе.
 
 ```
 {
@@ -334,8 +333,8 @@ AWS-тег ресурса для мониторинга.
 
 | Код | Тип | Описание |
 | --- | --- | --- |
-| **201** | [EntityShortRepresentation](#openapi-definition-EntityShortRepresentation) | Успех. Новая конфигурация AWS credentials создана. Тело ответа содержит ID конфигурации.  Проверьте статус подключения для этих credentials через 10 минут запросом `GET /aws/credentials/{id}`. |
-| **400** | [ErrorEnvelope](#openapi-definition-ErrorEnvelope) | Сбой. Невалидный ввод. |
+| **201** | [EntityShortRepresentation](#openapi-definition-EntityShortRepresentation) | Успех. Новая конфигурация учётных данных AWS создана. Тело ответа содержит ID конфигурации.  Статус подключения для этих учётных данных нужно проверять через 10 минут запросом `GET /aws/credentials/{id}`. |
+| **400** | [ErrorEnvelope](#openapi-definition-ErrorEnvelope) | Ошибка. Введены некорректные данные. |
 
 ### Объекты тела ответа
 
@@ -359,8 +358,8 @@ AWS-тег ресурса для мониторинга.
 
 | Элемент | Тип | Описание |
 | --- | --- | --- |
-| code | integer | HTTP-код статуса |
-| constraintViolations | [ConstraintViolation[]](#openapi-definition-ConstraintViolation) | Список нарушений ограничений |
+| code | integer | Код статуса HTTP |
+| constraintViolations | [ConstraintViolation](#openapi-definition-ConstraintViolation)[] | Список нарушений ограничений |
 | message | string | Сообщение об ошибке |
 
 #### Объект `ConstraintViolation`
@@ -371,17 +370,17 @@ AWS-тег ресурса для мониторинга.
 | --- | --- | --- |
 | location | string | - |
 | message | string | - |
-| parameterLocation | string | -Возможные значения: * `HEADER` * `PATH` * `PAYLOAD_BODY` * `QUERY` |
+| parameterLocation | string | -Элемент может принимать следующие значения * `HEADER` * `PATH` * `PAYLOAD_BODY` * `QUERY` |
 | path | string | - |
 
-### JSON-модели тела ответа
+### Модели тела JSON ответа
 
 ```
 {
 
 
 
-"description": "Dynatrace entity for the REST API example",
+"description": "сущность Dynatrace для примера REST API",
 
 
 
@@ -389,7 +388,7 @@ AWS-тег ресурса для мониторинга.
 
 
 
-"name": "Dynatrace entity"
+"name": "сущность Dynatrace"
 
 
 
@@ -452,11 +451,11 @@ AWS-тег ресурса для мониторинга.
 }
 ```
 
-## Получение токена external ID
+## GET внешнего ID токена
 
-Возвращает токен external ID для настройки IAM-роли.
+Получает внешний ID токен для настройки роли IAM.
 
-Запрос возвращает payload `application/json`.
+Запрос выдаёт полезную нагрузку `application/json`.
 
 |  |  |  |
 | --- | --- | --- |
@@ -465,9 +464,9 @@ AWS-тег ресурса для мониторинга.
 
 ## Аутентификация
 
-Для выполнения этого запроса нужен access token со scope `ReadConfig`.
+Для выполнения этого запроса нужен токен доступа с областью действия `ReadConfig`.
 
-Как его получить и использовать, смотрите [Tokens and authentication](/managed/discover-dynatrace/references/dynatrace-api/basics/dynatrace-api-authentication).
+Чтобы узнать, как его получить и использовать, см. [Токены и аутентификация](/managed/discover-dynatrace/references/dynatrace-api/basics/dynatrace-api-authentication).
 
 ### Ответ
 
@@ -475,19 +474,19 @@ AWS-тег ресурса для мониторинга.
 
 | Код | Тип | Описание |
 | --- | --- | --- |
-| **200** | [AwsIamToken](#openapi-definition-AwsIamToken) | Успех |
+| **200** | [AwsIamToken](#openapi-definition-AwsIamToken) | Успешно |
 
 ### Объекты тела ответа
 
 #### Объект `AwsIamToken`
 
-Токен external ID для настройки IAM-роли в AWS.
+Внешний ID токен для настройки IAM Role в AWS.
 
 | Элемент | Тип | Описание |
 | --- | --- | --- |
-| token | string | Токен external ID для настройки IAM-роли в AWS. |
+| token | string | Внешний ID токен для настройки IAM Role в AWS. |
 
-### JSON-модели тела ответа
+### Модели тела ответа JSON
 
 ```
 {
@@ -501,13 +500,13 @@ AWS-тег ресурса для мониторинга.
 }
 ```
 
-## Validate payload
+## Проверка полезной нагрузки
 
-Рекомендуется валидировать payload перед отправкой реального запроса. Код ответа **204** означает валидный payload.
+Рекомендуется проверять полезную нагрузку перед отправкой её в составе реального запроса. Код ответа **204** означает, что полезная нагрузка корректна.
 
-Запрос принимает payload `application/json`.
+Запрос принимает полезную нагрузку `application/json`.
 
-Запрос принимает payload `application/json`.
+Запрос принимает полезную нагрузку `application/json`.
 
 |  |  |  |
 | --- | --- | --- |
@@ -516,9 +515,9 @@ AWS-тег ресурса для мониторинга.
 
 ### Аутентификация
 
-Для выполнения этого запроса нужен access token со scope `WriteConfig`.
+Для выполнения этого запроса нужен токен доступа с областью действия `WriteConfig`.
 
-Как его получить и использовать, смотрите [Tokens and authentication](/managed/discover-dynatrace/references/dynatrace-api/basics/dynatrace-api-authentication).
+Чтобы узнать, как его получить и использовать, см. [Токены и аутентификация](/managed/discover-dynatrace/references/dynatrace-api/basics/dynatrace-api-authentication).
 
 ### Ответ
 
@@ -526,8 +525,8 @@ AWS-тег ресурса для мониторинга.
 
 | Код | Тип | Описание |
 | --- | --- | --- |
-| **204** | - | Validated. Переданная конфигурация валидна. Ответ без тела. |
-| **400** | [ErrorEnvelope](#openapi-definition-ErrorEnvelope) | Сбой. Невалидный ввод. |
+| **204** | - | Проверено. Отправленная конфигурация корректна. Ответ не содержит тела. |
+| **400** | [ErrorEnvelope](#openapi-definition-ErrorEnvelope) | Ошибка. Входные данные некорректны. |
 
 #### Объекты тела ответа
 
@@ -541,8 +540,8 @@ AWS-тег ресурса для мониторинга.
 
 | Элемент | Тип | Описание |
 | --- | --- | --- |
-| code | integer | HTTP-код статуса |
-| constraintViolations | [ConstraintViolation[]](#openapi-definition-ConstraintViolation) | Список нарушений ограничений |
+| code | integer | Код статуса HTTP |
+| constraintViolations | [ConstraintViolation](#openapi-definition-ConstraintViolation)[] | Список нарушений ограничений |
 | message | string | Сообщение об ошибке |
 
 #### Объект `ConstraintViolation`
@@ -553,10 +552,10 @@ AWS-тег ресурса для мониторинга.
 | --- | --- | --- |
 | location | string | - |
 | message | string | - |
-| parameterLocation | string | -Возможные значения: * `HEADER` * `PATH` * `PAYLOAD_BODY` * `QUERY` |
+| parameterLocation | string | -Элемент может принимать следующие значения * `HEADER` * `PATH` * `PAYLOAD_BODY` * `QUERY` |
 | path | string | - |
 
-#### JSON-модели тела ответа
+#### Модели тела ответа JSON
 
 ```
 {

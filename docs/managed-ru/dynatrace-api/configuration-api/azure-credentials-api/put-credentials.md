@@ -1,21 +1,20 @@
 ---
 title: Azure credentials API - PUT credentials
 source: https://docs.dynatrace.com/managed/dynatrace-api/configuration-api/azure-credentials-api/put-credentials
-scraped: 2026-05-12T11:16:29.889275
 ---
 
 # Azure credentials API - PUT credentials
 
 # Azure credentials API - PUT credentials
 
-* Reference
-* Published Feb 25, 2020
+* Справочник
+* Опубликовано 25 февраля 2020
 
-Обновляет существующую конфигурацию Azure credentials. Проверьте статус подключения для этих credentials через 10 минут запросом [GET credentials](/managed/dynatrace-api/configuration-api/azure-credentials-api/get-credentials "Просмотр конфигурации Azure credentials через Dynatrace API.").
+Обновляет существующую конфигурацию учётных данных Azure. Проверить статус подключения этих учётных данных можно через 10 минут с помощью запроса [GET credentials](/managed/dynatrace-api/configuration-api/azure-credentials-api/get-credentials "View an Azure credentials configuration via the Dynatrace API.").
 
-Если конфигурация credentials с указанным ID не существует, создаётся новая конфигурация.
+Если конфигурация учётных данных с указанным ID не существует, создаётся новая конфигурация.
 
-Запрос принимает и возвращает payload `application/json`.
+Запрос принимает и возвращает данные в формате `application/json`.
 
 |  |  |  |
 | --- | --- | --- |
@@ -24,47 +23,47 @@ scraped: 2026-05-12T11:16:29.889275
 
 ## Аутентификация
 
-Для выполнения этого запроса нужен access token со scope `WriteConfig`.
+Для выполнения этого запроса нужен токен доступа с областью действия `WriteConfig`.
 
-Как его получить и использовать, смотрите [Tokens and authentication](/managed/discover-dynatrace/references/dynatrace-api/basics/dynatrace-api-authentication).
+О том, как получить и использовать токен, см. [Токены и аутентификация](/managed/discover-dynatrace/references/dynatrace-api/basics/dynatrace-api-authentication).
 
 ## Параметры
 
 | Параметр | Тип | Описание | Где | Обязательный |
 | --- | --- | --- | --- | --- |
-| id | string | ID конфигурации Azure credentials, которую нужно обновить. | path | Required |
-| body | [AzureCredentials](#openapi-definition-AzureCredentials) | JSON-тело запроса. Содержит обновлённые параметры конфигурации Azure credentials. | body | Optional |
+| id | string | ID конфигурации учётных данных Azure, которую нужно обновить. | path | Обязательный |
+| body | [AzureCredentials](#openapi-definition-AzureCredentials) | Тело запроса JSON. Содержит обновлённые параметры конфигурации учётных данных Azure. | body | Опциональный |
 
 ### Объекты тела запроса
 
 #### Объект `AzureCredentials`
 
-Конфигурация Azure credentials уровня приложения.
+Конфигурация учётных данных уровня приложения Azure.
 
 | Элемент | Тип | Описание | Обязательный |
 | --- | --- | --- | --- |
-| active | boolean | Мониторинг включён (`true`) или выключен (`false`).  Если не задано при создании, используется значение `true`.  Если поле опущено при обновлении, прежнее значение сохраняется. | Optional |
-| appId | string | ID приложения (также называется client ID).  Поле **обязательно** при создании новой конфигурации credentials.  Поле игнорируется при обновлении, прежнее значение сохраняется. | Optional |
-| autoTagging | boolean | Автоматический сбор Azure-тегов включён (`true`) или выключен (`false`). | Required |
-| directoryId | string | ID каталога (также называется tenant ID).  Поле **обязательно** при создании новой конфигурации credentials.  Поле игнорируется при обновлении, прежнее значение сохраняется. | Optional |
-| id | string | ID сущности Dynatrace для конфигурации Azure credentials. | Optional |
-| key | string | Секретный ключ, связанный с ID приложения.  По соображениям безопасности GET-запросы возвращают это поле как `null`.  Отправляйте ключ при создании или обновлении конфигурации.  Поле **обязательно** при создании новой конфигурации credentials. Если поле опущено при обновлении, прежнее значение сохраняется. | Optional |
-| label | string | Уникальное имя конфигурации Azure credentials.  Допустимые символы: буквы, цифры и пробелы. Также разрешены специальные символы `.+-_`. | Required |
-| metadata | [ConfigurationMetadata](#openapi-definition-ConfigurationMetadata) | Метаданные для отладки | Optional |
-| monitorOnlyExcludingTagPairs | [CloudTag[]](#openapi-definition-CloudTag) | Список Azure-тегов, исключаемых из мониторинга.  Можно указать до 20 тегов. Ресурс, помеченный *любым* из указанных тегов, не мониторится.  Применяется только когда параметр **monitorOnlyTaggedEntities** установлен в `true`. | Optional |
-| monitorOnlyTagPairs | [CloudTag[]](#openapi-definition-CloudTag) | Список Azure-тегов для мониторинга.  Можно указать до 20 тегов. Ресурс, помеченный *любым* из указанных тегов, мониторится.  Применяется только когда параметр **monitorOnlyTaggedEntities** установлен в `true`. | Optional |
-| monitorOnlyTaggedEntities | boolean | Мониторить только ресурсы с указанными Azure-тегами (`true`) или все ресурсы (`false`). | Required |
-| supportingServices | [AzureSupportingService[]](#openapi-definition-AzureSupportingService) | **Устарело**. Для управления сервисами используйте операцию [/azure/credentials/{id}/services](https://dt-url.net/1w62s27). Встроенные сервисы здесь не поддерживаются.  Список Azure-сервисов для мониторинга. Доступные сервисы перечислены операцией [/azure/supportedServices](https://dt-url.net/wt42sdq).  Для каждого сервиса можно указать список метрик и измерений. Список поддерживаемых метрик и измерений для конкретного сервиса можно посмотреть в [документации](https://dt-url.net/kx2351b).  Список метрик можно пропустить (задать null), тогда для мониторинга будет выбран рекомендуемый (по умолчанию) набор метрик и измерений. | Optional |
+| active | boolean | Мониторинг включён (`true`) или отключён (`false`). Если не задано при создании, используется значение `true`. Если поле опущено при обновлении, старое значение остаётся без изменений. | Опциональный |
+| appId | string | ID приложения (также называется client ID). Поле **обязательно** при создании новой конфигурации учётных данных. При обновлении поле игнорируется, старое значение остаётся без изменений. | Опциональный |
+| autoTagging | boolean | Автоматический захват тегов Azure включён (`true`) или отключён (`false`). | Обязательный |
+| directoryId | string | ID каталога (также называется tenant ID). Поле **обязательно** при создании новой конфигурации учётных данных. При обновлении поле игнорируется, старое значение остаётся без изменений. | Опциональный |
+| id | string | ID сущности Dynatrace для конфигурации учётных данных Azure. | Опциональный |
+| key | string | Секретный ключ, связанный с ID приложения. По соображениям безопасности GET-запросы возвращают это поле как `null`. Ключ нужно передавать при создании или обновлении конфигурации. Поле **обязательно** при создании новой конфигурации учётных данных. Если поле опущено при обновлении, старое значение остаётся без изменений. | Опциональный |
+| label | string | Уникальное имя конфигурации учётных данных Azure. Допустимые символы, буквы, цифры и пробелы. Также допускаются специальные символы `.+-_`. | Обязательный |
+| metadata | [ConfigurationMetadata](#openapi-definition-ConfigurationMetadata) | Метаданные, полезные для отладки | Опциональный |
+| monitorOnlyExcludingTagPairs | [CloudTag](#openapi-definition-CloudTag)[] | Список тегов Azure, которые нужно исключить из мониторинга. Можно указать до 20 тегов. Ресурс, помеченный *любым* из указанных тегов, не будет мониториться. Применяется только если параметр **monitorOnlyTaggedEntities** установлен в `true`. | Опциональный |
+| monitorOnlyTagPairs | [CloudTag](#openapi-definition-CloudTag)[] | Список тегов Azure, которые нужно мониторить. Можно указать до 20 тегов. Ресурс, помеченный *любым* из указанных тегов, мониторится. Применяется только если параметр **monitorOnlyTaggedEntities** установлен в `true`. | Опциональный |
+| monitorOnlyTaggedEntities | boolean | Мониторить только ресурсы с указанными тегами Azure (`true`) или все ресурсы (`false`). | Обязательный |
+| supportingServices | [AzureSupportingService](#openapi-definition-AzureSupportingService)[] | **Устарело**. Для управления сервисами используй операцию [/azure/credentials/{id}/services﻿](https://dt-url.net/1w62s27?dt=m). Встроенные сервисы здесь не поддерживаются. Список сервисов Azure, которые нужно мониторить. Доступные сервисы перечислены операцией [/azure/supportedServices﻿](https://dt-url.net/wt42sdq?dt=m). Для каждого сервиса можно указать список метрик и измерений. Список поддерживаемых метрик и измерений для конкретного сервиса можно проверить в [документации﻿](https://dt-url.net/kx2351b?dt=m). Список метрик можно пропустить (задать null), тогда для мониторинга будет выбран рекомендуемый (по умолчанию) набор метрик и измерений. | Опциональный |
 
 #### Объект `ConfigurationMetadata`
 
-Метаданные для отладки
+Метаданные, полезные для отладки
 
 | Элемент | Тип | Описание | Обязательный |
 | --- | --- | --- | --- |
-| clusterVersion | string | Версия Dynatrace. | Optional |
-| configurationVersions | integer[] | Отсортированный список номеров версий конфигурации. | Optional |
-| currentConfigurationVersions | string[] | Отсортированный список номеров версий конфигурации. | Optional |
+| clusterVersion | string | Версия Dynatrace. | Опциональный |
+| configurationVersions | integer[] | Отсортированный список номеров версий конфигурации. | Опциональный |
+| currentConfigurationVersions | string[] | Отсортированный список номеров версий конфигурации. | Опциональный |
 
 #### Объект `CloudTag`
 
@@ -72,30 +71,30 @@ scraped: 2026-05-12T11:16:29.889275
 
 | Элемент | Тип | Описание | Обязательный |
 | --- | --- | --- | --- |
-| name | string | Имя тега. | Optional |
-| value | string | Значение тега.  Если задано `null` или `""`, мониторятся ресурсы с любым значением тега. | Optional |
+| name | string | Имя тега. | Опциональный |
+| value | string | Значение тега. Если задано `null` или `""`, то мониторятся ресурсы с любым значением тега. | Опциональный |
 
 #### Объект `AzureSupportingService`
 
-Сервис для мониторинга.
+Сервис, который нужно мониторить.
 
 | Элемент | Тип | Описание | Обязательный |
 | --- | --- | --- | --- |
-| monitoredMetrics | [AzureMonitoredMetric[]](#openapi-definition-AzureMonitoredMetric) | Список метрик для мониторинга этого сервиса. Он должен включать все рекомендуемые метрики. Если список null, для мониторинга используется рекомендуемый список метрик для этого сервиса. | Optional |
-| name | string | Имя сервиса. Допустимые имена поддерживаемых сервисов можно узнать через restAPI /azure/supportedServices | Required |
+| monitoredMetrics | [AzureMonitoredMetric](#openapi-definition-AzureMonitoredMetric)[] | Список метрик, которые нужно мониторить для этого сервиса. Должен включать все рекомендуемые метрики. Если список равен null, для мониторинга будет использован рекомендуемый список метрик для этого сервиса. | Опциональный |
+| name | string | Имя сервиса. Допустимые поддерживаемые имена сервисов можно узнать с помощью /azure/supportedServices restAPI | Обязательный |
 
 #### Объект `AzureMonitoredMetric`
 
-Метрика сервиса для мониторинга.
+Метрика сервиса, которую нужно мониторить.
 
 | Элемент | Тип | Описание | Обязательный |
 | --- | --- | --- | --- |
-| dimensions | string[] | Список имён измерений метрики. Он должен включать все рекомендуемые измерения. | Required |
-| name | string | Имя метрики сервиса. | Required |
+| dimensions | string[] | Список имён измерений метрики. Должен включать все рекомендуемые измерения. | Обязательный |
+| name | string | Имя метрики сервиса. | Обязательный |
 
-### JSON-модель тела запроса
+### Пример JSON тела запроса
 
-Это модель тела запроса со всеми возможными элементами. При использовании в реальном запросе её нужно адаптировать.
+Это пример тела запроса, показывающий возможные элементы. Его нужно скорректировать для использования в реальном запросе.
 
 ```
 {
@@ -275,9 +274,9 @@ scraped: 2026-05-12T11:16:29.889275
 
 | Код | Тип | Описание |
 | --- | --- | --- |
-| **201** | [EntityShortRepresentation](#openapi-definition-EntityShortRepresentation) | Успех. Новая конфигурация Azure credentials создана. Тело ответа содержит ID конфигурации. |
-| **204** | - | Успех. Конфигурация Azure credentials обновлена. Ответ без тела. |
-| **400** | [ErrorEnvelope](#openapi-definition-ErrorEnvelope) | Сбой. Невалидный ввод. |
+| **201** | [EntityShortRepresentation](#openapi-definition-EntityShortRepresentation) | Успешно. Новая конфигурация учётных данных Azure создана. Тело ответа содержит ID конфигурации. |
+| **204** | - | Успешно. Конфигурация учётных данных Azure обновлена. Ответ не содержит тела. |
+| **400** | [ErrorEnvelope](#openapi-definition-ErrorEnvelope) | Ошибка. Введённые данные недопустимы. |
 
 ### Объекты тела ответа
 
@@ -302,7 +301,7 @@ scraped: 2026-05-12T11:16:29.889275
 | Элемент | Тип | Описание |
 | --- | --- | --- |
 | code | integer | HTTP-код статуса |
-| constraintViolations | [ConstraintViolation[]](#openapi-definition-ConstraintViolation) | Список нарушений ограничений |
+| constraintViolations | [ConstraintViolation](#openapi-definition-ConstraintViolation)[] | Список нарушений ограничений |
 | message | string | Сообщение об ошибке |
 
 #### Объект `ConstraintViolation`
@@ -313,10 +312,10 @@ scraped: 2026-05-12T11:16:29.889275
 | --- | --- | --- |
 | location | string | - |
 | message | string | - |
-| parameterLocation | string | -Возможные значения: * `HEADER` * `PATH` * `PAYLOAD_BODY` * `QUERY` |
+| parameterLocation | string | Элемент может принимать следующие значения * `HEADER` * `PATH` * `PAYLOAD_BODY` * `QUERY` |
 | path | string | - |
 
-### JSON-модели тела ответа
+### Примеры JSON тела ответа
 
 ```
 {
@@ -394,11 +393,11 @@ scraped: 2026-05-12T11:16:29.889275
 }
 ```
 
-## Validate payload
+## Валидация полезной нагрузки
 
-Рекомендуется валидировать payload перед отправкой реального запроса. Код ответа **204** означает валидный payload.
+Рекомендуется проверять полезную нагрузку перед отправкой её в составе реального запроса. Код ответа **204** означает, что полезная нагрузка допустима.
 
-Запрос принимает payload `application/json`.
+Запрос принимает данные в формате `application/json`.
 
 |  |  |  |
 | --- | --- | --- |
@@ -407,9 +406,9 @@ scraped: 2026-05-12T11:16:29.889275
 
 ### Аутентификация
 
-Для выполнения этого запроса нужен access token со scope `WriteConfig`.
+Для выполнения этого запроса нужен токен доступа с областью действия `WriteConfig`.
 
-Как его получить и использовать, смотрите [Tokens and authentication](/managed/discover-dynatrace/references/dynatrace-api/basics/dynatrace-api-authentication).
+О том, как получить и использовать токен, читайте в разделе [Токены и аутентификация](/managed/discover-dynatrace/references/dynatrace-api/basics/dynatrace-api-authentication).
 
 ### Ответ
 
@@ -417,8 +416,8 @@ scraped: 2026-05-12T11:16:29.889275
 
 | Код | Тип | Описание |
 | --- | --- | --- |
-| **204** | - | Validated. Переданная конфигурация валидна. Ответ без тела. |
-| **400** | [ErrorEnvelope](#openapi-definition-ErrorEnvelope) | Сбой. Невалидный ввод. |
+| **204** | - | Проверено. Отправленная конфигурация корректна. Тело ответа отсутствует. |
+| **400** | [ErrorEnvelope](#openapi-definition-ErrorEnvelope) | Ошибка. Входные данные некорректны. |
 
 #### Объекты тела ответа
 
@@ -432,8 +431,8 @@ scraped: 2026-05-12T11:16:29.889275
 
 | Элемент | Тип | Описание |
 | --- | --- | --- |
-| code | integer | HTTP-код статуса |
-| constraintViolations | [ConstraintViolation[]](#openapi-definition-ConstraintViolation) | Список нарушений ограничений |
+| code | integer | Код статуса HTTP |
+| constraintViolations | [ConstraintViolation](#openapi-definition-ConstraintViolation)[] | Список нарушений ограничений |
 | message | string | Сообщение об ошибке |
 
 #### Объект `ConstraintViolation`
@@ -444,10 +443,10 @@ scraped: 2026-05-12T11:16:29.889275
 | --- | --- | --- |
 | location | string | - |
 | message | string | - |
-| parameterLocation | string | -Возможные значения: * `HEADER` * `PATH` * `PAYLOAD_BODY` * `QUERY` |
+| parameterLocation | string | -Элемент может принимать следующие значения * `HEADER` * `PATH` * `PAYLOAD_BODY` * `QUERY` |
 | path | string | - |
 
-#### JSON-модели тела ответа
+#### Модели тела ответа JSON
 
 ```
 {
@@ -507,16 +506,16 @@ scraped: 2026-05-12T11:16:29.889275
 
 ## Пример
 
-В этом примере запрос обновляет конфигурацию Azure credentials из примера [POST request](/managed/dynatrace-api/configuration-api/azure-credentials-api/post-new-credentials#example "Создание конфигурации Azure credentials через Dynatrace API.").
+В этом примере запрос обновляет конфигурацию учётных данных Azure из [примера запроса POST](/managed/dynatrace-api/configuration-api/azure-credentials-api/post-new-credentials#example "Создание конфигурации учётных данных Azure через Dynatrace API.").
 
-Он задаёт новый пароль и меняет режим мониторинга с ресурсов с указанными тегами на все ресурсы:
+Запрос указывает новый пароль и меняет режим мониторинга с ресурсов с указанными тегами на все ресурсы:
 
 * значение **monitorOnlyTaggedEntities** изменено на `false`
-* массив **monitorOnlyTagPairs** пустой.
+* массив **monitorOnlyTagPairs** пуст.
 
-API-токен передаётся в заголовке **Authorization**.
+Токен API передаётся в заголовке **Authorization**.
 
-Поскольку тело запроса объёмное, в этом примере оно усечено в секции Curl. Полное тело смотрите в секции **Тело запроса**.
+Поскольку тело запроса объёмное, в разделе Curl этого примера оно сокращено. Полное тело смотрите в разделе **Тело запроса**.
 
 #### Curl
 
@@ -596,6 +595,6 @@ https://mySampleEnv.live.dynatrace.com/api/config/v1/azure/credentials/AZURE_CRE
 
 204
 
-## Связанные темы
+## Похожие темы
 
-* [Microsoft Azure Integrations](/managed/ingest-from/microsoft-azure-services/azure-integrations "Настройка глубокого мониторинга кода Dynatrace в Azure с помощью OneAgent или OpenTelemetry.")
+* [Интеграции Microsoft Azure](/managed/ingest-from/microsoft-azure-services/azure-integrations "Настройка глубокого мониторинга кода Dynatrace на Azure с помощью OneAgent или OpenTelemetry.")

@@ -1,19 +1,18 @@
 ---
 title: AWS credentials API - PUT monitored services
 source: https://docs.dynatrace.com/managed/dynatrace-api/configuration-api/aws-credentials-api/put-services
-scraped: 2026-05-12T11:15:06.851517
 ---
 
 # AWS credentials API - PUT monitored services
 
 # AWS credentials API - PUT monitored services
 
-* Reference
-* Published Jul 28, 2022
+* Справочник
+* Опубликовано 28 июля 2022 г.
 
-Обновляет список AWS-сервисов, которые мониторятся AWS-конфигурацией. Обратите внимание: запрос перезаписывает существующую конфигурацию. Все сервисы, которые вы хотите продолжать мониторить, должны быть указаны в payload.
+Обновляет список сервисов AWS, которые отслеживаются конфигурацией AWS. Обрати внимание, что запрос перезаписывает существующую конфигурацию. Все сервисы, мониторинг которых нужно продолжить, должны присутствовать в теле запроса.
 
-Запрос принимает payload `application/json`.
+Запрос принимает тело в формате `application/json`.
 
 |  |  |  |
 | --- | --- | --- |
@@ -22,16 +21,16 @@ scraped: 2026-05-12T11:15:06.851517
 
 ## Аутентификация
 
-Для выполнения этого запроса нужен access token со scope `WriteConfig`.
+Для выполнения этого запроса нужен токен доступа с областью действия `WriteConfig`.
 
-Как его получить и использовать, смотрите [Tokens and authentication](/managed/discover-dynatrace/references/dynatrace-api/basics/dynatrace-api-authentication).
+О том, как получить и использовать токен, см. [Токены и аутентификация](/managed/discover-dynatrace/references/dynatrace-api/basics/dynatrace-api-authentication).
 
 ## Параметры
 
-| Параметр | Тип | Описание | Где | Обязательный |
+| Параметр | Тип | Описание | Расположение | Обязательный |
 | --- | --- | --- | --- | --- |
-| id | string | ID AWS credentials, для которых обновляется конфигурация мониторящихся сервисов. | path | Required |
-| body | [AwsMonitoredServicesDto](#openapi-definition-AwsMonitoredServicesDto) | JSON-тело запроса. Содержит обновлённую конфигурацию мониторящихся сервисов для AWS credentials. | body | Optional |
+| id | string | ID учётных данных AWS, для которых нужно обновить конфигурацию отслеживаемых сервисов. | path | Обязательный |
+| body | [AwsMonitoredServicesDto](#openapi-definition-AwsMonitoredServicesDto) | Тело JSON запроса. Содержит обновлённую конфигурацию отслеживаемых сервисов для учётных данных AWS. | body | Опциональный |
 
 ### Объекты тела запроса
 
@@ -39,41 +38,41 @@ scraped: 2026-05-12T11:15:06.851517
 
 | Элемент | Тип | Описание | Обязательный |
 | --- | --- | --- | --- |
-| metadata | [ConfigurationMetadata](#openapi-definition-ConfigurationMetadata) | Метаданные для отладки | Optional |
-| services | [AwsSupportingServiceConfig[]](#openapi-definition-AwsSupportingServiceConfig) | Список AWS-сервисов для мониторинга. Доступные сервисы перечислены операцией [/aws/supportedServices](https://dt-url.net/me02sh2).  Для каждого сервиса можно указать список метрик и измерений. Список поддерживаемых метрик и измерений для конкретного сервиса можно посмотреть в [документации](https://dt-url.net/r12v0pkl).  Список метрик можно пропустить (задать null), тогда для мониторинга будет выбран рекомендуемый (по умолчанию) набор метрик и измерений. Для встроенных сервисов изменение списка метрик не поддерживается, поэтому он должен быть null. | Required |
+| metadata | [ConfigurationMetadata](#openapi-definition-ConfigurationMetadata) | Метаданные, полезные для отладки | Опциональный |
+| services | [AwsSupportingServiceConfig](#openapi-definition-AwsSupportingServiceConfig)[] | Список сервисов AWS, которые нужно отслеживать. Доступные сервисы перечислены операцией [/aws/supportedServices﻿](https://dt-url.net/me02sh2?dt=m).  Для каждого сервиса можно указать список метрик и измерений. Список поддерживаемых метрик и измерений для конкретного сервиса можно проверить в [документации﻿](https://dt-url.net/r12v0pkl?dt=m).  Список метрик можно пропустить (задать значение null), в этом случае для мониторинга будет выбран рекомендуемый (по умолчанию) набор метрик и измерений. Для встроенных сервисов изменение списка метрик не поддерживается, поэтому значение должно быть null. | Обязательный |
 
 #### Объект `ConfigurationMetadata`
 
-Метаданные для отладки
+Метаданные, полезные для отладки
 
 | Элемент | Тип | Описание | Обязательный |
 | --- | --- | --- | --- |
-| clusterVersion | string | Версия Dynatrace. | Optional |
-| configurationVersions | integer[] | Отсортированный список номеров версий конфигурации. | Optional |
-| currentConfigurationVersions | string[] | Отсортированный список номеров версий конфигурации. | Optional |
+| clusterVersion | string | Версия Dynatrace. | Опциональный |
+| configurationVersions | integer[] | Отсортированный список номеров версий конфигурации. | Опциональный |
+| currentConfigurationVersions | string[] | Отсортированный список номеров версий конфигурации. | Опциональный |
 
 #### Объект `AwsSupportingServiceConfig`
 
-Сервис для мониторинга.
+Сервис, который нужно отслеживать.
 
 | Элемент | Тип | Описание | Обязательный |
 | --- | --- | --- | --- |
-| monitoredMetrics | [AwsSupportingServiceMetric[]](#openapi-definition-AwsSupportingServiceMetric) | Список метрик для мониторинга этого сервиса. Если список null, мониторится рекомендуемый список метрик для этого сервиса. | Optional |
-| name | string | Имя сервиса. Допустимые имена поддерживаемых сервисов можно узнать через restAPI /aws/supportedServices | Required |
+| monitoredMetrics | [AwsSupportingServiceMetric](#openapi-definition-AwsSupportingServiceMetric)[] | Список метрик, которые нужно отслеживать для этого сервиса. Если список равен null, для этого сервиса будет отслеживаться рекомендуемый список метрик. | Опциональный |
+| name | string | Название сервиса. Действительные поддерживаемые названия сервисов можно узнать через /aws/supportedServices restAPI | Обязательный |
 
 #### Объект `AwsSupportingServiceMetric`
 
-Метрика сервиса для мониторинга.
+Метрика сервиса, которую нужно отслеживать.
 
 | Элемент | Тип | Описание | Обязательный |
 | --- | --- | --- | --- |
-| dimensions | string[] | Список имён измерений метрики. | Required |
-| name | string | Имя метрики сервиса. | Required |
-| statistic | string | Статистика (агрегация), используемая для метрики. Значение AVG\_MIN\_MAX это 3 статистики сразу: AVERAGE, MINIMUM и MAXIMUM Возможные значения: * `AVERAGE` * `AVG_MIN_MAX` * `MAXIMUM` * `MINIMUM` * `SAMPLE_COUNT` * `SUM` | Required |
+| dimensions | string[] | Список названий измерений метрики. | Обязательный |
+| name | string | Название метрики сервиса. | Обязательный |
+| statistic | string | Статистика (агрегация), которая будет использоваться для метрики. Значение AVG\_MIN\_MAX представляет собой сразу 3 статистики: AVERAGE, MINIMUM и MAXIMUM. Элемент может содержать следующие значения * `AVERAGE` * `AVG_MIN_MAX` * `MAXIMUM` * `MINIMUM` * `SAMPLE_COUNT` * `SUM` | Обязательный |
 
-### JSON-модель тела запроса
+### JSON модель тела запроса
 
-Это модель тела запроса со всеми возможными элементами. При использовании в реальном запросе её нужно адаптировать.
+Это модель тела запроса, показывающая возможные элементы. Её нужно скорректировать для использования в реальном запросе.
 
 ```
 {
@@ -189,8 +188,8 @@ scraped: 2026-05-12T11:15:06.851517
 
 | Код | Тип | Описание |
 | --- | --- | --- |
-| **204** | - | Успех. Конфигурация AWS credentials обновлена. Ответ без тела. |
-| **400** | [ErrorEnvelope](#openapi-definition-ErrorEnvelope) | Сбой. Невалидный ввод. |
+| **204** | - | Успешно. Конфигурация учётных данных AWS обновлена. Ответ не содержит тела. |
+| **400** | [ErrorEnvelope](#openapi-definition-ErrorEnvelope) | Ошибка. Входные данные недействительны. |
 
 ### Объекты тела ответа
 
@@ -204,8 +203,8 @@ scraped: 2026-05-12T11:15:06.851517
 
 | Элемент | Тип | Описание |
 | --- | --- | --- |
-| code | integer | HTTP-код статуса |
-| constraintViolations | [ConstraintViolation[]](#openapi-definition-ConstraintViolation) | Список нарушений ограничений |
+| code | integer | Код статуса HTTP |
+| constraintViolations | [ConstraintViolation](#openapi-definition-ConstraintViolation)[] | Список нарушений ограничений |
 | message | string | Сообщение об ошибке |
 
 #### Объект `ConstraintViolation`
@@ -216,10 +215,10 @@ scraped: 2026-05-12T11:15:06.851517
 | --- | --- | --- |
 | location | string | - |
 | message | string | - |
-| parameterLocation | string | -Возможные значения: * `HEADER` * `PATH` * `PAYLOAD_BODY` * `QUERY` |
+| parameterLocation | string | -Элемент может содержать следующие значения * `HEADER` * `PATH` * `PAYLOAD_BODY` * `QUERY` |
 | path | string | - |
 
-### JSON-модели тела ответа
+### JSON модели тела ответа
 
 ```
 {
@@ -277,13 +276,13 @@ scraped: 2026-05-12T11:15:06.851517
 }
 ```
 
-## Validate payload
+## Валидация тела запроса
 
-Рекомендуется валидировать payload перед отправкой реального запроса. Код ответа **204** означает валидный payload.
+Рекомендуется валидировать тело запроса перед отправкой в составе реального запроса. Код ответа **204** означает, что тело запроса корректно.
 
-Запрос принимает payload `application/json`.
+Запрос принимает тело в формате `application/json`.
 
-Запрос принимает payload `application/json`.
+Запрос принимает тело в формате `application/json`.
 
 |  |  |  |
 | --- | --- | --- |
@@ -292,9 +291,9 @@ scraped: 2026-05-12T11:15:06.851517
 
 ### Аутентификация
 
-Для выполнения этого запроса нужен access token со scope `WriteConfig`.
+Для выполнения этого запроса нужен токен доступа с областью действия `WriteConfig`.
 
-Как его получить и использовать, смотрите [Tokens and authentication](/managed/discover-dynatrace/references/dynatrace-api/basics/dynatrace-api-authentication).
+О том, как получить и использовать токен, см. [Токены и аутентификация](/managed/discover-dynatrace/references/dynatrace-api/basics/dynatrace-api-authentication).
 
 ### Ответ
 
@@ -302,8 +301,8 @@ scraped: 2026-05-12T11:15:06.851517
 
 | Код | Тип | Описание |
 | --- | --- | --- |
-| **204** | - | Validated. Переданная конфигурация валидна. Ответ без тела. |
-| **400** | [ErrorEnvelope](#openapi-definition-ErrorEnvelope) | Сбой. Невалидный ввод. |
+| **204** | - | Проверено. Отправленная конфигурация корректна. Ответ не содержит тела. |
+| **400** | [ErrorEnvelope](#openapi-definition-ErrorEnvelope) | Ошибка. Входные данные недействительны. |
 
 #### Объекты тела ответа
 
@@ -317,8 +316,8 @@ scraped: 2026-05-12T11:15:06.851517
 
 | Элемент | Тип | Описание |
 | --- | --- | --- |
-| code | integer | HTTP-код статуса |
-| constraintViolations | [ConstraintViolation[]](#openapi-definition-ConstraintViolation) | Список нарушений ограничений |
+| code | integer | Код статуса HTTP |
+| constraintViolations | [ConstraintViolation](#openapi-definition-ConstraintViolation)[] | Список нарушений ограничений |
 | message | string | Сообщение об ошибке |
 
 #### Объект `ConstraintViolation`
@@ -329,10 +328,10 @@ scraped: 2026-05-12T11:15:06.851517
 | --- | --- | --- |
 | location | string | - |
 | message | string | - |
-| parameterLocation | string | -Возможные значения: * `HEADER` * `PATH` * `PAYLOAD_BODY` * `QUERY` |
+| parameterLocation | string | -Элемент может содержать следующие значения * `HEADER` * `PATH` * `PAYLOAD_BODY` * `QUERY` |
 | path | string | - |
 
-#### JSON-модели тела ответа
+#### JSON модели тела ответа
 
 ```
 {

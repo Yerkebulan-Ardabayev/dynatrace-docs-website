@@ -1,20 +1,19 @@
 ---
 title: Synthetic locations API v2 - POST a location (Dynatrace Managed)
 source: https://docs.dynatrace.com/managed/dynatrace-api/cluster-api/cluster-api-v2/synthetic-locations-and-nodes/post-a-location
-scraped: 2026-05-12T11:05:45.251091
 ---
 
 # Synthetic locations API v2 - POST a location (Dynatrace Managed)
 
 # Synthetic locations API v2 - POST a location (Dynatrace Managed)
 
-* Published Mar 13, 2019
+* Опубликовано 13 марта 2019 г.
 
-Этот API-вызов создаёт новый **private** synthetic location. Подробнее о создании synthetic location смотрите в [Create a private Synthetic location](/managed/observe/digital-experience/synthetic-monitoring/private-synthetic-locations/create-a-private-synthetic-location "Узнайте, как создать private location для synthetic monitoring."). Запрос принимает и возвращает payload `application/json`.
+Этот вызов API создаёт новую **приватную** synthetic location. Подробнее о создании synthetic location смотри [Create a private Synthetic location](/managed/observe/digital-experience/synthetic-monitoring/private-synthetic-locations/create-a-private-synthetic-location "Learn how to create a private location for synthetic monitoring."). Запрос принимает и возвращает payload в формате `application/json`.
 
 ## Аутентификация
 
-Для выполнения этого запроса API-токену нужно разрешение **Service Provider API** (`ServiceProviderAPI`). Создайте API-токен через Cluster Management Console (CMC). Как его получить и использовать, смотрите [Cluster API - Tokens and authentication](/managed/dynatrace-api/cluster-api/cluster-api-authentication "Как пройти аутентификацию для работы с Dynatrace Cluster API.").
+Для выполнения этого запроса токену API нужно назначить право доступа **Service Provider API** (`ServiceProviderAPI`). Токен API генерируется через Cluster Management Console (CMC). Как получить и использовать его, описано в [Cluster API - Tokens and authentication](/managed/dynatrace-api/cluster-api/cluster-api-authentication "How to get authenticated to use the Dynatrace Cluster API.").
 
 ## Endpoint
 
@@ -22,50 +21,50 @@ scraped: 2026-05-12T11:05:45.251091
 
 ## Параметр
 
-Все вариации модели в зависимости от её типа смотрите в [JSON models](/managed/dynatrace-api/environment-api/synthetic-v2/synthetic-locations-v2/json-models "Получение информации о synthetic nodes через Synthetic v2 API.").
+Все вариации модели, зависящие от её типа, перечислены в [JSON models](/managed/dynatrace-api/environment-api/synthetic-v2/synthetic-locations-v2/json-models "Get synthetic nodes information via the Synthetic v2 API.").
 
-| Параметр | Тип | Описание | Где | Обязательный |
+| Параметр | Тип | Описание | В | Обязательный |
 | --- | --- | --- | --- | --- |
-| body | [PrivateSyntheticLocation](#openapi-definition-PrivateSyntheticLocation) | JSON-тело запроса. Содержит параметры нового private synthetic location. | body | Required |
+| body | [PrivateSyntheticLocation](#openapi-definition-PrivateSyntheticLocation) | Тело JSON запроса. Содержит параметры новой приватной synthetic location. | body | Обязательный |
 
 ### Объекты тела запроса
 
 #### Объект `PrivateSyntheticLocation`
 
-Конфигурация private synthetic location.
+Конфигурация приватной synthetic location.
 
-Некоторые поля наследуются от базового объекта *SyntheticLocation*.
+Часть полей унаследована от базового объекта *SyntheticLocation*.
 
 | Элемент | Тип | Описание | Обязательный |
 | --- | --- | --- | --- |
-| autoUpdateChromium | boolean | Свойство неконтейнеризованного location. Auto upgrade Chromium включён (`true`) или выключен (`false`). | Optional |
-| availabilityLocationOutage | boolean | Алертинг по отказу location включён (`true`) или выключен (`false`). Поддерживается только для private Synthetic locations. | Optional |
-| availabilityNodeOutage | boolean | Алертинг по отказу ноды включён (`true`) или выключен (`false`). \n\n Если включён, отказ *любой* ноды в location триггерит алерт. Поддерживается только для private Synthetic locations. | Optional |
-| availabilityNotificationsEnabled | boolean | Уведомления о отказах location и ноды включены (`true`) или выключены (`false`). Поддерживается только для private Synthetic locations. | Optional |
-| browserExecutionSupported | boolean | Свойство контейнеризованного location. Boolean-значение, описывающее, будут ли browser monitors выполняться на этом location:  * `false`: Выполнение browser monitor отключено. * `true`: Выполнение browser monitor включено. | Optional |
-| city | string | Город location. | Optional |
-| countryCode | string | Код страны location.  Список доступных кодов стран можно получить через запрос [GET all countries](https://dt-url.net/37030go). | Optional |
-| countryName | string | Имя страны location. | Optional |
-| deploymentType | string | Тип развёртывания location:  * `STANDARD`: Location развёрнут на Windows или Linux. * `KUBERNETES`: Location развёрнут на Kubernetes. Возможные значения: * `KUBERNETES` * `OPENSHIFT` * `STANDARD` * `UNKNOWN` | Optional |
-| entityId | string | Dynatrace entity ID location. | Optional |
-| fipsMode | string | Свойство контейнеризованного location, указывающее, включён ли FIPS на location:  * `DISABLED`: FIPS не включён на location. * `ENABLED`: FIPS включён на location. * `ENABLED_WITH_CORPORATE_PROXY`: FIPS с corporate proxy включён на этом location.   По умолчанию: DISABLED Возможные значения: * `DISABLED` * `ENABLED` * `ENABLED_WITH_CORPORATE_PROXY` | Optional |
-| geoLocationId | string | Dynatrace GeoLocation ID location. | Optional |
-| latitude | number | Широта location в формате `DDD.dddd`. | Required |
-| locationNodeOutageDelayInMinutes | integer | Алерт, если отказ location или ноды длится дольше *X* минут. \n\n Применимо только когда `availabilityLocationOutage` или `availabilityNodeOutage` равны `true`. Поддерживается только для private Synthetic locations. | Optional |
-| longitude | number | Долгота location в формате `DDD.dddd`. | Required |
-| namExecutionSupported | boolean | Свойство контейнеризованного location. Boolean-значение, описывающее, будут ли icmp monitors выполняться на этом location:  * `false`: Выполнение icmp monitor отключено. * `true`: Выполнение icmp monitor включено. | Optional |
-| name | string | Имя location. | Required |
-| nodeNames | object | Маппинг id на имя нод, принадлежащих location. | Optional |
-| nodes | string[] | Список synthetic nodes, принадлежащих location.  Получить список доступных нод можно через вызов [GET all nodes](https://dt-url.net/miy3rpl). | Required |
-| regionCode | string | Код региона location.  Список доступных кодов регионов можно получить через запрос [GET regions of the country](https://dt-url.net/az230x0). | Optional |
-| regionName | string | Имя региона location. | Optional |
-| status | string | Статус location:  * `ENABLED`: Location отображается как активный в UI. Можно назначать мониторы на location. * `DISABLED`: Location отображается как неактивный в UI. Нельзя назначать мониторы на location. Уже назначенные мониторы остаются и выполняются с location. * `HIDDEN`: Location не отображается в UI. Нельзя назначать мониторы на location. Установить `HIDDEN` можно только если ни один монитор не назначен. Возможные значения: * `DISABLED` * `ENABLED` * `HIDDEN` | Optional |
-| type | string | -Возможные значения: * `CLUSTER` * `PRIVATE` * `PUBLIC` | Required |
-| useNewKubernetesVersion | boolean | Свойство контейнеризованного location. Boolean-значение, описывающее, какая версия kubernetes будет использоваться:  * `false`: Версия 1.23+, но старее 1.26 * `true`: Версия 1.26+. | Optional |
+| autoUpdateChromium | boolean | Свойство неконтейнеризованной location. Автообновление Chromium включено (`true`) или выключено (`false`). | Опциональный |
+| availabilityLocationOutage | boolean | Оповещение о недоступности location включено (`true`) или выключено (`false`). Поддерживается только для приватных Synthetic locations. | Опциональный |
+| availabilityNodeOutage | boolean | Оповещение о недоступности узла включено (`true`) или выключено (`false`). \n\n Если включено, недоступность *любого* узла в location вызывает оповещение. Поддерживается только для приватных Synthetic locations. | Опциональный |
+| availabilityNotificationsEnabled | boolean | Уведомления о недоступности location и узла включены (`true`) или выключены (`false`). Поддерживается только для приватных Synthetic locations. | Опциональный |
+| browserExecutionSupported | boolean | Свойство контейнеризованной location. Булево значение показывает, будут ли на этой location выполняться browser-мониторы:  * `false`: выполнение browser-мониторов отключено. * `true`: выполнение browser-мониторов включено. | Опциональный |
+| city | string | Город location. | Опциональный |
+| countryCode | string | Код страны location.  Список доступных кодов стран можно получить запросом [GET all countries﻿](https://dt-url.net/37030go?dt=m). | Опциональный |
+| countryName | string | Название страны location. | Опциональный |
+| deploymentType | string | Тип развёртывания location:  * `STANDARD`: location развёрнута на Windows или Linux. * `KUBERNETES`: location развёрнута на Kubernetes. Элемент может принимать значения * `KUBERNETES` * `OPENSHIFT` * `STANDARD` * `UNKNOWN` | Опциональный |
+| entityId | string | ID сущности Dynatrace для location. | Опциональный |
+| fipsMode | string | Свойство контейнеризованной location, указывающее, включён ли на ней режим FIPS:  * `DISABLED`: FIPS на location не включён. * `ENABLED`: FIPS на location включён. * `ENABLED_WITH_CORPORATE_PROXY`: на location включён FIPS с corporate proxy.   По умолчанию: DISABLED. Элемент может принимать значения * `DISABLED` * `ENABLED` * `ENABLED_WITH_CORPORATE_PROXY` | Опциональный |
+| geoLocationId | string | ID GeoLocation Dynatrace для location. | Опциональный |
+| latitude | number | Широта location в формате `DDD.dddd`. | Обязательный |
+| locationNodeOutageDelayInMinutes | integer | Оповещать, если недоступность location или узла длится дольше *X* минут. \n\n Применяется, только если `availabilityLocationOutage` или `availabilityNodeOutage` установлены в `true`. Поддерживается только для приватных Synthetic locations. | Опциональный |
+| longitude | number | Долгота location в формате `DDD.dddd`. | Обязательный |
+| namExecutionSupported | boolean | Свойство контейнеризованной location. Булево значение показывает, будут ли на этой location выполняться icmp-мониторы:  * `false`: выполнение icmp-мониторов отключено. * `true`: выполнение icmp-мониторов включено. | Опциональный |
+| name | string | Название location. | Обязательный |
+| nodeNames | object | Соответствие id названию узлов, принадлежащих location. | Опциональный |
+| nodes | string[] | Список synthetic-узлов, принадлежащих location.  Список доступных узлов можно получить вызовом [GET all nodes﻿](https://dt-url.net/miy3rpl?dt=m). | Обязательный |
+| regionCode | string | Код региона location.  Список доступных кодов регионов можно получить запросом [GET regions of the country﻿](https://dt-url.net/az230x0?dt=m). | Опциональный |
+| regionName | string | Название региона location. | Опциональный |
+| status | string | Статус location:  * `ENABLED`: location отображается в UI как активная. Мониторы можно назначать на эту location. * `DISABLED`: location отображается в UI как неактивная. Мониторы нельзя назначить на эту location. Мониторы, уже назначенные на location, останутся на ней и будут выполняться с этой location. * `HIDDEN`: location не отображается в UI. Мониторы нельзя назначить на эту location. Статус `HIDDEN` можно установить, только если на location не назначено ни одного монитора. Элемент может принимать значения * `DISABLED` * `ENABLED` * `HIDDEN` | Опциональный |
+| type | string | -Элемент может принимать значения * `CLUSTER` * `PRIVATE` * `PUBLIC` | Обязательный |
+| useNewKubernetesVersion | boolean | Свойство контейнеризованной location. Булево значение показывает, какая версия kubernetes будет использоваться:  * `false`: версия 1.23+, но старше 1.26. * `true`: версия 1.26+. | Опциональный |
 
-### JSON-модель тела запроса
+### JSON модель тела запроса
 
-Это модель тела запроса со всеми возможными элементами. При использовании в реальном запросе её нужно адаптировать.
+Это модель тела запроса, показывающая возможные элементы. Перед использованием в реальном запросе её нужно скорректировать.
 
 ```
 {
@@ -189,7 +188,7 @@ scraped: 2026-05-12T11:05:45.251091
 
 | Код | Тип | Описание |
 | --- | --- | --- |
-| **201** | [SyntheticLocationIdsDto](#openapi-definition-SyntheticLocationIdsDto) | Успех. Private location создан. Ответ содержит ID нового location. |
+| **201** | [SyntheticLocationIdsDto](#openapi-definition-SyntheticLocationIdsDto) | Успех. Приватная location создана. Ответ содержит ID новой location. |
 | **4XX** | [ErrorEnvelope](#openapi-definition-ErrorEnvelope) | Ошибка на стороне клиента. |
 | **5XX** | [ErrorEnvelope](#openapi-definition-ErrorEnvelope) | Ошибка на стороне сервера. |
 
@@ -201,8 +200,8 @@ DTO для ID synthetic location.
 
 | Элемент | Тип | Описание |
 | --- | --- | --- |
-| entityId | string | Передаваемый Entity ID |
-| geoLocationId | string | Передаваемый GeoLocation ID |
+| entityId | string | Передаваемый ID сущности |
+| geoLocationId | string | Передаваемый ID GeoLocation |
 
 #### Объект `ErrorEnvelope`
 
@@ -215,7 +214,7 @@ DTO для ID synthetic location.
 | Элемент | Тип | Описание |
 | --- | --- | --- |
 | code | integer | HTTP-код статуса |
-| constraintViolations | [ConstraintViolation[]](#openapi-definition-ConstraintViolation) | Список нарушений ограничений |
+| constraintViolations | [ConstraintViolation](#openapi-definition-ConstraintViolation)[] | Список нарушений ограничений |
 | message | string | Сообщение об ошибке |
 
 #### Объект `ConstraintViolation`
@@ -226,10 +225,10 @@ DTO для ID synthetic location.
 | --- | --- | --- |
 | location | string | - |
 | message | string | - |
-| parameterLocation | string | -Возможные значения: * `HEADER` * `PATH` * `PAYLOAD_BODY` * `QUERY` |
+| parameterLocation | string | -Элемент может принимать значения * `HEADER` * `PATH` * `PAYLOAD_BODY` * `QUERY` |
 | path | string | - |
 
-### JSON-модели тела ответа
+### JSON модели тела ответа
 
 ```
 {
@@ -305,11 +304,11 @@ DTO для ID synthetic location.
 
 ## Пример
 
-В этом примере запрос создаёт новый private Synthetic location. Этот location находится в **Линце, Австрия**. Используется synthetic node с ID **290433380**.
+В этом примере запрос создаёт новую приватную Synthetic-локацию. Локация находится в **Линце, Австрия**. Используется synthetic-нода с ID **290433380**.
 
-API-токен передаётся в заголовке **Authorization**.
+Токен API передаётся в заголовке **Authorization**.
 
-Можно скачать или скопировать пример тела запроса для своих экспериментов. Не забудьте заменить список нод на ноды, доступные в вашем окружении. Список доступных нод можно получить через запрос [GET all nodes](/managed/dynatrace-api/environment-api/synthetic/synthetic-nodes/get-all "Список всех synthetic nodes через Synthetic v1 API.").
+Можно скачать или скопировать тело примера запроса, чтобы протестировать его самостоятельно. Обязательно замени список нод на ноды, доступные в текущей среде. Список доступных нод можно получить запросом [GET all nodes](/managed/dynatrace-api/environment-api/synthetic/synthetic-nodes/get-all "List all synthetic nodes via the Synthetic v1 API.").
 
 #### Curl
 
@@ -389,13 +388,13 @@ curl -L -X POST 'https://mySampleEnv.live.dynatrace.com/api/v2/synthetic/locatio
 '
 ```
 
-#### URL запроса
+#### Request URL
 
 ```
 https://mySampleEnv.live.dynatrace.com/api/v2/synthetic/locations
 ```
 
-#### Тело запроса
+#### Request body
 
 ```
 {
@@ -449,7 +448,7 @@ https://mySampleEnv.live.dynatrace.com/api/v2/synthetic/locations
 }
 ```
 
-#### Тело ответа
+#### Response body
 
 ```
 {
@@ -467,11 +466,11 @@ https://mySampleEnv.live.dynatrace.com/api/v2/synthetic/locations
 }
 ```
 
-#### Код ответа
+#### Response code
 
 200
 
-## Связанные темы
+## Related topics
 
-* [Synthetic Monitoring](/managed/observe/digital-experience/synthetic-monitoring "Узнайте о Synthetic Monitoring и о том, как создать single-URL browser monitor, browser clickpath или HTTP monitor.")
-* [Create a private Synthetic location](/managed/observe/digital-experience/synthetic-monitoring/private-synthetic-locations/create-a-private-synthetic-location "Узнайте, как создать private location для synthetic monitoring.")
+* [Synthetic Monitoring](/managed/observe/digital-experience/synthetic-monitoring "Learn about Synthetic Monitoring and how to create a single-URL browser monitor, a browser clickpath, or an HTTP monitor.")
+* [Create a private Synthetic location in Classic](/managed/observe/digital-experience/synthetic-monitoring/private-synthetic-locations/create-a-private-synthetic-location "Learn how to create a private location for synthetic monitoring.")

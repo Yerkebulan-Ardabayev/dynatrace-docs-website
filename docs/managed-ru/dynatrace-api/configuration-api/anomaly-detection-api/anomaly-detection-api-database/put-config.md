@@ -1,19 +1,18 @@
 ---
 title: Database anomaly detection API - PUT configuration
 source: https://docs.dynatrace.com/managed/dynatrace-api/configuration-api/anomaly-detection-api/anomaly-detection-api-database/put-config
-scraped: 2026-05-12T11:20:12.964050
 ---
 
 # Database anomaly detection API - PUT configuration
 
 # Database anomaly detection API - PUT configuration
 
-* Reference
-* Published Jan 23, 2019
+* Справка
+* Опубликовано 23 янв. 2019 г.
 
-Обновляет конфигурацию обнаружения аномалий для сервисов баз данных.
+Обновляет конфигурацию обнаружения аномалий для служб баз данных.
 
-Запрос принимает payload `application/json`.
+Запрос принимает полезную нагрузку `application/json`.
 
 |  |  |  |
 | --- | --- | --- |
@@ -22,15 +21,15 @@ scraped: 2026-05-12T11:20:12.964050
 
 ## Аутентификация
 
-Для выполнения этого запроса нужен access token со scope `WriteConfig`.
+Для выполнения этого запроса нужен токен доступа с областью действия `WriteConfig`.
 
-Как его получить и использовать, смотрите [Tokens and authentication](/managed/discover-dynatrace/references/dynatrace-api/basics/dynatrace-api-authentication).
+О том, как его получить и использовать, читай в разделе [Tokens and authentication](/managed/discover-dynatrace/references/dynatrace-api/basics/dynatrace-api-authentication).
 
 ## Параметры
 
-| Параметр | Тип | Описание | Где | Обязательный |
+| Параметр | Тип | Описание | В | Обязательный |
 | --- | --- | --- | --- | --- |
-| body | [DatabaseAnomalyDetectionConfig](#openapi-definition-DatabaseAnomalyDetectionConfig) | JSON-тело запроса. Содержит параметры конфигурации обнаружения аномалий для сервисов баз данных. | body | Optional |
+| body | [DatabaseAnomalyDetectionConfig](#openapi-definition-DatabaseAnomalyDetectionConfig) | Тело JSON запроса. Содержит параметры конфигурации обнаружения аномалий службы баз данных. | body | Опционально |
 
 ### Объекты тела запроса
 
@@ -38,133 +37,133 @@ scraped: 2026-05-12T11:20:12.964050
 
 Конфигурация обнаружения аномалий для сервисов баз данных.
 
-| Элемент | Тип | Описание | Обязательный |
+| Элемент | Тип | Описание | Обязательность |
 | --- | --- | --- | --- |
-| databaseConnectionFailureCount | [DatabaseConnectionFailureDetectionConfig](#openapi-definition-DatabaseConnectionFailureDetectionConfig) | Параметры обнаружения неуспешных подключений к базе данных.  Оповещение срабатывает, когда число неуспешных подключений превышает **connectionFailsCount** за любой период в **timePeriodMinutes** минут. | Required |
-| failureRateIncrease | [FailureRateIncreaseDetectionConfig](#openapi-definition-FailureRateIncreaseDetectionConfig) | Конфигурация обнаружения роста частоты сбоев. | Required |
-| loadDrop | [LoadDropDetectionConfig](#openapi-definition-LoadDropDetectionConfig) | Конфигурация обнаружения падений нагрузки. | Optional |
-| loadSpike | [LoadSpikeDetectionConfig](#openapi-definition-LoadSpikeDetectionConfig) | Конфигурация обнаружения всплесков нагрузки. | Optional |
-| metadata | [ConfigurationMetadata](#openapi-definition-ConfigurationMetadata) | Метаданные, полезные для отладки | Optional |
-| responseTimeDegradation | [ResponseTimeDegradationDetectionConfig](#openapi-definition-ResponseTimeDegradationDetectionConfig) | Конфигурация обнаружения деградации времени отклика. | Required |
+| databaseConnectionFailureCount | [DatabaseConnectionFailureDetectionConfig](#openapi-definition-DatabaseConnectionFailureDetectionConfig) | Параметры обнаружения неудачных подключений к базе данных. Оповещение срабатывает, когда число неудачных подключений превышает **connectionFailsCount** за любой период в **timePeriodMinutes** минут. | Обязательно |
+| failureRateIncrease | [FailureRateIncreaseDetectionConfig](#openapi-definition-FailureRateIncreaseDetectionConfig) | Конфигурация обнаружения роста доли отказов. | Обязательно |
+| loadDrop | [LoadDropDetectionConfig](#openapi-definition-LoadDropDetectionConfig) | Конфигурация обнаружения падений нагрузки. | Опционально |
+| loadSpike | [LoadSpikeDetectionConfig](#openapi-definition-LoadSpikeDetectionConfig) | Конфигурация обнаружения всплесков нагрузки. | Опционально |
+| metadata | [ConfigurationMetadata](#openapi-definition-ConfigurationMetadata) | Метаданные, полезные для отладки | Опционально |
+| responseTimeDegradation | [ResponseTimeDegradationDetectionConfig](#openapi-definition-ResponseTimeDegradationDetectionConfig) | Конфигурация обнаружения деградации времени отклика. | Обязательно |
 
 #### Объект `DatabaseConnectionFailureDetectionConfig`
 
-Параметры обнаружения неуспешных подключений к базе данных.
+Параметры обнаружения неудачных подключений к базе данных.
 
-Оповещение срабатывает, когда число неуспешных подключений превышает **connectionFailsCount** за любой период в **timePeriodMinutes** минут.
+Оповещение срабатывает, когда число неудачных подключений превышает **connectionFailsCount** за любой период в **timePeriodMinutes** минут.
 
-| Элемент | Тип | Описание | Обязательный |
+| Элемент | Тип | Описание | Обязательность |
 | --- | --- | --- | --- |
-| connectionFailsCount | integer | Число неуспешных подключений к базе данных за любой период в **timePeriodMinutes** минут для срабатывания оповещения. | Optional |
-| enabled | boolean | Обнаружение включено (`true`) или отключено (`false`). | Required |
-| timePeriodMinutes | integer | Период в *X* минут, за который оценивается **connectionFailsCount**. | Optional |
+| connectionFailsCount | integer | Число неудачных подключений к базе данных за любой период в **timePeriodMinutes** минут для срабатывания оповещения. | Опционально |
+| enabled | boolean | Обнаружение включено (`true`) или отключено (`false`). | Обязательно |
+| timePeriodMinutes | integer | Период в *X* минут, за который оценивается **connectionFailsCount**. | Опционально |
 
 #### Объект `FailureRateIncreaseDetectionConfig`
 
-Конфигурация обнаружения роста частоты сбоев.
+Конфигурация обнаружения роста доли отказов.
 
-| Элемент | Тип | Описание | Обязательный |
+| Элемент | Тип | Описание | Обязательность |
 | --- | --- | --- | --- |
-| automaticDetection | [FailureRateIncreaseAutodetectionConfig](#openapi-definition-FailureRateIncreaseAutodetectionConfig) | Параметры автообнаружения роста частоты сбоев. Обязателен, если **detectionMode** = `DETECT_AUTOMATICALLY`. В остальных случаях не применяется.  Для срабатывания оповещения должны быть превышены **оба** порога: абсолютный и относительный.  Пример: если ожидаемая частота ошибок 1.5%, и вы задаёте абсолютный рост 1%, и относительный рост 50%, пороги будут такими: Абсолютный: 1.5% + **1%** = 2.5% Относительный: 1.5% + 1.5% \* **50%** = 2.25% | Optional |
-| detectionMode | string | Как обнаруживать рост частоты сбоев: автоматически, по фиксированным порогам или не обнаруживать. Возможные значения: * `DETECT_AUTOMATICALLY` * `DETECT_USING_FIXED_THRESHOLDS` * `DONT_DETECT` | Required |
-| thresholds | [FailureRateIncreaseThresholdConfig](#openapi-definition-FailureRateIncreaseThresholdConfig) | Фиксированные пороги обнаружения роста частоты сбоев.  Обязателен, если **detectionMode** = `DETECT_USING_FIXED_THRESHOLDS`. В остальных случаях не применяется. | Optional |
+| automaticDetection | [FailureRateIncreaseAutodetectionConfig](#openapi-definition-FailureRateIncreaseAutodetectionConfig) | Параметры автоматического обнаружения роста доли отказов. Обязательно, если **detectionMode** имеет значение `DETECT_AUTOMATICALLY`. В остальных случаях не применяется.  Для срабатывания оповещения абсолютный и относительный пороги должны быть превышены **оба**.  Пример: если ожидаемая доля ошибок составляет 1,5%, задан абсолютный прирост 1% и относительный прирост 50%, пороги будут такими: абсолютный: 1,5% + **1%** = 2,5%; относительный: 1,5% + 1,5% \* **50%** = 2,25% | Опционально |
+| detectionMode | string | Способ обнаружения роста доли отказов: автоматически, на основе фиксированных порогов или без обнаружения. Элемент может принимать следующие значения: * `DETECT_AUTOMATICALLY` * `DETECT_USING_FIXED_THRESHOLDS` * `DONT_DETECT` | Обязательно |
+| thresholds | [FailureRateIncreaseThresholdConfig](#openapi-definition-FailureRateIncreaseThresholdConfig) | Фиксированные пороги для обнаружения роста доли отказов.  Обязательно, если **detectionMode** имеет значение `DETECT_USING_FIXED_THRESHOLDS`. В остальных случаях не применяется. | Опционально |
 
 #### Объект `FailureRateIncreaseAutodetectionConfig`
 
-Параметры автообнаружения роста частоты сбоев. Обязателен, если **detectionMode** = `DETECT_AUTOMATICALLY`. В остальных случаях не применяется.
+Параметры автоматического обнаружения роста доли отказов. Обязательно, если **detectionMode** имеет значение `DETECT_AUTOMATICALLY`. В остальных случаях не применяется.
 
-Для срабатывания оповещения должны быть превышены **оба** порога: абсолютный и относительный.
+Для срабатывания оповещения абсолютный и относительный пороги должны быть превышены **оба**.
 
-Пример: если ожидаемая частота ошибок 1.5%, и вы задаёте абсолютный рост 1%, и относительный рост 50%, пороги будут такими:
-Абсолютный: 1.5% + **1%** = 2.5%
-Относительный: 1.5% + 1.5% \* **50%** = 2.25%
+Пример: если ожидаемая доля ошибок составляет 1,5%, задан абсолютный прирост 1% и относительный прирост 50%, пороги будут такими:
+абсолютный: 1,5% + **1%** = 2,5%
+относительный: 1,5% + 1,5% \* **50%** = 2,25%
 
-| Элемент | Тип | Описание | Обязательный |
+| Элемент | Тип | Описание | Обязательность |
 | --- | --- | --- | --- |
-| failingServiceCallPercentageIncreaseAbsolute | integer | Абсолютный рост числа неуспешных вызовов сервиса для срабатывания оповещения, %. | Required |
-| failingServiceCallPercentageIncreaseRelative | integer | Относительный рост числа неуспешных вызовов сервиса для срабатывания оповещения, %. | Required |
+| failingServiceCallPercentageIncreaseAbsolute | integer | Абсолютный прирост доли неудачных вызовов сервиса для срабатывания оповещения, %. | Обязательно |
+| failingServiceCallPercentageIncreaseRelative | integer | Относительный прирост доли неудачных вызовов сервиса для срабатывания оповещения, %. | Обязательно |
 
 #### Объект `FailureRateIncreaseThresholdConfig`
 
-Фиксированные пороги обнаружения роста частоты сбоев.
+Фиксированные пороги для обнаружения роста доли отказов.
 
-Обязателен, если **detectionMode** = `DETECT_USING_FIXED_THRESHOLDS`. В остальных случаях не применяется.
+Обязательно, если **detectionMode** имеет значение `DETECT_USING_FIXED_THRESHOLDS`. В остальных случаях не применяется.
 
-| Элемент | Тип | Описание | Обязательный |
+| Элемент | Тип | Описание | Обязательность |
 | --- | --- | --- | --- |
-| sensitivity | string | Чувствительность порога.  При `low` чувствительности используется высокая статистическая достоверность. Кратковременные нарушения (например, из-за всплеска нагрузки) не вызывают оповещений.  При `high` чувствительности статистическая достоверность не используется. Каждое нарушение вызывает оповещение. Возможные значения: * `HIGH` * `LOW` * `MEDIUM` | Required |
-| threshold | integer | Частота сбоев за любой 5-минутный период для срабатывания оповещения, %. | Required |
+| sensitivity | string | Чувствительность порога.  При `low` чувствительности используется высокая статистическая достоверность. Кратковременные нарушения (например, из-за всплеска нагрузки) не приводят к оповещениям.  При `high` чувствительности статистическая достоверность не используется. Каждое нарушение вызывает оповещение. Элемент может принимать следующие значения: * `HIGH` * `LOW` * `MEDIUM` | Обязательно |
+| threshold | integer | Доля отказов за любой 5-минутный период для срабатывания оповещения, %. | Обязательно |
 
 #### Объект `LoadDropDetectionConfig`
 
 Конфигурация обнаружения падений нагрузки.
 
-| Элемент | Тип | Описание | Обязательный |
+| Элемент | Тип | Описание | Обязательность |
 | --- | --- | --- | --- |
-| enabled | boolean | Обнаружение включено (`true`) или отключено (`false`). | Required |
-| loadDropPercent | integer | Оповещать, если наблюдаемая нагрузка меньше *X* % от ожидаемого значения. | Optional |
-| minAbnormalStateDurationInMinutes | integer | Оповещать, если сервис остаётся в аномальном состоянии не менее *X* минут. | Optional |
+| enabled | boolean | Обнаружение включено (`true`) или отключено (`false`). | Обязательно |
+| loadDropPercent | integer | Оповещение, если наблюдаемая нагрузка меньше *X* % от ожидаемого значения. | Опционально |
+| minAbnormalStateDurationInMinutes | integer | Оповещение, если сервис остаётся в аномальном состоянии не менее *X* минут. | Опционально |
 
 #### Объект `LoadSpikeDetectionConfig`
 
 Конфигурация обнаружения всплесков нагрузки.
 
-| Элемент | Тип | Описание | Обязательный |
+| Элемент | Тип | Описание | Обязательность |
 | --- | --- | --- | --- |
-| enabled | boolean | Обнаружение включено (`true`) или отключено (`false`). | Required |
-| loadSpikePercent | integer | Оповещать, если наблюдаемая нагрузка больше *X* % от ожидаемого значения. | Optional |
-| minAbnormalStateDurationInMinutes | integer | Оповещать, если сервис остаётся в аномальном состоянии не менее *X* минут. | Optional |
+| enabled | boolean | Обнаружение включено (`true`) или отключено (`false`). | Обязательно |
+| loadSpikePercent | integer | Оповещение, если наблюдаемая нагрузка больше *X* % от ожидаемого значения. | Опционально |
+| minAbnormalStateDurationInMinutes | integer | Оповещение, если сервис остаётся в аномальном состоянии не менее *X* минут. | Опционально |
 
 #### Объект `ConfigurationMetadata`
 
 Метаданные, полезные для отладки
 
-| Элемент | Тип | Описание | Обязательный |
+| Элемент | Тип | Описание | Обязательность |
 | --- | --- | --- | --- |
-| clusterVersion | string | Версия Dynatrace. | Optional |
-| configurationVersions | integer[] | Отсортированный список номеров версий конфигурации. | Optional |
-| currentConfigurationVersions | string[] | Отсортированный список номеров версий конфигурации. | Optional |
+| clusterVersion | string | Версия Dynatrace. | Опционально |
+| configurationVersions | integer[] | Отсортированный список номеров версий конфигурации. | Опционально |
+| currentConfigurationVersions | string[] | Отсортированный список номеров версий конфигурации. | Опционально |
 
 #### Объект `ResponseTimeDegradationDetectionConfig`
 
 Конфигурация обнаружения деградации времени отклика.
 
-| Элемент | Тип | Описание | Обязательный |
+| Элемент | Тип | Описание | Обязательность |
 | --- | --- | --- | --- |
-| automaticDetection | [ResponseTimeDegradationAutodetectionConfig](#openapi-definition-ResponseTimeDegradationAutodetectionConfig) | Параметры автообнаружения деградации времени отклика. Обязателен, если **detectionMode** = `DETECT_AUTOMATICALLY`. В остальных случаях не применяется.  Нарушение **любого** критерия вызывает оповещение. | Optional |
-| detectionMode | string | Как обнаруживать деградацию времени отклика: автоматически, по фиксированным порогам или не обнаруживать. Возможные значения: * `DETECT_AUTOMATICALLY` * `DETECT_USING_FIXED_THRESHOLDS` * `DONT_DETECT` | Required |
-| thresholds | [ResponseTimeDegradationThresholdConfig](#openapi-definition-ResponseTimeDegradationThresholdConfig) | Фиксированные пороги обнаружения деградации времени отклика.  Обязателен, если **detectionMode** = `DETECT_USING_FIXED_THRESHOLDS`. В остальных случаях не применяется. | Optional |
+| automaticDetection | [ResponseTimeDegradationAutodetectionConfig](#openapi-definition-ResponseTimeDegradationAutodetectionConfig) | Параметры автоматического обнаружения деградации времени отклика. Обязательно, если **detectionMode** имеет значение `DETECT_AUTOMATICALLY`. В остальных случаях не применяется.  Нарушение **любого** критерия вызывает оповещение. | Опционально |
+| detectionMode | string | Способ обнаружения деградации времени отклика: автоматически, на основе фиксированных порогов или без обнаружения. Элемент может принимать следующие значения: * `DETECT_AUTOMATICALLY` * `DETECT_USING_FIXED_THRESHOLDS` * `DONT_DETECT` | Обязательно |
+| thresholds | [ResponseTimeDegradationThresholdConfig](#openapi-definition-ResponseTimeDegradationThresholdConfig) | Фиксированные пороги для обнаружения деградации времени отклика.  Обязательно, если **detectionMode** имеет значение `DETECT_USING_FIXED_THRESHOLDS`. В остальных случаях не применяется. | Опционально |
 
 #### Объект `ResponseTimeDegradationAutodetectionConfig`
 
-Параметры автообнаружения деградации времени отклика. Обязателен, если **detectionMode** = `DETECT_AUTOMATICALLY`. В остальных случаях не применяется.
+Параметры автоматического обнаружения деградации времени отклика. Обязательно, если **detectionMode** имеет значение `DETECT_AUTOMATICALLY`. В остальных случаях не применяется.
 
 Нарушение **любого** критерия вызывает оповещение.
 
-| Элемент | Тип | Описание | Обязательный |
+| Элемент | Тип | Описание | Обязательность |
 | --- | --- | --- | --- |
-| loadThreshold | string | Минимальная нагрузка сервиса для обнаружения деградации времени отклика.  Деградация времени отклика сервисов с меньшей нагрузкой не вызывает оповещений. Возможные значения: * `FIFTEEN_REQUESTS_PER_MINUTE` * `FIVE_REQUESTS_PER_MINUTE` * `ONE_REQUEST_PER_MINUTE` * `TEN_REQUESTS_PER_MINUTE` | Required |
-| responseTimeDegradationMilliseconds | integer | Оповещать, если время отклика деградирует более чем на *X* миллисекунд. | Required |
-| responseTimeDegradationPercent | integer | Оповещать, если время отклика деградирует более чем на *X* %. | Required |
-| slowestResponseTimeDegradationMilliseconds | integer | Оповещать, если время отклика самых медленных 10% деградирует более чем на *X* миллисекунд. | Required |
-| slowestResponseTimeDegradationPercent | integer | Оповещать, если время отклика самых медленных 10% деградирует более чем на *X* %. | Required |
+| loadThreshold | string | Минимальная нагрузка сервиса для обнаружения деградации времени отклика.  Деградация времени отклика сервисов с меньшей нагрузкой не вызывает оповещений. Элемент может принимать следующие значения: * `FIFTEEN_REQUESTS_PER_MINUTE` * `FIVE_REQUESTS_PER_MINUTE` * `ONE_REQUEST_PER_MINUTE` * `TEN_REQUESTS_PER_MINUTE` | Обязательно |
+| responseTimeDegradationMilliseconds | integer | Оповещение, если время отклика ухудшается более чем на *X* миллисекунд. | Обязательно |
+| responseTimeDegradationPercent | integer | Оповещение, если время отклика ухудшается более чем на *X* %. | Обязательно |
+| slowestResponseTimeDegradationMilliseconds | integer | Оповещение, если время отклика самых медленных 10% ухудшается более чем на *X* миллисекунд. | Обязательно |
+| slowestResponseTimeDegradationPercent | integer | Оповещение, если время отклика самых медленных 10% ухудшается более чем на *X* %. | Обязательно |
 
 #### Объект `ResponseTimeDegradationThresholdConfig`
 
-Фиксированные пороги обнаружения деградации времени отклика.
+Фиксированные пороги для обнаружения деградации времени отклика.
 
-Обязателен, если **detectionMode** = `DETECT_USING_FIXED_THRESHOLDS`. В остальных случаях не применяется.
+Обязательно, если **detectionMode** имеет значение `DETECT_USING_FIXED_THRESHOLDS`. В остальных случаях не применяется.
 
-| Элемент | Тип | Описание | Обязательный |
+| Элемент | Тип | Описание | Обязательность |
 | --- | --- | --- | --- |
-| loadThreshold | string | Минимальная нагрузка сервиса для обнаружения деградации времени отклика.  Деградация времени отклика сервисов с меньшей нагрузкой не вызывает оповещений. Возможные значения: * `FIFTEEN_REQUESTS_PER_MINUTE` * `FIVE_REQUESTS_PER_MINUTE` * `ONE_REQUEST_PER_MINUTE` * `TEN_REQUESTS_PER_MINUTE` | Required |
-| responseTimeThresholdMilliseconds | integer | Время отклика за любой 5-минутный период для срабатывания оповещения, в миллисекундах. | Required |
-| sensitivity | string | Чувствительность порога.  При `low` чувствительности используется высокая статистическая достоверность. Кратковременные нарушения (например, из-за всплеска нагрузки) не вызывают оповещений.  При `high` чувствительности статистическая достоверность не используется. Каждое нарушение вызывает оповещение. Возможные значения: * `HIGH` * `LOW` * `MEDIUM` | Required |
-| slowestResponseTimeThresholdMilliseconds | integer | Время отклика самых медленных 10% за любой 5-минутный период для срабатывания оповещения, в миллисекундах. | Required |
+| loadThreshold | string | Минимальная нагрузка сервиса для обнаружения деградации времени отклика.  Деградация времени отклика сервисов с меньшей нагрузкой не вызывает оповещений. Элемент может принимать следующие значения: * `FIFTEEN_REQUESTS_PER_MINUTE` * `FIVE_REQUESTS_PER_MINUTE` * `ONE_REQUEST_PER_MINUTE` * `TEN_REQUESTS_PER_MINUTE` | Обязательно |
+| responseTimeThresholdMilliseconds | integer | Время отклика за любой 5-минутный период для срабатывания оповещения, в миллисекундах. | Обязательно |
+| sensitivity | string | Чувствительность порога.  При `low` чувствительности используется высокая статистическая достоверность. Кратковременные нарушения (например, из-за всплеска нагрузки) не приводят к оповещениям.  При `high` чувствительности статистическая достоверность не используется. Каждое нарушение вызывает оповещение. Элемент может принимать следующие значения: * `HIGH` * `LOW` * `MEDIUM` | Обязательно |
+| slowestResponseTimeThresholdMilliseconds | integer | Время отклика 10% самых медленных за любой 5-минутный период для срабатывания оповещения, в миллисекундах. | Обязательно |
 
-### JSON-модель тела запроса
+### Модель тела запроса JSON
 
-Это модель тела запроса со всеми возможными элементами. При использовании в реальном запросе её нужно адаптировать.
+Это модель тела запроса, показывающая возможные элементы. Её нужно адаптировать для использования в реальном запросе.
 
 ```
 {
@@ -300,8 +299,8 @@ scraped: 2026-05-12T11:20:12.964050
 
 | Код | Тип | Описание |
 | --- | --- | --- |
-| **204** | - | Успех. Конфигурация обновлена. Ответ без тела. |
-| **400** | [ErrorEnvelope](#openapi-definition-ErrorEnvelope) | Сбой. Невалидный ввод |
+| **204** | - | Успешно. Конфигурация обновлена. Ответ не содержит тела. |
+| **400** | [ErrorEnvelope](#openapi-definition-ErrorEnvelope) | Ошибка. Входные данные недействительны |
 
 ### Объекты тела ответа
 
@@ -316,7 +315,7 @@ scraped: 2026-05-12T11:20:12.964050
 | Элемент | Тип | Описание |
 | --- | --- | --- |
 | code | integer | HTTP-код статуса |
-| constraintViolations | [ConstraintViolation[]](#openapi-definition-ConstraintViolation) | Список нарушений ограничений |
+| constraintViolations | [ConstraintViolation](#openapi-definition-ConstraintViolation)[] | Список нарушений ограничений |
 | message | string | Сообщение об ошибке |
 
 #### Объект `ConstraintViolation`
@@ -327,10 +326,10 @@ scraped: 2026-05-12T11:20:12.964050
 | --- | --- | --- |
 | location | string | - |
 | message | string | - |
-| parameterLocation | string | -Возможные значения: * `HEADER` * `PATH` * `PAYLOAD_BODY` * `QUERY` |
+| parameterLocation | string | -Элемент может принимать следующие значения * `HEADER` * `PATH` * `PAYLOAD_BODY` * `QUERY` |
 | path | string | - |
 
-### JSON-модели тела ответа
+### Модели JSON тела ответа
 
 ```
 {
@@ -388,11 +387,11 @@ scraped: 2026-05-12T11:20:12.964050
 }
 ```
 
-## Validate payload
+## Проверка полезной нагрузки
 
-Рекомендуется валидировать payload перед отправкой реального запроса. Код ответа **204** означает валидный payload.
+Рекомендуется проверить полезную нагрузку перед отправкой в реальном запросе. Код ответа **204** означает, что полезная нагрузка действительна.
 
-Запрос принимает payload `application/json`.
+Запрос принимает полезную нагрузку `application/json`.
 
 |  |  |  |
 | --- | --- | --- |
@@ -401,9 +400,9 @@ scraped: 2026-05-12T11:20:12.964050
 
 ### Аутентификация
 
-Для выполнения этого запроса нужен access token со scope `WriteConfig`.
+Для выполнения этого запроса нужен токен доступа с областью действия `WriteConfig`.
 
-Как его получить и использовать, смотрите [Tokens and authentication](/managed/discover-dynatrace/references/dynatrace-api/basics/dynatrace-api-authentication).
+Подробнее о том, как получить и использовать его, см. [Токены и аутентификация](/managed/discover-dynatrace/references/dynatrace-api/basics/dynatrace-api-authentication).
 
 ### Ответ
 
@@ -411,8 +410,8 @@ scraped: 2026-05-12T11:20:12.964050
 
 | Код | Тип | Описание |
 | --- | --- | --- |
-| **204** | - | Validated. Переданная конфигурация валидна. Ответ без тела. |
-| **400** | [ErrorEnvelope](#openapi-definition-ErrorEnvelope) | Сбой. Невалидный ввод |
+| **204** | - | Проверено. Отправленная конфигурация действительна. Ответ не содержит тела. |
+| **400** | [ErrorEnvelope](#openapi-definition-ErrorEnvelope) | Ошибка. Входные данные недействительны |
 
 #### Объекты тела ответа
 
@@ -427,7 +426,7 @@ scraped: 2026-05-12T11:20:12.964050
 | Элемент | Тип | Описание |
 | --- | --- | --- |
 | code | integer | HTTP-код статуса |
-| constraintViolations | [ConstraintViolation[]](#openapi-definition-ConstraintViolation) | Список нарушений ограничений |
+| constraintViolations | [ConstraintViolation](#openapi-definition-ConstraintViolation)[] | Список нарушений ограничений |
 | message | string | Сообщение об ошибке |
 
 #### Объект `ConstraintViolation`
@@ -438,10 +437,10 @@ scraped: 2026-05-12T11:20:12.964050
 | --- | --- | --- |
 | location | string | - |
 | message | string | - |
-| parameterLocation | string | -Возможные значения: * `HEADER` * `PATH` * `PAYLOAD_BODY` * `QUERY` |
+| parameterLocation | string | -Элемент может принимать следующие значения * `HEADER` * `PATH` * `PAYLOAD_BODY` * `QUERY` |
 | path | string | - |
 
-#### JSON-модели тела ответа
+#### Модели JSON тела ответа
 
 ```
 {
@@ -501,15 +500,15 @@ scraped: 2026-05-12T11:20:12.964050
 
 ## Пример
 
-В этом примере запрос обновляет конфигурацию обнаружения аномалий для сервисов баз данных из примера [GET request](/managed/dynatrace-api/configuration-api/anomaly-detection-api/anomaly-detection-api-database/get-config#example "Просмотр конфигурации обнаружения аномалий для сервисов баз данных через Dynatrace API."). Он активирует **response time degradation detection** в режиме **automatic** и задаёт следующие пороги:
+В этом примере запрос обновляет конфигурацию обнаружения аномалий для служб баз данных из примера [GET-запроса](/managed/dynatrace-api/configuration-api/anomaly-detection-api/anomaly-detection-api-database/get-config#example "Прочитайте конфигурацию обнаружения аномалий для служб баз данных через Dynatrace API."). Он активирует **обнаружение деградации времени отклика** в **автоматическом** режиме и задаёт следующие пороговые значения:
 
 * Оповещать, если время отклика деградирует более чем на **5** мс и на **50%**.
 * Оповещать, если время отклика самых медленных 10% деградирует более чем на **20** мс и на **100%**.
-* Чтобы избежать избыточных оповещений, не оповещать для слабонагруженных сервисов с менее чем **10** запросами в минуту.
+* Чтобы избежать избыточных оповещений, не оповещать для служб с низкой нагрузкой, у которых менее **10** запросов в минуту.
 
-API-токен передаётся в заголовке **Authorization**.
+Токен API передаётся в заголовке **Authorization**.
 
-Вы можете скачать или скопировать пример тела запроса, чтобы попробовать его самостоятельно. Обязательно создайте резервную копию текущей конфигурации вызовом [GET database anomaly detection configuration](/managed/dynatrace-api/configuration-api/anomaly-detection-api/anomaly-detection-api-database/get-config "Просмотр конфигурации обнаружения аномалий для сервисов баз данных через Dynatrace API.").
+Можно скачать или скопировать пример тела запроса, чтобы опробовать его самостоятельно. Обязательно создайте резервную копию текущей конфигурации с помощью вызова [GET конфигурации обнаружения аномалий для базы данных](/managed/dynatrace-api/configuration-api/anomaly-detection-api/anomaly-detection-api-database/get-config "Прочитайте конфигурацию обнаружения аномалий для служб баз данных через Dynatrace API.").
 
 #### Curl
 
@@ -741,11 +740,12 @@ https://mySampleEnv.live.dynatrace.com/api/config/v1/anomalyDetection/databaseSe
 
 Обновлённая конфигурация имеет следующие параметры:
 
-![Anomaly detection config - database - updated](https://dt-cdn.net/images/anomaly-detecion-database-upd-917-087737638a.png)
+![Конфигурация обнаружения аномалий базы данных, обновлено](https://dt-cdn.net/images/anomaly-detecion-database-upd-917-087737638a.png)
 
-Anomaly detection config - database - updated
+Конфигурация обнаружения аномалий базы данных, обновлено
 
 ## Связанные темы
 
-* [Adjust the sensitivity of anomaly detection for database services](/managed/dynatrace-intelligence/anomaly-detection/adjust-sensitivity-anomaly-detection/adjust-sensitivity-services-database "Настройка чувствительности обнаружения проблем для сервисов баз данных.")
-* [Databases](/managed/observe/infrastructure-observability/databases "Отслеживание производительности и ресурсов баз данных для создания и поддержания высокопроизводительной и доступной инфраструктуры приложений.")
+* [Настройка чувствительности обнаружения аномалий для служб баз данных](/managed/dynatrace-intelligence/anomaly-detection/adjust-sensitivity-anomaly-detection/adjust-sensitivity-services-database "Узнайте, как адаптировать чувствительность обнаружения проблем для служб баз данных.")
+* [Недоступно в Dynatrace Managed](/managed/upgrade/unavailable-in-managed "Ваш выбор недоступен в Dynatrace Managed.")
+* [Службы баз данных](/managed/observe/infrastructure-observability/databases "Узнайте, как автоматически обнаруживать службы баз данных, анализировать их и многое другое.")

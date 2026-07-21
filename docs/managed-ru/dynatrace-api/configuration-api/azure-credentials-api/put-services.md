@@ -1,19 +1,18 @@
 ---
 title: Azure credentials API - PUT monitored services
 source: https://docs.dynatrace.com/managed/dynatrace-api/configuration-api/azure-credentials-api/put-services
-scraped: 2026-05-12T11:16:33.489066
 ---
 
 # Azure credentials API - PUT monitored services
 
 # Azure credentials API - PUT monitored services
 
-* Reference
-* Published Jul 28, 2022
+* Справочная информация
+* Опубликовано 28 июля 2022 г.
 
-Обновляет список Azure-сервисов, которые мониторятся Azure-конфигурацией. Обратите внимание: запрос перезаписывает существующую конфигурацию. Все сервисы, которые вы хотите продолжать мониторить, должны быть указаны в payload.
+Обновляет список служб Azure, которые отслеживаются конфигурацией Azure. Обрати внимание, что запрос перезаписывает существующую конфигурацию. Все службы, отслеживание которых нужно продолжить, должны быть указаны в теле запроса.
 
-Запрос принимает payload `application/json`.
+Запрос принимает данные в формате `application/json`.
 
 |  |  |  |
 | --- | --- | --- |
@@ -22,16 +21,16 @@ scraped: 2026-05-12T11:16:33.489066
 
 ## Аутентификация
 
-Для выполнения этого запроса нужен access token со scope `WriteConfig`.
+Для выполнения этого запроса нужен токен доступа с областью действия `WriteConfig`.
 
-Как его получить и использовать, смотрите [Tokens and authentication](/managed/discover-dynatrace/references/dynatrace-api/basics/dynatrace-api-authentication).
+О том, как получить и использовать его, см. [Tokens and authentication](/managed/discover-dynatrace/references/dynatrace-api/basics/dynatrace-api-authentication).
 
 ## Параметры
 
-| Параметр | Тип | Описание | Где | Обязательный |
+| Параметр | Тип | Описание | Расположение | Обязательный |
 | --- | --- | --- | --- | --- |
-| id | string | ID Azure credentials, для которых обновляется конфигурация мониторящихся сервисов. | path | Required |
-| body | [AzureMonitoredServicesDto](#openapi-definition-AzureMonitoredServicesDto) | JSON-тело запроса. Содержит обновлённую конфигурацию мониторящихся сервисов для Azure credentials. | body | Optional |
+| id | string | ID учётных данных Azure, для которых обновляется конфигурация отслеживаемых служб. | path | Обязательный |
+| body | [AzureMonitoredServicesDto](#openapi-definition-AzureMonitoredServicesDto) | JSON тело запроса. Содержит обновлённую конфигурацию отслеживаемых служб для учётных данных Azure. | body | Опциональный |
 
 ### Объекты тела запроса
 
@@ -39,40 +38,40 @@ scraped: 2026-05-12T11:16:33.489066
 
 | Элемент | Тип | Описание | Обязательный |
 | --- | --- | --- | --- |
-| metadata | [ConfigurationMetadata](#openapi-definition-ConfigurationMetadata) | Метаданные для отладки | Optional |
-| services | [AzureSupportingService[]](#openapi-definition-AzureSupportingService) | Список Azure-сервисов для мониторинга. Доступные сервисы перечислены операцией [/azure/supportedServices](https://dt-url.net/wt42sdq).  Для каждого сервиса можно указать список метрик и измерений. Список поддерживаемых метрик и измерений для конкретного сервиса можно посмотреть в [документации](https://dt-url.net/kx2351b).  Список метрик можно пропустить (задать null), тогда для мониторинга будет выбран рекомендуемый (по умолчанию) набор метрик и измерений. Для встроенных сервисов изменение списка метрик не поддерживается, поэтому он должен быть null. | Required |
+| metadata | [ConfigurationMetadata](#openapi-definition-ConfigurationMetadata) | Метаданные, полезные для отладки | Опциональный |
+| services | [AzureSupportingService](#openapi-definition-AzureSupportingService)[] | Список служб Azure для отслеживания. Доступные службы перечислены операцией [/azure/supportedServices﻿](https://dt-url.net/wt42sdq?dt=m).  Для каждой службы можно указать список метрик и измерений. Список поддерживаемых метрик и измерений для конкретной службы можно посмотреть в [документации﻿](https://dt-url.net/kx2351b?dt=m).  Список метрик можно пропустить (задав значение null), в этом случае для отслеживания будет выбран рекомендуемый (по умолчанию) набор метрик и измерений. Для встроенных служб настройка списка метрик не поддерживается, поэтому значение должно быть null. | Обязательный |
 
 #### Объект `ConfigurationMetadata`
 
-Метаданные для отладки
+Метаданные, полезные для отладки
 
 | Элемент | Тип | Описание | Обязательный |
 | --- | --- | --- | --- |
-| clusterVersion | string | Версия Dynatrace. | Optional |
-| configurationVersions | integer[] | Отсортированный список номеров версий конфигурации. | Optional |
-| currentConfigurationVersions | string[] | Отсортированный список номеров версий конфигурации. | Optional |
+| clusterVersion | string | Версия Dynatrace. | Опциональный |
+| configurationVersions | integer[] | Отсортированный список номеров версий конфигурации. | Опциональный |
+| currentConfigurationVersions | string[] | Отсортированный список номеров версий конфигурации. | Опциональный |
 
 #### Объект `AzureSupportingService`
 
-Сервис для мониторинга.
+Служба для отслеживания.
 
 | Элемент | Тип | Описание | Обязательный |
 | --- | --- | --- | --- |
-| monitoredMetrics | [AzureMonitoredMetric[]](#openapi-definition-AzureMonitoredMetric) | Список метрик для мониторинга этого сервиса. Он должен включать все рекомендуемые метрики. Если список null, для мониторинга используется рекомендуемый список метрик для этого сервиса. | Optional |
-| name | string | Имя сервиса. Допустимые имена поддерживаемых сервисов можно узнать через restAPI /azure/supportedServices | Required |
+| monitoredMetrics | [AzureMonitoredMetric](#openapi-definition-AzureMonitoredMetric)[] | Список метрик, отслеживаемых для этой службы. Должен включать все рекомендуемые метрики. Если список равен null, для этой службы будет отслеживаться рекомендуемый список метрик. | Опциональный |
+| name | string | Имя службы. Допустимые имена поддерживаемых служб можно узнать с помощью /azure/supportedServices restAPI | Обязательный |
 
 #### Объект `AzureMonitoredMetric`
 
-Метрика сервиса для мониторинга.
+Отслеживаемая метрика службы.
 
 | Элемент | Тип | Описание | Обязательный |
 | --- | --- | --- | --- |
-| dimensions | string[] | Список имён измерений метрики. Он должен включать все рекомендуемые измерения. | Required |
-| name | string | Имя метрики сервиса. | Required |
+| dimensions | string[] | Список имён измерений метрики. Должен включать все рекомендуемые измерения. | Обязательный |
+| name | string | Имя метрики службы. | Обязательный |
 
-### JSON-модель тела запроса
+### JSON модель тела запроса
 
-Это модель тела запроса со всеми возможными элементами. При использовании в реальном запросе её нужно адаптировать.
+Это модель тела запроса, показывающая возможные элементы. Её нужно адаптировать для использования в реальном запросе.
 
 ```
 {
@@ -184,8 +183,8 @@ scraped: 2026-05-12T11:16:33.489066
 
 | Код | Тип | Описание |
 | --- | --- | --- |
-| **204** | - | Успех. Конфигурация Azure credentials обновлена. Ответ без тела. |
-| **400** | [ErrorEnvelope](#openapi-definition-ErrorEnvelope) | Сбой. Невалидный ввод. |
+| **204** | - | Успешно. Конфигурация учётных данных Azure обновлена. Ответ не содержит тела. |
+| **400** | [ErrorEnvelope](#openapi-definition-ErrorEnvelope) | Ошибка. Введённые данные недействительны. |
 
 ### Объекты тела ответа
 
@@ -199,8 +198,8 @@ scraped: 2026-05-12T11:16:33.489066
 
 | Элемент | Тип | Описание |
 | --- | --- | --- |
-| code | integer | HTTP-код статуса |
-| constraintViolations | [ConstraintViolation[]](#openapi-definition-ConstraintViolation) | Список нарушений ограничений |
+| code | integer | Код статуса HTTP |
+| constraintViolations | [ConstraintViolation](#openapi-definition-ConstraintViolation)[] | Список нарушений ограничений |
 | message | string | Сообщение об ошибке |
 
 #### Объект `ConstraintViolation`
@@ -211,10 +210,10 @@ scraped: 2026-05-12T11:16:33.489066
 | --- | --- | --- |
 | location | string | - |
 | message | string | - |
-| parameterLocation | string | -Возможные значения: * `HEADER` * `PATH` * `PAYLOAD_BODY` * `QUERY` |
+| parameterLocation | string | -Элемент может принимать следующие значения * `HEADER` * `PATH` * `PAYLOAD_BODY` * `QUERY` |
 | path | string | - |
 
-### JSON-модели тела ответа
+### JSON модели тела ответа
 
 ```
 {
@@ -272,13 +271,13 @@ scraped: 2026-05-12T11:16:33.489066
 }
 ```
 
-## Validate payload
+## Проверка payload
 
-Рекомендуется валидировать payload перед отправкой реального запроса. Код ответа **204** означает валидный payload.
+Рекомендуется проверить payload перед отправкой в реальном запросе. Код ответа **204** означает, что payload действителен.
 
-Запрос принимает payload `application/json`.
+Запрос принимает данные в формате `application/json`.
 
-Запрос принимает payload `application/json`.
+Запрос принимает данные в формате `application/json`.
 
 |  |  |  |
 | --- | --- | --- |
@@ -287,9 +286,9 @@ scraped: 2026-05-12T11:16:33.489066
 
 ### Аутентификация
 
-Для выполнения этого запроса нужен access token со scope `WriteConfig`.
+Для выполнения этого запроса нужен токен доступа с областью действия `WriteConfig`.
 
-Как его получить и использовать, смотрите [Tokens and authentication](/managed/discover-dynatrace/references/dynatrace-api/basics/dynatrace-api-authentication).
+О том, как получить и использовать его, см. [Tokens and authentication](/managed/discover-dynatrace/references/dynatrace-api/basics/dynatrace-api-authentication).
 
 ### Ответ
 
@@ -297,8 +296,8 @@ scraped: 2026-05-12T11:16:33.489066
 
 | Код | Тип | Описание |
 | --- | --- | --- |
-| **204** | - | Validated. Переданная конфигурация валидна. Ответ без тела. |
-| **400** | [ErrorEnvelope](#openapi-definition-ErrorEnvelope) | Сбой. Невалидный ввод. |
+| **204** | - | Проверено. Отправленная конфигурация действительна. Ответ не содержит тела. |
+| **400** | [ErrorEnvelope](#openapi-definition-ErrorEnvelope) | Ошибка. Введённые данные недействительны. |
 
 #### Объекты тела ответа
 
@@ -312,8 +311,8 @@ scraped: 2026-05-12T11:16:33.489066
 
 | Элемент | Тип | Описание |
 | --- | --- | --- |
-| code | integer | HTTP-код статуса |
-| constraintViolations | [ConstraintViolation[]](#openapi-definition-ConstraintViolation) | Список нарушений ограничений |
+| code | integer | Код статуса HTTP |
+| constraintViolations | [ConstraintViolation](#openapi-definition-ConstraintViolation)[] | Список нарушений ограничений |
 | message | string | Сообщение об ошибке |
 
 #### Объект `ConstraintViolation`
@@ -324,10 +323,10 @@ scraped: 2026-05-12T11:16:33.489066
 | --- | --- | --- |
 | location | string | - |
 | message | string | - |
-| parameterLocation | string | -Возможные значения: * `HEADER` * `PATH` * `PAYLOAD_BODY` * `QUERY` |
+| parameterLocation | string | -Элемент может принимать следующие значения * `HEADER` * `PATH` * `PAYLOAD_BODY` * `QUERY` |
 | path | string | - |
 
-#### JSON-модели тела ответа
+#### JSON модели тела ответа
 
 ```
 {
@@ -385,6 +384,6 @@ scraped: 2026-05-12T11:16:33.489066
 }
 ```
 
-## Связанные темы
+## Похожие темы
 
-* [Microsoft Azure Integrations](/managed/ingest-from/microsoft-azure-services/azure-integrations "Настройка глубокого мониторинга кода Dynatrace в Azure с помощью OneAgent или OpenTelemetry.")
+* [Microsoft Azure Integrations](/managed/ingest-from/microsoft-azure-services/azure-integrations "Set up Dynatrace deep code monitoring on Azure using OneAgent or OpenTelemetry.")

@@ -1,32 +1,31 @@
 ---
 title: Synthetic locations API v2 - GET all locations (Dynatrace Managed)
 source: https://docs.dynatrace.com/managed/dynatrace-api/cluster-api/cluster-api-v2/synthetic-locations-and-nodes/get-all-locations
-scraped: 2026-05-12T11:06:01.235883
 ---
 
 # Synthetic locations API v2 - GET all locations (Dynatrace Managed)
 
 # Synthetic locations API v2 - GET all locations (Dynatrace Managed)
 
-* Published Jul 25, 2019
+* Опубликовано 25 июля 2019 г.
 
-Этот API-вызов возвращает список всех locations (public и private) и их параметров, доступных в вашем окружении. Запрос возвращает payload `application/json`.
+Этот вызов API выводит список всех локаций, публичных и приватных, и их параметров, доступных для окружения. Запрос формирует полезную нагрузку `application/json`.
 
 ## Аутентификация
 
-Для выполнения этого запроса API-токену нужно разрешение **Service Provider API** (`ServiceProviderAPI`). Создайте API-токен через Cluster Management Console (CMC). Как его получить и использовать, смотрите [Cluster API - Tokens and authentication](/managed/dynatrace-api/cluster-api/cluster-api-authentication "Как пройти аутентификацию для работы с Dynatrace Cluster API.").
+Для выполнения этого запроса нужно, чтобы токену API было назначено разрешение **Service Provider API** (`ServiceProviderAPI`). Сгенерировать токен API можно через Cluster Management Console (CMC). Подробнее о том, как его получить и использовать, см. [Cluster API - Tokens and authentication](/managed/dynatrace-api/cluster-api/cluster-api-authentication "How to get authenticated to use the Dynatrace Cluster API.").
 
-## Endpoint
+## Конечная точка
 
 `/api/cluster/v2/synthetic/locations`
 
 ## Параметры
 
-| Параметр | Тип | Описание | Где | Обязательный |
+| Параметр | Тип | Описание | В | Обязательный |
 | --- | --- | --- | --- | --- |
-| cloudPlatform | string | Фильтрует результирующий набор locations по конкретной cloud-платформе. Возможные значения: * `AWS` * `AZURE` * `ALIBABA` * `GOOGLE_CLOUD` * `OTHER` | query | Optional |
-| type | string | Фильтрует результирующий набор locations по конкретному типу. Возможные значения: * `PUBLIC` * `PRIVATE` | query | Optional |
-| capability | string | Фильтрует результирующий набор locations по поддерживаемой capability. Возможные значения: * `BROWSER` * `HTTP` * `HTTP_HIGH_RESOURCE` * `ICMP` * `TCP` * `DNS` | query | Optional |
+| cloudPlatform | string | Фильтрует результирующий набор локаций до тех, которые размещены на определённой облачной платформе. Элемент может принимать следующие значения * `AWS` * `AZURE` * `ALIBABA` * `GOOGLE_CLOUD` * `OTHER` | query | Необязательный |
+| type | string | Фильтрует результирующий набор локаций до локаций определённого типа. Элемент может принимать следующие значения * `PUBLIC` * `PRIVATE` | query | Необязательный |
+| capability | string | Фильтрует результирующий набор локаций до тех, которые поддерживают определённую возможность. Элемент может принимать следующие значения * `BROWSER` * `HTTP` * `HTTP_HIGH_RESOURCE` * `ICMP` * `TCP` * `DNS` | query | Необязательный |
 
 ## Ответ
 
@@ -42,35 +41,35 @@ scraped: 2026-05-12T11:06:01.235883
 
 #### Объект `SyntheticLocations`
 
-Список synthetic locations.
+Список синтетических локаций.
 
 | Элемент | Тип | Описание |
 | --- | --- | --- |
-| locations | [LocationCollectionElement[]](#openapi-definition-LocationCollectionElement) | Список synthetic locations. |
+| locations | [LocationCollectionElement](#openapi-definition-LocationCollectionElement)[] | Список синтетических локаций. |
 
 #### Объект `LocationCollectionElement`
 
-Synthetic location.
+Синтетическая локация.
 
 | Элемент | Тип | Описание |
 | --- | --- | --- |
-| capabilities | string[] | Список capabilities location. |
-| cloudPlatform | string | Cloud-провайдер, на котором хостится location.  Применимо только к `PUBLIC` locations. Возможные значения: * `ALIBABA` * `AMAZON_EC2` * `AZURE` * `DYNATRACE_CLOUD` * `GOOGLE_CLOUD` * `INTEROUTE` * `OTHER` * `UNDEFINED` |
-| deploymentType | string | Тип развёртывания location. Возможные значения: * `KUBERNETES` * `OPENSHIFT` * `STANDARD` * `UNKNOWN` |
-| entityId | string | Dynatrace entity ID location. |
-| geoCity | string | Город location. |
-| geoContinent | string | Континент location. |
-| geoCountry | string | Страна location. |
-| geoLatitude | number | Широта location. |
-| geoLocationId | string | Dynatrace GeoLocation ID location. |
-| geoLongitude | number | Долгота location. |
-| ips | string[] | Список IP-адресов, назначенных location.  Применимо только к `PUBLIC` locations. |
-| lastModificationTimestamp | integer | Timestamp последнего изменения location. |
-| name | string | Имя location. |
-| nodes | string[] | Список synthetic nodes, принадлежащих location.  Получить список доступных нод можно через вызов [GET all nodes](https://dt-url.net/miy3rpl). |
-| stage | string | Release stage location. Возможные значения: * `BETA` * `COMING_SOON` * `DELETED` * `GA` |
-| status | string | Статус location. Возможные значения: * `DISABLED` * `ENABLED` * `HIDDEN` |
-| type | string | Тип location. Возможные значения: * `CLUSTER` * `PRIVATE` * `PUBLIC` |
+| capabilities | string[] | Список возможностей локации. |
+| cloudPlatform | string | Облачный провайдер, на котором размещена локация. Применимо только к локациям `PUBLIC`. Элемент может принимать следующие значения * `ALIBABA` * `AMAZON_EC2` * `AZURE` * `DYNATRACE_CLOUD` * `GOOGLE_CLOUD` * `INTEROUTE` * `OTHER` * `UNDEFINED` |
+| deploymentType | string | Тип развёртывания локации. Элемент может принимать следующие значения * `KUBERNETES` * `OPENSHIFT` * `STANDARD` * `UNKNOWN` |
+| entityId | string | ID сущности Dynatrace для локации. |
+| geoCity | string | Город локации. |
+| geoContinent | string | Континент локации. |
+| geoCountry | string | Страна локации. |
+| geoLatitude | number | Широта локации. |
+| geoLocationId | string | ID GeoLocation Dynatrace для локации. |
+| geoLongitude | number | Долгота локации. |
+| ips | string[] | Список IP-адресов, назначенных локации. Применимо только к локациям `PUBLIC`. |
+| lastModificationTimestamp | integer | Временная метка последнего изменения локации. |
+| name | string | Название локации. |
+| nodes | string[] | Список синтетических узлов, принадлежащих локации. Список доступных узлов можно получить с помощью вызова [GET all nodes﻿](https://dt-url.net/miy3rpl?dt=m). |
+| stage | string | Этап релиза локации. Элемент может принимать следующие значения * `BETA` * `COMING_SOON` * `DELETED` * `GA` |
+| status | string | Статус локации. Элемент может принимать следующие значения * `DISABLED` * `ENABLED` * `HIDDEN` |
+| type | string | Тип локации. Элемент может принимать следующие значения * `CLUSTER` * `PRIVATE` * `PUBLIC` |
 
 #### Объект `ErrorEnvelope`
 
@@ -82,8 +81,8 @@ Synthetic location.
 
 | Элемент | Тип | Описание |
 | --- | --- | --- |
-| code | integer | HTTP-код статуса |
-| constraintViolations | [ConstraintViolation[]](#openapi-definition-ConstraintViolation) | Список нарушений ограничений |
+| code | integer | Код статуса HTTP |
+| constraintViolations | [ConstraintViolation](#openapi-definition-ConstraintViolation)[] | Список нарушений ограничений |
 | message | string | Сообщение об ошибке |
 
 #### Объект `ConstraintViolation`
@@ -94,10 +93,10 @@ Synthetic location.
 | --- | --- | --- |
 | location | string | - |
 | message | string | - |
-| parameterLocation | string | -Возможные значения: * `HEADER` * `PATH` * `PAYLOAD_BODY` * `QUERY` |
+| parameterLocation | string | -Элемент может принимать следующие значения * `HEADER` * `PATH` * `PAYLOAD_BODY` * `QUERY` |
 | path | string | - |
 
-### JSON-модели тела ответа
+### Модели JSON тела ответа
 
 ```
 {
@@ -289,9 +288,9 @@ Synthetic location.
 
 ## Пример
 
-В этом примере запрос возвращает все synthetic locations, доступные в окружении **mySampleEnv**.
+В этом примере запрос выводит список всех синтетических локаций, доступных для окружения **mySampleEnv**.
 
-API-токен передаётся в заголовке **Authorization**.
+Токен API передаётся в заголовке **Authorization**.
 
 Результат усечён до трёх записей.
 
@@ -394,7 +393,7 @@ https://mySampleEnv.live.dynatrace.com/api/v2/synthetic/locations
 
 
 
-"name": "GdaÅsk",
+"name": "Gdańsk",
 
 
 
@@ -509,6 +508,6 @@ https://mySampleEnv.live.dynatrace.com/api/v2/synthetic/locations
 
 200
 
-## Связанные темы
+## Похожие темы
 
-* [Synthetic Monitoring](/managed/observe/digital-experience/synthetic-monitoring "Узнайте о Synthetic Monitoring и о том, как создать single-URL browser monitor, browser clickpath или HTTP monitor.")
+* [Synthetic Monitoring](/managed/observe/digital-experience/synthetic-monitoring "Learn about Synthetic Monitoring and how to create a single-URL browser monitor, a browser clickpath, or an HTTP monitor.")
