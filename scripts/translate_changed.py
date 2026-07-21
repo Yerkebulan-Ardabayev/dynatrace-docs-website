@@ -47,6 +47,33 @@ _EN_PREAMBLE = (
 )
 
 
+def _strip_code(text: str) -> str:
+    """Текст без блоков и inline-кода: там скобки и ссылки не наши."""
+    return re.sub(r"`[^`\n]*`", "", re.sub(r"```.*?```", "", text, flags=re.DOTALL))
+
+
+def _structure_defect(source: str, translated: str) -> str:
+    """Структурные расхождения перевода с оригиналом. Пусто, если всё сошлось.
+
+    Ловит то, что модель роняет на длинных статьях: съеденную скобку ссылки
+    (`Перейти в **X**](url)` вместо `[**X**](url)` — ссылка рендерится как текст),
+    потерянный фенс кода, пропавший URL. Проверка стоит ДО записи в корпус:
+    иначе битый перевод затирает готовый файл, а батч встаёт на гейте целиком.
+    """
+    src, dst = _strip_code(source), _strip_code(translated)
+
+    if (src.count("[") - src.count("]")) != (dst.count("[") - dst.count("]")):
+        return "баланс квадратных скобок разошёлся с оригиналом (сломана ссылка)"
+    if source.count("```") != translated.count("```"):
+        return f"фенсы кода: было {source.count('```')}, стало {translated.count('```')}"
+
+    url_re = re.compile(r"https?://[^\s)\"']+")
+    lost = sorted(set(url_re.findall(source)) - set(url_re.findall(translated)))
+    if lost:
+        return f"потеряны URL ({len(lost)}), первый: {lost[0][:60]}"
+    return ""
+
+
 def _validate_translation(source: str, translated: str) -> tuple[bool, str]:
     """Гейт ПЕРЕД записью в корпус (HIGH аудита): не пустой, есть кириллица, не
     короче 25% оригинала (ловит усечение), не начинается с англ-преамбулы LLM.
@@ -109,6 +136,33 @@ def heading_rule_for(rel_path: str) -> str:
     return ""
 
 
+_RETRY_HINT = (
+    "\n\nПРЕДЫДУЩАЯ ПОПЫТКА СЛОМАЛА РАЗМЕТКУ. Особое внимание синтаксису ссылок: "
+    "у каждой ссылки обязаны быть обе скобки, `[текст](url)`, открывающую `[` "
+    "терять нельзя. Число блоков кода и все URL сохраняются без изменений."
+)
+
+
+def _translate_whole(content: str, en_file: Path, extra_rules: str) -> str | None:
+    """Перевод файла целиком, при необходимости по чанкам."""
+    if len(content) <= MAX_CHUNK_CHARS:
+        return translate_text(content, str(en_file.name), extra_rules)
+
+    chunks = split_into_chunks(content)
+    parts = []
+    for i, chunk in enumerate(chunks, 1):
+        print(f"  chunk {i}/{len(chunks)}...")
+        # Правило заголовков осмысленно только для первого чанка: H1 и
+        # frontmatter живут там, дальше пойдут подзаголовки тела.
+        result = translate_text(chunk, f"{en_file.name}#chunk{i}",
+                                extra_rules if i == 1 else "")
+        if result is None:
+            print(f"  FAILED chunk {i}")
+            return None
+        parts.append(result)
+    return "\n\n".join(parts)
+
+
 def translate_single_file(en_file: Path, ru_file: Path, extra_rules: str = "") -> bool:
     """Translate a single file. Returns True on success."""
     try:
@@ -117,24 +171,25 @@ def translate_single_file(en_file: Path, ru_file: Path, extra_rules: str = "") -
         print(f"  ERROR reading {en_file}: {e}")
         return False
 
-    if len(content) > MAX_CHUNK_CHARS:
-        chunks = split_into_chunks(content)
-        parts = []
-        for i, chunk in enumerate(chunks, 1):
-            print(f"  chunk {i}/{len(chunks)}...")
-            # Правило заголовков осмысленно только для первого чанка: H1 и
-            # frontmatter живут там, дальше пойдут подзаголовки тела.
-            result = translate_text(chunk, f"{en_file.name}#chunk{i}",
-                                    extra_rules if i == 1 else "")
-            if result is None:
-                print(f"  FAILED chunk {i}")
-                return False
-            parts.append(result)
-        translated = "\n\n".join(parts)
-    else:
-        translated = translate_text(content, str(en_file.name), extra_rules)
-        if translated is None:
+    # Две попытки: модель изредка роняет скобку ссылки на длинной статье. Подсказка
+    # во второй попытке заодно меняет ключ кеша, иначе вернулся бы тот же битый
+    # результат. Если и она не сходится — файл пропускаем, он останется в очереди,
+    # а батч продолжит работу (одна статья не должна блокировать остальные).
+    translated = None
+    for attempt in (1, 2):
+        candidate = _translate_whole(
+            content, en_file, extra_rules if attempt == 1 else extra_rules + _RETRY_HINT
+        )
+        if candidate is None:
             return False
+        defect = _structure_defect(content, candidate)
+        if not defect:
+            translated = candidate
+            break
+        print(f"  структура не сошлась ({defect}), попытка {attempt}/2")
+    if translated is None:
+        print(f"  SKIP: {ru_file.name} не перезаписываю, статья остаётся в очереди")
+        return False
 
     ok, reason = _validate_translation(content, translated)
     if not ok:
