@@ -1,46 +1,45 @@
 ---
-title: Приём логов подов Kubernetes с помощью OTel Collector
+title: Приём логов подов Kubernetes через OTel Collector
 source: https://docs.dynatrace.com/managed/ingest-from/opentelemetry/collector/use-cases/kubernetes/k8s-podlogs
-scraped: 2026-05-12T12:15:02.386958
 ---
 
-# Приём логов подов Kubernetes с помощью OTel Collector
+# Приём логов подов Kubernetes через OTel Collector
 
-# Приём логов подов Kubernetes с помощью OTel Collector
+# Приём логов подов Kubernetes через OTel Collector
 
 * Практическое руководство
 * Чтение: 4 мин
-* Обновлено 09 апреля 2026 г.
+* Обновлено 09 апр. 2026 г.
 
-В следующем примере конфигурации показано, как настроить экземпляр Collector для получения логов из всех подов Kubernetes. Также показано, как обогатить логи метаданными Kubernetes, чтобы автоматически связать сервисы OpenTelemetry с подами и прикрепить логи к сервисам и подам Kubernetes.
+В примере конфигурации ниже показано, как настроить экземпляр Collector для получения логов со всех подов Kubernetes. Также показано, как обогатить логи метаданными Kubernetes, чтобы автоматически связать сервисы OpenTelemetry с подами и прикрепить логи к сервисам и подам Kubernetes.
 
 ## Предварительные требования
 
 * Развёрнутый ActiveGate для мониторинга Kubernetes API
-* Один из следующих дистрибутивов Collector с [receiver Filelog](https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/v0.151.0/receiver/filelogreceiver) и [processor Kubernetes Attributes](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.151.0/processor/k8sattributesprocessor):
+* Один из следующих дистрибутивов Collector с ресивером [Filelog﻿](https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/v0.156.0/receiver/filelogreceiver) и процессором [Kubernetes Attributes﻿](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.156.0/processor/k8sattributesprocessor):
 
-  + [Dynatrace OTel Collector](/managed/ingest-from/opentelemetry/collector#dt-collector-dist "Узнайте, как использовать OpenTelemetry Collector, включая Dynatrace OTel Collector, для приёма телеметрии из OpenTelemetry.")
-  + [OpenTelemetry Contrib](/managed/ingest-from/opentelemetry/collector#collector-contrib "Узнайте, как использовать OpenTelemetry Collector, включая Dynatrace OTel Collector, для приёма телеметрии из OpenTelemetry.")
-  + [пользовательская версия Builder](/managed/ingest-from/opentelemetry/collector#collector-builder "Узнайте, как использовать OpenTelemetry Collector, включая Dynatrace OTel Collector, для приёма телеметрии из OpenTelemetry.")
+  + [Dynatrace OTel Collector](/managed/ingest-from/opentelemetry/collector#dt-collector-dist "Узнайте, как использовать OpenTelemetry Collector, включая Dynatrace OTel Collector, для приёма телеметрии от OpenTelemetry.")
+  + [OpenTelemetry Contrib](/managed/ingest-from/opentelemetry/collector#collector-contrib "Узнайте, как использовать OpenTelemetry Collector, включая Dynatrace OTel Collector, для приёма телеметрии от OpenTelemetry.")
+  + [Пользовательская версия Builder](/managed/ingest-from/opentelemetry/collector#collector-builder "Узнайте, как использовать OpenTelemetry Collector, включая Dynatrace OTel Collector, для приёма телеметрии от OpenTelemetry.")
 * OTel Collector, развёрнутый на каждом узле
-* [URL API](/managed/ingest-from/opentelemetry/otlp-api#export-to-activegate "Узнайте об эндпоинтах OTLP API, которые ваше приложение использует для экспорта данных OpenTelemetry в Dynatrace.") вашей среды Dynatrace
-* [API-токен](/managed/ingest-from/opentelemetry/otlp-api#authentication-export-to-activegate "Узнайте об эндпоинтах OTLP API, которые ваше приложение использует для экспорта данных OpenTelemetry в Dynatrace.") с соответствующей областью доступа
-* [Kubernetes настроен](#kubernetes-configuration) для обязательного управления доступом на основе ролей
-* Kubernetes Secrets настроены, как показано в разделе [Развёртывание Dynatrace OTel Collector](/managed/ingest-from/opentelemetry/collector/deployment "Как развернуть Dynatrace OpenTelemetry Collector.")
+* [URL API](/managed/ingest-from/opentelemetry/otlp-api#export-to-activegate "Узнайте про эндпоинты OTLP API, которые ваше приложение использует для экспорта данных OpenTelemetry в Dynatrace.") вашей среды Dynatrace
+* [Токен API](/managed/ingest-from/opentelemetry/otlp-api#authentication-export-to-activegate "Узнайте про эндпоинты OTLP API, которые ваше приложение использует для экспорта данных OpenTelemetry в Dynatrace.") с необходимым уровнем доступа
+* [Kubernetes настроен](#kubernetes-configuration) для требуемого управления доступом на основе ролей
+* Kubernetes Secrets настроены так, как показано в [Развёртывание Dynatrace OTel Collector](/managed/ingest-from/opentelemetry/collector/deployment "Как развернуть Dynatrace OpenTelemetry Collector.")
 
-См. [Развёртывание Collector](/managed/ingest-from/opentelemetry/collector/deployment "Как развернуть Dynatrace OpenTelemetry Collector.") и [Настройку Collector](/managed/ingest-from/opentelemetry/collector/configuration "Как настроить OpenTelemetry Collector."), чтобы узнать, как настроить ваш Collector с приведённой ниже конфигурацией.
+О том, как настроить Collector с указанной ниже конфигурацией, см. [Развёртывание Collector](/managed/ingest-from/opentelemetry/collector/deployment "Как развернуть Dynatrace OpenTelemetry Collector.") и [Конфигурация Collector](/managed/ingest-from/opentelemetry/collector/configuration "Как настроить OpenTelemetry Collector.").
 
 ## Демонстрационная конфигурация
 
 Конфигурация Kubernetes
 
-В данном примере конфигурации используется тот же подход к обогащению данными Kubernetes, что и в сценарии использования [Обогащение запросов OTLP данными Kubernetes](/managed/ingest-from/opentelemetry/collector/use-cases/kubernetes/k8s-enrich "Настройте OpenTelemetry Collector для обогащения запросов OTLP данными Kubernetes.").
+В этом примере конфигурации используется тот же подход обогащения Kubernetes, что и в сценарии [Обогащение запросов OTLP данными Kubernetes](/managed/ingest-from/opentelemetry/collector/use-cases/kubernetes/k8s-enrich "Настройка OpenTelemetry Collector для обогащения запросов OTLP данными Kubernetes.").
 
-В дополнение к конфигурации Collector обязательно обновите конфигурацию Kubernetes для следующих компонентов:
+Помимо конфигурации Collector, обязательно также обновите конфигурацию Kubernetes для следующих компонентов:
 
-* **Service account**: укажите то же имя сервисного аккаунта, что используется в [файле RBAC](#kubernetes-configuration) (см. записи для [Helm](https://github.com/open-telemetry/opentelemetry-helm-charts/blob/opentelemetry-collector-0.100.0/charts/opentelemetry-collector/values.yaml#L184-L191), [Operator](https://github.com/open-telemetry/opentelemetry-operator/blob/v0.150.0/docs/api/opentelemetrycollectors.md#opentelemetrycollectorspec))
-* **Смонтированные тома**: укажите тома файловой системы, в которых ваш хост Kubernetes хранит соответствующие файлы логов (см. записи для [Helm](https://github.com/open-telemetry/opentelemetry-helm-charts/blob/opentelemetry-collector-0.100.0/charts/opentelemetry-collector/values.yaml#L241), [Operator](https://github.com/open-telemetry/opentelemetry-operator/blob/v0.150.0/docs/api/opentelemetrycollectors.md#opentelemetrycollectorspec))
-* **Пути монтирования**: укажите пути файловой системы, по которым ранее настроенные тома должны монтироваться внутри контейнера (см. записи для [Helm](https://github.com/open-telemetry/opentelemetry-helm-charts/blob/opentelemetry-collector-0.100.0/charts/opentelemetry-collector/values.yaml#L244), [Operator](https://github.com/open-telemetry/opentelemetry-operator/blob/v0.150.0/docs/api/opentelemetrycollectors.md#opentelemetrycollectorspec))
+* **Учётная запись службы**: укажите то же имя учётной записи службы, что используется в [файле RBAC](#kubernetes-configuration) (см. записи для [Helm﻿](https://github.com/open-telemetry/opentelemetry-helm-charts/blob/opentelemetry-collector-0.100.0/charts/opentelemetry-collector/values.yaml#L184-L191), [Operator﻿](https://github.com/open-telemetry/opentelemetry-operator/blob/v0.156.0/docs/api/opentelemetrycollectors.md#opentelemetrycollectorspec))
+* **Смонтированные тома**: укажите тома файловой системы, в которых хост Kubernetes хранит соответствующие файлы логов (см. записи для [Helm﻿](https://github.com/open-telemetry/opentelemetry-helm-charts/blob/opentelemetry-collector-0.100.0/charts/opentelemetry-collector/values.yaml#L241), [Operator﻿](https://github.com/open-telemetry/opentelemetry-operator/blob/v0.156.0/docs/api/opentelemetrycollectors.md#opentelemetrycollectorspec))
+* **Пути монтирования**: укажите пути файловой системы, по которым ранее настроенные тома должны монтироваться внутри контейнера (см. записи для [Helm﻿](https://github.com/open-telemetry/opentelemetry-helm-charts/blob/opentelemetry-collector-0.100.0/charts/opentelemetry-collector/values.yaml#L244), [Operator﻿](https://github.com/open-telemetry/opentelemetry-operator/blob/v0.156.0/docs/api/opentelemetrycollectors.md#opentelemetrycollectorspec))
 
 ```
 receivers:
@@ -424,11 +423,11 @@ exporters: [otlp_http]
 
 Проверка конфигурации
 
-[Проверьте ваши настройки](/managed/ingest-from/opentelemetry/collector/configuration#validate "Как настроить OpenTelemetry Collector."), чтобы избежать проблем с конфигурацией.
+[Проверьте свои настройки](/managed/ingest-from/opentelemetry/collector/configuration#validate "Как настроить OpenTelemetry Collector."), чтобы избежать проблем с конфигурацией.
 
-## Конфигурация Kubernetes
+## Настройка Kubernetes
 
-Настройте следующий файл `rbac.yaml` для своего экземпляра Kubernetes, чтобы разрешить OTel Collector использовать Kubernetes API с типом аутентификации на основе сервисного аккаунта.
+Настроить следующий файл `rbac.yaml` в инстансе Kubernetes, чтобы разрешить OTel Collector использовать Kubernetes API с типом аутентификации service-account.
 
 ```
 apiVersion: v1
@@ -646,15 +645,15 @@ name: collector
 namespace: default
 ```
 
-Конфигурация для GKE Autopilot или AWS EKS
+Настройка для GKE Autopilot или AWS EKS
 
-При запуске Collector в GKE Autopilot или AWS EKS необходимы следующие изменения в конфигурации:
+Если Collector запускается на GKE Autopilot или AWS EKS, в конфигурации нужны следующие изменения:
 
-* **Режим развёртывания**: Collector необходимо развернуть как DaemonSet, чтобы иметь возможность обращаться к файлам логов подов на хосте. Подробнее о развёртывании Collector как DaemonSet см. в разделе [Инструкции по развёртыванию](/managed/ingest-from/opentelemetry/collector/deployment "Как развернуть Dynatrace OpenTelemetry Collector.").
-* **Монтирование тома**: монтирование томов к `/var/log/pods` должно быть доступно только для чтения, иначе Collector не сможет обратиться к файлам логов
+* **Режим развёртывания**: Collector нужно развернуть как DaemonSet, чтобы обеспечить доступ к файлам логов подов на хосте. Подробности о развёртывании Collector как DaemonSet смотри в разделе [Инструкции по развёртыванию](/managed/ingest-from/opentelemetry/collector/deployment "Как развернуть Dynatrace OpenTelemetry Collector.").
+* **Монтирование тома**: монтирование томов в `/var/log/pods` должно быть доступно только для чтения, иначе Collector не сможет получить доступ к файлам логов
   в этом каталоге.
 
-Ниже приведён пример конфигурации DaemonSet Collector с необходимыми монтированиями томов для сбора логов подов:
+Ниже приведён пример конфигурации для Collector DaemonSet с необходимыми монтированиями томов для сбора логов подов:
 
 ```
 apiVersion: apps/v1
@@ -785,7 +784,7 @@ fieldPath: status.podIP
 
 
 
-image: ghcr.io/dynatrace/dynatrace-otel-collector/dynatrace-otel-collector:0.48.0
+image: ghcr.io/dynatrace/dynatrace-otel-collector/dynatrace-otel-collector:0.52.0
 
 
 
@@ -878,34 +877,34 @@ name: logs
 
 ## Компоненты
 
-Для нашей конфигурации мы настраиваем следующие компоненты.
+Для нашей конфигурации настроены следующие компоненты.
 
 ### Receivers
 
-В разделе `receivers` мы указываем receiver `filelog` в качестве активного компонента receiver для нашего экземпляра Collector.
+В разделе `receivers` указан receiver `filelog` как активный компонент-receiver для нашего инстанса Collector.
 
-Receiver Filelog поддерживает ряд [параметров конфигурации](https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/v0.151.0/receiver/filelogreceiver/README.md), позволяющих настроить его поведение. В данном примере мы используем следующие:
+Filelog receiver поддерживает ряд [параметров конфигурации﻿](https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/v0.156.0/receiver/filelogreceiver/README.md), позволяющих настраивать его поведение. В примере используются следующие:
 
-* `include`: задаёт шаблон пути к файлам, которые мы хотим принимать.
-* `start_at`: задаёт, должен ли receiver читать с начала файла или, только для самых последних записей, с конца.
-* `operators`: настраивает оператор [`container`](https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/v0.151.0/pkg/stanza/docs/operators/container.md), который автоматически разбирает каждую запись лога.
+* `include`, задаёт шаблон пути к файлам, которые нужно принимать.
+* `start_at`, задаёт, должен ли receiver читать с начала файла или только самые последние записи, с конца.
+* `operators`, настраивает оператор [`container`﻿](https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/v0.156.0/pkg/stanza/docs/operators/container.md), который автоматически парсит каждую запись лога.
 
 ### Processors
 
-В разделе `processors` мы указываем [processor `k8sattributes`](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.151.0/processor/k8sattributesprocessor) со следующими параметрами:
+В разделе `processors` указан [processor `k8sattributes`﻿](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.156.0/processor/k8sattributesprocessor) со следующими параметрами:
 
-* `extract`: задаёт, какая информация должна извлекаться.
-* `pod_association`: задаёт, как сведения о поде привязываются к атрибутам.
+* `extract`, задаёт, какую информацию нужно извлекать.
+* `pod_association`, задаёт, как информация о поде связывается с атрибутами.
 
 ### Exporters
 
-В разделе `exporters` мы указываем стандартный [exporter `otlp_http`](https://github.com/open-telemetry/opentelemetry-collector/tree/v0.151.0/exporter/otlphttpexporter) и настраиваем его с помощью URL нашего Dynatrace API и необходимого токена аутентификации, настроенного в разделе [Kubernetes Secrets](#kubernetes-secrets).
+В разделе `exporters` указан стандартный [exporter `otlp_http`﻿](https://github.com/open-telemetry/opentelemetry-collector/tree/v0.156.0/exporter/otlphttpexporter), настроенный с URL Dynatrace API и требуемым токеном аутентификации, как описано в разделе [Kubernetes Secrets](#kubernetes-secrets).
 
-### Сервисные конвейеры
+### Service pipelines
 
-В разделе `service` мы собираем объекты receiver, processor и exporter в конвейеры для трассировок, метрик и логов. Эти конвейеры позволяют отправлять сигналы OpenTelemetry через экземпляр Collector и автоматически обогащать их дополнительными сведениями, специфичными для Kubernetes.
+В разделе `service` receiver, processor и exporter объединяются в pipeline'ы для трейсов, метрик и логов. Эти pipeline'ы позволяют отправлять сигналы OpenTelemetry через инстанс Collector и автоматически обогащать их дополнительными деталями, специфичными для Kubernetes.
 
-## Связанные темы
+## Похожие темы
 
-* [Обогащение запросов OTLP данными Kubernetes](/managed/ingest-from/opentelemetry/collector/use-cases/kubernetes/k8s-enrich "Настройте OpenTelemetry Collector для обогащения запросов OTLP данными Kubernetes.")
-* [Приём логов из файлов с помощью OTel Collector](/managed/ingest-from/opentelemetry/collector/use-cases/filelog "Настройте OpenTelemetry Collector для приёма данных логов в Dynatrace.")
+* [Обогащение OTLP-запросов данными Kubernetes](/managed/ingest-from/opentelemetry/collector/use-cases/kubernetes/k8s-enrich "Настройка OpenTelemetry Collector для обогащения OTLP-запросов данными Kubernetes.")
+* [Приём логов из файлов с помощью OTel Collector](/managed/ingest-from/opentelemetry/collector/use-cases/filelog "Настройка OpenTelemetry Collector для приёма данных логов в Dynatrace.")

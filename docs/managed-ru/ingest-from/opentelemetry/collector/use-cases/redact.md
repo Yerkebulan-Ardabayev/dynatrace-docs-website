@@ -1,56 +1,55 @@
 ---
-title: Маскирование конфиденциальных данных с помощью OTel Collector
+title: Маскирование чувствительных данных с помощью OTel Collector
 source: https://docs.dynatrace.com/managed/ingest-from/opentelemetry/collector/use-cases/redact
-scraped: 2026-05-12T11:08:54.703064
 ---
 
-# Маскирование конфиденциальных данных с помощью OTel Collector
+# Маскирование чувствительных данных с помощью OTel Collector
 
-# Маскирование конфиденциальных данных с помощью OTel Collector
+# Маскирование чувствительных данных с помощью OTel Collector
 
 * Практическое руководство
-* Чтение: 5 мин
+* Чтение 5 минут
 * Обновлено 12 января 2026 г.
 
-Данные телеметрии нередко содержат конфиденциальные данные (например, [PII](https://en.wikipedia.org/wiki/Personal_data)), которые может потребоваться маскировать по соображениям безопасности и нормативным требованиям. Хотя это можно реализовать на стороне приложения, обычно лучше выполнять это централизованно с помощью шлюзов, таких как OTel Collector. Это обеспечивает управление правилами маскирования из единой точки во всех ваших приложениях и сервисах, без необходимости обновлять код каждый раз, когда требуется новое правило маскирования.
+Телеметрические данные часто содержат чувствительные данные (например, [PII﻿](https://en.wikipedia.org/wiki/Personal_data)), которые нужно маскировать по соображениям безопасности и регуляторным требованиям. Это можно реализовать на стороне приложения, но обычно лучше обрабатывать это централизованно с помощью шлюзов, таких как OTel Collector. Это даёт возможность управлять правилами маскирования из одной точки для всех приложений и сервисов, без необходимости обновлять код каждый раз, когда требуется новое правило маскирования.
 
-На этой странице показаны примеры конфигураций Collector для маскирования конкретных конфиденциальных данных (например, номеров кредитных карт или адресов электронной почты), которые могут появиться в данных телеметрии и которые следует маскировать перед выходом из вашей сети.
+На этой странице приведены примеры конфигураций Collector для маскирования конкретных чувствительных данных (например, номеров кредитных карт или email-адресов), которые могут появляться в телеметрических данных и которые нужно замаскировать до того, как они покинут сеть.
 
 ## Предварительные требования
 
-* Один из следующих дистрибутивов Collector с processor [transform](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.151.0/processor/transformprocessor) и/или [redaction](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.151.0/processor/redactionprocessor):
+* Один из следующих дистрибутивов Collector с процессорами [transform﻿](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.156.0/processor/transformprocessor) и/или [redaction﻿](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.156.0/processor/redactionprocessor):
 
   + [Dynatrace OTel Collector](/managed/ingest-from/opentelemetry/collector#dt-collector-dist "Узнайте, как использовать OpenTelemetry Collector, включая Dynatrace OTel Collector, для приёма телеметрии из OpenTelemetry.")
   + [OpenTelemetry Contrib](/managed/ingest-from/opentelemetry/collector#collector-contrib "Узнайте, как использовать OpenTelemetry Collector, включая Dynatrace OTel Collector, для приёма телеметрии из OpenTelemetry.")
-  + [пользовательская версия Builder](/managed/ingest-from/opentelemetry/collector#collector-builder "Узнайте, как использовать OpenTelemetry Collector, включая Dynatrace OTel Collector, для приёма телеметрии из OpenTelemetry.")
-* [URL эндпоинта Dynatrace API](/managed/ingest-from/opentelemetry/otlp-api "Узнайте об эндпоинтах OTLP API, которые ваше приложение использует для экспорта данных OpenTelemetry в Dynatrace."), на который должны экспортироваться данные
-* [API-токен](/managed/ingest-from/opentelemetry/otlp-api#authentication-export-to-activegate "Узнайте об эндпоинтах OTLP API, которые ваше приложение использует для экспорта данных OpenTelemetry в Dynatrace.") с соответствующей областью доступа (требуется только для SaaS и ActiveGate)
+  + [Пользовательская версия Builder](/managed/ingest-from/opentelemetry/collector#collector-builder "Узнайте, как использовать OpenTelemetry Collector, включая Dynatrace OTel Collector, для приёма телеметрии из OpenTelemetry.")
+* [URL конечной точки Dynatrace API](/managed/ingest-from/opentelemetry/otlp-api "Узнайте о конечных точках OTLP API, которые приложение использует для экспорта данных OpenTelemetry в Dynatrace.") для экспорта данных
+* [Токен API](/managed/ingest-from/opentelemetry/otlp-api#authentication-export-to-activegate "Узнайте о конечных точках OTLP API, которые приложение использует для экспорта данных OpenTelemetry в Dynatrace.") с необходимой областью доступа (требуется только для SaaS и ActiveGate)
 
-См. [Развёртывание Collector](/managed/ingest-from/opentelemetry/collector/deployment "Как развернуть Dynatrace OpenTelemetry Collector.") и [Настройку Collector](/managed/ingest-from/opentelemetry/collector/configuration "Как настроить OpenTelemetry Collector."), чтобы узнать, как настроить ваш Collector с приведённой ниже конфигурацией.
+О том, как настроить Collector с приведённой ниже конфигурацией, см. в разделах [Развёртывание Collector](/managed/ingest-from/opentelemetry/collector/deployment "Как развернуть Dynatrace OpenTelemetry Collector.") и [Конфигурация Collector](/managed/ingest-from/opentelemetry/collector/configuration "Как настроить OpenTelemetry Collector.").
 
-## Processor redaction в сравнении с processor transform
+## Процессор redaction против процессора transform
 
-В следующих примерах используются эти два [processor](https://opentelemetry.io/docs/collector/architecture/#processors) Collector:
+В следующих примерах используются эти два процессора Collector [﻿](https://opentelemetry.io/docs/collector/architecture/#processors):
 
-* processor [transform](https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/v0.151.0/processor/transformprocessor/README.md)
-* processor [redaction](https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/v0.151.0/processor/redactionprocessor/README.md)
+* [процессор transform﻿](https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/v0.156.0/processor/transformprocessor/README.md)
+* [процессор redaction﻿](https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/v0.156.0/processor/redactionprocessor/README.md)
 
-Хотя в следующих примерах для маскирования данных используются оба компонента processor, у каждого из них своё назначение. Processor redaction прост: он принимает список значений, на основе которых совпадающие данные будут полностью замаскированы. Назначение же processor transform более универсально и выходит за рамки простого маскирования данных.
+В следующих примерах оба процессора используются для маскирования данных, но у каждого своё назначение. Процессор redaction прост в использовании и принимает список значений, на основе которого совпадающие данные полностью маскируются. Процессор transform, в свою очередь, более универсален и предназначен не только для маскирования данных.
 
-Для маскирования данных обычно можно использовать любой из двух компонентов processor, и стоит выбрать тот, который лучше подходит для вашего сценария использования. Например, для полного маскирования данных processor redaction может быть проще в использовании. С другой стороны, частичное маскирование данных можно реализовать только с помощью processor transform. Кроме того, processor transform может также фильтровать по данным в теле логов, тогда как processor redaction имеет доступ только к атрибутам.
+Для маскирования данных обычно можно использовать любой из процессоров, и стоит выбрать тот, который лучше подходит под конкретный случай. Например, для полного маскирования данных проще использовать процессор redaction. С другой стороны, частичное маскирование данных можно реализовать только с помощью процессора transform. Кроме того, процессор transform может фильтровать по данным в теле логов, тогда как процессор redaction имеет доступ только к атрибутам.
 
-## Ограничения и замечания
+## Ограничения и особенности
 
-Приведённые на этой странице примеры демонстрируют распространённые сценарии маскирования. Обратите внимание на следующее:
+Примеры, приведённые на этой странице, демонстрируют типичные сценарии маскирования. Обратите внимание на следующее:
 
-* Примеры могут не охватывать все сценарии использования. Возможно, потребуется адаптировать их под ваши конкретные требования.
-* Шаблоны regex и сопоставление атрибутов работают только тогда, когда всё значение атрибута соответствует шаблону для маскирования. Для частичных совпадений внутри более длинных строк могут потребоваться более сложные шаблоны или дополнительная обработка.
-* Имя спана хранится в структуре сообщения OTLP как отдельное поле, а не как атрибут. Поэтому processor redaction, нацеленные на атрибуты, по умолчанию не влияют на имена спанов. О том, как с этим работать, см. пример [Имена спанов](#span-names).
-* Порядок processor в конвейерах имеет значение. Применяйте transform/redaction до маршрутизации или экспорта и держите связанные processor рядом, чтобы последующие шаги видели очищенные данные.
+* Примеры могут не охватывать все случаи использования. Их может потребоваться адаптировать под конкретные требования.
+* Регулярные выражения и сопоставление атрибутов работают только тогда, когда значение атрибута целиком совпадает с маскируемым шаблоном. Частичные совпадения внутри более длинных строк могут потребовать более сложных шаблонов или дополнительной обработки.
+* Имя спана хранится как отдельное поле в структуре сообщения OTLP, а не как атрибут. Поэтому процессоры redaction, нацеленные на атрибуты, по умолчанию не влияют на имена спанов. Как это обработать, см. в примере [Имена спанов](#span-names).
+* Порядок процессоров в пайплайнах имеет значение. Применяйте transform/redaction до маршрутизации или экспорта и держите связанные процессоры рядом, чтобы последующие шаги видели уже очищенные данные.
 
 ## Демонстрационная конфигурация
 
-Этот документ YAML представляет собой базовый каркас конфигурации Collector, содержащий основные общие компоненты (то есть receivers, exporters и определение конвейера).
+Этот документ YAML представляет собой базовый скелет конфигурации Collector, содержащий базовые общие компоненты (то есть receivers, exporters и определение пайплайна).
 
 ```
 receivers:
@@ -166,12 +165,12 @@ exporters: [otlp_http]
 
 Обязательно замените значения-заполнители в документе соответствующими конфигурациями:
 
-* `PLACEHOLDER-FOR-PROCESSOR-CONFIGURATIONS`: соответствующая конфигурация processor
-* `PLACEHOLDER-FOR-PROCESSOR-REFERENCES`: ссылки на применимые объекты processor для отдельных типов сигналов
+* `PLACEHOLDER-FOR-PROCESSOR-CONFIGURATIONS`: соответствующая конфигурация процессора
+* `PLACEHOLDER-FOR-PROCESSOR-REFERENCES`: ссылка на применимые объекты процессоров для отдельных типов сигналов
 
 ### IP-адреса
 
-С помощью processor transform мы маскируем атрибут `client.address` с помощью [инструкции `set`](https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/v0.151.0/pkg/ottl/ottlfuncs/README.md#set).
+С помощью процессора transform маскируем атрибут `client.address` с помощью [оператора `set`﻿](https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/v0.156.0/pkg/ottl/ottlfuncs/README.md#set).
 
 ```
 transform:
@@ -229,9 +228,9 @@ log_statements:
 statements: *filter-statements
 ```
 
-### Адреса электронной почты
+### Email-адреса
 
-С помощью processor transform мы маскируем атрибут `user.email` с помощью [инструкции `set`](https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/v0.151.0/pkg/ottl/ottlfuncs/README.md#set).
+С помощью процессора transform маскируем атрибут `user.email` с помощью [оператора `set`﻿](https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/v0.156.0/pkg/ottl/ottlfuncs/README.md#set).
 
 ```
 transform:
@@ -281,9 +280,9 @@ log_statements:
 statements: *filter-statements
 ```
 
-### API-токены Dynatrace
+### Токены Dynatrace API
 
-С помощью processor redaction мы используем регулярное выражение `dt0[a-z]0[1-9]\.[A-Za-z0-9]{24}\.([A-Za-z0-9]{64})`, чтобы замаскировать все вхождения [API-токенов Dynatrace](/managed/dynatrace-api/basics/dynatrace-api-authentication "Узнайте, как пройти аутентификацию для использования Dynatrace API.") в наших данных телеметрии.
+С помощью процессора redaction используем регулярное выражение `dt0[a-z]0[1-9]\.[A-Za-z0-9]{24}\.([A-Za-z0-9]{64})` для маскирования всех вхождений [токенов Dynatrace API](/managed/dynatrace-api/basics/dynatrace-api-authentication "Узнайте, как пройти аутентификацию для использования Dynatrace API.") в наших телеметрических данных.
 
 ```
 redaction:
@@ -307,7 +306,7 @@ summary: info
 
 ### Имена пользователей
 
-С помощью processor transform мы маскируем атрибуты `user.id`, `user.name` и `user.full_name` с помощью [инструкции `set`](https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/v0.151.0/pkg/ottl/ottlfuncs/README.md#set).
+С помощью процессора transform маскируем атрибуты `user.id`, `user.name` и `user.full_name` с помощью [оператора `set`﻿](https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/v0.156.0/pkg/ottl/ottlfuncs/README.md#set).
 
 ```
 transform:
@@ -365,9 +364,9 @@ log_statements:
 statements: *filter-statements
 ```
 
-### Номера кредитных карт
+### Номера банковских карт
 
-С помощью processor transform мы настраиваем три [инструкции `replace_all_patterns`](https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/v0.151.0/pkg/ottl/ottlfuncs/README.md#replace_all_patterns), чтобы замаскировать любые вхождения номеров кредитных карт, скрывая все цифры, кроме последних четырёх.
+С помощью transform processor настраиваем три инструкции [`replace_all_patterns`﻿](https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/v0.156.0/pkg/ottl/ottlfuncs/README.md#replace_all_patterns), которые маскируют номера банковских карт, оставляя видимыми только последние четыре цифры.
 
 ```
 transform:
@@ -425,11 +424,11 @@ log_statements:
 statements: *filter-statements
 ```
 
-Для номеров кредитных карт вместо регулярных выражений можно также использовать встроенную [стандартную функцию OTTL `IsValidLuhn()`](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.151.0/pkg/ottl/ottlfuncs#isvalidluhn), если вы предпочитаете полностью блокировать значения, а не просто маскировать их.
+Для номеров банковских карт можно также использовать встроенную стандартную функцию OTTL [`IsValidLuhn()`﻿](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.156.0/pkg/ottl/ottlfuncs#isvalidluhn) вместо регулярных выражений, если нужно полностью блокировать значения, а не просто маскировать их.
 
 ### Номера IBAN
 
-С помощью processor redaction мы используем регулярное выражение `^[A-Z]{2}[0-9]{2}(\\s*[A-Z0-9]){8,30}$`, чтобы замаскировать все вхождения IBAN в наших данных телеметрии.
+С помощью redaction processor используем регулярное выражение `^[A-Z]{2}[0-9]{2}(\\s*[A-Z0-9]){8,30}$`, чтобы замаскировать все вхождения IBAN в данных телеметрии.
 
 ```
 redaction:
@@ -453,16 +452,16 @@ summary: info
 
 ### Имена спанов
 
-Имена спанов не хранятся в структуре сообщения OTLP как атрибуты, поэтому маскирование на основе атрибутов к ним не применяется.
-Есть несколько способов маскировать и упростить имена спанов:
+Имена спанов не хранятся как атрибуты в структуре сообщения OTLP, поэтому редактирование на основе атрибутов к ним неприменимо.
+Есть несколько способов редактирования и упрощения имён спанов:
 
-#### Создание нового имени спана
+#### Сгенерировать новое имя спана
 
 Рекомендуется
 
-`set_semconv_span_name` доступна начиная с версии Collector Contrib 0.142.0 и версии Dynatrace Collector 0.42.0.
+`set_semconv_span_name` доступна начиная с версии Collector Contrib 0.142.0 и Collector версии Dynatrace 0.42.0.
 
-Используйте функцию processor transform [`set_semconv_span_name`](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.151.0/processor/transformprocessor#set_semconv_span_name), чтобы получить имя с низкой кардинальностью, соответствующее семантическим соглашениям OpenTelemetry. Для создания нового имени спана будут использоваться (низкокардинальные) `http.request.method` и `http.route`. Это сохраняет имя согласованным с соглашениями HTTP/RPC/messaging/database и предотвращает утечку идентификаторов.
+Используйте функцию transform processor [`set_semconv_span_name`﻿](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.156.0/processor/transformprocessor#set_semconv_span_name), чтобы получить имя с низкой кардинальностью, соответствующее семантическим соглашениям OpenTelemetry. Оно использует (с низкой кардинальностью) `http.request.method` и `http.route` для формирования нового имени спана. Это сохраняет согласованность имени с соглашениями HTTP/RPC/messaging/database и не допускает утечки идентификаторов.
 
 ```
 transform:
@@ -488,7 +487,7 @@ statements:
 - set_semconv_span_name("1.37.0")
 ```
 
-#### Явное маскирование имени спана
+#### Явное редактирование имени спана
 
 ```
 transform:
@@ -516,33 +515,33 @@ statements:
 
 Проверка конфигурации
 
-[Проверьте ваши настройки](/managed/ingest-from/opentelemetry/collector/configuration#validate "Как настроить OpenTelemetry Collector."), чтобы избежать проблем с конфигурацией.
+[Проверьте свои настройки](/managed/ingest-from/opentelemetry/collector/configuration "How to configure the OpenTelemetry Collector."), чтобы избежать проблем с конфигурацией.
 
 ## Компоненты
 
-Для нашей конфигурации мы используем следующие компоненты.
+В нашей конфигурации используются следующие компоненты.
 
 ### Receivers
 
-В разделе `receivers` мы указываем стандартный receiver `otlp` в качестве активного компонента receiver для нашего экземпляра Collector.
+В разделе `receivers` указывается стандартный receiver `otlp` как активный компонент-приёмник для нашего экземпляра Collector.
 
 ### Processors
 
-В разделе `processors` мы размещаем конфигурацию для соответствующих экземпляров processor.
+В разделе `processors` размещается конфигурация нужных экземпляров процессоров.
 
 ### Exporters
 
-В разделе `exporters` мы указываем стандартный [exporter `otlp_http`](https://github.com/open-telemetry/opentelemetry-collector/tree/v0.151.0/exporter/otlphttpexporter) и настраиваем его с помощью URL нашего Dynatrace API и необходимого токена аутентификации.
+В разделе `exporters` указывается стандартный [экспортёр `otlp_http`﻿](https://github.com/open-telemetry/opentelemetry-collector/tree/v0.156.0/exporter/otlphttpexporter) и настраивается с URL нашего Dynatrace API и требуемым токеном аутентификации.
 
-Для этого мы задаём следующие две переменные окружения и ссылаемся на них в значениях конфигурации `endpoint` и `Authorization`.
+Для этого задаются следующие две переменные окружения, на которые даются ссылки в значениях конфигурации `endpoint` и `Authorization`.
 
-* `DT_ENDPOINT` содержит [базовый URL эндпоинта Dynatrace API](/managed/ingest-from/opentelemetry/otlp-api#export-to-activegate "Узнайте об эндпоинтах OTLP API, которые ваше приложение использует для экспорта данных OpenTelemetry в Dynatrace.") (например, `https://{your-environment-id}.live.dynatrace.com/api/v2/otlp`)
-* `DT_API_TOKEN` содержит [API-токен](/managed/ingest-from/opentelemetry/otlp-api#authentication-export-to-activegate "Узнайте об эндпоинтах OTLP API, которые ваше приложение использует для экспорта данных OpenTelemetry в Dynatrace.")
+* `DT_ENDPOINT` содержит [базовый URL эндпоинта Dynatrace API](/managed/ingest-from/opentelemetry/otlp-api#export-to-activegate "Learn about the OTLP API endpoints that your application uses to export OpenTelemetry data to Dynatrace.") (например, `https://{your-environment-id}.live.dynatrace.com/api/v2/otlp`)
+* `DT_API_TOKEN` содержит [токен API](/managed/ingest-from/opentelemetry/otlp-api#authentication-export-to-activegate "Learn about the OTLP API endpoints that your application uses to export OpenTelemetry data to Dynatrace.")
 
-### Сервисные конвейеры
+### Пайплайны сервиса
 
-В разделе `service` мы в итоге собираем все настроенные объекты в конвейеры для отдельных сигналов телеметрии (трассировки и т. д.) и заставляем экземпляр Collector выполнять настроенные задачи.
+В разделе `service` в итоге собираются все настроенные объекты в пайплайны для отдельных сигналов телеметрии (трейсы и т. д.), и экземпляр Collector выполняет настроенные задачи.
 
-## Связанные темы
+## Похожие темы
 
-* [Обогащение принимаемых данных полями, специфичными для Dynatrace](/managed/ingest-from/extend-dynatrace/extend-data "Узнайте, как автоматически обогащать данные телеметрии полями, специфичными для Dynatrace.")
+* [Обогащение поступающих данных полями, специфичными для Dynatrace](/managed/ingest-from/extend-dynatrace/extend-data "Learn how to automatically enrich your telemetry data with Dynatrace-specific fields.")

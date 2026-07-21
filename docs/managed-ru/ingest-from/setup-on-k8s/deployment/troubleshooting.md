@@ -1,70 +1,69 @@
 ---
 title: Устранение неполадок
 source: https://docs.dynatrace.com/managed/ingest-from/setup-on-k8s/deployment/troubleshooting
-scraped: 2026-05-12T12:03:26.248401
 ---
 
 # Устранение неполадок
 
 # Устранение неполадок
 
-* Чтение: 7 мин
-* Обновлено 23 февраля 2026 г.
+* 7 мин чтения
+* Обновлено 10 июля 2026 г.
 
-На этой странице приведено подробное руководство, помогающее диагностировать и устранять распространённые проблемы.
+Этот раздел содержит полное руководство, которое поможет диагностировать и устранить типовые проблемы.
 
 [#### Устранение неполадок мониторинга
 
-Устранение распространённых проблем, которые могут возникнуть при мониторинге Kubernetes с помощью Dynatrace.
+Устранение типовых проблем, которые могут возникать при мониторинге Kubernetes с помощью Dynatrace.
 
-Устранение неполадок мониторинга](/managed/ingest-from/setup-on-k8s/deployment/troubleshooting/monitoring-troubleshooting)[#### Проблемы связи между Dynatrace и кластером Kubernetes
+Устранение неполадок мониторинга](/managed/ingest-from/setup-on-k8s/deployment/troubleshooting/monitoring-troubleshooting)[#### Проблемы подключения между Dynatrace и кластером Kubernetes
 
-Устранение распространённых проблем связи между Dynatrace и вашим кластером Kubernetes.
+Устранение типовых проблем подключения между Dynatrace и кластером Kubernetes.
 
-Проблемы связи между Dynatrace и кластером Kubernetes](/managed/ingest-from/setup-on-k8s/deployment/troubleshooting/connectivity-issues)
+Проблемы подключения между Dynatrace и кластером Kubernetes](/managed/ingest-from/setup-on-k8s/deployment/troubleshooting/connectivity-issues)
 
-## Начальные шаги по устранению неполадок
+## Начальные шаги устранения неполадок
 
-Прежде чем переходить к конкретным разделам по устранению неполадок, важно иметь чёткое представление о текущем состоянии вашего кластера Kubernetes. Описанные ниже начальные шаги помогут собрать важную информацию о работоспособности кластера и состоянии его компонентов.
+Перед переходом к конкретным разделам устранения неполадок важно чётко понимать текущее состояние кластера Kubernetes. Описанные ниже начальные шаги помогут собрать основную информацию о состоянии кластера и статусе его компонентов.
 
-1. Проверьте состояние вашего DynaKube, выполнив команду `kubectl get dynakubes -n dynatrace`.
-2. [Используйте подкоманду `troubleshoot`](#troubleshoot).
-3. Проверьте состояние подов Dynatrace
-   Используйте команду `kubectl -n dynatrace get pods`, чтобы проверить состояние подов Dynatrace Operator, OneAgent или CSI driver (количество подов зависит от выбранного режима развёртывания).
-4. Изучите логи
-   Используйте команду `kubectl logs`, чтобы изучить логи конкретных подов. Например, `kubectl logs <pod-name>` отобразит логи конкретного пода.
-5. Опишите ресурс
-   Команда `kubectl describe` может предоставить подробную информацию о конкретном ресурсе. Например, `kubectl describe pod <pod-name>` отобразит подробную информацию о конкретном поде.
+1. Проверить статус DynaKube, выполнив команду `kubectl get dynakubes -n dynatrace`.
+2. [Использовать подкоманду `troubleshoot`](#troubleshoot).
+3. Проверить статус подов Dynatrace  
+   Команда `kubectl -n dynatrace get pods` используется для проверки статуса подов Dynatrace Operator, OneAgent или CSI driver (количество подов зависит от выбранного режима развёртывания).
+4. Просмотреть логи  
+   Команда `kubectl logs` используется для просмотра логов конкретных подов. Например, `kubectl logs <pod-name>` выведет логи конкретного пода.
+5. Описать ресурс  
+   Команда `kubectl describe` предоставляет подробную информацию о конкретном ресурсе. Например, `kubectl describe pod <pod-name>` выведет подробную информацию о конкретном поде.
 
 ## Общее устранение неполадок
 
-Общие шаги и рекомендации по устранению распространённых проблем, возникающих при использовании Dynatrace с Kubernetes. Здесь описано, как получить доступ к отладочным логам, использовать подкоманду `troubleshoot` или создать архив поддержки.
+Общие шаги и рекомендации по устранению неполадок, встречающихся при использовании Dynatrace с Kubernetes. Раздел описывает, как получить доступ к отладочным логам, использовать подкоманду `troubleshoot` или сформировать архив поддержки.
 
-### Устранение распространённых проблем настройки Dynatrace Operator с помощью подкоманды `troubleshoot`
+### Устранение типовых проблем настройки Dynatrace Operator с помощью подкоманды `troubleshoot`
 
 Dynatrace Operator версии 0.9.0+
 
-Выполните команду ниже, чтобы получить базовый вывод о состоянии DynaKube, например:
+Выполнить команду ниже, чтобы получить базовый вывод о статусе DynaKube, включающий:
 
-* **Namespace:** существует ли пространство имён `dynatrace` (имя можно переопределить через параметр)
+* **Namespace:** существует ли пространство имён `dynatrace` (имя можно переопределить параметром)
 * **DynaKube:**
 
   + существует ли `CustomResourceDefinition`
-  + существует ли `CustomResource` с заданным именем (имя можно переопределить через параметр)
+  + существует ли `CustomResource` с указанным именем (имя можно переопределить параметром)
   + заканчивается ли URL API на `/api`
-  + совпадает ли имя секрета с DynaKube (или `.spec.tokens`, если используется)
-  + заданы ли в секрете токены Dynatrace Operator и Data Ingest
-  + определён ли секрет для `customPullSecret`
-* **Environment:** доступно ли ваше окружение из пода Dynatrace Operator с использованием тех же параметров, что и у бинарного файла Dynatrace Operator (таких как proxy и сертификат).
-* **OneAgent and ActiveGate image:** доступен ли реестр; доступен ли образ из пода Dynatrace Operator с использованием реестра из окружения с (пользовательским) pull-секретом.
+  + совпадает ли имя secret с именем DynaKube (или используется `.spec.tokens`, если задан)
+  + заданы ли в secret токены Dynatrace Operator и Data Ingest
+  + определён ли secret для `customPullSecret`
+* **Environment:** доступно ли окружение из пода Dynatrace Operator с теми же параметрами, что и у бинарника Dynatrace Operator (такими как прокси и сертификат).
+* **Образ OneAgent и ActiveGate:** доступен ли registry; доступен ли образ из пода Dynatrace Operator, используя registry из окружения с (кастомным) pull secret.
 
 ```
 kubectl exec deploy/dynatrace-operator -n dynatrace -- dynatrace-operator troubleshoot
 ```
 
-Если используется другое имя DynaKube, добавьте к команде аргумент `--dynakube <your_dynakube_name>`.
+Если используется другое имя DynaKube, нужно добавить к команде аргумент `--dynakube <your_dynakube_name>`.
 
-Пример вывода, если для перечисленных выше полей нет ошибок:
+Пример вывода при отсутствии ошибок по указанным выше полям:
 
 ```
 {"level":"info","ts":"2022-09-12T08:45:21.437Z","logger":"dynatrace-operator-version","msg":"dynatrace-operator","version":"<operator version>","gitCommit":"<commithash>","buildDate":"<release date>","goVersion":"<go version>","platform":"<platform>"}
@@ -142,7 +141,7 @@ kubectl exec deploy/dynatrace-operator -n dynatrace -- dynatrace-operator troubl
 
 По умолчанию логи OneAgent находятся в `/var/log/dynatrace/oneagent`.
 
-Чтобы отладить проблемы Dynatrace Operator, выполните
+Для отладки проблем Dynatrace Operator нужно выполнить
 
 Kubernetes
 
@@ -156,7 +155,7 @@ kubectl -n dynatrace logs -f deployment/dynatrace-operator
 oc -n dynatrace logs -f deployment/dynatrace-operator
 ```
 
-Также может потребоваться проверить логи подов OneAgent, развёрнутых через Dynatrace Operator.
+Также может понадобиться проверить логи подов OneAgent, развёрнутых через Dynatrace Operator.
 
 Kubernetes
 
@@ -206,14 +205,14 @@ oc logs oneagent-66qgb -n dynatrace
 
 Dynatrace Operator версии 0.11.0+
 
-Используйте `support-archive`, чтобы создать архив файлов, которые могут быть полезны для расследований службы поддержки:
+Подкоманда `support-archive` используется для создания архива файлов, которые могут пригодиться при расследовании обращений в поддержку:
 
 * `kubernetes-version.txt` (версия сервера Kubernetes кластера)
 * `operator-version.txt` (информация о версии Dynatrace Operator)
-* `logs` (логи из всех контейнеров подов Dynatrace Operator и компонентов Dynatrace, развёрнутых Dynatrace Operator в пространстве имён Dynatrace Operator, обычно `dynatrace`; сюда также входят логи предыдущих контейнеров, если они доступны):
+* `logs` (логи всех контейнеров подов Dynatrace Operator и компонентов Dynatrace, развёрнутых Dynatrace Operator в пространстве имён Dynatrace Operator, обычно `dynatrace`; сюда также входят логи предыдущих контейнеров, если они доступны):
 
-  + `activegate` (если развёрнут [ActiveGate](/managed/ingest-from/dynatrace-activegate "Изучите основные концепции, связанные с ActiveGate."))
-  + `dynakube-logmonitoring` (если Log Monitoring использует [Kubernetes Log Module](/managed/upgrade/unavailable-in-managed "Ваш выбор недоступен в Dynatrace Managed."))
+  + `activegate` (если развёрнут [ActiveGate](/managed/ingest-from/dynatrace-activegate "Понять базовые концепции, связанные с ActiveGate."))
+  + `dynakube-logmonitoring` (если Log Monitoring использует [Kubernetes Log Module](/managed/upgrade/unavailable-in-managed "Выбранное недоступно в Dynatrace Managed."))
   + `dynatrace-oneagent` (если в [DynaKube](/managed/ingest-from/setup-on-k8s/reference/dynakube-parameters "Список доступных параметров для настройки Dynatrace Operator в Kubernetes.") используется `cloudNativeFullStack` или `hostMonitoring`)
   + `dynatrace-operator`
   + `dynatrace-webhook`
@@ -225,14 +224,14 @@ Dynatrace Operator версии 0.11.0+
     - `server`
   + `extension-controller` (если включены Extensions)
   + `sql-ext-exec` (если включены SQL Extensions)
-  + `otel-collector` (если включён [telemetryIngest](/managed/ingest-from/setup-on-k8s/extend-observability-k8s/telemetry-ingest "Включение конечных точек приёма телеметрии Dynatrace в Kubernetes для локального приёма данных в кластере."))
-  + `node-config-collector` (если включён [KSPM](/managed/upgrade/unavailable-in-managed "Ваш выбор недоступен в Dynatrace Managed."))
+  + `otel-collector` (если включён [telemetryIngest](/managed/ingest-from/setup-on-k8s/extend-observability-k8s/telemetry-ingest "Включить эндпоинты приёма телеметрии Dynatrace в Kubernetes для локального в рамках кластера приёма данных."))
+  + `node-config-collector` (если включён [KSPM](/managed/upgrade/unavailable-in-managed "Выбранное недоступно в Dynatrace Managed."))
 * `manifests` (манифесты Kubernetes для компонентов Dynatrace Operator и развёрнутых DynaKube в пространстве имён Dynatrace Operator)
-* `troubleshoot.txt` (вывод команды устранения неполадок, которая автоматически выполняется подкомандой `support-archive`)
+* `troubleshoot.txt` (вывод команды диагностики, которая автоматически выполняется подкомандой `support-archive`)
 * `supportarchive_console.log` (полный вывод подкоманды `support-archive`)
 * Диагностические файлы Extension Controller
 
-  + все файлы, находящиеся внутри `/var/lib/dynatrace/remotepluginmodule/log/extensions` в поде Extension Controller
+  + все файлы, найденные в `/var/lib/dynatrace/remotepluginmodule/log/extensions` внутри пода Extension Controller
 
 #### Использование
 
@@ -242,25 +241,27 @@ Dynatrace Operator версии 0.11.0+
 kubectl exec -n dynatrace deployment/dynatrace-operator -- dynatrace-operator support-archive --stdout > operator-support-archive.zip
 ```
 
-Содержимое архива поддержки записывается в `stdout`, что позволяет перенаправить его в ZIP-файл. Прочий вывод отправляется в `stderr` для сохранения целостности файла архива.
+Содержимое архива поддержки записывается в `stdout`, что позволяет перенаправить его в ZIP-файл. Остальной вывод отправляется в `stderr`, чтобы не нарушать целостность файла архива.
 
 Windows PowerShell не поддерживается
 
-В Windows обязательно используйте командную строку (`cmd.exe`); PowerShell не поддерживается.
+На Windows нужно использовать командную строку (`cmd.exe`); PowerShell не поддерживается.
 
 #### Запуск `support-archive` в отдельном поде
 
 Dynatrace Operator версии 1.0.0+
 
-Если под `operator` не функционирует из-за серьёзных проблем при запуске, можно выполнить команду `support-archive` в отдельном поде с помощью следующей команды. Учтите, что запуск этой команды в отдельном поде рекомендуется только как крайняя мера.
+Если под `operator` не функционирует из-за серьёзных проблем при запуске или неожиданно завершает работу, можно выполнить команду `support-archive` в отдельном поде с помощью следующей команды. Стоит учитывать, что запуск этой команды в отдельном поде рекомендуется только как крайняя мера.
 
 ```
 kubectl run -n dynatrace support-archive --rm -i --overrides='{ "spec": { "serviceAccount": "dynatrace-operator" }  }' --restart Never --image <operator-image> -- support-archive --delay 10 --stdout > support-archive.zip
 ```
 
-* Убедитесь, что используете тот же образ, что и под `operator`.
-* Параметр `--delay 10` важен, поскольку `kubectl run` обычно пропускает первые несколько строк вывода, что может привести к повреждению архива поддержки.
-* Укажите в команде `serviceAccount` как `dynatrace-operator`, так как это позволяет отдельному поду получить доступ ко всем необходимым логам и манифестам Kubernetes, требуемым для сборки архива поддержки. Обратите внимание, что этот метод полагается на то, что ресурсы Dynatrace Operator всё ещё установлены и доступны в кластере.
+* Нужно использовать тот же образ, что и под `operator`.
+* Параметр `--delay 10` важен, поскольку `kubectl run` часто пропускает несколько первых строк вывода, что может привести к повреждению архива поддержки.
+* В команде нужно указать `serviceAccount` как `dynatrace-operator`, поскольку это даёт отдельному поду доступ ко всем логам и манифестам Kubernetes, необходимым для сборки архива поддержки. Стоит учитывать, что этот способ полагается на то, что ресурсы Dynatrace Operator по-прежнему установлены и доступны в кластере.
+
+На больших кластерах, где объём собираемых данных подов приводит к превышению Dynatrace Operator лимита памяти, может происходить остановка из-за нехватки памяти (OOM). Это более вероятно, если Dynatrace Operator не рассчитан по размеру на данный кластер. В этом случае описанный выше способ с отдельным подом поможет собрать архив.
 
 #### Пример вывода
 
@@ -454,26 +455,26 @@ kubectl exec -n dynatrace deployment/dynatrace-operator -- dynatrace-operator su
 [support-archive]       Collected manifest for manifests/crds/customresourcedefinition-dynakubes.yaml
 ```
 
-### Отладка проблем конфигурации и мониторинга с помощью расширения Kubernetes Monitoring Statistics
+### Отладка проблем с конфигурацией и мониторингом с помощью расширения Kubernetes Monitoring Statistics
 
-Расширение [Kubernetes Monitoring Statistics](https://dt-url.net/n903xmb) может помочь:
+[Расширение Kubernetes Monitoring Statistics﻿](https://dt-url.net/n903xmb) помогает:
 
-* Устранить неполадки настройки Kubernetes Monitoring
-* Устранить неполадки настройки интеграции Prometheus
-* Получить подробную аналитику по запросам от Dynatrace к Kubernetes API
-* Получать оповещения, когда в настройке мониторинга платформы Kubernetes возникают проблемы
-* Получать оповещения о медленном времени отклика вашего Kubernetes API
+* устранять неполадки настройки Kubernetes Monitoring;
+* устранять неполадки настройки интеграции Prometheus;
+* получать детальную информацию о запросах от Dynatrace к Kubernetes API;
+* получать оповещения при возникновении проблем с настройкой платформенного мониторинга Kubernetes;
+* получать оповещения о медленном времени отклика Kubernetes API.
 
 ### Возможные проблемы при изменении режима мониторинга
 
-* Изменение режима мониторинга с `classicFullStack` на `cloudNativeFullStack` влияет на вычисление идентификаторов хостов для отслеживаемых хостов, что приводит к назначению новых идентификаторов и отсутствию связи между старыми и новыми сущностями.
-* Чтобы изменить метод мониторинга с `applicationMonitoring` или `cloudNativeFullstack` на `classicFullstack` или `hostMonitoring`, необходимо перезапустить все поды, которые ранее были инструментированы с помощью `applicationMonitoring` или `cloudNativeFullstack`.
+* Изменение режима мониторинга с `classicFullStack` на `cloudNativeFullStack` влияет на расчёт host ID для отслеживаемых хостов, из-за чего назначаются новые ID и связь между старыми и новыми сущностями отсутствует.
+* Если нужно изменить метод мониторинга с `applicationMonitoring` или `cloudNativeFullstack` на `classicFullstack` или `hostMonitoring`, нужно перезапустить все Pod, которые ранее были инструментированы с помощью `applicationMonitoring` или `cloudNativeFullstack`.
 
-### Устранение проблем инъекции в поды с помощью аннотаций пода
+### Устранение проблем внедрения в под с помощью аннотаций пода
 
-Если OneAgent, обогащение метаданными или конфигурация экспортёра OTLP внедряются не так, как ожидалось, проверьте аннотации на затронутом поде, чтобы выяснить, почему инъекция была пропущена.
+Если OneAgent, metadata enrichment или конфигурация экспортера OTLP не внедряются как ожидается, нужно проверить аннотации на затронутом поде, чтобы выяснить, почему внедрение было пропущено.
 
-Следующие аннотации указывают, что вебхук Dynatrace Operator намеренно пропустил инъекцию для пода:
+Следующие аннотации указывают на то, что webhook Dynatrace Operator намеренно пропустил внедрение для пода:
 
 ```
 oneagent.dynatrace.com/injected: "false"
@@ -501,17 +502,27 @@ metadata-enrichment.dynatrace.com/reason: "OwnerLookupFailed"
 otlp-exporter-configuration.dynatrace.com/reason: "IngestEndpointUnavailable"
 ```
 
-#### Причины пропущенной инъекции
+#### Причины пропуска внедрения
 
-См. следующие значения причин, чтобы сузить первопричину.
+Следующие значения `reason` помогают сузить первопричину.
 
-| Причина | Затронутые компоненты | Описание | Подробности |
+| Reason | Затронутые компоненты | Описание | Подробности |
 | --- | --- | --- | --- |
-| `NoBootstrapperConfig` | * OneAgent * Metadata enrichment | Вебхук не может найти или создать секрет конфигурации bootstrapper в пространстве имён пода во время инъекции. | Обычно это происходит, когда согласование DynaKube не завершено или проблемы конфигурации препятствуют согласованию. Секрет конфигурации bootstrapper содержит необходимую конфигурацию (такую как токены) для инъекции CodeModule и обогащения метаданными.  Существует два варианта:  * `<dynakube name>-bootstrapper-config` в пространстве имён Dynatrace Operator (обычно `dynatrace`), который копируется при необходимости. * `dynatrace-bootstrapper-config` в пространстве имён внедрённого пода, который монтируется в под и используется во время инъекции. |
-| `NoMutationNeeded` | * OneAgent * Metadata enrichment | Вебхук определяет, что под не требует инъекции. | Обычно это происходит, когда инъекция отключена через аннотации. |
-| `OwnerLookupFailed` | * OneAgent * Metadata enrichment * OTLP exporter configuration | Вебхук не может определить владельца пода (имя и тип), который необходим для инъекции. | Обычно это происходит, когда Kubernetes API временно недоступен или медленно отвечает. |
-| `MissingTenantUUID` | OneAgent | Согласование DynaKube не завершено, и UUID окружения не был проверен во время инъекции. | Это может произойти во время первоначальной настройки Dynatrace Operator или когда проблемы конфигурации препятствуют согласованию. |
-| `DynaKubeStatusNotReady` | OneAgent | Согласование DynaKube не завершено, и статус, связанный с CodeModules, не готов во время инъекции. | Поскольку статус недоступен, вебхук не может определить, какой CodeModule внедрять. |
-| `NoOTLPExporterConfigSecret` | OTLP exporter configuration | Вебхук не может найти или создать секрет конфигурации экспортёра OTLP в пространстве имён пода во время инъекции. | Обычно это происходит, когда согласование DynaKube не завершено или проблемы конфигурации препятствуют согласованию.  Существует два варианта:  * `<dynakube name>-otlp-exporter-config` в пространстве имён Dynatrace Operator (исходный секрет). * `dynatrace-otlp-exporter-config` в пространстве имён внедрённого пода, который монтируется в под. |
-| `NoOTLPExporterActiveGateCertSecret` | OTLP exporter configuration | Вебхук не может найти или создать секрет сертификата ActiveGate в пространстве имён пода во время инъекции. | Обычно это происходит, когда согласование DynaKube не завершено или проблемы конфигурации препятствуют согласованию. Этот секрет требуется только когда экспортёр OTLP взаимодействует с ActiveGate по TLS.  Существует два варианта:  * `<dynakube name>-otlp-exporter-certs` в пространстве имён Dynatrace Operator (исходный секрет). * `dynatrace-otlp-exporter-certs` в пространстве имён внедрённого пода, который монтируется в под. |
-| `IngestEndpointUnavailable` | OTLP exporter configuration | Вебхук не может сформировать корректный URL конечной точки приёма во время инъекции. | Без корректного URL конечной точки приёма конфигурация экспортёра OTLP не может быть внедрена. |
+| `NoBootstrapperConfig` | * OneAgent * Metadata enrichment | Webhook не может найти или создать Secret конфигурации bootstrapper в пространстве имён пода на момент внедрения. | Обычно это происходит, когда согласование DynaKube не завершено или проблемы конфигурации препятствуют согласованию. Secret конфигурации bootstrapper содержит необходимую конфигурацию (например, токены) для внедрения CodeModule и metadata enrichment.  Существует два варианта:  * `<dynakube name>-bootstrapper-config` в пространстве имён Dynatrace Operator (обычно `dynatrace`), которое копируется при необходимости. * `dynatrace-bootstrapper-config` в пространстве имён пода, в который выполняется внедрение, которое монтируется в под и используется во время внедрения. |
+| `NoMutationNeeded` | * OneAgent * Metadata enrichment | Webhook определяет, что поду не требуется внедрение. | Обычно это происходит, когда внедрение отключено с помощью аннотаций. |
+| `OwnerLookupFailed` | * OneAgent * Metadata enrichment * OTLP exporter configuration | Webhook не может определить владельца пода (имя и вид), что необходимо для внедрения. | Обычно это происходит, когда Kubernetes API временно недоступен или медленно отвечает. |
+| `MissingTenantUUID` | OneAgent | Согласование DynaKube не завершено, и UUID окружения не был проверен на момент внедрения. | Это может происходить во время первоначальной настройки Dynatrace Operator или когда проблемы конфигурации препятствуют согласованию. |
+| `DynaKubeStatusNotReady` | OneAgent | Согласование DynaKube не завершено, и статус, связанный с CodeModules, не готов на момент внедрения. | Поскольку статус недоступен, webhook не может определить, какой CodeModule внедрять. |
+| `NoOTLPExporterConfigSecret` | OTLP exporter configuration | Webhook не может найти или создать Secret конфигурации экспортера OTLP в пространстве имён пода на момент внедрения. | Обычно это происходит, когда согласование DynaKube не завершено или проблемы конфигурации препятствуют согласованию.  Существует два варианта:  * `<dynakube name>-otlp-exporter-config` в пространстве имён Dynatrace Operator (исходный Secret). * `dynatrace-otlp-exporter-config` в пространстве имён пода, в который выполняется внедрение, которое монтируется в под. |
+| `NoOTLPExporterActiveGateCertSecret` | OTLP exporter configuration | Webhook не может найти или создать Secret сертификата ActiveGate в пространстве имён пода на момент внедрения. | Обычно это происходит, когда согласование DynaKube не завершено или проблемы конфигурации препятствуют согласованию. Этот Secret требуется только тогда, когда экспортер OTLP взаимодействует с ActiveGate через TLS.  Существует два варианта:  * `<dynakube name>-otlp-exporter-certs` в пространстве имён Dynatrace Operator (исходный Secret). * `dynatrace-otlp-exporter-certs` в пространстве имён пода, в который выполняется внедрение, которое монтируется в под. |
+| `IngestEndpointUnavailable` | OTLP exporter configuration | Webhook не может построить корректный URL ingest endpoint на момент внедрения. | Без корректного URL ingest endpoint конфигурация экспортера OTLP не может быть внедрена. |
+
+### Поды с внедрением завершаются ошибкой `ImagePullBackOff` в приватном реестре
+
+Если поды приложений с внедрением не запускаются с ошибкой `ImagePullBackOff` при извлечении образа init-контейнера из приватного реестра, у подов отсутствуют действительные учётные данные реестра.
+
+`customPullSecret` DynaKube аутентифицирует только компоненты, управляемые оператором, в пространстве имён `dynatrace`. Он не распространяется на поды приложений с внедрением. Каждый под с внедрением запускает init-контейнер Dynatrace (образ Dynatrace Operator или образ code modules OneAgent для [node image pull](/managed/ingest-from/setup-on-k8s/reference/code-modules-delivery-modes "Reference for how Dynatrace Operator delivers OneAgent code modules to application pods, including ephemeral volumes, CSI driver image pull, and ZIP download.")), который узел Kubernetes должен извлечь, поэтому pull secret нужно предоставить самостоятельно.
+
+Часто это проявляется после обновления до Kubernetes 1.35, где по умолчанию включён feature gate [`KubeletEnsureSecretPulledImages`﻿](https://kubernetes.io/docs/concepts/containers/images/#ensureimagepullcredentialverification). После этого kubelet проверяет учётные данные для извлечения по каждому поду, даже для образов, уже кэшированных на узле, поэтому поды, ранее использовавшие кэшированный образ повторно, теперь завершаются ошибкой без собственных учётных данных.
+
+Чтобы решить эту проблему, распространите pull secret на пространства имён приложений, узлы или поды. Подробности см. в разделе [Provide pull secrets for injected workloads](/managed/ingest-from/setup-on-k8s/guides/container-registries/use-private-registry#injected-workloads "Use a private registry").

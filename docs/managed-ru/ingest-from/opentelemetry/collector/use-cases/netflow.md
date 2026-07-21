@@ -1,7 +1,6 @@
 ---
 title: Приём NetFlow с помощью OTel Collector
 source: https://docs.dynatrace.com/managed/ingest-from/opentelemetry/collector/use-cases/netflow
-scraped: 2026-05-12T12:11:00.045039
 ---
 
 # Приём NetFlow с помощью OTel Collector
@@ -10,22 +9,22 @@ scraped: 2026-05-12T12:11:00.045039
 
 * Практическое руководство
 * Чтение: 1 мин
-* Обновлено 27 января 2026 г.
+* Обновлено 11 мая 2026 г.
 
-В следующем примере конфигурации показано, как настроить экземпляр Collector для приёма пакетов NetFlow и их передачи в виде запросов OTLP в Dynatrace.
+Приведённый ниже пример конфигурации показывает, как настроить экземпляр Collector для приёма пакетов NetFlow и передачи их в виде запросов OTLP в Dynatrace.
 
 ## Предварительные требования
 
-* Один из следующих дистрибутивов Collector с [receiver NetFlow](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.151.0/receiver/netflowreceiver):
+* Один из следующих дистрибутивов Collector с [NetFlow receiver﻿](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.156.0/receiver/netflowreceiver):
 
-  + [Dynatrace Collector](/managed/ingest-from/opentelemetry/collector#dt-collector-dist "Узнайте, как использовать OpenTelemetry Collector, включая Dynatrace OTel Collector, для приёма телеметрии из OpenTelemetry.")
-  + [OpenTelemetry Contrib](/managed/ingest-from/opentelemetry/collector#collector-contrib "Узнайте, как использовать OpenTelemetry Collector, включая Dynatrace OTel Collector, для приёма телеметрии из OpenTelemetry.")
-  + [пользовательская версия Builder](/managed/ingest-from/opentelemetry/collector#collector-builder "Узнайте, как использовать OpenTelemetry Collector, включая Dynatrace OTel Collector, для приёма телеметрии из OpenTelemetry.")
-* [URL эндпоинта Dynatrace API](/managed/ingest-from/opentelemetry/otlp-api "Узнайте об эндпоинтах OTLP API, которые ваше приложение использует для экспорта данных OpenTelemetry в Dynatrace."), на который должны экспортироваться данные.
-* [API-токен](/managed/ingest-from/opentelemetry/otlp-api#authentication-export-to-activegate "Узнайте об эндпоинтах OTLP API, которые ваше приложение использует для экспорта данных OpenTelemetry в Dynatrace.") с областью доступа Ingest logs (`logs.ingest`).
-* Устройство с поддержкой NetFlow или sFlow, способное отправлять пакеты NetFlow в экземпляр OTel Collector.
+  + [Dynatrace Collector](/managed/ingest-from/opentelemetry/collector#dt-collector-dist "Learn how to use the OpenTelemetry Collector, including the Dynatrace OTel Collector, to ingest telemetry from OpenTelemetry.")
+  + [OpenTelemetry Contrib](/managed/ingest-from/opentelemetry/collector#collector-contrib "Learn how to use the OpenTelemetry Collector, including the Dynatrace OTel Collector, to ingest telemetry from OpenTelemetry.")
+  + [Пользовательская версия Builder](/managed/ingest-from/opentelemetry/collector#collector-builder "Learn how to use the OpenTelemetry Collector, including the Dynatrace OTel Collector, to ingest telemetry from OpenTelemetry.")
+* [URL конечной точки Dynatrace API](/managed/ingest-from/opentelemetry/otlp-api "Learn about the OTLP API endpoints that your application uses to export OpenTelemetry data to Dynatrace."), в которую нужно экспортировать данные.
+* [Токен API](/managed/ingest-from/opentelemetry/otlp-api#authentication-export-to-activegate "Learn about the OTLP API endpoints that your application uses to export OpenTelemetry data to Dynatrace.") с областью действия Ingest logs (`logs.ingest`).
+* Устройство с поддержкой NetFlow или sFlow, способное отправлять пакеты NetFlow на экземпляр OTel Collector.
 
-См. [Развёртывание Collector](/managed/ingest-from/opentelemetry/collector/deployment "Как развернуть Dynatrace OpenTelemetry Collector.") и [Настройку Collector](/managed/ingest-from/opentelemetry/collector/configuration "Как настроить OpenTelemetry Collector."), чтобы узнать, как настроить ваш Collector с приведённой ниже конфигурацией.
+О том, как настроить Collector с приведённой ниже конфигурацией, см. в разделах [Развёртывание Collector](/managed/ingest-from/opentelemetry/collector/deployment "How to deploy the Dynatrace OpenTelemetry Collector.") и [Настройка Collector](/managed/ingest-from/opentelemetry/collector/configuration "How to configure the OpenTelemetry Collector.").
 
 ## Конфигурация Collector
 
@@ -58,22 +57,6 @@ workers: 4
 
 
 
-processors:
-
-
-
-batch:
-
-
-
-send_batch_size: 30
-
-
-
-timeout: 30s
-
-
-
 exporters:
 
 
@@ -91,6 +74,30 @@ headers:
 
 
 Authorization: "Api-Token ${env:DT_API_TOKEN}"
+
+
+
+sending_queue:
+
+
+
+batch:
+
+
+
+# Use default batching settings for logs.
+
+
+
+min_size: 1800
+
+
+
+max_size: 2000
+
+
+
+flush_timeout: 60s
 
 
 
@@ -117,46 +124,46 @@ processors: [batch]
 exporters: [otlp_http]
 ```
 
-Доступные параметры конфигурации см. в документации по [receiver NetFlow](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.151.0/receiver/netflowreceiver#netflow-receiver).
+Доступные варианты конфигурации см. в документации [NetFlow receiver﻿](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.156.0/receiver/netflowreceiver#netflow-receiver).
 
-Мы рекомендуем задавать параметру `sockets` значение, равное числу доступных на экземпляре Collector ядер CPU, а параметру `workers` задавать удвоенное число сокетов. Такая конфигурация позволяет Collector обрабатывать несколько входящих пакетов NetFlow одновременно, что повышает производительность.
+Рекомендуется устанавливать параметр `sockets` равным числу ядер CPU, доступных на экземпляре Collector, а параметр `workers`, вдвое больше числа сокетов. Такая конфигурация позволяет Collector обрабатывать несколько входящих пакетов NetFlow одновременно, что повышает производительность.
 
-Для очень больших объёмов данных следует распараллелить конфигурацию между несколькими экземплярами Collector.
+Для чрезвычайно больших объёмов данных конфигурацию следует распараллелить между несколькими экземплярами Collector.
 
 Проверка конфигурации
 
-[Проверьте ваши настройки](/managed/ingest-from/opentelemetry/collector/configuration#validate "Как настроить OpenTelemetry Collector."), чтобы избежать проблем с конфигурацией.
+[Проверьте настройки](/managed/ingest-from/opentelemetry/collector/configuration#validate "How to configure the OpenTelemetry Collector."), чтобы избежать проблем с конфигурацией.
 
 ## Компоненты
 
-Для нашей конфигурации мы настраиваем следующие компоненты.
+В нашей конфигурации настроены следующие компоненты.
 
 ### Receivers
 
-В разделе `receivers` мы указываем receiver `netflow` в качестве активного компонента receiver для нашего экземпляра Collector и настраиваем его на прослушивание указанных портов.
+В разделе `receivers` указан receiver `netflow` в качестве активного компонента-приёмника для экземпляра Collector, настроенный на прослушивание указанных портов.
 
 ### Processors
 
-В разделе `processors` мы указываем processor `batch`, который группирует входящие пакеты NetFlow перед их отправкой в Dynatrace. Это полезно для оптимизации производительности и сокращения числа отправляемых запросов.
+В разделе `processors` указан процессор `batch`, который группирует входящие пакеты NetFlow перед отправкой в Dynatrace. Это полезно для оптимизации производительности и сокращения числа отправляемых запросов.
 
 ### Exporters
 
-В разделе `exporters` мы указываем стандартный [exporter `otlp_http`](https://github.com/open-telemetry/opentelemetry-collector/tree/v0.151.0/exporter/otlphttpexporter) и настраиваем его с помощью URL нашего Dynatrace API и необходимого токена аутентификации.
+В разделе `exporters` указан стандартный [экспортёр `otlp_http`﻿](https://github.com/open-telemetry/opentelemetry-collector/tree/v0.156.0/exporter/otlphttpexporter), настроенный с URL API Dynatrace и необходимым токеном авторизации.
 
-Для этого мы задаём следующие две переменные окружения и ссылаемся на них в значениях конфигурации `endpoint` и `Authorization`.
+Для этого задаются следующие две переменные окружения, на которые даются ссылки в значениях конфигурации `endpoint` и `Authorization`.
 
-* `DT_ENDPOINT` содержит [базовый URL эндпоинта Dynatrace API](/managed/ingest-from/opentelemetry/otlp-api#export-to-activegate "Узнайте об эндпоинтах OTLP API, которые ваше приложение использует для экспорта данных OpenTelemetry в Dynatrace.") (например, `https://{your-environment-id}.live.dynatrace.com/api/v2/otlp`)
-* `DT_API_TOKEN` содержит [API-токен](/managed/ingest-from/opentelemetry/otlp-api#authentication-export-to-activegate "Узнайте об эндпоинтах OTLP API, которые ваше приложение использует для экспорта данных OpenTelemetry в Dynatrace.")
+* `DT_ENDPOINT` содержит [базовый URL конечной точки Dynatrace API](/managed/ingest-from/opentelemetry/otlp-api#export-to-activegate "Learn about the OTLP API endpoints that your application uses to export OpenTelemetry data to Dynatrace.") (например, `https://{your-environment-id}.live.dynatrace.com/api/v2/otlp`)
+* `DT_API_TOKEN` содержит [токен API](/managed/ingest-from/opentelemetry/otlp-api#authentication-export-to-activegate "Learn about the OTLP API endpoints that your application uses to export OpenTelemetry data to Dynatrace.")
 
-### Сервисные конвейеры
+### Конвейеры служб
 
-В разделе `service` мы собираем наши объекты receiver и exporter в конвейер логов, который прослушивает настроенный адрес на наличие входящих пакетов NetFlow и пересылает их в Dynatrace с помощью exporter.
+В разделе `service` объекты receiver и exporter объединяются в конвейер логов, который будет прослушивать настроенный адрес на предмет входящих пакетов NetFlow и передавать их в Dynatrace с помощью экспортёра.
 
-## Пределы и ограничения
+## Лимиты и ограничения
 
-Логи принимаются с помощью протокола OpenTelemetry (OTLP) через [Dynatrace OTLP API](/managed/ingest-from/opentelemetry/otlp-api "Узнайте об эндпоинтах OTLP API, которые ваше приложение использует для экспорта данных OpenTelemetry в Dynatrace.") и подчиняются ограничениям и лимитам этого API.
-Дополнительные сведения см. в разделе [Приём логов OpenTelemetry](/managed/ingest-from/opentelemetry/otlp-api/ingest-logs "Узнайте, как Dynatrace принимает записи логов OpenTelemetry и какие ограничения применяются.").
+Логи принимаются с использованием протокола OpenTelemetry (OTLP) через [API OTLP Dynatrace](/managed/ingest-from/opentelemetry/otlp-api "Learn about the OTLP API endpoints that your application uses to export OpenTelemetry data to Dynatrace.") и подчиняются лимитам и ограничениям API.
+Подробнее см. в разделе [Приём логов OpenTelemetry](/managed/ingest-from/opentelemetry/otlp-api/ingest-logs "Learn how Dynatrace ingests OpenTelemetry log records and what limitations apply.").
 
 ## Связанные темы
 
-* [Приём логов из файлов с помощью OTel Collector](/managed/ingest-from/opentelemetry/collector/use-cases/filelog "Настройте OpenTelemetry Collector для приёма данных логов в Dynatrace.")
+* [Приём логов из файлов с помощью OTel Collector](/managed/ingest-from/opentelemetry/collector/use-cases/filelog "Configure the OpenTelemetry Collector to ingest log data into Dynatrace.")
