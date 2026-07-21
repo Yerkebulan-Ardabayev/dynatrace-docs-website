@@ -1,7 +1,6 @@
 ---
 title: Мониторинг Azure Database for MySQL
 source: https://docs.dynatrace.com/managed/ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics/monitor-azure-db-mysql
-scraped: 2026-05-12T11:27:32.164181
 ---
 
 # Мониторинг Azure Database for MySQL
@@ -9,49 +8,49 @@ scraped: 2026-05-12T11:27:32.164181
 # Мониторинг Azure Database for MySQL
 
 * Практическое руководство
-* Чтение: 2 мин
+* 2 минуты чтения
 * Опубликовано 25 июня 2020 г.
 
 Уведомление об устаревании
 
-16 сентября 2024 г. сервис Azure Database for MySQL будет выведен из эксплуатации. Azure представил новый сервис, см. [Мониторинг Azure Database for MySQL Flexible Servers](/managed/ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics/monitor-azure-db-mysql-flexible-servers "Мониторинг Azure DB for Database for MySQL Flexible Servers и просмотр доступных метрик.").
+16 сентября 2024 года Azure Database for MySQL будет выведен из эксплуатации. Azure представил новый сервис, см. [Мониторинг Azure Database for MySQL Flexible Servers](/managed/ingest-from/microsoft-azure-services/azure-integrations/azure-cloud-services-metrics/monitor-azure-db-mysql-flexible-servers "Мониторинг Azure DB for Database for MySQL Flexible Servers и просмотр доступных метрик.").
 
-Страница обзора Azure Database for MySQL служит комплексным обзором ваших серверов MySQL и экземпляров баз данных. Здесь вы можете получить полную видимость и проверить, работоспособна ли ваша база данных, снижена ли её производительность и есть ли неудачные подключения.
+Страница обзора Azure Database for MySQL служит исчерпывающим обзором серверов MySQL и экземпляров баз данных. Здесь можно получить полную видимость и проверить, работоспособна ли база данных, не снижена ли её производительность и нет ли неудачных подключений.
 
-## Предварительные условия
+## Предварительные требования
 
 * Dynatrace версии 1.196+
 * Environment ActiveGate версии 1.195+
 
 ## Включение мониторинга
 
-Чтобы узнать, как включить мониторинг сервиса, см. [Включение мониторинга сервиса](/managed/ingest-from/microsoft-azure-services/azure-integrations/azure-monitoring-guide/azure-enable-service-monitoring "Включение мониторинга Azure в Dynatrace.").
+Чтобы узнать, как включить мониторинг сервиса, см. [Включение мониторинга сервисов](/managed/ingest-from/microsoft-azure-services/azure-integrations/azure-monitoring-guide/azure-enable-service-monitoring "Включение мониторинга Azure в Dynatrace.").
 
-При желании для интеграции OneAgent см. [как отслеживается активность баз данных](/managed/observe/infrastructure-observability/databases/database-services-classic/how-database-activity-is-monitored "Узнайте об автоматическом обнаружении и мониторинге сервисов баз данных в среде вашего приложения.").
+Дополнительно, для интеграции с OneAgent, см. [как отслеживается активность базы данных](/managed/observe/infrastructure-observability/database-services-classic/how-database-activity-is-monitored "Узнайте об автоматическом обнаружении и мониторинге сервисов баз данных в среде вашего приложения.").
 
 ## Просмотр метрик сервиса
 
-Вы можете просматривать метрики сервиса в вашей среде Dynatrace на **странице обзора пользовательского устройства** или на странице **Dashboards**.
+Метрики сервиса можно просматривать в среде Dynatrace либо на **странице обзора custom device**, либо на странице **Dashboards**.
 
-### Просмотр метрик на странице обзора пользовательского устройства
+### Просмотр метрик на странице обзора custom device
 
-Чтобы перейти на страницу обзора пользовательского устройства:
+Чтобы перейти на страницу обзора custom device
 
 1. Перейдите в **Technologies & Processes**.
-2. Отфильтруйте по имени сервиса и выберите соответствующую группу пользовательских устройств.
-3. После выбора группы пользовательских устройств вы окажетесь на **странице обзора группы пользовательских устройств**.
-4. На **странице обзора группы пользовательских устройств** перечислены все экземпляры (пользовательские устройства), принадлежащие группе. Выберите экземпляр для просмотра **страницы обзора пользовательского устройства**.
+2. Отфильтруйте по имени сервиса и выберите соответствующую группу custom device.
+3. После выбора группы custom device откроется **страница обзора группы custom device**.
+4. На **странице обзора группы custom device** перечислены все экземпляры (custom device), входящие в группу. Выберите экземпляр, чтобы открыть **страницу обзора custom device**.
 
 ### Просмотр метрик на дашборде
 
-Если для сервиса предусмотрен предустановленный дашборд, он появится на вашей странице **Dashboards** с набором всех рекомендуемых метрик. Искать конкретные дашборды можно с помощью фильтрации по **Preset**, а затем по **Name**.
+Если для сервиса есть готовый дашборд, на странице **Dashboards** появится готовый дашборд для соответствующего сервиса со всеми рекомендованными метриками. Нужные дашборды можно найти, отфильтровав по **Preset**, а затем по **Name**.
 
-Для уже отслеживаемых сервисов может потребоваться повторно сохранить учётные данные, чтобы предустановленный дашборд отобразился на странице **Dashboards**. Для повторного сохранения учётных данных перейдите в **Settings** > **Cloud and virtualization** > **Azure**, выберите нужный экземпляр Azure, затем нажмите **Save**.
+Для уже отслеживаемых сервисов может потребоваться повторно сохранить учётные данные, чтобы готовый дашборд появился на странице **Dashboards**. Чтобы повторно сохранить учётные данные, перейдите в **Settings** > **Cloud and virtualization** > **Azure**, выберите нужный экземпляр Azure, затем нажмите **Save**.
 
-Вы не можете вносить изменения непосредственно в предустановленный дашборд, но можете клонировать его и редактировать. Чтобы клонировать дашборд, откройте меню обзора (**…**) и выберите **Clone**.  
-Чтобы убрать дашборд из списка, его можно скрыть. Чтобы скрыть дашборд, откройте меню обзора (**…**) и выберите **Hide**.
+Вносить изменения напрямую в готовый дашборд нельзя, но его можно клонировать и редактировать. Чтобы клонировать дашборд, откройте меню обзора (**…**) и выберите **Clone**.  
+Чтобы убрать дашборд из списка дашбордов, его можно скрыть. Чтобы скрыть дашборд, откройте меню обзора (**…**) и выберите **Hide**.
 
-Скрытие дашборда не затрагивает других пользователей.
+Скрытие дашборда не влияет на других пользователей.
 
 ![Clone hide azure](https://dt-cdn.net/images/2020-12-10-14-35-42-1473-23fe220b09.png)
 
@@ -61,42 +60,42 @@ Clone hide azure
 
 Mysql dash
 
-### Настройка зоны управления
+### Настройка management zone
 
-Чтобы импортировать дашборд для Azure Database for MySQL, необходимо [настроить зону управления](/managed/manage/identity-access-management/permission-management/management-zones/set-up-management-zones "Создание зон управления и назначение прав доступа к ним."), которая ограничит сущности, отображаемые на дашборде, теми, которые относятся к этому сервису.
+Чтобы импортировать дашборд для Azure Database for MySQL, нужно [настроить management zone](/managed/manage/identity-access-management/permission-management/management-zones/set-up-management-zones "Создание management zone и назначение прав доступа к ним."), чтобы ограничить сущности, отображаемые на дашборде, только теми, что относятся к этому сервису.
 
-При создании зоны управления для этого дашборда:
+При создании management zone для этого дашборда:
 
-1. Создайте правило, которое идентифицирует сервисы на основе общего свойства:
+1. Создайте правило, определяющее сервисы по общему свойству:
 
-   * Service type equals `Database`
-   * Service topology equals `Opaque service`
+   * Тип сервиса равен `Database`
+   * Топология сервиса равна `Opaque service`
 2. Добавьте условие, чтобы имя базы данных содержало строку `mysql` (с учётом регистра).
 
 Пример
 
-![Azure management zone](https://dt-cdn.net/images/azuredbformysqlmanagementzone-2662-467d58e129.webp)
+![Management zone для Azure](https://dt-cdn.net/images/azuredbformysqlmanagementzone-2662-467d58e129.webp)
 
-Azure management zone
+Management zone для Azure
 
-После создания зоны управления назначьте её вашему дашборду (на дашборде выберите **Edit** > **Settings** > **Default management zone**). Дополнительную информацию см. в разделе [Временной диапазон и зона управления дашборда](/managed/analyze-explore-automate/dashboards-classic/dashboards/dashboard-timeframe "Узнайте о параметрах временного диапазона и зоны управления дашборда Dynatrace.").
+После создания management zone назначьте её дашборду (на дашборде выберите **Edit** > **Settings** > **Default management zone**). Подробнее см. [Временной диапазон дашборда и management zone](/managed/analyze-explore-automate/dashboards-classic/dashboards/dashboard-timeframe "Узнайте о настройках временного диапазона дашборда Dynatrace и management zone.").
 
 ## Доступные метрики
 
-| Имя | Описание | Единица измерения | Рекомендуется |
+| Название | Описание | Единица измерения | Рекомендовано |
 | --- | --- | --- | --- |
-| active\_connections | Активные подключения | Количество | Применимо |
-| backup\_storage\_used | Использованное хранилище резервных копий | Байты |  |
-| cpu\_percent | Процент использования ЦП | Процент | Применимо |
-| connections\_failed | Неудачные подключения | Количество | Применимо |
-| io\_consumption\_percent | Процент ввода-вывода | Процент | Применимо |
-| memory\_percent | Процент использования памяти | Процент | Применимо |
-| network\_bytes\_ingress | Входящий сетевой трафик по активным подключениям | Байты | Применимо |
-| network\_bytes\_egress | Исходящий сетевой трафик по активным подключениям | Байты | Применимо |
-| seconds\_behind\_master | Задержка репликации в секундах | Количество | Применимо |
-| serverlog\_storage\_limit | Лимит хранилища журналов сервера | Байты |  |
-| serverlog\_storage\_percent | Процент использования хранилища журналов сервера | Процент | Применимо |
-| serverlog\_storage\_usage | Использованное хранилище журналов сервера | Байты |  |
-| storage\_limit | Лимит хранилища | Байты |  |
-| storage\_percent | Процент использования хранилища | Процент | Применимо |
-| storage\_used | Использованное хранилище | Байты |  |
+| active\_connections | Активные подключения | Count | Применимо |
+| backup\_storage\_used | Использовано места для резервных копий | Bytes |  |
+| cpu\_percent | Процент использования CPU | Percent | Применимо |
+| connections\_failed | Неудачные подключения | Count | Применимо |
+| io\_consumption\_percent | Процент IO | Percent | Применимо |
+| memory\_percent | Процент использования памяти | Percent | Применимо |
+| network\_bytes\_ingress | Входящий трафик по активным подключениям | Bytes | Применимо |
+| network\_bytes\_egress | Исходящий трафик по активным подключениям | Bytes | Применимо |
+| seconds\_behind\_master | Задержка репликации в секундах | Count | Применимо |
+| serverlog\_storage\_limit | Лимит места для журналов сервера | Bytes |  |
+| serverlog\_storage\_percent | Процент использования места для журналов сервера | Percent | Применимо |
+| serverlog\_storage\_usage | Использовано места для журналов сервера | Bytes |  |
+| storage\_limit | Лимит места хранения | Bytes |  |
+| storage\_percent | Процент использования места хранения | Percent | Применимо |
+| storage\_used | Использовано места хранения | Bytes |  |

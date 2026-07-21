@@ -1,55 +1,54 @@
 ---
-title: Использование journald для приёма логов журнала systemd с помощью OTel Collector
+title: Использование journald для приёма журналов systemd journal с помощью OTel Collector
 source: https://docs.dynatrace.com/managed/ingest-from/opentelemetry/collector/use-cases/journald
-scraped: 2026-05-12T12:10:46.344931
 ---
 
-# Использование journald для приёма логов журнала systemd с помощью OTel Collector
+# Использование journald для приёма журналов systemd journal с помощью OTel Collector
 
-# Использование journald для приёма логов журнала systemd с помощью OTel Collector
+# Использование journald для приёма журналов systemd journal с помощью OTel Collector
 
 * Практическое руководство
 * Чтение: 4 мин
 * Опубликовано 12 марта 2026 г.
 
-Receiver journald читает записи логов из [журнала systemd](https://wiki.archlinux.org/title/Systemd/Journal), вызывая `journalctl` как подпроцесс и передавая его вывод потоком в конвейер OTel Collector.
+Приёмник journald читает записи журнала из [systemd journal﻿](https://wiki.archlinux.org/title/Systemd/Journal), запуская `journalctl` как подпроцесс и передавая его вывод потоком в конвейер OTel Collector.
 
-Каждая запись журнала становится записью лога OTLP, в которой поля журнала сопоставляются с атрибутами лога.
-Чтобы переименовать или преобразовать эти атрибуты в соответствии с семантическими соглашениями OpenTelemetry, можно использовать [операторы](#operators).
+Каждая запись журнала становится записью журнала OTLP, где поля journal сопоставляются с атрибутами журнала.
+Для переименования или преобразования этих атрибутов в соответствии с семантическими соглашениями OpenTelemetry можно использовать [операторы](#operators).
 
-Используйте receiver journald, когда:
+Приёмник journald стоит использовать, если:
 
-* Ваши сервисы на базе Linux записывают логи в журнал systemd, а не в отдельные файлы логов.
-* Требуется централизовать логи системных сервисов уровня хоста (например, `ssh`, `kubelet` или `docker`) в Dynatrace без управления дополнительными путями к файлам логов.
-* Требуется фильтровать приём по конкретным юнитам systemd и уровням приоритета для контроля объёма данных.
+* Сервисы на базе Linux записывают журналы в systemd journal, а не в отдельные файлы журналов.
+* Нужно централизовать журналы системных сервисов уровня хоста (например, `ssh`, `kubelet` или `docker`) в Dynatrace без управления дополнительными путями к файлам журналов.
+* Нужно фильтровать приём по конкретным модулям (units) systemd и уровням приоритета для контроля объёма данных.
 
 ## Предварительные требования
 
-* Один из следующих дистрибутивов Collector с [receiver journald](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.151.0/receiver/journaldreceiver).
+* Один из следующих дистрибутивов Collector с [приёмником journald﻿](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.156.0/receiver/journaldreceiver).
 
-  + [Dynatrace Collector](/managed/ingest-from/opentelemetry/collector#collector-distro "Узнайте, как использовать OpenTelemetry Collector, включая Dynatrace OTel Collector, для приёма телеметрии из OpenTelemetry.")
-  + [OpenTelemetry Contrib](/managed/ingest-from/opentelemetry/collector#collector-contrib "Узнайте, как использовать OpenTelemetry Collector, включая Dynatrace OTel Collector, для приёма телеметрии из OpenTelemetry.")
-  + [пользовательская версия Builder](/managed/ingest-from/opentelemetry/collector#collector-builder "Узнайте, как использовать OpenTelemetry Collector, включая Dynatrace OTel Collector, для приёма телеметрии из OpenTelemetry.")
-* [URL эндпоинта Dynatrace API](/managed/ingest-from/opentelemetry/otlp-api "Узнайте об эндпоинтах OTLP API, которые ваше приложение использует для экспорта данных OpenTelemetry в Dynatrace."), на который должны экспортироваться данные.
+  + [Dynatrace Collector](/managed/ingest-from/opentelemetry/collector#collector-distro "Learn how to use the OpenTelemetry Collector, including the Dynatrace OTel Collector, to ingest telemetry from OpenTelemetry.")
+  + [OpenTelemetry Contrib](/managed/ingest-from/opentelemetry/collector#collector-contrib "Learn how to use the OpenTelemetry Collector, including the Dynatrace OTel Collector, to ingest telemetry from OpenTelemetry.")
+  + [Пользовательская версия Builder](/managed/ingest-from/opentelemetry/collector#collector-builder "Learn how to use the OpenTelemetry Collector, including the Dynatrace OTel Collector, to ingest telemetry from OpenTelemetry.")
+* [URL конечной точки Dynatrace API](/managed/ingest-from/opentelemetry/otlp-api "Learn about the OTLP API endpoints that your application uses to export OpenTelemetry data to Dynatrace."), на которую нужно экспортировать данные.
 
-* ОС Linux на хосте или в контейнере, где работает Collector.
-* Двоичный файл `journalctl` должен присутствовать на хосте или в контейнере, где работает Collector.
-  Это связано с тем, что receiver полагается на `journalctl` для всего доступа к журналу.
+* ОС Linux на хосте или в контейнере, где выполняется Collector.
+* Бинарный файл `journalctl` должен присутствовать на хосте или в контейнере, где выполняется Collector.
+  Это необходимо, поскольку приёмник полагается на `journalctl` для всего доступа к journal.
 
-  + Для развёртываний в контейнерах используйте образ, включающий `systemd`, и монтируйте каталог журнала с хоста.
-  + Сведения о требованиях, специфичных для Kubernetes, см. в разделе [Развёртывание в Kubernetes](#kubernetes-deployment).
-* Процессу Collector требуется разрешение на чтение журнала systemd через `journalctl`.
+  + Для развёртываний в контейнерах используй образ, включающий `systemd`, и монтируй каталог journal с хоста.
+  + Требования, специфичные для Kubernetes, см. в разделе [Развёртывание в Kubernetes](#kubernetes-deployment).
+* Процесс Collector должен иметь права на чтение systemd journal через `journalctl`.
 
-  + На хосте с ОС Linux добавьте пользователя, под которым работает Collector, в группу `systemd-journal`, чтобы предоставить доступ к журналу на чтение.
+  + На хосте с ОС Linux добавь пользователя, от имени которого запускается Collector, в группу `systemd-journal`, чтобы предоставить доступ на чтение к journal.
     Collector не обязательно запускать от имени root.
-  + В Kubernetes Collector должен работать от имени root, поскольку изоляция контейнеров препятствует доступу к журналу на основе групп.
-    Дополнительные сведения см. в разделе [Развёртывание в Kubernetes](#kubernetes-deployment).
+  + Для Kubernetes Collector должен запускаться от имени root, поскольку изоляция контейнеров препятствует доступу к journal на основе групп.
+    Подробнее см. в разделе [Развёртывание в Kubernetes](#kubernetes-deployment).
 
 ## Демонстрационная конфигурация
 
-В следующем примере конфигурации показано, как:
+Следующий пример конфигурации показывает, как:
 
-* Настроить экземпляр Collector для чтения логов из конкретных юнитов systemd.
+* Настроить экземпляр Collector для чтения журналов из конкретных модулей systemd.
 * Сопоставить поля journald с семантическими соглашениями OpenTelemetry.
 * Отправить записи в Dynatrace.
 
@@ -183,71 +182,71 @@ exporters: [otlp_http]
 
 Проверка конфигурации
 
-[Проверьте ваши настройки](/managed/ingest-from/opentelemetry/collector/configuration#validate "Как настроить OpenTelemetry Collector."), чтобы избежать проблем с конфигурацией.
+[Проверь свои настройки](/managed/ingest-from/opentelemetry/collector/configuration#validate "How to configure the OpenTelemetry Collector."), чтобы избежать проблем с конфигурацией.
 
 ## Компоненты
 
-Для нашей конфигурации мы настраиваем следующие компоненты.
+В этой конфигурации настраиваются следующие компоненты.
 
-### Receivers
+### Приёмники
 
-В разделе `receivers` мы настраиваем receiver `journald` со следующими параметрами.
+В разделе `receivers` настраивается приёмник `journald` со следующими параметрами.
 
-#### Фильтрация по юниту systemd
+#### Фильтрация по модулю systemd
 
-Параметр `units` ограничивает приём записями, принадлежащими перечисленным юнитам systemd.
-Удалите его, чтобы собирать логи со всех юнитов на хосте.
+Параметр `units` ограничивает приём записями, принадлежащими перечисленным модулям systemd.
+Удали его, чтобы собирать журналы со всех модулей на хосте.
 
-Для более детальной фильтрации используйте вместо него параметр `matches`.
-Например, можно сочетать имена юнитов с конкретными значениями полей журнала.
+Для более детальной фильтрации вместо этого используй параметр `matches`.
+Например, можно комбинировать имена модулей с конкретными значениями полей journal.
 
-Полный справочник параметров, примеры фильтрации и соображения по производительности для `start_at` и `priority` см. в [документации по receiver journald](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.151.0/receiver/journaldreceiver#configuration).
+Полный справочник по параметрам, примеры фильтрации и рекомендации по производительности для `start_at` и `priority` см. в [документации приёмника journald﻿](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.156.0/receiver/journaldreceiver#configuration).
 
 #### Операторы
 
-Параметр `operators` принимает массив [операторов stanza](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.151.0/pkg/stanza/docs/operators/README.md), применяемых к каждой записи лога при её поступлении в конвейер.
+Параметр `operators` принимает массив [операторов stanza﻿](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.156.0/pkg/stanza/docs/operators/README.md), применяемых к каждой записи журнала при её поступлении в конвейер.
 
-В этой конфигурации мы используем [операторы `move`](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.151.0/pkg/stanza/docs/operators/move.md) для переименования конкретных полей журнала и повышения `_EXE` до атрибута лога, согласованного с [семантическими соглашениями OpenTelemetry для процессов](https://opentelemetry.io/docs/specs/semconv/registry/attributes/process/).
+В этой конфигурации используются [операторы `move`﻿](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.156.0/pkg/stanza/docs/operators/move.md) для переименования конкретных полей journal и продвижения `_EXE` до атрибута журнала, соответствующего [семантическим соглашениям OpenTelemetry для процессов﻿](https://opentelemetry.io/docs/specs/semconv/registry/attributes/process/).
 
 * `body._PID` переименовывается в `body.pid`.
 * `body._EXE` переименовывается в `attributes["process.executable.name"]`.
 * `body.MESSAGE` переименовывается в `body.message`.
 
-### Exporters
+### Экспортёры
 
-В разделе `exporters` мы указываем стандартный [exporter `otlp_http`](https://github.com/open-telemetry/opentelemetry-collector/tree/v0.151.0/exporter/otlphttpexporter) и настраиваем его с помощью URL нашего Dynatrace API и необходимого токена аутентификации.
+В разделе `exporters` указывается экспортёр [`otlp_http`﻿](https://github.com/open-telemetry/opentelemetry-collector/tree/v0.156.0/exporter/otlphttpexporter) по умолчанию, который настраивается с URL Dynatrace API и необходимым токеном аутентификации.
 
-Для этого мы задаём следующие две переменные окружения и ссылаемся на них в значениях конфигурации `endpoint` и `Authorization`.
+Для этого задаются следующие две переменные окружения, на которые даются ссылки в значениях конфигурации для `endpoint` и `Authorization`.
 
-* `DT_ENDPOINT` содержит [базовый URL эндпоинта Dynatrace API](/managed/ingest-from/opentelemetry/otlp-api#export-to-activegate "Узнайте об эндпоинтах OTLP API, которые ваше приложение использует для экспорта данных OpenTelemetry в Dynatrace.") (например, `https://{your-environment-id}.live.dynatrace.com/api/v2/otlp`).
-* `DT_API_TOKEN` содержит [API-токен](/managed/ingest-from/opentelemetry/otlp-api#authentication-export-to-activegate "Узнайте об эндпоинтах OTLP API, которые ваше приложение использует для экспорта данных OpenTelemetry в Dynatrace.").
+* `DT_ENDPOINT` содержит [базовый URL конечной точки Dynatrace API](/managed/ingest-from/opentelemetry/otlp-api#export-to-activegate "Learn about the OTLP API endpoints that your application uses to export OpenTelemetry data to Dynatrace.") (например, `https://{your-environment-id}.live.dynatrace.com/api/v2/otlp`).
+* `DT_API_TOKEN` содержит [токен API](/managed/ingest-from/opentelemetry/otlp-api#authentication-export-to-activegate "Learn about the OTLP API endpoints that your application uses to export OpenTelemetry data to Dynatrace.").
 
-### Сервисные конвейеры
+### Конвейеры сервиса
 
-В разделе `service` мы собираем receiver и exporter в конвейер логов.
-Конвейер читает записи журнала, применяет преобразования полей на основе операторов и принимает результаты в Dynatrace.
+В разделе `service` приёмник и экспортёр собираются в конвейер журналов.
+Конвейер читает записи journal, применяет преобразования полей на основе операторов и передаёт результаты в Dynatrace.
 
-## Соображения для развёртываний в Kubernetes
+## Особенности для развёртываний в Kubernetes
 
-При запуске receiver journald в Kubernetes развёртывайте Collector как DaemonSet, чтобы на каждом узле работал один под Collector.
+При запуске приёмника journald в Kubernetes разворачивай Collector как DaemonSet, чтобы один под Collector выполнялся на каждом узле.
 
-Deployment не подходит, поскольку каждый под имеет доступ только к журналу systemd того узла, на который он назначен.
-Масштабирование Deployment до нескольких реплик может привести к дублированию приёма логов, когда несколько реплик попадают на один и тот же узел.
-DaemonSet обеспечивает полный охват логов в масштабе всего кластера и гарантирует ровно один привилегированный под с доступом к хосту на узел.
-Это ограничивает влияние на безопасность при запуске Collector от имени root.
+Deployment не подходит, поскольку каждый под может иметь доступ только к systemd journal того узла, на котором он запланирован.
+Масштабирование Deployment до нескольких реплик может привести к дублированию приёма журналов, если несколько реплик окажутся на одном узле.
+DaemonSet обеспечивает полное покрытие журналов на уровне всего кластера и гарантирует ровно один привилегированный под с доступом к хосту на каждом узле.
+Это ограничивает область воздействия на безопасность при запуске Collector от имени root.
 
 ### Требования к образу
 
-Как сказано в разделе [Предварительные требования](#prerequisites), контейнер Collector должен включать `journalctl` для доступа к журналу systemd.
+Как указано в разделе [Предварительные требования](#prerequisites), контейнер Collector должен включать `journalctl` для доступа к systemd journal.
 
-Дополнительные сведения см. в [вышестоящей документации OTel](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.151.0/receiver/journaldreceiver/examples/container).
+Подробнее см. в [документации проекта OTel﻿](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.156.0/receiver/journaldreceiver/examples/container).
 
 ### Контекст безопасности
 
-Чтение из журнала systemd требует определённых возможностей Linux.
+Чтение из systemd journal требует определённых возможностей (capabilities) Linux.
 
-Примените к контейнеру Collector следующий `securityContext` (показан в блоке кода ниже).
-Затем в таблице описывается назначение соответствующих атрибутов в определении контекста безопасности.
+Примени следующий `securityContext` (показанный в блоке кода ниже) к контейнеру Collector.
+В таблице далее описано назначение соответствующих атрибутов в определении контекста безопасности.
 
 ```
 securityContext:
@@ -297,34 +296,34 @@ add:
 - SYS_PTRACE
 ```
 
-| Параметр | Причина |
+| Настройка | Причина |
 | --- | --- |
-| `allowPrivilegeEscalation: false` | Не позволяет процессу получать дополнительные привилегии сверх объявленных возможностей. |
+| `allowPrivilegeEscalation: false` | Предотвращает получение процессом дополнительных привилегий сверх заявленных возможностей. |
 | `readOnlyRootFilesystem: true` | Делает корневую файловую систему контейнера доступной только для чтения, чтобы уменьшить поверхность атаки. |
-| `seccompProfile: RuntimeDefault` | Применяет стандартный профиль seccomp для ограничения разрешённых системных вызовов. |
-| `runAsUser: 0` | Процесс Collector работает от имени root для доступа к сокету журнала.  При запуске от имени root повышается риск предоставления доступа к узлу на уровне root. Дополнительные сведения см. в разделе [Запуск от имени root](#collector-root). |
-| `DAC_READ_SEARCH` | Обходит проверки разрешений файловой системы при чтении файлов журнала. |
-| `SYS_PTRACE` | Требуется для интроспекции процессов, используемой receiver journald. |
+| `seccompProfile: RuntimeDefault` | Применяет профиль seccomp по умолчанию для ограничения разрешённых системных вызовов. |
+| `runAsUser: 0` | Процесс Collector запускается от имени root для доступа к сокету journal.  При запуске от имени root повышается риск предоставления доступа уровня root к узлу. Подробнее см. в разделе [Запуск от имени root](#collector-root). |
+| `DAC_READ_SEARCH` | Обходит проверки прав доступа файловой системы при чтении файлов journal. |
+| `SYS_PTRACE` | Требуется для интроспекции процессов, используемой приёмником journald. |
 
-### Запуск от имени root
+### Запуск от root
 
-Receiver journald не требует запуска от имени root, но это самый простой способ получить необходимые возможности Linux в контейнеризованной среде.
+Приёмник journald не требует запуска от root, но это самый простой способ получить необходимые Linux capabilities в контейнеризированной среде.
 
-Если ваш Collector работает от имени root, избегайте размещения в том же экземпляре доступных по сети receiver (таких как `otlp`, привязанный к `0.0.0.0`).
-Уязвимость в сетевом receiver, эксплуатируемая удалённо, предоставила бы доступ к узлу на уровне root.
+Если Collector запускается от root, не размещайте вместе с ним в одном инстансе сетевые приёмники (например, `otlp`, привязанный к `0.0.0.0`).
+Уязвимость в сетевом приёмнике, эксплуатируемая удалённо, даст злоумышленнику доступ к узлу на уровне root.
 
-Чтобы снизить риск, используйте выделенный экземпляр Collector исключительно для сбора логов journald.
-Если необходимо включить в тот же экземпляр дополнительные receiver, привязывайте их к `127.0.0.1` (loopback), а не к `0.0.0.0`, чтобы предотвратить внешний доступ.
+Чтобы снизить риск, используйте отдельный инстанс Collector исключительно для сбора логов journald.
+Если нужно включить в этот же инстанс дополнительные приёмники, привязывайте их к `127.0.0.1` (loopback), а не к `0.0.0.0`, чтобы предотвратить доступ извне.
 
 ### Монтирование томов
 
-Смонтируйте каталог журнала хоста в контейнер в режиме только для чтения.
+Смонтируйте каталог journal хоста в контейнер в режиме только для чтения.
 
-Задайте `directory: /run/log/journal` в конфигурации receiver `journald`, чтобы он соответствовал этому пути монтирования.
+Установите `directory: /run/log/journal` в конфигурации приёмника `journald`, чтобы путь совпадал с этим монтированием.
 
-* В традиционных (неконтейнеризованных) системах Linux постоянный журнал хранится в `/var/log/journal`.
-* В контейнеризованных средах Linux журнал обычно записывается в `/run/log/journal`.
-  Это эфемерное хранилище в памяти.
+* В традиционных (неконтейнеризированных) Linux-системах персистентный journal хранится в `/var/log/journal`.
+* В контейнеризированных Linux-средах journal обычно записывается в `/run/log/journal`.
+  Это временное хранилище в памяти.
 
 ```
 volumeMounts:
@@ -358,14 +357,14 @@ hostPath:
 path: /run/log/journal
 ```
 
-## Пределы и ограничения
+## Ограничения
 
-Логи принимаются с помощью протокола OpenTelemetry (OTLP) через [Dynatrace OTLP API](/managed/ingest-from/opentelemetry/otlp-api "Узнайте об эндпоинтах OTLP API, которые ваше приложение использует для экспорта данных OpenTelemetry в Dynatrace.") и подчиняются ограничениям и лимитам этого API.
-Дополнительные сведения см. в разделе [Приём логов OpenTelemetry](/managed/ingest-from/opentelemetry/otlp-api/ingest-logs "Узнайте, как Dynatrace принимает записи логов OpenTelemetry и какие ограничения применяются.").
+Логи принимаются по протоколу OpenTelemetry (OTLP) через [Dynatrace OTLP API](/managed/ingest-from/opentelemetry/otlp-api "Learn about the OTLP API endpoints that your application uses to export OpenTelemetry data to Dynatrace.") и подчиняются ограничениям и лимитам API.
+Подробнее см. [Ingest OpenTelemetry logs](/managed/ingest-from/opentelemetry/otlp-api/ingest-logs "Learn how Dynatrace ingests OpenTelemetry log records and what limitations apply.").
 
-## Связанные темы
+## Похожие темы
 
-* [Приём логов из файлов с помощью OTel Collector](/managed/ingest-from/opentelemetry/collector/use-cases/filelog "Настройте OpenTelemetry Collector для приёма данных логов в Dynatrace.")
-* [Приём данных syslog с помощью OTel Collector](/managed/ingest-from/opentelemetry/collector/use-cases/syslog "Настройте OpenTelemetry Collector для приёма данных syslog в Dynatrace.")
-* [Приём логов подов Kubernetes с помощью OTel Collector](/managed/ingest-from/opentelemetry/collector/use-cases/kubernetes/k8s-podlogs "Настройте OpenTelemetry Collector для приёма файлов логов подов Kubernetes в Dynatrace.")
-* [Преобразование и фильтрация данных с помощью OTel Collector](/managed/ingest-from/opentelemetry/collector/use-cases/transform "Настройте OpenTelemetry Collector для добавления, преобразования и отбрасывания данных OpenTelemetry.")
+* [Ingest logs from files with the OTel Collector](/managed/ingest-from/opentelemetry/collector/use-cases/filelog "Configure the OpenTelemetry Collector to ingest log data into Dynatrace.")
+* [Ingest syslog data with the OTel Collector](/managed/ingest-from/opentelemetry/collector/use-cases/syslog "Configure the OpenTelemetry Collector to ingest syslog data into Dynatrace.")
+* [Ingest Kubernetes pod logs with the OTel Collector](/managed/ingest-from/opentelemetry/collector/use-cases/kubernetes/k8s-podlogs "Configure the OpenTelemetry Collector to ingest Kubernetes pod log files into Dynatrace.")
+* [Transform and filter data with the OTel Collector](/managed/ingest-from/opentelemetry/collector/use-cases/transform "Configure the OpenTelemetry Collector to add, transform, and drop OpenTelemetry data.")

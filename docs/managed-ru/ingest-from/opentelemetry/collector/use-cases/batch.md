@@ -1,36 +1,36 @@
 ---
-title: Группирование запросов OTLP с помощью OTel Collector
+title: Пакетная отправка запросов OTLP с помощью OTel Collector
 source: https://docs.dynatrace.com/managed/ingest-from/opentelemetry/collector/use-cases/batch
-scraped: 2026-05-12T12:10:54.176008
 ---
 
-# Группирование запросов OTLP с помощью OTel Collector
+# Пакетная отправка запросов OTLP с помощью OTel Collector
 
-# Группирование запросов OTLP с помощью OTel Collector
+# Пакетная отправка запросов OTLP с помощью OTel Collector
 
 * Практическое руководство
-* Чтение: 3 мин
-* Опубликовано 11 октября 2023 г.
+* Чтение 3 мин
+* Обновлено 11 мая 2026 г.
 
-В следующем примере конфигурации показано, как настроить экземпляр Collector и его встроенный processor `batch` для постановки в очередь и группирования запросов OTLP и повышения производительности по пропускной способности.
+Пример конфигурации ниже показывает, как настроить экземпляр Collector и экспортёр `otlp_http` для постановки запросов OTLP в очередь и их пакетной отправки, чтобы повысить производительность пропускной способности.
 
 Рекомендуемая конфигурация
 
-Для оптимальной производительности вашего экземпляра Collector мы рекомендуем применять эту конфигурацию во всех установках.
-
-Если вы используете другие processor, убедитесь, что processor `batch` настроен последним в вашем конвейере.
+Для оптимальной производительности экземпляра Collector рекомендуется настраивать
+пакетирование во всех развёртываниях примерно так, как показано ниже. Значения в
+приведённом примере конфигурации хорошо подходят для большинства данных, но
+рекомендуется определить оптимальные настройки для конкретной ситуации.
 
 ## Предварительные требования
 
-* Один из следующих дистрибутивов Collector с [processor `batch`](https://github.com/open-telemetry/opentelemetry-collector/tree/v0.151.0/processor/batchprocessor):
+* Дистрибутив Collector:
 
-  + [Dynatrace OTel Collector](/managed/ingest-from/opentelemetry/collector#dt-collector-dist "Узнайте, как использовать OpenTelemetry Collector, включая Dynatrace OTel Collector, для приёма телеметрии из OpenTelemetry.")
+  + [Dynatrace Collector](/managed/ingest-from/opentelemetry/collector#dt-collector-dist "Узнайте, как использовать OpenTelemetry Collector, включая Dynatrace OTel Collector, для приёма телеметрии из OpenTelemetry.")
   + Дистрибутив OpenTelemetry [Core](/managed/ingest-from/opentelemetry/collector#collector-core "Узнайте, как использовать OpenTelemetry Collector, включая Dynatrace OTel Collector, для приёма телеметрии из OpenTelemetry.") или [Contrib](/managed/ingest-from/opentelemetry/collector#collector-contrib "Узнайте, как использовать OpenTelemetry Collector, включая Dynatrace OTel Collector, для приёма телеметрии из OpenTelemetry.")
-  + [пользовательская версия Builder](/managed/ingest-from/opentelemetry/collector#collector-builder "Узнайте, как использовать OpenTelemetry Collector, включая Dynatrace OTel Collector, для приёма телеметрии из OpenTelemetry.")
-* [URL эндпоинта Dynatrace API](/managed/ingest-from/opentelemetry/otlp-api "Узнайте об эндпоинтах OTLP API, которые ваше приложение использует для экспорта данных OpenTelemetry в Dynatrace."), на который должны экспортироваться данные
-* [API-токен](/managed/ingest-from/opentelemetry/otlp-api#authentication-export-to-activegate "Узнайте об эндпоинтах OTLP API, которые ваше приложение использует для экспорта данных OpenTelemetry в Dynatrace.") с соответствующей областью доступа (требуется только для SaaS и ActiveGate)
+  + [Пользовательская версия Builder](/managed/ingest-from/opentelemetry/collector#collector-builder "Узнайте, как использовать OpenTelemetry Collector, включая Dynatrace OTel Collector, для приёма телеметрии из OpenTelemetry.")
+* [URL конечной точки Dynatrace API](/managed/ingest-from/opentelemetry/otlp-api "Узнайте про конечные точки OTLP API, которые приложение использует для экспорта данных OpenTelemetry в Dynatrace.") для экспорта данных
+* [Токен API](/managed/ingest-from/opentelemetry/otlp-api#authentication-export-to-activegate "Узнайте про конечные точки OTLP API, которые приложение использует для экспорта данных OpenTelemetry в Dynatrace.") с соответствующей областью доступа (требуется только для SaaS и ActiveGate)
 
-См. [Развёртывание Collector](/managed/ingest-from/opentelemetry/collector/deployment "Как развернуть Dynatrace OpenTelemetry Collector.") и [Настройку Collector](/managed/ingest-from/opentelemetry/collector/configuration "Как настроить OpenTelemetry Collector."), чтобы узнать, как настроить ваш Collector с приведённой ниже конфигурацией.
+О настройке Collector с конфигурацией ниже см. [Развёртывание Collector](/managed/ingest-from/opentelemetry/collector/deployment "Как развернуть Dynatrace OpenTelemetry Collector.") и [Конфигурация Collector](/managed/ingest-from/opentelemetry/collector/configuration "Как настроить OpenTelemetry Collector.").
 
 ## Демонстрационная конфигурация
 
@@ -63,63 +63,11 @@ endpoint: 0.0.0.0:4318
 
 
 
-processors:
-
-
-
-batch/traces:
-
-
-
-send_batch_size: 5000
-
-
-
-send_batch_max_size: 5000
-
-
-
-timeout: 60s
-
-
-
-batch/metrics:
-
-
-
-send_batch_size: 3000
-
-
-
-send_batch_max_size: 3000
-
-
-
-timeout: 60s
-
-
-
-batch/logs:
-
-
-
-send_batch_size: 1800
-
-
-
-send_batch_max_size: 2000
-
-
-
-timeout: 60s
-
-
-
 exporters:
 
 
 
-otlp_http:
+otlp_http/traces:
 
 
 
@@ -132,6 +80,98 @@ headers:
 
 
 Authorization: "Api-Token ${env:DT_API_TOKEN}"
+
+
+
+sending_queue:
+
+
+
+batch:
+
+
+
+min_size: 5000
+
+
+
+max_size: 5000
+
+
+
+flush_timeout: 60s
+
+
+
+otlp_http/metrics:
+
+
+
+endpoint: ${env:DT_ENDPOINT}
+
+
+
+headers:
+
+
+
+Authorization: "Api-Token ${env:DT_API_TOKEN}"
+
+
+
+sending_queue:
+
+
+
+batch:
+
+
+
+min_size: 3000
+
+
+
+max_size: 3000
+
+
+
+flush_timeout: 60s
+
+
+
+otlp_http/logs:
+
+
+
+endpoint: ${env:DT_ENDPOINT}
+
+
+
+headers:
+
+
+
+Authorization: "Api-Token ${env:DT_API_TOKEN}"
+
+
+
+sending_queue:
+
+
+
+batch:
+
+
+
+min_size: 1800
+
+
+
+max_size: 2000
+
+
+
+flush_timeout: 60s
 
 
 
@@ -151,11 +191,7 @@ receivers: [otlp]
 
 
 
-processors: [batch/traces]
-
-
-
-exporters: [otlp_http]
+exporters: [otlp_http/traces]
 
 
 
@@ -167,11 +203,7 @@ receivers: [otlp]
 
 
 
-processors: [batch/metrics]
-
-
-
-exporters: [otlp_http]
+exporters: [otlp_http/metrics]
 
 
 
@@ -183,80 +215,74 @@ receivers: [otlp]
 
 
 
-processors: [batch/logs]
-
-
-
-exporters: [otlp_http]
+exporters: [otlp_http/logs]
 ```
 
 Проверка конфигурации
 
-[Проверьте ваши настройки](/managed/ingest-from/opentelemetry/collector/configuration#validate "Как настроить OpenTelemetry Collector."), чтобы избежать проблем с конфигурацией.
+[Проверьте настройки](/managed/ingest-from/opentelemetry/collector/configuration#validate "Как настроить OpenTelemetry Collector.") во избежание проблем с конфигурацией.
 
 ## Компоненты
 
-Для нашей конфигурации мы настраиваем следующие компоненты.
+В этой конфигурации настроены следующие компоненты.
 
-### Receivers
+### Receivers (приёмники)
 
-В разделе `receivers` мы указываем стандартный receiver `otlp` в качестве активного компонента receiver для нашего экземпляра Collector.
+В разделе `receivers` указан стандартный приёмник `otlp` как активный компонент-приёмник для экземпляра Collector.
 
-Это сделано в демонстрационных целях. Здесь можно указать любой другой допустимый receiver (например, `zipkin`).
+Это сделано в демонстрационных целях. Здесь можно указать любой другой допустимый приёмник (например, `zipkin`).
 
-### Processors
+### Exporters (экспортёры)
 
-В разделе `processors` мы указываем отдельный [processor `batch`](https://github.com/open-telemetry/opentelemetry-collector/tree/v0.151.0/processor/batchprocessor)
+В разделе `exporters` указан [экспортёр `otlp_http`﻿](https://github.com/open-telemetry/opentelemetry-collector/tree/v0.156.0/exporter/otlphttpexporter) для каждого сигнала, настроенный с соответствующими параметрами пакетирования, а также URL Dynatrace API и требуемым токеном аутентификации.
+
+Для этого задаются следующие две переменные окружения, на которые есть ссылки в значениях конфигурации `endpoint` и `Authorization`.
+
+* `DT_ENDPOINT` содержит [базовый URL конечной точки Dynatrace API](/managed/ingest-from/opentelemetry/otlp-api#export-to-activegate "Узнайте про конечные точки OTLP API, которые приложение использует для экспорта данных OpenTelemetry в Dynatrace.") (например, `https://{your-environment-id}.live.dynatrace.com/api/v2/otlp`)
+* `DT_API_TOKEN` содержит [токен API](/managed/ingest-from/opentelemetry/otlp-api#authentication-export-to-activegate "Узнайте про конечные точки OTLP API, которые приложение использует для экспорта данных OpenTelemetry в Dynatrace.")
+
+В разделе `sending_queue` конфигурации экспортёра указан отдельный [раздел `batch`﻿](https://github.com/open-telemetry/opentelemetry-collector/tree/v0.156.0/exporter/exporterhelper#sending-queue-batch-settings)
 для каждого сигнала телеметрии со следующими параметрами:
 
-* `send_batch_size`: задаёт минимальное число записей, которые processor поставит в очередь перед отправкой всей группы.
-* `send_batch_max_size`: задаёт максимальное число записей, которые может содержать группа. При большем числе записей группа разбивается на более мелкие.
-* `timeout`: определяет длительность, по истечении которой группа будет отправлена. Группа отправляется по `timeout` только тогда, когда условие `send_batch_size` не достигнуто.
+* `min_size`: задаёт минимальное количество записей, которое процессор поставит в очередь перед отправкой всего пакета.
+* `max_size`: задаёт максимальное количество записей, которое может содержать пакет. Большее количество записей разобьёт крупный пакет на более мелкие.
+* `timeout`: определяет промежуток времени, по истечении которого пакет будет отправлен. Пакет отправляется по истечении `timeout` только в том случае, если условие `send_batch_size` не выполнено.
 
-При такой конфигурации OTel Collector ставит записи телеметрии в очередь группами, обеспечивая хороший баланс между размером и числом запросов на экспорт
-к Dynatrace API.
+При такой конфигурации OTel Collector ставит записи телеметрии в очередь пакетами, обеспечивая хороший баланс между размером и количеством запросов экспорта
+к API Dynatrace.
 
-Значения размера группы
+Значения размера пакета
 
-На итоговый размер группы влияет не только число отдельных записей телеметрии,
-но и число связанных атрибутов и их размер.
+На итоговый размер пакета влияет не только количество отдельных записей телеметрии,
+но и количество связанных с ними атрибутов и их размер.
 
-Например, атрибуты на спанах/метриках/логах могут увеличить размер группы с тем же числом записей
+Например, атрибуты span'ов/метрик/логов могут сделать пакет с тем же количеством записей больше,
 в зависимости от того, сколько атрибутов и насколько они велики.
 
-Используйте приведённые выше значения конфигурации как отправную точку, но обязательно адаптируйте их под ваш объём данных
-и соблюдайте лимиты Dynatrace API для каждого типа сигнала ([трассировки](/managed/ingest-from/opentelemetry/otlp-api/ingest-traces#ingestion-limits "Узнайте, как Dynatrace принимает трассировки OpenTelemetry и какие ограничения применяются."),
+Используйте приведённые выше значения конфигурации как отправную точку, но обязательно адаптируйте их под свой объём данных
+и соблюдайте ограничения API Dynatrace для каждого типа сигнала ([трейсы](/managed/ingest-from/opentelemetry/otlp-api/ingest-traces#ingestion-limits "Узнайте, как Dynatrace принимает трейсы OpenTelemetry и какие ограничения применяются."),
 [метрики](/managed/ingest-from/opentelemetry/otlp-api/ingest-otlp-metrics/about-metrics-ingest#limits "Узнайте, как Dynatrace принимает метрики OpenTelemetry и какие ограничения применяются."), [логи](/managed/ingest-from/opentelemetry/otlp-api/ingest-logs#ingestion-limits "Узнайте, как Dynatrace принимает записи логов OpenTelemetry и какие ограничения применяются.")), чтобы избежать отклонения запросов.
 
 Для устранения проблем с отклонёнными запросами можно использовать [метрики самомониторинга ActiveGate](/managed/ingest-from/dynatrace-activegate/activegate-sfm-metrics#rest "Изучите метрики самомониторинга ActiveGate.").
-Например, можно использовать: `dsfm:active_gate.rest.request_count` с фильтрацией по измерению `operation`
-(`POST /otlp/v1/<...>` для приёма OTLP) и разбивкой по `response_code`. Большие запросы отклоняются с кодом состояния HTTP `413`.
+Например, можно использовать `dsfm:active_gate.rest.request_count` с фильтрацией по измерению `operation`
+(`POST /otlp/v1/<...>` для приёма OTLP) и разбивкой по `response_code`. Крупные запросы отклоняются с кодом состояния HTTP `413`.
 
-Ещё один вариант: проверить логи Collector на наличие сообщений об ошибках, таких как: `HTTP Status Code 413, Message=Max Payload size of`.
+Другой вариант, это проверка логов Collector на предмет сообщений об ошибках вида: `HTTP Status Code 413, Message=Max Payload size of`.
 
-### Exporters
+### Конвейеры служб
 
-В разделе `exporters` мы указываем стандартный [exporter `otlp_http`](https://github.com/open-telemetry/opentelemetry-collector/tree/v0.151.0/exporter/otlphttpexporter) и настраиваем его с помощью URL нашего Dynatrace API и необходимого токена аутентификации.
+В разделе `service` объекты приёмника и экспортёра собираются в конвейеры для трейсов, метрик и логов.
 
-Для этого мы задаём следующие две переменные окружения и ссылаемся на них в значениях конфигурации `endpoint` и `Authorization`.
+## Ограничения
 
-* `DT_ENDPOINT` содержит [базовый URL эндпоинта Dynatrace API](/managed/ingest-from/opentelemetry/otlp-api#export-to-activegate "Узнайте об эндпоинтах OTLP API, которые ваше приложение использует для экспорта данных OpenTelemetry в Dynatrace.") (например, `https://{your-environment-id}.live.dynatrace.com/api/v2/otlp`)
-* `DT_API_TOKEN` содержит [API-токен](/managed/ingest-from/opentelemetry/otlp-api#authentication-export-to-activegate "Узнайте об эндпоинтах OTLP API, которые ваше приложение использует для экспорта данных OpenTelemetry в Dynatrace.")
-
-### Сервисные конвейеры
-
-В разделе `service` мы собираем наши объекты receiver и exporter в конвейеры для трассировок, метрик и логов и включаем наш processor `batch`, ссылаясь на него в разделе `processors` для каждого соответствующего конвейера.
-
-## Пределы и ограничения
-
-Данные принимаются с помощью протокола OpenTelemetry (OTLP) через [Dynatrace OTLP API](/managed/ingest-from/opentelemetry/otlp-api "Узнайте об эндпоинтах OTLP API, которые ваше приложение использует для экспорта данных OpenTelemetry в Dynatrace.") и подчиняются ограничениям и лимитам этого API.
-Дополнительные сведения см.:
+Данные принимаются с использованием протокола OpenTelemetry (OTLP) через [APIы OTLP Dynatrace](/managed/ingest-from/opentelemetry/otlp-api "Узнайте про конечные точки OTLP API, которые приложение использует для экспорта данных OpenTelemetry в Dynatrace.") и подчиняются ограничениям и правилам API.
+Подробнее см.:
 
 * [Ограничения метрик OpenTelemetry](/managed/ingest-from/opentelemetry/otlp-api/ingest-otlp-metrics/about-metrics-ingest "Узнайте, как Dynatrace принимает метрики OpenTelemetry и какие ограничения применяются.")
 * [Сопоставление метрик Dynatrace](/managed/ingest-from/opentelemetry/otlp-api/ingest-otlp-metrics/about-metrics-ingest#dynatrace-mapping "Узнайте, как Dynatrace принимает метрики OpenTelemetry и какие ограничения применяются.")
 * [Приём логов OpenTelemetry](/managed/ingest-from/opentelemetry/otlp-api/ingest-logs "Узнайте, как Dynatrace принимает записи логов OpenTelemetry и какие ограничения применяются.")
 
-## Связанные темы
+## Похожие темы
 
-* [Обогащение принимаемых данных полями, специфичными для Dynatrace](/managed/ingest-from/extend-dynatrace/extend-data "Узнайте, как автоматически обогащать данные телеметрии полями, специфичными для Dynatrace.")
+* [Обогащение принятых данных полями, специфичными для Dynatrace](/managed/ingest-from/extend-dynatrace/extend-data "Узнайте, как автоматически обогащать данные телеметрии полями, специфичными для Dynatrace.")
 * [Обогащение запросов OTLP данными Kubernetes](/managed/ingest-from/opentelemetry/collector/use-cases/kubernetes/k8s-enrich "Настройте OpenTelemetry Collector для обогащения запросов OTLP данными Kubernetes.")

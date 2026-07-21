@@ -1,46 +1,45 @@
 ---
-title: Мониторинг кластеров Kubernetes с помощью OTel Collector
+title: Мониторинг кластеров Kubernetes с помощью Dynatrace Collector
 source: https://docs.dynatrace.com/managed/ingest-from/opentelemetry/collector/use-cases/kubernetes/k8s-monitoring
-scraped: 2026-05-12T12:12:02.357698
 ---
 
-# Мониторинг кластеров Kubernetes с помощью OTel Collector
+# Мониторинг кластеров Kubernetes с помощью Dynatrace Collector
 
-# Мониторинг кластеров Kubernetes с помощью OTel Collector
+# Мониторинг кластеров Kubernetes с помощью Dynatrace Collector
 
 * Практическое руководство
 * Чтение: 5 мин
-* Обновлено 20 ноября 2025 г.
+* Обновлено 20 нояб. 2025 г.
 
-OTel Collector обеспечивает широкую поддержку мониторинга кластеров Kubernetes и рабочих нагрузок. Он поддерживает различные компоненты receiver для сбора критически важных метрик о кластере Kubernetes, узлах и объектах.
+Dynatrace Collector обеспечивает широкую поддержку мониторинга кластера и рабочих нагрузок Kubernetes. Он поддерживает различные приёмники для сбора ключевых метрик о кластере, узлах и объектах Kubernetes.
 
-Этот сценарий использования объясняет, как настроить ваш Collector для получения полной видимости в кластерах Kubernetes через [**Data Explorer**](/managed/analyze-explore-automate/explorer "Запрашивайте метрики и преобразовывайте результаты для получения нужных сведений.") или пользовательские панели мониторинга в Dashboards Classic.
+В этом разделе описано, как настроить Collector для получения полной видимости кластеров Kubernetes через [**Data Explorer**](/managed/analyze-explore-automate/explorer "Query for metrics and transform results to gain desired insights.") или пользовательские дашборды в Dashboards Classic.
 
-Dynatrace Operator
+Оператор Dynatrace
 
-Dynatrace рекомендует использовать [Dynatrace Operator для мониторинга Kubernetes](/managed/ingest-from/setup-on-k8s "Способы развёртывания и настройки Dynatrace в Kubernetes").
-Однако этот сценарий использования предназначен специально для пользователей OpenTelemetry, которые предпочитают не развёртывать Dynatrace Operator.
-Настройка Collector, описанная ниже, сделает данные мониторинга Kubernetes доступными для использования в [Data Explorer](/managed/analyze-explore-automate/explorer "Запрашивайте метрики и преобразовывайте результаты для получения нужных сведений.") и [Dashboards](/managed/analyze-explore-automate/dashboards-classic "Узнайте, как создавать, управлять и использовать Dynatrace Dashboards Classic.").
+Dynatrace рекомендует использовать [Оператор Dynatrace для мониторинга Kubernetes](/managed/ingest-from/setup-on-k8s "Ways to deploy and configure Dynatrace on Kubernetes").
+Однако этот сценарий предназначен специально для пользователей OpenTelemetry, которые предпочитают не разворачивать Оператор Dynatrace.
+Настройка Collector, как описано ниже, сделает данные мониторинга Kubernetes доступными для использования в [Data Explorer](/managed/analyze-explore-automate/explorer "Query for metrics and transform results to gain desired insights.") и [Dashboards](/managed/analyze-explore-automate/dashboards-classic "Learn how to create, manage, and use Dynatrace Dashboards Classic.").
 
 ## Предварительные требования
 
-* Один из следующих дистрибутивов Collector с receiver [Kubernetes Cluster](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.151.0/receiver/k8sclusterreceiver), [Kubernetes Events](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.151.0/receiver/k8seventsreceiver) и [Kubelet Stats](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.151.0/receiver/kubeletstatsreceiver):
+* Один из следующих дистрибутивов Collector с приёмниками [Kubernetes Cluster﻿](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.156.0/receiver/k8sclusterreceiver), [Kubernetes Events﻿](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.156.0/receiver/k8seventsreceiver) и [Kubelet Stats﻿](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.156.0/receiver/kubeletstatsreceiver):
 
-  + [Dynatrace OTel Collector](/managed/ingest-from/opentelemetry/collector#dt-collector-dist "Узнайте, как использовать OpenTelemetry Collector, включая Dynatrace OTel Collector, для приёма телеметрии из OpenTelemetry.")
-  + [OTel Collector Contrib](/managed/ingest-from/opentelemetry/collector#collector-contrib "Узнайте, как использовать OpenTelemetry Collector, включая Dynatrace OTel Collector, для приёма телеметрии из OpenTelemetry.")
-  + [специально собранный OTel Collector](/managed/ingest-from/opentelemetry/collector#collector-builder "Узнайте, как использовать OpenTelemetry Collector, включая Dynatrace OTel Collector, для приёма телеметрии из OpenTelemetry.")
-* Развёртывание Collector в [режиме агента](/managed/ingest-from/opentelemetry/collector/deployment#dynatrace-docs--agent "Как развернуть Dynatrace OpenTelemetry Collector.") для телеметрии уровня узла и кластера
-* [URL API](/managed/ingest-from/opentelemetry/otlp-api#export-to-activegate "Узнайте об эндпоинтах OTLP API, которые ваше приложение использует для экспорта данных OpenTelemetry в Dynatrace.") вашей среды Dynatrace
-* [API-токен](/managed/ingest-from/opentelemetry/otlp-api#authentication-export-to-activegate "Узнайте об эндпоинтах OTLP API, которые ваше приложение использует для экспорта данных OpenTelemetry в Dynatrace.") с соответствующей областью доступа
-* [Kubernetes, настроенный](#kubernetes-configuration) для необходимого управления доступом на основе ролей
+  + [Dynatrace OTel Collector](/managed/ingest-from/opentelemetry/collector#dt-collector-dist "Learn how to use the OpenTelemetry Collector, including the Dynatrace OTel Collector, to ingest telemetry from OpenTelemetry.")
+  + [OTel Collector Contrib](/managed/ingest-from/opentelemetry/collector#collector-contrib "Learn how to use the OpenTelemetry Collector, including the Dynatrace OTel Collector, to ingest telemetry from OpenTelemetry.")
+  + [Собственная сборка OTel Collector](/managed/ingest-from/opentelemetry/collector#collector-builder "Learn how to use the OpenTelemetry Collector, including the Dynatrace OTel Collector, to ingest telemetry from OpenTelemetry.")
+* Развёртывание Collector в [режиме агента](/managed/ingest-from/opentelemetry/collector/deployment#dynatrace-docs--agent "How to deploy the Dynatrace OpenTelemetry Collector.") для телеметрии на уровне узлов и кластера
+* [API URL](/managed/ingest-from/opentelemetry/otlp-api#export-to-activegate "Learn about the OTLP API endpoints that your application uses to export OpenTelemetry data to Dynatrace.") среды Dynatrace
+* [Токен API](/managed/ingest-from/opentelemetry/otlp-api#authentication-export-to-activegate "Learn about the OTLP API endpoints that your application uses to export OpenTelemetry data to Dynatrace.") с соответствующей областью доступа
+* [Настроенный Kubernetes](#kubernetes-configuration) для необходимого управления доступом на основе ролей
 
-См. [Развёртывание Collector](/managed/ingest-from/opentelemetry/collector/deployment "Как развернуть Dynatrace OpenTelemetry Collector.") и [Настройку Collector](/managed/ingest-from/opentelemetry/collector/configuration "Как настроить OpenTelemetry Collector."), чтобы узнать, как настроить это с помощью приведённых ниже конфигураций.
+О том, как это настроить с помощью приведённых ниже конфигураций, см. в разделах [Развёртывание Collector](/managed/ingest-from/opentelemetry/collector/deployment "How to deploy the Dynatrace OpenTelemetry Collector.") и [Конфигурация Collector](/managed/ingest-from/opentelemetry/collector/configuration "How to configure the OpenTelemetry Collector.").
 
 ## Демонстрационные конфигурации
 
 ### Конфигурация RBAC
 
-Настройте следующий файл `rbac.yaml` для вашего экземпляра Kubernetes, чтобы разрешить Collector использовать Kubernetes API с типом аутентификации service-account.
+Настройте следующий файл `rbac.yaml` для своего экземпляра Kubernetes, чтобы разрешить Collector использовать API Kubernetes с типом аутентификации service-account.
 
 ```
 apiVersion: v1
@@ -406,12 +405,12 @@ name: otelcol-dt
 namespace: default
 ```
 
-### Конфигурация Collector
+### Конфигурация коллектора
 
-Service account
+Учётная запись службы
 
-В дополнение к конфигурации Collector обязательно обновите конфигурацию Kubernetes, чтобы она соответствовала имени service account, указанному в [файле RBAC](#kubernetes-configuration)
-(см. записи для [Helm](https://github.com/open-telemetry/opentelemetry-helm-charts/blob/opentelemetry-collector-0.127.2/charts/opentelemetry-collector/values.yaml#L245-L252) и [Operator](https://github.com/open-telemetry/opentelemetry-operator/blob/v0.150.0/docs/api/opentelemetrycollectors.md#opentelemetrycollectorspec)).
+Помимо конфигурации коллектора, важно также обновить конфигурацию Kubernetes в соответствии с именем service account, используемым в [файле RBAC](#kubernetes-configuration)
+(см. записи для [Helm﻿](https://github.com/open-telemetry/opentelemetry-helm-charts/blob/opentelemetry-collector-0.127.2/charts/opentelemetry-collector/values.yaml#L245-L252) и [Operator﻿](https://github.com/open-telemetry/opentelemetry-operator/blob/v0.156.0/docs/api/opentelemetrycollectors.md#opentelemetrycollectorspec)).
 
 ```
 extensions:
@@ -474,7 +473,7 @@ k8s_leader_elector: k8s_leader_elector
 
 
 
-kubeletstats:
+kubelet_stats:
 
 
 
@@ -986,7 +985,7 @@ receivers:
 
 
 
-- kubeletstats
+- kubelet_stats
 
 
 
@@ -1115,69 +1114,69 @@ exporters:
 
 Проверка конфигурации
 
-[Проверьте ваши настройки](/managed/ingest-from/opentelemetry/collector/configuration#validate "Как настроить OpenTelemetry Collector."), чтобы избежать проблем с конфигурацией.
+[Проверьте свои настройки](/managed/ingest-from/opentelemetry/collector/configuration#validate "How to configure the OpenTelemetry Collector."), чтобы избежать проблем с конфигурацией.
 
-Рекомендация по processor cumulativetodelta
+Рекомендация по процессору cumulativetodelta
 
-Рекомендуется устанавливать параметр `max_staleness` [processor cumulativetodelta](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.151.0/processor/cumulativetodeltaprocessor) в значение, превышающее частоту получения Collector метрик (например, как часто метрики принимаются через OTLP или каков интервал сбора Prometheus). Это гарантирует, что ссылки на заброшенные потоки метрик не будут накапливаться в памяти с течением времени.
+Параметр `max_staleness` [процессора cumulativetodelta﻿](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.156.0/processor/cumulativetodeltaprocessor) рекомендуется устанавливать выше, чем частота получения метрик коллектором (например, как часто поступают метрики через OTLP или какой интервал сбора данных Prometheus). Это гарантирует, что ссылки на заброшенные потоки метрик не будут со временем накапливаться в памяти.
 
 ## Компоненты
 
 Для нашей конфигурации мы настроили следующие компоненты:
 
-#### Receivers
+#### Приёмники (Receivers)
 
-В разделе `receivers` мы указываем следующие компоненты receiver в качестве активных компонентов для нашего развёртывания:
+В разделе `receivers` мы указываем следующие приёмники в качестве активных компонентов-приёмников для нашего развёртывания:
 
-* [`otlp`](https://github.com/open-telemetry/opentelemetry-collector/tree/v0.151.0/receiver/otlpreceiver): для приёма трассировок OTLP.
-* [`k8sevents`](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.151.0/receiver/k8seventsreceiver): для получения событий Kubernetes от сервера Kubernetes API. [1](#fn-1-1-def)
-* [`k8s_cluster`](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.151.0/receiver/k8sclusterreceiver): для получения метрик уровня кластера и событий сущностей от сервера Kubernetes API.
-* [`kubeletstats`](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.151.0/receiver/kubeletstatsreceiver): для получения метрик уровня узла. Для этого receiver необходимо задать переменную окружения `K8S_NODE_NAME` со значением `spec.nodeName` с помощью [Kubernetes Downward API](https://kubernetes.io/docs/concepts/workloads/pods/downward-api/) (см. [пример](https://kubernetes.io/docs/tasks/inject-data-application/environment-variable-expose-pod-information/)).
+* [`otlp`﻿](https://github.com/open-telemetry/opentelemetry-collector/tree/v0.156.0/receiver/otlpreceiver): для приёма трейсов OTLP.
+* [`k8sevents`﻿](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.156.0/receiver/k8seventsreceiver): для получения событий Kubernetes с сервера Kubernetes API. [1](#fn-1-1-def)
+* [`k8s_cluster`﻿](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.156.0/receiver/k8sclusterreceiver): для получения метрик уровня кластера и событий сущностей с сервера Kubernetes API.
+* [`kubelet_stats`﻿](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.156.0/receiver/kubeletstatsreceiver): для получения метрик уровня узла. Этому приёмнику требуется, чтобы переменная окружения `K8S_NODE_NAME` была установлена в `spec.nodeName` с помощью [Kubernetes Downward API﻿](https://kubernetes.io/docs/concepts/workloads/pods/downward-api/) (см. [пример﻿](https://kubernetes.io/docs/tasks/inject-data-application/environment-variable-expose-pod-information/)).
 
 1
 
-Receiver `k8sevents` в настоящее время находится на стадии альфа и может претерпевать значительные изменения. Несмотря на раннюю стадию зрелости, он включён в дистрибутив Dynatrace Collector для поддержки раннего освоения и экспериментирования. Следует учитывать, что стабильность, производительность и полнота функциональности на данном этапе не гарантированы.
+Приёмник `k8sevents` в настоящее время находится на стадии alpha и может претерпеть значительные изменения. Несмотря на раннюю стадию зрелости, он включён в дистрибутив Dynatrace Collector для поддержки раннего внедрения и экспериментов. На этой стадии стабильность, производительность и полнота функциональности не гарантируются.
 
-#### Processors
+#### Процессоры
 
-В разделе `processors` мы указываем следующие компоненты processor:
+В разделе `processors` мы указываем следующие процессоры:
 
-* [`filter`](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.151.0/processor/filterprocessor): для фильтрации атрибутов Kubernetes.
-* [`k8sattributes`](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.151.0/processor/k8sattributesprocessor): для извлечения и предоставления данных подов.
-* [`transform`](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.151.0/processor/transformprocessor): для преобразования метрик Kubernetes. Для этого необходимо задать переменную окружения `CLUSTER_NAME` с именем кластера. Задайте произвольное имя, под которым кластер будет отображаться в Dynatrace.
-* [`cumulativetodelta`](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.151.0/processor/cumulativetodeltaprocessor): для включения преобразования кумулятивных метрик.
+* [`filter`﻿](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.156.0/processor/filterprocessor): для фильтрации атрибутов Kubernetes.
+* [`k8sattributes`﻿](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.156.0/processor/k8sattributesprocessor): для извлечения и предоставления данных о подах.
+* [`transform`﻿](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.156.0/processor/transformprocessor): для преобразования метрик Kubernetes. Для этого требуется, чтобы переменная окружения `CLUSTER_NAME` была установлена в имя кластера. Укажите в качестве значения переменной произвольное имя, под которым кластер должен отображаться в Dynatrace.
+* [`cumulativetodelta`﻿](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.156.0/processor/cumulativetodeltaprocessor): для включения преобразования накопительных (cumulative) метрик.
 
-#### Exporters
+#### Экспортёры
 
-В разделе `exporters` мы указываем [exporter `otlp_http`](https://github.com/open-telemetry/opentelemetry-collector/tree/v0.151.0/exporter/otlphttpexporter) и настраиваем его с помощью URL нашего Dynatrace API и необходимого токена аутентификации.
+В разделе `exporters` мы указываем [экспортёр `otlp_http`﻿](https://github.com/open-telemetry/opentelemetry-collector/tree/v0.156.0/exporter/otlphttpexporter) и настраиваем его с URL нашего Dynatrace API и необходимым токеном аутентификации.
 
-Для этого мы задаём следующие две переменные окружения и ссылаемся на них в значениях конфигурации `endpoint` и `Authorization`.
+Для этого мы задаём две следующие переменные окружения и ссылаемся на них в значениях конфигурации `endpoint` и `Authorization`.
 
-* `DT_ENDPOINT` содержит [базовый URL эндпоинта Dynatrace API](/managed/ingest-from/opentelemetry/otlp-api#export-to-activegate "Узнайте об эндпоинтах OTLP API, которые ваше приложение использует для экспорта данных OpenTelemetry в Dynatrace.") (например, `https://{your-environment-id}.live.dynatrace.com/api/v2/otlp`)
-* `DT_API_TOKEN` содержит [API-токен](/managed/ingest-from/opentelemetry/otlp-api#authentication-export-to-activegate "Узнайте об эндпоинтах OTLP API, которые ваше приложение использует для экспорта данных OpenTelemetry в Dynatrace.")
+* `DT_ENDPOINT` содержит [базовый URL эндпойнта Dynatrace API](/managed/ingest-from/opentelemetry/otlp-api#export-to-activegate "Узнайте об эндпойнтах OTLP API, которые ваше приложение использует для экспорта данных OpenTelemetry в Dynatrace.") (например, `https://{your-environment-id}.live.dynatrace.com/api/v2/otlp`)
+* `DT_API_TOKEN` содержит [токен API](/managed/ingest-from/opentelemetry/otlp-api#authentication-export-to-activegate "Узнайте об эндпойнтах OTLP API, которые ваше приложение использует для экспорта данных OpenTelemetry в Dynatrace.")
 
 #### Extensions
 
-В разделе `extensions` мы указываем [extension `k8sleaderelector`](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.151.0/extension/k8sleaderelector) для выбора ведущего среди реплик агентов, который будет собирать и экспортировать телеметрию уровня кластера.
-Это гарантирует, что в каждый момент времени данные собирает только один экземпляр Collector, что позволяет избежать дублирования телеметрии.
+В разделе `extensions` мы указываем [расширение `k8sleaderelector`﻿](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.156.0/extension/k8sleaderelector) для выбора лидера среди реплик агента, который будет собирать и экспортировать телеметрию уровня кластера.
+Это гарантирует, что данные в любой момент собирает только один экземпляр коллектора, что позволяет избежать дублирования телеметрии.
 
-#### Сервисные конвейеры
+#### Пайплайны сервиса
 
-В разделе `service` мы собираем наши объекты receiver, processor и exporter в конвейеры для трассировок, метрик и логов. Эти конвейеры позволяют отправлять сигналы OpenTelemetry через экземпляр Collector с их автоматическим обогащением дополнительными сведениями, специфичными для Kubernetes.
+В разделе `service` мы собираем объекты приёмников, процессоров и экспортёров в пайплайны для трейсов, метрик и логов. Эти пайплайны позволяют отправлять сигналы OpenTelemetry через экземпляр коллектора и автоматически обогащать их дополнительными деталями, специфичными для Kubernetes.
 
 ## Использование Data Explorer
 
-Data Explorer значительно расширяет возможности запроса и визуализации метрик.
-Дополнительные сведения см. в разделе [Data Explorer](/managed/analyze-explore-automate/explorer "Запрашивайте метрики и преобразовывайте результаты для получения нужных сведений.").
+Data Explorer значительно расширяет возможности по запросу и визуализации метрик.
+Подробнее см. в [Data Explorer](/managed/analyze-explore-automate/explorer "Запрашивайте метрики и преобразуйте результаты, чтобы получить нужные инсайты.").
 
-## Использование пользовательских панелей мониторинга
+## Использование пользовательских дашбордов
 
-Сведения о настройке пользовательских панелей мониторинга см. в разделе [Dashboards](/managed/analyze-explore-automate/dashboards-classic "Узнайте, как создавать, управлять и использовать Dynatrace Dashboards Classic.").
+О настройке пользовательских дашбордов см. в [Dashboards](/managed/analyze-explore-automate/dashboards-classic "Узнайте, как создавать, управлять и использовать Dynatrace Dashboards Classic.").
 
-## Пределы и ограничения
+## Ограничения
 
-Данные принимаются с помощью протокола OpenTelemetry (OTLP) через [Dynatrace OTLP API](/managed/ingest-from/opentelemetry/otlp-api "Узнайте об эндпоинтах OTLP API, которые ваше приложение использует для экспорта данных OpenTelemetry в Dynatrace.") и подчиняются ограничениям и лимитам этого API.
-Дополнительные сведения см.:
+Данные принимаются по протоколу OpenTelemetry (OTLP) через [Dynatrace OTLP APIы](/managed/ingest-from/opentelemetry/otlp-api "Узнайте об эндпойнтах OTLP API, которые ваше приложение использует для экспорта данных OpenTelemetry в Dynatrace.") и подчиняются лимитам и ограничениям API.
+Подробнее см.:
 
 * [Ограничения метрик OpenTelemetry](/managed/ingest-from/opentelemetry/otlp-api/ingest-otlp-metrics/about-metrics-ingest "Узнайте, как Dynatrace принимает метрики OpenTelemetry и какие ограничения применяются.")
 * [Сопоставление метрик Dynatrace](/managed/ingest-from/opentelemetry/otlp-api/ingest-otlp-metrics/about-metrics-ingest#dynatrace-mapping "Узнайте, как Dynatrace принимает метрики OpenTelemetry и какие ограничения применяются.")

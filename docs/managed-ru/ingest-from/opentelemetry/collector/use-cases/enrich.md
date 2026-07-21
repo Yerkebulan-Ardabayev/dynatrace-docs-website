@@ -1,37 +1,36 @@
 ---
-title: Обогащение OTLP данными OneAgent (вне контейнеров)
+title: Обогащение OTLP данными OneAgent (без контейнеризации)
 source: https://docs.dynatrace.com/managed/ingest-from/opentelemetry/collector/use-cases/enrich
-scraped: 2026-05-12T12:10:48.299967
 ---
 
-# Обогащение OTLP данными OneAgent (вне контейнеров)
+# Обогащение OTLP данными OneAgent (без контейнеризации)
 
-# Обогащение OTLP данными OneAgent (вне контейнеров)
+# Обогащение OTLP данными OneAgent (без контейнеризации)
 
 * Практическое руководство
-* Чтение: 2 мин
+* Чтение 2 минуты
 * Обновлено 17 декабря 2025 г.
 
-В следующем примере конфигурации показано, как настроить экземпляр Collector для обогащения данных OpenTelemetry сущностями хостов OneAgent.
+Следующий пример конфигурации показывает, как настроить экземпляр Collector для обогащения данных OpenTelemetry сущностями хостов OneAgent.
 
-Обогащение используется для связывания данных OpenTelemetry с их хостом OneAgent и корректного сопоставления в модели топологии. Например, при приёме логов с разных хостов привязка сущности хоста к соответствующим данным логов позволяет выполнять задачи аналитики логов на основе хостов.
+Обогащение используется для связывания данных OpenTelemetry с их хостом OneAgent и корректной ассоциации в модели топологии. Например, при приёме логов с разных хостов привязка сущности хоста к соответствующим данным логов позволяет запускать задачи аналитики логов на основе хоста.
 
 Контейнерные среды
 
-Обогащение применимо только к неконтейнерным средам OneAgent. Настройка обогащения в контейнеризированном Collector может привести к некорректным сопоставлениям хостов и топологии.
+Обогащение специфично для неконтейнерных сред OneAgent. Настройка обогащения контейнеризированного Collector может привести к некорректным ассоциациям хостов и топологии.
 
 ## Предварительные требования
 
-* Один из следующих дистрибутивов Collector с [processor Resource Detection](https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/v0.151.0/processor/resourcedetectionprocessor):
+* Один из следующих дистрибутивов Collector с [Resource Detection processor﻿](https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/v0.156.0/processor/resourcedetectionprocessor):
 
   + [Dynatrace OTel Collector](/managed/ingest-from/opentelemetry/collector#dt-collector-dist "Узнайте, как использовать OpenTelemetry Collector, включая Dynatrace OTel Collector, для приёма телеметрии из OpenTelemetry.")
   + OpenTelemetry [Contrib](/managed/ingest-from/opentelemetry/collector#collector-contrib "Узнайте, как использовать OpenTelemetry Collector, включая Dynatrace OTel Collector, для приёма телеметрии из OpenTelemetry.")
-  + [пользовательская версия Builder](/managed/ingest-from/opentelemetry/collector#collector-builder "Узнайте, как использовать OpenTelemetry Collector, включая Dynatrace OTel Collector, для приёма телеметрии из OpenTelemetry.")
-* OneAgent, работающий на том же хосте, что и OTel Collector, при этом OneAgent ведёт мониторинг в режиме Full-Stack, Infrastructure или Foundation & Discovery.
-* [URL эндпоинта Dynatrace API](/managed/ingest-from/opentelemetry/otlp-api "Узнайте об эндпоинтах OTLP API, которые ваше приложение использует для экспорта данных OpenTelemetry в Dynatrace."), на который должны экспортироваться данные, заданный как системная переменная окружения
-* [API-токен](/managed/ingest-from/opentelemetry/otlp-api#authentication-export-to-activegate "Узнайте об эндпоинтах OTLP API, которые ваше приложение использует для экспорта данных OpenTelemetry в Dynatrace.") с соответствующей областью доступа (требуется только для SaaS и ActiveGate), заданный как системная переменная окружения
+  + [Пользовательская версия Builder](/managed/ingest-from/opentelemetry/collector#collector-builder "Узнайте, как использовать OpenTelemetry Collector, включая Dynatrace OTel Collector, для приёма телеметрии из OpenTelemetry.")
+* OneAgent, запущенный на том же хосте, что и OTel Collector, где OneAgent работает в режиме Full-Stack, Infrastructure или Foundation & Discovery.
+* [URL конечной точки Dynatrace API](/managed/ingest-from/opentelemetry/otlp-api "Узнайте о конечных точках OTLP API, которые ваше приложение использует для экспорта данных OpenTelemetry в Dynatrace."), в которую нужно экспортировать данные, настроенный как системная переменная окружения
+* [Токен API](/managed/ingest-from/opentelemetry/otlp-api#authentication-export-to-activegate "Узнайте о конечных точках OTLP API, которые ваше приложение использует для экспорта данных OpenTelemetry в Dynatrace.") с соответствующей областью доступа (требуется только для SaaS и ActiveGate), настроенный как системная переменная окружения
 
-См. [Развёртывание Collector](/managed/ingest-from/opentelemetry/collector/deployment "Как развернуть Dynatrace OpenTelemetry Collector.") и [Настройку Collector](/managed/ingest-from/opentelemetry/collector/configuration "Как настроить OpenTelemetry Collector."), чтобы узнать, как настроить ваш Collector с приведённой ниже конфигурацией.
+О том, как настроить Collector с приведённой ниже конфигурацией, см. в разделах [Развёртывание Collector](/managed/ingest-from/opentelemetry/collector/deployment "Как развернуть Dynatrace OpenTelemetry Collector.") и [Конфигурация Collector](/managed/ingest-from/opentelemetry/collector/configuration "Как настроить OpenTelemetry Collector.").
 
 ## Демонстрационная конфигурация
 
@@ -68,7 +67,7 @@ processors:
 
 
 
-resourcedetection/dynatrace:
+resource_detection/dynatrace:
 
 
 
@@ -116,7 +115,7 @@ receivers: [otlp]
 
 
 
-processors: [resourcedetection/dynatrace]
+processors: [resource_detection/dynatrace]
 
 
 
@@ -132,7 +131,7 @@ receivers: [otlp]
 
 
 
-processors: [resourcedetection/dynatrace]
+processors: [resource_detection/dynatrace]
 
 
 
@@ -148,7 +147,7 @@ receivers: [otlp]
 
 
 
-processors: [resourcedetection/dynatrace]
+processors: [resource_detection/dynatrace]
 
 
 
@@ -157,43 +156,43 @@ exporters: [otlp_http]
 
 Проверка конфигурации
 
-[Проверьте ваши настройки](/managed/ingest-from/opentelemetry/collector/configuration#validate "Как настроить OpenTelemetry Collector."), чтобы избежать проблем с конфигурацией.
+[Проверьте настройки](/managed/ingest-from/opentelemetry/collector/configuration#validate "Как настроить OpenTelemetry Collector."), чтобы избежать проблем с конфигурацией.
 
 ## Компоненты
 
-Для нашей конфигурации мы настраиваем следующие компоненты.
+В нашей конфигурации настроены следующие компоненты.
 
-### Receivers
+### Приёмники (Receivers)
 
-В разделе `receivers` мы указываем стандартный receiver `otlp` в качестве активного компонента receiver для нашего экземпляра Collector.
+В разделе `receivers` указан стандартный приёмник `otlp` в качестве активного компонента-приёмника для экземпляра Collector.
 
-Это сделано в основном в демонстрационных целях. Здесь можно указать любой другой допустимый receiver (например, `zipkin`).
+Это в основном для демонстрационных целей. Здесь можно указать любой другой допустимый приёмник (например, `zipkin`).
 
-### Processors
+### Процессоры (Processors)
 
-В разделе `processors` мы указываем [processor `resourcedetection`](https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/v0.151.0/processor/resourcedetectionprocessor) и настраиваем его с помощью [специфичного для Dynatrace детектора `dynatrace`](https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/v0.151.0/processor/resourcedetectionprocessor/README.md#dynatrace).
+В разделе `processors` указан [процессор `resource_detection`﻿](https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/v0.156.0/processor/resourcedetectionprocessor) с настройкой [специфичного для Dynatrace детектора `dynatrace`﻿](https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/v0.156.0/processor/resourcedetectionprocessor/README.md#dynatrace).
 
-При такой конфигурации processor определения ресурсов попытается загрузить следующие три атрибута из [файла обогащения OneAgent](/managed/ingest-from/extend-dynatrace/extend-data#dynatrace-oneagent "Узнайте, как автоматически обогащать данные телеметрии полями, специфичными для Dynatrace."):
+При такой конфигурации процессор resource detector попытается загрузить следующие три атрибута из [файла обогащения OneAgent](/managed/ingest-from/extend-dynatrace/extend-data#dynatrace-oneagent "Узнайте, как автоматически обогащать данные телеметрии специфичными для Dynatrace полями."):
 
 * `dt.entity.host`
 * `host.name`
 * `dt.smartscape.host`
 
-Если processor определения ресурсов смог успешно загрузить эти значения, он добавит их в запрос OTLP в качестве атрибутов ресурса. Дополнительная настройка processor не требуется.
+Если resource detector смог успешно загрузить эти значения, он добавит их как атрибуты ресурса в запрос OTLP. Дополнительная настройка процессора не требуется.
 
-### Exporters
+### Экспортёры (Exporters)
 
-В разделе `exporters` мы указываем стандартный [exporter `otlp_http`](https://github.com/open-telemetry/opentelemetry-collector/tree/v0.151.0/exporter/otlphttpexporter) и настраиваем его с помощью URL нашего Dynatrace API и необходимого токена аутентификации.
+В разделе `exporters` указан стандартный [экспортёр `otlp_http`﻿](https://github.com/open-telemetry/opentelemetry-collector/tree/v0.156.0/exporter/otlphttpexporter) с настройкой на URL API Dynatrace и требуемый токен аутентификации.
 
-Для этого мы задаём следующие две переменные окружения и ссылаемся на них в значениях конфигурации `endpoint` и `headers`.
+Для этого задаются следующие две переменные окружения, на которые идёт ссылка в значениях конфигурации `endpoint` и `headers`.
 
-* `DT_ENDPOINT` содержит [базовый URL эндпоинта Dynatrace API](/managed/ingest-from/opentelemetry/otlp-api#export-to-activegate "Узнайте об эндпоинтах OTLP API, которые ваше приложение использует для экспорта данных OpenTelemetry в Dynatrace.") (например, `https://{your-environment-id}.live.dynatrace.com/api/v2/otlp`)
-* `DT_API_TOKEN` содержит [API-токен](/managed/ingest-from/opentelemetry/otlp-api#authentication-export-to-activegate "Узнайте об эндпоинтах OTLP API, которые ваше приложение использует для экспорта данных OpenTelemetry в Dynatrace.")
+* `DT_ENDPOINT` содержит [базовый URL конечной точки API Dynatrace](/managed/ingest-from/opentelemetry/otlp-api#export-to-activegate "Узнайте о конечных точках OTLP API, которые ваше приложение использует для экспорта данных OpenTelemetry в Dynatrace.") (например, `https://{your-environment-id}.live.dynatrace.com/api/v2/otlp`)
+* `DT_API_TOKEN` содержит [токен API](/managed/ingest-from/opentelemetry/otlp-api#authentication-export-to-activegate "Узнайте о конечных точках OTLP API, которые ваше приложение использует для экспорта данных OpenTelemetry в Dynatrace.")
 
-### Сервисный конвейер
+### Конвейер сервиса (Service pipeline)
 
-В разделе `service` мы собираем наши объекты receiver, processor и exporter в сервисные конвейеры, которые выполнят следующие шаги:
+В разделе `service` объекты приёмника, процессора и экспортёра собираются в сервисные конвейеры, которые выполняют следующие шаги:
 
 * принимают запросы OTLP на настроенных портах
-* обогащают их данными хоста, релевантными для Dynatrace, с помощью processor определения ресурсов
+* обогащают их релевантными данными хоста Dynatrace с помощью процессора resource detector
 * и экспортируют обогащённые данные в Dynatrace

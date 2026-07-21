@@ -1,7 +1,6 @@
 ---
 title: Развёртывание Dynatrace OTel Collector
 source: https://docs.dynatrace.com/managed/ingest-from/opentelemetry/collector/deployment
-scraped: 2026-05-12T11:37:08.504826
 ---
 
 # Развёртывание Dynatrace OTel Collector
@@ -9,43 +8,43 @@ scraped: 2026-05-12T11:37:08.504826
 # Развёртывание Dynatrace OTel Collector
 
 * Практическое руководство
-* Чтение: 9 мин
-* Обновлено 10 апреля 2026 г.
+* 9 минут на чтение
+* Обновлено 10 апр. 2026 г.
 
-На этой странице описано, как развернуть дистрибутив Dynatrace OTel Collector.
+На этой странице описано, как развернуть дистрибутив Dynatrace для OTel Collector ("Dynatrace OTel Collector").
 
 ## Режимы развёртывания
 
-Dynatrace OTel Collector можно [развернуть](https://opentelemetry.io/docs/collector/quick-start/) как автономный агент или шлюз.
+Dynatrace OTel Collector можно [развернуть﻿](https://opentelemetry.io/docs/collector/quick-start/) как отдельный агент или как шлюз.
 
-Для наглядности на рисунках ниже режимы показаны в среде Kubernetes, но те же режимы можно использовать и за пределами Kubernetes.
+В иллюстративных целях на графиках ниже показаны режимы в настройке Kubernetes, но те же режимы можно использовать и вне Kubernetes.
 
 Агент
 
 Шлюз
 
-В режиме агента Dynatrace OTel Collector развёртывается вместе с приложением или на том же хосте, что и приложение. В этом режиме Dynatrace OTel Collector принимает данные телеметрии и дополняет их, например, тегами или информацией об инфраструктуре.
+В качестве агента Dynatrace OTel Collector развёртывается либо вместе с приложением, либо на том же хосте, что и приложение. Этот Dynatrace OTel Collector может принимать данные телеметрии и дополнять их, например, тегами или информацией об инфраструктуре.
 
 ![OTel Collector as agent](https://cdn.bfldr.com/B686QPH3/as/2h9fmzj68vw6vgts9t38hp/Collector_deployment_Agent_-_Light_Mode?auto=webp&format=png&position=1)
 
-OTel Collector в режиме агента
+OTel Collector в роли агента
 
-В режиме шлюза один или несколько экземпляров Dynatrace OTel Collector развёртываются как автономные сервисы. Dynatrace OTel Collector в этом режиме можно развернуть дополнительно, например, на уровне кластера, региона или центра обработки данных. Балансировщик нагрузки помогает масштабировать независимо работающие экземпляры Dynatrace OTel Collector.
+В качестве шлюза один или несколько экземпляров Dynatrace OTel Collector можно развернуть как отдельные сервисы. Этот Dynatrace OTel Collector можно развернуть дополнительно, например, на кластер, регион или дата-центр. Балансировщик нагрузки помогает масштабировать независимо работающие экземпляры Dynatrace OTel Collector.
 
 ![OTel Collector as gateway](https://cdn.bfldr.com/B686QPH3/as/ghvnk47j6phmrjjnv859chxr/Collector_deployment_Gateway_-_Light_Mode?auto=webp&format=png&position=1)
 
-OTel Collector в режиме шлюза
+OTel Collector в роли шлюза
 
-Также можно комбинировать эти режимы развёртывания и выстраивать экземпляры Dynatrace OTel Collector в цепочку. Это стоит рассмотреть при развёртывании Dynatrace OTel Collector в больших средах.
+Также можно совмещать эти режимы развёртывания и выстраивать цепочку из экземпляров Dynatrace OTel Collector. Стоит рассмотреть этот вариант при развёртывании Dynatrace OTel Collector в крупных средах.
 
 ## Варианты развёртывания
 
-Dynatrace OTel Collector можно развернуть на следующих платформах:
+Dynatrace OTel Collector можно развернуть для следующих платформ:
 
 * [Kubernetes](#kubernetes)
 * [Docker](#docker)
 * [Windows, macOS и Linux](#binary)
-* [Установочные пакеты Linux](#linux-installer-packages)
+* [Пакеты установщика для Linux](#linux-installer-packages)
 
 ### Kubernetes
 
@@ -53,43 +52,43 @@ Dynatrace OTel Collector можно развернуть на следующих
 
 * OpenTelemetry Kubernetes Operator
 * Helm
-* Raw manifest
+* Обычный манифест (raw manifest)
 
-#### Параметры доступа Dynatrace
+#### Данные доступа Dynatrace
 
-Перед развёртыванием Dynatrace OTel Collector необходимо настроить секреты Kubernetes с параметрами доступа к Dynatrace.
+Перед развёртыванием Dynatrace OTel Collector нужно настроить необходимые Kubernetes secrets с данными доступа Dynatrace.
 
-С помощью kubectl создайте секреты Kubernetes с данными экспорта в Dynatrace. Замените заполнители (указанные в фигурных скобках) фактическими значениями [URL экспорта и API-токена](/managed/ingest-from/opentelemetry/otlp-api "Узнайте об эндпоинтах OTLP API, которые ваше приложение использует для экспорта данных OpenTelemetry в Dynatrace.").
+Используй kubectl для создания Kubernetes secrets с данными экспорта Dynatrace. Замени плейсхолдеры (указанные в фигурных скобках) на реальные значения [URL экспорта и токена API](/managed/ingest-from/opentelemetry/otlp-api "Узнай о конечных точках OTLP API, которые твоё приложение использует для экспорта данных OpenTelemetry в Dynatrace.").
 
 ```
 kubectl create secret generic dynatrace-otelcol-dt-api-credentials --from-literal=DT_ENDPOINT={ENDPOINT_URL_HERE} --from-literal=DT_API_TOKEN={API_TOKEN_HERE}
 ```
 
-#### Варианты развёртывания в Kubernetes
+#### Варианты развёртывания Kubernetes
 
-Приведённые ниже примеры конфигураций устанавливают ограничение ресурсов в 512 мегабайт. Для конкретного сценария использования это значение может потребоваться изменить в разделе `resources.limits.memory`.
+В следующих примерах конфигураций применяется лимит ресурсов 512 мегабайт. Возможно, потребуется скорректировать значение `resources.limits.memory` под конкретный сценарий использования.
 
 OpenTelemetry Operator
 
 Helm
 
-Raw manifest
+Обычный манифест
 
 #### Предварительные требования
 
-Если OpenTelemetry Operator ещё не установлен, сначала убедитесь, что установлен [cert-manager](https://cert-manager.io/docs/installation/). После этого можно развернуть Operator с помощью следующей команды `kubectl`:
+Если OpenTelemetry Operator ещё не установлен, сначала убедись, что установлен [cert-manager﻿](https://cert-manager.io/docs/installation/). После этого можно развернуть Operator следующей командой `kubectl`:
 
 ```
-kubectl apply -f https://github.com/open-telemetry/opentelemetry-operator/releases/download/v0.150.0/opentelemetry-operator.yaml
+kubectl apply -f https://github.com/open-telemetry/opentelemetry-operator/releases/download/v0.156.0/opentelemetry-operator.yaml
 ```
 
-После установки разверните Dynatrace OTel Collector в режиме [шлюза или агента](#deployment-modes), используя один из приведённых ниже примеров конфигурации. Сохраните файл как `crd-dynatrace-collector.yaml` и примените его командой `kubectl apply`.
+После установки разверни Dynatrace OTel Collector в [режиме gateway или agent](#deployment-modes), используя один из следующих примеров конфигурации. Сохрани его как `crd-dynatrace-collector.yaml` и разверни командой `kubectl apply`.
 
 Custom Resource Definition
 
-Kubernetes CRD для Operator можно найти на [GitHub](https://github.com/open-telemetry/opentelemetry-operator/blob/v0.150.0/docs/api/opentelemetrycollectors.md).
+CRD Kubernetes для Operator можно найти на [GitHub﻿](https://github.com/open-telemetry/opentelemetry-operator/blob/v0.156.0/docs/api/opentelemetrycollectors.md).
 
-Развернуть как шлюз (Deployment)
+Развернуть как gateway (Deployment)
 
 ```
 apiVersion: opentelemetry.io/v1beta1
@@ -148,7 +147,7 @@ mode: "deployment"
 
 
 
-image: "ghcr.io/dynatrace/dynatrace-otel-collector/dynatrace-otel-collector:0.48.0"
+image: "ghcr.io/dynatrace/dynatrace-otel-collector/dynatrace-otel-collector:0.52.0"
 
 
 
@@ -271,7 +270,7 @@ processors: []
 exporters: [otlp_http]
 ```
 
-Развернуть как агент (DaemonSet)
+Развернуть как agent (DaemonSet)
 
 ```
 apiVersion: opentelemetry.io/v1beta1
@@ -330,7 +329,7 @@ mode: "daemonset"
 
 
 
-image: "ghcr.io/dynatrace/dynatrace-otel-collector/dynatrace-otel-collector:0.48.0"
+image: "ghcr.io/dynatrace/dynatrace-otel-collector/dynatrace-otel-collector:0.52.0"
 
 
 
@@ -453,13 +452,13 @@ processors: []
 exporters: [otlp_http]
 ```
 
-Выберите один из стандартных [режимов развёртывания](#deployment-modes) для Dynatrace OTel Collector.
+Выбери один из распространённых [режимов развёртывания](#deployment-modes) для Dynatrace OTel Collector.
 
-Представленные ниже Helm-чарты используют `alternateConfig` для передачи конфигурации Dynatrace OTel Collector. При использовании этого параметра стандартная конфигурация Helm-чарта, а также объект `config`, если он присутствует, будут проигнорированы.
+Приведённые ниже чарты Helm используют `alternateConfig` для передачи конфигурации Dynatrace OTel Collector. При использовании этого параметра стандартная конфигурация чарта Helm, а также возможно присутствующий объект `config`, будут проигнорированы.
 
-Развернуть как шлюз (Deployment)
+Развернуть как gateway (Deployment)
 
-1. Сохраните следующую конфигурацию YAML в файл `values-deployment.yaml`
+1. Сохрани следующую конфигурацию YAML в `values-deployment.yaml`
 
    ```
    mode: deployment
@@ -474,7 +473,7 @@ exporters: [otlp_http]
 
 
 
-   tag: 0.48.0
+   tag: 0.52.0
 
 
 
@@ -668,7 +667,7 @@ exporters: [otlp_http]
 
    exporters: [otlp_http]
    ```
-2. Выполните следующие команды для настройки и установки Helm-чартов
+2. Выполни следующие команды, чтобы настроить и установить чарты Helm
 
    ```
    helm repo add open-telemetry https://open-telemetry.github.io/opentelemetry-helm-charts
@@ -682,9 +681,9 @@ exporters: [otlp_http]
    helm upgrade -i dynatrace-collector open-telemetry/opentelemetry-collector -f values-deployment.yaml
    ```
 
-Развернуть как агент (DaemonSet)
+Развернуть как agent (DaemonSet)
 
-1. Сохраните следующую конфигурацию YAML в файл `values-daemonset.yaml`.
+1. Сохрани следующую конфигурацию YAML в `values-daemonset.yaml`.
 
    ```
    mode: daemonset
@@ -699,7 +698,7 @@ exporters: [otlp_http]
 
 
 
-   tag: 0.48.0
+   tag: 0.52.0
 
 
 
@@ -889,7 +888,7 @@ exporters: [otlp_http]
 
    exporters: [otlp_http]
    ```
-2. Выполните следующие команды для настройки и установки Helm-чартов.
+2. Выполни следующие команды, чтобы настроить и установить чарты Helm.
 
    ```
    helm repo add open-telemetry https://open-telemetry.github.io/opentelemetry-helm-charts
@@ -905,11 +904,11 @@ exporters: [otlp_http]
 
 Сетевые порты
 
-Обязательно настройте и пробросьте все необходимые сетевые порты, используя [значение конфигурации `ports`](https://github.com/open-telemetry/opentelemetry-helm-charts/blob/opentelemetry-collector-0.106.0/charts/opentelemetry-collector/values.yaml#L266-L313).
+Убедись, что настроены и проброшены все необходимые сетевые порты с помощью [значения конфигурации `ports`﻿](https://github.com/open-telemetry/opentelemetry-helm-charts/blob/opentelemetry-collector-0.106.0/charts/opentelemetry-collector/values.yaml#L266-L313).
 
 Service
 
-Примените следующую конфигурацию с помощью `kubectl apply`, чтобы создать определения сервиса и настроить нужные порты.
+Используй `kubectl apply` со следующей конфигурацией, чтобы настроить определения service и указать нужные порты.
 
 ```
 apiVersion: v1
@@ -1073,7 +1072,7 @@ type: ClusterIP
 
 ConfigMap
 
-Создайте `ConfigMap`, применив следующую конфигурацию с помощью `kubectl apply`, чтобы задать конфигурацию Dynatrace OTel Collector.
+Создай `ConfigMap`, применив следующую конфигурацию командой `kubectl apply`, чтобы настроить конфигурацию Dynatrace OTel Collector.
 
 ```
 apiVersion: v1
@@ -1205,7 +1204,7 @@ exporters: [otlp_http]
 
 Manifest
 
-Примените следующую конфигурацию манифеста с помощью `kubectl apply`, чтобы создать Deployment Dynatrace OTel Collector в [режиме шлюза](#deployment-modes).
+Примени следующую конфигурацию манифеста командой `kubectl apply`, чтобы создать Deployment Dynatrace OTel Collector в [режиме gateway](#deployment-modes).
 
 ```
 apiVersion: apps/v1
@@ -1268,7 +1267,7 @@ spec:
 
 
 
-#You may have to configure RBAC to grant proper permissions for enriching data
+#Возможно, потребуется настроить RBAC, чтобы выдать нужные разрешения для обогащения данных
 
 
 
@@ -1352,7 +1351,7 @@ key: DT_API_TOKEN
 
 
 
-image: ghcr.io/dynatrace/dynatrace-otel-collector/dynatrace-otel-collector:0.48.0
+image: ghcr.io/dynatrace/dynatrace-otel-collector/dynatrace-otel-collector:0.52.0
 
 
 
@@ -1372,7 +1371,7 @@ ports:
 
 
 
-- containerPort: 8888 # Default endpoint for querying metrics of prometheus exporter.
+- containerPort: 8888 # Стандартный endpoint для запроса метрик prometheus exporter.
 
 
 
@@ -1415,33 +1414,36 @@ path: otel-collector-config.yaml
 name: dynatrace-otel-collector-config
 ```
 
-Сервисный аккаунт
 
-В Kubernetes принято обогащать сигналы OpenTelemetry с помощью [processor Kubernetes Attributes](/managed/ingest-from/opentelemetry/collector/use-cases/kubernetes/k8s-enrich "Настройте OpenTelemetry Collector для обогащения запросов OTLP данными Kubernetes."). Для этого требуется сервисный аккаунт Kubernetes, который автоматически настраивается при использовании Operator или Helm.
+Учётная запись службы
 
-При использовании raw-манифестов это необходимо настраивать вручную, добавив запись `spec.serviceAccountName: collector` в манифест развёртывания.
+
+В Kubernetes принято обогащать сигналы OpenTelemetry с помощью [Kubernetes Attributes processor](/managed/ingest-from/opentelemetry/collector/use-cases/kubernetes/k8s-enrich "Настроить OpenTelemetry Collector для обогащения запросов OTLP данными Kubernetes."). Для этого нужна учётная запись службы Kubernetes, которая настраивается автоматически при использовании Operator или Helm.
+
+
+Для необработанных манифестов это нужно настроить вручную, добавив запись `spec.serviceAccountName: collector` в манифест deployment.
 
 ### Docker
 
-Выполните следующую команду для загрузки актуального образа Dynatrace OTel Collector:
+Выполните следующую команду, чтобы скачать самый свежий образ Dynatrace OTel Collector:
 
 ```
-docker pull ghcr.io/dynatrace/dynatrace-otel-collector/dynatrace-otel-collector:0.48.0
+docker pull ghcr.io/dynatrace/dynatrace-otel-collector/dynatrace-otel-collector:0.52.0
 ```
 
-Убедитесь, что [файл конфигурации Dynatrace OTel Collector](/managed/ingest-from/opentelemetry/collector/configuration "Как настроить OpenTelemetry Collector.") находится в текущей рабочей директории, и запустите образ Dynatrace OTel Collector следующей командой:
+Далее убедитесь, что [файл конфигурации Dynatrace OTel Collector](/managed/ingest-from/opentelemetry/collector/configuration "How to configure the OpenTelemetry Collector.") находится в текущем рабочем каталоге, и запустите образ Dynatrace OTel Collector следующей командой:
 
 ```
-docker run -v $(pwd)/otel-collector-config.yaml:/etc/otelcol/otel-collector-config.yaml ghcr.io/dynatrace/dynatrace-otel-collector/dynatrace-otel-collector:0.48.0 --config=/etc/otelcol/otel-collector-config.yaml
+docker run -v $(pwd)/otel-collector-config.yaml:/etc/otelcol/otel-collector-config.yaml ghcr.io/dynatrace/dynatrace-otel-collector/dynatrace-otel-collector:0.52.0 --config=/etc/otelcol/otel-collector-config.yaml
 ```
 
-Параметр `-v` сопоставляет локальный файл конфигурации с указанным путём в контейнере, который затем передаётся в параметр `--config`.
+Параметр `-v` сопоставляет локальный файл конфигурации с указанным путём внутри контейнера, который затем передаётся в параметр `--config`.
 
-Обязательно пробросьте все необходимые сетевые порты с помощью [параметра `-p`](https://docs.docker.com/reference/cli/docker/container/run/#publish). Например, если принимаются запросы OTLP gRPC через порт по умолчанию, необходимо указать порт 4317. Для OTLP по HTTP укажите порт 4318.
+Обязательно сопоставьте все необходимые сетевые порты с помощью [параметра `-p`﻿](https://docs.docker.com/reference/cli/docker/container/run/#publish). Например, если нужно принимать запросы OTLP gRPC на порту по умолчанию, укажите порт 4317. Для OTLP через HTTP укажите порт 4318.
 
 #### Docker compose
 
-Используйте следующую конфигурацию в файле compose для развёртывания и запуска образа Dynatrace OTel Collector:
+Используйте следующую конфигурацию в compose-файле для развёртывания и запуска образа Dynatrace OTel Collector:
 
 ```
 version: "3"
@@ -1456,7 +1458,7 @@ collector:
 
 
 
-image: ghcr.io/dynatrace/dynatrace-otel-collector/dynatrace-otel-collector:0.48.0
+image: ghcr.io/dynatrace/dynatrace-otel-collector/dynatrace-otel-collector:0.52.0
 
 
 
@@ -1483,35 +1485,35 @@ ports:
 - "4318:4318"   # OTLP HTTP
 ```
 
-В приведённом примере `ports` настроен для gRPC и HTTP. Скорректируйте список портов в соответствии с конкретным сценарием использования.
+В примере выше `ports` настроен для gRPC и HTTP. Скорректируйте список портов в соответствии со своим сценарием использования.
 
 ### Windows, macOS и Linux
 
 Чтобы установить бинарный файл Dynatrace OTel Collector вручную:
 
-1. Загрузите [dynatrace-otel-collector](https://github.com/Dynatrace/dynatrace-otel-collector/releases/v0.48.0) для своей операционной системы с GitHub.
+1. Скачайте [dynatrace-otel-collector﻿](https://github.com/Dynatrace/dynatrace-otel-collector/releases/v0.52.0) для своей операционной системы с GitHub.
 2. Распакуйте архивный файл.
-3. Настройте нужную конфигурацию и сохраните её в файл `otel-collector-config.yaml`.
-4. Запустите бинарный файл `dynatrace-otel-collector` и передайте путь к файлу конфигурации с помощью параметра `--config`.
+3. Настройте нужную конфигурацию и сохраните её в `otel-collector-config.yaml`.
+4. Запустите бинарный файл `dynatrace-otel-collector`, передав путь к файлу конфигурации через параметр `--config`.
 
    ```
    ./dynatrace-otel-collector --config=$(pwd)/otel-collector-config.yaml
    ```
 
-### Установочные пакеты Linux
+### Пакеты установщика для Linux
 
-Dynatrace также предоставляет установочные пакеты DEB и RPM для Linux-систем на архитектурах x86-64 и ARM64.
+Dynatrace также предоставляет установочные пакеты DEB и RPM для систем Linux на архитектурах x86-64 и ARM64.
 
-Требуемая система инициализации
+Требуется соответствующая init-система
 
-Установочные пакеты требуют, чтобы активной системой инициализации был Systemd.
+Пакеты установщика требуют, чтобы активной init-системой был Systemd.
 
-Для развёртывания Dynatrace OTel Collector с помощью установочного пакета загрузите [dynatrace-otel-collector](https://github.com/Dynatrace/dynatrace-otel-collector/releases/v0.48.0) для своей операционной системы с GitHub и установите с правами суперпользователя, используя следующие команды.
+Чтобы развернуть Dynatrace OTel Collector с помощью пакета установщика, скачайте [dynatrace-otel-collector﻿](https://github.com/Dynatrace/dynatrace-otel-collector/releases/v0.52.0) для своей операционной системы с GitHub и установите его с правами root следующими командами.
 
-Замените в командах следующие два заполнителя их фактическими значениями:
+Замените в командах следующие два плейсхолдера на их фактическое содержимое:
 
-* `<VERSION>`: замените тегом версии загружаемого файла.
-* `<ARCH>`: замените тегом архитектуры системы (то есть `x86_64` или `arm64`) загружаемого файла.
+* `<VERSION>`: замените на тег версии скачанного файла.
+* `<ARCH>`: замените на тег архитектуры системы (то есть `x86_64` или `arm64`) скачанного файла.
 
 Debian (.deb)
 
@@ -1533,37 +1535,37 @@ yum update
 rpm -ivh dynatrace-otel-collector_<VERSION>_Linux_<ARCH>.rpm
 ```
 
-#### Конфигурация сервиса
+#### Конфигурация службы
 
-При первом запуске сервис может не запуститься, если [файл конфигурации](/managed/ingest-from/opentelemetry/collector/configuration "Как настроить OpenTelemetry Collector.") ещё не создан. По умолчанию Dynatrace OTel Collector пытается найти файл по пути `/etc/dynatrace-otel-collector/config.yaml`.
+При первом запуске службы она может не запуститься, если ещё нет [файла конфигурации](/managed/ingest-from/opentelemetry/collector/configuration "How to configure the OpenTelemetry Collector."). По умолчанию Dynatrace OTel Collector пытается найти файл по пути `/etc/dynatrace-otel-collector/config.yaml`.
 
-Нестандартное расположение конфигурации
+Свой путь к конфигурации
 
-Если нужно использовать другой путь, можно переопределить путь по умолчанию с помощью параметра `--config` в составе переменной `OTELCOL_OPTIONS` в файле среды Systemd по пути `/etc/dynatrace-otel-collector/dynatrace-otel-collector.conf`:
+Если нужно использовать другой путь, можно переопределить путь по умолчанию параметром `--config` в переменной `OTELCOL_OPTIONS` файла окружения Systemd по адресу `/etc/dynatrace-otel-collector/dynatrace-otel-collector.conf`:
 
 ```
 OTELCOL_OPTIONS="--config=<HERE-PATH-TO-CONFIG-FILE>"
 ```
 
-При последующих обновлениях пакета этот файл будет заменён, поэтому во время обновления пакета Dynatrace OTel Collector обязательно сделайте резервную копию и восстановите его содержимое. Также можно переопределить конфигурацию с помощью [команды `systemctl edit`](https://docs.fedoraproject.org/en-US/quick-docs/systemd-understanding-and-administering/#_modifying_existing_systemd_services).
+Последующие обновления пакета заменят этот файл, поэтому обязательно сделайте резервную копию его содержимого и восстановите его при обновлении пакета Dynatrace OTel Collector. Также можно переопределить конфигурацию с помощью [команды `systemctl edit`﻿](https://docs.fedoraproject.org/en-US/quick-docs/systemd-understanding-and-administering/#_modifying_existing_systemd_services).
 
-Чтобы просмотреть все доступные параметры конфигурации, запустите бинарный файл Dynatrace OTel Collector с параметром `--help`.
+Чтобы увидеть все доступные параметры конфигурации, запустите бинарный файл Dynatrace OTel Collector с параметром `--help`.
 
-После изменения конфигурации перезапустите сервис следующей командой с правами суперпользователя:
+После изменения конфигурации обязательно перезапустите службу следующей командой с правами root:
 
 ```
 systemctl restart dynatrace-otel-collector
 ```
 
-#### Статус сервиса
+#### Статус службы
 
-Чтобы просмотреть текущий статус сервиса Dynatrace OTel Collector, выполните следующую команду с правами суперпользователя:
+Чтобы посмотреть текущий статус службы Dynatrace OTel Collector, выполните следующую команду с правами root:
 
 ```
 systemctl status dynatrace-otel-collector
 ```
 
-Чтобы проверить вывод сервиса Dynatrace OTel Collector, выполните следующую команду с правами суперпользователя:
+Чтобы проверить вывод службы Dynatrace OTel Collector, выполните следующую команду с правами root:
 
 ```
 journalctl -u dynatrace-otel-collector
@@ -1573,12 +1575,12 @@ journalctl -u dynatrace-otel-collector
 
 Образы контейнеров для Dynatrace OTel Collector:
 
-* [GitHub Container Registry (GHCR)](https://github.com/Dynatrace/dynatrace-otel-collector/pkgs/container/dynatrace-otel-collector%2Fdynatrace-otel-collector)
+* [GitHub Container Registry (GHCR)﻿](https://github.com/Dynatrace/dynatrace-otel-collector/pkgs/container/dynatrace-otel-collector%2Fdynatrace-otel-collector)
 
-  + `ghcr.io/dynatrace/dynatrace-otel-collector/dynatrace-otel-collector:0.48.0`
-* [Amazon Elastic Container Registry (Amazon ECR)](https://gallery.ecr.aws/dynatrace/dynatrace-otel-collector)
+  + `ghcr.io/dynatrace/dynatrace-otel-collector/dynatrace-otel-collector:0.52.0`
+* [Amazon Elastic Container Registry (Amazon ECR)﻿](https://gallery.ecr.aws/dynatrace/dynatrace-otel-collector)
 
-  + `public.ecr.aws/dynatrace/dynatrace-otel-collector:0.48.0`
-* [Docker Hub Container Registry](https://hub.docker.com/r/dynatrace/dynatrace-otel-collector)
+  + `public.ecr.aws/dynatrace/dynatrace-otel-collector:0.52.0`
+* [Docker Hub Container Registry﻿](https://hub.docker.com/r/dynatrace/dynatrace-otel-collector)
 
-  + `dynatrace/dynatrace-otel-collector:0.48.0`
+  + `dynatrace/dynatrace-otel-collector:0.52.0`
