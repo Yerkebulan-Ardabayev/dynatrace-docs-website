@@ -26,24 +26,59 @@ MAX="${MAX:-0}"
 PUSH="${PUSH:-0}"
 STALL_RETRIES="${STALL_RETRIES:-0}"
 STALL_WAIT="${STALL_WAIT:-1800}"
-PY="$REPO/.venv/bin/python"
-[ -x "$PY" ] || PY="python3"
+# Интерпретатор можно навязать снаружи (PY=...). Это нужно launchd-агенту:
+# venv-питон 3.12 лежит в ~/Desktop, а питон 3.12 не наследует Full Disk Access
+# от bash и падает с EPERM на любом чтении из защищённой папки. Питон 3.14 FDA
+# наследует, а вся цепочка перевода обходится стандартной библиотекой, поэтому
+# агенту достаточно подсунуть системный 3.14, не пересобирая venv.
+if [ -z "${PY:-}" ]; then
+    PY="$REPO/.venv/bin/python"
+    [ -x "$PY" ] || PY="python3"
+fi
 
 LOG_DIR="$REPO/logs"
 mkdir -p "$LOG_DIR"
 LOG="$LOG_DIR/translate-$(date +%Y%m%d-%H%M%S).log"
 
-# Один прогон за раз: ночная джоба не должна наложиться на ручной запуск.
+# Один прогон за раз: дневная джоба не должна наложиться на ручной запуск.
+# Замок хранит pid владельца, иначе прогон, убитый по SIGKILL или уснувший
+# вместе с машиной, оставляет каталог навсегда: trap на такое не срабатывает,
+# и каждый следующий запуск молча выходит с кодом 0, выглядя здоровым.
 LOCK="$REPO/.translate.lock"
 if ! mkdir "$LOCK" 2>/dev/null; then
-    echo "Уже идёт другой прогон перевода ($LOCK), выхожу." | tee -a "$LOG"
-    exit 0
+    OTHER="$(cat "$LOCK/pid" 2>/dev/null || true)"
+    if [ -z "$OTHER" ]; then
+        # Замок без pid оставила прежняя версия скрипта: живость не проверить,
+        # поэтому считаем прогон идущим, чтобы не запустить второй поверх первого.
+        echo "Замок $LOCK без pid, считаю прогон живым и выхожу. Если прогона нет, удали каталог." | tee -a "$LOG"
+        exit 0
+    fi
+    if kill -0 "$OTHER" 2>/dev/null; then
+        echo "Уже идёт другой прогон перевода (pid $OTHER), выхожу." | tee -a "$LOG"
+        exit 0
+    fi
+    echo "Замок $LOCK остался от мёртвого процесса $OTHER, снимаю и продолжаю." | tee -a "$LOG"
+    rm -rf "$LOCK"
+    mkdir "$LOCK" 2>/dev/null || { echo "Не смог взять замок $LOCK, выхожу." | tee -a "$LOG"; exit 0; }
 fi
-trap 'rmdir "$LOCK" 2>/dev/null' EXIT
+echo $$ >"$LOCK/pid"
+trap 'rm -rf "$LOCK" 2>/dev/null' EXIT
 
 log() { echo "[$(date +%H:%M:%S)] $*" | tee -a "$LOG"; }
 
 log "=== Перевод очереди: BATCH=$BATCH MAX=$MAX PUSH=$PUSH ==="
+
+# Предполётная проверка интерпретатора. Под launchd питон 3.12 не наследует
+# Full Disk Access и падает с EPERM на любом чтении из ~/Desktop, а прогон при
+# этом выглядит успешным: detect_changes молчит в лог, очередь читается как 0,
+# скрипт пишет «Очередь пуста» и выходит с кодом 0. Ломаемся громко и с 78
+# (EX_CONFIG), чтобы поломка была видна в launchctl print, а не пряталась.
+if ! "$PY" -c 'import pathlib; pathlib.Path("scripts/detect_changes.py").read_text()' >>"$LOG" 2>&1; then
+    log "СТОП: интерпретатор $PY не может прочитать репозиторий."
+    log "Похоже на TCC/Full Disk Access под launchd. Проверь вручную:"
+    log "  $PY -c 'import pathlib; print(len(pathlib.Path(\"scripts/detect_changes.py\").read_text()))'"
+    exit 78
+fi
 
 # Свежий английский корпус: его каждую ночь коммитит GitHub Actions.
 git pull --ff-only >>"$LOG" 2>&1 || log "ВНИМАНИЕ: git pull не прошёл, работаю на текущем состоянии"
