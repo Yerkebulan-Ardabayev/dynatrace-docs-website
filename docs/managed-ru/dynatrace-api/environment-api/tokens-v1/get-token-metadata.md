@@ -1,23 +1,22 @@
 ---
-title: Tokens API v1 - GET метаданные токена
+title: Tokens API v1 - GET token metadata
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/tokens-v1/get-token-metadata
-scraped: 2026-05-12T12:11:23.787138
 ---
 
-# Tokens API v1 - GET метаданные токена
+# Tokens API v1 - GET token metadata
 
-# Tokens API v1 - GET метаданные токена
+# Tokens API v1 - GET token metadata
 
 * Справочник
 * Обновлено 17 мая 2022 г.
 
-Этот API устарел. Используйте вместо него [Access tokens API](/managed/dynatrace-api/environment-api/tokens-v2/api-tokens "Управление токенами аутентификации Dynatrace API.").
+Этот API устарел. Вместо него используй [Access tokens API](/managed/dynatrace-api/environment-api/tokens-v2/api-tokens "Manage Dynatrace API authentication tokens.").
 
-Перечисляет метаданные токена аутентификации Dynatrace API по ID токена. Сам токен **не** раскрывается.
+Выводит список метаданных токена аутентификации Dynatrace API по ID токена. Сам токен при этом **не** раскрывается.
 
-Кроме того, метаданные можно получить, отправив сам токен через вызов [POST token metadata](/managed/dynatrace-api/environment-api/tokens-v1/post-token-metadata "Узнайте, как использовать Dynatrace API для поиска метаданных токена аутентификации Dynatrace API.").
+Также можно получить метаданные, передав сам токен через вызов [POST token metadata](/managed/dynatrace-api/environment-api/tokens-v1/post-token-metadata "Learn how to use the Dynatrace API to look up the metadata of a Dynatrace API authentication token.").
 
-Запрос возвращает payload `application/json`.
+Запрос возвращает данные в формате `application/json`.
 
 |  |  |  |
 | --- | --- | --- |
@@ -26,15 +25,15 @@ scraped: 2026-05-12T12:11:23.787138
 
 ## Аутентификация
 
-Для выполнения запроса необходим access token со scope `TenantTokenManagement`.
+Для выполнения этого запроса нужен токен доступа с областью действия `TenantTokenManagement`.
 
-О том, как получить и использовать токен, см. [Токены и аутентификация](/managed/discover-dynatrace/references/dynatrace-api/basics/dynatrace-api-authentication).
+О том, как получить и использовать такой токен, читай в разделе [Tokens and authentication](/managed/discover-dynatrace/references/dynatrace-api/basics/dynatrace-api-authentication).
 
 ## Параметры
 
-| Параметр | Тип | Описание | В | Обязательность |
+| Параметр | Тип | Описание | Расположение | Обязательный |
 | --- | --- | --- | --- | --- |
-| id | string | ID требуемого токена. | path | Обязательный |
+| id | string | ID нужного токена. | path | Обязательный |
 
 ## Ответ
 
@@ -42,8 +41,8 @@ scraped: 2026-05-12T12:11:23.787138
 
 | Код | Тип | Описание |
 | --- | --- | --- |
-| **200** | [TokenMetadata](#openapi-definition-TokenMetadata) | Успех |
-| **404** | [ErrorEnvelope](#openapi-definition-ErrorEnvelope) | Неудача. Запрошенный токен не найден. |
+| **200** | [TokenMetadata](#openapi-definition-TokenMetadata) | Успешно |
+| **404** | [ErrorEnvelope](#openapi-definition-ErrorEnvelope) | Ошибка. Запрошенный токен не найден. |
 | **4XX** | [ErrorEnvelope](#openapi-definition-ErrorEnvelope) | Ошибка на стороне клиента. |
 | **5XX** | [ErrorEnvelope](#openapi-definition-ErrorEnvelope) | Ошибка на стороне сервера. |
 
@@ -55,14 +54,14 @@ scraped: 2026-05-12T12:11:23.787138
 
 | Элемент | Тип | Описание |
 | --- | --- | --- |
-| created | integer | Время создания в виде unix-метки времени в миллисекундах. |
-| expires | integer | Время истечения срока действия в виде unix-метки времени в миллисекундах. |
+| created | integer | Время создания в виде unix-времени в миллисекундах. |
+| expires | integer | Время истечения срока действия в виде unix-времени в миллисекундах. |
 | id | string | ID токена. |
-| lastUse | integer | Unix-метка времени в миллисекундах, когда токен использовался в последний раз. |
+| lastUse | integer | Unix-время в миллисекундах последнего использования токена. |
 | name | string | Имя токена. |
-| personalAccessToken | boolean | Токен является [персональным access-токеном](https://dt-url.net/wm03sop) (`true`) или API-токеном (`false`). |
+| personalAccessToken | boolean | Указывает, является ли токен [персональным токеном доступа﻿](https://dt-url.net/wm03sop?dt=m) (`true`) или токеном API (`false`). |
 | revoked | boolean | Статус отзыва токена. Отозванные токены отключены. |
-| scopes | string[] | Список scope, назначенных токену. Элемент может принимать значения * `ActiveGateCertManagement` * `AdvancedSyntheticIntegration` * `CaptureRequestData` * `DTAQLAccess` * `DataExport` * `DataImport` * `DataPrivacy` * `Davis` * `DiagnosticExport` * `DssFileManagement` * `ExternalSyntheticIntegration` * `InstallerDownload` * `LogExport` * `MemoryDump` * `Mobile` * `PluginUpload` * `ReadConfig` * `ReadSyntheticData` * `RestRequestForwarding` * `RumBrowserExtension` * `RumJavaScriptTagManagement` * `SupportAlert` * `TenantTokenManagement` * `UserSessionAnonymization` * `ViewDashboard` * `ViewReport` * `WriteConfig` * `WriteSyntheticData` * `activeGateTokenManagement.create` * `activeGateTokenManagement.read` * `activeGateTokenManagement.write` * `activeGates.read` * `activeGates.write` * `adaptiveTrafficManagement.read` * `agentTokenManagement.read` * `apiTokens.read` * `apiTokens.write` * `attacks.read` * `attacks.write` * `auditLogs.read` * `bizevents.ingest` * `credentialVault.read` * `credentialVault.write` * `entities.read` * `entities.write` * `events.ingest` * `events.read` * `extensionConfigurationActions.write` * `extensionConfigurations.read` * `extensionConfigurations.write` * `extensionDiscoveryJmx.read` * `extensionEnvironment.read` * `extensionEnvironment.write` * `extensions.read` * `extensions.write` * `geographicRegions.read` * `hub.install` * `hub.read` * `hub.write` * `javaScriptMappingFiles.read` * `javaScriptMappingFiles.write` * `logs.ingest` * `logs.read` * `metrics.ingest` * `metrics.read` * `metrics.write` * `networkZones.read` * `networkZones.write` * `oneAgents.read` * `oneAgents.write` * `openTelemetryTrace.ingest` * `openpipeline.events` * `openpipeline.events.custom` * `openpipeline.events_sdlc` * `openpipeline.events_sdlc.custom` * `openpipeline.events_security` * `openpipeline.events_security.custom` * `problems.read` * `problems.write` * `releases.read` * `rumCookieNames.read` * `rumManualInsertionTags.read` * `securityProblems.read` * `securityProblems.write` * `settings.read` * `settings.write` * `slo.read` * `slo.write` * `syntheticExecutions.read` * `syntheticExecutions.write` * `syntheticLocations.read` * `syntheticLocations.write` * `tenantTokenRotation.write` * `traces.lookup` * `unifiedAnalysis.read` |
+| scopes | string[] | Список областей действия, назначенных токену. Элемент может содержать следующие значения * `ActiveGateCertManagement` * `AdvancedSyntheticIntegration` * `CaptureRequestData` * `DTAQLAccess` * `DataExport` * `DataImport` * `DataPrivacy` * `Davis` * `DiagnosticExport` * `DssFileManagement` * `ExternalSyntheticIntegration` * `InstallerDownload` * `LogExport` * `MemoryDump` * `Mobile` * `PluginUpload` * `ReadConfig` * `ReadSyntheticData` * `RestRequestForwarding` * `RumBrowserExtension` * `RumJavaScriptTagManagement` * `SupportAlert` * `TenantTokenManagement` * `UserSessionAnonymization` * `ViewDashboard` * `ViewReport` * `WriteConfig` * `WriteSyntheticData` * `activeGateTokenManagement.create` * `activeGateTokenManagement.read` * `activeGateTokenManagement.write` * `activeGates.read` * `activeGates.write` * `adaptiveTrafficManagement.read` * `agentTokenManagement.read` * `apiTokens.read` * `apiTokens.write` * `attacks.read` * `attacks.write` * `auditLogs.read` * `bizevents.ingest` * `credentialVault.read` * `credentialVault.write` * `entities.read` * `entities.write` * `events.ingest` * `events.read` * `extensionConfigurationActions.write` * `extensionConfigurations.read` * `extensionConfigurations.write` * `extensionDiscoveryJmx.read` * `extensionDiscoveryPmi.read` * `extensionEnvironment.read` * `extensionEnvironment.write` * `extensions.read` * `extensions.write` * `geographicRegions.read` * `hub.install` * `hub.read` * `hub.write` * `javaScriptMappingFiles.read` * `javaScriptMappingFiles.write` * `logs.ingest` * `logs.read` * `metrics.ingest` * `metrics.read` * `metrics.write` * `networkZones.read` * `networkZones.write` * `oneAgents.read` * `oneAgents.write` * `openTelemetryTrace.ingest` * `openpipeline.events` * `openpipeline.events.custom` * `openpipeline.events_sdlc` * `openpipeline.events_sdlc.custom` * `openpipeline.events_security` * `openpipeline.events_security.custom` * `openpipeline.events_smartscape` * `problems.read` * `problems.write` * `releases.read` * `rumCookieNames.read` * `rumManualInsertionTags.read` * `securityProblems.read` * `securityProblems.write` * `settings.read` * `settings.write` * `slo.read` * `slo.write` * `syntheticExecutions.read` * `syntheticExecutions.write` * `syntheticLocations.read` * `syntheticLocations.write` * `tenantTokenRotation.write` * `traces.lookup` * `unifiedAnalysis.read` |
 | userId | string | Владелец токена. |
 
 #### Объект `ErrorEnvelope`
@@ -76,7 +75,7 @@ scraped: 2026-05-12T12:11:23.787138
 | Элемент | Тип | Описание |
 | --- | --- | --- |
 | code | integer | HTTP-код состояния |
-| constraintViolations | [ConstraintViolation[]](#openapi-definition-ConstraintViolation) | Список нарушений ограничений |
+| constraintViolations | [ConstraintViolation](#openapi-definition-ConstraintViolation)[] | Список нарушений ограничений |
 | message | string | Сообщение об ошибке |
 
 #### Объект `ConstraintViolation`
@@ -87,10 +86,10 @@ scraped: 2026-05-12T12:11:23.787138
 | --- | --- | --- |
 | location | string | - |
 | message | string | - |
-| parameterLocation | string | -Элемент может принимать значения * `HEADER` * `PATH` * `PAYLOAD_BODY` * `QUERY` |
+| parameterLocation | string | -Элемент может содержать следующие значения * `HEADER` * `PATH` * `PAYLOAD_BODY` * `QUERY` |
 | path | string | - |
 
-### JSON-модели тела ответа
+### Модели тела ответа JSON
 
 ```
 {
@@ -210,9 +209,9 @@ scraped: 2026-05-12T12:11:23.787138
 
 ## Пример
 
-В этом примере запрос запрашивает метаданные токена **admin**, который имеет ID **d5836312-5790-4e80-afcf-09971954c3ea**.
+В этом примере запрос получает метаданные токена **admin**, у которого ID **d5836312-5790-4e80-afcf-09971954c3ea**.
 
-API-токен передаётся в заголовке **Authorization**.
+Токен API передаётся в заголовке **Authorization**.
 
 Токен, как он отображается в интерфейсе Dynatrace, имеет следующие настройки:
 

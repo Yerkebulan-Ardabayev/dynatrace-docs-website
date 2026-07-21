@@ -1,21 +1,20 @@
 ---
-title: Synthetic monitors API v2 - GET все мониторы Synthetic
+title: Synthetic monitors API v2 - GET all Synthetic monitors
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/synthetic-v2/synthetic-network-availability-monitors/get-all-monitors
-scraped: 2026-05-12T12:15:48.529986
 ---
 
-# Synthetic monitors API v2 - GET все мониторы Synthetic
+# Synthetic monitors API v2 - GET all Synthetic monitors
 
-# Synthetic monitors API v2 - GET все мониторы Synthetic
+# Synthetic monitors API v2 - GET all Synthetic monitors
 
-* Справочник
-* Updated on May 05, 2026
+* Справка
+* Обновлено 05 мая 2026 г.
 
-Возвращает список всех мониторов Synthetic в вашем окружении.
+Выводит список всех Synthetic мониторов в среде.
 
-Метод доступен только для браузерных и NAM-мониторов.
+Метод доступен только для browser и NAM мониторов.
 
-Запрос возвращает payload в формате `application/json`.
+Запрос возвращает данные в формате `application/json`.
 
 |  |  |  |
 | --- | --- | --- |
@@ -24,15 +23,15 @@ scraped: 2026-05-12T12:15:48.529986
 
 ## Аутентификация
 
-Для выполнения запроса нужен access-токен со scope `settings.read`.
+Для выполнения этого запроса нужен токен доступа с областью действия `settings.read`.
 
-О том, как получить и использовать токен, смотрите [Tokens and authentication](/managed/discover-dynatrace/references/dynatrace-api/basics/dynatrace-api-authentication).
+О том, как получить и использовать токен, читайте в разделе [Токены и аутентификация](/managed/discover-dynatrace/references/dynatrace-api/basics/dynatrace-api-authentication).
 
 ## Параметры
 
-| Параметр | Тип | Описание | В | Обязательный |
+| Параметр | Тип | Описание | Расположение | Обязательный |
 | --- | --- | --- | --- | --- |
-| monitorSelector | string | Определяет область запроса. В ответ попадают только мониторы, удовлетворяющие указанным критериям.  Можно добавить один или несколько перечисленных ниже критериев. Для каждого критерия можно указать несколько значений через запятую, если не оговорено иное. Если указано несколько значений, применяется логика **OR**.  * Тип монитора: `type(HTTP,MULTI_PROTOCOL)`. Возможные значения: 'HTTP', 'BROWSER', 'THIRD\_PARTY', 'MULTI\_PROTOCOL' (учтите, что в настоящее время поддерживаются только 'BROWSER' и 'MULTI\_PROTOCOL'). * ID зоны управления: `managementZoneId(1, 2)`. * Synthetic Location ME ID: `location(SYNTHETIC_LOCATION-123)`. * Monitored host ME ID: `monitoredEntity(HOST-123)`. * Теги монитора: `tag([context]key:value,key:value,key)`. Теги в форматах `[context]key:value`, `key:value` и `key` распознаются и разбираются автоматически. Если тег только с ключом содержит двоеточие (`:`), его необходимо экранировать обратной косой (`\`). Иначе тег будет разобран как `key:value tag`. Все значения тегов регистрозависимы. * Включённость монитора: `enabled(true)`.  Чтобы указать несколько критериев, перечислите их через запятую (`,`). В ответ попадут только результаты, соответствующие **всем** критериям. | query | Необязательный |
+| monitorSelector | string | Определяет область запроса. В ответ попадают только мониторы, соответствующие указанным критериям.  Можно добавить один или несколько критериев из перечисленных ниже. Для каждого критерия можно указать несколько значений через запятую, если не указано иное. Если указано несколько значений, применяется логика **ИЛИ**.  * Тип монитора: `type(HTTP,MULTI_PROTOCOL)`. Возможные значения: 'HTTP', 'BROWSER', 'THIRD\_PARTY', 'MULTI\_PROTOCOL' (обратите внимание, что в настоящее время поддерживаются только 'BROWSER' и 'MULTI\_PROTOCOL'). * ID management zone: `managementZoneId(1, 2)`. * ME ID Synthetic Location: `location(SYNTHETIC_LOCATION-123)`. * ME ID отслеживаемого хоста: `monitoredEntity(HOST-123)`. * Теги монитора: `tag([context]key:value,key:value,key)`. Теги в форматах `[context]key:value`, `key:value` и `key` определяются и разбираются автоматически. Если тег, состоящий только из ключа, содержит двоеточие (`:`), нужно экранировать двоеточие обратной косой чертой (`\`). В противном случае тег будет разобран как `key:value tag`. Все значения тегов чувствительны к регистру. * Включение монитора: `enabled(true)`.  Чтобы задать несколько критериев, разделяйте их запятой (`,`). В ответ попадают только результаты, соответствующие **всем** критериям. | query | Опционально |
 
 ## Ответ
 
@@ -40,7 +39,7 @@ scraped: 2026-05-12T12:15:48.529986
 
 | Код | Тип | Описание |
 | --- | --- | --- |
-| **200** | [SyntheticMonitorListDto](#openapi-definition-SyntheticMonitorListDto) | Успех |
+| **200** | [SyntheticMonitorListDto](#openapi-definition-SyntheticMonitorListDto) | Успешно |
 | **4XX** | [ErrorEnvelope](#openapi-definition-ErrorEnvelope) | Ошибка на стороне клиента. |
 | **5XX** | [ErrorEnvelope](#openapi-definition-ErrorEnvelope) | Ошибка на стороне сервера. |
 
@@ -48,49 +47,49 @@ scraped: 2026-05-12T12:15:48.529986
 
 #### Объект `SyntheticMonitorListDto`
 
-Список доступных синтетических мониторов.
+Список доступных Synthetic мониторов.
 
-| Поле | Тип | Описание |
+| Элемент | Тип | Описание |
 | --- | --- | --- |
-| monitors | [SyntheticMonitorSummaryDto[]](#openapi-definition-SyntheticMonitorSummaryDto) | Список мониторов. |
+| monitors | [SyntheticMonitorSummaryDto](#openapi-definition-SyntheticMonitorSummaryDto)[] | Список мониторов. |
 
 #### Объект `SyntheticMonitorSummaryDto`
 
 Базовые данные монитора.
 
-| Поле | Тип | Описание |
+| Элемент | Тип | Описание |
 | --- | --- | --- |
 | enabled | boolean | Если true, монитор включён. |
-| entityId | string | Entity id монитора. |
-| name | string | Имя монитора. |
-| type | string | -Поле может принимать значения: * `BROWSER` * `HTTP` * `MULTI_PROTOCOL` * `THIRD_PARTY` |
+| entityId | string | ID сущности монитора. |
+| name | string | Название монитора. |
+| type | string | Тип монитора. Элемент может содержать следующие значения * `MULTI_PROTOCOL` * `BROWSER` * `HTTP` |
 
 #### Объект `ErrorEnvelope`
 
-| Поле | Тип | Описание |
+| Элемент | Тип | Описание |
 | --- | --- | --- |
 | error | [Error](#openapi-definition-Error) | - |
 
 #### Объект `Error`
 
-| Поле | Тип | Описание |
+| Элемент | Тип | Описание |
 | --- | --- | --- |
-| code | integer | HTTP-код состояния |
-| constraintViolations | [ConstraintViolation[]](#openapi-definition-ConstraintViolation) | Список нарушений ограничений |
+| code | integer | Код статуса HTTP |
+| constraintViolations | [ConstraintViolation](#openapi-definition-ConstraintViolation)[] | Список нарушений ограничений |
 | message | string | Сообщение об ошибке |
 
 #### Объект `ConstraintViolation`
 
 Список нарушений ограничений
 
-| Поле | Тип | Описание |
+| Элемент | Тип | Описание |
 | --- | --- | --- |
 | location | string | - |
 | message | string | - |
-| parameterLocation | string | -Поле может принимать значения: * `HEADER` * `PATH` * `PAYLOAD_BODY` * `QUERY` |
+| parameterLocation | string | -Элемент может содержать следующие значения * `HEADER` * `PATH` * `PAYLOAD_BODY` * `QUERY` |
 | path | string | - |
 
-### JSON-модели тела ответа
+### Примеры моделей тела ответа JSON
 
 ```
 {
@@ -214,4 +213,4 @@ scraped: 2026-05-12T12:15:48.529986
 
 ## Связанные темы
 
-* [Synthetic Monitoring](/managed/observe/digital-experience/synthetic-monitoring "Узнайте о Synthetic Monitoring и о том, как создать браузерный монитор одного URL, браузерный clickpath или HTTP-монитор.")
+* [Synthetic Monitoring](/managed/observe/digital-experience/synthetic-monitoring "Узнайте о Synthetic Monitoring и о том, как создать монитор для одного URL типа browser, browser clickpath или HTTP-монитор.")

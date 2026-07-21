@@ -5,16 +5,17 @@ source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/setting
 
 # Settings 2.0 - Available schemas
 
-# Settings 2.0 - Available schemas
+# Settings 2.0: доступные схемы
 
-* Reference
-* Published Jan 26, 2023
 
-| Имя | Schema | Scopes |
+* Справка
+* Опубликовано 26 января 2023 г.
+
+| Название | Схема | Область действия |
 | --- | --- | --- |
-| Агенты Cloud SRE | `app:community.cloudsreagents:cloudsreagent-agent` | `environment` |
-| Профили взаимодействия Cloud SRE | `app:community.cloudsreagents:cloudsreagent-interactionprofile` | `environment` |
-| [Подключения AbuseIPDB](/managed/dynatrace-api/environment-api/settings/schemas/app-dynatrace-abuseipdb-connections) | `app:dynatrace.abuseipdb:connections` | `environment` |
+| [Cloud SRE Agents](/managed/dynatrace-api/environment-api/settings/schemas/app-community-cloudsreagents-cloudsreagent-agent) | `app:community.cloudsreagents:cloudsreagent-agent` | `environment` |
+| [Cloud SRE Interaction Profiles](/managed/dynatrace-api/environment-api/settings/schemas/app-community-cloudsreagents-cloudsreagent-interactionprofile) | `app:community.cloudsreagents:cloudsreagent-interactionprofile` | `environment` |
+| [AbuseIPDB Connections](/managed/dynatrace-api/environment-api/settings/schemas/app-dynatrace-abuseipdb-connections) | `app:dynatrace.abuseipdb:connections` | `environment` |
 | [Amazon ECR](/managed/dynatrace-api/environment-api/settings/schemas/app-dynatrace-amazon-ecr-connections) | `app:dynatrace.amazon.ecr:connections` | `environment` |
 | [Amazon GuardDuty](/managed/dynatrace-api/environment-api/settings/schemas/app-dynatrace-amazon-guardduty-connections) | `app:dynatrace.amazon.guardduty:connections` | `environment` |
 | [Microsoft Entra ID](/managed/dynatrace-api/environment-api/settings/schemas/app-dynatrace-azure-connector-microsoft-entra-identity-developer-connection) | `app:dynatrace.azure.connector:microsoft-entra-identity-developer-connection` | `environment` |
@@ -22,11 +23,11 @@ source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/setting
 | [Business flow](/managed/dynatrace-api/environment-api/settings/schemas/app-dynatrace-biz-flow-biz-flow-settings) | `app:dynatrace.biz.flow:biz-flow-settings` | `environment` |
 | [Salesforce Insights](/managed/dynatrace-api/environment-api/settings/schemas/app-dynatrace-biz-salesforce-insights-biz-salesforce-insights-settings) | `app:dynatrace.biz.salesforce.insights:biz-salesforce-insights-settings` | `environment` |
 | [Compliance Assistant](/managed/dynatrace-api/environment-api/settings/schemas/app-dynatrace-compliance-assistant-comp-ass-settings) | `app:dynatrace.compliance.assistant:comp-ass-settings` | `environment` |
-| Сбор переменных класса | `app:dynatrace.devobs.debugger:class.variables.collection` | `environment` |
-| [Git-серверы On-Premise](/managed/dynatrace-api/environment-api/settings/schemas/app-dynatrace-devobs-debugger-git-on-prem) | `app:dynatrace.devobs.debugger:git.on.prem` | `environment` |
-| [Schema правил по умолчанию для находок Discovery](/managed/dynatrace-api/environment-api/settings/schemas/app-dynatrace-discovery-coverage-discovery-findings-default-rules-schema) | `app:dynatrace.discovery.coverage:discovery.findings.default.rules.schema` | `environment` |
-| Позволяет добавлять пользовательские методы оценки LLM-as-Judge | `app:dynatrace.genai.observability:custom-evaluation-method` | `environment` |
-| Позволяет добавлять подключения LLM-провайдеров | `app:dynatrace.genai.observability:llm-provider` | `environment` |
+| [Class Variables Collection](/managed/dynatrace-api/environment-api/settings/schemas/app-dynatrace-devobs-debugger-class-variables-collection) | `app:dynatrace.devobs.debugger:class.variables.collection` | `environment` |
+| [Git On-Premise Servers](/managed/dynatrace-api/environment-api/settings/schemas/app-dynatrace-devobs-debugger-git-on-prem) | `app:dynatrace.devobs.debugger:git.on.prem` | `environment` |
+| [Discovery findings default rules schema](/managed/dynatrace-api/environment-api/settings/schemas/app-dynatrace-discovery-coverage-discovery-findings-default-rules-schema) | `app:dynatrace.discovery.coverage:discovery.findings.default.rules.schema` | `environment` |
+| [Позволяет добавлять собственные методы оценки LLM-as-Judge](/managed/dynatrace-api/environment-api/settings/schemas/app-dynatrace-genai-observability-custom-evaluation-method) | `app:dynatrace.genai.observability:custom-evaluation-method` | `environment` |
+| [Позволяет добавлять подключения к провайдерам LLM](/managed/dynatrace-api/environment-api/settings/schemas/app-dynatrace-genai-observability-llm-provider) | `app:dynatrace.genai.observability:llm-provider` | `environment` |
 | [Подключения GitHub](/managed/dynatrace-api/environment-api/settings/schemas/app-dynatrace-github-connector-connection) | `app:dynatrace.github.connector:connection` | `environment` |
 | [Подключения GitLab](/managed/dynatrace-api/environment-api/settings/schemas/app-dynatrace-gitlab-connector-connection) | `app:dynatrace.gitlab.connector:connection` | `environment` |
 | [Запросы Hub](/managed/dynatrace-api/environment-api/settings/schemas/app-dynatrace-hub-manage-permissions) | `app:dynatrace.hub:manage.permissions` | `environment` |
@@ -36,8 +37,8 @@ source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/setting
 | [Коннектор Kubernetes](/managed/dynatrace-api/environment-api/settings/schemas/app-dynatrace-kubernetes-connector-connection) | `app:dynatrace.kubernetes.connector:connection` | `environment` |
 | [Launcher](/managed/dynatrace-api/environment-api/settings/schemas/app-dynatrace-launcher-home-launchpad) | `app:dynatrace.launcher:home.launchpad` | `environment` |
 | [Microsoft Defender for Cloud](/managed/dynatrace-api/environment-api/settings/schemas/app-dynatrace-microsoft-defender-cloud-connections) | `app:dynatrace.microsoft.defender.cloud:connections` | `environment` |
-| Microsoft Sentinel | `app:dynatrace.microsoft.sentinel:connections` | `environment` |
-| [Подключения электронной почты Microsoft 365](/managed/dynatrace-api/environment-api/settings/schemas/app-dynatrace-microsoft365-connector-mail-connection) | `app:dynatrace.microsoft365.connector:mail.connection` | `environment` |
+| [Microsoft Sentinel](/managed/dynatrace-api/environment-api/settings/schemas/app-dynatrace-microsoft-sentinel-connections) | `app:dynatrace.microsoft.sentinel:connections` | `environment` |
+| [Подключения Microsoft 365 Email](/managed/dynatrace-api/environment-api/settings/schemas/app-dynatrace-microsoft365-connector-mail-connection) | `app:dynatrace.microsoft365.connector:mail.connection` | `environment` |
 | [Microsoft Teams](/managed/dynatrace-api/environment-api/settings/schemas/app-dynatrace-msteams-connection) | `app:dynatrace.msteams:connection` | `environment` |
 | [Подключения PagerDuty](/managed/dynatrace-api/environment-api/settings/schemas/app-dynatrace-pagerduty-connection) | `app:dynatrace.pagerduty:connection` | `environment` |
 | [Подключения Red Hat Ansible Automation Controller](/managed/dynatrace-api/environment-api/settings/schemas/app-dynatrace-redhat-ansible-automation-controller-connection) | `app:dynatrace.redhat.ansible:automation-controller.connection` | `environment` |
@@ -46,17 +47,17 @@ source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/setting
 | [Site Reliability Guardian](/managed/dynatrace-api/environment-api/settings/schemas/app-dynatrace-site-reliability-guardian-guardians) | `app:dynatrace.site.reliability.guardian:guardians` | `environment` |
 | [Slack](/managed/dynatrace-api/environment-api/settings/schemas/app-dynatrace-slack-connection) | `app:dynatrace.slack:connection` | `environment` |
 | [Подключения VirusTotal](/managed/dynatrace-api/environment-api/settings/schemas/app-dynatrace-virustotal-connections) | `app:dynatrace.virustotal:connections` | `environment` |
-| DPS Advisor: подключение Subscription API | `app:my.dps.advisor:dps-advisor-subscription-api-connection` | `environment` |
-| Настройка конверсий | `app:my.user.session.analytics:conversion-config` | `environment` |
-| Сохранённые сегменты | `app:my.user.session.analytics:segment-config` | `environment` |
+| [DPS Advisor, подключение Subscription API](/managed/dynatrace-api/environment-api/settings/schemas/app-my-dps-advisor-dps-advisor-subscription-api-connection) | `app:my.dps.advisor:dps-advisor-subscription-api-connection` | `environment` |
+| [Конфигурация конверсий](/managed/dynatrace-api/environment-api/settings/schemas/app-my-user-session-analytics-conversion-config) | `app:my.user.session.analytics:conversion-config` | `environment` |
+| [Сохранённые сегменты](/managed/dynatrace-api/environment-api/settings/schemas/app-my-user-session-analytics-segment-config) | `app:my.user.session.analytics:segment-config` | `environment` |
 | [Сетевая безопасность](/managed/dynatrace-api/environment-api/settings/schemas/builtin-activegate-token) | `builtin:activegate-token` | `environment` |
-| [Оповещения о связности](/managed/dynatrace-api/environment-api/settings/schemas/builtin-alerting-connectivity-alerts) | `builtin:alerting.connectivity-alerts` | `PROCESS_GROUP` - Process Group |
+| [Оповещения о подключении](/managed/dynatrace-api/environment-api/settings/schemas/builtin-alerting-connectivity-alerts) | `builtin:alerting.connectivity-alerts` | `PROCESS_GROUP` - Process Group |
 | [Окна обслуживания](/managed/dynatrace-api/environment-api/settings/schemas/builtin-alerting-maintenance-window) | `builtin:alerting.maintenance-window` | `environment` |
-| [Профили оповещений о проблемах](/managed/dynatrace-api/environment-api/settings/schemas/builtin-alerting-profile) | `builtin:alerting.profile` | `environment` |
+| [Профили оповещения о проблемах](/managed/dynatrace-api/environment-api/settings/schemas/builtin-alerting-profile) | `builtin:alerting.profile` | `environment` |
 | [Обнаружение аномалий для баз данных](/managed/dynatrace-api/environment-api/settings/schemas/builtin-anomaly-detection-databases) | `builtin:anomaly-detection.databases` | `SERVICE_METHOD` - Request  `SERVICE` - Service  `HOST_GROUP` - Host Group  `environment` |
 | [Правила обнаружения аномалий дисков](/managed/dynatrace-api/environment-api/settings/schemas/builtin-anomaly-detection-disk-rules) | `builtin:anomaly-detection.disk-rules` | `HOST_GROUP` - Host Group  `environment` |
 | [Обнаружение частых проблем](/managed/dynatrace-api/environment-api/settings/schemas/builtin-anomaly-detection-frequent-issues) | `builtin:anomaly-detection.frequent-issues` | `environment` |
-| Изменение базовой линии с учётом праздников | `builtin:anomaly-detection.holiday-aware-baseline` | `environment` |
+| [Изменение базовых показателей с учётом праздников](/managed/dynatrace-api/environment-api/settings/schemas/builtin-anomaly-detection-holiday-aware-baseline) | `builtin:anomaly-detection.holiday-aware-baseline` | `environment` |
 | [Обнаружение аномалий для классических сервисов AWS](/managed/dynatrace-api/environment-api/settings/schemas/builtin-anomaly-detection-infrastructure-aws) | `builtin:anomaly-detection.infrastructure-aws` | `environment` |
 | [Обнаружение аномалий для инфраструктуры: диск](/managed/dynatrace-api/environment-api/settings/schemas/builtin-anomaly-detection-infrastructure-disks) | `builtin:anomaly-detection.infrastructure-disks` | `HOST` - Host  `environment` |
 | [Обнаружение аномалий для инфраструктуры](/managed/dynatrace-api/environment-api/settings/schemas/builtin-anomaly-detection-infrastructure-disks-per-disk-override) | `builtin:anomaly-detection.infrastructure-disks.per-disk-override` | `DISK` - Disk |
@@ -67,48 +68,48 @@ source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/setting
 | [Обнаружение аномалий узла Kubernetes](/managed/dynatrace-api/environment-api/settings/schemas/builtin-anomaly-detection-kubernetes-node) | `builtin:anomaly-detection.kubernetes.node` | `KUBERNETES_CLUSTER` - Kubernetes cluster  `environment` |
 | [Обнаружение аномалий persistent volume claim Kubernetes](/managed/dynatrace-api/environment-api/settings/schemas/builtin-anomaly-detection-kubernetes-pvc) | `builtin:anomaly-detection.kubernetes.pvc` | `CLOUD_APPLICATION_NAMESPACE` - Kubernetes namespace  `KUBERNETES_CLUSTER` - Kubernetes cluster  `environment` |
 | [Обнаружение аномалий workload Kubernetes](/managed/dynatrace-api/environment-api/settings/schemas/builtin-anomaly-detection-kubernetes-workload) | `builtin:anomaly-detection.kubernetes.workload` | `CLOUD_APPLICATION_NAMESPACE` - Kubernetes namespace  `KUBERNETES_CLUSTER` - Kubernetes cluster  `environment` |
-| [Метрические события](/managed/dynatrace-api/environment-api/settings/schemas/builtin-anomaly-detection-metric-events) | `builtin:anomaly-detection.metric-events` | `environment` |
+| [События метрик](/managed/dynatrace-api/environment-api/settings/schemas/builtin-anomaly-detection-metric-events) | `builtin:anomaly-detection.metric-events` | `environment` |
 | [Обнаружение аномалий для пользовательских приложений](/managed/dynatrace-api/environment-api/settings/schemas/builtin-anomaly-detection-rum-custom) | `builtin:anomaly-detection.rum-custom` | `DEVICE_APPLICATION_METHOD` - Mobile app key user action  `CUSTOM_APPLICATION` - Custom Application  `environment` |
 | [Настройки роста частоты сбоев для пользовательских приложений](/managed/dynatrace-api/environment-api/settings/schemas/builtin-anomaly-detection-rum-custom-crash-rate-increase) | `builtin:anomaly-detection.rum-custom-crash-rate-increase` | `CUSTOM_APPLICATION` - Custom Application  `environment` |
 | [Обнаружение аномалий для мобильных приложений](/managed/dynatrace-api/environment-api/settings/schemas/builtin-anomaly-detection-rum-mobile) | `builtin:anomaly-detection.rum-mobile` | `DEVICE_APPLICATION_METHOD` - Mobile app key user action  `MOBILE_APPLICATION` - Mobile App  `environment` |
 | [Настройки роста частоты сбоев для мобильных приложений](/managed/dynatrace-api/environment-api/settings/schemas/builtin-anomaly-detection-rum-mobile-crash-rate-increase) | `builtin:anomaly-detection.rum-mobile-crash-rate-increase` | `MOBILE_APPLICATION` - Mobile App  `environment` |
 | [Обнаружение аномалий для приложений](/managed/dynatrace-api/environment-api/settings/schemas/builtin-anomaly-detection-rum-web) | `builtin:anomaly-detection.rum-web` | `APPLICATION_METHOD` - User Action  `APPLICATION` - Web application  `environment` |
 | [Обнаружение аномалий для сервисов](/managed/dynatrace-api/environment-api/settings/schemas/builtin-anomaly-detection-services) | `builtin:anomaly-detection.services` | `SERVICE_METHOD` - Request  `SERVICE` - Service  `HOST_GROUP` - Host Group  `environment` |
-| Обновление категории готовых оповещений | `builtin:anomaly.detection.alerts-category-update` | `environment` |
+| [Обновление категории готовых оповещений](/managed/dynatrace-api/environment-api/settings/schemas/builtin-anomaly-detection-alerts-category-update) | `builtin:anomaly.detection.alerts-category-update` | `environment` |
 | [Правила обнаружения API](/managed/dynatrace-api/environment-api/settings/schemas/builtin-apis-detection-rules) | `builtin:apis.detection-rules` | `environment` |
-| [Облачные среды разработки](/managed/dynatrace-api/environment-api/settings/schemas/builtin-app-engine-registry-cloud-development-environments) | `builtin:app-engine-registry.cloud-development-environments` | `environment` |
+| [Environmentы облачной разработки](/managed/dynatrace-api/environment-api/settings/schemas/builtin-app-engine-registry-cloud-development-environments) | `builtin:app-engine-registry.cloud-development-environments` | `environment` |
 | [Приложение Kubernetes](/managed/dynatrace-api/environment-api/settings/schemas/builtin-app-transition-kubernetes) | `builtin:app-transition.kubernetes` | `KUBERNETES_CLUSTER` - Kubernetes cluster  `environment` |
-| [Vulnerability Analytics: правила мониторинга уязвимостей уровня кода](/managed/dynatrace-api/environment-api/settings/schemas/builtin-appsec-code-level-vulnerability-rule-settings) | `builtin:appsec.code-level-vulnerability-rule-settings` | `environment` |
-| [Профили оповещений об уязвимостях](/managed/dynatrace-api/environment-api/settings/schemas/builtin-appsec-notification-alerting-profile) | `builtin:appsec.notification-alerting-profile` | `environment` |
-| [Профили оповещений об атаках](/managed/dynatrace-api/environment-api/settings/schemas/builtin-appsec-notification-attack-alerting-profile) | `builtin:appsec.notification-attack-alerting-profile` | `environment` |
-| [Уведомления безопасности](/managed/dynatrace-api/environment-api/settings/schemas/builtin-appsec-notification-integration) | `builtin:appsec.notification-integration` | `environment` |
-| [Vulnerability Analytics: правила мониторинга сторонних уязвимостей](/managed/dynatrace-api/environment-api/settings/schemas/builtin-appsec-rule-settings) | `builtin:appsec.rule-settings` | `environment` |
+| [Vulnerability Analytics: правила мониторинга для уязвимостей на уровне кода](/managed/dynatrace-api/environment-api/settings/schemas/builtin-appsec-code-level-vulnerability-rule-settings) | `builtin:appsec.code-level-vulnerability-rule-settings` | `environment` |
+| [Профили оповещения об уязвимостях](/managed/dynatrace-api/environment-api/settings/schemas/builtin-appsec-notification-alerting-profile) | `builtin:appsec.notification-alerting-profile` | `environment` |
+| [Профили оповещения об атаках](/managed/dynatrace-api/environment-api/settings/schemas/builtin-appsec-notification-attack-alerting-profile) | `builtin:appsec.notification-attack-alerting-profile` | `environment` |
+| [Уведомления о безопасности](/managed/dynatrace-api/environment-api/settings/schemas/builtin-appsec-notification-integration) | `builtin:appsec.notification-integration` | `environment` |
+| [Vulnerability Analytics: правила мониторинга для уязвимостей сторонних компонентов](/managed/dynatrace-api/environment-api/settings/schemas/builtin-appsec-rule-settings) | `builtin:appsec.rule-settings` | `environment` |
 | [Vulnerability Analytics: общие настройки](/managed/dynatrace-api/environment-api/settings/schemas/builtin-appsec-runtime-vulnerability-detection) | `builtin:appsec.runtime-vulnerability-detection` | `environment` |
-| [Vulnerability Analytics: правила мониторинга Kubernetes для сторонних уязвимостей](/managed/dynatrace-api/environment-api/settings/schemas/builtin-appsec-third-party-vulnerability-kubernetes-label-rule-settings) | `builtin:appsec.third-party-vulnerability-kubernetes-label-rule-settings` | `environment` |
-| [Vulnerability Analytics: правила мониторинга сторонних уязвимостей](/managed/dynatrace-api/environment-api/settings/schemas/builtin-appsec-third-party-vulnerability-rule-settings) | `builtin:appsec.third-party-vulnerability-rule-settings` | `environment` |
+| [Vulnerability Analytics: правила мониторинга Kubernetes для уязвимостей сторонних компонентов](/managed/dynatrace-api/environment-api/settings/schemas/builtin-appsec-third-party-vulnerability-kubernetes-label-rule-settings) | `builtin:appsec.third-party-vulnerability-kubernetes-label-rule-settings` | `environment` |
+| [Vulnerability Analytics: правила мониторинга для уязвимостей сторонних компонентов](/managed/dynatrace-api/environment-api/settings/schemas/builtin-appsec-third-party-vulnerability-rule-settings) | `builtin:appsec.third-party-vulnerability-rule-settings` | `environment` |
 | [Разрешённые атрибуты](/managed/dynatrace-api/environment-api/settings/schemas/builtin-attribute-allow-list) | `builtin:attribute-allow-list` | `environment` |
 | [Заблокированные атрибуты](/managed/dynatrace-api/environment-api/settings/schemas/builtin-attribute-block-list) | `builtin:attribute-block-list` | `environment` |
 | [Маскирование данных атрибутов](/managed/dynatrace-api/environment-api/settings/schemas/builtin-attribute-masking) | `builtin:attribute-masking` | `environment` |
-| [Предпочтения](/managed/dynatrace-api/environment-api/settings/schemas/builtin-attributes-preferences) | `builtin:attributes-preferences` | `environment` |
-| [События аудита логов](/managed/dynatrace-api/environment-api/settings/schemas/builtin-audit-log) | `builtin:audit-log` | `environment` |
-| Подтверждение workflow автоматизации | `builtin:automation.approval` | `environment` |
-| [Мониторинг доступности групп процессов](/managed/dynatrace-api/environment-api/settings/schemas/builtin-availability-process-group-alerting) | `builtin:availability.process-group-alerting` | `PROCESS_GROUP` - Process Group |
-| [Назначение бакета для бизнес-событий](/managed/dynatrace-api/environment-api/settings/schemas/builtin-bizevents-processing-buckets-rule) | `builtin:bizevents-processing-buckets.rule` | `environment` |
+| [Настройки](/managed/dynatrace-api/environment-api/settings/schemas/builtin-attributes-preferences) | `builtin:attributes-preferences` | `environment` |
+| [Журнал событий аудита](/managed/dynatrace-api/environment-api/settings/schemas/builtin-audit-log) | `builtin:audit-log` | `environment` |
+| [Утверждение workflow автоматизации](/managed/dynatrace-api/environment-api/settings/schemas/builtin-automation-approval) | `builtin:automation.approval` | `environment` |
+| [Мониторинг доступности группы процессов](/managed/dynatrace-api/environment-api/settings/schemas/builtin-availability-process-group-alerting) | `builtin:availability.process-group-alerting` | `PROCESS_GROUP` - Process Group |
+| [Назначение бизнес-событий бакету](/managed/dynatrace-api/environment-api/settings/schemas/builtin-bizevents-processing-buckets-rule) | `builtin:bizevents-processing-buckets.rule` | `environment` |
 | [Извлечение метрик из бизнес-событий](/managed/dynatrace-api/environment-api/settings/schemas/builtin-bizevents-processing-metrics-rule) | `builtin:bizevents-processing-metrics.rule` | `environment` |
 | [Обработка бизнес-событий](/managed/dynatrace-api/environment-api/settings/schemas/builtin-bizevents-processing-pipelines-rule) | `builtin:bizevents-processing-pipelines.rule` | `environment` |
-| Контекст безопасности бизнес-событий | `builtin:bizevents-security-context-rules` | `environment` |
+| [Контекст безопасности бизнес-событий](/managed/dynatrace-api/environment-api/settings/schemas/builtin-bizevents-security-context-rules) | `builtin:bizevents-security-context-rules` | `environment` |
 | [Варианты захвата бизнес-событий OneAgent](/managed/dynatrace-api/environment-api/settings/schemas/builtin-bizevents-http-capturing-variants) | `builtin:bizevents.http.capturing-variants` | `HOST` - Host  `HOST_GROUP` - Host Group  `environment` |
-| Захват бизнес-событий с помощью OneAgent | `builtin:bizevents.http.incoming` | `HOST` - Host  `HOST_GROUP` - Host Group  `environment` |
-| Захват бизнес-событий с помощью OneAgent | `builtin:bizevents.http.outgoing` | `HOST` - Host  `HOST_GROUP` - Host Group  `environment` |
+| [Захват бизнес-событий с помощью OneAgent](/managed/dynatrace-api/environment-api/settings/schemas/builtin-bizevents-http-incoming) | `builtin:bizevents.http.incoming` | `HOST` - Host  `HOST_GROUP` - Host Group  `environment` |
+| [Захват бизнес-событий с помощью OneAgent](/managed/dynatrace-api/environment-api/settings/schemas/builtin-bizevents-http-outgoing) | `builtin:bizevents.http.outgoing` | `HOST` - Host  `HOST_GROUP` - Host Group  `environment` |
 | [Cloud Foundry](/managed/dynatrace-api/environment-api/settings/schemas/builtin-cloud-cloudfoundry) | `builtin:cloud.cloudfoundry` | `environment` |
 | [Настройки подключения](/managed/dynatrace-api/environment-api/settings/schemas/builtin-cloud-kubernetes) | `builtin:cloud.kubernetes` | `KUBERNETES_CLUSTER` - Kubernetes cluster |
 | [Настройки мониторинга](/managed/dynatrace-api/environment-api/settings/schemas/builtin-cloud-kubernetes-monitoring) | `builtin:cloud.kubernetes.monitoring` | `KUBERNETES_CLUSTER` - Kubernetes cluster  `environment` |
 | [Встроенные правила мониторинга контейнеров](/managed/dynatrace-api/environment-api/settings/schemas/builtin-container-built-in-monitoring-rule) | `builtin:container.built-in-monitoring-rule` | `environment` |
 | [Правила мониторинга контейнеров](/managed/dynatrace-api/environment-api/settings/schemas/builtin-container-monitoring-rule) | `builtin:container.monitoring-rule` | `environment` |
 | [Мониторинг контейнеров](/managed/dynatrace-api/environment-api/settings/schemas/builtin-container-technology) | `builtin:container.technology` | `HOST` - Host  `HOST_GROUP` - Host Group  `environment` |
-| [Аналитика аварийных дампов](/managed/dynatrace-api/environment-api/settings/schemas/builtin-crashdump-analytics) | `builtin:crashdump.analytics` | `HOST` - Host  `HOST_GROUP` - Host Group |
+| [Аналитика дампов сбоев](/managed/dynatrace-api/environment-api/settings/schemas/builtin-crashdump-analytics) | `builtin:crashdump.analytics` | `HOST` - Host  `HOST_GROUP` - Host Group |
 | [Пользовательские метрики пользовательских сессий](/managed/dynatrace-api/environment-api/settings/schemas/builtin-custom-metrics) | `builtin:custom-metrics` | `environment` |
-| [Пользовательские единицы](/managed/dynatrace-api/environment-api/settings/schemas/builtin-custom-unit) | `builtin:custom-unit` | `environment` |
+| [Пользовательские единицы измерения](/managed/dynatrace-api/environment-api/settings/schemas/builtin-custom-unit) | `builtin:custom-unit` | `environment` |
 | [Общие настройки](/managed/dynatrace-api/environment-api/settings/schemas/builtin-dashboards-general) | `builtin:dashboards.general` | `environment` |
 | [Правила разрешённых шаблонов URL](/managed/dynatrace-api/environment-api/settings/schemas/builtin-dashboards-image-allowlist) | `builtin:dashboards.image.allowlist` | `environment` |
 | [Настройки пресетов](/managed/dynatrace-api/environment-api/settings/schemas/builtin-dashboards-presets) | `builtin:dashboards.presets` | `environment` |
@@ -118,20 +119,20 @@ source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/setting
 | [Окна обновления для обновлений OneAgent](/managed/dynatrace-api/environment-api/settings/schemas/builtin-deployment-management-update-windows) | `builtin:deployment.management.update-windows` | `environment` |
 | [Режим OneAgent по умолчанию](/managed/dynatrace-api/environment-api/settings/schemas/builtin-deployment-oneagent-default-mode) | `builtin:deployment.oneagent.default-mode` | `environment` |
 | [Обновления OneAgent](/managed/dynatrace-api/environment-api/settings/schemas/builtin-deployment-oneagent-updates) | `builtin:deployment.oneagent.updates` | `HOST` - Host  `HOST_GROUP` - Host Group  `environment` |
-| [Включить Observability for Developers](/managed/dynatrace-api/environment-api/settings/schemas/builtin-devobs-agent-optin) | `builtin:devobs.agent.optin` | `PROCESS_GROUP` - Process Group  `CLOUD_APPLICATION` - Kubernetes workload  `CLOUD_APPLICATION_NAMESPACE` - Kubernetes namespace  `KUBERNETES_CLUSTER` - Kubernetes cluster  `HOST_GROUP` - Host Group  `environment` |
-| [Маскирование чувствительных данных](/managed/dynatrace-api/environment-api/settings/schemas/builtin-devobs-sensitive-data-masking) | `builtin:devobs.sensitive.data.masking` | `environment` |
+| [Включить Observability For Developers](/managed/dynatrace-api/environment-api/settings/schemas/builtin-devobs-agent-optin) | `builtin:devobs.agent.optin` | `PROCESS_GROUP` - Process Group  `CLOUD_APPLICATION` - Kubernetes workload  `CLOUD_APPLICATION_NAMESPACE` - Kubernetes namespace  `KUBERNETES_CLUSTER` - Kubernetes cluster  `HOST_GROUP` - Host Group  `environment` |
+| [Маскирование конфиденциальных данных](/managed/dynatrace-api/environment-api/settings/schemas/builtin-devobs-sensitive-data-masking) | `builtin:devobs.sensitive.data.masking` | `environment` |
 | [Расширение Disk Analytics](/managed/dynatrace-api/environment-api/settings/schemas/builtin-disk-analytics-extension) | `builtin:disk.analytics.extension` | `HOST` - Host  `HOST_GROUP` - Host Group |
-| [Параметры дисков](/managed/dynatrace-api/environment-api/settings/schemas/builtin-disk-options) | `builtin:disk.options` | `HOST` - Host  `HOST_GROUP` - Host Group  `environment` |
+| [Параметры диска](/managed/dynatrace-api/environment-api/settings/schemas/builtin-disk-options) | `builtin:disk.options` | `HOST` - Host  `HOST_GROUP` - Host Group  `environment` |
 | [Ограничение исходящих подключений](/managed/dynatrace-api/environment-api/settings/schemas/builtin-dt-javascript-runtime-allowed-outbound-connections) | `builtin:dt-javascript-runtime.allowed-outbound-connections` | `environment` |
 | [Мониторинг приложений](/managed/dynatrace-api/environment-api/settings/schemas/builtin-dt-javascript-runtime-app-monitoring) | `builtin:dt-javascript-runtime.app-monitoring` | `environment` |
 | [Обнаружение сервисов eBPF](/managed/dynatrace-api/environment-api/settings/schemas/builtin-ebpf-service-discovery) | `builtin:ebpf.service.discovery` | `HOST` - Host  `HOST_GROUP` - Host Group  `environment` |
-| Настройка EdgeConnect | `builtin:edge-connect.configuration` | `environment` |
+| [Конфигурация EdgeConnect](/managed/dynatrace-api/environment-api/settings/schemas/builtin-edge-connect-configuration) | `builtin:edge-connect.configuration` | `environment` |
 | [Extension Execution Controller](/managed/dynatrace-api/environment-api/settings/schemas/builtin-eec-local) | `builtin:eec.local` | `HOST` - Host  `HOST_GROUP` - Host Group  `environment` |
 | [Extension Execution Controller](/managed/dynatrace-api/environment-api/settings/schemas/builtin-eec-remote) | `builtin:eec.remote` | `ENVIRONMENT_ACTIVE_GATE` |
-| [Экспорты пользовательских сессий](/managed/dynatrace-api/environment-api/settings/schemas/builtin-elasticsearch-user-session-export-settings-v2) | `builtin:elasticsearch.user-session-export-settings-v2` | `environment` |
-| [Обнаружение эндпоинтов](/managed/dynatrace-api/environment-api/settings/schemas/builtin-endpoint-detection-rules) | `builtin:endpoint-detection-rules` | `CLOUD_APPLICATION_NAMESPACE` - Kubernetes namespace  `KUBERNETES_CLUSTER` - Kubernetes cluster  `HOST_GROUP` - Host Group  `environment` |
-| [Включить обнаружение эндпоинтов](/managed/dynatrace-api/environment-api/settings/schemas/builtin-endpoint-detection-rules-opt-in) | `builtin:endpoint-detection-rules-opt-in` | `environment` |
-| Расширенные эндпоинты для SDv1 | `builtin:enhanced-endpoints-for-sdv1` | `CLOUD_APPLICATION_NAMESPACE` - Kubernetes namespace  `KUBERNETES_CLUSTER` - Kubernetes cluster  `HOST_GROUP` - Host Group  `environment` |
+| [Экспорт пользовательских сессий](/managed/dynatrace-api/environment-api/settings/schemas/builtin-elasticsearch-user-session-export-settings-v2) | `builtin:elasticsearch.user-session-export-settings-v2` | `environment` |
+| [Обнаружение конечных точек](/managed/dynatrace-api/environment-api/settings/schemas/builtin-endpoint-detection-rules) | `builtin:endpoint-detection-rules` | `CLOUD_APPLICATION_NAMESPACE` - Kubernetes namespace  `KUBERNETES_CLUSTER` - Kubernetes cluster  `HOST_GROUP` - Host Group  `environment` |
+| [Включить обнаружение конечных точек](/managed/dynatrace-api/environment-api/settings/schemas/builtin-endpoint-detection-rules-opt-in) | `builtin:endpoint-detection-rules-opt-in` | `environment` |
+| [Расширенные конечные точки для SDv1](/managed/dynatrace-api/environment-api/settings/schemas/builtin-enhanced-endpoints-for-sdv1) | `builtin:enhanced-endpoints-for-sdv1` | `CLOUD_APPLICATION_NAMESPACE` - Kubernetes namespace  `KUBERNETES_CLUSTER` - Kubernetes cluster  `HOST_GROUP` - Host Group  `environment` |
 | [Условия использования](/managed/dynatrace-api/environment-api/settings/schemas/builtin-eula-settings) | `builtin:eula-settings` | `environment`  `environment-default` - Managed cluster-wide |
 | [Исключить сетевой трафик](/managed/dynatrace-api/environment-api/settings/schemas/builtin-exclude-network-traffic) | `builtin:exclude.network.traffic` | `HOST` - Host |
 | [Обнаружение сбоев](/managed/dynatrace-api/environment-api/settings/schemas/builtin-failure-detection-rulesets) | `builtin:failure-detection-rulesets` | `CLOUD_APPLICATION_NAMESPACE` - Kubernetes namespace  `KUBERNETES_CLUSTER` - Kubernetes cluster  `HOST_GROUP` - Host Group  `environment` |
@@ -140,23 +141,23 @@ source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/setting
 | [Общие параметры обнаружения сбоев](/managed/dynatrace-api/environment-api/settings/schemas/builtin-failure-detection-service-general-parameters) | `builtin:failure-detection.service.general-parameters` | `SERVICE` - Service |
 | [Параметры обнаружения сбоев HTTP](/managed/dynatrace-api/environment-api/settings/schemas/builtin-failure-detection-service-http-parameters) | `builtin:failure-detection.service.http-parameters` | `SERVICE` - Service |
 | [Настройки геолокации](/managed/dynatrace-api/environment-api/settings/schemas/builtin-geo-settings) | `builtin:geo-settings` | `environment`  `environment-default` - Managed cluster-wide |
-| Глобальное управление скоростью приёма трейсов | `builtin:global.trace.ingest.control` | `environment` |
-| Настройки оповещений о состоянии облака | `builtin:health-experience.cloud-alert` | `environment` |
-| Оповещения о состоянии фронтенда | `builtin:health-experience.frontend-alert` | `environment` |
-| Гистограммные метрики | `builtin:histogram-metrics` | `environment` |
+| [Глобальный контроль скорости приёма трасс](/managed/dynatrace-api/environment-api/settings/schemas/builtin-global-trace-ingest-control) | `builtin:global.trace.ingest.control` | `environment` |
+| [Настройки оповещений о состоянии облака](/managed/dynatrace-api/environment-api/settings/schemas/builtin-health-experience-cloud-alert) | `builtin:health-experience.cloud-alert` | `environment` |
+| [Оповещения о состоянии фронтенда](/managed/dynatrace-api/environment-api/settings/schemas/builtin-health-experience-frontend-alert) | `builtin:health-experience.frontend-alert` | `environment` |
+| [Метрики гистограмм](/managed/dynatrace-api/environment-api/settings/schemas/builtin-histogram-metrics) | `builtin:histogram-metrics` | `environment` |
 | [Мониторинг](/managed/dynatrace-api/environment-api/settings/schemas/builtin-host-monitoring) | `builtin:host.monitoring` | `HOST` - Host |
 | [Расширенные настройки](/managed/dynatrace-api/environment-api/settings/schemas/builtin-host-monitoring-advanced) | `builtin:host.monitoring.advanced` | `HOST` - Host |
 | [Расширение ядра AIX](/managed/dynatrace-api/environment-api/settings/schemas/builtin-host-monitoring-aix-kernel-extension) | `builtin:host.monitoring.aix-kernel-extension` | `HOST` - Host |
 | [Режим мониторинга](/managed/dynatrace-api/environment-api/settings/schemas/builtin-host-monitoring-mode) | `builtin:host.monitoring.mode` | `HOST` - Host |
-| [Мониторинг групп процессов](/managed/dynatrace-api/environment-api/settings/schemas/builtin-host-process-groups-monitoring-state) | `builtin:host.process-groups.monitoring-state` | `HOST` - Host |
+| [Мониторинг группы процессов](/managed/dynatrace-api/environment-api/settings/schemas/builtin-host-process-groups-monitoring-state) | `builtin:host.process-groups.monitoring-state` | `HOST` - Host |
 | [Подписки Hub](/managed/dynatrace-api/environment-api/settings/schemas/builtin-hub-channel-subscriptions) | `builtin:hub-channel.subscriptions` | `environment` |
 | [Подключения AWS](/managed/dynatrace-api/environment-api/settings/schemas/builtin-hyperscaler-authentication-aws-connection) | `builtin:hyperscaler-authentication.aws.connection` | `environment` |
 | [Подключения к средам AWS](/managed/dynatrace-api/environment-api/settings/schemas/builtin-hyperscaler-authentication-connections-aws) | `builtin:hyperscaler-authentication.connections.aws` | `environment` |
 | [Подключения к средам Azure](/managed/dynatrace-api/environment-api/settings/schemas/builtin-hyperscaler-authentication-connections-azure) | `builtin:hyperscaler-authentication.connections.azure` | `environment` |
-| Подключения к средам GCP | `builtin:hyperscaler-authentication.connections.gcp` | `environment` |
-| GCP Dynatrace Principal | `builtin:hyperscaler-authentication.connections.gcp-dynatrace-principal` | `environment` |
+| [Подключения к средам GCP](/managed/dynatrace-api/environment-api/settings/schemas/builtin-hyperscaler-authentication-connections-gcp) | `builtin:hyperscaler-authentication.connections.gcp` | `environment` |
+| [Principal Dynatrace GCP](/managed/dynatrace-api/environment-api/settings/schemas/builtin-hyperscaler-authentication-connections-gcp-dynatrace-principal) | `builtin:hyperscaler-authentication.connections.gcp-dynatrace-principal` | `environment` |
 | [Мосты IBM MQ IMS](/managed/dynatrace-api/environment-api/settings/schemas/builtin-ibmmq-ims-bridges) | `builtin:ibmmq.ims-bridges` | `environment` |
-| [Менеджеры очередей IBM MQ](/managed/dynatrace-api/environment-api/settings/schemas/builtin-ibmmq-queue-managers) | `builtin:ibmmq.queue-managers` | `environment` |
+| [Диспетчеры очередей IBM MQ](/managed/dynatrace-api/environment-api/settings/schemas/builtin-ibmmq-queue-managers) | `builtin:ibmmq.queue-managers` | `environment` |
 | [Группы совместного использования очередей IBM MQ](/managed/dynatrace-api/environment-api/settings/schemas/builtin-ibmmq-queue-sharing-group) | `builtin:ibmmq.queue-sharing-group` | `environment` |
 | [Обнаружение аномалий для инфраструктуры: Disk Edge](/managed/dynatrace-api/environment-api/settings/schemas/builtin-infrastructure-disk-edge-anomaly-detectors) | `builtin:infrastructure.disk.edge.anomaly-detectors` | `HOST` - Host  `HOST_GROUP` - Host Group  `environment` |
 | [Отслеживание задач для релизов](/managed/dynatrace-api/environment-api/settings/schemas/builtin-issue-tracking-integration) | `builtin:issue-tracking.integration` | `environment` |
@@ -164,21 +165,21 @@ source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/setting
 | [Security Posture Management: Kubernetes](/managed/dynatrace-api/environment-api/settings/schemas/builtin-kubernetes-security-posture-management) | `builtin:kubernetes.security-posture-management` | `KUBERNETES_CLUSTER` - Kubernetes cluster  `environment` |
 | [Пользовательские источники логов](/managed/dynatrace-api/environment-api/settings/schemas/builtin-logmonitoring-custom-log-source-settings) | `builtin:logmonitoring.custom-log-source-settings` | `HOST` - Host  `KUBERNETES_CLUSTER` - Kubernetes cluster  `HOST_GROUP` - Host Group  `environment` |
 | [Расширенные настройки логов](/managed/dynatrace-api/environment-api/settings/schemas/builtin-logmonitoring-log-agent-configuration) | `builtin:logmonitoring.log-agent-configuration` | `HOST` - Host  `KUBERNETES_CLUSTER` - Kubernetes cluster  `HOST_GROUP` - Host Group  `environment` |
-| [Feature-флаги модуля логов](/managed/dynatrace-api/environment-api/settings/schemas/builtin-logmonitoring-log-agent-feature-flags) | `builtin:logmonitoring.log-agent-feature-flags` | `HOST` - Host  `KUBERNETES_CLUSTER` - Kubernetes cluster  `HOST_GROUP` - Host Group  `environment` |
+| [Флаги функций модуля логов](/managed/dynatrace-api/environment-api/settings/schemas/builtin-logmonitoring-log-agent-feature-flags) | `builtin:logmonitoring.log-agent-feature-flags` | `HOST` - Host  `KUBERNETES_CLUSTER` - Kubernetes cluster  `HOST_GROUP` - Host Group  `environment` |
 | [Бакеты логов](/managed/dynatrace-api/environment-api/settings/schemas/builtin-logmonitoring-log-buckets-rules) | `builtin:logmonitoring.log-buckets-rules` | `environment` |
 | [Пользовательские атрибуты логов](/managed/dynatrace-api/environment-api/settings/schemas/builtin-logmonitoring-log-custom-attributes) | `builtin:logmonitoring.log-custom-attributes` | `environment` |
 | [Обработка](/managed/dynatrace-api/environment-api/settings/schemas/builtin-logmonitoring-log-dpp-rules) | `builtin:logmonitoring.log-dpp-rules` | `environment` |
 | [События логов](/managed/dynatrace-api/environment-api/settings/schemas/builtin-logmonitoring-log-events) | `builtin:logmonitoring.log-events` | `environment` |
-| Контекст безопасности логов | `builtin:logmonitoring.log-security-context-rules` | `environment` |
-| Настройки самомониторинга модуля логов | `builtin:logmonitoring.log-sfm-settings` | `HOST` - Host  `KUBERNETES_CLUSTER` - Kubernetes cluster  `HOST_GROUP` - Host Group  `environment` |
+| [Контекст безопасности логов](/managed/dynatrace-api/environment-api/settings/schemas/builtin-logmonitoring-log-security-context-rules) | `builtin:logmonitoring.log-security-context-rules` | `environment` |
+| [Настройки самомониторинга модуля логов](/managed/dynatrace-api/environment-api/settings/schemas/builtin-logmonitoring-log-sfm-settings) | `builtin:logmonitoring.log-sfm-settings` | `HOST` - Host  `KUBERNETES_CLUSTER` - Kubernetes cluster  `HOST_GROUP` - Host Group  `environment` |
 | [Правила приёма логов](/managed/dynatrace-api/environment-api/settings/schemas/builtin-logmonitoring-log-storage-settings) | `builtin:logmonitoring.log-storage-settings` | `HOST` - Host  `KUBERNETES_CLUSTER` - Kubernetes cluster  `HOST_GROUP` - Host Group  `environment` |
 | [Метрики логов](/managed/dynatrace-api/environment-api/settings/schemas/builtin-logmonitoring-schemaless-log-metric) | `builtin:logmonitoring.schemaless-log-metric` | `environment` |
-| [Маскирование чувствительных данных](/managed/dynatrace-api/environment-api/settings/schemas/builtin-logmonitoring-sensitive-data-masking-settings) | `builtin:logmonitoring.sensitive-data-masking-settings` | `HOST` - Host  `KUBERNETES_CLUSTER` - Kubernetes cluster  `HOST_GROUP` - Host Group  `environment` |
-| [Шаблоны меток времени/разбиения](/managed/dynatrace-api/environment-api/settings/schemas/builtin-logmonitoring-timestamp-configuration) | `builtin:logmonitoring.timestamp-configuration` | `HOST` - Host  `KUBERNETES_CLUSTER` - Kubernetes cluster  `HOST_GROUP` - Host Group  `environment` |
+| [Маскирование конфиденциальных данных](/managed/dynatrace-api/environment-api/settings/schemas/builtin-logmonitoring-sensitive-data-masking-settings) | `builtin:logmonitoring.sensitive-data-masking-settings` | `HOST` - Host  `KUBERNETES_CLUSTER` - Kubernetes cluster  `HOST_GROUP` - Host Group  `environment` |
+| [Шаблоны временных меток/разбиения](/managed/dynatrace-api/environment-api/settings/schemas/builtin-logmonitoring-timestamp-configuration) | `builtin:logmonitoring.timestamp-configuration` | `HOST` - Host  `KUBERNETES_CLUSTER` - Kubernetes cluster  `HOST_GROUP` - Host Group  `environment` |
 | [Фильтры IBM MQ](/managed/dynatrace-api/environment-api/settings/schemas/builtin-mainframe-mqfilters) | `builtin:mainframe.mqfilters` | `environment` |
 | [Мониторинг транзакций](/managed/dynatrace-api/environment-api/settings/schemas/builtin-mainframe-txmonitoring) | `builtin:mainframe.txmonitoring` | `environment` |
 | [Фильтры начала транзакций](/managed/dynatrace-api/environment-api/settings/schemas/builtin-mainframe-txstartfilters) | `builtin:mainframe.txstartfilters` | `environment` |
-| Окна обслуживания | `builtin:maintenance-windows` | `environment` |
+| [Окна обслуживания](/managed/dynatrace-api/environment-api/settings/schemas/builtin-maintenance-windows) | `builtin:maintenance-windows` | `environment` |
 | [Настройки management zones](/managed/dynatrace-api/environment-api/settings/schemas/builtin-management-zones) | `builtin:management-zones` | `environment` |
 | [Метаданные метрик](/managed/dynatrace-api/environment-api/settings/schemas/builtin-metric-metadata) | `builtin:metric.metadata` | `metric` |
 | [Запрос метрик](/managed/dynatrace-api/environment-api/settings/schemas/builtin-metric-query) | `builtin:metric.query` | `metric` |
@@ -197,92 +198,93 @@ source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/setting
 | [IBM Integration Bus | IBM App Connect Enterprise](/managed/dynatrace-api/environment-api/settings/schemas/builtin-monitored-technologies-wsmb) | `builtin:monitored-technologies.wsmb` | `HOST` - Host  `environment` |
 | [Универсальные связи](/managed/dynatrace-api/environment-api/settings/schemas/builtin-monitoredentities-generic-relation) | `builtin:monitoredentities.generic.relation` | `environment` |
 | [Универсальные типы](/managed/dynatrace-api/environment-api/settings/schemas/builtin-monitoredentities-generic-type) | `builtin:monitoredentities.generic.type` | `environment` |
-| Контекст безопасности Grail для отслеживаемых сущностей | `builtin:monitoredentities.grail.security.context` | `environment` |
-| [Определения service-level objective](/managed/dynatrace-api/environment-api/settings/schemas/builtin-monitoring-slo) | `builtin:monitoring.slo` | `environment` |
-| [Настройка service-level objective](/managed/dynatrace-api/environment-api/settings/schemas/builtin-monitoring-slo-normalization) | `builtin:monitoring.slo.normalization` | `environment` |
+| [Контекст безопасности Grail для отслеживаемых сущностей](/managed/dynatrace-api/environment-api/settings/schemas/builtin-monitoredentities-grail-security-context) | `builtin:monitoredentities.grail.security.context` | `environment` |
+| [Определения целевых показателей уровня обслуживания](/managed/dynatrace-api/environment-api/settings/schemas/builtin-monitoring-slo) | `builtin:monitoring.slo` | `environment` |
+| [Настройка целевых показателей уровня обслуживания](/managed/dynatrace-api/environment-api/settings/schemas/builtin-monitoring-slo-normalization) | `builtin:monitoring.slo.normalization` | `environment` |
 | [Трафик NetTracer](/managed/dynatrace-api/environment-api/settings/schemas/builtin-nettracer-traffic) | `builtin:nettracer.traffic` | `HOST` - Host  `HOST_GROUP` - Host Group  `environment` |
 | [Мониторинг сетевых подключений](/managed/dynatrace-api/environment-api/settings/schemas/builtin-network-connection-monitoring) | `builtin:network-connection-monitoring` | `HOST` - Host  `HOST_GROUP` - Host Group  `environment` |
-| [Настройки network zones](/managed/dynatrace-api/environment-api/settings/schemas/builtin-networkzones) | `builtin:networkzones` | `environment`  `environment-default` - Managed cluster-wide |
-| Network zone | `builtin:networkzones.zones` | `environment`  `environment-default` - Managed cluster-wide |
-| [Возможности OneAgent](/managed/dynatrace-api/environment-api/settings/schemas/builtin-oneagent-features) | `builtin:oneagent.features` | `PROCESS_GROUP_INSTANCE` - Process  `PROCESS_GROUP` - Process Group  `CLOUD_APPLICATION` - Kubernetes workload  `CLOUD_APPLICATION_NAMESPACE` - Kubernetes namespace  `KUBERNETES_CLUSTER` - Kubernetes cluster  `environment` |
+| [Настройки сетевых зон](/managed/dynatrace-api/environment-api/settings/schemas/builtin-networkzones) | `builtin:networkzones` | `environment`  `environment-default` - Managed cluster-wide |
+| [Сетевая зона](/managed/dynatrace-api/environment-api/settings/schemas/builtin-networkzones-zones) | `builtin:networkzones.zones` | `environment`  `environment-default` - Managed cluster-wide |
+| [Функции OneAgent](/managed/dynatrace-api/environment-api/settings/schemas/builtin-oneagent-features) | `builtin:oneagent.features` | `PROCESS_GROUP_INSTANCE` - Process  `PROCESS_GROUP` - Process Group  `CLOUD_APPLICATION` - Kubernetes workload  `CLOUD_APPLICATION_NAMESPACE` - Kubernetes namespace  `KUBERNETES_CLUSTER` - Kubernetes cluster  `environment` |
 | [Маскирование на стороне OneAgent](/managed/dynatrace-api/environment-api/settings/schemas/builtin-oneagent-side-masking-settings) | `builtin:oneagent.side.masking.settings` | `PROCESS_GROUP` - Process Group  `CLOUD_APPLICATION` - Kubernetes workload  `CLOUD_APPLICATION_NAMESPACE` - Kubernetes namespace  `KUBERNETES_CLUSTER` - Kubernetes cluster  `HOST_GROUP` - Host Group  `environment` |
-| Настройка пересылки данных (application.snapshots) | `builtin:openpipeline.application.snapshots.data-forwarding` | `environment` |
-| Настройка источников приёма (application.snapshots) | `builtin:openpipeline.application.snapshots.ingest-sources` | `environment` |
-| Настройка групп конвейеров (application.snapshots) | `builtin:openpipeline.application.snapshots.pipeline-groups` | `environment` |
-| Настройка конвейеров приёма (application.snapshots) | `builtin:openpipeline.application.snapshots.pipelines` | `environment` |
-| Настройка маршрутизации приёма (application.snapshots) | `builtin:openpipeline.application.snapshots.routing` | `environment` |
+| [Конфигурация пересылки данных (application.snapshots)](/managed/dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-application-snapshots-data-forwarding) | `builtin:openpipeline.application.snapshots.data-forwarding` | `environment` |
+| [Конфигурация источников приёма (application.snapshots)](/managed/dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-application-snapshots-ingest-sources) | `builtin:openpipeline.application.snapshots.ingest-sources` | `environment` |
+| [Конфигурация групп пайплайнов (application.snapshots)](/managed/dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-application-snapshots-pipeline-groups) | `builtin:openpipeline.application.snapshots.pipeline-groups` | `environment` |
+| [Конфигурация пайплайнов приёма (application.snapshots)](/managed/dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-application-snapshots-pipelines) | `builtin:openpipeline.application.snapshots.pipelines` | `environment` |
+| [Конфигурация маршрутизации приёма (application.snapshots)](/managed/dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-application-snapshots-routing) | `builtin:openpipeline.application.snapshots.routing` | `environment` |
 | [Конфигурация пересылки данных (bizevents)](/managed/dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-bizevents-data-forwarding) | `builtin:openpipeline.bizevents.data-forwarding` | `environment` |
 | [Конфигурация источников приёма (bizevents)](/managed/dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-bizevents-ingest-sources) | `builtin:openpipeline.bizevents.ingest-sources` | `environment` |
-| [Конфигурация Pipeline Groups (bizevents)](/managed/dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-bizevents-pipeline-groups) | `builtin:openpipeline.bizevents.pipeline-groups` | `environment` |
-| [Конфигурация конвейеров приёма (bizevents)](/managed/dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-bizevents-pipelines) | `builtin:openpipeline.bizevents.pipelines` | `environment` |
+| [Конфигурация групп пайплайнов (bizevents)](/managed/dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-bizevents-pipeline-groups) | `builtin:openpipeline.bizevents.pipeline-groups` | `environment` |
+| [Конфигурация пайплайнов приёма (bizevents)](/managed/dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-bizevents-pipelines) | `builtin:openpipeline.bizevents.pipelines` | `environment` |
 | [Конфигурация маршрутизации приёма (bizevents)](/managed/dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-bizevents-routing) | `builtin:openpipeline.bizevents.routing` | `environment` |
 | [Конфигурация пересылки данных (davis.events)](/managed/dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-davis-events-data-forwarding) | `builtin:openpipeline.davis.events.data-forwarding` | `environment` |
 | [Конфигурация источников приёма (davis.events)](/managed/dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-davis-events-ingest-sources) | `builtin:openpipeline.davis.events.ingest-sources` | `environment` |
-| [Конфигурация Pipeline Groups (davis.events)](/managed/dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-davis-events-pipeline-groups) | `builtin:openpipeline.davis.events.pipeline-groups` | `environment` |
-| [Конфигурация конвейеров приёма (davis.events)](/managed/dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-davis-events-pipelines) | `builtin:openpipeline.davis.events.pipelines` | `environment` |
+| [Конфигурация групп пайплайнов (davis.events)](/managed/dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-davis-events-pipeline-groups) | `builtin:openpipeline.davis.events.pipeline-groups` | `environment` |
+| [Конфигурация пайплайнов приёма (davis.events)](/managed/dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-davis-events-pipelines) | `builtin:openpipeline.davis.events.pipelines` | `environment` |
 | [Конфигурация маршрутизации приёма (davis.events)](/managed/dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-davis-events-routing) | `builtin:openpipeline.davis.events.routing` | `environment` |
 | [Конфигурация пересылки данных (davis.problems)](/managed/dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-davis-problems-data-forwarding) | `builtin:openpipeline.davis.problems.data-forwarding` | `environment` |
 | [Конфигурация источников приёма (davis.problems)](/managed/dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-davis-problems-ingest-sources) | `builtin:openpipeline.davis.problems.ingest-sources` | `environment` |
-| [Конфигурация Pipeline Groups (davis.problems)](/managed/dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-davis-problems-pipeline-groups) | `builtin:openpipeline.davis.problems.pipeline-groups` | `environment` |
-| [Конфигурация конвейеров приёма (davis.problems)](/managed/dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-davis-problems-pipelines) | `builtin:openpipeline.davis.problems.pipelines` | `environment` |
+| [Конфигурация групп пайплайнов (davis.problems)](/managed/dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-davis-problems-pipeline-groups) | `builtin:openpipeline.davis.problems.pipeline-groups` | `environment` |
+| [Конфигурация пайплайнов приёма (davis.problems)](/managed/dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-davis-problems-pipelines) | `builtin:openpipeline.davis.problems.pipelines` | `environment` |
 | [Конфигурация маршрутизации приёма (davis.problems)](/managed/dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-davis-problems-routing) | `builtin:openpipeline.davis.problems.routing` | `environment` |
 | [Конфигурация пересылки данных (events)](/managed/dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-events-data-forwarding) | `builtin:openpipeline.events.data-forwarding` | `environment` |
 | [Конфигурация источников приёма (events)](/managed/dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-events-ingest-sources) | `builtin:openpipeline.events.ingest-sources` | `environment` |
-| [Конфигурация Pipeline Groups (events)](/managed/dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-events-pipeline-groups) | `builtin:openpipeline.events.pipeline-groups` | `environment` |
-| [Конфигурация конвейеров приёма (events)](/managed/dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-events-pipelines) | `builtin:openpipeline.events.pipelines` | `environment` |
+| [Конфигурация групп пайплайнов (events)](/managed/dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-events-pipeline-groups) | `builtin:openpipeline.events.pipeline-groups` | `environment` |
+| [Конфигурация пайплайнов приёма (events)](/managed/dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-events-pipelines) | `builtin:openpipeline.events.pipelines` | `environment` |
 | [Конфигурация маршрутизации приёма (events)](/managed/dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-events-routing) | `builtin:openpipeline.events.routing` | `environment` |
 | [Конфигурация пересылки данных (events.sdlc)](/managed/dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-events-sdlc-data-forwarding) | `builtin:openpipeline.events.sdlc.data-forwarding` | `environment` |
 | [Конфигурация источников приёма (events.sdlc)](/managed/dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-events-sdlc-ingest-sources) | `builtin:openpipeline.events.sdlc.ingest-sources` | `environment` |
-| [Конфигурация Pipeline Groups (events.sdlc)](/managed/dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-events-sdlc-pipeline-groups) | `builtin:openpipeline.events.sdlc.pipeline-groups` | `environment` |
-| [Конфигурация конвейеров приёма (events.sdlc)](/managed/dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-events-sdlc-pipelines) | `builtin:openpipeline.events.sdlc.pipelines` | `environment` |
+| [Конфигурация групп пайплайнов (events.sdlc)](/managed/dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-events-sdlc-pipeline-groups) | `builtin:openpipeline.events.sdlc.pipeline-groups` | `environment` |
+| [Конфигурация пайплайнов приёма (events.sdlc)](/managed/dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-events-sdlc-pipelines) | `builtin:openpipeline.events.sdlc.pipelines` | `environment` |
 | [Конфигурация маршрутизации приёма (events.sdlc)](/managed/dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-events-sdlc-routing) | `builtin:openpipeline.events.sdlc.routing` | `environment` |
 | [Конфигурация пересылки данных (events.security)](/managed/dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-events-security-data-forwarding) | `builtin:openpipeline.events.security.data-forwarding` | `environment` |
 | [Конфигурация источников приёма (events.security)](/managed/dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-events-security-ingest-sources) | `builtin:openpipeline.events.security.ingest-sources` | `environment` |
-| [Конфигурация Pipeline Groups (events.security)](/managed/dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-events-security-pipeline-groups) | `builtin:openpipeline.events.security.pipeline-groups` | `environment` |
-| [Конфигурация конвейеров приёма (events.security)](/managed/dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-events-security-pipelines) | `builtin:openpipeline.events.security.pipelines` | `environment` |
+| [Конфигурация групп пайплайнов (events.security)](/managed/dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-events-security-pipeline-groups) | `builtin:openpipeline.events.security.pipeline-groups` | `environment` |
+| [Конфигурация пайплайнов приёма (events.security)](/managed/dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-events-security-pipelines) | `builtin:openpipeline.events.security.pipelines` | `environment` |
 | [Конфигурация маршрутизации приёма (events.security)](/managed/dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-events-security-routing) | `builtin:openpipeline.events.security.routing` | `environment` |
 | [Конфигурация пересылки данных (logs)](/managed/dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-logs-data-forwarding) | `builtin:openpipeline.logs.data-forwarding` | `environment` |
 | [Конфигурация источников приёма (logs)](/managed/dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-logs-ingest-sources) | `builtin:openpipeline.logs.ingest-sources` | `environment` |
-| [Конфигурация Pipeline Groups (logs)](/managed/dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-logs-pipeline-groups) | `builtin:openpipeline.logs.pipeline-groups` | `environment` |
-| [Конфигурация конвейеров приёма (logs)](/managed/dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-logs-pipelines) | `builtin:openpipeline.logs.pipelines` | `environment` |
+| [Конфигурация групп пайплайнов (logs)](/managed/dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-logs-pipeline-groups) | `builtin:openpipeline.logs.pipeline-groups` | `environment` |
+| [Конфигурация пайплайнов приёма (logs)](/managed/dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-logs-pipelines) | `builtin:openpipeline.logs.pipelines` | `environment` |
 | [Конфигурация маршрутизации приёма (logs)](/managed/dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-logs-routing) | `builtin:openpipeline.logs.routing` | `environment` |
 | [Конфигурация пересылки данных (metrics)](/managed/dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-metrics-data-forwarding) | `builtin:openpipeline.metrics.data-forwarding` | `environment` |
 | [Конфигурация источников приёма (metrics)](/managed/dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-metrics-ingest-sources) | `builtin:openpipeline.metrics.ingest-sources` | `environment` |
-| [Конфигурация Pipeline Groups (metrics)](/managed/dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-metrics-pipeline-groups) | `builtin:openpipeline.metrics.pipeline-groups` | `environment` |
-| [Конфигурация конвейеров приёма (metrics)](/managed/dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-metrics-pipelines) | `builtin:openpipeline.metrics.pipelines` | `environment` |
+| [Конфигурация групп пайплайнов (metrics)](/managed/dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-metrics-pipeline-groups) | `builtin:openpipeline.metrics.pipeline-groups` | `environment` |
+| [Конфигурация пайплайнов приёма (metrics)](/managed/dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-metrics-pipelines) | `builtin:openpipeline.metrics.pipelines` | `environment` |
 | [Конфигурация маршрутизации приёма (metrics)](/managed/dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-metrics-routing) | `builtin:openpipeline.metrics.routing` | `environment` |
+| [Правила обработки первичного тега Grail при приёме](/managed/dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-primary-grail-tag) | `builtin:openpipeline.primary-grail-tag` | `environment` |
 | [Конфигурация пересылки данных (security.events)](/managed/dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-security-events-data-forwarding) | `builtin:openpipeline.security.events.data-forwarding` | `environment` |
 | [Конфигурация источников приёма (security.events)](/managed/dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-security-events-ingest-sources) | `builtin:openpipeline.security.events.ingest-sources` | `environment` |
-| [Конфигурация Pipeline Groups (security.events)](/managed/dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-security-events-pipeline-groups) | `builtin:openpipeline.security.events.pipeline-groups` | `environment` |
-| [Конфигурация конвейеров приёма (security.events)](/managed/dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-security-events-pipelines) | `builtin:openpipeline.security.events.pipelines` | `environment` |
+| [Конфигурация групп пайплайнов (security.events)](/managed/dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-security-events-pipeline-groups) | `builtin:openpipeline.security.events.pipeline-groups` | `environment` |
+| [Конфигурация пайплайнов приёма (security.events)](/managed/dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-security-events-pipelines) | `builtin:openpipeline.security.events.pipelines` | `environment` |
 | [Конфигурация маршрутизации приёма (security.events)](/managed/dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-security-events-routing) | `builtin:openpipeline.security.events.routing` | `environment` |
-| Настройка пересылки данных (smartscape.events) | `builtin:openpipeline.smartscape.events.data-forwarding` | `environment` |
-| Настройка источников приёма (smartscape.events) | `builtin:openpipeline.smartscape.events.ingest-sources` | `environment` |
-| Настройка групп конвейеров (smartscape.events) | `builtin:openpipeline.smartscape.events.pipeline-groups` | `environment` |
-| Настройка конвейеров приёма (smartscape.events) | `builtin:openpipeline.smartscape.events.pipelines` | `environment` |
-| Настройка маршрутизации приёма (smartscape.events) | `builtin:openpipeline.smartscape.events.routing` | `environment` |
+| [Конфигурация пересылки данных (smartscape.events)](/managed/dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-smartscape-events-data-forwarding) | `builtin:openpipeline.smartscape.events.data-forwarding` | `environment` |
+| [Конфигурация источников приёма (smartscape.events)](/managed/dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-smartscape-events-ingest-sources) | `builtin:openpipeline.smartscape.events.ingest-sources` | `environment` |
+| [Конфигурация групп пайплайнов (smartscape.events)](/managed/dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-smartscape-events-pipeline-groups) | `builtin:openpipeline.smartscape.events.pipeline-groups` | `environment` |
+| [Конфигурация пайплайнов приёма (smartscape.events)](/managed/dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-smartscape-events-pipelines) | `builtin:openpipeline.smartscape.events.pipelines` | `environment` |
+| [Конфигурация маршрутизации приёма (smartscape.events)](/managed/dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-smartscape-events-routing) | `builtin:openpipeline.smartscape.events.routing` | `environment` |
 | [Конфигурация пересылки данных (spans)](/managed/dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-spans-data-forwarding) | `builtin:openpipeline.spans.data-forwarding` | `environment` |
 | [Конфигурация источников приёма (spans)](/managed/dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-spans-ingest-sources) | `builtin:openpipeline.spans.ingest-sources` | `environment` |
-| [Конфигурация Pipeline Groups (spans)](/managed/dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-spans-pipeline-groups) | `builtin:openpipeline.spans.pipeline-groups` | `environment` |
-| [Конфигурация конвейеров приёма (spans)](/managed/dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-spans-pipelines) | `builtin:openpipeline.spans.pipelines` | `environment` |
+| [Конфигурация групп пайплайнов (spans)](/managed/dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-spans-pipeline-groups) | `builtin:openpipeline.spans.pipeline-groups` | `environment` |
+| [Конфигурация пайплайнов приёма (spans)](/managed/dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-spans-pipelines) | `builtin:openpipeline.spans.pipelines` | `environment` |
 | [Конфигурация маршрутизации приёма (spans)](/managed/dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-spans-routing) | `builtin:openpipeline.spans.routing` | `environment` |
 | [Конфигурация пересылки данных (system.events)](/managed/dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-system-events-data-forwarding) | `builtin:openpipeline.system.events.data-forwarding` | `environment` |
 | [Конфигурация источников приёма (system.events)](/managed/dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-system-events-ingest-sources) | `builtin:openpipeline.system.events.ingest-sources` | `environment` |
-| [Конфигурация Pipeline Groups (system.events)](/managed/dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-system-events-pipeline-groups) | `builtin:openpipeline.system.events.pipeline-groups` | `environment` |
-| [Конфигурация конвейеров приёма (system.events)](/managed/dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-system-events-pipelines) | `builtin:openpipeline.system.events.pipelines` | `environment` |
+| [Конфигурация групп пайплайнов (system.events)](/managed/dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-system-events-pipeline-groups) | `builtin:openpipeline.system.events.pipeline-groups` | `environment` |
+| [Конфигурация пайплайнов приёма (system.events)](/managed/dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-system-events-pipelines) | `builtin:openpipeline.system.events.pipelines` | `environment` |
 | [Конфигурация маршрутизации приёма (system.events)](/managed/dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-system-events-routing) | `builtin:openpipeline.system.events.routing` | `environment` |
 | [Конфигурация пересылки данных (user.events)](/managed/dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-user-events-data-forwarding) | `builtin:openpipeline.user.events.data-forwarding` | `environment` |
 | [Конфигурация источников приёма (user.events)](/managed/dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-user-events-ingest-sources) | `builtin:openpipeline.user.events.ingest-sources` | `environment` |
-| [Конфигурация Pipeline Groups (user.events)](/managed/dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-user-events-pipeline-groups) | `builtin:openpipeline.user.events.pipeline-groups` | `environment` |
-| [Конфигурация конвейеров приёма (user.events)](/managed/dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-user-events-pipelines) | `builtin:openpipeline.user.events.pipelines` | `environment` |
+| [Конфигурация групп пайплайнов (user.events)](/managed/dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-user-events-pipeline-groups) | `builtin:openpipeline.user.events.pipeline-groups` | `environment` |
+| [Конфигурация пайплайнов приёма (user.events)](/managed/dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-user-events-pipelines) | `builtin:openpipeline.user.events.pipelines` | `environment` |
 | [Конфигурация маршрутизации приёма (user.events)](/managed/dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-user-events-routing) | `builtin:openpipeline.user.events.routing` | `environment` |
 | [Конфигурация пересылки данных (usersessions)](/managed/dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-usersessions-data-forwarding) | `builtin:openpipeline.usersessions.data-forwarding` | `environment` |
 | [Конфигурация источников приёма (usersessions)](/managed/dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-usersessions-ingest-sources) | `builtin:openpipeline.usersessions.ingest-sources` | `environment` |
-| [Конфигурация Pipeline Groups (usersessions)](/managed/dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-usersessions-pipeline-groups) | `builtin:openpipeline.usersessions.pipeline-groups` | `environment` |
-| [Конфигурация конвейеров приёма (usersessions)](/managed/dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-usersessions-pipelines) | `builtin:openpipeline.usersessions.pipelines` | `environment` |
+| [Конфигурация групп пайплайнов (usersessions)](/managed/dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-usersessions-pipeline-groups) | `builtin:openpipeline.usersessions.pipeline-groups` | `environment` |
+| [Конфигурация пайплайнов приёма (usersessions)](/managed/dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-usersessions-pipelines) | `builtin:openpipeline.usersessions.pipelines` | `environment` |
 | [Конфигурация маршрутизации приёма (usersessions)](/managed/dynatrace-api/environment-api/settings/schemas/builtin-openpipeline-usersessions-routing) | `builtin:openpipeline.usersessions.routing` | `environment` |
 | [Метрики OpenTelemetry](/managed/dynatrace-api/environment-api/settings/schemas/builtin-opentelemetry-metrics) | `builtin:opentelemetry-metrics` | `environment`  `environment-default` - Managed cluster-wide |
-| [Мониторинг сервисов ОС](/managed/dynatrace-api/environment-api/settings/schemas/builtin-os-services-monitoring) | `builtin:os-services-monitoring` | `HOST` - Host  `HOST_GROUP` - Host Group  `environment` |
+| [Мониторинг служб ОС](/managed/dynatrace-api/environment-api/settings/schemas/builtin-os-services-monitoring) | `builtin:os-services-monitoring` | `HOST` - Host  `HOST_GROUP` - Host Group  `environment` |
 | [Настройка владения](/managed/dynatrace-api/environment-api/settings/schemas/builtin-ownership-config) | `builtin:ownership.config` | `environment` |
 | [Команды владения](/managed/dynatrace-api/environment-api/settings/schemas/builtin-ownership-teams) | `builtin:ownership.teams` | `environment` |
 | [Анонимизация IP-адресов конечных пользователей](/managed/dynatrace-api/environment-api/settings/schemas/builtin-preferences-ipaddressmasking) | `builtin:preferences.ipaddressmasking` | `MOBILE_APPLICATION` - Mobile App  `CUSTOM_APPLICATION` - Custom Application  `APPLICATION` - Web application  `environment` |
@@ -290,28 +292,29 @@ source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/setting
 | [Поля проблем](/managed/dynatrace-api/environment-api/settings/schemas/builtin-problem-fields) | `builtin:problem.fields` | `environment` |
 | [Уведомления о проблемах](/managed/dynatrace-api/environment-api/settings/schemas/builtin-problem-notifications) | `builtin:problem.notifications` | `environment` |
 | [Расширенные правила обнаружения](/managed/dynatrace-api/environment-api/settings/schemas/builtin-process-group-advanced-detection-rule) | `builtin:process-group.advanced-detection-rule` | `environment` |
-| [Обнаружение облачных приложений и workload](/managed/dynatrace-api/environment-api/settings/schemas/builtin-process-group-cloud-application-workload-detection) | `builtin:process-group.cloud-application-workload-detection` | `environment` |
+| [Обнаружение облачного приложения и workload](/managed/dynatrace-api/environment-api/settings/schemas/builtin-process-group-cloud-application-workload-detection) | `builtin:process-group.cloud-application-workload-detection` | `environment` |
 | [Встроенные правила обнаружения](/managed/dynatrace-api/environment-api/settings/schemas/builtin-process-group-detection-flags) | `builtin:process-group.detection-flags` | `HOST` - Host  `HOST_GROUP` - Host Group  `environment` |
-| [Мониторинг групп процессов](/managed/dynatrace-api/environment-api/settings/schemas/builtin-process-group-monitoring-state) | `builtin:process-group.monitoring.state` | `PROCESS_GROUP` - Process Group |
+| [Мониторинг группы процессов](/managed/dynatrace-api/environment-api/settings/schemas/builtin-process-group-monitoring-state) | `builtin:process-group.monitoring.state` | `PROCESS_GROUP` - Process Group |
 | [Простые правила обнаружения](/managed/dynatrace-api/environment-api/settings/schemas/builtin-process-group-simple-detection-rule) | `builtin:process-group.simple-detection-rule` | `environment` |
 | [Правила группировки процессов](/managed/dynatrace-api/environment-api/settings/schemas/builtin-process-grouping-rules) | `builtin:process-grouping-rules` | `HOST` - Host  `KUBERNETES_CLUSTER` - Kubernetes cluster  `HOST_GROUP` - Host Group  `environment` |
-| [Снимки экземпляров процессов](/managed/dynatrace-api/environment-api/settings/schemas/builtin-process-visibility) | `builtin:process-visibility` | `HOST` - Host  `HOST_GROUP` - Host Group  `environment` |
+| [Снимки экземпляра процесса](/managed/dynatrace-api/environment-api/settings/schemas/builtin-process-visibility) | `builtin:process-visibility` | `HOST` - Host  `HOST_GROUP` - Host Group  `environment` |
 | [Встроенные правила мониторинга процессов](/managed/dynatrace-api/environment-api/settings/schemas/builtin-process-built-in-process-monitoring-rule) | `builtin:process.built-in-process-monitoring-rule` | `HOST_GROUP` - Host Group  `environment` |
 | [Пользовательские правила мониторинга процессов](/managed/dynatrace-api/environment-api/settings/schemas/builtin-process-custom-process-monitoring-rule) | `builtin:process.custom-process-monitoring-rule` | `HOST_GROUP` - Host Group  `environment` |
-| [Мониторинг групп процессов](/managed/dynatrace-api/environment-api/settings/schemas/builtin-process-process-monitoring) | `builtin:process.process-monitoring` | `HOST_GROUP` - Host Group  `environment` |
-| [Доступность процессов](/managed/dynatrace-api/environment-api/settings/schemas/builtin-processavailability) | `builtin:processavailability` | `HOST` - Host  `HOST_GROUP` - Host Group  `environment` |
+| [Мониторинг группы процессов](/managed/dynatrace-api/environment-api/settings/schemas/builtin-process-process-monitoring) | `builtin:process.process-monitoring` | `HOST_GROUP` - Host Group  `environment` |
+| [Доступность процесса](/managed/dynatrace-api/environment-api/settings/schemas/builtin-processavailability) | `builtin:processavailability` | `HOST` - Host  `HOST_GROUP` - Host Group  `environment` |
 | [Удалённые среды](/managed/dynatrace-api/environment-api/settings/schemas/builtin-remote-environment) | `builtin:remote.environment` | `environment` |
-| [Сэмплирование трейсов для RPC-запросов](/managed/dynatrace-api/environment-api/settings/schemas/builtin-rpc-based-sampling) | `builtin:rpc-based-sampling` | `PROCESS_GROUP_INSTANCE` - Process  `PROCESS_GROUP` - Process Group  `CLOUD_APPLICATION` - Kubernetes workload  `CLOUD_APPLICATION_NAMESPACE` - Kubernetes namespace  `KUBERNETES_CLUSTER` - Kubernetes cluster  `HOST_GROUP` - Host Group  `environment` |
-| [Включение и контроль затрат](/managed/dynatrace-api/environment-api/settings/schemas/builtin-rum-custom-enablement) | `builtin:rum.custom.enablement` | `CUSTOM_APPLICATION` - Custom Application  `environment` |
-| [Имя и тип приложения](/managed/dynatrace-api/environment-api/settings/schemas/builtin-rum-custom-name) | `builtin:rum.custom.name` | `CUSTOM_APPLICATION` - Custom Application |
-| Имя фронтенда | `builtin:rum.frontend.name` | `APPLICATION` - Web application  `MOBILE_APPLICATION` - Mobile App |
-| [Определение имён хостов](/managed/dynatrace-api/environment-api/settings/schemas/builtin-rum-host-headers) | `builtin:rum.host-headers` | `environment` |
+| [Сэмплирование трасс для RPC-запросов](/managed/dynatrace-api/environment-api/settings/schemas/builtin-rpc-based-sampling) | `builtin:rpc-based-sampling` | `PROCESS_GROUP_INSTANCE` - Process  `PROCESS_GROUP` - Process Group  `CLOUD_APPLICATION` - Kubernetes workload  `CLOUD_APPLICATION_NAMESPACE` - Kubernetes namespace  `KUBERNETES_CLUSTER` - Kubernetes cluster  `HOST_GROUP` - Host Group  `environment` |
+| [Включение и контроль расходов](/managed/dynatrace-api/environment-api/settings/schemas/builtin-rum-custom-enablement) | `builtin:rum.custom.enablement` | `CUSTOM_APPLICATION` - Custom Application  `environment` |
+| [Название и тип приложения](/managed/dynatrace-api/environment-api/settings/schemas/builtin-rum-custom-name) | `builtin:rum.custom.name` | `CUSTOM_APPLICATION` - Custom Application |
+| [Название фронтенда](/managed/dynatrace-api/environment-api/settings/schemas/builtin-rum-frontend-name) | `builtin:rum.frontend.name` | `APPLICATION` - Web application  `MOBILE_APPLICATION` - Mobile App |
+| [Идентификация имён хостов](/managed/dynatrace-api/environment-api/settings/schemas/builtin-rum-host-headers) | `builtin:rum.host-headers` | `environment` |
 | [Определение IP](/managed/dynatrace-api/environment-api/settings/schemas/builtin-rum-ip-determination) | `builtin:rum.ip-determination` | `environment` |
 | [Сопоставление IP-адресов с местоположениями](/managed/dynatrace-api/environment-api/settings/schemas/builtin-rum-ip-mappings) | `builtin:rum.ip-mappings` | `environment` |
-| [Настройки beacon-эндпоинта](/managed/dynatrace-api/environment-api/settings/schemas/builtin-rum-mobile-beacon-endpoint) | `builtin:rum.mobile.beacon-endpoint` | `MOBILE_APPLICATION` - Mobile App  `CUSTOM_APPLICATION` - Custom Application |
-| [Включение и контроль затрат](/managed/dynatrace-api/environment-api/settings/schemas/builtin-rum-mobile-enablement) | `builtin:rum.mobile.enablement` | `MOBILE_APPLICATION` - Mobile App  `environment` |
+| [Настройки конечной точки маячка](/managed/dynatrace-api/environment-api/settings/schemas/builtin-rum-mobile-beacon-endpoint) | `builtin:rum.mobile.beacon-endpoint` | `MOBILE_APPLICATION` - Mobile App  `CUSTOM_APPLICATION` - Custom Application |
+| [Включение и контроль расходов](/managed/dynatrace-api/environment-api/settings/schemas/builtin-rum-mobile-enablement) | `builtin:rum.mobile.enablement` | `MOBILE_APPLICATION` - Mobile App  `environment` |
+| [Связывание фронтенда и бэкенда](/managed/dynatrace-api/environment-api/settings/schemas/builtin-rum-mobile-frontend-backend-linking) | `builtin:rum.mobile.frontend-backend-linking` | `MOBILE_APPLICATION` - Mobile App |
 | [Конфигурация Apdex](/managed/dynatrace-api/environment-api/settings/schemas/builtin-rum-mobile-key-performance-metrics) | `builtin:rum.mobile.key-performance-metrics` | `DEVICE_APPLICATION_METHOD` - Mobile app key user action  `MOBILE_APPLICATION` - Mobile App  `CUSTOM_APPLICATION` - Custom Application |
-| [Имя приложения](/managed/dynatrace-api/environment-api/settings/schemas/builtin-rum-mobile-name) | `builtin:rum.mobile.name` | `MOBILE_APPLICATION` - Mobile App |
+| [Название приложения](/managed/dynatrace-api/environment-api/settings/schemas/builtin-rum-mobile-name) | `builtin:rum.mobile.name` | `MOBILE_APPLICATION` - Mobile App |
 | [Настройки конфиденциальности](/managed/dynatrace-api/environment-api/settings/schemas/builtin-rum-mobile-privacy) | `builtin:rum.mobile.privacy` | `MOBILE_APPLICATION` - Mobile App |
 | [Ошибки запросов](/managed/dynatrace-api/environment-api/settings/schemas/builtin-rum-mobile-request-errors) | `builtin:rum.mobile.request-errors` | `MOBILE_APPLICATION` - Mobile App  `CUSTOM_APPLICATION` - Custom Application |
 | [Предотвращение перегрузки RUM](/managed/dynatrace-api/environment-api/settings/schemas/builtin-rum-overload-prevention) | `builtin:rum.overload-prevention` | `environment` |
@@ -319,33 +322,34 @@ source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/setting
 | [Разбивка по провайдерам](/managed/dynatrace-api/environment-api/settings/schemas/builtin-rum-provider-breakdown) | `builtin:rum.provider-breakdown` | `environment` |
 | [Расширенная корреляция](/managed/dynatrace-api/environment-api/settings/schemas/builtin-rum-resource-timing-origins) | `builtin:rum.resource-timing-origins` | `environment` |
 | [Оценка пользовательского опыта](/managed/dynatrace-api/environment-api/settings/schemas/builtin-rum-user-experience-score) | `builtin:rum.user-experience-score` | `environment` |
-| [Обнаружение приложений](/managed/dynatrace-api/environment-api/settings/schemas/builtin-rum-web-app-detection) | `builtin:rum.web.app-detection` | `environment` |
-| [Автоматическая инъекция](/managed/dynatrace-api/environment-api/settings/schemas/builtin-rum-web-automatic-injection) | `builtin:rum.web.automatic-injection` | `APPLICATION` - Web application |
-| [Beacon-источники для CORS](/managed/dynatrace-api/environment-api/settings/schemas/builtin-rum-web-beacon-domain-origins) | `builtin:rum.web.beacon-domain-origins` | `environment` |
-| [Настройки beacon-эндпоинта](/managed/dynatrace-api/environment-api/settings/schemas/builtin-rum-web-beacon-endpoint) | `builtin:rum.web.beacon-endpoint` | `APPLICATION` - Web application |
-| [Исключение/включение браузеров из мониторинга](/managed/dynatrace-api/environment-api/settings/schemas/builtin-rum-web-browser-exclusion) | `builtin:rum.web.browser-exclusion` | `APPLICATION` - Web application |
+| [Обнаружение приложения](/managed/dynatrace-api/environment-api/settings/schemas/builtin-rum-web-app-detection) | `builtin:rum.web.app-detection` | `environment` |
+| [Автоматическое внедрение](/managed/dynatrace-api/environment-api/settings/schemas/builtin-rum-web-automatic-injection) | `builtin:rum.web.automatic-injection` | `APPLICATION` - Web application |
+| [Источники маячка для CORS](/managed/dynatrace-api/environment-api/settings/schemas/builtin-rum-web-beacon-domain-origins) | `builtin:rum.web.beacon-domain-origins` | `environment` |
+| [Настройки конечной точки маячка](/managed/dynatrace-api/environment-api/settings/schemas/builtin-rum-web-beacon-endpoint) | `builtin:rum.web.beacon-endpoint` | `APPLICATION` - Web application |
+| [Исключить/включить браузеры из мониторинга](/managed/dynatrace-api/environment-api/settings/schemas/builtin-rum-web-browser-exclusion) | `builtin:rum.web.browser-exclusion` | `APPLICATION` - Web application |
 | [Ограничения захвата пользовательских свойств](/managed/dynatrace-api/environment-api/settings/schemas/builtin-rum-web-capture-custom-properties) | `builtin:rum.web.capture-custom-properties` | `APPLICATION` - Web application  `MOBILE_APPLICATION` - Mobile App |
 | [Пользовательские свойства конфигурации](/managed/dynatrace-api/environment-api/settings/schemas/builtin-rum-web-custom-configuration-properties) | `builtin:rum.web.custom-configuration-properties` | `APPLICATION` - Web application |
 | [Пользовательские ошибки](/managed/dynatrace-api/environment-api/settings/schemas/builtin-rum-web-custom-errors) | `builtin:rum.web.custom-errors` | `APPLICATION` - Web application  `environment-default` - Managed cluster-wide |
-| [Определение пользовательских правил инъекции](/managed/dynatrace-api/environment-api/settings/schemas/builtin-rum-web-custom-injection-rules) | `builtin:rum.web.custom-injection-rules` | `APPLICATION` - Web application |
+| [Определение пользовательских правил внедрения](/managed/dynatrace-api/environment-api/settings/schemas/builtin-rum-web-custom-injection-rules) | `builtin:rum.web.custom-injection-rules` | `APPLICATION` - Web application |
 | [Пользовательская версия RUM JavaScript](/managed/dynatrace-api/environment-api/settings/schemas/builtin-rum-web-custom-rum-javascript-version) | `builtin:rum.web.custom-rum-javascript-version` | `environment` |
-| [Включение и контроль затрат](/managed/dynatrace-api/environment-api/settings/schemas/builtin-rum-web-enablement) | `builtin:rum.web.enablement` | `APPLICATION` - Web application  `environment` |
+| [Включение и контроль расходов](/managed/dynatrace-api/environment-api/settings/schemas/builtin-rum-web-enablement) | `builtin:rum.web.enablement` | `APPLICATION` - Web application  `environment` |
+| [Связывание фронтенда и бэкенда](/managed/dynatrace-api/environment-api/settings/schemas/builtin-rum-web-frontend-backend-linking) | `builtin:rum.web.frontend-backend-linking` | `APPLICATION` - Web application |
 | [Cookie](/managed/dynatrace-api/environment-api/settings/schemas/builtin-rum-web-injection-cookie) | `builtin:rum.web.injection.cookie` | `APPLICATION` - Web application |
-| [Исключение IP-адресов из мониторинга](/managed/dynatrace-api/environment-api/settings/schemas/builtin-rum-web-ipaddress-exclusion) | `builtin:rum.web.ipaddress-exclusion` | `APPLICATION` - Web application |
+| [Исключить IP-адреса из мониторинга](/managed/dynatrace-api/environment-api/settings/schemas/builtin-rum-web-ipaddress-exclusion) | `builtin:rum.web.ipaddress-exclusion` | `APPLICATION` - Web application |
 | [Конфигурация Apdex для пользовательских действий](/managed/dynatrace-api/environment-api/settings/schemas/builtin-rum-web-key-performance-metric-custom-actions) | `builtin:rum.web.key-performance-metric-custom-actions` | `APPLICATION_METHOD` - User Action  `APPLICATION` - Web application |
 | [Конфигурация Apdex для действий загрузки](/managed/dynatrace-api/environment-api/settings/schemas/builtin-rum-web-key-performance-metric-load-actions) | `builtin:rum.web.key-performance-metric-load-actions` | `APPLICATION_METHOD` - User Action  `APPLICATION` - Web application |
 | [Конфигурация Apdex для XHR-действий](/managed/dynatrace-api/environment-api/settings/schemas/builtin-rum-web-key-performance-metric-xhr-actions) | `builtin:rum.web.key-performance-metric-xhr-actions` | `APPLICATION_METHOD` - User Action  `APPLICATION` - Web application |
 | [Ручная вставка](/managed/dynatrace-api/environment-api/settings/schemas/builtin-rum-web-manual-insertion) | `builtin:rum.web.manual-insertion` | `APPLICATION` - Web application |
-| [Имя приложения](/managed/dynatrace-api/environment-api/settings/schemas/builtin-rum-web-name) | `builtin:rum.web.name` | `APPLICATION` - Web application |
+| [Название приложения](/managed/dynatrace-api/environment-api/settings/schemas/builtin-rum-web-name) | `builtin:rum.web.name` | `APPLICATION` - Web application |
 | [Ошибки запросов](/managed/dynatrace-api/environment-api/settings/schemas/builtin-rum-web-request-errors) | `builtin:rum.web.request-errors` | `APPLICATION` - Web application  `environment-default` - Managed cluster-wide |
 | [Правила очистки URL ресурсов](/managed/dynatrace-api/environment-api/settings/schemas/builtin-rum-web-resource-cleanup-rules) | `builtin:rum.web.resource-cleanup-rules` | `environment` |
 | [Типы ресурсов](/managed/dynatrace-api/environment-api/settings/schemas/builtin-rum-web-resource-types) | `builtin:rum.web.resource-types` | `environment` |
 | [Имя файла кода мониторинга RUM](/managed/dynatrace-api/environment-api/settings/schemas/builtin-rum-web-rum-javascript-file-name) | `builtin:rum.web.rum-javascript-file-name` | `environment` |
 | [Обновления RUM JavaScript](/managed/dynatrace-api/environment-api/settings/schemas/builtin-rum-web-rum-javascript-updates) | `builtin:rum.web.rum-javascript-updates` | `APPLICATION` - Web application  `environment` |
-| [Исключение XHR-запросов из мониторинга](/managed/dynatrace-api/environment-api/settings/schemas/builtin-rum-web-xhr-exclusion) | `builtin:rum.web.xhr-exclusion` | `APPLICATION` - Web application |
-| Настройки контекста безопасности | `builtin:security-context` | `environment` |
-| Подключения обогащения безопасности | `builtin:security-enrichment.connections` | `environment` |
-| Настройка проблем безопасности (Preview) | `builtin:security-problems` | `environment` |
+| [Исключить XHR-запросы из мониторинга](/managed/dynatrace-api/environment-api/settings/schemas/builtin-rum-web-xhr-exclusion) | `builtin:rum.web.xhr-exclusion` | `APPLICATION` - Web application |
+| [Настройки контекста безопасности](/managed/dynatrace-api/environment-api/settings/schemas/builtin-security-context) | `builtin:security-context` | `environment` |
+| [Подключения обогащения безопасности](/managed/dynatrace-api/environment-api/settings/schemas/builtin-security-enrichment-connections) | `builtin:security-enrichment.connections` | `environment` |
+| [Конфигурация проблем безопасности](/managed/dynatrace-api/environment-api/settings/schemas/builtin-security-problems) Preview | `builtin:security-problems` | `environment` |
 | [Обнаружение сервисов](/managed/dynatrace-api/environment-api/settings/schemas/builtin-service-detection-rules) | `builtin:service-detection-rules` | `CLOUD_APPLICATION_NAMESPACE` - Kubernetes namespace  `KUBERNETES_CLUSTER` - Kubernetes cluster  `HOST_GROUP` - Host Group  `environment` |
 | [Service Detection v2 для OneAgent](/managed/dynatrace-api/environment-api/settings/schemas/builtin-service-detection-v2-for-oneagent) | `builtin:service-detection-v2-for-oneagent` | `CLOUD_APPLICATION_NAMESPACE` - Kubernetes namespace  `KUBERNETES_CLUSTER` - Kubernetes cluster  `HOST_GROUP` - Host Group  `environment` |
 | [Правила обнаружения сервисов для External Web Requests](/managed/dynatrace-api/environment-api/settings/schemas/builtin-service-detection-external-web-request) | `builtin:service-detection.external-web-request` | `environment` |
@@ -353,42 +357,42 @@ source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/setting
 | [Правила обнаружения сервисов для Full Web Requests](/managed/dynatrace-api/environment-api/settings/schemas/builtin-service-detection-full-web-request) | `builtin:service-detection.full-web-request` | `environment` |
 | [Правила обнаружения сервисов для Full Web Services](/managed/dynatrace-api/environment-api/settings/schemas/builtin-service-detection-full-web-service) | `builtin:service-detection.full-web-service` | `environment` |
 | [Разделение сервисов](/managed/dynatrace-api/environment-api/settings/schemas/builtin-service-splitting-rules) | `builtin:service-splitting-rules` | `CLOUD_APPLICATION_NAMESPACE` - Kubernetes namespace  `KUBERNETES_CLUSTER` - Kubernetes cluster  `HOST_GROUP` - Host Group  `environment` |
-| Cookie состояния Session Replay | `builtin:sessionreplay.cookie` | `environment` |
-| [Конфиденциальность данных Session Replay](/managed/dynatrace-api/environment-api/settings/schemas/builtin-sessionreplay-web-privacy-preferences) | `builtin:sessionreplay.web.privacy-preferences` | `APPLICATION` - Web application  `environment` |
+| [Cookie состояния Session Replay](/managed/dynatrace-api/environment-api/settings/schemas/builtin-sessionreplay-cookie) | `builtin:sessionreplay.cookie` | `environment` |
+| [Конфиденциальность данных session replay](/managed/dynatrace-api/environment-api/settings/schemas/builtin-sessionreplay-web-privacy-preferences) | `builtin:sessionreplay.web.privacy-preferences` | `APPLICATION` - Web application  `environment` |
 | [Захват ресурсов для Session Replay](/managed/dynatrace-api/environment-api/settings/schemas/builtin-sessionreplay-web-resource-capturing) | `builtin:sessionreplay.web.resource-capturing` | `APPLICATION` - Web application  `environment` |
-| [Отключённые запросы](/managed/dynatrace-api/environment-api/settings/schemas/builtin-settings-mutedrequests) | `builtin:settings.mutedrequests` | `SERVICE` - Service |
+| [Заглушенные запросы](/managed/dynatrace-api/environment-api/settings/schemas/builtin-settings-mutedrequests) | `builtin:settings.mutedrequests` | `SERVICE` - Service |
 | [Ключевые запросы](/managed/dynatrace-api/environment-api/settings/schemas/builtin-settings-subscriptions-service) | `builtin:settings.subscriptions.service` | `SERVICE` - Service |
-| [Захват span](/managed/dynatrace-api/environment-api/settings/schemas/builtin-span-capturing) | `builtin:span-capturing` | `environment` |
-| [Распространение контекста span](/managed/dynatrace-api/environment-api/settings/schemas/builtin-span-context-propagation) | `builtin:span-context-propagation` | `environment` |
-| [Точки входа span](/managed/dynatrace-api/environment-api/settings/schemas/builtin-span-entry-points) | `builtin:span-entry-points` | `environment` |
-| Security Posture Management | `builtin:spm-security-standards` | `environment` |
-| [Назначение synthetic-монитора веб-приложениям](/managed/dynatrace-api/environment-api/settings/schemas/builtin-synthetic-browser-assigned-applications) | `builtin:synthetic.browser.assigned-applications` | `SYNTHETIC_TEST` - Synthetic monitor |
-| Включение браузерного монитора | `builtin:synthetic.browser.enablement` | `SYNTHETIC_TEST` - Synthetic monitor  `environment` |
-| [Ключевые метрики производительности](/managed/dynatrace-api/environment-api/settings/schemas/builtin-synthetic-browser-kpms) | `builtin:synthetic.browser.kpms` | `SYNTHETIC_TEST` - Synthetic monitor |
-| [Имя монитора](/managed/dynatrace-api/environment-api/settings/schemas/builtin-synthetic-browser-name) | `builtin:synthetic.browser.name` | `SYNTHETIC_TEST` - Synthetic monitor |
-| [Обработка простоев](/managed/dynatrace-api/environment-api/settings/schemas/builtin-synthetic-browser-outage-handling) | `builtin:synthetic.browser.outage-handling` | `SYNTHETIC_TEST` - Synthetic monitor  `environment` |
+| [Захват спанов](/managed/dynatrace-api/environment-api/settings/schemas/builtin-span-capturing) | `builtin:span-capturing` | `environment` |
+| [Распространение контекста спанов](/managed/dynatrace-api/environment-api/settings/schemas/builtin-span-context-propagation) | `builtin:span-context-propagation` | `environment` |
+| [Точки входа спанов](/managed/dynatrace-api/environment-api/settings/schemas/builtin-span-entry-points) | `builtin:span-entry-points` | `environment` |
+| [Security Posture Management](/managed/dynatrace-api/environment-api/settings/schemas/builtin-spm-security-standards) | `builtin:spm-security-standards` | `environment` |
+| [Назначить синтетический монитор веб-приложениям](/managed/dynatrace-api/environment-api/settings/schemas/builtin-synthetic-browser-assigned-applications) | `builtin:synthetic.browser.assigned-applications` | `SYNTHETIC_TEST` - Synthetic monitor |
+| [Включение браузерного монитора](/managed/dynatrace-api/environment-api/settings/schemas/builtin-synthetic-browser-enablement) | `builtin:synthetic.browser.enablement` | `SYNTHETIC_TEST` - Synthetic monitor  `environment` |
+| [Ключевые показатели эффективности](/managed/dynatrace-api/environment-api/settings/schemas/builtin-synthetic-browser-kpms) | `builtin:synthetic.browser.kpms` | `SYNTHETIC_TEST` - Synthetic monitor |
+| [Название монитора](/managed/dynatrace-api/environment-api/settings/schemas/builtin-synthetic-browser-name) | `builtin:synthetic.browser.name` | `SYNTHETIC_TEST` - Synthetic monitor |
+| [Обработка простоя](/managed/dynatrace-api/environment-api/settings/schemas/builtin-synthetic-browser-outage-handling) | `builtin:synthetic.browser.outage-handling` | `SYNTHETIC_TEST` - Synthetic monitor  `environment` |
 | [Пороги производительности](/managed/dynatrace-api/environment-api/settings/schemas/builtin-synthetic-browser-performance-thresholds) | `builtin:synthetic.browser.performance-thresholds` | `SYNTHETIC_TEST` - Synthetic monitor |
-| [Частота и местоположения](/managed/dynatrace-api/environment-api/settings/schemas/builtin-synthetic-browser-scheduling) | `builtin:synthetic.browser.scheduling` | `SYNTHETIC_TEST` - Synthetic monitor |
+| [Частота и локации](/managed/dynatrace-api/environment-api/settings/schemas/builtin-synthetic-browser-scheduling) | `builtin:synthetic.browser.scheduling` | `SYNTHETIC_TEST` - Synthetic monitor |
 | [Расширенные настройки](/managed/dynatrace-api/environment-api/settings/schemas/builtin-synthetic-http-advanced-execution) Preview | `builtin:synthetic.http.advanced-execution` | `HTTP_CHECK` - HTTP monitor |
-| [Назначение synthetic-монитора приложениям](/managed/dynatrace-api/environment-api/settings/schemas/builtin-synthetic-http-assigned-applications) | `builtin:synthetic.http.assigned-applications` | `HTTP_CHECK` - HTTP monitor |
-| [Cookies](/managed/dynatrace-api/environment-api/settings/schemas/builtin-synthetic-http-cookies) | `builtin:synthetic.http.cookies` | `HTTP_CHECK` - HTTP monitor |
-| [Имя монитора](/managed/dynatrace-api/environment-api/settings/schemas/builtin-synthetic-http-name) | `builtin:synthetic.http.name` | `HTTP_CHECK` - HTTP monitor |
-| [Обработка простоев](/managed/dynatrace-api/environment-api/settings/schemas/builtin-synthetic-http-outage-handling) | `builtin:synthetic.http.outage-handling` | `HTTP_CHECK` - HTTP monitor  `environment` |
+| [Назначить синтетический монитор приложениям](/managed/dynatrace-api/environment-api/settings/schemas/builtin-synthetic-http-assigned-applications) | `builtin:synthetic.http.assigned-applications` | `HTTP_CHECK` - HTTP monitor |
+| [Cookie](/managed/dynatrace-api/environment-api/settings/schemas/builtin-synthetic-http-cookies) | `builtin:synthetic.http.cookies` | `HTTP_CHECK` - HTTP monitor |
+| [Название монитора](/managed/dynatrace-api/environment-api/settings/schemas/builtin-synthetic-http-name) | `builtin:synthetic.http.name` | `HTTP_CHECK` - HTTP monitor |
+| [Обработка простоя](/managed/dynatrace-api/environment-api/settings/schemas/builtin-synthetic-http-outage-handling) | `builtin:synthetic.http.outage-handling` | `HTTP_CHECK` - HTTP monitor  `environment` |
 | [Пороги производительности](/managed/dynatrace-api/environment-api/settings/schemas/builtin-synthetic-http-performance-thresholds) | `builtin:synthetic.http.performance-thresholds` | `HTTP_CHECK` - HTTP monitor |
-| [Частота и местоположения](/managed/dynatrace-api/environment-api/settings/schemas/builtin-synthetic-http-scheduling) | `builtin:synthetic.http.scheduling` | `HTTP_CHECK` - HTTP monitor |
-| [Конфигурация монитора доступности сети](/managed/dynatrace-api/environment-api/settings/schemas/builtin-synthetic-multiprotocol-config) | `builtin:synthetic.multiprotocol.config` | `MULTIPROTOCOL_MONITOR` - Network availability monitor |
-| [Имя монитора](/managed/dynatrace-api/environment-api/settings/schemas/builtin-synthetic-multiprotocol-name) | `builtin:synthetic.multiprotocol.name` | `MULTIPROTOCOL_MONITOR` - Network availability monitor |
-| [Обработка простоев](/managed/dynatrace-api/environment-api/settings/schemas/builtin-synthetic-multiprotocol-outage-handling) | `builtin:synthetic.multiprotocol.outage-handling` | `MULTIPROTOCOL_MONITOR` - Network availability monitor  `environment` |
+| [Частота и локации](/managed/dynatrace-api/environment-api/settings/schemas/builtin-synthetic-http-scheduling) | `builtin:synthetic.http.scheduling` | `HTTP_CHECK` - HTTP monitor |
+| [Конфигурация монитора Network Availability](/managed/dynatrace-api/environment-api/settings/schemas/builtin-synthetic-multiprotocol-config) | `builtin:synthetic.multiprotocol.config` | `MULTIPROTOCOL_MONITOR` - Network availability monitor |
+| [Название монитора](/managed/dynatrace-api/environment-api/settings/schemas/builtin-synthetic-multiprotocol-name) | `builtin:synthetic.multiprotocol.name` | `MULTIPROTOCOL_MONITOR` - Network availability monitor |
+| [Обработка простоя](/managed/dynatrace-api/environment-api/settings/schemas/builtin-synthetic-multiprotocol-outage-handling) | `builtin:synthetic.multiprotocol.outage-handling` | `MULTIPROTOCOL_MONITOR` - Network availability monitor  `environment` |
 | [Пороги производительности](/managed/dynatrace-api/environment-api/settings/schemas/builtin-synthetic-multiprotocol-performance-thresholds) | `builtin:synthetic.multiprotocol.performance-thresholds` | `MULTIPROTOCOL_MONITOR` - Network availability monitor |
-| [Частота и местоположения](/managed/dynatrace-api/environment-api/settings/schemas/builtin-synthetic-multiprotocol-scheduling) | `builtin:synthetic.multiprotocol.scheduling` | `MULTIPROTOCOL_MONITOR` - Network availability monitor |
-| Основные grail-теги synthetic-монитора | `builtin:synthetic.primary-grail-tags` | `SYNTHETIC_TEST` - Synthetic monitor  `HTTP_CHECK` - HTTP monitor  `MULTIPROTOCOL_MONITOR` - Network availability monitor |
-| [Доступность synthetic](/managed/dynatrace-api/environment-api/settings/schemas/builtin-synthetic-synthetic-availability-settings) | `builtin:synthetic.synthetic-availability-settings` | `environment` |
+| [Частота и локации](/managed/dynatrace-api/environment-api/settings/schemas/builtin-synthetic-multiprotocol-scheduling) | `builtin:synthetic.multiprotocol.scheduling` | `MULTIPROTOCOL_MONITOR` - Network availability monitor |
+| [Первичные grail-теги синтетического монитора](/managed/dynatrace-api/environment-api/settings/schemas/builtin-synthetic-primary-grail-tags) | `builtin:synthetic.primary-grail-tags` | `SYNTHETIC_TEST` - Synthetic monitor  `HTTP_CHECK` - HTTP monitor  `MULTIPROTOCOL_MONITOR` - Network availability monitor |
+| [Доступность синтетического мониторинга](/managed/dynatrace-api/environment-api/settings/schemas/builtin-synthetic-synthetic-availability-settings) | `builtin:synthetic.synthetic-availability-settings` | `environment` |
 | [Автоматически применяемые теги](/managed/dynatrace-api/environment-api/settings/schemas/builtin-tags-auto-tagging) | `builtin:tags.auto-tagging` | `environment` |
-| [Access-токены](/managed/dynatrace-api/environment-api/settings/schemas/builtin-tokens-token-settings) | `builtin:tokens.token-settings` | `environment` |
-| Управление приёмом трейсов | `builtin:trace.ingest.control` | `PROCESS_GROUP_INSTANCE` - Process  `PROCESS_GROUP` - Process Group  `CLOUD_APPLICATION` - Kubernetes workload  `CLOUD_APPLICATION_NAMESPACE` - Kubernetes namespace  `KUBERNETES_CLUSTER` - Kubernetes cluster  `HOST_GROUP` - Host Group  `environment` |
-| [Метрики эндпоинтов](/managed/dynatrace-api/environment-api/settings/schemas/builtin-unified-services-endpoint-metrics) | `builtin:unified-services-endpoint-metrics` | `SERVICE` - Service  `environment` |
-| [Сэмплирование трейсов для HTTP-запросов](/managed/dynatrace-api/environment-api/settings/schemas/builtin-url-based-sampling) | `builtin:url-based-sampling` | `PROCESS_GROUP_INSTANCE` - Process  `PROCESS_GROUP` - Process Group  `CLOUD_APPLICATION` - Kubernetes workload  `CLOUD_APPLICATION_NAMESPACE` - Kubernetes namespace  `KUBERNETES_CLUSTER` - Kubernetes cluster  `HOST_GROUP` - Host Group  `environment` |
+| [Токены доступа](/managed/dynatrace-api/environment-api/settings/schemas/builtin-tokens-token-settings) | `builtin:tokens.token-settings` | `environment` |
+| [Контроль приёма трасс](/managed/dynatrace-api/environment-api/settings/schemas/builtin-trace-ingest-control) | `builtin:trace.ingest.control` | `PROCESS_GROUP_INSTANCE` - Process  `PROCESS_GROUP` - Process Group  `CLOUD_APPLICATION` - Kubernetes workload  `CLOUD_APPLICATION_NAMESPACE` - Kubernetes namespace  `KUBERNETES_CLUSTER` - Kubernetes cluster  `HOST_GROUP` - Host Group  `environment` |
+| [Метрики конечных точек](/managed/dynatrace-api/environment-api/settings/schemas/builtin-unified-services-endpoint-metrics) | `builtin:unified-services-endpoint-metrics` | `SERVICE` - Service  `environment` |
+| [Сэмплирование трасс для HTTP-запросов](/managed/dynatrace-api/environment-api/settings/schemas/builtin-url-based-sampling) | `builtin:url-based-sampling` | `PROCESS_GROUP_INSTANCE` - Process  `PROCESS_GROUP` - Process Group  `CLOUD_APPLICATION` - Kubernetes workload  `CLOUD_APPLICATION_NAMESPACE` - Kubernetes namespace  `KUBERNETES_CLUSTER` - Kubernetes cluster  `HOST_GROUP` - Host Group  `environment` |
 | [Сопоставление шаблонов пути URL](/managed/dynatrace-api/environment-api/settings/schemas/builtin-url-path-pattern-matching-rules) | `builtin:url-path-pattern-matching-rules` | `CLOUD_APPLICATION_NAMESPACE` - Kubernetes namespace  `KUBERNETES_CLUSTER` - Kubernetes cluster  `HOST_GROUP` - Host Group  `environment` |
-| [Аналитика юзабилити](/managed/dynatrace-api/environment-api/settings/schemas/builtin-usability-analytics) | `builtin:usability-analytics` | `APPLICATION` - Web application  `environment` |
-| [Пользовательские метрики действий пользователя](/managed/dynatrace-api/environment-api/settings/schemas/builtin-user-action-custom-metrics) | `builtin:user-action-custom-metrics` | `environment` |
+| [Аналитика удобства использования](/managed/dynatrace-api/environment-api/settings/schemas/builtin-usability-analytics) | `builtin:usability-analytics` | `APPLICATION` - Web application  `environment` |
+| [Пользовательские метрики пользовательских действий](/managed/dynatrace-api/environment-api/settings/schemas/builtin-user-action-custom-metrics) | `builtin:user-action-custom-metrics` | `environment` |
 | [VMware](/managed/dynatrace-api/environment-api/settings/schemas/builtin-virtualization-vmware) | `builtin:virtualization.vmware` | `environment` |

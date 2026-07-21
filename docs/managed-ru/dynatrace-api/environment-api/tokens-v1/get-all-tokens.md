@@ -1,21 +1,20 @@
 ---
-title: Tokens API v1 - GET все токены
+title: Tokens API v1 - GET all tokens
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/tokens-v1/get-all-tokens
-scraped: 2026-05-12T12:11:25.947081
 ---
 
-# Tokens API v1 - GET все токены
+# Tokens API v1 - GET all tokens
 
-# Tokens API v1 - GET все токены
+# Tokens API v1 - GET all tokens
 
-* Справочник
+* Справка
 * Обновлено 17 мая 2022 г.
 
-Этот API устарел. Используйте вместо него [Access tokens API](/managed/dynatrace-api/environment-api/tokens-v2/api-tokens "Управление токенами аутентификации Dynatrace API.").
+Этот API устарел. Вместо него используй [Access tokens API](/managed/dynatrace-api/environment-api/tokens-v2/api-tokens "Manage Dynatrace API authentication tokens.").
 
-Перечисляет все токены аутентификации Dynatrace API вашей среды. Список содержит только имена и ID токенов. Подробности можно получить либо [по ID токена](/managed/dynatrace-api/environment-api/tokens-v1/get-token-metadata "Узнайте, как использовать Dynatrace API для получения метаданных токена аутентификации Dynatrace API."), либо [по самому токену](/managed/dynatrace-api/environment-api/tokens-v1/post-token-metadata "Узнайте, как использовать Dynatrace API для поиска метаданных токена аутентификации Dynatrace API.").
+Выводит список всех токенов аутентификации Dynatrace API окружения. Список содержит только имена и ID токенов. Детали можно получить либо [по ID токена](/managed/dynatrace-api/environment-api/tokens-v1/get-token-metadata "Learn how use the Dynatrace API to get metadata for a Dynatrace API authentication token."), либо [по самому токену](/managed/dynatrace-api/environment-api/tokens-v1/post-token-metadata "Learn how to use the Dynatrace API to look up the metadata of a Dynatrace API authentication token.").
 
-Запрос возвращает payload `application/json`.
+Запрос возвращает payload в формате `application/json`.
 
 |  |  |  |
 | --- | --- | --- |
@@ -24,19 +23,19 @@ scraped: 2026-05-12T12:11:25.947081
 
 ## Аутентификация
 
-Для выполнения запроса необходим access token со scope `TenantTokenManagement`.
+Для выполнения этого запроса нужен токен доступа с областью действия `TenantTokenManagement`.
 
-О том, как получить и использовать токен, см. [Токены и аутентификация](/managed/discover-dynatrace/references/dynatrace-api/basics/dynatrace-api-authentication).
+О том, как получить и использовать его, смотри [Tokens and authentication](/managed/discover-dynatrace/references/dynatrace-api/basics/dynatrace-api-authentication).
 
 ## Параметры
 
-| Параметр | Тип | Описание | В | Обязательность |
+| Параметр | Тип | Описание | Расположение | Обязательный |
 | --- | --- | --- | --- | --- |
-| limit | integer | Ограничивает максимальное число возвращаемых токенов.  Если не задано, используется значение `1000`.  Максимальное значение, 1000000. | query | Опциональный |
-| user | string | Фильтрует результирующий набор токенов по пользователю, владеющему токеном. | query | Опциональный |
-| permissions | string[] | Фильтрует результирующий набор токенов по scope, назначенным токену.  Можно указать несколько разрешений в следующем формате: `permissions=scope1&permissions=scope2`. Токен должен иметь *все* указанные scope. Элемент может принимать значения * `ActiveGateCertManagement` * `AdvancedSyntheticIntegration` * `CaptureRequestData` * `DTAQLAccess` * `DataExport` * `DataImport` * `DataPrivacy` * `Davis` * `DiagnosticExport` * `DssFileManagement` * `ExternalSyntheticIntegration` * `InstallerDownload` * `LogExport` * `MemoryDump` * `Mobile` * `PluginUpload` * `ReadConfig` * `ReadSyntheticData` * `RestRequestForwarding` * `RumBrowserExtension` * `RumJavaScriptTagManagement` * `SupportAlert` * `TenantTokenManagement` * `UserSessionAnonymization` * `ViewDashboard` * `ViewReport` * `WriteConfig` * `WriteSyntheticData` * `activeGateTokenManagement.create` * `activeGateTokenManagement.read` * `activeGateTokenManagement.write` * `activeGates.read` * `activeGates.write` * `adaptiveTrafficManagement.read` * `agentTokenManagement.read` * `apiTokens.read` * `apiTokens.write` * `attacks.read` * `attacks.write` * `auditLogs.read` * `bizevents.ingest` * `credentialVault.read` * `credentialVault.write` * `entities.read` * `entities.write` * `events.ingest` * `events.read` * `extensionConfigurationActions.write` * `extensionConfigurations.read` * `extensionConfigurations.write` * `extensionDiscoveryJmx.read` * `extensionEnvironment.read` * `extensionEnvironment.write` * `extensions.read` * `extensions.write` * `geographicRegions.read` * `hub.install` * `hub.read` * `hub.write` * `javaScriptMappingFiles.read` * `javaScriptMappingFiles.write` * `logs.ingest` * `logs.read` * `metrics.ingest` * `metrics.read` * `metrics.write` * `networkZones.read` * `networkZones.write` * `oneAgents.read` * `oneAgents.write` * `openTelemetryTrace.ingest` * `openpipeline.events` * `openpipeline.events.custom` * `openpipeline.events_sdlc` * `openpipeline.events_sdlc.custom` * `openpipeline.events_security` * `openpipeline.events_security.custom` * `problems.read` * `problems.write` * `releases.read` * `rumCookieNames.read` * `rumManualInsertionTags.read` * `securityProblems.read` * `securityProblems.write` * `settings.read` * `settings.write` * `slo.read` * `slo.write` * `syntheticExecutions.read` * `syntheticExecutions.write` * `syntheticLocations.read` * `syntheticLocations.write` * `tenantTokenRotation.write` * `traces.lookup` * `unifiedAnalysis.read` | query | Опциональный |
-| from | integer | Последнее использование после этой метки времени (миллисекунды UTC). | query | Опциональный |
-| to | integer | Последнее использование до этой метки времени (миллисекунды UTC). | query | Опциональный |
+| limit | integer | Ограничивает максимальное количество возвращаемых токенов.  Если не задано, используется значение `1000`.  Максимальное значение 1000000. | query | Необязательный |
+| user | string | Фильтрует результирующий набор токенов по пользователю, которому принадлежит токен. | query | Необязательный |
+| permissions | string[] | Фильтрует результирующий набор токенов по областям действия (scopes), назначенным токену.  Можно указать несколько разрешений в следующем формате: `permissions=scope1&permissions=scope2`. У токена должны быть *все* указанные области действия. Элемент может принимать следующие значения * `ActiveGateCertManagement` * `AdvancedSyntheticIntegration` * `CaptureRequestData` * `DTAQLAccess` * `DataExport` * `DataImport` * `DataPrivacy` * `Davis` * `DiagnosticExport` * `DssFileManagement` * `ExternalSyntheticIntegration` * `InstallerDownload` * `LogExport` * `MemoryDump` * `Mobile` * `PluginUpload` * `ReadConfig` * `ReadSyntheticData` * `RestRequestForwarding` * `RumBrowserExtension` * `RumJavaScriptTagManagement` * `SupportAlert` * `TenantTokenManagement` * `UserSessionAnonymization` * `ViewDashboard` * `ViewReport` * `WriteConfig` * `WriteSyntheticData` * `activeGateTokenManagement.create` * `activeGateTokenManagement.read` * `activeGateTokenManagement.write` * `activeGates.read` * `activeGates.write` * `adaptiveTrafficManagement.read` * `agentTokenManagement.read` * `apiTokens.read` * `apiTokens.write` * `attacks.read` * `attacks.write` * `auditLogs.read` * `bizevents.ingest` * `credentialVault.read` * `credentialVault.write` * `entities.read` * `entities.write` * `events.ingest` * `events.read` * `extensionConfigurationActions.write` * `extensionConfigurations.read` * `extensionConfigurations.write` * `extensionDiscoveryJmx.read` * `extensionDiscoveryPmi.read` * `extensionEnvironment.read` * `extensionEnvironment.write` * `extensions.read` * `extensions.write` * `geographicRegions.read` * `hub.install` * `hub.read` * `hub.write` * `javaScriptMappingFiles.read` * `javaScriptMappingFiles.write` * `logs.ingest` * `logs.read` * `metrics.ingest` * `metrics.read` * `metrics.write` * `networkZones.read` * `networkZones.write` * `oneAgents.read` * `oneAgents.write` * `openTelemetryTrace.ingest` * `openpipeline.events` * `openpipeline.events.custom` * `openpipeline.events_sdlc` * `openpipeline.events_sdlc.custom` * `openpipeline.events_security` * `openpipeline.events_security.custom` * `openpipeline.events_smartscape` * `problems.read` * `problems.write` * `releases.read` * `rumCookieNames.read` * `rumManualInsertionTags.read` * `securityProblems.read` * `securityProblems.write` * `settings.read` * `settings.write` * `slo.read` * `slo.write` * `syntheticExecutions.read` * `syntheticExecutions.write` * `syntheticLocations.read` * `syntheticLocations.write` * `tenantTokenRotation.write` * `traces.lookup` * `unifiedAnalysis.read` | query | Необязательный |
+| from | integer | Последнее использование после этой временной метки (UTC миллисекунды). | query | Необязательный |
+| to | integer | Последнее использование до этой временной метки (UTC миллисекунды). | query | Необязательный |
 
 ## Ответ
 
@@ -44,7 +43,7 @@ scraped: 2026-05-12T12:11:25.947081
 
 | Код | Тип | Описание |
 | --- | --- | --- |
-| **200** | [StubList](#openapi-definition-StubList) | Успех |
+| **200** | [StubList](#openapi-definition-StubList) | Успешно |
 | **4XX** | [ErrorEnvelope](#openapi-definition-ErrorEnvelope) | Ошибка на стороне клиента. |
 | **5XX** | [ErrorEnvelope](#openapi-definition-ErrorEnvelope) | Ошибка на стороне сервера. |
 
@@ -56,7 +55,7 @@ scraped: 2026-05-12T12:11:25.947081
 
 | Элемент | Тип | Описание |
 | --- | --- | --- |
-| values | [EntityShortRepresentation[]](#openapi-definition-EntityShortRepresentation) | Упорядоченный список кратких представлений сущностей Dynatrace. |
+| values | [EntityShortRepresentation](#openapi-definition-EntityShortRepresentation)[] | Упорядоченный список кратких представлений сущностей Dynatrace. |
 
 #### Объект `EntityShortRepresentation`
 
@@ -78,8 +77,8 @@ scraped: 2026-05-12T12:11:25.947081
 
 | Элемент | Тип | Описание |
 | --- | --- | --- |
-| code | integer | HTTP-код состояния |
-| constraintViolations | [ConstraintViolation[]](#openapi-definition-ConstraintViolation) | Список нарушений ограничений |
+| code | integer | Код статуса HTTP |
+| constraintViolations | [ConstraintViolation](#openapi-definition-ConstraintViolation)[] | Список нарушений ограничений |
 | message | string | Сообщение об ошибке |
 
 #### Объект `ConstraintViolation`
@@ -90,10 +89,10 @@ scraped: 2026-05-12T12:11:25.947081
 | --- | --- | --- |
 | location | string | - |
 | message | string | - |
-| parameterLocation | string | -Элемент может принимать значения * `HEADER` * `PATH` * `PAYLOAD_BODY` * `QUERY` |
+| parameterLocation | string | -Элемент может принимать следующие значения * `HEADER` * `PATH` * `PAYLOAD_BODY` * `QUERY` |
 | path | string | - |
 
-### JSON-модели тела ответа
+### Примеры моделей тела ответа JSON
 
 ```
 {
@@ -217,9 +216,9 @@ scraped: 2026-05-12T12:11:25.947081
 
 ## Пример
 
-В этом примере запрос перечисляет все API-токены среды `mySampleEnv`.
+В этом примере запрос выводит список всех токенов API окружения `mySampleEnv`.
 
-API-токен передаётся в заголовке **Authorization**.
+Токен API передаётся в заголовке **Authorization**.
 
 Результат усечён до трёх записей.
 
