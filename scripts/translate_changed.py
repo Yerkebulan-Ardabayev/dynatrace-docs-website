@@ -52,6 +52,17 @@ def _strip_code(text: str) -> str:
     return re.sub(r"`[^`\n]*`", "", re.sub(r"```.*?```", "", text, flags=re.DOTALL))
 
 
+# Скрейпер сеет невидимый ﻿ внутри ссылок (`[текст﻿](url)`). Модель его
+# иногда не переносит, на вёрстку это не влияет, поэтому при сверке структуры
+# просто выкидываем такие символы с обеих сторон.
+_INVISIBLE = re.compile(r"[﻿​‎‏]")
+
+# Класс URL закрыт скобками намеренно: без этого `[url﻿](url)` из корпуса
+# читался как ОДИН адрес вместе с `](`, и любое расхождение в невидимом символе
+# выглядело как потерянная ссылка.
+_URL_RE = re.compile(r"https?://[^\s\[\]()<>\"']+")
+
+
 def _structure_defect(source: str, translated: str) -> str:
     """Структурные расхождения перевода с оригиналом. Пусто, если всё сошлось.
 
@@ -60,15 +71,15 @@ def _structure_defect(source: str, translated: str) -> str:
     потерянный фенс кода, пропавший URL. Проверка стоит ДО записи в корпус:
     иначе битый перевод затирает готовый файл, а батч встаёт на гейте целиком.
     """
-    src, dst = _strip_code(source), _strip_code(translated)
+    src = _INVISIBLE.sub("", _strip_code(source))
+    dst = _INVISIBLE.sub("", _strip_code(translated))
 
     if (src.count("[") - src.count("]")) != (dst.count("[") - dst.count("]")):
         return "баланс квадратных скобок разошёлся с оригиналом (сломана ссылка)"
     if source.count("```") != translated.count("```"):
         return f"фенсы кода: было {source.count('```')}, стало {translated.count('```')}"
 
-    url_re = re.compile(r"https?://[^\s)\"']+")
-    lost = sorted(set(url_re.findall(source)) - set(url_re.findall(translated)))
+    lost = sorted(set(_URL_RE.findall(src)) - set(_URL_RE.findall(dst)))
     if lost:
         return f"потеряны URL ({len(lost)}), первый: {lost[0][:60]}"
 
