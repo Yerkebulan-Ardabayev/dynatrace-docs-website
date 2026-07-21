@@ -1,23 +1,22 @@
 ---
 title: Failure detection API - PUT a detection rule
 source: https://docs.dynatrace.com/managed/dynatrace-api/configuration-api/service-api/failure-detection/detection-rules/put-rule
-scraped: 2026-05-12T11:16:17.584662
 ---
 
 # Failure detection API - PUT a detection rule
 
 # Failure detection API - PUT a detection rule
 
-* Reference
-* Published Jan 11, 2021
+* Справка
+* Опубликовано 11 января 2021 г.
 
 Обновляет указанное правило обнаружения сбоев.
 
-Если правила с указанным ID не существует, создаётся новое и добавляется в конец списка правил. Правила вычисляются сверху вниз; применяется первое совпавшее правило. Чтобы задать определённый порядок, используйте [запрос на изменение порядка](/managed/dynatrace-api/configuration-api/service-api/failure-detection/detection-rules/reorder-rules "Изменение порядка правил обнаружения сбоев через Dynatrace API.").
+Если правило с указанным ID не существует, создаётся новое и добавляется в конец списка правил. Правила проверяются сверху вниз, применяется первое подходящее правило. Чтобы задать определённый порядок, используй [запрос на изменение порядка](/managed/dynatrace-api/configuration-api/service-api/failure-detection/detection-rules/reorder-rules "Change the order of failure detection rules via the Dynatrace API.").
 
 Набор параметров обнаружения сбоев, используемый правилом, должен существовать на момент создания правила.
 
-Запрос принимает payload `application/json`.
+Запрос принимает содержимое в формате `application/json`.
 
 |  |  |  |
 | --- | --- | --- |
@@ -26,18 +25,18 @@ scraped: 2026-05-12T11:16:17.584662
 
 ## Аутентификация
 
-Для выполнения этого запроса нужен access token со scope `WriteConfig`.
+Для выполнения этого запроса нужен токен доступа с областью действия `WriteConfig`.
 
-Как его получить и использовать, смотрите [Tokens and authentication](/managed/discover-dynatrace/references/dynatrace-api/basics/dynatrace-api-authentication).
+О том, как получить и использовать токен, читай в разделе [Tokens and authentication](/managed/discover-dynatrace/references/dynatrace-api/basics/dynatrace-api-authentication).
 
 ## Параметры
 
-Чтобы найти все вариации модели, зависящие от типа модели, смотрите [JSON models](/managed/dynatrace-api/configuration-api/service-api/failure-detection/json-models "Изучите вариации JSON-моделей в Dynatrace API обнаружения сбоев.").
+Полный список вариаций модели в зависимости от типа модели приведён в разделе [JSON models](/managed/dynatrace-api/configuration-api/service-api/failure-detection/json-models "Learn the variations of JSON models in the Dynatrace failure detection API.").
 
-| Параметр | Тип | Описание | Где | Обязательный |
+| Параметр | Тип | Описание | Расположение | Обязательный |
 | --- | --- | --- | --- | --- |
-| id | string | ID требуемого правила обнаружения сбоев. Должен быть валидным UUID по RFC 4122. | path | Required |
-| body | [FailureDetectionRule](#openapi-definition-FailureDetectionRule) | JSON-тело запроса. Содержит обновлённую конфигурацию правила обнаружения сбоев.  Этим запросом нельзя обновить ID. Вместо этого используйте запрос смены ID. | body | Optional |
+| id | string | ID нужного правила обнаружения сбоев. Должен быть корректным UUID по RFC 4122. | путь | Обязательный |
+| body | [FailureDetectionRule](#openapi-definition-FailureDetectionRule) | Тело запроса в формате JSON. Содержит обновлённую конфигурацию правила обнаружения сбоев.  ID этим запросом обновить нельзя. Для этого используется запрос на изменение ID. | тело | Опциональный |
 
 ### Объекты тела запроса
 
@@ -47,12 +46,12 @@ scraped: 2026-05-12T11:16:17.584662
 
 | Элемент | Тип | Описание | Обязательный |
 | --- | --- | --- | --- |
-| conditions | [FailureDetectionCondition[]](#openapi-definition-FailureDetectionCondition) | Список условий правила.  Правило применяется, когда выполнены **все** условия. | Required |
-| description | string | Краткое описание правила. | Optional |
-| enabled | boolean | Правило включено (`true`) или отключено (`false`). | Required |
-| fdpId | string | Набор параметров обнаружения сбоев (FDP) правила.  Укажите здесь ID набора. Набор FDP должен существовать на момент создания правила. | Required |
-| id | string | ID правила. | Optional |
-| name | string | Отображаемое имя правила.  Длина имени ограничена 150 символами. | Optional |
+| conditions | [FailureDetectionCondition](#openapi-definition-FailureDetectionCondition)[] | Список условий правила.  Правило применяется, когда выполняются **все** условия. | Обязательный |
+| description | string | Краткое описание правила. | Опциональный |
+| enabled | boolean | Правило включено (`true`) или отключено (`false`). | Обязательный |
+| fdpId | string | Набор параметров обнаружения сбоев (FDP) для правила.  Здесь указывается ID набора. Набор FDP должен существовать на момент создания правила. | Обязательный |
+| id | string | ID правила. | Опциональный |
+| name | string | Отображаемое имя правила.  Длина имени ограничена 150 символами. | Опциональный |
 
 #### Объект `FailureDetectionCondition`
 
@@ -60,22 +59,22 @@ scraped: 2026-05-12T11:16:17.584662
 
 | Элемент | Тип | Описание | Обязательный |
 | --- | --- | --- | --- |
-| attribute | string | Проверяемый атрибут. Возможные значения: * `PG_NAME` * `PG_TAG` * `SERVICE_MANAGEMENT_ZONES` * `SERVICE_NAME` * `SERVICE_SERVICE_TYPE` * `SERVICE_TAG` | Optional |
-| predicate | [FdcPredicate](#openapi-definition-FdcPredicate) | Предикат, проверяющий значение атрибута.  Фактический набор полей зависит от типа предиката. Список фактических объектов см. в описании поля **type** или см. [Failure detection API - JSON models](https://dt-url.net/9sg3swf). | Optional |
+| attribute | string | Проверяемый атрибут. Элемент может принимать следующие значения * `PG_NAME` * `PG_TAG` * `SERVICE_MANAGEMENT_ZONES` * `SERVICE_NAME` * `SERVICE_SERVICE_TYPE` * `SERVICE_TAG` | Опциональный |
+| predicate | [FdcPredicate](#openapi-definition-FdcPredicate) | Предикат, проверяющий значение атрибута.  Фактический набор полей зависит от типа предиката. Список фактических объектов приведён в описании поля **type**, либо см. [Failure detection API - JSON models﻿](https://dt-url.net/9sg3swf?dt=m). | Опциональный |
 
 #### Объект `FdcPredicate`
 
 Предикат, проверяющий значение атрибута.
 
-Фактический набор полей зависит от типа предиката. Список фактических объектов см. в описании поля **type** или см. [Failure detection API - JSON models](https://dt-url.net/9sg3swf).
+Фактический набор полей зависит от типа предиката. Список фактических объектов приведён в описании поля **type**, либо см. [Failure detection API - JSON models﻿](https://dt-url.net/9sg3swf?dt=m).
 
 | Элемент | Тип | Описание | Обязательный |
 | --- | --- | --- | --- |
-| type | string | Определяет фактический набор полей в зависимости от значения. Смотрите один из следующих объектов:  * `STRING_EQUALS` -> FdcPredicateStringEquals * `STRING_STARTS_WITH` -> FdcPredicateStringStartsWith * `STRING_ENDS_WITH` -> FdcPredicateStringEndsWith * `STRING_CONTAINS_SUBSTRING` -> FdcPredicateStringContains * `INTEGER_EQUALS` -> FdcPredicateIntegerEquals * `INTEGER_LESS_THAN` -> FdcPredicateIntegerLessThan * `INTEGER_LESS_THAN_OR_EQUAL` -> FdcPredicateIntegerLessThanOrEqual * `INTEGER_GREATER_THAN` -> FdcPredicateIntegerGreaterThan * `INTEGER_GREATER_THAN_OR_EQUAL` -> FdcPredicateIntegerGreaterThanOrEqual * `LONG_EQUALS` -> FdcPredicateLongEquals * `LONG_LESS_THAN` -> FdcPredicateLongLessThan * `LONG_LESS_THAN_OR_EQUAL` -> FdcPredicateLongLessThanOrEqual * `LONG_GREATER_THAN` -> FdcPredicateLongGreaterThan * `LONG_GREATER_THAN_OR_EQUAL` -> FdcPredicateLongGreaterThanOrEqual * `TAG_KEY_EQUALS` -> FdcPredicateTagKeyEquals * `TAG_EQUALS` -> FdcPredicateTagEquals * `SERVICE_TYPE_EQUALS` -> FdcPredicateServiceTypeEquals * `MANAGEMENT_ZONES_CONTAINS_ALL` -> FdcPredicateManagementZonesContainsAll * `SET_OF_INTEGERS_CONTAINS_ANY` -> FdcPredicateSetOfIntegersContainsAny * `SET_OF_INTEGERS_CONTAINS_ALL` -> FdcPredicateSetOfIntegersContainsAll Возможные значения: * `INTEGER_EQUALS` * `INTEGER_GREATER_THAN` * `INTEGER_GREATER_THAN_OR_EQUAL` * `INTEGER_LESS_THAN` * `INTEGER_LESS_THAN_OR_EQUAL` * `LONG_EQUALS` * `LONG_GREATER_THAN` * `LONG_GREATER_THAN_OR_EQUAL` * `LONG_LESS_THAN` * `LONG_LESS_THAN_OR_EQUAL` * `MANAGEMENT_ZONES_CONTAINS_ALL` * `SERVICE_TYPE_EQUALS` * `SET_OF_INTEGERS_CONTAINS_ALL` * `SET_OF_INTEGERS_CONTAINS_ANY` * `STRING_CONTAINS_SUBSTRING` * `STRING_ENDS_WITH` * `STRING_EQUALS` * `STRING_STARTS_WITH` * `TAG_EQUALS` * `TAG_KEY_EQUALS` | Required |
+| type | string | Определяет фактический набор полей в зависимости от значения. См. один из следующих объектов:  * `STRING_EQUALS` -> FdcPredicateStringEquals * `STRING_STARTS_WITH` -> FdcPredicateStringStartsWith * `STRING_ENDS_WITH` -> FdcPredicateStringEndsWith * `STRING_CONTAINS_SUBSTRING` -> FdcPredicateStringContains * `INTEGER_EQUALS` -> FdcPredicateIntegerEquals * `INTEGER_LESS_THAN` -> FdcPredicateIntegerLessThan * `INTEGER_LESS_THAN_OR_EQUAL` -> FdcPredicateIntegerLessThanOrEqual * `INTEGER_GREATER_THAN` -> FdcPredicateIntegerGreaterThan * `INTEGER_GREATER_THAN_OR_EQUAL` -> FdcPredicateIntegerGreaterThanOrEqual * `LONG_EQUALS` -> FdcPredicateLongEquals * `LONG_LESS_THAN` -> FdcPredicateLongLessThan * `LONG_LESS_THAN_OR_EQUAL` -> FdcPredicateLongLessThanOrEqual * `LONG_GREATER_THAN` -> FdcPredicateLongGreaterThan * `LONG_GREATER_THAN_OR_EQUAL` -> FdcPredicateLongGreaterThanOrEqual * `TAG_KEY_EQUALS` -> FdcPredicateTagKeyEquals * `TAG_EQUALS` -> FdcPredicateTagEquals * `SERVICE_TYPE_EQUALS` -> FdcPredicateServiceTypeEquals * `MANAGEMENT_ZONES_CONTAINS_ALL` -> FdcPredicateManagementZonesContainsAll * `SET_OF_INTEGERS_CONTAINS_ANY` -> FdcPredicateSetOfIntegersContainsAny * `SET_OF_INTEGERS_CONTAINS_ALL` -> FdcPredicateSetOfIntegersContainsAll Элемент может принимать следующие значения * `INTEGER_EQUALS` * `INTEGER_GREATER_THAN` * `INTEGER_GREATER_THAN_OR_EQUAL` * `INTEGER_LESS_THAN` * `INTEGER_LESS_THAN_OR_EQUAL` * `LONG_EQUALS` * `LONG_GREATER_THAN` * `LONG_GREATER_THAN_OR_EQUAL` * `LONG_LESS_THAN` * `LONG_LESS_THAN_OR_EQUAL` * `MANAGEMENT_ZONES_CONTAINS_ALL` * `SERVICE_TYPE_EQUALS` * `SET_OF_INTEGERS_CONTAINS_ALL` * `SET_OF_INTEGERS_CONTAINS_ANY` * `STRING_CONTAINS_SUBSTRING` * `STRING_ENDS_WITH` * `STRING_EQUALS` * `STRING_STARTS_WITH` * `TAG_EQUALS` * `TAG_KEY_EQUALS` | Обязательный |
 
 ### JSON-модель тела запроса
 
-Это модель тела запроса, показывающая возможные элементы. Её нужно адаптировать под реальный запрос.
+Это модель тела запроса, показывающая возможные элементы. Её нужно адаптировать для использования в реальном запросе.
 
 ```
 {
@@ -163,9 +162,9 @@ scraped: 2026-05-12T11:16:17.584662
 
 | Код | Тип | Описание |
 | --- | --- | --- |
-| **201** | [EntityShortRepresentation](#openapi-definition-EntityShortRepresentation) | Успех. Новое правило обнаружения сбоев создано. Тело ответа содержит ID нового правила. |
-| **204** | - | Успех. Правило обнаружения сбоев обновлено. Ответ без тела. |
-| **400** | [ErrorEnvelope](#openapi-definition-ErrorEnvelope) | Сбой. Невалидный ввод. |
+| **201** | [EntityShortRepresentation](#openapi-definition-EntityShortRepresentation) | Успех. Новое правило обнаружения сбоев создано. Ответ содержит ID нового правила. |
+| **204** | - | Успех. Правило обнаружения сбоев обновлено. Ответ не содержит тела. |
+| **400** | [ErrorEnvelope](#openapi-definition-ErrorEnvelope) | Ошибка. Введённые данные некорректны. |
 
 ### Объекты тела ответа
 
@@ -189,8 +188,8 @@ scraped: 2026-05-12T11:16:17.584662
 
 | Элемент | Тип | Описание |
 | --- | --- | --- |
-| code | integer | HTTP-код статуса |
-| constraintViolations | [ConstraintViolation[]](#openapi-definition-ConstraintViolation) | Список нарушений ограничений |
+| code | integer | Код статуса HTTP |
+| constraintViolations | [ConstraintViolation](#openapi-definition-ConstraintViolation)[] | Список нарушений ограничений |
 | message | string | Сообщение об ошибке |
 
 #### Объект `ConstraintViolation`
@@ -201,7 +200,7 @@ scraped: 2026-05-12T11:16:17.584662
 | --- | --- | --- |
 | location | string | - |
 | message | string | - |
-| parameterLocation | string | -Возможные значения: * `HEADER` * `PATH` * `PAYLOAD_BODY` * `QUERY` |
+| parameterLocation | string | -Элемент может принимать следующие значения * `HEADER` * `PATH` * `PAYLOAD_BODY` * `QUERY` |
 | path | string | - |
 
 ### JSON-модели тела ответа
@@ -282,11 +281,11 @@ scraped: 2026-05-12T11:16:17.584662
 }
 ```
 
-## Validate payload
+## Проверка содержимого
 
-Рекомендуется валидировать payload перед отправкой реального запроса. Код ответа **204** означает валидный payload.
+Рекомендуется проверять содержимое перед отправкой в реальном запросе. Код ответа **204** означает, что содержимое корректно.
 
-Запрос принимает payload `application/json`.
+Запрос принимает содержимое в формате `application/json`.
 
 |  |  |  |
 | --- | --- | --- |
@@ -295,18 +294,18 @@ scraped: 2026-05-12T11:16:17.584662
 
 ### Аутентификация
 
-Для выполнения этого запроса нужен access token со scope `WriteConfig`.
+Для выполнения этого запроса нужен токен доступа с областью действия `WriteConfig`.
 
-Как его получить и использовать, смотрите [Tokens and authentication](/managed/discover-dynatrace/references/dynatrace-api/basics/dynatrace-api-authentication).
+О том, как получить и использовать токен, читай в разделе [Tokens and authentication](/managed/discover-dynatrace/references/dynatrace-api/basics/dynatrace-api-authentication).
 
 ### Ответ
 
-#### Коды ответа
+#### Коды ответов
 
 | Код | Тип | Описание |
 | --- | --- | --- |
-| **204** | - | Успех. Переданная конфигурация валидна. Ответ без тела. |
-| **400** | [ErrorEnvelope](#openapi-definition-ErrorEnvelope) | Сбой. Невалидный ввод. |
+| **204** | - | Успешно. Отправленная конфигурация корректна. Ответ не содержит тела. |
+| **400** | [ErrorEnvelope](#openapi-definition-ErrorEnvelope) | Ошибка. Входные данные некорректны. |
 
 #### Объекты тела ответа
 
@@ -320,8 +319,8 @@ scraped: 2026-05-12T11:16:17.584662
 
 | Элемент | Тип | Описание |
 | --- | --- | --- |
-| code | integer | HTTP-код статуса |
-| constraintViolations | [ConstraintViolation[]](#openapi-definition-ConstraintViolation) | Список нарушений ограничений |
+| code | integer | Код состояния HTTP |
+| constraintViolations | [ConstraintViolation](#openapi-definition-ConstraintViolation)[] | Список нарушений ограничений |
 | message | string | Сообщение об ошибке |
 
 #### Объект `ConstraintViolation`
@@ -332,10 +331,10 @@ scraped: 2026-05-12T11:16:17.584662
 | --- | --- | --- |
 | location | string | - |
 | message | string | - |
-| parameterLocation | string | -Возможные значения: * `HEADER` * `PATH` * `PAYLOAD_BODY` * `QUERY` |
+| parameterLocation | string | -Элемент может принимать следующие значения * `HEADER` * `PATH` * `PAYLOAD_BODY` * `QUERY` |
 | path | string | - |
 
-#### JSON-модели тела ответа
+#### Модели тела ответа JSON
 
 ```
 {

@@ -1,19 +1,18 @@
 ---
 title: Failure detection API - PUT a parameter set
 source: https://docs.dynatrace.com/managed/dynatrace-api/configuration-api/service-api/failure-detection/parameter-set/put-parameter-set
-scraped: 2026-05-12T11:16:24.849392
 ---
 
 # Failure detection API - PUT a parameter set
 
 # Failure detection API - PUT a parameter set
 
-* Reference
-* Published Jan 11, 2021
+* Справка
+* Опубликовано 11 янв. 2021 г.
 
 Обновляет указанный набор параметров обнаружения сбоев.
 
-Запрос принимает payload `application/json`.
+Запрос принимает полезную нагрузку `application/json`.
 
 |  |  |  |
 | --- | --- | --- |
@@ -22,18 +21,18 @@ scraped: 2026-05-12T11:16:24.849392
 
 ## Аутентификация
 
-Для выполнения этого запроса нужен access token со scope `WriteConfig`.
+Для выполнения этого запроса нужен токен доступа со scope `WriteConfig`.
 
-Как его получить и использовать, смотрите [Tokens and authentication](/managed/discover-dynatrace/references/dynatrace-api/basics/dynatrace-api-authentication).
+О том, как его получить и использовать, см. [Tokens and authentication](/managed/discover-dynatrace/references/dynatrace-api/basics/dynatrace-api-authentication).
 
 ## Параметры
 
-Чтобы найти все вариации модели, зависящие от типа модели, смотрите [JSON models](/managed/dynatrace-api/configuration-api/service-api/failure-detection/json-models "Изучите вариации JSON-моделей в Dynatrace API обнаружения сбоев.").
+Список всех вариаций модели, зависящих от её типа, см. в [моделях JSON](/managed/dynatrace-api/configuration-api/service-api/failure-detection/json-models "Learn the variations of JSON models in the Dynatrace failure detection API.").
 
-| Параметр | Тип | Описание | Где | Обязательный |
+| Параметр | Тип | Описание | В | Обязательный |
 | --- | --- | --- | --- | --- |
-| id | string | ID требуемого набора параметров обнаружения сбоев. Должен быть валидным UUID по RFC 4122. | path | Required |
-| body | [FailureDetectionParameterSet](#openapi-definition-FailureDetectionParameterSet) | JSON-тело запроса. Содержит обновлённый набор параметров обнаружения сбоев.  Этим запросом нельзя обновить ID. Вместо этого используйте запрос смены ID. | body | Optional |
+| id | string | ID нужного набора параметров обнаружения сбоев. Должен быть корректным RFC 4122 UUID. | path | Обязательный |
+| body | [FailureDetectionParameterSet](#openapi-definition-FailureDetectionParameterSet) | Тело запроса JSON. Содержит обновлённый набор параметров обнаружения сбоев.  ID нельзя обновить этим запросом. Вместо этого нужно использовать запрос смены ID. | body | Необязательный |
 
 ### Объекты тела запроса
 
@@ -41,25 +40,25 @@ scraped: 2026-05-12T11:16:24.849392
 
 Набор параметров обнаружения сбоев (FDP).
 
-Эти параметры определяют условия сбоя и успеха.
+Эти параметры задают условия сбоя и успеха.
 
 | Элемент | Тип | Описание | Обязательный |
 | --- | --- | --- | --- |
-| brokenLinkDomains | string[] | Список доменов для особой обработки HTTP-кода ответа 404.  Если верхний домен *Referer* присутствует в списке ИЛИ равен верхнему домену хоста запроса, код 404 считается сбоем.  Применимо только когда **isHttp404NotFoundFailureEnabled** установлено в `true`. | Optional |
-| clientSideMissingHttpCodeIsFailure | boolean | Отсутствующий HTTP-код ответа на стороне клиента считается сбоем (`true`) или успехом (`false`).  Если не задано, используется `false`. | Optional |
-| description | string | Краткое описание набора FDP. | Optional |
-| exceptionOnAnyNodeExceptionPatterns | [ExceptionPattern[]](#openapi-definition-ExceptionPattern) | Список ошибочных исключений.  Если исключение на *любом* узле сервиса соответствует *любому* из этих шаблонов, оно считается сбоем. | Optional |
-| failingHttpCodesClientSide | string | Список HTTP-кодов ответа на стороне клиента, которые считаются сбоем.  Формат это список диапазонов и отдельных значений (например, `500-599, 400-499, 1008`).  Если не задано, используется диапазон `400-599`. | Optional |
-| failingHttpCodesServerSide | string | Список HTTP-кодов ответа на стороне сервера, которые считаются сбоем.  Формат это список диапазонов и отдельных значений (например, `500-599, 400-499, 1008`).Если не задано, используется диапазон `500-599`. | Optional |
-| http404NotFoundFailureEnabled | boolean | Особая обработка HTTP-кода ответа 404 включена (`true`) или отключена (`false`). Подробности особой обработки см. в **brokenLinkDomains**.  Применимо только когда 404 НЕ входит в список HTTP-кодов ответа, считающихся сбоем, и только для стороны сервера.  Если не задано, используется `false`. | Optional |
-| id | string | ID набора параметров. | Optional |
-| ignoreAllExceptions | boolean | Если установлено в true, все исключения будут игнорироваться. Это означает, что заданные шаблоны исключений не будут иметь никакого эффекта. | Optional |
-| ignoreSpanFailureDetection | boolean | Если установлено в true, обнаружение сбоев по span будет игнорироваться. | Optional |
-| ignoredExceptionPatterns | [ExceptionPattern[]](#openapi-definition-ExceptionPattern) | Список игнорируемых исключений.  Если исключение на входном узле сервиса соответствует *любому* из этих шаблонов, оно игнорируется обнаружением сбоев. | Optional |
-| name | string | Отображаемое имя набора FDP.  Длина имени ограничена 150 символами. | Optional |
-| serverSideMissingHttpCodeIsFailure | boolean | Отсутствующий HTTP-код ответа на стороне сервера считается сбоем (`true`) или успехом (`false`).  Если не задано, используется `false`. | Optional |
-| successForcingExceptionPatterns | [ExceptionPattern[]](#openapi-definition-ExceptionPattern) | Список исключений успеха.  Если исключение на входном узле сервиса соответствует *любому* из этих шаблонов, оно считается успехом. | Optional |
-| tagConditions | [FdpTagCondition[]](#openapi-definition-FdpTagCondition) | Список условий на основе тегов.  Если выполнено *любое* условие, запрос считается сбоем. | Optional |
+| brokenLinkDomains | string[] | Список доменов для особой обработки HTTP-кода ответа 404.  Если верхний домен *Referer* присутствует в списке ИЛИ совпадает с верхним доменом хоста запроса, код 404 считается сбоем.  Применимо, только если **isHttp404NotFoundFailureEnabled** установлен в `true`. | Необязательный |
+| clientSideMissingHttpCodeIsFailure | boolean | Отсутствующий HTTP-код ответа на стороне клиента считается сбоем (`true`) или успехом (`false`).  Если не задано, используется `false`. | Необязательный |
+| description | string | Краткое описание набора FDP. | Необязательный |
+| exceptionOnAnyNodeExceptionPatterns | [ExceptionPattern](#openapi-definition-ExceptionPattern)[] | Список ошибочных исключений.  Если исключение на *любом* узле сервиса соответствует *любому* из этих шаблонов, оно считается сбоем. | Необязательный |
+| failingHttpCodesClientSide | string | Список HTTP-кодов ответа на стороне клиента, которые считаются сбоем.  Формат: список диапазонов и отдельных значений (например, `500-599, 400-499, 1008`).  Если не задано, используется диапазон `400-599`. | Необязательный |
+| failingHttpCodesServerSide | string | Список HTTP-кодов ответа на стороне сервера, которые считаются сбоем.  Формат: список диапазонов и отдельных значений (например, `500-599, 400-499, 1008`).Если не задано, используется диапазон `500-599`. | Необязательный |
+| http404NotFoundFailureEnabled | boolean | Особая обработка HTTP-кода ответа 404 включена (`true`) или отключена (`false`). Подробности особой обработки см. в **brokenLinkDomains**.  Применимо, только если 404 НЕ входит в список сбойных HTTP-кодов ответа, и только для стороны сервера.  Если не задано, используется `false`. | Необязательный |
+| id | string | ID набора параметров. | Необязательный |
+| ignoreAllExceptions | boolean | Если установлено в true, все исключения будут игнорироваться. Это означает, что заданные шаблоны исключений не будут иметь эффекта. | Необязательный |
+| ignoreSpanFailureDetection | boolean | Если установлено в true, обнаружение сбоев по span будет игнорироваться. | Необязательный |
+| ignoredExceptionPatterns | [ExceptionPattern](#openapi-definition-ExceptionPattern)[] | Список игнорируемых исключений.  Если исключение на входном узле сервиса соответствует *любому* из этих шаблонов, оно игнорируется обнаружением сбоев. | Необязательный |
+| name | string | Отображаемое имя набора FDP.  Длина имени ограничена 150 символами. | Необязательный |
+| serverSideMissingHttpCodeIsFailure | boolean | Отсутствующий HTTP-код ответа на стороне сервера считается сбоем (`true`) или успехом (`false`).  Если не задано, используется `false`. | Необязательный |
+| successForcingExceptionPatterns | [ExceptionPattern](#openapi-definition-ExceptionPattern)[] | Список исключений успеха.  Если исключение на входном узле сервиса соответствует *любому* из этих шаблонов, оно считается успехом. | Необязательный |
+| tagConditions | [FdpTagCondition](#openapi-definition-FdpTagCondition)[] | Список условий на основе тегов.  Если выполнено *любое* условие, запрос считается сбоем. | Необязательный |
 
 #### Объект `ExceptionPattern`
 
@@ -69,8 +68,8 @@ scraped: 2026-05-12T11:16:24.849392
 
 | Элемент | Тип | Описание | Обязательный |
 | --- | --- | --- | --- |
-| classPattern | string | - | Optional |
-| messagePattern | string | - | Optional |
+| classPattern | string | - | Необязательный |
+| messagePattern | string | - | Необязательный |
 
 #### Объект `FdpTagCondition`
 
@@ -78,22 +77,22 @@ scraped: 2026-05-12T11:16:24.849392
 
 | Элемент | Тип | Описание | Обязательный |
 | --- | --- | --- | --- |
-| predicate | [FdpTagPredicate](#openapi-definition-FdpTagPredicate) | Предикат, проверяющий значение тега.  Фактический набор полей зависит от типа предиката. Список фактических объектов см. в описании поля **type** или см. [Failure detection API - JSON models](https://dt-url.net/9sg3swf). | Required |
-| tagKey | string | Ключ проверяемого тега. | Required |
+| predicate | [FdpTagPredicate](#openapi-definition-FdpTagPredicate) | Предикат, проверяющий значение тега.  Фактический набор полей зависит от типа предиката. Список фактических объектов см. в описании поля **type** или в [Failure detection API - JSON models﻿](https://dt-url.net/9sg3swf?dt=m). | Обязательный |
+| tagKey | string | Ключ проверяемого тега. | Обязательный |
 
 #### Объект `FdpTagPredicate`
 
 Предикат, проверяющий значение тега.
 
-Фактический набор полей зависит от типа предиката. Список фактических объектов см. в описании поля **type** или см. [Failure detection API - JSON models](https://dt-url.net/9sg3swf).
+Фактический набор полей зависит от типа предиката. Список фактических объектов см. в описании поля **type** или в [Failure detection API - JSON models﻿](https://dt-url.net/9sg3swf?dt=m).
 
 | Элемент | Тип | Описание | Обязательный |
 | --- | --- | --- | --- |
-| type | string | Определяет фактический набор полей в зависимости от значения. Смотрите один из следующих объектов:  * `STRING_EXISTS` -> FdpTagStringExists * `STRING_EQUALS` -> FdpTagStringEquals * `STRING_STARTS_WITH` -> FdpTagStringStartsWith * `STRING_ENDS_WITH` -> FdpTagStringEndsWith * `STRING_CONTAINS_SUBSTRING` -> FdpTagStringContainsSubstring * `INTEGER_EXISTS` -> FdpTagIntegerExists * `INTEGER_EQUALS` -> FdpTagIntegerEquals * `INTEGER_LESS_THAN` -> FdpTagIntegerLessThan * `INTEGER_LESS_THAN_OR_EQUAL` -> FdpTagIntegerLessThanOrEqual * `INTEGER_GREATER_THAN` -> FdpTagIntegerGreaterThan * `INTEGER_GREATER_THAN_OR_EQUAL` -> FdpTagIntegerGreaterThanOrEqual * `DOUBLE_EXISTS` -> FdpTagDoubleExists * `DOUBLE_EQUALS` -> FdpTagDoubleEquals * `DOUBLE_LESS_THAN` -> FdpTagDoubleLessThan * `DOUBLE_LESS_THAN_OR_EQUAL` -> FdpTagDoubleLessThanOrEqual * `DOUBLE_GREATER_THAN` -> FdpTagDoubleGreaterThan * `DOUBLE_GREATER_THAN_OR_EQUAL` -> FdpTagDoubleGreaterThanOrEqual Возможные значения: * `DOUBLE_EQUALS` * `DOUBLE_EXISTS` * `DOUBLE_GREATER_THAN` * `DOUBLE_GREATER_THAN_OR_EQUAL` * `DOUBLE_LESS_THAN` * `DOUBLE_LESS_THAN_OR_EQUAL` * `INTEGER_EQUALS` * `INTEGER_EXISTS` * `INTEGER_GREATER_THAN` * `INTEGER_GREATER_THAN_OR_EQUAL` * `INTEGER_LESS_THAN` * `INTEGER_LESS_THAN_OR_EQUAL` * `STRING_CONTAINS_SUBSTRING` * `STRING_ENDS_WITH` * `STRING_EQUALS` * `STRING_EXISTS` * `STRING_STARTS_WITH` | Required |
+| type | string | Определяет фактический набор полей в зависимости от значения. См. один из следующих объектов:  * `STRING_EXISTS` -> FdpTagStringExists * `STRING_EQUALS` -> FdpTagStringEquals * `STRING_STARTS_WITH` -> FdpTagStringStartsWith * `STRING_ENDS_WITH` -> FdpTagStringEndsWith * `STRING_CONTAINS_SUBSTRING` -> FdpTagStringContainsSubstring * `INTEGER_EXISTS` -> FdpTagIntegerExists * `INTEGER_EQUALS` -> FdpTagIntegerEquals * `INTEGER_LESS_THAN` -> FdpTagIntegerLessThan * `INTEGER_LESS_THAN_OR_EQUAL` -> FdpTagIntegerLessThanOrEqual * `INTEGER_GREATER_THAN` -> FdpTagIntegerGreaterThan * `INTEGER_GREATER_THAN_OR_EQUAL` -> FdpTagIntegerGreaterThanOrEqual * `DOUBLE_EXISTS` -> FdpTagDoubleExists * `DOUBLE_EQUALS` -> FdpTagDoubleEquals * `DOUBLE_LESS_THAN` -> FdpTagDoubleLessThan * `DOUBLE_LESS_THAN_OR_EQUAL` -> FdpTagDoubleLessThanOrEqual * `DOUBLE_GREATER_THAN` -> FdpTagDoubleGreaterThan * `DOUBLE_GREATER_THAN_OR_EQUAL` -> FdpTagDoubleGreaterThanOrEqual Элемент может принимать следующие значения * `DOUBLE_EQUALS` * `DOUBLE_EXISTS` * `DOUBLE_GREATER_THAN` * `DOUBLE_GREATER_THAN_OR_EQUAL` * `DOUBLE_LESS_THAN` * `DOUBLE_LESS_THAN_OR_EQUAL` * `INTEGER_EQUALS` * `INTEGER_EXISTS` * `INTEGER_GREATER_THAN` * `INTEGER_GREATER_THAN_OR_EQUAL` * `INTEGER_LESS_THAN` * `INTEGER_LESS_THAN_OR_EQUAL` * `STRING_CONTAINS_SUBSTRING` * `STRING_ENDS_WITH` * `STRING_EQUALS` * `STRING_EXISTS` * `STRING_STARTS_WITH` | Обязательный |
 
-### JSON-модель тела запроса
+### Модель JSON тела запроса
 
-Это модель тела запроса, показывающая возможные элементы. Её нужно адаптировать под реальный запрос.
+Это модель тела запроса, показывающая возможные элементы. Её нужно скорректировать для использования в реальном запросе.
 
 ```
 {
@@ -217,9 +216,9 @@ scraped: 2026-05-12T11:16:24.849392
 
 | Код | Тип | Описание |
 | --- | --- | --- |
-| **201** | [EntityShortRepresentation](#openapi-definition-EntityShortRepresentation) | Успех. Новый набор параметров обнаружения сбоев создан. Тело ответа содержит ID нового набора. |
-| **204** | - | Успех. Набор параметров обнаружения сбоев обновлён. Ответ без тела. |
-| **400** | [ErrorEnvelope](#openapi-definition-ErrorEnvelope) | Сбой. Невалидный ввод. |
+| **201** | [EntityShortRepresentation](#openapi-definition-EntityShortRepresentation) | Успешно. Создан новый набор параметров обнаружения сбоев. Ответ содержит ID нового набора. |
+| **204** | - | Успешно. Набор параметров обнаружения сбоев обновлён. Ответ не содержит тела. |
+| **400** | [ErrorEnvelope](#openapi-definition-ErrorEnvelope) | Ошибка. Введены некорректные данные. |
 
 ### Объекты тела ответа
 
@@ -243,8 +242,8 @@ scraped: 2026-05-12T11:16:24.849392
 
 | Элемент | Тип | Описание |
 | --- | --- | --- |
-| code | integer | HTTP-код статуса |
-| constraintViolations | [ConstraintViolation[]](#openapi-definition-ConstraintViolation) | Список нарушений ограничений |
+| code | integer | Код статуса HTTP |
+| constraintViolations | [ConstraintViolation](#openapi-definition-ConstraintViolation)[] | Список нарушений ограничений |
 | message | string | Сообщение об ошибке |
 
 #### Объект `ConstraintViolation`
@@ -255,10 +254,10 @@ scraped: 2026-05-12T11:16:24.849392
 | --- | --- | --- |
 | location | string | - |
 | message | string | - |
-| parameterLocation | string | -Возможные значения: * `HEADER` * `PATH` * `PAYLOAD_BODY` * `QUERY` |
+| parameterLocation | string | -Элемент может принимать следующие значения * `HEADER` * `PATH` * `PAYLOAD_BODY` * `QUERY` |
 | path | string | - |
 
-### JSON-модели тела ответа
+### Модели JSON тела ответа
 
 ```
 {
@@ -336,11 +335,11 @@ scraped: 2026-05-12T11:16:24.849392
 }
 ```
 
-## Validate payload
+## Проверка полезной нагрузки
 
-Рекомендуется валидировать payload перед отправкой реального запроса. Код ответа **204** означает валидный payload.
+Рекомендуется проверять полезную нагрузку перед отправкой её в составе реального запроса. Код ответа **204** означает, что полезная нагрузка валидна.
 
-Запрос принимает payload `application/json`.
+Запрос принимает полезную нагрузку `application/json`.
 
 |  |  |  |
 | --- | --- | --- |
@@ -349,9 +348,9 @@ scraped: 2026-05-12T11:16:24.849392
 
 ### Аутентификация
 
-Для выполнения этого запроса нужен access token со scope `WriteConfig`.
+Для выполнения этого запроса нужен токен доступа с областью действия `WriteConfig`.
 
-Как его получить и использовать, смотрите [Tokens and authentication](/managed/discover-dynatrace/references/dynatrace-api/basics/dynatrace-api-authentication).
+Чтобы узнать, как получить и использовать его, см. [Токены и аутентификация](/managed/discover-dynatrace/references/dynatrace-api/basics/dynatrace-api-authentication).
 
 ### Ответ
 
@@ -359,8 +358,8 @@ scraped: 2026-05-12T11:16:24.849392
 
 | Код | Тип | Описание |
 | --- | --- | --- |
-| **204** | - | Успех. Переданная конфигурация валидна. Ответ без тела. |
-| **400** | [ErrorEnvelope](#openapi-definition-ErrorEnvelope) | Сбой. Невалидный ввод. |
+| **204** | - | Успешно. Отправленная конфигурация валидна. Ответ не содержит тела. |
+| **400** | [ErrorEnvelope](#openapi-definition-ErrorEnvelope) | Ошибка. Введены недопустимые данные. |
 
 #### Объекты тела ответа
 
@@ -374,8 +373,8 @@ scraped: 2026-05-12T11:16:24.849392
 
 | Элемент | Тип | Описание |
 | --- | --- | --- |
-| code | integer | HTTP-код статуса |
-| constraintViolations | [ConstraintViolation[]](#openapi-definition-ConstraintViolation) | Список нарушений ограничений |
+| code | integer | Код статуса HTTP |
+| constraintViolations | [ConstraintViolation](#openapi-definition-ConstraintViolation)[] | Список нарушений ограничений |
 | message | string | Сообщение об ошибке |
 
 #### Объект `ConstraintViolation`
@@ -386,10 +385,10 @@ scraped: 2026-05-12T11:16:24.849392
 | --- | --- | --- |
 | location | string | - |
 | message | string | - |
-| parameterLocation | string | -Возможные значения: * `HEADER` * `PATH` * `PAYLOAD_BODY` * `QUERY` |
+| parameterLocation | string | -Элемент может принимать следующие значения * `HEADER` * `PATH` * `PAYLOAD_BODY` * `QUERY` |
 | path | string | - |
 
-#### JSON-модели тела ответа
+#### Модели JSON тела ответа
 
 ```
 {

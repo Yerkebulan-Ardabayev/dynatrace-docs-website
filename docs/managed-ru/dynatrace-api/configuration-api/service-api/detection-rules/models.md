@@ -1,62 +1,61 @@
 ---
 title: Service detection API - JSON models
 source: https://docs.dynatrace.com/managed/dynatrace-api/configuration-api/service-api/detection-rules/models
-scraped: 2026-05-12T12:02:42.818699
 ---
 
 # Service detection API - JSON models
 
 # Service detection API - JSON models
 
-* Reference
-* Published Aug 06, 2019
+* Справка
+* Опубликовано 06 авг. 2019 г.
 
-JSON-модели API **Service detection rules** сильно различаются в зависимости от поля **type** некоторых объектов. JSON-модели для каждой вариации перечислены ниже.
+JSON модели правил **Service detection rules** API сильно различаются в зависимости от **типа** некоторых объектов. Здесь можно найти JSON модели для каждого варианта.
 
-## Вариации объекта `ServiceDetectionRule`
+## Варианты объекта `ServiceDetectionRule`
 
-Объект `ServiceDetectionRule` является базовым для всех правил обнаружения сервисов. Фактический набор полей зависит от поля **type** правила.
+Объект `ServiceDetectionRule` служит базой для всех правил обнаружения сервисов. Фактический набор полей зависит от **типа** правила.
 
 #### FULL\_WEB\_REQUEST
 
 FullWebRequestRule
 
-Parameters
+Параметры
 
 JSON model
 
 #### Объект `FullWebRequestRule`
 
-Правило обнаружения сервисов типа `FULL_WEB_REQUEST`.
+Правило обнаружения сервиса типа `FULL_WEB_REQUEST`.
 
 | Элемент | Тип | Описание |
 | --- | --- | --- |
-| applicationId | [ApplicationId](#openapi-definition-ApplicationId) | Вклад в расчёт ID сервиса от обнаруженного ID приложения.  Есть два взаимоисключающих варианта:  * Переопределить обнаруженное значение заданным статическим значением. Укажите новое значение в поле **valueOverride**. * Динамически преобразовать обнаруженное значение. Укажите параметры преобразования в поле **transformations**. |
-| conditions | [ConditionsFullWebRequestAttributeTypeDto[]](#openapi-definition-ConditionsFullWebRequestAttributeTypeDto) | Список условий правила.  Если указано несколько условий, применяется логика AND. |
-| contextRoot | [ContextRoot](#openapi-definition-ContextRoot) | Вклад в расчёт ID сервиса от обнаруженного context root.  Context root это первый сегмент URL запроса после имени сервера. Например, в URL `www.dynatrace.com/support/help/dynatrace-api/` context root равен `support`.  Есть два варианта:  * Сохранить часть обнаруженного URL. Укажите количество сохраняемых сегментов в поле **segmentsToCopyFromUrlPath**. * Динамически преобразовать обнаруженный URL. Укажите параметры преобразования в поле **transformations**.  Можно использовать один или оба варианта. Если используются оба, преобразование применяется к изменённому URL. |
+| applicationId | [ApplicationId](#openapi-definition-ApplicationId) | Вклад обнаруженного ID приложения в расчёт ID сервиса. Доступны два взаимоисключающих варианта: * Переопределить обнаруженное значение указанным статическим значением. Новое значение указывается в поле **valueOverride**. * Динамически преобразовать обнаруженное значение. Параметры преобразования указываются в поле **transformations**. |
+| conditions | [ConditionsFullWebRequestAttributeTypeDto](#openapi-definition-ConditionsFullWebRequestAttributeTypeDto)[] | Список условий правила. Если указано несколько условий, применяется логика AND. |
+| contextRoot | [ContextRoot](#openapi-definition-ContextRoot) | Вклад обнаруженного контекстного корня в расчёт ID сервиса. Контекстный корень, это первый сегмент URL запроса после имени сервера. Например, в URL `www.dynatrace.com/support/help/dynatrace-api/` контекстным корнем является `support`. Доступны два варианта: * Оставить часть обнаруженного URL. Количество сегментов, которые нужно сохранить, указывается в поле **segmentsToCopyFromUrlPath**. * Динамически преобразовать обнаруженный URL. Параметры преобразования указываются в поле **transformations**. Можно использовать один или оба варианта. При использовании обоих преобразование применяется к изменённому URL. |
 | description | string | Краткое описание правила. |
 | enabled | boolean | Правило включено (`true`) или отключено (`false`). |
-| id | string | ID правила обнаружения сервисов. |
-| managementZones | string[] | Зона управления (указанная по ID) группы процессов, для которой должно быть создано это правило обнаружения сервисов.  Здесь можно указать только 1 зону управления. |
-| metadata | [ConfigurationMetadata](#openapi-definition-ConfigurationMetadata) | Метаданные для отладки |
-| name | string | Имя правила. |
-| order | string | Порядок правила в списке правил.  Правила выполняются сверху вниз. Применяется первое совпавшее правило. |
-| serverName | [ServerName](#openapi-definition-ServerName) | Вклад в расчёт ID сервиса от обнаруженного имени сервера.  Есть два взаимоисключающих варианта:  * Переопределить обнаруженное значение заданным статическим значением. Укажите новое значение в поле **valueOverride**. * Динамически преобразовать обнаруженное значение. Укажите параметры преобразования в поле **transformations**. |
-| type | string | Тип правила обнаружения сервисов. |
+| id | string | ID правила обнаружения сервиса. |
+| managementZones | string[] | Management zone (указывается по ID) группы процессов, для которой нужно создать это правило обнаружения сервиса. Здесь можно указать только 1 management zone. |
+| metadata | [ConfigurationMetadata](#openapi-definition-ConfigurationMetadata) | Метаданные, полезные для отладки |
+| name | string | Название правила. |
+| order | string | Порядок правила в списке правил. Правила оцениваются сверху вниз. Применяется первое совпавшее правило. |
+| serverName | [ServerName](#openapi-definition-ServerName) | Вклад обнаруженного имени сервера в расчёт ID сервиса. Доступны два взаимоисключающих варианта: * Переопределить обнаруженное значение указанным статическим значением. Новое значение указывается в поле **valueOverride**. * Динамически преобразовать обнаруженное значение. Параметры преобразования указываются в поле **transformations**. |
+| type | string | Тип правила обнаружения сервиса. |
 
 #### Объект `ApplicationId`
 
-Вклад в расчёт ID сервиса от обнаруженного ID приложения.
+Вклад обнаруженного ID приложения в расчёт ID сервиса.
 
-Есть два взаимоисключающих варианта:
+Доступны два взаимоисключающих варианта:
 
-* Переопределить обнаруженное значение заданным статическим значением. Укажите новое значение в поле **valueOverride**.
-* Динамически преобразовать обнаруженное значение. Укажите параметры преобразования в поле **transformations**.
+* Переопределить обнаруженное значение указанным статическим значением. Новое значение указывается в поле **valueOverride**.
+* Динамически преобразовать обнаруженное значение. Параметры преобразования указываются в поле **transformations**.
 
 | Элемент | Тип | Описание |
 | --- | --- | --- |
-| transformations | [TransformationBase[]](#openapi-definition-TransformationBase) | Преобразования, применяемые к обнаруженному значению. |
-| valueOverride | string | Значение, используемое вместо обнаруженного значения. |
+| transformations | [TransformationBase](#openapi-definition-TransformationBase)[] | Преобразования, применяемые к обнаруженному значению. |
+| valueOverride | string | Значение, которое нужно использовать вместо обнаруженного значения. |
 
 #### Объект `TransformationBase`
 
@@ -64,48 +63,48 @@ JSON model
 
 Если указано несколько преобразований, они обрабатываются последовательно сверху вниз. Каждое преобразование применяется к результату предыдущего преобразования. Например, второе преобразование применяется к результату первого преобразования.
 
-Фактический набор полей зависит от типа преобразования. Список фактических объектов см. в описании поля **type** или см. [Service detection API - JSON models](https://dt-url.net/2ie3slq).
+Фактический набор полей зависит от типа преобразования. Список фактических объектов приведён в описании поля **type** или см. [Service detection API - JSON models﻿](https://dt-url.net/2ie3slq?dt=m).
 
 | Элемент | Тип | Описание |
 | --- | --- | --- |
-| type | string | Определяет фактический набор полей в зависимости от значения. Смотрите один из следующих объектов:  * `BEFORE` -> BeforeTransformation * `AFTER` -> AfterTransformation * `BETWEEN` -> BetweenTransformation * `REPLACE_BETWEEN` -> ReplaceBetweenTransformation * `REMOVE_NUMBERS` -> RemoveNumbersTransformation * `REMOVE_CREDIT_CARDS` -> RemoveCreditCardNumbersTransformation * `REMOVE_IBANS` -> RemoveIBANsTransformation * `REMOVE_IPS` -> RemoveIPsTransformation * `SPLIT_SELECT` -> SplitSelectTransformation * `TAKE_SEGMENTS` -> TakeSegmentsTransformation Возможные значения: * `AFTER` * `BEFORE` * `BETWEEN` * `REMOVE_CREDIT_CARDS` * `REMOVE_IBANS` * `REMOVE_IPS` * `REMOVE_NUMBERS` * `REPLACE_BETWEEN` * `SPLIT_SELECT` * `TAKE_SEGMENTS` |
+| type | string | Определяет фактический набор полей в зависимости от значения. См. один из следующих объектов: * `BEFORE` -> BeforeTransformation * `AFTER` -> AfterTransformation * `BETWEEN` -> BetweenTransformation * `REPLACE_BETWEEN` -> ReplaceBetweenTransformation * `REMOVE_NUMBERS` -> RemoveNumbersTransformation * `REMOVE_CREDIT_CARDS` -> RemoveCreditCardNumbersTransformation * `REMOVE_IBANS` -> RemoveIBANsTransformation * `REMOVE_IPS` -> RemoveIPsTransformation * `SPLIT_SELECT` -> SplitSelectTransformation * `TAKE_SEGMENTS` -> TakeSegmentsTransformation Элемент может принимать следующие значения * `AFTER` * `BEFORE` * `BETWEEN` * `REMOVE_CREDIT_CARDS` * `REMOVE_IBANS` * `REMOVE_IPS` * `REMOVE_NUMBERS` * `REPLACE_BETWEEN` * `SPLIT_SELECT` * `TAKE_SEGMENTS` |
 
 #### Объект `ConditionsFullWebRequestAttributeTypeDto`
 
-Условие правила обнаружения сервисов.
+Условие правила обнаружения сервиса.
 
 | Элемент | Тип | Описание |
 | --- | --- | --- |
-| attributeType | string | Тип проверяемого атрибута. Возможные значения: * `APPLICATION_ID` * `CONTEXT_ROOT` * `PG_TAG` * `SERVER_NAME` * `URL_HOST_NAME` * `URL_PATH` |
-| compareOperations | [CompareOperation[]](#openapi-definition-CompareOperation) | Список условий правила.  Если указано несколько условий, применяется логика AND. |
+| attributeType | string | Тип проверяемого атрибута. Элемент может принимать следующие значения * `APPLICATION_ID` * `CONTEXT_ROOT` * `PG_TAG` * `SERVER_NAME` * `URL_HOST_NAME` * `URL_PATH` |
+| compareOperations | [CompareOperation](#openapi-definition-CompareOperation)[] | Список условий для правила. Если указано несколько условий, применяется логика AND. |
 
 #### Объект `CompareOperation`
 
 Условие правила.
 
-Фактический набор полей зависит от типа условия. Список фактических объектов см. в описании поля **type** или см. [Service detection API - JSON models](https://dt-url.net/2ie3slq).
+Фактический набор полей зависит от типа условия. Список фактических объектов приведён в описании поля **type** или см. [Service detection API - JSON models﻿](https://dt-url.net/2ie3slq?dt=m).
 
 | Элемент | Тип | Описание |
 | --- | --- | --- |
-| type | string | Определяет фактический набор полей в зависимости от значения. Смотрите один из следующих объектов:  * `EQUALS` -> EqualsCompareOperation * `STRING_CONTAINS` -> StringContainsCompareOperation * `STARTS_WITH` -> StartsWithCompareOperation * `ENDS_WITH` -> EndsWithCompareOperation * `EXISTS` -> ExistsCompareOperation * `IP_IN_RANGE` -> IpInRangeCompareOperation * `LESS_THAN` -> LessThanCompareOperation * `GREATER_THAN` -> GreaterThanCompareOperation * `INT_EQUALS` -> IntEqualsCompareOperation * `STRING_EQUALS` -> StringEqualsCompareOperation * `TAG` -> TagCompareOperation Возможные значения: * `ENDS_WITH` * `EQUALS` * `EXISTS` * `GREATER_THAN` * `INT_EQUALS` * `IP_IN_RANGE` * `LESS_THAN` * `STARTS_WITH` * `STRING_CONTAINS` * `STRING_EQUALS` * `TAG` |
+| type | string | Определяет фактический набор полей в зависимости от значения. См. один из следующих объектов: * `EQUALS` -> EqualsCompareOperation * `STRING_CONTAINS` -> StringContainsCompareOperation * `STARTS_WITH` -> StartsWithCompareOperation * `ENDS_WITH` -> EndsWithCompareOperation * `EXISTS` -> ExistsCompareOperation * `IP_IN_RANGE` -> IpInRangeCompareOperation * `LESS_THAN` -> LessThanCompareOperation * `GREATER_THAN` -> GreaterThanCompareOperation * `INT_EQUALS` -> IntEqualsCompareOperation * `STRING_EQUALS` -> StringEqualsCompareOperation * `TAG` -> TagCompareOperation Элемент может принимать следующие значения * `ENDS_WITH` * `EQUALS` * `EXISTS` * `GREATER_THAN` * `INT_EQUALS` * `IP_IN_RANGE` * `LESS_THAN` * `STARTS_WITH` * `STRING_CONTAINS` * `STRING_EQUALS` * `TAG` |
 
 #### Объект `ContextRoot`
 
-Вклад в расчёт ID сервиса от обнаруженного context root.
+Вклад обнаруженного контекстного корня в расчёт ID сервиса.
 
-Context root это первый сегмент URL запроса после имени сервера. Например, в URL `www.dynatrace.com/support/help/dynatrace-api/` context root равен `support`.
+Контекстный корень, это первый сегмент URL запроса после имени сервера. Например, в URL `www.dynatrace.com/support/help/dynatrace-api/` контекстным корнем является `support`.
 
-Есть два варианта:
+Доступны два варианта:
 
-* Сохранить часть обнаруженного URL. Укажите количество сохраняемых сегментов в поле **segmentsToCopyFromUrlPath**.
-* Динамически преобразовать обнаруженный URL. Укажите параметры преобразования в поле **transformations**.
+* Оставить часть обнаруженного URL. Количество сегментов, которые нужно сохранить, указывается в поле **segmentsToCopyFromUrlPath**.
+* Динамически преобразовать обнаруженный URL. Параметры преобразования указываются в поле **transformations**.
 
-Можно использовать один или оба варианта. Если используются оба, преобразование применяется к изменённому URL.
+Можно использовать один или оба варианта. При использовании обоих преобразование применяется к изменённому URL.
 
 | Элемент | Тип | Описание |
 | --- | --- | --- |
-| segmentsToCopyFromUrlPath | integer | Количество сохраняемых сегментов URL.  URL делится слешами (`/`), индексация начинается с 1 в context root.  Например, если вы укажете `2` для URL `www.dynatrace.com/support/help/dynatrace-api/`, используется значение `support/help`. |
-| transformations | [ContextRootTransformation[]](#openapi-definition-ContextRootTransformation) | Преобразования, применяемые к обнаруженному значению. |
+| segmentsToCopyFromUrlPath | integer | Количество сегментов URL, которые нужно сохранить. URL делится косыми чертами (`/`), индексация начинается с 1 от контекстного корня. Например, если указать `2` для URL `www.dynatrace.com/support/help/dynatrace-api/`, будет использовано значение `support/help`. |
+| transformations | [ContextRootTransformation](#openapi-definition-ContextRootTransformation)[] | Преобразования, применяемые к обнаруженному значению. |
 
 #### Объект `ContextRootTransformation`
 
@@ -113,15 +112,15 @@ Context root это первый сегмент URL запроса после и
 
 Если указано несколько преобразований, они обрабатываются последовательно сверху вниз. Каждое преобразование применяется к результату предыдущего преобразования. Например, второе преобразование применяется к результату первого преобразования.
 
-Фактический набор полей зависит от поля `type` преобразования.
+Фактический набор полей зависит от `type` преобразования.
 
 | Элемент | Тип | Описание |
 | --- | --- | --- |
-| type | string | Определяет фактический набор полей в зависимости от значения. Смотрите один из следующих объектов:  * `BEFORE` -> BeforeTransformation * `REPLACE_BETWEEN` -> ReplaceBetweenTransformation * `REMOVE_NUMBERS` -> RemoveNumbersTransformation * `REMOVE_CREDIT_CARDS` -> RemoveCreditCardNumbersTransformation * `REMOVE_IBANS` -> RemoveIBANsTransformation * `REMOVE_IPS` -> RemoveIPsTransformation Возможные значения: * `BEFORE` * `REMOVE_CREDIT_CARDS` * `REMOVE_IBANS` * `REMOVE_IPS` * `REMOVE_NUMBERS` * `REPLACE_BETWEEN` |
+| type | string | Определяет фактический набор полей в зависимости от значения. См. один из следующих объектов: * `BEFORE` -> BeforeTransformation * `REPLACE_BETWEEN` -> ReplaceBetweenTransformation * `REMOVE_NUMBERS` -> RemoveNumbersTransformation * `REMOVE_CREDIT_CARDS` -> RemoveCreditCardNumbersTransformation * `REMOVE_IBANS` -> RemoveIBANsTransformation * `REMOVE_IPS` -> RemoveIPsTransformation Элемент может принимать следующие значения * `BEFORE` * `REMOVE_CREDIT_CARDS` * `REMOVE_IBANS` * `REMOVE_IPS` * `REMOVE_NUMBERS` * `REPLACE_BETWEEN` |
 
 #### Объект `ConfigurationMetadata`
 
-Метаданные для отладки
+Метаданные, полезные для отладки
 
 | Элемент | Тип | Описание |
 | --- | --- | --- |
@@ -131,19 +130,19 @@ Context root это первый сегмент URL запроса после и
 
 #### Объект `ServerName`
 
-Вклад в расчёт ID сервиса от обнаруженного имени сервера.
+Вклад обнаруженного имени сервера в расчёт ID сервиса.
 
-Есть два взаимоисключающих варианта:
+Доступны два взаимоисключающих варианта:
 
-* Переопределить обнаруженное значение заданным статическим значением. Укажите новое значение в поле **valueOverride**.
-* Динамически преобразовать обнаруженное значение. Укажите параметры преобразования в поле **transformations**.
+* Переопределить обнаруженное значение указанным статическим значением. Новое значение указывается в поле **valueOverride**.
+* Динамически преобразовать обнаруженное значение. Параметры преобразования указываются в поле **transformations**.
 
 | Элемент | Тип | Описание |
 | --- | --- | --- |
-| transformations | [TransformationBase[]](#openapi-definition-TransformationBase) | Преобразования, применяемые к обнаруженному значению. |
-| valueOverride | string | Значение, используемое вместо обнаруженного значения. |
+| transformations | [TransformationBase](#openapi-definition-TransformationBase)[] | Преобразования, применяемые к обнаруженному значению. |
+| valueOverride | string | Значение, которое нужно использовать вместо обнаруженного значения. |
 
-Это модель тела запроса, показывающая возможные элементы. Её нужно адаптировать под реальный запрос.
+Это модель тела запроса, показывающая возможные элементы. Её нужно адаптировать для использования в реальном запросе.
 
 ```
 {
@@ -321,112 +320,150 @@ Context root это первый сегмент URL запроса после и
 }
 ```
 
+
 #### OPAQUE\_AND\_EXTERNAL\_WEB\_REQUEST
+
 
 OpaqueAndExternalWebRequestRule
 
-Parameters
 
-JSON model
+Параметры
+
+
+модель JSON
+
 
 #### Объект `OpaqueAndExternalWebRequestRule`
 
-Правило обнаружения сервисов типа `OPAQUE_AND_EXTERNAL_WEB_REQUEST`.
+
+Правило обнаружения сервиса типа `OPAQUE_AND_EXTERNAL_WEB_REQUEST`.
+
 
 | Элемент | Тип | Описание |
 | --- | --- | --- |
-| applicationId | [ApplicationId](#openapi-definition-ApplicationId) | Вклад в расчёт ID сервиса от обнаруженного ID приложения.  Есть два взаимоисключающих варианта:  * Переопределить обнаруженное значение заданным статическим значением. Укажите новое значение в поле **valueOverride**. * Динамически преобразовать обнаруженное значение. Укажите параметры преобразования в поле **transformations**. |
-| conditions | [ConditionsOpaqueAndExternalWebRequestAttributeTypeDto[]](#openapi-definition-ConditionsOpaqueAndExternalWebRequestAttributeTypeDto) | Список условий правила.  Если указано несколько условий, применяется логика AND. |
-| contextRoot | [ContextRoot](#openapi-definition-ContextRoot) | Вклад в расчёт ID сервиса от обнаруженного context root.  Context root это первый сегмент URL запроса после имени сервера. Например, в URL `www.dynatrace.com/support/help/dynatrace-api/` context root равен `support`.  Есть два варианта:  * Сохранить часть обнаруженного URL. Укажите количество сохраняемых сегментов в поле **segmentsToCopyFromUrlPath**. * Динамически преобразовать обнаруженный URL. Укажите параметры преобразования в поле **transformations**.  Можно использовать один или оба варианта. Если используются оба, преобразование применяется к изменённому URL. |
+| applicationId | [ApplicationId](#openapi-definition-ApplicationId) | Вклад в расчёт ID сервиса от обнаруженного ID приложения.  Доступны два взаимоисключающих варианта:  * Переопределить обнаруженное значение указанным статическим значением. Указать новое значение в поле **valueOverride**. * Динамически преобразовать обнаруженное значение. Указать параметры преобразования в поле **transformations**. |
+| conditions | [ConditionsOpaqueAndExternalWebRequestAttributeTypeDto](#openapi-definition-ConditionsOpaqueAndExternalWebRequestAttributeTypeDto)[] | Список условий правила.  Если указано несколько условий, применяется логика AND. |
+| contextRoot | [ContextRoot](#openapi-definition-ContextRoot) | Вклад в расчёт ID сервиса от обнаруженного корневого контекста.  Корневой контекст, это первый сегмент URL запроса после имени сервера. Например, в URL `www.dynatrace.com/support/help/dynatrace-api/` корневой контекст, это `support`.  Доступны два варианта:  * Сохранить часть обнаруженного URL. Указать число сегментов, которые нужно сохранить, в поле **segmentsToCopyFromUrlPath**. * Динамически преобразовать обнаруженный URL. Указать параметры преобразования в поле **transformations**.  Можно использовать один вариант или оба. При использовании обоих преобразование применяется к изменённому URL. |
 | description | string | Краткое описание правила. |
 | enabled | boolean | Правило включено (`true`) или отключено (`false`). |
-| id | string | ID правила обнаружения сервисов. |
-| managementZones | string[] | Зона управления (указанная по ID) группы процессов, для которой должно быть создано это правило обнаружения сервисов.  Здесь можно указать только 1 зону управления. |
-| metadata | [ConfigurationMetadata](#openapi-definition-ConfigurationMetadata) | Метаданные для отладки |
-| name | string | Имя правила. |
-| order | string | Порядок правила в списке правил.  Правила выполняются сверху вниз. Применяется первое совпавшее правило. |
-| port | [Port](#openapi-definition-Port) | Вклад в расчёт ID сервиса от порта, на котором обнаружен веб-запрос. |
-| publicDomainName | [PublicDomainName](#openapi-definition-PublicDomainName) | Вклад в расчёт ID сервиса от доменного имени, на котором обнаружен веб-запрос.  Есть два взаимоисключающих варианта:  * Переопределить обнаруженное значение заданным статическим значением. Укажите новое значение в поле **valueOverride**. * Динамически преобразовать обнаруженное значение. Укажите параметры преобразования в поле **transformations**. |
-| type | string | Тип правила обнаружения сервисов. |
+| id | string | ID правила обнаружения сервиса. |
+| managementZones | string[] | Management zone (указанная по ID) группы процессов, для которой должно быть создано это правило обнаружения сервиса.  Здесь можно указать только 1 management zone. |
+| metadata | [ConfigurationMetadata](#openapi-definition-ConfigurationMetadata) | Метаданные, полезные для отладки |
+| name | string | Название правила. |
+| order | string | Порядок правила в списке правил.  Правила проверяются сверху вниз. Применяется первое подходящее правило. |
+| port | [Port](#openapi-definition-Port) | Вклад в расчёт ID сервиса от порта, на котором был обнаружен веб-запрос. |
+| publicDomainName | [PublicDomainName](#openapi-definition-PublicDomainName) | Вклад в расчёт ID сервиса от имени домена, на котором был обнаружен веб-запрос.  Доступны два взаимоисключающих варианта:  * Переопределить обнаруженное значение указанным статическим значением. Указать новое значение в поле **valueOverride**. * Динамически преобразовать обнаруженное значение. Указать параметры преобразования в поле **transformations**. |
+| type | string | Тип правила обнаружения сервиса. |
+
 
 #### Объект `ApplicationId`
 
+
 Вклад в расчёт ID сервиса от обнаруженного ID приложения.
 
-Есть два взаимоисключающих варианта:
 
-* Переопределить обнаруженное значение заданным статическим значением. Укажите новое значение в поле **valueOverride**.
-* Динамически преобразовать обнаруженное значение. Укажите параметры преобразования в поле **transformations**.
+Доступны два взаимоисключающих варианта:
+
+
+* Переопределить обнаруженное значение указанным статическим значением. Указать новое значение в поле **valueOverride**.
+* Динамически преобразовать обнаруженное значение. Указать параметры преобразования в поле **transformations**.
+
 
 | Элемент | Тип | Описание |
 | --- | --- | --- |
-| transformations | [TransformationBase[]](#openapi-definition-TransformationBase) | Преобразования, применяемые к обнаруженному значению. |
-| valueOverride | string | Значение, используемое вместо обнаруженного значения. |
+| transformations | [TransformationBase](#openapi-definition-TransformationBase)[] | Преобразования, применяемые к обнаруженному значению. |
+| valueOverride | string | Значение, которое нужно использовать вместо обнаруженного. |
+
 
 #### Объект `TransformationBase`
 
+
 Конфигурация преобразования обнаруженного значения.
 
-Если указано несколько преобразований, они обрабатываются последовательно сверху вниз. Каждое преобразование применяется к результату предыдущего преобразования. Например, второе преобразование применяется к результату первого преобразования.
 
-Фактический набор полей зависит от типа преобразования. Список фактических объектов см. в описании поля **type** или см. [Service detection API - JSON models](https://dt-url.net/2ie3slq).
+Если указано несколько преобразований, они обрабатываются последовательно сверху вниз. Каждое преобразование применяется к результату предыдущего преобразования. Например, второе преобразование применяется к результату первого.
+
+
+Фактический набор полей зависит от типа преобразования. Список фактических объектов приведён в описании поля **type** или см. [Service detection API - JSON models﻿](https://dt-url.net/2ie3slq?dt=m).
+
 
 | Элемент | Тип | Описание |
 | --- | --- | --- |
-| type | string | Определяет фактический набор полей в зависимости от значения. Смотрите один из следующих объектов:  * `BEFORE` -> BeforeTransformation * `AFTER` -> AfterTransformation * `BETWEEN` -> BetweenTransformation * `REPLACE_BETWEEN` -> ReplaceBetweenTransformation * `REMOVE_NUMBERS` -> RemoveNumbersTransformation * `REMOVE_CREDIT_CARDS` -> RemoveCreditCardNumbersTransformation * `REMOVE_IBANS` -> RemoveIBANsTransformation * `REMOVE_IPS` -> RemoveIPsTransformation * `SPLIT_SELECT` -> SplitSelectTransformation * `TAKE_SEGMENTS` -> TakeSegmentsTransformation Возможные значения: * `AFTER` * `BEFORE` * `BETWEEN` * `REMOVE_CREDIT_CARDS` * `REMOVE_IBANS` * `REMOVE_IPS` * `REMOVE_NUMBERS` * `REPLACE_BETWEEN` * `SPLIT_SELECT` * `TAKE_SEGMENTS` |
+| type | string | Определяет фактический набор полей в зависимости от значения. См. один из следующих объектов:  * `BEFORE` -> BeforeTransformation * `AFTER` -> AfterTransformation * `BETWEEN` -> BetweenTransformation * `REPLACE_BETWEEN` -> ReplaceBetweenTransformation * `REMOVE_NUMBERS` -> RemoveNumbersTransformation * `REMOVE_CREDIT_CARDS` -> RemoveCreditCardNumbersTransformation * `REMOVE_IBANS` -> RemoveIBANsTransformation * `REMOVE_IPS` -> RemoveIPsTransformation * `SPLIT_SELECT` -> SplitSelectTransformation * `TAKE_SEGMENTS` -> TakeSegmentsTransformation Элемент может принимать следующие значения * `AFTER` * `BEFORE` * `BETWEEN` * `REMOVE_CREDIT_CARDS` * `REMOVE_IBANS` * `REMOVE_IPS` * `REMOVE_NUMBERS` * `REPLACE_BETWEEN` * `SPLIT_SELECT` * `TAKE_SEGMENTS` |
+
 
 #### Объект `ConditionsOpaqueAndExternalWebRequestAttributeTypeDto`
 
-Условие правила обнаружения сервисов.
+
+Условие правила обнаружения сервиса.
+
 
 | Элемент | Тип | Описание |
 | --- | --- | --- |
-| attributeType | string | Тип проверяемого атрибута. Возможные значения: * `IP` * `PG_TAG` * `TOP_LEVEL_DOMAIN` * `URL` * `URL_HOST_NAME` * `URL_PATH` * `URL_PORT` |
-| compareOperations | [CompareOperation[]](#openapi-definition-CompareOperation) | Список условий правила.  Если указано несколько условий, применяется логика AND. |
+| attributeType | string | Тип атрибута, который нужно проверить. Элемент может принимать следующие значения * `IP` * `PG_TAG` * `TOP_LEVEL_DOMAIN` * `URL` * `URL_HOST_NAME` * `URL_PATH` * `URL_PORT` |
+| compareOperations | [CompareOperation](#openapi-definition-CompareOperation)[] | Список условий для правила.  Если указано несколько условий, применяется логика AND. |
+
 
 #### Объект `CompareOperation`
 
+
 Условие правила.
 
-Фактический набор полей зависит от типа условия. Список фактических объектов см. в описании поля **type** или см. [Service detection API - JSON models](https://dt-url.net/2ie3slq).
+
+Фактический набор полей зависит от типа условия. Список фактических объектов приведён в описании поля **type** или см. [Service detection API - JSON models﻿](https://dt-url.net/2ie3slq?dt=m).
+
 
 | Элемент | Тип | Описание |
 | --- | --- | --- |
-| type | string | Определяет фактический набор полей в зависимости от значения. Смотрите один из следующих объектов:  * `EQUALS` -> EqualsCompareOperation * `STRING_CONTAINS` -> StringContainsCompareOperation * `STARTS_WITH` -> StartsWithCompareOperation * `ENDS_WITH` -> EndsWithCompareOperation * `EXISTS` -> ExistsCompareOperation * `IP_IN_RANGE` -> IpInRangeCompareOperation * `LESS_THAN` -> LessThanCompareOperation * `GREATER_THAN` -> GreaterThanCompareOperation * `INT_EQUALS` -> IntEqualsCompareOperation * `STRING_EQUALS` -> StringEqualsCompareOperation * `TAG` -> TagCompareOperation Возможные значения: * `ENDS_WITH` * `EQUALS` * `EXISTS` * `GREATER_THAN` * `INT_EQUALS` * `IP_IN_RANGE` * `LESS_THAN` * `STARTS_WITH` * `STRING_CONTAINS` * `STRING_EQUALS` * `TAG` |
+| type | string | Определяет фактический набор полей в зависимости от значения. См. один из следующих объектов:  * `EQUALS` -> EqualsCompareOperation * `STRING_CONTAINS` -> StringContainsCompareOperation * `STARTS_WITH` -> StartsWithCompareOperation * `ENDS_WITH` -> EndsWithCompareOperation * `EXISTS` -> ExistsCompareOperation * `IP_IN_RANGE` -> IpInRangeCompareOperation * `LESS_THAN` -> LessThanCompareOperation * `GREATER_THAN` -> GreaterThanCompareOperation * `INT_EQUALS` -> IntEqualsCompareOperation * `STRING_EQUALS` -> StringEqualsCompareOperation * `TAG` -> TagCompareOperation Элемент может принимать следующие значения * `ENDS_WITH` * `EQUALS` * `EXISTS` * `GREATER_THAN` * `INT_EQUALS` * `IP_IN_RANGE` * `LESS_THAN` * `STARTS_WITH` * `STRING_CONTAINS` * `STRING_EQUALS` * `TAG` |
+
 
 #### Объект `ContextRoot`
 
-Вклад в расчёт ID сервиса от обнаруженного context root.
 
-Context root это первый сегмент URL запроса после имени сервера. Например, в URL `www.dynatrace.com/support/help/dynatrace-api/` context root равен `support`.
+Вклад в расчёт ID сервиса от обнаруженного корневого контекста.
 
-Есть два варианта:
 
-* Сохранить часть обнаруженного URL. Укажите количество сохраняемых сегментов в поле **segmentsToCopyFromUrlPath**.
-* Динамически преобразовать обнаруженный URL. Укажите параметры преобразования в поле **transformations**.
+Корневой контекст, это первый сегмент URL запроса после имени сервера. Например, в URL `www.dynatrace.com/support/help/dynatrace-api/` корневой контекст, это `support`.
 
-Можно использовать один или оба варианта. Если используются оба, преобразование применяется к изменённому URL.
+
+Доступны два варианта:
+
+
+* Сохранить часть обнаруженного URL. Указать число сегментов, которые нужно сохранить, в поле **segmentsToCopyFromUrlPath**.
+* Динамически преобразовать обнаруженный URL. Указать параметры преобразования в поле **transformations**.
+
+
+Можно использовать один вариант или оба. При использовании обоих преобразование применяется к изменённому URL.
+
 
 | Элемент | Тип | Описание |
 | --- | --- | --- |
-| segmentsToCopyFromUrlPath | integer | Количество сохраняемых сегментов URL.  URL делится слешами (`/`), индексация начинается с 1 в context root.  Например, если вы укажете `2` для URL `www.dynatrace.com/support/help/dynatrace-api/`, используется значение `support/help`. |
-| transformations | [ContextRootTransformation[]](#openapi-definition-ContextRootTransformation) | Преобразования, применяемые к обнаруженному значению. |
+| segmentsToCopyFromUrlPath | integer | Число сегментов URL, которые нужно сохранить.  URL делится косыми чертами (`/`), индексация начинается с 1 от корневого контекста.  Например, если указать `2` для URL `www.dynatrace.com/support/help/dynatrace-api/`, будет использовано значение `support/help`. |
+| transformations | [ContextRootTransformation](#openapi-definition-ContextRootTransformation)[] | Преобразования, применяемые к обнаруженному значению. |
+
 
 #### Объект `ContextRootTransformation`
 
+
 Конфигурация преобразования обнаруженного значения.
 
-Если указано несколько преобразований, они обрабатываются последовательно сверху вниз. Каждое преобразование применяется к результату предыдущего преобразования. Например, второе преобразование применяется к результату первого преобразования.
 
-Фактический набор полей зависит от поля `type` преобразования.
+Если указано несколько преобразований, они обрабатываются последовательно сверху вниз. Каждое преобразование применяется к результату предыдущего преобразования. Например, второе преобразование применяется к результату первого.
+
+
+Фактический набор полей зависит от `type` преобразования.
+
 
 | Элемент | Тип | Описание |
 | --- | --- | --- |
-| type | string | Определяет фактический набор полей в зависимости от значения. Смотрите один из следующих объектов:  * `BEFORE` -> BeforeTransformation * `REPLACE_BETWEEN` -> ReplaceBetweenTransformation * `REMOVE_NUMBERS` -> RemoveNumbersTransformation * `REMOVE_CREDIT_CARDS` -> RemoveCreditCardNumbersTransformation * `REMOVE_IBANS` -> RemoveIBANsTransformation * `REMOVE_IPS` -> RemoveIPsTransformation Возможные значения: * `BEFORE` * `REMOVE_CREDIT_CARDS` * `REMOVE_IBANS` * `REMOVE_IPS` * `REMOVE_NUMBERS` * `REPLACE_BETWEEN` |
+| type | string | Определяет фактический набор полей в зависимости от значения. См. один из следующих объектов:  * `BEFORE` -> BeforeTransformation * `REPLACE_BETWEEN` -> ReplaceBetweenTransformation * `REMOVE_NUMBERS` -> RemoveNumbersTransformation * `REMOVE_CREDIT_CARDS` -> RemoveCreditCardNumbersTransformation * `REMOVE_IBANS` -> RemoveIBANsTransformation * `REMOVE_IPS` -> RemoveIPsTransformation Элемент может принимать следующие значения * `BEFORE` * `REMOVE_CREDIT_CARDS` * `REMOVE_IBANS` * `REMOVE_IPS` * `REMOVE_NUMBERS` * `REPLACE_BETWEEN` |
+
 
 #### Объект `ConfigurationMetadata`
 
-Метаданные для отладки
+
+Метаданные, полезные для отладки
 
 | Элемент | Тип | Описание |
 | --- | --- | --- |
@@ -434,30 +471,40 @@ Context root это первый сегмент URL запроса после и
 | configurationVersions | integer[] | Отсортированный список номеров версий конфигурации. |
 | currentConfigurationVersions | string[] | Отсортированный список номеров версий конфигурации. |
 
+
 #### Объект `Port`
 
-Вклад в расчёт ID сервиса от порта, на котором обнаружен веб-запрос.
+
+Вклад в расчёт ID сервиса от порта, на котором был обнаружен веб-запрос.
+
 
 | Элемент | Тип | Описание |
 | --- | --- | --- |
 | doNotUseForServiceId | boolean | Порт используется (`false`) или не используется (`true`) в расчёте ID сервиса. |
 
+
 #### Объект `PublicDomainName`
 
-Вклад в расчёт ID сервиса от доменного имени, на котором обнаружен веб-запрос.
 
-Есть два взаимоисключающих варианта:
+Вклад в расчёт ID сервиса от доменного имени, на котором был обнаружен веб-запрос.
 
-* Переопределить обнаруженное значение заданным статическим значением. Укажите новое значение в поле **valueOverride**.
-* Динамически преобразовать обнаруженное значение. Укажите параметры преобразования в поле **transformations**.
+
+Доступны два взаимоисключающих варианта:
+
+
+* Переопределить обнаруженное значение указанным статическим значением. Указать новое значение в поле **valueOverride**.
+* Динамически преобразовать обнаруженное значение. Указать параметры преобразования в поле **transformations**.
+
 
 | Элемент | Тип | Описание |
 | --- | --- | --- |
-| copyFromHostName | boolean | Использовать (`true`) или не использовать (`false`) обнаруженное имя хоста как основу для преобразования.  Не применяется, если задано переопределение. |
-| transformations | [TransformationBase[]](#openapi-definition-TransformationBase) | Преобразования, применяемые к обнаруженному значению. |
+| copyFromHostName | boolean | Использовать (`true`) или не использовать (`false`) обнаруженное имя хоста как основу для преобразования. Неприменимо, если указано переопределение. |
+| transformations | [TransformationBase](#openapi-definition-TransformationBase)[] | Преобразования, применяемые к обнаруженному значению. |
 | valueOverride | string | Значение, используемое вместо обнаруженного значения. |
 
-Это модель тела запроса, показывающая возможные элементы. Её нужно адаптировать под реальный запрос.
+
+Это модель тела запроса, показывающая возможные элементы. Её нужно адаптировать для использования в реальном запросе.
+
 
 ```
 {
@@ -579,19 +626,27 @@ Context root это первый сегмент URL запроса после и
 }
 ```
 
+
 #### FULL\_WEB\_SERVICE
+
 
 FullWebServiceRule
 
-Parameters
 
-JSON model
+Параметры
+
+
+Модель JSON
+
 
 #### Объект `FullWebServiceRule`
 
-Правило обнаружения сервисов типа `FULL_WEB_SERVICE`.
 
-Если у вас есть условие с **attributeType**, установленным в `FRAMEWORK`, поле **values** из **compareOperations** ограничено следующими возможными значениями:
+Правило обнаружения сервиса типа `FULL_WEB_SERVICE`.
+
+
+Если есть условие с **attributeType**, установленным в `FRAMEWORK`, поле **values** из **compareOperations** ограничено следующими возможными значениями:
+
 
 * `AXIS`
 * `CXF`
@@ -609,152 +664,201 @@ JSON model
 * `WEBSPHERE`
 * `WINK`
 
+
 | Элемент | Тип | Описание |
 | --- | --- | --- |
-| applicationId | [ApplicationId](#openapi-definition-ApplicationId) | Вклад в расчёт ID сервиса от обнаруженного ID приложения.  Есть два взаимоисключающих варианта:  * Переопределить обнаруженное значение заданным статическим значением. Укажите новое значение в поле **valueOverride**. * Динамически преобразовать обнаруженное значение. Укажите параметры преобразования в поле **transformations**. |
-| conditions | [ConditionsFullWebServiceAttributeTypeDto[]](#openapi-definition-ConditionsFullWebServiceAttributeTypeDto) | Список условий правила.  Если указано несколько условий, применяется логика AND. |
-| contextRoot | [ContextRoot](#openapi-definition-ContextRoot) | Вклад в расчёт ID сервиса от обнаруженного context root.  Context root это первый сегмент URL запроса после имени сервера. Например, в URL `www.dynatrace.com/support/help/dynatrace-api/` context root равен `support`.  Есть два варианта:  * Сохранить часть обнаруженного URL. Укажите количество сохраняемых сегментов в поле **segmentsToCopyFromUrlPath**. * Динамически преобразовать обнаруженный URL. Укажите параметры преобразования в поле **transformations**.  Можно использовать один или оба варианта. Если используются оба, преобразование применяется к изменённому URL. |
+| applicationId | [ApplicationId](#openapi-definition-ApplicationId) | Вклад в расчёт ID сервиса от обнаруженного ID приложения.  Доступны два взаимоисключающих варианта:  * Переопределить обнаруженное значение указанным статическим значением. Указать новое значение в поле **valueOverride**. * Динамически преобразовать обнаруженное значение. Указать параметры преобразования в поле **transformations**. |
+| conditions | [ConditionsFullWebServiceAttributeTypeDto](#openapi-definition-ConditionsFullWebServiceAttributeTypeDto)[] | Список условий правила.  Если указано несколько условий, применяется логика AND. |
+| contextRoot | [ContextRoot](#openapi-definition-ContextRoot) | Вклад в расчёт ID сервиса от обнаруженного корневого контекста.  Корневой контекст, это первый сегмент URL запроса после имени сервера. Например, в URL `www.dynatrace.com/support/help/dynatrace-api/` корневой контекст, это `support`.  Доступны два варианта:  * Сохранить часть обнаруженного URL. Указать число сегментов, которые нужно сохранить, в поле **segmentsToCopyFromUrlPath**. * Динамически преобразовать обнаруженный URL. Указать параметры преобразования в поле **transformations**.  Можно использовать один или оба варианта. При использовании обоих преобразование применяется к изменённому URL. |
 | description | string | Краткое описание правила. |
-| detectAsWebRequestService | boolean | Обнаруживать совпадающие запросы как полные веб-сервисы (`false`) или как сервисы веб-запросов (`true`).  Установка этого поля в `true` предотвращает обнаружение совпадающих запросов как полных веб-сервисов. Вместо этого создаётся сервис веб-запросов. Если нужно дополнительно изменить получившийся сервис веб-запросов, создайте отдельное правило типа `FULL_WEB_REQUEST`.  По умолчанию `false`, совпадающие запросы обнаруживаются как полные веб-сервисы. |
+| detectAsWebRequestService | boolean | Определять совпадающие запросы как полные веб-сервисы (`false`) или как сервисы веб-запросов (`true`).  Установка этого поля в `true` предотвращает определение совпадающих запросов как полных веб-сервисов. Вместо этого создаётся сервис веб-запроса. Если нужно дополнительно изменить получившийся сервис веб-запроса, нужно создать отдельное правило типа `FULL_WEB_REQUEST`.  По умолчанию `false`, совпадающие запросы определяются как полные веб-сервисы. |
 | enabled | boolean | Правило включено (`true`) или отключено (`false`). |
-| id | string | ID правила обнаружения сервисов. |
-| managementZones | string[] | Зона управления (указанная по ID) группы процессов, для которой должно быть создано это правило обнаружения сервисов.  Здесь можно указать только 1 зону управления. |
-| metadata | [ConfigurationMetadata](#openapi-definition-ConfigurationMetadata) | Метаданные для отладки |
+| id | string | ID правила обнаружения сервиса. |
+| managementZones | string[] | Management zone (указывается по ID) группы процессов, для которой должно быть создано это правило обнаружения сервиса.  Здесь можно указать только 1 management zone. |
+| metadata | [ConfigurationMetadata](#openapi-definition-ConfigurationMetadata) | Метаданные, полезные для отладки |
 | name | string | Имя правила. |
-| order | string | Порядок правила в списке правил.  Правила выполняются сверху вниз. Применяется первое совпавшее правило. |
-| serverName | [ServerName](#openapi-definition-ServerName) | Вклад в расчёт ID сервиса от обнаруженного имени сервера.  Есть два взаимоисключающих варианта:  * Переопределить обнаруженное значение заданным статическим значением. Укажите новое значение в поле **valueOverride**. * Динамически преобразовать обнаруженное значение. Укажите параметры преобразования в поле **transformations**. |
-| type | string | Тип правила обнаружения сервисов. |
-| webServiceName | [WebServiceName](#openapi-definition-WebServiceName) | Вклад в расчёт ID сервиса от обнаруженного имени веб-сервиса.  Есть два взаимоисключающих варианта:  * Переопределить обнаруженное значение заданным статическим значением. Укажите новое значение в поле **valueOverride**. * Динамически преобразовать обнаруженное значение. Укажите параметры преобразования в поле **transformations**. |
-| webServiceNameSpace | [WebServiceNameSpace](#openapi-definition-WebServiceNameSpace) | Вклад в расчёт ID сервиса от обнаруженного пространства имён веб-сервиса.  Есть два взаимоисключающих варианта:  * Переопределить обнаруженное значение заданным статическим значением. Укажите новое значение в поле **valueOverride**. * Динамически преобразовать обнаруженное значение. Укажите параметры преобразования в поле **transformations**. |
+| order | string | Порядок правила в списке правил.  Правила проверяются сверху вниз. Применяется первое совпавшее правило. |
+| serverName | [ServerName](#openapi-definition-ServerName) | Вклад в расчёт ID сервиса от обнаруженного имени сервера.  Доступны два взаимоисключающих варианта:  * Переопределить обнаруженное значение указанным статическим значением. Указать новое значение в поле **valueOverride**. * Динамически преобразовать обнаруженное значение. Указать параметры преобразования в поле **transformations**. |
+| type | string | Тип правила обнаружения сервиса. |
+| webServiceName | [WebServiceName](#openapi-definition-WebServiceName) | Вклад в расчёт ID сервиса от обнаруженного имени веб-сервиса.  Доступны два взаимоисключающих варианта:  * Переопределить обнаруженное значение указанным статическим значением. Указать новое значение в поле **valueOverride**. * Динамически преобразовать обнаруженное значение. Указать параметры преобразования в поле **transformations**. |
+| webServiceNameSpace | [WebServiceNameSpace](#openapi-definition-WebServiceNameSpace) | Вклад в расчёт ID сервиса от обнаруженного пространства имён веб-сервиса.  Доступны два взаимоисключающих варианта:  * Переопределить обнаруженное значение указанным статическим значением. Указать новое значение в поле **valueOverride**. * Динамически преобразовать обнаруженное значение. Указать параметры преобразования в поле **transformations**. |
+
 
 #### Объект `ApplicationId`
 
+
 Вклад в расчёт ID сервиса от обнаруженного ID приложения.
 
-Есть два взаимоисключающих варианта:
 
-* Переопределить обнаруженное значение заданным статическим значением. Укажите новое значение в поле **valueOverride**.
-* Динамически преобразовать обнаруженное значение. Укажите параметры преобразования в поле **transformations**.
+Доступны два взаимоисключающих варианта:
+
+
+* Переопределить обнаруженное значение указанным статическим значением. Указать новое значение в поле **valueOverride**.
+* Динамически преобразовать обнаруженное значение. Указать параметры преобразования в поле **transformations**.
+
 
 | Элемент | Тип | Описание |
 | --- | --- | --- |
-| transformations | [TransformationBase[]](#openapi-definition-TransformationBase) | Преобразования, применяемые к обнаруженному значению. |
+| transformations | [TransformationBase](#openapi-definition-TransformationBase)[] | Преобразования, применяемые к обнаруженному значению. |
 | valueOverride | string | Значение, используемое вместо обнаруженного значения. |
+
 
 #### Объект `TransformationBase`
 
+
 Конфигурация преобразования обнаруженного значения.
+
 
 Если указано несколько преобразований, они обрабатываются последовательно сверху вниз. Каждое преобразование применяется к результату предыдущего преобразования. Например, второе преобразование применяется к результату первого преобразования.
 
-Фактический набор полей зависит от типа преобразования. Список фактических объектов см. в описании поля **type** или см. [Service detection API - JSON models](https://dt-url.net/2ie3slq).
+
+Фактический набор полей зависит от типа преобразования. Список фактических объектов приведён в описании поля **type** или см. [Service detection API - JSON models﻿](https://dt-url.net/2ie3slq?dt=m).
+
 
 | Элемент | Тип | Описание |
 | --- | --- | --- |
-| type | string | Определяет фактический набор полей в зависимости от значения. Смотрите один из следующих объектов:  * `BEFORE` -> BeforeTransformation * `AFTER` -> AfterTransformation * `BETWEEN` -> BetweenTransformation * `REPLACE_BETWEEN` -> ReplaceBetweenTransformation * `REMOVE_NUMBERS` -> RemoveNumbersTransformation * `REMOVE_CREDIT_CARDS` -> RemoveCreditCardNumbersTransformation * `REMOVE_IBANS` -> RemoveIBANsTransformation * `REMOVE_IPS` -> RemoveIPsTransformation * `SPLIT_SELECT` -> SplitSelectTransformation * `TAKE_SEGMENTS` -> TakeSegmentsTransformation Возможные значения: * `AFTER` * `BEFORE` * `BETWEEN` * `REMOVE_CREDIT_CARDS` * `REMOVE_IBANS` * `REMOVE_IPS` * `REMOVE_NUMBERS` * `REPLACE_BETWEEN` * `SPLIT_SELECT` * `TAKE_SEGMENTS` |
+| type | string | Определяет фактический набор полей в зависимости от значения. См. один из следующих объектов:  * `BEFORE` -> BeforeTransformation * `AFTER` -> AfterTransformation * `BETWEEN` -> BetweenTransformation * `REPLACE_BETWEEN` -> ReplaceBetweenTransformation * `REMOVE_NUMBERS` -> RemoveNumbersTransformation * `REMOVE_CREDIT_CARDS` -> RemoveCreditCardNumbersTransformation * `REMOVE_IBANS` -> RemoveIBANsTransformation * `REMOVE_IPS` -> RemoveIPsTransformation * `SPLIT_SELECT` -> SplitSelectTransformation * `TAKE_SEGMENTS` -> TakeSegmentsTransformation Элемент может принимать следующие значения * `AFTER` * `BEFORE` * `BETWEEN` * `REMOVE_CREDIT_CARDS` * `REMOVE_IBANS` * `REMOVE_IPS` * `REMOVE_NUMBERS` * `REPLACE_BETWEEN` * `SPLIT_SELECT` * `TAKE_SEGMENTS` |
+
 
 #### Объект `ConditionsFullWebServiceAttributeTypeDto`
 
-Условие правила обнаружения сервисов.
+
+Условие правила обнаружения сервиса.
+
 
 | Элемент | Тип | Описание |
 | --- | --- | --- |
-| attributeType | string | Тип проверяемого атрибута. Возможные значения: * `APPLICATION_ID` * `CONTEXT_ROOT` * `FRAMEWORK` * `IS_SOAP_SERVICE` * `PG_TAG` * `SERVER_NAME` * `URL_HOST_NAME` * `URL_PATH` * `WEBSERVICE_METHOD` * `WEBSERVICE_NAME` * `WEBSERVICE_NAMESPACE` |
-| compareOperations | [CompareOperation[]](#openapi-definition-CompareOperation) | Список условий правила.  Если указано несколько условий, применяется логика AND. |
+| attributeType | string | Тип проверяемого атрибута. Элемент может принимать следующие значения * `APPLICATION_ID` * `CONTEXT_ROOT` * `FRAMEWORK` * `IS_SOAP_SERVICE` * `PG_TAG` * `SERVER_NAME` * `URL_HOST_NAME` * `URL_PATH` * `WEBSERVICE_METHOD` * `WEBSERVICE_NAME` * `WEBSERVICE_NAMESPACE` |
+| compareOperations | [CompareOperation](#openapi-definition-CompareOperation)[] | Список условий правила.  Если указано несколько условий, применяется логика AND. |
+
 
 #### Объект `CompareOperation`
 
+
 Условие правила.
 
-Фактический набор полей зависит от типа условия. Список фактических объектов см. в описании поля **type** или см. [Service detection API - JSON models](https://dt-url.net/2ie3slq).
 
-| Элемент | Тип | Описание |
+Фактический набор полей зависит от типа условия. Список фактических объектов приведён в описании поля **type** или см. [Service detection API - JSON models﻿](https://dt-url.net/2ie3slq?dt=m).
+
+| Element | Type | Description |
 | --- | --- | --- |
-| type | string | Определяет фактический набор полей в зависимости от значения. Смотрите один из следующих объектов:  * `EQUALS` -> EqualsCompareOperation * `STRING_CONTAINS` -> StringContainsCompareOperation * `STARTS_WITH` -> StartsWithCompareOperation * `ENDS_WITH` -> EndsWithCompareOperation * `EXISTS` -> ExistsCompareOperation * `IP_IN_RANGE` -> IpInRangeCompareOperation * `LESS_THAN` -> LessThanCompareOperation * `GREATER_THAN` -> GreaterThanCompareOperation * `INT_EQUALS` -> IntEqualsCompareOperation * `STRING_EQUALS` -> StringEqualsCompareOperation * `TAG` -> TagCompareOperation Возможные значения: * `ENDS_WITH` * `EQUALS` * `EXISTS` * `GREATER_THAN` * `INT_EQUALS` * `IP_IN_RANGE` * `LESS_THAN` * `STARTS_WITH` * `STRING_CONTAINS` * `STRING_EQUALS` * `TAG` |
+| type | string | Определяет фактический набор полей в зависимости от значения. См. один из следующих объектов:  * `EQUALS` -> EqualsCompareOperation * `STRING_CONTAINS` -> StringContainsCompareOperation * `STARTS_WITH` -> StartsWithCompareOperation * `ENDS_WITH` -> EndsWithCompareOperation * `EXISTS` -> ExistsCompareOperation * `IP_IN_RANGE` -> IpInRangeCompareOperation * `LESS_THAN` -> LessThanCompareOperation * `GREATER_THAN` -> GreaterThanCompareOperation * `INT_EQUALS` -> IntEqualsCompareOperation * `STRING_EQUALS` -> StringEqualsCompareOperation * `TAG` -> TagCompareOperation Элемент может принимать следующие значения * `ENDS_WITH` * `EQUALS` * `EXISTS` * `GREATER_THAN` * `INT_EQUALS` * `IP_IN_RANGE` * `LESS_THAN` * `STARTS_WITH` * `STRING_CONTAINS` * `STRING_EQUALS` * `TAG` |
+
 
 #### Объект `ContextRoot`
 
-Вклад в расчёт ID сервиса от обнаруженного context root.
 
-Context root это первый сегмент URL запроса после имени сервера. Например, в URL `www.dynatrace.com/support/help/dynatrace-api/` context root равен `support`.
+Вклад в расчёт ID сервиса от обнаруженного контекстного корня.
 
-Есть два варианта:
 
-* Сохранить часть обнаруженного URL. Укажите количество сохраняемых сегментов в поле **segmentsToCopyFromUrlPath**.
-* Динамически преобразовать обнаруженный URL. Укажите параметры преобразования в поле **transformations**.
+Контекстный корень, это первый сегмент URL запроса после имени сервера. Например, в URL `www.dynatrace.com/support/help/dynatrace-api/` контекстным корнем является `support`.
 
-Можно использовать один или оба варианта. Если используются оба, преобразование применяется к изменённому URL.
 
-| Элемент | Тип | Описание |
+Доступны два варианта:
+
+
+* Сохранить часть обнаруженного URL. Указать количество сохраняемых сегментов в поле **segmentsToCopyFromUrlPath**.
+* Динамически преобразовать обнаруженный URL. Указать параметры преобразования в поле **transformations**.
+
+
+Можно использовать один или оба варианта. При использовании обоих преобразование применяется к изменённому URL.
+
+
+| Element | Type | Description |
 | --- | --- | --- |
-| segmentsToCopyFromUrlPath | integer | Количество сохраняемых сегментов URL.  URL делится слешами (`/`), индексация начинается с 1 в context root.  Например, если вы укажете `2` для URL `www.dynatrace.com/support/help/dynatrace-api/`, используется значение `support/help`. |
-| transformations | [ContextRootTransformation[]](#openapi-definition-ContextRootTransformation) | Преобразования, применяемые к обнаруженному значению. |
+| segmentsToCopyFromUrlPath | integer | Количество сохраняемых сегментов URL.  URL делится символами слэша (`/`), индексация начинается с 1 от контекстного корня.  Например, если указать `2` для URL `www.dynatrace.com/support/help/dynatrace-api/`, используется значение `support/help`. |
+| transformations | [ContextRootTransformation](#openapi-definition-ContextRootTransformation)[] | Преобразования, применяемые к обнаруженному значению. |
+
 
 #### Объект `ContextRootTransformation`
 
+
 Конфигурация преобразования обнаруженного значения.
 
-Если указано несколько преобразований, они обрабатываются последовательно сверху вниз. Каждое преобразование применяется к результату предыдущего преобразования. Например, второе преобразование применяется к результату первого преобразования.
 
-Фактический набор полей зависит от поля `type` преобразования.
+Если указано несколько преобразований, они обрабатываются последовательно сверху вниз. Каждое преобразование применяется к результату предыдущего. Например, второе преобразование применяется к результату первого.
 
-| Элемент | Тип | Описание |
+
+Фактический набор полей зависит от `type` преобразования.
+
+
+| Element | Type | Description |
 | --- | --- | --- |
-| type | string | Определяет фактический набор полей в зависимости от значения. Смотрите один из следующих объектов:  * `BEFORE` -> BeforeTransformation * `REPLACE_BETWEEN` -> ReplaceBetweenTransformation * `REMOVE_NUMBERS` -> RemoveNumbersTransformation * `REMOVE_CREDIT_CARDS` -> RemoveCreditCardNumbersTransformation * `REMOVE_IBANS` -> RemoveIBANsTransformation * `REMOVE_IPS` -> RemoveIPsTransformation Возможные значения: * `BEFORE` * `REMOVE_CREDIT_CARDS` * `REMOVE_IBANS` * `REMOVE_IPS` * `REMOVE_NUMBERS` * `REPLACE_BETWEEN` |
+| type | string | Определяет фактический набор полей в зависимости от значения. См. один из следующих объектов:  * `BEFORE` -> BeforeTransformation * `REPLACE_BETWEEN` -> ReplaceBetweenTransformation * `REMOVE_NUMBERS` -> RemoveNumbersTransformation * `REMOVE_CREDIT_CARDS` -> RemoveCreditCardNumbersTransformation * `REMOVE_IBANS` -> RemoveIBANsTransformation * `REMOVE_IPS` -> RemoveIPsTransformation Элемент может принимать следующие значения * `BEFORE` * `REMOVE_CREDIT_CARDS` * `REMOVE_IBANS` * `REMOVE_IPS` * `REMOVE_NUMBERS` * `REPLACE_BETWEEN` |
+
 
 #### Объект `ConfigurationMetadata`
 
-Метаданные для отладки
 
-| Элемент | Тип | Описание |
+Метаданные, полезные для отладки
+
+
+| Element | Type | Description |
 | --- | --- | --- |
 | clusterVersion | string | Версия Dynatrace. |
 | configurationVersions | integer[] | Отсортированный список номеров версий конфигурации. |
 | currentConfigurationVersions | string[] | Отсортированный список номеров версий конфигурации. |
 
+
 #### Объект `ServerName`
+
 
 Вклад в расчёт ID сервиса от обнаруженного имени сервера.
 
-Есть два взаимоисключающих варианта:
 
-* Переопределить обнаруженное значение заданным статическим значением. Укажите новое значение в поле **valueOverride**.
-* Динамически преобразовать обнаруженное значение. Укажите параметры преобразования в поле **transformations**.
+Доступны два взаимоисключающих варианта:
 
-| Элемент | Тип | Описание |
+
+* Переопределить обнаруженное значение указанным статическим значением. Указать новое значение в поле **valueOverride**.
+* Динамически преобразовать обнаруженное значение. Указать параметры преобразования в поле **transformations**.
+
+
+| Element | Type | Description |
 | --- | --- | --- |
-| transformations | [TransformationBase[]](#openapi-definition-TransformationBase) | Преобразования, применяемые к обнаруженному значению. |
+| transformations | [TransformationBase](#openapi-definition-TransformationBase)[] | Преобразования, применяемые к обнаруженному значению. |
 | valueOverride | string | Значение, используемое вместо обнаруженного значения. |
+
 
 #### Объект `WebServiceName`
 
+
 Вклад в расчёт ID сервиса от обнаруженного имени веб-сервиса.
 
-Есть два взаимоисключающих варианта:
 
-* Переопределить обнаруженное значение заданным статическим значением. Укажите новое значение в поле **valueOverride**.
-* Динамически преобразовать обнаруженное значение. Укажите параметры преобразования в поле **transformations**.
+Доступны два взаимоисключающих варианта:
 
-| Элемент | Тип | Описание |
+
+* Переопределить обнаруженное значение указанным статическим значением. Указать новое значение в поле **valueOverride**.
+* Динамически преобразовать обнаруженное значение. Указать параметры преобразования в поле **transformations**.
+
+
+| Element | Type | Description |
 | --- | --- | --- |
-| transformations | [TransformationBase[]](#openapi-definition-TransformationBase) | Преобразования, применяемые к обнаруженному значению. |
+| transformations | [TransformationBase](#openapi-definition-TransformationBase)[] | Преобразования, применяемые к обнаруженному значению. |
 | valueOverride | string | Значение, используемое вместо обнаруженного значения. |
+
 
 #### Объект `WebServiceNameSpace`
 
+
 Вклад в расчёт ID сервиса от обнаруженного пространства имён веб-сервиса.
 
-Есть два взаимоисключающих варианта:
 
-* Переопределить обнаруженное значение заданным статическим значением. Укажите новое значение в поле **valueOverride**.
-* Динамически преобразовать обнаруженное значение. Укажите параметры преобразования в поле **transformations**.
+Доступны два взаимоисключающих варианта:
 
-| Элемент | Тип | Описание |
+
+* Переопределить обнаруженное значение указанным статическим значением. Указать новое значение в поле **valueOverride**.
+* Динамически преобразовать обнаруженное значение. Указать параметры преобразования в поле **transformations**.
+
+
+| Element | Type | Description |
 | --- | --- | --- |
-| transformations | [TransformationBase[]](#openapi-definition-TransformationBase) | Преобразования, применяемые к обнаруженному значению. |
+| transformations | [TransformationBase](#openapi-definition-TransformationBase)[] | Преобразования, применяемые к обнаруженному значению. |
 | valueOverride | string | Значение, используемое вместо обнаруженного значения. |
 
-Это модель тела запроса, показывающая возможные элементы. Её нужно адаптировать под реальный запрос.
+
+Это модель тела запроса, показывающая возможные элементы. Её нужно скорректировать для использования в реальном запросе.
+
 
 ```
 {
@@ -968,15 +1072,15 @@ Context root это первый сегмент URL запроса после и
 }
 ```
 
-## Вариации объекта `CompareOperation`
+## Варианты объекта `CompareOperation`
 
-Объект `CompareOperation` является базовым для всех операций сравнения. Фактический набор полей зависит от поля **type** сравнения.
+Объект `CompareOperation` является базовым для всех операций сравнения. Фактический набор полей зависит от **type** сравнения.
 
-### STRING\_CONTAINS
+### STRING_CONTAINS
 
 StringContainsCompareOperation
 
-Parameters
+Параметры
 
 JSON model
 
@@ -988,9 +1092,9 @@ JSON model
 
 | Элемент | Тип | Описание |
 | --- | --- | --- |
-| ignoreCase | boolean | Условие чувствительно к регистру (`false`) или нечувствительно (`true`).  Если не задано, используется `false`, делая условие чувствительным к регистру. |
-| negate | boolean | Инвертирует операцию условия. Установите `true`, чтобы превратить **contains** в **does not contain**.  Если не задано, используется `false`. |
-| values | string[] | Значение для сравнения.  Если указано несколько значений, применяется логика OR. |
+| ignoreCase | boolean | Условие чувствительно к регистру (`false`) или нечувствительно к регистру (`true`).  Если не задано, используется `false`, то есть условие чувствительно к регистру. |
+| negate | boolean | Инвертирует действие условия. Установить `true`, чтобы превратить **contains** в **does not contain**.  Если не задано, используется `false`. |
+| values | string[] | Значение для сравнения.  Если указано несколько значений, применяется логика ИЛИ. |
 
 ```
 {
@@ -1028,11 +1132,11 @@ JSON model
 }
 ```
 
-### STRING\_EQUALS
+### STRING_EQUALS
 
 StringEqualsCompareOperation
 
-Parameters
+Параметры
 
 JSON model
 
@@ -1044,9 +1148,9 @@ JSON model
 
 | Элемент | Тип | Описание |
 | --- | --- | --- |
-| ignoreCase | boolean | Условие чувствительно к регистру (`false`) или нечувствительно (`true`).  Если не задано, используется `false`, делая условие чувствительным к регистру. |
-| negate | boolean | Инвертирует операцию условия. Установите `true`, чтобы превратить **equals** в **does not equal**.  Если не задано, используется `false`. |
-| values | string[] | Значение для сравнения.  Если указано несколько значений, применяется логика OR. |
+| ignoreCase | boolean | Условие чувствительно к регистру (`false`) или нечувствительно к регистру (`true`).  Если не задано, используется `false`, то есть условие чувствительно к регистру. |
+| negate | boolean | Инвертирует действие условия. Установить `true`, чтобы превратить **equals** в **does not equal**.  Если не задано, используется `false`. |
+| values | string[] | Значение для сравнения.  Если указано несколько значений, применяется логика ИЛИ. |
 
 ```
 {
@@ -1084,11 +1188,11 @@ JSON model
 }
 ```
 
-### STARTS\_WITH
+### STARTS_WITH
 
 StartsWithCompareOperation
 
-Parameters
+Параметры
 
 JSON model
 
@@ -1100,9 +1204,9 @@ JSON model
 
 | Элемент | Тип | Описание |
 | --- | --- | --- |
-| ignoreCase | boolean | Условие чувствительно к регистру (`false`) или нечувствительно (`true`).  Если не задано, используется `false`, делая условие чувствительным к регистру. |
-| negate | boolean | Инвертирует операцию условия. Установите `true`, чтобы превратить **starts with** в **does not start with**.  Если не задано, используется `false`. |
-| values | string[] | Значение для сравнения.  Если указано несколько значений, применяется логика OR. |
+| ignoreCase | boolean | Условие чувствительно к регистру (`false`) или нечувствительно к регистру (`true`).  Если не задано, используется `false`, то есть условие чувствительно к регистру. |
+| negate | boolean | Инвертирует действие условия. Установить `true`, чтобы превратить **starts with** в **does not start with**.  Если не задано, используется `false`. |
+| values | string[] | Значение для сравнения.  Если указано несколько значений, применяется логика ИЛИ. |
 
 ```
 {
@@ -1140,11 +1244,11 @@ JSON model
 }
 ```
 
-### ENDS\_WITH
+### ENDS_WITH
 
 EndsWithCompareOperation
 
-Parameters
+Параметры
 
 JSON model
 
@@ -1156,9 +1260,9 @@ JSON model
 
 | Элемент | Тип | Описание |
 | --- | --- | --- |
-| ignoreCase | boolean | Условие чувствительно к регистру (`false`) или нечувствительно (`true`).  Если не задано, используется `false`, делая условие чувствительным к регистру. |
-| negate | boolean | Инвертирует операцию условия. Установите `true`, чтобы превратить **ends with** в **does not end with**.  Если не задано, используется `false`. |
-| values | string[] | Значение для сравнения.  Если указано несколько значений, применяется логика OR. |
+| ignoreCase | boolean | Условие чувствительно к регистру (`false`) или нечувствительно к регистру (`true`).  Если не задано, используется `false`, то есть условие чувствительно к регистру. |
+| negate | boolean | Инвертирует действие условия. Установить `true`, чтобы превратить **ends with** в **does not end with**.  Если не задано, используется `false`. |
+| values | string[] | Значение для сравнения.  Если указано несколько значений, применяется логика ИЛИ. |
 
 ```
 {
@@ -1200,7 +1304,7 @@ JSON model
 
 ExistsCompareOperation
 
-Parameters
+Параметры
 
 JSON model
 
@@ -1212,7 +1316,7 @@ JSON model
 
 | Элемент | Тип | Описание |
 | --- | --- | --- |
-| negate | boolean | Инвертирует операцию условия. Установите `true`, чтобы превратить **exists** в **does not exist**.  Если не задано, используется `false`. |
+| negate | boolean | Инвертирует действие условия. Установить `true`, чтобы превратить **exists** в **does not exist**.  Если не задано, используется `false`. |
 
 ```
 {
@@ -1230,11 +1334,11 @@ JSON model
 }
 ```
 
-### IP\_IN\_RANGE
+### IP_IN_RANGE
 
 IpInRangeCompareOperation
 
-Parameters
+Параметры
 
 JSON model
 
@@ -1246,9 +1350,9 @@ JSON model
 
 | Элемент | Тип | Описание |
 | --- | --- | --- |
-| lower | string | Нижняя граница диапазона IP. |
-| negate | boolean | Инвертирует операцию условия. Установите `true`, чтобы превратить **IP is in range** в **IP is not in range**.  Если не задано, используется `false`. |
-| upper | string | Верхняя граница диапазона IP. |
+| lower | string | Нижняя граница диапазона IP-адресов. |
+| negate | boolean | Инвертирует действие условия. Установить `true`, чтобы превратить **IP is in range** в **IP is not in range**.  Если не задано, используется `false`. |
+| upper | string | Верхняя граница диапазона IP-адресов. |
 
 ```
 {
@@ -1274,11 +1378,11 @@ JSON model
 }
 ```
 
-### INT\_EQUALS
+### INT_EQUALS
 
 IntEqualsCompareOperation
 
-Parameters
+Параметры
 
 JSON model
 
@@ -1290,8 +1394,8 @@ JSON model
 
 | Элемент | Тип | Описание |
 | --- | --- | --- |
-| negate | boolean | Инвертирует операцию условия. Установите `true`, чтобы превратить **equals** в **does not equal**.  Если не задано, используется `false`. |
-| values | integer[] | Значение для сравнения.  Если указано несколько значений, применяется логика OR. |
+| negate | boolean | Инвертирует действие условия. Установить `true`, чтобы превратить **equals** в **does not equal**.  Если не задано, используется `false`. |
+| values | integer[] | Значение для сравнения.  Если указано несколько значений, применяется логика ИЛИ. |
 
 ```
 {
@@ -1329,11 +1433,11 @@ JSON model
 }
 ```
 
-### LESS\_THAN
+### LESS_THAN
 
 LessThanCompareOperation
 
-Parameters
+Параметры
 
 JSON model
 
@@ -1363,11 +1467,11 @@ JSON model
 }
 ```
 
-### GREATER\_THAN
+### GREATER_THAN
 
 GreaterThanCompareOperation
 
-Parameters
+Параметры
 
 JSON model
 
@@ -1397,15 +1501,15 @@ JSON model
 }
 ```
 
-## Вариации объекта `TransformationBase`
+## Варианты объекта `TransformationBase`
 
-Объект `TransformationBase` является базовым для всех операций преобразования. Фактический набор полей зависит от поля **type** преобразования.
+Объект `TransformationBase` является базовым для всех операций преобразования. Фактический набор полей зависит от **type** преобразования.
 
 ### BEFORE
 
 BeforeTransformation
 
-Parameters
+Параметры
 
 JSON model
 
@@ -1417,7 +1521,7 @@ JSON model
 
 | Элемент | Тип | Описание |
 | --- | --- | --- |
-| delimiter | string | Разделитель преобразования. Преобразование сохраняет всё до этого разделителя и удаляет всё после него.  Сам разделитель не сохраняется.  Если в исходном значении несколько разделителей, используется только первый. |
+| delimiter | string | Разделитель преобразования. Преобразование сохраняет всё до этого разделителя и удаляет всё после него.  Сам разделитель не сохраняется.  Если в исходном значении встречается несколько разделителей, используется только первый. |
 
 ```
 {
@@ -1439,17 +1543,17 @@ JSON model
 
 AfterTransformation
 
-Parameters
+Параметры
 
 JSON model
 
 #### Объект `AfterTransformation`
 
-Преобразование типа `AFTER`.Преобразование удаляет всё до указанного разделителя и сохраняет значение после него.
+Преобразование типа `AFTER`. Преобразование удаляет всё до указанного разделителя и сохраняет значение после него.
 
 | Элемент | Тип | Описание |
 | --- | --- | --- |
-| delimiter | string | Разделитель преобразования. Преобразование удаляет всё до этого разделителя и сохраняет всё после него.  Сам разделитель не сохраняется.  Если в исходном значении несколько разделителей, используется только первый. |
+| delimiter | string | Разделитель преобразования. Преобразование удаляет всё до этого разделителя и сохраняет всё после него.  Сам разделитель не сохраняется.  Если в исходном значении встречается несколько разделителей, используется только первый. |
 
 ```
 {
@@ -1471,13 +1575,13 @@ JSON model
 
 BetweenTransformation
 
-Parameters
+Параметры
 
 JSON model
 
 #### Объект `BetweenTransformation`
 
-Преобразование типа `BETWEEN`.Преобразование сохраняет значение между указанными разделителями и удаляет всё за их пределами.
+Преобразование типа `BETWEEN`. Преобразование сохраняет значение между указанными разделителями и удаляет всё, что находится вне их.
 
 | Элемент | Тип | Описание |
 | --- | --- | --- |
@@ -1504,11 +1608,11 @@ JSON model
 }
 ```
 
-### REPLACE\_BETWEEN
+### REPLACE_BETWEEN
 
 ReplaceBetweenTransformation
 
-Parameters
+Параметры
 
 JSON model
 
@@ -1516,13 +1620,13 @@ JSON model
 
 Преобразование типа `REPLACE_BETWEEN`.
 
-Преобразование заменяет содержимое между указанными разделителями указанным значением. Остальная часть строки остаётся без изменений.
+Преобразование заменяет содержимое между указанными разделителями на указанное значение. Остальная часть строки остаётся без изменений.
 
 | Элемент | Тип | Описание |
 | --- | --- | --- |
-| after | string | Начальный разделитель. Преобразование заменяет всё отсюда до конечного разделителя. Сам разделитель остаётся без изменений. |
+| after | string | Начальный разделитель. Преобразование заменяет всё от этого места до конечного разделителя. Сам разделитель остаётся без изменений. |
 | before | string | Конечный разделитель. Преобразование заменяет всё от начального разделителя до этого места. Сам разделитель остаётся без изменений. |
-| replacement | string | Значение, используемое вместо содержимого между разделителями. |
+| replacement | string | Значение, которое используется вместо содержимого между разделителями. |
 
 ```
 {
@@ -1548,11 +1652,11 @@ JSON model
 }
 ```
 
-### REMOVE\_NUMBERS
+### REMOVE_NUMBERS
 
 RemoveNumbersTransformation
 
-Parameters
+Параметры
 
 JSON model
 
@@ -1564,7 +1668,7 @@ JSON model
 
 | Элемент | Тип | Описание |
 | --- | --- | --- |
-| includeHexNumbers | boolean | Удалять (`true`) или сохранять (`false`) шестнадцатеричные числа.  Если не задано, используется `false`, сохраняя шестнадцатеричные числа. |
+| includeHexNumbers | boolean | Удалять (`true`) или сохранять (`false`) шестнадцатеричные числа.  Если не задано, используется `false`, то есть шестнадцатеричные числа сохраняются. |
 | minDigitCount | integer | Удалять числа, содержащие не менее *X* цифр. |
 
 ```
@@ -1587,23 +1691,23 @@ JSON model
 }
 ```
 
-### REMOVE\_CREDIT\_CARDS
+### REMOVE_CREDIT_CARDS
 
 RemoveCreditCardNumbersTransformation
 
-Parameters
+Параметры
 
 JSON model
 
 #### Объект `RemoveCreditCardNumbersTransformation`
 
-Преобразование типа `REMOVE_CREDIT_CARDS`.
+Трансформация типа `REMOVE_CREDIT_CARDS`.
 
-Преобразование автоматически обнаруживает и удаляет номера кредитных карт. Дополнительные параметры не нужны.
+Трансформация автоматически обнаруживает и удаляет номера кредитных карт. Дополнительные параметры не нужны.
 
 | Элемент | Тип | Описание |
 | --- | --- | --- |
-| type | string | Определяет фактический набор полей в зависимости от значения. Смотрите один из следующих объектов:  * `BEFORE` -> BeforeTransformation * `AFTER` -> AfterTransformation * `BETWEEN` -> BetweenTransformation * `REPLACE_BETWEEN` -> ReplaceBetweenTransformation * `REMOVE_NUMBERS` -> RemoveNumbersTransformation * `REMOVE_CREDIT_CARDS` -> RemoveCreditCardNumbersTransformation * `REMOVE_IBANS` -> RemoveIBANsTransformation * `REMOVE_IPS` -> RemoveIPsTransformation * `SPLIT_SELECT` -> SplitSelectTransformation * `TAKE_SEGMENTS` -> TakeSegmentsTransformation Возможные значения: * `AFTER` * `BEFORE` * `BETWEEN` * `REMOVE_CREDIT_CARDS` * `REMOVE_IBANS` * `REMOVE_IPS` * `REMOVE_NUMBERS` * `REPLACE_BETWEEN` * `SPLIT_SELECT` * `TAKE_SEGMENTS` |
+| type | string | Определяет фактический набор полей в зависимости от значения. См. один из следующих объектов:  * `BEFORE` -> BeforeTransformation * `AFTER` -> AfterTransformation * `BETWEEN` -> BetweenTransformation * `REPLACE_BETWEEN` -> ReplaceBetweenTransformation * `REMOVE_NUMBERS` -> RemoveNumbersTransformation * `REMOVE_CREDIT_CARDS` -> RemoveCreditCardNumbersTransformation * `REMOVE_IBANS` -> RemoveIBANsTransformation * `REMOVE_IPS` -> RemoveIPsTransformation * `SPLIT_SELECT` -> SplitSelectTransformation * `TAKE_SEGMENTS` -> TakeSegmentsTransformation Элемент может принимать следующие значения * `AFTER` * `BEFORE` * `BETWEEN` * `REMOVE_CREDIT_CARDS` * `REMOVE_IBANS` * `REMOVE_IPS` * `REMOVE_NUMBERS` * `REPLACE_BETWEEN` * `SPLIT_SELECT` * `TAKE_SEGMENTS` |
 
 ```
 {
@@ -1617,23 +1721,23 @@ JSON model
 }
 ```
 
-### REMOVE\_IBANS
+### REMOVE_IBANS
 
 RemoveIBANsTransformation
 
-Parameters
+Параметры
 
 JSON model
 
 #### Объект `RemoveIBANsTransformation`
 
-Преобразование типа `REMOVE_IBANS`.
+Трансформация типа `REMOVE_IBANS`.
 
-Преобразование автоматически обнаруживает и удаляет международные номера банковских счетов (IBAN). Дополнительные параметры не нужны.
+Трансформация автоматически обнаруживает и удаляет международные номера банковских счетов (IBAN). Дополнительные параметры не нужны.
 
 | Элемент | Тип | Описание |
 | --- | --- | --- |
-| type | string | Определяет фактический набор полей в зависимости от значения. Смотрите один из следующих объектов:  * `BEFORE` -> BeforeTransformation * `AFTER` -> AfterTransformation * `BETWEEN` -> BetweenTransformation * `REPLACE_BETWEEN` -> ReplaceBetweenTransformation * `REMOVE_NUMBERS` -> RemoveNumbersTransformation * `REMOVE_CREDIT_CARDS` -> RemoveCreditCardNumbersTransformation * `REMOVE_IBANS` -> RemoveIBANsTransformation * `REMOVE_IPS` -> RemoveIPsTransformation * `SPLIT_SELECT` -> SplitSelectTransformation * `TAKE_SEGMENTS` -> TakeSegmentsTransformation Возможные значения: * `AFTER` * `BEFORE` * `BETWEEN` * `REMOVE_CREDIT_CARDS` * `REMOVE_IBANS` * `REMOVE_IPS` * `REMOVE_NUMBERS` * `REPLACE_BETWEEN` * `SPLIT_SELECT` * `TAKE_SEGMENTS` |
+| type | string | Определяет фактический набор полей в зависимости от значения. См. один из следующих объектов:  * `BEFORE` -> BeforeTransformation * `AFTER` -> AfterTransformation * `BETWEEN` -> BetweenTransformation * `REPLACE_BETWEEN` -> ReplaceBetweenTransformation * `REMOVE_NUMBERS` -> RemoveNumbersTransformation * `REMOVE_CREDIT_CARDS` -> RemoveCreditCardNumbersTransformation * `REMOVE_IBANS` -> RemoveIBANsTransformation * `REMOVE_IPS` -> RemoveIPsTransformation * `SPLIT_SELECT` -> SplitSelectTransformation * `TAKE_SEGMENTS` -> TakeSegmentsTransformation Элемент может принимать следующие значения * `AFTER` * `BEFORE` * `BETWEEN` * `REMOVE_CREDIT_CARDS` * `REMOVE_IBANS` * `REMOVE_IPS` * `REMOVE_NUMBERS` * `REPLACE_BETWEEN` * `SPLIT_SELECT` * `TAKE_SEGMENTS` |
 
 ```
 {
@@ -1647,23 +1751,23 @@ JSON model
 }
 ```
 
-### REMOVE\_IPS
+### REMOVE_IPS
 
 RemoveIPsTransformation
 
-Parameters
+Параметры
 
 JSON model
 
 #### Объект `RemoveIPsTransformation`
 
-Преобразование типа `REMOVE_IPS`.
+Трансформация типа `REMOVE_IPS`.
 
-Преобразование автоматически обнаруживает и удаляет IP-адреса. Дополнительные параметры не нужны.
+Трансформация автоматически обнаруживает и удаляет IP-адреса. Дополнительные параметры не нужны.
 
 | Элемент | Тип | Описание |
 | --- | --- | --- |
-| type | string | Определяет фактический набор полей в зависимости от значения. Смотрите один из следующих объектов:  * `BEFORE` -> BeforeTransformation * `AFTER` -> AfterTransformation * `BETWEEN` -> BetweenTransformation * `REPLACE_BETWEEN` -> ReplaceBetweenTransformation * `REMOVE_NUMBERS` -> RemoveNumbersTransformation * `REMOVE_CREDIT_CARDS` -> RemoveCreditCardNumbersTransformation * `REMOVE_IBANS` -> RemoveIBANsTransformation * `REMOVE_IPS` -> RemoveIPsTransformation * `SPLIT_SELECT` -> SplitSelectTransformation * `TAKE_SEGMENTS` -> TakeSegmentsTransformation Возможные значения: * `AFTER` * `BEFORE` * `BETWEEN` * `REMOVE_CREDIT_CARDS` * `REMOVE_IBANS` * `REMOVE_IPS` * `REMOVE_NUMBERS` * `REPLACE_BETWEEN` * `SPLIT_SELECT` * `TAKE_SEGMENTS` |
+| type | string | Определяет фактический набор полей в зависимости от значения. См. один из следующих объектов:  * `BEFORE` -> BeforeTransformation * `AFTER` -> AfterTransformation * `BETWEEN` -> BetweenTransformation * `REPLACE_BETWEEN` -> ReplaceBetweenTransformation * `REMOVE_NUMBERS` -> RemoveNumbersTransformation * `REMOVE_CREDIT_CARDS` -> RemoveCreditCardNumbersTransformation * `REMOVE_IBANS` -> RemoveIBANsTransformation * `REMOVE_IPS` -> RemoveIPsTransformation * `SPLIT_SELECT` -> SplitSelectTransformation * `TAKE_SEGMENTS` -> TakeSegmentsTransformation Элемент может принимать следующие значения * `AFTER` * `BEFORE` * `BETWEEN` * `REMOVE_CREDIT_CARDS` * `REMOVE_IBANS` * `REMOVE_IPS` * `REMOVE_NUMBERS` * `REPLACE_BETWEEN` * `SPLIT_SELECT` * `TAKE_SEGMENTS` |
 
 ```
 {
@@ -1677,24 +1781,24 @@ JSON model
 }
 ```
 
-### SPLIT\_SELECT
+### SPLIT_SELECT
 
 SplitSelectTransformation
 
-Parameters
+Параметры
 
 JSON model
 
 #### Объект `SplitSelectTransformation`
 
-Преобразование типа `SPLIT_SELECT`.
+Трансформация типа `SPLIT_SELECT`.
 
-Преобразование разбивает обнаруженное значение на массив и сохраняет указанный элемент массива.
+Трансформация разбивает обнаруженное значение на массив и сохраняет указанный элемент массива.
 
 | Элемент | Тип | Описание |
 | --- | --- | --- |
 | delimiter | string | Разделитель для разбиения обнаруженного значения. Сам разделитель не сохраняется. |
-| itemIndex | integer | Индекс используемого элемента в разбитом массиве. Индексация начинается с `1`. |
+| itemIndex | integer | Индекс элемента в массиве после разбиения, который нужно использовать. Индексация начинается с `1`. |
 
 ```
 {
@@ -1716,25 +1820,25 @@ JSON model
 }
 ```
 
-### TAKE\_SEGMENTS
+### TAKE_SEGMENTS
 
 TakeSegmentsTransformation
 
-Parameters
+Параметры
 
 JSON model
 
 #### Объект `TakeSegmentsTransformation`
 
-Преобразование типа `TAKE_SEGMENTS`.
+Трансформация типа `TAKE_SEGMENTS`.
 
-Преобразование разбивает обнаруженное значение на массив и сохраняет указанное количество первых или последних элементов.
+Трансформация разбивает обнаруженное значение на массив и сохраняет указанное количество первых или последних элементов.
 
 | Элемент | Тип | Описание |
 | --- | --- | --- |
 | delimiter | string | Разделитель для разбиения обнаруженного значения. Сам разделитель не сохраняется. |
-| segmentCount | integer | Количество сохраняемых элементов. |
-| takeFromEnd | boolean | Сохраняет первые (`false`) или последние (`true`) элементы.  Если не задано, используется `false`, сохраняя первые элементы. |
+| segmentCount | integer | Количество элементов, которые нужно сохранить. |
+| takeFromEnd | boolean | Сохраняет первые (`false`) или последние (`true`) элементы.  Если не задано, используется `false`, то есть сохраняются первые элементы. |
 
 ```
 {

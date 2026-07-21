@@ -1,19 +1,18 @@
 ---
 title: Service detection API - GET an opaque web service rule
 source: https://docs.dynatrace.com/managed/dynatrace-api/configuration-api/service-api/detection-rules/opaque-web-service/get-rule
-scraped: 2026-05-12T11:18:52.430715
 ---
 
 # Service detection API - GET an opaque web service rule
 
 # Service detection API - GET an opaque web service rule
 
-* Reference
-* Published Sep 06, 2019
+* Справка
+* Опубликовано 06 сентября 2019 г.
 
-Показывает свойства указанного правила обнаружения сервисов для непрозрачных и внешних веб-сервисов.
+Показывает свойства указанного правила обнаружения сервиса для непрозрачных и внешних веб-сервисов.
 
-Запрос возвращает payload `application/json`.
+Запрос возвращает данные в формате `application/json`.
 
 |  |  |  |
 | --- | --- | --- |
@@ -22,70 +21,70 @@ scraped: 2026-05-12T11:18:52.430715
 
 ## Аутентификация
 
-Для выполнения этого запроса нужен access token со scope `ReadConfig`.
+Для выполнения этого запроса нужен токен доступа со скоупом `ReadConfig`.
 
-Как его получить и использовать, смотрите [Tokens and authentication](/managed/discover-dynatrace/references/dynatrace-api/basics/dynatrace-api-authentication).
+Подробнее о том, как его получить и использовать, см. [Tokens and authentication](/managed/discover-dynatrace/references/dynatrace-api/basics/dynatrace-api-authentication).
 
 ## Параметры
 
-| Параметр | Тип | Описание | Где | Обязательный |
+| Параметр | Тип | Описание | Расположение | Обязательный |
 | --- | --- | --- | --- | --- |
-| id | string | ID требуемого правила обнаружения сервисов. | path | Required |
+| id | string | ID нужного правила обнаружения сервиса. | path | Обязательный |
 
 ## Ответ
 
-Все JSON-модели, зависящие от типа модели, смотрите в [JSON models](/managed/dynatrace-api/configuration-api/service-api/detection-rules/models "Изучите вариации JSON-моделей в Dynatrace API правил обнаружения сервисов.").
+См. [JSON models](/managed/dynatrace-api/configuration-api/service-api/detection-rules/models "Learn the variations of JSON models in the Dynatrace service detection rules API."), чтобы найти все JSON модели, зависящие от типа модели.
 
 ### Коды ответа
 
 | Код | Тип | Описание |
 | --- | --- | --- |
-| **200** | [OpaqueAndExternalWebServiceRule](#openapi-definition-OpaqueAndExternalWebServiceRule) | Успех. Тело ответа содержит свойства указанного правила. |
-| **404** | - | Сбой. Правило с указанным ID не существует. |
+| **200** | [OpaqueAndExternalWebServiceRule](#openapi-definition-OpaqueAndExternalWebServiceRule) | Успех. Ответ содержит свойства указанного правила. |
+| **404** | - | Ошибка. Правило с указанным ID не существует. |
 
 ### Объекты тела ответа
 
 #### Объект `OpaqueAndExternalWebServiceRule`
 
-Правило обнаружения сервисов типа `OPAQUE_AND_EXTERNAL_WEB_SERVICE`
+Правило обнаружения сервиса типа `OPAQUE_AND_EXTERNAL_WEB_SERVICE`
 
 | Элемент | Тип | Описание |
 | --- | --- | --- |
-| conditions | [ConditionsOpaqueAndExternalWebServiceAttributeTypeDto[]](#openapi-definition-ConditionsOpaqueAndExternalWebServiceAttributeTypeDto) | Список условий правила.  Если указано несколько условий, применяется логика AND. |
+| conditions | [ConditionsOpaqueAndExternalWebServiceAttributeTypeDto](#openapi-definition-ConditionsOpaqueAndExternalWebServiceAttributeTypeDto)[] | Список условий правила.  Если указано несколько условий, применяется логика AND. |
 | description | string | Краткое описание правила. |
-| detectAsWebRequestService | boolean | Обнаруживать совпадающие запросы как веб-сервисы (`false`) или как сервисы веб-запросов (`true`).  Установка этого поля в `true` предотвращает обнаружение совпадающих запросов как непрозрачных веб-сервисов. Вместо этого создаётся непрозрачный сервис веб-запросов. Если нужно дополнительно изменить получившийся сервис веб-запросов, создайте отдельное правило типа `OPAQUE_AND_EXTERNAL_WEB_REQUEST`.  По умолчанию `false`, совпадающие запросы обнаруживаются как непрозрачные веб-сервисы. |
+| detectAsWebRequestService | boolean | Обнаруживать совпадающие запросы как веб-сервисы (`false`) или как веб-request-сервисы (`true`).  Установка этого поля в `true` предотвращает обнаружение совпадающих запросов как непрозрачных веб-сервисов. Вместо этого создаётся непрозрачный веб-request-сервис. Если нужно дополнительно изменить результирующий веб-request-сервис, нужно создать отдельное правило типа `OPAQUE_AND_EXTERNAL_WEB_REQUEST`.  По умолчанию `false`, совпадающие запросы обнаруживаются как непрозрачные веб-сервисы. |
 | enabled | boolean | Правило включено (`true`) или отключено (`false`). |
-| id | string | ID правила обнаружения сервисов. |
-| managementZones | string[] | Зона управления (указанная по ID) группы процессов, для которой должно быть создано это правило обнаружения сервисов.  Здесь можно указать только 1 зону управления. |
-| metadata | [ConfigurationMetadata](#openapi-definition-ConfigurationMetadata) | Метаданные для отладки |
-| name | string | Имя правила. |
-| order | string | Порядок правила в списке правил.  Правила выполняются сверху вниз. Применяется первое совпавшее правило. |
-| port | [Port](#openapi-definition-Port) | Вклад в расчёт ID сервиса от порта, на котором обнаружен веб-запрос. |
-| type | string | Тип правила обнаружения сервисов. |
-| urlPath | [UrlPath](#openapi-definition-UrlPath) | Вклад в расчёт ID сервиса от URL, на котором обнаружен веб-запрос.  Есть два взаимоисключающих варианта:  * Переопределить обнаруженное значение заданным статическим значением. Укажите новое значение в поле **valueOverride**. * Динамически преобразовать обнаруженное значение. Укажите параметры преобразования в поле **transformations**. |
+| id | string | ID правила обнаружения сервиса. |
+| managementZones | string[] | Management zone (указывается по ID) группы процессов, для которой нужно создать это правило обнаружения сервиса.  Здесь можно указать только 1 management zone. |
+| metadata | [ConfigurationMetadata](#openapi-definition-ConfigurationMetadata) | Метаданные, полезные для отладки |
+| name | string | Название правила. |
+| order | string | Порядок правила в списке правил.  Правила оцениваются сверху вниз. Применяется первое совпавшее правило. |
+| port | [Port](#openapi-definition-Port) | Вклад порта, на котором был обнаружен веб-запрос, в расчёт ID сервиса. |
+| type | string | Тип правила обнаружения сервиса. |
+| urlPath | [UrlPath](#openapi-definition-UrlPath) | Вклад URL, на котором был обнаружен веб-запрос, в расчёт ID сервиса.  Есть два взаимоисключающих варианта:  * Переопределить обнаруженное значение указанным статическим значением. Указать новое значение в поле **valueOverride**. * Динамически преобразовать обнаруженное значение. Указать параметры преобразования в поле **transformations**. |
 
 #### Объект `ConditionsOpaqueAndExternalWebServiceAttributeTypeDto`
 
-Условие правила обнаружения сервисов.
+Условие правила обнаружения сервиса.
 
 | Элемент | Тип | Описание |
 | --- | --- | --- |
-| attributeType | string | Тип проверяемого атрибута. Возможные значения: * `ENDPOINT` * `IP` * `OPERATION_NAME` * `PG_TAG` * `URL_PATH` * `URL_PORT` |
-| compareOperations | [CompareOperation[]](#openapi-definition-CompareOperation) | Список условий правила.  Если указано несколько условий, применяется логика AND. |
+| attributeType | string | Тип проверяемого атрибута. Элемент может принимать следующие значения * `ENDPOINT` * `IP` * `OPERATION_NAME` * `PG_TAG` * `URL_PATH` * `URL_PORT` |
+| compareOperations | [CompareOperation](#openapi-definition-CompareOperation)[] | Список условий для правила.  Если указано несколько условий, применяется логика AND. |
 
 #### Объект `CompareOperation`
 
 Условие правила.
 
-Фактический набор полей зависит от типа условия. Список фактических объектов см. в описании поля **type** или см. [Service detection API - JSON models](https://dt-url.net/2ie3slq).
+Фактический набор полей зависит от типа условия. Список фактических объектов см. в описании поля **type** или в [Service detection API - JSON models﻿](https://dt-url.net/2ie3slq?dt=m).
 
 | Элемент | Тип | Описание |
 | --- | --- | --- |
-| type | string | Определяет фактический набор полей в зависимости от значения. Смотрите один из следующих объектов:  * `EQUALS` -> EqualsCompareOperation * `STRING_CONTAINS` -> StringContainsCompareOperation * `STARTS_WITH` -> StartsWithCompareOperation * `ENDS_WITH` -> EndsWithCompareOperation * `EXISTS` -> ExistsCompareOperation * `IP_IN_RANGE` -> IpInRangeCompareOperation * `LESS_THAN` -> LessThanCompareOperation * `GREATER_THAN` -> GreaterThanCompareOperation * `INT_EQUALS` -> IntEqualsCompareOperation * `STRING_EQUALS` -> StringEqualsCompareOperation * `TAG` -> TagCompareOperation Возможные значения: * `ENDS_WITH` * `EQUALS` * `EXISTS` * `GREATER_THAN` * `INT_EQUALS` * `IP_IN_RANGE` * `LESS_THAN` * `STARTS_WITH` * `STRING_CONTAINS` * `STRING_EQUALS` * `TAG` |
+| type | string | Определяет фактический набор полей в зависимости от значения. См. один из следующих объектов:  * `EQUALS` -> EqualsCompareOperation * `STRING_CONTAINS` -> StringContainsCompareOperation * `STARTS_WITH` -> StartsWithCompareOperation * `ENDS_WITH` -> EndsWithCompareOperation * `EXISTS` -> ExistsCompareOperation * `IP_IN_RANGE` -> IpInRangeCompareOperation * `LESS_THAN` -> LessThanCompareOperation * `GREATER_THAN` -> GreaterThanCompareOperation * `INT_EQUALS` -> IntEqualsCompareOperation * `STRING_EQUALS` -> StringEqualsCompareOperation * `TAG` -> TagCompareOperation Элемент может принимать следующие значения * `ENDS_WITH` * `EQUALS` * `EXISTS` * `GREATER_THAN` * `INT_EQUALS` * `IP_IN_RANGE` * `LESS_THAN` * `STARTS_WITH` * `STRING_CONTAINS` * `STRING_EQUALS` * `TAG` |
 
 #### Объект `ConfigurationMetadata`
 
-Метаданные для отладки
+Метаданные, полезные для отладки
 
 | Элемент | Тип | Описание |
 | --- | --- | --- |
@@ -95,7 +94,7 @@ scraped: 2026-05-12T11:18:52.430715
 
 #### Объект `Port`
 
-Вклад в расчёт ID сервиса от порта, на котором обнаружен веб-запрос.
+Вклад порта, на котором был обнаружен веб-запрос, в расчёт ID сервиса.
 
 | Элемент | Тип | Описание |
 | --- | --- | --- |
@@ -103,16 +102,16 @@ scraped: 2026-05-12T11:18:52.430715
 
 #### Объект `UrlPath`
 
-Вклад в расчёт ID сервиса от URL, на котором обнаружен веб-запрос.
+Вклад URL, на котором был обнаружен веб-запрос, в расчёт ID сервиса.
 
 Есть два взаимоисключающих варианта:
 
-* Переопределить обнаруженное значение заданным статическим значением. Укажите новое значение в поле **valueOverride**.
-* Динамически преобразовать обнаруженное значение. Укажите параметры преобразования в поле **transformations**.
+* Переопределить обнаруженное значение указанным статическим значением. Указать новое значение в поле **valueOverride**.
+* Динамически преобразовать обнаруженное значение. Указать параметры преобразования в поле **transformations**.
 
 | Элемент | Тип | Описание |
 | --- | --- | --- |
-| transformations | [TransformationBase[]](#openapi-definition-TransformationBase) | Преобразования, применяемые к обнаруженному значению. |
+| transformations | [TransformationBase](#openapi-definition-TransformationBase)[] | Преобразования, применяемые к обнаруженному значению. |
 | valueOverride | string | Значение, используемое вместо обнаруженного значения. |
 
 #### Объект `TransformationBase`
@@ -121,13 +120,13 @@ scraped: 2026-05-12T11:18:52.430715
 
 Если указано несколько преобразований, они обрабатываются последовательно сверху вниз. Каждое преобразование применяется к результату предыдущего преобразования. Например, второе преобразование применяется к результату первого преобразования.
 
-Фактический набор полей зависит от типа преобразования. Список фактических объектов см. в описании поля **type** или см. [Service detection API - JSON models](https://dt-url.net/2ie3slq).
+Фактический набор полей зависит от типа преобразования. Список фактических объектов см. в описании поля **type** или в [Service detection API - JSON models﻿](https://dt-url.net/2ie3slq?dt=m).
 
 | Элемент | Тип | Описание |
 | --- | --- | --- |
-| type | string | Определяет фактический набор полей в зависимости от значения. Смотрите один из следующих объектов:  * `BEFORE` -> BeforeTransformation * `AFTER` -> AfterTransformation * `BETWEEN` -> BetweenTransformation * `REPLACE_BETWEEN` -> ReplaceBetweenTransformation * `REMOVE_NUMBERS` -> RemoveNumbersTransformation * `REMOVE_CREDIT_CARDS` -> RemoveCreditCardNumbersTransformation * `REMOVE_IBANS` -> RemoveIBANsTransformation * `REMOVE_IPS` -> RemoveIPsTransformation * `SPLIT_SELECT` -> SplitSelectTransformation * `TAKE_SEGMENTS` -> TakeSegmentsTransformation Возможные значения: * `AFTER` * `BEFORE` * `BETWEEN` * `REMOVE_CREDIT_CARDS` * `REMOVE_IBANS` * `REMOVE_IPS` * `REMOVE_NUMBERS` * `REPLACE_BETWEEN` * `SPLIT_SELECT` * `TAKE_SEGMENTS` |
+| type | string | Определяет фактический набор полей в зависимости от значения. См. один из следующих объектов:  * `BEFORE` -> BeforeTransformation * `AFTER` -> AfterTransformation * `BETWEEN` -> BetweenTransformation * `REPLACE_BETWEEN` -> ReplaceBetweenTransformation * `REMOVE_NUMBERS` -> RemoveNumbersTransformation * `REMOVE_CREDIT_CARDS` -> RemoveCreditCardNumbersTransformation * `REMOVE_IBANS` -> RemoveIBANsTransformation * `REMOVE_IPS` -> RemoveIPsTransformation * `SPLIT_SELECT` -> SplitSelectTransformation * `TAKE_SEGMENTS` -> TakeSegmentsTransformation Элемент может принимать следующие значения * `AFTER` * `BEFORE` * `BETWEEN` * `REMOVE_CREDIT_CARDS` * `REMOVE_IBANS` * `REMOVE_IPS` * `REMOVE_NUMBERS` * `REPLACE_BETWEEN` * `SPLIT_SELECT` * `TAKE_SEGMENTS` |
 
-### JSON-модели тела ответа
+### Пример тела ответа JSON
 
 ```
 {
@@ -259,5 +258,5 @@ scraped: 2026-05-12T11:18:52.430715
 
 ## Связанные темы
 
-* [Service Detection v1](/managed/observe/application-observability/services/service-detection/service-detection-v1 "Узнайте, как Dynatrace Service Detection v1 обнаруживает и именует различные типы сервисов.")
-* [Opaque services](/managed/observe/application-observability/services/service-detection/service-detection-v1/service-types/opaque-services "Узнайте, что такое непрозрачные сервисы.")
+* [Service Detection v1](/managed/observe/application-observability/services/service-detection/service-detection-v1 "Find out how Dynatrace Service Detection v1 detects and names different types of services.")
+* [Opaque services](/managed/observe/application-observability/services/service-detection/service-detection-v1/service-types/opaque-services "Understand what opaque services are.")

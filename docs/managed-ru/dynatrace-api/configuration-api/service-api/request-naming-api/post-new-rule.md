@@ -1,19 +1,18 @@
 ---
 title: Request naming API - POST a new request naming rule
 source: https://docs.dynatrace.com/managed/dynatrace-api/configuration-api/service-api/request-naming-api/post-new-rule
-scraped: 2026-05-12T11:17:49.194084
 ---
 
 # Request naming API - POST a new request naming rule
 
 # Request naming API - POST a new request naming rule
 
-* Reference
-* Published Jun 25, 2019
+* Справочная информация
+* Опубликовано 25 июня 2019 г.
 
-Создаёт новое правило именования запросов. Подробный сценарий использования смотрите в разделе [Request naming API - Create a new rule](/managed/dynatrace-api/configuration-api/service-api/request-naming-api/create-a-new-request-naming-rule "Узнайте, как создать правило именования запросов через Dynatrace API.").
+Создаёт новое правило именования запросов. Подробный пример использования смотри в разделе [Request naming API - Create a new rule](/managed/dynatrace-api/configuration-api/service-api/request-naming-api/create-a-new-request-naming-rule "Learn how to create a request naming rule via the Dynatrace API.").
 
-Запрос принимает и возвращает payload `application/json`.
+Запрос принимает и возвращает данные в формате `application/json`.
 
 |  |  |  |
 | --- | --- | --- |
@@ -22,109 +21,130 @@ scraped: 2026-05-12T11:17:49.194084
 
 ## Аутентификация
 
-Для выполнения этого запроса нужен access token со scope `WriteConfig`.
+Для выполнения этого запроса нужен токен доступа с областью действия `WriteConfig`.
 
-Как его получить и использовать, смотрите [Tokens and authentication](/managed/discover-dynatrace/references/dynatrace-api/basics/dynatrace-api-authentication).
+Подробнее о том, как получить и использовать токен, смотри в разделе [Tokens and authentication](/managed/discover-dynatrace/references/dynatrace-api/basics/dynatrace-api-authentication).
 
 ## Параметры
 
-Все JSON-модели, зависящие от **типа** модели, смотрите в [JSON models](/managed/dynatrace-api/configuration-api/service-api/request-naming-api/json-models "Изучите вариации JSON-моделей в Dynatrace API именования запросов.").
+Список всех моделей JSON, зависящих от **типа** модели, приведён в разделе [JSON models](/managed/dynatrace-api/configuration-api/service-api/request-naming-api/json-models "Learn the variations of JSON models in the Dynatrace request naming API.").
 
-| Параметр | Тип | Описание | Где | Обязательный |
+| Параметр | Тип | Описание | Расположение | Обязательный |
 | --- | --- | --- | --- | --- |
-| position | string | Порядок нового правила именования запросов. Установите `PREPEND`, чтобы добавить правило в начало списка, или `APPEND`, чтобы добавить в конец. По умолчанию `APPEND`. Возможные значения: * `APPEND` * `PREPEND` | query | Optional |
-| body | [RequestNaming](#openapi-definition-RequestNaming) | JSON-тело запроса, содержащее параметры нового правила именования запросов.  Не указывайте ID правила! | body | Optional |
+| position | string | Порядок нового правила именования запросов. Значение `PREPEND` добавляет правило в начало списка, `APPEND`, в конец. По умолчанию используется `APPEND`. Элемент может принимать следующие значения * `APPEND` * `PREPEND` | query | Необязательный |
+| body | [RequestNaming](#openapi-definition-RequestNaming) | Тело запроса JSON, содержащее параметры нового правила именования запросов. Указывать ID правила нельзя! | body | Необязательный |
 
 ### Объекты тела запроса
 
+
 #### Объект `RequestNaming`
 
-Правило именования запросов.
+
+Правило именования запроса.
+
 
 | Элемент | Тип | Описание | Обязательный |
 | --- | --- | --- | --- |
-| conditions | [Condition[]](#openapi-definition-Condition) | Набор условий использования правила именования запросов.  Можно указать несколько условий. Запрос должен соответствовать **всем** указанным условиям, чтобы правило сработало. | Required |
-| enabled | boolean | Правило включено (`true`) или отключено (`false`). | Required |
-| id | string | ID правила именования запросов. | Optional |
-| managementZones | string[] | Указывает зоны управления, для которых должно применяться это правило. | Optional |
-| metadata | [ConfigurationMetadata](#openapi-definition-ConfigurationMetadata) | Метаданные для отладки | Optional |
-| namingPattern | string | Имя, присваиваемое подходящим запросам. | Required |
-| order | string | Строка порядка. Сортировка именований запросов в алфавитном порядке по их строке порядка определяет их относительный порядок.  Обычно этим управляет Dynatrace внутренне; строка не присутствует в ответах GET и не используется, если присутствует в запросах PUT/POST, кроме случаев, где указано иное. | Optional |
-| placeholders | [Placeholder[]](#openapi-definition-Placeholder) | Список пользовательских плейсхолдеров для использования в шаблоне именования.  Он позволяет извлечь значение атрибута запроса или другой атрибут запроса и использовать его в шаблоне именования запросов. | Optional |
+| conditions | [Condition](#openapi-definition-Condition)[] | Набор условий для применения правила именования запроса. Можно указать несколько условий. Для срабатывания правила запрос должен соответствовать **всем** указанным условиям. | Обязательный |
+| enabled | boolean | Правило включено (`true`) или отключено (`false`). | Обязательный |
+| id | string | ID правила именования запроса. | Опциональный |
+| managementZones | string[] | Указывает management zones, для которых применяется это правило. | Опциональный |
+| metadata | [ConfigurationMetadata](#openapi-definition-ConfigurationMetadata) | Метаданные, полезные для отладки | Опциональный |
+| namingPattern | string | Имя, которое присваивается совпадающим запросам. | Обязательный |
+| order | string | Строка порядка. Сортировка правил именования запросов по алфавиту согласно их строке порядка определяет их относительный порядок. Обычно это управляется Dynatrace внутренне и не присутствует в ответах GET, а также не используется, если присутствует в запросах PUT/POST, за исключением случаев, отдельно оговорённых. | Опциональный |
+| placeholders | [Placeholder](#openapi-definition-Placeholder)[] | Список пользовательских плейсхолдеров для использования в шаблоне именования. Позволяет извлечь значение атрибута запроса или другого атрибута запроса и использовать его в шаблоне именования запроса. | Опциональный |
+
 
 #### Объект `Condition`
 
-Условие использования правила.
+
+Условие применения правила.
+
 
 | Элемент | Тип | Описание | Обязательный |
 | --- | --- | --- | --- |
-| attribute | string | Сопоставляемый атрибут.  Учтите, что для атрибута свойства сервиса нужно использовать сравнение типа `FAST_STRING`. Возможные значения: * `ACTOR_SYSTEM` * `AKKA_ACTOR_CLASS_NAME` * `AKKA_ACTOR_MESSAGE_TYPE` * `AKKA_ACTOR_PATH` * `APPLICATION_BUILD_VERSION` * `APPLICATION_ENVIRONMENT` * `APPLICATION_NAME` * `APPLICATION_RELEASE_VERSION` * `AZURE_FUNCTIONS_FUNCTION_NAME` * `AZURE_FUNCTIONS_SITE_NAME` * `CICS_PROGRAM_NAME` * `CICS_SYSTEM_ID` * `CICS_TASK_ID` * `CICS_TRANSACTION_ID` * `CICS_USER_ID` * `CPU_TIME` * `CTG_GATEWAY_URL` * `CTG_PROGRAM` * `CTG_SERVER_NAME` * `CTG_TRANSACTION_ID` * `CUSTOMSERVICE_CLASS` * `CUSTOMSERVICE_METHOD` * `DATABASE_CHILD_CALL_COUNT` * `DATABASE_CHILD_CALL_TIME` * `DATABASE_HOST` * `DATABASE_NAME` * `DATABASE_STATEMENT` * `DATABASE_TYPE` * `DATABASE_URL` * `DISK_IO_TIME` * `ERROR_COUNT` * `ESB_APPLICATION_NAME` * `ESB_INPUT_TYPE` * `ESB_LIBRARY_NAME` * `ESB_MESSAGE_FLOW_NAME` * `EXCEPTION_CLASS` * `EXCEPTION_MESSAGE` * `FAILED_STATE` * `FAILURE_REASON` * `FLAW_STATE` * `HTTP_REQUEST_METHOD` * `HTTP_STATUS` * `HTTP_STATUS_CLASS` * `IMS_PROGRAM_NAME` * `IMS_TRANSACTION_ID` * `IMS_USER_ID` * `IO_TIME` * `IS_KEY_REQUEST` * `LAMBDA_COLDSTART` * `LOCK_TIME` * `MESSAGING_DESTINATION_TYPE` * `MESSAGING_IS_TEMPORARY_QUEUE` * `MESSAGING_QUEUE_NAME` * `MESSAGING_QUEUE_VENDOR` * `NETWORK_IO_TIME` * `NON_DATABASE_CHILD_CALL_COUNT` * `NON_DATABASE_CHILD_CALL_TIME` * `ONE_AGENT_ATTRIBUTE` * `PROCESS_GROUP_NAME` * `PROCESS_GROUP_TAG` * `REMOTE_ENDPOINT` * `REMOTE_METHOD` * `REMOTE_SERVICE_NAME` * `REQUEST_NAME` * `REQUEST_TYPE` * `RESPONSE_TIME` * `RESPONSE_TIME_CLIENT` * `RMI_CLASS` * `RMI_METHOD` * `SERVICE_DISPLAY_NAME` * `SERVICE_NAME` * `SERVICE_PORT` * `SERVICE_PUBLIC_DOMAIN_NAME` * `SERVICE_REQUEST_ATTRIBUTE` * `SERVICE_TAG` * `SERVICE_TYPE` * `SERVICE_WEB_APPLICATION_ID` * `SERVICE_WEB_CONTEXT_ROOT` * `SERVICE_WEB_SERVER_NAME` * `SERVICE_WEB_SERVICE_NAME` * `SERVICE_WEB_SERVICE_NAMESPACE` * `SUSPENSION_TIME` * `TOTAL_PROCESSING_TIME` * `WAIT_TIME` * `WEBREQUEST_QUERY` * `WEBREQUEST_RELATIVE_URL` * `WEBREQUEST_URL` * `WEBREQUEST_URL_HOST` * `WEBREQUEST_URL_PATH` * `WEBREQUEST_URL_PORT` * `WEBSERVICE_ENDPOINT` * `WEBSERVICE_METHOD` * `ZOS_CALL_TYPE` | Required |
-| comparisonInfo | [ComparisonInfo](#openapi-definition-ComparisonInfo) | Сравнение для атрибутов, зависящее от типа. Фактический набор полей зависит от типа сравнения. Список фактических объектов см. в описании поля **type** или см. [Service metrics API - JSON models](https://dt-url.net/9803svb). | Required |
+| attribute | string | Атрибут, который нужно сопоставить. Обрати внимание, что для атрибута service property нужно использовать сравнение типа `FAST_STRING`. Примечание для Phase 3: `SERVICE_TAG` не поддерживается (service tags недоступны). `PROCESS_GROUP_TAG` устарел и больше не будет вычисляться, вместо него нужно использовать primary tags. `SERVICE_DISPLAY_NAME` вычисляет обнаруженное имя сервиса вместо этого. Элемент может принимать следующие значения * `ACTOR_SYSTEM` * `AKKA_ACTOR_CLASS_NAME` * `AKKA_ACTOR_MESSAGE_TYPE` * `AKKA_ACTOR_PATH` * `APPLICATION_BUILD_VERSION` * `APPLICATION_ENVIRONMENT` * `APPLICATION_NAME` * `APPLICATION_RELEASE_VERSION` * `AZURE_FUNCTIONS_FUNCTION_NAME` * `AZURE_FUNCTIONS_SITE_NAME` * `CICS_PROGRAM_NAME` * `CICS_SYSTEM_ID` * `CICS_TASK_ID` * `CICS_TRANSACTION_ID` * `CICS_USER_ID` * `CPU_TIME` * `CTG_GATEWAY_URL` * `CTG_PROGRAM` * `CTG_SERVER_NAME` * `CTG_TRANSACTION_ID` * `CUSTOMSERVICE_CLASS` * `CUSTOMSERVICE_METHOD` * `DATABASE_CHILD_CALL_COUNT` * `DATABASE_CHILD_CALL_TIME` * `DATABASE_HOST` * `DATABASE_NAME` * `DATABASE_STATEMENT` * `DATABASE_TYPE` * `DATABASE_URL` * `DISK_IO_TIME` * `ERROR_COUNT` * `ESB_APPLICATION_NAME` * `ESB_INPUT_TYPE` * `ESB_LIBRARY_NAME` * `ESB_MESSAGE_FLOW_NAME` * `EXCEPTION_CLASS` * `EXCEPTION_MESSAGE` * `FAILED_STATE` * `FAILURE_REASON` * `FLAW_STATE` * `HTTP_REQUEST_METHOD` * `HTTP_STATUS` * `HTTP_STATUS_CLASS` * `IMS_PROGRAM_NAME` * `IMS_TRANSACTION_ID` * `IMS_USER_ID` * `IO_TIME` * `IS_KEY_REQUEST` * `LAMBDA_COLDSTART` * `LOCK_TIME` * `MESSAGING_DESTINATION_TYPE` * `MESSAGING_IS_TEMPORARY_QUEUE` * `MESSAGING_QUEUE_NAME` * `MESSAGING_QUEUE_VENDOR` * `NETWORK_IO_TIME` * `NON_DATABASE_CHILD_CALL_COUNT` * `NON_DATABASE_CHILD_CALL_TIME` * `ONE_AGENT_ATTRIBUTE` * `PROCESS_GROUP_NAME` * `PROCESS_GROUP_TAG` * `REMOTE_ENDPOINT` * `REMOTE_METHOD` * `REMOTE_SERVICE_NAME` * `REQUEST_NAME` * `REQUEST_TYPE` * `RESPONSE_TIME` * `RESPONSE_TIME_CLIENT` * `RMI_CLASS` * `RMI_METHOD` * `SERVICE_DISPLAY_NAME` * `SERVICE_NAME` * `SERVICE_PORT` * `SERVICE_PUBLIC_DOMAIN_NAME` * `SERVICE_REQUEST_ATTRIBUTE` * `SERVICE_TAG` * `SERVICE_TYPE` * `SERVICE_WEB_APPLICATION_ID` * `SERVICE_WEB_CONTEXT_ROOT` * `SERVICE_WEB_SERVER_NAME` * `SERVICE_WEB_SERVICE_NAME` * `SERVICE_WEB_SERVICE_NAMESPACE` * `SUSPENSION_TIME` * `TOTAL_PROCESSING_TIME` * `WAIT_TIME` * `WEBREQUEST_QUERY` * `WEBREQUEST_RELATIVE_URL` * `WEBREQUEST_URL` * `WEBREQUEST_URL_HOST` * `WEBREQUEST_URL_PATH` * `WEBREQUEST_URL_PATH_CLEAN` * `WEBREQUEST_URL_PORT` * `WEBSERVICE_ENDPOINT` * `WEBSERVICE_METHOD` * `ZOS_CALL_TYPE` | Обязательный |
+| comparisonInfo | [ComparisonInfo](#openapi-definition-ComparisonInfo) | Сравнение атрибутов, специфичное для типа. Фактический набор полей зависит от типа сравнения. Список фактических объектов см. в описании поля **type** или в [Service metrics API - JSON models﻿](https://dt-url.net/9803svb?dt=m). | Обязательный |
+
 
 #### Объект `ComparisonInfo`
 
-Сравнение для атрибутов, зависящее от типа. Фактический набор полей зависит от типа сравнения. Список фактических объектов см. в описании поля **type** или см. [Service metrics API - JSON models](https://dt-url.net/9803svb).
+
+Сравнение атрибутов, специфичное для типа. Фактический набор полей зависит от типа сравнения. Список фактических объектов см. в описании поля **type** или в [Service metrics API - JSON models﻿](https://dt-url.net/9803svb?dt=m).
+
 
 | Элемент | Тип | Описание | Обязательный |
 | --- | --- | --- | --- |
-| comparison | string | Оператор сравнения. Его можно инвертировать, установив **negate** в `true`. | Required |
-| negate | boolean | Инвертирует **оператор** сравнения. Например, превращает **equals** в **does not equal**. | Required |
-| type | string | Определяет фактический набор полей в зависимости от значения. Смотрите один из следующих объектов:  * `STRING` -> StringComparisonInfo * `NUMBER` -> NumberComparisonInfo * `BOOLEAN` -> BooleanComparisonInfo * `HTTP_METHOD` -> HttpMethodComparisonInfo * `STRING_REQUEST_ATTRIBUTE` -> StringRequestAttributeComparisonInfo * `NUMBER_REQUEST_ATTRIBUTE` -> NumberRequestAttributeComparisonInfo * `STRING_ONE_AGENT_ATTRIBUTE` -> StringOneAgentAttributeComparisonInfo * `ZOS_CALL_TYPE` -> ZosComparisonInfo * `IIB_INPUT_NODE_TYPE` -> IIBInputNodeTypeComparisonInfo * `ESB_INPUT_NODE_TYPE` -> ESBInputNodeTypeComparisonInfo * `FAILED_STATE` -> FailedStateComparisonInfo * `FLAW_STATE` -> FlawStateComparisonInfo * `FAILURE_REASON` -> FailureReasonComparisonInfo * `HTTP_STATUS_CLASS` -> HttpStatusClassComparisonInfo * `TAG` -> TagComparisonInfo * `FAST_STRING` -> FastStringComparisonInfo * `SERVICE_TYPE` -> ServiceTypeComparisonInfo Возможные значения: * `BOOLEAN` * `ESB_INPUT_NODE_TYPE` * `FAILED_STATE` * `FAILURE_REASON` * `FAST_STRING` * `FLAW_STATE` * `HTTP_METHOD` * `HTTP_STATUS_CLASS` * `IIB_INPUT_NODE_TYPE` * `NUMBER` * `NUMBER_REQUEST_ATTRIBUTE` * `SERVICE_TYPE` * `STRING` * `STRING_ONE_AGENT_ATTRIBUTE` * `STRING_REQUEST_ATTRIBUTE` * `TAG` * `ZOS_CALL_TYPE` | Required |
-| value | string | Значение для сравнения. | Optional |
-| values | - | Значения для сравнения. | Optional |
+| comparison | string | Оператор сравнения. Можно инвертировать его, установив **negate** в `true`. | Обязательный |
+| negate | boolean | Инвертирует оператор сравнения **operator**. Например, превращает **equals** в **does not equal**. | Обязательный |
+| type | string | Определяет фактический набор полей в зависимости от значения. См. один из следующих объектов:  * `STRING` -> StringComparisonInfo * `NUMBER` -> NumberComparisonInfo * `BOOLEAN` -> BooleanComparisonInfo * `HTTP_METHOD` -> HttpMethodComparisonInfo * `STRING_REQUEST_ATTRIBUTE` -> StringRequestAttributeComparisonInfo * `NUMBER_REQUEST_ATTRIBUTE` -> NumberRequestAttributeComparisonInfo * `STRING_ONE_AGENT_ATTRIBUTE` -> StringOneAgentAttributeComparisonInfo * `ZOS_CALL_TYPE` -> ZosComparisonInfo * `IIB_INPUT_NODE_TYPE` -> IIBInputNodeTypeComparisonInfo * `ESB_INPUT_NODE_TYPE` -> ESBInputNodeTypeComparisonInfo * `FAILED_STATE` -> FailedStateComparisonInfo * `FLAW_STATE` -> FlawStateComparisonInfo * `FAILURE_REASON` -> FailureReasonComparisonInfo * `HTTP_STATUS_CLASS` -> HttpStatusClassComparisonInfo * `TAG` -> TagComparisonInfo * `FAST_STRING` -> FastStringComparisonInfo * `SERVICE_TYPE` -> ServiceTypeComparisonInfo Элемент может принимать следующие значения * `BOOLEAN` * `ESB_INPUT_NODE_TYPE` * `FAILED_STATE` * `FAILURE_REASON` * `FAST_STRING` * `FLAW_STATE` * `HTTP_METHOD` * `HTTP_STATUS_CLASS` * `IIB_INPUT_NODE_TYPE` * `NUMBER` * `NUMBER_REQUEST_ATTRIBUTE` * `SERVICE_TYPE` * `STRING` * `STRING_ONE_AGENT_ATTRIBUTE` * `STRING_REQUEST_ATTRIBUTE` * `TAG` * `ZOS_CALL_TYPE` | Обязательный |
+| value | - | Значение для сравнения. | Опциональный |
+| values | - | Значения для сравнения. | Опциональный |
+
 
 #### Объект `ConfigurationMetadata`
 
-Метаданные для отладки
+
+Метаданные, полезные для отладки
+
 
 | Элемент | Тип | Описание | Обязательный |
 | --- | --- | --- | --- |
-| clusterVersion | string | Версия Dynatrace. | Optional |
-| configurationVersions | integer[] | Отсортированный список номеров версий конфигурации. | Optional |
-| currentConfigurationVersions | string[] | Отсортированный список номеров версий конфигурации. | Optional |
+| clusterVersion | string | Версия Dynatrace. | Опциональный |
+| configurationVersions | integer[] | Отсортированный список номеров версий конфигурации. | Опциональный |
+| currentConfigurationVersions | string[] | Отсортированный список номеров версий конфигурации. | Опциональный |
+
 
 #### Объект `Placeholder`
 
-Пользовательский плейсхолдер, используемый как шаблон значения для именования.
 
-Он позволяет извлечь значение атрибута запроса или другой атрибут запроса и использовать его в шаблоне именования.
+Пользовательский плейсхолдер для использования в качестве шаблона значения именования.
+
+
+Позволяет извлечь значение атрибута запроса или другого атрибута запроса и использовать его в шаблоне именования.
 
 | Элемент | Тип | Описание | Обязательный |
 | --- | --- | --- | --- |
-| aggregation | string | Какое значение атрибута запроса использовать, когда он встречается в нескольких дочерних запросах.  Применимо только для атрибута `SERVICE_REQUEST_ATTRIBUTE`, когда **useFromChildCalls** равно `true`.  Для агрегации `COUNT` поле **kind** не применяется. Возможные значения: * `COUNT` * `FIRST` * `LAST` | Optional |
-| attribute | string | Атрибут, из которого извлекать. Можно использовать только атрибуты типа **string**. Возможные значения: * `ACTOR_SYSTEM` * `AKKA_ACTOR_CLASS_NAME` * `AKKA_ACTOR_MESSAGE_TYPE` * `AKKA_ACTOR_PATH` * `APPLICATION_BUILD_VERSION` * `APPLICATION_ENVIRONMENT` * `APPLICATION_NAME` * `APPLICATION_RELEASE_VERSION` * `AZURE_FUNCTIONS_FUNCTION_NAME` * `AZURE_FUNCTIONS_SITE_NAME` * `CICS_PROGRAM_NAME` * `CICS_SYSTEM_ID` * `CICS_TASK_ID` * `CICS_TRANSACTION_ID` * `CICS_USER_ID` * `CPU_TIME` * `CTG_GATEWAY_URL` * `CTG_PROGRAM` * `CTG_SERVER_NAME` * `CTG_TRANSACTION_ID` * `CUSTOMSERVICE_CLASS` * `CUSTOMSERVICE_METHOD` * `DATABASE_CHILD_CALL_COUNT` * `DATABASE_CHILD_CALL_TIME` * `DATABASE_HOST` * `DATABASE_NAME` * `DATABASE_STATEMENT` * `DATABASE_TYPE` * `DATABASE_URL` * `DISK_IO_TIME` * `ERROR_COUNT` * `ESB_APPLICATION_NAME` * `ESB_INPUT_TYPE` * `ESB_LIBRARY_NAME` * `ESB_MESSAGE_FLOW_NAME` * `EXCEPTION_CLASS` * `EXCEPTION_MESSAGE` * `FAILED_STATE` * `FAILURE_REASON` * `FLAW_STATE` * `HTTP_REQUEST_METHOD` * `HTTP_STATUS` * `HTTP_STATUS_CLASS` * `IMS_PROGRAM_NAME` * `IMS_TRANSACTION_ID` * `IMS_USER_ID` * `IO_TIME` * `IS_KEY_REQUEST` * `LAMBDA_COLDSTART` * `LOCK_TIME` * `MESSAGING_DESTINATION_TYPE` * `MESSAGING_IS_TEMPORARY_QUEUE` * `MESSAGING_QUEUE_NAME` * `MESSAGING_QUEUE_VENDOR` * `NETWORK_IO_TIME` * `NON_DATABASE_CHILD_CALL_COUNT` * `NON_DATABASE_CHILD_CALL_TIME` * `ONE_AGENT_ATTRIBUTE` * `PROCESS_GROUP_NAME` * `PROCESS_GROUP_TAG` * `REMOTE_ENDPOINT` * `REMOTE_METHOD` * `REMOTE_SERVICE_NAME` * `REQUEST_NAME` * `REQUEST_TYPE` * `RESPONSE_TIME` * `RESPONSE_TIME_CLIENT` * `RMI_CLASS` * `RMI_METHOD` * `SERVICE_DISPLAY_NAME` * `SERVICE_NAME` * `SERVICE_PORT` * `SERVICE_PUBLIC_DOMAIN_NAME` * `SERVICE_REQUEST_ATTRIBUTE` * `SERVICE_TAG` * `SERVICE_TYPE` * `SERVICE_WEB_APPLICATION_ID` * `SERVICE_WEB_CONTEXT_ROOT` * `SERVICE_WEB_SERVER_NAME` * `SERVICE_WEB_SERVICE_NAME` * `SERVICE_WEB_SERVICE_NAMESPACE` * `SUSPENSION_TIME` * `TOTAL_PROCESSING_TIME` * `WAIT_TIME` * `WEBREQUEST_QUERY` * `WEBREQUEST_RELATIVE_URL` * `WEBREQUEST_URL` * `WEBREQUEST_URL_HOST` * `WEBREQUEST_URL_PATH` * `WEBREQUEST_URL_PORT` * `WEBSERVICE_ENDPOINT` * `WEBSERVICE_METHOD` * `ZOS_CALL_TYPE` | Required |
-| delimiterOrRegex | string | В зависимости от значения **type**:  * `REGEX_EXTRACTION`: регулярное выражение. * `BETWEEN_DELIMITER`: искомая строка открывающего разделителя. * Все остальные значения: искомая строка разделителя. | Optional |
-| endDelimiter | string | Искомая строка закрывающего разделителя.  Обязательно, если значение **kind** равно `BETWEEN_DELIMITER`. В остальных случаях не применяется. | Optional |
-| kind | string | Тип извлечения.  Определяет либо использование регулярного выражения (`regex`), либо позицию извлекаемого значения атрибута запроса.  Когда **attribute** равно `SERVICE_REQUEST_ATTRIBUTE`, а **aggregation** равно `COUNT`, должно быть установлено в `ORIGINAL_TEXT` Возможные значения: * `AFTER_DELIMITER` * `BEFORE_DELIMITER` * `BETWEEN_DELIMITER` * `ORIGINAL_TEXT` * `REGEX_EXTRACTION` | Required |
-| name | string | Имя плейсхолдера. Используйте его в шаблоне именования как `{name}`. | Required |
-| normalization | string | Формат извлекаемой строки. Возможные значения: * `ORIGINAL` * `TO_LOWER_CASE` * `TO_UPPER_CASE` | Optional |
-| oneAgentAttributeKey | string | Атрибут OneAgent, из которого извлекать.  Обязательно, если значение **kind** равно `ONE_AGENT_ATTRIBUTE`. В остальных случаях не применяется. | Optional |
-| requestAttribute | string | Атрибут запроса, из которого извлекать.  Обязательно, если значение **kind** равно `SERVICE_REQUEST_ATTRIBUTE`. В остальных случаях не применяется. | Optional |
-| source | [PropagationSource](#openapi-definition-PropagationSource) | Определяет допустимые источники атрибутов запросов для условий или плейсхолдеров. | Optional |
-| useFromChildCalls | boolean | Если `true`, атрибут запроса будет взят из дочернего вызова сервиса.  Применимо только для атрибута `SERVICE_REQUEST_ATTRIBUTE`. По умолчанию `false`. | Optional |
+| aggregation | string | Какое значение атрибута запроса нужно использовать, если он встречается в нескольких дочерних запросах.  Применимо только к атрибуту `SERVICE_REQUEST_ATTRIBUTE`, когда **useFromChildCalls** равно `true`.  Для агрегации `COUNT` поле **kind** неприменимо. Элемент может принимать следующие значения * `COUNT` * `FIRST` * `LAST` | Необязательный |
+| attribute | string | Атрибут, из которого производится извлечение. Можно использовать только атрибуты типа **string**.  Примечание для Phase 3:  `SERVICE_TAG` не поддерживается (теги сервисов недоступны).  `PROCESS_GROUP_TAG` устарел и больше не будет обрабатываться, вместо него нужно использовать основные теги.  `SERVICE_DISPLAY_NAME` вместо этого использует определённое имя сервиса. Элемент может принимать следующие значения * `ACTOR_SYSTEM` * `AKKA_ACTOR_CLASS_NAME` * `AKKA_ACTOR_MESSAGE_TYPE` * `AKKA_ACTOR_PATH` * `APPLICATION_BUILD_VERSION` * `APPLICATION_ENVIRONMENT` * `APPLICATION_NAME` * `APPLICATION_RELEASE_VERSION` * `AZURE_FUNCTIONS_FUNCTION_NAME` * `AZURE_FUNCTIONS_SITE_NAME` * `CICS_PROGRAM_NAME` * `CICS_SYSTEM_ID` * `CICS_TASK_ID` * `CICS_TRANSACTION_ID` * `CICS_USER_ID` * `CPU_TIME` * `CTG_GATEWAY_URL` * `CTG_PROGRAM` * `CTG_SERVER_NAME` * `CTG_TRANSACTION_ID` * `CUSTOMSERVICE_CLASS` * `CUSTOMSERVICE_METHOD` * `DATABASE_CHILD_CALL_COUNT` * `DATABASE_CHILD_CALL_TIME` * `DATABASE_HOST` * `DATABASE_NAME` * `DATABASE_STATEMENT` * `DATABASE_TYPE` * `DATABASE_URL` * `DISK_IO_TIME` * `ERROR_COUNT` * `ESB_APPLICATION_NAME` * `ESB_INPUT_TYPE` * `ESB_LIBRARY_NAME` * `ESB_MESSAGE_FLOW_NAME` * `EXCEPTION_CLASS` * `EXCEPTION_MESSAGE` * `FAILED_STATE` * `FAILURE_REASON` * `FLAW_STATE` * `HTTP_REQUEST_METHOD` * `HTTP_STATUS` * `HTTP_STATUS_CLASS` * `IMS_PROGRAM_NAME` * `IMS_TRANSACTION_ID` * `IMS_USER_ID` * `IO_TIME` * `IS_KEY_REQUEST` * `LAMBDA_COLDSTART` * `LOCK_TIME` * `MESSAGING_DESTINATION_TYPE` * `MESSAGING_IS_TEMPORARY_QUEUE` * `MESSAGING_QUEUE_NAME` * `MESSAGING_QUEUE_VENDOR` * `NETWORK_IO_TIME` * `NON_DATABASE_CHILD_CALL_COUNT` * `NON_DATABASE_CHILD_CALL_TIME` * `ONE_AGENT_ATTRIBUTE` * `PROCESS_GROUP_NAME` * `PROCESS_GROUP_TAG` * `REMOTE_ENDPOINT` * `REMOTE_METHOD` * `REMOTE_SERVICE_NAME` * `REQUEST_NAME` * `REQUEST_TYPE` * `RESPONSE_TIME` * `RESPONSE_TIME_CLIENT` * `RMI_CLASS` * `RMI_METHOD` * `SERVICE_DISPLAY_NAME` * `SERVICE_NAME` * `SERVICE_PORT` * `SERVICE_PUBLIC_DOMAIN_NAME` * `SERVICE_REQUEST_ATTRIBUTE` * `SERVICE_TAG` * `SERVICE_TYPE` * `SERVICE_WEB_APPLICATION_ID` * `SERVICE_WEB_CONTEXT_ROOT` * `SERVICE_WEB_SERVER_NAME` * `SERVICE_WEB_SERVICE_NAME` * `SERVICE_WEB_SERVICE_NAMESPACE` * `SUSPENSION_TIME` * `TOTAL_PROCESSING_TIME` * `WAIT_TIME` * `WEBREQUEST_QUERY` * `WEBREQUEST_RELATIVE_URL` * `WEBREQUEST_URL` * `WEBREQUEST_URL_HOST` * `WEBREQUEST_URL_PATH` * `WEBREQUEST_URL_PATH_CLEAN` * `WEBREQUEST_URL_PORT` * `WEBSERVICE_ENDPOINT` * `WEBSERVICE_METHOD` * `ZOS_CALL_TYPE` | Обязательный |
+| delimiterOrRegex | string | В зависимости от значения **type**:  * `REGEX_EXTRACTION`: регулярное выражение. * `BETWEEN_DELIMITER`: строка открывающего разделителя для поиска. * Все остальные значения: строка разделителя для поиска. | Необязательный |
+| endDelimiter | string | Строка закрывающего разделителя для поиска.  Обязательно, если значение **kind** равно `BETWEEN_DELIMITER`. В остальных случаях неприменимо. | Необязательный |
+| kind | string | Тип извлечения.  Определяет использование регулярного выражения (`regex`) либо позицию значения атрибута запроса, которое нужно извлечь.  Когда **attribute** равен `SERVICE_REQUEST_ATTRIBUTE`, а **aggregation** равен `COUNT`, нужно установить значение `ORIGINAL_TEXT`. Элемент может принимать следующие значения * `AFTER_DELIMITER` * `BEFORE_DELIMITER` * `BETWEEN_DELIMITER` * `ORIGINAL_TEXT` * `REGEX_EXTRACTION` | Обязательный |
+| name | string | Имя плейсхолдера. Использовать его в шаблоне именования как `{name}`. | Обязательный |
+| normalization | string | Формат извлечённой строки. Элемент может принимать следующие значения * `ORIGINAL` * `TO_LOWER_CASE` * `TO_UPPER_CASE` | Необязательный |
+| oneAgentAttributeKey | string | Атрибут OneAgent, из которого производится извлечение.  Обязательно, если значение **kind** равно `ONE_AGENT_ATTRIBUTE`. В остальных случаях неприменимо. | Необязательный |
+| requestAttribute | string | Атрибут запроса, из которого производится извлечение.  Обязательно, если значение **kind** равно `SERVICE_REQUEST_ATTRIBUTE`. В остальных случаях неприменимо. | Необязательный |
+| source | [PropagationSource](#openapi-definition-PropagationSource) | Определяет допустимые источники атрибутов запроса для условий или плейсхолдеров. | Необязательный |
+| useFromChildCalls | boolean | Если `true`, атрибут запроса будет взят из дочернего вызова сервиса.  Применимо только к атрибуту `SERVICE_REQUEST_ATTRIBUTE`. По умолчанию `false`. | Необязательный |
+
 
 #### Объект `PropagationSource`
 
-Определяет допустимые источники атрибутов запросов для условий или плейсхолдеров.
+
+Определяет допустимые источники атрибутов запроса для условий или плейсхолдеров.
+
 
 | Элемент | Тип | Описание | Обязательный |
 | --- | --- | --- | --- |
-| managementZone | string | Использовать только атрибуты запросов из сервисов, принадлежащих этой зоне управления.. Используйте либо это, либо `serviceTag` | Optional |
-| serviceTag | [UniversalTag](#openapi-definition-UniversalTag) | Использовать только атрибуты запросов из сервисов с этим тегом. Используйте либо это, либо `managementZone` | Optional |
+| managementZone | string | Использовать только атрибуты запроса от сервисов, принадлежащих этой management zone. Использовать либо это поле, либо `serviceTag`. | Необязательный |
+| serviceTag | [UniversalTag](#openapi-definition-UniversalTag) | - | Необязательный |
+
 
 #### Объект `UniversalTag`
 
-Использовать только атрибуты запросов из сервисов с этим тегом. Используйте либо это, либо `managementZone`
+
+Использовать только атрибуты запроса от сервисов, у которых есть этот тег. Использовать либо это поле, либо `managementZone`.
+
 
 | Элемент | Тип | Описание | Обязательный |
 | --- | --- | --- | --- |
-| context | string | Происхождение тега, например AWS или Cloud Foundry. Для пользовательских тегов используйте значение `CONTEXTLESS`.  Контекст устанавливается для тегов, автоматически импортируемых OneAgent (например, из консоли AWS или переменных окружения). Он полезен для определения происхождения тегов, когда они не заданы вручную, а также помогает предотвратить конфликты с другими существующими тегами. Если тег не импортирован автоматически, устанавливается `CONTEXTLESS`. Возможные значения: * `AWS` * `AWS_GENERIC` * `AZURE` * `CLOUD_FOUNDRY` * `CONTEXTLESS` * `ENVIRONMENT` * `GOOGLE_COMPUTE_ENGINE` * `KUBERNETES` | Optional |
-| key | string | Ключ тега. Для пользовательских тегов укажите здесь значение тега.  Ключ позволяет категоризировать несколько тегов. Возможно наличие нескольких значений для одного ключа, которые все будут представлены как отдельные теги. Поэтому ключ не имеет семантики ключа карты, а скорее похож на ключ пары ключ-значение. В некоторых случаях, например для пользовательских тегов, ключ представляет фактическое значение тега, а поле value не установлено: такие теги называются теги без значения. | Required |
-| value | string | Значение тега. Не применяется к пользовательским тегам.  Если у тега есть отдельные ключ и значение (в текстовом представлении они разделены двоеточием ':'), в это поле записывается фактическое значение. Пары ключ-значение могут возникать для автоматически импортируемых тегов и тегов, заданных правилами при использовании экстракторов. | Optional |
+| context | string | Источник происхождения тега, например AWS или Cloud Foundry. Для пользовательских тегов использовать значение `CONTEXTLESS`.  Context задаётся для тегов, автоматически импортированных OneAgent (например, из консоли AWS или переменных окружения). Это полезно для определения происхождения тегов, не заданных вручную, а также помогает предотвратить конфликты с другими существующими тегами. Если тег не импортирован автоматически, устанавливается `CONTEXTLESS`. Элемент может принимать следующие значения * `AWS` * `AWS_GENERIC` * `AZURE` * `CLOUD_FOUNDRY` * `CONTEXTLESS` * `ENVIRONMENT` * `GOOGLE_COMPUTE_ENGINE` * `KUBERNETES` | Необязательный |
+| key | string | Ключ тега. Для пользовательских тегов сюда помещается значение тега.  Ключ позволяет категоризировать несколько тегов. Возможна ситуация, когда одному ключу соответствует несколько значений, каждое из которых представлено как отдельный тег. Поэтому ключ не имеет семантики ключа map, а скорее является ключом пары ключ-значение. В некоторых случаях, например для пользовательских тегов, ключ представляет собой фактическое значение тега, а поле value не задаётся, такие теги называются тегами без значения. | Обязательный |
+| value | string | Значение тега. Неприменимо для пользовательских тегов.  Если у тега есть отдельные ключ и значение (в текстовом представлении они разделены двоеточием «:»), это поле содержит фактическое значение. Пары ключ-значение могут встречаться у автоматически импортированных тегов и тегов, заданных правилами, если используются экстракторы. | Необязательный |
 
-### JSON-модель тела запроса
+### Тело запроса, модели JSON
 
-Это модель тела запроса, показывающая возможные элементы. Её нужно адаптировать под реальный запрос.
+Это модель тела запроса, показывающая возможные элементы. Её нужно адаптировать для использования в реальном запросе.
 
 ```
 {
@@ -192,14 +212,14 @@ scraped: 2026-05-12T11:17:49.194084
 
 ## Ответ
 
-Запрос возвращает краткое представление только что созданного правила.
+Запрос возвращает краткое представление вновь созданного правила.
 
 ### Коды ответа
 
 | Код | Тип | Описание |
 | --- | --- | --- |
-| **201** | [EntityShortRepresentation](#openapi-definition-EntityShortRepresentation) | Успех. Правило именования запросов создано. Тело ответа содержит ID нового сервиса. |
-| **400** | [ErrorEnvelope](#openapi-definition-ErrorEnvelope) | Сбой. Невалидный ввод. |
+| **201** | [EntityShortRepresentation](#openapi-definition-EntityShortRepresentation) | Успешно. Именование запроса создано. Ответ содержит ID новой службы. |
+| **400** | [ErrorEnvelope](#openapi-definition-ErrorEnvelope) | Ошибка. Некорректные входные данные. |
 
 ### Объекты тела ответа
 
@@ -211,7 +231,7 @@ scraped: 2026-05-12T11:17:49.194084
 | --- | --- | --- |
 | description | string | Краткое описание сущности Dynatrace. |
 | id | string | ID сущности Dynatrace. |
-| name | string | Имя сущности Dynatrace. |
+| name | string | Название сущности Dynatrace. |
 
 #### Объект `ErrorEnvelope`
 
@@ -224,7 +244,7 @@ scraped: 2026-05-12T11:17:49.194084
 | Элемент | Тип | Описание |
 | --- | --- | --- |
 | code | integer | HTTP-код статуса |
-| constraintViolations | [ConstraintViolation[]](#openapi-definition-ConstraintViolation) | Список нарушений ограничений |
+| constraintViolations | [ConstraintViolation](#openapi-definition-ConstraintViolation)[] | Список нарушений ограничений |
 | message | string | Сообщение об ошибке |
 
 #### Объект `ConstraintViolation`
@@ -235,10 +255,10 @@ scraped: 2026-05-12T11:17:49.194084
 | --- | --- | --- |
 | location | string | - |
 | message | string | - |
-| parameterLocation | string | -Возможные значения: * `HEADER` * `PATH` * `PAYLOAD_BODY` * `QUERY` |
+| parameterLocation | string | -Элемент может принимать следующие значения * `HEADER` * `PATH` * `PAYLOAD_BODY` * `QUERY` |
 | path | string | - |
 
-### JSON-модели тела ответа
+### Модели тела ответа JSON
 
 ```
 {
@@ -316,11 +336,11 @@ scraped: 2026-05-12T11:17:49.194084
 }
 ```
 
-## Validate payload
+## Валидация полезной нагрузки
 
-Рекомендуется валидировать payload перед отправкой реального запроса. Код ответа **204** означает валидный payload.
+Рекомендуется проверять полезную нагрузку перед отправкой в составе реального запроса. Код ответа **204** означает, что полезная нагрузка корректна.
 
-Запрос принимает payload `application/json`.
+Запрос принимает полезную нагрузку `application/json`.
 
 |  |  |  |
 | --- | --- | --- |
@@ -329,9 +349,9 @@ scraped: 2026-05-12T11:17:49.194084
 
 ### Аутентификация
 
-Для выполнения этого запроса нужен access token со scope `WriteConfig`.
+Для выполнения этого запроса нужен токен доступа с областью действия `WriteConfig`.
 
-Как его получить и использовать, смотрите [Tokens and authentication](/managed/discover-dynatrace/references/dynatrace-api/basics/dynatrace-api-authentication).
+О том, как получить и использовать его, см. [Tokens and authentication](/managed/discover-dynatrace/references/dynatrace-api/basics/dynatrace-api-authentication).
 
 ### Ответ
 
@@ -339,8 +359,8 @@ scraped: 2026-05-12T11:17:49.194084
 
 | Код | Тип | Описание |
 | --- | --- | --- |
-| **204** | - | Validated. Переданная конфигурация валидна. Ответ без тела. |
-| **400** | [ErrorEnvelope](#openapi-definition-ErrorEnvelope) | Сбой. Невалидный ввод. |
+| **204** | - | Проверено. Отправленная конфигурация корректна. Ответ не содержит тела. |
+| **400** | [ErrorEnvelope](#openapi-definition-ErrorEnvelope) | Ошибка. Некорректные входные данные. |
 
 #### Объекты тела ответа
 
@@ -355,7 +375,7 @@ scraped: 2026-05-12T11:17:49.194084
 | Элемент | Тип | Описание |
 | --- | --- | --- |
 | code | integer | HTTP-код статуса |
-| constraintViolations | [ConstraintViolation[]](#openapi-definition-ConstraintViolation) | Список нарушений ограничений |
+| constraintViolations | [ConstraintViolation](#openapi-definition-ConstraintViolation)[] | Список нарушений ограничений |
 | message | string | Сообщение об ошибке |
 
 #### Объект `ConstraintViolation`
@@ -366,10 +386,10 @@ scraped: 2026-05-12T11:17:49.194084
 | --- | --- | --- |
 | location | string | - |
 | message | string | - |
-| parameterLocation | string | -Возможные значения: * `HEADER` * `PATH` * `PAYLOAD_BODY` * `QUERY` |
+| parameterLocation | string | -Элемент может принимать следующие значения * `HEADER` * `PATH` * `PAYLOAD_BODY` * `QUERY` |
 | path | string | - |
 
-#### JSON-модели тела ответа
+#### Модели тела ответа JSON
 
 ```
 {
