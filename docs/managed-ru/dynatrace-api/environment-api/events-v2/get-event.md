@@ -56,13 +56,13 @@ scraped: 2026-05-12T12:01:01.653046
 | entityTags | [METag[]](#openapi-definition-METag) | Список тегов связанной сущности. |
 | eventId | string | ID события. |
 | eventType | string | Тип события. |
-| frequentEvent | boolean | Если `true`, событие происходит [часто](https://dt-url.net/4da3kdg).  Частое событие не порождает проблему. |
+| frequentEvent | boolean | Если `true`, событие происходит [часто](https://dt-url.net/4da3kdg?dt=m).  Частое событие не порождает проблему. |
 | managementZones | [ManagementZone[]](#openapi-definition-ManagementZone) | Список всех зон управления, которым принадлежит событие. |
 | properties | [EventProperty[]](#openapi-definition-EventProperty) | Список свойств события. |
 | startTime | integer | Временная метка возникновения события в UTC-миллисекундах. |
 | status | string | Статус события. Элемент может принимать значения * `CLOSED` * `OPEN` |
-| suppressAlert | boolean | Статус оповещения во время [технического обслуживания](https://dt-url.net/b2123rg0):  * `false`: оповещение работает как обычно. * `true`: оповещение отключено. |
-| suppressProblem | boolean | Статус обнаружения проблем во время [технического обслуживания](https://dt-url.net/b2123rg0):  * `false`: обнаружение проблем работает как обычно. * `true`: обнаружение проблем отключено. |
+| suppressAlert | boolean | Статус оповещения во время [технического обслуживания](https://dt-url.net/b2123rg0?dt=m):  * `false`: оповещение работает как обычно. * `true`: оповещение отключено. |
+| suppressProblem | boolean | Статус обнаружения проблем во время [технического обслуживания](https://dt-url.net/b2123rg0?dt=m):  * `false`: обнаружение проблем работает как обычно. * `true`: обнаружение проблем отключено. |
 | title | string | Заголовок события. |
 | underMaintenance | boolean | Если `true`, событие произошло, когда мониторируемая система находилась в режиме технического обслуживания. |
 

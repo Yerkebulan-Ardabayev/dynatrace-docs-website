@@ -972,7 +972,7 @@ JSON-модель
 | locations | string[] | Список локаций, с которых выполняется монитор.  Чтобы указать локацию, используйте её entity ID. Для публичных локаций используйте форму `GEOLOCATION-9999453BE4BDB3CD` и `SYNTHETIC_LOCATION-DF80ACFB688C583B` для приватных. |
 | manuallyAssignedApps | string[] | Набор вручную назначенных приложений. |
 | name | string | Имя монитора. |
-| script | object | Скрипт [браузерного](https://dt-url.net/9c103rda) или HTTP-монитора. |
+| script | object | Скрипт [браузерного](https://dt-url.net/9c103rda?dt=m) или HTTP-монитора. |
 | tags | [TagWithSourceInfo[]](#openapi-definition-TagWithSourceInfo) | Набор тегов, назначенных монитору.  Здесь можно указать только значение тега, а контекст `CONTEXTLESS` и источник 'USER' будут добавлены автоматически. Но предпочтительный вариант, это использование модели TagWithSourceDto. |
 | type | string | Определяет фактический набор полей в зависимости от значения. Смотрите один из объектов:  * `BROWSER` -> BrowserSyntheticMonitorUpdate * `HTTP` -> HttpSyntheticMonitorUpdate Поле может принимать значения: * `BROWSER` * `HTTP` |
 

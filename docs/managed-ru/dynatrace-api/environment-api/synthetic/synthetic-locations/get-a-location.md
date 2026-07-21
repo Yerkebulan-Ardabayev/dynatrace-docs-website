@@ -58,18 +58,18 @@ scraped: 2026-05-12T11:56:51.982082
 
 Параметры **countryCode**, **regionCode**, **city** необязательны, так как их можно получить на основе **latitude** и **longitude** локации.
 
-Фактический набор полей зависит от типа локации. Список фактических объектов смотрите в описании поля **type** или в [Synthetic locations API v2 - JSON-модели](https://dt-url.net/3n43szj).
+Фактический набор полей зависит от типа локации. Список фактических объектов смотрите в описании поля **type** или в [Synthetic locations API v2 - JSON-модели](https://dt-url.net/3n43szj?dt=m).
 
 | Поле | Тип | Описание |
 | --- | --- | --- |
 | city | string | Город локации. |
-| countryCode | string | Код страны локации.  Чтобы получить список доступных кодов стран, используйте запрос [GET all countries](https://dt-url.net/37030go). |
+| countryCode | string | Код страны локации.  Чтобы получить список доступных кодов стран, используйте запрос [GET all countries](https://dt-url.net/37030go?dt=m). |
 | countryName | string | Название страны локации. |
 | entityId | string | Dynatrace entity ID локации. |
 | latitude | number | Широта локации в формате `DDD.dddd`. |
 | longitude | number | Долгота локации в формате `DDD.dddd`. |
 | name | string | Имя локации. |
-| regionCode | string | Код региона локации.  Чтобы получить список доступных кодов регионов, используйте запрос [GET regions of the country](https://dt-url.net/az230x0). |
+| regionCode | string | Код региона локации.  Чтобы получить список доступных кодов регионов, используйте запрос [GET regions of the country](https://dt-url.net/az230x0?dt=m). |
 | regionName | string | Название региона локации. |
 | status | string | Статус локации:  * `ENABLED`: локация отображается в UI как активная. Локации можно назначать мониторы. * `DISABLED`: локация отображается в UI как неактивная. Локации нельзя назначать мониторы. Мониторы, уже назначенные локации, останутся там и будут выполняться с этой локации. * `HIDDEN`: локация не отображается в UI. Локации нельзя назначать мониторы. Установить локацию в `HIDDEN` можно только тогда, когда ей не назначен ни один монитор. Поле может принимать значения: * `DISABLED` * `ENABLED` * `HIDDEN` |
 | type | string | Определяет фактический набор полей в зависимости от значения. Смотрите один из объектов:  * `PUBLIC` -> PublicSyntheticLocation * `PRIVATE` -> PrivateSyntheticLocation * `CLUSTER` -> PrivateSyntheticLocation Поле может принимать значения: * `CLUSTER` * `PRIVATE` * `PUBLIC` |

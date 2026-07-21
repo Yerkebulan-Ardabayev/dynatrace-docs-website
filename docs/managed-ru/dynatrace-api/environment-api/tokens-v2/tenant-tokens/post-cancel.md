@@ -45,7 +45,7 @@ scraped: 2026-05-12T12:01:17.132002
 
 #### Объект `TenantTokenConfig`
 
-Конфигурация [tenant-токена](https://dt-url.net/b403ss9).
+Конфигурация [tenant-токена](https://dt-url.net/b403ss9?dt=m).
 
 | Элемент | Тип | Описание |
 | --- | --- | --- |

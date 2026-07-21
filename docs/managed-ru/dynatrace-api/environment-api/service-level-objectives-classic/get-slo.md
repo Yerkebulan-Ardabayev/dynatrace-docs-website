@@ -67,7 +67,7 @@ scraped: 2026-05-12T11:57:37.162047
 | errorBudgetMetricKey | string | Ключ func-метрики бюджета ошибок SLO. |
 | evaluatedPercentage | number | Вычисленное значение статуса SLO. Имеет значение оценённого статуса SLO или значение `-1`:  * Если есть ошибка вычисления SLO; в этом случае проверьте значение свойства **error**. * Если параметр evaluate не был установлен в `true`; в этом случае свойство **error** не будет содержать ошибки. |
 | evaluationType | string | Тип оценки SLO. Поле может принимать значения: * `AGGREGATE` |
-| filter | string | Фильтр сущностей для оценки SLO. Общая длина строки entitySelector в SLO ограничена 1 000 символами. Используйте [синтаксис entity selector](https://dt-url.net/entityselector). |
+| filter | string | Фильтр сущностей для оценки SLO. Общая длина строки entitySelector в SLO ограничена 1 000 символами. Используйте [синтаксис entity selector](https://dt-url.net/entityselector?dt=m). |
 | id | string | ID SLO |
 | ~~metricDenominator~~ | string | УСТАРЕЛО  Метрика общего количества (знаменатель в расчёте отношения).  Обязательно, когда **useRateMetric** имеет значение `false`. |
 | metricExpression | string | Процентное метрическое выражение для вычисления SLO. |
@@ -84,7 +84,7 @@ scraped: 2026-05-12T11:57:37.162047
 | status | string | Статус вычисленного SLO. Поле может принимать значения: * `FAILURE` * `SUCCESS` * `WARNING` |
 | target | number | Целевое значение SLO. |
 | timeframe | string | Временной диапазон для оценки SLO. Используйте синтаксис глобального селектора временного диапазона. |
-| ~~useRateMetric~~ | boolean | УСТАРЕЛО  Тип метрики для вычисления SLO:  * `true`: существующая процентная метрика. * `false`: отношение двух метрик.  Список доступных метрик смотрите на [странице встроенных метрик](https://dt-url.net/be03kow) или попробуйте вызов API [GET metrics](https://dt-url.net/8e43kxf). |
+| ~~useRateMetric~~ | boolean | УСТАРЕЛО  Тип метрики для вычисления SLO:  * `true`: существующая процентная метрика. * `false`: отношение двух метрик.  Список доступных метрик смотрите на [странице встроенных метрик](https://dt-url.net/be03kow?dt=m) или попробуйте вызов API [GET metrics](https://dt-url.net/8e43kxf?dt=m). |
 | warning | number | Предупредительное значение SLO.  В состоянии предупреждения SLO ещё выполняется, но близко к нарушению. |
 
 #### Объект `SloBurnRate`

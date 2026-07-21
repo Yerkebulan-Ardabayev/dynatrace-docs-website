@@ -32,6 +32,19 @@ from pathlib import Path
 HASH_REGISTRY = Path(__file__).parent / ".change_tracking" / "hash_registry.json"
 
 
+def text_hash(text: str) -> str:
+    """Тот же хэш, что у file_hash, но по строке (нужен для старых версий из git)."""
+    if text.startswith("---"):
+        end = text.find("---", 3)
+        if end > 0:
+            head = "".join(
+                ln for ln in text[:end].splitlines(keepends=True)
+                if not ln.lstrip().startswith("scraped:")
+            )
+            text = head + text[end:]
+    return hashlib.sha256(text.encode("utf-8", "surrogateescape")).hexdigest()[:16]
+
+
 def file_hash(path: Path) -> str:
     """SHA256 хэш содержимого файла БЕЗ волатильной строки frontmatter `scraped:`.
 

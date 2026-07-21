@@ -1,51 +1,52 @@
 ---
 title: ActiveGate auto-update configuration API - PUT global
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/activegates/auto-update-config/put-global
-scraped: 2026-05-12T11:59:35.466582
 ---
 
 # ActiveGate auto-update configuration API - PUT global
 
 # ActiveGate auto-update configuration API - PUT global
 
-* Reference
-* Published Mar 15, 2021
+* Справочник
+* Опубликовано 15 марта 2021 г.
 
-Редактирует глобальную конфигурацию авто-обновлений Environment ActiveGate.
+Редактирует глобальную конфигурацию автообновления ActiveGate-ов Environment.
 
-Запрос принимает payload `application/json`.
+Запрос принимает полезную нагрузку `application/json`.
 
 |  |  |  |
 | --- | --- | --- |
 | PUT | ManagedDynatrace for Government | `https://{your-domain}/e/{your-environment-id}/api/v2/activeGates/autoUpdate` |
-| PUT | Environment and Cluster ActiveGate (порт по умолчанию 9999) | `https://{your-activegate-domain}:9999/e/{your-environment-id}/api/v2/activeGates/autoUpdate` |
+| PUT | Environment и Cluster ActiveGate (порт по умолчанию 9999) | `https://{your-activegate-domain}:9999/e/{your-environment-id}/api/v2/activeGates/autoUpdate` |
 
 ## Аутентификация
 
-Для выполнения этого запроса нужен access token со scope `activeGates.write`.
+Для выполнения этого запроса нужен токен доступа с областью действия `activeGates.write`.
 
-Как его получить и использовать, смотрите [Tokens and authentication](/managed/discover-dynatrace/references/dynatrace-api/basics/dynatrace-api-authentication).
+О том, как получить и использовать токен, читай в разделе [Токены и аутентификация](/managed/discover-dynatrace/references/dynatrace-api/basics/dynatrace-api-authentication).
 
 ## Параметры
 
-| Параметр | Тип | Описание | В | Обязательный |
+| Параметр | Тип | Описание | Где | Обязательный |
 | --- | --- | --- | --- | --- |
-| body | [ActiveGateGlobalAutoUpdateConfig](#openapi-definition-ActiveGateGlobalAutoUpdateConfig) | JSON-тело запроса, содержащее параметры глобального авто-обновления. | body | Обязательный |
+| body | [ActiveGateGlobalAutoUpdateConfig](#openapi-definition-ActiveGateGlobalAutoUpdateConfig) | Тело JSON запроса, содержащее глобальные параметры автообновления. | body | Обязательный |
 
 ### Объекты тела запроса
 
 #### Объект `ActiveGateGlobalAutoUpdateConfig`
 
-Глобальная конфигурация авто-обновлений ActiveGate.
+Глобальная конфигурация автообновления ActiveGate-ов.
 
 | Элемент | Тип | Описание | Обязательный |
 | --- | --- | --- | --- |
-| globalSetting | string | Состояние авто-обновлений для всех ActiveGate, подключённых к окружению или кластеру Managed.  Эта настройка наследуется всеми ActiveGate с настройкой `INHERITED`. Элемент может принимать значения * `ENABLED` * `DISABLED` | Обязательный |
-| metadata | [ConfigurationMetadata](#openapi-definition-ConfigurationMetadata) | Метаданные, полезные для отладки. | Опциональный |
+| globalSetting | string | Состояние автообновлений для всех ActiveGate-ов, подключённых к среде или кластеру Managed.  Этот параметр наследуется всеми ActiveGate-ами, у которых установлен параметр `INHERITED`. Элемент может принимать следующие значения * `ENABLED` * `DISABLED` | Обязательный |
+| metadata | [ConfigurationMetadata](#openapi-definition-ConfigurationMetadata) | Метаданные, полезные для отладки | Опциональный |
+| targetVersion | string | Версия, до которой обновляется ActiveGate при включённых автоматических обновлениях.  Поддерживает относительные версии `latest`, `previous` и `older`, а также конкретную версию в формате `<major>.<minor>` (например, `1.261`).  Применимо только когда параметр **setting** установлен в `ENABLED`. | Опциональный |
+| updateWindows | [UpdateWindowsConfig](#openapi-definition-UpdateWindowsConfig) | Базовая информация обо всех настроенных окнах обновления | Опциональный |
 
 #### Объект `ConfigurationMetadata`
 
-Метаданные, полезные для отладки.
+Метаданные, полезные для отладки
 
 | Элемент | Тип | Описание | Обязательный |
 | --- | --- | --- | --- |
@@ -53,9 +54,26 @@ scraped: 2026-05-12T11:59:35.466582
 | configurationVersions | integer[] | Отсортированный список номеров версий конфигурации. | Опциональный |
 | currentConfigurationVersions | string[] | Отсортированный список номеров версий конфигурации. | Опциональный |
 
-### JSON-модель тела запроса
+#### Объект `UpdateWindowsConfig`
 
-Это модель тела запроса, показывающая возможные элементы. Её нужно адаптировать для использования в реальном запросе.
+Базовая информация обо всех настроенных окнах обновления
+
+| Элемент | Тип | Описание | Обязательный |
+| --- | --- | --- | --- |
+| windows | [UpdateWindow](#openapi-definition-UpdateWindow)[] | Список окон обновления, в течение которых может начаться обновление OneAgent. Если значение не указано и обновление должно быть выполнено, оно начнётся при первой возможности. | Обязательный |
+
+#### Объект `UpdateWindow`
+
+Базовая информация об одном окне обслуживания
+
+| Элемент | Тип | Описание | Обязательный |
+| --- | --- | --- | --- |
+| id | string | Идентификатор окна обслуживания | Обязательный |
+| name | string | Название окна обслуживания | Опциональный |
+
+### Пример модели тела JSON запроса
+
+Это модель тела запроса, показывающая возможные элементы. Её нужно скорректировать для использования в реальном запросе.
 
 ```
 {
@@ -106,6 +124,42 @@ scraped: 2026-05-12T11:59:35.466582
 
 
 
+},
+
+
+
+"targetVersion": "latest",
+
+
+
+"updateWindows": {
+
+
+
+"windows": [
+
+
+
+{
+
+
+
+"id": "vu9U3hXa3q0AAAABADdkeW5hdHJhY2Uuc2V0dGluZ3MuZGVwbG95bWVudC5tYW5h",
+
+
+
+"name": "Daily maintenance window"
+
+
+
+}
+
+
+
+]
+
+
+
 }
 
 
@@ -119,10 +173,10 @@ scraped: 2026-05-12T11:59:35.466582
 
 | Код | Тип | Описание |
 | --- | --- | --- |
-| **204** | - | Успех. Глобальная конфигурация авто-обновлений обновлена. У ответа нет тела. |
-| **400** | [ErrorEnvelope](#openapi-definition-ErrorEnvelope) | Неудача. Входные данные некорректны. |
-| **4XX** | [ErrorEnvelope](#openapi-definition-ErrorEnvelope) | Ошибка клиента. |
-| **5XX** | [ErrorEnvelope](#openapi-definition-ErrorEnvelope) | Ошибка сервера. |
+| **204** | - | Успешно. Глобальная конфигурация автообновления обновлена. Ответ не содержит тела. |
+| **400** | [ErrorEnvelope](#openapi-definition-ErrorEnvelope) | Ошибка. Входные данные некорректны. |
+| **4XX** | [ErrorEnvelope](#openapi-definition-ErrorEnvelope) | Ошибка на стороне клиента. |
+| **5XX** | [ErrorEnvelope](#openapi-definition-ErrorEnvelope) | Ошибка на стороне сервера. |
 
 ### Объекты тела ответа
 
@@ -136,22 +190,22 @@ scraped: 2026-05-12T11:59:35.466582
 
 | Элемент | Тип | Описание |
 | --- | --- | --- |
-| code | integer | HTTP-код состояния. |
-| constraintViolations | [ConstraintViolation[]](#openapi-definition-ConstraintViolation) | Список нарушений ограничений. |
-| message | string | Сообщение об ошибке. |
+| code | integer | Код статуса HTTP |
+| constraintViolations | [ConstraintViolation](#openapi-definition-ConstraintViolation)[] | Список нарушений ограничений |
+| message | string | Сообщение об ошибке |
 
 #### Объект `ConstraintViolation`
 
-Список нарушений ограничений.
+Список нарушений ограничений
 
 | Элемент | Тип | Описание |
 | --- | --- | --- |
 | location | string | - |
 | message | string | - |
-| parameterLocation | string | -Элемент может принимать значения * `HEADER` * `PATH` * `PAYLOAD_BODY` * `QUERY` |
+| parameterLocation | string | -Элемент может принимать следующие значения * `HEADER` * `PATH` * `PAYLOAD_BODY` * `QUERY` |
 | path | string | - |
 
-### JSON-модели тела ответа
+### Примеры моделей тела JSON ответа
 
 ```
 {
@@ -209,22 +263,22 @@ scraped: 2026-05-12T11:59:35.466582
 }
 ```
 
-## Validate payload
+## Проверка полезной нагрузки
 
-Рекомендуем валидировать payload перед отправкой реального запроса. Код ответа **204** означает, что payload корректен.
+Рекомендуется проверять полезную нагрузку перед её отправкой в составе реального запроса. Код ответа **204** указывает на корректную полезную нагрузку.
 
-Запрос принимает payload `application/json`.
+Запрос принимает полезную нагрузку `application/json`.
 
 |  |  |  |
 | --- | --- | --- |
 | POST | ManagedDynatrace for Government | `https://{your-domain}/e/{your-environment-id}/api/v2/activeGates/autoUpdate/validator` |
-| POST | Environment and Cluster ActiveGate (порт по умолчанию 9999) | `https://{your-activegate-domain}:9999/e/{your-environment-id}/api/v2/activeGates/autoUpdate/validator` |
+| POST | Environment и Cluster ActiveGate (порт по умолчанию 9999) | `https://{your-activegate-domain}:9999/e/{your-environment-id}/api/v2/activeGates/autoUpdate/validator` |
 
 ### Аутентификация
 
-Для выполнения этого запроса нужен access token со scope `activeGates.write`.
+Для выполнения этого запроса нужен токен доступа с областью действия `activeGates.write`.
 
-Как его получить и использовать, смотрите [Tokens and authentication](/managed/discover-dynatrace/references/dynatrace-api/basics/dynatrace-api-authentication).
+О том, как получить и использовать токен, читай в разделе [Токены и аутентификация](/managed/discover-dynatrace/references/dynatrace-api/basics/dynatrace-api-authentication).
 
 ### Ответ
 
@@ -232,10 +286,10 @@ scraped: 2026-05-12T11:59:35.466582
 
 | Код | Тип | Описание |
 | --- | --- | --- |
-| **204** | - | Валидация пройдена. Отправленная конфигурация корректна. У ответа нет тела. |
-| **400** | [ErrorEnvelope](#openapi-definition-ErrorEnvelope) | Неудача. Входные данные некорректны. |
-| **4XX** | [ErrorEnvelope](#openapi-definition-ErrorEnvelope) | Ошибка клиента. |
-| **5XX** | [ErrorEnvelope](#openapi-definition-ErrorEnvelope) | Ошибка сервера. |
+| **204** | - | Проверено. Отправленная конфигурация корректна. Ответ не содержит тела. |
+| **400** | [ErrorEnvelope](#openapi-definition-ErrorEnvelope) | Ошибка. Входные данные некорректны. |
+| **4XX** | [ErrorEnvelope](#openapi-definition-ErrorEnvelope) | Ошибка на стороне клиента. |
+| **5XX** | [ErrorEnvelope](#openapi-definition-ErrorEnvelope) | Ошибка на стороне сервера. |
 
 #### Объекты тела ответа
 
@@ -249,22 +303,22 @@ scraped: 2026-05-12T11:59:35.466582
 
 | Элемент | Тип | Описание |
 | --- | --- | --- |
-| code | integer | HTTP-код состояния. |
-| constraintViolations | [ConstraintViolation[]](#openapi-definition-ConstraintViolation) | Список нарушений ограничений. |
-| message | string | Сообщение об ошибке. |
+| code | integer | Код статуса HTTP |
+| constraintViolations | [ConstraintViolation](#openapi-definition-ConstraintViolation)[] | Список нарушений ограничений |
+| message | string | Сообщение об ошибке |
 
 #### Объект `ConstraintViolation`
 
-Список нарушений ограничений.
+Список нарушений ограничений
 
 | Элемент | Тип | Описание |
 | --- | --- | --- |
 | location | string | - |
 | message | string | - |
-| parameterLocation | string | -Элемент может принимать значения * `HEADER` * `PATH` * `PAYLOAD_BODY` * `QUERY` |
+| parameterLocation | string | -Элемент может принимать следующие значения * `HEADER` * `PATH` * `PAYLOAD_BODY` * `QUERY` |
 | path | string | - |
 
-#### JSON-модели тела ответа
+#### Примеры моделей тела JSON ответа
 
 ```
 {
@@ -324,4 +378,4 @@ scraped: 2026-05-12T11:59:35.466582
 
 ## Связанные темы
 
-* [Dynatrace ActiveGate](/managed/ingest-from/dynatrace-activegate "Изучите основные концепции, связанные с ActiveGate.")
+* [Dynatrace ActiveGate](/managed/ingest-from/dynatrace-activegate "Understand the basic concepts related to ActiveGate.")

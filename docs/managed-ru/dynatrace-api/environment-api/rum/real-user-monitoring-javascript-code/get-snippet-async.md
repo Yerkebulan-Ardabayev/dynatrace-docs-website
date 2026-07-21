@@ -37,7 +37,7 @@ scraped: 2026-05-12T11:55:59.482679
 
 | Параметр | Тип | Описание | Где | Обязательный |
 | --- | --- | --- | --- | --- |
-| entity | string | ID сущности Dynatrace приложения.  Его можно получить из ответа вызова [GET the list of manually injected applications](https://dt-url.net/dl03sgo). | path | Required |
+| entity | string | ID сущности Dynatrace приложения.  Его можно получить из ответа вызова [GET the list of manually injected applications](https://dt-url.net/dl03sgo?dt=m). | path | Required |
 
 ## Ответ
 

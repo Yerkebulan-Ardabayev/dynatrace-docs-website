@@ -30,8 +30,8 @@ scraped: 2026-05-12T11:55:27.283954
 
 | Параметр | Тип | Описание | Где | Обязательный |
 | --- | --- | --- | --- | --- |
-| countryCode | string | ISO-код требуемой страны.  Чтобы получить список доступных кодов стран, используйте запрос [GET all countries](https://dt-url.net/37030go). | path | Required |
-| regionCode | string | Код требуемого региона.  Чтобы получить список доступных кодов регионов, используйте запрос [GET regions of the country](https://dt-url.net/az230x0). | path | Required |
+| countryCode | string | ISO-код требуемой страны.  Чтобы получить список доступных кодов стран, используйте запрос [GET all countries](https://dt-url.net/37030go?dt=m). | path | Required |
+| regionCode | string | Код требуемого региона.  Чтобы получить список доступных кодов регионов, используйте запрос [GET regions of the country](https://dt-url.net/az230x0?dt=m). | path | Required |
 
 ## Ответ
 

@@ -1,70 +1,69 @@
 ---
 title: Credential vault API - PUT a set of credentials
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/credential-vault/put-credentials
-scraped: 2026-05-12T11:54:21.750852
 ---
 
 # Credential vault API - PUT a set of credentials
 
 # Credential vault API - PUT a set of credentials
 
-* Reference
-* Published Oct 06, 2022
+* Справка
+* Опубликовано 06 октября 2022 г.
 
-Обновляет указанный набор учётных данных для [synthetic-мониторов](/managed/observe/digital-experience/synthetic-monitoring "Узнайте о Synthetic Monitoring и о том, как создать single-URL browser monitor, browser clickpath или HTTP monitor.").
+Обновляет заданный набор учётных данных для [синтетических мониторов](/managed/observe/digital-experience/synthetic-monitoring "Learn about Synthetic Monitoring and how to create a single-URL browser monitor, a browser clickpath, or an HTTP monitor.").
 
-Запрос принимает и возвращает payload `application/json`.
+Запрос принимает и возвращает данные в формате `application/json`.
 
 |  |  |  |
 | --- | --- | --- |
 | PUT | ManagedDynatrace for Government | `https://{your-domain}/e/{your-environment-id}/api/v2/credentials/{id}` |
-| PUT | Environment and Cluster ActiveGate (порт по умолчанию 9999) | `https://{your-activegate-domain}:9999/e/{your-environment-id}/api/v2/credentials/{id}` |
+| PUT | Environment и Cluster ActiveGate (порт по умолчанию 9999) | `https://{your-activegate-domain}:9999/e/{your-environment-id}/api/v2/credentials/{id}` |
 
 ## Аутентификация
 
-Для выполнения этого запроса нужен access token со scope `credentialVault.write`.
+Для выполнения этого запроса нужен токен доступа с областью действия `credentialVault.write`.
 
-Как его получить и использовать, смотрите [Tokens and authentication](/managed/discover-dynatrace/references/dynatrace-api/basics/dynatrace-api-authentication).
+О том, как получить и использовать токен, читайте в разделе [Токены и аутентификация](/managed/discover-dynatrace/references/dynatrace-api/basics/dynatrace-api-authentication).
 
 ## Параметры
 
-Смотрите [JSON models](/managed/dynatrace-api/environment-api/credential-vault/models "Узнайте варианты JSON-моделей набора учётных данных в Dynatrace API."), чтобы найти все JSON-модели, зависящие от типа модели.
+Модели JSON смотрите в разделе [Модели JSON](/managed/dynatrace-api/environment-api/credential-vault/models "Learn the variations of credential set JSON models in the Dynatrace API."), там перечислены все модели JSON в зависимости от типа модели.
 
-| Параметр | Тип | Описание | В | Обязательный |
+| Параметр | Тип | Описание | Расположение | Обязательность |
 | --- | --- | --- | --- | --- |
-| id | string | Dynatrace entity ID обновляемого набора учётных данных. | path | Обязательный |
-| body | [Credentials](#openapi-definition-Credentials) | JSON-тело запроса. Содержит обновлённые параметры набора учётных данных. | body | Обязательный |
+| id | string | ID сущности Dynatrace набора учётных данных, который нужно обновить. | path | Обязательный |
+| body | [Credentials](#openapi-definition-Credentials) | Тело JSON запроса. Содержит обновлённые параметры набора учётных данных. | body | Обязательный |
 
 ### Объекты тела запроса
 
 #### Объект `Credentials`
 
-Набор учётных данных для synthetic-мониторов.
+Набор учётных данных для синтетических мониторов.
 
-Фактический набор полей зависит от типа учётных данных. Список фактических объектов смотрите в описании поля **type** или в [Credential vault API - JSON models](https://dt-url.net/2sa3sen).
+Фактический набор полей зависит от типа учётных данных. Список фактических объектов приведён в описании поля **type** или в разделе [Credential vault API - модели JSON﻿](https://dt-url.net/2sa3sen?dt=m).
 
-| Элемент | Тип | Описание | Обязательный |
+| Элемент | Тип | Описание | Обязательность |
 | --- | --- | --- | --- |
-| allowContextlessRequests | boolean | Разрешить ad-hoc функциям доступ к деталям учётных данных (требует scope APP\_ENGINE). | Опциональный |
-| allowedEntities | [CredentialAccessData[]](#openapi-definition-CredentialAccessData) | Набор сущностей, которым разрешено использовать учётные данные. | Опциональный |
-| description | string | Краткое описание набора учётных данных. | Опциональный |
-| id | string | ID набора учётных данных. | Опциональный |
-| name | string | Имя набора учётных данных. | Обязательный |
-| ownerAccessOnly | boolean | Набор учётных данных доступен каждому пользователю (`false`) или только владельцу (`true`). | Опциональный |
-| ~~scope~~ | string | DEPRECATED  Scope набора учётных данных. Элемент может принимать значения * `APP_ENGINE` * `EXTENSION` * `SYNTHETIC` | Опциональный |
-| scopes | string[] | Набор scope для набора учётных данных.  Ограничения: `CredentialsScope.APP_ENGINE` доступен только на новой Dynatrace SaaS платформе, он не доступен на managed или non-Grail SaaS окружениях. Элемент может принимать значения * `APP_ENGINE` * `EXTENSION` * `SYNTHETIC` | Обязательный |
-| type | string | Определяет фактический набор полей в зависимости от значения. Смотрите один из следующих объектов:  * `CERTIFICATE` -> CertificateCredentials * `PUBLIC_CERTIFICATE` -> PublicCertificateCredentials * `USERNAME_PASSWORD` -> UserPasswordCredentials * `TOKEN` -> TokenCredentials * `SNMPV3` -> SNMPV3Credentials * `AWS_MONITORING_KEY_BASED` -> AWSKeyBasedCredentialsDto * `AWS_MONITORING_ROLE_BASED` -> AWSRoleBasedCredentials Элемент может принимать значения * `AWS_MONITORING_KEY_BASED` * `AWS_MONITORING_ROLE_BASED` * `CERTIFICATE` * `PUBLIC_CERTIFICATE` * `SNMPV3` * `TOKEN` * `USERNAME_PASSWORD` | Обязательный |
+| allowContextlessRequests | boolean | Разрешить ad-hoc функциям доступ к данным учётных данных (требуется область действия APP\_ENGINE). | Опционально |
+| allowedEntities | [CredentialAccessData](#openapi-definition-CredentialAccessData)[] | Набор сущностей, которым разрешено использовать учётные данные. | Опционально |
+| description | string | Краткое описание набора учётных данных. | Опционально |
+| id | string | ID набора учётных данных. | Опционально |
+| name | string | Название набора учётных данных. | Обязательный |
+| ownerAccessOnly | boolean | Набор учётных данных доступен всем пользователям (`false`) или только владельцу (`true`). | Опционально |
+| ~~scope~~ | string | УСТАРЕЛО  Область действия набора учётных данных. Элемент может принимать следующие значения * `APP_ENGINE` * `EXTENSION` * `EXTENSION_AUTHENTICATION` * `SYNTHETIC` | Опционально |
+| scopes | string[] | Набор областей действия набора учётных данных.  Ограничения: `CredentialsScope.APP_ENGINE` доступна только на новой SaaS-платформе Dynatrace, она недоступна на managed или не-Grail SaaS-средах. Элемент может принимать следующие значения * `APP_ENGINE` * `EXTENSION` * `EXTENSION_AUTHENTICATION` * `SYNTHETIC` | Обязательный |
+| type | string | Определяет фактический набор полей в зависимости от значения. См. один из следующих объектов:  * `CERTIFICATE` -> CertificateCredentials * `PUBLIC_CERTIFICATE` -> PublicCertificateCredentials * `USERNAME_PASSWORD` -> UserPasswordCredentials * `TOKEN` -> TokenCredentials * `SNMPV3` -> SNMPV3Credentials * `AWS_MONITORING_KEY_BASED` -> AWSKeyBasedCredentialsDto * `AWS_MONITORING_ROLE_BASED` -> AWSRoleBasedCredentials Элемент может принимать следующие значения * `AWS_MONITORING_KEY_BASED` * `AWS_MONITORING_ROLE_BASED` * `CERTIFICATE` * `PUBLIC_CERTIFICATE` * `SNMPV3` * `TOKEN` * `USERNAME_PASSWORD` | Обязательный |
 
 #### Объект `CredentialAccessData`
 
 Набор сущностей, которым разрешено использовать учётные данные.
 
-| Элемент | Тип | Описание | Обязательный |
+| Элемент | Тип | Описание | Обязательность |
 | --- | --- | --- | --- |
-| id | string | - | Опциональный |
-| type | string | -Элемент может принимать значения * `APPLICATION` * `UNKNOWN` * `USER` | Опциональный |
+| id | string | - | Опционально |
+| type | string | -Элемент может принимать следующие значения * `APPLICATION` * `UNKNOWN` * `USER` | Опционально |
 
-### JSON-модель тела запроса
+### Модель JSON тела запроса
 
 Это модель тела запроса, показывающая возможные элементы. Её нужно адаптировать для использования в реальном запросе.
 
@@ -187,10 +186,10 @@ scraped: 2026-05-12T11:54:21.750852
 | Код | Тип | Описание |
 | --- | --- | --- |
 | **201** | [CredentialsId](#openapi-definition-CredentialsId) | Успех. Новый набор учётных данных создан. Ответ содержит ID набора. |
-| **204** | - | Успех. Набор учётных данных обновлён. У ответа нет тела. |
-| **400** | [ErrorEnvelope](#openapi-definition-ErrorEnvelope) | Неудача. Входные данные некорректны. |
-| **4XX** | [ErrorEnvelope](#openapi-definition-ErrorEnvelope) | Ошибка клиента. |
-| **5XX** | [ErrorEnvelope](#openapi-definition-ErrorEnvelope) | Ошибка сервера. |
+| **204** | - | Успех. Набор учётных данных обновлён. Ответ не содержит тела. |
+| **400** | [ErrorEnvelope](#openapi-definition-ErrorEnvelope) | Ошибка. Входные данные недопустимы. |
+| **4XX** | [ErrorEnvelope](#openapi-definition-ErrorEnvelope) | Ошибка на стороне клиента. |
+| **5XX** | [ErrorEnvelope](#openapi-definition-ErrorEnvelope) | Ошибка на стороне сервера. |
 
 ### Объекты тела ответа
 
@@ -212,22 +211,22 @@ scraped: 2026-05-12T11:54:21.750852
 
 | Элемент | Тип | Описание |
 | --- | --- | --- |
-| code | integer | HTTP-код состояния. |
-| constraintViolations | [ConstraintViolation[]](#openapi-definition-ConstraintViolation) | Список нарушений ограничений. |
-| message | string | Сообщение об ошибке. |
+| code | integer | Код статуса HTTP |
+| constraintViolations | [ConstraintViolation](#openapi-definition-ConstraintViolation)[] | Список нарушений ограничений |
+| message | string | Текст сообщения об ошибке |
 
 #### Объект `ConstraintViolation`
 
-Список нарушений ограничений.
+Список нарушений ограничений
 
 | Элемент | Тип | Описание |
 | --- | --- | --- |
 | location | string | - |
 | message | string | - |
-| parameterLocation | string | -Элемент может принимать значения * `HEADER` * `PATH` * `PAYLOAD_BODY` * `QUERY` |
+| parameterLocation | string | -Элемент может принимать следующие значения * `HEADER` * `PATH` * `PAYLOAD_BODY` * `QUERY` |
 | path | string | - |
 
-### JSON-модели тела ответа
+### Модели JSON тела ответа
 
 ```
 {
@@ -297,7 +296,7 @@ scraped: 2026-05-12T11:54:21.750852
 }
 ```
 
-## Связанные темы
+## Похожие темы
 
-* [Configure browser monitors](/managed/observe/digital-experience/synthetic-monitoring/browser-monitors/configure-browser-monitors "Узнайте о настройке browser-мониторов и clickpath.")
-* [Configure HTTP monitors](/managed/observe/digital-experience/synthetic-monitoring/http-monitors-classic/configure-http-monitors-classic "Узнайте о настройке HTTP-мониторов.")
+* [Настройка браузерных мониторов в Classic](/managed/observe/digital-experience/synthetic-monitoring/browser-monitors/configure-browser-monitors "Learn about configuring browser monitors and clickpaths.")
+* [Настройка HTTP-мониторов в Classic](/managed/observe/digital-experience/synthetic-monitoring/http-monitors-classic/configure-http-monitors-classic "Learn about configuring HTTP monitors.")

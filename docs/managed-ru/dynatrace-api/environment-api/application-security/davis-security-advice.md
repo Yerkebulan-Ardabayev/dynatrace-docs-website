@@ -1,43 +1,42 @@
 ---
 title: Davis Security Advisor API
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/application-security/davis-security-advice
-scraped: 2026-05-12T11:12:28.921931
 ---
 
 # Davis Security Advisor API
 
 # Davis Security Advisor API
 
-* Reference
-* Updated on May 03, 2022
+* Справочник
+* Обновлено 03 мая 2022
 
-API **Davis Security Advisor** возвращает [рекомендации Davis](/managed/secure/application-security/vulnerability-analytics/third-party-vulnerabilities/davis-security-advisor "Получите рекомендации по исправлениям безопасности от Davis Security Advisor."), связанные с открытыми и не заглушенными [уязвимостями](/managed/secure/application-security/vulnerability-analytics/third-party-vulnerabilities/manage-third-party-vulnerabilities "Отслеживайте проблемы безопасности в ваших сторонних библиотеках.").
+**Davis Security Advisor** API выводит список [рекомендаций Davis](/managed/secure/application-security/vulnerability-analytics/third-party-vulnerabilities/davis-security-advisor "Get recommendations for security fixes from Davis Security Advisor.") по открытым и не отключённым [уязвимостям](/managed/secure/application-security/vulnerability-analytics/third-party-vulnerabilities/manage-third-party-vulnerabilities "Monitor the security issues of your third-party libraries.").
 
-Вы можете ограничить вывод с помощью пагинации:
+Объём вывода можно ограничить с помощью пагинации:
 
-1. Укажите количество результатов на странице в query-параметре **pageSize**.
-2. Затем используйте курсор из поля **nextPageKey** предыдущего ответа в query-параметре **nextPageKey** для получения последующих страниц.
+1. Указать количество результатов на странице в параметре запроса **pageSize**.
+2. Затем использовать курсор из поля **nextPageKey** предыдущего ответа в параметре запроса **nextPageKey**, чтобы получить последующие страницы.
 
-Запрос возвращает payload `application/json`.
+Запрос возвращает данные в формате `application/json`.
 
 |  |  |  |
 | --- | --- | --- |
 | GET | ManagedDynatrace for Government | `https://{your-domain}/e/{your-environment-id}/api/v2/davis/securityAdvices` |
-| GET | Environment and Cluster ActiveGate (порт по умолчанию 9999) | `https://{your-activegate-domain}:9999/e/{your-environment-id}/api/v2/davis/securityAdvices` |
+| GET | Environment и Cluster ActiveGate (порт по умолчанию 9999) | `https://{your-activegate-domain}:9999/e/{your-environment-id}/api/v2/davis/securityAdvices` |
 
 ## Аутентификация
 
-Для выполнения этого запроса нужен access token со scope `securityProblems.read`.
+Для выполнения этого запроса нужен токен доступа с областью действия `securityProblems.read`.
 
-Как его получить и использовать, смотрите [Tokens and authentication](/managed/discover-dynatrace/references/dynatrace-api/basics/dynatrace-api-authentication).
+О том, как получить и использовать его, см. [Токены и аутентификация](/managed/discover-dynatrace/references/dynatrace-api/basics/dynatrace-api-authentication).
 
 ## Параметры
 
 | Параметр | Тип | Описание | В | Обязательный |
 | --- | --- | --- | --- | --- |
-| managementZoneFilter | string | Чтобы указать management zones, используйте один из вариантов ниже. Для каждого варианта можно указать несколько значений через запятую. Если указано несколько значений, применяется логика **OR**. Все значения регистрозависимы и должны быть в кавычках.  * Management zone ID: ids("mzId-1", "mzId-2"). * Имена management zone: names("mz-1", "mz-2").  Можно указать несколько критериев через запятую (например, `names("myMz"),ids("9130632296508575249")`). | query | Опциональный |
-| nextPageKey | string | Курсор для следующей страницы результатов. Его можно найти в поле **nextPageKey** предыдущего ответа.  Первая страница возвращается всегда, если параметр **nextPageKey** не указан.  Когда **nextPageKey** установлен для получения последующих страниц, все остальные query-параметры должны быть опущены. | query | Опциональный |
-| pageSize | integer | Количество рекомендаций безопасности в одном payload ответа.  Максимально допустимый размер страницы 500.  Если не задано, используется 5. | query | Опциональный |
+| managementZoneFilter | string | Для указания management zones нужно использовать один из вариантов ниже. Для каждого варианта можно указать несколько значений через запятую. Если указано несколько значений, применяется логика **OR**. Все значения чувствительны к регистру и должны быть в кавычках.  * ID management zone: ids("mzId-1", "mzId-2"). * Названия management zone: names("mz-1", "mz-2").  Можно указать несколько критериев через запятую (например, `names("myMz"),ids("9130632296508575249")`). | query | Необязательный |
+| nextPageKey | string | Курсор для следующей страницы результатов. Его можно найти в поле **nextPageKey** предыдущего ответа.  Если параметр запроса **nextPageKey** не указан, всегда возвращается первая страница.  Когда **nextPageKey** задан для получения последующих страниц, все остальные параметры запроса нужно опустить. | query | Необязательный |
+| pageSize | integer | Количество рекомендаций по безопасности в одном ответе.  Максимально допустимый размер страницы: 500.  Если не задано, используется значение 5. | query | Необязательный |
 
 ## Ответ
 
@@ -46,8 +45,8 @@ API **Davis Security Advisor** возвращает [рекомендации Da
 | Код | Тип | Описание |
 | --- | --- | --- |
 | **200** | [DavisSecurityAdviceList](#openapi-definition-DavisSecurityAdviceList) | Успех |
-| **4XX** | [ErrorEnvelope](#openapi-definition-ErrorEnvelope) | Ошибка клиента. |
-| **5XX** | [ErrorEnvelope](#openapi-definition-ErrorEnvelope) | Ошибка сервера. |
+| **4XX** | [ErrorEnvelope](#openapi-definition-ErrorEnvelope) | Ошибка на стороне клиента. |
+| **5XX** | [ErrorEnvelope](#openapi-definition-ErrorEnvelope) | Ошибка на стороне сервера. |
 
 ### Объекты тела ответа
 
@@ -57,26 +56,26 @@ API **Davis Security Advisor** возвращает [рекомендации Da
 
 | Элемент | Тип | Описание |
 | --- | --- | --- |
-| advices | [DavisSecurityAdvice[]](#openapi-definition-DavisSecurityAdvice) | - |
-| nextPageKey | string | Курсор для следующей страницы результатов. Имеет значение `null` на последней странице.  Используйте его в query-параметре **nextPageKey** для получения последующих страниц результата. |
+| advices | [DavisSecurityAdvice](#openapi-definition-DavisSecurityAdvice)[] | - |
+| nextPageKey | string | Курсор для следующей страницы результатов. На последней странице имеет значение `null`.  Используется в параметре запроса **nextPageKey** для получения последующих страниц результата. |
 | pageSize | integer | Количество записей на странице. |
 | totalCount | integer | Общее количество записей в результате. |
 
 #### Объект `DavisSecurityAdvice`
 
-Рекомендация безопасности от Davis security advisor.
+Рекомендация от Davis security advisor.
 
 | Элемент | Тип | Описание |
 | --- | --- | --- |
-| adviceType | string | Тип рекомендации. Элемент может принимать значения * `UPGRADE` |
-| critical | string[] | ID [security problems](https://dt-url.net/p103u1h) уровня `critical`, вызванных уязвимым компонентом. |
-| high | string[] | ID [security problems](https://dt-url.net/p103u1h) уровня `high`, вызванных уязвимым компонентом. |
-| low | string[] | ID [security problems](https://dt-url.net/p103u1h) уровня `low`, вызванных уязвимым компонентом. |
-| medium | string[] | ID [security problems](https://dt-url.net/p103u1h) уровня `medium`, вызванных уязвимым компонентом. |
-| name | string | Имя рекомендации. |
-| none | string[] | ID [security problems](https://dt-url.net/p103u1h) уровня `none`, вызванных уязвимым компонентом. |
-| technology | string | Технология уязвимого компонента. Элемент может принимать значения * `DOTNET` * `GO` * `JAVA` * `KUBERNETES` * `NODE_JS` * `PHP` * `PYTHON` |
-| vulnerableComponent | string | Уязвимый компонент, к которому применяется рекомендация. |
+| adviceType | string | Тип рекомендации. Элемент может принимать следующие значения * `UPGRADE` |
+| critical | string[] | ID [проблем безопасности﻿](https://dt-url.net/p103u1h?dt=m) уровня `critical`, вызванных уязвимым компонентом. |
+| high | string[] | ID [проблем безопасности﻿](https://dt-url.net/p103u1h?dt=m) уровня `high`, вызванных уязвимым компонентом. |
+| low | string[] | ID [проблем безопасности﻿](https://dt-url.net/p103u1h?dt=m) уровня `low`, вызванных уязвимым компонентом. |
+| medium | string[] | ID [проблем безопасности﻿](https://dt-url.net/p103u1h?dt=m) уровня `medium`, вызванных уязвимым компонентом. |
+| name | string | Название рекомендации. |
+| none | string[] | ID [проблем безопасности﻿](https://dt-url.net/p103u1h?dt=m) уровня `none`, вызванных уязвимым компонентом. |
+| technology | string | Технология уязвимого компонента. Элемент может принимать следующие значения * `DOTNET` * `GO` * `JAVA` * `KUBERNETES` * `NODE_JS` * `PHP` * `PYTHON` |
+| vulnerableComponent | string | Уязвимый компонент, к которому относится рекомендация. |
 
 #### Объект `ErrorEnvelope`
 
@@ -88,22 +87,22 @@ API **Davis Security Advisor** возвращает [рекомендации Da
 
 | Элемент | Тип | Описание |
 | --- | --- | --- |
-| code | integer | HTTP-код состояния. |
-| constraintViolations | [ConstraintViolation[]](#openapi-definition-ConstraintViolation) | Список нарушений ограничений. |
-| message | string | Сообщение об ошибке. |
+| code | integer | HTTP-код статуса |
+| constraintViolations | [ConstraintViolation](#openapi-definition-ConstraintViolation)[] | Список нарушений ограничений |
+| message | string | Сообщение об ошибке |
 
 #### Объект `ConstraintViolation`
 
-Список нарушений ограничений.
+Список нарушений ограничений
 
 | Элемент | Тип | Описание |
 | --- | --- | --- |
 | location | string | - |
 | message | string | - |
-| parameterLocation | string | -Элемент может принимать значения * `HEADER` * `PATH` * `PAYLOAD_BODY` * `QUERY` |
+| parameterLocation | string | -Элемент может принимать следующие значения * `HEADER` * `PATH` * `PAYLOAD_BODY` * `QUERY` |
 | path | string | - |
 
-### JSON-модели тела ответа
+### Модели тела ответа JSON
 
 ```
 {
@@ -275,5 +274,5 @@ API **Davis Security Advisor** возвращает [рекомендации Da
 
 ## Связанные темы
 
-* [Application Security](/managed/secure/application-security "Доступ к функциям Dynatrace Application Security.")
-* [Vulnerabilities API](/managed/dynatrace-api/environment-api/application-security/vulnerabilities "Узнайте, что предлагает API уязвимостей.")
+* [Application Security](/managed/secure/application-security "Access the Dynatrace Application Security functionalities.")
+* [Уязвимости API](/managed/dynatrace-api/environment-api/application-security/vulnerabilities "Find out what the vulnerabilities API offers.")

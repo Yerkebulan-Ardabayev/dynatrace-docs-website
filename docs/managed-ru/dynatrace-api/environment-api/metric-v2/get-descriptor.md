@@ -36,7 +36,7 @@ scraped: 2026-05-12T11:27:55.353829
 
 | Параметр | Тип | Описание | В | Обязательный |
 | --- | --- | --- | --- | --- |
-| metricKey | string | Ключ требуемой метрики.  Можно задать дополнительные операторы трансформации, разделяя их двоеточием (`:`). Дополнительную информацию о доступных трансформациях результата и синтаксисе смотрите в [Metrics selector transformations](https://dt-url.net/metricSelector) в документации Dynatrace. | path | Обязательный |
+| metricKey | string | Ключ требуемой метрики.  Можно задать дополнительные операторы трансформации, разделяя их двоеточием (`:`). Дополнительную информацию о доступных трансформациях результата и синтаксисе смотрите в [Metrics selector transformations](https://dt-url.net/metricSelector?dt=m) в документации Dynatrace. | path | Обязательный |
 
 ## Ответ
 
@@ -59,30 +59,30 @@ scraped: 2026-05-12T11:27:55.353829
 | Поле | Тип | Описание |
 | --- | --- | --- |
 | aggregationTypes | string[] | Список допустимых агрегаций для этой метрики. Поле может принимать значения: * `auto` * `avg` * `count` * `max` * `median` * `min` * `percentile` * `sum` * `value` |
-| billable | boolean | Если `true`, использование метрики тарифицируется.  [Metric expressions](https://dt-url.net/metricExpression) не возвращают это поле. |
+| billable | boolean | Если `true`, использование метрики тарифицируется.  [Metric expressions](https://dt-url.net/metricExpression?dt=m) не возвращают это поле. |
 | created | integer | Метка времени создания метрики.  Встроенные метрики и выражения метрик имеют значение `null`. |
-| dduBillable | boolean | Если `true`, использование метрики потребляет [Davis data units](https://dt-url.net/ddu). Устарело и всегда `false` для Dynatrace Platform Subscription. Заменено на `isBillable`.  [Metric expressions](https://dt-url.net/metricExpression) не возвращают это поле. |
+| dduBillable | boolean | Если `true`, использование метрики потребляет [Davis data units](https://dt-url.net/ddu?dt=m). Устарело и всегда `false` для Dynatrace Platform Subscription. Заменено на `isBillable`.  [Metric expressions](https://dt-url.net/metricExpression?dt=m) не возвращают это поле. |
 | defaultAggregation | [MetricDefaultAggregation](#openapi-definition-MetricDefaultAggregation) | Агрегация метрики по умолчанию. |
 | description | string | Краткое описание метрики. |
 | dimensionCardinalities | [MetricDimensionCardinality[]](#openapi-definition-MetricDimensionCardinality) | Кардинальности измерений метрики MINT. |
-| dimensionDefinitions | [MetricDimensionDefinition[]](#openapi-definition-MetricDimensionDefinition) | Детальное деление метрики (например, группа процессов и ID процесса для некоторых метрик, связанных с процессами).  Для [ingested metrics](https://dt-url.net/5d63ic1) измерения, у которых нет данных за последние 15 дней, пропускаются. |
+| dimensionDefinitions | [MetricDimensionDefinition[]](#openapi-definition-MetricDimensionDefinition) | Детальное деление метрики (например, группа процессов и ID процесса для некоторых метрик, связанных с процессами).  Для [ingested metrics](https://dt-url.net/5d63ic1?dt=m) измерения, у которых нет данных за последние 15 дней, пропускаются. |
 | displayName | string | Имя метрики в интерфейсе пользователя. |
 | entityType | string[] | Список допустимых первичных типов сущностей для этой метрики. Можно использовать для предиката `type` в `entitySelector`. |
-| impactRelevant | boolean | Метрика релевантна (`true`) или не релевантна (`false`) для воздействия.  Метрика, релевантная для воздействия, сильно зависит от других метрик и меняется, потому что изменилась нижележащая метрика-первопричина.  [Metric expressions](https://dt-url.net/metricExpression) не возвращают это поле. |
+| impactRelevant | boolean | Метрика релевантна (`true`) или не релевантна (`false`) для воздействия.  Метрика, релевантная для воздействия, сильно зависит от других метрик и меняется, потому что изменилась нижележащая метрика-первопричина.  [Metric expressions](https://dt-url.net/metricExpression?dt=m) не возвращают это поле. |
 | lastWritten | integer | Метка времени последней записи метрики.  Имеет значение `null` для выражений метрик или если данные никогда не записывались. |
-| latency | integer | Задержка метрики, в минутах.  Задержка, это ожидаемая задержка отчётности (например, вызванная ограничениями облачных провайдеров или других сторонних источников данных) между наблюдением точки данных метрики и её доступностью в Dynatrace.  Допустимый диапазон значений: от 1 до 60 минут.  [Metric expressions](https://dt-url.net/metricExpression) не возвращают это поле. |
-| maximumValue | number | Максимально допустимое значение метрики.  [Metric expressions](https://dt-url.net/metricExpression) не возвращают это поле. |
+| latency | integer | Задержка метрики, в минутах.  Задержка, это ожидаемая задержка отчётности (например, вызванная ограничениями облачных провайдеров или других сторонних источников данных) между наблюдением точки данных метрики и её доступностью в Dynatrace.  Допустимый диапазон значений: от 1 до 60 минут.  [Metric expressions](https://dt-url.net/metricExpression?dt=m) не возвращают это поле. |
+| maximumValue | number | Максимально допустимое значение метрики.  [Metric expressions](https://dt-url.net/metricExpression?dt=m) не возвращают это поле. |
 | metricId | string | Полностью квалифицированный ключ метрики.  Если использовалась трансформация, она отражается в ключе метрики. |
 | metricSelector | string | Селектор метрики, используемый при запросе метрики func:. |
 | metricValueType | [MetricValueType](#openapi-definition-MetricValueType) | Тип значения метрики. |
-| minimumValue | number | Минимально допустимое значение метрики.  [Metric expressions](https://dt-url.net/metricExpression) не возвращают это поле. |
+| minimumValue | number | Минимально допустимое значение метрики.  [Metric expressions](https://dt-url.net/metricExpression?dt=m) не возвращают это поле. |
 | resolutionInfSupported | boolean | Если 'true', к запросу метрики можно применить resolution=Inf. |
-| rootCauseRelevant | boolean | Метрика релевантна (`true`) или не релевантна (`false`) для первопричины.  Метрика, релевантная для первопричины, представляет собой сильный индикатор неисправного компонента.  [Metric expressions](https://dt-url.net/metricExpression) не возвращают это поле. |
+| rootCauseRelevant | boolean | Метрика релевантна (`true`) или не релевантна (`false`) для первопричины.  Метрика, релевантная для первопричины, представляет собой сильный индикатор неисправного компонента.  [Metric expressions](https://dt-url.net/metricExpression?dt=m) не возвращают это поле. |
 | scalar | boolean | Указывает, разрешается ли выражение метрики в скаляр (`true`) или в серию (`false`). Скалярный результат всегда содержит одну точку данных. Количество точек данных в серийном результате зависит от используемого разрешения. |
-| tags | string[] | Теги, применённые к метрике.  [Metric expressions](https://dt-url.net/metricExpression) не возвращают это поле. |
+| tags | string[] | Теги, применённые к метрике.  [Metric expressions](https://dt-url.net/metricExpression?dt=m) не возвращают это поле. |
 | transformations | string[] | Операторы трансформации, которые можно добавить к текущему списку трансформаций. Поле может принимать значения: * `asGauge` * `default` * `delta` * `evaluateModel` * `filter` * `fold` * `histogram` * `last` * `lastReal` * `limit` * `merge` * `names` * `parents` * `partition` * `rate` * `rollup` * `setUnit` * `smooth` * `sort` * `splitBy` * `timeshift` * `toUnit` |
 | unit | string | Единица измерения метрики. |
-| unitDisplayFormat | string | Сырое значение хранится в битах или байтах. Интерфейс пользователя может отображать его в этих системах счисления:  Двоичная: 1 MiB = 1024 KiB = 1 048 576 байт  Десятичная: 1 MB = 1000 kB = 1 000 000 байт  Если не задано, используется десятичная система.  [Metric expressions](https://dt-url.net/metricExpression) не возвращают это поле. Поле может принимать значения: * `binary` * `decimal` |
+| unitDisplayFormat | string | Сырое значение хранится в битах или байтах. Интерфейс пользователя может отображать его в этих системах счисления:  Двоичная: 1 MiB = 1024 KiB = 1 048 576 байт  Десятичная: 1 MB = 1000 kB = 1 000 000 байт  Если не задано, используется десятичная система.  [Metric expressions](https://dt-url.net/metricExpression?dt=m) не возвращают это поле. Поле может принимать значения: * `binary` * `decimal` |
 | warnings | string[] | Список потенциальных предупреждений, влияющих на этот ID. Например, использование устаревшей функциональности и т. п. |
 
 #### Объект `MetricDefaultAggregation`

@@ -73,7 +73,7 @@ scraped: 2026-05-12T11:59:15.344934
 | ips | string[] | Список IP-адресов, назначенных локации.  Применимо только к локациям `PUBLIC`. |
 | lastModificationTimestamp | integer | Метка времени последнего изменения локации. |
 | name | string | Имя локации. |
-| nodes | string[] | Список синтетических узлов, принадлежащих локации.  Список доступных узлов можно получить вызовом [GET all nodes](https://dt-url.net/miy3rpl). |
+| nodes | string[] | Список синтетических узлов, принадлежащих локации.  Список доступных узлов можно получить вызовом [GET all nodes](https://dt-url.net/miy3rpl?dt=m). |
 | stage | string | Стадия выпуска локации. Поле может принимать значения: * `BETA` * `COMING_SOON` * `DELETED` * `GA` |
 | status | string | Статус локации. Поле может принимать значения: * `DISABLED` * `ENABLED` * `HIDDEN` |
 | type | string | Тип локации. Поле может принимать значения: * `CLUSTER` * `PRIVATE` * `PUBLIC` |

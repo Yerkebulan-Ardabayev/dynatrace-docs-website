@@ -15,7 +15,7 @@ scraped: 2026-05-12T12:00:09.015548
 
 #### Объект `UserSession`
 
-[Пользовательская сессия](https://dt-url.net/xv183rb8), охватывающая несколько пользовательских действий и дополнительную информацию о визите пользователя.
+[Пользовательская сессия](https://dt-url.net/xv183rb8?dt=m), охватывающая несколько пользовательских действий и дополнительную информацию о визите пользователя.
 
 | Элемент | Тип | Описание |
 | --- | --- | --- |
@@ -75,7 +75,7 @@ scraped: 2026-05-12T12:00:09.015548
 | syntheticEvents | [UserSessionSyntheticEvent[]](#openapi-definition-UserSessionSyntheticEvent) | Список synthetic-событий, записанных в пользовательской сессии. |
 | tenantId | string | ID окружения Dynatrace, захватившего пользовательскую сессию.  Это поле нельзя запросить через User Session Query Language. |
 | totalErrorCount | integer | Количество ошибок, обнаруженных в пользовательской сессии. |
-| totalLicenseCreditCount | integer | Количество результирующих оплачиваемых сессий: [Dynatrace classic licensing](https://dt-url.net/u24c0pga), [Dynatrace Platform Subscription](https://www.dynatrace.com/support/help/shortlink/dps-dem). |
+| totalLicenseCreditCount | integer | Количество результирующих оплачиваемых сессий: [Dynatrace classic licensing](https://dt-url.net/u24c0pga?dt=m), [Dynatrace Platform Subscription](https://www.dynatrace.com/support/help/shortlink/dps-dem). |
 | userActionCount | integer | Количество пользовательских действий в пользовательской сессии. |
 | userActions | [UserSessionUserAction[]](#openapi-definition-UserSessionUserAction) | Список пользовательских действий, записанных в пользовательской сессии. |
 | userExperienceScore | string | Оценка пользовательского опыта пользовательской сессии. Возможные значения: * `FRUSTRATED` * `SATISFIED` * `TOLERATED` * `UNDEFINED` |
@@ -172,7 +172,7 @@ Synthetic-событие пользовательской сессии.
 
 | Элемент | Тип | Описание |
 | --- | --- | --- |
-| apdexCategory | string | [Индекс пользовательского опыта](https://dt-url.net/apdexdoc) пользовательского действия. Возможные значения: * `FRUSTRATED` * `SATISFIED` * `TOLERATING` * `UNKNOWN` |
+| apdexCategory | string | [Индекс пользовательского опыта](https://dt-url.net/apdexdoc?dt=m) пользовательского действия. Возможные значения: * `FRUSTRATED` * `SATISFIED` * `TOLERATING` * `UNKNOWN` |
 | application | string | Имя приложения, в котором было записано пользовательское действие. |
 | cdnBusyTime | integer | Время ожидания CDN-ресурсов для пользовательского действия в миллисекундах. |
 | cdnResources | integer | Количество ресурсов, полученных из CDN для пользовательского действия. |
@@ -208,18 +208,18 @@ Synthetic-событие пользовательской сессии.
 | responseEnd | integer | Время до окончания ответа в миллисекундах. |
 | responseStart | integer | Время до начала ответа в миллисекундах. |
 | serverTime | integer | Время, затраченное на серверную обработку для пользовательского действия, в миллисекундах. |
-| speedIndex | integer | [Speed index](https://dt-url.net/qk1a3r19) пользовательского действия в миллисекундах.  Вычисляется как среднее время отображения всех видимых частей страницы. |
+| speedIndex | integer | [Speed index](https://dt-url.net/qk1a3r19?dt=m) пользовательского действия в миллисекундах.  Вычисляется как среднее время отображения всех видимых частей страницы. |
 | startTime | integer | Начальная метка времени пользовательского действия в миллисекундах UTC. |
 | stringProperties | [StringProperty[]](#openapi-definition-StringProperty) | Список пользовательских свойств пользовательской сессии со строковыми значениями. |
-| syntheticEvent | string | Имя [Synthetic-события](https://dt-url.net/dq1e3rmm), инициировавшего пользовательское действие. |
-| syntheticEventId | string | ID [Synthetic-события](https://dt-url.net/dq1e3rmm), инициировавшего пользовательское действие. |
+| syntheticEvent | string | Имя [Synthetic-события](https://dt-url.net/dq1e3rmm?dt=m), инициировавшего пользовательское действие. |
+| syntheticEventId | string | ID [Synthetic-события](https://dt-url.net/dq1e3rmm?dt=m), инициировавшего пользовательское действие. |
 | targetUrl | string | Целевой URL пользовательского действия. |
 | thirdPartyBusyTime | integer | Время ожидания сторонних ресурсов для пользовательского действия в миллисекундах. |
 | thirdPartyResources | integer | Количество сторонних ресурсов, загруженных для пользовательского действия. |
 | ~~totalBlockingTime~~ | integer | УСТАРЕЛО  Total blocking time это суммарное время (в миллисекундах) между first contentful paint и time to interactive, в течение которого браузер был заблокирован достаточно долго, чтобы помешать отзывчивости на ввод. |
 | type | string | Тип пользовательского действия. Возможные значения: * `Custom` * `EndVisit` * `Error` * `Load` * `RageClick` * `SyntheticHiddenAction` * `UserSessionProperties` * `VisitTag` * `Xhr` |
 | userActionPropertyCount | integer | Общее количество свойств в пользовательском действии. |
-| visuallyCompleteTime | integer | Время до того, как страница станет [визуально завершённой](https://dt-url.net/qk1a3r19), в миллисекундах. |
+| visuallyCompleteTime | integer | Время до того, как страница станет [визуально завершённой](https://dt-url.net/qk1a3r19?dt=m), в миллисекундах. |
 
 ## Связанные темы
 

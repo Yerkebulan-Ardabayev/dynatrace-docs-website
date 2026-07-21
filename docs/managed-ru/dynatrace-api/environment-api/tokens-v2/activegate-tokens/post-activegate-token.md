@@ -98,7 +98,7 @@ scraped: 2026-05-12T12:09:53.794174
 | Элемент | Тип | Описание |
 | --- | --- | --- |
 | expirationDate | string | Дата истечения срока действия токена в формате ISO 8601 (`yyyy-MM-dd'T'HH:mm:ss.SSS'Z'`). |
-| id | string | Идентификатор ActiveGate-токена, состоящий из [префикса и публичной части](https://dt-url.net/rn00tjg) токена. |
+| id | string | Идентификатор ActiveGate-токена, состоящий из [префикса и публичной части](https://dt-url.net/rn00tjg?dt=m) токена. |
 | token | string | Секрет токена. |
 
 #### Объект `ErrorEnvelope`

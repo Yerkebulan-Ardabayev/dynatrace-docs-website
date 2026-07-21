@@ -28,7 +28,7 @@ scraped: 2026-05-12T12:09:59.984198
 
 | Параметр | Тип | Описание | В | Обязательность |
 | --- | --- | --- | --- | --- |
-| activeGateTokenIdentifier | string | Идентификатор удаляемого ActiveGate-токена, состоящий из [префикса и публичной части](https://dt-url.net/rn00tjg) токена. | path | Обязательный |
+| activeGateTokenIdentifier | string | Идентификатор удаляемого ActiveGate-токена, состоящий из [префикса и публичной части](https://dt-url.net/rn00tjg?dt=m) токена. | path | Обязательный |
 
 ## Ответ
 

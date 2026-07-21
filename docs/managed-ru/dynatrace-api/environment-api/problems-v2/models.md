@@ -152,13 +152,13 @@ JSON-модель
 | entityTags | [METag[]](#openapi-definition-METag) | Список тегов связанной сущности. |
 | eventId | string | ID события. |
 | eventType | string | Тип события. |
-| frequentEvent | boolean | Если `true`, событие происходит [часто](https://dt-url.net/4da3kdg). Частое событие не вызывает проблему. |
+| frequentEvent | boolean | Если `true`, событие происходит [часто](https://dt-url.net/4da3kdg?dt=m). Частое событие не вызывает проблему. |
 | managementZones | [ManagementZone[]](#openapi-definition-ManagementZone) | Список всех зон управления, к которым относится событие. |
 | properties | [EventProperty[]](#openapi-definition-EventProperty) | Список свойств события. |
 | startTime | integer | Метка времени, когда событие было поднято, в UTC миллисекундах. |
 | status | string | Статус события. Поле может принимать значения: * `CLOSED` * `OPEN` |
-| suppressAlert | boolean | Статус оповещения во время [обслуживания (maintenance)](https://dt-url.net/b2123rg0): * `false`: оповещения работают как обычно. * `true`: оповещения отключены. |
-| suppressProblem | boolean | Статус детекции проблем во время [обслуживания (maintenance)](https://dt-url.net/b2123rg0): * `false`: детекция проблем работает как обычно. * `true`: детекция проблем отключена. |
+| suppressAlert | boolean | Статус оповещения во время [обслуживания (maintenance)](https://dt-url.net/b2123rg0?dt=m): * `false`: оповещения работают как обычно. * `true`: оповещения отключены. |
+| suppressProblem | boolean | Статус детекции проблем во время [обслуживания (maintenance)](https://dt-url.net/b2123rg0?dt=m): * `false`: детекция проблем работает как обычно. * `true`: детекция проблем отключена. |
 | title | string | Заголовок события. |
 | underMaintenance | boolean | Если `true`, событие произошло, когда отслеживаемая система находилась на обслуживании. |
 

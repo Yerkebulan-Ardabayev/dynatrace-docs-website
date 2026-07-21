@@ -30,7 +30,7 @@ scraped: 2026-05-12T12:09:55.811769
 
 | Параметр | Тип | Описание | В | Обязательность |
 | --- | --- | --- | --- | --- |
-| activeGateTokenIdentifier | string | Идентификатор ActiveGate-токена, состоящий из [префикса и публичной части](https://dt-url.net/rn00tjg) токена. | path | Обязательный |
+| activeGateTokenIdentifier | string | Идентификатор ActiveGate-токена, состоящий из [префикса и публичной части](https://dt-url.net/rn00tjg?dt=m) токена. | path | Обязательный |
 
 ## Ответ
 
@@ -55,7 +55,7 @@ scraped: 2026-05-12T12:09:55.811769
 | activeGateType | string | Тип ActiveGate, для которого действителен токен. Элемент может принимать значения * `ENVIRONMENT` * `CLUSTER` |
 | creationDate | string | Дата создания токена в формате ISO 8601 (`yyyy-MM-dd'T'HH:mm:ss.SSS'Z'`). |
 | expirationDate | string | Дата истечения срока действия токена в формате ISO 8601 (`yyyy-MM-dd'T'HH:mm:ss.SSS'Z'`).  Если не задано, токен не истекает. |
-| id | string | Идентификатор ActiveGate-токена, состоящий из [префикса и публичной части](https://dt-url.net/rn00tjg) токена. |
+| id | string | Идентификатор ActiveGate-токена, состоящий из [префикса и публичной части](https://dt-url.net/rn00tjg?dt=m) токена. |
 | lastUsedDate | string | Дата последнего использования токена в формате ISO 8601 (`yyyy-MM-dd'T'HH:mm:ss.SSS'Z'`). |
 | name | string | Имя токена. |
 | owner | string | Владелец токена. |

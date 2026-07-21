@@ -49,7 +49,7 @@ scraped: 2026-05-12T11:31:22.650832
 | objectId | string | ID settings object, который должен быть заменён.  Применимо только если предоставлен внешний идентификатор. | Optional |
 | schemaId | string | Schema, на которой основан объект. | Required |
 | schemaVersion | string | Версия schema, на которой основан объект. | Optional |
-| scope | string | Scope, на который нацелен объект. Подробнее см. [Dynatrace Documentation](https://dt-url.net/ky03459). | Required |
+| scope | string | Scope, на который нацелен объект. Подробнее см. [Dynatrace Documentation](https://dt-url.net/ky03459?dt=m). | Required |
 | value | string | Значение настройки.  Оно определяет фактические значения параметров настроек.  Фактическое содержимое зависит от schema объекта. | Required |
 
 #### Объект `AnyValue`

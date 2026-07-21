@@ -51,7 +51,7 @@ scraped: 2026-05-12T11:59:52.446088
 
 Синтетический монитор.
 
-Фактический набор полей зависит от типа монитора. Список фактических объектов смотрите в описании поля **type** или в [Synthetic monitors API - JSON-модели](https://dt-url.net/2523se9).
+Фактический набор полей зависит от типа монитора. Список фактических объектов смотрите в описании поля **type** или в [Synthetic monitors API - JSON-модели](https://dt-url.net/2523se9?dt=m).
 
 | Поле | Тип | Описание |
 | --- | --- | --- |
@@ -65,7 +65,7 @@ scraped: 2026-05-12T11:59:52.446088
 | managementZones | [ManagementZone[]](#openapi-definition-ManagementZone) | Набор management zone, к которым принадлежит монитор. |
 | manuallyAssignedApps | string[] | Набор вручную назначенных приложений. |
 | name | string | Имя монитора. |
-| script | object | Скрипт [браузерного](https://dt-url.net/9c103rda) или HTTP-монитора. |
+| script | object | Скрипт [браузерного](https://dt-url.net/9c103rda?dt=m) или HTTP-монитора. |
 | tags | [TagWithSourceInfo[]](#openapi-definition-TagWithSourceInfo) | Набор тегов, назначенных монитору. |
 | type | string | Определяет фактический набор полей в зависимости от значения. Смотрите один из объектов:  * `BROWSER` -> BrowserSyntheticMonitor * `HTTP` -> HttpSyntheticMonitor Поле может принимать значения: * `BROWSER` * `HTTP` |
 
