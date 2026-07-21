@@ -1,21 +1,20 @@
 ---
 title: OneAgent environment-wide configuration API - GET auto-update configuration
 source: https://docs.dynatrace.com/managed/dynatrace-api/configuration-api/oneagent-configuration/oneagent-environment-wide/get-auto-update-configuration
-scraped: 2026-05-12T11:15:19.377254
 ---
 
 # OneAgent environment-wide configuration API - GET auto-update configuration
 
 # OneAgent environment-wide configuration API - GET auto-update configuration
 
-* Reference
-* Published Oct 20, 2020
+* Справка
+* Опубликовано 20 октября 2020 г.
 
-Возвращает конфигурацию авто-обновления OneAgent для всего окружения.
+Получение конфигурации автообновления OneAgent на уровне окружения.
 
-OneAgent, подключающиеся к окружению, используют эту конфигурацию только когда их **setting** имеет значение `INHERITED`.
+OneAgent, подключающиеся к окружению, используют эту конфигурацию только когда их параметр **setting** установлен в `INHERITED`.
 
-Запрос возвращает payload `application/json`.
+Запрос возвращает содержимое типа `application/json`.
 
 |  |  |  |
 | --- | --- | --- |
@@ -24,13 +23,13 @@ OneAgent, подключающиеся к окружению, использую
 
 ## Аутентификация
 
-Для выполнения этого запроса нужен access token со scope `ReadConfig`.
+Для выполнения этого запроса нужен токен доступа с областью действия `ReadConfig`.
 
-Как его получить и использовать, смотрите [Tokens and authentication](/managed/discover-dynatrace/references/dynatrace-api/basics/dynatrace-api-authentication).
+Подробнее о том, как получить и использовать токен, см. [Токены и аутентификация](/managed/discover-dynatrace/references/dynatrace-api/basics/dynatrace-api-authentication).
 
 ## Параметры
 
-В запросе нет настраиваемых параметров.
+Запрос не предусматривает настраиваемых параметров.
 
 ## Ответ
 
@@ -38,27 +37,27 @@ OneAgent, подключающиеся к окружению, использую
 
 | Код | Тип | Описание |
 | --- | --- | --- |
-| **200** | [EnvironmentAutoUpdateConfig](#openapi-definition-EnvironmentAutoUpdateConfig) | Успех |
+| **200** | [EnvironmentAutoUpdateConfig](#openapi-definition-EnvironmentAutoUpdateConfig) | Успешно |
 
 ### Объекты тела ответа
 
 #### Объект `EnvironmentAutoUpdateConfig`
 
-Конфигурация авто-обновлений OneAgent для всего окружения.
+Конфигурация автообновлений OneAgent на уровне Environment.
 
-Применяется ко всем OneAgent, подключающимся к окружению, если их параметр **setting** имеет значение `INHERITED`. Иначе применяется настройка уровня группы хостов или хоста.
+Применяется ко всем OneAgent, подключающимся к окружению, если их параметр **setting** установлен в `INHERITED`. В противном случае применяется настройка на уровне группы хостов или хоста.
 
 | Элемент | Тип | Описание |
 | --- | --- | --- |
-| metadata | [ConfigurationMetadata](#openapi-definition-ConfigurationMetadata) | Метаданные для отладки |
-| setting | string | Состояние авто-обновления OneAgent, подключающихся к окружению:  * `ENABLED`: OneAgent автоматически обновляются до последней версии. * `DISABLED`: OneAgent обновляются до версии, указанной в поле **version**.  OneAgent, подключающиеся к окружению, используют эту конфигурацию только когда их параметр **setting** имеет значение `INHERITED`. Возможные значения: * `ENABLED` * `DISABLED` |
-| targetVersion | string | Версия, до которой обновлять OneAgent при включённых автоматических обновлениях.  Поддерживаются относительные версии `latest`, `previous` и `older`, а также конкретная версия в формате `<major>.<minor>` (например `1.261`) или `<major>.<minor>.<revision>.<timestamp>` (например `1.261.178.20230313-090930`).  Применяется только когда параметр **setting** имеет значение `ENABLED`. |
+| metadata | [ConfigurationMetadata](#openapi-definition-ConfigurationMetadata) | Метаданные, полезные для отладки |
+| setting | string | Состояние автообновления OneAgent, подключающихся к окружению:  * `ENABLED`: OneAgent автоматически обновляются до самой актуальной версии. * `DISABLED`: OneAgent обновляются до версии, указанной в поле **version**.  OneAgent, подключающиеся к окружению, используют эту конфигурацию только когда их параметр **setting** установлен в `INHERITED`. Элемент может принимать следующие значения * `ENABLED` * `DISABLED` |
+| targetVersion | string | Версия, до которой обновляется OneAgent при включённых автоматических обновлениях.  Поддерживаются относительные версии `latest`, `previous` и `older`, а также конкретная версия в формате `<major>.<minor>` (например, `1.261`) или `<major>.<minor>.<revision>.<timestamp>` (например, `1.261.178.20230313-090930`).  Применимо только когда параметр **setting** установлен в `ENABLED`. |
 | updateWindows | [UpdateWindowsConfig](#openapi-definition-UpdateWindowsConfig) | Базовая информация обо всех настроенных окнах обновления |
-| version | string | Версия, до которой должен быть обновлён OneAgent.  Укажите версию в формате `<major>.<minor>.<revision>` (например `1.181.0`) или `<major>.<minor>` (например `1.181`). Список доступных версий можно получить вызовом [GET available versions](https://dt-url.net/fo23rb5). Если для указанной версии не найден подходящий установщик или значение равно `null`, OneAgent не будет обновлён.  Применяется только когда параметр **setting** имеет значение `DISABLED`. |
+| version | string | Версия, до которой должен быть обновлён OneAgent.  Указывается в формате `<major>.<minor>.<revision>` (например, `1.181.0`) или `<major>.<minor>` (например, `1.181`). Список доступных версий можно получить с помощью вызова [GET available versions﻿](https://dt-url.net/fo23rb5?dt=m). Если для указанной версии не найден подходящий установщик или значение установлено в `null`, OneAgent не будет обновлён.  Применимо только когда параметр **setting** установлен в `DISABLED`. |
 
 #### Объект `ConfigurationMetadata`
 
-Метаданные для отладки
+Метаданные, полезные для отладки
 
 | Элемент | Тип | Описание |
 | --- | --- | --- |
@@ -72,18 +71,18 @@ OneAgent, подключающиеся к окружению, использую
 
 | Элемент | Тип | Описание |
 | --- | --- | --- |
-| windows | [UpdateWindow[]](#openapi-definition-UpdateWindow) | Список окон обновления, когда может начаться обновление OneAgent. Если значение отсутствует, а обновление должно быть выполнено, оно начнётся при первой возможности. |
+| windows | [UpdateWindow](#openapi-definition-UpdateWindow)[] | Список окон обновления, в которые может начаться обновление OneAgent. Если значение отсутствует и обновление должно быть выполнено, оно начнётся при первой возможности. |
 
 #### Объект `UpdateWindow`
 
-Базовая информация об одном maintenance window
+Базовая информация об одном окне обслуживания
 
 | Элемент | Тип | Описание |
 | --- | --- | --- |
-| id | string | Идентификатор maintenance window |
-| name | string | Имя maintenance window |
+| id | string | Идентификатор окна обслуживания |
+| name | string | Название окна обслуживания |
 
-### JSON-модели тела ответа
+### Модели JSON тела ответа
 
 ```
 {

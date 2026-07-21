@@ -1,19 +1,18 @@
 ---
 title: OneAgent environment-wide configuration API - PUT auto-update configuration
 source: https://docs.dynatrace.com/managed/dynatrace-api/configuration-api/oneagent-configuration/oneagent-environment-wide/put-auto-update-configuration
-scraped: 2026-05-12T11:15:18.091498
 ---
 
 # OneAgent environment-wide configuration API - PUT auto-update configuration
 
 # OneAgent environment-wide configuration API - PUT auto-update configuration
 
-* Reference
-* Published Oct 20, 2020
+* Справочник
+* Опубликовано 20 октября 2020 г.
 
-Обновляет конфигурацию авто-обновления OneAgent для всего окружения.
+Обновляет конфигурацию автообновления OneAgent на уровне окружения.
 
-OneAgent, подключающиеся к окружению, используют эту конфигурацию только когда их **setting** имеет значение `INHERITED`.
+OneAgent, подключающиеся к окружению, используют эту конфигурацию только когда их **setting** установлен в значение `INHERITED`.
 
 Запрос принимает payload `application/json`.
 
@@ -24,41 +23,41 @@ OneAgent, подключающиеся к окружению, использую
 
 ## Аутентификация
 
-Для выполнения этого запроса нужен access token со scope `WriteConfig`.
+Для выполнения этого запроса нужен токен доступа со скоупом `WriteConfig`.
 
-Как его получить и использовать, смотрите [Tokens and authentication](/managed/discover-dynatrace/references/dynatrace-api/basics/dynatrace-api-authentication).
+О том, как получить и использовать токен, читайте в разделе [Tokens and authentication](/managed/discover-dynatrace/references/dynatrace-api/basics/dynatrace-api-authentication).
 
 ## Параметры
 
-| Параметр | Тип | Описание | Где | Обязательный |
+| Параметр | Тип | Описание | В | Обязательный |
 | --- | --- | --- | --- | --- |
-| body | [EnvironmentAutoUpdateConfig](#openapi-definition-EnvironmentAutoUpdateConfig) | JSON-тело запроса. Содержит параметры авто-обновления OneAgent. | body | Optional |
+| body | [EnvironmentAutoUpdateConfig](#openapi-definition-EnvironmentAutoUpdateConfig) | Тело JSON запроса. Содержит параметры автообновления OneAgent. | body | Опционально |
 
 ### Объекты тела запроса
 
 #### Объект `EnvironmentAutoUpdateConfig`
 
-Конфигурация авто-обновлений OneAgent для всего окружения.
+Конфигурация автообновлений OneAgent на уровне Environment.
 
-Применяется ко всем OneAgent, подключающимся к окружению, если их параметр **setting** имеет значение `INHERITED`. Иначе применяется настройка уровня группы хостов или хоста.
+Применяется ко всем OneAgent, подключающимся к окружению, если их параметр **setting** установлен в значение `INHERITED`. В противном случае применяется настройка на уровне группы хостов или хоста.
 
 | Элемент | Тип | Описание | Обязательный |
 | --- | --- | --- | --- |
-| metadata | [ConfigurationMetadata](#openapi-definition-ConfigurationMetadata) | Метаданные для отладки | Optional |
-| setting | string | Состояние авто-обновления OneAgent, подключающихся к окружению:  * `ENABLED`: OneAgent автоматически обновляются до последней версии. * `DISABLED`: OneAgent обновляются до версии, указанной в поле **version**.  OneAgent, подключающиеся к окружению, используют эту конфигурацию только когда их параметр **setting** имеет значение `INHERITED`. Возможные значения: * `ENABLED` * `DISABLED` | Required |
-| targetVersion | string | Версия, до которой обновлять OneAgent при включённых автоматических обновлениях.  Поддерживаются относительные версии `latest`, `previous` и `older`, а также конкретная версия в формате `<major>.<minor>` (например `1.261`) или `<major>.<minor>.<revision>.<timestamp>` (например `1.261.178.20230313-090930`).  Применяется только когда параметр **setting** имеет значение `ENABLED`. | Optional |
-| updateWindows | [UpdateWindowsConfig](#openapi-definition-UpdateWindowsConfig) | Базовая информация обо всех настроенных окнах обновления | Optional |
-| version | string | Версия, до которой должен быть обновлён OneAgent.  Укажите версию в формате `<major>.<minor>.<revision>` (например `1.181.0`) или `<major>.<minor>` (например `1.181`). Список доступных версий можно получить вызовом [GET available versions](https://dt-url.net/fo23rb5). Если для указанной версии не найден подходящий установщик или значение равно `null`, OneAgent не будет обновлён.  Применяется только когда параметр **setting** имеет значение `DISABLED`. | Optional |
+| metadata | [ConfigurationMetadata](#openapi-definition-ConfigurationMetadata) | Метаданные, полезные для отладки | Опционально |
+| setting | string | Состояние автообновления OneAgent, подключающихся к окружению:  * `ENABLED`: OneAgent автоматически обновляются до самой новой версии. * `DISABLED`: OneAgent обновляются до версии, указанной в поле **version**.  OneAgent, подключающиеся к окружению, используют эту конфигурацию только когда их параметр **setting** установлен в значение `INHERITED`. Элемент может принимать следующие значения * `ENABLED` * `DISABLED` | Обязательный |
+| targetVersion | string | Версия, до которой обновляется OneAgent при включённых автоматических обновлениях.  Поддерживает относительные версии `latest`, `previous` и `older`, а также конкретную версию в формате `<major>.<minor>` (например, `1.261`) или `<major>.<minor>.<revision>.<timestamp>` (например, `1.261.178.20230313-090930`).  Применимо только когда параметр **setting** установлен в значение `ENABLED`. | Опционально |
+| updateWindows | [UpdateWindowsConfig](#openapi-definition-UpdateWindowsConfig) | Базовая информация обо всех настроенных окнах обновления | Опционально |
+| version | string | Версия, до которой должен быть обновлён OneAgent.  Укажите версию в формате `<major>.<minor>.<revision>` (например, `1.181.0`) или `<major>.<minor>` (например, `1.181`). Список доступных версий можно получить вызовом [GET available versions﻿](https://dt-url.net/fo23rb5?dt=m). Если для указанной версии не найден подходящий инсталлятор или значение установлено в `null`, OneAgent не будет обновлён.  Применимо только когда параметр **setting** установлен в значение `DISABLED`. | Опционально |
 
 #### Объект `ConfigurationMetadata`
 
-Метаданные для отладки
+Метаданные, полезные для отладки
 
 | Элемент | Тип | Описание | Обязательный |
 | --- | --- | --- | --- |
-| clusterVersion | string | Версия Dynatrace. | Optional |
-| configurationVersions | integer[] | Отсортированный список номеров версий конфигурации. | Optional |
-| currentConfigurationVersions | string[] | Отсортированный список номеров версий конфигурации. | Optional |
+| clusterVersion | string | Версия Dynatrace. | Опционально |
+| configurationVersions | integer[] | Отсортированный список номеров версий конфигурации. | Опционально |
+| currentConfigurationVersions | string[] | Отсортированный список номеров версий конфигурации. | Опционально |
 
 #### Объект `UpdateWindowsConfig`
 
@@ -66,20 +65,20 @@ OneAgent, подключающиеся к окружению, использую
 
 | Элемент | Тип | Описание | Обязательный |
 | --- | --- | --- | --- |
-| windows | [UpdateWindow[]](#openapi-definition-UpdateWindow) | Список окон обновления, когда может начаться обновление OneAgent. Если значение отсутствует, а обновление должно быть выполнено, оно начнётся при первой возможности. | Required |
+| windows | [UpdateWindow](#openapi-definition-UpdateWindow)[] | Список окон обновления, в которые может начаться обновление OneAgent. Если значение не задано и обновление должно быть выполнено, оно начнётся при первой возможности. | Обязательный |
 
 #### Объект `UpdateWindow`
 
-Базовая информация об одном maintenance window
+Базовая информация об одном окне обслуживания
 
 | Элемент | Тип | Описание | Обязательный |
 | --- | --- | --- | --- |
-| id | string | Идентификатор maintenance window | Required |
-| name | string | Имя maintenance window | Optional |
+| id | string | Идентификатор окна обслуживания | Обязательный |
+| name | string | Название окна обслуживания | Опционально |
 
-### JSON-модель тела запроса
+### Модель JSON тела запроса
 
-Это модель тела запроса, показывающая возможные элементы. Её нужно адаптировать под реальный запрос.
+Это модель тела запроса, показывающая возможные элементы. Её нужно скорректировать для использования в реальном запросе.
 
 ```
 {
@@ -179,12 +178,12 @@ OneAgent, подключающиеся к окружению, использую
 
 ## Ответ
 
-### Коды ответа
+### Коды ответов
 
 | Код | Тип | Описание |
 | --- | --- | --- |
-| **204** | - | Успех. Конфигурация обновлена. Ответ без тела. |
-| **400** | [ErrorEnvelope](#openapi-definition-ErrorEnvelope) | Сбой. Невалидный ввод. |
+| **204** | - | Успешно. Конфигурация обновлена. Ответ не содержит тела. |
+| **400** | [ErrorEnvelope](#openapi-definition-ErrorEnvelope) | Ошибка. Входные данные некорректны. |
 
 ### Объекты тела ответа
 
@@ -198,8 +197,8 @@ OneAgent, подключающиеся к окружению, использую
 
 | Элемент | Тип | Описание |
 | --- | --- | --- |
-| code | integer | HTTP-код статуса |
-| constraintViolations | [ConstraintViolation[]](#openapi-definition-ConstraintViolation) | Список нарушений ограничений |
+| code | integer | Код статуса HTTP |
+| constraintViolations | [ConstraintViolation](#openapi-definition-ConstraintViolation)[] | Список нарушений ограничений |
 | message | string | Сообщение об ошибке |
 
 #### Объект `ConstraintViolation`
@@ -210,10 +209,10 @@ OneAgent, подключающиеся к окружению, использую
 | --- | --- | --- |
 | location | string | - |
 | message | string | - |
-| parameterLocation | string | -Возможные значения: * `HEADER` * `PATH` * `PAYLOAD_BODY` * `QUERY` |
+| parameterLocation | string | -Элемент может принимать следующие значения * `HEADER` * `PATH` * `PAYLOAD_BODY` * `QUERY` |
 | path | string | - |
 
-### JSON-модели тела ответа
+### Модели JSON тела ответа
 
 ```
 {
@@ -271,9 +270,9 @@ OneAgent, подключающиеся к окружению, использую
 }
 ```
 
-## Validate payload
+## Проверка payload
 
-Рекомендуется валидировать payload перед отправкой реального запроса. Код ответа **204** означает валидный payload.
+Рекомендуется проверять payload перед его отправкой в составе реального запроса. Код ответа **204** означает, что payload корректен.
 
 Запрос принимает payload `application/json`.
 
@@ -284,18 +283,18 @@ OneAgent, подключающиеся к окружению, использую
 
 ### Аутентификация
 
-Для выполнения этого запроса нужен access token со scope `WriteConfig`.
+Для выполнения этого запроса нужен токен доступа со скоупом `WriteConfig`.
 
-Как его получить и использовать, смотрите [Tokens and authentication](/managed/discover-dynatrace/references/dynatrace-api/basics/dynatrace-api-authentication).
+О том, как получить и использовать токен, читайте в разделе [Tokens and authentication](/managed/discover-dynatrace/references/dynatrace-api/basics/dynatrace-api-authentication).
 
 ### Ответ
 
-#### Коды ответа
+#### Коды ответов
 
 | Код | Тип | Описание |
 | --- | --- | --- |
-| **204** | - | Успех. Переданная конфигурация валидна. Ответ без тела. |
-| **400** | [ErrorEnvelope](#openapi-definition-ErrorEnvelope) | Сбой. Невалидный ввод. |
+| **204** | - | Успешно. Отправленная конфигурация корректна. Ответ не содержит тела. |
+| **400** | [ErrorEnvelope](#openapi-definition-ErrorEnvelope) | Ошибка. Входные данные некорректны. |
 
 #### Объекты тела ответа
 
@@ -309,8 +308,8 @@ OneAgent, подключающиеся к окружению, использую
 
 | Элемент | Тип | Описание |
 | --- | --- | --- |
-| code | integer | HTTP-код статуса |
-| constraintViolations | [ConstraintViolation[]](#openapi-definition-ConstraintViolation) | Список нарушений ограничений |
+| code | integer | Код статуса HTTP |
+| constraintViolations | [ConstraintViolation](#openapi-definition-ConstraintViolation)[] | Список нарушений ограничений |
 | message | string | Сообщение об ошибке |
 
 #### Объект `ConstraintViolation`
@@ -321,10 +320,10 @@ OneAgent, подключающиеся к окружению, использую
 | --- | --- | --- |
 | location | string | - |
 | message | string | - |
-| parameterLocation | string | -Возможные значения: * `HEADER` * `PATH` * `PAYLOAD_BODY` * `QUERY` |
+| parameterLocation | string | -Элемент может принимать следующие значения * `HEADER` * `PATH` * `PAYLOAD_BODY` * `QUERY` |
 | path | string | - |
 
-#### JSON-модели тела ответа
+#### Модели JSON тела ответа
 
 ```
 {

@@ -1,19 +1,18 @@
 ---
 title: Synthetic metrics API - GET a metric
 source: https://docs.dynatrace.com/managed/dynatrace-api/configuration-api/calculated-metrics/synthetic-metrics/get-metric
-scraped: 2026-05-12T11:19:22.455973
 ---
 
 # Synthetic metrics API - GET a metric
 
 # Synthetic metrics API - GET a metric
 
-* Reference
-* Published Apr 16, 2020
+* Справка
+* Опубликовано 16 апр. 2020 г.
 
 Возвращает дескриптор указанной вычисляемой синтетической метрики.
 
-Запрос возвращает payload `application/json`.
+Запрос формирует полезную нагрузку `application/json`.
 
 |  |  |  |
 | --- | --- | --- |
@@ -22,15 +21,15 @@ scraped: 2026-05-12T11:19:22.455973
 
 ## Аутентификация
 
-Для выполнения этого запроса нужен access token со scope `ReadConfig`.
+Для выполнения этого запроса нужен токен доступа с областью действия `ReadConfig`.
 
-Как его получить и использовать, смотрите [Tokens and authentication](/managed/discover-dynatrace/references/dynatrace-api/basics/dynatrace-api-authentication).
+О том, как его получить и использовать, см. [Tokens and authentication](/managed/discover-dynatrace/references/dynatrace-api/basics/dynatrace-api-authentication).
 
 ## Параметры
 
-| Параметр | Тип | Описание | Где | Обязательный |
+| Параметр | Тип | Описание | Расположение | Обязательный |
 | --- | --- | --- | --- | --- |
-| metricKey | string | Ключ требуемой вычисляемой синтетической метрики. | path | Required |
+| metricKey | string | Ключ нужной вычисляемой синтетической метрики. | path | Обязательный |
 
 ## Ответ
 
@@ -38,7 +37,7 @@ scraped: 2026-05-12T11:19:22.455973
 
 | Код | Тип | Описание |
 | --- | --- | --- |
-| **200** | [CalculatedSyntheticMetric](#openapi-definition-CalculatedSyntheticMetric) | Успех |
+| **200** | [CalculatedSyntheticMetric](#openapi-definition-CalculatedSyntheticMetric) | Успешно |
 
 ### Объекты тела ответа
 
@@ -48,13 +47,13 @@ scraped: 2026-05-12T11:19:22.455973
 
 | Элемент | Тип | Описание |
 | --- | --- | --- |
-| dimensions | [SyntheticMetricDimension[]](#openapi-definition-SyntheticMetricDimension) | Список измерений метрики. |
+| dimensions | [SyntheticMetricDimension](#openapi-definition-SyntheticMetricDimension)[] | Список измерений метрики. |
 | enabled | boolean | Метрика включена (`true`) или отключена (`false`). |
 | filter | [SyntheticMetricFilter](#openapi-definition-SyntheticMetricFilter) | Фильтр вычисляемой синтетической метрики. |
-| metric | string | Тип синтетической метрики. Возможные значения: * `ApplicationCache` * `Callback` * `CumulativeLayoutShift` * `DNSLookup` * `DOMComplete` * `DOMContentLoaded` * `DOMInteractive` * `FailedRequestsResources` * `FirstContentfulPaint` * `FirstInputDelay` * `FirstInputStart` * `FirstPaint` * `HTMLDownloaded` * `HttpErrors` * `JavaScriptErrors` * `LargestContentfulPaint` * `LoadEventEnd` * `LoadEventStart` * `LongTasks` * `NavigationStart` * `OnDOMContentLoaded` * `OnLoad` * `Processing` * `RedirectTime` * `Request` * `RequestStart` * `ResourceCount` * `Response` * `SecureConnect` * `SpeedIndex` * `TCPConnect` * `TimeToFirstByte` * `TotalDuration` * `TransferSize` * `UserActionDuration` * `VisuallyComplete` |
-| metricKey | string | Уникальный ключ метрики.  Ключ должен иметь префикс `calc:synthetic`. |
-| monitorIdentifier | string | ID сущности Dynatrace synthetic monitor, которому принадлежит метрика. |
-| name | string | Имя метрики, отображаемое в UI. |
+| metric | string | Тип синтетической метрики. Элемент может принимать следующие значения * `ApplicationCache` * `Callback` * `CumulativeLayoutShift` * `DNSLookup` * `DOMComplete` * `DOMContentLoaded` * `DOMInteractive` * `FailedRequestsResources` * `FirstContentfulPaint` * `FirstInputDelay` * `FirstInputStart` * `FirstPaint` * `HTMLDownloaded` * `HttpErrors` * `JavaScriptErrors` * `LargestContentfulPaint` * `LoadEventEnd` * `LoadEventStart` * `LongTasks` * `NavigationStart` * `OnDOMContentLoaded` * `OnLoad` * `Processing` * `RedirectTime` * `Request` * `RequestStart` * `ResourceCount` * `Response` * `SecureConnect` * `SpeedIndex` * `TCPConnect` * `TimeToFirstByte` * `TotalDuration` * `TransferSize` * `UserActionDuration` * `VisuallyComplete` |
+| metricKey | string | Уникальный ключ метрики. Ключ должен иметь префикс `calc:synthetic`. |
+| monitorIdentifier | string | ID сущности Dynatrace синтетического монитора, к которому относится метрика. |
+| name | string | Имя метрики, отображаемое в интерфейсе. |
 
 #### Объект `SyntheticMetricDimension`
 
@@ -62,8 +61,8 @@ scraped: 2026-05-12T11:19:22.455973
 
 | Элемент | Тип | Описание |
 | --- | --- | --- |
-| dimension | string | Измерение метрики. Возможные значения: * `Event` * `Location` * `ResourceOrigin` |
-| topX | integer | Количество верхних значений для расчёта. |
+| dimension | string | Измерение метрики. Элемент может принимать следующие значения * `Event` * `Location` * `ResourceOrigin` |
+| topX | integer | Количество верхних значений, которые нужно вычислить. |
 
 #### Объект `SyntheticMetricFilter`
 
@@ -71,13 +70,13 @@ scraped: 2026-05-12T11:19:22.455973
 
 | Элемент | Тип | Описание |
 | --- | --- | --- |
-| actionType | string | В расчёт метрики включаются только пользовательские действия указанного типа. Возможные значения: * `Custom` * `Load` * `Xhr` |
+| actionType | string | В расчёт метрики включаются только пользовательские действия указанного типа. Элемент может принимать следующие значения * `Custom` * `Load` * `Xhr` |
 | errorCode | integer | В расчёт метрики включаются только выполнения, завершившиеся с указанным кодом ошибки. |
-| event | string | В расчёт метрики включается только указанное событие browser clickpath.  Укажите здесь ID сущности Dynatrace события. Список clickpath-событий монитора можно получить запросом [GET a synthetic monitor](https://dt-url.net/4oe3kka) из Environment API |
-| hasError | boolean | Статус выполнения мониторов, включаемых в расчёт метрики:  * `true`: включаются только неудавшиеся выполнения. * `false`: включаются все выполнения. |
-| location | string | В расчёт метрики включаются только выполнения из указанной локации.  Укажите здесь ID сущности Dynatrace локации. Список локаций, из которых работает монитор, можно получить запросом [GET a synthetic monitor](https://dt-url.net/4oe3kka) из Environment API. |
+| event | string | В расчёт метрики включается только указанное событие браузерного clickpath. Здесь нужно указать ID сущности Dynatrace события. Список событий clickpath монитора можно получить запросом [GET a synthetic monitor﻿](https://dt-url.net/4oe3kka?dt=m) из Environment API |
+| hasError | boolean | Статус выполнения мониторов, включаемых в расчёт метрики:  * `true`: включаются только неудачные выполнения. * `false`: включаются все выполнения. |
+| location | string | В расчёт метрики включаются только выполнения из указанной локации. Здесь нужно указать ID сущности Dynatrace локации. Список локаций, из которых работает монитор, можно получить запросом [GET a synthetic monitor﻿](https://dt-url.net/4oe3kka?dt=m) из Environment API. |
 
-### JSON-модели тела ответа
+### Модели тела ответа JSON
 
 ```
 {
@@ -145,4 +144,4 @@ scraped: 2026-05-12T11:19:22.455973
 
 ## Связанные темы
 
-* [Synthetic Monitoring](/managed/observe/digital-experience/synthetic-monitoring "Узнайте о Synthetic Monitoring и о том, как создать браузерный монитор одного URL, браузерный clickpath или HTTP-монитор.")
+* [Synthetic Monitoring](/managed/observe/digital-experience/synthetic-monitoring "Learn about Synthetic Monitoring and how to create a single-URL browser monitor, a browser clickpath, or an HTTP monitor.")

@@ -1,21 +1,20 @@
 ---
 title: Frequent issue detection API - PUT configuration
 source: https://docs.dynatrace.com/managed/dynatrace-api/configuration-api/frequent-issue-detection-api/put-configuration
-scraped: 2026-05-12T12:15:28.508429
 ---
 
 # Frequent issue detection API - PUT configuration
 
 # Frequent issue detection API - PUT configuration
 
-* Reference
-* Published Jun 28, 2019
+* Справочник
+* Опубликовано 28 июня 2019 г.
 
-Этот API устарел. Используйте [Settings API](/managed/dynatrace-api/environment-api/settings "Узнайте, что предлагает Dynatrace Settings API."). Ищите schema **Frequent issue detection** (`builtin:anomaly-detection.frequent-issues`).
+Этот API устарел. Используй [Settings API](/managed/dynatrace-api/environment-api/settings "Find out what the Dynatrace Settings API offers.") вместо него. Ищи схему **Frequent issue detection** (`builtin:anomaly-detection.frequent-issues`).
 
-Обновляет конфигурацию frequent issue detection.
+Обновляет конфигурацию обнаружения частых проблем.
 
-Запрос принимает payload `application/json`.
+Запрос принимает полезную нагрузку `application/json`.
 
 |  |  |  |
 | --- | --- | --- |
@@ -24,43 +23,43 @@ scraped: 2026-05-12T12:15:28.508429
 
 ## Аутентификация
 
-Для выполнения этого запроса нужен access token со scope `WriteConfig`.
+Для выполнения этого запроса нужен токен доступа с областью действия `WriteConfig`.
 
-Как его получить и использовать, смотрите [Tokens and authentication](/managed/discover-dynatrace/references/dynatrace-api/basics/dynatrace-api-authentication).
+О том, как получить и использовать его, см. в разделе [Tokens and authentication](/managed/discover-dynatrace/references/dynatrace-api/basics/dynatrace-api-authentication).
 
 ## Параметры
 
-| Параметр | Тип | Описание | Где | Обязательный |
+| Параметр | Тип | Описание | В | Обязательный |
 | --- | --- | --- | --- | --- |
-| body | [FrequentIssueDetectionConfig](#openapi-definition-FrequentIssueDetectionConfig) | JSON-тело запроса с параметрами конфигурации frequent issue detection | body | Optional |
+| body | [FrequentIssueDetectionConfig](#openapi-definition-FrequentIssueDetectionConfig) | Тело JSON запроса, содержащее параметры конфигурации обнаружения частых проблем | body | Необязательный |
 
 ### Объекты тела запроса
 
 #### Объект `FrequentIssueDetectionConfig`
 
-Параметры frequent issue detection. Подробнее смотрите [Detection of frequent issues](https://dt-url.net/4da3kdg) в документации Dynatrace.
+Параметры обнаружения частых проблем. Подробнее об этом см. в разделе [Detection of frequent issues﻿](https://dt-url.net/4da3kdg?dt=m) в документации Dynatrace.
 
 | Элемент | Тип | Описание | Обязательный |
 | --- | --- | --- | --- |
-| frequentIssueDetectionApplicationEnabled | boolean | Detection для applications включена (`true`) или выключена (`false`). | Required |
-| frequentIssueDetectionEnvironmentEnabled | boolean | Detection для environment включена (`true`) или выключена (`false`). | Optional |
-| frequentIssueDetectionInfrastructureEnabled | boolean | Detection для infrastructure включена (`true`) или выключена (`false`). | Required |
-| frequentIssueDetectionServiceEnabled | boolean | Detection для services включена (`true`) или выключена (`false`). | Required |
-| metadata | [ConfigurationMetadata](#openapi-definition-ConfigurationMetadata) | Метаданные для отладки | Optional |
+| frequentIssueDetectionApplicationEnabled | boolean | Обнаружение для приложений включено (`true`) или отключено (`false`). | Обязательный |
+| frequentIssueDetectionEnvironmentEnabled | boolean | Обнаружение для окружения включено (`true`) или отключено (`false`). | Необязательный |
+| frequentIssueDetectionInfrastructureEnabled | boolean | Обнаружение для инфраструктуры включено (`true`) или отключено (`false`). | Обязательный |
+| frequentIssueDetectionServiceEnabled | boolean | Обнаружение для сервисов включено (`true`) или отключено (`false`). | Обязательный |
+| metadata | [ConfigurationMetadata](#openapi-definition-ConfigurationMetadata) | Метаданные, полезные для отладки | Необязательный |
 
 #### Объект `ConfigurationMetadata`
 
-Метаданные для отладки
+Метаданные, полезные для отладки
 
 | Элемент | Тип | Описание | Обязательный |
 | --- | --- | --- | --- |
-| clusterVersion | string | Версия Dynatrace. | Optional |
-| configurationVersions | integer[] | Отсортированный список номеров версий конфигурации. | Optional |
-| currentConfigurationVersions | string[] | Отсортированный список номеров версий конфигурации. | Optional |
+| clusterVersion | string | Версия Dynatrace. | Необязательный |
+| configurationVersions | integer[] | Отсортированный список номеров версий конфигурации. | Необязательный |
+| currentConfigurationVersions | string[] | Отсортированный список номеров версий конфигурации. | Необязательный |
 
-### JSON-модель тела запроса
+### Модель тела JSON запроса
 
-Это модель тела запроса со всеми возможными элементами. При использовании в реальном запросе её нужно адаптировать.
+Это модель тела запроса, показывающая возможные элементы. Её нужно скорректировать для использования в реальном запросе.
 
 ```
 {
@@ -92,8 +91,8 @@ scraped: 2026-05-12T12:15:28.508429
 
 | Код | Тип | Описание |
 | --- | --- | --- |
-| **204** | - | Успех. Конфигурация обновлена. Ответ без тела |
-| **400** | [ErrorEnvelope](#openapi-definition-ErrorEnvelope) | Сбой. Невалидный ввод |
+| **204** | - | Успешно. Конфигурация обновлена. Ответ не содержит тела |
+| **400** | [ErrorEnvelope](#openapi-definition-ErrorEnvelope) | Ошибка. Введённые данные недопустимы |
 
 ### Объекты тела ответа
 
@@ -107,8 +106,8 @@ scraped: 2026-05-12T12:15:28.508429
 
 | Элемент | Тип | Описание |
 | --- | --- | --- |
-| code | integer | HTTP-код статуса |
-| constraintViolations | [ConstraintViolation[]](#openapi-definition-ConstraintViolation) | Список нарушений ограничений |
+| code | integer | Код статуса HTTP |
+| constraintViolations | [ConstraintViolation](#openapi-definition-ConstraintViolation)[] | Список нарушений ограничений |
 | message | string | Сообщение об ошибке |
 
 #### Объект `ConstraintViolation`
@@ -119,10 +118,10 @@ scraped: 2026-05-12T12:15:28.508429
 | --- | --- | --- |
 | location | string | - |
 | message | string | - |
-| parameterLocation | string | -Возможные значения: * `HEADER` * `PATH` * `PAYLOAD_BODY` * `QUERY` |
+| parameterLocation | string | -Элемент может принимать следующие значения * `HEADER` * `PATH` * `PAYLOAD_BODY` * `QUERY` |
 | path | string | - |
 
-### JSON-модели тела ответа
+### Модели тела JSON ответа
 
 ```
 {
@@ -180,11 +179,11 @@ scraped: 2026-05-12T12:15:28.508429
 }
 ```
 
-## Validate payload
+## Проверка полезной нагрузки
 
-Рекомендуется валидировать payload перед отправкой реального запроса. Код ответа **204** означает валидный payload.
+Рекомендуется проверить полезную нагрузку перед отправкой её в составе реального запроса. Код ответа **204** означает, что полезная нагрузка валидна.
 
-Запрос принимает payload `application/json`.
+Запрос принимает полезную нагрузку `application/json`.
 
 |  |  |  |
 | --- | --- | --- |
@@ -193,9 +192,9 @@ scraped: 2026-05-12T12:15:28.508429
 
 ### Аутентификация
 
-Для выполнения этого запроса нужен access token со scope `WriteConfig`.
+Для выполнения этого запроса нужен токен доступа с областью действия `WriteConfig`.
 
-Как его получить и использовать, смотрите [Tokens and authentication](/managed/discover-dynatrace/references/dynatrace-api/basics/dynatrace-api-authentication).
+О том, как получить и использовать его, см. в разделе [Tokens and authentication](/managed/discover-dynatrace/references/dynatrace-api/basics/dynatrace-api-authentication).
 
 ### Ответ
 
@@ -203,8 +202,8 @@ scraped: 2026-05-12T12:15:28.508429
 
 | Код | Тип | Описание |
 | --- | --- | --- |
-| **204** | - | Validated. Переданная конфигурация валидна. Ответ без тела. |
-| **400** | [ErrorEnvelope](#openapi-definition-ErrorEnvelope) | Сбой. Невалидный ввод |
+| **204** | - | Проверено. Отправленная конфигурация валидна. Ответ не содержит тела. |
+| **400** | [ErrorEnvelope](#openapi-definition-ErrorEnvelope) | Ошибка. Введённые данные недопустимы |
 
 #### Объекты тела ответа
 
@@ -218,8 +217,8 @@ scraped: 2026-05-12T12:15:28.508429
 
 | Элемент | Тип | Описание |
 | --- | --- | --- |
-| code | integer | HTTP-код статуса |
-| constraintViolations | [ConstraintViolation[]](#openapi-definition-ConstraintViolation) | Список нарушений ограничений |
+| code | integer | Код статуса HTTP |
+| constraintViolations | [ConstraintViolation](#openapi-definition-ConstraintViolation)[] | Список нарушений ограничений |
 | message | string | Сообщение об ошибке |
 
 #### Объект `ConstraintViolation`
@@ -230,10 +229,10 @@ scraped: 2026-05-12T12:15:28.508429
 | --- | --- | --- |
 | location | string | - |
 | message | string | - |
-| parameterLocation | string | -Возможные значения: * `HEADER` * `PATH` * `PAYLOAD_BODY` * `QUERY` |
+| parameterLocation | string | -Элемент может принимать следующие значения * `HEADER` * `PATH` * `PAYLOAD_BODY` * `QUERY` |
 | path | string | - |
 
-#### JSON-модели тела ответа
+#### Модели тела JSON ответа
 
 ```
 {
@@ -293,11 +292,11 @@ scraped: 2026-05-12T12:15:28.508429
 
 ## Пример
 
-В этом примере запрос обновляет конфигурацию anomaly detection для applications из примера [GET request](/managed/dynatrace-api/configuration-api/frequent-issue-detection-api/get-configuration#example "Чтение конфигурации frequent issue через Dynatrace API."). Активируется **frequent issue detection для applications**.
+В этом примере запрос обновляет конфигурацию обнаружения аномалий для приложений из примера [GET-запроса](/managed/dynatrace-api/configuration-api/frequent-issue-detection-api/get-configuration#example "Read frequent issue configuration via the Dynatrace API."). Он активирует **обнаружение частых проблем для приложений**.
 
-API-токен передаётся в заголовке **Authorization**.
+Токен API передаётся в заголовке **Authorization**.
 
-Можно скачать или скопировать пример тела запроса для своих экспериментов. Обязательно сделайте backup-копию текущей конфигурации через GET request.
+Пример тела запроса можно скачать или скопировать, чтобы опробовать самостоятельно. Обязательно создай резервную копию текущей конфигурации с помощью GET-запроса.
 
 #### Curl
 
@@ -371,8 +370,8 @@ https://mySampleEnv.live.dynatrace.com/api/config/v1/frequentIssueDetection
 
 ![Anomaly detection configuration - updated](https://dt-cdn.net/images/put-frequent-issue-703-b57d1c1c38.png)
 
-Конфигурация anomaly detection: обновлена
+Anomaly detection configuration - updated
 
 ## Связанные темы
 
-* [Detection of frequent issues](/managed/dynatrace-intelligence/root-cause-analysis/detection-of-frequent-issues "Узнайте, как Dynatrace обнаруживает и управляет повторяющимися проблемными паттернами как frequent issues.")
+* [Detection of frequent issues](/managed/dynatrace-intelligence/root-cause-analysis/detection-of-frequent-issues "Understand how Dynatrace detects and manages recurring problem patterns as frequent issues.")

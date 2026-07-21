@@ -1,19 +1,18 @@
 ---
 title: Dashboards API - PUT sharing configuration
 source: https://docs.dynatrace.com/managed/dynatrace-api/configuration-api/dashboards-api/put-sharing-config
-scraped: 2026-05-12T11:14:56.004397
 ---
 
 # Dashboards API - PUT sharing configuration
 
 # Dashboards API - PUT sharing configuration
 
-* Reference
-* Published Mar 29, 2021
+* Справочник
+* Опубликовано 29 марта 2021 г.
 
-Обновляет конфигурацию совместного доступа указанного дашборда.
+Обновляет конфигурацию совместного доступа для указанного дашборда.
 
-Запрос принимает payload `application/json`.
+Запрос принимает полезную нагрузку `application/json`.
 
 |  |  |  |
 | --- | --- | --- |
@@ -22,30 +21,30 @@ scraped: 2026-05-12T11:14:56.004397
 
 ## Аутентификация
 
-Для выполнения этого запроса нужен access token со scope `WriteConfig`.
+Для выполнения этого запроса нужен токен доступа с областью действия `WriteConfig`.
 
-Как его получить и использовать, смотрите [Tokens and authentication](/managed/discover-dynatrace/references/dynatrace-api/basics/dynatrace-api-authentication).
+О том, как получить и использовать токен, см. в разделе [Tokens and authentication](/managed/discover-dynatrace/references/dynatrace-api/basics/dynatrace-api-authentication).
 
 ## Параметры
 
-| Параметр | Тип | Описание | Где | Обязательный |
+| Параметр | Тип | Описание | Расположение | Обязательный |
 | --- | --- | --- | --- | --- |
-| id | string | ID нужного дашборда. | path | Required |
-| body | [DashboardSharing](#openapi-definition-DashboardSharing) | JSON-тело запроса. Содержит обновлённые параметры совместного доступа дашборда. | body | Optional |
+| id | string | ID нужного дашборда. | путь | Обязательный |
+| body | [DashboardSharing](#openapi-definition-DashboardSharing) | Тело JSON запроса. Содержит обновлённые параметры совместного доступа к дашборду. | тело | Опциональный |
 
 ### Объекты тела запроса
 
 #### Объект `DashboardSharing`
 
-Конфигурация совместного доступа дашборда.
+Конфигурация совместного доступа к дашборду.
 
 | Элемент | Тип | Описание | Обязательный |
 | --- | --- | --- | --- |
-| enabled | boolean | Дашборд общий (`true`) или приватный (`false`). | Optional |
-| id | string | ID сущности Dynatrace для дашборда. | Required |
-| permissions | [DashboardSharePermissions[]](#openapi-definition-DashboardSharePermissions) | Список разрешений на доступ к дашборду. | Required |
-| preset | boolean | Если `true`, дашборд будет помечен как предустановленный. | Optional |
-| publicAccess | [DashboardAnonymousAccess](#openapi-definition-DashboardAnonymousAccess) | Конфигурация [anonymous access](https://dt-url.net/ov03sf1) к дашборду. | Required |
+| enabled | boolean | Дашборд общедоступный (`true`) или приватный (`false`). | Опциональный |
+| id | string | ID сущности Dynatrace для дашборда. | Обязательный |
+| permissions | [DashboardSharePermissions](#openapi-definition-DashboardSharePermissions)[] | Список разрешений на доступ к дашборду. | Обязательный |
+| preset | boolean | Если `true`, дашборд будет отмечен как preset. | Опциональный |
+| publicAccess | [DashboardAnonymousAccess](#openapi-definition-DashboardAnonymousAccess) | Конфигурация [анонимного доступа﻿](https://dt-url.net/ov03sf1?dt=m) к дашборду. | Обязательный |
 
 #### Объект `DashboardSharePermissions`
 
@@ -53,22 +52,22 @@ scraped: 2026-05-12T11:14:56.004397
 
 | Элемент | Тип | Описание | Обязательный |
 | --- | --- | --- | --- |
-| id | string | ID пользователя или группы, которым предоставлено разрешение.  Не применимо, если **type** имеет значение `ALL`. | Optional |
-| permission | string | Уровень разрешения:  * `VIEW`: дашборд предоставлен с разрешением на чтение. * `EDIT`: дашборд предоставлен с разрешением на редактирование. Возможные значения: * `EDIT` * `VIEW` | Required |
-| type | string | Тип разрешения:  * `USER`: дашборд предоставлен указанному пользователю. * `GROUP`: дашборд предоставлен всем пользователям указанной группы. * `ALL`: дашборд предоставлен по ссылке. Любой аутентифицированный пользователь со ссылкой может просматривать дашборд. Возможные значения: * `ALL` * `GROUP` * `USER` | Required |
+| id | string | ID пользователя или группы, которым предоставляется разрешение.  Не применяется, если **type** установлен в `ALL`. | Опциональный |
+| permission | string | Уровень разрешения:  * `VIEW`: дашборд предоставлен в общий доступ с разрешением на чтение. * `EDIT`: дашборд предоставлен в общий доступ с разрешением на редактирование. Элемент может принимать следующие значения * `EDIT` * `VIEW` | Обязательный |
+| type | string | Тип разрешения:  * `USER`: дашборд предоставлен в общий доступ указанному пользователю. * `GROUP`: дашборд предоставлен в общий доступ всем пользователям указанной группы. * `ALL`: дашборд предоставлен в общий доступ по ссылке. Любой аутентифицированный пользователь с этой ссылкой может просматривать дашборд. Элемент может принимать следующие значения * `ALL` * `GROUP` * `USER` | Обязательный |
 
 #### Объект `DashboardAnonymousAccess`
 
-Конфигурация [anonymous access](https://dt-url.net/ov03sf1) к дашборду.
+Конфигурация [анонимного доступа﻿](https://dt-url.net/ov03sf1?dt=m) к дашборду.
 
 | Элемент | Тип | Описание | Обязательный |
 | --- | --- | --- | --- |
-| managementZoneIds | string[] | Список зон управления, данные которых могут отображаться на публично доступном дашборде.  Укажите здесь ID зон управления. Для каждой указанной зоны управления Dynatrace генерирует ссылку доступа. Их можно получить в списке **urls**.  Чтобы предоставить дашборд с его зоной управления по умолчанию, используйте значение `default`. | Required |
-| urls | object | Список URL для анонимного доступа к дашборду.  Каждая ссылка даёт доступ к данным конкретной зоны управления, указанной в списке **managementZoneIds**.  Эти ссылки автоматически генерируются Dynatrace, изменить их нельзя. | Optional |
+| managementZoneIds | string[] | Список management zones, которые могут отображать данные на публично доступном дашборде.  Здесь нужно указать ID management zone. Для каждой указанной management zone Dynatrace генерирует ссылку доступа. Их можно найти в списке **urls**.  Чтобы открыть общий доступ к дашборду с его management zone по умолчанию, использовать значение `default`. | Обязательный |
+| urls | object | Список URL для анонимного доступа к дашборду.  Каждая ссылка предоставляет доступ к данным конкретной management zone, указанной в списке **managementZoneIds**.  Эти ссылки автоматически генерируются Dynatrace, изменить их нельзя. | Опциональный |
 
-### JSON-модель тела запроса
+### Модель тела JSON запроса
 
-Это модель тела запроса со всеми возможными элементами. При использовании в реальном запросе её нужно адаптировать.
+Это модель тела запроса, показывающая возможные элементы. Её нужно адаптировать для использования в реальном запросе.
 
 ```
 {
@@ -240,8 +239,8 @@ scraped: 2026-05-12T11:14:56.004397
 
 | Код | Тип | Описание |
 | --- | --- | --- |
-| **204** | - | Успех. Конфигурация обновлена. Ответ без тела. |
-| **400** | [ErrorEnvelope](#openapi-definition-ErrorEnvelope) | Сбой. Невалидный ввод. |
+| **204** | - | Успешно. Конфигурация обновлена. Ответ не содержит тела. |
+| **400** | [ErrorEnvelope](#openapi-definition-ErrorEnvelope) | Ошибка. Введённые данные некорректны. |
 
 ### Объекты тела ответа
 
@@ -255,8 +254,8 @@ scraped: 2026-05-12T11:14:56.004397
 
 | Элемент | Тип | Описание |
 | --- | --- | --- |
-| code | integer | HTTP-код статуса |
-| constraintViolations | [ConstraintViolation[]](#openapi-definition-ConstraintViolation) | Список нарушений ограничений |
+| code | integer | Код статуса HTTP |
+| constraintViolations | [ConstraintViolation](#openapi-definition-ConstraintViolation)[] | Список нарушений ограничений |
 | message | string | Сообщение об ошибке |
 
 #### Объект `ConstraintViolation`
@@ -267,10 +266,10 @@ scraped: 2026-05-12T11:14:56.004397
 | --- | --- | --- |
 | location | string | - |
 | message | string | - |
-| parameterLocation | string | -Возможные значения: * `HEADER` * `PATH` * `PAYLOAD_BODY` * `QUERY` |
+| parameterLocation | string | -Элемент может принимать следующие значения * `HEADER` * `PATH` * `PAYLOAD_BODY` * `QUERY` |
 | path | string | - |
 
-### JSON-модели тела ответа
+### Модели тела JSON ответа
 
 ```
 {
@@ -328,11 +327,11 @@ scraped: 2026-05-12T11:14:56.004397
 }
 ```
 
-## Validate payload
+## Проверить полезную нагрузку
 
-Рекомендуется валидировать payload перед отправкой реального запроса. Код ответа **204** означает валидный payload.
+Рекомендуется проверить полезную нагрузку перед отправкой в реальном запросе. Код ответа **204** означает, что полезная нагрузка корректна.
 
-Запрос принимает payload `application/json`.
+Запрос принимает полезную нагрузку `application/json`.
 
 |  |  |  |
 | --- | --- | --- |
@@ -341,9 +340,9 @@ scraped: 2026-05-12T11:14:56.004397
 
 ### Аутентификация
 
-Для выполнения этого запроса нужен access token со scope `WriteConfig`.
+Для выполнения этого запроса нужен токен доступа с областью действия `WriteConfig`.
 
-Как его получить и использовать, смотрите [Tokens and authentication](/managed/discover-dynatrace/references/dynatrace-api/basics/dynatrace-api-authentication).
+О том, как получить и использовать токен, см. в разделе [Tokens and authentication](/managed/discover-dynatrace/references/dynatrace-api/basics/dynatrace-api-authentication).
 
 ### Ответ
 
@@ -351,8 +350,8 @@ scraped: 2026-05-12T11:14:56.004397
 
 | Код | Тип | Описание |
 | --- | --- | --- |
-| **204** | - | Validated. Переданная настройка совместного доступа дашборда валидна. Ответ без тела |
-| **400** | [ErrorEnvelope](#openapi-definition-ErrorEnvelope) | Сбой. Невалидный ввод |
+| **204** | - | Проверено. Отправленная конфигурация совместного доступа к дашборду корректна. Ответ не содержит тела |
+| **400** | [ErrorEnvelope](#openapi-definition-ErrorEnvelope) | Ошибка. Введённые данные некорректны |
 
 #### Объекты тела ответа
 
@@ -366,8 +365,8 @@ scraped: 2026-05-12T11:14:56.004397
 
 | Элемент | Тип | Описание |
 | --- | --- | --- |
-| code | integer | HTTP-код статуса |
-| constraintViolations | [ConstraintViolation[]](#openapi-definition-ConstraintViolation) | Список нарушений ограничений |
+| code | integer | Код статуса HTTP |
+| constraintViolations | [ConstraintViolation](#openapi-definition-ConstraintViolation)[] | Список нарушений ограничений |
 | message | string | Сообщение об ошибке |
 
 #### Объект `ConstraintViolation`
@@ -378,10 +377,10 @@ scraped: 2026-05-12T11:14:56.004397
 | --- | --- | --- |
 | location | string | - |
 | message | string | - |
-| parameterLocation | string | -Возможные значения: * `HEADER` * `PATH` * `PAYLOAD_BODY` * `QUERY` |
+| parameterLocation | string | -Элемент может принимать следующие значения * `HEADER` * `PATH` * `PAYLOAD_BODY` * `QUERY` |
 | path | string | - |
 
-#### JSON-модели тела ответа
+#### Модели тела JSON ответа
 
 ```
 {
@@ -439,6 +438,6 @@ scraped: 2026-05-12T11:14:56.004397
 }
 ```
 
-## Связанные темы
+## Похожие темы
 
-* [Дашборды](/managed/analyze-explore-automate/dashboards-classic "Узнайте, как создавать дашборды Dynatrace Dashboards Classic, управлять ими и использовать их.")
+* [Dashboards](/managed/analyze-explore-automate/dashboards-classic "Learn how to create, manage, and use Dynatrace Dashboards Classic.")

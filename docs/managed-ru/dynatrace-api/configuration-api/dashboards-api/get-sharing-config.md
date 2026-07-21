@@ -1,19 +1,18 @@
 ---
 title: Dashboards API - GET sharing configuration
 source: https://docs.dynatrace.com/managed/dynatrace-api/configuration-api/dashboards-api/get-sharing-config
-scraped: 2026-05-12T11:14:44.121591
 ---
 
 # Dashboards API - GET sharing configuration
 
 # Dashboards API - GET sharing configuration
 
-* Reference
-* Published Mar 29, 2021
+* Справка
+* Опубликовано 29 марта 2021 г.
 
-Возвращает конфигурацию совместного доступа указанного дашборда.
+Получает конфигурацию совместного доступа к указанному dashboard.
 
-Запрос возвращает payload `application/json`.
+Запрос формирует полезную нагрузку `application/json`.
 
 |  |  |  |
 | --- | --- | --- |
@@ -22,15 +21,15 @@ scraped: 2026-05-12T11:14:44.121591
 
 ## Аутентификация
 
-Для выполнения этого запроса нужен access token со scope `ReadConfig`.
+Для выполнения этого запроса нужен токен доступа с областью действия `ReadConfig`.
 
-Как его получить и использовать, смотрите [Tokens and authentication](/managed/discover-dynatrace/references/dynatrace-api/basics/dynatrace-api-authentication).
+Подробнее о том, как получить и использовать его, см. [Tokens and authentication](/managed/discover-dynatrace/references/dynatrace-api/basics/dynatrace-api-authentication).
 
 ## Параметры
 
-| Параметр | Тип | Описание | Где | Обязательный |
+| Параметр | Тип | Описание | В | Обязательный |
 | --- | --- | --- | --- | --- |
-| id | string | ID нужного дашборда. | path | Required |
+| id | string | ID нужного dashboard. | path | Обязательный |
 
 ## Ответ
 
@@ -38,42 +37,42 @@ scraped: 2026-05-12T11:14:44.121591
 
 | Код | Тип | Описание |
 | --- | --- | --- |
-| **200** | [DashboardSharing](#openapi-definition-DashboardSharing) | Успех |
+| **200** | [DashboardSharing](#openapi-definition-DashboardSharing) | Успешно |
 
 ### Объекты тела ответа
 
 #### Объект `DashboardSharing`
 
-Конфигурация совместного доступа дашборда.
+Конфигурация совместного доступа к dashboard.
 
 | Элемент | Тип | Описание |
 | --- | --- | --- |
-| enabled | boolean | Дашборд общий (`true`) или приватный (`false`). |
-| id | string | ID сущности Dynatrace для дашборда. |
-| permissions | [DashboardSharePermissions[]](#openapi-definition-DashboardSharePermissions) | Список разрешений на доступ к дашборду. |
-| preset | boolean | Если `true`, дашборд будет помечен как предустановленный. |
-| publicAccess | [DashboardAnonymousAccess](#openapi-definition-DashboardAnonymousAccess) | Конфигурация [anonymous access](https://dt-url.net/ov03sf1) к дашборду. |
+| enabled | boolean | Dashboard является общим (`true`) или приватным (`false`). |
+| id | string | Dynatrace ID сущности dashboard. |
+| permissions | [DashboardSharePermissions](#openapi-definition-DashboardSharePermissions)[] | Список разрешений на доступ к dashboard. |
+| preset | boolean | Если `true`, dashboard будет помечен как preset. |
+| publicAccess | [DashboardAnonymousAccess](#openapi-definition-DashboardAnonymousAccess) | Конфигурация [анонимного доступа﻿](https://dt-url.net/ov03sf1?dt=m) к dashboard. |
 
 #### Объект `DashboardSharePermissions`
 
-Разрешения на доступ к дашборду.
+Разрешения доступа к dashboard.
 
 | Элемент | Тип | Описание |
 | --- | --- | --- |
-| id | string | ID пользователя или группы, которым предоставлено разрешение.  Не применимо, если **type** имеет значение `ALL`. |
-| permission | string | Уровень разрешения:  * `VIEW`: дашборд предоставлен с разрешением на чтение. * `EDIT`: дашборд предоставлен с разрешением на редактирование. Возможные значения: * `EDIT` * `VIEW` |
-| type | string | Тип разрешения:  * `USER`: дашборд предоставлен указанному пользователю. * `GROUP`: дашборд предоставлен всем пользователям указанной группы. * `ALL`: дашборд предоставлен по ссылке. Любой аутентифицированный пользователь со ссылкой может просматривать дашборд. Возможные значения: * `ALL` * `GROUP` * `USER` |
+| id | string | ID пользователя или группы, которым предоставлено разрешение.  Не применимо, если параметр **type** установлен в значение `ALL`. |
+| permission | string | Уровень разрешения:  * `VIEW`: dashboard передан в совместный доступ с разрешением на чтение. * `EDIT`: dashboard передан в совместный доступ с разрешением на редактирование. Элемент может содержать следующие значения * `EDIT` * `VIEW` |
+| type | string | Тип разрешения:  * `USER`: dashboard передан в совместный доступ указанному пользователю. * `GROUP`: dashboard передан в совместный доступ всем пользователям указанной группы. * `ALL`: dashboard передан в совместный доступ по ссылке. Любой аутентифицированный пользователь, у которого есть ссылка, может просматривать dashboard. Элемент может содержать следующие значения * `ALL` * `GROUP` * `USER` |
 
 #### Объект `DashboardAnonymousAccess`
 
-Конфигурация [anonymous access](https://dt-url.net/ov03sf1) к дашборду.
+Конфигурация [анонимного доступа﻿](https://dt-url.net/ov03sf1?dt=m) к dashboard.
 
 | Элемент | Тип | Описание |
 | --- | --- | --- |
-| managementZoneIds | string[] | Список зон управления, данные которых могут отображаться на публично доступном дашборде.  Укажите здесь ID зон управления. Для каждой указанной зоны управления Dynatrace генерирует ссылку доступа. Их можно получить в списке **urls**.  Чтобы предоставить дашборд с его зоной управления по умолчанию, используйте значение `default`. |
-| urls | object | Список URL для анонимного доступа к дашборду.  Каждая ссылка даёт доступ к данным конкретной зоны управления, указанной в списке **managementZoneIds**.  Эти ссылки автоматически генерируются Dynatrace, изменить их нельзя. |
+| managementZoneIds | string[] | Список management zone, которые могут отображать данные на публично доступном dashboard.  Здесь нужно указать ID management zone. Для каждой указанной management zone Dynatrace генерирует ссылку доступа. Их можно найти в списке **urls**.  Чтобы предоставить общий доступ к dashboard с его management zone по умолчанию, используй значение `default`. |
+| urls | object | Список URL для анонимного доступа к dashboard.  Каждая ссылка предоставляет доступ к данным конкретной management zone, указанной в списке **managementZoneIds**.  Эти ссылки автоматически генерируются Dynatrace, изменить их нельзя. |
 
-### JSON-модели тела ответа
+### JSON модели тела ответа
 
 ```
 {
@@ -239,6 +238,6 @@ scraped: 2026-05-12T11:14:44.121591
 }
 ```
 
-## Связанные темы
+## Похожие темы
 
-* [Дашборды](/managed/analyze-explore-automate/dashboards-classic "Узнайте, как создавать дашборды Dynatrace Dashboards Classic, управлять ими и использовать их.")
+* [Dashboards](/managed/analyze-explore-automate/dashboards-classic "Learn how to create, manage, and use Dynatrace Dashboards Classic.")

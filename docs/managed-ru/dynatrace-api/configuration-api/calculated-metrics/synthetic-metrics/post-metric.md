@@ -1,19 +1,18 @@
 ---
 title: Synthetic metrics API - POST a metric
 source: https://docs.dynatrace.com/managed/dynatrace-api/configuration-api/calculated-metrics/synthetic-metrics/post-metric
-scraped: 2026-05-12T11:19:24.203234
 ---
 
 # Synthetic metrics API - POST a metric
 
 # Synthetic metrics API - POST a metric
 
-* Reference
-* Published Apr 16, 2020
+* Справка
+* Опубликовано 16 апр. 2020 г.
 
-Создаёт новую вычисляемую синтетическую метрику.
+Создаёт новую расчётную синтетическую метрику.
 
-Запрос принимает и возвращает payload `application/json`.
+Запрос принимает и возвращает данные в формате `application/json`.
 
 |  |  |  |
 | --- | --- | --- |
@@ -22,56 +21,56 @@ scraped: 2026-05-12T11:19:24.203234
 
 ## Аутентификация
 
-Для выполнения этого запроса нужен access token со scope `WriteConfig`.
+Для выполнения этого запроса нужен токен доступа с областью действия `WriteConfig`.
 
-Как его получить и использовать, смотрите [Tokens and authentication](/managed/discover-dynatrace/references/dynatrace-api/basics/dynatrace-api-authentication).
+Подробнее о том, как получить и использовать токен, см. в разделе [Токены и аутентификация](/managed/discover-dynatrace/references/dynatrace-api/basics/dynatrace-api-authentication).
 
 ## Параметры
 
-| Параметр | Тип | Описание | Где | Обязательный |
+| Параметр | Тип | Описание | Расположение | Обязательный |
 | --- | --- | --- | --- | --- |
-| body | [CalculatedSyntheticMetric](#openapi-definition-CalculatedSyntheticMetric) | JSON-тело запроса. Содержит определение новой вычисляемой синтетической метрики. | body | Optional |
+| body | [CalculatedSyntheticMetric](#openapi-definition-CalculatedSyntheticMetric) | Тело JSON запроса. Содержит определение новой расчётной синтетической метрики. | body | Опционально |
 
 ### Объекты тела запроса
 
 #### Объект `CalculatedSyntheticMetric`
 
-Определение вычисляемой синтетической метрики.
+Определение расчётной синтетической метрики.
 
 | Элемент | Тип | Описание | Обязательный |
 | --- | --- | --- | --- |
-| dimensions | [SyntheticMetricDimension[]](#openapi-definition-SyntheticMetricDimension) | Список измерений метрики. | Optional |
-| enabled | boolean | Метрика включена (`true`) или отключена (`false`). | Required |
-| filter | [SyntheticMetricFilter](#openapi-definition-SyntheticMetricFilter) | Фильтр вычисляемой синтетической метрики. | Optional |
-| metric | string | Тип синтетической метрики. Возможные значения: * `ApplicationCache` * `Callback` * `CumulativeLayoutShift` * `DNSLookup` * `DOMComplete` * `DOMContentLoaded` * `DOMInteractive` * `FailedRequestsResources` * `FirstContentfulPaint` * `FirstInputDelay` * `FirstInputStart` * `FirstPaint` * `HTMLDownloaded` * `HttpErrors` * `JavaScriptErrors` * `LargestContentfulPaint` * `LoadEventEnd` * `LoadEventStart` * `LongTasks` * `NavigationStart` * `OnDOMContentLoaded` * `OnLoad` * `Processing` * `RedirectTime` * `Request` * `RequestStart` * `ResourceCount` * `Response` * `SecureConnect` * `SpeedIndex` * `TCPConnect` * `TimeToFirstByte` * `TotalDuration` * `TransferSize` * `UserActionDuration` * `VisuallyComplete` | Required |
-| metricKey | string | Уникальный ключ метрики.  Ключ должен иметь префикс `calc:synthetic`. | Required |
-| monitorIdentifier | string | ID сущности Dynatrace synthetic monitor, которому принадлежит метрика. | Required |
-| name | string | Имя метрики, отображаемое в UI. | Required |
+| dimensions | [SyntheticMetricDimension](#openapi-definition-SyntheticMetricDimension)[] | Список измерений метрики. | Опционально |
+| enabled | boolean | Метрика включена (`true`) или отключена (`false`). | Обязательный |
+| filter | [SyntheticMetricFilter](#openapi-definition-SyntheticMetricFilter) | Фильтр расчётной синтетической метрики. | Опционально |
+| metric | string | Тип синтетической метрики. Элемент может принимать следующие значения * `ApplicationCache` * `Callback` * `CumulativeLayoutShift` * `DNSLookup` * `DOMComplete` * `DOMContentLoaded` * `DOMInteractive` * `FailedRequestsResources` * `FirstContentfulPaint` * `FirstInputDelay` * `FirstInputStart` * `FirstPaint` * `HTMLDownloaded` * `HttpErrors` * `JavaScriptErrors` * `LargestContentfulPaint` * `LoadEventEnd` * `LoadEventStart` * `LongTasks` * `NavigationStart` * `OnDOMContentLoaded` * `OnLoad` * `Processing` * `RedirectTime` * `Request` * `RequestStart` * `ResourceCount` * `Response` * `SecureConnect` * `SpeedIndex` * `TCPConnect` * `TimeToFirstByte` * `TotalDuration` * `TransferSize` * `UserActionDuration` * `VisuallyComplete` | Обязательный |
+| metricKey | string | Уникальный ключ метрики.  Ключ должен иметь префикс `calc:synthetic`. | Обязательный |
+| monitorIdentifier | string | ID Dynatrace сущности синтетического монитора, к которому относится метрика. | Обязательный |
+| name | string | Название метрики, отображаемое в UI. | Обязательный |
 
 #### Объект `SyntheticMetricDimension`
 
-Измерение вычисляемой синтетической метрики.
+Измерение расчётной синтетической метрики.
 
 | Элемент | Тип | Описание | Обязательный |
 | --- | --- | --- | --- |
-| dimension | string | Измерение метрики. Возможные значения: * `Event` * `Location` * `ResourceOrigin` | Required |
-| topX | integer | Количество верхних значений для расчёта. | Optional |
+| dimension | string | Измерение метрики. Элемент может принимать следующие значения * `Event` * `Location` * `ResourceOrigin` | Обязательный |
+| topX | integer | Количество топовых значений для расчёта. | Опционально |
 
 #### Объект `SyntheticMetricFilter`
 
-Фильтр вычисляемой синтетической метрики.
+Фильтр расчётной синтетической метрики.
 
 | Элемент | Тип | Описание | Обязательный |
 | --- | --- | --- | --- |
-| actionType | string | В расчёт метрики включаются только пользовательские действия указанного типа. Возможные значения: * `Custom` * `Load` * `Xhr` | Optional |
-| errorCode | integer | В расчёт метрики включаются только выполнения, завершившиеся с указанным кодом ошибки. | Optional |
-| event | string | В расчёт метрики включается только указанное событие browser clickpath.  Укажите здесь ID сущности Dynatrace события. Список clickpath-событий монитора можно получить запросом [GET a synthetic monitor](https://dt-url.net/4oe3kka) из Environment API | Optional |
-| hasError | boolean | Статус выполнения мониторов, включаемых в расчёт метрики:  * `true`: включаются только неудавшиеся выполнения. * `false`: включаются все выполнения. | Optional |
-| location | string | В расчёт метрики включаются только выполнения из указанной локации.  Укажите здесь ID сущности Dynatrace локации. Список локаций, из которых работает монитор, можно получить запросом [GET a synthetic monitor](https://dt-url.net/4oe3kka) из Environment API. | Optional |
+| actionType | string | В расчёт метрики включаются только пользовательские действия указанного типа. Элемент может принимать следующие значения * `Custom` * `Load` * `Xhr` | Опционально |
+| errorCode | integer | В расчёт метрики включаются только выполнения, завершившиеся с указанным кодом ошибки. | Опционально |
+| event | string | В расчёт метрики включается только указанное событие браузерного clickpath.  Здесь нужно указать ID Dynatrace сущности события. Список событий clickpath монитора можно получить запросом [GET a synthetic monitor﻿](https://dt-url.net/4oe3kka?dt=m) из Environment API | Опционально |
+| hasError | boolean | Статус выполнения мониторов, включаемых в расчёт метрики:  * `true`: включаются только неудачные выполнения. * `false`: включаются все выполнения. | Опционально |
+| location | string | В расчёт метрики включаются только выполнения из указанной локации.  Здесь нужно указать ID Dynatrace сущности локации. Список локаций, из которых запускается монитор, можно получить запросом [GET a synthetic monitor﻿](https://dt-url.net/4oe3kka?dt=m) из Environment API. | Опционально |
 
-### JSON-модель тела запроса
+### Модель тела JSON запроса
 
-Это модель тела запроса, показывающая возможные элементы. Её нужно адаптировать под реальный запрос.
+Это модель тела запроса, показывающая возможные элементы. Её нужно адаптировать для использования в реальном запросе.
 
 ```
 {
@@ -143,20 +142,20 @@ scraped: 2026-05-12T11:19:24.203234
 
 | Код | Тип | Описание |
 | --- | --- | --- |
-| **201** | [EntityShortRepresentation](#openapi-definition-EntityShortRepresentation) | Успех. Вычисляемая синтетическая метрика создана. Тело ответа содержит её ключ и имя. |
-| **400** | [ErrorEnvelope](#openapi-definition-ErrorEnvelope) | Сбой. Невалидный ввод |
+| **201** | [EntityShortRepresentation](#openapi-definition-EntityShortRepresentation) | Успешно. Расчётная синтетическая метрика создана. Ответ содержит её ключ и название. |
+| **400** | [ErrorEnvelope](#openapi-definition-ErrorEnvelope) | Ошибка. Введённые данные недействительны |
 
 ### Объекты тела ответа
 
 #### Объект `EntityShortRepresentation`
 
-Краткое представление сущности Dynatrace.
+Краткое представление Dynatrace сущности.
 
 | Элемент | Тип | Описание |
 | --- | --- | --- |
-| description | string | Краткое описание сущности Dynatrace. |
-| id | string | ID сущности Dynatrace. |
-| name | string | Имя сущности Dynatrace. |
+| description | string | Краткое описание Dynatrace сущности. |
+| id | string | ID Dynatrace сущности. |
+| name | string | Название Dynatrace сущности. |
 
 #### Объект `ErrorEnvelope`
 
@@ -169,7 +168,7 @@ scraped: 2026-05-12T11:19:24.203234
 | Элемент | Тип | Описание |
 | --- | --- | --- |
 | code | integer | HTTP-код статуса |
-| constraintViolations | [ConstraintViolation[]](#openapi-definition-ConstraintViolation) | Список нарушений ограничений |
+| constraintViolations | [ConstraintViolation](#openapi-definition-ConstraintViolation)[] | Список нарушений ограничений |
 | message | string | Сообщение об ошибке |
 
 #### Объект `ConstraintViolation`
@@ -180,10 +179,10 @@ scraped: 2026-05-12T11:19:24.203234
 | --- | --- | --- |
 | location | string | - |
 | message | string | - |
-| parameterLocation | string | -Возможные значения: * `HEADER` * `PATH` * `PAYLOAD_BODY` * `QUERY` |
+| parameterLocation | string | -Элемент может принимать следующие значения * `HEADER` * `PATH` * `PAYLOAD_BODY` * `QUERY` |
 | path | string | - |
 
-### JSON-модели тела ответа
+### Модели тела JSON ответа
 
 ```
 {
@@ -261,11 +260,11 @@ scraped: 2026-05-12T11:19:24.203234
 }
 ```
 
-## Validate payload
+## Проверка полезной нагрузки
 
-Рекомендуется валидировать payload перед отправкой реального запроса. Код ответа **204** означает валидный payload.
+Рекомендуется проверять полезную нагрузку перед отправкой в реальном запросе. Код ответа **204** означает, что полезная нагрузка корректна.
 
-Запрос принимает payload `application/json`.
+Запрос принимает данные в формате `application/json`.
 
 |  |  |  |
 | --- | --- | --- |
@@ -274,9 +273,9 @@ scraped: 2026-05-12T11:19:24.203234
 
 ### Аутентификация
 
-Для выполнения этого запроса нужен access token со scope `WriteConfig`.
+Для выполнения этого запроса нужен токен доступа с областью действия `WriteConfig`.
 
-Как его получить и использовать, смотрите [Tokens and authentication](/managed/discover-dynatrace/references/dynatrace-api/basics/dynatrace-api-authentication).
+Подробнее о том, как получить и использовать токен, см. в разделе [Токены и аутентификация](/managed/discover-dynatrace/references/dynatrace-api/basics/dynatrace-api-authentication).
 
 ### Ответ
 
@@ -284,8 +283,8 @@ scraped: 2026-05-12T11:19:24.203234
 
 | Код | Тип | Описание |
 | --- | --- | --- |
-| **204** | - | Validated. Переданная вычисляемая синтетическая метрика валидна. Ответ без тела. |
-| **400** | [ErrorEnvelope](#openapi-definition-ErrorEnvelope) | Сбой. Невалидный ввод. |
+| **204** | - | Проверено. Отправленная расчётная синтетическая метрика корректна. Ответ не содержит тела. |
+| **400** | [ErrorEnvelope](#openapi-definition-ErrorEnvelope) | Ошибка. Введённые данные недействительны. |
 
 #### Объекты тела ответа
 
@@ -300,7 +299,7 @@ scraped: 2026-05-12T11:19:24.203234
 | Элемент | Тип | Описание |
 | --- | --- | --- |
 | code | integer | HTTP-код статуса |
-| constraintViolations | [ConstraintViolation[]](#openapi-definition-ConstraintViolation) | Список нарушений ограничений |
+| constraintViolations | [ConstraintViolation](#openapi-definition-ConstraintViolation)[] | Список нарушений ограничений |
 | message | string | Сообщение об ошибке |
 
 #### Объект `ConstraintViolation`
@@ -311,10 +310,10 @@ scraped: 2026-05-12T11:19:24.203234
 | --- | --- | --- |
 | location | string | - |
 | message | string | - |
-| parameterLocation | string | -Возможные значения: * `HEADER` * `PATH` * `PAYLOAD_BODY` * `QUERY` |
+| parameterLocation | string | -Элемент может принимать следующие значения * `HEADER` * `PATH` * `PAYLOAD_BODY` * `QUERY` |
 | path | string | - |
 
-#### JSON-модели тела ответа
+#### Модели тела JSON ответа
 
 ```
 {
@@ -372,6 +371,6 @@ scraped: 2026-05-12T11:19:24.203234
 }
 ```
 
-## Связанные темы
+## Похожие темы
 
-* [Synthetic Monitoring](/managed/observe/digital-experience/synthetic-monitoring "Узнайте о Synthetic Monitoring и о том, как создать браузерный монитор одного URL, браузерный clickpath или HTTP-монитор.")
+* [Synthetic Monitoring](/managed/observe/digital-experience/synthetic-monitoring "Узнайте о Synthetic Monitoring и о том, как создать браузерный монитор с одним URL, браузерный clickpath или HTTP-монитор.")

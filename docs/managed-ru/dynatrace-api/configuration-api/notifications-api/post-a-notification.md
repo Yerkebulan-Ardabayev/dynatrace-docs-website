@@ -1,21 +1,20 @@
 ---
 title: Notifications API - POST a notification configuration
 source: https://docs.dynatrace.com/managed/dynatrace-api/configuration-api/notifications-api/post-a-notification
-scraped: 2026-05-12T12:15:32.416462
 ---
 
 # Notifications API - POST a notification configuration
 
 # Notifications API - POST a notification configuration
 
-* Reference
-* Published Jun 18, 2019
+* Справка
+* Опубликовано 18 июня 2019 г.
 
-Этот API устарел. Используйте [Settings API](/managed/dynatrace-api/environment-api/settings "Узнайте, что предлагает Dynatrace Settings API."). Ищите schema **Problem notifications** (`builtin:problem.notifications`).
+Этот API устарел. Вместо него используй [Settings API](/managed/dynatrace-api/environment-api/settings "Find out what the Dynatrace Settings API offers."). Найди схему **Problem notifications** (`builtin:problem.notifications`).
 
 Создаёт новую конфигурацию.
 
-Запрос принимает и возвращает payload `application/json`.
+Запрос принимает и возвращает данные в формате `application/json`.
 
 |  |  |  |
 | --- | --- | --- |
@@ -24,36 +23,36 @@ scraped: 2026-05-12T12:15:32.416462
 
 ## Аутентификация
 
-Для выполнения этого запроса нужен access token со scope `WriteConfig`.
+Для выполнения этого запроса нужен токен доступа с областью действия `WriteConfig`.
 
-Как его получить и использовать, смотрите [Tokens and authentication](/managed/discover-dynatrace/references/dynatrace-api/basics/dynatrace-api-authentication).
+О том, как получить и использовать токен, читай в разделе [Tokens and authentication](/managed/discover-dynatrace/references/dynatrace-api/basics/dynatrace-api-authentication).
 
 ## Параметры
 
-В теле не должно быть ID. ID назначается Dynatrace автоматически.
+Тело запроса не должно содержать ID. ID присваивается автоматически Dynatrace.
 
-| Параметр | Тип | Описание | Где | Обязательный |
+| Параметр | Тип | Описание | Расположение | Обязательный |
 | --- | --- | --- | --- | --- |
-| body | [NotificationConfig](#openapi-definition-NotificationConfig) | JSON-тело запроса. Содержит параметры новой конфигурации уведомления. | body | Optional |
+| body | [NotificationConfig](#openapi-definition-NotificationConfig) | Тело JSON запроса. Содержит параметры новой конфигурации уведомления. | body | Опционально |
 
 ### Объекты тела запроса
 
 #### Объект `NotificationConfig`
 
-Конфигурация уведомления. Фактический набор полей зависит от `type` уведомления.
-Смотрите [Notifications API - JSON models](https://dt-url.net/9qm3k5u) в документации Dynatrace для примеров моделей каждого типа уведомления.
+Конфигурация уведомления. Фактический набор полей зависит от значения `type` уведомления.
+Примеры моделей для каждого типа уведомления смотри в разделе [Notifications API - JSON models﻿](https://dt-url.net/9qm3k5u?dt=m) в документации Dynatrace.
 
 | Элемент | Тип | Описание | Обязательный |
 | --- | --- | --- | --- |
-| active | boolean | Конфигурация включена (`true`) или отключена (`false`). | Required |
-| alertingProfile | string | ID связанного профиля оповещений. | Required |
-| id | string | ID конфигурации уведомления. | Optional |
-| name | string | Имя конфигурации уведомления. | Required |
-| type | string | Определяет фактический набор полей в зависимости от значения. Смотрите один из следующих объектов:  * `EMAIL` -> EmailNotificationConfig * `PAGER_DUTY` -> PagerDutyNotificationConfig * `WEBHOOK` -> WebHookNotificationConfig * `SLACK` -> SlackNotificationConfig * `VICTOROPS` -> VictorOpsNotificationConfig * `SERVICE_NOW` -> ServiceNowNotificationConfig * `XMATTERS` -> XMattersNotificationConfig * `ANSIBLETOWER` -> AnsibleTowerNotificationConfig * `OPS_GENIE` -> OpsGenieNotificationConfig * `JIRA` -> JiraNotificationConfig * `TRELLO` -> TrelloNotificationConfig Возможные значения: * `ANSIBLETOWER` * `EMAIL` * `JIRA` * `OPS_GENIE` * `PAGER_DUTY` * `SERVICE_NOW` * `SLACK` * `TRELLO` * `VICTOROPS` * `WEBHOOK` * `XMATTERS` | Required |
+| active | boolean | Конфигурация включена (`true`) или отключена (`false`). | Обязательный |
+| alertingProfile | string | ID связанного профиля оповещений. | Обязательный |
+| id | string | ID конфигурации уведомления. | Опционально |
+| name | string | Имя конфигурации уведомления. | Обязательный |
+| type | string | Определяет фактический набор полей в зависимости от значения. См. один из следующих объектов:  * `EMAIL` -> EmailNotificationConfig * `PAGER_DUTY` -> PagerDutyNotificationConfig * `WEBHOOK` -> WebHookNotificationConfig * `SLACK` -> SlackNotificationConfig * `VICTOROPS` -> VictorOpsNotificationConfig * `SERVICE_NOW` -> ServiceNowNotificationConfig * `XMATTERS` -> XMattersNotificationConfig * `ANSIBLETOWER` -> AnsibleTowerNotificationConfig * `OPS_GENIE` -> OpsGenieNotificationConfig * `JIRA` -> JiraNotificationConfig * `TRELLO` -> TrelloNotificationConfig Элемент может принимать следующие значения * `ANSIBLETOWER` * `EMAIL` * `JIRA` * `OPS_GENIE` * `PAGER_DUTY` * `SERVICE_NOW` * `SLACK` * `TRELLO` * `VICTOROPS` * `WEBHOOK` * `XMATTERS` | Обязательный |
 
-### JSON-модель тела запроса
+### Модель JSON тела запроса
 
-Это модель тела запроса со всеми возможными элементами. При использовании в реальном запросе её нужно адаптировать.
+Это модель тела запроса, показывающая возможные элементы. Её нужно скорректировать для использования в реальном запросе.
 
 ```
 {
@@ -117,8 +116,8 @@ scraped: 2026-05-12T12:15:32.416462
 
 | Код | Тип | Описание |
 | --- | --- | --- |
-| **201** | - | Успех. Новая конфигурация уведомления создана. Тело ответа содержит ID новой конфигурации уведомления. |
-| **400** | [ErrorEnvelope](#openapi-definition-ErrorEnvelope) | Сбой. Невалидный ввод. |
+| **201** | - | Успех. Новая конфигурация уведомления создана. Ответ содержит ID новой конфигурации уведомления. |
+| **400** | [ErrorEnvelope](#openapi-definition-ErrorEnvelope) | Ошибка. Некорректные входные данные. |
 
 ### Объекты тела ответа
 
@@ -132,8 +131,8 @@ scraped: 2026-05-12T12:15:32.416462
 
 | Элемент | Тип | Описание |
 | --- | --- | --- |
-| code | integer | HTTP-код статуса |
-| constraintViolations | [ConstraintViolation[]](#openapi-definition-ConstraintViolation) | Список нарушений ограничений |
+| code | integer | Код статуса HTTP |
+| constraintViolations | [ConstraintViolation](#openapi-definition-ConstraintViolation)[] | Список нарушений ограничений |
 | message | string | Сообщение об ошибке |
 
 #### Объект `ConstraintViolation`
@@ -144,10 +143,10 @@ scraped: 2026-05-12T12:15:32.416462
 | --- | --- | --- |
 | location | string | - |
 | message | string | - |
-| parameterLocation | string | -Возможные значения: * `HEADER` * `PATH` * `PAYLOAD_BODY` * `QUERY` |
+| parameterLocation | string | -Элемент может принимать следующие значения * `HEADER` * `PATH` * `PAYLOAD_BODY` * `QUERY` |
 | path | string | - |
 
-### JSON-модели тела ответа
+### Модели JSON тела ответа
 
 ```
 {
@@ -205,11 +204,11 @@ scraped: 2026-05-12T12:15:32.416462
 }
 ```
 
-## Validate payload
+## Проверка payload
 
-Рекомендуется валидировать payload перед отправкой реального запроса. Код ответа **204** означает валидный payload.
+Рекомендуется проверять payload перед отправкой в реальном запросе. Код ответа **204** означает, что payload корректен.
 
-Запрос принимает payload `application/json`.
+Запрос принимает данные в формате `application/json`.
 
 |  |  |  |
 | --- | --- | --- |
@@ -218,9 +217,9 @@ scraped: 2026-05-12T12:15:32.416462
 
 ### Аутентификация
 
-Для выполнения этого запроса нужен access token со scope `WriteConfig`.
+Для выполнения этого запроса нужен токен доступа с областью действия `WriteConfig`.
 
-Как его получить и использовать, смотрите [Tokens and authentication](/managed/discover-dynatrace/references/dynatrace-api/basics/dynatrace-api-authentication).
+О том, как получить и использовать токен, читай в разделе [Tokens and authentication](/managed/discover-dynatrace/references/dynatrace-api/basics/dynatrace-api-authentication).
 
 ### Ответ
 
@@ -228,8 +227,8 @@ scraped: 2026-05-12T12:15:32.416462
 
 | Код | Тип | Описание |
 | --- | --- | --- |
-| **204** | - | Validated. Переданная конфигурация валидна. Ответ без тела |
-| **400** | [ErrorEnvelope](#openapi-definition-ErrorEnvelope) | Сбой. Невалидный ввод. |
+| **204** | - | Проверено. Отправленная конфигурация корректна. Ответ не содержит тела |
+| **400** | [ErrorEnvelope](#openapi-definition-ErrorEnvelope) | Ошибка. Некорректные входные данные. |
 
 #### Объекты тела ответа
 
@@ -243,8 +242,8 @@ scraped: 2026-05-12T12:15:32.416462
 
 | Элемент | Тип | Описание |
 | --- | --- | --- |
-| code | integer | HTTP-код статуса |
-| constraintViolations | [ConstraintViolation[]](#openapi-definition-ConstraintViolation) | Список нарушений ограничений |
+| code | integer | Код статуса HTTP |
+| constraintViolations | [ConstraintViolation](#openapi-definition-ConstraintViolation)[] | Список нарушений ограничений |
 | message | string | Сообщение об ошибке |
 
 #### Объект `ConstraintViolation`
@@ -255,10 +254,10 @@ scraped: 2026-05-12T12:15:32.416462
 | --- | --- | --- |
 | location | string | - |
 | message | string | - |
-| parameterLocation | string | -Возможные значения: * `HEADER` * `PATH` * `PAYLOAD_BODY` * `QUERY` |
+| parameterLocation | string | -Элемент может принимать следующие значения * `HEADER` * `PATH` * `PAYLOAD_BODY` * `QUERY` |
 | path | string | - |
 
-#### JSON-модели тела ответа
+#### Модели JSON тела ответа
 
 ```
 {
