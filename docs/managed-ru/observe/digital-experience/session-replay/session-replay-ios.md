@@ -1,208 +1,242 @@
 ---
-title: Настройка Session Replay для iOS
+title: Настройка Session Replay Classic для iOS
 source: https://docs.dynatrace.com/managed/observe/digital-experience/session-replay/session-replay-ios
-scraped: 2026-05-12T11:33:35.180369
 ---
 
-# Настройка Session Replay для iOS
+# Настройка Session Replay Classic для iOS
 
-# Настройка Session Replay для iOS
+# Настройка Session Replay Classic для iOS
 
-* How-to guide
-* 8-min read
-* Updated on Feb 27, 2026
+* Практическое руководство
+* Чтение занимает 8 минут
+* Обновлено 03 июня 2026 г.
 
-На этой странице описано, как включить и настроить Session Replay для iOS-приложений.
+На этой странице описано, как включить и настроить Session Replay для приложений iOS.
 
-Для приложений, скомпилированных с Xcode 26, требуется OneAgent для iOS версии 8.323 или более поздней.
+Для приложений, скомпилированных с Xcode 26, требуется OneAgent для iOS версии 8.323 или выше.
 
-## Полный Session Replay
+## Full Session Replay Classic
 
-[Session Replay](/managed/observe/digital-experience/session-replay "Узнайте, как использовать Session Replay для лучшего понимания и устранения ошибок, с которыми сталкиваются клиенты.") для iOS позволяет захватывать взаимодействия клиентов с вашим мобильным приложением и воспроизводить каждый тап, свайп и поворот экрана в виде фильма.
+[Session Replay](/managed/observe/digital-experience/session-replay "Learn how you can use Session Replay to better understand and troubleshoot errors experienced by your customers.") на iOS позволяет фиксировать взаимодействие клиентов с мобильным приложением и воспроизводить каждое касание, свайп, поворот экрана в формате, похожем на видео.
 
-## Session Replay для анализа сбоев
+## Session Replay Classic при сбоях
 
-Также вы можете использовать его для получения дополнительного контекста при анализе сбоев в виде видеозаписей, воспроизводящих действия пользователя перед обнаруженным [сбоем](/managed/observe/digital-experience/rum-concepts/user-and-error-events#crash "Узнайте о событиях пользователей и ошибках, а также о типах событий, фиксируемых Dynatrace.").
+Кроме того, его можно использовать для получения дополнительного контекста при анализе сбоев в виде видеоподобных записей экрана, воспроизводящих действия пользователя, предшествующие обнаруженному [сбою](/managed/observe/digital-experience/rum-classic/rum-concepts/user-and-error-events#crash "Learn about user and error events and the types of user and error events captured by Dynatrace.").
 
-## Предварительные условия
+## Предварительные требования
 
-Убедитесь, что ваша система соответствует следующим требованиям:
+Убедись, что система соответствует следующим требованиям:
 
 * Dynatrace версии 1.303
 * OneAgent для iOS версии 8.323
-* Real User Monitoring включён для вашего приложения
-* Действующая лицензия Dynatrace Digital Experience Monitoring
+* Real User Monitoring включён для приложения
+* Активная лицензия Dynatrace Digital Experience Monitoring
 * URL веб-интерфейса имеет доверенный сертификат
 * Swift 5+
-* iOS 12+
+* iOS 15+
 * Xcode 16+
 * SwiftUI поддерживается.
 
-* Real User Monitoring включён для вашего приложения
-* Действующая лицензия Dynatrace Digital Experience Monitoring
+* Real User Monitoring активирован для приложения
+* Активная лицензия Dynatrace Digital Experience Monitoring
 * URL веб-интерфейса имеет доверенный сертификат
 
-* [Вторичный диск](/managed/observe/digital-experience/session-replay/enable-session-replay-web#session-replay-disk "Узнайте о предварительных условиях и процедуре включения Session Replay.") настроен для хранения данных сессий пользователей
+* [Дополнительный диск](/managed/observe/digital-experience/session-replay/enable-session-replay-web#session-replay-disk "Learn the prerequisites and the procedure for enabling Session Replay Classic.") настроен для хранения данных пользовательских сессий
 
-  Расчёт размера вторичного диска
+  Расчёт размера дополнительного диска
 
-  При расчёте размера вторичного диска учтите следующее:
+  Чтобы рассчитать размер дополнительного диска, учитывай следующее:
 
-  + Размер обычной мобильной сессии составляет около 300 КБ
-  + Срок хранения по умолчанию — 35 дней
-  + Всегда полезно иметь некоторый запас
-    Используя эти оценки, рекомендуется рассчитывать размер вторичного диска по формуле:  
-    `Размер вторичного диска = Сессий со сбоем в день × Средний размер сессии (300 КБ) × Срок хранения (35 дней) × Буфер (1.5)`
+  + Размер обычной мобильной пользовательской сессии составляет около 300 КБ
+  + Период хранения данных по умолчанию, 35 дней
+  + Небольшой запас всегда полезен
+    Используя эти оценки, рекомендуется рассчитывать размер дополнительного диска по следующей формуле:  
+    `Размер дополнительного диска = Сессии, завершившиеся сбоем в день * Средний размер сессии (300 КБ) * Период хранения (35 дней) * Запас (1.5)`
 
 ## Известные ограничения и проблемы
 
 ### Технические ограничения
 
-* Поддерживается iOS 12.0+.
+* Поддерживается iOS 15.0+.
 * Swift 5+
-* Xcode 15+
+* Xcode 16+
 * SwiftUI поддерживается.
 * Session Replay недоступен для tvOS и iPadOS.
-* Session Replay недоступен для кроссплатформенных фреймворков, таких как Cordova, React Native, Flutter, Xamarin и аналогичных.
-* Для гибридного приложения Session Replay поддерживается только для нативной части приложения. Для браузерной части Session Replay поддерживает только события загрузки веб-страниц.
-* Не рекомендуется использовать другие инструменты для отчётов о сбоях совместно с Dynatrace Session Replay.
-* Session Replay может захватывать только определённые события. Если вам нужно отслеживать конкретное представление или событие, не поддерживаемое по умолчанию, вы можете [захватить пользовательское событие](#capture-custom-events).
-* Воспроизводить записанные сессии можно только в [определённых браузерах](/managed/discover-dynatrace/get-started/dynatrace-ui/dynatrace-web-ui-requirements#session-replay "Узнайте, в каких браузерах работает Dynatrace Managed.").
-* Для iOS 26-приложений, скомпилированных с Xcode 26, функция маскирования доступна только с OneAgent для iOS версии 8.323+.
+* Session Replay недоступен для кроссплатформенных фреймворков, таких как Cordova, React Native, Flutter, Xamarin и подобных.
+* Для гибридного приложения Session Replay поддерживается только для нативной части приложения. Для браузерной части Session Replay поддерживает только события загрузки веб-страницы.
+* Рекомендуется не использовать другие инструменты отслеживания сбоев вместе с Dynatrace Session Replay.
+* Session Replay может фиксировать только определённые события. Однако, если нужно отслеживать конкретное представление или событие, которое не поддерживается по умолчанию, можно [зафиксировать пользовательское событие](#capture-custom-events).
+* Воспроизвести пользовательские сессии, записанные с Session Replay, можно только в [определённых браузерах](/managed/discover-dynatrace/get-started/dynatrace-ui/dynatrace-web-ui-requirements#session-replay "Browser and TLS requirements for the Dynatrace Managed web UI, including supported browsers for Session Replay and Synthetic Monitoring.").
+* Для приложений iOS 26, собранных с Xcode 26, функциональность маскирования доступна только с OneAgent для iOS версии 8.323+.
 
-Подробнее см. [Технические ограничения Session Replay для веб-приложений](/managed/observe/digital-experience/session-replay/session-replay-restrictions-web "Узнайте об ограничениях, применяемых к Session Replay.").
+Дополнительные сведения см. в разделе [Технические ограничения для Session Replay для веб-приложений](/managed/observe/digital-experience/session-replay/session-replay-restrictions-web "Learn which restrictions apply to Session Replay Classic.").
 
-Session Replay — это видеоподобная реконструкция взаимодействий пользователя с мобильными приложениями, основанная на захваченных событиях и данных. Из-за такого подхода воспроизведённые сессии могут отличаться от реального пользовательского опыта.
+Session Replay представляет собой видеоподобную реконструкцию взаимодействий пользователя с мобильными приложениями на основе зафиксированных событий и данных. Из-за такого подхода воспроизведённые сессии могут отличаться от фактического пользовательского опыта. Известные проблемы
 
-## Включение Session Replay для iOS
+## Включение Session Replay Classic на iOS
 
-Если вы ещё не сделали этого, выполните все шаги, описанные в мастере инструментирования.
+Если это ещё не сделано, выполни все шаги, описанные в мастере инструментирования.
 
-1. Перейдите в **Mobile**.
-2. Выберите мобильное приложение, которое хотите настроить.
-3. В правом верхнем углу плитки с именем приложения выберите **More** (**...**) > **Edit**.
-4. В настройках приложения выберите **General** > **Enablement and cost control**.
-5. Включите **Enable Full Session Replay** и/или **Enable Session Replay on crashes**. Доступны следующие варианты:
+1. Перейди в **Mobile**.
+2. Выбери мобильное приложение, которое нужно настроить.
+3. Выбери **More** (**…**) > **Edit** в правом верхнем углу плитки с названием приложения
+4. В настройках приложения выбери **General** > **Enablement and cost control**.
+5. Включи **Enable Full Session Replay** и (или) **Enable Session Replay on crashes**. Доступны следующие варианты:
 
-   * При включении Full Mobile Session Replay на 100% будут захватываться все сессии.
-   * При включении Full Mobile Session Replay менее чем на 100% будут захватываться случайно выбранные сессии.
-   * При включении Session Replay on Crashes гарантируется, что независимо от настройки Enable Full Session Replay и значения управления стоимостью и трафиком, все сессии со сбоями будут захвачены.
-6. В настройках приложения выберите **Instrumentation wizard**, затем выберите **Android** или **iOS**.
-7. Следуйте шагам в мастере инструментирования.
+   * Включение Full Mobile Session Replay на 100%: будут зафиксированы все сессии
+   * Включение Full Mobile Session Replay на значении менее 100%: будут зафиксированы случайно выбранные сессии
+   * Включение Session Replay on Crashes гарантирует, что независимо от настройки Enable Full Session Replay и её значения const и traffic control, все сессии со сбоем будут зафиксированы
+6. В настройках приложения выбери **Instrumentation wizard**, затем выбери **Android** или **iOS**.
+7. Следуй шагам мастера инструментирования.
 
-### Включение Session Replay для SwiftUI-приложений
+### Включение Session Replay Classic для приложений SwiftUI
 
 OneAgent для iOS версии 8.249+
 
-Если вы уже [инструментировали своё SwiftUI-приложение](/managed/observe/digital-experience/mobile-applications/instrument-ios-app/instrumentation/instrument-swiftui-controls "Используйте Dynatrace SwiftUI instrumentor для мониторинга SwiftUI-приложений."), вы можете дополнительно включить Session Replay для него.
+Если приложение SwiftUI уже [проинструментировано](/managed/observe/digital-experience/rum-classic/mobile-applications/instrument-ios-app/instrumentation/instrument-swiftui-controls "Use the Dynatrace SwiftUI instrumentor to monitor your SwiftUI apps."), для такого мобильного приложения можно дополнительно включить Session Replay.
 
-Для включения Session Replay в инструментированном SwiftUI-приложении:
+Чтобы включить Session Replay для проинструментированного приложения SwiftUI
 
-1. Выполните все шаги [инструкции по включению Session Replay](#enable-session-replay) выше.
-2. Установите [ключ конфигурации `DTXSwiftUIEnableSessionReplayInstrumentation`](/managed/observe/digital-experience/mobile-applications/instrument-ios-app/customization/ios-configuration-keys#swiftui "С помощью ключей конфигурации можно точно настроить автоматическое инструментирование iOS-приложений.") в значение `true` в файле [`Info.plist`](/managed/observe/digital-experience/mobile-applications/instrument-ios-app/instrumentation/info-plist-file "Файл Info.plist хранит идентификационную и конфигурационную информацию приложения. Используйте его для тонкой настройки конфигурации инструментирования.") вашего проекта.
+1. Выполни все шаги инструкции [**Enable Session Replay**](#enable-session-replay) выше.
+2. Установи для [конфигурационного ключа `DTXSwiftUIEnableSessionReplayInstrumentation`](/managed/observe/digital-experience/rum-classic/mobile-applications/instrument-ios-app/customization/ios-configuration-keys#swiftui "With configuration keys, you can fine-tune the auto-instrumentation of your iOS apps.") значение `true` в файле [`Info.plist`](/managed/observe/digital-experience/rum-classic/mobile-applications/instrument-ios-app/instrumentation/info-plist-file "Info.plist file stores your app identification and configuration keys. Use it to fine-tune the instrumentation configuration.") проекта.
 
    ```
    <key>DTXSwiftUIEnableSessionReplayInstrumentation</key>
+
+
+
    <true/>
    ```
 
-#### Поддерживаемые SwiftUI-контейнеры
+#### Поддерживаемые контейнеры SwiftUI
 
-Session Replay поддерживается для следующих SwiftUI-контейнеров:
+Session Replay поддерживается для следующих контейнеров SwiftUI:
 
-* [List](https://developer.apple.com/documentation/swiftui/list/)
-* [LazyVGrid](https://developer.apple.com/documentation/swiftui/lazyvgrid)
-* [LazyHGrid](https://developer.apple.com/documentation/swiftui/lazyhgrid)
+* [List﻿](https://developer.apple.com/documentation/swiftui/list/)
+* [LazyVGrid﻿](https://developer.apple.com/documentation/swiftui/lazyvgrid)
+* [LazyHGrid﻿](https://developer.apple.com/documentation/swiftui/lazyhgrid)
 
-#### Известные ограничения для SwiftUI-приложений
+#### Известные ограничения для приложений SwiftUI
 
-Dynatrace не инструментирует следующие SwiftUI-контейнеры:
+Dynatrace не инструментирует следующие контейнеры SwiftUI:
 
-* Lists внутри расширений
-* Lists со статическим контентом
-* Lists, у которых источник данных не соответствует протоколу `Equatable`
+* Списки внутри extensions
+* Списки со статическим содержимым
+* Списки, у которых объект-источник данных не соответствует протоколу `Equatable`
 
 ## Маскирование конфиденциальных данных
 
 ### Уровни маскирования данных
 
-Session Replay поставляется с тремя предопределёнными уровнями маскирования:
+Session Replay поставляется с тремя предустановленными уровнями маскирования:
 
-* **Safest** — все редактируемые текстовые поля, изображения, метки, веб-представления и переключатели маскируются.
-* **Safe** — все редактируемые текстовые поля маскируются.
-* **Custom** — по умолчанию маскирует те же элементы, что и **Safest**, но вы можете точно определить, какие компоненты или представления должны маскироваться. Подробнее см. [Настройка пользовательского маскирования](#custom-masking).
+* **Safest**, маскируются все редактируемые текстовые поля, изображения, метки, веб-представления и переключатели.
+* **Safe**, маскируются все редактируемые текстовые поля.
+* **Custom**, по умолчанию маскирует те же элементы, что и **Safest**, но можно самостоятельно определить, какие именно компоненты приложения или представления должны маскироваться. Подробности см. в разделе [Настройка пользовательского маскирования](#custom-masking).
 
 ### Изменение уровня маскирования
 
-По умолчанию OneAgent применяет уровень маскирования **Safest**. Для изменения на уровень **Safe** или **Custom** используйте API для настройки OneAgent. При выборе уровня **Custom** см. [Настройка пользовательского маскирования](#custom-masking) для получения сведений о настройке маскируемых компонентов.
+По умолчанию OneAgent применяет уровень маскирования **Safest**. Чтобы изменить его на уровень **Safe** или **Custom**, используй API для настройки OneAgent. Если выбран уровень **Custom**, подробности о том, как задать, какие компоненты приложения или представления должны маскироваться, см. в разделе [Настройка пользовательского маскирования](#custom-masking).
 
-#### Пример 1: Изменение уровня маскирования на Safe
+#### Пример 1: изменение уровня маскирования на Safe
 
-Используйте следующий код для установки уровня маскирования Safe.
+Используй следующий код, чтобы установить уровень маскирования Safe.
 
 ```
 let maskingConfiguration = MaskingConfiguration(maskingLevelType: .safe)
+
+
 
 try? AgentManager.setMaskingConfiguration(maskingConfiguration)
 ```
 
 ### Настройка пользовательского маскирования
 
-При установке [уровня маскирования данных](#data-masking-levels) в **Custom** вы можете использовать дополнительные методы API для определения маскируемых компонентов или представлений. Вы можете:
+Если для [уровня маскирования данных](#data-masking-levels) установлено значение **Custom**, можно использовать дополнительные методы API, чтобы определить, какие компоненты приложения или представления должны маскироваться. Можно:
 
-* [Включать или отключать правила маскирования](#enable-disable-masking-rules).
-* [Маскировать представления с использованием accessibilityIdentifier](#mask-views-accessibilityIdentifier).
-* [Маскировать представления с использованием тега маскирования](#mask-views-masking-tag).
+* [Включить или отключить правила маскирования](#enable-disable-masking-rules).
+* [Маскировать представления с помощью accessibilityIdentifier](#mask-views-accessibilityIdentifier).
+* [Маскировать представления с помощью тега маскирования](#mask-views-masking-tag).
 
 #### Включение или отключение правил маскирования
 
-Вы можете включать или отключать правила глобально или для выбранных компонентов, таких как текстовые поля, изображения, метки, веб-представления и переключатели.
+Правила можно включать или отключать глобально или для отдельных выбранных компонентов, таких как текстовые поля, изображения, метки, веб-представления и переключатели.
 
 ```
 try? maskingConfiguration.add(rule: .maskAllImages) // Adds one rule
+
+
+
 try? maskingConfiguration.remove(rule: .maskAllSwitches) // Removes one rule
+
+
+
 try? maskingConfiguration.addAllRules() // Adds all rules
+
+
+
 try? maskingConfiguration.removeAllRules() // Removes all rules
 ```
 
-При удалении всех правил маскирования Session Replay не будет маскировать ничего. При включении всех правил эффект эквивалентен уровню Safest.
+Если удалить все правила маскирования, Session Replay не будет маскировать ничего. Если включить все правила маскирования, это эквивалентно уровню маскирования Safest.
 
-#### Маскирование представлений с использованием accessibilityIdentifier
+#### Маскирование представлений с помощью accessibilityIdentifier
 
-Вы можете включать или отключать маскирование выбранных представлений на основе их accessibilityIdentifier.
+Можно включать или отключать маскирование выбранных представлений на основе их accessibilityIdentifier.
 
 ```
 try? maskingConfiguration.addMaskedView(viewIds: ["masked_view_id"])
+
+
+
 try? maskingConfiguration.removeMaskedView(viewIds: ["masked_view_id"])
+
+
+
 try? maskingConfiguration.addNonMaskedView(viewIds: ["nonMasked_view_id"])
+
+
+
 try? maskingConfiguration.removeNonMaskedView(viewIds: ["nonMasked_view_id"])
 ```
 
-#### Маскирование представлений с использованием тега маскирования
+#### Маскирование представлений с помощью тега маскирования
 
-Вы также можете маскировать представление, добавив тег маскирования data-dtrum-mask в accessibilityIdentifier представления. Представление с этим тегом маскирования всегда маскируется.
+Представление также можно замаскировать, добавив тег маскирования data-dtrum-mask в accessibilityIdentifier представления. Представление с этим тегом маскирования маскируется всегда.
 
-## Включение журналов Session Replay
+## Включение классических логов Session Replay
 
-Журналы Session Replay можно включить так же, как и для OneAgent. Подробнее см. [Журналы отладки OneAgent для iOS](/managed/observe/digital-experience/mobile-applications/instrument-ios-app/customization/logging-for-ios "Включите журналы отладки для OneAgent.").
+Классические логи Session Replay включаются так же, как и для OneAgent. Подробности см. в разделе [Отладочное логирование для OneAgent на iOS](/managed/observe/digital-experience/rum-classic/mobile-applications/instrument-ios-app/customization/logging-for-ios "Turn on debug logging for OneAgent.")
 
 ## Захват пользовательских событий
 
-Session Replay записывает только определённые события. Дополнительно можно захватывать пользовательские события, не поддерживаемые по умолчанию. Можно захватить пользовательское событие со скриншотом конкретного представления, конкретной области экрана или всего экрана.
+Session Replay фиксирует только определённые события. Дополнительно можно захватывать пользовательские события, которые не поддерживаются по умолчанию. Пользовательское событие можно захватить со скриншотом конкретного представления, конкретной области экрана или всего экрана целиком
 
-Все методы для захвата пользовательских событий могут выбросить ошибку TrackCustomEventError.notInMainThread при попытке захвата из потока, отличного от основного. Рекомендуется использовать конструкцию do-catch, пока всё не заработает корректно; затем её можно заменить более простым вариантом.
+Все методы захвата пользовательских событий могут выбрасывать ошибку TrackCustomEventError.notInMainThread, если попытаться захватить пользовательское событие из потока, который не является основным. Рекомендуется использовать конструкцию do-catch, пока всё не заработает как надо, а затем можно заменить её более простой версией, которая при возникновении ошибки просто не захватывает пользовательское событие
 
 ```
 do {
-    try AgentManager.trackCustomEvent(name: "my_event_name", view: nil)
+
+
+
+try AgentManager.trackCustomEvent(name: "my_event_name", view: nil)
+
+
+
 } catch {
-    print(error)
+
+
+
+print(error)
+
+
+
 }
 ```
 
 ### Конкретное представление
 
-Захват пользовательского события со скриншотом конкретного представления:
+Захват пользовательского события со скриншотом конкретного представления
 
 ```
 try? AgentManager.trackCustomEvent(name: "my_view_name", view: myView)
@@ -210,7 +244,7 @@ try? AgentManager.trackCustomEvent(name: "my_view_name", view: myView)
 
 ### Конкретная область экрана
 
-Захват пользовательского события со скриншотом конкретной области экрана:
+Захват пользовательского события со скриншотом конкретной области экрана
 
 ```
 try? AgentManager.trackCustomEvent(name: "my_view_name", frame: anyFrame)
@@ -218,15 +252,15 @@ try? AgentManager.trackCustomEvent(name: "my_view_name", frame: anyFrame)
 
 ### Весь экран
 
-Захват пользовательского события со скриншотом всего экрана:
+Захват пользовательского события со скриншотом всего экрана
 
 ```
 try? AgentManager.trackCustomEvent(name: "my_view_name")
 ```
 
-## Изменение режима передачи на Wi-Fi для изображений
+## Изменение режима передачи изображений на Wi-Fi
 
-По умолчанию все данные — информация о захваченных событиях и изображениях — отправляются через любое соединение. Однако вы можете настроить передачу изображений только при подключении к Wi-Fi для экономии мобильного трафика пользователей.
+По умолчанию все данные, информация о захваченных событиях и изображения, отправляются по любому соединению. Однако можно настроить передачу изображений только при подключении пользователей к Wi-Fi, чтобы сэкономить их мобильный трафик
 
 ```
 AgentManager.setTransmissionMode(.wifi) // .data by default
@@ -234,35 +268,35 @@ AgentManager.setTransmissionMode(.wifi) // .data by default
 
 ## Отладчик скриншотов
 
-Отладчик скриншотов Session Replay позволяет видеть момент создания скриншотов, какие части экрана захватываются и какие данные (текстовые поля, изображения, метки, веб-представления и переключатели) маскируются.
+Отладчик скриншотов Session Replay позволяет видеть, когда делаются скриншоты, какие части экрана захватываются и какие данные, текстовые поля, изображения, надписи, веб-представления и переключатели, маскируются
 
-Вы можете использовать отладчик скриншотов Session Replay при запуске мобильного приложения в симуляторе, не дожидаясь закрытия сессии и её загрузки в Dynatrace.
+Отладчик скриншотов Session Replay можно использовать при запуске мобильного приложения в симуляторе, поэтому не нужно ждать, пока сессия закроется и загрузится в Dynatrace.
 
-![Отладчик скриншотов](https://dt-cdn.net/images/session-replay-screenshot-debugger-25-62c2c0bcf4.gif)
-
-Отладчик скриншотов
-
-После включения отладчика скриншотов Session Replay вы можете видеть соответствующие ключи в вашем проекте. Обратите внимание, что эти ключи не передаются в код приложения при release или archive-сборках, поэтому они никогда не включаются в production-код. Эти ключи используются только для debug-запусков.
-
-![Отладчик скриншотов](https://dt-cdn.net/images/xcode-936-179db4b123.webp)
+![Screenshot debugger](https://dt-cdn.net/images/session-replay-screenshot-debugger-25-62c2c0bcf4.gif)
 
 Отладчик скриншотов
 
-Для включения отладчика скриншотов Session Replay:
+После включения отладчика скриншотов Session Replay в проекте появляются соответствующие ключи. Обрати внимание, что эти ключи не отправляются в код приложения для релизных или архивных сборок, поэтому они никогда не попадают в продакшн-код. Эти ключи используются только для отладочных запусков.
 
-1. В Xcode выберите **Edit Scheme** в меню Scheme для изменения схемы приложения.
-2. В настройках схемы приложения выберите действие **Run**, затем перейдите на вкладку **Arguments**.
-3. В разделе Environment Variables добавьте один или оба из следующих ключей:
+![Screenshot debugger](https://dt-cdn.net/images/xcode-936-179db4b123.webp)
 
-   * **DTXDebugMasking**. Этот ключ показывает скриншоты, сделанные Session Replay, включая маскированный контент и элементы управления. Для каждого захваченного скриншота отображается краткая вспышка.
-   * **DTXDebugFrameHighlight**. Этот ключ выделяет захваченную часть экрана красной рамкой, чтобы вы точно знали, какая область захватывается.
+Отладчик скриншотов
+
+Чтобы включить отладчик скриншотов Session Replay:
+
+1. В Xcode выбрать **Edit Scheme** в меню Scheme, чтобы изменить схему приложения
+2. В настройках схемы приложения выбрать действие **Run**, затем перейти на вкладку **Arguments**
+3. В разделе Environment Variables добавить один или оба следующих ключа
+
+   * **DTXDebugMasking**. Этот ключ показывает скриншоты, сделанные Session Replay, включая замаскированное содержимое и элементы управления интерфейсом. При каждом захвате скриншота отображается кратковременная вспышка
+   * **DTXDebugFrameHighlight**. Этот ключ выделяет захваченную часть экрана красной рамкой, чтобы точно знать, какая часть экрана захватывается
 
 ## Устранение неполадок
 
-* [Сессии пользователей не записываются вообще](https://dt-url.net/yw438pl)
-* [Сессии пользователей записываются, но Session Replay недоступен](https://dt-url.net/74638c2)
+* [Пользовательские сессии вообще не записываются﻿](https://dt-url.net/yw438pl)
+* [Пользовательские сессии записываются, но Session Replay недоступен﻿](https://dt-url.net/74638c2)
 
-## Связанные темы
+## Похожие темы
 
-* [Session Replay](/managed/observe/digital-experience/session-replay "Узнайте, как использовать Session Replay для лучшего понимания и устранения ошибок, с которыми сталкиваются клиенты.")
-* [Просмотр отчётов о сбоях для мобильных приложений](/managed/observe/digital-experience/mobile-applications/analyze-and-use/crash-reports-mobile "Проверьте последние отчёты о сбоях для ваших мобильных приложений.")
+* [Session Replay](/managed/observe/digital-experience/session-replay "Learn how you can use Session Replay to better understand and troubleshoot errors experienced by your customers.")
+* [Просмотр отчётов о сбоях мобильных приложений в RUM Classic](/managed/observe/digital-experience/rum-classic/mobile-applications/analyze-and-use/crash-reports-mobile "Check the latest crash reports for your mobile applications.")

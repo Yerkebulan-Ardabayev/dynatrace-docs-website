@@ -1,21 +1,20 @@
 ---
 title: Персональные данные, собираемые Dynatrace
 source: https://docs.dynatrace.com/managed/manage/data-privacy-and-security/data-privacy/personal-data-captured-by-dynatrace
-scraped: 2026-05-12T11:08:58.556166
 ---
 
 # Персональные данные, собираемые Dynatrace
 
 # Персональные данные, собираемые Dynatrace
 
-* Чтение 12 мин
-* Updated on Mar 05, 2026
+* 12 мин чтения
+* Обновлено 05 марта 2026
 
-Из мониторируемых окружений Dynatrace может собирать данные конечных пользователей, потенциально включая персональную и конфиденциальную информацию о ваших конечных пользователях.
+Из отслеживаемых сред Dynatrace может собирать данные конечных пользователей, потенциально включая персональную и конфиденциальную информацию о них.
 
-На этой странице указано, где могут собираться персональные данные, и описано, как ограничить их сбор, хранение и отображение, чтобы обеспечить соответствие требованиям законодательства о конфиденциальности, включая California Consumer Privacy Act (CCPA; Калифорния, США), General Data Protection Regulation (GDPR; Европейский союз) или Lei Geral de Proteção de Dados (LGPD; Бразилия).
+На этой странице описано, где могут собираться персональные данные и как можно ограничить их сбор, хранение и отображение, чтобы соблюсти требования законодательства о конфиденциальности, включая California Consumer Privacy Act (CCPA; Калифорния, США), General Data Protection Regulation (GDPR; Европейский союз) или Lei Geral de ProteÃ§Ã£o de Dados (LGPD; Бразилия).
 
-Dynatrace маскирует данные в соответствии с [тремя уровнями защиты данных](/managed/manage/data-privacy-and-security/data-privacy/levels-of-data-protection "Узнайте, как Dynatrace защищает данные конечных пользователей, применяя ситуативные уровни защиты."): **при захвате**, **при хранении** и **при отображении**. В следующих разделах значки указывают уровень маскирования, применяемого к каждому типу данных, собираемых Dynatrace.
+Dynatrace маскирует данные согласно [трём уровням защиты данных](/managed/manage/data-privacy-and-security/data-privacy/levels-of-data-protection "Learn how Dynatrace protects end-user information by applying situation-dependent levels of protection."): **при сборе**, **при хранении** и **при отображении**. В следующих разделах значки показывают уровень маскирования, применяемого к каждому типу данных, которые собирает Dynatrace.
 
 |  |  |
 | --- | --- |
@@ -23,147 +22,147 @@ Dynatrace маскирует данные в соответствии с [тре
 | Не собирается по умолчанию | Не собирается по умолчанию |
 | Маскируется | Маскируется |
 | Не маскируется | Не маскируется |
-| Параметры маскирования настраиваемые; по умолчанию маскируется | Параметры маскирования настраиваемые; по умолчанию маскируется |
-| Параметры маскирования настраиваемые; по умолчанию не маскируется | Параметры маскирования настраиваемые; по умолчанию не маскируется |
-| Маскирование зависит от конфигурации, заданной при захвате и хранении | Маскирование зависит от конфигурации, заданной при захвате и хранении |
-| Параметры маскирования устанавливаются в соответствии с разрешениями конечного пользователя | Параметры маскирования устанавливаются в соответствии с разрешениями конечного пользователя |
+| Настройки маскирования можно сконфигурировать; по умолчанию маскируется | Настройки маскирования можно сконфигурировать; по умолчанию маскируется |
+| Настройки маскирования можно сконфигурировать; по умолчанию не маскируется | Настройки маскирования можно сконфигурировать; по умолчанию не маскируется |
+| Маскирование зависит от конфигурации, заданной при сборе и хранении | Маскирование зависит от конфигурации, заданной при сборе и хранении |
+| Настройки маскирования задаются согласно разрешению конечного пользователя | Настройки маскирования задаются согласно разрешению конечного пользователя |
 
 ## Мониторинг сервисных запросов
 
-Dynatrace собирает наиболее важные точки данных входящих запросов, а также веб-запросов конечных пользователей вашего приложения (то есть сервисных запросов). URL-адреса, IP-адреса клиентов и определённые поля HTTP-заголовков собираются автоматически.
+Dynatrace собирает наиболее важные данные входящих запросов, а также веб-запросов конечных пользователей приложения (то есть сервисных запросов). URL, IP-адреса клиентов и определённые поля HTTP-заголовков собираются автоматически.
 
-Вы можете [настроить глобальные параметры конфиденциальности](/managed/manage/data-privacy-and-security/configuration/configure-global-privacy-settings "Узнайте, как настроить маскирование конфиденциальности данных для IP-адресов, геолокации и имён действий пользователей.") для маскирования IP-адресов клиентов, URI и HTTP POST-параметров.
+Можно [настроить глобальные параметры конфиденциальности](/managed/manage/data-privacy-and-security/configuration/configure-global-privacy-settings "Learn how to set up data privacy masking for end user IP addresses, geolocations, and user action names."), чтобы маскировать IP-адреса клиентов, URI и параметры HTTP post.
 
-| Тип данных | По умолчанию | Маскирование при захвате | Маскирование при хранении | Маскирование при отображении |
+| Тип данных | По умолчанию | Маскирование при сборе | Маскирование при хранении | Маскирование при отображении |
 | --- | --- | --- | --- | --- |
-| IP-адреса клиентов[1](#fn-1-1-def) | Собирается по умолчанию | Параметры маскирования настраиваемые; по умолчанию маскируется | Параметры маскирования настраиваемые; по умолчанию маскируется | Параметры маскирования устанавливаются в соответствии с разрешениями конечного пользователя |
-| URI[2](#fn-1-2-def) | Собирается по умолчанию | Параметры маскирования настраиваемые; по умолчанию не маскируется | Параметры маскирования настраиваемые; по умолчанию не маскируется | Маскирование зависит от конфигурации, заданной при захвате и хранении |
-| HTTP-заголовки[2](#fn-1-2-def), [3](#fn-1-3-def) | Собирается по умолчанию | Не маскируется | Параметры маскирования настраиваемые; по умолчанию не маскируется | Параметры маскирования устанавливаются в соответствии с разрешениями конечного пользователя |
-| HTTP POST-параметры[2](#fn-1-2-def) | Не собирается по умолчанию | Не маскируется | Параметры маскирования настраиваемые; по умолчанию не маскируется | Параметры маскирования устанавливаются в соответствии с разрешениями конечного пользователя |
-| Параметры URL-запросов[2](#fn-1-2-def), [4](#fn-1-4-def) | Собирается по умолчанию | Параметры маскирования настраиваемые; по умолчанию не маскируется | Параметры маскирования настраиваемые; по умолчанию не маскируется | Маскирование зависит от конфигурации, заданной при захвате и хранении |
-| Сообщения об исключениях[2](#fn-1-2-def), [5](#fn-1-5-def) | Собирается по умолчанию | Параметры маскирования настраиваемые; по умолчанию не маскируется | Параметры маскирования настраиваемые; по умолчанию не маскируется | Параметры маскирования устанавливаются в соответствии с разрешениями конечного пользователя |
-| SQL-литералы[6](#fn-1-6-def) | Собирается по умолчанию | Маскируется | Маскируется | Маскируется |
-| SQL bind-переменные[7](#fn-1-7-def) | Не собирается по умолчанию | Не маскируется | Не маскируется | Параметры маскирования устанавливаются в соответствии с разрешениями конечного пользователя |
-| Аргументы/возвращаемые значения методов[8](#fn-1-8-def) | Не собирается по умолчанию | Не маскируется | Не маскируется | Параметры маскирования устанавливаются в соответствии с разрешениями конечного пользователя |
+| IP-адреса клиентов[1](#fn-1-1-def) | Собирается по умолчанию | Настройки маскирования можно сконфигурировать; по умолчанию маскируется | Настройки маскирования можно сконфигурировать; по умолчанию маскируется | Настройки маскирования задаются согласно разрешению конечного пользователя |
+| URI[2](#fn-1-2-def) | Собирается по умолчанию | Настройки маскирования можно сконфигурировать; по умолчанию не маскируется | Настройки маскирования можно сконфигурировать; по умолчанию не маскируется | Маскирование зависит от конфигурации, заданной при сборе и хранении |
+| HTTP-заголовки[2](#fn-1-2-def), [3](#fn-1-3-def) | Собирается по умолчанию | Не маскируется | Настройки маскирования можно сконфигурировать; по умолчанию не маскируется | Настройки маскирования задаются согласно разрешению конечного пользователя |
+| Параметры HTTP post[2](#fn-1-2-def) | Не собирается по умолчанию | Не маскируется | Настройки маскирования можно сконфигурировать; по умолчанию не маскируется | Настройки маскирования задаются согласно разрешению конечного пользователя |
+| Параметры запроса URL[2](#fn-1-2-def), [4](#fn-1-4-def) | Собирается по умолчанию | Настройки маскирования можно сконфигурировать; по умолчанию не маскируется | Настройки маскирования можно сконфигурировать; по умолчанию не маскируется | Маскирование зависит от конфигурации, заданной при сборе и хранении |
+| Сообщения исключений[2](#fn-1-2-def), [5](#fn-1-5-def) | Собирается по умолчанию | Настройки маскирования можно сконфигурировать; по умолчанию не маскируется | Настройки маскирования можно сконфигурировать; по умолчанию не маскируется | Настройки маскирования задаются согласно разрешению конечного пользователя |
+| Литералы SQL[6](#fn-1-6-def) | Собирается по умолчанию | Маскируется | Маскируется | Маскируется |
+| Связанные переменные SQL (bind variables)[7](#fn-1-7-def) | Не собирается по умолчанию | Не маскируется | Не маскируется | Настройки маскирования задаются согласно разрешению конечного пользователя |
+| Аргументы методов / возвращаемые значения[8](#fn-1-8-def) | Не собирается по умолчанию | Не маскируется | Не маскируется | Настройки маскирования задаются согласно разрешению конечного пользователя |
 
 1
 
-Настройте маскирование с помощью [параметра **Mask end-user IP addresses and GPS coordinates**](/managed/manage/data-privacy-and-security/configuration/configure-global-privacy-settings#mask-ip-and-gps "Узнайте, как настроить маскирование конфиденциальности данных для IP-адресов, геолокации и имён действий пользователей.") в настройках конфиденциальности данных.
+Настроить маскирование можно через опцию [**Mask end-user IP addresses and GPS coordinates**](/managed/manage/data-privacy-and-security/configuration/configure-global-privacy-settings#mask-ip-and-gps "Learn how to set up data privacy masking for end user IP addresses, geolocations, and user action names.") в параметрах конфиденциальности данных.
 
 2
 
-Настройте маскирование при захвате с помощью [параметра **OneAgent-side masking**](/managed/manage/data-privacy-and-security/configuration/configure-global-privacy-settings#oneagent-side-masking "Узнайте, как настроить маскирование конфиденциальности данных для IP-адресов, геолокации и имён действий пользователей."), а маскирование при хранении — с помощью [параметра **Mask personal data in URIs**](/managed/manage/data-privacy-and-security/configuration/configure-global-privacy-settings#mask-uris "Узнайте, как настроить маскирование конфиденциальности данных для IP-адресов, геолокации и имён действий пользователей.") в настройках конфиденциальности данных.
+Маскирование при сборе настраивается через опцию [**OneAgent-side masking**](/managed/manage/data-privacy-and-security/configuration/configure-global-privacy-settings#oneagent-side-masking "Learn how to set up data privacy masking for end user IP addresses, geolocations, and user action names."), а маскирование при хранении, через опцию [**Mask personal data in URIs**](/managed/manage/data-privacy-and-security/configuration/configure-global-privacy-settings#mask-uris "Learn how to set up data privacy masking for end user IP addresses, geolocations, and user action names.") в параметрах конфиденциальности данных.
 
 3
 
-Автоматически собираются только определённые заголовки. Другие заголовки можно собирать через [атрибуты запросов](/managed/observe/application-observability/services/request-attributes "Узнайте, что такое атрибуты запросов и как использовать их на всех уровнях представлений анализа сервисов.").
+Автоматически собираются только определённые заголовки. Остальные заголовки можно собирать через [атрибуты запроса](/managed/observe/application-observability/services/request-attributes "Understand what request attributes are and learn how to use them across all levels of all service-analysis views.").
 
 4
 
-Параметры запросов всегда маскируются при отображении и могут маскироваться также при хранении. Для явного захвата параметров настройте [атрибуты запросов](/managed/observe/application-observability/services/request-attributes "Узнайте, что такое атрибуты запросов и как использовать их на всех уровнях представлений анализа сервисов.").
+Параметры запроса всегда маскируются при отображении, а также могут маскироваться при хранении. Чтобы собирать параметры явно, настройте [атрибуты запроса](/managed/observe/application-observability/services/request-attributes "Understand what request attributes are and learn how to use them across all levels of all service-analysis views.").
 
 5
 
-Чтобы исключить захват определённых исключений, перейдите в **Settings** > **Server-side service monitoring** > **Deep monitoring**, разверните раздел **Exclude noisy and unnecessary exceptions** и добавьте необходимые правила исключения.
+Чтобы избежать сбора определённых исключений, перейдите в **Settings** > **Server-side service monitoring** > **Deep monitoring**, разверните раздел **Exclude noisy and unnecessary exceptions** и добавьте нужные правила исключения.
 
 6
 
-Литералы, являющиеся частью предложения `WHERE` в SQL-операторе, заменяются на `*****`, например `WHERE userId = '*********'`.
+Литералы, являющиеся частью условия `WHERE` в SQL-выражении, заменяются на `*****`, например, `WHERE userId = '*********'`.
 
 7
 
-Доступность поддержки bind-переменных [зависит от вашего развёртывания и лицензии](/managed/observe/infrastructure-observability/databases/database-services-classic/support-for-sql-bind-variables#availability "Узнайте, как включить захват значений bind-переменных в Dynatrace OneAgent."). Чтобы узнать, как начать захватывать значения SQL bind-переменных, см. раздел [Поддержка SQL bind-переменных](/managed/observe/infrastructure-observability/databases/database-services-classic/support-for-sql-bind-variables "Узнайте, как включить захват значений bind-переменных в Dynatrace OneAgent."). Значения SQL bind-переменных заменяются на `*****`. Только пользователи с разрешением на просмотр конкретной сущности или зоны управления могут просматривать незамаскированные значения bind-переменных в пределах этой сущности или зоны.
+Поддержка связанных переменных [зависит от развёртывания и лицензии](/managed/observe/infrastructure-observability/database-services-classic/support-for-sql-bind-variables#availability "Learn how you can enable Dynatrace OneAgent to capture the values of bind variables."). Подробнее о том, как начать собирать значения связанных переменных SQL, см. [Support for SQL bind variables](/managed/observe/infrastructure-observability/database-services-classic/support-for-sql-bind-variables "Learn how you can enable Dynatrace OneAgent to capture the values of bind variables."). Значения связанных переменных SQL заменяются на `*****`. Просматривать немаскированные значения связанных переменных в рамках сущности или зоны управления могут только пользователи, имеющие право просматривать эту сущность или зону управления.
 
 8
 
-Настройте через [атрибуты запросов](/managed/observe/application-observability/services/request-attributes "Узнайте, что такое атрибуты запросов и как использовать их на всех уровнях представлений анализа сервисов.").
+Настраивается через [атрибуты запроса](/managed/observe/application-observability/services/request-attributes "Understand what request attributes are and learn how to use them across all levels of all service-analysis views.").
 
-## Атрибуты OpenTelemetry для распределённых трасс
+## Атрибуты OpenTelemetry для распределённой трассировки
 
-Dynatrace автоматически собирает все [атрибуты](/managed/ingest-from/opentelemetry#attribute "Узнайте, как интегрировать и принимать данные OpenTelemetry (трассы, метрики и логи) в Dynatrace.") OpenTracing и OpenTelemetry, но хранит только те из них, которые не заблокированы. См. раздел [Включение OpenTelemetry Span Sensor для OneAgent](/managed/ingest-from/dynatrace-oneagent/oneagent-and-opentelemetry/configuration "Узнайте, как включить и настроить OneAgent Span Sensor для данных OpenTelemetry.").
+Dynatrace автоматически собирает все [атрибуты](/managed/ingest-from/opentelemetry#attribute "Learn how to integrate and ingest OpenTelemetry data (traces, metrics, and logs) into Dynatrace.") OpenTracing и OpenTelemetry, но сохраняет только те атрибуты, которые не заблокированы. См. [Enable the OpenTelemetry Span Sensor for OneAgent](/managed/ingest-from/dynatrace-oneagent/oneagent-and-opentelemetry/configuration "Learn how to enable and configure the OneAgent Span Sensor for OpenTelemetry data.").
 
-| Тип данных | По умолчанию | Маскирование при захвате | Маскирование при хранении | Маскирование при отображении |
+| Тип данных | По умолчанию | Маскирование при сборе | Маскирование при хранении | Маскирование при отображении |
 | --- | --- | --- | --- | --- |
-| Незаблокированные атрибуты | Собирается по умолчанию | Не маскируется | Не маскируется | Параметры маскирования устанавливаются в соответствии с разрешениями конечного пользователя |
+| Незаблокированные атрибуты | Собирается по умолчанию | Не маскируется | Не маскируется | Настройки маскирования задаются согласно разрешению конечного пользователя |
 
 ## Real User Monitoring (RUM)
 
-С помощью [Dynatrace Real User Monitoring](/managed/observe/digital-experience/rum-concepts/rum-overview "Узнайте о Real User Monitoring, ключевых показателях производительности, мониторинге мобильных приложений и многом другом.") вы можете лучше понять своих клиентов, получая анализ производительности в режиме реального времени. Это включает все выполненные действия пользователей и их влияние на производительность.
+С помощью [Dynatrace Real User Monitoring](/managed/observe/digital-experience/rum-classic/rum-concepts/rum-overview "Learn about Real User Monitoring Classic, key performance metrics, mobile app monitoring, and more.") можно лучше понимать своих клиентов, получая доступ к анализу производительности в реальном времени. Сюда входят все выполненные пользовательские действия и то, как они влияют на производительность.
 
-Чтобы обеспечить анализ производительности по географическим регионам, Dynatrace собирает IP-адреса и GPS-координаты, которые по умолчанию маскируются. Для маскирования действий пользователей и URI [настройте глобальные параметры конфиденциальности](/managed/manage/data-privacy-and-security/configuration/configure-global-privacy-settings "Узнайте, как настроить маскирование конфиденциальности данных для IP-адресов, геолокации и имён действий пользователей."). Dynatrace также может обнаруживать возвращающихся пользователей, сохраняя случайно сгенерированный идентификатор (пользовательский тег) в браузере или на устройстве каждого пользователя; такая разметка пользователей не включена по умолчанию.
+Чтобы обеспечить анализ производительности на основе географических регионов, Dynatrace собирает IP-адреса и GPS-координаты, которые по умолчанию маскируются. Чтобы маскировать пользовательские действия и URI, [настройте глобальные параметры конфиденциальности](/managed/manage/data-privacy-and-security/configuration/configure-global-privacy-settings "Learn how to set up data privacy masking for end user IP addresses, geolocations, and user action names."). Dynatrace также может определять возвращающихся пользователей, сохраняя случайно сгенерированный ID (тег пользователя) в браузере или на устройстве каждого пользователя; такой тип тегирования пользователей по умолчанию не включён.
 
-| Тип данных | По умолчанию | Маскирование при захвате | Маскирование при хранении | Маскирование при отображении |
+| Тип данных | По умолчанию | Маскирование при сборе | Маскирование при хранении | Маскирование при отображении |
 | --- | --- | --- | --- | --- |
-| [Действия пользователей](/managed/observe/digital-experience/rum-concepts/user-actions "Узнайте, что такое действия пользователей и как они помогают понять, что пользователи делают с вашим приложением.")[1](#fn-2-1-def) | Собирается по умолчанию | Параметры маскирования настраиваемые; по умолчанию не маскируется | Маскирование зависит от конфигурации, заданной при захвате и хранении | Маскирование зависит от конфигурации, заданной при захвате и хранении |
-| [IP-адреса и GPS-координаты](/managed/observe/digital-experience/rum-concepts/detection-of-ip-addresses-locations-and-user-agents "Dynatrace обнаруживает IP-адреса и геолокации, такие как город, регион и страна, а также браузеры, устройства и операционные системы.")[2](#fn-2-2-def), [3](#fn-2-3-def) | Собирается по умолчанию[4](#fn-2-4-def) | Параметры маскирования настраиваемые; по умолчанию маскируется | Параметры маскирования настраиваемые; по умолчанию маскируется | Маскирование зависит от конфигурации, заданной при захвате и хранении |
-| URI[3](#fn-2-3-def), [5](#fn-2-5-def) | Собирается по умолчанию | Не маскируется | Параметры маскирования настраиваемые; по умолчанию не маскируется | Маскирование зависит от конфигурации, заданной при захвате и хранении |
-| [Пользовательские теги](/managed/observe/digital-experience/rum-concepts/user-and-error-events#user-tagging "Узнайте о событиях пользователей и ошибках и типах событий, собираемых Dynatrace.")[6](#fn-2-6-def) | Не собирается по умолчанию | Маскируется | Маскирование зависит от конфигурации, заданной при захвате и хранении | Маскирование зависит от конфигурации, заданной при захвате и хранении |
-| Свойства сессий и действий[7](#fn-2-7-def) | Не собирается по умолчанию | Маскируется | Маскирование зависит от конфигурации, заданной при захвате и хранении | Маскирование зависит от конфигурации, заданной при захвате и хранении |
+| [Пользовательские действия](/managed/observe/digital-experience/rum-classic/rum-concepts/user-actions "Learn what user actions are and how they help you understand what users do with your application.")[1](#fn-2-1-def) | Собираются по умолчанию | Настройки маскирования можно настроить; по умолчанию не маскируются | Маскирование зависит от конфигурации, заданной при сборе и хранении | Маскирование зависит от конфигурации, заданной при сборе и хранении |
+| [IP-адреса и GPS-координаты](/managed/observe/digital-experience/rum-classic/rum-concepts/detection-of-ip-addresses-locations-and-user-agents "Dynatrace detects IP addresses and geolocations like a city, region, and country as well as browsers, devices, and operating systems.")[2](#fn-2-2-def), [3](#fn-2-3-def) | Собираются по умолчанию[4](#fn-2-4-def) | Настройки маскирования можно настроить; по умолчанию маскируются | Настройки маскирования можно настроить; по умолчанию маскируются | Маскирование зависит от конфигурации, заданной при сборе и хранении |
+| URI[3](#fn-2-3-def), [5](#fn-2-5-def) | Собираются по умолчанию | Не маскируются | Настройки маскирования можно настроить; по умолчанию не маскируются | Маскирование зависит от конфигурации, заданной при сборе и хранении |
+| [Теги пользователей](/managed/observe/digital-experience/rum-classic/rum-concepts/user-and-error-events#user-tagging "Learn about user and error events and the types of user and error events captured by Dynatrace.")[6](#fn-2-6-def) | По умолчанию не собираются | Маскируются | Маскирование зависит от конфигурации, заданной при сборе и хранении | Маскирование зависит от конфигурации, заданной при сборе и хранении |
+| Свойства сессии и действия[7](#fn-2-7-def) | По умолчанию не собираются | Маскируются | Маскирование зависит от конфигурации, заданной при сборе и хранении | Маскирование зависит от конфигурации, заданной при сборе и хранении |
 
 1
 
-Действия пользователей содержат имя, набор временных меток и [метаданные](/managed/observe/digital-experience/web-applications/initial-setup/create-custom-names-for-user-actions#add-and-use-placeholders "Настройте автоматически генерируемые имена действий пользователей для ваших веб-приложений.").  
-Веб-приложения: настройте маскирование с помощью [параметра **Mask user actions (web applications only)**](/managed/manage/data-privacy-and-security/configuration/configure-global-privacy-settings#mask-user-actions "Узнайте, как настроить маскирование конфиденциальности данных для IP-адресов, геолокации и имён действий пользователей.") в настройках конфиденциальности данных. Вы также можете [создавать пользовательские имена действий пользователей](/managed/observe/digital-experience/web-applications/initial-setup/create-custom-names-for-user-actions "Настройте автоматически генерируемые имена действий пользователей для ваших веб-приложений.").  
-Мобильные приложения: настройте маскирование с помощью специального [свойства маскирования](/managed/observe/digital-experience/mobile-applications/additional-configuration/configure-rum-privacy-mobile#user-action-masking "Воспользуйтесь параметрами конфиденциальности Dynatrace для обеспечения соответствия ваших мобильных приложений требованиям по защите данных.") или задайте правила именования и извлечения действий (настройки мобильного приложения > **Naming rules**).
+Пользовательские действия содержат имя, набор временных характеристик и [метаданные](/managed/observe/digital-experience/rum-classic/web-applications/initial-setup/create-custom-names-for-user-actions#add-and-use-placeholders "Customize automatically generated user action names for your web applications.").  
+Веб-приложения Настройте маскирование через опцию [**Mask user actions (web applications only)**](/managed/manage/data-privacy-and-security/configuration/configure-global-privacy-settings#mask-user-actions "Learn how to set up data privacy masking for end user IP addresses, geolocations, and user action names.") в настройках конфиденциальности данных. Также можно [создавать пользовательские имена пользовательских действий](/managed/observe/digital-experience/rum-classic/web-applications/initial-setup/create-custom-names-for-user-actions "Customize automatically generated user action names for your web applications.").  
+Мобильные приложения Настройте маскирование через специальное [свойство маскирования](/managed/observe/digital-experience/rum-classic/mobile-applications/additional-configuration/configure-rum-privacy-mobile#user-action-masking "Leverage privacy settings that Dynatrace provides to ensure that your mobile apps comply with the data-privacy regulations of your region.") или задайте правила именования и извлечения действий (настройки мобильного приложения > **Naming rules**).
 
 2
 
-Настройте маскирование с помощью [параметра **Mask end-user IP addresses and GPS coordinates**](/managed/manage/data-privacy-and-security/configuration/configure-global-privacy-settings#mask-ip-and-gps "Узнайте, как настроить маскирование конфиденциальности данных для IP-адресов, геолокации и имён действий пользователей.") в настройках конфиденциальности данных.
+Настройте маскирование через опцию [**Mask end-user IP addresses and GPS coordinates**](/managed/manage/data-privacy-and-security/configuration/configure-global-privacy-settings#mask-ip-and-gps "Learn how to set up data privacy masking for end user IP addresses, geolocations, and user action names.") в настройках конфиденциальности данных.
 
 3
 
-Dynatrace ищет персональные данные, такие как IP-адреса, UUID, номера платёжных карт, адреса электронной почты и другие идентифицируемые идентификаторы. Однако могут существовать другие персональные данные или отдельные символы, которые Dynatrace не в состоянии обнаружить автоматически. Для маскирования URL при отображении используйте [пользовательские имена действий пользователей](/managed/observe/digital-experience/web-applications/initial-setup/create-custom-names-for-user-actions "Настройте автоматически генерируемые имена действий пользователей для ваших веб-приложений."), группировку ресурсов и именование.
+Dynatrace ищет персональные данные, такие как IP-адреса, UUID, номера платёжных карт, адреса электронной почты и другие идентифицируемые ID. Однако могут существовать другие персональные данные или отдельные символы, которые Dynatrace не может определить автоматически. Чтобы маскировать URL при отображении, используйте [пользовательские имена для пользовательских действий](/managed/observe/digital-experience/rum-classic/web-applications/initial-setup/create-custom-names-for-user-actions "Customize automatically generated user action names for your web applications."), группировку и именование ресурсов.
 
 4
 
-По умолчанию [захват местоположения](/managed/observe/digital-experience/mobile-applications/instrument-ios-app/instrumentation/ios-auto-instrumentation-features#location "Изучите список функций, доступных после инструментирования приложения с помощью OneAgent.") отключён для мобильных приложений.
+По умолчанию [сбор данных о местоположении](/managed/observe/digital-experience/rum-classic/mobile-applications/instrument-ios-app/instrumentation/ios-auto-instrumentation-features#location "Explore the list of features that are available after you instrument your application with OneAgent.") для мобильных приложений отключён.
 
 5
 
-Настройте маскирование с помощью [параметра **Mask personal data in URIs**](/managed/manage/data-privacy-and-security/configuration/configure-global-privacy-settings#mask-uris "Узнайте, как настроить маскирование конфиденциальности данных для IP-адресов, геолокации и имён действий пользователей.") в настройках конфиденциальности данных.
+Настройте маскирование через опцию [**Mask personal data in URIs**](/managed/manage/data-privacy-and-security/configuration/configure-global-privacy-settings#mask-uris "Learn how to set up data privacy masking for end user IP addresses, geolocations, and user action names.") в настройках конфиденциальности данных.
 
 6
 
-Веб-приложения: [настройте разметку пользователей](/managed/observe/digital-experience/web-applications/additional-configuration/identify-individual-users-for-session-analysis "Добавляйте теги отдельным пользователям через JavaScript API для анализа сессий.") с помощью JavaScript API или метаданных страниц вашего приложения.  
-Мобильные приложения: используйте вариант метода «разметки пользователей» для добавления пользовательского тега к сессии; дополнительные сведения см. в [соответствующей документации](/managed/observe/digital-experience/rum-concepts/user-and-error-events#user-tagging "Узнайте о событиях пользователей и ошибках и типах событий, собираемых Dynatrace.").
+Веб-приложения Можно [настроить тегирование пользователей](/managed/observe/digital-experience/rum-classic/web-applications/additional-configuration/identify-individual-users-for-session-analysis "Tag individual users via the JavaScript API for session analysis.") с помощью либо RUM JavaScript API, либо метаданных страницы приложения.  
+Мобильные приложения Используйте вариант метода "тегирования пользователей" для добавления тега пользователя к сессии; подробнее см. [соответствующую документацию](/managed/observe/digital-experience/rum-classic/rum-concepts/user-and-error-events#user-tagging "Learn about user and error events and the types of user and error events captured by Dynatrace.").
 
 7
 
-Свойства сессий и действий для [веб-](/managed/observe/digital-experience/web-applications/additional-configuration/define-user-action-and-session-properties "Определите пользовательские строковые, числовые свойства и свойства дат для ваших мониторируемых веб-приложений."), [мобильных](/managed/observe/digital-experience/mobile-applications/additional-configuration/define-mobile-action-and-session-properties "Отправляйте метаданные в Dynatrace и определяйте свойства действий и сессий для ваших мониторируемых мобильных приложений.") и [пользовательских приложений](/managed/observe/digital-experience/custom-applications/additional-configuration/define-custom-action-and-session-properties "Отправляйте метаданные в Dynatrace и определяйте свойства действий и сессий для ваших мониторируемых пользовательских приложений.") должны быть явно определены и содержат данные из выбранных базовых источников данных.
+Свойства сессии и действия для [веб](/managed/observe/digital-experience/rum-classic/web-applications/additional-configuration/define-user-action-and-session-properties "Define custom string, numeric, and date properties for your monitored web applications."), [мобильных](/managed/observe/digital-experience/rum-classic/mobile-applications/additional-configuration/define-mobile-action-and-session-properties "Send metadata to Dynatrace and define action and session properties for your monitored mobile applications.") и [пользовательских приложений](/managed/observe/digital-experience/rum-classic/custom-applications/additional-configuration/define-custom-action-and-session-properties "Send metadata to Dynatrace and define action and session properties for your monitored custom applications.") должны быть явно определены и содержат то, чем их снабдили выбранные базовые источники данных.
 
-Вы также можете использовать следующие параметры для управления захватом персональных данных при включённом RUM для ваших приложений.
+Также можно использовать следующие настройки для контроля того, как собираются персональные данные при включённом RUM для приложений.
 
-* [Режим opt-in](/managed/manage/data-privacy-and-security/configuration/configure-global-privacy-settings#user-opt-in-mode-gdpr "Узнайте, как настроить маскирование конфиденциальности данных для IP-адресов, геолокации и имён действий пользователей.")
-* [Do Not Track](/managed/manage/data-privacy-and-security/configuration/configure-global-privacy-settings#do-not-track-gdpr "Узнайте, как настроить маскирование конфиденциальности данных для IP-адресов, геолокации и имён действий пользователей.")
-* [Отслеживание пользователей](/managed/manage/data-privacy-and-security/configuration/configure-global-privacy-settings#user-tracking "Узнайте, как настроить маскирование конфиденциальности данных для IP-адресов, геолокации и имён действий пользователей.")
+* [Режим Opt-in](/managed/manage/data-privacy-and-security/configuration/configure-global-privacy-settings#user-opt-in-mode-gdpr "Learn how to set up data privacy masking for end user IP addresses, geolocations, and user action names.")
+* [Do Not Track](/managed/manage/data-privacy-and-security/configuration/configure-global-privacy-settings#do-not-track-gdpr "Learn how to set up data privacy masking for end user IP addresses, geolocations, and user action names.")
+* [Отслеживание пользователей](/managed/manage/data-privacy-and-security/configuration/configure-global-privacy-settings#user-tracking "Learn how to set up data privacy masking for end user IP addresses, geolocations, and user action names.")
 
 ## Log Monitoring
 
-Log Monitoring — дополнительная функция, включённая по умолчанию. Она позволяет напрямую обращаться к содержимому логов всех критически важных процессов вашей системы, искать конкретные сообщения логов и централизованно хранить все логи.
+Log Monitoring, это опциональная функция, которая по умолчанию включена. С её помощью можно напрямую получать доступ к содержимому логов всех критически важных процессов системы, искать конкретные сообщения логов и хранить все логи централизованно.
 
-Файлы логов могут содержать имена пользователей, адреса электронной почты, параметры URL и другую информацию, которую вы, возможно, не хотите раскрывать. По умолчанию ничего не маскируется, но Log Monitoring предоставляет возможность [маскировать конфиденциальную информацию](/managed/upgrade/unavailable-in-managed "Данная функция недоступна в Dynatrace Managed.") в логах. Вы определяете правила маскирования, так что любые данные могут быть заменены SHA-1-хешем или фиксированной фразой, например `*****`, `#######`, `MASKED` или `Фамилия`.
+Файлы логов могут содержать имена пользователей, адреса электронной почты, параметры URL и другую информацию, которую нежелательно раскрывать. По умолчанию ничего не маскируется, но Log Monitoring предлагает возможность [маскировать конфиденциальную информацию](/managed/upgrade/unavailable-in-managed "Your selection is unavailable in Dynatrace Managed.") в логах. Правила маскирования задаются самостоятельно, поэтому любые данные можно заменить на SHA-1-хеш или фиксированную фразу, например, `*****`, `#######`, `MASKED` или `Last name`.
 
 | Тип данных | Маскирование при обработке логов Dynatrace | Маскирование при конфигурации OneAgent |
 | --- | --- | --- |
-| Содержимое файла лога | Параметры маскирования настраиваемые; по умолчанию не маскируется | Параметры маскирования настраиваемые; по умолчанию не маскируется |
+| Содержимое файла логов | Настройки маскирования можно настроить; по умолчанию не маскируется | Настройки маскирования можно настроить; по умолчанию не маскируется |
 
 ## Session Replay
 
-Session Replay — дополнительная функция, отключённая по умолчанию. Вы можете включить [Session Replay](/managed/observe/digital-experience/session-replay "Узнайте, как использовать Session Replay для лучшего понимания и устранения ошибок, с которыми сталкиваются ваши клиенты."), чтобы записывать и визуально воспроизводить полные цифровые взаимодействия пользователей с вашим приложением.
+Session Replay, это опциональная функция, которая по умолчанию отключена. Можно включить [Session Replay](/managed/observe/digital-experience/session-replay "Learn how you can use Session Replay to better understand and troubleshoot errors experienced by your customers."), чтобы фиксировать и визуально воспроизводить полные цифровые взаимодействия пользователей с приложением.
 
-* Для веб-приложений Session Replay записывает весь исходный HTML-код и мутации, вызванные взаимодействиями пользователей. Также записываются все взаимодействия пользователей через поля форм, атрибуты, содержимое и действия, такие как движения мыши и прокрутка.
-* Для мобильных приложений Session Replay доступен только для сессий, завершившихся сбоем. Чтобы визуально воспроизвести опыт конечного пользователя с вашим приложением до сбоя, Session Replay записывает снимки экрана и события из мониторируемого приложения.
+* Для веб-приложений Session Replay фиксирует весь исходный код HTML и мутации, возникающие в результате действий пользователя. Также фиксируются все пользовательские взаимодействия, полученные через поля форм, атрибуты, контент и такие действия, как движение мыши и прокрутка.
+* Для мобильных приложений Session Replay доступен только для тех сессий, которые заканчиваются сбоем. Чтобы визуально воссоздать опыт конечного пользователя с приложением перед сбоем, Session Replay фиксирует скриншоты и события из отслеживаемого приложения.
 
 | Тип данных | Маскирование при захвате | Маскирование при хранении | Маскирование при отображении |
 | --- | --- | --- | --- |
-| Поля паролей форм | Маскируется | Маскируется | Маскируется |
-| Ввод пользователя[1](#fn-3-1-def)  Текст[1](#fn-3-1-def)  Изображения[1](#fn-3-1-def), [2](#fn-3-2-def)  Атрибуты[1](#fn-3-1-def) | Параметры маскирования настраиваемые; по умолчанию маскируется | Маскирование зависит от конфигурации, заданной при захвате и хранении | Маскирование зависит от конфигурации, заданной при захвате и хранении |
-| Взаимодействия[3](#fn-3-3-def) | Параметры маскирования настраиваемые; по умолчанию не маскируется | Маскирование зависит от конфигурации, заданной при захвате и хранении | Маскирование зависит от конфигурации, заданной при захвате и хранении |
+| Поля форм с паролями | Маскируются | Маскируются | Маскируются |
+| Пользовательский ввод[1](#fn-3-1-def)  Текст[1](#fn-3-1-def)  Изображения[1](#fn-3-1-def), [2](#fn-3-2-def)  Атрибуты[1](#fn-3-1-def) | Настройки маскирования можно конфигурировать; по умолчанию маскируются | Маскирование зависит от конфигурации, заданной при захвате и хранении | Маскирование зависит от конфигурации, заданной при захвате и хранении |
+| Взаимодействия[3](#fn-3-3-def) | Настройки маскирования можно конфигурировать; по умолчанию не маскируются | Маскирование зависит от конфигурации, заданной при захвате и хранении | Маскирование зависит от конфигурации, заданной при захвате и хранении |
 
 1
 
-Веб-приложения: настройте в [параметрах маскирования приложения](/managed/observe/digital-experience/session-replay/configure-session-replay-web#mask-data-via-ui "Настройте параметры мониторинга и конфиденциальности данных для Session Replay.") или добавив атрибут [`data-dtrum-mask`](/managed/observe/digital-experience/session-replay/configure-session-replay-web#mask-data-via-code "Настройте параметры мониторинга и конфиденциальности данных для Session Replay.") к нужному элементу в коде приложения. Подробнее см. в разделе [Настройка Session Replay | Маскирование](/managed/observe/digital-experience/session-replay/configure-session-replay-web#sr-masking "Настройте параметры мониторинга и конфиденциальности данных для Session Replay."). Вводимые данные и текст заменяются на `***` или `000`. Заменяются только буквенно-цифровые символы; символы форматирования, такие как точки, запятые и двоеточия, не маскируются. Значения атрибутов заменяются на `***`. Изображения заменяются изображением-заполнителем.  
-Мобильные приложения: настройте в коде приложения для [iOS](/managed/observe/digital-experience/session-replay/session-replay-ios#mask-sensitive-data "Предварительные условия и процедура включения Session Replay для ваших iOS-приложений.") и [Android](/managed/observe/digital-experience/session-replay/session-replay-android#mask-sensitive-data "Настройка Session Replay для Android-приложений для отслеживания действий пользователей."). Вводимые данные и текст заменяются на `*****` в хронологии Session Replay и чёрными прямоугольниками на снимках экрана. Все символы маскируются. Изображения заменяются чёрным прямоугольником.
+Веб-приложения Настраивается в [настройках маскирования приложения](/managed/observe/digital-experience/session-replay/configure-session-replay-web#mask-data-via-ui "Configure monitoring consumption and data privacy settings for Session Replay Classic.") или добавлением атрибута [`data-dtrum-mask`](/managed/observe/digital-experience/session-replay/configure-session-replay-web#mask-data-via-code "Configure monitoring consumption and data privacy settings for Session Replay Classic.") к нужному элементу в коде приложения. Подробнее см. [Настройка Session Replay | Маскирование](/managed/observe/digital-experience/session-replay/configure-session-replay-web#sr-masking "Configure monitoring consumption and data privacy settings for Session Replay Classic."). Пользовательский ввод и текст заменяются на `***` или `000`. Заменяются только буквенно-цифровые символы, форматирующие символы, такие как точки, запятые и двоеточия, не маскируются. Значения атрибутов заменяются на `***`. Изображения заменяются на изображение-заполнитель.  
+Мобильные приложения Настраивается в коде приложения для [iOS](/managed/observe/digital-experience/session-replay/session-replay-ios#mask-sensitive-data "Prerequisites and the procedure for enabling Session Replay Classic for your iOS apps.") и [Android](/managed/observe/digital-experience/session-replay/session-replay-android#mask-sensitive-data "Set up Session Replay Classic for your Android apps to learn which actions your users perform."). Пользовательский ввод и текст заменяются на `*****` на временной шкале Session Replay и на чёрные прямоугольники на скриншотах. Маскируются все символы. Изображения заменяются на чёрный прямоугольник.
 
 2
 
@@ -171,48 +170,48 @@ Session Replay — дополнительная функция, отключён
 
 3
 
-Веб-приложения: настройте с помощью параметра **Block list** в [параметрах маскирования приложения](/managed/observe/digital-experience/session-replay/configure-session-replay-web#mask-data-via-ui "Настройте параметры мониторинга и конфиденциальности данных для Session Replay.").  
-Мобильные приложения: маскирование взаимодействий невозможно.
+Веб-приложения Настраивается с помощью опции **Block list** в [настройках маскирования приложения](/managed/observe/digital-experience/session-replay/configure-session-replay-web#mask-data-via-ui "Configure monitoring consumption and data privacy settings for Session Replay Classic.").  
+Мобильные приложения Маскирование взаимодействий невозможно.
 
-Вы также можете использовать следующие параметры для управления захватом персональных данных при включённом Session Replay для ваших веб- и мобильных приложений.
+Также можно использовать следующие настройки, чтобы управлять тем, как персональные данные захватываются при включённом Session Replay для веб- и мобильных приложений.
 
-| Тип приложения | Название параметра | Описание | По умолчанию |
+| Тип приложения | Название опции | Описание | По умолчанию |
 | --- | --- | --- | --- |
-| Веб | [Режим opt-in для Session Replay](/managed/observe/digital-experience/session-replay/configure-session-replay-web#sr-opt-in-mode "Настройте параметры мониторинга и конфиденциальности данных для Session Replay.") | Используется для записи определённой части сессии или реализации разрешения конечного пользователя на запись сессии. При включении этого режима Session Replay отключён до вызова метода [`dtrum.enableSessionReplay(ignoreCostControl: boolean)`](https://docs.dynatrace.com/javascriptapi/doc/types/dtrum.html#enablesessionreplay). | Отключено |
-| Мобильные | [Режим opt-in](/managed/observe/digital-experience/mobile-applications/additional-configuration/configure-rum-privacy-mobile#opt-in-mode-mobile "Воспользуйтесь параметрами конфиденциальности Dynatrace для обеспечения соответствия ваших мобильных приложений требованиям по защите данных."): разрешение на запись воспроизведения сбоев | Используется для реализации разрешения конечного пользователя на запись сессии. Если пользователь разрешил запись воспроизведения сбоев через Session Replay:  iOS: установите `privacyConfig.crashReplayOptedIn` в `true`/`YES`.  Android: установите `.withCrashReplayOptedIn` в `true`. | — |
-| Веб | [Исключение URL-адресов](/managed/observe/digital-experience/session-replay/configure-session-replay-web#sr-url-exclusion "Настройте параметры мониторинга и конфиденциальности данных для Session Replay.") | Используется для исключения определённых страниц из записи сессий. | — |
-| Веб | [Do Not Track](/managed/observe/digital-experience/web-applications/additional-configuration/configure-real-user-monitoring-according-to-gdpr#do-not-track-gdpr "Узнайте о параметрах конфиденциальности Dynatrace для обеспечения соответствия ваших веб-приложений требованиям по защите данных.") | Включите эту функцию, чтобы соблюдать настройку «Do Not Track», которую пользователи могут включить в своих браузерах. Если выбрать **Turn Real User Monitoring off for "Do Not Track"-enabled browsers**, Session Replay отключается при обнаружении настройки «Do Not Track» в браузерах пользователей. | Comply with 'Do Not Track' browser settings → Capture anonymous user sessions for "Do Not Track"-enabled browsers |
-| Веб и мобильные | [Разрешения пользователей](/managed/observe/digital-experience/session-replay/configure-session-replay-web#sr-permissions "Настройте параметры мониторинга и конфиденциальности данных для Session Replay.")  [Зоны управления](/managed/observe/digital-experience/session-replay/configure-session-replay-web#sr-management-zones "Настройте параметры мониторинга и конфиденциальности данных для Session Replay.") | Используйте разрешения **Replay sessions with masking** и **Replay sessions without masking** для управления доступом к записям сессий с маскированием и без него. | Разрешение **Replay sessions with masking** включено для всех пользователей |
+| Web | [Режим opt-in для Session Replay](/managed/observe/digital-experience/session-replay/configure-session-replay-web#sr-opt-in-mode "Configure monitoring consumption and data privacy settings for Session Replay Classic.") | Используется для записи определённой части сессии или для реализации разрешения конечного пользователя на запись сессии. Когда этот режим включён, Session Replay отключён до вызова метода [`dtrum.enableSessionReplay(ignoreCostControl: boolean)`﻿](https://docs.dynatrace.com/javascriptapi/doc/types/dtrum.html#enablesessionreplay). | Отключено |
+| Mobile | [Режим Opt-in](/managed/observe/digital-experience/rum-classic/mobile-applications/additional-configuration/configure-rum-privacy-mobile#opt-in-mode-mobile "Leverage privacy settings that Dynatrace provides to ensure that your mobile apps comply with the data-privacy regulations of your region."): разрешение на запись повторов сбоев | Используется для реализации разрешения конечного пользователя на запись сессии. Если пользователь разрешил записывать повторы сбоев через Session Replay при сбоях:  iOS: установить `privacyConfig.crashReplayOptedIn` в значение `true`/`YES`.  Android: установить `.withCrashReplayOptedIn` в значение `true`. Экран с запросом разрешения на запись сессии Session Replay, режим opt-in Session Replay для мобильных приложений  Session Replay, режим opt-in Session Replay для мобильных приложений | - |
+| Web | [Исключение URL](/managed/observe/digital-experience/session-replay/configure-session-replay-web#sr-url-exclusion "Configure monitoring consumption and data privacy settings for Session Replay Classic.") | Используется для исключения определённых страниц из записи сессий. | - |
+| Web | [Do Not Track](/managed/observe/digital-experience/rum-classic/web-applications/additional-configuration/configure-real-user-monitoring-according-to-gdpr#do-not-track-gdpr "Learn about the privacy settings that Dynatrace provides to ensure that your web applications comply with the data-privacy regulations of your region.") | Включить эту функцию, если нужно соблюдать настройку «Do Not Track», которую пользователи могут включить в своих браузерах.При выборе **Turn Real User Monitoring off for "Do Not Track"-enabled browsers** Session Replay отключается, когда в браузере пользователя обнаружена настройка «Do Not Track». | Соблюдать настройки браузера «Do Not Track» - фиксировать анонимные пользовательские сессии для браузеров с включённым «Do Not Track» |
+| Web  Mobile | [Разрешения пользователей](/managed/observe/digital-experience/session-replay/configure-session-replay-web#sr-permissions "Configure monitoring consumption and data privacy settings for Session Replay Classic.")  [Management zones](/managed/observe/digital-experience/session-replay/configure-session-replay-web#sr-management-zones "Configure monitoring consumption and data privacy settings for Session Replay Classic.") | Используются разрешения **Replay sessions with masking** и **Replay sessions without masking**, чтобы управлять тем, у кого есть доступ к записям сессий с маскированием и без него. | Разрешение **Replay sessions with masking** включено для всех пользователей |
 
 ## Диагностика OneAgent
 
-[Диагностика OneAgent](/managed/ingest-from/dynatrace-oneagent/oneagent-troubleshooting/oneagent-diagnostics "Узнайте, как запускать диагностику OneAgent.") — дополнительная функция, позволяющая собирать и анализировать архивы поддержки на наличие аномалий.
+[Диагностика OneAgent](/managed/ingest-from/dynatrace-oneagent/oneagent-troubleshooting/oneagent-diagnostics "Learn how to run OneAgent diagnostics"), это опциональная функция, которая позволяет собирать и анализировать архивы поддержки на предмет аномалий.
 
-Архивы поддержки создаются Dynatrace OneAgent и содержат файлы логов и конфигурации OneAgent, а также определённые данные о мониторируемых хостах и процессах, например имена процессов и идентификационные номера. Файлы логов OneAgent могут содержать персональные данные, например в составе трассировки стека.
+Архивы поддержки создаются Dynatrace OneAgent и содержат лог- и конфигурационные файлы OneAgent, а также специфические данные с отслеживаемых хостов и процессов, например имена процессов и идентификационные номера. Лог-файлы OneAgent могут содержать персональные данные, например как часть трассировки стека.
 
-Для соблюдения региональных законов о защите данных и конфиденциальности Dynatrace выполняет следующие действия:
+Для соблюдения региональных норм защиты данных и конфиденциальности Dynatrace выполняет следующее:
 
-* Маскирует некоторые персональные данные перед сохранением архива поддержки в Cassandra и его загрузкой в бакет AWS S3. Например, IBAN и учётные данные URI заменяются на `<masked>`. Однако некоторые персональные данные могут не быть замаскированы.
-* Записывает сообщения журнала аудита при создании, анализе, доступе и удалении архивов поддержки для обеспечения прозрачности их использования.
-* Предоставляет доступ к архивам поддержки OneAgent только пользователям, имеющим разрешение окружения **View sensitive request data** ([разрешения окружения](/managed/manage/identity-access-management/permission-management/role-based-permissions#environment "Разрешения на основе ролей")).
-* Автоматически удаляет все диагностические данные через 30 дней после их сбора. Этот [срок хранения данных](/managed/manage/data-privacy-and-security/data-privacy/data-retention-periods#diagnostics "Проверьте сроки хранения для различных типов данных.") настраиваемый.
+* Маскирует некоторые персональные данные перед сохранением архива поддержки в Cassandra и загрузкой его в S3-бакет AWS. Например, IBAN и учётные данные URI заменяются на `<masked>`. Однако некоторые персональные данные могут не маскироваться.
+* Записывает сообщения журнала аудита при создании, анализе, доступе и удалении архивов поддержки, чтобы обеспечить прозрачность использования архивов поддержки.
+* Предоставляет доступ к архивам поддержки OneAgent только пользователям, у которых есть [разрешение окружения](/managed/manage/identity-access-management/permission-management/role-based-permissions#environment "Role-based permissions") **View sensitive request data**.
+* Автоматически удаляет все диагностические данные через 30 дней после их сбора. Этот [период хранения данных](/managed/manage/data-privacy-and-security/data-privacy/data-retention-periods#diagnostics "Review default and configurable retention periods for service, RUM Classic, synthetic, Log Monitoring, metric, diagnostic, and security data in Dynatrace Managed.") можно настроить.
 
-  Это относится к данным в кластере Dynatrace. Вы также можете удалить собранные диагностические данные раньше.
+  Это относится к данным в кластере Dynatrace. Также можно удалить собранные диагностические данные раньше.
 
 | Тип данных | Маскирование при захвате | Маскирование при хранении | Маскирование при отображении |
 | --- | --- | --- | --- |
-| Файлы логов и конфигурации OneAgent | Не маскируется | Маскируется | Маскируется |
+| Лог- и конфигурационные файлы OneAgent | Не маскируются | Маскируются | Маскируются |
 
 ## Совместное использование логов
 
-API `shareLogsFile` позволяет делиться локально сохранёнными файлами логов через iOS sharing sheet (`UIActivityViewController`). Для этой функции требуется, чтобы флаг [`DTXWriteLogsToFile`](/managed/observe/digital-experience/mobile-applications/instrument-ios-app/customization/ios-configuration-keys#privacy-and-security "С помощью ключей конфигурации можно точно настроить автоматическое инструментирование iOS-приложений.") был установлен в `true`.
+Функция API `shareLogsFile` позволяет делиться локально сохранёнными лог-файлами через панель обмена iOS (`UIActivityViewController`). Для этой функции требуется, чтобы флаг [`DTXWriteLogsToFile`](/managed/observe/digital-experience/rum-classic/mobile-applications/instrument-ios-app/customization/ios-configuration-keys#privacy-and-security "With configuration keys, you can fine-tune the auto-instrumentation of your iOS apps.") был установлен в значение `true`.
 
-Эта функция позволяет делиться логами непосредственно с устройства без доступа к Xcode для их извлечения. Она не предназначена для использования в производственных приложениях.
+Эта функция позволяет делиться логами напрямую с устройства без необходимости доступа к Xcode для извлечения логов. Она не предназначена для использования в продуктивных приложениях.
 
-API `shareLogsFile` недоступен на tvOS.
+Функция API `shareLogsFile` недоступна на tvOS.
 
 ## Live Debugger
 
-Live Debugger — дополнительная функция. Чтобы сделать её доступной, включите [Live Debugger](/managed/upgrade/unavailable-in-managed "Данная функция недоступна в Dynatrace Managed.") на ваших OneAgents. Вы можете использовать Live Debugger для отладки сервисов и приложений в любом окружении в режиме реального времени без остановки приложений.
+Live Debugger, это опциональная функция. Чтобы сделать её доступной, включи [Live Debugger](/managed/upgrade/unavailable-in-managed "Your selection is unavailable in Dynatrace Managed.") на своих OneAgent. Live Debugger можно использовать для отладки сервисов и приложений в любом окружении в режиме реального времени без остановки приложений.
 
-Live Debugger собирает снимки состояния, которые могут включать значения переменных, обрабатываемых вашим приложением. Вы можете [определить правила маскирования](/managed/upgrade/unavailable-in-managed "Данная функция недоступна в Dynatrace Managed."), чтобы любые данные могли быть заменены SHA-1-хешем или фиксированной фразой, например `*****`, `#######`, `MASKED` или `Фамилия`. Маскирование выполняется агентом на вашем сервере, поэтому конфиденциальные данные не покидают ваш сервер или сеть.
+Live Debugger собирает снимки (snapshots), которые могут включать значения переменных, обрабатываемых приложением. Можно [задать правила маскирования](/managed/upgrade/unavailable-in-managed "Your selection is unavailable in Dynatrace Managed."), чтобы любые данные заменялись хешем SHA-1 или фиксированной фразой, например, `*****`, `#######`, `MASKED` или `Last name`. Маскирование выполняется агентом на сервере, поэтому конфиденциальные данные не покидают сервер или сеть.

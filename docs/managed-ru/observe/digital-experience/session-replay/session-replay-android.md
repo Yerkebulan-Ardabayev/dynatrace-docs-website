@@ -1,81 +1,87 @@
 ---
-title: Настройка Session Replay для Android
+title: Настройка Session Replay Classic для Android
 source: https://docs.dynatrace.com/managed/observe/digital-experience/session-replay/session-replay-android
-scraped: 2026-05-12T11:33:32.742794
 ---
 
-# Настройка Session Replay для Android
+# Настройка Session Replay Classic для Android
 
-# Настройка Session Replay для Android
+# Настройка Session Replay Classic для Android
 
-* How-to guide
-* 7-min read
-* Updated on Feb 18, 2026
+* Практическое руководство
+* 7 минут на чтение
+* Обновлено 22 июня 2026 г.
 
-На этой странице описано, как включить и настроить Session Replay для Android-приложений.
+На этой странице описано, как включить и настроить Session Replay для приложений Android.
 
-## Полный Session Replay
+## Полный Session Replay Classic
 
-[Session Replay](/managed/observe/digital-experience/session-replay "Узнайте, как использовать Session Replay для лучшего понимания и устранения ошибок, с которыми сталкиваются клиенты.") для Android позволяет захватывать взаимодействия клиентов с вашим мобильным приложением и воспроизводить каждый тап, свайп и поворот экрана в виде фильма.
+[Session Replay](/managed/observe/digital-experience/session-replay "Learn how you can use Session Replay to better understand and troubleshoot errors experienced by your customers.") на Android позволяет фиксировать взаимодействия клиентов с мобильным приложением и воспроизводить каждое касание, свайп, поворот экрана в формате, похожем на видео.
 
-## Session Replay для анализа сбоев
+## Session Replay Classic для сбоев
 
-Также вы можете использовать его для получения дополнительного контекста при анализе сбоев в виде видеозаписей, воспроизводящих действия пользователя перед обнаруженным [сбоем](/managed/observe/digital-experience/rum-concepts/user-and-error-events#crash "Узнайте о событиях пользователей и ошибках, а также о типах событий, фиксируемых Dynatrace.").
+Кроме того, его можно использовать для получения дополнительного контекста при анализе сбоев в виде видеозаписей экрана, воспроизводящих действия пользователя, предшествующие обнаруженному [сбою](/managed/observe/digital-experience/rum-classic/rum-concepts/user-and-error-events#crash "Learn about user and error events and the types of user and error events captured by Dynatrace.")
 
-## Предварительные условия
+## Предварительные требования
 
-Убедитесь, что ваша система соответствует следующим требованиям:
+Убедись, что система соответствует следующим требованиям:
 
 * Dynatrace версии 1.303
 * OneAgent для Android версии 8.303
-* Real User Monitoring включён для вашего приложения
-* Действующая лицензия Dynatrace Digital Experience Monitoring
+* Real User Monitoring включён для приложения
+* Активная лицензия Dynatrace Digital Experience Monitoring
 * URL веб-интерфейса имеет доверенный сертификат
 
 ## Поддерживаемые технологии и известные ограничения
 
-* Поддерживается Android 5.0+ (API уровня 21+).
-* Поддерживается Android Gradle plugin 7.0+.
-* Поддерживается Kotlin версии 1.9+.
-
-  + Kotlin версии 1.8 поддерживается для обеспечения совместимости с Kotlin.
+* Поддерживается Android 6.0+ (уровень API 23+).
+* Поддерживается Android Gradle plugin 8.1.1+.
+* Поддерживается Kotlin версии 2.1.0+.
 * Jetpack Compose версии 1.4+ поддерживается начиная с OneAgent для Android версии 8.325.
-* Session Replay недоступен для кроссплатформенных фреймворков, таких как Cordova, React Native, Flutter, Xamarin и других.
-* Для гибридного приложения Session Replay поддерживается только для нативной части приложения. Для браузерной части Session Replay не поддерживается.
-* Поддерживаются только библиотеки AndroidX. Такие классы, как Activity или Fragment из com.android.support, не поддерживаются.
-* Не рекомендуется использовать другие инструменты для отчётов о сбоях совместно с Dynatrace Session Replay.
-* Session Replay может захватывать только определённые события. Однако если вам нужно отслеживать конкретное представление или событие, не поддерживаемое по умолчанию, вы можете [захватить пользовательское событие](/managed/observe/digital-experience/session-replay/session-replay-android#capture-custom-events "Настройте Session Replay для Android-приложений, чтобы узнать, какие действия выполняют пользователи.").
-* Воспроизводить записанные сессии можно только в [определённых браузерах](/managed/discover-dynatrace/get-started/dynatrace-ui/dynatrace-web-ui-requirements#session-replay "Узнайте, в каких браузерах работает Dynatrace Managed.").
-* Подробнее см. [Технические ограничения Session Replay для веб-приложений](/managed/observe/digital-experience/session-replay/session-replay-restrictions-web "Узнайте об ограничениях, применяемых к Session Replay.").
+* Session Replay недоступен для кроссплатформенных фреймворков, таких как Cordova, React Native, Flutter, Xamarin и других
+* Для гибридного приложения Session Replay поддерживается только для нативной части приложения. Session Replay не поддерживается для браузерной части гибридного приложения.
+* Поддерживаются только библиотеки AndroidX support. Такие классы, как Activity или Fragment в com.android.support, не поддерживаются.
+* Рекомендуется не использовать другие инструменты отчётности о сбоях вместе с Dynatrace Session Replay.
+* Session Replay может фиксировать только определённые события. Однако если нужно отслеживать конкретное представление или событие, которое не поддерживается по умолчанию, можно [зафиксировать пользовательское событие](/managed/observe/digital-experience/session-replay/session-replay-android#capture-custom-events "Set up Session Replay Classic for your Android apps to learn which actions your users perform.").
+* Воспроизвести пользовательские сессии, записанные с помощью Session Replay, можно только в [определённых браузерах](/managed/discover-dynatrace/get-started/dynatrace-ui/dynatrace-web-ui-requirements#session-replay "Browser and TLS requirements for the Dynatrace Managed web UI, including supported browsers for Session Replay and Synthetic Monitoring.").
+* Дополнительные сведения см. в разделе [Технические ограничения Session Replay для веб-приложений](/managed/observe/digital-experience/session-replay/session-replay-restrictions-web "Learn which restrictions apply to Session Replay Classic.").
 
-Session Replay — это видеоподобная реконструкция взаимодействий пользователя с мобильным приложением, основанная на захваченных событиях и данных. Из-за такого подхода воспроизведённая сессия может отличаться от реального пользовательского опыта. Известные проблемы:
+Session Replay представляет собой видеоподобную реконструкцию взаимодействия пользователя с мобильным приложением, использующую зафиксированные события и данные. Из-за такого подхода воспроизведённая сессия может отличаться от фактического пользовательского опыта. Известные проблемы
 
-* Фрагменты с анимациями появления/исчезновения могут вызывать проблемы, особенно при коротких анимациях.
-* Кнопки с плавающим действием (floating action buttons) могут вызывать проблемы с маскированием данных.
-* Атрибут inputType в компоненте Button может привести к тому, что кнопки будут отображаться без текста при захвате.
+* Фрагменты с анимациями появления и исчезновения могут вызывать проблемы, особенно при коротких анимациях.
+* Плавающие кнопки действий (floating action buttons) могут вызывать проблемы с маскированием данных.
+* Атрибут inputType в компоненте Button может приводить к тому, что кнопки при записи отображаются без текста.
 
-## Включение Session Replay для Android
+## Включение Session Replay Classic на Android
 
-Если вы ещё не сделали этого, выполните все шаги, описанные в мастере инструментирования.
+Если это ещё не сделано, нужно выполнить все шаги, описанные в мастере инструментирования.
 
-1. Перейдите в **Mobile**.
-2. Выберите мобильное приложение, которое хотите настроить.
-3. В правом верхнем углу плитки с именем приложения выберите **More** (**...**) > **Edit**.
-4. В настройках приложения выберите **General** > **Enablement and cost control**.
-5. Включите **Enable Full Session Replay** или **Enable Session Replay on crashes**. Доступны следующие варианты:
+1. Перейти в раздел **Mobile**.
+2. Выбрать мобильное приложение, которое нужно настроить.
+3. Выбрать **More** (**…**) > **Edit** в верхнем правом углу плитки с именем приложения.
+4. В настройках приложения выбрать **General** > **Enablement and cost control**.
+5. Включить **Enable Full Session Replay** или **Enable Session Replay on crashes**. Доступны следующие варианты:
 
-   * При включении Full Mobile Session Replay на 100% будут захватываться все сессии.
-   * При включении Full Mobile Session Replay менее чем на 100% будут захватываться случайно выбранные сессии.
-   * При включении Session Replay on Crashes гарантируется, что независимо от настройки Enable Full Session Replay и значения управления стоимостью и трафиком, все сессии со сбоями будут захвачены.
-6. В настройках приложения выберите **Instrumentation wizard**, затем выберите **Android** или **iOS**.
-7. Следуйте шагам в мастере инструментирования.
+   * Включение Full Mobile Session Replay на 100%: будут зафиксированы все сессии
+   * Включение Full Mobile Session Replay на значении ниже 100%: будет зафиксирована случайно выбранная сессия
+   * Включение Session Replay on Crashes гарантирует, что независимо от настройки Enable Full Session Replay и её значения const и traffic control, все сессии со сбоем будут зафиксированы.
+6. В настройках приложения выбрать **Instrumentation wizard**, затем выбрать **Android** или **iOS**.
+7. Выполнить шаги мастера инструментирования.
 
-Для Android Gradle plugin версий 4.0 и 4.1 необходимо изменить параметр компиляции на Java 8. Это можно сделать на шаге мастера инструментирования **Apply the Dynatrace plugin and add the plugin configuration**. Добавьте следующий код в файл сборки верхнего уровня:
+Для версий Android Gradle plugin 4.0 и 4.1 нужно изменить опцию компиляции на Java 8. Это можно сделать на шаге мастера инструментирования под названием **Apply the Dynatrace plugin and add the plugin configuration**. Добавить следующий код в файл сборки верхнего уровня:
 
 ```
 compileOptions {
-    sourceCompatibility 1.8
-    targetCompatibility 1.8
+
+
+
+sourceCompatibility 1.8
+
+
+
+targetCompatibility 1.8
+
+
+
 }
 ```
 
@@ -85,159 +91,259 @@ compileOptions {
 
 ### Уровни маскирования данных
 
-Session Replay поставляется с тремя предопределёнными уровнями маскирования:
+Session Replay поставляется с тремя предустановленными уровнями маскирования:
 
-* **Safest** — все редактируемые текстовые поля, изображения, метки, веб-представления и переключатели маскируются.
-* **Safe** — все редактируемые текстовые поля маскируются.
-* **Custom** — по умолчанию маскирует те же элементы, что и **Safest**, но вы можете точно определить, какие компоненты или представления приложения должны маскироваться. Подробнее см. [Настройка пользовательского маскирования](#custom-masking).
+* **Safest**, маскируются все редактируемые текстовые поля, изображения, метки, веб-представления и переключатели.
+* **Safe**, маскируются все редактируемые текстовые поля.
+* **Custom**, по умолчанию маскирует те же элементы, что и **Safest**, но можно точно определить, какие компоненты приложения или представления должны быть маскированы. Подробности см. в разделе [Настройка пользовательского маскирования](#custom-masking).
 
 ### Изменение уровня маскирования
 
-По умолчанию OneAgent применяет уровень маскирования **Safest**. Для изменения на уровень **Safe** или **Custom** используйте API для настройки OneAgent. При выборе уровня **Custom** см. [Настройка пользовательского маскирования](#custom-masking) для получения сведений о настройке маскируемых компонентов или представлений.
+По умолчанию OneAgent применяет уровень маскирования **Safest**. Чтобы изменить его на уровень **Safe** или **Custom**, нужно использовать API для настройки OneAgent. Если выбран уровень **Custom**, подробности о том, как задать, какие компоненты приложения или представления должны быть маскированы, см. в разделе [Настройка пользовательского маскирования](#custom-masking).
 
-#### Пример 1: Изменение уровня маскирования на Safe
+#### Пример 1: изменение уровня маскирования на Safe
 
-Используйте следующий код для установки уровня маскирования Safe.
+Используй следующий код, чтобы установить уровень маскирования Safe.
 
 ```
 MaskingConfiguration config = new MaskingConfiguration.Safe();
 
+
+
 // .Safest or .Custom
+
+
 
 DynatraceSessionReplay.setConfiguration(Configuration.builder()
 
+
+
 .withMaskingConfiguration(config)
+
+
 
 .build());
 ```
 
-#### Пример 2: Изменение уровня маскирования на Custom
+#### Пример 2: изменение уровня маскирования на Custom
 
-Используйте следующий код для установки уровня маскирования Custom. Дополнительные параметры см. в [Настройка пользовательского маскирования](#custom-masking).
+Используй следующий код, чтобы установить уровень маскирования Custom. Дополнительные параметры см. в разделе [Настройка пользовательского маскирования](#custom-masking).
 
 ```
 MaskingConfiguration config = new MaskingConfiguration.Custom();
 
+
+
 // .Safest or .Safe
+
+
 
 DynatraceSessionReplay.setConfiguration(Configuration.builder()
 
+
+
 .withMaskingConfiguration(config)
+
+
 
 .build());
 ```
 
-#### Пример 3: Изменение уровня маскирования на Custom и удаление всех маскированных представлений
+#### Пример 3: изменение уровня маскирования на Custom и удаление всех маскированных представлений
 
-Используйте следующий код для установки уровня маскирования Custom и удаления всех маскированных представлений (removeAllMaskedViews). Дополнительные параметры см. в [Настройка пользовательского маскирования](#custom-masking).
+Используй следующий код, чтобы установить уровень маскирования Custom и удалить все маскированные представления (removeAllMaskedViews). Дополнительные параметры см. в разделе [Настройка пользовательского маскирования](#custom-masking).
 
 ```
 MaskingConfiguration config = new MaskingConfiguration.Custom().removeAllMaskedViews();
 
+
+
 DynatraceSessionReplay.setConfiguration(Configuration.builder()
 
+
+
 .withMaskingConfiguration(config)
+
+
 
 .build());
 ```
 
 ### Настройка пользовательского маскирования
 
-При установке [уровня маскирования данных](#masking-levels) в **Custom** вы можете использовать дополнительные методы API для определения, какие компоненты или представления должны маскироваться. Вы можете:
+Если [уровень маскирования данных](#masking-levels) установлен на **Custom**, можно использовать дополнительные методы API, чтобы определить, какие компоненты приложения или представления должны быть маскированы. Можно:
 
 * [Маскировать представления](#mask-views).
-* [Маскировать представления с использованием android:tag](#mask-views-android-tag).
-* [Маскировать представления с использованием тега маскирования](#mask-views-masking-tag).
-* [Маскировать компоненты Jetpack Compose](#mask-jc-composables).
+* [Маскировать представления с помощью android:tag](#mask-views-android-tag).
+* [Маскировать представления с помощью тега маскирования](#mask-views-masking-tag).
+* [Маскировать композиции Jetpack Compose](#mask-jc-composables).
 
 #### Маскирование представлений
 
-Вы можете включать или отключать маскирование глобально или для выбранных компонентов, таких как текстовые поля, изображения, метки, веб-представления и переключатели.
+Можно включить или отключить маскирование глобально или для выбранных компонентов, таких как текстовые поля, изображения, метки, веб-представления и переключатели.
 
 ```
-Set<Class<? extends View>> set = new HashSet<Class<? extends View>>(){{
-    add(ImageView.class);
-    add(WebView.class);
-}};
+Set<Class<? extends View>> set = new HashSet<Class<? extends View>>() {
+
+
+
+add(ImageView.class);
+
+
+
+add(WebView.class);
+
+
+
+};
+
+
 
 new MaskingConfiguration.Custom().addMaskedView(ImageView.class); // Adds one masked view
+
+
+
 new MaskingConfiguration.Custom().addMaskedViews(set); // Adds all masked views
+
+
+
 new MaskingConfiguration.Custom().removeMaskedView(ImageView.class); // Removes one masked view
+
+
+
 new MaskingConfiguration.Custom().removeAllMaskedViews(); // Removes all masked views
 ```
 
-Необходимо применить конфигурацию пользовательского маскирования, чтобы она вступила в силу. Пример кода см. в [Изменение уровня маскирования на Custom и удаление всех маскированных представлений](#change-masking-level-custom-remove-all-masked-views).
+Чтобы пользовательская конфигурация маскирования вступила в силу, её нужно применить. Пример кода см. в разделе [Изменение уровня маскирования на Custom и удаление всех маскированных представлений](#change-masking-level-custom-remove-all-masked-views).
 
-#### Маскирование представлений с использованием `android:tag`
+#### Маскирование представлений с помощью `android:tag`
 
-Вы также можете включать или отключать маскирование выбранных представлений на основе их `android:tag`.
+Можно также включить или отключить маскирование выбранных представлений на основе их `android:tag`.
 
 ```
-Set<Integer> set = new HashSet<Integer>(){{
-    add(R.id.view_id1);
-    add(R.id.view_id2);
-}};
+Set<Integer> set = new HashSet<Integer>() {
+
+
+
+add(R.id.view_id1);
+
+
+
+add(R.id.view_id2);
+
+
+
+};
+
+
 
 new MaskingConfiguration.Custom().addMaskedIds(set);
+
+
+
 new MaskingConfiguration.Custom().addNonMaskedIds(set);
+
+
+
 new MaskingConfiguration.Custom().removeMaskedIds(set);
+
+
+
 new MaskingConfiguration.Custom().removeNonMaskedIds(set);
 ```
 
-Необходимо применить конфигурацию пользовательского маскирования, чтобы она вступила в силу.
+Чтобы пользовательская конфигурация маскирования вступила в силу, её нужно применить. Пример кода см. в разделе [Изменение уровня маскирования на Custom и удаление всех маскированных представлений](#change-masking-level-custom-remove-all-masked-views).
 
-#### Маскирование представлений с использованием тега маскирования
+#### Маскирование представлений с помощью тега маскирования
 
-Вы также можете маскировать представление, добавив тег маскирования `data-dtrum-mask` в `android:tag` представления. Представление с этим тегом маскирования всегда маскируется.
+Представление также можно маскировать, добавив тег маскирования `data-dtrum-mask` в `android:tag` представления. Представление с этим тегом маскирования маскируется всегда.
 
-#### Маскирование компонентов Jetpack Compose
+#### Маскирование композиций Jetpack Compose
 
-Jetpack Compose предоставляет функцию ручного маскирования, позволяющую управлять тем, какие компоненты маскируются в Session Replay. Для маскирования компонента используйте модификатор `dtMask`.
+Jetpack Compose предоставляет функциональность ручного маскирования, которая позволяет управлять тем, какие композиции (composables) маскируются в Session Replay. Чтобы замаскировать композицию, нужно использовать модификатор `dtMask`.
 
 ```
 import com.dynatrace.agent.compose.api.dtMask
 
+
+
 @Composable
+
+
+
 fun MyScreen() {
-    Column {
-        Text(
-            text = "This text will be masked",
-            modifier = Modifier.dtMask()
-        )
-    }
+
+
+
+Column {
+
+
+
+Text(
+
+
+
+text = "This text will be masked",
+
+
+
+modifier = Modifier.dtMask()
+
+
+
+)
+
+
+
+}
+
+
+
 }
 ```
 
-## Включение журналов Session Replay
+## Включение классических журналов Session Replay
 
-Журналы Session Replay можно включить так же, как и для OneAgent. Подробнее см. [Включение журналов отладки для Dynatrace Android Gradle plugin или OneAgent SDK](/managed/observe/digital-experience/mobile-applications/instrument-android-app/debug-logging-oneagent "Активируйте журналы отладки OneAgent.").
+Логи Session Replay включаются так же, как и для OneAgent. Подробнее см. в [Enable debug logging for Dynatrace Android Gradle plugin or OneAgent SDK](/managed/observe/digital-experience/rum-classic/mobile-applications/instrument-android-app/debug-logging-oneagent "Activate the debug logs from OneAgent.").
 
 ## Захват пользовательских событий
 
-Session Replay записывает только определённые события. Однако вы можете отслеживать событие, не поддерживаемое по умолчанию.
+Session Replay записывает только определённые события. Тем не менее можно отслеживать событие, которое не поддерживается по умолчанию.
 
 ```
 DynatraceSessionReplay.trackCustomEvent("User logged")
 ```
 
-## Изменение режима передачи на Wi-Fi для изображений
+## Изменение режима передачи изображений на Wi-Fi
 
-По умолчанию все данные — информация о захваченных событиях и изображениях — отправляются через любое соединение. Однако вы можете настроить передачу изображений только при подключении к Wi-Fi для экономии мобильного трафика пользователей.
+По умолчанию все данные, информация о зафиксированных событиях и изображения, передаются через любое подключение. Однако можно настроить передачу изображений только при подключении пользователей к Wi-Fi, чтобы сэкономить их мобильный трафик.
 
 ```
 DynatraceSessionReplay.setConfiguration(
-    Configuration.builder()
-    .withDataTransmissionMode(DataTransmissionMode.NOT_METERED_NETWORK)
-    .build()
+
+
+
+Configuration.builder()
+
+
+
+.withDataTransmissionMode(DataTransmissionMode.NOT_METERED_NETWORK)
+
+
+
+.build()
+
+
+
 )
 ```
 
 ## Устранение неполадок
 
-* [Сессии пользователей не записываются вообще](https://dt-url.net/cp2385m)
-* [Сессии пользователей записываются, но Session Replay недоступен](https://dt-url.net/4m038d9)
+* [User sessions are not recorded at all﻿](https://dt-url.net/cp2385m)
+* [User sessions are recorded, but Session Replay is not available﻿](https://dt-url.net/4m038d9)
 
-## Связанные темы
+## Похожие темы
 
-* [Session Replay](/managed/observe/digital-experience/session-replay "Узнайте, как использовать Session Replay для лучшего понимания и устранения ошибок, с которыми сталкиваются клиенты.")
-* [Просмотр отчётов о сбоях для мобильных приложений](/managed/observe/digital-experience/mobile-applications/analyze-and-use/crash-reports-mobile "Проверьте последние отчёты о сбоях для ваших мобильных приложений.")
+* [Session Replay](/managed/observe/digital-experience/session-replay "Learn how you can use Session Replay to better understand and troubleshoot errors experienced by your customers.")
+* [View crash reports for mobile applications in RUM Classic](/managed/observe/digital-experience/rum-classic/mobile-applications/analyze-and-use/crash-reports-mobile "Check the latest crash reports for your mobile applications.")

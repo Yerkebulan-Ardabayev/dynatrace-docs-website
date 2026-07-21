@@ -1,78 +1,64 @@
 ---
-title: Rack-aware развёртывание Managed
+title: Развёртывание с учётом стоек
 source: https://docs.dynatrace.com/managed/managed-cluster/high-availability/rack-awareness
-scraped: 2026-05-12T11:53:27.988786
 ---
 
-# Rack-aware развёртывание Managed
+# Развёртывание с учётом стоек
 
-# Rack-aware развёртывание Managed
+# Развёртывание с учётом стоек
 
-* Updated on May 04, 2026
+* Пояснение
+* Чтение: 3 мин
+* Обновлено 07 июля 2026 г.
 
-В стандартном развёртывании Dynatrace Managed с высокой доступностью обеспечивается защита от потери данных при отказе одного узла — как в небольших, так и в крупных развёртываниях.
+Dynatrace Managed развёртывание с учётом стоек позволяет группировать узлы Managed Cluster в три домена отказа (стойки). Такое развёртывание устойчиво к отказу всех узлов одной стойки. Можно сделать один Managed Cluster с учётом стоек либо применить эту схему к каждому дата-центру в развёртывании Premium High Availability (PHA).
 
-Rack-aware развёртывание Dynatrace Managed позволяет сгруппировать узлы кластера в три домена отказов (rack'а). Такое развёртывание устойчиво к выходу из строя всех узлов в одном rack'е.
+## Как работает развёртывание с учётом стоек
 
-## Требования
+Развёртывание с учётом стоек гарантирует, что ни одна реплика не хранится избыточно внутри одной стойки: реплики распределяются по всем стойкам. Если одна стойка выходит из строя, две другие полные реплики остаются доступны, что обеспечивает согласованность и доступность данных. Например, в развёртывании ниже Managed Cluster способен выдержать отказ до трёх узлов в стойке без потери данных.
 
-Rack awareness следует использовать только при выполнении следующих условий:
+![Крупный Managed Cluster с учётом стоек без потери данных](https://cdn.bfldr.com/B686QPH3/as/ngjgbptj3nb5jm7g7pqxf23/Premium_high_availability_rack_aware_Managed_deployment_with_no_data_loss-Light_Mode?auto=webp&format=png&position=1)
 
-* Итоговое количество rack'ов равно трём, что соответствует replication factor хранилища данных Dynatrace.
-* Rack'и отражают физическое расположение узлов.
+Крупный Managed Cluster с учётом стоек без потери данных
 
-В противном случае возможна потеря данных и проблемы с доступностью кластера.
+В стандартном развёртывании Dynatrace Managed с высокой доступностью нужно как минимум три узла Managed Cluster, чтобы предотвратить потерю данных. Аналогично, в развёртываниях с учётом стоек нужно иметь три стойки (домена отказа), чтобы предотвратить потерю данных. Если стойка выходит из строя, две оставшиеся стойки сохраняют данные. Поскольку в стойке находится как минимум три узла, в развёртываниях с учётом стоек можно допустить отказ целой стойки и при этом сохранить целостность данных.
 
-## Rack-aware развёртывание
+Та же концепция применима к PHA Managed развёртываниям. Использование Managed Cluster с учётом стоек в разных дата-центрах повышает устойчивость к потере данных.
 
-Rack-aware развёртывание гарантирует, что реплики не хранятся избыточно внутри одного rack'а — они распределяются по всем rack'ам. При отказе одного rack'а оба полных реплика доступны на двух оставшихся rack'ах, обеспечивая согласованность и доступность данных. Например, в развёртывании ниже кластер Dynatrace Managed выдерживает до трёх отказов узлов в rack'е без потери данных.
+![Premium High Availability Managed развёртывание без потери данных](https://cdn.bfldr.com/B686QPH3/as/kq99pm9bftxrgfbtp3s4rg6p/Premium_high_availability_Managed_deployment_with_no_data_loss-Light_Mode?auto=webp&format=png&position=1)
 
-![Крупный rack-aware кластер Managed без потери данных](https://dt-cdn.net/images/3l-ra-man-cluster-no-data-loss-4eb930ca7f.svg "Крупный rack-aware кластер Managed без потери данных")
+Premium High Availability Managed развёртывание без потери данных
 
-Крупный rack-aware кластер Managed без потери данных
+![Premium High Availability Managed развёртывание с учётом стоек без потери данных](https://cdn.bfldr.com/B686QPH3/as/ngjgbptj3nb5jm7g7pqxf23/Premium_high_availability_rack_aware_Managed_deployment_with_no_data_loss-Light_Mode?auto=webp&format=png&position=1)
 
-В стандартном развёртывании Dynatrace Managed с высокой доступностью для предотвращения потери данных необходимы как минимум три узла кластера.
-Аналогично в rack-aware развёртываниях для предотвращения потери данных необходимы три rack'а (домена отказов). При отказе rack'а два оставшихся сохраняют данные. При наличии в rack'е не менее трёх узлов rack-aware развёртывание выдерживает полный отказ rack'а с сохранением целостности данных.
+Premium High Availability Managed развёртывание с учётом стоек без потери данных
 
-Тот же принцип применим к развёртываниям Premium High Availability Managed. Использование rack-aware Managed-кластеров в отдельных центрах обработки данных повышает устойчивость к потере данных.
+Для максимальной высокой доступности и избыточности используй PHA развёртывание с учётом стоек.
 
-![Схема — развёртывание Premium High Availability Managed без потери данных](https://dt-cdn.net/images/4man-ha-no-data-loss-54863cd646.svg "Схема — развёртывание Premium High Availability Managed без потери данных")
+## Предварительные условия
 
-Схема — развёртывание Premium High Availability Managed без потери данных
+Схему с учётом стоек стоит применять только при следующих условиях:
 
-Развёртывание Premium High Availability Managed.
+* Итоговое число стоек равно трём, что соответствует коэффициенту репликации хранилища данных Dynatrace.
+* Стойки отражают фактическое физическое расположение узлов при развёртывании.
+* Стойки находятся в одной сети с низкой задержкой. Обычно это означает одну локальную сеть. Если стойки расположены в разных площадках, соединённых через глобальную сеть, задержка сети между площадками должна оставаться ниже 10 мс.
 
-![Rack-aware развёртывание Premium High Availability Managed без потери данных](https://dt-cdn.net/images/5man-ha-ra-no-data-loss-5f9393973b.svg "Rack-aware развёртывание Premium High Availability Managed без потери данных")
+В противном случае возможна потеря данных и проблемы с доступностью Managed Cluster.
 
-Rack-aware развёртывание Premium High Availability Managed без потери данных
+## Настройка развёртывания с учётом стоек
 
-Rack-aware развёртывание Premium High Availability Managed.
-
-Для достижения максимальной высокой доступности и избыточности используйте rack-aware развёртывание Premium High Availability.
-
-Чтобы создать rack-aware развёртывание при первоначальной установке Managed, используйте параметры установки для указания центра обработки данных и rack'а, к которым следует добавить узел. См. [Установка кластера](/managed/managed-cluster/installation/install-managed-cluster "Install a Managed Cluster by downloading and verifying the installer, running it, and completing the initial configuration.") и [Настройка установки Dynatrace Managed](/managed/managed-cluster/installation/customize-managed-cluster-install#install-managed-cluster "Use command line parameters to customize or automate a Managed Cluster installation, with options for datastores, system users, and SSL certificates."), например:
+Чтобы создать развёртывание с учётом стоек уже на этапе первоначального развёртывания Managed, используй параметры установки для указания дата-центра и стойки для каждого узла. См. [Установка Managed Cluster](/managed/managed-cluster/installation/install-managed-cluster "Install a Managed Cluster by downloading and verifying the installer, running it, and completing the initial configuration.") и [Настройка установки Dynatrace Managed](/managed/managed-cluster/installation/customize-managed-cluster-install#install-managed-cluster "Use command line parameters to customize or automate a Managed Cluster installation, with options for datastores, system users, and SSL certificates."). Например:
 
 ```
 dynatrace-managed.sh --rack-name az-1 --rack-dc datacenter1
 ```
 
-## Конвертация в rack-aware
+Чтобы преобразовать существующий Managed Cluster в схему с учётом стоек, выбери метод в зависимости от размера хранилища метрик:
 
-Для конвертации существующего Managed-развёртывания используйте метод расширения кластера или метод восстановления кластера.
+* Используй метод [преобразования в схему с учётом стоек через репликацию](/managed/managed-cluster/high-availability/rack-aware-replication "Learn how to convert a Dynatrace Managed Cluster to a rack-aware deployment using the replication method, including preparation and node migration steps.") для небольших Managed Cluster, где один узел может содержать полную реплику. Этот метод не вызывает простоя Managed Cluster.
+* Используй метод [преобразования в схему с учётом стоек через восстановление](/managed/managed-cluster/high-availability/rack-aware-restore "Learn how to convert a Dynatrace Managed Cluster to rack-aware topology using the backup and restore method, including preparation and installer parameters.") когда хранилище метрик (база данных Cassandra) на узел превышает 1 ТБ. Метод расширения кластера тоже работает, но требуемая начальная загрузка (bootstrapping) Cassandra занимает неоправданно много времени.
 
-### Расширение кластера (без простоя)
+## Похожие темы
 
-Вертикальное масштабирование узлов в двух расположениях позволяет им взять на себя дополнительную нагрузку после выключения третьего расположения и его переустановки с rack-aware параметрами. См. [Конвертация в rack-aware с использованием репликации](/managed/managed-cluster/high-availability/rack-aware-conversion-using-replication "Learn how to download and convert Dynatrace Managed cluster to rack-aware using the expansion method.").
-
-Размер хранилища метрик
-
-Если текущий размер хранилища метрик (база данных Cassandra) на узел превышает 1 ТБ, используйте метод восстановления кластера. Метод расширения кластера технически работает, однако в этом случае процесс Cassandra bootstrapping может занять неоправданно долгое время.
-
-### Восстановление кластера (с простоем во время восстановления)
-
-Можно выполнить резервное копирование и восстановление с rack-aware параметрами. См. [Конвертация в rack-aware с использованием восстановления](/managed/managed-cluster/high-availability/rack-aware-conversion-using-restore "Learn how to download and convert a Dynatrace Managed cluster to rack-aware using the restore method.").
-
-## Связанные темы
-
-* [Конвертация в rack-aware с использованием репликации](/managed/managed-cluster/high-availability/rack-aware-conversion-using-replication "Learn how to download and convert Dynatrace Managed cluster to rack-aware using the expansion method.")
-* [Конвертация в rack-aware с использованием восстановления](/managed/managed-cluster/high-availability/rack-aware-conversion-using-restore "Learn how to download and convert a Dynatrace Managed cluster to rack-aware using the restore method.")
+* [Преобразование в схему с учётом стоек через репликацию](/managed/managed-cluster/high-availability/rack-aware-replication "Learn how to convert a Dynatrace Managed Cluster to a rack-aware deployment using the replication method, including preparation and node migration steps.")
+* [Преобразование в схему с учётом стоек через восстановление](/managed/managed-cluster/high-availability/rack-aware-restore "Learn how to convert a Dynatrace Managed Cluster to rack-aware topology using the backup and restore method, including preparation and installer parameters.")
