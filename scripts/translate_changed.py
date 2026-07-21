@@ -143,10 +143,16 @@ _RETRY_HINT = (
 )
 
 
-def _translate_whole(content: str, en_file: Path, extra_rules: str) -> str | None:
-    """Перевод файла целиком, при необходимости по чанкам."""
+def _translate_whole(content: str, en_file: Path, extra_rules: str,
+                     retry_hint: str = "") -> str | None:
+    """Перевод файла целиком, при необходимости по чанкам.
+
+    retry_hint идёт в КАЖДЫЙ чанк, а не только в первый. Он входит в ключ кеша,
+    поэтому иначе повтор вытаскивал из кеша тот же битый чанк: скобку роняет
+    обычно не первый чанк, а середина статьи.
+    """
     if len(content) <= MAX_CHUNK_CHARS:
-        return translate_text(content, str(en_file.name), extra_rules)
+        return translate_text(content, str(en_file.name), extra_rules + retry_hint)
 
     chunks = split_into_chunks(content)
     parts = []
@@ -154,8 +160,8 @@ def _translate_whole(content: str, en_file: Path, extra_rules: str) -> str | Non
         print(f"  chunk {i}/{len(chunks)}...")
         # Правило заголовков осмысленно только для первого чанка: H1 и
         # frontmatter живут там, дальше пойдут подзаголовки тела.
-        result = translate_text(chunk, f"{en_file.name}#chunk{i}",
-                                extra_rules if i == 1 else "")
+        rules = (extra_rules if i == 1 else "") + retry_hint
+        result = translate_text(chunk, f"{en_file.name}#chunk{i}", rules)
         if result is None:
             print(f"  FAILED chunk {i}")
             return None
@@ -178,7 +184,7 @@ def translate_single_file(en_file: Path, ru_file: Path, extra_rules: str = "") -
     translated = None
     for attempt in (1, 2):
         candidate = _translate_whole(
-            content, en_file, extra_rules if attempt == 1 else extra_rules + _RETRY_HINT
+            content, en_file, extra_rules, "" if attempt == 1 else _RETRY_HINT
         )
         if candidate is None:
             return False
