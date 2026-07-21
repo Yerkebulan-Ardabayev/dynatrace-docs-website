@@ -16,14 +16,6 @@ on:
         description: 'Skip scraping, only detect changes'
         type: boolean
         default: false
-      skip_translate:
-        description: 'Skip auto-translation'
-        type: boolean
-        default: false
-      max_translate:
-        description: 'Max articles to translate (0 = all)'
-        type: number
-        default: 50
 
 # Общая с deploy.yml группа gh-pages: sync (со своим Stage-деплоем) и ручной
 # deploy.yml не публикуют в gh-pages одновременно (B4). Также не даёт двум sync
@@ -61,17 +53,10 @@ jobs:
           pip install -r requirements.txt
           pip install weasyprint markdown
 
-      # ---------- RESTORE HASH REGISTRY CACHE ----------
-      # Основной источник реестра хэшей — сам репозиторий (он коммитится через
-      # git add -f, .gitignore для него снят). Кэш — вторичная оптимизация со
-      # СТАБИЛЬНЫМ ключом (не github.run_id, который промахивался каждый прогон).
-      - name: Restore hash registry cache
-        uses: actions/cache@v4
-        with:
-          path: scripts/.change_tracking/hash_registry.json
-          key: hash-registry-v2
-          restore-keys: |
-            hash-registry-
+      # Кэш реестра хэшей УДАЛЁН: реестром владеет локальный переводчик на Mac
+      # (scripts/run_local_translate.sh), единственный источник правды — файл в
+      # репозитории. Восстановление из actions/cache поверх checkout вернуло бы
+      # старое состояние и подняло уже переведённые статьи как «требуют перевода».
 
       # ---------- STAGE 1: Scrape Managed docs (канонический корпус) ----------
       - name: Scrape documentation
@@ -112,6 +97,8 @@ jobs:
           python scripts/verify_corpus.py
 
       # ---------- STAGE 2: Detect changes (managed -> managed-ru) ----------
+      # Только чтобы посчитать очередь для Telegram. Реестр НЕ трогаем: его ведёт
+      # локальный переводчик, и запись из CI ломала бы учёт переведённого.
       - name: Detect new and updated articles
         id: detect
         run: |
@@ -122,7 +109,8 @@ jobs:
             --target-dir docs/managed-ru \
             --repo ${{ github.repository }} \
             --report changes_report.json \
-            --markdown changes_report.md
+            --markdown changes_report.md \
+            --no-registry-update
 
           # Read counts from report
           if [ -f changes_report.json ]; then
@@ -138,64 +126,13 @@ jobs:
             echo "total_changes=0" >> $GITHUB_OUTPUT
           fi
 
-      # ---------- STAGE 3: Auto-translate changed articles ----------
-      - name: Auto-translate changed articles
-        id: translate
-        if: steps.detect.outputs.total_changes != '0' && !inputs.skip_translate
-        env:
-          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
-          GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
-          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
-        run: |
-          set -e
-          echo "=== Stage 3: Auto-translating changed articles ==="
-          MAX_ARTICLES=${{ inputs.max_translate || 50 }}
-
-          python scripts/translate_changed.py \
-            --report changes_report.json \
-            --max-articles "$MAX_ARTICLES" \
-            2>&1 | tail -50
-
-          # Count translated files
-          TRANSLATED=$(python -c "
-          import json, os
-          if os.path.exists('translation_result.json'):
-              r = json.load(open('translation_result.json'))
-              print(r.get('translated_count', 0))
-          else:
-              print(0)
-          ")
-          echo "translated_count=$TRANSLATED" >> $GITHUB_OUTPUT
-
-      # ---------- GATE B: валидация свежих переводов ПЕРЕД коммитом ----------
-      # Второй гейт (после per-write гейта в translate_changed.py): проверяет ТОЛЬКО
-      # реально переведённые в этом прогоне файлы (translation_result.json), не весь
-      # корпус. Плохой перевод валит прогон и НЕ попадает в commit docs/managed-ru.
-      - name: Gate — validate fresh translations
-        id: validate
-        if: steps.translate.outputs.translated_count != '0' && steps.translate.outputs.translated_count != ''
-        run: |
-          set -e
-          echo "=== Gate B: validate freshly translated files ==="
-          python scripts/validate_translations.py \
-            --ru-dir docs/managed-ru \
-            --en-dir docs/managed \
-            --report translation_result.json
-
-      # ---------- STAGE 4: Generate PDFs from translated docs ----------
-      - name: Generate PDFs for translated docs
-        id: pdf
-        if: steps.translate.outputs.translated_count != '0' && steps.translate.outputs.translated_count != ''
-        run: |
-          set -e
-          echo "=== Stage 4: Generating PDFs ==="
-          python scripts/generate_pdfs.py \
-            --report translation_result.json \
-            --output-dir pdf-docs \
-            2>&1 | tail -20
-
-          PDF_COUNT=$(find pdf-docs -name "*.pdf" -newer changes_report.json 2>/dev/null | wc -l)
-          echo "pdf_count=$PDF_COUNT" >> $GITHUB_OUTPUT
+      # ---------- STAGE 3-4 УДАЛЕНЫ ----------
+      # Перевод, гейт валидации и генерация PDF ушли на Mac в
+      # scripts/run_local_translate.sh: headless claude -p работает по OAuth-токену
+      # подписки, которому не место в секретах публичного репозитория, а разбор
+      # бэклога не влезает в лимит джобы 180 минут. PDF-шаг вдобавок был мёртвым:
+      # он зависел от результата перевода в CI, поэтому не сработал ни разу
+      # (в репозитории 0 файлов pdf-docs, на сайте раздел отдаёт 404).
 
       # ---------- STAGE 5: Commit all changes ----------
       - name: Commit changes
@@ -206,16 +143,10 @@ jobs:
           git config user.name "Yerkebulan Ardabayev"
           git config user.email "yerkebulan.ardabayev@gmail.com"
 
-          # Канонический Managed-корпус: EN (docs/managed) + RU (docs/managed-ru).
-          git add docs/managed/ docs/managed-ru/
-
-          # Реестр хэшей коммитим принудительно (-f): даже если правило .gitignore
-          # для scripts/.change_tracking/ вернут, registry всё равно попадёт в git.
-          # Иначе detect_changes на свежем checkout уходит в mtime-эвристику.
-          git add -f scripts/.change_tracking/hash_registry.json || true
-
-          # Stage PDFs if any
-          git add pdf-docs/ || true
+          # CI коммитит ТОЛЬКО английский корпус. Русский перевод и реестр хэшей
+          # ведёт локальный переводчик на Mac и пушит сам: если добавлять их здесь,
+          # два источника начнут переписывать друг друга.
+          git add docs/managed/
 
           if git diff --staged --quiet; then
             echo "committed=false" >> $GITHUB_OUTPUT
@@ -223,12 +154,8 @@ jobs:
           else
             CHANGED=$(git diff --staged --stat | tail -1)
             DATE=$(date +%Y-%m-%d)
-            TRANSLATED=${{ steps.translate.outputs.translated_count || 0 }}
 
             MSG="docs: sync Managed from docs.dynatrace.com/managed ${DATE}"
-            if [ "$TRANSLATED" -gt 0 ] 2>/dev/null; then
-              MSG="docs: sync + translate ${TRANSLATED} articles ${DATE}"
-            fi
 
             git commit -m "${MSG}
 
@@ -237,75 +164,11 @@ jobs:
             echo "committed=true" >> $GITHUB_OUTPUT
           fi
 
-      # ---------- STAGE 6: Create GitHub Issue ----------
-      - name: Ensure labels exist
-        if: steps.detect.outputs.total_changes != '0'
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: |
-          gh label create "translation" --description "Requires translation" --color "0e8a16" 2>/dev/null || true
-          gh label create "documentation" --description "Documentation changes" --color "0075ca" 2>/dev/null || true
-          gh label create "automated" --description "Created by CI pipeline" --color "d4c5f9" 2>/dev/null || true
-
-      - name: Create translation issue
-        if: steps.detect.outputs.total_changes != '0'
-        # Не фатально: это уведомление, его сбой не должен ронять весь sync и
-        # блокировать build/deploy (раньше «Body is too long» валил всю джобу).
-        continue-on-error: true
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: |
-          NEW=${{ steps.detect.outputs.new_count }}
-          UPDATED=${{ steps.detect.outputs.updated_count }}
-          TOTAL=${{ steps.detect.outputs.total_changes }}
-          TRANSLATED=${{ steps.translate.outputs.translated_count || 0 }}
-          DATE=$(date +%Y-%m-%d)
-
-          # Read the markdown report
-          BODY=""
-          if [ -f changes_report.md ]; then
-            BODY=$(cat changes_report.md)
-          else
-            BODY="Обнаружено $TOTAL изменений: $NEW новых, $UPDATED обновлённых статей."
-          fi
-
-          # Append translation status
-          if [ "$TRANSLATED" -gt 0 ] 2>/dev/null; then
-            BODY="${BODY}
-
-          ---
-          ✅ **Автоперевод:** ${TRANSLATED} из ${TOTAL} статей переведены автоматически.
-          📄 PDF-копии сохранены в \`pdf-docs/\`."
-          fi
-
-          BODY="${BODY}
-
-          ---
-          🔔 **Уведомление:** Обнаружены изменения в английской документации.
-          📊 Новых: ${NEW} | Обновлённых: ${UPDATED} | Всего: ${TOTAL}
-          🕐 Дата синхронизации: ${DATE}
-          🤖 Создано автоматически пайплайном sync-docs."
-
-          # GitHub ограничивает тело issue 65536 символами. При большом бэклоге
-          # (после простоя пайплайна детект нашёл 1111 статей) полный список
-          # превышал лимит и createIssue падал. Обрезаем с запасом до 60000.
-          if [ ${#BODY} -gt 60000 ]; then
-            BODY="${BODY:0:60000}
-
-          ---
-          ⚠️ Список обрезан: превышен лимит GitHub (65536 символов). Полный отчёт — в артефакте changes_report.md этого прогона."
-          fi
-
-          # Create issue
-          REPO_OWNER=$(echo "${{ github.repository }}" | cut -d'/' -f1)
-          gh issue create \
-            --title "📝 Перевод: $TOTAL статей требуют перевода ($DATE)" \
-            --body "$BODY" \
-            --label "translation,documentation,automated" \
-            --assignee "$REPO_OWNER" \
-            || gh issue create \
-              --title "📝 Перевод: $TOTAL статей требуют перевода ($DATE)" \
-              --body "$BODY"
+      # ---------- STAGE 6 УДАЛЁН ----------
+      # Ночное создание issue со списком статей отключено: пока перевод не шёл,
+      # оно каждую ночь плодило письмо и новую issue с тем же растущим списком
+      # (#1..#14). Очередь теперь разбирает ночной переводчик на Mac, а сводка
+      # приходит в Telegram ниже.
 
       # ---------- STAGE 7: Telegram success notification (ONLY when real updates) ----------
       - name: Send Telegram notification (updates)
@@ -317,7 +180,6 @@ jobs:
           NEW=${{ steps.detect.outputs.new_count || 0 }}
           UPDATED=${{ steps.detect.outputs.updated_count || 0 }}
           TOTAL=${{ steps.detect.outputs.total_changes || 0 }}
-          TRANSLATED=${{ steps.translate.outputs.translated_count || 0 }}
           DATE=$(date +%Y-%m-%d)
           REPO_URL="https://github.com/${{ github.repository }}"
           SITE_URL="https://yerkebulan-ardabayev.github.io/dynatrace-docs-website/"
@@ -328,9 +190,7 @@ jobs:
           MSG="${MSG}  • Новых статей: <b>${NEW}</b>${NL}"
           MSG="${MSG}  • Обновлённых: <b>${UPDATED}</b>${NL}"
 
-          if [ "$TRANSLATED" -gt 0 ] 2>/dev/null; then
-            MSG="${MSG}${NL}✅ Автоперевод: <b>${TRANSLATED}</b> статей переведены${NL}"
-          fi
+          MSG="${MSG}${NL}🤖 Перевод разберёт ночной прогон на Mac (claude -p, 03:30).${NL}"
 
           # Добавить описание изменений из отчёта
           if [ -f changes_report.json ]; then
@@ -427,12 +287,6 @@ jobs:
             REASON="Gate A verify_corpus — в docs/managed попал чужой (не-Managed) source"
           elif [ "${{ steps.detect.outcome }}" = "failure" ]; then
             REASON="Detect changes — сравнение хэшей упало (повреждён registry / нет файлов)"
-          elif [ "${{ steps.translate.outcome }}" = "failure" ]; then
-            REASON="Auto-translate — Gemini/Groq/OpenRouter API (ключ невалид / квота / сеть)"
-          elif [ "${{ steps.validate.outcome }}" = "failure" ]; then
-            REASON="Gate B validate_translations — свежий перевод не прошёл проверку (не коммитим)"
-          elif [ "${{ steps.pdf.outcome }}" = "failure" ]; then
-            REASON="PDF generation — weasyprint / markdown конвертация"
           elif [ "${{ steps.commit.outcome }}" = "failure" ]; then
             REASON="Git commit/push — конфликт в main / нет прав / rebase не удался"
           elif [ "${{ steps.build.outcome }}" = "failure" ]; then
@@ -513,15 +367,13 @@ jobs:
           echo "| New articles | ${{ steps.detect.outputs.new_count || 0 }} |" >> $GITHUB_STEP_SUMMARY
           echo "| Updated articles | ${{ steps.detect.outputs.updated_count || 0 }} |" >> $GITHUB_STEP_SUMMARY
           echo "| Total changes | ${{ steps.detect.outputs.total_changes || 0 }} |" >> $GITHUB_STEP_SUMMARY
-          echo "| Auto-translated | ${{ steps.translate.outputs.translated_count || 0 }} |" >> $GITHUB_STEP_SUMMARY
-          echo "| PDFs generated | ${{ steps.pdf.outputs.pdf_count || 0 }} |" >> $GITHUB_STEP_SUMMARY
           echo "| Committed | ${{ steps.commit.outputs.committed || 'false' }} |" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
           echo "**Date:** $(date -u)" >> $GITHUB_STEP_SUMMARY
           echo "**Trigger:** ${{ github.event_name }}" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
           if [ "${{ steps.detect.outputs.total_changes }}" != "0" ]; then
-            echo "⚠️ **Требуется перевод!** Проверьте GitHub Issues для списка статей." >> $GITHUB_STEP_SUMMARY
+            echo "📝 Очередь на перевод разберёт ночной прогон на Mac (claude -p)." >> $GITHUB_STEP_SUMMARY
           else
             echo "✅ Нет новых изменений. Все статьи актуальны." >> $GITHUB_STEP_SUMMARY
           fi

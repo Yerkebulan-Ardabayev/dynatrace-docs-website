@@ -150,7 +150,8 @@ def detect_section(rel_path: str) -> str:
     return "Корень"
 
 
-def detect_changes(source_dir: Path, target_dir: Path) -> dict:
+def detect_changes(source_dir: Path, target_dir: Path,
+                   update_registry: bool = True) -> dict:
     """
     Detect all changes between source (managed/) and target (managed-ru/) directories.
 
@@ -238,11 +239,12 @@ def detect_changes(source_dir: Path, target_dir: Path) -> dict:
     # Раньше реестр двигался здесь для ВСЕХ файлов, поэтому один прогон без
     # перевода стирал дрейф из радара навсегда: 904 статьи 08.07 и 327 статей
     # 20.07 были показаны в issue ровно один раз и больше никогда не всплывали.
-    next_hashes = {
-        rel: (prev_hashes.get(rel, h) if rel in pending else h)
-        for rel, h in current_hashes.items()
-    }
-    save_hash_registry(next_hashes)
+    if update_registry:
+        next_hashes = {
+            rel: (prev_hashes.get(rel, h) if rel in pending else h)
+            for rel, h in current_hashes.items()
+        }
+        save_hash_registry(next_hashes)
 
     result = {
         "new_articles": new_articles,
@@ -360,6 +362,10 @@ def main():
                         help="Russian Managed translation directory")
     parser.add_argument("--report", help="Output JSON report path")
     parser.add_argument("--markdown", help="Output Markdown report path")
+    parser.add_argument("--no-registry-update", action="store_true",
+                        help="Только посчитать очередь, не трогая реестр хэшей. "
+                             "Нужен CI: реестром владеет локальный переводчик, и "
+                             "запись из двух мест ломает учёт переведённого.")
     parser.add_argument("--repo", default="",
                         help="GitHub repo (owner/name) for clickable links in report")
     args = parser.parse_args()
@@ -367,7 +373,8 @@ def main():
     source_dir = Path(args.source_dir)
     target_dir = Path(args.target_dir)
 
-    result = detect_changes(source_dir, target_dir)
+    result = detect_changes(source_dir, target_dir,
+                            update_registry=not args.no_registry_update)
 
     # Print summary
     print("=" * 60)
