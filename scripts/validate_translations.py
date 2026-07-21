@@ -57,7 +57,7 @@ class TranslationValidator:
             issues.append(f"[CODE_BLOCK] Непарные ``` ({count} шт.) в {filepath}")
         return issues
 
-    def validate_links(self, content: str, filepath: str) -> list:
+    def validate_links(self, content: str, filepath: str, en_content: str = '') -> list:
         """Проверяет корректность Markdown-ссылок"""
         issues = []
 
@@ -71,12 +71,32 @@ class TranslationValidator:
             if not url.strip():
                 issues.append(f"[LINK] Пустой URL: [{text}]() в {filepath}")
 
-        # Проверяем незакрытые ссылки: [ без ]( или ]( без )
-        open_brackets = len(re.findall(r'\[[^\]]*$', content, re.MULTILINE))
-        if open_brackets > 0:
-            issues.append(f"[LINK] Найдено {open_brackets} незакрытых [ в {filepath}")
+        # Незакрытые ссылки. Раньше проверка была построчной (`\[[^\]]*$`) и падала
+        # на КАЖДОЙ ссылке, текст которой перенесён на новую строку. Так написаны
+        # 941 из 2912 английских исходников и 917 файлов уже отгруженного русского
+        # корпуса, и на сайте они рендерятся нормально, то есть проверка браковала
+        # здоровые файлы. Всплыло это только сейчас: гейт смотрит лишь свежие
+        # переводы, а перевод не запускался с момента его появления.
+        #
+        # Теперь считаем баланс скобок по всему документу (перенос строки внутри
+        # ссылки законен) и сверяем с оригиналом: виноват перевод только если он
+        # разошёлся с английским исходником.
+        ru_balance = self._bracket_balance(content)
+        en_balance = self._bracket_balance(en_content) if en_content else 0
+        if ru_balance != en_balance:
+            issues.append(
+                f"[LINK] Баланс скобок разошёлся с оригиналом "
+                f"(RU {ru_balance:+d}, EN {en_balance:+d}) в {filepath}"
+            )
 
         return issues
+
+    @staticmethod
+    def _bracket_balance(content: str) -> int:
+        """Разница числа [ и ] вне кода: 0 = все ссылки закрыты."""
+        body = re.sub(r'```.*?```', '', content, flags=re.DOTALL)
+        body = re.sub(r'`[^`\n]*`', '', body)
+        return body.count('[') - body.count(']')
 
     def validate_headings(self, content: str, en_content: str, filepath: str) -> list:
         """Проверяет, что количество заголовков совпадает с оригиналом (порог 15%)"""
@@ -138,7 +158,10 @@ class TranslationValidator:
         # Основные проверки
         file_issues.extend(self.validate_frontmatter(ru_content, filepath))
         file_issues.extend(self.validate_code_blocks(ru_content, filepath))
-        file_issues.extend(self.validate_links(ru_content, filepath))
+        # en_content нужен, чтобы не винить перевод в кривизне оригинала
+        en_file = self.en_dir / ru_file.relative_to(self.ru_dir)
+        en_for_links = en_file.read_text(encoding='utf-8', errors='replace') if en_file.exists() else ''
+        file_issues.extend(self.validate_links(ru_content, filepath, en_for_links))
 
         # Проверка терминов
         term_issues = self.validate_protected_terms(ru_content, filepath)
