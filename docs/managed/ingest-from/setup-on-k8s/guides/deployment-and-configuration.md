@@ -36,6 +36,6 @@ Configure auto-updates for components managed by Dynatrace Operator.](/managed/i
 
 Sizing guide for Dynatrace ActiveGate components](/managed/ingest-from/setup-on-k8s/guides/deployment-and-configuration/resource-management/ag-resource-limits "Set resource limits for Dynatrace ActiveGates")[### Configure startup probes for Dynatrace Operator
 
-Configure startup probes for Dynatrace Operator, Webhook, and CSI Driver.](/managed/ingest-from/setup-on-k8s/guides/deployment-and-configuration/configure-startup-probes "Set up and customize startup probes for Dynatrace Operator, Webhook, and CSI driver components to match your environment's requirements.")[### ActiveGate `custom.properties`
+Configure startup probes for Dynatrace Operator, Webhook, and CSI Driver.](/managed/ingest-from/setup-on-k8s/guides/deployment-and-configuration/configure-startup-probes "Set up and customize startup probes for Dynatrace Operator, Webhook, and CSI driver components to match your environment's requirements.")[### Customize ActiveGate for Kubernetes
 
-Configure ActiveGate via `custom.properties`.](/managed/ingest-from/setup-on-k8s/guides/metadata-automation/custom-properties-file "Add a custom properties file")
+Add a custom properties file to ActiveGate enabling full configuration options.](/managed/ingest-from/setup-on-k8s/guides/deployment-and-configuration/custom-properties-file "Add a custom properties file to ActiveGate running in Kubernetes to define configuration settings for your cluster monitoring setup.")

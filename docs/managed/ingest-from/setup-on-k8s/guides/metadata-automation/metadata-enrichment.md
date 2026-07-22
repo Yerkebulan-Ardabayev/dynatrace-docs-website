@@ -422,10 +422,10 @@ For pod injection use cases (OneAgent injection and OTLP exporter injection), Dy
 
 Dynatrace Operator validates attribute keys and reports the following:
 
-* **Warning**: The key contains characters Dynatrace Operator replaces during sanitization—Dynatrace Operator renames the key but still writes the annotation.
-* **Error**: The sanitized key is an empty string—Dynatrace Operator drops the key.
-* **Error**: Two keys produce the same sanitized value—the result is a collision.
-* **Error**: The sanitized key exceeds 63 characters—this violates the Kubernetes annotation name-segment limit for `metadata.dynatrace.com/<key>`.
+* **Warning**: The key contains characters Dynatrace Operator replaces during sanitization - Dynatrace Operator renames the key but still writes the annotation.
+* **Error**: The sanitized key is an empty string - Dynatrace Operator drops the key.
+* **Error**: Two keys produce the same sanitized value - the result is a collision.
+* **Error**: The sanitized key exceeds 63 characters - this violates the Kubernetes annotation name-segment limit for `metadata.dynatrace.com/<key>`.
 
 For the full parameter reference, see the [DynaKube API reference](/managed/ingest-from/setup-on-k8s/reference/dynakube-parameters "List the available parameters for setting up Dynatrace Operator on Kubernetes.").
 

@@ -40,6 +40,7 @@ source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/setting
 | [Microsoft 365 Email Connections](/managed/dynatrace-api/environment-api/settings/schemas/app-dynatrace-microsoft365-connector-mail-connection) | `app:dynatrace.microsoft365.connector:mail.connection` | `environment` |
 | [Microsoft Teams](/managed/dynatrace-api/environment-api/settings/schemas/app-dynatrace-msteams-connection) | `app:dynatrace.msteams:connection` | `environment` |
 | [PagerDuty Connections](/managed/dynatrace-api/environment-api/settings/schemas/app-dynatrace-pagerduty-connection) | `app:dynatrace.pagerduty:connection` | `environment` |
+| [QuickStart Token Configuration](/managed/dynatrace-api/environment-api/settings/schemas/app-dynatrace-quickstart-dynatrace-quickstart-token-config) | `app:dynatrace.quickstart:dynatrace.quickstart.token-config` | `environment` |
 | [Red Hat Ansible Automation Controller Connections](/managed/dynatrace-api/environment-api/settings/schemas/app-dynatrace-redhat-ansible-automation-controller-connection) | `app:dynatrace.redhat.ansible:automation-controller.connection` | `environment` |
 | [Red Hat Event-Driven Ansible Connections](/managed/dynatrace-api/environment-api/settings/schemas/app-dynatrace-redhat-ansible-eda-webhook-connection) | `app:dynatrace.redhat.ansible:eda-webhook.connection` | `environment` |
 | [ServiceNow Connections](/managed/dynatrace-api/environment-api/settings/schemas/app-dynatrace-servicenow-connection) | `app:dynatrace.servicenow:connection` | `environment` |

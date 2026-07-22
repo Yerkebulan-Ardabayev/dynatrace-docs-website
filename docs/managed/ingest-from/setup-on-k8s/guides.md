@@ -24,4 +24,4 @@ Manage container registries with Dynatrace.](/managed/ingest-from/setup-on-k8s/g
 
 Ensure high availability of your Dynatrace deployment.](/managed/ingest-from/setup-on-k8s/guides/high-availability "Ensure high availability of your Dynatrace deployment")[### Metadata and automation
 
-Automate and optimize your system's metadata management.](/managed/ingest-from/setup-on-k8s/guides/metadata-automation "Automate and optimize your system's metadata management")
+Automate and optimize your system's metadata management.](/managed/ingest-from/setup-on-k8s/guides/metadata-automation "Enrich Kubernetes telemetry with metadata and manage tagging for your workloads.")

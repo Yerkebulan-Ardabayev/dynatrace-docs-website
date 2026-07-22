@@ -34,18 +34,7 @@ If you supply telemetry data via different channels than OneAgent (for example, 
 
 For an example of how to load the JSON file, see the [Python example](#python-example) below.
 
-## Dynatrace Kubernetes Operator
-
-The following files are available in the [enrichment directory](#enrichment-directory) when metadata enrichment is enabled.
-
-* `dt_metadata.json`
-* `dt_metadata.properties`
-
-Both files contain the same data in different formats. For an example of how to load the JSON file, see the [Python example](#python-example) below.
-
-Please visit the [Configure enrichment directory](/managed/ingest-from/setup-on-k8s/guides/metadata-automation/metadata-enrichment "Configure metadata enrichment in Dynatrace Operator to attach Kubernetes metadata to telemetry signals using OneAgent, OTLP exporter, or standalone enrichment.") guide for configuration instructions.
-
-## OneAgent virtual files
+### OneAgent virtual files
 
 When OneAgent is monitoring your application, your application is also able to access the following virtual files:
 
@@ -54,9 +43,9 @@ When OneAgent is monitoring your application, your application is also able to a
 
 These files are not specific to the enrichment directory and do not physically exists in your file system, but are provided by the OneAgent instrumentation. Both files return the same data and the file extension (`.json`/`.properties`) only determines the output format.
 
-In the context of the [Kubernetes Operator](#dynatrace-kubernetes-operator), the virtual file also contains the attributes of the `dt_metadata.{json,properties}` files.
+In the context of [Dynatrace Operator](#operator-enrichment-directory), the virtual file also contains the attributes of the `dt_metadata.{json,properties}` files.
 
-### How to access the virtual files
+#### How to access the virtual files
 
 1. Use the standard file read function of your language platform to open and read one of these files:
 
@@ -70,13 +59,13 @@ In the context of the [Kubernetes Operator](#dynatrace-kubernetes-operator), the
 
 If step 1 returns a file-not-found error, verify that your application is instrumented by OneAgent.
 
-### Limitations
+#### Limitations
 
 * Supported for full-stack and application-only deep-monitored processes.
 * The `stat` and other `if (exists)` checks fail for these files. These checks are not required for the mechanism to work.
 * `syscalls` used directly for file access aren't supported. This also means that the Go-based applications used for metric ingestion aren't supported unless you use the OneAgent SDK as explained in [Instrument your Go application with OpenTelemetry](/managed/ingest-from/opentelemetry/walkthroughs/go "Learn how to instrument your Go application using OpenTelemetry and Dynatrace.").
 
-## Python example
+### Python example
 
 The following example shows how to load the enrichment information as JSON in Python on Unix.
 
@@ -133,3 +122,122 @@ pass # An exception indicates the file was not available
 ```
 
 The example code initializes an empty dictionary for the imported attributes. It then iterates over an array of `.json` filenames and loads the content of each file as JSON document, adding the keys to the dictionary. File exceptions indicate the particular file is not available and are ignored.
+
+## Dynatrace Operator
+
+When `metadataEnrichment` is enabled in your DynaKube, the Dynatrace Operator injects the following files into the [enrichment directory](#enrichment-directory) of each pod:
+
+* `dt_metadata.json`
+* `dt_metadata.properties`
+
+Both files contain the same Kubernetes metadata in different formats. For an example of how to load the JSON file, see the [Python example](#python-example) above. With OneAgent enabled, these files are applied automatically; without OneAgent, load and apply them manually.
+
+`metadataEnrichment` is automatically enabled — no explicit DynaKube configuration required — when using [OneAgent injection](/managed/ingest-from/setup-on-k8s/how-it-works/cloud-native-fullstack "In-depth description of full-stack observability using Dynatrace Operator.") (`cloudNativeFullStack` or `applicationMonitoring`) or [OTLP exporter auto-configuration](/managed/ingest-from/setup-on-k8s/extend-observability-k8s/otlp-auto-config "Automatically configure the OTLP exporter in applications instrumented with OpenTelemetry SDKs using Dynatrace Operator.").
+
+Enable metadataEnrichment in your DynaKube
+
+Add `metadataEnrichment` to your DynaKube spec:
+
+```
+spec:
+
+
+
+metadataEnrichment:
+
+
+
+enabled: true
+```
+
+To limit enrichment to specific namespaces, add a `namespaceSelector`:
+
+```
+spec:
+
+
+
+metadataEnrichment:
+
+
+
+enabled: true
+
+
+
+namespaceSelector:
+
+
+
+matchLabels:
+
+
+
+team: finance
+```
+
+Enrichment file contents
+
+Both files expose the following attributes:
+
+```
+{
+
+
+
+"k8s.cluster.name": "<cluster-name>",
+
+
+
+"k8s.cluster.uid": "<cluster-uid>",
+
+
+
+"k8s.namespace.name": "<namespace-name>",
+
+
+
+"k8s.node.name": "<node-name>",
+
+
+
+"k8s.pod.name": "<pod-name>",
+
+
+
+"k8s.pod.uid": "<pod-uid>",
+
+
+
+"k8s.container.name": "<container-name>",
+
+
+
+"k8s.workload.kind": "<workload-kind>",
+
+
+
+"k8s.workload.name": "<workload-name>",
+
+
+
+"dt.entity.kubernetes_cluster": "<kubernetes-cluster-id>",
+
+
+
+"dt.kubernetes.cluster.id": "<cluster-id>",
+
+
+
+"dt.kubernetes.workload.kind": "<workload-kind>",
+
+
+
+"dt.kubernetes.workload.name": "<workload-name>"
+
+
+
+}
+```
+
+Confirm enrichment is working by inspecting `/var/lib/dynatrace/enrichment` inside an injected pod and verifying both files are present.
