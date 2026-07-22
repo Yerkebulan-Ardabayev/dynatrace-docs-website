@@ -225,7 +225,29 @@ def split_into_chunks(text: str, max_chars: int = MAX_CHUNK_CHARS) -> list:
             if sub_chunk:
                 final_chunks.append(sub_chunk)
 
-    return final_chunks
+    return _merge_tiny(final_chunks)
+
+
+def _merge_tiny(chunks: list, floor: int = 500) -> list:
+    """Приклеивает крошечные куски к соседям.
+
+    Упаковщик выталкивает секцию в отдельный чанк, когда следующая не влезает
+    целиком. Если секция это один заголовок, получается кусок в 13 символов вида
+    `## Parameters`: модель на таком входе отдаёт слово без разметки, сверка
+    заголовков падает, и статья не проходит никогда (get-all-hosts крутился так
+    сутки). Небольшое превышение max_chars безопаснее вырожденного куска.
+    """
+    if len(chunks) < 2:
+        return chunks
+    merged = []
+    for chunk in chunks:
+        if merged and len(chunk.strip()) < floor:
+            merged[-1] += "\n" + chunk
+        elif merged and len(merged[-1].strip()) < floor:
+            merged[-1] += "\n" + chunk
+        else:
+            merged.append(chunk)
+    return merged
 
 
 def _split_outside_code(text: str, is_boundary) -> list:
@@ -553,6 +575,22 @@ def translate_via_openrouter(text: str) -> str | None:
     return None
 
 
+def cache_key_for(text: str, source_file: str, extra_rules: str = '') -> str:
+    """Ключ кеша перевода (тот же, что использует translate_text)."""
+    key_src = f"{text}\x00{extra_rules}"
+    return f"{source_file}:{hashlib.sha256(key_src.encode('utf-8')).hexdigest()[:16]}"
+
+
+def forget_translation(text: str, source_file: str, extra_rules: str = '') -> bool:
+    """Выкидывает перевод из кеша. Нужен, когда результат забракован проверкой.
+
+    Без этого повторная попытка бессмысленна: кеш отдаёт тот же самый плохой
+    перевод, модель не вызывается вообще, и статья не выправляется никогда
+    (nginx.md и get-all-hosts крутились так сутки, прогон занимал 0 секунд).
+    """
+    return cache.pop(cache_key_for(text, source_file, extra_rules), None) is not None
+
+
 def translate_text(text: str, source_file: str, extra_rules: str = '') -> str:
     """
     Переводит текст. Стратегия:
@@ -566,8 +604,7 @@ def translate_text(text: str, source_file: str, extra_rules: str = '') -> str:
     """
     # Правила раздела входят в ключ: один и тот же текст с другой нормой
     # заголовков должен переводиться заново, а не браться из кеша.
-    key_src = f"{text}\x00{extra_rules}"
-    cache_key = f"{source_file}:{hashlib.sha256(key_src.encode('utf-8')).hexdigest()[:16]}"
+    cache_key = cache_key_for(text, source_file, extra_rules)
     if cache_key in cache:
         print(f"  ↻ Из кеша")
         # Пост-фикс даже для кешированных (на случай старых ошибок)

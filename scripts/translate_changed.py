@@ -24,7 +24,7 @@ sys.path.insert(0, str(Path(__file__).parent))
 from translate_docs_groq import (
     translate_text, split_into_chunks, post_fix_known_errors,
     cache, CACHE_FILE, MAX_CHUNK_CHARS,
-    claude_available, CLAUDE_MODEL,
+    claude_available, CLAUDE_MODEL, forget_translation,
     GEMINI_API_KEY, GROQ_API_KEY, OPENROUTER_API_KEY,
 )
 # Реестр хэшей ведём здесь: запись «RU сделан от этого EN» имеет право появиться
@@ -86,6 +86,18 @@ def _normalize_dashes(source: str, translated: str) -> str:
     parts = re.split(r"(```.*?```|`[^`\n]*`)", translated, flags=re.DOTALL)
     parts[::2] = [fix(p) for p in parts[::2]]
     return "".join(parts)
+
+
+def _has_no_prose(chunk: str) -> bool:
+    """В куске нечего переводить: список ссылок, голый код, таблица версий.
+
+    В nginx.md есть чанк из 89 адресов .deb-пакетов без единого предложения.
+    Дословно воспроизвести такой список модель не может (теряет часть адресов),
+    а переводить там нечего, поэтому кусок копируется как есть.
+    """
+    text = _URL_RE.sub("", _strip_code(chunk))
+    text = re.sub(r"^#{1,6} .*$", "", text, flags=re.M)      # заголовки не в счёт
+    return len(re.findall(r"[A-Za-zА-Яа-я]{3,}", text)) < 5
 
 
 def _structure_defect(source: str, translated: str) -> str:
@@ -210,6 +222,10 @@ def _translate_whole(content: str, en_file: Path, extra_rules: str,
     parts = []
     for i, chunk in enumerate(chunks, 1):
         print(f"  chunk {i}/{len(chunks)}...")
+        if _has_no_prose(chunk):
+            print(f"    чанк {i}: переводить нечего (ссылки/код), копирую как есть")
+            parts.append(chunk)
+            continue
         # Правило заголовков осмысленно только для первого чанка: H1 и
         # frontmatter живут там, дальше пойдут подзаголовки тела.
         rules = (extra_rules if i == 1 else "") + retry_hint
@@ -233,6 +249,10 @@ def _translate_whole(content: str, en_file: Path, extra_rules: str,
                 result = candidate
                 break
             print(f"    чанк {i}: {defect}, попытка {attempt}/3")
+            # Забракованный перевод обязан покинуть кеш, иначе следующая попытка
+            # получит его же и модель даже не будет вызвана.
+            forget_translation(chunk, f"{en_file.name}#chunk{i}",
+                               rules if attempt == 1 else rules + _RETRY_HINT)
         if result is None:
             print(f"  FAILED chunk {i}: структура не выправилась за 3 попытки")
             return None
@@ -265,6 +285,8 @@ def translate_single_file(en_file: Path, ru_file: Path, extra_rules: str = "") -
             translated = candidate
             break
         print(f"  структура не сошлась ({defect}), попытка {attempt}/2")
+        forget_translation(content, str(en_file.name),
+                           extra_rules if attempt == 1 else extra_rules + _RETRY_HINT)
     if translated is None:
         print(f"  SKIP: {ru_file.name} не перезаписываю, статья остаётся в очереди")
         return False
