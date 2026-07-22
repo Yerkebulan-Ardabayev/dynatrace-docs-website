@@ -1,63 +1,70 @@
 ---
 title: NGINX
 source: https://docs.dynatrace.com/managed/ingest-from/technology-support/application-software/nginx
-scraped: 2026-05-12T11:23:44.338737
 ---
 
 # NGINX
 
 # NGINX
 
-* Справочник
+* Справочная информация
 * Чтение: 3 мин
-* Обновлено 23 октября 2025 г.
+* Обновлено 23 окт. 2025 г.
 
-С помощью кодового модуля NGINX в OneAgent можно получить наблюдаемость для экземпляров NGINX и обрабатываемых веб-запросов.
+С помощью кодового модуля NGINX OneAgent можно получить observability для экземпляров NGINX и обрабатываемых веб-запросов.
 
-| Наблюдаемость для | Включая |
+| Observability для | Включает |
 | --- | --- |
 | Входящие веб-запросы | Все входящие веб-запросы к NGINX |
-| Исходящие веб-запросы | Исходящие веб-запросы, исходящие от [поддерживаемого модуля NGINX](#nginx-supported-modules) |
-| NGINX HTTP connection metrics | * Трафик и запросы * Размеры ответов * Принятые, активные и сброшенные соединения |
-| NGINX Plus metrics | Серверные зоны  * Трафик и запросы на серверную зону  Апстримы  * Трафик и запросы * Состояние апстримов  Кэши  * Производительность кэша * Использование кэша |
+| Исходящие веб-запросы | Исходящие веб-запросы, инициированные [поддерживаемым модулем NGINX](#nginx-supported-modules) |
+| Метрики HTTP-соединений NGINX | * Трафик и запросы * Размеры ответов * Принятые, активные и отклонённые соединения |
+| Метрики NGINX Plus | Server zones  * Трафик и запросы по зоне сервера  Upstreams  * Трафик и запросы * Состояние upstream  Caches  * Производительность кэша * Использование кэша |
 
-Поддержка в Windows
+Поддержка на Windows
 
-Глубокий мониторинг NGINX в настоящее время не поддерживается в Windows.
+Глубокий мониторинг NGINX в настоящее время не поддерживается на Windows.
 
-Подробнее см. [матрицу поддержки OneAgent](/managed/ingest-from/technology-support/oneagent-platform-and-capability-support-matrix#os-code-modules "Узнайте, какие возможности поддерживаются OneAgent в различных операционных системах и на платформах.").
+Подробнее см. в [матрице поддержки OneAgent](/managed/ingest-from/technology-support/oneagent-platform-and-capability-support-matrix#os-code-modules "Learn which capabilities are supported by OneAgent on different operating systems and platforms."), где указано, какие возможности поддерживаются OneAgent на разных ОС и платформах.
 
 Какие модули NGINX поддерживаются для исходящих веб-запросов?
 
 | Модули NGINX | Версии |
 | --- | --- |
-| ngx\_http\_fastcgi\_module (fastcgi\_pass) | Все версии поддерживаются |
-| ngx\_http\_grpc\_module (grpc\_pass) | Все версии поддерживаются |
-| ngx\_http\_memcached\_module (memcached\_pass) | Все версии поддерживаются |
-| ngx\_http\_proxy\_module (proxy\_pass) | Все версии поддерживаются |
-| ngx\_http\_scgi\_module (scgi\_pass) | Все версии поддерживаются |
-| ngx\_http\_uwsgi\_module (uwsgi\_pass) | Все версии поддерживаются |
+| ngx\_http\_fastcgi\_module (fastcgi\_pass) | Поддерживаются все версии |
+| ngx\_http\_grpc\_module (grpc\_pass) | Поддерживаются все версии |
+| ngx\_http\_memcached\_module (memcached\_pass) | Поддерживаются все версии |
+| ngx\_http\_proxy\_module (proxy\_pass) | Поддерживаются все версии |
+| ngx\_http\_scgi\_module (scgi\_pass) | Поддерживаются все версии |
+| ngx\_http\_uwsgi\_module (uwsgi\_pass) | Поддерживаются все версии |
 
 ## Жизненный цикл поддержки
 
-Dynatrace поддерживает множество версий NGINX, NGINX Plus, OpenResty и Tengine, см. таблицы ниже. Если выполняется попытка инструментировать неподдерживаемую версию, на странице процесса NGINX в веб-интерфейсе Dynatrace появляется уведомление.
+Dynatrace поддерживает ряд версий NGINX, NGINX Plus, OpenResty и Tengine, см. таблицы ниже. Если предпринимается попытка инструментировать неподдерживаемую версию, на странице процесса NGINX в веб-интерфейсе Dynatrace появляется уведомление.
 
-Если дата сборки OneAgent новее даты выпуска конкретной версии NGINX, кодовый модуль NGINX может инструментировать ваш выпуск NGINX, даже если он не указан в таблицах поддерживаемых версий.
+Если дата сборки OneAgent новее определённой даты выпуска NGINX, кодовый модуль NGINX может суметь инструментировать релиз NGINX, даже если он не указан в таблицах поддерживаемых версий.
 
 Где найти дату сборки OneAgent?
 
-Дата сборки OneAgent является частью версии установщика OneAgent, например 1.254.0.**20221012-201831**.
+Дата сборки OneAgent является частью версии инсталлятора OneAgent, например 1.254.0.**20221012-201831**.
 
 ### Поддержка NGINX
 
-Поддержка последнего выпуска NGINX, как правило, включается в ближайшие последующие выпуски OneAgent.
 
-| Версия NGINX | Выпущено вендором | Окончание поддержки вендором | Первая поддерживаемая версия Dynatrace OneAgent | Последняя поддерживаемая версия Dynatrace OneAgent | Dynatrace support until | [Dynatrace support level](/managed/ingest-from/technology-support#support-levels) |
+Поддержка последнего релиза NGINX обычно включается в следующие OneAgent релизы.
+
+
+| Версия NGINX | Дата выпуска поставщиком | Дата окончания поддержки поставщиком | Первая поддерживаемая версия Dynatrace OneAgent | Последняя поддерживаемая версия Dynatrace OneAgent | Поддержка Dynatrace до | [Уровень поддержки Dynatrace](/managed/ingest-from/technology-support#support-levels) |
 | --- | --- | --- | --- | --- | --- | --- |
-| 1.30.0 | 2026-04-14 | - | 1.339 | - | - | Не поддерживается |
-| 1.29.8 | 2026-04-07 | - | 1.339 | - | - | Не поддерживается |
-| 1.29.7 | 2026-03-24 | - | 1.337 | - | - | Поддерживается |
-| 1.29.6 | 2026-03-10 | - | 1.337 | - | - | Поддерживается |
+| 1.31.2 | 2026-06-17 | - | 1.345 | - | - | Не поддерживается[1](#fn-nginx-1-def) |
+| 1.31.1 | 2026-05-22 | - | 1.345 | - | - | Не поддерживается[1](#fn-nginx-1-def) |
+| 1.31.0 | 2026-05-13 | - | 1.341 | - | - | Поддерживается[1](#fn-nginx-1-def) |
+| 1.30.3 | 2026-06-17 | - | 1.345 | - | - | Не поддерживается[1](#fn-nginx-1-def) |
+| 1.30.2 | 2026-05-22 | - | 1.345 | - | - | Не поддерживается[1](#fn-nginx-1-def) |
+| 1.30.1 | 2026-05-13 | - | 1.341 | - | - | Поддерживается[1](#fn-nginx-1-def) |
+| 1.30.0 | 2026-04-14 | - | 1.339 | - | - | Поддерживается[1](#fn-nginx-1-def) |
+| 1.29.8 | 2026-04-07 | - | 1.339 | - | - | Поддерживается[1](#fn-nginx-1-def) |
+| 1.29.7 | 2026-03-24 | - | 1.337 | - | - | Поддерживается[1](#fn-nginx-1-def) |
+| 1.29.6 | 2026-03-10 | - | 1.337 | - | - | Поддерживается[1](#fn-nginx-1-def) |
 | 1.29.5 | 2026-02-04 | - | 1.335 | - | - | Поддерживается |
 | 1.29.4 | 2025-12-09 | - | 1.331 | - | - | Поддерживается |
 | 1.29.3 | 2025-10-28 | - | 1.329 | - | - | Поддерживается |
@@ -114,39 +121,57 @@ Dynatrace поддерживает множество версий NGINX, NGINX 
 | 1.19.1 | 2020-07-07 | - | 1.197 | - | - | Поддерживается |
 | 1.19.0 | 2020-05-26 | - | 1.193 | - | - | Поддерживается |
 | 1.17.10 - 1.18.0 | 2020-04-14 | - | 1.191 | - | - | Поддерживается |
-| 1.17.9 | 2020-03-03 | - | 1.189 | - | - | Поддерживается[1](#fn-nginx-1-def) |
-| 1.17.8 | 2020-01-21 | - | 1.183 | - | - | Поддерживается[1](#fn-nginx-1-def) |
-| 1.17.7 | 2019-12-24 | - | 1.181 | - | - | Поддерживается[1](#fn-nginx-1-def) |
-| 1.17.4 - 1.17.6 | 2019-09-24 | - | 1.175 | - | - | Поддерживается[1](#fn-nginx-1-def) |
-| 1.16.1 - 1.17.3 | 2019-08-13 | - | 1.173 | - | - | Поддерживается[1](#fn-nginx-1-def) |
-| 1.15.11 - 1.16.0 | 2019-04-09 | - | 1.163 | - | - | Поддерживается[1](#fn-nginx-1-def) |
-| 1.15.9 - 1.15.10 | 2019-02-26 | - | 1.161 | - | - | Поддерживается[1](#fn-nginx-1-def) |
-| 1.14.1 - 1.15.8 | 2018-11-06 | - | 1.159 | - | - | Поддерживается[1](#fn-nginx-1-def) |
-| 1.13.9 - 1.14.0 | 2018-02-20 | - | 1.143 | - | - | Поддерживается[1](#fn-nginx-1-def) |
-| 1.11.5 - 1.13.8 | 2016-10-11 | - | 1.137 | - | - | Поддерживается[1](#fn-nginx-1-def) |
-| 1.4 - 1.11.4 | 2013-04-24 | - | - | - | 2023-03-31 | Не поддерживается[2](#fn-nginx-2-def) |
+| 1.17.9 | 2020-03-03 | - | 1.189 | - | - | Поддерживается[2](#fn-nginx-2-def) |
+| 1.17.8 | 2020-01-21 | - | 1.183 | - | - | Поддерживается[2](#fn-nginx-2-def) |
+| 1.17.7 | 2019-12-24 | - | 1.181 | - | - | Поддерживается[2](#fn-nginx-2-def) |
+| 1.17.4 - 1.17.6 | 2019-09-24 | - | 1.175 | - | - | Поддерживается[2](#fn-nginx-2-def) |
+| 1.16.1 - 1.17.3 | 2019-08-13 | - | 1.173 | - | - | Поддерживается[2](#fn-nginx-2-def) |
+| 1.15.11 - 1.16.0 | 2019-04-09 | - | 1.163 | - | - | Поддерживается[2](#fn-nginx-2-def) |
+| 1.15.9 - 1.15.10 | 2019-02-26 | - | 1.161 | - | - | Поддерживается[2](#fn-nginx-2-def) |
+| 1.14.1 - 1.15.8 | 2018-11-06 | - | 1.159 | - | - | Поддерживается[2](#fn-nginx-2-def) |
+| 1.13.9 - 1.14.0 | 2018-02-20 | - | 1.143 | - | - | Поддерживается[2](#fn-nginx-2-def) |
+| 1.11.5 - 1.13.8 | 2016-10-11 | - | 1.137 | - | - | Поддерживается[2](#fn-nginx-2-def) |
+| 1.4 - 1.11.4 | 2013-04-24 | - | - | - | 2023-03-31 | Не поддерживается[3](#fn-nginx-3-def) |
+
 
 1
 
-Поддержка архитектуры CPU PPCLE добавлена в OneAgent версии 1.169, а ARM64 (AArch64) - в OneAgent версии 1.189.
+
+Функция OneAgent **Nginx Modules** не поддерживается для этой версии NGINX.
+
 
 2
 
-Поддерживается, если используемый бинарный файл есть в списке [поддерживаемых бинарных файлов](/managed/ingest-from/technology-support/application-software/nginx#nginx-supported-binaries "Узнайте подробности о поддержке NGINX в Dynatrace.") или соответствующая отладочная информация доступна локально.
 
-Сведения о поддержке версий NGINX 1.4 - 1.11.4
+Поддержка архитектуры процессора PPCLE была добавлена в версии OneAgent 1.169, а ARM64 (AArch64), в версии OneAgent 1.189.
 
-Кодовый модуль NGINX использует отладочную информацию из пакетов NGINX для инструментирования NGINX. Источники стандартных пакетов NGINX регулярно обнаруживаются Dynatrace для поддержки новых бинарных файлов. Если вы используете другие бинарные файлы (например, пользовательские сборки), необходимо предоставить их отладочные пакеты локально.
 
-Следующее изображение поможет определить, подходит ли выпуск NGINX для поддержки:
+3
+
+
+Поддерживается, если используемый бинарный файл входит в список [поддерживаемых бинарных файлов](/managed/ingest-from/technology-support/application-software/nginx#nginx-supported-binaries "Узнайте подробности о поддержке Dynatrace для NGINX.") или если соответствующая отладочная информация доступна локально.
+
+
+Детали поддержки версий NGINX 1.4 - 1.11.4
+
+
+Модуль кода NGINX использует отладочную информацию из пакетов NGINX для инструментирования NGINX. Исходники стандартных пакетов NGINX регулярно обнаруживаются Dynatrace для поддержки новых бинарных файлов. Если используются другие бинарные файлы (например, кастомные сборки), нужно предоставить их отладочные пакеты локально.
+
+
+Следующее изображение поможет определить, соответствует ли релиз NGINX критериям поддержки:
+
 
 ![Поддерживаемые версии NGINX](https://dt-cdn.net/images/nginx-instrumentation-simplified-1800-9148ec25fc.png)
 
+
 Поддерживаемые версии NGINX
 
-Поддерживаемые бинарные файлы, для которых у Dynatrace есть отладочная информация
+
+Поддерживаемые бинарные файлы, для которых у Dynatrace есть доступная отладочная информация
+
 
 ##### http://archive.ubuntu.com/ubuntu/pool/main/n/nginx
+
 
 * http://archive.ubuntu.com/ubuntu/pool/main/n/nginx/nginx-core\_1.4.6-1ubuntu3.2\_amd64.deb
 * http://archive.ubuntu.com/ubuntu/pool/main/n/nginx/nginx-core\_1.4.6-1ubuntu3.2\_i386.deb
@@ -237,7 +262,9 @@ Dynatrace поддерживает множество версий NGINX, NGINX 
 * http://archive.ubuntu.com/ubuntu/pool/main/n/nginx/nginx-core\_1.9.9-1ubuntu1\_amd64.deb
 * http://archive.ubuntu.com/ubuntu/pool/main/n/nginx/nginx-core\_1.9.9-1ubuntu1\_i386.deb
 
+
 ##### http://archive.ubuntu.com/ubuntu/pool/universe/n/nginx
+
 
 * http://archive.ubuntu.com/ubuntu/pool/universe/n/nginx/nginx-extras\_1.4.6-1ubuntu3.2\_amd64.deb
 * http://archive.ubuntu.com/ubuntu/pool/universe/n/nginx/nginx-extras\_1.4.6-1ubuntu3.2\_i386.deb
@@ -549,7 +576,9 @@ Dynatrace поддерживает множество версий NGINX, NGINX 
 * http://archive.ubuntu.com/ubuntu/pool/universe/n/nginx/nginx-naxsi\_1.6.2-1ubuntu1.1\_amd64.deb
 * http://archive.ubuntu.com/ubuntu/pool/universe/n/nginx/nginx-naxsi\_1.6.2-1ubuntu1.1\_i386.deb
 
+
 ##### http://archive.webtatic.com/yum/el6-archive/x86\_64
+
 
 * http://archive.webtatic.com/yum/el6-archive/x86\_64/nginx16-1.6.0-1.w6.x86\_64.rpm
 * http://archive.webtatic.com/yum/el6-archive/x86\_64/nginx16-1.6.0-2.w6.x86\_64.rpm
@@ -559,7 +588,9 @@ Dynatrace поддерживает множество версий NGINX, NGINX 
 * http://archive.webtatic.com/yum/el6-archive/x86\_64/nginx18-1.8.0-1.w6.x86\_64.rpm
 * http://archive.webtatic.com/yum/el6-archive/x86\_64/nginx18-1.8.1-1.w6.x86\_64.rpm
 
+
 ##### http://archive.webtatic.com/yum/el7-archive/x86\_64/RPMS
+
 
 * http://archive.webtatic.com/yum/el7-archive/x86\_64/RPMS/nginx16-1.6.0-2.w7.x86\_64.rpm
 * http://archive.webtatic.com/yum/el7-archive/x86\_64/RPMS/nginx16-1.6.1-1.w7.x86\_64.rpm
@@ -568,19 +599,25 @@ Dynatrace поддерживает множество версий NGINX, NGINX 
 * http://archive.webtatic.com/yum/el7-archive/x86\_64/RPMS/nginx18-1.8.0-1.w7.x86\_64.rpm
 * http://archive.webtatic.com/yum/el7-archive/x86\_64/RPMS/nginx18-1.8.1-1.w7.x86\_64.rpm
 
+
 ##### http://dl.fedoraproject.org/pub/epel/6/i386
+
 
 * http://dl.fedoraproject.org/pub/epel/6/i386/nginx-1.0.15-12.el6.i686.rpm
 * http://dl.fedoraproject.org/pub/epel/6/i386/nginx-1.10.1-1.el6.i686.rpm
 * http://dl.fedoraproject.org/pub/epel/6/i386/nginx-1.10.2-1.el6.i686.rpm
 
+
 ##### http://dl.fedoraproject.org/pub/epel/6/x86\_64
+
 
 * http://dl.fedoraproject.org/pub/epel/6/x86\_64/nginx-1.0.15-12.el6.x86\_64.rpm
 * http://dl.fedoraproject.org/pub/epel/6/x86\_64/nginx-1.10.1-1.el6.x86\_64.rpm
 * http://dl.fedoraproject.org/pub/epel/6/x86\_64/nginx-1.10.2-1.el6.x86\_64.rpm
 
+
 ##### http://dl.fedoraproject.org/pub/epel/7/x86\_64/Packages/n
+
 
 * http://dl.fedoraproject.org/pub/epel/7/x86\_64/Packages/n/nginx-1.10.2-2.el7.x86\_64.rpm
 * http://dl.fedoraproject.org/pub/epel/7/x86\_64/Packages/n/nginx-1.12.2-1.el7.x86\_64.rpm
@@ -588,7 +625,9 @@ Dynatrace поддерживает множество версий NGINX, NGINX 
 * http://dl.fedoraproject.org/pub/epel/7/x86\_64/Packages/n/nginx-1.12.2-3.el7.x86\_64.rpm
 * http://dl.fedoraproject.org/pub/epel/7/x86\_64/Packages/n/nginx-1.16.1-1.el7.x86\_64.rpm
 
+
 ##### http://dl.fedoraproject.org/pub/epel/7/x86\_64/n
+
 
 * http://dl.fedoraproject.org/pub/epel/7/x86\_64/n/nginx-1.10.1-1.el7.x86\_64.rpm
 * http://dl.fedoraproject.org/pub/epel/7/x86\_64/n/nginx-1.10.2-1.el7.x86\_64.rpm
@@ -597,7 +636,9 @@ Dynatrace поддерживает множество версий NGINX, NGINX 
 * http://dl.fedoraproject.org/pub/epel/7/x86\_64/n/nginx-1.6.3-8.el7.x86\_64.rpm
 * http://dl.fedoraproject.org/pub/epel/7/x86\_64/n/nginx-1.6.3-9.el7.x86\_64.rpm
 
+
 ##### http://download.opensuse.org/repositories/home:/rtCamp:/EasyEngine/Debian\_8.0/amd64
+
 
 * http://download.opensuse.org/repositories/home:/rtCamp:/EasyEngine/Debian\_8.0/amd64/nginx-custom\_1.10.0-1ppa\_amd64.deb
 * http://download.opensuse.org/repositories/home:/rtCamp:/EasyEngine/Debian\_8.0/amd64/nginx-custom\_1.10.0-2\_amd64.deb
@@ -609,7 +650,9 @@ Dynatrace поддерживает множество версий NGINX, NGINX 
 * http://download.opensuse.org/repositories/home:/rtCamp:/EasyEngine/Debian\_8.0/amd64/nginx-custom\_1.8.0-9ppa\_amd64.deb
 * http://download.opensuse.org/repositories/home:/rtCamp:/EasyEngine/Debian\_8.0/amd64/nginx-custom\_1.8.1-1ppa\_amd64.deb
 
+
 ##### http://download.opensuse.org/repositories/home:/rtCamp:/EasyEngine/xUbuntu\_14.04/amd64
+
 
 * http://download.opensuse.org/repositories/home:/rtCamp:/EasyEngine/xUbuntu\_14.04/amd64/nginx-custom\_1.10.0-1ppa\_amd64.deb
 * http://download.opensuse.org/repositories/home:/rtCamp:/EasyEngine/xUbuntu\_14.04/amd64/nginx-custom\_1.10.0-2\_amd64.deb
@@ -621,7 +664,9 @@ Dynatrace поддерживает множество версий NGINX, NGINX 
 * http://download.opensuse.org/repositories/home:/rtCamp:/EasyEngine/xUbuntu\_14.04/amd64/nginx-custom\_1.8.0-9ppa\_amd64.deb
 * http://download.opensuse.org/repositories/home:/rtCamp:/EasyEngine/xUbuntu\_14.04/amd64/nginx-custom\_1.8.1-1ppa\_amd64.deb
 
+
 ##### http://download.opensuse.org/repositories/home:/rtCamp:/EasyEngine/xUbuntu\_14.10/amd64
+
 
 * http://download.opensuse.org/repositories/home:/rtCamp:/EasyEngine/xUbuntu\_14.10/amd64/nginx-custom\_1.10.0-1ppa\_amd64.deb
 * http://download.opensuse.org/repositories/home:/rtCamp:/EasyEngine/xUbuntu\_14.10/amd64/nginx-custom\_1.10.0-2\_amd64.deb
@@ -632,14 +677,18 @@ Dynatrace поддерживает множество версий NGINX, NGINX 
 * http://download.opensuse.org/repositories/home:/rtCamp:/EasyEngine/xUbuntu\_14.10/amd64/nginx-custom\_1.8.0-9ppa\_amd64.deb
 * http://download.opensuse.org/repositories/home:/rtCamp:/EasyEngine/xUbuntu\_14.10/amd64/nginx-custom\_1.8.1-1ppa\_amd64.deb
 
+
 ##### http://download.opensuse.org/repositories/openSUSE:/Backports:/SLE-12/standard/x86\_64
+
 
 * http://download.opensuse.org/repositories/openSUSE:/Backports:/SLE-12/standard/x86\_64/nginx-1.13.9-12.1.x86\_64.rpm
 * http://download.opensuse.org/repositories/openSUSE:/Backports:/SLE-12/standard/x86\_64/nginx-1.14.2-16.1.x86\_64.rpm
 * http://download.opensuse.org/repositories/openSUSE:/Backports:/SLE-12/standard/x86\_64/nginx-1.8.1-5.1.x86\_64.rpm
 * http://download.opensuse.org/repositories/openSUSE:/Backports:/SLE-12/standard/x86\_64/nginx-1.8.1-9.1.x86\_64.rpm
 
+
 ##### http://download.opensuse.org/repositories/server:/http/openSUSE\_13.1/i586
+
 
 * http://download.opensuse.org/repositories/server:/http/openSUSE\_13.1/i586/nginx-1.10.0-55.1.i586.rpm
 * http://download.opensuse.org/repositories/server:/http/openSUSE\_13.1/i586/nginx-1.10.1-58.1.i586.rpm
@@ -651,7 +700,9 @@ Dynatrace поддерживает множество версий NGINX, NGINX 
 * http://download.opensuse.org/repositories/server:/http/openSUSE\_13.1/i586/nginx-1.8.0-49.1.i586.rpm
 * http://download.opensuse.org/repositories/server:/http/openSUSE\_13.1/i586/nginx-1.8.1-52.1.i586.rpm
 
+
 ##### http://download.opensuse.org/repositories/server:/http/openSUSE\_13.1/x86\_64
+
 
 * http://download.opensuse.org/repositories/server:/http/openSUSE\_13.1/x86\_64/nginx-1.10.0-55.1.x86\_64.rpm
 * http://download.opensuse.org/repositories/server:/http/openSUSE\_13.1/x86\_64/nginx-1.10.1-58.1.x86\_64.rpm
@@ -663,7 +714,9 @@ Dynatrace поддерживает множество версий NGINX, NGINX 
 * http://download.opensuse.org/repositories/server:/http/openSUSE\_13.1/x86\_64/nginx-1.8.0-49.1.x86\_64.rpm
 * http://download.opensuse.org/repositories/server:/http/openSUSE\_13.1/x86\_64/nginx-1.8.1-52.1.x86\_64.rpm
 
+
 ##### http://download.opensuse.org/repositories/server:/http/openSUSE\_13.2/i586
+
 
 * http://download.opensuse.org/repositories/server:/http/openSUSE\_13.2/i586/nginx-1.10.0-55.1.i586.rpm
 * http://download.opensuse.org/repositories/server:/http/openSUSE\_13.2/i586/nginx-1.10.1-58.1.i586.rpm
@@ -675,7 +728,9 @@ Dynatrace поддерживает множество версий NGINX, NGINX 
 * http://download.opensuse.org/repositories/server:/http/openSUSE\_13.2/i586/nginx-1.8.0-49.1.i586.rpm
 * http://download.opensuse.org/repositories/server:/http/openSUSE\_13.2/i586/nginx-1.8.1-52.1.i586.rpm
 
+
 ##### http://download.opensuse.org/repositories/server:/http/openSUSE\_13.2/x86\_64
+
 
 * http://download.opensuse.org/repositories/server:/http/openSUSE\_13.2/x86\_64/nginx-1.10.0-55.1.x86\_64.rpm
 * http://download.opensuse.org/repositories/server:/http/openSUSE\_13.2/x86\_64/nginx-1.10.1-58.1.x86\_64.rpm
@@ -687,7 +742,9 @@ Dynatrace поддерживает множество версий NGINX, NGINX 
 * http://download.opensuse.org/repositories/server:/http/openSUSE\_13.2/x86\_64/nginx-1.8.0-49.1.x86\_64.rpm
 * http://download.opensuse.org/repositories/server:/http/openSUSE\_13.2/x86\_64/nginx-1.8.1-52.1.x86\_64.rpm
 
+
 ##### http://download.opensuse.org/tumbleweed/repo/oss/i586
+
 
 * http://download.opensuse.org/tumbleweed/repo/oss/i586/nginx-1.13.11-1.1.i586.rpm
 * http://download.opensuse.org/tumbleweed/repo/oss/i586/nginx-1.13.9-1.4.i586.rpm
@@ -790,7 +847,9 @@ Dynatrace поддерживает множество версий NGINX, NGINX 
 * http://download.opensuse.org/tumbleweed/repo/oss/i586/nginx-1.20.0-2.1.i586.rpm
 * http://download.opensuse.org/tumbleweed/repo/oss/i586/nginx-1.20.0-2.3.i586.rpm
 
+
 ##### http://download.opensuse.org/tumbleweed/repo/oss/suse/i586
+
 
 * http://download.opensuse.org/tumbleweed/repo/oss/suse/i586/nginx-1.10.0-1.2.i586.rpm
 * http://download.opensuse.org/tumbleweed/repo/oss/suse/i586/nginx-1.10.1-1.1.i586.rpm
@@ -838,7 +897,9 @@ Dynatrace поддерживает множество версий NGINX, NGINX 
 * http://download.opensuse.org/tumbleweed/repo/oss/suse/i586/nginx-1.8.1-1.2.i586.rpm
 * http://download.opensuse.org/tumbleweed/repo/oss/suse/i586/nginx-1.8.1-1.3.i586.rpm
 
+
 ##### http://download.opensuse.org/tumbleweed/repo/oss/suse/x86\_64
+
 
 * http://download.opensuse.org/tumbleweed/repo/oss/suse/x86\_64/nginx-1.10.0-1.2.x86\_64.rpm
 * http://download.opensuse.org/tumbleweed/repo/oss/suse/x86\_64/nginx-1.10.1-1.1.x86\_64.rpm
@@ -887,7 +948,9 @@ Dynatrace поддерживает множество версий NGINX, NGINX 
 * http://download.opensuse.org/tumbleweed/repo/oss/suse/x86\_64/nginx-1.8.1-1.2.x86\_64.rpm
 * http://download.opensuse.org/tumbleweed/repo/oss/suse/x86\_64/nginx-1.8.1-1.3.x86\_64.rpm
 
+
 ##### http://download.opensuse.org/tumbleweed/repo/oss/x86\_64
+
 
 * http://download.opensuse.org/tumbleweed/repo/oss/x86\_64/nginx-1.13.11-1.1.x86\_64.rpm
 * http://download.opensuse.org/tumbleweed/repo/oss/x86\_64/nginx-1.13.9-1.4.x86\_64.rpm
@@ -990,7 +1053,9 @@ Dynatrace поддерживает множество версий NGINX, NGINX 
 * http://download.opensuse.org/tumbleweed/repo/oss/x86\_64/nginx-1.20.0-2.1.x86\_64.rpm
 * http://download.opensuse.org/tumbleweed/repo/oss/x86\_64/nginx-1.20.0-2.3.x86\_64.rpm
 
+
 ##### http://ftp.debian.org/debian/pool/main/n/nginx
+
 
 * http://ftp.debian.org/debian/pool/main/n/nginx/nginx-extras\_1.10.0-1\_amd64.deb
 * http://ftp.debian.org/debian/pool/main/n/nginx/nginx-extras\_1.10.0-1\_i386.deb
@@ -1183,7 +1248,9 @@ Dynatrace поддерживает множество версий NGINX, NGINX 
 * http://ftp.debian.org/debian/pool/main/n/nginx/nginx-naxsi\_1.2.1-2.2+wheezy4\_amd64.deb
 * http://ftp.debian.org/debian/pool/main/n/nginx/nginx-naxsi\_1.2.1-2.2+wheezy4\_i386.deb
 
+
 ##### http://nginx.org/packages/debian/pool/nginx/n/nginx
+
 
 * http://nginx.org/packages/debian/pool/nginx/n/nginx/nginx-debug\_1.8.0-1~jessie\_amd64.deb
 * http://nginx.org/packages/debian/pool/nginx/n/nginx/nginx-debug\_1.8.0-1~jessie\_i386.deb
@@ -1250,7 +1317,9 @@ Dynatrace поддерживает множество версий NGINX, NGINX 
 * http://nginx.org/packages/debian/pool/nginx/n/nginx/nginx\_1.8.1-1~wheezy\_amd64.deb
 * http://nginx.org/packages/debian/pool/nginx/n/nginx/nginx\_1.8.1-1~wheezy\_i386.deb
 
+
 ##### http://nginx.org/packages/mainline/centos/5/i386/RPMS
+
 
 * http://nginx.org/packages/mainline/centos/5/i386/RPMS/nginx-1.11.0-1.el5.ngx.i386.rpm
 * http://nginx.org/packages/mainline/centos/5/i386/RPMS/nginx-1.11.1-1.el5.ngx.i386.rpm
@@ -1290,7 +1359,9 @@ Dynatrace поддерживает множество версий NGINX, NGINX 
 * http://nginx.org/packages/mainline/centos/5/i386/RPMS/nginx-debug-1.9.6-1.el5.ngx.i386.rpm
 * http://nginx.org/packages/mainline/centos/5/i386/RPMS/nginx-debug-1.9.7-1.el5.ngx.i386.rpm
 
+
 ##### http://nginx.org/packages/mainline/centos/5/x86\_64/RPMS
+
 
 * http://nginx.org/packages/mainline/centos/5/x86\_64/RPMS/nginx-1.11.0-1.el5.ngx.x86\_64.rpm
 * http://nginx.org/packages/mainline/centos/5/x86\_64/RPMS/nginx-1.11.1-1.el5.ngx.x86\_64.rpm
@@ -1330,7 +1401,9 @@ Dynatrace поддерживает множество версий NGINX, NGINX 
 * http://nginx.org/packages/mainline/centos/5/x86\_64/RPMS/nginx-debug-1.9.6-1.el5.ngx.x86\_64.rpm
 * http://nginx.org/packages/mainline/centos/5/x86\_64/RPMS/nginx-debug-1.9.7-1.el5.ngx.x86\_64.rpm
 
+
 ##### http://nginx.org/packages/mainline/centos/7/x86\_64/RPMS
+
 
 * http://nginx.org/packages/mainline/centos/7/x86\_64/RPMS/nginx-1.11.0-1.el7.ngx.x86\_64.rpm
 * http://nginx.org/packages/mainline/centos/7/x86\_64/RPMS/nginx-1.11.1-1.el7.ngx.x86\_64.rpm
@@ -1420,7 +1493,9 @@ Dynatrace поддерживает множество версий NGINX, NGINX 
 * http://nginx.org/packages/mainline/centos/7/x86\_64/RPMS/nginx-debug-1.9.6-1.el7.ngx.x86\_64.rpm
 * http://nginx.org/packages/mainline/centos/7/x86\_64/RPMS/nginx-debug-1.9.7-1.el7.ngx.x86\_64.rpm
 
+
 ##### http://nginx.org/packages/mainline/debian/pool/nginx/n/nginx
+
 
 * http://nginx.org/packages/mainline/debian/pool/nginx/n/nginx/nginx-debug\_1.9.0-1~jessie\_amd64.deb
 * http://nginx.org/packages/mainline/debian/pool/nginx/n/nginx/nginx-debug\_1.9.0-1~jessie\_i386.deb
@@ -1710,7 +1785,9 @@ Dynatrace поддерживает множество версий NGINX, NGINX 
 * http://nginx.org/packages/mainline/debian/pool/nginx/n/nginx/nginx\_1.9.9-1~wheezy\_amd64.deb
 * http://nginx.org/packages/mainline/debian/pool/nginx/n/nginx/nginx\_1.9.9-1~wheezy\_i386.deb
 
+
 ##### http://nginx.org/packages/mainline/opensuse/12.1/i586/RPMS
+
 
 * http://nginx.org/packages/mainline/opensuse/12.1/i586/RPMS/nginx-debug-1.3.15-1opensuse12.1.ngx.i586.rpm
 * http://nginx.org/packages/mainline/opensuse/12.1/i586/RPMS/nginx-debug-1.3.16-1opensuse12.1.ngx.i586.rpm
@@ -1734,7 +1811,9 @@ Dynatrace поддерживает множество версий NGINX, NGINX 
 * http://nginx.org/packages/mainline/opensuse/12.1/i586/RPMS/nginx-debug-1.7.5-1opensuse12.1.ngx.i586.rpm
 * http://nginx.org/packages/mainline/opensuse/12.1/i586/RPMS/nginx-debug-1.7.6-1opensuse12.1.ngx.i586.rpm
 
+
 ##### http://nginx.org/packages/mainline/opensuse/12.1/x86\_64/RPMS
+
 
 * http://nginx.org/packages/mainline/opensuse/12.1/x86\_64/RPMS/nginx-debug-1.3.15-1opensuse12.1.ngx.x86\_64.rpm
 * http://nginx.org/packages/mainline/opensuse/12.1/x86\_64/RPMS/nginx-debug-1.3.16-1opensuse12.1.ngx.x86\_64.rpm
@@ -1759,7 +1838,9 @@ Dynatrace поддерживает множество версий NGINX, NGINX 
 * http://nginx.org/packages/mainline/opensuse/12.1/x86\_64/RPMS/nginx-debug-1.7.5-1opensuse12.1.ngx.x86\_64.rpm
 * http://nginx.org/packages/mainline/opensuse/12.1/x86\_64/RPMS/nginx-debug-1.7.6-1opensuse12.1.ngx.x86\_64.rpm
 
+
 ##### http://nginx.org/packages/mainline/rhel/6/i386/RPMS
+
 
 * http://nginx.org/packages/mainline/rhel/6/i386/RPMS/nginx-1.11.0-1.el6.ngx.i386.rpm
 * http://nginx.org/packages/mainline/rhel/6/i386/RPMS/nginx-1.11.1-1.el6.ngx.i386.rpm
@@ -1809,7 +1890,9 @@ Dynatrace поддерживает множество версий NGINX, NGINX 
 * http://nginx.org/packages/mainline/rhel/6/i386/RPMS/nginx-debug-1.9.6-1.el6.ngx.i386.rpm
 * http://nginx.org/packages/mainline/rhel/6/i386/RPMS/nginx-debug-1.9.7-1.el6.ngx.i386.rpm
 
+
 ##### http://nginx.org/packages/mainline/rhel/6/x86\_64/RPMS
+
 
 * http://nginx.org/packages/mainline/rhel/6/x86\_64/RPMS/nginx-1.11.0-1.el6.ngx.x86\_64.rpm
 * http://nginx.org/packages/mainline/rhel/6/x86\_64/RPMS/nginx-1.11.1-1.el6.ngx.x86\_64.rpm
@@ -1893,7 +1976,9 @@ Dynatrace поддерживает множество версий NGINX, NGINX 
 * http://nginx.org/packages/mainline/rhel/6/x86\_64/RPMS/nginx-debug-1.9.6-1.el6.ngx.x86\_64.rpm
 * http://nginx.org/packages/mainline/rhel/6/x86\_64/RPMS/nginx-debug-1.9.7-1.el6.ngx.x86\_64.rpm
 
+
 ##### http://nginx.org/packages/mainline/sles/12/x86\_64/RPMS
+
 
 * http://nginx.org/packages/mainline/sles/12/x86\_64/RPMS/nginx-1.11.0-1.sles12.ngx.x86\_64.rpm
 * http://nginx.org/packages/mainline/sles/12/x86\_64/RPMS/nginx-1.11.1-1.sles12.ngx.x86\_64.rpm
@@ -1983,7 +2068,9 @@ Dynatrace поддерживает множество версий NGINX, NGINX 
 * http://nginx.org/packages/mainline/sles/12/x86\_64/RPMS/nginx-debug-1.9.6-1.sles12.ngx.x86\_64.rpm
 * http://nginx.org/packages/mainline/sles/12/x86\_64/RPMS/nginx-debug-1.9.7-1.sles12.ngx.x86\_64.rpm
 
+
 ##### http://nginx.org/packages/mainline/ubuntu/pool/nginx/n/nginx
+
 
 * http://nginx.org/packages/mainline/ubuntu/pool/nginx/n/nginx/nginx-debug\_1.5.12-1~raring\_amd64.deb
 * http://nginx.org/packages/mainline/ubuntu/pool/nginx/n/nginx/nginx-debug\_1.5.12-1~raring\_i386.deb
@@ -2469,7 +2556,9 @@ Dynatrace поддерживает множество версий NGINX, NGINX 
 * http://nginx.org/packages/mainline/ubuntu/pool/nginx/n/nginx/nginx\_1.9.9-1~wily\_amd64.deb
 * http://nginx.org/packages/mainline/ubuntu/pool/nginx/n/nginx/nginx\_1.9.9-1~wily\_i386.deb
 
+
 ##### http://nginx.org/packages/old/centos/5/i386
+
 
 * http://nginx.org/packages/old/centos/5/i386/nginx-1.6.0-1.el5.ngx.i386.rpm
 * http://nginx.org/packages/old/centos/5/i386/nginx-1.6.0-2.el5.ngx.i386.rpm
@@ -2538,7 +2627,9 @@ Dynatrace поддерживает множество версий NGINX, NGINX 
 * http://nginx.org/packages/old/centos/5/i386/nginx-debug-1.7.8-1.el5.ngx.i386.rpm
 * http://nginx.org/packages/old/centos/5/i386/nginx-debug-1.7.9-1.el5.ngx.i386.rpm
 
+
 ##### http://nginx.org/packages/old/centos/5/x86\_64
+
 
 * http://nginx.org/packages/old/centos/5/x86\_64/nginx-1.6.0-1.el5.ngx.x86\_64.rpm
 * http://nginx.org/packages/old/centos/5/x86\_64/nginx-1.6.0-2.el5.ngx.x86\_64.rpm
@@ -2607,7 +2698,9 @@ Dynatrace поддерживает множество версий NGINX, NGINX 
 * http://nginx.org/packages/old/centos/5/x86\_64/nginx-debug-1.7.8-1.el5.ngx.x86\_64.rpm
 * http://nginx.org/packages/old/centos/5/x86\_64/nginx-debug-1.7.9-1.el5.ngx.x86\_64.rpm
 
+
 ##### http://nginx.org/packages/old/centos/6/i386
+
 
 * http://nginx.org/packages/old/centos/6/i386/nginx-1.6.0-1.el6.ngx.i386.rpm
 * http://nginx.org/packages/old/centos/6/i386/nginx-1.6.0-2.el6.ngx.i386.rpm
@@ -2676,7 +2769,9 @@ Dynatrace поддерживает множество версий NGINX, NGINX 
 * http://nginx.org/packages/old/centos/6/i386/nginx-debug-1.7.8-1.el6.ngx.i386.rpm
 * http://nginx.org/packages/old/centos/6/i386/nginx-debug-1.7.9-1.el6.ngx.i386.rpm
 
+
 ##### http://nginx.org/packages/old/centos/6/x86\_64
+
 
 * http://nginx.org/packages/old/centos/6/x86\_64/nginx-1.6.0-1.el6.ngx.x86\_64.rpm
 * http://nginx.org/packages/old/centos/6/x86\_64/nginx-1.6.0-2.el6.ngx.x86\_64.rpm
@@ -2745,7 +2840,9 @@ Dynatrace поддерживает множество версий NGINX, NGINX 
 * http://nginx.org/packages/old/centos/6/x86\_64/nginx-debug-1.7.8-1.el6.ngx.x86\_64.rpm
 * http://nginx.org/packages/old/centos/6/x86\_64/nginx-debug-1.7.9-1.el6.ngx.x86\_64.rpm
 
+
 ##### http://nginx.org/packages/old/centos/7/x86\_64
+
 
 * http://nginx.org/packages/old/centos/7/x86\_64/nginx-1.6.0-2.el7.ngx.x86\_64.rpm
 * http://nginx.org/packages/old/centos/7/x86\_64/nginx-1.6.1-1.el7.ngx.x86\_64.rpm
@@ -2776,7 +2873,9 @@ Dynatrace поддерживает множество версий NGINX, NGINX 
 * http://nginx.org/packages/old/centos/7/x86\_64/nginx-debug-1.7.8-1.el7.ngx.x86\_64.rpm
 * http://nginx.org/packages/old/centos/7/x86\_64/nginx-debug-1.7.9-1.el7.ngx.x86\_64.rpm
 
+
 ##### http://nginx.org/packages/opensuse/12.1/x86\_64/RPMS
+
 
 * http://nginx.org/packages/opensuse/12.1/x86\_64/RPMS/nginx-debug-1.0.14-1opensuse12.1.ngx.x86\_64.rpm
 * http://nginx.org/packages/opensuse/12.1/x86\_64/RPMS/nginx-debug-1.0.15-1opensuse12.1.ngx.x86\_64.rpm
@@ -2799,7 +2898,9 @@ Dynatrace поддерживает множество версий NGINX, NGINX 
 * http://nginx.org/packages/opensuse/12.1/x86\_64/RPMS/nginx-debug-1.6.1-1opensuse12.1.ngx.x86\_64.rpm
 * http://nginx.org/packages/opensuse/12.1/x86\_64/RPMS/nginx-debug-1.6.2-1opensuse12.1.ngx.x86\_64.rpm
 
+
 ##### http://nginx.org/packages/rhel/5/i386/RPMS
+
 
 * http://nginx.org/packages/rhel/5/i386/RPMS/nginx-1.10.0-1.el5.ngx.i386.rpm
 * http://nginx.org/packages/rhel/5/i386/RPMS/nginx-1.10.1-1.el5.ngx.i386.rpm
@@ -2809,7 +2910,9 @@ Dynatrace поддерживает множество версий NGINX, NGINX 
 * http://nginx.org/packages/rhel/5/i386/RPMS/nginx-1.8.1-1.el5.ngx.i386.rpm
 * http://nginx.org/packages/rhel/5/i386/RPMS/nginx-debug-1.8.0-1.el5.ngx.i386.rpm
 
+
 ##### http://nginx.org/packages/rhel/5/x86\_64/RPMS
+
 
 * http://nginx.org/packages/rhel/5/x86\_64/RPMS/nginx-1.10.0-1.el5.ngx.x86\_64.rpm
 * http://nginx.org/packages/rhel/5/x86\_64/RPMS/nginx-1.10.1-1.el5.ngx.x86\_64.rpm
@@ -2819,7 +2922,9 @@ Dynatrace поддерживает множество версий NGINX, NGINX 
 * http://nginx.org/packages/rhel/5/x86\_64/RPMS/nginx-1.8.1-1.el5.ngx.x86\_64.rpm
 * http://nginx.org/packages/rhel/5/x86\_64/RPMS/nginx-debug-1.8.0-1.el5.ngx.x86\_64.rpm
 
+
 ##### http://nginx.org/packages/rhel/6/i386/RPMS
+
 
 * http://nginx.org/packages/rhel/6/i386/RPMS/nginx-1.10.0-1.el6.ngx.i386.rpm
 * http://nginx.org/packages/rhel/6/i386/RPMS/nginx-1.10.1-1.el6.ngx.i386.rpm
@@ -2832,7 +2937,9 @@ Dynatrace поддерживает множество версий NGINX, NGINX 
 * http://nginx.org/packages/rhel/6/i386/RPMS/nginx-1.8.1-1.el6.ngx.i386.rpm
 * http://nginx.org/packages/rhel/6/i386/RPMS/nginx-debug-1.8.0-1.el6.ngx.i386.rpm
 
+
 ##### http://nginx.org/packages/rhel/6/x86\_64/RPMS
+
 
 * http://nginx.org/packages/rhel/6/x86\_64/RPMS/nginx-1.10.0-1.el6.ngx.x86\_64.rpm
 * http://nginx.org/packages/rhel/6/x86\_64/RPMS/nginx-1.10.1-1.el6.ngx.x86\_64.rpm
@@ -2852,7 +2959,9 @@ Dynatrace поддерживает множество версий NGINX, NGINX 
 * http://nginx.org/packages/rhel/6/x86\_64/RPMS/nginx-1.8.1-1.el6.ngx.x86\_64.rpm
 * http://nginx.org/packages/rhel/6/x86\_64/RPMS/nginx-debug-1.8.0-1.el6.ngx.x86\_64.rpm
 
+
 ##### http://nginx.org/packages/rhel/7/x86\_64/RPMS
+
 
 * http://nginx.org/packages/rhel/7/x86\_64/RPMS/nginx-1.10.0-1.el7.ngx.x86\_64.rpm
 * http://nginx.org/packages/rhel/7/x86\_64/RPMS/nginx-1.10.1-1.el7.ngx.x86\_64.rpm
@@ -2874,7 +2983,9 @@ Dynatrace поддерживает множество версий NGINX, NGINX 
 * http://nginx.org/packages/rhel/7/x86\_64/RPMS/nginx-1.8.1-1.el7.ngx.x86\_64.rpm
 * http://nginx.org/packages/rhel/7/x86\_64/RPMS/nginx-debug-1.8.0-1.el7.ngx.x86\_64.rpm
 
+
 ##### http://nginx.org/packages/sles/12/x86\_64/RPMS
+
 
 * http://nginx.org/packages/sles/12/x86\_64/RPMS/nginx-1.10.0-1.sles12.ngx.x86\_64.rpm
 * http://nginx.org/packages/sles/12/x86\_64/RPMS/nginx-1.10.1-1.sles12.ngx.x86\_64.rpm
@@ -2896,7 +3007,9 @@ Dynatrace поддерживает множество версий NGINX, NGINX 
 * http://nginx.org/packages/sles/12/x86\_64/RPMS/nginx-1.8.1-1.sles12.ngx.x86\_64.rpm
 * http://nginx.org/packages/sles/12/x86\_64/RPMS/nginx-debug-1.8.0-1.sles12.ngx.x86\_64.rpm
 
+
 ##### http://nginx.org/packages/ubuntu/pool/nginx/n/nginx
+
 
 * http://nginx.org/packages/ubuntu/pool/nginx/n/nginx/nginx-debug\_1.8.0-1~vivid\_amd64.deb
 * http://nginx.org/packages/ubuntu/pool/nginx/n/nginx/nginx-debug\_1.8.0-1~vivid\_i386.deb
@@ -2999,36 +3112,52 @@ Dynatrace поддерживает множество версий NGINX, NGINX 
 * http://nginx.org/packages/ubuntu/pool/nginx/n/nginx/nginx\_1.8.1-1~wily\_amd64.deb
 * http://nginx.org/packages/ubuntu/pool/nginx/n/nginx/nginx\_1.8.1-1~wily\_i386.deb
 
+
 ##### http://packages.eu-central-1.amazonaws.com/2017.09/main/154a6dd467e2/x86\_64/Packages
+
 
 * http://packages.eu-central-1.amazonaws.com/2017.09/main/154a6dd467e2/x86\_64/Packages/nginx-1.12.1-1.33.amzn1.x86\_64.rpm
 
+
 ##### http://packages.eu-west-1.amazonaws.com/2015.09/main/201509419456/x86\_64/Packages
+
 
 * http://packages.eu-west-1.amazonaws.com/2015.09/main/201509419456/x86\_64/Packages/nginx-1.8.0-10.25.amzn1.x86\_64.rpm
 
+
 ##### http://packages.eu-west-1.amazonaws.com/2015.09/updates/7258b711f970/x86\_64/Packages
+
 
 * http://packages.eu-west-1.amazonaws.com/2015.09/updates/7258b711f970/x86\_64/Packages/nginx-1.8.1-1.26.amzn1.x86\_64.rpm
 
+
 ##### http://packages.eu-west-1.amazonaws.com/2016.03/updates/0f1bdc3765e6/x86\_64/Packages
+
 
 * http://packages.eu-west-1.amazonaws.com/2016.03/updates/0f1bdc3765e6/x86\_64/Packages/nginx-1.8.1-3.27.amzn1.x86\_64.rpm
 
+
 ##### http://packages.eu-west-1.amazonaws.com/2016.09/main/4c53375a3f86/x86\_64/Packages
+
 
 * http://packages.eu-west-1.amazonaws.com/2016.09/main/4c53375a3f86/x86\_64/Packages/nginx-1.10.1-1.28.amzn1.x86\_64.rpm
 
+
 ##### http://packages.eu-west-1.amazonaws.com/2017.03/main/201703c0ffee/x86\_64/Packages
+
 
 * http://packages.eu-west-1.amazonaws.com/2017.03/main/201703c0ffee/x86\_64/Packages/nginx-1.10.2-1.30.amzn1.x86\_64.rpm
 
+
 ##### http://packages.us-west-2.amazonaws.com/2017.03/updates/1f71589089f2/x86\_64/Packages
+
 
 * http://packages.us-west-2.amazonaws.com/2017.03/updates/1f71589089f2/x86\_64/Packages/nginx-1.10.3-1.31.amzn1.x86\_64.rpm
 * http://packages.us-west-2.amazonaws.com/2017.03/updates/1f71589089f2/x86\_64/Packages/nginx-1.12.1-1.32.amzn1.x86\_64.rpm
 
+
 ##### http://ppa.launchpad.net/nginx/development/ubuntu/pool/main/n/nginx
+
 
 * http://ppa.launchpad.net/nginx/development/ubuntu/pool/main/n/nginx/nginx-extras\_1.10.0-0+precise0\_amd64.deb
 * http://ppa.launchpad.net/nginx/development/ubuntu/pool/main/n/nginx/nginx-extras\_1.10.0-0+precise0\_i386.deb
@@ -3525,6 +3654,7 @@ Dynatrace поддерживает множество версий NGINX, NGINX 
 
 ##### http://ppa.launchpad.net/nginx/stable/ubuntu/pool/main/n/nginx
 
+
 * http://ppa.launchpad.net/nginx/stable/ubuntu/pool/main/n/nginx/nginx-extras\_1.10.0-0+precise0\_amd64.deb
 * http://ppa.launchpad.net/nginx/stable/ubuntu/pool/main/n/nginx/nginx-extras\_1.10.0-0+precise0\_i386.deb
 * http://ppa.launchpad.net/nginx/stable/ubuntu/pool/main/n/nginx/nginx-extras\_1.10.0-0+trusty0\_amd64.deb
@@ -3663,7 +3793,9 @@ Dynatrace поддерживает множество версий NGINX, NGINX 
 * http://ppa.launchpad.net/nginx/stable/ubuntu/pool/main/n/nginx/nginx-naxsi\_1.2.7-0ubuntu0ppa1~maverick\_amd64.deb
 * http://ppa.launchpad.net/nginx/stable/ubuntu/pool/main/n/nginx/nginx-naxsi\_1.2.7-0ubuntu0ppa1~maverick\_i386.deb
 
+
 ##### http://security.debian.org/debian-security/pool/updates/main/n/nginx
+
 
 * http://security.debian.org/debian-security/pool/updates/main/n/nginx/nginx-extras\_1.2.1-2.2+wheezy4+deb7u1\_amd64.deb
 * http://security.debian.org/debian-security/pool/updates/main/n/nginx/nginx-extras\_1.2.1-2.2+wheezy4+deb7u1\_i386.deb
@@ -3689,7 +3821,9 @@ Dynatrace поддерживает множество версий NGINX, NGINX 
 * http://security.debian.org/debian-security/pool/updates/main/n/nginx/nginx-naxsi\_1.2.1-2.2+wheezy4+deb7u1\_amd64.deb
 * http://security.debian.org/debian-security/pool/updates/main/n/nginx/nginx-naxsi\_1.2.1-2.2+wheezy4+deb7u1\_i386.deb
 
+
 ##### http://www.atomicorp.com/channels/atomic/centos/6/x86\_64/RPMS
+
 
 * http://www.atomicorp.com/channels/atomic/centos/6/x86\_64/RPMS/nginx-1.13.12-4187.el6.art.x86\_64.rpm
 * http://www.atomicorp.com/channels/atomic/centos/6/x86\_64/RPMS/nginx-1.13.12-4308.el6.art.x86\_64.rpm
@@ -3703,7 +3837,9 @@ Dynatrace поддерживает множество версий NGINX, NGINX 
 * http://www.atomicorp.com/channels/atomic/centos/6/x86\_64/RPMS/nginx-1.6.1-22.el6.art.x86\_64.rpm
 * http://www.atomicorp.com/channels/atomic/centos/6/x86\_64/RPMS/nginx-1.6.2-23.el6.art.x86\_64.rpm
 
+
 ##### http://www.atomicorp.com/channels/atomic/centos/7/x86\_64/RPMS
+
 
 * http://www.atomicorp.com/channels/atomic/centos/7/x86\_64/RPMS/nginx-1.13.12-4187.el7.art.x86\_64.rpm
 * http://www.atomicorp.com/channels/atomic/centos/7/x86\_64/RPMS/nginx-1.13.12-4308.el7.art.x86\_64.rpm
@@ -3716,14 +3852,18 @@ Dynatrace поддерживает множество версий NGINX, NGINX 
 * http://www.atomicorp.com/channels/atomic/centos/7/x86\_64/RPMS/nginx-1.6.1-22.el7.art.x86\_64.rpm
 * http://www.atomicorp.com/channels/atomic/centos/7/x86\_64/RPMS/nginx-1.6.2-23.el7.art.x86\_64.rpm
 
+
 ##### https://archives.dotdeb.org/dists/wheezy/nginx/1.6.2/binary-amd64
+
 
 * https://archives.dotdeb.org/dists/wheezy/nginx/1.6.2/binary-amd64/nginx-extras\_1.6.2-1~dotdeb.1\_amd64.deb
 * https://archives.dotdeb.org/dists/wheezy/nginx/1.6.2/binary-amd64/nginx-full\_1.6.2-1~dotdeb.1\_amd64.deb
 * https://archives.dotdeb.org/dists/wheezy/nginx/1.6.2/binary-amd64/nginx-light\_1.6.2-1~dotdeb.1\_amd64.deb
 * https://archives.dotdeb.org/dists/wheezy/nginx/1.6.2/binary-amd64/nginx-naxsi\_1.6.2-1~dotdeb.1\_amd64.deb
 
+
 ##### https://buildpacks.cloudfoundry.org/dependencies/nginx-static
+
 
 * https://buildpacks.cloudfoundry.org/dependencies/nginx-static/nginx-1.14.0-linux-x64-7d0e1375.tgz
 * https://buildpacks.cloudfoundry.org/dependencies/nginx-static/nginx-1.14.0-linux-x64-cflinuxfs2-5142f2b2.tgz
@@ -3771,7 +3911,9 @@ Dynatrace поддерживает множество версий NGINX, NGINX 
 * https://buildpacks.cloudfoundry.org/dependencies/nginx-static/nginx-1.17.4-linux-x64-cflinuxfs3-ed4aa971.tgz
 * https://buildpacks.cloudfoundry.org/dependencies/nginx-static/nginx-1.17.5-linux-x64-cflinuxfs3-a25b6e9a.tgz
 
+
 ##### https://buildpacks.cloudfoundry.org/dependencies/nginx
+
 
 * https://buildpacks.cloudfoundry.org/dependencies/nginx/nginx-1.12.1-linux-x64-e824b7e3.tgz
 * https://buildpacks.cloudfoundry.org/dependencies/nginx/nginx-1.12.2-linux-x64-60e5d131.tgz
@@ -3789,100 +3931,148 @@ Dynatrace поддерживает множество версий NGINX, NGINX 
 * https://buildpacks.cloudfoundry.org/dependencies/nginx/nginx-1.14.0-linux-x64-22d73813.tgz
 * https://buildpacks.cloudfoundry.org/dependencies/nginx/nginx-1.15.0-linux-x64-fcf8f112.tgz
 
+
 ##### https://copr-be.cloud.fedoraproject.org/results/openresty/openresty/epel-5-x86\_64/00446691-openresty
+
 
 * https://copr-be.cloud.fedoraproject.org/results/openresty/openresty/epel-5-x86\_64/00446691-openresty/openresty-1.11.2.1-3.el5.centos.x86\_64.rpm
 
+
 ##### https://copr-be.cloud.fedoraproject.org/results/openresty/openresty/epel-5-x86\_64/00492544-openresty
+
 
 * https://copr-be.cloud.fedoraproject.org/results/openresty/openresty/epel-5-x86\_64/00492544-openresty/openresty-1.11.2.2-8.el5.centos.x86\_64.rpm
 
+
 ##### https://copr-be.cloud.fedoraproject.org/results/openresty/openresty/epel-6-x86\_64/00446691-openresty
+
 
 * https://copr-be.cloud.fedoraproject.org/results/openresty/openresty/epel-6-x86\_64/00446691-openresty/openresty-1.11.2.1-3.el6.x86\_64.rpm
 
+
 ##### https://copr-be.cloud.fedoraproject.org/results/openresty/openresty/epel-6-x86\_64/00492544-openresty
+
 
 * https://copr-be.cloud.fedoraproject.org/results/openresty/openresty/epel-6-x86\_64/00492544-openresty/openresty-1.11.2.2-8.el6.x86\_64.rpm
 
+
 ##### https://copr-be.cloud.fedoraproject.org/results/openresty/openresty/epel-6-x86\_64/00542405-openresty
+
 
 * https://copr-be.cloud.fedoraproject.org/results/openresty/openresty/epel-6-x86\_64/00542405-openresty/openresty-1.11.2.3-1.el6.x86\_64.rpm
 
+
 ##### https://copr-be.cloud.fedoraproject.org/results/openresty/openresty/epel-6-x86\_64/00543810-openresty
+
 
 * https://copr-be.cloud.fedoraproject.org/results/openresty/openresty/epel-6-x86\_64/00543810-openresty/openresty-1.11.2.3-9.el6.x86\_64.rpm
 
+
 ##### https://copr-be.cloud.fedoraproject.org/results/openresty/openresty/epel-6-x86\_64/00910061-openresty
+
 
 * https://copr-be.cloud.fedoraproject.org/results/openresty/openresty/epel-6-x86\_64/00910061-openresty/openresty-1.15.8.1-1.el6.x86\_64.rpm
 
+
 ##### https://copr-be.cloud.fedoraproject.org/results/openresty/openresty/epel-7-x86\_64/00446691-openresty
+
 
 * https://copr-be.cloud.fedoraproject.org/results/openresty/openresty/epel-7-x86\_64/00446691-openresty/openresty-1.11.2.1-3.el7.centos.x86\_64.rpm
 
+
 ##### https://copr-be.cloud.fedoraproject.org/results/openresty/openresty/epel-7-x86\_64/00492544-openresty
+
 
 * https://copr-be.cloud.fedoraproject.org/results/openresty/openresty/epel-7-x86\_64/00492544-openresty/openresty-1.11.2.2-8.el7.centos.x86\_64.rpm
 
+
 ##### https://copr-be.cloud.fedoraproject.org/results/openresty/openresty/epel-7-x86\_64/00542405-openresty
+
 
 * https://copr-be.cloud.fedoraproject.org/results/openresty/openresty/epel-7-x86\_64/00542405-openresty/openresty-1.11.2.3-1.el7.centos.x86\_64.rpm
 
+
 ##### https://copr-be.cloud.fedoraproject.org/results/openresty/openresty/epel-7-x86\_64/00543810-openresty
+
 
 * https://copr-be.cloud.fedoraproject.org/results/openresty/openresty/epel-7-x86\_64/00543810-openresty/openresty-1.11.2.3-9.el7.centos.x86\_64.rpm
 
+
 ##### https://copr-be.cloud.fedoraproject.org/results/openresty/openresty/epel-7-x86\_64/00910061-openresty
+
 
 * https://copr-be.cloud.fedoraproject.org/results/openresty/openresty/epel-7-x86\_64/00910061-openresty/openresty-1.15.8.1-1.el7.x86\_64.rpm
 
+
 ##### https://copr-be.cloud.fedoraproject.org/results/openresty/openresty/fedora-24-x86\_64/00446691-openresty
+
 
 * https://copr-be.cloud.fedoraproject.org/results/openresty/openresty/fedora-24-x86\_64/00446691-openresty/openresty-1.11.2.1-3.fc24.x86\_64.rpm
 
+
 ##### https://copr-be.cloud.fedoraproject.org/results/openresty/openresty/fedora-24-x86\_64/00492544-openresty
+
 
 * https://copr-be.cloud.fedoraproject.org/results/openresty/openresty/fedora-24-x86\_64/00492544-openresty/openresty-1.11.2.2-8.fc24.x86\_64.rpm
 
+
 ##### https://copr-be.cloud.fedoraproject.org/results/openresty/openresty/fedora-24-x86\_64/00543810-openresty
+
 
 * https://copr-be.cloud.fedoraproject.org/results/openresty/openresty/fedora-24-x86\_64/00543810-openresty/openresty-1.11.2.3-9.fc24.x86\_64.rpm
 
+
 ##### https://copr-be.cloud.fedoraproject.org/results/openresty/openresty/fedora-24-x86\_64/00554953-openresty
+
 
 * https://copr-be.cloud.fedoraproject.org/results/openresty/openresty/fedora-24-x86\_64/00554953-openresty/openresty-1.11.2.3-10.fc24.x86\_64.rpm
 
+
 ##### https://copr-be.cloud.fedoraproject.org/results/openresty/openresty/fedora-24-x86\_64/00557048-openresty
+
 
 * https://copr-be.cloud.fedoraproject.org/results/openresty/openresty/fedora-24-x86\_64/00557048-openresty/openresty-1.11.2.3-12.fc24.x86\_64.rpm
 
+
 ##### https://copr-be.cloud.fedoraproject.org/results/openresty/openresty/fedora-24-x86\_64/00557423-openresty
+
 
 * https://copr-be.cloud.fedoraproject.org/results/openresty/openresty/fedora-24-x86\_64/00557423-openresty/openresty-1.11.2.3-13.fc24.x86\_64.rpm
 
+
 ##### https://copr-be.cloud.fedoraproject.org/results/openresty/openresty/fedora-24-x86\_64/00557540-openresty
+
 
 * https://copr-be.cloud.fedoraproject.org/results/openresty/openresty/fedora-24-x86\_64/00557540-openresty/openresty-1.11.2.3-14.fc24.x86\_64.rpm
 
+
 ##### https://copr-be.cloud.fedoraproject.org/results/openresty/openresty/fedora-24-x86\_64/00559824-openresty
+
 
 * https://copr-be.cloud.fedoraproject.org/results/openresty/openresty/fedora-24-x86\_64/00559824-openresty/openresty-1.11.2.3-15.fc24.x86\_64.rpm
 
+
 ##### https://copr-be.cloud.fedoraproject.org/results/openresty/openresty/fedora-24-x86\_64/00578156-openresty
+
 
 * https://copr-be.cloud.fedoraproject.org/results/openresty/openresty/fedora-24-x86\_64/00578156-openresty/openresty-1.11.2.4-1.fc24.x86\_64.rpm
 
+
 ##### https://copr-be.cloud.fedoraproject.org/results/openresty/openresty/fedora-24-x86\_64/00591457-openresty
+
 
 * https://copr-be.cloud.fedoraproject.org/results/openresty/openresty/fedora-24-x86\_64/00591457-openresty/openresty-1.11.2.5-1.fc24.x86\_64.rpm
 
+
 ##### https://oss-binaries.phusionpassenger.com/apt/passenger/pool/lucid/main/n/nginx
+
 
 * https://oss-binaries.phusionpassenger.com/apt/passenger/pool/lucid/main/n/nginx/nginx-extras\_1.6.3-8.5.0.7~lucid1\_amd64.deb
 * https://oss-binaries.phusionpassenger.com/apt/passenger/pool/lucid/main/n/nginx/nginx-extras\_1.6.3-8.5.0.7~lucid1\_i386.deb
 
+
 ##### https://oss-binaries.phusionpassenger.com/apt/passenger/pool/precise/main/n/nginx
+
 
 * https://oss-binaries.phusionpassenger.com/apt/passenger/pool/precise/main/n/nginx/nginx-extras\_1.10.0-8.5.0.28~precise1\_amd64.deb
 * https://oss-binaries.phusionpassenger.com/apt/passenger/pool/precise/main/n/nginx/nginx-extras\_1.10.0-8.5.0.28~precise1\_i386.deb
@@ -3951,7 +4141,9 @@ Dynatrace поддерживает множество версий NGINX, NGINX 
 * https://oss-binaries.phusionpassenger.com/apt/passenger/pool/precise/main/n/nginx/nginx-extras\_1.8.1-8.5.0.27~precise1\_amd64.deb
 * https://oss-binaries.phusionpassenger.com/apt/passenger/pool/precise/main/n/nginx/nginx-extras\_1.8.1-8.5.0.27~precise1\_i386.deb
 
+
 ##### https://oss-binaries.phusionpassenger.com/apt/passenger/pool/trusty/main/n/nginx
+
 
 * https://oss-binaries.phusionpassenger.com/apt/passenger/pool/trusty/main/n/nginx/nginx-extras\_1.10.0-8.5.0.28~trusty1\_amd64.deb
 * https://oss-binaries.phusionpassenger.com/apt/passenger/pool/trusty/main/n/nginx/nginx-extras\_1.10.0-8.5.0.28~trusty1\_i386.deb
@@ -4039,7 +4231,9 @@ Dynatrace поддерживает множество версий NGINX, NGINX 
 * https://oss-binaries.phusionpassenger.com/apt/passenger/pool/trusty/main/n/nginx/nginx-extras\_1.8.1-8.5.0.27~trusty1\_amd64.deb
 * https://oss-binaries.phusionpassenger.com/apt/passenger/pool/trusty/main/n/nginx/nginx-extras\_1.8.1-8.5.0.27~trusty1\_i386.deb
 
+
 ##### https://oss-binaries.phusionpassenger.com/apt/passenger/pool/vivid/main/n/nginx
+
 
 * https://oss-binaries.phusionpassenger.com/apt/passenger/pool/vivid/main/n/nginx/nginx-extras\_1.6.3-8.5.0.8~vivid1\_amd64.deb
 * https://oss-binaries.phusionpassenger.com/apt/passenger/pool/vivid/main/n/nginx/nginx-extras\_1.6.3-8.5.0.8~vivid1\_i386.deb
@@ -4072,7 +4266,9 @@ Dynatrace поддерживает множество версий NGINX, NGINX 
 * https://oss-binaries.phusionpassenger.com/apt/passenger/pool/vivid/main/n/nginx/nginx-extras\_1.8.1-8.5.0.24~vivid1\_amd64.deb
 * https://oss-binaries.phusionpassenger.com/apt/passenger/pool/vivid/main/n/nginx/nginx-extras\_1.8.1-8.5.0.24~vivid1\_i386.deb
 
+
 ##### https://oss-binaries.phusionpassenger.com/yum/passenger/el/6/i386
+
 
 * https://oss-binaries.phusionpassenger.com/yum/passenger/el/6/i386/nginx-1.10.0-8.p5.0.28.el6.i686.rpm
 * https://oss-binaries.phusionpassenger.com/yum/passenger/el/6/i386/nginx-1.10.1-8.p5.0.29.el6.i686.rpm
@@ -4127,7 +4323,9 @@ Dynatrace поддерживает множество версий NGINX, NGINX 
 * https://oss-binaries.phusionpassenger.com/yum/passenger/el/6/i386/nginx-1.8.1-8.p5.0.26.el6.i686.rpm
 * https://oss-binaries.phusionpassenger.com/yum/passenger/el/6/i386/nginx-1.8.1-8.p5.0.27.el6.i686.rpm
 
+
 ##### https://oss-binaries.phusionpassenger.com/yum/passenger/el/6/x86\_64
+
 
 * https://oss-binaries.phusionpassenger.com/yum/passenger/el/6/x86\_64/nginx-1.10.0-8.p5.0.28.el6.x86\_64.rpm
 * https://oss-binaries.phusionpassenger.com/yum/passenger/el/6/x86\_64/nginx-1.10.1-8.p5.0.29.el6.x86\_64.rpm
@@ -4182,7 +4380,9 @@ Dynatrace поддерживает множество версий NGINX, NGINX 
 * https://oss-binaries.phusionpassenger.com/yum/passenger/el/6/x86\_64/nginx-1.8.1-8.p5.0.26.el6.x86\_64.rpm
 * https://oss-binaries.phusionpassenger.com/yum/passenger/el/6/x86\_64/nginx-1.8.1-8.p5.0.27.el6.x86\_64.rpm
 
+
 ##### https://oss-binaries.phusionpassenger.com/yum/passenger/el/7/x86\_64
+
 
 * https://oss-binaries.phusionpassenger.com/yum/passenger/el/7/x86\_64/nginx-1.10.0-8.p5.0.28.el7.x86\_64.rpm
 * https://oss-binaries.phusionpassenger.com/yum/passenger/el/7/x86\_64/nginx-1.10.1-8.p5.0.29.el7.x86\_64.rpm
@@ -4237,7 +4437,9 @@ Dynatrace поддерживает множество версий NGINX, NGINX 
 * https://oss-binaries.phusionpassenger.com/yum/passenger/el/7/x86\_64/nginx-1.8.1-8.p5.0.26.el7.x86\_64.rpm
 * https://oss-binaries.phusionpassenger.com/yum/passenger/el/7/x86\_64/nginx-1.8.1-8.p5.0.27.el7.x86\_64.rpm
 
+
 ##### https://packages.dotdeb.org/pool/all/n/nginx
+
 
 * https://packages.dotdeb.org/pool/all/n/nginx/nginx-extras\_1.10.1-1~dotdeb%2B7.1\_amd64.deb
 * https://packages.dotdeb.org/pool/all/n/nginx/nginx-extras\_1.10.1-1~dotdeb%2B7.1\_i386.deb
@@ -4458,7 +4660,9 @@ Dynatrace поддерживает множество версий NGINX, NGINX 
 * https://packages.dotdeb.org/pool/all/n/nginx/nginx-naxsi\_1.8.1-1~dotdeb%2B8.1\_amd64.deb
 * https://packages.dotdeb.org/pool/all/n/nginx/nginx-naxsi\_1.8.1-1~dotdeb%2B8.1\_i386.deb
 
+
 ##### https://packages.gitlab.com/gitlab/gitlab-ce/ubuntu/pool/trusty/main/g/gitlab-ce
+
 
 * https://packages.gitlab.com/gitlab/gitlab-ce/ubuntu/pool/trusty/main/g/gitlab-ce/gitlab-ce\_7.10.0~omnibus-1\_amd64.deb
 * https://packages.gitlab.com/gitlab/gitlab-ce/ubuntu/pool/trusty/main/g/gitlab-ce/gitlab-ce\_7.10.0~omnibus.1-1\_amd64.deb
@@ -4532,7 +4736,9 @@ Dynatrace поддерживает множество версий NGINX, NGINX 
 * https://packages.gitlab.com/gitlab/gitlab-ce/ubuntu/pool/trusty/main/g/gitlab-ce/gitlab-ce\_8.5.3-ce.0\_amd64.deb
 * https://packages.gitlab.com/gitlab/gitlab-ce/ubuntu/pool/trusty/main/g/gitlab-ce/gitlab-ce\_8.5.4-ce.0\_amd64.deb
 
+
 ##### https://plus-pkgs.nginx.com/amzn/2017.03/x86\_64/RPMS
+
 
 * https://plus-pkgs.nginx.com/amzn/2017.03/x86\_64/RPMS/nginx-plus-1.11.10-1.amzn1.ngx.x86\_64.rpm
 * https://plus-pkgs.nginx.com/amzn/2017.03/x86\_64/RPMS/nginx-plus-1.11.10-2.amzn1.ngx.x86\_64.rpm
@@ -4562,7 +4768,9 @@ Dynatrace поддерживает множество версий NGINX, NGINX 
 * https://plus-pkgs.nginx.com/amzn/2017.03/x86\_64/RPMS/nginx-plus-extras-1.9.9-3.amzn1.ngx.x86\_64.rpm
 * https://plus-pkgs.nginx.com/amzn/2017.03/x86\_64/RPMS/nginx-plus-extras-1.9.9-4.amzn1.ngx.x86\_64.rpm
 
+
 ##### https://plus-pkgs.nginx.com/centos/5/i386/RPMS
+
 
 * https://plus-pkgs.nginx.com/centos/5/i386/RPMS/nginx-plus-1.11.10-1.el5.ngx.i386.rpm
 * https://plus-pkgs.nginx.com/centos/5/i386/RPMS/nginx-plus-1.11.10-2.el5.ngx.i386.rpm
@@ -4607,7 +4815,9 @@ Dynatrace поддерживает множество версий NGINX, NGINX 
 * https://plus-pkgs.nginx.com/centos/5/i386/RPMS/nginx-plus-debug-1.9.4-2.el5.ngx.i386.rpm
 * https://plus-pkgs.nginx.com/centos/5/i386/RPMS/nginx-plus-debug-1.9.4-3.el5.ngx.i386.rpm
 
+
 ##### https://plus-pkgs.nginx.com/centos/5/x86\_64/RPMS
+
 
 * https://plus-pkgs.nginx.com/centos/5/x86\_64/RPMS/nginx-plus-1.11.10-1.el5.ngx.x86\_64.rpm
 * https://plus-pkgs.nginx.com/centos/5/x86\_64/RPMS/nginx-plus-1.11.10-2.el5.ngx.x86\_64.rpm
@@ -4653,7 +4863,9 @@ Dynatrace поддерживает множество версий NGINX, NGINX 
 * https://plus-pkgs.nginx.com/centos/5/x86\_64/RPMS/nginx-plus-debug-1.9.4-2.el5.ngx.x86\_64.rpm
 * https://plus-pkgs.nginx.com/centos/5/x86\_64/RPMS/nginx-plus-debug-1.9.4-3.el5.ngx.x86\_64.rpm
 
+
 ##### https://plus-pkgs.nginx.com/centos/6/i386/RPMS
+
 
 * https://plus-pkgs.nginx.com/centos/6/i386/RPMS/nginx-plus-1.11.10-1.el6.ngx.i386.rpm
 * https://plus-pkgs.nginx.com/centos/6/i386/RPMS/nginx-plus-1.11.10-2.el6.ngx.i386.rpm
@@ -4768,6 +4980,7 @@ Dynatrace поддерживает множество версий NGINX, NGINX 
 * https://plus-pkgs.nginx.com/centos/6/i386/RPMS/nginx-plus-lua-debug-1.9.4-3.el6.ngx.i386.rpm
 
 ##### https://plus-pkgs.nginx.com/centos/6/x86\_64/RPMS
+
 
 * https://plus-pkgs.nginx.com/centos/6/x86\_64/RPMS/nginx-plus-1.11.10-1.el6.ngx.x86\_64.rpm
 * https://plus-pkgs.nginx.com/centos/6/x86\_64/RPMS/nginx-plus-1.11.10-2.el6.ngx.x86\_64.rpm
@@ -4891,6 +5104,7 @@ Dynatrace поддерживает множество версий NGINX, NGINX 
 
 ##### https://plus-pkgs.nginx.com/centos/7/x86\_64/RPMS
 
+
 * https://plus-pkgs.nginx.com/centos/7/x86\_64/RPMS/nginx-plus-1.11.10-1.el7.ngx.x86\_64.rpm
 * https://plus-pkgs.nginx.com/centos/7/x86\_64/RPMS/nginx-plus-1.11.10-2.el7.ngx.x86\_64.rpm
 * https://plus-pkgs.nginx.com/centos/7/x86\_64/RPMS/nginx-plus-1.11.10-3.el7.ngx.x86\_64.rpm
@@ -5003,6 +5217,7 @@ Dynatrace поддерживает множество версий NGINX, NGINX 
 * https://plus-pkgs.nginx.com/centos/7/x86\_64/RPMS/nginx-plus-lua-debug-1.9.4-3.el7.ngx.x86\_64.rpm
 
 ##### https://plus-pkgs.nginx.com/debian/pool/nginx-plus/n/nginx-plus
+
 
 * https://plus-pkgs.nginx.com/debian/pool/nginx-plus/n/nginx-plus/nginx-plus-debug\_1.5.12-1~squeeze\_amd64.deb
 * https://plus-pkgs.nginx.com/debian/pool/nginx-plus/n/nginx-plus/nginx-plus-debug\_1.5.12-1~squeeze\_i386.deb
@@ -5463,7 +5678,9 @@ Dynatrace поддерживает множество версий NGINX, NGINX 
 * https://plus-pkgs.nginx.com/debian/pool/nginx-plus/n/nginx-plus/nginx-plus\_20-1~stretch\_amd64.deb
 * https://plus-pkgs.nginx.com/debian/pool/nginx-plus/n/nginx-plus/nginx-plus\_20-1~stretch\_i386.deb
 
+
 ##### https://plus-pkgs.nginx.com/sles/12/x86\_64/RPMS
+
 
 * https://plus-pkgs.nginx.com/sles/12/x86\_64/RPMS/nginx-plus-1.11.10-1.sles12.ngx.x86\_64.rpm
 * https://plus-pkgs.nginx.com/sles/12/x86\_64/RPMS/nginx-plus-1.11.10-2.sles12.ngx.x86\_64.rpm
@@ -5555,7 +5772,9 @@ Dynatrace поддерживает множество версий NGINX, NGINX 
 * https://plus-pkgs.nginx.com/sles/12/x86\_64/RPMS/nginx-plus-lua-debug-1.9.4-2.sles12.ngx.x86\_64.rpm
 * https://plus-pkgs.nginx.com/sles/12/x86\_64/RPMS/nginx-plus-lua-debug-1.9.4-3.sles12.ngx.x86\_64.rpm
 
+
 ##### https://plus-pkgs.nginx.com/ubuntu/pool/nginx-plus/n/nginx-plus
+
 
 * https://plus-pkgs.nginx.com/ubuntu/pool/nginx-plus/n/nginx-plus/nginx-plus-debug\_1.5.12-1~lucid\_amd64.deb
 * https://plus-pkgs.nginx.com/ubuntu/pool/nginx-plus/n/nginx-plus/nginx-plus-debug\_1.5.12-1~lucid\_i386.deb
@@ -6361,440 +6580,652 @@ Dynatrace поддерживает множество версий NGINX, NGINX 
 
 ##### https://pulp.inuits.eu/passenger/rhel/7/x86\_64
 
+
 * https://pulp.inuits.eu/passenger/rhel/7/x86\_64/passenger-5.0.10-8.el7.x86\_64.rpm
 * https://pulp.inuits.eu/passenger/rhel/7/x86\_64/passenger-5.0.11-8.el7.x86\_64.rpm
 * https://pulp.inuits.eu/passenger/rhel/7/x86\_64/passenger-5.0.8-8.el7.x86\_64.rpm
 * https://pulp.inuits.eu/passenger/rhel/7/x86\_64/passenger-5.0.9-8.el7.x86\_64.rpm
 
+
 ##### k8s.gcr.io\_ingress-nginx\_controller:v0.34.0.tgz
+
 
 * k8s.gcr.io\_ingress-nginx\_controller:v0.34.0.tgz/k8s.gcr.io\_ingress-nginx\_controller:v0.34.0.tgz
 
+
 ##### k8s.gcr.io\_ingress-nginx\_controller:v0.34.1.tgz
+
 
 * k8s.gcr.io\_ingress-nginx\_controller:v0.34.1.tgz/k8s.gcr.io\_ingress-nginx\_controller:v0.34.1.tgz
 
+
 ##### k8s.gcr.io\_ingress-nginx\_controller:v0.35.0.tgz
+
 
 * k8s.gcr.io\_ingress-nginx\_controller:v0.35.0.tgz/k8s.gcr.io\_ingress-nginx\_controller:v0.35.0.tgz
 
+
 ##### k8s.gcr.io\_ingress-nginx\_controller:v0.40.0.tgz
+
 
 * k8s.gcr.io\_ingress-nginx\_controller:v0.40.0.tgz/k8s.gcr.io\_ingress-nginx\_controller:v0.40.0.tgz
 
+
 ##### k8s.gcr.io\_ingress-nginx\_controller:v0.40.1.tgz
+
 
 * k8s.gcr.io\_ingress-nginx\_controller:v0.40.1.tgz/k8s.gcr.io\_ingress-nginx\_controller:v0.40.1.tgz
 
+
 ##### k8s.gcr.io\_ingress-nginx\_controller:v0.40.2.tgz
+
 
 * k8s.gcr.io\_ingress-nginx\_controller:v0.40.2.tgz/k8s.gcr.io\_ingress-nginx\_controller:v0.40.2.tgz
 
+
 ##### k8s.gcr.io\_ingress-nginx\_controller:v0.41.0.tgz
+
 
 * k8s.gcr.io\_ingress-nginx\_controller:v0.41.0.tgz/k8s.gcr.io\_ingress-nginx\_controller:v0.41.0.tgz
 
+
 ##### k8s.gcr.io\_ingress-nginx\_controller:v0.41.1.tgz
+
 
 * k8s.gcr.io\_ingress-nginx\_controller:v0.41.1.tgz/k8s.gcr.io\_ingress-nginx\_controller:v0.41.1.tgz
 
+
 ##### k8s.gcr.io\_ingress-nginx\_controller:v0.41.2.tgz
+
 
 * k8s.gcr.io\_ingress-nginx\_controller:v0.41.2.tgz/k8s.gcr.io\_ingress-nginx\_controller:v0.41.2.tgz
 
+
 ##### k8s.gcr.io\_ingress-nginx\_controller:v0.42.0.tgz
+
 
 * k8s.gcr.io\_ingress-nginx\_controller:v0.42.0.tgz/k8s.gcr.io\_ingress-nginx\_controller:v0.42.0.tgz
 
+
 ##### k8s.gcr.io\_ingress-nginx\_controller:v0.43.0.tgz
+
 
 * k8s.gcr.io\_ingress-nginx\_controller:v0.43.0.tgz/k8s.gcr.io\_ingress-nginx\_controller:v0.43.0.tgz
 
+
 ##### k8s.gcr.io\_ingress-nginx\_controller:v0.44.0.tgz
+
 
 * k8s.gcr.io\_ingress-nginx\_controller:v0.44.0.tgz/k8s.gcr.io\_ingress-nginx\_controller:v0.44.0.tgz
 
+
 ##### k8s.gcr.io\_ingress-nginx\_controller:v0.45.0.tgz
+
 
 * k8s.gcr.io\_ingress-nginx\_controller:v0.45.0.tgz/k8s.gcr.io\_ingress-nginx\_controller:v0.45.0.tgz
 
+
 ##### k8s.gcr.io\_ingress-nginx\_controller:v0.46.0.tgz
+
 
 * k8s.gcr.io\_ingress-nginx\_controller:v0.46.0.tgz/k8s.gcr.io\_ingress-nginx\_controller:v0.46.0.tgz
 
+
 ##### k8s.gcr.io\_ingress-nginx\_controller:v0.47.0.tgz
+
 
 * k8s.gcr.io\_ingress-nginx\_controller:v0.47.0.tgz/k8s.gcr.io\_ingress-nginx\_controller:v0.47.0.tgz
 
+
 ##### k8s.gcr.io\_ingress-nginx\_controller:v0.48.1.tgz
+
 
 * k8s.gcr.io\_ingress-nginx\_controller:v0.48.1.tgz/k8s.gcr.io\_ingress-nginx\_controller:v0.48.1.tgz
 
+
 ##### k8s.gcr.io\_ingress-nginx\_controller:v0.49.0.tgz
+
 
 * k8s.gcr.io\_ingress-nginx\_controller:v0.49.0.tgz/k8s.gcr.io\_ingress-nginx\_controller:v0.49.0.tgz
 
+
 ##### k8s.gcr.io\_ingress-nginx\_controller:v0.49.1.tgz
+
 
 * k8s.gcr.io\_ingress-nginx\_controller:v0.49.1.tgz/k8s.gcr.io\_ingress-nginx\_controller:v0.49.1.tgz
 
+
 ##### k8s.gcr.io\_ingress-nginx\_controller:v0.49.2.tgz
+
 
 * k8s.gcr.io\_ingress-nginx\_controller:v0.49.2.tgz/k8s.gcr.io\_ingress-nginx\_controller:v0.49.2.tgz
 
+
 ##### k8s.gcr.io\_ingress-nginx\_controller:v0.49.3.tgz
+
 
 * k8s.gcr.io\_ingress-nginx\_controller:v0.49.3.tgz/k8s.gcr.io\_ingress-nginx\_controller:v0.49.3.tgz
 
+
 ##### k8s.gcr.io\_ingress-nginx\_controller:v0.51.0.tgz
+
 
 * k8s.gcr.io\_ingress-nginx\_controller:v0.51.0.tgz/k8s.gcr.io\_ingress-nginx\_controller:v0.51.0.tgz
 
+
 ##### k8s.gcr.io\_ingress-nginx\_controller:v1.0.0-alpha.2.tgz
+
 
 * k8s.gcr.io\_ingress-nginx\_controller:v1.0.0-alpha.2.tgz/k8s.gcr.io\_ingress-nginx\_controller:v1.0.0-alpha.2.tgz
 
+
 ##### k8s.gcr.io\_ingress-nginx\_controller:v1.0.0-beta.1.tgz
+
 
 * k8s.gcr.io\_ingress-nginx\_controller:v1.0.0-beta.1.tgz/k8s.gcr.io\_ingress-nginx\_controller:v1.0.0-beta.1.tgz
 
+
 ##### k8s.gcr.io\_ingress-nginx\_controller:v1.0.0-beta.3.tgz
+
 
 * k8s.gcr.io\_ingress-nginx\_controller:v1.0.0-beta.3.tgz/k8s.gcr.io\_ingress-nginx\_controller:v1.0.0-beta.3.tgz
 
+
 ##### k8s.gcr.io\_ingress-nginx\_controller:v1.0.0.tgz
+
 
 * k8s.gcr.io\_ingress-nginx\_controller:v1.0.0.tgz/k8s.gcr.io\_ingress-nginx\_controller:v1.0.0.tgz
 
+
 ##### k8s.gcr.io\_ingress-nginx\_controller:v1.0.1.tgz
+
 
 * k8s.gcr.io\_ingress-nginx\_controller:v1.0.1.tgz/k8s.gcr.io\_ingress-nginx\_controller:v1.0.1.tgz
 
+
 ##### k8s.gcr.io\_ingress-nginx\_controller:v1.0.2.tgz
+
 
 * k8s.gcr.io\_ingress-nginx\_controller:v1.0.2.tgz/k8s.gcr.io\_ingress-nginx\_controller:v1.0.2.tgz
 
+
 ##### k8s.gcr.io\_ingress-nginx\_controller:v1.0.3.tgz
+
 
 * k8s.gcr.io\_ingress-nginx\_controller:v1.0.3.tgz/k8s.gcr.io\_ingress-nginx\_controller:v1.0.3.tgz
 
+
 ##### k8s.gcr.io\_ingress-nginx\_controller:v1.0.4.tgz
+
 
 * k8s.gcr.io\_ingress-nginx\_controller:v1.0.4.tgz/k8s.gcr.io\_ingress-nginx\_controller:v1.0.4.tgz
 
+
 ##### k8s.gcr.io\_ingress-nginx\_controller:v1.0.5.tgz
+
 
 * k8s.gcr.io\_ingress-nginx\_controller:v1.0.5.tgz/k8s.gcr.io\_ingress-nginx\_controller:v1.0.5.tgz
 
+
 ##### k8s.gcr.io\_ingress-nginx\_controller:v1.1.0.tgz
+
 
 * k8s.gcr.io\_ingress-nginx\_controller:v1.1.0.tgz/k8s.gcr.io\_ingress-nginx\_controller:v1.1.0.tgz
 
+
 ##### k8s.gcr.io\_ingress-nginx\_controller:v1.1.1.tgz
+
 
 * k8s.gcr.io\_ingress-nginx\_controller:v1.1.1.tgz/k8s.gcr.io\_ingress-nginx\_controller:v1.1.1.tgz
 
+
 ##### k8s.gcr.io\_ingress-nginx\_controller:v1.1.2.tgz
+
 
 * k8s.gcr.io\_ingress-nginx\_controller:v1.1.2.tgz/k8s.gcr.io\_ingress-nginx\_controller:v1.1.2.tgz
 
+
 ##### k8s.gcr.io\_ingress-nginx\_controller:v1.1.3.tgz
+
 
 * k8s.gcr.io\_ingress-nginx\_controller:v1.1.3.tgz/k8s.gcr.io\_ingress-nginx\_controller:v1.1.3.tgz
 
+
 ##### k8s.gcr.io\_ingress-nginx\_controller:v1.10.0.tgz
+
 
 * k8s.gcr.io\_ingress-nginx\_controller:v1.10.0.tgz/k8s.gcr.io\_ingress-nginx\_controller:v1.10.0.tgz
 
+
 ##### k8s.gcr.io\_ingress-nginx\_controller:v1.10.1.tgz
+
 
 * k8s.gcr.io\_ingress-nginx\_controller:v1.10.1.tgz/k8s.gcr.io\_ingress-nginx\_controller:v1.10.1.tgz
 
+
 ##### k8s.gcr.io\_ingress-nginx\_controller:v1.10.2.tgz
+
 
 * k8s.gcr.io\_ingress-nginx\_controller:v1.10.2.tgz/k8s.gcr.io\_ingress-nginx\_controller:v1.10.2.tgz
 
+
 ##### k8s.gcr.io\_ingress-nginx\_controller:v1.10.3.tgz
+
 
 * k8s.gcr.io\_ingress-nginx\_controller:v1.10.3.tgz/k8s.gcr.io\_ingress-nginx\_controller:v1.10.3.tgz
 
+
 ##### k8s.gcr.io\_ingress-nginx\_controller:v1.10.4.tgz
+
 
 * k8s.gcr.io\_ingress-nginx\_controller:v1.10.4.tgz/k8s.gcr.io\_ingress-nginx\_controller:v1.10.4.tgz
 
+
 ##### k8s.gcr.io\_ingress-nginx\_controller:v1.10.5.tgz
+
 
 * k8s.gcr.io\_ingress-nginx\_controller:v1.10.5.tgz/k8s.gcr.io\_ingress-nginx\_controller:v1.10.5.tgz
 
+
 ##### k8s.gcr.io\_ingress-nginx\_controller:v1.10.6.tgz
+
 
 * k8s.gcr.io\_ingress-nginx\_controller:v1.10.6.tgz/k8s.gcr.io\_ingress-nginx\_controller:v1.10.6.tgz
 
+
 ##### k8s.gcr.io\_ingress-nginx\_controller:v1.11.0.tgz
+
 
 * k8s.gcr.io\_ingress-nginx\_controller:v1.11.0.tgz/k8s.gcr.io\_ingress-nginx\_controller:v1.11.0.tgz
 
+
 ##### k8s.gcr.io\_ingress-nginx\_controller:v1.11.1.tgz
+
 
 * k8s.gcr.io\_ingress-nginx\_controller:v1.11.1.tgz/k8s.gcr.io\_ingress-nginx\_controller:v1.11.1.tgz
 
+
 ##### k8s.gcr.io\_ingress-nginx\_controller:v1.11.2.tgz
+
 
 * k8s.gcr.io\_ingress-nginx\_controller:v1.11.2.tgz/k8s.gcr.io\_ingress-nginx\_controller:v1.11.2.tgz
 
+
 ##### k8s.gcr.io\_ingress-nginx\_controller:v1.11.3.tgz
+
 
 * k8s.gcr.io\_ingress-nginx\_controller:v1.11.3.tgz/k8s.gcr.io\_ingress-nginx\_controller:v1.11.3.tgz
 
+
 ##### k8s.gcr.io\_ingress-nginx\_controller:v1.11.4.tgz
+
 
 * k8s.gcr.io\_ingress-nginx\_controller:v1.11.4.tgz/k8s.gcr.io\_ingress-nginx\_controller:v1.11.4.tgz
 
+
 ##### k8s.gcr.io\_ingress-nginx\_controller:v1.11.5.tgz
+
 
 * k8s.gcr.io\_ingress-nginx\_controller:v1.11.5.tgz/k8s.gcr.io\_ingress-nginx\_controller:v1.11.5.tgz
 
+
 ##### k8s.gcr.io\_ingress-nginx\_controller:v1.11.6.tgz
+
 
 * k8s.gcr.io\_ingress-nginx\_controller:v1.11.6.tgz/k8s.gcr.io\_ingress-nginx\_controller:v1.11.6.tgz
 
+
 ##### k8s.gcr.io\_ingress-nginx\_controller:v1.11.7.tgz
+
 
 * k8s.gcr.io\_ingress-nginx\_controller:v1.11.7.tgz/k8s.gcr.io\_ingress-nginx\_controller:v1.11.7.tgz
 
+
 ##### k8s.gcr.io\_ingress-nginx\_controller:v1.11.8.tgz
+
 
 * k8s.gcr.io\_ingress-nginx\_controller:v1.11.8.tgz/k8s.gcr.io\_ingress-nginx\_controller:v1.11.8.tgz
 
+
 ##### k8s.gcr.io\_ingress-nginx\_controller:v1.12.0-beta.0.tgz
+
 
 * k8s.gcr.io\_ingress-nginx\_controller:v1.12.0-beta.0.tgz/k8s.gcr.io\_ingress-nginx\_controller:v1.12.0-beta.0.tgz
 
+
 ##### k8s.gcr.io\_ingress-nginx\_controller:v1.12.0.tgz
+
 
 * k8s.gcr.io\_ingress-nginx\_controller:v1.12.0.tgz/k8s.gcr.io\_ingress-nginx\_controller:v1.12.0.tgz
 
+
 ##### k8s.gcr.io\_ingress-nginx\_controller:v1.12.1.tgz
+
 
 * k8s.gcr.io\_ingress-nginx\_controller:v1.12.1.tgz/k8s.gcr.io\_ingress-nginx\_controller:v1.12.1.tgz
 
+
 ##### k8s.gcr.io\_ingress-nginx\_controller:v1.12.2.tgz
+
 
 * k8s.gcr.io\_ingress-nginx\_controller:v1.12.2.tgz/k8s.gcr.io\_ingress-nginx\_controller:v1.12.2.tgz
 
+
 ##### k8s.gcr.io\_ingress-nginx\_controller:v1.12.3.tgz
+
 
 * k8s.gcr.io\_ingress-nginx\_controller:v1.12.3.tgz/k8s.gcr.io\_ingress-nginx\_controller:v1.12.3.tgz
 
+
 ##### k8s.gcr.io\_ingress-nginx\_controller:v1.12.4.tgz
+
 
 * k8s.gcr.io\_ingress-nginx\_controller:v1.12.4.tgz/k8s.gcr.io\_ingress-nginx\_controller:v1.12.4.tgz
 
+
 ##### k8s.gcr.io\_ingress-nginx\_controller:v1.12.5.tgz
+
 
 * k8s.gcr.io\_ingress-nginx\_controller:v1.12.5.tgz/k8s.gcr.io\_ingress-nginx\_controller:v1.12.5.tgz
 
+
 ##### k8s.gcr.io\_ingress-nginx\_controller:v1.12.6.tgz
+
 
 * k8s.gcr.io\_ingress-nginx\_controller:v1.12.6.tgz/k8s.gcr.io\_ingress-nginx\_controller:v1.12.6.tgz
 
+
 ##### k8s.gcr.io\_ingress-nginx\_controller:v1.12.7.tgz
+
 
 * k8s.gcr.io\_ingress-nginx\_controller:v1.12.7.tgz/k8s.gcr.io\_ingress-nginx\_controller:v1.12.7.tgz
 
 ##### k8s.gcr.io\_ingress-nginx\_controller:v1.12.8.tgz
 
+
 * k8s.gcr.io\_ingress-nginx\_controller:v1.12.8.tgz/k8s.gcr.io\_ingress-nginx\_controller:v1.12.8.tgz
+
 
 ##### k8s.gcr.io\_ingress-nginx\_controller:v1.13.0.tgz
 
+
 * k8s.gcr.io\_ingress-nginx\_controller:v1.13.0.tgz/k8s.gcr.io\_ingress-nginx\_controller:v1.13.0.tgz
+
 
 ##### k8s.gcr.io\_ingress-nginx\_controller:v1.13.1.tgz
 
+
 * k8s.gcr.io\_ingress-nginx\_controller:v1.13.1.tgz/k8s.gcr.io\_ingress-nginx\_controller:v1.13.1.tgz
+
 
 ##### k8s.gcr.io\_ingress-nginx\_controller:v1.13.2.tgz
 
+
 * k8s.gcr.io\_ingress-nginx\_controller:v1.13.2.tgz/k8s.gcr.io\_ingress-nginx\_controller:v1.13.2.tgz
+
 
 ##### k8s.gcr.io\_ingress-nginx\_controller:v1.13.3.tgz
 
+
 * k8s.gcr.io\_ingress-nginx\_controller:v1.13.3.tgz/k8s.gcr.io\_ingress-nginx\_controller:v1.13.3.tgz
+
 
 ##### k8s.gcr.io\_ingress-nginx\_controller:v1.13.4.tgz
 
+
 * k8s.gcr.io\_ingress-nginx\_controller:v1.13.4.tgz/k8s.gcr.io\_ingress-nginx\_controller:v1.13.4.tgz
+
 
 ##### k8s.gcr.io\_ingress-nginx\_controller:v1.13.5.tgz
 
+
 * k8s.gcr.io\_ingress-nginx\_controller:v1.13.5.tgz/k8s.gcr.io\_ingress-nginx\_controller:v1.13.5.tgz
+
 
 ##### k8s.gcr.io\_ingress-nginx\_controller:v1.13.6.tgz
 
+
 * k8s.gcr.io\_ingress-nginx\_controller:v1.13.6.tgz/k8s.gcr.io\_ingress-nginx\_controller:v1.13.6.tgz
+
 
 ##### k8s.gcr.io\_ingress-nginx\_controller:v1.13.7.tgz
 
+
 * k8s.gcr.io\_ingress-nginx\_controller:v1.13.7.tgz/k8s.gcr.io\_ingress-nginx\_controller:v1.13.7.tgz
+
 
 ##### k8s.gcr.io\_ingress-nginx\_controller:v1.13.8.tgz
 
+
 * k8s.gcr.io\_ingress-nginx\_controller:v1.13.8.tgz/k8s.gcr.io\_ingress-nginx\_controller:v1.13.8.tgz
+
 
 ##### k8s.gcr.io\_ingress-nginx\_controller:v1.13.9.tgz
 
+
 * k8s.gcr.io\_ingress-nginx\_controller:v1.13.9.tgz/k8s.gcr.io\_ingress-nginx\_controller:v1.13.9.tgz
+
 
 ##### k8s.gcr.io\_ingress-nginx\_controller:v1.14.0.tgz
 
+
 * k8s.gcr.io\_ingress-nginx\_controller:v1.14.0.tgz/k8s.gcr.io\_ingress-nginx\_controller:v1.14.0.tgz
+
 
 ##### k8s.gcr.io\_ingress-nginx\_controller:v1.14.1.tgz
 
+
 * k8s.gcr.io\_ingress-nginx\_controller:v1.14.1.tgz/k8s.gcr.io\_ingress-nginx\_controller:v1.14.1.tgz
+
 
 ##### k8s.gcr.io\_ingress-nginx\_controller:v1.14.2.tgz
 
+
 * k8s.gcr.io\_ingress-nginx\_controller:v1.14.2.tgz/k8s.gcr.io\_ingress-nginx\_controller:v1.14.2.tgz
+
 
 ##### k8s.gcr.io\_ingress-nginx\_controller:v1.14.3.tgz
 
+
 * k8s.gcr.io\_ingress-nginx\_controller:v1.14.3.tgz/k8s.gcr.io\_ingress-nginx\_controller:v1.14.3.tgz
+
 
 ##### k8s.gcr.io\_ingress-nginx\_controller:v1.14.4.tgz
 
+
 * k8s.gcr.io\_ingress-nginx\_controller:v1.14.4.tgz/k8s.gcr.io\_ingress-nginx\_controller:v1.14.4.tgz
+
 
 ##### k8s.gcr.io\_ingress-nginx\_controller:v1.14.5.tgz
 
+
 * k8s.gcr.io\_ingress-nginx\_controller:v1.14.5.tgz/k8s.gcr.io\_ingress-nginx\_controller:v1.14.5.tgz
+
 
 ##### k8s.gcr.io\_ingress-nginx\_controller:v1.15.0.tgz
 
+
 * k8s.gcr.io\_ingress-nginx\_controller:v1.15.0.tgz/k8s.gcr.io\_ingress-nginx\_controller:v1.15.0.tgz
+
 
 ##### k8s.gcr.io\_ingress-nginx\_controller:v1.15.1.tgz
 
+
 * k8s.gcr.io\_ingress-nginx\_controller:v1.15.1.tgz/k8s.gcr.io\_ingress-nginx\_controller:v1.15.1.tgz
+
 
 ##### k8s.gcr.io\_ingress-nginx\_controller:v1.2.0-beta.0.tgz
 
+
 * k8s.gcr.io\_ingress-nginx\_controller:v1.2.0-beta.0.tgz/k8s.gcr.io\_ingress-nginx\_controller:v1.2.0-beta.0.tgz
+
 
 ##### k8s.gcr.io\_ingress-nginx\_controller:v1.2.0-beta.1.tgz
 
+
 * k8s.gcr.io\_ingress-nginx\_controller:v1.2.0-beta.1.tgz/k8s.gcr.io\_ingress-nginx\_controller:v1.2.0-beta.1.tgz
+
 
 ##### k8s.gcr.io\_ingress-nginx\_controller:v1.2.0.tgz
 
+
 * k8s.gcr.io\_ingress-nginx\_controller:v1.2.0.tgz/k8s.gcr.io\_ingress-nginx\_controller:v1.2.0.tgz
+
 
 ##### k8s.gcr.io\_ingress-nginx\_controller:v1.2.1.tgz
 
+
 * k8s.gcr.io\_ingress-nginx\_controller:v1.2.1.tgz/k8s.gcr.io\_ingress-nginx\_controller:v1.2.1.tgz
+
 
 ##### k8s.gcr.io\_ingress-nginx\_controller:v1.3.0.tgz
 
+
 * k8s.gcr.io\_ingress-nginx\_controller:v1.3.0.tgz/k8s.gcr.io\_ingress-nginx\_controller:v1.3.0.tgz
+
 
 ##### k8s.gcr.io\_ingress-nginx\_controller:v1.3.1.tgz
 
+
 * k8s.gcr.io\_ingress-nginx\_controller:v1.3.1.tgz/k8s.gcr.io\_ingress-nginx\_controller:v1.3.1.tgz
+
 
 ##### k8s.gcr.io\_ingress-nginx\_controller:v1.4.0.tgz
 
+
 * k8s.gcr.io\_ingress-nginx\_controller:v1.4.0.tgz/k8s.gcr.io\_ingress-nginx\_controller:v1.4.0.tgz
+
 
 ##### k8s.gcr.io\_ingress-nginx\_controller:v1.5.1.tgz
 
+
 * k8s.gcr.io\_ingress-nginx\_controller:v1.5.1.tgz/k8s.gcr.io\_ingress-nginx\_controller:v1.5.1.tgz
+
 
 ##### k8s.gcr.io\_ingress-nginx\_controller:v1.5.2.tgz
 
+
 * k8s.gcr.io\_ingress-nginx\_controller:v1.5.2.tgz/k8s.gcr.io\_ingress-nginx\_controller:v1.5.2.tgz
+
 
 ##### k8s.gcr.io\_ingress-nginx\_controller:v1.6.0.tgz
 
+
 * k8s.gcr.io\_ingress-nginx\_controller:v1.6.0.tgz/k8s.gcr.io\_ingress-nginx\_controller:v1.6.0.tgz
+
 
 ##### k8s.gcr.io\_ingress-nginx\_controller:v1.6.1.tgz
 
+
 * k8s.gcr.io\_ingress-nginx\_controller:v1.6.1.tgz/k8s.gcr.io\_ingress-nginx\_controller:v1.6.1.tgz
+
 
 ##### k8s.gcr.io\_ingress-nginx\_controller:v1.6.2.tgz
 
+
 * k8s.gcr.io\_ingress-nginx\_controller:v1.6.2.tgz/k8s.gcr.io\_ingress-nginx\_controller:v1.6.2.tgz
+
 
 ##### k8s.gcr.io\_ingress-nginx\_controller:v1.6.3.tgz
 
+
 * k8s.gcr.io\_ingress-nginx\_controller:v1.6.3.tgz/k8s.gcr.io\_ingress-nginx\_controller:v1.6.3.tgz
+
 
 ##### k8s.gcr.io\_ingress-nginx\_controller:v1.6.4.tgz
 
+
 * k8s.gcr.io\_ingress-nginx\_controller:v1.6.4.tgz/k8s.gcr.io\_ingress-nginx\_controller:v1.6.4.tgz
+
 
 ##### k8s.gcr.io\_ingress-nginx\_controller:v1.7.0.tgz
 
+
 * k8s.gcr.io\_ingress-nginx\_controller:v1.7.0.tgz/k8s.gcr.io\_ingress-nginx\_controller:v1.7.0.tgz
+
 
 ##### k8s.gcr.io\_ingress-nginx\_controller:v1.7.1.tgz
 
+
 * k8s.gcr.io\_ingress-nginx\_controller:v1.7.1.tgz/k8s.gcr.io\_ingress-nginx\_controller:v1.7.1.tgz
+
 
 ##### k8s.gcr.io\_ingress-nginx\_controller:v1.8.0.tgz
 
+
 * k8s.gcr.io\_ingress-nginx\_controller:v1.8.0.tgz/k8s.gcr.io\_ingress-nginx\_controller:v1.8.0.tgz
+
 
 ##### k8s.gcr.io\_ingress-nginx\_controller:v1.8.1.tgz
 
+
 * k8s.gcr.io\_ingress-nginx\_controller:v1.8.1.tgz/k8s.gcr.io\_ingress-nginx\_controller:v1.8.1.tgz
+
 
 ##### k8s.gcr.io\_ingress-nginx\_controller:v1.8.2.tgz
 
+
 * k8s.gcr.io\_ingress-nginx\_controller:v1.8.2.tgz/k8s.gcr.io\_ingress-nginx\_controller:v1.8.2.tgz
+
 
 ##### k8s.gcr.io\_ingress-nginx\_controller:v1.8.4.tgz
 
+
 * k8s.gcr.io\_ingress-nginx\_controller:v1.8.4.tgz/k8s.gcr.io\_ingress-nginx\_controller:v1.8.4.tgz
+
 
 ##### k8s.gcr.io\_ingress-nginx\_controller:v1.8.5.tgz
 
+
 * k8s.gcr.io\_ingress-nginx\_controller:v1.8.5.tgz/k8s.gcr.io\_ingress-nginx\_controller:v1.8.5.tgz
+
 
 ##### k8s.gcr.io\_ingress-nginx\_controller:v1.9.0-beta.0.tgz
 
+
 * k8s.gcr.io\_ingress-nginx\_controller:v1.9.0-beta.0.tgz/k8s.gcr.io\_ingress-nginx\_controller:v1.9.0-beta.0.tgz
+
 
 ##### k8s.gcr.io\_ingress-nginx\_controller:v1.9.0.tgz
 
+
 * k8s.gcr.io\_ingress-nginx\_controller:v1.9.0.tgz/k8s.gcr.io\_ingress-nginx\_controller:v1.9.0.tgz
+
 
 ##### k8s.gcr.io\_ingress-nginx\_controller:v1.9.1.tgz
 
+
 * k8s.gcr.io\_ingress-nginx\_controller:v1.9.1.tgz/k8s.gcr.io\_ingress-nginx\_controller:v1.9.1.tgz
+
 
 ##### k8s.gcr.io\_ingress-nginx\_controller:v1.9.3.tgz
 
+
 * k8s.gcr.io\_ingress-nginx\_controller:v1.9.3.tgz/k8s.gcr.io\_ingress-nginx\_controller:v1.9.3.tgz
+
 
 ##### k8s.gcr.io\_ingress-nginx\_controller:v1.9.4.tgz
 
+
 * k8s.gcr.io\_ingress-nginx\_controller:v1.9.4.tgz/k8s.gcr.io\_ingress-nginx\_controller:v1.9.4.tgz
+
 
 ##### k8s.gcr.io\_ingress-nginx\_controller:v1.9.5.tgz
 
+
 * k8s.gcr.io\_ingress-nginx\_controller:v1.9.5.tgz/k8s.gcr.io\_ingress-nginx\_controller:v1.9.5.tgz
 
+
 ##### k8s.gcr.io\_ingress-nginx\_controller:v1.9.6.tgz
+
 
 * k8s.gcr.io\_ingress-nginx\_controller:v1.9.6.tgz/k8s.gcr.io\_ingress-nginx\_controller:v1.9.6.tgz
 
 ### Поддержка NGINX Plus
 
-Поддержка последнего выпуска NGINX Plus может отличаться от жизненного цикла поддержки NGINX, но мы стремимся поддерживать актуальность.
+Поддержка последнего релиза NGINX Plus может отличаться от жизненного цикла поддержки NGINX, но мы стремимся оставаться актуальными.
 
-| Версия NGINX Plus | Выпущено вендором | Окончание поддержки вендором | Первая поддерживаемая версия Dynatrace OneAgent | Последняя поддерживаемая версия Dynatrace OneAgent | Dynatrace support until | [Dynatrace support level](/managed/ingest-from/technology-support#support-levels) |
+| Версия NGINX Plus | Дата выпуска у вендора | Дата окончания поддержки у вендора | Первая поддерживаемая версия Dynatrace OneAgent | Последняя поддерживаемая версия Dynatrace OneAgent | Dynatrace поддержка до | [Уровень поддержки Dynatrace](/managed/ingest-from/technology-support#support-levels) |
 | --- | --- | --- | --- | --- | --- | --- |
 | R36 | 2025-12-01 | 2027-11-30 | 1.329 | - | - | Поддерживается |
 | R35 | 2025-08-13 | 2027-08-13 | 1.321 | - | - | Поддерживается |
@@ -6822,18 +7253,20 @@ Dynatrace поддерживает множество версий NGINX, NGINX 
 
 1
 
-Поддержка архитектуры CPU PPCLE добавлена в OneAgent версии 1.169, а ARM64 (AArch64) - в OneAgent версии 1.189.
+Поддержка архитектуры процессора PPCLE добавлена в версии OneAgent 1.169, а ARM64 (AArch64) в версии OneAgent 1.189.
 
 2
 
-Поддерживается, если используемый бинарный файл либо есть в списке [поддерживаемых бинарных файлов](/managed/ingest-from/technology-support/application-software/nginx#nginx-supported-binaries "Узнайте подробности о поддержке NGINX в Dynatrace."), либо соответствующая отладочная информация доступна локально.
+Поддерживается, если используемый бинарный файл есть в списке [поддерживаемых бинарных файлов](/managed/ingest-from/technology-support/application-software/nginx#nginx-supported-binaries "Learn the details of Dynatrace support for NGINX.") или соответствующая отладочная информация доступна локально.
 
 ### Поддержка OpenResty
 
-Поддержка последнего выпуска OpenResty может отличаться от жизненного цикла поддержки NGINX, но мы стремимся поддерживать актуальность.
+Поддержка последнего релиза OpenResty может отличаться от жизненного цикла поддержки NGINX, но мы стремимся оставаться актуальными.
 
-| Версия OpenResty | Выпущено вендором | Окончание поддержки вендором | Первая поддерживаемая версия Dynatrace OneAgent | Последняя поддерживаемая версия Dynatrace OneAgent | Dynatrace support until | [Dynatrace support level](/managed/ingest-from/technology-support#support-levels) |
+| Версия OpenResty | Дата выпуска у вендора | Дата окончания поддержки у вендора | Первая поддерживаемая версия Dynatrace OneAgent | Последняя поддерживаемая версия Dynatrace OneAgent | Dynatrace поддержка до | [Уровень поддержки Dynatrace](/managed/ingest-from/technology-support#support-levels) |
 | --- | --- | --- | --- | --- | --- | --- |
+| 1.29.2.3 | 2026-03-25 | - | 1.339 | - | - | Поддерживается |
+| 1.29.2.1 | 2026-01-04 | - | 1.333 | - | - | Поддерживается |
 | 1.27.1.2 | 2025-03-14 | - | 1.311 | - | - | Поддерживается |
 | 1.27.1.1 | 2024-10-16 | - | 1.305 | - | - | Поддерживается |
 | 1.25.3.2 | 2024-07-19 | - | 1.295 | - | - | Поддерживается |
@@ -6846,17 +7279,17 @@ Dynatrace поддерживает множество версий NGINX, NGINX 
 | 1.17.8 | 2020-07-04 | - | 1.199 | - | - | Поддерживается |
 | 1.15.8 | 2019-05-16 | - | 1.169 | - | - | Поддерживается |
 | 1.13.6 | 2017-11-13 | - | 1.145 | - | - | Поддерживается |
-| 1.11.2 | 2016-08-24 | - | 1.107 | - | 2023-03-31 | Ограниченно[1](#fn-openresty-1-def) |
+| 1.11.2 | 2016-08-24 | - | 1.107 | - | 2023-03-31 | Ограниченная[1](#fn-openresty-1-def) |
 
 1
 
-Поддерживается, если используемый бинарный файл есть в списке [поддерживаемых бинарных файлов](/managed/ingest-from/technology-support/application-software/nginx#nginx-supported-binaries "Узнайте подробности о поддержке NGINX в Dynatrace.").
+Поддерживается, если используемый бинарный файл есть в списке [поддерживаемых бинарных файлов](/managed/ingest-from/technology-support/application-software/nginx#nginx-supported-binaries "Learn the details of Dynatrace support for NGINX.").
 
 ### Поддержка Tengine
 
-Поддержка последнего выпуска Tengine может отличаться от жизненного цикла поддержки NGINX, но мы стремимся поддерживать актуальность.
+Поддержка последнего релиза Tengine может отличаться от жизненного цикла поддержки NGINX, но мы стремимся оставаться актуальными.
 
-| Версия Tengine | Выпущено вендором | Окончание поддержки вендором | Первая поддерживаемая версия Dynatrace OneAgent | Последняя поддерживаемая версия Dynatrace OneAgent | Dynatrace support until | [Dynatrace support level](/managed/ingest-from/technology-support#support-levels) |
+| Версия Tengine | Дата выпуска у вендора | Дата окончания поддержки у вендора | Первая поддерживаемая версия Dynatrace OneAgent | Последняя поддерживаемая версия Dynatrace OneAgent | Dynatrace поддержка до | [Уровень поддержки Dynatrace](/managed/ingest-from/technology-support#support-levels) |
 | --- | --- | --- | --- | --- | --- | --- |
 | 2.4.1 | - | - | 1.269 | - | - | Поддерживается |
 | 2.4.0 | - | - | 1.261 | - | - | Поддерживается |
@@ -6866,21 +7299,21 @@ Dynatrace поддерживает множество версий NGINX, NGINX 
 
 ## Метрики HTTP-соединений NGINX
 
-Модуль NGINX собирает метрики HTTP-соединений, если вы собрали NGINX с [http\_stub\_status\_module](https://nginx.org/en/docs/http/ngx_http_stub_status_module.html).
+Модуль NGINX собирает метрики HTTP-соединений, если NGINX собран с [http\_stub\_status\_module﻿](https://nginx.org/en/docs/http/ngx_http_stub_status_module.html).
 
 Как собрать NGINX с http\_stub\_status\_module
 
-Используйте параметр конфигурации `--with-http_stub_status_module`.
+Использовать параметр конфигурации `--with-http_stub_status_module`.
 
-Как проверить, собран ли бинарный файл NGINX с http\_stub\_status\_module
+Как проверить, был ли бинарный файл NGINX собран с http\_stub\_status\_module
 
-Выполните `nginx -V` в командной строке. Будут возвращены параметры конфигурации NGINX.
-Убедитесь, что вывод содержит параметр `--with-http_stub_status_module`.
+Выполнить `nginx -V` в командной строке. Это вернёт параметры конфигурации NGINX.
+Убедиться, что вывод содержит параметр `--with-http_stub_status_module`.
 
 ## Метрики NGINX Plus
 
-Модуль NGINX собирает метрики NGINX Plus из [NGINX Plus Status API (до R15) или NGINX Plus API (R16+)](https://www.nginx.com/blog/transitioning-to-nginx-plus-api-configuration-monitoring/).
+Модуль NGINX собирает метрики NGINX Plus из [NGINX Plus Status API (до R15) или NGINX Plus API (R16+)﻿](https://www.nginx.com/blog/transitioning-to-nginx-plus-api-configuration-monitoring/).
 
-API должен быть включён и доступен для модуля NGINX. Если API защищён аутентификацией NGINX, убедитесь, что он доступен с localhost для HTTP-запросов GET. Модуль NGINX требует, чтобы конфигурация API была доступна с момента запуска (добавление конфигурации во время работы NGINX и её перезагрузка не поддерживаются).
+API должен быть включён и доступен для модуля NGINX. Если API защищён аутентификацией NGINX, нужно убедиться, что он доступен с localhost для HTTP GET запросов. Модулю Nginx требуется, чтобы конфигурация API была доступна с самого начала (добавление конфигурации во время работы Nginx и её перезагрузка не поддерживается).
 
-Если API для расширенных метрик NGINX Plus недоступен, на странице процесса NGINX в Dynatrace появляется уведомление.
+Уведомление появляется на странице процесса NGINX в Dynatrace, если API для расширенных метрик NGINX Plus недоступен.
