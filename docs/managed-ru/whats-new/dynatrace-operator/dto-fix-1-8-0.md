@@ -1,160 +1,178 @@
 ---
-title: Заметки о выпуске Dynatrace Operator версии 1.8.0
+title: Dynatrace Operator, примечания к выпуску версии 1.8.0
 source: https://docs.dynatrace.com/managed/whats-new/dynatrace-operator/dto-fix-1-8-0
-scraped: 2026-05-12T12:05:26.349587
 ---
 
-# Заметки о выпуске Dynatrace Operator версии 1.8.0
+# Dynatrace Operator, примечания к выпуску версии 1.8.0
 
-# Заметки о выпуске Dynatrace Operator версии 1.8.0
+# Dynatrace Operator, примечания к выпуску версии 1.8.0
 
-* Заметки о выпуске
-* Updated on Mar 31, 2026
+* Примечания к выпуску
+* Обновлено 23 апр. 2026 г.
 
-Дата выпуска: January 27th, 2026
+Дата выпуска: 27 января 2026 г.
 
 Обновление до 1.8.1
 
-Если вы используете Dynatrace Operator версии 1.8, рекомендуется обновиться до версии 1.8.1 для получения последних важных исправлений.
+Если используется Dynatrace Operator версии 1.8, рекомендуется обновиться до версии 1.8.1, чтобы получить последние важные исправления.
 
-## Объявления
+## Анонсы
 
-Dynatrace Operator версии 1.8 вводит новую рекомендуемую версию DynaKube CRD по умолчанию — `v1beta6`. Рекомендуется обновить существующие ресурсы DynaKube до этой последней версии для использования новых функций и улучшений.
+Версия 1.8.0 Dynatrace Operator требует дополнительных прав развёртывания по сравнению с предыдущими и будущими версиями. Появление [агрегации ClusterRole](/managed/ingest-from/setup-on-k8s/guides/deployment-and-configuration/cluster-role-aggregation "Понимание того, как Dynatrace Operator использует агрегацию ClusterRole для управления правами мониторинга Kubernetes.") для мониторинга Kubernetes означает, что тому, кто выполняет развёртывание, нужны права на создание агрегированных ClusterRole. Это особенно затрагивает такие инструменты, как ArgoCD, которые управляют нагрузками без прав `cluster-admin`. Полный список необходимых прав развёртывания смотри в разделе [Права развёртывания](/managed/ingest-from/setup-on-k8s/reference/security#deployment-permissions "На этой странице приведён обзор компонентов Dynatrace, их конфигураций по умолчанию и необходимых им прав").
 
-### Автоматическая настройка OTLP-экспортёра для приложений, инструментированных с OpenTelemetry
+Версия 1.8 Dynatrace Operator вводит новую версию DynaKube CRD `v1beta6` в качестве версии по умолчанию и рекомендуемой. Рекомендуется обновить существующие ресурсы DynaKube до этой последней версии, чтобы воспользоваться новыми функциями и улучшениями.
 
-Dynatrace Operator теперь может автоматически настраивать приложения, инструментированные с OpenTelemetry, для экспорта трейсов, метрик и логов в Dynatrace через функцию автонастройки OTLP-экспортёра. Это упрощает управление конфигурацией и обеспечивает согласованный приём телеметрии в различных средах.
+### Автоматическая настройка OTLP-экспортёра для приложений, инструментированных с помощью OpenTelemetry
 
-Сведения о конфигурации и примеры см. в [руководстве по автонастройке OTLP](/managed/ingest-from/setup-on-k8s/extend-observability-k8s/otlp-auto-config "Automatically configure the OTLP exporter in applications instrumented with OpenTelemetry SDKs using Dynatrace Operator.").
+Dynatrace Operator теперь умеет автоматически настраивать приложения, инструментированные с помощью OpenTelemetry, для экспорта трасс, метрик и логов в Dynatrace через функцию автонастройки OTLP-экспортёра. Это упрощает управление конфигурацией и помогает обеспечить единообразный приём телеметрии во всех окружениях.
+
+Подробности настройки и примеры смотри в [руководстве по автонастройке OTLP](/managed/ingest-from/setup-on-k8s/extend-observability-k8s/otlp-auto-config "Автоматическая настройка OTLP-экспортёра в приложениях, инструментированных с помощью OpenTelemetry SDKs, с использованием Dynatrace Operator.").
 
 ## Новые функции и улучшения
 
-* Внесены улучшения в [модель RBAC для мониторинга Kubernetes](/managed/ingest-from/setup-on-k8s/reference/security#kubernetes-monitoring "This page provides an overview of the Dynatrace components, their default configurations, and the permissions they require") через ActiveGate.
+* Внесены улучшения в [модель RBAC, используемую для мониторинга Kubernetes](/managed/ingest-from/setup-on-k8s/reference/security#kubernetes-monitoring "На этой странице приведён обзор компонентов Dynatrace, их конфигураций по умолчанию и необходимых им прав") через ActiveGate.
 
   + ServiceAccount `dynatrace-kubernetes-monitoring` удалён и заменён на ServiceAccount `dynatrace-activegate`.
-  + Для назначения дополнительных разрешений на мониторинг ServiceAccount `dynatrace-activegate` во время установки Operator можно использовать [агрегирование ClusterRole Kubernetes](https://kubernetes.io/docs/reference/access-authn-authz/rbac/#aggregated-clusterroles). Подробнее см. в [документации по агрегированию ClusterRole](/managed/ingest-from/setup-on-k8s/guides/deployment-and-configuration/cluster-role-aggregation "Understanding how the Dynatrace Operator uses ClusterRole aggregation to manage permissions for Kubernetes monitoring.").
-  + ClusterRole `dynatrace-kubernetes-monitoring` использует [агрегирование ClusterRole Kubernetes](https://kubernetes.io/docs/reference/access-authn-authz/rbac/#aggregated-clusterroles) для назначения необходимых разрешений ServiceAccount во время установки Operator.
-  + Токен ServiceAccount монтируется в StatefulSet ActiveGate только при необходимости. ActiveGate, которым токен больше не нужен (например, только маршрутизирующие ActiveGate), перезапускаются после обновления Operator, чтобы не оставалось смонтированных токенов.
-  + Установка `rbac.kspm.create: true` теперь требует `rbac.activeGate.create: true` и `rbac.kubernetesMonitoring.create: true`. **Перед обновлением обязательно скорректируйте значения Helm, если это применимо.**
+  + Можно использовать [агрегацию ClusterRole в Kubernetes﻿](https://kubernetes.io/docs/reference/access-authn-authz/rbac/#aggregated-clusterroles) для назначения ServiceAccount `dynatrace-activegate` дополнительных прав мониторинга во время установки Operator. Подробности смотри в [документации по агрегации ClusterRole](/managed/ingest-from/setup-on-k8s/guides/deployment-and-configuration/cluster-role-aggregation "Понимание того, как Dynatrace Operator использует агрегацию ClusterRole для управления правами мониторинга Kubernetes.").
+  + ClusterRole `dynatrace-kubernetes-monitoring` использует [агрегацию ClusterRole в Kubernetes﻿](https://kubernetes.io/docs/reference/access-authn-authz/rbac/#aggregated-clusterroles) для назначения ServiceAccount необходимых прав во время установки Operator.
+  + Токен ServiceAccount монтируется в statefulset ActiveGate только при необходимости. ActiveGate, которым токен больше не нужен (например, ActiveGate, выполняющие только маршрутизацию), перезапускаются после обновления Operator, чтобы гарантировать отсутствие смонтированного токена ServiceAccount.
+  + Установка `rbac.kspm.create: true` теперь требует `rbac.activeGate.create: true` и `rbac.kubernetesMonitoring.create: true`. **Перед обновлением обязательно скорректируй значения Helm, если применимо.**
 
-* Dynatrace Operator теперь выдаёт предупреждающее событие Kubernetes, когда версия CRD DynaKube или EdgeConnect не является последней, поддерживаемой данным выпуском Operator. Это позволяет легче выявлять устаревшие версии DynaKube CRD.
+* Dynatrace Operator теперь генерирует предупреждающее событие Kubernetes, если версия CRD DynaKube или EdgeConnect не является последней, поддерживаемой этим выпуском Operator. Это упрощает выявление устаревших версий CRD DynaKube.
 
-  + Разрешения RBAC Dynatrace Operator обновлены: добавлено разрешение `events.patch` для пространства имён `dynatrace`.
+  + Права RBAC Dynatrace Operator обновлены и теперь включают право `events.patch` для пространства имён `dynatrace`.
 
-* Dynatrace Operator теперь использует CA-сертификаты, указанные в `.spec.caCertsRef`, при запросах к Dynatrace API во время развёртывания EdgeConnect.
+* Dynatrace Operator теперь использует сертификаты CA, предоставленные через `.spec.caCertsRef`, в запросах к API Dynatrace при развёртывании EdgeConnect.
 
-* Задания, создаваемые CSI-драйвером для [функции получения образов узлов](/managed/ingest-from/setup-on-k8s/guides/deployment-and-configuration/node-image-pull "Configure node image pull"), теперь используют тот же PriorityClass, что и CSI-драйвер, для обеспечения быстрого планирования и возможности вытеснения на перегруженных узлах. Приоритет настраивается через значение Helm `csidriver.priorityClassValue`. Инструкции см. в разделе [Использование priorityClass для критических компонентов Dynatrace](/managed/ingest-from/setup-on-k8s/guides/high-availability/priority "Use priorityClass for critical Dynatrace components").
+* Задания, которые CSI-драйвер создаёт для [функции подтягивания образов на узле](/managed/ingest-from/setup-on-k8s/reference/code-modules-delivery-modes "Справка о том, как Dynatrace Operator доставляет модули кода OneAgent в поды приложений, включая эфемерные тома, подтягивание образов через CSI-драйвер и загрузку ZIP."), теперь используют тот же PriorityClass, что и CSI-драйвер, чтобы обеспечить быстрое планирование и допустить вытеснение на перегруженных узлах. Приоритет настраивается через значение Helm `csidriver.priorityClassValue`. Рекомендации смотри в разделе [Использование priorityClass для критически важных компонентов Dynatrace](/managed/ingest-from/setup-on-k8s/guides/high-availability/priority "Использование priorityClass для критически важных компонентов Dynatrace").
 
-* Указание образа в `.spec.templates.otelCollector.imageRef` теперь обязательно при включённом [приёме телеметрии](/managed/ingest-from/setup-on-k8s/extend-observability-k8s/telemetry-ingest "Enable Dynatrace telemetry ingest endpoints in Kubernetes for cluster-local data ingest.").
+* Указание образа в `.spec.templates.otelCollector.imageRef` теперь обязательно при включённом [приёме телеметрии](/managed/ingest-from/setup-on-k8s/extend-observability-k8s/telemetry-ingest "Включение конечных точек приёма телеметрии Dynatrace в Kubernetes для приёма данных внутри кластера.").
 
-* Используйте новую аннотацию пода `dynatrace.com/split-mounts`, чтобы избежать конфликтов с образами приложений, которые уже содержат каталог `/var/lib/dynatrace`. Эта аннотация в первую очередь предназначена для внедрения кодовых модулей в поды ActiveGate для глубокого мониторинга. По умолчанию она включена на ActiveGate, управляемых Dynatrace Operator.
+* Используй новую аннотацию пода `dynatrace.com/split-mounts`, чтобы избежать конфликтов с образами приложений, которые уже содержат каталог `/var/lib/dynatrace`. Эта аннотация в основном предназначена для того, чтобы разрешить внедрение модулей кода в поды ActiveGate для глубокого мониторинга. Она включена по умолчанию для ActiveGate, управляемых Dynatrace Operator.
 
-* Компоненты Dynatrace Operator теперь осведомлены об ограничениях памяти пода путём установки переменной среды [`GOMEMLIMIT`](https://pkg.go.dev/runtime#hdr-Environment_Variables). Это повысит их устойчивость к завершению по OOM, поскольку оптимизирует поведение сборщика мусора Go. Ограничения памяти задаются на уровне 90% от лимитов, настроенных для компонентов Operator через Helm. Значения можно указывать с суффиксами IEC (например, 123Mi).
+* Компоненты Dynatrace Operator теперь узнают об ограничениях памяти пода через установку переменной окружения [`GOMEMLIMIT`﻿](https://pkg.go.dev/runtime#hdr-Environment_Variables). Это сделает их более устойчивыми к OOM-килам, поскольку оптимизирует поведение сборщика мусора Go. Ограничения памяти устанавливаются на уровне 90% от лимитов, настроенных для компонентов Operator через Helm (например, `csidriver.provisioner.resources.limts.memory`, `webhook.limits.memory`). Значения можно указывать с суффиксами IEC (например, 123Mi).
 
-* Пространства имён, выбранные для мониторинга (соответствующие настроенным `namespaceSelectors` для `metadataEnrichment` или `oneAgent`), записываются в условия DynaKube и в лог Operator. Это упрощает проверку и устранение неполадок с настроенными селекторами.
+* Пространства имён, выбранные для мониторинга (соответствующие настроенным `namespaceSelectors` у `metadataEnrichment` или `oneAgent`), записываются в условия DynaKube и в лог оператора. Это упрощает проверку и диагностику настроенных селекторов.
 
-* Метаданные кластера и узлов Kubernetes (например, имя кластера, UID кластера и имя узла) теперь автоматически добавляются (через initContainer с именем `dynatrace-operator`) к атрибутам ресурсов OneAgent для улучшения топологических данных и обеспечения согласованного набора атрибутов ресурсов во всех сигналах.
+* Метаданные кластера и узла Kubernetes (такие как имя кластера, UID кластера и имя узла) теперь автоматически добавляются (через initContainer с именем `dynatrace-operator`) к атрибутам ресурса OneAgent, чтобы улучшить топологическую картину и обеспечить единообразный набор атрибутов ресурса для всех сигналов независимо от их источника.
 
-* Подробные причины сбоев внедрения подов теперь записываются в аннотации `oneagent.dynatrace.com/reason`, `metadata-enrichment.dynatrace.com/reason` и `otlp-exporter-configuration.dynatrace.com/reason` на затронутых подах. Это ускоряет и делает более прозрачным устранение неполадок при внедрении подов.
+* Подробные причины сбоев внедрения в поды теперь записываются в аннотации `oneagent.dynatrace.com/reason`, `metadata-enrichment.dynatrace.com/reason` и `otlp-exporter-configuration.dynatrace.com/reason` на затронутых подах. Это делает диагностику проблем внедрения в поды быстрее и прозрачнее.
 
-* Управляемый Dynatrace Operator ActiveGate теперь использует пробу работоспособности (liveness probe) для улучшения обнаружения неисправных состояний.
+* ActiveGate, управляемые Dynatrace Operator, теперь используют liveness probe для улучшения обнаружения неисправных состояний.
 
-* Снижены требования к ресурсам по умолчанию для заданий, создаваемых CSI-драйвером для [функции получения образов узлов](/managed/ingest-from/setup-on-k8s/guides/deployment-and-configuration/node-image-pull "Configure node image pull"). Инструкции см. в разделе [Задание ограничений ресурсов для компонентов Dynatrace Operator](/managed/ingest-from/setup-on-k8s/guides/deployment-and-configuration/resource-management/dto-resource-limits "Set resource limits for Dynatrace Operator components.").
+* Требования к ресурсам по умолчанию для заданий, создаваемых CSI-драйвером для [функции подтягивания образов на узле](/managed/ingest-from/setup-on-k8s/reference/code-modules-delivery-modes "Справка о том, как Dynatrace Operator доставляет модули кода OneAgent в поды приложений, включая эфемерные тома, подтягивание образов через CSI-драйвер и загрузку ZIP."), были снижены. Рекомендации смотри в разделе [Установка ограничений на ресурсы для компонентов Dynatrace Operator](/managed/ingest-from/setup-on-k8s/guides/deployment-and-configuration/resource-management/dto-resource-limits "Установка ограничений на ресурсы для компонентов Dynatrace Operator.")
 
-## Исправленные ошибки
+## Устранённые проблемы
 
-* Обработка удалённых версий API при обновлении Dynatrace Operator
+* Обработка удалённых версий API при обновлении Dyntrace Operator
 
-  Kubernetes записывает версии CRD в `.status.storedVersions`, но не удаляет записи при удалении версий, поэтому старые версии накапливаются и могут блокировать обновления.
+  Kubernetes фиксирует версии CRD в `.status.storedVersions`, но не удаляет записи при удалении версий, поэтому старые версии накапливаются и могут блокировать обновления.
 
-  В Dynatrace Operator 1.8.0 версии API `v1beta1` и `v1beta2` удалены из CRD DynaKube. Если вы использовали Dynatrace Operator версии ниже 1.4.0, эти версии хранятся в CRD в `.status.storedVersions` и требуют очистки, иначе обновление до новой версии API `v1beta6` завершится с ошибкой. В Dynatrace Operator версии 1.7.3 реализовано двухэтапное решение для обеспечения плавного обновления.
+  В Dynatrace Operator 1.8.0 версии API `v1beta1` и `v1beta2` удалены из Dynakube CRD. Если ранее использовался Dynatrace operator версии < 1.4.0, эти версии хранятся в CRD в `.status.storedVersions` и требуют очистки, иначе обновление до новой версии API `v1beta6` завершится ошибкой. Начиная с Dynatrace Operator версии 1.7.3 внедрено двухшаговое решение для обеспечения плавного обновления.
 
-  1. Helm-хук для очистки CRD
+  1. Хук Helm для очистки CRD
 
-     Перед фактическим обновлением Helm-хук запускает задание Kubernetes, которое удаляет устаревшие версии API из поля `status.storedVersions` CRD DynaKube. Задание сохраняет только последнюю версию API, доступную в версии Dynatrace Operator, установленной **до** обновления. Этот шаг обеспечивает плавное обновление до нового CRD в процессе обновления Helm. Сведения о необходимых разрешениях см. в разделе [Безопасность Dynatrace Operator](/managed/ingest-from/setup-on-k8s/reference/security#upgrade-support "This page provides an overview of the Dynatrace components, their default configurations, and the permissions they require").
+     Перед непосредственным обновлением хук Helm запускает Job Kubernetes, который удаляет устаревшие версии API из поля `status.storedVersions` DynaKube CRD. Job оставляет только последнюю версию API, доступную в версии Dynatrace Operator, установленной **перед** обновлением. Этот шаг обеспечивает плавное обновление до нового CRD в процессе обновления Helm. Информацию о необходимых разрешениях см. в разделе [Безопасность Dynatrace Operator](/managed/ingest-from/setup-on-k8s/reference/security#upgrade-support "На этой странице приведён обзор компонентов Dynatrace, их конфигураций по умолчанию и разрешений, которые им требуются").
   2. Миграция при запуске Dynatrace Operator
 
-     **После** успешного обновления и запуска новой версии Dynatrace Operator 1.8.0 все существующие DynaKube мигрируются на последнюю поддерживаемую версию API `v1beta6`. После миграции DynaKube поле `status.storedVersions` в CRD DynaKube обновляется для хранения только последней версии API `v1beta6`.
+     **После** успешного обновления и запуска новой версии Dynatrace Operator 1.8.0 он мигрирует все существующие DynaKube на последнюю поддерживаемую версию API `v1beta6`. После миграции DynaKube поле `status.storedVersions` в DynaKube CRD обновляется, чтобы хранить только последнюю версию API `v1beta6`, для обеспечения согласованности.
 
-  Важное уведомление для кластеров, на которых ранее использовался Dynatrace Operator версии < 1.4.0
+  Важное уведомление для кластеров, на которых ранее работал Dynatrace Operator версии < 1.4.0
 
-  + **Если вы использовали Dynatrace Operator версии <= 1.2, обновление до Dynatrace Operator версии 1.7.3 является обязательным промежуточным шагом перед обновлением до более поздних выпусков.** Пропуск версий не рекомендуется.
+  + **Если ранее использовалась версия Dynatrace Operator <= 1.2, обновление до Dynatrace Operator версии 1.7.3 обязательно как промежуточный шаг перед обновлением до более поздних версий, чтобы обеспечить плавный и надёжный переход.** В общем случае пропуск версий не рекомендуется.
   + Установка на основе Helm
 
-    При **использовании Helm** для установки или обновления с Dynatrace Operator версии >=1.3.0 никаких дополнительных действий с вашей стороны не требуется. Необходимые корректировки будут автоматически выполнены Helm-хуком перед обновлением.
+    При **использовании Helm** для установки или обновления с версии Dynatrace Operator >=1.3.0 никаких дополнительных действий не требуется. Необходимые корректировки будут автоматически выполнены хуком pre-upgrade Helm в процессе обновления.
   + Альтернативные методы установки
 
-    **Если вы используете один из перечисленных ниже альтернативных методов развёртывания, обновление до Dynatrace Operator версии 1.7.3 является обязательным промежуточным шагом перед обновлением до более поздних выпусков.**
+    **Если используется один из перечисленных ниже альтернативных методов развёртывания, обновление до Dynatrace Operator версии 1.7.3 обязательно как промежуточный шаг перед обновлением до более поздних версий, чтобы обеспечить плавный и надёжный переход.**
 
     - Red Hat OpenShift OperatorHub
     - OperatorHub.io
     - Google Marketplace
-    - Простые манифесты Kubernetes
-  + Ручной подход
+    - Обычные манифесты Kubernetes
+  + Ручной способ
 
-    Вместо обновления до версии 1.7.3 можно вручную выполнить необходимые корректировки CRD:
+    Вместо обновления до версии 1.7.3 можно вручную выполнить необходимые корректировки CRD
 
-    1. Выполните следующую команду для просмотра хранимых версий в CRD кластера.
+    1. Выполнить следующую команду, чтобы вывести список хранимых версий в CRD кластера.
 
        ```
        kubectl -n dynatrace get crd dynakubes.dynatrace.com -o jsonpath='{.status.storedVersions}'
        ```
-    2. Продолжите процедуру, если в хранимых версиях CRD кластера указаны `v1beta1` или `v1beta2`.
-    3. Определите текущую активную версию:
+    2. Продолжить процедуру, если `v1beta1` или `v1beta2` присутствуют в списке хранимых версий CRD в кластере.
+    3. Определить текущую активную версию:
 
        ```
        storage_version=$(kubectl get customresourcedefinitions dynakubes.dynatrace.com -o jsonpath='{.spec.versions[?(@.storage==true)].name}')
        ```
-    4. Преобразуйте все DynaKube в активную версию:
+    4. Преобразовать все DynaKube к активной версии:
 
        ```
        kubectl get dynakube -n dynatrace -o yaml | kubectl apply -f -
        ```
-    5. Удалите все предыдущие версии, сохранив активную:
+    5. Удалить все предыдущие версии, оставив активную версию:
 
        ```
        kubectl patch customresourcedefinitions dynakubes.dynatrace.com --subresource='status' --type='merge' -p "{\"status\":{\"storedVersions\":[\"${storage_version}\"]}}"
        ```
 
-  Корректная очистка поля `.status.storedVersions` CRD критически важна для предотвращения проблем с будущими обновлениями.
+  Обеспечение надлежащей очистки поля `.status.storedVersions` CRD критично, чтобы избежать проблем при будущих обновлениях.
 
-  ArgoCD может отображать ресурсы, использующие старую версию API, как «out-of-sync».
+  ArgoCD может отображать ресурсы, всё ещё использующие старую версию API, как «out-of-sync».
 
-* Установка `codeModulesImage` больше невозможна, если CSI-драйвер Dynatrace Operator отключён и не используется ни `applicationMonitoring`, ни `cloudNativeFullStack`. При попытке это сделать при развёртывании или обновлении DynaKube будет выдана ошибка валидации.
+* Больше нельзя задать `codeModulesImage`, если CSI driver Dyntrace Operator отключён и не используется ни `applicationMonitoring`, ни `cloudNativeFullStack`. При попытке сделать это будет вызвана ошибка валидации при развёртывании или обновлении DynaKube.
 
 * Поле `spec.templates.kspmNodeConfigurationCollector.nodeAffinity` теперь корректно применяется к DaemonSet KSPM Node Configuration Collector.
 
-* DaemonSet KSPM теперь использует встроенный SCC `privileged` на OpenShift, что исключает необходимость дополнительной настройки SCC.
+* KSPM DaemonSet теперь использует встроенный SCC `privileged` на OpenShift, что устраняет необходимость в дополнительной настройке SCC.
 
-* [Dynatrace OTel Collector](/managed/ingest-from/opentelemetry/collector#dt-collector-dist "Learn how to use the OpenTelemetry Collector, including the Dynatrace OTel Collector, to ingest telemetry from OpenTelemetry.") теперь настроен на обход прокси при подключении к внутрикластерному ActiveGate или Kubernetes API.
+* [Dynatrace OTel Collector](/managed/ingest-from/opentelemetry/collector#dt-collector-dist "Узнайте, как использовать OpenTelemetry Collector, включая Dynatrace OTel Collector, для приёма телеметрии от OpenTelemetry.") теперь настроен так, чтобы не использовать прокси для подключения к ActiveGate внутри кластера или к Kubernetes API.
 
-* Имя кластера, используемое для атрибута `k8s.cluster.name` при приёме телеметрии, теперь учитывает пользовательские имена кластеров вместо только имени DynaKube.
+* Имя кластера, используемое для атрибута `k8s.cluster.name` при приёме телеметрии, теперь учитывает пользовательские имена кластеров, а не только имя DynaKube.
 
-* `subPath` больше не используется для томов `hostPath` для улучшения совместимости между дистрибутивами Kubernetes (включая RKE).
+* `subPath` больше не используется для томов `hostPath`, чтобы повысить совместимость с различными дистрибутивами Kubernetes (включая RKE):
 
-* Устранена проблема с архитектурой образов кодовых модулей на узлах ARM. Образы кодовых модулей по умолчанию теперь корректно загружаются.
+  + Базовая структура host path остаётся неизменной. Прежнее значение `subPath` теперь добавляется в конец `hostPath`.
 
-* При включённом CSI-драйвере он теперь корректно устанавливается при развёртывании Dynatrace Operator из Google Marketplace.
+* Была проблема с архитектурой образов code modules на узлах ARM. Образы code modules по умолчанию теперь корректно загружаются.
 
-* Обработка отсутствующего объекта настроек тенанта `builtin:app-transition.kubernetes` для поддержки новых тенантов, у которых этого объекта больше нет.
+* Если включено, CSI driver теперь корректно устанавливается при развёртывании Dynatrace Operator из Google Marketplace.
 
-* Уменьшена максимальная длина имени DynaKube в зависимости от включённых функций для предотвращения проблем при развёртывании компонентов. Теперь применяются следующие ограничения длины имени:
+* Обработка отсутствующего объекта настроек тенанта `builtin:app-transition.kubernetes` для поддержки более новых тенантов, у которых этого объекта уже нет.
+
+* Уменьшена максимальная длина имени DynaKube в зависимости от включённых функций, чтобы предотвратить проблемы при развёртывании компонентов. Теперь применяются следующие ограничения длины имени:
 
   + 32 символа, если включён `spec.extensions`
   + 35 символов, если включён `spec.kspm`
-  + 38 символов, если включён `spec.telemetryIngest`
-  + Существующие ресурсы, нарушающие новые правила валидации, продолжат работать, однако для внесения изменений или обновлений их потребуется исправить.
+  + 38 символов, если включён `spec.telemetryIngest`.
+  + Существующие ресурсы, нарушающие эти новые правила валидации, продолжат работать как раньше, но потребуют исправления при желании внести изменение или обновление.
 
-## Известные ошибки
+* Исправлена проблема совместимости, связанная с `metadataEnrichment` и `classicFullstack`. Теперь `metadataEnrichment` будет работать с `classicFullstack`. Подробнее см. [Поддержка Dynatrace Operator и известные проблемы](/managed/ingest-from/technology-support/support-model-and-issues#classic-full-stack-with-metadata-enrichment "Как Dynatrace поддерживает версии Kubernetes и Red Hat OpenShift, и известные проблемы").
 
-* Dynatrace Operator 1.8.0 не может установить мониторинг Kubernetes при установке через OLM (Operator Lifecycle Manager) через OperatorHub. Эта проблема исправлена в [Dynatrace Operator 1.8.1](/managed/whats-new/dynatrace-operator/dto-fix-1-8-1 "Release notes for Dynatrace Operator, version 1.8.1"), настоятельно рекомендуется выполнить обновление.
-* RBAC для мониторинга Kubernetes требует повышенных разрешений для развёртывания агрегированного ClusterRole. Это затрагивает инструменты, например ArgoCD, управляющие рабочими нагрузками без разрешений cluster-admin.
+* Исправлена проблема с подключением в Dynatrace Operator v1.7, возникавшая между OTLP-экспортёром или CodeModules, внедрёнными в поды приложений, и ActiveGate внутри кластера, когда флаг функции [`automatic-tls-certificate`](/managed/ingest-from/setup-on-k8s/reference/dynakube-feature-flags "Список флагов функций для настройки Dynatrace Operator на Kubernetes.") переключался с `true` на `false`. Начиная с Operator v1.8.0, TLS-сертификат, ранее созданный для ActiveGate внутри кластера, автоматически удаляется из внедрённых пространств имён при отключении `automatic-tls-certificate`.
 
-## Уведомления об удалении и прекращении поддержки (deprecation)
+* Изменена точка монтирования пользовательских CA-сертификатов EdgeConnect, чтобы предотвратить перезапись известных доверенных CA. Предыдущие версии operator требуют включения CA-сертификатов для публичных эндпойнтов Dynatrace в ConfigMap, если задан `.spec.caCertsRef` EdgeConnect.
 
-* [Поддержка Kubernetes 1.27](/managed/ingest-from/technology-support/support-model-and-issues "How Dynatrace supports Kubernetes and Red Hat OpenShift versions and known issues") завершилась в июле 2025 года. В результате Dynatrace Operator 1.8.0+ больше не поддерживает эту версию.
-* ServiceAccount `dynatrace-kubernetes-monitoring` больше не существует. Вместо него агрегированный ClusterRole теперь привязан к ServiceAccount `dynatrace-activegate`, который с этой версии будет использоваться для разрешений мониторинга Kubernetes. Подробнее см. в [документации по агрегированию ClusterRole](/managed/ingest-from/setup-on-k8s/guides/deployment-and-configuration/cluster-role-aggregation "Understanding how the Dynatrace Operator uses ClusterRole aggregation to manage permissions for Kubernetes monitoring.").
-* Helm-репозиторий по адресу `dynatrace/helm-charts` объявлен устаревшим и прекратит получать обновления в будущем выпуске. Обновите URL следующими командами:
+## Известные проблемы
+
+* Dynatrace Operator 1.8.0 не может установить мониторинг Kubernetes при установке через OLM (Operator Lifecycle Manager) через OperatorHub. Operator полагается на агрегированные ClusterRole и соответствующие им ClusterRoleBinding для настройки необходимых разрешений для мониторинга Kubernetes. Поскольку агрегированные ClusterRole пусты на этапе сборки (их правила заполняются во время выполнения через aggregationRules), OLM неверно распознаёт их как пустые и удаляет манифесты как ClusterRole, так и ClusterRoleBinding во время установки. В результате необходимые разрешения так и не предоставляются, и мониторинг Kubernetes не может быть установлен. Эта проблема исправлена в [Dynatrace Operator 1.8.1](/managed/whats-new/dynatrace-operator/dto-fix-1-8-1 "Примечания к выпуску Dynatrace Operator, версия 1.8.1"), настоятельно рекомендуется обновиться.
+* RBAC для мониторинга Kubernetes требует повышенных разрешений для развёртывания агрегированного ClusterRole. Это затрагивает инструменты, такие как ArgoCD, которые управляют рабочими нагрузками без разрешений cluster-admin.
+
+## Уведомления об удалении и устаревании
+
+* [Поддержка Kubernetes 1.27](/managed/ingest-from/technology-support/support-model-and-issues "How Dynatrace supports Kubernetes and Red Hat OpenShift versions and known issues") завершилась в июле 2025 года. В результате Dynatrace Operator 1.8.0+ больше не будет поддерживать эту версию.
+* ServiceAccount `dynatrace-kubernetes-monitoring` больше не будет существовать. Вместо него теперь используется агрегированная ClusterRole, привязанная к ServiceAccount `dynatrace-activegate`, которая с этой версии применяется для прав мониторинга Kubernetes. Подробнее см. в [документации по агрегации ClusterRole](/managed/ingest-from/setup-on-k8s/guides/deployment-and-configuration/cluster-role-aggregation "Understanding how the Dynatrace Operator uses ClusterRole aggregation to manage permissions for Kubernetes monitoring.").
+* Если использовался [Preview расширенной видимости объектов Kubernetes](/managed/whats-new/preview-releases#k8s-object-visibility "Learn about our Preview releases and how you can participate in them.") и также был разблокирован мониторинг чувствительных объектов Kubernetes ConfigMaps и Secrets, рекомендуется выполнить следующий шаг очистки после обновления до Operator 1.8.0:
+
+  ```
+  kubectl delete ClusterRoleBinding/dynatrace-kubernetes-monitoring-sensitive
+  ```
+
+  Подробности: Dynatrace Operator 1.8.0 использует `aggregationRules` для объединения прав из разных ClusterRole. Это делает ClusterRoleBinding `dynatrace-kubernetes-monitoring-sensitive` устаревшим, его можно безопасно удалить после обновления до Operator 1.8.0.
+
+* Репозиторий Helm, расположенный в `dynatrace/helm-charts`, устарел и в одном из будущих релизов перестанет получать обновления! Если он ещё используется,
+  нужно обновить URL на `dynatrace/dynatrace-operator` или перейти на подход на основе OCI registry. URL репозитория Helm обновляется следующими командами:
 
   ```
   helm repo remove dynatrace
@@ -164,13 +182,21 @@ Dynatrace Operator теперь может автоматически настр
   helm repo add dynatrace https://raw.githubusercontent.com/Dynatrace/dynatrace-operator/main/config/helm/repos/stable
   ```
 
-* Событие «Mark for Termination» объявлено устаревшим и будет удалено в будущей версии Operator.
+* Чтобы избежать возможных сбоев, настоятельно рекомендуется поддерживать версию API DynaKube актуальной. Как только версия помечается устаревшей и удаляется, обновление может стать значительно сложнее и более чувствительным по срокам.
 
-## Обновление с Dynatrace Operator версии 1.7
+  + Подробнее о процессе устаревания версий API DynaKube см. в [руководстве по миграции](/managed/ingest-from/setup-on-k8s/guides/migration/dynakube#deprecation "Migrate your DynaKube CR to newer apiVersions based on the Operator Version you are using.").
 
-* Указание образа в `.spec.templates.otelCollector.imageRef` теперь обязательно при включённом приёме телеметрии.
-* Устаревшие версии API DynaKube `v1beta1` и `v1beta2` удалены из схемы CRD DynaKube.
-* Версия API DynaKube `v1beta3` больше не обслуживается и будет удалена в будущем выпуске Dynatrace Operator. См.: [Руководство по миграции версий API DynaKube](/managed/ingest-from/setup-on-k8s/guides/migration/dynakube#deprecation "Migrate your DynaKube CR to newer apiVersions based on the Operator Version you are using.").
-* Обновление Dynatrace Operator может привести к перезапуску ActiveGate, DaemonSet OneAgent (агент хоста) и DaemonSet Log Monitoring.
-* Если вы отслеживаете Kubernetes через публичный Kubernetes API изнутри внутрикластерного ActiveGate, необходимо пересоздать токен-носитель (bearer token), так как имя используемого ServiceAccount изменилось с `dynatrace-kubernetes-monitoring` на `dynatrace-activegate`. Следуйте инструкциям в разделе [Подключение к публичному Kubernetes API](/managed/ingest-from/setup-on-k8s/guides/deployment-and-configuration/monitoring-and-instrumentation/k8s-api-monitoring#connect "Monitor the Kubernetes API using Dynatrace").
-* В связи с вышеупомянутыми изменениями объектов RBAC ActiveGate установка `rbac.kspm.create: true` теперь требует `rbac.activeGate.create: true` и `rbac.kubernetesMonitoring.create: true`. **Перед обновлением обязательно скорректируйте значения Helm, если это применимо.**
+* Бинарные файлы CSI sidecar, расположенные в `/usr/local/bin/csi-node-driver-registrar` и `/usr/local/bin/livenessprobe`, а также флаги чарта Helm `csidriver.registrar.builtIn` и `csidriver.livenessprobe.builtIn` были удалены (устарели в v1.7.0). Поды CSI driver теперь всегда будут использовать встроенные реализации livenessprobe и CSI node driver registrar. У клиентов, ранее установивших эти флаги в значение `false`, может наблюдаться изменение поведения. Цель этого изменения, минимизировать уязвимости в Dynatrace Operator за счёт своевременного обновления этих компонентов.
+
+* Поле `autoUpdate` OneAgent было удалено. Автоматические обновления теперь следуют настроенной целевой версии тенанта. Чтобы отключить автоматические обновления, нужно задать поле `version` или `image` в DynaKube CR.
+
+* Событие «Mark for Termination» устарело и будет удалено в одной из будущих версий Operator. Эта функциональность теперь избыточна, так как её заменили события доступности хоста при выключении и перезагрузке хоста, введённые в OneAgent версии 1.301.
+
+## Обновление с версии Dynatrace Operator 1.7
+
+* Указание образа в `.spec.templates.otelCollector.imageRef` теперь обязательно, если включён [приём телеметрии](/managed/ingest-from/setup-on-k8s/extend-observability-k8s/telemetry-ingest "Enable Dynatrace telemetry ingest endpoints in Kubernetes for cluster-local data ingest.").
+* Устаревшие версии API DynaKube `v1beta1` и `v1beta2` были удалены из схемы DynaKube CRD.
+* Версия API DynaKube `v1beta3` больше не обслуживается и будет удалена в одном из будущих релизов Dynatrace Operator. См.: [Руководство по миграции для версий API DynaKube](/managed/ingest-from/setup-on-k8s/guides/migration/dynakube#deprecation "Migrate your DynaKube CR to newer apiVersions based on the Operator Version you are using.")
+* Обновление Dynatrace Operator может привести к перезапуску ActiveGate, DaemonSet OneAgent (host agent) и DaemonSet Log Monitoring.
+* При мониторинге Kubernetes через публичный API Kubernetes изнутри ActiveGate внутри кластера, нужно пересоздать bearer-токен, поскольку имя используемого ServiceAccount изменилось с `dynatrace-kubernetes-monitoring` на `dynatrace-activegate`. Следуйте инструкциям в разделе [Подключение к публичному API Kubernetes](/managed/ingest-from/setup-on-k8s/guides/deployment-and-configuration/monitoring-and-instrumentation/k8s-api-monitoring#connect "Monitor the Kubernetes API using Dynatrace").
+* Из-за вышеупомянутых изменений в объектах RBAC ActiveGate установка `rbac.kspm.create: true` теперь требует `rbac.activeGate.create: true` и `rbac.kubernetesMonitoring.create: true`. **Обязательно скорректируйте значения Helm, если применимо, перед обновлением.**
