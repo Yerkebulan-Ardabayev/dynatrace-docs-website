@@ -129,7 +129,7 @@ For ActiveGates with the zRemote module, see [Install the zRemote module: System
   [user@host]# cat /proc/sys/fs/file-max
   ```
 
-  Also, it may be that you've checked out [too many open files in Linux](/managed/ingest-from/dynatrace-activegate#too-many-open-files-in-linux "Understand the basic concepts related to ActiveGate.").
+  Also, it may be that you've checked out too many open files in Linux.
 * Your operating system must have at least 20,000 processes available to the `dtuserag` user.  
   To view the system limit, execute the following command:
 

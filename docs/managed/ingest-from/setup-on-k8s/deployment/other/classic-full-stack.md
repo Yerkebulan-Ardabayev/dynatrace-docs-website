@@ -83,7 +83,7 @@ The installation process is independent of whether you are using Kubernetes or O
 
    Installation with additional configuration of the Helm chart
 
-   Edit the [`values.yaml`﻿](https://github.com/Dynatrace/dynatrace-operator/blob/v1.10.0/config/helm/chart/default/values.yaml) sample from GitHub, and then run the install command, passing the YAML file as an argument:
+   Edit the [`values.yaml`﻿](https://github.com/Dynatrace/dynatrace-operator/blob/v1.10.1/config/helm/chart/default/values.yaml) sample from GitHub, and then run the install command, passing the YAML file as an argument:
 
    Make sure to disable Dynatrace Operator CSI driver from being rolled out, as it's not used in classic full-stack.
 
@@ -118,7 +118,7 @@ The installation process is independent of whether you are using Kubernetes or O
    If `installCRD` is set to `false`, you need to create the custom resource definition manually before starting the Helm installation:
 
    ```
-   kubectl apply -f https://github.com/Dynatrace/dynatrace-operator/releases/download/v1.10.0/dynatrace-operator-crd.yaml
+   kubectl apply -f https://github.com/Dynatrace/dynatrace-operator/releases/download/v1.10.1/dynatrace-operator-crd.yaml
    ```
 2. Create secret for access token
 
@@ -129,7 +129,7 @@ The installation process is independent of whether you are using Kubernetes or O
    ```
 3. Apply the DynaKube custom resource
 
-   Download the [DynaKube custom resource sample for classic full-stack from GitHub﻿](https://github.com/Dynatrace/dynatrace-operator/blob/v1.10.0/assets/samples/dynakube/v1beta5/classicFullStack.yaml). In addition, you can review the [available parameters](/managed/ingest-from/setup-on-k8s/reference/dynakube-parameters "List the available parameters for setting up Dynatrace Operator on Kubernetes.") or [how-to guides](/managed/ingest-from/setup-on-k8s/guides "Detailed description of installation and configuration options for specific use-cases"), and adapt the DynaKube custom resource according to your requirements.
+   Download the [DynaKube custom resource sample for classic full-stack from GitHub﻿](https://github.com/Dynatrace/dynatrace-operator/blob/v1.10.1/assets/samples/dynakube/v1beta5/classicFullStack.yaml). In addition, you can review the [available parameters](/managed/ingest-from/setup-on-k8s/reference/dynakube-parameters "List the available parameters for setting up Dynatrace Operator on Kubernetes.") or [how-to guides](/managed/ingest-from/setup-on-k8s/guides "Detailed description of installation and configuration options for specific use-cases"), and adapt the DynaKube custom resource according to your requirements.
 
    Run the command below to apply the DynaKube custom resource, making sure to replace `<your-DynaKube-CR>` with your actual DynaKube custom resource file name. A validation webhook will provide helpful error messages if there's a problem.
 
@@ -206,7 +206,7 @@ OpenShift
 2. Install Dynatrace Operator
 
    ```
-   kubectl apply -f https://github.com/Dynatrace/dynatrace-operator/releases/download/v1.10.0/kubernetes.yaml
+   kubectl apply -f https://github.com/Dynatrace/dynatrace-operator/releases/download/v1.10.1/kubernetes.yaml
    ```
 
    Run the following command to see when Dynatrace Operator components finish initialization:
@@ -294,7 +294,7 @@ OpenShift
 2. Install Dynatrace Operator
 
    ```
-   oc apply -f https://github.com/Dynatrace/dynatrace-operator/releases/download/v1.10.0/openshift.yaml
+   oc apply -f https://github.com/Dynatrace/dynatrace-operator/releases/download/v1.10.1/openshift.yaml
    ```
 
    Run the following command to see when Dynatrace Operator components finish initialization:

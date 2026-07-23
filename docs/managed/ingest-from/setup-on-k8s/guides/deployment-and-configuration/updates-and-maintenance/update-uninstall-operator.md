@@ -33,11 +33,11 @@ Kubernetes
 OpenShift
 
 ```
-kubectl apply -f https://github.com/Dynatrace/dynatrace-operator/releases/download/v1.10.0/kubernetes.yaml
+kubectl apply -f https://github.com/Dynatrace/dynatrace-operator/releases/download/v1.10.1/kubernetes.yaml
 ```
 
 ```
-oc apply -f https://github.com/Dynatrace/dynatrace-operator/releases/download/v1.10.0/openshift.yaml
+oc apply -f https://github.com/Dynatrace/dynatrace-operator/releases/download/v1.10.1/openshift.yaml
 ```
 
 Starting with Dynatrace Operator version 1.4.0, the `kubernetes-csi.yaml` includes all Dynatrace Operator components. For more details, see [Dynatrace Operator release notes version 1.4.0](/managed/whats-new/dynatrace-operator/dto-fix-1-4-0#upgrade-from-dynatrace-operator-version-1-3-0 "Release notes for Dynatrace Operator, version 1.4.0").
@@ -49,11 +49,11 @@ Kubernetes
 OpenShift
 
 ```
-kubectl apply -f https://github.com/Dynatrace/dynatrace-operator/releases/download/v1.10.0/kubernetes-csi.yaml
+kubectl apply -f https://github.com/Dynatrace/dynatrace-operator/releases/download/v1.10.1/kubernetes-csi.yaml
 ```
 
 ```
-oc apply -f https://github.com/Dynatrace/dynatrace-operator/releases/download/v1.10.0/openshift-csi.yaml
+oc apply -f https://github.com/Dynatrace/dynatrace-operator/releases/download/v1.10.1/openshift-csi.yaml
 ```
 
 ### Helm
@@ -155,11 +155,11 @@ oc apply -f https://github.com/Dynatrace/dynatrace-operator/releases/download/v1
    OpenShift
 
    ```
-   kubectl apply -f https://github.com/Dynatrace/dynatrace-operator/releases/download/v1.10.0/dynatrace-operator-crd.yaml
+   kubectl apply -f https://github.com/Dynatrace/dynatrace-operator/releases/download/v1.10.1/dynatrace-operator-crd.yaml
    ```
 
    ```
-   oc apply -f https://github.com/Dynatrace/dynatrace-operator/releases/download/v1.10.0/dynatrace-operator-crd.yaml
+   oc apply -f https://github.com/Dynatrace/dynatrace-operator/releases/download/v1.10.1/dynatrace-operator-crd.yaml
    ```
 
 ## Update ActiveGate pods
@@ -379,23 +379,23 @@ After all Dynatrace Operator–managed components have been successfully removed
    * If the CSI driver was **not** installed (you used `kubernetes.yaml` during installation):
 
      ```
-     kubectl delete -f https://github.com/Dynatrace/dynatrace-operator/releases/download/v1.10.0/kubernetes.yaml
+     kubectl delete -f https://github.com/Dynatrace/dynatrace-operator/releases/download/v1.10.1/kubernetes.yaml
      ```
    * If the CSI driver **was** installed (you used `kubernetes-csi.yaml` during installation):
 
      ```
-     kubectl delete -f https://github.com/Dynatrace/dynatrace-operator/releases/download/v1.10.0/kubernetes-csi.yaml
+     kubectl delete -f https://github.com/Dynatrace/dynatrace-operator/releases/download/v1.10.1/kubernetes-csi.yaml
      ```
 
    * If the CSI driver was **not** installed (you used `openshift.yaml` during installation):
 
      ```
-     oc delete -f https://github.com/Dynatrace/dynatrace-operator/releases/download/v1.10.0/openshift.yaml
+     oc delete -f https://github.com/Dynatrace/dynatrace-operator/releases/download/v1.10.1/openshift.yaml
      ```
    * If the CSI driver **was** installed (you used `openshift-csi.yaml` during installation):
 
      ```
-     oc delete -f https://github.com/Dynatrace/dynatrace-operator/releases/download/v1.10.0/openshift-csi.yaml
+     oc delete -f https://github.com/Dynatrace/dynatrace-operator/releases/download/v1.10.1/openshift-csi.yaml
      ```
 2. Delete the namespace.
 
@@ -422,7 +422,7 @@ Before running the node cleanup, ensure that no DynaKube is deployed and all mon
 1. Download the script.
 
 ```
-curl -O https://raw.githubusercontent.com/Dynatrace/dynatrace-operator/refs/tags/v1.10.0/hack/cluster/cleanup-node-fs.sh
+curl -O https://raw.githubusercontent.com/Dynatrace/dynatrace-operator/refs/tags/v1.10.1/hack/cluster/cleanup-node-fs.sh
 ```
 
 2. Make the script executable.

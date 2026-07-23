@@ -96,9 +96,9 @@ Granting `escalate` and `bind` disables Kubernetes privilege escalation preventi
 
 Sample deployer ClusterRole manifest (includes CSI driver, GKE Autopilot, and OpenShift permissions):
 
-[With CSI driver﻿](https://github.com/Dynatrace/dynatrace-operator/blob/v1.10.0/assets/samples/deployer/deployer-clusterrole-with-csi.yaml)
+[With CSI driver﻿](https://github.com/Dynatrace/dynatrace-operator/blob/v1.10.1/assets/samples/deployer/deployer-clusterrole-with-csi.yaml)
 
-If you don't deploy the CSI driver, use [Without CSI driver﻿](https://github.com/Dynatrace/dynatrace-operator/blob/v1.10.0/assets/samples/deployer/deployer-clusterrole-no-csi.yaml) instead — it omits the `CSIDriver` and `PriorityClass` permissions.
+If you don't deploy the CSI driver, use [Without CSI driver﻿](https://github.com/Dynatrace/dynatrace-operator/blob/v1.10.1/assets/samples/deployer/deployer-clusterrole-no-csi.yaml) instead — it omits the `CSIDriver` and `PriorityClass` permissions.
 
 #### Option B: Expanded permissions if `escalate` or `bind` are prohibited
 
@@ -108,9 +108,9 @@ The no-escalate ClusterRole directly grants all runtime permissions—secrets re
 
 Sample deployer ClusterRole manifest (no escalate, includes CSI driver, GKE Autopilot, and OpenShift permissions):
 
-[With CSI driver﻿](https://github.com/Dynatrace/dynatrace-operator/blob/v1.10.0/assets/samples/deployer/deployer-clusterrole-no-escalate-with-csi.yaml)
+[With CSI driver﻿](https://github.com/Dynatrace/dynatrace-operator/blob/v1.10.1/assets/samples/deployer/deployer-clusterrole-no-escalate-with-csi.yaml)
 
-If you don't deploy the CSI driver, use [Without CSI driver﻿](https://github.com/Dynatrace/dynatrace-operator/blob/v1.10.0/assets/samples/deployer/deployer-clusterrole-no-escalate-no-csi.yaml) instead — it omits the `CSIDriver` and `PriorityClass` permissions.
+If you don't deploy the CSI driver, use [Without CSI driver﻿](https://github.com/Dynatrace/dynatrace-operator/blob/v1.10.1/assets/samples/deployer/deployer-clusterrole-no-escalate-no-csi.yaml) instead — it omits the `CSIDriver` and `PriorityClass` permissions.
 
 ## Permission list
 

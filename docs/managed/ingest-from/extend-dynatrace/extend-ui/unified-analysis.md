@@ -19,10 +19,10 @@ The [host overview page](/managed/observe/infrastructure-observability/hosts/mon
 
 There are two types of unified analysis pages:
 
-* **List screen**  
-  The list screen is automatically generated and enables you to browse all instances of a specific entity type. You can find the available customizations in [List settings](/managed/ingest-from/extend-dynatrace/extend-ui/unified-analysis/unified-analysis-reference#list-settings "Learn about unified analysis syntax").
-* **Details screen**  
-  The entity details screen brings all observability signals attached to an entity into context. Like the list screen, a details screen is automatically generated for every entity in your environment. You can find the available customizations in [Details settings](/managed/ingest-from/extend-dynatrace/extend-ui/unified-analysis/unified-analysis-reference#details-settings "Learn about unified analysis syntax").
+* **List page**  
+  The list page is automatically generated and enables you to browse all instances of a specific entity type. You can find the available customizations in [List settings](/managed/ingest-from/extend-dynatrace/extend-ui/unified-analysis/unified-analysis-reference#list-settings "Learn about unified analysis syntax").
+* **Details page**  
+  The entity details page brings all observability signals attached to an entity into context. Like the list page, a details page is automatically generated for every entity in your environment. You can find the available customizations in [Details settings](/managed/ingest-from/extend-dynatrace/extend-ui/unified-analysis/unified-analysis-reference#details-settings "Learn about unified analysis syntax").
 
 ## Cards
 
@@ -142,9 +142,9 @@ See [Actions](/managed/ingest-from/extend-dynatrace/extend-ui/unified-analysis/u
 
 ### Filtering
 
-Unified analysis supports filtering entities by indexed entity attributes. You can enable filtering for the list screen and in the context of specific cards. Entity filtering can be configured at two levels:
+Unified analysis supports filtering entities by indexed entity attributes. You can enable filtering for the list page and in the context of specific cards. Entity filtering can be configured at two levels:
 
-* At the page level, where filtering affects all cards on the screen. There are separate configurations for the [details screen](/managed/ingest-from/extend-dynatrace/extend-ui/unified-analysis/unified-analysis-reference#details-filters "Learn about unified analysis syntax") and [list screen](/managed/ingest-from/extend-dynatrace/extend-ui/unified-analysis/unified-analysis-reference#list-filters "Learn about unified analysis syntax").
+* At the page level, where filtering affects all cards on the page. There are separate configurations for the [details page](/managed/ingest-from/extend-dynatrace/extend-ui/unified-analysis/unified-analysis-reference#details-filters "Learn about unified analysis syntax") and [list page](/managed/ingest-from/extend-dynatrace/extend-ui/unified-analysis/unified-analysis-reference#list-filters "Learn about unified analysis syntax").
 * In the entity list level, where filtering affects only a single list.
 
 ### Injections

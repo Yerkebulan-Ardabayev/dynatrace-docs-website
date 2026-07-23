@@ -14,6 +14,7 @@ source: https://docs.dynatrace.com/managed/manage-your-costs/view/where-to-look
 Dynatrace exposes the same underlying cost and usage data through several surfaces. Choose the one that fits your task:
 
 * Account Management: The front door for subscription totals, capability and environment breakdowns, billing reports, and the APIs that expose this same data programmatically.
+
 * DQL: When you need granular analysis, use DQL to query billing events.
 
 ## Overview

@@ -8,7 +8,7 @@ source: https://docs.dynatrace.com/managed/whats-new/dynatrace-operator
 # Dynatrace Operator release notes
 
 * Release notes
-* Updated on Apr 27, 2026
+* Updated on Jul 20, 2026
 
 Get to know the changes in [Dynatrace Operator﻿](https://github.com/Dynatrace/dynatrace-operator) releases.
 

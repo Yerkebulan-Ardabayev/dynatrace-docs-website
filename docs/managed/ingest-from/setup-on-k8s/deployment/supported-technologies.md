@@ -338,9 +338,11 @@ For OpenShift Dedicated, you need the [cluster-admin role﻿](https://dt-url.net
 
 ## Rancher Kubernetes Engine 2 (RKE2)
 
-applicationMonitoring
+cloudNativeFullStack classicFullStack applicationMonitoring hostMonitoring
 
-No specific configuration is required for RKE2 when `applicationMonitoring` mode is used. Due to SELinux policies on Red Hat Enterprise Linux derivatives, `hostMonitoring`, `cloudNativeFullStack` and `classicFullStack` modes are not supported.
+All deployment modes are supported on RKE2.
+
+On nodes running a Red Hat Enterprise Linux derivative with SELinux enabled, `hostMonitoring`, `cloudNativeFullStack`, and `classicFullStack` are not supported because the OneAgent container cannot apply the required SELinux policies on the host.
 
 ## VMware Tanzu Kubernetes Grid Integrated Edition (TKGI)
 

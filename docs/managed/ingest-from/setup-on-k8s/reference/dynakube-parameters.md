@@ -27,7 +27,7 @@ The table below specifies the required Dynatrace Operator versions corresponding
 
 The corresponding DynaKube API versions will be removed from the Dynatrace Operator in the subsequent minor or major release.
 
-See the DynaKube YAML samples on [GitHub﻿](https://github.com/Dynatrace/dynatrace-operator/tree/v1.10.0/assets/samples/dynakube).
+See the DynaKube YAML samples on [GitHub﻿](https://github.com/Dynatrace/dynatrace-operator/tree/v1.10.1/assets/samples/dynakube).
 
 v1beta6
 
@@ -1103,7 +1103,7 @@ Recommended
 | `labels` | Your defined labels for OneAgent Pods in order to structure workloads as desired. | No default (optional) | map[string]string |
 | `namespaceSelector` | The namespaces where you want Dynatrace Operator to inject.For more information, see [Configure monitoring for namespaces and Pods](/managed/ingest-from/setup-on-k8s/guides/deployment-and-configuration/monitoring-and-instrumentation/annotate "Configure monitoring for namespaces and pods"). | No default (optional) | LabelSelector |
 | `nodeSelector` | Specify the node selector that controls on which nodes OneAgent will be deployed. | No default (optional) | map[string]string |
-| `oneAgentResources` | Resource settings for OneAgent container. Consumption of the OneAgent heavily depends on the workload to monitor. You can use the default settings from the DynaKube samples on [GitHub﻿](https://github.com/Dynatrace/dynatrace-operator/tree/v1.10.0/assets/samples/dynakube).`resource.requests` shows the values needed to run; `resource.limits` shows the maximum limits for the Pod. | No default (optional) | ResourceRequirements |
+| `oneAgentResources` | Resource settings for OneAgent container. Consumption of the OneAgent heavily depends on the workload to monitor. You can use the default settings from the DynaKube samples on [GitHub﻿](https://github.com/Dynatrace/dynatrace-operator/tree/v1.10.1/assets/samples/dynakube).`resource.requests` shows the values needed to run; `resource.limits` shows the maximum limits for the Pod. | No default (optional) | ResourceRequirements |
 | `priorityClassName` | Assign a priority class to the OneAgent Pods. By default, no class is set.For details, see [Pod Priority and Preemption﻿](https://dt-url.net/n8437bl). | No default (optional) | string |
 | `secCompProfile` | The SecComp Profile that will be configured in order to run in secure computing mode. | No default (optional) | string |
 | `storageHostPath` | Writeable directory on the host filesystem where OneAgent configurations will be stored. | No default (optional) | string |

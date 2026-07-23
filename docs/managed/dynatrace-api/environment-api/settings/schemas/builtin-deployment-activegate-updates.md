@@ -33,4 +33,12 @@ To execute this request, you need an access token with **Read settings** (`setti
 
 | Property | Type | Description | Required |
 | --- | --- | --- | --- |
-| Automatic updates at earliest convenience `autoUpdate` | boolean | - | Required |
+| Target version `targetVersion` | text | - | Required |
+| Update mode `updateMode` | enum | The element has these enums * `AUTOMATIC` * `AUTOMATIC_DURING_UW` * `MANUAL` | Required |
+| Update windows `updateWindows` | Set<[updateWindow](#updateWindow)> | - | Required |
+
+##### The `updateWindow` object
+
+| Property | Type | Description | Required |
+| --- | --- | --- | --- |
+| Update window `updateWindow` | setting | Select an update window for ActiveGate updates (`<your-dynatrace-url>//ui/settings/builtin:deployment.management.update-windows`) | Required |

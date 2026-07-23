@@ -116,7 +116,7 @@ source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/setting
 | [Anomaly detectors](/managed/dynatrace-api/environment-api/settings/schemas/builtin-davis-anomaly-detectors) | `builtin:davis.anomaly-detectors` | `environment` |
 | [Declarative process grouping](/managed/dynatrace-api/environment-api/settings/schemas/builtin-declarativegrouping) | `builtin:declarativegrouping` | `HOST` - Host  `KUBERNETES_CLUSTER` - Kubernetes cluster  `HOST_GROUP` - Host Group  `environment` |
 | [ActiveGate updates](/managed/dynatrace-api/environment-api/settings/schemas/builtin-deployment-activegate-updates) | `builtin:deployment.activegate.updates` | `ENVIRONMENT_ACTIVE_GATE`  `environment` |
-| [Update windows for OneAgent updates](/managed/dynatrace-api/environment-api/settings/schemas/builtin-deployment-management-update-windows) | `builtin:deployment.management.update-windows` | `environment` |
+| [Update windows for OneAgent and ActiveGate](/managed/dynatrace-api/environment-api/settings/schemas/builtin-deployment-management-update-windows) | `builtin:deployment.management.update-windows` | `environment` |
 | [OneAgent default mode](/managed/dynatrace-api/environment-api/settings/schemas/builtin-deployment-oneagent-default-mode) | `builtin:deployment.oneagent.default-mode` | `environment` |
 | [OneAgent updates](/managed/dynatrace-api/environment-api/settings/schemas/builtin-deployment-oneagent-updates) | `builtin:deployment.oneagent.updates` | `HOST` - Host  `HOST_GROUP` - Host Group  `environment` |
 | [Enable Observability For Developers](/managed/dynatrace-api/environment-api/settings/schemas/builtin-devobs-agent-optin) | `builtin:devobs.agent.optin` | `PROCESS_GROUP` - Process Group  `CLOUD_APPLICATION` - Kubernetes workload  `CLOUD_APPLICATION_NAMESPACE` - Kubernetes namespace  `KUBERNETES_CLUSTER` - Kubernetes cluster  `HOST_GROUP` - Host Group  `environment` |
@@ -183,7 +183,6 @@ source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/setting
 | [Management zones settings](/managed/dynatrace-api/environment-api/settings/schemas/builtin-management-zones) | `builtin:management-zones` | `environment` |
 | [Metric metadata](/managed/dynatrace-api/environment-api/settings/schemas/builtin-metric-metadata) | `builtin:metric.metadata` | `metric` |
 | [Metric query](/managed/dynatrace-api/environment-api/settings/schemas/builtin-metric-query) | `builtin:metric.query` | `metric` |
-| [Dynatrace mobile app](/managed/dynatrace-api/environment-api/settings/schemas/builtin-mobile-notifications) | `builtin:mobile.notifications` | `environment`  `environment-default` - Managed cluster-wide |
 | [Apache HTTP Server](/managed/dynatrace-api/environment-api/settings/schemas/builtin-monitored-technologies-apache) | `builtin:monitored-technologies.apache` | `HOST` - Host  `environment` |
 | [.NET](/managed/dynatrace-api/environment-api/settings/schemas/builtin-monitored-technologies-dotnet) | `builtin:monitored-technologies.dotnet` | `HOST` - Host  `environment` |
 | [Go](/managed/dynatrace-api/environment-api/settings/schemas/builtin-monitored-technologies-go) | `builtin:monitored-technologies.go` | `HOST` - Host  `environment` |
@@ -311,6 +310,7 @@ source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/setting
 | [IP determination](/managed/dynatrace-api/environment-api/settings/schemas/builtin-rum-ip-determination) | `builtin:rum.ip-determination` | `environment` |
 | [Map IP addresses to locations](/managed/dynatrace-api/environment-api/settings/schemas/builtin-rum-ip-mappings) | `builtin:rum.ip-mappings` | `environment` |
 | [Beacon endpoint settings](/managed/dynatrace-api/environment-api/settings/schemas/builtin-rum-mobile-beacon-endpoint) | `builtin:rum.mobile.beacon-endpoint` | `MOBILE_APPLICATION` - Mobile App  `CUSTOM_APPLICATION` - Custom Application |
+| [Capture properties](/managed/dynatrace-api/environment-api/settings/schemas/builtin-rum-mobile-capture-properties) | `builtin:rum.mobile.capture-properties` | `MOBILE_APPLICATION` - Mobile App |
 | [Enablement and cost control](/managed/dynatrace-api/environment-api/settings/schemas/builtin-rum-mobile-enablement) | `builtin:rum.mobile.enablement` | `MOBILE_APPLICATION` - Mobile App  `environment` |
 | [Frontend-backend linking](/managed/dynatrace-api/environment-api/settings/schemas/builtin-rum-mobile-frontend-backend-linking) | `builtin:rum.mobile.frontend-backend-linking` | `MOBILE_APPLICATION` - Mobile App |
 | [Apdex configuration](/managed/dynatrace-api/environment-api/settings/schemas/builtin-rum-mobile-key-performance-metrics) | `builtin:rum.mobile.key-performance-metrics` | `DEVICE_APPLICATION_METHOD` - Mobile app key user action  `MOBILE_APPLICATION` - Mobile App  `CUSTOM_APPLICATION` - Custom Application |
@@ -328,6 +328,7 @@ source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/setting
 | [Beacon endpoint settings](/managed/dynatrace-api/environment-api/settings/schemas/builtin-rum-web-beacon-endpoint) | `builtin:rum.web.beacon-endpoint` | `APPLICATION` - Web application |
 | [Exclude/Include browsers from monitoring](/managed/dynatrace-api/environment-api/settings/schemas/builtin-rum-web-browser-exclusion) | `builtin:rum.web.browser-exclusion` | `APPLICATION` - Web application |
 | [Custom Properties Capture Restrictions](/managed/dynatrace-api/environment-api/settings/schemas/builtin-rum-web-capture-custom-properties) | `builtin:rum.web.capture-custom-properties` | `APPLICATION` - Web application  `MOBILE_APPLICATION` - Mobile App |
+| [Capture properties](/managed/dynatrace-api/environment-api/settings/schemas/builtin-rum-web-capture-properties) | `builtin:rum.web.capture-properties` | `APPLICATION` - Web application |
 | [Custom configuration properties](/managed/dynatrace-api/environment-api/settings/schemas/builtin-rum-web-custom-configuration-properties) | `builtin:rum.web.custom-configuration-properties` | `APPLICATION` - Web application |
 | [Custom errors](/managed/dynatrace-api/environment-api/settings/schemas/builtin-rum-web-custom-errors) | `builtin:rum.web.custom-errors` | `APPLICATION` - Web application  `environment-default` - Managed cluster-wide |
 | [Define custom injection rules](/managed/dynatrace-api/environment-api/settings/schemas/builtin-rum-web-custom-injection-rules) | `builtin:rum.web.custom-injection-rules` | `APPLICATION` - Web application |
@@ -386,6 +387,7 @@ source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/setting
 | [Performance thresholds](/managed/dynatrace-api/environment-api/settings/schemas/builtin-synthetic-multiprotocol-performance-thresholds) | `builtin:synthetic.multiprotocol.performance-thresholds` | `MULTIPROTOCOL_MONITOR` - Network availability monitor |
 | [Frequency and locations](/managed/dynatrace-api/environment-api/settings/schemas/builtin-synthetic-multiprotocol-scheduling) | `builtin:synthetic.multiprotocol.scheduling` | `MULTIPROTOCOL_MONITOR` - Network availability monitor |
 | [Synthetic monitor's primary grail tags](/managed/dynatrace-api/environment-api/settings/schemas/builtin-synthetic-primary-grail-tags) | `builtin:synthetic.primary-grail-tags` | `SYNTHETIC_TEST` - Synthetic monitor  `HTTP_CHECK` - HTTP monitor  `MULTIPROTOCOL_MONITOR` - Network availability monitor |
+| [Synthetic monitor's security context](/managed/dynatrace-api/environment-api/settings/schemas/builtin-synthetic-security-context) | `builtin:synthetic.security-context` | `SYNTHETIC_TEST` - Synthetic monitor  `HTTP_CHECK` - HTTP monitor  `MULTIPROTOCOL_MONITOR` - Network availability monitor |
 | [Synthetic availability](/managed/dynatrace-api/environment-api/settings/schemas/builtin-synthetic-synthetic-availability-settings) | `builtin:synthetic.synthetic-availability-settings` | `environment` |
 | [Automatically applied tags](/managed/dynatrace-api/environment-api/settings/schemas/builtin-tags-auto-tagging) | `builtin:tags.auto-tagging` | `environment` |
 | [Access tokens](/managed/dynatrace-api/environment-api/settings/schemas/builtin-tokens-token-settings) | `builtin:tokens.token-settings` | `environment` |

@@ -9,7 +9,7 @@ source: https://docs.dynatrace.com/managed/ingest-from/dynatrace-oneagent/oneage
 
 * Troubleshooting
 * 13-min read
-* Updated on Oct 17, 2025
+* Updated on Jul 22, 2026
 
 Learn how to troubleshoot OneAgent installation on AIX, Linux, and Windows.
 
@@ -143,9 +143,29 @@ After successfully initializing the SDK, you might still encounter issues, such 
   Alternatively, you can use `DT_LOGLEVELCON={level}` or `--dt_loglevelcon={level}` if you want to receive OneAgent log output via `stderr`.
 * In certain scenarios, [`onesdk_agent_get_current_state`﻿](https://dt-url.net/l9838z9) can provide further insights.
 
+Why is Log Monitoring disabled after OneAgent upgrade?
+
+After upgrading OneAgent, Log Monitoring (`app-log-content-access`) may be unexpectedly disabled on the host.
+
+This can happen when the configuration migration step overwrites the existing configuration file (\_loganalyticsconf.ctl.json) with values from a legacy configuration file (ruxitagentloganalytics.conf). This is a rare occurrence that only affects hosts with a specific configuration history where both files coexist.
+
+To re-enable Log Monitoring, run the following command on the affected host:
+
+* **Linux**: `./oneagentctl --set-app-log-content-access=true`
+* **Windows**: `.\oneagentctl.exe --set-app-log-content-access=true`
+
 ## OS-specific troubleshooting
 
 ### Linux
+
+Installation fails due to insufficient memory
+
+OneAgent installation may fail if your Linux host doesn't meet the minimum memory requirements.
+
+* Your host requires at least 256 MB of free memory to install and update OneAgent.
+* The installation process requires at least 256 MB of virtual memory.
+
+To resolve this issue, free up memory or increase virtual memory allocation on the host, then retry the installation. For the full list of requirements, see [Install OneAgent on Linux](/managed/ingest-from/dynatrace-oneagent/installation-and-operation/linux/installation/install-oneagent-on-linux#requirements "Learn how to download and install Dynatrace OneAgent on Linux.").
 
 OneAgent installed on Chef Habitat deployments doesn't inject into processes
 
@@ -345,6 +365,15 @@ AI\_RecycleBin folder is filling up disk space
 This is a known issue with [Advanced Installer﻿](https://dt-url.net/e303ta4). As a workaround, the OneAgent installer clears the `AI_RecycleBin` at the end of the installation. However, this cleanup might not work if the installation fails in an early stage, such as in the case of a [missing MSI package in Windows Installer Cache](/managed/ingest-from/dynatrace-oneagent/oneagent-troubleshooting/troubleshoot-oneagent-installation#missing-msi "Learn how to troubleshoot OneAgent installation on AIX, Linux, and Windows."). For more details, see the discussion on [Advanced Installer forums﻿](https://dt-url.net/w503uks).
 
 ### AIX
+
+Installation fails due to insufficient memory
+
+OneAgent installation may fail if your AIX host doesn't meet the minimum memory requirements.
+
+* Your host requires at least 256 MB of free memory to install and update OneAgent.
+* The installation process requires at least 256 MB of virtual memory.
+
+To resolve this issue, free up memory or increase virtual memory allocation on the host, then retry the installation. For the full list of requirements, see [Install OneAgent on AIX](/managed/ingest-from/dynatrace-oneagent/installation-and-operation/aix/installation/install-oneagent-on-aix#requirements "Learn how to download and install Dynatrace OneAgent on AIX.").
 
 Injection not working due to manual configuration of previous version
 

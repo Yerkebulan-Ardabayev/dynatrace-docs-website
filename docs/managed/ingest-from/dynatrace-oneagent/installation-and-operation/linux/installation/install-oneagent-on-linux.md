@@ -9,7 +9,7 @@ source: https://docs.dynatrace.com/managed/ingest-from/dynatrace-oneagent/instal
 
 * How-to guide
 * 5-min read
-* Updated on Jan 22, 2026
+* Updated on Jul 22, 2026
 
 This page describes how to download and install Dynatrace OneAgent on Linux.
 
@@ -28,7 +28,8 @@ You can install OneAgent on any Linux system that's [supported by Dynatrace](/ma
 ### Resources
 
 * Check the [disk space requirements](/managed/ingest-from/dynatrace-oneagent/installation-and-operation/linux/installation/disk-space-requirements-for-oneagent-installation-and-update-on-linux "Learn the OneAgent directory structure and disk space requirements for OneAgent installation on Linux.").
-* Your host requires 200 MB free memory to run OneAgent installation and update.
+* Your host requires at least 256 MB of free memory to run OneAgent installation and update.
+* The installation process requires at least 256 MB of virtual memory.
 * All hosts that are to be monitored need to be able to send data to the Dynatrace cluster. Depending on your Dynatrace deployment and on your network layout and security settings, you may choose to either provide direct access to Dynatrace cluster or to [set up an ActiveGate](/managed/ingest-from/dynatrace-activegate "Understand the basic concepts related to ActiveGate.").
 
 ### Limitations

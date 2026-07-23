@@ -66,13 +66,13 @@ If that upgrade cannot be performed, follow the [Running CRI-O with OneAgent ver
    **Kubernetes**
 
    ```
-   kubectl apply -f https://github.com/Dynatrace/dynatrace-operator/releases/download/v1.10.0/kubernetes-csi.yaml
+   kubectl apply -f https://github.com/Dynatrace/dynatrace-operator/releases/download/v1.10.1/kubernetes-csi.yaml
    ```
 
    **OpenShift**
 
    ```
-   oc apply -f https://github.com/Dynatrace/dynatrace-operator/releases/download/v1.10.0/openshift-csi.yaml
+   oc apply -f https://github.com/Dynatrace/dynatrace-operator/releases/download/v1.10.1/openshift-csi.yaml
    ```
 2. Reconfigure (existing) DynaKube for cloud-native full-stack mode:
 

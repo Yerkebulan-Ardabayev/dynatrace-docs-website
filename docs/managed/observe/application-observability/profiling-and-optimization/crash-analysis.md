@@ -9,7 +9,7 @@ source: https://docs.dynatrace.com/managed/observe/application-observability/pro
 
 * How-to guide
 * 7-min read
-* Updated on Jul 01, 2026
+* Updated on Jul 20, 2026
 
 Processes crash for a multitude of reasons and it’s often difficult to understand the root causes that contribute to such crashes. When a monitored process crashes, you’ll see a process crash entry in the **Events** section of each affected process and host page. The example process below has some availability problems (shown in red on the timeline). By selecting the affected timeframe in the timeline, the **Events** section shows you the number of process crashes that occurred during that timeframe (1 crash in this example).
 
@@ -214,28 +214,38 @@ For more information, see [OneAgent security on Linux](/managed/ingest-from/dyna
 
 #### Core pattern handling
 
-The OneAgent installer overwrites the core pattern with its own command but preserves the original pattern.
+The OneAgent installer overwrites the core pattern with its own command but preserves the original pattern. The backup locations and persistence method differ depending on the OneAgent version.
 
-Starting with Debian 13, `systemd-sysctl` no longer reads `/etc/sysctl.conf`. Default settings are provided in `/usr/lib/sysctl.d/50-default.conf`, and local overrides are typically stored in `/etc/sysctl.d/*.conf`.
+**Backup of `/proc/sys/kernel/core_pattern`**
 
-* The content of the original `/proc/sys/kernel/core_pattern` file is copied to:
+OneAgent backs up the original core pattern so it can be restored when OneAgent is uninstalled. The backup path depends on the version:
 
-  + OneAgent version 1.301 and earlier `/opt/dynatrace/oneagent/agent/conf/original_core_pattern`
-  + OneAgent version 1.302+ `/var/lib/dynatrace/oneagent/agent/backup/original_core_pattern`
+| OneAgent version | Backup path |
+| --- | --- |
+| 1.301 and earlier | `/opt/dynatrace/oneagent/agent/conf/original_core_pattern` |
+| 1.302+ | `/var/lib/dynatrace/oneagent/agent/backup/original_core_pattern` |
 
-  When OneAgent is uninstalled, the original core pattern present in this file, is restored to `/proc/sys/kernel/core_pattern`.
-* Up until OneAgent version 1.333, the content of the original `kernel.core_pattern` option of `/etc/sysctl.conf` is copied to:
+When OneAgent is uninstalled, the original core pattern from this backup file is restored to `/proc/sys/kernel/core_pattern`.
 
-  + OneAgent version 1.301 and earlier `/opt/dynatrace/oneagent/agent/conf/original.sysctl.corepattern`
-  + OneAgent version 1.302+ `/var/lib/dynatrace/oneagent/agent/backup/original.sysctl.corepattern`
+**Persistence of `kernel.core_pattern` in `/etc/sysctl.conf`**
 
-  When OneAgent is uninstalled, the original core pattern present in this file is restored to `kernel.core_pattern` in `/etc/sysctl.conf`. If `kernel.core_pattern` was not present in `/etc/sysctl.conf` before OneAgent installation, or if `/etc/sysctl.conf` doesn't exist on the system, the backup file is not created and there's nothing to restore during uninstallation.
-* Starting with OneAgent version 1.334, OneAgent persists the core pattern by creating a `99-coredump-dynatrace.conf` file in the first existing directory from the following list. No backup is created in this case.
+How OneAgent persists the `kernel.core_pattern` setting has changed across versions.
 
-  + `/etc/sysctl.d/`
-  + `/run/sysctl.d/`
-  + `/usr/local/lib/sysctl.d/`
-  + `/usr/lib/sysctl.d/`
+| OneAgent version | Persistence method | Backup path |
+| --- | --- | --- |
+| 1.301 and earlier | Backs up the `kernel.core_pattern` value from `/etc/sysctl.conf` and restores it on uninstall. | `/opt/dynatrace/oneagent/agent/conf/original.sysctl.corepattern` |
+| 1.302–1.332 | Backs up the `kernel.core_pattern` value from `/etc/sysctl.conf` and restores it on uninstall. | `/var/lib/dynatrace/oneagent/agent/backup/original.sysctl.corepattern` |
+| 1.333–1.344 | Creates `99-coredump-dynatrace.conf` in the first available `sysctl.d` directory (see search order below). Does not modify or back up `/etc/sysctl.conf`. | None |
+| 1.345+ | **If `/etc/sysctl.conf` exists:** backs up `kernel.core_pattern` from `/etc/sysctl.conf` and restores it on uninstall (same behavior as 1.302–1.332). **If `/etc/sysctl.conf` does not exist:** creates `99-coredump-dynatrace.conf` in the first available `sysctl.d` directory instead. | If `/etc/sysctl.conf` exists: `/var/lib/dynatrace/oneagent/agent/backup/original.sysctl.corepattern`. If `/etc/sysctl.conf` does not exist: none. |
+
+For versions 1.301–1.332: if `kernel.core_pattern` was not present in `/etc/sysctl.conf` before OneAgent installation, or if `/etc/sysctl.conf` does not exist, no backup is created and there is nothing to restore during uninstallation.
+
+Starting with version 1.333, `99-coredump-dynatrace.conf` is placed in the first directory from this list that exists on the system:
+
+* `/etc/sysctl.d/`
+* `/run/sysctl.d/`
+* `/usr/local/lib/sysctl.d/`
+* `/usr/lib/sysctl.d/`
 
 Depending on the original entry in `core_pattern`, Dynatrace will write different patterns to `core_pattern`. The possible configurations and expected entries after installation are listed below:
 

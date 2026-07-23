@@ -535,25 +535,6 @@ For the purposes of [calculating monitoring consumption](/managed/license/classi
 | builtin:containers.memory.residentSetBytes | Containers: Memory usage, bytes  Resident set size (Linux) or private working set size (Windows) per container in bytes. | Byte | autoavgmaxmin |
 | builtin:containers.memory.usagePercent | Containers: Memory usage, % of limit  Resident set size (Linux) or private working set size (Windows) per container in percent relative to container memory limit. If no limit is set, this equals total physical memory. | Percent (%) | autoavgmaxmin |
 
-### Other containers metrics
-
-| Metric key | Name and description | Unit | Aggregations |
-| --- | --- | --- | --- |
-| builtin:containers.bytes\_rx2 | Container bytes received | Byte/second | autoavgcountmaxminsum |
-| builtin:containers.bytes\_tx2 | Container bytes transmitted | Byte/second | autoavgcountmaxminsum |
-| builtin:containers.cpu\_usage2 | Container cpu usage | Percent (%) | autoavgcountmaxminsum |
-| builtin:containers.devicemapper\_data\_space\_available | Devicemapper data space available | Byte | autoavgcountmaxminsum |
-| builtin:containers.devicemapper\_data\_space\_used | Devicemapper data space used | Byte | autoavgcountmaxminsum |
-| builtin:containers.devicemapper\_metadata\_space\_available | Devicemapper meta-data space available | Byte | autoavgcountmaxminsum |
-| builtin:containers.devicemapper\_metadata\_space\_used | Devicemapper meta-data space used | Byte | autoavgcountmaxminsum |
-| builtin:containers.memory\_percent | Memory percent | Percent (%) | autoavgcountmaxminsum |
-| builtin:containers.memory\_usage2 | Container memory usage | Byte | autoavgcountmaxminsum |
-| builtin:containers.no\_of\_containers\_launched | Number of containers launched | Count | autoavgcountmaxminsum |
-| builtin:containers.no\_of\_containers\_per\_pgi | Number of containers running | Count | autoavgcountmaxminsum |
-| builtin:containers.no\_of\_containers\_running | Number of containers running | Count | autoavgcountmaxminsum |
-| builtin:containers.no\_of\_containers\_terminated | Number of containers terminated | Count | autoavgcountmaxminsum |
-| builtin:containers.throttled\_time2 | Container throttled time | Millisecond | autoavgcountmaxminsum |
-
 ## Dashboards
 
 ### Other dashboards metrics

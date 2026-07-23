@@ -34,6 +34,6 @@ To execute this request, you need an access token with **Read settings** (`setti
 | Property | Type | Description | Required |
 | --- | --- | --- | --- |
 | Enabled `enabled` | boolean | - | Required |
-| Instrumentation enabled (change needs a process restart) `instrumentation` | boolean | - | Optional |
+| Instrumentation enabled `instrumentation` | boolean | - | Optional |
 | Activate this feature also in OneAgents only fulfilling the minimum Opt-In version `forcible` | boolean | - | Optional |
 | Feature `key` | text | - | Required |

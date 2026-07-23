@@ -35,6 +35,7 @@ Prerequisites
 
 | Go version | Vendor released | Vendor End of life | First supported Dynatrace OneAgent version | Last supported Dynatrace OneAgent version | Dynatrace support until | [Dynatrace support level](/managed/ingest-from/technology-support#support-levels) |
 | --- | --- | --- | --- | --- | --- | --- |
+| 1.26.3 | 2026-02-10 | 2027-02-10 | 1.343 | - | 2028-02-10 | Supported |
 | 1.26.2 | 2026-02-10 | 2027-02-10 | 1.341 | - | 2028-02-10 | Supported |
 | 1.25.9 | 2025-08-12 | 2026-08-12 | 1.341 | - | 2027-08-12 | Supported |
 | 1.25.7 | 2025-08-12 | 2026-08-12 | 1.337 | - | 2027-08-12 | Supported |

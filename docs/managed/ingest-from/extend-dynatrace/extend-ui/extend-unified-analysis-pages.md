@@ -15,7 +15,7 @@ If your extension supplies additional data for a default entity with its own uni
 
 ## Define card injection
 
-The configuration of a card injection is similar to the configuration of the page layout itself with one significant modification: injected cards are ordered alphabetically by their key, which should use a well-specified key prefix. This ensures that unrelated data supplied by different extensions won't be mixed on a unified analysis page. Injections can be added under the `detailsInjections` and `listInjections` sections of the screen configuration.
+The configuration of a card injection is similar to the configuration of the page layout itself with one significant modification: injected cards are ordered alphabetically by their key, which should use a well-specified key prefix. This ensures that unrelated data supplied by different extensions won't be mixed on a unified analysis page. Injections can be added under the `detailsInjections` and `listInjections` sections of the page configuration.
 
 ```
 detailsInjections:

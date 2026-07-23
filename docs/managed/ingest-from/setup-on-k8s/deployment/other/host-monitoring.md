@@ -71,7 +71,7 @@ Dynatrace Operator version 0.8.0+
 
    Installation with additional configuration of the Helm chart
 
-   Edit the [`values.yaml`﻿](https://github.com/Dynatrace/dynatrace-operator/blob/v1.10.0/config/helm/chart/default/values.yaml) sample from GitHub, and then run the install command, passing the YAML file as an argument:
+   Edit the [`values.yaml`﻿](https://github.com/Dynatrace/dynatrace-operator/blob/v1.10.1/config/helm/chart/default/values.yaml) sample from GitHub, and then run the install command, passing the YAML file as an argument:
 
    ```
    helm install dynatrace-operator oci://public.ecr.aws/dynatrace/dynatrace-operator \
@@ -96,7 +96,7 @@ Dynatrace Operator version 0.8.0+
    If `installCRD` is set to `false`, you need to create the custom resource definition manually before starting the Helm installation:
 
    ```
-   kubectl apply -f https://github.com/Dynatrace/dynatrace-operator/releases/download/v1.10.0/dynatrace-operator-crd.yaml
+   kubectl apply -f https://github.com/Dynatrace/dynatrace-operator/releases/download/v1.10.1/dynatrace-operator-crd.yaml
    ```
 2. Create secret for access token
 
@@ -196,7 +196,7 @@ OpenShift
 2. Install Dynatrace Operator
 
    ```
-   kubectl apply -f https://github.com/Dynatrace/dynatrace-operator/releases/download/v1.10.0/kubernetes-csi.yaml
+   kubectl apply -f https://github.com/Dynatrace/dynatrace-operator/releases/download/v1.10.1/kubernetes-csi.yaml
    ```
 
    Run the following command to see when Dynatrace Operator components finish initialization:
@@ -314,7 +314,7 @@ OpenShift
 2. Install Dynatrace Operator
 
    ```
-   oc apply -f https://github.com/Dynatrace/dynatrace-operator/releases/download/v1.10.0/openshift-csi.yaml
+   oc apply -f https://github.com/Dynatrace/dynatrace-operator/releases/download/v1.10.1/openshift-csi.yaml
    ```
 
    Run the following command to see when Dynatrace Operator components finish initialization:

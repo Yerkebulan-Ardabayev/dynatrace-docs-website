@@ -8,9 +8,9 @@ source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/setting
 # Settings API - DELETE an object
 
 * Reference
-* Published Feb 24, 2021
+* Updated on Jul 09, 2026
 
-Updates the specified settings object. Deletion cannot be undone!
+Deletes the specified settings object. Deletion cannot be undone!
 
 |  |  |  |
 | --- | --- | --- |

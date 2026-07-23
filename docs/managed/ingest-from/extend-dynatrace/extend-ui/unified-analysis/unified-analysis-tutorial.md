@@ -12,7 +12,7 @@ source: https://docs.dynatrace.com/managed/ingest-from/extend-dynatrace/extend-u
 
 This is a step-by-step tutorial on how to upload the custom topology to your Dynatrace environment and build an extension to define the topology types and relationships between them.
 
-You can then define your unified analysis screens to analyze data from multiple sources, including logs, metrics, and traces in a unified view. You can also include various data sources and dimensions, apply filters, and drill down into specific details.
+You can then define your unified analysis pages to analyze data from multiple sources, including logs, metrics, and traces in a unified view. You can also include various data sources and dimensions, apply filters, and drill down into specific details.
 
 ## Prerequisites
 
@@ -333,9 +333,9 @@ If you now go to **Settings** > **Topology model** > **Generic types**, you'll s
 
   Smart Taxi instance
 
-## Configure unified analysis screens
+## Configure unified analysis pages
 
-You can now customize your entity screens by creating a screen definition in the `extension.yaml` file.
+You can now customize your entity pages by creating a page definition in the `extension.yaml` file.
 
 ```
 screens:
@@ -751,14 +751,14 @@ autoGenerate: true
 
 * For the Smart Taxi entity, this definition includes three charts with data on speed, engine temperature and days to revision.
 
-  Smart Taxi entity screen
+  Smart Taxi entity page
 
-  ![UA screen example](https://dt-cdn.net/images/screenshot-2023-04-19-at-6-32-21-pm-1061-c102f4ffd1.png)
+  ![UA page example](https://dt-cdn.net/images/screenshot-2023-04-19-at-6-32-21-pm-1061-c102f4ffd1.png)
 
-  UA screen example
+  UA page example
 * For the Smart Fleet entity, this definition includes the list of the taxis that are a part of this fleet. You can expand each taxi entity and see two graphs with speed and engine temperature data.
 
-  Smart Fleet entity screen
+  Smart Fleet entity page
 
   ![Smart fleet example](https://dt-cdn.net/images/fleet-1-1455-ccb222479c.png)
 

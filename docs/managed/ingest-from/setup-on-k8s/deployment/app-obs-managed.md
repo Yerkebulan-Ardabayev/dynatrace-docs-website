@@ -105,7 +105,7 @@ The installation process is independent of whether you are using Kubernetes or O
    If `installCRD` is set to `false`, you need to create the custom resource definition manually before starting the Helm installation:
 
    ```
-   kubectl apply -f https://github.com/Dynatrace/dynatrace-operator/releases/download/v1.10.0/dynatrace-operator-crd.yaml
+   kubectl apply -f https://github.com/Dynatrace/dynatrace-operator/releases/download/v1.10.1/dynatrace-operator-crd.yaml
    ```
 
    VMware Tanzu Kubernetes (TKGI) and IBM Kubernetes Service (IKS) require [additional configuration](/managed/ingest-from/setup-on-k8s/deployment/supported-technologies "Overview of different configurations for all major Kubernetes distributions.").
@@ -195,13 +195,13 @@ OpenShift
 2. Install Dynatrace Operator
 
    ```
-   kubectl apply -f https://github.com/Dynatrace/dynatrace-operator/releases/download/v1.10.0/kubernetes-csi.yaml
+   kubectl apply -f https://github.com/Dynatrace/dynatrace-operator/releases/download/v1.10.1/kubernetes-csi.yaml
    ```
 
    Without CSI driver
 
    ```
-   kubectl apply -f https://github.com/Dynatrace/dynatrace-operator/releases/download/v1.10.0/kubernetes.yaml
+   kubectl apply -f https://github.com/Dynatrace/dynatrace-operator/releases/download/v1.10.1/kubernetes.yaml
    ```
 
    VMware Tanzu Kubernetes (TKGI) and IBM Kubernetes Service (IKS) require [additional configuration](/managed/ingest-from/setup-on-k8s/deployment/supported-technologies "Overview of different configurations for all major Kubernetes distributions.").
@@ -291,13 +291,13 @@ OpenShift
 2. Install Dynatrace Operator
 
    ```
-   oc apply -f https://github.com/Dynatrace/dynatrace-operator/releases/download/v1.10.0/openshift-csi.yaml
+   oc apply -f https://github.com/Dynatrace/dynatrace-operator/releases/download/v1.10.1/openshift-csi.yaml
    ```
 
    Without CSI driver
 
    ```
-   oc apply -f https://github.com/Dynatrace/dynatrace-operator/releases/download/v1.10.0/openshift.yaml
+   oc apply -f https://github.com/Dynatrace/dynatrace-operator/releases/download/v1.10.1/openshift.yaml
    ```
 
    Run the following command to see when Dynatrace Operator components finish initialization:

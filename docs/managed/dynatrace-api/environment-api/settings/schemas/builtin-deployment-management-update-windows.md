@@ -9,9 +9,14 @@ source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/setting
 
 * Published Dec 05, 2023
 
-### Update windows for OneAgent updates (`builtin:deployment.management.update-windows)`
+### Update windows for OneAgent and ActiveGate (`builtin:deployment.management.update-windows)`
 
-Define update windows for how often and when to update your OneAgent instances. You will be able to apply these windows to OneAgents, Host Groups or your whole Environment in Automatic Update settings screens.
+Define when automatic updates for OneAgent and ActiveGate should run.
+
+Apply update windows at these scopes:
+
+* **OneAgent:** environment, host group, or individual host.
+* **ActiveGate:** environment or individual ActiveGate.
 
 | Schema ID | Schema groups | Scope |
 | --- | --- | --- |

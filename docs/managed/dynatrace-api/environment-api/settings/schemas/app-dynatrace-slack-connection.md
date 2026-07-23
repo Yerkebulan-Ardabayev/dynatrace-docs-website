@@ -37,3 +37,5 @@ To execute this request, you need an access token with **Read settings** (`setti
 | --- | --- | --- | --- |
 | Connection name `name` | text | Provide a unique and clearly identifiable connection name to your Slack App. | Required |
 | Bot token `token` | secret | The bot token obtained from the Slack App Management UI.  Bot token in the format `xoxb-******` | Required |
+| External approval `externalApproval` | boolean | Accept external approvals can enable Slack users to directly respond to approval request. | Optional |
+| Signing secret `signingSecret` | secret | The signing secret obtained from the Slack App Management UI. | Required |

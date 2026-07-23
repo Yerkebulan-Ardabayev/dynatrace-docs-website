@@ -99,7 +99,7 @@ helm install dynatrace-operator oci://public.ecr.aws/dynatrace/dynatrace-operato
 If `installCRD` is set to `false`, you need to create the custom resource definition manually before starting the Helm installation:
 
 ```
-kubectl apply -f https://github.com/Dynatrace/dynatrace-operator/releases/download/v1.10.0/dynatrace-operator-crd.yaml
+kubectl apply -f https://github.com/Dynatrace/dynatrace-operator/releases/download/v1.10.1/dynatrace-operator-crd.yaml
 ```
 
 2. Create secret for access token
@@ -215,7 +215,7 @@ helm install dynatrace-operator oci://public.ecr.aws/dynatrace/dynatrace-operato
 If `installCRD` is set to `false`, you need to create the custom resource definition manually before starting the Helm installation:
 
 ```
-oc apply -f https://github.com/Dynatrace/dynatrace-operator/releases/download/v1.10.0/dynatrace-operator-crd.yaml
+oc apply -f https://github.com/Dynatrace/dynatrace-operator/releases/download/v1.10.1/dynatrace-operator-crd.yaml
 ```
 
 2. Create secret for access token
@@ -295,7 +295,7 @@ kubectl create namespace dynatrace
 2. Install Dynatrace Operator
 
 ```
-kubectl apply -f https://github.com/Dynatrace/dynatrace-operator/releases/download/v1.10.0/kubernetes.yaml
+kubectl apply -f https://github.com/Dynatrace/dynatrace-operator/releases/download/v1.10.1/kubernetes.yaml
 ```
 
 Run the following command to see when Dynatrace Operator components finish initialization:
@@ -375,7 +375,7 @@ oc adm new-project --node-selector="" dynatrace
 2. Install Dynatrace Operator
 
 ```
-oc apply -f https://github.com/Dynatrace/dynatrace-operator/releases/download/v1.10.0/openshift.yaml
+oc apply -f https://github.com/Dynatrace/dynatrace-operator/releases/download/v1.10.1/openshift.yaml
 ```
 
 Run the following command to see when Dynatrace Operator components finish initialization:

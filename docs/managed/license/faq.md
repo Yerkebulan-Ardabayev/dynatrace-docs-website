@@ -11,7 +11,7 @@ source: https://docs.dynatrace.com/managed/license/faq
 * 3-min read
 * Published Jun 25, 2026
 
-This page answers common questions about the Dynatrace Platform Subscription (DPS) model. For FAQs about a specific DPS capability, see the relevant page at [Capability billing details](/managed/license/capabilities "How different DPS capabilities work and how consumption is calculated and billed.").
+This page answers common questions about the Dynatrace Platform Subscription (DPS) model. For FAQs about a specific DPS capability, see the relevant page at [Capability billing details](/managed/license/capabilities "Understand how Dynatrace calculates and bills consumption for each capability under the Dynatrace Platform Subscription (DPS) model.").
 
 How can I manage my consumption and control my costs?
 
