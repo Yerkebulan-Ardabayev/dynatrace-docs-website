@@ -1,0 +1,2939 @@
+
+<!doctype html>
+<html lang="ru" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Документация Dynatrace Managed с AI-помощником">
+      
+      
+        <meta name="author" content="Yerkebulan Ardabayev">
+      
+      
+        <link rel="canonical" href="https://yerkebulan-ardabayev.github.io/dynatrace-docs-website/managed-ru/analyze-explore-automate/dashboards-classic/charts-and-tiles/visualization-graph/">
+      
+      
+        <link rel="prev" href="../pin-tiles-to-your-dashboard/">
+      
+      
+        <link rel="next" href="../visualization-heatmap/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>Настройка и использование визуализации «График» в Dynatrace - Dynatrace — Документация</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Inter";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../../assets/stylesheets/extra.v11.css?sha=17d46ba74">
+    
+    <script>__md_scope=new URL("../../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  <style>
+    /* DocFlow DT Logo Badge — injected via template override */
+    .md-header__button.md-logo {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .md-header__button.md-logo img,
+    .md-header__button.md-logo svg {
+      display: none !important;
+    }
+    .md-header__button.md-logo::before {
+      content: 'DT';
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 28px;
+      height: 28px;
+      border-radius: 6px;
+      background: linear-gradient(135deg, #00d4aa 0%, #7c3aed 100%);
+      color: white;
+      font-size: 11px;
+      font-weight: 700;
+      font-family: 'Inter', sans-serif;
+      letter-spacing: -0.02em;
+      flex-shrink: 0;
+    }
+
+    /* Search Ctrl+K badge — inside input field */
+    .md-search__form {
+      position: relative;
+    }
+    .md-search__form::after {
+      content: 'Ctrl+K';
+      display: none;
+      align-items: center;
+      padding: 0.15rem 0.4rem;
+      border-radius: 4px;
+      border: 1px solid var(--docflow-border);
+      background: var(--md-default-bg-color);
+      font-size: 10px;
+      font-family: 'JetBrains Mono', monospace;
+      color: var(--md-default-fg-color--lighter);
+      white-space: nowrap;
+      pointer-events: none;
+      position: absolute;
+      right: 0.5rem;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+    @media (min-width: 60em) {
+      .md-search__form::after {
+        display: flex;
+      }
+    }
+  </style>
+
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="custom">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#dynatrace" class="md-skip">
+          Перейти к содержанию
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+  
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Верхний колонтитул">
+    <a href="../../../../.." title="Dynatrace — Документация" class="md-header__button md-logo" aria-label="Dynatrace — Документация" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M11 15H6l7-14v8h5l-7 14z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Dynatrace — Документация
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Настройка и использование визуализации «График» в Dynatrace
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Переключить на светлую тему"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Переключить на светлую тему" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Переключить на тёмную тему"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Переключить на тёмную тему" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Поиск" placeholder="Поиск" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Поиск">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Поделиться" aria-label="Поделиться" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Очистить" aria-label="Очистить" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Инициализация поиска
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/Yerkebulan-Ardabayev/dynatrace-docs-website" title="Перейти к репозиторию" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    dynatrace-docs-website
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Навигация" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../../.." title="Dynatrace — Документация" class="md-nav__button md-logo" aria-label="Dynatrace — Документация" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M11 15H6l7-14v8h5l-7 14z"/></svg>
+
+    </a>
+    Dynatrace — Документация
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/Yerkebulan-Ardabayev/dynatrace-docs-website" title="Перейти к репозиторию" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    dynatrace-docs-website
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Главная
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../../../ru/getting-started/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Начало работы
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../../installation/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Кластер Managed
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../../ingest-from/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Источники данных
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    
+  
+  
+  
+    <a href="../../../../observe/application-observability/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Наблюдаемость
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../../dynatrace-intelligence/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Davis AI
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Анализ
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Анализ
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_1" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_7_1" id="__nav_7_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Дашборды
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_1_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_7_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Дашборды
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обзор
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_1_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_7_1_2" id="__nav_7_1_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Графики и плитки
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_7_1_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_7_1_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Графики и плитки
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../available-tiles/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Available tiles
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../filter-charts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Фильтрация плиток
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pin-tiles-to-your-dashboard/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Закрепление плиток на дашборде
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Настройка и использование визуализации «График» в Dynatrace
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../visualization-heatmap/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Настройка и использование визуализации «Тепловая карта» в Dynatrace
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../visualization-honeycomb/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Настройка и использование визуализации «Соты» в Dynatrace
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../visualization-pie/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Настройка и использование визуализации «Круговая диаграмма» в Dynatrace
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../visualization-single-value/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Настройка и использование визуализации «Одиночное значение» в Dynatrace
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../visualization-stacked-area/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Настройка и использование визуализации «Накопленная диаграмма с областями» в Dynatrace
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../visualization-stacked-column/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Настройка и использование визуализации «Накопленная столбчатая диаграмма» в Dynatrace
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../visualization-table/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Настройка и использование табличной визуализации в Dynatrace
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../visualization-top-list/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Настройка визуализации «Список лидеров» в Dynatrace
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../dashboards/create-dashboards/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Дашборды
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dashboards-upgrade/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обновите пользовательские диаграммы прямо сейчас
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../metrics-browser/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Браузер метрик
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../explorer/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Data Explorer
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../log-monitoring/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Мониторинг логов
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../metrics-classic/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Метрики
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../notifications-and-alerting/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Уведомления и оповещения
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../smartscape-classic/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Визуализация среды с помощью Smartscape
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../../deliver/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Deliver
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    
+  
+  
+  
+    <a href="../../../../secure/application-security/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Безопасность приложений
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    
+  
+  
+  
+    <a href="../../../../manage/account-management/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Управление
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    
+  
+  
+  
+    <a href="../../../../platform/oneagent/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Платформа
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../../dynatrace-api/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../../whats-new/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Что нового
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../../offline-doc/how-do-i-enable-synthetic-monitors/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Офлайн-документация
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../../../ru/training/day1-introduction/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обучение
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../ai/groq/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI Помощник
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Содержание">
+  
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+                
+
+
+
+  
+
+
+  <nav class="md-path" aria-label="Навигация" >
+    <ol class="md-path__list">
+      
+        
+  
+  
+    <li class="md-path__item">
+      <a href="../../../../.." class="md-path__link">
+        
+  <span class="md-ellipsis">
+    Главная
+  </span>
+
+      </a>
+    </li>
+  
+
+      
+      
+        
+  
+  
+    
+    
+      
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="../../" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    Анализ
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="../../" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    Дашборды
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="../available-tiles/" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    Графики и плитки
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ol>
+  </nav>
+
+              
+              <article class="md-content__inner md-typeset">
+                
+  
+                  
+
+
+
+<h1 id="dynatrace">Настройка и использование визуализации «График» в Dynatrace<a class="headerlink" href="#dynatrace" title="Permanent link">&para;</a></h1>
+<h1 id="dynatrace_1">Настройка и использование визуализации «График» в Dynatrace<a class="headerlink" href="#dynatrace_1" title="Permanent link">&para;</a></h1>
+<ul>
+<li>Практическое руководство</li>
+<li>Чтение: 2 мин</li>
+<li>Опубликовано 13 декабря 2021 г.</li>
+</ul>
+<p><a href="../../" title="Узнайте, как создавать дашборды Dynatrace Classic, управлять ими и использовать их.">Dashboards Classic</a></p>
+<p>Чтобы визуализировать результаты запроса в виде графика, выберите <code>Graph</code> из списка над определением запроса в левом верхнем углу страницы.</p>
+<p>На графике можно отобразить до 20 рядов на метрику.</p>
+<h4 id="data-explorer">Пример в Data Explorer<a class="headerlink" href="#data-explorer" title="Permanent link">&para;</a></h4>
+<p><img alt="График с двумя метриками: Data Explorer" src="https://dt-cdn.net/images/visualization-example-graph-area-and-line-1586-2d9ef73a87.png" /></p>
+<p>График с двумя метриками: Data Explorer</p>
+<h4 id="_1">Пример, закреплённый на дашборде в виде плитки<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h4>
+<p><img alt="График с двумя метриками: плитка дашборда" src="https://dt-cdn.net/images/graph-tile-870-488b205898.png" /></p>
+<p>График с двумя метриками: плитка дашборда</p>
+<h2 id="_2">Смена визуализации<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<p>При переключении между визуализациями учтите, что некоторые параметры настройки характерны для конкретной визуализации.</p>
+<ul>
+<li>Если выбрать визуализацию, настроить для неё <strong>Settings</strong>, а затем переключиться на другую визуализацию, часть настроек первой визуализации может быть проигнорирована, так как они неприменимы к новой. Значок информации в списке визуализаций предупредит об этой возможности.</li>
+</ul>
+<p><img alt="Data Explorer: предупреждение о смене визуализации" src="https://dt-cdn.net/images/change-visualization-warning-1277-9438aaceea.png" /></p>
+<p>Data Explorer: предупреждение о смене визуализации
+* При возврате к исходной визуализации может потребоваться повторная настройка некоторых параметров.</p>
+<h2 id="_3">Изменение набора метрик<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<p>Визуализация может отображать любой набор метрик в запросе с несколькими метриками.</p>
+<p>Чтобы включать или отключать метрики, выберите букву рядом с нужной метрикой или нажмите значок глаза.</p>
+<p><img alt="Data Explorer: переключение метрики" src="https://dt-cdn.net/images/eye-toggle-metric-1238-d343b9cc0e.png" /></p>
+<p>Data Explorer: переключение метрики</p>
+<h2 id="_4">Базовые линии<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<p>Чтобы помочь в обнаружении аномалий, можно использовать базовые линии для добавления доверительной полосы к линии метрики на графике. Тогда будет видно, когда значение выходит за пределы доверительной полосы.
+Расчёт базовой линии основан на модели <a href="../../../../dynatrace-intelligence/ai-models/seasonal-baseline/" title="Как Davis предлагает пороги сезонной базовой линии для набора объектов.">Seasonal baseline</a>, которая используется для создания <a href="../../../../dynatrace-intelligence/anomaly-detection/metric-events/" title="Узнайте о событиях метрик в Dynatrace">событий метрик</a> для обнаружения аномалий.</p>
+<ul>
+<li>Базовые линии применяются только к визуализации <code>Graph</code>.</li>
+<li>Базовые линии не добавляются к плитке дашборда при закреплении диаграммы.</li>
+<li>Временной диапазон для вычисления базовой линии определяется текущим выбранным разрешением:</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Диапазон разрешения</th>
+<th>Примеры разрешений</th>
+<th>Временной диапазон базовой линии</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>разрешение &lt; 5 минут</td>
+<td>+ 1 минута</td>
+<td><strong>предыдущие 14 дней</strong></td>
+</tr>
+<tr>
+<td>5 минут ≥ разрешение &lt; 1 час</td>
+<td>+ 5 минут + 10 минут + 30 минут</td>
+<td><strong>предыдущие 28 дней</strong></td>
+</tr>
+<tr>
+<td>1 час ≥ разрешение &lt; 1 день</td>
+<td>+ 1 час + 6 часов + 12 часов</td>
+<td><strong>400 дней</strong></td>
+</tr>
+<tr>
+<td>разрешение ≥ 1 день</td>
+<td>+ 1 день + 1 неделя + 1 месяц</td>
+<td><strong>5 лет</strong></td>
+</tr>
+</tbody>
+</table>
+<h3 id="_5">Добавление базовой линии<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
+<ol>
+<li>На графике выберите линию метрики, для которой хотите добавить базовую линию.</li>
+<li>Во всплывающем окне нажмите <strong>Add baseline</strong>.</li>
+<li>Подождите, пока рассчитывается базовая линия (<code>Loading</code>). После расчёта график будет перерисован с отображением базовой линии для выбранной метрики.</li>
+</ol>
+<h3 id="_6">Скрытие и отображение базовой линии<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
+<p>Базовые линии отображаются отдельно в легенде диаграммы. Например, если добавить базовую линию для метрики <code>CPU usage %</code> в визуализации <code>Graph</code>, легенда будет содержать <code>CPU usage %</code> и <code>CPU usage % - baseline</code>. Выберите элементы легенды, чтобы включить или отключить их отображение.</p>
+<h3 id="_7">Удаление базовой линии<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
+<ol>
+<li>На графике выберите линию метрики, для которой хотите удалить базовую линию.</li>
+<li>Во всплывающем окне нажмите <strong>Remove baseline</strong>. График будет перерисован без базовой линии.</li>
+</ol>
+<h3 id="_8">Сравнение с базовыми линиями событий метрик<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h3>
+<p>Вы можете заметить различия между базовыми линиями в Data Explorer и событиями метрик. Эти функции используют разные подходы, соответствующие их разным задачам. Конфигурация Data Explorer фиксированная, конфигурация событий метрик — настраиваемая.</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th><strong>Data Explorer</strong></th>
+<th><strong>Metric events</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Samples</strong></td>
+<td><code>5</code></td>
+<td>Настраиваемое</td>
+</tr>
+<tr>
+<td><strong>Violating samples</strong></td>
+<td><code>3</code></td>
+<td>Настраиваемое</td>
+</tr>
+<tr>
+<td><strong>Dealerting samples</strong></td>
+<td><code>5</code></td>
+<td>Настраиваемое</td>
+</tr>
+<tr>
+<td><strong>Alert on no data</strong></td>
+<td><code>false</code></td>
+<td>Настраиваемое</td>
+</tr>
+<tr>
+<td><strong>Tolerance</strong> (влияет на ширину доверительной полосы)</td>
+<td><code>4</code></td>
+<td>Настраиваемое (диапазон: <code>0.1</code> до <code>10</code>)</td>
+</tr>
+<tr>
+<td><strong>Resolution</strong> (влияет на детализацию)</td>
+<td>Настраиваемое</td>
+<td><code>1</code> минута</td>
+</tr>
+<tr>
+<td><strong>Training time</strong></td>
+<td>Мгновенное</td>
+<td>Ежедневное</td>
+</tr>
+</tbody>
+</table>
+<p>Подробнее о сезонных базовых линиях см. в разделе <a href="../../../../dynatrace-intelligence/ai-models/seasonal-baseline/" title="Как Davis предлагает пороги сезонной базовой линии для набора объектов.">Seasonal baseline</a>.</p>
+<h3 id="_9">Часто задаваемые вопросы о базовых линиях<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h3>
+<p>Как рассчитывается базовая линия?</p>
+<p>Расчёт базовой линии основан на модели сезонной базовой линии, которая используется для создания <a href="../../../../dynatrace-intelligence/anomaly-detection/metric-events/" title="Узнайте о событиях метрик в Dynatrace">событий метрик</a> для обнаружения аномалий. Подробнее о работе модели см. в разделе <a href="../../../../dynatrace-intelligence/ai-models/seasonal-baseline/" title="Как Davis предлагает пороги сезонной базовой линии для набора объектов.">Seasonal baseline</a>.</p>
+<p>Почему базовая линия отличается от предварительного просмотра модели сезонной базовой линии?</p>
+<p>Хотя базовая линия основана на модели <a href="../../../../dynatrace-intelligence/ai-models/seasonal-baseline/" title="Как Davis предлагает пороги сезонной базовой линии для набора объектов.">сезонной базовой линии</a>, существуют несколько причин, по которым результирующие базовые линии могут отличаться:</p>
+<ul>
+<li><strong>Разрешение</strong>: Базовая линия в Data Explorer определяется из данных в зависимости от текущего выбранного разрешения, как описано выше. Модель сезонной базовой линии для конфигурации событий метрик всегда обучается на данных с разрешением 1 минута. Если разрешения отличаются, результирующие базовые линии также будут отличаться, поскольку значения метрик тоже различаются.</li>
+<li><strong>Временной диапазон базовой линии</strong>: Временной диапазон для вычисления базовой линии определяется текущим выбранным разрешением, как описано выше. Поскольку конфигурации событий метрик всегда используют данные с разрешением 1 минута, временной диапазон обучения может отличаться, что также может приводить к различным базовым линиям.</li>
+<li>
+<p><strong>Параметры модели</strong>: Базовая линия в Data Explorer использует фиксированные параметры по умолчанию для обучения модели:</p>
+</li>
+<li>
+<p>Tolerance = 4</p>
+</li>
+<li>Условие оповещения = 'Alert if metric is outside'</li>
+<li>Нет оповещения при отсутствии данных
+    Если в конфигурации событий метрик параметры отличаются, результирующая базовая линия также может отличаться.</li>
+</ul>
+<h2 id="_10">Коррелированные метрики<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h2>
+<p>Davis® от Dynatrace учитывает предметно-специфические знания и топологию при вычислении связанных сигналов наблюдаемости. Davis ранжирует наиболее релевантные сигналы в начале списка, а оценка Davis для каждого обнаруженного сигнала указывает на степень его соответствия поведению эталонного сигнала в выбранном временном диапазоне. <a href="../../../../dynatrace-intelligence/" title="Ознакомьтесь с возможностями Davis AI.">Подробнее о Davis® AI</a>.</p>
+<h3 id="_11">Добавление коррелированных метрик<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h3>
+<p>Обратите внимание, что этот параметр доступен только при использовании <strong>Split by</strong> по измерению в запросе.</p>
+<ol>
+<li>Перейдите в <strong>Data Explorer</strong> (стандартный или расширенный режим), создайте запрос для ряда метрик с группировкой по связанному измерению и отобразите его в визуализации <code>Graph</code>.</li>
+</ol>
+<p>Коррелированные метрики доступны <em>только</em> при:</p>
+<ul>
+<li>Выборе визуализации <code>Graph</code></li>
+<li>Указании запроса с <strong>Split by</strong> по измерению, связанному с выбранным рядом данных</li>
+</ul>
+<p>Попробуйте этот пример:</p>
+<p><img alt="Коррелированные метрики: запрос: стандартный режим" src="https://dt-cdn.net/images/query-cpu-usage-1217-d0a8083c84.png" /></p>
+<p>Коррелированные метрики: запрос: стандартный режим</p>
+<p>В <strong>Advanced mode</strong> это выглядит так:</p>
+<p><img alt="Коррелированные метрики: запрос: расширенный режим" src="https://dt-cdn.net/images/query-cpu-usage-advanced-mode-1220-9fb8efd9b1.png" /></p>
+<p>Коррелированные метрики: запрос: расширенный режим</p>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>builtin:host.cpu.usage:splitBy(&quot;dt.entity.host&quot;):sort(value(auto,descending)):limit(20)
+</code></pre></div>
+2. Нажмите <strong>Run query</strong> для построения графика.
+3. Выберите (нажмите) линию на графике, чтобы открыть всплывающее окно с доступными параметрами.
+4. Во всплывающем окне нажмите <strong>See correlated metrics</strong>.</p>
+<p>На боковой панели <strong>Davis for Correlation analysis</strong> будет показан список метрик, которые, по результатам корреляционного анализа Davis AI, коррелируют с выбранным рядом. Корреляция определяется формой ряда, а не значениями.</p>
+<p>Что отображает анализатор?</p>
+<ul>
+<li><strong>Reference signal</strong> — ряд данных, выбранный на графике. Формы других рядов метрик сравниваются с формой этого ряда.</li>
+<li>
+<p><strong>Connected signals</strong> — другие ряды метрик со схожей формой, отсортированные от наибольшего сходства к наименьшему. Чем больше сходство формы, тем теснее корреляция.</p>
+<p>Для каждой коррелированной метрики анализатор отображает:</p>
+<ul>
+<li>Имя метрики</li>
+<li>Измерение</li>
+<li>ID объекта</li>
+</ul>
+<p>Корреляции иногда группируются.
+5. На боковой панели выберите любую метрику из списка, чтобы автоматически добавить её к текущему запросу.</p>
+</li>
+<li>
+<p>Можно добавить несколько коррелированных метрик к запросу</p>
+</li>
+<li>Можно добавить одну и ту же метрику несколько раз, а затем отредактировать запрос</li>
+<li>После добавления коррелированных метрик нажмите <strong>Run query</strong> для обновления графика.</li>
+</ul>
+<h3 id="_12">Часто задаваемые вопросы о коррелированных метриках<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h3>
+<p>Что означает «корреляция» в данном контексте?</p>
+<p>Для определения корреляции анализатор проверяет форму рядов данных, а не значения. Два ряда с очень похожей формой считаются коррелированными.</p>
+<p>Почему параметр «See correlated metrics» недоступен?</p>
+<p>Возможные причины отсутствия параметра «See correlated metrics»:</p>
+<ul>
+<li>Не выбрана визуализация <code>Graph</code></li>
+<li>В запросе не задан <strong>Split by</strong> по измерению</li>
+<li>Запрос не запущен для построения графика</li>
+<li>Линия на графике не выбрана (не нажата)</li>
+</ul>
+<p>Что означает «No connected signals found»?</p>
+<p>Если отображается <code>No connected signals found</code>, возможные причины:</p>
+<ul>
+<li>Слишком малая дисперсия в выборке (например, метрика, представляющая прямую линию)</li>
+<li>Слишком мало точек данных в выборке (например, при очень коротком временном диапазоне)</li>
+</ul>
+<h2 id="_13">Фокус<a class="headerlink" href="#_13" title="Permanent link">&para;</a></h2>
+<p>Чтобы временно убрать лишнее с графика и сосредоточиться на одном ряде метрики, можно скрыть всё, кроме выбранного ряда.</p>
+<ul>
+<li>Фокус применяется только к визуализации <code>Graph</code>.</li>
+<li>Фокус не изменяет запрос и не влияет на плитку дашборда при закреплении диаграммы.</li>
+</ul>
+<h3 id="_14">Фокус на ряде метрики<a class="headerlink" href="#_14" title="Permanent link">&para;</a></h3>
+<ol>
+<li>На линейном графике выберите линию метрики, на которой хотите сосредоточиться.</li>
+<li>Во всплывающем окне нажмите <strong>Focus</strong>.</li>
+</ol>
+<p>График будет перерисован с отображением только выбранной метрики.</p>
+<h3 id="_15">Снятие фокуса<a class="headerlink" href="#_15" title="Permanent link">&para;</a></h3>
+<ol>
+<li>На графике выберите линию метрики, на которой установлен фокус.</li>
+<li>Во всплывающем окне нажмите <strong>Remove focus</strong>.</li>
+</ol>
+<p>График будет перерисован с отображением всех метрик.</p>
+<h2 id="_16">Настройки<a class="headerlink" href="#_16" title="Permanent link">&para;</a></h2>
+<p>Раздел <strong>Settings</strong> — один из разворачиваемых разделов на правой панели Data Explorer. Содержимое раздела <strong>Settings</strong> может варьироваться в зависимости от выбранной визуализации.</p>
+<p><img alt="Data Explorer: раздел Settings" src="https://dt-cdn.net/images/data-explorer-settings-settings-322-7b365c52e5.png" /></p>
+<p>Data Explorer: раздел Settings</p>
+<h3 id="_17">Разрешение<a class="headerlink" href="#_17" title="Permanent link">&para;</a></h3>
+<p>Разрешение — это детализация оси X (времени) визуализации.</p>
+<ul>
+<li>Чтобы Data Explorer автоматически выбирал подходящее разрешение для выбранного временного диапазона, в разделе <strong>Settings</strong> установите <strong>Resolution</strong> в <code>Auto</code></li>
+<li>Чтобы задать конкретное разрешение, выберите его из списка</li>
+</ul>
+<p>Некоторые разрешения недоступны для определённых временных диапазонов. Если выбрана несовместимая комбинация временного диапазона и разрешения, Dynatrace автоматически подберёт разрешение и выведет пояснительное сообщение, например: <code>Auto-resolution applied. Resolution value of [6 hours] applied. Selected timeframe doesn't allow for [5 minutes] resolution.</code> Чтобы переопределить автоматическое разрешение, выберите другое из списка.</p>
+<p>Умное разрешение на плитках дашборда</p>
+<p>Во избежание проблем с производительностью на плитках дашборда, созданных с помощью Data Explorer, максимальное количество точек данных для запроса на плитке составляет 4 000. На основе выбранного временного диапазона и заданного пользовательского разрешения Dynatrace оценивает количество точек данных для результата запроса. Если прогнозируемое количество точек данных превышает 4 000, Dynatrace автоматически переключается на разрешение, достаточно высокое для поддержания количества точек ниже 4 000.</p>
+<p>Обратите внимание, что это не применяется к визуализациям в самом Data Explorer, где допускается более 4 000 точек данных. Ограничение распространяется только на плитки дашборда, созданные с помощью Data Explorer, где комбинация разрешения и временного диапазона, выбранная на дашборде, даёт более 4 000 точек данных.</p>
+<h3 id="_18">Показать легенду<a class="headerlink" href="#_18" title="Permanent link">&para;</a></h3>
+<p>Определяет, отображать ли легенду под визуализацией.</p>
+<p>Обратите внимание, что легенда интерактивна: можно выбрать элемент легенды, чтобы включить или отключить отображение соответствующего элемента.</p>
+<h3 id="_19">Заполнение пробелов<a class="headerlink" href="#_19" title="Permanent link">&para;</a></h3>
+<p>Чтобы заполнить пробелы на диаграмме, в разделе <strong>Settings</strong> включите <strong>Connect gaps</strong>.</p>
+<p>Заполнение пробелов: до</p>
+<p><img alt="Заполнение пробелов: до" src="https://dt-cdn.net/images/connect-gaps-before-1621-88d20c776c.png" /></p>
+<p>Заполнение пробелов: до</p>
+<p>Заполнение пробелов: после</p>
+<p><img alt="Заполнение пробелов: после" src="https://dt-cdn.net/images/connect-gaps-after-1615-5eecde6057.png" /></p>
+<p>Заполнение пробелов: после</p>
+<h2 id="_20">Настройки по метрике<a class="headerlink" href="#_20" title="Permanent link">&para;</a></h2>
+<p>Раздел <strong>Settings</strong> также отображает параметры визуализации для каждой метрики, выбранной в запросе.</p>
+<h3 id="_21">Переименование метрики<a class="headerlink" href="#_21" title="Permanent link">&para;</a></h3>
+<p>Можно изменить имя метрики, отображаемое на диаграмме и в её легенде. Определение запроса сохранит исходное имя метрики.</p>
+<ol>
+<li>В разделе <strong>Settings</strong> выберите для метрики, которую хотите переименовать.</li>
+<li>Отредактируйте имя и выберите галочку для сохранения нового имени.</li>
+</ol>
+<h3 id="_22">Изменение режима диаграммы<a class="headerlink" href="#_22" title="Permanent link">&para;</a></h3>
+<p>Чтобы изменить режим диаграммы для метрики, в разделе <strong>Settings</strong> выберите новый режим из списка.</p>
+<ul>
+<li><code>Line</code></li>
+<li><code>Column</code></li>
+<li><code>Area</code></li>
+</ul>
+<h3 id="_23">Изменение цветовой палитры<a class="headerlink" href="#_23" title="Permanent link">&para;</a></h3>
+<p>Чтобы изменить цветовую палитру для метрики, в разделе <strong>Settings</strong> выберите новую палитру из списка.</p>
+<p><img alt="Data Explorer: список цветовых палитр метрик" src="https://dt-cdn.net/images/metric-color-palette-list-67-fd8f7395d1.png" /></p>
+<p>Data Explorer: список цветовых палитр метрик</p>
+<h3 id="_24">Единица измерения и формат<a class="headerlink" href="#_24" title="Permanent link">&para;</a></h3>
+<p>Используйте параметры <strong>Unit</strong> и <strong>Format</strong> для определения способа отображения данных. При экспорте в CSV-файл параметры <strong>Unit</strong> и <strong>Format</strong> также применяются к экспортируемым значениям.</p>
+<h4 id="_25">Единица измерения<a class="headerlink" href="#_25" title="Permanent link">&para;</a></h4>
+<p>Используйте параметр <strong>Unit</strong> для задания единицы измерения, в которой отображается метрика.</p>
+<ul>
+<li><code>None</code> = Единица измерения не отображается</li>
+<li><code>Auto</code> = Dynatrace выбирает подходящую единицу измерения</li>
+<li>Другие варианты задают конкретную единицу для отображения. Доступные параметры зависят от единицы метрики. Для временной метрики, например, предлагаются альтернативные единицы отображения времени.</li>
+<li>Чтобы добавить пользовательскую единицу/суффикс, введите строку в поле <strong>Unit</strong> и выберите её из списка.</li>
+<li>В <strong>Advanced mode</strong> можно использовать <code>:setUnit(&lt;unit&gt;)</code> для выбора из более широкого диапазона единиц.</li>
+</ul>
+<p>Примеры обозначений порядков величин в Dynatrace:</p>
+<table>
+<thead>
+<tr>
+<th>Обозначение</th>
+<th>Множитель</th>
+<th>Значение</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>k</td>
+<td>10^3</td>
+<td>кило, тысяча</td>
+</tr>
+<tr>
+<td>M</td>
+<td>10^6</td>
+<td>мега, миллион</td>
+</tr>
+<tr>
+<td>G</td>
+<td>10^9</td>
+<td>гига, миллиард</td>
+</tr>
+<tr>
+<td>T</td>
+<td>10^12</td>
+<td>тера, триллион</td>
+</tr>
+</tbody>
+</table>
+<h4 id="_26">Формат<a class="headerlink" href="#_26" title="Permanent link">&para;</a></h4>
+<p>Используйте параметр <strong>Format</strong> для настройки количества десятичных знаков, отображаемых для выбранной метрики.</p>
+<ul>
+<li><code>None</code> = Без форматирования.</li>
+<li><code>Auto</code> = Dynatrace выбирает подходящий формат. Например, там, где <code>None</code> отображал бы <code>5.062357754177517 %</code>, <code>Auto</code> отображает <code>5.06 %</code>.</li>
+<li>Другие варианты задают количество десятичных знаков: <code>0</code>, <code>0.0</code>, <code>0.00</code>, <code>0.000</code></li>
+</ul>
+<h4 id="_27">Примеры<a class="headerlink" href="#_27" title="Permanent link">&para;</a></h4>
+<p>Пример: байты</p>
+<p>Когда базовая единица метрики — <strong>байты</strong>:</p>
+<ul>
+<li>При <strong>Unit</strong> = <code>Auto</code> Dynatrace автоматически выражает результаты в удобочитаемой единице, в данном случае <code>GiB</code>.</li>
+</ul>
+<p>Единица на основе байт может иметь двоичную или десятичную основу, что определяет, выберет ли Dynatrace, например, <code>GiB</code> или <code>GB</code>. Если в метрике не указана основа, используется десятичная.
+* Если автоматически выбранная единица не подходит, можно явно задать единицу (<strong>Unit</strong> = <code>B</code>, <code>KiB</code>, <code>MiB</code> или <code>GiB</code>).
+* Для просмотра исходных данных (без конвертации) установите <strong>Unit</strong> в <code>None</code> и смотрите результаты в базовой единице метрики (в данном случае байтах).</p>
+<p>Пример: доллары и центы</p>
+<p>Когда базовая единица метрики — <strong>доллары и центы</strong>:</p>
+<ul>
+<li>Для небольших значений, чтобы видеть результаты в точных долларах и центах: установите <strong>Unit</strong> = <code>Auto</code> и <strong>Format</strong> = <code>0.00</code> (два десятичных знака для центов).</li>
+<li>Для больших значений, чтобы видеть результаты в тысячах, миллионах или миллиардах долларов без центов: установите <strong>Unit</strong> = <code>k (thousand)</code>, <code>M (million)</code> или <code>G (billion)</code> и <strong>Format</strong> = <code>0</code> (ничего после десятичной точки).</li>
+</ul>
+<p>Пример: точные счётчики</p>
+<p>Когда базовая единица метрики — <strong>счётчик</strong>:</p>
+<ul>
+<li>
+<p>Для отображения точного значения:</p>
+</li>
+<li>
+<p>Установите <strong>Unit</strong> = <code>Auto</code></p>
+</li>
+<li>Установите <strong>Format</strong> = <code>None</code></li>
+<li>
+<p>Для приблизительного значения:</p>
+</li>
+<li>
+<p>Установите <strong>Unit</strong> = <code>k (thousand)</code>, <code>M (million)</code>, <code>G (billion)</code> или <code>T (trillion)</code> в зависимости от порядка величин</p>
+</li>
+<li>Установите <strong>Format</strong> = <code>0.0</code>, <code>0.00</code> или <code>0.0000</code> в зависимости от нужного количества десятичных знаков</li>
+</ul>
+<p>Пример: пороги</p>
+<p>При задании значений порогов:</p>
+<ul>
+<li>Если выбрать <strong>Unit</strong> (например, <code>MiB</code>), параметры <strong>Threshold</strong> будут подготовлены для соответствия выбранной единице, и достаточно будет ввести значения порогов без указания <code>MiB</code>.</li>
+<li>Если установить <strong>Unit</strong> = <code>Auto</code> (чтобы Dynatrace автоматически масштабировал отображение), значения <strong>Threshold</strong> всё равно нужно задавать в конкретной единице, например в байтах.</li>
+</ul>
+<h3 id="_28">Добавление переопределения цвета<a class="headerlink" href="#_28" title="Permanent link">&para;</a></h3>
+<p>Чтобы принудительно задать другой цвет (переопределить цветовую палитру) для конкретного ряда, например выбранного хоста</p>
+<ol>
+<li>В разделе <strong>Settings</strong> нажмите <strong>Add color override</strong></li>
+<li>Выберите ряд из списка</li>
+<li>Выберите цвет переопределения для этого ряда</li>
+</ol>
+<h2 id="_29">Оси<a class="headerlink" href="#_29" title="Permanent link">&para;</a></h2>
+<p>Раздел <strong>Axes</strong> — один из разворачиваемых разделов на правой панели Data Explorer. В разделе <strong>Axes</strong> можно управлять отображением оси X и каждой оси Y вашей визуализации.</p>
+<p><img alt="Data Explorer: раздел Axes" src="https://dt-cdn.net/images/data-explorer-settings-axes-324-238501d94f.png" /></p>
+<p>Data Explorer: раздел Axes</p>
+<p>Пошаговое руководство по настройке осей</p>
+<p>В этом руководстве вы добавляете несколько метрик к визуализации и настраиваете параметры осей в разделе <strong>Axes</strong>. (В примере используется визуализация Graph, но те же настройки применяются к другим визуализациям с осями.)</p>
+<ol>
+<li>Перейдите в <strong>Data Explorer</strong>.</li>
+<li>
+<p>В Data Explorer добавьте метрику <code>builtin:host.mem.used</code>, разбитую по <code>Host</code>, и нажмите <strong>Run query</strong>.</p>
+</li>
+<li>
+<p>Ось X, расположенная вдоль нижней части графика, отображает текущий временной диапазон, заданный селектором временного диапазона.</p>
+<ul>
+<li>По умолчанию ось X не имеет имени, но его можно задать: в разделе <strong>Axes</strong> найдите <code>X axis</code>, выберите в строке оси X, измените имя (например, на <code>Time</code>) и нажмите галочку для сохранения.</li>
+<li>Чтобы показать или скрыть ось X, выберите в строке оси X.</li>
+<li>
+<p>Ось Y по умолчанию расположена слева от графика.</p>
+</li>
+<li>
+<p>На диаграмме может быть несколько осей Y. Первая автоматически получает метку <code>Y axis 1</code> в разделе <strong>Axes</strong>. В данном примере она отображает использованную память в ГБ, соответствующую первой добавленной метрике <code>Memory used</code> (<code>builtin:host.mem.used</code>).</p>
+</li>
+<li>Как и для оси X, можно задать имя и показать/скрыть ось Y: найдите <code>Y axis 1</code> в разделе <strong>Axes</strong> и используйте соответствующие кнопки.</li>
+<li>Чтобы переместить ось Y в правую часть диаграммы, измените <strong>Position</strong> с <code>Left</code> на <code>Right</code>.</li>
+<li>Чтобы задать диапазон значений оси Y, измените <strong>Min, Max</strong> с <code>Auto, Auto</code> на числовые значения. Например, установите <strong>Min, Max</strong> для этой метрики (<code>Memory used</code>) = <code>5, 10</code> для отображения значений в этом диапазоне.</li>
+</ul>
+</li>
+</ol>
+<p><img alt="Одна ось Y" src="https://dt-cdn.net/images/data-explorer-axes-1-metric-1614-4bce69f051.png" /></p>
+<p>Одна ось Y
+3. Нажмите <strong>Add metric</strong>, добавьте метрику <code>builtin:host.cpu.usage</code> с разбивкой по <code>Host</code> и снова нажмите <strong>Run query</strong>.</p>
+<ul>
+<li>Ось Y для второй метрики (<code>CPU usage %</code>) отображается в правой части графика и показывает процент загрузки CPU. (Если на предыдущем шаге была перемещена ось Y, обе оси теперь расположены с одной стороны.)</li>
+<li>
+<p>В разделе <strong>Axes</strong> появится новый раздел <code>Y axis 2</code>.</p>
+<p><img alt="Две оси Y" src="https://dt-cdn.net/images/data-explorer-axes-2-metrics-1613-5161f95bcd.png" /></p>
+<p>Две оси Y</p>
+</li>
+</ul>
+<p>Дополнительные оси Y не создаются автоматически для последующих метрик, но их можно добавить вручную: после добавления метрики в запрос нажмите <strong>Add Y axis</strong> в разделе <strong>Axes</strong>, выберите пустое поле <strong>Axis Metric</strong> и выберите нужную метрику. Ниже показан пример с третьей метрикой и третьей осью Y для <code>.NET memory consumption (Large Object Heap)</code>.</p>
+<p><img alt="Три оси Y" src="https://dt-cdn.net/images/data-explorer-axes-3-metrics-1658-3b518c3781.png" /></p>
+<p>Три оси Y</p>
+<h3 id="_30">Именование оси<a class="headerlink" href="#_30" title="Permanent link">&para;</a></h3>
+<p>Чтобы задать имя оси</p>
+<ol>
+<li>В разделе <strong>Axes</strong> найдите ось, которую хотите переименовать.</li>
+<li>Нажмите рядом с именем оси.</li>
+<li>Введите новое имя и нажмите галочку для сохранения.<br />
+   Имя отображается вертикально рядом с осью Y и горизонтально под осью X.</li>
+</ol>
+<h3 id="_31">Скрытие и отображение оси<a class="headerlink" href="#_31" title="Permanent link">&para;</a></h3>
+<p>Чтобы скрыть ось</p>
+<ol>
+<li>В разделе <strong>Axes</strong> найдите ось, которую хотите скрыть.</li>
+<li>Нажмите.<br />
+   Чтобы снова показать ось, нажмите ещё раз.</li>
+</ol>
+<h3 id="_32">Задание положения оси<a class="headerlink" href="#_32" title="Permanent link">&para;</a></h3>
+<p>Чтобы указать сторону диаграммы, на которой отображается ось Y</p>
+<ol>
+<li>В разделе <strong>Axes</strong> найдите ось Y, которую хотите переместить.</li>
+<li>Установите <strong>Position</strong> в <code>Left</code> или <code>Right</code>.</li>
+</ol>
+<h3 id="_33">Задание минимума и максимума оси<a class="headerlink" href="#_33" title="Permanent link">&para;</a></h3>
+<p>По умолчанию минимальное и максимальное значения оси задаются автоматически.</p>
+<p>Чтобы задать пользовательские минимальное и максимальное значения оси</p>
+<ol>
+<li>В разделе <strong>Axes</strong> найдите ось, для которой хотите задать границы.</li>
+<li>Измените <strong>Min, Max</strong> с <code>Auto, Auto</code> на пару значений через запятую, соответствующих значениям на выбранной оси.</li>
+</ol>
+<h2 id="_34">Пороговые значения<a class="headerlink" href="#_34" title="Permanent link">&para;</a></h2>
+<p>Раздел <strong>Threshold</strong> — один из разворачиваемых разделов на правой панели Data Explorer. Содержимое этого раздела может варьироваться в зависимости от выбранной визуализации. Используйте настройки порогов для улучшения визуализаций и плиток.</p>
+<p><img alt="Data Explorer: раздел Threshold" src="https://dt-cdn.net/images/data-explorer-settings-threshold-323-3ddaf51ec3.png" /></p>
+<p>Data Explorer: раздел Threshold</p>
+<p>Устанавливайте значения порогов после выбора <strong>Unit</strong>:</p>
+<ul>
+<li>Если сначала выбрать <strong>Unit</strong>, параметры порогов будут подготовлены для соответствия выбранной единице.</li>
+<li>Если изменить <strong>Unit</strong> после задания значений порогов, значения порогов не будут автоматически пересчитаны.</li>
+</ul>
+<h3 id="_35">Установка порогов<a class="headerlink" href="#_35" title="Permanent link">&para;</a></h3>
+<ol>
+<li>В разделе <strong>Thresholds</strong> введите значения порогов</li>
+</ol>
+<p><img alt="Установка значений порогов" src="https://dt-cdn.net/images/threshold-definition-set-threshold-values-graph-249-e0895fe995.png" /></p>
+<p>Установка значений порогов
+2. Настройте цвета порогов Необязательно</p>
+<p><img alt="Настройка цветов порогов" src="https://dt-cdn.net/images/threshold-definition-adjust-threshold-color-269-2e5d1f3fb4.png" /></p>
+<p>Настройка цветов порогов</p>
+<h3 id="_36">Скрытие и отображение цветов порогов<a class="headerlink" href="#_36" title="Permanent link">&para;</a></h3>
+<p>Чтобы скрыть или показать цвета порогов без удаления настроек, в разделе <strong>Thresholds</strong> нажмите.</p>
+<p><img alt="Скрытие/отображение порогов" src="https://dt-cdn.net/images/threshold-definition-hide-or-show-graph-249-989dc64199.png" /></p>
+<p>Скрытие/отображение порогов</p>
+<h3 id="_37">Примеры порогов<a class="headerlink" href="#_37" title="Permanent link">&para;</a></h3>
+<p>Этот пример показывает визуализацию Graph для <code>CPU usage %</code> (<code>builtin:host.cpu.usage</code>) до и после добавления порогов. Аналогичный эффект применим к другим визуализациям с порогами.</p>
+<p>График — без порогов</p>
+<p><img alt="График Data Explorer — без порогов" src="https://dt-cdn.net/images/data-explorer-graph-no-thresholds-1628-f62c476cbf.png" /></p>
+<p>График Data Explorer — без порогов</p>
+<p>Тот же график с добавленными порогами</p>
+<p><img alt="График Data Explorer — с порогами" src="https://dt-cdn.net/images/data-explorer-graph-thresholds-1629-264707104a.png" /></p>
+<p>График Data Explorer — с порогами</p>
+<p>Пороги также влияют на отображение плиток на дашбордах.</p>
+<p>Плитка графика до и после добавления порогов</p>
+<p><img alt="Плитка дашборда — график до и после порогов" src="https://dt-cdn.net/images/graph-tiles-without-and-with-thresholds-613-6eba15eae1.png" /></p>
+<p>Плитка дашборда — график до и после порогов</p>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  К началу
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      © 2026 Dynatrace Docs | Yerkebulan Ardabayev
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/Yerkebulan-Ardabayev" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../../../..", "features": ["navigation.indexes", "navigation.prune", "navigation.path", "navigation.tracking", "navigation.top", "search.suggest", "search.highlight", "search.share", "content.code.copy", "content.code.annotate", "content.tabs.link", "content.tooltips", "toc.follow"], "search": "../../../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u0421\u043a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u043d\u043e \u0432 \u0431\u0443\u0444\u0435\u0440", "clipboard.copy": "\u041a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u0442\u044c \u0432 \u0431\u0443\u0444\u0435\u0440", "search.result.more.one": "\u0415\u0449\u0451 1 \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.more.other": "\u0415\u0449\u0451 # \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.none": "\u0421\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439 \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u043e", "search.result.one": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e 1 \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0435", "search.result.other": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439: #", "search.result.placeholder": "\u041d\u0430\u0447\u043d\u0438\u0442\u0435 \u043f\u0435\u0447\u0430\u0442\u0430\u0442\u044c \u0434\u043b\u044f \u043f\u043e\u0438\u0441\u043a\u0430", "search.result.term.missing": "\u041e\u0442\u0441\u0443\u0442\u0441\u0442\u0432\u0443\u0435\u0442", "select.version": "\u0412\u044b\u0431\u0435\u0440\u0438\u0442\u0435 \u0432\u0435\u0440\u0441\u0438\u044e"}, "version": null}</script>
+    
+    
+  
+      <script src="../../../../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../../../../../assets/javascripts/groq-chat.js?sha=17d46ba74"></script>
+      
+    
+  <script>
+    (function() {
+      // --- Keyboard shortcut Ctrl+K / Cmd+K for search ---
+      document.addEventListener('keydown', function(e) {
+        if ((e.ctrlKey || e.metaKey) && e.key === 'k') {
+          e.preventDefault();
+          var searchInput = document.querySelector('.md-search__input');
+          if (searchInput) {
+            searchInput.focus();
+            var searchToggle = document.querySelector('[data-md-toggle="search"]');
+            if (searchToggle && !searchToggle.checked) {
+              searchToggle.checked = true;
+              searchToggle.dispatchEvent(new Event('change'));
+            }
+          }
+        }
+        // --- "/" focuses search like GitHub / Algolia docs ---
+        if (e.key === '/' && !/^(input|textarea|select)$/i.test(e.target.tagName)) {
+          e.preventDefault();
+          var inp = document.querySelector('.md-search__input');
+          if (inp) {
+            inp.focus();
+            var t = document.querySelector('[data-md-toggle="search"]');
+            if (t && !t.checked) { t.checked = true; t.dispatchEvent(new Event('change')); }
+          }
+        }
+      });
+    })();
+  </script>
+
+  </body>
+</html>

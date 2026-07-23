@@ -1,0 +1,3405 @@
+
+<!doctype html>
+<html lang="ru" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Документация Dynatrace Managed с AI-помощником">
+      
+      
+        <meta name="author" content="Yerkebulan Ardabayev">
+      
+      
+        <link rel="canonical" href="https://yerkebulan-ardabayev.github.io/dynatrace-docs-website/managed-ru/observe/digital-experience/synthetic-monitoring/browser-monitors/configure-browser-monitors/">
+      
+      
+        <link rel="prev" href="../browser-clickpath-events/">
+      
+      
+        <link rel="next" href="../create-a-single-url-browser-monitor/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>Настройка браузерных мониторов - Dynatrace — Документация</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Inter";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../../../assets/stylesheets/extra.v11.css?sha=17d46ba74">
+    
+    <script>__md_scope=new URL("../../../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  <style>
+    /* DocFlow DT Logo Badge — injected via template override */
+    .md-header__button.md-logo {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .md-header__button.md-logo img,
+    .md-header__button.md-logo svg {
+      display: none !important;
+    }
+    .md-header__button.md-logo::before {
+      content: 'DT';
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 28px;
+      height: 28px;
+      border-radius: 6px;
+      background: linear-gradient(135deg, #00d4aa 0%, #7c3aed 100%);
+      color: white;
+      font-size: 11px;
+      font-weight: 700;
+      font-family: 'Inter', sans-serif;
+      letter-spacing: -0.02em;
+      flex-shrink: 0;
+    }
+
+    /* Search Ctrl+K badge — inside input field */
+    .md-search__form {
+      position: relative;
+    }
+    .md-search__form::after {
+      content: 'Ctrl+K';
+      display: none;
+      align-items: center;
+      padding: 0.15rem 0.4rem;
+      border-radius: 4px;
+      border: 1px solid var(--docflow-border);
+      background: var(--md-default-bg-color);
+      font-size: 10px;
+      font-family: 'JetBrains Mono', monospace;
+      color: var(--md-default-fg-color--lighter);
+      white-space: nowrap;
+      pointer-events: none;
+      position: absolute;
+      right: 0.5rem;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+    @media (min-width: 60em) {
+      .md-search__form::after {
+        display: flex;
+      }
+    }
+  </style>
+
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="custom">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#_1" class="md-skip">
+          Перейти к содержанию
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+  
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Верхний колонтитул">
+    <a href="../../../../../.." title="Dynatrace — Документация" class="md-header__button md-logo" aria-label="Dynatrace — Документация" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M11 15H6l7-14v8h5l-7 14z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Dynatrace — Документация
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Настройка браузерных мониторов
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Переключить на светлую тему"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Переключить на светлую тему" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Переключить на тёмную тему"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Переключить на тёмную тему" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Поиск" placeholder="Поиск" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Поиск">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Поделиться" aria-label="Поделиться" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Очистить" aria-label="Очистить" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Инициализация поиска
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/Yerkebulan-Ardabayev/dynatrace-docs-website" title="Перейти к репозиторию" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    dynatrace-docs-website
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Навигация" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../../../.." title="Dynatrace — Документация" class="md-nav__button md-logo" aria-label="Dynatrace — Документация" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M11 15H6l7-14v8h5l-7 14z"/></svg>
+
+    </a>
+    Dynatrace — Документация
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/Yerkebulan-Ardabayev/dynatrace-docs-website" title="Перейти к репозиторию" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    dynatrace-docs-website
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Главная
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../../../../ru/getting-started/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Начало работы
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../../../installation/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Кластер Managed
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../../../ingest-from/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Источники данных
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Наблюдаемость
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Наблюдаемость
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../../application-observability/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Наблюдаемость приложений
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_5_2" id="__nav_5_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Digital Experience
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Digital Experience
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обзор
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../custom-applications/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Пользовательские приложения
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../dem-use-cases/customer-support-with-session-segmentation/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Сценарии DEM
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../mobile-applications/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Мобильные приложения
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    
+  
+  
+  
+    
+  
+  
+  
+    <a href="../../../rum-classic/custom-applications/additional-configuration/configure-apdex-custom/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    rum-classic
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+  
+
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../rum-concepts/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Концепции мониторинга реальных пользователей
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../session-replay/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Session Replay
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../session-segmentation/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Сегментация сессий пользователей
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_2_9" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_5_2_9" id="__nav_5_2_9_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Synthetic Monitoring
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_5_2_9_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5_2_9">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Synthetic Monitoring
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обзор
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../analysis-and-alerting/multidimensional-analysis-for-browser-monitors/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Анализ и оповещения
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_2_9_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_5_2_9_3" id="__nav_5_2_9_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Browser monitors
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_5_2_9_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5_2_9_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Browser monitors
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обзор
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../browser-clickpath-events/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    События браузерных clickpath-ов
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Настройка браузерных мониторов
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../create-a-single-url-browser-monitor/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Создание браузерного монитора по одному URL
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../number-of-actions-consumed-by-browser-clickpaths/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Количество действий, потребляемых браузерными clickpath-ами
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../record-a-browser-clickpath/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Запись браузерного clickpath-а
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../script-mode-for-browser-monitor-configuration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Script mode для настройки браузерных мониторов
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../general-information/architecture-communication/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Общая информация
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../http-monitors-classic/configure-http-monitors-classic/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    http-monitors-classic
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../network-availability-monitors/configure-nam-managed/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    network-availability-monitors
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../private-synthetic-locations/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Private Synthetic locations
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../web-applications/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Веб-приложения
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../../infrastructure-observability/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Наблюдаемость инфраструктуры
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../../../dynatrace-intelligence/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Davis AI
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    
+  
+  
+  
+    <a href="../../../../../analyze-explore-automate/dashboards-classic/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Анализ
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../../../deliver/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Deliver
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    
+  
+  
+  
+    <a href="../../../../../secure/application-security/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Безопасность приложений
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    
+  
+  
+  
+    <a href="../../../../../manage/account-management/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Управление
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    
+  
+  
+  
+    <a href="../../../../../platform/oneagent/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Платформа
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../../../dynatrace-api/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../../../whats-new/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Что нового
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../../../offline-doc/how-do-i-enable-synthetic-monitors/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Офлайн-документация
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../../../../ru/training/day1-introduction/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обучение
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../ai/groq/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI Помощник
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Содержание">
+  
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+                
+
+
+
+  
+
+
+  <nav class="md-path" aria-label="Навигация" >
+    <ol class="md-path__list">
+      
+        
+  
+  
+    <li class="md-path__item">
+      <a href="../../../../../.." class="md-path__link">
+        
+  <span class="md-ellipsis">
+    Главная
+  </span>
+
+      </a>
+    </li>
+  
+
+      
+      
+        
+  
+  
+    
+    
+      
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="../../../../application-observability/" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    Наблюдаемость
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="../../../" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    Digital Experience
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="../../" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    Synthetic Monitoring
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="../" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    Browser monitors
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ol>
+  </nav>
+
+              
+              <article class="md-content__inner md-typeset">
+                
+  
+                  
+
+
+
+<h1 id="_1">Настройка браузерных мониторов<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
+<h1 id="_2">Настройка браузерных мониторов<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h1>
+<ul>
+<li>How-to guide</li>
+<li>15-min read</li>
+<li>Updated on Mar 30, 2026</li>
+</ul>
+<p>Настраивайте браузерные мониторы при первоначальной установке и в любое время после этого.</p>
+<p>При создании браузерного монитора (<a href="../create-a-single-url-browser-monitor/" title="Узнайте, как настроить браузерный монитор по одному URL для проверки доступности сайта.">по одному URL</a> или <a href="../record-a-browser-clickpath/" title="Узнайте, как записать браузерный clickpath для мониторинга доступности и производительности приложения.">clickpath</a>) настройки отображаются после выбора <strong>Create a browser monitor</strong>. Эти настройки являются подмножеством полного набора, доступного в режиме редактирования (описан ниже) после развёртывания монитора. Например, пороговые значения <a href="#performance-thresholds">производительности</a> или <a href="#outage-handling">доступности</a> можно задать только после создания монитора.</p>
+<h2 id="_3">Настройка существующего браузерного монитора<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<p>Для настройки или редактирования существующего монитора по одному URL или браузерного clickpath-а</p>
+<ol>
+<li>Перейдите в <strong>Synthetic Classic</strong>.</li>
+<li>Выберите браузерный монитор для настройки.</li>
+<li>Нажмите <strong>Edit</strong> в быстрых ссылках для перехода к настройкам монитора. Также можно перейти в <strong>Synthetic Classic</strong>, установить флажок рядом с нужным монитором и нажать <strong>Edit</strong> внизу страницы.</li>
+<li>
+<p>Перейдите по вкладкам <strong>Monitor settings</strong> слева для настройки параметров (описание ниже; часть параметров доступна при первоначальной настройке монитора).</p>
+</li>
+<li>
+<p><a href="#monitor-setup">General</a></p>
+</li>
+<li><a href="#recorded-clickpath">Recorded clickpath</a></li>
+<li><a href="#frequency-locations">Frequency and locations</a></li>
+<li><a href="#validate-content">Validate content</a></li>
+<li><a href="#outage-handling">Outage handling</a></li>
+<li><a href="#performance-thresholds">Performance thresholds</a></li>
+<li><a href="#monitor-scripts">Monitor scripts</a></li>
+<li><a href="#advanced-setup">Advanced setup</a></li>
+<li><a href="#metrics">Metrics</a></li>
+<li><strong>Save changes</strong> в правом нижнем углу после завершения редактирования. (Можно также <strong>Discard changes</strong>.)</li>
+</ol>
+<h2 id="general">General<a class="headerlink" href="#general" title="Permanent link">&para;</a></h2>
+<p>Укажите <strong>Monitor name</strong>. Имя ограничено 500 символами.</p>
+<p>Для <a href="../create-a-single-url-browser-monitor/" title="Узнайте, как настроить браузерный монитор по одному URL для проверки доступности сайта.">браузерных мониторов по одному URL</a> здесь можно отредактировать <strong>HTTP/HTTPS URL</strong> монитора. (Для <a href="../record-a-browser-clickpath/" title="Узнайте, как записать браузерный clickpath для мониторинга доступности и производительности приложения.">clickpath-ов</a> эта информация хранится в <a href="../browser-clickpath-events/#navigate" title="Узнайте о типах событий при записи браузерного clickpath-а.">событии Navigate</a>.)</p>
+<h3 id="_4">Профиль устройства<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<p>Свойства эмулируемого устройства: профиль/тип <strong>Device</strong>, ориентация, <strong>Screen size</strong>, <strong>Bandwidth</strong> и <strong>User agent</strong>.</p>
+<p>Профиль устройства по умолчанию: <strong>Desktop</strong>.</p>
+<ul>
+<li>Для профилей мобильных устройств (включая планшеты) можно выбрать ориентацию и <strong>Bandwidth</strong>. <strong>User agent</strong> выбирается автоматически, но может быть изменён.</li>
+<li>Для <strong>Custom</strong>-устройства укажите, является ли оно <strong>Mobile device</strong>, выберите ориентацию, <strong>Bandwidth</strong> и <strong>Screen size</strong>. Этот профиль использует user agent Dynatrace по умолчанию, который можно изменить.</li>
+<li>Для профилей десктопа и ноутбука можно выбрать <strong>Bandwidth</strong>. Эти профили используют user agent Dynatrace по умолчанию.</li>
+</ul>
+<p>User agent по умолчанию</p>
+<ul>
+<li>
+<p>User agent Dynatrace по умолчанию при записи и локальном воспроизведении имеет формат <code>Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/{version} Safari/537.36 RuxitSynthetic/1.0 v0 t0 cfeatureHash=7efgijmoqtvx caes=1 ccux=1 sia=1 smf=1</code>, где:</p>
+</li>
+<li>
+<p><code>{version}</code> — текущая версия браузера, используемая при записи.</p>
+</li>
+<li><code>v0</code> и <code>t0</code> идентифицируют трафик Synthetic Monitoring.</li>
+<li><code>sia=1</code> указывает на более быстрое внедрение RUM JavaScript (значение может быть <code>1</code> или <code>0</code>).</li>
+<li><code>smf=1</code> указывает на мониторинг страниц в фреймах (требует включения <strong>Capture performance metrics for pages loaded in frames</strong> в <a href="#advanced-setup"><strong>Advanced setup</strong></a>; значение <code>0</code>, если не включено).</li>
+<li><code>cfeatureHash=&lt;value&gt;</code> появляется при включении пользовательских настроек RUM JavaScript в <strong>Advanced setup</strong>.</li>
+<li>
+<p>Другие пары ключ-значение, начинающиеся с <code>c</code>, появляются при наличии пользовательских свойств RUM JavaScript в <strong>Advanced setup</strong>.</p>
+<p><img alt="Custom JS tag properties" src="https://dt-cdn.net/images/browsermonitorcustomjsconfig-619-249e8a4425.png" /></p>
+<p>Custom JS tag properties
+* User agent по умолчанию для выполнения браузерных мониторов из публичных или частных расположений Synthetic имеет формат <code>Mozilla/5.0 (X11; Ubuntu; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/{version} Safari/537.36 RuxitSynthetic/1.0 v{id} t{id} ath{id} alt{id} cfeatureHash=7efgijmoqtvx caes=1 ccux=1 sia=1 smf=1</code>, где:</p>
+</li>
+<li>
+<p><code>{id}</code> представляет длинные ID, используемые Dynatrace для идентификации выполнения монитора.</p>
+</li>
+<li>Другие параметры описаны выше.</li>
+</ul>
+<p>Обратите внимание: даже если задан пользовательский user agent, Dynatrace всегда автоматически добавляет <code>RuxitSynthetic/1.0 v{id} t{id} ath{id} alt{id}</code>, <code>sia</code>, <code>smf</code> и, при наличии, <code>cfeaturehash</code> и пары ключ-значение, начинающиеся с <code>c</code>, чтобы трафик Synthetic Monitoring мог быть идентифицирован.</p>
+<p>Ограничение полосы пропускания</p>
+<p>Параметры ограничения полосы пропускания Synthetic Monitoring, их скорости и задержки:</p>
+<table>
+<thead>
+<tr>
+<th>Bandwidth</th>
+<th>Download</th>
+<th>Upload</th>
+<th>Latency</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>DSL</td>
+<td>2 Mb/s</td>
+<td>1 Mb/s</td>
+<td>5ms RTT</td>
+</tr>
+<tr>
+<td>GPRS</td>
+<td>50 kb/s</td>
+<td>20 kb/s</td>
+<td>500ms RTT</td>
+</tr>
+<tr>
+<td>Good 2G</td>
+<td>450 kb/s</td>
+<td>150 kb/s</td>
+<td>150ms RTT</td>
+</tr>
+<tr>
+<td>Good 3G</td>
+<td>1 Mb/s</td>
+<td>750 kb/s</td>
+<td>40ms RTT</td>
+</tr>
+<tr>
+<td>Regular 2G</td>
+<td>250 kb/s</td>
+<td>50 kb/s</td>
+<td>300ms RTT</td>
+</tr>
+<tr>
+<td>Regular 3G</td>
+<td>750 kb/s</td>
+<td>250 kb/s</td>
+<td>100ms RTT</td>
+</tr>
+<tr>
+<td>Regular 4G</td>
+<td>4 Mb/s</td>
+<td>3 Mb/s</td>
+<td>20ms RTT</td>
+</tr>
+<tr>
+<td>WiFi</td>
+<td>30 Mb/s</td>
+<td>15 Mb/s</td>
+<td>2ms RTT</td>
+</tr>
+</tbody>
+</table>
+<p>Если устройство монитора больше не доступно в списке</p>
+<p>Все настройки устройства (размер экрана, полоса пропускания, ориентация) сохраняются; выбор устройства меняется на <strong>Custom</strong>.</p>
+<h3 id="_5">Ключевые метрики производительности<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
+<p>Этот параметр доступен только в режиме редактирования.</p>
+<p>Для каждого load action и XHR action в браузерном мониторе или clickpath-е можно выбрать одну ключевую метрику производительности.</p>
+<p><a href="../../../web-applications/analyze-and-use/work-with-key-performance-metrics/" title="Узнайте, как использовать правильные ключевые метрики производительности для оптимизации данных о пользовательском опыте."><strong>Ключевые метрики производительности</strong></a> позволяют выбирать цели производительности, наиболее подходящие для каждого отслеживаемого приложения. Например, для традиционного веб-приложения можно выбрать User action duration. Для других приложений, где важнее скорость взаимодействия, а не UI, можно оптимизировать время загрузки JavaScript-ресурсов. По умолчанию для load и XHR actions выбирается <strong>Visually complete</strong> — метрика, измеряющая время полного отрисовки видимой части браузера пользователя.</p>
+<p>Поскольку Dynatrace собирает список ключевых метрик производительности из коробки, можно изменить выбор в настройках монитора и сразу получить исторические данные.</p>
+<p><img alt="Monitor settings KPM" src="https://dt-cdn.net/images/monitorsettingskpm-849-ebdc51e729.png" /></p>
+<p>Monitor settings KPM</p>
+<p>Ключевая метрика производительности рассчитывается и отображается как среднее на <a href="../../analysis-and-alerting/synthetic-details-for-browser-monitors/" title="Анализируйте результаты браузерных мониторов и clickpath-ов на странице Synthetic details.">странице Synthetic details</a> в визуализациях производительности и на <a href="../../analysis-and-alerting/synthetic-details-for-browser-monitors/#events-actions" title="Анализируйте результаты браузерных мониторов и clickpath-ов на странице Synthetic details.">карточке Synthetic events and actions</a>.</p>
+<h3 id="_6">Назначенные приложения<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
+<p>Этот параметр доступен только в режиме редактирования.</p>
+<p>Если синтетический монитор связан с одним из отслеживаемых приложений, можно назначить монитор на это приложение для отслеживания его доступности и производительности. Обнаруженные проблемы автоматически связываются с приложением. Если монитор недоступен, связанное приложение также считается недоступным.</p>
+<p>Нажмите <strong>Assign to application</strong> и выберите приложение из списка. Монитор можно назначить на несколько приложений, а одно приложение может иметь несколько назначенных мониторов.</p>
+<p>Браузерный монитор можно назначить на веб-приложение.</p>
+<p>На этой вкладке также отображаются отдельные списки автоматически назначенных и вручную связанных приложений. Вручную связанные приложения можно отвязать здесь.</p>
+<p>Обратите внимание: невозможно заблокировать трафик Synthetic Monitoring для RUM-приложений путём <a href="../../../web-applications/additional-configuration/exclude-browsers-robots-and-spiders-from-monitoring/" title="Отключите Real User Monitoring для определённых IP-адресов, браузеров, ботов и поисковых роботов.">исключения ботов, поисковых роботов или IP-адресов расположений Synthetic</a>.</p>
+<p><img alt="Browser monitor: Assigned applications" src="https://dt-cdn.net/images/bm-assigned-applications-1320-1d1646a6b1.png" /></p>
+<p>Browser monitor: Assigned applications</p>
+<h2 id="recorded-clickpath">Recorded clickpath<a class="headerlink" href="#recorded-clickpath" title="Permanent link">&para;</a></h2>
+<p>Вы можете редактировать <a href="../record-a-browser-clickpath/" title="Узнайте, как записать браузерный clickpath для мониторинга доступности и производительности приложения.">записанный clickpath</a>.</p>
+<p>Если записанный clickpath захватил учётные данные, например пароль, отображается опция сохранения их в <a href="../../../../../manage/credential-vault/" title="Храните и управляйте учётными данными в хранилище.">хранилище учётных данных</a>. На изображении ниже показан записанный clickpath с захваченным паролем.</p>
+<p><img alt="Captured credential" src="https://dt-cdn.net/images/clickpathcapturedpasswordkeystroke1-1348-ee32fa536a.png" /></p>
+<p>Captured credential</p>
+<p>Подробнее об учётных данных см. в разделах <a href="../browser-clickpath-events/#navigate" title="Узнайте о типах событий при записи браузерного clickpath-а.">событие Navigate</a> и <a href="../browser-clickpath-events/#keystroke" title="Узнайте о типах событий при записи браузерного clickpath-а.">событие Keystroke</a>.</p>
+<p>Нажмите <strong>Record again</strong> для перезаписи clickpath-а. Можно выбрать: перезаписать clickpath полностью (с первого URL события) или после воспроизведения до указанного события. Обратите внимание: при полной перезаписи с нуля все JavaScript-события, предшествующие начальному событию Navigate, будут удалены — см. <a href="../browser-clickpath-events/#javascript" title="Узнайте о типах событий при записи браузерного clickpath-а.">События браузерных clickpath-ов</a>.</p>
+<p><img alt="Record a clickpath again" src="https://dt-cdn.net/images/recordagainclickpath-344-85b24812cc.png" /></p>
+<p>Record a clickpath again</p>
+<p>Также можно выполнить локальное воспроизведение (<strong>Play back clickpath</strong>) для проверки корректности работы записанного clickpath-а.</p>
+<p>Если с браузерным монитором связаны учётные данные (публичные или только для владельца), пользователям нужно ввести учётные данные для локального воспроизведения. Однако если включить <strong>Enable local playback of Synthetic browser monitors without entering credentials</strong> в <a href="../../../../../manage/credential-vault/" title="Храните и управляйте учётными данными в хранилище.">хранилище учётных данных</a>, пользователи смогут воспроизводить браузерный монитор без ввода доступных им учётных данных.</p>
+<p>Например, при воспроизведении clickpath-а с одним публичным credential и одним credential только для владельца другого пользователя вводить публичный credential не нужно. Фактически это означает, что воспроизведение clickpath-а с учётными данными без доступа к ним может быть невозможно.</p>
+<p><img alt="Play back clickpath" src="https://dt-cdn.net/images/playbackclickpathcredentials-1882-d0bebc2291.png" /></p>
+<p>Play back clickpath</p>
+<p>Можно оставить окно воспроизведения открытым после завершения (<strong>Keep window open after playback</strong>), например, для отладки сбойного выполнения или тестирования JavaScript-кода на сайте.</p>
+<ul>
+<li>Каждый запуск монитора начинается в чистом состоянии: с очищенным кэшем браузера и пустым <a href="https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage">локальным хранилищем</a>.</li>
+<li>Локальное воспроизведение в Dynatrace работает в режиме эмуляции на основе профиля устройства и user agent, выбранных при настройке монитора. То есть воспроизведение эмулирует выбранное устройство. При переходе к тому же URL вне Dynatrace впечатление может отличаться.</li>
+</ul>
+<p>Вы не ограничены одним режимом просмотра и редактирования clickpath-а: можно переключаться между UI и script mode, выбирая <strong>Clickpath</strong> или <strong>Script</strong>. Подробности о редактировании clickpath-а в формате JSON см. в разделе <a href="../script-mode-for-browser-monitor-configuration/" title="Создавайте и редактируйте браузерные мониторы в формате JSON.">Script mode для настройки браузерных мониторов</a>.</p>
+<p>В visual/UI mode доступны следующие элементы управления для редактирования событий скрипта:</p>
+<p>При необходимости можно удалить события из clickpath-а, нажав <strong>x</strong> в столбце <strong>Delete</strong> для соответствующего события. Также можно добавлять события: нажмите <strong>Add synthetic event</strong>. Укажите имя, <a href="../browser-clickpath-events/" title="Узнайте о типах событий при записи браузерного clickpath-а.">тип события</a> и событие, после которого оно должно следовать.</p>
+<p><img alt="Add synthetic event" src="https://dt-cdn.net/images/addsyntheticevent-367-3353ee375a.jpg" /></p>
+<p>Add synthetic event</p>
+<p>Используйте стрелки <strong>Move up/down</strong> для изменения порядка событий. Обратите внимание: первому <a href="../browser-clickpath-events/#navigate" title="Узнайте о типах событий при записи браузерного clickpath-а.">событию Navigate</a> clickpath-а могут предшествовать только <a href="../browser-clickpath-events/#javascript" title="Узнайте о типах событий при записи браузерного clickpath-а.">JavaScript-события</a>.</p>
+<p>Хотя мы стараемся называть события интуитивно понятно, при необходимости можно редактировать имена событий, просто кликнув в поле имени.</p>
+<p>Кроме того, можно настроить каждое событие, наведя курсор и кликнув, когда курсор изменится на указатель. В деталях события можно удалить его, выбрав <strong>Delete synthetic event</strong>. Обратите внимание: первое <a href="../browser-clickpath-events/#navigate" title="Узнайте о типах событий при записи браузерного clickpath-а.">событие Navigate</a> clickpath-а удалить нельзя.</p>
+<p><img alt="Edit a synthetic event" src="https://dt-cdn.net/images/editsyntheticevent-1638-9dc9afa1ef.png" /></p>
+<p>Edit a synthetic event</p>
+<p>Доступные для редактирования поля зависят от типа события — подробные описания см. в разделе <a href="../browser-clickpath-events/" title="Узнайте о типах событий при записи браузерного clickpath-а.">События браузерных clickpath-ов</a>. После завершения редактирования обязательно нажмите <strong>Save changes</strong>. При необходимости выберите <strong>Close details</strong> для выхода из деталей события.</p>
+<p><img alt="Synthetic event UI" src="https://dt-cdn.net/images/recordedclickpatheditevent1-1369-f196cf21e4.jpg" /></p>
+<p>Synthetic event UI</p>
+<p>Событие clickpath-а — это не то же самое, что действие. Подробности см. в разделе <a href="../number-of-actions-consumed-by-browser-clickpaths/" title="Узнайте, сколько действий потребляет браузерный clickpath и чем они отличаются от событий.">Количество действий, потребляемых браузерными clickpath-ами</a>.</p>
+<h2 id="frequency-and-locations">Frequency and locations<a class="headerlink" href="#frequency-and-locations" title="Permanent link">&para;</a></h2>
+<p>Расписание мониторинга определяется двумя факторами: как часто запускается браузерный монитор и из скольких расположений.</p>
+<p>Dynatrace предлагает глобальную сеть <a href="../../general-information/public-synthetic-locations/" title="Узнайте обо всех доступных публичных расположениях Synthetic Monitoring.">публичных расположений Synthetic Monitoring</a> из коробки. Также можно <a href="../../private-synthetic-locations/create-a-private-synthetic-location/" title="Узнайте, как создать частное расположение для синтетического мониторинга.">создавать частные расположения Synthetic</a> в собственной сетевой инфраструктуре. Как публичные, так и частные расположения отображаются на этой странице настроек.</p>
+<p>Частота и количество расположений определяют количество выполнений монитора в час. Например, запуск монитора из 3 расположений каждые 15 минут даёт 12 выполнений в час (4 раза в час из каждого из 3 расположений). Выполнения монитора равномерно распределены в течение выбранного интервала. То есть для монитора, запускаемого из 3 расположений каждые 15 минут, выполнения запускаются с интервалом 5 минут.</p>
+<p>Можно выбрать частоту каждые <strong>5</strong>, <strong>10</strong>, <strong>15</strong> или <strong>30</strong> минут; каждый <strong>1</strong>, <strong>2</strong> или <strong>4</strong> часа. Также можно настроить монитор для выполнения <a href="../../general-information/on-demand-executions/" title="Выполняйте синтетические мониторы по запросу из публичных или частных расположений."><strong>Только по запросу</strong></a>. Можно выбрать несколько глобальных расположений для выполнения браузерного монитора.</p>
+<p>Обратите внимание: все публичные расположения Synthetic работают по координированному всемирному времени (UTC). Если скрипту монитора требуется местное время или часовой пояс, можно использовать <a href="../browser-clickpath-events/#retrieve-data" title="Узнайте о типах событий при записи браузерного clickpath-а.">метод <code>api.getContext()</code></a> и системные часы для реализации условной логики.</p>
+<h2 id="validate-content">Validate content<a class="headerlink" href="#validate-content" title="Permanent link">&para;</a></h2>
+<p>Для браузерных мониторов по одному URL эта вкладка отображается в настройках монитора и доступна только в режиме редактирования.</p>
+<p>Для браузерных clickpath-ов можно настроить валидацию контента для каждого события на вкладке <a href="#recorded-clickpath"><strong>Recorded clickpath</strong></a> в настройках монитора. Также можно настроить валидацию в процессе <a href="../record-a-browser-clickpath/" title="Узнайте, как записать браузерный clickpath для мониторинга доступности и производительности приложения.">записи</a> для записанных или вручную добавленных событий clickpath-а.</p>
+<p>Валидация контента помогает убедиться, что браузерный монитор загружает ожидаемый контент страницы или элемент. Валидации выполняются с помощью правил: нажмите <strong>Add custom content validation</strong> для определения правила.</p>
+<p>В браузерных clickpath-ах валидация определяется для каждого события; для мониторов по одному URL, содержащих одно событие, валидация определяется для монитора в целом.</p>
+<p>Валидация выполняется после следования всем редиректам, даже если первый ответ содержит HTML.</p>
+<p>Можно валидировать по конкретному тексту на странице, конкретному элементу, тексту внутри элемента или тексту в DOM или любом ресурсе. Можно настроить прохождение или провал монитора/события на основе критериев валидации. Если критерии прохождения не выполнены (или критерии провала выполнены), монитор/событие завершается с ошибкой и выполнение прерывается.</p>
+<p><img alt="Validation criteria" src="https://dt-cdn.net/images/validationcriteria-505-c8d37c1f14.png" /></p>
+<p>Validation criteria</p>
+<p><strong>Target window</strong> определяет вкладку, в которой находится текст/элемент. <code>window[0]</code> — первая открытая вкладка, <code>window[1]</code> — вторая. Также может быть <code>window[N].frames[X]</code>, где <code>X</code> — номер <code>iframe</code> на вкладке <code>N</code>. Фреймы можно объединять в цепочки: <code>window[N].frames[X].frames[Y]</code> означает, что элементы находятся во фрейме <code>Y</code>, вложенном во фрейм <code>X</code> на вкладке <code>N</code>.</p>
+<p>Также можно использовать плейсхолдер в значении <strong>Target window</strong>, например <code>window[0].frames[{index}]</code>, где <code>{index}</code> — переменная, определённая ранее с помощью метода <code>api.setValue()</code> в <a href="../browser-clickpath-events/#javascript" title="Узнайте о типах событий при записи браузерного clickpath-а.">событии JavaScript</a>.</p>
+<p>Если валидация основана на видимом тексте (<strong>contains text</strong>), тексте в конкретном элементе (<strong>contains text in element</strong>) или разметке в DOM или ресурсе (<strong>contains text in DOM or any resource</strong>), нужно <strong>Specify text</strong> (регистр не учитывается). Значения плейсхолдеров заключайте в скобки, например <code>{email}</code>. Опционально текст можно задать как регулярное выражение (<strong>Evaluate as regular expression</strong>).</p>
+<p>Если валидация ищет элемент (<strong>contains element</strong>) или текст в конкретном элементе (<strong>contains text in element</strong>), нужно указать CSS-селекторы или DOM-локаторы для воспроизведения: нажмите <strong>Add locator</strong>, выберите <strong>DOM</strong> или <strong>CSS</strong> и укажите ссылку на локатор. При вставке строки локатора удалите символы <code>&gt;</code>.</p>
+<p>Можно добавлять и менять порядок любого количества локаторов. Валидация выполняется в заданном порядке до совпадения локатора.</p>
+<p>Можно добавлять и менять порядок нескольких валидаций для события/монитора. Валидация выполняется в заданном порядке; при нарушении любого правила монитор завершается с ошибкой.</p>
+<p><img alt="Validation rules" src="https://dt-cdn.net/images/multiplevalidationrules1-1018-cd40d6f038.jpg" /></p>
+<p>Validation rules</p>
+<p>Пример 1 — Валидация контента по видимому тексту</p>
+<p>Выберите <strong>contains visible text</strong> и укажите искомый текст (регистр не учитывается). Этот текст должен быть виден на веб-странице. Определите, должен ли монитор проваливаться или проходить на основе введённого текста. В примере ниже монитор настроен на провал, если найден текст из <a href="../browser-clickpath-events/#javascript" title="Узнайте о типах событий при записи браузерного clickpath-а.">плейсхолдера</a> (указанного ранее в скрипте).</p>
+<p><img alt="Text validation" src="https://dt-cdn.net/images/bm-validation-visible-text-1077-bc4cd9ebad.png" /></p>
+<p>Text validation</p>
+<p>Пример 2 — Валидация контента по элементу</p>
+<p>Выберите <strong>contains element</strong>. Нужно указать локатор для элемента, который хотите валидировать.</p>
+<p>Для поиска локатора откройте инструменты разработчика для веб-страницы (правый клик &gt; <strong>Inspect</strong>). Правый клик на нужном элементе &gt; <strong>Copy</strong> &gt; <strong>Copy selector</strong>. Вставьте <strong>CSS</strong>-селектор, удалив символы <code>&gt;</code>.</p>
+<p>Пример ниже показывает правило валидации на основе наличия элемента.</p>
+<p><img alt="Validate element by locator" src="https://dt-cdn.net/images/bm-validation-element-1061-f83021f60d.png" /></p>
+<p>Validate element by locator</p>
+<p>Пример 3 — Валидация контента по тексту в элементе</p>
+<p>Выберите <strong>contains text in element</strong>. Помимо текстовой строки для поиска, нужно указать локатор для элемента, содержащего текст. Строка не обязана быть видимой на странице, но должна быть частью текста между открывающим и закрывающим тегами элемента; строка не может содержать имена или значения атрибутов.</p>
+<p>Для поиска локатора откройте инструменты разработчика. Правый клик на нужном элементе &gt; <strong>Copy</strong> &gt; <strong>Copy selector</strong>. Вставьте <strong>CSS</strong>-селектор, удалив символы <code>&gt;</code>.</p>
+<p>На скриншотах ниже показан конкретный элемент, содержащий текст <code>Mozilla</code>, в инструментах разработчика и соответствующее правило валидации в браузерном мониторе.</p>
+<p><img alt="Inspect text in an element" src="https://dt-cdn.net/images/bm-validation-text-in-element-1596-19b95e6ffd.png" /></p>
+<p>Inspect text in an element</p>
+<p><img alt="Validate text in an element" src="https://dt-cdn.net/images/bm-validation-text-in-element2-1056-52fc79316b.png" /></p>
+<p>Validate text in an element</p>
+<p>Пример 4 — Валидация контента по тексту в DOM или ресурсе</p>
+<p>Выберите <strong>contains text in DOM or any resource</strong> для валидации контента по любой строке в DOM, включая комментарии, имена и значения атрибутов.</p>
+<p>Для поиска строки откройте инструменты разработчика. Скопируйте нужный текст и вставьте его в правило валидации.</p>
+<p>На скриншотах ниже показаны атрибут и значение для URL назначения (<code>href="/en-US/firefox/browsers/"</code>) в DOM. Выбранная строка используется как текст валидации для браузерного монитора.</p>
+<p><img alt="Validate any text in DOM" src="https://dt-cdn.net/images/bm-validation-dom-text-986-d047d350a2.png" /></p>
+<p>Validate any text in DOM</p>
+<p><img alt="Validation rule for text in DOM" src="https://dt-cdn.net/images/bm-validation-dom-text2-1061-e185f50d1a.png" /></p>
+<p>Validation rule for text in DOM</p>
+<p>Здесь можно воспроизвести браузерный монитор по одному URL (<strong>Play back monitor</strong>). Подробнее о <a href="#recorded-clickpath">локальном воспроизведении</a> выше.</p>
+<h2 id="outage-handling">Outage handling<a class="headerlink" href="#outage-handling" title="Permanent link">&para;</a></h2>
+<p>Настройки обработки сбоев определяют действия при сбоях монитора (сбои доступности). Поведение обработки сбоев по умолчанию можно задать на уровне окружения для всех браузерных мониторов или всех HTTP-мониторов: перейдите в <strong>Settings</strong> &gt; <strong>Web and mobile monitoring</strong> и выберите соответствующую вкладку <strong>Outage handling</strong>. Можно использовать значения по умолчанию Dynatrace (<strong>Use defaults</strong>) для определения обработки сбоев на уровне окружения. При включении эти значения применяются ко всем браузерным или HTTP-мониторам, не переопределяющим их настройками уровня монитора.</p>
+<p>На уровне монитора этот параметр доступен только в режиме редактирования. Параметры обработки сбоев на уровне окружения и монитора одинаковы. Можно переопределить значения по умолчанию на уровне монитора. Также можно восстановить значения уровня окружения (<strong>Remove override</strong>).</p>
+<p>Можно отключить генерацию проблем для глобальных и локальных сбоев, если тестируете нестабильный сайт или запланированы простои, о которых не нужно получать оповещения.</p>
+<ul>
+<li><strong>Generate a problem and send an alert when this monitor is unavailable at all configured locations</strong></li>
+</ul>
+<p>Этот параметр включён по умолчанию для новых мониторов. Он оповещает о глобальных сбоях доступности: когда все расположения одновременно фиксируют сбой.</p>
+<p>По умолчанию проблема глобального сбоя создаётся при однократном сбое всех расположений. Однако можно указать количество последовательных сбоев (от 1 до 5) для создания проблемы глобального сбоя.
+* <strong>Generate a problem and send an alert when this monitor is unavailable for one or more consecutive runs at any location</strong></p>
+<p>Позволяет создавать проблему при последовательных сбоях в одном или нескольких расположениях. На уровне окружения можно выбрать количество сбоев. На уровне монитора можно также определить количество расположений, которые должны зафиксировать сбой для создания проблемы локального сбоя.</p>
+<p>В примере ниже монитор настроен для <code>4</code> расположений, и проблема создаётся, если <code>3</code> из <code>4</code> расположений не могут получить доступ к сайту в течение <code>2</code> или более последовательных выполнений.</p>
+<ul>
+<li><strong>Automatic retry on error</strong></li>
+</ul>
+<p>При включении этого параметра (включён по умолчанию) браузерные мониторы по одному URL и clickpath-ы автоматически повторяются из того же расположения при ошибках. При последующем успехе первоначальная точка данных об ошибке удаляется. Такой подход снижает количество ложноположительных ошибок.</p>
+<p>Повторная попытка выполняется независимо от пороговых значений доступности. Повторная попытка не потребляет дополнительные DEM Units.</p>
+<p>Возможно, потребуется отключить повторные попытки при расследовании проблем, которые повторные попытки могут маскировать. При отключении повторных попыток каждый сбой монитора засчитывается в сбой доступности.</p>
+<p><img alt="Outage handling" src="https://dt-cdn.net/images/outagebrowser-912-b097cf6dcf.png" /></p>
+<p>Outage handling</p>
+<p>Проблема сбоя разрешается, когда происходит столько же последовательных успешных выполнений, сколько настроено неуспешных для создания проблемы. Успешные выполнения должны произойти в количестве расположений = общее количество расположений минус количество расположений, необходимых для проблемы, плюс 1.</p>
+<p>Обратите внимание: при разрешении проблемы глобального сбоя в одном или нескольких расположениях всё ещё могут происходить сбои мониторов. Настройте правила локального сбоя для получения оповещений об этом.</p>
+<p>Дополнительную информацию о <a href="../../general-information/synthetic-calculations/" title="Узнайте о расчётах метрик Synthetic Monitoring.">Расчётах Synthetic</a> см. в разделах:</p>
+<ul>
+<li>Разница между <a href="../../general-information/synthetic-calculations/#availability-problems" title="Узнайте о расчётах метрик Synthetic Monitoring.">разрешением сбоя и тайм-аутом</a>.</li>
+<li><a href="../../general-information/synthetic-calculations/#m-windows-availability" title="Узнайте о расчётах метрик Synthetic Monitoring.">Исключение выполнений синтетического монитора в окна обслуживания из расчётов доступности</a>.</li>
+</ul>
+<h2 id="performance-thresholds">Performance thresholds<a class="headerlink" href="#performance-thresholds" title="Permanent link">&para;</a></h2>
+<p>Этот параметр доступен только в режиме редактирования.</p>
+<p>Пороговые значения производительности позволяют проактивно реагировать на задержки сайта.</p>
+<p>Нажмите <strong>Add threshold</strong>. Для clickpath-ов можно задать пороговое значение для монитора в целом (<strong>Total duration of all events</strong>) и/или для отдельных событий. Обратите внимание: можно выбирать только события, генерирующие сетевую активность. Для браузерных мониторов по одному URL можно задать пороговое значение только для монитора в целом.</p>
+<p><img alt="Select an action for performance thresholds" src="https://dt-cdn.net/images/selectactionperfthreshold-616-a67b623c23.png" /></p>
+<p>Select an action for performance thresholds</p>
+<p>Отображается среднее значение производительности за последние 24 часа для помощи в установке порога. Просто введите <strong>Threshold in seconds</strong> и нажмите <strong>Save</strong>. Можно задать несколько пороговых значений производительности.</p>
+<p><img alt="Set a performance threshold" src="https://dt-cdn.net/images/setperfthreshold1-520-e72b94612b.png" /></p>
+<p>Set a performance threshold</p>
+<p>Пороговые значения производительности можно удалять или редактировать в любое время.</p>
+<p>Пороговые значения производительности определяются как <strong>Total duration</strong> монитора или отдельных событий, которые, в свою очередь, могут включать несколько load или XHR actions. (Total duration недоступна как метрика для отдельных load или XHR actions при просмотре <a href="../../analysis-and-alerting/multidimensional-analysis-for-browser-monitors/" title="Узнайте, как анализировать точки данных браузерных мониторов.">Multidimensional analysis</a> или <a href="../../analysis-and-alerting/waterfall-graphs/" title="Как анализировать загрузку ресурсов страницы для браузерных мониторов.">графика водопада</a>.)</p>
+<p><img alt="Performance thresholds" src="https://dt-cdn.net/images/performancethresholds1-915-98e1ae390c.png" /></p>
+<p>Performance thresholds</p>
+<p>Dynatrace создаёт проблему производительности, если монитор в данном расположении нарушает <strong>любое</strong> из заданных пороговых значений в 3 из 5 последних выполнений, если только для монитора не открыто окно обслуживания. Нарушения должны происходить в одном расположении. Несколько расположений могут иметь такие нарушения и включаться в одну проблему.</p>
+<p>Проблема закрывается, если пороговые значения не нарушаются в 5 последних выполнениях в каждом из ранее затронутых расположений.</p>
+<p>Дополнительную информацию см. в разделе <a href="../../general-information/synthetic-calculations/#performance-problems" title="Узнайте о расчётах метрик Synthetic Monitoring.">Расчёты Synthetic</a>.</p>
+<h2 id="monitor-script">Monitor script<a class="headerlink" href="#monitor-script" title="Permanent link">&para;</a></h2>
+<p>Эта вкладка отображается для браузерных мониторов по одному URL и содержит код скрипта монитора в формате JSON. Скрипт можно редактировать напрямую в веб-интерфейсе Dynatrace или <strong>Download</strong> для редактирования в текстовом редакторе. Подробности см. в разделе <a href="../script-mode-for-browser-monitor-configuration/" title="Создавайте и редактируйте браузерные мониторы в формате JSON.">Script mode для настройки браузерных мониторов</a>.</p>
+<h2 id="advanced-setup">Advanced setup<a class="headerlink" href="#advanced-setup" title="Permanent link">&para;</a></h2>
+<p>На этой вкладке расположены элементы управления для:</p>
+<ul>
+<li><a href="#login-authentication">Аутентификации при входе</a> (только для браузерных мониторов по одному URL)</li>
+<li><a href="#certificate-authentication">Аутентификации по сертификату</a></li>
+<li><a href="#http-headers">HTTP-заголовков</a></li>
+<li><a href="#block-requests">Блокировки запросов</a></li>
+<li><a href="#ignore-status-codes">Игнорирования кодов состояния</a></li>
+<li><a href="#cookies">Куков</a></li>
+<li><a href="#bypass-csp">Обхода правил CSP</a></li>
+<li><a href="#performance-frames">Захвата метрик для страниц в фреймах</a></li>
+<li><a href="#deprecated-js">Использования устаревших JavaScript-фреймворков</a></li>
+</ul>
+<p>При создании браузерных мониторов по одному URL или clickpath-ов эти элементы управления перечислены как <strong>Additional options</strong> для настройки монитора.</p>
+<h3 id="enable-global-login-authentication">Enable global login authentication<a class="headerlink" href="#enable-global-login-authentication" title="Permanent link">&para;</a></h3>
+<p>Dynatrace упрощает автоматический вход на страницы, защищённые паролем. Это реализуется с помощью технологии Dynatrace LoginSense, обеспечивающей интеллектуальный и безопасный вход в веб-приложение при каждом выполнении браузерного монитора.</p>
+<h4 id="url">Браузерные мониторы по одному URL<a class="headerlink" href="#url" title="Permanent link">&para;</a></h4>
+<p>При первоначальной настройке монитора по одному URL можно выбрать <strong>Enable global login authentication</strong> и выбрать между методами <strong>HTTP authentication</strong> и <strong>Kerberos authentication</strong>. В режиме редактирования этот параметр доступен для мониторов по одному URL в разделе <strong>Advanced setup</strong>. Подробности см. в разделе <a href="../../general-information/synthetic-authentication/#http-single-page" title="Узнайте, как настроить методы аутентификации для мониторинга веб-приложений и API-эндпоинтов в Synthetic Monitoring.">Поддерживаемые методы аутентификации в Synthetic Monitoring</a>.</p>
+<h5 id="-">Аутентификация через веб-форму<a class="headerlink" href="#-" title="Permanent link">&para;</a></h5>
+<p>Устарело</p>
+<p>Аутентификация через веб-форму больше не поддерживается для браузерных мониторов по одному URL. Вместо этого создайте <a href="../record-a-browser-clickpath/" title="Узнайте, как записать браузерный clickpath для мониторинга доступности и производительности приложения.">браузерный clickpath</a> для сценариев, требующих веб-формы входа. Ранее настроенные мониторы по одному URL продолжат работу, однако рекомендуется перезаписать их как clickpath-ы, чтобы чётко разделить каждый шаг входа.</p>
+<p>Перезапись обязательна, если вы хотите изменить любую часть настроек монитора. Сохранить изменения в текущем формате больше нельзя.</p>
+<p>Начиная с Dynatrace версии 1.324+, мониторы по одному URL с формой входа будут автоматически обновлены путём добавления бесплатного шага JavaScript для поддержки процесса входа.</p>
+<h4 id="clickpath-">Записанные браузерные clickpath-ы<a class="headerlink" href="#clickpath-" title="Permanent link">&para;</a></h4>
+<p>При первоначальной настройке браузерного clickpath-а <strong>Enable global login authentication</strong> не поддерживается для записи.</p>
+<p>Для браузерных clickpath-ов аутентификация при входе не отображается в <strong>Advanced setup</strong> в режиме редактирования.</p>
+<ul>
+<li>Для <strong>аутентификации через веб-форму</strong> можно просто записать ввод учётных данных в веб-форму. Позже можно отредактировать clickpath для использования учётных данных из <a href="../../../../../manage/credential-vault/" title="Храните и управляйте учётными данными в хранилище.">хранилища учётных данных</a>.</li>
+<li>Для <strong>HTTP-based схем аутентификации</strong> нужно вручную ввести имя пользователя и пароль в собственном диалоге браузера при записи clickpath-а. Затем в <a href="../browser-clickpath-events/#navigate" title="Узнайте о типах событий при записи браузерного clickpath-а.">событии Navigate</a> записанного clickpath-а в режиме редактирования включите <strong>Enable HTTP authentication</strong>.</li>
+</ul>
+<p>Дополнительную информацию см. в разделе <a href="../../general-information/synthetic-authentication/" title="Узнайте, как настроить методы аутентификации для мониторинга веб-приложений и API-эндпоинтов в Synthetic Monitoring.">Поддерживаемые методы аутентификации в Synthetic Monitoring</a>.</p>
+<h4 id="_7">Использование учётных данных из хранилища<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h4>
+<p>Можно выбрать существующий credential (<strong>Select credentials</strong>). В списке отображаются только доступные вам учётные данные: публичные или только для владельца, созданные вами.</p>
+<p><img alt="Credentials in the credential vault" src="https://dt-cdn.net/images/screenshot-2025-08-18-175320-652-bb35409fa6.png" /></p>
+<p>Credentials in the credential vault</p>
+<p>Можно <strong>Create new credentials</strong>, введя <strong>Username</strong> и <strong>Password</strong>. Укажите имя для credential и нажмите <strong>Save to vault</strong>. Учётные данные, созданные таким образом, автоматически получают разрешения только для владельца.</p>
+<p>Для создания учётных данных в script или UI mode в браузерном мониторе таким образом необходимо иметь <a href="../../../../../manage/credential-vault/#access-cv" title="Храните и управляйте учётными данными в хранилище.">разрешение на доступ к хранилищу учётных данных</a>. Всегда можно захватить введённые учётные данные как часть записанного clickpath-а.</p>
+<p>Кто может редактировать монитор с учётными данными?</p>
+<ul>
+<li>
+<p>Если монитор связан с публичным credential, любой член команды может включать/выключать, удалять или редактировать монитор.</p>
+</li>
+<li>
+<p>Если браузерный монитор (clickpath или по одному URL) связан с ограниченным credential (только для владельца или для нескольких пользователей), любой пользователь может менять определённые поля, даже без доступа к используемому credential. Можно редактировать имя монитора, настройки эмуляции устройства, условия ожидания, частоту, расположения, оповещения о сбоях, пороговые значения производительности, метрики, связанные приложения, валидацию и игнорируемые HTTP-коды состояния. Также можно менять токен или credential типа user ID/password. Можно создать credential в настройках монитора в режиме редактирования. Нужно будет заменить все учётные данные в мониторе на доступные вам. Замена credential другого пользователя на доступный вам необратима.</p>
+</li>
+</ul>
+<p>Элементы управления, которые нельзя редактировать, такие как URL, включение/выключение HTTP-аутентификации, добавление или удаление событий clickpath-а, ввод данных в Keystroke и <strong>Advanced setup</strong> в настройках монитора, будут неактивными или отображать сообщение об ошибке при попытке сохранить изменения в script или UI mode.</p>
+<ul>
+<li>Можно включать/выключать или удалять синтетический монитор, защищённый owner-only credential другого пользователя.</li>
+</ul>
+<p>Подробнее о разрешениях на учётные данные в разделе <a href="../../../../../manage/credential-vault/" title="Храните и управляйте учётными данными в хранилище.">Хранилище учётных данных для синтетических мониторов</a>.</p>
+<h3 id="use-client-certificates">Use client certificates<a class="headerlink" href="#use-client-certificates" title="Permanent link">&para;</a></h3>
+<p>Dynatrace версии 1.272+</p>
+<p>ActiveGate версии 1.271+</p>
+<p>Можно настроить аутентификацию по сертификату для браузерных мониторов, выполняемых из любого <a href="../../general-information/public-synthetic-locations/" title="Узнайте обо всех доступных публичных расположениях Synthetic Monitoring.">публичного расположения</a> и <a href="../../private-synthetic-locations/create-a-private-synthetic-location/" title="Узнайте, как создать частное расположение для синтетического мониторинга.">частных расположений</a> с Linux-based ActiveGate (<a href="../../private-synthetic-locations/containerized-locations/" title="Разворачивайте и управляйте контейнеризированными, автомасштабируемыми частными расположениями Synthetic на Kubernetes/RedHat OpenShift.">контейнеризированными</a> и неконтейнеризированными). Этот элемент управления доступен в режиме редактирования для браузерных мониторов по одному URL и clickpath-ов.</p>
+<p>Перед записью clickpath-а на сайте, требующем аутентификации по сертификату, убедитесь, что нужный сертификат установлен в браузере. При переходе к сайту в окне записи собственный диалог браузера выберет правильный сертификат.</p>
+<p>Если хотя бы один сертификат в цепочке истёк, вся цепочка может быть отклонена, что приводит к сбою выполнений монитора. Результаты могут отличаться при использовании той же цепочки сертификатов с HTTP-монитором или при ручном выполнении команды curl на хосте.</p>
+<p>После записи clickpath-а нужно указать сертификат для выполнения браузерного монитора в <strong>Advanced setup</strong> в режиме редактирования.</p>
+<ol>
+<li>Откройте вкладку <strong>Advanced setup</strong> в настройках браузерного монитора.</li>
+<li>Включите <strong>Use client certificates</strong>.</li>
+<li>Нажмите <strong>Add client certificate</strong>.</li>
+<li>Введите <strong>Domain</strong>, для которого действителен сертификат.</li>
+<li>Выберите сертификат из списка сертификатных учётных данных. Или нажмите <strong>Create new credential</strong>, чтобы загрузить и использовать новый клиентский сертификат. Любой созданный сертификатный credential автоматически помечается как <a href="../../../../../manage/credential-vault/#work-with-credentials" title="Храните и управляйте учётными данными в хранилище.">только для владельца</a> и сохраняется в <a href="../../../../../manage/credential-vault/" title="Храните и управляйте учётными данными в хранилище.">хранилище учётных данных</a>.</li>
+</ol>
+<p>Можно загрузить файлы сертификатов в формате PFX, P12 или PEM.</p>
+<p><img alt="Certificate authentication setting for browser monitors" src="https://dt-cdn.net/images/bm-client-certificates-788-4347c846d7.png" /></p>
+<p>Certificate authentication setting for browser monitors
+6. Нажмите <strong>Add entry</strong>.
+7. Повторите эти шаги для добавления нескольких сертификатов. Каждый сертификат должен быть привязан к одному домену.
+8. <strong>Save changes</strong>.</p>
+<h3 id="enable-additional-http-headers">Enable additional HTTP headers<a class="headerlink" href="#enable-additional-http-headers" title="Permanent link">&para;</a></h3>
+<p>Монитор создаётся с минимальным набором заголовков, требуемых протоколом. Для включения пользовательских заголовков:</p>
+<ol>
+<li>Выберите <strong>Enable additional HTTP headers</strong>.</li>
+<li>Введите имя (<strong>Header</strong>) и значение (<strong>Value</strong>).</li>
+<li>Нажмите <strong>Add another header</strong> при необходимости.</li>
+</ol>
+<p>Можно задать несколько HTTP-заголовков. Они будут применяться ко всем запросам монитора.</p>
+<p>Чтобы задать заголовки только для конкретных запросов, установите флажок <strong>Only apply headers to requests matching a pattern</strong> и определите <strong>Pattern</strong>. После этого заголовок применяется только к запросам, соответствующим шаблону.</p>
+<p><img alt="HTTP headers" src="https://dt-cdn.net/images/enablehttpheaders-481-88d1794c8b.jpg" /></p>
+<p>HTTP headers</p>
+<h3 id="block-specific-requests">Block specific requests<a class="headerlink" href="#block-specific-requests" title="Permanent link">&para;</a></h3>
+<p>Можно заблокировать один или несколько запросов, указав полные URL или шаблоны. URL или строка regex не должны превышать 90 символов, регистр не учитывается.</p>
+<p>Блокировка запросов позволяет анализировать их влияние на производительность приложения и оптимизировать его.</p>
+<p>Включите <strong>Block specific requests</strong>. Затем можно указать полный URL, как показано ниже.</p>
+<p><img alt="Block requests" src="https://dt-cdn.net/images/blockrequests-571-973bf40e24.jpg" /></p>
+<p>Block requests</p>
+<p>Также можно определить шаблоны, например <code>http:*://*/*.png</code> или <code>https*://*/*.png</code> для блокировки всех запросов к PNG-изображениям.</p>
+<p>Совпадающие запросы блокируются в течение всего выполнения монитора и не зависят от событий.</p>
+<p>Если не удаётся заблокировать конкретные запросы, см. статью сообщества Dynatrace <a href="https://dt-url.net/w0i2xhk">Unable to block specific requests (owing to limitations on the length of regular expressions)</a>.</p>
+<h3 id="ignore-specific-status-codes">Ignore specific status codes<a class="headerlink" href="#ignore-specific-status-codes" title="Permanent link">&para;</a></h3>
+<p>Позволяет исключить HTTP-коды состояния 400–599 из причин сбоев доступности/ошибок при их встрече в запросе основного документа. Как правило, это базовая страница load action. Если этот параметр включён и базовая страница load action возвращает HTTP-ошибки 400–599, сбой доступности не создаётся.</p>
+<p>Можно указать точный код состояния, диапазон или маску класса состояния. Для разделения нескольких значений используйте запятые; для диапазона используйте дефис (<code>-</code>) без пробелов, например <code>404, 405-410, 5xx</code>. Можно применить правило только к запросам документов, соответствующих конкретному регулярному выражению (<strong>Only apply to document request matching this regex</strong>).</p>
+<ul>
+<li>Этот параметр не применяется к XHR-запросам или запросам документов в iframes; браузерные мониторы не завершаются с ошибкой при сбое XHR-запроса или запроса документа в iframe.</li>
+<li>Этот параметр применяется к будущим выполнениям, то есть выполнениям после включения параметра.</li>
+</ul>
+<h3 id="set-cookies">Set cookies<a class="headerlink" href="#set-cookies" title="Permanent link">&para;</a></h3>
+<p>Куки позволяют хранить информацию о состоянии браузера на стороне клиента, чтобы каждое выполнение монитора основывалось на одном состоянии и можно было точно отслеживать базовую производительность.</p>
+<p>Куки можно задавать в <strong>Additional options</strong> при создании браузерного монитора или в <strong>Advanced setup</strong> в режиме редактирования. Эти куки действительны в течение всего выполнения монитора. Для установки куков только для конкретной части clickpath-а используйте событие Cookie.</p>
+<p>В режиме редактирования включите <strong>Set cookies</strong>, затем укажите <strong>Name</strong> и <strong>Value</strong> кука. Каждый кук должен быть уникальным в списке.</p>
+<p>Следующие символы не допускаются в значении кука: <code>;,\"</code>. Укажите <strong>Domain</strong> кука и, при желании, <strong>Path</strong> к куку. <strong>Save</strong> кук.</p>
+<p>Нажмите <strong>Add cookie</strong> для определения дополнительных куков.</p>
+<p><img alt="Cookies in browser monitors" src="https://dt-cdn.net/images/setcookies-1362-458e753377.jpg" /></p>
+<p>Cookies in browser monitors</p>
+<h3 id="bypass-content-security-policy-csp-of-monitored-page">Bypass Content Security Policy (CSP) of monitored page<a class="headerlink" href="#bypass-content-security-policy-csp-of-monitored-page" title="Permanent link">&para;</a></h3>
+<p>Если настроена Content Security Policy, она, скорее всего, будет препятствовать отправке браузером данных мониторинга в Dynatrace Cluster. В качестве первого и предпочтительного метода обхода CSP отслеживаемых страниц в браузерном мониторе по одному URL или clickpath-е включите этот параметр.</p>
+<p>Если по какой-то причине использовать этот параметр невозможно, см. расширенные решения в статье сообщества Dynatrace <a href="https://dt-url.net/ycs2x56">Browser monitors: Issues with Content Security Policy</a>.</p>
+<h3 id="capture-performance-metrics-for-pages-loaded-in-frames">Capture performance metrics for pages loaded in frames<a class="headerlink" href="#capture-performance-metrics-for-pages-loaded-in-frames" title="Permanent link">&para;</a></h3>
+<p>Включите этот переключатель для захвата данных производительности страниц в iframes или framesets. Итоговый <a href="../../analysis-and-alerting/waterfall-graphs/" title="Как анализировать загрузку ресурсов страницы для браузерных мониторов.">график водопада</a> для <a href="../number-of-actions-consumed-by-browser-clickpaths/" title="Узнайте, сколько действий потребляет браузерный clickpath и чем они отличаются от событий.">действия</a> будет содержать результаты для каждого фрейма. Можно выбрать страницу для просмотра данных водопада.</p>
+<h3 id="enable-using-deprecated-javascript-frameworks">Enable using deprecated JavaScript frameworks<a class="headerlink" href="#enable-using-deprecated-javascript-frameworks" title="Permanent link">&para;</a></h3>
+<p>Начиная с Dynatrace версии 1.266+, поддержка некоторых JavaScript-фреймворков прекращена. Включите этот переключатель для использования этих устаревших фреймворков для непрерывности мониторов и скриптов.</p>
+<p>Устаревшие фреймворки включаются в разделе <strong>JavaScript framework support</strong> в <strong>Advanced setup</strong>.</p>
+<p><img alt="Enabled deprecated JS frameworks" src="https://dt-cdn.net/images/bm-js-frameworks-2489-252f0042fb.jpg" /></p>
+<p>Enabled deprecated JS frameworks</p>
+<p>Выберите <strong>Use default</strong> для использования значения этого параметра по умолчанию для окружения мониторинга Dynatrace. Обратите внимание: изменить значение по умолчанию можно только обратившись в службу поддержки.</p>
+<p><img alt="Enable support for deprecated JS frameworks" src="https://dt-cdn.net/images/bm-deprecated-js-toggle-740-950dc00038.png" /></p>
+<p>Enable support for deprecated JS frameworks</p>
+<p>В script mode параметр <code>"useIESupportedAgent": true</code> включает поддержку устаревших JavaScript-фреймворков; при значении <code>false</code> параметр не отображается в скрипте браузерного монитора, и любые настройки включения устаревших фреймворков (<code>javaScriptFrameworkSupport</code>) игнорируются.</p>
+<h2 id="metrics">Metrics<a class="headerlink" href="#metrics" title="Permanent link">&para;</a></h2>
+<p>Dynatrace Synthetic Monitoring позволяет сохранять настройки метрик (фильтры и факторы разбивки) как <a href="../../analysis-and-alerting/multidimensional-analysis-for-browser-monitors/#calculated-metrics" title="Узнайте, как анализировать точки данных браузерных мониторов.">вычисляемые метрики</a> и отслеживать их производительность в течение <a href="../../../../../manage/data-privacy-and-security/data-privacy/data-retention-periods/" title="Проверьте сроки хранения данных для различных типов данных.">длительного периода</a>. На этой вкладке отображаются все вычисляемые метрики для монитора и количество вычисляемых метрик для всего окружения мониторинга. Настройки на этой вкладке доступны только в режиме редактирования.</p>
+<p>Разверните метрику для просмотра деталей. Можно отключать/включать, удалять или создавать пользовательские графики и оповещения на основе вычисляемой метрики. Изменить имя, ключ или конфигурацию метрики после создания нельзя, однако можно выбрать, отображать ли факторы разбивки в пользовательских графиках на основе метрики.</p>
+<p><img alt="Metrics tab" src="https://dt-cdn.net/images/metricstab-1668-02913a6de4.png" /></p>
+<p>Metrics tab</p>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  К началу
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      © 2026 Dynatrace Docs | Yerkebulan Ardabayev
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/Yerkebulan-Ardabayev" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../../../../..", "features": ["navigation.indexes", "navigation.prune", "navigation.path", "navigation.tracking", "navigation.top", "search.suggest", "search.highlight", "search.share", "content.code.copy", "content.code.annotate", "content.tabs.link", "content.tooltips", "toc.follow"], "search": "../../../../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u0421\u043a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u043d\u043e \u0432 \u0431\u0443\u0444\u0435\u0440", "clipboard.copy": "\u041a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u0442\u044c \u0432 \u0431\u0443\u0444\u0435\u0440", "search.result.more.one": "\u0415\u0449\u0451 1 \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.more.other": "\u0415\u0449\u0451 # \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.none": "\u0421\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439 \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u043e", "search.result.one": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e 1 \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0435", "search.result.other": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439: #", "search.result.placeholder": "\u041d\u0430\u0447\u043d\u0438\u0442\u0435 \u043f\u0435\u0447\u0430\u0442\u0430\u0442\u044c \u0434\u043b\u044f \u043f\u043e\u0438\u0441\u043a\u0430", "search.result.term.missing": "\u041e\u0442\u0441\u0443\u0442\u0441\u0442\u0432\u0443\u0435\u0442", "select.version": "\u0412\u044b\u0431\u0435\u0440\u0438\u0442\u0435 \u0432\u0435\u0440\u0441\u0438\u044e"}, "version": null}</script>
+    
+    
+  
+      <script src="../../../../../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../../../../../../assets/javascripts/groq-chat.js?sha=17d46ba74"></script>
+      
+    
+  <script>
+    (function() {
+      // --- Keyboard shortcut Ctrl+K / Cmd+K for search ---
+      document.addEventListener('keydown', function(e) {
+        if ((e.ctrlKey || e.metaKey) && e.key === 'k') {
+          e.preventDefault();
+          var searchInput = document.querySelector('.md-search__input');
+          if (searchInput) {
+            searchInput.focus();
+            var searchToggle = document.querySelector('[data-md-toggle="search"]');
+            if (searchToggle && !searchToggle.checked) {
+              searchToggle.checked = true;
+              searchToggle.dispatchEvent(new Event('change'));
+            }
+          }
+        }
+        // --- "/" focuses search like GitHub / Algolia docs ---
+        if (e.key === '/' && !/^(input|textarea|select)$/i.test(e.target.tagName)) {
+          e.preventDefault();
+          var inp = document.querySelector('.md-search__input');
+          if (inp) {
+            inp.focus();
+            var t = document.querySelector('[data-md-toggle="search"]');
+            if (t && !t.checked) { t.checked = true; t.dispatchEvent(new Event('change')); }
+          }
+        }
+      });
+    })();
+  </script>
+
+  </body>
+</html>

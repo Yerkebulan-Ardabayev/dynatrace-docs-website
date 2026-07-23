@@ -1,0 +1,3389 @@
+
+<!doctype html>
+<html lang="ru" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Документация Dynatrace Managed с AI-помощником">
+      
+      
+        <meta name="author" content="Yerkebulan Ardabayev">
+      
+      
+        <link rel="canonical" href="https://yerkebulan-ardabayev.github.io/dynatrace-docs-website/managed-ru/observe/application-observability/services/service-detection/service-detection-v1/configure-service-failure-detection/">
+      
+      
+        <link rel="prev" href="../">
+      
+      
+        <link rel="next" href="../customize-service-detection/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../../../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>Настройка обнаружения сбоев сервиса - Dynatrace — Документация</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../../../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../../../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Inter";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../../../../assets/stylesheets/extra.v11.css?sha=17d46ba74">
+    
+    <script>__md_scope=new URL("../../../../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  <style>
+    /* DocFlow DT Logo Badge — injected via template override */
+    .md-header__button.md-logo {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .md-header__button.md-logo img,
+    .md-header__button.md-logo svg {
+      display: none !important;
+    }
+    .md-header__button.md-logo::before {
+      content: 'DT';
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 28px;
+      height: 28px;
+      border-radius: 6px;
+      background: linear-gradient(135deg, #00d4aa 0%, #7c3aed 100%);
+      color: white;
+      font-size: 11px;
+      font-weight: 700;
+      font-family: 'Inter', sans-serif;
+      letter-spacing: -0.02em;
+      flex-shrink: 0;
+    }
+
+    /* Search Ctrl+K badge — inside input field */
+    .md-search__form {
+      position: relative;
+    }
+    .md-search__form::after {
+      content: 'Ctrl+K';
+      display: none;
+      align-items: center;
+      padding: 0.15rem 0.4rem;
+      border-radius: 4px;
+      border: 1px solid var(--docflow-border);
+      background: var(--md-default-bg-color);
+      font-size: 10px;
+      font-family: 'JetBrains Mono', monospace;
+      color: var(--md-default-fg-color--lighter);
+      white-space: nowrap;
+      pointer-events: none;
+      position: absolute;
+      right: 0.5rem;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+    @media (min-width: 60em) {
+      .md-search__form::after {
+        display: flex;
+      }
+    }
+  </style>
+
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="custom">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#_1" class="md-skip">
+          Перейти к содержанию
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+  
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Верхний колонтитул">
+    <a href="../../../../../../.." title="Dynatrace — Документация" class="md-header__button md-logo" aria-label="Dynatrace — Документация" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M11 15H6l7-14v8h5l-7 14z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Dynatrace — Документация
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Настройка обнаружения сбоев сервиса
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Переключить на светлую тему"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Переключить на светлую тему" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Переключить на тёмную тему"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Переключить на тёмную тему" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Поиск" placeholder="Поиск" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Поиск">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Поделиться" aria-label="Поделиться" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Очистить" aria-label="Очистить" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Инициализация поиска
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/Yerkebulan-Ardabayev/dynatrace-docs-website" title="Перейти к репозиторию" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    dynatrace-docs-website
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Навигация" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../../../../.." title="Dynatrace — Документация" class="md-nav__button md-logo" aria-label="Dynatrace — Документация" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M11 15H6l7-14v8h5l-7 14z"/></svg>
+
+    </a>
+    Dynatrace — Документация
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/Yerkebulan-Ardabayev/dynatrace-docs-website" title="Перейти к репозиторию" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    dynatrace-docs-website
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Главная
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../../../../../ru/getting-started/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Начало работы
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../../../../installation/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Кластер Managed
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../../../../ingest-from/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Источники данных
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Наблюдаемость
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Наблюдаемость
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_1" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_5_1" id="__nav_5_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Наблюдаемость приложений
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_1_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Наблюдаемость приложений
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обзор
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../../distributed-traces/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Распределённые трассировки
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../../multidimensional-analysis/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Многомерный анализ
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../../profiling-and-optimization/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Профилирование и оптимизация
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_1_5" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_5_1_5" id="__nav_5_1_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Сервисы
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_5_1_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5_1_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Сервисы
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обзор
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../always-on-app-profiling/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Постоянное профилирование приложений
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../calculated-service-metric/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Вычисляемые метрики для сервисов
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../customize-api-definitions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Пользовательские определения API
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../request-attributes/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Атрибуты запросов
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_1_5_6" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_5_1_5_6" id="__nav_5_1_5_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обнаружение сервисов
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_5_1_5_6_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5_1_5_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Обнаружение сервисов
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обзор
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_1_5_6_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_5_1_5_6_2" id="__nav_5_1_5_6_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Service Detection v1
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="5" aria-labelledby="__nav_5_1_5_6_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5_1_5_6_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Service Detection v1
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обзор
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Настройка обнаружения сбоев сервиса
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../customize-service-detection/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Правила обнаружения сервисов
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../customize-service-naming/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Правила именования сервисов
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../monitor-3rd-party-services/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Мониторинг сторонних сервисов
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../service-monitoring-mute/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Отключение мониторинга запросов сервисов
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../service-monitoring-settings/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Настройки мониторинга сервисов
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../service-types/custom-services/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Типы сервисов
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../set-up-request-naming/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Настройка именования запросов
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../service-detection-v2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обнаружение сервисов v2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../../services-classic/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Сервисы (классические)
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../../../digital-experience/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Digital Experience
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../../../infrastructure-observability/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Наблюдаемость инфраструктуры
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../../../../dynatrace-intelligence/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Davis AI
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    
+  
+  
+  
+    <a href="../../../../../../analyze-explore-automate/dashboards-classic/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Анализ
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../../../../deliver/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Deliver
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    
+  
+  
+  
+    <a href="../../../../../../secure/application-security/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Безопасность приложений
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    
+  
+  
+  
+    <a href="../../../../../../manage/account-management/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Управление
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    
+  
+  
+  
+    <a href="../../../../../../platform/oneagent/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Платформа
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../../../../dynatrace-api/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../../../../whats-new/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Что нового
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../../../../offline-doc/how-do-i-enable-synthetic-monitors/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Офлайн-документация
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../../../../../ru/training/day1-introduction/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обучение
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../../ai/groq/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI Помощник
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Содержание">
+  
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+                
+
+
+
+  
+
+
+  <nav class="md-path" aria-label="Навигация" >
+    <ol class="md-path__list">
+      
+        
+  
+  
+    <li class="md-path__item">
+      <a href="../../../../../../.." class="md-path__link">
+        
+  <span class="md-ellipsis">
+    Главная
+  </span>
+
+      </a>
+    </li>
+  
+
+      
+      
+        
+  
+  
+    
+    
+      
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="../../../../" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    Наблюдаемость
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="../../../../" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    Наблюдаемость приложений
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="../../../" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    Сервисы
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="../../" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    Обнаружение сервисов
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="../" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    Service Detection v1
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ol>
+  </nav>
+
+              
+              <article class="md-content__inner md-typeset">
+                
+  
+                  
+
+
+
+<h1 id="_1">Настройка обнаружения сбоев сервиса<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
+<h1 id="_2">Настройка обнаружения сбоев сервиса<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h1>
+<ul>
+<li>How-to guide</li>
+<li>9-min read</li>
+<li>Updated on Mar 30, 2026</li>
+</ul>
+<p>Обнаружение сбоев Dynatrace автоматически выявляет подавляющее большинство условий ошибок в вашем окружении, включая лежащие в их основе <a href="../../../../../../dynatrace-intelligence/root-cause-analysis/concepts/" title="Ознакомьтесь с концепциями анализа первопричин.">первопричины</a>. Такой подход позволяет Dynatrace давать ответы при возникновении проблем или снижении производительности приложения.</p>
+<p>Когда Dynatrace обнаруживает ошибку сервиса, это не обязательно означает, что запрос следует помечать как неудачный. Если настройки обнаружения ошибок сервиса по умолчанию не соответствуют вашим потребностям, можно настроить параметры обнаружения сбоев, как описано на этой странице.</p>
+<p>По умолчанию Dynatrace обнаруживает:</p>
+<ul>
+<li>Программные исключения (Java, .NET, Node.js и PHP) как причину неудачных запросов, когда исключения приводят к прерыванию вызовов сервисов.</li>
+<li>Страницы ошибок, предоставляемые многими веб-контейнерами для обработанных исключений.</li>
+<li>Коды ошибок HTTP <code>500</code>–<code>599</code> для веб-запросов, интерпретируемых как ошибки на стороне сервера.</li>
+<li>Коды ошибок HTTP <code>400</code>–<code>599</code> для веб-запросов, интерпретируемых как ошибки на стороне клиента.</li>
+</ul>
+<p>Почему коды 5xx включены в клиентскую сторону?</p>
+<p>Обнаруживаемые коды ошибок зависят от перспективы:</p>
+<ul>
+<li>С точки зрения сервера, только код <code>5xx</code> является ошибкой, поскольку код <code>4xx</code> означает ошибку клиента.</li>
+<li>С точки зрения клиента, <code>5xx</code> всё равно означает ошибку, даже если это не вина клиента.</li>
+</ul>
+<h2 id="_3">Настройки обнаружения сбоев<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<p>Обнаружение сбоев можно настроить глобально или для отдельных сервисов.</p>
+<ul>
+<li>При настройке параметров обнаружения сбоев на уровне сервиса они переопределяют глобальные настройки.</li>
+<li>Правила обнаружения сбоев оцениваются сверху вниз; применяется первое совпавшее правило. Если несколько правил обнаружения сбоев имеют одинаковые условия, применяется только первое совпавшее правило.</li>
+</ul>
+<p>Следующие правила обнаружения сбоев не применяются к типам сервисов:</p>
+<ul>
+<li>Span service</li>
+<li>Unified service</li>
+</ul>
+<p>Подробнее об обнаружении сбоев для unified service см. в разделе <a href="../service-types/unified-service/" title="Определяйте сервисы на основе сигналов наблюдаемости, принятых через Trace ingest API.">Unified services</a>.</p>
+<p>Глобальные настройки</p>
+<p>Настройки на уровне сервиса</p>
+<p>Чтобы настроить обнаружение сбоев сервиса глобально</p>
+<ol>
+<li>Перейдите в <strong>Settings</strong> и разверните <strong>Server-side service monitoring</strong>.</li>
+<li>Чтобы добавить новое правило обнаружения сбоев, перейдите в <strong>Failure detection rules</strong> &gt; <strong>Add failure detection rule</strong>.</li>
+</ol>
+<p>Каждое правило может иметь несколько условий на основе определённых параметров обнаружения сбоев. Для правил обнаружения сбоев можно использовать существующие параметры или создавать новые.</p>
+<ul>
+<li>Чтобы добавить новый параметр обнаружения сбоев, перейдите в <strong>Failure detection parameters</strong> &gt; <strong>Add failure detection parameters</strong>. Подробнее см. в разделах <a href="#parameters">Параметры</a>, <a href="#http">HTTP-параметры</a> и <a href="#general">Общие параметры</a> ниже.</li>
+<li>Используйте переключатель <strong>Enabled</strong> для включения или отключения правила.</li>
+<li>Dynatrace пересчитывает соответствие глобальным правилам каждые 10 минут.</li>
+</ul>
+<p>Чтобы настроить обнаружение сбоев для конкретного сервиса</p>
+<ol>
+<li>Перейдите в <strong>Services</strong> и выберите сервис, для которого нужно адаптировать обнаружение сбоев.</li>
+<li>Выберите <strong>More</strong> (<strong>…</strong>) &gt; <strong>Settings</strong>.</li>
+<li>Выберите <strong>Failure detection</strong>, а затем <strong>HTTP parameters</strong> или <strong>General parameters</strong> в зависимости от параметров, которые нужно настроить.</li>
+<li>Включите <strong>Override global failure detection settings</strong> (см. <strong>1</strong> на рисунке).
+   Если применяется правило обнаружения сбоев, отсюда можно получить доступ как к правилу (см. <strong>3</strong> на рисунке), так и к параметрам (см. <strong>2</strong> на рисунке).</li>
+</ol>
+<h2 id="_4">Параметры<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<p>Параметры обнаружения сбоев включают HTTP-специфические параметры и общие параметры (связанные с исключениями, пользовательскими ошибками и обнаружением сбоев span). Хотя общие параметры всегда доступны как глобально, так и на уровне сервиса, HTTP-параметры обнаружения сбоев на уровне сервиса могут быть недоступны, поскольку они видны только для определённых сервисов, таких как веб-запросы и веб-сервисы. Их можно настроить после включения <strong>Override global failure detection settings</strong> (<strong>1</strong> на рисунке), даже если ни одно глобальное правило не соответствует сервису.</p>
+<p><img alt="Обнаружение сбоев — HTTP-параметры" src="https://dt-cdn.net/images/failure-detection-http-parameters-1791-26675df666.png" /></p>
+<p>Обнаружение сбоев — HTTP-параметры</p>
+<h3 id="http-">HTTP-параметры<a class="headerlink" href="#http-" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>HTTP response codes</strong></li>
+</ul>
+<p>Коды ответов <code>HTTP-4XX</code> обычно указывают на ошибки на стороне клиента, а не на стороне сервера. Можно указать, какие отсутствующие HTTP-коды ответов должны считаться ошибками на стороне сервера, а какие — на стороне клиента. Можно определить несколько диапазонов, разделённых запятыми (например, <code>400-402, 405-417</code>).</p>
+<p>В зависимости от приложения отсутствующие коды ответов могут указывать на вызов «fire and forget», который вообще не вернул ответ, на тайм-аут или на ситуацию ошибки. Dynatrace считает отсутствующие коды ответов особыми случаями и не сообщает о них по умолчанию. Это можно изменить, включив <strong>Treat missing HTTP response code as server side errors</strong> или <strong>Treat missing HTTP response code as client side errors</strong>.
+* <strong>HTTP 404 - broken link configuration</strong></p>
+<p>Когда веб-сервер не может найти определённую страницу, он возвращает код ответа <code>HTTP 404</code>. Обычно это указывает на проблему на вызывающей стороне. Если вызывающая сторона принадлежит тому же веб-сайту, это считается неработающей ссылкой.</p>
+<p>Поскольку большинство пользователей не считают неработающие ссылки проблемой на их сервере, Dynatrace классифицирует их как проблемы на стороне клиента, а не как сбои на стороне сервера автоматически. Однако можно включить переключатель <strong>Consider 404 HTTP response codes as failures</strong> для классификации неработающих ссылок как сбоев на стороне сервера. После этого можно связать дополнительные хосты на других доменах с приложением, добавив имя хоста в разделе <strong>Add other application domain</strong>.</p>
+<h3 id="_5">Общие параметры<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Success forcing exceptions</strong></li>
+</ul>
+<p>Эти исключения указывают на то, что вызов сервиса не должен считаться неудачным, например, потому что клиент прервал операцию. Хотя они являются техническими ошибками, в принципе они не считаются неудачными запросами, поскольку не вызваны неисправностями сервиса. Если запрос встречает такое исключение в корневом вызове сервиса, Dynatrace считает запрос успешным, независимо от кода ошибки HTTP или любой другой информации. Можно выбрать <strong>Add exception</strong> для добавления классов исключений, указывающих на такие ситуации.
+* <strong>Ignored exceptions</strong></p>
+<p>Бывают ситуации, когда код (или сторонний код, который не контролируется) возвращает исключения, указывающие на определённый ответ, а не на ошибку. Например, клиент Thrift для Cassandra возвращает ответ <code>NotFoundException</code>, когда строка не найдена. Это не ошибка, а просто код ответа.</p>
+<p>Можно выбрать <strong>Add exception</strong> для настройки Dynatrace таким образом, чтобы не считать такие исключения индикаторами неудачных запросов. Дополнительно можно определить строку, которая должна быть найдена в сообщении исключения для его игнорирования. Если код HTTP-ответа для того же вызова показывает ошибку, Dynatrace считает запрос неудачным. Чтобы считать запрос успешным независимо от кода ошибки HTTP или любой другой информации, см. <strong>Success forcing exceptions</strong>.
+* <strong>Custom handled exceptions</strong></p>
+<p>Бывают ситуации, когда код приложения корректно обрабатывает исключения способом, который Dynatrace не обнаруживает автоматически. В таких случаях Dynatrace не обнаруживает неудачные запросы и не уведомляет об ошибках.</p>
+<p>Такие ситуации можно исправить, указав класс исключения, который должен приводить к неудачному запросу. При необходимости можно определить строку, которая должна быть найдена в сообщении исключения. Если эта строка не найдена, исключение не приведёт к неудачному запросу.
+  Если Dynatrace обнаружит определённое исключение (и опционально определённое сообщение исключения) в запросе, он пометит соответствующий запрос к сервису как неудачный.
+  Обратите внимание, что это не работает, если класс исключения исключён из захвата в <a href="../../../../../infrastructure-observability/process-groups/configuration/pg-monitoring/#deep-monitoring" title="Способы настройки мониторинга группы процессов">настройках глубокого мониторинга процессов</a>.
+* <strong>Ignore all exceptions</strong></p>
+<p>Когда <strong>Ignore all exceptions</strong> включено, Dynatrace игнорирует <strong>Success forcing exceptions</strong>, <strong>Ignored Exceptions</strong> и <strong>Custom handled exceptions</strong> для сервисов, к которым применяются параметры — конкретного сервиса, если переключатель включён на уровне сервиса, или сервисов, соответствующих глобальному правилу.
+  Поскольку исключения всё равно отслеживаются, они появляются в распределённых трассировках, но оповещений о них не поступает и запросы не помечаются как неудачные.
+* <strong>Custom errors via request attributes</strong></p>
+<p>Пользовательские ситуации ошибок могут запускаться исключениями, но некоторые обнаруживаются только через возвращаемое значение или другие средства. Для поддержки таких случаев можно определить <a href="../../../request-attributes/" title="Поймите, что такое атрибуты запросов, и узнайте, как использовать их на всех уровнях всех представлений анализа сервисов.">атрибут запроса</a>, захватывающий необходимые данные. Затем можно определить пользовательское правило ошибки на основе атрибута запроса, которое проверяет его значение для определения того, завершился ли запрос неудачей.</p>
+<p>Пример: использование атрибутов запросов для обнаружения ошибок бизнес-логики</p>
+<p>Запросы могут завершаться с ошибкой по причинам, связанным с бизнес-логикой. Такие ситуации часто не обнаруживаются через исключения или HTTP-коды ответов. Тем не менее они указывают на проблемы и могут быть даже важнее ситуаций, обнаруженных через исключения и коды ответов. Например, может быть бизнес-функция в Java-коде, указывающая на ошибку через возвращаемое значение, или собственная функциональность обработки ошибок, которая при вызове указывает на функциональную бизнес-ошибку.</p>
+<p>Такие ситуации можно захватывать через <a href="../../../request-attributes/" title="Поймите, что такое атрибуты запросов, и узнайте, как использовать их на всех уровнях всех представлений анализа сервисов.">атрибуты запросов</a>, которые можно использовать как индикаторы ситуаций ошибок.</p>
+<p>Чтобы создать пользовательское правило ошибки</p>
+<ol>
+<li>Перейдите в <strong>Services</strong>.</li>
+<li>Выберите сервис, для которого нужно адаптировать обнаружение сбоев.</li>
+<li>Выберите <strong>More</strong> (<strong>…</strong>) &gt; <strong>Settings</strong>.</li>
+<li>Выберите <strong>Failure detection</strong> &gt; <strong>General parameters</strong>.</li>
+<li>В разделе <strong>Custom error rules</strong> выберите <strong>Add custom error rule</strong>.</li>
+<li>Выберите атрибут запроса из отображаемого списка.</li>
+<li>Определите условие для правила, например <strong>contains</strong> и значение.</li>
+</ol>
+<p>В примере ниже значение <code>-1</code> в атрибуте <code>Amount of recommendations</code> указывает на ошибку. Согласно этому правилу, если Dynatrace обнаружит такую ошибку, он пометит соответствующий запрос к сервису как неудачный и объяснит, что совпадение с правилом является причиной сбоя.</p>
+<p><img alt="Пользовательское правило ошибки" src="https://dt-cdn.net/images/custom-error-rule-2908-978f284947.png" /></p>
+<p>Пользовательское правило ошибки
+* <strong>Span failure</strong></p>
+<p>Обнаружение сбоев span специфично для OpenTelemetry. По умолчанию Dynatrace обнаруживает сбои span, но в некоторых конкретных случаях может потребоваться изменить эти настройки. Чтобы игнорировать обнаружение сбоев span, включите <strong>Ignore span failure detection</strong>.</p>
+<h2 id="_6">Сведения о схеме<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
+<p>На уровне сервиса можно визуализировать <strong>Schema ID</strong>, выбрав <strong>More</strong> (<strong>…</strong>) &gt; <strong>Schema info</strong> в правом верхнем углу страницы <strong>HTTP parameters</strong> или <strong>General parameters</strong>.</p>
+<h2 id="settings-api">Справочник по Settings API<a class="headerlink" href="#settings-api" title="Permanent link">&para;</a></h2>
+<p>Также можно настроить параметры обнаружения сбоев через <a href="../../../../../../dynatrace-api/environment-api/settings/" title="Узнайте, что предлагает Dynatrace Settings API.">Settings 2.0 API</a>. Используйте следующие два идентификатора схемы:</p>
+<table>
+<thead>
+<tr>
+<th>ID схемы</th>
+<th>Описание</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>builtin:failure-detection.environment.parameters</code></td>
+<td>Определяет наборы параметров обнаружения сбоев (HTTP-коды ответов, неработающие ссылки, правила исключений).</td>
+</tr>
+<tr>
+<td><code>builtin:failure-detection.environment.rules</code></td>
+<td>Определяет правила, назначающие наборы параметров сервисам на основе условий.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_7">Аутентификация<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
+<p>Необходим токен доступа со следующими областями:</p>
+<table>
+<thead>
+<tr>
+<th>Область</th>
+<th>Операции</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>settings.read</code></td>
+<td>Список и просмотр объектов настроек.</td>
+</tr>
+<tr>
+<td><code>settings.write</code></td>
+<td>Создание, обновление и удаление объектов настроек.</td>
+</tr>
+</tbody>
+</table>
+<p>Об получении и использовании токена доступа см. в разделе <a href="../../../../../../dynatrace-api/basics/dynatrace-api-authentication/" title="Узнайте, как пройти аутентификацию для использования Dynatrace API.">Dynatrace API — токены и аутентификация</a>.</p>
+<h3 id="_8">Наборы параметров обнаружения сбоев<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h3>
+<p>Settings 2.0 API поддерживает четыре типа операций для наборов параметров обнаружения сбоев: <code>GET</code>, <code>POST</code>, <code>PUT</code> и <code>DELETE</code>.</p>
+<p>Получение списка всех наборов параметров</p>
+<p>Для получения полного списка всех определённых наборов параметров используйте следующий запрос.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>GET /api/v2/settings/objects?schemaIds=builtin:failure-detection.environment.parameters&amp;scopes=environment
+</code></pre></div>
+<p>Просмотр набора параметров</p>
+<p>Для чтения содержимого одного набора параметров используйте запрос <code>GET</code> с его уникальным <code>objectId</code>.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>GET /api/v2/settings/objects/{objectId}
+</code></pre></div>
+<p>Идентификатор должен быть UUID по RFC 4122, назначенным данному объекту настроек набора параметров.</p>
+<p>Создание набора параметров</p>
+<p>Можно добавить новый набор параметров с помощью запроса <code>POST</code> с телом, указывающим необходимые значения.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>POST /api/v2/settings/objects
+</code></pre></div>
+<p>Пример тела запроса:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>[
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>{
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>
+<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>
+<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>&quot;schemaId&quot;: &quot;builtin:failure-detection.environment.parameters&quot;,
+<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a>
+<a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a>
+<a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a>
+<a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a>&quot;scope&quot;: &quot;environment&quot;,
+<a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a>
+<a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a>
+<a id="__codelineno-3-16" name="__codelineno-3-16" href="#__codelineno-3-16"></a>
+<a id="__codelineno-3-17" name="__codelineno-3-17" href="#__codelineno-3-17"></a>&quot;value&quot;: {
+<a id="__codelineno-3-18" name="__codelineno-3-18" href="#__codelineno-3-18"></a>
+<a id="__codelineno-3-19" name="__codelineno-3-19" href="#__codelineno-3-19"></a>
+<a id="__codelineno-3-20" name="__codelineno-3-20" href="#__codelineno-3-20"></a>
+<a id="__codelineno-3-21" name="__codelineno-3-21" href="#__codelineno-3-21"></a>&quot;name&quot;: &quot;Ignore known database errors&quot;,
+<a id="__codelineno-3-22" name="__codelineno-3-22" href="#__codelineno-3-22"></a>
+<a id="__codelineno-3-23" name="__codelineno-3-23" href="#__codelineno-3-23"></a>
+<a id="__codelineno-3-24" name="__codelineno-3-24" href="#__codelineno-3-24"></a>
+<a id="__codelineno-3-25" name="__codelineno-3-25" href="#__codelineno-3-25"></a>&quot;httpResponseCodes&quot;: {
+<a id="__codelineno-3-26" name="__codelineno-3-26" href="#__codelineno-3-26"></a>
+<a id="__codelineno-3-27" name="__codelineno-3-27" href="#__codelineno-3-27"></a>
+<a id="__codelineno-3-28" name="__codelineno-3-28" href="#__codelineno-3-28"></a>
+<a id="__codelineno-3-29" name="__codelineno-3-29" href="#__codelineno-3-29"></a>&quot;serverSideErrors&quot;: &quot;500-599&quot;,
+<a id="__codelineno-3-30" name="__codelineno-3-30" href="#__codelineno-3-30"></a>
+<a id="__codelineno-3-31" name="__codelineno-3-31" href="#__codelineno-3-31"></a>
+<a id="__codelineno-3-32" name="__codelineno-3-32" href="#__codelineno-3-32"></a>
+<a id="__codelineno-3-33" name="__codelineno-3-33" href="#__codelineno-3-33"></a>&quot;failOnMissingResponseCodeServerSide&quot;: false,
+<a id="__codelineno-3-34" name="__codelineno-3-34" href="#__codelineno-3-34"></a>
+<a id="__codelineno-3-35" name="__codelineno-3-35" href="#__codelineno-3-35"></a>
+<a id="__codelineno-3-36" name="__codelineno-3-36" href="#__codelineno-3-36"></a>
+<a id="__codelineno-3-37" name="__codelineno-3-37" href="#__codelineno-3-37"></a>&quot;clientSideErrors&quot;: &quot;401-402,405-499&quot;,
+<a id="__codelineno-3-38" name="__codelineno-3-38" href="#__codelineno-3-38"></a>
+<a id="__codelineno-3-39" name="__codelineno-3-39" href="#__codelineno-3-39"></a>
+<a id="__codelineno-3-40" name="__codelineno-3-40" href="#__codelineno-3-40"></a>
+<a id="__codelineno-3-41" name="__codelineno-3-41" href="#__codelineno-3-41"></a>&quot;failOnMissingResponseCodeClientSide&quot;: false
+<a id="__codelineno-3-42" name="__codelineno-3-42" href="#__codelineno-3-42"></a>
+<a id="__codelineno-3-43" name="__codelineno-3-43" href="#__codelineno-3-43"></a>
+<a id="__codelineno-3-44" name="__codelineno-3-44" href="#__codelineno-3-44"></a>
+<a id="__codelineno-3-45" name="__codelineno-3-45" href="#__codelineno-3-45"></a>},
+<a id="__codelineno-3-46" name="__codelineno-3-46" href="#__codelineno-3-46"></a>
+<a id="__codelineno-3-47" name="__codelineno-3-47" href="#__codelineno-3-47"></a>
+<a id="__codelineno-3-48" name="__codelineno-3-48" href="#__codelineno-3-48"></a>
+<a id="__codelineno-3-49" name="__codelineno-3-49" href="#__codelineno-3-49"></a>&quot;brokenLinks&quot;: {
+<a id="__codelineno-3-50" name="__codelineno-3-50" href="#__codelineno-3-50"></a>
+<a id="__codelineno-3-51" name="__codelineno-3-51" href="#__codelineno-3-51"></a>
+<a id="__codelineno-3-52" name="__codelineno-3-52" href="#__codelineno-3-52"></a>
+<a id="__codelineno-3-53" name="__codelineno-3-53" href="#__codelineno-3-53"></a>&quot;http404NotFoundFailures&quot;: false
+<a id="__codelineno-3-54" name="__codelineno-3-54" href="#__codelineno-3-54"></a>
+<a id="__codelineno-3-55" name="__codelineno-3-55" href="#__codelineno-3-55"></a>
+<a id="__codelineno-3-56" name="__codelineno-3-56" href="#__codelineno-3-56"></a>
+<a id="__codelineno-3-57" name="__codelineno-3-57" href="#__codelineno-3-57"></a>},
+<a id="__codelineno-3-58" name="__codelineno-3-58" href="#__codelineno-3-58"></a>
+<a id="__codelineno-3-59" name="__codelineno-3-59" href="#__codelineno-3-59"></a>
+<a id="__codelineno-3-60" name="__codelineno-3-60" href="#__codelineno-3-60"></a>
+<a id="__codelineno-3-61" name="__codelineno-3-61" href="#__codelineno-3-61"></a>&quot;exceptionRules&quot;: {
+<a id="__codelineno-3-62" name="__codelineno-3-62" href="#__codelineno-3-62"></a>
+<a id="__codelineno-3-63" name="__codelineno-3-63" href="#__codelineno-3-63"></a>
+<a id="__codelineno-3-64" name="__codelineno-3-64" href="#__codelineno-3-64"></a>
+<a id="__codelineno-3-65" name="__codelineno-3-65" href="#__codelineno-3-65"></a>&quot;ignoreAllExceptions&quot;: false,
+<a id="__codelineno-3-66" name="__codelineno-3-66" href="#__codelineno-3-66"></a>
+<a id="__codelineno-3-67" name="__codelineno-3-67" href="#__codelineno-3-67"></a>
+<a id="__codelineno-3-68" name="__codelineno-3-68" href="#__codelineno-3-68"></a>
+<a id="__codelineno-3-69" name="__codelineno-3-69" href="#__codelineno-3-69"></a>&quot;successForcingExceptions&quot;: [],
+<a id="__codelineno-3-70" name="__codelineno-3-70" href="#__codelineno-3-70"></a>
+<a id="__codelineno-3-71" name="__codelineno-3-71" href="#__codelineno-3-71"></a>
+<a id="__codelineno-3-72" name="__codelineno-3-72" href="#__codelineno-3-72"></a>
+<a id="__codelineno-3-73" name="__codelineno-3-73" href="#__codelineno-3-73"></a>&quot;ignoredExceptions&quot;: [
+<a id="__codelineno-3-74" name="__codelineno-3-74" href="#__codelineno-3-74"></a>
+<a id="__codelineno-3-75" name="__codelineno-3-75" href="#__codelineno-3-75"></a>
+<a id="__codelineno-3-76" name="__codelineno-3-76" href="#__codelineno-3-76"></a>
+<a id="__codelineno-3-77" name="__codelineno-3-77" href="#__codelineno-3-77"></a>{
+<a id="__codelineno-3-78" name="__codelineno-3-78" href="#__codelineno-3-78"></a>
+<a id="__codelineno-3-79" name="__codelineno-3-79" href="#__codelineno-3-79"></a>
+<a id="__codelineno-3-80" name="__codelineno-3-80" href="#__codelineno-3-80"></a>
+<a id="__codelineno-3-81" name="__codelineno-3-81" href="#__codelineno-3-81"></a>&quot;classPattern&quot;: &quot;psycopg2.errors.UniqueViolation&quot;,
+<a id="__codelineno-3-82" name="__codelineno-3-82" href="#__codelineno-3-82"></a>
+<a id="__codelineno-3-83" name="__codelineno-3-83" href="#__codelineno-3-83"></a>
+<a id="__codelineno-3-84" name="__codelineno-3-84" href="#__codelineno-3-84"></a>
+<a id="__codelineno-3-85" name="__codelineno-3-85" href="#__codelineno-3-85"></a>&quot;messagePattern&quot;: &quot;duplicate key value violates unique constraint \&quot;run_once_at_unique_identifier_and_timestamp\&quot;&quot;
+<a id="__codelineno-3-86" name="__codelineno-3-86" href="#__codelineno-3-86"></a>
+<a id="__codelineno-3-87" name="__codelineno-3-87" href="#__codelineno-3-87"></a>
+<a id="__codelineno-3-88" name="__codelineno-3-88" href="#__codelineno-3-88"></a>
+<a id="__codelineno-3-89" name="__codelineno-3-89" href="#__codelineno-3-89"></a>}
+<a id="__codelineno-3-90" name="__codelineno-3-90" href="#__codelineno-3-90"></a>
+<a id="__codelineno-3-91" name="__codelineno-3-91" href="#__codelineno-3-91"></a>
+<a id="__codelineno-3-92" name="__codelineno-3-92" href="#__codelineno-3-92"></a>
+<a id="__codelineno-3-93" name="__codelineno-3-93" href="#__codelineno-3-93"></a>],
+<a id="__codelineno-3-94" name="__codelineno-3-94" href="#__codelineno-3-94"></a>
+<a id="__codelineno-3-95" name="__codelineno-3-95" href="#__codelineno-3-95"></a>
+<a id="__codelineno-3-96" name="__codelineno-3-96" href="#__codelineno-3-96"></a>
+<a id="__codelineno-3-97" name="__codelineno-3-97" href="#__codelineno-3-97"></a>&quot;customHandledExceptions&quot;: [],
+<a id="__codelineno-3-98" name="__codelineno-3-98" href="#__codelineno-3-98"></a>
+<a id="__codelineno-3-99" name="__codelineno-3-99" href="#__codelineno-3-99"></a>
+<a id="__codelineno-3-100" name="__codelineno-3-100" href="#__codelineno-3-100"></a>
+<a id="__codelineno-3-101" name="__codelineno-3-101" href="#__codelineno-3-101"></a>&quot;customErrorRules&quot;: [],
+<a id="__codelineno-3-102" name="__codelineno-3-102" href="#__codelineno-3-102"></a>
+<a id="__codelineno-3-103" name="__codelineno-3-103" href="#__codelineno-3-103"></a>
+<a id="__codelineno-3-104" name="__codelineno-3-104" href="#__codelineno-3-104"></a>
+<a id="__codelineno-3-105" name="__codelineno-3-105" href="#__codelineno-3-105"></a>&quot;ignoreSpanFailureDetection&quot;: false
+<a id="__codelineno-3-106" name="__codelineno-3-106" href="#__codelineno-3-106"></a>
+<a id="__codelineno-3-107" name="__codelineno-3-107" href="#__codelineno-3-107"></a>
+<a id="__codelineno-3-108" name="__codelineno-3-108" href="#__codelineno-3-108"></a>
+<a id="__codelineno-3-109" name="__codelineno-3-109" href="#__codelineno-3-109"></a>}
+<a id="__codelineno-3-110" name="__codelineno-3-110" href="#__codelineno-3-110"></a>
+<a id="__codelineno-3-111" name="__codelineno-3-111" href="#__codelineno-3-111"></a>
+<a id="__codelineno-3-112" name="__codelineno-3-112" href="#__codelineno-3-112"></a>
+<a id="__codelineno-3-113" name="__codelineno-3-113" href="#__codelineno-3-113"></a>}
+<a id="__codelineno-3-114" name="__codelineno-3-114" href="#__codelineno-3-114"></a>
+<a id="__codelineno-3-115" name="__codelineno-3-115" href="#__codelineno-3-115"></a>
+<a id="__codelineno-3-116" name="__codelineno-3-116" href="#__codelineno-3-116"></a>
+<a id="__codelineno-3-117" name="__codelineno-3-117" href="#__codelineno-3-117"></a>}
+<a id="__codelineno-3-118" name="__codelineno-3-118" href="#__codelineno-3-118"></a>
+<a id="__codelineno-3-119" name="__codelineno-3-119" href="#__codelineno-3-119"></a>
+<a id="__codelineno-3-120" name="__codelineno-3-120" href="#__codelineno-3-120"></a>
+<a id="__codelineno-3-121" name="__codelineno-3-121" href="#__codelineno-3-121"></a>]
+</code></pre></div>
+<p>Для пользовательских правил ошибок каждая запись включает <a href="../../../request-attributes/" title="Поймите, что такое атрибуты запросов, и узнайте, как использовать их на всех уровнях всех представлений анализа сервисов.">атрибут запроса</a> и <code>condition</code>:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>{
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>&quot;requestAttribute&quot;: &quot;&lt;request-attribute-object-id&gt;&quot;,
+<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>
+<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>
+<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a>
+<a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a>&quot;condition&quot;: {
+<a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a>
+<a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a>
+<a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a>
+<a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a>&quot;compareOperationType&quot;: &quot;STRING_EQUALS&quot;,
+<a id="__codelineno-4-14" name="__codelineno-4-14" href="#__codelineno-4-14"></a>
+<a id="__codelineno-4-15" name="__codelineno-4-15" href="#__codelineno-4-15"></a>
+<a id="__codelineno-4-16" name="__codelineno-4-16" href="#__codelineno-4-16"></a>
+<a id="__codelineno-4-17" name="__codelineno-4-17" href="#__codelineno-4-17"></a>&quot;textValue&quot;: &quot;error&quot;,
+<a id="__codelineno-4-18" name="__codelineno-4-18" href="#__codelineno-4-18"></a>
+<a id="__codelineno-4-19" name="__codelineno-4-19" href="#__codelineno-4-19"></a>
+<a id="__codelineno-4-20" name="__codelineno-4-20" href="#__codelineno-4-20"></a>
+<a id="__codelineno-4-21" name="__codelineno-4-21" href="#__codelineno-4-21"></a>&quot;caseSensitive&quot;: false
+<a id="__codelineno-4-22" name="__codelineno-4-22" href="#__codelineno-4-22"></a>
+<a id="__codelineno-4-23" name="__codelineno-4-23" href="#__codelineno-4-23"></a>
+<a id="__codelineno-4-24" name="__codelineno-4-24" href="#__codelineno-4-24"></a>
+<a id="__codelineno-4-25" name="__codelineno-4-25" href="#__codelineno-4-25"></a>}
+<a id="__codelineno-4-26" name="__codelineno-4-26" href="#__codelineno-4-26"></a>
+<a id="__codelineno-4-27" name="__codelineno-4-27" href="#__codelineno-4-27"></a>
+<a id="__codelineno-4-28" name="__codelineno-4-28" href="#__codelineno-4-28"></a>
+<a id="__codelineno-4-29" name="__codelineno-4-29" href="#__codelineno-4-29"></a>}
+</code></pre></div>
+<p>Тело ответа возвращает новый <code>objectId</code> и может выглядеть следующим образом:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>[
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>{
+<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>
+<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a>
+<a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a>
+<a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a>&quot;code&quot;: 200,
+<a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a>
+<a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a>
+<a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a>
+<a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a>&quot;objectId&quot;: &quot;vu9U3hXa3q0AAAABADBidWlsdGluOmZhaWx1cmUtZGV0ZWN0aW9uLmVudmlyb25tZW50LnBhcmFtZXRlcnMABnRlbmFudAAGdGVuYW50ACRlNWEwYjAyYi0zMDNlLTM2ZTEtOTMyNS0wMjM1YWNhMDc5MmO-71TeFdrerQ&quot;
+<a id="__codelineno-5-14" name="__codelineno-5-14" href="#__codelineno-5-14"></a>
+<a id="__codelineno-5-15" name="__codelineno-5-15" href="#__codelineno-5-15"></a>
+<a id="__codelineno-5-16" name="__codelineno-5-16" href="#__codelineno-5-16"></a>
+<a id="__codelineno-5-17" name="__codelineno-5-17" href="#__codelineno-5-17"></a>}
+<a id="__codelineno-5-18" name="__codelineno-5-18" href="#__codelineno-5-18"></a>
+<a id="__codelineno-5-19" name="__codelineno-5-19" href="#__codelineno-5-19"></a>
+<a id="__codelineno-5-20" name="__codelineno-5-20" href="#__codelineno-5-20"></a>
+<a id="__codelineno-5-21" name="__codelineno-5-21" href="#__codelineno-5-21"></a>]
+</code></pre></div>
+<p>Затем этот ID можно использовать напрямую для создания или обновления правила обнаружения сбоев.</p>
+<p>Обновление набора параметров</p>
+<p>Для изменения существующего набора параметров используйте тело запроса, аналогичное показанному в разделе <strong>Create</strong>. В URL укажите действительный ID объекта настроек.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>PUT /api/v2/settings/objects/{objectId}
+</code></pre></div>
+<p>Используйте ту же структуру <code>value</code>, что показана в разделе <strong>Create</strong>.</p>
+<p>Удаление набора параметров</p>
+<p>Для удаления существующего набора параметров сначала получите его <code>objectId</code>, затем выполните запрос <code>DELETE</code>, указывающий этот ID.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>DELETE /api/v2/settings/objects/{objectId}
+</code></pre></div>
+<p>Дополнительные сведения об опциональных и обязательных параметрах, а также подробную информацию о типах см. в <a href="../../../../../../dynatrace-api/environment-api/settings/schemas/builtin-failure-detection-environment-parameters/" title="Просмотрите таблицу схемы настроек builtin:failure-detection.environment.parameters вашего окружения мониторинга через Dynatrace API.">таблице схемы параметров обнаружения сбоев Settings API</a>.</p>
+<h3 id="_9">Правила обнаружения сбоев<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h3>
+<p>Правила обнаружения сбоев оцениваются сверху вниз; применяется первое совпавшее правило.</p>
+<p>Получение списка всех правил</p>
+<p>Для получения всех текущих определённых правил обнаружения сбоев используйте следующий запрос.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>GET /api/v2/settings/objects?schemaIds=builtin:failure-detection.environment.rules&amp;scopes=environment
+</code></pre></div>
+<p>Просмотр правила</p>
+<p>Используйте запрос <code>GET</code> с <code>objectId</code> правила как параметром пути для чтения одного правила обнаружения сбоев.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>GET /api/v2/settings/objects/{objectId}
+</code></pre></div>
+<p>Создание правила</p>
+<p>Можно добавить новое правило обнаружения сбоев с помощью запроса <code>POST</code> с телом, указывающим необходимые атрибуты.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>POST /api/v2/settings/objects
+</code></pre></div>
+<p>Поле <code>parameterId</code> должно содержать ID объекта существующего набора параметров. По умолчанию новые правила добавляются в конец списка правил. Чтобы вставить правило на определённую позицию, установите <code>insertAfter</code> в ID объекта предшествующего правила или в пустую строку для размещения в начале списка правил.</p>
+<p>Пример тела запроса:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>[
+<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>
+<a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a>
+<a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a>
+<a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a>{
+<a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a>
+<a id="__codelineno-11-7" name="__codelineno-11-7" href="#__codelineno-11-7"></a>
+<a id="__codelineno-11-8" name="__codelineno-11-8" href="#__codelineno-11-8"></a>
+<a id="__codelineno-11-9" name="__codelineno-11-9" href="#__codelineno-11-9"></a>&quot;schemaId&quot;: &quot;builtin:failure-detection.environment.rules&quot;,
+<a id="__codelineno-11-10" name="__codelineno-11-10" href="#__codelineno-11-10"></a>
+<a id="__codelineno-11-11" name="__codelineno-11-11" href="#__codelineno-11-11"></a>
+<a id="__codelineno-11-12" name="__codelineno-11-12" href="#__codelineno-11-12"></a>
+<a id="__codelineno-11-13" name="__codelineno-11-13" href="#__codelineno-11-13"></a>&quot;scope&quot;: &quot;environment&quot;,
+<a id="__codelineno-11-14" name="__codelineno-11-14" href="#__codelineno-11-14"></a>
+<a id="__codelineno-11-15" name="__codelineno-11-15" href="#__codelineno-11-15"></a>
+<a id="__codelineno-11-16" name="__codelineno-11-16" href="#__codelineno-11-16"></a>
+<a id="__codelineno-11-17" name="__codelineno-11-17" href="#__codelineno-11-17"></a>&quot;value&quot;: {
+<a id="__codelineno-11-18" name="__codelineno-11-18" href="#__codelineno-11-18"></a>
+<a id="__codelineno-11-19" name="__codelineno-11-19" href="#__codelineno-11-19"></a>
+<a id="__codelineno-11-20" name="__codelineno-11-20" href="#__codelineno-11-20"></a>
+<a id="__codelineno-11-21" name="__codelineno-11-21" href="#__codelineno-11-21"></a>&quot;name&quot;: &quot;Ignore known database errors for automation-server&quot;,
+<a id="__codelineno-11-22" name="__codelineno-11-22" href="#__codelineno-11-22"></a>
+<a id="__codelineno-11-23" name="__codelineno-11-23" href="#__codelineno-11-23"></a>
+<a id="__codelineno-11-24" name="__codelineno-11-24" href="#__codelineno-11-24"></a>
+<a id="__codelineno-11-25" name="__codelineno-11-25" href="#__codelineno-11-25"></a>&quot;enabled&quot;: true,
+<a id="__codelineno-11-26" name="__codelineno-11-26" href="#__codelineno-11-26"></a>
+<a id="__codelineno-11-27" name="__codelineno-11-27" href="#__codelineno-11-27"></a>
+<a id="__codelineno-11-28" name="__codelineno-11-28" href="#__codelineno-11-28"></a>
+<a id="__codelineno-11-29" name="__codelineno-11-29" href="#__codelineno-11-29"></a>&quot;parameterId&quot;: &quot;&lt;object-id-of-parameter-set&gt;&quot;,
+<a id="__codelineno-11-30" name="__codelineno-11-30" href="#__codelineno-11-30"></a>
+<a id="__codelineno-11-31" name="__codelineno-11-31" href="#__codelineno-11-31"></a>
+<a id="__codelineno-11-32" name="__codelineno-11-32" href="#__codelineno-11-32"></a>
+<a id="__codelineno-11-33" name="__codelineno-11-33" href="#__codelineno-11-33"></a>&quot;conditions&quot;: [
+<a id="__codelineno-11-34" name="__codelineno-11-34" href="#__codelineno-11-34"></a>
+<a id="__codelineno-11-35" name="__codelineno-11-35" href="#__codelineno-11-35"></a>
+<a id="__codelineno-11-36" name="__codelineno-11-36" href="#__codelineno-11-36"></a>
+<a id="__codelineno-11-37" name="__codelineno-11-37" href="#__codelineno-11-37"></a>{
+<a id="__codelineno-11-38" name="__codelineno-11-38" href="#__codelineno-11-38"></a>
+<a id="__codelineno-11-39" name="__codelineno-11-39" href="#__codelineno-11-39"></a>
+<a id="__codelineno-11-40" name="__codelineno-11-40" href="#__codelineno-11-40"></a>
+<a id="__codelineno-11-41" name="__codelineno-11-41" href="#__codelineno-11-41"></a>&quot;attribute&quot;: &quot;SERVICE_NAME&quot;,
+<a id="__codelineno-11-42" name="__codelineno-11-42" href="#__codelineno-11-42"></a>
+<a id="__codelineno-11-43" name="__codelineno-11-43" href="#__codelineno-11-43"></a>
+<a id="__codelineno-11-44" name="__codelineno-11-44" href="#__codelineno-11-44"></a>
+<a id="__codelineno-11-45" name="__codelineno-11-45" href="#__codelineno-11-45"></a>&quot;predicate&quot;: {
+<a id="__codelineno-11-46" name="__codelineno-11-46" href="#__codelineno-11-46"></a>
+<a id="__codelineno-11-47" name="__codelineno-11-47" href="#__codelineno-11-47"></a>
+<a id="__codelineno-11-48" name="__codelineno-11-48" href="#__codelineno-11-48"></a>
+<a id="__codelineno-11-49" name="__codelineno-11-49" href="#__codelineno-11-49"></a>&quot;predicateType&quot;: &quot;STRING_EQUALS&quot;,
+<a id="__codelineno-11-50" name="__codelineno-11-50" href="#__codelineno-11-50"></a>
+<a id="__codelineno-11-51" name="__codelineno-11-51" href="#__codelineno-11-51"></a>
+<a id="__codelineno-11-52" name="__codelineno-11-52" href="#__codelineno-11-52"></a>
+<a id="__codelineno-11-53" name="__codelineno-11-53" href="#__codelineno-11-53"></a>&quot;textValues&quot;: [
+<a id="__codelineno-11-54" name="__codelineno-11-54" href="#__codelineno-11-54"></a>
+<a id="__codelineno-11-55" name="__codelineno-11-55" href="#__codelineno-11-55"></a>
+<a id="__codelineno-11-56" name="__codelineno-11-56" href="#__codelineno-11-56"></a>
+<a id="__codelineno-11-57" name="__codelineno-11-57" href="#__codelineno-11-57"></a>&quot;automation-server&quot;
+<a id="__codelineno-11-58" name="__codelineno-11-58" href="#__codelineno-11-58"></a>
+<a id="__codelineno-11-59" name="__codelineno-11-59" href="#__codelineno-11-59"></a>
+<a id="__codelineno-11-60" name="__codelineno-11-60" href="#__codelineno-11-60"></a>
+<a id="__codelineno-11-61" name="__codelineno-11-61" href="#__codelineno-11-61"></a>],
+<a id="__codelineno-11-62" name="__codelineno-11-62" href="#__codelineno-11-62"></a>
+<a id="__codelineno-11-63" name="__codelineno-11-63" href="#__codelineno-11-63"></a>
+<a id="__codelineno-11-64" name="__codelineno-11-64" href="#__codelineno-11-64"></a>
+<a id="__codelineno-11-65" name="__codelineno-11-65" href="#__codelineno-11-65"></a>&quot;caseSensitive&quot;: true
+<a id="__codelineno-11-66" name="__codelineno-11-66" href="#__codelineno-11-66"></a>
+<a id="__codelineno-11-67" name="__codelineno-11-67" href="#__codelineno-11-67"></a>
+<a id="__codelineno-11-68" name="__codelineno-11-68" href="#__codelineno-11-68"></a>
+<a id="__codelineno-11-69" name="__codelineno-11-69" href="#__codelineno-11-69"></a>}
+<a id="__codelineno-11-70" name="__codelineno-11-70" href="#__codelineno-11-70"></a>
+<a id="__codelineno-11-71" name="__codelineno-11-71" href="#__codelineno-11-71"></a>
+<a id="__codelineno-11-72" name="__codelineno-11-72" href="#__codelineno-11-72"></a>
+<a id="__codelineno-11-73" name="__codelineno-11-73" href="#__codelineno-11-73"></a>}
+<a id="__codelineno-11-74" name="__codelineno-11-74" href="#__codelineno-11-74"></a>
+<a id="__codelineno-11-75" name="__codelineno-11-75" href="#__codelineno-11-75"></a>
+<a id="__codelineno-11-76" name="__codelineno-11-76" href="#__codelineno-11-76"></a>
+<a id="__codelineno-11-77" name="__codelineno-11-77" href="#__codelineno-11-77"></a>]
+<a id="__codelineno-11-78" name="__codelineno-11-78" href="#__codelineno-11-78"></a>
+<a id="__codelineno-11-79" name="__codelineno-11-79" href="#__codelineno-11-79"></a>
+<a id="__codelineno-11-80" name="__codelineno-11-80" href="#__codelineno-11-80"></a>
+<a id="__codelineno-11-81" name="__codelineno-11-81" href="#__codelineno-11-81"></a>}
+<a id="__codelineno-11-82" name="__codelineno-11-82" href="#__codelineno-11-82"></a>
+<a id="__codelineno-11-83" name="__codelineno-11-83" href="#__codelineno-11-83"></a>
+<a id="__codelineno-11-84" name="__codelineno-11-84" href="#__codelineno-11-84"></a>
+<a id="__codelineno-11-85" name="__codelineno-11-85" href="#__codelineno-11-85"></a>}
+<a id="__codelineno-11-86" name="__codelineno-11-86" href="#__codelineno-11-86"></a>
+<a id="__codelineno-11-87" name="__codelineno-11-87" href="#__codelineno-11-87"></a>
+<a id="__codelineno-11-88" name="__codelineno-11-88" href="#__codelineno-11-88"></a>
+<a id="__codelineno-11-89" name="__codelineno-11-89" href="#__codelineno-11-89"></a>]
+</code></pre></div>
+<p>Обновление правила</p>
+<p>Для изменения существующего правила используйте ту же структуру тела запроса, что показана в разделе <strong>Create</strong>, и укажите ID объекта настроек в URL.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>PUT /api/v2/settings/objects/{objectId}
+</code></pre></div>
+<p>Используйте ту же структуру <code>value</code>, что показана в разделе <strong>Create</strong>.</p>
+<p>Удаление правила</p>
+<p>Для удаления существующего правила сначала получите его <code>objectId</code>, затем используйте запрос <code>DELETE</code>, указывающий этот ID.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>DELETE /api/v2/settings/objects/{objectId}
+</code></pre></div>
+<p>Изменение порядка правил</p>
+<p>Для изменения порядка оценки правил обнаружения сбоев обновите каждое правило, установив поле <code>insertAfter</code> или <code>insertBefore</code> в ID объекта правила, которое должно предшествовать или следовать за ним. Чтобы разместить правило в начале списка, оставьте <code>insertAfter</code> пустым. Чтобы переместить его в конец списка, добавьте пустой атрибут <code>insertBefore</code>.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>[
+<a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a>
+<a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a>
+<a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a>
+<a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a>{
+<a id="__codelineno-14-6" name="__codelineno-14-6" href="#__codelineno-14-6"></a>
+<a id="__codelineno-14-7" name="__codelineno-14-7" href="#__codelineno-14-7"></a>
+<a id="__codelineno-14-8" name="__codelineno-14-8" href="#__codelineno-14-8"></a>
+<a id="__codelineno-14-9" name="__codelineno-14-9" href="#__codelineno-14-9"></a>&quot;schemaId&quot;: &quot;builtin:failure-detection.environment.rules&quot;,
+<a id="__codelineno-14-10" name="__codelineno-14-10" href="#__codelineno-14-10"></a>
+<a id="__codelineno-14-11" name="__codelineno-14-11" href="#__codelineno-14-11"></a>
+<a id="__codelineno-14-12" name="__codelineno-14-12" href="#__codelineno-14-12"></a>
+<a id="__codelineno-14-13" name="__codelineno-14-13" href="#__codelineno-14-13"></a>&quot;scope&quot;: &quot;environment&quot;,
+<a id="__codelineno-14-14" name="__codelineno-14-14" href="#__codelineno-14-14"></a>
+<a id="__codelineno-14-15" name="__codelineno-14-15" href="#__codelineno-14-15"></a>
+<a id="__codelineno-14-16" name="__codelineno-14-16" href="#__codelineno-14-16"></a>
+<a id="__codelineno-14-17" name="__codelineno-14-17" href="#__codelineno-14-17"></a>&quot;value&quot;: {
+<a id="__codelineno-14-18" name="__codelineno-14-18" href="#__codelineno-14-18"></a>
+<a id="__codelineno-14-19" name="__codelineno-14-19" href="#__codelineno-14-19"></a>
+<a id="__codelineno-14-20" name="__codelineno-14-20" href="#__codelineno-14-20"></a>
+<a id="__codelineno-14-21" name="__codelineno-14-21" href="#__codelineno-14-21"></a>&quot;name&quot;: &quot;New top rule&quot;,
+<a id="__codelineno-14-22" name="__codelineno-14-22" href="#__codelineno-14-22"></a>
+<a id="__codelineno-14-23" name="__codelineno-14-23" href="#__codelineno-14-23"></a>
+<a id="__codelineno-14-24" name="__codelineno-14-24" href="#__codelineno-14-24"></a>
+<a id="__codelineno-14-25" name="__codelineno-14-25" href="#__codelineno-14-25"></a>&quot;...&quot;: &quot;...&quot;,
+<a id="__codelineno-14-26" name="__codelineno-14-26" href="#__codelineno-14-26"></a>
+<a id="__codelineno-14-27" name="__codelineno-14-27" href="#__codelineno-14-27"></a>
+<a id="__codelineno-14-28" name="__codelineno-14-28" href="#__codelineno-14-28"></a>
+<a id="__codelineno-14-29" name="__codelineno-14-29" href="#__codelineno-14-29"></a>&quot;parameterId&quot;: &quot;&lt;object-id-of-a-parameter-set&gt;&quot;,
+<a id="__codelineno-14-30" name="__codelineno-14-30" href="#__codelineno-14-30"></a>
+<a id="__codelineno-14-31" name="__codelineno-14-31" href="#__codelineno-14-31"></a>
+<a id="__codelineno-14-32" name="__codelineno-14-32" href="#__codelineno-14-32"></a>
+<a id="__codelineno-14-33" name="__codelineno-14-33" href="#__codelineno-14-33"></a>&quot;...&quot;: &quot;...&quot;
+<a id="__codelineno-14-34" name="__codelineno-14-34" href="#__codelineno-14-34"></a>
+<a id="__codelineno-14-35" name="__codelineno-14-35" href="#__codelineno-14-35"></a>
+<a id="__codelineno-14-36" name="__codelineno-14-36" href="#__codelineno-14-36"></a>
+<a id="__codelineno-14-37" name="__codelineno-14-37" href="#__codelineno-14-37"></a>},
+<a id="__codelineno-14-38" name="__codelineno-14-38" href="#__codelineno-14-38"></a>
+<a id="__codelineno-14-39" name="__codelineno-14-39" href="#__codelineno-14-39"></a>
+<a id="__codelineno-14-40" name="__codelineno-14-40" href="#__codelineno-14-40"></a>
+<a id="__codelineno-14-41" name="__codelineno-14-41" href="#__codelineno-14-41"></a>&quot;insertAfter&quot;: &quot;&quot;
+<a id="__codelineno-14-42" name="__codelineno-14-42" href="#__codelineno-14-42"></a>
+<a id="__codelineno-14-43" name="__codelineno-14-43" href="#__codelineno-14-43"></a>
+<a id="__codelineno-14-44" name="__codelineno-14-44" href="#__codelineno-14-44"></a>
+<a id="__codelineno-14-45" name="__codelineno-14-45" href="#__codelineno-14-45"></a>}
+<a id="__codelineno-14-46" name="__codelineno-14-46" href="#__codelineno-14-46"></a>
+<a id="__codelineno-14-47" name="__codelineno-14-47" href="#__codelineno-14-47"></a>
+<a id="__codelineno-14-48" name="__codelineno-14-48" href="#__codelineno-14-48"></a>
+<a id="__codelineno-14-49" name="__codelineno-14-49" href="#__codelineno-14-49"></a>]
+</code></pre></div>
+<p>Дополнительные сведения о допустимых типах и доступных параметрах, включая поддерживаемые атрибуты условий, см. в <a href="../../../../../../dynatrace-api/environment-api/settings/schemas/builtin-failure-detection-environment-rules/" title="Просмотрите таблицу схемы настроек builtin:failure-detection.environment.rules вашего окружения мониторинга через Dynatrace API.">таблице схемы правил обнаружения сбоев Settings API</a>.</p>
+<h3 id="_10">Атрибуты условий<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h3>
+<p>Каждое правило обнаружения сбоев содержит список условий. Для применения правила должны быть выполнены все условия. Каждое условие проверяет атрибут сервиса или группы процессов с помощью предиката.</p>
+<table>
+<thead>
+<tr>
+<th>Атрибут</th>
+<th>Описание</th>
+<th>Типы предикатов</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>SERVICE_NAME</code></td>
+<td>Соответствует обнаруженному имени сервиса.</td>
+<td><code>STRING_EQUALS</code>, <code>STARTS_WITH</code>, <code>ENDS_WITH</code>, <code>CONTAINS</code></td>
+</tr>
+<tr>
+<td><code>SERVICE_TYPE</code></td>
+<td>Соответствует типу сервиса.</td>
+<td><code>SERVICE_TYPE_EQUALS</code></td>
+</tr>
+<tr>
+<td><code>PG_NAME</code></td>
+<td>Соответствует имени группы процессов.</td>
+<td><code>STRING_EQUALS</code>, <code>STARTS_WITH</code>, <code>ENDS_WITH</code>, <code>CONTAINS</code></td>
+</tr>
+<tr>
+<td><code>PG_TAG</code></td>
+<td>Соответствует тегам группы процессов.</td>
+<td><code>TAG_EQUALS</code>, <code>TAG_KEY_EQUALS</code></td>
+</tr>
+<tr>
+<td><code>SERVICE_MANAGEMENT_ZONE</code></td>
+<td>Соответствует зонам управления сервисом.</td>
+<td><code>MANAGEMENT_ZONES_CONTAINS_ALL</code></td>
+</tr>
+<tr>
+<td><code>SERVICE_TAG</code></td>
+<td>Соответствует тегам сервиса.</td>
+<td><code>TAG_EQUALS</code>, <code>TAG_KEY_EQUALS</code></td>
+</tr>
+</tbody>
+</table>
+<p>Для окружений с полным опытом работы с последней версией Dynatrace атрибуты условий <code>SERVICE_MANAGEMENT_ZONE</code> и <code>SERVICE_TAG</code> больше недоступны, а правила обнаружения сбоев, использующие их, игнорируются во время выполнения.</p>
+<p>Кроме того, атрибут условия <code>PG_TAG</code> больше не оценивается. Вместо этого это поле можно использовать для сопоставления на основе основных тегов, определённых в развёртывании приложения.
+Входные данные, начинающиеся с <code>primary_tags.</code>, сопоставляются с основными тегами входных данных.</p>
+<h2 id="_11">Связанные темы<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="../../../request-attributes/" title="Поймите, что такое атрибуты запросов, и узнайте, как использовать их на всех уровнях всех представлений анализа сервисов.">Атрибуты запросов</a></li>
+<li><a href="../../../../../../dynatrace-intelligence/root-cause-analysis/concepts/" title="Ознакомьтесь с концепциями анализа первопричин.">Концепции анализа первопричин</a></li>
+<li><a href="../../../../../../dynatrace-api/configuration-api/service-api/failure-detection/" title="Узнайте, что предлагает Dynatrace API конфигурации обнаружения сбоев.">API обнаружения сбоев</a></li>
+<li><a href="../../../../../../dynatrace-api/environment-api/settings/schemas/builtin-failure-detection-environment-parameters/" title="Просмотрите таблицу схемы настроек builtin:failure-detection.environment.parameters вашего окружения мониторинга через Dynatrace API.">Settings API — таблица схемы параметров обнаружения сбоев</a></li>
+<li><a href="../../../../../../dynatrace-api/environment-api/settings/schemas/builtin-failure-detection-environment-rules/" title="Просмотрите таблицу схемы настроек builtin:failure-detection.environment.rules вашего окружения мониторинга через Dynatrace API.">Settings API — таблица схемы правил обнаружения сбоев</a></li>
+</ul>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  К началу
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      © 2026 Dynatrace Docs | Yerkebulan Ardabayev
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/Yerkebulan-Ardabayev" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../../../../../..", "features": ["navigation.indexes", "navigation.prune", "navigation.path", "navigation.tracking", "navigation.top", "search.suggest", "search.highlight", "search.share", "content.code.copy", "content.code.annotate", "content.tabs.link", "content.tooltips", "toc.follow"], "search": "../../../../../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u0421\u043a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u043d\u043e \u0432 \u0431\u0443\u0444\u0435\u0440", "clipboard.copy": "\u041a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u0442\u044c \u0432 \u0431\u0443\u0444\u0435\u0440", "search.result.more.one": "\u0415\u0449\u0451 1 \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.more.other": "\u0415\u0449\u0451 # \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.none": "\u0421\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439 \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u043e", "search.result.one": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e 1 \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0435", "search.result.other": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439: #", "search.result.placeholder": "\u041d\u0430\u0447\u043d\u0438\u0442\u0435 \u043f\u0435\u0447\u0430\u0442\u0430\u0442\u044c \u0434\u043b\u044f \u043f\u043e\u0438\u0441\u043a\u0430", "search.result.term.missing": "\u041e\u0442\u0441\u0443\u0442\u0441\u0442\u0432\u0443\u0435\u0442", "select.version": "\u0412\u044b\u0431\u0435\u0440\u0438\u0442\u0435 \u0432\u0435\u0440\u0441\u0438\u044e"}, "version": null}</script>
+    
+    
+  
+      <script src="../../../../../../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../../../../../../../assets/javascripts/groq-chat.js?sha=17d46ba74"></script>
+      
+    
+  <script>
+    (function() {
+      // --- Keyboard shortcut Ctrl+K / Cmd+K for search ---
+      document.addEventListener('keydown', function(e) {
+        if ((e.ctrlKey || e.metaKey) && e.key === 'k') {
+          e.preventDefault();
+          var searchInput = document.querySelector('.md-search__input');
+          if (searchInput) {
+            searchInput.focus();
+            var searchToggle = document.querySelector('[data-md-toggle="search"]');
+            if (searchToggle && !searchToggle.checked) {
+              searchToggle.checked = true;
+              searchToggle.dispatchEvent(new Event('change'));
+            }
+          }
+        }
+        // --- "/" focuses search like GitHub / Algolia docs ---
+        if (e.key === '/' && !/^(input|textarea|select)$/i.test(e.target.tagName)) {
+          e.preventDefault();
+          var inp = document.querySelector('.md-search__input');
+          if (inp) {
+            inp.focus();
+            var t = document.querySelector('[data-md-toggle="search"]');
+            if (t && !t.checked) { t.checked = true; t.dispatchEvent(new Event('change')); }
+          }
+        }
+      });
+    })();
+  </script>
+
+  </body>
+</html>

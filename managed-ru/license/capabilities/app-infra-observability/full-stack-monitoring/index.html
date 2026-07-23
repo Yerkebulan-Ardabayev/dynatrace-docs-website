@@ -1,0 +1,3831 @@
+
+<!doctype html>
+<html lang="ru" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Документация Dynatrace Managed с AI-помощником">
+      
+      
+        <meta name="author" content="Yerkebulan Ardabayev">
+      
+      
+        <link rel="canonical" href="https://yerkebulan-ardabayev.github.io/dynatrace-docs-website/managed-ru/license/capabilities/app-infra-observability/full-stack-monitoring/">
+      
+      
+        <link rel="prev" href="../foundation-and-discovery/">
+      
+      
+        <link rel="next" href="../infrastructure-monitoring/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>Как понять и управлять расходом Full-Stack Monitoring (DPS) - Dynatrace — Документация</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Inter";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../../assets/stylesheets/extra.v11.css?sha=17d46ba74">
+    
+    <script>__md_scope=new URL("../../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  <style>
+    /* DocFlow DT Logo Badge — injected via template override */
+    .md-header__button.md-logo {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .md-header__button.md-logo img,
+    .md-header__button.md-logo svg {
+      display: none !important;
+    }
+    .md-header__button.md-logo::before {
+      content: 'DT';
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 28px;
+      height: 28px;
+      border-radius: 6px;
+      background: linear-gradient(135deg, #00d4aa 0%, #7c3aed 100%);
+      color: white;
+      font-size: 11px;
+      font-weight: 700;
+      font-family: 'Inter', sans-serif;
+      letter-spacing: -0.02em;
+      flex-shrink: 0;
+    }
+
+    /* Search Ctrl+K badge — inside input field */
+    .md-search__form {
+      position: relative;
+    }
+    .md-search__form::after {
+      content: 'Ctrl+K';
+      display: none;
+      align-items: center;
+      padding: 0.15rem 0.4rem;
+      border-radius: 4px;
+      border: 1px solid var(--docflow-border);
+      background: var(--md-default-bg-color);
+      font-size: 10px;
+      font-family: 'JetBrains Mono', monospace;
+      color: var(--md-default-fg-color--lighter);
+      white-space: nowrap;
+      pointer-events: none;
+      position: absolute;
+      right: 0.5rem;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+    @media (min-width: 60em) {
+      .md-search__form::after {
+        display: flex;
+      }
+    }
+  </style>
+
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="custom">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#full-stack-monitoring-dps" class="md-skip">
+          Перейти к содержанию
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+  
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Верхний колонтитул">
+    <a href="../../../../.." title="Dynatrace — Документация" class="md-header__button md-logo" aria-label="Dynatrace — Документация" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M11 15H6l7-14v8h5l-7 14z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Dynatrace — Документация
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Как понять и управлять расходом Full-Stack Monitoring (DPS)
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Переключить на светлую тему"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Переключить на светлую тему" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Переключить на тёмную тему"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Переключить на тёмную тему" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Поиск" placeholder="Поиск" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Поиск">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Поделиться" aria-label="Поделиться" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Очистить" aria-label="Очистить" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Инициализация поиска
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/Yerkebulan-Ardabayev/dynatrace-docs-website" title="Перейти к репозиторию" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    dynatrace-docs-website
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Навигация" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../../.." title="Dynatrace — Документация" class="md-nav__button md-logo" aria-label="Dynatrace — Документация" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M11 15H6l7-14v8h5l-7 14z"/></svg>
+
+    </a>
+    Dynatrace — Документация
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/Yerkebulan-Ardabayev/dynatrace-docs-website" title="Перейти к репозиторию" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    dynatrace-docs-website
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Главная
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../../../ru/getting-started/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Начало работы
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Кластер Managed
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Кластер Managed
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../installation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Установка
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../configuration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Настройка
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../operations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обслуживание
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../update/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обновление
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../security/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Безопасность
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../backup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Резервное копирование
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../cluster/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Памятка по кластеру
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../managed-cluster/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обзор кластера
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    
+  
+  
+  
+    
+  
+  
+  
+    <a href="../../../../managed-cluster/api-references/cluster-api/cluster-api-v2/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Справочники API
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+  
+
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../../managed-cluster/basics/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Основы
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../../managed-cluster/configuration/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Конфигурация
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../../managed-cluster/high-availability/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Высокая доступность
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../../managed-cluster/installation/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Установка
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../../managed-cluster/operation/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Эксплуатация
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../../managed-cluster/self-monitoring/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Самомониторинг
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_16" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3_16" id="__nav_3_16_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    License Dynatrace
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_16_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3_16">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    License Dynatrace
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обзор
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../billing-reports/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Отчёт о выставлении счетов
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../budget-alerts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Настройка оповещений о бюджете
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_16_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3_16_4" id="__nav_3_16_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Сведения о тарификации возможностей
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_16_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3_16_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Сведения о тарификации возможностей
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обзор
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_16_4_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3_16_4_2" id="__nav_3_16_4_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обзор Application & Infrastructure Observability (DPS)
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_3_16_4_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3_16_4_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Обзор Application & Infrastructure Observability (DPS)
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обзор
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../foundation-and-discovery/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Понимание и управление потреблением Foundation & Discovery (DPS)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Как понять и управлять расходом Full-Stack Monitoring (DPS)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../infrastructure-monitoring/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Понимание и управление потреблением Infrastructure Monitoring (DPS)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mainframe/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Как понять и управлять потреблением Mainframe Monitoring (DPS)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../application-security/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обзор Application Security (DPS)
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../digital-experience-monitoring/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обзор Digital Experience Monitoring (DEM) (DPS)
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../platform-extensions/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обзор расширений платформы (DPS)
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../real-user-synthetic-monitoring/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обзор Real User и Synthetic Monitoring (DPS)
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../classic-licensing/application-and-infrastructure-monitoring/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    classic-licensing
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../concepts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ключевые понятия
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../consumption-insights/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Детальная аналитика потребления
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cost-monitors/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Настройка оповещений о расходах
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cost-overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обзор затрат DPS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../dps-for-hybrid/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DPS для гибридной среды
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../dps-permissions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Разрешения DPS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../faq/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Часто задаваемые вопросы
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../monitoring-consumption-classic/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Классическое лицензирование Dynatrace
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../subscription-and-license/subscription-and-license-dps/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Подписка и лицензия
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../subscription-history/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Просмотр предыдущих периодов DPS через историю подписок
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../../upgrade/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Переход с Managed на развёртывание SaaS
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../../ingest-from/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Источники данных
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    
+  
+  
+  
+    <a href="../../../../observe/application-observability/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Наблюдаемость
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../../dynatrace-intelligence/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Davis AI
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    
+  
+  
+  
+    <a href="../../../../analyze-explore-automate/dashboards-classic/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Анализ
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../../deliver/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Deliver
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    
+  
+  
+  
+    <a href="../../../../secure/application-security/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Безопасность приложений
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    
+  
+  
+  
+    <a href="../../../../manage/account-management/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Управление
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    
+  
+  
+  
+    <a href="../../../../platform/oneagent/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Платформа
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../../dynatrace-api/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../../whats-new/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Что нового
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../../offline-doc/how-do-i-enable-synthetic-monitors/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Офлайн-документация
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../../../ru/training/day1-introduction/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обучение
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../ai/groq/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI Помощник
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Содержание">
+  
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+                
+
+
+
+  
+
+
+  <nav class="md-path" aria-label="Навигация" >
+    <ol class="md-path__list">
+      
+        
+  
+  
+    <li class="md-path__item">
+      <a href="../../../../.." class="md-path__link">
+        
+  <span class="md-ellipsis">
+    Главная
+  </span>
+
+      </a>
+    </li>
+  
+
+      
+      
+        
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="../../../../installation/" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    Кластер Managed
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="../../../" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    License Dynatrace
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="../../" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    Сведения о тарификации возможностей
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="../" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    Обзор Application & Infrastructure Observability (DPS)
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ol>
+  </nav>
+
+              
+              <article class="md-content__inner md-typeset">
+                
+  
+                  
+
+
+
+<h1 id="full-stack-monitoring-dps">Как понять и управлять расходом Full-Stack Monitoring (DPS)<a class="headerlink" href="#full-stack-monitoring-dps" title="Permanent link">&para;</a></h1>
+<h1 id="full-stack-monitoring-dps_1">Как понять и управлять расходом Full-Stack Monitoring (DPS)<a class="headerlink" href="#full-stack-monitoring-dps_1" title="Permanent link">&para;</a></h1>
+<ul>
+<li>Пояснение</li>
+<li>5 мин на чтение</li>
+<li>Обновлено 09 июня 2026 г.</li>
+</ul>
+<p>Full-Stack Monitoring для хостов и контейнеров предоставляет комплексный мониторинг производительности приложений.
+Мониторинг производительности приложений включает: распределённую трассировку, видимость на уровне кода, профилирование CPU, профилирование памяти и глубокий мониторинг процессов для хостов и контейнеров.</p>
+<ul>
+<li>
+<p>Full-Stack Monitoring на базе хостов:</p>
+</li>
+<li>
+<p>Расход рассчитывается на основе объёма памяти хоста, см. <a href="#gib-hour">ГиБ-часы</a>.</p>
+</li>
+<li>
+<p>Дополнительно предоставляет все возможности <a href="../infrastructure-monitoring/" title="Узнайте, как рассчитывается расход Infrastructure Monitoring, как отслеживать и анализировать использование и как оптимизировать затраты.">Infrastructure Monitoring</a>.</p>
+</li>
+<li>
+<p>Dynatrace Extensions можно включить на хостах с Full-Stack Monitoring на базе хостов, и это может расходовать <a href="#full-stack-metrics">точки данных пользовательских метрик Full-Stack</a> и <a href="../../../../upgrade/unavailable-in-managed/" title="Ваш выбор недоступен в Dynatrace Managed.">Log Analytics</a>.</p>
+</li>
+<li>Full-Stack Monitoring на базе контейнеров, только для приложений: расход рассчитывается на основе объёма памяти контейнера, см. <a href="#app-only-gib-hour">Расчёт ГиБ-часов для мониторинга контейнеров только для приложений</a><a href="#fn-1-1-def">1</a>.</li>
+</ul>
+<p>Подробнее о поддерживаемых платформах см. <a href="../../../../ingest-from/technology-support/oneagent-platform-and-capability-support-matrix/" title="Узнайте, какие возможности поддерживаются OneAgent на различных операционных системах и платформах.">Матрица поддержки платформ и возможностей OneAgent</a>.</p>
+<p>1</p>
+<p>Full-Stack Monitoring на базе контейнеров, только для приложений, не включает Infrastructure Monitoring или Kubernetes Platform Monitoring.</p>
+<h2 id="-">ГиБ-часы<a class="headerlink" href="#-" title="Permanent link">&para;</a></h2>
+<p>Dynatrace использует ГиБ-часы (в прайс-листе обозначаются как «memory-gibibyte-hours») в качестве единицы измерения для расчёта расхода мониторинга хостов вашей организации в режиме Full-Stack Monitoring.
+Чем больше памяти у хоста и чем дольше хост находится под мониторингом, тем выше число ГиБ-часов, которое расходует хост.</p>
+<p>Преимущество подхода ГиБ-часов к расходу мониторинга, это его простота и прозрачность.
+Технологические особенности (например, число JVM или число микросервисов, размещённых на сервере) не влияют на расход.
+Неважно, работает ли на хосте Kubernetes или другие контейнеризированные приложения, приложения на .NET, приложения на Java или что-то ещё.
+На хосте может быть 10 или 1000 JVM, такие факторы не влияют на расход мониторинга среды.</p>
+<h3 id="-_1">Гранулярность биллинга для расхода ГиБ-часов<a class="headerlink" href="#-_1" title="Permanent link">&para;</a></h3>
+<p>Dynatrace создан для динамических cloud-native сред, где хосты и сервисы быстро создаются и уничтожаются.
+Поэтому гранулярность биллинга для расхода ГиБ-часов рассчитывается с интервалом в 15 минут.
+Если хост или контейнер находится под мониторингом менее 15 минут в течение интервала, расход ГиБ-часов округляется до 15 минут перед расчётом.</p>
+<h3 id="-_2">Расчёт ГиБ-часов для физических хостов и виртуальных машин (ВМ)<a class="headerlink" href="#-_2" title="Permanent link">&para;</a></h3>
+<p>Каждый установленный экземпляр Dynatrace OneAgent, работающий на экземпляре операционной системы (развёрнутой, например, на физической или виртуальной машине) в режиме Full-Stack Monitoring, расходует ГиБ-часы на основе физической или виртуальной оперативной памяти отслеживаемого хоста, рассчитываемой с интервалом в 15 минут (см. пример диаграммы ниже).</p>
+<p>Объём оперативной памяти каждой ВМ или хоста округляется до следующего кратного 0,25 ГиБ (что соответствует 256 МиБ) перед расчётом расхода мониторинга.
+К расходу ГиБ-часов для физических и виртуальных хостов применяется минимум 4 ГиБ.
+Например, хост с 8,3 ГиБ памяти учитывается как хост с 8,5 ГиБ, это следующее кратное 0,25 ГиБ, а хост с 2 ГиБ памяти учитывается как хост с 4 ГиБ (округление не требуется, но применяется минимум 4 ГиБ).</p>
+<h3 id="-_3">Расчёт ГиБ-часов для мониторинга контейнеров только для приложений<a class="headerlink" href="#-_3" title="Permanent link">&para;</a></h3>
+<p>В cloud-native средах сервисы и хосты часто недолговечны.
+Поэтому расчёт расхода мониторинга с интервалом в 15 минут, а не по полным часам, лучше отражает фактическое использование.
+Контейнеры, важный механизм в cloud-native средах, обычно используют меньше памяти, чем хосты.
+Поэтому минимальный порог памяти для контейнеров составляет 256 МиБ, а не 4 ГиБ, минимальный порог памяти для хостов.</p>
+<p>К контейнерам применяется то же округление, что и к хостам, до следующего кратного 0,25 ГиБ.
+Например, контейнер с 780 МиБ памяти учитывается как контейнер с 1 ГиБ (780 МиБ, что равно 0,78 ГиБ, округляется до следующего кратного 0,25 ГиБ).</p>
+<p>На рисунке ниже показано, как учитывается память при расчёте расхода ГиБ-часов с интервалом в 15 минут.
+Каждый интервал делится на четыре, чтобы получить единицу измерения расхода ГиБ-часов.</p>
+<p><img alt="Расход Full-Stack Monitoring" src="https://cdn.bfldr.com/B686QPH3/as/24t96b8x58jjvgphb4xg5cvh/Full-Stack_Monitoring_Consumption-Light_Mode?auto=webp&amp;format=png&amp;position=1" /></p>
+<p>Расход Full-Stack Monitoring</p>
+<h4 id="_1">Расчёт размера памяти<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h4>
+<p>Расчёт размера памяти для контейнеров, отслеживаемых по подходу только для приложений, основан либо на:</p>
+<ul>
+<li>
+<p>Используемой памяти контейнера.</p>
+</li>
+<li>
+<p>OneAgent версии 1.275+ (для контейнеров Kubernetes)</p>
+</li>
+<li>OneAgent версии 1.297+ (для бессерверных контейнеров)</li>
+<li>
+<p>Лимитах памяти, заданных для контейнера.
+  Если лимит памяти не задан, вместо этого используется память базовой виртуальной машины.</p>
+</li>
+<li>
+<p>OneAgent версии &lt;1.275 (для контейнеров Kubernetes)</p>
+</li>
+<li>OneAgent версии &lt;1.297 (для бессерверных контейнеров)</li>
+</ul>
+<p>Для существующих тенантов необходимо включить <a href="../../../../observe/infrastructure-observability/process-groups/configuration/cloud-app-and-workload-detection/#automatic-container-detection" title="Обнаруживайте облачные приложения и рабочие нагрузки и определяйте правила для объединения похожих рабочих нагрузок Kubernetes в группы процессов.">автоматическое обнаружение контейнеров</a>.</p>
+<p>Для некоторых сценариев мониторинга действуют собственные расчёты расхода ГиБ-часов, как описано в таблице ниже.</p>
+<table>
+<thead>
+<tr>
+<th>Сценарий</th>
+<th>Описание</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Azure App Services (работающие по плану App Service (dedicated) для Windows)</td>
+<td>Расход рассчитывается на основе числа и объёма памяти экземпляров плана. Не имеет значения, сколько приложений работает на этих экземплярах. Минимальный тарифицируемый объём памяти составляет 256 МиБ (вместо 4 ГиБ).</td>
+</tr>
+<tr>
+<td>Azure App Service (работающий на Linux OS или в Linux-контейнерах), OneAgent версии 1.297+</td>
+<td>Если автоматическое обнаружение контейнеров включено: расход рассчитывается на основе используемой памяти контейнера. Если автоматическое обнаружение контейнеров не включено: расход рассчитывается на основе памяти экземпляра плана, умноженной на число работающих контейнеров.</td>
+</tr>
+<tr>
+<td>Azure App Service (работающий на Linux OS или в Linux-контейнерах), OneAgent версии &lt;1.297</td>
+<td>Расход рассчитывается на основе памяти экземпляра плана, умноженной на число работающих контейнеров, независимо от того, включено автоматическое обнаружение контейнеров или нет.</td>
+</tr>
+<tr>
+<td>Oracle Solaris Zones</td>
+<td>Solaris Zones учитываются как хосты.</td>
+</tr>
+<tr>
+<td>Отслеживаемые контейнеры, не распознанные как контейнеры</td>
+<td>Такие контейнеры учитываются как хосты.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="metrics">Metrics<a class="headerlink" href="#metrics" title="Permanent link">&para;</a></h2>
+<p>В этом разделе предполагается, что рекомендованные Dynatrace варианты развертывания уже выполнены, особенно в части обогащения телеметрии.
+При использовании нестандартного развертывания начисление включённых метрик может по-прежнему работать так, как описано, но Dynatrace этого не гарантирует.</p>
+<p>Подробнее см. <a href="#deployment-options">Поддерживаемые варианты развертывания</a>.</p>
+<p>Full-Stack Monitoring включает все метрики Infrastructure Monitoring, метрики мониторинга производительности приложений и <a href="../../../../analyze-explore-automate/metrics-classic/built-in-metrics/" title="Explore the complete list of built-in Dynatrace metrics.">другие встроенные метрики</a>.
+Эти метрики включены в тариф и никогда не тарифицируются отдельно.</p>
+<p>Full-Stack Monitoring также включает определённый объём точек данных пользовательских метрик.
+Каждый учитываемый ГиБ памяти хоста или приложения добавляет 900 точек данных пользовательских метрик на каждый 15-минутный интервал.
+Включённые точки данных метрик, не использованные в течение 15-минутного интервала, в котором они были предоставлены, не переносятся на последующие интервалы.
+Включённые точки данных метрик среды применяются автоматически к метрикам, источником которых являются хосты и контейнеры, отслеживаемые OneAgent в режиме Full-Stack Monitoring.</p>
+<p>Все ключи метрик, начинающиеся с <code>dt.service.*</code>, относятся к <a href="../../../../observe/application-observability/services/" title="Learn how to monitor and analyze your services, define and use request attributes, and more.">мониторингу сервисов</a> и расходуют включённые точки данных метрик Full-Stack, если сами данные span получены от хостов и контейнеров, отслеживаемых OneAgent в режиме Full-Stack Monitoring.
+Если данные span получены из любого другого источника, такие метрики тарифицируются как <a href="../../../../upgrade/unavailable-in-managed/" title="Your selection is unavailable in Dynatrace Managed.">Metrics powered by Grail</a>.
+К таким ключам метрик относятся, например:</p>
+<ul>
+<li><code>dt.service.request.count</code></li>
+<li><code>dt.service.request.failure_count</code></li>
+<li><code>dt.service.request.response_time</code></li>
+<li><code>dt.service.request.service_mesh.count</code></li>
+<li><code>dt.service.request.service_mesh.failure_count</code></li>
+<li><code>dt.service.request.service_mesh.response_time</code></li>
+<li><code>dt.service.messaging.process.count</code></li>
+<li><code>dt.service.messaging.process.failure_count</code></li>
+<li><code>dt.service.messaging.publish.count</code></li>
+<li><code>dt.service.messaging.receive.count</code></li>
+</ul>
+<p>Точки данных метрик, превышающие включённый объём точек данных метрик, тарифицируются как <a href="../../platform-extensions/custom-metrics-classic/" title="Learn how your consumption of the Dynatrace Custom Metrics Classic DPS capability is billed and charged.">Custom Metrics Classic</a>.</p>
+<p>Включённые точки данных метрик среды применяются автоматически к метрикам, источником которых являются хосты и контейнеры, отслеживаемые OneAgent в режиме Full-Stack Monitoring.
+Это относится к пользовательским метрикам, как описано в таблице ниже.</p>
+<table>
+<thead>
+<tr>
+<th>Источник</th>
+<th>Примеры (в том числе, но не только)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Хост с Full-Stack мониторингом, отправляющий метрики через <a href="../../../../ingest-from/extend-dynatrace/extend-metrics/ingestion-methods/oneagent-metric-api/" title="Use the Dynatrace API to retrieve the metrics of monitored entities.">API метрик OneAgent</a></td>
+<td>* метрики OpenTelemetry * Spring Micrometer * StatsD * JMX * Extensions, запущенный локально на хосте через OneAgent * локальный на хосте Telegraf</td>
+</tr>
+<tr>
+<td>Приложение, отслеживаемое с помощью Container-based application-only Full-Stack Monitoring через код-модуль OneAgent</td>
+<td>* метрики OpenTelemetry * Spring Micrometer * JMX</td>
+</tr>
+<tr>
+<td>Узел Kubernetes с Full-Stack мониторингом, через Cloud Native Full-Stack или Classic Full-Stack</td>
+<td>* метрики OpenTelemetry * Spring Micrometer * JMX * Prometheus (через ActiveGate). * Сюда не входят метрики, собираемые через коллектор OpenTelemetry.</td>
+</tr>
+<tr>
+<td><a href="../../../../observe/application-observability/services/" title="Learn how to monitor and analyze your services, define and use request attributes, and more.">Мониторинг сервисов</a></td>
+<td>* <code>dt.service.request.count</code> * <code>dt.service.request.failure_count</code> * <code>dt.service.request.response_time</code> * <code>dt.service.request.service_mesh.count</code> * <code>dt.service.request.service_mesh.failure_count</code> * <code>dt.service.request.service_mesh.response_time</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="_2">Пример расчёта включённых точек данных метрик<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
+<p>Рассматривая пример, показанный на Рисунке 1, вот расчёты объёмов включённых точек данных метрик для каждого из четырёх 15-минутных интервалов, при условии объёма 900 включённых точек данных метрик на каждый 15-минутный интервал.</p>
+<ul>
+<li>Первый 15-минутный интервал: <code>900 (включённых точек данных метрик) × 13.5 (ГиБ памяти) = 12 150 включённых точек данных метрик</code></li>
+<li>Второй 15-минутный интервал: <code>900 (включённых точек данных метрик) × 9.5 (ГиБ памяти) = 8 550 включённых точек данных метрик</code></li>
+<li>Третий 15-минутный интервал: <code>900 (включённых точек данных метрик) × 8.75 (ГиБ памяти) = 7 875 включённых точек данных метрик</code></li>
+<li>Четвёртый 15-минутный интервал: <code>900 (включённых точек данных метрик) × 0.25 (ГиБ памяти) = 225 включённых точек данных метрик</code></li>
+</ul>
+<h3 id="full-stack-monitoring">Как расходуются точки данных метрик в режиме Full-Stack Monitoring<a class="headerlink" href="#full-stack-monitoring" title="Permanent link">&para;</a></h3>
+<p>Расход точек данных метрик принимает разные формы.
+Одинаковое количество точек данных может быть израсходовано:</p>
+<ul>
+<li>небольшим числом высокоточных метрик или множеством низкоточных метрик;</li>
+<li>равномерно в течение нескольких 15-минутных интервалов или целиком за одну минуту;</li>
+<li>всеми отслеживаемыми хостами, частью хостов с Full-Stack мониторингом или одним хостом.</li>
+</ul>
+<h3 id="cpu">Профилирование CPU, памяти и потоков<a class="headerlink" href="#cpu" title="Permanent link">&para;</a></h3>
+<p>Full-Stack Monitoring включает профилирование <a href="../../../../observe/application-observability/profiling-and-optimization/cpu-profiling/" title="Learn how you can use Dynatrace to perform enhanced code analysis.">CPU</a>, <a href="../../../../observe/application-observability/profiling-and-optimization/memory-profiling/" title="Analyze memory allocation with Dynatrace.">памяти</a> и потоков для таких технологий, как Java, .NET, Go, Node.js и PHP.
+OneAgent использует интеллектуальный запатентованный механизм для управления объёмом данных профилирования.
+Dynatrace <a href="../../../../manage/data-privacy-and-security/data-privacy/data-retention-periods/#purepath" title="Review default and configurable retention periods for service, RUM Classic, synthetic, Log Monitoring, metric, diagnostic, and security data in Dynatrace Managed.">хранит общий объём поступивших данных профилирования</a> из вашей среды в течение 10 дней.</p>
+<h2 id="_3">Поддерживаемые варианты развертывания<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<p>Чтобы ваши пользовательские метрики учитывались во включённых объёмах трасс и метрик, нужно включить обогащение телеметрии согласно рекомендованным Dynatrace вариантам развертывания.</p>
+<p>Автоматическое обогащение телеметрии включено для:</p>
+<ul>
+<li>
+<p>Пользовательских метрик, источником которых является любой из следующих вариантов:</p>
+</li>
+<li>
+<p>хост или контейнер с Full-Stack мониторингом, при использовании OneAgent или выполнении шагов, описанных в разделе <a href="../../../../ingest-from/extend-dynatrace/extend-data/" title="Learn how to automatically enrich your telemetry data with Dynatrace-specific fields.">Обогащение поступающих данных специфичными для Dynatrace полями</a>;</p>
+</li>
+<li>контейнер Kubernetes с Full-Stack мониторингом, при использовании Dynatrace Operator и <a href="../../../../ingest-from/setup-on-k8s/guides/metadata-automation/metadata-enrichment/" title="Configure metadata enrichment in Dynatrace Operator to attach Kubernetes metadata to telemetry signals using OneAgent, OTLP exporter, or standalone enrichment.">включённом обогащении метаданными</a>;</li>
+<li>узел Kubernetes с cloud-native Full-Stack мониторингом, при использовании Dynatrace Operator и <a href="../../../../ingest-from/setup-on-k8s/guides/metadata-automation/metadata-enrichment/" title="Configure metadata enrichment in Dynatrace Operator to attach Kubernetes metadata to telemetry signals using OneAgent, OTLP exporter, or standalone enrichment.">включённом обогащении метаданными</a>.
+    Сюда входят любые контейнеры, работающие на отслеживаемом узле Kubernetes.</li>
+<li>Пользовательских метрик, отправляемых с любого хоста с Full-Stack мониторингом через локальный API метрик OneAgent. Подробнее см. <a href="../../../../ingest-from/extend-dynatrace/extend-metrics/ingestion-methods/oneagent-metric-api/" title="Use the Dynatrace API to retrieve the metrics of monitored entities.">API метрик OneAgent</a>.</li>
+</ul>
+<p>При использовании нестандартного развертывания начисление метрик может по-прежнему работать так, как описано, но Dynatrace этого не гарантирует.</p>
+<h2 id="full-stack">Детали потребления: Full-Stack<a class="headerlink" href="#full-stack" title="Permanent link">&para;</a></h2>
+<p>Dynatrace предоставляет встроенные метрики использования, которые помогают понять и проанализировать потребление организацией Full-Stack Monitoring.
+Чтобы использовать эти метрики, в <img alt="Data Explorer" src="https://dt-cdn.net/images/data-explorer-512-743267b1fc.png" title="Data Explorer" /> <strong>Data Explorer</strong> введите <code>DPS</code> в поле <strong>Search</strong>.
+Эти метрики также доступны через Environment API и в Account Management (<strong>Usage summary</strong> &gt; <strong>Full-Stack Monitoring</strong> &gt; <strong>Actions</strong> &gt; <strong>View details</strong>).</p>
+<p>Ниже перечислены метрики, которые можно использовать для отслеживания потребления Dynatrace Full-Stack Monitoring.</p>
+<p>(DPS) Full-Stack Monitoring billing usage
+:   Ключ: <code>builtin:billing.full_stack_monitoring.usage</code></p>
+<div class="highlight"><pre><span></span><code>Измерение: count
+
+Разрешение: 15 мин
+
+Описание: суммарный объём памяти в ГиБ всех хостов, отслеживаемых в режиме Full-Stack Monitoring, подсчитанный за 15-минутные интервалы.
+</code></pre></div>
+<p>(DPS) Full-Stack Monitoring billing usage per host
+:   Ключ: <code>builtin:billing.full_stack_monitoring.usage_per_host</code></p>
+<div class="highlight"><pre><span></span><code>Измерение: Host (`dt.entity.host`)
+
+Разрешение: 15 мин
+
+Описание: объём памяти в ГиБ на хост, отслеживаемый в режиме Full-Stack Monitoring, подсчитанный за 15-минутные интервалы.
+</code></pre></div>
+<p>(DPS) Full-stack usage by container type
+:   Ключ: <code>builtin:billing.full_stack_monitoring.usage_per_container</code></p>
+<div class="highlight"><pre><span></span><code>Измерение: application\_only\_type; k8s.cluster.uid; k8s.namespace.name
+
+Разрешение: 15 мин
+
+Описание: объём памяти в ГиБ на контейнер, отслеживаемый в режиме Full-Stack application-only Monitoring, подсчитанный за 15-минутные интервалы.
+</code></pre></div>
+<p>(DPS) Total metric data points reported by Full-Stack monitored hosts
+:   Ключ: <code>builtin:billing.full_stack_monitoring.metric_data_points.ingested</code></p>
+<div class="highlight"><pre><span></span><code>Измерение: Count
+
+Разрешение: 15 мин
+
+Описание: количество переданных точек данных метрик, агрегированных по всем хостам, отслеживаемым в Full-Stack.
+</code></pre></div>
+<p>(DPS) Metric data points reported and split by Full-Stack monitored hosts
+:   Ключ: <code>builtin:billing.full_stack_monitoring.metric_data_points.ingested_by_host</code></p>
+<div class="highlight"><pre><span></span><code>Измерение: Host (`dt.entity.host`)
+
+Разрешение: 15 мин
+
+Описание: количество переданных точек данных метрик в разбивке по хостам, отслеживаемым в Full-Stack.
+</code></pre></div>
+<p>(DPS) Available included metric data points for Full-Stack monitored hosts
+:   Ключ: <code>builtin:billing.full_stack_monitoring.metric_data_points.included</code></p>
+<div class="highlight"><pre><span></span><code>Измерение: Count
+
+Разрешение: 15 мин
+
+Описание: общее число включённых точек данных метрик, которые можно вычесть из потреблённых точек данных метрик, переданных хостами, отслеживаемыми в Full-Stack.
+</code></pre></div>
+<p>(DPS) Used included metric data points for Full-Stack monitored hosts
+:   Ключ: <code>builtin:billing.full_stack_monitoring.metric_data_points.included_used</code></p>
+<div class="highlight"><pre><span></span><code>Измерение: Count
+
+Разрешение: 15 мин
+
+Описание: количество потреблённых включённых точек данных метрик для хостов, отслеживаемых в Full-Stack.
+</code></pre></div>
+<h3 id="-full-stack">Мониторинг потребления памяти в ГиБ-часах для хостов, отслеживаемых в Full-Stack<a class="headerlink" href="#-full-stack" title="Permanent link">&para;</a></h3>
+<p>С помощью метрики "(DPS) Full-Stack Monitoring billing usage" можно отслеживать суммарное потребление памяти в ГиБ-часах, агрегированное по всем хостам, отслеживаемым в Full-Stack, с разными интервалами (15 мин, час, день или неделя) для любого выбранного периода времени.
+В примере ниже показан объём памяти в ГиБ, отслеживаемый с интервалом в 1 час.
+С 11:00 до 14:00 каждый час отслеживалось 523 ГиБ памяти.
+В результате потреблено 523 ГиБ-часа памяти.</p>
+<p><img alt="Full-Stack Monitoring (DPS)" src="https://dt-cdn.net/images/image001-1183-79f381ccb1.png" /></p>
+<p>Full-Stack Monitoring (DPS)</p>
+<p>С помощью метрики "(DPS) Full-Stack Monitoring billing usage per host" можно детализировать суммарное потребление памяти в ГиБ-часах.
+В примере ниже показан список всех хостов, которые внесли вклад в потребление 523 ГиБ-часов памяти с 13:00 до 14:00.
+Также отображается соответствующее число ГиБ-часов памяти по каждому хосту.</p>
+<p><img alt="Full-Stack Monitoring (DPS)" src="https://dt-cdn.net/images/image004-905-f0e44ad601.png" /></p>
+<p>Full-Stack Monitoring (DPS)</p>
+<h3 id="-full-stack_1">Мониторинг потребления памяти в ГиБ-часах для контейнеров, отслеживаемых в Full-Stack<a class="headerlink" href="#-full-stack_1" title="Permanent link">&para;</a></h3>
+<p>Владельцы приложений могут использовать контейнерный Full-Stack Monitoring для отслеживания приложений, работающих в кластерах Kubernetes.</p>
+<p>Чтобы получить сведения о потреблении для отслеживаемых кластеров или пространств имён Kubernetes, можно запросить потребление памяти в ГиБ-часах с помощью метрики "(DPS) Full-Stack Monitoring billing usage per container", как показано в следующем запросе:</p>
+<p><code>builtin:billing.full_stack_monitoring.usage_per_container:filter(eq("application_only_type","kubernetes")):splitBy()</code></p>
+<p>В примере ниже за последние 30 дней кластером Kubernetes было потреблено 1,58 ТиБ памяти.</p>
+<p><img alt="Kubernetes Platform Monitoring" src="https://dt-cdn.net/images/billing-full-stack-monitoring-usage-per-container-1025-3019577b21.png" /></p>
+<p>Kubernetes Platform Monitoring</p>
+<p>Разумеется, анализ можно фильтровать для более глубокого понимания (например, добавить разбивку по пространствам имён Kubernetes).</p>
+<p><img alt="Kubernetes Platform Monitoring" src="https://dt-cdn.net/images/billing-full-stack-monitoring-usage-per-container-by-namespace-1023-c5e1c10583.png" /></p>
+<p>Kubernetes Platform Monitoring</p>
+<h3 id="full-stack_1">Мониторинг потребления метрик для хостов, отслеживаемых в Full-Stack<a class="headerlink" href="#full-stack_1" title="Permanent link">&para;</a></h3>
+<p>Чтобы отслеживать бюджет метрик для всего пула точек данных метрик в среде, можно сравнивать доступные включённые точки данных метрик с общим числом переданных точек данных метрик, используя эти две метрики: "(DPS) Available included metric data points for Full-Stack monitored hosts" и "(DPS) Total metric data points reported by Full-Stack monitored hosts".
+В примере ниже показаны данные за целые сутки.
+Ни в один момент число включённых метрик для пула метрик этой среды (фиолетовая линия) не было превышено.</p>
+<p><img alt="Full-Stack Monitoring (DPS)" src="https://dt-cdn.net/images/image005-1212-35369921df.png" /></p>
+<p>Full-Stack Monitoring (DPS)</p>
+<p>В случаях, когда число включённых метрик для пула метрик среды превышено, следующий анализ поможет определить хосты, которые вносят вклад в перерасход.
+Для этого анализа используйте метрику "(DPS) Metric data points reported and split by Full-Stack monitored hosts".</p>
+<p>В примере ниже показано, что с 10:45 до 11:00 каждый из первых 3 хостов в списке передал значительно больше 2000 точек данных метрик.
+В этот же период каждый из этих 3 хостов показывает потребление памяти 2 ГиБ-часа.
+Dynatrace предоставляет 900 включённых точек данных пользовательских метрик на каждый ГиБ памяти хоста, рассчитанных с интервалом в 15 минут.
+Это значит, что первые 3 хоста вносят в пул доступных точек данных среды 1800 (2*900) точек данных метрик.
+Однако эти хосты потребили за тот же период времени больше точек данных, чем внесли.</p>
+<p><img alt="Full-Stack Monitoring (DPS)" src="https://dt-cdn.net/images/image008-905-929928d644.png" /></p>
+<p>Full-Stack Monitoring (DPS)</p>
+<p>При использовании метрики "(DPS) Total metric data points billed for Full-Stack monitored hosts" из Custom Metrics Classic видно, что с 10:45 до 11:00 перерасхода пула метрик Full-Stack Monitoring этой среды не произошло, поскольку ни одна точка данных метрик не была тарифицирована.</p>
+<p><img alt="Full-Stack Monitoring (DPS)" src="https://dt-cdn.net/images/image009-1210-914bc4742c.png" /></p>
+<p>Full-Stack Monitoring (DPS)</p>
+<h2 id="_4">Похожие темы<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="../../../../ingest-from/dynatrace-oneagent/" title="Ознакомьтесь с важными концепциями, связанными с OneAgent, и узнайте, как устанавливать и эксплуатировать OneAgent на разных платформах.">Dynatrace OneAgent</a></li>
+<li><a href="../" title="Узнайте о разных вариантах Application &amp; Infrastructure Observability, доступных с лицензией Dynatrace Platform Subscription (DPS).">Обзор Application &amp; Infrastructure Observability (DPS)</a></li>
+<li><a href="https://www.dynatrace.com/pricing/">Тарификация Dynatrace﻿</a></li>
+</ul>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  К началу
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      © 2026 Dynatrace Docs | Yerkebulan Ardabayev
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/Yerkebulan-Ardabayev" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../../../..", "features": ["navigation.indexes", "navigation.prune", "navigation.path", "navigation.tracking", "navigation.top", "search.suggest", "search.highlight", "search.share", "content.code.copy", "content.code.annotate", "content.tabs.link", "content.tooltips", "toc.follow"], "search": "../../../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u0421\u043a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u043d\u043e \u0432 \u0431\u0443\u0444\u0435\u0440", "clipboard.copy": "\u041a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u0442\u044c \u0432 \u0431\u0443\u0444\u0435\u0440", "search.result.more.one": "\u0415\u0449\u0451 1 \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.more.other": "\u0415\u0449\u0451 # \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.none": "\u0421\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439 \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u043e", "search.result.one": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e 1 \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0435", "search.result.other": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439: #", "search.result.placeholder": "\u041d\u0430\u0447\u043d\u0438\u0442\u0435 \u043f\u0435\u0447\u0430\u0442\u0430\u0442\u044c \u0434\u043b\u044f \u043f\u043e\u0438\u0441\u043a\u0430", "search.result.term.missing": "\u041e\u0442\u0441\u0443\u0442\u0441\u0442\u0432\u0443\u0435\u0442", "select.version": "\u0412\u044b\u0431\u0435\u0440\u0438\u0442\u0435 \u0432\u0435\u0440\u0441\u0438\u044e"}, "version": null}</script>
+    
+    
+  
+      <script src="../../../../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../../../../../assets/javascripts/groq-chat.js?sha=17d46ba74"></script>
+      
+    
+  <script>
+    (function() {
+      // --- Keyboard shortcut Ctrl+K / Cmd+K for search ---
+      document.addEventListener('keydown', function(e) {
+        if ((e.ctrlKey || e.metaKey) && e.key === 'k') {
+          e.preventDefault();
+          var searchInput = document.querySelector('.md-search__input');
+          if (searchInput) {
+            searchInput.focus();
+            var searchToggle = document.querySelector('[data-md-toggle="search"]');
+            if (searchToggle && !searchToggle.checked) {
+              searchToggle.checked = true;
+              searchToggle.dispatchEvent(new Event('change'));
+            }
+          }
+        }
+        // --- "/" focuses search like GitHub / Algolia docs ---
+        if (e.key === '/' && !/^(input|textarea|select)$/i.test(e.target.tagName)) {
+          e.preventDefault();
+          var inp = document.querySelector('.md-search__input');
+          if (inp) {
+            inp.focus();
+            var t = document.querySelector('[data-md-toggle="search"]');
+            if (t && !t.checked) { t.checked = true; t.dispatchEvent(new Event('change')); }
+          }
+        }
+      });
+    })();
+  </script>
+
+  </body>
+</html>

@@ -1,0 +1,3879 @@
+
+<!doctype html>
+<html lang="ru" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Документация Dynatrace Managed с AI-помощником">
+      
+      
+        <meta name="author" content="Yerkebulan Ardabayev">
+      
+      
+        <link rel="canonical" href="https://yerkebulan-ardabayev.github.io/dynatrace-docs-website/managed-ru/ingest-from/dynatrace-activegate/configuration/configure-activegate/">
+      
+      
+        <link rel="prev" href="../../capabilities/zremote-purpose/">
+      
+      
+        <link rel="next" href="../configure-an-environment-activegate-for-multi-environment-support/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>Свойства и параметры конфигурации ActiveGate - Dynatrace — Документация</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Inter";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../../assets/stylesheets/extra.v11.css?sha=17d46ba74">
+    
+    <script>__md_scope=new URL("../../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  <style>
+    /* DocFlow DT Logo Badge — injected via template override */
+    .md-header__button.md-logo {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .md-header__button.md-logo img,
+    .md-header__button.md-logo svg {
+      display: none !important;
+    }
+    .md-header__button.md-logo::before {
+      content: 'DT';
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 28px;
+      height: 28px;
+      border-radius: 6px;
+      background: linear-gradient(135deg, #00d4aa 0%, #7c3aed 100%);
+      color: white;
+      font-size: 11px;
+      font-weight: 700;
+      font-family: 'Inter', sans-serif;
+      letter-spacing: -0.02em;
+      flex-shrink: 0;
+    }
+
+    /* Search Ctrl+K badge — inside input field */
+    .md-search__form {
+      position: relative;
+    }
+    .md-search__form::after {
+      content: 'Ctrl+K';
+      display: none;
+      align-items: center;
+      padding: 0.15rem 0.4rem;
+      border-radius: 4px;
+      border: 1px solid var(--docflow-border);
+      background: var(--md-default-bg-color);
+      font-size: 10px;
+      font-family: 'JetBrains Mono', monospace;
+      color: var(--md-default-fg-color--lighter);
+      white-space: nowrap;
+      pointer-events: none;
+      position: absolute;
+      right: 0.5rem;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+    @media (min-width: 60em) {
+      .md-search__form::after {
+        display: flex;
+      }
+    }
+  </style>
+
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="custom">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#activegate" class="md-skip">
+          Перейти к содержанию
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+  
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Верхний колонтитул">
+    <a href="../../../../.." title="Dynatrace — Документация" class="md-header__button md-logo" aria-label="Dynatrace — Документация" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M11 15H6l7-14v8h5l-7 14z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Dynatrace — Документация
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Свойства и параметры конфигурации ActiveGate
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Переключить на светлую тему"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Переключить на светлую тему" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Переключить на тёмную тему"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Переключить на тёмную тему" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Поиск" placeholder="Поиск" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Поиск">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Поделиться" aria-label="Поделиться" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Очистить" aria-label="Очистить" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Инициализация поиска
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/Yerkebulan-Ardabayev/dynatrace-docs-website" title="Перейти к репозиторию" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    dynatrace-docs-website
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Навигация" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../../.." title="Dynatrace — Документация" class="md-nav__button md-logo" aria-label="Dynatrace — Документация" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M11 15H6l7-14v8h5l-7 14z"/></svg>
+
+    </a>
+    Dynatrace — Документация
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/Yerkebulan-Ardabayev/dynatrace-docs-website" title="Перейти к репозиторию" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    dynatrace-docs-website
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Главная
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../../../ru/getting-started/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Начало работы
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../../installation/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Кластер Managed
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Источники данных
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Источники данных
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обзор
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../amazon-web-services/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Настройка Dynatrace на Amazon Web Services
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../bulk-configuration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Удалённое управление конфигурацией OneAgent и ActiveGate
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4_4" id="__nav_4_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dynatrace ActiveGate
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Dynatrace ActiveGate
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обзор
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../activegate-diagnostics/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Диагностика ActiveGate
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../activegate-fips-compliance/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Соответствие FIPS для ActiveGate
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../activegate-group/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Группа ActiveGate
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../activegate-in-container/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Образ контейнера ActiveGate
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../activegate-security/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Безопасность ActiveGate
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../activegate-sfm-metrics/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Метрики самомониторинга ActiveGate
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../agctl-command-line-interface/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    agctl — интерфейс командной строки для ActiveGate
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../capabilities/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Назначения и функциональность ActiveGate
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_4_10" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4_4_10" id="__nav_4_4_10_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Настройка
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_4_10_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4_4_10">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Настройка
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Свойства и параметры конфигурации ActiveGate
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../configure-an-environment-activegate-for-multi-environment-support/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Развёртывание ActiveGate для нескольких сред
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../configure-custom-ssl-certificate-on-activegate/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Пользовательский SSL-сертификат для ActiveGate
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../configure-trusted-root-certificates-on-activegate/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Доверенные корневые сертификаты для ActiveGate
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../set-up-proxy-authentication-for-activegate/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Прокси для ActiveGate
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../set-up-reverse-proxy-for-activegate/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обратный прокси или балансировщик нагрузки для ActiveGate
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../set-up-reverse-proxy-for-oneagent/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обратный прокси или балансировщик нагрузки для OneAgent
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../where-can-i-find-activegate-files/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Каталоги ActiveGate
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../installation/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Установка
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../operation/stop-restart-activegate/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Эксплуатация
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../supported-connectivity-schemes-for-activegates/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Поддерживаемые схемы подключения для ActiveGate
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../dynatrace-oneagent/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dynatrace OneAgent
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../extend-dynatrace/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Расширение Dynatrace
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../extensions/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Расширения
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../google-cloud-platform/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Настройка Dynatrace на Google Cloud
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../microsoft-azure-services/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Настройка Dynatrace на Microsoft Azure
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../opentelemetry/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OpenTelemetry и Dynatrace
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../setup-on-container-platforms/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Настройка Dynatrace на контейнерных и PaaS-платформах
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../setup-on-k8s/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Настройка Dynatrace на Kubernetes
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../technology-support/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Поддержка технологий
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    
+  
+  
+  
+    <a href="../../../../observe/application-observability/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Наблюдаемость
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../../dynatrace-intelligence/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Davis AI
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    
+  
+  
+  
+    <a href="../../../../analyze-explore-automate/dashboards-classic/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Анализ
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../../deliver/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Deliver
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    
+  
+  
+  
+    <a href="../../../../secure/application-security/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Безопасность приложений
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    
+  
+  
+  
+    <a href="../../../../manage/account-management/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Управление
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    
+  
+  
+  
+    <a href="../../../../platform/oneagent/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Платформа
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../../dynatrace-api/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../../whats-new/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Что нового
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../../offline-doc/how-do-i-enable-synthetic-monitors/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Офлайн-документация
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../../../ru/training/day1-introduction/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обучение
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../ai/groq/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI Помощник
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Содержание">
+  
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+                
+
+
+
+  
+
+
+  <nav class="md-path" aria-label="Навигация" >
+    <ol class="md-path__list">
+      
+        
+  
+  
+    <li class="md-path__item">
+      <a href="../../../../.." class="md-path__link">
+        
+  <span class="md-ellipsis">
+    Главная
+  </span>
+
+      </a>
+    </li>
+  
+
+      
+      
+        
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="../../../" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    Источники данных
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="../../" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    Dynatrace ActiveGate
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="./" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    Настройка
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ol>
+  </nav>
+
+              
+              <article class="md-content__inner md-typeset">
+                
+  
+                  
+
+
+
+<h1 id="activegate">Свойства и параметры конфигурации ActiveGate<a class="headerlink" href="#activegate" title="Permanent link">&para;</a></h1>
+<h1 id="activegate_1">Свойства и параметры конфигурации ActiveGate<a class="headerlink" href="#activegate_1" title="Permanent link">&para;</a></h1>
+<ul>
+<li>Чтение: 17 мин</li>
+<li>Обновлено 19 мая 2026 г.</li>
+</ul>
+<h2 id="_1">Перед началом работы<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<p>Разберитесь с основными концепциями конфигурации ActiveGate, связанными с файлами свойств.</p>
+<p>Хостовые ActiveGate, то есть ActiveGate Module: OTLP Ingest, развёрнутые обычным способом с помощью установщика, и контейнеризированные ActiveGate используют одни и те же свойства конфигурации, хранящиеся в одних и тех же файлах конфигурации. Однако фактические значения этих свойств могут отличаться, а сами свойства задаются или изменяются разными механизмами: хостовые ActiveGate настраиваются непосредственно на хосте, где работает ActiveGate, тогда как контейнеризированные ActiveGate настраиваются с помощью механизма конфигурации вашей облачной платформы.</p>
+<ul>
+<li><a href="../../activegate-in-container/" title="Развёртывание контейнеризированного ActiveGate.">Как развернуть и настроить контейнеризированный ActiveGate в Kubernetes</a></li>
+</ul>
+<h2 id="activegate_2">Основные правила работы с конфигурацией ActiveGate<a class="headerlink" href="#activegate_2" title="Permanent link">&para;</a></h2>
+<h3 id="activegate_3">Файлы конфигурации ActiveGate<a class="headerlink" href="#activegate_3" title="Permanent link">&para;</a></h3>
+<p>Многие настройки конфигурации ActiveGate (например, настройки подключения и прокси, шифры или настройки дампа памяти) хранятся в файлах свойств <code>config.properties</code> и <code>custom.properties</code>, которые находятся в <strong><a href="../where-can-i-find-activegate-files/" title="Узнайте, где хранятся файлы ActiveGate в системах Windows и Linux.">каталоге конфигурации ActiveGate</a></strong>.
+Свойства, перечисленные в файлах свойств, применимы как к Environment ActiveGate, так и к Cluster ActiveGate.</p>
+<p>Файлы <code>config.properties</code> и <code>custom.properties</code> разделены на <strong>секции</strong>. Название каждой секции заключено в квадратные скобки, например:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>[collector]
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>MSGrouter = true
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>restInterface = true
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>
+<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>DumpSupported = false
+</code></pre></div>
+<h3 id="configproperties">config.properties<a class="headerlink" href="#configproperties" title="Permanent link">&para;</a></h3>
+<p>Файл конфигурации <code>config.properties</code> содержит настройки установки ActiveGate по умолчанию и не настраивается пользователем.</p>
+<p>Этот файл конфигурации перезаписывается при каждом обновлении ActiveGate.</p>
+<h3 id="customproperties">custom.properties<a class="headerlink" href="#customproperties" title="Permanent link">&para;</a></h3>
+<p>Настройки, хранящиеся в <code>custom.properties</code>, переопределяют соответствующие настройки в <code>config.properties</code>, и этот файл копируется в новую версию ActiveGate при обновлении.</p>
+<p>Файлы конфигурации разделены на <code>[секции]</code>, которые обозначаются квадратными скобками.<br />
+Чтобы задать пользовательские настройки в <code>custom.properties</code>, укажите названия секций и включите в них нужные свойства.</p>
+<p>Файл <code>config.txt</code> можно использовать как справочник при добавлении пользовательских настроек в файл <code>custom.properties</code>. Файл <code>config.txt</code>, который также находится в каталоге конфигурации ActiveGate, самим ActiveGate не используется, однако содержит справочный список возможных свойств конфигурации.
+Также можно сначала найти нужную секцию в файле <code>config.properties</code>, а затем скопировать название секции вместе с именами нужных свойств в <code>custom.properties</code>.<br />
+После этого можно изменить записи в этой секции нужным образом.</p>
+<h3 id="launcheruserconfigconf">launcheruserconfig.conf<a class="headerlink" href="#launcheruserconfigconf" title="Permanent link">&para;</a></h3>
+<p>Лаунчер ActiveGate, это сторожевой процесс (watchdog), который запускает виртуальную машину Java для ActiveGate.
+Конфигурация лаунчера хранится в файле <code>launcheruserconfig.conf</code>, в <strong><a href="../where-can-i-find-activegate-files/" title="Узнайте, где хранятся файлы ActiveGate в системах Windows и Linux.">каталоге конфигурации ActiveGate</a></strong>. Он содержит свойства и параметры лаунчера, которые передаются виртуальной машине Java.</p>
+<p>Для Remote Plugin Module (RPM) файл <code>launcheruserconfig.conf</code> должен размещаться именно в каталоге <code>/var/lib/dynatrace/remotepluginmodule/agent/conf/</code>.</p>
+<p>Файл <code>launcheruserconfig.conf</code> сохраняется при обновлениях ActiveGate.</p>
+<h3 id="activegate_4">Перезапуск ActiveGate<a class="headerlink" href="#activegate_4" title="Permanent link">&para;</a></h3>
+<p>При изменении конфигурации ActiveGate необходимо <a href="../../operation/stop-restart-activegate/" title="Узнайте, как запускать, останавливать и перезапускать ActiveGate в Windows или Linux.">перезапустить основную службу ActiveGate</a>, чтобы изменения вступили в силу.</p>
+<h2 id="activegate-agctl">Настройка ActiveGate с помощью <code>agctl</code><a class="headerlink" href="#activegate-agctl" title="Permanent link">&para;</a></h2>
+<p>ActiveGate версии 1.333+</p>
+<p>Начиная с версии ActiveGate 1.333, можно использовать интерфейс командной строки <code>agctl</code> для управления конфигурацией ActiveGate. Инструмент <code>agctl</code> упрощает управление конфигурацией, предоставляя:</p>
+<ul>
+<li><strong>Специализированные команды</strong> для типовых задач конфигурации, таких как настройка конечных точек прокси, управление SSL-сертификатами, настройка хранилищ доверенных сертификатов и назначение групп ActiveGate.</li>
+<li><strong>Универсальную команду для работы со свойствами</strong>, которая позволяет настраивать любое свойство в файле <code>custom.properties</code> с помощью команды <a href="../../agctl-command-line-interface/#property" title="Узнайте, как использовать agctl для настройки ActiveGate и управления им из командной строки">agctl property</a> для свойств, у которых нет специализированных команд.</li>
+</ul>
+<p>Подробности обо всех доступных командах, параметрах и примерах см. в разделе <a href="../../agctl-command-line-interface/" title="Узнайте, как использовать agctl для настройки ActiveGate и управления им из командной строки">Интерфейс командной строки agctl</a>.</p>
+<h2 id="agctl-activegate">Пример использования <code>agctl</code> для управления конфигурацией ActiveGate<a class="headerlink" href="#agctl-activegate" title="Permanent link">&para;</a></h2>
+<p>ActiveGate версии 1.333+</p>
+<p>В этом примере изменим путь очереди данных логов на хостовом ActiveGate.</p>
+<p>Для хостового Environment или Cluster ActiveGate путь, используемый для очереди данных логов, можно изменить с помощью <a href="../../agctl-command-line-interface/#property" title="Узнайте, как использовать agctl для настройки ActiveGate и управления им из командной строки">agctl</a>. В следующих шагах в качестве примера нового пути используется <code>/var/disk_queue</code>.</p>
+<ol>
+<li>Ознакомьтесь с <a href="../../agctl-command-line-interface/#prerequisites" title="Узнайте, как использовать agctl для настройки ActiveGate и управления им из командной строки">предварительными требованиями к интерфейсу командной строки <code>agctl</code></a>.</li>
+<li>Подключитесь к хосту по SSH.</li>
+<li>Остановите службу ActiveGate:</li>
+</ol>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>systemctl stop dynatracegateway
+</code></pre></div>
+<ol>
+<li>Прочитайте текущий путь:</li>
+</ol>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>agctl property get --section=generic_ingest --key=disk_queue_path
+</code></pre></div>
+<ol>
+<li>Убедитесь, что целевой каталог <code>/var/disk_queue</code> существует, доступен для записи и на нём есть как минимум <code>disk_queue_max_size_mb</code> МБ свободного дискового пространства.</li>
+<li>Измените путь:</li>
+</ol>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>agctl property set --section=generic_ingest --key=disk_queue_path --value=/var/disk_queue
+</code></pre></div>
+<ol>
+<li>Опционально: удалите каталог, на который указывал старый путь.</li>
+<li>Запустите службу ActiveGate:</li>
+</ol>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>systemctl start dynatracegateway
+</code></pre></div>
+<h2 id="activegate_5">Ограничения памяти ActiveGate<a class="headerlink" href="#activegate_5" title="Permanent link">&para;</a></h2>
+<p>Ограничения использования памяти для ActiveGate можно задать в файле конфигурации лаунчера <code>launcheruserconfig.conf</code> с помощью следующих свойств:</p>
+<ul>
+<li><code>-java.xmx.relative_part</code>, процент доступной оперативной памяти</li>
+<li><code>-java.xmx.absolute_part</code>, абсолютное значение объёма памяти, в МБ</li>
+</ul>
+<p>Конфигурация может включать любую комбинацию этих свойств, а итоговое ограничение памяти представляет собой сумму абсолютной части и относительной части (рассчитанной на основе доступной оперативной памяти).</p>
+<p><strong>Примеры:</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a># Xmx = 0 MB + 83% of available RAM
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>-java.xmx.absolute_part=0
+<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>
+<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a>
+<a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a>
+<a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a>-java.xmx.relative_part=83
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a># Xmx = 2000 MB + 83% of available RAM
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>
+<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>-java.xmx.absolute_part=2000
+<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a>
+<a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a>
+<a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a>
+<a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a>-java.xmx.relative_part=83
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a># Xmx = 2000 MB + 0 MB
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>
+<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>
+<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>-java.xmx.absolute_part=2000
+<a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a>
+<a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a>
+<a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a>
+<a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a>-java.xmx.relative_part=0
+</code></pre></div>
+<h2 id="heartbeat-activegate">Диапазон портов heartbeat ActiveGate<a class="headerlink" href="#heartbeat-activegate" title="Permanent link">&para;</a></h2>
+<p>Лаунчер ActiveGate отслеживает процесс ActiveGate через локальный порт heartbeat. Этот порт выбирается лаунчером из заранее заданного диапазона портов, указанного в конфигурации лаунчера. Лаунчер находит свободный порт в заданном диапазоне, а затем передаёт номер порта процессу ActiveGate.</p>
+<p>По умолчанию лаунчер использует для мониторинга heartbeat порты выше 50000. В некоторых развёртываниях может потребоваться настроить для этой цели другие порты. Чтобы указать диапазон портов, который должен использовать лаунчер ActiveGate, добавьте или измените свойство <code>-healthcheck.heartbeat.portrange</code> в файле конфигурации лаунчера <code>launcheruserconfig.conf</code>, как показано в примере ниже.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>-healthcheck.heartbeat.portrange=60100:60200
+</code></pre></div>
+<h2 id="java-activegate">Пользовательские параметры для процесса Java ActiveGate<a class="headerlink" href="#java-activegate" title="Permanent link">&para;</a></h2>
+<p>Чтобы передать пользовательские параметры процессу Java ActiveGate, укажите их в файле конфигурации лаунчера <code>launcheruserconfig.conf</code>:</p>
+<ul>
+<li>Все строки после <code>-arguments_section.jvm</code> передаются в качестве аргументов JVM. Таким образом, указывая параметры <code>-D</code>, можно задавать аргументы для ActiveGate.</li>
+</ul>
+<p>Например:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a># Xmx settings 80% of available RAM + 0 MB
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>
+<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>
+<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a>
+<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a>-java.xmx.absolute_part=0
+<a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a>
+<a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a>
+<a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a>
+<a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a>-java.xmx.relative_part=83
+<a id="__codelineno-9-10" name="__codelineno-9-10" href="#__codelineno-9-10"></a>
+<a id="__codelineno-9-11" name="__codelineno-9-11" href="#__codelineno-9-11"></a>
+<a id="__codelineno-9-12" name="__codelineno-9-12" href="#__codelineno-9-12"></a>
+<a id="__codelineno-9-13" name="__codelineno-9-13" href="#__codelineno-9-13"></a>-healthcheck.heartbeat.portrange=60100:60200
+<a id="__codelineno-9-14" name="__codelineno-9-14" href="#__codelineno-9-14"></a>
+<a id="__codelineno-9-15" name="__codelineno-9-15" href="#__codelineno-9-15"></a>
+<a id="__codelineno-9-16" name="__codelineno-9-16" href="#__codelineno-9-16"></a>
+<a id="__codelineno-9-17" name="__codelineno-9-17" href="#__codelineno-9-17"></a>-arguments_section.jvm
+<a id="__codelineno-9-18" name="__codelineno-9-18" href="#__codelineno-9-18"></a>
+<a id="__codelineno-9-19" name="__codelineno-9-19" href="#__codelineno-9-19"></a>
+<a id="__codelineno-9-20" name="__codelineno-9-20" href="#__codelineno-9-20"></a>
+<a id="__codelineno-9-21" name="__codelineno-9-21" href="#__codelineno-9-21"></a>-Dsomecustomproperty=value
+</code></pre></div>
+<h2 id="activegate_6">Модули ActiveGate<a class="headerlink" href="#activegate_6" title="Permanent link">&para;</a></h2>
+<p>Разные функциональные возможности, предоставляемые ActiveGate, называются <strong><a href="../../capabilities/#functional_tbl" title="Learn the capabilities and uses of ActiveGate.">модулями</a></strong>. При установке ActiveGate для конкретной <a href="../../capabilities/" title="Learn the capabilities and uses of ActiveGate.">цели</a> устанавливается или включается разный набор модулей.</p>
+<p>Модуль активен, если соответствующее свойство конфигурации указано со значением <code>true</code> в разделе конфигурации, посвящённом этому модулю. Однако стоит учитывать, что нельзя включить все модули через <code>custom.properties</code> простым изменением значения свойства: если ActiveGate установлен для работы как приватная Synthetic-локация или для мониторинга мейнфрейма, а назначение ActiveGate нужно изменить, ActiveGate придётся переустановить.<br />
+Активные модули перечислены на странице <a href="../../operation/update-activegate/" title="Configure Environment ActiveGate automatic updates---update mode, target version, and update windows---and download or install manually.">Deployment status</a>.</p>
+<p>Каждый модуль имеет соответствующий раздел в конфигурации</p>
+<p>Помимо разделов конфигурации, посвящённых конкретной функциональности ActiveGate, каждый модуль ActiveGate имеет собственный раздел в файлах конфигурации ActiveGate. Настройки, указанные в этом разделе, применяются именно к данному модулю. Это касается, например, настроек прокси. Однако не все настройки можно продублировать таким образом и указать для модуля: каждый раздел модуля принимает лишь ограниченный набор параметров. <strong>Не копируйте настройки конфигурации между разделами, если только это не указано отдельно.</strong></p>
+<h3 id="agctl">Управление модулями через <code>agctl</code><a class="headerlink" href="#agctl" title="Permanent link">&para;</a></h3>
+<p>Версия ActiveGate 1.333+</p>
+<p>С помощью <a href="../../agctl-command-line-interface/#modules" title="Learn how to use agctl to configure and manage ActiveGate from the command line">agctl</a> можно включать и отключать модули ActiveGate.</p>
+<p>После включения или отключения модулей через <code>agctl</code> нужно <a href="../../operation/stop-restart-activegate/" title="Learn how you can start, stop and restart ActiveGate on Windows or Linux.">перезапустить ActiveGate</a>, чтобы изменения вступили в силу.</p>
+<h4 id="_2">Включение модулей<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a># Enable a single module
+<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>
+<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>
+<a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a>
+<a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a>agctl modules enable metrics_ingest
+<a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a>
+<a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a>
+<a id="__codelineno-10-8" name="__codelineno-10-8" href="#__codelineno-10-8"></a>
+<a id="__codelineno-10-9" name="__codelineno-10-9" href="#__codelineno-10-9"></a># Enable multiple modules (comma-separated, no spaces)
+<a id="__codelineno-10-10" name="__codelineno-10-10" href="#__codelineno-10-10"></a>
+<a id="__codelineno-10-11" name="__codelineno-10-11" href="#__codelineno-10-11"></a>
+<a id="__codelineno-10-12" name="__codelineno-10-12" href="#__codelineno-10-12"></a>
+<a id="__codelineno-10-13" name="__codelineno-10-13" href="#__codelineno-10-13"></a>agctl modules enable MSGrouter,metrics_ingest,otlp_ingest
+</code></pre></div>
+<h4 id="_3">Отключение модулей<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a># Disable a single module
+<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>
+<a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a>
+<a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a>
+<a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a>agctl modules disable synthetic
+<a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a>
+<a id="__codelineno-11-7" name="__codelineno-11-7" href="#__codelineno-11-7"></a>
+<a id="__codelineno-11-8" name="__codelineno-11-8" href="#__codelineno-11-8"></a>
+<a id="__codelineno-11-9" name="__codelineno-11-9" href="#__codelineno-11-9"></a># Disable multiple modules
+<a id="__codelineno-11-10" name="__codelineno-11-10" href="#__codelineno-11-10"></a>
+<a id="__codelineno-11-11" name="__codelineno-11-11" href="#__codelineno-11-11"></a>
+<a id="__codelineno-11-12" name="__codelineno-11-12" href="#__codelineno-11-12"></a>
+<a id="__codelineno-11-13" name="__codelineno-11-13" href="#__codelineno-11-13"></a>agctl modules disable aws_monitoring,azure_monitoring
+</code></pre></div>
+<h2 id="aws">Модуль: AWS<a class="headerlink" href="#aws" title="Permanent link">&para;</a></h2>
+<p>Мониторинг AWS<br />
+<strong>Раздел: [aws_monitoring]</strong></p>
+<table>
+<thead>
+<tr>
+<th>Свойство</th>
+<th>Описание</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>aws_monitoring_enabled</code></td>
+<td>Включает модуль <a href="../../../amazon-web-services/" title="Set up and configure monitoring for Amazon Web Services.">мониторинга AWS</a>. Возможные значения: <code>true</code> или <code>false</code>.</td>
+</tr>
+<tr>
+<td><code>aws_default_region</code></td>
+<td>Задаёт регион по умолчанию, используемый модулем <a href="../../../amazon-web-services/" title="Set up and configure monitoring for Amazon Web Services.">мониторинга AWS</a>. Возможные значения: допустимые коды регионов AWS. Например: <code>us-east-1</code></td>
+</tr>
+<tr>
+<td><code>aws_client_regions</code></td>
+<td>Задаёт регионы, используемые модулем <a href="../../../amazon-web-services/" title="Set up and configure monitoring for Amazon Web Services.">мониторинга AWS</a>. Возможные значения: список допустимых кодов регионов AWS, разделённых <code>;</code>. Например: <code>us-east-1;eu-central-1</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="azure">Модуль: Azure<a class="headerlink" href="#azure" title="Permanent link">&para;</a></h2>
+<p>Мониторинг Microsoft Azure<br />
+<strong>Раздел: [azure_monitoring]</strong></p>
+<table>
+<thead>
+<tr>
+<th>Свойство</th>
+<th>Описание</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>azure_monitoring_enabled</code></td>
+<td>Включает модуль <a href="../../../microsoft-azure-services/azure-integrations/azure-monitoring-guide/" title="Set up and configure Azure monitoring in Dynatrace.">Microsoft Azure</a>. Возможные значения: <code>true</code> или <code>false</code>.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="cloud-foundry">Модуль: Cloud Foundry<a class="headerlink" href="#cloud-foundry" title="Permanent link">&para;</a></h2>
+<p>Мониторинг Cloud Foundry<br />
+<strong>Раздел: [cloudfoundry_monitoring]</strong></p>
+<table>
+<thead>
+<tr>
+<th>Свойство</th>
+<th>Описание</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>cloudfoundry_monitoring_enabled</code></td>
+<td>Включает модуль <a href="../../../setup-on-container-platforms/cloud-foundry/connect-your-cloud-foundry-foundations-to-dynatrace/" title="Enable monitoring on your Cloud Foundry foundations.">Cloud Foundry</a>. Возможные значения: <code>true</code> или <code>false</code>.</td>
+</tr>
+</tbody>
+</table>
+<p>Этот раздел может содержать настройки прокси для взаимодействия с Cloud Foundry. Если раздел содержит <code>proxy-off = true</code>, то прокси для взаимодействия с Cloud Foundry не используется. Если он содержит свойство <code>proxy-host</code>, то именно этот прокси используется для мониторинга Cloud Foundry вместо прокси, указанного в <code>[http.client.external]</code>.</p>
+<p>Версия ActiveGate 1.247 и более ранние Если в файле <code>custom.properties</code> присутствует раздел <code>[cloudfoundry_monitoring]</code>, также необходим раздел <code>[http.client.external]</code>, в котором нужно указать все остальные параметры взаимодействия, используемые для связи с Cloud Foundry.</p>
+<p><a href="../set-up-proxy-authentication-for-activegate/#set-up-proxy-only-for-cloud-foundry-monitoring" title="Learn how to configure ActiveGate properties to set up a proxy.">Настройка прокси только для мониторинга Cloud Foundry</a></p>
+<h2 id="kubernetes">Модуль: Kubernetes<a class="headerlink" href="#kubernetes" title="Permanent link">&para;</a></h2>
+<p>Мониторинг платформы Kubernetes<br />
+<strong>Раздел: [kubernetes_monitoring]</strong></p>
+<table>
+<thead>
+<tr>
+<th>Свойство</th>
+<th>Описание</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>kubernetes_monitoring_enabled</code></td>
+<td>Включает модуль <a href="../../../setup-on-k8s/deployment/other/ag-statefulset/" title="Install and configure ActiveGate in Kubernetes as a StatefulSet.">мониторинга платформы Kubernetes</a>. Возможные значения: <code>true</code> или <code>false</code>.</td>
+</tr>
+</tbody>
+</table>
+<p>Этот раздел может содержать настройки прокси для взаимодействия с Kubernetes, а также другие настройки, связанные с точной настройкой параметров взаимодействия для мониторинга платформы Kubernetes.<br />
+Если раздел содержит <code>proxy-off = true</code>, то прокси для взаимодействия с Kubernetes не используется. Если он содержит свойство <code>proxy-host</code>, то именно этот прокси используется для мониторинга платформы Kubernetes вместо прокси, указанного в <code>[http.client.external]</code>.</p>
+<p>Версия ActiveGate 1.247 и более ранние Если в файле <code>custom.properties</code> присутствует раздел <code>[kubernetes_monitoring]</code>, также необходим раздел <code>[http.client.external]</code>, в котором нужно указать все остальные параметры взаимодействия, используемые для связи с Kubernetes.</p>
+<p><a href="../set-up-proxy-authentication-for-activegate/#set-up-proxy-only-for-kubernetes-monitoring" title="Learn how to configure ActiveGate properties to set up a proxy.">Настройка прокси только для мониторинга платформы Kubernetes</a></p>
+<h2 id="log-monitoring">Модуль: Log Monitoring<a class="headerlink" href="#log-monitoring" title="Permanent link">&para;</a></h2>
+<p><strong>Раздел: [log_analytics_collector]</strong></p>
+<table>
+<thead>
+<tr>
+<th>Свойство</th>
+<th>Описание</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>log_analytics_collector_enabled</code></td>
+<td>Включает модуль <a href="../../../../analyze-explore-automate/log-monitoring/" title="Learn how to enable Log Monitoring, the insights that Log Monitoring can provide, and more.">Log Monitoring</a>. Возможные значения: <code>true</code> или <code>false</code>.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Раздел: [generic_ingest]</strong></p>
+<p>Именно для Log Monitoring, при настройке приёма журналов API, можно настроить свойства очереди данных журналов. Можно указать временную папку, в которой будут храниться данные журналов из очереди. По умолчанию используется временная папка, настроенная в системе (см. <a href="../where-can-i-find-activegate-files/" title="Find out where ActiveGate files are stored on Windows and Linux systems.">Директории ActiveGate</a>). Также можно изменить максимальный размер очереди, используемой в этой папке (размер по умолчанию, 300 МБ).</p>
+<table>
+<thead>
+<tr>
+<th>Свойство</th>
+<th>Значение по умолчанию</th>
+<th>Описание</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>disk_queue_path</code></td>
+<td>Текущая общесистемная временная папка</td>
+<td>Задаёт путь к временной папке, в которой будут храниться данные журналов из очереди.</td>
+</tr>
+<tr>
+<td><code>disk_queue_max_size_mb</code></td>
+<td>300 МБ</td>
+<td>Задаёт максимальный размер данных журналов из очереди, которые могут храниться во временной папке.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="vmware">Модуль: VMware<a class="headerlink" href="#vmware" title="Permanent link">&para;</a></h2>
+<p>Мониторинг VMware<br />
+<strong>Раздел: [vmware_monitoring]</strong></p>
+<table>
+<thead>
+<tr>
+<th>Свойство</th>
+<th>Описание</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>vmware_monitoring_enabled</code></td>
+<td>Включает модуль <a href="../../../../observe/infrastructure-observability/vmware-vsphere-monitoring/" title="Monitor VMware vSphere with Dynatrace.">мониторинга VMware</a>. Возможные значения: <code>true</code> или <code>false</code>.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="database-insights">Модуль: Database insights<a class="headerlink" href="#database-insights" title="Permanent link">&para;</a></h2>
+<p>Database insights для Oracle<br />
+<strong>Раздел: [dbAgent]</strong></p>
+<table>
+<thead>
+<tr>
+<th>Свойство</th>
+<th>Описание</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>dbAgent_enabled</code></td>
+<td>Включает модуль <a href="../../../../observe/infrastructure-observability/database-services-classic/database-insights/" title="Learn how to extend your database monitoring to the database infrastructure layer.">Database insights для Oracle</a>. Возможные значения: <code>true</code> или <code>false</code>.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="extensions">Модуль: Extensions<a class="headerlink" href="#extensions" title="Permanent link">&para;</a></h2>
+<p><strong>Раздел: [extension_controller]</strong></p>
+<table>
+<thead>
+<tr>
+<th>Свойство</th>
+<th>Описание</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>extension_controller_enabled</code></td>
+<td>Включает фреймворк Extensions. Возможные значения: <code>true</code> или <code>false</code>.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="zremote">Модуль: zRemote<a class="headerlink" href="#zremote" title="Permanent link">&para;</a></h2>
+<p>Установка модуля zRemote для мониторинга z/OS<br />
+<strong>Раздел: [zremote]</strong></p>
+<table>
+<thead>
+<tr>
+<th>Свойство</th>
+<th>Описание</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>zremote_enabled</code></td>
+<td>Включает <a href="../../../dynatrace-oneagent/installation-and-operation/zos/installation/install-zremote/" title="Prepare and install the zRemote for z/OS monitoring.">модуль zRemote</a>. Возможные значения: <code>true</code> или <code>false</code>.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="synthetic">Модуль: Synthetic<a class="headerlink" href="#synthetic" title="Permanent link">&para;</a></h2>
+<p>Синтетические мониторы из приватных Synthetic-локаций
+<strong>Раздел: [synthetic]</strong></p>
+<p>Настройки прокси для Synthetic Monitoring. Если этот раздел содержит <code>proxy-off = true</code>, значит для Synthetic Monitoring прокси не используется. Если он содержит свойство <code>proxy-host</code>, значит это прокси, который будет использоваться для Synthetic Monitoring, вместо прокси, указанного в <code>[http.client.external]</code> (или в <code>[http.client]</code>, если <code>[http.client.external]</code> не определён).</p>
+<p>Если в файле <code>custom.properties</code> есть раздел <code>[synthetic]</code>, можно добавить раздел <code>[http.client.external]</code>, где нужно указать все остальные параметры соединения, используемые для Synthetic Monitoring. Либо можно указать остальные настройки соединения в разделе <code>[http.client]</code>.</p>
+<p>ActiveGate версии 1.247 и более ранние: однако, если создаётся раздел <code>[http.client.external]</code>, в нём нужно указать все параметры соединения. Иначе параметры соединения для отслеживаемых сред (Cloud Foundry, Kubernetes или Synthetic Monitoring) вернутся к заводским значениям по умолчанию.</p>
+<p>Подробнее о свойствах, связанных с прокси, для ActiveGate с поддержкой Synthetic, см. в разделе <a href="../../../../observe/digital-experience/synthetic-monitoring/private-synthetic-locations/setting-up-proxy-for-private-synthetic/" title="Узнайте, как настроить свойства ActiveGate для настройки прокси для приватного синтетического мониторинга.">Настройка прокси для приватного синтетического мониторинга</a>.</p>
+<p>Обратите внимание, что изменение свойства <code>synthetic_enabled</code> работает только в том случае, если ActiveGate был установлен для <a href="../../#synthetic" title="Основные понятия, связанные с ActiveGate.">запуска синтетических мониторов из приватной локации</a>. Если ActiveGate был установлен для <a href="../../#route" title="Основные понятия, связанные с ActiveGate.">маршрутизации трафика, мониторинга облачных сред или мониторинга удалённых технологий с помощью расширений</a> или <a href="../../#mainframe" title="Основные понятия, связанные с ActiveGate.">мониторинга мейнфрейма</a>, то для использования его в целях Synthetic Monitoring нужно переустановить ActiveGate. Подробнее см. в разделе <a href="../../../../observe/digital-experience/synthetic-monitoring/private-synthetic-locations/create-a-private-synthetic-location/" title="Узнайте, как создать приватную локацию для синтетического мониторинга.">Создание приватной Synthetic-локации</a>.</p>
+<p>Если запятая (<code>,</code>) является частью значения, перед ней нужно добавить экранирующий обратный слэш (<code>\</code>).</p>
+<p>Пример: <code>proxy-password = foo\,bar</code></p>
+<table>
+<thead>
+<tr>
+<th>Свойство</th>
+<th>Значение по умолчанию</th>
+<th>Описание</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>synthetic_enabled</code></td>
+<td><code>false</code> в режиме развёртывания <strong>Default</strong>  <code>true</code> в режиме развёртывания <strong>Synthetic monitoring</strong></td>
+<td>Включает выполнение мониторов из приватных Synthetic-локаций на ActiveGate.</td>
+</tr>
+<tr>
+<td><code>synthetic_autoinstall</code></td>
+<td><code>true</code> для автоматического обновления Synthetic-движка</td>
+<td>Автоматически устанавливается в <code>true</code> при установке для ActiveGate с поддержкой Synthetic.</td>
+</tr>
+<tr>
+<td><code>proxy-server</code></td>
+<td>не задано</td>
+<td>Адрес прокси-сервера</td>
+</tr>
+<tr>
+<td><code>proxy-port</code></td>
+<td>не задано</td>
+<td>Порт прокси (числовое значение)</td>
+</tr>
+<tr>
+<td><code>proxy-user</code></td>
+<td>не задано</td>
+<td>Имя пользователя прокси (необязательно)</td>
+</tr>
+<tr>
+<td><code>proxy-password</code></td>
+<td>не задано</td>
+<td>Пароль прокси (необязательно)  Пароль, указанный в свойстве <code>proxy-password</code>, обфусцируется после перезапуска ActiveGate, а обфусцированный пароль сохраняется в свойстве <code>proxy-password-encr</code>. <strong>Примечание</strong>: символ запятой, если он должен являться частью значения, нужно экранировать одним обратным слэшем. Например, <code>proxy-password = foo\,bar</code>.</td>
+</tr>
+<tr>
+<td><code>proxy-off</code></td>
+<td>не задано</td>
+<td>Отключает взаимодействие через прокси между ActiveGate и тестируемым ресурсом.</td>
+</tr>
+<tr>
+<td><code>proxy-non-proxy-hosts</code></td>
+<td>не задано</td>
+<td>Не использовать прокси при взаимодействии с этими хостами.</td>
+</tr>
+<tr>
+<td><code>chromium_repo</code></td>
+<td>не задано  Указывает пользовательский репозиторий пакетов браузера на HTTP-сервере. Пример: <code>https://172.18.0.100/chromium-repo</code> Работает только если и <code>synthetic_autoinstall</code>, и <code>synthetic_autoupgrade_chromium</code> имеют значение <code>true</code>.</td>
+<td>Включает автообновление браузера из <a href="../../../../observe/digital-experience/synthetic-monitoring/private-synthetic-locations/create-a-private-synthetic-location/#custom-repo" title="Узнайте, как создать приватную локацию для синтетического мониторинга.">пользовательского репозитория</a>.</td>
+</tr>
+</tbody>
+</table>
+<p>Рекомендуется не редактировать значение свойства <code>synthetic_autoupgrade_chromium</code> в файле <code>custom.properties</code>, поскольку внесённые изменения могут быть перезаписаны.</p>
+<p>Свойство <code>synthetic_autoupgrade_chromium</code> для автообновления браузера можно определить на уровне локации (для локаций с Environment ActiveGate) либо <a href="../../../../observe/digital-experience/synthetic-monitoring/private-synthetic-locations/manage-private-synthetic-locations/#browser" title="Анализ и управление использованием мощностей в приватных Synthetic-локациях.">через веб-интерфейс</a>, либо с помощью вызова <a href="../../../../dynatrace-api/environment-api/synthetic-v2/synthetic-locations-v2/put-a-location/" title="Обновление приватной синтетической локации через API Synthetic v2.">PUT a location</a> API Synthetic locations API v2. Для Cluster ActiveGate это свойство можно настроить через вызов <a href="../../../../dynatrace-api/cluster-api/cluster-api-v2/synthetic-locations-and-nodes/put-a-location/" title="Обновление приватной Synthetic-локации через API Synthetic v2 в Dynatrace Managed.">PUT a location (Dynatrace Managed)</a> API Cluster API v2. Это свойство не определено для ActiveGate, которые не были назначены локации. Для Activate, назначенных локации, значение по умолчанию, <code>true</code>.</p>
+<h2 id="beacon-forwarder">Модуль: Beacon forwarder<a class="headerlink" href="#beacon-forwarder" title="Permanent link">&para;</a></h2>
+<p>Использование ActiveGate для Real User Monitoring
+<strong>Раздел: [beacon_forwarder]</strong></p>
+<table>
+<thead>
+<tr>
+<th>Свойство</th>
+<th>Описание</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>beacon_forwarder_enabled</code></td>
+<td>Включает <a href="../../../../observe/digital-experience/rum-classic/web-applications/additional-configuration/beacon-endpoint/" title="Изменение URL конечной точки beacon по умолчанию и отправка RUM-бэконов на инфраструктуру Dynatrace или на другой инструментированный веб-сервер.">модуль Beacon forwarder</a>. Возможные значения: <code>true</code> или <code>false</code>.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="http-metric-api">Модуль: HTTP Metric API<a class="headerlink" href="#http-metric-api" title="Permanent link">&para;</a></h2>
+<p>Приём метрик: простой способ отправки любых пользовательских метрик в Dynatrace
+<strong>Раздел: [metrics_ingest]</strong></p>
+<table>
+<thead>
+<tr>
+<th>Свойство</th>
+<th>Описание</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>metrics_ingest_enabled</code></td>
+<td>Включает модуль HTTP Metric API, который обеспечивает <a href="../../../extend-dynatrace/extend-metrics/" title="Узнайте, как расширить наблюдаемость метрик в Dynatrace.">приём метрик</a>. Возможные значения: <code>true</code> или <code>false</code>.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="memory-dumps">Модуль: Memory dumps<a class="headerlink" href="#memory-dumps" title="Permanent link">&para;</a></h2>
+<p>Инициирование и загрузка дампов памяти
+<strong>Раздел: [collector]</strong></p>
+<table>
+<thead>
+<tr>
+<th>Свойство</th>
+<th>Описание</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>DumpSupported</code></td>
+<td>Включает <a href="../../../../observe/application-observability/profiling-and-optimization/memory-dump-analysis/configure-an-activegate-for-memory-dump-storage/" title="Узнайте, как включить хранение дампов памяти на ActiveGate.">модуль дампов памяти</a>. Возможные значения: <code>true</code> или <code>false</code>.</td>
+</tr>
+</tbody>
+</table>
+<p>Когда в приложении возникают утечки памяти или высокая интенсивность создания объектов, важно получить дампы памяти, чтобы проанализировать эти проблемы. В производственных средах это часто оказывается затруднительным, когда нет возможности войти в среду и нет других способов инициировать дампы памяти. Dynatrace позволяет как инициировать, так и безопасно загружать дампы памяти в выбранный инструмент анализа.
+См. <a href="../../../../observe/application-observability/profiling-and-optimization/memory-dump-analysis/configure-an-activegate-for-memory-dump-storage/" title="Узнайте, как включить хранение дампов памяти на ActiveGate.">Настройка ActiveGate для хранения дампов памяти</a>.</p>
+<h2 id="oneagent">Модуль: маршрутизация OneAgent<a class="headerlink" href="#oneagent" title="Permanent link">&para;</a></h2>
+<p>ActiveGate знает о структуре среды выполнения вашей Dynatrace среды и маршрутизирует сообщения от OneAgent к нужным конечным точкам сервера. Он обрабатывает маршрутизацию сообщений, буферизацию, сжатие, аутентификацию и доступ к изолированным сетям.
+<strong>Раздел: [collector]</strong></p>
+<table>
+<thead>
+<tr>
+<th>Свойство</th>
+<th>Описание</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>MSGrouter</code></td>
+<td>Включает модуль маршрутизации OneAgent, который маршрутизирует трафик OneAgent и другой трафик ActiveGate через Dynatrace. Возможные значения: <code>true</code> или <code>false</code>.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="otlp-ingest">Модуль: OTLP Ingest<a class="headerlink" href="#otlp-ingest" title="Permanent link">&para;</a></h2>
+<p><strong>Раздел: [otlp_ingest]</strong>
+Этот модуль создаёт на ActiveGate конечные точки, которые могут принимать данные трассировки OpenTelemetry (трассировки и спаны), метрики и логи в формате OTLP. Подробнее см. в разделе <a href="../../../opentelemetry/otlp-api/" title="Узнайте о конечных точках API OTLP, которые ваше приложение использует для экспорта данных OpenTelemetry в Dynatrace.">Конечные точки API OTLP Dynatrace</a>.</p>
+<table>
+<thead>
+<tr>
+<th>Свойство</th>
+<th>Описание</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>otlp_ingest_enabled</code></td>
+<td>Включает модуль OTLP ingest, который обеспечивает приём <a href="../../../opentelemetry/" title="Узнайте, как интегрировать и принимать данные OpenTelemetry (трассировки, метрики и логи) в Dynatrace.">трассировок</a> и <a href="../../../opentelemetry/" title="Узнайте, как интегрировать и принимать данные OpenTelemetry (трассировки, метрики и логи) в Dynatrace.">метрик</a> OpenTelemetry. Возможные значения: <code>true</code> или <code>false</code>.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="rest-api">Модуль: REST API<a class="headerlink" href="#rest-api" title="Permanent link">&para;</a></h2>
+<p><strong>Раздел: [collector]</strong>
+ActiveGate можно использовать для доступа к <a href="../../../../dynatrace-api/" title="Узнайте, что нужно для использования API Dynatrace.">API Dynatrace</a>. ActiveGate поддерживает вызовы ко всем конечным точкам конфигурации и среды API Dynatrace, как в версии v1, так и в v2. Для доступа к API Dynatrace через ActiveGate используйте URL в следующем формате: <code>https://{your-ActiveGate-domain}/e/{your-environment-id}/api/...</code></p>
+<table>
+<thead>
+<tr>
+<th>Свойство</th>
+<th>Описание</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>restInterface</code></td>
+<td>Включает модуль REST API, который обеспечивает доступ к API Dynatrace через REST. Возможные значения: <code>true</code> или <code>false</code>.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="_4">Модуль: отладка<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<p><strong>Раздел: [debugging]</strong>
+ActiveGate можно использовать для доступа к данным на уровне кода, необходимым для быстрого устранения неполадок и отладки в любой среде, от разработки до продакшена.</p>
+<table>
+<thead>
+<tr>
+<th>Свойство</th>
+<th>Описание</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>debugging_enabled</code></td>
+<td>Включает модуль Dynatrace Live Debugger. Возможные значения: <code>true</code> или <code>false</code>.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="_5">Сетевая зона<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
+<p><strong>Раздел: [connectivity]</strong></p>
+<table>
+<thead>
+<tr>
+<th>Свойство</th>
+<th>Значение по умолчанию</th>
+<th>Описание</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>networkZone</code></td>
+<td>не задано</td>
+<td>Определяет <a href="../../../../manage/network-zones/" title="Find out how network zones work in Dynatrace.">сетевую зону</a>, к которой относится ActiveGate. ActiveGate может относиться только к одной сетевой зоне. Имя сетевой зоны, это строка из буквенно-цифровых символов, дефисов (<code>-</code>), символов подчёркивания (<code>_</code>) и точек (<code>.</code>). Точки используются как разделители, поэтому нельзя использовать точку в качестве первого символа имени сетевой зоны. Длина строки ограничена 256 символами. После добавления или изменения этого параметра требуется перезапуск ActiveGate. После перезапуска сетевая зона автоматически создаётся в Dynatrace.</td>
+</tr>
+<tr>
+<td><code>bindToNetworkInterface</code></td>
+<td>не задано</td>
+<td>По умолчанию ActiveGate прослушивает все доступные интерфейсы. Если нужно, чтобы ActiveGate прослушивал только выбранный интерфейс, нужно настроить это свойство с IP-адресом, назначенным сетевому интерфейсу.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="agctl_1">Управление сетевой зоной через <code>agctl</code><a class="headerlink" href="#agctl_1" title="Permanent link">&para;</a></h3>
+<p>ActiveGate версии 1.333+</p>
+<p>Для настройки сетевой зоны ActiveGate можно использовать <a href="../../agctl-command-line-interface/#network-zone" title="Learn how to use agctl to configure and manage ActiveGate from the command line">agctl</a>:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>agctl network-zone set production-zone
+</code></pre></div>
+<p>После настройки сетевой зоны через <code>agctl</code> нужно перезапустить ActiveGate, чтобы изменения вступили в силу. См. <a href="../../operation/stop-restart-activegate/" title="Learn how you can start, stop and restart ActiveGate on Windows or Linux.">Запуск/остановка/перезапуск ActiveGate</a>.</p>
+<p>Также, чтобы изменить привязку к сетевой зоне централизованно из Cluster Dynatrace, можно использовать <a href="../../../bulk-configuration/#configure-activegates" title="Perform OneAgent and ActiveGate configuration on hosts from the Deployment status page or at scale using the Dynatrace API.">Remote configuration management</a> (выбрать действие <strong>modify network zone</strong>).</p>
+<h2 id="group">Group<a class="headerlink" href="#group" title="Permanent link">&para;</a></h2>
+<p><strong>Раздел: [collector]</strong></p>
+<table>
+<thead>
+<tr>
+<th>Свойство</th>
+<th>Значение по умолчанию</th>
+<th>Описание</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>group</code></td>
+<td>не задано</td>
+<td><a href="../../activegate-group/" title="Understand the basic concepts of ActiveGate groups.">Группа ActiveGate</a></td>
+</tr>
+</tbody>
+</table>
+<h3 id="activegate-agctl_1">Управление группой ActiveGate через <code>agctl</code><a class="headerlink" href="#activegate-agctl_1" title="Permanent link">&para;</a></h3>
+<p>ActiveGate версии 1.333+</p>
+<p>Для назначения ActiveGate группе можно использовать <a href="../../agctl-command-line-interface/#group" title="Learn how to use agctl to configure and manage ActiveGate from the command line">agctl</a>:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>agctl group set my.group
+</code></pre></div>
+<p>После настройки группы ActiveGate через <code>agctl</code> нужно перезапустить ActiveGate, чтобы изменения вступили в силу. См. <a href="../../operation/stop-restart-activegate/" title="Learn how you can start, stop and restart ActiveGate on Windows or Linux.">Запуск/остановка/перезапуск ActiveGate</a>.</p>
+<p>Также, чтобы изменить назначение группы ActiveGate централизованно из Cluster Dynatrace, можно использовать <a href="../../../bulk-configuration/#configure-activegates" title="Perform OneAgent and ActiveGate configuration on hosts from the Deployment status page or at scale using the Dynatrace API.">Remote configuration management</a> (выбрать действие <strong>modify ActiveGate group</strong>).</p>
+<h2 id="activegate_7">Файловый кэш ActiveGate<a class="headerlink" href="#activegate_7" title="Permanent link">&para;</a></h2>
+<p>Файловый кэш ActiveGate снижает трафик между ActiveGate и Cluster Dynatrace, позволяя OneAgent загружать автоматические обновления с ActiveGate, а не с Cluster.</p>
+<p>Файловый кэш активируется автоматически при установке или обновлении ActiveGate. Однако активация происходит только при соблюдении <strong>минимального требования к объёму свободного места в 512 МБ</strong>. Если минимальное требование к объёму не соблюдено, кэширование автоматически деактивируется.</p>
+<p>Файловый кэш можно настроить или отключить в конфигурации ActiveGate, в файле <code>custom.properties</code>:</p>
+<p><strong>Раздел: [generic_filecache]</strong></p>
+<table>
+<thead>
+<tr>
+<th>Свойство</th>
+<th>Значение по умолчанию</th>
+<th>Описание</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>generic_filecache_enabled</code></td>
+<td><code>true</code></td>
+<td>Включает или отключает файловый кэш ActiveGate. Возможные значения: <code>true</code> или <code>false</code>.</td>
+</tr>
+<tr>
+<td><code>generic_filecache_path</code></td>
+<td><code>&lt;временный каталог ActiveGate&gt;/generic_filecache</code></td>
+<td>Путь к каталогу файлового кэша ActiveGate. Каталог будет создан, если он не существует (если это позволяют права доступа к файлам).</td>
+</tr>
+<tr>
+<td><code>generic_filecache_size</code></td>
+<td><code>2147483648</code> (2 ГБ)</td>
+<td>Размер файлового кэша ActiveGate в байтах. Файловый кэш ActiveGate не будет использовать больше места, чем указано в конфигурации. Если доступного места меньше, чем указано в конфигурации, ActiveGate будет использовать доступное место.</td>
+</tr>
+<tr>
+<td><code>generic_filecache_max_age</code></td>
+<td><code>1209600000</code> (14 дней)</td>
+<td>Максимальный возраст файлов, хранящихся в файловом кэше ActiveGate, в миллисекундах. Возраст файла отсчитывается с момента последнего использования файла (а не с момента загрузки/создания). Если файл не используется в течение настроенного максимального возраста, файл будет автоматически удалён. Файлы также удаляются из кэша до достижения максимального возраста, если недостаточно места для новых файлов. В первую очередь удаляются файлы LRU (least recently used, давно не использовавшиеся).</td>
+</tr>
+</tbody>
+</table>
+<p>Если значение содержит символ запятой, его нужно экранировать одним обратным слэшем. Например, <code>proxy-password = foo\,bar</code>.</p>
+<h2 id="comcompuwareapmwebserver">Раздел: [com.compuware.apm.webserver]<a class="headerlink" href="#comcompuwareapmwebserver" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Свойство</th>
+<th>Значение по умолчанию</th>
+<th>Описание</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>port-ssl</code></td>
+<td><code>9999</code></td>
+<td>Порт, на котором ActiveGate прослушивает трафик от OneAgent, используется для HTTPS-соединения. Это можно настроить с помощью команды <a href="../../agctl-command-line-interface/#ssl-port" title="Learn how to use agctl to configure and manage ActiveGate from the command line">agctl ssl-port</a>. Если нужно изменить значение порта, см. <a href="../../../extensions/develop-your-extensions/" title="Develop your own Extensions in Dynatrace.">Разработка собственного Extensions</a> и <a href="../../../extensions/advanced-configuration/eec-custom-configuration/" title="Configure the Extension Execution Controller (EEC).">Пользовательская конфигурация Extension Execution Controller</a>.</td>
+</tr>
+<tr>
+<td><code>port</code></td>
+<td>не задано</td>
+<td>Порт, на котором ActiveGate прослушивает трафик от OneAgent, используется для HTTP-соединения. По умолчанию отключён. В Linux рекомендуется значение &gt; 1024, чтобы не требовались права root.</td>
+</tr>
+<tr>
+<td><code>ssl-protocols</code></td>
+<td><code>TLSv1.2</code>, <code>TLSv1.3</code></td>
+<td>Поддерживаемые SSL-протоколы. Может быть одним значением или списком значений через запятую. Обратите внимание, что указание конкретной версии не подразумевает автоматически поддержку всех предыдущих/более низких версий, поэтому каждую версию нужно указывать явно. Допустимые значения: <code>TLSv1.2</code> и <code>TLSv1.3</code></td>
+</tr>
+<tr>
+<td><code>excluded-ciphers</code></td>
+<td>не задано</td>
+<td>Список исключённых шифров. Шифры определяются подстрокой, соответствующей хотя бы части имени шифра, например: <code>excluded-ciphers = TLS_RSA_WITH,SHA$,TLS_ECDH</code></td>
+</tr>
+<tr>
+<td><code>certificate-file</code></td>
+<td>не задано</td>
+<td>Путь к файлу <code>PKCS#12</code>, содержащему сертификаты, используемые веб-сервером ActiveGate. См. также <a href="../configure-custom-ssl-certificate-on-activegate/" title="Learn how to configure the SSL certificate on your ActiveGate.">Настройка пользовательского SSL-сертификата на ActiveGate</a>.</td>
+</tr>
+<tr>
+<td><code>certificate-password</code></td>
+<td>не задано</td>
+<td>Пароль для файла сертификата.</td>
+</tr>
+<tr>
+<td><code>certificate-alias</code></td>
+<td>не задано</td>
+<td>Понятное имя сертификата в файле <code>PKCS#12</code>.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="https-http">Работа по HTTPS против HTTP<a class="headerlink" href="#https-http" title="Permanent link">&para;</a></h4>
+<p>По умолчанию ActiveGate работает безопасным способом, обслуживая входящие запросы по HTTPS. Это задаётся свойством конфигурации <code>port-ssl</code>, которое можно настроить в файле <code>custom.properties</code>. Однако, если нужно, чтобы ActiveGate использовал HTTP, нужно указать свойство <code>port</code> в <code>custom.properties</code>.</p>
+<p>Обратите внимание, что безопасный способ является вариантом по умолчанию и рекомендуемым. Однако вариант с HTTP можно выбрать из соображений производительности. Например, если перед Cluster ActiveGate установлен балансировщик нагрузки и если балансировщик нагрузки завершает входящие внешние SSL-соединения (см. <a href="../../../../managed-cluster/basics/managed-deployments/#scenario-3-integration-with-existing-it-landscape" title="Understand how Dynatrace Managed deployments evolve from a basic internal setup to a globally distributed high-availability architecture.">третий сценарий развёртывания</a>).</p>
+<h2 id="httpclient">Раздел: [http.client]<a class="headerlink" href="#httpclient" title="Permanent link">&para;</a></h2>
+<p>Настройки связи, используемые для мониторинга AWS/VMware/Azure и для связи с Cluster Dynatrace (если не переопределены в <code>[http.client.internal]</code>).
+В частности, этот раздел содержит свойства конфигурации, относящиеся к настройкам прокси и таймаутам соединения.</p>
+<p><a href="../set-up-proxy-authentication-for-activegate/#proxy-for-cluster-aws-vmware-azure" title="Learn how to configure ActiveGate properties to set up a proxy.">Указать общие настройки прокси для связи с Cluster Dynatrace и мониторинга AWS/VMware/Azure</a>.</p>
+<h2 id="section-httpclientinternal">Section: [http.client.internal]<a class="headerlink" href="#section-httpclientinternal" title="Permanent link">&para;</a></h2>
+<p>Настройки, специфичные только для взаимодействия с Dynatrace Cluster.
+В частности, этот раздел может содержать конфигурационные свойства, связанные с настройками прокси и таймаутами соединения.</p>
+<p>Если этот раздел содержит proxy-off = true, то для взаимодействия с Dynatrace Cluster прокси не используется. Если он содержит свойство proxy-host, то это прокси, который нужно использовать для взаимодействия с Dynatrace Cluster.</p>
+<p>Если этот раздел не существует, взаимодействие с Dynatrace Cluster определяется настройками из раздела <code>[http.client]</code>.</p>
+<p>ActiveGate версии 1.247 и более ранние: если раздел <code>[http.client.internal]</code> существует, но в нём не указана конкретная настройка взаимодействия, то для целей взаимодействия с Dynatrace Cluster значение этой настройки <strong>принимается равным заводскому значению по умолчанию</strong> (оно <strong>не</strong> наследуется из <code>[http.client]</code>).</p>
+<p><a href="../set-up-proxy-authentication-for-activegate/#set-up-proxy-only-for-dynatrace-cluster-communication" title="Узнать, как настроить свойства ActiveGate для настройки прокси.">Настройка прокси только для взаимодействия с Dynatrace Cluster</a></p>
+<h2 id="section-httpclientexternal">Section: [http.client.external]<a class="headerlink" href="#section-httpclientexternal" title="Permanent link">&para;</a></h2>
+<p>Настройки взаимодействия для конкретных модулей: Cloud Foundry, Kubernetes, а также для Synthetic Monitoring.
+В частности, этот раздел может содержать конфигурационные свойства, связанные с настройками прокси и таймаутами соединения.</p>
+<p>Если этот раздел содержит <code>proxy-off = true</code>, то для модулей прокси не используется. Если он содержит свойство <code>proxy-host</code>, то это прокси, который нужно использовать для модулей.</p>
+<p>ActiveGate версии 1.247 и более ранние</p>
+<p>Настройки взаимодействия, указанные в <code>[http.client]</code>, <strong>не всегда</strong> используются как значения по умолчанию для модулей: если конкретная настройка взаимодействия <strong>не</strong> указана в <code>[http.client.external]</code>, то для Cloud Foundry, Kubernetes или Synthetic Monitoring эта настройка вернётся к своему заводскому значению по умолчанию, а не к значению, указанному в <code>[http.client]</code>.</p>
+<p>Аналогично, если раздел <code>[http.client.external]</code> целиком отсутствует, то все настройки взаимодействия для Kubernetes и Cloud Foundry вернутся к своим заводским значениям по умолчанию, однако настройки для Synthetic Monitoring примут значения, указанные в разделе <code>[http.client]</code>.</p>
+<p><a href="../set-up-proxy-authentication-for-activegate/#specify-common-proxy-settings-for-cloud-foundry-kubernetes-and-synthetic-monitoring" title="Узнать, как настроить свойства ActiveGate для настройки прокси.">Указание общих настроек прокси для Cloud Foundry, Kubernetes и Synthetic Monitoring</a></p>
+<h2 id="section-connectivity">Section: [connectivity]<a class="headerlink" href="#section-connectivity" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Default value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>reverseDnsLookupEnabled</code></td>
+<td><code>true</code></td>
+<td>ActiveGate версии 1.255+: включает или отключает разрешение полного доменного имени (FQDN) с помощью обратного DNS-запроса. Когда эта функция включена и стандартное разрешение FQDN не даёт результата, выполняется попытка разрешить имя с помощью обратного DNS-запроса. ActiveGate, которые ранее отображались по IP-адресу, теперь могут отображаться по имени хоста. Допустимые значения: <code>true</code> или <code>false</code>.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="trusted-root-certificate">Trusted root certificate<a class="headerlink" href="#trusted-root-certificate" title="Permanent link">&para;</a></h2>
+<p><strong>Section: [collector]</strong></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Default value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>trustedstore</code></td>
+<td>не задано</td>
+<td>Доверенное хранилище ключей (необязательно). Свойство <code>trustedstore</code> должно содержать путь к файлу, содержащему доверенные сертификаты. Этот путь должен быть указан относительно каталога SSL ActiveGate. См. также <a href="../configure-trusted-root-certificates-on-activegate/" title="Узнать, как настроить пользовательские доверенные корневые сертификаты на ActiveGate для установления защищённых SSL/TLS-соединений.">Доверенные корневые сертификаты для ActiveGate</a>.</td>
+</tr>
+<tr>
+<td><code>trustedstore-exclusive</code></td>
+<td>не задано</td>
+<td>Если задано значение <code>true</code>, ActiveGate больше не будет объединять встроенное хранилище доверия (поставляемое с JRE) с пользовательским хранилищем доверия, заданным в <code>trustedstore</code>. Пользовательское хранилище доверия будет единственным хранилищем доверия, используемым для взаимодействия.</td>
+</tr>
+<tr>
+<td><code>trustedstore-password</code></td>
+<td><code>changeit</code></td>
+<td>Пароль доверенного хранилища ключей (необязательно), который шифруется при запуске ActiveGate. Обфусцированный пароль затем сохраняется в <code>trustedstore-password-encr</code>.</td>
+</tr>
+<tr>
+<td><code>trustedstore-type</code></td>
+<td><code>pkcs12</code></td>
+<td>Формат баз данных ключей и сертификатов, используемый в Java по умолчанию (необязательно).</td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  К началу
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      © 2026 Dynatrace Docs | Yerkebulan Ardabayev
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/Yerkebulan-Ardabayev" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../../../..", "features": ["navigation.indexes", "navigation.prune", "navigation.path", "navigation.tracking", "navigation.top", "search.suggest", "search.highlight", "search.share", "content.code.copy", "content.code.annotate", "content.tabs.link", "content.tooltips", "toc.follow"], "search": "../../../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u0421\u043a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u043d\u043e \u0432 \u0431\u0443\u0444\u0435\u0440", "clipboard.copy": "\u041a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u0442\u044c \u0432 \u0431\u0443\u0444\u0435\u0440", "search.result.more.one": "\u0415\u0449\u0451 1 \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.more.other": "\u0415\u0449\u0451 # \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.none": "\u0421\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439 \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u043e", "search.result.one": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e 1 \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0435", "search.result.other": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439: #", "search.result.placeholder": "\u041d\u0430\u0447\u043d\u0438\u0442\u0435 \u043f\u0435\u0447\u0430\u0442\u0430\u0442\u044c \u0434\u043b\u044f \u043f\u043e\u0438\u0441\u043a\u0430", "search.result.term.missing": "\u041e\u0442\u0441\u0443\u0442\u0441\u0442\u0432\u0443\u0435\u0442", "select.version": "\u0412\u044b\u0431\u0435\u0440\u0438\u0442\u0435 \u0432\u0435\u0440\u0441\u0438\u044e"}, "version": null}</script>
+    
+    
+  
+      <script src="../../../../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../../../../../assets/javascripts/groq-chat.js?sha=17d46ba74"></script>
+      
+    
+  <script>
+    (function() {
+      // --- Keyboard shortcut Ctrl+K / Cmd+K for search ---
+      document.addEventListener('keydown', function(e) {
+        if ((e.ctrlKey || e.metaKey) && e.key === 'k') {
+          e.preventDefault();
+          var searchInput = document.querySelector('.md-search__input');
+          if (searchInput) {
+            searchInput.focus();
+            var searchToggle = document.querySelector('[data-md-toggle="search"]');
+            if (searchToggle && !searchToggle.checked) {
+              searchToggle.checked = true;
+              searchToggle.dispatchEvent(new Event('change'));
+            }
+          }
+        }
+        // --- "/" focuses search like GitHub / Algolia docs ---
+        if (e.key === '/' && !/^(input|textarea|select)$/i.test(e.target.tagName)) {
+          e.preventDefault();
+          var inp = document.querySelector('.md-search__input');
+          if (inp) {
+            inp.focus();
+            var t = document.querySelector('[data-md-toggle="search"]');
+            if (t && !t.checked) { t.checked = true; t.dispatchEvent(new Event('change')); }
+          }
+        }
+      });
+    })();
+  </script>
+
+  </body>
+</html>

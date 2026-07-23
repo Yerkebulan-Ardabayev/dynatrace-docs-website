@@ -1,0 +1,2903 @@
+
+<!doctype html>
+<html lang="ru" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Документация Dynatrace Managed с AI-помощником">
+      
+      
+        <meta name="author" content="Yerkebulan Ardabayev">
+      
+      
+        <link rel="canonical" href="https://yerkebulan-ardabayev.github.io/dynatrace-docs-website/managed-ru/observe/digital-experience/session-replay/configure-session-replay-web/">
+      
+      
+        <link rel="prev" href="../">
+      
+      
+        <link rel="next" href="../enable-session-replay-web/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>Настройка Session Replay для веб-приложений - Dynatrace — Документация</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Inter";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../../assets/stylesheets/extra.v11.css?sha=17d46ba74">
+    
+    <script>__md_scope=new URL("../../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  <style>
+    /* DocFlow DT Logo Badge — injected via template override */
+    .md-header__button.md-logo {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .md-header__button.md-logo img,
+    .md-header__button.md-logo svg {
+      display: none !important;
+    }
+    .md-header__button.md-logo::before {
+      content: 'DT';
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 28px;
+      height: 28px;
+      border-radius: 6px;
+      background: linear-gradient(135deg, #00d4aa 0%, #7c3aed 100%);
+      color: white;
+      font-size: 11px;
+      font-weight: 700;
+      font-family: 'Inter', sans-serif;
+      letter-spacing: -0.02em;
+      flex-shrink: 0;
+    }
+
+    /* Search Ctrl+K badge — inside input field */
+    .md-search__form {
+      position: relative;
+    }
+    .md-search__form::after {
+      content: 'Ctrl+K';
+      display: none;
+      align-items: center;
+      padding: 0.15rem 0.4rem;
+      border-radius: 4px;
+      border: 1px solid var(--docflow-border);
+      background: var(--md-default-bg-color);
+      font-size: 10px;
+      font-family: 'JetBrains Mono', monospace;
+      color: var(--md-default-fg-color--lighter);
+      white-space: nowrap;
+      pointer-events: none;
+      position: absolute;
+      right: 0.5rem;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+    @media (min-width: 60em) {
+      .md-search__form::after {
+        display: flex;
+      }
+    }
+  </style>
+
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="custom">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#session-replay-" class="md-skip">
+          Перейти к содержанию
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+  
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Верхний колонтитул">
+    <a href="../../../../.." title="Dynatrace — Документация" class="md-header__button md-logo" aria-label="Dynatrace — Документация" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M11 15H6l7-14v8h5l-7 14z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Dynatrace — Документация
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Настройка Session Replay для веб-приложений
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Переключить на светлую тему"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Переключить на светлую тему" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Переключить на тёмную тему"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Переключить на тёмную тему" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Поиск" placeholder="Поиск" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Поиск">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Поделиться" aria-label="Поделиться" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Очистить" aria-label="Очистить" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Инициализация поиска
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/Yerkebulan-Ardabayev/dynatrace-docs-website" title="Перейти к репозиторию" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    dynatrace-docs-website
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Навигация" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../../.." title="Dynatrace — Документация" class="md-nav__button md-logo" aria-label="Dynatrace — Документация" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M11 15H6l7-14v8h5l-7 14z"/></svg>
+
+    </a>
+    Dynatrace — Документация
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/Yerkebulan-Ardabayev/dynatrace-docs-website" title="Перейти к репозиторию" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    dynatrace-docs-website
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Главная
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../../../ru/getting-started/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Начало работы
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../../installation/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Кластер Managed
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../../ingest-from/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Источники данных
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Наблюдаемость
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Наблюдаемость
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../application-observability/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Наблюдаемость приложений
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_5_2" id="__nav_5_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Digital Experience
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Digital Experience
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обзор
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../custom-applications/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Пользовательские приложения
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../dem-use-cases/customer-support-with-session-segmentation/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Сценарии DEM
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../mobile-applications/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Мобильные приложения
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    
+  
+  
+  
+    
+  
+  
+  
+    <a href="../../rum-classic/custom-applications/additional-configuration/configure-apdex-custom/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    rum-classic
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+  
+
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../rum-concepts/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Концепции мониторинга реальных пользователей
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_2_7" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_5_2_7" id="__nav_5_2_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Session Replay
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_5_2_7_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5_2_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Session Replay
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обзор
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Настройка Session Replay для веб-приложений
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../enable-session-replay-web/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Включение Session Replay для веб-приложений
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../session-replay-android/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Настройка Session Replay Classic для Android
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../session-replay-ios/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Настройка Session Replay Classic для iOS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../session-replay-restrictions-web/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Технические ограничения Session Replay для веб-приложений
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../session-segmentation/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Сегментация сессий пользователей
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../synthetic-monitoring/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Synthetic Monitoring
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../web-applications/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Веб-приложения
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../infrastructure-observability/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Наблюдаемость инфраструктуры
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../../dynatrace-intelligence/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Davis AI
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    
+  
+  
+  
+    <a href="../../../../analyze-explore-automate/dashboards-classic/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Анализ
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../../deliver/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Deliver
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    
+  
+  
+  
+    <a href="../../../../secure/application-security/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Безопасность приложений
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    
+  
+  
+  
+    <a href="../../../../manage/account-management/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Управление
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    
+  
+  
+  
+    <a href="../../../../platform/oneagent/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Платформа
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../../dynatrace-api/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../../whats-new/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Что нового
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../../offline-doc/how-do-i-enable-synthetic-monitors/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Офлайн-документация
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../../../ru/training/day1-introduction/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обучение
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../ai/groq/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI Помощник
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Содержание">
+  
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+                
+
+
+
+  
+
+
+  <nav class="md-path" aria-label="Навигация" >
+    <ol class="md-path__list">
+      
+        
+  
+  
+    <li class="md-path__item">
+      <a href="../../../../.." class="md-path__link">
+        
+  <span class="md-ellipsis">
+    Главная
+  </span>
+
+      </a>
+    </li>
+  
+
+      
+      
+        
+  
+  
+    
+    
+      
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="../../../application-observability/" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    Наблюдаемость
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="../../" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    Digital Experience
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="../" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    Session Replay
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ol>
+  </nav>
+
+              
+              <article class="md-content__inner md-typeset">
+                
+  
+                  
+
+
+
+<h1 id="session-replay-">Настройка Session Replay для веб-приложений<a class="headerlink" href="#session-replay-" title="Permanent link">&para;</a></h1>
+<h1 id="session-replay-_1">Настройка Session Replay для веб-приложений<a class="headerlink" href="#session-replay-_1" title="Permanent link">&para;</a></h1>
+<ul>
+<li>How-to guide</li>
+<li>22-min read</li>
+<li>Updated on Mar 05, 2026</li>
+</ul>
+<p>Вы можете настроить потребление мониторинга и параметры конфиденциальности данных для Session Replay. В следующих разделах описаны все возможные параметры конфигурации:</p>
+<ul>
+<li><a href="#cost-traffic-control"><strong>Cost and traffic control</strong></a> для сокращения количества записываемых сессий пользователей</li>
+<li><a href="#sr-opt-in-mode"><strong>Opt-in mode</strong></a> для определения, какие части сессии пользователя должны записываться, и предоставления пользователям возможности дать согласие на запись своих сессий</li>
+<li><a href="#sr-url-exclusion"><strong>URL exclusion</strong></a> для исключения страниц и представлений из записи</li>
+<li><a href="#sr-masking"><strong>Masking</strong></a> для предотвращения записи и отображения личных данных пользователей</li>
+<li><a href="#sr-resource-capturing"><strong>Resource capture</strong></a> для захвата и хранения стилей (CSS) во время записи сессии</li>
+<li><a href="#sr-permissions-and-management-zones"><strong>User permissions and management zones</strong></a> для управления доступом к записям сессий</li>
+</ul>
+<p>Dynatrace ввёл несколько параметров конфигурации Session Replay для защиты личных данных клиентов. Перед включением Session Replay и настройкой параметров конфиденциальности, описанных на этой странице, убедитесь, что ваша организация предприняла все остальные <a href="../../../../manage/data-privacy-and-security/" title="Узнайте о мерах безопасности Dynatrace для защиты личных данных.">необходимые шаги для защиты данных клиентов</a>.</p>
+<p>Возможность воспроизводить записанные сессии с настройками <a href="#sr-masking">маскирования</a> или без них <a href="#sr-permissions">контролируется разрешениями</a>. Разрешения <strong>Replay sessions with masking</strong> и <strong>Replay sessions without masking</strong> доступны на уровне среды и зоны управления.</p>
+<h2 id="_1">Управление стоимостью и трафиком<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<p>После включения Session Replay все сессии пользователей, анализируемые с помощью RUM, также записываются с Session Replay. Однако вы можете ограничить количество сессий, записываемых Session Replay, чтобы снизить объём данных. Для этого настройте параметры управления стоимостью и трафиком.</p>
+<h3 id="_2">Изменение количества записываемых сессий<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
+<p>Для ограничения количества сессий, записываемых с Session Replay:</p>
+<ol>
+<li>Перейдите в <strong>Web</strong>.</li>
+<li>Выберите приложение, которое хотите настроить.</li>
+<li>В правом верхнем углу страницы обзора приложения выберите <strong>More</strong> (<strong>...</strong>) &gt; <strong>Edit</strong>.</li>
+<li>В настройках приложения выберите <strong>General settings</strong> &gt; <strong>Enablement and cost control</strong>.</li>
+<li>В разделе <strong>Session Replay</strong> введите новое значение для <strong>Cost and traffic control</strong>.</li>
+</ol>
+<h3 id="_3">Расчёт количества записываемых сессий<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<p>Для определения фактического процента сессий, записываемых Session Replay, следует учитывать настройку <a href="../../web-applications/additional-configuration/configure-cost-and-traffic-control-web/" title="Используйте настройки управления стоимостью и трафиком в Dynatrace для снижения потребления сессий в веб-приложениях.">управления стоимостью и трафиком для RUM</a>, заданную для вашего приложения (общий процент сессий, анализируемых с RUM).</p>
+<h4 id="_4">Формула<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h4>
+<p>Используйте следующую формулу для расчёта фактического процента сессий, записанных Session Replay:</p>
+<p><strong>Фактический % сессий, записанных SR = управление стоимостью и трафиком для RUM × управление стоимостью и трафиком для Session Replay</strong></p>
+<h4 id="_5">Пример расчёта<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>Параметр</th>
+<th>Значение</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Управление стоимостью и трафиком для RUM</td>
+<td>50%</td>
+</tr>
+<tr>
+<td>Управление стоимостью и трафиком для Session Replay</td>
+<td>20%</td>
+</tr>
+<tr>
+<td>Фактический % сессий, записанных Session Replay</td>
+<td>50% × 20% = 10%</td>
+</tr>
+<tr>
+<td>Общее количество сессий</td>
+<td>2500</td>
+</tr>
+<tr>
+<td>Количество сессий, анализируемых с RUM</td>
+<td>2500 × 50% = 1250</td>
+</tr>
+<tr>
+<td>Количество сессий, записанных Session Replay</td>
+<td>2500 × 10% = 250</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Включение и управление стоимостью" src="https://dt-cdn.net/images/enablement-and-cost-control-997-caeb5b3d6d.png" /></p>
+<p>Включение и управление стоимостью</p>
+<h4 id="_6">Сессии, охватывающие несколько приложений<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h4>
+<p>При наличии нескольких приложений и переходе пользователя из одного в другое Dynatrace создаёт только одну сессию, в контексте которой записывается вся активность. Такая сессия привязывается ко всем приложениям, посещённым пользователем.</p>
+<p>Для определения того, должна ли многоприложенческая сессия записываться Session Replay, Dynatrace использует конфигурацию управления стоимостью и трафиком того приложения, в которое пользователь вошёл первым.</p>
+<p>Например, если управление стоимостью и трафиком для Session Replay установлено на <code>1%</code> для приложения A и <code>100%</code> для приложения B, при переходе пользователя из A в B Dynatrace использует значение <code>1%</code> для определения необходимости записи. Это может приводить к меньшему или большему проценту сессий, записанных Session Replay, по сравнению с настроенными значениями.</p>
+<h2 id="opt-in">Режим opt-in<a class="headerlink" href="#opt-in" title="Permanent link">&para;</a></h2>
+<p>Режим opt-in Session Replay позволяет определить, какие части сессии должны записываться и когда начинается запись. Например, можно записывать сессии в следующих случаях:</p>
+<ul>
+<li>Как только любой пользователь входит в систему</li>
+<li>Только для определённых клиентов для предоставления им расширенной поддержки</li>
+<li>Только для определённых страниц приложения</li>
+</ul>
+<p>Этот механизм позволяет реализовать согласие конечных пользователей на запись сессий.</p>
+<p>При включении режима opt-in Session Replay для веб-приложения запись активной сессии начинается только после вызова метода <a href="https://docs.dynatrace.com/javascriptapi/doc/types/dtrum.html#enablesessionreplay"><code>enableSessionReplay(ignoreCostControl: boolean)</code></a> на глобальном объекте <code>dtrum</code>. Глобальный объект <code>dtrum</code> доступен, если <a href="../../web-applications/initial-setup/snippet-formats/" title="Выберите формат RUM JavaScript-сниппета для вашего случая">RUM JavaScript</a> <a href="../../web-applications/initial-setup/rum-injection/" title="Настройте автоматическое внедрение RUM JavaScript в страницы ваших приложений">внедрён автоматически</a> или <a href="../../web-applications/initial-setup/set-up-agentless-real-user-monitoring/" title="Настройте мониторинг без агента для ваших веб-приложений.">вставлен вручную</a>.</p>
+<p>Эта команда запускает запись сессии. Session Replay остаётся активным, и запись начинается автоматически на всех последующих посещаемых страницах в рамках той же сессии или до вызова <a href="https://docs.dynatrace.com/javascriptapi/doc/types/dtrum.html#disablesessionreplay"><code>dtrum.disableSessionReplay()</code></a>.</p>
+<p>Метод <a href="https://docs.dynatrace.com/javascriptapi/doc/types/dtrum.html#enablesessionreplay"><code>dtrum.enableSessionReplay(ignoreCostControl: boolean)</code></a> включает параметр <code>ignoreCostControl</code>, позволяющий записывать определённые сессии в обход значения, заданного в разделе <a href="#cost-traffic-control">Cost and traffic control</a>.</p>
+<p>Если включён <a href="../../web-applications/additional-configuration/configure-real-user-monitoring-according-to-gdpr/#user-opt-in-mode-gdpr" title="Узнайте о настройках конфиденциальности Dynatrace для соответствия веб-приложений требованиям защиты данных.">режим opt-in Real User Monitoring</a>, перед включением Session Replay необходимо включить RUM, например:</p>
+<p><code>dtrum.enable();</code>
+<code>dtrum.enableSessionReplay(true);</code></p>
+<h3 id="_7">Пример<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
+<p>Рассмотрим следующий сценарий. Как владелец приложения вы хотите записывать все сессии, включающие страницы со 2-й по 5-ю. Активность на страницах 1 и 6 должна быть исключена из записи. На следующей схеме показано, где требуются методы <a href="https://docs.dynatrace.com/javascriptapi/doc/types/dtrum.html#enablesessionreplay"><code>dtrum.enableSessionReplay(ignoreCostControl: boolean)</code></a> и <a href="https://docs.dynatrace.com/javascriptapi/doc/types/dtrum.html#disablesessionreplay"><code>dtrum.disableSessionReplay()</code></a>.</p>
+<p><img alt="Иллюстрация записи сессии" src="https://dt-cdn.net/images/session-recording-illustration-568-a36c3c47ad.png" /></p>
+<p>Иллюстрация записи сессии</p>
+<p>В таких случаях можно отображать баннер согласия для включения записи при переходе пользователя на страницу 2. При выборе пользователем <strong>Accept</strong> приложение вызывает метод <a href="https://docs.dynatrace.com/javascriptapi/doc/types/dtrum.html#enablesessionreplay"><code>dtrum.enableSessionReplay(ignoreCostControl: boolean)</code></a> и начинает запись.</p>
+<p><img alt="Пример баннера opt-in Session Replay" src="https://dt-cdn.net/images/banner-example-2569-b86bd49e59.png" /></p>
+<p>Пример баннера opt-in Session Replay</p>
+<p>Для хранения истории согласия пользователя в браузере можно использовать cookie. Содержимое этого cookie проверяется при каждой сессии для определения необходимости отображения баннера. Например, если cookie хранит согласие под именем <code>sessionReplayConsent</code>, поток приложения будет следующим:</p>
+<ol>
+<li>Приложение проверяет значение cookie <code>sessionReplayConsent</code>.</li>
+<li>Если значение равно <code>true</code>, вызывается <a href="https://docs.dynatrace.com/javascriptapi/doc/types/dtrum.html#enablesessionreplay"><code>dtrum.enableSessionReplay(ignoreCostControl: boolean)</code></a>.</li>
+<li>Если значение равно <code>false</code>, отображается баннер согласия.</li>
+<li>При предоставлении согласия вызывается <a href="https://docs.dynatrace.com/javascriptapi/doc/types/dtrum.html#enablesessionreplay"><code>dtrum.enableSessionReplay(ignoreCostControl: boolean)</code></a>.</li>
+<li>Согласие пользователя записывается в cookie <code>sessionReplayConsent</code>.</li>
+</ol>
+<p>С этим cookie Session Replay остаётся активным до 5-й страницы приложения.</p>
+<p>После выхода пользователя со страницы 5 можно использовать метод <a href="https://docs.dynatrace.com/javascriptapi/doc/types/dtrum.html#disablesessionreplay"><code>dtrum.disableSessionReplay()</code></a> для остановки записи и удалить cookie согласия.</p>
+<p>Методы JavaScript для включения и отключения Session Replay можно использовать без отображения баннера. Например, для записи сессии при каждом входе пользователя используйте <a href="https://docs.dynatrace.com/javascriptapi/doc/types/dtrum.html#enablesessionreplay"><code>dtrum.enableSessionReplay(ignoreCostControl: boolean)</code></a> для начала и <a href="https://docs.dynatrace.com/javascriptapi/doc/types/dtrum.html#disablesessionreplay"><code>dtrum.disableSessionReplay()</code></a> после успешного выхода для остановки. Это обеспечивает полный контроль над началом и завершением Session Replay.</p>
+<h3 id="opt-in-session-replay">Включение режима opt-in Session Replay<a class="headerlink" href="#opt-in-session-replay" title="Permanent link">&para;</a></h3>
+<p>Режим opt-in Session Replay по умолчанию отключён.</p>
+<p>Для включения режима opt-in Session Replay:</p>
+<ol>
+<li>Перейдите в <strong>Web</strong>.</li>
+<li>Выберите приложение, которое хотите настроить.</li>
+<li>В правом верхнем углу страницы обзора приложения выберите <strong>More</strong> (<strong>...</strong>) &gt; <strong>Edit</strong>.</li>
+<li>В настройках приложения выберите <strong>General settings</strong> &gt; <strong>Data privacy</strong> &gt; <strong>Session Replay</strong>.</li>
+<li>Включите <strong>Enable opt-in mode for Session Replay</strong>.</li>
+</ol>
+<p>При этих настройках Session Replay неактивен в браузерах конечных пользователей, и сессии не записываются до вызова метода <a href="https://docs.dynatrace.com/javascriptapi/doc/types/dtrum.html#enablesessionreplay"><code>dtrum.enableSessionReplay(ignoreCostControl: boolean)</code></a> из приложения.</p>
+<p>Если вы не включаете <strong>Enable opt-in mode for Session Replay</strong>, все сессии пользователей записываются с самого начала до вызова <a href="https://docs.dynatrace.com/javascriptapi/doc/types/dtrum.html#disablesessionreplay"><code>dtrum.disableSessionReplay()</code></a>.</p>
+<h2 id="url">Исключение URL<a class="headerlink" href="#url" title="Permanent link">&para;</a></h2>
+<p>Исключение URL применяется к страницам и представлениям. Для исключения страницы из записи Session Replay определите регулярное выражение для сопоставления с URL конкретной страницы. Можно настроить правила для отдельных веб-страниц, целых сайтов и одностраничных приложений.</p>
+<ul>
+<li>Если URL соответствует правилу исключения, это правило применяется, а все последующие игнорируются.</li>
+<li>Если URL не соответствует ни одному правилу, все подходящие страницы записываются Session Replay.</li>
+<li>Если Session Replay включён и правила исключения URL не определены, все страницы записываются по умолчанию.</li>
+</ul>
+<p><img alt="Session Replay - исключение URL" src="https://dt-cdn.net/images/sr-url-exclusion-700-395161c0b1.png" /></p>
+<p>Session Replay - исключение URL</p>
+<p>Для исключения страниц из записи:</p>
+<ol>
+<li>Перейдите в <strong>Web</strong>.</li>
+<li>Выберите приложение, которое хотите настроить.</li>
+<li>В правом верхнем углу страницы обзора приложения выберите <strong>More</strong> (<strong>...</strong>) &gt; <strong>Edit</strong>.</li>
+<li>В настройках приложения выберите <strong>General settings</strong> &gt; <strong>Data privacy</strong> &gt; <strong>Session Replay</strong>.</li>
+<li>В разделе <strong>URL exclusion</strong> выберите <strong>Add exclusion rule</strong>.</li>
+</ol>
+<p><img alt="Исключение URL" src="https://dt-cdn.net/images/url-exclusion-1343-e10f29c49d.png" /></p>
+<p>Исключение URL
+6. Введите регулярное выражение для сопоставления с URL страницы и выберите <strong>Add rule</strong>.</p>
+<h2 id="_8">Маскирование<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h2>
+<p>Session Replay записывает каждое взаимодействие пользователя. Поэтому маскирование конфиденциальных данных крайне важно. Настройки маскирования позволяют защитить конфиденциальные данные при записи и воспроизведении сессий. Вы можете задавать отдельные правила маскирования для записи и воспроизведения, позволяя применять уровни маскирования, контролируемые <a href="#sr-permissions">разрешениями пользователей</a>.</p>
+<p>Session Replay реализует функциональность маскирования, обеспечивая либо отсутствие захвата личных данных в момент записи, либо их маскирование в момент воспроизведения.</p>
+<p>Опция маскирования маскирует только буквенно-цифровые символы; символы форматирования (точки, запятые, двоеточия) не маскируются. Таким образом, при воспроизведении сессий можно проверять формат данных, не видя фактической информации.</p>
+<p>Например, рассмотрим поле email-адреса в обычной веб-форме. Пользователь вводит свой адрес:</p>
+<p><img alt="Поле email с содержимым" src="https://dt-cdn.net/images/2018-10-25-12-34-34-312-26653a5668.png" /></p>
+<p>Поле email с содержимым</p>
+<p>Session Replay маскирует эти данные и отображает звёздочки вместо нечисловых символов:</p>
+<p><img alt="Поле email с маскированным содержимым" src="https://dt-cdn.net/images/2018-10-25-12-40-06-317-b9aa2a3f8c.png" /></p>
+<p>Поле email с маскированным содержимым</p>
+<p>Маскированные данные — отображаемые при воспроизведении как звёздочки (<code>*****</code>) для нечислового ввода или нули (<code>0000</code>) для числового — либо никогда не покидают клиентский браузер (маскирование при захвате), либо захватываются, но маскируются при воспроизведении. Воспроизведение сессий <a href="#sr-permissions">контролируется разрешениями</a>.</p>
+<p>Session Replay предоставляет два варианта настройки маскирования контента.</p>
+<ul>
+<li><a href="#mask-data-via-code">Атрибут <code>data-dtrum-mask</code></a></li>
+<li><a href="#mask-data-via-ui">Страница конфигурации Session Replay</a></li>
+</ul>
+<h3 id="data-dtrum-mask">Маскирование с атрибутом <code>data-dtrum-mask</code><a class="headerlink" href="#data-dtrum-mask" title="Permanent link">&para;</a></h3>
+<p>Атрибут <code>data-dtrum-mask</code> требует изменения кода приложения и безопасен по дизайну. Он позволяет учитывать элементы с конфиденциальной информацией на этапах проектирования и реализации. Рекордер автоматически определяет и маскирует контент (текст, значения ввода и атрибутов) и взаимодействия (движения курсора и прокрутки) в узле с этим атрибутом и его потомках.</p>
+<p>Код приложения должен быть изменён для включения атрибута <code>data-dtrum-mask</code>.</p>
+<p><img alt="Атрибут data-dtrum-mask в коде" src="https://dt-cdn.net/images/data-dtrum-mask-example-655-045d2f8d23.png" /></p>
+<p>Атрибут data-dtrum-mask в коде</p>
+<h3 id="_9">Маскирование через интерфейс<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h3>
+<p>Страница настройки Session Replay в Dynatrace предоставляет более гибкий подход. Вы можете изменить конфигурацию в соответствии с требованиями к записи сессий. При этом нет необходимости изменять код приложения.</p>
+<p>Эта страница настроек также предоставляет опции маскирования для скрытия взаимодействий с определёнными элементами, которые могут непреднамеренно раскрывать конфиденциальные данные. Например, список с несколькими вариантами ответа на вопрос о вероисповедании или поле пола пользователя. Даже с маскированным текстом можно определить ответ пользователя, увидев выбранный вариант.</p>
+<p>Для настройки маскирования Session Replay:</p>
+<ol>
+<li>Перейдите в <strong>Web</strong>.</li>
+<li>Выберите приложение, которое хотите настроить.</li>
+<li>В правом верхнем углу страницы обзора приложения выберите <strong>More</strong> (<strong>...</strong>) &gt; <strong>Edit</strong>.</li>
+<li>В настройках приложения выберите <strong>General settings</strong> &gt; <strong>Data privacy</strong> &gt; <strong>Session Replay</strong>.</li>
+<li>В разделе <strong>Content masking preferences</strong> выберите <a href="#masking-preset-options">предопределённую опцию маскирования</a> для записи и воспроизведения.</li>
+<li>Если вы выбрали <strong>Allow list</strong> или <strong>Block list</strong>, добавьте нужные правила маскирования.</li>
+</ol>
+<h4 id="_10">Уровни маскирования контента<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h4>
+<p>Предопределённые <a href="#masking-preset-options">опции маскирования</a> Session Replay доступны как для записи, так и для воспроизведения:</p>
+<ul>
+<li><strong>Настройки маскирования для записи</strong> управляют маскированием данных в момент записи («маскирование при захвате»). Маскированные данные никогда не покидают клиентский браузер и не захватываются. При установке более строгого уровня <strong>Recording masking settings</strong> те же настройки применяются и к <strong>Playback masking settings</strong>, что также затрагивает все ранее записанные сессии.</li>
+<li><strong>Настройки маскирования для воспроизведения</strong> влияют на маскирование данных в момент воспроизведения («маскирование при отображении»). Данные, захваченные при записи, могут быть маскированы при воспроизведении.</li>
+</ul>
+<p>Вы можете определять правила маскирования как для записи, так и для воспроизведения.</p>
+<p>Правила маскирования воспроизведения предназначены для дополнительного уровня маскирования поверх правил записи. Настройки маскирования воспроизведения не могут быть менее строгими, чем настройки записи.</p>
+<p>Вы можете использовать <a href="#sr-permissions">разрешения пользователей</a> для управления возможностью воспроизведения сессий с применением правил маскирования или без них.</p>
+<h4 id="_11">Опции маскирования контента<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h4>
+<p>Следующие предопределённые опции маскирования используются для ограничения захвата и воспроизведения личных и конфиденциальных данных:</p>
+<table>
+<thead>
+<tr>
+<th>Опция маскирования</th>
+<th>Что маскируется</th>
+<th>Когда использовать</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Mask all</strong></td>
+<td>Весь текст, пользовательский ввод, значения атрибутов и изображения</td>
+<td>Используйте для тестирования Session Replay с гарантией отсутствия сбора конфиденциальных данных. Вы по-прежнему сможете видеть взаимодействия пользователей. Используйте для устранения неполадок, когда важен порядок взаимодействий пользователя с элементами управления.</td>
+</tr>
+<tr>
+<td><strong>Mask user input</strong></td>
+<td>Весь пользовательский ввод, включая варианты в выпадающих списках</td>
+<td>Выберите эту опцию, если конфиденциальные данные поступают только от ввода пользователя.</td>
+</tr>
+<tr>
+<td><strong>Allow list</strong></td>
+<td>Все элементы из опции <strong>Mask all</strong>, кроме указанных вами</td>
+<td>Рекомендуется для большинства приложений: позволяет собирать только необходимые данные. Гарантирует, что даже при последующих изменениях кода новые элементы с конфиденциальной информацией не будут записаны. Элементы определяются CSS-селектором.</td>
+</tr>
+<tr>
+<td><strong>Block list</strong></td>
+<td>Только элементы, указанные в этом списке блокировки</td>
+<td>При выборе этой опции отображается список всех правил из <strong>Mask all</strong>. Используйте его для разблокировки элементов и атрибутов, которые хотите захватывать. Вы также можете создавать собственные дополнительные правила.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Mask user input</strong> является опцией маскирования по умолчанию начиная с Dynatrace версии 1.262. Ранее по умолчанию использовалась опция <strong>Mask all</strong>.</p>
+<p>Опции <strong>Mask all</strong>, <strong>Mask user input</strong> и <strong>Allow list</strong> не скрывают взаимодействия пользователей с элементами. С опцией <strong>Block list</strong> можно настроить скрытие взаимодействий с маскированными элементами.</p>
+<h2 id="_12">Захват ресурсов<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h2>
+<p>С Dynatrace Session Replay стили (CSS) захватываются и сохраняются во время записи сессии. Нет необходимости хранить CSS-файлы в публично доступном месте, помечать ресурсы как изменённые или предоставлять разрешения процессу, который может получить доступ к защищённым стилям. Это полностью автоматизированный процесс, обеспечивающий захват ресурсов и их доступность для будущего воспроизведения.</p>
+<p>Захват ресурсов для Session Replay включён по умолчанию.</p>
+<h3 id="_13">Включение захвата ресурсов<a class="headerlink" href="#_13" title="Permanent link">&para;</a></h3>
+<p>Для включения и настройки захвата ресурсов:</p>
+<ol>
+<li>Перейдите в <strong>Web</strong>.</li>
+<li>Выберите приложение, которое хотите настроить.</li>
+<li>В правом верхнем углу страницы обзора приложения выберите <strong>More</strong> (<strong>...</strong>) &gt; <strong>Edit</strong>.</li>
+<li>В настройках приложения выберите <strong>Capturing</strong> &gt; <strong>Resource capture for Session Replay</strong>.</li>
+<li>Включите <strong>Enable resource capture</strong>.</li>
+<li>Необязательно. Для исключения ресурсов на определённых страницах выберите <strong>Add exclusion rule</strong>, введите регулярное выражение и нажмите <strong>Add rule</strong>.</li>
+</ol>
+<p>Правила исключения обрабатываются следующим образом:</p>
+<ul>
+<li>Если URL соответствует правилу исключения, правило применяется, а последующие игнорируются.</li>
+<li>Если URL не соответствует ни одному правилу, все ресурсы захватываются.</li>
+<li>Если Session Replay включён и правила исключения URL не определены, все CSS-ресурсы доступны для записи.</li>
+</ul>
+<h3 id="_14">Примечания и ограничения для захвата ресурсов<a class="headerlink" href="#_14" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Если ресурс не был захвачен или недоступен в хранилище ресурсов Dynatrace, он извлекается из исходного источника.</li>
+<li>Изображения и шрифты не захватываются. При воспроизведении они извлекаются из исходного местоположения, поэтому применяются определённые <a href="../session-replay-restrictions-web/#resources" title="Узнайте об ограничениях, применяемых к Session Replay.">ограничения</a>. Для улучшения воспроизведения Session Replay используйте <strong>Session Replay browser extension</strong>.</li>
+<li>Dynatrace не захватывает ресурсы размером более 3 МБ.</li>
+<li>Стандартный <a href="../../../../manage/data-privacy-and-security/data-privacy/data-retention-periods/" title="Проверьте сроки хранения данных различных типов.">срок хранения</a> захваченных ресурсов составляет 35 дней.</li>
+<li>Dynatrace захватывает ресурсы для не более чем 0,1% сессий, записанных Session Replay. Обычно этого достаточно для корректного воспроизведения, поскольку ресурс, захваченный для одной сессии, используется повторно для других. Однако захват всех ресурсов для приложения с низким трафиком может занять некоторое время.</li>
+</ul>
+<p>Расчёт сессий с захваченными ресурсами</p>
+<p><strong>Сессий с захваченными ресурсами = Всего сессий × Управление стоимостью RUM × Управление стоимостью SR × 0,1%</strong></p>
+<table>
+<thead>
+<tr>
+<th>Параметр</th>
+<th>Пояснение</th>
+<th>Пример</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Всего сессий</td>
+<td>Общее число сессий пользователей</td>
+<td>1 000 000</td>
+</tr>
+<tr>
+<td><a href="../../web-applications/additional-configuration/configure-cost-and-traffic-control-web/" title="Используйте управление стоимостью и трафиком в Dynatrace для снижения потребления сессий.">Управление стоимостью и трафиком RUM</a></td>
+<td>Процент сессий, захватываемых и анализируемых с RUM</td>
+<td>50%</td>
+</tr>
+<tr>
+<td><a href="#cost-traffic-control">Управление стоимостью и трафиком Session Replay</a></td>
+<td>Процент сессий, записываемых Session Replay</td>
+<td>10%</td>
+</tr>
+</tbody>
+</table>
+<p>В нашем примере ресурсы захватываются для 50 сессий (1 000 000 × 50% × 10% × 0,1% = 50).</p>
+<h2 id="_15">Разрешения пользователей и зоны управления<a class="headerlink" href="#_15" title="Permanent link">&para;</a></h2>
+<h3 id="_16">Разрешения пользователей<a class="headerlink" href="#_16" title="Permanent link">&para;</a></h3>
+<p>Используйте разрешения <strong>Replay sessions with masking</strong> и <strong>Replay sessions without masking</strong> для управления доступом к записям сессий. Подробнее см. <a href="../../../../manage/identity-access-management/permission-management/role-based-permissions/#environment" title="Разрешения на основе ролей">Управление группами пользователей и разрешениями</a>.</p>
+<p>Без разрешения</p>
+<p>Воспроизведение данных сессии с маскированием</p>
+<p>Воспроизведение данных сессии без маскирования</p>
+<p>Для пользователей, которым не нужен доступ, отключите оба разрешения в настройках пользователя и группы.</p>
+<p><img alt="Session Replay - Нет разрешения на воспроизведение" src="https://dt-cdn.net/images/sr-permission-no-permission-430-42ceb0d0d2.png" /></p>
+<p>Session Replay - Нет разрешения на воспроизведение</p>
+<p>Для пользователей, которым нужно воспроизводить сессии, но не обязательно видеть всю захваченную информацию, назначьте разрешение <strong>Replay sessions with masking</strong>. По умолчанию это разрешение выдаётся всем пользователям.</p>
+<p><img alt="Session Replay - Разрешение на воспроизведение с маскированием" src="https://dt-cdn.net/images/sr-permission-replay-with-masking-430-afce4988e8.png" /></p>
+<p>Session Replay - Разрешение на воспроизведение с маскированием</p>
+<p>Для пользователей, которым нужно воспроизводить сессии и видеть всю записанную информацию, выберите разрешение <strong>Replay sessions without masking</strong>.</p>
+<p><img alt="Session Replay - Разрешение на воспроизведение без маскирования" src="https://dt-cdn.net/images/sr-permission-replay-without-masking-430-8ecf1dada3.png" /></p>
+<p>Session Replay - Разрешение на воспроизведение без маскирования</p>
+<h3 id="_17">Зоны управления<a class="headerlink" href="#_17" title="Permanent link">&para;</a></h3>
+<p>Возможность просмотра и воспроизведения сессий дополнительно защищена зонами управления. Если сессия охватывает приложения в разных зонах управления, пользователи Dynatrace с разрешениями Session Replay могут просматривать только те части сессии, которые связаны с приложениями в доступных им зонах. Подробнее см. <a href="../../../../manage/identity-access-management/permission-management/management-zones/" title="Узнайте о концепциях зон управления, их настройке и применении.">Зоны управления</a>.</p>
+<p><img alt="Session Replay - Зоны управления" src="https://dt-cdn.net/images/sr-management-zones-1150-f13652bc3a.png" /></p>
+<p>Session Replay - Зоны управления</p>
+<h2 id="content-security-policy-session-replay">Изменение Content Security Policy для Session Replay<a class="headerlink" href="#content-security-policy-session-replay" title="Permanent link">&para;</a></h2>
+<p>Session Replay использует web workers для обработки данных во время записи, разгружая логику из UI-потока для повышения производительности. RUM JavaScript достигает этого путём загрузки кода как blob. Для этого необходимо добавить <code>blob:</code> в директиву <code>worker-src</code> правил CSP, в дополнение к адаптациям, описанным в <a href="../../web-applications/additional-configuration/modify-csp-for-rum/" title="Узнайте, как включить и изменить CSP для приложений, мониторируемых с RUM.">Изменение Content Security Policy для RUM</a>. Правила CSP можно определить через HTTP-заголовок <code>Content-Security-Policy</code> или с помощью тега <code>&lt;meta&gt;</code> в разделе <code>&lt;head&gt;</code> HTML-документа.</p>
+<p>Если <code>blob:</code> не разрешён в <code>worker-src</code> (или в качестве запасного варианта в <code>script-src</code>), при загрузке страницы произойдёт нарушение CSP, и весь код будет выполняться в UI-потоке.</p>
+<p>Если вы не можете запускать web workers на сайте или хотите отключить их использование Session Replay, добавьте пользовательское свойство конфигурации.</p>
+<p>Для отключения использования web workers Session Replay:</p>
+<ol>
+<li>Перейдите в <strong>Web</strong>.</li>
+<li>Выберите приложение, которое хотите настроить.</li>
+<li>В правом верхнем углу страницы обзора приложения выберите <strong>More</strong> (<strong>...</strong>) &gt; <strong>Edit</strong>.</li>
+<li>В настройках приложения выберите <strong>Capturing</strong> &gt; <strong>Custom configuration properties</strong>.</li>
+<li>Выберите <strong>Add a custom configuration property</strong>.</li>
+<li>Введите свойство <code>srbw=0</code> и сохраните изменения.</li>
+</ol>
+<p>Не рекомендуется запускать код Session Replay в UI-потоке вместо web workers, поскольку это снизит производительность страницы.</p>
+<h2 id="_18">Часто задаваемые вопросы<a class="headerlink" href="#_18" title="Permanent link">&para;</a></h2>
+<p>Session Replay потребляет много места?</p>
+<p>Примерно 100 КБ данных генерируется за каждую минуту сессии, и около 500 КБ хранилища потребляет полностью записанная сессия.</p>
+<p>Все ли сессии занимают одинаковый объём?</p>
+<p>Нет. Объём сессии зависит от множества факторов: размера приложения, длительности сессии и активности пользователя.</p>
+<p>Размеры сессий варьируются от 100 КБ до более чем 1 МБ.</p>
+<p>Сессии записываются как видео?</p>
+<p>Нет. Для записи сессий Session Replay отслеживает изменения в DOM-дереве веб-приложения. Каждое визуальное изменение соответствует изменению в DOM. Session Replay захватывает и воспроизводит эти изменения. Поскольку все данные текстовые, небольшие размеры достигаются благодаря компактному представлению и сжатию.</p>
+<p>Какое потребление полосы пропускания?</p>
+<p>Поскольку сжатие выполняется на стороне клиента, потребление полосы пропускания совпадает с потреблением хранилища: около 100 КБ в минуту или 500 КБ за сессию.</p>
+<p>Это выгодно для записи сессий пользователей на мобильных устройствах с ограниченным мобильным трафиком.</p>
+<p>Влияет ли сжатие на браузер клиента?</p>
+<p>Session Replay разработан с минимальным воздействием на UI-поток. Большинство задач, включая эффективный алгоритм сжатия, выполняются рабочим потоком в фоне без вмешательства в пользовательский интерфейс.</p>
+<p>Применяются ли правила маскирования на сервере Dynatrace?</p>
+<p><a href="./#masking-preset-options" title="Настройте потребление мониторинга и параметры конфиденциальности данных для Session Replay.">Правила маскирования для записи</a> передаются на клиент, обеспечивая по умолчанию отсутствие отправки конфиденциальных данных за пределы браузера. <a href="./#sr-masking" title="Настройте потребление мониторинга и параметры конфиденциальности данных для Session Replay.">Настройки маскирования</a> для записи и воспроизведения настраиваются.</p>
+<p>Что делает расширение браузера Session Replay и как его установить?</p>
+<p>Расширение браузера Session Replay позволяет проксировать загрузку ресурсов при воспроизведении сессии. Его можно использовать для улучшения воспроизведения, например в следующих случаях:</p>
+<ul>
+<li>Ресурсы шрифтов и стилей загружаются с HTTPS-источников.</li>
+<li>Ресурсы загружаются с HTTP-источников.</li>
+</ul>
+<p>Расширение можно установить из Chrome Web Store: <a href="https://chromewebstore.google.com/detail/session-replay-browser-ex/hjbdnbhpfiionafiooklnafmaojjfljh"><code>Session Replay browser extension</code></a></p>
+<p>Каковы рекомендации по защите конфиденциальности пользователей?</p>
+<p>Конфиденциальность должна быть встроена в приложение с самого начала его создания. Любая функция, связанная с обработкой личных данных, должна оцениваться на предмет рисков конфиденциальности на ранних этапах. Dynatrace рекомендует помечать конфиденциальные элементы и поля ввода. Например, при обнаружении HTML-атрибута <a href="#mask-data-via-code"><code>data-dtrum-mask</code></a> данные автоматически маскируются.</p>
+<p>Рекомендуется начинать с опции <strong>Mask all</strong> и постепенно корректировать настройки, если вы считаете, что часть заблокированных элементов можно безопасно разрешить.</p>
+<p>При наличии конфиденциальных данных в записях используйте более строгие правила маскирования воспроизведения для ограничения отображаемой информации. Используйте <a href="#sr-permissions">разрешения пользователей</a> для управления возможностью воспроизведения сессий с применением правил маскирования или без них.</p>
+<p>Что происходит при некорректной настройке правил маскирования и доступности конфиденциальных данных при Session Replay?</p>
+<p>После случайного отображения конфиденциальных данных, как только правила маскирования будут настроены корректно, Session Replay применяет последнюю конфигурацию ко всем записанным сессиям, включая записанные до применения правил. Обновлённые правила применяются в момент воспроизведения, и <a href="#sr-permissions">пользователи с правом воспроизведения</a> не смогут просматривать маскированные данные. Правила маскирования воспроизведения игнорируются для пользователей с правом воспроизведения без маскирования.</p>
+<p>Как настроить приложение без маскирования элементов?</p>
+<p>Используйте подход <strong>Block list</strong> и удалите все предопределённые правила.</p>
+<p>Когда лучше всего использовать Mask all?</p>
+<p><strong>Mask all</strong> — лучшая опция для тестирования Session Replay без риска раскрытия конфиденциальных данных. Также удобна при использовании Session Replay для устранения неполадок, когда важен порядок взаимодействий.</p>
+<p>Почему данные Session Replay отображаются частично при воспроизведении?</p>
+<p>На странице деталей сессии временная шкала <strong>Session Replay</strong> показывает события как <a href="../../rum-concepts/rum-overview/" title="Узнайте о мониторинге реальных пользователей, ключевых метриках производительности и многом другом.">Real User Monitoring (RUM)</a>, так и Session Replay.</p>
+<p>При воспроизведении сессии вы можете заметить, что, несмотря на отображение всех действий и событий на временной шкале, проигрыватель пропускает часть событий и переходит к концу. Это обычно означает отсутствие данных Session Replay для этой части сессии.</p>
+<p>Наиболее распространённые причины частичного отсутствия данных:</p>
+<ul>
+<li>Сессия охватывала второе приложение, для которого Session Replay был отключён.</li>
+<li>Запись Session Replay была приостановлена, поскольку страница <a href="#sr-url-exclusion">исключена из записи</a>.</li>
+<li>Данные Session Replay доступны, но у вас <a href="#no-permission">нет разрешения на доступ к ним</a>.</li>
+</ul>
+<h2 id="_19">Связанные темы<a class="headerlink" href="#_19" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="../" title="Узнайте, как использовать Session Replay для лучшего понимания и устранения ошибок, с которыми сталкиваются клиенты.">Session Replay</a></li>
+<li><a href="../enable-session-replay-web/" title="Узнайте о предварительных условиях и процедуре включения Session Replay.">Включение Session Replay для веб-приложений</a></li>
+<li><a href="../session-replay-restrictions-web/" title="Узнайте об ограничениях, применяемых к Session Replay.">Технические ограничения Session Replay для веб-приложений</a></li>
+</ul>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  К началу
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      © 2026 Dynatrace Docs | Yerkebulan Ardabayev
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/Yerkebulan-Ardabayev" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../../../..", "features": ["navigation.indexes", "navigation.prune", "navigation.path", "navigation.tracking", "navigation.top", "search.suggest", "search.highlight", "search.share", "content.code.copy", "content.code.annotate", "content.tabs.link", "content.tooltips", "toc.follow"], "search": "../../../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u0421\u043a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u043d\u043e \u0432 \u0431\u0443\u0444\u0435\u0440", "clipboard.copy": "\u041a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u0442\u044c \u0432 \u0431\u0443\u0444\u0435\u0440", "search.result.more.one": "\u0415\u0449\u0451 1 \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.more.other": "\u0415\u0449\u0451 # \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.none": "\u0421\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439 \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u043e", "search.result.one": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e 1 \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0435", "search.result.other": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439: #", "search.result.placeholder": "\u041d\u0430\u0447\u043d\u0438\u0442\u0435 \u043f\u0435\u0447\u0430\u0442\u0430\u0442\u044c \u0434\u043b\u044f \u043f\u043e\u0438\u0441\u043a\u0430", "search.result.term.missing": "\u041e\u0442\u0441\u0443\u0442\u0441\u0442\u0432\u0443\u0435\u0442", "select.version": "\u0412\u044b\u0431\u0435\u0440\u0438\u0442\u0435 \u0432\u0435\u0440\u0441\u0438\u044e"}, "version": null}</script>
+    
+    
+  
+      <script src="../../../../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../../../../../assets/javascripts/groq-chat.js?sha=17d46ba74"></script>
+      
+    
+  <script>
+    (function() {
+      // --- Keyboard shortcut Ctrl+K / Cmd+K for search ---
+      document.addEventListener('keydown', function(e) {
+        if ((e.ctrlKey || e.metaKey) && e.key === 'k') {
+          e.preventDefault();
+          var searchInput = document.querySelector('.md-search__input');
+          if (searchInput) {
+            searchInput.focus();
+            var searchToggle = document.querySelector('[data-md-toggle="search"]');
+            if (searchToggle && !searchToggle.checked) {
+              searchToggle.checked = true;
+              searchToggle.dispatchEvent(new Event('change'));
+            }
+          }
+        }
+        // --- "/" focuses search like GitHub / Algolia docs ---
+        if (e.key === '/' && !/^(input|textarea|select)$/i.test(e.target.tagName)) {
+          e.preventDefault();
+          var inp = document.querySelector('.md-search__input');
+          if (inp) {
+            inp.focus();
+            var t = document.querySelector('[data-md-toggle="search"]');
+            if (t && !t.checked) { t.checked = true; t.dispatchEvent(new Event('change')); }
+          }
+        }
+      });
+    })();
+  </script>
+
+  </body>
+</html>

@@ -1,0 +1,4729 @@
+
+<!doctype html>
+<html lang="ru" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Документация Dynatrace Managed с AI-помощником">
+      
+      
+        <meta name="author" content="Yerkebulan Ardabayev">
+      
+      
+        <link rel="canonical" href="https://yerkebulan-ardabayev.github.io/dynatrace-docs-website/managed-ru/ingest-from/dynatrace-oneagent/installation-and-operation/zos/operation/zos-code-module-messages/dtax-messages/">
+      
+      
+        <link rel="prev" href="../">
+      
+      
+        <link rel="next" href="../ims-messages/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../../../../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>Сообщения модулей z/OS - сообщения DTAX - Dynatrace — Документация</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../../../../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../../../../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Inter";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../../../../../assets/stylesheets/extra.v11.css?sha=17d46ba74">
+    
+    <script>__md_scope=new URL("../../../../../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  <style>
+    /* DocFlow DT Logo Badge — injected via template override */
+    .md-header__button.md-logo {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .md-header__button.md-logo img,
+    .md-header__button.md-logo svg {
+      display: none !important;
+    }
+    .md-header__button.md-logo::before {
+      content: 'DT';
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 28px;
+      height: 28px;
+      border-radius: 6px;
+      background: linear-gradient(135deg, #00d4aa 0%, #7c3aed 100%);
+      color: white;
+      font-size: 11px;
+      font-weight: 700;
+      font-family: 'Inter', sans-serif;
+      letter-spacing: -0.02em;
+      flex-shrink: 0;
+    }
+
+    /* Search Ctrl+K badge — inside input field */
+    .md-search__form {
+      position: relative;
+    }
+    .md-search__form::after {
+      content: 'Ctrl+K';
+      display: none;
+      align-items: center;
+      padding: 0.15rem 0.4rem;
+      border-radius: 4px;
+      border: 1px solid var(--docflow-border);
+      background: var(--md-default-bg-color);
+      font-size: 10px;
+      font-family: 'JetBrains Mono', monospace;
+      color: var(--md-default-fg-color--lighter);
+      white-space: nowrap;
+      pointer-events: none;
+      position: absolute;
+      right: 0.5rem;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+    @media (min-width: 60em) {
+      .md-search__form::after {
+        display: flex;
+      }
+    }
+  </style>
+
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="custom">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#zos-dtax" class="md-skip">
+          Перейти к содержанию
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+  
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Верхний колонтитул">
+    <a href="../../../../../../../.." title="Dynatrace — Документация" class="md-header__button md-logo" aria-label="Dynatrace — Документация" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M11 15H6l7-14v8h5l-7 14z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Dynatrace — Документация
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Сообщения модулей z/OS - сообщения DTAX
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Переключить на светлую тему"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Переключить на светлую тему" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Переключить на тёмную тему"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Переключить на тёмную тему" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Поиск" placeholder="Поиск" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Поиск">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Поделиться" aria-label="Поделиться" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Очистить" aria-label="Очистить" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Инициализация поиска
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/Yerkebulan-Ardabayev/dynatrace-docs-website" title="Перейти к репозиторию" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    dynatrace-docs-website
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Навигация" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../../../../../.." title="Dynatrace — Документация" class="md-nav__button md-logo" aria-label="Dynatrace — Документация" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M11 15H6l7-14v8h5l-7 14z"/></svg>
+
+    </a>
+    Dynatrace — Документация
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/Yerkebulan-Ardabayev/dynatrace-docs-website" title="Перейти к репозиторию" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    dynatrace-docs-website
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Главная
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../../../../../../ru/getting-started/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Начало работы
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../../../../../installation/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Кластер Managed
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Источники данных
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Источники данных
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обзор
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../../../../amazon-web-services/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Настройка Dynatrace на Amazon Web Services
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../bulk-configuration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Удалённое управление конфигурацией OneAgent и ActiveGate
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../../../../dynatrace-activegate/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dynatrace ActiveGate
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_5" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4_5" id="__nav_4_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dynatrace OneAgent
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Dynatrace OneAgent
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обзор
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../../../adaptive-traffic-management/adaptive-traffic-management-managed/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Адаптивное управление трафиком
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../../../deployment-orchestration/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Оркестрация развёртывания OneAgent
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_5_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4_5_4" id="__nav_4_5_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Установка OneAgent на сервер
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_5_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4_5_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Установка OneAgent на сервер
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обзор
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../../aix/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AIX
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../../linux/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OneAgent на Linux
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../../solaris/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Solaris
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../../windows/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OneAgent на Windows
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_5_4_6" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4_5_4_6" id="__nav_4_5_4_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dynatrace для z/OS
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_4_5_4_6_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4_5_4_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Dynatrace для z/OS
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обзор
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../installation/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обзор установки z/OS
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../monitoring/monitor-cics-file-access/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Мониторинг
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_5_4_6_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4_5_4_6_4" id="__nav_4_5_4_6_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Эксплуатация
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="5" aria-labelledby="__nav_4_5_4_6_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4_5_4_6_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Эксплуатация
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cics-ims-monitoring/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Настройка мониторинга CICS и IMS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dtax-transaction/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Управление модулем CICS через DTAX-транзакции
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ibm-mq-monitoring/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Настройка трассировки IBM MQ на z/OS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_5_4_6_4_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4_5_4_6_4_4" id="__nav_4_5_4_6_4_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Сообщения модулей z/OS
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="6" aria-labelledby="__nav_4_5_4_6_4_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4_5_4_6_4_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Сообщения модулей z/OS
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обзор
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Сообщения модулей z/OS - сообщения DTAX
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ims-messages/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Сообщения модулей z/OS - системные сообщения модуля IMS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../zdc-system-messages/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Сообщения модулей z/OS - системные сообщения zDC
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../zos-java-messages/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Сообщения модулей z/OS - системные сообщения модуля z/OS Java
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../oa-requirements/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Требования к OneAgent
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../oneagent-aging-mechanism/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Механизм устаревания файлов OneAgent
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../../../oneagent-and-opentelemetry/configuration/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OneAgent и OpenTelemetry
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../oneagent-configuration-via-command-line-interface/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Настройка OneAgent через интерфейс командной строки
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../oneagent-features/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Функции OneAgent
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../oneagent-health/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обзор работоспособности OneAgent
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../oneagent-security/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Безопасность OneAgent
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../../../oneagent-troubleshooting/oneagent-diagnostics/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Диагностика OneAgent
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../oneagent-update/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обновление OneAgent
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../resource-attributes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Атрибуты ресурса
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../../../../extend-dynatrace/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Расширение Dynatrace
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../../../../extensions/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Расширения
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../../../../google-cloud-platform/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Настройка Dynatrace на Google Cloud
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../../../../microsoft-azure-services/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Настройка Dynatrace на Microsoft Azure
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../../../../opentelemetry/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OpenTelemetry и Dynatrace
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../../../../setup-on-container-platforms/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Настройка Dynatrace на контейнерных и PaaS-платформах
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../../../../setup-on-k8s/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Настройка Dynatrace на Kubernetes
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../../../../technology-support/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Поддержка технологий
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    
+  
+  
+  
+    <a href="../../../../../../../observe/application-observability/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Наблюдаемость
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../../../../../dynatrace-intelligence/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Davis AI
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    
+  
+  
+  
+    <a href="../../../../../../../analyze-explore-automate/dashboards-classic/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Анализ
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../../../../../deliver/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Deliver
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    
+  
+  
+  
+    <a href="../../../../../../../secure/application-security/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Безопасность приложений
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    
+  
+  
+  
+    <a href="../../../../../../../manage/account-management/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Управление
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    
+  
+  
+  
+    <a href="../../../../../../../platform/oneagent/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Платформа
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../../../../../dynatrace-api/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../../../../../whats-new/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Что нового
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../../../../../offline-doc/how-do-i-enable-synthetic-monitors/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Офлайн-документация
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../../../../../../ru/training/day1-introduction/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обучение
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../../../ai/groq/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI Помощник
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Содержание">
+  
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+                
+
+
+
+  
+
+
+  <nav class="md-path" aria-label="Навигация" >
+    <ol class="md-path__list">
+      
+        
+  
+  
+    <li class="md-path__item">
+      <a href="../../../../../../../.." class="md-path__link">
+        
+  <span class="md-ellipsis">
+    Главная
+  </span>
+
+      </a>
+    </li>
+  
+
+      
+      
+        
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="../../../../../../" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    Источники данных
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="../../../../../" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    Dynatrace OneAgent
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="../../../../" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    Установка OneAgent на сервер
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="../../../" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    Dynatrace для z/OS
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="../../cics-ims-monitoring/" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    Эксплуатация
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="../" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    Сообщения модулей z/OS
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ol>
+  </nav>
+
+              
+              <article class="md-content__inner md-typeset">
+                
+  
+                  
+
+
+
+<h1 id="zos-dtax">Сообщения модулей z/OS - сообщения DTAX<a class="headerlink" href="#zos-dtax" title="Permanent link">&para;</a></h1>
+<h1 id="zos-dtax_1">Сообщения модулей z/OS - сообщения DTAX<a class="headerlink" href="#zos-dtax_1" title="Permanent link">&para;</a></h1>
+<ul>
+<li>Чтение: 43 мин</li>
+<li>Опубликовано 22 марта 2019 г.</li>
+</ul>
+<h2 id="zdtp001s">ZDTP001S<a class="headerlink" href="#zdtp001s" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Полное сообщение</strong> - ZDTP001S Persistent Storage allocation failed.</li>
+<li><strong>Пояснение</strong> - Программа CICS PLT не смогла выделить необходимую область постоянной памяти.</li>
+<li><strong>Действие системы</strong> - Программа PLT завершается, и кодовый модуль CICS не включается.</li>
+<li><strong>Реакция пользователя</strong> - Выясните, по какой причине регион CICS не может предоставить память для транзакции DTAX.</li>
+</ul>
+<p>Если проблема не устраняется, обратитесь к специалисту по продуктам Dynatrace через чат в вашем окружении Dynatrace.</p>
+<h2 id="zdtp002s">ZDTP002S<a class="headerlink" href="#zdtp002s" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Полное сообщение</strong> - ZDTP002S Message Block allocation failed.</li>
+<li><strong>Пояснение</strong> - Программа PLT не смогла выделить необходимую область памяти для блока сообщений.</li>
+<li><strong>Действие системы</strong> - Программа PLT завершается, а кодовый модуль CICS отключается.</li>
+<li><strong>Реакция пользователя</strong> - Выясните, по какой причине регион CICS не может предоставить память для программы PLT.</li>
+</ul>
+<h2 id="zdtp003s">ZDTP003S<a class="headerlink" href="#zdtp003s" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Полное сообщение</strong> - ZDTP003S ZDTSOAPH Load failed. Disabling Dynatrace CICS code module.</li>
+<li><strong>Пояснение</strong> - CICS не смог загрузить <code>ZDTSOAPH</code>.</li>
+<li><strong>Действие системы</strong> - Программа PLT завершается, а кодовый модуль CICS отключается.</li>
+<li><strong>Реакция пользователя</strong> - Выясните, по какой причине регион CICS не может загрузить один из модулей DTAX: ZDTSOAPH.</li>
+</ul>
+<p>Если проблема не устраняется, обратитесь к специалисту по продуктам Dynatrace через чат в вашем окружении Dynatrace.</p>
+<h2 id="zdtp004s">ZDTP004S<a class="headerlink" href="#zdtp004s" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Полное сообщение</strong> - ZDTP004S ZDTDCCAL final block send failed. rc:<xx>.</li>
+<li><strong>Пояснение</strong> - Передача сообщения от кодового модуля CICS к zDC завершилась ошибкой.</li>
+<li><strong>Действие системы</strong> - Кодовый модуль CICS продолжает работу, однако в распределённой трассировке отсутствуют некоторые узлы.</li>
+<li><strong>Реакция пользователя</strong> - Обратитесь к специалисту по продуктам Dynatrace через чат в вашем окружении.</li>
+</ul>
+<h2 id="zdtp005s">ZDTP005S<a class="headerlink" href="#zdtp005s" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Полное сообщение</strong> - ZDTP005S START DTAX ICE failed.</li>
+<li><strong>Пояснение</strong> - Команда <code>EXEC CICS START</code>, используемая для запуска транзакции <code>DTAX ICE</code> с интервалом 5 минут, завершилась ошибкой.</li>
+<li><strong>Действие системы</strong> - Нет</li>
+<li><strong>Реакция пользователя</strong> - Изучите подробное сообщение в соответствующем журнале задания CICS, чтобы получить точный код EIBRESP, указывающий причину сбоя команды EXEC CICS START.</li>
+</ul>
+<p>Если проблема не устраняется, обратитесь к специалисту по продуктам Dynatrace через чат в вашем окружении Dynatrace.</p>
+<h2 id="zdtp006s">ZDTP006S<a class="headerlink" href="#zdtp006s" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Полное сообщение</strong> - ZDTP006S Inquire MQCONN <QMGR Name> returned with resp:<xx> resp2:<xx>.</li>
+<li><strong>Пояснение</strong> - Команда <code>EXEC CICS INQUIRE</code> для получения информации о подключении MQ завершилась ошибкой.</li>
+<li><strong>Действие системы</strong> - В сведениях о подключении CICS отсутствует имя диспетчера очередей MQ.</li>
+<li><strong>Реакция пользователя</strong> - С помощью кодов <code>resp</code> и <code>resp2</code> выясните причину сбоя INQUIRE MQCONN.</li>
+</ul>
+<p>Если проблема не устраняется, обратитесь к специалисту по продуктам Dynatrace через чат в вашем окружении Dynatrace.</p>
+<h2 id="zdtp007s">ZDTP007S<a class="headerlink" href="#zdtp007s" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Полное сообщение</strong> - ZDTP007S Enable of temporary Language Environment sensor failed no zDC.</li>
+<li><strong>Пояснение</strong> - Указывает, что датчик Language Environment не удалось включить из-за недоступности zDC.</li>
+<li><strong>Действие системы</strong> - Датчик Language Environment не включён. Кодовый модуль CICS не отслеживает динамические вызовы LE.</li>
+<li><strong>Реакция пользователя</strong> - Запустите zDC, чтобы кодовый модуль CICS мог восстановить соединение.</li>
+</ul>
+<h2 id="zdtp008s">ZDTP008S<a class="headerlink" href="#zdtp008s" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Полное сообщение</strong> - ZDTP008S GETMAIN PLT Workarea failed.</li>
+<li><strong>Пояснение</strong> - Выделение памяти для рабочей области PLT завершилось ошибкой.</li>
+<li><strong>Действие системы</strong> - Программа PLT завершается, а кодовый модуль CICS отключается.</li>
+<li><strong>Реакция пользователя</strong> - Выясните, по какой причине регион CICS не может предоставить память для программы PLT.</li>
+</ul>
+<h2 id="zdtp009s">ZDTP009S<a class="headerlink" href="#zdtp009s" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Полное сообщение</strong> - ZDTP009S PLT Name/Token storage not found rc: <xx>.</li>
+<li><strong>Пояснение</strong> - Постоянная память для программы PLT не найдена.</li>
+<li><strong>Действие системы</strong> - Программа PLT завершается, а кодовый модуль CICS отключается.</li>
+<li><strong>Реакция пользователя</strong> - Обратитесь к специалисту по продуктам Dynatrace через чат в вашем окружении.</li>
+</ul>
+<h2 id="zdtp010s">ZDTP010S<a class="headerlink" href="#zdtp010s" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Полное сообщение</strong> - ZDTP010S Turn ON RMI Hook failed with rc: <xx>.</li>
+<li><strong>Пояснение</strong> - Инициализация хука RMI завершилась ошибкой.</li>
+<li><strong>Действие системы</strong> - Кодовый модуль CICS не был успешно инициализирован.</li>
+<li><strong>Реакция пользователя</strong> - Обратитесь к специалисту по продуктам Dynatrace через чат в вашем окружении.</li>
+</ul>
+<h2 id="zdtp011s">ZDTP011S<a class="headerlink" href="#zdtp011s" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Полное сообщение</strong> - ZDTP011S Turn OFF RMI Hook failed with rc: <xx>.</li>
+<li><strong>Пояснение</strong> - Отключение хука RMI завершилось ошибкой.</li>
+<li><strong>Действие системы</strong> - Кодовый модуль CICS не был успешно отключён.</li>
+<li><strong>Реакция пользователя</strong> - Обратитесь к специалисту по продуктам Dynatrace через чат в вашем окружении.</li>
+</ul>
+<h2 id="zdtp012s">ZDTP012S<a class="headerlink" href="#zdtp012s" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Полное сообщение</strong> - ZDTP012S GWA Storage unavailable.</li>
+<li><strong>Пояснение</strong> - Память глобальной рабочей области для программы PLT недоступна.</li>
+<li><strong>Действие системы</strong> - Хуки не инициализируются успешно.</li>
+<li><strong>Реакция пользователя</strong> - Обратитесь к специалисту по продуктам Dynatrace через чат в вашем окружении.</li>
+</ul>
+<h2 id="zdtp013s">ZDTP013S<a class="headerlink" href="#zdtp013s" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Полное сообщение</strong> - ZDTP013S SOAP hook <nn> failed with rc: <xx>.</li>
+<li><strong>Пояснение</strong> - Включение/отключение хука SOAP завершилось ошибкой.</li>
+<li><strong>Действие системы</strong> - Операция с хуком завершается ошибкой.</li>
+<li><strong>Реакция пользователя</strong> - Обратитесь к специалисту по продуктам Dynatrace через чат в вашем окружении.</li>
+</ul>
+<h2 id="zdtp014s">ZDTP014S<a class="headerlink" href="#zdtp014s" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Полное сообщение</strong> - ZDTP014S Language Environment sensor <nn> failed with rc: <xx>.</li>
+<li><strong>Пояснение</strong> - Включение/отключение датчика Language Environment завершилось ошибкой.</li>
+<li><strong>Действие системы</strong> - Операция с хуком завершается ошибкой.</li>
+<li><strong>Реакция пользователя</strong> - Обратитесь к специалисту по продуктам Dynatrace через чат в вашем окружении.</li>
+</ul>
+<h2 id="zdtp015s">ZDTP015S<a class="headerlink" href="#zdtp015s" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Полное сообщение</strong> - ZDTP015S MRO hook <nn> failed with rc: <xx>.</li>
+<li><strong>Пояснение</strong> - Включение/отключение хука MRO завершилось ошибкой.</li>
+<li><strong>Действие системы</strong> - Операция с хуком завершается ошибкой.</li>
+<li><strong>Реакция пользователя</strong> - Обратитесь к специалисту по продуктам Dynatrace через чат в вашем окружении.</li>
+</ul>
+<h2 id="zdtp016s">ZDTP016S<a class="headerlink" href="#zdtp016s" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Полное сообщение</strong> - ZDTP016S ZDTHKIDR failed with rc: <xx>.</li>
+<li><strong>Пояснение</strong> - Операция с хуком завершилась ошибкой.</li>
+<li><strong>Действие системы</strong> - Кодовый модуль CICS не инициализируется успешно.</li>
+<li><strong>Реакция пользователя</strong> - Обратитесь к специалисту по продуктам Dynatrace через чат в вашем окружении.</li>
+</ul>
+<h2 id="zdtp018s">ZDTP018S<a class="headerlink" href="#zdtp018s" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Полное сообщение</strong> - ZDTP018S CONF block allocation failed.</li>
+<li><strong>Пояснение</strong> - Выделение памяти для блока конфигурации завершилось ошибкой.</li>
+<li><strong>Действие системы</strong> - Кодовый модуль CICS не инициализируется успешно.</li>
+<li><strong>Реакция пользователя</strong> - Выясните, по какой причине регион CICS не может предоставить память для транзакции DTAX.</li>
+</ul>
+<h2 id="zdtp019s">ZDTP019S<a class="headerlink" href="#zdtp019s" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Полное сообщение</strong> - ZDTP019S Message buffer allocation failed.</li>
+<li><strong>Пояснение</strong> - Выделение памяти для буфера сообщений завершилось ошибкой.</li>
+<li><strong>Действие системы</strong> - Кодовый модуль CICS не инициализируется успешно.</li>
+<li><strong>Реакция пользователя</strong> - Выясните, по какой причине регион CICS не может предоставить память для транзакции DTAX.</li>
+</ul>
+<h2 id="zdtp020s">ZDTP020S<a class="headerlink" href="#zdtp020s" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Полное сообщение</strong> - ZDTP020S Get CICS Applid failed. resp:<xx>, resp2:<xx>, rcode:<xx>.</li>
+<li><strong>Пояснение</strong> - Команда <code>EXEC CICS ASSIGN</code> для получения APPLID завершилась ошибкой.</li>
+<li><strong>Действие системы</strong> - CICS Applid не отображается на экране DTAX и в сообщениях журнала.</li>
+<li><strong>Реакция пользователя</strong> - Выясните причину неполадки с помощью кодов <code>resp</code> и <code>resp2</code>.</li>
+</ul>
+<h2 id="zdtp021s">ZDTP021S<a class="headerlink" href="#zdtp021s" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Полное сообщение</strong> - ZDTP021S Get STARTCODE failed. resp:<xx>, resp2:<xx>, rcode:<xx>.</li>
+<li><strong>Пояснение</strong> - Команда <code>EXEC CICS ASSIGN</code> для получения кода запуска программы завершилась ошибкой.</li>
+<li><strong>Действие системы</strong> - Кодовый модуль CICS не инициализируется успешно.</li>
+<li><strong>Реакция пользователя</strong> - Выясните причину неполадки с помощью кодов <code>resp</code> и <code>resp2</code>.</li>
+</ul>
+<h2 id="zdtp022s">ZDTP022S<a class="headerlink" href="#zdtp022s" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Полное сообщение</strong> - ZDTP022S CICS DELAY failed. resp:<xx>, resp2:<xx>, rcode:<xx>.</li>
+<li><strong>Пояснение</strong> - Команда <code>EXEC CICS DELAY</code> завершилась ошибкой.</li>
+<li><strong>Действие системы</strong> - Нет</li>
+<li><strong>Реакция пользователя</strong> - Выясните причину неполадки с помощью кодов <code>resp</code> и <code>resp2</code>.</li>
+</ul>
+<h2 id="zdtp023s">ZDTP023S<a class="headerlink" href="#zdtp023s" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Полное сообщение</strong> - ZDTP023S Inquire DB2Entry failed. resp:<xx>, resp2:<xx>, rcode:<xx>.</li>
+<li><strong>Пояснение</strong> - Команда <code>EXEC CICS INQUIRE DB2ENTRY</code> завершилась ошибкой.</li>
+<li><strong>Действие системы</strong> - Кодовый модуль CICS продолжает работу.</li>
+<li><strong>Реакция пользователя</strong> - Выясните причину неполадки с помощью кодов <code>resp</code> и <code>resp2</code>.</li>
+</ul>
+<p>Если проблема не устраняется, обратитесь к специалисту по продуктам Dynatrace через чат в вашем окружении Dynatrace.</p>
+<h2 id="zdtp024s">ZDTP024S<a class="headerlink" href="#zdtp024s" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Полное сообщение</strong> - ZDTP024S CICS code module could not locate a valid AgentId. Possibly a misconfigured or disconnected zRemote. Please check the zRemote log.</li>
+<li><strong>Пояснение</strong> - Кодовый модуль CICS не получил допустимый AgentId после инициализации.</li>
+<li><strong>Действие системы</strong> - Кодовый модуль CICS отключён.</li>
+<li><strong>Реакция пользователя</strong> - Проверьте наличие сообщений об ошибках в журнале zRemote. Если служба zRemote не запущена, запустите её.</li>
+</ul>
+<h2 id="zdtp025s">ZDTP025S<a class="headerlink" href="#zdtp025s" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Полное сообщение</strong> - ZDTP025S Inquire System failed. resp:<xx>, resp2:<xx>, rcode:<xx>.</li>
+<li><strong>Пояснение</strong> - Команда <code>EXEC CICS INQUIRE SYSTEM</code> для получения версии CICS завершилась ошибкой.</li>
+<li><strong>Действие системы</strong> - По умолчанию загружается кодовый модуль CICS для CICS версии 4.2.</li>
+<li><strong>Реакция пользователя</strong> - Выясните причину неполадки с помощью кодов <code>resp</code> и <code>resp2</code>.</li>
+</ul>
+<p>Если проблема не устраняется, обратитесь к специалисту по продуктам Dynatrace через чат в вашем окружении Dynatrace.</p>
+<h2 id="zdtp026s">ZDTP026S<a class="headerlink" href="#zdtp026s" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Полное сообщение</strong> - ZDTP026S Inquire Program failed. resp:<xx>, resp2:<xx>, rcode:<xx>.</li>
+<li><strong>Пояснение</strong> - Команда <code>EXEC CICS INQUIRE PROGRAM</code> завершилась ошибкой.</li>
+<li><strong>Действие системы</strong> - Кодовый модуль CICS продолжает работу.</li>
+<li><strong>Реакция пользователя</strong> - Выясните причину неполадки с помощью кодов <code>resp</code> и <code>resp2</code>.</li>
+</ul>
+<p>Если проблема не устраняется, обратитесь к специалисту по продуктам Dynatrace через чат в вашем окружении Dynatrace.</p>
+<h2 id="zdtp027s">ZDTP027S<a class="headerlink" href="#zdtp027s" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Полное сообщение</strong> - ZDTP027S Disable Exit program failed. resp:<xx>, resp2:<xx>, rcode:<xx>.</li>
+<li><strong>Пояснение</strong> - Команда <code>EXEC CICS DISABLE PROGRAM</code> для всех точек выхода завершилась ошибкой.</li>
+<li><strong>Действие системы</strong> - Кодовый модуль CICS не был успешно отключён.</li>
+<li><strong>Реакция пользователя</strong> - Выясните причину неполадки с помощью кодов <code>resp</code> и <code>resp2</code>.</li>
+</ul>
+<p>Если проблема не устраняется, обратитесь к специалисту по продуктам Dynatrace через чат в вашем окружении Dynatrace.</p>
+<h2 id="zdtp028s">ZDTP028S<a class="headerlink" href="#zdtp028s" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Полное сообщение</strong> - ZDTP028S Disable RMI Exit failed. resp:<xx>, resp2:<xx>, rcode:<xx>.</li>
+<li><strong>Пояснение</strong> - Команда <code>EXEC CICS DISABLE PROGRAM</code> для точки выхода RMI завершилась ошибкой.</li>
+<li><strong>Действие системы</strong> - Точка выхода RMI не была успешно отключена.</li>
+<li><strong>Реакция пользователя</strong> - Выясните причину неполадки с помощью кодов <code>resp</code> и <code>resp2</code>.</li>
+</ul>
+<p>Если проблема не устраняется, обратитесь к специалисту по продуктам Dynatrace через чат в вашем окружении Dynatrace.</p>
+<h2 id="zdtp029s">ZDTP029S<a class="headerlink" href="#zdtp029s" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Полное сообщение</strong> - ZDTP029S START Exit failed. resp:<xx>, resp2:<xx>, rcode:<xx>.</li>
+<li><strong>Пояснение</strong> - Команда <code>EXEC CICS ENABLE START</code> для точек выхода <code>XPCREQC/XRMIIN/XRMIOUT</code> завершилась ошибкой.</li>
+<li><strong>Действие системы</strong> - Точки выхода не были успешно запущены.</li>
+<li><strong>Реакция пользователя</strong> - Выясните причину неполадки с помощью кодов <code>resp</code> и <code>resp2</code>.</li>
+</ul>
+<p>Если проблема не устраняется, обратитесь к специалисту по продуктам Dynatrace через чат в вашем окружении Dynatrace.</p>
+<h2 id="zdtp030s">ZDTP030S<a class="headerlink" href="#zdtp030s" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Полное сообщение</strong> - ZDTP030S FREEMAIN failed. resp:<xx>, resp2:<xx>, rcode:<xx>.</li>
+<li><strong>Пояснение</strong> - Команда <code>EXEC CICS FREEMAIN</code> завершилась ошибкой.</li>
+<li><strong>Действие системы</strong> - Выполнение FREEMAIN для глобальной рабочей области программы PLT завершается ошибкой.</li>
+<li><strong>Реакция пользователя</strong> - Выясните причину неполадки с помощью кодов <code>resp</code> и <code>resp2</code>.</li>
+</ul>
+<p>Если проблема не устраняется, обратитесь к специалисту по продуктам Dynatrace через чат в вашем окружении Dynatrace.</p>
+<h2 id="zdtp031s">ZDTP031S<a class="headerlink" href="#zdtp031s" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Полное сообщение</strong> - ZDTP031S Enable Exit failed. resp:<xx>, resp2:<xx>, rcode:<xx>.</li>
+<li><strong>Пояснение</strong> - Команда <code>EXEC CICS ENABLE PROGRAM</code> для включения точек выхода завершилась ошибкой.</li>
+<li><strong>Действие системы</strong> - Точки выхода кодового модуля CICS не были успешно включены.</li>
+<li><strong>Реакция пользователя</strong> - Выясните причину неполадки с помощью кодов <code>resp</code> и <code>resp2</code>.</li>
+</ul>
+<p>Если проблема не устраняется, обратитесь к специалисту по продуктам Dynatrace через чат в вашем окружении Dynatrace.</p>
+<h2 id="zdtp032s">ZDTP032S<a class="headerlink" href="#zdtp032s" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Полное сообщение</strong> - ZDTP032S STOP Exit failed. resp:<xx>, resp2:<xx>, rcode:<xx>.</li>
+<li><strong>Пояснение</strong> - Остановка точек выхода через <code>EXEC CICS DISABLE</code> завершилась ошибкой.</li>
+<li><strong>Действие системы</strong> - Точки выхода кодового модуля CICS не были успешно остановлены.</li>
+<li><strong>Реакция пользователя</strong> - Выясните причину неполадки с помощью кодов <code>resp</code> и <code>resp2</code>.</li>
+</ul>
+<p>Если проблема не устраняется, обратитесь к специалисту по продуктам Dynatrace через чат в вашем окружении Dynatrace.</p>
+<h2 id="zdtp033s">ZDTP033S<a class="headerlink" href="#zdtp033s" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Полное сообщение</strong> - ZDTP033S Cancel ReqID failed. resp:<xx>, resp2:<xx>, rcode:<xx>.</li>
+<li><strong>Пояснение</strong> - Команда <code>EXEC CICS CANCEL REQID</code> завершилась ошибкой.</li>
+<li><strong>Действие системы</strong> - Транзакция <code>DTAX ICE</code> не отменена.</li>
+<li><strong>Реакция пользователя</strong> - Выясните причину неполадки с помощью кодов <code>resp</code> и <code>resp2</code>.</li>
+</ul>
+<p>Если проблема не устраняется, обратитесь к специалисту по продуктам Dynatrace через чат в вашем окружении Dynatrace.</p>
+<h2 id="zdtp034s">ZDTP034S<a class="headerlink" href="#zdtp034s" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Полное сообщение</strong> - ZDTP034S Inquire ReqID failed. resp:<xx>, resp2:<xx>, rcode:<xx>.</li>
+<li><strong>Пояснение</strong> - Команда <code>EXEC CICS INQUIRE REQID</code> завершилась ошибкой.</li>
+<li><strong>Действие системы</strong> - Транзакция <code>DTAX ICE</code> не была успешно запущена.</li>
+<li><strong>Реакция пользователя</strong> - Выясните причину неполадки с помощью кодов <code>resp</code> и <code>resp2</code>.</li>
+</ul>
+<p>Если проблема не устраняется, обратитесь к специалисту по продуктам Dynatrace через чат в вашем окружении Dynatrace.</p>
+<h2 id="zdtp035s">ZDTP035S<a class="headerlink" href="#zdtp035s" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Полное сообщение</strong> - ZDTP035S GETMAIN failed. resp:<xx>, resp2:<xx>, rcode:<xx>.</li>
+<li><strong>Пояснение</strong> - Команда <code>EXEC CICS GETMAIN</code> для глобальной рабочей области завершилась ошибкой.</li>
+<li><strong>Действие системы</strong> - Глобальная рабочая область для программы PLT не выделена. Кодовый модуль CICS не инициализируется успешно.</li>
+<li><strong>Реакция пользователя</strong> - Выясните причину неполадки с помощью кодов <code>resp</code> и <code>resp2</code>.</li>
+</ul>
+<p>Если проблема не устраняется, обратитесь к специалисту по продуктам Dynatrace через чат в вашем окружении Dynatrace.</p>
+<h2 id="zdtp036s">ZDTP036S<a class="headerlink" href="#zdtp036s" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Полное сообщение</strong> - ZDTP036S START DTAX ICE failed. resp:<xx>, resp2:<xx>, rcode:<xx>.</li>
+<li><strong>Пояснение</strong> - Команда <code>EXEC CICS START</code> завершилась ошибкой.</li>
+<li><strong>Действие системы</strong> - Транзакция управления интервалом DTAX не запускается каждые 5 минут.</li>
+<li><strong>Реакция пользователя</strong> - Выясните причину неполадки с помощью кодов <code>resp</code> и <code>resp2</code>.</li>
+</ul>
+<p>Если проблема не устраняется, обратитесь к специалисту по продуктам Dynatrace через чат в вашем окружении Dynatrace.</p>
+<h2 id="zdtp037s">ZDTP037S<a class="headerlink" href="#zdtp037s" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Полное сообщение</strong> - ZDTP037S LOAD Agent failed. resp:<xx>, resp2:<xx>, rcode:<xx>.</li>
+<li><strong>Пояснение</strong> - Команда <code>EXEC CICS LOAD PROGRAM</code> для модуля <code>ZDTAGTxx</code> завершилась ошибкой.</li>
+<li><strong>Действие системы</strong> - PTF и дата сборки <code>ZDTAGTxx</code> не выводятся в сообщениях журнала.</li>
+<li><strong>Реакция пользователя</strong> - Выясните причину неполадки с помощью кодов <code>resp</code> и <code>resp2</code>.</li>
+</ul>
+<p>Если проблема не устраняется, обратитесь к специалисту по продуктам Dynatrace через чат в вашем окружении Dynatrace.</p>
+<h2 id="zdtp038s">ZDTP038S<a class="headerlink" href="#zdtp038s" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Полное сообщение</strong> - ZDTP038S LOAD ZDTSOAPH failed. resp:<xx>, resp2:<xx>, rcode:<xx>.</li>
+<li><strong>Пояснение</strong> - Команда <code>EXEC CICS LOAD PROGRAM</code> для модуля <code>ZDTSOAPH</code> завершилась ошибкой.</li>
+<li><strong>Действие системы</strong> - Дата сборки и версия <code>ZDTSOAPH</code> не выводятся в сообщениях журнала.</li>
+<li><strong>Реакция пользователя</strong> - Выясните причину неполадки с помощью кодов <code>resp</code> и <code>resp2</code>.</li>
+</ul>
+<p>Если проблема не устраняется, обратитесь к специалисту по продуктам Dynatrace через чат в вашем окружении Dynatrace.</p>
+<h2 id="zdtp039s">ZDTP039S<a class="headerlink" href="#zdtp039s" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Полное сообщение</strong> - ZDTP039S Release agent failed. resp:<xx>, resp2:<xx>, rcode:<xx>.</li>
+<li><strong>Пояснение</strong> - Команда <code>EXEC CICS RELEASE PROGRAM</code> для модуля <code>ZDTAGTxx/ZDTSOAPH</code> завершилась ошибкой.</li>
+<li><strong>Действие системы</strong> - Кодовый модуль CICS продолжает работу.</li>
+<li><strong>Реакция пользователя</strong> - Выясните причину неполадки с помощью кодов <code>resp</code> и <code>resp2</code>.</li>
+</ul>
+<p>Если проблема не устраняется, обратитесь к специалисту по продуктам Dynatrace через чат в вашем окружении Dynatrace.</p>
+<h2 id="zdtp040s">ZDTP040S<a class="headerlink" href="#zdtp040s" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Полное сообщение</strong> - ZDTP040S CICS Receive failed. resp:<xx>, resp2:<xx>.</li>
+<li><strong>Пояснение</strong> - Команда <code>EXEC CICS RECEIVE DATA</code> завершилась ошибкой.</li>
+<li><strong>Действие системы</strong> - Команда пользователя для транзакции <code>DTAX</code> не получена и поэтому не обработана.</li>
+<li><strong>Реакция пользователя</strong> - Выясните причину неполадки с помощью кодов <code>resp</code> и <code>resp2</code>.</li>
+</ul>
+<p>Если проблема не устраняется, обратитесь к специалисту по продуктам Dynatrace через чат в вашем окружении Dynatrace.</p>
+<h2 id="zdtp041s">ZDTP041S<a class="headerlink" href="#zdtp041s" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Полное сообщение</strong> - ZDTP041S zOS SMFid unavailable.</li>
+<li><strong>Пояснение</strong> - Ошибка при получении SMFid для z/OS.</li>
+<li><strong>Действие системы</strong> - Кодовый модуль CICS не инициализируется.</li>
+<li><strong>Реакция пользователя</strong> - Обратитесь к специалисту по продуктам Dynatrace через чат в вашем окружении.</li>
+</ul>
+<h2 id="zdtp042s">ZDTP042S<a class="headerlink" href="#zdtp042s" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Полное сообщение</strong> - ZDTP042S ZDTDCCAL INIT message send failed. rc: <xx>.</li>
+<li><strong>Пояснение</strong> - Инициализация кодового модуля CICS завершилась ошибкой.</li>
+<li><strong>Действие системы</strong> - Кодовый модуль CICS не инициализируется.</li>
+<li><strong>Реакция пользователя</strong> - Обратитесь к специалисту по продуктам Dynatrace через чат в вашем окружении.</li>
+</ul>
+<h2 id="zdtp043s">ZDTP043S<a class="headerlink" href="#zdtp043s" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Полное сообщение</strong> - ZDTP043S Unknown AUTHTYPE:<xx>.</li>
+<li><strong>Пояснение</strong> - Команда <code>EXEC CICS INQUIRE DB2CONN</code> возвращает <code>AUTHTYPE</code>, не являющийся одним из значений <code>GROUP, TERM, TX, OPID, USERID</code>.</li>
+<li><strong>Действие системы</strong> - Тип авторизации не указан в данных о подключении Db2 в распределённой трассировке.</li>
+<li><strong>Реакция пользователя</strong> - Обратитесь к администратору Db2.</li>
+</ul>
+<h2 id="zdtp044s">ZDTP044S<a class="headerlink" href="#zdtp044s" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Полное сообщение</strong> - ZDTP044S ZDTDCCAL Register Connection pool failed. rc:<xx>.</li>
+<li><strong>Пояснение</strong> - Передача сведений о пуле соединений Db2 от кодового модуля CICS к zDC завершилась ошибкой.</li>
+<li><strong>Действие системы</strong> - Сведения о подключении Db2 в распределённой трассировке пусты.</li>
+<li><strong>Реакция пользователя</strong> - Обратитесь к специалисту по продуктам Dynatrace через чат в вашем окружении.</li>
+</ul>
+<h2 id="zdtp045s">ZDTP045S<a class="headerlink" href="#zdtp045s" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Полное сообщение</strong> - ZDTP045S ZDTDCCAL Register DLI Connection pool failed. rc:<xx>.</li>
+<li><strong>Пояснение</strong> - Передача сведений о пуле соединений DL1 от кодового модуля CICS к zDC завершилась ошибкой.</li>
+<li><strong>Действие системы</strong> - Сведения о подключении DLI в распределённой трассировке пусты.</li>
+<li><strong>Реакция пользователя</strong> - Обратитесь к специалисту по продуктам Dynatrace через чат в вашем окружении.</li>
+</ul>
+<h2 id="zdtp046s">ZDTP046S<a class="headerlink" href="#zdtp046s" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Полное сообщение</strong> - ZDTP046S ZDTDCCAL Message send failed. rc:<xx>.</li>
+<li><strong>Пояснение</strong> - Кодовый модуль CICS не смог отправить сообщение в zDC.</li>
+<li><strong>Действие системы</strong> - Данные от CICS в zDC не передаются.</li>
+<li><strong>Реакция пользователя</strong> - Обратитесь к специалисту по продуктам Dynatrace через чат в вашем окружении.</li>
+</ul>
+<h2 id="zdtp047s">ZDTP047S<a class="headerlink" href="#zdtp047s" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Полное сообщение</strong> - ZDTP047S DTAX Transaction definition not found. Disabling dynatrace agent.</li>
+<li><strong>Пояснение</strong> - Определение RDO для транзакции DTAX не найдено.</li>
+<li><strong>Действие системы</strong> - Кодовый модуль CICS не включён, а выполнение программы PLT завершается.</li>
+<li><strong>Реакция пользователя</strong> - Определите транзакцию DTAX для программы PLT. Образец определения см. в элементе CICRDO библиотеки установки SZDTSAMP.</li>
+</ul>
+<h2 id="zdtp048s">ZDTP048S<a class="headerlink" href="#zdtp048s" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Полное сообщение</strong> - ZDTP048S Config block retrieval failed. rc:<xx>.</li>
+<li><strong>Пояснение</strong> - Кодовый модуль CICS не смог найти данные конфигурации с параметрами датчиков.</li>
+<li><strong>Действие системы</strong> - Кодовый модуль CICS не инициализируется.</li>
+<li><strong>Реакция пользователя</strong> - Обратитесь к специалисту по продуктам Dynatrace через чат в вашем окружении.</li>
+</ul>
+<h2 id="zdtp049s">ZDTP049S<a class="headerlink" href="#zdtp049s" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Полное сообщение</strong> - ZDTP049S Config block not found.</li>
+<li><strong>Пояснение</strong> - Кодовый модуль CICS не смог найти блок конфигурации с параметрами датчиков CICS.</li>
+<li><strong>Действие системы</strong> - Кодовый модуль CICS отключён.</li>
+<li><strong>Реакция пользователя</strong> - Убедитесь, что датчик CICS Transaction Server размещён в сопоставлении кодового модуля CICS.</li>
+</ul>
+<h2 id="zdtp050s">ZDTP050S<a class="headerlink" href="#zdtp050s" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Полное сообщение</strong> - ZDTP050S DTAX Enable failed. rc:<xx>.</li>
+<li><strong>Пояснение</strong> - Не удалось включить кодовый модуль CICS.</li>
+<li><strong>Действие системы</strong> - Кодовый модуль CICS не инициализируется успешно.</li>
+<li><strong>Реакция пользователя</strong> - Обратитесь к специалисту по продуктам Dynatrace через чат в вашем окружении.</li>
+</ul>
+<h2 id="zdtp051s">ZDTP051S<a class="headerlink" href="#zdtp051s" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Полное сообщение</strong> - ZDTP051S ZDTAGT Copyright Info not found.</li>
+<li><strong>Пояснение</strong> - Блок авторских прав в модуле ZDTAGTxx не найден.</li>
+<li><strong>Действие системы</strong> - Кодовый модуль CICS продолжает работу. Данные о PTF и дате сборки в журнал zRemote не выводятся.</li>
+<li><strong>Реакция пользователя</strong> - Обратитесь к специалисту по продуктам Dynatrace через чат в вашем окружении.</li>
+</ul>
+<h2 id="zdtp052s">ZDTP052S<a class="headerlink" href="#zdtp052s" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Полное сообщение</strong> - ZDTP052S Check Agent Mapping if the CICS Transaction Server sensor is placed.</li>
+<li><strong>Пояснение</strong> - Блок конфигурации со сведениями о датчиках CICS не найден.</li>
+<li><strong>Действие системы</strong> - Кодовый модуль CICS отключён.</li>
+<li><strong>Реакция пользователя</strong> - Убедитесь, что датчик CICS transaction server размещён в сопоставлении кодового модуля CICS.</li>
+</ul>
+<h2 id="zdtp053s">ZDTP053S<a class="headerlink" href="#zdtp053s" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Полное сообщение</strong> - ZDTP053S Disabling CICS code module.</li>
+<li><strong>Пояснение</strong> - Это сообщение является продолжением <code>ZDTP052S</code>.</li>
+<li><strong>Действие системы</strong> - Кодовый модуль CICS отключён.</li>
+<li><strong>Реакция пользователя</strong> - Следуйте инструкциям сообщения <code>ZDTP052S</code>.</li>
+</ul>
+<h2 id="zdtp054s">ZDTP054S<a class="headerlink" href="#zdtp054s" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Полное сообщение</strong> - ZDTP054S Turn ON Trace Hooks failed with rc: @@</li>
+<li><strong>Пояснение</strong> - Не удалось включить хук трассировки.</li>
+<li><strong>Действие системы</strong> - Хук трассировки не установлен.</li>
+<li><strong>Реакция пользователя</strong> - Проверьте журнал CICS на наличие ошибок. Если проблем не обнаружено, обратитесь к специалисту по продуктам Dynatrace через чат в вашем окружении Dynatrace.</li>
+</ul>
+<h2 id="zdtp055s">ZDTP055S<a class="headerlink" href="#zdtp055s" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Полное сообщение</strong> - ZDTP055S Turn OFF Trace Hooks failed with rc: @@</li>
+<li><strong>Пояснение</strong> - Не удалось отключить хук трассировки.</li>
+<li><strong>Действие системы</strong> - Хук трассировки не установлен.</li>
+<li><strong>Реакция пользователя</strong> - Проверьте журнал CICS на наличие ошибок. Если проблем не обнаружено, обратитесь к специалисту по продуктам Dynatrace через чат в вашем окружении Dynatrace.</li>
+</ul>
+<h2 id="zdtp056s">ZDTP056S<a class="headerlink" href="#zdtp056s" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Полное сообщение</strong> - ZDTP056S DSASTK address is not NULL -logic error</li>
+<li><strong>Пояснение</strong> - Недопустимый адрес для памяти DSA.</li>
+<li><strong>Действие системы</strong> - Хуки Dynatrace не включены.</li>
+<li><strong>Реакция пользователя</strong> - Выполнение CICS GETMAIN завершилось ошибкой. Проверьте журналы CICS и устраните неполадку.</li>
+</ul>
+<h2 id="zdtp057s">ZDTP057S<a class="headerlink" href="#zdtp057s" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Полное сообщение</strong> - ZDTP057S Getmain failed for DSA area</li>
+<li><strong>Пояснение</strong> - Выделение памяти для области DSA завершилось ошибкой.</li>
+<li><strong>Действие системы</strong> - Хуки Dynatrace не включены.</li>
+<li><strong>Реакция пользователя</strong> - Проверьте журнал CICS и устраните неполадку.</li>
+</ul>
+<h2 id="zdtp058s">ZDTP058S<a class="headerlink" href="#zdtp058s" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Полное сообщение</strong> - ZDTP058S DSASTK address is Zero can not free GWA: @@</li>
+<li><strong>Пояснение</strong> - Недопустимый адрес при освобождении памяти DSA.</li>
+<li><strong>Действие системы</strong> - Попытка освободить основную память не предпринимается.</li>
+<li><strong>Реакция пользователя</strong> - Как правило, это не является проблемой: кодовый модуль Dynatrace просто не получил память для данной конфигурации.</li>
+</ul>
+<h2 id="zdtp059s">ZDTP059S<a class="headerlink" href="#zdtp059s" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Полное сообщение</strong> - ZDTP059S Freemain failed for DSA area @@</li>
+<li><strong>Пояснение</strong> - Недопустимый адрес при освобождении памяти DSA из цепочки CICS.</li>
+<li><strong>Действие системы</strong> - Попытка освободить основную память не предпринимается.</li>
+<li><strong>Реакция пользователя</strong> - Цепочка памяти повреждена или нарушена.</li>
+</ul>
+<p>Если проблема не устраняется, обратитесь к специалисту по продуктам Dynatrace через чат в вашем окружении Dynatrace.</p>
+<h2 id="zdtp060s">ZDTP060S<a class="headerlink" href="#zdtp060s" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Полное сообщение</strong> - ZDTP060S Invalid ICE value, resetting to 5</li>
+<li><strong>Пояснение</strong> - Значение времени DTAX находилось вне диапазона от 1 до 5.</li>
+<li><strong>Действие системы</strong> - Значение сбрасывается на 5.</li>
+<li><strong>Реакция пользователя</strong> - При изменении значений ICE в транзакции DTAX убедитесь, что вводимое значение находится в диапазоне от 1 до 5.</li>
+</ul>
+<h2 id="zdtp061s">ZDTP061S<a class="headerlink" href="#zdtp061s" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Полное сообщение</strong> - ZDTP061S This upgrade requires a CICS restart</li>
+<li><strong>Пояснение</strong> - Кодовый модуль CICS обновлён. Для запуска нового кода требуется перезапуск CICS.</li>
+<li><strong>Действие системы</strong> - Нет</li>
+<li><strong>Реакция пользователя</strong> - При первой возможности перезапустите CICS, чтобы загрузить новые версии кодового модуля.</li>
+</ul>
+<h2 id="zdtp062s">ZDTP062S<a class="headerlink" href="#zdtp062s" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Полное сообщение</strong> - ZDTP062S No CICSplex name, CPSM API error <xx> occurred</li>
+<li><strong>Пояснение</strong> - Имя CICSPlex для региона CICS не найдено вследствие непредвиденной ошибки, обозначенной кодом ошибки "xx".</li>
+<li><strong>Действие системы</strong> - Кодовый модуль CICS продолжает инициализацию.</li>
+<li><strong>Реакция пользователя</strong> - Нет</li>
+</ul>
+<h2 id="zdtp063s">ZDTP063S<a class="headerlink" href="#zdtp063s" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Полное сообщение</strong> - ZDTP063S Turn OFF Language Environment sensor failed with rc: <xx></li>
+<li><strong>Пояснение</strong> - Не удалось отключить датчик Language Environment.</li>
+<li><strong>Действие системы</strong> - Датчик Language Environment не отключён, кодовый модуль CICS продолжает отслеживать события LE.</li>
+<li><strong>Реакция пользователя</strong> - Обратитесь к специалисту по продуктам Dynatrace через чат в вашем окружении.</li>
+</ul>
+<h2 id="zdtp064s">ZDTP064S<a class="headerlink" href="#zdtp064s" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Полное сообщение</strong> - ZDTP064S Turn ON Language Environment sensor failed with rc: <xx></li>
+<li><strong>Пояснение</strong> - Не удалось включить датчик Language Environment.</li>
+<li><strong>Действие системы</strong> - Кодовый модуль CICS не отслеживает события LE.</li>
+<li><strong>Реакция пользователя</strong> - Обратитесь к специалисту по продуктам Dynatrace через чат в вашем окружении.</li>
+</ul>
+<h2 id="zdtp065s">ZDTP065S<a class="headerlink" href="#zdtp065s" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Полное сообщение</strong> - ZDTP065S Disable EXITALL failed</li>
+<li><strong>Пояснение</strong> - Не удалось отключить точки выхода TRUE и GLUE после двух последовательных попыток.</li>
+<li><strong>Действие системы</strong> - Кодовый модуль CICS может вызвать аварийное завершение <code>AKEA</code>.</li>
+<li><strong>Реакция пользователя</strong> - Изучите журнал CICS на предмет сбоя <code>DISABLE EXITALL</code>. Обратитесь к специалисту по продуктам Dynatrace через чат в вашем окружении.</li>
+</ul>
+<h2 id="zdtp066s">ZDTP066S<a class="headerlink" href="#zdtp066s" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Полное сообщение</strong> - ZDTP066S CICS version <Cics Version> unsupported. Disabling Dynatrace CICS code module.</li>
+<li><strong>Пояснение</strong> - Кодовый модуль CICS обнаружил неподдерживаемую версию CICS.</li>
+<li><strong>Действие системы</strong> - Кодовый модуль CICS отключён.</li>
+<li><strong>Реакция пользователя</strong> - Выполните обновление региона CICS до версии, поддерживаемой Dynatrace.</li>
+</ul>
+<h2 id="zdtp067s">ZDTP067S<a class="headerlink" href="#zdtp067s" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Полное сообщение</strong> - ZDTP067S <ZDTAGTxx> Load failed. Disabling Dynatrace CICS code module.</li>
+<li><strong>Пояснение</strong> - Загрузка кодового модуля CICS завершилась ошибкой.</li>
+<li><strong>Действие системы</strong> - Кодовый модуль CICS отключён.</li>
+<li><strong>Реакция пользователя</strong> - Изучите вывод задания CICS на наличие других сообщений, которые могут быть связаны со сбоем. Обратитесь к специалисту по продуктам Dynatrace через чат в вашем окружении.</li>
+</ul>
+<h2 id="zdtp068s">ZDTP068S<a class="headerlink" href="#zdtp068s" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Полное сообщение</strong> - ZDTP068S Exec CICS Retrieve failed. resp:<xx>, resp2:<xx>, rcode:<xx></li>
+<li><strong>Пояснение</strong> - Команда <code>EXEC CICS RETRIEVE</code>, используемая для управления интервалом датчика Language Environment, завершилась ошибкой.</li>
+<li><strong>Действие системы</strong> - Нет</li>
+<li><strong>Реакция пользователя</strong> - Изучите подробное сообщение в соответствующем журнале задания CICS, чтобы получить точный код EIBRESP, указывающий причину сбоя команды EXEC CICS RETRIEVE. Обратитесь к специалисту по продуктам Dynatrace через чат в вашем окружении.</li>
+</ul>
+<h2 id="zdtp069s">ZDTP069S<a class="headerlink" href="#zdtp069s" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Полное сообщение</strong> - ZDTP069S START LE ICE failed. resp:<xx>, resp2:<xx>, rcode:<xx></li>
+<li><strong>Пояснение</strong> - Команда <code>EXEC CICS START</code>, используемая для запуска интервала датчика Language Environment, завершилась ошибкой.</li>
+<li><strong>Действие системы</strong> - Нет</li>
+<li><strong>Реакция пользователя</strong> - Изучите подробное сообщение в соответствующем журнале задания CICS, чтобы получить точный код EIBRESP, указывающий причину сбоя команды EXEC CICS START. Обратитесь к специалисту по продуктам Dynatrace через чат в вашем окружении.</li>
+</ul>
+<h2 id="zdtp070s">ZDTP070S<a class="headerlink" href="#zdtp070s" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Полное сообщение</strong> - ZDTP070S Agent program ZDTAGTnn not marked ThreadSafe - check CSD definition</li>
+<li><strong>Пояснение</strong> - При запуске CICS или обработке команды DTAX программа агента не была отмечена как ThreadSafe. Атрибут ThreadSafe необходим для производительности CICS.</li>
+<li><strong>Действие системы</strong> - Обработка завершается, и регион CICS не настроен для работы с Dynatrace.</li>
+<li><strong>Реакция пользователя</strong> - Убедитесь, что определения ресурсов Dynatrace CICS добавлены в регион CICS. Образцы определений ресурсов см. в элементе набора данных образцов установки (CICRDO). Обратитесь к специалисту по продуктам Dynatrace через чат в вашем окружении.</li>
+</ul>
+<h2 id="zdtp072s">ZDTP072S<a class="headerlink" href="#zdtp072s" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Полное сообщение</strong> - ZDTP072S Hook installation failed.</li>
+<li><strong>Пояснение</strong> - Транзакция DTAX не смогла обновить параметры хуков датчиков в GWA.</li>
+<li><strong>Действие системы</strong> - Если это произошло в процессе инициализации DTAX, DTAX отключается. Если это произошло в течение интервала ICE, новые изменения датчиков не вступят в силу.</li>
+<li><strong>Реакция пользователя</strong> - Обратитесь к специалисту по продуктам Dynatrace через чат в вашем окружении.</li>
+</ul>
+<h2 id="zdtp001w">ZDTP001W<a class="headerlink" href="#zdtp001w" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Полное сообщение</strong> - ZDTP001W Please update PLT, INITPARM, and RDO to ZDTPLT.</li>
+<li><strong>Пояснение</strong> - Обнаружено определение RDO для <code>ZDTPLT</code> с суффиксом (67/68/69/70/71/72/73).</li>
+<li><strong>Действие системы</strong> - Выполнение продолжается.</li>
+<li><strong>Реакция пользователя</strong> - Обновите определения RDO для <code>ZDTPLTxx</code> и DTAX, указав <code>ZDTPLT</code> без суффикса. Образцы определений RDO см. в элементе CICRDO библиотеки установки <code>SZDTSAMP</code>.</li>
+</ul>
+<h2 id="zdtp002w">ZDTP002W<a class="headerlink" href="#zdtp002w" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Полное сообщение</strong> - ZDTP002W Extract Exit failed. resp:<xx>, resp2:<xx>, rcode:<xx>.</li>
+<li><strong>Пояснение</strong> - Возникла проблема при получении памяти глобальной рабочей области для программы точки выхода. Операция <code>EXEC CICS EXTRACT EXIT</code> завершилась ошибкой. Это также возможно при попытке обратиться к <code>DTAX CONF</code>, когда кодовый модуль CICS отключён.</li>
+<li><strong>Действие системы</strong> - Нет</li>
+<li><strong>Реакция пользователя</strong> - Выясните причину неполадки с помощью кодов <code>resp</code> и <code>resp2</code>. Обратитесь к специалисту по продуктам Dynatrace через чат в вашем окружении.</li>
+</ul>
+<h2 id="zdtp004w">ZDTP004W<a class="headerlink" href="#zdtp004w" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Полное сообщение</strong> - ZDTP004W zDC <zDC Name> unavailable, no active SSCT found.</li>
+<li><strong>Пояснение</strong> - Для кодового модуля CICS нет доступного zDC для подключения.</li>
+<li><strong>Действие системы</strong> - Кодовый модуль CICS отключён.</li>
+<li><strong>Реакция пользователя</strong> - Запустите zDC и убедитесь, что zDC успешно подключается к zRA. Обратитесь к специалисту по продуктам Dynatrace через чат в вашем окружении.</li>
+</ul>
+<h2 id="zdtp005w">ZDTP005W<a class="headerlink" href="#zdtp005w" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Полное сообщение</strong> - ZDTP005W Config block retrieval failed. Attempt re-retrieval during ICE.</li>
+<li><strong>Пояснение</strong> - Кодовый модуль CICS не смог получить блок конфигурации датчиков CICS.</li>
+<li><strong>Действие системы</strong> - Транзакция DTAX попытается получить блок конфигурации датчиков CICS в течение следующего 5-минутного интервала.</li>
+<li><strong>Реакция пользователя</strong> - Убедитесь, что кодовый модуль CICS успешно включился в течение следующего 5-минутного интервала. Обратитесь к специалисту по продуктам Dynatrace через чат в вашем окружении.</li>
+</ul>
+<h2 id="zdtp006w">ZDTP006W<a class="headerlink" href="#zdtp006w" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Полное сообщение</strong> - ZDTP006W DTAX ICE is out of range 1 - 5 minutes. Forcing ICE to 5 minutes.</li>
+<li><strong>Пояснение</strong> - Команда <code>DTAX ICE</code> была выполнена с недопустимым значением.</li>
+<li><strong>Действие системы</strong> - Транзакция DTAX устанавливает значение ICE по умолчанию: 5 минут.</li>
+<li><strong>Реакция пользователя</strong> - Для изменения значения ICE по умолчанию введите число от 1 до 5.</li>
+</ul>
+<h2 id="zdtp007w">ZDTP007W<a class="headerlink" href="#zdtp007w" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Полное сообщение</strong> - ZDTP007W No CICSplex name, CPSM API not available.</li>
+<li><strong>Пояснение</strong> - Имя CICSplex недоступно для региона CICS.</li>
+<li><strong>Действие системы</strong> - Кодовый модуль CICS продолжает инициализацию.</li>
+<li><strong>Реакция пользователя</strong> - Нет</li>
+</ul>
+<h2 id="zdtp008w">ZDTP008W<a class="headerlink" href="#zdtp008w" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Полное сообщение</strong> - ZDTP008W Too many configuration parameters to display.</li>
+<li><strong>Пояснение</strong> - Параметр <code>DTAX CONF</code> не смог отобразить все параметры конфигурации на панели DTAX из-за недостаточной площади экрана.</li>
+<li><strong>Действие системы</strong> - Параметры конфигурации усечены на экране DTAX.</li>
+<li><strong>Реакция пользователя</strong> - Нет</li>
+</ul>
+<h2 id="zdtp009w">ZDTP009W<a class="headerlink" href="#zdtp009w" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Полное сообщение</strong> - ZDTP009W Refer to Deep monitoring section in the UI for all the parameters.</li>
+<li><strong>Пояснение</strong> - Проверьте все параметры конфигурации кодового модуля CICS в интерфейсе Dynatrace.</li>
+<li><strong>Действие системы</strong> - Нет</li>
+<li><strong>Реакция пользователя</strong> - Для просмотра всех параметров конфигурации кодового модуля CICS перейдите в <strong>Settings</strong> &gt; <strong>Server-side service monitoring</strong> &gt; <strong>Deep monitoring</strong> &gt; <strong>CICS, IMS and MQ monitoring</strong>.</li>
+</ul>
+<h2 id="zdtp010w">ZDTP010W<a class="headerlink" href="#zdtp010w" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Полное сообщение</strong> - ZDTP010W Temporary Language Environment sensor enable failed</li>
+<li><strong>Пояснение</strong> - Не удалось включить датчик Language Environment.</li>
+<li><strong>Действие системы</strong> - Кодовый модуль CICS не отслеживает события Language Environment.</li>
+<li><strong>Реакция пользователя</strong> - Обратитесь к специалисту по продуктам Dynatrace через чат в вашем окружении.</li>
+</ul>
+<h2 id="zdtp011w">ZDTP011W<a class="headerlink" href="#zdtp011w" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Полное сообщение</strong> - ZDTP011W Temporary Language Environment sensor disable failed</li>
+<li><strong>Пояснение</strong> - Не удалось отключить датчик Language Environment.</li>
+<li><strong>Действие системы</strong> - Кодовый модуль CICS продолжает отслеживать события Language Environment, что может создавать дополнительную нагрузку.</li>
+<li><strong>Реакция пользователя</strong> - Обратитесь к специалисту по продуктам Dynatrace через чат в вашем окружении.</li>
+</ul>
+<h2 id="zdtp012w">ZDTP012W<a class="headerlink" href="#zdtp012w" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Полное сообщение</strong> - ZDTP012W CICSPlex name not known due to CPSM security</li>
+<li><strong>Пояснение</strong> - У Dynatrace нет прав для выполнения команд EXEC CPSM.</li>
+<li><strong>Действие системы</strong> - Кодовый модуль CICS продолжает работу, однако имя plex пустое или недопустимое.</li>
+<li><strong>Реакция пользователя</strong> - Обратитесь в службу системной безопасности и предоставьте Dynatrace доступ к CPSM.</li>
+</ul>
+<h2 id="zdtp013w">ZDTP013W<a class="headerlink" href="#zdtp013w" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Полное сообщение</strong> - ZDTP013W PLT version <plt version> and CICS Agent version <zdtagt version> does not match</li>
+<li><strong>Пояснение</strong> - Версии кодового модуля Dynatrace CICS различаются.</li>
+<li><strong>Действие системы</strong> - Нет</li>
+<li><strong>Реакция пользователя</strong> - Выполните <code>CEMT SET NEWCOPY</code> для более старой версии. Например: если PLT старее, выполните <code>CEMT SET PROG(ZDTPLT) NEWCOPY</code>; если версия кодового модуля CICS старее (<code>zz</code> соответствует версии CTS), выполните <code>CEMT SET PROG(ZDTAGTzz) NEWCOPY</code>.</li>
+</ul>
+<h2 id="zdtp014w">ZDTP014W<a class="headerlink" href="#zdtp014w" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Полное сообщение</strong> - ZDTP014W Invalid time interval entered for Language Environment sensor.</li>
+<li><strong>Пояснение</strong> - Введено недопустимое значение в минутах для датчика Language Environment.</li>
+<li><strong>Действие системы</strong> - Нет</li>
+<li><strong>Реакция пользователя</strong> - Введите допустимый интервал от 1 до 1000 минут для включения датчика Language Environment.</li>
+</ul>
+<h2 id="zdtp015w">ZDTP015W<a class="headerlink" href="#zdtp015w" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Полное сообщение</strong> - ZDTP015W Language Environment sensor time interval out of range (1-1000).</li>
+<li><strong>Пояснение</strong> - Введённое значение интервала датчика Language Environment выходит за допустимые пределы.</li>
+<li><strong>Действие системы</strong> - Нет</li>
+<li><strong>Реакция пользователя</strong> - Введите допустимое значение интервала от 1 до 1000 минут для включения датчика Language Environment.</li>
+</ul>
+<h2 id="zdtp016w">ZDTP016W<a class="headerlink" href="#zdtp016w" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Полное сообщение</strong> - ZDTP016W zDC <zdcName> INIT Failed.</li>
+<li><strong>Пояснение</strong> - Программа PLT не может подключиться к системе сбора данных.</li>
+<li><strong>Действие системы</strong> - Выполнение продолжается. Программа PLT попытается повторно подключиться к системе сбора данных в течение следующих 5 минут.</li>
+<li><strong>Реакция пользователя</strong> - Убедитесь, что кодовый модуль zRemote запущен и подключён к Dynatrace. Если нет, запустите неработающую службу.</li>
+</ul>
+<p>Если проблема не устраняется, обратитесь к специалисту по продуктам Dynatrace через чат в вашем окружении Dynatrace.</p>
+<h2 id="zdtp017w">ZDTP017W<a class="headerlink" href="#zdtp017w" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Полное сообщение</strong> - ZDTP017W Agent ID is zero, using zDC ZDC-NAME</li>
+<li><strong>Пояснение</strong> - При запуске CICS или обработке команды DTAX программа агента не зарегистрирована в zDC.</li>
+<li><strong>Действие системы</strong> - Хуки и точки выхода не установлены.</li>
+<li><strong>Реакция пользователя</strong> - Убедитесь, что zDC запущен и подключён к zRemote. Обратитесь к специалисту по продуктам Dynatrace через чат в вашем окружении.</li>
+</ul>
+<h2 id="zdtp001i">ZDTP001I<a class="headerlink" href="#zdtp001i" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Полное сообщение</strong> - ZDTP001I DTAX User Command: PING.</li>
+<li><strong>Пояснение</strong> - Пользователь выполнил команду <code>DTAX PING</code>.</li>
+<li><strong>Действие системы</strong> - Проверьте наличие соединения между кодовым модулем CICS z/OS и кодовым модулем zRemote.</li>
+<li><strong>Реакция пользователя</strong> - Нет</li>
+</ul>
+<h2 id="zdtp002i">ZDTP002I<a class="headerlink" href="#zdtp002i" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Полное сообщение</strong> - ZDTP002I DTAX User Command: DISABLE.</li>
+<li><strong>Пояснение</strong> - Пользователь выполнил команду <code>DTAX DISABLE</code>.</li>
+<li><strong>Действие системы</strong> - Отключить все точки выхода, используемые кодовым модулем CICS, и завершить 5-минутный цикл DTAX.</li>
+<li><strong>Реакция пользователя</strong> - Нет</li>
+</ul>
+<h2 id="zdtp004i">ZDTP004I<a class="headerlink" href="#zdtp004i" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Полное сообщение</strong> - ZDTP004I DTAX User Command: CONF.</li>
+<li><strong>Пояснение</strong> - Пользователь выполнил команду <code>DTAX CONF</code>.</li>
+<li><strong>Действие системы</strong> - Отобразить активную конфигурацию датчиков CICS на панели DTAX.</li>
+<li><strong>Реакция пользователя</strong> - Нет</li>
+</ul>
+<h2 id="zdtp005i">ZDTP005I<a class="headerlink" href="#zdtp005i" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Полное сообщение</strong> - ZDTP005I DTAX User Command: ENABLE.</li>
+<li><strong>Пояснение</strong> - Пользователь выполнил команду <code>DTAX ENABLE</code>.</li>
+<li><strong>Действие системы</strong> - Кодовый модуль CICS регистрируется в системе сбора данных. При успешном подключении включаются соответствующие точки выхода (EXITs) и хуки.</li>
+<li><strong>Реакция пользователя</strong> - Нет</li>
+</ul>
+<h2 id="zdtp006i">ZDTP006I<a class="headerlink" href="#zdtp006i" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Полное сообщение</strong> - ZDTP006I ZDTPLT[<call type>] Compiled on mm dd yyyy hh<img alt="🇲🇲" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/1f1f2-1f1f2.svg" title=":mm:" />ss.</li>
+<li><strong>Пояснение</strong> - Это сообщение выводится в журнал zRemote при успешной инициализации DTAX. Тип вызова указывает на момент инициализации DTAX. Возможные типы: CPLT (DTAX инициализирован при запуске CICS), USER (DTAX инициализирован по команде пользователя <code>DTAX EN</code>), ICE (DTAX инициализирован в течение интервала ICE). Сообщение содержит информацию о компиляции и версии ZDTPLT.</li>
+<li><strong>Действие системы</strong> - Нет</li>
+<li><strong>Реакция пользователя</strong> - Нет</li>
+</ul>
+<h2 id="zdtp007i">ZDTP007I<a class="headerlink" href="#zdtp007i" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Полное сообщение</strong> - ZDTP007I ZDTAGT <PTF> <Build Date> <Build Time> VER <Product Release> <CICS Version>.</li>
+<li><strong>Пояснение</strong> - Это сообщение записывается в журнал zRemote при успешной инициализации DTAX. Сообщение содержит информацию о компиляции и версии кодового модуля CICS (ZDTAGT).</li>
+<li><strong>Действие системы</strong> - Нет</li>
+<li><strong>Реакция пользователя</strong> - Нет</li>
+</ul>
+<h2 id="zdtp008i">ZDTP008I<a class="headerlink" href="#zdtp008i" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Полное сообщение</strong> - ZDTP008I ZDTSOAPH <PTF> <Build Date> <Build Time> VER <Product Release>.</li>
+<li><strong>Пояснение</strong> - Это сообщение записывается в журнал zRemote при успешной инициализации DTAX. Сообщение содержит информацию о компиляции и версии ZDTSOAPH.</li>
+<li><strong>Действие системы</strong> - Нет</li>
+<li><strong>Реакция пользователя</strong> - Нет</li>
+</ul>
+<h2 id="zdtp009i">ZDTP009I<a class="headerlink" href="#zdtp009i" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Полное сообщение</strong> - ZDTP009I INIT failed during PLT. Trying to reconnect…</li>
+<li><strong>Пояснение</strong> - Программа PLT не может установить соединение с кодовым модулем zRemote в течение времени PLT.</li>
+<li><strong>Действие системы</strong> - Попытка повторного подключения предпринимается в течение следующего цикла DTAX, который запускается сразу после старта региона CICS.</li>
+<li><strong>Реакция пользователя</strong> - Нет</li>
+</ul>
+<h2 id="zdtp010i">ZDTP010I<a class="headerlink" href="#zdtp010i" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Полное сообщение</strong> - ZDTP010I Screen size unavailable.</li>
+<li><strong>Пояснение</strong> - Возникла проблема при получении атрибутов экрана.</li>
+<li><strong>Действие системы</strong> - Атрибуты экрана установлены по умолчанию: <code>Screen Width=80</code> и <code>Screen Height=24</code>.</li>
+<li><strong>Реакция пользователя</strong> - Нет</li>
+</ul>
+<h2 id="zdtp011i">ZDTP011I<a class="headerlink" href="#zdtp011i" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Полное сообщение</strong> - ZDTP011I DISABLE TRUE(ZDTAGTxx) with ENTRYNAME(ZDTAGENT).</li>
+<li><strong>Пояснение</strong> - Программа точки выхода <code>ZDTAGTxx</code>, связанная с именем точки входа <code>ZDTAGENT</code>, отключена. <code>xx</code> соответствует версии CTS.</li>
+<li><strong>Действие системы</strong> - Нет</li>
+<li><strong>Реакция пользователя</strong> - Нет</li>
+</ul>
+<h2 id="zdtp012i">ZDTP012I<a class="headerlink" href="#zdtp012i" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Полное сообщение</strong> - ZDTP012I ENABLE TRUE(ZDTAGTxx) with ENTRYNAME(ZDTAGENT).</li>
+<li><strong>Пояснение</strong> - Программа точки выхода ZDTAGTxx, связанная с именем точки входа ZDTAGENT, включена. <code>xx</code> соответствует версии CTS.</li>
+<li><strong>Действие системы</strong> - Нет</li>
+<li><strong>Реакция пользователя</strong> - Нет</li>
+</ul>
+<h2 id="zdtp013i">ZDTP013I<a class="headerlink" href="#zdtp013i" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Полное сообщение</strong> - ZDTP013I ENABLE Exit program(ZDTAGTxx) with Exit([exit name]).</li>
+<li><strong>Пояснение</strong> - Включить глобальную точку выхода, указанную в <code>[exit name]</code>, связанную с точкой выхода ZDTAGTxx.</li>
+<li><strong>Действие системы</strong> - Нет</li>
+<li><strong>Реакция пользователя</strong> - Нет</li>
+</ul>
+<h2 id="zdtp014i">ZDTP014I<a class="headerlink" href="#zdtp014i" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Полное сообщение</strong> - ZDTP014I START TRUE(ZDTAGTxx) with ENTRYNAME(ZDTAGENT).</li>
+<li><strong>Пояснение</strong> - Запустить пользовательскую точку выхода <code>ZDTAGENT</code>, связанную с программой точки выхода <code>ZDTAGTxx</code>.</li>
+<li><strong>Действие системы</strong> - Нет</li>
+<li><strong>Реакция пользователя</strong> - Нет</li>
+</ul>
+<h2 id="zdtp015i">ZDTP015I<a class="headerlink" href="#zdtp015i" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Полное сообщение</strong> - ZDTP015I START Exit program(ZDTAGTxx) with Exit([exit name]).</li>
+<li><strong>Пояснение</strong> - Запустить глобальную точку выхода, указанную в <code>[exit name]</code>, связанную с программой точки выхода <code>ZDTAGTxx</code>.</li>
+<li><strong>Действие системы</strong> - Нет</li>
+<li><strong>Реакция пользователя</strong> - Нет</li>
+</ul>
+<h2 id="zdtp016i">ZDTP016I<a class="headerlink" href="#zdtp016i" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Полное сообщение</strong> - ZDTP016I STOP Exit program(program name) and all associated exits</li>
+<li><strong>Пояснение</strong> - Остановить и отключить все точки выхода, связанные с <code>ZDTAGTxx</code>.</li>
+<li><strong>Действие системы</strong> - Нет</li>
+<li><strong>Реакция пользователя</strong> - Нет</li>
+</ul>
+<h2 id="zdtp017i">ZDTP017I<a class="headerlink" href="#zdtp017i" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Полное сообщение</strong> - ZDTP017I DISABLE Exit program(ZDTAGTxx) with Exit([exit name]).</li>
+<li><strong>Пояснение</strong> - Отключить глобальную точку выхода <code>[exit name]</code>, связанную с точкой выхода ZDTAGTxx.</li>
+<li><strong>Действие системы</strong> - Нет</li>
+<li><strong>Реакция пользователя</strong> - Нет</li>
+</ul>
+<h2 id="zdtp019i">ZDTP019I<a class="headerlink" href="#zdtp019i" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Полное сообщение</strong> - ZDTP019I Config block retrieved successfully.</li>
+<li><strong>Пояснение</strong> - Указывает, что конфигурация датчиков CICS успешно получена после возникшей проблемы с доступом к блоку конфигурации. Это сообщение следует за ZDTP049S, когда датчик CICS transaction server размещён.</li>
+<li><strong>Действие системы</strong> - Кодовый модуль CICS инициализирован.</li>
+<li><strong>Реакция пользователя</strong> - Нет</li>
+</ul>
+<h2 id="zdtp020i">ZDTP020I<a class="headerlink" href="#zdtp020i" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Полное сообщение</strong> - ZDTP020I Active Sensors: <TX | MQ | DB2 | DB2R | SOAP | CTG | DB2Fetch | DLI | DLIR | LE | File | HTTP | ZCON | TTX | CTGA>.</li>
+<li><strong>Пояснение</strong> - Указывает, какие датчики CICS размещены и активны.</li>
+<li><strong>Действие системы</strong> - Нет</li>
+<li><strong>Реакция пользователя</strong> - Нет</li>
+</ul>
+<h2 id="zdtp021i">ZDTP021I<a class="headerlink" href="#zdtp021i" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Полное сообщение</strong> - ZDTP021I CICS Sensors updated.</li>
+<li><strong>Пояснение</strong> - Указывает, что датчики CICS обновлены и кодовый модуль CICS применил изменения в течение 5-минутного цикла DTAX.</li>
+<li><strong>Действие системы</strong> - Нет</li>
+<li><strong>Реакция пользователя</strong> - Нет</li>
+</ul>
+<h2 id="zdtp022i">ZDTP022I<a class="headerlink" href="#zdtp022i" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Полное сообщение</strong> - ZDTP022I Inquire DB2Conn failed. resp:<xx>, resp2:<xx>, rcode:<xx>.</li>
+<li><strong>Пояснение</strong> - Команда EXEC CICS INQUIRE DB2CONN завершилась ошибкой.</li>
+<li><strong>Действие системы</strong> - Кодовый модуль CICS продолжает работу. Сведения о подключении DB2 в распределённой трассировке отсутствуют.</li>
+<li><strong>Реакция пользователя</strong> - Выясните причину неполадки с помощью кодов <code>resp</code> и <code>resp2</code>. Обратитесь к специалисту по продуктам Dynatrace через чат в вашем окружении.</li>
+</ul>
+<h2 id="zdtp023i">ZDTP023I<a class="headerlink" href="#zdtp023i" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Полное сообщение</strong> - ZDTP023I DTAX ICE interval set to: @@ minute(s).</li>
+<li><strong>Пояснение</strong> - Значение <code>DTAX ICE</code> изменено.</li>
+<li><strong>Действие системы</strong> - Нет.</li>
+<li><strong>Реакция пользователя</strong> - Нет</li>
+</ul>
+<h2 id="zdtp024i">ZDTP024I<a class="headerlink" href="#zdtp024i" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Полное сообщение</strong> - ZDTP024I Trace Hook is being enabled</li>
+<li><strong>Пояснение</strong> - Указывает, что хук трассировки включается в кодовом модуле CICS.</li>
+<li><strong>Действие системы</strong> - Нет.</li>
+<li><strong>Реакция пользователя</strong> - Нет</li>
+</ul>
+<h2 id="zdtp025i">ZDTP025I<a class="headerlink" href="#zdtp025i" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Полное сообщение</strong> - ZDTP025I Trace Hook is being disabled</li>
+<li><strong>Пояснение</strong> - Указывает, что хук трассировки отключается в кодовом модуле CICS.</li>
+<li><strong>Действие системы</strong> - Нет.</li>
+<li><strong>Реакция пользователя</strong> - Нет</li>
+</ul>
+<h2 id="zdtp026i">ZDTP026I<a class="headerlink" href="#zdtp026i" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Полное сообщение</strong> - ZDTP026I Temporary Language Environment sensor is enabled for @@@@ minute(s).</li>
+<li><strong>Пояснение</strong> - Указывает, что датчик Language Environment включён на текущий интервал DTAX ICE. Датчик Language Environment будет автоматически отключён в течение следующего цикла DTAX ICE.</li>
+<li><strong>Действие системы</strong> - Нет.</li>
+<li><strong>Реакция пользователя</strong> - Нет</li>
+</ul>
+<h2 id="zdtp027i">ZDTP027I<a class="headerlink" href="#zdtp027i" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Полное сообщение</strong> - ZDTP027I Turn off Language Environment sensor because ICE timer expired</li>
+<li><strong>Пояснение</strong> - Указывает, что датчик Language Environment был автоматически отключён по окончании текущего интервала ICE.</li>
+<li><strong>Действие системы</strong> - Нет.</li>
+<li><strong>Реакция пользователя</strong> - Нет</li>
+</ul>
+<h2 id="zdtp028i">ZDTP028I<a class="headerlink" href="#zdtp028i" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Полное сообщение</strong> - ZDTP028I TX code : xxxx xxxx xxxx .</li>
+<li><strong>Пояснение</strong> - Отображает параметр датчика Start TX в разделе Deep Monitoring веб-интерфейса для регионов CICS.</li>
+<li><strong>Действие системы</strong> - Нет.</li>
+<li><strong>Реакция пользователя</strong> - Нет</li>
+</ul>
+<h2 id="zdtp029i">ZDTP029I<a class="headerlink" href="#zdtp029i" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Полное сообщение</strong> - ZDTP029I DTAX User Command: LEENAB</li>
+<li><strong>Пояснение</strong> - Пользователь выполнил команду <code>DTAX LEENAB</code> для включения датчика Language Environment.</li>
+<li><strong>Действие системы</strong> - Датчик Language Environment временно включён. Кодовый модуль CICS начинает отслеживать динамические вызовы LE.</li>
+<li><strong>Реакция пользователя</strong> - Нет</li>
+</ul>
+<h2 id="zdtp030i">ZDTP030I<a class="headerlink" href="#zdtp030i" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Полное сообщение</strong> - ZDTP030I DTAX Status:V.R PLT-PTF AGT-PTF TRUE-STS XP RMI-STS ZDC-NAME AGT-ID ).</li>
+<li><strong>Пояснение</strong> - Была выполнена консольная команда DTAX STATUS. Её можно использовать в системах автоматизированных операций для проверки того, включены ли хуки и точки выхода Dynatrace. Описание полей: <code>V.R</code>: версия DT; <code>PLT-PTF</code>: PTF для PLT; <code>AGT-PTF</code>: PTF агента; <code>TRUE-STS</code>: статус TRUE; <code>XPC-STS</code>: статус XPCREQ/C; <code>RMI-STS</code>: RMIIN/R; <code>ZDC-NAME</code>: имя zDC; <code>AGT-ID</code>: идентификатор агента.</li>
+<li><strong>Действие системы</strong> - Нет, это исключительно информационное сообщение.</li>
+<li><strong>Реакция пользователя</strong> - Нет</li>
+</ul>
+<h2 id="zdtp031i">ZDTP031I<a class="headerlink" href="#zdtp031i" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Полное сообщение</strong> - ZDTP031I DSA Freed at location : <addr></li>
+<li><strong>Пояснение</strong> - Указывает, что область DSA по адресу <code>addr</code>, используемая кодовым модулем CICS, освобождена.</li>
+<li><strong>Действие системы</strong> - Память DSA освобождена.</li>
+<li><strong>Реакция пользователя</strong> - Нет</li>
+</ul>
+<h2 id="zdtp032i">ZDTP032I<a class="headerlink" href="#zdtp032i" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Полное сообщение</strong> - ZDTP032I DTAX Modify Command: LOG accepted.</li>
+<li><strong>Пояснение</strong> - DTAX получил обновление уровня журналирования от команды MODIFY.</li>
+<li><strong>Действие системы</strong> - Нет.</li>
+<li><strong>Реакция пользователя</strong> - Нет. Обратитесь к специалисту по продуктам Dynatrace через чат в вашем окружении.</li>
+</ul>
+<h2 id="zdtp033i">ZDTP033I<a class="headerlink" href="#zdtp033i" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Полное сообщение</strong> - ZDTP033I DTAX using TD Queue ZDTQ DD for messages.</li>
+<li><strong>Пояснение</strong> - DTAX теперь использует ZDTQ DD для сообщений вместо MSGUSR по умолчанию.</li>
+<li><strong>Действие системы</strong> - Нет.</li>
+<li><strong>Реакция пользователя</strong> - Нет. Обратитесь к специалисту по продуктам Dynatrace через чат в вашем окружении.</li>
+</ul>
+<h2 id="zdtp034i">ZDTP034I<a class="headerlink" href="#zdtp034i" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Полное сообщение</strong> - ZDTP034I Terminal TX code : xxxx</li>
+<li><strong>Пояснение</strong> - Это сообщение выводится с указанным пользователем кодом терминальной транзакции в журнале zRemote в процессе инициализации DTAX.</li>
+<li><strong>Действие системы</strong> - Кодовый модуль CICS прекращает отслеживание событий MRO, если хук MRO успешно удалён.</li>
+<li><strong>Реакция пользователя</strong> - Если код возврата не равен нулю, удаление хука MRO завершилось ошибкой. Обратитесь к специалисту по продуктам Dynatrace через чат в вашем окружении.</li>
+</ul>
+<h2 id="zdtp035i">ZDTP035I<a class="headerlink" href="#zdtp035i" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Полное сообщение</strong> - ZDTP035I Language Environment sensor has been disabled successfully.</li>
+<li><strong>Пояснение</strong> - Датчик Language Environment отключён. Агент CICS прекратит отслеживание программ LE.</li>
+<li><strong>Действие системы</strong> - Нет.</li>
+<li><strong>Реакция пользователя</strong> - Нет. Обратитесь к специалисту по продуктам Dynatrace через чат в вашем окружении.</li>
+</ul>
+<h2 id="zdtp036i">ZDTP036I<a class="headerlink" href="#zdtp036i" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Полное сообщение</strong> - ZDTP036I Language Environment is already disabled.</li>
+<li><strong>Пояснение</strong> - Датчик Language Environment уже отключён, никаких действий не предпринято.</li>
+<li><strong>Действие системы</strong> - Нет</li>
+<li><strong>Реакция пользователя</strong> - Нет. Обратитесь к специалисту по продуктам Dynatrace через чат в вашем окружении.</li>
+</ul>
+<h2 id="zdtp131i">ZDTP131I<a class="headerlink" href="#zdtp131i" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Полное сообщение</strong> - ZDTP131I Install of Soap Hook Completed Return Code: xxxx</li>
+<li><strong>Пояснение</strong> - Кодовый модуль CICS завершил установку хука SOAP для мониторинга SOAP-запросов. Код возврата 0 означает успешную установку хука SOAP.</li>
+<li><strong>Действие системы</strong> - Кодовый модуль CICS готов к отслеживанию событий SOAP при успешной установке хука SOAP.</li>
+<li><strong>Реакция пользователя</strong> - Если код возврата не равен нулю, установка хука SOAP завершилась ошибкой. Обратитесь к специалисту по продуктам Dynatrace через чат в вашем окружении.</li>
+</ul>
+<h2 id="zdtp132i">ZDTP132I<a class="headerlink" href="#zdtp132i" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Полное сообщение</strong> - ZDTP132I Removal of SOAP Hook Completed Return Code: xxxx</li>
+<li><strong>Пояснение</strong> - Кодовый модуль CICS завершил удаление хука SOAP. Код возврата 0 означает успешное удаление хука SOAP.</li>
+<li><strong>Действие системы</strong> - Кодовый модуль CICS прекращает отслеживание событий SOAP, если хук SOAP успешно удалён.</li>
+<li><strong>Реакция пользователя</strong> - Если код возврата не равен нулю, удаление хука SOAP завершилось ошибкой. Обратитесь к специалисту по продуктам Dynatrace через чат в вашем окружении.</li>
+</ul>
+<h2 id="zdtp133i">ZDTP133I<a class="headerlink" href="#zdtp133i" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Полное сообщение</strong> - ZDTP133I Install of MRO Hook Completed Return Code: xxxx</li>
+<li><strong>Пояснение</strong> - Кодовый модуль CICS завершил установку хука MRO для мониторинга вызовов нескольких регионов. Код возврата 0 означает успешную установку хука MRO.</li>
+<li><strong>Действие системы</strong> - Кодовый модуль CICS готов к отслеживанию событий MRO при успешной установке хука MRO.</li>
+<li><strong>Реакция пользователя</strong> - Если код возврата не равен нулю, установка хука MRO завершилась ошибкой. Обратитесь к специалисту по продуктам Dynatrace через чат в вашем окружении.</li>
+</ul>
+<h2 id="zdtp134i">ZDTP134I<a class="headerlink" href="#zdtp134i" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Полное сообщение</strong> - ZDTP134I Removal of MRO Hook Completed Return Code: xxxx</li>
+<li><strong>Пояснение</strong> - Кодовый модуль CICS завершил удаление хука MRO. Код возврата 0 означает успешное удаление хука MRO.</li>
+<li><strong>Действие системы</strong> - Кодовый модуль CICS прекращает отслеживание событий MRO, если хук MRO успешно удалён.</li>
+<li><strong>Реакция пользователя</strong> - Если код возврата не равен нулю, удаление хука MRO завершилось ошибкой. Обратитесь к специалисту по продуктам Dynatrace через чат в вашем окружении.</li>
+</ul>
+<h2 id="zdtp135i">ZDTP135I<a class="headerlink" href="#zdtp135i" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Полное сообщение</strong> - ZDTP135I Install of ERM Hook Completed Return Code: xxxx</li>
+<li><strong>Пояснение</strong> - Кодовый модуль CICS завершил установку хука ERM для мониторинга вызовов Db2. Код возврата 0 означает успешную установку хука ERM.</li>
+<li><strong>Действие системы</strong> - Кодовый модуль CICS готов к отслеживанию вызовов Db2 из региона CICS при успешной установке хука ERM.</li>
+<li><strong>Реакция пользователя</strong> - Если код возврата не равен нулю, установка хука ERM завершилась ошибкой. Обратитесь к специалисту по продуктам Dynatrace через чат в вашем окружении.</li>
+</ul>
+<h2 id="zdtp136i">ZDTP136I<a class="headerlink" href="#zdtp136i" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Полное сообщение</strong> - ZDTP136I Removal of ERM Hook Completed Return Code: xxxx</li>
+<li><strong>Пояснение</strong> - Кодовый модуль CICS завершил удаление хука ERM. Код возврата 0 означает успешное удаление хука ERM.</li>
+<li><strong>Действие системы</strong> - Кодовый модуль CICS прекращает отслеживание вызовов Db2, если хук ERM успешно удалён.</li>
+<li><strong>Реакция пользователя</strong> - Если код возврата не равен нулю, удаление хука ERM завершилось ошибкой. Обратитесь к специалисту по продуктам Dynatrace через чат в вашем окружении.</li>
+</ul>
+<h2 id="zdtp137i">ZDTP137I<a class="headerlink" href="#zdtp137i" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Полное сообщение</strong> - ZDTP137I Install of PL1 Hook Completed Return Code: xxxx</li>
+<li><strong>Пояснение</strong> - Кодовый модуль CICS завершил установку хука PL1 для мониторинга динамических вызовов PL1. Код возврата 0 означает успешную установку хука PL1.</li>
+<li><strong>Действие системы</strong> - Кодовый модуль CICS готов к отслеживанию динамических вызовов PL1 при успешной установке хука PL1.</li>
+<li><strong>Реакция пользователя</strong> - Если код возврата не равен нулю, установка хука PL1 завершилась ошибкой. Обратитесь к специалисту по продуктам Dynatrace через чат в вашем окружении.</li>
+</ul>
+<h2 id="zdtp138i">ZDTP138I<a class="headerlink" href="#zdtp138i" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Полное сообщение</strong> - ZDTP138I Removal of PL1 Hook Completed Return Code: xxxx</li>
+<li><strong>Пояснение</strong> - Кодовый модуль CICS завершил удаление хука PL1. Код возврата 0 означает успешное удаление хука PL1.</li>
+<li><strong>Действие системы</strong> - Кодовый модуль CICS прекращает отслеживание динамических вызовов PL1, если хук PL1 успешно удалён.</li>
+<li><strong>Реакция пользователя</strong> - Если код возврата не равен нулю, удаление хука PL1 завершилось ошибкой. Обратитесь к специалисту по продуктам Dynatrace через чат в вашем окружении.</li>
+</ul>
+<h2 id="zdtp139i">ZDTP139I<a class="headerlink" href="#zdtp139i" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Полное сообщение</strong> - ZDTP139I Install of <COBOL routine> Hook Completed Return Code: xxxx</li>
+<li><strong>Пояснение</strong> - Кодовый модуль CICS завершил установку хуков COBOL: IGZCFCC, IGZCLNK и IGZXFCAL (обозначается как "COBOL routine") для мониторинга динамических вызовов COBOL. Код возврата 0 означает успешную установку хуков COBOL.</li>
+<li><strong>Действие системы</strong> - Кодовый модуль CICS готов к отслеживанию динамических вызовов COBOL при успешной установке хуков COBOL.</li>
+<li><strong>Реакция пользователя</strong> - Если код возврата не равен нулю, установка хуков COBOL завершилась ошибкой. Обратитесь к специалисту по продуктам Dynatrace через чат в вашем окружении.</li>
+</ul>
+<h2 id="zdtp140i">ZDTP140I<a class="headerlink" href="#zdtp140i" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Полное сообщение</strong> - ZDTP140I Removal of COBOL Hook Completed Return Code: xxxx</li>
+<li><strong>Пояснение</strong> - Кодовый модуль CICS завершил удаление хука COBOL. Код возврата 0 означает успешное удаление хука COBOL.</li>
+<li><strong>Действие системы</strong> - Кодовый модуль CICS прекращает отслеживание динамических вызовов COBOL, если хук COBOL успешно удалён.</li>
+<li><strong>Реакция пользователя</strong> - Если код возврата не равен нулю, удаление хука COBOL завершилось ошибкой. Обратитесь к специалисту по продуктам Dynatrace через чат в вашем окружении.</li>
+</ul>
+<h2 id="_1">Связанные темы<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="../../dtax-transaction/" title="Управление модулем CICS через DTAX-транзакции.">Управление модулем CICS через DTAX-транзакции</a></li>
+</ul>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  К началу
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      © 2026 Dynatrace Docs | Yerkebulan Ardabayev
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/Yerkebulan-Ardabayev" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../../../../../../..", "features": ["navigation.indexes", "navigation.prune", "navigation.path", "navigation.tracking", "navigation.top", "search.suggest", "search.highlight", "search.share", "content.code.copy", "content.code.annotate", "content.tabs.link", "content.tooltips", "toc.follow"], "search": "../../../../../../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u0421\u043a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u043d\u043e \u0432 \u0431\u0443\u0444\u0435\u0440", "clipboard.copy": "\u041a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u0442\u044c \u0432 \u0431\u0443\u0444\u0435\u0440", "search.result.more.one": "\u0415\u0449\u0451 1 \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.more.other": "\u0415\u0449\u0451 # \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.none": "\u0421\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439 \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u043e", "search.result.one": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e 1 \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0435", "search.result.other": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439: #", "search.result.placeholder": "\u041d\u0430\u0447\u043d\u0438\u0442\u0435 \u043f\u0435\u0447\u0430\u0442\u0430\u0442\u044c \u0434\u043b\u044f \u043f\u043e\u0438\u0441\u043a\u0430", "search.result.term.missing": "\u041e\u0442\u0441\u0443\u0442\u0441\u0442\u0432\u0443\u0435\u0442", "select.version": "\u0412\u044b\u0431\u0435\u0440\u0438\u0442\u0435 \u0432\u0435\u0440\u0441\u0438\u044e"}, "version": null}</script>
+    
+    
+  
+      <script src="../../../../../../../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../../../../../../../../assets/javascripts/groq-chat.js?sha=17d46ba74"></script>
+      
+    
+  <script>
+    (function() {
+      // --- Keyboard shortcut Ctrl+K / Cmd+K for search ---
+      document.addEventListener('keydown', function(e) {
+        if ((e.ctrlKey || e.metaKey) && e.key === 'k') {
+          e.preventDefault();
+          var searchInput = document.querySelector('.md-search__input');
+          if (searchInput) {
+            searchInput.focus();
+            var searchToggle = document.querySelector('[data-md-toggle="search"]');
+            if (searchToggle && !searchToggle.checked) {
+              searchToggle.checked = true;
+              searchToggle.dispatchEvent(new Event('change'));
+            }
+          }
+        }
+        // --- "/" focuses search like GitHub / Algolia docs ---
+        if (e.key === '/' && !/^(input|textarea|select)$/i.test(e.target.tagName)) {
+          e.preventDefault();
+          var inp = document.querySelector('.md-search__input');
+          if (inp) {
+            inp.focus();
+            var t = document.querySelector('[data-md-toggle="search"]');
+            if (t && !t.checked) { t.checked = true; t.dispatchEvent(new Event('change')); }
+          }
+        }
+      });
+    })();
+  </script>
+
+  </body>
+</html>

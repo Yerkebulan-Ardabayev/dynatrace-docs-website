@@ -1,0 +1,2923 @@
+
+<!doctype html>
+<html lang="ru" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Документация Dynatrace Managed с AI-помощником">
+      
+      
+        <meta name="author" content="Yerkebulan Ardabayev">
+      
+      
+        <link rel="canonical" href="https://yerkebulan-ardabayev.github.io/dynatrace-docs-website/managed-ru/whats-new/managed/sprint-332/">
+      
+      
+        <link rel="prev" href="../sprint-330/">
+      
+      
+        <link rel="next" href="../sprint-334/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>Что нового в Dynatrace Managed версии 1.332 - Dynatrace — Документация</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Inter";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../assets/stylesheets/extra.v11.css?sha=17d46ba74">
+    
+    <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  <style>
+    /* DocFlow DT Logo Badge — injected via template override */
+    .md-header__button.md-logo {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .md-header__button.md-logo img,
+    .md-header__button.md-logo svg {
+      display: none !important;
+    }
+    .md-header__button.md-logo::before {
+      content: 'DT';
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 28px;
+      height: 28px;
+      border-radius: 6px;
+      background: linear-gradient(135deg, #00d4aa 0%, #7c3aed 100%);
+      color: white;
+      font-size: 11px;
+      font-weight: 700;
+      font-family: 'Inter', sans-serif;
+      letter-spacing: -0.02em;
+      flex-shrink: 0;
+    }
+
+    /* Search Ctrl+K badge — inside input field */
+    .md-search__form {
+      position: relative;
+    }
+    .md-search__form::after {
+      content: 'Ctrl+K';
+      display: none;
+      align-items: center;
+      padding: 0.15rem 0.4rem;
+      border-radius: 4px;
+      border: 1px solid var(--docflow-border);
+      background: var(--md-default-bg-color);
+      font-size: 10px;
+      font-family: 'JetBrains Mono', monospace;
+      color: var(--md-default-fg-color--lighter);
+      white-space: nowrap;
+      pointer-events: none;
+      position: absolute;
+      right: 0.5rem;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+    @media (min-width: 60em) {
+      .md-search__form::after {
+        display: flex;
+      }
+    }
+  </style>
+
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="custom">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#dynatrace-managed-1332" class="md-skip">
+          Перейти к содержанию
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+  
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Верхний колонтитул">
+    <a href="../../../.." title="Dynatrace — Документация" class="md-header__button md-logo" aria-label="Dynatrace — Документация" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M11 15H6l7-14v8h5l-7 14z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Dynatrace — Документация
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Что нового в Dynatrace Managed версии 1.332
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Переключить на светлую тему"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Переключить на светлую тему" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Переключить на тёмную тему"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Переключить на тёмную тему" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Поиск" placeholder="Поиск" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Поиск">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Поделиться" aria-label="Поделиться" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Очистить" aria-label="Очистить" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Инициализация поиска
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/Yerkebulan-Ardabayev/dynatrace-docs-website" title="Перейти к репозиторию" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    dynatrace-docs-website
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Навигация" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../.." title="Dynatrace — Документация" class="md-nav__button md-logo" aria-label="Dynatrace — Документация" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M11 15H6l7-14v8h5l-7 14z"/></svg>
+
+    </a>
+    Dynatrace — Документация
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/Yerkebulan-Ardabayev/dynatrace-docs-website" title="Перейти к репозиторию" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    dynatrace-docs-website
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Главная
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../../ru/getting-started/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Начало работы
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../installation/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Кластер Managed
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../ingest-from/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Источники данных
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    
+  
+  
+  
+    <a href="../../../observe/application-observability/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Наблюдаемость
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../dynatrace-intelligence/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Davis AI
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    
+  
+  
+  
+    <a href="../../../analyze-explore-automate/dashboards-classic/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Анализ
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../deliver/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Deliver
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    
+  
+  
+  
+    <a href="../../../secure/application-security/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Безопасность приложений
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    
+  
+  
+  
+    <a href="../../../manage/account-management/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Управление
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    
+  
+  
+  
+    <a href="../../../platform/oneagent/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Платформа
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../dynatrace-api/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_13" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_13" id="__nav_13_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Что нового
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_13_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_13">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Что нового
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обзор
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../activegate/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Что нового в ActiveGate
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../dynatrace-api/sprint-302/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    dynatrace-api
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../dynatrace-operator/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Что нового в Dynatrace Operator
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_13_5" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_13_5" id="__nav_13_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Заметки о выпуске Dynatrace Managed
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_13_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_13_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Заметки о выпуске Dynatrace Managed
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обзор
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sprint-302/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Заметки о выпуске Dynatrace Managed версии 1.302
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sprint-304/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Заметки о выпуске Dynatrace Managed версии 1.304
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sprint-306/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Заметки о выпуске Dynatrace Managed версии 1.306
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sprint-308/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Заметки о выпуске Dynatrace Managed версии 1.308
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sprint-310/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Заметки о выпуске Dynatrace Managed версии 1.310
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sprint-312/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Заметки о выпуске Dynatrace Managed версии 1.312
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sprint-314/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Заметки о выпуске Dynatrace Managed версии 1.314
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sprint-316/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Заметки о выпуске Dynatrace Managed версии 1.316
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sprint-318/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Заметки о выпуске Dynatrace Managed версии 1.318
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sprint-320/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Заметки о выпуске Dynatrace Managed версии 1.320
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sprint-322/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Заметки о выпуске Dynatrace Managed версии 1.322
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sprint-326/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Что нового в Dynatrace Managed версии 1.326
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sprint-328/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Что нового в Dynatrace Managed версии 1.328
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sprint-330/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Что нового в Dynatrace Managed версии 1.330
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Что нового в Dynatrace Managed версии 1.332
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sprint-334/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Что нового в Dynatrace Managed 1.334
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sprint-336/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Что нового в Dynatrace Managed 1.336
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sprint-338/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Что нового в Dynatrace Managed 1.338
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sprint-340/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Что нового в Dynatrace Managed 1.340
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sprint-342/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Что нового в Dynatrace Managed 1.342
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../oneagent/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Что нового в OneAgent
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../preview-releases/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Предварительные выпуски
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../technology/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Поддержка новых технологий
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../offline-doc/how-do-i-enable-synthetic-monitors/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Офлайн-документация
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../../ru/training/day1-introduction/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обучение
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../ai/groq/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI Помощник
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Содержание">
+  
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+                
+
+
+
+  
+
+
+  <nav class="md-path" aria-label="Навигация" >
+    <ol class="md-path__list">
+      
+        
+  
+  
+    <li class="md-path__item">
+      <a href="../../../.." class="md-path__link">
+        
+  <span class="md-ellipsis">
+    Главная
+  </span>
+
+      </a>
+    </li>
+  
+
+      
+      
+        
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="../../" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    Что нового
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="../" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    Заметки о выпуске Dynatrace Managed
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ol>
+  </nav>
+
+              
+              <article class="md-content__inner md-typeset">
+                
+  
+                  
+
+
+
+<h1 id="dynatrace-managed-1332">Что нового в Dynatrace Managed версии 1.332<a class="headerlink" href="#dynatrace-managed-1332" title="Permanent link">&para;</a></h1>
+<h1 id="dynatrace-managed-1332_1">Что нового в Dynatrace Managed версии 1.332<a class="headerlink" href="#dynatrace-managed-1332_1" title="Permanent link">&para;</a></h1>
+<ul>
+<li>Заметки о выпуске</li>
+<li>5-min read</li>
+<li>Updated on Apr 16, 2026</li>
+<li>Rollout start on Feb 16, 2026</li>
+</ul>
+<p>На этой странице представлены новые функции, изменения и исправления ошибок в Dynatrace Managed версии 1.332. Содержимое:</p>
+<ul>
+<li><a href="#updates">Обновления функций</a>: 12</li>
+<li><a href="#breaking">Несовместимые изменения</a>: 3</li>
+<li><a href="#fixes">Исправления и обслуживание</a>: 8</li>
+</ul>
+<h2 id="_1">Обновления функций<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<p>Application Observability | Distributed Tracing</p>
+<h3 id="aws-lambda">Улучшенный опыт настройки мониторинга AWS Lambda<a class="headerlink" href="#aws-lambda" title="Permanent link">&para;</a></h3>
+<p>В этом выпуске представлен ряд улучшений удобства использования и надёжности рабочего процесса развёртывания Lambda, обеспечивающих согласованное поведение между типами развёртываний и предотвращающих распространённые ошибки настройки.</p>
+<h4 id="dt_connection_base_url-activegate">Автоматический выбор DT_CONNECTION_BASE_URL с использованием ActiveGate<a class="headerlink" href="#dt_connection_base_url-activegate" title="Permanent link">&para;</a></h4>
+<p>Для повышения надёжности и устранения ошибок настройки процесс развёртывания теперь автоматически определяет публичный <strong>URL ActiveGate</strong> в качестве <code>DT_CONNECTION_BASE_URL</code> при наличии такой возможности.</p>
+<ul>
+<li>Система автоматически выбирает доступный конечный пункт ActiveGate.</li>
+<li>URL кластера больше не используется как запасной вариант.</li>
+</ul>
+<p>Это предотвращает проблемы соединения и обеспечивает корректную связь OneAgent.</p>
+<p><strong>Если ActiveGate недоступен:</strong></p>
+<ul>
+<li>Вы получаете <strong>чёткое, понятное сообщение об ошибке</strong> с описанием проблемы.</li>
+<li>Необходимо вручную указать конечный пункт Dynatrace.</li>
+<li>Поле <strong>Endpoint address</strong> содержит встроенную подсказку с обновлёнными инструкциями.</li>
+</ul>
+<h4 id="lambda-managed-offline">Классическое поведение мониторинга Lambda для Managed-offline<a class="headerlink" href="#lambda-managed-offline" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Классический мониторинг Lambda теперь <strong>всегда включён</strong>.</li>
+<li>Флажок <strong>Enable Classic Lambda monitoring</strong> <strong>удалён</strong> из интерфейса для предотвращения случайного отключения.</li>
+<li>Это обеспечивает непрерывность мониторинга без вмешательства Dynatrace ONE.</li>
+</ul>
+<p>Application Observability | Distributed Tracing</p>
+<h3 id="aws-lambda_1">Улучшенная корреляция сервисов для триггеров обмена сообщениями AWS Lambda<a class="headerlink" href="#aws-lambda_1" title="Permanent link">&para;</a></h3>
+<p>Улучшена корреляция сервисов для триггеров обмена сообщениями в функциях AWS Lambda, отслеживаемых с помощью OneAgent AWS Lambda Layer.</p>
+<p>Application Observability | Services</p>
+<h3 id="services">Новая страница Services включена по умолчанию<a class="headerlink" href="#services" title="Permanent link">&para;</a></h3>
+<p>Новая страница Service теперь включена по умолчанию во всех окружениях, чтобы вы могли воспользоваться новым дизайном и функциями анализа.</p>
+<p><img alt="Новая страница Service" src="https://dt-cdn.net/images/screenshot-2026-02-05-at-16-33-07-1621-548502a73b.png" /></p>
+<p>Новая страница Service</p>
+<p>Application Security | Vulnerabilities</p>
+<h3 id="application-security-dynatrace">Application Security теперь использует фид уязвимостей Dynatrace<a class="headerlink" href="#application-security-dynatrace" title="Permanent link">&para;</a></h3>
+<p>В Dynatrace Managed версии 1.334 обнаружение уязвимостей сторонних компонентов будет обновлено для использования фида уязвимостей Dynatrace. Это обновление обеспечивает более точные, прозрачные и учитывающие угрозы данные об уязвимостях при сохранении широкого охвата критических рисков.</p>
+<p>В рамках этого изменения небольшой процент ранее обнаруженных уязвимостей больше не будет охвачен и будет помечен как устаревший (deprecated). После переключения вы можете просмотреть эти элементы в обнаружении уязвимостей сторонних компонентов, используя фильтр <strong>Status</strong> &gt; <strong>Deprecated</strong>.</p>
+<p>FinOps</p>
+<h3 id="cost-allocation-dynatrace-saas">Экспорт Cost Allocation теперь включает все возможности Dynatrace SaaS<a class="headerlink" href="#cost-allocation-dynatrace-saas" title="Permanent link">&para;</a></h3>
+<p>Экспорт Cost Allocation теперь включает все возможности Dynatrace SaaS. Ранее экспорт включал только те возможности, которые настроены или уже поддерживаются функцией Cost Allocation.</p>
+<p>Это обеспечивает полное представление стоимости и использования, позволяющее практикам FinOps работать с общими затратами на платформу независимо от текущей конфигурации или зрелости Cost Allocation.</p>
+<p>Исторические данные доступны начиная с 26 января 2026 года.</p>
+<p>Infrastructure Observability | Clouds</p>
+<h3 id="classic-cloud-platform-monitoring-amazon-cloudwatch-azure-monitor">Classic Cloud Platform Monitoring: новые метрики для Amazon CloudWatch и Azure Monitor<a class="headerlink" href="#classic-cloud-platform-monitoring-amazon-cloudwatch-azure-monitor" title="Permanent link">&para;</a></h3>
+<p>Следующие новые метрики теперь доступны для Amazon CloudWatch и Azure Monitor.</p>
+<h4 id="azure-db-for-postgresql-flexible-server">Azure DB for PostgreSQL — Flexible Server<a class="headerlink" href="#azure-db-for-postgresql-flexible-server" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th><strong>Метрика</strong></th>
+<th><strong>Отображаемое имя</strong></th>
+<th><strong>Разрешение</strong></th>
+<th><strong>Агрегации</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>client_connections_active</code></td>
+<td>Активные клиентские соединения</td>
+<td>PT1M</td>
+<td>Max, Min, Avg</td>
+</tr>
+<tr>
+<td><code>client_connections_waiting</code></td>
+<td>Ожидающие клиентские соединения</td>
+<td>PT1M</td>
+<td>Max, Min, Avg</td>
+</tr>
+<tr>
+<td><code>num_pools</code></td>
+<td>Количество пулов соединений</td>
+<td>PT1M</td>
+<td>Max, Min, Avg</td>
+</tr>
+<tr>
+<td><code>server_connections_active</code></td>
+<td>Активные серверные соединения</td>
+<td>PT1M</td>
+<td>Max, Min, Avg</td>
+</tr>
+<tr>
+<td><code>server_connections_idle</code></td>
+<td>Простаивающие серверные соединения</td>
+<td>PT1M</td>
+<td>Max, Min, Avg</td>
+</tr>
+<tr>
+<td><code>max_connections</code></td>
+<td>Максимальное количество соединений</td>
+<td>PT30M</td>
+<td>Max</td>
+</tr>
+<tr>
+<td><code>total_pooled_connections</code></td>
+<td>Общее количество соединений в пуле</td>
+<td>PT1M</td>
+<td>Max, Min, Avg</td>
+</tr>
+</tbody>
+</table>
+<p>Метрики пула соединений (<code>client_connections_*</code>, <code>num_pools</code>, <code>server_connections_*</code>, <code>total_pooled_connections</code>) разбиты по <strong>DatabaseName</strong> и <strong>ServerName</strong>; <code>max_connections</code> — только по <strong>ServerName</strong>.</p>
+<h4 id="azure-sql-database-hyperscale">Azure SQL Database — Hyperscale<a class="headerlink" href="#azure-sql-database-hyperscale" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th><strong>Метрика</strong></th>
+<th><strong>Отображаемое имя</strong></th>
+<th><strong>Разрешение</strong></th>
+<th><strong>Единица</strong></th>
+<th><strong>Агрегации</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>storage</code></td>
+<td>Использованное пространство данных</td>
+<td>PT1M</td>
+<td>Byte</td>
+<td>Max, Min, Avg</td>
+</tr>
+</tbody>
+</table>
+<h4 id="amazon-aurora">Amazon Aurora<a class="headerlink" href="#amazon-aurora" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th><strong>Метрика</strong></th>
+<th><strong>Отображаемое имя</strong></th>
+<th><strong>Измерения</strong></th>
+<th><strong>Единица</strong></th>
+<th><strong>Статистики</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>DBMaxConnections</code></td>
+<td>DB Cluster Max Connections (требуется: Database Insights Advanced и Performance Insights)</td>
+<td>DBClusterIdentifier</td>
+<td>Count</td>
+<td>Multi</td>
+</tr>
+</tbody>
+</table>
+<h4 id="amazon-rds">Amazon RDS<a class="headerlink" href="#amazon-rds" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th><strong>Метрика</strong></th>
+<th><strong>Отображаемое имя</strong></th>
+<th><strong>Измерения</strong></th>
+<th><strong>Единица</strong></th>
+<th><strong>Статистики</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>DBMaxConnections</code></td>
+<td>DB Instance Max Connections (требуется: Database Insights Advanced и Performance Insights)</td>
+<td>DBInstanceIdentifier</td>
+<td>Count</td>
+<td>Multi</td>
+</tr>
+</tbody>
+</table>
+<p>Platform</p>
+<h3 id="_2">Запросы метрик могут включать значения удалённых сущностей<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
+<p>При ретроспективном запросе метрик некоторые отслеживаемые сущности могут быть недоступны и поэтому исключаются из результата. Это может приводить к неполному результату, особенно для метрик тарификации. Теперь можно использовать селектор сущностей, чтобы указать включение удалённых сущностей. Подробнее см. в разделе <a href="../../../dynatrace-api/environment-api/entity-v2/entity-selector/" title="Configure the entity selector for Environment API endpoints.">Селектор сущностей — включение удалённых сущностей</a>.</p>
+<p>Platform</p>
+<h3 id="pkce-openid-connect">Добавлена поддержка PKCE для OpenID Connect<a class="headerlink" href="#pkce-openid-connect" title="Permanent link">&para;</a></h3>
+<p>Dynatrace Managed теперь поддерживает PKCE (Proof Key for Code Exchange) для OpenID Connect. PKCE — расширение потока кода авторизации OAuth 2.0, предназначенное для предотвращения атак на перехват кода авторизации.</p>
+<p>Для включения:</p>
+<ol>
+<li>Перейдите в <strong>CMC</strong> &gt; <strong>User authentication</strong> &gt; <strong>Single sign-on settings</strong>.</li>
+<li>Выберите <strong>OpenID Connect</strong> в качестве технологии SSO.</li>
+<li>Включите <strong>Use PKCE</strong>.</li>
+</ol>
+<p><img alt="Функция PKCE для OpenID Connect" src="https://dt-cdn.net/images/screenshot-2026-02-05-at-16-44-29-1679-56b61f8202.png" /></p>
+<p>Функция PKCE для OpenID Connect</p>
+<p>Platform</p>
+<h3 id="data-explorer">Сворачивание панели настроек Data Explorer<a class="headerlink" href="#data-explorer" title="Permanent link">&para;</a></h3>
+<p>Теперь можно свернуть панель настроек Data Explorer для освобождения места под диаграммы. Это особенно удобно на небольших экранах.</p>
+<p><img alt="Сворачивание панели настроек Data Explorer" src="https://dt-cdn.net/images/screenshot-2026-02-05-at-15-54-55-1481-ff94f6efd6.png" /></p>
+<p>Сворачивание панели настроек Data Explorer</p>
+<p>Platform</p>
+<h3 id="_3">Новый параметр конфигурации для разграничения схожих отчётов о событиях<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<p>Теперь можно определить тег корреляции для всех источников событий: <code>dt.event.correlation_tag</code>. Этот необязательный тег позволяет явно создавать отдельные события даже при схожих данных отчёта о событии, например при одинаковых заголовке и сущности.</p>
+<p>Подробнее см. в разделе <a href="../../../dynatrace-intelligence/root-cause-analysis/event-analysis-and-correlation/" title="Gain an understanding of the Events section on each host, process, and service overview page.">Анализ и корреляция событий</a>.</p>
+<p>Platform | OneAgent</p>
+<h3 id="oneagent-health">OneAgent Health теперь включает атрибуты ресурсов<a class="headerlink" href="#oneagent-health" title="Permanent link">&para;</a></h3>
+<p>Теперь можно просматривать атрибуты ресурсов, захваченные кодовыми модулями, в <a href="../../../ingest-from/dynatrace-oneagent/oneagent-health/" title="Discover deployed OneAgent modules at scale and detect anomalies before they turn into problems.">OneAgent Health</a>. Для их просмотра выберите кодовый модуль в таблице данных и разверните раздел с подробностями.</p>
+<p>Атрибуты ресурсов можно использовать в качестве входных данных для правил <a href="../../../observe/application-observability/services/service-detection/service-detection-v2/" title="Find out how to detect, name, and split services from OpenTelemetry and OneAgent spans.">Service Detection v2</a>.</p>
+<p><img alt="Атрибуты ресурсов OneAgent" src="https://dt-cdn.net/images/screenshot-2026-01-16-at-15-27-54-1953-b145ce28b5.png" /></p>
+<p>Атрибуты ресурсов OneAgent</p>
+<p>Platform | OneAgent</p>
+<h3 id="tmpfs-oneagent-opt-in">Мониторинг tmpfs через OneAgent доступен в режиме opt-in<a class="headerlink" href="#tmpfs-oneagent-opt-in" title="Permanent link">&para;</a></h3>
+<p>Обновлён OneAgent: теперь он может отслеживать данные tmpfs в системах Linux. Мониторинг можно активировать в режиме opt-in в <strong>Settings</strong> &gt; <strong>Collect and capture</strong> &gt; <strong>Infrastructure</strong> &gt; <strong>OS</strong> &gt; <strong>Enable tmpfs disk monitoring</strong>.</p>
+<h2 id="_4">Несовместимые изменения<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<p>Platform</p>
+<h3 id="activegate-1172">Удалена обратная совместимость с ActiveGate старше версии 1.172<a class="headerlink" href="#activegate-1172" title="Permanent link">&para;</a></h3>
+<p>Начиная с ActiveGate версии 1.172, все ActiveGate поддерживают приоритизированные списки конечных пунктов. Для снижения сложности продукта поддержка неприоритизированных списков конечных пунктов прекращена.</p>
+<p>Если вы всё ещё используете ActiveGate версий ниже 1.172, необходимо обновить их до поддерживаемой версии.</p>
+<p>Platform</p>
+<h3 id="_5">Имя локального окружения самомониторинга больше нельзя изменять<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
+<p>Для улучшения поддержки Dynatrace кластеров Managed имя локального окружения самомониторинга установлено как «Local Self-Monitoring» и больше не может быть изменено через Cluster Management Console.</p>
+<p>Если имя локального окружения самомониторинга было изменено ранее, оно будет сброшено до «Local-Self-Monitoring».</p>
+<p>Platform</p>
+<h3 id="ios-android-dynatrace">Прекращение поддержки нативных мобильных приложений (iOS и Android) для Dynatrace<a class="headerlink" href="#ios-android-dynatrace" title="Permanent link">&para;</a></h3>
+<p>В рамках непрерывного стремления обеспечить оптимизированный и последовательный пользовательский опыт Dynatrace прекращает поддержку нативных мобильных приложений для iOS и Android. Это изменение соответствует стратегии единого адаптивного веб-интерфейса и использования современных гибких каналов уведомлений.</p>
+<h4 id="_6">Ключевые даты<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h4>
+<ul>
+<li><strong>Последнее обновление приложения</strong>: конец 2025 года</li>
+<li><strong>Дата прекращения поддержки</strong>: June 30, 2026</li>
+<li><strong>Завершение поддержки</strong>: June 30, 2026</li>
+</ul>
+<h4 id="_7">Что изменится?<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h4>
+<p>Нативные мобильные приложения Dynatrace перестанут быть доступны для загрузки и поддерживаться после даты прекращения поддержки.</p>
+<p>Push-уведомления теперь будут доставляться через сторонние интеграции: Slack, Teams, PagerDuty, электронную почту и ntfy.</p>
+<h4 id="_8">Рекомендуемые действия<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Начните использовать адаптивный веб-интерфейс.</li>
+<li>
+<p>Настройте предпочтительные интеграции уведомлений через:</p>
+</li>
+<li>
+<p>Dynatrace SaaS: <a href="../../../upgrade/unavailable-in-managed/" title="Your selection is unavailable in Dynatrace Managed.">Workflows</a></p>
+</li>
+<li>Dynatrace Managed: <a href="../../../analyze-explore-automate/notifications-and-alerting/problem-notifications/" title="Learn how to integrate third-party problem notification systems with Dynatrace.">Уведомления о проблемах</a></li>
+<li>Удалите нативное приложение с устройств после даты прекращения поддержки.</li>
+</ul>
+<h2 id="_9">Исправления и обслуживание<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h2>
+<h3 id="_10">Исправленные ошибки в этом выпуске<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Исправлена проблема, при которой повторное открытие глобального переключателя временного диапазона приводило к дублированию строк часового пояса. (MGD-9441)</li>
+<li>Обновлена библиотека log4j для CVE-2025-68161 во избежание ложных срабатываний в сканерах безопасности. Сервер Dynatrace не подвержен этой уязвимости CVE. (MGD-9264)</li>
+<li>Исправлена проблема с модулем проверки работоспособности NGINX, отвечающим за перенаправление трафика между узлами кластера. (MGD-9000)</li>
+<li><strong>Уязвимость</strong>: Введены дополнительные средства контроля доступа для внутреннего конечного пункта Hub API, маршрутизируемого через обратный прокси Mission Control. (ASDY-3035)</li>
+</ul>
+<h2 id="dynatrace-api">Dynatrace API<a class="headerlink" href="#dynatrace-api" title="Permanent link">&para;</a></h2>
+<p>Сведения об изменениях в Dynatrace API в этом выпуске см. в:</p>
+<ul>
+<li><a href="../../dynatrace-api/sprint-332/" title="Changelog for Dynatrace API version 1.332">Журнал изменений Dynatrace API версии 1.332</a></li>
+<li><a href="../../dynatrace-api/sprint-331/" title="Changelog for Dynatrace API version 1.331">Журнал изменений Dynatrace API версии 1.331</a></li>
+</ul>
+<h2 id="_11">Поддержка операционных систем<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h2>
+<h3 id="dynatrace-managed">Предстоящие изменения поддержки операционных систем в Dynatrace Managed<a class="headerlink" href="#dynatrace-managed" title="Permanent link">&para;</a></h3>
+<h5 id="01-june-2026">Следующие операционные системы перестанут поддерживаться с 01 June 2026<a class="headerlink" href="#01-june-2026" title="Permanent link">&para;</a></h5>
+<ul>
+<li>
+<p>Linux: Oracle Linux 9.6</p>
+</li>
+<li>
+<p>x86-64</p>
+</li>
+<li><a href="https://www.oracle.com/a/ocom/docs/elsp-lifetime-069338.pdf">Объявление поставщика</a></li>
+<li>
+<p>Linux: Rocky Linux 9.6</p>
+</li>
+<li>
+<p>x86-64</p>
+</li>
+<li><a href="https://endoflife.date/rocky-linux">Объявление поставщика</a></li>
+</ul>
+<h5 id="01-july-2026">Следующие операционные системы перестанут поддерживаться с 01 July 2026<a class="headerlink" href="#01-july-2026" title="Permanent link">&para;</a></h5>
+<ul>
+<li>
+<p>Linux: SUSE Enterprise Linux 15.3</p>
+</li>
+<li>
+<p>x86-64</p>
+</li>
+<li><a href="https://www.suse.com/lifecycle/">Объявление поставщика</a></li>
+</ul>
+<h5 id="01-november-2026">Следующие операционные системы перестанут поддерживаться с 01 November 2026<a class="headerlink" href="#01-november-2026" title="Permanent link">&para;</a></h5>
+<ul>
+<li>
+<p>Linux: Red Hat Enterprise Linux 9.4, 9.7</p>
+</li>
+<li>
+<p>x86-64</p>
+</li>
+<li><a href="https://access.redhat.com/support/policy/updates/errata">Объявление поставщика</a></li>
+<li>
+<p>Linux: Ubuntu 16.04</p>
+</li>
+<li>
+<p>x86-64</p>
+</li>
+<li><a href="https://ubuntu.com/about/release-cycle">Объявление поставщика</a></li>
+</ul>
+<h5 id="01-january-2027">Следующие операционные системы перестанут поддерживаться с 01 January 2027<a class="headerlink" href="#01-january-2027" title="Permanent link">&para;</a></h5>
+<ul>
+<li>
+<p>Linux: Amazon Linux 2</p>
+</li>
+<li>
+<p>x86-64</p>
+</li>
+<li><a href="https://aws.amazon.com/linux/">Объявление поставщика</a></li>
+</ul>
+<h3 id="dynatrace-managed_1">Прошедшие изменения поддержки операционных систем в Dynatrace Managed<a class="headerlink" href="#dynatrace-managed_1" title="Permanent link">&para;</a></h3>
+<h5 id="01-december-2025">Следующие операционные системы больше не поддерживаются с 01 December 2025<a class="headerlink" href="#01-december-2025" title="Permanent link">&para;</a></h5>
+<ul>
+<li>
+<p>Linux: Red Hat Enterprise Linux 8.8, 9.2, 9.5</p>
+</li>
+<li>
+<p>x86-64</p>
+</li>
+<li><a href="https://access.redhat.com/support/policy/updates/errata">Объявление поставщика</a></li>
+<li>
+<p>Linux: Oracle Linux 9.5</p>
+</li>
+<li>
+<p>x86-64</p>
+</li>
+<li><a href="https://www.oracle.com/a/ocom/docs/elsp-lifetime-069338.pdf">Объявление поставщика</a></li>
+<li>
+<p>Linux: Rocky Linux 9.5</p>
+</li>
+<li>
+<p>x86-64</p>
+</li>
+<li><a href="https://endoflife.date/rocky-linux">Объявление поставщика</a></li>
+</ul>
+<h5 id="01-january-2026">Следующие операционные системы больше не поддерживаются с 01 January 2026<a class="headerlink" href="#01-january-2026" title="Permanent link">&para;</a></h5>
+<ul>
+<li>
+<p>Linux: Debian 10</p>
+</li>
+<li>
+<p>x86-64</p>
+</li>
+<li><a href="https://wiki.debian.org/DebianReleases">Объявление поставщика</a></li>
+</ul>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  К началу
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      © 2026 Dynatrace Docs | Yerkebulan Ardabayev
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/Yerkebulan-Ardabayev" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../../..", "features": ["navigation.indexes", "navigation.prune", "navigation.path", "navigation.tracking", "navigation.top", "search.suggest", "search.highlight", "search.share", "content.code.copy", "content.code.annotate", "content.tabs.link", "content.tooltips", "toc.follow"], "search": "../../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u0421\u043a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u043d\u043e \u0432 \u0431\u0443\u0444\u0435\u0440", "clipboard.copy": "\u041a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u0442\u044c \u0432 \u0431\u0443\u0444\u0435\u0440", "search.result.more.one": "\u0415\u0449\u0451 1 \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.more.other": "\u0415\u0449\u0451 # \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.none": "\u0421\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439 \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u043e", "search.result.one": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e 1 \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0435", "search.result.other": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439: #", "search.result.placeholder": "\u041d\u0430\u0447\u043d\u0438\u0442\u0435 \u043f\u0435\u0447\u0430\u0442\u0430\u0442\u044c \u0434\u043b\u044f \u043f\u043e\u0438\u0441\u043a\u0430", "search.result.term.missing": "\u041e\u0442\u0441\u0443\u0442\u0441\u0442\u0432\u0443\u0435\u0442", "select.version": "\u0412\u044b\u0431\u0435\u0440\u0438\u0442\u0435 \u0432\u0435\u0440\u0441\u0438\u044e"}, "version": null}</script>
+    
+    
+  
+      <script src="../../../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../../../../assets/javascripts/groq-chat.js?sha=17d46ba74"></script>
+      
+    
+  <script>
+    (function() {
+      // --- Keyboard shortcut Ctrl+K / Cmd+K for search ---
+      document.addEventListener('keydown', function(e) {
+        if ((e.ctrlKey || e.metaKey) && e.key === 'k') {
+          e.preventDefault();
+          var searchInput = document.querySelector('.md-search__input');
+          if (searchInput) {
+            searchInput.focus();
+            var searchToggle = document.querySelector('[data-md-toggle="search"]');
+            if (searchToggle && !searchToggle.checked) {
+              searchToggle.checked = true;
+              searchToggle.dispatchEvent(new Event('change'));
+            }
+          }
+        }
+        // --- "/" focuses search like GitHub / Algolia docs ---
+        if (e.key === '/' && !/^(input|textarea|select)$/i.test(e.target.tagName)) {
+          e.preventDefault();
+          var inp = document.querySelector('.md-search__input');
+          if (inp) {
+            inp.focus();
+            var t = document.querySelector('[data-md-toggle="search"]');
+            if (t && !t.checked) { t.checked = true; t.dispatchEvent(new Event('change')); }
+          }
+        }
+      });
+    })();
+  </script>
+
+  </body>
+</html>

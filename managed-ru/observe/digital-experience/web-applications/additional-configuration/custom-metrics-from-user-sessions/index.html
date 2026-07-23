@@ -1,0 +1,4062 @@
+
+<!doctype html>
+<html lang="ru" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Документация Dynatrace Managed с AI-помощником">
+      
+      
+        <meta name="author" content="Yerkebulan Ardabayev">
+      
+      
+        <link rel="canonical" href="https://yerkebulan-ardabayev.github.io/dynatrace-docs-website/managed-ru/observe/digital-experience/web-applications/additional-configuration/custom-metrics-from-user-sessions/">
+      
+      
+        <link rel="prev" href="../configure-your-caching-servers/">
+      
+      
+        <link rel="next" href="../customize-ip-address-detection-web/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>Создание пользовательских метрик USQL для веб-приложений - Dynatrace — Документация</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Inter";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../../../assets/stylesheets/extra.v11.css?sha=17d46ba74">
+    
+    <script>__md_scope=new URL("../../../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  <style>
+    /* DocFlow DT Logo Badge — injected via template override */
+    .md-header__button.md-logo {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .md-header__button.md-logo img,
+    .md-header__button.md-logo svg {
+      display: none !important;
+    }
+    .md-header__button.md-logo::before {
+      content: 'DT';
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 28px;
+      height: 28px;
+      border-radius: 6px;
+      background: linear-gradient(135deg, #00d4aa 0%, #7c3aed 100%);
+      color: white;
+      font-size: 11px;
+      font-weight: 700;
+      font-family: 'Inter', sans-serif;
+      letter-spacing: -0.02em;
+      flex-shrink: 0;
+    }
+
+    /* Search Ctrl+K badge — inside input field */
+    .md-search__form {
+      position: relative;
+    }
+    .md-search__form::after {
+      content: 'Ctrl+K';
+      display: none;
+      align-items: center;
+      padding: 0.15rem 0.4rem;
+      border-radius: 4px;
+      border: 1px solid var(--docflow-border);
+      background: var(--md-default-bg-color);
+      font-size: 10px;
+      font-family: 'JetBrains Mono', monospace;
+      color: var(--md-default-fg-color--lighter);
+      white-space: nowrap;
+      pointer-events: none;
+      position: absolute;
+      right: 0.5rem;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+    @media (min-width: 60em) {
+      .md-search__form::after {
+        display: flex;
+      }
+    }
+  </style>
+
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="custom">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#usql-" class="md-skip">
+          Перейти к содержанию
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+  
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Верхний колонтитул">
+    <a href="../../../../../.." title="Dynatrace — Документация" class="md-header__button md-logo" aria-label="Dynatrace — Документация" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M11 15H6l7-14v8h5l-7 14z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Dynatrace — Документация
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Создание пользовательских метрик USQL для веб-приложений
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Переключить на светлую тему"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Переключить на светлую тему" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Переключить на тёмную тему"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Переключить на тёмную тему" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Поиск" placeholder="Поиск" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Поиск">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Поделиться" aria-label="Поделиться" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Очистить" aria-label="Очистить" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Инициализация поиска
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/Yerkebulan-Ardabayev/dynatrace-docs-website" title="Перейти к репозиторию" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    dynatrace-docs-website
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Навигация" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../../../.." title="Dynatrace — Документация" class="md-nav__button md-logo" aria-label="Dynatrace — Документация" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M11 15H6l7-14v8h5l-7 14z"/></svg>
+
+    </a>
+    Dynatrace — Документация
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/Yerkebulan-Ardabayev/dynatrace-docs-website" title="Перейти к репозиторию" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    dynatrace-docs-website
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Главная
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../../../../ru/getting-started/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Начало работы
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../../../installation/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Кластер Managed
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../../../ingest-from/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Источники данных
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Наблюдаемость
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Наблюдаемость
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../../application-observability/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Наблюдаемость приложений
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_5_2" id="__nav_5_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Digital Experience
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Digital Experience
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обзор
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../custom-applications/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Пользовательские приложения
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../dem-use-cases/customer-support-with-session-segmentation/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Сценарии DEM
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../mobile-applications/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Мобильные приложения
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    
+  
+  
+  
+    
+  
+  
+  
+    <a href="../../../rum-classic/custom-applications/additional-configuration/configure-apdex-custom/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    rum-classic
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+  
+
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../rum-concepts/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Концепции мониторинга реальных пользователей
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../session-replay/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Session Replay
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../session-segmentation/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Сегментация сессий пользователей
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../synthetic-monitoring/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Synthetic Monitoring
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_2_10" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_5_2_10" id="__nav_5_2_10_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Веб-приложения
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_5_2_10_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5_2_10">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Веб-приложения
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обзор
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_2_10_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_5_2_10_2" id="__nav_5_2_10_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Дополнительная настройка
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_5_2_10_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5_2_10_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Дополнительная настройка
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../application-detection-rules/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Проверка правил обнаружения приложений
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../beacon-endpoint/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Настройка конечной точки маяка для веб-приложений
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../capture-interaction-types/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Захват дополнительных типов взаимодействий для веб-приложений
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../configure-apdex-web/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Настройка параметров Apdex для веб-приложений
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../configure-beacon-domain-allowlist/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Настройка allowlist источников маяков для веб-приложений
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../configure-cookie-attributes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Настройка атрибутов RUM cookie
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../configure-cost-and-traffic-control-web/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Настройка управления стоимостью и трафиком для веб-приложений
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../configure-errors/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Настройка обнаружения ошибок для веб-приложений
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../configure-key-user-actions-web/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Настройка ключевых пользовательских действий для веб-приложений
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../configure-monitoring-code-source/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Настройка источника кода Real User Monitoring
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../configure-real-user-monitoring-according-to-gdpr/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Настройка параметров конфиденциальности данных для веб-приложений
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../configure-third-party-and-cdn-content-detection-web/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Настройка обнаружения ресурсов первой, сторонних сторон и CDN для веб-приложений
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../configure-user-experience-score-web/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Изменение пороговых значений оценки пользовательского опыта для веб-приложений
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../configure-xhr-for-older-versions-of-ie/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Настройка XHR для устаревших версий Internet Explorer
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../configure-your-caching-servers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Настройка серверов кэширования
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Создание пользовательских метрик USQL для веб-приложений
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../customize-ip-address-detection-web/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Настройка определения IP-адресов для веб-приложений
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../customize-rum/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Настройка Real User Monitoring с помощью JavaScript API для веб-приложений
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../define-user-action-and-session-properties/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Определение свойств пользовательских действий и сессий для веб-приложений
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../delete-application-web/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Удаление веб-приложения
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../exclude-browsers-robots-and-spiders-from-monitoring/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Исключение IP-адресов, браузеров, ботов и поисковых роботов из мониторинга для веб-приложений
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../identify-individual-users-for-session-analysis/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Тегирование отдельных пользователей для веб-приложений
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../map-internal-ip-addresses-to-locations-web/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Сопоставление внутренних IP-адресов с расположениями для веб-приложений
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../modify-csp-for-rum/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Изменение Content Security Policy для RUM
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../rum-calculated-metrics-web/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Создание вычисляемых метрик для веб-приложений
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../rum-for-process-groups/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Real User Monitoring для групп процессов
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../rum-javascript-version/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Управление версией RUM JavaScript
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../analyze-and-use/action-and-session-properties/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Анализ и использование
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../initial-setup/app-health-check/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Первоначальная настройка
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../troubleshooting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Устранение неполадок RUM для веб-приложений
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../../infrastructure-observability/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Наблюдаемость инфраструктуры
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../../../dynatrace-intelligence/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Davis AI
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    
+  
+  
+  
+    <a href="../../../../../analyze-explore-automate/dashboards-classic/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Анализ
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../../../deliver/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Deliver
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    
+  
+  
+  
+    <a href="../../../../../secure/application-security/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Безопасность приложений
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    
+  
+  
+  
+    <a href="../../../../../manage/account-management/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Управление
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    
+  
+  
+  
+    <a href="../../../../../platform/oneagent/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Платформа
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../../../dynatrace-api/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../../../whats-new/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Что нового
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../../../offline-doc/how-do-i-enable-synthetic-monitors/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Офлайн-документация
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../../../../ru/training/day1-introduction/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обучение
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../ai/groq/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI Помощник
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Содержание">
+  
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+                
+
+
+
+  
+
+
+  <nav class="md-path" aria-label="Навигация" >
+    <ol class="md-path__list">
+      
+        
+  
+  
+    <li class="md-path__item">
+      <a href="../../../../../.." class="md-path__link">
+        
+  <span class="md-ellipsis">
+    Главная
+  </span>
+
+      </a>
+    </li>
+  
+
+      
+      
+        
+  
+  
+    
+    
+      
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="../../../../application-observability/" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    Наблюдаемость
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="../../../" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    Digital Experience
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="../../" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    Веб-приложения
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="../application-detection-rules/" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    Дополнительная настройка
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ol>
+  </nav>
+
+              
+              <article class="md-content__inner md-typeset">
+                
+  
+                  
+
+
+
+<h1 id="usql-">Создание пользовательских метрик USQL для веб-приложений<a class="headerlink" href="#usql-" title="Permanent link">&para;</a></h1>
+<h1 id="usql-_1">Создание пользовательских метрик USQL для веб-приложений<a class="headerlink" href="#usql-_1" title="Permanent link">&para;</a></h1>
+<ul>
+<li>How-to guide</li>
+<li>1-min read</li>
+<li>Updated on Feb 21, 2023</li>
+</ul>
+<p>С помощью метрических событий USQL можно извлекать бизнес-KPI из данных пользовательских сессий и пользовательских действий и хранить эти метрики в виде временных рядов. Затем хранимые метрики можно использовать в <a href="../../../../../analyze-explore-automate/explorer/" title="Query for metrics and transform results to gain desired insights.">пользовательских графиках</a>, <a href="../../../../../dynatrace-intelligence/anomaly-detection/metric-events/" title="Learn about metric events in Dynatrace">механизмах оповещения</a> или <a href="../../../../../dynatrace-api/environment-api/metric-v2/" title="Retrieve metric information via Metrics v2 API.">Metrics API</a>.</p>
+<p>Метрические события USQL доступны в двух видах:</p>
+<ul>
+<li><strong>Метрические события пользовательских сессий</strong>. Эти метрики сокращённо называются USCM и имеют префикс <code>uscm.</code>.</li>
+<li><strong>Метрические события пользовательских действий</strong>. Эти метрики сокращённо называются UACM и начинаются с префикса <code>uacm.</code>.</li>
+</ul>
+<p>Метрические события пользовательских действий доступны начиная с версии Dynatrace 1.260.</p>
+<p>Метрические события USQL помогают ответить на такие вопросы, как:</p>
+<ul>
+<li>Как изменяется индекс пользовательского опыта для моего сайта с течением времени?</li>
+<li>Как изменяется индекс Apdex для определённого типа пользовательских действий?</li>
+<li>Как изменяется выручка, генерируемая пользователями, со временем?</li>
+<li>Сколько пользователей посещает мой сайт и какими браузерами они пользуются?</li>
+<li>Какова средняя продолжительность сессии для моего веб-приложения?</li>
+<li>Какова средняя длительность пользовательского действия для моего мобильного приложения?</li>
+</ul>
+<p>Создавать метрическими событиями USQL и управлять ими можно через веб-интерфейс Dynatrace или <a href="#create-metrics-via-API">Settings API Dynatrace</a>.</p>
+<h2 id="ui">Настройка метрик через UI<a class="headerlink" href="#ui" title="Permanent link">&para;</a></h2>
+<p>Метрические события USQL можно создавать и управлять ими через веб-интерфейс Dynatrace.</p>
+<p><img alt="Страница метрических событий пользовательских сессий в веб-интерфейсе Dynatrace" src="https://dt-cdn.net/images/user-session-custom-metrics-page-2112-726ab6bf4a.png" /></p>
+<p>Страница метрических событий пользовательских сессий в веб-интерфейсе Dynatrace</p>
+<ol>
+<li>Перейдите в <strong>Settings</strong> &gt; <strong>Web and mobile monitoring</strong> &gt; <strong>User session metric events</strong> или <strong>User action metric events</strong>.</li>
+<li>Выберите <strong>Add item</strong>.</li>
+<li>
+<p>Введите <strong>Metric key</strong>, который будет использоваться при приёме метрики. Этот ключ понадобится при запросе данных метрики через <a href="../../../../../analyze-explore-automate/explorer/" title="Query for metrics and transform results to gain desired insights.">Data Explorer</a>.</p>
+</li>
+<li>
+<p>Для метрических событий пользовательских сессий ключ метрики должен начинаться с префикса <code>uscm.</code>.</p>
+</li>
+<li>Для метрических событий пользовательских действий ключ метрики должен начинаться с префикса <code>uacm.</code>.</li>
+<li>
+<p>В разделе <strong>Value type to be extracted</strong> выберите один из следующих вариантов.</p>
+</li>
+<li>
+<p>Для метрических событий пользовательских сессий:</p>
+<ul>
+<li><strong>User session counter</strong> — для подсчёта количества пользовательских сессий (аналог <code>COUNT(*)</code> в <a href="../../../session-segmentation/custom-queries-segmentation-and-aggregation-of-session-data/" title="Learn how you can access and query user session data based on keywords, syntax, functions, and more.">USQL</a>).</li>
+<li><strong>User session field value</strong> — для извлечения значения поля пользовательской сессии. Также укажите <strong>Field name</strong>. Возможные значения см. в разделе <a href="#values-uscm">Значения для метрических событий пользовательских сессий</a>.</li>
+<li>
+<p>Для метрических событий пользовательских действий:</p>
+</li>
+<li>
+<p><strong>User action counter</strong> — для подсчёта количества пользовательских действий (аналог <code>COUNT(*)</code> в <a href="../../../session-segmentation/custom-queries-segmentation-and-aggregation-of-session-data/" title="Learn how you can access and query user session data based on keywords, syntax, functions, and more.">USQL</a>).</p>
+</li>
+<li><strong>User action field value</strong> — для извлечения значения поля пользовательского действия. Также укажите <strong>Field name</strong>. Возможные значения см. в разделе <a href="#values-uacm">Значения для метрических событий пользовательских действий</a>.</li>
+<li>В разделе <strong>Add a dimension</strong> укажите поля, которые должны использоваться как измерения. Возможные значения см. в разделах <a href="#dimensions-uscm">Измерения для метрических событий пользовательских сессий</a> и <a href="#dimensions-uacm">Измерения для метрических событий пользовательских действий</a>.</li>
+<li>В разделе <strong>Add a filter</strong> добавьте необходимые фильтры.</li>
+</ul>
+</li>
+<li>
+<p>Введите <strong>Field name</strong>. Возможные значения см. в разделах <a href="#filters-uscm">Фильтры для метрических событий пользовательских сессий</a> или <a href="#filters-uacm">Фильтры для метрических событий пользовательских действий</a>.</p>
+</li>
+<li>Выберите <strong>Operator</strong>.</li>
+<li>Если выбран один из бинарных операторов (например, <strong>equals</strong> или <strong>greater than</strong>), укажите второй аргумент в поле <strong>Value</strong>.</li>
+</ol>
+<p><img alt="Создание пользовательской метрики пользовательских сессий" src="https://dt-cdn.net/images/creating-user-session-custom-metric-1359-e1cdae0345.png" /></p>
+<p>Создание пользовательской метрики пользовательских сессий</p>
+<p>Также можно использовать <a href="../../../session-segmentation/custom-queries-segmentation-and-aggregation-of-session-data/#convert-usql-into-custom-metrics" title="Learn how you can access and query user session data based on keywords, syntax, functions, and more.">USQL</a> для создания метрических событий USQL.</p>
+<h2 id="api">Настройка метрик через API<a class="headerlink" href="#api" title="Permanent link">&para;</a></h2>
+<p>Для настройки метрических событий USQL также можно использовать <a href="../../../../../dynatrace-api/environment-api/settings/" title="Find out what the Dynatrace Settings API offers.">Settings API</a>.</p>
+<ol>
+<li><a href="../../../../../dynatrace-api/basics/dynatrace-api-authentication/#create-token" title="Find out how to get authenticated to use the Dynatrace API.">Создайте токен доступа</a> с разрешениями <strong>Write settings</strong> (<code>settings.write</code>) и <strong>Read settings</strong> (<code>settings.read</code>).</li>
+<li>Используйте конечную точку <a href="../../../../../dynatrace-api/environment-api/settings/schemas/get-schema/" title="View a settings schema via the Dynatrace API.">GET a schema</a> для получения требуемого формата JSON для публикации конфигурации.</li>
+</ol>
+<p>Пользовательская метрика пользовательских сессий</p>
+<p>Пользовательская метрика пользовательских действий</p>
+<p>Идентификатор схемы конфигурации метрики (<code>schemaId</code>) — <code>builtin:custom-metrics</code>.</p>
+<p>Пример JSON-payload с конфигурацией пользовательской метрики пользовательских сессий:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>[
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>{
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>&quot;schemaVersion&quot;:&quot;0.0.4&quot;,
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>
+<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>&quot;schemaId&quot;:&quot;builtin:custom-metrics&quot;,
+<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>
+<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>
+<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a>
+<a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a>&quot;scope&quot;:&quot;tenant&quot;,
+<a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a>
+<a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a>
+<a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a>
+<a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a>&quot;value&quot;:{
+<a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a>
+<a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a>
+<a id="__codelineno-0-24" name="__codelineno-0-24" href="#__codelineno-0-24"></a>
+<a id="__codelineno-0-25" name="__codelineno-0-25" href="#__codelineno-0-25"></a>&quot;enabled&quot;:true,
+<a id="__codelineno-0-26" name="__codelineno-0-26" href="#__codelineno-0-26"></a>
+<a id="__codelineno-0-27" name="__codelineno-0-27" href="#__codelineno-0-27"></a>
+<a id="__codelineno-0-28" name="__codelineno-0-28" href="#__codelineno-0-28"></a>
+<a id="__codelineno-0-29" name="__codelineno-0-29" href="#__codelineno-0-29"></a>&quot;metricKey&quot;:&quot;uscm.sessions_by_browser_family_and_country_easytravel&quot;,
+<a id="__codelineno-0-30" name="__codelineno-0-30" href="#__codelineno-0-30"></a>
+<a id="__codelineno-0-31" name="__codelineno-0-31" href="#__codelineno-0-31"></a>
+<a id="__codelineno-0-32" name="__codelineno-0-32" href="#__codelineno-0-32"></a>
+<a id="__codelineno-0-33" name="__codelineno-0-33" href="#__codelineno-0-33"></a>&quot;value&quot;:{
+<a id="__codelineno-0-34" name="__codelineno-0-34" href="#__codelineno-0-34"></a>
+<a id="__codelineno-0-35" name="__codelineno-0-35" href="#__codelineno-0-35"></a>
+<a id="__codelineno-0-36" name="__codelineno-0-36" href="#__codelineno-0-36"></a>
+<a id="__codelineno-0-37" name="__codelineno-0-37" href="#__codelineno-0-37"></a>&quot;type&quot;:&quot;COUNTER&quot;
+<a id="__codelineno-0-38" name="__codelineno-0-38" href="#__codelineno-0-38"></a>
+<a id="__codelineno-0-39" name="__codelineno-0-39" href="#__codelineno-0-39"></a>
+<a id="__codelineno-0-40" name="__codelineno-0-40" href="#__codelineno-0-40"></a>
+<a id="__codelineno-0-41" name="__codelineno-0-41" href="#__codelineno-0-41"></a>},
+<a id="__codelineno-0-42" name="__codelineno-0-42" href="#__codelineno-0-42"></a>
+<a id="__codelineno-0-43" name="__codelineno-0-43" href="#__codelineno-0-43"></a>
+<a id="__codelineno-0-44" name="__codelineno-0-44" href="#__codelineno-0-44"></a>
+<a id="__codelineno-0-45" name="__codelineno-0-45" href="#__codelineno-0-45"></a>&quot;dimensions&quot;:[
+<a id="__codelineno-0-46" name="__codelineno-0-46" href="#__codelineno-0-46"></a>
+<a id="__codelineno-0-47" name="__codelineno-0-47" href="#__codelineno-0-47"></a>
+<a id="__codelineno-0-48" name="__codelineno-0-48" href="#__codelineno-0-48"></a>
+<a id="__codelineno-0-49" name="__codelineno-0-49" href="#__codelineno-0-49"></a>&quot;browserFamily&quot;,
+<a id="__codelineno-0-50" name="__codelineno-0-50" href="#__codelineno-0-50"></a>
+<a id="__codelineno-0-51" name="__codelineno-0-51" href="#__codelineno-0-51"></a>
+<a id="__codelineno-0-52" name="__codelineno-0-52" href="#__codelineno-0-52"></a>
+<a id="__codelineno-0-53" name="__codelineno-0-53" href="#__codelineno-0-53"></a>&quot;country&quot;
+<a id="__codelineno-0-54" name="__codelineno-0-54" href="#__codelineno-0-54"></a>
+<a id="__codelineno-0-55" name="__codelineno-0-55" href="#__codelineno-0-55"></a>
+<a id="__codelineno-0-56" name="__codelineno-0-56" href="#__codelineno-0-56"></a>
+<a id="__codelineno-0-57" name="__codelineno-0-57" href="#__codelineno-0-57"></a>],
+<a id="__codelineno-0-58" name="__codelineno-0-58" href="#__codelineno-0-58"></a>
+<a id="__codelineno-0-59" name="__codelineno-0-59" href="#__codelineno-0-59"></a>
+<a id="__codelineno-0-60" name="__codelineno-0-60" href="#__codelineno-0-60"></a>
+<a id="__codelineno-0-61" name="__codelineno-0-61" href="#__codelineno-0-61"></a>&quot;filters&quot;:[
+<a id="__codelineno-0-62" name="__codelineno-0-62" href="#__codelineno-0-62"></a>
+<a id="__codelineno-0-63" name="__codelineno-0-63" href="#__codelineno-0-63"></a>
+<a id="__codelineno-0-64" name="__codelineno-0-64" href="#__codelineno-0-64"></a>
+<a id="__codelineno-0-65" name="__codelineno-0-65" href="#__codelineno-0-65"></a>{
+<a id="__codelineno-0-66" name="__codelineno-0-66" href="#__codelineno-0-66"></a>
+<a id="__codelineno-0-67" name="__codelineno-0-67" href="#__codelineno-0-67"></a>
+<a id="__codelineno-0-68" name="__codelineno-0-68" href="#__codelineno-0-68"></a>
+<a id="__codelineno-0-69" name="__codelineno-0-69" href="#__codelineno-0-69"></a>&quot;fieldName&quot;:&quot;useraction.application&quot;,
+<a id="__codelineno-0-70" name="__codelineno-0-70" href="#__codelineno-0-70"></a>
+<a id="__codelineno-0-71" name="__codelineno-0-71" href="#__codelineno-0-71"></a>
+<a id="__codelineno-0-72" name="__codelineno-0-72" href="#__codelineno-0-72"></a>
+<a id="__codelineno-0-73" name="__codelineno-0-73" href="#__codelineno-0-73"></a>&quot;operator&quot;:&quot;EQUALS&quot;,
+<a id="__codelineno-0-74" name="__codelineno-0-74" href="#__codelineno-0-74"></a>
+<a id="__codelineno-0-75" name="__codelineno-0-75" href="#__codelineno-0-75"></a>
+<a id="__codelineno-0-76" name="__codelineno-0-76" href="#__codelineno-0-76"></a>
+<a id="__codelineno-0-77" name="__codelineno-0-77" href="#__codelineno-0-77"></a>&quot;value&quot;:&quot;www.easytravel.com&quot;
+<a id="__codelineno-0-78" name="__codelineno-0-78" href="#__codelineno-0-78"></a>
+<a id="__codelineno-0-79" name="__codelineno-0-79" href="#__codelineno-0-79"></a>
+<a id="__codelineno-0-80" name="__codelineno-0-80" href="#__codelineno-0-80"></a>
+<a id="__codelineno-0-81" name="__codelineno-0-81" href="#__codelineno-0-81"></a>},
+<a id="__codelineno-0-82" name="__codelineno-0-82" href="#__codelineno-0-82"></a>
+<a id="__codelineno-0-83" name="__codelineno-0-83" href="#__codelineno-0-83"></a>
+<a id="__codelineno-0-84" name="__codelineno-0-84" href="#__codelineno-0-84"></a>
+<a id="__codelineno-0-85" name="__codelineno-0-85" href="#__codelineno-0-85"></a>{
+<a id="__codelineno-0-86" name="__codelineno-0-86" href="#__codelineno-0-86"></a>
+<a id="__codelineno-0-87" name="__codelineno-0-87" href="#__codelineno-0-87"></a>
+<a id="__codelineno-0-88" name="__codelineno-0-88" href="#__codelineno-0-88"></a>
+<a id="__codelineno-0-89" name="__codelineno-0-89" href="#__codelineno-0-89"></a>&quot;fieldName&quot;:&quot;userType&quot;,
+<a id="__codelineno-0-90" name="__codelineno-0-90" href="#__codelineno-0-90"></a>
+<a id="__codelineno-0-91" name="__codelineno-0-91" href="#__codelineno-0-91"></a>
+<a id="__codelineno-0-92" name="__codelineno-0-92" href="#__codelineno-0-92"></a>
+<a id="__codelineno-0-93" name="__codelineno-0-93" href="#__codelineno-0-93"></a>&quot;operator&quot;:&quot;EQUALS&quot;,
+<a id="__codelineno-0-94" name="__codelineno-0-94" href="#__codelineno-0-94"></a>
+<a id="__codelineno-0-95" name="__codelineno-0-95" href="#__codelineno-0-95"></a>
+<a id="__codelineno-0-96" name="__codelineno-0-96" href="#__codelineno-0-96"></a>
+<a id="__codelineno-0-97" name="__codelineno-0-97" href="#__codelineno-0-97"></a>&quot;value&quot;:&quot;REAL_USER&quot;
+<a id="__codelineno-0-98" name="__codelineno-0-98" href="#__codelineno-0-98"></a>
+<a id="__codelineno-0-99" name="__codelineno-0-99" href="#__codelineno-0-99"></a>
+<a id="__codelineno-0-100" name="__codelineno-0-100" href="#__codelineno-0-100"></a>
+<a id="__codelineno-0-101" name="__codelineno-0-101" href="#__codelineno-0-101"></a>}
+<a id="__codelineno-0-102" name="__codelineno-0-102" href="#__codelineno-0-102"></a>
+<a id="__codelineno-0-103" name="__codelineno-0-103" href="#__codelineno-0-103"></a>
+<a id="__codelineno-0-104" name="__codelineno-0-104" href="#__codelineno-0-104"></a>
+<a id="__codelineno-0-105" name="__codelineno-0-105" href="#__codelineno-0-105"></a>]
+<a id="__codelineno-0-106" name="__codelineno-0-106" href="#__codelineno-0-106"></a>
+<a id="__codelineno-0-107" name="__codelineno-0-107" href="#__codelineno-0-107"></a>
+<a id="__codelineno-0-108" name="__codelineno-0-108" href="#__codelineno-0-108"></a>
+<a id="__codelineno-0-109" name="__codelineno-0-109" href="#__codelineno-0-109"></a>}
+<a id="__codelineno-0-110" name="__codelineno-0-110" href="#__codelineno-0-110"></a>
+<a id="__codelineno-0-111" name="__codelineno-0-111" href="#__codelineno-0-111"></a>
+<a id="__codelineno-0-112" name="__codelineno-0-112" href="#__codelineno-0-112"></a>
+<a id="__codelineno-0-113" name="__codelineno-0-113" href="#__codelineno-0-113"></a>}
+<a id="__codelineno-0-114" name="__codelineno-0-114" href="#__codelineno-0-114"></a>
+<a id="__codelineno-0-115" name="__codelineno-0-115" href="#__codelineno-0-115"></a>
+<a id="__codelineno-0-116" name="__codelineno-0-116" href="#__codelineno-0-116"></a>
+<a id="__codelineno-0-117" name="__codelineno-0-117" href="#__codelineno-0-117"></a>]
+</code></pre></div>
+<p>Идентификатор схемы конфигурации метрики (<code>schemaId</code>) — <code>builtin:user-action-custom-metrics</code>.</p>
+<p>Пример JSON-payload с конфигурацией пользовательской метрики пользовательских действий:</p>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>[
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>{
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>
+<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>&quot;schemaVersion&quot;:&quot;1.0.0&quot;,
+<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>
+<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>
+<a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a>
+<a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a>&quot;schemaId&quot;:&quot;builtin:user-action-custom-metrics&quot;,
+<a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a>
+<a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a>
+<a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a>
+<a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a>&quot;scope&quot;:&quot;tenant&quot;,
+<a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a>
+<a id="__codelineno-1-19" name="__codelineno-1-19" href="#__codelineno-1-19"></a>
+<a id="__codelineno-1-20" name="__codelineno-1-20" href="#__codelineno-1-20"></a>
+<a id="__codelineno-1-21" name="__codelineno-1-21" href="#__codelineno-1-21"></a>&quot;value&quot;:{
+<a id="__codelineno-1-22" name="__codelineno-1-22" href="#__codelineno-1-22"></a>
+<a id="__codelineno-1-23" name="__codelineno-1-23" href="#__codelineno-1-23"></a>
+<a id="__codelineno-1-24" name="__codelineno-1-24" href="#__codelineno-1-24"></a>
+<a id="__codelineno-1-25" name="__codelineno-1-25" href="#__codelineno-1-25"></a>&quot;enabled&quot;:true,
+<a id="__codelineno-1-26" name="__codelineno-1-26" href="#__codelineno-1-26"></a>
+<a id="__codelineno-1-27" name="__codelineno-1-27" href="#__codelineno-1-27"></a>
+<a id="__codelineno-1-28" name="__codelineno-1-28" href="#__codelineno-1-28"></a>
+<a id="__codelineno-1-29" name="__codelineno-1-29" href="#__codelineno-1-29"></a>&quot;metricKey&quot;:&quot;uacm.actions_by_type_and_country_easytravel&quot;,
+<a id="__codelineno-1-30" name="__codelineno-1-30" href="#__codelineno-1-30"></a>
+<a id="__codelineno-1-31" name="__codelineno-1-31" href="#__codelineno-1-31"></a>
+<a id="__codelineno-1-32" name="__codelineno-1-32" href="#__codelineno-1-32"></a>
+<a id="__codelineno-1-33" name="__codelineno-1-33" href="#__codelineno-1-33"></a>&quot;value&quot;:{
+<a id="__codelineno-1-34" name="__codelineno-1-34" href="#__codelineno-1-34"></a>
+<a id="__codelineno-1-35" name="__codelineno-1-35" href="#__codelineno-1-35"></a>
+<a id="__codelineno-1-36" name="__codelineno-1-36" href="#__codelineno-1-36"></a>
+<a id="__codelineno-1-37" name="__codelineno-1-37" href="#__codelineno-1-37"></a>&quot;type&quot;:&quot;COUNTER&quot;
+<a id="__codelineno-1-38" name="__codelineno-1-38" href="#__codelineno-1-38"></a>
+<a id="__codelineno-1-39" name="__codelineno-1-39" href="#__codelineno-1-39"></a>
+<a id="__codelineno-1-40" name="__codelineno-1-40" href="#__codelineno-1-40"></a>
+<a id="__codelineno-1-41" name="__codelineno-1-41" href="#__codelineno-1-41"></a>},
+<a id="__codelineno-1-42" name="__codelineno-1-42" href="#__codelineno-1-42"></a>
+<a id="__codelineno-1-43" name="__codelineno-1-43" href="#__codelineno-1-43"></a>
+<a id="__codelineno-1-44" name="__codelineno-1-44" href="#__codelineno-1-44"></a>
+<a id="__codelineno-1-45" name="__codelineno-1-45" href="#__codelineno-1-45"></a>&quot;dimensions&quot;:[
+<a id="__codelineno-1-46" name="__codelineno-1-46" href="#__codelineno-1-46"></a>
+<a id="__codelineno-1-47" name="__codelineno-1-47" href="#__codelineno-1-47"></a>
+<a id="__codelineno-1-48" name="__codelineno-1-48" href="#__codelineno-1-48"></a>
+<a id="__codelineno-1-49" name="__codelineno-1-49" href="#__codelineno-1-49"></a>&quot;type&quot;,
+<a id="__codelineno-1-50" name="__codelineno-1-50" href="#__codelineno-1-50"></a>
+<a id="__codelineno-1-51" name="__codelineno-1-51" href="#__codelineno-1-51"></a>
+<a id="__codelineno-1-52" name="__codelineno-1-52" href="#__codelineno-1-52"></a>
+<a id="__codelineno-1-53" name="__codelineno-1-53" href="#__codelineno-1-53"></a>&quot;usersession.country&quot;
+<a id="__codelineno-1-54" name="__codelineno-1-54" href="#__codelineno-1-54"></a>
+<a id="__codelineno-1-55" name="__codelineno-1-55" href="#__codelineno-1-55"></a>
+<a id="__codelineno-1-56" name="__codelineno-1-56" href="#__codelineno-1-56"></a>
+<a id="__codelineno-1-57" name="__codelineno-1-57" href="#__codelineno-1-57"></a>],
+<a id="__codelineno-1-58" name="__codelineno-1-58" href="#__codelineno-1-58"></a>
+<a id="__codelineno-1-59" name="__codelineno-1-59" href="#__codelineno-1-59"></a>
+<a id="__codelineno-1-60" name="__codelineno-1-60" href="#__codelineno-1-60"></a>
+<a id="__codelineno-1-61" name="__codelineno-1-61" href="#__codelineno-1-61"></a>&quot;filters&quot;:[
+<a id="__codelineno-1-62" name="__codelineno-1-62" href="#__codelineno-1-62"></a>
+<a id="__codelineno-1-63" name="__codelineno-1-63" href="#__codelineno-1-63"></a>
+<a id="__codelineno-1-64" name="__codelineno-1-64" href="#__codelineno-1-64"></a>
+<a id="__codelineno-1-65" name="__codelineno-1-65" href="#__codelineno-1-65"></a>{
+<a id="__codelineno-1-66" name="__codelineno-1-66" href="#__codelineno-1-66"></a>
+<a id="__codelineno-1-67" name="__codelineno-1-67" href="#__codelineno-1-67"></a>
+<a id="__codelineno-1-68" name="__codelineno-1-68" href="#__codelineno-1-68"></a>
+<a id="__codelineno-1-69" name="__codelineno-1-69" href="#__codelineno-1-69"></a>&quot;fieldName&quot;:&quot;application&quot;,
+<a id="__codelineno-1-70" name="__codelineno-1-70" href="#__codelineno-1-70"></a>
+<a id="__codelineno-1-71" name="__codelineno-1-71" href="#__codelineno-1-71"></a>
+<a id="__codelineno-1-72" name="__codelineno-1-72" href="#__codelineno-1-72"></a>
+<a id="__codelineno-1-73" name="__codelineno-1-73" href="#__codelineno-1-73"></a>&quot;operator&quot;:&quot;EQUALS&quot;,
+<a id="__codelineno-1-74" name="__codelineno-1-74" href="#__codelineno-1-74"></a>
+<a id="__codelineno-1-75" name="__codelineno-1-75" href="#__codelineno-1-75"></a>
+<a id="__codelineno-1-76" name="__codelineno-1-76" href="#__codelineno-1-76"></a>
+<a id="__codelineno-1-77" name="__codelineno-1-77" href="#__codelineno-1-77"></a>&quot;value&quot;:&quot;www.easytravel.com&quot;
+<a id="__codelineno-1-78" name="__codelineno-1-78" href="#__codelineno-1-78"></a>
+<a id="__codelineno-1-79" name="__codelineno-1-79" href="#__codelineno-1-79"></a>
+<a id="__codelineno-1-80" name="__codelineno-1-80" href="#__codelineno-1-80"></a>
+<a id="__codelineno-1-81" name="__codelineno-1-81" href="#__codelineno-1-81"></a>},
+<a id="__codelineno-1-82" name="__codelineno-1-82" href="#__codelineno-1-82"></a>
+<a id="__codelineno-1-83" name="__codelineno-1-83" href="#__codelineno-1-83"></a>
+<a id="__codelineno-1-84" name="__codelineno-1-84" href="#__codelineno-1-84"></a>
+<a id="__codelineno-1-85" name="__codelineno-1-85" href="#__codelineno-1-85"></a>{
+<a id="__codelineno-1-86" name="__codelineno-1-86" href="#__codelineno-1-86"></a>
+<a id="__codelineno-1-87" name="__codelineno-1-87" href="#__codelineno-1-87"></a>
+<a id="__codelineno-1-88" name="__codelineno-1-88" href="#__codelineno-1-88"></a>
+<a id="__codelineno-1-89" name="__codelineno-1-89" href="#__codelineno-1-89"></a>&quot;fieldName&quot;:&quot;usersession.userType&quot;,
+<a id="__codelineno-1-90" name="__codelineno-1-90" href="#__codelineno-1-90"></a>
+<a id="__codelineno-1-91" name="__codelineno-1-91" href="#__codelineno-1-91"></a>
+<a id="__codelineno-1-92" name="__codelineno-1-92" href="#__codelineno-1-92"></a>
+<a id="__codelineno-1-93" name="__codelineno-1-93" href="#__codelineno-1-93"></a>&quot;operator&quot;:&quot;EQUALS&quot;,
+<a id="__codelineno-1-94" name="__codelineno-1-94" href="#__codelineno-1-94"></a>
+<a id="__codelineno-1-95" name="__codelineno-1-95" href="#__codelineno-1-95"></a>
+<a id="__codelineno-1-96" name="__codelineno-1-96" href="#__codelineno-1-96"></a>
+<a id="__codelineno-1-97" name="__codelineno-1-97" href="#__codelineno-1-97"></a>&quot;value&quot;:&quot;REAL_USER&quot;
+<a id="__codelineno-1-98" name="__codelineno-1-98" href="#__codelineno-1-98"></a>
+<a id="__codelineno-1-99" name="__codelineno-1-99" href="#__codelineno-1-99"></a>
+<a id="__codelineno-1-100" name="__codelineno-1-100" href="#__codelineno-1-100"></a>
+<a id="__codelineno-1-101" name="__codelineno-1-101" href="#__codelineno-1-101"></a>}
+<a id="__codelineno-1-102" name="__codelineno-1-102" href="#__codelineno-1-102"></a>
+<a id="__codelineno-1-103" name="__codelineno-1-103" href="#__codelineno-1-103"></a>
+<a id="__codelineno-1-104" name="__codelineno-1-104" href="#__codelineno-1-104"></a>
+<a id="__codelineno-1-105" name="__codelineno-1-105" href="#__codelineno-1-105"></a>]
+<a id="__codelineno-1-106" name="__codelineno-1-106" href="#__codelineno-1-106"></a>
+<a id="__codelineno-1-107" name="__codelineno-1-107" href="#__codelineno-1-107"></a>
+<a id="__codelineno-1-108" name="__codelineno-1-108" href="#__codelineno-1-108"></a>
+<a id="__codelineno-1-109" name="__codelineno-1-109" href="#__codelineno-1-109"></a>}
+<a id="__codelineno-1-110" name="__codelineno-1-110" href="#__codelineno-1-110"></a>
+<a id="__codelineno-1-111" name="__codelineno-1-111" href="#__codelineno-1-111"></a>
+<a id="__codelineno-1-112" name="__codelineno-1-112" href="#__codelineno-1-112"></a>
+<a id="__codelineno-1-113" name="__codelineno-1-113" href="#__codelineno-1-113"></a>}
+<a id="__codelineno-1-114" name="__codelineno-1-114" href="#__codelineno-1-114"></a>
+<a id="__codelineno-1-115" name="__codelineno-1-115" href="#__codelineno-1-115"></a>
+<a id="__codelineno-1-116" name="__codelineno-1-116" href="#__codelineno-1-116"></a>
+<a id="__codelineno-1-117" name="__codelineno-1-117" href="#__codelineno-1-117"></a>]
+</code></pre></div>
+3. Используйте конечную точку <a href="../../../../../dynatrace-api/environment-api/settings/objects/post-object/" title="Create or validate a settings object via the Dynatrace API.">POST an object</a> для отправки конфигурации.</p>
+<p>В таблице ниже описаны все свойства конфигурации, необходимые для создания или обновления пользовательской метрики USQL через API.</p>
+<table>
+<thead>
+<tr>
+<th>Свойство</th>
+<th>Описание</th>
+<th>Возможные значения</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>enabled</code></td>
+<td>Определяет, включена ли пользовательская метрика USQL. Установите значение <code>false</code> для временного отключения метрики.</td>
+<td><code>true</code> или <code>false</code></td>
+</tr>
+<tr>
+<td><code>metricKey</code></td>
+<td>Ключ метрики, используемый при её приёме. Этот ключ понадобится при запросе данных метрики через <a href="../../../../../analyze-explore-automate/explorer/" title="Query for metrics and transform results to gain desired insights.">Data Explorer</a>. * Для метрических событий пользовательских сессий ключ метрики должен начинаться с префикса <code>uscm.</code>. * Для метрических событий пользовательских действий ключ метрики должен начинаться с префикса <code>uacm.</code>.</td>
+<td></td>
+</tr>
+<tr>
+<td><code>value</code></td>
+<td>Источник значения метрики.</td>
+<td></td>
+</tr>
+<tr>
+<td><code>value.type</code></td>
+<td>* Для подсчёта количества пользовательских сессий или действий (аналог <code>COUNT(*)</code> в <a href="../../../session-segmentation/custom-queries-segmentation-and-aggregation-of-session-data/" title="Learn how you can access and query user session data based on keywords, syntax, functions, and more.">USQL</a>) установите значение <code>COUNTER</code>. * Для извлечения значения поля пользовательской сессии или действия установите значение <code>FIELD</code>.</td>
+<td><code>COUNTER</code> или <code>FIELD</code></td>
+</tr>
+<tr>
+<td><code>value.fieldName</code></td>
+<td>Если <code>value.type</code>=<code>FIELD</code>, указывает имя поля пользовательской сессии или действия.</td>
+<td>См. разделы <a href="#values-uscm">Значения для USCM</a> и <a href="#values-uacm">Значения для UACM</a>.</td>
+</tr>
+<tr>
+<td><code>dimensions</code></td>
+<td>Перечисляет поля, используемые как измерения.</td>
+<td>См. разделы <a href="#dimensions-uscm">Измерения для USCM</a> и <a href="#dimensions-uacm">Измерения для UACM</a>.</td>
+</tr>
+<tr>
+<td><code>filters</code></td>
+<td>Задаёт фильтры.</td>
+<td></td>
+</tr>
+<tr>
+<td><code>filter.fieldName</code></td>
+<td>Указывает имя поля фильтра.</td>
+<td>См. разделы <a href="#filters-uscm">Фильтры для USCM</a> и <a href="#filters-uacm">Фильтры для UACM</a>.</td>
+</tr>
+<tr>
+<td><code>filter.operator</code></td>
+<td>Указывает оператор.</td>
+<td><code>EQUALS</code>, <code>NOT_EQUAL</code>, <code>IS_NULL</code>, <code>IS_NOT_NULL</code>, <code>LIKE</code>, <code>LESS_THAN</code>, <code>LESS_THAN_OR_EQUAL_TO</code>, <code>GREATER_THAN</code>, <code>GREATER_THAN_OR_EQUAL_TO</code></td>
+</tr>
+<tr>
+<td><code>filter.value</code></td>
+<td>Предоставляет второй аргумент для бинарных операторов (например, <code>EQUALS</code> или <code>GREATER_THAN</code>).</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="_1">Поддерживаемые значения, измерения и фильтры<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<p>В следующих разделах приведены списки поддерживаемых значений, измерений и фильтров для метрических событий пользовательских сессий.</p>
+<p>Значения для метрических событий пользовательских сессий</p>
+<ul>
+<li>В качестве значения поддерживаются только поля пользовательских сессий. Поля пользовательских действий не поддерживаются.</li>
+<li>Все имена полей должны соответствовать именам полей USQL.</li>
+<li>Префикс <code>usersession.</code> в имени поля необязателен. Например, <code>usersession.duration</code> и <code>duration</code> означают одно и то же.</li>
+<li>Когда настроенное поле содержит <code>null</code>, метрика игнорируется, но Dynatrace использует самомониторинг для выявления таких случаев.</li>
+</ul>
+<h4 id="_2">Поля пользовательских сессий, поддерживаемые как значения<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h4>
+<p><code>duration</code>
+<code>numberOfRageClicks</code>
+<code>numberOfRageTaps</code>
+<code>totalErrorCount</code>
+<code>totalLicenseCreditCount</code>
+<code>userActionCount</code>
+<code>longProperties.*</code><a href="#fn-1-1-def">1</a>
+<code>doubleProperties.*</code><a href="#fn-1-1-def">1</a></p>
+<p>1</p>
+<p>Любое пользовательское свойство типа long или double, например <code>longProperties.outerwidth</code> или <code>doubleProperties.revenue</code></p>
+<p>Измерения для метрических событий пользовательских сессий</p>
+<ul>
+<li>В качестве измерений поддерживаются как поля пользовательских сессий, так и поля пользовательских действий. Поля пользовательских действий поддерживаются начиная с Dynatrace версии 1.234.</li>
+<li>Все имена полей должны соответствовать именам полей USQL.</li>
+<li>Для имени поля пользовательской сессии префикс <code>usersession.</code> необязателен. Например, <code>usersession.country</code> и <code>country</code> означают одно и то же. При приёме метрики префикс <code>usersession.</code> отбрасывается, например <code>usersession.country</code> становится <code>country</code>.</li>
+<li>Для имени поля пользовательского действия префикс <code>useraction.</code> обязателен. При приёме метрики префикс <code>useraction.</code> сохраняется.</li>
+<li>Можно добавить до 10 измерений для одной пользовательской метрики пользовательских сессий.</li>
+<li>Когда поле, настроенное как измерение, содержит <code>null</code>, Dynatrace использует строку <code>null</code> в качестве значения измерения.</li>
+<li>При использовании <code>useraction.application</code> в качестве измерения, если пользовательская сессия охватывает несколько приложений, значение пользовательской метрики сессии фиксируется для каждого приложения. Чтобы избежать двойного счёта, разделите метрику по приложению.</li>
+</ul>
+<h4 id="_3">Поля пользовательских сессий, поддерживаемые как измерения<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h4>
+<p><code>appVersion</code>
+<code>applicationType</code>
+<code>bounce</code>
+<code>browserFamily</code>
+<code>browserMajorVersion</code>
+<code>browserType</code>
+<code>carrier</code>
+<code>region</code>
+<code>continent</code>
+<code>country</code>
+<code>connectionType</code>
+<code>device</code>
+<code>displayResolution</code>
+<code>endReason</code>
+<code>hasCrash</code>
+<code>hasError</code>
+<code>hasSessionReplay</code>
+<code>manufacturer</code>
+<code>networkTechnology</code>
+<code>newUser</code>
+<code>osFamily</code>
+<code>osVersion</code>
+<code>reasonForNoSessionReplay</code>
+<code>reasonForNoSessionReplayMobile</code>
+<code>rootedOrJailbroken</code>
+<code>screenHeight</code>
+<code>screenOrientation</code>
+<code>screenWidth</code>
+<code>userExperienceScore</code>
+<code>userType</code>
+<code>stringProperties.*</code><a href="#fn-2-1-def">1</a></p>
+<p>1</p>
+<p>Любое пользовательское строковое свойство, например <code>stringProperties.author</code>. Используйте поля с низкой кардинальностью, чтобы не создавать слишком много значений измерений.</p>
+<h4 id="_4">Поля пользовательских действий, поддерживаемые как измерения<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h4>
+<p><code>useraction.application</code><a href="#fn-3-1-def">1</a></p>
+<p>1</p>
+<p>Поддерживается начиная с Dynatrace версии 1.234</p>
+<p>Фильтры для метрических событий пользовательских сессий</p>
+<ul>
+<li>В качестве фильтров поддерживаются как поля пользовательских сессий, так и поля пользовательских действий.</li>
+<li>Все имена полей должны соответствовать именам полей USQL.</li>
+<li>Для имени поля пользовательской сессии префикс <code>usersession.</code> необязателен.</li>
+<li>Для имени поля пользовательского действия префикс <code>useraction.</code> обязателен.</li>
+<li>При добавлении нескольких фильтров все они должны совпадать — фильтры объединяются оператором <code>AND</code>.</li>
+<li>Фильтры, использующие поле пользовательского действия, требуют совпадения хотя бы одного пользовательского действия. Пользовательские действия сопоставляются оператором <code>ANY</code>.</li>
+<li>Для одной пользовательской метрики пользовательских сессий можно задать до 10 фильтров.</li>
+</ul>
+<h4 id="_5">Поля пользовательских сессий, поддерживаемые как фильтры<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h4>
+<p><code>appVersion</code>, <code>applicationType</code>, <code>bounce</code>, <code>browserFamily</code>, <code>browserMajorVersion</code>, <code>browserMonitorName</code>, <code>browserType</code>, <code>carrier</code>, <code>city</code>, <code>region</code>, <code>continent</code>, <code>country</code>, <code>connectionType</code>, <code>device</code>, <code>displayResolution</code>, <code>duration</code>, <code>endReason</code>, <code>hasCrash</code>, <code>hasError</code>, <code>hasSessionReplay</code>, <code>ip</code>, <code>isp</code>, <code>manufacturer</code>, <code>networkTechnology</code>, <code>newUser</code>, <code>numberOfRageClicks</code>, <code>osFamily</code>, <code>osVersion</code>, <code>reasonForNoSessionReplay</code>, <code>reasonForNoSessionReplayMobile</code>, <code>rootedOrJailbroken</code>, <code>screenHeight</code>, <code>screenOrientation</code>, <code>screenWidth</code>, <code>totalErrorCount</code>, <code>totalLicenseCreditCount</code>, <code>userActionCount</code>, <code>userExperienceScore</code>, <code>userId</code>, <code>userType</code>, <code>longProperties.*</code>, <code>doubleProperties.*</code>, <code>stringProperties.*</code></p>
+<h4 id="_6">Поля пользовательских действий, поддерживаемые как поля<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h4>
+<p><code>useraction.apdexCategory</code>, <code>useraction.application</code>, <code>useraction.cdnBusyTime</code>, <code>useraction.cdnResources</code>, <code>useraction.customErrorCount</code>, <code>useraction.domCompleteTime</code>, <code>useraction.domContentLoadedTime</code>, <code>useraction.documentInteractiveTime</code>, <code>useraction.domain</code>, <code>useraction.duration</code>, <code>useraction.firstInputDelay</code>, <code>useraction.firstPartyBusyTime</code>, <code>useraction.firstPartyResources</code>, <code>useraction.frontendTime</code>, <code>useraction.hasCrash</code>, <code>useraction.internalApplicationId</code>, <code>useraction.internalKeyUserActionId</code>, <code>useraction.javascriptErrorCount</code>, <code>useraction.keyUserAction</code>, <code>useraction.largestContentfulPaint</code>, <code>useraction.name</code>, <code>useraction.networkTime</code>, <code>useraction.requestErrorCount</code>, <code>useraction.serverTime</code>, <code>useraction.speedIndex</code>, <code>useraction.targetUrl</code>, <code>useraction.thirdPartyBusyTime</code>, <code>useraction.thirdPartyResources</code>, <code>useraction.type</code>, <code>useraction.visuallyCompleteTime</code></p>
+<p>Развернув разделы ниже, можно ознакомиться с поддерживаемыми значениями, измерениями и фильтрами для метрических событий пользовательских действий.</p>
+<p>Значения для метрических событий пользовательских действий</p>
+<ul>
+<li>В качестве значений поддерживаются как поля пользовательских сессий, так и поля пользовательских действий.</li>
+<li>Все имена полей должны соответствовать именам полей USQL.</li>
+<li>Для полей пользовательских действий префикс <code>useraction.</code> необязателен.</li>
+<li>Для полей пользовательских сессий префикс <code>usersession.</code> обязателен.</li>
+<li>Когда настроенное поле содержит <code>null</code>, метрика игнорируется, но Dynatrace использует самомониторинг для выявления таких случаев.</li>
+</ul>
+<h4 id="_7">Поля пользовательских действий, поддерживаемые как значения<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h4>
+<p><code>speedIndex</code>, <code>duration</code>, <code>networkTime</code>, <code>serverTime</code>, <code>frontendTime</code>, <code>documentInteractiveTime</code>, <code>firstPartyResources</code>, <code>firstPartyBusyTime</code>, <code>thirdPartyResources</code>, <code>thirdPartyBusyTime</code>, <code>cdnResources</code>, <code>cdnBusyTime</code>, <code>domCompleteTime</code>, <code>domContentLoadedTime</code>, <code>loadEventStart</code>, <code>loadEventEnd</code>, <code>visuallyCompleteTime</code>, <code>requestStart</code>, <code>responseStart</code>, <code>responseEnd</code>, <code>userActionPropertyCount</code>, <code>customErrorCount</code>, <code>javascriptErrorCount</code>, <code>requestErrorCount</code>, <code>largestContentfulPaint</code>, <code>firstInputDelay</code>, <code>totalBlockingTime</code> (устаревшее), <code>cumulativeLayoutShift</code>, <code>longProperties.*</code>, <code>doubleProperties.*</code></p>
+<h4 id="_8">Поля пользовательских сессий, поддерживаемые как значения<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h4>
+<p><code>usersession.duration</code>, <code>usersession.numberOfRageClicks</code>, <code>usersession.numberOfRageTaps</code>, <code>usersession.totalErrorCount</code>, <code>usersession.totalLicenseCreditCount</code>, <code>usersession.userActionCount</code>, <code>usersession.longProperties.*</code>, <code>usersession.doubleProperties.*</code></p>
+<p>Измерения для метрических событий пользовательских действий</p>
+<ul>
+<li>Поддерживаются как поля пользовательских сессий, так и поля пользовательских действий.</li>
+<li>Все имена полей должны соответствовать именам полей USQL.</li>
+<li>Для полей пользовательских действий префикс <code>useraction.</code> необязателен. При приёме метрики префикс <code>useraction.</code> отбрасывается.</li>
+<li>Для полей пользовательских сессий префикс <code>usersession.</code> обязателен. При приёме метрики префикс <code>usersession.</code> сохраняется.</li>
+<li>Для одной пользовательской метрики пользовательских действий можно указать до 4 измерений, но не более 2 из них могут быть высококардинальными.</li>
+<li>Когда поле, настроенное как измерение, содержит <code>null</code>, Dynatrace использует строку <code>null</code> в качестве значения измерения.</li>
+<li>В приведённом ниже списке высококардинальные измерения выделены <strong>жирным шрифтом</strong>.</li>
+</ul>
+<h4 id="_9">Поля пользовательских действий, поддерживаемые как измерения<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h4>
+<p><code>application</code>, <code>hasCrash</code>, <code>type</code>, <code>apdexCategory</code>, <code>internalApplicationId</code>, <code>internalKeyUserActionId</code>, <code>keyUserAction</code>, <code>isEntryAction</code>, <code>isExitAction</code>, <strong><code>stringProperties.*</code></strong></p>
+<h4 id="_10">Поля пользовательских сессий, поддерживаемые как измерения<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h4>
+<p><strong><code>usersession.appVersion</code></strong>, <code>usersession.applicationType</code>, <code>usersession.bounce</code>, <strong><code>usersession.browserFamily</code></strong>, <strong><code>usersession.browserMajorVersion</code></strong>, <strong><code>usersession.browserType</code></strong>, <strong><code>usersession.carrier</code></strong>, <strong><code>usersession.region</code></strong>, <code>usersession.continent</code>, <code>usersession.country</code>, <code>usersession.connectionType</code>, <strong><code>usersession.device</code></strong>, <strong><code>usersession.displayResolution</code></strong>, <code>usersession.endReason</code>, <code>usersession.hasCrash</code>, <code>usersession.hasError</code>, <code>usersession.hasSessionReplay</code>, <strong><code>usersession.manufacturer</code></strong>, <strong><code>usersession.networkTechnology</code></strong>, <code>usersession.newUser</code>, <strong><code>usersession.osFamily</code></strong>, <strong><code>usersession.osVersion</code></strong>, <code>usersession.reasonForNoSessionReplay</code>, <code>usersession.reasonForNoSessionReplayMobile</code>, <code>usersession.rootedOrJailbroken</code>, <strong><code>usersession.screenHeight</code></strong>, <code>usersession.screenOrientation</code>, <strong><code>usersession.screenWidth</code></strong>, <code>usersession.userExperienceScore</code>, <code>usersession.userType</code>, <strong><code>usersession.stringProperties.*</code></strong></p>
+<p>Фильтры для метрических событий пользовательских действий</p>
+<ul>
+<li>В качестве фильтров поддерживаются как поля пользовательских сессий, так и поля пользовательских действий.</li>
+<li>Все имена полей должны соответствовать именам полей USQL.</li>
+<li>Для полей пользовательских действий префикс <code>useraction.</code> необязателен.</li>
+<li>Для полей пользовательских сессий префикс <code>usersession.</code> обязателен.</li>
+<li>При добавлении нескольких фильтров все они должны совпадать — фильтры объединяются оператором <code>AND</code>.</li>
+<li>Для одной пользовательской метрики пользовательских действий можно задать до 10 фильтров.</li>
+</ul>
+<h4 id="_11">Поля пользовательских действий, поддерживаемые как фильтры<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h4>
+<p><code>apdexCategory</code>, <code>application</code>, <code>cdnBusyTime</code>, <code>cdnResources</code>, <code>customErrorCount</code>, <code>cumulativeLayoutShift</code>, <code>domCompleteTime</code>, <code>domContentLoadedTime</code>, <code>documentInteractiveTime</code>, <code>domain</code>, <code>duration</code>, <code>firstInputDelay</code>, <code>firstPartyBusyTime</code>, <code>firstPartyResources</code>, <code>frontendTime</code>, <code>hasCrash</code>, <code>internalApplicationId</code>, <code>internalKeyUserActionId</code>, <code>isEntryAction</code>, <code>isExitAction</code>, <code>javascriptErrorCount</code>, <code>keyUserAction</code>, <code>largestContentfulPaint</code>, <code>loadEventStart</code>, <code>loadEventEnd</code>, <code>name</code>, <code>networkTime</code>, <code>requestErrorCount</code>, <code>requestStart</code>, <code>responseStart</code>, <code>responseEnd</code>, <code>serverTime</code>, <code>speedIndex</code>, <code>targetUrl</code>, <code>thirdPartyBusyTime</code>, <code>thirdPartyResources</code>, <code>totalBlockingTime</code> (устаревшее), <code>type</code>, <code>userActionPropertyCount</code>, <code>visuallyCompleteTime</code>, <code>syntheticEvent</code>, <code>longProperties.*</code>, <code>doubleProperties.*</code>, <code>stringProperties.*</code></p>
+<h4 id="_12">Поля пользовательских сессий, поддерживаемые как фильтры<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h4>
+<p><code>usersession.appVersion</code>, <code>usersession.applicationType</code>, <code>usersession.bounce</code>, <code>usersession.browserFamily</code>, <code>usersession.browserMajorVersion</code>, <code>usersession.browserMonitorName</code>, <code>usersession.browserType</code>, <code>usersession.carrier</code>, <code>usersession.city</code>, <code>usersession.region</code>, <code>usersession.continent</code>, <code>usersession.country</code>, <code>usersession.connectionType</code>, <code>usersession.device</code>, <code>usersession.displayResolution</code>, <code>usersession.duration</code>, <code>usersession.endReason</code>, <code>usersession.hasCrash</code>, <code>usersession.hasError</code>, <code>usersession.hasSessionReplay</code>, <code>usersession.ip</code>, <code>usersession.isp</code>, <code>usersession.manufacturer</code>, <code>usersession.networkTechnology</code>, <code>usersession.newUser</code>, <code>usersession.numberOfRageClicks</code>, <code>usersession.numberOfRageTaps</code>, <code>usersession.osFamily</code>, <code>usersession.osVersion</code>, <code>usersession.reasonForNoSessionReplay</code>, <code>usersession.reasonForNoSessionReplayMobile</code>, <code>usersession.rootedOrJailbroken</code>, <code>usersession.screenHeight</code>, <code>usersession.screenOrientation</code>, <code>usersession.screenWidth</code>, <code>usersession.totalErrorCount</code>, <code>usersession.totalLicenseCreditCount</code>, <code>usersession.userActionCount</code>, <code>usersession.userExperienceScore</code>, <code>usersession.userId</code>, <code>usersession.userType</code>, <code>usersession.longProperties.*</code>, <code>usersession.doubleProperties.*</code>, <code>usersession.stringProperties.*</code></p>
+<h2 id="_13">Известные ограничения<a class="headerlink" href="#_13" title="Permanent link">&para;</a></h2>
+<p>Для метрических событий USQL выявлены следующие ограничения:</p>
+<ul>
+<li>Можно создать до 500 пользовательских метрик пользовательских сессий на среду.</li>
+<li>Можно создать до 100 пользовательских метрик пользовательских действий на среду.</li>
+<li>Данные синтетических пользовательских сессий не учитываются в значениях метрических событий USQL; включаются только данные реальных пользователей.</li>
+<li>Dynatrace обновляет метрические события USQL при каждом закрытии сессии. Это означает, что данные активных сессий не учитываются в значениях пользовательских метрик USQL; включаются только данные закрытых сессий.</li>
+<li>Ключевое слово <code>DISTINCT</code>, используемое в <a href="../../../session-segmentation/custom-queries-segmentation-and-aggregation-of-session-data/" title="Learn how you can access and query user session data based on keywords, syntax, functions, and more.">USQL</a>, не поддерживается. Например, для запроса типа <code>SELECT COUNT(DISTINCT country) from usersession</code> создать эквивалентную пользовательскую метрику USQL невозможно.</li>
+</ul>
+<h2 id="_14">Учебное руководство<a class="headerlink" href="#_14" title="Permanent link">&para;</a></h2>
+<p>Для лучшего понимания работы метрических событий USQL ниже приведено руководство для метрических событий пользовательских сессий.</p>
+<p><img alt="Step 1" src="https://dt-cdn.net/images/step-1-086e22066c.svg" title="Step 1" /></p>
+<p><strong>Создание метрики</strong></p>
+<p><img alt="Step 2" src="https://dt-cdn.net/images/step-2-1a1384627e.svg" title="Step 2" /></p>
+<p><strong>Создание и закрепление графика</strong></p>
+<p><img alt="Step 3" src="https://dt-cdn.net/images/step-3-350cf6c19a.svg" title="Step 3" /></p>
+<p><strong>Создание оповещения</strong></p>
+<p>Используя веб-интерфейс Dynatrace, создадим пользовательскую метрику пользовательских сессий (USCM) <strong>Average session duration</strong> на основе данных сессий реальных пользователей. Метрика будет включать два измерения для сегментации данных сессий по семейству браузера и его основной версии. На основе этой метрики создадим график, закрепим его на дашборде и создадим пользовательское событие для получения оповещений при превышении метрикой заданного порогового значения.</p>
+<p>Создание метрики</p>
+<ol>
+<li>Перейдите в <strong>Settings</strong> &gt; <strong>Web and mobile monitoring</strong> &gt; <strong>User session metric events</strong>.</li>
+<li>Выберите <strong>Add item</strong>.</li>
+<li>Введите <code>uscm.average_duration_of_sessions_by_browser_family_and_version</code> в поле <strong>Metric key</strong>.</li>
+<li>В разделе <strong>Value type to be extracted</strong> выберите <strong>User session field value</strong>. Также задайте <strong>Field name</strong> равным <code>duration</code>.</li>
+<li>Выберите <strong>Add dimension</strong> и добавьте измерения <code>browserMajorVersion</code> и <code>browserFamily</code>.</li>
+<li>
+<p>В разделе <strong>Add a filter</strong> добавьте следующие фильтры:</p>
+</li>
+<li>
+<p><code>userType</code> = <code>REAL_USER</code> (<strong>Field name</strong> — <code>userType</code>, <strong>Operator</strong> — <code>equals</code>, <strong>Value</strong> — <code>REAL_USER</code>)</p>
+</li>
+<li><code>useraction.application</code> = <code>www.easytravel.com</code> (<strong>Field name</strong> — <code>useraction.application</code>, <strong>Operator</strong> — <code>equals</code>, <strong>Value</strong> — <code>www.easytravel.com</code>). Вместо <code>www.easytravel.com</code> можно использовать имя вашего приложения.</li>
+<li>Выберите <strong>Save changes</strong>.</li>
+</ol>
+<p><img alt="Создание пользовательской метрики пользовательских сессий" src="https://dt-cdn.net/images/create-custom-metric-example-1910-e74ff5a09d.png" /></p>
+<p>Создание пользовательской метрики пользовательских сессий</p>
+<p>Теперь имеется пользовательская метрика пользовательских сессий, которая извлекается как поле (<code>duration</code>) только при условии, что <code>useraction.application</code> равно <code>www.easytravel.com</code> (фильтрация по конкретному приложению) и <code>userType</code> — <code>REAL_USER</code> (фильтрация только по реальным пользователям). Кроме того, добавлены два измерения для разбивки данных по семейству браузера или его основной версии.</p>
+<p>После получения данных пользовательских сессий и заполнения метрики можно построить по ней график, закрепить его на дашборде и даже создать оповещение на основе метрики.</p>
+<p>Создание и закрепление графика</p>
+<p>Теперь создадим график на основе метрики <code>uscm.average_duration_of_sessions_by_browser_family_and_version</code> и закрепим его на одном из дашбордов.</p>
+<ol>
+<li>Перейдите в <strong>Data Explorer</strong>.</li>
+<li>Выберите метрику <code>uscm.average_duration_of_sessions_by_browser_family_and_version</code> и нажмите <strong>Run query</strong>.</li>
+</ol>
+<p><img alt="Создание графика в Data Explorer на основе метрики пользовательских сессий" src="https://dt-cdn.net/images/data-explorer-custom-metric-1221-7d8891ede4.png" /></p>
+<p>Создание графика в Data Explorer на основе метрики пользовательских сессий
+3. Используя <a href="../../../../../analyze-explore-automate/explorer/" title="Query for metrics and transform results to gain desired insights.">Data Explorer</a>, разбейте собранные данные для просмотра данных пользовательских сессий по <code>browserMajorVersion</code>, <code>browserFamily</code> или по обоим измерениям.
+4. Отфильтруйте данные пользовательских сессий по <code>browserMajorVersion</code> или <code>browserFamily</code>, чтобы сосредоточиться на интересующих данных.
+5. После создания графика с данными можно закрепить его на классическом дашборде: выберите <strong>Pin to dashboard</strong>, укажите дашборд и введите название тайла.</p>
+<p><img alt="График пользовательской метрики, закреплённый на дашборде" src="https://dt-cdn.net/images/dashboard-custom-metric-944-005355f3e5.png" /></p>
+<p>График пользовательской метрики, закреплённый на дашборде</p>
+<p>Создание оповещения</p>
+<p>В завершение примера создадим оповещение на основе метрических событий пользовательских сессий.</p>
+<p>Чтобы создать оповещение:</p>
+<ol>
+<li>Перейдите в <strong>Settings</strong> &gt; <strong>Anomaly detection</strong> &gt; <strong>Metric events</strong>.</li>
+<li>Выберите <strong>Add metric event</strong>.</li>
+<li>Создайте метрическое событие на основе метрики <code>uscm.average_duration_of_sessions_by_browser_family_and_version</code>. Подробнее см. раздел <a href="../../../../../dynatrace-intelligence/anomaly-detection/metric-events/" title="Learn about metric events in Dynatrace">Metric events</a>.</li>
+</ol>
+<p><img alt="Создание пользовательского события оповещения на основе метрики пользовательских сессий" src="https://dt-cdn.net/images/create-custom-events-for-alerting-2092-9b1d66309a.png" /></p>
+<p>Создание пользовательского события оповещения на основе метрики пользовательских сессий</p>
+<h2 id="_15">Вопросы и ответы<a class="headerlink" href="#_15" title="Permanent link">&para;</a></h2>
+<p>Данные пользовательских сессий видны, но данные метрических событий USQL не отображаются в Data Explorer.</p>
+<p>Убедитесь, что пользовательская сессия не является активной. Dynatrace извлекает и сохраняет данные метрик в виде временных рядов только после закрытия пользовательской сессии.</p>
+<p>Почему метрические события USQL активных сессий не отображаются в Data Explorer?</p>
+<p>По мере закрытия сессий в приложениях они помещаются в очередь для последующей обработки. Ряд фоновых процессов извлекает данные метрик из пользовательских сессий для подготовки данных к приёму метрик.</p>
+<p>Почему результаты USQL-запросов не совпадают с метрическими событиями USQL?</p>
+<p>Данные синтетических пользовательских сессий не учитываются в метрических событиях USQL.</p>
+<p>Исключите синтетические сессии из запроса. Также проверьте, что для запроса и метрики применяется одинаковый временной диапазон.</p>
+<p>Как оплачиваются метрические события USQL?</p>
+<p>Начиная с Dynatrace 1.232, метрические события USQL подпадают под <a href="../../../../../license/monitoring-consumption-classic/davis-data-units/" title="Understand how Dynatrace monitoring consumption is calculated based on Davis data units (DDU).">лицензирование единиц данных Davis (DDU)</a>. Эти метрики оплачиваются как обычные бесхемные метрики.</p>
+<p>Для оценки стоимости метрики анализируются сессии за последние 7 дней и рассчитывается стоимость в DDU в соответствии с ожидаемым потоком приёма в минуту. Подробнее см. раздел <a href="../../../../../license/monitoring-consumption-classic/davis-data-units/metric-cost-calculation/#calculation-details" title="Understand how to calculate Davis data unit consumption and costs related to monitored metrics.">Как рассчитывается потребление DDU для метрических событий?</a>.</p>
+<p>Каков интервал детализации для метрических событий USQL?</p>
+<p>Сохранение метрических данных в Dynatrace следует стратегии хранения данных, которая агрегирует метрики с течением времени. Стратегия хранения, применяемая к метрическим событиям USQL, идентична стратегии, используемой для встроенных метрик временных рядов.</p>
+<p>Подробнее см. раздел <a href="../../../../../manage/data-privacy-and-security/data-privacy/data-retention-periods/#metrics-classic" title="Check retention times for various data types.">Сроки хранения данных &gt; Метрики</a></p>
+<h2 id="_16">Связанные темы<a class="headerlink" href="#_16" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="../../../../../dynatrace-api/environment-api/metric-v2/" title="Retrieve metric information via Metrics v2 API.">Metrics API v2</a></li>
+</ul>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  К началу
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      © 2026 Dynatrace Docs | Yerkebulan Ardabayev
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/Yerkebulan-Ardabayev" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../../../../..", "features": ["navigation.indexes", "navigation.prune", "navigation.path", "navigation.tracking", "navigation.top", "search.suggest", "search.highlight", "search.share", "content.code.copy", "content.code.annotate", "content.tabs.link", "content.tooltips", "toc.follow"], "search": "../../../../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u0421\u043a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u043d\u043e \u0432 \u0431\u0443\u0444\u0435\u0440", "clipboard.copy": "\u041a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u0442\u044c \u0432 \u0431\u0443\u0444\u0435\u0440", "search.result.more.one": "\u0415\u0449\u0451 1 \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.more.other": "\u0415\u0449\u0451 # \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.none": "\u0421\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439 \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u043e", "search.result.one": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e 1 \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0435", "search.result.other": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439: #", "search.result.placeholder": "\u041d\u0430\u0447\u043d\u0438\u0442\u0435 \u043f\u0435\u0447\u0430\u0442\u0430\u0442\u044c \u0434\u043b\u044f \u043f\u043e\u0438\u0441\u043a\u0430", "search.result.term.missing": "\u041e\u0442\u0441\u0443\u0442\u0441\u0442\u0432\u0443\u0435\u0442", "select.version": "\u0412\u044b\u0431\u0435\u0440\u0438\u0442\u0435 \u0432\u0435\u0440\u0441\u0438\u044e"}, "version": null}</script>
+    
+    
+  
+      <script src="../../../../../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../../../../../../assets/javascripts/groq-chat.js?sha=17d46ba74"></script>
+      
+    
+  <script>
+    (function() {
+      // --- Keyboard shortcut Ctrl+K / Cmd+K for search ---
+      document.addEventListener('keydown', function(e) {
+        if ((e.ctrlKey || e.metaKey) && e.key === 'k') {
+          e.preventDefault();
+          var searchInput = document.querySelector('.md-search__input');
+          if (searchInput) {
+            searchInput.focus();
+            var searchToggle = document.querySelector('[data-md-toggle="search"]');
+            if (searchToggle && !searchToggle.checked) {
+              searchToggle.checked = true;
+              searchToggle.dispatchEvent(new Event('change'));
+            }
+          }
+        }
+        // --- "/" focuses search like GitHub / Algolia docs ---
+        if (e.key === '/' && !/^(input|textarea|select)$/i.test(e.target.tagName)) {
+          e.preventDefault();
+          var inp = document.querySelector('.md-search__input');
+          if (inp) {
+            inp.focus();
+            var t = document.querySelector('[data-md-toggle="search"]');
+            if (t && !t.checked) { t.checked = true; t.dispatchEvent(new Event('change')); }
+          }
+        }
+      });
+    })();
+  </script>
+
+  </body>
+</html>

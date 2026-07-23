@@ -1,0 +1,5327 @@
+
+<!doctype html>
+<html lang="ru" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Документация Dynatrace Managed с AI-помощником">
+      
+      
+        <meta name="author" content="Yerkebulan Ardabayev">
+      
+      
+        <link rel="canonical" href="https://yerkebulan-ardabayev.github.io/dynatrace-docs-website/managed-ru/managed-cluster/api-references/cluster-api/cluster-api-v2/environments/list-managed-environments/">
+      
+      
+        <link rel="prev" href="../delete-specific-managed-environment/">
+      
+      
+        <link rel="next" href="../list-specific-managed-environment/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../../../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>List all existing environments - Dynatrace — Документация</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../../../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../../../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Inter";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../../../../assets/stylesheets/extra.v11.css?sha=17d46ba74">
+    
+    <script>__md_scope=new URL("../../../../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  <style>
+    /* DocFlow DT Logo Badge — injected via template override */
+    .md-header__button.md-logo {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .md-header__button.md-logo img,
+    .md-header__button.md-logo svg {
+      display: none !important;
+    }
+    .md-header__button.md-logo::before {
+      content: 'DT';
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 28px;
+      height: 28px;
+      border-radius: 6px;
+      background: linear-gradient(135deg, #00d4aa 0%, #7c3aed 100%);
+      color: white;
+      font-size: 11px;
+      font-weight: 700;
+      font-family: 'Inter', sans-serif;
+      letter-spacing: -0.02em;
+      flex-shrink: 0;
+    }
+
+    /* Search Ctrl+K badge — inside input field */
+    .md-search__form {
+      position: relative;
+    }
+    .md-search__form::after {
+      content: 'Ctrl+K';
+      display: none;
+      align-items: center;
+      padding: 0.15rem 0.4rem;
+      border-radius: 4px;
+      border: 1px solid var(--docflow-border);
+      background: var(--md-default-bg-color);
+      font-size: 10px;
+      font-family: 'JetBrains Mono', monospace;
+      color: var(--md-default-fg-color--lighter);
+      white-space: nowrap;
+      pointer-events: none;
+      position: absolute;
+      right: 0.5rem;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+    @media (min-width: 60em) {
+      .md-search__form::after {
+        display: flex;
+      }
+    }
+  </style>
+
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="custom">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#_1" class="md-skip">
+          Перейти к содержанию
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+  
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Верхний колонтитул">
+    <a href="../../../../../../.." title="Dynatrace — Документация" class="md-header__button md-logo" aria-label="Dynatrace — Документация" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M11 15H6l7-14v8h5l-7 14z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Dynatrace — Документация
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              List all existing environments
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Переключить на светлую тему"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Переключить на светлую тему" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Переключить на тёмную тему"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Переключить на тёмную тему" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Поиск" placeholder="Поиск" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Поиск">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Поделиться" aria-label="Поделиться" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Очистить" aria-label="Очистить" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Инициализация поиска
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/Yerkebulan-Ardabayev/dynatrace-docs-website" title="Перейти к репозиторию" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    dynatrace-docs-website
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Навигация" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../../../../.." title="Dynatrace — Документация" class="md-nav__button md-logo" aria-label="Dynatrace — Документация" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M11 15H6l7-14v8h5l-7 14z"/></svg>
+
+    </a>
+    Dynatrace — Документация
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/Yerkebulan-Ardabayev/dynatrace-docs-website" title="Перейти к репозиторию" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    dynatrace-docs-website
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Главная
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../../../../../ru/getting-started/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Начало работы
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Кластер Managed
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Кластер Managed
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../installation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Установка
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../configuration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Настройка
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../operations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обслуживание
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../update/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обновление
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../security/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Безопасность
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../backup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Резервное копирование
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../cluster/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Памятка по кластеру
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обзор кластера
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_9" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3_9" id="__nav_3_9_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Справочники API
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_9_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3_9">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Справочники API
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_9_1" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3_9_1" id="__nav_3_9_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    cluster-api
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_9_1_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3_9_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    cluster-api
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_9_1_1" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3_9_1_1" id="__nav_3_9_1_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cluster API v2
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_3_9_1_1_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3_9_1_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Cluster API v2
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обзор
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../cluster-tokens/create-cluster-tokens/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    cluster-tokens
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_9_1_1_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3_9_1_1_3" id="__nav_3_9_1_1_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Окружения
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="5" aria-labelledby="__nav_3_9_1_1_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3_9_1_1_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Окружения
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../create-managed-environment/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Create a new environment
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../delete-specific-managed-environment/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Delete specific environment
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    List all existing environments
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    List all existing environments
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Содержание">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Содержание
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Аутентификация
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#endpoint" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Endpoint
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Параметр
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ответ
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Ответ">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Коды ответа
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Объекты тела ответа
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Объекты тела ответа">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#environmentlist" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Объект EnvironmentList
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#environment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Объект Environment
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#environmentquotas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Объект EnvironmentQuotas
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#custommetricsquota" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Объект CustomMetricsQuota
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#davisdataunitsquota" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Объект DavisDataUnitsQuota
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#demunitsquota" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Объект DemUnitsQuota
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hostunitquota" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Объект HostUnitQuota
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#logmonitoringquota" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Объект LogMonitoringQuota
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sessionpropertiesquota" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Объект SessionPropertiesQuota
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#syntheticquota" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Объект SyntheticQuota
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#usersessionsquota" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Объект UserSessionsQuota
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#environmentstorage" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Объект EnvironmentStorage
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#realusermonitoringretention" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Объект RealUserMonitoringRetention
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rumnonaggregateddataretention" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Объект RumNonAggregatedDataRetention
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#servicecodelevelretention" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Объект ServiceCodeLevelRetention
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#servicerequestlevelretention" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Объект ServiceRequestLevelRetention
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sessionreplayretention" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Объект SessionReplayRetention
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sessionreplaystorage" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Объект SessionReplayStorage
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#symbolfilesfrommobileapps" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Объект SymbolFilesFromMobileApps
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#syntheticmonitoringretention" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Объект SyntheticMonitoringRetention
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#transactionstorage" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Объект TransactionStorage
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#transactiontrafficquota" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Объект TransactionTrafficQuota
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#useractionsperminute" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Объект UserActionsPerMinute
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#json-" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        JSON-модели тела ответа
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Пример
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Пример">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#curl" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Curl
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#url" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        URL запроса
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Тело ответа
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Код ответа
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../list-specific-managed-environment/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    List properties for specific environment
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../update-specific-managed-environment/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Update specific environment
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../export-license-data/get-export-license-data/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    export-license-data
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../log-monitoring/get-log-monitoring-status/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    log-monitoring
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../remote-access/get-all-cluster-access-requests/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    remote-access
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../synthetic-locations-and-nodes/delete-a-location/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    synthetic-locations-and-nodes
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../user-management/delete-cluster-user-session/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    user-management
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../../../basics/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Основы
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../../../configuration/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Конфигурация
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../../../high-availability/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Высокая доступность
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../../../installation/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Установка
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../../../operation/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Эксплуатация
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../../../self-monitoring/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Самомониторинг
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../../../../license/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    License Dynatrace
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../../../../upgrade/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Переход с Managed на развёртывание SaaS
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../../../../ingest-from/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Источники данных
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    
+  
+  
+  
+    <a href="../../../../../../observe/application-observability/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Наблюдаемость
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../../../../dynatrace-intelligence/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Davis AI
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    
+  
+  
+  
+    <a href="../../../../../../analyze-explore-automate/dashboards-classic/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Анализ
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../../../../deliver/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Deliver
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    
+  
+  
+  
+    <a href="../../../../../../secure/application-security/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Безопасность приложений
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    
+  
+  
+  
+    <a href="../../../../../../manage/account-management/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Управление
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    
+  
+  
+  
+    <a href="../../../../../../platform/oneagent/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Платформа
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../../../../dynatrace-api/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../../../../whats-new/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Что нового
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../../../../offline-doc/how-do-i-enable-synthetic-monitors/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Офлайн-документация
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../../../../../ru/training/day1-introduction/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обучение
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../../ai/groq/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI Помощник
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Содержание">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Содержание
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Аутентификация
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#endpoint" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Endpoint
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Параметр
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ответ
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Ответ">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Коды ответа
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Объекты тела ответа
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Объекты тела ответа">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#environmentlist" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Объект EnvironmentList
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#environment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Объект Environment
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#environmentquotas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Объект EnvironmentQuotas
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#custommetricsquota" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Объект CustomMetricsQuota
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#davisdataunitsquota" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Объект DavisDataUnitsQuota
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#demunitsquota" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Объект DemUnitsQuota
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hostunitquota" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Объект HostUnitQuota
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#logmonitoringquota" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Объект LogMonitoringQuota
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sessionpropertiesquota" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Объект SessionPropertiesQuota
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#syntheticquota" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Объект SyntheticQuota
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#usersessionsquota" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Объект UserSessionsQuota
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#environmentstorage" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Объект EnvironmentStorage
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#realusermonitoringretention" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Объект RealUserMonitoringRetention
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rumnonaggregateddataretention" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Объект RumNonAggregatedDataRetention
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#servicecodelevelretention" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Объект ServiceCodeLevelRetention
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#servicerequestlevelretention" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Объект ServiceRequestLevelRetention
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sessionreplayretention" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Объект SessionReplayRetention
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sessionreplaystorage" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Объект SessionReplayStorage
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#symbolfilesfrommobileapps" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Объект SymbolFilesFromMobileApps
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#syntheticmonitoringretention" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Объект SyntheticMonitoringRetention
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#transactionstorage" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Объект TransactionStorage
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#transactiontrafficquota" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Объект TransactionTrafficQuota
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#useractionsperminute" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Объект UserActionsPerMinute
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#json-" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        JSON-модели тела ответа
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Пример
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Пример">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#curl" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Curl
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#url" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        URL запроса
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Тело ответа
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Код ответа
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+                
+
+
+
+  
+
+
+  <nav class="md-path" aria-label="Навигация" >
+    <ol class="md-path__list">
+      
+        
+  
+  
+    <li class="md-path__item">
+      <a href="../../../../../../.." class="md-path__link">
+        
+  <span class="md-ellipsis">
+    Главная
+  </span>
+
+      </a>
+    </li>
+  
+
+      
+      
+        
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="../../../../../../installation/" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    Кластер Managed
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+    
+    
+      
+  
+  
+    
+    
+      
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="../../" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    Справочники API
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+    
+    
+      
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="../../" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    cluster-api
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="../../" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    Cluster API v2
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="../create-managed-environment/" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    Окружения
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ol>
+  </nav>
+
+              
+              <article class="md-content__inner md-typeset">
+                
+  
+                  
+
+
+
+  <h1>List all existing environments</h1>
+
+<p>Этот API-вызов возвращает список всех существующих окружений.</p>
+<h2 id="_1">Аутентификация<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<p>Для выполнения этого запроса API-токену нужно разрешение <strong>Service Provider API</strong> (<code>ServiceProviderAPI</code>). Создайте API-токен через Cluster Management Console (CMC). Как его получить и использовать, смотрите Cluster API - Authentication.</p>
+<h2 id="endpoint">Endpoint<a class="headerlink" href="#endpoint" title="Permanent link">&para;</a></h2>
+<p><code>/api/cluster/v2/environments</code></p>
+<h2 id="_2">Параметр<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Параметр</th>
+<th>Тип</th>
+<th>Описание</th>
+<th>Где</th>
+<th>Обязательный</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>nextPageKey</td>
+<td>string</td>
+<td>Курсор следующей страницы результатов. Можно найти его в поле <strong>nextPageKey</strong> предыдущего ответа.  Первая страница возвращается всегда, если не указан query-параметр <strong>nextPageKey</strong>.  Когда <strong>nextPageKey</strong> задан для получения следующих страниц, все остальные query-параметры нужно опустить.</td>
+<td>query</td>
+<td>Optional</td>
+</tr>
+<tr>
+<td>pageSize</td>
+<td>integer</td>
+<td>Количество окружений в одном payload ответа.  Максимально допустимый размер страницы 1000.  Если не задан, используется 100.</td>
+<td>query</td>
+<td>Optional</td>
+</tr>
+<tr>
+<td>sort</td>
+<td>string</td>
+<td>Порядок сортировки. Возможные варианты:  * 'name' (без кавычек): сортировка по имени по возрастанию. * '-name' (без кавычек): сортировка по имени по убыванию. * 'creationDate' (без кавычек): сортировка по дате создания по возрастанию. * '-creationDate' (без кавычек): сортировка по имени по убыванию.</td>
+<td>query</td>
+<td>Optional</td>
+</tr>
+<tr>
+<td>filter</td>
+<td>string</td>
+<td>Задаёт фильтр запроса.  Можно задать один или несколько критериев:  * Name: <code>name(string)</code>. Имя может быть подстрокой или полным именем окружения. Без учёта регистра. * Trial: <code>trial(true)</code> или <code>trial(false)</code>. Включает только trial-окружения если true, или только не-trial окружения если false. * State: <code>state(ENABLED)</code> или <code>state(DISABLED)</code>. * Tag: <code>tag(string)</code>. Чтобы фильтровать по нескольким тегам с OR-логикой, используйте <code>tag(string1,string2)</code>. Чтобы фильтровать по нескольким тегам с AND-логикой, используйте <code>tag(string1),tag(string2)</code>.   Чтобы задать несколько критериев, разделите их запятой (<code>,</code>). В ответ включаются только результаты, удовлетворяющие <strong>всем</strong> критериям.</td>
+<td>query</td>
+<td>Optional</td>
+</tr>
+<tr>
+<td>includeConsumptionInfo</td>
+<td>boolean</td>
+<td>Если true, для каждого окружения возвращается информация о потреблении (лимиты, использование).  Возвращаемые данные потребления могут отставать на час. Чтобы получить более свежие данные, используйте параметр <strong>includeUncachedConsumptionInfo</strong>.  Эта опция недоступна для лицензионной модели DPS.</td>
+<td>query</td>
+<td>Optional</td>
+</tr>
+<tr>
+<td>includeStorageInfo</td>
+<td>boolean</td>
+<td>Если true, для каждого окружения возвращается информация о хранилище (лимиты, использование).</td>
+<td>query</td>
+<td>Optional</td>
+</tr>
+<tr>
+<td>includeUncachedConsumptionInfo</td>
+<td>boolean</td>
+<td>Если true, для каждого окружения возвращается некэшированная информация о потреблении (лимиты, использование).  Будет рассчитано актуальное потребление. Расчёт может быть длительным, поэтому рекомендуется использовать параметр <strong>includeConsumptionInfo</strong>.  Если заданы оба параметра, <strong>includeUncachedConsumptionInfo</strong> имеет приоритет.  Эта опция недоступна для лицензионной модели DPS.</td>
+<td>query</td>
+<td>Optional</td>
+</tr>
+</tbody>
+</table>
+<h2 id="_3">Ответ<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<h3 id="_4">Коды ответа<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Код</th>
+<th>Тип</th>
+<th>Описание</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>200</strong></td>
+<td><a href="#openapi-definition-EnvironmentList">EnvironmentList</a></td>
+<td>Операция выполнена успешно.</td>
+</tr>
+<tr>
+<td><strong>422</strong></td>
+<td>-</td>
+<td>Информация о потреблении недоступна для лицензионной модели DPS.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_5">Объекты тела ответа<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
+<h4 id="environmentlist">Объект <code>EnvironmentList</code><a class="headerlink" href="#environmentlist" title="Permanent link">&para;</a></h4>
+<p>Список окружений.</p>
+<table>
+<thead>
+<tr>
+<th>Элемент</th>
+<th>Тип</th>
+<th>Описание</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>environments</td>
+<td><a href="#openapi-definition-Environment">Environment[]</a></td>
+<td>Список окружений.</td>
+</tr>
+<tr>
+<td>nextPageKey</td>
+<td>string</td>
+<td>Курсор следующей страницы результатов. На последней странице имеет значение <code>null</code>.  Используйте его в query-параметре <strong>nextPageKey</strong> для получения следующих страниц результата.</td>
+</tr>
+<tr>
+<td>pageSize</td>
+<td>integer</td>
+<td>Количество записей на странице.</td>
+</tr>
+<tr>
+<td>totalCount</td>
+<td>integer</td>
+<td>Общее количество записей в результате.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="environment">Объект <code>Environment</code><a class="headerlink" href="#environment" title="Permanent link">&para;</a></h4>
+<p>Базовая конфигурация окружения.</p>
+<table>
+<thead>
+<tr>
+<th>Элемент</th>
+<th>Тип</th>
+<th>Описание</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>creationDate</td>
+<td>string</td>
+<td>Дата создания окружения в формате ISO 8601 (yyyy-MM-dd'T'HH<img alt="🇲🇲" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/1f1f2-1f1f2.svg" title=":mm:" />ss.SSS'Z')</td>
+</tr>
+<tr>
+<td>id</td>
+<td>string</td>
+<td>ID окружения. Должен соответствовать [a-zA-Z0-9_-]{1,70}</td>
+</tr>
+<tr>
+<td>name</td>
+<td>string</td>
+<td>Отображаемое имя окружения.</td>
+</tr>
+<tr>
+<td>quotas</td>
+<td><a href="#openapi-definition-EnvironmentQuotas">EnvironmentQuotas</a></td>
+<td>Информация о потреблении и квотах на уровне окружения. Возвращается только если параметр includeConsumptionInfo или includeUncachedConsumptionInfo равен true. Недоступно для лицензионной модели DPS. Если опущено при редактировании через PUT, уже заданные квоты сохраняются.</td>
+</tr>
+<tr>
+<td>state</td>
+<td>string</td>
+<td>Указывает, включено или выключено окружение. По умолчанию ENABLED. Возможные значения: * <code>DISABLED</code> * <code>ENABLED</code></td>
+</tr>
+<tr>
+<td>storage</td>
+<td><a href="#openapi-definition-EnvironmentStorage">EnvironmentStorage</a></td>
+<td>Информация об использовании и лимитах хранилища на уровне окружения. Не возвращается, если параметр includeStorageInfo не равен true. Если опущено при редактировании через PUT, уже заданные лимиты сохраняются.</td>
+</tr>
+<tr>
+<td>tags</td>
+<td>string[]</td>
+<td>Набор тегов, назначенных этому окружению. Каждый тег максимум 100 символов.</td>
+</tr>
+<tr>
+<td>trial</td>
+<td>boolean</td>
+<td>Указывает, является ли окружение trial или не-trial. Создание trial-окружения возможно только если это позволяет лицензия. По умолчанию false (не-trial).</td>
+</tr>
+</tbody>
+</table>
+<h4 id="environmentquotas">Объект <code>EnvironmentQuotas</code><a class="headerlink" href="#environmentquotas" title="Permanent link">&para;</a></h4>
+<p>Информация о потреблении и квотах на уровне окружения. Возвращается только если параметр includeConsumptionInfo или includeUncachedConsumptionInfo равен true. Недоступно для лицензионной модели DPS. Если опущено при редактировании через PUT, уже заданные квоты сохраняются.</p>
+<table>
+<thead>
+<tr>
+<th>Элемент</th>
+<th>Тип</th>
+<th>Описание</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>customMetrics</td>
+<td><a href="#openapi-definition-CustomMetricsQuota">CustomMetricsQuota</a></td>
+<td>Информация о потреблении и квоте Custom metrics на уровне окружения. Не задано (и не редактируется), если Custom metrics не включены. Не задано (и не редактируется), если включены Davis data units. Если опущено при редактировании через PUT, уже заданная квота сохраняется.</td>
+</tr>
+<tr>
+<td>davisDataUnits</td>
+<td><a href="#openapi-definition-DavisDataUnitsQuota">DavisDataUnitsQuota</a></td>
+<td>Информация о потреблении и квоте Davis data units на уровне окружения. Не задано (и не редактируется), если Davis data units не включены. Если опущено при редактировании через PUT, уже заданные квоты сохраняются.</td>
+</tr>
+<tr>
+<td>demUnits</td>
+<td><a href="#openapi-definition-DemUnitsQuota">DemUnitsQuota</a></td>
+<td>Информация о потреблении и квоте DEM units на уровне окружения. Не задано (и не редактируется), если DEM units не включены. Если опущено при редактировании через PUT, уже заданные квоты сохраняются.</td>
+</tr>
+<tr>
+<td>hostUnits</td>
+<td><a href="#openapi-definition-HostUnitQuota">HostUnitQuota</a></td>
+<td>Информация о потреблении и квоте Host units на уровне окружения. Если опущено при редактировании через PUT, уже заданная квота сохраняется.</td>
+</tr>
+<tr>
+<td>logMonitoring</td>
+<td><a href="#openapi-definition-LogMonitoringQuota">LogMonitoringQuota</a></td>
+<td>Информация о потреблении и квоте Log monitoring на уровне окружения. Не задано (и не редактируется), если Log monitoring не включён. Не задано (и не редактируется), если Log monitoring мигрирован на Davis data на уровне лицензии. Если опущено при редактировании через PUT, уже заданные квоты сохраняются.</td>
+</tr>
+<tr>
+<td>sessionProperties</td>
+<td><a href="#openapi-definition-SessionPropertiesQuota">SessionPropertiesQuota</a></td>
+<td>Информация о потреблении User session properties на уровне окружения.</td>
+</tr>
+<tr>
+<td>syntheticMonitors</td>
+<td><a href="#openapi-definition-SyntheticQuota">SyntheticQuota</a></td>
+<td>Информация о потреблении и квоте Synthetic monitors на уровне окружения. Не задано (и не редактируется), если ни Synthetic, ни DEM units не включены. Если опущено при редактировании через PUT, уже заданные квоты сохраняются.</td>
+</tr>
+<tr>
+<td>userSessions</td>
+<td><a href="#openapi-definition-UserSessionsQuota">UserSessionsQuota</a></td>
+<td>Информация о потреблении и квоте User sessions на уровне окружения. Если опущено при редактировании через PUT, уже заданные квоты сохраняются.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="custommetricsquota">Объект <code>CustomMetricsQuota</code><a class="headerlink" href="#custommetricsquota" title="Permanent link">&para;</a></h4>
+<p>Информация о потреблении и квоте Custom metrics на уровне окружения. Не задано (и не редактируется), если Custom metrics не включены. Не задано (и не редактируется), если включены Davis data units. Если опущено при редактировании через PUT, уже заданная квота сохраняется.</p>
+<table>
+<thead>
+<tr>
+<th>Элемент</th>
+<th>Тип</th>
+<th>Описание</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>currentUsage</td>
+<td>number</td>
+<td>Текущее использование окружения.</td>
+</tr>
+<tr>
+<td>maxLimit</td>
+<td>integer</td>
+<td>Параллельная квота окружения. Не задано, если без лимита. При обновлении через PUT, опуская это поле, квота становится без лимита.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="davisdataunitsquota">Объект <code>DavisDataUnitsQuota</code><a class="headerlink" href="#davisdataunitsquota" title="Permanent link">&para;</a></h4>
+<p>Информация о потреблении и квоте Davis data units на уровне окружения. Не задано (и не редактируется), если Davis data units не включены. Если опущено при редактировании через PUT, уже заданные квоты сохраняются.</p>
+<table>
+<thead>
+<tr>
+<th>Элемент</th>
+<th>Тип</th>
+<th>Описание</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>annualLimit</td>
+<td>integer</td>
+<td>Годовая квота окружения. Не задано, если без лимита. При обновлении через PUT, опуская это поле, квота становится без лимита.</td>
+</tr>
+<tr>
+<td>consumedThisMonth</td>
+<td>number</td>
+<td>Месячное потребление окружения. Сбрасывается каждый календарный месяц.</td>
+</tr>
+<tr>
+<td>consumedThisYear</td>
+<td>number</td>
+<td>Годовое потребление окружения. Сбрасывается каждый год в годовщину создания лицензии.</td>
+</tr>
+<tr>
+<td>monthlyLimit</td>
+<td>integer</td>
+<td>Месячная квота окружения. Не задано, если без лимита. При обновлении через PUT, опуская это поле, квота становится без лимита.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="demunitsquota">Объект <code>DemUnitsQuota</code><a class="headerlink" href="#demunitsquota" title="Permanent link">&para;</a></h4>
+<p>Информация о потреблении и квоте DEM units на уровне окружения. Не задано (и не редактируется), если DEM units не включены. Если опущено при редактировании через PUT, уже заданные квоты сохраняются.</p>
+<table>
+<thead>
+<tr>
+<th>Элемент</th>
+<th>Тип</th>
+<th>Описание</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>annualLimit</td>
+<td>integer</td>
+<td>Годовая квота окружения. Не задано, если без лимита. При обновлении через PUT, опуская это поле, квота становится без лимита.</td>
+</tr>
+<tr>
+<td>consumedThisMonth</td>
+<td>number</td>
+<td>Месячное потребление окружения. Сбрасывается каждый календарный месяц.</td>
+</tr>
+<tr>
+<td>consumedThisYear</td>
+<td>number</td>
+<td>Годовое потребление окружения. Сбрасывается каждый год в годовщину создания лицензии.</td>
+</tr>
+<tr>
+<td>monthlyLimit</td>
+<td>integer</td>
+<td>Месячная квота окружения. Не задано, если без лимита. При обновлении через PUT, опуская это поле, квота становится без лимита.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="hostunitquota">Объект <code>HostUnitQuota</code><a class="headerlink" href="#hostunitquota" title="Permanent link">&para;</a></h4>
+<p>Информация о потреблении и квоте Host units на уровне окружения. Если опущено при редактировании через PUT, уже заданная квота сохраняется.</p>
+<table>
+<thead>
+<tr>
+<th>Элемент</th>
+<th>Тип</th>
+<th>Описание</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>currentUsage</td>
+<td>number</td>
+<td>Текущее использование окружения.</td>
+</tr>
+<tr>
+<td>maxLimit</td>
+<td>integer</td>
+<td>Параллельная квота окружения. Не задано, если без лимита. При обновлении через PUT, опуская это поле, квота становится без лимита.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="logmonitoringquota">Объект <code>LogMonitoringQuota</code><a class="headerlink" href="#logmonitoringquota" title="Permanent link">&para;</a></h4>
+<p>Информация о потреблении и квоте Log monitoring на уровне окружения. Не задано (и не редактируется), если Log monitoring не включён. Не задано (и не редактируется), если Log monitoring мигрирован на Davis data на уровне лицензии. Если опущено при редактировании через PUT, уже заданные квоты сохраняются.</p>
+<table>
+<thead>
+<tr>
+<th>Элемент</th>
+<th>Тип</th>
+<th>Описание</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>annualLimit</td>
+<td>integer</td>
+<td>Годовая квота окружения. Не задано, если без лимита. При обновлении через PUT, опуская это поле, квота становится без лимита.</td>
+</tr>
+<tr>
+<td>consumedThisMonth</td>
+<td>number</td>
+<td>Месячное потребление окружения. Сбрасывается каждый календарный месяц.</td>
+</tr>
+<tr>
+<td>consumedThisYear</td>
+<td>number</td>
+<td>Годовое потребление окружения. Сбрасывается каждый год в годовщину создания лицензии.</td>
+</tr>
+<tr>
+<td>monthlyLimit</td>
+<td>integer</td>
+<td>Месячная квота окружения. Не задано, если без лимита. При обновлении через PUT, опуская это поле, квота становится без лимита.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="sessionpropertiesquota">Объект <code>SessionPropertiesQuota</code><a class="headerlink" href="#sessionpropertiesquota" title="Permanent link">&para;</a></h4>
+<p>Информация о потреблении User session properties на уровне окружения.</p>
+<table>
+<thead>
+<tr>
+<th>Элемент</th>
+<th>Тип</th>
+<th>Описание</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>consumedThisMonth</td>
+<td>number</td>
+<td>Месячное потребление окружения. Сбрасывается каждый календарный месяц.</td>
+</tr>
+<tr>
+<td>consumedThisYear</td>
+<td>number</td>
+<td>Годовое потребление окружения. Сбрасывается каждый год в годовщину создания лицензии.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="syntheticquota">Объект <code>SyntheticQuota</code><a class="headerlink" href="#syntheticquota" title="Permanent link">&para;</a></h4>
+<p>Информация о потреблении и квоте Synthetic monitors на уровне окружения. Не задано (и не редактируется), если ни Synthetic, ни DEM units не включены. Если опущено при редактировании через PUT, уже заданные квоты сохраняются.</p>
+<table>
+<thead>
+<tr>
+<th>Элемент</th>
+<th>Тип</th>
+<th>Описание</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>annualLimit</td>
+<td>integer</td>
+<td>Годовая квота окружения. Не задано, если без лимита. При обновлении через PUT, опуская это поле, квота становится без лимита.</td>
+</tr>
+<tr>
+<td>consumedThisMonth</td>
+<td>number</td>
+<td>Месячное потребление окружения. Сбрасывается каждый календарный месяц.</td>
+</tr>
+<tr>
+<td>consumedThisYear</td>
+<td>number</td>
+<td>Годовое потребление окружения. Сбрасывается каждый год в годовщину создания лицензии.</td>
+</tr>
+<tr>
+<td>monthlyLimit</td>
+<td>integer</td>
+<td>Месячная квота окружения. Не задано, если без лимита. При обновлении через PUT, опуская это поле, квота становится без лимита.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="usersessionsquota">Объект <code>UserSessionsQuota</code><a class="headerlink" href="#usersessionsquota" title="Permanent link">&para;</a></h4>
+<p>Информация о потреблении и квоте User sessions на уровне окружения. Если опущено при редактировании через PUT, уже заданные квоты сохраняются.</p>
+<table>
+<thead>
+<tr>
+<th>Элемент</th>
+<th>Тип</th>
+<th>Описание</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>consumedMobileSessionsThisMonth</td>
+<td>number</td>
+<td>Месячное потребление окружения по Mobile user sessions. Сбрасывается каждый календарный месяц.</td>
+</tr>
+<tr>
+<td>consumedMobileSessionsThisYear</td>
+<td>number</td>
+<td>Годовое потребление окружения по Mobile user sessions. Сбрасывается каждый год в годовщину создания лицензии.</td>
+</tr>
+<tr>
+<td>consumedUserSessionsWithMobileSessionReplayThisMonth</td>
+<td>number</td>
+<td>Месячное потребление окружения по Mobile user sessions с replay. Сбрасывается каждый календарный месяц.</td>
+</tr>
+<tr>
+<td>consumedUserSessionsWithMobileSessionReplayThisYear</td>
+<td>number</td>
+<td>Годовое потребление окружения по Mobile user sessions с replay. Сбрасывается каждый год в годовщину создания лицензии.</td>
+</tr>
+<tr>
+<td>consumedUserSessionsWithWebSessionReplayThisMonth</td>
+<td>number</td>
+<td>Месячное потребление окружения по Web user sessions с replay. Сбрасывается каждый календарный месяц.</td>
+</tr>
+<tr>
+<td>consumedUserSessionsWithWebSessionReplayThisYear</td>
+<td>number</td>
+<td>Годовое потребление окружения по Web user sessions с replay. Сбрасывается каждый год в годовщину создания лицензии.</td>
+</tr>
+<tr>
+<td>totalAnnualLimit</td>
+<td>integer</td>
+<td>Годовая общая квота окружения по User sessions. Не задано, если без лимита. При обновлении через PUT, опуская это поле, квота становится без лимита.</td>
+</tr>
+<tr>
+<td>totalConsumedThisMonth</td>
+<td>number</td>
+<td>Месячное общее потребление окружения по User sessions. Сбрасывается каждый календарный месяц.</td>
+</tr>
+<tr>
+<td>totalConsumedThisYear</td>
+<td>number</td>
+<td>Годовое общее потребление окружения по User sessions. Сбрасывается каждый год в годовщину создания лицензии.</td>
+</tr>
+<tr>
+<td>totalMonthlyLimit</td>
+<td>integer</td>
+<td>Месячная общая квота окружения по User sessions. Не задано, если без лимита. При обновлении через PUT, опуская это поле, квота становится без лимита.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="environmentstorage">Объект <code>EnvironmentStorage</code><a class="headerlink" href="#environmentstorage" title="Permanent link">&para;</a></h4>
+<p>Информация об использовании и лимитах хранилища на уровне окружения. Не возвращается, если параметр includeStorageInfo не равен true. Если опущено при редактировании через PUT, уже заданные лимиты сохраняются.</p>
+<table>
+<thead>
+<tr>
+<th>Элемент</th>
+<th>Тип</th>
+<th>Описание</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>realUserMonitoringRetention</td>
+<td><a href="#openapi-definition-RealUserMonitoringRetention">RealUserMonitoringRetention</a></td>
+<td>Настройки retention Real user monitoring на уровне окружения. Можно задать любое значение от 1 до 35 дней. Если опущено при редактировании через PUT, уже заданный лимит сохраняется.</td>
+</tr>
+<tr>
+<td>rumNonAggregatedDataRetention</td>
+<td><a href="#openapi-definition-RumNonAggregatedDataRetention">RumNonAggregatedDataRetention</a></td>
+<td>Настройки retention неагрегированных данных RUM на уровне окружения. Можно задать любое значение от 1 до 365 дней. Если опущено при редактировании через PUT, уже заданный лимит сохраняется.</td>
+</tr>
+<tr>
+<td>serviceCodeLevelRetention</td>
+<td><a href="#openapi-definition-ServiceCodeLevelRetention">ServiceCodeLevelRetention</a></td>
+<td>Настройки retention service code level на уровне окружения. Время retention service code level не может быть больше времени retention service request level, и оба не могут превышать один год. Если опущено при редактировании через PUT, уже заданный лимит сохраняется.</td>
+</tr>
+<tr>
+<td>serviceRequestLevelRetention</td>
+<td><a href="#openapi-definition-ServiceRequestLevelRetention">ServiceRequestLevelRetention</a></td>
+<td>Настройки retention service request level на уровне окружения. Время retention service code level не может быть больше времени retention service request level, и оба не могут превышать один год. Если опущено при редактировании через PUT, уже заданный лимит сохраняется.</td>
+</tr>
+<tr>
+<td>sessionReplayRetention</td>
+<td><a href="#openapi-definition-SessionReplayRetention">SessionReplayRetention</a></td>
+<td>Настройки retention Session replay на уровне окружения. Можно задать любое значение от 1 до 35 дней. Если опущено при редактировании через PUT, уже заданный лимит сохраняется.</td>
+</tr>
+<tr>
+<td>sessionReplayStorage</td>
+<td><a href="#openapi-definition-SessionReplayStorage">SessionReplayStorage</a></td>
+<td>Информация об использовании и лимите хранилища Session replay на уровне окружения. Если опущено при редактировании через PUT, уже заданный лимит сохраняется.</td>
+</tr>
+<tr>
+<td>symbolFilesFromMobileApps</td>
+<td><a href="#openapi-definition-SymbolFilesFromMobileApps">SymbolFilesFromMobileApps</a></td>
+<td>Информация об использовании и лимите хранилища symbol files от mobile apps на уровне окружения. Если опущено при редактировании через PUT, уже заданный лимит сохраняется.</td>
+</tr>
+<tr>
+<td>syntheticMonitoringRetention</td>
+<td><a href="#openapi-definition-SyntheticMonitoringRetention">SyntheticMonitoringRetention</a></td>
+<td>Настройки retention Synthetic monitoring на уровне окружения. Можно задать любое значение от 1 до 35 дней. Если опущено при редактировании через PUT, уже заданный лимит сохраняется.</td>
+</tr>
+<tr>
+<td>transactionStorage</td>
+<td><a href="#openapi-definition-TransactionStorage">TransactionStorage</a></td>
+<td>Информация об использовании и лимите хранилища Transaction на уровне окружения. Если опущено при редактировании через PUT, уже заданный лимит сохраняется.</td>
+</tr>
+<tr>
+<td>transactionTrafficQuota</td>
+<td><a href="#openapi-definition-TransactionTrafficQuota">TransactionTrafficQuota</a></td>
+<td>Максимальное количество новых отслеживаемых entry point PurePaths, захватываемых на process/minute, на уровне окружения. Можно задать любое значение от 100 до 100000. Если опущено при редактировании через PUT, уже заданный лимит сохраняется.</td>
+</tr>
+<tr>
+<td>userActionsPerMinute</td>
+<td><a href="#openapi-definition-UserActionsPerMinute">UserActionsPerMinute</a></td>
+<td>Максимальное количество user actions, генерируемых в минуту, на уровне окружения. Можно задать любое значение от 1 до 2147483646 или оставить без лимита. Если опущено при редактировании через PUT, уже заданный лимит сохраняется.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="realusermonitoringretention">Объект <code>RealUserMonitoringRetention</code><a class="headerlink" href="#realusermonitoringretention" title="Permanent link">&para;</a></h4>
+<p>Настройки retention Real user monitoring на уровне окружения. Можно задать любое значение от 1 до 35 дней. Если опущено при редактировании через PUT, уже заданный лимит сохраняется.</p>
+<table>
+<thead>
+<tr>
+<th>Элемент</th>
+<th>Тип</th>
+<th>Описание</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>currentlyUsedInDays</td>
+<td>integer</td>
+<td>Текущий возраст данных [дни]</td>
+</tr>
+<tr>
+<td>currentlyUsedInMillis</td>
+<td>integer</td>
+<td>Текущий возраст данных [миллисекунды]</td>
+</tr>
+<tr>
+<td>maxLimitInDays</td>
+<td>integer</td>
+<td>Максимальный лимит retention [дни]</td>
+</tr>
+</tbody>
+</table>
+<h4 id="rumnonaggregateddataretention">Объект <code>RumNonAggregatedDataRetention</code><a class="headerlink" href="#rumnonaggregateddataretention" title="Permanent link">&para;</a></h4>
+<p>Настройки retention неагрегированных данных RUM на уровне окружения. Можно задать любое значение от 1 до 365 дней. Если опущено при редактировании через PUT, уже заданный лимит сохраняется.</p>
+<table>
+<thead>
+<tr>
+<th>Элемент</th>
+<th>Тип</th>
+<th>Описание</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>currentlyUsedInDays</td>
+<td>integer</td>
+<td>Текущий возраст данных [дни]</td>
+</tr>
+<tr>
+<td>currentlyUsedInMillis</td>
+<td>integer</td>
+<td>Текущий возраст данных [миллисекунды]</td>
+</tr>
+<tr>
+<td>maxLimitInDays</td>
+<td>integer</td>
+<td>Максимальный лимит retention [дни]</td>
+</tr>
+</tbody>
+</table>
+<h4 id="servicecodelevelretention">Объект <code>ServiceCodeLevelRetention</code><a class="headerlink" href="#servicecodelevelretention" title="Permanent link">&para;</a></h4>
+<p>Настройки retention service code level на уровне окружения. Время retention service code level не может быть больше времени retention service request level, и оба не могут превышать один год. Если опущено при редактировании через PUT, уже заданный лимит сохраняется.</p>
+<table>
+<thead>
+<tr>
+<th>Элемент</th>
+<th>Тип</th>
+<th>Описание</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>currentlyUsedInDays</td>
+<td>integer</td>
+<td>Текущий возраст данных [дни]</td>
+</tr>
+<tr>
+<td>currentlyUsedInMillis</td>
+<td>integer</td>
+<td>Текущий возраст данных [миллисекунды]</td>
+</tr>
+<tr>
+<td>maxLimitInDays</td>
+<td>integer</td>
+<td>Максимальный лимит retention [дни]</td>
+</tr>
+</tbody>
+</table>
+<h4 id="servicerequestlevelretention">Объект <code>ServiceRequestLevelRetention</code><a class="headerlink" href="#servicerequestlevelretention" title="Permanent link">&para;</a></h4>
+<p>Настройки retention service request level на уровне окружения. Время retention service code level не может быть больше времени retention service request level, и оба не могут превышать один год. Если опущено при редактировании через PUT, уже заданный лимит сохраняется.</p>
+<table>
+<thead>
+<tr>
+<th>Элемент</th>
+<th>Тип</th>
+<th>Описание</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>currentlyUsedInDays</td>
+<td>integer</td>
+<td>Текущий возраст данных [дни]</td>
+</tr>
+<tr>
+<td>currentlyUsedInMillis</td>
+<td>integer</td>
+<td>Текущий возраст данных [миллисекунды]</td>
+</tr>
+<tr>
+<td>maxLimitInDays</td>
+<td>integer</td>
+<td>Максимальный лимит retention [дни]</td>
+</tr>
+</tbody>
+</table>
+<h4 id="sessionreplayretention">Объект <code>SessionReplayRetention</code><a class="headerlink" href="#sessionreplayretention" title="Permanent link">&para;</a></h4>
+<p>Настройки retention Session replay на уровне окружения. Можно задать любое значение от 1 до 35 дней. Если опущено при редактировании через PUT, уже заданный лимит сохраняется.</p>
+<table>
+<thead>
+<tr>
+<th>Элемент</th>
+<th>Тип</th>
+<th>Описание</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>currentlyUsedInDays</td>
+<td>integer</td>
+<td>Текущий возраст данных [дни]</td>
+</tr>
+<tr>
+<td>currentlyUsedInMillis</td>
+<td>integer</td>
+<td>Текущий возраст данных [миллисекунды]</td>
+</tr>
+<tr>
+<td>maxLimitInDays</td>
+<td>integer</td>
+<td>Максимальный лимит retention [дни]</td>
+</tr>
+</tbody>
+</table>
+<h4 id="sessionreplaystorage">Объект <code>SessionReplayStorage</code><a class="headerlink" href="#sessionreplaystorage" title="Permanent link">&para;</a></h4>
+<p>Информация об использовании и лимите хранилища Session replay на уровне окружения. Если опущено при редактировании через PUT, уже заданный лимит сохраняется.</p>
+<table>
+<thead>
+<tr>
+<th>Элемент</th>
+<th>Тип</th>
+<th>Описание</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>currentlyUsed</td>
+<td>integer</td>
+<td>Текущее использование хранилища [байты]</td>
+</tr>
+<tr>
+<td>maxLimit</td>
+<td>integer</td>
+<td>Максимальный лимит хранилища [байты]</td>
+</tr>
+<tr>
+<td>retentionReductionPercentage</td>
+<td>string</td>
+<td>Процент усечения для новых данных.</td>
+</tr>
+<tr>
+<td>retentionReductionReason</td>
+<td>string</td>
+<td>Причина усечения.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="symbolfilesfrommobileapps">Объект <code>SymbolFilesFromMobileApps</code><a class="headerlink" href="#symbolfilesfrommobileapps" title="Permanent link">&para;</a></h4>
+<p>Информация об использовании и лимите хранилища symbol files от mobile apps на уровне окружения. Если опущено при редактировании через PUT, уже заданный лимит сохраняется.</p>
+<table>
+<thead>
+<tr>
+<th>Элемент</th>
+<th>Тип</th>
+<th>Описание</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>currentlyUsed</td>
+<td>integer</td>
+<td>Текущее использование хранилища [байты]</td>
+</tr>
+<tr>
+<td>maxLimit</td>
+<td>integer</td>
+<td>Максимальный лимит хранилища [байты]</td>
+</tr>
+</tbody>
+</table>
+<h4 id="syntheticmonitoringretention">Объект <code>SyntheticMonitoringRetention</code><a class="headerlink" href="#syntheticmonitoringretention" title="Permanent link">&para;</a></h4>
+<p>Настройки retention Synthetic monitoring на уровне окружения. Можно задать любое значение от 1 до 35 дней. Если опущено при редактировании через PUT, уже заданный лимит сохраняется.</p>
+<table>
+<thead>
+<tr>
+<th>Элемент</th>
+<th>Тип</th>
+<th>Описание</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>currentlyUsedInDays</td>
+<td>integer</td>
+<td>Текущий возраст данных [дни]</td>
+</tr>
+<tr>
+<td>currentlyUsedInMillis</td>
+<td>integer</td>
+<td>Текущий возраст данных [миллисекунды]</td>
+</tr>
+<tr>
+<td>maxLimitInDays</td>
+<td>integer</td>
+<td>Максимальный лимит retention [дни]</td>
+</tr>
+</tbody>
+</table>
+<h4 id="transactionstorage">Объект <code>TransactionStorage</code><a class="headerlink" href="#transactionstorage" title="Permanent link">&para;</a></h4>
+<p>Информация об использовании и лимите хранилища Transaction на уровне окружения. Если опущено при редактировании через PUT, уже заданный лимит сохраняется.</p>
+<table>
+<thead>
+<tr>
+<th>Элемент</th>
+<th>Тип</th>
+<th>Описание</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>currentlyUsed</td>
+<td>integer</td>
+<td>Текущее использование хранилища [байты]</td>
+</tr>
+<tr>
+<td>maxLimit</td>
+<td>integer</td>
+<td>Максимальный лимит хранилища [байты]</td>
+</tr>
+<tr>
+<td>retentionReductionPercentage</td>
+<td>string</td>
+<td>Процент усечения для новых данных.</td>
+</tr>
+<tr>
+<td>retentionReductionReason</td>
+<td>string</td>
+<td>Причина усечения.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="transactiontrafficquota">Объект <code>TransactionTrafficQuota</code><a class="headerlink" href="#transactiontrafficquota" title="Permanent link">&para;</a></h4>
+<p>Максимальное количество новых отслеживаемых entry point PurePaths, захватываемых на process/minute, на уровне окружения. Можно задать любое значение от 100 до 100000. Если опущено при редактировании через PUT, уже заданный лимит сохраняется.</p>
+<table>
+<thead>
+<tr>
+<th>Элемент</th>
+<th>Тип</th>
+<th>Описание</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>maxLimit</td>
+<td>integer</td>
+<td>Максимальный трафик [units per minute]</td>
+</tr>
+</tbody>
+</table>
+<h4 id="useractionsperminute">Объект <code>UserActionsPerMinute</code><a class="headerlink" href="#useractionsperminute" title="Permanent link">&para;</a></h4>
+<p>Максимальное количество user actions, генерируемых в минуту, на уровне окружения. Можно задать любое значение от 1 до 2147483646 или оставить без лимита. Если опущено при редактировании через PUT, уже заданный лимит сохраняется.</p>
+<table>
+<thead>
+<tr>
+<th>Элемент</th>
+<th>Тип</th>
+<th>Описание</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>maxLimit</td>
+<td>integer</td>
+<td>Максимальный трафик [units per minute]</td>
+</tr>
+</tbody>
+</table>
+<h3 id="json-">JSON-модели тела ответа<a class="headerlink" href="#json-" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>{
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>&quot;environments&quot;: [
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>{
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>&quot;name&quot;: &quot;example environment&quot;,
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>
+<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>&quot;state&quot;: &quot;ENABLED&quot;,
+<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>
+<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>
+<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a>&quot;tags&quot;: [
+<a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a>
+<a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a>
+<a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a>&quot;tag1&quot;,
+<a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a>
+<a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a>
+<a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a>&quot;tag2&quot;
+<a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a>
+<a id="__codelineno-0-24" name="__codelineno-0-24" href="#__codelineno-0-24"></a>
+<a id="__codelineno-0-25" name="__codelineno-0-25" href="#__codelineno-0-25"></a>],
+<a id="__codelineno-0-26" name="__codelineno-0-26" href="#__codelineno-0-26"></a>
+<a id="__codelineno-0-27" name="__codelineno-0-27" href="#__codelineno-0-27"></a>
+<a id="__codelineno-0-28" name="__codelineno-0-28" href="#__codelineno-0-28"></a>&quot;trial&quot;: false
+<a id="__codelineno-0-29" name="__codelineno-0-29" href="#__codelineno-0-29"></a>
+<a id="__codelineno-0-30" name="__codelineno-0-30" href="#__codelineno-0-30"></a>
+<a id="__codelineno-0-31" name="__codelineno-0-31" href="#__codelineno-0-31"></a>}
+<a id="__codelineno-0-32" name="__codelineno-0-32" href="#__codelineno-0-32"></a>
+<a id="__codelineno-0-33" name="__codelineno-0-33" href="#__codelineno-0-33"></a>
+<a id="__codelineno-0-34" name="__codelineno-0-34" href="#__codelineno-0-34"></a>],
+<a id="__codelineno-0-35" name="__codelineno-0-35" href="#__codelineno-0-35"></a>
+<a id="__codelineno-0-36" name="__codelineno-0-36" href="#__codelineno-0-36"></a>
+<a id="__codelineno-0-37" name="__codelineno-0-37" href="#__codelineno-0-37"></a>&quot;nextPageKey&quot;: &quot;AQAAABQBAAAABQ==&quot;,
+<a id="__codelineno-0-38" name="__codelineno-0-38" href="#__codelineno-0-38"></a>
+<a id="__codelineno-0-39" name="__codelineno-0-39" href="#__codelineno-0-39"></a>
+<a id="__codelineno-0-40" name="__codelineno-0-40" href="#__codelineno-0-40"></a>&quot;pageSize&quot;: 1,
+<a id="__codelineno-0-41" name="__codelineno-0-41" href="#__codelineno-0-41"></a>
+<a id="__codelineno-0-42" name="__codelineno-0-42" href="#__codelineno-0-42"></a>
+<a id="__codelineno-0-43" name="__codelineno-0-43" href="#__codelineno-0-43"></a>&quot;totalCount&quot;: 1
+<a id="__codelineno-0-44" name="__codelineno-0-44" href="#__codelineno-0-44"></a>
+<a id="__codelineno-0-45" name="__codelineno-0-45" href="#__codelineno-0-45"></a>
+<a id="__codelineno-0-46" name="__codelineno-0-46" href="#__codelineno-0-46"></a>}
+</code></pre></div>
+<h2 id="_6">Пример<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
+<p>Возвращает два самых новых включённых окружения с их потреблением лицензии, отсортированных по имени.</p>
+<h4 id="curl">Curl<a class="headerlink" href="#curl" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>curl -X GET &quot;https://myManaged.cluster.com/api/cluster/v2/environments?pageSize=2&amp;sort=-creationDate&amp;filter=state%28ENABLED%29&amp;includeConsumptionInfo=true&quot; -H &quot;accept: application/json; charset=utf-8&quot; -H &quot;Authorization: Api-Token dt0c01.abc123.abcdefjhij1234567890&quot;
+</code></pre></div>
+<h4 id="url">URL запроса<a class="headerlink" href="#url" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>https://myManaged.cluster.com/api/cluster/v2/environments?pageSize=2&amp;sort=-creationDate&amp;filter=state%28ENABLED%29&amp;includeConsumptionInfo=true
+</code></pre></div>
+<h4 id="_7">Тело ответа<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>{
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>&quot;totalCount&quot;: 78,
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>&quot;pageSize&quot;: 2,
+<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>
+<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>
+<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a>&quot;nextPageKey&quot;: &quot;AAAAAQAAAAIBnldfkgldsjoeriKIDFL2AAABd3uuvIMBAA5zdGF0ZShFTkFCTEVEKQEADS1jcmVhdGlvbkRhdGU=&quot;,
+<a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a>
+<a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a>
+<a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a>&quot;environments&quot;: [
+<a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a>
+<a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a>
+<a id="__codelineno-3-16" name="__codelineno-3-16" href="#__codelineno-3-16"></a>{
+<a id="__codelineno-3-17" name="__codelineno-3-17" href="#__codelineno-3-17"></a>
+<a id="__codelineno-3-18" name="__codelineno-3-18" href="#__codelineno-3-18"></a>
+<a id="__codelineno-3-19" name="__codelineno-3-19" href="#__codelineno-3-19"></a>&quot;name&quot;: &quot;AndroidApps&quot;,
+<a id="__codelineno-3-20" name="__codelineno-3-20" href="#__codelineno-3-20"></a>
+<a id="__codelineno-3-21" name="__codelineno-3-21" href="#__codelineno-3-21"></a>
+<a id="__codelineno-3-22" name="__codelineno-3-22" href="#__codelineno-3-22"></a>&quot;id&quot;: &quot;be22c776-1414-00e0-a00a-00b0dcf56443321&quot;,
+<a id="__codelineno-3-23" name="__codelineno-3-23" href="#__codelineno-3-23"></a>
+<a id="__codelineno-3-24" name="__codelineno-3-24" href="#__codelineno-3-24"></a>
+<a id="__codelineno-3-25" name="__codelineno-3-25" href="#__codelineno-3-25"></a>&quot;trial&quot;: false,
+<a id="__codelineno-3-26" name="__codelineno-3-26" href="#__codelineno-3-26"></a>
+<a id="__codelineno-3-27" name="__codelineno-3-27" href="#__codelineno-3-27"></a>
+<a id="__codelineno-3-28" name="__codelineno-3-28" href="#__codelineno-3-28"></a>&quot;state&quot;: &quot;ENABLED&quot;,
+<a id="__codelineno-3-29" name="__codelineno-3-29" href="#__codelineno-3-29"></a>
+<a id="__codelineno-3-30" name="__codelineno-3-30" href="#__codelineno-3-30"></a>
+<a id="__codelineno-3-31" name="__codelineno-3-31" href="#__codelineno-3-31"></a>&quot;tags&quot;: [],
+<a id="__codelineno-3-32" name="__codelineno-3-32" href="#__codelineno-3-32"></a>
+<a id="__codelineno-3-33" name="__codelineno-3-33" href="#__codelineno-3-33"></a>
+<a id="__codelineno-3-34" name="__codelineno-3-34" href="#__codelineno-3-34"></a>&quot;creationDate&quot;: &quot;2021-02-09T11:03:17.732Z&quot;,
+<a id="__codelineno-3-35" name="__codelineno-3-35" href="#__codelineno-3-35"></a>
+<a id="__codelineno-3-36" name="__codelineno-3-36" href="#__codelineno-3-36"></a>
+<a id="__codelineno-3-37" name="__codelineno-3-37" href="#__codelineno-3-37"></a>&quot;quotas&quot;: {
+<a id="__codelineno-3-38" name="__codelineno-3-38" href="#__codelineno-3-38"></a>
+<a id="__codelineno-3-39" name="__codelineno-3-39" href="#__codelineno-3-39"></a>
+<a id="__codelineno-3-40" name="__codelineno-3-40" href="#__codelineno-3-40"></a>&quot;hostUnits&quot;: {
+<a id="__codelineno-3-41" name="__codelineno-3-41" href="#__codelineno-3-41"></a>
+<a id="__codelineno-3-42" name="__codelineno-3-42" href="#__codelineno-3-42"></a>
+<a id="__codelineno-3-43" name="__codelineno-3-43" href="#__codelineno-3-43"></a>&quot;maxLimit&quot;: 10,
+<a id="__codelineno-3-44" name="__codelineno-3-44" href="#__codelineno-3-44"></a>
+<a id="__codelineno-3-45" name="__codelineno-3-45" href="#__codelineno-3-45"></a>
+<a id="__codelineno-3-46" name="__codelineno-3-46" href="#__codelineno-3-46"></a>&quot;currentUsage&quot;: 0
+<a id="__codelineno-3-47" name="__codelineno-3-47" href="#__codelineno-3-47"></a>
+<a id="__codelineno-3-48" name="__codelineno-3-48" href="#__codelineno-3-48"></a>
+<a id="__codelineno-3-49" name="__codelineno-3-49" href="#__codelineno-3-49"></a>},
+<a id="__codelineno-3-50" name="__codelineno-3-50" href="#__codelineno-3-50"></a>
+<a id="__codelineno-3-51" name="__codelineno-3-51" href="#__codelineno-3-51"></a>
+<a id="__codelineno-3-52" name="__codelineno-3-52" href="#__codelineno-3-52"></a>&quot;demUnits&quot;: {
+<a id="__codelineno-3-53" name="__codelineno-3-53" href="#__codelineno-3-53"></a>
+<a id="__codelineno-3-54" name="__codelineno-3-54" href="#__codelineno-3-54"></a>
+<a id="__codelineno-3-55" name="__codelineno-3-55" href="#__codelineno-3-55"></a>&quot;monthlyLimit&quot;: 50001,
+<a id="__codelineno-3-56" name="__codelineno-3-56" href="#__codelineno-3-56"></a>
+<a id="__codelineno-3-57" name="__codelineno-3-57" href="#__codelineno-3-57"></a>
+<a id="__codelineno-3-58" name="__codelineno-3-58" href="#__codelineno-3-58"></a>&quot;annualLimit&quot;: null,
+<a id="__codelineno-3-59" name="__codelineno-3-59" href="#__codelineno-3-59"></a>
+<a id="__codelineno-3-60" name="__codelineno-3-60" href="#__codelineno-3-60"></a>
+<a id="__codelineno-3-61" name="__codelineno-3-61" href="#__codelineno-3-61"></a>&quot;consumedThisMonth&quot;: 0,
+<a id="__codelineno-3-62" name="__codelineno-3-62" href="#__codelineno-3-62"></a>
+<a id="__codelineno-3-63" name="__codelineno-3-63" href="#__codelineno-3-63"></a>
+<a id="__codelineno-3-64" name="__codelineno-3-64" href="#__codelineno-3-64"></a>&quot;consumedThisYear&quot;: 0
+<a id="__codelineno-3-65" name="__codelineno-3-65" href="#__codelineno-3-65"></a>
+<a id="__codelineno-3-66" name="__codelineno-3-66" href="#__codelineno-3-66"></a>
+<a id="__codelineno-3-67" name="__codelineno-3-67" href="#__codelineno-3-67"></a>},
+<a id="__codelineno-3-68" name="__codelineno-3-68" href="#__codelineno-3-68"></a>
+<a id="__codelineno-3-69" name="__codelineno-3-69" href="#__codelineno-3-69"></a>
+<a id="__codelineno-3-70" name="__codelineno-3-70" href="#__codelineno-3-70"></a>&quot;userSessions&quot;: {
+<a id="__codelineno-3-71" name="__codelineno-3-71" href="#__codelineno-3-71"></a>
+<a id="__codelineno-3-72" name="__codelineno-3-72" href="#__codelineno-3-72"></a>
+<a id="__codelineno-3-73" name="__codelineno-3-73" href="#__codelineno-3-73"></a>&quot;totalMonthlyLimit&quot;: null,
+<a id="__codelineno-3-74" name="__codelineno-3-74" href="#__codelineno-3-74"></a>
+<a id="__codelineno-3-75" name="__codelineno-3-75" href="#__codelineno-3-75"></a>
+<a id="__codelineno-3-76" name="__codelineno-3-76" href="#__codelineno-3-76"></a>&quot;totalAnnualLimit&quot;: null,
+<a id="__codelineno-3-77" name="__codelineno-3-77" href="#__codelineno-3-77"></a>
+<a id="__codelineno-3-78" name="__codelineno-3-78" href="#__codelineno-3-78"></a>
+<a id="__codelineno-3-79" name="__codelineno-3-79" href="#__codelineno-3-79"></a>&quot;totalConsumedThisMonth&quot;: 0,
+<a id="__codelineno-3-80" name="__codelineno-3-80" href="#__codelineno-3-80"></a>
+<a id="__codelineno-3-81" name="__codelineno-3-81" href="#__codelineno-3-81"></a>
+<a id="__codelineno-3-82" name="__codelineno-3-82" href="#__codelineno-3-82"></a>&quot;totalConsumedThisYear&quot;: 0,
+<a id="__codelineno-3-83" name="__codelineno-3-83" href="#__codelineno-3-83"></a>
+<a id="__codelineno-3-84" name="__codelineno-3-84" href="#__codelineno-3-84"></a>
+<a id="__codelineno-3-85" name="__codelineno-3-85" href="#__codelineno-3-85"></a>&quot;consumedMobileSessionsThisMonth&quot;: 0,
+<a id="__codelineno-3-86" name="__codelineno-3-86" href="#__codelineno-3-86"></a>
+<a id="__codelineno-3-87" name="__codelineno-3-87" href="#__codelineno-3-87"></a>
+<a id="__codelineno-3-88" name="__codelineno-3-88" href="#__codelineno-3-88"></a>&quot;consumedMobileSessionsThisYear&quot;: 0,
+<a id="__codelineno-3-89" name="__codelineno-3-89" href="#__codelineno-3-89"></a>
+<a id="__codelineno-3-90" name="__codelineno-3-90" href="#__codelineno-3-90"></a>
+<a id="__codelineno-3-91" name="__codelineno-3-91" href="#__codelineno-3-91"></a>&quot;consumedUserSessionsWithWebSessionReplayThisMonth&quot;: 0,
+<a id="__codelineno-3-92" name="__codelineno-3-92" href="#__codelineno-3-92"></a>
+<a id="__codelineno-3-93" name="__codelineno-3-93" href="#__codelineno-3-93"></a>
+<a id="__codelineno-3-94" name="__codelineno-3-94" href="#__codelineno-3-94"></a>&quot;consumedUserSessionsWithWebSessionReplayThisYear&quot;: 0,
+<a id="__codelineno-3-95" name="__codelineno-3-95" href="#__codelineno-3-95"></a>
+<a id="__codelineno-3-96" name="__codelineno-3-96" href="#__codelineno-3-96"></a>
+<a id="__codelineno-3-97" name="__codelineno-3-97" href="#__codelineno-3-97"></a>&quot;consumedUserSessionsWithMobileSessionReplayThisMonth&quot;: 0,
+<a id="__codelineno-3-98" name="__codelineno-3-98" href="#__codelineno-3-98"></a>
+<a id="__codelineno-3-99" name="__codelineno-3-99" href="#__codelineno-3-99"></a>
+<a id="__codelineno-3-100" name="__codelineno-3-100" href="#__codelineno-3-100"></a>&quot;consumedUserSessionsWithMobileSessionReplayThisYear&quot;: 0
+<a id="__codelineno-3-101" name="__codelineno-3-101" href="#__codelineno-3-101"></a>
+<a id="__codelineno-3-102" name="__codelineno-3-102" href="#__codelineno-3-102"></a>
+<a id="__codelineno-3-103" name="__codelineno-3-103" href="#__codelineno-3-103"></a>},
+<a id="__codelineno-3-104" name="__codelineno-3-104" href="#__codelineno-3-104"></a>
+<a id="__codelineno-3-105" name="__codelineno-3-105" href="#__codelineno-3-105"></a>
+<a id="__codelineno-3-106" name="__codelineno-3-106" href="#__codelineno-3-106"></a>&quot;sessionProperties&quot;: {
+<a id="__codelineno-3-107" name="__codelineno-3-107" href="#__codelineno-3-107"></a>
+<a id="__codelineno-3-108" name="__codelineno-3-108" href="#__codelineno-3-108"></a>
+<a id="__codelineno-3-109" name="__codelineno-3-109" href="#__codelineno-3-109"></a>&quot;consumedThisMonth&quot;: 0,
+<a id="__codelineno-3-110" name="__codelineno-3-110" href="#__codelineno-3-110"></a>
+<a id="__codelineno-3-111" name="__codelineno-3-111" href="#__codelineno-3-111"></a>
+<a id="__codelineno-3-112" name="__codelineno-3-112" href="#__codelineno-3-112"></a>&quot;consumedThisYear&quot;: 0
+<a id="__codelineno-3-113" name="__codelineno-3-113" href="#__codelineno-3-113"></a>
+<a id="__codelineno-3-114" name="__codelineno-3-114" href="#__codelineno-3-114"></a>
+<a id="__codelineno-3-115" name="__codelineno-3-115" href="#__codelineno-3-115"></a>},
+<a id="__codelineno-3-116" name="__codelineno-3-116" href="#__codelineno-3-116"></a>
+<a id="__codelineno-3-117" name="__codelineno-3-117" href="#__codelineno-3-117"></a>
+<a id="__codelineno-3-118" name="__codelineno-3-118" href="#__codelineno-3-118"></a>&quot;syntheticMonitors&quot;: {
+<a id="__codelineno-3-119" name="__codelineno-3-119" href="#__codelineno-3-119"></a>
+<a id="__codelineno-3-120" name="__codelineno-3-120" href="#__codelineno-3-120"></a>
+<a id="__codelineno-3-121" name="__codelineno-3-121" href="#__codelineno-3-121"></a>&quot;monthlyLimit&quot;: null,
+<a id="__codelineno-3-122" name="__codelineno-3-122" href="#__codelineno-3-122"></a>
+<a id="__codelineno-3-123" name="__codelineno-3-123" href="#__codelineno-3-123"></a>
+<a id="__codelineno-3-124" name="__codelineno-3-124" href="#__codelineno-3-124"></a>&quot;annualLimit&quot;: null,
+<a id="__codelineno-3-125" name="__codelineno-3-125" href="#__codelineno-3-125"></a>
+<a id="__codelineno-3-126" name="__codelineno-3-126" href="#__codelineno-3-126"></a>
+<a id="__codelineno-3-127" name="__codelineno-3-127" href="#__codelineno-3-127"></a>&quot;consumedThisMonth&quot;: 0,
+<a id="__codelineno-3-128" name="__codelineno-3-128" href="#__codelineno-3-128"></a>
+<a id="__codelineno-3-129" name="__codelineno-3-129" href="#__codelineno-3-129"></a>
+<a id="__codelineno-3-130" name="__codelineno-3-130" href="#__codelineno-3-130"></a>&quot;consumedThisYear&quot;: 0
+<a id="__codelineno-3-131" name="__codelineno-3-131" href="#__codelineno-3-131"></a>
+<a id="__codelineno-3-132" name="__codelineno-3-132" href="#__codelineno-3-132"></a>
+<a id="__codelineno-3-133" name="__codelineno-3-133" href="#__codelineno-3-133"></a>},
+<a id="__codelineno-3-134" name="__codelineno-3-134" href="#__codelineno-3-134"></a>
+<a id="__codelineno-3-135" name="__codelineno-3-135" href="#__codelineno-3-135"></a>
+<a id="__codelineno-3-136" name="__codelineno-3-136" href="#__codelineno-3-136"></a>&quot;customMetrics&quot;: null,
+<a id="__codelineno-3-137" name="__codelineno-3-137" href="#__codelineno-3-137"></a>
+<a id="__codelineno-3-138" name="__codelineno-3-138" href="#__codelineno-3-138"></a>
+<a id="__codelineno-3-139" name="__codelineno-3-139" href="#__codelineno-3-139"></a>&quot;davisDataUnits&quot;: {
+<a id="__codelineno-3-140" name="__codelineno-3-140" href="#__codelineno-3-140"></a>
+<a id="__codelineno-3-141" name="__codelineno-3-141" href="#__codelineno-3-141"></a>
+<a id="__codelineno-3-142" name="__codelineno-3-142" href="#__codelineno-3-142"></a>&quot;monthlyLimit&quot;: 18162,
+<a id="__codelineno-3-143" name="__codelineno-3-143" href="#__codelineno-3-143"></a>
+<a id="__codelineno-3-144" name="__codelineno-3-144" href="#__codelineno-3-144"></a>
+<a id="__codelineno-3-145" name="__codelineno-3-145" href="#__codelineno-3-145"></a>&quot;annualLimit&quot;: null,
+<a id="__codelineno-3-146" name="__codelineno-3-146" href="#__codelineno-3-146"></a>
+<a id="__codelineno-3-147" name="__codelineno-3-147" href="#__codelineno-3-147"></a>
+<a id="__codelineno-3-148" name="__codelineno-3-148" href="#__codelineno-3-148"></a>&quot;consumedThisMonth&quot;: 0,
+<a id="__codelineno-3-149" name="__codelineno-3-149" href="#__codelineno-3-149"></a>
+<a id="__codelineno-3-150" name="__codelineno-3-150" href="#__codelineno-3-150"></a>
+<a id="__codelineno-3-151" name="__codelineno-3-151" href="#__codelineno-3-151"></a>&quot;consumedThisYear&quot;: 0
+<a id="__codelineno-3-152" name="__codelineno-3-152" href="#__codelineno-3-152"></a>
+<a id="__codelineno-3-153" name="__codelineno-3-153" href="#__codelineno-3-153"></a>
+<a id="__codelineno-3-154" name="__codelineno-3-154" href="#__codelineno-3-154"></a>},
+<a id="__codelineno-3-155" name="__codelineno-3-155" href="#__codelineno-3-155"></a>
+<a id="__codelineno-3-156" name="__codelineno-3-156" href="#__codelineno-3-156"></a>
+<a id="__codelineno-3-157" name="__codelineno-3-157" href="#__codelineno-3-157"></a>&quot;logMonitoring&quot;: null
+<a id="__codelineno-3-158" name="__codelineno-3-158" href="#__codelineno-3-158"></a>
+<a id="__codelineno-3-159" name="__codelineno-3-159" href="#__codelineno-3-159"></a>
+<a id="__codelineno-3-160" name="__codelineno-3-160" href="#__codelineno-3-160"></a>}
+<a id="__codelineno-3-161" name="__codelineno-3-161" href="#__codelineno-3-161"></a>
+<a id="__codelineno-3-162" name="__codelineno-3-162" href="#__codelineno-3-162"></a>
+<a id="__codelineno-3-163" name="__codelineno-3-163" href="#__codelineno-3-163"></a>},
+<a id="__codelineno-3-164" name="__codelineno-3-164" href="#__codelineno-3-164"></a>
+<a id="__codelineno-3-165" name="__codelineno-3-165" href="#__codelineno-3-165"></a>
+<a id="__codelineno-3-166" name="__codelineno-3-166" href="#__codelineno-3-166"></a>{
+<a id="__codelineno-3-167" name="__codelineno-3-167" href="#__codelineno-3-167"></a>
+<a id="__codelineno-3-168" name="__codelineno-3-168" href="#__codelineno-3-168"></a>
+<a id="__codelineno-3-169" name="__codelineno-3-169" href="#__codelineno-3-169"></a>&quot;name&quot;: &quot;Service Team&quot;,
+<a id="__codelineno-3-170" name="__codelineno-3-170" href="#__codelineno-3-170"></a>
+<a id="__codelineno-3-171" name="__codelineno-3-171" href="#__codelineno-3-171"></a>
+<a id="__codelineno-3-172" name="__codelineno-3-172" href="#__codelineno-3-172"></a>&quot;id&quot;: &quot;881c4134-0000-0a00-aa0a-5b03ab7a34ed&quot;,
+<a id="__codelineno-3-173" name="__codelineno-3-173" href="#__codelineno-3-173"></a>
+<a id="__codelineno-3-174" name="__codelineno-3-174" href="#__codelineno-3-174"></a>
+<a id="__codelineno-3-175" name="__codelineno-3-175" href="#__codelineno-3-175"></a>&quot;trial&quot;: false,
+<a id="__codelineno-3-176" name="__codelineno-3-176" href="#__codelineno-3-176"></a>
+<a id="__codelineno-3-177" name="__codelineno-3-177" href="#__codelineno-3-177"></a>
+<a id="__codelineno-3-178" name="__codelineno-3-178" href="#__codelineno-3-178"></a>&quot;state&quot;: &quot;ENABLED&quot;,
+<a id="__codelineno-3-179" name="__codelineno-3-179" href="#__codelineno-3-179"></a>
+<a id="__codelineno-3-180" name="__codelineno-3-180" href="#__codelineno-3-180"></a>
+<a id="__codelineno-3-181" name="__codelineno-3-181" href="#__codelineno-3-181"></a>&quot;tags&quot;: [],
+<a id="__codelineno-3-182" name="__codelineno-3-182" href="#__codelineno-3-182"></a>
+<a id="__codelineno-3-183" name="__codelineno-3-183" href="#__codelineno-3-183"></a>
+<a id="__codelineno-3-184" name="__codelineno-3-184" href="#__codelineno-3-184"></a>&quot;creationDate&quot;: &quot;2021-02-07T08:49:45.091Z&quot;,
+<a id="__codelineno-3-185" name="__codelineno-3-185" href="#__codelineno-3-185"></a>
+<a id="__codelineno-3-186" name="__codelineno-3-186" href="#__codelineno-3-186"></a>
+<a id="__codelineno-3-187" name="__codelineno-3-187" href="#__codelineno-3-187"></a>&quot;quotas&quot;: {
+<a id="__codelineno-3-188" name="__codelineno-3-188" href="#__codelineno-3-188"></a>
+<a id="__codelineno-3-189" name="__codelineno-3-189" href="#__codelineno-3-189"></a>
+<a id="__codelineno-3-190" name="__codelineno-3-190" href="#__codelineno-3-190"></a>&quot;hostUnits&quot;: {
+<a id="__codelineno-3-191" name="__codelineno-3-191" href="#__codelineno-3-191"></a>
+<a id="__codelineno-3-192" name="__codelineno-3-192" href="#__codelineno-3-192"></a>
+<a id="__codelineno-3-193" name="__codelineno-3-193" href="#__codelineno-3-193"></a>&quot;maxLimit&quot;: null,
+<a id="__codelineno-3-194" name="__codelineno-3-194" href="#__codelineno-3-194"></a>
+<a id="__codelineno-3-195" name="__codelineno-3-195" href="#__codelineno-3-195"></a>
+<a id="__codelineno-3-196" name="__codelineno-3-196" href="#__codelineno-3-196"></a>&quot;currentUsage&quot;: 0
+<a id="__codelineno-3-197" name="__codelineno-3-197" href="#__codelineno-3-197"></a>
+<a id="__codelineno-3-198" name="__codelineno-3-198" href="#__codelineno-3-198"></a>
+<a id="__codelineno-3-199" name="__codelineno-3-199" href="#__codelineno-3-199"></a>},
+<a id="__codelineno-3-200" name="__codelineno-3-200" href="#__codelineno-3-200"></a>
+<a id="__codelineno-3-201" name="__codelineno-3-201" href="#__codelineno-3-201"></a>
+<a id="__codelineno-3-202" name="__codelineno-3-202" href="#__codelineno-3-202"></a>&quot;demUnits&quot;: {
+<a id="__codelineno-3-203" name="__codelineno-3-203" href="#__codelineno-3-203"></a>
+<a id="__codelineno-3-204" name="__codelineno-3-204" href="#__codelineno-3-204"></a>
+<a id="__codelineno-3-205" name="__codelineno-3-205" href="#__codelineno-3-205"></a>&quot;monthlyLimit&quot;: null,
+<a id="__codelineno-3-206" name="__codelineno-3-206" href="#__codelineno-3-206"></a>
+<a id="__codelineno-3-207" name="__codelineno-3-207" href="#__codelineno-3-207"></a>
+<a id="__codelineno-3-208" name="__codelineno-3-208" href="#__codelineno-3-208"></a>&quot;annualLimit&quot;: null,
+<a id="__codelineno-3-209" name="__codelineno-3-209" href="#__codelineno-3-209"></a>
+<a id="__codelineno-3-210" name="__codelineno-3-210" href="#__codelineno-3-210"></a>
+<a id="__codelineno-3-211" name="__codelineno-3-211" href="#__codelineno-3-211"></a>&quot;consumedThisMonth&quot;: 0,
+<a id="__codelineno-3-212" name="__codelineno-3-212" href="#__codelineno-3-212"></a>
+<a id="__codelineno-3-213" name="__codelineno-3-213" href="#__codelineno-3-213"></a>
+<a id="__codelineno-3-214" name="__codelineno-3-214" href="#__codelineno-3-214"></a>&quot;consumedThisYear&quot;: 62
+<a id="__codelineno-3-215" name="__codelineno-3-215" href="#__codelineno-3-215"></a>
+<a id="__codelineno-3-216" name="__codelineno-3-216" href="#__codelineno-3-216"></a>
+<a id="__codelineno-3-217" name="__codelineno-3-217" href="#__codelineno-3-217"></a>},
+<a id="__codelineno-3-218" name="__codelineno-3-218" href="#__codelineno-3-218"></a>
+<a id="__codelineno-3-219" name="__codelineno-3-219" href="#__codelineno-3-219"></a>
+<a id="__codelineno-3-220" name="__codelineno-3-220" href="#__codelineno-3-220"></a>&quot;userSessions&quot;: {
+<a id="__codelineno-3-221" name="__codelineno-3-221" href="#__codelineno-3-221"></a>
+<a id="__codelineno-3-222" name="__codelineno-3-222" href="#__codelineno-3-222"></a>
+<a id="__codelineno-3-223" name="__codelineno-3-223" href="#__codelineno-3-223"></a>&quot;totalMonthlyLimit&quot;: null,
+<a id="__codelineno-3-224" name="__codelineno-3-224" href="#__codelineno-3-224"></a>
+<a id="__codelineno-3-225" name="__codelineno-3-225" href="#__codelineno-3-225"></a>
+<a id="__codelineno-3-226" name="__codelineno-3-226" href="#__codelineno-3-226"></a>&quot;totalAnnualLimit&quot;: null,
+<a id="__codelineno-3-227" name="__codelineno-3-227" href="#__codelineno-3-227"></a>
+<a id="__codelineno-3-228" name="__codelineno-3-228" href="#__codelineno-3-228"></a>
+<a id="__codelineno-3-229" name="__codelineno-3-229" href="#__codelineno-3-229"></a>&quot;totalConsumedThisMonth&quot;: 0,
+<a id="__codelineno-3-230" name="__codelineno-3-230" href="#__codelineno-3-230"></a>
+<a id="__codelineno-3-231" name="__codelineno-3-231" href="#__codelineno-3-231"></a>
+<a id="__codelineno-3-232" name="__codelineno-3-232" href="#__codelineno-3-232"></a>&quot;totalConsumedThisYear&quot;: 0,
+<a id="__codelineno-3-233" name="__codelineno-3-233" href="#__codelineno-3-233"></a>
+<a id="__codelineno-3-234" name="__codelineno-3-234" href="#__codelineno-3-234"></a>
+<a id="__codelineno-3-235" name="__codelineno-3-235" href="#__codelineno-3-235"></a>&quot;consumedMobileSessionsThisMonth&quot;: 0,
+<a id="__codelineno-3-236" name="__codelineno-3-236" href="#__codelineno-3-236"></a>
+<a id="__codelineno-3-237" name="__codelineno-3-237" href="#__codelineno-3-237"></a>
+<a id="__codelineno-3-238" name="__codelineno-3-238" href="#__codelineno-3-238"></a>&quot;consumedMobileSessionsThisYear&quot;: 0,
+<a id="__codelineno-3-239" name="__codelineno-3-239" href="#__codelineno-3-239"></a>
+<a id="__codelineno-3-240" name="__codelineno-3-240" href="#__codelineno-3-240"></a>
+<a id="__codelineno-3-241" name="__codelineno-3-241" href="#__codelineno-3-241"></a>&quot;consumedUserSessionsWithWebSessionReplayThisMonth&quot;: 0,
+<a id="__codelineno-3-242" name="__codelineno-3-242" href="#__codelineno-3-242"></a>
+<a id="__codelineno-3-243" name="__codelineno-3-243" href="#__codelineno-3-243"></a>
+<a id="__codelineno-3-244" name="__codelineno-3-244" href="#__codelineno-3-244"></a>&quot;consumedUserSessionsWithWebSessionReplayThisYear&quot;: 0,
+<a id="__codelineno-3-245" name="__codelineno-3-245" href="#__codelineno-3-245"></a>
+<a id="__codelineno-3-246" name="__codelineno-3-246" href="#__codelineno-3-246"></a>
+<a id="__codelineno-3-247" name="__codelineno-3-247" href="#__codelineno-3-247"></a>&quot;consumedUserSessionsWithMobileSessionReplayThisMonth&quot;: 0,
+<a id="__codelineno-3-248" name="__codelineno-3-248" href="#__codelineno-3-248"></a>
+<a id="__codelineno-3-249" name="__codelineno-3-249" href="#__codelineno-3-249"></a>
+<a id="__codelineno-3-250" name="__codelineno-3-250" href="#__codelineno-3-250"></a>&quot;consumedUserSessionsWithMobileSessionReplayThisYear&quot;: 0
+<a id="__codelineno-3-251" name="__codelineno-3-251" href="#__codelineno-3-251"></a>
+<a id="__codelineno-3-252" name="__codelineno-3-252" href="#__codelineno-3-252"></a>
+<a id="__codelineno-3-253" name="__codelineno-3-253" href="#__codelineno-3-253"></a>},
+<a id="__codelineno-3-254" name="__codelineno-3-254" href="#__codelineno-3-254"></a>
+<a id="__codelineno-3-255" name="__codelineno-3-255" href="#__codelineno-3-255"></a>
+<a id="__codelineno-3-256" name="__codelineno-3-256" href="#__codelineno-3-256"></a>&quot;sessionProperties&quot;: {
+<a id="__codelineno-3-257" name="__codelineno-3-257" href="#__codelineno-3-257"></a>
+<a id="__codelineno-3-258" name="__codelineno-3-258" href="#__codelineno-3-258"></a>
+<a id="__codelineno-3-259" name="__codelineno-3-259" href="#__codelineno-3-259"></a>&quot;consumedThisMonth&quot;: 0,
+<a id="__codelineno-3-260" name="__codelineno-3-260" href="#__codelineno-3-260"></a>
+<a id="__codelineno-3-261" name="__codelineno-3-261" href="#__codelineno-3-261"></a>
+<a id="__codelineno-3-262" name="__codelineno-3-262" href="#__codelineno-3-262"></a>&quot;consumedThisYear&quot;: 0
+<a id="__codelineno-3-263" name="__codelineno-3-263" href="#__codelineno-3-263"></a>
+<a id="__codelineno-3-264" name="__codelineno-3-264" href="#__codelineno-3-264"></a>
+<a id="__codelineno-3-265" name="__codelineno-3-265" href="#__codelineno-3-265"></a>},
+<a id="__codelineno-3-266" name="__codelineno-3-266" href="#__codelineno-3-266"></a>
+<a id="__codelineno-3-267" name="__codelineno-3-267" href="#__codelineno-3-267"></a>
+<a id="__codelineno-3-268" name="__codelineno-3-268" href="#__codelineno-3-268"></a>&quot;syntheticMonitors&quot;: {
+<a id="__codelineno-3-269" name="__codelineno-3-269" href="#__codelineno-3-269"></a>
+<a id="__codelineno-3-270" name="__codelineno-3-270" href="#__codelineno-3-270"></a>
+<a id="__codelineno-3-271" name="__codelineno-3-271" href="#__codelineno-3-271"></a>&quot;monthlyLimit&quot;: null,
+<a id="__codelineno-3-272" name="__codelineno-3-272" href="#__codelineno-3-272"></a>
+<a id="__codelineno-3-273" name="__codelineno-3-273" href="#__codelineno-3-273"></a>
+<a id="__codelineno-3-274" name="__codelineno-3-274" href="#__codelineno-3-274"></a>&quot;annualLimit&quot;: null,
+<a id="__codelineno-3-275" name="__codelineno-3-275" href="#__codelineno-3-275"></a>
+<a id="__codelineno-3-276" name="__codelineno-3-276" href="#__codelineno-3-276"></a>
+<a id="__codelineno-3-277" name="__codelineno-3-277" href="#__codelineno-3-277"></a>&quot;consumedThisMonth&quot;: 0,
+<a id="__codelineno-3-278" name="__codelineno-3-278" href="#__codelineno-3-278"></a>
+<a id="__codelineno-3-279" name="__codelineno-3-279" href="#__codelineno-3-279"></a>
+<a id="__codelineno-3-280" name="__codelineno-3-280" href="#__codelineno-3-280"></a>&quot;consumedThisYear&quot;: 62
+<a id="__codelineno-3-281" name="__codelineno-3-281" href="#__codelineno-3-281"></a>
+<a id="__codelineno-3-282" name="__codelineno-3-282" href="#__codelineno-3-282"></a>
+<a id="__codelineno-3-283" name="__codelineno-3-283" href="#__codelineno-3-283"></a>},
+<a id="__codelineno-3-284" name="__codelineno-3-284" href="#__codelineno-3-284"></a>
+<a id="__codelineno-3-285" name="__codelineno-3-285" href="#__codelineno-3-285"></a>
+<a id="__codelineno-3-286" name="__codelineno-3-286" href="#__codelineno-3-286"></a>&quot;customMetrics&quot;: null,
+<a id="__codelineno-3-287" name="__codelineno-3-287" href="#__codelineno-3-287"></a>
+<a id="__codelineno-3-288" name="__codelineno-3-288" href="#__codelineno-3-288"></a>
+<a id="__codelineno-3-289" name="__codelineno-3-289" href="#__codelineno-3-289"></a>&quot;davisDataUnits&quot;: {
+<a id="__codelineno-3-290" name="__codelineno-3-290" href="#__codelineno-3-290"></a>
+<a id="__codelineno-3-291" name="__codelineno-3-291" href="#__codelineno-3-291"></a>
+<a id="__codelineno-3-292" name="__codelineno-3-292" href="#__codelineno-3-292"></a>&quot;monthlyLimit&quot;: null,
+<a id="__codelineno-3-293" name="__codelineno-3-293" href="#__codelineno-3-293"></a>
+<a id="__codelineno-3-294" name="__codelineno-3-294" href="#__codelineno-3-294"></a>
+<a id="__codelineno-3-295" name="__codelineno-3-295" href="#__codelineno-3-295"></a>&quot;annualLimit&quot;: null,
+<a id="__codelineno-3-296" name="__codelineno-3-296" href="#__codelineno-3-296"></a>
+<a id="__codelineno-3-297" name="__codelineno-3-297" href="#__codelineno-3-297"></a>
+<a id="__codelineno-3-298" name="__codelineno-3-298" href="#__codelineno-3-298"></a>&quot;consumedThisMonth&quot;: 0,
+<a id="__codelineno-3-299" name="__codelineno-3-299" href="#__codelineno-3-299"></a>
+<a id="__codelineno-3-300" name="__codelineno-3-300" href="#__codelineno-3-300"></a>
+<a id="__codelineno-3-301" name="__codelineno-3-301" href="#__codelineno-3-301"></a>&quot;consumedThisYear&quot;: 0
+<a id="__codelineno-3-302" name="__codelineno-3-302" href="#__codelineno-3-302"></a>
+<a id="__codelineno-3-303" name="__codelineno-3-303" href="#__codelineno-3-303"></a>
+<a id="__codelineno-3-304" name="__codelineno-3-304" href="#__codelineno-3-304"></a>},
+<a id="__codelineno-3-305" name="__codelineno-3-305" href="#__codelineno-3-305"></a>
+<a id="__codelineno-3-306" name="__codelineno-3-306" href="#__codelineno-3-306"></a>
+<a id="__codelineno-3-307" name="__codelineno-3-307" href="#__codelineno-3-307"></a>&quot;logMonitoring&quot;: null
+<a id="__codelineno-3-308" name="__codelineno-3-308" href="#__codelineno-3-308"></a>
+<a id="__codelineno-3-309" name="__codelineno-3-309" href="#__codelineno-3-309"></a>
+<a id="__codelineno-3-310" name="__codelineno-3-310" href="#__codelineno-3-310"></a>}
+<a id="__codelineno-3-311" name="__codelineno-3-311" href="#__codelineno-3-311"></a>
+<a id="__codelineno-3-312" name="__codelineno-3-312" href="#__codelineno-3-312"></a>
+<a id="__codelineno-3-313" name="__codelineno-3-313" href="#__codelineno-3-313"></a>}
+<a id="__codelineno-3-314" name="__codelineno-3-314" href="#__codelineno-3-314"></a>
+<a id="__codelineno-3-315" name="__codelineno-3-315" href="#__codelineno-3-315"></a>
+<a id="__codelineno-3-316" name="__codelineno-3-316" href="#__codelineno-3-316"></a>]
+<a id="__codelineno-3-317" name="__codelineno-3-317" href="#__codelineno-3-317"></a>
+<a id="__codelineno-3-318" name="__codelineno-3-318" href="#__codelineno-3-318"></a>
+<a id="__codelineno-3-319" name="__codelineno-3-319" href="#__codelineno-3-319"></a>}
+</code></pre></div>
+<h4 id="_8">Код ответа<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h4>
+<p><code>200</code></p>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  К началу
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      © 2026 Dynatrace Docs | Yerkebulan Ardabayev
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/Yerkebulan-Ardabayev" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../../../../../..", "features": ["navigation.indexes", "navigation.prune", "navigation.path", "navigation.tracking", "navigation.top", "search.suggest", "search.highlight", "search.share", "content.code.copy", "content.code.annotate", "content.tabs.link", "content.tooltips", "toc.follow"], "search": "../../../../../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u0421\u043a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u043d\u043e \u0432 \u0431\u0443\u0444\u0435\u0440", "clipboard.copy": "\u041a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u0442\u044c \u0432 \u0431\u0443\u0444\u0435\u0440", "search.result.more.one": "\u0415\u0449\u0451 1 \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.more.other": "\u0415\u0449\u0451 # \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.none": "\u0421\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439 \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u043e", "search.result.one": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e 1 \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0435", "search.result.other": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439: #", "search.result.placeholder": "\u041d\u0430\u0447\u043d\u0438\u0442\u0435 \u043f\u0435\u0447\u0430\u0442\u0430\u0442\u044c \u0434\u043b\u044f \u043f\u043e\u0438\u0441\u043a\u0430", "search.result.term.missing": "\u041e\u0442\u0441\u0443\u0442\u0441\u0442\u0432\u0443\u0435\u0442", "select.version": "\u0412\u044b\u0431\u0435\u0440\u0438\u0442\u0435 \u0432\u0435\u0440\u0441\u0438\u044e"}, "version": null}</script>
+    
+    
+  
+      <script src="../../../../../../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../../../../../../../assets/javascripts/groq-chat.js?sha=17d46ba74"></script>
+      
+    
+  <script>
+    (function() {
+      // --- Keyboard shortcut Ctrl+K / Cmd+K for search ---
+      document.addEventListener('keydown', function(e) {
+        if ((e.ctrlKey || e.metaKey) && e.key === 'k') {
+          e.preventDefault();
+          var searchInput = document.querySelector('.md-search__input');
+          if (searchInput) {
+            searchInput.focus();
+            var searchToggle = document.querySelector('[data-md-toggle="search"]');
+            if (searchToggle && !searchToggle.checked) {
+              searchToggle.checked = true;
+              searchToggle.dispatchEvent(new Event('change'));
+            }
+          }
+        }
+        // --- "/" focuses search like GitHub / Algolia docs ---
+        if (e.key === '/' && !/^(input|textarea|select)$/i.test(e.target.tagName)) {
+          e.preventDefault();
+          var inp = document.querySelector('.md-search__input');
+          if (inp) {
+            inp.focus();
+            var t = document.querySelector('[data-md-toggle="search"]');
+            if (t && !t.checked) { t.checked = true; t.dispatchEvent(new Event('change')); }
+          }
+        }
+      });
+    })();
+  </script>
+
+  </body>
+</html>

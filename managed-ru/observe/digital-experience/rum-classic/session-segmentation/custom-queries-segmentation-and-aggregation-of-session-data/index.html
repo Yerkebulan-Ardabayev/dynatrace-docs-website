@@ -1,0 +1,4380 @@
+
+<!doctype html>
+<html lang="ru" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Документация Dynatrace Managed с AI-помощником">
+      
+      
+        <meta name="author" content="Yerkebulan Ardabayev">
+      
+      
+        <link rel="canonical" href="https://yerkebulan-ardabayev.github.io/dynatrace-docs-website/managed-ru/observe/digital-experience/rum-classic/session-segmentation/custom-queries-segmentation-and-aggregation-of-session-data/">
+      
+      
+        <link rel="prev" href="../apdex-analysis/">
+      
+      
+        <link rel="next" href="../export-session-data/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>Пользовательские запросы, сегментация и агрегация данных сессий в RUM Classic - Dynatrace — Документация</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Inter";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../../../assets/stylesheets/extra.v11.css?sha=17d46ba74">
+    
+    <script>__md_scope=new URL("../../../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  <style>
+    /* DocFlow DT Logo Badge — injected via template override */
+    .md-header__button.md-logo {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .md-header__button.md-logo img,
+    .md-header__button.md-logo svg {
+      display: none !important;
+    }
+    .md-header__button.md-logo::before {
+      content: 'DT';
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 28px;
+      height: 28px;
+      border-radius: 6px;
+      background: linear-gradient(135deg, #00d4aa 0%, #7c3aed 100%);
+      color: white;
+      font-size: 11px;
+      font-weight: 700;
+      font-family: 'Inter', sans-serif;
+      letter-spacing: -0.02em;
+      flex-shrink: 0;
+    }
+
+    /* Search Ctrl+K badge — inside input field */
+    .md-search__form {
+      position: relative;
+    }
+    .md-search__form::after {
+      content: 'Ctrl+K';
+      display: none;
+      align-items: center;
+      padding: 0.15rem 0.4rem;
+      border-radius: 4px;
+      border: 1px solid var(--docflow-border);
+      background: var(--md-default-bg-color);
+      font-size: 10px;
+      font-family: 'JetBrains Mono', monospace;
+      color: var(--md-default-fg-color--lighter);
+      white-space: nowrap;
+      pointer-events: none;
+      position: absolute;
+      right: 0.5rem;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+    @media (min-width: 60em) {
+      .md-search__form::after {
+        display: flex;
+      }
+    }
+  </style>
+
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="custom">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#rum-classic" class="md-skip">
+          Перейти к содержанию
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+  
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Верхний колонтитул">
+    <a href="../../../../../.." title="Dynatrace — Документация" class="md-header__button md-logo" aria-label="Dynatrace — Документация" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M11 15H6l7-14v8h5l-7 14z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Dynatrace — Документация
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Пользовательские запросы, сегментация и агрегация данных сессий в RUM Classic
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Переключить на светлую тему"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Переключить на светлую тему" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Переключить на тёмную тему"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Переключить на тёмную тему" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Поиск" placeholder="Поиск" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Поиск">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Поделиться" aria-label="Поделиться" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Очистить" aria-label="Очистить" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Инициализация поиска
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/Yerkebulan-Ardabayev/dynatrace-docs-website" title="Перейти к репозиторию" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    dynatrace-docs-website
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Навигация" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../../../.." title="Dynatrace — Документация" class="md-nav__button md-logo" aria-label="Dynatrace — Документация" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M11 15H6l7-14v8h5l-7 14z"/></svg>
+
+    </a>
+    Dynatrace — Документация
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/Yerkebulan-Ardabayev/dynatrace-docs-website" title="Перейти к репозиторию" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    dynatrace-docs-website
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Главная
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../../../../ru/getting-started/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Начало работы
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../../../installation/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Кластер Managed
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../../../ingest-from/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Источники данных
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Наблюдаемость
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Наблюдаемость
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../../application-observability/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Наблюдаемость приложений
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_5_2" id="__nav_5_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Digital Experience
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Digital Experience
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обзор
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../custom-applications/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Пользовательские приложения
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../dem-use-cases/customer-support-with-session-segmentation/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Сценарии DEM
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../mobile-applications/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Мобильные приложения
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_2_5" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_5_2_5" id="__nav_5_2_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    rum-classic
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_5_2_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5_2_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    rum-classic
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    
+  
+  
+  
+    <a href="../../custom-applications/additional-configuration/configure-apdex-custom/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    custom-applications
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    
+  
+  
+  
+    <a href="../../mobile-applications/additional-configuration/configure-apdex-mobile/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    mobile-applications
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../rum-concepts/applications/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    rum-concepts
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_2_5_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_5_2_5_4" id="__nav_5_2_5_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    session-segmentation
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_5_2_5_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5_2_5_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    session-segmentation
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../analyze-all-sessions-of-a-single-user/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Данные о пользователе в RUM Classic
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../apdex-analysis/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Контекстный анализ Apdex в RUM Classic
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Пользовательские запросы, сегментация и агрегация данных сессий в RUM Classic
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../export-session-data/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Экспорт пользовательских сессий в RUM Classic
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../user-sessions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Анализ пользовательских сеансов в RUM Classic
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    
+  
+  
+  
+    <a href="../../web-applications/additional-configuration/application-detection-rules/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    web-applications
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+  
+
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../rum-concepts/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Концепции мониторинга реальных пользователей
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../session-replay/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Session Replay
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../session-segmentation/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Сегментация сессий пользователей
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../synthetic-monitoring/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Synthetic Monitoring
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../web-applications/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Веб-приложения
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../../infrastructure-observability/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Наблюдаемость инфраструктуры
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../../../dynatrace-intelligence/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Davis AI
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    
+  
+  
+  
+    <a href="../../../../../analyze-explore-automate/dashboards-classic/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Анализ
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../../../deliver/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Deliver
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    
+  
+  
+  
+    <a href="../../../../../secure/application-security/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Безопасность приложений
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    
+  
+  
+  
+    <a href="../../../../../manage/account-management/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Управление
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    
+  
+  
+  
+    <a href="../../../../../platform/oneagent/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Платформа
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../../../dynatrace-api/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../../../whats-new/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Что нового
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../../../offline-doc/how-do-i-enable-synthetic-monitors/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Офлайн-документация
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../../../../ru/training/day1-introduction/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обучение
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../ai/groq/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI Помощник
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Содержание">
+  
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+                
+
+
+
+  
+
+
+  <nav class="md-path" aria-label="Навигация" >
+    <ol class="md-path__list">
+      
+        
+  
+  
+    <li class="md-path__item">
+      <a href="../../../../../.." class="md-path__link">
+        
+  <span class="md-ellipsis">
+    Главная
+  </span>
+
+      </a>
+    </li>
+  
+
+      
+      
+        
+  
+  
+    
+    
+      
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="../../../../application-observability/" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    Наблюдаемость
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="../../../" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    Digital Experience
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+    
+    
+      
+  
+  
+    
+    
+      
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="../../custom-applications/additional-configuration/configure-apdex-custom/" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    rum-classic
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="../analyze-all-sessions-of-a-single-user/" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    session-segmentation
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ol>
+  </nav>
+
+              
+              <article class="md-content__inner md-typeset">
+                
+  
+                  
+
+
+
+<h1 id="rum-classic">Пользовательские запросы, сегментация и агрегация данных сессий в RUM Classic<a class="headerlink" href="#rum-classic" title="Permanent link">&para;</a></h1>
+<h1 id="rum-classic_1">Пользовательские запросы, сегментация и агрегация данных сессий в RUM Classic<a class="headerlink" href="#rum-classic_1" title="Permanent link">&para;</a></h1>
+<ul>
+<li>Практическое руководство</li>
+<li>Время чтения: 37 мин</li>
+<li>Обновлено 23 апреля 2024 г.</li>
+</ul>
+<p>Dynatrace фиксирует подробные <a href="../user-sessions/" title="Узнать о сегментации и атрибутах фильтрации пользовательских сессий.">данные пользовательских сессий</a> каждый раз, когда пользователь взаимодействует с отслеживаемым приложением. Эти данные включают все действия пользователя и данные о производительности на высоком уровне. С помощью Dynatrace API или языка запросов пользовательских сессий Dynatrace (USQL) можно легко выполнять мощные запросы, сегментацию и агрегацию над этими собранными данными. Чтобы помочь в этом, данный раздел содержит подробные сведения о ключевых словах и функциях, синтаксисе, работе с таблицами Real User Monitoring, автоматизированных запросах и многом другом.</p>
+<p>Язык запросов пользовательских сессий, это не <a href="https://en.wikipedia.org/wiki/SQL">SQL﻿</a>, и Dynatrace не хранит данные пользовательских сессий в реляционной базе данных. Язык запросов пользовательских сессий, это специфический для Dynatrace язык запросов, хотя он и опирается на некоторые концепции SQL, а синтаксис похож, что упрощает начало работы.</p>
+<p>Выберите предпочитаемый подход:</p>
+<p>Запросы пользовательских сессий через веб-интерфейс Dynatrace</p>
+<ol>
+<li>Перейдите в <strong>Query User Sessions</strong>.</li>
+<li>Введите запрос и выберите <strong>Run query</strong>.</li>
+</ol>
+<h3 id="usql">Селектор временного диапазона с USQL<a class="headerlink" href="#usql" title="Permanent link">&para;</a></h3>
+<p>С помощью селектора временного диапазона данные пользовательских сессий можно фильтровать на основе выбранного периода анализа. Выберите новый временной диапазон.</p>
+<p><img alt="Timeframe selector: menu bar" src="https://dt-cdn.net/images/timeframe-selector-menu-bar-264-8193110c8c.png" /></p>
+<p>Селектор временного диапазона: строка меню</p>
+<h4 id="_1">Элементы управления селектора временного диапазона<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h4>
+<p>Глобальный селектор временного диапазона служит фильтром по времени, который в большинстве случаев позволяет выбрать конкретный период анализа, сохраняющийся на всех страницах и представлениях продукта в ходе анализа.</p>
+<p><img alt="Timeframe selector: presets" src="https://dt-cdn.net/images/timeframe-selector-basic-355-f0a835da1e.png" /></p>
+<p>Селектор временного диапазона: пресеты</p>
+<ul>
+<li>На вкладке <strong>Presets</strong> перечислены все доступные стандартные временные диапазоны. Выберите один из них, чтобы изменить временной диапазон на этот пресет.</li>
+<li>
+<p>На вкладке <strong>Custom</strong> отображается календарь. Нажмите на день начала, затем на день окончания и выберите <strong>Apply</strong>, чтобы задать этот диапазон дней в качестве временного диапазона.</p>
+</li>
+<li>
+<p>Выбранные интервалы календаря устанавливаются так, чтобы заканчиваться в начале следующего дня (время устанавливается на <code>00:00</code>). Например, если выбрать в календаре период с 3 по 4 сентября, временной диапазон начинается 3 сентября в <code>00:00</code> и заканчивается <strong>5</strong> сентября в <code>00:00</code>, чтобы не пропустить последнюю минуту диапазона. Отображаемое время можно редактировать.</p>
+</li>
+<li>На вкладке <strong>Recent</strong> отображаются недавно использованные временные диапазоны. Выберите один из них, чтобы вернуться к этому диапазону.</li>
+<li>Элементы управления <strong>&lt;</strong> и <strong>&gt;</strong> сдвигают временной диапазон вперёд или назад во времени. Шаг сдвига равен длине исходного временного диапазона. Например, если текущий диапазон, это <code>Last 2 hours</code> (двухчасовой диапазон, заканчивающийся сейчас), выбор <strong>&lt;</strong> сдвигает диапазон на два часа назад, до <code>-4h to -2h</code> (двухчасовой диапазон, закончившийся два часа назад).</li>
+<li>Наведите курсор на временной диапазон, чтобы увидеть время начала, длительность и время окончания.</li>
+</ul>
+<p><img alt="Timeframe selector: hover" src="https://dt-cdn.net/images/timeframe-selector-hover-168-cfb13dc777.png" /></p>
+<p>Селектор временного диапазона: наведение курсора</p>
+<h4 id="_2">Выражения селектора временного диапазона<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h4>
+<p>При выборе текущего временного диапазона в строке меню отображается редактируемое выражение временного диапазона.</p>
+<ul>
+<li>При чтении слева направо выражение временного диапазона состоит из времени начала, оператора <code>to</code> и времени окончания.</li>
+<li>Если явное время окончания отсутствует, подразумеваются <code>to</code> и <code>now</code>. Например, <code>-2h</code> равнозначно <code>-2h to now</code>.</li>
+<li>Поддерживаемые единицы измерения: <code>s</code>, <code>m</code>, <code>h</code>, <code>d</code>, <code>w</code>, <code>M</code>, <code>q</code>, <code>y</code> (можно также использовать полные слова, например <code>minutes</code> и <code>quarter</code>)</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th><strong>Примеры выражений временного диапазона</strong></th>
+<th><strong>Значение</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>today</code></td>
+<td>С начала сегодняшнего дня до начала завтрашнего.</td>
+</tr>
+<tr>
+<td><code>yesterday</code></td>
+<td>С начала вчерашнего дня до начала сегодняшнего. Аналогично <code>-1d/d to today</code>.</td>
+</tr>
+<tr>
+<td><code>yesterday to now</code></td>
+<td>С начала вчерашнего дня до текущего момента сегодня.</td>
+</tr>
+<tr>
+<td><code>previous week</code></td>
+<td>Предыдущие семь полных дней. Если сегодня понедельник, диапазон охватывает предыдущий понедельник по предыдущее воскресенье (вчера).</td>
+</tr>
+<tr>
+<td><code>this year</code></td>
+<td>Текущий календарный год, с 1 января этого года в <code>00:00</code> по 1 января следующего года в <code>00:00</code>.</td>
+</tr>
+<tr>
+<td><code>last 6 weeks</code></td>
+<td>Последние 42 дня (6 недель * 7 дней), заканчивающиеся сейчас. Эквивалентно <code>-6w to now</code>.</td>
+</tr>
+<tr>
+<td><code>-2h</code></td>
+<td>От 2 часов (120 минут) назад до текущего момента (<code>now</code> подразумевается). Эквивалентно <code>Last 2 hours</code> и <code>-2h to now</code>.</td>
+</tr>
+<tr>
+<td><code>-4d to -1h30m</code></td>
+<td>От 4 дней (96 часов) назад до 1,5 часа назад.</td>
+</tr>
+<tr>
+<td><code>-1w</code></td>
+<td>Последние 7 дней (168 часов), от этого времени 7 дней назад до текущего момента (<code>now</code>). Эквивалентно <code>-7d</code> и <code>-168h</code>.</td>
+</tr>
+<tr>
+<td><code>-1w/w</code></td>
+<td>От начала предыдущей календарной недели до текущего момента (now).  * Если использовать <code>-1w/w</code> в пятницу днём в 15:00, получится диапазон в 11 дней 15 часов, начинающийся с начала понедельника предыдущей недели, поскольку <code>/w</code> округляет вниз до начала недели. * Если использовать <code>-1w</code> без <code>/w</code> в пятницу днём в 15:00, время начала будет ровно на 7 дней (168 часов) раньше: предыдущая пятница в 15:00.  В общем случае <code>/</code>, используемый в сочетании с единицей измерения (например, <code>/d</code>, <code>/w</code>, <code>/M</code> и <code>/y</code>), означает округление даты или времени вниз до начала указанной единицы времени. Например, <code>-3d</code> означает ровно 72 часа назад, тогда как <code>-3d/d</code> означает три дня назад, округлённые вниз до ближайшего дня (начиная с <code>00:00</code>, начала дня). Используйте <code>now/d</code>, чтобы обозначить начало сегодняшнего дня.</td>
+</tr>
+<tr>
+<td><code>-1w/w + 8h</code></td>
+<td>Начиная с начала прошлой недели плюс 8 часов (8:00 утра понедельника).  * Обратите внимание, что операторы <code>+</code> и <code>-</code> можно использовать с единицами измерения, временными метками и <code>now</code>.</td>
+</tr>
+<tr>
+<td><code>-1d/d+9h00m to -1d/d+17h00m</code></td>
+<td>Рабочие часы вчерашнего дня, с 09:00 до 17:00 (с 9 утра до 5 вечера).</td>
+</tr>
+<tr>
+<td><code>2020-08-16 21:28 to 2020-08-19 10:02</code></td>
+<td>Абсолютный диапазон, состоящий из абсолютных дат и времени начала и окончания в формате <code>YYYY-MM-DD hh:mm</code>.  * Если указана дата, но время опущено (например, просто <code>2020-08-16</code>), время принимается за начало дня (<code>00:00</code>) * Если указано время, но дата опущена (например, просто <code>21:28</code>), датой считается сегодняшний день</td>
+</tr>
+<tr>
+<td><code>1598545932346 to 1598837052346</code></td>
+<td>Временные метки Unix epoch в миллисекундах.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="usql_1">Автозавершение с USQL<a class="headerlink" href="#usql_1" title="Permanent link">&para;</a></h3>
+<p>Автозавершение доступно для операторов запроса на основе введённого на данный момент текста. Автозавершение чувствительно к контексту и основывается на текущем контексте положения курсора. Оно интеллектуально предугадывает, какой текст может понадобиться ввести дальше.</p>
+<p>Информация об автозавершении, возвращаемая API, содержит список предложений, где наиболее вероятные значения отсортированы в начале списка, вместе с необходимой корректировкой текста запроса и итоговой позицией курсора после этой корректировки. Это позволяет разместить курсор в более удобной позиции после добавления текста, например внутри скобок при выборе функции.</p>
+<p>Список полей содержит только допустимые поля или функции для выбранной таблицы, а его контекстная чувствительность показывает только числовые поля, когда курсор находится внутри вызова функции, работающей только с числовыми данными, например <code>SUM()</code> или <code>AVG()</code>.</p>
+<p>Значения полей предлагаются только для полей, основанных на перечислениях. Для автозавершения не выполняется никакого реального запроса к Elasticsearch.</p>
+<p>Dynatrace Environment API</p>
+<p>Вызовы API можно выполнять с помощью предпочитаемого клиента. Соответствующую документацию API можно найти в разделе <a href="../../../../../dynatrace-api/environment-api/rum/user-sessions/" title="Узнать, что предлагает язык запросов User Sessions Dynatrace API.">User sessions API</a>.</p>
+<p>Для выполнения этих вызовов токену API нужно назначить разрешение <strong>User sessions</strong> (<code>DTAQLAccess</code>). Сведения о том, как получить и использовать токен, см. в разделе <a href="../../../../../dynatrace-api/basics/dynatrace-api-authentication/" title="Узнать, как пройти аутентификацию для использования Dynatrace API.">Dynatrace API - токены и аутентификация</a>.</p>
+<h3 id="environment-api">Временные диапазоны в Environment API<a class="headerlink" href="#environment-api" title="Permanent link">&para;</a></h3>
+<p>Доступ к данным пользовательских сессий всегда должен осуществляться с указанием временного диапазона. Доступ к большим временным диапазонам может быть затратным из-за большого числа потенциальных отдельных совпадений с запросами.</p>
+<p>Временной диапазон обычно не является частью самого запроса, а передаётся в отдельных параметрах вызова API. Подробности можно найти в документации API.</p>
+<p>Тем не менее для выбора временного диапазона можно использовать временные поля, такие как <code>starttime</code> и <code>endtime</code>. Эти поля можно также использовать в функциях, например, чтобы узнать, в какое время суток начинается больше всего пользовательских сессий, как в <code>HOUR(starttime)</code>.</p>
+<h2 id="_3">Ключевые слова и функции<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<p>Для доступа к данным пользовательских сессий определены следующие ключевые слова:</p>
+<p><code>AND</code>, <code>AS</code>, <code>ASC</code>, <code>BETWEEN</code>, <code>BY</code>, <code>DESC</code>, <code>DISTINCT</code>, <code>FALSE</code>, <code>FROM</code>, <code>GROUP</code>, <code>IN</code>, <code>IS</code>, <code>JSON</code>, <code>LIMIT</code>, <code>NOT</code>, <code>NULL</code>, <code>OR</code>, <code>ORDER</code>, <code>SELECT</code>, <code>STARTSWITH</code>, <code>TRUE</code>, <code>WHERE</code>, <code>LIKE</code>, <code>FILTER</code></p>
+<p>Для доступа к данным пользовательских сессий определены следующие функции:</p>
+<p><code>SUM</code>, <code>MAX</code>, <code>MIN</code>, <code>AVG</code>, <code>MEDIAN</code>, <code>COUNT</code>, <code>YEAR</code>, <code>MONTH</code>, <code>DAY</code>, <code>HOUR</code>, <code>MINUTE</code>, <code>DATETIME</code>, <code>TOP</code>, <code>PERCENTILE</code>, <code>KEYS</code></p>
+<p>Ключевые слова, функции и названия столбцов нечувствительны к регистру. Сравнение строк в условиях <code>WHERE</code> чувствительно к регистру.</p>
+<h2 id="_4">Синтаксис<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<p>Типичный запрос строится из следующих ключевых слов:</p>
+<p><code>SELECT &lt;columns&gt; FROM &lt;table&gt; WHERE &lt;condition&gt; GROUP BY &lt;grouping&gt; ORDER BY &lt;ordering&gt;</code></p>
+<p>Однако единственные обязательные элементы, это <code>SELECT &lt;columns&gt;</code> и <code>FROM &lt;table&gt;</code>.</p>
+<p>Пример</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>SELECT browserType, userId, city, AVG(userActionCount) AS &quot;Average user action count&quot;, AVG(duration) AS &quot;Average duration&quot;, count(*) AS &quot;Sessions&quot;, SUM(totalErrorCount) AS &quot;Errors&quot; FROM usersession WHERE ip between &#39;52.179.11.1&#39; and &#39;52.179.11.255&#39; GROUP BY browserType, userId, city
+</code></pre></div>
+<h3 id="_5">Часто используемые ключевые слова<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
+<h4 id="select-columns">SELECT <code>&lt;columns&gt;</code><a class="headerlink" href="#select-columns" title="Permanent link">&para;</a></h4>
+<p>Выбирает один или несколько столбцов из указанной таблицы данных или выполняет агрегатные функции из набора поддерживаемых функций.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>columns: [DISTINCT] &lt;column&gt;, &lt;column&gt;, ... | function(&lt;parameter&gt;) |
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>&lt;column&gt; AS &lt;alias&gt; | JSON
+</code></pre></div>
+<p>Пример</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>SELECT country, city, browserfamily FROM usersession
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>SELECT DISTINCT country, city, useractioncount FROM usersession
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>
+<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>SELECT country, city, avg(duration) AS average FROM usersession GROUP BY country, city
+</code></pre></div>
+<h4 id="funnel">FUNNEL<a class="headerlink" href="#funnel" title="Permanent link">&para;</a></h4>
+<p>Позволяет использовать предопределённый формат воронки для запроса. Можно применять для построения графика потока конкретных пользовательских действий. Также можно комбинировать с пользовательскими свойствами сессии и другими условиями.</p>
+<p>Это меняет синтаксис любого запроса на следующий:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>SELECT FUNNEL (&lt;condition&gt; AS &lt;alias&gt;, &lt;condition&gt;, ...) FROM &lt;table&gt; WHERE &lt;condition&gt;
+</code></pre></div>
+<ul>
+<li>Для запросов <code>FUNNEL</code> не используются функции <code>SELECT *</code> или ключевые слова вроде <code>JSON</code>.</li>
+<li>На данный момент операторы <code>GROUP BY</code>, <code>ORDER BY</code> или <code>LIMIT</code> в воронках не допускаются.</li>
+<li><code>FUNNEL</code> не поддерживает упорядочивание. Нет гарантии, что <code>useraction1</code> произошло раньше <code>useraction2</code> для запроса <code>SELECT FUNNEL (useraction.name = "useraction1", useraction.name = "useraction2") FROM usersession</code>. Этот запрос это лишь эквивалент двух операторов <code>SELECT</code>, как показано в примерах ниже.</li>
+</ul>
+<p>Пример 1</p>
+<p>Вместо выполнения следующих трёх запросов:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>SELECT COUNT(*) FROM usersession where useraction.name = &quot;AppStart&quot;
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>SELECT COUNT(*) FROM usersession where useraction.name = &quot;AppStart&quot; AND useraction.name = &quot;searchJourney&quot;
+<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>
+<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>
+<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a>
+<a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a>SELECT COUNT(*) FROM usersession where useraction.name = &quot;AppStart&quot; AND useraction.name = &quot;searchJourney&quot;  AND useraction.name = &quot;bookJourney&quot;
+</code></pre></div>
+<p>Следующий единственный запрос возвращает тот же результат:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>SELECT FUNNEL (useraction.name = &quot;AppStart&quot;, useraction.name = &quot;searchJourney&quot;, useraction.name = &quot;bookJourney&quot;)
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>FROM usersession
+</code></pre></div>
+<p>Пример 2</p>
+<p>Чтобы получить список числа пользователей, успешно забронировавших поездку:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>SELECT FUNNEL (useraction.name=&quot;login&quot;, useraction.name = &quot;searchJourney&quot;, useraction.name = &quot;bookJourney&quot;)
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>
+<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>FROM usersession
+</code></pre></div>
+<h4 id="from-table">FROM <code>&lt;table&gt;</code><a class="headerlink" href="#from-table" title="Permanent link">&para;</a></h4>
+<p>Можно указать только одну таблицу. Таблицы для данных пользовательской сессии следующие.</p>
+<ul>
+<li><code>usersession</code> содержит информацию о <a href="../../rum-concepts/user-session/" title="Learn how a user session is defined, when a user session starts or ends, how user session duration is calculated, and more.">пользовательских сессиях</a>.</li>
+<li><code>useraction</code> хранит данные о <a href="../../rum-concepts/user-actions/" title="Learn what user actions are and how they help you understand what users do with your application.">пользовательских действиях</a>.</li>
+<li><code>userevent</code> предоставляет информацию о <a href="../../rum-concepts/user-and-error-events/#user-events" title="Learn about user and error events and the types of user and error events captured by Dynatrace.">пользовательских событиях</a>, таких как смена страниц или события раздражения (rage events).</li>
+<li><code>usererror</code> содержит более подробные данные о <a href="../../rum-concepts/user-and-error-events/#error-events" title="Learn about user and error events and the types of user and error events captured by Dynatrace.">событиях ошибок</a>, то есть ошибках и сбоях.</li>
+</ul>
+<p>Пример</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>SELECT country, city, browserfamily FROM usersession
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>
+<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>
+<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>SELECT name, starttime, endtime, duration FROM useraction ORDER BY duration DESC
+</code></pre></div>
+<h4 id="where-condition">WHERE <code>&lt;condition&gt;</code><a class="headerlink" href="#where-condition" title="Permanent link">&para;</a></h4>
+<p>Можно комбинировать несколько условий с помощью булевой логики и скобок внутри выражения <code>WHERE</code>, например <code>WHERE (city = 'Barcelona' AND country = 'Spain')</code>, чтобы включить только города с названием Barcelona, находящиеся в Spain.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>condition: (condition AND condition) | (condition OR condition) | field IN(...) |
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>
+<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>
+<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a>
+<a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a>field IS &lt;value&gt; | field IS NULL | field = &lt;value&gt; | field &gt; &lt;value&gt; | field &lt; &lt;value&gt; |
+<a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a>
+<a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a>
+<a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a>
+<a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a>field &lt;&gt; &lt;value&gt; | field IS NOT &lt;value&gt; | field BETWEEN &lt;value&gt; AND &lt;value&gt; | ...
+</code></pre></div>
+<p>Однако значение может содержаться только в правой части условий, поэтому сравнение между двумя полями невозможно.</p>
+<p>Примеры</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>SELECT country, city, browserfamily FROM usersession WHERE country = &#39;Albania&#39; AND screenWidth &gt; 1000
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>
+<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>
+<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a>
+<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a>SELECT TOP(country, 20), TOP(city, 20), TOP(duration, 10), AVG(duration) AS average
+<a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a>
+<a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a>
+<a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a>
+<a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a>FROM usersession
+<a id="__codelineno-9-10" name="__codelineno-9-10" href="#__codelineno-9-10"></a>
+<a id="__codelineno-9-11" name="__codelineno-9-11" href="#__codelineno-9-11"></a>
+<a id="__codelineno-9-12" name="__codelineno-9-12" href="#__codelineno-9-12"></a>
+<a id="__codelineno-9-13" name="__codelineno-9-13" href="#__codelineno-9-13"></a>WHERE duration BETWEEN 1000 AND 2000
+<a id="__codelineno-9-14" name="__codelineno-9-14" href="#__codelineno-9-14"></a>
+<a id="__codelineno-9-15" name="__codelineno-9-15" href="#__codelineno-9-15"></a>
+<a id="__codelineno-9-16" name="__codelineno-9-16" href="#__codelineno-9-16"></a>
+<a id="__codelineno-9-17" name="__codelineno-9-17" href="#__codelineno-9-17"></a>GROUP BY TOP(country, 20), TOP(city, 20), TOP(duration, 10)
+</code></pre></div>
+<h4 id="group-by-grouping">GROUP BY <code>&lt;grouping&gt;</code><a class="headerlink" href="#group-by-grouping" title="Permanent link">&para;</a></h4>
+<p>Всякий раз, когда поля агрегируются, нужно указывать соответствующее ключевое слово <code>GROUP BY</code>, чтобы обозначить, как должна выполняться агрегация.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>grouping: &lt;column&gt;, ...
+</code></pre></div>
+<p>Пример</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>SELECT city, count(*) FROM usersession GROUP BY city
+<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>
+<a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a>
+<a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a>
+<a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a>SELECT MONTH(starttime) as month, count (*) FROM usersession
+<a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a>
+<a id="__codelineno-11-7" name="__codelineno-11-7" href="#__codelineno-11-7"></a>
+<a id="__codelineno-11-8" name="__codelineno-11-8" href="#__codelineno-11-8"></a>
+<a id="__codelineno-11-9" name="__codelineno-11-9" href="#__codelineno-11-9"></a>GROUP BY month
+</code></pre></div>
+<h4 id="limit-limit">LIMIT <code>&lt;limit&gt;</code><a class="headerlink" href="#limit-limit" title="Permanent link">&para;</a></h4>
+<p>Позволяет ограничить число возвращаемых результатов. Например, можно выбрать только 10 лучших результатов, если это скомбинировано с упорядочиванием.</p>
+<p>Фреймворк всегда применяет верхний предел, чтобы не допустить перегрузки системы. Если <code>LIMIT</code> не используется, по умолчанию возвращается 50 результатов.</p>
+<p>Пример</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>SELECT city, starttime FROM usersession ORDER BY starttime DESC LIMIT 10
+</code></pre></div>
+<p><code>LIMIT</code> также можно использовать для увеличения числа результатов в случаях, когда оператор <code>LIMIT</code> отсутствует, поскольку тогда применяется предел по умолчанию.</p>
+<h4 id="order-by-ordering">ORDER BY <code>&lt;ordering&gt;</code><a class="headerlink" href="#order-by-ordering" title="Permanent link">&para;</a></h4>
+<p>Позволяет упорядочивать результаты по столбцам, в порядке возрастания или убывания. По умолчанию порядок возрастающий, если не указано иное.</p>
+<p>Упорядочивание выполняется по частоте. Например, 5 лучших возвращаемых городов, это города, встречающиеся чаще всего. Указав поле в выражении <code>ORDER BY</code>, можно добавить значение сортировки для строк, дат и чисел.</p>
+<p>Упорядочивание по <code>enums</code> или по <code>значениям функций</code>, таким как <code>AVG</code> и <code>SUM</code>, упорядочивает возвращаемые результаты, но лучшие элементы можно и не получить. Например, если запросить 5 лучших результатов по <code>AVG(duration)</code>, запрос только 10 может добавить результаты даже в верхней части.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>ordering: &lt;column&gt; ASC | &lt;column&gt; DESC | &lt;column&gt;, ...
+</code></pre></div>
+<p>Пример 1</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>SELECT useraction.name, starttime FROM usersession ORDER BY starttime DESC
+</code></pre></div>
+<p>Пример 2</p>
+<p>Упорядочивания по количеству можно добиться, добавив ключевое слово <code>DISTINCT</code>.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>SELECT DISTINCT city, COUNT(*) FROM usersession ORDER BY COUNT(*) DESC
+</code></pre></div>
+<p>Пример 3</p>
+<p>Упорядочивания функций в списке выбора можно добиться, указав только имя столбца или псевдоним, определённый в <code>SELECT</code>.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>SELECT avg(duration) AS average, count(*) as number, day(startTime) as startDay
+<a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a>
+<a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a>
+<a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a>
+<a id="__codelineno-16-5" name="__codelineno-16-5" href="#__codelineno-16-5"></a>FROM usersession where duration &lt; 2000
+<a id="__codelineno-16-6" name="__codelineno-16-6" href="#__codelineno-16-6"></a>
+<a id="__codelineno-16-7" name="__codelineno-16-7" href="#__codelineno-16-7"></a>
+<a id="__codelineno-16-8" name="__codelineno-16-8" href="#__codelineno-16-8"></a>
+<a id="__codelineno-16-9" name="__codelineno-16-9" href="#__codelineno-16-9"></a>GROUP BY startTime
+<a id="__codelineno-16-10" name="__codelineno-16-10" href="#__codelineno-16-10"></a>
+<a id="__codelineno-16-11" name="__codelineno-16-11" href="#__codelineno-16-11"></a>
+<a id="__codelineno-16-12" name="__codelineno-16-12" href="#__codelineno-16-12"></a>
+<a id="__codelineno-16-13" name="__codelineno-16-13" href="#__codelineno-16-13"></a>ORDER BY average
+</code></pre></div>
+<p>или</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>SELECT avg(duration) AS average, count(*) as number, day(startTime) as startDay
+<a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a>
+<a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a>
+<a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a>
+<a id="__codelineno-17-5" name="__codelineno-17-5" href="#__codelineno-17-5"></a>FROM usersession where duration &lt; 2000
+<a id="__codelineno-17-6" name="__codelineno-17-6" href="#__codelineno-17-6"></a>
+<a id="__codelineno-17-7" name="__codelineno-17-7" href="#__codelineno-17-7"></a>
+<a id="__codelineno-17-8" name="__codelineno-17-8" href="#__codelineno-17-8"></a>
+<a id="__codelineno-17-9" name="__codelineno-17-9" href="#__codelineno-17-9"></a>GROUP BY startTime
+<a id="__codelineno-17-10" name="__codelineno-17-10" href="#__codelineno-17-10"></a>
+<a id="__codelineno-17-11" name="__codelineno-17-11" href="#__codelineno-17-11"></a>
+<a id="__codelineno-17-12" name="__codelineno-17-12" href="#__codelineno-17-12"></a>
+<a id="__codelineno-17-13" name="__codelineno-17-13" href="#__codelineno-17-13"></a>ORDER BY number DESC, average ASC
+</code></pre></div>
+<h4 id="like">LIKE<a class="headerlink" href="#like" title="Permanent link">&para;</a></h4>
+<p>Позволяет сравнивать данные с выражением с помощью подстановочных символов для соответствия указанному шаблону. Можно использовать следующие символы:</p>
+<ul>
+<li><code>%</code> или <code>*</code>: соответствует любой строке из 0 или более символов</li>
+<li><code>?</code>: соответствует любому одному символу</li>
+</ul>
+<p>Строковые значения чувствительны к регистру. Например, <code>SELECT city FROM usersession WHERE userId LIKE "*dynatrace*"</code> соответствует <code>me@dynatrace.com</code>, но не <code>me@dynaTrace.com</code>. Чтобы этого избежать, используется подстановочный символ <code>?</code>, как в этом примере: <code>SELECT city FROM usersession WHERE userId LIKE "*dyna?race*"</code></p>
+<p>Экранирование подстановочных символов</p>
+<p>Чтобы экранировать подстановочный символ, перед ним добавляется обратный слэш <code>\</code>. Например, <code>\%</code>, <code>\*</code> и <code>\?</code> рассматриваются как обычные строковые литералы <code>%</code>, <code>*</code> и <code>?</code>.</p>
+<p>Чтобы экранировать сам обратный слэш <code>\</code>, перед ним добавляется ещё один обратный слэш <code>\</code>. Полученная запись <code>\\</code> рассматривается как один обратный слэш <code>\</code>.</p>
+<p>Если добавить два обратных слэша <code>\\</code> перед подстановочным символом (получаются записи вроде <code>\\%</code>, <code>\\*</code> или <code>\\?</code>), такая запись рассматривается как один экранированный обратный слэш <code>\</code> и один подстановочный символ. Например, запись <code>\\*</code> соответствует <code>\abc</code>, <code>\123ABC</code> или <code>\</code>.</p>
+<p>Сводка по экранированию подстановочных символов:</p>
+<table>
+<thead>
+<tr>
+<th>Запись</th>
+<th>Рассматривается как</th>
+<th>Соответствует</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>\%</code></td>
+<td><code>%</code></td>
+<td><code>%</code></td>
+</tr>
+<tr>
+<td><code>\*</code></td>
+<td><code>*</code></td>
+<td><code>*</code></td>
+</tr>
+<tr>
+<td><code>\?</code></td>
+<td><code>?</code></td>
+<td><code>?</code></td>
+</tr>
+<tr>
+<td><code>\\</code></td>
+<td><code>\</code></td>
+<td><code>\</code></td>
+</tr>
+<tr>
+<td><code>\\%</code></td>
+<td><code>\</code> и любая строка из нуля или более символов</td>
+<td><code>\abc</code>, <code>\123ABC</code>, <code>\</code> и т. д.</td>
+</tr>
+<tr>
+<td><code>\\*</code></td>
+<td><code>\</code> и любая строка из нуля или более символов</td>
+<td><code>\abc</code>, <code>\123ABC</code>, <code>\</code> и т. д.</td>
+</tr>
+<tr>
+<td><code>\\?</code></td>
+<td><code>\</code> и любой один символ</td>
+<td><code>\a</code>, <code>\1</code>, <code>\A</code> и т. д.</td>
+</tr>
+</tbody>
+</table>
+<p>Примеры экранирования подстановочных символов:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a>SELECT userId FROM usersession WHERE userId LIKE &quot;AU\%40KWM&quot;
+</code></pre></div>
+<p>Запрос соответствует <code>userId</code>, равному <code>AU%40KWM</code>.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a>SELECT userId FROM usersession WHERE userId like &quot;AU\*40KWM&quot;
+</code></pre></div>
+<p>Запрос соответствует <code>userId</code>, равному <code>AU*40KWM</code>.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a>SELECT userId FROM usersession WHERE userId LIKE &quot;AU\?40KWM&quot;
+</code></pre></div>
+<p>Запрос ищет <code>userId</code>, равный <code>AU?40KWM</code>.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a>SELECT userId FROM usersession WHERE userId LIKE &quot;AU\\%40KWM&quot;
+</code></pre></div>
+<p>Запрос содержит один экранированный обратный слэш <code>\</code> и один подстановочный символ <code>%</code>, поэтому запрос соответствует <code>userId</code> вроде <code>AU\40KWM</code>, <code>AU\abcd40KWM</code>, <code>AU\ab12340KWM</code> или <code>AU\777_12340KWM</code>.</p>
+<p>Запросы с 11+ условиями LIKE с нехвостовыми подстановочными символами отклоняются</p>
+<p>Запросы USQL, содержащие 11 или более условий <code>LIKE</code> с <code>*</code> или <code>%</code> в начале или внутри шаблона поиска (но не в конце), отклоняются от выполнения.</p>
+<p>Обычно просто подсчитывается количество условий <code>LIKE</code>, используемых в запросе. Например, в приведённом ниже запросе пять условий <code>LIKE</code>, при этом считается каждое вхождение <code>LIKE</code> в выражении <code>WHERE</code> и в функции <code>CONDITION</code>.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a>SELECT CONDITION(COUNT(userSessionId), WHERE useraction.name LIKE &#39;*search.html&#39;),
+<a id="__codelineno-22-2" name="__codelineno-22-2" href="#__codelineno-22-2"></a>
+<a id="__codelineno-22-3" name="__codelineno-22-3" href="#__codelineno-22-3"></a>
+<a id="__codelineno-22-4" name="__codelineno-22-4" href="#__codelineno-22-4"></a>
+<a id="__codelineno-22-5" name="__codelineno-22-5" href="#__codelineno-22-5"></a>CONDITION(COUNT(userSessionId), WHERE useraction.name LIKE &#39;*booking-payment1.html&#39;)
+<a id="__codelineno-22-6" name="__codelineno-22-6" href="#__codelineno-22-6"></a>
+<a id="__codelineno-22-7" name="__codelineno-22-7" href="#__codelineno-22-7"></a>
+<a id="__codelineno-22-8" name="__codelineno-22-8" href="#__codelineno-22-8"></a>
+<a id="__codelineno-22-9" name="__codelineno-22-9" href="#__codelineno-22-9"></a>FROM usersession
+<a id="__codelineno-22-10" name="__codelineno-22-10" href="#__codelineno-22-10"></a>
+<a id="__codelineno-22-11" name="__codelineno-22-11" href="#__codelineno-22-11"></a>
+<a id="__codelineno-22-12" name="__codelineno-22-12" href="#__codelineno-22-12"></a>
+<a id="__codelineno-22-13" name="__codelineno-22-13" href="#__codelineno-22-13"></a>WHERE city LIKE &quot;%York&quot;
+<a id="__codelineno-22-14" name="__codelineno-22-14" href="#__codelineno-22-14"></a>
+<a id="__codelineno-22-15" name="__codelineno-22-15" href="#__codelineno-22-15"></a>
+<a id="__codelineno-22-16" name="__codelineno-22-16" href="#__codelineno-22-16"></a>
+<a id="__codelineno-22-17" name="__codelineno-22-17" href="#__codelineno-22-17"></a>OR city LIKE &quot;S*Francisco&quot;
+<a id="__codelineno-22-18" name="__codelineno-22-18" href="#__codelineno-22-18"></a>
+<a id="__codelineno-22-19" name="__codelineno-22-19" href="#__codelineno-22-19"></a>
+<a id="__codelineno-22-20" name="__codelineno-22-20" href="#__codelineno-22-20"></a>
+<a id="__codelineno-22-21" name="__codelineno-22-21" href="#__codelineno-22-21"></a>AND city LIKE &quot;L*inz&quot;
+</code></pre></div>
+<p>Однако при использовании <a href="#funnel">функции <code>FUNNEL</code></a> вычисление усложняется. Для этой функции запрос внутренне преобразуется в несколько запросов. После этого преобразования подсчитывается число условий <code>LIKE</code> в этих внутренне преобразованных запросах.</p>
+<p>Например, следующий запрос:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a>SELECT FUNNEL (useraction.name LIKE &quot;*start&quot;, useraction.name LIKE &quot;Jou%rney&quot;, useraction.name LIKE &quot;bookJourn*ey&quot;) FROM usersession
+</code></pre></div>
+<p>преобразуется в следующие три запроса:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a>SELECT COUNT(*) FROM usersession where useraction.name LIKE &quot;*start&quot;
+<a id="__codelineno-24-2" name="__codelineno-24-2" href="#__codelineno-24-2"></a>
+<a id="__codelineno-24-3" name="__codelineno-24-3" href="#__codelineno-24-3"></a>
+<a id="__codelineno-24-4" name="__codelineno-24-4" href="#__codelineno-24-4"></a>
+<a id="__codelineno-24-5" name="__codelineno-24-5" href="#__codelineno-24-5"></a>SELECT COUNT(*) FROM usersession where useraction.name LIKE &quot;*start&quot; AND useraction.name LIKE &quot;Jou%rney&quot;
+<a id="__codelineno-24-6" name="__codelineno-24-6" href="#__codelineno-24-6"></a>
+<a id="__codelineno-24-7" name="__codelineno-24-7" href="#__codelineno-24-7"></a>
+<a id="__codelineno-24-8" name="__codelineno-24-8" href="#__codelineno-24-8"></a>
+<a id="__codelineno-24-9" name="__codelineno-24-9" href="#__codelineno-24-9"></a>SELECT COUNT(*) FROM usersession where useraction.name LIKE &quot;*start&quot; AND useraction.name LIKE &quot;Jou%rney&quot; AND useraction.name LIKE &quot;bookJourn*ey&quot;
+</code></pre></div>
+<p>Это значит, что в запросе <code>FUNNEL</code> выше на самом деле шесть условий <code>LIKE</code>.</p>
+<h4 id="filter">FILTER<a class="headerlink" href="#filter" title="Permanent link">&para;</a></h4>
+<p>Позволяет фильтровать функции с числовыми значениями, отображая тем самым только определённые результаты агрегаций.</p>
+<p>Пример</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a>SELECT useraction.application,
+<a id="__codelineno-25-2" name="__codelineno-25-2" href="#__codelineno-25-2"></a>
+<a id="__codelineno-25-3" name="__codelineno-25-3" href="#__codelineno-25-3"></a>
+<a id="__codelineno-25-4" name="__codelineno-25-4" href="#__codelineno-25-4"></a>
+<a id="__codelineno-25-5" name="__codelineno-25-5" href="#__codelineno-25-5"></a>AVG(usersession.doubleProperties.bookings)
+<a id="__codelineno-25-6" name="__codelineno-25-6" href="#__codelineno-25-6"></a>
+<a id="__codelineno-25-7" name="__codelineno-25-7" href="#__codelineno-25-7"></a>
+<a id="__codelineno-25-8" name="__codelineno-25-8" href="#__codelineno-25-8"></a>
+<a id="__codelineno-25-9" name="__codelineno-25-9" href="#__codelineno-25-9"></a>FILTER &gt; 1500
+<a id="__codelineno-25-10" name="__codelineno-25-10" href="#__codelineno-25-10"></a>
+<a id="__codelineno-25-11" name="__codelineno-25-11" href="#__codelineno-25-11"></a>
+<a id="__codelineno-25-12" name="__codelineno-25-12" href="#__codelineno-25-12"></a>
+<a id="__codelineno-25-13" name="__codelineno-25-13" href="#__codelineno-25-13"></a>FROM usersession
+<a id="__codelineno-25-14" name="__codelineno-25-14" href="#__codelineno-25-14"></a>
+<a id="__codelineno-25-15" name="__codelineno-25-15" href="#__codelineno-25-15"></a>
+<a id="__codelineno-25-16" name="__codelineno-25-16" href="#__codelineno-25-16"></a>
+<a id="__codelineno-25-17" name="__codelineno-25-17" href="#__codelineno-25-17"></a>WHERE usersession.doubleProperties.bookings IS NOT NULL
+<a id="__codelineno-25-18" name="__codelineno-25-18" href="#__codelineno-25-18"></a>
+<a id="__codelineno-25-19" name="__codelineno-25-19" href="#__codelineno-25-19"></a>
+<a id="__codelineno-25-20" name="__codelineno-25-20" href="#__codelineno-25-20"></a>
+<a id="__codelineno-25-21" name="__codelineno-25-21" href="#__codelineno-25-21"></a>GROUP BY useraction.application
+</code></pre></div>
+<p>Функции <code>WHERE</code> и <code>FILTER</code> не взаимозаменяемы. Если предложение <code>WHERE</code> можно использовать только для абсолютных значений, то функция <code>FILTER</code> работает и с агрегированными значениями.</p>
+<h3 id="_6">Часто используемые функции<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
+<h4 id="minfield">MIN(field)<a class="headerlink" href="#minfield" title="Permanent link">&para;</a></h4>
+<p>Запрашивает минимальное значение числового поля или поля даты.</p>
+<p>Пример</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a>SELECT MIN(duration), MAX(duration), AVG(duration), MEDIAN(duration)
+<a id="__codelineno-26-2" name="__codelineno-26-2" href="#__codelineno-26-2"></a>
+<a id="__codelineno-26-3" name="__codelineno-26-3" href="#__codelineno-26-3"></a>
+<a id="__codelineno-26-4" name="__codelineno-26-4" href="#__codelineno-26-4"></a>
+<a id="__codelineno-26-5" name="__codelineno-26-5" href="#__codelineno-26-5"></a>FROM usersession
+</code></pre></div>
+<h4 id="maxfield">MAX(field)<a class="headerlink" href="#maxfield" title="Permanent link">&para;</a></h4>
+<p>Запрашивает максимальное значение числового поля или поля даты.</p>
+<p>Пример</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a>SELECT MIN(duration), MAX(duration), AVG(duration), MEDIAN(duration)
+<a id="__codelineno-27-2" name="__codelineno-27-2" href="#__codelineno-27-2"></a>
+<a id="__codelineno-27-3" name="__codelineno-27-3" href="#__codelineno-27-3"></a>
+<a id="__codelineno-27-4" name="__codelineno-27-4" href="#__codelineno-27-4"></a>
+<a id="__codelineno-27-5" name="__codelineno-27-5" href="#__codelineno-27-5"></a>FROM usersession
+</code></pre></div>
+<h4 id="avgfield">AVG(field)<a class="headerlink" href="#avgfield" title="Permanent link">&para;</a></h4>
+<p>Запрашивает среднее значение числового поля или поля даты. Может быть <code>NaN</code>, если поле всегда <code>null</code>.</p>
+<p>Пример</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a>SELECT MIN(duration), MAX(duration), AVG(duration), MEDIAN(duration)
+<a id="__codelineno-28-2" name="__codelineno-28-2" href="#__codelineno-28-2"></a>
+<a id="__codelineno-28-3" name="__codelineno-28-3" href="#__codelineno-28-3"></a>
+<a id="__codelineno-28-4" name="__codelineno-28-4" href="#__codelineno-28-4"></a>
+<a id="__codelineno-28-5" name="__codelineno-28-5" href="#__codelineno-28-5"></a>FROM usersession
+</code></pre></div>
+<h4 id="medianfield">MEDIAN(field)<a class="headerlink" href="#medianfield" title="Permanent link">&para;</a></h4>
+<p>Запрашивает медианное значение числового поля или поля даты.</p>
+<p>Пример</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-29-1" name="__codelineno-29-1" href="#__codelineno-29-1"></a>SELECT MIN(duration), MAX(duration), AVG(duration), MEDIAN(duration)
+<a id="__codelineno-29-2" name="__codelineno-29-2" href="#__codelineno-29-2"></a>
+<a id="__codelineno-29-3" name="__codelineno-29-3" href="#__codelineno-29-3"></a>
+<a id="__codelineno-29-4" name="__codelineno-29-4" href="#__codelineno-29-4"></a>
+<a id="__codelineno-29-5" name="__codelineno-29-5" href="#__codelineno-29-5"></a>FROM usersession
+</code></pre></div>
+<h4 id="sumfield">SUM(field)<a class="headerlink" href="#sumfield" title="Permanent link">&para;</a></h4>
+<p>Вычисляет сумму числового поля.</p>
+<p>Пример</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-30-1" name="__codelineno-30-1" href="#__codelineno-30-1"></a>SELECT TOP(name, 20), SUM(duration) FROM useraction
+<a id="__codelineno-30-2" name="__codelineno-30-2" href="#__codelineno-30-2"></a>
+<a id="__codelineno-30-3" name="__codelineno-30-3" href="#__codelineno-30-3"></a>
+<a id="__codelineno-30-4" name="__codelineno-30-4" href="#__codelineno-30-4"></a>
+<a id="__codelineno-30-5" name="__codelineno-30-5" href="#__codelineno-30-5"></a>GROUP BY name
+</code></pre></div>
+<h4 id="countfield-count-countdistinct-field">COUNT(field), COUNT(*), COUNT(DISTINCT field)<a class="headerlink" href="#countfield-count-countdistinct-field" title="Permanent link">&para;</a></h4>
+<p>Подсчитывает число строк, удовлетворяющих условию.</p>
+<ul>
+<li><code>COUNT(*)</code>: подсчитывает число подходящих элементов.</li>
+<li><code>COUNT(&lt;field&gt;)</code>: подсчитывает число подходящих элементов, у которых <code>&lt;field&gt;</code> не равно null.</li>
+<li><code>COUNT(DISTINCT &lt;field&gt;)</code>: подсчитывает число разных значений <code>&lt;field&gt;</code> среди выбранных элементов.</li>
+</ul>
+<p>Пример</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-31-1" name="__codelineno-31-1" href="#__codelineno-31-1"></a>SELECT country, COUNT(*), COUNT(city), COUNT(DISTINCT city)
+<a id="__codelineno-31-2" name="__codelineno-31-2" href="#__codelineno-31-2"></a>
+<a id="__codelineno-31-3" name="__codelineno-31-3" href="#__codelineno-31-3"></a>
+<a id="__codelineno-31-4" name="__codelineno-31-4" href="#__codelineno-31-4"></a>
+<a id="__codelineno-31-5" name="__codelineno-31-5" href="#__codelineno-31-5"></a>FROM usersession
+<a id="__codelineno-31-6" name="__codelineno-31-6" href="#__codelineno-31-6"></a>
+<a id="__codelineno-31-7" name="__codelineno-31-7" href="#__codelineno-31-7"></a>
+<a id="__codelineno-31-8" name="__codelineno-31-8" href="#__codelineno-31-8"></a>
+<a id="__codelineno-31-9" name="__codelineno-31-9" href="#__codelineno-31-9"></a>GROUP BY country
+</code></pre></div>
+<p>Результаты, возвращаемые функцией <code>COUNT(DISTINCT &lt;field&gt;)</code>, приблизительные, чтобы избежать высокого потребления памяти. Если <code>COUNT(DISTINCT &lt;field&gt;)</code> используется на поле с высокой кардинальностью, результаты могут быть ещё более грубыми. Поля с высокой кардинальностью, это поля, у которых мало дубликатов.</p>
+<p>Результаты, основанные на экстраполированных данных, могут быть ещё более обобщёнными, подробнее см. <a href="#limitations">Ограничения</a>.</p>
+<p>Поля с высокой кардинальностью</p>
+<table>
+<thead>
+<tr>
+<th>Таблица</th>
+<th>Поля</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>usersession</code></td>
+<td><code>ip</code> , <code>userSessionId</code> , <code>internalUserId</code> , <code>userId</code></td>
+</tr>
+</tbody>
+</table>
+<p>Dynatrace отклоняет и не выполняет запросы с <code>COUNT(DISTINCT &lt;field&gt;)</code>, которые могут потреблять много памяти. Это происходит для всех полей с чрезвычайно высокой кардинальностью, например для полей <code>dateTime</code>, таких как <code>usersession.startTime</code>, <code>usersession.endTime</code> или <code>useraction.networkTime</code>.</p>
+<p>Поля с чрезвычайно высокой кардинальностью</p>
+<table>
+<thead>
+<tr>
+<th>Таблица</th>
+<th>Поля</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>usersession</code></td>
+<td><code>startTime</code> , <code>endTime</code> , <code>replayEnd</code> , <code>clientTimeOffset</code>, <code>duration</code> , <code>replayStart</code></td>
+</tr>
+<tr>
+<td><code>useraction</code></td>
+<td><code>domContentLoadedTime</code> , <code>startTime</code> , <code>firstPartyBusyTime</code> , <code>documentInteractiveTime</code> , <code>navigationStart</code> , <code>totalBlockingTime</code> Устарело, <code>largestContentfulPaint</code> , <code>visuallyCompleteTime</code> , <code>cdnBusyTime</code> , <code>endTime</code> , <code>domCompleteTime</code> , <code>networkTime</code> , <code>loadEventStart</code> , <code>serverTime</code> , <code>firstInputDelay</code> , <code>responseStart</code> , <code>thirdPartyBusyTime</code> , <code>duration</code> , <code>loadEventEnd</code> , <code>responseEnd</code> , <code>frontendTime</code> , <code>requestStart</code></td>
+</tr>
+<tr>
+<td><code>userevent</code></td>
+<td><code>startTime</code></td>
+</tr>
+<tr>
+<td><code>usererror</code></td>
+<td><code>startTime</code></td>
+</tr>
+</tbody>
+</table>
+<p>Пример</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-32-1" name="__codelineno-32-1" href="#__codelineno-32-1"></a>SELECT country, COUNT(*), COUNT(city), COUNT(DISTINCT city)
+<a id="__codelineno-32-2" name="__codelineno-32-2" href="#__codelineno-32-2"></a>
+<a id="__codelineno-32-3" name="__codelineno-32-3" href="#__codelineno-32-3"></a>
+<a id="__codelineno-32-4" name="__codelineno-32-4" href="#__codelineno-32-4"></a>
+<a id="__codelineno-32-5" name="__codelineno-32-5" href="#__codelineno-32-5"></a>FROM usersession
+<a id="__codelineno-32-6" name="__codelineno-32-6" href="#__codelineno-32-6"></a>
+<a id="__codelineno-32-7" name="__codelineno-32-7" href="#__codelineno-32-7"></a>
+<a id="__codelineno-32-8" name="__codelineno-32-8" href="#__codelineno-32-8"></a>
+<a id="__codelineno-32-9" name="__codelineno-32-9" href="#__codelineno-32-9"></a>GROUP BY country
+</code></pre></div>
+<h4 id="topfield-n">TOP(field, n)<a class="headerlink" href="#topfield-n" title="Permanent link">&para;</a></h4>
+<p>Возвращает верхние <code>&lt;n&gt;</code> результатов по полю. Значение по умолчанию <code>1</code> (верхнее значение), если <code>n</code> не указано.</p>
+<p>Пример</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-33-1" name="__codelineno-33-1" href="#__codelineno-33-1"></a>SELECT TOP(name, 20), SUM(duration)
+<a id="__codelineno-33-2" name="__codelineno-33-2" href="#__codelineno-33-2"></a>
+<a id="__codelineno-33-3" name="__codelineno-33-3" href="#__codelineno-33-3"></a>
+<a id="__codelineno-33-4" name="__codelineno-33-4" href="#__codelineno-33-4"></a>
+<a id="__codelineno-33-5" name="__codelineno-33-5" href="#__codelineno-33-5"></a>FROM useraction
+<a id="__codelineno-33-6" name="__codelineno-33-6" href="#__codelineno-33-6"></a>
+<a id="__codelineno-33-7" name="__codelineno-33-7" href="#__codelineno-33-7"></a>
+<a id="__codelineno-33-8" name="__codelineno-33-8" href="#__codelineno-33-8"></a>
+<a id="__codelineno-33-9" name="__codelineno-33-9" href="#__codelineno-33-9"></a>GROUP BY name
+</code></pre></div>
+<p>Если выбрано <code>TOP(&lt;field&gt;, n)</code> и результаты сгруппированы, но <code>&lt;field&gt;</code> не входит в группировку, top-n элементов возвращаются в виде списка в одном поле.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-34-1" name="__codelineno-34-1" href="#__codelineno-34-1"></a>SELECT TOP(country, 20), TOP(city, 3), COUNT(*)
+<a id="__codelineno-34-2" name="__codelineno-34-2" href="#__codelineno-34-2"></a>
+<a id="__codelineno-34-3" name="__codelineno-34-3" href="#__codelineno-34-3"></a>
+<a id="__codelineno-34-4" name="__codelineno-34-4" href="#__codelineno-34-4"></a>
+<a id="__codelineno-34-5" name="__codelineno-34-5" href="#__codelineno-34-5"></a>FROM usersession
+<a id="__codelineno-34-6" name="__codelineno-34-6" href="#__codelineno-34-6"></a>
+<a id="__codelineno-34-7" name="__codelineno-34-7" href="#__codelineno-34-7"></a>
+<a id="__codelineno-34-8" name="__codelineno-34-8" href="#__codelineno-34-8"></a>
+<a id="__codelineno-34-9" name="__codelineno-34-9" href="#__codelineno-34-9"></a>GROUP BY country
+</code></pre></div>
+<h4 id="yeardatefield-monthdatefield-daydatefield-hourdatefield-minutedatefield">YEAR(datefield), MONTH(datefield), DAY(datefield), HOUR(datefield), MINUTE(datefield)<a class="headerlink" href="#yeardatefield-monthdatefield-daydatefield-hourdatefield-minutedatefield" title="Permanent link">&para;</a></h4>
+<p>Возвращает заданный элемент, извлечённый из поля даты.</p>
+<ul>
+<li><code>YEAR</code>: год из четырёх цифр.</li>
+<li><code>MONTH</code>: номер месяца, от 1 до 12</li>
+<li><code>DAY</code>: день месяца, от 1 до 31.</li>
+<li><code>HOUR</code>: значение часа, от 0 до 23.</li>
+<li><code>MINUTE</code>: значение минуты, от 0 до 59.</li>
+</ul>
+<p>Пример</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-35-1" name="__codelineno-35-1" href="#__codelineno-35-1"></a>SELECT starttime,
+<a id="__codelineno-35-2" name="__codelineno-35-2" href="#__codelineno-35-2"></a>
+<a id="__codelineno-35-3" name="__codelineno-35-3" href="#__codelineno-35-3"></a>
+<a id="__codelineno-35-4" name="__codelineno-35-4" href="#__codelineno-35-4"></a>
+<a id="__codelineno-35-5" name="__codelineno-35-5" href="#__codelineno-35-5"></a>DATETIME(starttime), YEAR(starttime), MONTH(starttime), DAY(starttime), HOUR(starttime), MINUTE(starttime)
+<a id="__codelineno-35-6" name="__codelineno-35-6" href="#__codelineno-35-6"></a>
+<a id="__codelineno-35-7" name="__codelineno-35-7" href="#__codelineno-35-7"></a>
+<a id="__codelineno-35-8" name="__codelineno-35-8" href="#__codelineno-35-8"></a>
+<a id="__codelineno-35-9" name="__codelineno-35-9" href="#__codelineno-35-9"></a>FROM usersession
+<a id="__codelineno-35-10" name="__codelineno-35-10" href="#__codelineno-35-10"></a>
+<a id="__codelineno-35-11" name="__codelineno-35-11" href="#__codelineno-35-11"></a>
+<a id="__codelineno-35-12" name="__codelineno-35-12" href="#__codelineno-35-12"></a>
+<a id="__codelineno-35-13" name="__codelineno-35-13" href="#__codelineno-35-13"></a>ORDER BY starttime DESC
+</code></pre></div>
+<h4 id="datetimedatefield-format-interval">DATETIME(datefield [, format [, interval]])<a class="headerlink" href="#datetimedatefield-format-interval" title="Permanent link">&para;</a></h4>
+<p>Форматирует выбранное поле даты согласно заданной строке формата. Формат по умолчанию: <code>yyyy-MM-dd HH:mm</code>.</p>
+<p>Допустимые буквы в строке формата:</p>
+<ul>
+<li><code>y</code>: год</li>
+<li><code>M</code>: месяц</li>
+<li><code>d</code>: день месяца</li>
+<li><code>H</code>: час (0-23)</li>
+<li><code>h</code>: час (1-12)</li>
+<li><code>m</code>: минута</li>
+<li><code>s</code>: секунда</li>
+<li><code>E</code>: день недели (Mon-Sun)</li>
+</ul>
+<p>Интервалы <code>year</code>|<code>month</code>|<code>week</code> предназначены для одного <code>interval</code>. Для <code>d</code> (дни), <code>h</code> (часы), <code>m</code> (минуты) или <code>s</code> (секунды) можно использовать число, за которым следует буква формата, например <code>5m</code>. Например, <code>SELECT DISTINCT DATETIME(starttime, 'HH:mm', '5m'), COUNT(*) FROM usersession</code> подсчитывает сессии по пятиминутным временным блокам.</p>
+<p>Пример</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-36-1" name="__codelineno-36-1" href="#__codelineno-36-1"></a>SELECT DATETIME(starttime, &#39;yyyy-MM&#39;) FROM usersession
+<a id="__codelineno-36-2" name="__codelineno-36-2" href="#__codelineno-36-2"></a>
+<a id="__codelineno-36-3" name="__codelineno-36-3" href="#__codelineno-36-3"></a>
+<a id="__codelineno-36-4" name="__codelineno-36-4" href="#__codelineno-36-4"></a>
+<a id="__codelineno-36-5" name="__codelineno-36-5" href="#__codelineno-36-5"></a>SELECT DISTINCT DATETIME(starttime, &#39;HH:mm&#39;, &#39;5m&#39;), COUNT(*) FROM usersession
+</code></pre></div>
+<p>Как и другие функции даты (<code>YEAR</code>, <code>MONTH</code>, <code>DAY</code>, <code>HOUR</code> и <code>MINUTE</code>), <code>DATETIME</code> можно использовать для форматирования результата (даже результата других функций, таких как <code>MAX</code>, <code>MIN</code>, <code>AVG</code> или <code>CONDITION</code>), построения гистограмм или получения списка временных меток, для которых есть результаты, например дней недели, когда использовалось приложение.</p>
+<p>Примеры</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-37-1" name="__codelineno-37-1" href="#__codelineno-37-1"></a>SELECT application, DATETIME(MAX(starttime)) AS LastUsedTime FROM useraction GROUP BY application
+<a id="__codelineno-37-2" name="__codelineno-37-2" href="#__codelineno-37-2"></a>
+<a id="__codelineno-37-3" name="__codelineno-37-3" href="#__codelineno-37-3"></a>
+<a id="__codelineno-37-4" name="__codelineno-37-4" href="#__codelineno-37-4"></a>
+<a id="__codelineno-37-5" name="__codelineno-37-5" href="#__codelineno-37-5"></a>SELECT DATETIME(starttime, &quot;HH&quot;) AS hourOfDay, COUNT(*) FROM usersession GROUP BY hourOfDay
+<a id="__codelineno-37-6" name="__codelineno-37-6" href="#__codelineno-37-6"></a>
+<a id="__codelineno-37-7" name="__codelineno-37-7" href="#__codelineno-37-7"></a>
+<a id="__codelineno-37-8" name="__codelineno-37-8" href="#__codelineno-37-8"></a>
+<a id="__codelineno-37-9" name="__codelineno-37-9" href="#__codelineno-37-9"></a>SELECT application, DATETIME(starttime, &quot;E&quot;) AS daysOfWeek FROM useraction GROUP BY application
+<a id="__codelineno-37-10" name="__codelineno-37-10" href="#__codelineno-37-10"></a>
+<a id="__codelineno-37-11" name="__codelineno-37-11" href="#__codelineno-37-11"></a>
+<a id="__codelineno-37-12" name="__codelineno-37-12" href="#__codelineno-37-12"></a>
+<a id="__codelineno-37-13" name="__codelineno-37-13" href="#__codelineno-37-13"></a>SELECT DATETIME(CONDITION(MAX(startTime), WHERE name = &quot;index.jsp&quot;)) FROM useraction
+</code></pre></div>
+<h4 id="conditionfunction-condition">CONDITION(function, condition)<a class="headerlink" href="#conditionfunction-condition" title="Permanent link">&para;</a></h4>
+<p>Позволяет комбинировать несколько функций с различными условиями.</p>
+<p>Допустимые функции в строке формата:</p>
+<ul>
+<li><code>MIN()</code></li>
+<li><code>MAX()</code></li>
+<li><code>AVG()</code></li>
+<li><code>SUM()</code></li>
+<li><code>PERCENTILE()</code></li>
+<li><code>MEDIAN()</code></li>
+<li><code>COUNT()</code></li>
+</ul>
+<p>Несколько условий можно комбинировать с помощью булевой логики и скобок функцией <code>CONDITION</code>, например <code>CONDITION(COUNT(*), WHERE city = 'Barcelona' AND country = 'Spain')</code>, чтобы включить только города с названием Barcelona, находящиеся в Spain.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-38-1" name="__codelineno-38-1" href="#__codelineno-38-1"></a>CONDITION(function, condition)
+<a id="__codelineno-38-2" name="__codelineno-38-2" href="#__codelineno-38-2"></a>
+<a id="__codelineno-38-3" name="__codelineno-38-3" href="#__codelineno-38-3"></a>
+<a id="__codelineno-38-4" name="__codelineno-38-4" href="#__codelineno-38-4"></a>
+<a id="__codelineno-38-5" name="__codelineno-38-5" href="#__codelineno-38-5"></a>condition:
+<a id="__codelineno-38-6" name="__codelineno-38-6" href="#__codelineno-38-6"></a>
+<a id="__codelineno-38-7" name="__codelineno-38-7" href="#__codelineno-38-7"></a>
+<a id="__codelineno-38-8" name="__codelineno-38-8" href="#__codelineno-38-8"></a>
+<a id="__codelineno-38-9" name="__codelineno-38-9" href="#__codelineno-38-9"></a>(condition AND condition) | (condition OR condition) | field IN(...) |
+<a id="__codelineno-38-10" name="__codelineno-38-10" href="#__codelineno-38-10"></a>
+<a id="__codelineno-38-11" name="__codelineno-38-11" href="#__codelineno-38-11"></a>
+<a id="__codelineno-38-12" name="__codelineno-38-12" href="#__codelineno-38-12"></a>
+<a id="__codelineno-38-13" name="__codelineno-38-13" href="#__codelineno-38-13"></a>field IS &lt;value&gt; | field IS NULL | field = &lt;value&gt; | field &gt; &lt;value&gt; | field &lt; &lt;value&gt; |
+<a id="__codelineno-38-14" name="__codelineno-38-14" href="#__codelineno-38-14"></a>
+<a id="__codelineno-38-15" name="__codelineno-38-15" href="#__codelineno-38-15"></a>
+<a id="__codelineno-38-16" name="__codelineno-38-16" href="#__codelineno-38-16"></a>
+<a id="__codelineno-38-17" name="__codelineno-38-17" href="#__codelineno-38-17"></a>field &lt;&gt; &lt;value&gt; | field IS NOT &lt;value&gt; | field BETWEEN &lt;value&gt; AND &lt;value&gt; | ...
+</code></pre></div>
+<p>Также можно использовать оператор <code>FILTER</code> для функций с числовыми значениями, тем самым отображая только определённые результаты агрегаций.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-39-1" name="__codelineno-39-1" href="#__codelineno-39-1"></a>SELECT CONDITION(COUNT(usersessionId), WHERE userActionCount &gt; 2 AND useraction.name = &quot;search.jsp&quot;) FILTER &gt; 1000, city FROM usersession GROUP BY city
+</code></pre></div>
+<p>Пример</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-40-1" name="__codelineno-40-1" href="#__codelineno-40-1"></a>SELECT CONDITION(COUNT(usersessionId), WHERE userActionCount &gt; 2 AND useraction.name = &quot;search.jsp&quot;) FROM usersession
+<a id="__codelineno-40-2" name="__codelineno-40-2" href="#__codelineno-40-2"></a>
+<a id="__codelineno-40-3" name="__codelineno-40-3" href="#__codelineno-40-3"></a>
+<a id="__codelineno-40-4" name="__codelineno-40-4" href="#__codelineno-40-4"></a>
+<a id="__codelineno-40-5" name="__codelineno-40-5" href="#__codelineno-40-5"></a>SELECT CONDITION(SUM(usersession.duration), WHERE name = &quot;index.jsp&quot;) AS c1, CONDITION(SUM(usersession.duration), WHERE name = &quot;search.jsp&quot;) AS c2, CONDITION(SUM(usersession.duration), WHERE name IS NOT &quot;index.jsp&quot; AND name IS NOT &quot;search.jsp&quot;) AS c3 FROM useraction WHERE (duration &gt; 1000 OR usersession.userActionCount &gt; 4)
+<a id="__codelineno-40-6" name="__codelineno-40-6" href="#__codelineno-40-6"></a>
+<a id="__codelineno-40-7" name="__codelineno-40-7" href="#__codelineno-40-7"></a>
+<a id="__codelineno-40-8" name="__codelineno-40-8" href="#__codelineno-40-8"></a>
+<a id="__codelineno-40-9" name="__codelineno-40-9" href="#__codelineno-40-9"></a>SELECT CONDITION(SUM(usersession.duration), WHERE name = &quot;index.jsp&quot;) AS c1 FROM useraction WHERE (duration &gt; 1000 OR usersession.userActionCount &gt; 4) ORDER BY c1
+<a id="__codelineno-40-10" name="__codelineno-40-10" href="#__codelineno-40-10"></a>
+<a id="__codelineno-40-11" name="__codelineno-40-11" href="#__codelineno-40-11"></a>
+<a id="__codelineno-40-12" name="__codelineno-40-12" href="#__codelineno-40-12"></a>
+<a id="__codelineno-40-13" name="__codelineno-40-13" href="#__codelineno-40-13"></a>SELECT DATETIME(CONDITION(MIN(startTime ), WHERE useraction.application = &quot;RUM Default Application&quot; ), &quot;yyyy-MM-dd&quot; ) FROM usersession
+</code></pre></div>
+<h4 id="percentile">PERCENTILE<a class="headerlink" href="#percentile" title="Permanent link">&para;</a></h4>
+<p>Представляет значение, ниже которого находится определённый процент точек данных. Полезно для определения скорости работы приложения для клиентов, получающих самое медленное время отклика.</p>
+<p>Пример</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-41-1" name="__codelineno-41-1" href="#__codelineno-41-1"></a>SELECT name, usersession.country, usersession.browserFamily,
+<a id="__codelineno-41-2" name="__codelineno-41-2" href="#__codelineno-41-2"></a>
+<a id="__codelineno-41-3" name="__codelineno-41-3" href="#__codelineno-41-3"></a>
+<a id="__codelineno-41-4" name="__codelineno-41-4" href="#__codelineno-41-4"></a>
+<a id="__codelineno-41-5" name="__codelineno-41-5" href="#__codelineno-41-5"></a>AVG(duration),
+<a id="__codelineno-41-6" name="__codelineno-41-6" href="#__codelineno-41-6"></a>
+<a id="__codelineno-41-7" name="__codelineno-41-7" href="#__codelineno-41-7"></a>
+<a id="__codelineno-41-8" name="__codelineno-41-8" href="#__codelineno-41-8"></a>
+<a id="__codelineno-41-9" name="__codelineno-41-9" href="#__codelineno-41-9"></a>MEDIAN(duration),
+<a id="__codelineno-41-10" name="__codelineno-41-10" href="#__codelineno-41-10"></a>
+<a id="__codelineno-41-11" name="__codelineno-41-11" href="#__codelineno-41-11"></a>
+<a id="__codelineno-41-12" name="__codelineno-41-12" href="#__codelineno-41-12"></a>
+<a id="__codelineno-41-13" name="__codelineno-41-13" href="#__codelineno-41-13"></a>PERCENTILE(duration, 99)
+<a id="__codelineno-41-14" name="__codelineno-41-14" href="#__codelineno-41-14"></a>
+<a id="__codelineno-41-15" name="__codelineno-41-15" href="#__codelineno-41-15"></a>
+<a id="__codelineno-41-16" name="__codelineno-41-16" href="#__codelineno-41-16"></a>
+<a id="__codelineno-41-17" name="__codelineno-41-17" href="#__codelineno-41-17"></a>FROM useraction
+<a id="__codelineno-41-18" name="__codelineno-41-18" href="#__codelineno-41-18"></a>
+<a id="__codelineno-41-19" name="__codelineno-41-19" href="#__codelineno-41-19"></a>
+<a id="__codelineno-41-20" name="__codelineno-41-20" href="#__codelineno-41-20"></a>
+<a id="__codelineno-41-21" name="__codelineno-41-21" href="#__codelineno-41-21"></a>WHERE useraction.name = &quot;easytravel/rest/login&quot;
+<a id="__codelineno-41-22" name="__codelineno-41-22" href="#__codelineno-41-22"></a>
+<a id="__codelineno-41-23" name="__codelineno-41-23" href="#__codelineno-41-23"></a>
+<a id="__codelineno-41-24" name="__codelineno-41-24" href="#__codelineno-41-24"></a>
+<a id="__codelineno-41-25" name="__codelineno-41-25" href="#__codelineno-41-25"></a>GROUP BY usersession.country, usersession.browserFamily, name
+<a id="__codelineno-41-26" name="__codelineno-41-26" href="#__codelineno-41-26"></a>
+<a id="__codelineno-41-27" name="__codelineno-41-27" href="#__codelineno-41-27"></a>
+<a id="__codelineno-41-28" name="__codelineno-41-28" href="#__codelineno-41-28"></a>
+<a id="__codelineno-41-29" name="__codelineno-41-29" href="#__codelineno-41-29"></a>ORDER BY usersession.continent
+</code></pre></div>
+<h4 id="keyscustomproperty">KEYS(customProperty)<a class="headerlink" href="#keyscustomproperty" title="Permanent link">&para;</a></h4>
+<p>Возвращает ключи <a href="../../web-applications/analyze-and-use/action-and-session-properties/" title="Свойства пользовательского действия и пользовательской сессии, это метаданные в формате пар ключ-значение, которые обеспечивают дополнительную видимость и более глубокий анализ пользовательского опыта конечных пользователей. Используя эти свойства для веб-приложений, можно фильтровать пользовательские сессии, добавлять вычисляемые метрики, создавать диаграммы и многое другое.">свойств пользовательского действия или пользовательской сессии</a> согласно типу данных свойства, заданному в аргументе.</p>
+<p>В таблице ниже указано, возвращаются ли ключи свойств пользовательского действия или ключи свойств пользовательской сессии.</p>
+<table>
+<thead>
+<tr>
+<th>KEYS(customProperty)</th>
+<th>Таблица</th>
+<th>Свойства действия</th>
+<th>Свойства сессии</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>KEYS(&lt;dataType&gt;Properties)</code></td>
+<td><code>useraction</code></td>
+<td>Применимо</td>
+<td></td>
+</tr>
+<tr>
+<td><code>KEYS(&lt;dataType&gt;Properties)</code></td>
+<td><code>usersession</code></td>
+<td></td>
+<td>Применимо</td>
+</tr>
+<tr>
+<td><code>KEYS(useraction.&lt;dataType&gt;Properties)</code></td>
+<td><code>useraction</code></td>
+<td>Применимо</td>
+<td></td>
+</tr>
+<tr>
+<td><code>KEYS(useraction.&lt;dataType&gt;Properties)</code></td>
+<td><code>usersession</code></td>
+<td>Применимо</td>
+<td></td>
+</tr>
+<tr>
+<td><code>KEYS(usersession.&lt;dataType&gt;Properties)</code></td>
+<td><code>useraction</code></td>
+<td></td>
+<td>Применимо</td>
+</tr>
+<tr>
+<td><code>KEYS(usersession.&lt;dataType&gt;Properties)</code></td>
+<td><code>usersession</code></td>
+<td></td>
+<td>Применимо</td>
+</tr>
+</tbody>
+</table>
+<p>Часть <code>&lt;dataType&gt;</code> функции может принимать следующие значения:</p>
+<ul>
+<li><code>string</code></li>
+<li><code>long</code></li>
+<li><code>double</code></li>
+<li><code>date</code></li>
+</ul>
+<p>Пример 1</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-42-1" name="__codelineno-42-1" href="#__codelineno-42-1"></a>SELECT KEYS(stringProperties) FROM useraction WHERE application = &quot;easyTravel demo application&quot;
+<a id="__codelineno-42-2" name="__codelineno-42-2" href="#__codelineno-42-2"></a>
+<a id="__codelineno-42-3" name="__codelineno-42-3" href="#__codelineno-42-3"></a>
+<a id="__codelineno-42-4" name="__codelineno-42-4" href="#__codelineno-42-4"></a>
+<a id="__codelineno-42-5" name="__codelineno-42-5" href="#__codelineno-42-5"></a>SELECT KEYS(useraction.longProperties) FROM usersession WHERE applicationType=&quot;WEB_APPLICATION&quot; ORDER BY keys(useraction.longProperties)
+<a id="__codelineno-42-6" name="__codelineno-42-6" href="#__codelineno-42-6"></a>
+<a id="__codelineno-42-7" name="__codelineno-42-7" href="#__codelineno-42-7"></a>
+<a id="__codelineno-42-8" name="__codelineno-42-8" href="#__codelineno-42-8"></a>
+<a id="__codelineno-42-9" name="__codelineno-42-9" href="#__codelineno-42-9"></a>SELECT KEYS(usersession.stringProperties) FROM useraction WHERE usersession.city =&quot;Berlin&quot;
+</code></pre></div>
+<p>Для получения различающихся ключей свойств действия или сессии используется <code>DISTINCT KEYS(customProperty)</code>.</p>
+<p>Пример 2</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-43-1" name="__codelineno-43-1" href="#__codelineno-43-1"></a>SELECT DISTINCT KEYS(stringProperties) FROM useraction WHERE useraction.application = &quot;easyTravel demo application&quot; ORDER BY keys(stringProperties)
+<a id="__codelineno-43-2" name="__codelineno-43-2" href="#__codelineno-43-2"></a>
+<a id="__codelineno-43-3" name="__codelineno-43-3" href="#__codelineno-43-3"></a>
+<a id="__codelineno-43-4" name="__codelineno-43-4" href="#__codelineno-43-4"></a>
+<a id="__codelineno-43-5" name="__codelineno-43-5" href="#__codelineno-43-5"></a>SELECT DISTINCT KEYS(doubleProperties) FROM usersession
+</code></pre></div>
+<h2 id="_7">Математические операции<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
+<p>Следующие операции поддерживаются в составе запросов:</p>
+<ul>
+<li>операции над числами</li>
+<li>операции над числовыми полями и полями типа dateTime</li>
+<li>операции над определёнными функциями, такими как <code>YEAR</code>, <code>MONTH</code>, <code>DAY</code>, <code>HOUR</code>, <code>MINUTE</code></li>
+<li>операции над числовыми значениями с отображением их в разных единицах измерения</li>
+</ul>
+<h3 id="_8">Синтаксис<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h3>
+<p><code>Number/NumericField/DateTimeField/Function OPERATOR Number/NumericField/DateTimeField/Function</code></p>
+<p>Function: <code>YEAR</code>, <code>MONTH</code>, <code>DAY</code>, <code>HOUR</code> или <code>MINUTE</code>
+Operator: <code>+</code>, <code>-</code>, <code>*</code>, <code>/</code>, <code>%</code> или <code>MOD</code></p>
+<p>Пример</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-44-1" name="__codelineno-44-1" href="#__codelineno-44-1"></a>SELECT 7 + 80 * 100, duration + startTime, MONTH(startTime) - 1
+<a id="__codelineno-44-2" name="__codelineno-44-2" href="#__codelineno-44-2"></a>
+<a id="__codelineno-44-3" name="__codelineno-44-3" href="#__codelineno-44-3"></a>
+<a id="__codelineno-44-4" name="__codelineno-44-4" href="#__codelineno-44-4"></a>
+<a id="__codelineno-44-5" name="__codelineno-44-5" href="#__codelineno-44-5"></a>FROM usersession
+</code></pre></div>
+<h2 id="_9">Условия<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h2>
+<p>Все условия должны начинаться с идентификатора, например с имени поля, и сравниваться со значением. Два поля нельзя сравнивать между собой.</p>
+<p>Текст в кавычках всегда чувствителен к регистру.</p>
+<h3 id="_10">Базовые операторы<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h3>
+<p>Базовые операторы сравнения: <code>=</code>, <code>!=</code>, <code>&lt;&gt;</code>, <code>&lt;</code>, <code>&gt;</code>, <code>&lt;=</code>, <code>&gt;=</code>, <code>IS</code> и <code>IS NOT</code>.</p>
+<p>Чтобы проверить, задано ли значение поля, нужно сравнить поле с <code>NULL</code>.</p>
+<p>Пример</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-45-1" name="__codelineno-45-1" href="#__codelineno-45-1"></a>SELECT userId FROM usersession WHERE userActionCount &gt; 3
+</code></pre></div>
+<h3 id="_11">Диапазоны<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h3>
+<p>Диапазоны обрабатываются с помощью ключевых слов <code>BETWEEN</code> или <code>NOT BETWEEN</code>, <code>&lt;lowerLimit&gt;</code> и <code>&lt;upperLimit&gt;</code>.</p>
+<p>Пример 1</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-46-1" name="__codelineno-46-1" href="#__codelineno-46-1"></a>SELECT DISTINCT ip FROM usersession
+<a id="__codelineno-46-2" name="__codelineno-46-2" href="#__codelineno-46-2"></a>
+<a id="__codelineno-46-3" name="__codelineno-46-3" href="#__codelineno-46-3"></a>
+<a id="__codelineno-46-4" name="__codelineno-46-4" href="#__codelineno-46-4"></a>
+<a id="__codelineno-46-5" name="__codelineno-46-5" href="#__codelineno-46-5"></a>WHERE ip BETWEEN &#39;192.168.0.0&#39; AND &#39;192.168.255.255&#39;
+</code></pre></div>
+<p>Пример 2</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-47-1" name="__codelineno-47-1" href="#__codelineno-47-1"></a>SELECT startTime FROM useraction
+<a id="__codelineno-47-2" name="__codelineno-47-2" href="#__codelineno-47-2"></a>
+<a id="__codelineno-47-3" name="__codelineno-47-3" href="#__codelineno-47-3"></a>
+<a id="__codelineno-47-4" name="__codelineno-47-4" href="#__codelineno-47-4"></a>
+<a id="__codelineno-47-5" name="__codelineno-47-5" href="#__codelineno-47-5"></a>WHERE NOT startTime BETWEEN $NOW - DURATION(&quot;2h&quot;) AND $NOW
+</code></pre></div>
+<p>Пример 3</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-48-1" name="__codelineno-48-1" href="#__codelineno-48-1"></a>SELECT ip, browserType, userId, city
+<a id="__codelineno-48-2" name="__codelineno-48-2" href="#__codelineno-48-2"></a>
+<a id="__codelineno-48-3" name="__codelineno-48-3" href="#__codelineno-48-3"></a>
+<a id="__codelineno-48-4" name="__codelineno-48-4" href="#__codelineno-48-4"></a>
+<a id="__codelineno-48-5" name="__codelineno-48-5" href="#__codelineno-48-5"></a>FROM usersession
+<a id="__codelineno-48-6" name="__codelineno-48-6" href="#__codelineno-48-6"></a>
+<a id="__codelineno-48-7" name="__codelineno-48-7" href="#__codelineno-48-7"></a>
+<a id="__codelineno-48-8" name="__codelineno-48-8" href="#__codelineno-48-8"></a>
+<a id="__codelineno-48-9" name="__codelineno-48-9" href="#__codelineno-48-9"></a>WHERE NOT ip BETWEEN &#39;52.179.11.1&#39; AND &#39;52.179.11.255&#39;
+</code></pre></div>
+<h3 id="_12">Множества<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h3>
+<p>Ключевое слово <code>IN</code> позволяет сократить запись <code>"WHERE" &lt;field&gt; = val1 OR &lt;field&gt; = val2 OR &lt;field&gt; = val3</code>.</p>
+<p>Пример</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-49-1" name="__codelineno-49-1" href="#__codelineno-49-1"></a>SELECT userId FROM usersession WHERE city IN (&quot;NEW YORK&quot;, &quot;San Francisco&quot;)
+</code></pre></div>
+<h3 id="_13">Строковые условия<a class="headerlink" href="#_13" title="Permanent link">&para;</a></h3>
+<p>Строковое условие <code>"STARTSWITH"</code> проверяет, начинается ли строка или поле типа enum с указанного текста.</p>
+<p>Пример</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-50-1" name="__codelineno-50-1" href="#__codelineno-50-1"></a>SELECT city FROM usersession WHERE userId STARTSWITH &quot;dynatrace&quot;
+</code></pre></div>
+<h3 id="datetime">Значения datetime<a class="headerlink" href="#datetime" title="Permanent link">&para;</a></h3>
+<p>При выполнении условий над полем типа datetime поддерживаются следующие форматы значений:</p>
+<table>
+<thead>
+<tr>
+<th>Формат</th>
+<th>Описание</th>
+<th>Пример</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>-</td>
+<td>Unix-время в виде числа в миллисекундах</td>
+<td><code>1514152800000</code></td>
+</tr>
+<tr>
+<td><code>yyyy-MM-dd'T'HH:mm:ssZ</code></td>
+<td>ISO datetime с часовым поясом</td>
+<td><code>2017-12-24T21:00:00+01:00</code></td>
+</tr>
+<tr>
+<td><code>yyyy-MM-dd HH:mm:ss</code></td>
+<td>Дата с необязательным временем</td>
+<td><code>2017-12-24 21:00</code></td>
+</tr>
+<tr>
+<td><code>yyyy/MM/dd HH:mm:ss</code></td>
+<td>Дата с необязательным временем</td>
+<td><code>2017/12/24 21</code></td>
+</tr>
+<tr>
+<td><code>MM/dd/yyyy HH:mm:ss</code></td>
+<td>Дата с необязательным временем</td>
+<td><code>12/24/2017</code></td>
+</tr>
+<tr>
+<td><code>dd.MM.yyyy HH:mm:ss</code></td>
+<td>Дата с необязательным временем</td>
+<td><code>24.12.2017 21:00:00</code></td>
+</tr>
+</tbody>
+</table>
+<p>Для форматов, где время необязательно, поддерживаются следующие форматы времени:</p>
+<table>
+<thead>
+<tr>
+<th>Формат</th>
+<th>Пример</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>HH:mm:ss</code></td>
+<td><code>08:20:59</code></td>
+</tr>
+<tr>
+<td><code>H:mm:ss</code></td>
+<td><code>8:20:59</code></td>
+</tr>
+<tr>
+<td><code>HH:mm</code></td>
+<td><code>08:20</code></td>
+</tr>
+<tr>
+<td><code>H:mm</code></td>
+<td><code>8:20</code></td>
+</tr>
+<tr>
+<td><code>HH</code></td>
+<td><code>08</code></td>
+</tr>
+<tr>
+<td><code>H</code></td>
+<td><code>8</code></td>
+</tr>
+</tbody>
+</table>
+<p>Если время не указано, по умолчанию используется <code>00:00:00</code>.</p>
+<p>Иногда запросы со значениями datetime могут давать неверные результаты из-за перевода на летнее/зимнее время (Daylight Saving Time). Если дата в запросе предшествует дате окончания Daylight Saving Time (например, дате до 7 ноября 2021, 02:00), стоит использовать ISO datetime со смещением времени, например <code>2021-10-05T17:30:00+03:00</code>.</p>
+<p>Пример</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-51-1" name="__codelineno-51-1" href="#__codelineno-51-1"></a>SELECT starttime FROM usersession WHERE starttime &gt; &quot;8.8.2018 8:00&quot;
+</code></pre></div>
+<h3 id="_14">Оптимизация условий<a class="headerlink" href="#_14" title="Permanent link">&para;</a></h3>
+<h4 id="in">IN<a class="headerlink" href="#in" title="Permanent link">&para;</a></h4>
+<p>Если запрос содержит несколько условий на равенство для одного и того же поля через <code>OR</code>, вместо них лучше использовать функцию <code>IN</code>, поскольку она более производительна. Например, следующий запрос можно переписать с помощью функции <code>IN</code>.</p>
+<p><strong>До</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-52-1" name="__codelineno-52-1" href="#__codelineno-52-1"></a>SELECT COUNT(*) FROM userevent
+<a id="__codelineno-52-2" name="__codelineno-52-2" href="#__codelineno-52-2"></a>
+<a id="__codelineno-52-3" name="__codelineno-52-3" href="#__codelineno-52-3"></a>
+<a id="__codelineno-52-4" name="__codelineno-52-4" href="#__codelineno-52-4"></a>
+<a id="__codelineno-52-5" name="__codelineno-52-5" href="#__codelineno-52-5"></a>WHERE pageReferrer = &quot;/some/page/referrer/1&quot;
+<a id="__codelineno-52-6" name="__codelineno-52-6" href="#__codelineno-52-6"></a>
+<a id="__codelineno-52-7" name="__codelineno-52-7" href="#__codelineno-52-7"></a>
+<a id="__codelineno-52-8" name="__codelineno-52-8" href="#__codelineno-52-8"></a>
+<a id="__codelineno-52-9" name="__codelineno-52-9" href="#__codelineno-52-9"></a>OR pageReferrer = &quot;/some/page/referrer/2&quot;
+<a id="__codelineno-52-10" name="__codelineno-52-10" href="#__codelineno-52-10"></a>
+<a id="__codelineno-52-11" name="__codelineno-52-11" href="#__codelineno-52-11"></a>
+<a id="__codelineno-52-12" name="__codelineno-52-12" href="#__codelineno-52-12"></a>
+<a id="__codelineno-52-13" name="__codelineno-52-13" href="#__codelineno-52-13"></a>OR pageReferrer = &quot;/some/page/referrer/3&quot;
+<a id="__codelineno-52-14" name="__codelineno-52-14" href="#__codelineno-52-14"></a>
+<a id="__codelineno-52-15" name="__codelineno-52-15" href="#__codelineno-52-15"></a>
+<a id="__codelineno-52-16" name="__codelineno-52-16" href="#__codelineno-52-16"></a>
+<a id="__codelineno-52-17" name="__codelineno-52-17" href="#__codelineno-52-17"></a>OR pageReferrer = &quot;/some/page/referrer/4&quot;
+<a id="__codelineno-52-18" name="__codelineno-52-18" href="#__codelineno-52-18"></a>
+<a id="__codelineno-52-19" name="__codelineno-52-19" href="#__codelineno-52-19"></a>
+<a id="__codelineno-52-20" name="__codelineno-52-20" href="#__codelineno-52-20"></a>
+<a id="__codelineno-52-21" name="__codelineno-52-21" href="#__codelineno-52-21"></a>OR pageReferrer = &quot;/some/page/referrer/5&quot;
+</code></pre></div>
+<p><strong>После</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-53-1" name="__codelineno-53-1" href="#__codelineno-53-1"></a>SELECT COUNT(*) FROM userevent
+<a id="__codelineno-53-2" name="__codelineno-53-2" href="#__codelineno-53-2"></a>
+<a id="__codelineno-53-3" name="__codelineno-53-3" href="#__codelineno-53-3"></a>
+<a id="__codelineno-53-4" name="__codelineno-53-4" href="#__codelineno-53-4"></a>
+<a id="__codelineno-53-5" name="__codelineno-53-5" href="#__codelineno-53-5"></a>WHERE pageReferrer IN (&quot;/some/page/referrer/1&quot;,
+<a id="__codelineno-53-6" name="__codelineno-53-6" href="#__codelineno-53-6"></a>
+<a id="__codelineno-53-7" name="__codelineno-53-7" href="#__codelineno-53-7"></a>
+<a id="__codelineno-53-8" name="__codelineno-53-8" href="#__codelineno-53-8"></a>
+<a id="__codelineno-53-9" name="__codelineno-53-9" href="#__codelineno-53-9"></a>&quot;/some/page/referrer/2&quot;,
+<a id="__codelineno-53-10" name="__codelineno-53-10" href="#__codelineno-53-10"></a>
+<a id="__codelineno-53-11" name="__codelineno-53-11" href="#__codelineno-53-11"></a>
+<a id="__codelineno-53-12" name="__codelineno-53-12" href="#__codelineno-53-12"></a>
+<a id="__codelineno-53-13" name="__codelineno-53-13" href="#__codelineno-53-13"></a>&quot;/some/page/referrer/3&quot;,
+<a id="__codelineno-53-14" name="__codelineno-53-14" href="#__codelineno-53-14"></a>
+<a id="__codelineno-53-15" name="__codelineno-53-15" href="#__codelineno-53-15"></a>
+<a id="__codelineno-53-16" name="__codelineno-53-16" href="#__codelineno-53-16"></a>
+<a id="__codelineno-53-17" name="__codelineno-53-17" href="#__codelineno-53-17"></a>&quot;/some/page/referrer/4&quot;,
+<a id="__codelineno-53-18" name="__codelineno-53-18" href="#__codelineno-53-18"></a>
+<a id="__codelineno-53-19" name="__codelineno-53-19" href="#__codelineno-53-19"></a>
+<a id="__codelineno-53-20" name="__codelineno-53-20" href="#__codelineno-53-20"></a>
+<a id="__codelineno-53-21" name="__codelineno-53-21" href="#__codelineno-53-21"></a>&quot;/some/page/referrer/5&quot;)
+</code></pre></div>
+<h4 id="not-in">NOT IN<a class="headerlink" href="#not-in" title="Permanent link">&para;</a></h4>
+<p>Чтобы ускорить выполнение запросов, для запросов лучше использовать массивы: вместо нескольких операторов <code>NOT</code>, <code>&lt;&gt;</code> или <code>!=</code> использовать оператор <code>NOT IN</code>.</p>
+<p><strong>До</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-54-1" name="__codelineno-54-1" href="#__codelineno-54-1"></a>SELECT useraction.name, usersession.userId
+<a id="__codelineno-54-2" name="__codelineno-54-2" href="#__codelineno-54-2"></a>
+<a id="__codelineno-54-3" name="__codelineno-54-3" href="#__codelineno-54-3"></a>
+<a id="__codelineno-54-4" name="__codelineno-54-4" href="#__codelineno-54-4"></a>
+<a id="__codelineno-54-5" name="__codelineno-54-5" href="#__codelineno-54-5"></a>FROM useraction
+<a id="__codelineno-54-6" name="__codelineno-54-6" href="#__codelineno-54-6"></a>
+<a id="__codelineno-54-7" name="__codelineno-54-7" href="#__codelineno-54-7"></a>
+<a id="__codelineno-54-8" name="__codelineno-54-8" href="#__codelineno-54-8"></a>
+<a id="__codelineno-54-9" name="__codelineno-54-9" href="#__codelineno-54-9"></a>WHERE name = &quot;loading of page /&quot;
+<a id="__codelineno-54-10" name="__codelineno-54-10" href="#__codelineno-54-10"></a>
+<a id="__codelineno-54-11" name="__codelineno-54-11" href="#__codelineno-54-11"></a>
+<a id="__codelineno-54-12" name="__codelineno-54-12" href="#__codelineno-54-12"></a>
+<a id="__codelineno-54-13" name="__codelineno-54-13" href="#__codelineno-54-13"></a>AND usersession.userId IS NOT NULL
+<a id="__codelineno-54-14" name="__codelineno-54-14" href="#__codelineno-54-14"></a>
+<a id="__codelineno-54-15" name="__codelineno-54-15" href="#__codelineno-54-15"></a>
+<a id="__codelineno-54-16" name="__codelineno-54-16" href="#__codelineno-54-16"></a>
+<a id="__codelineno-54-17" name="__codelineno-54-17" href="#__codelineno-54-17"></a>AND usersession.userId &lt;&gt; &quot;Speed Travel Agency&quot;
+<a id="__codelineno-54-18" name="__codelineno-54-18" href="#__codelineno-54-18"></a>
+<a id="__codelineno-54-19" name="__codelineno-54-19" href="#__codelineno-54-19"></a>
+<a id="__codelineno-54-20" name="__codelineno-54-20" href="#__codelineno-54-20"></a>
+<a id="__codelineno-54-21" name="__codelineno-54-21" href="#__codelineno-54-21"></a>AND usersession.userId &lt;&gt; &quot;some user&quot;
+<a id="__codelineno-54-22" name="__codelineno-54-22" href="#__codelineno-54-22"></a>
+<a id="__codelineno-54-23" name="__codelineno-54-23" href="#__codelineno-54-23"></a>
+<a id="__codelineno-54-24" name="__codelineno-54-24" href="#__codelineno-54-24"></a>
+<a id="__codelineno-54-25" name="__codelineno-54-25" href="#__codelineno-54-25"></a>AND usersession.userId &lt;&gt; &quot;easyTravel - One step to happiness&quot;
+<a id="__codelineno-54-26" name="__codelineno-54-26" href="#__codelineno-54-26"></a>
+<a id="__codelineno-54-27" name="__codelineno-54-27" href="#__codelineno-54-27"></a>
+<a id="__codelineno-54-28" name="__codelineno-54-28" href="#__codelineno-54-28"></a>
+<a id="__codelineno-54-29" name="__codelineno-54-29" href="#__codelineno-54-29"></a>AND usersession.userId &lt;&gt; &quot;easyTravel - Booking - Finish&quot;
+</code></pre></div>
+<p><strong>После</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-55-1" name="__codelineno-55-1" href="#__codelineno-55-1"></a>SELECT useraction.name, usersession.userId
+<a id="__codelineno-55-2" name="__codelineno-55-2" href="#__codelineno-55-2"></a>
+<a id="__codelineno-55-3" name="__codelineno-55-3" href="#__codelineno-55-3"></a>
+<a id="__codelineno-55-4" name="__codelineno-55-4" href="#__codelineno-55-4"></a>
+<a id="__codelineno-55-5" name="__codelineno-55-5" href="#__codelineno-55-5"></a>FROM useraction
+<a id="__codelineno-55-6" name="__codelineno-55-6" href="#__codelineno-55-6"></a>
+<a id="__codelineno-55-7" name="__codelineno-55-7" href="#__codelineno-55-7"></a>
+<a id="__codelineno-55-8" name="__codelineno-55-8" href="#__codelineno-55-8"></a>
+<a id="__codelineno-55-9" name="__codelineno-55-9" href="#__codelineno-55-9"></a>WHERE name = &quot;loading of page /&quot;
+<a id="__codelineno-55-10" name="__codelineno-55-10" href="#__codelineno-55-10"></a>
+<a id="__codelineno-55-11" name="__codelineno-55-11" href="#__codelineno-55-11"></a>
+<a id="__codelineno-55-12" name="__codelineno-55-12" href="#__codelineno-55-12"></a>
+<a id="__codelineno-55-13" name="__codelineno-55-13" href="#__codelineno-55-13"></a>AND usersession.userId IS NOT NULL
+<a id="__codelineno-55-14" name="__codelineno-55-14" href="#__codelineno-55-14"></a>
+<a id="__codelineno-55-15" name="__codelineno-55-15" href="#__codelineno-55-15"></a>
+<a id="__codelineno-55-16" name="__codelineno-55-16" href="#__codelineno-55-16"></a>
+<a id="__codelineno-55-17" name="__codelineno-55-17" href="#__codelineno-55-17"></a>AND NOT usersession.userId IN (&quot;Speed Travel Agency&quot;,
+<a id="__codelineno-55-18" name="__codelineno-55-18" href="#__codelineno-55-18"></a>
+<a id="__codelineno-55-19" name="__codelineno-55-19" href="#__codelineno-55-19"></a>
+<a id="__codelineno-55-20" name="__codelineno-55-20" href="#__codelineno-55-20"></a>
+<a id="__codelineno-55-21" name="__codelineno-55-21" href="#__codelineno-55-21"></a>&quot;some user&quot;,
+<a id="__codelineno-55-22" name="__codelineno-55-22" href="#__codelineno-55-22"></a>
+<a id="__codelineno-55-23" name="__codelineno-55-23" href="#__codelineno-55-23"></a>
+<a id="__codelineno-55-24" name="__codelineno-55-24" href="#__codelineno-55-24"></a>
+<a id="__codelineno-55-25" name="__codelineno-55-25" href="#__codelineno-55-25"></a>&quot;easyTravel - One step to happiness&quot;,
+<a id="__codelineno-55-26" name="__codelineno-55-26" href="#__codelineno-55-26"></a>
+<a id="__codelineno-55-27" name="__codelineno-55-27" href="#__codelineno-55-27"></a>
+<a id="__codelineno-55-28" name="__codelineno-55-28" href="#__codelineno-55-28"></a>
+<a id="__codelineno-55-29" name="__codelineno-55-29" href="#__codelineno-55-29"></a>&quot;easyTravel - Booking - Finish&quot;)
+</code></pre></div>
+<h2 id="_15">Расширенные синтаксические конструкции<a class="headerlink" href="#_15" title="Permanent link">&para;</a></h2>
+<h3 id="ip">Запрос диапазонов IP<a class="headerlink" href="#ip" title="Permanent link">&para;</a></h3>
+<p>Поле IP можно запрашивать по диапазонам адресов. Работают оба варианта: <code>BETWEEN ip &gt; &lt;lower ipaddress range&gt; AND ip &lt; &lt;upper ipaddress range&gt;</code> и <code>BETWEEN &lt;lower ipaddress range&gt; AND &lt;lower ipaddress range&gt;</code>.</p>
+<p>Пример</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-56-1" name="__codelineno-56-1" href="#__codelineno-56-1"></a>SELECT * FROM usersession WHERE ip &gt; &#39;211.44.94.0&#39; AND ip &lt; &#39;212.113.5.0&#39;
+<a id="__codelineno-56-2" name="__codelineno-56-2" href="#__codelineno-56-2"></a>
+<a id="__codelineno-56-3" name="__codelineno-56-3" href="#__codelineno-56-3"></a>
+<a id="__codelineno-56-4" name="__codelineno-56-4" href="#__codelineno-56-4"></a>
+<a id="__codelineno-56-5" name="__codelineno-56-5" href="#__codelineno-56-5"></a>SELECT * FROM usersession WHERE ip BETWEEN &#39;211.44.94.0&#39; AND &#39;212.113.5.0&#39;
+</code></pre></div>
+<h3 id="_16">Запрос селектора временного диапазона<a class="headerlink" href="#_16" title="Permanent link">&para;</a></h3>
+<p>Можно использовать следующие ключевые слова для выбора начального и конечного времени, заданных в селекторе временного диапазона.</p>
+<ul>
+<li><code>TIME_FRAME_START</code></li>
+<li><code>TIME_FRAME_END</code></li>
+</ul>
+<p>Пример</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-57-1" name="__codelineno-57-1" href="#__codelineno-57-1"></a>SELECT * FROM usersession WHERE startTime &gt;= $TIME_FRAME_START AND endTime &lt; $TIME_FRAME_END
+</code></pre></div>
+<p>Селекторы временного диапазона можно использовать для ограничения временного диапазона в запросах, выполняемых для вторичных таблиц (<code>useraction</code>). По умолчанию фильтр временного диапазона применяется к таблице <code>usersession</code>, даже если запрос выполняется для любой вторичной таблицы. Чтобы применить фильтр также и к вторичной таблице, можно использовать селектор временного диапазона и добавить условие на поле <code>startTime</code> вторичной таблицы. В следующем примере показано, как получить <code>name</code> и <code>duration</code> пользовательских действий, произошедших только в пределах временного диапазона запроса:</p>
+<p>Пример</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-58-1" name="__codelineno-58-1" href="#__codelineno-58-1"></a>SELECT name, duration FROM useraction
+<a id="__codelineno-58-2" name="__codelineno-58-2" href="#__codelineno-58-2"></a>
+<a id="__codelineno-58-3" name="__codelineno-58-3" href="#__codelineno-58-3"></a>
+<a id="__codelineno-58-4" name="__codelineno-58-4" href="#__codelineno-58-4"></a>
+<a id="__codelineno-58-5" name="__codelineno-58-5" href="#__codelineno-58-5"></a>WHERE startTime BETWEEN $TIME_FRAME_START and $TIME_FRAME_END
+</code></pre></div>
+<h3 id="_17">Запрос относительного временного диапазона<a class="headerlink" href="#_17" title="Permanent link">&para;</a></h3>
+<p>Можно выбрать временной диапазон относительно времени выполнения запроса. Текущее время выражается переменной <code>$NOW</code>.</p>
+<p><code>$NOW [+/-] DURATION("[number]TIME_UNIT")</code></p>
+<p>Для выражения продолжительности поддерживаются следующие единицы времени:</p>
+<ul>
+<li><code>y</code>: год</li>
+<li><code>q</code>: квартал</li>
+<li><code>M</code>: месяц</li>
+<li><code>d</code>: день</li>
+<li><code>w</code>: неделя</li>
+<li><code>h</code>: час</li>
+<li><code>m</code>: минута</li>
+<li><code>s</code>: секунда</li>
+</ul>
+<p>Пример</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-59-1" name="__codelineno-59-1" href="#__codelineno-59-1"></a>SELECT * FROM usersession WHERE startTime &gt;= $NOW - DURATION(&quot;1q&quot;) AND endTime &lt;= $NOW
+<a id="__codelineno-59-2" name="__codelineno-59-2" href="#__codelineno-59-2"></a>
+<a id="__codelineno-59-3" name="__codelineno-59-3" href="#__codelineno-59-3"></a>
+<a id="__codelineno-59-4" name="__codelineno-59-4" href="#__codelineno-59-4"></a>
+<a id="__codelineno-59-5" name="__codelineno-59-5" href="#__codelineno-59-5"></a>SELECT * FROM useraction WHERE startTime BETWEEN $NOW - DURATION(&quot;2h&quot;) AND $NOW
+<a id="__codelineno-59-6" name="__codelineno-59-6" href="#__codelineno-59-6"></a>
+<a id="__codelineno-59-7" name="__codelineno-59-7" href="#__codelineno-59-7"></a>
+<a id="__codelineno-59-8" name="__codelineno-59-8" href="#__codelineno-59-8"></a>
+<a id="__codelineno-59-9" name="__codelineno-59-9" href="#__codelineno-59-9"></a>SELECT * FROM useraction WHERE usersession.startTime &gt;= $TIME_FRAME_START - DURATION(&quot;2h&quot;) AND $NOW - DURATION(&quot;1h&quot;)
+</code></pre></div>
+<p>Временной диапазон, выбранный в Dynatrace веб-интерфейсе или API API, по-прежнему применяется к результатам, даже если в запросе используется фильтрация на основе временных меток.</p>
+<h3 id="usersession-useraction-userevent-usererror">Вторичные таблицы для <code>usersession</code>, <code>useraction</code>, <code>userevent</code> и <code>usererror</code><a class="headerlink" href="#usersession-useraction-userevent-usererror" title="Permanent link">&para;</a></h3>
+<p>При использовании <code>SELECT</code> с <code>usersession</code>, <code>useraction</code>, <code>userevent</code> или <code>usererror</code> столбцы из другой таблицы можно получить и включить в результаты, указав перед именем столбца имя таблицы.</p>
+<p>Пример 1</p>
+<p>Выбор логического представления таблицы <code>usersession</code> или <code>useraction</code>. Несколько значений объединяются в результирующем столбце при добавлении информации из <code>useraction</code> в запрос к <code>usersession</code>.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-60-1" name="__codelineno-60-1" href="#__codelineno-60-1"></a>SELECT city, useraction.name FROM usersession
+<a id="__codelineno-60-2" name="__codelineno-60-2" href="#__codelineno-60-2"></a>
+<a id="__codelineno-60-3" name="__codelineno-60-3" href="#__codelineno-60-3"></a>
+<a id="__codelineno-60-4" name="__codelineno-60-4" href="#__codelineno-60-4"></a>
+<a id="__codelineno-60-5" name="__codelineno-60-5" href="#__codelineno-60-5"></a>SELECT usersession.city, name FROM useraction
+</code></pre></div>
+<p>Другие вторичные таблицы, <code>userevent</code> и <code>usererror</code>, используются таким же образом.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-61-1" name="__codelineno-61-1" href="#__codelineno-61-1"></a>SELECT usersession.country, name, page FROM userevent
+<a id="__codelineno-61-2" name="__codelineno-61-2" href="#__codelineno-61-2"></a>
+<a id="__codelineno-61-3" name="__codelineno-61-3" href="#__codelineno-61-3"></a>
+<a id="__codelineno-61-4" name="__codelineno-61-4" href="#__codelineno-61-4"></a>
+<a id="__codelineno-61-5" name="__codelineno-61-5" href="#__codelineno-61-5"></a>SELECT usersession.country, name, type FROM usererror
+<a id="__codelineno-61-6" name="__codelineno-61-6" href="#__codelineno-61-6"></a>
+<a id="__codelineno-61-7" name="__codelineno-61-7" href="#__codelineno-61-7"></a>
+<a id="__codelineno-61-8" name="__codelineno-61-8" href="#__codelineno-61-8"></a>
+<a id="__codelineno-61-9" name="__codelineno-61-9" href="#__codelineno-61-9"></a>SELECT country, userevent.name, usererror.name FROM usersession
+</code></pre></div>
+<p>При запросе к первичной таблице <code>usersession</code> можно объединять поля из других вторичных таблиц (<code>useraction</code>, <code>userevent</code> и <code>usererror</code>). Поля из вторичных таблиц можно использовать и в условии <code>WHERE</code>.</p>
+<p>Пример 2</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-62-1" name="__codelineno-62-1" href="#__codelineno-62-1"></a>SELECT city, useraction.name, userevent.page, usererror.type FROM usersession
+<a id="__codelineno-62-2" name="__codelineno-62-2" href="#__codelineno-62-2"></a>
+<a id="__codelineno-62-3" name="__codelineno-62-3" href="#__codelineno-62-3"></a>
+<a id="__codelineno-62-4" name="__codelineno-62-4" href="#__codelineno-62-4"></a>
+<a id="__codelineno-62-5" name="__codelineno-62-5" href="#__codelineno-62-5"></a>SELECT city, usererror.name, userevent.page, useraction.duration FROM usersession WHERE usererror.name IS NOT NULL
+</code></pre></div>
+<p>Пример 3</p>
+<p>Список всех пользовательских сессий, содержащих пользовательское событие или пользовательское действие из одного и того же приложения.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-63-1" name="__codelineno-63-1" href="#__codelineno-63-1"></a>SELECT * FROM usersession
+<a id="__codelineno-63-2" name="__codelineno-63-2" href="#__codelineno-63-2"></a>
+<a id="__codelineno-63-3" name="__codelineno-63-3" href="#__codelineno-63-3"></a>
+<a id="__codelineno-63-4" name="__codelineno-63-4" href="#__codelineno-63-4"></a>
+<a id="__codelineno-63-5" name="__codelineno-63-5" href="#__codelineno-63-5"></a>WHERE userevent.application = &quot;a&quot; OR useraction.application=&quot;a&quot;
+</code></pre></div>
+<p>При запросе к любой из вторичных таблиц (<code>useraction</code>, <code>userevent</code> или <code>usererror</code>) можно использовать поля только из первичной таблицы <code>usersession</code>, поля из других вторичных таблиц использовать нельзя. Например, запрос ниже завершится с ошибкой, поскольку выбранная таблица, это <code>userevent</code>, а значит, можно выбирать только поля из <code>userevent</code> или <code>usersession</code>.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-64-1" name="__codelineno-64-1" href="#__codelineno-64-1"></a>SELECT usersession.city, useraction.name, userevent.page, usererror.type FROM userevent
+</code></pre></div>
+<p>То же ограничение действует и для других вторичных таблиц, <code>useraction</code> и <code>usererror</code>.</p>
+<p>Пример 4</p>
+<p>Следующие запросы не завершатся с ошибкой, поскольку используются только поля из выбранной вторичной таблицы и из первичной таблицы.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-65-1" name="__codelineno-65-1" href="#__codelineno-65-1"></a>SELECT usersession.userId, name, duration FROM useraction
+<a id="__codelineno-65-2" name="__codelineno-65-2" href="#__codelineno-65-2"></a>
+<a id="__codelineno-65-3" name="__codelineno-65-3" href="#__codelineno-65-3"></a>
+<a id="__codelineno-65-4" name="__codelineno-65-4" href="#__codelineno-65-4"></a>
+<a id="__codelineno-65-5" name="__codelineno-65-5" href="#__codelineno-65-5"></a>SELECT usersession.userId, name, type FROM usererror
+</code></pre></div>
+<p>Нет способа связать вторичные таблицы между собой и вывести какие-либо отношения между таблицами <code>useraction</code>, <code>userevent</code> или <code>usererror</code>, а также определить, в каком порядке они произошли. Поэтому невозможно сказать, какое <code>useraction</code> вызвало какую <code>usererror</code>. Единственная связь, которую можно установить, это связь с <code>usersession</code>, к которой они относятся.</p>
+<p>Применяемые условия имеют разный смысл в зависимости от таблицы. Например, предположим, что нужно вывести список всех пользовательских сессий, содержащих пользовательские действия с именами <code>a</code> и <code>b</code>:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-66-1" name="__codelineno-66-1" href="#__codelineno-66-1"></a>SELECT * FROM usersession
+<a id="__codelineno-66-2" name="__codelineno-66-2" href="#__codelineno-66-2"></a>
+<a id="__codelineno-66-3" name="__codelineno-66-3" href="#__codelineno-66-3"></a>
+<a id="__codelineno-66-4" name="__codelineno-66-4" href="#__codelineno-66-4"></a>
+<a id="__codelineno-66-5" name="__codelineno-66-5" href="#__codelineno-66-5"></a>WHERE useraction.name = &quot;a&quot; AND useraction.name = &quot;b&quot;
+</code></pre></div>
+<p>Это означает, что сессия должна содержать пользовательское действие с именем <code>"a"</code> и пользовательское действие с именем <code>"b"</code>. Выполнение того же запроса к таблице <code>useraction</code> вернёт пустой результат, поскольку одно и то же пользовательское действие не может иметь два разных значения для имени.</p>
+<p>Если нужно выбрать данные пользовательской сессии для конкретного пользовательского действия, соответствующего нескольким критериям, выполните следующий запрос к таблице <code>useraction</code>.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-67-1" name="__codelineno-67-1" href="#__codelineno-67-1"></a>SELECT usersession.*, * FROM useraction
+<a id="__codelineno-67-2" name="__codelineno-67-2" href="#__codelineno-67-2"></a>
+<a id="__codelineno-67-3" name="__codelineno-67-3" href="#__codelineno-67-3"></a>
+<a id="__codelineno-67-4" name="__codelineno-67-4" href="#__codelineno-67-4"></a>
+<a id="__codelineno-67-5" name="__codelineno-67-5" href="#__codelineno-67-5"></a>WHERE useraction.name = &quot;a&quot; AND useraction.duration &gt; 1000
+</code></pre></div>
+<p>В этом случае каждое пользовательское действие в результате удовлетворяет обоим условиям.</p>
+<p>Рассмотрим ещё один запрос.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-68-1" name="__codelineno-68-1" href="#__codelineno-68-1"></a>SELECT COUNT(usersession.userSessionId)
+<a id="__codelineno-68-2" name="__codelineno-68-2" href="#__codelineno-68-2"></a>
+<a id="__codelineno-68-3" name="__codelineno-68-3" href="#__codelineno-68-3"></a>
+<a id="__codelineno-68-4" name="__codelineno-68-4" href="#__codelineno-68-4"></a>
+<a id="__codelineno-68-5" name="__codelineno-68-5" href="#__codelineno-68-5"></a>FROM usersession
+<a id="__codelineno-68-6" name="__codelineno-68-6" href="#__codelineno-68-6"></a>
+<a id="__codelineno-68-7" name="__codelineno-68-7" href="#__codelineno-68-7"></a>
+<a id="__codelineno-68-8" name="__codelineno-68-8" href="#__codelineno-68-8"></a>
+<a id="__codelineno-68-9" name="__codelineno-68-9" href="#__codelineno-68-9"></a>WHERE userevent.name = &#39;Page change&#39;
+<a id="__codelineno-68-10" name="__codelineno-68-10" href="#__codelineno-68-10"></a>
+<a id="__codelineno-68-11" name="__codelineno-68-11" href="#__codelineno-68-11"></a>
+<a id="__codelineno-68-12" name="__codelineno-68-12" href="#__codelineno-68-12"></a>
+<a id="__codelineno-68-13" name="__codelineno-68-13" href="#__codelineno-68-13"></a>AND userevent.pageGroup = &#39;/Booking&#39;
+<a id="__codelineno-68-14" name="__codelineno-68-14" href="#__codelineno-68-14"></a>
+<a id="__codelineno-68-15" name="__codelineno-68-15" href="#__codelineno-68-15"></a>
+<a id="__codelineno-68-16" name="__codelineno-68-16" href="#__codelineno-68-16"></a>
+<a id="__codelineno-68-17" name="__codelineno-68-17" href="#__codelineno-68-17"></a>AND userevent.type = &#39;UserTag&#39;
+</code></pre></div>
+<p>Поскольку запрос выполняется к таблице <code>usersession</code>, условия применяются к общему набору пользовательских событий, относящихся к одной сессии. Это означает, что любая пользовательская сессия, содержащая пользовательские события, удовлетворяющие условиям, отражается в подсчёте. Например, если пользовательская сессия содержит три пользовательских события, каждое из которых удовлетворяет одному из заданных условий, эта пользовательская сессия отражается в подсчёте.</p>
+<p>Если выполнить тот же запрос к таблице <code>userevent</code>, условия применяются к каждому отдельному пользовательскому событию. Это означает, что в подсчёте отражаются только те пользовательские сессии, у которых есть хотя бы одно пользовательское событие, удовлетворяющее <strong>всем</strong> условиям.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-69-1" name="__codelineno-69-1" href="#__codelineno-69-1"></a>SELECT COUNT(usersession.userSessionId)
+<a id="__codelineno-69-2" name="__codelineno-69-2" href="#__codelineno-69-2"></a>
+<a id="__codelineno-69-3" name="__codelineno-69-3" href="#__codelineno-69-3"></a>
+<a id="__codelineno-69-4" name="__codelineno-69-4" href="#__codelineno-69-4"></a>
+<a id="__codelineno-69-5" name="__codelineno-69-5" href="#__codelineno-69-5"></a>FROM userevent
+<a id="__codelineno-69-6" name="__codelineno-69-6" href="#__codelineno-69-6"></a>
+<a id="__codelineno-69-7" name="__codelineno-69-7" href="#__codelineno-69-7"></a>
+<a id="__codelineno-69-8" name="__codelineno-69-8" href="#__codelineno-69-8"></a>
+<a id="__codelineno-69-9" name="__codelineno-69-9" href="#__codelineno-69-9"></a>WHERE userevent.name = &#39;Page change&#39;
+<a id="__codelineno-69-10" name="__codelineno-69-10" href="#__codelineno-69-10"></a>
+<a id="__codelineno-69-11" name="__codelineno-69-11" href="#__codelineno-69-11"></a>
+<a id="__codelineno-69-12" name="__codelineno-69-12" href="#__codelineno-69-12"></a>
+<a id="__codelineno-69-13" name="__codelineno-69-13" href="#__codelineno-69-13"></a>AND userevent.pageGroup = &#39;/Booking&#39;
+<a id="__codelineno-69-14" name="__codelineno-69-14" href="#__codelineno-69-14"></a>
+<a id="__codelineno-69-15" name="__codelineno-69-15" href="#__codelineno-69-15"></a>
+<a id="__codelineno-69-16" name="__codelineno-69-16" href="#__codelineno-69-16"></a>
+<a id="__codelineno-69-17" name="__codelineno-69-17" href="#__codelineno-69-17"></a>AND userevent.type = &#39;UserTag&#39;
+</code></pre></div>
+<h3 id="_18">Фильтрация с использованием полей вторичной таблицы<a class="headerlink" href="#_18" title="Permanent link">&para;</a></h3>
+<p>Нужно быть внимательным при фильтрации с использованием полей одной из вторичных таблиц. Рассмотрим примеры ниже.</p>
+<p><strong>Пример 1</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-70-1" name="__codelineno-70-1" href="#__codelineno-70-1"></a>SELECT useraction.name FROM usersession WHERE useraction.name=&quot;abc&quot;
+</code></pre></div>
+<p>Этот запрос возвращает список всех пользовательских сессий, содержащих хотя бы одно пользовательское действие с именем <code>abc</code>. Результат содержит список всех пользовательских действий для каждой сессии, поскольку запрос выполняется на уровне <code>usersession</code>.</p>
+<p><strong>Пример 2</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-71-1" name="__codelineno-71-1" href="#__codelineno-71-1"></a>SELECT name FROM useraction WHERE name=&quot;abc&quot;
+</code></pre></div>
+<p>Этот запрос извлекает список только тех пользовательских действий, которые названы <code>abc</code>.</p>
+<h3 id="select-from-table">SELECT * FROM table<a class="headerlink" href="#select-from-table" title="Permanent link">&para;</a></h3>
+<p>Пример</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-72-1" name="__codelineno-72-1" href="#__codelineno-72-1"></a>SELECT * FROM usersession
+<a id="__codelineno-72-2" name="__codelineno-72-2" href="#__codelineno-72-2"></a>
+<a id="__codelineno-72-3" name="__codelineno-72-3" href="#__codelineno-72-3"></a>
+<a id="__codelineno-72-4" name="__codelineno-72-4" href="#__codelineno-72-4"></a>
+<a id="__codelineno-72-5" name="__codelineno-72-5" href="#__codelineno-72-5"></a>SELECT useraction.* FROM usersession
+<a id="__codelineno-72-6" name="__codelineno-72-6" href="#__codelineno-72-6"></a>
+<a id="__codelineno-72-7" name="__codelineno-72-7" href="#__codelineno-72-7"></a>
+<a id="__codelineno-72-8" name="__codelineno-72-8" href="#__codelineno-72-8"></a>
+<a id="__codelineno-72-9" name="__codelineno-72-9" href="#__codelineno-72-9"></a>SELECT city, useraction.* FROM usersession
+<a id="__codelineno-72-10" name="__codelineno-72-10" href="#__codelineno-72-10"></a>
+<a id="__codelineno-72-11" name="__codelineno-72-11" href="#__codelineno-72-11"></a>
+<a id="__codelineno-72-12" name="__codelineno-72-12" href="#__codelineno-72-12"></a>
+<a id="__codelineno-72-13" name="__codelineno-72-13" href="#__codelineno-72-13"></a>SELECT *, useraction.* FROM usersession
+</code></pre></div>
+<p>Звёздочка <code>*</code> сама по себе выбирает столбцы из основной таблицы, а не из вторичной. Например, поля из <code>useraction</code> не включаются в <code>SELECT * FROM usersession</code>, если не указать <code>useraction.*</code>.</p>
+<h3 id="json-export">JSON export<a class="headerlink" href="#json-export" title="Permanent link">&para;</a></h3>
+<p>Ключевое слово <code>JSON</code> добавляет дополнительный столбец, содержащий данные о запрошенной записи (пользовательской сессии, пользовательском действии, пользовательском событии или пользовательской ошибке) в формате JSON.</p>
+<p>Если выбрана первичная таблица <code>usersession</code>, для соответствующих пользовательских сессий возвращаются полные строки JSON, независимо от выбранных столбцов.</p>
+<p>Пример 1</p>
+<p>Запрос ниже возвращает соответствующие пользовательские сессии в виде JSON в дополнительном столбце, включая данные из всех вторичных таблиц.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-73-1" name="__codelineno-73-1" href="#__codelineno-73-1"></a>SELECT usersessionId, browserFamily, useraction.name, useraction.duration, JSON
+<a id="__codelineno-73-2" name="__codelineno-73-2" href="#__codelineno-73-2"></a>
+<a id="__codelineno-73-3" name="__codelineno-73-3" href="#__codelineno-73-3"></a>
+<a id="__codelineno-73-4" name="__codelineno-73-4" href="#__codelineno-73-4"></a>
+<a id="__codelineno-73-5" name="__codelineno-73-5" href="#__codelineno-73-5"></a>FROM usersession LIMIT 5
+</code></pre></div>
+<p>Если выбрана <a href="#usql-secondarytables">вторичная таблица</a> (<code>useraction</code>, <code>userevent</code> или <code>usererror</code>), возвращаются полные строки JSON для соответствующей подзаписи (пользовательского действия, пользовательского события или пользовательской ошибки).</p>
+<p>Пример 2</p>
+<p>Запрос ниже возвращает соответствующие пользовательские действия в виде JSON в дополнительном столбце, без данных из таблицы <code>usersession</code> или других вторичных таблиц.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-74-1" name="__codelineno-74-1" href="#__codelineno-74-1"></a>SELECT name, duration, JSON
+<a id="__codelineno-74-2" name="__codelineno-74-2" href="#__codelineno-74-2"></a>
+<a id="__codelineno-74-3" name="__codelineno-74-3" href="#__codelineno-74-3"></a>
+<a id="__codelineno-74-4" name="__codelineno-74-4" href="#__codelineno-74-4"></a>
+<a id="__codelineno-74-5" name="__codelineno-74-5" href="#__codelineno-74-5"></a>FROM useraction LIMIT 5
+</code></pre></div>
+<p>См. также <a href="../export-session-data/" title="Настройка Dynatrace для экспорта данных пользовательских сессий на предоставленную конечную точку webhook.">Export user sessions in RUM Classic</a>.</p>
+<h3 id="_19">Экранирование строк<a class="headerlink" href="#_19" title="Permanent link">&para;</a></h3>
+<p>Строковые литералы можно заключать в одинарные или двойные кавычки. Однако, если нужно использовать ту же кавычку внутри строки, её просто нужно продублировать.</p>
+<p>Пример</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-75-1" name="__codelineno-75-1" href="#__codelineno-75-1"></a>SELECT * FROM usersession WHERE userId = &quot;some &#39;custom&#39; name for &quot;&quot;my user&quot;&quot;&quot;
+<a id="__codelineno-75-2" name="__codelineno-75-2" href="#__codelineno-75-2"></a>
+<a id="__codelineno-75-3" name="__codelineno-75-3" href="#__codelineno-75-3"></a>
+<a id="__codelineno-75-4" name="__codelineno-75-4" href="#__codelineno-75-4"></a>
+<a id="__codelineno-75-5" name="__codelineno-75-5" href="#__codelineno-75-5"></a>SELECT * FROM usersession WHERE userId = &#39;some &#39;&#39;custom&#39;&#39; name for &quot;my user&quot;&#39;
+</code></pre></div>
+<h3 id="_20">Построение воронки<a class="headerlink" href="#_20" title="Permanent link">&para;</a></h3>
+<p>Построение воронки позволяет отслеживать шаги в цифровом сервисе и исследовать области, в которых пользователи сталкиваются со сложностями. В сочетании с Session Replay Classic эта функциональность позволяет увидеть, на каком этапе пользователь испытывает сложности в приложении.</p>
+<p>Пример</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-76-1" name="__codelineno-76-1" href="#__codelineno-76-1"></a>SELECT FUNNEL(
+<a id="__codelineno-76-2" name="__codelineno-76-2" href="#__codelineno-76-2"></a>
+<a id="__codelineno-76-3" name="__codelineno-76-3" href="#__codelineno-76-3"></a>
+<a id="__codelineno-76-4" name="__codelineno-76-4" href="#__codelineno-76-4"></a>
+<a id="__codelineno-76-5" name="__codelineno-76-5" href="#__codelineno-76-5"></a>useraction.name = &quot;AppStart (easyTravel)&quot; AS &quot;Open easytravel&quot;,
+<a id="__codelineno-76-6" name="__codelineno-76-6" href="#__codelineno-76-6"></a>
+<a id="__codelineno-76-7" name="__codelineno-76-7" href="#__codelineno-76-7"></a>
+<a id="__codelineno-76-8" name="__codelineno-76-8" href="#__codelineno-76-8"></a>
+<a id="__codelineno-76-9" name="__codelineno-76-9" href="#__codelineno-76-9"></a>useraction.name = &quot;searchJourney&quot; AS &quot;Search journey&quot;,
+<a id="__codelineno-76-10" name="__codelineno-76-10" href="#__codelineno-76-10"></a>
+<a id="__codelineno-76-11" name="__codelineno-76-11" href="#__codelineno-76-11"></a>
+<a id="__codelineno-76-12" name="__codelineno-76-12" href="#__codelineno-76-12"></a>
+<a id="__codelineno-76-13" name="__codelineno-76-13" href="#__codelineno-76-13"></a>useraction.name = &quot;bookJourney&quot; AS &quot;Book journey&quot;,
+<a id="__codelineno-76-14" name="__codelineno-76-14" href="#__codelineno-76-14"></a>
+<a id="__codelineno-76-15" name="__codelineno-76-15" href="#__codelineno-76-15"></a>
+<a id="__codelineno-76-16" name="__codelineno-76-16" href="#__codelineno-76-16"></a>
+<a id="__codelineno-76-17" name="__codelineno-76-17" href="#__codelineno-76-17"></a>useraction.matchingConversionGoals = &quot;Payment&quot; OR useraction.matchingConversionGoals = &quot;booking-finished&quot; AS &quot;Booked&quot;)
+<a id="__codelineno-76-18" name="__codelineno-76-18" href="#__codelineno-76-18"></a>
+<a id="__codelineno-76-19" name="__codelineno-76-19" href="#__codelineno-76-19"></a>
+<a id="__codelineno-76-20" name="__codelineno-76-20" href="#__codelineno-76-20"></a>
+<a id="__codelineno-76-21" name="__codelineno-76-21" href="#__codelineno-76-21"></a>FROM usersession
+</code></pre></div>
+<p>Также можно фильтровать по конкретному сегменту. Пример этого, использование свойств сессии для извлечения списка приоритетных клиентов.</p>
+<p>Пример</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-77-1" name="__codelineno-77-1" href="#__codelineno-77-1"></a>SELECT FUNNEL(
+<a id="__codelineno-77-2" name="__codelineno-77-2" href="#__codelineno-77-2"></a>
+<a id="__codelineno-77-3" name="__codelineno-77-3" href="#__codelineno-77-3"></a>
+<a id="__codelineno-77-4" name="__codelineno-77-4" href="#__codelineno-77-4"></a>
+<a id="__codelineno-77-5" name="__codelineno-77-5" href="#__codelineno-77-5"></a>useraction.name = &quot;AppStart (easyTravel)&quot; AS &quot;Open easytravel&quot;,
+<a id="__codelineno-77-6" name="__codelineno-77-6" href="#__codelineno-77-6"></a>
+<a id="__codelineno-77-7" name="__codelineno-77-7" href="#__codelineno-77-7"></a>
+<a id="__codelineno-77-8" name="__codelineno-77-8" href="#__codelineno-77-8"></a>
+<a id="__codelineno-77-9" name="__codelineno-77-9" href="#__codelineno-77-9"></a>useraction.name = &quot;searchJourney&quot; AS &quot;Search journey&quot;,
+<a id="__codelineno-77-10" name="__codelineno-77-10" href="#__codelineno-77-10"></a>
+<a id="__codelineno-77-11" name="__codelineno-77-11" href="#__codelineno-77-11"></a>
+<a id="__codelineno-77-12" name="__codelineno-77-12" href="#__codelineno-77-12"></a>
+<a id="__codelineno-77-13" name="__codelineno-77-13" href="#__codelineno-77-13"></a>useraction.name = &quot;bookJourney&quot; AS &quot;Book journey&quot;,
+<a id="__codelineno-77-14" name="__codelineno-77-14" href="#__codelineno-77-14"></a>
+<a id="__codelineno-77-15" name="__codelineno-77-15" href="#__codelineno-77-15"></a>
+<a id="__codelineno-77-16" name="__codelineno-77-16" href="#__codelineno-77-16"></a>
+<a id="__codelineno-77-17" name="__codelineno-77-17" href="#__codelineno-77-17"></a>useraction.matchingConversionGoals = &quot;Payment&quot; OR useraction.matchingConversionGoals = &quot;booking-finished&quot; AS &quot;Booked&quot;)
+<a id="__codelineno-77-18" name="__codelineno-77-18" href="#__codelineno-77-18"></a>
+<a id="__codelineno-77-19" name="__codelineno-77-19" href="#__codelineno-77-19"></a>
+<a id="__codelineno-77-20" name="__codelineno-77-20" href="#__codelineno-77-20"></a>
+<a id="__codelineno-77-21" name="__codelineno-77-21" href="#__codelineno-77-21"></a>FROM usersession
+<a id="__codelineno-77-22" name="__codelineno-77-22" href="#__codelineno-77-22"></a>
+<a id="__codelineno-77-23" name="__codelineno-77-23" href="#__codelineno-77-23"></a>
+<a id="__codelineno-77-24" name="__codelineno-77-24" href="#__codelineno-77-24"></a>
+<a id="__codelineno-77-25" name="__codelineno-77-25" href="#__codelineno-77-25"></a>WHERE stringProperties.memberstatus=&quot;GOLD&quot;
+</code></pre></div>
+<p><code>FUNNEL</code> не поддерживает упорядочивание. Нет гарантии, что <code>useraction1</code> произошло раньше <code>useraction2</code> для запроса <code>SELECT FUNNEL (useraction.name = "useraction1", useraction.name = "useraction2") FROM usersession</code>. Этот запрос эквивалентен всего лишь двум операторам <code>SELECT</code>.</p>
+<h2 id="_21">Доступные таблицы и поля данных пользовательских сессий<a class="headerlink" href="#_21" title="Permanent link">&para;</a></h2>
+<p>Для данных пользовательских сессий доступны следующие таблицы.</p>
+<ul>
+<li><code>usersession</code> содержит информацию о <a href="../../rum-concepts/user-session/" title="Learn how a user session is defined, when a user session starts or ends, how user session duration is calculated, and more.">пользовательских сессиях</a>.</li>
+<li><code>useraction</code> хранит данные о <a href="../../rum-concepts/user-actions/" title="Learn what user actions are and how they help you understand what users do with your application.">действиях пользователя</a>.</li>
+<li><code>userevent</code> предоставляет информацию о <a href="../../rum-concepts/user-and-error-events/#user-events" title="Learn about user and error events and the types of user and error events captured by Dynatrace.">событиях пользователя</a>, таких как смена страниц или rage-события.</li>
+<li><code>usererror</code> содержит дополнительные данные о <a href="../../rum-concepts/user-and-error-events/#error-events" title="Learn about user and error events and the types of user and error events captured by Dynatrace.">событиях ошибок</a>, то есть об ошибках и сбоях.</li>
+</ul>
+<p><a href="#usql-secondarytables">Вторичные таблицы для <code>usersession</code>, <code>useraction</code>, <code>userevent</code> и <code>usererror</code></a> описывают, как данные из одной из этих таблиц доступны в другой.</p>
+<p>Поля описаны в разделе <a href="../../../../../dynatrace-api/environment-api/rum/user-sessions/user-session-structure/" title="Learn the structure of a user session in the Dynatrace User Session Query language API.">User sessions API, структура пользовательской сессии</a>.</p>
+<p>Также можно проверить объект <strong>UserSession</strong> в <a href="../../../../../dynatrace-api/#api-explorer" title="Find out what you need to use the Dynatrace API.">API Explorer</a>.</p>
+<h2 id="usql_2">Выполнение запросов USQL для пользовательских отчётов<a class="headerlink" href="#usql_2" title="Permanent link">&para;</a></h2>
+<p>REST-интерфейс позволяет получать результаты для пользовательских запросов. Для этого нужен только уникальный <a href="../../../../../dynatrace-api/basics/dynatrace-api-authentication/" title="Find out how to get authenticated to use the Dynatrace API.">токен API</a> с правом <strong>User session query language</strong>. Возможность запрашивать данные пользовательских сессий таким способом полезна в автоматизированном тестировании, проверке данных и других автоматизированных функциях. Доступны следующие эндпоинты:</p>
+<p><code>/table</code>: возвращает данные в виде плоской таблицы, даже при группировке по различным элементам и выполнении иерархических агрегаций по данным пользовательских сессий.</p>
+<p><code>/tree</code>: возвращает данные в виде полного иерархического дерева на основе входных данных.</p>
+<p>Доступны следующие параметры запроса:</p>
+<p><code>query</code>: нужно кодировать при передаче в URL, например <code>%20</code> вместо пробелов.
+<code>startTimestamp/endTimestamp</code>: позволяют задать моменты времени, передаваемые как количество миллисекунд с начала эпохи Unix. Если не указано, по умолчанию используются последние два часа.</p>
+<p>Примеры</p>
+<p>Этот код:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-78-1" name="__codelineno-78-1" href="#__codelineno-78-1"></a>curl --location --insecure -H &quot;Content-Type: application/json&quot; -H &quot;Authorization: Api-Token _token_&quot; \
+<a id="__codelineno-78-2" name="__codelineno-78-2" href="#__codelineno-78-2"></a>
+<a id="__codelineno-78-3" name="__codelineno-78-3" href="#__codelineno-78-3"></a>
+<a id="__codelineno-78-4" name="__codelineno-78-4" href="#__codelineno-78-4"></a>
+<a id="__codelineno-78-5" name="__codelineno-78-5" href="#__codelineno-78-5"></a>-XGET &quot;https://{your-environment-id}.live.dynatrace.com/api/v1/userSessionQueryLanguage/table?query=select%20city,count(*)%20from%20usersession%20group%20by%20city&quot;
+</code></pre></div>
+<p>даёт следующий результат:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-79-1" name="__codelineno-79-1" href="#__codelineno-79-1"></a>{
+<a id="__codelineno-79-2" name="__codelineno-79-2" href="#__codelineno-79-2"></a>
+<a id="__codelineno-79-3" name="__codelineno-79-3" href="#__codelineno-79-3"></a>
+<a id="__codelineno-79-4" name="__codelineno-79-4" href="#__codelineno-79-4"></a>
+<a id="__codelineno-79-5" name="__codelineno-79-5" href="#__codelineno-79-5"></a>&quot;columnNames&quot;: [&quot;city&quot;,    &quot;count(*)&quot;],
+<a id="__codelineno-79-6" name="__codelineno-79-6" href="#__codelineno-79-6"></a>
+<a id="__codelineno-79-7" name="__codelineno-79-7" href="#__codelineno-79-7"></a>
+<a id="__codelineno-79-8" name="__codelineno-79-8" href="#__codelineno-79-8"></a>
+<a id="__codelineno-79-9" name="__codelineno-79-9" href="#__codelineno-79-9"></a>&quot;values&quot;: [
+<a id="__codelineno-79-10" name="__codelineno-79-10" href="#__codelineno-79-10"></a>
+<a id="__codelineno-79-11" name="__codelineno-79-11" href="#__codelineno-79-11"></a>
+<a id="__codelineno-79-12" name="__codelineno-79-12" href="#__codelineno-79-12"></a>
+<a id="__codelineno-79-13" name="__codelineno-79-13" href="#__codelineno-79-13"></a>[&quot;Dublin&quot;,    23],
+<a id="__codelineno-79-14" name="__codelineno-79-14" href="#__codelineno-79-14"></a>
+<a id="__codelineno-79-15" name="__codelineno-79-15" href="#__codelineno-79-15"></a>
+<a id="__codelineno-79-16" name="__codelineno-79-16" href="#__codelineno-79-16"></a>
+<a id="__codelineno-79-17" name="__codelineno-79-17" href="#__codelineno-79-17"></a>[&quot;N. Virginia (Amazon)&quot;,    80],
+<a id="__codelineno-79-18" name="__codelineno-79-18" href="#__codelineno-79-18"></a>
+<a id="__codelineno-79-19" name="__codelineno-79-19" href="#__codelineno-79-19"></a>
+<a id="__codelineno-79-20" name="__codelineno-79-20" href="#__codelineno-79-20"></a>
+<a id="__codelineno-79-21" name="__codelineno-79-21" href="#__codelineno-79-21"></a>[&quot;Portland&quot;,    56]
+<a id="__codelineno-79-22" name="__codelineno-79-22" href="#__codelineno-79-22"></a>
+<a id="__codelineno-79-23" name="__codelineno-79-23" href="#__codelineno-79-23"></a>
+<a id="__codelineno-79-24" name="__codelineno-79-24" href="#__codelineno-79-24"></a>
+<a id="__codelineno-79-25" name="__codelineno-79-25" href="#__codelineno-79-25"></a>]
+<a id="__codelineno-79-26" name="__codelineno-79-26" href="#__codelineno-79-26"></a>
+<a id="__codelineno-79-27" name="__codelineno-79-27" href="#__codelineno-79-27"></a>
+<a id="__codelineno-79-28" name="__codelineno-79-28" href="#__codelineno-79-28"></a>
+<a id="__codelineno-79-29" name="__codelineno-79-29" href="#__codelineno-79-29"></a>}
+</code></pre></div>
+<p>Этот код:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-80-1" name="__codelineno-80-1" href="#__codelineno-80-1"></a>curl --location --insecure -H &quot;Content-Type: application/json&quot; -H &quot;Authorization: Api-Token _token_&quot; \
+<a id="__codelineno-80-2" name="__codelineno-80-2" href="#__codelineno-80-2"></a>
+<a id="__codelineno-80-3" name="__codelineno-80-3" href="#__codelineno-80-3"></a>
+<a id="__codelineno-80-4" name="__codelineno-80-4" href="#__codelineno-80-4"></a>
+<a id="__codelineno-80-5" name="__codelineno-80-5" href="#__codelineno-80-5"></a>-XGET &quot;https://{your-environment-id}.live.dynatrace.com/api/v1/userSessionQueryLanguage/tree?query=select%20country,city,count(*)%20from%20usersession%20group%20by%20country,city&quot;
+</code></pre></div>
+<p>даёт следующий результат:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-81-1" name="__codelineno-81-1" href="#__codelineno-81-1"></a>{
+<a id="__codelineno-81-2" name="__codelineno-81-2" href="#__codelineno-81-2"></a>
+<a id="__codelineno-81-3" name="__codelineno-81-3" href="#__codelineno-81-3"></a>
+<a id="__codelineno-81-4" name="__codelineno-81-4" href="#__codelineno-81-4"></a>
+<a id="__codelineno-81-5" name="__codelineno-81-5" href="#__codelineno-81-5"></a>&quot;branchNames&quot;: [&quot;country&quot;,    &quot;city&quot;],
+<a id="__codelineno-81-6" name="__codelineno-81-6" href="#__codelineno-81-6"></a>
+<a id="__codelineno-81-7" name="__codelineno-81-7" href="#__codelineno-81-7"></a>
+<a id="__codelineno-81-8" name="__codelineno-81-8" href="#__codelineno-81-8"></a>
+<a id="__codelineno-81-9" name="__codelineno-81-9" href="#__codelineno-81-9"></a>&quot;leafNames&quot;: [&quot;count(*)&quot;],
+<a id="__codelineno-81-10" name="__codelineno-81-10" href="#__codelineno-81-10"></a>
+<a id="__codelineno-81-11" name="__codelineno-81-11" href="#__codelineno-81-11"></a>
+<a id="__codelineno-81-12" name="__codelineno-81-12" href="#__codelineno-81-12"></a>
+<a id="__codelineno-81-13" name="__codelineno-81-13" href="#__codelineno-81-13"></a>&quot;values&quot;: {
+<a id="__codelineno-81-14" name="__codelineno-81-14" href="#__codelineno-81-14"></a>
+<a id="__codelineno-81-15" name="__codelineno-81-15" href="#__codelineno-81-15"></a>
+<a id="__codelineno-81-16" name="__codelineno-81-16" href="#__codelineno-81-16"></a>
+<a id="__codelineno-81-17" name="__codelineno-81-17" href="#__codelineno-81-17"></a>&quot;United States&quot;: {
+<a id="__codelineno-81-18" name="__codelineno-81-18" href="#__codelineno-81-18"></a>
+<a id="__codelineno-81-19" name="__codelineno-81-19" href="#__codelineno-81-19"></a>
+<a id="__codelineno-81-20" name="__codelineno-81-20" href="#__codelineno-81-20"></a>
+<a id="__codelineno-81-21" name="__codelineno-81-21" href="#__codelineno-81-21"></a>&quot;Portland&quot;: [56],
+<a id="__codelineno-81-22" name="__codelineno-81-22" href="#__codelineno-81-22"></a>
+<a id="__codelineno-81-23" name="__codelineno-81-23" href="#__codelineno-81-23"></a>
+<a id="__codelineno-81-24" name="__codelineno-81-24" href="#__codelineno-81-24"></a>
+<a id="__codelineno-81-25" name="__codelineno-81-25" href="#__codelineno-81-25"></a>&quot;N. Virginia (Amazon)&quot;: [83]
+<a id="__codelineno-81-26" name="__codelineno-81-26" href="#__codelineno-81-26"></a>
+<a id="__codelineno-81-27" name="__codelineno-81-27" href="#__codelineno-81-27"></a>
+<a id="__codelineno-81-28" name="__codelineno-81-28" href="#__codelineno-81-28"></a>
+<a id="__codelineno-81-29" name="__codelineno-81-29" href="#__codelineno-81-29"></a>},
+<a id="__codelineno-81-30" name="__codelineno-81-30" href="#__codelineno-81-30"></a>
+<a id="__codelineno-81-31" name="__codelineno-81-31" href="#__codelineno-81-31"></a>
+<a id="__codelineno-81-32" name="__codelineno-81-32" href="#__codelineno-81-32"></a>
+<a id="__codelineno-81-33" name="__codelineno-81-33" href="#__codelineno-81-33"></a>&quot;Ireland&quot;: {
+<a id="__codelineno-81-34" name="__codelineno-81-34" href="#__codelineno-81-34"></a>
+<a id="__codelineno-81-35" name="__codelineno-81-35" href="#__codelineno-81-35"></a>
+<a id="__codelineno-81-36" name="__codelineno-81-36" href="#__codelineno-81-36"></a>
+<a id="__codelineno-81-37" name="__codelineno-81-37" href="#__codelineno-81-37"></a>&quot;Dublin&quot;: [24]
+<a id="__codelineno-81-38" name="__codelineno-81-38" href="#__codelineno-81-38"></a>
+<a id="__codelineno-81-39" name="__codelineno-81-39" href="#__codelineno-81-39"></a>
+<a id="__codelineno-81-40" name="__codelineno-81-40" href="#__codelineno-81-40"></a>
+<a id="__codelineno-81-41" name="__codelineno-81-41" href="#__codelineno-81-41"></a>}
+<a id="__codelineno-81-42" name="__codelineno-81-42" href="#__codelineno-81-42"></a>
+<a id="__codelineno-81-43" name="__codelineno-81-43" href="#__codelineno-81-43"></a>
+<a id="__codelineno-81-44" name="__codelineno-81-44" href="#__codelineno-81-44"></a>
+<a id="__codelineno-81-45" name="__codelineno-81-45" href="#__codelineno-81-45"></a>}
+<a id="__codelineno-81-46" name="__codelineno-81-46" href="#__codelineno-81-46"></a>
+<a id="__codelineno-81-47" name="__codelineno-81-47" href="#__codelineno-81-47"></a>
+<a id="__codelineno-81-48" name="__codelineno-81-48" href="#__codelineno-81-48"></a>
+<a id="__codelineno-81-49" name="__codelineno-81-49" href="#__codelineno-81-49"></a>}
+</code></pre></div>
+<p>Подробнее о <a href="../../../../../dynatrace-api/environment-api/rum/user-sessions/" title="Learn what the Dynatrace User Sessions Query language API offers.">user sessions API</a>.</p>
+<h2 id="usql_3">Преобразование запросов в пользовательские метрики USQL<a class="headerlink" href="#usql_3" title="Permanent link">&para;</a></h2>
+<p>Некоторые запросы можно преобразовать в пользовательские метрики USQL для <a href="../../web-applications/additional-configuration/custom-metrics-from-user-sessions/" title="Every time a user session is closed, Dynatrace can extract metrics and store them as time series. Learn how to set up and use USQL custom metrics for web applications.">веб</a>, <a href="../../mobile-applications/additional-configuration/custom-metrics-from-user-sessions-mobile-apps/" title="Every time a user session is closed, Dynatrace can extract metrics and store them as time series. Learn how to set up and use USQL custom metrics for mobile applications.">мобильных</a> и <a href="../../custom-applications/additional-configuration/custom-metrics-from-user-sessions-custom-apps/" title="Every time a user session is closed, Dynatrace can extract metrics and store them as time series. Learn how to set up and use USQL custom metrics for custom applications.">пользовательских приложений</a>.</p>
+<p>Пользовательские метрики USQL доступны как
+пользовательские метрики сессий (USCM) и пользовательские метрики действий (UACM). Пользовательские метрики действий поддерживаются начиная с версии Dynatrace 1.260.</p>
+<ol>
+<li>Перейти в <strong>Query User Sessions</strong>.</li>
+<li>Ввести запрос, затем выбрать <strong>Run query</strong>.<br />
+   Список поддерживаемых полей см. в подробных руководствах для <a href="../../web-applications/additional-configuration/custom-metrics-from-user-sessions/#properties-and-supported-values" title="Every time a user session is closed, Dynatrace can extract metrics and store them as time series. Learn how to set up and use USQL custom metrics for web applications.">веб</a>, <a href="../../mobile-applications/additional-configuration/custom-metrics-from-user-sessions-mobile-apps/#properties-and-supported-values" title="Every time a user session is closed, Dynatrace can extract metrics and store them as time series. Learn how to set up and use USQL custom metrics for mobile applications.">мобильных</a> и <a href="../../custom-applications/additional-configuration/custom-metrics-from-user-sessions-custom-apps/#properties-and-supported-values" title="Every time a user session is closed, Dynatrace can extract metrics and store them as time series. Learn how to set up and use USQL custom metrics for custom applications.">пользовательских приложений</a>.</li>
+<li>Выбрать <strong>Create custom metric</strong>.</li>
+<li>Ввести имя метрики, затем просмотреть предложенные настройки.</li>
+</ol>
+<h2 id="_22">Ограничения<a class="headerlink" href="#_22" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Dynatrace хранит Real User Monitoring (действия пользователя и пользовательские сессии) ограниченный период времени. Подробности см. в разделе <a href="../../../../../manage/data-privacy-and-security/data-privacy/data-retention-periods/" title="Review default and configurable retention periods for service, RUM Classic, synthetic, Log Monitoring, metric, diagnostic, and security data in Dynatrace Managed.">Периоды хранения данных</a>.</li>
+<li>Набор результатов по умолчанию составляет 50, но количество результатов можно увеличить максимум до 5000 с помощью ключевого слова <code>LIMIT</code>.</li>
+<li>Максимальное количество потенциальных сгруппированных результатов ограничено 100 000. Значение по умолчанию, 10 000.<br />
+  Это влияет на применение <code>TOP()</code> при использовании <code>DISTINCT</code> или <code>GROUP BY</code>. Если <code>TOP()</code> не указан, 10 000 возможных результатов равномерно распределяются по указанным столбцам. Эти значения по умолчанию можно переопределить, указав <code>TOP()</code> для каждого столбца. Перемноженные значения <code>TOP()</code> не могут превышать 100 000 результатов.</li>
+</ul>
+<p>Дополнительные ограничения</p>
+<ul>
+<li>Функцию <code>TOP()</code> можно использовать для увеличения количества различных значений на агрегацию.</li>
+<li>Максимальное количество различных результатов на агрегацию ограничено 1000.</li>
+<li>Следующий запрос использует не более 10 000 теоретически возможных результатов:
+    <code>select browserFamily, city, count * FROM usersession group by browserFamily, city</code></li>
+<li>Следующий запрос включает <code>TOP()</code> и поэтому может использовать до 100 000 (100 × 1000) теоретически возможных результатов:
+    <code>select TOP(browserFamily, 1000), TOP(city, 100), count * FROM usersession group by browserFamily, city</code></li>
+<li>Соединения (joins) не допускаются.</li>
+<li>На один <code>SELECT</code> допускается только одна таблица.</li>
+<li>Поиск строковых значений с помощью регулярных выражений не поддерживается.</li>
+<li>Сравнивать два разных поля нельзя. Например, <code>WHERE field1 = field2</code> не работает.</li>
+<li>Условия <code>WHERE</code> работают только с полями, поэтому ни <code>WHERE true</code>, ни <code>WHERE COUNT(*) &gt; 3</code> не поддерживаются.</li>
+<li>Запрашивать можно только закрытые пользовательские сессии. Активные пользовательские сессии не учитываются.</li>
+<li>Сортировка поддерживается частично.</li>
+</ul>
+<p>Например, сортировка по результату математической операции не поддерживается.</p>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-82-1" name="__codelineno-82-1" href="#__codelineno-82-1"></a>SELECT endTime - startTime AS duration FROM usersession ORDER BY duration
+</code></pre></div>
+* Для больших временных диапазонов и сред с высокой нагрузкой данные могут экстраполироваться на основе выборочного подмножества (уровень экстраполяции). Это происходит независимо от того, используется ли API Dynatrace или веб-интерфейс Dynatrace. Если нужны стопроцентно точные данные, следует сократить временной диапазон или добавить дополнительные условия для более точной фильтрации запрашиваемых данных.
+* Функции не допускаются в предложении <code>GROUP BY</code>. Поэтому, если нужна группировка по месяцу, следует указать псевдоним.
+* <code>FUNNEL</code> нельзя использовать с функциями <code>SELECT *</code>, ключевыми словами вроде <code>JSON</code>, а также с операторами <code>GROUP BY</code>, <code>ORDER</code> и <code>LIMIT</code>.
+* Для математических операций поддержка <code>GROUP BY</code>, <code>ORDER BY</code> и других операций с функциями недоступна.
+* К <code>FUNNEL</code> можно применить не более 10 условий.
+* Некоторые поля, например <code>duration</code>, при выполнении над ними математических операций, таких как деление, всегда возвращают целочисленные значения вместо десятичных. Это связано с тем, что такие поля хранятся и отображаются как целочисленные значения. Например, <code>SELECT duration FROM usersession</code> возвращает значение duration <code>4800</code>, а <code>SELECT duration/1000 FROM usersession</code> возвращает значение duration <code>5</code>.</p>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  К началу
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      © 2026 Dynatrace Docs | Yerkebulan Ardabayev
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/Yerkebulan-Ardabayev" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../../../../..", "features": ["navigation.indexes", "navigation.prune", "navigation.path", "navigation.tracking", "navigation.top", "search.suggest", "search.highlight", "search.share", "content.code.copy", "content.code.annotate", "content.tabs.link", "content.tooltips", "toc.follow"], "search": "../../../../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u0421\u043a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u043d\u043e \u0432 \u0431\u0443\u0444\u0435\u0440", "clipboard.copy": "\u041a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u0442\u044c \u0432 \u0431\u0443\u0444\u0435\u0440", "search.result.more.one": "\u0415\u0449\u0451 1 \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.more.other": "\u0415\u0449\u0451 # \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.none": "\u0421\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439 \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u043e", "search.result.one": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e 1 \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0435", "search.result.other": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439: #", "search.result.placeholder": "\u041d\u0430\u0447\u043d\u0438\u0442\u0435 \u043f\u0435\u0447\u0430\u0442\u0430\u0442\u044c \u0434\u043b\u044f \u043f\u043e\u0438\u0441\u043a\u0430", "search.result.term.missing": "\u041e\u0442\u0441\u0443\u0442\u0441\u0442\u0432\u0443\u0435\u0442", "select.version": "\u0412\u044b\u0431\u0435\u0440\u0438\u0442\u0435 \u0432\u0435\u0440\u0441\u0438\u044e"}, "version": null}</script>
+    
+    
+  
+      <script src="../../../../../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../../../../../../assets/javascripts/groq-chat.js?sha=17d46ba74"></script>
+      
+    
+  <script>
+    (function() {
+      // --- Keyboard shortcut Ctrl+K / Cmd+K for search ---
+      document.addEventListener('keydown', function(e) {
+        if ((e.ctrlKey || e.metaKey) && e.key === 'k') {
+          e.preventDefault();
+          var searchInput = document.querySelector('.md-search__input');
+          if (searchInput) {
+            searchInput.focus();
+            var searchToggle = document.querySelector('[data-md-toggle="search"]');
+            if (searchToggle && !searchToggle.checked) {
+              searchToggle.checked = true;
+              searchToggle.dispatchEvent(new Event('change'));
+            }
+          }
+        }
+        // --- "/" focuses search like GitHub / Algolia docs ---
+        if (e.key === '/' && !/^(input|textarea|select)$/i.test(e.target.tagName)) {
+          e.preventDefault();
+          var inp = document.querySelector('.md-search__input');
+          if (inp) {
+            inp.focus();
+            var t = document.querySelector('[data-md-toggle="search"]');
+            if (t && !t.checked) { t.checked = true; t.dispatchEvent(new Event('change')); }
+          }
+        }
+      });
+    })();
+  </script>
+
+  </body>
+</html>

@@ -1,0 +1,3094 @@
+
+<!doctype html>
+<html lang="ru" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Документация Dynatrace Managed с AI-помощником">
+      
+      
+        <meta name="author" content="Yerkebulan Ardabayev">
+      
+      
+        <link rel="canonical" href="https://yerkebulan-ardabayev.github.io/dynatrace-docs-website/managed-ru/observe/digital-experience/synthetic-monitoring/analysis-and-alerting/synthetic-details-for-http-monitors-classic/">
+      
+      
+        <link rel="prev" href="../synthetic-details-for-browser-monitors/">
+      
+      
+        <link rel="next" href="../waterfall-graphs/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>HTTP monitors reporting results - Dynatrace — Документация</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Inter";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../../../assets/stylesheets/extra.v11.css?sha=17d46ba74">
+    
+    <script>__md_scope=new URL("../../../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  <style>
+    /* DocFlow DT Logo Badge — injected via template override */
+    .md-header__button.md-logo {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .md-header__button.md-logo img,
+    .md-header__button.md-logo svg {
+      display: none !important;
+    }
+    .md-header__button.md-logo::before {
+      content: 'DT';
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 28px;
+      height: 28px;
+      border-radius: 6px;
+      background: linear-gradient(135deg, #00d4aa 0%, #7c3aed 100%);
+      color: white;
+      font-size: 11px;
+      font-weight: 700;
+      font-family: 'Inter', sans-serif;
+      letter-spacing: -0.02em;
+      flex-shrink: 0;
+    }
+
+    /* Search Ctrl+K badge — inside input field */
+    .md-search__form {
+      position: relative;
+    }
+    .md-search__form::after {
+      content: 'Ctrl+K';
+      display: none;
+      align-items: center;
+      padding: 0.15rem 0.4rem;
+      border-radius: 4px;
+      border: 1px solid var(--docflow-border);
+      background: var(--md-default-bg-color);
+      font-size: 10px;
+      font-family: 'JetBrains Mono', monospace;
+      color: var(--md-default-fg-color--lighter);
+      white-space: nowrap;
+      pointer-events: none;
+      position: absolute;
+      right: 0.5rem;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+    @media (min-width: 60em) {
+      .md-search__form::after {
+        display: flex;
+      }
+    }
+  </style>
+
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="custom">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#http-monitors-reporting-results" class="md-skip">
+          Перейти к содержанию
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+  
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Верхний колонтитул">
+    <a href="../../../../../.." title="Dynatrace — Документация" class="md-header__button md-logo" aria-label="Dynatrace — Документация" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M11 15H6l7-14v8h5l-7 14z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Dynatrace — Документация
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              HTTP monitors reporting results
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Переключить на светлую тему"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Переключить на светлую тему" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Переключить на тёмную тему"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Переключить на тёмную тему" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Поиск" placeholder="Поиск" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Поиск">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Поделиться" aria-label="Поделиться" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Очистить" aria-label="Очистить" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Инициализация поиска
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/Yerkebulan-Ardabayev/dynatrace-docs-website" title="Перейти к репозиторию" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    dynatrace-docs-website
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Навигация" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../../../.." title="Dynatrace — Документация" class="md-nav__button md-logo" aria-label="Dynatrace — Документация" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M11 15H6l7-14v8h5l-7 14z"/></svg>
+
+    </a>
+    Dynatrace — Документация
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/Yerkebulan-Ardabayev/dynatrace-docs-website" title="Перейти к репозиторию" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    dynatrace-docs-website
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Главная
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../../../../ru/getting-started/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Начало работы
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../../../installation/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Кластер Managed
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../../../ingest-from/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Источники данных
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Наблюдаемость
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Наблюдаемость
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../../application-observability/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Наблюдаемость приложений
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_5_2" id="__nav_5_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Digital Experience
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Digital Experience
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обзор
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../custom-applications/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Пользовательские приложения
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../dem-use-cases/customer-support-with-session-segmentation/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Сценарии DEM
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../mobile-applications/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Мобильные приложения
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    
+  
+  
+  
+    
+  
+  
+  
+    <a href="../../../rum-classic/custom-applications/additional-configuration/configure-apdex-custom/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    rum-classic
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+  
+
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../rum-concepts/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Концепции мониторинга реальных пользователей
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../session-replay/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Session Replay
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../session-segmentation/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Сегментация сессий пользователей
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_2_9" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_5_2_9" id="__nav_5_2_9_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Synthetic Monitoring
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_5_2_9_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5_2_9">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Synthetic Monitoring
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обзор
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_2_9_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_5_2_9_2" id="__nav_5_2_9_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Анализ и оповещения
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_5_2_9_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5_2_9_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Анализ и оповещения
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../multidimensional-analysis-for-browser-monitors/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Multidimensional analysis for browser monitors
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../synthetic-alerting-overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Synthetic alerting overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../synthetic-details-for-browser-monitors/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Synthetic details for browser monitors
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    HTTP monitors reporting results
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../waterfall-graphs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Waterfall graphs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../browser-monitors/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Browser monitors
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../general-information/architecture-communication/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Общая информация
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../http-monitors-classic/configure-http-monitors-classic/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    http-monitors-classic
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../network-availability-monitors/configure-nam-managed/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    network-availability-monitors
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../private-synthetic-locations/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Private Synthetic locations
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../web-applications/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Веб-приложения
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../../infrastructure-observability/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Наблюдаемость инфраструктуры
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../../../dynatrace-intelligence/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Davis AI
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    
+  
+  
+  
+    <a href="../../../../../analyze-explore-automate/dashboards-classic/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Анализ
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../../../deliver/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Deliver
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    
+  
+  
+  
+    <a href="../../../../../secure/application-security/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Безопасность приложений
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    
+  
+  
+  
+    <a href="../../../../../manage/account-management/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Управление
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    
+  
+  
+  
+    <a href="../../../../../platform/oneagent/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Платформа
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../../../dynatrace-api/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../../../whats-new/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Что нового
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../../../offline-doc/how-do-i-enable-synthetic-monitors/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Офлайн-документация
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../../../../ru/training/day1-introduction/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обучение
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../ai/groq/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI Помощник
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Содержание">
+  
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+                
+
+
+
+  
+
+
+  <nav class="md-path" aria-label="Навигация" >
+    <ol class="md-path__list">
+      
+        
+  
+  
+    <li class="md-path__item">
+      <a href="../../../../../.." class="md-path__link">
+        
+  <span class="md-ellipsis">
+    Главная
+  </span>
+
+      </a>
+    </li>
+  
+
+      
+      
+        
+  
+  
+    
+    
+      
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="../../../../application-observability/" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    Наблюдаемость
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="../../../" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    Digital Experience
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="../../" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    Synthetic Monitoring
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="../multidimensional-analysis-for-browser-monitors/" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    Анализ и оповещения
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ol>
+  </nav>
+
+              
+              <article class="md-content__inner md-typeset">
+                
+  
+                  
+
+
+
+<h1 id="http-monitors-reporting-results">HTTP monitors reporting results<a class="headerlink" href="#http-monitors-reporting-results" title="Permanent link">&para;</a></h1>
+<h1 id="http-monitors-reporting-results_1">HTTP monitors reporting results<a class="headerlink" href="#http-monitors-reporting-results_1" title="Permanent link">&para;</a></h1>
+<ul>
+<li>Explanation</li>
+<li>13-min read</li>
+<li>Updated on Nov 27, 2023</li>
+</ul>
+<p>Перейдите в <strong>Synthetic Classic</strong> и выберите HTTP-монитор, чтобы открыть <strong>страницу Synthetic details</strong>, которая предоставляет обзор результатов выполнения монитора, визуализаций результатов и свойств монитора. Страница Synthetic details, основанная на AI-движке Davis, отображает сводную информацию и графики с готовыми ссылками и фильтрами для перехода к деталям проблемы и редактированию настроек монитора.</p>
+<p><img alt="HTTP monitor details" src="https://dt-cdn.net/images/httpmonitordetails1-1794-d60c8a1236.png" /></p>
+<p>HTTP monitor details</p>
+<h2 id="_1">Метрические визуализации<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<p>Верхняя панель показывает общую инфографику <a href="#availability">доступности</a> и <a href="#performance">производительности</a> монитора за выбранный период.</p>
+<p>Используйте панель фильтров в верхней части страницы для фильтрации всех HTTP-данных по одному или нескольким расположениям.</p>
+<p>Выберите быстрые ссылки в левом верхнем углу для перехода непосредственно к различным карточкам страницы деталей или для доступа к настройкам HTTP-монитора (<strong>Edit</strong>, <strong>Disable</strong>, <strong>Delete</strong>). <a href="#analyze-last-execution"><strong>Analyze execution details</strong></a> отображает результаты последнего успешного и неуспешного выполнений для каждого расположения в формате JSON.</p>
+<p>Теги, применённые к HTTP-монитору, отображаются под именем монитора. Нажмите <strong>Add tag</strong> для добавления дополнительных тегов. Обратите внимание: теги можно добавлять и удалять только со страницы деталей.</p>
+<p>Фиолетовые полосы над временными линиями доступности или производительности обозначают окна обслуживания.</p>
+<p><img alt="HTTP details with maintenance window" src="https://dt-cdn.net/images/httpdetailsmw1-1889-5247b78e7d.png" /></p>
+<p>HTTP details with maintenance window</p>
+<ul>
+<li>Отображение проблем и получение оповещений в течение окон обслуживания зависит от того, как вы <a href="../../../../../analyze-explore-automate/notifications-and-alerting/maintenance-windows/define-maintenance-window/" title="Создавайте окна обслуживания и определяйте их область.">настроили окна обслуживания</a>.</li>
+<li><a href="../../general-information/synthetic-calculations/#m-windows-availability" title="Поймите расчёты метрик Synthetic Monitoring.">Окна обслуживания можно исключать из расчётов доступности</a> с помощью глобальной настройки.</li>
+</ul>
+<h2 id="_2">Доступность<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<p>Инфографика доступности в верхней части страницы отображает доступность монитора за выбранный период с деталями о простое и затронутых расположениях (если есть). Инфографика длительности сбоя (простоя) и затронутых расположений отображается, если монитор недоступен в одном или нескольких расположениях. Количество затронутых расположений также отображается, если по каким-либо причинам данные от каких-либо расположений отсутствуют.</p>
+<p>Обратите внимание: монитор может быть недоступен в одном или всех расположениях даже без настроенных <a href="../../http-monitors-classic/configure-http-monitors-classic/#outage-handling" title="Узнайте о настройке HTTP-мониторов.">пороговых значений сбоев (глобальных или локальных)</a>. Продолжительность сбоя — это сумма всех простоев за выбранный период без учёта перекрывающихся простоев. Подробнее о расчёте доступности и простоя см. в разделе <a href="../../general-information/synthetic-calculations/" title="Поймите расчёты метрик Synthetic Monitoring.">Расчёты Synthetic</a>.</p>
+<p>Карточка <strong>Availability</strong> показывает общую доступность по всем расположениям мониторинга с аннотациями глобальных/локальных сбоев и глобальных/локальных отсутствующих данных (например, при отключённом мониторе).</p>
+<p>Наведите курсор на график <strong>All locations</strong> для просмотра информации о количестве расположений со сбоями или отсутствующими данными в любой момент времени. Разверните <strong>All locations</strong> для просмотра графиков доступности каждого расположения. Выберите блок простоя (красный) или доступности (фиолетовый) на любой временной линии доступности и нажмите <strong>Analyze</strong> для фильтрации всех HTTP-данных по длительности этого блока.</p>
+<p>Нажмите <strong>Pin to dashboard</strong>, чтобы закрепить плитку <strong>HTTP monitor</strong> на классическом дашборде.</p>
+<p><img alt="HTTP monitor availability" src="https://dt-cdn.net/images/httpdetailsavailability1-1891-b5151c0d2d.png" /></p>
+<p>HTTP monitor availability</p>
+<h2 id="_3">Производительность<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<p>Инфографика производительности в верхней части страницы деталей отображает среднюю производительность HTTP-монитора, то есть время отклика для суммы всех запросов по всем расположениям за выбранный период. Дополнительные метрики фиксируются для каждого запроса и отображаются в <a href="#http-requests">карточке запросов</a>.</p>
+<p>Карточка <strong>Performance</strong> показывает линии трендов минимального и максимального времени отклика для суммы всех запросов, где заштрихованная область представляет разницу между двумя значениями в любой момент времени. Обратите внимание: если монитор работает из одного расположения, линии тренда минимума и максимума совпадают.</p>
+<p><img alt="HTTP monitor performance" src="https://dt-cdn.net/images/httpdetailsperformanceminmax2-2216-152212e727.png" /></p>
+<p>HTTP monitor performance</p>
+<p>При желании можно просматривать линии трендов среднего суммарного времени отклика всех запросов (<strong>Response time by location</strong>) или среднего <strong>Response time by request</strong> по всем расположениям.</p>
+<p>Если монитор нарушает <a href="../../http-monitors-classic/configure-http-monitors-classic/#performance-thresholds" title="Узнайте о настройке HTTP-мониторов.">пороговое значение производительности</a> — для суммы всех запросов или отдельного запроса, над графиком производительности на время проблемы появляется сплошная красная линия. Кроме того, любое пороговое значение для суммы всех запросов отображается пунктирной красной линией. Нажмите сплошную красную полосу для отображения ссылки на страницу обзора проблемы.</p>
+<p><img alt="HTTP monitor performance problem" src="https://dt-cdn.net/images/httpdetailsperformanceviolation2-2217-2a18a384e0.png" /></p>
+<p>HTTP monitor performance problem</p>
+<h2 id="_4">Анализ деталей выполнения<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<p>Нажмите <strong>Analyze execution details</strong> в верхней части страницы деталей или <strong>Analyze last failed execution</strong> в карточке <strong>Failed requests</strong> для просмотра последних успешных, неуспешных и <a href="../../general-information/on-demand-executions/" title="Выполняйте синтетические мониторы по требованию из публичных или частных расположений.">выполнений по требованию</a> HTTP-монитора для каждого расположения в формате JSON. Нажмите <a href="#filters"><strong>Executions difference</strong></a> для просмотра цветовой разницы между последними успешными, неуспешными или выполнениями по требованию.</p>
+<p>Тело ответа и захваченные <a href="../../http-monitors-classic/http-monitor-metrics-classic/" title="Узнайте о метриках производительности, собираемых для HTTP-мониторов.">HTTP-метрики</a> также отображаются вместе с кодом HTTP-статуса для каждого запроса. Если монитор содержит <a href="../../../../../manage/credential-vault/" title="Храните и управляйте учётными данными в хранилище.">учётные данные</a>, переданные в URL запроса, заголовках HTTP или теле запроса, в JSON отображается только идентификатор учётных данных в соответствующем элементе. (Эта функция требует ActiveGate версии 1.229.)</p>
+<p>Можно ограничить отображение конфиденциальной информации (например, учётных данных, возвращённых в теле ответа) в деталях выполнения, выбрав <strong>Do not store and display request and response bodies, header values, and peer certificate details in execution details</strong> в <a href="../../http-monitors-classic/configure-http-monitors-classic/" title="Узнайте о настройке HTTP-мониторов.">настройках монитора</a>.</p>
+<p>Это нужно делать для каждого запроса, для которого нужно ограничить отображение. Тела запроса и ответа, значения заголовков запроса и ответа, а также детали одноранговых сертификатов заменяются замещающим текстом.</p>
+<p><img alt="Execution details hidden fields" src="https://dt-cdn.net/images/analyze-execution-details-hidden-948-0e70ad67cb.png" /></p>
+<p>Execution details hidden fields</p>
+<p>Для успешных или неуспешных выполнений вкладки содержат JSON-данные для всех расположений. <a href="#filters">Используйте фильтры</a> вверху или слева от каждой вкладки для фильтрации деталей выполнения. Можно просматривать и <strong>Download</strong> соответствующий отфильтрованный JSON-файл для успешных или неуспешных выполнений. Для выполнений по требованию можно загрузить JSON-файл для единственного выбранного выполнения. Также можно <strong>Copy</strong> URL окружения для получения JSON-файлов через API. Обратите внимание: GET-запросы API для получения выполнений синтетических мониторов требуют API-токенов.</p>
+<p><img alt="Download JSON and API link" src="https://dt-cdn.net/images/http-analyze-execution-download-1889-126037a9ff.png" /></p>
+<p>Download JSON and API link</p>
+<p>Атрибут <code>customLogs</code> отображает метку времени, уровень журнала и сообщение для каждой строки пользовательского журнала, заданной с помощью <a href="../../http-monitors-classic/pre-and-post-scripting-for-http-monitors-classic/" title="Узнайте, как применять предварительные и последующие скрипты к запросам.">методов скриптинга</a> <code>api.info()</code>, <code>api.warn()</code>, <code>api.fail()</code> или <code>api.error()</code>. (Эта функция требует Dynatrace версии 1.255+ для публичных расположений и ActiveGate версии 1.255+ для частных расположений.)</p>
+<p><img alt="customLogs attribute" src="https://dt-cdn.net/images/http-analyze-execution-customlogs-2182-b4164106c0.png" /></p>
+<p>customLogs attribute</p>
+<p>Вкладка <strong>On-demand execution</strong> перезаписывается при каждом выполнении по требованию. Используйте раскрывающийся список для выбора любого выполнения по требованию для монитора за предыдущие шесть часов. Если выполнения по требованию находятся в <a href="../../general-information/on-demand-executions/#ui" title="Выполняйте синтетические мониторы по требованию из публичных или частных расположений.">режимах <strong>Standard</strong> или <strong>Disable problem detection</strong></a>, детали также записываются на вкладки последнего неуспешного/успешного выполнения. Обратите внимание: в этих режимах, если монитор завершается неуспешно из-за нарушения порогового значения производительности, выполнение появляется на вкладках успешных и выполнений по требованию.</p>
+<h3 id="_5">Фильтры и сравнения<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
+<p>Используйте панель фильтров вверху и слева от каждой вкладки для сужения деталей выполнения — для каждой вкладки можно задавать разные фильтры. Можно выбирать из предоставленных вариантов для фильтрации по <strong>Locations</strong>, <strong>Requests</strong> и JSON <strong>Attributes</strong> (по отдельности или группами — см. ниже).</p>
+<p><img alt="Filtered JSON" src="https://dt-cdn.net/images/analyze-last-execution-filters2-1600-0085726604.png" /></p>
+<p>Filtered JSON</p>
+<p>На верхней панели фильтров также можно искать конкретное содержимое — просто введите строку (без учёта регистра) для поиска. На левой панели можно искать конкретные критерии фильтрации.</p>
+<p><img alt="Filters and search fields" src="https://dt-cdn.net/images/analyze-last-execution-filters-945-b19d004f3d.png" /></p>
+<p>Filters and search fields</p>
+<p>Вкладка <strong>Executions difference</strong> позволяет просматривать цветовое, объект за объектом сравнение двух выполнений: последнего неуспешного и успешного выполнения для каждого назначенного расположения или любого выполнения по требованию за последние шесть часов. Любые фильтры применяются к обоим сравниваемым выполнениям, что особенно удобно для сравнения выполнений по всей группе атрибутов, например <strong>Execution</strong> (см. ниже).</p>
+<p><img alt="Filter and compare executions" src="https://dt-cdn.net/images/http-analyze-execution-compare1-2215-e9094d193a.png" /></p>
+<p>Filter and compare executions</p>
+<h2 id="_6">Размер ответа<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
+<p>Карточка <strong>Response size</strong> показывает линии трендов минимального и максимального размера ответа для суммы всех запросов, где любая заштрихованная область представляет разницу между двумя значениями в любой момент времени. Линии трендов могут совпадать (как показано ниже), например, когда монитор работает из одного расположения. Однако размер ответа может варьироваться, например, когда разные ответы отправляются в зависимости от расположения.</p>
+<p><img alt="Min and max response size for all requests taken together" src="https://dt-cdn.net/images/httpdetailsresponsesize-1119-5f3f338a3e.png" /></p>
+<p>Min and max response size for all requests taken together</p>
+<p>Для отслеживания таких различий можно включить <strong>Show response size breakdown per location</strong>. Обратите внимание: если отфильтровать всю страницу деталей по каким-либо расположениям, переключатель становится недоступен.</p>
+<p><img alt="Response size by location" src="https://dt-cdn.net/images/httpdetailsresponsesizelocation-1119-d2c9b6eae0.png" /></p>
+<p>Response size by location</p>
+<h2 id="http-">HTTP-запросы<a class="headerlink" href="#http-" title="Permanent link">&para;</a></h2>
+<p>HTTP-монитор может состоять из одного или нескольких HTTP-запросов. Карточка <strong>HTTP requests</strong> даёт обзор всех выполненных запросов, их порядок, имя, URL запроса и используемый HTTP-метод. Для каждого запроса карточка <strong>HTTP requests</strong> разбивает производительность (<strong>Response time</strong>) по следующим метрикам (подробнее см. в разделе <a href="../../http-monitors-classic/http-monitor-metrics-classic/" title="Узнайте о метриках производительности, собираемых для HTTP-мониторов.">Метрики HTTP-мониторов</a>):</p>
+<ul>
+<li><strong>DNS lookup time</strong></li>
+<li><strong>TCP connect time</strong></li>
+<li><strong>TLS handshake time</strong></li>
+<li><strong>Waiting</strong></li>
+<li><strong>Download</strong></li>
+</ul>
+<p><strong>Response time</strong> — это сумма этих различных метрик.</p>
+<p>Разверните запрос из списка для просмотра всех метрик производительности на одном графике. Выберите метрику в легенде для её удаления/добавления в график производительности. Нажмите <strong>Edit request</strong> для перехода к настройкам монитора из этой карточки.</p>
+<p><img alt="HTTP requests card" src="https://dt-cdn.net/images/httpdetailsrequests2-1096-3c247f0d9a.png" /></p>
+<p>HTTP requests card</p>
+<p>Вкладка <strong>Status codes</strong> показывает временную линию возвращённых HTTP-кодов статуса для конкретного запроса. (Карточка <a href="#status-codes">HTTP status codes</a> показывает возвращённые HTTP-коды статуса для HTTP-монитора в целом.)</p>
+<p>Если запрос нарушает своё <a href="../../http-monitors-classic/configure-http-monitors-classic/#performance-thresholds" title="Узнайте о настройке HTTP-мониторов.">пороговое значение производительности для конкретного события</a>, он выделяется красным. Разверните запрос, чтобы увидеть тайминги производительности и нарушенное пороговое значение. На время проблемы над составным графиком появляется сплошная красная линия; пороговое значение запроса отображается пунктирной красной линией. Нажмите сплошную красную полосу для отображения ссылки на страницу обзора проблемы.</p>
+<p><img alt="HTTP request performance violation" src="https://dt-cdn.net/images/httpdetailsrequestviolation2-1096-dbe95d7ef3.png" /></p>
+<p>HTTP request performance violation</p>
+<h2 id="_7">Свойства<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
+<p>Эта информационная карточка показывает количество запросов, расположений, частоту выполнения монитора и применённые теги. Также можно видеть потребление DEM-единиц за выбранный период. Нажмите <strong>Add tag</strong> для добавления дополнительных тегов. Обратите внимание: теги можно добавлять и удалять только со страницы деталей.</p>
+<p><img alt="HTTP monitor properties" src="https://dt-cdn.net/images/httpdetailsproperties1-946-1650cc087c.png" /></p>
+<p>HTTP monitor properties</p>
+<h2 id="_8">Сервисы<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h2>
+<p>Карточка <strong>Services</strong> отображает все отслеживаемые сервисы, автоматически связанные с HTTP-монитором. Эта карточка появляется, когда отслеживаемый HTTP-эндпоинт размещён на хосте под управлением OneAgent и URL эндпоинта обрабатывается одним из обнаруженных сервисов. Связь между HTTP-монитором и сервисом устанавливается на основе данных, предоставленных OneAgent. Поэтому перед тем как сервис может быть связан с монитором, необходимо завершить хотя бы одно выполнение монитора. Выберите ссылку для отображаемого сервиса для перехода на страницу обзора сервиса, отфильтрованную по HTTP-монитору.</p>
+<p><img alt="Services card" src="https://dt-cdn.net/images/httpdetailsservice-931-dc29452459.png" /></p>
+<p>Services card</p>
+<h2 id="_9">Отслеживаемые приложения<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h2>
+<p>HTTP-мониторы позволяют отслеживать внутренние ресурсы и API-эндпоинты, например ключевые бэкенд-API для входа в систему или операций поиска, используемых мобильными приложениями. Такие HTTP-мониторы можно связывать с отслеживаемыми мобильными, веб- или пользовательскими приложениями. Нажмите <strong>Assign monitor to application</strong>. (Приложение можно связать напрямую в <a href="../../http-monitors-classic/configure-http-monitors-classic/#setup" title="Узнайте о настройке HTTP-мониторов.">настройках монитора</a>.)</p>
+<p><img alt="Link an application" src="https://dt-cdn.net/images/httpdetailslinkapp2-1102-1f74517f99.png" /></p>
+<p>Link an application</p>
+<p>Если для приложений, с которыми работает синтетический монитор, включён <a href="../../../rum-concepts/rum-overview/" title="Узнайте о Real User Monitoring, ключевых метриках производительности, мониторинге мобильных приложений и многом другом.">Real User Monitoring (RUM)</a>, Dynatrace автоматически связывает RUM-приложения с монитором, и отображается карточка <strong>Monitored applications</strong>. Здесь можно просматривать ключевые метрики приложения и переходить непосредственно к данным RUM.</p>
+<p>После связывания HTTP-монитора с приложением доступность синтетического монитора отображается непосредственно в деталях приложения, а Davis автоматически связывает обнаруженные проблемы синтетического мониторинга с привязанным приложением.</p>
+<p>Обратите внимание: нельзя блокировать трафик Synthetic Monitoring для RUM-приложений путём <a href="../../../web-applications/additional-configuration/exclude-browsers-robots-and-spiders-from-monitoring/" title="Отключите Real User Monitoring для определённых IP-адресов, браузеров, ботов и поисковых роботов.">исключения ботов, поисковых роботов или IP-адресов расположений Synthetic</a>.</p>
+<h2 id="_10">Проблемы<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h2>
+<p>Карточка <strong>Problems</strong> показывает проблемы производительности (нарушение порогового значения) и доступности (локальный или глобальный сбой) при включении соответствующих пороговых значений в <a href="../../http-monitors-classic/configure-http-monitors-classic/" title="Узнайте о настройке HTTP-мониторов.">настройках монитора</a>. Разверните карточку для просмотра активных и разрешённых проблем за выбранный период.</p>
+<p>Подробнее об определении пороговых значений производительности и доступности см. в разделе <a href="../../http-monitors-classic/configure-http-monitors-classic/" title="Узнайте о настройке HTTP-мониторов.">Настройка HTTP-мониторов</a>. Подробнее о расчёте доступности и производительности, генерации и снятии проблем см. в разделе <a href="../../general-information/synthetic-calculations/" title="Поймите расчёты метрик Synthetic Monitoring.">Расчёты Synthetic</a>. Подробнее о рабочем процессе и концепциях оповещений, включая настройку профилей и шаблонов уведомлений, см. в разделе <a href="../synthetic-alerting-overview/" title="Узнайте о концепциях и рабочем процессе оповещений Synthetic.">Обзор оповещений Synthetic</a>.</p>
+<p>Существует три основных типа проблем для HTTP-мониторов:</p>
+<ul>
+<li>Глобальный сбой (доступность)</li>
+<li>Локальный сбой (доступность)</li>
+<li>Нарушение порогового значения производительности (проблема производительности для суммы всех запросов или отдельных запросов)</li>
+</ul>
+<p><img alt="Problems card" src="https://dt-cdn.net/images/httpdetailsproblemcard-1101-2caea72d30.png" /></p>
+<p>Problems card</p>
+<ul>
+<li>Проблемы производительности могут объединять нарушения пороговых значений как на уровне монитора, так и на уровне запросов.</li>
+<li>Одновременно возникающие проблемы могут объединяться в одну проблему (<strong>Multiple application problems</strong>).</li>
+</ul>
+<p>Выберите проблему для перехода на страницу обзора проблемы. Перейдите глубже в проблему, чтобы увидеть страницу HTTP-деталей, отфильтрованную по длительности проблемы.</p>
+<p><img alt="Global outage problem" src="https://dt-cdn.net/images/httpmonitorglobaloutageproblemoverview-2245-2f1faed1ee.png" /></p>
+<p>Global outage problem</p>
+<p>Проблемы вместе с составными <a href="#events">событиями</a> и соответствующими <a href="#status-codes">кодами статуса</a> дают полное представление о количестве и масштабе проблем монитора.</p>
+<p><img alt="Problems, events, and status codes" src="https://dt-cdn.net/images/httpdetailsproblemseventsstatuscodes-1098-a25c0151da.png" /></p>
+<p>Problems, events, and status codes</p>
+<h2 id="_11">События<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h2>
+<p>Карточка <strong>Events</strong> показывает все события, составляющие проблемы. В списке и на временной линии отображаются события как активных, так и разрешённых проблем.</p>
+<p>Наведите курсор на временной слот на временной линии событий, чтобы увидеть тип и количество событий, созданных за этот интервал. Выберите временной слот для просмотра всплывающей подсказки с событиями, произошедшими в нём.</p>
+<p>Выберите тип события, например <strong>HTTP monitor location slowdown</strong>, чтобы увидеть список событий. Для каждого расположения, в котором монитор нарушает пороговые значения производительности на уровне запроса или монитора, создаётся одно событие замедления. Выберите отдельное событие для просмотра деталей.</p>
+<p><a href="../../http-monitors-classic/pre-and-post-scripting-for-http-monitors-classic/#end" title="Узнайте, как применять предварительные и последующие скрипты к запросам.">Метод <code>api.fail()</code></a> можно использовать для определения пользовательского <strong>Failure message</strong>, которое появляется в карточке Events при сбое. Пользовательские сообщения журнала также появляются в атрибуте <code>customLogs</code> в <a href="#analyze-last-execution">деталях выполнения HTTP-монитора</a>.</p>
+<p><img alt="Event type selected" src="https://dt-cdn.net/images/httpdetailseventtype2-1114-d6b38983d6.png" /></p>
+<p>Event type selected</p>
+<h2 id="_12">Неуспешные запросы<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h2>
+<p>Карточка <strong>Failed requests</strong> показывает количество каждого неуспешного запроса в выполнениях HTTP-монитора за выбранный период, разбитое по имени запроса и коду ошибки. На временном линейном графике отображается количество кодов ошибок — наведите курсор на любой временной слот для просмотра количества различных кодов статуса за этот интервал. Выберите код ошибки в легенде для его скрытия/отображения на графике.</p>
+<p>Выберите имя запроса для его редактирования в <a href="../../http-monitors-classic/configure-http-monitors-classic/" title="Узнайте о настройке HTTP-мониторов.">настройках монитора</a>. Нажмите <a href="#analyze-last-execution"><strong>Analyze last failed execution</strong></a> для просмотра последних неуспешных и успешных выполнений в формате JSON.</p>
+<p><img alt="Failed requests card" src="https://dt-cdn.net/images/httpdetailsfailedrequests-945-1510d2a6e1.png" /></p>
+<p>Failed requests card</p>
+<p>Обратите внимание: монитор, испытывающий простой из-за неуспешных запросов, вызывает проблемы сбоя только при настроенных пороговых значениях сбоев.</p>
+<h2 id="http-_1">HTTP-коды статуса<a class="headerlink" href="#http-_1" title="Permanent link">&para;</a></h2>
+<p>Карточка <strong>HTTP status codes</strong> отображает временную линию возвращённых HTTP-кодов статуса для выполнений HTTP-монитора в целом, то есть код статуса последнего выполненного запроса в мониторе, успешного или неуспешного. Если монитор содержит несколько запросов, например три, и монитор завершается неуспешно на втором запросе, третий запрос не выполняется. Сообщаемый код статуса относится ко второму запросу.</p>
+<p>Наведите курсор на любой временной слот на временной линии для просмотра количества различных кодов статуса за этот интервал. Выберите код статуса в легенде для его скрытия/отображения на графике.</p>
+<p><img alt="HTTP status codes" src="https://dt-cdn.net/images/httpdetailsstatuscodes-1252-7aa23ff4a8.png" /></p>
+<p>HTTP status codes</p>
+<h2 id="_13">Связанные темы<a class="headerlink" href="#_13" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="../../../../../dynatrace-api/environment-api/entity-v2/" title="Узнайте об API отслеживаемых объектов Dynatrace.">API отслеживаемых объектов</a></li>
+</ul>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  К началу
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      © 2026 Dynatrace Docs | Yerkebulan Ardabayev
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/Yerkebulan-Ardabayev" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../../../../..", "features": ["navigation.indexes", "navigation.prune", "navigation.path", "navigation.tracking", "navigation.top", "search.suggest", "search.highlight", "search.share", "content.code.copy", "content.code.annotate", "content.tabs.link", "content.tooltips", "toc.follow"], "search": "../../../../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u0421\u043a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u043d\u043e \u0432 \u0431\u0443\u0444\u0435\u0440", "clipboard.copy": "\u041a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u0442\u044c \u0432 \u0431\u0443\u0444\u0435\u0440", "search.result.more.one": "\u0415\u0449\u0451 1 \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.more.other": "\u0415\u0449\u0451 # \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.none": "\u0421\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439 \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u043e", "search.result.one": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e 1 \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0435", "search.result.other": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439: #", "search.result.placeholder": "\u041d\u0430\u0447\u043d\u0438\u0442\u0435 \u043f\u0435\u0447\u0430\u0442\u0430\u0442\u044c \u0434\u043b\u044f \u043f\u043e\u0438\u0441\u043a\u0430", "search.result.term.missing": "\u041e\u0442\u0441\u0443\u0442\u0441\u0442\u0432\u0443\u0435\u0442", "select.version": "\u0412\u044b\u0431\u0435\u0440\u0438\u0442\u0435 \u0432\u0435\u0440\u0441\u0438\u044e"}, "version": null}</script>
+    
+    
+  
+      <script src="../../../../../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../../../../../../assets/javascripts/groq-chat.js?sha=17d46ba74"></script>
+      
+    
+  <script>
+    (function() {
+      // --- Keyboard shortcut Ctrl+K / Cmd+K for search ---
+      document.addEventListener('keydown', function(e) {
+        if ((e.ctrlKey || e.metaKey) && e.key === 'k') {
+          e.preventDefault();
+          var searchInput = document.querySelector('.md-search__input');
+          if (searchInput) {
+            searchInput.focus();
+            var searchToggle = document.querySelector('[data-md-toggle="search"]');
+            if (searchToggle && !searchToggle.checked) {
+              searchToggle.checked = true;
+              searchToggle.dispatchEvent(new Event('change'));
+            }
+          }
+        }
+        // --- "/" focuses search like GitHub / Algolia docs ---
+        if (e.key === '/' && !/^(input|textarea|select)$/i.test(e.target.tagName)) {
+          e.preventDefault();
+          var inp = document.querySelector('.md-search__input');
+          if (inp) {
+            inp.focus();
+            var t = document.querySelector('[data-md-toggle="search"]');
+            if (t && !t.checked) { t.checked = true; t.dispatchEvent(new Event('change')); }
+          }
+        }
+      });
+    })();
+  </script>
+
+  </body>
+</html>

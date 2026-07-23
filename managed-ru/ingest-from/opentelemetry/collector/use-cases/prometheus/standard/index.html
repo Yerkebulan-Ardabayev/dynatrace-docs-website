@@ -1,0 +1,4590 @@
+
+<!doctype html>
+<html lang="ru" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Документация Dynatrace Managed с AI-помощником">
+      
+      
+        <meta name="author" content="Yerkebulan Ardabayev">
+      
+      
+        <link rel="canonical" href="https://yerkebulan-ardabayev.github.io/dynatrace-docs-website/managed-ru/ingest-from/opentelemetry/collector/use-cases/prometheus/standard/">
+      
+      
+        <link rel="prev" href="../simplified/">
+      
+      
+        <link rel="next" href="../../redact/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../../../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>Сбор метрик Prometheus с помощью OTel Collector (стандартная схема) - Dynatrace — Документация</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../../../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../../../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Inter";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../../../../assets/stylesheets/extra.v11.css?sha=17d46ba74">
+    
+    <script>__md_scope=new URL("../../../../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  <style>
+    /* DocFlow DT Logo Badge — injected via template override */
+    .md-header__button.md-logo {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .md-header__button.md-logo img,
+    .md-header__button.md-logo svg {
+      display: none !important;
+    }
+    .md-header__button.md-logo::before {
+      content: 'DT';
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 28px;
+      height: 28px;
+      border-radius: 6px;
+      background: linear-gradient(135deg, #00d4aa 0%, #7c3aed 100%);
+      color: white;
+      font-size: 11px;
+      font-weight: 700;
+      font-family: 'Inter', sans-serif;
+      letter-spacing: -0.02em;
+      flex-shrink: 0;
+    }
+
+    /* Search Ctrl+K badge — inside input field */
+    .md-search__form {
+      position: relative;
+    }
+    .md-search__form::after {
+      content: 'Ctrl+K';
+      display: none;
+      align-items: center;
+      padding: 0.15rem 0.4rem;
+      border-radius: 4px;
+      border: 1px solid var(--docflow-border);
+      background: var(--md-default-bg-color);
+      font-size: 10px;
+      font-family: 'JetBrains Mono', monospace;
+      color: var(--md-default-fg-color--lighter);
+      white-space: nowrap;
+      pointer-events: none;
+      position: absolute;
+      right: 0.5rem;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+    @media (min-width: 60em) {
+      .md-search__form::after {
+        display: flex;
+      }
+    }
+  </style>
+
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="custom">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#prometheus-otel-collector" class="md-skip">
+          Перейти к содержанию
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+  
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Верхний колонтитул">
+    <a href="../../../../../../.." title="Dynatrace — Документация" class="md-header__button md-logo" aria-label="Dynatrace — Документация" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M11 15H6l7-14v8h5l-7 14z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Dynatrace — Документация
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Сбор метрик Prometheus с помощью OTel Collector (стандартная схема)
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Переключить на светлую тему"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Переключить на светлую тему" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Переключить на тёмную тему"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Переключить на тёмную тему" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Поиск" placeholder="Поиск" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Поиск">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Поделиться" aria-label="Поделиться" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Очистить" aria-label="Очистить" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Инициализация поиска
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/Yerkebulan-Ardabayev/dynatrace-docs-website" title="Перейти к репозиторию" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    dynatrace-docs-website
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Навигация" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../../../../.." title="Dynatrace — Документация" class="md-nav__button md-logo" aria-label="Dynatrace — Документация" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M11 15H6l7-14v8h5l-7 14z"/></svg>
+
+    </a>
+    Dynatrace — Документация
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/Yerkebulan-Ardabayev/dynatrace-docs-website" title="Перейти к репозиторию" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    dynatrace-docs-website
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Главная
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../../../../../ru/getting-started/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Начало работы
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../../../../installation/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Кластер Managed
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Источники данных
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Источники данных
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обзор
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../../../amazon-web-services/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Настройка Dynatrace на Amazon Web Services
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../bulk-configuration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Удалённое управление конфигурацией OneAgent и ActiveGate
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../../../dynatrace-activegate/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dynatrace ActiveGate
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../../../dynatrace-oneagent/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dynatrace OneAgent
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../../../extend-dynatrace/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Расширение Dynatrace
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../../../extensions/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Расширения
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../../../google-cloud-platform/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Настройка Dynatrace на Google Cloud
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../../../microsoft-azure-services/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Настройка Dynatrace на Microsoft Azure
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_10" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4_10" id="__nav_4_10_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OpenTelemetry и Dynatrace
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_10_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4_10">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    OpenTelemetry и Dynatrace
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обзор
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_10_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4_10_2" id="__nav_4_10_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OTel Collector для передачи телеметрии в Dynatrace
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_10_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4_10_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    OTel Collector для передачи телеметрии в Dynatrace
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обзор
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../configuration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Настройка OTel Collector
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../deployment/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Развёртывание Dynatrace OTel Collector
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../scaling/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Как масштабировать OTel Collector
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../self-monitoring/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Самостоятельный мониторинг OTel Collector
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_10_2_6" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4_10_2_6" id="__nav_4_10_2_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Сценарии использования OTel Collector
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_4_10_2_6_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4_10_2_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Сценарии использования OTel Collector
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обзор
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../batch/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Пакетная отправка запросов OTLP с помощью OTel Collector
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../enrich/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обогащение OTLP данными OneAgent (без контейнеризации)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../filelog/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Приём логов из файлов с помощью OTel Collector
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../fluentd/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Приём данных FluentD с помощью OTel Collector
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../grpc/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Преобразование OTLP gRPC в HTTP с помощью OTel Collector
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../histograms/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Вычисление сводных данных гистограмм с помощью OTel Collector
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../host-monitoring/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Мониторинг хостов, отправляющих данные OpenTelemetry в Dynatrace
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../jaeger/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Приём данных Jaeger с помощью OTel Collector
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../journald/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Использование journald для приёма журналов systemd journal с помощью OTel Collector
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../kafka/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Буферизация данных через Kafka с помощью OTel Collector
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../kubernetes/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Приём данных Kubernetes с помощью OTel Collector
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../memory/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Применение ограничений памяти к OTel Collector
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../multi-export/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Отправка данных OpenTelemetry в несколько бэкендов
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../netflow/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Приём NetFlow с помощью OTel Collector
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_10_2_6_16" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4_10_2_6_16" id="__nav_4_10_2_6_16_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Сбор метрик Prometheus с помощью OTel Collector
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="5" aria-labelledby="__nav_4_10_2_6_16_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4_10_2_6_16">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Сбор метрик Prometheus с помощью OTel Collector
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обзор
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../simplified/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Сбор метрик Prometheus с помощью OTel Collector (упрощённый вариант)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Сбор метрик Prometheus с помощью OTel Collector (стандартная схема)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../redact/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Маскирование чувствительных данных с помощью OTel Collector
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sampling/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Сэмплирование с OTel Collector
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../statsd/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Приём данных StatsD с помощью OTel Collector
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../syslog/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Приём данных syslog с помощью OTel Collector
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../transform/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Преобразование и фильтрация данных с помощью OTel Collector
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../zipkin/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Приём данных Zipkin с помощью OTel Collector
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../getting-started/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Начало работы с OpenTelemetry и Dynatrace
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../../integrations/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Интеграция с Istio и Envoy
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../../otlp-api/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Конечные точки Dynatrace OTLP API
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../troubleshooting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обеспечение успешного внедрения OpenTelemetry
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../../walkthroughs/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Инструментирование вашего приложения
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../../../setup-on-container-platforms/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Настройка Dynatrace на контейнерных и PaaS-платформах
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../../../setup-on-k8s/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Настройка Dynatrace на Kubernetes
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../../../technology-support/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Поддержка технологий
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    
+  
+  
+  
+    <a href="../../../../../../observe/application-observability/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Наблюдаемость
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../../../../dynatrace-intelligence/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Davis AI
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    
+  
+  
+  
+    <a href="../../../../../../analyze-explore-automate/dashboards-classic/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Анализ
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../../../../deliver/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Deliver
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    
+  
+  
+  
+    <a href="../../../../../../secure/application-security/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Безопасность приложений
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    
+  
+  
+  
+    <a href="../../../../../../manage/account-management/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Управление
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    
+  
+  
+  
+    <a href="../../../../../../platform/oneagent/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Платформа
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../../../../dynatrace-api/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../../../../whats-new/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Что нового
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../../../../offline-doc/how-do-i-enable-synthetic-monitors/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Офлайн-документация
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../../../../../ru/training/day1-introduction/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обучение
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../../ai/groq/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI Помощник
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Содержание">
+  
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+                
+
+
+
+  
+
+
+  <nav class="md-path" aria-label="Навигация" >
+    <ol class="md-path__list">
+      
+        
+  
+  
+    <li class="md-path__item">
+      <a href="../../../../../../.." class="md-path__link">
+        
+  <span class="md-ellipsis">
+    Главная
+  </span>
+
+      </a>
+    </li>
+  
+
+      
+      
+        
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="../../../../../" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    Источники данных
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="../../../../" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    OpenTelemetry и Dynatrace
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="../../../" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    OTel Collector для передачи телеметрии в Dynatrace
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="../../" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    Сценарии использования OTel Collector
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="../" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    Сбор метрик Prometheus с помощью OTel Collector
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ol>
+  </nav>
+
+              
+              <article class="md-content__inner md-typeset">
+                
+  
+                  
+
+
+
+<h1 id="prometheus-otel-collector">Сбор метрик Prometheus с помощью OTel Collector (стандартная схема)<a class="headerlink" href="#prometheus-otel-collector" title="Permanent link">&para;</a></h1>
+<h1 id="prometheus-otel-collector_1">Сбор метрик Prometheus с помощью OTel Collector (стандартная схема)<a class="headerlink" href="#prometheus-otel-collector_1" title="Permanent link">&para;</a></h1>
+<ul>
+<li>Практическое руководство</li>
+<li>Чтение: 12 мин</li>
+<li>Опубликовано 23 июня 2026 г.</li>
+</ul>
+<p>Эта страница описывает сбор и обработку данных с эндпоинтов Prometheus с помощью стандартного развёртывания промышленного уровня.
+Такая схема использует архитектуру с <a href="https://github.com/Dynatrace/otel-target-allocator">Target Allocator﻿</a> и отдельными пулами Collector для сбора и обработки данных.
+Это рекомендуемый подход для большинства промышленных развёртываний, он подходит для кластеров Kubernetes, которым нужны автомасштабирование, избыточность и обработка больших объёмов данных Prometheus.</p>
+<h2 id="_1">Когда использовать этот подход<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<p>Используй эту архитектуру, если применим один или несколько следующих сценариев.</p>
+<ul>
+<li>Нагрузка превышает возможности одного Collector или небольшого набора дублированных Collector.</li>
+<li>Собираются данные с тысяч подов или сотен различных эндпоинтов.</li>
+<li>Общий объём поступающих данных, это миллионы точек данных в минуту.</li>
+<li>Нужно горизонтальное масштабирование пулов scraper и gateway вместо ручного разделения целей.</li>
+</ul>
+<p>Если собираются данные с небольшого или статического набора эндпоинтов и автомасштабирование или избыточность не нужны, вместо этого можно использовать упрощённое развёртывание с одним Collector.
+Подробнее см. <a href="../simplified/" title="Configure a single OpenTelemetry Collector to scrape Prometheus endpoints for small and medium-scale workloads.">Сбор метрик Prometheus с помощью OTel Collector (упрощённая схема)</a>.</p>
+<h2 id="_2">Предварительные требования<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<p>Для этого сценария предполагается наличие следующего:</p>
+<p>Устанавливать всё перечисленное ниже заранее не нужно. Пошаговое руководство <a href="#deploy-the-tiered-architecture">Развёртывание многоуровневой архитектуры</a> устанавливает CRD, Target Allocator и оба уровня Collector по шагам. Этот список стоит воспринимать как справку о том, что нужно для развёртывания: единственные настоящие предварительные требования, это кластер Kubernetes и доступ к Dynatrace API.</p>
+<ul>
+<li>Кластер Kubernetes с установленными Custom Resource Definitions (CRD) Prometheus Operator, это <code>ServiceMonitor</code>, <code>PodMonitor</code> и <code>ScrapeConfig</code>. Нужны только эти CRD, а не весь <a href="https://prometheus-operator.dev/docs/getting-started/installation/">Prometheus Operator﻿</a>. <a href="#deploy-the-tiered-architecture">Шаг 1</a> руководства устанавливает пакет, содержащий только CRD.</li>
+<li>
+<p>Один из следующих дистрибутивов Collector для уровня scraper, с <a href="https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.156.0/receiver/prometheusreceiver">ресивером <code>prometheus</code>﻿</a> и <a href="https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.156.0/exporter/loadbalancingexporter">экспортёром <code>loadbalancing</code>﻿</a>:</p>
+</li>
+<li>
+<p><a href="../../../#dt-collector-dist" title="Learn how to use the OpenTelemetry Collector, including the Dynatrace OTel Collector, to ingest telemetry from OpenTelemetry.">Dynatrace OTel Collector</a></p>
+</li>
+<li><a href="../../../#collector-contrib" title="Learn how to use the OpenTelemetry Collector, including the Dynatrace OTel Collector, to ingest telemetry from OpenTelemetry.">OTel Collector Contrib</a></li>
+<li><a href="../../../#collector-builder" title="Learn how to use the OpenTelemetry Collector, including the Dynatrace OTel Collector, to ingest telemetry from OpenTelemetry.">Собственная сборка OTel Collector</a></li>
+<li>
+<p>Один из следующих дистрибутивов Collector для уровня gateway, с процессорами <a href="https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.156.0/processor/metricstarttimeprocessor"><code>metric_start_time</code>﻿</a>, <a href="https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.156.0/processor/cumulativetodeltaprocessor"><code>cumulativetodelta</code>﻿</a>, <a href="https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.156.0/processor/k8sattributesprocessor"><code>k8sattributes</code>﻿</a> и <a href="https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.156.0/processor/transformprocessor"><code>transform</code>﻿</a>, а также <a href="https://github.com/open-telemetry/opentelemetry-collector/tree/v0.156.0/exporter/otlphttpexporter">экспортёром <code>otlphttp</code>﻿</a>:</p>
+</li>
+<li>
+<p><a href="../../../#dt-collector-dist" title="Learn how to use the OpenTelemetry Collector, including the Dynatrace OTel Collector, to ingest telemetry from OpenTelemetry.">Dynatrace OTel Collector</a></p>
+</li>
+<li><a href="../../../#collector-contrib" title="Learn how to use the OpenTelemetry Collector, including the Dynatrace OTel Collector, to ingest telemetry from OpenTelemetry.">OTel Collector Contrib</a></li>
+<li><a href="../../../#collector-builder" title="Learn how to use the OpenTelemetry Collector, including the Dynatrace OTel Collector, to ingest telemetry from OpenTelemetry.">Собственная сборка OTel Collector</a></li>
+<li>
+<p>Один из следующих дистрибутивов Target Allocator, развёрнутый через исходный Helm-чарт <code>opentelemetry-target-allocator</code>:</p>
+</li>
+<li>
+<p><a href="https://github.com/Dynatrace/otel-target-allocator">Dynatrace Target Allocator﻿</a></p>
+</li>
+<li><a href="https://opentelemetry.io/docs/platforms/kubernetes/operator/target-allocator/">Исходный OpenTelemetry Target Allocator﻿</a></li>
+<li><a href="../../../../otlp-api/" title="Learn about the OTLP API endpoints that your application uses to export OpenTelemetry data to Dynatrace.">URL эндпоинта Dynatrace API</a>, на который должны экспортироваться данные.</li>
+<li><a href="../../../../otlp-api/#authentication-export-to-activegate" title="Learn about the OTLP API endpoints that your application uses to export OpenTelemetry data to Dynatrace.">Токен API</a> с нужной областью доступа (требуется только для SaaS и ActiveGate).</li>
+</ul>
+<h2 id="_3">Обзор архитектуры<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<p><img alt="Обзор архитектуры стандартного сценария сбора метрик OTel Prometheus" src="https://dt-cdn.net/images/prometheus-large-scale-arch-40e1b468cb.svg" /></p>
+<p>Обзор архитектуры стандартного сценария сбора метрик OTel Prometheus</p>
+<p>Эта схема состоит из следующих компонентов:</p>
+<ul>
+<li>Target Allocator: Target Allocator (TA) обнаруживает цели Prometheus через Custom Resource Definition (CRD) <code>ServiceMonitor</code>, <code>PodMonitor</code> или <code>ScrapeConfig</code> и распределяет их по пулу scraper с помощью согласованного хеширования.</li>
+</ul>
+<p>Алгоритм хеширования детерминированный, поэтому каждая реплика независимо получает одинаковое распределение целей по scraper. Для отказоустойчивости стоит запускать несколько реплик.
+* Scraper: развёртывание Collector. Каждый scraper опрашивает TA, собирает данные с назначенных ему целей Prometheus и передаёт данные в пул gateway через экспортёр <code>loadbalancing</code>.</p>
+<p>Экспортёр <code>loadbalancing</code> направляет данные по хешу ресурса, поэтому все данные от конкретного исходного пода стабильно попадают на один и тот же gateway, что сохраняет согласованность состояния по каждой серии.
+* Gateway: StatefulSet из Collector. Принимает OTLP от scraper, запускает состояние процессоров <code>metric_start_time</code> и <code>cumulativetodelta</code>, применяет обогащение данными Kubernetes через <code>k8sattributes</code> и <code>transform</code>, экспортирует данные в Dynatrace.</p>
+<p>Процессоры <code>metric_start_time</code> и <code>cumulativetodelta</code> хранят состояние и должны видеть каждый последовательный отсчёт серии в одном месте, чтобы корректно вычислять дельты. Они работают на уровне gateway, а не на scraper, потому что экспортёр <code>loadbalancing</code> стабильно направляет все данные от конкретного источника на один и тот же gateway, поэтому полный поток отсчётов каждой серии сходится там же, даже при автомасштабировании пула scraper.
+  Запуск gateway как StatefulSet даёт каждой реплике устойчивую идентичность и упорядоченный выкат, что делает набор эндпоинтов пула gateway предсказуемым во время событий масштабирования.</p>
+<h2 id="_4">Эталонная конфигурация<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<p>Эталонная конфигурация доступна в GitHub-репозитории Dynatrace OTel Collector, см.
+<a href="https://github.com/Dynatrace/dynatrace-otel-collector/tree/main/config_examples/prometheus-large-scale"><code>config_examples/prometheus-large-scale/</code>﻿</a>.</p>
+<p>Набор включает следующие файлы YAML.</p>
+<ul>
+<li><code>allocator.values.yaml</code>: значения Helm для TA</li>
+<li><code>tier1-scraper.values.yaml</code>: значения Helm для развёртывания scraper</li>
+<li><code>tier2-gateway.values.yaml</code>: значения Helm для StatefulSet gateway</li>
+<li><code>rbac.yaml</code>: ServiceAccount, ClusterRole и привязки для всех уровней</li>
+<li><code>scrapeconfig.yaml</code>: пример CRD <code>ScrapeConfig</code> для обнаружения на основе аннотаций</li>
+<li><code>selfmon-scraper.yaml</code>: значения Helm для отдельного Collector самомониторинга, который собирает метрики самомониторинга со всех уровней и экспортирует их напрямую в Dynatrace, независимо от основного конвейера</li>
+</ul>
+<p>Значения можно применить как есть или адаптировать под собственный кластер, см. <a href="#customize-configuration">Настройка конфигурации</a>.</p>
+<h2 id="_5">Развёртывание многоуровневой архитектуры<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
+<p>Ниже приведён обзор графиков и манифестов Helm, на которые ссылается эталонная конфигурация.</p>
+<p>В этом обзоре используются значения Helm, но это не единственный вариант.
+Также можно развернуть оба уровня Collector и Target Allocator через <a href="https://github.com/open-telemetry/opentelemetry-operator">OpenTelemetry Operator﻿</a>, используя его пользовательские ресурсы <code>OpenTelemetryCollector</code> и <code>TargetAllocator</code>.
+Оба пути требуют одинакового RBAC.</p>
+<ol>
+<li>Установить CRD Prometheus Operator (<code>ServiceMonitor</code>, <code>PodMonitor</code>, <code>ScrapeConfig</code>), чтобы TA мог обнаруживать цели.</li>
+</ol>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>kubectl apply -f https://github.com/prometheus-operator/prometheus-operator/releases/download/v0.91.0/stripped-down-crds.yaml
+</code></pre></div>
+2. Применить RBAC для ServiceAccount TA и Collector.</p>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>kubectl apply -f rbac.yaml
+</code></pre></div>
+3. Развернуть TA с помощью chart'а Helm <code>opentelemetry-target-allocator</code> из upstream и предоставленных values. При необходимости запустить несколько реплик для отказоустойчивости.</p>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>helm install otel-allocator open-telemetry/opentelemetry-target-allocator \
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>--values allocator.values.yaml
+</code></pre></div>
+4. Применить CRD <code>ServiceMonitor</code> и <code>PodMonitor</code> для рабочих нагрузок, которые нужно опрашивать. По желанию применить <code>ScrapeConfig</code> для обнаружения на основе аннотаций. Примеры каждого варианта смотри в разделе <a href="#configure-the-target-allocator">Настройка Target Allocator</a>. Если выполняется переход с одного Collector, смотри раздел <a href="#migrate">Миграция с одного Collector</a>.
+5. Развернуть пул gateway перед скраперами, чтобы у экспортера <code>loadbalancing</code> были доступные назначения при первом запуске.</p>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>helm install otel-gateway open-telemetry/opentelemetry-collector \
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>--values tier2-gateway.values.yaml
+</code></pre></div>
+6. Развернуть пул скраперов.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>helm install otel-scraper open-telemetry/opentelemetry-collector \
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>--values tier1-scraper.values.yaml
+</code></pre></div>
+<h2 id="target-allocator">Настройка Target Allocator<a class="headerlink" href="#target-allocator" title="Permanent link">&para;</a></h2>
+<p>TA обнаруживает цели опроса Prometheus из CRD <code>ServiceMonitor</code>, <code>PodMonitor</code> и <code>ScrapeConfig</code> и распределяет их по пулу скраперов, используя consistent hashing. Он поддерживает единое авторитетное представление о том, какой скрапер отвечает за какую цель.</p>
+<p>Настройка того, какие CRD отслеживает TA, задаётся через селекторы меток в values Helm. Эталонная конфигурация использует метку <code>prometheus.dynatrace.com: "true"</code>:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>prometheus_cr:
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>enabled: true
+<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>
+<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a>
+<a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a>
+<a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a>scrapeInterval: 15s
+<a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a>
+<a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a>
+<a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a>
+<a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a>service_monitor_selector:
+<a id="__codelineno-5-14" name="__codelineno-5-14" href="#__codelineno-5-14"></a>
+<a id="__codelineno-5-15" name="__codelineno-5-15" href="#__codelineno-5-15"></a>
+<a id="__codelineno-5-16" name="__codelineno-5-16" href="#__codelineno-5-16"></a>
+<a id="__codelineno-5-17" name="__codelineno-5-17" href="#__codelineno-5-17"></a>matchlabels:
+<a id="__codelineno-5-18" name="__codelineno-5-18" href="#__codelineno-5-18"></a>
+<a id="__codelineno-5-19" name="__codelineno-5-19" href="#__codelineno-5-19"></a>
+<a id="__codelineno-5-20" name="__codelineno-5-20" href="#__codelineno-5-20"></a>
+<a id="__codelineno-5-21" name="__codelineno-5-21" href="#__codelineno-5-21"></a>prometheus.dynatrace.com: &quot;true&quot;
+<a id="__codelineno-5-22" name="__codelineno-5-22" href="#__codelineno-5-22"></a>
+<a id="__codelineno-5-23" name="__codelineno-5-23" href="#__codelineno-5-23"></a>
+<a id="__codelineno-5-24" name="__codelineno-5-24" href="#__codelineno-5-24"></a>
+<a id="__codelineno-5-25" name="__codelineno-5-25" href="#__codelineno-5-25"></a>pod_monitor_selector:
+<a id="__codelineno-5-26" name="__codelineno-5-26" href="#__codelineno-5-26"></a>
+<a id="__codelineno-5-27" name="__codelineno-5-27" href="#__codelineno-5-27"></a>
+<a id="__codelineno-5-28" name="__codelineno-5-28" href="#__codelineno-5-28"></a>
+<a id="__codelineno-5-29" name="__codelineno-5-29" href="#__codelineno-5-29"></a>matchlabels:
+<a id="__codelineno-5-30" name="__codelineno-5-30" href="#__codelineno-5-30"></a>
+<a id="__codelineno-5-31" name="__codelineno-5-31" href="#__codelineno-5-31"></a>
+<a id="__codelineno-5-32" name="__codelineno-5-32" href="#__codelineno-5-32"></a>
+<a id="__codelineno-5-33" name="__codelineno-5-33" href="#__codelineno-5-33"></a>prometheus.dynatrace.com: &quot;true&quot;
+<a id="__codelineno-5-34" name="__codelineno-5-34" href="#__codelineno-5-34"></a>
+<a id="__codelineno-5-35" name="__codelineno-5-35" href="#__codelineno-5-35"></a>
+<a id="__codelineno-5-36" name="__codelineno-5-36" href="#__codelineno-5-36"></a>
+<a id="__codelineno-5-37" name="__codelineno-5-37" href="#__codelineno-5-37"></a>scrape_config_selector:
+<a id="__codelineno-5-38" name="__codelineno-5-38" href="#__codelineno-5-38"></a>
+<a id="__codelineno-5-39" name="__codelineno-5-39" href="#__codelineno-5-39"></a>
+<a id="__codelineno-5-40" name="__codelineno-5-40" href="#__codelineno-5-40"></a>
+<a id="__codelineno-5-41" name="__codelineno-5-41" href="#__codelineno-5-41"></a>matchlabels:
+<a id="__codelineno-5-42" name="__codelineno-5-42" href="#__codelineno-5-42"></a>
+<a id="__codelineno-5-43" name="__codelineno-5-43" href="#__codelineno-5-43"></a>
+<a id="__codelineno-5-44" name="__codelineno-5-44" href="#__codelineno-5-44"></a>
+<a id="__codelineno-5-45" name="__codelineno-5-45" href="#__codelineno-5-45"></a>prometheus.dynatrace.com: &quot;true&quot;
+</code></pre></div>
+<h3 id="collector">Миграция с одного Collector<a class="headerlink" href="#collector" title="Permanent link">&para;</a></h3>
+<p>Если выполняется переход с <a href="../simplified/" title="Configure a single OpenTelemetry Collector to scrape Prometheus endpoints for small and medium-scale workloads.">упрощённого развёртывания</a>, цели заданы как статические <code>scrape_configs</code> в Prometheus receiver. Target Allocator вместо этого обнаруживает цели через CRD, поэтому каждое задание опроса нужно преобразовать в <code>ServiceMonitor</code> (рекомендуется) или <code>PodMonitor</code>.</p>
+<p>Для самого быстрого перехода от <code>scrape_configs</code> с минимальными изменениями можно вместо этого обернуть существующие статические цели в CRD <code>ScrapeConfig</code> (смотри раздел <a href="#scrapeconfig">ScrapeConfig</a>). Это сохраняет статический список целей, поэтому такой вариант не получает преимуществ обнаружения сервисов на основе меток. В долгосрочной перспективе рекомендуется перейти на <code>ServiceMonitor</code> или <code>PodMonitor</code>.</p>
+<p>Следующий пример показывает, как преобразовать одно статическое задание в эквивалентный <code>ServiceMonitor</code>.</p>
+<ul>
+<li>До, на одном Collector:</li>
+</ul>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>receivers:
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>
+<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>prometheus:
+<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a>
+<a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a>
+<a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a>
+<a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a>config:
+<a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a>
+<a id="__codelineno-6-11" name="__codelineno-6-11" href="#__codelineno-6-11"></a>
+<a id="__codelineno-6-12" name="__codelineno-6-12" href="#__codelineno-6-12"></a>
+<a id="__codelineno-6-13" name="__codelineno-6-13" href="#__codelineno-6-13"></a>scrape_configs:
+<a id="__codelineno-6-14" name="__codelineno-6-14" href="#__codelineno-6-14"></a>
+<a id="__codelineno-6-15" name="__codelineno-6-15" href="#__codelineno-6-15"></a>
+<a id="__codelineno-6-16" name="__codelineno-6-16" href="#__codelineno-6-16"></a>
+<a id="__codelineno-6-17" name="__codelineno-6-17" href="#__codelineno-6-17"></a>- job_name: my-app
+<a id="__codelineno-6-18" name="__codelineno-6-18" href="#__codelineno-6-18"></a>
+<a id="__codelineno-6-19" name="__codelineno-6-19" href="#__codelineno-6-19"></a>
+<a id="__codelineno-6-20" name="__codelineno-6-20" href="#__codelineno-6-20"></a>
+<a id="__codelineno-6-21" name="__codelineno-6-21" href="#__codelineno-6-21"></a>scrape_interval: 60s
+<a id="__codelineno-6-22" name="__codelineno-6-22" href="#__codelineno-6-22"></a>
+<a id="__codelineno-6-23" name="__codelineno-6-23" href="#__codelineno-6-23"></a>
+<a id="__codelineno-6-24" name="__codelineno-6-24" href="#__codelineno-6-24"></a>
+<a id="__codelineno-6-25" name="__codelineno-6-25" href="#__codelineno-6-25"></a>metrics_path: /metrics
+<a id="__codelineno-6-26" name="__codelineno-6-26" href="#__codelineno-6-26"></a>
+<a id="__codelineno-6-27" name="__codelineno-6-27" href="#__codelineno-6-27"></a>
+<a id="__codelineno-6-28" name="__codelineno-6-28" href="#__codelineno-6-28"></a>
+<a id="__codelineno-6-29" name="__codelineno-6-29" href="#__codelineno-6-29"></a>static_configs:
+<a id="__codelineno-6-30" name="__codelineno-6-30" href="#__codelineno-6-30"></a>
+<a id="__codelineno-6-31" name="__codelineno-6-31" href="#__codelineno-6-31"></a>
+<a id="__codelineno-6-32" name="__codelineno-6-32" href="#__codelineno-6-32"></a>
+<a id="__codelineno-6-33" name="__codelineno-6-33" href="#__codelineno-6-33"></a>- targets: [&#39;my-app.my-namespace.svc:8080&#39;]
+</code></pre></div>
+* После, в виде <code>ServiceMonitor</code> (полную схему смотри в разделе <a href="#servicemonitor">ServiceMonitor</a>):</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>apiVersion: monitoring.coreos.com/v1
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>
+<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>
+<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>kind: ServiceMonitor
+<a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a>
+<a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a>
+<a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a>
+<a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a>metadata:
+<a id="__codelineno-7-10" name="__codelineno-7-10" href="#__codelineno-7-10"></a>
+<a id="__codelineno-7-11" name="__codelineno-7-11" href="#__codelineno-7-11"></a>
+<a id="__codelineno-7-12" name="__codelineno-7-12" href="#__codelineno-7-12"></a>
+<a id="__codelineno-7-13" name="__codelineno-7-13" href="#__codelineno-7-13"></a>name: my-app
+<a id="__codelineno-7-14" name="__codelineno-7-14" href="#__codelineno-7-14"></a>
+<a id="__codelineno-7-15" name="__codelineno-7-15" href="#__codelineno-7-15"></a>
+<a id="__codelineno-7-16" name="__codelineno-7-16" href="#__codelineno-7-16"></a>
+<a id="__codelineno-7-17" name="__codelineno-7-17" href="#__codelineno-7-17"></a>labels:
+<a id="__codelineno-7-18" name="__codelineno-7-18" href="#__codelineno-7-18"></a>
+<a id="__codelineno-7-19" name="__codelineno-7-19" href="#__codelineno-7-19"></a>
+<a id="__codelineno-7-20" name="__codelineno-7-20" href="#__codelineno-7-20"></a>
+<a id="__codelineno-7-21" name="__codelineno-7-21" href="#__codelineno-7-21"></a>prometheus.dynatrace.com: &quot;true&quot;
+<a id="__codelineno-7-22" name="__codelineno-7-22" href="#__codelineno-7-22"></a>
+<a id="__codelineno-7-23" name="__codelineno-7-23" href="#__codelineno-7-23"></a>
+<a id="__codelineno-7-24" name="__codelineno-7-24" href="#__codelineno-7-24"></a>
+<a id="__codelineno-7-25" name="__codelineno-7-25" href="#__codelineno-7-25"></a>spec:
+<a id="__codelineno-7-26" name="__codelineno-7-26" href="#__codelineno-7-26"></a>
+<a id="__codelineno-7-27" name="__codelineno-7-27" href="#__codelineno-7-27"></a>
+<a id="__codelineno-7-28" name="__codelineno-7-28" href="#__codelineno-7-28"></a>
+<a id="__codelineno-7-29" name="__codelineno-7-29" href="#__codelineno-7-29"></a>selector:
+<a id="__codelineno-7-30" name="__codelineno-7-30" href="#__codelineno-7-30"></a>
+<a id="__codelineno-7-31" name="__codelineno-7-31" href="#__codelineno-7-31"></a>
+<a id="__codelineno-7-32" name="__codelineno-7-32" href="#__codelineno-7-32"></a>
+<a id="__codelineno-7-33" name="__codelineno-7-33" href="#__codelineno-7-33"></a>matchLabels:
+<a id="__codelineno-7-34" name="__codelineno-7-34" href="#__codelineno-7-34"></a>
+<a id="__codelineno-7-35" name="__codelineno-7-35" href="#__codelineno-7-35"></a>
+<a id="__codelineno-7-36" name="__codelineno-7-36" href="#__codelineno-7-36"></a>
+<a id="__codelineno-7-37" name="__codelineno-7-37" href="#__codelineno-7-37"></a>app: my-app
+<a id="__codelineno-7-38" name="__codelineno-7-38" href="#__codelineno-7-38"></a>
+<a id="__codelineno-7-39" name="__codelineno-7-39" href="#__codelineno-7-39"></a>
+<a id="__codelineno-7-40" name="__codelineno-7-40" href="#__codelineno-7-40"></a>
+<a id="__codelineno-7-41" name="__codelineno-7-41" href="#__codelineno-7-41"></a>endpoints:
+<a id="__codelineno-7-42" name="__codelineno-7-42" href="#__codelineno-7-42"></a>
+<a id="__codelineno-7-43" name="__codelineno-7-43" href="#__codelineno-7-43"></a>
+<a id="__codelineno-7-44" name="__codelineno-7-44" href="#__codelineno-7-44"></a>
+<a id="__codelineno-7-45" name="__codelineno-7-45" href="#__codelineno-7-45"></a>- port: metrics
+<a id="__codelineno-7-46" name="__codelineno-7-46" href="#__codelineno-7-46"></a>
+<a id="__codelineno-7-47" name="__codelineno-7-47" href="#__codelineno-7-47"></a>
+<a id="__codelineno-7-48" name="__codelineno-7-48" href="#__codelineno-7-48"></a>
+<a id="__codelineno-7-49" name="__codelineno-7-49" href="#__codelineno-7-49"></a>interval: 60s
+<a id="__codelineno-7-50" name="__codelineno-7-50" href="#__codelineno-7-50"></a>
+<a id="__codelineno-7-51" name="__codelineno-7-51" href="#__codelineno-7-51"></a>
+<a id="__codelineno-7-52" name="__codelineno-7-52" href="#__codelineno-7-52"></a>
+<a id="__codelineno-7-53" name="__codelineno-7-53" href="#__codelineno-7-53"></a>path: /metrics
+</code></pre></div>
+<p>Конфигурация <code>metric_start_time</code>, <code>cumulativetodelta</code> и <code>otlp_http</code> с одного Collector переносится в пул gateway без изменений. Меняется только форма обнаружения целей.</p>
+<h3 id="servicemonitor">ServiceMonitor<a class="headerlink" href="#servicemonitor" title="Permanent link">&para;</a></h3>
+<p><code>ServiceMonitor</code> выбирает Service Kubernetes по метке. TA обнаруживает endpoint'ы за каждым Service и распределяет их по скраперам.</p>
+<p>Добавь метку <code>prometheus.dynatrace.com: "true"</code> к <code>ServiceMonitor</code>:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>apiVersion: monitoring.coreos.com/v1
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>
+<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>
+<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a>
+<a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a>kind: ServiceMonitor
+<a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a>
+<a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a>
+<a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a>
+<a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a>metadata:
+<a id="__codelineno-8-10" name="__codelineno-8-10" href="#__codelineno-8-10"></a>
+<a id="__codelineno-8-11" name="__codelineno-8-11" href="#__codelineno-8-11"></a>
+<a id="__codelineno-8-12" name="__codelineno-8-12" href="#__codelineno-8-12"></a>
+<a id="__codelineno-8-13" name="__codelineno-8-13" href="#__codelineno-8-13"></a>name: my-service
+<a id="__codelineno-8-14" name="__codelineno-8-14" href="#__codelineno-8-14"></a>
+<a id="__codelineno-8-15" name="__codelineno-8-15" href="#__codelineno-8-15"></a>
+<a id="__codelineno-8-16" name="__codelineno-8-16" href="#__codelineno-8-16"></a>
+<a id="__codelineno-8-17" name="__codelineno-8-17" href="#__codelineno-8-17"></a>labels:
+<a id="__codelineno-8-18" name="__codelineno-8-18" href="#__codelineno-8-18"></a>
+<a id="__codelineno-8-19" name="__codelineno-8-19" href="#__codelineno-8-19"></a>
+<a id="__codelineno-8-20" name="__codelineno-8-20" href="#__codelineno-8-20"></a>
+<a id="__codelineno-8-21" name="__codelineno-8-21" href="#__codelineno-8-21"></a>prometheus.dynatrace.com: &quot;true&quot;
+<a id="__codelineno-8-22" name="__codelineno-8-22" href="#__codelineno-8-22"></a>
+<a id="__codelineno-8-23" name="__codelineno-8-23" href="#__codelineno-8-23"></a>
+<a id="__codelineno-8-24" name="__codelineno-8-24" href="#__codelineno-8-24"></a>
+<a id="__codelineno-8-25" name="__codelineno-8-25" href="#__codelineno-8-25"></a>spec:
+<a id="__codelineno-8-26" name="__codelineno-8-26" href="#__codelineno-8-26"></a>
+<a id="__codelineno-8-27" name="__codelineno-8-27" href="#__codelineno-8-27"></a>
+<a id="__codelineno-8-28" name="__codelineno-8-28" href="#__codelineno-8-28"></a>
+<a id="__codelineno-8-29" name="__codelineno-8-29" href="#__codelineno-8-29"></a>selector:
+<a id="__codelineno-8-30" name="__codelineno-8-30" href="#__codelineno-8-30"></a>
+<a id="__codelineno-8-31" name="__codelineno-8-31" href="#__codelineno-8-31"></a>
+<a id="__codelineno-8-32" name="__codelineno-8-32" href="#__codelineno-8-32"></a>
+<a id="__codelineno-8-33" name="__codelineno-8-33" href="#__codelineno-8-33"></a>matchLabels:
+<a id="__codelineno-8-34" name="__codelineno-8-34" href="#__codelineno-8-34"></a>
+<a id="__codelineno-8-35" name="__codelineno-8-35" href="#__codelineno-8-35"></a>
+<a id="__codelineno-8-36" name="__codelineno-8-36" href="#__codelineno-8-36"></a>
+<a id="__codelineno-8-37" name="__codelineno-8-37" href="#__codelineno-8-37"></a>app: my-service
+<a id="__codelineno-8-38" name="__codelineno-8-38" href="#__codelineno-8-38"></a>
+<a id="__codelineno-8-39" name="__codelineno-8-39" href="#__codelineno-8-39"></a>
+<a id="__codelineno-8-40" name="__codelineno-8-40" href="#__codelineno-8-40"></a>
+<a id="__codelineno-8-41" name="__codelineno-8-41" href="#__codelineno-8-41"></a>endpoints:
+<a id="__codelineno-8-42" name="__codelineno-8-42" href="#__codelineno-8-42"></a>
+<a id="__codelineno-8-43" name="__codelineno-8-43" href="#__codelineno-8-43"></a>
+<a id="__codelineno-8-44" name="__codelineno-8-44" href="#__codelineno-8-44"></a>
+<a id="__codelineno-8-45" name="__codelineno-8-45" href="#__codelineno-8-45"></a>- port: metrics
+<a id="__codelineno-8-46" name="__codelineno-8-46" href="#__codelineno-8-46"></a>
+<a id="__codelineno-8-47" name="__codelineno-8-47" href="#__codelineno-8-47"></a>
+<a id="__codelineno-8-48" name="__codelineno-8-48" href="#__codelineno-8-48"></a>
+<a id="__codelineno-8-49" name="__codelineno-8-49" href="#__codelineno-8-49"></a>interval: 60s
+</code></pre></div>
+<h3 id="podmonitor">PodMonitor<a class="headerlink" href="#podmonitor" title="Permanent link">&para;</a></h3>
+<p><code>PodMonitor</code> выбирает поды напрямую по метке, минуя абстракцию Service. Используй его, если поды предоставляют метрики, но не находятся за Service.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>apiVersion: monitoring.coreos.com/v1
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>
+<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>
+<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a>
+<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a>kind: PodMonitor
+<a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a>
+<a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a>
+<a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a>
+<a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a>metadata:
+<a id="__codelineno-9-10" name="__codelineno-9-10" href="#__codelineno-9-10"></a>
+<a id="__codelineno-9-11" name="__codelineno-9-11" href="#__codelineno-9-11"></a>
+<a id="__codelineno-9-12" name="__codelineno-9-12" href="#__codelineno-9-12"></a>
+<a id="__codelineno-9-13" name="__codelineno-9-13" href="#__codelineno-9-13"></a>name: my-pods
+<a id="__codelineno-9-14" name="__codelineno-9-14" href="#__codelineno-9-14"></a>
+<a id="__codelineno-9-15" name="__codelineno-9-15" href="#__codelineno-9-15"></a>
+<a id="__codelineno-9-16" name="__codelineno-9-16" href="#__codelineno-9-16"></a>
+<a id="__codelineno-9-17" name="__codelineno-9-17" href="#__codelineno-9-17"></a>labels:
+<a id="__codelineno-9-18" name="__codelineno-9-18" href="#__codelineno-9-18"></a>
+<a id="__codelineno-9-19" name="__codelineno-9-19" href="#__codelineno-9-19"></a>
+<a id="__codelineno-9-20" name="__codelineno-9-20" href="#__codelineno-9-20"></a>
+<a id="__codelineno-9-21" name="__codelineno-9-21" href="#__codelineno-9-21"></a>prometheus.dynatrace.com: &quot;true&quot;
+<a id="__codelineno-9-22" name="__codelineno-9-22" href="#__codelineno-9-22"></a>
+<a id="__codelineno-9-23" name="__codelineno-9-23" href="#__codelineno-9-23"></a>
+<a id="__codelineno-9-24" name="__codelineno-9-24" href="#__codelineno-9-24"></a>
+<a id="__codelineno-9-25" name="__codelineno-9-25" href="#__codelineno-9-25"></a>spec:
+<a id="__codelineno-9-26" name="__codelineno-9-26" href="#__codelineno-9-26"></a>
+<a id="__codelineno-9-27" name="__codelineno-9-27" href="#__codelineno-9-27"></a>
+<a id="__codelineno-9-28" name="__codelineno-9-28" href="#__codelineno-9-28"></a>
+<a id="__codelineno-9-29" name="__codelineno-9-29" href="#__codelineno-9-29"></a>selector:
+<a id="__codelineno-9-30" name="__codelineno-9-30" href="#__codelineno-9-30"></a>
+<a id="__codelineno-9-31" name="__codelineno-9-31" href="#__codelineno-9-31"></a>
+<a id="__codelineno-9-32" name="__codelineno-9-32" href="#__codelineno-9-32"></a>
+<a id="__codelineno-9-33" name="__codelineno-9-33" href="#__codelineno-9-33"></a>matchLabels:
+<a id="__codelineno-9-34" name="__codelineno-9-34" href="#__codelineno-9-34"></a>
+<a id="__codelineno-9-35" name="__codelineno-9-35" href="#__codelineno-9-35"></a>
+<a id="__codelineno-9-36" name="__codelineno-9-36" href="#__codelineno-9-36"></a>
+<a id="__codelineno-9-37" name="__codelineno-9-37" href="#__codelineno-9-37"></a>app: my-app
+<a id="__codelineno-9-38" name="__codelineno-9-38" href="#__codelineno-9-38"></a>
+<a id="__codelineno-9-39" name="__codelineno-9-39" href="#__codelineno-9-39"></a>
+<a id="__codelineno-9-40" name="__codelineno-9-40" href="#__codelineno-9-40"></a>
+<a id="__codelineno-9-41" name="__codelineno-9-41" href="#__codelineno-9-41"></a>podMetricsEndpoints:
+<a id="__codelineno-9-42" name="__codelineno-9-42" href="#__codelineno-9-42"></a>
+<a id="__codelineno-9-43" name="__codelineno-9-43" href="#__codelineno-9-43"></a>
+<a id="__codelineno-9-44" name="__codelineno-9-44" href="#__codelineno-9-44"></a>
+<a id="__codelineno-9-45" name="__codelineno-9-45" href="#__codelineno-9-45"></a>- port: metrics
+<a id="__codelineno-9-46" name="__codelineno-9-46" href="#__codelineno-9-46"></a>
+<a id="__codelineno-9-47" name="__codelineno-9-47" href="#__codelineno-9-47"></a>
+<a id="__codelineno-9-48" name="__codelineno-9-48" href="#__codelineno-9-48"></a>
+<a id="__codelineno-9-49" name="__codelineno-9-49" href="#__codelineno-9-49"></a>interval: 60s
+</code></pre></div>
+<h3 id="scrapeconfig">ScrapeConfig<a class="headerlink" href="#scrapeconfig" title="Permanent link">&para;</a></h3>
+<p><code>ScrapeConfig</code> предоставляет нативную конфигурацию опроса Prometheus. Он полезен как путь миграции для конфигураций, которые уже используют аннотации подов <code>metrics.dynatrace.com/scrape</code> из модуля ActiveGate Kubernetes.</p>
+<p>Следующий <code>ScrapeConfig</code> обнаруживает все поды в кластере и оставляет только те, у которых есть аннотация <code>metrics.dynatrace.com/scrape: "true"</code>. Он считывает аннотации <code>port</code>, <code>path</code> и <code>secure</code>, чтобы построить цель опроса. Чтобы ограничить объём памяти, потребляемый TA, стоит ограничить <code>kubernetesSDConfigs</code> конкретными пространствами имён вместо обнаружения по всему кластеру.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>apiVersion: monitoring.coreos.com/v1alpha1
+<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>
+<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>
+<a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a>
+<a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a>kind: ScrapeConfig
+<a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a>
+<a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a>
+<a id="__codelineno-10-8" name="__codelineno-10-8" href="#__codelineno-10-8"></a>
+<a id="__codelineno-10-9" name="__codelineno-10-9" href="#__codelineno-10-9"></a>metadata:
+<a id="__codelineno-10-10" name="__codelineno-10-10" href="#__codelineno-10-10"></a>
+<a id="__codelineno-10-11" name="__codelineno-10-11" href="#__codelineno-10-11"></a>
+<a id="__codelineno-10-12" name="__codelineno-10-12" href="#__codelineno-10-12"></a>
+<a id="__codelineno-10-13" name="__codelineno-10-13" href="#__codelineno-10-13"></a>name: dynatrace-annotations
+<a id="__codelineno-10-14" name="__codelineno-10-14" href="#__codelineno-10-14"></a>
+<a id="__codelineno-10-15" name="__codelineno-10-15" href="#__codelineno-10-15"></a>
+<a id="__codelineno-10-16" name="__codelineno-10-16" href="#__codelineno-10-16"></a>
+<a id="__codelineno-10-17" name="__codelineno-10-17" href="#__codelineno-10-17"></a>labels:
+<a id="__codelineno-10-18" name="__codelineno-10-18" href="#__codelineno-10-18"></a>
+<a id="__codelineno-10-19" name="__codelineno-10-19" href="#__codelineno-10-19"></a>
+<a id="__codelineno-10-20" name="__codelineno-10-20" href="#__codelineno-10-20"></a>
+<a id="__codelineno-10-21" name="__codelineno-10-21" href="#__codelineno-10-21"></a>prometheus.dynatrace.com: &quot;true&quot;
+<a id="__codelineno-10-22" name="__codelineno-10-22" href="#__codelineno-10-22"></a>
+<a id="__codelineno-10-23" name="__codelineno-10-23" href="#__codelineno-10-23"></a>
+<a id="__codelineno-10-24" name="__codelineno-10-24" href="#__codelineno-10-24"></a>
+<a id="__codelineno-10-25" name="__codelineno-10-25" href="#__codelineno-10-25"></a>spec:
+<a id="__codelineno-10-26" name="__codelineno-10-26" href="#__codelineno-10-26"></a>
+<a id="__codelineno-10-27" name="__codelineno-10-27" href="#__codelineno-10-27"></a>
+<a id="__codelineno-10-28" name="__codelineno-10-28" href="#__codelineno-10-28"></a>
+<a id="__codelineno-10-29" name="__codelineno-10-29" href="#__codelineno-10-29"></a>jobName: dynatrace-annotations
+<a id="__codelineno-10-30" name="__codelineno-10-30" href="#__codelineno-10-30"></a>
+<a id="__codelineno-10-31" name="__codelineno-10-31" href="#__codelineno-10-31"></a>
+<a id="__codelineno-10-32" name="__codelineno-10-32" href="#__codelineno-10-32"></a>
+<a id="__codelineno-10-33" name="__codelineno-10-33" href="#__codelineno-10-33"></a>scrapeInterval: 60s
+<a id="__codelineno-10-34" name="__codelineno-10-34" href="#__codelineno-10-34"></a>
+<a id="__codelineno-10-35" name="__codelineno-10-35" href="#__codelineno-10-35"></a>
+<a id="__codelineno-10-36" name="__codelineno-10-36" href="#__codelineno-10-36"></a>
+<a id="__codelineno-10-37" name="__codelineno-10-37" href="#__codelineno-10-37"></a>kubernetesSDConfigs:
+<a id="__codelineno-10-38" name="__codelineno-10-38" href="#__codelineno-10-38"></a>
+<a id="__codelineno-10-39" name="__codelineno-10-39" href="#__codelineno-10-39"></a>
+<a id="__codelineno-10-40" name="__codelineno-10-40" href="#__codelineno-10-40"></a>
+<a id="__codelineno-10-41" name="__codelineno-10-41" href="#__codelineno-10-41"></a>- role: Pod
+<a id="__codelineno-10-42" name="__codelineno-10-42" href="#__codelineno-10-42"></a>
+<a id="__codelineno-10-43" name="__codelineno-10-43" href="#__codelineno-10-43"></a>
+<a id="__codelineno-10-44" name="__codelineno-10-44" href="#__codelineno-10-44"></a>
+<a id="__codelineno-10-45" name="__codelineno-10-45" href="#__codelineno-10-45"></a>relabelings:
+<a id="__codelineno-10-46" name="__codelineno-10-46" href="#__codelineno-10-46"></a>
+<a id="__codelineno-10-47" name="__codelineno-10-47" href="#__codelineno-10-47"></a>
+<a id="__codelineno-10-48" name="__codelineno-10-48" href="#__codelineno-10-48"></a>
+<a id="__codelineno-10-49" name="__codelineno-10-49" href="#__codelineno-10-49"></a>- sourceLabels:
+<a id="__codelineno-10-50" name="__codelineno-10-50" href="#__codelineno-10-50"></a>
+<a id="__codelineno-10-51" name="__codelineno-10-51" href="#__codelineno-10-51"></a>
+<a id="__codelineno-10-52" name="__codelineno-10-52" href="#__codelineno-10-52"></a>
+<a id="__codelineno-10-53" name="__codelineno-10-53" href="#__codelineno-10-53"></a>- __meta_kubernetes_pod_annotation_metrics_dynatrace_com_scrape
+<a id="__codelineno-10-54" name="__codelineno-10-54" href="#__codelineno-10-54"></a>
+<a id="__codelineno-10-55" name="__codelineno-10-55" href="#__codelineno-10-55"></a>
+<a id="__codelineno-10-56" name="__codelineno-10-56" href="#__codelineno-10-56"></a>
+<a id="__codelineno-10-57" name="__codelineno-10-57" href="#__codelineno-10-57"></a>- __meta_kubernetes_pod_annotationpresent_metrics_dynatrace_com_scrape
+<a id="__codelineno-10-58" name="__codelineno-10-58" href="#__codelineno-10-58"></a>
+<a id="__codelineno-10-59" name="__codelineno-10-59" href="#__codelineno-10-59"></a>
+<a id="__codelineno-10-60" name="__codelineno-10-60" href="#__codelineno-10-60"></a>
+<a id="__codelineno-10-61" name="__codelineno-10-61" href="#__codelineno-10-61"></a>action: keep
+<a id="__codelineno-10-62" name="__codelineno-10-62" href="#__codelineno-10-62"></a>
+<a id="__codelineno-10-63" name="__codelineno-10-63" href="#__codelineno-10-63"></a>
+<a id="__codelineno-10-64" name="__codelineno-10-64" href="#__codelineno-10-64"></a>
+<a id="__codelineno-10-65" name="__codelineno-10-65" href="#__codelineno-10-65"></a>regex: true;true
+<a id="__codelineno-10-66" name="__codelineno-10-66" href="#__codelineno-10-66"></a>
+<a id="__codelineno-10-67" name="__codelineno-10-67" href="#__codelineno-10-67"></a>
+<a id="__codelineno-10-68" name="__codelineno-10-68" href="#__codelineno-10-68"></a>
+<a id="__codelineno-10-69" name="__codelineno-10-69" href="#__codelineno-10-69"></a>- sourceLabels:
+<a id="__codelineno-10-70" name="__codelineno-10-70" href="#__codelineno-10-70"></a>
+<a id="__codelineno-10-71" name="__codelineno-10-71" href="#__codelineno-10-71"></a>
+<a id="__codelineno-10-72" name="__codelineno-10-72" href="#__codelineno-10-72"></a>
+<a id="__codelineno-10-73" name="__codelineno-10-73" href="#__codelineno-10-73"></a>- __meta_kubernetes_pod_annotation_metrics_dynatrace_com_secure
+<a id="__codelineno-10-74" name="__codelineno-10-74" href="#__codelineno-10-74"></a>
+<a id="__codelineno-10-75" name="__codelineno-10-75" href="#__codelineno-10-75"></a>
+<a id="__codelineno-10-76" name="__codelineno-10-76" href="#__codelineno-10-76"></a>
+<a id="__codelineno-10-77" name="__codelineno-10-77" href="#__codelineno-10-77"></a>- __meta_kubernetes_pod_annotationpresent_metrics_dynatrace_com_secure
+<a id="__codelineno-10-78" name="__codelineno-10-78" href="#__codelineno-10-78"></a>
+<a id="__codelineno-10-79" name="__codelineno-10-79" href="#__codelineno-10-79"></a>
+<a id="__codelineno-10-80" name="__codelineno-10-80" href="#__codelineno-10-80"></a>
+<a id="__codelineno-10-81" name="__codelineno-10-81" href="#__codelineno-10-81"></a>action: replace
+<a id="__codelineno-10-82" name="__codelineno-10-82" href="#__codelineno-10-82"></a>
+<a id="__codelineno-10-83" name="__codelineno-10-83" href="#__codelineno-10-83"></a>
+<a id="__codelineno-10-84" name="__codelineno-10-84" href="#__codelineno-10-84"></a>
+<a id="__codelineno-10-85" name="__codelineno-10-85" href="#__codelineno-10-85"></a>regex: true;true
+<a id="__codelineno-10-86" name="__codelineno-10-86" href="#__codelineno-10-86"></a>
+<a id="__codelineno-10-87" name="__codelineno-10-87" href="#__codelineno-10-87"></a>
+<a id="__codelineno-10-88" name="__codelineno-10-88" href="#__codelineno-10-88"></a>
+<a id="__codelineno-10-89" name="__codelineno-10-89" href="#__codelineno-10-89"></a>targetLabel: __scheme__
+<a id="__codelineno-10-90" name="__codelineno-10-90" href="#__codelineno-10-90"></a>
+<a id="__codelineno-10-91" name="__codelineno-10-91" href="#__codelineno-10-91"></a>
+<a id="__codelineno-10-92" name="__codelineno-10-92" href="#__codelineno-10-92"></a>
+<a id="__codelineno-10-93" name="__codelineno-10-93" href="#__codelineno-10-93"></a>replacement: https
+<a id="__codelineno-10-94" name="__codelineno-10-94" href="#__codelineno-10-94"></a>
+<a id="__codelineno-10-95" name="__codelineno-10-95" href="#__codelineno-10-95"></a>
+<a id="__codelineno-10-96" name="__codelineno-10-96" href="#__codelineno-10-96"></a>
+<a id="__codelineno-10-97" name="__codelineno-10-97" href="#__codelineno-10-97"></a>- sourceLabels:
+<a id="__codelineno-10-98" name="__codelineno-10-98" href="#__codelineno-10-98"></a>
+<a id="__codelineno-10-99" name="__codelineno-10-99" href="#__codelineno-10-99"></a>
+<a id="__codelineno-10-100" name="__codelineno-10-100" href="#__codelineno-10-100"></a>
+<a id="__codelineno-10-101" name="__codelineno-10-101" href="#__codelineno-10-101"></a>- __address__
+<a id="__codelineno-10-102" name="__codelineno-10-102" href="#__codelineno-10-102"></a>
+<a id="__codelineno-10-103" name="__codelineno-10-103" href="#__codelineno-10-103"></a>
+<a id="__codelineno-10-104" name="__codelineno-10-104" href="#__codelineno-10-104"></a>
+<a id="__codelineno-10-105" name="__codelineno-10-105" href="#__codelineno-10-105"></a>- __meta_kubernetes_pod_annotation_metrics_dynatrace_com_port
+<a id="__codelineno-10-106" name="__codelineno-10-106" href="#__codelineno-10-106"></a>
+<a id="__codelineno-10-107" name="__codelineno-10-107" href="#__codelineno-10-107"></a>
+<a id="__codelineno-10-108" name="__codelineno-10-108" href="#__codelineno-10-108"></a>
+<a id="__codelineno-10-109" name="__codelineno-10-109" href="#__codelineno-10-109"></a>- __meta_kubernetes_pod_annotationpresent_metrics_dynatrace_com_port
+<a id="__codelineno-10-110" name="__codelineno-10-110" href="#__codelineno-10-110"></a>
+<a id="__codelineno-10-111" name="__codelineno-10-111" href="#__codelineno-10-111"></a>
+<a id="__codelineno-10-112" name="__codelineno-10-112" href="#__codelineno-10-112"></a>
+<a id="__codelineno-10-113" name="__codelineno-10-113" href="#__codelineno-10-113"></a>action: replace
+<a id="__codelineno-10-114" name="__codelineno-10-114" href="#__codelineno-10-114"></a>
+<a id="__codelineno-10-115" name="__codelineno-10-115" href="#__codelineno-10-115"></a>
+<a id="__codelineno-10-116" name="__codelineno-10-116" href="#__codelineno-10-116"></a>
+<a id="__codelineno-10-117" name="__codelineno-10-117" href="#__codelineno-10-117"></a>regex: (.+?)(?::\d+)?;(\d+);true
+<a id="__codelineno-10-118" name="__codelineno-10-118" href="#__codelineno-10-118"></a>
+<a id="__codelineno-10-119" name="__codelineno-10-119" href="#__codelineno-10-119"></a>
+<a id="__codelineno-10-120" name="__codelineno-10-120" href="#__codelineno-10-120"></a>
+<a id="__codelineno-10-121" name="__codelineno-10-121" href="#__codelineno-10-121"></a>targetLabel: __address__
+<a id="__codelineno-10-122" name="__codelineno-10-122" href="#__codelineno-10-122"></a>
+<a id="__codelineno-10-123" name="__codelineno-10-123" href="#__codelineno-10-123"></a>
+<a id="__codelineno-10-124" name="__codelineno-10-124" href="#__codelineno-10-124"></a>
+<a id="__codelineno-10-125" name="__codelineno-10-125" href="#__codelineno-10-125"></a>replacement: $1:$2
+<a id="__codelineno-10-126" name="__codelineno-10-126" href="#__codelineno-10-126"></a>
+<a id="__codelineno-10-127" name="__codelineno-10-127" href="#__codelineno-10-127"></a>
+<a id="__codelineno-10-128" name="__codelineno-10-128" href="#__codelineno-10-128"></a>
+<a id="__codelineno-10-129" name="__codelineno-10-129" href="#__codelineno-10-129"></a>- sourceLabels:
+<a id="__codelineno-10-130" name="__codelineno-10-130" href="#__codelineno-10-130"></a>
+<a id="__codelineno-10-131" name="__codelineno-10-131" href="#__codelineno-10-131"></a>
+<a id="__codelineno-10-132" name="__codelineno-10-132" href="#__codelineno-10-132"></a>
+<a id="__codelineno-10-133" name="__codelineno-10-133" href="#__codelineno-10-133"></a>- __meta_kubernetes_pod_annotation_metrics_dynatrace_com_path
+<a id="__codelineno-10-134" name="__codelineno-10-134" href="#__codelineno-10-134"></a>
+<a id="__codelineno-10-135" name="__codelineno-10-135" href="#__codelineno-10-135"></a>
+<a id="__codelineno-10-136" name="__codelineno-10-136" href="#__codelineno-10-136"></a>
+<a id="__codelineno-10-137" name="__codelineno-10-137" href="#__codelineno-10-137"></a>- __meta_kubernetes_pod_annotationpresent_metrics_dynatrace_com_path
+<a id="__codelineno-10-138" name="__codelineno-10-138" href="#__codelineno-10-138"></a>
+<a id="__codelineno-10-139" name="__codelineno-10-139" href="#__codelineno-10-139"></a>
+<a id="__codelineno-10-140" name="__codelineno-10-140" href="#__codelineno-10-140"></a>
+<a id="__codelineno-10-141" name="__codelineno-10-141" href="#__codelineno-10-141"></a>action: replace
+<a id="__codelineno-10-142" name="__codelineno-10-142" href="#__codelineno-10-142"></a>
+<a id="__codelineno-10-143" name="__codelineno-10-143" href="#__codelineno-10-143"></a>
+<a id="__codelineno-10-144" name="__codelineno-10-144" href="#__codelineno-10-144"></a>
+<a id="__codelineno-10-145" name="__codelineno-10-145" href="#__codelineno-10-145"></a>regex: (.+);true
+<a id="__codelineno-10-146" name="__codelineno-10-146" href="#__codelineno-10-146"></a>
+<a id="__codelineno-10-147" name="__codelineno-10-147" href="#__codelineno-10-147"></a>
+<a id="__codelineno-10-148" name="__codelineno-10-148" href="#__codelineno-10-148"></a>
+<a id="__codelineno-10-149" name="__codelineno-10-149" href="#__codelineno-10-149"></a>targetLabel: __metrics_path__
+<a id="__codelineno-10-150" name="__codelineno-10-150" href="#__codelineno-10-150"></a>
+<a id="__codelineno-10-151" name="__codelineno-10-151" href="#__codelineno-10-151"></a>
+<a id="__codelineno-10-152" name="__codelineno-10-152" href="#__codelineno-10-152"></a>
+<a id="__codelineno-10-153" name="__codelineno-10-153" href="#__codelineno-10-153"></a>replacement: $1
+<a id="__codelineno-10-154" name="__codelineno-10-154" href="#__codelineno-10-154"></a>
+<a id="__codelineno-10-155" name="__codelineno-10-155" href="#__codelineno-10-155"></a>
+<a id="__codelineno-10-156" name="__codelineno-10-156" href="#__codelineno-10-156"></a>
+<a id="__codelineno-10-157" name="__codelineno-10-157" href="#__codelineno-10-157"></a>- sourceLabels:
+<a id="__codelineno-10-158" name="__codelineno-10-158" href="#__codelineno-10-158"></a>
+<a id="__codelineno-10-159" name="__codelineno-10-159" href="#__codelineno-10-159"></a>
+<a id="__codelineno-10-160" name="__codelineno-10-160" href="#__codelineno-10-160"></a>
+<a id="__codelineno-10-161" name="__codelineno-10-161" href="#__codelineno-10-161"></a>- __meta_kubernetes_pod_phase
+<a id="__codelineno-10-162" name="__codelineno-10-162" href="#__codelineno-10-162"></a>
+<a id="__codelineno-10-163" name="__codelineno-10-163" href="#__codelineno-10-163"></a>
+<a id="__codelineno-10-164" name="__codelineno-10-164" href="#__codelineno-10-164"></a>
+<a id="__codelineno-10-165" name="__codelineno-10-165" href="#__codelineno-10-165"></a>action: drop
+<a id="__codelineno-10-166" name="__codelineno-10-166" href="#__codelineno-10-166"></a>
+<a id="__codelineno-10-167" name="__codelineno-10-167" href="#__codelineno-10-167"></a>
+<a id="__codelineno-10-168" name="__codelineno-10-168" href="#__codelineno-10-168"></a>
+<a id="__codelineno-10-169" name="__codelineno-10-169" href="#__codelineno-10-169"></a>regex: (Failed|Succeeded)
+</code></pre></div>
+<p>Этот подход не требует изменений на стороне приложения. Для новых рабочих нагрузок предпочтительнее использовать <code>ServiceMonitor</code> или <code>PodMonitor</code> для стандартной настройки Prometheus Operator.</p>
+<h3 id="target-allocator_1">Масштабирование Target Allocator<a class="headerlink" href="#target-allocator_1" title="Permanent link">&para;</a></h3>
+<p>TA хранит все метаданные обнаружения сервисов Prometheus (метки подов, аннотации, информацию об узлах) в памяти. На больших кластерах это может занимать несколько гигабайт.</p>
+<p>Запускай несколько реплик TA для отказоустойчивости. Поскольку алгоритм consistent hashing детерминирован, все реплики независимо друг от друга формируют одинаковые назначения целей скраперам без координации.</p>
+<p>Когда память становится узким местом, можно:</p>
+<ul>
+<li>Масштабироваться вертикально. Увеличить лимит памяти TA в values Helm. По желанию можно использовать <a href="https://github.com/kubernetes/autoscaler/tree/master/vertical-pod-autoscaler">Vertical Pod Autoscaler﻿</a> для автоматизации этого.</li>
+<li>Сократить область обнаружения. Ужесточить правила relabeling в CRD <code>ScrapeConfig</code> или ограничить <code>kubernetesSDConfigs</code> конкретными пространствами имён, чтобы уменьшить объём метаданных, которые хранит TA.</li>
+<li>Использовать шардированные TA. Запускать несколько независимых экземпляров TA, каждый из которых отслеживает отдельное подмножество пространств имён. Каждый шард требует собственного выделенного пула скраперов, поскольку скрапер может опрашивать только один endpoint TA. Нижестоящие Collector'ы gateway можно использовать совместно для нескольких шардов.</li>
+</ul>
+<h2 id="_6">Настройка конфигурации<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
+<p>Эталонная конфигурация, это отправная точка. Скорректируй следующие параметры под свою рабочую нагрузку.</p>
+<h3 id="cumulativetodelta">Устаревание <code>cumulativetodelta</code><a class="headerlink" href="#cumulativetodelta" title="Permanent link">&para;</a></h3>
+<p>Процессор <code>cumulativetodelta</code> преобразует счётчики Prometheus в дельта-метрики, отслеживая предыдущее значение каждой серии в памяти. <code>max_staleness</code> определяет, как долго процессор хранит состояние по каждой серии после последней полученной точки данных. Как только это окно истекает без обновления, процессор удаляет серию из кэша. Следующий отсчёт для этой серии рассматривается как новая начальная точка, поэтому одна дельта теряется.</p>
+<p>Установи <code>cumulativetodelta.max_staleness</code> на gateway примерно в 10 раз больше значения <code>scrape_interval</code> Prometheus receiver. Коэффициент 10 покрывает случайные пропущенные опросы (перезапуски цели, сетевые сбои, медленные endpoint'ы), не сохраняя при этом состояние для серий, которые действительно исчезли.</p>
+<p>Более высокие значения дольше сохраняют состояние для неактивных серий, поэтому память gateway может расти без ограничений по мере смены серий со временем (перезапуски подов, автомасштабируемые рабочие нагрузки, изменения меток). Более низкие значения вытесняют ещё активные серии между опросами, что создаёт заметные пробелы и сбрасывает текущую дельту для каждой затронутой серии.</p>
+<h3 id="_7">Горизонтальное автомасштабирование подов<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
+<p>Deployment scraper и StatefulSet gateway поддерживают Kubernetes <a href="https://kubernetes.io/docs/tasks/run-application/horizontal-pod-autoscale/">Horizontal Pod Autoscalers​</a> (HPA). Эталонная конфигурация включает настройки HPA для обоих уровней. Полную конфигурацию можно найти в следующих файлах YAML в репозитории Dynatrace Collector GitHub.</p>
+<ul>
+<li><a href="https://github.com/Dynatrace/dynatrace-otel-collector/blob/main/config_examples/prometheus-large-scale/tier1-scraper.values.yaml"><code>tier1-scraper.values.yaml</code>​</a></li>
+<li><a href="https://github.com/Dynatrace/dynatrace-otel-collector/blob/main/config_examples/prometheus-large-scale/tier2-gateway.values.yaml"><code>tier2-gateway.values.yaml</code>​</a></li>
+</ul>
+<p>Оба уровня используют одинаковые целевые проценты утилизации: при достижении 50% памяти или 70% CPU HPA начинает масштабирование вширь и автоматически добавляет поды. Значения <code>minReplicas</code> и <code>maxReplicas</code> нужно подстраивать под ожидаемый диапазон нагрузки. Память обычно является главным ограничением для scraper'ов, потому что Prometheus receiver буферизует собранные данные в памяти. Gateway потребляют и CPU, и память, при этом использование памяти статичным процессором <code>cumulativetodelta</code> растёт пропорционально числу отслеживаемых серий.</p>
+<h4 id="target-allocator_2">Поведение Target Allocator при масштабировании<a class="headerlink" href="#target-allocator_2" title="Permanent link">&para;</a></h4>
+<p>Target Allocator автоматически обнаруживает изменения в подах Collector. Когда HPA добавляет или удаляет поды scraper'ов, Target Allocator перераспределяет цели по обновлённому пулу. Согласованное хеширование сводит перетасовку к минимуму: большинство целей остаются на том же scraper'е, и только часть переходит на новые или оставшиеся поды.</p>
+<h4 id="_8">Настройка окна стабилизации<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h4>
+<p>Сборы Prometheus вызывают периодические всплески CPU и памяти. Без окна стабилизации для уменьшения масштаба эти всплески могут вызвать преждевременное уменьшение масштаба после временных провалов между сборами. Окна стабилизации HPA нужно устанавливать относительно <code>scrape_interval</code> Prometheus.</p>
+<ul>
+<li>Увеличение масштаба управляется параметром <code>stabilizationWindowSeconds</code>. Установить <code>stabilizationWindowSeconds: 0</code> (значение по умолчанию для Kubernetes), чтобы HPA увеличивал масштаб немедленно при превышении целевой утилизации, это позволяет парку поглощать рост нагрузки без задержки.</li>
+<li>Уменьшение масштаба управляется параметром <code>stabilizationWindowSeconds</code>. Установить <code>stabilizationWindowSeconds: &lt;scrape_interval * 5&gt;</code>, чтобы HPA уменьшал масштаб только после стабилизации нагрузки.</li>
+</ul>
+<p>Пример YAML ниже показывает подходящую конфигурацию для интервала сбора 60 секунд.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>behavior:
+<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>
+<a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a>
+<a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a>
+<a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a>scaleUp:
+<a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a>
+<a id="__codelineno-11-7" name="__codelineno-11-7" href="#__codelineno-11-7"></a>
+<a id="__codelineno-11-8" name="__codelineno-11-8" href="#__codelineno-11-8"></a>
+<a id="__codelineno-11-9" name="__codelineno-11-9" href="#__codelineno-11-9"></a>stabilizationWindowSeconds: 0
+<a id="__codelineno-11-10" name="__codelineno-11-10" href="#__codelineno-11-10"></a>
+<a id="__codelineno-11-11" name="__codelineno-11-11" href="#__codelineno-11-11"></a>
+<a id="__codelineno-11-12" name="__codelineno-11-12" href="#__codelineno-11-12"></a>
+<a id="__codelineno-11-13" name="__codelineno-11-13" href="#__codelineno-11-13"></a>scaleDown:
+<a id="__codelineno-11-14" name="__codelineno-11-14" href="#__codelineno-11-14"></a>
+<a id="__codelineno-11-15" name="__codelineno-11-15" href="#__codelineno-11-15"></a>
+<a id="__codelineno-11-16" name="__codelineno-11-16" href="#__codelineno-11-16"></a>
+<a id="__codelineno-11-17" name="__codelineno-11-17" href="#__codelineno-11-17"></a>stabilizationWindowSeconds: 300
+</code></pre></div>
+<p>Немедленное увеличение масштаба гарантирует, что парк быстро реагирует на устойчивый рост нагрузки. Более длинное окно уменьшения масштаба предотвращает преждевременное уменьшение масштаба во время временных провалов между сборами.</p>
+<h2 id="_9">Справка по подбору размера ресурсов<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h2>
+<p>В следующей таблице показано приблизительное количество реплик при разных уровнях нагрузки, измеренных в точках данных в минуту (DPM) с интервалом сбора 60 секунд. Эти значения нужно использовать как ориентир для первоначального подбора размера. Фактическое количество реплик зависит от числа серий на цель, кардинальности меток и конфигурации процессора.</p>
+<p>Эталонная конфигурация использует следующие лимиты ресурсов на под.</p>
+<ul>
+<li>Scraper: 1 CPU, 6 ГиБ памяти</li>
+<li>Gateway: 2 CPU, 8 ГиБ памяти</li>
+</ul>
+<p>Эти лимиты включают запас сверх типичного использования в устойчивом состоянии. Prometheus receiver буферизует весь ответ сбора в памяти перед обработкой, что вызывает резкие всплески на каждом цикле сбора. Из-за такого буферизующего поведения scraper'ы ограничены памятью, поэтому лимит ресурсов scraper'а поглощает эти периодические всплески без завершений процессов из-за нехватки памяти (OOM). Gateway нуждаются в запасе для процессора <code>cumulativetodelta</code>, память которого растёт пропорционально числу отслеживаемых серий, а использование CPU масштабируется вместе с объёмом входящих данных. Лимит ресурсов gateway учитывает как отслеживание в устойчивом состоянии, так и пакетную обработку, когда несколько scraper'ов одновременно сбрасывают данные.</p>
+<table>
+<thead>
+<tr>
+<th>Нагрузка</th>
+<th>Цели сбора</th>
+<th>Реплики scraper</th>
+<th>Реплики gateway</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1M DPM</td>
+<td>5</td>
+<td>2</td>
+<td>2</td>
+</tr>
+<tr>
+<td>5M DPM</td>
+<td>30</td>
+<td>6</td>
+<td>2</td>
+</tr>
+<tr>
+<td>10M DPM</td>
+<td>60</td>
+<td>13</td>
+<td>4</td>
+</tr>
+<tr>
+<td>30M DPM</td>
+<td>334</td>
+<td>38</td>
+<td>8</td>
+</tr>
+<tr>
+<td>60M DPM</td>
+<td>667</td>
+<td>74</td>
+<td>18</td>
+</tr>
+<tr>
+<td>90M DPM</td>
+<td>1 000</td>
+<td>102</td>
+<td>23</td>
+</tr>
+</tbody>
+</table>
+<p>Запросы ресурсов и <code>minReplicas</code> в HPA нужно устанавливать так, чтобы они справлялись с базовой нагрузкой, а дальше позволить HPA увеличивать масштаб. Другие лимиты ресурсов на под меняют количество реплик.</p>
+<p>Общую информацию о масштабировании Collector можно найти в разделе <a href="../../../scaling/" title="How to scale the OpenTelemetry Collector.">Scale OpenTelemetry Collector deployments</a>.</p>
+<h3 id="_10">Подбор размера под конкретные задачи и вертикальное масштабирование<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h3>
+<p>Если нужно настроить распределение ресурсов подов Collector под конкретный сценарий использования, рекомендуется начать со следующих лимитов для каждого уровня, при условии одного экземпляра на каждом уровне, на 1 миллион точек данных в минуту (DPM):</p>
+<ul>
+<li>Scraper Collector: 1 ядро CPU, 6 ГиБ памяти</li>
+<li>Gateway Collector: 500 миллиядер CPU, 2 ГиБ памяти</li>
+</ul>
+<p>Хотя одного пода на каждом уровне должно быть достаточно для такого уровня нагрузки, всё же рекомендуется запускать как минимум один дополнительный Collector для избыточности, чтобы предотвратить потерю данных.</p>
+<p>При такой настройке требования к ресурсам масштабируются линейно вместе с нагрузкой, поэтому кратные этим лимитам значения также можно использовать как ориентир для определения нужного размера в конкретной ситуации.</p>
+<p>Вертикальное масштабирование понадобится при обработке особо крупных целей, которые нельзя разделить между несколькими scraper'ами. Раздел про <a href="#hotspots-from-uneven-load">устранение неполадок с точками перегрузки</a> содержит больше информации о том, как определить, что возникла именно такая ситуация.</p>
+<h3 id="target-allocator_3">Изменение распределения ресурсов для Target Allocator<a class="headerlink" href="#target-allocator_3" title="Permanent link">&para;</a></h3>
+<p>Target Allocator очень эффективен даже при высоких нагрузках. Поскольку он сам не обрабатывает данные, он масштабируется не со скоростью приёма метрик, а с числом подов, экспонирующих метрики Prometheus. Он работает как синглтон и в большинстве случаев не требует настройки.</p>
+<p>В следующей таблице показаны рекомендуемые лимиты ресурсов Target Allocator, которые можно использовать как ориентир для подбора подходящего размера для кластера. Требования к ресурсам не масштабируются линейно с количеством целей scraper'а, они растут относительно медленно.</p>
+<table>
+<thead>
+<tr>
+<th>Цели сбора</th>
+<th>Лимит CPU</th>
+<th>Лимит памяти</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>200</td>
+<td>10m</td>
+<td>256 МиБ</td>
+</tr>
+<tr>
+<td>5000</td>
+<td>100m</td>
+<td>512 МиБ</td>
+</tr>
+<tr>
+<td>20000</td>
+<td>1 (1000m)</td>
+<td>1 ГиБ</td>
+</tr>
+</tbody>
+</table>
+<h2 id="_11">Ограничения распределения нагрузки на основе хеширования<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h2>
+<p>Target Allocator и экспортёр <code>loadbalancing</code> распределяют работу по хешу, а не по фактическому потреблению ресурсов. HPA масштабирует парк на основе средней утилизации, но ни один из компонентов не перераспределяет работу в сторону экземпляров с меньшей нагрузкой.</p>
+<ul>
+<li>Уровень scraper: Target Allocator назначает цели scraper'ам, хешируя идентичность цели, при этом не учитывается, сколько серий производит каждая цель. Цель с 500 000 серий и цель со 100 сериями обрабатываются одинаково. Экспортёр <code>loadbalancing</code> на scraper'е затем направляет данные к gateway, хешируя идентичность ресурса, что закрепляет все данные от заданного исходного пода за одним gateway.</li>
+<li>Уровень gateway: gateway, получающий данные от тяжёлого исходного пода, несёт больше нагрузки, чем его соседи, независимо от того, сколько реплик gateway добавляет HPA.</li>
+<li>Одна цель должна помещаться в один под. Target Allocator назначает каждую цель ровно одному scraper'у, и этот scraper буферизует весь ответ сбора в памяти. Лимиты ресурсов пода являются жёстким потолком для любой отдельной цели. HPA может добавлять больше подов в парк, но не может разделить одну цель между несколькими подами. Если одна цель производит больше данных, чем может обработать один под, добавление реплик не поможет.</li>
+<li>Добавление реплик не перемещает существующие назначения. HPA может увеличивать или уменьшать парк, но тяжёлая цель остаётся на том же scraper'е, а её данные остаются закреплёнными за тем же gateway.</li>
+</ul>
+<p>Чтобы смягчить это поведение, можно:</p>
+<ul>
+<li>Разделить тяжёлые нагрузки на отдельные цели сбора. Если приложение может экспонировать метрики на нескольких портах или путях, каждый из них становится отдельной целью, которую Target Allocator может назначить разным scraper'ам. Аналогично можно использовать отдельные CRD <code>ServiceMonitor</code> или <code>ScrapeConfig</code> с узкими селекторами меток, чтобы тяжёлые поды воспринимались как отдельные цели, а не группировались вместе.</li>
+<li>Масштабировать вертикально под самую тяжёлую цель. Установить лимиты ресурсов на под достаточно высокими, чтобы обрабатывать самую крупную отдельную цель, которую может получить любой scraper. Поскольку HPA не может разделить цель между подами, лимиты на под определяют максимальный размер цели, который поддерживает архитектура.</li>
+<li>Принять дисбаланс. Если тяжёлых целей немного, а разделение непрактично, стоит слегка резервировать ресурсы в пуле с запасом.</li>
+</ul>
+<h2 id="_12">Проверка развёртывания<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h2>
+<p>После развёртывания всех уровней нужно проверить, что данные проходят от собираемых целей через конвейер Collector в Dynatrace.</p>
+<h3 id="_13">Проверка метрик самомониторинга<a class="headerlink" href="#_13" title="Permanent link">&para;</a></h3>
+<p>Самомониторинг включён по умолчанию на всех Collector'ах. Нужно убедиться, что ключевые метрики показывают здоровые значения на каждом Collector в архитектуре. Инструкции по настройке см. в <a href="../../../self-monitoring/" title="How to monitor OpenTelemetry Collectors with self-monitoring features.">Enable OpenTelemetry Collector self-monitoring</a>.</p>
+<p>Нужно установить самомониторинг <code>level: detailed</code>, чтобы были доступны все метрики, перечисленные ниже. Референсная конфигурация уже включает экспортер телеметрии самомониторинга в значениях Helm каждого уровня.</p>
+<p>Проверь следующие метрики на каждом уровне.</p>
+<h4 id="scraper">Уровень scraper<a class="headerlink" href="#scraper" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>Метрика</th>
+<th>На что обратить внимание</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>otelcol_receiver_accepted_metric_points</code></td>
+<td>Увеличивается после каждого цикла сбора. Если остаётся постоянной или на нуле, receiver Prometheus не собирает данные ни с одной цели.</td>
+</tr>
+<tr>
+<td><code>otelcol_processor_incoming_items</code> / <code>otelcol_processor_outgoing_items</code></td>
+<td>Количество входящих и исходящих значений должно совпадать. Разрыв между ними указывает, что processor отбрасывает данные (например, срабатывает <code>memory_limiter</code>).</td>
+</tr>
+<tr>
+<td><code>otelcol_exporter_send_failed_metric_points</code></td>
+<td>Должно быть равно нулю или близко к нулю. Ненулевые значения означают, что exporter <code>loadbalancing</code> не может достучаться до пула gateway.</td>
+</tr>
+<tr>
+<td><code>otelcol_loadbalancer_num_resolutions</code></td>
+<td>Увеличивается каждый раз, когда exporter повторно разрешает DNS gateway. Частые всплески в стабильном состоянии указывают на нестабильность DNS или на частую смену подов gateway.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="gateway">Уровень gateway<a class="headerlink" href="#gateway" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>Метрика</th>
+<th>На что обратить внимание</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>otelcol_receiver_accepted_metric_points</code></td>
+<td>Должно соответствовать общему объёму, отправленному всеми scraper. Значительное расхождение означает потерю данных между уровнями.</td>
+</tr>
+<tr>
+<td><code>otelcol_processor_incoming_items</code> / <code>otelcol_processor_outgoing_items</code></td>
+<td>Количество входящих и исходящих значений должно совпадать. Разрыв указывает, что processor (обычно <code>memory_limiter</code>) отбрасывает данные на gateway.</td>
+</tr>
+<tr>
+<td><code>otelcol_exporter_sent_metric_points</code></td>
+<td>Стабильно увеличивается. Если отстаёт от количества receiver, проверь ошибки exporter и размер очереди.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="target-allocator_4">Проверка назначений Target Allocator<a class="headerlink" href="#target-allocator_4" title="Permanent link">&para;</a></h3>
+<p>Запроси HTTP API Target Allocator, чтобы убедиться, что он обнаружил цели и распределил их по пулу scraper.</p>
+<ol>
+<li>Настрой port-forward к поду Target Allocator.</li>
+</ol>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>kubectl port-forward svc/otel-allocator 8080:80
+</code></pre></div>
+2. Получи список всех обнаруженных задач сбора (scrape job).</p>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>curl -s http://localhost:8080/jobs | jq .
+</code></pre></div>
+3. Получи список целей и назначенный им Collector для конкретной задачи. Замени <code>&lt;job-name&gt;</code> на имя задачи из предыдущего шага.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>curl -s http://localhost:8080/jobs/&lt;job-name&gt;/targets | jq .
+</code></pre></div>
+<p>Ответ группирует цели по Collector ID. Каждый ключ, это collector, а его значение содержит цели, назначенные этому collector'у. Проверь, что:</p>
+<ul>
+<li>Все ожидаемые цели присутствуют в ответе.</li>
+<li>Цели распределены между несколькими Collector ID (не все назначены одному scraper).</li>
+<li>Ни одна цель не числится неназначенной.</li>
+</ul>
+<p>Для визуального обзора назначений цель-Collector используй скрипт <a href="https://bitbucket.lab.dynatrace.org/users/bernhard.aichinger/repos/k8s-monitoring/browse/phase-2-tiered/ta-visualize.py"><code>ta-visualize.py</code>﻿</a>. Он запрашивает API Target Allocator и строит наглядное отображение того, какие цели назначены каким scraper.</p>
+<h2 id="_14">Устранение распространённых проблем<a class="headerlink" href="#_14" title="Permanent link">&para;</a></h2>
+<h3 id="_15">Отсутствующие метрики<a class="headerlink" href="#_15" title="Permanent link">&para;</a></h3>
+<p>Если ожидаемые метрики не появляются в Dynatrace, проверь следующие причины.</p>
+<ul>
+<li><strong>Несовпадение label selector в CRD</strong>: Target Allocator обнаруживает цели через CRD <code>ServiceMonitor</code>, <code>PodMonitor</code> или <code>ScrapeConfig</code>. Если метки на целевой нагрузке не совпадают, Target Allocator её так и не обнаружит. Используй <code>kubectl get servicemonitor -o yaml</code> и сравни <code>matchLabels</code> с фактическими метками на целевом Service или Pod.</li>
+<li><strong>Отсутствует RBAC для Target Allocator</strong>: ServiceAccount Target Allocator нужны права <code>get</code>, <code>list</code> и <code>watch</code> на <code>ServiceMonitor</code>, <code>PodMonitor</code>, <code>ScrapeConfig</code>, Pods, Services, Endpoints и Nodes. Отсутствие прав приводит к незаметным сбоям обнаружения. Проверь логи Target Allocator на ошибки прав доступа.</li>
+<li><strong>Цель недоступна с подов scraper</strong>: scraper должен иметь возможность достучаться до конечной точки метрик цели по сети. Убедись, что ни один <code>NetworkPolicy</code> не блокирует трафик из namespace scraper в namespace цели, и что порт цели указан верно.</li>
+<li><strong>Selector Service или Pod не совпадает ни с одной нагрузкой</strong>: <code>ServiceMonitor</code> может ссылаться на Service, у которого нет подходящих Endpoints, а у <code>PodMonitor</code> <code>selector</code> может совпадать с нулём Pod. Используй <code>kubectl get endpoints &lt;service-name&gt;</code>, чтобы убедиться, что у Service есть активные endpoints.</li>
+</ul>
+<h3 id="_16">Дублирование данных<a class="headerlink" href="#_16" title="Permanent link">&para;</a></h3>
+<p>Если в Dynatrace видны дублирующиеся значения метрик, проверь следующие сценарии.</p>
+<ul>
+<li><strong>Несколько scraper с одинаковым <code>collector_id</code></strong>: каждый scraper должен регистрироваться в Target Allocator под уникальным Collector ID. Если два scraper используют один и тот же ID, оба получают одинаковые назначения целей и опрашивают одни и те же endpoint'ы. Референсная конфигурация задаёт <code>collector_id: ${K8S_POD_NAME}</code> в блоке <code>target_allocator</code> receiver'а Prometheus, что гарантирует регистрацию каждого пода под собственным именем. Используй шаги из <a href="#inspect-target-allocator-assignments">Проверка назначений Target Allocator</a>, чтобы проверить, какие Collector ID присутствуют и не назначены ли одни и те же цели нескольким scraper.</li>
+<li><strong>Collector'ы вне <code>collector_selector</code> Target Allocator</strong>: если запущены дополнительные Collector'ы, которые опрашивают endpoint'ы Prometheus независимо (не управляются Target Allocator), они могут пересекаться со scraper, управляемыми Target Allocator. Убедись, что цели, назначенные Target Allocator, опрашивают только scraper, управляемые Target Allocator.</li>
+</ul>
+<h3 id="target-allocator_5">Target Allocator не распределяет цели<a class="headerlink" href="#target-allocator_5" title="Permanent link">&para;</a></h3>
+<p>Если API <code>/targets</code> не возвращает записей или все цели назначены одному scraper, проверь следующее.</p>
+<ul>
+<li><strong>CRD не подхвачены</strong>: Target Allocator отслеживает ресурсы <code>ServiceMonitor</code>, <code>PodMonitor</code> и <code>ScrapeConfig</code>. Если эти CRD находятся в namespace, который Target Allocator не настроен отслеживать, они игнорируются. Проверь конфигурацию <code>prometheus_cr</code> Target Allocator: поля <code>service_monitor_selector</code>, <code>pod_monitor_selector</code> и <code>scrape_config_selector</code> фильтруют, какие CRD подхватывает Target Allocator по метке.</li>
+<li><strong>Под Target Allocator не запущен</strong>: используй <code>kubectl get pods</code>, чтобы убедиться, что под Target Allocator запущен и готов. Проверь его логи на ошибки.</li>
+<li><strong><code>collector_selector</code> отсутствует или указан неверно</strong>: Target Allocator использует <code>collector_selector</code>, чтобы определить, каким подам Collector распределять цели. Если этот selector не совпадает с метками подов scraper, у Target Allocator нет пула для распределения. Убедись, что label selector в <code>collector_selector</code> Target Allocator совпадает с метками на шаблоне пода Deployment scraper.</li>
+</ul>
+<h3 id="-">Хотспоты из-за неравномерной нагрузки<a class="headerlink" href="#-" title="Permanent link">&para;</a></h3>
+<p>Если некоторые поды scraper или gateway показывают заметно более высокое потребление ресурсов, чем остальные, дисбаланс вызван распределением на основе хэша. См. <a href="#limitations-of-hash-based-load-distribution">Ограничения распределения нагрузки на основе хэша</a> с объяснением причины.</p>
+<p>Признаки дисбаланса в метриках самомониторинга:</p>
+<ul>
+<li>У одного scraper значительно выше скорость <code>otelcol_receiver_accepted_metric_points</code>, чем у остальных.</li>
+<li>У одного gateway выше использование памяти или CPU, чем у остальных, что видно по метрикам <code>otelcol_process_memory_rss</code> или <code>otelcol_process_cpu_seconds</code>.</li>
+</ul>
+<p>Чтобы смягчить хотспоты, масштабируй вертикально, увеличив лимиты ресурсов на под для перегруженного уровня.</p>
+<h3 id="oom-kills-scraper-gateway">OOM kills на scraper или gateway<a class="headerlink" href="#oom-kills-scraper-gateway" title="Permanent link">&para;</a></h3>
+<p>Если поды scraper или gateway убиваются со статусом <code>OOMKilled</code>, лимит памяти пода слишком низок для нагрузки.</p>
+<ul>
+<li><strong>OOM kills на scraper</strong>: receiver Prometheus буферизует весь ответ сбора в памяти. Одна цель, экспонирующая большое количество series, может вызвать всплеск потребления памяти, превышающий лимит пода. Увеличь лимит памяти пода scraper или уменьши количество series на цель, разделив тяжёлые цели.</li>
+<li><strong>OOM kills на gateway</strong>: processor <code>cumulativetodelta</code> отслеживает состояние по каждой series в памяти. Высокая кардинальность series или большое значение <code>max_staleness</code> со временем увеличивает использование памяти. Уменьши <code>max_staleness</code>, чтобы быстрее вытеснять устаревшие series, либо увеличь лимит памяти пода gateway.</li>
+<li><strong>Processor <code>memory_limiter</code></strong>: если настроен, processor <code>memory_limiter</code> отбрасывает данные до того, как под достигнет лимита памяти. Сравни <code>otelcol_processor_incoming_items</code> и <code>otelcol_processor_outgoing_items</code> на затронутом уровне. Разрыв между ними означает, что <code>memory_limiter</code> отбрасывает данные. Если он срабатывает часто, под недостаточно обеспечен ресурсами для данной нагрузки.</li>
+</ul>
+<h3 id="exporter-load-balancing">Проблемы маршрутизации exporter'а load-balancing<a class="headerlink" href="#exporter-load-balancing" title="Permanent link">&para;</a></h3>
+<p>Экспортер <code>loadbalancing</code> на уровне scraper направляет данные в gateway, хешируя ключ, полученный из данных OTLP.</p>
+<ul>
+<li><strong><code>routing_key: resource</code> против <code>routing_key: streamID</code></strong>: ключ маршрутизации <code>resource</code> (используется по умолчанию) хеширует все атрибуты ресурса, поэтому все метрики от заданного исходного пода попадают на один и тот же gateway. Это эффективно, поскольку экспортер вычисляет один хеш на ресурс, но может создавать точки перегрузки, когда один исходный под генерирует много серий. Ключ маршрутизации <code>streamID</code> хеширует полную идентичность потока (ресурс, область видимости, имя метрики и атрибуты точки данных), что распределяет отдельные потоки метрик по gateway для более равномерной нагрузки. Процессор <code>cumulativetodelta</code> по-прежнему работает корректно с <code>streamID</code>, поскольку каждый уникальный поток стабильно направляется на один и тот же gateway. Однако <code>streamID</code> вычисляет хеш для каждого отдельного потока точек данных, а не один раз на ресурс, что заметно повышает нагрузку на CPU на уровне scraper. Процессор <code>cumulativetodelta</code> на уровне gateway отслеживает состояние по идентичности потока независимо от ключа маршрутизации, поэтому суммарное использование памяти на всех gateway остаётся тем же. Меняется только распределение этого состояния между gateway.</li>
+<li><strong>Актуальность кеша резолвера при частой смене подов</strong>: экспортер <code>loadbalancing</code> использует резолвер <code>k8s</code> для обнаружения IP-адресов подов gateway путём отслеживания объектов <code>EndpointSlice</code> Kubernetes. Отслеживание API реагирует быстрее, чем опрос DNS, но всё равно остаётся короткое окно во время перезапуска подов gateway или событий масштабирования, когда представление резолвера не соответствует фактической топологии. В течение этого окна экспортер может направить данные в под, который завершает работу, или пропустить только что запущенный под, что приводит к сбоям отправки. Нужно отслеживать <code>otelcol_loadbalancer_num_resolutions</code> и <code>otelcol_exporter_send_failed_metric_points</code> во время событий масштабирования. Резолверу <code>k8s</code> требуется, чтобы у ServiceAccount коллектора были права <code>get</code>, <code>list</code> и <code>watch</code> на объекты <code>discovery.k8s.io/v1</code> <code>EndpointSlice</code> в пространстве имён gateway. Без этих прав кеш резолвера остаётся пустым, и экспортер не может маршрутизировать данные ни на один бэкенд.</li>
+</ul>
+<h2 id="related-topics">Related topics<a class="headerlink" href="#related-topics" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="../simplified/" title="Configure a single OpenTelemetry Collector to scrape Prometheus endpoints for small and medium-scale workloads.">Scrape Prometheus metrics with the OTel Collector (simplified)</a></li>
+</ul>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  К началу
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      © 2026 Dynatrace Docs | Yerkebulan Ardabayev
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/Yerkebulan-Ardabayev" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../../../../../..", "features": ["navigation.indexes", "navigation.prune", "navigation.path", "navigation.tracking", "navigation.top", "search.suggest", "search.highlight", "search.share", "content.code.copy", "content.code.annotate", "content.tabs.link", "content.tooltips", "toc.follow"], "search": "../../../../../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u0421\u043a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u043d\u043e \u0432 \u0431\u0443\u0444\u0435\u0440", "clipboard.copy": "\u041a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u0442\u044c \u0432 \u0431\u0443\u0444\u0435\u0440", "search.result.more.one": "\u0415\u0449\u0451 1 \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.more.other": "\u0415\u0449\u0451 # \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.none": "\u0421\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439 \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u043e", "search.result.one": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e 1 \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0435", "search.result.other": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439: #", "search.result.placeholder": "\u041d\u0430\u0447\u043d\u0438\u0442\u0435 \u043f\u0435\u0447\u0430\u0442\u0430\u0442\u044c \u0434\u043b\u044f \u043f\u043e\u0438\u0441\u043a\u0430", "search.result.term.missing": "\u041e\u0442\u0441\u0443\u0442\u0441\u0442\u0432\u0443\u0435\u0442", "select.version": "\u0412\u044b\u0431\u0435\u0440\u0438\u0442\u0435 \u0432\u0435\u0440\u0441\u0438\u044e"}, "version": null}</script>
+    
+    
+  
+      <script src="../../../../../../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../../../../../../../assets/javascripts/groq-chat.js?sha=17d46ba74"></script>
+      
+    
+  <script>
+    (function() {
+      // --- Keyboard shortcut Ctrl+K / Cmd+K for search ---
+      document.addEventListener('keydown', function(e) {
+        if ((e.ctrlKey || e.metaKey) && e.key === 'k') {
+          e.preventDefault();
+          var searchInput = document.querySelector('.md-search__input');
+          if (searchInput) {
+            searchInput.focus();
+            var searchToggle = document.querySelector('[data-md-toggle="search"]');
+            if (searchToggle && !searchToggle.checked) {
+              searchToggle.checked = true;
+              searchToggle.dispatchEvent(new Event('change'));
+            }
+          }
+        }
+        // --- "/" focuses search like GitHub / Algolia docs ---
+        if (e.key === '/' && !/^(input|textarea|select)$/i.test(e.target.tagName)) {
+          e.preventDefault();
+          var inp = document.querySelector('.md-search__input');
+          if (inp) {
+            inp.focus();
+            var t = document.querySelector('[data-md-toggle="search"]');
+            if (t && !t.checked) { t.checked = true; t.dispatchEvent(new Event('change')); }
+          }
+        }
+      });
+    })();
+  </script>
+
+  </body>
+</html>

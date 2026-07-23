@@ -1,0 +1,2499 @@
+
+<!doctype html>
+<html lang="ru" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Документация Dynatrace Managed с AI-помощником">
+      
+      
+        <meta name="author" content="Yerkebulan Ardabayev">
+      
+      
+        <link rel="canonical" href="https://yerkebulan-ardabayev.github.io/dynatrace-docs-website/managed-ru/discover-dynatrace/get-started/dynatrace-for-government/">
+      
+      
+        <link rel="prev" href="../">
+      
+      
+        <link rel="next" href="../dynatrace-ui/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>Dynatrace для государственных учреждений - Dynatrace — Документация</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Inter";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../assets/stylesheets/extra.v11.css?sha=17d46ba74">
+    
+    <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  <style>
+    /* DocFlow DT Logo Badge — injected via template override */
+    .md-header__button.md-logo {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .md-header__button.md-logo img,
+    .md-header__button.md-logo svg {
+      display: none !important;
+    }
+    .md-header__button.md-logo::before {
+      content: 'DT';
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 28px;
+      height: 28px;
+      border-radius: 6px;
+      background: linear-gradient(135deg, #00d4aa 0%, #7c3aed 100%);
+      color: white;
+      font-size: 11px;
+      font-weight: 700;
+      font-family: 'Inter', sans-serif;
+      letter-spacing: -0.02em;
+      flex-shrink: 0;
+    }
+
+    /* Search Ctrl+K badge — inside input field */
+    .md-search__form {
+      position: relative;
+    }
+    .md-search__form::after {
+      content: 'Ctrl+K';
+      display: none;
+      align-items: center;
+      padding: 0.15rem 0.4rem;
+      border-radius: 4px;
+      border: 1px solid var(--docflow-border);
+      background: var(--md-default-bg-color);
+      font-size: 10px;
+      font-family: 'JetBrains Mono', monospace;
+      color: var(--md-default-fg-color--lighter);
+      white-space: nowrap;
+      pointer-events: none;
+      position: absolute;
+      right: 0.5rem;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+    @media (min-width: 60em) {
+      .md-search__form::after {
+        display: flex;
+      }
+    }
+  </style>
+
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="custom">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#dynatrace" class="md-skip">
+          Перейти к содержанию
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+  
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Верхний колонтитул">
+    <a href="../../../.." title="Dynatrace — Документация" class="md-header__button md-logo" aria-label="Dynatrace — Документация" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M11 15H6l7-14v8h5l-7 14z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Dynatrace — Документация
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Dynatrace для государственных учреждений
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Переключить на светлую тему"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Переключить на светлую тему" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Переключить на тёмную тему"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Переключить на тёмную тему" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Поиск" placeholder="Поиск" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Поиск">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Поделиться" aria-label="Поделиться" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Очистить" aria-label="Очистить" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Инициализация поиска
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/Yerkebulan-Ardabayev/dynatrace-docs-website" title="Перейти к репозиторию" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    dynatrace-docs-website
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Навигация" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../.." title="Dynatrace — Документация" class="md-nav__button md-logo" aria-label="Dynatrace — Документация" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M11 15H6l7-14v8h5l-7 14z"/></svg>
+
+    </a>
+    Dynatrace — Документация
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/Yerkebulan-Ardabayev/dynatrace-docs-website" title="Перейти к репозиторию" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    dynatrace-docs-website
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Главная
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Начало работы
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Начало работы
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../ru/getting-started/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Быстрый старт
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../managed/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обзор Dynatrace Managed
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Начало работы
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Начало работы
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обзор
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dynatrace для государственных учреждений
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../dynatrace-ui/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Навигация по платформе Dynatrace Managed
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../glossary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Глоссарий Dynatrace
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../monitoring-environment/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Что такое среда мониторинга?
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../platform-engineering/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Platform Engineering
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../serverless-monitoring/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Мониторинг бессерверных приложений
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    
+  
+  
+  
+    
+  
+  
+  
+    <a href="../../references/dynatrace-api/basics/dynatrace-api-authentication/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Справочники
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+  
+
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../what-is-dynatrace/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Что такое Dynatrace Managed
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../installation/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Кластер Managed
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../ingest-from/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Источники данных
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    
+  
+  
+  
+    <a href="../../../observe/application-observability/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Наблюдаемость
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../dynatrace-intelligence/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Davis AI
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    
+  
+  
+  
+    <a href="../../../analyze-explore-automate/dashboards-classic/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Анализ
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../deliver/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Deliver
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    
+  
+  
+  
+    <a href="../../../secure/application-security/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Безопасность приложений
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    
+  
+  
+  
+    <a href="../../../manage/account-management/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Управление
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    
+  
+  
+  
+    <a href="../../../platform/oneagent/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Платформа
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../dynatrace-api/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../whats-new/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Что нового
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../offline-doc/how-do-i-enable-synthetic-monitors/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Офлайн-документация
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../../ru/training/day1-introduction/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обучение
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../ai/groq/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI Помощник
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Содержание">
+  
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+                
+
+
+
+  
+
+
+  <nav class="md-path" aria-label="Навигация" >
+    <ol class="md-path__list">
+      
+        
+  
+  
+    <li class="md-path__item">
+      <a href="../../../.." class="md-path__link">
+        
+  <span class="md-ellipsis">
+    Главная
+  </span>
+
+      </a>
+    </li>
+  
+
+      
+      
+        
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="../../../../ru/getting-started/" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    Начало работы
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="../" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    Начало работы
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ol>
+  </nav>
+
+              
+              <article class="md-content__inner md-typeset">
+                
+  
+                  
+
+
+
+<h1 id="dynatrace">Dynatrace для государственных учреждений<a class="headerlink" href="#dynatrace" title="Permanent link">&para;</a></h1>
+<h1 id="dynatrace_1">Dynatrace для государственных учреждений<a class="headerlink" href="#dynatrace_1" title="Permanent link">&para;</a></h1>
+<ul>
+<li>Практическое руководство</li>
+<li>10 минут на чтение</li>
+<li>Обновлено 15 мая 2026 г.</li>
+</ul>
+<p>Dynatrace for Government, это версия Dynatrace Managed, сертифицированная по FedRAMP и предназначенная для федеральных, региональных и муниципальных агентств.</p>
+<p>Dynatrace, это платформа программного интеллекта для мониторинга, которая упрощает сложность корпоративного облака и ускоряет цифровую трансформацию. Работая на основе Davis® (движка причинно-следственного анализа Dynatrace AI) и полной автоматизации, платформа Dynatrace «всё в одном» даёт ответы, а не просто данные, о приложениях и инфраструктуре. Она также отслеживает опыт конечных пользователей. Dynatrace модернизирует и автоматизирует операции корпоративного облака, ускоряет выпуск более качественного программного обеспечения и обеспечивает оптимальный цифровой опыт для клиентов организации.</p>
+<p>Dynatrace бесшовно объединяет мониторинг инфраструктуры и облака, производительности приложений и цифрового опыта в единое автоматизированное решение на основе AI. Dynatrace помогает добиваться результатов в производительности, предоставляя командам разработки, эксплуатации и бизнеса общую платформу и метрики. Таким образом, Dynatrace может служить единым «источником истины» для организации.</p>
+<h2 id="_1">Интеграция<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<p>Dynatrace for Government входит в облачную экосистему корпоративного агентства. Он интегрируется с ключевыми компонентами для поддержки динамической оркестрации облака, включая Amazon Web Services (AWS), Azure, Google Cloud, VMware Tanzu Application Service, Red Hat OpenShift и Kubernetes. В этих средах Dynatrace автоматически запускает и отслеживает весь стек. Он отслеживает все приложения и контейнеры в стеке, включая рабочие нагрузки, которые охватывают несколько облачных и гибридных сред.</p>
+<p>Тесная интеграция с облачными платформами помогает упростить разработку и эксплуатацию, повысить прозрачность и улучшить понимание ситуации в гибридных, мультиоблачных средах.</p>
+<h2 id="dynatrace_2">Концепции Dynatrace<a class="headerlink" href="#dynatrace_2" title="Permanent link">&para;</a></h2>
+<p>Чтобы ознакомиться с терминами и концепциями, используемыми в Dynatrace, посетите глоссарий Dynatrace и статьи:</p>
+<ul>
+<li><a href="../monitoring-environment/" title="Узнайте, что такое среда мониторинга Dynatrace, как найти ID своей среды и как настроить и подключить несколько сред.">Что такое среда мониторинга?</a></li>
+<li><a href="../monitoring-environment/" title="Узнайте, что такое среда мониторинга Dynatrace, как найти ID своей среды и как настроить и подключить несколько сред.">ID Environment</a></li>
+<li><a href="../monitoring-environment/" title="Узнайте, что такое среда мониторинга Dynatrace, как найти ID своей среды и как настроить и подключить несколько сред.">Можно ли настроить несколько сред мониторинга?</a></li>
+<li><a href="../../../manage/identity-access-management/access-tokens-and-oauth-clients/access-tokens/" title="Узнайте концепцию токена доступа и его области действия.">Токены доступа</a></li>
+</ul>
+<h2 id="dynatrace_3">Отличия Dynatrace<a class="headerlink" href="#dynatrace_3" title="Permanent link">&para;</a></h2>
+<p>Отличия между Dynatrace for Government и Dynatrace SaaS</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Dynatrace for Government</th>
+<th>Dynatrace SaaS</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Полный стек, программный интеллект «всё в одном»</td>
+<td>Есть</td>
+<td>Есть</td>
+</tr>
+<tr>
+<td>Поддержка новейших корпоративных технологий</td>
+<td>Есть</td>
+<td>Есть</td>
+</tr>
+<tr>
+<td>Ранний доступ к новым функциям</td>
+<td>Есть</td>
+<td>Есть</td>
+</tr>
+<tr>
+<td>Развёртывание</td>
+<td>Облако, инфраструктура не требуется</td>
+<td>Облако, инфраструктура не требуется</td>
+</tr>
+<tr>
+<td>Хранение данных</td>
+<td>Облачное хранилище данных Dynatrace</td>
+<td>Облачное хранилище данных Dynatrace</td>
+</tr>
+<tr>
+<td>Управление операциями и обновлениями со стороны Dynatrace</td>
+<td>Есть</td>
+<td>Есть</td>
+</tr>
+<tr>
+<td>Требуется единый вход (single sign-on)</td>
+<td>Есть</td>
+<td></td>
+</tr>
+<tr>
+<td>Синтетический мониторинг</td>
+<td>Приватные конечные точки синтетического мониторинга</td>
+<td>Доступ к публичной SaaS-сети Dynatrace</td>
+</tr>
+<tr>
+<td>Онлайн-чат поддержки</td>
+<td></td>
+<td>Есть</td>
+</tr>
+<tr>
+<td>Поддержка</td>
+<td>* Стандартная поддержка включена * Доступны Enterprise Success и поддержка</td>
+<td>* Стандартная поддержка включена * Доступны Enterprise Success и поддержка</td>
+</tr>
+</tbody>
+</table>
+<h2 id="dynatrace-for-government">Как получить Dynatrace for Government<a class="headerlink" href="#dynatrace-for-government" title="Permanent link">&para;</a></h2>
+<p>Чтобы получить лицензию Dynatrace for Government, свяжитесь с <a href="https://dt-url.net/c901yj9">отделом продаж Dynatrace﻿</a>. Представитель отдела продаж предоставит дальнейшие детали. Мониторинг Dynatrace использует модель лицензирования на основе потребления: вы приобретаете и потребляете единицы мониторинга в зависимости от потребностей. Подробнее см. <a href="../../../license/" title="Подписка на платформу Dynatrace, карточки тарифов по возможностям, гибридное лицензирование и предыдущие модели лицензирования.">Лицензирование Dynatrace</a>.</p>
+<p>После достижения договорённости вы получите письмо с деталями лицензии и инструкциями по началу работы.</p>
+<p>[<img alt="Шаг 1" src="https://dt-cdn.net/images/step-1-086e22066c.svg" title="Шаг 1" /></p>
+<p><strong>Настройте единый вход</strong>](/managed/discover-dynatrace/get-started#setup-sso "Узнайте, как начать работу с Dynatrace Managed за несколько шагов: от получения лицензии и настройки Managed-кластера до приёма данных и настройки уведомлений.")[<img alt="Шаг 2" src="https://dt-cdn.net/images/step-2-1a1384627e.svg" title="Шаг 2" /></p>
+<p><strong>Разверните Dynatrace</strong>](/managed/discover-dynatrace/get-started#deploy-dynatrace "Узнайте, как начать работу с Dynatrace Managed за несколько шагов: от получения лицензии и настройки Managed-кластера до приёма данных и настройки уведомлений.")[<img alt="Шаг 3" src="https://dt-cdn.net/images/step-3-350cf6c19a.svg" title="Шаг 3" /></p>
+<p><strong>Отслеживайте хост и его процессы</strong>](/managed/discover-dynatrace/get-started#monitor-hosts-and-processes "Узнайте, как начать работу с Dynatrace Managed за несколько шагов: от получения лицензии и настройки Managed-кластера до приёма данных и настройки уведомлений.")[<img alt="Шаг 4" src="https://dt-cdn.net/images/step-4-3f89d67d41.svg" title="Шаг 4" /></p>
+<p><strong>Настройте уведомление о проблеме</strong>](/managed/discover-dynatrace/get-started#set-up-problem-notification "Узнайте, как начать работу с Dynatrace Managed за несколько шагов: от получения лицензии и настройки Managed-кластера до приёма данных и настройки уведомлений.")[<img alt="Шаг 5" src="https://dt-cdn.net/images/step-5-2de312b50f.svg" title="Шаг 5" /></p>
+<p><strong>Создайте свою первую панель мониторинга</strong>](/managed/discover-dynatrace/get-started#create-dashboard "Узнайте, как начать работу с Dynatrace Managed за несколько шагов: от получения лицензии и настройки Managed-кластера до приёма данных и настройки уведомлений.")[<img alt="Шаг 6" src="https://dt-cdn.net/images/step-6-f906c6c957.svg" title="Шаг 6" /></p>
+<p><strong>Ознакомьтесь с дополнительными ресурсами</strong>](/managed/discover-dynatrace/get-started#resources "Узнайте, как начать работу с Dynatrace Managed за несколько шагов: от получения лицензии и настройки Managed-кластера до приёма данных и настройки уведомлений.")</p>
+<h2 id="1-dynatrace">Шаг 1 Создайте учётную запись Dynatrace<a class="headerlink" href="#1-dynatrace" title="Permanent link">&para;</a></h2>
+<p>Встретьтесь с командой Dynatrace, чтобы настроить среду Dynatrace for Government. Нужно интегрировать существующую конфигурацию единого входа (SSO). См. <a href="../../../manage/identity-access-management/user-and-group-management/#dynatrace-for-government" title="Управление пользователями и группами">Поддерживаемые технологии SSO</a>, чтобы вместе с командой Dynatrace for Government выполнить интеграцию.</p>
+<h2 id="2-dynatrace">Шаг 2 Разверните Dynatrace<a class="headerlink" href="#2-dynatrace" title="Permanent link">&para;</a></h2>
+<p>Чтобы загрузить и установить OneAgent на хосте</p>
+<ol>
+<li>Перейдите в раздел <strong>Deploy Dynatrace</strong>.</li>
+<li>Выберите <strong>Start installation</strong>, затем выберите платформу, на которую нужно установить OneAgent.</li>
+</ol>
+<p><img alt="Выбор платформы OneAgent" src="https://dt-cdn.net/images/download-dynatrace-oneagent-1213-68157f2673.png" /></p>
+<p>Выбор платформы OneAgent
+3. Вставьте PaaS-токен в поле <strong>Download token</strong> или выберите <strong>Create token</strong>, чтобы сгенерировать новый токен Deployment API.</p>
+<p>Скопируйте токен и сохраните его в надёжном месте, поскольку получить к нему доступ повторно не получится.
+4. Введите или выберите нужные параметры</p>
+<ul>
+<li><strong>Architecture</strong> (только для Linux)</li>
+<li><strong>Monitoring mode</strong>
+     Доступны варианты <strong>Full-Stack</strong>, <strong>Infrastructure</strong> или <strong>Discovery</strong>.
+     Если используется бесплатная пробная версия Dynatrace, выберите <strong>Full-Stack</strong>, чтобы увидеть все возможности наблюдения Dynatrace.
+     Режим мониторинга всегда можно изменить после установки.</li>
+<li>В разделе <strong>Optional parameters</strong> добавьте <strong>Custom host name</strong> для более удобной идентификации.
+     Остальные параметры выходят за рамки этого руководства.</li>
+</ul>
+<p><img alt="Параметры развёртывания OneAgent" src="https://dt-cdn.net/images/oneagent-installation-1-668-edc694da5b.png" /></p>
+<p>Параметры развёртывания OneAgent
+5. Загрузите OneAgent.
+   Используйте предоставленную команду интерфейса командной строки (CLI) или выберите <strong>Download</strong>.
+6. Проверьте подпись.
+   Используйте предоставленную команду CLI.
+   (Примечание: только для Linux и AIX.)
+7. Установите OneAgent.
+   Используйте предоставленную команду CLI или запустите исполняемый файл, выбрав его в графическом интерфейсе.
+   Следуйте шагам, описанным в установщике.</p>
+<p>При установке через графический интерфейс добавьте следующие параметры на экране <strong>Optional: advanced command-line settings</strong>:
+   <code>--set-monitoring-mode=fullstack --set-app-log-content-access=true</code>
+8. Когда установщик покажет сообщение <strong>Congratulations! Dynatrace OneAgent was successfully installed!</strong>, OneAgent запущен на хосте.
+   Выберите <strong>Finish</strong>, чтобы закрыть установщик.
+9. Поскольку OneAgent не может внедряться в уже запущенные процессы, нужно перезапустить все процессы, которые должен отслеживать OneAgent.
+10. Чтобы убедиться, что OneAgent отслеживает хост, откройте Dynatrace и перейдите в <strong>Infrastructure &amp; Operations</strong> &gt; <strong>Host</strong>.
+    Если всё работает как ожидается, имя хоста появится в таблице <strong>Hosts</strong>.
+    Пример показан на снимке экрана ниже.</p>
+<p>OneAgent теперь настроен и отслеживает хост. См. <a href="../" title="Узнайте, как начать работу с Dynatrace Managed за несколько шагов: от получения лицензии и настройки Managed-кластера до приёма данных и настройки уведомлений.">Начало работы</a>, чтобы продолжить первое знакомство с Dynatrace.</p>
+<h2 id="3">Шаг 3 Отслеживайте хост и его процессы<a class="headerlink" href="#3" title="Permanent link">&para;</a></h2>
+<p>При выборе имени хоста Dynatrace показывает всё, что уже известно об этом хосте.</p>
+<p>Ниже перечислены лишь некоторые данные, которые можно найти на экране обзора хоста.</p>
+<h3 id="_2">Свойства и теги<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
+<p>Выберите <strong>Properties and tags</strong> на панели уведомлений, чтобы открыть панель <strong>Properties and tags</strong>, которая отображает метаданные о выбранном хосте:</p>
+<ul>
+<li><strong>Tags</strong> содержит список тегов, применённых к хосту в данный момент. Выберите <strong>Add Tag</strong>, чтобы добавить тег к метаданным хоста.</li>
+<li><strong>Properties</strong> содержит список различных свойств хоста, таких как версия OneAgent, версия ОС, режим мониторинга, IP-адреса и management zones.</li>
+</ul>
+<h3 id="_3">Проблемы<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<ul>
+<li>На панели уведомлений вкладка <strong>Problems</strong> показывает активные и закрытые проблемы, связанные с выбранным хостом.</li>
+<li>
+<p>Выберите <strong>Problems</strong> на панели уведомлений, чтобы открыть панель <strong>Problems</strong>, в которой перечислены проблемы.</p>
+</li>
+<li>
+<p>Выберите проблему, чтобы отобразить подробности.</p>
+</li>
+<li>Выберите <strong>Go to problems</strong>, чтобы перейти на страницу <a href="../../../dynatrace-intelligence/" title="Learn how Davis® AI detects performance anomalies, identifies root causes, and uses AI models for adaptive thresholds across your environment.">Problems</a>, отфильтрованную по выбранному хосту.</li>
+</ul>
+<h3 id="_4">Уязвимости<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<ul>
+<li>На панели уведомлений вкладка <strong>Vulnerabilities</strong> показывает основные обнаруженные <a href="../../../secure/application-security/" title="Access the Dynatrace Application Security functionalities.">уязвимости</a>, затрагивающие выбранный хост.</li>
+<li>
+<p>Выберите <strong>Vulnerabilities</strong> на панели уведомлений, чтобы открыть панель <strong>Vulnerabilities</strong>, в которой перечислены наиболее серьёзные <a href="../../../secure/application-security/vulnerability-analytics/third-party-vulnerabilities/manage-third-party-vulnerabilities/" title="Monitor the security issues of your third-party libraries.">уязвимости сторонних библиотек</a> и <a href="../../../secure/application-security/vulnerability-analytics/code-level-vulnerabilities/manage-code-level-vulnerabilities/" title="Monitor the code-level vulnerabilities in your environment.">уязвимости на уровне кода</a>, связанные с этим хостом.</p>
+</li>
+<li>
+<p>Выберите уязвимость в списке, чтобы посмотреть подробности и понять серьёзность и влияние уязвимости в вашей среде.</p>
+</li>
+<li>Чтобы увидеть полный список обнаруженных уязвимостей, затрагивающих этот хост, выберите <strong>Show all third-party vulnerabilities</strong>/<strong>Show all code-level vulnerabilities</strong>.</li>
+</ul>
+<p>Пример уязвимостей сторонних библиотек:</p>
+<p><img alt="Host overview: TPV" src="https://dt-cdn.net/images/host-tlv-764-ef67c680cf.png" /></p>
+<p>Host overview: TPV</p>
+<p>Пример уязвимостей на уровне кода:</p>
+<p><img alt="Host overview: CLV" src="https://dt-cdn.net/images/host-clv-769-ed43f5e602.png" /></p>
+<p>Host overview: CLV</p>
+<p>Если отсутствуют <a href="../../../secure/application-security/#permissions" title="Access the Dynatrace Application Security functionalities.">права доступа безопасности</a> для выбранной management zone, вкладка <strong>Vulnerabilities</strong> на панели уведомлений показывает <code>Not analyzed</code>.</p>
+<h3 id="_5">Доступность<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
+<ul>
+<li>На панели уведомлений вкладка <strong>Availability</strong> показывает процент времени, в течение которого хост был онлайн и отвечал на запросы. Dynatrace обнаруживает и показывает завершения работы операционной системы (включая перезагрузки) и периоды, когда хост находится офлайн (например, если хост неожиданно выключился).</li>
+<li>Выберите <strong>Availability</strong> на панели уведомлений, чтобы открыть панель <strong>Host availability</strong>, на которой отображается график доступности хоста во времени.</li>
+</ul>
+<p><img alt="Host page detail - online availability" src="https://dt-cdn.net/images/screenshot-2023-07-04-at-4-54-15-pm-1210-837a6b0515.png" /></p>
+<p>Host page detail - online availability</p>
+<p>Подробности см. в разделе <a href="../../../observe/infrastructure-observability/hosts/monitoring/host-monitoring/host-availability/" title="Check host availability, interpret host availability states, and see how maintenance windows are reflected in host availability charts.">Host availability</a>.</p>
+<h3 id="_6">Производительность хоста<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
+<p>Перейдите в раздел <strong>Host performance</strong>, чтобы быстро получить представление по ключевым метрикам: CPU, памяти и сети с разными агрегациями метрик для выбранного периода времени. Просмотр временной шкалы позволяет одновременно точно определять выбранные аномалии на всех графиках метрик, что упрощает понимание взаимосвязей между различными компонентами инфраструктуры в конкретный момент времени.</p>
+<p>Легко проверить максимальные или минимальные пики потребления ресурсов, поскольку каждый график метрик позволяет выбрать разную агрегацию. Вместо метрик по умолчанию можно также отображать пользовательские метрики, что позволяет изучить конкретные взаимосвязи между метриками, которые могут быть критичны для конкретной конфигурации хоста.</p>
+<p>Использование этих графиков</p>
+<p>Выберите  в правом верхнем углу графика, чтобы:</p>
+<ul>
+<li><strong>Show in Data Explorer</strong>, открывает <a href="../../../analyze-explore-automate/explorer/" title="Query for metrics and transform results to gain desired insights.">Data Explorer</a> для связанного запроса, что позволяет посмотреть связанный запрос, изучить данные более подробно, настроить параметры графика и закрепить график на собственной панели мониторинга.</li>
+<li><strong>Pin to dashboard</strong>, закрепляет копию выбранного графика на любой классической панели мониторинга, которую можно редактировать. Например, если определённые хосты особенно важны для бизнеса, можно создать панель мониторинга, предназначенную только для отслеживания этих хостов, а затем закрепить на ней графики со страниц обзора хостов, практически без ввода текста. Подробности см. в разделе <a href="../../../analyze-explore-automate/dashboards-classic/charts-and-tiles/pin-tiles-to-your-dashboard/" title="Learn to pin tiles to your dashboards.">Pin tiles to your dashboard</a>.</li>
+</ul>
+<p><img alt="Host overview: host performance" src="https://dt-cdn.net/images/host-performance-1597-05b7f2365c.png" /></p>
+<p>Host overview: host performance</p>
+<h3 id="_7">Анализ процессов<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
+<p>Чтобы лучше понять поведение процессов, перейдите в раздел <strong>Process analysis</strong>, где отображаются графики и список процессов, запущенных на выбранном хосте. Выберите процесс, чтобы просмотреть подробности об этом процессе на хосте.</p>
+<p>Использование этих графиков</p>
+<p>Выберите  в правом верхнем углу графика, чтобы:</p>
+<ul>
+<li><strong>Show in Data Explorer</strong>, открывает <a href="../../../analyze-explore-automate/explorer/" title="Query for metrics and transform results to gain desired insights.">Data Explorer</a> для связанного запроса, что позволяет посмотреть связанный запрос, изучить данные более подробно, настроить параметры графика и закрепить график на собственной панели мониторинга.</li>
+<li><strong>Pin to dashboard</strong>, закрепляет копию выбранного графика на любой классической панели мониторинга, которую можно редактировать. Например, если определённые хосты особенно важны для бизнеса, можно создать панель мониторинга, предназначенную только для отслеживания этих хостов, а затем закрепить на ней графики со страниц обзора хостов, практически без ввода текста. Подробности см. в разделе <a href="../../../analyze-explore-automate/dashboards-classic/charts-and-tiles/pin-tiles-to-your-dashboard/" title="Learn to pin tiles to your dashboards.">Pin tiles to your dashboard</a>.</li>
+</ul>
+<p><img alt="Host overview: process analysis" src="https://dt-cdn.net/images/process-analysis-1599-d637b524c6.png" /></p>
+<p>Host overview: process analysis</p>
+<h3 id="_8">Снимки экземпляров процессов<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h3>
+<p>OneAgent версии 1.237+</p>
+<p>Раздел <strong>Process instance snapshots</strong> предлагает дополнительные сведения о наиболее ресурсоёмких процессах, запущенных на хосте, и о процессах, определённых для мониторинга <a href="../../../observe/infrastructure-observability/hosts/monitoring/process-availability/" title="Monitor availability and performance of the key processes on your hosts.">Process availability</a>.</p>
+<p><img alt="Process instance snapshot" src="https://dt-cdn.net/images/process-instance-snapshot-1404-c1bcee55de.png" /></p>
+<p>Process instance snapshot</p>
+<p>Единичный снимок экземпляра процесса, это набор данных мониторинга для процессов. Он содержит данные о <strong>CPU usage (%)</strong>, <strong>Memory usage (B)</strong>, <strong>Incoming network traffic (KB)</strong> и <strong>Outgoing network traffic (KB)</strong> процесса, измеренные с интервалом в одну минуту. Один снимок содержит 20 минут данных мониторинга: 10 минут до триггера и 10 минут после триггера. Каждый хост может передавать эти метрики не более 60 минут в сутки. Процесс учитывается для снимка, если потребление им CPU, памяти или сети превышает 1%.</p>
+<p>Снимок экземпляра процесса запускается при высоком потреблении CPU, памяти или сети на хосте. Снимок процесса также можно запросить вручную. Выберите  в правом верхнем углу раздела и выберите <strong>Request process snapshot now</strong>. Дождитесь сообщения, подтверждающего успешный запуск снимка. Данные снимка процесса должны появиться после перезагрузки страницы в течение 90 секунд.</p>
+<p>Кроме того, для процессов, определённых для мониторинга <a href="../../../observe/infrastructure-observability/hosts/monitoring/process-availability/" title="Monitor availability and performance of the key processes on your hosts.">Process availability</a>, снимок показывает, как вели себя процессы до того, как они исчезли, и появились ли они снова в течение 10 минут.</p>
+<h4 id="_9">Включение снимков экземпляров процессов<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h4>
+<p>Снимки экземпляров процессов можно включить на уровне хоста или на уровне среды.</p>
+<ul>
+<li>Чтобы включить их на уровне среды, перейдите в <strong>Settings</strong>, выберите <strong>Processes and containers</strong> &gt; <strong>Process instance snapshots</strong> и включите <strong>Enable process instance snapshots</strong>.</li>
+<li>Чтобы задать правило на уровне хоста, перейдите на страницу обзора хоста, выберите , перейдите в <strong>Settings</strong>, выберите <strong>Process instance snapshots</strong> и включите <strong>Enable process instance snapshots</strong>.</li>
+<li>Чтобы задать правило на уровне группы хостов, перейдите на страницу группы хостов по адресу <code>https://your-environment/ui/settings/HOST_GROUP-NAME</code>, выберите <strong>Process instance snapshots</strong> и включите <strong>Enable process instance snapshots</strong>.</li>
+</ul>
+<p>На той же странице настроек можно также снизить лимит процессов, отображаемых в одном снимке. Максимальное/стандартное значение, 100 процессов.</p>
+<h3 id="_10">Анализ дисков<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h3>
+<p>Чтобы выявить узкие места в производительности диска, перейди в раздел <strong>Disk analysis</strong>, где отображаются все точки монтирования для систем Linux и все тома для Windows. С первого взгляда видны использование дискового пространства и метрики пропускной способности, а также другие выбранные метрики диска, что позволяет быстро выявить любые проблемы с производительностью диска.</p>
+<ul>
+<li>На странице узла можно фильтровать диски по имени диска, чтобы сосредоточиться на выбранном диске.</li>
+<li>Разверни запись диска, чтобы увидеть подробности о выбранном диске. Для каждого экземпляра диска отображаются отдельные подробные метрики производительности, что упрощает выявление любого ресурса диска, работающего не оптимально.</li>
+</ul>
+<p>Каждая точка монтирования (Linux) или том (Windows) имеет собственные метрики производительности в дополнение к объединённым метрикам. Это значительно упрощает обнаружение медленного или нестабильного диска. Оповещения можно настроить как для отдельных дисков, так и для объединённых графиков.</p>
+<p>Используй эти графики</p>
+<p>Выбери значок в правом верхнем углу графика, чтобы:</p>
+<ul>
+<li><strong>Show in Data Explorer</strong>, открывает <a href="../../../analyze-explore-automate/explorer/" title="Query for metrics and transform results to gain desired insights.">Data Explorer</a> для связанного запроса, позволяя просмотреть сам запрос, изучить данные более подробно, настроить параметры графика и закрепить график на собственной панели мониторинга.</li>
+<li><strong>Pin to dashboard</strong>, закрепляет копию выбранного графика на любой классической панели мониторинга, которую можно редактировать. Например, если определённые узлы особенно важны для бизнеса, можно создать панель мониторинга, предназначенную только для наблюдения за этими узлами, а затем закрепить на ней графики со страниц обзора этих узлов, практически без ручного ввода. Подробнее см. <a href="../../../analyze-explore-automate/dashboards-classic/charts-and-tiles/pin-tiles-to-your-dashboard/" title="Learn to pin tiles to your dashboards.">Pin tiles to your dashboard</a>.</li>
+</ul>
+<p><img alt="Host overview: disk analysis" src="https://dt-cdn.net/images/disk-analysis-1599-236d782165.png" /></p>
+<p>Host overview: disk analysis</p>
+<h3 id="disk-monitoring">Disk monitoring<a class="headerlink" href="#disk-monitoring" title="Permanent link">&para;</a></h3>
+<p>Disk monitoring, это запланированная задача, которая собирает метрики диска от агента. Она запускается автоматически, когда OS agent обнаруживает диск.</p>
+<p>Доступные настройки для дисков:</p>
+<ul>
+<li><strong>Disk options</strong>: можно создавать правила исключений, чтобы убирать определённые диски из списка мониторинга, и обнаруживать дублирующиеся диски. Подробнее см. ниже или в разделе <a href="../../../observe/infrastructure-observability/hosts/configuration/#disk-options" title="Host-level settings">Disk options</a>.</li>
+<li><strong>Disk anomaly detection rules</strong>: можно настроить обнаружение аномалий узла, включая пороги проблем и событий, под свои конкретные задачи. Подробнее см. <a href="../../../observe/infrastructure-observability/hosts/configuration/anomaly-detection/" title="Configure host anomaly detection, including problem and event thresholds.">Host anomaly detection</a>.</li>
+<li><strong>Anomaly detection for infrastructure: Disk</strong>: эти настройки позволяют настроить чувствительность обнаружения, задать пороги оповещений или отключить оповещения для дисков. Подробнее см. <a href="../../../observe/infrastructure-observability/hosts/configuration/#anomaly-detection" title="Host-level settings">Anomaly detection</a>.</li>
+</ul>
+<h4 id="_11">Ограничения<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Поддерживаемые метрики диска</li>
+</ul>
+<p>## Infrastructure</p>
+<p>### Disk</p>
+<table>
+<thead>
+<tr>
+<th>Ключ метрики</th>
+<th>Название и описание</th>
+<th>Единица измерения</th>
+<th>Агрегации</th>
+<th>Расход мониторинга</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>builtin:host.disk.throughput.read</td>
+<td>Disk throughput read. Пропускная способность чтения файловой системы в битах в секунду</td>
+<td>bit/s</td>
+<td>autoavgmaxmin</td>
+<td>Host units</td>
+</tr>
+<tr>
+<td>builtin:host.disk.throughput.write</td>
+<td>Disk throughput write. Пропускная способность записи файловой системы в битах в секунду</td>
+<td>bit/s</td>
+<td>autoavgmaxmin</td>
+<td>Host units</td>
+</tr>
+<tr>
+<td>builtin:host.disk.avail</td>
+<td>Disk available. Объём свободного пространства, доступного пользователю в файловой системе. В Linux и AIX это свободное пространство, доступное непривилегированному пользователю. Оно не включает часть свободного пространства, зарезервированную для root</td>
+<td>Byte</td>
+<td>autoavgmaxmin</td>
+<td>Host units</td>
+</tr>
+<tr>
+<td>builtin:host.disk.bytesRead</td>
+<td>Disk read bytes per second. Скорость чтения из файловой системы в байтах в секунду</td>
+<td>Byte/second</td>
+<td>autoavgmaxmin</td>
+<td>Host units</td>
+</tr>
+<tr>
+<td>builtin:host.disk.bytesWritten</td>
+<td>Disk write bytes per second. Скорость записи в файловую систему в байтах в секунду</td>
+<td>Byte/second</td>
+<td>autoavgmaxmin</td>
+<td>Host units</td>
+</tr>
+<tr>
+<td>builtin:host.disk.free</td>
+<td>Disk available %. Процент свободного пространства, доступного пользователю в файловой системе. В Linux и AIX это % свободного пространства, доступного непривилегированному пользователю. Не включает часть свободного пространства, зарезервированную для root</td>
+<td>Percent (%)</td>
+<td>autoavgmaxmin</td>
+<td>Host units</td>
+</tr>
+<tr>
+<td>builtin:host.disk.inodesAvail</td>
+<td>Inodes available %. Процент свободных inode, доступных непривилегированному пользователю в файловой системе. Метрика недоступна в Windows</td>
+<td>Percent (%)</td>
+<td>autoavgmaxmin</td>
+<td>Host units</td>
+</tr>
+<tr>
+<td>builtin:host.disk.inodesTotal</td>
+<td>Inodes total. Общее количество inode, доступных непривилегированному пользователю в файловой системе. Метрика недоступна в Windows</td>
+<td>Count</td>
+<td>autoavgmaxmin</td>
+<td>Host units</td>
+</tr>
+<tr>
+<td>builtin:host.disk.queueLength</td>
+<td>Disk average queue length. Среднее количество операций чтения и записи в очереди диска</td>
+<td>Count</td>
+<td>autoavgmaxmin</td>
+<td>Host units</td>
+</tr>
+<tr>
+<td>builtin:host.disk.readOps</td>
+<td>Disk read operations per second. Количество операций чтения из файловой системы в секунду</td>
+<td>Per second</td>
+<td>autoavgmaxmin</td>
+<td>Host units</td>
+</tr>
+<tr>
+<td>builtin:host.disk.readTime</td>
+<td>Disk read time. Среднее время чтения из файловой системы. Показывает среднюю задержку диска при чтении</td>
+<td>Millisecond</td>
+<td>autoavgcountmaxminsum</td>
+<td>Host units</td>
+</tr>
+<tr>
+<td>builtin:host.disk.used</td>
+<td>Disk used. Объём используемого пространства в файловой системе</td>
+<td>Byte</td>
+<td>autoavgmaxmin</td>
+<td>Host units</td>
+</tr>
+<tr>
+<td>builtin:host.disk.usedPct</td>
+<td>Disk used %. Процент используемого пространства в файловой системе</td>
+<td>Percent (%)</td>
+<td>autoavgmaxmin</td>
+<td>Host units</td>
+</tr>
+<tr>
+<td>builtin:host.disk.utilTime</td>
+<td>Disk utilization time. Процент времени, затраченного на операции ввода-вывода диска</td>
+<td>Percent (%)</td>
+<td>autoavgmaxmin</td>
+<td>Host units</td>
+</tr>
+<tr>
+<td>builtin:host.disk.writeOps</td>
+<td>Disk write operations per second. Количество операций записи в файловую систему в секунду</td>
+<td>Per second</td>
+<td>autoavgmaxmin</td>
+<td>Host units</td>
+</tr>
+<tr>
+<td>builtin:host.disk.writeTime</td>
+<td>Disk write time. Среднее время записи в файловую систему. Показывает среднюю задержку диска при записи</td>
+<td>Millisecond</td>
+<td>autoavgcountmaxminsum</td>
+<td>Host units</td>
+</tr>
+<tr>
+<td>* Развёртывание на основе установщика OneAgent</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>Сетевые диски поддерживаются для узлов Linux, узлов AIX, а начиная с версии 1.277 OneAgent мониторинг сетевых дисков также включён для Windows.</li>
+<li>SMB 1.0 поддерживается начиная с версии 1.263 OneAgent.</li>
+<li>
+<p>Развёртывание OneAgent только для приложений (application-only)</p>
+</li>
+<li>
+<p>Application-only OneAgent предоставляют сокращённый набор метрик Disk I/O, таких как:</p>
+<ul>
+<li><code>Disk read bytes per second</code></li>
+<li><code>Disk write bytes per second</code></li>
+<li><code>Disk read operations per second</code></li>
+<li><code>Write operations per second</code></li>
+<li>Linux использует файл <code>/proc/diskstats</code>, который предоставляет информацию об активности дискового ввода-вывода в системе. <code>/proc/diskstats</code> не предоставляет никакой информации о сетевых монтированиях.</li>
+<li>Solaris не предоставляет никакой информации о Disk I/O.</li>
+<li>AIX сообщает только информацию о Disk I/O для <code>Disk read bytes per second</code> и <code>Disk write bytes per second</code>.</li>
+</ul>
+</li>
+</ul>
+<p>Только для Windows Страница диска отображает только локальные диски с буквой и/или точкой монтирования. Для удалённых дисков система распознаёт и отображает только общие ресурсы с протоколом CIFS. Подробнее см. <a href="https://dt-url.net/jw03uor">https://dt-url.net/jw03uor</a>.</p>
+<h4 id="_12">Отключение мониторинга для отдельных дисков<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h4>
+<p>Задай фильтр исключения, чтобы избежать проблем со специальными точками монтирования:</p>
+<ol>
+<li>Перейди в <strong>Settings</strong> &gt; <strong>Preferences</strong> &gt; <strong>Disk options</strong>.</li>
+<li>Выбери <strong>Add item</strong>, чтобы исключить диск из списка мониторинга.</li>
+<li>Укажи операционную систему, путь диска и тип файловой системы.</li>
+<li>Выбери <strong>Save changes</strong>.</li>
+</ol>
+<h4 id="_13">Дедупликация дисков<a class="headerlink" href="#_13" title="Permanent link">&para;</a></h4>
+<p>Дедупликация дисков помогает снизить избыточность в монтированиях Network File System (NFS) на узле. В некоторых случаях один и тот же общий ресурс NFS может быть примонтирован несколько раз в разных точках монтирования или с разными параметрами. Это может привести к дублирующимся записям, влияющим на точность мониторинга. Дедупликация дисков выявляет и удаляет эти избыточные монтирования, обеспечивая более чистые и точные данные о диске.</p>
+<p>Система обнаруживает дублирующиеся диски, сравнивая их IP-адреса и доступное или используемое пространство. Если два или более диска имеют одинаковый IP-адрес и метрики использования, они считаются дубликатами и соответствующим образом дедуплицируются.</p>
+<p>Дедупликацию дисков можно включить или отключить в <strong>Settings</strong> &gt; <strong>Preferences</strong> &gt; <strong>Disk options</strong>.</p>
+<h4 id="windows">Имперсонация пользователя в Windows<a class="headerlink" href="#windows" title="Permanent link">&para;</a></h4>
+<p>В Windows OS agent имперсонирует вошедшего в систему пользователя для сбора метрик диска с общих ресурсов NFS. Агент использует имперсонированный контекст безопасности для запроса метрик диска у сервера NFS.</p>
+<h3 id="network-analysis">Network analysis<a class="headerlink" href="#network-analysis" title="Permanent link">&para;</a></h3>
+<p>Чтобы быстро выявлять проблемы, связанные с сетью, перейди в раздел <strong>Network analysis</strong>, в котором перечислены все сетевые интерфейсы и объединённые метрики по всем из них, а также отдельные метрики по каждому сетевому интерфейсу.</p>
+<p>Используй этот раздел, чтобы:</p>
+<ul>
+<li>Выявлять потерю пакетов, пакеты с ошибками и другие сетевые проблемы</li>
+<li>Искать сетевые интерфейсы по имени сети</li>
+<li>Выявлять узкие места сети вплоть до конкретного адаптера</li>
+</ul>
+<p>Используй эти графики</p>
+<p>Выбери значок в правом верхнем углу графика, чтобы:</p>
+<ul>
+<li><strong>Show in Data Explorer</strong>, открывает <a href="../../../analyze-explore-automate/explorer/" title="Query for metrics and transform results to gain desired insights.">Data Explorer</a> для связанного запроса, позволяя просмотреть сам запрос, изучить данные более подробно, настроить параметры графика и закрепить график на собственной панели мониторинга.</li>
+<li><strong>Pin to dashboard</strong>, закрепляет копию выбранного графика на любой классической панели мониторинга, которую можно редактировать. Например, если определённые узлы особенно важны для бизнеса, можно создать панель мониторинга, предназначенную только для наблюдения за этими узлами, а затем закрепить на ней графики со страниц обзора этих узлов, практически без ручного ввода. Подробнее см. <a href="../../../analyze-explore-automate/dashboards-classic/charts-and-tiles/pin-tiles-to-your-dashboard/" title="Learn to pin tiles to your dashboards.">Pin tiles to your dashboard</a>.</li>
+</ul>
+<p><img alt="Host overview: network analysis" src="https://dt-cdn.net/images/network-analysis-1597-a3306f3237.png" /></p>
+<p>Host overview: network analysis</p>
+<h3 id="memory-analysis">Memory analysis<a class="headerlink" href="#memory-analysis" title="Permanent link">&para;</a></h3>
+<p>Используй раздел <strong>Анализ памяти</strong>, чтобы проанализировать:</p>
+<ul>
+<li>Использование памяти, всего памяти, использованная память и память, которую можно освободить</li>
+<li>Page faults, page faults в секунду</li>
+<li>Использование подкачки, всего свопа и использованный своп</li>
+</ul>
+<p>Используй эти графики</p>
+<p>Выбери  в правом верхнем углу графика, чтобы:</p>
+<ul>
+<li><strong>Show in Data Explorer</strong>, открывает <a href="../../../analyze-explore-automate/explorer/" title="Query for metrics and transform results to gain desired insights.">Data Explorer</a> для связанного запроса, так можно посмотреть связанный запрос, изучить данные более подробно, настроить параметры графика и закрепить график на своей дашборде.</li>
+<li><strong>Pin to dashboard</strong>, закрепляет копию выбранного графика на любой классической дашборде, которую можно редактировать. Например, если определённые хосты особенно важны для бизнеса, можно создать дашборд, предназначенный только для мониторинга этих хостов, а затем закрепить графики с их страниц обзора хостов на этой дашборде, почти без набора текста. Подробнее см. <a href="../../../analyze-explore-automate/dashboards-classic/charts-and-tiles/pin-tiles-to-your-dashboard/" title="Learn to pin tiles to your dashboards.">Закрепление плиток на дашборде</a>.</li>
+</ul>
+<h3 id="_14">События<a class="headerlink" href="#_14" title="Permanent link">&para;</a></h3>
+<p>Раздел событий отображает недавние события хоста, которые сгенерировал Davis AI, с наглядным представлением временной шкалы для быстрого выявления критических событий. Временная шкала интерактивна, фильтрует события вокруг определённого момента, что упрощает выделение конкретного события. Кроме того, разные типы событий выделены цветом для более лёгкой и быстрой идентификации и просмотра.</p>
+<ul>
+<li><strong>Show single card</strong>, открывает карточку <strong>Events</strong> для выбранного хоста.</li>
+</ul>
+<h3 id="_15">Логи<a class="headerlink" href="#_15" title="Permanent link">&para;</a></h3>
+<p>Временная шкала просмотрщика логов интерактивна, позволяет выбирать глобальный интервал времени. Используй её, чтобы выявить проблемы вокруг определённого события в логе и посмотреть, как это связано с производительностью хоста или процессами.</p>
+<ul>
+<li>Выбор времени на всей странице хоста будет соответствовать тому, что выбрано в просмотрщике логов. Таким образом, лог ошибки можно легко сопоставить с метриками производительности хоста или метриками процессов в момент, когда произошла ошибка в логе. Тот же выбор временного интервала появится на карточке события.</li>
+<li>Логи можно фильтровать по группе процессов, статусу, уровню лога и другим параметрам, что позволяет искать, например, только логи ошибок или логи по определённому процессу.</li>
+</ul>
+<p>Используй эту информацию</p>
+<p>Выбери  в правом верхнем углу раздела <strong>Logs</strong>, чтобы:</p>
+<ul>
+<li><strong>Go to Log Viewer</strong>, открывает страницу <strong>Log Viewer</strong>, отфильтрованную по выбранному хосту.</li>
+<li><strong>Create metric</strong>, открывает страницу <strong>Log metrics</strong> со значением <strong>Query</strong>, установленным на выбранный хост.</li>
+</ul>
+<h2 id="4">Шаг 4 Настройка уведомления о проблеме<a class="headerlink" href="#4" title="Permanent link">&para;</a></h2>
+<p>Dynatrace предлагает несколько готовых интеграций, которые автоматически отправляют уведомления о проблемах Dynatrace в сторонние системы обмена сообщениями или управления инцидентами. Если сторонняя система не поддерживается готовой интеграцией, можно настроить интеграцию по электронной почте. При таком подходе Dynatrace отправляет письмо каждый раз, когда обнаруживает в среде проблему, которая затрагивает реальных пользователей.</p>
+<ol>
+<li>Перейди в <strong>Settings</strong> и выбери <strong>Integration</strong> &gt; <strong>Problem notifications</strong>.</li>
+<li>Выбери <strong>Add notification</strong>.</li>
+</ol>
+<p><img alt="Add an email problem notification" src="https://dt-cdn.net/images/notification-page-1424-f2201f46cc.png" /></p>
+<p>Add an email problem notification
+3. Выбери <strong>Email</strong> из доступных типов уведомлений.
+4. Настрой уведомление:</p>
+<ul>
+<li>Введи <strong>Display name</strong> для этой интеграции. Это произвольное имя появится в таблице <strong>Problem notifications</strong> после завершения настройки.</li>
+<li>В разделе <strong>To</strong> выбери <strong>Add recipient</strong>, чтобы добавить адрес электронной почты, который должен получать уведомления. Чтобы добавить больше получателей, выбирай <strong>Add recipient</strong> для каждого дополнительного адреса <strong>To</strong>.</li>
+<li>В поле <strong>CC</strong> выбери <strong>Add recipient</strong>, чтобы добавить дополнительные адреса электронной почты, которые должны получать уведомления.</li>
+<li>В поле <strong>BCC</strong> выбери <strong>Add recipient</strong>, чтобы добавить дополнительные адреса электронной почты, которые должны получать уведомления, но не должны отображаться в заголовке письма.</li>
+<li>В поле <strong>Subject</strong> введи текст или вставь плейсхолдеры, которые Dynatrace автоматически заполняет соответствующими деталями проблемы, такими как ID проблемы, состояние или влияние.</li>
+<li>
+<p>В поле <strong>Body</strong> настрой сообщение уведомления о проблеме, которое будет отображаться в теле писем с уведомлениями о проблеме.</p>
+<p>Плейсхолдеры</p>
+<p>Раздел <strong>Available placeholders</strong> на экране настройки перечисляет плейсхолдеры, которые можно использовать для этой интеграции. Плейсхолдеры автоматически заменяются на фактические значения в сообщении.
+   * Выбери <a href="../../../analyze-explore-automate/notifications-and-alerting/alerting-profiles/" title="Learn how to create and manage alerting profiles.">профиль оповещений</a> для фильтрации ленты проблем.
+5. Выбери <strong>Send test notification</strong>, чтобы убедиться, что интеграция с электронной почтой работает.
+6. <strong>Save changes</strong>.</p>
+</li>
+</ul>
+<h2 id="5">Шаг 5 Создание первой дашборды<a class="headerlink" href="#5" title="Permanent link">&para;</a></h2>
+<p>Чтобы создать дашборд</p>
+<ol>
+<li>Перейди в <strong>Dashboards</strong>.</li>
+<li>Выбери <strong>Create Dashboard</strong>.</li>
+<li>Введи имя дашборда и выбери <strong>Create</strong>. Новая дашборда откроется в режиме редактирования.</li>
+<li>Чтобы добавить плитку, перетащи её из панели <strong>Tiles</strong> на дашборд. Например, перетащи плитку <strong>Host health</strong> на новую дашборду.</li>
+</ol>
+<p><img alt="Drag host health tile to dashboard" src="https://dt-cdn.net/images/drag-host-health-to-dashboard-1187-f78f77d605.png" /></p>
+<p>Drag host health tile to dashboard
+5. Выбери <strong>Done</strong>.
+   Дашборд теперь отображается так, как он выглядит для тебя и людей, с которыми ты им <a href="../../../analyze-explore-automate/dashboards-classic/dashboards/share-dashboards/" title="Learn how to share your Dynatrace dashboards with others.">поделился</a>. (Другие люди не увидят кнопку <strong>Edit</strong>, если им не дать право на редактирование.)</p>
+<p>Чтобы закрепить график с экрана обзора хоста на новой дашборде</p>
+<ol>
+<li>Перейди в <strong>Hosts</strong>.</li>
+<li>Найди и выбери свой хост в таблице.</li>
+<li>На экране обзора хоста, в разделе <strong>Host performance</strong>, найди график <strong>CPU (central processing unit) usage</strong>.</li>
+<li>Выбери  &gt; <strong>Pin to dashboard</strong>.</li>
+</ol>
+<p><img alt="Pin CPU usage chart to dashboard" src="https://dt-cdn.net/images/pin-to-dashboard-545-634b61c744.png" /></p>
+<p>Pin CPU usage chart to dashboard
+5. Выбери <strong>Pin</strong>. Это закрепит копию графика <strong>CPU usage</strong> на дашборде.
+6. Выбери <strong>Open dashboard</strong>, чтобы вернуться к дашборде. Дашборд откроется в режиме редактирования с выбранной новой плиткой.
+7. Выбери <strong>Done</strong>, чтобы сохранить изменения и отобразить обновлённую дашборду.</p>
+<p>Попробуй с помощью той же процедуры добавить ещё несколько плиток на дашборд.</p>
+<h2 id="6">Шаг 6 Дополнительные ресурсы<a class="headerlink" href="#6" title="Permanent link">&para;</a></h2>
+<p>Чтобы узнать больше о Dynatrace, см.:</p>
+<ul>
+<li><a href="https://www.dynatrace.com/trial/resources/">Free trial resources﻿</a></li>
+<li><a href="https://university.dynatrace.com/ondemand/course/22170?content=overview">Getting Started with Dynatrace﻿</a> в Dynatrace University</li>
+</ul>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  К началу
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      © 2026 Dynatrace Docs | Yerkebulan Ardabayev
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/Yerkebulan-Ardabayev" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../../..", "features": ["navigation.indexes", "navigation.prune", "navigation.path", "navigation.tracking", "navigation.top", "search.suggest", "search.highlight", "search.share", "content.code.copy", "content.code.annotate", "content.tabs.link", "content.tooltips", "toc.follow"], "search": "../../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u0421\u043a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u043d\u043e \u0432 \u0431\u0443\u0444\u0435\u0440", "clipboard.copy": "\u041a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u0442\u044c \u0432 \u0431\u0443\u0444\u0435\u0440", "search.result.more.one": "\u0415\u0449\u0451 1 \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.more.other": "\u0415\u0449\u0451 # \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.none": "\u0421\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439 \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u043e", "search.result.one": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e 1 \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0435", "search.result.other": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439: #", "search.result.placeholder": "\u041d\u0430\u0447\u043d\u0438\u0442\u0435 \u043f\u0435\u0447\u0430\u0442\u0430\u0442\u044c \u0434\u043b\u044f \u043f\u043e\u0438\u0441\u043a\u0430", "search.result.term.missing": "\u041e\u0442\u0441\u0443\u0442\u0441\u0442\u0432\u0443\u0435\u0442", "select.version": "\u0412\u044b\u0431\u0435\u0440\u0438\u0442\u0435 \u0432\u0435\u0440\u0441\u0438\u044e"}, "version": null}</script>
+    
+    
+  
+      <script src="../../../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../../../../assets/javascripts/groq-chat.js?sha=17d46ba74"></script>
+      
+    
+  <script>
+    (function() {
+      // --- Keyboard shortcut Ctrl+K / Cmd+K for search ---
+      document.addEventListener('keydown', function(e) {
+        if ((e.ctrlKey || e.metaKey) && e.key === 'k') {
+          e.preventDefault();
+          var searchInput = document.querySelector('.md-search__input');
+          if (searchInput) {
+            searchInput.focus();
+            var searchToggle = document.querySelector('[data-md-toggle="search"]');
+            if (searchToggle && !searchToggle.checked) {
+              searchToggle.checked = true;
+              searchToggle.dispatchEvent(new Event('change'));
+            }
+          }
+        }
+        // --- "/" focuses search like GitHub / Algolia docs ---
+        if (e.key === '/' && !/^(input|textarea|select)$/i.test(e.target.tagName)) {
+          e.preventDefault();
+          var inp = document.querySelector('.md-search__input');
+          if (inp) {
+            inp.focus();
+            var t = document.querySelector('[data-md-toggle="search"]');
+            if (t && !t.checked) { t.checked = true; t.dispatchEvent(new Event('change')); }
+          }
+        }
+      });
+    })();
+  </script>
+
+  </body>
+</html>

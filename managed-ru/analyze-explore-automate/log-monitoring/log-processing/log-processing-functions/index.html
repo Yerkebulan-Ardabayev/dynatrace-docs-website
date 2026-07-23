@@ -1,0 +1,5257 @@
+
+<!doctype html>
+<html lang="ru" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Документация Dynatrace Managed с AI-помощником">
+      
+      
+        <meta name="author" content="Yerkebulan Ardabayev">
+      
+      
+        <link rel="canonical" href="https://yerkebulan-ardabayev.github.io/dynatrace-docs-website/managed-ru/analyze-explore-automate/log-monitoring/log-processing/log-processing-functions/">
+      
+      
+        <link rel="prev" href="../log-processing-examples/">
+      
+      
+        <link rel="next" href="../../methods-of-masking-sensitive-data/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>Функции обработки журналов (Logs Classic) - Dynatrace — Документация</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Inter";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../../assets/stylesheets/extra.v11.css?sha=17d46ba74">
+    
+    <script>__md_scope=new URL("../../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  <style>
+    /* DocFlow DT Logo Badge — injected via template override */
+    .md-header__button.md-logo {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .md-header__button.md-logo img,
+    .md-header__button.md-logo svg {
+      display: none !important;
+    }
+    .md-header__button.md-logo::before {
+      content: 'DT';
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 28px;
+      height: 28px;
+      border-radius: 6px;
+      background: linear-gradient(135deg, #00d4aa 0%, #7c3aed 100%);
+      color: white;
+      font-size: 11px;
+      font-weight: 700;
+      font-family: 'Inter', sans-serif;
+      letter-spacing: -0.02em;
+      flex-shrink: 0;
+    }
+
+    /* Search Ctrl+K badge — inside input field */
+    .md-search__form {
+      position: relative;
+    }
+    .md-search__form::after {
+      content: 'Ctrl+K';
+      display: none;
+      align-items: center;
+      padding: 0.15rem 0.4rem;
+      border-radius: 4px;
+      border: 1px solid var(--docflow-border);
+      background: var(--md-default-bg-color);
+      font-size: 10px;
+      font-family: 'JetBrains Mono', monospace;
+      color: var(--md-default-fg-color--lighter);
+      white-space: nowrap;
+      pointer-events: none;
+      position: absolute;
+      right: 0.5rem;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+    @media (min-width: 60em) {
+      .md-search__form::after {
+        display: flex;
+      }
+    }
+  </style>
+
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="custom">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#logs-classic" class="md-skip">
+          Перейти к содержанию
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+  
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Верхний колонтитул">
+    <a href="../../../../.." title="Dynatrace — Документация" class="md-header__button md-logo" aria-label="Dynatrace — Документация" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M11 15H6l7-14v8h5l-7 14z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Dynatrace — Документация
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Функции обработки журналов (Logs Classic)
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Переключить на светлую тему"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Переключить на светлую тему" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Переключить на тёмную тему"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Переключить на тёмную тему" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Поиск" placeholder="Поиск" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Поиск">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Поделиться" aria-label="Поделиться" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Очистить" aria-label="Очистить" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Инициализация поиска
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/Yerkebulan-Ardabayev/dynatrace-docs-website" title="Перейти к репозиторию" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    dynatrace-docs-website
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Навигация" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../../.." title="Dynatrace — Документация" class="md-nav__button md-logo" aria-label="Dynatrace — Документация" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M11 15H6l7-14v8h5l-7 14z"/></svg>
+
+    </a>
+    Dynatrace — Документация
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/Yerkebulan-Ardabayev/dynatrace-docs-website" title="Перейти к репозиторию" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    dynatrace-docs-website
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Главная
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../../../ru/getting-started/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Начало работы
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../../installation/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Кластер Managed
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../../ingest-from/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Источники данных
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    
+  
+  
+  
+    <a href="../../../../observe/application-observability/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Наблюдаемость
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../../dynatrace-intelligence/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Davis AI
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Анализ
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Анализ
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../dashboards-classic/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Дашборды
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../explorer/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Data Explorer
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_7_3" id="__nav_7_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Мониторинг логов
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_7_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Мониторинг логов
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обзор
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../acquire-log-data/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Приём и обработка логов (Logs Classic)
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../alert-log-data/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Оповещения на основе данных журналов
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../analyze-log-data/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Анализ данных журналов (Logs Classic)
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../lmc-troubleshooting/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Устранение неполадок Log Monitoring (Logs Classic)
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../log-monitoring-configuration/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Конфигурация Log Monitoring (Logs Classic)
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../log-monitoring-limits/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Стандартные ограничения Log Monitoring (Logs Classic)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_3_8" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_7_3_8" id="__nav_7_3_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обработка журналов (Logs Classic)
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_7_3_8_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_7_3_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Обработка журналов (Logs Classic)
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обзор
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../log-processing-commands/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Команды обработки журналов (Logs Classic)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../log-processing-examples/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Примеры обработки журналов (Logs Classic)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Функции обработки журналов (Logs Classic)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../methods-of-masking-sensitive-data/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Методы маскирования чувствительных данных (Logs Classic)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../metrics-classic/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Метрики
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../notifications-and-alerting/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Уведомления и оповещения
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../smartscape-classic/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Визуализация среды с помощью Smartscape
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../../deliver/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Deliver
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    
+  
+  
+  
+    <a href="../../../../secure/application-security/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Безопасность приложений
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    
+  
+  
+  
+    <a href="../../../../manage/account-management/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Управление
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    
+  
+  
+  
+    <a href="../../../../platform/oneagent/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Платформа
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../../dynatrace-api/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../../whats-new/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Что нового
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../../offline-doc/how-do-i-enable-synthetic-monitors/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Офлайн-документация
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../../../ru/training/day1-introduction/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обучение
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../ai/groq/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI Помощник
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Содержание">
+  
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+                
+
+
+
+  
+
+
+  <nav class="md-path" aria-label="Навигация" >
+    <ol class="md-path__list">
+      
+        
+  
+  
+    <li class="md-path__item">
+      <a href="../../../../.." class="md-path__link">
+        
+  <span class="md-ellipsis">
+    Главная
+  </span>
+
+      </a>
+    </li>
+  
+
+      
+      
+        
+  
+  
+    
+    
+      
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="../../../dashboards-classic/" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    Анализ
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="../../" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    Мониторинг логов
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="../" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    Обработка журналов (Logs Classic)
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ol>
+  </nav>
+
+              
+              <article class="md-content__inner md-typeset">
+                
+  
+                  
+
+
+
+<h1 id="logs-classic">Функции обработки журналов (Logs Classic)<a class="headerlink" href="#logs-classic" title="Permanent link">&para;</a></h1>
+<h1 id="logs-classic_1">Функции обработки журналов (Logs Classic)<a class="headerlink" href="#logs-classic_1" title="Permanent link">&para;</a></h1>
+<ul>
+<li>Обзор</li>
+<li>Чтение: 4 мин</li>
+<li>Обновлено 18 января 2023 г.</li>
+</ul>
+<p>Log Monitoring Classic</p>
+<p>Функции запросов используются для выполнения любых вычислений над полями в операторах <a href="../log-processing-commands/#dpl-command-fields-add" title="Используйте команды обработки журналов для преобразования входящих данных журнала для лучшего анализа или дальнейшей обработки.">FIELDS_ADD</a> и <a href="../log-processing-commands/#dpl-command-filter-out" title="Используйте команды обработки журналов для преобразования входящих данных журнала для лучшего анализа или дальнейшей обработки.">FILTER_OUT</a>.</p>
+<h2 id="_1">Побитовые операции<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<h3 id="and">AND<a class="headerlink" href="#and" title="Permanent link">&para;</a></h3>
+<p><strong>numeric_expr1 &amp; numeric_expr2</strong></p>
+<p><strong>BITWISE_AND(numeric_expr1, numeric_expr2)</strong></p>
+<p>Побитовое И между числовыми выражениями.</p>
+<p><strong>BITWISE_AND(ipaddr, numeric_expr)</strong></p>
+<p>Побитовое И между аргументами IPADDR и числовым.</p>
+<p>тип вывода<br />
+<code>LONG</code> или <code>IPADDR</code> в зависимости от типов входных аргументов.</p>
+<p><strong>Пример</strong>:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>FIELDS_ADD(and_op:(ip &amp; 0xffff), and_fn:BITWISE_AND(i, 0xffff));
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>and_op</th>
+<th>and_fn</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0.0.255.255</td>
+<td>65535</td>
+</tr>
+</tbody>
+</table>
+<h3 id="or">OR<a class="headerlink" href="#or" title="Permanent link">&para;</a></h3>
+<p><strong>numeric_expr1 | numeric_expr2</strong></p>
+<p><strong>BITWISE_OR(numeric_expr1, numeric_expr2)</strong></p>
+<p>Побитовое ИЛИ между числовыми выражениями.</p>
+<p>тип вывода<br />
+<code>LONG</code></p>
+<p><strong>Пример</strong>:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>FIELDS_ADD(or_op:(i | 1), or_fn:BITWISE_OR(d, 0xffff));
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>or_op</th>
+<th>or_fn</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>65535</td>
+</tr>
+</tbody>
+</table>
+<h3 id="xor">XOR<a class="headerlink" href="#xor" title="Permanent link">&para;</a></h3>
+<p><strong>numeric_expr1 ^ numeric_expr2</strong></p>
+<p><strong>BITWISE_XOR(numeric_expr1, numeric_expr2)</strong></p>
+<p>Побитовое исключающее ИЛИ (XOR) между числовыми выражениями.</p>
+<p>тип вывода<br />
+<code>LONG</code></p>
+<p><strong>Пример</strong>:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>FIELDS_ADD(xor_op:(i ^ 1), xor_fn:BITWISE_XOR(d, 0xffff));
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>xor_op</th>
+<th>xor_fn</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>65534</td>
+</tr>
+</tbody>
+</table>
+<h3 id="left_shift">LEFT_SHIFT<a class="headerlink" href="#left_shift" title="Permanent link">&para;</a></h3>
+<p><strong>numeric_expr1 &lt;&lt; numeric_expr2</strong></p>
+<p><strong>LEFT_SHIFT(numeric_expr1, numeric_expr2)</strong></p>
+<p>Побитовый сдвиг <em>numeric_expr1</em> влево на количество бит <em>numeric_expr2</em>.</p>
+<p>тип вывода<br />
+<code>LONG</code></p>
+<p><strong>Пример</strong>:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>FIELDS_ADD(lshift_op:(i &lt;&lt; 1), lshift_fn:LEFT_SHIFT(d, 2));
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>lshift_op</th>
+<th>lshift_fn</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2</td>
+<td>4</td>
+</tr>
+</tbody>
+</table>
+<h3 id="right_shift">RIGHT_SHIFT<a class="headerlink" href="#right_shift" title="Permanent link">&para;</a></h3>
+<p><strong>numeric_expr1 &gt;&gt; numeric_expr2</strong></p>
+<p><strong>RIGHT_SHIFT(numeric_expr1, numeric_expr2)</strong></p>
+<p>Побитовый сдвиг <em>numeric_expr1</em> вправо на количество бит <em>numeric_expr2</em>.</p>
+<p>тип вывода<br />
+<code>LONG</code></p>
+<p><strong>Пример</strong>:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>FIELDS_ADD(rshift_op:i &gt;&gt; 1, rshift_fn:RIGHT_SHIFT(d, 2));
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>rshift_op</th>
+<th>rshift_fn</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>32767</td>
+<td>16383</td>
+</tr>
+</tbody>
+</table>
+<h3 id="zero_fill_right_shift">ZERO_FILL_RIGHT_SHIFT<a class="headerlink" href="#zero_fill_right_shift" title="Permanent link">&para;</a></h3>
+<p><strong>numeric_expr1 &gt;&gt;&gt; numeric_expr2</strong></p>
+<p><strong>ZERO_FILL_RIGHT_SHIFT(numeric_expr1, numeric_expr2)</strong></p>
+<p>Беззнаковый побитовый сдвиг <em>numeric_expr1</em> вправо на количество бит <em>numeric_expr2</em> (в крайнюю левую позицию записывается 0).</p>
+<p>тип вывода<br />
+<code>LONG</code></p>
+<p><strong>Пример</strong>:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>FIELDS_ADD(rshift_op:i &gt;&gt;&gt; 1, rshift_fn:ZERO_FILL_RIGHT_SHIFT(d, 2));
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>rshift_op</th>
+<th>rshift_fn</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1073741824</td>
+<td>536870912</td>
+</tr>
+</tbody>
+</table>
+<h3 id="bitwise_not">BITWISE_NOT<a class="headerlink" href="#bitwise_not" title="Permanent link">&para;</a></h3>
+<p><strong>~ numeric_expr</strong></p>
+<p><strong>BITWISE_NOT(numeric_expr)</strong></p>
+<p>Инвертирует биты <em>numeric_expr</em>.</p>
+<p>тип вывода<br />
+<code>LONG</code></p>
+<p><strong>Пример</strong>:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>FIELDS_ADD(not_op:~i, not_fn:BITWISE_NOT(i));
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>not_op</th>
+<th>not_fn</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>-1</td>
+<td>-1</td>
+</tr>
+</tbody>
+</table>
+<h3 id="bit_count">BIT_COUNT<a class="headerlink" href="#bit_count" title="Permanent link">&para;</a></h3>
+<p><strong>BIT_COUNT(numeric_expr)</strong></p>
+<p>Возвращает количество бит, установленных в 1 в <em>numeric_expr</em>.</p>
+<p>тип вывода<br />
+<code>LONG</code></p>
+<p><strong>Пример</strong>:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>FIELDS_ADD(BIT_COUNT(1));
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>bit_count</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+</tr>
+</tbody>
+</table>
+<h2 id="_2">Булевы операции<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<h3 id="and_1">AND<a class="headerlink" href="#and_1" title="Permanent link">&para;</a></h3>
+<p><strong>boolean_expr1 AND boolean_expr2</strong></p>
+<p>Логическое И между операндами <em>boolean_expr1</em> и <em>boolean_expr2</em>. Возвращает true только если оба операнда равны true.</p>
+<p>Возвращает NULL, если правый операнд или оба операнда равны NULL.</p>
+<p>тип вывода<br />
+<code>BOOLEAN</code></p>
+<p><strong>Пример</strong>:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>FIELDS_ADD(BOOLEAN(1) AND BOOLEAN(0));
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>boolean_expr1 AND boolean_expr2</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>false</td>
+</tr>
+</tbody>
+</table>
+<h3 id="or_1">OR<a class="headerlink" href="#or_1" title="Permanent link">&para;</a></h3>
+<p><strong>boolean_expr1 OR boolean_expr2</strong></p>
+<p>Логическое ИЛИ между операндами <em>boolean_expr1</em> и <em>boolean_expr2</em>. Возвращает true если хотя бы один из операндов равен true.</p>
+<p>Возвращает NULL, если оба операнда равны NULL.</p>
+<p>тип вывода<br />
+<code>BOOLEAN</code></p>
+<p><strong>Пример</strong>:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>FIELDS_ADD(BOOLEAN(1) OR BOOLEAN(0));
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>boolean_expr1 OR boolean_expr2</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>true</td>
+</tr>
+</tbody>
+</table>
+<h3 id="not">NOT<a class="headerlink" href="#not" title="Permanent link">&para;</a></h3>
+<p><strong>NOT boolean_expr</strong></p>
+<p>Логическое НЕ <em>boolean_expr</em>. Возвращает true, если <em>boolean_expr</em> равен false, и false, если <em>boolean_expr</em> равен true.</p>
+<p>Возвращает NULL, если <em>boolean_expr</em> равен NULL.</p>
+<p>тип вывода<br />
+<code>BOOLEAN</code></p>
+<p><strong>Пример</strong>:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>FIELDS_ADD(NOT BOOLEAN(1));
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>NOT boolean_expr</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>false</td>
+</tr>
+</tbody>
+</table>
+<h2 id="casting">Приведение типов (Casting)<a class="headerlink" href="#casting" title="Permanent link">&para;</a></h2>
+<h3 id="boolean">BOOLEAN<a class="headerlink" href="#boolean" title="Permanent link">&para;</a></h3>
+<p><strong>BOOLEAN(numeric_expr)</strong></p>
+<p>Приводит числовое выражение к типу <code>BOOLEAN</code>. Возвращает false, если <em>numeric_expr</em> равен 0, в противном случае — true.</p>
+<p>Возвращает NULL, если <em>numeric_expr</em> равен NULL.</p>
+<p>тип вывода<br />
+<code>BOOLEAN</code></p>
+<p><strong>Пример</strong>:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>FIELDS_ADD(BOOLEAN(0), BOOLEAN(1), BOOLEAN(2), BOOLEAN(i));
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>BOOLEAN(0)</th>
+<th>BOOLEAN(1)</th>
+<th>BOOLEAN(2)</th>
+<th>BOOLEAN(i)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>false</td>
+<td>true</td>
+<td>true</td>
+<td>false</td>
+</tr>
+<tr>
+<td>false</td>
+<td>true</td>
+<td>true</td>
+<td>true</td>
+</tr>
+<tr>
+<td>false</td>
+<td>true</td>
+<td>true</td>
+<td>true</td>
+</tr>
+</tbody>
+</table>
+<p><strong>BOOLEAN(string_expr)</strong></p>
+<p>Приводит строку к типу <code>BOOLEAN</code>. Возвращает true, если <em>string_expr</em> равен <code>"true"</code> (без учёта регистра), в противном случае — false.</p>
+<p>Возвращает NULL, если <em>string_expr</em> равен NULL.</p>
+<p>тип вывода<br />
+<code>BOOLEAN</code></p>
+<p><strong>Пример</strong>:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>FIELDS_ADD(BOOLEAN(&quot;true&quot;), BOOLEAN(&quot;True&quot;), BOOLEAN(&quot;false&quot;), BOOLEAN(&quot;random&quot;));
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>BOOLEAN("true")</th>
+<th>BOOLEAN("True")</th>
+<th>BOOLEAN("false")</th>
+<th>BOOLEAN("random")</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>true</td>
+<td>true</td>
+<td>false</td>
+<td>false</td>
+</tr>
+</tbody>
+</table>
+<h3 id="bytes">BYTES<a class="headerlink" href="#bytes" title="Permanent link">&para;</a></h3>
+<p><strong>BYTES(array_of_integers)</strong></p>
+<p>Создаёт <code>BYTES</code> из массива целых чисел. Если какой-либо элемент выходит за пределы диапазона [0;255], он усекается (берётся modulo 256).</p>
+<p>Возвращает NULL, если аргумент равен NULL.</p>
+<p>тип вывода<br />
+<code>BYTES</code></p>
+<p><strong>Пример</strong>:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>FIELDS_ADD(BYTES([72,101,108,108,111,32,87,111,114,108,100,33]));
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>bytes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Hello World!</td>
+</tr>
+</tbody>
+</table>
+<h3 id="double">DOUBLE<a class="headerlink" href="#double" title="Permanent link">&para;</a></h3>
+<p><strong>DOUBLE(numeric_expr)</strong></p>
+<p><strong>DOUBLE(string_expr)</strong></p>
+<p>Приводит числовое или строковое выражение к типу <code>DOUBLE</code>.</p>
+<p>Возвращает NULL, если <em>numeric_expr</em> или <em>string_expr</em> равен NULL.</p>
+<p>тип вывода<br />
+<code>DOUBLE</code></p>
+<p><strong>Пример</strong>:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>FIELDS_ADD(DOUBLE(i), DOUBLE(&quot;10.02&quot;), DOUBLE(t));
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>DOUBLE(i)</th>
+<th>DOUBLE("10.02")</th>
+<th>DOUBLE(t)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0.0</td>
+<td>10.02</td>
+<td>1.569226843278E12</td>
+</tr>
+<tr>
+<td>1.0</td>
+<td>10.02</td>
+<td>1.569226843278E12</td>
+</tr>
+<tr>
+<td>2.0</td>
+<td>10.02</td>
+<td>1.569226843278E12</td>
+</tr>
+</tbody>
+</table>
+<h3 id="duration">DURATION<a class="headerlink" href="#duration" title="Permanent link">&para;</a></h3>
+<p><strong>DURATION(numeric_expr)</strong></p>
+<p>Приводит числовое выражение к типу <code>DURATION</code>. <em>numeric_expr</em> интерпретируется в миллисекундах.</p>
+<p>Возвращает NULL, если <em>numeric_expr</em> равен NULL.</p>
+<p>тип вывода<br />
+<code>DURATION</code></p>
+<p><strong>Пример</strong>:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>FIELDS_ADD(DURATION(60000), DURATION(1));
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>DURATION(60000)</th>
+<th>DURATION(1)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1min</td>
+<td>1ms</td>
+</tr>
+</tbody>
+</table>
+<p><strong>DURATION(string_expr)</strong></p>
+<p>Приводит строковое выражение к типу <code>DURATION</code>. Поддерживаются суффиксы: <code>ms</code>, <code>s</code>, <code>min</code>, <code>h</code>, <code>day</code>, <code>week</code>.</p>
+<p>Возвращает NULL, если <em>string_expr</em> равен NULL или не соответствует формату Duration.</p>
+<p>тип вывода<br />
+<code>DURATION</code></p>
+<p><strong>Пример</strong>:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>FIELDS_ADD(DURATION(&quot;10ms&quot;), DURATION(&quot;1s&quot;), DURATION(&quot;1min&quot;), DURATION(&quot;1h&quot;), DURATION(&quot;1day&quot;), DURATION(&quot;1week&quot;));
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>DURATION("10ms")</th>
+<th>DURATION("1s")</th>
+<th>DURATION("1min")</th>
+<th>DURATION("1h")</th>
+<th>DURATION("1day")</th>
+<th>DURATION("1week")</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>10ms</td>
+<td>1s</td>
+<td>1min</td>
+<td>1h</td>
+<td>1day</td>
+<td>7day</td>
+</tr>
+</tbody>
+</table>
+<h3 id="integer">INTEGER<a class="headerlink" href="#integer" title="Permanent link">&para;</a></h3>
+<p><strong>INTEGER(numeric_expr)</strong></p>
+<p><strong>INTEGER(string_expr)</strong></p>
+<p><strong>INTEGER(boolean_expr)</strong></p>
+<p>Приводит числовое, строковое или булево выражение к типу <code>INTEGER</code>. При приведении double к INTEGER используется усечение (truncation).</p>
+<p>Возвращает NULL, если аргумент равен NULL.</p>
+<p>тип вывода<br />
+<code>INTEGER</code></p>
+<p><strong>Пример</strong>:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>FIELDS_ADD(INTEGER(d), INTEGER(&quot;10&quot;), INTEGER(BOOLEAN(0)));
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>INTEGER(d)</th>
+<th>INTEGER("10")</th>
+<th>INTEGER(BOOLEAN(0))</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>10</td>
+<td>0</td>
+</tr>
+<tr>
+<td>1</td>
+<td>10</td>
+<td>0</td>
+</tr>
+<tr>
+<td>2</td>
+<td>10</td>
+<td>0</td>
+</tr>
+</tbody>
+</table>
+<h3 id="ipaddr">IPADDR<a class="headerlink" href="#ipaddr" title="Permanent link">&para;</a></h3>
+<p><strong>IPADDR(string_expr)</strong></p>
+<p>Приводит строковое выражение к типу <code>IPADDR</code>.</p>
+<p>Возвращает NULL, если <em>string_expr</em> равен NULL или не является допустимым IP-адресом.</p>
+<p>тип вывода<br />
+<code>IPADDR</code></p>
+<p><strong>Пример</strong>:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a>FIELDS_ADD(IPADDR(&quot;192.168.0.1&quot;));
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>ipaddr</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>192.168.0.1</td>
+</tr>
+</tbody>
+</table>
+<p><strong>IPADDR(numeric_expr)</strong></p>
+<p>Приводит числовое выражение к типу <code>IPADDR</code>. Интерпретирует значение как IPv4-адрес.</p>
+<p>тип вывода<br />
+<code>IPADDR</code></p>
+<p><strong>Пример</strong>:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a>FIELDS_ADD(IPADDR(3232235521));
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>ipaddr</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>192.168.0.1</td>
+</tr>
+</tbody>
+</table>
+<h3 id="long">LONG<a class="headerlink" href="#long" title="Permanent link">&para;</a></h3>
+<p><strong>LONG(numeric_expr)</strong></p>
+<p><strong>LONG(string_expr)</strong></p>
+<p><strong>LONG(boolean_expr)</strong></p>
+<p><strong>LONG(timestamp_expr)</strong></p>
+<p>Приводит числовое, строковое, булево выражение или временную метку к типу <code>LONG</code>. При приведении double к LONG используется усечение (truncation). Временная метка конвертируется в миллисекунды эпохи (epoch milliseconds).</p>
+<p>Возвращает NULL, если аргумент равен NULL.</p>
+<p>тип вывода<br />
+<code>LONG</code></p>
+<p><strong>Пример</strong>:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a>FIELDS_ADD(LONG(d), LONG(&quot;10&quot;), LONG(BOOLEAN(0)));
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>LONG(d)</th>
+<th>LONG("10")</th>
+<th>LONG(BOOLEAN(0))</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>10</td>
+<td>0</td>
+</tr>
+<tr>
+<td>1</td>
+<td>10</td>
+<td>0</td>
+</tr>
+<tr>
+<td>2</td>
+<td>10</td>
+<td>0</td>
+</tr>
+</tbody>
+</table>
+<h3 id="string">STRING<a class="headerlink" href="#string" title="Permanent link">&para;</a></h3>
+<p><strong>STRING(any_expr)</strong></p>
+<p>Приводит любое выражение к типу <code>STRING</code>.</p>
+<p>Возвращает NULL, если <em>any_expr</em> равен NULL.</p>
+<p>тип вывода<br />
+<code>STRING</code></p>
+<p><strong>Пример</strong>:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a>FIELDS_ADD(STRING(i), STRING(d), STRING(t), STRING(ip));
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>STRING(i)</th>
+<th>STRING(d)</th>
+<th>STRING(t)</th>
+<th>STRING(ip)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>0.0</td>
+<td>2019-09-23 10:20:43.278 +0000</td>
+<td>0.0.0.0</td>
+</tr>
+</tbody>
+</table>
+<h3 id="timestamp">TIMESTAMP<a class="headerlink" href="#timestamp" title="Permanent link">&para;</a></h3>
+<p><strong>TIMESTAMP(numeric_expr)</strong></p>
+<p>Приводит числовое выражение к типу <code>TIMESTAMP</code>. <em>numeric_expr</em> интерпретируется как миллисекунды эпохи (epoch milliseconds).</p>
+<p>Возвращает NULL, если <em>numeric_expr</em> равен NULL.</p>
+<p>тип вывода<br />
+<code>TIMESTAMP</code></p>
+<p><strong>Пример</strong>:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a>FIELDS_ADD(TIMESTAMP(1569226843278));
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>timestamp</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2019-09-23 10:20:43.278 +0000</td>
+</tr>
+</tbody>
+</table>
+<p><strong>TIMESTAMP(string_expr)</strong></p>
+<p>Приводит строковое выражение к типу <code>TIMESTAMP</code>. <em>string_expr</em> интерпретируется как дата-время ISO 8601.</p>
+<p>Возвращает NULL, если <em>string_expr</em> равен NULL или не соответствует формату.</p>
+<p>тип вывода<br />
+<code>TIMESTAMP</code></p>
+<p><strong>Пример</strong>:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a>FIELDS_ADD(TIMESTAMP(&quot;2019-09-23T10:20:43.278Z&quot;));
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>timestamp</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2019-09-23 10:20:43.278 +0000</td>
+</tr>
+</tbody>
+</table>
+<h3 id="to_null">TO_NULL<a class="headerlink" href="#to_null" title="Permanent link">&para;</a></h3>
+<p><strong>TO_NULL(any_expr)</strong></p>
+<p>Возвращает NULL для любого аргумента.</p>
+<p>тип вывода<br />
+<code>NULL</code></p>
+<p><strong>Пример</strong>:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a>FIELDS_ADD(TO_NULL(i));
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>to_null</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>NULL</td>
+</tr>
+</tbody>
+</table>
+<h3 id="tuple">TUPLE<a class="headerlink" href="#tuple" title="Permanent link">&para;</a></h3>
+<p><strong>TUPLE(field, field, ...)</strong></p>
+<p>Создаёт <code>TUPLE</code> из указанных полей.</p>
+<p>тип вывода<br />
+<code>TUPLE</code></p>
+<p><strong>Пример</strong>:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a>FIELDS_ADD(TUPLE(i,t,s));
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>tuple</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>{i=0 t="2020-11-12 18:15:09.544000000 +0200" s="0ho0"}</td>
+</tr>
+</tbody>
+</table>
+<h3 id="variant">VARIANT<a class="headerlink" href="#variant" title="Permanent link">&para;</a></h3>
+<p><strong>VARIANT(any_expr)</strong></p>
+<p>Приводит любое выражение к типу <code>VARIANT</code>.</p>
+<p>тип вывода<br />
+<code>VARIANT</code></p>
+<h3 id="variant_array">VARIANT_ARRAY<a class="headerlink" href="#variant_array" title="Permanent link">&para;</a></h3>
+<p><strong>VARIANT_ARRAY(array_expr)</strong></p>
+<p>Приводит массив к типу <code>VARIANT_ARRAY</code>.</p>
+<p>тип вывода<br />
+<code>VARIANT_ARRAY</code></p>
+<h3 id="variant_object">VARIANT_OBJECT<a class="headerlink" href="#variant_object" title="Permanent link">&para;</a></h3>
+<p><strong>VARIANT_OBJECT(any_expr)</strong></p>
+<p><strong>VARIANT_OBJECT(field, field, ...)</strong></p>
+<p>Приводит любое выражение или набор полей к типу <code>VARIANT_OBJECT</code>.</p>
+<p>тип вывода<br />
+<code>VARIANT_OBJECT</code></p>
+<p><strong>Пример</strong>:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a>FIELDS_ADD(VARIANT_OBJECT(i,t,s));
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>variant_object</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>{"i":0,"t":"2020-11-12 18:15:09.544000000 +0200","s":"0ho0"}</td>
+</tr>
+</tbody>
+</table>
+<h3 id="empty_array">EMPTY_ARRAY<a class="headerlink" href="#empty_array" title="Permanent link">&para;</a></h3>
+<p><strong>EMPTY_ARRAY()</strong></p>
+<p>Возвращает пустой массив.</p>
+<p>тип вывода<br />
+<code>ARRAY</code></p>
+<h3 id="null_array">NULL_ARRAY<a class="headerlink" href="#null_array" title="Permanent link">&para;</a></h3>
+<p><strong>NULL_ARRAY()</strong></p>
+<p>Возвращает NULL типа ARRAY.</p>
+<p>тип вывода<br />
+<code>ARRAY</code></p>
+<h3 id="null_tuple">NULL_TUPLE<a class="headerlink" href="#null_tuple" title="Permanent link">&para;</a></h3>
+<p><strong>NULL_TUPLE()</strong></p>
+<p>Возвращает NULL типа TUPLE.</p>
+<p>тип вывода<br />
+<code>TUPLE</code></p>
+<h2 id="_3">Сравнение<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<h3 id="equal">EQUAL<a class="headerlink" href="#equal" title="Permanent link">&para;</a></h3>
+<p><strong>expr1 = expr2</strong></p>
+<p>Возвращает true, если <em>expr1</em> равно <em>expr2</em>. В противном случае возвращает false.</p>
+<p>Возвращает NULL, если один из аргументов равен NULL.</p>
+<p>тип вывода<br />
+<code>BOOLEAN</code></p>
+<p><strong>Пример</strong>:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a>FIELDS_ADD(i = 1);
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>i = 1</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>false</td>
+</tr>
+<tr>
+<td>true</td>
+</tr>
+<tr>
+<td>false</td>
+</tr>
+</tbody>
+</table>
+<h3 id="not_equal">NOT_EQUAL<a class="headerlink" href="#not_equal" title="Permanent link">&para;</a></h3>
+<p><strong>expr1 != expr2</strong></p>
+<p><strong>expr1 &lt;&gt; expr2</strong></p>
+<p>Возвращает true, если <em>expr1</em> не равно <em>expr2</em>. В противном случае возвращает false.</p>
+<p>Возвращает NULL, если один из аргументов равен NULL.</p>
+<p>тип вывода<br />
+<code>BOOLEAN</code></p>
+<h3 id="greater">GREATER<a class="headerlink" href="#greater" title="Permanent link">&para;</a></h3>
+<p><strong>expr1 &gt; expr2</strong></p>
+<p>Возвращает true, если <em>expr1</em> больше <em>expr2</em>. В противном случае возвращает false.</p>
+<p>Возвращает NULL, если один из аргументов равен NULL.</p>
+<p>тип вывода<br />
+<code>BOOLEAN</code></p>
+<h3 id="less">LESS<a class="headerlink" href="#less" title="Permanent link">&para;</a></h3>
+<p><strong>expr1 &lt; expr2</strong></p>
+<p>Возвращает true, если <em>expr1</em> меньше <em>expr2</em>. В противном случае возвращает false.</p>
+<p>Возвращает NULL, если один из аргументов равен NULL.</p>
+<p>тип вывода<br />
+<code>BOOLEAN</code></p>
+<h3 id="greater_or_equal">GREATER_OR_EQUAL<a class="headerlink" href="#greater_or_equal" title="Permanent link">&para;</a></h3>
+<p><strong>expr1 &gt;= expr2</strong></p>
+<p>Возвращает true, если <em>expr1</em> больше или равно <em>expr2</em>. В противном случае возвращает false.</p>
+<p>Возвращает NULL, если один из аргументов равен NULL.</p>
+<p>тип вывода<br />
+<code>BOOLEAN</code></p>
+<h3 id="less_or_equal">LESS_OR_EQUAL<a class="headerlink" href="#less_or_equal" title="Permanent link">&para;</a></h3>
+<p><strong>expr1 &lt;= expr2</strong></p>
+<p>Возвращает true, если <em>expr1</em> меньше или равно <em>expr2</em>. В противном случае возвращает false.</p>
+<p>Возвращает NULL, если один из аргументов равен NULL.</p>
+<p>тип вывода<br />
+<code>BOOLEAN</code></p>
+<h3 id="is-null">IS NULL<a class="headerlink" href="#is-null" title="Permanent link">&para;</a></h3>
+<p><strong>expr IS NULL</strong></p>
+<p>Возвращает true, если <em>expr</em> равен NULL. В противном случае возвращает false.</p>
+<p>тип вывода<br />
+<code>BOOLEAN</code></p>
+<p><strong>Пример</strong>:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a>FIELDS_ADD(i IS NULL);
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>i IS NULL</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>false</td>
+</tr>
+</tbody>
+</table>
+<h3 id="is-not-null">IS NOT NULL<a class="headerlink" href="#is-not-null" title="Permanent link">&para;</a></h3>
+<p><strong>expr IS NOT NULL</strong></p>
+<p>Возвращает true, если <em>expr</em> не равен NULL. В противном случае возвращает false.</p>
+<p>тип вывода<br />
+<code>BOOLEAN</code></p>
+<p><strong>Пример</strong>:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-29-1" name="__codelineno-29-1" href="#__codelineno-29-1"></a>FIELDS_ADD(i IS NOT NULL);
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>i IS NOT NULL</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>true</td>
+</tr>
+</tbody>
+</table>
+<h3 id="in">IN<a class="headerlink" href="#in" title="Permanent link">&para;</a></h3>
+<p><strong>expr IN [value1, value2, ...]</strong></p>
+<p>Возвращает true, если <em>expr</em> содержится в списке значений. В противном случае возвращает false.</p>
+<p>Возвращает NULL, если <em>expr</em> равен NULL.</p>
+<p>тип вывода<br />
+<code>BOOLEAN</code></p>
+<p><strong>Пример</strong>:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-30-1" name="__codelineno-30-1" href="#__codelineno-30-1"></a>FILTER_OUT(loglevel IN [&#39;DEBUG&#39;, &#39;debug&#39;])
+</code></pre></div>
+<h3 id="false_or_null">FALSE_OR_NULL<a class="headerlink" href="#false_or_null" title="Permanent link">&para;</a></h3>
+<p><strong>FALSE_OR_NULL(boolean_expr)</strong></p>
+<p>Возвращает true, если <em>boolean_expr</em> равен false или NULL. В противном случае возвращает false.</p>
+<p>тип вывода<br />
+<code>BOOLEAN</code></p>
+<h3 id="true_or_null">TRUE_OR_NULL<a class="headerlink" href="#true_or_null" title="Permanent link">&para;</a></h3>
+<p><strong>TRUE_OR_NULL(boolean_expr)</strong></p>
+<p>Возвращает true, если <em>boolean_expr</em> равен true или NULL. В противном случае возвращает false.</p>
+<p>тип вывода<br />
+<code>BOOLEAN</code></p>
+<h2 id="_4">Составные данные<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<h3 id="variant_field_select">VARIANT_FIELD_SELECT<a class="headerlink" href="#variant_field_select" title="Permanent link">&para;</a></h3>
+<p><strong>VARIANT_FIELD_SELECT(variant, string_expr)</strong></p>
+<p>Выбирает поле <em>string_expr</em> из <em>variant</em> типа <code>VARIANT_OBJECT</code>.</p>
+<p>Возвращает NULL, если <em>variant</em> или <em>string_expr</em> равен NULL или если поле не найдено.</p>
+<p>тип вывода<br />
+<code>VARIANT</code></p>
+<p><strong>Пример</strong>:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-31-1" name="__codelineno-31-1" href="#__codelineno-31-1"></a>FIELDS_ADD(vo:VARIANT_OBJECT({i,t,s})) | FIELDS_ADD(VARIANT_FIELD_SELECT(vo, &quot;i&quot;));
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>vo</th>
+<th>variant_field_select</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>{"i":0,"t":"2020-11-12 18:15:09.544000000 +0200","s":"0ho0"}</td>
+<td>0</td>
+</tr>
+</tbody>
+</table>
+<h3 id="tuple_field_select">TUPLE_FIELD_SELECT<a class="headerlink" href="#tuple_field_select" title="Permanent link">&para;</a></h3>
+<p><strong>TUPLE_FIELD_SELECT(tuple, string_expr)</strong></p>
+<p>Выбирает поле <em>string_expr</em> из <em>tuple</em> типа <code>TUPLE</code>.</p>
+<p>тип вывода<br />
+<code>VARIANT</code></p>
+<h3 id="array_avg">ARRAY_AVG<a class="headerlink" href="#array_avg" title="Permanent link">&para;</a></h3>
+<p><strong>ARRAY_AVG(array)</strong></p>
+<p>Возвращает среднее значение элементов числового массива.</p>
+<p>Возвращает NULL, если массив пустой или равен NULL.</p>
+<p>тип вывода<br />
+<code>DOUBLE</code></p>
+<p><strong>Пример</strong>:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-32-1" name="__codelineno-32-1" href="#__codelineno-32-1"></a>FIELDS_ADD(array, ARRAY_AVG(array));
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>array</th>
+<th>array_avg</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>[1, 2, 3]</td>
+<td>2.0</td>
+</tr>
+</tbody>
+</table>
+<h3 id="array_count">ARRAY_COUNT<a class="headerlink" href="#array_count" title="Permanent link">&para;</a></h3>
+<p><strong>ARRAY_COUNT(array)</strong></p>
+<p>Возвращает количество ненулевых элементов в массиве.</p>
+<p>тип вывода<br />
+<code>LONG</code></p>
+<p><strong>Пример</strong>:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-33-1" name="__codelineno-33-1" href="#__codelineno-33-1"></a>FIELDS_ADD(array, ARRAY_COUNT(array));
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>array</th>
+<th>array_count</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>[1, NULL, 3]</td>
+<td>2</td>
+</tr>
+</tbody>
+</table>
+<h3 id="array_first">ARRAY_FIRST<a class="headerlink" href="#array_first" title="Permanent link">&para;</a></h3>
+<p><strong>ARRAY_FIRST(array)</strong></p>
+<p>Возвращает первый элемент массива.</p>
+<p>Возвращает NULL, если массив пустой или равен NULL.</p>
+<p>тип вывода<br />
+тип элемента массива</p>
+<h3 id="array_last">ARRAY_LAST<a class="headerlink" href="#array_last" title="Permanent link">&para;</a></h3>
+<p><strong>ARRAY_LAST(array)</strong></p>
+<p>Возвращает последний элемент массива.</p>
+<p>Возвращает NULL, если массив пустой или равен NULL.</p>
+<p>тип вывода<br />
+тип элемента массива</p>
+<h3 id="array_max">ARRAY_MAX<a class="headerlink" href="#array_max" title="Permanent link">&para;</a></h3>
+<p><strong>ARRAY_MAX(array)</strong></p>
+<p>Возвращает максимальный элемент числового массива.</p>
+<p>Возвращает NULL, если массив пустой или равен NULL.</p>
+<p>тип вывода<br />
+тип элемента массива</p>
+<h3 id="array_min">ARRAY_MIN<a class="headerlink" href="#array_min" title="Permanent link">&para;</a></h3>
+<p><strong>ARRAY_MIN(array)</strong></p>
+<p>Возвращает минимальный элемент числового массива.</p>
+<p>Возвращает NULL, если массив пустой или равен NULL.</p>
+<p>тип вывода<br />
+тип элемента массива</p>
+<h3 id="array_join">ARRAY_JOIN<a class="headerlink" href="#array_join" title="Permanent link">&para;</a></h3>
+<p><strong>ARRAY_JOIN(array, separator)</strong></p>
+<p>Объединяет элементы массива строк в одну строку, используя <em>separator</em> в качестве разделителя.</p>
+<p>Возвращает NULL, если массив равен NULL.</p>
+<p>тип вывода<br />
+<code>STRING</code></p>
+<p><strong>Пример</strong>:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-34-1" name="__codelineno-34-1" href="#__codelineno-34-1"></a>FIELDS_ADD(ARRAY_JOIN([&#39;a&#39;, &#39;b&#39;, &#39;c&#39;], &#39;, &#39;));
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>array_join</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>a, b, c</td>
+</tr>
+</tbody>
+</table>
+<h3 id="array_sort">ARRAY_SORT<a class="headerlink" href="#array_sort" title="Permanent link">&para;</a></h3>
+<p><strong>ARRAY_SORT(array)</strong></p>
+<p><strong>ARRAY_SORT(array, 'ASC')</strong></p>
+<p><strong>ARRAY_SORT(array, 'DESC')</strong></p>
+<p>Сортирует элементы массива в порядке возрастания (по умолчанию) или убывания.</p>
+<p>Возвращает NULL, если массив равен NULL.</p>
+<p>тип вывода<br />
+тот же тип массива</p>
+<h3 id="array_sum">ARRAY_SUM<a class="headerlink" href="#array_sum" title="Permanent link">&para;</a></h3>
+<p><strong>ARRAY_SUM(array)</strong></p>
+<p>Возвращает сумму элементов числового массива.</p>
+<p>Возвращает NULL, если массив пустой или равен NULL.</p>
+<p>тип вывода<br />
+<code>LONG</code> или <code>DOUBLE</code></p>
+<p><strong>Пример</strong>:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-35-1" name="__codelineno-35-1" href="#__codelineno-35-1"></a>FIELDS_ADD(array, ARRAY_SUM(array));
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>array</th>
+<th>array_sum</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>[1, 2, 3]</td>
+<td>6</td>
+</tr>
+</tbody>
+</table>
+<h3 id="array_idx">ARRAY_IDX<a class="headerlink" href="#array_idx" title="Permanent link">&para;</a></h3>
+<p><strong>ARRAY_IDX(array, index)</strong></p>
+<p>Возвращает элемент массива по индексу <em>index</em>. Индексирование начинается с 0. Отрицательный индекс отсчитывается с конца.</p>
+<p>Возвращает NULL, если массив равен NULL или индекс выходит за пределы.</p>
+<p>тип вывода<br />
+тип элемента массива</p>
+<p><strong>Пример</strong>:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-36-1" name="__codelineno-36-1" href="#__codelineno-36-1"></a>FIELDS_ADD(array, ARRAY_IDX(array, 0));
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>array</th>
+<th>array_idx</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>[10, 20, 30]</td>
+<td>10</td>
+</tr>
+</tbody>
+</table>
+<h3 id="array_select">ARRAY_SELECT<a class="headerlink" href="#array_select" title="Permanent link">&para;</a></h3>
+<p><strong>ARRAY_SELECT(array, from, to)</strong></p>
+<p>Возвращает подмассив от индекса <em>from</em> до индекса <em>to</em> (не включая).</p>
+<p>тип вывода<br />
+тот же тип массива</p>
+<h3 id="array_len">ARRAY_LEN<a class="headerlink" href="#array_len" title="Permanent link">&para;</a></h3>
+<p><strong>ARRAY_LEN(array)</strong></p>
+<p>Возвращает длину массива (количество элементов).</p>
+<p>тип вывода<br />
+<code>INTEGER</code></p>
+<p><strong>Пример</strong>:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-37-1" name="__codelineno-37-1" href="#__codelineno-37-1"></a>FIELDS_ADD(array, ARRAY_LEN(array));
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>array</th>
+<th>array_len</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>[1, 2, 3]</td>
+<td>3</td>
+</tr>
+</tbody>
+</table>
+<h3 id="array_remove_nulls">ARRAY_REMOVE_NULLS<a class="headerlink" href="#array_remove_nulls" title="Permanent link">&para;</a></h3>
+<p><strong>ARRAY_REMOVE_NULLS(array)</strong></p>
+<p>Возвращает массив с удалёнными элементами NULL.</p>
+<p>тип вывода<br />
+тот же тип массива</p>
+<h3 id="array_reverse">ARRAY_REVERSE<a class="headerlink" href="#array_reverse" title="Permanent link">&para;</a></h3>
+<p><strong>ARRAY_REVERSE(array)</strong></p>
+<p>Возвращает массив с элементами в обратном порядке.</p>
+<p>тип вывода<br />
+тот же тип массива</p>
+<h3 id="remove_nulls">REMOVE_NULLS<a class="headerlink" href="#remove_nulls" title="Permanent link">&para;</a></h3>
+<p><strong>REMOVE_NULLS(array)</strong></p>
+<p>Псевдоним для <code>ARRAY_REMOVE_NULLS</code>. Возвращает массив с удалёнными элементами NULL.</p>
+<p>тип вывода<br />
+тот же тип массива</p>
+<h3 id="array_uniq">ARRAY_UNIQ<a class="headerlink" href="#array_uniq" title="Permanent link">&para;</a></h3>
+<p><strong>ARRAY_UNIQ(array)</strong></p>
+<p>Возвращает массив с удалёнными дублирующимися элементами (сохраняется первое вхождение).</p>
+<p>тип вывода<br />
+тот же тип массива</p>
+<h3 id="spread">SPREAD<a class="headerlink" href="#spread" title="Permanent link">&para;</a></h3>
+<p><strong>SPREAD(array)</strong></p>
+<p>Разворачивает элементы массива в отдельные значения атрибута.</p>
+<p>тип вывода<br />
+тот же тип элементов массива</p>
+<h2 id="_5">Криптографические<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
+<h3 id="md5">MD5<a class="headerlink" href="#md5" title="Permanent link">&para;</a></h3>
+<p><strong>MD5(string_expr)</strong></p>
+<p>Вычисляет MD5-хэш строки <em>string_expr</em>.</p>
+<p>Возвращает NULL, если <em>string_expr</em> равен NULL.</p>
+<p>тип вывода<br />
+<code>STRING</code></p>
+<p><strong>Пример</strong>:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-38-1" name="__codelineno-38-1" href="#__codelineno-38-1"></a>FIELDS_ADD(MD5(&quot;Hello World!&quot;));
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>md5</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ed076287532e86365e841e92bfc50d8c</td>
+</tr>
+</tbody>
+</table>
+<h3 id="sha1">SHA1<a class="headerlink" href="#sha1" title="Permanent link">&para;</a></h3>
+<p><strong>SHA1(string_expr)</strong></p>
+<p>Вычисляет SHA-1 хэш строки <em>string_expr</em>.</p>
+<p>Возвращает NULL, если <em>string_expr</em> равен NULL.</p>
+<p>тип вывода<br />
+<code>STRING</code></p>
+<p><strong>Пример</strong>:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-39-1" name="__codelineno-39-1" href="#__codelineno-39-1"></a>FIELDS_ADD(SHA1(&quot;Hello World!&quot;));
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>sha1</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2ef7bde608ce5404e97d5f042f95f89f1c232871</td>
+</tr>
+</tbody>
+</table>
+<h2 id="_6">Дата и время<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
+<h3 id="_7">Операторы<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
+<p><strong>timestamp_expr1 - timestamp_expr2</strong></p>
+<p>Вычисляет разность двух временных меток и возвращает результат типа <code>DURATION</code>.</p>
+<p><strong>timestamp_expr + duration_expr</strong></p>
+<p><strong>timestamp_expr - duration_expr</strong></p>
+<p>Прибавляет или вычитает длительность из временной метки.</p>
+<p><strong>duration_expr1 + duration_expr2</strong></p>
+<p><strong>duration_expr1 - duration_expr2</strong></p>
+<p>Прибавляет или вычитает две длительности.</p>
+<p><strong>duration_expr * numeric_expr</strong></p>
+<p><strong>duration_expr / numeric_expr</strong></p>
+<p>Умножает или делит длительность на числовое значение.</p>
+<h3 id="day">DAY<a class="headerlink" href="#day" title="Permanent link">&para;</a></h3>
+<p><strong>DAY(timestamp)</strong></p>
+<p>Возвращает день месяца из <em>timestamp</em> (1–31).</p>
+<p>тип вывода<br />
+<code>INTEGER</code></p>
+<p><strong>Пример</strong>:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-40-1" name="__codelineno-40-1" href="#__codelineno-40-1"></a>FIELDS_ADD(DAY(t));
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>day</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>23</td>
+</tr>
+</tbody>
+</table>
+<h3 id="day_of_week">DAY_OF_WEEK<a class="headerlink" href="#day_of_week" title="Permanent link">&para;</a></h3>
+<p><strong>DAY_OF_WEEK(timestamp)</strong></p>
+<p>Возвращает день недели из <em>timestamp</em> (1 = понедельник, 7 = воскресенье).</p>
+<p>тип вывода<br />
+<code>INTEGER</code></p>
+<h3 id="day_of_year">DAY_OF_YEAR<a class="headerlink" href="#day_of_year" title="Permanent link">&para;</a></h3>
+<p><strong>DAY_OF_YEAR(timestamp)</strong></p>
+<p>Возвращает номер дня в году из <em>timestamp</em> (1–366).</p>
+<p>тип вывода<br />
+<code>INTEGER</code></p>
+<h3 id="hour">HOUR<a class="headerlink" href="#hour" title="Permanent link">&para;</a></h3>
+<p><strong>HOUR(timestamp)</strong></p>
+<p>Возвращает часы из <em>timestamp</em> (0–23).</p>
+<p>тип вывода<br />
+<code>INTEGER</code></p>
+<p><strong>Пример</strong>:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-41-1" name="__codelineno-41-1" href="#__codelineno-41-1"></a>FIELDS_ADD(HOUR(t));
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>hour</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>10</td>
+</tr>
+</tbody>
+</table>
+<h3 id="minute">MINUTE<a class="headerlink" href="#minute" title="Permanent link">&para;</a></h3>
+<p><strong>MINUTE(timestamp)</strong></p>
+<p>Возвращает минуты из <em>timestamp</em> (0–59).</p>
+<p>тип вывода<br />
+<code>INTEGER</code></p>
+<h3 id="month">MONTH<a class="headerlink" href="#month" title="Permanent link">&para;</a></h3>
+<p><strong>MONTH(timestamp)</strong></p>
+<p>Возвращает месяц из <em>timestamp</em> (1–12).</p>
+<p>тип вывода<br />
+<code>INTEGER</code></p>
+<p><strong>Пример</strong>:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-42-1" name="__codelineno-42-1" href="#__codelineno-42-1"></a>FIELDS_ADD(MONTH(t));
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>month</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>9</td>
+</tr>
+</tbody>
+</table>
+<h3 id="now">NOW<a class="headerlink" href="#now" title="Permanent link">&para;</a></h3>
+<p><strong>NOW()</strong></p>
+<p>Возвращает текущее время в UTC.</p>
+<p>тип вывода<br />
+<code>TIMESTAMP</code></p>
+<p><strong>NOW()[duration]</strong></p>
+<p>Возвращает временную метку, смещённую на указанную длительность относительно текущего момента. Отрицательное значение сдвигает в прошлое.</p>
+<p><strong>Пример</strong>:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-43-1" name="__codelineno-43-1" href="#__codelineno-43-1"></a>FILTER_OUT(last_modified &gt;= NOW()[-7 day])
+</code></pre></div>
+<h3 id="second">SECOND<a class="headerlink" href="#second" title="Permanent link">&para;</a></h3>
+<p><strong>SECOND(timestamp)</strong></p>
+<p>Возвращает секунды из <em>timestamp</em> (0–59).</p>
+<p>тип вывода<br />
+<code>INTEGER</code></p>
+<h3 id="str_sec_to_time">STR_SEC_TO_TIME<a class="headerlink" href="#str_sec_to_time" title="Permanent link">&para;</a></h3>
+<p><strong>STR_SEC_TO_TIME(string_expr)</strong></p>
+<p>Конвертирует строку Unix-секунд к типу <code>TIMESTAMP</code>.</p>
+<p>тип вывода<br />
+<code>TIMESTAMP</code></p>
+<h3 id="str_to_time">STR_TO_TIME<a class="headerlink" href="#str_to_time" title="Permanent link">&para;</a></h3>
+<p><strong>STR_TO_TIME(string_expr, format_str)</strong></p>
+<p>Конвертирует строку <em>string_expr</em> к типу <code>TIMESTAMP</code> в соответствии с форматом <em>format_str</em>.</p>
+<p>Возвращает NULL, если строка не соответствует формату.</p>
+<p>тип вывода<br />
+<code>TIMESTAMP</code></p>
+<p><strong>Пример</strong>:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-44-1" name="__codelineno-44-1" href="#__codelineno-44-1"></a>FIELDS_ADD(STR_TO_TIME(&quot;2019-09-23 10:20:43.278&quot;, &quot;yyyy-MM-dd HH:mm:ss.SSS&quot;));
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>str_to_time</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2019-09-23 10:20:43.278 +0000</td>
+</tr>
+</tbody>
+</table>
+<h3 id="sys_time">SYS_TIME<a class="headerlink" href="#sys_time" title="Permanent link">&para;</a></h3>
+<p><strong>SYS_TIME()</strong></p>
+<p>Возвращает временную метку запуска обработки (время системы).</p>
+<p>тип вывода<br />
+<code>TIMESTAMP</code></p>
+<h3 id="time_add">TIME_ADD<a class="headerlink" href="#time_add" title="Permanent link">&para;</a></h3>
+<p><strong>TIME_ADD(timestamp, duration)</strong></p>
+<p>Прибавляет <em>duration</em> к <em>timestamp</em>.</p>
+<p>тип вывода<br />
+<code>TIMESTAMP</code></p>
+<h3 id="time_add_day">TIME_ADD_DAY<a class="headerlink" href="#time_add_day" title="Permanent link">&para;</a></h3>
+<p><strong>TIME_ADD_DAY(timestamp, integer)</strong></p>
+<p>Прибавляет <em>integer</em> дней к <em>timestamp</em>.</p>
+<p>тип вывода<br />
+<code>TIMESTAMP</code></p>
+<h3 id="time_add_week">TIME_ADD_WEEK<a class="headerlink" href="#time_add_week" title="Permanent link">&para;</a></h3>
+<p><strong>TIME_ADD_WEEK(timestamp, integer)</strong></p>
+<p>Прибавляет <em>integer</em> недель к <em>timestamp</em>.</p>
+<p>тип вывода<br />
+<code>TIMESTAMP</code></p>
+<h3 id="time_add_month">TIME_ADD_MONTH<a class="headerlink" href="#time_add_month" title="Permanent link">&para;</a></h3>
+<p><strong>TIME_ADD_MONTH(timestamp, integer)</strong></p>
+<p>Прибавляет <em>integer</em> месяцев к <em>timestamp</em>.</p>
+<p>тип вывода<br />
+<code>TIMESTAMP</code></p>
+<h3 id="time_add_year">TIME_ADD_YEAR<a class="headerlink" href="#time_add_year" title="Permanent link">&para;</a></h3>
+<p><strong>TIME_ADD_YEAR(timestamp, integer)</strong></p>
+<p>Прибавляет <em>integer</em> лет к <em>timestamp</em>.</p>
+<p>тип вывода<br />
+<code>TIMESTAMP</code></p>
+<h3 id="time_sub">TIME_SUB<a class="headerlink" href="#time_sub" title="Permanent link">&para;</a></h3>
+<p><strong>TIME_SUB(timestamp, duration)</strong></p>
+<p>Вычитает <em>duration</em> из <em>timestamp</em>.</p>
+<p>тип вывода<br />
+<code>TIMESTAMP</code></p>
+<h3 id="time_sub_day">TIME_SUB_DAY<a class="headerlink" href="#time_sub_day" title="Permanent link">&para;</a></h3>
+<p><strong>TIME_SUB_DAY(timestamp, integer)</strong></p>
+<p>Вычитает <em>integer</em> дней из <em>timestamp</em>.</p>
+<p>тип вывода<br />
+<code>TIMESTAMP</code></p>
+<h3 id="time_sub_week">TIME_SUB_WEEK<a class="headerlink" href="#time_sub_week" title="Permanent link">&para;</a></h3>
+<p><strong>TIME_SUB_WEEK(timestamp, integer)</strong></p>
+<p>Вычитает <em>integer</em> недель из <em>timestamp</em>.</p>
+<p>тип вывода<br />
+<code>TIMESTAMP</code></p>
+<h3 id="time_sub_month">TIME_SUB_MONTH<a class="headerlink" href="#time_sub_month" title="Permanent link">&para;</a></h3>
+<p><strong>TIME_SUB_MONTH(timestamp, integer)</strong></p>
+<p>Вычитает <em>integer</em> месяцев из <em>timestamp</em>.</p>
+<p>тип вывода<br />
+<code>TIMESTAMP</code></p>
+<h3 id="time_sub_year">TIME_SUB_YEAR<a class="headerlink" href="#time_sub_year" title="Permanent link">&para;</a></h3>
+<p><strong>TIME_SUB_YEAR(timestamp, integer)</strong></p>
+<p>Вычитает <em>integer</em> лет из <em>timestamp</em>.</p>
+<p>тип вывода<br />
+<code>TIMESTAMP</code></p>
+<h3 id="time_submod">TIME_SUBMOD<a class="headerlink" href="#time_submod" title="Permanent link">&para;</a></h3>
+<p><strong>TIME_SUBMOD(timestamp, duration)</strong></p>
+<p>Возвращает остаток от деления <em>timestamp</em> на <em>duration</em>.</p>
+<p>тип вывода<br />
+<code>DURATION</code></p>
+<h3 id="time_submod_day">TIME_SUBMOD_DAY<a class="headerlink" href="#time_submod_day" title="Permanent link">&para;</a></h3>
+<p><strong>TIME_SUBMOD_DAY(timestamp)</strong></p>
+<p>Возвращает время суток из <em>timestamp</em> как длительность от начала дня.</p>
+<p>тип вывода<br />
+<code>DURATION</code></p>
+<h3 id="time_submod_week">TIME_SUBMOD_WEEK<a class="headerlink" href="#time_submod_week" title="Permanent link">&para;</a></h3>
+<p><strong>TIME_SUBMOD_WEEK(timestamp)</strong></p>
+<p>Возвращает смещение от начала недели как длительность.</p>
+<p>тип вывода<br />
+<code>DURATION</code></p>
+<h3 id="time_submod_month">TIME_SUBMOD_MONTH<a class="headerlink" href="#time_submod_month" title="Permanent link">&para;</a></h3>
+<p><strong>TIME_SUBMOD_MONTH(timestamp)</strong></p>
+<p>Возвращает смещение от начала месяца как длительность.</p>
+<p>тип вывода<br />
+<code>DURATION</code></p>
+<h3 id="time_submod_year">TIME_SUBMOD_YEAR<a class="headerlink" href="#time_submod_year" title="Permanent link">&para;</a></h3>
+<p><strong>TIME_SUBMOD_YEAR(timestamp)</strong></p>
+<p>Возвращает смещение от начала года как длительность.</p>
+<p>тип вывода<br />
+<code>DURATION</code></p>
+<h3 id="time_to_str">TIME_TO_STR<a class="headerlink" href="#time_to_str" title="Permanent link">&para;</a></h3>
+<p><strong>TIME_TO_STR(timestamp, format_str)</strong></p>
+<p>Конвертирует <em>timestamp</em> в строку в соответствии с форматом <em>format_str</em>.</p>
+<p>тип вывода<br />
+<code>STRING</code></p>
+<p><strong>Пример</strong>:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-45-1" name="__codelineno-45-1" href="#__codelineno-45-1"></a>FIELDS_ADD(TIME_TO_STR(t, &quot;yyyy-MM-dd&#39;T&#39;HH:mm:ss.SSSZ&quot;));
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>time_to_str</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2019-09-23T10:20:43.278+0000</td>
+</tr>
+</tbody>
+</table>
+<h3 id="to_str_sec">TO_STR_SEC<a class="headerlink" href="#to_str_sec" title="Permanent link">&para;</a></h3>
+<p><strong>TO_STR_SEC(timestamp)</strong></p>
+<p>Конвертирует <em>timestamp</em> в строку Unix-секунд.</p>
+<p>тип вывода<br />
+<code>STRING</code></p>
+<h3 id="year">YEAR<a class="headerlink" href="#year" title="Permanent link">&para;</a></h3>
+<p><strong>YEAR(timestamp)</strong></p>
+<p>Возвращает год из <em>timestamp</em>.</p>
+<p>тип вывода<br />
+<code>INTEGER</code></p>
+<p><strong>Пример</strong>:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-46-1" name="__codelineno-46-1" href="#__codelineno-46-1"></a>FIELDS_ADD(YEAR(t));
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>year</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2019</td>
+</tr>
+</tbody>
+</table>
+<h3 id="week_of_year">WEEK_OF_YEAR<a class="headerlink" href="#week_of_year" title="Permanent link">&para;</a></h3>
+<p><strong>WEEK_OF_YEAR(timestamp)</strong></p>
+<p>Возвращает номер недели в году из <em>timestamp</em> (1–53).</p>
+<p>тип вывода<br />
+<code>INTEGER</code></p>
+<h2 id="_8">Управление потоком<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h2>
+<h3 id="if">IF<a class="headerlink" href="#if" title="Permanent link">&para;</a></h3>
+<p><strong>IF(boolean_expr, then_expr)</strong></p>
+<p>Возвращает <em>then_expr</em>, если <em>boolean_expr</em> равен true. В противном случае возвращает NULL.</p>
+<p>тип вывода<br />
+тип <em>then_expr</em></p>
+<p><strong>IF(boolean_expr) THEN (then_expr)</strong></p>
+<p>Эквивалентен <code>IF(boolean_expr, then_expr)</code>.</p>
+<p><strong>IF(boolean_expr) THEN (then_expr) ELSE (else_expr)</strong></p>
+<p>Возвращает <em>then_expr</em>, если <em>boolean_expr</em> равен true. В противном случае возвращает <em>else_expr</em>.</p>
+<p>тип вывода<br />
+общий тип <em>then_expr</em> и <em>else_expr</em></p>
+<p><strong>Пример</strong>:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-47-1" name="__codelineno-47-1" href="#__codelineno-47-1"></a>FIELDS_ADD(IF(i &gt; 1) THEN (&quot;big&quot;) ELSE (&quot;small&quot;));
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>if</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>small</td>
+</tr>
+<tr>
+<td>small</td>
+</tr>
+<tr>
+<td>big</td>
+</tr>
+</tbody>
+</table>
+<h2 id="_9">Математические<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h2>
+<h3 id="_10">Операторы<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h3>
+<p><strong>numeric_expr1 + numeric_expr2</strong></p>
+<p>Сложение.</p>
+<p><strong>numeric_expr1 - numeric_expr2</strong></p>
+<p>Вычитание.</p>
+<p><strong>numeric_expr1 * numeric_expr2</strong></p>
+<p>Умножение.</p>
+<p><strong>numeric_expr1 / numeric_expr2</strong></p>
+<p>Деление. Деление на ноль возвращает NULL.</p>
+<p><strong>numeric_expr1 % numeric_expr2</strong></p>
+<p>Остаток от деления.</p>
+<p><strong>- numeric_expr</strong></p>
+<p>Унарный минус.</p>
+<h3 id="abs">ABS<a class="headerlink" href="#abs" title="Permanent link">&para;</a></h3>
+<p><strong>ABS(numeric_expr)</strong></p>
+<p>Возвращает абсолютное значение <em>numeric_expr</em>.</p>
+<p>тип вывода<br />
+тот же тип что и аргумент</p>
+<p><strong>Пример</strong>:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-48-1" name="__codelineno-48-1" href="#__codelineno-48-1"></a>FIELDS_ADD(ABS(-5));
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>abs</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>5</td>
+</tr>
+</tbody>
+</table>
+<h3 id="add">ADD<a class="headerlink" href="#add" title="Permanent link">&para;</a></h3>
+<p><strong>ADD(numeric_expr1, numeric_expr2)</strong></p>
+<p>Эквивалентен оператору сложения <code>+</code>.</p>
+<p>тип вывода<br />
+<code>LONG</code> или <code>DOUBLE</code></p>
+<h3 id="acos">ACOS<a class="headerlink" href="#acos" title="Permanent link">&para;</a></h3>
+<p><strong>ACOS(numeric_expr)</strong></p>
+<p>Возвращает арккосинус <em>numeric_expr</em> в радианах.</p>
+<p>тип вывода<br />
+<code>DOUBLE</code></p>
+<h3 id="asin">ASIN<a class="headerlink" href="#asin" title="Permanent link">&para;</a></h3>
+<p><strong>ASIN(numeric_expr)</strong></p>
+<p>Возвращает арксинус <em>numeric_expr</em> в радианах.</p>
+<p>тип вывода<br />
+<code>DOUBLE</code></p>
+<h3 id="atan">ATAN<a class="headerlink" href="#atan" title="Permanent link">&para;</a></h3>
+<p><strong>ATAN(numeric_expr)</strong></p>
+<p>Возвращает арктангенс <em>numeric_expr</em> в радианах.</p>
+<p>тип вывода<br />
+<code>DOUBLE</code></p>
+<h3 id="atan2">ATAN2<a class="headerlink" href="#atan2" title="Permanent link">&para;</a></h3>
+<p><strong>ATAN2(y, x)</strong></p>
+<p>Возвращает угол тета в радианах в диапазоне от -π до π, преобразуя прямоугольные координаты (<em>x</em>, <em>y</em>) в полярные (<em>r</em>, <em>theta</em>).</p>
+<p>тип вывода<br />
+<code>DOUBLE</code></p>
+<h3 id="cbrt">CBRT<a class="headerlink" href="#cbrt" title="Permanent link">&para;</a></h3>
+<p><strong>CBRT(numeric_expr)</strong></p>
+<p>Возвращает кубический корень <em>numeric_expr</em>.</p>
+<p>тип вывода<br />
+<code>DOUBLE</code></p>
+<h3 id="ceil">CEIL<a class="headerlink" href="#ceil" title="Permanent link">&para;</a></h3>
+<p><strong>CEIL(numeric_expr)</strong></p>
+<p>Возвращает наименьшее целое число, не меньшее <em>numeric_expr</em>.</p>
+<p>тип вывода<br />
+<code>DOUBLE</code></p>
+<p><strong>Пример</strong>:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-49-1" name="__codelineno-49-1" href="#__codelineno-49-1"></a>FIELDS_ADD(CEIL(1.1));
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>ceil</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2.0</td>
+</tr>
+</tbody>
+</table>
+<h3 id="cos">COS<a class="headerlink" href="#cos" title="Permanent link">&para;</a></h3>
+<p><strong>COS(numeric_expr)</strong></p>
+<p>Возвращает косинус угла <em>numeric_expr</em> в радианах.</p>
+<p>тип вывода<br />
+<code>DOUBLE</code></p>
+<h3 id="cosh">COSH<a class="headerlink" href="#cosh" title="Permanent link">&para;</a></h3>
+<p><strong>COSH(numeric_expr)</strong></p>
+<p>Возвращает гиперболический косинус <em>numeric_expr</em>.</p>
+<p>тип вывода<br />
+<code>DOUBLE</code></p>
+<h3 id="degrees">DEGREES<a class="headerlink" href="#degrees" title="Permanent link">&para;</a></h3>
+<p><strong>DEGREES(numeric_expr)</strong></p>
+<p>Конвертирует радианы в градусы.</p>
+<p>тип вывода<br />
+<code>DOUBLE</code></p>
+<h3 id="divide">DIVIDE<a class="headerlink" href="#divide" title="Permanent link">&para;</a></h3>
+<p><strong>DIVIDE(numeric_expr1, numeric_expr2)</strong></p>
+<p>Эквивалентен оператору деления <code>/</code>.</p>
+<p>тип вывода<br />
+<code>LONG</code> или <code>DOUBLE</code></p>
+<h3 id="e">E<a class="headerlink" href="#e" title="Permanent link">&para;</a></h3>
+<p><strong>E()</strong></p>
+<p>Возвращает значение числа Эйлера (e ≈ 2.718281828...).</p>
+<p>тип вывода<br />
+<code>DOUBLE</code></p>
+<h3 id="exp">EXP<a class="headerlink" href="#exp" title="Permanent link">&para;</a></h3>
+<p><strong>EXP(numeric_expr)</strong></p>
+<p>Возвращает e в степени <em>numeric_expr</em>.</p>
+<p>тип вывода<br />
+<code>DOUBLE</code></p>
+<h3 id="expm1">EXPM1<a class="headerlink" href="#expm1" title="Permanent link">&para;</a></h3>
+<p><strong>EXPM1(numeric_expr)</strong></p>
+<p>Возвращает (e^x - 1) для <em>numeric_expr</em>. Более точный результат для малых значений <em>x</em>.</p>
+<p>тип вывода<br />
+<code>DOUBLE</code></p>
+<h3 id="floor">FLOOR<a class="headerlink" href="#floor" title="Permanent link">&para;</a></h3>
+<p><strong>FLOOR(numeric_expr)</strong></p>
+<p>Возвращает наибольшее целое число, не превышающее <em>numeric_expr</em>.</p>
+<p>тип вывода<br />
+<code>DOUBLE</code></p>
+<p><strong>Пример</strong>:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-50-1" name="__codelineno-50-1" href="#__codelineno-50-1"></a>FIELDS_ADD(FLOOR(1.9));
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>floor</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1.0</td>
+</tr>
+</tbody>
+</table>
+<h3 id="floordiv">FLOORDIV<a class="headerlink" href="#floordiv" title="Permanent link">&para;</a></h3>
+<p><strong>FLOORDIV(numeric_expr1, numeric_expr2)</strong></p>
+<p>Возвращает целочисленное частное от деления (результат округлён вниз).</p>
+<p>тип вывода<br />
+<code>LONG</code></p>
+<h3 id="floormod">FLOORMOD<a class="headerlink" href="#floormod" title="Permanent link">&para;</a></h3>
+<p><strong>FLOORMOD(numeric_expr1, numeric_expr2)</strong></p>
+<p>Возвращает остаток от целочисленного деления с округлением вниз.</p>
+<p>тип вывода<br />
+<code>LONG</code></p>
+<h3 id="getexponent">GETEXPONENT<a class="headerlink" href="#getexponent" title="Permanent link">&para;</a></h3>
+<p><strong>GETEXPONENT(double_expr)</strong></p>
+<p>Возвращает экспоненту (порядок) числа <em>double_expr</em> согласно стандарту IEEE 754.</p>
+<p>тип вывода<br />
+<code>INTEGER</code></p>
+<h3 id="hypot">HYPOT<a class="headerlink" href="#hypot" title="Permanent link">&para;</a></h3>
+<p><strong>HYPOT(numeric_expr1, numeric_expr2)</strong></p>
+<p>Возвращает гипотенузу прямоугольного треугольника sqrt(x² + y²) без промежуточного переполнения или потери значимости.</p>
+<p>тип вывода<br />
+<code>DOUBLE</code></p>
+<h3 id="ieeeremainder">IEEEREMAINDER<a class="headerlink" href="#ieeeremainder" title="Permanent link">&para;</a></h3>
+<p><strong>IEEEREMAINDER(numeric_expr1, numeric_expr2)</strong></p>
+<p>Возвращает остаток деления <em>numeric_expr1</em> на <em>numeric_expr2</em> согласно стандарту IEEE 754.</p>
+<p>тип вывода<br />
+<code>DOUBLE</code></p>
+<h3 id="log">LOG<a class="headerlink" href="#log" title="Permanent link">&para;</a></h3>
+<p><strong>LOG(numeric_expr)</strong></p>
+<p>Возвращает натуральный логарифм <em>numeric_expr</em>.</p>
+<p>тип вывода<br />
+<code>DOUBLE</code></p>
+<h3 id="log1p">LOG1P<a class="headerlink" href="#log1p" title="Permanent link">&para;</a></h3>
+<p><strong>LOG1P(numeric_expr)</strong></p>
+<p>Возвращает натуральный логарифм (1 + <em>numeric_expr</em>). Более точный результат для малых значений.</p>
+<p>тип вывода<br />
+<code>DOUBLE</code></p>
+<h3 id="log10">LOG10<a class="headerlink" href="#log10" title="Permanent link">&para;</a></h3>
+<p><strong>LOG10(numeric_expr)</strong></p>
+<p>Возвращает десятичный логарифм <em>numeric_expr</em>.</p>
+<p>тип вывода<br />
+<code>DOUBLE</code></p>
+<h3 id="modulo">MODULO<a class="headerlink" href="#modulo" title="Permanent link">&para;</a></h3>
+<p><strong>MODULO(numeric_expr1, numeric_expr2)</strong></p>
+<p>Эквивалентен оператору остатка <code>%</code>.</p>
+<p>тип вывода<br />
+<code>LONG</code> или <code>DOUBLE</code></p>
+<h3 id="multiply">MULTIPLY<a class="headerlink" href="#multiply" title="Permanent link">&para;</a></h3>
+<p><strong>MULTIPLY(numeric_expr1, numeric_expr2)</strong></p>
+<p>Эквивалентен оператору умножения <code>*</code>.</p>
+<p>тип вывода<br />
+<code>LONG</code> или <code>DOUBLE</code></p>
+<h3 id="nextafter">NEXTAFTER<a class="headerlink" href="#nextafter" title="Permanent link">&para;</a></h3>
+<p><strong>NEXTAFTER(double_expr1, double_expr2)</strong></p>
+<p>Возвращает число double, следующее за <em>double_expr1</em> в направлении <em>double_expr2</em>.</p>
+<p>тип вывода<br />
+<code>DOUBLE</code></p>
+<h3 id="nextdown">NEXTDOWN<a class="headerlink" href="#nextdown" title="Permanent link">&para;</a></h3>
+<p><strong>NEXTDOWN(double_expr)</strong></p>
+<p>Возвращает число double, следующее за <em>double_expr</em> в направлении отрицательной бесконечности.</p>
+<p>тип вывода<br />
+<code>DOUBLE</code></p>
+<h3 id="nextup">NEXTUP<a class="headerlink" href="#nextup" title="Permanent link">&para;</a></h3>
+<p><strong>NEXTUP(double_expr)</strong></p>
+<p>Возвращает число double, следующее за <em>double_expr</em> в направлении положительной бесконечности.</p>
+<p>тип вывода<br />
+<code>DOUBLE</code></p>
+<h3 id="pi">PI<a class="headerlink" href="#pi" title="Permanent link">&para;</a></h3>
+<p><strong>PI()</strong></p>
+<p>Возвращает значение π (пи ≈ 3.141592653589793).</p>
+<p>тип вывода<br />
+<code>DOUBLE</code></p>
+<h3 id="power">POWER<a class="headerlink" href="#power" title="Permanent link">&para;</a></h3>
+<p><strong>POWER(numeric_expr1, numeric_expr2)</strong></p>
+<p>Возвращает <em>numeric_expr1</em> в степени <em>numeric_expr2</em>.</p>
+<p>тип вывода<br />
+<code>DOUBLE</code></p>
+<p><strong>Пример</strong>:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-51-1" name="__codelineno-51-1" href="#__codelineno-51-1"></a>FIELDS_ADD(POWER(2, 10));
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>power</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1024.0</td>
+</tr>
+</tbody>
+</table>
+<h3 id="radians">RADIANS<a class="headerlink" href="#radians" title="Permanent link">&para;</a></h3>
+<p><strong>RADIANS(numeric_expr)</strong></p>
+<p>Конвертирует градусы в радианы.</p>
+<p>тип вывода<br />
+<code>DOUBLE</code></p>
+<h3 id="random">RANDOM<a class="headerlink" href="#random" title="Permanent link">&para;</a></h3>
+<p><strong>RANDOM()</strong></p>
+<p>Возвращает случайное число double в диапазоне [0.0, 1.0).</p>
+<p>тип вывода<br />
+<code>DOUBLE</code></p>
+<h3 id="rint">RINT<a class="headerlink" href="#rint" title="Permanent link">&para;</a></h3>
+<p><strong>RINT(double_expr)</strong></p>
+<p>Возвращает ближайшее целое число, округляя к чётному при равноудалённости (банковское округление).</p>
+<p>тип вывода<br />
+<code>DOUBLE</code></p>
+<h3 id="round">ROUND<a class="headerlink" href="#round" title="Permanent link">&para;</a></h3>
+<p><strong>ROUND(numeric_expr)</strong></p>
+<p><strong>ROUND(numeric_expr, scale)</strong></p>
+<p>Возвращает <em>numeric_expr</em> округлённый до <em>scale</em> знаков после запятой (по умолчанию — до целого числа).</p>
+<p>тип вывода<br />
+<code>LONG</code> или <code>DOUBLE</code></p>
+<p><strong>Пример</strong>:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-52-1" name="__codelineno-52-1" href="#__codelineno-52-1"></a>FIELDS_ADD(ROUND(1.5), ROUND(2.5), ROUND(1.456, 2));
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>ROUND(1.5)</th>
+<th>ROUND(2.5)</th>
+<th>ROUND(1.456,2)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2</td>
+<td>3</td>
+<td>1.46</td>
+</tr>
+</tbody>
+</table>
+<h3 id="scalb">SCALB<a class="headerlink" href="#scalb" title="Permanent link">&para;</a></h3>
+<p><strong>SCALB(double_expr, integer_expr)</strong></p>
+<p>Возвращает <em>double_expr</em> × 2^<em>integer_expr</em> (точно, без потери значимости).</p>
+<p>тип вывода<br />
+<code>DOUBLE</code></p>
+<h3 id="signum">SIGNUM<a class="headerlink" href="#signum" title="Permanent link">&para;</a></h3>
+<p><strong>SIGNUM(numeric_expr)</strong></p>
+<p>Возвращает знак числа: -1 для отрицательных, 0 для нуля, 1 для положительных.</p>
+<p>тип вывода<br />
+<code>DOUBLE</code></p>
+<h3 id="sin">SIN<a class="headerlink" href="#sin" title="Permanent link">&para;</a></h3>
+<p><strong>SIN(numeric_expr)</strong></p>
+<p>Возвращает синус угла <em>numeric_expr</em> в радианах.</p>
+<p>тип вывода<br />
+<code>DOUBLE</code></p>
+<h3 id="sinh">SINH<a class="headerlink" href="#sinh" title="Permanent link">&para;</a></h3>
+<p><strong>SINH(numeric_expr)</strong></p>
+<p>Возвращает гиперболический синус <em>numeric_expr</em>.</p>
+<p>тип вывода<br />
+<code>DOUBLE</code></p>
+<h3 id="sqrt">SQRT<a class="headerlink" href="#sqrt" title="Permanent link">&para;</a></h3>
+<p><strong>SQRT(numeric_expr)</strong></p>
+<p>Возвращает квадратный корень <em>numeric_expr</em>.</p>
+<p>тип вывода<br />
+<code>DOUBLE</code></p>
+<p><strong>Пример</strong>:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-53-1" name="__codelineno-53-1" href="#__codelineno-53-1"></a>FIELDS_ADD(SQRT(16));
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>sqrt</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>4.0</td>
+</tr>
+</tbody>
+</table>
+<h3 id="submod">SUBMOD<a class="headerlink" href="#submod" title="Permanent link">&para;</a></h3>
+<p><strong>SUBMOD(numeric_expr1, numeric_expr2)</strong></p>
+<p>Возвращает (<em>numeric_expr1</em> - (<em>numeric_expr1</em> % <em>numeric_expr2</em>)).</p>
+<p>тип вывода<br />
+<code>LONG</code> или <code>DOUBLE</code></p>
+<h3 id="subtract">SUBTRACT<a class="headerlink" href="#subtract" title="Permanent link">&para;</a></h3>
+<p><strong>SUBTRACT(numeric_expr1, numeric_expr2)</strong></p>
+<p>Эквивалентен оператору вычитания <code>-</code>.</p>
+<p>тип вывода<br />
+<code>LONG</code> или <code>DOUBLE</code></p>
+<h3 id="tan">TAN<a class="headerlink" href="#tan" title="Permanent link">&para;</a></h3>
+<p><strong>TAN(numeric_expr)</strong></p>
+<p>Возвращает тангенс угла <em>numeric_expr</em> в радианах.</p>
+<p>тип вывода<br />
+<code>DOUBLE</code></p>
+<h3 id="tanh">TANH<a class="headerlink" href="#tanh" title="Permanent link">&para;</a></h3>
+<p><strong>TANH(numeric_expr)</strong></p>
+<p>Возвращает гиперболический тангенс <em>numeric_expr</em>.</p>
+<p>тип вывода<br />
+<code>DOUBLE</code></p>
+<h3 id="tohexstring">TOHEXSTRING<a class="headerlink" href="#tohexstring" title="Permanent link">&para;</a></h3>
+<p><strong>TOHEXSTRING(numeric_expr)</strong></p>
+<p>Конвертирует числовое значение в шестнадцатеричную строку.</p>
+<p>тип вывода<br />
+<code>STRING</code></p>
+<p><strong>Пример</strong>:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-54-1" name="__codelineno-54-1" href="#__codelineno-54-1"></a>FIELDS_ADD(TOHEXSTRING(255));
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>tohexstring</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ff</td>
+</tr>
+</tbody>
+</table>
+<h3 id="ulp">ULP<a class="headerlink" href="#ulp" title="Permanent link">&para;</a></h3>
+<p><strong>ULP(double_expr)</strong></p>
+<p>Возвращает единицу наименьшей точности (ULP) числа <em>double_expr</em>.</p>
+<p>тип вывода<br />
+<code>DOUBLE</code></p>
+<h2 id="_11">Сетевые<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h2>
+<h3 id="dslice">DSLICE<a class="headerlink" href="#dslice" title="Permanent link">&para;</a></h3>
+<p><strong>DSLICE(ipaddr, prefix_length)</strong></p>
+<p>Выделяет <em>prefix_length</em> значащих битов из IP-адреса <em>ipaddr</em> в соответствии с сетевой маской.</p>
+<p>тип вывода<br />
+<code>IPADDR</code></p>
+<p><strong>Пример</strong>:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-55-1" name="__codelineno-55-1" href="#__codelineno-55-1"></a>FIELDS_ADD(DSLICE(IPADDR(&quot;192.168.0.1&quot;), 24));
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>dslice</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>192.168.0.0</td>
+</tr>
+</tbody>
+</table>
+<h3 id="ip_trunc">IP_TRUNC<a class="headerlink" href="#ip_trunc" title="Permanent link">&para;</a></h3>
+<p><strong>IP_TRUNC(ipaddr, prefix_length)</strong></p>
+<p>Обнуляет биты хоста IP-адреса <em>ipaddr</em>, оставляя только <em>prefix_length</em> первых (сетевых) битов.</p>
+<p>тип вывода<br />
+<code>IPADDR</code></p>
+<p><strong>Пример</strong>:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-56-1" name="__codelineno-56-1" href="#__codelineno-56-1"></a>FIELDS_ADD(IP_TRUNC(IPADDR(&quot;192.168.0.255&quot;), 24));
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>ip_trunc</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>192.168.0.0</td>
+</tr>
+</tbody>
+</table>
+<p><strong>IP_TRUNC(ipaddr_expr, mask_ipaddr)</strong></p>
+<p>Применяет маску <em>mask_ipaddr</em> к IP-адресу <em>ipaddr_expr</em> через операцию побитового И.</p>
+<p>тип вывода<br />
+<code>IPADDR</code></p>
+<p><strong>Пример</strong>:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-57-1" name="__codelineno-57-1" href="#__codelineno-57-1"></a>FIELDS_ADD(IP_TRUNC(IPADDR(&quot;192.168.0.12&quot;), IPADDR(&quot;255.255.255.0&quot;)));
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>ip_trunc</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>192.168.0.0</td>
+</tr>
+</tbody>
+</table>
+<h3 id="is_ipv4">IS_IPV4<a class="headerlink" href="#is_ipv4" title="Permanent link">&para;</a></h3>
+<p><strong>IS_IPV4(ipaddr)</strong></p>
+<p>Возвращает true, если <em>ipaddr</em> является IPv4-адресом.</p>
+<p>тип вывода<br />
+<code>BOOLEAN</code></p>
+<p><strong>Пример</strong>:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-58-1" name="__codelineno-58-1" href="#__codelineno-58-1"></a>FIELDS_ADD(IS_IPV4(IPADDR(&quot;192.168.0.1&quot;)));
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>is_ipv4</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>true</td>
+</tr>
+</tbody>
+</table>
+<h3 id="is_ipv6">IS_IPV6<a class="headerlink" href="#is_ipv6" title="Permanent link">&para;</a></h3>
+<p><strong>IS_IPV6(ipaddr)</strong></p>
+<p>Возвращает true, если <em>ipaddr</em> является IPv6-адресом.</p>
+<p>тип вывода<br />
+<code>BOOLEAN</code></p>
+<p><strong>Пример</strong>:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-59-1" name="__codelineno-59-1" href="#__codelineno-59-1"></a>FIELDS_ADD(IS_IPV6(IPADDR(&quot;2001:0db8:85a3::8a2e:0370:7334&quot;)));
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>is_ipv6</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>true</td>
+</tr>
+</tbody>
+</table>
+<h3 id="parseuri">PARSEURI<a class="headerlink" href="#parseuri" title="Permanent link">&para;</a></h3>
+<p><strong>PARSEURI(uri_str)</strong></p>
+<p>Возвращает массив элементов URI, разобранных из строкового аргумента типа <code>STRING</code>.</p>
+<p>Возвращает NULL, если аргумент равен NULL.</p>
+<p>тип вывода<br />
+<code>TUPLE</code></p>
+<p><strong>Пример</strong>:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-60-1" name="__codelineno-60-1" href="#__codelineno-60-1"></a>FIELDS_ADD(PARSEURI(&quot;https://docs.dynatrace.com:443/pages/dynatrace.html#sx-install&quot;));
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>parseuri</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>{scheme="https" user=NULL host="docs.dynatrace.com" port=443 path="/pages/dynatrace.html" query=NULL fragment="sx-install"}</td>
+</tr>
+</tbody>
+</table>
+<h2 id="_12">Строковые<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h2>
+<h3 id="_13">Операторы<a class="headerlink" href="#_13" title="Permanent link">&para;</a></h3>
+<p><strong>string_expr1 + string_expr2</strong></p>
+<p><strong>string_expr1 || string_expr2</strong></p>
+<p>Конкатенирует <em>string_expr2</em> к <em>string_expr1</em>.</p>
+<p>тип вывода<br />
+<code>STRING</code></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-61-1" name="__codelineno-61-1" href="#__codelineno-61-1"></a>FIELDS_ADD(s, s + &quot;! Red fox jumps over lazy dog!&quot;);
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>s</th>
+<th>add</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0ho0</td>
+<td>0ho0! Red fox jumps over lazy dog!</td>
+</tr>
+</tbody>
+</table>
+<h3 id="base16">BASE16<a class="headerlink" href="#base16" title="Permanent link">&para;</a></h3>
+<p><strong>BASE16_DECODE(string_expr)</strong></p>
+<p><strong>UNHEX(string_expr)</strong></p>
+<p>Возвращает декодированный из base16 <em>string_expr</em>. Возвращает NULL, если <em>string_expr</em> равен NULL.</p>
+<p>тип вывода<br />
+<code>BYTES</code></p>
+<p><strong>Пример</strong>:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-62-1" name="__codelineno-62-1" href="#__codelineno-62-1"></a>FIELDS_ADD(encoded:&#39;48656c6c6f20576f726c6421&#39;)
+<a id="__codelineno-62-2" name="__codelineno-62-2" href="#__codelineno-62-2"></a>
+<a id="__codelineno-62-3" name="__codelineno-62-3" href="#__codelineno-62-3"></a>
+<a id="__codelineno-62-4" name="__codelineno-62-4" href="#__codelineno-62-4"></a>
+<a id="__codelineno-62-5" name="__codelineno-62-5" href="#__codelineno-62-5"></a>| FIELDS_ADD(encoded, decoded_bytes:BASE16_DECODE(encoded))
+<a id="__codelineno-62-6" name="__codelineno-62-6" href="#__codelineno-62-6"></a>
+<a id="__codelineno-62-7" name="__codelineno-62-7" href="#__codelineno-62-7"></a>
+<a id="__codelineno-62-8" name="__codelineno-62-8" href="#__codelineno-62-8"></a>
+<a id="__codelineno-62-9" name="__codelineno-62-9" href="#__codelineno-62-9"></a>| FIELDS_ADD(encoded, decoded_bytes, decoded_str:STRING(decoded_bytes));
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>encoded</th>
+<th>decoded_bytes</th>
+<th>decoded_str</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>48656c6c6f20576f726c6421</td>
+<td>[72,101,108,108,111,32,87,111,114,108,100,33]</td>
+<td>Hello World!</td>
+</tr>
+</tbody>
+</table>
+<p><strong>BASE16_ENCODE(string_expr)</strong></p>
+<p><strong>HEX(string_expr)</strong></p>
+<p>Возвращает <em>string_expr</em>, закодированный в base16. Возвращает NULL, если <em>string_expr</em> равен NULL.</p>
+<p>тип вывода<br />
+<code>STRING</code></p>
+<p><strong>Пример</strong>:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-63-1" name="__codelineno-63-1" href="#__codelineno-63-1"></a>FIELDS_ADD(BASE16_ENCODE(&#39;Red fox jumps over brown dog&#39;));
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>base16_encode</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>52656420666f78206a756d7073206f7665722062726f776e20646f67</td>
+</tr>
+</tbody>
+</table>
+<p><strong>BASE16_ENCODE(bytes)</strong></p>
+<p><strong>HEX(bytes)</strong></p>
+<p>Возвращает <em>bytes</em>, закодированные в base16. Возвращает NULL, если аргумент равен NULL.</p>
+<p>тип вывода<br />
+<code>STRING</code></p>
+<p><strong>Пример</strong>:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-64-1" name="__codelineno-64-1" href="#__codelineno-64-1"></a>FIELDS_ADD(BASE16_ENCODE(BYTES([0,1,2])));
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>base16_encode</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>000102</td>
+</tr>
+</tbody>
+</table>
+<h3 id="base64">BASE64<a class="headerlink" href="#base64" title="Permanent link">&para;</a></h3>
+<p><strong>BASE64_DECODE(string_expr)</strong></p>
+<p><strong>UNBASE64(string_expr)</strong></p>
+<p><strong>BASE64DECODE(string_expr)</strong></p>
+<p>Возвращает <code>BYTES</code> base64-декодированного <em>string_expr</em>. Возвращает NULL, если <em>string_expr</em> равен NULL.</p>
+<p>тип вывода<br />
+<code>BYTES</code></p>
+<p><strong>Пример</strong>:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-65-1" name="__codelineno-65-1" href="#__codelineno-65-1"></a>FIELDS_ADD(encoded:&#39;SGVsbG8gV29ybGQh&#39;)
+<a id="__codelineno-65-2" name="__codelineno-65-2" href="#__codelineno-65-2"></a>
+<a id="__codelineno-65-3" name="__codelineno-65-3" href="#__codelineno-65-3"></a>
+<a id="__codelineno-65-4" name="__codelineno-65-4" href="#__codelineno-65-4"></a>
+<a id="__codelineno-65-5" name="__codelineno-65-5" href="#__codelineno-65-5"></a>| FIELDS_ADD(encoded, decoded_bytes:BASE64_DECODE(encoded))
+<a id="__codelineno-65-6" name="__codelineno-65-6" href="#__codelineno-65-6"></a>
+<a id="__codelineno-65-7" name="__codelineno-65-7" href="#__codelineno-65-7"></a>
+<a id="__codelineno-65-8" name="__codelineno-65-8" href="#__codelineno-65-8"></a>
+<a id="__codelineno-65-9" name="__codelineno-65-9" href="#__codelineno-65-9"></a>| FIELDS_ADD(encoded, decoded_bytes, decoded_str:STRING(decoded_bytes));
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>encoded</th>
+<th>decoded_bytes</th>
+<th>decoded_str</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>SGVsbG8gV29ybGQh</td>
+<td>[72,101,108,108,111,32,87,111,114,108,100,33]</td>
+<td>Hello World!</td>
+</tr>
+</tbody>
+</table>
+<p><strong>BASE64_DECODE_STRING(string_expr)</strong></p>
+<p>Возвращает <code>STRING</code> base64-декодированного <em>string_expr</em>. Возвращает NULL, если <em>string_expr</em> равен NULL.</p>
+<p>тип вывода<br />
+<code>STRING</code></p>
+<p><strong>Пример</strong>:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-66-1" name="__codelineno-66-1" href="#__codelineno-66-1"></a>FIELDS_ADD(encoded:&#39;SGVsbG8gV29ybGQh&#39;)
+<a id="__codelineno-66-2" name="__codelineno-66-2" href="#__codelineno-66-2"></a>
+<a id="__codelineno-66-3" name="__codelineno-66-3" href="#__codelineno-66-3"></a>
+<a id="__codelineno-66-4" name="__codelineno-66-4" href="#__codelineno-66-4"></a>
+<a id="__codelineno-66-5" name="__codelineno-66-5" href="#__codelineno-66-5"></a>| FIELDS_ADD(encoded, decoded_bytes:BASE64_DECODE(encoded), decoded_string:BASE64_DECODE_STRING(encoded))
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>encoded</th>
+<th>decoded_bytes</th>
+<th>decoded_string</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>SGVsbG8gV29ybGQh</td>
+<td>[72,101,108,108,111,32,87,111,114,108,100,33]</td>
+<td>Hello World!</td>
+</tr>
+</tbody>
+</table>
+<p><strong>BASE64_ENCODE(string_expr)</strong></p>
+<p><strong>BASE64(string_expr)</strong></p>
+<p><strong>BASE64ENCODE(string_expr)</strong></p>
+<p>Возвращает <em>string_expr</em>, закодированный в base64. Возвращает NULL, если <em>string_expr</em> равен NULL.</p>
+<p>тип вывода<br />
+<code>STRING</code></p>
+<p><strong>Пример</strong>:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-67-1" name="__codelineno-67-1" href="#__codelineno-67-1"></a>FIELDS_ADD(BASE64_ENCODE(&#39;Hello World!&#39;));
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>base64_encode</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>SGVsbG8gV29ybGQh</td>
+</tr>
+</tbody>
+</table>
+<h3 id="concat">CONCAT<a class="headerlink" href="#concat" title="Permanent link">&para;</a></h3>
+<p><strong>CONCAT(string_expr, ...)</strong></p>
+<p>Конкатенирует аргументы <em>expr</em> и возвращает результирующую строку. Максимальное количество аргументов — 128.</p>
+<p>тип вывода<br />
+<code>STRING</code></p>
+<p><strong>Пример</strong>:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-68-1" name="__codelineno-68-1" href="#__codelineno-68-1"></a>FIELDS_ADD(CONCAT(&#39;my &#39;, &#39;20 &#39;, &#39;$cents&#39;));
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>concat</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>my 20 $cents</td>
+</tr>
+</tbody>
+</table>
+<h3 id="charat">CHARAT<a class="headerlink" href="#charat" title="Permanent link">&para;</a></h3>
+<p><strong>CHARAT(string, pos)</strong></p>
+<p>Возвращает символ в позиции <em>pos</em> строки <em>string</em>.</p>
+<p>Возвращает NULL, если <em>string</em> равен NULL или <em>pos</em> выходит за пределы длины строки.</p>
+<p>тип вывода<br />
+<code>STRING</code></p>
+<p><strong>Пример</strong>:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-69-1" name="__codelineno-69-1" href="#__codelineno-69-1"></a>FIELDS_ADD(CHARAT(&quot;foo&quot;,0));
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>charat</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>f</td>
+</tr>
+</tbody>
+</table>
+<h3 id="contains">CONTAINS<a class="headerlink" href="#contains" title="Permanent link">&para;</a></h3>
+<p><strong>CONTAINS(string1, string2)</strong></p>
+<p>Возвращает true, если <em>string1</em> содержит <em>string2</em>. В противном случае возвращает false.</p>
+<p>Возвращает NULL, если один из аргументов равен NULL.</p>
+<p>Примечание</p>
+<p>Сравнение чувствительно к регистру.</p>
+<p>тип вывода<br />
+<code>BOOLEAN</code></p>
+<p><strong>Пример</strong>:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-70-1" name="__codelineno-70-1" href="#__codelineno-70-1"></a>FIELDS_ADD(s, CONTAINS(s, &quot;0&quot;));
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>s</th>
+<th>contains</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0ho0</td>
+<td>true</td>
+</tr>
+<tr>
+<td>1ho1</td>
+<td>false</td>
+</tr>
+</tbody>
+</table>
+<h3 id="ends">ENDS<a class="headerlink" href="#ends" title="Permanent link">&para;</a></h3>
+<p><strong>ENDS(string_expr1, string_expr2)</strong></p>
+<p>Возвращает true, если <em>string_expr1</em> заканчивается на <em>string_expr2</em>. В противном случае возвращает false.</p>
+<p>Возвращает NULL, если один из аргументов равен NULL.</p>
+<p>Примечание</p>
+<p>Сравнение чувствительно к регистру.</p>
+<p>тип вывода<br />
+<code>BOOLEAN</code></p>
+<p><strong>Пример</strong>:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-71-1" name="__codelineno-71-1" href="#__codelineno-71-1"></a>FIELDS_ADD(s, ENDS(s, &quot;0&quot;));
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>s</th>
+<th>ends</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0ho0</td>
+<td>true</td>
+</tr>
+<tr>
+<td>1ho1</td>
+<td>false</td>
+</tr>
+</tbody>
+</table>
+<h3 id="indexof">INDEXOF<a class="headerlink" href="#indexof" title="Permanent link">&para;</a></h3>
+<p><strong>INDEXOF(str, substr, start_pos)</strong></p>
+<p>Возвращает индекс первого вхождения <em>substr</em> в <em>str</em>, начиная с позиции <em>start_pos</em>. Если <em>start_pos</em> отрицательный, поиск ведётся назад от <em>start_pos</em>. Если не найдено, возвращает -1.</p>
+<p><em>start_pos</em> отсчитывается с 0.</p>
+<p>тип вывода<br />
+<code>INTEGER</code></p>
+<p><strong>Пример</strong>:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-72-1" name="__codelineno-72-1" href="#__codelineno-72-1"></a>FIELDS_ADD(s, INDEXOF(s,&quot;h&quot;,0));
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>s</th>
+<th>indexof</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0ho0</td>
+<td>1</td>
+</tr>
+</tbody>
+</table>
+<h3 id="ldist">LDIST<a class="headerlink" href="#ldist" title="Permanent link">&para;</a></h3>
+<p><strong>LDIST(string_expr1, string_expr2)</strong></p>
+<p>Вычисляет <a href="https://en.wikipedia.org/wiki/Levenshtein_distance">расстояние Левенштейна</a> между <em>string_expr1</em> и <em>string_expr2</em>.</p>
+<p>тип вывода<br />
+<code>INTEGER</code></p>
+<p><strong>Пример</strong>:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-73-1" name="__codelineno-73-1" href="#__codelineno-73-1"></a>FIELDS_ADD(s1:s, s2:&#39;0ho1&#39;) | FIELDS_ADD(s1, s2, LDIST(s1, s2));
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>s1</th>
+<th>s2</th>
+<th>ldist</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0ho0</td>
+<td>0ho1</td>
+<td>1</td>
+</tr>
+</tbody>
+</table>
+<h3 id="lower">LOWER<a class="headerlink" href="#lower" title="Permanent link">&para;</a></h3>
+<p><strong>LOWER(string)</strong></p>
+<p>Конвертирует <em>string</em> в нижний регистр и возвращает результат.</p>
+<p>тип вывода<br />
+<code>STRING</code></p>
+<p><strong>Пример</strong>:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-74-1" name="__codelineno-74-1" href="#__codelineno-74-1"></a>FIELDS_ADD(LOWER(&#39;HeLlo WorlD&#39;));
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>lower</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>hello world</td>
+</tr>
+</tbody>
+</table>
+<h3 id="matches">MATCHES<a class="headerlink" href="#matches" title="Permanent link">&para;</a></h3>
+<p><strong>MATCHES(string, pattern_expression)</strong></p>
+<p>Возвращает true, если шаблонное выражение совпадает со <em>string</em>. В противном случае возвращает false.</p>
+<p>тип вывода<br />
+<code>BOOLEAN</code></p>
+<p><strong>Пример</strong>:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-75-1" name="__codelineno-75-1" href="#__codelineno-75-1"></a>FIELDS_ADD(MATCHES(&#39;hello world&#39;, &quot;ALNUM SPACE ALNUM&quot;))
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>matches</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>true</td>
+</tr>
+</tbody>
+</table>
+<h3 id="parse">PARSE<a class="headerlink" href="#parse" title="Permanent link">&para;</a></h3>
+<p><strong>PARSE(string, pattern)</strong></p>
+<p>Возвращает извлечённые поля первого совпадения <em>pattern</em> в <em>string</em>.</p>
+<p>тип вывода</p>
+<blockquote>
+<ol>
+<li>если шаблон не содержит экспортирующих матчеров — возвращает <code>BOOLEAN</code>, указывая на успех или неудачу разбора.</li>
+<li>если шаблон содержит один экспортирующий матчер — возвращает совпавшее значение как отдельное значение.</li>
+<li>если шаблон содержит более одного экспортирующего матчера — возвращает совпавшие значения как <code>TUPLE</code>.</li>
+</ol>
+</blockquote>
+<p><strong>Пример</strong>:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-76-1" name="__codelineno-76-1" href="#__codelineno-76-1"></a>FIELDS_ADD(strings: &quot;1 out of 10; 2 out of 10; 3 out of 10&quot;)
+<a id="__codelineno-76-2" name="__codelineno-76-2" href="#__codelineno-76-2"></a>
+<a id="__codelineno-76-3" name="__codelineno-76-3" href="#__codelineno-76-3"></a>
+<a id="__codelineno-76-4" name="__codelineno-76-4" href="#__codelineno-76-4"></a>
+<a id="__codelineno-76-5" name="__codelineno-76-5" href="#__codelineno-76-5"></a>| FIELDS_ADD(PARSE(strings, &quot;INT:prefix LD:string INT:suffix&quot;))
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>strings</th>
+<th>parse</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1 out of 10; 2 out of 10; 3 out of 10</td>
+<td>{prefix=1 string=" out of " suffix=10}</td>
+</tr>
+</tbody>
+</table>
+<h3 id="printf">PRINTF<a class="headerlink" href="#printf" title="Permanent link">&para;</a></h3>
+<p><strong>PRINTF(format, args...)</strong></p>
+<p>Возвращает форматированную строку в соответствии с <em>format</em> (на основе <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Formatter.html">класса java.util.Formatter</a>) и аргументами.</p>
+<p>тип вывода<br />
+<code>STRING</code></p>
+<p><strong>Пример</strong>:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-77-1" name="__codelineno-77-1" href="#__codelineno-77-1"></a>FIELDS_ADD(PRINTF(&quot;Result: %010x string: %s double: %2.2e&quot;, i, s, d*10000));
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>printf</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Result: 0000000000 string: 0ho0 double: 0.00e+00</td>
+</tr>
+<tr>
+<td>Result: 0000000001 string: 1ho1 double: 1.00e+04</td>
+</tr>
+<tr>
+<td>Result: 0000000002 string: 2ho2 double: 2.00e+04</td>
+</tr>
+</tbody>
+</table>
+<h3 id="punct">PUNCT<a class="headerlink" href="#punct" title="Permanent link">&para;</a></h3>
+<p><strong>PUNCT(string_expr)</strong></p>
+<p>Возвращает знаки пунктуации, содержащиеся в <em>string_expr</em>.</p>
+<p><strong>PUNCT(string_expr, count, withSpace)</strong></p>
+<p>Возвращает первые <em>count</em> знаков пунктуации из <em>string_expr</em>, с пробелами или без (задаётся параметром <em>withSpace</em>).</p>
+<p>Булев параметр <em>withSpace</em> включает в поиск пробел (ASCII 0x20) и печатает его как символ подчёркивания (ASCII 0x5F).</p>
+<p>тип вывода<br />
+<code>STRING</code></p>
+<p><strong>Пример</strong>:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-78-1" name="__codelineno-78-1" href="#__codelineno-78-1"></a>FIELDS_ADD(str:&quot;Hi I&#39;m home!&quot;) | FIELDS_ADD(PUNCT(str));
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>punct</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>'!</td>
+</tr>
+</tbody>
+</table>
+<h3 id="replace_string">REPLACE_STRING<a class="headerlink" href="#replace_string" title="Permanent link">&para;</a></h3>
+<p><strong>REPLACE_STRING(string, target_str, replace_str)</strong></p>
+<p>Заменяет каждое вхождение подстроки <em>target_str</em> в <em>string</em> на <em>replace_str</em>.</p>
+<p>тип вывода<br />
+<code>STRING</code></p>
+<p><strong>Пример</strong>:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-79-1" name="__codelineno-79-1" href="#__codelineno-79-1"></a>FIELDS_ADD(REPLACE_STRING(&#39;hello world&#39;, &#39;world&#39;, &#39;space&#39;));
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>REPLACE_STRING</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>hello space</td>
+</tr>
+</tbody>
+</table>
+<h3 id="replace_pattern">REPLACE_PATTERN<a class="headerlink" href="#replace_pattern" title="Permanent link">&para;</a></h3>
+<p><strong>REPLACE_PATTERN(string, pattern_expression, replacement_template_str)</strong></p>
+<p>Заменяет каждое совпадение шаблона <em>pattern_expression</em> в <em>string</em> на <em>replacement_template_str</em>.</p>
+<p>тип вывода<br />
+<code>STRING</code></p>
+<p><strong>Пример</strong>:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-80-1" name="__codelineno-80-1" href="#__codelineno-80-1"></a>FIELDS_ADD(REPLACE_PATTERN(&quot;aaa bbb ccc&quot;, &quot;&#39;a&#39;+ SPACE &#39;b&#39;+&quot;, &quot;xxx&quot;))
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>replace_pattern</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>xxx ccc</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Пример</strong>:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-81-1" name="__codelineno-81-1" href="#__codelineno-81-1"></a>FIELDS_ADD(REPLACE_PATTERN(&quot;label=valueA label=valueB&quot;, &quot;&#39;label=&#39; NSPACE:exportedGroup&quot;, &quot;modifiedLabel=&#39;modified ${exportedGroup}&#39;&quot;))
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>replace_pattern</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>modifiedLabel='modified valueA' modifiedLabel='modified valueB'</td>
+</tr>
+</tbody>
+</table>
+<h3 id="sh_entropy">SH_ENTROPY<a class="headerlink" href="#sh_entropy" title="Permanent link">&para;</a></h3>
+<p><strong>SH_ENTROPY(string_expr)</strong></p>
+<p>Вычисляет <a href="https://en.wiktionary.org/wiki/Shannon_entropy">энтропию Шеннона</a> строки <em>string_expr</em>.</p>
+<p>тип вывода<br />
+<code>DOUBLE</code></p>
+<p><strong>Пример</strong>:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-82-1" name="__codelineno-82-1" href="#__codelineno-82-1"></a>FIELDS_ADD(SH_ENTROPY(&quot;Hello world!&quot;));
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>sh_entropy</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>3.0220552088742005</td>
+</tr>
+</tbody>
+</table>
+<h3 id="split">SPLIT<a class="headerlink" href="#split" title="Permanent link">&para;</a></h3>
+<p><strong>SPLIT(string, pattern_expression)</strong></p>
+<p>Разбивает <em>string</em> по совпадениям шаблона и возвращает результат как массив строк.</p>
+<p>тип вывода<br />
+<code>ARRAY</code></p>
+<p><strong>Пример</strong>:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-83-1" name="__codelineno-83-1" href="#__codelineno-83-1"></a>FIELDS_ADD(SPLIT(&#39;p1;p2;p3&#39;, &quot;&#39;;&#39;&quot;))
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>split</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>[p1, p2, p3]</td>
+</tr>
+</tbody>
+</table>
+<h3 id="strlen">STRLEN<a class="headerlink" href="#strlen" title="Permanent link">&para;</a></h3>
+<p><strong>STRLEN(string)</strong></p>
+<p>Возвращает длину <em>string</em>.</p>
+<p>тип вывода<br />
+<code>INTEGER</code></p>
+<p><strong>Пример</strong>:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-84-1" name="__codelineno-84-1" href="#__codelineno-84-1"></a>FIELDS_ADD(STRLEN(&#39;hello world&#39;));
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>strlen</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>11</td>
+</tr>
+</tbody>
+</table>
+<h3 id="starts">STARTS<a class="headerlink" href="#starts" title="Permanent link">&para;</a></h3>
+<p><strong>STARTS(string1, string2)</strong></p>
+<p>Возвращает true, если <em>string1</em> начинается с <em>string2</em>. В противном случае возвращает false.</p>
+<p>Примечание</p>
+<p>Сравнение чувствительно к регистру.</p>
+<p>тип вывода<br />
+<code>BOOLEAN</code></p>
+<p><strong>Пример</strong>:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-85-1" name="__codelineno-85-1" href="#__codelineno-85-1"></a>FIELDS_ADD(STARTS(&#39;Hello World!&#39;, &#39;Hell&#39;));
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>starts</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>true</td>
+</tr>
+</tbody>
+</table>
+<h3 id="substr">SUBSTR<a class="headerlink" href="#substr" title="Permanent link">&para;</a></h3>
+<p><strong>SUBSTR(string, startPos)</strong></p>
+<p>Возвращает подстроку <em>string</em> от позиции <em>startPos</em> до конца. Если <em>startPos</em> отрицательный, подстрока берётся относительно конца строки.</p>
+<p>тип вывода<br />
+<code>STRING</code></p>
+<p><strong>Пример</strong>:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-86-1" name="__codelineno-86-1" href="#__codelineno-86-1"></a>FIELDS_ADD(SUBSTR(&#39;hello world&#39;, 6));
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>substr</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>world</td>
+</tr>
+</tbody>
+</table>
+<p><strong>SUBSTR(string, startPos, endPos)</strong></p>
+<p>Возвращает подстроку <em>string</em> от позиции <em>startPos</em> до позиции <em>endPos</em>. Позиция отсчитывается с 0. Если <em>startPos</em> отрицательный, отсчёт ведётся с конца. Если <em>endPos</em> отрицательный, конец подстроки определяется относительно конца строки.</p>
+<p>тип вывода<br />
+<code>STRING</code></p>
+<p><strong>Пример</strong>:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-87-1" name="__codelineno-87-1" href="#__codelineno-87-1"></a>FIELDS_ADD(SUBSTR(&#39;my 20 $cents&#39;, 3,5));
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>substr</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>20</td>
+</tr>
+</tbody>
+</table>
+<h3 id="trim">TRIM<a class="headerlink" href="#trim" title="Permanent link">&para;</a></h3>
+<p><strong>TRIM(string)</strong></p>
+<p>Удаляет ведущие и замыкающие пробелы из <em>string</em>.</p>
+<p>тип вывода<br />
+<code>STRING</code></p>
+<p><strong>Пример</strong>:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-88-1" name="__codelineno-88-1" href="#__codelineno-88-1"></a>FIELDS_ADD(str:&#39;  hello world         &#39;) | FIELDS_ADD(str, TRIM(str));
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>str</th>
+<th>trim</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>hello world</td>
+<td>hello world</td>
+</tr>
+</tbody>
+</table>
+<h3 id="unescape">UNESCAPE<a class="headerlink" href="#unescape" title="Permanent link">&para;</a></h3>
+<p><strong>UNESCAPE(string)</strong></p>
+<p><strong>DEESCAPE(string)</strong></p>
+<p>Удаляет экранирование из <em>string</em>.</p>
+<p>тип вывода<br />
+<code>STRING</code></p>
+<p><strong>Пример</strong>:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-89-1" name="__codelineno-89-1" href="#__codelineno-89-1"></a>FIELDS_ADD(UNESCAPE(&quot;\&quot;&quot;));
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>unescape</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>"</td>
+</tr>
+</tbody>
+</table>
+<h3 id="urldecode">URLDECODE<a class="headerlink" href="#urldecode" title="Permanent link">&para;</a></h3>
+<p><strong>URLDECODE(string)</strong></p>
+<p>Возвращает строку, декодированную из <a href="https://en.wikipedia.org/wiki/Percent-encoding">URL-кодировки</a> (percent-encoding).</p>
+<p>тип вывода<br />
+<code>STRING</code></p>
+<p><strong>Пример</strong>:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-90-1" name="__codelineno-90-1" href="#__codelineno-90-1"></a>FIELDS_ADD(URLDECODE(&quot;Hello+world%21&quot;));
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>urldecode</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Hello world!</td>
+</tr>
+</tbody>
+</table>
+<h3 id="urlencode">URLENCODE<a class="headerlink" href="#urlencode" title="Permanent link">&para;</a></h3>
+<p><strong>URLENCODE(string)</strong></p>
+<p>Возвращает строку в URL-кодировке.</p>
+<p>тип вывода<br />
+<code>STRING</code></p>
+<p><strong>Пример</strong>:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-91-1" name="__codelineno-91-1" href="#__codelineno-91-1"></a>FIELDS_ADD(URLENCODE(&quot;Hello world!&quot;));
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>urlencode</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Hello+world%21</td>
+</tr>
+</tbody>
+</table>
+<h3 id="htmlunescape">HTMLUNESCAPE<a class="headerlink" href="#htmlunescape" title="Permanent link">&para;</a></h3>
+<p><strong>HTMLUNESCAPE(string)</strong></p>
+<p>Декодирует HTML-сущности в <em>string</em>.</p>
+<p>тип вывода<br />
+<code>STRING</code></p>
+<p><strong>Пример</strong>:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-92-1" name="__codelineno-92-1" href="#__codelineno-92-1"></a>FIELDS_ADD(HTMLUNESCAPE(&quot;&amp;lt;Fran&amp;ccedil;ais&amp;gt;&quot;));
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>htmlunescape</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><Français></td>
+</tr>
+</tbody>
+</table>
+<h3 id="upper">UPPER<a class="headerlink" href="#upper" title="Permanent link">&para;</a></h3>
+<p><strong>UPPER(string)</strong></p>
+<p>Конвертирует <em>string</em> в верхний регистр.</p>
+<p>тип вывода<br />
+<code>STRING</code></p>
+<p><strong>Пример</strong>:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-93-1" name="__codelineno-93-1" href="#__codelineno-93-1"></a>FIELDS_ADD(UPPER(&#39;HeLlo WorlD&#39;));
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>upper</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>HELLO WORLD</td>
+</tr>
+</tbody>
+</table>
+<h2 id="_14">Прочие<a class="headerlink" href="#_14" title="Permanent link">&para;</a></h2>
+<h3 id="coalesce">COALESCE<a class="headerlink" href="#coalesce" title="Permanent link">&para;</a></h3>
+<p><strong>COALESCE(expr1, expr2, exprN)</strong></p>
+<p>Вычисляет входные выражения слева направо и возвращает первое ненулевое значение.</p>
+<p>тип вывода<br />
+общий тип аргументов, если аргументы одного типа; в противном случае — <code>VARIANT</code>.</p>
+<p><strong>Пример</strong>:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-94-1" name="__codelineno-94-1" href="#__codelineno-94-1"></a>FIELDS_ADD(a:string(), b: &#39;b&#39;, c:&#39;c&#39;)
+<a id="__codelineno-94-2" name="__codelineno-94-2" href="#__codelineno-94-2"></a>
+<a id="__codelineno-94-3" name="__codelineno-94-3" href="#__codelineno-94-3"></a>
+<a id="__codelineno-94-4" name="__codelineno-94-4" href="#__codelineno-94-4"></a>
+<a id="__codelineno-94-5" name="__codelineno-94-5" href="#__codelineno-94-5"></a>| FIELDS_ADD(COALESCE(a, b, c))
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>a</th>
+<th>b</th>
+<th>c</th>
+<th>coalesce</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>NULL</td>
+<td>b</td>
+<td>c</td>
+<td>b</td>
+</tr>
+</tbody>
+</table>
+<h3 id="column">COLUMN<a class="headerlink" href="#column" title="Permanent link">&para;</a></h3>
+<p><strong>COLUMN(string_expr)</strong></p>
+<p>Выбирает столбец по имени <em>string_expr</em>. Функция применяется, когда аргументы вычисляются динамически во время выполнения.</p>
+<p>тип вывода<br />
+тип выбранного столбца.</p>
+<p><strong>Пример</strong>:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-95-1" name="__codelineno-95-1" href="#__codelineno-95-1"></a>FIELDS_ADD(ip_addr:COLUMN(&#39;ip&#39;));
+</code></pre></div>
+<h3 id="flag">FLAG<a class="headerlink" href="#flag" title="Permanent link">&para;</a></h3>
+<p><strong>FLAG(country_code)</strong></p>
+<p>Возвращает символ флага Unicode для кода страны ISO 3166 <em>country_code</em>.</p>
+<p>тип вывода<br />
+<code>STRING</code></p>
+<p><strong>Пример</strong>:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-96-1" name="__codelineno-96-1" href="#__codelineno-96-1"></a>FIELDS_ADD(country:&#39;Estonia&#39;, flag:FLAG(&#39;EE&#39;));
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>country</th>
+<th>flag</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Estonia</td>
+<td>🇪🇪</td>
+</tr>
+</tbody>
+</table>
+<h3 id="hash64">HASH64<a class="headerlink" href="#hash64" title="Permanent link">&para;</a></h3>
+<p><strong>HASH64(arg)</strong></p>
+<p>Вычисляет 64-битное хэш-значение аргумента.</p>
+<p>Примечание</p>
+<p>Алгоритм не является криптографически стойким.</p>
+<p>тип вывода<br />
+<code>LONG</code></p>
+<p><strong>Пример</strong>:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-97-1" name="__codelineno-97-1" href="#__codelineno-97-1"></a>FIELDS_ADD(s, hash64:HASH64(s));
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>s</th>
+<th>hash64</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0ho0</td>
+<td>-1180816457071597385</td>
+</tr>
+</tbody>
+</table>
+<h3 id="remove_child">REMOVE_CHILD<a class="headerlink" href="#remove_child" title="Permanent link">&para;</a></h3>
+<p><strong>REMOVE_CHILD(var_obj, keys ...)</strong></p>
+<p>Удаляет выбранные элементы (заданные одним или несколькими ключами <em>keys</em>) из аргумента типа <code>VARIANT_OBJECT</code> <em>var_obj</em>.</p>
+<p>тип вывода<br />
+<code>VARIANT_OBJECT</code></p>
+<p><strong>Пример</strong>: удаление элементов <em>t</em> и <em>s</em> из объекта variant:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-98-1" name="__codelineno-98-1" href="#__codelineno-98-1"></a>FIELDS_ADD(vo:VARIANT_OBJECT({i,t,s}))
+<a id="__codelineno-98-2" name="__codelineno-98-2" href="#__codelineno-98-2"></a>
+<a id="__codelineno-98-3" name="__codelineno-98-3" href="#__codelineno-98-3"></a>
+<a id="__codelineno-98-4" name="__codelineno-98-4" href="#__codelineno-98-4"></a>
+<a id="__codelineno-98-5" name="__codelineno-98-5" href="#__codelineno-98-5"></a>| FIELDS_ADD(REMOVE_CHILD(vo, &quot;t&quot;, &quot;s&quot;))
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>vo</th>
+<th>remove_child</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>{"i":0,"t":"2020-11-12 18:15:09.544000000 +0200","s":"0ho0"}</td>
+<td>{"i":0}</td>
+</tr>
+</tbody>
+</table>
+<h3 id="size">SIZE<a class="headerlink" href="#size" title="Permanent link">&para;</a></h3>
+<p><strong>SIZE(arg)</strong></p>
+<p>Возвращает количество элементов в аргументе типа <code>ARRAY</code>, <code>TUPLE</code>, <code>VARIANT_ARRAY</code>, <code>VARIANT_OBJECT</code> или <code>BYTES</code>.</p>
+<p>тип вывода<br />
+<code>INTEGER</code></p>
+<p><strong>Пример</strong>:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-99-1" name="__codelineno-99-1" href="#__codelineno-99-1"></a>FIELDS_ADD(array, array_size:SIZE(array));
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>array</th>
+<th>array_size</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>[]</td>
+<td>0</td>
+</tr>
+<tr>
+<td>[0.0.0.1]</td>
+<td>1</td>
+</tr>
+<tr>
+<td>[0.0.0.2, 0.0.0.3]</td>
+<td>2</td>
+</tr>
+<tr>
+<td>[0.0.0.3, 0.0.0.4, 0.0.0.5]</td>
+<td>3</td>
+</tr>
+<tr>
+<td>[0.0.0.4, 0.0.0.5, 0.0.0.6, 0.0.0.7]</td>
+<td>4</td>
+</tr>
+</tbody>
+</table>
+<h3 id="sizeof">SIZEOF<a class="headerlink" href="#sizeof" title="Permanent link">&para;</a></h3>
+<p><strong>SIZEOF(arg)</strong></p>
+<p>Возвращает размер аргумента в байтах.</p>
+<p>тип вывода<br />
+<code>LONG</code></p>
+<p><strong>Пример</strong>:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-100-1" name="__codelineno-100-1" href="#__codelineno-100-1"></a>FIELDS_ADD(int:i, sizeof_int:SIZEOF(i), tuple, sizeof_tuple:SIZEOF(tuple));
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>int</th>
+<th>sizeof_int</th>
+<th>tuple</th>
+<th>sizeof_tuple</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>4</td>
+<td>{i=0 ip=0.0.0.0 ip6=0.0.0.0 s="0ho0" t="0ho0" ips=[] ip6s=[]}</td>
+<td>63</td>
+</tr>
+</tbody>
+</table>
+<h3 id="type">TYPE<a class="headerlink" href="#type" title="Permanent link">&para;</a></h3>
+<p><strong>TYPE(arg)</strong></p>
+<p>Возвращает строку, идентифицирующую тип данных аргумента.</p>
+<p>тип вывода<br />
+<code>STRING</code></p>
+<p><strong>Пример</strong>:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-101-1" name="__codelineno-101-1" href="#__codelineno-101-1"></a>FIELDS_ADD(int_t:TYPE(i),i, time_t:TYPE(t),t, type_array:TYPE(array),array);
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>int_t</th>
+<th>i</th>
+<th>time_t</th>
+<th>t</th>
+<th>type_array</th>
+<th>array</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>INTEGER</td>
+<td>0</td>
+<td>TIMESTAMP</td>
+<td>2019-09-23 10:20:43.278 +0000</td>
+<td>ARRAY</td>
+<td>[]</td>
+</tr>
+</tbody>
+</table>
+<h2 id="_15">Связанные темы<a class="headerlink" href="#_15" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="../log-processing-examples/" title="Примеры сценариев обработки журналов.">Примеры обработки журналов (Logs Classic)</a></li>
+</ul>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  К началу
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      © 2026 Dynatrace Docs | Yerkebulan Ardabayev
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/Yerkebulan-Ardabayev" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../../../..", "features": ["navigation.indexes", "navigation.prune", "navigation.path", "navigation.tracking", "navigation.top", "search.suggest", "search.highlight", "search.share", "content.code.copy", "content.code.annotate", "content.tabs.link", "content.tooltips", "toc.follow"], "search": "../../../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u0421\u043a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u043d\u043e \u0432 \u0431\u0443\u0444\u0435\u0440", "clipboard.copy": "\u041a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u0442\u044c \u0432 \u0431\u0443\u0444\u0435\u0440", "search.result.more.one": "\u0415\u0449\u0451 1 \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.more.other": "\u0415\u0449\u0451 # \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.none": "\u0421\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439 \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u043e", "search.result.one": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e 1 \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0435", "search.result.other": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439: #", "search.result.placeholder": "\u041d\u0430\u0447\u043d\u0438\u0442\u0435 \u043f\u0435\u0447\u0430\u0442\u0430\u0442\u044c \u0434\u043b\u044f \u043f\u043e\u0438\u0441\u043a\u0430", "search.result.term.missing": "\u041e\u0442\u0441\u0443\u0442\u0441\u0442\u0432\u0443\u0435\u0442", "select.version": "\u0412\u044b\u0431\u0435\u0440\u0438\u0442\u0435 \u0432\u0435\u0440\u0441\u0438\u044e"}, "version": null}</script>
+    
+    
+  
+      <script src="../../../../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../../../../../assets/javascripts/groq-chat.js?sha=17d46ba74"></script>
+      
+    
+  <script>
+    (function() {
+      // --- Keyboard shortcut Ctrl+K / Cmd+K for search ---
+      document.addEventListener('keydown', function(e) {
+        if ((e.ctrlKey || e.metaKey) && e.key === 'k') {
+          e.preventDefault();
+          var searchInput = document.querySelector('.md-search__input');
+          if (searchInput) {
+            searchInput.focus();
+            var searchToggle = document.querySelector('[data-md-toggle="search"]');
+            if (searchToggle && !searchToggle.checked) {
+              searchToggle.checked = true;
+              searchToggle.dispatchEvent(new Event('change'));
+            }
+          }
+        }
+        // --- "/" focuses search like GitHub / Algolia docs ---
+        if (e.key === '/' && !/^(input|textarea|select)$/i.test(e.target.tagName)) {
+          e.preventDefault();
+          var inp = document.querySelector('.md-search__input');
+          if (inp) {
+            inp.focus();
+            var t = document.querySelector('[data-md-toggle="search"]');
+            if (t && !t.checked) { t.checked = true; t.dispatchEvent(new Event('change')); }
+          }
+        }
+      });
+    })();
+  </script>
+
+  </body>
+</html>

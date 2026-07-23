@@ -1,0 +1,3109 @@
+
+<!doctype html>
+<html lang="ru" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Документация Dynatrace Managed с AI-помощником">
+      
+      
+        <meta name="author" content="Yerkebulan Ardabayev">
+      
+      
+        <link rel="canonical" href="https://yerkebulan-ardabayev.github.io/dynatrace-docs-website/managed-ru/manage/identity-access-management/access-tokens-and-oauth-clients/access-tokens/">
+      
+      
+        <link rel="prev" href="../">
+      
+      
+        <link rel="next" href="personal-access-token/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>Токены доступа - Dynatrace — Документация</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Inter";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../../assets/stylesheets/extra.v11.css?sha=17d46ba74">
+    
+    <script>__md_scope=new URL("../../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  <style>
+    /* DocFlow DT Logo Badge — injected via template override */
+    .md-header__button.md-logo {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .md-header__button.md-logo img,
+    .md-header__button.md-logo svg {
+      display: none !important;
+    }
+    .md-header__button.md-logo::before {
+      content: 'DT';
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 28px;
+      height: 28px;
+      border-radius: 6px;
+      background: linear-gradient(135deg, #00d4aa 0%, #7c3aed 100%);
+      color: white;
+      font-size: 11px;
+      font-weight: 700;
+      font-family: 'Inter', sans-serif;
+      letter-spacing: -0.02em;
+      flex-shrink: 0;
+    }
+
+    /* Search Ctrl+K badge — inside input field */
+    .md-search__form {
+      position: relative;
+    }
+    .md-search__form::after {
+      content: 'Ctrl+K';
+      display: none;
+      align-items: center;
+      padding: 0.15rem 0.4rem;
+      border-radius: 4px;
+      border: 1px solid var(--docflow-border);
+      background: var(--md-default-bg-color);
+      font-size: 10px;
+      font-family: 'JetBrains Mono', monospace;
+      color: var(--md-default-fg-color--lighter);
+      white-space: nowrap;
+      pointer-events: none;
+      position: absolute;
+      right: 0.5rem;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+    @media (min-width: 60em) {
+      .md-search__form::after {
+        display: flex;
+      }
+    }
+  </style>
+
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="custom">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#_1" class="md-skip">
+          Перейти к содержанию
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+  
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Верхний колонтитул">
+    <a href="../../../../.." title="Dynatrace — Документация" class="md-header__button md-logo" aria-label="Dynatrace — Документация" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M11 15H6l7-14v8h5l-7 14z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Dynatrace — Документация
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Токены доступа
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Переключить на светлую тему"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Переключить на светлую тему" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Переключить на тёмную тему"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Переключить на тёмную тему" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Поиск" placeholder="Поиск" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Поиск">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Поделиться" aria-label="Поделиться" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Очистить" aria-label="Очистить" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Инициализация поиска
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/Yerkebulan-Ardabayev/dynatrace-docs-website" title="Перейти к репозиторию" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    dynatrace-docs-website
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Навигация" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../../.." title="Dynatrace — Документация" class="md-nav__button md-logo" aria-label="Dynatrace — Документация" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M11 15H6l7-14v8h5l-7 14z"/></svg>
+
+    </a>
+    Dynatrace — Документация
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/Yerkebulan-Ardabayev/dynatrace-docs-website" title="Перейти к репозиторию" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    dynatrace-docs-website
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Главная
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../../../ru/getting-started/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Начало работы
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../../installation/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Кластер Managed
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../../ingest-from/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Источники данных
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    
+  
+  
+  
+    <a href="../../../../observe/application-observability/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Наблюдаемость
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../../dynatrace-intelligence/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Davis AI
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    
+  
+  
+  
+    <a href="../../../../analyze-explore-automate/dashboards-classic/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Анализ
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../../deliver/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Deliver
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    
+  
+  
+  
+    <a href="../../../../secure/application-security/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Безопасность приложений
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Управление
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_10">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Управление
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../account-management/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Управление аккаунтом
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../credential-vault/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Хранилище учётных данных
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../data-privacy-and-security/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Конфиденциальность и безопасность данных
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../hub-managed/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dynatrace Hub
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10_5" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_10_5" id="__nav_10_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Управление идентификацией и доступом (IAM)
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_10_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_10_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Управление идентификацией и доступом (IAM)
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обзор
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10_5_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_10_5_2" id="__nav_10_5_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Токены и OAuth-клиенты
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_10_5_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_10_5_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Токены и OAuth-клиенты
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обзор
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10_5_2_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_10_5_2_2" id="__nav_10_5_2_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Токены доступа
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_10_5_2_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_10_5_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Токены доступа
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обзор
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="personal-access-token/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Персональный токен доступа
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="rotate-tenant-token/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Токен тенанта
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../access-tokens-legacy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Токены доступа
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../oauth-clients/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OAuth-клиенты
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../permission-management/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Управление доступом
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../use-cases/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Варианты использования управления доступом
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../user-and-group-management/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Управление пользователями и группами
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../network-zones/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Сетевые зоны
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../settings/settings-20/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    settings
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../system-notifications/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Системные уведомления
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../tags-and-metadata/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Теги и метаданные
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    
+  
+  
+  
+    <a href="../../../../platform/oneagent/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Платформа
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../../dynatrace-api/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../../whats-new/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Что нового
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../../offline-doc/how-do-i-enable-synthetic-monitors/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Офлайн-документация
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../../../ru/training/day1-introduction/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обучение
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../ai/groq/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI Помощник
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Содержание">
+  
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+                
+
+
+
+  
+
+
+  <nav class="md-path" aria-label="Навигация" >
+    <ol class="md-path__list">
+      
+        
+  
+  
+    <li class="md-path__item">
+      <a href="../../../../.." class="md-path__link">
+        
+  <span class="md-ellipsis">
+    Главная
+  </span>
+
+      </a>
+    </li>
+  
+
+      
+      
+        
+  
+  
+    
+    
+      
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="../../../account-management/" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    Управление
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="../../" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    Управление идентификацией и доступом (IAM)
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="../" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    Токены и OAuth-клиенты
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="./" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    Токены доступа
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ol>
+  </nav>
+
+              
+              <article class="md-content__inner md-typeset">
+                
+  
+                  
+
+
+
+<h1 id="_1">Токены доступа<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
+<h1 id="_2">Токены доступа<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h1>
+<ul>
+<li>Reference</li>
+<li>2-min read</li>
+<li>Updated on Oct 25, 2023</li>
+</ul>
+<p>Весь внешний доступ к вашему окружению мониторинга Dynatrace основан на двух элементах: <a href="../../../../discover-dynatrace/get-started/monitoring-environment/" title="Понять и научиться работать с окружениями мониторинга.">ID окружения</a> и <em>токене доступа</em>.</p>
+<p>Dynatrace использует несколько типов токенов:</p>
+<ul>
+<li>
+<p>Токены доступа и персональные токены доступа предоставляют доступ к:</p>
+</li>
+<li>
+<p><a href="../../../../dynatrace-api/" title="Узнайте, что необходимо для использования Dynatrace API.">Dynatrace API</a></p>
+</li>
+<li>Загрузке установщиков OneAgent и ActiveGate</li>
+<li><a href="personal-access-token/" title="Узнайте о концепции персонального токена доступа и его областях доступа.">Персональные токены доступа</a> предоставляют доступ к некоторым конечным точкам Dynatrace API</li>
+<li><a href="rotate-tenant-token/" title="Узнайте, что такое токен тенанта и как его сменить.">Токены тенанта</a> позволяют OneAgent передавать данные в Dynatrace</li>
+</ul>
+<h2 id="_3">Формат токена<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<p>Dynatrace использует уникальный формат токена, состоящий из трёх компонентов, разделённых точками (<code>.</code>).</p>
+<h3 id="_4">Пример токена<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<p><code>dt0s01.ST2EY72KQINMH574WMNVI7YN.G3DFPBEJYMODIDAEX454M7YWBUVEFOWKPRVMWFASS64NFH52PX6BNDVFFM572RZM</code></p>
+<h3 id="_5">Компоненты токена<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Название компонента</th>
+<th>Описание компонента</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>prefix</td>
+<td><strong>Префикс</strong> определяет тип токена.  В примере: <code>dt0s01</code>  Таблица стандартных префиксов приведена в разделе <a href="#token-format-prefixes">Префиксы токенов</a> ниже.</td>
+</tr>
+<tr>
+<td>public portion</td>
+<td><strong>Публичная часть</strong> токена — это 24-символьный открытый идентификатор.  В примере: <code>ST2EY72KQINMH574WMNVI7YN</code></td>
+</tr>
+<tr>
+<td>token identifier</td>
+<td><strong>Идентификатор токена</strong> — комбинация <strong>префикса</strong> и <strong>публичной части</strong>. Идентификатор токена можно безопасно отображать в интерфейсе и использовать в логах.  В примере: <code>dt0s01.ST2EY72KQINMH574WMNVI7YN</code></td>
+</tr>
+<tr>
+<td>secret portion</td>
+<td><strong>Секретная часть</strong> токена — это 64-символьная строка, которую следует хранить как пароль:  * Не отображать * Не хранить в лог-файлах * Немедленно заменить при утечке  В примере: <code>G3DFPBEJYMODIDAEX454M7YWBUVEFOWKPRVMWFASS64NFH52PX6BNDVFFM572RZM</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="_6">Префиксы токенов<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Префикс</th>
+<th>Описание</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>dt0s01</code></td>
+<td>API-токен. Используется как метод авторизации: действительный токен позволяет вносить изменения в учётную запись Dynatrace через SCIM.  * Генерируется однократно. * Не раскрывайте секретную часть токена <code>dt0s01</code>. * Публичная часть используется для идентификации в веб-интерфейсе, однако в общем случае не следует раскрывать её (или любую часть этого токена). * Токен действует до момента отзыва клиентом, поэтому при утечке необходимо немедленно его сменить.</td>
+</tr>
+<tr>
+<td><code>dt0s02</code></td>
+<td>OAuth2-клиенты, созданные пользователями через Account Management для использования с Dynatrace Apps и Account Management API.</td>
+</tr>
+<tr>
+<td><code>dt0s03</code></td>
+<td>OAuth2-клиенты для внутренних и внешних сервисов и интеграций.</td>
+</tr>
+<tr>
+<td><code>dt0s04</code></td>
+<td>Чат и связывание удостоверений.</td>
+</tr>
+<tr>
+<td><code>dt0s06</code></td>
+<td>OAuth2 Refresh Token, используемый для получения нового токена доступа; как правило, меняется часто (обычно каждые 5–15 минут).</td>
+</tr>
+<tr>
+<td><code>dt0s08</code></td>
+<td>OAuth2-клиенты для внутренних и внешних сервисов и интеграций.</td>
+</tr>
+<tr>
+<td><code>dt0s09</code></td>
+<td>Чат и связывание удостоверений.</td>
+</tr>
+<tr>
+<td><code>dt0s16</code></td>
+<td>Platform Token, обеспечивающий программный доступ к сервисам платформы Dynatrace.</td>
+</tr>
+</tbody>
+</table>
+<p>Предсказуемый формат токена открывает ряд возможностей:</p>
+<ul>
+<li>Использование Git pre-commit хуков для предотвращения отправки токенов в репозитории исходного кода (например, с помощью инструментов <a href="https://github.com/awslabs/git-secrets">git-secrets</a>)</li>
+<li>Определение правил маскирования для скрытия секретных частей токенов при записи лог-файлов</li>
+<li>Обнаружение токенов во внутренних файлах или переписке</li>
+<li>Использование <a href="https://docs.github.com/en/free-pro-team@latest/github/administering-a-repository/about-secret-scanning#about-secret-scanning-for-public-repositories">сервиса сканирования секретов GitHub</a> для выявления токенов, попавших в публичные репозитории</li>
+</ul>
+<p>Для поиска токенов используйте следующее регулярное выражение:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>dt0[a-zA-Z]{1}[0-9]{2}\.[A-Z0-9]{24}\.[A-Z0-9]{64}
+</code></pre></div>
+<p>Начиная с Dynatrace версии 1.210 этот формат включён по умолчанию (все новые токены создаются в новом формате).</p>
+<p>Все существующие токены старого формата остаются действительными.</p>
+<h3 id="_7">Отключение нового формата<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
+<p>В течение ограниченного времени можно отказаться от использования нового формата токенов:</p>
+<ol>
+<li>В веб-интерфейсе CMC перейдите в <strong>Settings &gt; API tokens</strong>.</li>
+<li>Отключите параметр <strong>Create Dynatrace API tokens in the new format</strong>.</li>
+</ol>
+<h2 id="_8">Создание токена доступа<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h2>
+<p>Для создания токена доступа:</p>
+<ol>
+<li>Перейдите в <img alt="Access tokens" src="https://dt-cdn.net/images/access-tokens-512-a766b810b8.png" title="Access tokens" /> <strong>Access Tokens</strong>.</li>
+<li>Нажмите <strong>Generate new token</strong>.</li>
+<li>Введите имя токена.<br />
+   Dynatrace не требует уникальных имён токенов. Можно создать несколько токенов с одним именем. Назначайте значимые имена каждому токену. Правильное именование упрощает управление токенами и их удаление, когда они больше не нужны.</li>
+<li>Выберите необходимые области доступа для токена.</li>
+<li>Нажмите <strong>Generate token</strong>.</li>
+<li>Скопируйте сгенерированный токен в буфер обмена. Сохраните токен в менеджере паролей для дальнейшего использования.</li>
+</ol>
+<p>Доступ к токену предоставляется только один раз при его создании. Впоследствии просмотреть токен невозможно.</p>
+<h2 id="_9">Области доступа токена<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h2>
+<p>Токены доступа имеют детализированные области доступа для ограничения доступа к конкретному функционалу продукта в целях безопасности.</p>
+<h3 id="openpipeline">OpenPipeline<a class="headerlink" href="#openpipeline" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Название</th>
+<th>Значение API</th>
+<th>Описание</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>OpenPipeline - Ingest Events</td>
+<td><code>openpipeline.events</code></td>
+<td>Предоставляет доступ к запросу <a href="../../../../upgrade/unavailable-in-managed/" title="Ваш выбор недоступен в Dynatrace Managed.">POST Built-in generic events</a> OpenPipeline Ingest API.</td>
+</tr>
+<tr>
+<td>OpenPipeline - Ingest Events, Software Development Lifecycle</td>
+<td><code>openpipeline.events_sdlc</code></td>
+<td>Предоставляет доступ к запросу <a href="../../../../upgrade/unavailable-in-managed/" title="Ваш выбор недоступен в Dynatrace Managed.">POST Built-in SLDC events</a> OpenPipeline Ingest API.</td>
+</tr>
+<tr>
+<td>OpenPipeline - Ingest Events, Software Development Lifecycle (Custom)</td>
+<td><code>openpipeline.events_sdlc.custom</code></td>
+<td>Предоставляет доступ к запросу <a href="../../../../upgrade/unavailable-in-managed/" title="Ваш выбор недоступен в Dynatrace Managed.">POST Custom SLDC events</a> OpenPipeline Ingest API.</td>
+</tr>
+<tr>
+<td>OpenPipeline - Ingest Security Events (Built-in)</td>
+<td><code>openpipeline.events_security</code></td>
+<td>Предоставляет доступ к запросу <a href="../../../../upgrade/unavailable-in-managed/" title="Ваш выбор недоступен в Dynatrace Managed.">POST Built-in security events</a> OpenPipeline Ingest API.</td>
+</tr>
+<tr>
+<td>OpenPipeline - Ingest Security Events (Custom)</td>
+<td><code>openpipeline.events_security.custom</code></td>
+<td>Предоставляет доступ к запросу <a href="../../../../upgrade/unavailable-in-managed/" title="Ваш выбор недоступен в Dynatrace Managed.">POST Custom security events</a> OpenPipeline Ingest API.</td>
+</tr>
+<tr>
+<td>OpenPipeline - Ingest Events (Custom)</td>
+<td><code>openpipeline.events.custom</code></td>
+<td>Предоставляет доступ к запросу <a href="../../../../upgrade/unavailable-in-managed/" title="Ваш выбор недоступен в Dynatrace Managed.">POST Custom generic event endpoint</a> OpenPipeline Ingest API.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="api-v2">API v2<a class="headerlink" href="#api-v2" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Название</th>
+<th>Значение API</th>
+<th>Описание</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Read ActiveGates</td>
+<td><code>activeGates.read</code></td>
+<td>Предоставляет доступ к GET-запросам <a href="../../../../dynatrace-api/environment-api/activegates/" title="Узнайте, что предлагает Dynatrace ActiveGate API.">ActiveGates API</a>.</td>
+</tr>
+<tr>
+<td>Write ActiveGates</td>
+<td><code>activeGates.write</code></td>
+<td>Предоставляет доступ к POST и DELETE запросам <a href="../../../../dynatrace-api/environment-api/activegates/" title="Узнайте, что предлагает Dynatrace ActiveGate API.">ActiveGates API</a>.</td>
+</tr>
+<tr>
+<td>Create ActiveGate tokens</td>
+<td><code>activeGateTokenManagement.create</code></td>
+<td>Предоставляет доступ к POST-запросу ActiveGate tokens API.</td>
+</tr>
+<tr>
+<td>Read ActiveGate tokens</td>
+<td><code>activeGateTokenManagement.read</code></td>
+<td>Предоставляет доступ к GET-запросам ActiveGate tokens API.</td>
+</tr>
+<tr>
+<td>Write ActiveGate tokens</td>
+<td><code>activeGateTokenManagement.write</code></td>
+<td>Предоставляет доступ к POST и DELETE запросам ActiveGate tokens API.</td>
+</tr>
+<tr>
+<td>Read API tokens</td>
+<td><code>apiTokens.read</code></td>
+<td>Предоставляет доступ к GET-запросам <a href="../../../../dynatrace-api/environment-api/tokens-v2/api-tokens/" title="Управление токенами аутентификации Dynatrace API.">Access tokens API</a>.</td>
+</tr>
+<tr>
+<td>Write API tokens</td>
+<td><code>apiTokens.write</code></td>
+<td>Предоставляет доступ к POST, PUT и DELETE запросам <a href="../../../../dynatrace-api/environment-api/tokens-v2/api-tokens/" title="Управление токенами аутентификации Dynatrace API.">Access tokens API</a>.</td>
+</tr>
+<tr>
+<td>Read attacks</td>
+<td><code>attacks.read</code></td>
+<td>Предоставляет доступ к GET-запросам Attacks API и <a href="../../../../dynatrace-api/environment-api/settings/" title="Узнайте, что предлагает Dynatrace Settings API.">Settings API</a> для Application Protection.</td>
+</tr>
+<tr>
+<td>Write Application Protection settings</td>
+<td><code>attacks.write</code></td>
+<td>Предоставляет доступ к POST, PUT и DELETE запросам <a href="../../../../dynatrace-api/environment-api/settings/" title="Узнайте, что предлагает Dynatrace Settings API.">Settings API</a> для Application Protection.</td>
+</tr>
+<tr>
+<td>Read audit logs</td>
+<td><code>auditLogs.read</code></td>
+<td>Предоставляет доступ к <a href="../../../data-privacy-and-security/configuration/audit-logs-api/" title="Узнайте, как управлять журналами аудита с помощью API.">журналу аудита</a>.</td>
+</tr>
+<tr>
+<td>Read credential vault entries</td>
+<td><code>credentialVault.read</code></td>
+<td>Предоставляет доступ к GET-запросам <a href="../../../../dynatrace-api/environment-api/credential-vault/" title="Узнайте, что предлагает Dynatrace API для учётных данных.">Credential vault API</a>.</td>
+</tr>
+<tr>
+<td>Write credential vault entries</td>
+<td><code>credentialVault.write</code></td>
+<td>Предоставляет доступ к POST, PUT и DELETE запросам <a href="../../../../dynatrace-api/environment-api/credential-vault/" title="Узнайте, что предлагает Dynatrace API для учётных данных.">Credential vault API</a>.</td>
+</tr>
+<tr>
+<td>Read entities</td>
+<td><code>entities.read</code></td>
+<td>Предоставляет доступ к GET-запросам API <a href="../../../../dynatrace-api/environment-api/entity-v2/" title="Узнайте об API отслеживаемых объектов Dynatrace.">Monitored entities</a> и <a href="../../../../dynatrace-api/environment-api/custom-tags/" title="Управление пользовательскими тегами отслеживаемых объектов через Dynatrace API.">Custom tags</a>.</td>
+</tr>
+<tr>
+<td>Write entities</td>
+<td><code>entities.write</code></td>
+<td>Предоставляет доступ к POST, PUT и DELETE запросам API <a href="../../../../dynatrace-api/environment-api/entity-v2/" title="Узнайте об API отслеживаемых объектов Dynatrace.">Monitored entities</a> и <a href="../../../../dynatrace-api/environment-api/custom-tags/" title="Управление пользовательскими тегами отслеживаемых объектов через Dynatrace API.">Custom tags</a>.</td>
+</tr>
+<tr>
+<td>Ingest events</td>
+<td><code>events.ingest</code></td>
+<td>Предоставляет доступ к POST-запросу <a href="../../../../dynatrace-api/environment-api/events-v2/" title="Узнайте, что можно делать с Dynatrace Events API v2.">Events API v2</a>.</td>
+</tr>
+<tr>
+<td>Read events</td>
+<td><code>events.read</code></td>
+<td>Предоставляет доступ к GET-запросам <a href="../../../../dynatrace-api/environment-api/events-v2/" title="Узнайте, что можно делать с Dynatrace Events API v2.">Events API v2</a>.</td>
+</tr>
+<tr>
+<td>Read extensions monitoring configuration</td>
+<td><code>extensionConfigurations.read</code></td>
+<td>Предоставляет доступ к GET-запросам раздела <strong>Extensions monitoring configuration</strong> <a href="../../../../dynatrace-api/environment-api/extensions-20/" title="Узнайте, как управлять расширениями с помощью Dynatrace Extensions 2.0 API.">Extensions 2.0 API</a>.</td>
+</tr>
+<tr>
+<td>Write extensions monitoring configuration</td>
+<td><code>extensionConfigurations.write</code></td>
+<td>Предоставляет доступ к POST, PUT и DELETE запросам раздела <strong>Extensions monitoring configuration</strong> <a href="../../../../dynatrace-api/environment-api/extensions-20/" title="Узнайте, как управлять расширениями с помощью Dynatrace Extensions 2.0 API.">Extensions 2.0 API</a>.</td>
+</tr>
+<tr>
+<td>Read extensions environment configuration</td>
+<td><code>extensionEnvironment.read</code></td>
+<td>Предоставляет доступ к GET-запросам раздела <strong>Extensions environment configuration</strong> <a href="../../../../dynatrace-api/environment-api/extensions-20/" title="Узнайте, как управлять расширениями с помощью Dynatrace Extensions 2.0 API.">Extensions 2.0 API</a>.</td>
+</tr>
+<tr>
+<td>Write extensions environment configuration</td>
+<td><code>extensionEnvironment.write</code></td>
+<td>Предоставляет доступ к POST, PUT и DELETE запросам раздела <strong>Extensions environment configuration</strong> <a href="../../../../dynatrace-api/environment-api/extensions-20/" title="Узнайте, как управлять расширениями с помощью Dynatrace Extensions 2.0 API.">Extensions 2.0 API</a>.</td>
+</tr>
+<tr>
+<td>Read extensions</td>
+<td><code>extensions.read</code></td>
+<td>Предоставляет доступ к GET-запросам раздела <strong>Extensions</strong> <a href="../../../../dynatrace-api/environment-api/extensions-20/" title="Узнайте, как управлять расширениями с помощью Dynatrace Extensions 2.0 API.">Extensions 2.0 API</a>.</td>
+</tr>
+<tr>
+<td>Write extensions</td>
+<td><code>extensions.write</code></td>
+<td>Предоставляет доступ к POST, PUT и DELETE запросам раздела <strong>Extensions</strong> <a href="../../../../dynatrace-api/environment-api/extensions-20/" title="Узнайте, как управлять расширениями с помощью Dynatrace Extensions 2.0 API.">Extensions 2.0 API</a>.</td>
+</tr>
+<tr>
+<td>Read Geographic regions</td>
+<td><code>geographicRegions.read</code></td>
+<td>Предоставляет доступ к <a href="../../../../dynatrace-api/environment-api/rum/geographic-regions/" title="Просмотр запросов, доступных через Dynatrace Geographic regions API.">Geographic regions API</a>.</td>
+</tr>
+<tr>
+<td>Install and update Hub items</td>
+<td><code>hub.install</code></td>
+<td>Предоставляет разрешение на установку и обновление расширений через <a href="../../../../dynatrace-api/environment-api/hub/" title="Узнайте, как получить доступ к функциям Dynatrace Hub через Hub items API.">Hub items API</a>.</td>
+</tr>
+<tr>
+<td>Read Hub related data</td>
+<td><code>hub.read</code></td>
+<td>Предоставляет доступ к GET-запросам <a href="../../../../dynatrace-api/environment-api/hub/" title="Узнайте, как получить доступ к функциям Dynatrace Hub через Hub items API.">Hub items API</a>.</td>
+</tr>
+<tr>
+<td>Manage metadata of Hub items</td>
+<td><code>hub.write</code></td>
+<td>Предоставляет разрешение на управление метаданными элементов Hub через <a href="../../../../dynatrace-api/environment-api/hub/" title="Узнайте, как получить доступ к функциям Dynatrace Hub через Hub items API.">Hub items API</a>.</td>
+</tr>
+<tr>
+<td>Read JavaScript mapping files</td>
+<td><code>javaScriptMappingFiles.read</code></td>
+<td></td>
+</tr>
+<tr>
+<td>Write JavaScript mapping files</td>
+<td><code>javaScriptMappingFiles.write</code></td>
+<td></td>
+</tr>
+<tr>
+<td>Ingest logs</td>
+<td><code>logs.ingest</code></td>
+<td>Предоставляет доступ к запросу <a href="../../../../dynatrace-api/environment-api/log-monitoring-v2/post-ingest-logs/" title="Отправка пользовательских логов в Dynatrace через Log Monitoring API v2.">POST ingest logs</a> Log Monitoring API v2, а также к <a href="../../../../ingest-from/opentelemetry/otlp-api/" title="Узнайте о конечных точках OTLP API для экспорта данных OpenTelemetry в Dynatrace.">OpenTelemetry log ingest API</a>.</td>
+</tr>
+<tr>
+<td>Read logs</td>
+<td><code>logs.read</code></td>
+<td>Предоставляет доступ к GET-запросам <a href="../../../../dynatrace-api/environment-api/log-monitoring-v2/" title="Узнайте, что можно делать с Log Monitoring API v2.">Log Monitoring API v2</a>.</td>
+</tr>
+<tr>
+<td>Ingest metrics</td>
+<td><code>metrics.ingest</code></td>
+<td>Предоставляет доступ к запросу <a href="../../../../dynatrace-api/environment-api/metric-v2/post-ingest-metrics/" title="Приём пользовательских метрик в Dynatrace через Metrics v2 API.">POST ingest data points</a> Metrics v2 API, а также к <a href="../../../../ingest-from/opentelemetry/otlp-api/" title="Узнайте о конечных точках OTLP API для экспорта данных OpenTelemetry в Dynatrace.">OpenTelemetry metrics ingest API</a>.</td>
+</tr>
+<tr>
+<td>Read metrics</td>
+<td><code>metrics.read</code></td>
+<td>Предоставляет доступ к GET-запросам <a href="../../../../dynatrace-api/environment-api/metric-v2/" title="Получение информации о метриках через Metrics v2 API.">Metrics API v2</a>.</td>
+</tr>
+<tr>
+<td>Write metrics</td>
+<td><code>metrics.write</code></td>
+<td>Предоставляет доступ к запросу <a href="../../../../dynatrace-api/environment-api/metric-v2/delete-metric/" title="Удаление метрики, принятой через Metrics v2 API.">DELETE a custom metric</a> Metrics API v2.</td>
+</tr>
+<tr>
+<td>Read network zones</td>
+<td><code>networkZones.read</code></td>
+<td>Предоставляет доступ к GET-запросам <a href="../../../../dynatrace-api/environment-api/network-zones/" title="Управление сетевыми зонами через Dynatrace API.">Network zones API</a>.</td>
+</tr>
+<tr>
+<td>Write network zones</td>
+<td><code>networkZones.write</code></td>
+<td>Предоставляет доступ к POST, PUT и DELETE запросам <a href="../../../../dynatrace-api/environment-api/network-zones/" title="Управление сетевыми зонами через Dynatrace API.">Network zones API</a>.</td>
+</tr>
+<tr>
+<td>Read OneAgents</td>
+<td><code>oneAgents.read</code></td>
+<td>Предоставляет доступ к GET-запросам <a href="../../../../dynatrace-api/environment-api/oneagent-on-a-host/get-all-hosts-with-oneagents/" title="Проверка конфигурации экземпляров OneAgent на хостах через Dynatrace API.">OneAgents API</a>.</td>
+</tr>
+<tr>
+<td>Write OneAgents</td>
+<td><code>oneAgents.write</code></td>
+<td>Предоставляет доступ к POST и DELETE запросам <a href="../../../../dynatrace-api/environment-api/oneagent-on-a-host/get-all-hosts-with-oneagents/" title="Проверка конфигурации экземпляров OneAgent на хостах через Dynatrace API.">OneAgents API</a>.</td>
+</tr>
+<tr>
+<td>Ingest OpenTelemetry traces</td>
+<td><code>openTelemetryTrace.ingest</code></td>
+<td>Предоставляет разрешение на <a href="../../../../ingest-from/opentelemetry/" title="Узнайте, как интегрировать и принимать данные OpenTelemetry (трассировки, метрики и логи) в Dynatrace.">приём трассировок OpenTelemetry</a>.</td>
+</tr>
+<tr>
+<td>Read problems</td>
+<td><code>problems.read</code></td>
+<td>Предоставляет доступ к GET-запросам <a href="../../../../dynatrace-api/environment-api/problems-v2/" title="Узнайте, что предлагает Dynatrace Problems v2 API.">Problems API v2</a>.</td>
+</tr>
+<tr>
+<td>Write problems</td>
+<td><code>problems.write</code></td>
+<td>Предоставляет доступ к POST, PUT и DELETE запросам <a href="../../../../dynatrace-api/environment-api/problems-v2/" title="Узнайте, что предлагает Dynatrace Problems v2 API.">Problems API v2</a>.</td>
+</tr>
+<tr>
+<td>Read releases</td>
+<td><code>releases.read</code></td>
+<td>Предоставляет доступ к <a href="../../../../dynatrace-api/environment-api/releaseapi/" title="Узнайте, что предлагает Dynatrace Releases API.">Releases API</a>.</td>
+</tr>
+<tr>
+<td>Read security problems</td>
+<td><code>securityProblems.read</code></td>
+<td>Предоставляет доступ к GET-запросам <a href="../../../../dynatrace-api/environment-api/application-security/vulnerabilities/" title="Узнайте, что предлагает API уязвимостей.">Security problems API</a>.</td>
+</tr>
+<tr>
+<td>Write security problems</td>
+<td><code>securityProblems.write</code></td>
+<td>Предоставляет доступ к POST-запросам <a href="../../../../dynatrace-api/environment-api/application-security/vulnerabilities/" title="Узнайте, что предлагает API уязвимостей.">Security problems API</a>.</td>
+</tr>
+<tr>
+<td>Read settings</td>
+<td><code>settings.read</code></td>
+<td>Предоставляет доступ к GET-запросам <a href="../../../../dynatrace-api/environment-api/settings/" title="Узнайте, что предлагает Dynatrace Settings API.">Settings API</a>.</td>
+</tr>
+<tr>
+<td>Write settings</td>
+<td><code>settings.write</code></td>
+<td>Предоставляет доступ к POST и DELETE запросам <a href="../../../../dynatrace-api/environment-api/settings/" title="Узнайте, что предлагает Dynatrace Settings API.">Settings API</a>.</td>
+</tr>
+<tr>
+<td>Read SLO</td>
+<td><code>slo.read</code></td>
+<td>Предоставляет доступ к GET-запросам <a href="../../../../dynatrace-api/environment-api/service-level-objectives-classic/" title="Узнайте, что предлагает классический Dynatrace SLO API.">Service-level objectives API</a>.</td>
+</tr>
+<tr>
+<td>Write SLO</td>
+<td><code>slo.write</code></td>
+<td>Предоставляет доступ к POST, PUT и DELETE запросам <a href="../../../../dynatrace-api/environment-api/service-level-objectives-classic/" title="Узнайте, что предлагает классический Dynatrace SLO API.">Service-level objectives API</a>.</td>
+</tr>
+<tr>
+<td>Read synthetic monitor execution results</td>
+<td><code>syntheticExecutions.read</code></td>
+<td>Предоставляет доступ к GET-запросам API <code>/synthetic/executions</code>.</td>
+</tr>
+<tr>
+<td>Write synthetic monitor execution results</td>
+<td><code>syntheticExecutions.write</code></td>
+<td>Предоставляет доступ к POST-запросу API <code>/synthetic/executions</code>.</td>
+</tr>
+<tr>
+<td>Read synthetic locations</td>
+<td><code>syntheticLocations.read</code></td>
+<td>Предоставляет доступ к GET-запросам <a href="../../../../dynatrace-api/environment-api/synthetic-v2/synthetic-locations-v2/" title="Управление синтетическими локациями через Synthetic v2 API.">Synthetic locations API v2</a> и <a href="../../../../dynatrace-api/environment-api/synthetic-v2/synthetic-nodes-v2/" title="Управление синтетическими узлами через Synthetic v2 API.">Synthetic nodes API v2</a>.</td>
+</tr>
+<tr>
+<td>Write synthetic locations</td>
+<td><code>syntheticLocations.write</code></td>
+<td>Предоставляет доступ к POST, PUT и DELETE запросам <a href="../../../../dynatrace-api/environment-api/synthetic-v2/synthetic-locations-v2/" title="Управление синтетическими локациями через Synthetic v2 API.">Synthetic locations API v2</a> и <a href="../../../../dynatrace-api/environment-api/synthetic-v2/synthetic-nodes-v2/" title="Управление синтетическими узлами через Synthetic v2 API.">Synthetic nodes API v2</a>.</td>
+</tr>
+<tr>
+<td>Tenant token rotation</td>
+<td><code>tenantTokenRotation.write</code></td>
+<td>Предоставляет доступ к <a href="../../../../dynatrace-api/environment-api/tokens-v2/tenant-tokens/" title="Ротация токенов тенанта Dynatrace.">Tenant tokens API</a>.</td>
+</tr>
+<tr>
+<td>Look up a single trace</td>
+<td><code>traces.lookup</code></td>
+<td>Проверяет наличие трассировки при межокружённой трассировке.</td>
+</tr>
+<tr>
+<td>Read Unified Analysis page</td>
+<td><code>unifiedAnalysis.read</code></td>
+<td>Предоставляет доступ к схеме Unified analysis в <a href="../../../../dynatrace-api/environment-api/settings/" title="Узнайте, что предлагает Dynatrace Settings API.">Settings API</a>.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="api-v1">API v1<a class="headerlink" href="#api-v1" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Название</th>
+<th>Значение API</th>
+<th>Описание</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Access problems and event feed, metrics, and topology</td>
+<td><code>DataExport</code></td>
+<td>Предоставляет доступ к различным вызовам <a href="../../../../dynatrace-api/environment-api/" title="Узнайте, что необходимо для использования секции environment Dynatrace API.">Environment API</a>.</td>
+</tr>
+<tr>
+<td>Create and read synthetic monitors, locations, and nodes</td>
+<td><code>ExternalSyntheticIntegration</code></td>
+<td>Предоставляет доступ к <a href="../../../../dynatrace-api/environment-api/synthetic/" title="Узнайте, что предлагает Dynatrace Synthetic v1 API.">Synthetic API</a>.</td>
+</tr>
+<tr>
+<td>Read synthetic monitors, locations, and nodes</td>
+<td><code>ReadSyntheticData</code></td>
+<td>Предоставляет доступ к GET-запросам <a href="../../../../dynatrace-api/environment-api/synthetic/" title="Узнайте, что предлагает Dynatrace Synthetic v1 API.">Synthetic API</a>.</td>
+</tr>
+<tr>
+<td>Read configuration</td>
+<td><code>ReadConfig</code></td>
+<td>Предоставляет доступ к GET-вызовам <a href="../../../../dynatrace-api/configuration-api/" title="Узнайте, что необходимо для использования секции configuration Dynatrace API.">Configuration API</a>.</td>
+</tr>
+<tr>
+<td>Write configuration</td>
+<td><code>WriteConfig</code></td>
+<td>Предоставляет доступ к POST, PUT и DELETE вызовам <a href="../../../../dynatrace-api/configuration-api/" title="Узнайте, что необходимо для использования секции configuration Dynatrace API.">Configuration API</a>.</td>
+</tr>
+<tr>
+<td>Change data privacy settings</td>
+<td><code>DataPrivacy</code></td>
+<td>Предоставляет доступ к <a href="../../../../dynatrace-api/configuration-api/data-privacy-api/" title="Узнайте, что предлагает Dynatrace data privacy config API.">Data privacy API</a> и вызовам управления конфиденциальностью данных <a href="../../../../dynatrace-api/configuration-api/rum/web-application-configuration-api/" title="Узнайте, что предлагает Dynatrace web application config API.">Web application configuration API</a>.</td>
+</tr>
+<tr>
+<td>User sessions</td>
+<td><code>DTAQLAccess</code></td>
+<td>Предоставляет доступ к <a href="../../../../dynatrace-api/environment-api/rum/user-sessions/" title="Узнайте, что предлагает Dynatrace User Sessions Query language API.">User sessions API</a>.</td>
+</tr>
+<tr>
+<td>Anonymize user sessions for data privacy reasons</td>
+<td><code>UserSessionAnonymization</code></td>
+<td>Предоставляет доступ к <a href="../../../../dynatrace-api/environment-api/anonymization/" title="Узнайте, как выполнять требования GDPR с помощью Dynatrace API для удаления пользовательских данных.">Anonymization API</a>.</td>
+</tr>
+<tr>
+<td>Mobile symbol file management</td>
+<td><code>DssFileManagement</code></td>
+<td>Предоставляет доступ к <a href="../../../../dynatrace-api/configuration-api/mobile-symbolication-api/" title="Управление файлами мобильной символизации через Dynatrace API.">Mobile symbolication API</a>.</td>
+</tr>
+<tr>
+<td>Real User Monitoring JavaScript tag management</td>
+<td><code>RumJavaScriptTagManagement</code></td>
+<td>Предоставляет доступ к <a href="../../../../dynatrace-api/environment-api/rum/real-user-monitoring-javascript-code/" title="Узнайте, как использовать Dynatrace API для настройки приложений с ручной инъекцией через Real User Monitoring JavaScript API.">Real User Monitoring JavaScript API</a>.</td>
+</tr>
+<tr>
+<td>ActiveGate certificate management</td>
+<td><code>ActiveGateCertManagement</code></td>
+<td>Предоставляет разрешение на <a href="../../../../ingest-from/dynatrace-activegate/configuration/configure-custom-ssl-certificate-on-activegate/" title="Узнайте, как настроить SSL-сертификат на ActiveGate.">настройку сертификата</a> на частных ActiveGate.</td>
+</tr>
+<tr>
+<td>Fetch data from a remote environment</td>
+<td><code>RestRequestForwarding</code></td>
+<td>Предоставляет разрешение на получение данных из <a href="../../../../dynatrace-api/configuration-api/remote-environments/" title="Управление конфигурациями удалённых окружений Dynatrace через Dynatrace configuration API.">удалённых окружений Dynatrace</a> для мультиокружённых дашбордов.</td>
+</tr>
+<tr>
+<td>Capture request data</td>
+<td><code>CaptureRequestData</code></td>
+<td>Предоставляет доступ к <a href="../../../../dynatrace-api/configuration-api/service-api/request-attributes-api/" title="Узнайте, что предлагает Dynatrace request attribute config API.">Request attributes API</a>.</td>
+</tr>
+<tr>
+<td>Read log content</td>
+<td><code>LogExport</code></td>
+<td>Предоставляет доступ к <a href="../../../../dynatrace-api/environment-api/log-monitoring-v2/" title="Узнайте, что можно делать с Log Monitoring API v2.">Log Monitoring API</a>.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="paas">PaaS<a class="headerlink" href="#paas" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Название</th>
+<th>Значение API</th>
+<th>Описание</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Download OneAgent and ActiveGate installers</td>
+<td><code>InstallerDownload</code></td>
+<td>Разрешает загрузку установщиков через <a href="../../../../dynatrace-api/environment-api/deployment/" title="Загрузка установщиков OneAgent и ActiveGate через Dynatrace API.">Deployment API</a>.</td>
+</tr>
+<tr>
+<td>Create support alerts</td>
+<td><code>SupportAlert</code></td>
+<td>Разрешает создание <a href="../../../../observe/application-observability/profiling-and-optimization/crash-analysis/#support-alert" title="Узнайте, как Dynatrace помогает анализировать сбои процессов.">оповещений поддержки</a> для анализа сбоев.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_10">Прочее<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Название</th>
+<th>Значение API</th>
+<th>Описание</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Upload plugins using the command line</td>
+<td><code>PluginUpload</code></td>
+<td>Предоставляет разрешение на загрузку расширений OneAgent через <a href="../../../../ingest-from/extensions/develop-your-extensions/" title="Разработка собственных расширений в Dynatrace.">Extension SDK</a>.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="_11">Связанные темы<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="../../../../dynatrace-api/environment-api/tokens-v1/" title="Узнайте, как управлять токенами аутентификации Dynatrace API в вашем окружении.">Tokens API v1</a></li>
+</ul>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  К началу
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      © 2026 Dynatrace Docs | Yerkebulan Ardabayev
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/Yerkebulan-Ardabayev" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../../../..", "features": ["navigation.indexes", "navigation.prune", "navigation.path", "navigation.tracking", "navigation.top", "search.suggest", "search.highlight", "search.share", "content.code.copy", "content.code.annotate", "content.tabs.link", "content.tooltips", "toc.follow"], "search": "../../../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u0421\u043a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u043d\u043e \u0432 \u0431\u0443\u0444\u0435\u0440", "clipboard.copy": "\u041a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u0442\u044c \u0432 \u0431\u0443\u0444\u0435\u0440", "search.result.more.one": "\u0415\u0449\u0451 1 \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.more.other": "\u0415\u0449\u0451 # \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.none": "\u0421\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439 \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u043e", "search.result.one": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e 1 \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0435", "search.result.other": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439: #", "search.result.placeholder": "\u041d\u0430\u0447\u043d\u0438\u0442\u0435 \u043f\u0435\u0447\u0430\u0442\u0430\u0442\u044c \u0434\u043b\u044f \u043f\u043e\u0438\u0441\u043a\u0430", "search.result.term.missing": "\u041e\u0442\u0441\u0443\u0442\u0441\u0442\u0432\u0443\u0435\u0442", "select.version": "\u0412\u044b\u0431\u0435\u0440\u0438\u0442\u0435 \u0432\u0435\u0440\u0441\u0438\u044e"}, "version": null}</script>
+    
+    
+  
+      <script src="../../../../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../../../../../assets/javascripts/groq-chat.js?sha=17d46ba74"></script>
+      
+    
+  <script>
+    (function() {
+      // --- Keyboard shortcut Ctrl+K / Cmd+K for search ---
+      document.addEventListener('keydown', function(e) {
+        if ((e.ctrlKey || e.metaKey) && e.key === 'k') {
+          e.preventDefault();
+          var searchInput = document.querySelector('.md-search__input');
+          if (searchInput) {
+            searchInput.focus();
+            var searchToggle = document.querySelector('[data-md-toggle="search"]');
+            if (searchToggle && !searchToggle.checked) {
+              searchToggle.checked = true;
+              searchToggle.dispatchEvent(new Event('change'));
+            }
+          }
+        }
+        // --- "/" focuses search like GitHub / Algolia docs ---
+        if (e.key === '/' && !/^(input|textarea|select)$/i.test(e.target.tagName)) {
+          e.preventDefault();
+          var inp = document.querySelector('.md-search__input');
+          if (inp) {
+            inp.focus();
+            var t = document.querySelector('[data-md-toggle="search"]');
+            if (t && !t.checked) { t.checked = true; t.dispatchEvent(new Event('change')); }
+          }
+        }
+      });
+    })();
+  </script>
+
+  </body>
+</html>

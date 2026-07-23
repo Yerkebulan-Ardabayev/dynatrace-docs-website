@@ -1,0 +1,3972 @@
+
+<!doctype html>
+<html lang="ru" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Документация Dynatrace Managed с AI-помощником">
+      
+      
+        <meta name="author" content="Yerkebulan Ardabayev">
+      
+      
+        <link rel="canonical" href="https://yerkebulan-ardabayev.github.io/dynatrace-docs-website/managed-ru/observe/digital-experience/rum-classic/mobile-applications/instrument-ios-app/instrumentation/instrument-swiftui-controls/">
+      
+      
+        <link rel="prev" href="../info-plist-file/">
+      
+      
+        <link rel="next" href="../ios-auto-instrumentation-features/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../../../../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>Инструментирование элементов управления SwiftUI в RUM Classic - Dynatrace — Документация</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../../../../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../../../../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Inter";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../../../../../assets/stylesheets/extra.v11.css?sha=17d46ba74">
+    
+    <script>__md_scope=new URL("../../../../../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  <style>
+    /* DocFlow DT Logo Badge — injected via template override */
+    .md-header__button.md-logo {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .md-header__button.md-logo img,
+    .md-header__button.md-logo svg {
+      display: none !important;
+    }
+    .md-header__button.md-logo::before {
+      content: 'DT';
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 28px;
+      height: 28px;
+      border-radius: 6px;
+      background: linear-gradient(135deg, #00d4aa 0%, #7c3aed 100%);
+      color: white;
+      font-size: 11px;
+      font-weight: 700;
+      font-family: 'Inter', sans-serif;
+      letter-spacing: -0.02em;
+      flex-shrink: 0;
+    }
+
+    /* Search Ctrl+K badge — inside input field */
+    .md-search__form {
+      position: relative;
+    }
+    .md-search__form::after {
+      content: 'Ctrl+K';
+      display: none;
+      align-items: center;
+      padding: 0.15rem 0.4rem;
+      border-radius: 4px;
+      border: 1px solid var(--docflow-border);
+      background: var(--md-default-bg-color);
+      font-size: 10px;
+      font-family: 'JetBrains Mono', monospace;
+      color: var(--md-default-fg-color--lighter);
+      white-space: nowrap;
+      pointer-events: none;
+      position: absolute;
+      right: 0.5rem;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+    @media (min-width: 60em) {
+      .md-search__form::after {
+        display: flex;
+      }
+    }
+  </style>
+
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="custom">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#swiftui-rum-classic" class="md-skip">
+          Перейти к содержанию
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+  
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Верхний колонтитул">
+    <a href="../../../../../../../.." title="Dynatrace — Документация" class="md-header__button md-logo" aria-label="Dynatrace — Документация" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M11 15H6l7-14v8h5l-7 14z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Dynatrace — Документация
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Инструментирование элементов управления SwiftUI в RUM Classic
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Переключить на светлую тему"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Переключить на светлую тему" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Переключить на тёмную тему"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Переключить на тёмную тему" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Поиск" placeholder="Поиск" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Поиск">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Поделиться" aria-label="Поделиться" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Очистить" aria-label="Очистить" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Инициализация поиска
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/Yerkebulan-Ardabayev/dynatrace-docs-website" title="Перейти к репозиторию" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    dynatrace-docs-website
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Навигация" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../../../../../.." title="Dynatrace — Документация" class="md-nav__button md-logo" aria-label="Dynatrace — Документация" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M11 15H6l7-14v8h5l-7 14z"/></svg>
+
+    </a>
+    Dynatrace — Документация
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/Yerkebulan-Ardabayev/dynatrace-docs-website" title="Перейти к репозиторию" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    dynatrace-docs-website
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Главная
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../../../../../../ru/getting-started/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Начало работы
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../../../../../installation/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Кластер Managed
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../../../../../ingest-from/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Источники данных
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Наблюдаемость
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Наблюдаемость
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../../../../application-observability/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Наблюдаемость приложений
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_5_2" id="__nav_5_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Digital Experience
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Digital Experience
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обзор
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../../../custom-applications/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Пользовательские приложения
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../../../dem-use-cases/customer-support-with-session-segmentation/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Сценарии DEM
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../../../mobile-applications/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Мобильные приложения
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_2_5" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_5_2_5" id="__nav_5_2_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    rum-classic
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_5_2_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5_2_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    rum-classic
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    
+  
+  
+  
+    <a href="../../../../custom-applications/additional-configuration/configure-apdex-custom/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    custom-applications
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_2_5_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_5_2_5_2" id="__nav_5_2_5_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    mobile-applications
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_5_2_5_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5_2_5_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    mobile-applications
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../additional-configuration/configure-apdex-mobile/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Дополнительная настройка
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../analyze-and-use/action-and-session-properties-mobile/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Анализ и использование
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../cross-platform-frameworks/apache-cordova/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Кроссплатформенные фреймворки
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../general-limitations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Общие ограничения для мобильных приложений RUM Classic
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../instrument-android-app/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Инструментирование Android-приложений в RUM Classic
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../instrument-hybrid-app/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Настройка гибридных приложений в RUM Classic
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_2_5_2_7" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_5_2_5_2_7" id="__nav_5_2_5_2_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Инструментирование iOS-приложений в RUM Classic
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="5" aria-labelledby="__nav_5_2_5_2_7_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5_2_5_2_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Инструментирование iOS-приложений в RUM Classic
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обзор
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../customization/configuration-settings/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Кастомизация
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_2_5_2_7_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_5_2_5_2_7_3" id="__nav_5_2_5_2_7_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Инструментирование
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="6" aria-labelledby="__nav_5_2_5_2_7_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5_2_5_2_7_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Инструментирование
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dynatrace-auto-instrumentation-for-ios/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Настройка OneAgent для iOS-приложений в RUM Classic
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../get-started-with-ios-monitoring/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Начало работы с мониторингом iOS в RUM Classic
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../info-plist-file/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Файл Info.plist в RUM Classic
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Инструментирование элементов управления SwiftUI в RUM Classic
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ios-auto-instrumentation-features/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OneAgent для функций автоматической инструментации iOS в RUM Classic
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../troubleshooting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Устранение неполадок RUM Classic для мобильных приложений
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../../rum-concepts/applications/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    rum-concepts
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../../session-segmentation/analyze-all-sessions-of-a-single-user/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    session-segmentation
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    
+  
+  
+  
+    <a href="../../../../web-applications/additional-configuration/application-detection-rules/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    web-applications
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+  
+
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../../../rum-concepts/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Концепции мониторинга реальных пользователей
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../../../session-replay/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Session Replay
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../../../session-segmentation/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Сегментация сессий пользователей
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../../../synthetic-monitoring/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Synthetic Monitoring
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../../../web-applications/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Веб-приложения
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../../../../infrastructure-observability/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Наблюдаемость инфраструктуры
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../../../../../dynatrace-intelligence/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Davis AI
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    
+  
+  
+  
+    <a href="../../../../../../../analyze-explore-automate/dashboards-classic/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Анализ
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../../../../../deliver/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Deliver
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    
+  
+  
+  
+    <a href="../../../../../../../secure/application-security/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Безопасность приложений
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    
+  
+  
+  
+    <a href="../../../../../../../manage/account-management/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Управление
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    
+  
+  
+  
+    <a href="../../../../../../../platform/oneagent/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Платформа
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../../../../../dynatrace-api/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../../../../../whats-new/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Что нового
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../../../../../offline-doc/how-do-i-enable-synthetic-monitors/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Офлайн-документация
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../../../../../../ru/training/day1-introduction/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обучение
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../../../ai/groq/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI Помощник
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Содержание">
+  
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+                
+
+
+
+  
+
+
+  <nav class="md-path" aria-label="Навигация" >
+    <ol class="md-path__list">
+      
+        
+  
+  
+    <li class="md-path__item">
+      <a href="../../../../../../../.." class="md-path__link">
+        
+  <span class="md-ellipsis">
+    Главная
+  </span>
+
+      </a>
+    </li>
+  
+
+      
+      
+        
+  
+  
+    
+    
+      
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="../../../../../../application-observability/" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    Наблюдаемость
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="../../../../../" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    Digital Experience
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+    
+    
+      
+  
+  
+    
+    
+      
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="../../../../custom-applications/additional-configuration/configure-apdex-custom/" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    rum-classic
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+    
+    
+      
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="../../../additional-configuration/configure-apdex-mobile/" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    mobile-applications
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="../../" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    Инструментирование iOS-приложений в RUM Classic
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="../dynatrace-auto-instrumentation-for-ios/" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    Инструментирование
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ol>
+  </nav>
+
+              
+              <article class="md-content__inner md-typeset">
+                
+  
+                  
+
+
+
+<h1 id="swiftui-rum-classic">Инструментирование элементов управления SwiftUI в RUM Classic<a class="headerlink" href="#swiftui-rum-classic" title="Permanent link">&para;</a></h1>
+<h1 id="swiftui-rum-classic_1">Инструментирование элементов управления SwiftUI в RUM Classic<a class="headerlink" href="#swiftui-rum-classic_1" title="Permanent link">&para;</a></h1>
+<ul>
+<li>Практическое руководство</li>
+<li>Чтение займёт 13 минут</li>
+<li>Обновлено 10 июля 2026 г.</li>
+</ul>
+<p>OneAgent для iOS версии 8.249+</p>
+<p>После <a href="../dynatrace-auto-instrumentation-for-ios/" title="Настройка мониторинга пользовательского опыта для iOS-приложений в Dynatrace.">инструментирования мобильного приложения с помощью OneAgent для iOS</a> может также понадобиться инструментировать элементы управления SwiftUI приложения. На этой странице приведена дополнительная информация о том, как настроить проект, обновить инструментатор SwiftUI, обойти некоторые известные ограничения и многое другое.</p>
+<p>Для инструментирования элементов управления SwiftUI инструментатор SwiftUI добавляет дополнительный код в исходный код проекта (файлы <code>*.swift</code>) во время процесса сборки. Этот код отслеживает состояние элементов UI и уведомляет OneAgent для iOS о любых изменениях. После завершения процесса сборки все изменения в исходном коде проекта отменяются.</p>
+<p>Подробную информацию о действиях, выполняемых инструментатором SwiftUI, и копию изменённых файлов кода можно найти в каталоге <code>dynatrace_instrumented</code>. Инструментатор SwiftUI создаёт резервные копии инструментированных файлов и сформированных журналов в формате ZIP-архива.</p>
+<h2 id="_1">Требования<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<ul>
+<li>SwiftUI версии 2.0+</li>
+<li>iOS 14+</li>
+<li><a href="../dynatrace-auto-instrumentation-for-ios/" title="Настройка мониторинга пользовательского опыта для iOS-приложений в Dynatrace.">OneAgent для iOS</a></li>
+</ul>
+<h2 id="_2">Поддерживаемые элементы управления<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<p>Поддерживается инструментирование следующих элементов управления и представлений SwiftUI.</p>
+<p>OneAgent для iOS версии 8.249+</p>
+<ul>
+<li><a href="https://developer.apple.com/documentation/swiftui/button"><code>Button</code>﻿</a></li>
+<li><a href="https://developer.apple.com/documentation/swiftui/stepper"><code>Stepper</code>﻿</a></li>
+<li><a href="https://developer.apple.com/documentation/swiftui/picker"><code>Picker</code>﻿</a></li>
+<li><a href="https://developer.apple.com/documentation/swiftui/toggle"><code>Toggle</code>﻿</a></li>
+<li><a href="https://developer.apple.com/documentation/swiftui/slider"><code>Slider</code>﻿</a></li>
+</ul>
+<p>OneAgent для iOS версии 8.265+</p>
+<ul>
+<li><a href="https://developer.apple.com/documentation/swiftui/pastebutton"><code>PasteButton</code>﻿</a></li>
+<li><a href="https://developer.apple.com/documentation/swiftui/editbutton"><code>EditButton</code>﻿</a></li>
+<li><a href="https://developer.apple.com/documentation/swiftui/renamebutton"><code>RenameButton</code>﻿</a></li>
+<li><a href="https://developer.apple.com/documentation/swiftui/link"><code>Link</code>﻿</a></li>
+<li><a href="https://developer.apple.com/documentation/swiftui/sharelink"><code>ShareLink</code>﻿</a></li>
+<li><a href="https://developer.apple.com/documentation/swiftui/navigationlink"><code>NavigationLink</code>﻿</a></li>
+<li><a href="https://developer.apple.com/documentation/swiftui/datepicker"><code>DatePicker</code>﻿</a></li>
+<li><a href="https://developer.apple.com/documentation/swiftui/multidatepicker"><code>MultiDatePicker</code>﻿</a></li>
+<li><a href="https://developer.apple.com/documentation/swiftui/colorpicker"><code>ColorPicker</code>﻿</a></li>
+<li><a href="https://developer.apple.com/documentation/swiftui/tabview"><code>TabView</code>﻿</a></li>
+<li><a href="https://developer.apple.com/documentation/swiftui/list"><code>List</code>﻿</a></li>
+</ul>
+<p>OneAgent для iOS версии 8.269+</p>
+<ul>
+<li><a href="https://developer.apple.com/documentation/swiftui/menu"><code>Menu</code>﻿</a></li>
+<li><a href="https://developer.apple.com/documentation/swiftui/windowgroup"><code>WindowGroup</code>﻿</a></li>
+</ul>
+<p>При необходимости можно <a href="#exclude-controls-global">глобально</a> или <a href="#exclude-controls-local">локально исключить определённые элементы управления из процесса инструментирования SwiftUI</a>.</p>
+<h2 id="_3">Поддерживаемые методы<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<p>OneAgent для iOS версии 8.265+</p>
+<p>Поддерживается инструментирование следующих методов SwiftUI:</p>
+<ul>
+<li><a href="https://developer.apple.com/documentation/swiftui/view/ontapgesture(count:perform:)"><code>onTapGesture(count:perform:)</code>﻿</a></li>
+<li><a href="https://developer.apple.com/documentation/swiftui/view/ontapgesture(count:coordinatespace:perform:)"><code>onTapGesture(count:coordinateSpace:perform:)</code>﻿</a></li>
+<li><a href="https://developer.apple.com/documentation/swiftui/view/refreshable(action:)"><code>refreshable(action:)</code>﻿</a></li>
+<li><a href="https://developer.apple.com/documentation/swiftui/view/sheet(ispresented:ondismiss:content:)"><code>sheet(isPresented:onDismiss:content:)</code>﻿</a></li>
+<li><a href="https://developer.apple.com/documentation/swiftui/view/sheet(item:ondismiss:content:)"><code>sheet(item:onDismiss:content:)</code>﻿</a></li>
+<li><a href="https://developer.apple.com/documentation/swiftui/view/popover(ispresented:attachmentanchor:arrowedge:content:)"><code>popover(isPresented:attachmentAnchor:arrowEdge:content:)</code>﻿</a></li>
+<li><a href="https://developer.apple.com/documentation/swiftui/view/popover(item:attachmentanchor:arrowedge:content:)"><code>popover(item:attachmentAnchor:arrowEdge:content:)</code>﻿</a></li>
+<li><a href="https://developer.apple.com/documentation/swiftui/view/navigationdestination(for:destination:)"><code>navigationDestination(for:destination:)</code>﻿</a></li>
+<li><a href="https://developer.apple.com/documentation/swiftui/view/renameaction(_:)"><code>renameAction(_:)</code>﻿</a></li>
+</ul>
+<p>Следующие данные передаются каждый раз при выполнении замыкания одного из поддерживаемых методов:</p>
+<ul>
+<li>Название метода</li>
+<li>Тип представления, к которому был прикреплён метод</li>
+<li>Название родительского представления</li>
+</ul>
+<h2 id="_4">Мониторинг жизненного цикла<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<p>OneAgent для iOS версии 8.265+</p>
+<p>Инструментатор SwiftUI собирает данные о следующих событиях:</p>
+<ul>
+<li><strong>Запуск приложения</strong></li>
+<li><strong>Отображение</strong>: <a href="https://developer.apple.com/documentation/swiftui/view/onappear(perform:)"><code>onAppear</code>﻿</a> любого представления SwiftUI, показанного из элемента управления <a href="https://developer.apple.com/documentation/swiftui/navigationlink"><code>NavigationLink</code>﻿</a> или <a href="https://developer.apple.com/documentation/swiftui/tabview"><code>TabView</code>﻿</a></li>
+<li><strong>Повторное отображение</strong>: <a href="https://developer.apple.com/documentation/swiftui/view/onappear(perform:)"><code>onAppear</code>﻿</a> любого представления SwiftUI, показанного из элемента управления <a href="https://developer.apple.com/documentation/swiftui/navigationlink"><code>NavigationLink</code>﻿</a> или <a href="https://developer.apple.com/documentation/swiftui/tabview"><code>TabView</code>﻿</a></li>
+</ul>
+<h2 id="_5">Необходимые шаги<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
+<p>Для инструментирования элементов управления SwiftUI приложения убедитесь, что выполнены следующие шаги:</p>
+<p>[<img alt="Шаг 1" src="https://dt-cdn.net/images/step-1-086e22066c.svg" title="Шаг 1" /></p>
+<p><strong>Создать приложение в Dynatrace</strong>](/managed/observe/digital-experience/rum-classic/mobile-applications/instrument-ios-app/instrumentation/dynatrace-auto-instrumentation-for-ios#create-app-in-ui "Настройка мониторинга пользовательского опыта для iOS-приложений в Dynatrace.")[<img alt="Шаг 2" src="https://dt-cdn.net/images/step-2-1a1384627e.svg" title="Шаг 2" /></p>
+<p><strong>Настроить OneAgent для проекта</strong>](/managed/observe/digital-experience/rum-classic/mobile-applications/instrument-ios-app/instrumentation/dynatrace-auto-instrumentation-for-ios#set-up-oneagent "Настройка мониторинга пользовательского опыта для iOS-приложений в Dynatrace.")[<img alt="Шаг 3" src="https://dt-cdn.net/images/step-3-350cf6c19a.svg" title="Шаг 3" /></p>
+<p><strong>Установить инструментатор SwiftUI</strong>](/managed/observe/digital-experience/rum-classic/mobile-applications/instrument-ios-app/instrumentation/instrument-swiftui-controls#install-instrumentor "Использование инструментатора SwiftUI Dynatrace для мониторинга SwiftUI-приложений.")</p>
+<h2 id="swiftui">Управление инструментатором SwiftUI<a class="headerlink" href="#swiftui" title="Permanent link">&para;</a></h2>
+<h3 id="_6">Установка инструментатора<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
+<p>Чтобы инструментировать элементы управления SwiftUI приложения, нужно установить SwiftUI-инструментатор Dynatrace. Сделать это можно через Homebrew или вручную.</p>
+<p><a href="../dynatrace-auto-instrumentation-for-ios/" title="Set up user experience monitoring for iOS apps within Dynatrace.">OneAgent for iOS</a> уже должен быть настроен для проекта. Также не забудьте сделать резервную копию проекта перед установкой инструментатора.</p>
+<p>Homebrew</p>
+<p>Вручную</p>
+<ol>
+<li>Выполните <code>brew tap dynatrace/tools</code>, чтобы добавить один из тапов Dynatrace.</li>
+<li>Требуется <strong>только для Homebrew 6.0.0 и новее.</strong> Выполните <code>brew trust dynatrace/tools/DTSwiftInstrumentor</code>, чтобы явно доверять формулам. Начиная с Homebrew 6.0.0, Homebrew требует доверять формулам из неофициальных тапов перед установкой в качестве меры безопасности цепочки поставок. Подробнее см. <a href="https://docs.brew.sh/Tap-Trust">Homebrew Tap Trust﻿</a>. Этот шаг безопасно выполнять и на более ранних версиях Homebrew.</li>
+<li>Выполните <code>brew install DTSwiftInstrumentor</code>, чтобы установить наш SwiftUI-инструментатор.</li>
+<li>
+<p>Закройте Xcode и выполните <code>DTSwiftInstrumentor install</code>.</p>
+</li>
+<li>
+<p>Необязательно Дополнительно можно указать <code>&lt;PROJECT.xcodeproj&gt; --scheme &lt;SCHEME&gt; --target &lt;TARGET&gt;</code>. Если данные проекта не указаны, инструмент пытается автоматически обнаружить доступные таргеты и схемы и запускает интерактивный выбор.</p>
+</li>
+<li>
+<p>Скачайте и распакуйте ZIP-файл, содержащий наш SwiftUI-инструментатор. Ссылка доступна в <a href="../dynatrace-auto-instrumentation-for-ios/#instrumentation-wizard" title="Set up user experience monitoring for iOS apps within Dynatrace.">мастере мобильной инструментации</a>.</p>
+</li>
+<li>Создайте папку <code>.dynatrace</code> в корне проекта, на том же уровне, что и файл <code>*.xcodeproj</code>.</li>
+</ol>
+<p>Если появляется системное предупреждение о том, что нельзя создать папку с именем, начинающимся с точки, сделайте одно из следующего:</p>
+<ul>
+<li>В терминале выполните <code>mkdir .dynatrace</code> внутри корня проекта, чтобы создать папку <code>.dynatrace</code>.</li>
+<li>
+<p>В терминале выполните <code>defaults write com.apple.finder AppleShowAllFiles true</code> и <code>killall Finder</code>, чтобы показать скрытые папки и файлы. Затем создайте папку <code>.dynatrace</code> в Finder.</p>
+<p>Также можно выполнить <code>defaults write com.apple.finder AppleShowAllFiles false</code> и <code>killall Finder</code>, чтобы снова скрыть скрытые папки и файлы.
+3. Скопируйте скачанный <code>DTSwiftInstrumentor</code> в папку <code>.dynatrace</code> и убедитесь, что файл исполняемый.
+4. Закройте Xcode и выполните <code>.dynatrace/DTSwiftInstrumentor install &lt;PROJECT.xcodeproj&gt; --scheme &lt;SCHEME&gt; --target &lt;TARGET&gt;</code>.</p>
+</li>
+</ul>
+<p>Если во время внедрения возникает ошибка, проверьте лог сборки Xcode или лог инструментации на предмет подробной информации об ошибке. Дополнительные подсказки см. в <a href="https://dt-url.net/yh638kl">Mobile applications: Issues with SwiftUI instrumentation﻿</a> в сообществе Dynatrace.</p>
+<p>При сборке приложения нужно использовать ту схему, которую вы инструментировали.</p>
+<h3 id="_7">Обновление инструментатора<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
+<p>Когда становится доступна новая версия SwiftUI-инструментатора, обновить её можно через Homebrew или вручную.</p>
+<p>Homebrew</p>
+<p>Вручную</p>
+<p>После релиза новые версии инструментатора загружаются через добавленный тап.</p>
+<p>Выполните <code>brew update</code> и <code>brew upgrade DTSwiftInstrumentor</code>, чтобы обновить наш SwiftUI-инструментатор.</p>
+<ol>
+<li>Скачайте и распакуйте ZIP-файл, содержащий новую версию SwiftUI-инструментатора. Ссылка доступна в <a href="../dynatrace-auto-instrumentation-for-ios/#instrumentation-wizard" title="Set up user experience monitoring for iOS apps within Dynatrace.">мастере мобильной инструментации</a>.</li>
+<li>Скопируйте скачанный <code>DTSwiftInstrumentor</code> в папку <code>.dynatrace</code>, заменив существующий файл.</li>
+</ol>
+<p>Если появляется следующее предупреждение сборки, также нужно обновить скрипты сборки, которые были интегрированы во время установки SwiftUI-инструментатора Dynatrace.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>Dynatrace: There is an upgrade for your project instrumentation. Please execute &quot;DTSwiftInstrumentor project-upgrade &lt;PROJECT.xcodeproj&gt;&quot; to upgrade your project
+</code></pre></div>
+<p>Выполните предложенную команду, чтобы обновить скрипты сборки, а затем сохраните изменения, внесённые в файл проекта.</p>
+<h3 id="_8">Удаление инструментатора<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h3>
+<p>Если SwiftUI-инструментатор Dynatrace больше не нужен, его можно удалить из системы через Homebrew, либо вручную убрать из проекта.</p>
+<p>Homebrew</p>
+<p>Вручную</p>
+<p>Выполните <code>brew remove DTSwiftInstrumentor</code> и <code>brew untap dynatrace/tools</code>, чтобы удалить наш SwiftUI-инструментатор из системы.</p>
+<ol>
+<li>
+<p>Выполните <code>DTSwiftInstrumentor uninstall</code>, чтобы удалить SwiftUI-инструментатор из проекта.</p>
+</li>
+<li>
+<p>Необязательно Дополнительно можно указать <code>&lt;PROJECT.xcodeproj&gt;</code>. Если данные проекта не указаны, инструмент пытается выполнить автоматическое обнаружение и запускает интерактивный выбор.</p>
+</li>
+<li>Необязательно Удалите папки <code>.dynatrace</code> и <code>dynatrace_instrumented</code> из проекта.</li>
+</ol>
+<p>Эти папки содержат кэш, данные логов и, если применимо, бинарный файл инструментатора, установленный вручную.
+   Эти папки содержат кэш инструментатора, данные логов и, если применимо, бинарные файлы инструментатора.</p>
+<h2 id="diff-swiftui">Проверка diff инструментации SwiftUI<a class="headerlink" href="#diff-swiftui" title="Permanent link">&para;</a></h2>
+<p>OneAgent for iOS версии 8.257+</p>
+<p>Чтобы проверить разницу между исходным кодом и кодом, изменённым SwiftUI-инструментатором, выполните одну из следующих команд:</p>
+<ul>
+<li>
+<p>Из корня проекта:</p>
+</li>
+<li>
+<p><code>DTSwiftInstrumentor diff</code>, если инструментатор установлен через Homebrew</p>
+</li>
+<li><code>.dynatrace/DTSwiftInstrumentor diff</code>, если инструментатор установлен вручную</li>
+<li>
+<p>Из любого каталога</p>
+</li>
+<li>
+<p><code>DTSwiftInstrumentor diff &lt;root-project-dir-path&gt;</code></p>
+</li>
+</ul>
+<h2 id="_9">Известные ограничения<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h2>
+<h3 id="swiftui_1">Инструментация пользовательских элементов управления SwiftUI не поддерживается<a class="headerlink" href="#swiftui_1" title="Permanent link">&para;</a></h3>
+<p>В настоящее время Dynatrace не поддерживает инструментацию пользовательских элементов управления SwiftUI. Список элементов управления SwiftUI, которые можно инструментировать, см. в <a href="#supported-controls">Поддерживаемые элементы управления</a>.</p>
+<h3 id="xcode">Проблема с превью в Xcode<a class="headerlink" href="#xcode" title="Permanent link">&para;</a></h3>
+<p>Когда сборка для симулятора включала инструментацию SwiftUI, превью не загружались в Xcode. В качестве обходного решения мы отключили инструментацию SwiftUI для сборок симулятора. Если нужно добавить инструментацию SwiftUI в сборки симулятора, см. <a href="#instrument-simulator-builds">Инструментация сборок симулятора</a>.</p>
+<h3 id="swiftui-20">Только SwiftUI 2.0+<a class="headerlink" href="#swiftui-20" title="Permanent link">&para;</a></h3>
+<p>Dynatrace поддерживает инструментацию SwiftUI 2.0+, поскольку слушатель <code>onChange</code> недоступен в более ранних релизах SwiftUI. По этой причине целевая версия развёртывания должна быть iOS 14+.</p>
+<h3 id="_10">Более длительное время сборки<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h3>
+<p>В отличие от OneAgent for iOS, который изменяет мобильное приложение в памяти во время выполнения, SwiftUI-инструментатор изменяет исходный код проекта во время сборки. По этой причине процесс инструментации SwiftUI заметно влияет на время сборки.</p>
+<p>Чтобы уменьшить время сборки</p>
+<ul>
+<li>Собирайте только для <strong>Device</strong>. Если вы решили <a href="#instrument-simulator-builds">инструментировать сборки симулятора</a>, отключите эту функцию.</li>
+<li>Не запускайте инструментацию SwiftUI при каждой возможной сборке. Рекомендуется запускать инструментацию SwiftUI на ветках вроде <code>main</code> или <code>release</code>.</li>
+</ul>
+<h3 id="watchos">Несовместимость с watchOS<a class="headerlink" href="#watchos" title="Permanent link">&para;</a></h3>
+<p>Невозможно скомпилировать проект, содержащий файлы, добавленные в таргет watchOS, поскольку OneAgent for watchOS не существует. В этом случае <a href="#exclude-swift-files">вручную исключите</a> все файлы, которые являются общими с таргетом watchOS или частью него.</p>
+<h3 id="tvos">tvOS не поддерживается<a class="headerlink" href="#tvos" title="Permanent link">&para;</a></h3>
+<p>В настоящее время официальная поддержка сборок tvOS SwiftUI отсутствует.</p>
+<h2 id="swiftui_2">Метки элементов управления SwiftUI<a class="headerlink" href="#swiftui_2" title="Permanent link">&para;</a></h2>
+<p>Если не указано иное, SwiftUI-инструментатор Dynatrace пытается получить имя каждого элемента управления, рекурсивно выполняя поиск строковых литералов или переменных, указанных в качестве заголовка.
+В примере ниже инструментатор извлечёт <code>"Login"</code> в качестве метки для кнопки:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>Button(&quot;Login&quot;, action: {
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>/* perform login */
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>
+<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>})
+</code></pre></div>
+<p>Извлечённая метка будет использована для отправки авто-действия <code>"Touch on Login"</code>, когда пользователь взаимодействует с кнопкой.</p>
+<p>В следующем примере взаимодействие пользователя с этой кнопкой будет отправлено как <code>"Touch on bookmark"</code>:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>Button(action: {
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>print(&quot;Hello world!&quot;)
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>
+<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>}) {
+<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>
+<a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a>
+<a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a>
+<a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a>Image(&quot;bookmark&quot;)
+<a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a>
+<a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a>
+<a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a>
+<a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a>}
+</code></pre></div>
+<h3 id="_11">Использование имени элемента управления по умолчанию<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h3>
+<p>Используйте модификатор <code>withCustomInstrumentationConfig(.useDefaultControlName)</code>, чтобы задать метке элемента управления значение <code>&lt;Control type&gt;_&lt;index&gt;</code>:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>Button(&quot;Login&quot;, action: {
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>/* perform login */
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>
+<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>
+<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>}).withCustomInstrumentationConfig(.useDefaultControlName)
+</code></pre></div>
+<p>При применении этого модификатора инструментатор отправит действие касания как <code>"Touch on Button_0"</code>.</p>
+<h3 id="_12">Подавление отчётности переменной состояния<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h3>
+<p>Используйте модификатор <code>withCustomInstrumentationConfig(.doNotReportStateVariable)</code>, чтобы предотвратить отправку инструментатором изменений переменных <code>@State</code> для конкретного элемента управления:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>Toggle(&quot;Dark mode&quot;, isOn: $isDarkMode)
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>.withCustomInstrumentationConfig(.doNotReportStateVariable)
+</code></pre></div>
+<p>При применении этого модификатора изменения переменной состояния для этого элемента управления отправляться не будут.</p>
+<h3 id="_13">Использование пользовательского имени элемента управления<a class="headerlink" href="#_13" title="Permanent link">&para;</a></h3>
+<p>Используйте модификатор <code>withCustomInstrumentationConfig(.useControlName(&lt;Name&gt;)</code>, чтобы указать пользовательскую метку для определённого элемента управления следующим образом:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>Button(&quot;Login&quot;, action: {
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>/* perform login */
+<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>
+<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a>
+<a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a>
+<a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a>}).withCustomInstrumentationConfig(.useControlName(&quot;Login Button&quot;))
+</code></pre></div>
+<p>Таким образом, каждое касание кнопки будет отправлено как <code>"Touch on Login Button"</code>.</p>
+<h2 id="swiftui_3">Настройка инструментации SwiftUI<a class="headerlink" href="#swiftui_3" title="Permanent link">&para;</a></h2>
+<h3 id="session-replay">Включение Session Replay при сбоях<a class="headerlink" href="#session-replay" title="Permanent link">&para;</a></h3>
+<p>Session Replay при сбоях может фиксировать и визуально воспроизводить действия, которые пользователь приложения выполнял перед тем, как произошёл <a href="../../../../rum-concepts/user-and-error-events/#crash" title="Learn about user and error events and the types of user and error events captured by Dynatrace.">сбой</a>.</p>
+<p>Чтобы включить эту функцию, см. <a href="../../../../../session-replay/session-replay-ios/#sr-swiftui" title="Prerequisites and the procedure for enabling Session Replay Classic for your iOS apps.">Включение Session Replay для приложений SwiftUI</a>.</p>
+<h3 id="swiftui_4">Глобальное исключение элементов управления из инструментации SwiftUI<a class="headerlink" href="#swiftui_4" title="Permanent link">&para;</a></h3>
+<p>OneAgent для iOS версии 8.263+</p>
+<p>Инструментатор SwiftUI Dynatrace инструментирует все элементы UI, перечисленные в разделе <a href="#supported-controls">Supported controls</a>. При необходимости можно глобально исключить определённые элементы управления из процесса инструментирования SwiftUI.</p>
+<p>Чтобы глобально исключить элементы управления из инструментирования SwiftUI, добавь ключ конфигурации <a href="../../customization/ios-configuration-keys/#swiftui" title="With configuration keys, you can fine-tune the auto-instrumentation of your iOS apps."><code>DTXSwiftUIExcludedControls</code></a> в файл <a href="../info-plist-file/" title="Info.plist file stores your app identification and configuration keys. Use it to fine-tune the instrumentation configuration."><code>Info.plist</code></a> проекта.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>&lt;key&gt;DTXSwiftUIExcludedControls&lt;/key&gt;
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>
+<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>&lt;array&gt;
+<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a>
+<a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a>
+<a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a>
+<a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a>&lt;string&gt;Button&lt;/string&gt;
+<a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a>
+<a id="__codelineno-6-11" name="__codelineno-6-11" href="#__codelineno-6-11"></a>
+<a id="__codelineno-6-12" name="__codelineno-6-12" href="#__codelineno-6-12"></a>
+<a id="__codelineno-6-13" name="__codelineno-6-13" href="#__codelineno-6-13"></a>&lt;string&gt;Slider&lt;/string&gt;
+<a id="__codelineno-6-14" name="__codelineno-6-14" href="#__codelineno-6-14"></a>
+<a id="__codelineno-6-15" name="__codelineno-6-15" href="#__codelineno-6-15"></a>
+<a id="__codelineno-6-16" name="__codelineno-6-16" href="#__codelineno-6-16"></a>
+<a id="__codelineno-6-17" name="__codelineno-6-17" href="#__codelineno-6-17"></a>&lt;/array&gt;
+</code></pre></div>
+<h3 id="swiftui_5">Локальное исключение элементов управления из инструментирования SwiftUI<a class="headerlink" href="#swiftui_5" title="Permanent link">&para;</a></h3>
+<p>OneAgent для iOS версии 8.263+</p>
+<p>С помощью функции <code>withCustomInstrumentationConfig(.skipInstrumentation)</code> можно локально исключить элементы управления из инструментирования SwiftUI.</p>
+<p>В отличие от <a href="#exclude-controls-global">ключа конфигурации <code>DTXSwiftUIExcludedControls</code></a>, который позволяет предотвратить инструментирование всех экземпляров указанного типа элемента управления, функцию <code>withCustomInstrumentationConfig(.skipInstrumentation)</code> можно использовать для исключения конкретного экземпляра типа элемента управления. Эту функцию можно применить напрямую к элементу управления или, для исключения нескольких экземпляров элементов управления, к контейнеру.</p>
+<p>При применении функции <code>withCustomInstrumentationConfig(.skipInstrumentation)</code> нужно придерживаться следующих указаний:</p>
+<ul>
+<li>Чтобы использовать функцию, сначала добавь инструкцию импорта <code>import Dynatrace</code>.</li>
+<li>Добавь <code>withCustomInstrumentationConfig(.skipInstrumentation)</code> в качестве последнего модификатора в списке модификаторов представления. Например:</li>
+</ul>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>Button(&quot;Login&quot;, action: { /* perform login */ })
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>
+<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>
+<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>.padding()
+<a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a>
+<a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a>
+<a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a>
+<a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a>.background(Color.red)
+<a id="__codelineno-7-10" name="__codelineno-7-10" href="#__codelineno-7-10"></a>
+<a id="__codelineno-7-11" name="__codelineno-7-11" href="#__codelineno-7-11"></a>
+<a id="__codelineno-7-12" name="__codelineno-7-12" href="#__codelineno-7-12"></a>
+<a id="__codelineno-7-13" name="__codelineno-7-13" href="#__codelineno-7-13"></a>.frame(width: 40)
+<a id="__codelineno-7-14" name="__codelineno-7-14" href="#__codelineno-7-14"></a>
+<a id="__codelineno-7-15" name="__codelineno-7-15" href="#__codelineno-7-15"></a>
+<a id="__codelineno-7-16" name="__codelineno-7-16" href="#__codelineno-7-16"></a>
+<a id="__codelineno-7-17" name="__codelineno-7-17" href="#__codelineno-7-17"></a>.withCustomInstrumentationConfig(.skipInstrumentation)
+</code></pre></div>
+<h4 id="_14">Исключение одного элемента управления<a class="headerlink" href="#_14" title="Permanent link">&para;</a></h4>
+<p>Используй следующий код, чтобы локально исключить один элемент управления из инструментирования SwiftUI:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>import Dynatrace
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>
+<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>
+<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a>
+<a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a>…
+<a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a>
+<a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a>
+<a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a>
+<a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a>Button(&quot;Login&quot;, action: { /* perform login */ })
+<a id="__codelineno-8-10" name="__codelineno-8-10" href="#__codelineno-8-10"></a>
+<a id="__codelineno-8-11" name="__codelineno-8-11" href="#__codelineno-8-11"></a>
+<a id="__codelineno-8-12" name="__codelineno-8-12" href="#__codelineno-8-12"></a>
+<a id="__codelineno-8-13" name="__codelineno-8-13" href="#__codelineno-8-13"></a>.withCustomInstrumentationConfig(.skipInstrumentation)
+</code></pre></div>
+<h4 id="_15">Исключение нескольких элементов управления<a class="headerlink" href="#_15" title="Permanent link">&para;</a></h4>
+<p>Чтобы локально исключить группу элементов управления, примени функцию <code>withCustomInstrumentationConfig(.skipInstrumentation)</code> к их родительскому контейнеру.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>import Dynatrace
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>
+<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>
+<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a>
+<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a>…
+<a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a>
+<a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a>
+<a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a>
+<a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a>HStack {
+<a id="__codelineno-9-10" name="__codelineno-9-10" href="#__codelineno-9-10"></a>
+<a id="__codelineno-9-11" name="__codelineno-9-11" href="#__codelineno-9-11"></a>
+<a id="__codelineno-9-12" name="__codelineno-9-12" href="#__codelineno-9-12"></a>
+<a id="__codelineno-9-13" name="__codelineno-9-13" href="#__codelineno-9-13"></a>Button(&quot;Login&quot;, action: { /* perform login */ })
+<a id="__codelineno-9-14" name="__codelineno-9-14" href="#__codelineno-9-14"></a>
+<a id="__codelineno-9-15" name="__codelineno-9-15" href="#__codelineno-9-15"></a>
+<a id="__codelineno-9-16" name="__codelineno-9-16" href="#__codelineno-9-16"></a>
+<a id="__codelineno-9-17" name="__codelineno-9-17" href="#__codelineno-9-17"></a>Button(&quot;Register&quot;, action: { /* perform registration */ })
+<a id="__codelineno-9-18" name="__codelineno-9-18" href="#__codelineno-9-18"></a>
+<a id="__codelineno-9-19" name="__codelineno-9-19" href="#__codelineno-9-19"></a>
+<a id="__codelineno-9-20" name="__codelineno-9-20" href="#__codelineno-9-20"></a>
+<a id="__codelineno-9-21" name="__codelineno-9-21" href="#__codelineno-9-21"></a>}.withCustomInstrumentationConfig(.skipInstrumentation)
+</code></pre></div>
+<h3 id="swiftui_6">Исключение файлов из инструментирования SwiftUI<a class="headerlink" href="#swiftui_6" title="Permanent link">&para;</a></h3>
+<p>По умолчанию инструментатор SwiftUI Dynatrace обрабатывает все файлы с расширением <code>.swift</code>, но инструментирует только те файлы, которые содержат <a href="#supported-controls">поддерживаемые элементы управления</a>. При необходимости можно исключить определённые файлы и каталоги из процесса инструментирования SwiftUI.</p>
+<p>Чтобы исключить файлы и каталоги из инструментирования SwiftUI</p>
+<ol>
+<li>Добавь ключ конфигурации <a href="../../customization/ios-configuration-keys/#swiftui" title="With configuration keys, you can fine-tune the auto-instrumentation of your iOS apps."><code>DTXExcludedSwiftUIFiles</code></a> в файл <a href="../info-plist-file/" title="Info.plist file stores your app identification and configuration keys. Use it to fine-tune the instrumentation configuration."><code>Info.plist</code></a> проекта.</li>
+<li>Перечисли относительные пути ко всем файлам и каталогам, которые не нужно инструментировать. Пути должны быть указаны относительно корня проекта, то есть каталога, в котором находится файл <code>.xcodeproj</code>.</li>
+</ol>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>&lt;key&gt;DTXExcludedSwiftUIFiles&lt;/key&gt;
+<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>
+<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>
+<a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a>
+<a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a>&lt;array&gt;
+<a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a>
+<a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a>
+<a id="__codelineno-10-8" name="__codelineno-10-8" href="#__codelineno-10-8"></a>
+<a id="__codelineno-10-9" name="__codelineno-10-9" href="#__codelineno-10-9"></a>&lt;string&gt;relative/file/path/&lt;/string&gt;
+<a id="__codelineno-10-10" name="__codelineno-10-10" href="#__codelineno-10-10"></a>
+<a id="__codelineno-10-11" name="__codelineno-10-11" href="#__codelineno-10-11"></a>
+<a id="__codelineno-10-12" name="__codelineno-10-12" href="#__codelineno-10-12"></a>
+<a id="__codelineno-10-13" name="__codelineno-10-13" href="#__codelineno-10-13"></a>&lt;string&gt;relative/file.swift&lt;/string&gt;
+<a id="__codelineno-10-14" name="__codelineno-10-14" href="#__codelineno-10-14"></a>
+<a id="__codelineno-10-15" name="__codelineno-10-15" href="#__codelineno-10-15"></a>
+<a id="__codelineno-10-16" name="__codelineno-10-16" href="#__codelineno-10-16"></a>
+<a id="__codelineno-10-17" name="__codelineno-10-17" href="#__codelineno-10-17"></a>&lt;/array&gt;
+</code></pre></div>
+<p>Журнал инструментирования, доступный после каждой сборки, содержит список файлов и каталогов, которые следует исключить из инструментирования SwiftUI. Журнал инструментирования также показывает, был ли файл или каталог исключён в процессе инструментирования.</p>
+<h3 id="_16">Инструментирование сборок для симулятора<a class="headerlink" href="#_16" title="Permanent link">&para;</a></h3>
+<p>Инструментирование SwiftUI для сборок симулятора отключено, чтобы избежать <a href="#issue-preview-xcode">проблемы с превью в Xcode</a>.</p>
+<p>Чтобы включить инструментирование SwiftUI для сборок симулятора, добавь ключ конфигурации <a href="../../customization/ios-configuration-keys/#swiftui" title="With configuration keys, you can fine-tune the auto-instrumentation of your iOS apps."><code>DTXSwiftUIInstrumentSimulatorBuilds</code></a> в файл <a href="../info-plist-file/" title="Info.plist file stores your app identification and configuration keys. Use it to fine-tune the instrumentation configuration."><code>Info.plist</code></a> проекта и установи для этого ключа значение <code>true</code>.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>&lt;key&gt;DTXSwiftUIInstrumentSimulatorBuilds&lt;/key&gt;
+<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>
+<a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a>
+<a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a>
+<a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a>&lt;true/&gt;
+</code></pre></div>
+<h3 id="_17">Создание сборок для неподдерживаемых целей развёртывания<a class="headerlink" href="#_17" title="Permanent link">&para;</a></h3>
+<p>Инструментатор SwiftUI генерирует код, совместимый с SwiftUI 2.0+, который работает только на устройствах с iOS 14+. Попытка сгенерировать сборки для целей развёртывания iOS 13 и более ранних версий завершится ошибкой.</p>
+<p>Чтобы отменить эту проверку, добавь ключ конфигурации <a href="../../customization/ios-configuration-keys/#swiftui" title="With configuration keys, you can fine-tune the auto-instrumentation of your iOS apps."><code>DTXSwiftUIIgnoreDeploymentTarget</code></a> в файл <a href="../info-plist-file/" title="Info.plist file stores your app identification and configuration keys. Use it to fine-tune the instrumentation configuration."><code>Info.plist</code></a> проекта и установи для этого ключа значение <code>true</code>.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>&lt;key&gt;DTXSwiftUIIgnoreDeploymentTarget&lt;/key&gt;
+<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>
+<a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a>
+<a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a>
+<a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a>&lt;true/&gt;
+</code></pre></div>
+<h3 id="objective-c">Включение сопоставления номеров строк для проектов Objective-C<a class="headerlink" href="#objective-c" title="Permanent link">&para;</a></h3>
+<p>Отчёты о сбоях, доступные в Dynatrace, основаны не на исходном коде проекта. Эти отчёты основаны на изменённом коде, который генерирует Dynatrace во время инструментирования. Поэтому во время инструментирования в проект добавляется сопоставление номеров строк, которое впоследствии передаётся в Dynatrace при запуске приложения. В противном случае номера строк в отчётах о сбоях были бы неверными.</p>
+<p>По умолчанию инструментатор SwiftUI Dynatrace генерирует сопоставление номеров строк и вставляет его в главный класс проекта. Это происходит автоматически для проектов с главным классом на Swift, но не для устаревших проектов на Objective-C. Для таких проектов появится ошибка, и инструментатор SwiftUI не будет инструментировать мобильное приложение.</p>
+<p>Чтобы включить сопоставление номеров строк для проектов Objective-C</p>
+<ol>
+<li>Добавь ключ конфигурации <a href="../../customization/ios-configuration-keys/#swiftui" title="With configuration keys, you can fine-tune the auto-instrumentation of your iOS apps."><code>DTXSwiftUIManualPlaceholder</code></a> в файл <a href="../info-plist-file/" title="Info.plist file stores your app identification and configuration keys. Use it to fine-tune the instrumentation configuration."><code>Info.plist</code></a> проекта и установи для этого ключа значение <code>true</code>.</li>
+</ol>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>&lt;key&gt;DTXSwiftUIManualPlaceholder&lt;/key&gt;
+<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>
+<a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a>
+<a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a>
+<a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a>&lt;true/&gt;
+</code></pre></div>
+2. Добавь специальный placeholder <code>AppDelegate.m</code> в главный класс.
+3. Добавь строку <code>[Dynatrace handoverInstrumentorConfig:@{kDTXSwiftMappingJson: @"_DYNATRACE_SWIFTUI_MAPPING_PLACEHOLDER_"}];</code> в главный класс либо в метод <code>init</code>, либо в метод <code>didFinishLaunchingWithOptions</code> (не в оба сразу).</p>
+<p>didFinishLaunchingWithOptions</p>
+<p>init</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>- (BOOL)application:(UIApplication *)application
+<a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a>
+<a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a>
+<a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a>
+<a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a>didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+<a id="__codelineno-14-6" name="__codelineno-14-6" href="#__codelineno-14-6"></a>
+<a id="__codelineno-14-7" name="__codelineno-14-7" href="#__codelineno-14-7"></a>
+<a id="__codelineno-14-8" name="__codelineno-14-8" href="#__codelineno-14-8"></a>
+<a id="__codelineno-14-9" name="__codelineno-14-9" href="#__codelineno-14-9"></a>[Dynatrace handoverInstrumentorConfig:@{kDTXSwiftMappingJson: @&quot;_DYNATRACE_SWIFTUI_MAPPING_PLACEHOLDER_&quot;}];
+<a id="__codelineno-14-10" name="__codelineno-14-10" href="#__codelineno-14-10"></a>
+<a id="__codelineno-14-11" name="__codelineno-14-11" href="#__codelineno-14-11"></a>
+<a id="__codelineno-14-12" name="__codelineno-14-12" href="#__codelineno-14-12"></a>
+<a id="__codelineno-14-13" name="__codelineno-14-13" href="#__codelineno-14-13"></a>// ... your existing setup code
+<a id="__codelineno-14-14" name="__codelineno-14-14" href="#__codelineno-14-14"></a>
+<a id="__codelineno-14-15" name="__codelineno-14-15" href="#__codelineno-14-15"></a>
+<a id="__codelineno-14-16" name="__codelineno-14-16" href="#__codelineno-14-16"></a>
+<a id="__codelineno-14-17" name="__codelineno-14-17" href="#__codelineno-14-17"></a>return YES;
+<a id="__codelineno-14-18" name="__codelineno-14-18" href="#__codelineno-14-18"></a>
+<a id="__codelineno-14-19" name="__codelineno-14-19" href="#__codelineno-14-19"></a>
+<a id="__codelineno-14-20" name="__codelineno-14-20" href="#__codelineno-14-20"></a>
+<a id="__codelineno-14-21" name="__codelineno-14-21" href="#__codelineno-14-21"></a>}
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>- (instancetype)init {
+<a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a>
+<a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a>
+<a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a>
+<a id="__codelineno-15-5" name="__codelineno-15-5" href="#__codelineno-15-5"></a>self = [super init];
+<a id="__codelineno-15-6" name="__codelineno-15-6" href="#__codelineno-15-6"></a>
+<a id="__codelineno-15-7" name="__codelineno-15-7" href="#__codelineno-15-7"></a>
+<a id="__codelineno-15-8" name="__codelineno-15-8" href="#__codelineno-15-8"></a>
+<a id="__codelineno-15-9" name="__codelineno-15-9" href="#__codelineno-15-9"></a>if (self) {
+<a id="__codelineno-15-10" name="__codelineno-15-10" href="#__codelineno-15-10"></a>
+<a id="__codelineno-15-11" name="__codelineno-15-11" href="#__codelineno-15-11"></a>
+<a id="__codelineno-15-12" name="__codelineno-15-12" href="#__codelineno-15-12"></a>
+<a id="__codelineno-15-13" name="__codelineno-15-13" href="#__codelineno-15-13"></a>[Dynatrace handoverInstrumentorConfig:@{kDTXSwiftMappingJson: @&quot;_DYNATRACE_SWIFTUI_MAPPING_PLACEHOLDER_&quot;}];
+<a id="__codelineno-15-14" name="__codelineno-15-14" href="#__codelineno-15-14"></a>
+<a id="__codelineno-15-15" name="__codelineno-15-15" href="#__codelineno-15-15"></a>
+<a id="__codelineno-15-16" name="__codelineno-15-16" href="#__codelineno-15-16"></a>
+<a id="__codelineno-15-17" name="__codelineno-15-17" href="#__codelineno-15-17"></a>}
+<a id="__codelineno-15-18" name="__codelineno-15-18" href="#__codelineno-15-18"></a>
+<a id="__codelineno-15-19" name="__codelineno-15-19" href="#__codelineno-15-19"></a>
+<a id="__codelineno-15-20" name="__codelineno-15-20" href="#__codelineno-15-20"></a>
+<a id="__codelineno-15-21" name="__codelineno-15-21" href="#__codelineno-15-21"></a>return self;
+<a id="__codelineno-15-22" name="__codelineno-15-22" href="#__codelineno-15-22"></a>
+<a id="__codelineno-15-23" name="__codelineno-15-23" href="#__codelineno-15-23"></a>
+<a id="__codelineno-15-24" name="__codelineno-15-24" href="#__codelineno-15-24"></a>
+<a id="__codelineno-15-25" name="__codelineno-15-25" href="#__codelineno-15-25"></a>}
+</code></pre></div>
+<p>Во время сборки инструментатор SwiftUI заменяет часть этой строки сгенерированным сопоставлением номеров строк.</p>
+<h3 id="_18">Включение автоматической очистки журналов<a class="headerlink" href="#_18" title="Permanent link">&para;</a></h3>
+<p>OneAgent для iOS версии 8.257+</p>
+<p>После каждой сборки SwiftUI instrumentor создаёт резервные копии инструментированных файлов и сгенерированные логи, которые хранятся в <code>dynatrace_instrumented</code>. По умолчанию эти файлы не удаляются, и общий размер каталога со временем растёт. По этой причине рекомендуется включить автоматическую очистку логов.</p>
+<ul>
+<li>Чтобы удалять логи SwiftUI instrumentor после определённого числа сборок, добавьте <a href="../../customization/ios-configuration-keys/#swiftui" title="With configuration keys, you can fine-tune the auto-instrumentation of your iOS apps.">ключ конфигурации <code>DTXCleanSwiftUILogsByCount</code></a> в файл <a href="../info-plist-file/" title="Info.plist file stores your app identification and configuration keys. Use it to fine-tune the instrumentation configuration."><code>Info.plist</code></a> вашего проекта.</li>
+</ul>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>&lt;key&gt;DTXCleanSwiftUILogsByCount&lt;/key&gt;
+<a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a>
+<a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a>
+<a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a>
+<a id="__codelineno-16-5" name="__codelineno-16-5" href="#__codelineno-16-5"></a>&lt;number&gt;10&lt;/number&gt;
+</code></pre></div>
+* Чтобы удалять логи после определённого числа дней, добавьте <a href="../../customization/ios-configuration-keys/#swiftui" title="With configuration keys, you can fine-tune the auto-instrumentation of your iOS apps.">ключ конфигурации <code>DTXCleanSwiftUILogsByAgeDays</code></a> в файл <code>Info.plist</code>.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>&lt;key&gt;DTXCleanSwiftUILogsByAgeDays&lt;/key&gt;
+<a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a>
+<a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a>
+<a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a>
+<a id="__codelineno-17-5" name="__codelineno-17-5" href="#__codelineno-17-5"></a>&lt;number&gt;5&lt;/number&gt;
+</code></pre></div>
+<p>Если добавить оба ключа в файл <code>Info.plist</code>, приоритет имеет ключ <code>DTXCleanSwiftUILogsByAgeDays</code>.</p>
+<h2 id="_19">Устранение неполадок<a class="headerlink" href="#_19" title="Permanent link">&para;</a></h2>
+<p>Мы всё ещё работаем над улучшением процесса инструментирования SwiftUI. Если при инструментировании элементов управления SwiftUI возникают проблемы, обратитесь к разделу <a href="https://dt-url.net/yh638kl">Mobile applications: Issues with SwiftUI instrumentation﻿</a> в сообществе Dynatrace.</p>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  К началу
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      © 2026 Dynatrace Docs | Yerkebulan Ardabayev
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/Yerkebulan-Ardabayev" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../../../../../../..", "features": ["navigation.indexes", "navigation.prune", "navigation.path", "navigation.tracking", "navigation.top", "search.suggest", "search.highlight", "search.share", "content.code.copy", "content.code.annotate", "content.tabs.link", "content.tooltips", "toc.follow"], "search": "../../../../../../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u0421\u043a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u043d\u043e \u0432 \u0431\u0443\u0444\u0435\u0440", "clipboard.copy": "\u041a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u0442\u044c \u0432 \u0431\u0443\u0444\u0435\u0440", "search.result.more.one": "\u0415\u0449\u0451 1 \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.more.other": "\u0415\u0449\u0451 # \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.none": "\u0421\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439 \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u043e", "search.result.one": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e 1 \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0435", "search.result.other": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439: #", "search.result.placeholder": "\u041d\u0430\u0447\u043d\u0438\u0442\u0435 \u043f\u0435\u0447\u0430\u0442\u0430\u0442\u044c \u0434\u043b\u044f \u043f\u043e\u0438\u0441\u043a\u0430", "search.result.term.missing": "\u041e\u0442\u0441\u0443\u0442\u0441\u0442\u0432\u0443\u0435\u0442", "select.version": "\u0412\u044b\u0431\u0435\u0440\u0438\u0442\u0435 \u0432\u0435\u0440\u0441\u0438\u044e"}, "version": null}</script>
+    
+    
+  
+      <script src="../../../../../../../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../../../../../../../../assets/javascripts/groq-chat.js?sha=17d46ba74"></script>
+      
+    
+  <script>
+    (function() {
+      // --- Keyboard shortcut Ctrl+K / Cmd+K for search ---
+      document.addEventListener('keydown', function(e) {
+        if ((e.ctrlKey || e.metaKey) && e.key === 'k') {
+          e.preventDefault();
+          var searchInput = document.querySelector('.md-search__input');
+          if (searchInput) {
+            searchInput.focus();
+            var searchToggle = document.querySelector('[data-md-toggle="search"]');
+            if (searchToggle && !searchToggle.checked) {
+              searchToggle.checked = true;
+              searchToggle.dispatchEvent(new Event('change'));
+            }
+          }
+        }
+        // --- "/" focuses search like GitHub / Algolia docs ---
+        if (e.key === '/' && !/^(input|textarea|select)$/i.test(e.target.tagName)) {
+          e.preventDefault();
+          var inp = document.querySelector('.md-search__input');
+          if (inp) {
+            inp.focus();
+            var t = document.querySelector('[data-md-toggle="search"]');
+            if (t && !t.checked) { t.checked = true; t.dispatchEvent(new Event('change')); }
+          }
+        }
+      });
+    })();
+  </script>
+
+  </body>
+</html>

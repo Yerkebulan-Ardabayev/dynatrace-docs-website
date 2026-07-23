@@ -1,0 +1,3201 @@
+
+<!doctype html>
+<html lang="ru" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Документация Dynatrace Managed с AI-помощником">
+      
+      
+        <meta name="author" content="Yerkebulan Ardabayev">
+      
+      
+        <link rel="canonical" href="https://yerkebulan-ardabayev.github.io/dynatrace-docs-website/managed-ru/ingest-from/dynatrace-oneagent/oneagent-update/">
+      
+      
+        <link rel="prev" href="../oneagent-troubleshooting/troubleshoot-oneagent-installation/">
+      
+      
+        <link rel="next" href="../resource-attributes/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>Обновление OneAgent - Dynatrace — Документация</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Inter";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../assets/stylesheets/extra.v11.css?sha=17d46ba74">
+    
+    <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  <style>
+    /* DocFlow DT Logo Badge — injected via template override */
+    .md-header__button.md-logo {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .md-header__button.md-logo img,
+    .md-header__button.md-logo svg {
+      display: none !important;
+    }
+    .md-header__button.md-logo::before {
+      content: 'DT';
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 28px;
+      height: 28px;
+      border-radius: 6px;
+      background: linear-gradient(135deg, #00d4aa 0%, #7c3aed 100%);
+      color: white;
+      font-size: 11px;
+      font-weight: 700;
+      font-family: 'Inter', sans-serif;
+      letter-spacing: -0.02em;
+      flex-shrink: 0;
+    }
+
+    /* Search Ctrl+K badge — inside input field */
+    .md-search__form {
+      position: relative;
+    }
+    .md-search__form::after {
+      content: 'Ctrl+K';
+      display: none;
+      align-items: center;
+      padding: 0.15rem 0.4rem;
+      border-radius: 4px;
+      border: 1px solid var(--docflow-border);
+      background: var(--md-default-bg-color);
+      font-size: 10px;
+      font-family: 'JetBrains Mono', monospace;
+      color: var(--md-default-fg-color--lighter);
+      white-space: nowrap;
+      pointer-events: none;
+      position: absolute;
+      right: 0.5rem;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+    @media (min-width: 60em) {
+      .md-search__form::after {
+        display: flex;
+      }
+    }
+  </style>
+
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="custom">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#oneagent" class="md-skip">
+          Перейти к содержанию
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+  
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Верхний колонтитул">
+    <a href="../../../.." title="Dynatrace — Документация" class="md-header__button md-logo" aria-label="Dynatrace — Документация" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M11 15H6l7-14v8h5l-7 14z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Dynatrace — Документация
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Обновление OneAgent
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Переключить на светлую тему"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Переключить на светлую тему" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Переключить на тёмную тему"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Переключить на тёмную тему" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Поиск" placeholder="Поиск" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Поиск">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Поделиться" aria-label="Поделиться" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Очистить" aria-label="Очистить" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Инициализация поиска
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/Yerkebulan-Ardabayev/dynatrace-docs-website" title="Перейти к репозиторию" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    dynatrace-docs-website
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Навигация" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../.." title="Dynatrace — Документация" class="md-nav__button md-logo" aria-label="Dynatrace — Документация" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M11 15H6l7-14v8h5l-7 14z"/></svg>
+
+    </a>
+    Dynatrace — Документация
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/Yerkebulan-Ardabayev/dynatrace-docs-website" title="Перейти к репозиторию" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    dynatrace-docs-website
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Главная
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../../ru/getting-started/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Начало работы
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../installation/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Кластер Managed
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Источники данных
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Источники данных
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обзор
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../amazon-web-services/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Настройка Dynatrace на Amazon Web Services
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../bulk-configuration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Удалённое управление конфигурацией OneAgent и ActiveGate
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../dynatrace-activegate/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dynatrace ActiveGate
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_5" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4_5" id="__nav_4_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dynatrace OneAgent
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Dynatrace OneAgent
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обзор
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../adaptive-traffic-management/adaptive-traffic-management-managed/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Адаптивное управление трафиком
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../deployment-orchestration/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Оркестрация развёртывания OneAgent
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../installation-and-operation/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Установка OneAgent на сервер
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../oa-requirements/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Требования к OneAgent
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../oneagent-aging-mechanism/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Механизм устаревания файлов OneAgent
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../oneagent-and-opentelemetry/configuration/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OneAgent и OpenTelemetry
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../oneagent-configuration-via-command-line-interface/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Настройка OneAgent через интерфейс командной строки
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../oneagent-features/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Функции OneAgent
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../oneagent-health/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обзор работоспособности OneAgent
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../oneagent-security/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Безопасность OneAgent
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../oneagent-troubleshooting/oneagent-diagnostics/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Диагностика OneAgent
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обновление OneAgent
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../resource-attributes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Атрибуты ресурса
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../extend-dynatrace/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Расширение Dynatrace
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../extensions/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Расширения
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../google-cloud-platform/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Настройка Dynatrace на Google Cloud
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../microsoft-azure-services/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Настройка Dynatrace на Microsoft Azure
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../opentelemetry/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OpenTelemetry и Dynatrace
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../setup-on-container-platforms/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Настройка Dynatrace на контейнерных и PaaS-платформах
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../setup-on-k8s/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Настройка Dynatrace на Kubernetes
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../technology-support/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Поддержка технологий
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    
+  
+  
+  
+    <a href="../../../observe/application-observability/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Наблюдаемость
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../dynatrace-intelligence/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Davis AI
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    
+  
+  
+  
+    <a href="../../../analyze-explore-automate/dashboards-classic/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Анализ
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../deliver/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Deliver
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    
+  
+  
+  
+    <a href="../../../secure/application-security/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Безопасность приложений
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    
+  
+  
+  
+    <a href="../../../manage/account-management/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Управление
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    
+  
+  
+  
+    <a href="../../../platform/oneagent/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Платформа
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../dynatrace-api/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../whats-new/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Что нового
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../offline-doc/how-do-i-enable-synthetic-monitors/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Офлайн-документация
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../../ru/training/day1-introduction/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обучение
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../ai/groq/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI Помощник
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Содержание">
+  
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+                
+
+
+
+  
+
+
+  <nav class="md-path" aria-label="Навигация" >
+    <ol class="md-path__list">
+      
+        
+  
+  
+    <li class="md-path__item">
+      <a href="../../../.." class="md-path__link">
+        
+  <span class="md-ellipsis">
+    Главная
+  </span>
+
+      </a>
+    </li>
+  
+
+      
+      
+        
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="../../" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    Источники данных
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="../" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    Dynatrace OneAgent
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ol>
+  </nav>
+
+              
+              <article class="md-content__inner md-typeset">
+                
+  
+                  
+
+
+
+<h1 id="oneagent">Обновление OneAgent<a class="headerlink" href="#oneagent" title="Permanent link">&para;</a></h1>
+<h1 id="oneagent_1">Обновление OneAgent<a class="headerlink" href="#oneagent_1" title="Permanent link">&para;</a></h1>
+<ul>
+<li>3-min read</li>
+<li>Updated on Nov 06, 2025</li>
+</ul>
+<p>OneAgent имеет встроенный настраиваемый механизм автоматического обновления.</p>
+<p>Автоматические обновления OneAgent просты</p>
+<p>При включённом автообновлении вам не нужно беспокоиться о ручном обновлении OneAgent в вашем окружении. При каждом выпуске новой версии OneAgent автоматически загружает все необходимые бинарные файлы и библиотеки и устанавливает их. Ручная настройка не требуется.</p>
+<p>После автоматических обновлений OneAgent необходимо перезапустить все серверные процессы. Это связано с тем, что некоторые компоненты OneAgent продолжают работать в процессах, мониторируемых Dynatrace (например, Java, .NET, Apache и IIS).</p>
+<ul>
+<li>До перезапуска эти процессы будут продолжать мониторироваться с предыдущей версией OneAgent.</li>
+<li>После перезапуска эти процессы будут мониторироваться с последней версией OneAgent.</li>
+</ul>
+<p>Автоматические обновления OneAgent гибки</p>
+<p>По умолчанию глобальные автоматические обновления OneAgent включены, но это можно настроить на глобальном уровне, уровне группы хостов и уровне хоста. На каждом уровне можно выбрать одну из следующих стратегий обновления OneAgent:</p>
+<ul>
+<li>Обновлять автоматически независимо от окон обновления.</li>
+<li>Обновлять автоматически в течение выбранного <a href="#maintenance-windows">окна обновления</a>.</li>
+<li>Не обновлять автоматически. При этом варианте вы не получаете уведомлений об устаревших экземплярах OneAgent.</li>
+</ul>
+<p>Дополнительно:</p>
+<ul>
+<li>На уровне группы хостов можно выбрать наследование глобальных настроек обновления OneAgent.</li>
+<li>На уровне хоста можно выбрать наследование настроек обновления OneAgent группы хостов.</li>
+</ul>
+<p>Настройки хоста переопределяют настройки группы хостов, а настройки группы хостов переопределяют глобальные настройки.</p>
+<p>Автоматические обновления OneAgent безопасны</p>
+<ul>
+<li>Коммуникация OneAgent зашифрована.</li>
+<li>Установщики OneAgent подписаны, и подпись проверяется для каждого загруженного пакета установщика. В случае сбоя проверки попытка автообновления прерывается.</li>
+</ul>
+<p>Обновления OneAgent также управляются через Dynatrace API</p>
+<p>Помимо описанных здесь процедур через веб-интерфейс Dynatrace, для управления обновлениями OneAgent можно использовать <a href="../../../dynatrace-api/configuration-api/oneagent-configuration/" title="Управляйте конфигурацией OneAgent через Dynatrace API.">API конфигурации OneAgent</a>.</p>
+<ul>
+<li><a href="../../../dynatrace-api/configuration-api/oneagent-configuration/oneagent-on-host/" title="Управляйте конфигурацией экземпляров OneAgent на хостах через Dynatrace API.">Уровень хоста</a></li>
+<li><a href="../../../dynatrace-api/configuration-api/oneagent-configuration/oneagent-in-host-group/" title="Управляйте конфигурацией экземпляров OneAgent в группах хостов через Dynatrace API.">Уровень группы хостов</a></li>
+<li><a href="../../../dynatrace-api/configuration-api/oneagent-configuration/oneagent-environment-wide/" title="Управляйте конфигурацией OneAgent для всего окружения через Dynatrace API.">Уровень окружения</a></li>
+</ul>
+<p>OneAgent не будет автоматически обновлён сразу после первой установки. По умолчанию Dynatrace ждёт 45 минут перед обновлением хостов (как EC2, так и не EC2).</p>
+<p>Эта задержка не применяется при ручных обновлениях через <strong>Update now</strong>, что означает немедленное применение обновлений, инициированных таким способом.</p>
+<h2 id="oneagent_2">Мониторинг обновлений OneAgent<a class="headerlink" href="#oneagent_2" title="Permanent link">&para;</a></h2>
+<p>Для мониторинга обновлений OneAgent перейдите в <strong>Settings</strong> &gt; <strong>Updates</strong> &gt; <strong>OneAgent updates</strong>.</p>
+<ul>
+<li>Проверка или изменение настроек автообновления на уровне окружения</li>
+<li>Мониторинг статуса обновления по операционным системам (Linux, AIX и Windows)</li>
+<li>Проверка или изменение статуса автообновления библиотеки JavaScript для Real User Monitoring</li>
+</ul>
+<p>Мониторинг глобального обновления OneAgent</p>
+<p>Для мониторинга обновлений OneAgent для всего окружения перейдите в <strong>Settings</strong> &gt; <strong>Updates</strong> &gt; <strong>OneAgent updates</strong>.</p>
+<h4 id="oneagent_3">Обновления OneAgent<a class="headerlink" href="#oneagent_3" title="Permanent link">&para;</a></h4>
+<p>В этом разделе можно проверить или изменить настройку уровня окружения:</p>
+<ul>
+<li><strong>Automatic updates at earliest convenience</strong><br />
+  Обновлять все OneAgent автоматически независимо от окон обновления.</li>
+<li>
+<p><strong>Automatic updates during update windows</strong><br />
+  Обновлять все OneAgent автоматически в течение выбранного окна обновления.</p>
+</li>
+<li>
+<p>При выборе этой настройки отображается список доступных окон обновления. Выберите одно.</p>
+</li>
+<li>Для настройки нового окна обновления OneAgent перейдите в <strong>Settings</strong> &gt; <strong>Updates</strong> &gt; <strong>Update windows for OneAgent updates</strong>.</li>
+<li><strong>No automatic updates</strong><br />
+  Не обновлять OneAgent автоматически.</li>
+</ul>
+<h4 id="_1">Статус автоматических обновлений<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h4>
+<p>В этом разделе можно проверить статус автоматических обновлений по операционным системам. Для каждой ОС на странице отображается количество экземпляров OneAgent с разбивкой по статусу обновления.</p>
+<h4 id="javascript-real-user-monitoring">Библиотека JavaScript для Real User Monitoring<a class="headerlink" href="#javascript-real-user-monitoring" title="Permanent link">&para;</a></h4>
+<p>Включите <strong>Automatically update real user monitoring JavaScript library</strong> для автоматического обновления библиотеки JavaScript для Real User Monitoring. Текущая версия библиотеки указана под переключателем.</p>
+<p>Статусы обновления OneAgent</p>
+<ul>
+<li>Incompatible — автообновление невозможно. Для этого хоста/версии может потребоваться ручное обновление.</li>
+<li>Update available — доступно обновление для данной версии OneAgent.</li>
+<li>Suppressed — загрузка не выполнена, поскольку автообновление не поддерживается для данного развёртывания.</li>
+<li>Unknown — например, хост не найден или для него нет автообновления.</li>
+<li>Up to date — версия установщика актуальна.</li>
+<li>Update in progress — хост запросил и загрузил установщик, но ещё не переподключился с ожидаемой новой версией.</li>
+<li>Update pending — для данного хоста настроено обновление. Оно имеет приоритет над другими действиями для вновь обнаруженных хостов, но может не начаться немедленно по причинам, таким как внутренние обновления кластера, ограничение скорости и проверки стабильности.</li>
+<li>Update problem — при выполнении обновления возникла проблема. Пожалуйста, ознакомьтесь с подробностями.</li>
+<li>Scheduled — обновление запланировано на настроенное окно обновления.</li>
+</ul>
+<h2 id="oneagent_4">Настройка обновлений OneAgent<a class="headerlink" href="#oneagent_4" title="Permanent link">&para;</a></h2>
+<p>Обновление OneAgent можно настроить глобально, для каждой группы хостов и для каждого хоста.</p>
+<p>Настройка глобального обновления OneAgent</p>
+<p>При включённых автоматических обновлениях глобально каждый раз при выходе новой версии OneAgent все установленные экземпляры OneAgent, кроме тех, у которых автообновление отключено на уровне группы хостов или хоста, автоматически загружают обновление и обновляют бинарные файлы и конфигурационные файлы.</p>
+<p>Настройки автоматического обновления на уровне группы хостов и отдельного хоста переопределяют глобальные настройки.</p>
+<ol>
+<li>Перейдите в <strong>Settings</strong> &gt; <strong>Updates</strong> &gt; <strong>OneAgent updates</strong>.</li>
+<li>
+<p>Выберите один из вариантов обновления:</p>
+</li>
+<li>
+<p><strong>Automatic updates at earliest convenience</strong><br />
+     Обновлять все OneAgent автоматически независимо от окон обновления.</p>
+</li>
+<li>
+<p><strong>Automatic updates during update windows</strong><br />
+     Обновлять все OneAgent автоматически в течение выбранного окна обновления.</p>
+<ul>
+<li>При выборе этой настройки отображается список доступных окон обновления. Выберите одно.</li>
+<li>Для настройки нового окна обновления OneAgent перейдите в <strong>Settings</strong> &gt; <strong>Updates</strong> &gt; <strong>Update windows for OneAgent updates</strong>.</li>
+<li><strong>No automatic updates</strong><br />
+ Не обновлять OneAgent автоматически.</li>
+</ul>
+</li>
+</ol>
+<p>Ручной запуск <strong>Update now to target version</strong> обновит все хосты с выбранной ОС и архитектурой независимо от статуса автоматического обновления.</p>
+<p>Настройка обновления OneAgent для группы хостов</p>
+<p>Настройки обновления OneAgent на уровне группы хостов переопределяют глобальные настройки и перекрываются настройками на уровне хоста.</p>
+<ol>
+<li>
+<p>Откройте страницу <strong>Host group settings</strong>.<br />
+   Варианты доступа:</p>
+</li>
+<li>
+<p>Перейдите в <strong>Settings</strong> &gt; <strong>Monitoring</strong> &gt; <strong>Monitoring overview</strong>, найдите любой хост в нужной группе и выберите название группы хостов (не имя хоста).</p>
+</li>
+<li>Перейдите в <strong>Hosts</strong>, откройте страницу хоста и разверните раздел <strong>Properties and tags</strong>. Если хост принадлежит группе, там будет ссылка на неё в разделе <strong>Host group</strong>.</li>
+<li>Перейдите в <strong>Deployment Status</strong> &gt; <strong>OneAgents</strong>. Если хост принадлежит группе хостов, ссылка на страницу настроек группы отображается под именем хоста.</li>
+<li>На странице <strong>Host group settings</strong> выберите <strong>OneAgent updates</strong> в левой части страницы.</li>
+<li>
+<p>Выберите один из вариантов обновления:</p>
+</li>
+<li>
+<p><strong>Inherit global update settings</strong><br />
+     Следовать глобальным настройкам обновления OneAgent в этой группе хостов.</p>
+<ul>
+<li>Текущая глобальная настройка отображается в скобках на этой строке.</li>
+<li>Для перехода на страницу глобальной конфигурации выберите ссылку <code>global</code>.</li>
+<li><strong>Automatic updates at earliest convenience</strong><br />
+ Обновлять все OneAgent в этой группе хостов автоматически независимо от окон обновления. Глобальные настройки обновления игнорируются.</li>
+<li>
+<p><strong>Automatic updates during update windows</strong><br />
+ Обновлять все OneAgent в этой группе хостов автоматически в течение выбранного окна обновления. Глобальные настройки обновления игнорируются.</p>
+</li>
+<li>
+<p>При выборе этой настройки отображается список доступных окон обновления. Выберите одно.</p>
+</li>
+<li>Для настройки нового окна обновления OneAgent перейдите в <strong>Settings</strong> &gt; <strong>Updates</strong> &gt; <strong>Update windows for OneAgent updates</strong>.</li>
+<li><strong>No automatic updates</strong><br />
+ Не обновлять OneAgent в этой группе хостов автоматически. Глобальные настройки обновления игнорируются.</li>
+</ul>
+</li>
+</ol>
+<p>Ручной запуск <strong>Update now to target version</strong> обновит все хосты с выбранной ОС и архитектурой независимо от статуса автоматического обновления.</p>
+<p>Настройка обновления OneAgent на уровне хоста</p>
+<p>Настройки обновления OneAgent на уровне хоста переопределяют настройки обновления на глобальном уровне и уровне группы хостов.</p>
+<ol>
+<li>
+<p>Откройте страницу <strong>Host</strong> для хоста, который хотите настроить.<br />
+   Варианты доступа:</p>
+</li>
+<li>
+<p>Перейдите в <strong>Hosts</strong> и выберите хост.</p>
+</li>
+<li>Перейдите в <strong>Settings</strong> &gt; <strong>Monitoring</strong> &gt; <strong>Monitoring overview</strong>, выберите вкладку <strong>Hosts</strong> и выберите хост.</li>
+<li>На странице <strong>Host</strong> откройте меню браузера (<strong>...</strong>) и выберите <strong>Settings</strong>.</li>
+<li>Выберите <strong>OneAgent updates</strong> в левой части страницы.</li>
+<li>
+<p>Выберите один из вариантов обновления:</p>
+</li>
+<li>
+<p><strong>Inherit...</strong><br />
+     Следовать настройкам обновления группы хостов или глобальным настройкам для этого OneAgent.</p>
+<ul>
+<li>Если выбранный хост принадлежит группе хостов, текущая настройка группы отображается в скобках, а имя группы является ссылкой на страницу конфигурации группы.</li>
+<li>Если выбранный хост не принадлежит группе хостов, глобальная настройка отображается в скобках, а «global» является ссылкой на глобальную страницу конфигурации (<strong>Settings</strong> &gt; <strong>Updates</strong> &gt; <strong>OneAgent updates</strong>).</li>
+<li><strong>Automatic updates at earliest convenience</strong><br />
+ Обновлять этот OneAgent автоматически независимо от окон обновления. Настройки обновления группы хостов игнорируются.</li>
+<li>
+<p><strong>Automatic updates during update windows</strong><br />
+ Обновлять этот OneAgent автоматически в течение выбранного окна обновления. Глобальные настройки обновления игнорируются.</p>
+</li>
+<li>
+<p>При выборе этой настройки отображается список доступных окон обновления. Выберите одно.</p>
+</li>
+<li>Для настройки нового окна обновления OneAgent перейдите в <strong>Settings</strong> &gt; <strong>Updates</strong> &gt; <strong>Update windows for OneAgent updates</strong>.</li>
+<li><strong>No automatic updates</strong><br />
+ Не обновлять этот OneAgent автоматически. Глобальные настройки обновления игнорируются.</li>
+</ul>
+</li>
+</ol>
+<p>Ручное обновление OneAgent на отдельных хостах</p>
+<p>Для ручного обновления OneAgent на отдельном хосте:</p>
+<ol>
+<li>Перейдите в <strong>Settings &gt; Monitoring &gt; Monitoring overview</strong>.</li>
+<li>Выберите вкладку <strong>Hosts</strong>.</li>
+<li>Для обновления OneAgent или загрузки последней версии выберите <strong>Update</strong> рядом с именем интересующего хоста.</li>
+</ol>
+<p>Кнопка <strong>Update</strong> появляется только если установленная версия OneAgent на конкретном хосте устарела и это полнофункциональный OneAgent (Full-Stack). Кнопка не появляется для PaaS и standalone OneAgent.
+4. Выберите <strong>Update now</strong>.<br />
+   Если кнопка <strong>Update now</strong> недоступна, у вас нет разрешений на загрузку установщика.</p>
+<p>Альтернативно, вы можете загрузить последнюю версию установщика OneAgent, вручную скопировать её на целевой хост и выполнить установку непосредственно на нём.</p>
+<p>Выбор версии OneAgent для установки на новые хосты</p>
+<p>Для управления версией OneAgent, автоматически устанавливаемой на все новые хосты:</p>
+<ol>
+<li>Перейдите в <strong>Settings</strong> &gt; <strong>Updates</strong> &gt; <strong>OneAgent updates</strong>.</li>
+<li>В разделе <strong>Update mode</strong> выберите <strong>No automatic updates</strong> для отключения автоматических обновлений OneAgent.</li>
+</ol>
+<p>Подробнее об отключении автоматических обновлений OneAgent на PaaS/Kubernetes смотрите в разделе <a href="../../setup-on-k8s/reference/dynakube-parameters/" title="Список доступных параметров для настройки Dynatrace Operator на Kubernetes.">DynaKube parameters for Dynatrace Operator on Kubernetes/OpenShift</a>.
+3. В разделе <strong>Target version</strong> выберите версию OneAgent для установки на все новые хосты.</p>
+<p>Выбранная версия OneAgent также используется для PaaS-интеграций.</p>
+<p>Выбор версии OneAgent для обновления</p>
+<p>Для выбора версии OneAgent, до которой выполняется обновление:</p>
+<ol>
+<li>Перейдите в <strong>Settings</strong> &gt; <strong>Updates</strong> &gt; <strong>OneAgent updates</strong>.</li>
+<li>
+<p>В списке <strong>Target version</strong> можно указать конкретную версию по номеру или выбрать относительную целевую версию:</p>
+</li>
+<li>
+<p><strong>Latest stable version</strong><br />
+     Наиболее свежая стабильная версия OneAgent, доступная в вашем окружении. Фактический номер версии отображается в скобках.</p>
+</li>
+<li><strong>Previous stable version</strong><br />
+     Стабильная версия, предшествующая <strong>Latest stable version</strong>. Соответствующий номер версии отображается в скобках. Номер версии OneAgent увеличивается на <em>два</em> при каждом выпуске, поэтому это число будет на <em>два</em> меньше последней версии.</li>
+<li>
+<p><strong>Older stable version</strong><br />
+     Стабильная версия, предшествующая <strong>Previous stable version</strong>. Соответствующий номер версии отображается в скобках. Номер версии OneAgent увеличивается на <em>два</em> при каждом выпуске, поэтому это число будет на <em>четыре</em> меньше последней версии.</p>
+</li>
+<li>
+<p><strong>Specific OneAgent version</strong></p>
+</li>
+</ol>
+<p>Целевая версия используется для:</p>
+<ul>
+<li>Автоматических обновлений</li>
+<li>Автоматических обновлений в течение окон обслуживания</li>
+<li>Ручных обновлений при выборе версии для обновления</li>
+</ul>
+<p>Целевую версию и режим обновления можно задать на:</p>
+<ul>
+<li><strong>Уровне окружения</strong> — влияет на все OneAgent окружения. Также используется для Deployment API.</li>
+<li><strong>Уровне группы хостов</strong> — влияет на все OneAgent группы хостов. Переопределяет уровень окружения. Не влияет на Deployment API.</li>
+<li><strong>Уровне хоста</strong> — влияет на OneAgent на этом хосте. Переопределяет настройки группы хостов и уровня окружения. Не влияет на Deployment API.</li>
+</ul>
+<p>Если вы выберете версию, более старую чем текущая развёрнутая, откатить OneAgent не удастся. Для перехода на более старую версию необходимо установить более новую версию поверх существующей.</p>
+<h2 id="_2">Настройка окон обновления<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<p>Окна обновления OneAgent используются для планирования автоматических обновлений OneAgent при выборе варианта <strong>Automatic updates during update windows</strong> на глобальном уровне, уровне группы хостов или уровне хоста.</p>
+<p>Окна обновления в настоящее время не применяются в окружениях Kubernetes.</p>
+<p>Просмотр всех окон обновления OneAgent</p>
+<ol>
+<li>Перейдите в <strong>Settings</strong> &gt; <strong>Updates</strong> &gt; <strong>Update windows for OneAgent updates</strong>.</li>
+<li>Просмотрите список всех существующих окон обновления OneAgent.</li>
+</ol>
+<p>Включение или отключение окна обновления OneAgent</p>
+<ol>
+<li>Перейдите в <strong>Settings</strong> &gt; <strong>Updates</strong> &gt; <strong>Update windows for OneAgent updates</strong>.</li>
+<li>Найдите окно обновления, которое хотите включить или отключить.</li>
+<li>Включите или отключите переключатель.</li>
+</ol>
+<p>Удаление окна обновления OneAgent</p>
+<ol>
+<li>Перейдите в <strong>Settings</strong> &gt; <strong>Updates</strong> &gt; <strong>Update windows for OneAgent updates</strong>.</li>
+<li>Найдите окно обновления, которое хотите удалить.</li>
+<li>Выберите <strong>X</strong> в столбце <strong>Delete</strong>.</li>
+</ol>
+<p>Создание или изменение окна обновления OneAgent</p>
+<ol>
+<li>Перейдите в <strong>Settings</strong> &gt; <strong>Updates</strong> &gt; <strong>Update windows for OneAgent updates</strong>.</li>
+<li>
+<p>Откройте окно обновления для редактирования:</p>
+</li>
+<li>
+<p>Для создания нового окна обновления выберите <strong>Create update window</strong>.</p>
+</li>
+<li>Для редактирования существующего окна разверните <strong>Details</strong> для нужного окна.</li>
+<li>Задайте <strong>Name</strong> — имя, под которым это окно будет отображаться в веб-интерфейсе и API Dynatrace.</li>
+<li>
+<p>Опишите окно обновления:</p>
+</li>
+<li>
+<p>Для разового, неповторяющегося окна обновления:</p>
+<ul>
+<li>Установите <strong>Recurrence</strong> в <code>Once</code></li>
+<li>Установите <strong>Update time</strong> на дату и время разового обновления OneAgent</li>
+<li>
+<p>Для планирования окна обновления каждые x дней:</p>
+</li>
+<li>
+<p>Установите <strong>Recurrence</strong> в <code>Daily intervals</code></p>
+</li>
+<li>Установите <strong>Every x days</strong> на количество дней между обновлениями (<code>1</code> = каждый день, <code>2</code> = каждые два дня, <code>3</code> = каждые три дня и т.д.)</li>
+<li>Установите <strong>Update time</strong> на время в указанные дни для обновления OneAgent</li>
+<li>
+<p>Для планирования окна обновления каждые x недель в определённые дни недели:</p>
+</li>
+<li>
+<p>Установите <strong>Recurrence</strong> в <code>Weekly intervals</code></p>
+</li>
+<li>Включите каждый день недели, который нужно добавить в окно обновления</li>
+<li>Установите <strong>Every x weeks</strong> на количество недель между обновлениями (<code>1</code> = каждую неделю, <code>2</code> = каждые две недели и т.д.)</li>
+<li>Установите <strong>Update time</strong> на время в указанные дни для обновления OneAgent</li>
+<li>
+<p>Для планирования окна обновления каждые x месяцев в определённый день месяца:</p>
+</li>
+<li>
+<p>Установите <strong>Recurrence</strong> в <code>Monthly intervals</code></p>
+</li>
+<li>Установите <strong>Day of the month</strong> на день месяца для обновления OneAgent</li>
+<li>Установите <strong>Every x months</strong> на количество месяцев между обновлениями (<code>1</code> = каждый месяц, <code>2</code> = каждые два месяца и т.д.)</li>
+<li>Выберите <strong>Save changes</strong>.</li>
+</ul>
+</li>
+</ol>
+<p>После настройки окна обновления его можно применить для настройки автоматических обновлений OneAgent на глобальном уровне, уровне группы хостов или уровне хоста.</p>
+<p>Применение окна обновления OneAgent</p>
+<p>Окно обновления OneAgent можно применить к автоматическим обновлениям на уровне окружения, группы хостов или хоста.</p>
+<p><strong>Окружение</strong></p>
+<ol>
+<li>Перейдите в <strong>Settings</strong> &gt; <strong>Updates</strong> &gt; <strong>OneAgent updates</strong>.</li>
+<li>Выберите <strong>Automatic updates during update windows</strong>.</li>
+<li>В появившемся списке выберите окно обновления для применения на этом уровне.</li>
+</ol>
+<p><strong>Группа хостов</strong></p>
+<ol>
+<li>Перейдите в <strong>Settings</strong> &gt; <strong>Monitoring</strong> &gt; <strong>Monitoring overview</strong>.</li>
+<li>Найдите любой хост в нужной группе хостов.</li>
+<li>Выберите название группы хостов (не имя хоста).</li>
+<li>На странице <strong>Host group settings</strong> выберите <strong>OneAgent updates</strong> в левой части страницы.</li>
+<li>Выберите <strong>Automatic updates during update windows</strong>.</li>
+<li>В появившемся списке выберите окно обновления для применения на этом уровне.</li>
+</ol>
+<p><strong>Хост</strong></p>
+<ol>
+<li>
+<p>Откройте страницу <strong>Host</strong> для хоста, который хотите настроить.<br />
+   Варианты доступа:</p>
+</li>
+<li>
+<p>Перейдите в <strong>Hosts</strong> и выберите хост.</p>
+</li>
+<li>Перейдите в <strong>Settings</strong> &gt; <strong>Monitoring</strong> &gt; <strong>Monitoring overview</strong>, выберите вкладку <strong>Hosts</strong> и выберите хост.</li>
+<li>На странице <strong>Host</strong> откройте меню браузера (<strong>...</strong>) и выберите <strong>Settings</strong>.</li>
+<li>Выберите <strong>OneAgent updates</strong> в левой части страницы.</li>
+<li>Выберите <strong>Automatic updates during update windows</strong>.</li>
+<li>В появившемся списке выберите окно обновления для применения на этом уровне.</li>
+</ol>
+<p>API</p>
+<p>Эквиваленты API смотрите в разделе <a href="../../../dynatrace-api/configuration-api/oneagent-configuration/" title="Управляйте конфигурацией OneAgent через Dynatrace API.">API конфигурации OneAgent</a>.</p>
+<h2 id="_3">Отключение автоматических обновлений<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<p>Отключать автоматические обновления OneAgent не рекомендуется. В целях диагностики временно отключить автоматические обновления можно в Dynatrace в разделе <strong>Settings</strong> &gt; <strong>Updates</strong> &gt; <strong>OneAgent updates</strong>. Однако если у вас очень строгие правила развёртывания программного обеспечения, автообновления можно отключить постоянно с помощью <a href="../oneagent-configuration-via-command-line-interface/#automatic-updates" title="Узнайте, как выполнять задачи настройки OneAgent без переустановки.">интерфейса командной строки OneAgent</a>.</p>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  К началу
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      © 2026 Dynatrace Docs | Yerkebulan Ardabayev
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/Yerkebulan-Ardabayev" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../../..", "features": ["navigation.indexes", "navigation.prune", "navigation.path", "navigation.tracking", "navigation.top", "search.suggest", "search.highlight", "search.share", "content.code.copy", "content.code.annotate", "content.tabs.link", "content.tooltips", "toc.follow"], "search": "../../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u0421\u043a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u043d\u043e \u0432 \u0431\u0443\u0444\u0435\u0440", "clipboard.copy": "\u041a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u0442\u044c \u0432 \u0431\u0443\u0444\u0435\u0440", "search.result.more.one": "\u0415\u0449\u0451 1 \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.more.other": "\u0415\u0449\u0451 # \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.none": "\u0421\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439 \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u043e", "search.result.one": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e 1 \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0435", "search.result.other": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439: #", "search.result.placeholder": "\u041d\u0430\u0447\u043d\u0438\u0442\u0435 \u043f\u0435\u0447\u0430\u0442\u0430\u0442\u044c \u0434\u043b\u044f \u043f\u043e\u0438\u0441\u043a\u0430", "search.result.term.missing": "\u041e\u0442\u0441\u0443\u0442\u0441\u0442\u0432\u0443\u0435\u0442", "select.version": "\u0412\u044b\u0431\u0435\u0440\u0438\u0442\u0435 \u0432\u0435\u0440\u0441\u0438\u044e"}, "version": null}</script>
+    
+    
+  
+      <script src="../../../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../../../../assets/javascripts/groq-chat.js?sha=17d46ba74"></script>
+      
+    
+  <script>
+    (function() {
+      // --- Keyboard shortcut Ctrl+K / Cmd+K for search ---
+      document.addEventListener('keydown', function(e) {
+        if ((e.ctrlKey || e.metaKey) && e.key === 'k') {
+          e.preventDefault();
+          var searchInput = document.querySelector('.md-search__input');
+          if (searchInput) {
+            searchInput.focus();
+            var searchToggle = document.querySelector('[data-md-toggle="search"]');
+            if (searchToggle && !searchToggle.checked) {
+              searchToggle.checked = true;
+              searchToggle.dispatchEvent(new Event('change'));
+            }
+          }
+        }
+        // --- "/" focuses search like GitHub / Algolia docs ---
+        if (e.key === '/' && !/^(input|textarea|select)$/i.test(e.target.tagName)) {
+          e.preventDefault();
+          var inp = document.querySelector('.md-search__input');
+          if (inp) {
+            inp.focus();
+            var t = document.querySelector('[data-md-toggle="search"]');
+            if (t && !t.checked) { t.checked = true; t.dispatchEvent(new Event('change')); }
+          }
+        }
+      });
+    })();
+  </script>
+
+  </body>
+</html>

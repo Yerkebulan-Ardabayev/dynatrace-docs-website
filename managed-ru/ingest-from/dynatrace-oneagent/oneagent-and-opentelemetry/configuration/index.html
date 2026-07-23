@@ -1,0 +1,3508 @@
+
+<!doctype html>
+<html lang="ru" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Документация Dynatrace Managed с AI-помощником">
+      
+      
+        <meta name="author" content="Yerkebulan Ardabayev">
+      
+      
+        <link rel="canonical" href="https://yerkebulan-ardabayev.github.io/dynatrace-docs-website/managed-ru/ingest-from/dynatrace-oneagent/oneagent-and-opentelemetry/configuration/">
+      
+      
+        <link rel="prev" href="../../oneagent-aging-mechanism/">
+      
+      
+        <link rel="next" href="../oneagent-otel/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>Включение OpenTelemetry Span Sensor для OneAgent - Dynatrace — Документация</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Inter";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../../assets/stylesheets/extra.v11.css?sha=17d46ba74">
+    
+    <script>__md_scope=new URL("../../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  <style>
+    /* DocFlow DT Logo Badge — injected via template override */
+    .md-header__button.md-logo {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .md-header__button.md-logo img,
+    .md-header__button.md-logo svg {
+      display: none !important;
+    }
+    .md-header__button.md-logo::before {
+      content: 'DT';
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 28px;
+      height: 28px;
+      border-radius: 6px;
+      background: linear-gradient(135deg, #00d4aa 0%, #7c3aed 100%);
+      color: white;
+      font-size: 11px;
+      font-weight: 700;
+      font-family: 'Inter', sans-serif;
+      letter-spacing: -0.02em;
+      flex-shrink: 0;
+    }
+
+    /* Search Ctrl+K badge — inside input field */
+    .md-search__form {
+      position: relative;
+    }
+    .md-search__form::after {
+      content: 'Ctrl+K';
+      display: none;
+      align-items: center;
+      padding: 0.15rem 0.4rem;
+      border-radius: 4px;
+      border: 1px solid var(--docflow-border);
+      background: var(--md-default-bg-color);
+      font-size: 10px;
+      font-family: 'JetBrains Mono', monospace;
+      color: var(--md-default-fg-color--lighter);
+      white-space: nowrap;
+      pointer-events: none;
+      position: absolute;
+      right: 0.5rem;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+    @media (min-width: 60em) {
+      .md-search__form::after {
+        display: flex;
+      }
+    }
+  </style>
+
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="custom">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#opentelemetry-span-sensor-oneagent" class="md-skip">
+          Перейти к содержанию
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+  
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Верхний колонтитул">
+    <a href="../../../../.." title="Dynatrace — Документация" class="md-header__button md-logo" aria-label="Dynatrace — Документация" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M11 15H6l7-14v8h5l-7 14z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Dynatrace — Документация
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Включение OpenTelemetry Span Sensor для OneAgent
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Переключить на светлую тему"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Переключить на светлую тему" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Переключить на тёмную тему"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Переключить на тёмную тему" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Поиск" placeholder="Поиск" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Поиск">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Поделиться" aria-label="Поделиться" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Очистить" aria-label="Очистить" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Инициализация поиска
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/Yerkebulan-Ardabayev/dynatrace-docs-website" title="Перейти к репозиторию" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    dynatrace-docs-website
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Навигация" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../../.." title="Dynatrace — Документация" class="md-nav__button md-logo" aria-label="Dynatrace — Документация" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M11 15H6l7-14v8h5l-7 14z"/></svg>
+
+    </a>
+    Dynatrace — Документация
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/Yerkebulan-Ardabayev/dynatrace-docs-website" title="Перейти к репозиторию" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    dynatrace-docs-website
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Главная
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../../../ru/getting-started/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Начало работы
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../../installation/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Кластер Managed
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Источники данных
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Источники данных
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обзор
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../amazon-web-services/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Настройка Dynatrace на Amazon Web Services
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../bulk-configuration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Удалённое управление конфигурацией OneAgent и ActiveGate
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../dynatrace-activegate/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dynatrace ActiveGate
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_5" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4_5" id="__nav_4_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dynatrace OneAgent
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Dynatrace OneAgent
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обзор
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../adaptive-traffic-management/adaptive-traffic-management-managed/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Адаптивное управление трафиком
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../deployment-orchestration/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Оркестрация развёртывания OneAgent
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../installation-and-operation/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Установка OneAgent на сервер
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../oa-requirements/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Требования к OneAgent
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../oneagent-aging-mechanism/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Механизм устаревания файлов OneAgent
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_5_7" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4_5_7" id="__nav_4_5_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OneAgent и OpenTelemetry
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_5_7_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4_5_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    OneAgent и OpenTelemetry
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Включение OpenTelemetry Span Sensor для OneAgent
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../oneagent-otel/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Использование OneAgent с данными OpenTelemetry
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../oneagent-configuration-via-command-line-interface/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Настройка OneAgent через интерфейс командной строки
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../oneagent-features/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Функции OneAgent
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../oneagent-health/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обзор работоспособности OneAgent
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../oneagent-security/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Безопасность OneAgent
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../oneagent-troubleshooting/oneagent-diagnostics/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Диагностика OneAgent
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../oneagent-update/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обновление OneAgent
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resource-attributes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Атрибуты ресурса
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../extend-dynatrace/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Расширение Dynatrace
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../extensions/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Расширения
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../google-cloud-platform/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Настройка Dynatrace на Google Cloud
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../microsoft-azure-services/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Настройка Dynatrace на Microsoft Azure
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../opentelemetry/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OpenTelemetry и Dynatrace
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../setup-on-container-platforms/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Настройка Dynatrace на контейнерных и PaaS-платформах
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../setup-on-k8s/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Настройка Dynatrace на Kubernetes
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../technology-support/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Поддержка технологий
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    
+  
+  
+  
+    <a href="../../../../observe/application-observability/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Наблюдаемость
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../../dynatrace-intelligence/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Davis AI
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    
+  
+  
+  
+    <a href="../../../../analyze-explore-automate/dashboards-classic/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Анализ
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../../deliver/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Deliver
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    
+  
+  
+  
+    <a href="../../../../secure/application-security/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Безопасность приложений
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    
+  
+  
+  
+    <a href="../../../../manage/account-management/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Управление
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    
+  
+  
+  
+    <a href="../../../../platform/oneagent/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Платформа
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../../dynatrace-api/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../../whats-new/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Что нового
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../../offline-doc/how-do-i-enable-synthetic-monitors/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Офлайн-документация
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../../../ru/training/day1-introduction/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обучение
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../ai/groq/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI Помощник
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Содержание">
+  
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+                
+
+
+
+  
+
+
+  <nav class="md-path" aria-label="Навигация" >
+    <ol class="md-path__list">
+      
+        
+  
+  
+    <li class="md-path__item">
+      <a href="../../../../.." class="md-path__link">
+        
+  <span class="md-ellipsis">
+    Главная
+  </span>
+
+      </a>
+    </li>
+  
+
+      
+      
+        
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="../../../" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    Источники данных
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="../../" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    Dynatrace OneAgent
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="./" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    OneAgent и OpenTelemetry
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ol>
+  </nav>
+
+              
+              <article class="md-content__inner md-typeset">
+                
+  
+                  
+
+
+
+<h1 id="opentelemetry-span-sensor-oneagent">Включение OpenTelemetry Span Sensor для OneAgent<a class="headerlink" href="#opentelemetry-span-sensor-oneagent" title="Permanent link">&para;</a></h1>
+<h1 id="opentelemetry-span-sensor-oneagent_1">Включение OpenTelemetry Span Sensor для OneAgent<a class="headerlink" href="#opentelemetry-span-sensor-oneagent_1" title="Permanent link">&para;</a></h1>
+<ul>
+<li>How-to guide</li>
+<li>5-min read</li>
+<li>Updated on Feb 09, 2026</li>
+</ul>
+<p>В дополнение к конфигурации на стороне приложения ряд специфичных для Dynatrace настроек позволяет контролировать использование данных OpenTelemetry в Dynatrace.</p>
+<p>Чтобы узнать, как отправлять данные OpenTelemetry в Dynatrace OneAgent, смотрите <a href="../oneagent-otel/" title="Узнайте, как отправлять данные OpenTelemetry в Dynatrace OneAgent.">Использование OneAgent с данными OpenTelemetry</a>.</p>
+<h2 id="_1">Предварительные требования<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<p>Java</p>
+<p>Go</p>
+<p>Node.js</p>
+<p>PHP</p>
+<p>.NET и .NET Core</p>
+<p>.NET Framework</p>
+<p>Python</p>
+<table>
+<thead>
+<tr>
+<th>Фреймворк мониторинга</th>
+<th>Версии</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://github.com/open-telemetry/opentelemetry-java/">OpenTelemetry</a></td>
+<td>1.0 - 1.3, 1.4 - 1.54, 1.55 - 1.60</td>
+</tr>
+<tr>
+<td><a href="https://opentracing.io/guides/java/">OpenTracing</a></td>
+<td>0.33, 0.32, 0.31</td>
+</tr>
+</tbody>
+</table>
+<p>Поддерживается в <a href="../../../amazon-web-services/integrate-into-aws/aws-lambda-integration/" title="Возможности AWS Lambda и варианты интеграции">AWS Lambda</a>.</p>
+<p>Чтобы включить OpenTelemetry Java:</p>
+<ol>
+<li>
+<p>Перейдите в <strong>Settings</strong> &gt; <strong>Preferences</strong> &gt; <strong>OneAgent network modules &amp; integrations</strong>.</p>
+</li>
+<li>
+<p>Найдите и включите <strong>OpenTelemetry (Java)</strong>.</p>
+</li>
+</ol>
+<p>Существующие трейсеры будут заменены и перестанут работать после включения OpenTelemetry Java.</p>
+<table>
+<thead>
+<tr>
+<th>Фреймворк мониторинга</th>
+<th>Версии</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://github.com/open-telemetry/opentelemetry-go/">OpenTelemetry</a></td>
+<td>1.0 - 1.7, 1.8 - 1.11.0, 1.11.1 - 1.27, 1.28 - 1.43</td>
+</tr>
+</tbody>
+</table>
+<p>Opt-in</p>
+<p>Чтобы включить OpenTelemetry Go:</p>
+<ol>
+<li>
+<p>Перейдите в <strong>Settings</strong> &gt; <strong>Preferences</strong> &gt; <strong>OneAgent network modules &amp; integrations</strong>.</p>
+</li>
+<li>
+<p>Найдите и включите <strong>OpenTelemetry (Go) [Opt-In]</strong>.</p>
+</li>
+</ol>
+<p>Существующие трейсеры не затрагиваются поддержкой OneAgent OpenTelemetry для Go.</p>
+<p>OneAgent версии 1.217 и более ранних: OpenTelemetry Go Sensor распространяет контекст Dynatrace между процессами только при включённой опции <strong>Send W3C Trace Context HTTP headers</strong>:</p>
+<ol>
+<li>Перейдите в <strong>Settings</strong> &gt; <strong>Preferences</strong> &gt; <strong>OneAgent features</strong>.</li>
+<li>Включите <strong>Send W3C trace context HTTP headers</strong>.</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>Фреймворк мониторинга</th>
+<th>Версии</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://www.npmjs.com/package/@opentelemetry/api">OpenTelemetry</a></td>
+<td>1</td>
+</tr>
+</tbody>
+</table>
+<p>Opt-in</p>
+<p>Чтобы включить OpenTelemetry Node.js:</p>
+<ol>
+<li>
+<p>Перейдите в <strong>Settings</strong> &gt; <strong>Preferences</strong> &gt; <strong>OneAgent network modules &amp; integrations</strong>.</p>
+</li>
+<li>
+<p>Найдите и включите <strong>OpenTelemetry (Node.js) [Opt-In]</strong>.</p>
+</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>Фреймворк мониторинга</th>
+<th>Версии</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://github.com/open-telemetry/opentelemetry-php">OpenTelemetry</a></td>
+<td>1.0.0</td>
+</tr>
+</tbody>
+</table>
+<p>Opt-in</p>
+<p>Чтобы включить OpenTelemetry PHP:</p>
+<ol>
+<li>
+<p>Перейдите в <strong>Settings</strong> &gt; <strong>Preferences</strong> &gt; <strong>OneAgent network modules &amp; integrations</strong>.</p>
+</li>
+<li>
+<p>Найдите и включите <strong>OpenTelemetry (PHP) [Opt-In]</strong>.</p>
+</li>
+</ol>
+<p>Существующие трейсеры не затрагиваются поддержкой OneAgent OpenTelemetry для PHP.</p>
+<table>
+<thead>
+<tr>
+<th>Фреймворк мониторинга</th>
+<th>Версии</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://github.com/open-telemetry/opentelemetry-dotnet">OpenTelemetry</a></td>
+<td>1.0.1+, 1.1+</td>
+</tr>
+</tbody>
+</table>
+<p>Opt-in</p>
+<p>Чтобы включить OpenTelemetry .NET и .NET Core:</p>
+<ol>
+<li>
+<p>Перейдите в <strong>Settings</strong> &gt; <strong>Preferences</strong> &gt; <strong>OneAgent network modules &amp; integrations</strong>.</p>
+</li>
+<li>
+<p>Найдите и включите <strong>OpenTelemetry (.NET) [Opt-In]</strong>.</p>
+</li>
+</ol>
+<p>Существующие трейсеры не затрагиваются поддержкой OneAgent OpenTelemetry для .NET.</p>
+<table>
+<thead>
+<tr>
+<th>Фреймворк мониторинга</th>
+<th>Версии</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://github.com/open-telemetry/opentelemetry-dotnet">OpenTelemetry</a></td>
+<td>1.0.1+, 1.1+</td>
+</tr>
+</tbody>
+</table>
+<p>Opt-in</p>
+<p>Чтобы включить OpenTelemetry .NET Framework:</p>
+<ol>
+<li>
+<p>Перейдите в <strong>Settings</strong> &gt; <strong>Preferences</strong> &gt; <strong>OneAgent network modules &amp; integrations</strong>.</p>
+</li>
+<li>
+<p>Найдите и включите <strong>OpenTelemetry (.NET) [Opt-In]</strong>.</p>
+</li>
+</ol>
+<p>Существующие трейсеры не затрагиваются поддержкой OneAgent OpenTelemetry для .NET.</p>
+<table>
+<thead>
+<tr>
+<th>Фреймворк мониторинга</th>
+<th>Версии</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://github.com/open-telemetry/opentelemetry-python">OpenTelemetry</a></td>
+<td>1.1+</td>
+</tr>
+</tbody>
+</table>
+<p>Opt-in</p>
+<p>Чтобы включить OpenTelemetry Python:</p>
+<ol>
+<li>
+<p>Перейдите в <strong>Settings</strong> &gt; <strong>Preferences</strong> &gt; <strong>OneAgent network modules &amp; integrations</strong>.</p>
+</li>
+<li>
+<p>Найдите и включите <strong>OpenTelemetry (Python) [Opt-In]</strong>.</p>
+</li>
+</ol>
+<p>Существующие трейсеры не затрагиваются поддержкой OneAgent OpenTelemetry для Python.</p>
+<h2 id="_2">Редакция атрибутов<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<p>OpenTelemetry Span Sensor кодового модуля OneAgent автоматически захватывает все атрибуты OpenTelemetry. Чтобы предотвратить случайное сохранение персональных данных, можно исключить определённые ключи атрибутов, значения которых не должны сохраняться. Исключая атрибуты, содержащие персональные данные, вы можете выполнять требования конфиденциальности вашей организации и контролировать область хранимых данных мониторинга.</p>
+<p>Чтобы настроить параметры хранения и маскировки атрибутов для вашего окружения:</p>
+<ol>
+<li>
+<p>Перейдите в <strong>Settings</strong> &gt; <strong>Preferences</strong> &gt; <strong>OneAgent network modules &amp; integrations</strong>.</p>
+</li>
+<li>
+<p>Выберите <strong>Server-side service monitoring</strong> &gt; <strong>Attribute capturing</strong>.</p>
+</li>
+<li>
+<p>Необязательно: чтобы изменить параметры сохранения атрибутов OpenTelemetry по умолчанию, перейдите в <strong>Preferences</strong>.</p>
+</li>
+<li>
+<p>Чтобы хранить все атрибуты, кроме перечисленных в списке <strong>Blocked attributes</strong>, выберите <strong>Allow all attributes</strong>.</p>
+</li>
+<li>Чтобы блокировать все атрибуты, кроме перечисленных в списке <strong>Allowed attributes</strong>, выберите <strong>Block all attributes</strong>.</li>
+</ol>
+<p>Можно выбрать только один параметр.
+4. Добавьте имя атрибута в список атрибутов.</p>
+<ol>
+<li>
+<p>На странице <strong>Attribute capturing</strong> выберите <strong>Blocked attributes</strong> или <strong>Allowed attributes</strong>.</p>
+<p>Список разрешённых атрибутов: Dynatrace рекомендует включить несколько основных атрибутов, таких как <code>service.name</code> или <code>service.version</code>. Для удобства использования Dynatrace поставляется с конфигурацией по умолчанию, которую можно настроить.
+   2. Выберите <strong>Add item</strong> для добавления нового ключа в список атрибутов и введите ключ.
+   3. Выберите <strong>Save changes</strong>.
+5. Для маскировки сохранённого значения атрибута выполните следующие действия.</p>
+</li>
+<li>
+<p>На странице <strong>Attribute capturing</strong> выберите <strong>Attribute data masking</strong>.</p>
+</li>
+<li>Выберите <strong>Add item</strong> для добавления нового ключа в список маскируемых атрибутов.</li>
+<li>Введите ключ сохранённого значения и выберите параметр из раскрывающегося списка <strong>Masking</strong>. Подробнее о параметрах маскировки смотрите в разделе <a href="../../../../manage/data-privacy-and-security/data-privacy/personal-data-captured-by-dynatrace/#otel-traces" title="Узнайте, какие типы данных конечных пользователей могут быть захвачены во время мониторинга Dynatrace и какие методы доступны для маскировки персональных данных конечных пользователей.">Трассировки OpenTelemetry</a>.</li>
+<li>Выберите <strong>Save changes</strong>.</li>
+</ol>
+<p>Затем ключ атрибута можно найти на странице <strong>Distributed traces</strong> на <a href="../../../../observe/application-observability/distributed-traces/use-cases/segment-request/#summary-tab" title="Повысьте производительность распределённой системы, сегментируя запросы с медленным временем отклика через Service flow и анализируя их распределённые трассировки.">вкладке <strong>Summary</strong></a>.</p>
+<h2 id="_3">Ограничения поиска трассировок<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<h3 id="_4">Атрибуты ресурсов<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<p>Поиск по атрибуту ресурса ограничен именем сервиса: фильтруйте по <code>Service name</code> на странице <strong>Distributed traces</strong>.</p>
+<h3 id="span">Атрибуты span<a class="headerlink" href="#span" title="Permanent link">&para;</a></h3>
+<p>Поиск по атрибуту span ограничен именем span: фильтруйте по <code>Request</code> на странице <strong>Distributed traces</strong>.</p>
+<h2 id="span-sensor">Принцип работы Span Sensor<a class="headerlink" href="#span-sensor" title="Permanent link">&para;</a></h2>
+<p>Дополнительные сведения об OpenTelemetry Span Sensor кодового модуля OneAgent смотрите в разделе <a href="../oneagent-otel/#oneagent-otel-span-sensor" title="Узнайте, как отправлять данные OpenTelemetry в Dynatrace OneAgent.">Обнаружение span OpenTelemetry с помощью OpenTelemetry Span Sensor кодового модуля OneAgent</a>.</p>
+<h3 id="_5">Точки входа<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
+<p>Во избежание возможных конфликтов с существующими распределёнными трассировками PurePath OneAgent по умолчанию принимает только span-ы с <a href="https://opentelemetry.io/docs/concepts/signals/traces/#span-kind">типом span</a> <code>Server</code> или <code>Consumer</code>. Обычно это не является проблемой, поскольку библиотеки инструментирования, как правило, настраивают соответствующий тип span. Однако это следует учитывать, если ваше приложение полностью использует ручную инструментацию.</p>
+<p>Это поведение можно настроить с помощью <a href="../../../extend-dynatrace/extend-tracing/span-settings/#span-entry-points" title="Узнайте, как настраивать параметры span для OpenTelemetry и OpenTracing.">правила точки входа</a>. Для этого в Dynatrace перейдите в <strong>Settings</strong> &gt; <strong>Server-side service monitoring</strong> &gt; <strong>Span entry points</strong> и создайте новое правило с соответствующим действием и условием совпадения.</p>
+<h3 id="span_1">Иерархия span<a class="headerlink" href="#span_1" title="Permanent link">&para;</a></h3>
+<p>В зависимости от вашей конфигурации вы можете столкнуться с «плоским обогащением span». Это когда span-ы отображаются в Dynatrace в виде плоского списка вместо иерархии дерева. Хотя в целом это стандартное поведение при приёме OpenTelemetry трассировок OneAgent, иерархия всё же может отражать фактические связи между span-ами, как определено инструментацией, в зависимости от задействованных кодовых модулей OneAgent и их поддержки инструментированных технологий.</p>
+<p>Листовые span-ы</p>
+<p>При объединении span-ов OpenTelemetry с трассировками датчиков OneAgent убедитесь, что span-ы OpenTelemetry являются листовыми и не располагаются между span-ами OneAgent.</p>
+<h3 id="_6">Захват атрибутов<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
+<p>Поскольку OneAgent принимает span-ы уже в момент их создания, не все окончательные атрибуты могут быть присутствовать при первоначальном приёме. Атрибуты, добавленные позднее, выделяются в Dynatrace примечанием <code>initial value not set</code> и не могут использоваться для правил захвата span, поскольку они ещё не были доступны при оценке правил.</p>
+<h3 id="_7">Распространение контекста<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
+<p>При автоматическом приёме трассировок OpenTelemetry с помощью OneAgent Span Sensor существует разница в распространении контекста между трассировками OpenTelemetry и трассировками OneAgent.</p>
+<p>Хотя распространение трассировок OpenTelemetry может быть уже корректно обработано вашим приложением, важно также согласовать их с трассировкой OneAgent. Это можно сделать с помощью <a href="../../../extend-dynatrace/extend-tracing/span-settings/#span-context-propagation" title="Узнайте, как настраивать параметры span для OpenTelemetry и OpenTracing.">правила распространения контекста</a>. Для настройки в Dynatrace перейдите в <strong>Settings</strong> &gt; <strong>Server-side service monitoring</strong> &gt; <strong>Span context propagation</strong> и создайте правило с действием <code>Propagate</code> и условием совпадения для нужного span (например, на основе имени span или библиотеки инструментирования).</p>
+<p>Старайтесь избегать объединения трассировок для технологий, уже охваченных нативными датчиками OneAgent. Объединение таких span-ов OpenTelemetry с трассировкой OneAgent может привести к неопределённым состояниям.</p>
+<h2 id="oneagent">Экспорт в сторонние бэкенды при использовании OneAgent<a class="headerlink" href="#oneagent" title="Permanent link">&para;</a></h2>
+<p>Хотя трассировки OpenTelemetry всегда экспортируются в другие бэкенды как есть, при запуске инструментированным OneAgent приложением новой трассировки OpenTelemetry происходит небольшая корректировка данных. Это относится только к новым трассировкам, но не к случаям, когда трассировка продолжается через распространение контекста.</p>
+<p>В этом случае OneAgent может уже создать новый объект трассировки при инициализации OpenTelemetry. Если эти две трассировки (с отдельными ID) не будут согласованы, телеметрические данные могут дублироваться или фрагментироваться. Для снижения этого риска при сохранении согласованности трассировок PurePath Dynatrace OneAgent использует следующий подход:</p>
+<ul>
+<li>ID трассировки OpenTelemetry имеет приоритет при экспорте в сторонние системы</li>
+<li>В бэкенде Dynatrace вместо него присваивается ID трассировки PurePath</li>
+</ul>
+<p>Для обеспечения корреляции между этими двумя ID Dynatrace создаёт дополнительные <a href="https://opentelemetry.io/docs/specs/otel/overview/#links-between-spans">ссылки span</a> для каждого span, ссылающиеся на трассировку OpenTelemetry.</p>
+<p>Перезапись ID применяется только к новым трассировкам (не к распространению контекста) и к SDK OpenTelemetry для Go, Java, JavaScript, PHP и Python, но не для .NET.</p>
+<h2 id="_8">Ограничения<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h2>
+<h3 id="java">Java<a class="headerlink" href="#java" title="Permanent link">&para;</a></h3>
+<ul>
+<li>OneAgent версии 1.294 и более ранних: OneAgent заменяет установленные глобальные компоненты OpenTelemetry SDK <code>TracerProvider</code>, <code>Propagator</code> и <code>ContextManager</code>. Поэтому при включённом OpenTelemetry Java трассировки больше не видны этим SDK и не экспортируются в бэкенды, такие как Jaeger.</li>
+<li>OneAgent версии 1.259+: во избежание дублирования OneAgent <a href="#java-span-dropping">игнорирует span-ы из некоторых библиотек автоматической инструментации</a>.</li>
+<li>При наличии датчиков OneAgent и OpenTelemetry для одной технологии возможны дополнительные накладные расходы.</li>
+</ul>
+<h3 id="go">Go<a class="headerlink" href="#go" title="Permanent link">&para;</a></h3>
+<ul>
+<li>OneAgent может инструментировать только реализацию Tracer SDK OpenTelemetry по умолчанию.</li>
+<li>
+<p>При наличии датчиков OneAgent и OpenTelemetry для одной технологии возможны следующие ограничения:</p>
+</li>
+<li>
+<p>Дублирование узлов в распределённых трассировках</p>
+</li>
+<li>Дополнительные накладные расходы</li>
+</ul>
+<h3 id="nodejs">Node.js<a class="headerlink" href="#nodejs" title="Permanent link">&para;</a></h3>
+<ul>
+<li>OneAgent версии 1.331+: во избежание дублирования OneAgent <a href="#nodejs-span-dropping">игнорирует span-ы из некоторых библиотек автоматической инструментации</a>.</li>
+<li>
+<p>OneAgent версии 1.329 и более ранних: при инструментировании OneAgent и OpenTelemetry одного модуля (например, HTTP или GRPC) возможны следующие ограничения:</p>
+</li>
+<li>
+<p>Дублирование узлов в распределённых трассировках</p>
+</li>
+<li>Разрыв распределённых трассировок</li>
+<li>Дополнительные накладные расходы</li>
+<li>OneAgent версии 1.261 и более ранних: OneAgent заменяет установленные глобальные компоненты OpenTelemetry SDK <code>TracerProvider</code>, <code>Propagator</code> и <code>ContextManager</code>. Поэтому при включённом OpenTelemetry Node.js трассировки больше не видны этим SDK и не экспортируются в бэкенды, такие как Jaeger.</li>
+</ul>
+<h3 id="php">PHP<a class="headerlink" href="#php" title="Permanent link">&para;</a></h3>
+<ul>
+<li>OneAgent версии 1.313+: во избежание дублирования OneAgent <a href="#php-span-dropping">игнорирует span-ы из некоторых библиотек автоматической инструментации</a>.</li>
+</ul>
+<h3 id="python">Python<a class="headerlink" href="#python" title="Permanent link">&para;</a></h3>
+<ul>
+<li>
+<p>При наличии датчиков OneAgent и OpenTelemetry для одной технологии возможны следующие ограничения:</p>
+</li>
+<li>
+<p>Дублирование узлов в распределённых трассировках</p>
+</li>
+<li>Разрыв распределённых трассировок</li>
+<li>Дополнительные накладные расходы</li>
+</ul>
+<h3 id="_9">Все языки<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h3>
+<ul>
+<li>OneAgent захватывает атрибуты ресурсов OpenTelemetry только при их передаче через переменные окружения <code>OTEL_SERVICE_NAME</code> и <code>OTEL_RESOURCE_ATTRIBUTES</code>. При использовании API приёма трассировок OpenTelemetry это ограничение не применяется.</li>
+<li>Нельзя создавать <a href="../../../../observe/application-observability/services/request-attributes/" title="Узнайте, что такое атрибуты запросов, и научитесь использовать их на всех уровнях представлений анализа сервисов.">атрибуты запросов</a> (обычно используемые для поиска и фильтрации трассировок) на основе атрибутов ресурсов OpenTelemetry.</li>
+<li>OneAgent усекает значения атрибутов, превышающие 4096 символов.</li>
+</ul>
+<h2 id="span-java">Предотвращение дублирования span в Java<a class="headerlink" href="#span-java" title="Permanent link">&para;</a></h2>
+<p>OneAgent версии 1.259+</p>
+<p>Во избежание дублирования span для областей, охваченных OpenTelemetry и OneAgent, OneAgent пропускает span-ы из следующих библиотек автоматической инструментации Java, если OneAgent настроен на инструментирование вашего Java-приложения и приём span-ов OpenTelemetry.</p>
+<p>Такие span-ы пропускаются только OneAgent. Экспорт в сторонние системы (например, другие бэкенды или Collector) не затрагивается.</p>
+<blockquote>
+<p><em>Reference-таблица ниже на английском.</em></p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>io.opentelemetry.akka-http-10.0</td>
+<td>io.opentelemetry.apache-dbcp-2.0</td>
+<td>io.opentelemetry.apache-httpasyncclient-4.1</td>
+</tr>
+<tr>
+<td>io.opentelemetry.apache-httpclient-2.0</td>
+<td>io.opentelemetry.apache-httpclient-4.0</td>
+<td>io.opentelemetry.apache-httpclient-4.3</td>
+</tr>
+<tr>
+<td>io.opentelemetry.apache-httpclient-5.0</td>
+<td>io.opentelemetry.async-http-client-1.9</td>
+<td>io.opentelemetry.async-http-client-2.0</td>
+</tr>
+<tr>
+<td>io.opentelemetry.c3p0-0.9</td>
+<td>io.opentelemetry.cassandra-3.0</td>
+<td>io.opentelemetry.cassandra-4.0</td>
+</tr>
+<tr>
+<td>io.opentelemetry.cassandra-4.4</td>
+<td>io.opentelemetry.cxf-jaxrs-3.2</td>
+<td>io.opentelemetry.google-http-client-1.19</td>
+</tr>
+<tr>
+<td>io.opentelemetry.grpc-1.6</td>
+<td>io.opentelemetry.http-url-connection</td>
+<td>io.opentelemetry.java-http-client</td>
+</tr>
+<tr>
+<td>io.opentelemetry.jaxrs-1.0</td>
+<td>io.opentelemetry.jaxrs-1.0-common</td>
+<td>io.opentelemetry.jaxrs-2.0-annotations</td>
+</tr>
+<tr>
+<td>io.opentelemetry.jaxrs-2.0-common</td>
+<td>io.opentelemetry.jaxrs-2.0-cxf-3.2</td>
+<td>io.opentelemetry.jaxrs-2.0-jersey-2.0</td>
+</tr>
+<tr>
+<td>io.opentelemetry.jaxrs-2.0-resteasy-3.0</td>
+<td>io.opentelemetry.jaxrs-2.0-resteasy-3.1</td>
+<td>io.opentelemetry.jaxrs-3.0-annotations</td>
+</tr>
+<tr>
+<td>io.opentelemetry.jaxrs-3.0-jersey-3.0</td>
+<td>io.opentelemetry.jaxrs-3.0-resteasy-6.0</td>
+<td>io.opentelemetry.jaxrs-annotations-2.0</td>
+</tr>
+<tr>
+<td>io.opentelemetry.jaxrs-annotations-3.0</td>
+<td>io.opentelemetry.jaxrs-client-1.1</td>
+<td>io.opentelemetry.jaxrs-client-2.0</td>
+</tr>
+<tr>
+<td>io.opentelemetry.jaxrs-client-2.0-resteasy-3.0</td>
+<td>io.opentelemetry.jaxws-2.0</td>
+<td>io.opentelemetry.jaxws-2.0-axis2-1.6</td>
+</tr>
+<tr>
+<td>io.opentelemetry.jaxws-2.0-cxf-3.0</td>
+<td>io.opentelemetry.jaxws-2.0-metro-2.2</td>
+<td>io.opentelemetry.jaxws-cxf-3.0</td>
+</tr>
+<tr>
+<td>io.opentelemetry.jaxws-common</td>
+<td>io.opentelemetry.jaxws-jws-api-1.1</td>
+<td>io.opentelemetry.jdbc</td>
+</tr>
+<tr>
+<td>io.opentelemetry.jedis-1.4</td>
+<td>io.opentelemetry.jedis-3.0</td>
+<td>io.opentelemetry.jedis-4.0</td>
+</tr>
+<tr>
+<td>io.opentelemetry.jersey-2.0</td>
+<td>io.opentelemetry.jetty-11.0</td>
+<td>io.opentelemetry.jetty-8.0</td>
+</tr>
+<tr>
+<td>io.opentelemetry.jetty-httpclient-9.2</td>
+<td>io.opentelemetry.jms-1.1</td>
+<td>io.opentelemetry.jms-3.0</td>
+</tr>
+<tr>
+<td>io.opentelemetry.jsp-2.3</td>
+<td>io.opentelemetry.kafka-clients</td>
+<td>io.opentelemetry.kafka-clients-0.11</td>
+</tr>
+<tr>
+<td>io.opentelemetry.kafka-clients-2.6</td>
+<td>io.opentelemetry.kafka-streams-0.11</td>
+<td>io.opentelemetry.lettuce-5.1</td>
+</tr>
+<tr>
+<td>io.opentelemetry.liberty</td>
+<td>io.opentelemetry.liberty-20.0</td>
+<td>io.opentelemetry.mongo-3.1</td>
+</tr>
+<tr>
+<td>io.opentelemetry.netty-3.8</td>
+<td>io.opentelemetry.netty-4.0</td>
+<td>io.opentelemetry.netty-4.1</td>
+</tr>
+<tr>
+<td>io.opentelemetry.okhttp-2.2</td>
+<td>io.opentelemetry.okhttp-3.0</td>
+<td>io.opentelemetry.orcale-ucp-11.2</td>
+</tr>
+<tr>
+<td>io.opentelemetry.rabbitmq-2.7</td>
+<td>io.opentelemetry.reactor-kafka-1.0</td>
+<td>io.opentelemetry.reactor-netty-1.0</td>
+</tr>
+<tr>
+<td>io.opentelemetry.resteasy-3.0</td>
+<td>io.opentelemetry.resteasy-3.1</td>
+<td>io.opentelemetry.resteasy-6.0</td>
+</tr>
+<tr>
+<td>io.opentelemetry.rmi</td>
+<td>io.opentelemetry.servlet-2.2</td>
+<td>io.opentelemetry.servlet-3.0</td>
+</tr>
+<tr>
+<td>io.opentelemetry.servlet-5.0</td>
+<td>io.opentelemetry.servlet-javax-common</td>
+<td>io.opentelemetry.spring-jms-2.0</td>
+</tr>
+<tr>
+<td>io.opentelemetry.spring-jms-6.0</td>
+<td>io.opentelemetry.spring-kafka-2.7</td>
+<td>io.opentelemetry.spring-rabbit-1.0</td>
+</tr>
+<tr>
+<td>io.opentelemetry.spring-rmi-4.0</td>
+<td>io.opentelemetry.spring-webflux-5.0</td>
+<td>io.opentelemetry.spring-webflux-5.3</td>
+</tr>
+<tr>
+<td>io.opentelemetry.spring-ws-2.0</td>
+<td>io.opentelemetry.tomcat-10.0</td>
+<td>io.opentelemetry.tomcat-7.0</td>
+</tr>
+<tr>
+<td>io.opentelemetry.tomcat-jdbc</td>
+<td>io.opentelemetry.undertow-1.4</td>
+<td>io.opentelemetry.vibur-dbcp-11.0</td>
+</tr>
+</tbody>
+</table>
+<h2 id="span-nodejs">Предотвращение дублирования span в Node.js<a class="headerlink" href="#span-nodejs" title="Permanent link">&para;</a></h2>
+<p>OneAgent версии 1.331+</p>
+<p>Во избежание дублирования span для областей, охваченных OpenTelemetry и OneAgent, OneAgent пропускает span-ы из следующих библиотек автоматической инструментации Node.js, если OneAgent настроен на инструментирование вашего Node.js-приложения и приём span-ов OpenTelemetry.</p>
+<p>Такие span-ы пропускаются только OneAgent. Экспорт в сторонние системы не затрагивается.</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>@opentelemetry/instrumentation-http</td>
+<td>@opentelemetry/instrumentation-undici</td>
+</tr>
+<tr>
+<td>@opentelemetry/instrumentation-aws-sdk</td>
+<td>@opentelemetry/instrumentation-aws-lambda</td>
+</tr>
+<tr>
+<td>@opentelemetry/instrumentation-connect</td>
+<td>@opentelemetry/instrumentation-graphql</td>
+</tr>
+<tr>
+<td>@opentelemetry/instrumentation-grpc</td>
+<td>@opentelemetry/instrumentation-ioredis</td>
+</tr>
+<tr>
+<td>@opentelemetry/instrumentation-redis</td>
+<td>@opentelemetry/instrumentation-kafkajs</td>
+</tr>
+<tr>
+<td>@opentelemetry/instrumentation-memcached</td>
+<td>@opentelemetry/instrumentation-mongodb</td>
+</tr>
+<tr>
+<td>@opentelemetry/instrumentation-tedious</td>
+<td>@opentelemetry/instrumentation-mysql</td>
+</tr>
+<tr>
+<td>@opentelemetry/instrumentation-mysql2</td>
+<td>@opentelemetry/instrumentation-oracledb</td>
+</tr>
+<tr>
+<td>@opentelemetry/instrumentation-pg</td>
+<td>@opentelemetry/instrumentation-amqplib</td>
+</tr>
+</tbody>
+</table>
+<h2 id="span-php">Предотвращение дублирования span в PHP<a class="headerlink" href="#span-php" title="Permanent link">&para;</a></h2>
+<p>OneAgent версии 1.313+</p>
+<p>Во избежание дублирования span для областей, охваченных OpenTelemetry и OneAgent, OneAgent пропускает span-ы из следующих библиотек автоматической инструментации PHP, если OneAgent настроен на инструментирование вашего PHP-приложения и приём span-ов OpenTelemetry.</p>
+<p>Такие span-ы пропускаются только OneAgent. Экспорт в сторонние системы не затрагивается.</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>io.opentelemetry.contrib.php.curl</td>
+<td>io.opentelemetry.contrib.php.laravel</td>
+</tr>
+<tr>
+<td>io.opentelemetry.contrib.php.mongodb</td>
+<td>io.opentelemetry.contrib.php.mysqli</td>
+</tr>
+<tr>
+<td>io.opentelemetry.contrib.php.pdo</td>
+<td>io.opentelemetry.contrib.php.slim</td>
+</tr>
+<tr>
+<td>io.opentelemetry.contrib.php.symfony</td>
+<td>io.opentelemetry.contrib.php.wordpress</td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  К началу
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      © 2026 Dynatrace Docs | Yerkebulan Ardabayev
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/Yerkebulan-Ardabayev" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../../../..", "features": ["navigation.indexes", "navigation.prune", "navigation.path", "navigation.tracking", "navigation.top", "search.suggest", "search.highlight", "search.share", "content.code.copy", "content.code.annotate", "content.tabs.link", "content.tooltips", "toc.follow"], "search": "../../../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u0421\u043a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u043d\u043e \u0432 \u0431\u0443\u0444\u0435\u0440", "clipboard.copy": "\u041a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u0442\u044c \u0432 \u0431\u0443\u0444\u0435\u0440", "search.result.more.one": "\u0415\u0449\u0451 1 \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.more.other": "\u0415\u0449\u0451 # \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.none": "\u0421\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439 \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u043e", "search.result.one": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e 1 \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0435", "search.result.other": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439: #", "search.result.placeholder": "\u041d\u0430\u0447\u043d\u0438\u0442\u0435 \u043f\u0435\u0447\u0430\u0442\u0430\u0442\u044c \u0434\u043b\u044f \u043f\u043e\u0438\u0441\u043a\u0430", "search.result.term.missing": "\u041e\u0442\u0441\u0443\u0442\u0441\u0442\u0432\u0443\u0435\u0442", "select.version": "\u0412\u044b\u0431\u0435\u0440\u0438\u0442\u0435 \u0432\u0435\u0440\u0441\u0438\u044e"}, "version": null}</script>
+    
+    
+  
+      <script src="../../../../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../../../../../assets/javascripts/groq-chat.js?sha=17d46ba74"></script>
+      
+    
+  <script>
+    (function() {
+      // --- Keyboard shortcut Ctrl+K / Cmd+K for search ---
+      document.addEventListener('keydown', function(e) {
+        if ((e.ctrlKey || e.metaKey) && e.key === 'k') {
+          e.preventDefault();
+          var searchInput = document.querySelector('.md-search__input');
+          if (searchInput) {
+            searchInput.focus();
+            var searchToggle = document.querySelector('[data-md-toggle="search"]');
+            if (searchToggle && !searchToggle.checked) {
+              searchToggle.checked = true;
+              searchToggle.dispatchEvent(new Event('change'));
+            }
+          }
+        }
+        // --- "/" focuses search like GitHub / Algolia docs ---
+        if (e.key === '/' && !/^(input|textarea|select)$/i.test(e.target.tagName)) {
+          e.preventDefault();
+          var inp = document.querySelector('.md-search__input');
+          if (inp) {
+            inp.focus();
+            var t = document.querySelector('[data-md-toggle="search"]');
+            if (t && !t.checked) { t.checked = true; t.dispatchEvent(new Event('change')); }
+          }
+        }
+      });
+    })();
+  </script>
+
+  </body>
+</html>

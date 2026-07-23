@@ -1,0 +1,3501 @@
+
+<!doctype html>
+<html lang="ru" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Документация Dynatrace Managed с AI-помощником">
+      
+      
+        <meta name="author" content="Yerkebulan Ardabayev">
+      
+      
+        <link rel="canonical" href="https://yerkebulan-ardabayev.github.io/dynatrace-docs-website/managed-ru/ingest-from/dynatrace-activegate/agctl-command-line-interface/">
+      
+      
+        <link rel="prev" href="../activegate-sfm-metrics/">
+      
+      
+        <link rel="next" href="../capabilities/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>agctl — интерфейс командной строки для ActiveGate - Dynatrace — Документация</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Inter";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../assets/stylesheets/extra.v11.css?sha=17d46ba74">
+    
+    <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  <style>
+    /* DocFlow DT Logo Badge — injected via template override */
+    .md-header__button.md-logo {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .md-header__button.md-logo img,
+    .md-header__button.md-logo svg {
+      display: none !important;
+    }
+    .md-header__button.md-logo::before {
+      content: 'DT';
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 28px;
+      height: 28px;
+      border-radius: 6px;
+      background: linear-gradient(135deg, #00d4aa 0%, #7c3aed 100%);
+      color: white;
+      font-size: 11px;
+      font-weight: 700;
+      font-family: 'Inter', sans-serif;
+      letter-spacing: -0.02em;
+      flex-shrink: 0;
+    }
+
+    /* Search Ctrl+K badge — inside input field */
+    .md-search__form {
+      position: relative;
+    }
+    .md-search__form::after {
+      content: 'Ctrl+K';
+      display: none;
+      align-items: center;
+      padding: 0.15rem 0.4rem;
+      border-radius: 4px;
+      border: 1px solid var(--docflow-border);
+      background: var(--md-default-bg-color);
+      font-size: 10px;
+      font-family: 'JetBrains Mono', monospace;
+      color: var(--md-default-fg-color--lighter);
+      white-space: nowrap;
+      pointer-events: none;
+      position: absolute;
+      right: 0.5rem;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+    @media (min-width: 60em) {
+      .md-search__form::after {
+        display: flex;
+      }
+    }
+  </style>
+
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="custom">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#agctl-activegate" class="md-skip">
+          Перейти к содержанию
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+  
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Верхний колонтитул">
+    <a href="../../../.." title="Dynatrace — Документация" class="md-header__button md-logo" aria-label="Dynatrace — Документация" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M11 15H6l7-14v8h5l-7 14z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Dynatrace — Документация
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              agctl — интерфейс командной строки для ActiveGate
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Переключить на светлую тему"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Переключить на светлую тему" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Переключить на тёмную тему"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Переключить на тёмную тему" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Поиск" placeholder="Поиск" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Поиск">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Поделиться" aria-label="Поделиться" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Очистить" aria-label="Очистить" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Инициализация поиска
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/Yerkebulan-Ardabayev/dynatrace-docs-website" title="Перейти к репозиторию" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    dynatrace-docs-website
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Навигация" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../.." title="Dynatrace — Документация" class="md-nav__button md-logo" aria-label="Dynatrace — Документация" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M11 15H6l7-14v8h5l-7 14z"/></svg>
+
+    </a>
+    Dynatrace — Документация
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/Yerkebulan-Ardabayev/dynatrace-docs-website" title="Перейти к репозиторию" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    dynatrace-docs-website
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Главная
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../../ru/getting-started/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Начало работы
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../installation/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Кластер Managed
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Источники данных
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Источники данных
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обзор
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../amazon-web-services/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Настройка Dynatrace на Amazon Web Services
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../bulk-configuration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Удалённое управление конфигурацией OneAgent и ActiveGate
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4_4" id="__nav_4_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dynatrace ActiveGate
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Dynatrace ActiveGate
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обзор
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../activegate-diagnostics/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Диагностика ActiveGate
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../activegate-fips-compliance/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Соответствие FIPS для ActiveGate
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../activegate-group/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Группа ActiveGate
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../activegate-in-container/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Образ контейнера ActiveGate
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../activegate-security/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Безопасность ActiveGate
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../activegate-sfm-metrics/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Метрики самомониторинга ActiveGate
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    agctl — интерфейс командной строки для ActiveGate
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../capabilities/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Назначения и функциональность ActiveGate
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../configuration/configure-activegate/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Настройка
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../installation/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Установка
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../operation/stop-restart-activegate/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Эксплуатация
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../supported-connectivity-schemes-for-activegates/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Поддерживаемые схемы подключения для ActiveGate
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../dynatrace-oneagent/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dynatrace OneAgent
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../extend-dynatrace/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Расширение Dynatrace
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../extensions/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Расширения
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../google-cloud-platform/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Настройка Dynatrace на Google Cloud
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../microsoft-azure-services/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Настройка Dynatrace на Microsoft Azure
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../opentelemetry/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OpenTelemetry и Dynatrace
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../setup-on-container-platforms/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Настройка Dynatrace на контейнерных и PaaS-платформах
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../setup-on-k8s/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Настройка Dynatrace на Kubernetes
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../technology-support/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Поддержка технологий
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    
+  
+  
+  
+    <a href="../../../observe/application-observability/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Наблюдаемость
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../dynatrace-intelligence/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Davis AI
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    
+  
+  
+  
+    <a href="../../../analyze-explore-automate/dashboards-classic/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Анализ
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../deliver/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Deliver
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    
+  
+  
+  
+    <a href="../../../secure/application-security/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Безопасность приложений
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    
+  
+  
+  
+    <a href="../../../manage/account-management/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Управление
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    
+  
+  
+  
+    <a href="../../../platform/oneagent/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Платформа
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../dynatrace-api/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../whats-new/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Что нового
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../offline-doc/how-do-i-enable-synthetic-monitors/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Офлайн-документация
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../../ru/training/day1-introduction/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обучение
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../ai/groq/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI Помощник
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Содержание">
+  
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+                
+
+
+
+  
+
+
+  <nav class="md-path" aria-label="Навигация" >
+    <ol class="md-path__list">
+      
+        
+  
+  
+    <li class="md-path__item">
+      <a href="../../../.." class="md-path__link">
+        
+  <span class="md-ellipsis">
+    Главная
+  </span>
+
+      </a>
+    </li>
+  
+
+      
+      
+        
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="../../" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    Источники данных
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="../" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    Dynatrace ActiveGate
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ol>
+  </nav>
+
+              
+              <article class="md-content__inner md-typeset">
+                
+  
+                  
+
+
+
+<h1 id="agctl-activegate">agctl — интерфейс командной строки для ActiveGate<a class="headerlink" href="#agctl-activegate" title="Permanent link">&para;</a></h1>
+<h1 id="agctl-activegate_1">agctl — интерфейс командной строки для ActiveGate<a class="headerlink" href="#agctl-activegate_1" title="Permanent link">&para;</a></h1>
+<ul>
+<li>Reference</li>
+<li>15-min read</li>
+<li>Published Feb 05, 2026</li>
+</ul>
+<p>ActiveGate версии 1.333+</p>
+<p><code>agctl</code> — интерфейс командной строки для управления конфигурацией ActiveGate. Позволяет настраивать различные параметры ActiveGate непосредственно из командной строки без ручного редактирования конфигурационных файлов.</p>
+<p>После изменения конфигурации ActiveGate с помощью <code>agctl</code> необходимо перезапустить ActiveGate, чтобы изменения вступили в силу. Смотрите раздел <a href="../operation/stop-restart-activegate/" title="Узнайте, как запустить, остановить и перезапустить ActiveGate на Windows или Linux.">Запуск/остановка/перезапуск ActiveGate</a>.</p>
+<h2 id="_1">Перед началом работы<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<h3 id="_2">Предварительные требования<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
+<ul>
+<li>ActiveGate установлен на вашей системе</li>
+<li>Разрешения на выполнение <code>agctl</code>. Смотрите раздел <a href="#access-agctl">Доступ к agctl</a> ниже.</li>
+</ul>
+<h3 id="agctl">Доступ к agctl<a class="headerlink" href="#agctl" title="Permanent link">&para;</a></h3>
+<p>Linux</p>
+<p>Windows</p>
+<p>На Linux-системах <code>agctl</code> автоматически добавляется в PATH для удобного доступа. Его можно запустить из любого каталога.</p>
+<p>Для выполнения <code>agctl</code> необходимо принадлежать к группе пользователей службы ActiveGate. По умолчанию это группа <code>dtuserag</code>. Подробнее о настройке пользователя смотрите в разделах:</p>
+<ul>
+<li><a href="../installation/linux/linux-customize-installation-for-activegate/#user-service" title="Узнайте о параметрах командной строки, которые можно использовать с ActiveGate на Linux.">Настройка установки ActiveGate</a></li>
+<li><a href="../installation/linux/linux-default-settings/#service-account" title="Узнайте о настройках по умолчанию при установке ActiveGate на Linux">Настройки по умолчанию</a></li>
+</ul>
+<p><strong>Пример запуска agctl</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>agctl [command] [operation] [parameters]
+</code></pre></div>
+<p>На Windows-системах <code>agctl.bat</code> должен выполняться из <a href="../configuration/where-can-i-find-activegate-files/" title="Узнайте, где хранятся файлы ActiveGate на Windows и Linux.">директории установки ActiveGate</a>.</p>
+<p><code>agctl.bat</code> должен запускаться с правами администратора.</p>
+<p><strong>Пример запуска agctl.bat из директории установки</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>&quot;C:\Program Files\dynatrace\gateway\agctl.bat&quot; [command] [operation] [parameters]
+</code></pre></div>
+<h2 id="_3">Структура команды<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>agctl [command] [operation] [parameters]
+</code></pre></div>
+<p>Где:</p>
+<ul>
+<li><code>[command]</code>: конкретная функция ActiveGate для управления (например, <code>group</code>, <code>modules</code>, <code>ssl-port</code>)</li>
+<li><code>[operation]</code>: выполняемое действие (например, <code>set</code>, <code>get</code>, <code>clear</code>, <code>enable</code>, <code>disable</code>)</li>
+<li><code>[parameters]</code>: параметры, специфичные для команды</li>
+</ul>
+<h2 id="_4">Доступные команды<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Команда</th>
+<th>Описание</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="#help">help</a></td>
+<td>Отображение справочного сообщения</td>
+</tr>
+<tr>
+<td><a href="#group">group</a></td>
+<td>Управление конфигурацией группы ActiveGate</td>
+</tr>
+<tr>
+<td><a href="#incoming-endpoint">incoming-endpoint</a></td>
+<td>Управление конфигурацией обратного прокси для OneAgent</td>
+</tr>
+<tr>
+<td><a href="#modules">modules</a></td>
+<td>Управление конфигурацией модулей</td>
+</tr>
+<tr>
+<td><a href="#network-zone">network-zone</a></td>
+<td>Управление конфигурацией сетевой зоны</td>
+</tr>
+<tr>
+<td><a href="#outgoing-endpoint">outgoing-endpoint</a></td>
+<td>Управление конфигурацией обратного прокси для ActiveGate</td>
+</tr>
+<tr>
+<td><a href="#properties">properties</a></td>
+<td>Установка свойств на основе предоставленного конфигурационного файла</td>
+</tr>
+<tr>
+<td><a href="#property">property</a></td>
+<td>Управление отдельными пользовательскими свойствами</td>
+</tr>
+<tr>
+<td><a href="#ssl-certificate">ssl-certificate</a></td>
+<td>Управление конфигурацией пользовательского SSL-сертификата</td>
+</tr>
+<tr>
+<td><a href="#ssl-port">ssl-port</a></td>
+<td>Управление конфигурацией HTTPS-порта</td>
+</tr>
+<tr>
+<td><a href="#support-archive">support-archive</a></td>
+<td>Создание архива поддержки для диагностики</td>
+</tr>
+<tr>
+<td><a href="#trust-store">trust-store</a></td>
+<td>Управление конфигурацией хранилища доверенных сертификатов</td>
+</tr>
+<tr>
+<td><a href="#version">version</a></td>
+<td>Получение версии ActiveGate</td>
+</tr>
+</tbody>
+</table>
+<h3 id="help">Help<a class="headerlink" href="#help" title="Permanent link">&para;</a></h3>
+<p>Отображение справочной информации для <code>agctl</code>.</p>
+<h4 id="_5">Использование<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>agctl help
+</code></pre></div>
+<p>Для получения справки по конкретной команде:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>agctl [command] help
+</code></pre></div>
+<h4 id="_6">Примеры<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a># Общая справка
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>agctl help
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a># Справка для команды group
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>agctl group help
+</code></pre></div>
+<h3 id="group">Group<a class="headerlink" href="#group" title="Permanent link">&para;</a></h3>
+<p>Управление конфигурацией группы ActiveGate. Группы позволяют выполнять массовые действия над ActiveGate.</p>
+<p>Подробнее о группах ActiveGate смотрите в разделе <a href="../activegate-group/" title="Понять основные концепции групп ActiveGate.">Группа ActiveGate</a>.</p>
+<h4 id="_7">Использование<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>agctl group set &lt;NAME&gt;
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>agctl group set --value=&lt;NAME&gt;
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>agctl group get
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>agctl group clear
+<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>agctl group help
+</code></pre></div>
+<h4 id="_8">Операции<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>Операция</th>
+<th>Описание</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>set</code></td>
+<td>Назначить имя группы ActiveGate</td>
+</tr>
+<tr>
+<td><code>get</code></td>
+<td>Отобразить текущее имя группы</td>
+</tr>
+<tr>
+<td><code>clear</code></td>
+<td>Удалить текущее имя группы</td>
+</tr>
+<tr>
+<td><code>help</code></td>
+<td>Показать справку для команды group</td>
+</tr>
+</tbody>
+</table>
+<h4 id="set">Параметры для set<a class="headerlink" href="#set" title="Permanent link">&para;</a></h4>
+<p><strong>Обязательный (один из):</strong></p>
+<ul>
+<li><code>&lt;NAME&gt;</code>: имя группы как позиционный аргумент</li>
+<li><code>--value=&lt;NAME&gt;</code>: имя группы как именованный параметр (имеет приоритет при указании обоих)</li>
+</ul>
+<h4 id="_9">Правила именования<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Допустимые символы: буквенно-цифровые символы, дефисы (<code>-</code>), символы подчёркивания (<code>_</code>) и точки (<code>.</code>)</li>
+<li>Точки используются как разделители и не могут быть первым или последним символом</li>
+<li>Максимальная длина: 256 символов</li>
+</ul>
+<h4 id="_10">Примеры<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a># Установка группы через позиционный аргумент
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>agctl group set my.group
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>
+<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a># Установка группы через именованный параметр
+<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>agctl group set --value=production.activegate
+<a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a>
+<a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a># Получение текущей группы
+<a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a>agctl group get
+<a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a>
+<a id="__codelineno-7-10" name="__codelineno-7-10" href="#__codelineno-7-10"></a># Очистка конфигурации группы
+<a id="__codelineno-7-11" name="__codelineno-7-11" href="#__codelineno-7-11"></a>agctl group clear
+</code></pre></div>
+<h3 id="incoming-endpoint">Incoming endpoint<a class="headerlink" href="#incoming-endpoint" title="Permanent link">&para;</a></h3>
+<p>Управление конфигурацией обратного прокси для трафика OneAgent. Настраивает URL конечных точек, используемых OneAgent для подключения через обратный прокси.</p>
+<p>Подробнее смотрите в разделе <a href="../configuration/set-up-reverse-proxy-for-oneagent/" title="Настройте свойства ActiveGate для установки обратного прокси или балансировщика нагрузки для OneAgent.">Настройка обратного прокси для OneAgent</a>.</p>
+<p>Смотрите также конфигурацию <a href="#outgoing-endpoint">Outgoing endpoint</a>.</p>
+<h4 id="_11">Использование<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>agctl incoming-endpoint set &lt;URLS&gt;
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>agctl incoming-endpoint set --value=&lt;URLS&gt;
+<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>agctl incoming-endpoint get
+<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a>agctl incoming-endpoint clear
+<a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a>agctl incoming-endpoint help
+</code></pre></div>
+<h4 id="_12">Операции<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>Операция</th>
+<th>Описание</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>set</code></td>
+<td>Настроить URL входящих конечных точек</td>
+</tr>
+<tr>
+<td><code>get</code></td>
+<td>Отобразить текущие URL конечных точек</td>
+</tr>
+<tr>
+<td><code>clear</code></td>
+<td>Удалить текущие URL конечных точек</td>
+</tr>
+<tr>
+<td><code>help</code></td>
+<td>Показать справку для команды incoming-endpoint</td>
+</tr>
+</tbody>
+</table>
+<h4 id="set_1">Параметры для set<a class="headerlink" href="#set_1" title="Permanent link">&para;</a></h4>
+<p><strong>Обязательный (один из):</strong></p>
+<ul>
+<li><code>&lt;URLS&gt;</code>: список URL, разделённых запятыми, как позиционный аргумент</li>
+<li><code>--value=&lt;URLS&gt;</code>: список URL, разделённых запятыми, как именованный параметр</li>
+</ul>
+<h4 id="url">Требования к формату URL<a class="headerlink" href="#url" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Формат: <code>https://&lt;DOMAIN&gt;:&lt;PORT&gt;</code></li>
+<li><code>&lt;DOMAIN&gt;</code> должен быть FQDN, IPv4 или IPv6-адресом</li>
+<li><code>&lt;PORT&gt;</code> необязателен, по умолчанию 443</li>
+<li>Путь <code>/communication</code> необязателен</li>
+<li>Несколько URL разделяются запятыми</li>
+</ul>
+<h4 id="_13">Примеры<a class="headerlink" href="#_13" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a># Одна конечная точка
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>agctl incoming-endpoint set https://proxy.example.com:443
+<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>
+<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a># Несколько конечных точек
+<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a>agctl incoming-endpoint set https://proxy1.example.com:443,https://proxy2.example.com:8443/communication
+<a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a>
+<a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a># Через именованный параметр
+<a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a>agctl incoming-endpoint set --value=https://proxy.example.com/communication
+<a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a>
+<a id="__codelineno-9-10" name="__codelineno-9-10" href="#__codelineno-9-10"></a># Получение текущей конфигурации
+<a id="__codelineno-9-11" name="__codelineno-9-11" href="#__codelineno-9-11"></a>agctl incoming-endpoint get
+<a id="__codelineno-9-12" name="__codelineno-9-12" href="#__codelineno-9-12"></a>
+<a id="__codelineno-9-13" name="__codelineno-9-13" href="#__codelineno-9-13"></a># Очистка конфигурации
+<a id="__codelineno-9-14" name="__codelineno-9-14" href="#__codelineno-9-14"></a>agctl incoming-endpoint clear
+</code></pre></div>
+<h3 id="modules">Modules<a class="headerlink" href="#modules" title="Permanent link">&para;</a></h3>
+<p>Управление конфигурацией модулей ActiveGate. Позволяет включать или отключать отдельные функциональные модули.</p>
+<p>Подробнее о модулях ActiveGate смотрите в разделе <a href="../configuration/configure-activegate/#modules" title="Узнайте, какие свойства ActiveGate можно настраивать в зависимости от ваших потребностей.">Свойства и параметры конфигурации</a>.</p>
+<h4 id="_14">Использование<a class="headerlink" href="#_14" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>agctl modules enable &lt;MODULES&gt;
+<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>agctl modules enable --value=&lt;MODULES&gt;
+<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>agctl modules disable &lt;MODULES&gt;
+<a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a>agctl modules disable --value=&lt;MODULES&gt;
+<a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a>agctl modules get
+<a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a>agctl modules help
+</code></pre></div>
+<h4 id="_15">Операции<a class="headerlink" href="#_15" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>Операция</th>
+<th>Описание</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>enable</code></td>
+<td>Включить один или несколько модулей</td>
+</tr>
+<tr>
+<td><code>disable</code></td>
+<td>Отключить один или несколько модулей</td>
+</tr>
+<tr>
+<td><code>get</code></td>
+<td>Отобразить включённые в настоящее время модули</td>
+</tr>
+<tr>
+<td><code>help</code></td>
+<td>Показать справку для команды modules</td>
+</tr>
+</tbody>
+</table>
+<h4 id="enable-disable">Параметры для enable и disable<a class="headerlink" href="#enable-disable" title="Permanent link">&para;</a></h4>
+<p><strong>Обязательный (один из):</strong></p>
+<ul>
+<li><code>&lt;MODULES&gt;</code>: список имён модулей, разделённых запятыми, как позиционный аргумент</li>
+<li><code>--value=&lt;MODULES&gt;</code>: список имён модулей, разделённых запятыми, как именованный параметр</li>
+</ul>
+<h4 id="_16">Примеры<a class="headerlink" href="#_16" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a># Включить несколько модулей
+<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>agctl modules enable MSGrouter,metrics_ingest
+<a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a>
+<a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a># Отключить модуль через именованный параметр
+<a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a>agctl modules disable --value=synthetic
+<a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a>
+<a id="__codelineno-11-7" name="__codelineno-11-7" href="#__codelineno-11-7"></a># Получить включённые модули
+<a id="__codelineno-11-8" name="__codelineno-11-8" href="#__codelineno-11-8"></a>agctl modules get
+</code></pre></div>
+<h3 id="network-zone">Network zone<a class="headerlink" href="#network-zone" title="Permanent link">&para;</a></h3>
+<p>Управление конфигурацией сетевой зоны. Сетевые зоны позволяют определять границы маршрутизации для инфраструктуры мониторинга.</p>
+<p>Подробнее о сетевых зонах смотрите в разделе <a href="../../../manage/network-zones/" title="Узнайте, как работают сетевые зоны в Dynatrace.">Сетевые зоны</a>.</p>
+<h4 id="_17">Использование<a class="headerlink" href="#_17" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>agctl network-zone set &lt;NAME&gt;
+<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>agctl network-zone set --value=&lt;NAME&gt;
+<a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a>agctl network-zone get
+<a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a>agctl network-zone clear
+<a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a>agctl network-zone help
+</code></pre></div>
+<h4 id="_18">Операции<a class="headerlink" href="#_18" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>Операция</th>
+<th>Описание</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>set</code></td>
+<td>Настроить имя сетевой зоны</td>
+</tr>
+<tr>
+<td><code>get</code></td>
+<td>Отобразить текущее имя сетевой зоны</td>
+</tr>
+<tr>
+<td><code>clear</code></td>
+<td>Удалить текущее имя сетевой зоны</td>
+</tr>
+<tr>
+<td><code>help</code></td>
+<td>Показать справку для команды network-zone</td>
+</tr>
+</tbody>
+</table>
+<h4 id="_19">Правила именования<a class="headerlink" href="#_19" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Допустимые символы: буквенно-цифровые символы, дефисы (<code>-</code>), символы подчёркивания (<code>_</code>) и точки (<code>.</code>)</li>
+<li>Точки используются как разделители и не могут быть первым или последним символом</li>
+<li>Максимальная длина: 256 символов</li>
+</ul>
+<h4 id="_20">Примеры<a class="headerlink" href="#_20" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a># Установка сетевой зоны через позиционный аргумент
+<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>agctl network-zone set my.zone
+<a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a>
+<a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a># Установка через именованный параметр
+<a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a>agctl network-zone set --value=production.zone
+<a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a>
+<a id="__codelineno-13-7" name="__codelineno-13-7" href="#__codelineno-13-7"></a># Получение текущей сетевой зоны
+<a id="__codelineno-13-8" name="__codelineno-13-8" href="#__codelineno-13-8"></a>agctl network-zone get
+<a id="__codelineno-13-9" name="__codelineno-13-9" href="#__codelineno-13-9"></a>
+<a id="__codelineno-13-10" name="__codelineno-13-10" href="#__codelineno-13-10"></a># Очистка конфигурации сетевой зоны
+<a id="__codelineno-13-11" name="__codelineno-13-11" href="#__codelineno-13-11"></a>agctl network-zone clear
+</code></pre></div>
+<h3 id="outgoing-endpoint">Outgoing endpoint<a class="headerlink" href="#outgoing-endpoint" title="Permanent link">&para;</a></h3>
+<p>Управление конфигурацией обратного прокси для трафика ActiveGate. Настраивает URL конечных точек, используемых ActiveGate для подключения к Dynatrace через обратный прокси.</p>
+<p>Подробнее смотрите в разделе <a href="../configuration/set-up-reverse-proxy-for-activegate/" title="Узнайте, как настроить свойства ActiveGate для установки обратного прокси или балансировщика нагрузки.">Настройка обратного прокси для ActiveGate</a>.</p>
+<p>Смотрите также конфигурацию <a href="#incoming-endpoint">Incoming endpoint</a>.</p>
+<h4 id="_21">Использование<a class="headerlink" href="#_21" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>agctl outgoing-endpoint set &lt;URLS&gt;
+<a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a>agctl outgoing-endpoint set --value=&lt;URLS&gt;
+<a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a>agctl outgoing-endpoint get
+<a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a>agctl outgoing-endpoint clear
+<a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a>agctl outgoing-endpoint help
+</code></pre></div>
+<h4 id="_22">Операции<a class="headerlink" href="#_22" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>Операция</th>
+<th>Описание</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>set</code></td>
+<td>Настроить URL исходящих конечных точек</td>
+</tr>
+<tr>
+<td><code>get</code></td>
+<td>Отобразить текущие URL конечных точек</td>
+</tr>
+<tr>
+<td><code>clear</code></td>
+<td>Удалить текущие URL конечных точек</td>
+</tr>
+<tr>
+<td><code>help</code></td>
+<td>Показать справку для команды outgoing-endpoint</td>
+</tr>
+</tbody>
+</table>
+<h4 id="url_1">Требования к формату URL<a class="headerlink" href="#url_1" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Формат: <code>https://&lt;REVERSE_PROXY&gt;:&lt;REVERSE_PROXY_PORT&gt;/communication</code></li>
+<li><code>&lt;REVERSE_PROXY&gt;</code> должен быть FQDN, IPv4 или IPv6-адресом</li>
+<li><code>&lt;REVERSE_PROXY_PORT&gt;</code> необязателен, по умолчанию 443</li>
+<li>Путь <code>/communication</code> необязателен</li>
+<li>Несколько URL разделяются запятыми</li>
+</ul>
+<h4 id="_23">Примеры<a class="headerlink" href="#_23" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a># Одна исходящая конечная точка
+<a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a>agctl outgoing-endpoint set https://proxy.example.com:443
+<a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a>
+<a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a># Несколько конечных точек
+<a id="__codelineno-15-5" name="__codelineno-15-5" href="#__codelineno-15-5"></a>agctl outgoing-endpoint set https://proxy1.example.com:443,https://proxy2.example.com:8443/communication
+<a id="__codelineno-15-6" name="__codelineno-15-6" href="#__codelineno-15-6"></a>
+<a id="__codelineno-15-7" name="__codelineno-15-7" href="#__codelineno-15-7"></a># Через именованный параметр
+<a id="__codelineno-15-8" name="__codelineno-15-8" href="#__codelineno-15-8"></a>agctl outgoing-endpoint set --value=https://proxy.example.com/communication
+<a id="__codelineno-15-9" name="__codelineno-15-9" href="#__codelineno-15-9"></a>
+<a id="__codelineno-15-10" name="__codelineno-15-10" href="#__codelineno-15-10"></a># Получение текущей конфигурации
+<a id="__codelineno-15-11" name="__codelineno-15-11" href="#__codelineno-15-11"></a>agctl outgoing-endpoint get
+<a id="__codelineno-15-12" name="__codelineno-15-12" href="#__codelineno-15-12"></a>
+<a id="__codelineno-15-13" name="__codelineno-15-13" href="#__codelineno-15-13"></a># Очистка конфигурации
+<a id="__codelineno-15-14" name="__codelineno-15-14" href="#__codelineno-15-14"></a>agctl outgoing-endpoint clear
+</code></pre></div>
+<h3 id="properties">Properties<a class="headerlink" href="#properties" title="Permanent link">&para;</a></h3>
+<p>Установка нескольких свойств на основе предоставленного конфигурационного файла. Позволяет применить полную конфигурацию из файла <code>.properties</code>.</p>
+<h4 id="_24">Использование<a class="headerlink" href="#_24" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>agctl properties set &lt;PATH&gt;
+<a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a>agctl properties set --value=&lt;PATH&gt;
+<a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a>agctl properties help
+</code></pre></div>
+<h4 id="_25">Требования<a class="headerlink" href="#_25" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Файл должен иметь расширение <code>.properties</code></li>
+<li>Файл должен существовать и быть доступным для чтения</li>
+</ul>
+<h4 id="_26">Примеры<a class="headerlink" href="#_26" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a># Применить конфигурацию из файла properties
+<a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a>agctl properties set myconfig.properties
+<a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a>
+<a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a># Применить конфигурацию по абсолютному пути
+<a id="__codelineno-17-5" name="__codelineno-17-5" href="#__codelineno-17-5"></a>agctl properties set --value=/home/user/activegate/myconfig.properties
+</code></pre></div>
+<h3 id="property">Property<a class="headerlink" href="#property" title="Permanent link">&para;</a></h3>
+<p>Управление отдельными пользовательскими свойствами. Позволяет устанавливать, получать или удалять конкретные свойства в конфигурации ActiveGate.</p>
+<h4 id="_27">Использование<a class="headerlink" href="#_27" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a>agctl property set --section=&lt;SECTION&gt; --key=&lt;KEY&gt; --value=&lt;VALUE&gt;
+<a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a>agctl property get --section=&lt;SECTION&gt; --key=&lt;KEY&gt;
+<a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a>agctl property clear --section=&lt;SECTION&gt; --key=&lt;KEY&gt;
+<a id="__codelineno-18-4" name="__codelineno-18-4" href="#__codelineno-18-4"></a>agctl property help
+</code></pre></div>
+<h4 id="set_2">Параметры для set<a class="headerlink" href="#set_2" title="Permanent link">&para;</a></h4>
+<p><strong>Обязательные:</strong></p>
+<ul>
+<li><code>--section=&lt;SECTION&gt;</code>: имя раздела конфигурации</li>
+<li><code>--key=&lt;KEY&gt;</code>: имя ключа свойства</li>
+<li><code>--value=&lt;VALUE&gt;</code>: значение свойства (несколько значений могут разделяться запятыми)</li>
+</ul>
+<h4 id="get-clear">Параметры для get и clear<a class="headerlink" href="#get-clear" title="Permanent link">&para;</a></h4>
+<p><strong>Обязательные:</strong></p>
+<ul>
+<li><code>--section=&lt;SECTION&gt;</code>: имя раздела конфигурации</li>
+<li><code>--key=&lt;KEY&gt;</code>: имя ключа свойства</li>
+</ul>
+<h4 id="_28">Примеры<a class="headerlink" href="#_28" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a># Установить свойство
+<a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a>agctl property set --section=collector --key=group --value=my.group
+<a id="__codelineno-19-3" name="__codelineno-19-3" href="#__codelineno-19-3"></a>
+<a id="__codelineno-19-4" name="__codelineno-19-4" href="#__codelineno-19-4"></a># Получить значение свойства
+<a id="__codelineno-19-5" name="__codelineno-19-5" href="#__codelineno-19-5"></a>agctl property get --section=collector --key=group
+<a id="__codelineno-19-6" name="__codelineno-19-6" href="#__codelineno-19-6"></a>
+<a id="__codelineno-19-7" name="__codelineno-19-7" href="#__codelineno-19-7"></a># Удалить свойство
+<a id="__codelineno-19-8" name="__codelineno-19-8" href="#__codelineno-19-8"></a>agctl property clear --section=collector --key=group
+</code></pre></div>
+<h3 id="ssl-certificate">SSL certificate<a class="headerlink" href="#ssl-certificate" title="Permanent link">&para;</a></h3>
+<p>Управление конфигурацией пользовательского SSL-сертификата для ActiveGate.</p>
+<p>Подробнее смотрите в разделе <a href="../configuration/configure-custom-ssl-certificate-on-activegate/" title="Узнайте, как настроить SSL-сертификат на ActiveGate.">Настройка пользовательского SSL-сертификата на ActiveGate</a>.</p>
+<h4 id="_29">Использование<a class="headerlink" href="#_29" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a>agctl ssl-certificate set --certificate=&lt;PATH&gt; --key=&lt;PATH&gt; [--pem-password=&lt;STRING&gt;] [--password=&lt;STRING&gt;] [--alias=&lt;STRING&gt;]
+<a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a>agctl ssl-certificate get
+<a id="__codelineno-20-3" name="__codelineno-20-3" href="#__codelineno-20-3"></a>agctl ssl-certificate clear
+<a id="__codelineno-20-4" name="__codelineno-20-4" href="#__codelineno-20-4"></a>agctl ssl-certificate help
+</code></pre></div>
+<h4 id="set_3">Параметры для set<a class="headerlink" href="#set_3" title="Permanent link">&para;</a></h4>
+<p><strong>Обязательные:</strong></p>
+<ul>
+<li><code>--certificate=&lt;PATH&gt;</code>: путь к файлу сертификата в формате PEM</li>
+<li><code>--key=&lt;PATH&gt;</code>: путь к файлу закрытого ключа в формате PEM</li>
+</ul>
+<p><strong>Необязательные:</strong></p>
+<ul>
+<li><code>--pem-password=&lt;STRING&gt;</code>: пароль для закрытого ключа (если зашифрован)</li>
+<li><code>--password=&lt;STRING&gt;</code>: пароль для шифрования хранилища ключей (по умолчанию: генерируется случайно)</li>
+<li><code>--alias=&lt;STRING&gt;</code>: псевдоним сертификата в хранилище ключей (по умолчанию: 1)</li>
+</ul>
+<h4 id="_30">Примеры<a class="headerlink" href="#_30" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a># Минимальные параметры
+<a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a>agctl ssl-certificate set --certificate=cert.crt --key=key.pem
+<a id="__codelineno-21-3" name="__codelineno-21-3" href="#__codelineno-21-3"></a>
+<a id="__codelineno-21-4" name="__codelineno-21-4" href="#__codelineno-21-4"></a># Все параметры
+<a id="__codelineno-21-5" name="__codelineno-21-5" href="#__codelineno-21-5"></a>agctl ssl-certificate set --certificate=cert.crt --key=key.pem --pem-password=secret --password=changeit --alias=mycert
+<a id="__codelineno-21-6" name="__codelineno-21-6" href="#__codelineno-21-6"></a>
+<a id="__codelineno-21-7" name="__codelineno-21-7" href="#__codelineno-21-7"></a># Получить конфигурацию SSL-сертификата
+<a id="__codelineno-21-8" name="__codelineno-21-8" href="#__codelineno-21-8"></a>agctl ssl-certificate get
+<a id="__codelineno-21-9" name="__codelineno-21-9" href="#__codelineno-21-9"></a>
+<a id="__codelineno-21-10" name="__codelineno-21-10" href="#__codelineno-21-10"></a># Очистить конфигурацию
+<a id="__codelineno-21-11" name="__codelineno-21-11" href="#__codelineno-21-11"></a>agctl ssl-certificate clear
+</code></pre></div>
+<h3 id="ssl-port">SSL port<a class="headerlink" href="#ssl-port" title="Permanent link">&para;</a></h3>
+<p>Управление конфигурацией HTTPS-порта для ActiveGate. Позволяет изменить порт, используемый ActiveGate для HTTPS-связи.</p>
+<h4 id="_31">Использование<a class="headerlink" href="#_31" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a>agctl ssl-port set &lt;PORT&gt;
+<a id="__codelineno-22-2" name="__codelineno-22-2" href="#__codelineno-22-2"></a>agctl ssl-port set --value=&lt;PORT&gt;
+<a id="__codelineno-22-3" name="__codelineno-22-3" href="#__codelineno-22-3"></a>agctl ssl-port get
+<a id="__codelineno-22-4" name="__codelineno-22-4" href="#__codelineno-22-4"></a>agctl ssl-port clear
+<a id="__codelineno-22-5" name="__codelineno-22-5" href="#__codelineno-22-5"></a>agctl ssl-port help
+</code></pre></div>
+<h4 id="_32">Требования к порту<a class="headerlink" href="#_32" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Допустимый диапазон: 1-65535</li>
+<li>Использование порта ниже 1024 требует повышенных привилегий на не-Windows-системах</li>
+</ul>
+<h4 id="_33">Примеры<a class="headerlink" href="#_33" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a># Установить HTTPS-порт через позиционный аргумент
+<a id="__codelineno-23-2" name="__codelineno-23-2" href="#__codelineno-23-2"></a>agctl ssl-port set 9999
+<a id="__codelineno-23-3" name="__codelineno-23-3" href="#__codelineno-23-3"></a>
+<a id="__codelineno-23-4" name="__codelineno-23-4" href="#__codelineno-23-4"></a># Через именованный параметр
+<a id="__codelineno-23-5" name="__codelineno-23-5" href="#__codelineno-23-5"></a>agctl ssl-port set --value=8443
+<a id="__codelineno-23-6" name="__codelineno-23-6" href="#__codelineno-23-6"></a>
+<a id="__codelineno-23-7" name="__codelineno-23-7" href="#__codelineno-23-7"></a># Получить текущий HTTPS-порт
+<a id="__codelineno-23-8" name="__codelineno-23-8" href="#__codelineno-23-8"></a>agctl ssl-port get
+<a id="__codelineno-23-9" name="__codelineno-23-9" href="#__codelineno-23-9"></a>
+<a id="__codelineno-23-10" name="__codelineno-23-10" href="#__codelineno-23-10"></a># Очистить конфигурацию порта
+<a id="__codelineno-23-11" name="__codelineno-23-11" href="#__codelineno-23-11"></a>agctl ssl-port clear
+</code></pre></div>
+<h3 id="support-archive">Support archive<a class="headerlink" href="#support-archive" title="Permanent link">&para;</a></h3>
+<p>Создание архива поддержки для диагностики проблем ActiveGate. Архив содержит диагностические данные, логи и информацию о конфигурации.</p>
+<p>Смотрите также: <a href="../activegate-diagnostics/#collect-diagnostic-data-with-agctl" title="Узнайте, как выполнить диагностику ActiveGate">Сбор диагностических данных с помощью agctl</a>.</p>
+<h4 id="_34">Использование<a class="headerlink" href="#_34" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a>agctl support-archive create [--directory=&lt;PATH&gt;] [--days=&lt;NUMBER&gt;] [--modules=&lt;MODULES&gt;] [--stdout]
+<a id="__codelineno-24-2" name="__codelineno-24-2" href="#__codelineno-24-2"></a>agctl support-archive help
+</code></pre></div>
+<h4 id="create">Параметры для create<a class="headerlink" href="#create" title="Permanent link">&para;</a></h4>
+<p><strong>Все параметры необязательны:</strong></p>
+<ul>
+<li><code>--directory=&lt;PATH&gt;</code>: выходной каталог для архива поддержки (по умолчанию: текущий рабочий каталог)</li>
+<li><code>--days=&lt;NUMBER&gt;</code>: количество дней данных для сбора (по умолчанию: 30)</li>
+<li><code>--modules=&lt;MODULES&gt;</code>: список модулей для включения, разделённых запятыми (по умолчанию: все модули)</li>
+<li><code>--stdout</code>: вывод ZIP-архива поддержки в stdout, логи консоли в stderr</li>
+</ul>
+<h4 id="_35">Примеры<a class="headerlink" href="#_35" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a># Создать архив с настройками по умолчанию
+<a id="__codelineno-25-2" name="__codelineno-25-2" href="#__codelineno-25-2"></a>agctl support-archive create
+<a id="__codelineno-25-3" name="__codelineno-25-3" href="#__codelineno-25-3"></a>
+<a id="__codelineno-25-4" name="__codelineno-25-4" href="#__codelineno-25-4"></a># Создать архив за определённый период для конкретных модулей
+<a id="__codelineno-25-5" name="__codelineno-25-5" href="#__codelineno-25-5"></a>agctl support-archive create --directory=/home/user --days=3 --modules=MSGrouter,metrics_ingest
+<a id="__codelineno-25-6" name="__codelineno-25-6" href="#__codelineno-25-6"></a>
+<a id="__codelineno-25-7" name="__codelineno-25-7" href="#__codelineno-25-7"></a># Создать архив и вывести в stdout (для контейнеров)
+<a id="__codelineno-25-8" name="__codelineno-25-8" href="#__codelineno-25-8"></a>agctl support-archive create --stdout 1&gt; sa.zip 2&gt; out.txt
+</code></pre></div>
+<h4 id="_36">Использование в контейнерных окружениях<a class="headerlink" href="#_36" title="Permanent link">&para;</a></h4>
+<p>Kubernetes</p>
+<p>OpenShift</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a>kubectl exec -n &lt;namespace&gt; &lt;pod-name&gt; -- agctl support-archive create --stdout &gt; ag-support-archive.zip
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a>oc exec -n &lt;namespace&gt; &lt;pod-name&gt; [-c &lt;container&gt;] -- agctl support-archive create --stdout &gt; ag-support-archive.zip
+</code></pre></div>
+<p>Windows PowerShell не поддерживается</p>
+<p>На Windows используйте командную строку (<code>cmd.exe</code>); PowerShell не поддерживается.</p>
+<h3 id="trust-store">Trust store<a class="headerlink" href="#trust-store" title="Permanent link">&para;</a></h3>
+<p>Управление конфигурацией хранилища доверенных сертификатов для ActiveGate. Хранилище содержит доверенные корневые сертификаты для SSL/TLS-соединений.</p>
+<p>Подробнее смотрите в разделе <a href="../configuration/configure-trusted-root-certificates-on-activegate/" title="Узнайте, как настроить пользовательские доверенные корневые сертификаты на ActiveGate.">Настройка доверенных корневых сертификатов на ActiveGate</a>.</p>
+<h4 id="_37">Использование<a class="headerlink" href="#_37" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a>agctl trust-store set --certificates=&lt;PATH&gt; [--truststore=&lt;FILE&gt;] [--password=&lt;STRING&gt;]
+<a id="__codelineno-28-2" name="__codelineno-28-2" href="#__codelineno-28-2"></a>agctl trust-store get
+<a id="__codelineno-28-3" name="__codelineno-28-3" href="#__codelineno-28-3"></a>agctl trust-store clear
+<a id="__codelineno-28-4" name="__codelineno-28-4" href="#__codelineno-28-4"></a>agctl trust-store help
+</code></pre></div>
+<h4 id="set_4">Параметры для set<a class="headerlink" href="#set_4" title="Permanent link">&para;</a></h4>
+<p><strong>Обязательный:</strong></p>
+<ul>
+<li><code>--certificates=&lt;PATH&gt;</code>: путь к цепочке сертификатов в формате PEM</li>
+</ul>
+<p><strong>Необязательные:</strong></p>
+<ul>
+<li><code>--truststore=&lt;FILE&gt;</code>: имя файла для создания в директории SSL ActiveGate (по умолчанию: <code>mytruststore.p12</code>)</li>
+<li><code>--password=&lt;STRING&gt;</code>: пароль для хранилища доверенных сертификатов (по умолчанию: <code>changeit</code>)</li>
+</ul>
+<h4 id="_38">Примеры<a class="headerlink" href="#_38" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-29-1" name="__codelineno-29-1" href="#__codelineno-29-1"></a># Установить хранилище с пользовательским именем файла и паролем
+<a id="__codelineno-29-2" name="__codelineno-29-2" href="#__codelineno-29-2"></a>agctl trust-store set --certificates=certs.crt --truststore=superstore.p12 --password=changeit
+<a id="__codelineno-29-3" name="__codelineno-29-3" href="#__codelineno-29-3"></a>
+<a id="__codelineno-29-4" name="__codelineno-29-4" href="#__codelineno-29-4"></a># Установить хранилище с настройками по умолчанию
+<a id="__codelineno-29-5" name="__codelineno-29-5" href="#__codelineno-29-5"></a>agctl trust-store set --certificates=certs.crt
+<a id="__codelineno-29-6" name="__codelineno-29-6" href="#__codelineno-29-6"></a>
+<a id="__codelineno-29-7" name="__codelineno-29-7" href="#__codelineno-29-7"></a># Получить конфигурацию хранилища
+<a id="__codelineno-29-8" name="__codelineno-29-8" href="#__codelineno-29-8"></a>agctl trust-store get
+<a id="__codelineno-29-9" name="__codelineno-29-9" href="#__codelineno-29-9"></a>
+<a id="__codelineno-29-10" name="__codelineno-29-10" href="#__codelineno-29-10"></a># Очистить конфигурацию хранилища
+<a id="__codelineno-29-11" name="__codelineno-29-11" href="#__codelineno-29-11"></a>agctl trust-store clear
+</code></pre></div>
+<h3 id="version">Version<a class="headerlink" href="#version" title="Permanent link">&para;</a></h3>
+<p>Получение информации о версии ActiveGate.</p>
+<h4 id="_39">Использование<a class="headerlink" href="#_39" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-30-1" name="__codelineno-30-1" href="#__codelineno-30-1"></a>agctl version get
+<a id="__codelineno-30-2" name="__codelineno-30-2" href="#__codelineno-30-2"></a>agctl version help
+</code></pre></div>
+<h4 id="_40">Примеры<a class="headerlink" href="#_40" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-31-1" name="__codelineno-31-1" href="#__codelineno-31-1"></a># Получить версию ActiveGate
+<a id="__codelineno-31-2" name="__codelineno-31-2" href="#__codelineno-31-2"></a>agctl version get
+</code></pre></div>
+<h2 id="_41">Типовые сценарии использования<a class="headerlink" href="#_41" title="Permanent link">&para;</a></h2>
+<p>Не забывайте <a href="../operation/stop-restart-activegate/" title="Узнайте, как запустить, остановить и перезапустить ActiveGate на Windows или Linux.">перезапускать ActiveGate</a> после внесения изменений конфигурации, чтобы они вступили в силу.</p>
+<h3 id="activegate">Начальная конфигурация ActiveGate<a class="headerlink" href="#activegate" title="Permanent link">&para;</a></h3>
+<p>После установки ActiveGate может потребоваться настройка нескольких параметров одновременно:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-32-1" name="__codelineno-32-1" href="#__codelineno-32-1"></a># Установить группу ActiveGate
+<a id="__codelineno-32-2" name="__codelineno-32-2" href="#__codelineno-32-2"></a>agctl group set production.activegate
+<a id="__codelineno-32-3" name="__codelineno-32-3" href="#__codelineno-32-3"></a>
+<a id="__codelineno-32-4" name="__codelineno-32-4" href="#__codelineno-32-4"></a># Настроить сетевую зону
+<a id="__codelineno-32-5" name="__codelineno-32-5" href="#__codelineno-32-5"></a>agctl network-zone set production.zone
+</code></pre></div>
+<h3 id="_42">Настройка обратного прокси<a class="headerlink" href="#_42" title="Permanent link">&para;</a></h3>
+<p>Для настройки ActiveGate за обратным прокси:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-33-1" name="__codelineno-33-1" href="#__codelineno-33-1"></a># Настроить исходящую конечную точку для трафика ActiveGate -&gt; Dynatrace
+<a id="__codelineno-33-2" name="__codelineno-33-2" href="#__codelineno-33-2"></a>agctl outgoing-endpoint set https://proxy.example.com:443/communication
+<a id="__codelineno-33-3" name="__codelineno-33-3" href="#__codelineno-33-3"></a>
+<a id="__codelineno-33-4" name="__codelineno-33-4" href="#__codelineno-33-4"></a># Настроить входящую конечную точку для трафика OneAgent -&gt; ActiveGate
+<a id="__codelineno-33-5" name="__codelineno-33-5" href="#__codelineno-33-5"></a>agctl incoming-endpoint set https://proxy.example.com:443/communication
+</code></pre></div>
+<h3 id="_43">Управление модулями<a class="headerlink" href="#_43" title="Permanent link">&para;</a></h3>
+<p>Включение конкретных модулей для нужд мониторинга:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-34-1" name="__codelineno-34-1" href="#__codelineno-34-1"></a># Включить необходимые модули
+<a id="__codelineno-34-2" name="__codelineno-34-2" href="#__codelineno-34-2"></a>agctl modules enable MSGrouter,metrics_ingest
+<a id="__codelineno-34-3" name="__codelineno-34-3" href="#__codelineno-34-3"></a>
+<a id="__codelineno-34-4" name="__codelineno-34-4" href="#__codelineno-34-4"></a># Проверить включённые модули
+<a id="__codelineno-34-5" name="__codelineno-34-5" href="#__codelineno-34-5"></a>agctl modules get
+</code></pre></div>
+<h3 id="ssl-">Конфигурация SSL-сертификата<a class="headerlink" href="#ssl-" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-35-1" name="__codelineno-35-1" href="#__codelineno-35-1"></a># Установить пользовательский SSL-сертификат
+<a id="__codelineno-35-2" name="__codelineno-35-2" href="#__codelineno-35-2"></a>agctl ssl-certificate set --certificate=/path/to/cert.crt --key=/path/to/key.pem --password=mypassword
+<a id="__codelineno-35-3" name="__codelineno-35-3" href="#__codelineno-35-3"></a>
+<a id="__codelineno-35-4" name="__codelineno-35-4" href="#__codelineno-35-4"></a># Проверить конфигурацию
+<a id="__codelineno-35-5" name="__codelineno-35-5" href="#__codelineno-35-5"></a>agctl ssl-certificate get
+</code></pre></div>
+<h3 id="_44">Диагностика<a class="headerlink" href="#_44" title="Permanent link">&para;</a></h3>
+<p>Создание архива поддержки при возникновении проблем:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-36-1" name="__codelineno-36-1" href="#__codelineno-36-1"></a># Создать архив поддержки за последние 7 дней в директорию /tmp
+<a id="__codelineno-36-2" name="__codelineno-36-2" href="#__codelineno-36-2"></a>agctl support-archive create --days=7 --directory=/tmp
+</code></pre></div>
+<h2 id="_45">Смотрите также<a class="headerlink" href="#_45" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="../operation/stop-restart-activegate/" title="Узнайте, как запустить, остановить и перезапустить ActiveGate на Windows или Linux.">Запуск/остановка/перезапуск ActiveGate</a></li>
+<li><a href="../configuration/configure-activegate/" title="Узнайте, какие свойства ActiveGate можно настраивать в зависимости от ваших потребностей.">Свойства и параметры конфигурации ActiveGate</a></li>
+<li><a href="../activegate-diagnostics/" title="Узнайте, как выполнить диагностику ActiveGate">Диагностика ActiveGate</a></li>
+<li><a href="../installation/linux/linux-customize-installation-for-activegate/" title="Узнайте о параметрах командной строки, которые можно использовать с ActiveGate на Linux.">Настройка установки ActiveGate</a></li>
+<li><a href="../configuration/configure-custom-ssl-certificate-on-activegate/" title="Узнайте, как настроить SSL-сертификат на ActiveGate.">Настройка пользовательского SSL-сертификата на ActiveGate</a></li>
+<li><a href="../configuration/configure-trusted-root-certificates-on-activegate/" title="Узнайте, как настроить пользовательские доверенные корневые сертификаты на ActiveGate.">Настройка доверенных корневых сертификатов на ActiveGate</a></li>
+<li><a href="../configuration/set-up-reverse-proxy-for-activegate/" title="Узнайте, как настроить свойства ActiveGate для установки обратного прокси или балансировщика нагрузки.">Настройка обратного прокси для ActiveGate</a></li>
+<li><a href="../configuration/set-up-reverse-proxy-for-oneagent/" title="Настройте свойства ActiveGate для установки обратного прокси или балансировщика нагрузки для OneAgent.">Настройка обратного прокси для OneAgent</a></li>
+</ul>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  К началу
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      © 2026 Dynatrace Docs | Yerkebulan Ardabayev
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/Yerkebulan-Ardabayev" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../../..", "features": ["navigation.indexes", "navigation.prune", "navigation.path", "navigation.tracking", "navigation.top", "search.suggest", "search.highlight", "search.share", "content.code.copy", "content.code.annotate", "content.tabs.link", "content.tooltips", "toc.follow"], "search": "../../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u0421\u043a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u043d\u043e \u0432 \u0431\u0443\u0444\u0435\u0440", "clipboard.copy": "\u041a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u0442\u044c \u0432 \u0431\u0443\u0444\u0435\u0440", "search.result.more.one": "\u0415\u0449\u0451 1 \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.more.other": "\u0415\u0449\u0451 # \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.none": "\u0421\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439 \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u043e", "search.result.one": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e 1 \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0435", "search.result.other": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439: #", "search.result.placeholder": "\u041d\u0430\u0447\u043d\u0438\u0442\u0435 \u043f\u0435\u0447\u0430\u0442\u0430\u0442\u044c \u0434\u043b\u044f \u043f\u043e\u0438\u0441\u043a\u0430", "search.result.term.missing": "\u041e\u0442\u0441\u0443\u0442\u0441\u0442\u0432\u0443\u0435\u0442", "select.version": "\u0412\u044b\u0431\u0435\u0440\u0438\u0442\u0435 \u0432\u0435\u0440\u0441\u0438\u044e"}, "version": null}</script>
+    
+    
+  
+      <script src="../../../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../../../../assets/javascripts/groq-chat.js?sha=17d46ba74"></script>
+      
+    
+  <script>
+    (function() {
+      // --- Keyboard shortcut Ctrl+K / Cmd+K for search ---
+      document.addEventListener('keydown', function(e) {
+        if ((e.ctrlKey || e.metaKey) && e.key === 'k') {
+          e.preventDefault();
+          var searchInput = document.querySelector('.md-search__input');
+          if (searchInput) {
+            searchInput.focus();
+            var searchToggle = document.querySelector('[data-md-toggle="search"]');
+            if (searchToggle && !searchToggle.checked) {
+              searchToggle.checked = true;
+              searchToggle.dispatchEvent(new Event('change'));
+            }
+          }
+        }
+        // --- "/" focuses search like GitHub / Algolia docs ---
+        if (e.key === '/' && !/^(input|textarea|select)$/i.test(e.target.tagName)) {
+          e.preventDefault();
+          var inp = document.querySelector('.md-search__input');
+          if (inp) {
+            inp.focus();
+            var t = document.querySelector('[data-md-toggle="search"]');
+            if (t && !t.checked) { t.checked = true; t.dispatchEvent(new Event('change')); }
+          }
+        }
+      });
+    })();
+  </script>
+
+  </body>
+</html>

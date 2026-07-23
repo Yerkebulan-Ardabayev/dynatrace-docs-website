@@ -1,0 +1,4903 @@
+
+<!doctype html>
+<html lang="ru" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Документация Dynatrace Managed с AI-помощником">
+      
+      
+        <meta name="author" content="Yerkebulan Ardabayev">
+      
+      
+        <link rel="canonical" href="https://yerkebulan-ardabayev.github.io/dynatrace-docs-website/managed-ru/ingest-from/setup-on-k8s/reference/security/">
+      
+      
+        <link rel="prev" href="../network/">
+      
+      
+        <link rel="next" href="../storage/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>Безопасность Dynatrace Operator - Dynatrace — Документация</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Inter";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../../assets/stylesheets/extra.v11.css?sha=17d46ba74">
+    
+    <script>__md_scope=new URL("../../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  <style>
+    /* DocFlow DT Logo Badge — injected via template override */
+    .md-header__button.md-logo {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .md-header__button.md-logo img,
+    .md-header__button.md-logo svg {
+      display: none !important;
+    }
+    .md-header__button.md-logo::before {
+      content: 'DT';
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 28px;
+      height: 28px;
+      border-radius: 6px;
+      background: linear-gradient(135deg, #00d4aa 0%, #7c3aed 100%);
+      color: white;
+      font-size: 11px;
+      font-weight: 700;
+      font-family: 'Inter', sans-serif;
+      letter-spacing: -0.02em;
+      flex-shrink: 0;
+    }
+
+    /* Search Ctrl+K badge — inside input field */
+    .md-search__form {
+      position: relative;
+    }
+    .md-search__form::after {
+      content: 'Ctrl+K';
+      display: none;
+      align-items: center;
+      padding: 0.15rem 0.4rem;
+      border-radius: 4px;
+      border: 1px solid var(--docflow-border);
+      background: var(--md-default-bg-color);
+      font-size: 10px;
+      font-family: 'JetBrains Mono', monospace;
+      color: var(--md-default-fg-color--lighter);
+      white-space: nowrap;
+      pointer-events: none;
+      position: absolute;
+      right: 0.5rem;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+    @media (min-width: 60em) {
+      .md-search__form::after {
+        display: flex;
+      }
+    }
+  </style>
+
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="custom">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#dynatrace-operator" class="md-skip">
+          Перейти к содержанию
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+  
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Верхний колонтитул">
+    <a href="../../../../.." title="Dynatrace — Документация" class="md-header__button md-logo" aria-label="Dynatrace — Документация" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M11 15H6l7-14v8h5l-7 14z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Dynatrace — Документация
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Безопасность Dynatrace Operator
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Переключить на светлую тему"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Переключить на светлую тему" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Переключить на тёмную тему"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Переключить на тёмную тему" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Поиск" placeholder="Поиск" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Поиск">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Поделиться" aria-label="Поделиться" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Очистить" aria-label="Очистить" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Инициализация поиска
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/Yerkebulan-Ardabayev/dynatrace-docs-website" title="Перейти к репозиторию" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    dynatrace-docs-website
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Навигация" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../../.." title="Dynatrace — Документация" class="md-nav__button md-logo" aria-label="Dynatrace — Документация" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M11 15H6l7-14v8h5l-7 14z"/></svg>
+
+    </a>
+    Dynatrace — Документация
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/Yerkebulan-Ardabayev/dynatrace-docs-website" title="Перейти к репозиторию" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    dynatrace-docs-website
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Главная
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../../../ru/getting-started/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Начало работы
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../../installation/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Кластер Managed
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Источники данных
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Источники данных
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обзор
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../amazon-web-services/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Настройка Dynatrace на Amazon Web Services
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../bulk-configuration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Удалённое управление конфигурацией OneAgent и ActiveGate
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../dynatrace-activegate/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dynatrace ActiveGate
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../dynatrace-oneagent/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dynatrace OneAgent
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../extend-dynatrace/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Расширение Dynatrace
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../extensions/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Расширения
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../google-cloud-platform/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Настройка Dynatrace на Google Cloud
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../microsoft-azure-services/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Настройка Dynatrace на Microsoft Azure
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../opentelemetry/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OpenTelemetry и Dynatrace
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../setup-on-container-platforms/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Настройка Dynatrace на контейнерных и PaaS-платформах
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_12" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4_12" id="__nav_4_12_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Настройка Dynatrace на Kubernetes
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_12_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4_12">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Настройка Dynatrace на Kubernetes
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обзор
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../deployment/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Развёртывание
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../extend-observability-k8s/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Расширение наблюдаемости для Kubernetes
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../guides/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Руководства
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../how-it-works/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Как это работает
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quickstart/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Быстрый старт
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_12_7" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4_12_7" id="__nav_4_12_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Справка
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_12_7_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4_12_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Справка
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обзор
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../code-modules-delivery-modes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Способы доставки code modules
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dynakube-feature-flags/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Флаги функций DynaKube для Dynatrace Operator
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dynakube-parameters/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Параметры DynaKube для оператора Dynatrace
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../network/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Сетевой трафик
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Безопасность Dynatrace Operator
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../storage/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Требования к хранилищу
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../workload-mutation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Мутации подов Dynatrace для приложений
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../technology-support/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Поддержка технологий
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    
+  
+  
+  
+    <a href="../../../../observe/application-observability/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Наблюдаемость
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../../dynatrace-intelligence/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Davis AI
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    
+  
+  
+  
+    <a href="../../../../analyze-explore-automate/dashboards-classic/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Анализ
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../../deliver/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Deliver
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    
+  
+  
+  
+    <a href="../../../../secure/application-security/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Безопасность приложений
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    
+  
+  
+  
+    <a href="../../../../manage/account-management/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Управление
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    
+  
+  
+  
+    <a href="../../../../platform/oneagent/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Платформа
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../../dynatrace-api/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../../whats-new/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Что нового
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../../offline-doc/how-do-i-enable-synthetic-monitors/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Офлайн-документация
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../../../ru/training/day1-introduction/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обучение
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../ai/groq/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI Помощник
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Содержание">
+  
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+                
+
+
+
+  
+
+
+  <nav class="md-path" aria-label="Навигация" >
+    <ol class="md-path__list">
+      
+        
+  
+  
+    <li class="md-path__item">
+      <a href="../../../../.." class="md-path__link">
+        
+  <span class="md-ellipsis">
+    Главная
+  </span>
+
+      </a>
+    </li>
+  
+
+      
+      
+        
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="../../../" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    Источники данных
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="../../" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    Настройка Dynatrace на Kubernetes
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="../" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    Справка
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ol>
+  </nav>
+
+              
+              <article class="md-content__inner md-typeset">
+                
+  
+                  
+
+
+
+<h1 id="dynatrace-operator">Безопасность Dynatrace Operator<a class="headerlink" href="#dynatrace-operator" title="Permanent link">&para;</a></h1>
+<h1 id="dynatrace-operator_1">Безопасность Dynatrace Operator<a class="headerlink" href="#dynatrace-operator_1" title="Permanent link">&para;</a></h1>
+<ul>
+<li>Справка</li>
+<li>Чтение: 16 мин</li>
+<li>Обновлено 20 мая 2026 г.</li>
+</ul>
+<p>Наблюдаемость Kubernetes опирается на компоненты с разными назначениями, конфигурациями по умолчанию и правами доступа. Этим компонентам нужны права для выполнения и поддержания рабочих функций Dynatrace в кластере.</p>
+<p>Хотя права Dynatrace соответствуют принципу минимально необходимых привилегий, нужно защитить пространство имён <code>dynatrace</code> и ограничить доступ к нему закрытой группой администраторов и операторов.</p>
+<h2 id="_1">Права на развёртывание<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<p>Установка и обновление Dynatrace Operator требуют административных привилегий. Если не используется кластерная роль <code>cluster-admin</code>, нужно убедиться, что у субъекта, выполняющего развёртывание, есть права, перечисленные в этом разделе. Требуемые права также включают <code>patch</code> для поддержки <code>helm upgrade</code> и права на управление пользовательскими ресурсами <code>DynaKube</code> и <code>EdgeConnect</code>.</p>
+<p>Эти права требуются только для развёртывания (установки) Operator. Права, необходимые во время выполнения, см. в разделе <a href="#permission-list">Список прав</a>.</p>
+<h3 id="_2">Ресурсы уровня кластера<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
+<p>Пользователь или сервисный аккаунт, выполняющий развёртывание, должен иметь возможность <strong>создавать, обновлять, применять патчи и удалять</strong> следующие типы ресурсов уровня кластера:</p>
+<table>
+<thead>
+<tr>
+<th>Тип ресурса</th>
+<th>Группа API</th>
+<th>Глаголы</th>
+<th>Имена ресурсов</th>
+<th>Примечания</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>CustomResourceDefinition</code></td>
+<td><code>apiextensions.k8s.io</code></td>
+<td><code>create</code>, <code>update</code>, <code>patch</code>, <code>delete</code></td>
+<td><code>dynakubes.dynatrace.com</code>, <code>edgeconnects.dynatrace.com</code></td>
+<td>Требуется для установки CRD Dynatrace</td>
+</tr>
+<tr>
+<td><code>ClusterRole</code></td>
+<td><code>rbac.authorization.k8s.io</code></td>
+<td><code>create</code>, <code>update</code>, <code>patch</code>, <code>delete</code>, <code>escalate</code>, <code>bind</code></td>
+<td></td>
+<td><strong>Важно:</strong> требуются права <code>escalate</code> или эквивалентные. См. <a href="#deployment-rbac-verbs">Глаголы RBAC для развёртывания</a>.</td>
+</tr>
+<tr>
+<td><code>ClusterRoleBinding</code></td>
+<td><code>rbac.authorization.k8s.io</code></td>
+<td><code>create</code>, <code>update</code>, <code>patch</code>, <code>delete</code></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><code>MutatingWebhookConfiguration</code></td>
+<td><code>admissionregistration.k8s.io</code></td>
+<td><code>create</code>, <code>update</code>, <code>patch</code>, <code>delete</code></td>
+<td><code>dynatrace-webhook</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>ValidatingWebhookConfiguration</code></td>
+<td><code>admissionregistration.k8s.io</code></td>
+<td><code>create</code>, <code>update</code>, <code>patch</code>, <code>delete</code></td>
+<td><code>dynatrace-webhook</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>CSIDriver</code></td>
+<td><code>storage.k8s.io</code></td>
+<td><code>create</code>, <code>update</code>, <code>patch</code>, <code>delete</code></td>
+<td></td>
+<td>Требуется для CSI-драйвера</td>
+</tr>
+<tr>
+<td><code>PriorityClass</code></td>
+<td><code>scheduling.k8s.io</code></td>
+<td><code>create</code>, <code>update</code>, <code>patch</code>, <code>delete</code></td>
+<td></td>
+<td>Требуется для CSI-драйвера</td>
+</tr>
+<tr>
+<td><code>Namespace</code></td>
+<td><code>""</code></td>
+<td><code>create</code></td>
+<td></td>
+<td>Требуется для <code>helm install --create-namespace</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="_3">Ресурсы уровня пространства имён<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<p>Пользователь или сервисный аккаунт, выполняющий развёртывание, должен иметь возможность <strong>создавать, обновлять, применять патчи и удалять</strong> следующие типы ресурсов в пространстве имён оператора:</p>
+<table>
+<thead>
+<tr>
+<th>Тип ресурса</th>
+<th>Группа API</th>
+<th>Глаголы</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>ServiceAccount</code></td>
+<td><code>""</code></td>
+<td><code>create</code>, <code>update</code>, <code>patch</code>, <code>delete</code></td>
+</tr>
+<tr>
+<td><code>Role</code></td>
+<td><code>rbac.authorization.k8s.io</code></td>
+<td><code>create</code>, <code>update</code>, <code>patch</code>, <code>delete</code></td>
+</tr>
+<tr>
+<td><code>RoleBinding</code></td>
+<td><code>rbac.authorization.k8s.io</code></td>
+<td><code>create</code>, <code>update</code>, <code>patch</code>, <code>delete</code></td>
+</tr>
+<tr>
+<td><code>Deployment</code></td>
+<td><code>apps</code></td>
+<td><code>create</code>, <code>update</code>, <code>patch</code>, <code>delete</code></td>
+</tr>
+<tr>
+<td><code>DaemonSet</code></td>
+<td><code>apps</code></td>
+<td><code>create</code>, <code>update</code>, <code>patch</code>, <code>delete</code></td>
+</tr>
+<tr>
+<td><code>Service</code></td>
+<td><code>""</code></td>
+<td><code>create</code>, <code>update</code>, <code>patch</code>, <code>delete</code></td>
+</tr>
+<tr>
+<td><code>Secret</code></td>
+<td><code>""</code></td>
+<td><code>create</code>, <code>update</code>, <code>patch</code>, <code>delete</code></td>
+</tr>
+<tr>
+<td><code>ConfigMap</code></td>
+<td><code>""</code></td>
+<td><code>create</code>, <code>update</code>, <code>patch</code>, <code>delete</code></td>
+</tr>
+<tr>
+<td><code>PodDisruptionBudget</code></td>
+<td><code>policy</code></td>
+<td><code>create</code>, <code>update</code>, <code>patch</code>, <code>delete</code></td>
+</tr>
+<tr>
+<td><code>DynaKube</code></td>
+<td><code>dynatrace.com</code></td>
+<td><code>create</code>, <code>update</code>, <code>patch</code>, <code>delete</code></td>
+</tr>
+<tr>
+<td><code>EdgeConnect</code></td>
+<td><code>dynatrace.com</code></td>
+<td><code>create</code>, <code>update</code>, <code>patch</code>, <code>delete</code></td>
+</tr>
+<tr>
+<td><code>Job</code></td>
+<td><code>batch</code></td>
+<td><code>create</code>, <code>update</code>, <code>patch</code>, <code>delete</code></td>
+</tr>
+</tbody>
+</table>
+<p>Ссылки на манифесты ClusterRole для развёртывания Dynatrace Operator см. в разделе <a href="#deployment-rbac-verbs">Глаголы RBAC для развёртывания</a>.</p>
+<h3 id="_4">Специфичные для платформы ресурсы<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<p>В зависимости от целевой платформы, чарт Helm создаёт дополнительные ресурсы, для которых требуются дополнительные права у пользователя, выполняющего развёртывание.</p>
+<h4 id="gke-autopilot">GKE Autopilot<a class="headerlink" href="#gke-autopilot" title="Permanent link">&para;</a></h4>
+<p>В кластерах GKE Autopilot чарт Helm автоматически обнаруживает группу API <code>auto.gke.io/v1/AllowlistSynchronizer</code> и создаёт ресурс <code>AllowlistSynchronizer</code> в качестве pre-install хука Helm. Это добавляет в allowlist CSI-драйвер, мониторинг логов и рабочие нагрузки CSI-задач, необходимые оператору.</p>
+<p>Пользователю или сервисному аккаунту, выполняющему развёртывание, требуется следующее дополнительное право:</p>
+<table>
+<thead>
+<tr>
+<th>Группа API</th>
+<th>Ресурс</th>
+<th>Глаголы</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>auto.gke.io</code></td>
+<td><code>allowlistsynchronizers</code></td>
+<td><code>create</code>, <code>get</code>, <code>update</code>, <code>patch</code>, <code>delete</code>, <code>list</code></td>
+</tr>
+</tbody>
+</table>
+<h4 id="openshift">OpenShift<a class="headerlink" href="#openshift" title="Permanent link">&para;</a></h4>
+<p>В кластерах OpenShift (обнаруживаются по группе API <code>security.openshift.io/v1</code> или по параметру <code>--set platform=openshift</code>) чарт Helm создаёт дополнительные ClusterRole, предоставляющие доступ <code>use</code> к SecurityContextConstraints (<code>privileged</code>, <code>nonroot</code>, <code>nonroot-v2</code>). Если используется рекомендуемый подход <code>escalate</code>, описанный в разделе <a href="#deployment-rbac-verbs">Глаголы RBAC для развёртывания</a>, дополнительные права у пользователя, выполняющего развёртывание, не требуются.</p>
+<h3 id="rbac-bind-escalate">Глаголы RBAC для развёртывания: <code>bind</code> и <code>escalate</code><a class="headerlink" href="#rbac-bind-escalate" title="Permanent link">&para;</a></h3>
+<p>Kubernetes применяет <a href="https://kubernetes.io/docs/reference/access-authn-authz/rbac/#privilege-escalation-prevention-and-bootstrapping">предотвращение эскалации привилегий﻿</a>: нельзя создать ClusterRole, предоставляющую права, которых у пользователя ещё нет, и нельзя создать ClusterRoleBinding, ссылающийся на ClusterRole с правами, которых у пользователя нет.</p>
+<p>Чарт Helm Dynatrace Operator создаёт несколько ClusterRole (например, для чтения узлов, подов и метрик). Аккаунту, выполняющему развёртывание, нужна возможность создавать эти ClusterRole и их привязки. Есть два подхода:</p>
+<p>Приведённые ниже примеры манифестов ClusterRole для аккаунта развёртывания включают права на управление пользовательскими ресурсами <code>DynaKube</code> и <code>EdgeConnect</code>. Предполагается, что тот же сервисный аккаунт, который используется для развёртывания Operator, используется и для развёртывания пользовательских ресурсов, настраивающих его. В примеры также включены специфичные для платформы ресурсы для GKE Autopilot и OpenShift.</p>
+<p>Эти примеры манифестов соответствуют правам для <strong>текущей</strong> версии Operator. При обновлении до новой версии Operator нужно использовать манифесты из соответствующего <a href="https://github.com/Dynatrace/dynatrace-operator/tags">тега релиза﻿</a>.</p>
+<h4 id="a-escalate-bind">Вариант A: использование <code>escalate</code> и <code>bind</code><a class="headerlink" href="#a-escalate-bind" title="Permanent link">&para;</a></h4>
+<p>Предоставить аккаунту развёртывания глаголы <code>escalate</code> и <code>bind</code> на ресурсах RBAC. Это подход с низкими затратами на обслуживание, так как права аккаунта развёртывания не нужно обновлять при изменении ClusterRole Operator между версиями.</p>
+<ul>
+<li><strong><code>escalate</code></strong> для <code>clusterroles</code> разрешает создавать или обновлять объекты ClusterRole, содержащие права, которых нет у аккаунта развёртывания. Это <strong>не</strong> предоставляет эти права самому аккаунту развёртывания, а лишь разрешает управлять ресурсами ClusterRole.</li>
+<li><strong><code>bind</code></strong> для <code>clusterroles</code> и <code>clusterrolebindings</code> разрешает создавать ClusterRoleBinding, ссылающиеся на ClusterRole с правами, которых нет у аккаунта развёртывания.</li>
+</ul>
+<p>Предоставление <code>escalate</code> и <code>bind</code> отключает для аккаунта развёртывания предотвращение эскалации привилегий Kubernetes, то есть он сможет создавать ClusterRole с любыми правами и привязывать их к любому субъекту. Эти риски можно снизить, используя политики допуска (admission control), ограничивающие, какие ClusterRole и ClusterRoleBinding может создавать аккаунт развёртывания.</p>
+<p>Пример манифеста ClusterRole для аккаунта развёртывания (включает права для CSI-драйвера, GKE Autopilot и OpenShift):</p>
+<p><a href="https://github.com/Dynatrace/dynatrace-operator/blob/v1.10.0/assets/samples/deployer/deployer-clusterrole-with-csi.yaml">С CSI-драйвером﻿</a></p>
+<p>Если CSI-драйвер не развёртывается, нужно использовать вариант <a href="https://github.com/Dynatrace/dynatrace-operator/blob/v1.10.0/assets/samples/deployer/deployer-clusterrole-no-csi.yaml">Без CSI-драйвера﻿</a>, он не содержит прав <code>CSIDriver</code> и <code>PriorityClass</code>.</p>
+<h4 id="b-escalate-bind">Вариант B: расширенные права, если <code>escalate</code> или <code>bind</code> запрещены<a class="headerlink" href="#b-escalate-bind" title="Permanent link">&para;</a></h4>
+<p>Если политики безопасности запрещают глаголы <code>escalate</code> или <code>bind</code>, аккаунт развёртывания должен уже обладать всеми правами, которые предоставляют ClusterRole Operator во время выполнения. Это означает перечисление всех прав Dynatrace Operator в ClusterRole аккаунта развёртывания, чтобы предотвращение эскалации Kubernetes никогда не срабатывало.</p>
+<p>ClusterRole без escalate напрямую предоставляет все права времени выполнения: чтение и запись секретов, pods/exec, изменение webhook, управление DaemonSet и другие. Из-за этого сам аккаунт развёртывания становится субъектом с высокими привилегиями и широким доступом к кластеру. Всё равно рекомендуется использовать политики допуска, ограничивающие, какие ресурсы RBAC может создавать аккаунт развёртывания.</p>
+<p>Пример манифеста ClusterRole для аккаунта развёртывания (без escalate, включает права для CSI-драйвера, GKE Autopilot и OpenShift):</p>
+<p><a href="https://github.com/Dynatrace/dynatrace-operator/blob/v1.10.0/assets/samples/deployer/deployer-clusterrole-no-escalate-with-csi.yaml">С CSI-драйвером﻿</a></p>
+<p>Если CSI-драйвер не развёртывается, нужно использовать вариант <a href="https://github.com/Dynatrace/dynatrace-operator/blob/v1.10.0/assets/samples/deployer/deployer-clusterrole-no-escalate-no-csi.yaml">Без CSI-драйвера﻿</a>, он не содержит прав <code>CSIDriver</code> и <code>PriorityClass</code>.</p>
+<h2 id="_5">Список прав<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
+<h3 id="dynatrace-operator_2">Dynatrace Operator<a class="headerlink" href="#dynatrace-operator_2" title="Permanent link">&para;</a></h3>
+<p><strong>Назначение:</strong> поддерживает жизненный цикл компонентов Dynatrace. Заменяет OneAgent Operator.</p>
+<p><strong>Конфигурация по умолчанию:</strong> <code>1-replica-per-cluster</code></p>
+<p><strong>Объекты RBAC</strong>:</p>
+<ul>
+<li>Service Account <code>dynatrace-operator</code></li>
+<li>Cluster-Role <code>dynatrace-operator</code></li>
+<li>Role <code>dynatrace-operator</code></li>
+</ul>
+<h4 id="_6">Разрешения на уровне кластера<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>Ресурсы</th>
+<th>Группа API</th>
+<th>Действия</th>
+<th>Имена ресурсов</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>nodes</code></td>
+<td><code>""</code></td>
+<td>Get, List, Watch</td>
+<td></td>
+</tr>
+<tr>
+<td><code>namespaces</code></td>
+<td><code>""</code></td>
+<td>Get, List, Watch, Update</td>
+<td></td>
+</tr>
+<tr>
+<td><code>secrets</code></td>
+<td><code>""</code></td>
+<td>Create</td>
+<td></td>
+</tr>
+<tr>
+<td><code>secrets</code></td>
+<td><code>""</code></td>
+<td>Get, Update, Delete, List</td>
+<td><code>dynatrace-dynakube-config``dynatrace-bootstrapper-config``dynatrace-bootstrapper-certs``dynatrace-metadata-enrichment-endpoint``dynatrace-otlp-exporter-config``dynatrace-otlp-exporter-certs</code></td>
+</tr>
+<tr>
+<td><code>mutatingwebhookconfigurations</code></td>
+<td><code>admissionregistration.k8s.io</code></td>
+<td>Get, Update</td>
+<td><code>dynatrace-webhook</code></td>
+</tr>
+<tr>
+<td><code>validatingwebhookconfigurations</code></td>
+<td><code>admissionregistration.k8s.io</code></td>
+<td>Get, Update</td>
+<td><code>dynatrace-webhook</code></td>
+</tr>
+<tr>
+<td><code>customresourcedefinitions</code></td>
+<td><code>apiextensions.k8s.io</code></td>
+<td>Get, Update</td>
+<td><code>dynakubes.dynatrace.com``edgeconnects.dynatrace.com</code></td>
+</tr>
+<tr>
+<td><code>customresourcedefinitions/status</code></td>
+<td><code>apiextensions.k8s.io</code></td>
+<td>Get, Update</td>
+<td><code>dynakubes.dynatrace.com``edgeconnects.dynatrace.com</code></td>
+</tr>
+<tr>
+<td><code>securitycontextconstraints</code></td>
+<td><code>security.openshift.io</code></td>
+<td>Use</td>
+<td><code>privileged``nonroot-v2</code></td>
+</tr>
+</tbody>
+</table>
+<h4 id="dynatrace">Разрешения в пространстве имён <code>dynatrace</code><a class="headerlink" href="#dynatrace" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>Ресурсы</th>
+<th>Группа API</th>
+<th>Действия</th>
+<th>Имена ресурсов</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>dynakubes</code></td>
+<td><code>dynatrace.com</code></td>
+<td>Get, List, Watch, Update</td>
+<td></td>
+</tr>
+<tr>
+<td><code>edgeconnects</code></td>
+<td><code>dynatrace.com</code></td>
+<td>Get, List, Watch, Update</td>
+<td></td>
+</tr>
+<tr>
+<td><code>dynakubes/finalizers</code></td>
+<td><code>dynatrace.com</code></td>
+<td>Update</td>
+<td></td>
+</tr>
+<tr>
+<td><code>edgeconnects/finalizers</code></td>
+<td><code>dynatrace.com</code></td>
+<td>Update</td>
+<td></td>
+</tr>
+<tr>
+<td><code>dynakubes/status</code></td>
+<td><code>dynatrace.com</code></td>
+<td>Update</td>
+<td></td>
+</tr>
+<tr>
+<td><code>edgeconnects/status</code></td>
+<td><code>dynatrace.com</code></td>
+<td>Update</td>
+<td></td>
+</tr>
+<tr>
+<td><code>statefulsets</code></td>
+<td><code>apps</code></td>
+<td>Get, List, Watch, Create, Update, Delete</td>
+<td></td>
+</tr>
+<tr>
+<td><code>daemonsets</code></td>
+<td><code>apps</code></td>
+<td>Get, List, Watch, Create, Update, Delete</td>
+<td></td>
+</tr>
+<tr>
+<td><code>replicasets</code></td>
+<td><code>apps</code></td>
+<td>Get, List, Watch, Create, Update, Delete</td>
+<td></td>
+</tr>
+<tr>
+<td><code>deployments</code></td>
+<td><code>apps</code></td>
+<td>Get, List, Watch, Create, Update, Delete</td>
+<td></td>
+</tr>
+<tr>
+<td><code>deployments/finalizers</code></td>
+<td><code>apps</code></td>
+<td>Update</td>
+<td></td>
+</tr>
+<tr>
+<td><code>configmaps</code></td>
+<td><code>""</code></td>
+<td>Get, List, Watch, Create, Update, Delete</td>
+<td></td>
+</tr>
+<tr>
+<td><code>pods</code></td>
+<td><code>""</code></td>
+<td>Get, List, Watch</td>
+<td></td>
+</tr>
+<tr>
+<td><code>secrets</code></td>
+<td><code>""</code></td>
+<td>Get, List, Watch, Create, Update, Delete</td>
+<td></td>
+</tr>
+<tr>
+<td><code>events</code></td>
+<td><code>""</code></td>
+<td>Create, Get, List, Patch</td>
+<td></td>
+</tr>
+<tr>
+<td><code>services</code></td>
+<td><code>""</code></td>
+<td>Create, Update, Delete, Get, List, Watch</td>
+<td></td>
+</tr>
+<tr>
+<td><code>serviceentries</code></td>
+<td><code>networking.istio.io</code></td>
+<td>Get, List, Create, Update, Delete</td>
+<td></td>
+</tr>
+<tr>
+<td><code>virtualservices</code></td>
+<td><code>networking.istio.io</code></td>
+<td>Get, List, Create, Update, Delete</td>
+<td></td>
+</tr>
+<tr>
+<td><code>leases</code></td>
+<td><code>coordination.k8s.io</code></td>
+<td>Get, Update, Create</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="dynatrace-operator-webhook-server">Dynatrace Operator Webhook Server<a class="headerlink" href="#dynatrace-operator-webhook-server" title="Permanent link">&para;</a></h3>
+<p><strong>Назначение</strong>:</p>
+<ul>
+<li>изменяет определения подов, добавляя в них модули кода Dynatrace для application observability;</li>
+<li>проверяет пользовательские ресурсы DynaKube;</li>
+<li>обрабатывает преобразование DynaKube между версиями.</li>
+</ul>
+<p><strong>Конфигурация по умолчанию</strong>: <code>1-replica-per-cluster</code>, можно масштабировать</p>
+<p><strong>Объекты RBAC</strong>:</p>
+<ul>
+<li>Service Account <code>dynatrace-webhook</code></li>
+<li>Cluster-Role <code>dynatrace-webhook</code></li>
+<li>Role <code>dynatrace-webhook</code></li>
+</ul>
+<h4 id="_7">Разрешения на уровне кластера<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>Ресурсы</th>
+<th>Группа API</th>
+<th>Действия</th>
+<th>Имена ресурсов</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>namespaces</code></td>
+<td><code>""</code></td>
+<td>Get, List, Watch, Update</td>
+<td></td>
+</tr>
+<tr>
+<td><code>secrets</code></td>
+<td><code>""</code></td>
+<td>Create</td>
+<td></td>
+</tr>
+<tr>
+<td><code>secrets</code></td>
+<td><code>""</code></td>
+<td>Get, List, Watch, Update</td>
+<td><code>dynatrace-dynakube-config``dynatrace-bootstrapper-config``dynatrace-bootstrapper-certs``dynatrace-metadata-enrichment-endpoint``dynatrace-otlp-exporter-config``dynatrace-otlp-exporter-certs</code></td>
+</tr>
+<tr>
+<td><code>replicationcontrollers</code></td>
+<td><code>""</code></td>
+<td>Get</td>
+<td></td>
+</tr>
+<tr>
+<td><code>replicasets</code></td>
+<td><code>apps</code></td>
+<td>Get</td>
+<td></td>
+</tr>
+<tr>
+<td><code>statefulsets</code></td>
+<td><code>apps</code></td>
+<td>Get</td>
+<td></td>
+</tr>
+<tr>
+<td><code>daemonsets</code></td>
+<td><code>apps</code></td>
+<td>Get</td>
+<td></td>
+</tr>
+<tr>
+<td><code>deployments</code></td>
+<td><code>apps</code></td>
+<td>Get</td>
+<td></td>
+</tr>
+<tr>
+<td><code>jobs</code></td>
+<td><code>batch</code></td>
+<td>Get</td>
+<td></td>
+</tr>
+<tr>
+<td><code>cronjobs</code></td>
+<td><code>batch</code></td>
+<td>Get</td>
+<td></td>
+</tr>
+<tr>
+<td><code>deploymentconfigs</code></td>
+<td><code>apps.openshift.io</code></td>
+<td>Get</td>
+<td></td>
+</tr>
+<tr>
+<td><code>securitycontextconstraints</code></td>
+<td><code>security.openshift.io</code></td>
+<td>Use</td>
+<td><code>privileged``nonroot-v2</code></td>
+</tr>
+</tbody>
+</table>
+<h4 id="dynatrace_1">Разрешения в пространстве имён <code>dynatrace</code><a class="headerlink" href="#dynatrace_1" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>Ресурсы</th>
+<th>Группа API</th>
+<th>Действия</th>
+<th>Имена ресурсов</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>events</code></td>
+<td><code>""</code></td>
+<td>Create, Patch</td>
+<td></td>
+</tr>
+<tr>
+<td><code>secrets</code></td>
+<td><code>""</code></td>
+<td>Get, List, Watch</td>
+<td></td>
+</tr>
+<tr>
+<td><code>configmaps</code></td>
+<td><code>""</code></td>
+<td>Get, List, Watch</td>
+<td></td>
+</tr>
+<tr>
+<td><code>dynakubes</code></td>
+<td><code>dynatrace.com</code></td>
+<td>Get, List, Watch</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="dynatrace-operator-csi-driver">Dynatrace Operator CSI driver<a class="headerlink" href="#dynatrace-operator-csi-driver" title="Permanent link">&para;</a></h3>
+<p><strong>Назначение</strong>:</p>
+<ul>
+<li>для конфигураций <code>applicationMonitoring</code> предоставляет подам на каждом узле необходимый бинарный файл OneAgent для application monitoring;</li>
+<li>для конфигураций <code>hostMonitoring</code> предоставляет доступную для записи папку для конфигураций OneAgent, когда используется файловая система хоста, доступная только для чтения;</li>
+<li>для <code>cloudNativeFullStack</code> предоставляет оба варианта из перечисленных выше.</li>
+</ul>
+<p><strong>Конфигурация по умолчанию</strong>: <code>1-replica-per-node</code> (развёртывается через DaemonSet)</p>
+<p><strong>Объекты RBAC</strong>:</p>
+<ul>
+<li>Service Account <code>dynatrace-oneagent-csi-driver</code></li>
+<li>Cluster-Role <code>dynatrace-oneagent-csi-driver</code></li>
+<li>Role <code>dynatrace-oneagent-csi-driver</code></li>
+</ul>
+<h4 id="_8">Разрешение на уровне кластера<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>Ресурсы</th>
+<th>Группа API</th>
+<th>Действия</th>
+<th>Имена ресурсов</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>securitycontextconstraints</code></td>
+<td><code>security.openshift.io</code></td>
+<td>Use</td>
+<td><code>privileged</code></td>
+</tr>
+</tbody>
+</table>
+<h4 id="dynatrace_2">Разрешения в пространстве имён <code>dynatrace</code><a class="headerlink" href="#dynatrace_2" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>Ресурсы</th>
+<th>Группа API</th>
+<th>Действия</th>
+<th>Имена ресурсов</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>dynakubes</code></td>
+<td><code>dynatrace.com</code></td>
+<td>Get, List, Watch</td>
+<td></td>
+</tr>
+<tr>
+<td><code>secrets</code></td>
+<td><code>""</code></td>
+<td>Get, List, Watch</td>
+<td></td>
+</tr>
+<tr>
+<td><code>configmaps</code></td>
+<td><code>""</code></td>
+<td>Get, List, Watch</td>
+<td></td>
+</tr>
+<tr>
+<td><code>dynakubes/finalizers</code></td>
+<td><code>dynatrace.com</code></td>
+<td>Update</td>
+<td></td>
+</tr>
+<tr>
+<td><code>jobs</code></td>
+<td><code>batch</code></td>
+<td>Get, List, Create, Delete, Watch</td>
+<td></td>
+</tr>
+<tr>
+<td><code>events</code></td>
+<td><code>""</code></td>
+<td>Create, Patch</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="activegate">ActiveGate<a class="headerlink" href="#activegate" title="Permanent link">&para;</a></h3>
+<h4 id="kubernetes-platform-monitoring">Kubernetes Platform Monitoring<a class="headerlink" href="#kubernetes-platform-monitoring" title="Permanent link">&para;</a></h4>
+<p><strong>Назначение</strong>: сбор метрик, событий и статуса кластера и рабочих нагрузок из API Kubernetes.</p>
+<p><strong>Конфигурация по умолчанию</strong>: <code>1-replica-per-cluster</code>, можно масштабировать</p>
+<p><strong>Объекты RBAC</strong>:</p>
+<ul>
+<li>Service Account: <code>dynatrace-kubernetes</code></li>
+<li>ClusterRole: <code>dynatrace-kubernetes-monitoring</code></li>
+</ul>
+<p>В Dynatrace Operator версии 1.8 <code>dynatrace-kubernetes-monitoring</code> был агрегированной ClusterRole. Подробности см. в <a href="../../guides/deployment-and-configuration/cluster-role-aggregation/" title="Understanding how the Dynatrace Operator uses ClusterRole aggregation to manage permissions for Kubernetes monitoring.">ClusterRole aggregation</a>.</p>
+<h5 id="_9">Разрешения на уровне кластера<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h5>
+<table>
+<thead>
+<tr>
+<th>Ресурсы</th>
+<th>Группа API</th>
+<th>Действия</th>
+<th>Имена ресурсов</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>nodes</code></td>
+<td><code>""</code></td>
+<td>List, Watch, Get</td>
+<td></td>
+</tr>
+<tr>
+<td><code>pods</code></td>
+<td><code>""</code></td>
+<td>List, Watch, Get</td>
+<td></td>
+</tr>
+<tr>
+<td><code>namespaces</code></td>
+<td><code>""</code></td>
+<td>List, Watch, Get</td>
+<td></td>
+</tr>
+<tr>
+<td><code>replicationcontrollers</code></td>
+<td><code>""</code></td>
+<td>List, Watch, Get</td>
+<td></td>
+</tr>
+<tr>
+<td><code>events</code></td>
+<td><code>""</code></td>
+<td>List, Watch, Get</td>
+<td></td>
+</tr>
+<tr>
+<td><code>resourcequotas</code></td>
+<td><code>""</code></td>
+<td>List, Watch, Get</td>
+<td></td>
+</tr>
+<tr>
+<td><code>pods/proxy</code></td>
+<td><code>""</code></td>
+<td>List, Watch, Get</td>
+<td></td>
+</tr>
+<tr>
+<td><code>nodes/proxy</code></td>
+<td><code>""</code></td>
+<td>List, Watch, Get</td>
+<td></td>
+</tr>
+<tr>
+<td><code>nodes/metrics</code></td>
+<td><code>""</code></td>
+<td>List, Watch, Get</td>
+<td></td>
+</tr>
+<tr>
+<td><code>services</code></td>
+<td><code>""</code></td>
+<td>List, Watch, Get</td>
+<td></td>
+</tr>
+<tr>
+<td><code>persistentvolumeclaims</code></td>
+<td><code>""</code></td>
+<td>List, Watch, Get</td>
+<td></td>
+</tr>
+<tr>
+<td><code>persistentvolumes</code></td>
+<td><code>""</code></td>
+<td>List, Watch, Get</td>
+<td></td>
+</tr>
+<tr>
+<td><code>jobs</code></td>
+<td><code>batch</code></td>
+<td>List, Watch, Get</td>
+<td></td>
+</tr>
+<tr>
+<td><code>cronjobs</code></td>
+<td><code>batch</code></td>
+<td>List, Watch, Get</td>
+<td></td>
+</tr>
+<tr>
+<td><code>deployments</code></td>
+<td><code>apps</code></td>
+<td>List, Watch, Get</td>
+<td></td>
+</tr>
+<tr>
+<td><code>replicasets</code></td>
+<td><code>apps</code></td>
+<td>List, Watch, Get</td>
+<td></td>
+</tr>
+<tr>
+<td><code>statefulsets</code></td>
+<td><code>apps</code></td>
+<td>List, Watch, Get</td>
+<td></td>
+</tr>
+<tr>
+<td><code>daemonsets</code></td>
+<td><code>apps</code></td>
+<td>List, Watch, Get</td>
+<td></td>
+</tr>
+<tr>
+<td><code>deploymentconfigs</code></td>
+<td><code>apps.openshift.io</code></td>
+<td>List, Watch, Get</td>
+<td></td>
+</tr>
+<tr>
+<td><code>clusterversions</code></td>
+<td><code>config.openshift.io</code></td>
+<td>List, Watch, Get</td>
+<td></td>
+</tr>
+<tr>
+<td><code>dynakubes</code></td>
+<td><code>dynatrace.com</code></td>
+<td>List, Watch, Get</td>
+<td></td>
+</tr>
+<tr>
+<td><code>edgeconnects</code></td>
+<td><code>dynatrace.com</code></td>
+<td>List, Watch, Get</td>
+<td></td>
+</tr>
+<tr>
+<td><code>customresourcedefinitions</code></td>
+<td><code>apiextensions.k8s.io</code></td>
+<td>List, Watch, Get</td>
+<td></td>
+</tr>
+<tr>
+<td><code>ingresses</code></td>
+<td><code>networking.k8s.io</code></td>
+<td>List, Watch, Get</td>
+<td></td>
+</tr>
+<tr>
+<td><code>networkpolicies</code></td>
+<td><code>networking.k8s.io</code></td>
+<td>List, Watch, Get</td>
+<td></td>
+</tr>
+<tr>
+<td><code>securitycontextconstraints</code></td>
+<td><code>security.openshift.io</code></td>
+<td>Use</td>
+<td><code>privileged``nonroot-v2</code></td>
+</tr>
+</tbody>
+</table>
+<h4 id="dynatrace-kubernetes-security-posture-management-kspm">Dynatrace Kubernetes Security Posture Management (KSPM)<a class="headerlink" href="#dynatrace-kubernetes-security-posture-management-kspm" title="Permanent link">&para;</a></h4>
+<p><strong>Назначение</strong>: <a href="../../../../upgrade/unavailable-in-managed/" title="Your selection is unavailable in Dynatrace Managed.">Kubernetes Security Posture Management</a> обнаруживает, анализирует и непрерывно отслеживает
+неправильные конфигурации, рекомендации по усилению безопасности и потенциальные нарушения комплаенса в Kubernetes.</p>
+<p><strong>Конфигурация по умолчанию</strong>: <code>1-replica-per-node</code> (развёртывается через DaemonSet)</p>
+<p><strong>Объекты RBAC</strong>:</p>
+<ul>
+<li>Service Account <code>dynatrace-node-config-collector</code></li>
+<li>ClusterRole: <code>dynatrace-kubernetes-monitoring-kspm</code></li>
+</ul>
+<p>В Dynatrace Operator версии 1.8 <code>dynatrace-kubernetes-monitoring-kspm</code> агрегировался ClusterRole <code>dynatrace-kubernetes-monitoring</code>. Подробности см. в <a href="../../guides/deployment-and-configuration/cluster-role-aggregation/" title="Understanding how the Dynatrace Operator uses ClusterRole aggregation to manage permissions for Kubernetes monitoring.">ClusterRole aggregation</a>.</p>
+<h5 id="_10">Разрешения на уровне кластера<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h5>
+<table>
+<thead>
+<tr>
+<th>Ресурсы</th>
+<th>Группа API</th>
+<th>Действия</th>
+<th>Имена ресурсов</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>namespaces</code></td>
+<td><code>""</code></td>
+<td>Get, List, Watch</td>
+<td></td>
+</tr>
+<tr>
+<td><code>nodes</code></td>
+<td><code>""</code></td>
+<td>Get, List, Watch</td>
+<td></td>
+</tr>
+<tr>
+<td><code>pods</code></td>
+<td><code>""</code></td>
+<td>Get, List, Watch</td>
+<td></td>
+</tr>
+<tr>
+<td><code>replicationcontrollers</code></td>
+<td><code>""</code></td>
+<td>Get, List, Watch</td>
+<td></td>
+</tr>
+<tr>
+<td><code>serviceaccounts</code></td>
+<td><code>""</code></td>
+<td>Get, List, Watch</td>
+<td></td>
+</tr>
+<tr>
+<td><code>services</code></td>
+<td><code>""</code></td>
+<td>Get, List, Watch</td>
+<td></td>
+</tr>
+<tr>
+<td><code>cronjobs</code></td>
+<td><code>batch</code></td>
+<td>Get, List, Watch</td>
+<td></td>
+</tr>
+<tr>
+<td><code>jobs</code></td>
+<td><code>batch</code></td>
+<td>Get, List, Watch</td>
+<td></td>
+</tr>
+<tr>
+<td><code>daemonsets</code></td>
+<td><code>apps</code></td>
+<td>Get, List, Watch</td>
+<td></td>
+</tr>
+<tr>
+<td><code>deployments</code></td>
+<td><code>apps</code></td>
+<td>Get, List, Watch</td>
+<td></td>
+</tr>
+<tr>
+<td><code>replicasets</code></td>
+<td><code>apps</code></td>
+<td>Get, List, Watch</td>
+<td></td>
+</tr>
+<tr>
+<td><code>statefulsets</code></td>
+<td><code>apps</code></td>
+<td>Get, List, Watch</td>
+<td></td>
+</tr>
+<tr>
+<td><code>networkpolicies</code></td>
+<td><code>networking.k8s.io</code></td>
+<td>Get, List, Watch</td>
+<td></td>
+</tr>
+<tr>
+<td><code>clusterrolebindings</code></td>
+<td><code>rbac.authorization.k8s.io</code></td>
+<td>Get, List, Watch</td>
+<td></td>
+</tr>
+<tr>
+<td><code>clusterroles</code></td>
+<td><code>rbac.authorization.k8s.io</code></td>
+<td>Get, List, Watch</td>
+<td></td>
+</tr>
+<tr>
+<td><code>rolebindings</code></td>
+<td><code>rbac.authorization.k8s.io</code></td>
+<td>Get, List, Watch</td>
+<td></td>
+</tr>
+<tr>
+<td><code>roles</code></td>
+<td><code>rbac.authorization.k8s.io</code></td>
+<td>Get, List, Watch</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="oneagent">OneAgent<a class="headerlink" href="#oneagent" title="Permanent link">&para;</a></h3>
+<p><strong>Назначение</strong>:</p>
+<ul>
+<li>Собирает метрики хостов с узлов Kubernetes.</li>
+<li>Обнаруживает новые контейнеры и внедряет модули кода Dynatrace в поды приложений с помощью classic full-stack injection. Опционально.</li>
+<li>Собирает логи контейнеров с узлов Kubernetes.</li>
+</ul>
+<p><strong>Конфигурация по умолчанию</strong>: <code>1-replica-per-node</code> (развёртывается через DaemonSet)</p>
+<p><strong>Объекты RBAC</strong>:</p>
+<ul>
+<li>Service Account <code>dynatrace-dynakube-oneagent</code></li>
+<li>Cluster-Role <code>dynatrace-dynakube-oneagent</code></li>
+<li>Cluster-Role <code>dynatrace-logmonitoring</code></li>
+</ul>
+<p><strong>Настройки политики</strong>: разрешает <strong>HostNetwork</strong>, <strong>HostPID</strong>, использование любых типов томов.</p>
+<p><strong>Необходимые capabilities</strong>: <code>CHOWN</code>, <code>DAC_OVERRIDE</code>, <code>DAC_READ_SEARCH</code>, <code>FOWNER</code>, <code>FSETID</code>, <code>KILL</code>, <code>NET_ADMIN</code>, <code>NET_RAW</code>, <code>SETFCAP</code>, <code>SETGID</code>, <code>SETUID</code>, <code>SYS_ADMIN</code>, <code>SYS_CHROOT</code>, <code>SYS_PTRACE</code>, <code>SYS_RESOURCE</code></p>
+<h4 id="_11">Права на уровне кластера<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>Ресурсы, к которым выполняется доступ</th>
+<th>Группа API</th>
+<th>Глаголы</th>
+<th>Имена ресурсов</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>nodes/proxy</code></td>
+<td><code>""</code></td>
+<td>Get</td>
+<td></td>
+</tr>
+<tr>
+<td><code>securitycontextconstraints</code></td>
+<td><code>security.openshift.io</code></td>
+<td>Use</td>
+<td><code>privileged</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="dynatrace_3">Модуль логов Dynatrace<a class="headerlink" href="#dynatrace_3" title="Permanent link">&para;</a></h3>
+<p><strong>Назначение</strong>:</p>
+<ul>
+<li>Собирает логи контейнеров с узлов Kubernetes.</li>
+</ul>
+<p><strong>Конфигурация по умолчанию</strong>: <code>1-replica-per-node</code> (развёртывается через DaemonSet)</p>
+<p><strong>Объекты RBAC</strong>:</p>
+<ul>
+<li>Service Account <code>dynatrace-logmonitoring</code></li>
+<li>Cluster-Role <code>dynatrace-logmonitoring</code></li>
+</ul>
+<h4 id="_12">Права на уровне кластера<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h4>
+<p>Log monitoring требует <a href="#oneagent-permissions">те же права на уровне кластера, что и OneAgent</a>.</p>
+<h3 id="dynatrace-telemetry-ingest">Dynatrace telemetry ingest<a class="headerlink" href="#dynatrace-telemetry-ingest" title="Permanent link">&para;</a></h3>
+<p><strong>Назначение</strong>:</p>
+<ul>
+<li>
+<p>Включить <a href="../../extend-observability-k8s/telemetry-ingest/" title="Enable Dynatrace telemetry ingest endpoints in Kubernetes for cluster-local data ingest.">эндпоинты приёма телеметрии Dynatrace</a> в Kubernetes для приёма данных локально в кластере</p>
+</li>
+<li>
+<p>Приём данных через эндпоинты <a href="https://opentelemetry.io/docs/specs/otel/protocol/">OTLP﻿</a>, <a href="https://www.jaegertracing.io/">Jaeger﻿</a>, <a href="https://github.com/statsd/statsd">StatsD﻿</a> или <a href="https://zipkin.io/">Zipkin﻿</a></p>
+</li>
+<li>Анализ насыщенных контекстом данных с помощью встроенных приложений, DQL, Notebooks и Dashboards</li>
+</ul>
+<p><strong>Объекты RBAC</strong>:</p>
+<ul>
+<li>
+<p>Service Accounts</p>
+</li>
+<li>
+<p><code>dynatrace-otel-collector</code></p>
+</li>
+<li>
+<p>Cluster-Roles</p>
+</li>
+<li>
+<p><code>dynatrace-telemetry-ingest</code></p>
+</li>
+</ul>
+<h4 id="_13">Права на уровне кластера<a class="headerlink" href="#_13" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>Ресурсы, к которым выполняется доступ</th>
+<th>Группа API</th>
+<th>Глаголы</th>
+<th>Имена ресурсов</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>pods</code></td>
+<td><code>""</code></td>
+<td>Get, Watch, List</td>
+<td></td>
+</tr>
+<tr>
+<td><code>namespaces</code></td>
+<td><code>""</code></td>
+<td>Get, Watch, List</td>
+<td></td>
+</tr>
+<tr>
+<td><code>nodes</code></td>
+<td><code>""</code></td>
+<td>Get, Watch, List</td>
+<td></td>
+</tr>
+<tr>
+<td><code>replicasets</code></td>
+<td><code>apps</code></td>
+<td>Get, List, Watch</td>
+<td></td>
+</tr>
+<tr>
+<td><code>securitycontextconstraints</code></td>
+<td><code>security.openshift.io</code></td>
+<td>Use</td>
+<td><code>privileged</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="extensions">Extensions<a class="headerlink" href="#extensions" title="Permanent link">&para;</a></h3>
+<p><strong>Назначение</strong>:</p>
+<ul>
+<li>Extensions расширяют аналитические возможности Dynatrace, принимая данные из различных источников, таких как сторонние приложения, сервисы и пользовательские метрики. Подробнее см. <a href="../../../extensions/" title="Learn how to create and manage Dynatrace Extensions.">Extensions</a>.</li>
+</ul>
+<p><strong>Конфигурация по умолчанию</strong>:</p>
+<p>Следующие компоненты необходимы независимо от того, какие extensions используются:</p>
+<ul>
+<li>Extension Execution Controller (EEC): <code>1-replica-per-cluster</code></li>
+</ul>
+<p><strong>Объекты RBAC</strong>:</p>
+<p>В зависимости от используемого extension требуются следующие объекты RBAC.</p>
+<ul>
+<li>
+<p>Service Accounts</p>
+</li>
+<li>
+<p><code>dynatrace-extension-controller</code></p>
+</li>
+<li>
+<p>ClusterRoles</p>
+</li>
+<li>
+<p><code>dynatrace-extension-controller</code></p>
+</li>
+<li>
+<p>Roles</p>
+</li>
+<li>
+<p><code>dynatrace-extension-controller-prometheus</code></p>
+</li>
+<li><code>dynatrace-extension-controller-database</code></li>
+</ul>
+<h5 id="_14">Права на уровне кластера<a class="headerlink" href="#_14" title="Permanent link">&para;</a></h5>
+<table>
+<thead>
+<tr>
+<th>Ресурсы, к которым выполняется доступ</th>
+<th>Группа API</th>
+<th>Глаголы</th>
+<th>Имена ресурсов</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>pods</code></td>
+<td><code>""</code></td>
+<td>List, Watch</td>
+<td></td>
+</tr>
+<tr>
+<td><code>services</code></td>
+<td><code>""</code></td>
+<td>List, Watch</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h5 id="dynatrace_4">Права в пространстве имён <code>dynatrace</code><a class="headerlink" href="#dynatrace_4" title="Permanent link">&para;</a></h5>
+<p><em>Prometheus extension</em></p>
+<table>
+<thead>
+<tr>
+<th>Ресурсы, к которым выполняется доступ</th>
+<th>Группа API</th>
+<th>Глаголы</th>
+<th>Имена ресурсов</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>securitycontextconstraints</code></td>
+<td><code>security.openshift.io</code></td>
+<td>Use</td>
+<td><code>privileged</code></td>
+</tr>
+</tbody>
+</table>
+<p><em>Database extension</em></p>
+<table>
+<thead>
+<tr>
+<th>Ресурсы, к которым выполняется доступ</th>
+<th>Группа API</th>
+<th>Глаголы</th>
+<th>Имена ресурсов</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>pods</code></td>
+<td><code>""</code></td>
+<td>List</td>
+<td></td>
+</tr>
+<tr>
+<td><code>securitycontextconstraints</code></td>
+<td><code>security.openshift.io</code></td>
+<td>Use</td>
+<td><code>nonroot-v2</code></td>
+</tr>
+</tbody>
+</table>
+<h4 id="prometheus-extension">Prometheus extension<a class="headerlink" href="#prometheus-extension" title="Permanent link">&para;</a></h4>
+<p><strong>Назначение</strong>:</p>
+<ul>
+<li>Собирает метрики с эндпоинтов Prometheus в кластере.</li>
+</ul>
+<p><strong>Конфигурация по умолчанию</strong>:</p>
+<ul>
+<li>Prometheus datasource: <code>replicas-set-in-dynakube</code> (значения по умолчанию нет, число реплик задаётся в DynaKube)</li>
+</ul>
+<p><strong>Объекты RBAC</strong>:</p>
+<ul>
+<li>
+<p>Service Accounts</p>
+</li>
+<li>
+<p><code>dynatrace-otel-collector</code></p>
+</li>
+<li>
+<p>Cluster-Roles</p>
+</li>
+<li>
+<p><code>dynatrace-extensions-prometheus</code></p>
+</li>
+</ul>
+<h5 id="_15">Права на уровне кластера<a class="headerlink" href="#_15" title="Permanent link">&para;</a></h5>
+<table>
+<thead>
+<tr>
+<th>Ресурсы, к которым выполняется доступ</th>
+<th>Группа API</th>
+<th>Глаголы</th>
+<th>Имена ресурсов</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>pods</code></td>
+<td><code>""</code></td>
+<td>Get, List, Watch</td>
+<td></td>
+</tr>
+<tr>
+<td><code>namespaces</code></td>
+<td><code>""</code></td>
+<td>Get, List, Watch</td>
+<td></td>
+</tr>
+<tr>
+<td><code>endpoints</code></td>
+<td><code>""</code></td>
+<td>Get, List, Watch</td>
+<td></td>
+</tr>
+<tr>
+<td><code>services</code></td>
+<td><code>""</code></td>
+<td>Get, List, Watch</td>
+<td></td>
+</tr>
+<tr>
+<td><code>nodes</code></td>
+<td><code>""</code></td>
+<td>Get, List, Watch</td>
+<td></td>
+</tr>
+<tr>
+<td><code>nodes/metrics</code></td>
+<td><code>""</code></td>
+<td>Get, List, Watch</td>
+<td></td>
+</tr>
+<tr>
+<td><code>deployments</code></td>
+<td><code>apps</code></td>
+<td>Get, List, Watch</td>
+<td></td>
+</tr>
+<tr>
+<td><code>daemonsets</code></td>
+<td><code>apps</code></td>
+<td>Get, List, Watch</td>
+<td></td>
+</tr>
+<tr>
+<td><code>replicasets</code></td>
+<td><code>apps</code></td>
+<td>Get, List, Watch</td>
+<td></td>
+</tr>
+<tr>
+<td><code>statefulsets</code></td>
+<td><code>apps</code></td>
+<td>Get, List, Watch</td>
+<td></td>
+</tr>
+<tr>
+<td><code>securitycontextconstraints</code></td>
+<td><code>security.openshift.io</code></td>
+<td>Use</td>
+<td><code>privileged</code></td>
+</tr>
+</tbody>
+</table>
+<h4 id="database-extension">Database extension<a class="headerlink" href="#database-extension" title="Permanent link">&para;</a></h4>
+<p><strong>Назначение</strong>:</p>
+<ul>
+<li>Собирает метрики с эндпоинтов баз данных в кластере.</li>
+</ul>
+<p><strong>Конфигурация по умолчанию</strong>:</p>
+<ul>
+<li>SQL Extension Executor: <code>replicas-set-in-dynakube</code> (значения по умолчанию нет, число реплик задаётся в DynaKube)</li>
+</ul>
+<p><strong>Объекты RBAC</strong>:</p>
+<ul>
+<li>
+<p>Service Accounts</p>
+</li>
+<li>
+<p><code>dynatrace-sql-ext-exec</code></p>
+</li>
+<li>
+<p>Roles</p>
+</li>
+<li>
+<p><code>dynatrace-sql-ext-exec</code></p>
+</li>
+</ul>
+<h5 id="dynatrace_5">Права в пространстве имён <code>dynatrace</code><a class="headerlink" href="#dynatrace_5" title="Permanent link">&para;</a></h5>
+<table>
+<thead>
+<tr>
+<th>Ресурсы, к которым выполняется доступ</th>
+<th>Группа API</th>
+<th>Глаголы</th>
+<th>Имена ресурсов</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>pods</code></td>
+<td><code>""</code></td>
+<td>List</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="dynatrace-operator_3">Поддерживаемость Dynatrace Operator<a class="headerlink" href="#dynatrace-operator_3" title="Permanent link">&para;</a></h3>
+<p><strong>Назначение</strong>:</p>
+<ul>
+<li>Позволяет Dynatrace Operator выполнять <a href="../../deployment/troubleshooting/#support-archive" title="This page will assist you in navigating any challenges you may encounter while working with the Dynatrace Operator and its various components.">команду support-archive</a>. Необходимо для устранения неполадок, связанных с Operator.</li>
+</ul>
+<p><strong>Объекты RBAC</strong>:</p>
+<ul>
+<li>Role <code>dynatrace-operator-supportability</code></li>
+</ul>
+<p><strong>Отказ от функции</strong>:</p>
+<ul>
+<li>Эту функцию можно отключить, задав значению <code>rbac.supportability</code> Helm chart Dynatrace Operator значение <code>false</code>.</li>
+</ul>
+<p>Отключение этой функции затруднит предоставление необходимой информации при открытии обращений в поддержку по вопросам Dynatrace Operator.</p>
+<h4 id="dynatrace_6">Права в пространстве имён <code>dynatrace</code><a class="headerlink" href="#dynatrace_6" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>Ресурсы, к которым выполняется доступ</th>
+<th>Группа API</th>
+<th>Глаголы</th>
+<th>Имена ресурсов</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>pods/log</code></td>
+<td><code>""</code></td>
+<td>Get</td>
+<td></td>
+</tr>
+<tr>
+<td><code>pods/exec</code></td>
+<td><code>""</code></td>
+<td>Create</td>
+<td></td>
+</tr>
+<tr>
+<td><code>jobs</code></td>
+<td><code>batch</code></td>
+<td>Get, List</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="api-dynatrace-operator">Поддержка обновления API Dynatrace Operator<a class="headerlink" href="#api-dynatrace-operator" title="Permanent link">&para;</a></h3>
+<p><strong>Назначение</strong>:</p>
+<ul>
+<li>Запуск Job <code>dynatrace-operator-crd-storage-migration</code> для автоматической очистки удалённых версий API Dynakube в хуке <code>pre-upgrade</code> Helm.</li>
+</ul>
+<p><strong>Объекты RBAC</strong>:</p>
+<ul>
+<li>ClusterRole <code>dynatrace-crd-storage-migration</code></li>
+<li>Role <code>dynatrace-crd-storage-migration</code></li>
+<li>ServiceAccount <code>dynatrace-crd-storage-migration</code></li>
+</ul>
+<p><strong>Подключение функции</strong>:</p>
+<ul>
+<li>Эту функцию можно отключить, задав значению <code>crdStorageMigrationJob</code> Helm chart Dynatrace Operator значение <code>false</code>.</li>
+</ul>
+<h4 id="_16">Права на уровне кластера<a class="headerlink" href="#_16" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>Ресурсы, к которым выполняется доступ</th>
+<th>Группа API</th>
+<th>Глаголы</th>
+<th>Имена ресурсов</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>customresourcedefinitions</code></td>
+<td><code>apiextensions.k8s.io</code></td>
+<td>Get, Update</td>
+<td><code>dynakubes.dynatrace.com``edgeconnects.dynatrace.com</code></td>
+</tr>
+<tr>
+<td><code>customresourcedefinitions/status</code></td>
+<td><code>apiextensions.k8s.io</code></td>
+<td>Get, Update</td>
+<td><code>dynakubes.dynatrace.com``edgeconnects.dynatrace.com</code></td>
+</tr>
+<tr>
+<td><code>securitycontextconstraints</code></td>
+<td><code>security.openshift.io</code></td>
+<td>Use</td>
+<td><code>nonroot-v2</code></td>
+</tr>
+</tbody>
+</table>
+<h4 id="dynatrace_7">Права в пространстве имён <code>dynatrace</code><a class="headerlink" href="#dynatrace_7" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>Ресурсы, к которым выполняется доступ</th>
+<th>Группа API</th>
+<th>Глаголы</th>
+<th>Имена ресурсов</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>dynakubes</code></td>
+<td><code>dynatrace.com</code></td>
+<td>Get, List, Watch, Update</td>
+<td></td>
+</tr>
+<tr>
+<td><code>edgeconnects</code></td>
+<td><code>dynatrace.com</code></td>
+<td>Get, List, Watch, Update</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="dynatrace-operator_4">Контроль безопасности компонентов Dynatrace Operator<a class="headerlink" href="#dynatrace-operator_4" title="Permanent link">&para;</a></h2>
+<p>В следующей таблице представлен подробный анализ элементов контроля безопасности для компонентов Kubernetes: Dynatrace Operator, вебхук Dynatrace Operator и CSI driver Dynatrace Operator. Отчёт основан на:</p>
+<ul>
+<li><a href="https://dt-url.net/zd0368p">CIS Benchmark﻿</a>, общепризнанном мировом стандарте обеспечения безопасности развёртываний Kubernetes.</li>
+<li><a href="https://dt-url.net/mp0345l">Политиках POD Security Standard﻿</a>.</li>
+<li>Лучших практиках.</li>
+</ul>
+<p><strong>Стандарты и сокращения</strong>:</p>
+<ul>
+<li><strong>CIS</strong>: <a href="https://dt-url.net/zd0368p">Center for Internet Security (CIS) Kubernetes Benchmark﻿</a>.</li>
+<li><strong>PSSB</strong>: <a href="https://kubernetes.io/docs/concepts/security/pod-security-standards/#baseline">Pod Security Standards – Baseline profile﻿</a>.</li>
+<li><strong>PSSR</strong>: <a href="https://dt-url.net/ut4387d">Pod Security Standards – Restricted profile﻿</a>.</li>
+</ul>
+<p>Столбец <strong>Standard</strong> ссылается на эти сокращения.</p>
+<h3 id="dynatrace-operator-components">Dynatrace Operator components<a class="headerlink" href="#dynatrace-operator-components" title="Permanent link">&para;</a></h3>
+<p><img alt="Green background check mark" src="https://dt-cdn.net/images/check-16-c4e463bb22.png" title="Green background check mark" /> Соответствует<br />
+<img alt="Warning" src="https://dt-cdn.net/images/warning-16-56c09ccf83.png" title="Warning" /> Исключение (см. развёрнутое описание ниже)<br />
+<img alt="Configurable" src="https://dt-cdn.net/images/configurable-490-8b015913d4.svg" title="Configurable" /> Планируемое улучшение (см. развёрнутое описание ниже)</p>
+<table>
+<thead>
+<tr>
+<th>Мера безопасности</th>
+<th>Стандарт</th>
+<th>Operator</th>
+<th>Webhook</th>
+<th>CSI driver</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Запрет привилегированных контейнеров<a href="#fn-1-1-def">1</a></td>
+<td>CIS 5.2.2 / PSS Baseline</td>
+<td>Соответствует</td>
+<td>Соответствует</td>
+<td>Исключение</td>
+</tr>
+<tr>
+<td>Запрет повышения привилегий<a href="#fn-1-1-def">1</a></td>
+<td>CIS 5.2.6 / PSS Restricted</td>
+<td>Соответствует</td>
+<td>Соответствует</td>
+<td>Исключение</td>
+</tr>
+<tr>
+<td>Запрет запуска контейнеров от имени root<a href="#fn-1-2-def">2</a></td>
+<td>CIS 5.2.7 / PSS Restricted</td>
+<td>Соответствует</td>
+<td>Соответствует</td>
+<td>Исключение</td>
+</tr>
+<tr>
+<td>Ограничение доступа к секретам (RBAC)</td>
+<td>CIS 5.1.4</td>
+<td>Планируемое улучшение</td>
+<td>Планируемое улучшение</td>
+<td>Планируемое улучшение</td>
+</tr>
+<tr>
+<td>Запрет использования томов HostPath<a href="#fn-1-3-def">3</a></td>
+<td>CIS 5.2.12 / PSS Baseline</td>
+<td>Соответствует</td>
+<td>Соответствует</td>
+<td>Исключение</td>
+</tr>
+<tr>
+<td>Ограничение автомонтирования токена сервисного аккаунта<a href="#fn-1-4-def">4</a></td>
+<td>CIS 5.1.6</td>
+<td>Исключение</td>
+<td>Исключение</td>
+<td>Исключение</td>
+</tr>
+<tr>
+<td>Запрет использования избыточного числа или небезопасных capabilities</td>
+<td>CIS 5.2.8 / 5.2.9 / 5.2.10 / PSS Restricted</td>
+<td>Соответствует</td>
+<td>Соответствует</td>
+<td>Соответствует</td>
+</tr>
+<tr>
+<td>Запрет использования HostPorts</td>
+<td>CIS 5.2.13 / PSS Baseline</td>
+<td>Соответствует</td>
+<td>Соответствует</td>
+<td>Соответствует</td>
+</tr>
+<tr>
+<td>Запрет доступа к сети хоста</td>
+<td>CIS 5.2.5 / PSS Baseline</td>
+<td>Соответствует</td>
+<td>Соответствует</td>
+<td>Соответствует</td>
+</tr>
+<tr>
+<td>Запрет использования host PID</td>
+<td>CIS 5.2.3 / PSS Baseline</td>
+<td>Соответствует</td>
+<td>Соответствует</td>
+<td>Соответствует</td>
+</tr>
+<tr>
+<td>Запрет использования host IPC</td>
+<td>CIS 5.2.4 / PSS Baseline</td>
+<td>Соответствует</td>
+<td>Соответствует</td>
+<td>Соответствует</td>
+</tr>
+<tr>
+<td>Требование readOnlyRootFilesystem</td>
+<td>Рекомендуемая практика</td>
+<td>Соответствует</td>
+<td>Соответствует</td>
+<td>Соответствует</td>
+</tr>
+<tr>
+<td>Требование ограничений ресурсов<a href="#fn-1-5-def">5</a></td>
+<td>Рекомендуемая практика</td>
+<td>Соответствует</td>
+<td>Соответствует</td>
+<td>Соответствует</td>
+</tr>
+<tr>
+<td>Требование seccomp (минимум default/runtime)</td>
+<td>CIS 5.7.2 / PSS Restricted</td>
+<td>Соответствует</td>
+<td>Соответствует</td>
+<td>Соответствует</td>
+</tr>
+<tr>
+<td>Запрет монтирования секретов как переменных окружения</td>
+<td>CIS 5.4.1</td>
+<td>Соответствует</td>
+<td>Соответствует</td>
+<td>Соответствует</td>
+</tr>
+<tr>
+<td>Ограничение sysctls</td>
+<td>PSS Baseline</td>
+<td>Соответствует</td>
+<td>Соответствует</td>
+<td>Соответствует</td>
+</tr>
+<tr>
+<td>Ограничение AppArmor</td>
+<td>PSS Baseline</td>
+<td>Соответствует</td>
+<td>Соответствует</td>
+<td>Соответствует</td>
+</tr>
+<tr>
+<td>Запрет SELinux<a href="#fn-1-6-def">6</a></td>
+<td>PSS Baseline</td>
+<td>Соответствует</td>
+<td>Соответствует</td>
+<td>Исключение</td>
+</tr>
+<tr>
+<td>Тип монтирования /proc</td>
+<td>PSS Baseline</td>
+<td>Соответствует</td>
+<td>Соответствует</td>
+<td>Соответствует</td>
+</tr>
+</tbody>
+</table>
+<p>1</p>
+<p>CSI driver требует повышенных прав для создания и управления точками монтирования на хост-системе. Подробнее см. <a href="../../how-it-works/components/dynatrace-operator/#csidriver-privileges" title="Компоненты Dynatrace Operator">Привилегии CSI driver</a>.</p>
+<p>2</p>
+<p>CSI driver взаимодействует с kubelet через сокет на хосте, для доступа к этому сокету CSI driver должен работать от имени root.</p>
+<p>3</p>
+<p>CSI driver хранит и кэширует бинарные файлы OneAgent в файловой системе хоста, для этого требуется монтирование hostVolume.</p>
+<p>4</p>
+<p>Компонентам Dynatrace Operator, Webhook и CSI driver нужно взаимодействовать с Kubernetes API.</p>
+<p>5</p>
+<p>По умолчанию у provisioner CSI driver нет ограничений ресурсов, это обеспечивает наилучшую <a href="../../guides/deployment-and-configuration/resource-management/dto-resource-limits/#customize-resource-limits" title="Настройка ограничений ресурсов для компонентов Dynatrace Operator">производительность при provisioning</a>; ограничения можно задать через значения чарта Helm.</p>
+<p>6</p>
+<p>CSI driver требует уровень seLinux s0, чтобы поды приложений могли видеть файлы из тома, созданного CSI driver.</p>
+<p><strong>Планируемое улучшение</strong>:<br />
+Роли (Role) с областью действия namespace для Operator, Webhook и CSI driver в текущей реализации дают доступ ко всем секретам в своём namespace. Планируется улучшение, ограничивающее эти роли конкретными именами секретов, аналогично конфигурации ClusterRole.</p>
+<h3 id="managed">Managed компоненты<a class="headerlink" href="#managed" title="Permanent link">&para;</a></h3>
+<p><img alt="Green background check mark" src="https://dt-cdn.net/images/check-16-c4e463bb22.png" title="Green background check mark" /> Соответствует<br />
+<img alt="Warning" src="https://dt-cdn.net/images/warning-16-56c09ccf83.png" title="Warning" /> Исключение (см. раскрытие ниже)<br />
+<img alt="Configurable" src="https://dt-cdn.net/images/configurable-490-8b015913d4.svg" title="Configurable" /> Планируемое улучшение (см. раскрытие ниже)</p>
+<table>
+<thead>
+<tr>
+<th>Элемент управления безопасностью</th>
+<th>Стандарт</th>
+<th>OneAgent</th>
+<th>Extensions controller</th>
+<th>Dynatrace Collector</th>
+<th>ActiveGate</th>
+<th>EdgeConnect</th>
+<th>KSPM</th>
+<th>OneAgent Log Module</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Запрет привилегированных контейнеров<a href="#fn-2-1-def">1</a></td>
+<td>CIS 5.2.2 / PSSB</td>
+<td>Исключение</td>
+<td>Соответствует</td>
+<td>Соответствует</td>
+<td>Соответствует</td>
+<td>Соответствует</td>
+<td>Соответствует</td>
+<td>Исключение</td>
+</tr>
+<tr>
+<td>Запрет эскалации привилегий<a href="#fn-2-2-def">2</a></td>
+<td>CIS 5.2.6 / PSSR</td>
+<td>Исключение</td>
+<td>Соответствует</td>
+<td>Соответствует</td>
+<td>Соответствует</td>
+<td>Соответствует</td>
+<td>Соответствует</td>
+<td>Исключение</td>
+</tr>
+<tr>
+<td>Запрет запуска контейнеров от имени root<a href="#fn-2-3-def">3</a></td>
+<td>CIS 5.2.7 / PSSR</td>
+<td>Исключение</td>
+<td>Соответствует</td>
+<td>Соответствует</td>
+<td>Соответствует</td>
+<td>Соответствует</td>
+<td>Исключение</td>
+<td>Соответствует</td>
+</tr>
+<tr>
+<td>Запрет использования слишком большого числа или небезопасных capabilities<a href="#fn-2-4-def">4</a></td>
+<td>CIS 5.2.8 / 5.2.9 / 5.2.10 / PSSR</td>
+<td>Исключение</td>
+<td>Соответствует</td>
+<td>Соответствует</td>
+<td>Соответствует</td>
+<td>Соответствует</td>
+<td>Исключение</td>
+<td>Исключение</td>
+</tr>
+<tr>
+<td>Ограничение доступа к secrets (RBAC)</td>
+<td>CIS 5.1.4</td>
+<td>Соответствует</td>
+<td>Соответствует</td>
+<td>Соответствует</td>
+<td>Соответствует</td>
+<td>Соответствует</td>
+<td>Соответствует</td>
+<td>Соответствует</td>
+</tr>
+<tr>
+<td>Запрет использования томов HostPath<a href="#fn-2-5-def">5</a></td>
+<td>CIS 5.2.12 / PSSB</td>
+<td>Исключение</td>
+<td>Соответствует</td>
+<td>Соответствует</td>
+<td>Соответствует</td>
+<td>Соответствует</td>
+<td>Исключение</td>
+<td>Исключение</td>
+</tr>
+<tr>
+<td>Запрет использования HostPorts</td>
+<td>CIS 5.2.13 / PSSB</td>
+<td>Соответствует</td>
+<td>Соответствует</td>
+<td>Соответствует</td>
+<td>Соответствует</td>
+<td>Соответствует</td>
+<td>Соответствует</td>
+<td>Соответствует</td>
+</tr>
+<tr>
+<td>Запрет доступа к сети хоста<a href="#fn-2-6-def">6</a></td>
+<td>CIS 5.2.5 / PSSB</td>
+<td>Исключение</td>
+<td>Соответствует</td>
+<td>Соответствует</td>
+<td>Соответствует</td>
+<td>Соответствует</td>
+<td>Соответствует</td>
+<td>Соответствует</td>
+</tr>
+<tr>
+<td>Запрет использования host PID<a href="#fn-2-7-def">7</a></td>
+<td>CIS 5.2.3 / PSSB</td>
+<td>Исключение</td>
+<td>Соответствует</td>
+<td>Соответствует</td>
+<td>Соответствует</td>
+<td>Соответствует</td>
+<td>Исключение</td>
+<td>Соответствует</td>
+</tr>
+<tr>
+<td>Запрет использования host IPC</td>
+<td>CIS 5.2.4 / PSSB</td>
+<td>Соответствует</td>
+<td>Соответствует</td>
+<td>Соответствует</td>
+<td>Соответствует</td>
+<td>Соответствует</td>
+<td>Соответствует</td>
+<td>Соответствует</td>
+</tr>
+<tr>
+<td>Требование readOnlyRootFilesystem</td>
+<td>Лучшая практика</td>
+<td>Соответствует</td>
+<td>Соответствует</td>
+<td>Соответствует</td>
+<td>Соответствует</td>
+<td>Соответствует</td>
+<td>Соответствует</td>
+<td>Соответствует</td>
+</tr>
+<tr>
+<td>Требование лимитов ресурсов<a href="#fn-2-10-def">10</a></td>
+<td>Лучшая практика</td>
+<td>Соответствует</td>
+<td>Соответствует</td>
+<td>Соответствует</td>
+<td>Соответствует</td>
+<td>Соответствует</td>
+<td>Соответствует</td>
+<td>Планируемое улучшение</td>
+</tr>
+<tr>
+<td>Требование использования seccomp (как минимум default/runtime)<a href="#fn-2-8-def">8</a></td>
+<td>CIS 5.7.2 / PSSR</td>
+<td>Исключение</td>
+<td>Соответствует</td>
+<td>Соответствует</td>
+<td>Исключение</td>
+<td>Исключение</td>
+<td>Исключение</td>
+<td>Исключение</td>
+</tr>
+<tr>
+<td>Запрет монтирования Secrets как переменной окружения</td>
+<td>CIS 5.4.1</td>
+<td>Соответствует</td>
+<td>Соответствует</td>
+<td>Планируемое улучшение</td>
+<td>Соответствует</td>
+<td>Соответствует</td>
+<td>Соответствует</td>
+<td>Соответствует</td>
+</tr>
+<tr>
+<td>Ограничение sysctls</td>
+<td>PSSB</td>
+<td>Соответствует</td>
+<td>Соответствует</td>
+<td>Соответствует</td>
+<td>Соответствует</td>
+<td>Соответствует</td>
+<td>Соответствует</td>
+<td>Соответствует</td>
+</tr>
+<tr>
+<td>Ограничение AppArmor</td>
+<td>PSSB</td>
+<td>Соответствует</td>
+<td>Соответствует</td>
+<td>Соответствует</td>
+<td>Соответствует</td>
+<td>Соответствует</td>
+<td>Соответствует</td>
+<td>Соответствует</td>
+</tr>
+<tr>
+<td>Запрет SELinux</td>
+<td>PSSB</td>
+<td>Соответствует</td>
+<td>Соответствует</td>
+<td>Соответствует</td>
+<td>Соответствует</td>
+<td>Соответствует</td>
+<td>Соответствует</td>
+<td>Соответствует</td>
+</tr>
+<tr>
+<td>Ограничение автомонтирования токена service account<a href="#fn-2-9-def">9</a></td>
+<td>CIS 5.1.6</td>
+<td>Исключение</td>
+<td>Исключение</td>
+<td>Исключение</td>
+<td>Исключение</td>
+<td>Исключение</td>
+<td>Исключение</td>
+<td>Исключение</td>
+</tr>
+<tr>
+<td>Тип монтирования /proc</td>
+<td>PSSB</td>
+<td>Соответствует</td>
+<td>Соответствует</td>
+<td>Соответствует</td>
+<td>Соответствует</td>
+<td>Соответствует</td>
+<td>Соответствует</td>
+<td>Соответствует</td>
+</tr>
+</tbody>
+</table>
+<p>1</p>
+<p>OneAgent: DaemonSet OneAgent работает с привилегиями уровня хоста для полной видимости стека (сеть, процессы, файловая система).<br />
+OneAgent Log Module: LogAgent должен работать как привилегированный контейнер в кластере OCP для доступа к своему постоянному хранилищу. <a href="https://docs.redhat.com/en/documentation/openshift_container_platform/4.18/html/storage/configuring-persistent-storage#persistent-storage-using-hostpath">OCP persistent storage using hostPath﻿</a>.</p>
+<p>2</p>
+<p>OneAgent: Требуется для init-контейнеров, которые инструментируют процессы до запуска.<br />
+OneAgent Log Module: <code>AllowPrivilegeEscalation</code> всегда true, когда контейнер запущен как привилегированный. <a href="https://kubernetes.io/docs/tasks/configure-pod-container/security-context/">Configure a Security Context for a Pod or Container﻿</a>.</p>
+<p>3</p>
+<p>OneAgent: DaemonSet OneAgent работает с привилегиями уровня хоста для полной видимости стека (сеть, процессы, файловая система).<br />
+KSPM: KSPM монтирует корневую файловую систему хоста <code>/</code> для выполнения сканирований конфигурации и безопасности; оценка ограничения hostPath запланирована.</p>
+<p>4</p>
+<p>OneAgent: Требует ограниченного набора Linux capabilities (например, NET_RAW) для сетевой наблюдаемости.<br />
+KSPM: KSPM требует определённых Linux capabilities для сканирования и сбора данных о конфигурации и безопасности системы; это заложено архитектурно и не может быть убрано.<br />
+OneAgent Log Module: LogAgent нужна дополнительная capability для получения доступа ко всем отслеживаемым лог-файлам.</p>
+<p>5</p>
+<p>OneAgent: DaemonSet OneAgent работает с привилегиями уровня хоста для полной видимости стека (сеть, процессы, файловая система).<br />
+KSPM: KSPM монтирует корневую файловую систему хоста <code>/</code> для сканирования на уровне узла; улучшение по ограничению монтируемых путей рассматривается.<br />
+OneAgent Log Module: Требуется доступ к лог-файлам в файловой системе хоста.</p>
+<p>6</p>
+<p>OneAgent: Использует пространство имён сети хоста для мониторинга сетевого трафика.</p>
+<p>7</p>
+<p>OneAgent: Использует пространство имён host PID для сопоставления метрик процессов.<br />
+KSPM: KSPM требует доступа к пространству имён host PID для сбора коллектором узла данных на уровне процессов. Это требование будет задокументировано.</p>
+<p>8</p>
+<p>OneAgent: Использует профиль seccomp по умолчанию (runtime); явная настройка запланирована.<br />
+ActiveGate: ActiveGate работает с минимальным набором повышенных привилегий для управления входящими соединениями.<br />
+EdgeConnect: В EdgeConnect в настоящее время отсутствует явный профиль seccomp; его добавление запланировано в будущих релизах. Этот элемент управления прорабатывается в предстоящих релизах.<br />
+KSPM: KSPM монтирует корневую файловую систему хоста <code>/</code> для выполнения сканирований конфигурации и безопасности; оценка ограничения hostPath запланирована.<br />
+OneAgent Log Module: Профиль seccomp можно задать через DynaKube для запуска в режиме secure computing.</p>
+<p>9</p>
+<p>OneAgent, Extensions Controller, Dynatrace Collector, ActiveGate, EdgeConnect и компоненты KSPM должны взаимодействовать с Kubernetes API.</p>
+<p>10</p>
+<p>OneAgent Log Module: Лимиты сильно зависят от объёма обрабатываемых данных. Можно задать через DynaKube.</p>
+<p><strong>Планируемое улучшение</strong>:<br />
+Запрет монтирования Secrets как переменной окружения: Dynatrace Collector в настоящее время использует переменные окружения для токенов; запланирован переход на файлы secrets.</p>
+<h2 id="_17">Политики безопасности подов<a class="headerlink" href="#_17" title="Permanent link">&para;</a></h2>
+<p>Эти разрешения раньше управлялись с помощью <strong>PodSecurityPolicy</strong> (PSP), но <a href="https://dt-url.net/2403pxy">в Kubernetes версии 1.25 PSP будут удалены﻿</a> из следующих компонентов:</p>
+<ul>
+<li><a href="https://dt-url.net/d7034gj">Dynatrace Operator﻿</a> версии 0.2.2</li>
+<li><strong>УСТАРЕВШИЙ</strong> <a href="https://dt-url.net/3023pvs">Dynatrace OneAgent Operator﻿</a> версии 0.11.0</li>
+<li><a href="https://dt-url.net/rp43pl1">Соответствующие чарты Helm﻿</a></li>
+</ul>
+<p><strong>Dynatrace Operator версии 0.2.1</strong>, это последняя версия, в которой PSP применяются по умолчанию, поэтому обеспечивать соблюдение этих правил нужно самостоятельно. В качестве альтернатив PSP можно использовать другие инструменты обеспечения соблюдения политик, такие как:</p>
+<ul>
+<li><a href="https://dt-url.net/qx63p3n">k-rail﻿</a></li>
+<li><a href="https://dt-url.net/6m83ppk">Kyverno﻿</a></li>
+<li><a href="https://dt-url.net/aha3ps4">Gatekeeper﻿</a></li>
+</ul>
+<p>При использовании альтернативы PSP нужно обязательно предоставить необходимые разрешения компонентам Dynatrace.</p>
+<h2 id="security-context-constraints-dynatrace-operator">Security context constraints Dynatrace Operator<a class="headerlink" href="#security-context-constraints-dynatrace-operator" title="Permanent link">&para;</a></h2>
+<p>Dynatrace Operator версии 0.12.0+</p>
+<p>Начиная с Dynatrace Operator версии 0.12.0, встроенное создание пользовательских security context constraints (SCC) для Dynatrace Operator и компонентов, управляемых Dynatrace Operator, было убрано. Это изменение сделано для уменьшения сложностей, вызываемых пользовательскими SCC в уникальных настройках OpenShift.</p>
+<p>Несмотря на это обновление, компоненты сохраняют те же разрешения и требования безопасности, что и раньше.</p>
+<p>В следующих таблицах показаны SCC, используемые в разных версиях Dynatrace Operator и OpenShift.</p>
+<table>
+<thead>
+<tr>
+<th>Ресурсы, к которым предоставляется доступ</th>
+<th>Пользовательский SCC, используемый в версиях Dynatrace Operator ранее 0.12.0</th>
+<th>SCC в Dynatrace Operator версии 0.12.0+ и OpenShift ранее 4.11</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Dynatrace Operator</td>
+<td><code>dynatrace-operator</code></td>
+<td><code>privileged</code><a href="#fn-3-1-def">1</a></td>
+</tr>
+<tr>
+<td>Dynatrace Operator Webhook Server</td>
+<td><code>dynatrace-webhook</code></td>
+<td><code>privileged</code><a href="#fn-3-1-def">1</a></td>
+</tr>
+<tr>
+<td>Dynatrace Operator CSI driver</td>
+<td><code>dynatrace-oneagent-csi-driver</code></td>
+<td><code>privileged</code><a href="#fn-3-1-def">1</a></td>
+</tr>
+<tr>
+<td>ActiveGate</td>
+<td><code>dynatrace-activegate</code></td>
+<td><code>privileged</code><a href="#fn-3-1-def">1</a></td>
+</tr>
+<tr>
+<td>OneAgent</td>
+<td><code>dynatrace-dynakube-oneagent-privileged</code> <code>dynatrace-dynakube-oneagent-unprivileged</code></td>
+<td><code>privileged</code><a href="#fn-3-1-def">1</a></td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Ресурсы, к которым предоставляется доступ</th>
+<th>Пользовательский SCC, используемый в версиях Dynatrace Operator ранее 0.12.0</th>
+<th>SCC в Dynatrace Operator версии 0.12.0+ и OpenShift 4.11+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Dynatrace Operator</td>
+<td><code>dynatrace-operator</code></td>
+<td><code>nonroot-v2</code></td>
+</tr>
+<tr>
+<td>Dynatrace Operator Webhook Server</td>
+<td><code>dynatrace-webhook</code></td>
+<td><code>nonroot-v2</code></td>
+</tr>
+<tr>
+<td>Dynatrace Operator CSI driver</td>
+<td><code>dynatrace-oneagent-csi-driver</code></td>
+<td><code>privileged</code><a href="#fn-3-1-def">1</a></td>
+</tr>
+<tr>
+<td>ActiveGate</td>
+<td><code>dynatrace-activegate</code></td>
+<td><code>nonroot-v2</code></td>
+</tr>
+<tr>
+<td>OneAgent</td>
+<td><code>dynatrace-dynakube-oneagent-privileged</code> <code>dynatrace-dynakube-oneagent-unprivileged</code></td>
+<td><code>privileged</code><a href="#fn-3-1-def">1</a></td>
+</tr>
+</tbody>
+</table>
+<p>1</p>
+<p>Этот SCC, единственный встроенный SCC OpenShift, который допускает использование seccomp (заданного у наших компонентов по умолчанию), а также использование томов CSI.</p>
+<p>По-прежнему можно создавать собственные, более разрешительные или более строгие SCC с учётом особенностей конкретной инфраструктуры. Старые SCC, созданные предыдущей версией Dynatrace Operator, можно безопасно удалить.</p>
+<p>Для удаления старых SCC используйте следующую команду:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>oc delete scc &lt;scc-name&gt;
+</code></pre></div>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  К началу
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      © 2026 Dynatrace Docs | Yerkebulan Ardabayev
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/Yerkebulan-Ardabayev" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../../../..", "features": ["navigation.indexes", "navigation.prune", "navigation.path", "navigation.tracking", "navigation.top", "search.suggest", "search.highlight", "search.share", "content.code.copy", "content.code.annotate", "content.tabs.link", "content.tooltips", "toc.follow"], "search": "../../../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u0421\u043a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u043d\u043e \u0432 \u0431\u0443\u0444\u0435\u0440", "clipboard.copy": "\u041a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u0442\u044c \u0432 \u0431\u0443\u0444\u0435\u0440", "search.result.more.one": "\u0415\u0449\u0451 1 \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.more.other": "\u0415\u0449\u0451 # \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.none": "\u0421\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439 \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u043e", "search.result.one": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e 1 \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0435", "search.result.other": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439: #", "search.result.placeholder": "\u041d\u0430\u0447\u043d\u0438\u0442\u0435 \u043f\u0435\u0447\u0430\u0442\u0430\u0442\u044c \u0434\u043b\u044f \u043f\u043e\u0438\u0441\u043a\u0430", "search.result.term.missing": "\u041e\u0442\u0441\u0443\u0442\u0441\u0442\u0432\u0443\u0435\u0442", "select.version": "\u0412\u044b\u0431\u0435\u0440\u0438\u0442\u0435 \u0432\u0435\u0440\u0441\u0438\u044e"}, "version": null}</script>
+    
+    
+  
+      <script src="../../../../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../../../../../assets/javascripts/groq-chat.js?sha=17d46ba74"></script>
+      
+    
+  <script>
+    (function() {
+      // --- Keyboard shortcut Ctrl+K / Cmd+K for search ---
+      document.addEventListener('keydown', function(e) {
+        if ((e.ctrlKey || e.metaKey) && e.key === 'k') {
+          e.preventDefault();
+          var searchInput = document.querySelector('.md-search__input');
+          if (searchInput) {
+            searchInput.focus();
+            var searchToggle = document.querySelector('[data-md-toggle="search"]');
+            if (searchToggle && !searchToggle.checked) {
+              searchToggle.checked = true;
+              searchToggle.dispatchEvent(new Event('change'));
+            }
+          }
+        }
+        // --- "/" focuses search like GitHub / Algolia docs ---
+        if (e.key === '/' && !/^(input|textarea|select)$/i.test(e.target.tagName)) {
+          e.preventDefault();
+          var inp = document.querySelector('.md-search__input');
+          if (inp) {
+            inp.focus();
+            var t = document.querySelector('[data-md-toggle="search"]');
+            if (t && !t.checked) { t.checked = true; t.dispatchEvent(new Event('change')); }
+          }
+        }
+      });
+    })();
+  </script>
+
+  </body>
+</html>

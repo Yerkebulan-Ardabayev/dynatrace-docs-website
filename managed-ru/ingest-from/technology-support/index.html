@@ -1,0 +1,6278 @@
+
+<!doctype html>
+<html lang="ru" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Документация Dynatrace Managed с AI-помощником">
+      
+      
+        <meta name="author" content="Yerkebulan Ardabayev">
+      
+      
+        <link rel="canonical" href="https://yerkebulan-ardabayev.github.io/dynatrace-docs-website/managed-ru/ingest-from/technology-support/">
+      
+      
+        <link rel="prev" href="../setup-on-k8s/reference/workload-mutation/">
+      
+      
+        <link rel="next" href="application-software/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>Поддержка технологий - Dynatrace — Документация</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Inter";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/extra.v11.css?sha=17d46ba74">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  <style>
+    /* DocFlow DT Logo Badge — injected via template override */
+    .md-header__button.md-logo {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .md-header__button.md-logo img,
+    .md-header__button.md-logo svg {
+      display: none !important;
+    }
+    .md-header__button.md-logo::before {
+      content: 'DT';
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 28px;
+      height: 28px;
+      border-radius: 6px;
+      background: linear-gradient(135deg, #00d4aa 0%, #7c3aed 100%);
+      color: white;
+      font-size: 11px;
+      font-weight: 700;
+      font-family: 'Inter', sans-serif;
+      letter-spacing: -0.02em;
+      flex-shrink: 0;
+    }
+
+    /* Search Ctrl+K badge — inside input field */
+    .md-search__form {
+      position: relative;
+    }
+    .md-search__form::after {
+      content: 'Ctrl+K';
+      display: none;
+      align-items: center;
+      padding: 0.15rem 0.4rem;
+      border-radius: 4px;
+      border: 1px solid var(--docflow-border);
+      background: var(--md-default-bg-color);
+      font-size: 10px;
+      font-family: 'JetBrains Mono', monospace;
+      color: var(--md-default-fg-color--lighter);
+      white-space: nowrap;
+      pointer-events: none;
+      position: absolute;
+      right: 0.5rem;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+    @media (min-width: 60em) {
+      .md-search__form::after {
+        display: flex;
+      }
+    }
+  </style>
+
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="custom">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#_1" class="md-skip">
+          Перейти к содержанию
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+  
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Верхний колонтитул">
+    <a href="../../.." title="Dynatrace — Документация" class="md-header__button md-logo" aria-label="Dynatrace — Документация" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M11 15H6l7-14v8h5l-7 14z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Dynatrace — Документация
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Поддержка технологий
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Переключить на светлую тему"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Переключить на светлую тему" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Переключить на тёмную тему"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Переключить на тёмную тему" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Поиск" placeholder="Поиск" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Поиск">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Поделиться" aria-label="Поделиться" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Очистить" aria-label="Очистить" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Инициализация поиска
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/Yerkebulan-Ardabayev/dynatrace-docs-website" title="Перейти к репозиторию" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    dynatrace-docs-website
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Навигация" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Dynatrace — Документация" class="md-nav__button md-logo" aria-label="Dynatrace — Документация" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M11 15H6l7-14v8h5l-7 14z"/></svg>
+
+    </a>
+    Dynatrace — Документация
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/Yerkebulan-Ardabayev/dynatrace-docs-website" title="Перейти к репозиторию" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    dynatrace-docs-website
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Главная
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../ru/getting-started/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Начало работы
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../installation/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Кластер Managed
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Источники данных
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Источники данных
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обзор
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../amazon-web-services/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Настройка Dynatrace на Amazon Web Services
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../bulk-configuration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Удалённое управление конфигурацией OneAgent и ActiveGate
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../dynatrace-activegate/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dynatrace ActiveGate
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../dynatrace-oneagent/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dynatrace OneAgent
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../extend-dynatrace/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Расширение Dynatrace
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../extensions/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Расширения
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../google-cloud-platform/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Настройка Dynatrace на Google Cloud
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../microsoft-azure-services/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Настройка Dynatrace на Microsoft Azure
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../opentelemetry/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OpenTelemetry и Dynatrace
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../setup-on-container-platforms/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Настройка Dynatrace на контейнерных и PaaS-платформах
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../setup-on-k8s/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Настройка Dynatrace на Kubernetes
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_13" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4_13" id="__nav_4_13_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Поддержка технологий
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_13_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4_13">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Поддержка технологий
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обзор
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="application-software/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Среды выполнения
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="known-solutions-and-workarounds/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Известные решения и обходные пути
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="mainframe-technology-support/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Поддержка технологий мейнфрейма
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="oneagent-platform-and-capability-support-matrix/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Матрица поддержки платформ и возможностей OneAgent
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="serverless-compute-services/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Матрица поддержки бессерверных вычислений
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="support-model-and-issues/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Поддержка и известные проблемы Dynatrace Operator
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="support-model-for-pivotal-platform/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Модель поддержки Dynatrace для VMware Tanzu Application Service
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    
+  
+  
+  
+    <a href="../../observe/application-observability/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Наблюдаемость
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../dynatrace-intelligence/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Davis AI
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    
+  
+  
+  
+    <a href="../../analyze-explore-automate/dashboards-classic/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Анализ
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../deliver/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Deliver
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    
+  
+  
+  
+    <a href="../../secure/application-security/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Безопасность приложений
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    
+  
+  
+  
+    <a href="../../manage/account-management/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Управление
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    
+  
+  
+  
+    <a href="../../platform/oneagent/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Платформа
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../dynatrace-api/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../whats-new/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Что нового
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../offline-doc/how-do-i-enable-synthetic-monitors/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Офлайн-документация
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../ru/training/day1-introduction/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обучение
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ai/groq/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI Помощник
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Содержание">
+  
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+                
+
+
+
+  
+
+
+  <nav class="md-path" aria-label="Навигация" >
+    <ol class="md-path__list">
+      
+        
+  
+  
+    <li class="md-path__item">
+      <a href="../../.." class="md-path__link">
+        
+  <span class="md-ellipsis">
+    Главная
+  </span>
+
+      </a>
+    </li>
+  
+
+      
+      
+        
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="../" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    Источники данных
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="./" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    Поддержка технологий
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ol>
+  </nav>
+
+              
+              <article class="md-content__inner md-typeset">
+                
+  
+                  
+
+
+
+<h1 id="_1">Поддержка технологий<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
+<h1 id="_2">Поддержка технологий<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h1>
+<ul>
+<li>17 минут чтения</li>
+<li>Обновлено 10 июля 2026</li>
+</ul>
+<p>Dynatrace поддерживает мониторинг технологий и версий, перечисленных на этой странице. Для serverless-мониторинга см. <a href="serverless-compute-services/" title="Узнать, какие функции и возможности поддерживает Dynatrace для serverless-вычислений (FaaS).">Матрица поддержки serverless-вычислений</a>. Для мейнфреймов см. <a href="mainframe-technology-support/" title="Узнать, какие технологии поддерживает Dynatrace для мониторинга мейнфреймов.">Поддержка технологий мейнфреймов</a>.</p>
+<p>См. также <a href="../../whats-new/technology/end-of-support-news/" title="Объявления об окончании поддержки технологий, поддерживаемых Dynatrace.">Объявления об окончании поддержки</a>.</p>
+<p>Схема версионирования поддержки технологий</p>
+<p>Определение схемы версионирования поддержки технологий с примерами:</p>
+<ul>
+<li>
+<p><strong>Поддерживается основная версия 5</strong></p>
+</li>
+<li>
+<p>Поддерживается основная версия 5, включая все её минорные версии, например 5.1 и 5.2</p>
+</li>
+<li>Другие основные версии не поддерживаются, например 6 и 7</li>
+<li>
+<p><strong>Поддерживается минорная версия 5.1</strong></p>
+</li>
+<li>
+<p>Поддерживается минорная версия 5.1, включая все её патч-версии, например 5.1.1 и 5.1.2</p>
+</li>
+<li>Другие минорные версии не поддерживаются, например 5.2 и 5.3</li>
+<li>
+<p><strong>Поддерживается патч-версия 5.1.1</strong></p>
+</li>
+<li>
+<p>Поддерживается патч-версия 5.1.1</p>
+</li>
+<li>Другие патч-версии не поддерживаются, например 5.1.2 и 5.1.3</li>
+<li>
+<p><strong>Поддерживается диапазон версий 5.1 – 5.3</strong></p>
+</li>
+<li>
+<p>Поддерживаются минорные версии 5.1, 5.2 и 5.3, включая все их патч-версии, например 5.1.1, 5.2.1 и 5.3.1</p>
+</li>
+<li>Другие минорные версии не поддерживаются, например 5.0 и 5.4</li>
+<li>
+<p><strong>Минимально необходимая версия 5+</strong></p>
+</li>
+<li>
+<p>Поддерживаются все основные, минорные и патч-версии начиная с версии 5, например 5, 5.1, 5.1.1 и 6</p>
+</li>
+</ul>
+<h2 id="_3">Операционные системы<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<p>OneAgent можно установить на следующие операционные системы <a href="#linux">Linux</a>, <a href="#unix">Unix</a>, <a href="#windows">Windows</a> и <a href="mainframe-technology-support/" title="Узнать, какие технологии поддерживает Dynatrace для мониторинга мейнфреймов.">z/OS</a>.</p>
+<h3 id="linux">Linux<a class="headerlink" href="#linux" title="Permanent link">&para;</a></h3>
+<p>Dynatrace тестирует и поддерживает установку OneAgent только на дистрибутивах и версиях <a href="../dynatrace-oneagent/installation-and-operation/linux/" title="Узнать, как установить OneAgent на Linux, как настроить установку и другое.">Linux</a>, перечисленных ниже.</p>
+<p>Существуют определённые ограничения при развёртывании OneAgent на хосте Linux с Oracle Database Server 19c и/или подключёнными NFS-дисками. См. <a href="../dynatrace-oneagent/oneagent-troubleshooting/troubleshoot-oneagent-installation/#oracle-database-server-19c" title="Узнать, как устранять неполадки установки OneAgent на AIX, Linux и Windows.">Устранение неполадок установки OneAgent</a>.</p>
+<p>Поддерживаемые архитектуры процессоров</p>
+<ul>
+<li><code>x86-64</code> - 64-битная Intel/AMD</li>
+<li><code>s390x</code> - 64-битный мейнфрейм IBM Z</li>
+<li><code>ppc64le</code> - 64-битная PowerPC</li>
+<li><code>ARM64 (AArch64)</code> - 64-битный Linux ARM, включая <a href="https://aws.amazon.com/ec2/graviton/">процессоры AWS Graviton﻿</a></li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Поддерживаемая ОС</th>
+<th>Версии</th>
+<th>Архитектуры процессоров</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="../dynatrace-oneagent/installation-and-operation/linux/" title="Узнать, как установить OneAgent на Linux, как настроить установку и другое.">AlmaLinux</a></td>
+<td>8, 9, 10</td>
+<td>ARM64 (AArch64), PPCLE, s390, x86-64</td>
+</tr>
+<tr>
+<td><a href="oneagent-platform-and-capability-support-matrix/" title="Узнать, какие возможности поддерживает OneAgent на разных операционных системах и платформах.">Alpine Linux (musl libc) для контейнеров</a></td>
+<td>3.10 - 3.23<a href="#fn-supported-os-1-def">1</a></td>
+<td>ARM64 (AArch64), x86-64</td>
+</tr>
+<tr>
+<td><a href="../dynatrace-oneagent/installation-and-operation/linux/" title="Узнать, как установить OneAgent на Linux, как настроить установку и другое.">Amazon Linux</a></td>
+<td>2023</td>
+<td>ARM64 (AArch64), x86-64</td>
+</tr>
+<tr>
+<td><a href="../dynatrace-oneagent/installation-and-operation/linux/" title="Узнать, как установить OneAgent на Linux, как настроить установку и другое.">Azure Linux</a></td>
+<td>2, 3</td>
+<td>x86-64</td>
+</tr>
+<tr>
+<td><a href="../setup-on-k8s/deployment/app-obs-managed/" title="Развернуть Dynatrace Operator в режиме мониторинга приложений в Kubernetes">Bottlerocket</a></td>
+<td>1<a href="#fn-supported-os-2-def">2</a></td>
+<td>ARM64 (AArch64), x86-64</td>
+</tr>
+<tr>
+<td><a href="../dynatrace-oneagent/installation-and-operation/linux/" title="Узнать, как установить OneAgent на Linux, как настроить установку и другое.">CentOS Stream</a></td>
+<td>9</td>
+<td>ARM64 (AArch64), PPCLE, x86-64</td>
+</tr>
+<tr>
+<td><a href="../dynatrace-oneagent/installation-and-operation/linux/" title="Узнать, как установить OneAgent на Linux, как настроить установку и другое.">Debian</a></td>
+<td>11, 12, 13</td>
+<td>ARM64 (AArch64), x86-64</td>
+</tr>
+<tr>
+<td><a href="../dynatrace-oneagent/installation-and-operation/linux/" title="Узнать, как установить OneAgent на Linux, как настроить установку и другое.">Fedora</a></td>
+<td>41, 42, 43, 44</td>
+<td>x86-64</td>
+</tr>
+<tr>
+<td><a href="../dynatrace-oneagent/installation-and-operation/linux/" title="Узнать, как установить OneAgent на Linux, как настроить установку и другое.">Fedora</a></td>
+<td>44</td>
+<td>ARM64 (AArch64)</td>
+</tr>
+<tr>
+<td><a href="../dynatrace-oneagent/installation-and-operation/linux/" title="Узнать, как установить OneAgent на Linux, как настроить установку и другое.">Oracle Linux</a></td>
+<td>7, 8, 9, 10</td>
+<td>x86-64</td>
+</tr>
+<tr>
+<td><a href="../dynatrace-oneagent/installation-and-operation/linux/" title="Узнать, как установить OneAgent на Linux, как настроить установку и другое.">Red Hat Enterprise Linux</a></td>
+<td>7, 8, 9, 10</td>
+<td>ARM64 (AArch64), PPCLE, s390, x86-64</td>
+</tr>
+<tr>
+<td><a href="../setup-on-k8s/" title="Способы развёртывания и настройки Dynatrace на Kubernetes">Red Hat Enterprise Linux CoreOS</a></td>
+<td>4.14<a href="#fn-supported-os-3-def">3</a>, 4.15<a href="#fn-supported-os-3-def">3</a>, 4.16<a href="#fn-supported-os-3-def">3</a></td>
+<td>x86-64</td>
+</tr>
+<tr>
+<td><a href="../dynatrace-oneagent/installation-and-operation/linux/" title="Узнать, как установить OneAgent на Linux, как настроить установку и другое.">Rocky Linux</a></td>
+<td>8, 9, 10</td>
+<td>ARM64 (AArch64), x86-64</td>
+</tr>
+<tr>
+<td><a href="../dynatrace-oneagent/installation-and-operation/linux/" title="Узнать, как установить OneAgent на Linux, как настроить установку и другое.">SUSE Linux Enterprise Server</a></td>
+<td>12.5, 15.3, 15.4, 15.5, 15.6, 15.7, 16.0</td>
+<td>x86-64</td>
+</tr>
+<tr>
+<td><a href="../dynatrace-oneagent/installation-and-operation/linux/" title="Узнать, как установить OneAgent на Linux, как настроить установку и другое.">SUSE Linux Enterprise Server</a></td>
+<td>12.5, 15.3, 15.4, 15.5, 15.6, 15.7</td>
+<td>PPCLE, s390</td>
+</tr>
+<tr>
+<td><a href="../dynatrace-oneagent/installation-and-operation/linux/" title="Узнать, как установить OneAgent на Linux, как настроить установку и другое.">SUSE Linux Enterprise Server</a></td>
+<td>15.3, 15.4, 15.5, 15.6, 15.7, 16.0</td>
+<td>ARM64 (AArch64)</td>
+</tr>
+<tr>
+<td><a href="../dynatrace-oneagent/installation-and-operation/linux/" title="Узнать, как установить OneAgent на Linux, как настроить установку и другое.">Ubuntu</a></td>
+<td>16.04 LTS, 18.04 LTS, 20.04 LTS, 22.04 LTS, 24.04 LTS, 26.04 LTS</td>
+<td>PPCLE, x86-64</td>
+</tr>
+<tr>
+<td><a href="../dynatrace-oneagent/installation-and-operation/linux/" title="Узнать, как установить OneAgent на Linux, как настроить установку и другое.">Ubuntu</a></td>
+<td>18.04 LTS, 20.04 LTS, 22.04 LTS, 24.04 LTS, 26.04 LTS</td>
+<td>ARM64 (AArch64), s390</td>
+</tr>
+<tr>
+<td><a href="../dynatrace-oneagent/installation-and-operation/linux/" title="Узнать, как установить OneAgent на Linux, как настроить установку и другое.">openSUSE</a></td>
+<td>15.6, 16.0</td>
+<td>ARM64 (AArch64), PPCLE, x86-64</td>
+</tr>
+</tbody>
+</table>
+<p>1</p>
+<p>Поддерживается только в контейнерах, которые мониторятся в режиме OneAgent full-stack или application-only monitoring (musl libc 1.1.14 - 1.2.5). Бинарные файлы, собранные под GNU C Library (glibc) и запускаемые через библиотеку gcompat, не поддерживаются.</p>
+<p>2</p>
+<p>Поддерживается только с использованием application-only injection. Метрики узлов доступны с помощью Kubernetes Platform Monitoring.</p>
+<p>3</p>
+<p>Поддерживается для развёртывания на основе контейнеров через Dynatrace Operator (см. <a href="../setup-on-k8s/" title="Способы развёртывания и настройки Dynatrace на Kubernetes">OpenShift</a>).</p>
+<p>Совместимость Full-Stack Monitoring с Red Hat OpenShift</p>
+<ul>
+<li>OpenShift 4.19+: Поддерживаются только <a href="../setup-on-k8s/how-it-works/application-monitoring/" title="Подробное описание Application observability с использованием Dynatrace Operator.">Application observability</a> и <a href="../setup-on-k8s/how-it-works/cloud-native-fullstack/" title="Подробное описание full-stack observability с использованием Dynatrace Operator.">Full-stack observability</a>. Это связано с тем, что рабочие узлы могут работать только под управлением Red Hat Enterprise Linux CoreOS. Подробнее см. <a href="https://docs.redhat.com/en/documentation/openshift_container_platform/4.19/html/release_notes/ocp-4-19-release-notes#ocp-4-19-rhel-worker-nodes-removed_release-notes">примечания к выпуску Red Hat (1.5.13.2)﻿</a>.</li>
+<li>OpenShift 4.16–4.18: <a href="../setup-on-k8s/how-it-works/other-deployment-modes/classic-fullstack/" title="Подробное описание Classic Full-Stack monitoring с использованием Dynatrace Operator.">Classic Full-Stack monitoring</a> поддерживается только на рабочих узлах под управлением Red Hat Enterprise Linux. Если рабочие узлы вместо этого работают под управлением Red Hat Enterprise Linux CoreOS, поддерживается только облачно-нативная <a href="../setup-on-k8s/how-it-works/cloud-native-fullstack/" title="Подробное описание full-stack observability с использованием Dynatrace Operator.">Full-stack observability</a>.</li>
+</ul>
+<h3 id="unix">Unix<a class="headerlink" href="#unix" title="Permanent link">&para;</a></h3>
+<p>Dynatrace тестирует и обеспечивает поддержку установки OneAgent на версиях <a href="../dynatrace-oneagent/installation-and-operation/aix/" title="Learn how to install OneAgent on AIX, how to customize installation, and more.">AIX</a> и <a href="../dynatrace-oneagent/installation-and-operation/solaris/" title="Learn how to install, update and troubleshoot OneAgent on Solaris.">Solaris</a>, перечисленных ниже.</p>
+<p>Поддерживаемые архитектуры процессоров</p>
+<ul>
+<li><code>x86-64</code>, 64-битные Intel/AMD</li>
+<li><code>POWER8</code>, 64-битная Power ISA</li>
+<li><code>POWER9</code>, 64-битная Power ISA</li>
+<li><code>POWER10</code>, 64-битная Power ISA</li>
+<li><code>SPARC</code></li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>UNIX-система</th>
+<th>Версии</th>
+<th>Архитектуры процессоров</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="../dynatrace-oneagent/installation-and-operation/aix/" title="Learn how to install OneAgent on AIX, how to customize installation, and more.">IBM AIX</a></td>
+<td>7.2 TL5<a href="#fn-unix-system-1-def">1</a>, 7.3 TL1<a href="#fn-unix-system-1-def">1</a>, 7.3 TL2<a href="#fn-unix-system-1-def">1</a>, 7.3 TL3<a href="#fn-unix-system-1-def">1</a>, 7.3 TL4<a href="#fn-unix-system-1-def">1</a></td>
+<td>POWER10, POWER8, POWER9</td>
+</tr>
+<tr>
+<td><a href="../dynatrace-oneagent/installation-and-operation/solaris/" title="Learn how to install, update and troubleshoot OneAgent on Solaris.">Solaris</a></td>
+<td>11.4</td>
+<td>SPARC, x86-64</td>
+</tr>
+</tbody>
+</table>
+<p>1</p>
+<p>Установка на AIX WPAR не поддерживается.</p>
+<h3 id="windows">Windows<a class="headerlink" href="#windows" title="Permanent link">&para;</a></h3>
+<p>Dynatrace тестирует и обеспечивает поддержку установки OneAgent только на версиях <a href="../dynatrace-oneagent/installation-and-operation/windows/" title="Learn how to install OneAgent on Windows, how to customize installation, and more.">Windows</a>, перечисленных ниже.</p>
+<p>Поддерживаемые архитектуры процессоров</p>
+<ul>
+<li><code>x86-64</code>, 64-битные Intel/AMD</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>ОС Windows</th>
+<th>Версии</th>
+<th>Архитектуры процессоров</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="../dynatrace-oneagent/installation-and-operation/windows/" title="Learn how to install OneAgent on Windows, how to customize installation, and more.">Windows Desktop 10</a></td>
+<td>22H2<a href="#fn-windows-os-1-def">1</a>, 1607<a href="#fn-windows-os-2-def">2</a>, 1809<a href="#fn-windows-os-2-def">2</a>, 21H2<a href="#fn-windows-os-2-def">2</a></td>
+<td>x86-64</td>
+</tr>
+<tr>
+<td><a href="../dynatrace-oneagent/installation-and-operation/windows/" title="Learn how to install OneAgent on Windows, how to customize installation, and more.">Windows Desktop 11</a></td>
+<td>23H2, 24H2, 25H2</td>
+<td>x86-64</td>
+</tr>
+<tr>
+<td><a href="../dynatrace-oneagent/installation-and-operation/windows/" title="Learn how to install OneAgent on Windows, how to customize installation, and more.">Windows Server</a></td>
+<td>2012 R2<a href="#fn-windows-os-3-def">3</a>, 2016<a href="#fn-windows-os-4-def">4</a>, 2019<a href="#fn-windows-os-4-def">4</a>, 2022<a href="#fn-windows-os-4-def">4</a>, 2025<a href="#fn-windows-os-4-def">4</a></td>
+<td>x86-64</td>
+</tr>
+<tr>
+<td><a href="../dynatrace-oneagent/installation-and-operation/windows/" title="Learn how to install OneAgent on Windows, how to customize installation, and more.">Windows Server - Nano</a></td>
+<td>Поддерживаются все версии<a href="#fn-windows-os-5-def">5</a></td>
+<td>x86-64</td>
+</tr>
+</tbody>
+</table>
+<p>1</p>
+<p>Windows 10 Semi-Annual Channel (SAC), кроме Windows 10 IoT.</p>
+<p>2</p>
+<p>Windows 10 Long-Term Servicing Channel (LTSC), кроме Windows 10 IoT.</p>
+<p>3</p>
+<p>Windows 2012 R2 не поддерживается на версиях OneAgent с 1.287 по 1.305. Если OneAgent находится на одной из этих версий, нужно обновить до версии OneAgent 1.307, чтобы включить поддержку.</p>
+<p>4</p>
+<p>Long-Term Servicing Channel (LTSC). Поддержка включает установку Server Core (требует установки OneAgent в headless-режиме) или мониторинг по сценарию app-only.</p>
+<p>5</p>
+<p>Ограниченная поддержка на основе совместимости с поддержкой Windows Server при использовании в качестве образа контейнера.</p>
+<h2 id="_4">Файловые системы<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<p>OneAgent может обнаруживать и создавать сущности дисков (<code>dt.entity.disk</code>) на следующих файловых системах:</p>
+<table>
+<thead>
+<tr>
+<th>Файловая система</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ACFS <a href="#fn-1-1-def">1</a></td>
+</tr>
+<tr>
+<td>AFS</td>
+</tr>
+<tr>
+<td>btrfs</td>
+</tr>
+<tr>
+<td>CIFS</td>
+</tr>
+<tr>
+<td>ecryptfs</td>
+</tr>
+<tr>
+<td>ext, ext2, ext,3 ext4</td>
+</tr>
+<tr>
+<td>fuse.glusterfs <a href="#fn-1-2-def">2</a></td>
+</tr>
+<tr>
+<td>GPFS <a href="#fn-1-3-def">3</a></td>
+</tr>
+<tr>
+<td>GFS2 <a href="#fn-1-4-def">4</a></td>
+</tr>
+<tr>
+<td>HFS</td>
+</tr>
+<tr>
+<td>HPFS</td>
+</tr>
+<tr>
+<td>ISO9660</td>
+</tr>
+<tr>
+<td>JFS</td>
+</tr>
+<tr>
+<td>LVM2_member, LVM_member</td>
+</tr>
+<tr>
+<td>MINIX</td>
+</tr>
+<tr>
+<td>msdos</td>
+</tr>
+<tr>
+<td>ncpfs</td>
+</tr>
+<tr>
+<td>NFS</td>
+</tr>
+<tr>
+<td>NTFS</td>
+</tr>
+<tr>
+<td>overlay <a href="#fn-1-6-def">6</a></td>
+</tr>
+<tr>
+<td>ReiserFS</td>
+</tr>
+<tr>
+<td>SMB</td>
+</tr>
+<tr>
+<td>SquashFS</td>
+</tr>
+<tr>
+<td>sysv</td>
+</tr>
+<tr>
+<td>tmpfs <a href="#fn-1-7-def">7</a></td>
+</tr>
+<tr>
+<td>umsdos</td>
+</tr>
+<tr>
+<td>VFAT</td>
+</tr>
+<tr>
+<td>VXFS <a href="#fn-1-5-def">5</a></td>
+</tr>
+<tr>
+<td>XFS</td>
+</tr>
+<tr>
+<td>Xiafs</td>
+</tr>
+<tr>
+<td>ZFS</td>
+</tr>
+</tbody>
+</table>
+<p>1</p>
+<p>Начиная с версии OneAgent 1.307+.</p>
+<p>2</p>
+<p>Начиная с версии OneAgent 1.307+. Поддерживается только статистика по объёму.</p>
+<p>3</p>
+<p>Если команда <code>mmpmonSocket</code> на Linux завершается ошибкой, доступен резервный режим, который работает при включённой возможности CAP_SETUID. Подробнее см. <a href="../dynatrace-oneagent/oneagent-configuration-via-command-line-interface/#capsetuid-osagent" title="Learn how to perform some OneAgent configuration tasks without the need to reinstall OneAgent.">Настройка OneAgent через интерфейс командной строки</a>.</p>
+<p>4</p>
+<p>Начиная с версии OneAgent 1.309+.</p>
+<p>5</p>
+<p>Начиная с версии OneAgent 1.303+. Поддерживается только статистика по объёму.</p>
+<p>6</p>
+<p>Начиная с версии OneAgent 1.323+. Поддерживается только статистика по объёму.</p>
+<p>7</p>
+<p>Начиная с версии OneAgent 1.331+. Поддерживается только статистика по объёму. Функция с ручным включением, нужно включить в настройках дисков.</p>
+<h2 id="_5">Контейнеры<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Функции</th>
+<th>Версии</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Автоматическое внедрение в контейнер <a href="https://www.docker.com/">Docker﻿</a> (Deep monitoring)<a href="#fn-2-1-def">1</a></td>
+<td>1.6+ (32 и 64 бит), требуется glibc или musl-libc</td>
+</tr>
+<tr>
+<td>Автоматическое внедрение в контейнер <a href="https://containerd.io/">containerd﻿</a> (Deep monitoring)</td>
+<td>1.1.2+ (32 и 64 бит), требуется glibc или musl-libc</td>
+</tr>
+<tr>
+<td>Автоматическое внедрение в контейнер <a href="https://cri-o.io/">CRI-O﻿</a> (Deep monitoring)</td>
+<td>1.12.5+ (32 и 64 бит), требуется glibc или musl-libc</td>
+</tr>
+<tr>
+<td>Автоматическое внедрение в контейнер <a href="https://docs.cloudfoundry.org/concepts/architecture/garden.html#garden-runc">Garden-RunC﻿</a> (Deep monitoring)</td>
+<td>1.0.0+ (32 и 64 бит), требуется glibc или musl-libc</td>
+</tr>
+<tr>
+<td>Автоматическое внедрение в контейнер <a href="https://bosh.io/docs/bpm/bpm/">BOSH bpm﻿</a> (Deep monitoring)</td>
+<td>0.11.0+</td>
+</tr>
+<tr>
+<td>Автоматическое внедрение в контейнер <a href="https://podman.io/">Podman﻿</a> (Deep monitoring)<a href="#fn-2-2-def">2</a><a href="#fn-2-3-def">3</a></td>
+<td>3.4.4–5.x.x</td>
+</tr>
+<tr>
+<td>Метрики контейнера Docker<a href="#fn-2-1-def">1</a></td>
+<td>1.8, 1.9, 1.10, 1.11, 1.12, 1.13 RC2, 1.13.1, 17.03+ CE и EE</td>
+</tr>
+</tbody>
+</table>
+<p>1</p>
+<p>См. <a href="../../observe/infrastructure-observability/container-platform-monitoring/container-groups/#limitations" title="Overview on container groups monitoring">известные ограничения мониторинга контейнеров Docker</a>.</p>
+<p>2</p>
+<p>Поддерживается для OneAgent 1.267+, установленного на узле Podman с использованием среды выполнения контейнеров <a href="https://github.com/containers/crun">crun﻿</a>; версии Podman 0.17-1.15 с использованием среды выполнения <code>runc</code> не поддерживаются.</p>
+<p>3</p>
+<p>Контейнеры Podman, запущенные с <code>read-only=true</code> или с нестандартным ремаппингом пространства имён пользователя, не поддерживаются. К нестандартному ремаппингу пространства имён пользователя относятся контейнеры, запущенные с <code>--userns=keep-id</code>, <code>--userns=auto</code>, <code>--userns=nomap</code> или с пользовательскими сопоставлениями <code>--uidmap</code>/<code>--gidmap</code>.</p>
+<h2 id="_6">Гипервизоры<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>AIX (LPAR)</td>
+</tr>
+<tr>
+<td>Hyper-V</td>
+</tr>
+<tr>
+<td>KVM</td>
+</tr>
+<tr>
+<td>Nutanix AHV<a href="#fn-3-1-def">1</a></td>
+</tr>
+<tr>
+<td>QEMU</td>
+</tr>
+<tr>
+<td>Xen</td>
+</tr>
+<tr>
+<td><a href="../../observe/infrastructure-observability/vmware-vsphere-monitoring/" title="Monitor VMware vSphere with Dynatrace.">VMware</a></td>
+</tr>
+<tr>
+<td>AWS Nitro<a href="#fn-3-1-def">1</a></td>
+</tr>
+<tr>
+<td>OpenShift Virtualization</td>
+</tr>
+</tbody>
+</table>
+<p>1</p>
+<p>Dynatrace обнаруживает гипервизор, но выделенная логика не применяется.</p>
+<h2 id="_7">Сетевые интерфейсы<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>IEEE 802.3 Ethernet</td>
+</tr>
+<tr>
+<td>IEEE 802.11 Wireless LAN</td>
+</tr>
+<tr>
+<td>Виртуальное сетевое устройство OpenVZ (venet)</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>
+<p>Поддерживаются как физические, так и виртуальные интерфейсы при условии, что им не назначен link-local адрес.</p>
+</li>
+<li>
+<p>Для IPv4: link-local адреса находятся в диапазоне от <code>169.254.1.0</code> до <code>169.254.254.255</code>.</p>
+</li>
+<li>Для IPv6: link-local адреса находятся в диапазоне от <code>0xFE800000</code> до <code>0xFEBFFFFF</code>.</li>
+<li>Интерфейсы виртуального Ethernet-моста не поддерживаются.</li>
+<li>Поддерживается объединение сетевых интерфейсов (bonding).</li>
+<li>Для мониторинга трафика поддерживается только протокол TCP.</li>
+</ul>
+<h2 id="_8">Облачные платформы<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h2>
+<h3 id="aws"><a href="../amazon-web-services/" title="Set up and configure monitoring for Amazon Web Services.">AWS</a><a class="headerlink" href="#aws" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Amazon Web Services (AWS)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>DynamoDB</td>
+</tr>
+<tr>
+<td>Elastic Block Store (EBS)</td>
+</tr>
+<tr>
+<td>Elastic Compute Cloud (EC2)</td>
+</tr>
+<tr>
+<td>Elastic Load Balancing (ELB)</td>
+</tr>
+<tr>
+<td><a href="../amazon-web-services/integrate-into-aws/aws-lambda-integration/trace-lambda-functions/" title="Monitor AWS Lambda functions.">Lambda</a></td>
+</tr>
+<tr>
+<td><a href="../amazon-web-services/integrate-with-aws/cloudwatch-metrics/view-aws-monitoring-results/#relational-database-service-page" title="Display AWS monitoring results in Dynatrace on your home dashboard, AWS account page, host page, and more.">Relational Database Service (RDS)</a></td>
+</tr>
+<tr>
+<td><a href="../amazon-web-services/aws-platform/set-up-cors-in-amazon-s3/" title="Integrate CORS in Amazon Web Services for buckets within Amazon S3.">Simple Storage Service (S3)</a></td>
+</tr>
+</tbody>
+</table>
+<h3 id="microsoft-azure"><a href="../microsoft-azure-services/azure-integrations/" title="Set up Dynatrace deep code monitoring on Azure using OneAgent or OpenTelemetry.">Microsoft Azure</a><a class="headerlink" href="#microsoft-azure" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Compute service</th>
+<th>Расширение для развёртывания OneAgent</th>
+<th>Интеграция Dynatrace с Azure Monitor</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="../microsoft-azure-services/azure-integrations/azure-vm/" title="Learn how to install and configure OneAgent for monitoring Azure Virtual Machines using a VM extension.">Virtual Machines</a></td>
+<td>VM-Extension<a href="#fn-4-1-def">1</a></td>
+<td>да</td>
+</tr>
+<tr>
+<td><a href="../microsoft-azure-services/azure-integrations/azure-vmss/" title="Learn how to install, configure, and troubleshoot OneAgent for monitoring Azure VM Scale Set using a VM extension.">Virtual Machine Scale Set</a></td>
+<td>VM-Extension<a href="#fn-4-1-def">1</a></td>
+<td>да</td>
+</tr>
+<tr>
+<td><a href="../microsoft-azure-services/azure-integrations/azure-servicefabric/" title="Learn how to install, configure, and troubleshoot OneAgent for monitoring Azure Service Fabric using a VM extension.">Service Fabric</a></td>
+<td>VM-Extension<a href="#fn-4-1-def">1</a></td>
+<td>да</td>
+</tr>
+<tr>
+<td><a href="../microsoft-azure-services/azure-integrations/azure-aks/" title="Learn how to deploy, operate, and maintain OneAgent on Azure Kubernetes Service.">Azure Kubernetes Service (AKS)</a></td>
+<td>Operator-rollout<a href="#fn-4-2-def">2</a></td>
+<td>нет</td>
+</tr>
+<tr>
+<td>Cloud-Services (Classic)</td>
+<td><a href="https://github.com/dtPaTh/Dynatrace-Azure-CloudServices">Startup script﻿</a></td>
+<td>нет</td>
+</tr>
+<tr>
+<td><a href="https://github.com/safia-habib/Azure/blob/master/HDInsights/Readme.md">HDInsight﻿</a></td>
+<td>Startup-Script</td>
+<td>да</td>
+</tr>
+<tr>
+<td><a href="../microsoft-azure-services/azure-integrations/azure-appservice/integrate-oneagent-on-azure-app-service/" title="Install, configure, update, uninstall, and troubleshoot OneAgent for monitoring Azure App Service on Windows using an Azure site extension.">App Service</a> (на базе Windows)</td>
+<td>SiteExtension</td>
+<td>да</td>
+</tr>
+<tr>
+<td><a href="../microsoft-azure-services/azure-integrations/azure-functions/integrate-oneagent-on-azure-functions/" title="Learn how to install, configure, update, and uninstall OneAgent for monitoring Azure Functions using an Azure site extension.">Azure Functions</a></td>
+<td>SiteExtension (релиз Early Access)</td>
+<td>да</td>
+</tr>
+</tbody>
+</table>
+<p>1</p>
+<p>VM-Extension автоматизирует установку OneAgent с помощью нативных средств автоматизации Azure. OneAgent также можно установить вручную или через любой другой инструмент автоматизации.</p>
+<p>2</p>
+<p>Windows Pods и Nodes не поддерживаются.</p>
+<table>
+<thead>
+<tr>
+<th>Platform service</th>
+<th>Поддержка code-module OneAgent</th>
+<th>Интеграция Dynatrace с Azure Monitor</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Blob-Storage</td>
+<td>HttpClient<a href="#fn-5-1-def">1</a></td>
+<td>да</td>
+</tr>
+<tr>
+<td>Table-Storage</td>
+<td>HttpClient<a href="#fn-5-1-def">1</a></td>
+<td>да</td>
+</tr>
+<tr>
+<td>Queue-Storage</td>
+<td>HttpClient<a href="#fn-5-1-def">1</a></td>
+<td>да</td>
+</tr>
+<tr>
+<td>File-Storage</td>
+<td>Infrastructure monitoring</td>
+<td>да</td>
+</tr>
+<tr>
+<td>Disk-Storage</td>
+<td>Infrastructure monitoring</td>
+<td>да</td>
+</tr>
+<tr>
+<td>ServiceBus Queues and Topics</td>
+<td>Microsoft Azure Service Bus Client for .NET</td>
+<td>да</td>
+</tr>
+<tr>
+<td>Load-Balancer</td>
+<td>Infrastructure monitoring</td>
+<td>да<a href="#fn-5-3-def">3</a></td>
+</tr>
+<tr>
+<td>Application Gateway</td>
+<td>Trace-Context<a href="#fn-5-4-def">4</a></td>
+<td>да</td>
+</tr>
+<tr>
+<td>API Management</td>
+<td>Trace-Context<a href="#fn-5-4-def">4</a>, SDK<a href="#fn-5-5-def">5</a></td>
+<td>да</td>
+</tr>
+<tr>
+<td>Azure SQL</td>
+<td>Поддерживаемые фреймворки баз данных<a href="#fn-5-2-def">2</a></td>
+<td>да</td>
+</tr>
+<tr>
+<td>Azure SQL elastic pool</td>
+<td>Поддерживаемые фреймворки баз данных<a href="#fn-5-2-def">2</a></td>
+<td>да</td>
+</tr>
+<tr>
+<td>Azure SQL Managed Instance</td>
+<td>Поддерживаемые фреймворки баз данных<a href="#fn-5-2-def">2</a></td>
+<td>нет</td>
+</tr>
+<tr>
+<td>SQL Data Warehouse</td>
+<td>Поддерживаемые фреймворки баз данных<a href="#fn-5-2-def">2</a></td>
+<td>нет</td>
+</tr>
+<tr>
+<td>SQL Server Stretch</td>
+<td>Поддерживаемые фреймворки баз данных<a href="#fn-5-2-def">2</a></td>
+<td>нет</td>
+</tr>
+<tr>
+<td>Azure DB for MySql</td>
+<td>Поддерживаемые фреймворки баз данных<a href="#fn-5-2-def">2</a></td>
+<td>нет</td>
+</tr>
+<tr>
+<td>Azure DB for PostgreSQL</td>
+<td>Поддерживаемые фреймворки баз данных<a href="#fn-5-2-def">2</a></td>
+<td>нет</td>
+</tr>
+<tr>
+<td>CosmosDB</td>
+<td>MongoDB API, Cassandra API, HttpClient<a href="#fn-5-1-def">1</a></td>
+<td>да</td>
+</tr>
+<tr>
+<td>Redis Cache</td>
+<td>Поддерживаемые клиентские библиотеки</td>
+<td>да</td>
+</tr>
+<tr>
+<td>Event Hubs</td>
+<td>SDK<a href="#fn-5-5-def">5</a></td>
+<td>да</td>
+</tr>
+<tr>
+<td>IoT Hub</td>
+<td>Trace Context<a href="#fn-5-4-def">4</a>, SDK<a href="#fn-5-5-def">5</a></td>
+<td>да</td>
+</tr>
+</tbody>
+</table>
+<p>1</p>
+<p>Трассировка HTTP-вызовов через поддержку HttpClient</p>
+<p>2</p>
+<p>Трассировка вызовов баз данных через поддерживаемые фреймворки баз данных (например, ADO.NET или JDBC).</p>
+<p>3</p>
+<p>Доступно только для <a href="https://docs.microsoft.com/en-us/azure/load-balancer/load-balancer-standard-overview#why-use-standard-load-balancer">Standard Load Balancer﻿</a></p>
+<p>4</p>
+<p>Сквозная трассировка через <a href="https://www.w3.org/TR/trace-context/">Trace Context﻿</a></p>
+<p>5</p>
+<p>Сквозная трассировка с помощью <a href="https://github.com/Dynatrace/OneAgent-SDK">OneAgent SDK﻿</a></p>
+<h3 id="google-cloud"><a href="../google-cloud-platform/gcp-integrations/" title="Set up and configure Dynatrace on Google Cloud.">Google Cloud</a><a class="headerlink" href="#google-cloud" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Сервисы Google Cloud</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="../google-cloud-platform/gcp-integrations/google-gke/" title="Google GKE">Google Kubernetes Engine</a></td>
+</tr>
+<tr>
+<td><a href="../setup-on-k8s/deployment/app-obs-managed/#automatic" title="Deploy Dynatrace Operator in application monitoring mode to Kubernetes">GKE Autopilot</a> (только для автоматического <code>applicationMonitoring</code>)</td>
+</tr>
+<tr>
+<td><a href="../google-cloud-platform/gcp-integrations/google-app-engine/" title="Install OneAgent on Google App Engine clusters for application-only monitoring.">Google App Engine</a></td>
+</tr>
+<tr>
+<td><a href="../google-cloud-platform/gcp-integrations/google-compute-engine/" title="Install OneAgent on Google Compute Engine.">Google Compute Engine</a></td>
+</tr>
+</tbody>
+</table>
+<h3 id="vmware"><a href="../../observe/infrastructure-observability/vmware-vsphere-monitoring/" title="Monitor VMware vSphere with Dynatrace.">VMware</a><a class="headerlink" href="#vmware" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>VMware</th>
+<th>Версии</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ESXi host</td>
+<td>6.5, 6.7, 7, 8.0</td>
+</tr>
+<tr>
+<td>vCenter server</td>
+<td>6.5, 6.7, 7, 8.0</td>
+</tr>
+</tbody>
+</table>
+<h3 id="kubernetes"><a href="../setup-on-k8s/" title="Ways to deploy and configure Dynatrace on Kubernetes">Kubernetes</a><a class="headerlink" href="#kubernetes" title="Permanent link">&para;</a></h3>
+<p>Dynatrace поддерживает множество разновидностей Kubernetes согласно <a href="support-model-and-issues/" title="How Dynatrace supports Kubernetes and Red Hat OpenShift versions and known issues">модели поддержки Kubernetes и Openshift</a>.</p>
+<table>
+<thead>
+<tr>
+<th>Дистрибутивы</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Google Anthos</td>
+</tr>
+<tr>
+<td>Mirantis Kubernetes Engine <a href="#fn-6-1-def">1</a></td>
+</tr>
+<tr>
+<td>Rancher Kubernetes Engine 2.0</td>
+</tr>
+<tr>
+<td>Red Hat OpenShift Container Platform</td>
+</tr>
+<tr>
+<td>VMware Tanzu Kubernetes Grid Integrated Edition (ранее Pivotal Kubernetes Service)</td>
+</tr>
+<tr>
+<td>Nutanix Kubernetes Platform (NKP, ранее D2iQ Konvoy) <a href="#fn-6-1-def">1</a></td>
+</tr>
+<tr>
+<td>Oracle Container Engine for Kubernetes (OKE) <a href="#fn-6-1-def">1</a></td>
+</tr>
+<tr>
+<td>Amazon Elastic Kubernetes Service</td>
+</tr>
+<tr>
+<td>Azure Kubernetes Service</td>
+</tr>
+<tr>
+<td>Google Kubernetes Engine</td>
+</tr>
+<tr>
+<td>RedHat OpenShift Service on AWS (ROSA)</td>
+</tr>
+<tr>
+<td>IBM Kubernetes Service</td>
+</tr>
+<tr>
+<td>OpenShift Dedicated</td>
+</tr>
+<tr>
+<td>SUSE Container as a Service platform</td>
+</tr>
+<tr>
+<td>GKE Autopilot</td>
+</tr>
+</tbody>
+</table>
+<p>1</p>
+<p>Ограниченная поддержка на основе совместимости с upstream Kubernetes.</p>
+<p>Некоторые дистрибутивы и хостинговые версии требуют дополнительной настройки. Подробнее см. <a href="../setup-on-k8s/deployment/supported-technologies/" title="Overview of different configurations for all major Kubernetes distributions.">Поддержка технологий</a>.</p>
+<h2 id="paas">Другие платформы для контейнеров и PaaS<a class="headerlink" href="#paas" title="Permanent link">&para;</a></h2>
+<h3 id="cloud-foundry"><a href="../setup-on-container-platforms/cloud-foundry/" title="Set up and configure Dynatrace on Cloud Foundry.">Cloud Foundry</a><a class="headerlink" href="#cloud-foundry" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Buildpacks</th>
+<th>Версии</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Java buildpack</td>
+<td>3.11+</td>
+</tr>
+<tr>
+<td>PHP buildpack</td>
+<td>v4.3.34+</td>
+</tr>
+<tr>
+<td>Staticfile buildpack</td>
+<td>v1.4.6+</td>
+</tr>
+<tr>
+<td>Go buildpack</td>
+<td>v1.8.41+</td>
+</tr>
+<tr>
+<td>.NET Core on Linux buildpack</td>
+<td>v3.1+</td>
+</tr>
+<tr>
+<td>Node.js buildpack</td>
+<td>v1.6.10+ (требует OneAgent версии 1.131 или выше)</td>
+</tr>
+<tr>
+<td>IBM WebSphere Liberty buildpack</td>
+<td>v3.9-20170419-1403+ <a href="known-solutions-and-workarounds/" title="Check the solutions for reported problems regarding various technologies.">См. известную проблему</a></td>
+</tr>
+<tr>
+<td>HWC buildpack</td>
+<td>v3.1.48+</td>
+</tr>
+<tr>
+<td>Nginx buildpack</td>
+<td>v1.1.40+</td>
+</tr>
+<tr>
+<td>Python buildpack</td>
+<td>v1.8.7+</td>
+</tr>
+</tbody>
+</table>
+<h4 id="ibm-cloud-foundry"><a href="../setup-on-container-platforms/cloud-foundry/" title="Set up and configure Dynatrace on Cloud Foundry.">IBM Cloud Foundry</a><a class="headerlink" href="#ibm-cloud-foundry" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>Функции</th>
+<th>Версии</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>IBM WebSphere Liberty buildpack</td>
+<td>v3.9-20170419-1403+ <a href="known-solutions-and-workarounds/" title="Check the solutions for reported problems regarding various technologies.">См. известную проблему</a></td>
+</tr>
+</tbody>
+</table>
+<h4 id="cloud-foundry_1"><a href="support-model-for-pivotal-platform/" title="Read about Dynatrace support for VMware Tanzu Application Service.">Cloud Foundry</a><a class="headerlink" href="#cloud-foundry_1" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>Функции</th>
+<th>Версии</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Garden-runC</td>
+<td>v1.0.0+</td>
+</tr>
+<tr>
+<td>BOSH BPM for platform process isolation</td>
+<td>v0.11.0+</td>
+</tr>
+<tr>
+<td>Winc for Windows Server containers</td>
+<td>Windows server 1709+</td>
+</tr>
+<tr>
+<td>VMware Tanzu Application Service (через BOSH add-on)</td>
+<td><a href="support-model-for-pivotal-platform/" title="Read about Dynatrace support for VMware Tanzu Application Service.">См. модель поддержки Tanzu Application Service</a></td>
+</tr>
+</tbody>
+</table>
+<h3 id="heroku"><a href="../setup-on-container-platforms/heroku/" title="Install OneAgent to monitor applications running on Heroku.">Heroku</a><a class="headerlink" href="#heroku" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Функции</th>
+<th>Версии</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Stack</td>
+<td>Heroku-18</td>
+</tr>
+<tr>
+<td>Stack</td>
+<td>Heroku-20</td>
+</tr>
+<tr>
+<td>Stack</td>
+<td>Heroku-22</td>
+</tr>
+<tr>
+<td>Stack</td>
+<td>Heroku-24 (по умолчанию)</td>
+</tr>
+</tbody>
+</table>
+<h2 id="application-security">Application Security<a class="headerlink" href="#application-security" title="Permanent link">&para;</a></h2>
+<p>Подробности см. в разделе <a href="../../secure/application-security/#tech" title="Access the Dynatrace Application Security functionalities.">Поддерживаемые технологии</a>.</p>
+<h2 id="_9">Приложения, сервисы и базы данных<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h2>
+<h3 id="java"><a href="application-software/java/" title="Learn about all aspects of Dynatrace support for Java application monitoring.">Java</a><a class="headerlink" href="#java" title="Permanent link">&para;</a></h3>
+<p>Подробности см. в разделе <a href="application-software/java/" title="Learn about all aspects of Dynatrace support for Java application monitoring.">Dynatrace support/desupport for Java versions</a>.</p>
+<table>
+<thead>
+<tr>
+<th>Virtual machines</th>
+<th>Versions</th>
+<th>Platforms</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Amazon Corretto</td>
+<td>8 LTS, 11 LTS, 17 LTS, 21 LTS, 23, 24, 25 LTS, 26</td>
+<td>Linux (x86-64, ARM64 (AArch64))</td>
+</tr>
+<tr>
+<td>Azul Platform Core (Zulu)</td>
+<td>7, 8 LTS, 11 LTS, 17 LTS, 21 LTS, 23, 24, 25 LTS, 26</td>
+<td>Alpine Linux 64-bit (x86-64), Linux (x86-64, ARM64 (AArch64)), Windows (x86-64)</td>
+</tr>
+<tr>
+<td>Azul Platform Prime (Zing)</td>
+<td>6<a href="#fn-virtual-machines-2-def">2</a>, 7<a href="#fn-virtual-machines-2-def">2</a>, 8 LTS<a href="#fn-virtual-machines-2-def">2</a>, 11 LTS<a href="#fn-virtual-machines-2-def">2</a></td>
+<td>Alpine Linux 64-bit (x86-64), Linux (x86-64), Windows (x86-64)</td>
+</tr>
+<tr>
+<td>Bellsoft Liberica</td>
+<td>8 LTS, 11 LTS, 17 LTS, 21 LTS<a href="#fn-virtual-machines-3-def">3</a>, 23, 24, 25 LTS, 26</td>
+<td>Alpine Linux 64-bit (x86-64), Linux (x86-64, ARM64 (AArch64), PPCLE), Solaris (SPARC, x86-64), Windows (x86-64)</td>
+</tr>
+<tr>
+<td>Eclipse Temurin (a.k.a. 'Adoptium')</td>
+<td>8 LTS, 11 LTS, 17 LTS, 21 LTS, 23, 24, 25 LTS, 26</td>
+<td>AIX (POWER8, POWER9, POWER10), Linux (x86-64, ARM64 (AArch64), PPCLE, s390), Windows (x86-64)</td>
+</tr>
+<tr>
+<td>Fujitsu</td>
+<td>5, 6, 8</td>
+<td>Linux (x86-64), Windows (x86-64)</td>
+</tr>
+<tr>
+<td>GraalVM</td>
+<td>17 LTS<a href="#fn-virtual-machines-1-def">1</a>, 21<a href="#fn-virtual-machines-1-def">1</a>, 23<a href="#fn-virtual-machines-1-def">1</a>, 24<a href="#fn-virtual-machines-1-def">1</a>, 25 LTS<a href="#fn-virtual-machines-1-def">1</a></td>
+<td>Linux (x86-64, ARM64 (AArch64)), Windows (x86-64)</td>
+</tr>
+<tr>
+<td>Hitachi</td>
+<td>5</td>
+<td>Windows (x86-64)</td>
+</tr>
+<tr>
+<td>Huawei</td>
+<td>8</td>
+<td>Linux (ARM64 (AArch64))</td>
+</tr>
+<tr>
+<td>IBM JVM</td>
+<td>6, 7, 8 LTS</td>
+<td>AIX (POWER8, POWER9, POWER10), Alpine Linux 64-bit (x86-64), Linux (PPCLE, PPCBE, s390, x86-64), Windows (x86-64)</td>
+</tr>
+<tr>
+<td>IBM Semeru</td>
+<td>8 LTS, 11 LTS, 17 LTS, 21 LTS, 25 LTS</td>
+<td>AIX (POWER8, POWER9, POWER10), Linux (x86-64, ARM64 (AArch64), PPCLE, s390), Windows (x86-64)</td>
+</tr>
+<tr>
+<td>Microsoft OpenJDK</td>
+<td>11 LTS, 17 LTS, 21 LTS, 25 LTS</td>
+<td>Linux (x86-64, ARM64 (AArch64)), Windows (x86-64)</td>
+</tr>
+<tr>
+<td>OpenJDK</td>
+<td>6, 7, 8 LTS, 11 LTS, 17 LTS, 21 LTS, 23, 24, 25 LTS, 26</td>
+<td>Alpine Linux 64-bit (x86-64), Linux (x86-64, s390), Windows (x86-64)</td>
+</tr>
+<tr>
+<td>Oracle HotSpot VM</td>
+<td>6, 7, 8 LTS, 11 LTS, 17 LTS, 21 LTS, 23, 24, 25 LTS, 26</td>
+<td>Alpine Linux 64-bit (x86-64), Linux (x86-64, ARM64 (AArch64)), Solaris (SPARC, x86-64), Windows (x86-64)</td>
+</tr>
+<tr>
+<td>Oracle JRockit</td>
+<td>6</td>
+<td>Alpine Linux 64-bit (x86-64), Linux (x86-64), Solaris (SPARC), Windows (x86-64)</td>
+</tr>
+<tr>
+<td>SapMachine</td>
+<td>7, 8 LTS, 11 LTS, 17 LTS, 21 LTS, 23, 24, 25 LTS, 26</td>
+<td>Alpine Linux 64-bit (x86-64), Linux (x86-64), Windows (x86-64)</td>
+</tr>
+</tbody>
+</table>
+<p>1</p>
+<p>Работает на базе Oracle JVM. Про нативные образы см. <a href="./#java-native-image" title="Find technical details related to Dynatrace support for specific platforms and development frameworks.">Java native images</a>.</p>
+<p>2</p>
+<p><a href="#limited-support">Ограниченная поддержка</a>: Dynatrace может обеспечить поддержку только для проблем, воспроизводимых на других JVM.</p>
+<p>3</p>
+<p>Bellsoft Liberica v21+ 32-bit не поддерживается</p>
+<table>
+<thead>
+<tr>
+<th>Application servers</th>
+<th>Versions</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://tomee.apache.org/">Apache TomEE﻿</a></td>
+<td>1, 7, 8</td>
+</tr>
+<tr>
+<td><a href="https://tomcat.apache.org/">Apache Tomcat﻿</a></td>
+<td>6, 7, 8, 8.5, 9, 10<a href="#fn-application-servers-1-def">1</a>, 11<a href="#fn-application-servers-1-def">1</a></td>
+</tr>
+<tr>
+<td><a href="https://www.fujitsu.com/global/products/software/middleware/application-infrastructure/interstage/">Fujitsu Interstage﻿</a></td>
+<td>12.0<a href="#fn-application-servers-2-def">2</a></td>
+</tr>
+<tr>
+<td><a href="https://www.ibm.com/products/software">IBM WebSphere Application Server﻿</a></td>
+<td>8.5.5, 9.0, 8.5<a href="#fn-application-servers-3-def">3</a></td>
+</tr>
+<tr>
+<td><a href="https://developer.ibm.com/wasdev/websphere-liberty/">IBM WebSphere Liberty﻿</a></td>
+<td>8.5 - 26<a href="#fn-application-servers-4-def">4</a></td>
+</tr>
+<tr>
+<td><a href="https://developers.redhat.com/products/eap/overview">JBoss Enterprise Application Platform﻿</a></td>
+<td>7, 8</td>
+</tr>
+<tr>
+<td><a href="https://www.oracle.com/middleware/technologies/weblogic.html">Oracle WebLogic﻿</a></td>
+<td>11g<a href="#fn-application-servers-5-def">5</a>, 12c, 14c, 15.1.1<a href="#fn-application-servers-6-def">6</a></td>
+</tr>
+<tr>
+<td><a href="https://www.payara.fish/">Payara﻿</a></td>
+<td>5, 6, 7</td>
+</tr>
+<tr>
+<td><a href="https://wildfly.org/">WildFly﻿</a></td>
+<td>8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18 - 26, 27 - 40</td>
+</tr>
+</tbody>
+</table>
+<p>1</p>
+<p>Для этой версии требуется включённая функция поддержки Java Servlet 5.0</p>
+<p>2</p>
+<p><a href="#limited-support">Ограниченная поддержка</a>: полностью поддерживаемая базовая технология: Java</p>
+<p>3</p>
+<p>Начиная с версии OneAgent 1.183 в WebSphere Application Server 8.5 поддерживается только Java 7</p>
+<p>4</p>
+<p>Servlet 5 engine в Websphere Liberty поддерживается начиная с версии OneAgent 1.259</p>
+<p>5</p>
+<p>10.3 = 11g</p>
+<p>6</p>
+<p>WebLogic thin client jar (wlthint3client.jar) не поддерживается. IIOP имеет известные проблемы производителя в WebLogic 15.1.1; T3 поддерживается как обходное решение только для соединений между серверами.</p>
+<table>
+<thead>
+<tr>
+<th>ESBs and SOA</th>
+<th>Versions</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://www.dynatrace.com/hub/detail/apache-camel/">Apache Camel﻿</a></td>
+<td>2.21+, 3+, 4+<a href="#fn-esbs-and-soa-1-def">1</a></td>
+</tr>
+<tr>
+<td>Apache OpenEJB</td>
+<td>3.1</td>
+</tr>
+<tr>
+<td>Mule (HTTP Listener)</td>
+<td>3.5, 3.6, 3.7, 3.8, 3.9, 4.1 - 4.9</td>
+</tr>
+<tr>
+<td><a href="https://www.dynatrace.com/hub/detail/red-hat-fuse/">Red Hat Fuse Standalone﻿</a></td>
+<td>7.0+<a href="#fn-esbs-and-soa-1-def">1</a></td>
+</tr>
+<tr>
+<td><a href="https://www.dynatrace.com/hub/detail/red-hat-fuse/">Red Hat Fuse on OpenShift﻿</a></td>
+<td>7.0+<a href="#fn-esbs-and-soa-1-def">1</a></td>
+</tr>
+<tr>
+<td>TIBCO ActiveMatrix BusinessWorks</td>
+<td>5.8.2 - 5.14<a href="#fn-esbs-and-soa-2-def">2</a>, 6.4<a href="#fn-esbs-and-soa-2-def">2</a>, 6.5<a href="#fn-esbs-and-soa-2-def">2</a>, 6.6 - 6.8<a href="#fn-esbs-and-soa-2-def">2</a></td>
+</tr>
+</tbody>
+</table>
+<p>1</p>
+<p>Поддерживаются только коннекторы Apache Camel Undertow, Kafka и MongoDB.</p>
+<p>2</p>
+<p>Поддерживаются только рабочие процессы TIBCO, запускаемые входящим запросом веб-сервиса, HTTP-запросом или JMS-сообщением.</p>
+<table>
+<thead>
+<tr>
+<th>Web framework</th>
+<th>Versions</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://doc.akka.io/docs/akka-http/current/client-side/index.html">Akka HTTP client﻿</a></td>
+<td>10.1<a href="#fn-web-framework-2-def">2</a>, 10.0<a href="#fn-web-framework-2-def">2</a>, 10.2<a href="#fn-web-framework-2-def">2</a>, 10.4<a href="#fn-web-framework-2-def">2</a>, 10.5<a href="#fn-web-framework-2-def">2</a>, 10.6<a href="#fn-web-framework-2-def">2</a>, 10.7<a href="#fn-web-framework-2-def">2</a></td>
+</tr>
+<tr>
+<td><a href="https://doc.akka.io/docs/akka-http/current/index.html">Akka HTTP server﻿</a></td>
+<td>10.1, 10.2<a href="#fn-web-framework-1-def">1</a>, 10.4<a href="#fn-web-framework-1-def">1</a>, 10.5<a href="#fn-web-framework-1-def">1</a>, 10.6<a href="#fn-web-framework-1-def">1</a>, 10.7<a href="#fn-web-framework-1-def">1</a></td>
+</tr>
+<tr>
+<td><a href="https://hc.apache.org/httpcomponents-asyncclient-ga/">Apache HttpAsyncClient﻿</a></td>
+<td>4.0<a href="#fn-web-framework-4-def">4</a>, 4.1<a href="#fn-web-framework-4-def">4</a></td>
+</tr>
+<tr>
+<td><a href="https://hc.apache.org/httpcomponents-client-ga/">Apache HttpClient﻿</a></td>
+<td>3.1<a href="#fn-web-framework-4-def">4</a>, 4<a href="#fn-web-framework-4-def">4</a>, 5.0<a href="#fn-web-framework-4-def">4</a>, 5.1<a href="#fn-web-framework-4-def">4</a>, 5.2<a href="#fn-web-framework-4-def">4</a></td>
+</tr>
+<tr>
+<td><a href="https://hc.apache.org/httpcomponents-core-ga/">Apache HttpCore﻿</a></td>
+<td>4<a href="#fn-web-framework-3-def">3</a>, 5<a href="#fn-web-framework-4-def">4</a></td>
+</tr>
+<tr>
+<td><a href="https://pekko.apache.org/docs/pekko-http/current/client-side/index.html">Apache Pekko HTTP client﻿</a></td>
+<td>1.0.0 - 1.2.0<a href="#fn-web-framework-10-def">10</a></td>
+</tr>
+<tr>
+<td><a href="https://pekko.apache.org/docs/pekko-http/current/server-side/index.html">Apache Pekko HTTP server﻿</a></td>
+<td>1.0.0 - 1.2.0<a href="#fn-web-framework-10-def">10</a></td>
+</tr>
+<tr>
+<td>Elasticsearch</td>
+<td>1.7<a href="#fn-web-framework-5-def">5</a>, 2.0<a href="#fn-web-framework-5-def">5</a>, 2.1<a href="#fn-web-framework-5-def">5</a>, 2.2<a href="#fn-web-framework-5-def">5</a></td>
+</tr>
+<tr>
+<td>Grails</td>
+<td>3<a href="#fn-web-framework-6-def">6</a></td>
+</tr>
+<tr>
+<td>Jakarta Servlet</td>
+<td>2.5, 3.0, 3.1, 4, 5, 6</td>
+</tr>
+<tr>
+<td>Java HttpUrlConnection</td>
+<td>Поддерживаются все версии<a href="#fn-web-framework-6-def">6</a></td>
+</tr>
+<tr>
+<td><a href="https://www.ibm.com/support/knowledgecenter/en/SS9NWR_3.2.0/com.ibm.ims.iconapij32.doc/icon_home_java.htm">Java IMS Soap Gateway client﻿</a></td>
+<td>3.2</td>
+</tr>
+<tr>
+<td>Jetty HTTP client</td>
+<td>7<a href="#fn-web-framework-6-def">6</a>, 8<a href="#fn-web-framework-6-def">6</a>, 9<a href="#fn-web-framework-6-def">6</a>, 10<a href="#fn-web-framework-6-def">6</a>, 11<a href="#fn-web-framework-6-def">6</a>, 12<a href="#fn-web-framework-6-def">6</a></td>
+</tr>
+<tr>
+<td><a href="https://www.eclipse.org/jetty/">Jetty HTTP server﻿</a></td>
+<td>7, 8, 9, 10, 11, 12</td>
+</tr>
+<tr>
+<td>LinkerdD</td>
+<td>1</td>
+</tr>
+<tr>
+<td><a href="https://netty.io/">Netty﻿</a></td>
+<td>3.10<a href="#fn-web-framework-7-def">7</a>, 4<a href="#fn-web-framework-7-def">7</a></td>
+</tr>
+<tr>
+<td><a href="https://github.com/AsyncHttpClient/async-http-client">Ning Asynchronous HTTP Client﻿</a></td>
+<td>1.8, 1.9, 2, 3</td>
+</tr>
+<tr>
+<td>OkHttp</td>
+<td>3<a href="#fn-web-framework-7-def">7</a>, 4.0 - 4.3<a href="#fn-web-framework-7-def">7</a>, 4.4 - 4.12<a href="#fn-web-framework-7-def">7</a>, 5.+<a href="#fn-web-framework-7-def">7</a></td>
+</tr>
+<tr>
+<td><a href="https://www.playframework.com/">Play Framework﻿</a></td>
+<td>2.2 - 2.6, 2.7, 2.8</td>
+</tr>
+<tr>
+<td><a href="https://github.com/reactor/reactor-netty">Reactor Netty HTTP Client﻿</a></td>
+<td>0.8<a href="#fn-web-framework-7-def">7</a>, 0.9<a href="#fn-web-framework-7-def">7</a>, 1.0<a href="#fn-web-framework-7-def">7</a>, 1.1<a href="#fn-web-framework-7-def">7</a>, 1.2<a href="#fn-web-framework-7-def">7</a>, 1.3<a href="#fn-web-framework-7-def">7</a></td>
+</tr>
+<tr>
+<td><a href="https://github.com/reactor/reactor-netty">Reactor Netty HTTP Server﻿</a></td>
+<td>0.6, 0.7, 0.8, 0.9, 1.0</td>
+</tr>
+<tr>
+<td><a href="https://github.com/ReactiveX/RxJava">RxJava﻿</a></td>
+<td>3+</td>
+</tr>
+<tr>
+<td>Software AG WebMethods Integration Server</td>
+<td>9.0<a href="#fn-web-framework-8-def">8</a>, 9.5 - 9.12<a href="#fn-web-framework-8-def">8</a>, 10.0 - 10.15<a href="#fn-web-framework-8-def">8</a>, 10.7<a href="#fn-web-framework-8-def">8</a>, 10.11<a href="#fn-web-framework-8-def">8</a>, 10.15<a href="#fn-web-framework-8-def">8</a></td>
+</tr>
+<tr>
+<td><a href="https://docs.spring.io/spring/docs/current/spring-framework-reference/web-reactive.html">Spring WebFlux﻿</a></td>
+<td>5, 6, 7</td>
+</tr>
+<tr>
+<td><a href="https://docs.spring.io/spring/docs/current/spring-framework-reference/web-reactive.html#webflux-client">Spring WebFlux WebClient﻿</a></td>
+<td>5, 6, 7</td>
+</tr>
+<tr>
+<td><a href="https://undertow.io/">Undertow﻿</a></td>
+<td>1<a href="#fn-web-framework-9-def">9</a>, 2.0 - 2.2<a href="#fn-web-framework-9-def">9</a>, 2.3+</td>
+</tr>
+<tr>
+<td><a href="https://github.com/eclipse-vertx/vert.x">Vert.x HttpClient﻿</a></td>
+<td>3.6+<a href="#fn-web-framework-10-def">10</a>, 4.x<a href="#fn-web-framework-10-def">10</a>, 5.x<a href="#fn-web-framework-10-def">10</a></td>
+</tr>
+<tr>
+<td><a href="https://github.com/vert-x3/vertx-web">Vert.x WebClient﻿</a></td>
+<td>3.6+<a href="#fn-web-framework-10-def">10</a>, 4.x<a href="#fn-web-framework-10-def">10</a>, 5.x<a href="#fn-web-framework-10-def">10</a></td>
+</tr>
+</tbody>
+</table>
+<p>1</p>
+<p>Поддерживаются привязки для Java и Scala.</p>
+<p>2</p>
+<p>Поддерживается в <a href="../amazon-web-services/integrate-into-aws/aws-lambda-integration/" title="AWS Lambda capabilities and integration options">AWS Lambda</a>.</p>
+<p>3</p>
+<p>Поддерживается только синхронная обработка запросов. Поддерживается в <a href="../amazon-web-services/integrate-into-aws/aws-lambda-integration/" title="Возможности и варианты интеграции AWS Lambda">AWS Lambda</a>.</p>
+<p>4</p>
+<p>Поддерживается только обработка запросов по HTTP/1.1. Поддерживается в <a href="../amazon-web-services/integrate-into-aws/aws-lambda-integration/" title="Возможности и варианты интеграции AWS Lambda">AWS Lambda</a>.</p>
+<p>5</p>
+<p>В настоящее время поддерживается только веб-протокол, проприетарный TCP-протокол не поддерживается.</p>
+<p>6</p>
+<p>только в контейнере сервлетов</p>
+<p>7</p>
+<p>Интерфейс Promise и связанные API не поддерживаются.</p>
+<p>8</p>
+<p>Мониторинг Dynatrace ограничен входящими веб-запросами или JMS-сообщениями, которые запускают workflow (бизнес-логику) на WebMethods.</p>
+<p>9</p>
+<p>В настоящее время Dynatrace может захватывать входящие HTTP-запросы только когда Undertow настроен на использование Servlet API.</p>
+<p>10</p>
+<p>Поддерживаются привязки Java и Scala 2.</p>
+<table>
+<thead>
+<tr>
+<th>Многопоточность</th>
+<th>Версии</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>CompletableFuture</td>
+<td>Поддерживаются все версии<a href="#fn-threading-1-def">1</a></td>
+</tr>
+<tr>
+<td><a href="https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/ForkJoinPool.html">Java ForkJoin﻿</a></td>
+<td>Поддерживаются все версии<a href="#fn-threading-1-def">1</a></td>
+</tr>
+<tr>
+<td>Kotlin Coroutines</td>
+<td>1.10.2–2.1</td>
+</tr>
+<tr>
+<td>Spring Integration</td>
+<td>2<a href="#fn-threading-1-def">1</a>, 3<a href="#fn-threading-1-def">1</a>, 4<a href="#fn-threading-1-def">1</a>, 5<a href="#fn-threading-1-def">1</a>, 6<a href="#fn-threading-1-def">1</a>, 7<a href="#fn-threading-1-def">1</a></td>
+</tr>
+<tr>
+<td><a href="https://github.com/reactor/reactor-core">reactor-core﻿</a></td>
+<td>3<a href="#fn-threading-1-def">1</a></td>
+</tr>
+</tbody>
+</table>
+<p>1</p>
+<p>Поддерживается в <a href="../amazon-web-services/integrate-into-aws/aws-lambda-integration/" title="Возможности и варианты интеграции AWS Lambda">AWS Lambda</a>.</p>
+<table>
+<thead>
+<tr>
+<th>Веб-сервисы</th>
+<th>Версии</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Apache Axis2</td>
+<td>1.6, 1.7, 1.8</td>
+</tr>
+<tr>
+<td>Apache CXF</td>
+<td>2, 3, 4</td>
+</tr>
+<tr>
+<td>Hessian Web Services</td>
+<td>2.1, 3.1, 4.0</td>
+</tr>
+<tr>
+<td>JAX-WS</td>
+<td>2</td>
+</tr>
+<tr>
+<td><a href="https://resteasy.dev/">JBoss RESTEasy﻿</a></td>
+<td>3, 4, 5, 6, 7</td>
+</tr>
+<tr>
+<td>JBossWS (Wildfly)</td>
+<td>4<a href="#fn-web-services-1-def">1</a>, 5<a href="#fn-web-services-2-def">2</a></td>
+</tr>
+<tr>
+<td>Jakarta RESTful Web Services</td>
+<td>2.1+</td>
+</tr>
+<tr>
+<td>Jersey</td>
+<td>1, 2, 3</td>
+</tr>
+<tr>
+<td>Play WS API</td>
+<td>2.2–2.4</td>
+</tr>
+<tr>
+<td>REST веб-сервисы через фреймворк WINK</td>
+<td>1.2, 1.4</td>
+</tr>
+<tr>
+<td>Spring Web Services</td>
+<td>2, 3, 4</td>
+</tr>
+</tbody>
+</table>
+<p>1</p>
+<p>Wildfly 8</p>
+<p>2</p>
+<p>Wildfly 8, 9, 10</p>
+<table>
+<thead>
+<tr>
+<th>Фреймворки для работы с базами данных</th>
+<th>Версии</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Amazon DynamoDB</td>
+<td>1<a href="#fn-database-frameworks-1-def">1</a>, 2<a href="#fn-database-frameworks-1-def">1</a></td>
+</tr>
+<tr>
+<td>Apache Thrift</td>
+<td>2</td>
+</tr>
+<tr>
+<td>DataStax client for Apache Cassandra</td>
+<td>2.1<a href="#fn-database-frameworks-1-def">1</a>, 3<a href="#fn-database-frameworks-1-def">1</a>, 4<a href="#fn-database-frameworks-1-def">1</a></td>
+</tr>
+<tr>
+<td>JDBC</td>
+<td>4+<a href="#fn-database-frameworks-1-def">1</a></td>
+</tr>
+<tr>
+<td><a href="https://github.com/xetorthio/jedis">Jedis Redis﻿</a></td>
+<td>2, 3<a href="#fn-database-frameworks-1-def">1</a>, 4<a href="#fn-database-frameworks-1-def">1</a>, 5<a href="#fn-database-frameworks-1-def">1</a>, 6<a href="#fn-database-frameworks-1-def">1</a>, 7<a href="#fn-database-frameworks-1-def">1</a></td>
+</tr>
+<tr>
+<td><a href="https://lettuce.io/">Lettuce﻿</a></td>
+<td>5.1–5.3<a href="#fn-database-frameworks-1-def">1</a>, 6.0.3–6.1.6<a href="#fn-database-frameworks-1-def">1</a>, 6.1.8–6.8<a href="#fn-database-frameworks-1-def">1</a>, 7.0–7.5<a href="#fn-database-frameworks-1-def">1</a></td>
+</tr>
+<tr>
+<td><a href="https://mongodb.github.io/mongo-java-driver/3.0/driver-async/">MongoDB asynchronous driver﻿</a></td>
+<td>3.0–3.6.4<a href="#fn-database-frameworks-1-def">1</a></td>
+</tr>
+<tr>
+<td><a href="https://docs.mongodb.com/ecosystem/drivers/java/">MongoDB synchronous driver ﻿</a></td>
+<td>2<a href="#fn-database-frameworks-1-def">1</a>, 3.0–3.6<a href="#fn-database-frameworks-1-def">1</a>, 3.7–3.11<a href="#fn-database-frameworks-1-def">1</a>, 3.12–4.11<a href="#fn-database-frameworks-1-def">1</a>, 5.0<a href="#fn-database-frameworks-1-def">1</a></td>
+</tr>
+<tr>
+<td><a href="https://redisson.pro/">Redisson﻿</a></td>
+<td>3+</td>
+</tr>
+<tr>
+<td>Spring Boot Starter Data MongoDB</td>
+<td>2, 3, 4</td>
+</tr>
+<tr>
+<td>Spring Boot Starter Data Redis</td>
+<td>2.1+</td>
+</tr>
+</tbody>
+</table>
+<p>1</p>
+<p>Поддерживается в <a href="../amazon-web-services/integrate-into-aws/aws-lambda-integration/" title="Возможности и варианты интеграции AWS Lambda">AWS Lambda</a>.</p>
+<table>
+<thead>
+<tr>
+<th>Клиенты обмена сообщениями</th>
+<th>Версии</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://activemq.apache.org">ActiveMQ﻿</a></td>
+<td>4<a href="#fn-messaging-clients-1-def">1</a>, 5<a href="#fn-messaging-clients-1-def">1</a></td>
+</tr>
+<tr>
+<td><a href="https://activemq.apache.org/components/artemis/">ActiveMQ Artemis﻿</a></td>
+<td>1<a href="#fn-messaging-clients-1-def">1</a>, 2<a href="#fn-messaging-clients-1-def">1</a></td>
+</tr>
+<tr>
+<td>Amazon EventBridge</td>
+<td>1<a href="#fn-messaging-clients-1-def">1</a>, 2<a href="#fn-messaging-clients-1-def">1</a></td>
+</tr>
+<tr>
+<td>Amazon SNS</td>
+<td>1<a href="#fn-messaging-clients-1-def">1</a>, 2<a href="#fn-messaging-clients-1-def">1</a></td>
+</tr>
+<tr>
+<td>Amazon SQS</td>
+<td>1<a href="#fn-messaging-clients-1-def">1</a>, 2<a href="#fn-messaging-clients-1-def">1</a></td>
+</tr>
+<tr>
+<td>HornetQ</td>
+<td>2.2<a href="#fn-messaging-clients-1-def">1</a>, 2.3<a href="#fn-messaging-clients-1-def">1</a>, 2.4<a href="#fn-messaging-clients-1-def">1</a></td>
+</tr>
+<tr>
+<td><a href="https://www.ibm.com/support/knowledgecenter/en/SSFKSJ_9.1.0/com.ibm.mq.dev.doc/q118320_.htm">IBM MQ client﻿</a></td>
+<td>8<a href="#fn-messaging-clients-1-def">1</a>, 9<a href="#fn-messaging-clients-1-def">1</a></td>
+</tr>
+<tr>
+<td>JMS</td>
+<td>1.1<a href="#fn-messaging-clients-1-def">1</a>, 2.0<a href="#fn-messaging-clients-1-def">1</a>, 3.0<a href="#fn-messaging-clients-1-def">1</a></td>
+</tr>
+<tr>
+<td><a href="https://kafka.apache.org/documentation/">Kafka﻿</a></td>
+<td>1.0–1.1<a href="#fn-messaging-clients-1-def">1</a>, 2.0–2.3<a href="#fn-messaging-clients-1-def">1</a>, 2.4–2.7<a href="#fn-messaging-clients-1-def">1</a>, 2.8<a href="#fn-messaging-clients-1-def">1</a>, 3.0–3.6<a href="#fn-messaging-clients-1-def">1</a>, 3.7–3.9<a href="#fn-messaging-clients-1-def">1</a>, 4.0–4.3<a href="#fn-messaging-clients-1-def">1</a></td>
+</tr>
+<tr>
+<td><a href="https://www.rabbitmq.com/java-client.html">RabbitMQ﻿</a></td>
+<td>3<a href="#fn-messaging-clients-1-def">1</a>, 4.0.0–5.22.0<a href="#fn-messaging-clients-1-def">1</a></td>
+</tr>
+<tr>
+<td>Software AG WebMethod Broker and Universal messaging via JMS</td>
+<td>Поддерживаются все версии</td>
+</tr>
+<tr>
+<td><a href="https://spring.io/projects/spring-amqp">Spring AMQP﻿</a></td>
+<td>1.5, 2.0, 2.1, 2.2, 2.3</td>
+</tr>
+<tr>
+<td>Spring Cloud Stream Kafka Binder</td>
+<td>3+</td>
+</tr>
+<tr>
+<td>Tibco EMS</td>
+<td>Поддерживаются все версии<a href="#fn-messaging-clients-2-def">2</a></td>
+</tr>
+</tbody>
+</table>
+<p>1</p>
+<p>Издатели (publishers) поддерживаются в <a href="../amazon-web-services/integrate-into-aws/aws-lambda-integration/" title="Возможности и варианты интеграции AWS Lambda">AWS Lambda</a>.</p>
+<p>2</p>
+<p>Трассировка поддерживается только через JMS.</p>
+<table>
+<thead>
+<tr>
+<th>Фреймворки удалённого взаимодействия</th>
+<th>Версии</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://doc.akka.io/docs/akka/2.5/remoting.html">Akka Remoting﻿</a></td>
+<td>2.4<a href="#fn-remoting-frameworks-2-def">2</a>, 2.5<a href="#fn-remoting-frameworks-2-def">2</a>, 2.3<a href="#fn-remoting-frameworks-3-def">3</a>, 2.6<a href="#fn-remoting-frameworks-3-def">3</a>, 2.7<a href="#fn-remoting-frameworks-3-def">3</a></td>
+</tr>
+<tr>
+<td><a href="https://aws.amazon.com/en/sdk-for-java/">Amazon AWS Lambda SDK﻿</a></td>
+<td>1<a href="#fn-remoting-frameworks-1-def">1</a>, 2<a href="#fn-remoting-frameworks-1-def">1</a></td>
+</tr>
+<tr>
+<td>Amazon AWS SDK</td>
+<td>1<a href="#fn-remoting-frameworks-2-def">2</a>, 2<a href="#fn-remoting-frameworks-2-def">2</a></td>
+</tr>
+<tr>
+<td><a href="https://pekko.apache.org/docs/pekko/current/remoting.html#classic-remoting-deprecated-">Apache Pekko Remoting﻿</a></td>
+<td>1.0.0–1.2.0<a href="#fn-remoting-frameworks-6-def">6</a></td>
+</tr>
+<tr>
+<td><a href="https://thrift.apache.org/">Apache Thrift﻿</a></td>
+<td>0.7–0.13</td>
+</tr>
+<tr>
+<td><a href="https://github.com/Azure/azure-sdk-for-java">Azure SDK﻿</a></td>
+<td>1.2.9+ (Azure SDK BOM)</td>
+</tr>
+<tr>
+<td>Glassfish RMI-IIOP</td>
+<td>Поддерживаются все версии</td>
+</tr>
+<tr>
+<td>IBM JVM RMI-IIOP</td>
+<td>Поддерживаются все версии</td>
+</tr>
+<tr>
+<td>JBoss Enterprise Application Platform, RMI-IIOP</td>
+<td>7, 8</td>
+</tr>
+<tr>
+<td>JBoss Enterprise Application Platform, Remoting</td>
+<td>7, 8</td>
+</tr>
+<tr>
+<td><a href="https://www.ibm.com/support/knowledgecenter/en/SSZHFX_9.1.0/basejavadoc/index.html">Java CICS Transaction Gateway client﻿</a></td>
+<td>9.0–9.2</td>
+</tr>
+<tr>
+<td>Java IMS TM Resource Adapter</td>
+<td>Поддерживаются все версии</td>
+</tr>
+<tr>
+<td>Java RMI-JRMP</td>
+<td>Поддерживаются все версии</td>
+</tr>
+<tr>
+<td>OpenJDK/Oracle JVM RMI-IIOP</td>
+<td>Поддерживаются все версии</td>
+</tr>
+<tr>
+<td>WebLogic RMI-IIOP</td>
+<td>Поддерживаются все версии<a href="#fn-remoting-frameworks-5-def">5</a></td>
+</tr>
+<tr>
+<td>WebSphere Liberty RMI-IIOP</td>
+<td>Поддерживаются все версии</td>
+</tr>
+<tr>
+<td>WebSphere RMI-IIOP</td>
+<td>Поддерживаются все версии</td>
+</tr>
+<tr>
+<td><a href="https://grpc.github.io/grpc-java/javadoc/index.html">gRPC﻿</a></td>
+<td>1.18–1.81<a href="#fn-remoting-frameworks-4-def">4</a></td>
+</tr>
+</tbody>
+</table>
+<p>1</p>
+<p>Поддерживается в <a href="../amazon-web-services/integrate-into-aws/aws-lambda-integration/" title="Возможности и варианты интеграции AWS Lambda">AWS Lambda</a>.</p>
+<p>2</p>
+<p>Поддерживается в <a href="../amazon-web-services/integrate-into-aws/aws-lambda-integration/" title="Возможности и варианты интеграции AWS Lambda">AWS Lambda</a>. Расширенная поддержка трассировки для всех вызовов сервисов AWS</p>
+<p>3</p>
+<p>Поддерживается только при использовании Netty, при использовании Artery не поддерживается. Поддерживается в <a href="../amazon-web-services/integrate-into-aws/aws-lambda-integration/" title="Возможности и варианты интеграции AWS Lambda">AWS Lambda</a>.</p>
+<p>4</p>
+<p>Вызовы клиента gRPC поддерживаются в <a href="../amazon-web-services/integrate-into-aws/aws-lambda-integration/" title="Возможности и варианты интеграции AWS Lambda">AWS Lambda</a>.</p>
+<p>5</p>
+<p>В WebLogic 15.1.1 известны проблемы с IIOP на стороне вендора. T3 поддерживается как обходной путь только для соединений сервер-сервер; соединения тонкого клиента не поддерживаются.</p>
+<p>6</p>
+<p>Поддерживается только при использовании classic-remoting, при использовании Artery не поддерживается. Поддерживается в <a href="../amazon-web-services/integrate-into-aws/aws-lambda-integration/" title="Возможности и варианты интеграции AWS Lambda">AWS Lambda</a>.</p>
+<table>
+<thead>
+<tr>
+<th>Фреймворки мониторинга</th>
+<th>Версии</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://github.com/open-telemetry/opentelemetry-java/">OpenTelemetry﻿</a></td>
+<td>1.0–1.3<a href="#fn-monitoring-frameworks-1-def">1</a>, 1.4–1.54<a href="#fn-monitoring-frameworks-1-def">1</a>, 1.55–1.60</td>
+</tr>
+<tr>
+<td><a href="https://opentracing.io/guides/java/">OpenTracing﻿</a></td>
+<td>0.33, 0.32, 0.31</td>
+</tr>
+</tbody>
+</table>
+<p>1</p>
+<p>Поддерживается в <a href="../amazon-web-services/integrate-into-aws/aws-lambda-integration/" title="Возможности и варианты интеграции AWS Lambda">AWS Lambda</a>.</p>
+<table>
+<thead>
+<tr>
+<th>Фреймворки логирования</th>
+<th>Версии</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Apache Tomcat access logs</td>
+<td>8, 9, 10, 11</td>
+</tr>
+<tr>
+<td><a href="https://github.com/jboss-logging/jboss-logmanager">JBoss LogManager﻿</a></td>
+<td>1.1+, 2, 3</td>
+</tr>
+<tr>
+<td><a href="https://logging.apache.org/log4j/2.x/">Log4J2 (Apache)﻿</a></td>
+<td>2.7–2.12, 2.13.0, 2.13.1, 2.13.3, 2.14–2.17.1, 2.17.2–2.26</td>
+</tr>
+<tr>
+<td><a href="https://logback.qos.ch/">Logback (QOS)﻿</a></td>
+<td>1.x</td>
+</tr>
+<tr>
+<td>java.util.logging</td>
+<td>Поддерживаются все версии</td>
+</tr>
+</tbody>
+</table>
+<p>См. также <a href="../extend-dynatrace/extend-tracing/oneagent-sdk/" title="Dynatrace OneAgent SDK позволяет вручную инструментировать приложение, чтобы расширить сквозную видимость для фреймворков и технологий, для которых пока нет готового модуля кода.">OneAgent SDK for Java</a> для дополнительных возможностей ручной трассировки.</p>
+<h3 id="java-native-image"><a href="application-software/java/graalvm-native-image/" title="Install, configure, and manage Dynatrace GraalVM Native Image module.">Java Native Image</a><a class="headerlink" href="#java-native-image" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Виртуальная машина</th>
+<th>Версии</th>
+<th>Платформы</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="application-software/java/graalvm-native-image/" title="Install, configure, and manage Dynatrace GraalVM Native Image module.">GraalVM Native Image</a></td>
+<td>GraalVM for JDK 17 version 23<a href="#fn-virtual-machine-1-def">1</a>, GraalVM for JDK 21 version 23<a href="#fn-virtual-machine-1-def">1</a>, GraalVM for JDK 23<a href="#fn-virtual-machine-1-def">1</a>, GraalVM for JDK 24<a href="#fn-virtual-machine-1-def">1</a>, GraalVM 25<a href="#fn-virtual-machine-1-def">1</a></td>
+<td>Linux (x86-64, ARM64 (AArch64)), Windows (x86-64)</td>
+</tr>
+</tbody>
+</table>
+<p>1</p>
+<p>Бинарные файлы, работающие на системах Linux на основе Alpine, не поддерживаются</p>
+<table>
+<thead>
+<tr>
+<th>Фреймворк приложений</th>
+<th>Версии</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://micronaut.io">Micronaut﻿</a></td>
+<td>3.9+<a href="#fn-application-framework-1-def">1</a></td>
+</tr>
+<tr>
+<td><a href="https://quarkus.io">Quarkus﻿</a></td>
+<td>3.8+<a href="#fn-application-framework-1-def">1</a></td>
+</tr>
+<tr>
+<td><a href="https://spring.io/projects/spring-boot">Spring Boot﻿</a></td>
+<td>3.0+<a href="#fn-application-framework-1-def">1</a>, 4.0+<a href="#fn-application-framework-1-def">1</a></td>
+</tr>
+</tbody>
+</table>
+<p>1</p>
+<p>Поддерживается в отношении сборки нативных образов (native images). Это не означает, что поддерживаются все технологии, предоставляемые фреймворком.</p>
+<table>
+<thead>
+<tr>
+<th>Веб-фреймворк</th>
+<th>Версии</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://hc.apache.org/httpcomponents-client-ga/">Apache HttpClient﻿</a></td>
+<td>5.2+</td>
+</tr>
+<tr>
+<td><a href="https://netty.io/">Netty﻿</a></td>
+<td>4<a href="#fn-web-framework-1-def">1</a></td>
+</tr>
+<tr>
+<td><a href="https://docs.spring.io/spring/docs/current/spring-framework-reference/web-reactive.html#webflux-client">Spring WebFlux WebClient﻿</a></td>
+<td>6, 7</td>
+</tr>
+</tbody>
+</table>
+<p>1</p>
+<p>Интерфейс Promise и связанные с ним APIы не поддерживаются.</p>
+<table>
+<thead>
+<tr>
+<th>Серверы приложений</th>
+<th>Версии</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://tomcat.apache.org/">Apache Tomcat﻿</a></td>
+<td>10, 11</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Фреймворки баз данных</th>
+<th>Версии</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Spring Boot Starter Data MongoDB</td>
+<td>3</td>
+</tr>
+</tbody>
+</table>
+<h3 id="net"><a href="application-software/dotnet/" title="Learn about all aspects of Dynatrace support for .NET application monitoring.">.NET</a><a class="headerlink" href="#net" title="Permanent link">&para;</a></h3>
+<p>Dynatrace поддерживает приложения .NET, написанные на C#. Также доступна ограниченная поддержка приложений .NET, написанных на других языках, хотя она явно не тестируется.</p>
+<table>
+<thead>
+<tr>
+<th>Среда выполнения</th>
+<th>Версии</th>
+<th>Платформы</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="application-software/dotnet/" title="Learn about all aspects of Dynatrace support for .NET application monitoring.">.NET and .NET Core</a></td>
+<td>Core 2.1, Core 2.2, Core 3.0, Core 3.1</td>
+<td>Alpine Linux 64-bit (x86-64), Linux (x86-64), Windows (x86-64)</td>
+</tr>
+<tr>
+<td><a href="application-software/dotnet/" title="Learn about all aspects of Dynatrace support for .NET application monitoring.">.NET and .NET Core</a></td>
+<td>5, 6, 7, 8, 9, 10</td>
+<td>Alpine Linux 64-bit (x86-64, ARM64 (AArch64)), Linux (x86-64, ARM64 (AArch64)), Windows (x86-64)</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Веб-фреймворк</th>
+<th>Версии</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ASP.NET Core</td>
+<td>Поддерживаются все версии</td>
+</tr>
+<tr>
+<td>ASP.NET Owin/Katana</td>
+<td>3.0.0+</td>
+</tr>
+<tr>
+<td><a href="https://docs.microsoft.com/en-us/previous-versions/visualstudio/hh193681(v=vs.118)">HttpClient﻿</a></td>
+<td>Поддерживаются все версии<a href="#fn-web-framework-1-def">1</a></td>
+</tr>
+<tr>
+<td><a href="https://docs.microsoft.com/en-us/dotnet/framework/network-programming/httplistener">HttpListener﻿</a></td>
+<td>Поддерживаются все версии</td>
+</tr>
+<tr>
+<td><a href="https://docs.microsoft.com/en-us/dotnet/api/system.net.httpwebrequest?view=netframework-4.8">HttpWebRequest﻿</a></td>
+<td>Поддерживаются все версии</td>
+</tr>
+</tbody>
+</table>
+<p>1</p>
+<p>Поддерживается в <a href="../amazon-web-services/integrate-into-aws/aws-lambda-integration/" title="AWS Lambda capabilities and integration options">AWS Lambda</a> с версией OneAgent 1.335+</p>
+<table>
+<thead>
+<tr>
+<th>Веб-сервис</th>
+<th>Версии</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://azure.microsoft.com/en-us/services/functions/">Azure Functions﻿</a></td>
+<td>2</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Фреймворк удалённого взаимодействия</th>
+<th>Версии</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Amazon AWS Lambda SDK</td>
+<td>3.5.0+<a href="#fn-remoting-framework-1-def">1</a></td>
+</tr>
+<tr>
+<td>Amazon AWS SDK</td>
+<td>3.5.0+<a href="#fn-remoting-framework-1-def">1</a></td>
+</tr>
+<tr>
+<td><a href="https://www.nuget.org/packages/Grpc.AspNetCore">gRPC﻿</a></td>
+<td>2.23.2+<a href="#fn-remoting-framework-2-def">2</a></td>
+</tr>
+</tbody>
+</table>
+<p>1</p>
+<p>Поддерживается в <a href="../amazon-web-services/integrate-into-aws/aws-lambda-integration/" title="AWS Lambda capabilities and integration options">AWS Lambda</a> с версией OneAgent 1.335+</p>
+<p>2</p>
+<p>Поддерживается в <a href="../amazon-web-services/integrate-into-aws/aws-lambda-integration/" title="AWS Lambda capabilities and integration options">AWS Lambda</a> с версией OneAgent 1.337+</p>
+<table>
+<thead>
+<tr>
+<th>Фреймворк баз данных</th>
+<th>Версии</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ADO.NET</td>
+<td>SQL Server<a href="#fn-database-framework-1-def">1</a>, SQL CE<a href="#fn-database-framework-1-def">1</a>, Oracle с использованием Oracle.DataAccess.dll<a href="#fn-database-framework-1-def">1</a></td>
+</tr>
+<tr>
+<td>Amazon DynamoDB</td>
+<td>3.5.0+<a href="#fn-database-framework-1-def">1</a></td>
+</tr>
+<tr>
+<td>Azure Cosmos DB</td>
+<td>3.18+<a href="#fn-database-framework-2-def">2</a></td>
+</tr>
+<tr>
+<td><a href="https://mongodb.github.io/mongo-csharp-driver/">MongoDB .NET driver﻿</a></td>
+<td>2.3 - 2.7<a href="#fn-database-framework-2-def">2</a>, 2.8+<a href="#fn-database-framework-2-def">2</a></td>
+</tr>
+<tr>
+<td><a href="https://github.com/StackExchange/StackExchange.Redis">StackExchange.Redis﻿</a></td>
+<td>2.0.0+<a href="#fn-database-framework-2-def">2</a></td>
+</tr>
+</tbody>
+</table>
+<p>1</p>
+<p>Поддерживается в <a href="../amazon-web-services/integrate-into-aws/aws-lambda-integration/" title="AWS Lambda capabilities and integration options">AWS Lambda</a> с версией OneAgent 1.335+</p>
+<p>2</p>
+<p>Поддерживается в <a href="../amazon-web-services/integrate-into-aws/aws-lambda-integration/" title="AWS Lambda capabilities and integration options">AWS Lambda</a> с версией OneAgent 1.337+</p>
+<table>
+<thead>
+<tr>
+<th>Клиент обмена сообщениями</th>
+<th>Версии</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Amazon EventBridge</td>
+<td>3.5.0+<a href="#fn-messaging-client-1-def">1</a></td>
+</tr>
+<tr>
+<td>Amazon SNS</td>
+<td>3.5.0+<a href="#fn-messaging-client-1-def">1</a></td>
+</tr>
+<tr>
+<td>Amazon SQS</td>
+<td>3.5.0+<a href="#fn-messaging-client-1-def">1</a></td>
+</tr>
+<tr>
+<td><a href="https://www.nuget.org/packages/Azure.Messaging.ServiceBus">Azure Messaging Service Bus﻿</a></td>
+<td>7+<a href="#fn-messaging-client-3-def">3</a></td>
+</tr>
+<tr>
+<td><a href="https://www.nuget.org/packages/Confluent.Kafka/">Confluent Kafka client library﻿</a></td>
+<td>1.4.0+<a href="#fn-messaging-client-2-def">2</a></td>
+</tr>
+<tr>
+<td><a href="https://www.ibm.com/support/knowledgecenter/en/SSFKSJ_9.1.0/com.ibm.mq.dev.doc/q029250_.htm">IBM MQ client﻿</a></td>
+<td>8.0 - 9.1<a href="#fn-messaging-client-2-def">2</a></td>
+</tr>
+<tr>
+<td><a href="https://www.nuget.org/packages/MassTransit">MassTransit﻿</a></td>
+<td>7.0 - 8.3.1<a href="#fn-messaging-client-3-def">3</a>, 8.3.2+<a href="#fn-messaging-client-3-def">3</a></td>
+</tr>
+<tr>
+<td><a href="https://www.nuget.org/packages/Microsoft.Azure.ServiceBus/">Microsoft Azure Service Bus client for .NET﻿</a></td>
+<td>2.0.0 - 5.2.0<a href="#fn-messaging-client-3-def">3</a></td>
+</tr>
+<tr>
+<td><a href="https://www.nuget.org/packages/RabbitMQ.Client">RabbitMQ client﻿</a></td>
+<td>4.1 - 6.x<a href="#fn-messaging-client-3-def">3</a>, 7.x+<a href="#fn-messaging-client-3-def">3</a></td>
+</tr>
+</tbody>
+</table>
+<p>1</p>
+<p>Поддерживается в <a href="../amazon-web-services/integrate-into-aws/aws-lambda-integration/" title="AWS Lambda capabilities and integration options">AWS Lambda</a> с версией OneAgent 1.335+</p>
+<p>2</p>
+<p>Поддерживается в <a href="../amazon-web-services/integrate-into-aws/aws-lambda-integration/" title="AWS Lambda capabilities and integration options">AWS Lambda</a> с версией OneAgent 1.337+</p>
+<p>3</p>
+<p>Поддерживается в <a href="../amazon-web-services/integrate-into-aws/aws-lambda-integration/" title="AWS Lambda capabilities and integration options">AWS Lambda</a> с версией OneAgent 1.339+</p>
+<table>
+<thead>
+<tr>
+<th>Фреймворк мониторинга</th>
+<th>Версии</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://github.com/open-telemetry/opentelemetry-dotnet">OpenTelemetry﻿</a></td>
+<td>1.0.1+<a href="#fn-monitoring-framework-1-def">1</a>, 1.1+<a href="#fn-monitoring-framework-1-def">1</a></td>
+</tr>
+</tbody>
+</table>
+<p>1</p>
+<p>Поддерживается в <a href="../amazon-web-services/integrate-into-aws/aws-lambda-integration/" title="AWS Lambda capabilities and integration options">AWS Lambda</a> с версией OneAgent 1.337+</p>
+<table>
+<thead>
+<tr>
+<th>Фреймворк логирования</th>
+<th>Версии</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://docs.microsoft.com/en-us/dotnet/core/extensions/logging">Microsoft Logging Extensions﻿</a></td>
+<td>3.0.0+<a href="#fn-logging-framework-1-def">1</a></td>
+</tr>
+<tr>
+<td><a href="https://serilog.net/">Serilog﻿</a></td>
+<td>2.9+<a href="#fn-logging-framework-1-def">1</a></td>
+</tr>
+<tr>
+<td><a href="https://logging.apache.org/log4net/">log4net﻿</a></td>
+<td>2.0.6+<a href="#fn-logging-framework-1-def">1</a></td>
+</tr>
+</tbody>
+</table>
+<p>1</p>
+<p>Поддерживается в <a href="../amazon-web-services/integrate-into-aws/aws-lambda-integration/" title="AWS Lambda capabilities and integration options">AWS Lambda</a> с версией OneAgent 1.335+</p>
+<p>См. также <a href="../extend-dynatrace/extend-tracing/oneagent-sdk/" title="The Dynatrace OneAgent SDK enables you to instrument your application manually to extend end-to-end visibility for frameworks and technologies for which there is no code module yet available.">OneAgent SDK для .NET</a> для возможностей ручной трассировки.</p>
+<h3 id="net-framework"><a href="application-software/dotnet/" title="Learn about all aspects of Dynatrace support for .NET application monitoring.">.NET Framework</a><a class="headerlink" href="#net-framework" title="Permanent link">&para;</a></h3>
+<p>Dynatrace поддерживает .NET-приложения, написанные на C#. Доступна ограниченная поддержка .NET-приложений, написанных на других языках, хотя явно она не тестировалась.</p>
+<table>
+<thead>
+<tr>
+<th>Среда выполнения</th>
+<th>Версии</th>
+<th>Платформы</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="application-software/dotnet/" title="Learn about all aspects of Dynatrace support for .NET application monitoring.">.NET Framework</a></td>
+<td>3.5 SP1, 4<a href="#fn-runtime-1-def">1</a>, 4.5<a href="#fn-runtime-1-def">1</a>, 4.5.1<a href="#fn-runtime-1-def">1</a>, 4.5.2 - 4.8</td>
+<td>Windows (x86-64)</td>
+</tr>
+</tbody>
+</table>
+<p>1</p>
+<p>Ограниченная поддержка: Dynatrace может решать только те проблемы, которые воспроизводятся на поддерживаемых версиях.</p>
+<table>
+<thead>
+<tr>
+<th>Веб-фреймворк</th>
+<th>Версии</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ASP.NET</td>
+<td>Поддерживаются все версии</td>
+</tr>
+<tr>
+<td>ASP.NET Core</td>
+<td>Поддерживаются все версии</td>
+</tr>
+<tr>
+<td>ASP.NET Owin/Katana</td>
+<td>3.0.0 - 4.0.1</td>
+</tr>
+<tr>
+<td><a href="https://docs.microsoft.com/en-us/previous-versions/visualstudio/hh193681(v=vs.118)">HttpClient﻿</a></td>
+<td>Поддерживаются все версии</td>
+</tr>
+<tr>
+<td><a href="https://docs.microsoft.com/en-us/dotnet/framework/network-programming/httplistener">HttpListener﻿</a></td>
+<td>Поддерживаются все версии</td>
+</tr>
+<tr>
+<td><a href="https://docs.microsoft.com/en-us/dotnet/api/system.net.httpwebrequest?view=netframework-4.8">HttpWebRequest﻿</a></td>
+<td>Поддерживаются все версии</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Фреймворк удалённого взаимодействия</th>
+<th>Версии</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://docs.microsoft.com/en-us/previous-versions/dotnet/netframework-4.0/72x4h507(v=vs.100)">.NET Remoting﻿</a></td>
+<td>Поддерживаются все версии</td>
+</tr>
+<tr>
+<td>Amazon AWS Lambda SDK</td>
+<td>3.5.0+<a href="#fn-remoting-framework-1-def">1</a></td>
+</tr>
+<tr>
+<td>Amazon AWS SDK</td>
+<td>3.5.0+<a href="#fn-remoting-framework-1-def">1</a></td>
+</tr>
+<tr>
+<td>WCF</td>
+<td>Поддерживаются все версии</td>
+</tr>
+</tbody>
+</table>
+<p>1</p>
+<p>Паттерн IAsyncResult (APM) для .NET Framework 3.5 поддерживается в версии 1.331+.</p>
+<table>
+<thead>
+<tr>
+<th>Фреймворк работы с базами данных</th>
+<th>Версии</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ADO.NET</td>
+<td>SQL Server, SQL CE, ODBC, OLEDB, Oracle с использованием Oracle.DataAccess.dll</td>
+</tr>
+<tr>
+<td>Amazon DynamoDB</td>
+<td>3.5.0+<a href="#fn-database-framework-1-def">1</a></td>
+</tr>
+<tr>
+<td>Azure Cosmos DB</td>
+<td>3.18+</td>
+</tr>
+<tr>
+<td><a href="https://mongodb.github.io/mongo-csharp-driver/">MongoDB .NET driver﻿</a></td>
+<td>2.3 - 2.7, 2.8+</td>
+</tr>
+</tbody>
+</table>
+<p>1</p>
+<p>Паттерн IAsyncResult (APM) для .NET Framework 3.5 поддерживается в версии 1.331+.</p>
+<table>
+<thead>
+<tr>
+<th>Клиент обмена сообщениями</th>
+<th>Версии</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Amazon EventBridge</td>
+<td>3.5.0+<a href="#fn-messaging-client-1-def">1</a></td>
+</tr>
+<tr>
+<td>Amazon SNS</td>
+<td>3.5.0+<a href="#fn-messaging-client-1-def">1</a></td>
+</tr>
+<tr>
+<td>Amazon SQS</td>
+<td>3.5.0+<a href="#fn-messaging-client-1-def">1</a></td>
+</tr>
+<tr>
+<td><a href="https://www.nuget.org/packages/Azure.Messaging.ServiceBus">Azure Messaging Service Bus﻿</a></td>
+<td>7+</td>
+</tr>
+<tr>
+<td><a href="https://www.nuget.org/packages/Confluent.Kafka/">Confluent Kafka client library﻿</a></td>
+<td>1.4.0+</td>
+</tr>
+<tr>
+<td><a href="https://www.ibm.com/support/knowledgecenter/en/SSFKSJ_9.1.0/com.ibm.mq.dev.doc/q029250_.htm">IBM MQ client﻿</a></td>
+<td>8.0 - 9.1</td>
+</tr>
+<tr>
+<td>MSMQ Client</td>
+<td>Поддерживаются все версии</td>
+</tr>
+<tr>
+<td><a href="https://www.nuget.org/packages/MassTransit">MassTransit﻿</a></td>
+<td>7.0 - 8.3.1, 8.3.2+</td>
+</tr>
+<tr>
+<td><a href="https://www.nuget.org/packages/Microsoft.Azure.ServiceBus/">Microsoft Azure Service Bus client for .NET﻿</a></td>
+<td>2.0.0 - 3.1.1, 3.2.0 - 5.2.0</td>
+</tr>
+<tr>
+<td><a href="https://www.nuget.org/packages/RabbitMQ.Client">RabbitMQ client﻿</a></td>
+<td>4.1 - 6.x, 7.x+</td>
+</tr>
+</tbody>
+</table>
+<p>1</p>
+<p>Паттерн IAsyncResult (APM) для .NET Framework 3.5 поддерживается в версии 1.331+.</p>
+<table>
+<thead>
+<tr>
+<th>Фреймворк мониторинга</th>
+<th>Версии</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://github.com/open-telemetry/opentelemetry-dotnet">OpenTelemetry﻿</a></td>
+<td>1.0.1+, 1.1+</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Фреймворк логирования</th>
+<th>Версии</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://docs.microsoft.com/en-us/dotnet/core/extensions/logging">Microsoft Logging Extensions﻿</a></td>
+<td>3.0.0+</td>
+</tr>
+<tr>
+<td><a href="https://serilog.net/">Serilog﻿</a></td>
+<td>2.9+</td>
+</tr>
+<tr>
+<td><a href="https://logging.apache.org/log4net/">log4net﻿</a></td>
+<td>2.0.6+</td>
+</tr>
+</tbody>
+</table>
+<h3 id="go"><a href="application-software/go/" title="Read an overview of Dynatrace support for Go applications.">Go</a><a class="headerlink" href="#go" title="Permanent link">&para;</a></h3>
+<ul>
+<li>
+<p>Поддержка 64-битных бинарных файлов Go, собранных с помощью:</p>
+</li>
+<li>
+<p><a href="https://dt-url.net/go">Golang.org toolchain﻿</a></p>
+</li>
+<li><a href="https://dt-url.net/go">Golang.org toolchain﻿</a> с модификациями <a href="https://dt-url.net/golang-fips">openssl-fips﻿</a> (OneAgent версии 1.295+).</li>
+<li><a href="https://dt-url.net/uos3rmi">Политика выпуска Go﻿</a> предполагает поддержку двух последних основных версий Go.</li>
+<li>Подробности см. в разделе <a href="application-software/go/support/supported-go-versions/" title="Find out which Go versions are supported by Dynatrace.">Поддерживаемые версии Go</a>.</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Инструментарий Go</th>
+<th>Версии</th>
+<th>Платформы</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://dt-url.net/golang-fips">Golang toolchain с модификациями FIPS (openssl-fips)﻿</a></td>
+<td>1.23.6, 1.23.9, 1.24.4, 1.24.6, 1.25.3, 1.25.5, 1.25.7, 1.25.9, 1.26.2</td>
+<td>Alpine Linux 64-bit (x86-64), Linux (x86-64)</td>
+</tr>
+<tr>
+<td><a href="https://dt-url.net/go">Официальный Golang toolchain﻿</a></td>
+<td>1.23, 1.24, 1.25, 1.26</td>
+<td>Alpine Linux 64-bit (x86-64), Linux (x86-64, ARM64 (AArch64)), Windows (x86-64)</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Веб-фреймворк</th>
+<th>Версии</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>net/http</td>
+<td>Поддерживаются все версии<a href="#fn-web-framework-1-def">1</a></td>
+</tr>
+</tbody>
+</table>
+<p>1</p>
+<p>Поддерживается в <a href="../amazon-web-services/integrate-into-aws/aws-lambda-integration/" title="AWS Lambda capabilities and integration options">AWS Lambda</a></p>
+<table>
+<thead>
+<tr>
+<th>Фреймворки баз данных</th>
+<th>Версии</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://github.com/aws/aws-sdk-go-v2/tree/main/service/dynamodb">Amazon DynamoDB﻿</a></td>
+<td>1.13.0-1.54.0<a href="#fn-database-frameworks-1-def">1</a>, 1.55.0 - 1.57.4<a href="#fn-database-frameworks-1-def">1</a></td>
+</tr>
+<tr>
+<td><a href="https://github.com/apache/cassandra-gocql-driver">Cassandra client (cassandra-gocql-driver/v2)﻿</a></td>
+<td>2.0.0 - 2.1.0<a href="#fn-database-frameworks-1-def">1</a>, 2.1.1<a href="#fn-database-frameworks-1-def">1</a></td>
+</tr>
+<tr>
+<td><a href="https://github.com/gocql/gocql">Cassandra client (gocql/gocql)﻿</a></td>
+<td>1.0 - 1.7<a href="#fn-database-frameworks-1-def">1</a></td>
+</tr>
+<tr>
+<td><a href="https://github.com/denisenkom/go-mssqldb">Microsoft SQL Server (denisenkom/go-mssqldb)﻿</a></td>
+<td>0.11 - 0.12<a href="#fn-database-frameworks-1-def">1</a></td>
+</tr>
+<tr>
+<td><a href="https://github.com/microsoft/go-mssqldb">Microsoft SQL Server (microsoft/go-mssqldb)﻿</a></td>
+<td>0.11 - 0.21<a href="#fn-database-frameworks-1-def">1</a>, 1.0 - 1.10<a href="#fn-database-frameworks-1-def">1</a></td>
+</tr>
+<tr>
+<td><a href="https://github.com/mongodb/mongo-go-driver">MongoDB Go driver (mongo-go-driver)﻿</a></td>
+<td>1.3 - 1.17<a href="#fn-database-frameworks-1-def">1</a>, 2.+<a href="#fn-database-frameworks-1-def">1</a></td>
+</tr>
+<tr>
+<td><a href="https://github.com/go-sql-driver/mysql/">MySQL﻿</a></td>
+<td>1.4.1<a href="#fn-database-frameworks-1-def">1</a>, 1.5.0<a href="#fn-database-frameworks-1-def">1</a>, 1.6.0<a href="#fn-database-frameworks-1-def">1</a>, 1.7<a href="#fn-database-frameworks-1-def">1</a>, 1.8 - 1.10<a href="#fn-database-frameworks-1-def">1</a></td>
+</tr>
+<tr>
+<td><a href="https://github.com/jackc/pgx">PostgreSQL (jackc/pgx)﻿</a></td>
+<td>4.7 - 4.18<a href="#fn-database-frameworks-1-def">1</a>, 5.0 - 5.10<a href="#fn-database-frameworks-1-def">1</a></td>
+</tr>
+<tr>
+<td><a href="https://github.com/lib/pq/">PostgreSQL (lib/pq)﻿</a></td>
+<td>1.2.0<a href="#fn-database-frameworks-1-def">1</a>, 1.3.0<a href="#fn-database-frameworks-1-def">1</a>, 1.4.0 - 1.10.9<a href="#fn-database-frameworks-1-def">1</a></td>
+</tr>
+<tr>
+<td><a href="https://github.com/redis/go-redis">go-redis﻿</a></td>
+<td>7<a href="#fn-database-frameworks-1-def">1</a>, 8.8.0 - 8.11.5<a href="#fn-database-frameworks-1-def">1</a>, 9<a href="#fn-database-frameworks-1-def">1</a></td>
+</tr>
+</tbody>
+</table>
+<p>1</p>
+<p>Поддерживается в <a href="../amazon-web-services/integrate-into-aws/aws-lambda-integration/" title="AWS Lambda capabilities and integration options">AWS Lambda</a>.</p>
+<table>
+<thead>
+<tr>
+<th>Клиенты обмена сообщениями</th>
+<th>Версии</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://github.com/aws/aws-sdk-go-v2/tree/main/service/sns">Amazon SNS﻿</a></td>
+<td>1.15.0 - 1.38.0<a href="#fn-messaging-clients-1-def">1</a>, 1.38.1 - 1.39.17<a href="#fn-messaging-clients-1-def">1</a></td>
+</tr>
+<tr>
+<td><a href="https://github.com/aws/aws-sdk-go-v2/tree/main/service/sqs">Amazon SQS﻿</a></td>
+<td>1.16.0-1.42.27<a href="#fn-messaging-clients-1-def">1</a></td>
+</tr>
+<tr>
+<td><a href="https://github.com/IBM/sarama">Kafka (IBM/sarama)﻿</a></td>
+<td>1.40+<a href="#fn-messaging-clients-1-def">1</a></td>
+</tr>
+<tr>
+<td><a href="https://github.com/Shopify/sarama">Kafka (Shopify/sarama)﻿</a></td>
+<td>1.18 - 1.48<a href="#fn-messaging-clients-1-def">1</a></td>
+</tr>
+<tr>
+<td><a href="https://github.com/confluentinc/confluent-kafka-go">Kafka (confluentinc/confluent-kafka-go)﻿</a></td>
+<td>1.9 - 2.8<a href="#fn-messaging-clients-1-def">1</a>, 2.10<a href="#fn-messaging-clients-1-def">1</a>, 2.11<a href="#fn-messaging-clients-1-def">1</a>, 2.12<a href="#fn-messaging-clients-1-def">1</a>, 2.13.0<a href="#fn-messaging-clients-1-def">1</a>, 2.14.0<a href="#fn-messaging-clients-1-def">1</a>, 2.14.1<a href="#fn-messaging-clients-1-def">1</a></td>
+</tr>
+</tbody>
+</table>
+<p>1</p>
+<p>Поддерживается в <a href="../amazon-web-services/integrate-into-aws/aws-lambda-integration/" title="AWS Lambda capabilities and integration options">AWS Lambda</a>.</p>
+<table>
+<thead>
+<tr>
+<th>Фреймворки удалённого взаимодействия</th>
+<th>Версии</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://github.com/aws/aws-lambda-go">Amazon AWS Lambda SDK﻿</a></td>
+<td>1.18.0-1.54.0<a href="#fn-remoting-frameworks-1-def">1</a></td>
+</tr>
+<tr>
+<td><a href="https://github.com/aws/aws-sdk-go-v2">Amazon AWS SDK﻿</a></td>
+<td>1.13.0 - 1.39.0<a href="#fn-remoting-frameworks-2-def">2</a>, 1.39.1 - 1.41.1<a href="#fn-remoting-frameworks-2-def">2</a>, 1.41.2 - 1.41.7<a href="#fn-remoting-frameworks-2-def">2</a></td>
+</tr>
+<tr>
+<td><a href="https://godoc.org/google.golang.org/grpc">gRPC﻿</a></td>
+<td>1.17 - 1.28<a href="#fn-remoting-frameworks-3-def">3</a>, 1.29<a href="#fn-remoting-frameworks-3-def">3</a>, 1.30 - 1.39<a href="#fn-remoting-frameworks-3-def">3</a>, 1.40 - 1.59<a href="#fn-remoting-frameworks-3-def">3</a>, 1.60 - 1.68<a href="#fn-remoting-frameworks-3-def">3</a>, 1.69 - 1.76<a href="#fn-remoting-frameworks-3-def">3</a>, 1.78 - 1.81<a href="#fn-remoting-frameworks-3-def">3</a></td>
+</tr>
+</tbody>
+</table>
+<p>1</p>
+<p>Поддерживается в <a href="../amazon-web-services/integrate-into-aws/aws-lambda-integration/" title="AWS Lambda capabilities and integration options">AWS Lambda</a></p>
+<p>2</p>
+<p>Поддерживается в <a href="../amazon-web-services/integrate-into-aws/aws-lambda-integration/" title="AWS Lambda capabilities and integration options">AWS Lambda</a>. Расширенная поддержка трассировки для всех вызовов служб AWS</p>
+<p>3</p>
+<p>Поддерживается в <a href="../amazon-web-services/integrate-into-aws/aws-lambda-integration/" title="AWS Lambda capabilities and integration options">AWS Lambda</a>.</p>
+<table>
+<thead>
+<tr>
+<th>Фреймворки мониторинга</th>
+<th>Версии</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://github.com/open-telemetry/opentelemetry-go/">OpenTelemetry﻿</a></td>
+<td>1.0 - 1.7<a href="#fn-monitoring-frameworks-1-def">1</a>, 1.8 - 1.11.0<a href="#fn-monitoring-frameworks-1-def">1</a>, 1.11.1 - 1.27<a href="#fn-monitoring-frameworks-1-def">1</a>, 1.28 - 1.44<a href="#fn-monitoring-frameworks-1-def">1</a></td>
+</tr>
+</tbody>
+</table>
+<p>1</p>
+<p>Поддерживается в <a href="../amazon-web-services/integrate-into-aws/aws-lambda-integration/" title="AWS Lambda capabilities and integration options">AWS Lambda</a>.</p>
+<table>
+<thead>
+<tr>
+<th>Фреймворки логирования</th>
+<th>Версии</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://github.com/sirupsen/logrus">Logrus﻿</a></td>
+<td>1.7.1 - 1.9<a href="#fn-logging-frameworks-1-def">1</a></td>
+</tr>
+<tr>
+<td><a href="https://github.com/uber-go/zap">Zap﻿</a></td>
+<td>1.10 - 1.28<a href="#fn-logging-frameworks-2-def">2</a></td>
+</tr>
+<tr>
+<td>log/slog</td>
+<td>Поддерживаются все версии<a href="#fn-logging-frameworks-2-def">2</a></td>
+</tr>
+</tbody>
+</table>
+<p>1</p>
+<p>Версии 1.7.0 и более ранние не поддерживаются из-за <a href="https://github.com/sirupsen/logrus/issues/1046">проблемы состояния гонки﻿</a> во фреймворке Logrus. Поддерживается в <a href="../amazon-web-services/integrate-into-aws/aws-lambda-integration/" title="AWS Lambda capabilities and integration options">AWS Lambda</a>.</p>
+<p>2</p>
+<p>Поддерживается в <a href="../amazon-web-services/integrate-into-aws/aws-lambda-integration/" title="AWS Lambda capabilities and integration options">AWS Lambda</a>.</p>
+<ul>
+<li><a href="application-software/go/support/go-known-limitations/#go-official-stable-releases" title="Learn the limitations for Go support and their workarounds.">Поддержка ограничена стабильными релизами Go</a>.</li>
+<li>В системах Linux бинарный файл приложения должен быть динамически связан, если не используется <a href="application-software/go/configuration-and-analysis/enable-go-monitoring/#go-static-monitoring" title="Learn how you can enable Go monitoring in Dynatrace.">статический мониторинг Go</a>.</li>
+</ul>
+<h3 id="nodejs"><a href="application-software/nodejs/" title="Read about Dynatrace support for Node.js applications.">Node.js</a><a class="headerlink" href="#nodejs" title="Permanent link">&para;</a></h3>
+<p>Node.js следует графику выпуска Long Term Support (LTS). В следующей таблице перечислены все версии с полной поддержкой. Однако некоторые LTS-версии, вышедшие из жизненного цикла, имеют <em>ограниченную</em> поддержку. Подробности см. в разделе <a href="application-software/nodejs/#support-and-desupport" title="Read about Dynatrace support for Node.js applications.">Поддержка/прекращение поддержки версий Node.js Dynatrace</a>.</p>
+<table>
+<thead>
+<tr>
+<th>Версии Node.js</th>
+<th>Версии</th>
+<th>Платформы</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="application-software/nodejs/" title="Read about Dynatrace support for Node.js applications.">Node.js</a></td>
+<td>20, 22, 24, 25, 26</td>
+<td>Alpine Linux 64-bit (x86-64), Linux (ARM64 (AArch64), PPCLE, s390, x86-64), Windows (x86-64)</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Веб-фреймворки</th>
+<th>Версии</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://www.npmjs.com/package/connect">Connect﻿</a></td>
+<td>&gt;=3.0.0</td>
+</tr>
+<tr>
+<td><a href="https://expressjs.com/">Express﻿</a></td>
+<td>3, 4, 5</td>
+</tr>
+<tr>
+<td><a href="https://fastify.dev/">Fastify﻿</a></td>
+<td>&gt;=3.3.0</td>
+</tr>
+<tr>
+<td><a href="https://www.npmjs.com/package/koa-router">Koa﻿</a></td>
+<td>&gt;=7.0.0</td>
+</tr>
+<tr>
+<td><a href="https://nestjs.com/">Nest﻿</a></td>
+<td>&gt;=6.0.0<a href="#fn-web-frameworks-2-def">2</a></td>
+</tr>
+<tr>
+<td><a href="https://nodejs.org/api/http2.html">Встроенный модуль HTTP/2 Node.js﻿</a></td>
+<td>Поддерживаются все версии</td>
+</tr>
+<tr>
+<td><a href="https://nodejs.org/api/http.html">Встроенные модули HTTP/HTTPS Node.js﻿</a></td>
+<td>Поддерживаются все версии<a href="#fn-web-frameworks-1-def">1</a></td>
+</tr>
+<tr>
+<td><a href="https://hapijs.com/">hapi﻿</a></td>
+<td>17+</td>
+</tr>
+<tr>
+<td><a href="https://www.npmjs.com/package/restify">restify﻿</a></td>
+<td>&gt;=4.1<a href="#fn-web-frameworks-2-def">2</a></td>
+</tr>
+<tr>
+<td><a href="https://www.npmjs.com/package/router">router﻿</a></td>
+<td>&gt;=1.0.0<a href="#fn-web-frameworks-2-def">2</a></td>
+</tr>
+</tbody>
+</table>
+<p>1</p>
+<p>Поддерживается в <a href="../amazon-web-services/integrate-into-aws/aws-lambda-integration/" title="AWS Lambda capabilities and integration options">AWS Lambda</a></p>
+<p>2</p>
+<p>Nest поддерживается неявно, через базовые платформы Express или Fastify.</p>
+<table>
+<thead>
+<tr>
+<th>Библиотеки HTTP</th>
+<th>Версии</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://nodejs.org/api/http.html">Встроенные модули HTTP/HTTPS Node.js﻿</a></td>
+<td>Поддерживаются все версии<a href="#fn-http-libraries-1-def">1</a></td>
+</tr>
+<tr>
+<td><a href="https://nodejs.org/api/globals.html#fetch">Встроенный fetch API Node.js﻿</a></td>
+<td>&gt;=18.0.0<a href="#fn-http-libraries-1-def">1</a></td>
+</tr>
+<tr>
+<td><a href="https://www.npmjs.com/package/undici">HTTP-клиент Undici﻿</a></td>
+<td>Поддерживаются все версии<a href="#fn-http-libraries-1-def">1</a></td>
+</tr>
+</tbody>
+</table>
+<p>1</p>
+<p>Поддерживается в <a href="../amazon-web-services/integrate-into-aws/aws-lambda-integration/" title="AWS Lambda capabilities and integration options">AWS Lambda</a></p>
+<table>
+<thead>
+<tr>
+<th>Фреймворки для работы с базами данных</th>
+<th>Версии</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Amazon DynamoDB</td>
+<td>2<a href="#fn-database-frameworks-1-def">1</a>, 3.0-3.901<a href="#fn-database-frameworks-1-def">1</a>, 3.902+<a href="#fn-database-frameworks-1-def">1</a></td>
+</tr>
+<tr>
+<td><a href="https://www.npmjs.com/package/couchbase">Couchbase﻿</a></td>
+<td>2.4<a href="#fn-database-frameworks-1-def">1</a>, 2.5<a href="#fn-database-frameworks-1-def">1</a>, 2.6<a href="#fn-database-frameworks-1-def">1</a>, 3<a href="#fn-database-frameworks-1-def">1</a>, 4<a href="#fn-database-frameworks-1-def">1</a></td>
+</tr>
+<tr>
+<td><a href="https://www.npmjs.com/package/ioredis">IOredis﻿</a></td>
+<td>4<a href="#fn-database-frameworks-2-def">2</a>, 5<a href="#fn-database-frameworks-2-def">2</a></td>
+</tr>
+<tr>
+<td><a href="https://www.npmjs.com/package/mongodb">MongoDB﻿</a></td>
+<td>2<a href="#fn-database-frameworks-1-def">1</a>, 3<a href="#fn-database-frameworks-1-def">1</a>, &gt;=4<a href="#fn-database-frameworks-1-def">1</a></td>
+</tr>
+<tr>
+<td><a href="https://www.npmjs.com/package/mysql">MySQL﻿</a></td>
+<td>2<a href="#fn-database-frameworks-1-def">1</a></td>
+</tr>
+<tr>
+<td><a href="https://www.npmjs.com/package/mysql2">MySQL2﻿</a></td>
+<td>1.6<a href="#fn-database-frameworks-1-def">1</a>, 1.7<a href="#fn-database-frameworks-1-def">1</a>, 2<a href="#fn-database-frameworks-1-def">1</a>, 3<a href="#fn-database-frameworks-1-def">1</a></td>
+</tr>
+<tr>
+<td><a href="https://www.npmjs.com/package/pg">PostgreSQL﻿</a></td>
+<td>5<a href="#fn-database-frameworks-2-def">2</a>, 6<a href="#fn-database-frameworks-2-def">2</a>, 7<a href="#fn-database-frameworks-2-def">2</a>, 8<a href="#fn-database-frameworks-2-def">2</a></td>
+</tr>
+<tr>
+<td><a href="https://www.npmjs.com/package/redis">Redis﻿</a></td>
+<td>0.10<a href="#fn-database-frameworks-2-def">2</a>, 0.12<a href="#fn-database-frameworks-2-def">2</a>, 1.0<a href="#fn-database-frameworks-2-def">2</a>, 2.5<a href="#fn-database-frameworks-2-def">2</a>, 3<a href="#fn-database-frameworks-2-def">2</a>, 4<a href="#fn-database-frameworks-2-def">2</a>, 5<a href="#fn-database-frameworks-2-def">2</a>, 4<a href="#fn-database-frameworks-2-def">2</a></td>
+</tr>
+<tr>
+<td><a href="https://www.npmjs.com/package/sqlite3">SQLite3 (только передача контекста)﻿</a></td>
+<td>&lt;5, 5.1+<a href="#fn-database-frameworks-3-def">3</a></td>
+</tr>
+<tr>
+<td><a href="https://www.npmjs.com/package/mssql">mssql﻿</a></td>
+<td>&gt;=5<a href="#fn-database-frameworks-1-def">1</a></td>
+</tr>
+<tr>
+<td><a href="https://www.npmjs.com/package/oracledb">oracledb﻿</a></td>
+<td>5<a href="#fn-database-frameworks-2-def">2</a></td>
+</tr>
+</tbody>
+</table>
+<p>1</p>
+<p>Поддерживается в <a href="../amazon-web-services/integrate-into-aws/aws-lambda-integration/" title="AWS Lambda capabilities and integration options">AWS Lambda</a></p>
+<p>2</p>
+<p>Поддерживается в <a href="../amazon-web-services/integrate-into-aws/aws-lambda-integration/" title="AWS Lambda capabilities and integration options">AWS Lambda</a>. Следующие APIы Oracle не поддерживаются: NoSQL, advanced queuing, two-phase commit и continuous query notification.</p>
+<p>3</p>
+<p>Обрати внимание, версии 5.0 не поддерживаются</p>
+<table>
+<thead>
+<tr>
+<th>Фреймворки для API-запросов</th>
+<th>Версии</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://www.dynatrace.com/hub/detail/graphql/">GraphQL﻿</a></td>
+<td>15+<a href="#fn-api-querying-frameworks-1-def">1</a></td>
+</tr>
+<tr>
+<td><a href="https://www.npmjs.com/package/graphql-yoga">GraphQL Yoga﻿</a></td>
+<td>5.7+<a href="#fn-api-querying-frameworks-2-def">2</a></td>
+</tr>
+</tbody>
+</table>
+<p>1</p>
+<p>Поддерживается в <a href="../amazon-web-services/integrate-into-aws/aws-lambda-integration/" title="AWS Lambda capabilities and integration options">AWS Lambda</a>. Требуется Dynatrace Cluster версии 1.262+. Обнаружение сбоев служб не поддерживается.</p>
+<p>2</p>
+<p>Поддерживается в <a href="../amazon-web-services/integrate-into-aws/aws-lambda-integration/" title="AWS Lambda capabilities and integration options">AWS Lambda</a>. Требуется Dynatrace Cluster версии 1.334+. Обнаружение сбоев служб не поддерживается.</p>
+<table>
+<thead>
+<tr>
+<th>Клиенты обмена сообщениями</th>
+<th>Версии</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Amazon EventBridge</td>
+<td>2<a href="#fn-messaging-clients-1-def">1</a>, 3.0-3.901<a href="#fn-messaging-clients-1-def">1</a>, 3.902+<a href="#fn-messaging-clients-1-def">1</a></td>
+</tr>
+<tr>
+<td>Amazon SNS</td>
+<td>2<a href="#fn-messaging-clients-1-def">1</a>, 3.0-3.901<a href="#fn-messaging-clients-1-def">1</a>, 3.902+<a href="#fn-messaging-clients-1-def">1</a></td>
+</tr>
+<tr>
+<td>Amazon SQS</td>
+<td>2<a href="#fn-messaging-clients-1-def">1</a>, 3.0-3.901<a href="#fn-messaging-clients-1-def">1</a>, 3.902+<a href="#fn-messaging-clients-1-def">1</a></td>
+</tr>
+<tr>
+<td><a href="https://www.npmjs.com/package/kafkajs">Библиотека клиента KafkaJs﻿</a></td>
+<td>1.11+<a href="#fn-messaging-clients-1-def">1</a>, 2<a href="#fn-messaging-clients-1-def">1</a></td>
+</tr>
+<tr>
+<td><a href="https://www.npmjs.com/package/amqplib">RabbitMQ﻿</a></td>
+<td>0.2<a href="#fn-messaging-clients-2-def">2</a>, 0.3.2<a href="#fn-messaging-clients-2-def">2</a>, 0.4.2<a href="#fn-messaging-clients-2-def">2</a>, 0.5<a href="#fn-messaging-clients-2-def">2</a>, 0.6<a href="#fn-messaging-clients-2-def">2</a>, 0.7<a href="#fn-messaging-clients-2-def">2</a>, 0.8<a href="#fn-messaging-clients-2-def">2</a>, 0.9<a href="#fn-messaging-clients-2-def">2</a>, 0.10<a href="#fn-messaging-clients-2-def">2</a>, 0.9<a href="#fn-messaging-clients-2-def">2</a>, 0.10<a href="#fn-messaging-clients-2-def">2</a></td>
+</tr>
+</tbody>
+</table>
+<p>1</p>
+<p>Поддерживается в <a href="../amazon-web-services/integrate-into-aws/aws-lambda-integration/" title="AWS Lambda capabilities and integration options">AWS Lambda</a></p>
+<p>2</p>
+<p>Издатели RabbitMQ поддерживаются в <a href="../amazon-web-services/integrate-into-aws/aws-lambda-integration/" title="AWS Lambda capabilities and integration options">AWS Lambda</a></p>
+<table>
+<thead>
+<tr>
+<th>Фреймворки удалённого взаимодействия</th>
+<th>Версии</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://aws.amazon.com/sdk-for-javascript/">Amazon AWS Lambda SDK﻿</a></td>
+<td>2<a href="#fn-remoting-frameworks-1-def">1</a>, 3.0-3.901<a href="#fn-remoting-frameworks-1-def">1</a>, 3.902+<a href="#fn-remoting-frameworks-1-def">1</a></td>
+</tr>
+<tr>
+<td>Amazon AWS SDK</td>
+<td>2<a href="#fn-remoting-frameworks-2-def">2</a>, 3.0-3.901<a href="#fn-remoting-frameworks-2-def">2</a>, 3.902+<a href="#fn-remoting-frameworks-2-def">2</a></td>
+</tr>
+<tr>
+<td><a href="https://grpc.github.io/grpc/node/">gRPC﻿</a></td>
+<td>1.10 - 1.24</td>
+</tr>
+<tr>
+<td><a href="https://www.npmjs.com/package/@grpc/grpc-js">grpc-js﻿</a></td>
+<td>1<a href="#fn-remoting-frameworks-3-def">3</a></td>
+</tr>
+</tbody>
+</table>
+<p>1</p>
+<p>Поддерживается в <a href="../amazon-web-services/integrate-into-aws/aws-lambda-integration/" title="AWS Lambda capabilities and integration options">AWS Lambda</a></p>
+<p>2</p>
+<p>Поддерживается в <a href="../amazon-web-services/integrate-into-aws/aws-lambda-integration/" title="AWS Lambda capabilities and integration options">AWS Lambda</a>. Расширенная поддержка трассировки для всех вызовов служб AWS</p>
+<p>3</p>
+<p>Вызовы клиента gRPC поддерживаются в <a href="../amazon-web-services/integrate-into-aws/aws-lambda-integration/" title="AWS Lambda capabilities and integration options">AWS Lambda</a></p>
+<table>
+<thead>
+<tr>
+<th>Фреймворки мониторинга</th>
+<th>Версии</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://www.npmjs.com/package/@opentelemetry/api">OpenTelemetry﻿</a></td>
+<td>1<a href="#fn-monitoring-frameworks-1-def">1</a></td>
+</tr>
+</tbody>
+</table>
+<p>1</p>
+<p>Поддерживается в <a href="../amazon-web-services/integrate-into-aws/aws-lambda-integration/" title="AWS Lambda capabilities and integration options">AWS Lambda</a></p>
+<table>
+<thead>
+<tr>
+<th>Кэш</th>
+<th>Версии</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://www.npmjs.com/package/memcached">Memcached﻿</a></td>
+<td>2.2<a href="#fn-cache-1-def">1</a></td>
+</tr>
+</tbody>
+</table>
+<p>1</p>
+<p>Поддерживается в <a href="../amazon-web-services/integrate-into-aws/aws-lambda-integration/" title="AWS Lambda capabilities and integration options">AWS Lambda</a></p>
+<table>
+<thead>
+<tr>
+<th>Фреймворки логирования</th>
+<th>Версии</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://www.npmjs.com/package/bunyan">Bunyan﻿</a></td>
+<td>1+<a href="#fn-logging-frameworks-1-def">1</a></td>
+</tr>
+<tr>
+<td><a href="https://www.npmjs.com/package/log4js">log4js﻿</a></td>
+<td>&gt;=6.0.0<a href="#fn-logging-frameworks-1-def">1</a></td>
+</tr>
+<tr>
+<td><a href="https://www.npmjs.com/package/pino">pino﻿</a></td>
+<td>5.14+<a href="#fn-logging-frameworks-1-def">1</a>, &gt;=6<a href="#fn-logging-frameworks-1-def">1</a></td>
+</tr>
+<tr>
+<td><a href="https://www.npmjs.com/package/winston">winston﻿</a></td>
+<td>3<a href="#fn-logging-frameworks-1-def">1</a></td>
+</tr>
+</tbody>
+</table>
+<p>1</p>
+<p>Поддерживается в <a href="../amazon-web-services/integrate-into-aws/aws-lambda-integration/" title="AWS Lambda capabilities and integration options">AWS Lambda</a></p>
+<p>См. также <a href="../extend-dynatrace/extend-tracing/oneagent-sdk/" title="The Dynatrace OneAgent SDK enables you to instrument your application manually to extend end-to-end visibility for frameworks and technologies for which there is no code module yet available.">OneAgent SDK для Node.js</a> для возможностей ручной трассировки.</p>
+<h3 id="python">Python<a class="headerlink" href="#python" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Среда выполнения Python</th>
+<th>Версии</th>
+<th>Платформы</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>CPython</td>
+<td>3.8, 3.9, 3.10, 3.11, 3.12, 3.13, 3.14</td>
+<td>Alpine Linux 64-bit (x86-64, ARM64 (AArch64)), Linux (x86-64, ARM64 (AArch64))</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Веб-фреймворки</th>
+<th>Версии</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://github.com/django/django">Django﻿</a></td>
+<td>1.8+<a href="#fn-web-frameworks-1-def">1</a></td>
+</tr>
+<tr>
+<td><a href="https://falconframework.org/">Falcon﻿</a></td>
+<td>4.0+</td>
+</tr>
+<tr>
+<td><a href="https://github.com/tiangolo/fastapi">FastAPI﻿</a></td>
+<td>0.44+</td>
+</tr>
+<tr>
+<td><a href="https://github.com/pallets/flask">Flask﻿</a></td>
+<td>1.1.2+</td>
+</tr>
+<tr>
+<td><a href="https://github.com/sanic-org/sanic">Sanic﻿</a></td>
+<td>22.12+</td>
+</tr>
+<tr>
+<td><a href="https://github.com/encode/starlette">Starlette﻿</a></td>
+<td>0.12+</td>
+</tr>
+<tr>
+<td><a href="https://github.com/tornadoweb/tornado">Tornado﻿</a></td>
+<td>6.0+</td>
+</tr>
+<tr>
+<td><a href="https://docs.aiohttp.org/en/stable/web.html">aiohttp Server﻿</a></td>
+<td>3.6.1+</td>
+</tr>
+</tbody>
+</table>
+<p>1</p>
+<p>Включая Django REST framework, на основе поддерживаемых версий Django.</p>
+<table>
+<thead>
+<tr>
+<th>HTTP-библиотеки</th>
+<th>Версии</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://github.com/psf/requests">Requests﻿</a></td>
+<td>2<a href="#fn-http-libraries-1-def">1</a></td>
+</tr>
+<tr>
+<td><a href="https://docs.aiohttp.org/en/stable/client.html#aiohttp-client">aiohttp Client﻿</a></td>
+<td>3.0+<a href="#fn-http-libraries-1-def">1</a></td>
+</tr>
+<tr>
+<td><a href="https://www.python-httpx.org/">httpx﻿</a></td>
+<td>0.20.0+</td>
+</tr>
+<tr>
+<td><a href="https://github.com/urllib3/urllib3">urllib3﻿</a></td>
+<td>2.0+<a href="#fn-http-libraries-1-def">1</a></td>
+</tr>
+</tbody>
+</table>
+<p>1</p>
+<p>Поддерживается в <a href="../amazon-web-services/integrate-into-aws/aws-lambda-integration/" title="Возможности и варианты интеграции AWS Lambda">AWS Lambda</a>.</p>
+<table>
+<thead>
+<tr>
+<th>Фреймворки для работы с базами данных</th>
+<th>Версии</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Amazon DynamoDB</td>
+<td>1.11+<a href="#fn-database-frameworks-1-def">1</a></td>
+</tr>
+<tr>
+<td><a href="https://pymongo.readthedocs.io/en/stable/">PyMongo﻿</a></td>
+<td>3.10+</td>
+</tr>
+<tr>
+<td><a href="https://github.com/sqlalchemy/sqlalchemy">SQL Alchemy﻿</a></td>
+<td>1.1+</td>
+</tr>
+<tr>
+<td><a href="https://pypi.org/project/mysqlclient/">mysqlclient﻿</a></td>
+<td>2.0+</td>
+</tr>
+<tr>
+<td><a href="https://github.com/psycopg/psycopg2">psycopg2﻿</a></td>
+<td>2.8.4+</td>
+</tr>
+<tr>
+<td><a href="https://github.com/oracle/python-oracledb">python-oracledb﻿</a></td>
+<td>1.0.1+</td>
+</tr>
+<tr>
+<td><a href="https://github.com/redis/redis-py">redis-py﻿</a></td>
+<td>3.4+<a href="#fn-database-frameworks-1-def">1</a></td>
+</tr>
+</tbody>
+</table>
+<p>1</p>
+<p>Поддерживается в <a href="../amazon-web-services/integrate-into-aws/aws-lambda-integration/" title="Возможности и варианты интеграции AWS Lambda">AWS Lambda</a>.</p>
+<table>
+<thead>
+<tr>
+<th>Библиотеки для обмена сообщениями</th>
+<th>Версии</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Amazon EventBridge</td>
+<td>1.11+<a href="#fn-messaging-libraries-1-def">1</a></td>
+</tr>
+<tr>
+<td>Amazon SNS</td>
+<td>1.11+<a href="#fn-messaging-libraries-1-def">1</a></td>
+</tr>
+<tr>
+<td>Amazon SQS</td>
+<td>1.11+<a href="#fn-messaging-libraries-1-def">1</a></td>
+</tr>
+<tr>
+<td><a href="https://github.com/Azure/azure-sdk-for-python/tree/main/sdk/eventhub/azure-eventhub">Azure SDK EventHub﻿</a></td>
+<td>5.12+</td>
+</tr>
+<tr>
+<td><a href="https://github.com/celery/celery">Celery﻿</a></td>
+<td>5.3+</td>
+</tr>
+<tr>
+<td><a href="https://github.com/confluentinc/confluent-kafka-python">Confluent Kafka Python client library﻿</a></td>
+<td>2.0.2+<a href="#fn-messaging-libraries-1-def">1</a></td>
+</tr>
+<tr>
+<td><a href="https://github.com/celery/kombu">Kombu﻿</a></td>
+<td>4.6.7+</td>
+</tr>
+<tr>
+<td><a href="https://github.com/dpkp/kafka-python">kafka-python client library﻿</a></td>
+<td>1.4+<a href="#fn-messaging-libraries-1-def">1</a></td>
+</tr>
+<tr>
+<td><a href="https://github.com/pika/pika">pika﻿</a></td>
+<td>1.0.0+</td>
+</tr>
+</tbody>
+</table>
+<p>1</p>
+<p>Поддерживается в <a href="../amazon-web-services/integrate-into-aws/aws-lambda-integration/" title="Возможности и варианты интеграции AWS Lambda">AWS Lambda</a>.</p>
+<table>
+<thead>
+<tr>
+<th>Фреймворки удалённого взаимодействия</th>
+<th>Версии</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://github.com/boto/boto3">Amazon AWS SDK﻿</a></td>
+<td>1.11+<a href="#fn-remoting-frameworks-1-def">1</a></td>
+</tr>
+<tr>
+<td><a href="https://github.com/Azure/azure-sdk-for-python">Azure SDK﻿</a></td>
+<td>1.0+<a href="#fn-remoting-frameworks-2-def">2</a></td>
+</tr>
+<tr>
+<td><a href="https://pypi.org/project/grpcio/">gRPC﻿</a></td>
+<td>1.26+<a href="#fn-remoting-frameworks-3-def">3</a></td>
+</tr>
+</tbody>
+</table>
+<p>1</p>
+<p>Поддерживается в <a href="../amazon-web-services/integrate-into-aws/aws-lambda-integration/" title="Возможности и варианты интеграции AWS Lambda">AWS Lambda</a>. Расширенная поддержка трассировки для всех вызовов сервисов AWS. Поддерживаются как boto3, так и botocore.</p>
+<p>2</p>
+<p>на основе декоратора @distributed_trace</p>
+<p>3</p>
+<p>Асинхронные вызовы поддерживаются начиная с версии 1.331</p>
+<table>
+<thead>
+<tr>
+<th>Библиотеки для асинхронного выполнения</th>
+<th>Версии</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://www.gevent.org/">Gevent﻿</a></td>
+<td>20.9.0+</td>
+</tr>
+<tr>
+<td><a href="https://docs.python.org/3/library/asyncio.html#module-asyncio">Python standard library: asyncio﻿</a></td>
+<td>Поддерживаются все версии</td>
+</tr>
+<tr>
+<td><a href="https://docs.python.org/3/library/concurrent.futures.html#module-concurrent.futures">Python standard library: concurrent.futures﻿</a></td>
+<td>Поддерживаются все версии</td>
+</tr>
+<tr>
+<td><a href="https://docs.python.org/3/library/queue.html#module-queue">Python standard library: queue﻿</a></td>
+<td>Поддерживаются все версии</td>
+</tr>
+<tr>
+<td><a href="https://docs.python.org/3/library/subprocess.html#module-subprocess">Python standard library: subprocess﻿</a></td>
+<td>Поддерживаются все версии</td>
+</tr>
+<tr>
+<td><a href="https://docs.python.org/3/library/threading.html#module-threading">Python standard library: threading﻿</a></td>
+<td>Поддерживаются все версии</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Библиотеки логирования</th>
+<th>Версии</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://docs.python.org/3/library/logging.html">Python standard library: logging﻿</a></td>
+<td>Поддерживаются все версии<a href="#fn-logging-libraries-1-def">1</a></td>
+</tr>
+<tr>
+<td><a href="https://github.com/hynek/structlog">Structlog﻿</a></td>
+<td>19.0+<a href="#fn-logging-libraries-1-def">1</a></td>
+</tr>
+</tbody>
+</table>
+<p>1</p>
+<p>Поддерживается в <a href="../amazon-web-services/integrate-into-aws/aws-lambda-integration/" title="Возможности и варианты интеграции AWS Lambda">AWS Lambda</a>.</p>
+<table>
+<thead>
+<tr>
+<th>Фреймворки Generative AI-приложений</th>
+<th>Версии</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://github.com/boto/boto3">Amazon Bedrock Runtime﻿</a></td>
+<td>1.14+</td>
+</tr>
+<tr>
+<td><a href="https://github.com/langchain-ai/langchain">LangChain﻿</a></td>
+<td>1.0+</td>
+</tr>
+<tr>
+<td><a href="https://github.com/openai/openai-python">OpenAI﻿</a></td>
+<td>1.54.0+</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>Возможности пользовательской трассировки описаны в разделе <a href="../extend-dynatrace/extend-tracing/oneagent-sdk/" title="Dynatrace OneAgent SDK позволяет вручную инструментировать приложение, чтобы расширить сквозную видимость для фреймворков и технологий, для которых пока нет готового модуля кода.">OneAgent SDK for Python</a>.</li>
+<li>Поддержка OpenTelemetry описана в разделе <a href="../opentelemetry/walkthroughs/python/" title="Узнайте, как инструментировать Python-приложение с помощью OpenTelemetry и Dynatrace.">Instrument your Python application with OpenTelemetry</a>.</li>
+</ul>
+<h3 id="php"><a href="application-software/php/" title="Информация о поддержке Dynatrace для PHP-приложений.">PHP</a><a class="headerlink" href="#php" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Linux (mod_php, FastCGI или PHP-FPM)</li>
+<li>Windows (mod_php и PHP CGI)</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Версии PHP</th>
+<th>Версии</th>
+<th>Платформы</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="application-software/php/" title="Информация о поддержке Dynatrace для PHP-приложений.">PHP</a></td>
+<td>7.1 (Zend Engine 3.1), 7.2 (Zend Engine 3.2), 7.3 (Zend Engine 3.3), 7.4 (Zend Engine 3.4), 8.0 (Zend Engine 4.0), 8.1 (Zend Engine 4.1)<a href="#fn-php-versions-1-def">1</a>, 8.2 (Zend Engine 4.2)<a href="#fn-php-versions-2-def">2</a>, 8.3 (Zend Engine 4.3)<a href="#fn-php-versions-3-def">3</a>, 8.4 (Zend Engine 4.4)<a href="#fn-php-versions-4-def">4</a>, 8.5 (Zend Engine 4.5)<a href="#fn-php-versions-5-def">5</a></td>
+<td>Alpine Linux 64-bit (x86-64), Linux (x86-64, ARM64 (AArch64)), Windows (x86-64)</td>
+</tr>
+</tbody>
+</table>
+<p>1</p>
+<p>Поддерживается PHP 8.1 (от RC1 до 8.1.x).</p>
+<p>2</p>
+<p>Поддерживается PHP 8.2 (от RC1, до официального релиза PHP, вплоть до 8.2.x).</p>
+<p>3</p>
+<p>Поддерживается PHP 8.3 (от RC1, до официального релиза PHP, вплоть до 8.3.x).</p>
+<p>4</p>
+<p>Поддерживается PHP 8.4 (от RC2, до официального релиза PHP, вплоть до 8.4.x).</p>
+<p>5</p>
+<p>Поддерживается PHP 8.5 (от RC3, до официального релиза PHP, вплоть до 8.5.x).</p>
+<p>Подробности о поддержке и прекращении поддержки см. в разделе <a href="application-software/php/" title="Информация о поддержке Dynatrace для PHP-приложений.">Dynatrace support model for PHP applications</a>.</p>
+<table>
+<thead>
+<tr>
+<th>Фреймворки для работы с базами данных</th>
+<th>Версии</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://docs.microsoft.com/en-us/sql/connect/php/system-requirements-for-the-php-sql-driver?view=sql-server-2017">Microsoft Driver for PHP for SQL Server﻿</a></td>
+<td>4.0-5.6<a href="#fn-database-frameworks-1-def">1</a></td>
+</tr>
+<tr>
+<td><a href="https://www.php.net/manual/en/set.mongodb.php">MongoDB PHP for Linux﻿</a></td>
+<td>1.3+</td>
+</tr>
+<tr>
+<td><a href="https://www.php.net/manual/en/set.mongodb.php">MongoDB PHP for Windows﻿</a></td>
+<td>1.3+</td>
+</tr>
+<tr>
+<td><a href="https://php.net/manual/en/book.oci8.php">Oracle Database﻿</a></td>
+<td>Поддерживаются все версии</td>
+</tr>
+<tr>
+<td><a href="https://php.net/manual/en/book.pdo.php">PDO﻿</a></td>
+<td>Поддерживаются все версии</td>
+</tr>
+<tr>
+<td>PostgreSQL</td>
+<td>Поддерживаются все версии</td>
+</tr>
+<tr>
+<td><a href="https://php.net/manual/en/set.mysqlinfo.php">mysql, mysqli﻿</a></td>
+<td>Поддерживаются все версии</td>
+</tr>
+<tr>
+<td><a href="https://github.com/phpredis/phpredis">phpredis﻿</a></td>
+<td>4.0.0+<a href="#fn-database-frameworks-2-def">2</a></td>
+</tr>
+<tr>
+<td><a href="https://github.com/predis/predis">predis﻿</a></td>
+<td>1.1.2+</td>
+</tr>
+</tbody>
+</table>
+<p>1</p>
+<p>Поддерживается только для PHP NG Monitoring</p>
+<p>2</p>
+<p>Поддерживается только для PHP NG Monitoring. Реализация с использованием phpredis cluster поддерживается начиная с версии OneAgent 1.317. Реализация с использованием phpredis array в настоящее время не поддерживается.</p>
+<table>
+<thead>
+<tr>
+<th>Клиент обмена сообщениями</th>
+<th>Версии</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>RabbitMQ client (php-amqplib)</td>
+<td>2.7+</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Платформы приложений</th>
+<th>Версии</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://business.adobe.com/products/magento/magento-commerce.html">Adobe Commerce﻿</a></td>
+<td>Поддерживаются все версии</td>
+</tr>
+<tr>
+<td><a href="https://codeigniter.com/">CodeIgniter﻿</a></td>
+<td>Поддерживаются все версии</td>
+</tr>
+<tr>
+<td><a href="https://www.drupal.org/">Drupal﻿</a></td>
+<td>Поддерживаются все версии</td>
+</tr>
+<tr>
+<td><a href="https://www.joomla.org/">Joomla﻿</a></td>
+<td>Поддерживаются все версии</td>
+</tr>
+<tr>
+<td><a href="https://getlaminas.org/">Laminas﻿</a></td>
+<td>Поддерживаются все версии</td>
+</tr>
+<tr>
+<td><a href="https://laravel.com/">Laravel﻿</a></td>
+<td>Поддерживаются все версии</td>
+</tr>
+<tr>
+<td><a href="https://business.adobe.com/products/magento/magento-commerce.html">Magento﻿</a></td>
+<td>Поддерживаются все версии</td>
+</tr>
+<tr>
+<td><a href="https://www.slimframework.com/">Slim﻿</a></td>
+<td>Поддерживаются все версии</td>
+</tr>
+<tr>
+<td><a href="https://symfony.com/">Symfony﻿</a></td>
+<td>Поддерживаются все версии</td>
+</tr>
+<tr>
+<td><a href="https://wordpress.com/">WordPress﻿</a></td>
+<td>Поддерживаются все версии</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Фреймворки мониторинга</th>
+<th>Версии</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://github.com/open-telemetry/opentelemetry-php">OpenTelemetry﻿</a></td>
+<td>1.0.0</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Кэш</th>
+<th>Версии</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://www.php.net/manual/en/book.memcached.php">Memcached﻿</a></td>
+<td>3.0.0+<a href="#fn-cache-1-def">1</a></td>
+</tr>
+</tbody>
+</table>
+<p>1</p>
+<p>Поддерживается только для PHP NG Monitoring на Linux и Alpine Linux/MUSL</p>
+<table>
+<thead>
+<tr>
+<th>Фреймворки логирования</th>
+<th>Версии</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://github.com/Seldaek/monolog">Monolog﻿</a></td>
+<td>2.3 - 2.4, 3.0</td>
+</tr>
+</tbody>
+</table>
+<p>Возможности пользовательской трассировки описаны в разделе <a href="../extend-dynatrace/extend-tracing/oneagent-sdk/" title="Dynatrace OneAgent SDK позволяет вручную инструментировать приложение, чтобы расширить сквозную видимость для фреймворков и технологий, для которых пока нет готового модуля кода.">OneAgent SDK for PHP</a>.</p>
+<h3 id="ibm-app-connect-enterprise-ibm-integration-bus">IBM App Connect Enterprise / IBM Integration Bus<a class="headerlink" href="#ibm-app-connect-enterprise-ibm-integration-bus" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Версии</th>
+<th>Версии</th>
+<th>Платформы</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://www.ibm.com/support/knowledgecenter/en/SSTTDS">IBM App Connect Enterprise﻿</a></td>
+<td>11.0.0.4+, 12.0.3.0+, 13.0.2.0+</td>
+<td>AIX (POWER8, POWER9, POWER10), Linux (x86-64, s390), Windows (x86-64)</td>
+</tr>
+<tr>
+<td><a href="https://www.ibm.com/support/knowledgecenter/de/SSMKHH/mapfiles/product_welcome.html">IBM Integration Bus﻿</a></td>
+<td>10</td>
+<td>AIX (POWER8, POWER9, POWER10), Linux (x86-64, s390), Windows (x86-64)</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>Поддерживается только 64-битная версия</li>
+<li>Мониторинг поддерживается для всех типов узлов</li>
+<li>
+<p>Трассировка поддерживается для следующих типов узлов:</p>
+</li>
+<li>
+<p>IBM MQ: MQInput, MQOutput, MQReply</p>
+</li>
+<li>JMS: JMSInput, JMSOutput</li>
+<li>HTTP: HTTPInput, HTTPReply, HTTPRequest, HTTPAsyncRequest, HTTPAsyncResponse</li>
+<li>REST: RESTRequest, RESTAsyncRequest, RESTAsyncResponse</li>
+<li>Web services: SOAPInput, SOAPReply, SOAPRequest, SOAPAsyncRequest, SOAPAsyncResponse</li>
+<li>Callables (OneAgent version 1.257+): CallableFlowAsyncInvoke, CallableFlowAsyncResponse, CallableFlowInvoke, CallableInput, CallableReply</li>
+<li>Routing: Publication</li>
+<li>Compute: Java</li>
+<li>Database: DatabaseRetrieve, DatabaseRoute</li>
+<li>CICS (OneAgent version 1.277+): CICSRequest</li>
+</ul>
+<h3 id="c-c">C / <a href="application-software/cpp/" title="Learn how to instrument your C++ application with OpenTelemetry as a data source for Dynatrace.">C++</a><a class="headerlink" href="#c-c" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Для возможностей произвольной трассировки см. <a href="../extend-dynatrace/extend-tracing/oneagent-sdk/" title="The Dynatrace OneAgent SDK enables you to instrument your application manually to extend end-to-end visibility for frameworks and technologies for which there is no code module yet available.">OneAgent SDK for C/C++</a>.</li>
+<li>Для поддержки OpenTelemetry см. <a href="../opentelemetry/walkthroughs/cpp/" title="Learn how to instrument your C++ application using OpenTelemetry and Dynatrace.">Instrument your C++ application with OpenTelemetry</a>.</li>
+</ul>
+<h3 id="erlangelixir"><a href="application-software/erlang-elixir/" title="Learn how to instrument your Erlang/Elixir application with OpenTelemetry as a data source for Dynatrace.">Erlang/Elixir</a><a class="headerlink" href="#erlangelixir" title="Permanent link">&para;</a></h3>
+<p>Для поддержки OpenTelemetry см. <a href="../opentelemetry/walkthroughs/erlang/" title="Learn how to instrument your Erlang application using OpenTelemetry and Dynatrace.">Instrument your Erlang application with OpenTelemetry</a>.</p>
+<h3 id="ruby"><a href="application-software/ruby/" title="Learn how to instrument your Ruby application with OpenTelemetry as a data source for Dynatrace.">Ruby</a><a class="headerlink" href="#ruby" title="Permanent link">&para;</a></h3>
+<p>Для поддержки OpenTelemetry см. <a href="../opentelemetry/walkthroughs/ruby/" title="Learn how to instrument your Ruby application using OpenTelemetry and Dynatrace.">Instrument your Ruby application with OpenTelemetry</a>.</p>
+<h3 id="rust"><a href="application-software/rust/" title="Learn how to instrument your Rust application with OpenTelemetry as a data source for Dynatrace monitoring.">Rust</a><a class="headerlink" href="#rust" title="Permanent link">&para;</a></h3>
+<p>Для поддержки OpenTelemetry см. <a href="../opentelemetry/walkthroughs/rust/" title="Learn how to instrument your Rust application using OpenTelemetry and Dynatrace.">Instrument your Rust application with OpenTelemetry</a>.</p>
+<h2 id="-">Веб-серверы<a class="headerlink" href="#-" title="Permanent link">&para;</a></h2>
+<h3 id="apache-http">Apache HTTP<a class="headerlink" href="#apache-http" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Серверы</th>
+<th>Версии</th>
+<th>Платформы</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Apache HTTP Server</td>
+<td>2.0, 2.2</td>
+<td>Alpine Linux 64-bit (x86-64), Linux (PPCLE, x86-64, ARM64 (AArch64)), Solaris (SPARC), Windows (x86-64)</td>
+</tr>
+<tr>
+<td>Apache HTTP Server</td>
+<td>2.4</td>
+<td>Alpine Linux 64-bit (x86-64), Linux (PPCLE, x86-64, ARM64 (AArch64)), Solaris (SPARC, x86-64), Windows (x86-64)</td>
+</tr>
+<tr>
+<td>Fujitsu Interstage IHS</td>
+<td>12<a href="#fn-servers-1-def">1</a>, 13<a href="#fn-servers-1-def">1</a></td>
+<td>Linux (x86-64), Windows (x86-64)</td>
+</tr>
+<tr>
+<td>IBM HTTP Server</td>
+<td>7, 8</td>
+<td>AIX (POWER8, POWER9, POWER10), Linux (PPCLE, x86-64), Solaris (SPARC), Windows (x86-64)</td>
+</tr>
+<tr>
+<td>IBM HTTP Server</td>
+<td>8.5</td>
+<td>AIX (POWER8, POWER9, POWER10), Linux (PPCBE), Linux (PPCLE, x86-64), Linux (s390), Solaris (SPARC), Windows (x86-64)</td>
+</tr>
+<tr>
+<td>IBM HTTP Server</td>
+<td>9</td>
+<td>AIX (POWER8, POWER9, POWER10), Linux (PPCLE, x86-64), Linux (s390), Solaris (SPARC), Windows (x86-64)</td>
+</tr>
+<tr>
+<td>Oracle HTTP Server</td>
+<td>11g, 12c</td>
+<td>Solaris (SPARC)</td>
+</tr>
+</tbody>
+</table>
+<p>1</p>
+<p>Поддерживаются только версии Apache 2.2 и 2.4.</p>
+<table>
+<thead>
+<tr>
+<th>Обогащение логов</th>
+<th>Версии</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>access.logs</td>
+<td>Поддерживаются все версии</td>
+</tr>
+<tr>
+<td>error.logs</td>
+<td>Поддерживаются все версии</td>
+</tr>
+</tbody>
+</table>
+<h3 id="microsoft-iis">Microsoft IIS<a class="headerlink" href="#microsoft-iis" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Серверы</th>
+<th>Версии</th>
+<th>Платформы</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Microsoft IIS</td>
+<td>7.5, 8.0, 8.5, 10.0</td>
+<td>Windows (x86-64)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="envoy">Envoy<a class="headerlink" href="#envoy" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Серверы</th>
+<th>Версии</th>
+<th>Платформы</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://www.envoyproxy.io/">Envoy﻿</a></td>
+<td>1.30+<a href="#fn-servers-1-def">1</a></td>
+<td>Linux (x86-64)</td>
+</tr>
+</tbody>
+</table>
+<p>1</p>
+<p>Начиная с версии 1.29 Envoy экспортирует данные через <a href="../opentelemetry/" title="Learn how to integrate and ingest OpenTelemetry data (traces, metrics, and logs) into Dynatrace.">OpenTelemetry</a>. Подробности см. в <a href="../opentelemetry/integrations/envoy/" title="Learn how to configure Envoy to send OpenTelemetry traces to Dynatrace.">Configure OpenTelemetry tracing with Envoy</a>.</p>
+<h3 id="nginx">NGINX<a class="headerlink" href="#nginx" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Серверы</th>
+<th>Версии</th>
+<th>Платформы</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="application-software/nginx/kong-gateway/" title="Learn how to monitor the Kong Gateway with Dynatrace.">Kong Gateway</a></td>
+<td>2.8 - 3.6<a href="#fn-servers-3-def">3</a>, 3.7 - 3.9<a href="#fn-servers-4-def">4</a>, 3.10 - 3.14<a href="#fn-servers-4-def">4</a></td>
+<td>Alpine Linux 64-bit (ARM64 (AArch64), x86-64), Linux (ARM64 (AArch64), x86-64)</td>
+</tr>
+<tr>
+<td><a href="application-software/nginx/#nginx-versions" title="Learn the details of Dynatrace support for NGINX.">NGINX</a></td>
+<td>1.11.5 - 1.13.8<a href="#fn-servers-1-def">1</a>, 1.13.9 - 1.14.0<a href="#fn-servers-1-def">1</a>, 1.14.1 - 1.15.8<a href="#fn-servers-1-def">1</a>, 1.15.9 - 1.15.10<a href="#fn-servers-1-def">1</a>, 1.15.11 - 1.16.0<a href="#fn-servers-1-def">1</a>, 1.16.1 - 1.17.3<a href="#fn-servers-1-def">1</a>, 1.17.4 - 1.17.6<a href="#fn-servers-1-def">1</a>, 1.17.7<a href="#fn-servers-1-def">1</a>, 1.17.8<a href="#fn-servers-1-def">1</a>, 1.17.9<a href="#fn-servers-1-def">1</a>, 1.17.10 - 1.18.0, 1.19.0, 1.19.1, 1.19.2, 1.19.3, 1.19.4, 1.19.5, 1.19.6, 1.19.7, 1.19.8, 1.19.9, 1.19.10, 1.20.0, 1.20.1, 1.20.2, 1.21.0, 1.21.1, 1.21.2, 1.21.3, 1.21.4, 1.21.5, 1.21.6, 1.22.0, 1.22.1, 1.23.0, 1.23.1, 1.23.2, 1.23.3, 1.23.4, 1.24.0, 1.25.0, 1.25.1, 1.25.2, 1.25.3, 1.25.4, 1.25.5, 1.26.0, 1.26.1, 1.26.2, 1.26.3, 1.27.0, 1.27.1, 1.27.2, 1.27.3, 1.27.4, 1.27.5, 1.28.0, 1.28.1, 1.28.2, 1.28.3, 1.29.0, 1.29.1, 1.29.2, 1.29.3, 1.29.4, 1.29.5, 1.29.6<a href="#fn-servers-2-def">2</a>, 1.29.7<a href="#fn-servers-2-def">2</a>, 1.29.8<a href="#fn-servers-2-def">2</a>, 1.30.0<a href="#fn-servers-2-def">2</a>, 1.30.1<a href="#fn-servers-2-def">2</a>, 1.31.0<a href="#fn-servers-2-def">2</a></td>
+<td>Alpine Linux 64-bit (ARM64 (AArch64), x86-64), Linux (ARM64 (AArch64), x86-64, PPCLE)</td>
+</tr>
+<tr>
+<td><a href="application-software/nginx/#nginx-plus-versions" title="Learn the details of Dynatrace support for NGINX.">NGINX Plus</a></td>
+<td>R11 - R14<a href="#fn-servers-2-def">2</a>, R15<a href="#fn-servers-2-def">2</a>, R16 - R17<a href="#fn-servers-2-def">2</a>, R18<a href="#fn-servers-2-def">2</a>, R19<a href="#fn-servers-2-def">2</a>, R20<a href="#fn-servers-2-def">2</a>, R21<a href="#fn-servers-2-def">2</a>, R22, R23, R24, R25, R26, R27, R28, R29, R30, R31, R32, R33, R34, R35, R36</td>
+<td>Alpine Linux 64-bit (x86-64), Linux (x86-64, ARM64 (AArch64), PPCLE)</td>
+</tr>
+<tr>
+<td><a href="application-software/nginx/#openresty-versions" title="Learn the details of Dynatrace support for NGINX.">OpenResty</a></td>
+<td>1.13.6, 1.15.8, 1.17.8, 1.19.3, 1.19.9, 1.21.4.1, 1.21.4.2, 1.21.4.3, 1.25.3.1, 1.25.3.2, 1.27.1.1, 1.27.1.2, 1.29.2.1, 1.29.2.3</td>
+<td>Alpine Linux 64-bit (ARM64 (AArch64), x86-64), Linux (ARM64 (AArch64), x86-64)</td>
+</tr>
+<tr>
+<td><a href="application-software/nginx/#tengineversions" title="Learn the details of Dynatrace support for NGINX.">Tengine</a></td>
+<td>1.4.2 - 2.2.3, 2.3.0 - 2.3.3, 2.3.4, 2.4.0, 2.4.1</td>
+<td>Alpine Linux 64-bit (x86-64), Linux (x86-64)</td>
+</tr>
+</tbody>
+</table>
+<p>1</p>
+<p>Поддержка архитектуры процессора PPCLE добавлена в версии OneAgent 1.169, а ARM64 (AArch64), в версии OneAgent 1.189.</p>
+<p>2</p>
+<p>Функция OneAgent <strong>Nginx Modules</strong> не поддерживается для этой версии NGINX.</p>
+<p>3</p>
+<p>Требуется runtime-инструментирование, см. <a href="application-software/nginx/manual-runtime-instrumentation/" title="Learn how to force instrumenting patched/non-standard NGINX binaries during runtime.">NGINX runtime instrumentation</a></p>
+<p>4</p>
+<p>Требуется runtime-инструментирование, см. <a href="application-software/nginx/manual-runtime-instrumentation/" title="Learn how to force instrumenting patched/non-standard NGINX binaries during runtime.">NGINX runtime instrumentation</a>. Сниженные накладные расходы на инструментирование при версиях агента &gt;= 1.313.</p>
+<table>
+<thead>
+<tr>
+<th>Обогащение логов</th>
+<th>Версии</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>error.logs</td>
+<td>Поддерживаются все версии</td>
+</tr>
+</tbody>
+</table>
+<h2 id="real-user-monitoring">Real User Monitoring<a class="headerlink" href="#real-user-monitoring" title="Permanent link">&para;</a></h2>
+<h3 id="web-based-real-user-monitoring">Web-based Real User Monitoring<a class="headerlink" href="#web-based-real-user-monitoring" title="Permanent link">&para;</a></h3>
+<h4 id="_10">Браузеры<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h4>
+<p>Поддерживаются все современные браузеры с включёнными JavaScript и cookies, но тестируются только браузеры из списка ниже<a href="#fn-7-1-def">1</a>.</p>
+<table>
+<thead>
+<tr>
+<th>Браузеры</th>
+<th>Версии</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Google Chrome</td>
+<td>3 последние версии (desktop и mobile)</td>
+</tr>
+<tr>
+<td>Microsoft Edge</td>
+<td>Последняя версия</td>
+</tr>
+<tr>
+<td>Mozilla Firefox</td>
+<td>3 последние версии</td>
+</tr>
+<tr>
+<td>Opera</td>
+<td>2 последние версии</td>
+</tr>
+<tr>
+<td>Safari</td>
+<td>3 последние версии (macOS)</td>
+</tr>
+</tbody>
+</table>
+<p>1</p>
+<p>Если внедрение RUM JavaScript в официально не поддерживаемые версии нежелательно, <a href="../../observe/digital-experience/rum-classic/web-applications/additional-configuration/exclude-browsers-robots-and-spiders-from-monitoring/#exclude-browsers" title="Disable Real User Monitoring Classic for certain IP addresses, browsers, bots, and spiders.">настрой соответствующие правила исключения браузеров</a> в настройках приложения.</p>
+<h5 id="_11">Браузеры для записи сессий<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h5>
+<table>
+<thead>
+<tr>
+<th>Браузеры</th>
+<th>Версии</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Google Chrome</td>
+<td>3 последние версии (desktop и mobile)</td>
+</tr>
+<tr>
+<td>Microsoft Edge</td>
+<td>Последняя версия</td>
+</tr>
+<tr>
+<td>Mozilla Firefox</td>
+<td>3 последние версии</td>
+</tr>
+<tr>
+<td>Opera</td>
+<td>2 последние версии</td>
+</tr>
+<tr>
+<td>Safari</td>
+<td>3 последние версии (macOS)</td>
+</tr>
+</tbody>
+</table>
+<p>Технологии вроде Electron и аналогичные обёртки, создающие десктопные приложения из веб-страниц, не поддерживаются.</p>
+<h4 id="_12">Асинхронные запросы и одностраничные приложения<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h4>
+<p>Dynatrace предлагает общую поддержку для любого приложения через XHR или Fetch() API, а также специальную поддержку для Angular.</p>
+<table>
+<thead>
+<tr>
+<th>Общая поддержка</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Fetch API</td>
+</tr>
+<tr>
+<td>XMLHttpRequest (XHR)</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>JavaScript-фреймворки</th>
+<th>Версии</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Angular</td>
+<td>2–16, 17+<a href="#fn-8-1-def">1</a></td>
+</tr>
+</tbody>
+</table>
+<p>1</p>
+<p>При использовании Angular 17+ для приложения требуется альтернативная настройка. См. <a href="../../observe/digital-experience/rum-classic/web-applications/initial-setup/configure-dynatrace-real-user-monitoring-to-capture-xhr-actions/#enable-angular-17-support" title="Understand why you need to activate specific JavaScript frameworks for XHR-action support and learn how to configure Real User Monitoring Classic for XHR actions.">Активация поддержки Angular 17+</a>.</p>
+<p>Начиная с RUM JavaScript версии 1.265 и Dynatrace версии 1.266 специальная поддержка некоторых JavaScript-фреймворков прекращена. Подробности см. в <a href="../../observe/digital-experience/rum-classic/web-applications/initial-setup/configure-dynatrace-real-user-monitoring-to-capture-xhr-actions/#desupported-frameworks-js-265" title="Understand why you need to activate specific JavaScript frameworks for XHR-action support and learn how to configure Real User Monitoring Classic for XHR actions.">Прекращение специальной поддержки некоторых JavaScript-фреймворков</a>.</p>
+<h4 id="-_1">Веб-серверы и приложения<a class="headerlink" href="#-_1" title="Permanent link">&para;</a></h4>
+<p>Для следующих веб-серверов и приложений Dynatrace поддерживает <a href="../../observe/digital-experience/rum-classic/web-applications/initial-setup/rum-injection/" title="Configure automatic injection of the RUM JavaScript into the pages of your applications">автоматическое внедрение RUM</a>, <a href="../../observe/digital-experience/rum-classic/web-applications/additional-configuration/configure-monitoring-code-source/" title="Configure the Real User Monitoring Classic code source for your specific requirements.">доставку RUM JavaScript</a>, <a href="../../observe/digital-experience/rum-classic/web-applications/additional-configuration/beacon-endpoint/" title="Change the default beacon endpoint URL and send RUM beacons to Dynatrace infrastructure or another instrumented web server.">пересылку RUM beacon</a> и <a href="../../observe/digital-experience/rum-classic/web-applications/initial-setup/link-cross-origin-xhrs/" title="Enable the correlation between cross-origin XHR actions and distributed traces.">корреляцию действий пользователя с распределённой трассировкой</a>.</p>
+<table>
+<thead>
+<tr>
+<th>Веб-серверы и приложения</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Apache HTTP Server</td>
+</tr>
+<tr>
+<td>IBM HTTP Server</td>
+</tr>
+<tr>
+<td>Веб-приложения на основе Java servlet</td>
+</tr>
+<tr>
+<td>Kestrel (приложения ASP.NET Core)<a href="#fn-9-1-def">1</a><a href="#fn-9-2-def">2</a></td>
+</tr>
+<tr>
+<td>Microsoft IIS</td>
+</tr>
+<tr>
+<td><a href="application-software/nginx/" title="Learn the details of Dynatrace support for NGINX.">NGINX</a></td>
+</tr>
+<tr>
+<td><a href="application-software/nodejs/" title="Read about Dynatrace support for Node.js applications.">Node.js</a></td>
+</tr>
+<tr>
+<td>Oracle HTTP Server</td>
+</tr>
+</tbody>
+</table>
+<p>1</p>
+<p>Минимально требуемые версии: .Net Core 3.1, .Net Standard 2.1, Microsoft.AspNetCore.Http.Abstractions 1.0.2 (для full framework).</p>
+<p>2</p>
+<p>Чтобы включить эту функцию как OneAgent feature, перейди в <strong>Settings</strong> &gt; <strong>Preferences</strong> &gt; <strong>OneAgent features</strong> и включи <strong>Enable Real User Monitoring (RUM) for ASP.NET Core</strong>.</p>
+<p>Для следующих веб-серверов и приложений Dynatrace поддерживает <a href="../../observe/digital-experience/rum-classic/web-applications/initial-setup/link-cross-origin-xhrs/" title="Enable the correlation between cross-origin XHR actions and distributed traces.">корреляцию действий пользователя с распределённой трассировкой</a> для XHR-запросов.</p>
+<table>
+<thead>
+<tr>
+<th>Веб-серверы и приложения</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Apache HttpCore</td>
+</tr>
+<tr>
+<td>MuleSoft HTTP Listener</td>
+</tr>
+<tr>
+<td>Netty <a href="#fn-10-1-def">1</a></td>
+</tr>
+<tr>
+<td>Software AG WebMethods Integration Server</td>
+</tr>
+<tr>
+<td>Undertow</td>
+</tr>
+</tbody>
+</table>
+<p>1</p>
+<p>Чтобы включить эту функцию как OneAgent feature, перейди в <strong>Settings</strong> &gt; <strong>Preferences</strong> &gt; <strong>OneAgent features</strong> и включи <strong>Netty Real User Monitoring (RUM) to distributed trace correlation</strong>.</p>
+<h3 id="mobile-app-real-user-monitoring">Mobile app Real User Monitoring<a class="headerlink" href="#mobile-app-real-user-monitoring" title="Permanent link">&para;</a></h3>
+<h4 id="_13">Операционные системы<a class="headerlink" href="#_13" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>Операционные системы</th>
+<th>Версии</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="../../observe/digital-experience/rum-classic/mobile-applications/instrument-android-app/" title="Learn how to instrument mobile application monitoring on Android, how to customize instrumentation and more.">Android</a></td>
+<td>6.0+ (API 23+)</td>
+</tr>
+<tr>
+<td><a href="../../observe/digital-experience/rum-classic/mobile-applications/instrument-ios-app/" title="Instrument mobile application monitoring for iOS apps, customize the auto-instrumentation, and capture additional data via manual instrumentation.">iOS</a></td>
+<td>15+</td>
+</tr>
+<tr>
+<td><a href="../../observe/digital-experience/rum-classic/mobile-applications/instrument-ios-app/" title="Instrument mobile application monitoring for iOS apps, customize the auto-instrumentation, and capture additional data via manual instrumentation.">tvOS</a></td>
+<td>15+</td>
+</tr>
+</tbody>
+</table>
+<h4 id="_14">Фреймворки<a class="headerlink" href="#_14" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>Фреймворки</th>
+<th>Версии</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>AFNetworking</td>
+<td>3.3</td>
+</tr>
+<tr>
+<td>Alamofire</td>
+<td>5+</td>
+</tr>
+<tr>
+<td><a href="../../observe/digital-experience/rum-classic/mobile-applications/cross-platform-frameworks/apache-cordova/" title="Set up Dynatrace to monitor hybrid mobile apps with the Cordova plugin.">Apache Cordova</a></td>
+<td>9+</td>
+</tr>
+<tr>
+<td>OkHttp</td>
+<td>3+<a href="#fn-11-1-def">1</a>, 4+<a href="#fn-11-1-def">1</a>, 5+<a href="#fn-11-1-def">1</a></td>
+</tr>
+<tr>
+<td><a href="../../observe/digital-experience/rum-classic/mobile-applications/cross-platform-frameworks/xamarin-nuget/" title="Monitor Xamarin apps with Dynatrace OneAgent.">Xamarin</a><a href="#fn-11-2-def">2</a></td>
+<td>Xamarin.iOS, Xamarin.Android, Xamarin.Forms (.NET Standard 2.0+)</td>
+</tr>
+<tr>
+<td><a href="../../observe/digital-experience/rum-classic/mobile-applications/cross-platform-frameworks/maui/" title="Monitor .NET MAUI applications with Dynatrace OneAgent.">.NET MAUI</a></td>
+<td>.NET 6.0+</td>
+</tr>
+<tr>
+<td><a href="../../observe/digital-experience/rum-classic/mobile-applications/cross-platform-frameworks/react-native/" title="Auto-instrument your React Native applications with OneAgent.">React Native</a></td>
+<td>0.59+</td>
+</tr>
+<tr>
+<td><a href="../../observe/digital-experience/rum-classic/mobile-applications/cross-platform-frameworks/flutter/" title="Learn how to auto-instrument your Flutter applications with OneAgent.">Flutter</a></td>
+<td>1.12+</td>
+</tr>
+<tr>
+<td>UIKit</td>
+<td>Поддерживается</td>
+</tr>
+<tr>
+<td><a href="../../observe/digital-experience/rum-classic/mobile-applications/instrument-ios-app/instrumentation/instrument-swiftui-controls/" title="Use the Dynatrace SwiftUI instrumentor to monitor your SwiftUI apps.">SwiftUI</a></td>
+<td>2+</td>
+</tr>
+<tr>
+<td><a href="../../observe/digital-experience/rum-classic/mobile-applications/instrument-android-app/instrumentation-via-plugin/monitoring-capabilities/#compose-instrumentation" title="Configure the Dynatrace Android Gradle plugin to adjust the monitoring capabilities of OneAgent.">Jetpack Compose</a></td>
+<td>1.4–1.10</td>
+</tr>
+</tbody>
+</table>
+<p>1</p>
+<p>Включая библиотеки на основе OkHttp, например Retrofit 2.</p>
+<p>2</p>
+<p>Dynatrace переведёт Dynatrace Xamarin NuGet package в статус deprecated в мае 2024 года и прекратит его поддержку в мае 2025 года. Подробности см. в <a href="../../observe/digital-experience/rum-classic/mobile-applications/cross-platform-frameworks/xamarin-nuget/#deprecation-announcement" title="Monitor Xamarin apps with Dynatrace OneAgent.">Deprecation and end of support for Dynatrace Xamarin NuGet package</a>.</p>
+<h4 id="oneagent-for-ios">OneAgent for iOS<a class="headerlink" href="#oneagent-for-ios" title="Permanent link">&para;</a></h4>
+<ul>
+<li><strong>Xcode</strong>: поддерживаются только те версии Xcode, которые Apple разрешает для отправки в App Store. Информацию о том, какие версии Xcode поддерживаются в данный момент, см. на сайте Apple Developer в разделе <a href="https://developer.apple.com/ios/submit/">Submit your iOS apps to the App Store﻿</a>.</li>
+</ul>
+<p>Начиная с OneAgent for iOS версии 8.335, Dynatrace прекратил поддержку Xcode 16. Поддерживается только Xcode 26+.</p>
+<p>Также стоит учитывать, что <a href="https://dt-url.net/we038fb">правила отправки приложений в App Store от Apple﻿</a> примерно с апреля 2026 года ограничат поддержку приложениями, собранными минимум с Xcode 26.</p>
+<p>Начиная с OneAgent for iOS версии 8.343, Dynatrace прекратил поддержку iOS 12, iOS 13 и iOS 14. Минимально поддерживаемая версия, это iOS 15. Версия 8.341, это последняя версия OneAgent for iOS, поддерживающая iOS 12–14.</p>
+<h4 id="dynatrace-android-gradle-plugin">Dynatrace Android Gradle plugin<a class="headerlink" href="#dynatrace-android-gradle-plugin" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Gradle версии 8.0+</li>
+<li>Android Gradle plugin версии 8.1.1+</li>
+</ul>
+<p>Подробности см. в <a href="../../observe/digital-experience/rum-classic/mobile-applications/instrument-android-app/instrumentation-via-plugin/" title="Learn how the Dynatrace Android Gradle plugin can auto-instrument your Android application project.">Dynatrace Android Gradle plugin в RUM Classic</a>.</p>
+<h3 id="dynatrace-openkit">Dynatrace OpenKit<a class="headerlink" href="#dynatrace-openkit" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Продукт</th>
+<th>Версии</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="application-software/java/" title="Learn about all aspects of Dynatrace support for Java application monitoring.">Java</a></td>
+<td>7, 8, 11, 12</td>
+</tr>
+<tr>
+<td>.NET</td>
+<td>Core 3.1, 5, 6</td>
+</tr>
+<tr>
+<td>.NET Framework</td>
+<td>3.5, 4.6, 4.7, 4.8, 4.8.1</td>
+</tr>
+<tr>
+<td>.NET Standard</td>
+<td>2.0</td>
+</tr>
+<tr>
+<td>.NET UWP</td>
+<td>Поддерживается</td>
+</tr>
+<tr>
+<td>.NET PCL</td>
+<td>4.5</td>
+</tr>
+<tr>
+<td>C/C++ Windows</td>
+<td>Visual Studio 2015, 2017, 2019 и 2022</td>
+</tr>
+<tr>
+<td>C/C++ Linux</td>
+<td>GCC 5.0.0+ или CLang 3.8.0+</td>
+</tr>
+<tr>
+<td>Node.js</td>
+<td>14+</td>
+</tr>
+<tr>
+<td>JavaScript</td>
+<td>ES6+</td>
+</tr>
+</tbody>
+</table>
+<p>Подробности можно посмотреть на следующих справочных страницах.</p>
+<ul>
+<li><a href="https://github.com/Dynatrace/openkit-java/releases">Dynatrace OpenKit - Java﻿</a></li>
+<li><a href="https://github.com/Dynatrace/openkit-dotnet/releases">Dynatrace OpenKit - .NET﻿</a></li>
+<li><a href="https://github.com/Dynatrace/openkit-native#prerequisites">Dynatrace OpenKit - C/C++﻿</a></li>
+<li><a href="https://github.com/Dynatrace/openkit-js">Dynatrace OpenKit - JavaScript﻿</a></li>
+</ul>
+<h2 id="extensions">Extensions<a class="headerlink" href="#extensions" title="Permanent link">&para;</a></h2>
+<p>Полный список технологий, поддерживаемых <a href="../extensions/" title="Learn how to create and manage Dynatrace Extensions.">Dynatrace Extensions</a>, можно посмотреть на странице <a href="https://www.dynatrace.com/hub/?filter=all&amp;type=extension&amp;internal_source=doc&amp;internal_medium=link&amp;internal_campaign=cross">Dynatrace Hub﻿</a>.</p>
+<h2 id="_15">Источники данных для приёма метрик<a class="headerlink" href="#_15" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Технологии</th>
+<th>Версии</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="../extend-dynatrace/extend-metrics/ingestion-methods/statsd/" title="Ingest metrics into Dynatrace using OneAgent and the ActiveGate StatsD client.">StatsD</a></td>
+<td>Поддерживаются все версии<a href="#fn-technologies-1-def">1</a></td>
+</tr>
+</tbody>
+</table>
+<p>1</p>
+<p>Требует OneAgent EEC. Поддерживается на Windows и Linux, архитектура процессора x64</p>
+<h2 id="synthetic">Приватные локации Synthetic<a class="headerlink" href="#synthetic" title="Permanent link">&para;</a></h2>
+<p>См. <a href="../../observe/digital-experience/synthetic-monitoring/private-synthetic-locations/system-and-hardware-requirements-for-private-synthetic/" title="Supported operating systems, Chromium versions, and hardware requirements for running synthetic monitors from private locations">Требования для приватных локаций Synthetic</a>.</p>
+<h2 id="_16">Уровни поддержки сторонних технологий<a class="headerlink" href="#_16" title="Permanent link">&para;</a></h2>
+<h3 id="_17">Поддерживается<a class="headerlink" href="#_17" title="Permanent link">&para;</a></h3>
+<p>Мы обеспечиваем поддержку любых проблем, вызванных непосредственно Dynatrace. Dynatrace имеет доступ к этой технологии и обычно может воспроизвести распространённые проблемы своими силами, но окружение, возможно, придётся разворачивать по запросу.</p>
+<h3 id="_18">Ограниченная поддержка<a class="headerlink" href="#_18" title="Permanent link">&para;</a></h3>
+<p>Dynatrace обеспечивает поддержку ограниченного набора функциональности для конкретной технологии. В большинстве случаев Dynatrace не имеет доступа к технологии с ограниченной поддержкой. По любым проблемам поддержка Dynatrace сможет помочь, если получится воспроизвести проблему на полностью поддерживаемой технологии, которая лежит в основе ограниченной поддержки.</p>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  К началу
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      © 2026 Dynatrace Docs | Yerkebulan Ardabayev
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/Yerkebulan-Ardabayev" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.indexes", "navigation.prune", "navigation.path", "navigation.tracking", "navigation.top", "search.suggest", "search.highlight", "search.share", "content.code.copy", "content.code.annotate", "content.tabs.link", "content.tooltips", "toc.follow"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u0421\u043a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u043d\u043e \u0432 \u0431\u0443\u0444\u0435\u0440", "clipboard.copy": "\u041a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u0442\u044c \u0432 \u0431\u0443\u0444\u0435\u0440", "search.result.more.one": "\u0415\u0449\u0451 1 \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.more.other": "\u0415\u0449\u0451 # \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.none": "\u0421\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439 \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u043e", "search.result.one": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e 1 \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0435", "search.result.other": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439: #", "search.result.placeholder": "\u041d\u0430\u0447\u043d\u0438\u0442\u0435 \u043f\u0435\u0447\u0430\u0442\u0430\u0442\u044c \u0434\u043b\u044f \u043f\u043e\u0438\u0441\u043a\u0430", "search.result.term.missing": "\u041e\u0442\u0441\u0443\u0442\u0441\u0442\u0432\u0443\u0435\u0442", "select.version": "\u0412\u044b\u0431\u0435\u0440\u0438\u0442\u0435 \u0432\u0435\u0440\u0441\u0438\u044e"}, "version": null}</script>
+    
+    
+  
+      <script src="../../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../../../assets/javascripts/groq-chat.js?sha=17d46ba74"></script>
+      
+    
+  <script>
+    (function() {
+      // --- Keyboard shortcut Ctrl+K / Cmd+K for search ---
+      document.addEventListener('keydown', function(e) {
+        if ((e.ctrlKey || e.metaKey) && e.key === 'k') {
+          e.preventDefault();
+          var searchInput = document.querySelector('.md-search__input');
+          if (searchInput) {
+            searchInput.focus();
+            var searchToggle = document.querySelector('[data-md-toggle="search"]');
+            if (searchToggle && !searchToggle.checked) {
+              searchToggle.checked = true;
+              searchToggle.dispatchEvent(new Event('change'));
+            }
+          }
+        }
+        // --- "/" focuses search like GitHub / Algolia docs ---
+        if (e.key === '/' && !/^(input|textarea|select)$/i.test(e.target.tagName)) {
+          e.preventDefault();
+          var inp = document.querySelector('.md-search__input');
+          if (inp) {
+            inp.focus();
+            var t = document.querySelector('[data-md-toggle="search"]');
+            if (t && !t.checked) { t.checked = true; t.dispatchEvent(new Event('change')); }
+          }
+        }
+      });
+    })();
+  </script>
+
+  </body>
+</html>

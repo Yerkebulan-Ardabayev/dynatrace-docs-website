@@ -1,0 +1,5591 @@
+
+<!doctype html>
+<html lang="ru" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Документация Dynatrace Managed с AI-помощником">
+      
+      
+        <meta name="author" content="Yerkebulan Ardabayev">
+      
+      
+        <link rel="canonical" href="https://yerkebulan-ardabayev.github.io/dynatrace-docs-website/managed-ru/dynatrace-api/configuration-api/automatically-applied-tags-api/models/">
+      
+      
+        <link rel="prev" href="../get-auto-tag/">
+      
+      
+        <link rel="next" href="../post-auto-tag/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>Automatically applied tags API - JSON models - Dynatrace — Документация</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Inter";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../../assets/stylesheets/extra.v11.css?sha=17d46ba74">
+    
+    <script>__md_scope=new URL("../../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  <style>
+    /* DocFlow DT Logo Badge — injected via template override */
+    .md-header__button.md-logo {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .md-header__button.md-logo img,
+    .md-header__button.md-logo svg {
+      display: none !important;
+    }
+    .md-header__button.md-logo::before {
+      content: 'DT';
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 28px;
+      height: 28px;
+      border-radius: 6px;
+      background: linear-gradient(135deg, #00d4aa 0%, #7c3aed 100%);
+      color: white;
+      font-size: 11px;
+      font-weight: 700;
+      font-family: 'Inter', sans-serif;
+      letter-spacing: -0.02em;
+      flex-shrink: 0;
+    }
+
+    /* Search Ctrl+K badge — inside input field */
+    .md-search__form {
+      position: relative;
+    }
+    .md-search__form::after {
+      content: 'Ctrl+K';
+      display: none;
+      align-items: center;
+      padding: 0.15rem 0.4rem;
+      border-radius: 4px;
+      border: 1px solid var(--docflow-border);
+      background: var(--md-default-bg-color);
+      font-size: 10px;
+      font-family: 'JetBrains Mono', monospace;
+      color: var(--md-default-fg-color--lighter);
+      white-space: nowrap;
+      pointer-events: none;
+      position: absolute;
+      right: 0.5rem;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+    @media (min-width: 60em) {
+      .md-search__form::after {
+        display: flex;
+      }
+    }
+  </style>
+
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="custom">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#automatically-applied-tags-api-json-models" class="md-skip">
+          Перейти к содержанию
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+  
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Верхний колонтитул">
+    <a href="../../../../.." title="Dynatrace — Документация" class="md-header__button md-logo" aria-label="Dynatrace — Документация" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M11 15H6l7-14v8h5l-7 14z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Dynatrace — Документация
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Automatically applied tags API - JSON models
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Переключить на светлую тему"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Переключить на светлую тему" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Переключить на тёмную тему"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Переключить на тёмную тему" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Поиск" placeholder="Поиск" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Поиск">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Поделиться" aria-label="Поделиться" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Очистить" aria-label="Очистить" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Инициализация поиска
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/Yerkebulan-Ardabayev/dynatrace-docs-website" title="Перейти к репозиторию" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    dynatrace-docs-website
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Навигация" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../../.." title="Dynatrace — Документация" class="md-nav__button md-logo" aria-label="Dynatrace — Документация" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M11 15H6l7-14v8h5l-7 14z"/></svg>
+
+    </a>
+    Dynatrace — Документация
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/Yerkebulan-Ardabayev/dynatrace-docs-website" title="Перейти к репозиторию" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    dynatrace-docs-website
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Главная
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../../../ru/getting-started/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Начало работы
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../../installation/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Кластер Managed
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../../ingest-from/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Источники данных
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    
+  
+  
+  
+    <a href="../../../../observe/application-observability/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Наблюдаемость
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../../dynatrace-intelligence/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Davis AI
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    
+  
+  
+  
+    <a href="../../../../analyze-explore-automate/dashboards-classic/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Анализ
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../../deliver/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Deliver
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    
+  
+  
+  
+    <a href="../../../../secure/application-security/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Безопасность приложений
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    
+  
+  
+  
+    <a href="../../../../manage/account-management/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Управление
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    
+  
+  
+  
+    <a href="../../../../platform/oneagent/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Платформа
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_12" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_12" id="__nav_12_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_12_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_12">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    API
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обзор
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../account-management-api/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Account Management API
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../basics/access-limit/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Основы
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../cluster-api/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cluster API
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_12_5" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_12_5" id="__nav_12_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Configuration API
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_12_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_12_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Configuration API
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обзор
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../alerting-profiles-api/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Alerting profiles API
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../anomaly-detection-api/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Anomaly detection API
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_12_5_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_12_5_4" id="__nav_12_5_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Automatically applied tags API
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_12_5_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_12_5_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Automatically applied tags API
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обзор
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../del-auto-tag/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Automatically applied tags API - DELETE an auto-tag
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../get-all/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Automatically applied tags API - GET all auto-tags
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../get-auto-tag/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Automatically applied tags API - GET an auto-tag
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Automatically applied tags API - JSON models
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../post-auto-tag/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Automatically applied tags API - POST an auto-tag
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../put-auto-tag/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Automatically applied tags API - PUT an auto-tag
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../aws-credentials-api/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AWS credentials API
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../aws-privatelink/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AWS PrivateLink API
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../aws-supported-services/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AWS supported services API
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../azure-credentials-api/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure credentials API
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../azure-supported-services/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure supported services API
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../calculated-metrics/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Calculated metrics API
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../conditional-naming/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Conditional naming API
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../credential-vault/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Credential vault API
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../dashboards-api/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dashboards API
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../data-privacy-api/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Data privacy API
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../extensions-api/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Extensions API
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../frequent-issue-detection-api/get-configuration/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    frequent-issue-detection-api
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../k8s-credentials-api-api/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Kubernetes credentials API
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../maintenance-windows-api/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Maintenance windows API
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../management-zones-api/get-all/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    management-zones-api
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../mobile-symbolication-api/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Mobile Symbolication API
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../notifications-api/post-a-notification/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    notifications-api
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../oneagent-configuration/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OneAgent configuration API
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../plugins-api/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Plugins API
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../remote-environments/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Remote environments API
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../reports-api/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reports API
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    
+  
+  
+  
+    <a href="../../rum/allowed-beacon-cors/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    rum
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../service-api/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Services configuration API
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../environment-api/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Environment API
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../mission-control-api/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Mission Control API
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../../whats-new/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Что нового
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../../offline-doc/how-do-i-enable-synthetic-monitors/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Офлайн-документация
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../../../ru/training/day1-introduction/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Обучение
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../ai/groq/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI Помощник
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Содержание">
+  
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+                
+
+
+
+  
+
+
+  <nav class="md-path" aria-label="Навигация" >
+    <ol class="md-path__list">
+      
+        
+  
+  
+    <li class="md-path__item">
+      <a href="../../../../.." class="md-path__link">
+        
+  <span class="md-ellipsis">
+    Главная
+  </span>
+
+      </a>
+    </li>
+  
+
+      
+      
+        
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="../../../" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    API
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="../../" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    Configuration API
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="../" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    Automatically applied tags API
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ol>
+  </nav>
+
+              
+              <article class="md-content__inner md-typeset">
+                
+  
+                  
+
+
+
+<h1 id="automatically-applied-tags-api-json-models">Automatically applied tags API - JSON models<a class="headerlink" href="#automatically-applied-tags-api-json-models" title="Permanent link">&para;</a></h1>
+<h1 id="automatically-applied-tags-api-json-models_1">Automatically applied tags API - JSON models<a class="headerlink" href="#automatically-applied-tags-api-json-models_1" title="Permanent link">&para;</a></h1>
+<ul>
+<li>Справочник</li>
+<li>Опубликовано 13 авг. 2019 г.</li>
+</ul>
+<p>Устарело</p>
+<p>Этот API считается устаревшим. Вместо него нужно использовать <a href="../../../environment-api/settings/" title="Find out what the Dynatrace Settings API offers.">Settings API</a> со схемой <a href="../../../environment-api/settings/schemas/builtin-tags-auto-tagging/" title="View builtin:tags.auto-tagging settings schema table of your monitoring environment via the Dynatrace API.">Automatically applied tags</a> (<code>builtin:tags.auto-tagging</code>).</p>
+<p>Некоторые JSON модели API <strong>Automatically applied tags</strong> различаются в зависимости от <strong>type</strong> модели. JSON модели для каждого варианта перечислены ниже.</p>
+<h2 id="conditionkey">Варианты объекта <code>ConditionKey</code><a class="headerlink" href="#conditionkey" title="Permanent link">&para;</a></h2>
+<p>Объект <code>ConditionKey</code>, это база для всех условий. Фактический набор полей зависит от <strong>type</strong> условия.</p>
+<h3 id="host_custom_metadata_key">HOST_CUSTOM_METADATA_KEY<a class="headerlink" href="#host_custom_metadata_key" title="Permanent link">&para;</a></h3>
+<p>CustomHostMetadataConditionKey</p>
+<p>Параметры</p>
+<p>JSON модель</p>
+<h4 id="customhostmetadataconditionkey">Объект <code>CustomHostMetadataConditionKey</code><a class="headerlink" href="#customhostmetadataconditionkey" title="Permanent link">&para;</a></h4>
+<p>Ключ для динамических атрибутов типа <code>HOST_CUSTOM_METADATA_KEY</code>.</p>
+<table>
+<thead>
+<tr>
+<th>Элемент</th>
+<th>Тип</th>
+<th>Описание</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>dynamicKey</td>
+<td><a href="#openapi-definition-CustomHostMetadataKey">CustomHostMetadataKey</a></td>
+<td>Ключ атрибута, для которого нужны динамические ключи. В остальных случаях неприменимо, так как в качестве ключа выступает сам атрибут.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="customhostmetadatakey">Объект <code>CustomHostMetadataKey</code><a class="headerlink" href="#customhostmetadatakey" title="Permanent link">&para;</a></h4>
+<p>Ключ атрибута, для которого нужны динамические ключи.</p>
+<p>В остальных случаях неприменимо, так как в качестве ключа выступает сам атрибут.</p>
+<table>
+<thead>
+<tr>
+<th>Элемент</th>
+<th>Тип</th>
+<th>Описание</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>key</td>
+<td>string</td>
+<td>Фактический ключ пользовательских метаданных.</td>
+</tr>
+<tr>
+<td>source</td>
+<td>string</td>
+<td>Источник пользовательских метаданных. Элемент может принимать следующие значения * <code>ENVIRONMENT</code> * <code>GOOGLE_COMPUTE_ENGINE</code> * <code>PLUGIN</code></td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>{
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>&quot;attribute&quot;: &quot;HOST_CUSTOM_METADATA&quot;,
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>&quot;type&quot;: &quot;HOST_CUSTOM_METADATA_KEY&quot;,
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>
+<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>&quot;dynamicKey&quot;: {
+<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>
+<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>
+<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a>
+<a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a>&quot;source&quot;: &quot;ENVIRONMENT&quot;,
+<a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a>
+<a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a>
+<a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a>
+<a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a>&quot;key&quot;: &quot;myKey&quot;
+<a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a>
+<a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a>
+<a id="__codelineno-0-24" name="__codelineno-0-24" href="#__codelineno-0-24"></a>
+<a id="__codelineno-0-25" name="__codelineno-0-25" href="#__codelineno-0-25"></a>}
+<a id="__codelineno-0-26" name="__codelineno-0-26" href="#__codelineno-0-26"></a>
+<a id="__codelineno-0-27" name="__codelineno-0-27" href="#__codelineno-0-27"></a>
+<a id="__codelineno-0-28" name="__codelineno-0-28" href="#__codelineno-0-28"></a>
+<a id="__codelineno-0-29" name="__codelineno-0-29" href="#__codelineno-0-29"></a>}
+</code></pre></div>
+<h3 id="process_custom_metadata_key">PROCESS_CUSTOM_METADATA_KEY<a class="headerlink" href="#process_custom_metadata_key" title="Permanent link">&para;</a></h3>
+<p>CustomProcessMetadataConditionKey</p>
+<p>Параметры</p>
+<p>JSON модель</p>
+<h4 id="customprocessmetadataconditionkey">Объект <code>CustomProcessMetadataConditionKey</code><a class="headerlink" href="#customprocessmetadataconditionkey" title="Permanent link">&para;</a></h4>
+<p>Ключ для динамических атрибутов типа <code>PROCESS_CUSTOM_METADATA_KEY</code>.</p>
+<table>
+<thead>
+<tr>
+<th>Элемент</th>
+<th>Тип</th>
+<th>Описание</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>dynamicKey</td>
+<td><a href="#openapi-definition-CustomProcessMetadataKey">CustomProcessMetadataKey</a></td>
+<td>Ключ атрибута, для которого нужны динамические ключи. В остальных случаях неприменимо, так как в качестве ключа выступает сам атрибут.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="customprocessmetadatakey">Объект <code>CustomProcessMetadataKey</code><a class="headerlink" href="#customprocessmetadatakey" title="Permanent link">&para;</a></h4>
+<p>Ключ атрибута, для которого нужны динамические ключи.</p>
+<p>В остальных случаях неприменимо, так как в качестве ключа выступает сам атрибут.</p>
+<table>
+<thead>
+<tr>
+<th>Элемент</th>
+<th>Тип</th>
+<th>Описание</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>key</td>
+<td>string</td>
+<td>Фактический ключ пользовательских метаданных.</td>
+</tr>
+<tr>
+<td>source</td>
+<td>string</td>
+<td>Источник пользовательских метаданных. Элемент может принимать следующие значения * <code>AGENT</code> * <code>CLOUD_FOUNDRY</code> * <code>ENVIRONMENT</code> * <code>GOOGLE_CLOUD</code> * <code>KUBERNETES</code> * <code>PLUGIN</code></td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>{
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>&quot;attribute&quot;: &quot;PROCESS_GROUP_DETECTED_NAME&quot;,
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>
+<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>&quot;type&quot;: &quot;PROCESS_CUSTOM_METADATA_KEY&quot;,
+<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>
+<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>
+<a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a>
+<a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a>&quot;dynamicKey&quot;: {
+<a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a>
+<a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a>
+<a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a>
+<a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a>&quot;source&quot;: &quot;KUBERNETES&quot;,
+<a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a>
+<a id="__codelineno-1-19" name="__codelineno-1-19" href="#__codelineno-1-19"></a>
+<a id="__codelineno-1-20" name="__codelineno-1-20" href="#__codelineno-1-20"></a>
+<a id="__codelineno-1-21" name="__codelineno-1-21" href="#__codelineno-1-21"></a>&quot;key&quot;: &quot;myKey&quot;
+<a id="__codelineno-1-22" name="__codelineno-1-22" href="#__codelineno-1-22"></a>
+<a id="__codelineno-1-23" name="__codelineno-1-23" href="#__codelineno-1-23"></a>
+<a id="__codelineno-1-24" name="__codelineno-1-24" href="#__codelineno-1-24"></a>
+<a id="__codelineno-1-25" name="__codelineno-1-25" href="#__codelineno-1-25"></a>}
+<a id="__codelineno-1-26" name="__codelineno-1-26" href="#__codelineno-1-26"></a>
+<a id="__codelineno-1-27" name="__codelineno-1-27" href="#__codelineno-1-27"></a>
+<a id="__codelineno-1-28" name="__codelineno-1-28" href="#__codelineno-1-28"></a>
+<a id="__codelineno-1-29" name="__codelineno-1-29" href="#__codelineno-1-29"></a>}
+</code></pre></div>
+<h3 id="process_predefined_metadata_key">PROCESS_PREDEFINED_METADATA_KEY<a class="headerlink" href="#process_predefined_metadata_key" title="Permanent link">&para;</a></h3>
+<p>ProcessMetadataConditionKey</p>
+<p>Параметры</p>
+<p>JSON модель</p>
+<h4 id="processmetadataconditionkey">Объект <code>ProcessMetadataConditionKey</code><a class="headerlink" href="#processmetadataconditionkey" title="Permanent link">&para;</a></h4>
+<p>Ключ для динамических атрибутов типа <code>PROCESS_PREDEFINED_METADATA_KEY</code>.</p>
+<table>
+<thead>
+<tr>
+<th>Элемент</th>
+<th>Тип</th>
+<th>Описание</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>dynamicKey</td>
+<td>string</td>
+<td>Ключ атрибута, для которого нужны динамические ключи. В остальных случаях неприменимо, так как в качестве ключа выступает сам атрибут. Элемент может принимать следующие значения * <code>AEM_ENV_TYPE</code> * <code>AEM_PROGRAM</code> * <code>AEM_SERVICE</code> * <code>AEM_TIER</code> * <code>AMAZON_ECR_IMAGE_ACCOUNT_ID</code> * <code>AMAZON_ECR_IMAGE_REGION</code> * <code>AMAZON_LAMBDA_FUNCTION_NAME</code> * <code>AMAZON_REGION</code> * <code>APACHE_CONFIG_PATH</code> * <code>APACHE_SPARK_MASTER_IP_ADDRESS</code> * <code>ASP_DOT_NET_CORE_APPLICATION_PATH</code> * <code>AWS_ECS_CLUSTER</code> * <code>AWS_ECS_CONTAINERNAME</code> * <code>AWS_ECS_CONTAINER_ARN</code> * <code>AWS_ECS_DOCKER_ID</code> * <code>AWS_ECS_DOCKER_NAME</code> * <code>AWS_ECS_FAMILY</code> * <code>AWS_ECS_REVISION</code> * <code>AWS_ECS_TASK_ARN</code> * <code>AZURE_APP_SERVICE_WEBSITE_INSTANCE_ID</code> * <code>AZURE_APP_SERVICE_WEBSITE_OWNER_NAME</code> * <code>AZURE_APP_SERVICE_WEBSITE_SITE_NAME</code> * <code>AZURE_CONTAINER_APP_ENV_DNS_SUFFIX</code> * <code>AZURE_CONTAINER_APP_HOSTNAME</code> * <code>AZURE_CONTAINER_APP_NAME</code> * <code>AZURE_CONTAINER_APP_REPLICA_NAME</code> * <code>AZURE_SERVICE_FABRIC_APPLICATIONID</code> * <code>AZURE_SERVICE_FABRIC_APPLICATIONNAME</code> * <code>AZURE_SERVICE_FABRIC_CODEPACKAGENAME</code> * <code>AZURE_SERVICE_FABRIC_HOSTEDSERVICENAME</code> * <code>AZURE_SERVICE_FABRIC_INSTANCEID</code> * <code>AZURE_SERVICE_FABRIC_REPLICAID</code> * <code>AZURE_SERVICE_FABRIC_SERVICEPACKAGENAME</code> * <code>AZURE_SPRING_APPLICATION_NAME</code> * <code>AZURE_SPRING_CLOUD_CONFIG_URI</code> * <code>CASSANDRA_CLUSTER_NAME</code> * <code>CATALINA_BASE</code> * <code>CATALINA_HOME</code> * <code>CLOUD_FOUNDRY_APP_ID</code> * <code>CLOUD_FOUNDRY_APP_NAME</code> * <code>CLOUD_FOUNDRY_INSTANCE_INDEX</code> * <code>CLOUD_FOUNDRY_SPACE_ID</code> * <code>CLOUD_FOUNDRY_SPACE_NAME</code> * <code>COLDFUSION_JVM_CONFIG_FILE</code> * <code>COLDFUSION_SERVICE_NAME</code> * <code>COMMAND_LINE_ARGS</code> * <code>CONTAINER_ID</code> * <code>CONTAINER_IMAGE_NAME</code> * <code>CONTAINER_IMAGE_VERSION</code> * <code>CONTAINER_NAME</code> * <code>DATASOURCE_MONITORING_CONFIG_ID</code> * <code>DECLARATIVE_CONFIG_RULE_ID</code> * <code>DECLARATIVE_ID</code> * <code>DOTNET_COMMAND</code> * <code>DOTNET_COMMAND_PATH</code> * <code>DYNATRACE_CLUSTER_ID</code> * <code>DYNATRACE_NODE_ID</code> * <code>ELASTICSEARCH_CLUSTER_NAME</code> * <code>ELASTICSEARCH_NODE_NAME</code> * <code>EQUINOX_CONFIG_PATH</code> * <code>EXE_NAME</code> * <code>EXE_PATH</code> * <code>GAE_VERSION</code> * <code>GLASS_FISH_DOMAIN_NAME</code> * <code>GLASS_FISH_INSTANCE_NAME</code> * <code>GOOGLE_APP_ENGINE_INSTANCE</code> * <code>GOOGLE_APP_ENGINE_SERVICE</code> * <code>GOOGLE_CLOUD_INSTANCE_ID</code> * <code>GOOGLE_CLOUD_INSTANCE_REGION</code> * <code>GOOGLE_CLOUD_PROJECT</code> * <code>GOOGLE_CLOUD_RUN_EXECUTION</code> * <code>GOOGLE_CLOUD_RUN_JOB</code> * <code>GOOGLE_CLOUD_RUN_REVISION</code> * <code>GOOGLE_CLOUD_RUN_SERVICE</code> * <code>HEROKU_APP_DEFAULT_DOMAIN_NAME</code> * <code>HEROKU_DYNO</code> * <code>HEROKU_RELEASE_VERSION</code> * <code>HYBRIS_BIN_DIRECTORY</code> * <code>HYBRIS_CONFIG_DIRECTORY</code> * <code>HYBRIS_DATA_DIRECTORY</code> * <code>IBM_APPLID</code> * <code>IBM_CICS_IMS_APPLID</code> * <code>IBM_CICS_IMS_JOBNAME</code> * <code>IBM_CICS_REGION</code> * <code>IBM_CTG_NAME</code> * <code>IBM_IMS_CONNECT_REGION</code> * <code>IBM_IMS_CONTROL_REGION</code> * <code>IBM_IMS_MESSAGE_PROCESSING_REGION</code> * <code>IBM_IMS_SOAP_GW_NAME</code> * <code>IBM_INTEGRATION_NODE_NAME</code> * <code>IBM_INTEGRATION_SERVER_NAME</code> * <code>IBM_JOBNAME</code> * <code>IIS_APP_POOL</code> * <code>IIS_ROLE_NAME</code> * <code>JAVA_JAR_FILE</code> * <code>JAVA_JAR_PATH</code> * <code>JAVA_MAIN_CLASS</code> * <code>JAVA_MAIN_MODULE</code> * <code>JBOSS_HOME</code> * <code>JBOSS_MODE</code> * <code>JBOSS_SERVER_NAME</code> * <code>KUBERNETES_BASE_POD_NAME</code> * <code>KUBERNETES_CLUSTER_ID</code> * <code>KUBERNETES_CONTAINER_NAME</code> * <code>KUBERNETES_FULL_POD_NAME</code> * <code>KUBERNETES_NAMESPACE</code> * <code>KUBERNETES_POD_UID</code> * <code>KUBERNETES_RULE_RESULT</code> * <code>MSSQL_INSTANCE_NAME</code> * <code>NODE_JS_APP_BASE_DIRECTORY</code> * <code>NODE_JS_APP_NAME</code> * <code>NODE_JS_SCRIPT_NAME</code> * <code>ORACLE_SID</code> * <code>OSAGENT_GROUPID_NAME</code> * <code>OSAGENT_INSTANCEID_NAME</code> * <code>PG_ID_CALC_INPUT_KEY_LINKAGE</code> * <code>PHP_SCRIPT_PATH</code> * <code>PHP_WORKING_DIRECTORY</code> * <code>PYTHON_MODULE</code> * <code>PYTHON_SCRIPT</code> * <code>PYTHON_SCRIPT_PATH</code> * <code>RKE2_TYPE</code> * <code>RUBY_APP_ROOT_PATH</code> * <code>RUBY_SCRIPT_PATH</code> * <code>RULE_RESULT</code> * <code>SOFTWAREAG_INSTALL_ROOT</code> * <code>SOFTWAREAG_PRODUCTPROPNAME</code> * <code>SPRINGBOOT_APP_NAME</code> * <code>SPRINGBOOT_PROFILE_NAME</code> * <code>SPRINGBOOT_STARTUP_CLASS</code> * <code>TIBCO_BUSINESSWORKS_CE_APP_NAME</code> * <code>TIBCO_BUSINESSWORKS_CE_VERSION</code> * <code>TIBCO_BUSINESS_WORKS_APP_NODE_NAME</code> * <code>TIBCO_BUSINESS_WORKS_APP_SPACE_NAME</code> * <code>TIBCO_BUSINESS_WORKS_DOMAIN_NAME</code> * <code>TIBCO_BUSINESS_WORKS_ENGINE_PROPERTY_FILE</code> * <code>TIBCO_BUSINESS_WORKS_ENGINE_PROPERTY_FILE_PATH</code> * <code>TIBCO_BUSINESS_WORKS_HOME</code> * <code>VARNISH_INSTANCE_NAME</code> * <code>WEBSPHERE_LIBERTY_SERVER_NAME</code> * <code>WEB_LOGIC_CLUSTER_NAME</code> * <code>WEB_LOGIC_DOMAIN_NAME</code> * <code>WEB_LOGIC_HOME</code> * <code>WEB_LOGIC_NAME</code> * <code>WEB_SPHERE_CELL_NAME</code> * <code>WEB_SPHERE_CLUSTER_NAME</code> * <code>WEB_SPHERE_NODE_NAME</code> * <code>WEB_SPHERE_SERVER_NAME</code> * <code>Z_CM_VERSION</code></td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>{
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>&quot;attribute&quot;: &quot;PROCESS_GROUP_PREDEFINED_METADATA&quot;,
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>
+<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>&quot;type&quot;: &quot;PROCESS_PREDEFINED_METADATA_KEY&quot;,
+<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>
+<a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a>
+<a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a>
+<a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a>&quot;dynamicKey&quot;: &quot;JAVA_JAR_FILE&quot;
+<a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a>
+<a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a>
+<a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a>
+<a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a>}
+</code></pre></div>
+<h3 id="string">STRING<a class="headerlink" href="#string" title="Permanent link">&para;</a></h3>
+<p>StringConditionKey</p>
+<p>Параметры</p>
+<p>JSON модель</p>
+<h4 id="stringconditionkey">Объект <code>StringConditionKey</code><a class="headerlink" href="#stringconditionkey" title="Permanent link">&para;</a></h4>
+<p>Ключ для динамических атрибутов типа <code>STRING</code>.</p>
+<table>
+<thead>
+<tr>
+<th>Элемент</th>
+<th>Тип</th>
+<th>Описание</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>dynamicKey</td>
+<td>string</td>
+<td>Ключ атрибута, для которого нужны динамические ключи. В остальных случаях неприменимо, так как в качестве ключа выступает сам атрибут.</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>{
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>&quot;attribute&quot;: &quot;HOST_GROUP_NAME&quot;,
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>
+<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>
+<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>&quot;type&quot;: &quot;STRING&quot;,
+<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a>
+<a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a>
+<a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a>
+<a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a>&quot;dynamicKey&quot;: &quot;myKey&quot;
+<a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a>
+<a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a>
+<a id="__codelineno-3-16" name="__codelineno-3-16" href="#__codelineno-3-16"></a>
+<a id="__codelineno-3-17" name="__codelineno-3-17" href="#__codelineno-3-17"></a>}
+</code></pre></div>
+<h2 id="comparisonbasic">Варианты объекта <code>ComparisonBasic</code><a class="headerlink" href="#comparisonbasic" title="Permanent link">&para;</a></h2>
+<p>Объект <code>ComparisonBasic</code>, это база для всех операций сравнения. Фактический набор полей зависит от <strong>type</strong> сравнения.</p>
+<h3 id="application_type">APPLICATION_TYPE<a class="headerlink" href="#application_type" title="Permanent link">&para;</a></h3>
+<p>ApplicationTypeComparison</p>
+<p>Параметры</p>
+<p>JSON модель</p>
+<h4 id="applicationtypecomparison">Объект <code>ApplicationTypeComparison</code><a class="headerlink" href="#applicationtypecomparison" title="Permanent link">&para;</a></h4>
+<p>Сравнение для атрибутов <code>APPLICATION_TYPE</code>.</p>
+<table>
+<thead>
+<tr>
+<th>Элемент</th>
+<th>Тип</th>
+<th>Описание</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>operator</td>
+<td>string</td>
+<td>Оператор сравнения. Его можно инвертировать, задав <strong>negate</strong> равным <code>true</code>. Возможные значения зависят от <strong>type</strong> сравнения. Список фактических моделей приведён в описании поля <strong>type</strong>, там же нужно проверить описание нужной модели. Элемент может принимать следующие значения * <code>EQUALS</code> * <code>EXISTS</code></td>
+</tr>
+<tr>
+<td>value</td>
+<td>string</td>
+<td>Значение для сравнения. Элемент может принимать следующие значения * <code>AGENTLESS_MONITORING</code> * <code>AUTO_INJECTED</code> * <code>DEFAULT</code> * <code>SAAS_VENDOR</code></td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>{
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>&quot;operator&quot;: &quot;EQUALS&quot;,
+<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>
+<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>
+<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a>
+<a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a>&quot;value&quot;: &quot;SAAS_VENDOR&quot;,
+<a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a>
+<a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a>
+<a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a>
+<a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a>&quot;negate&quot;: false,
+<a id="__codelineno-4-14" name="__codelineno-4-14" href="#__codelineno-4-14"></a>
+<a id="__codelineno-4-15" name="__codelineno-4-15" href="#__codelineno-4-15"></a>
+<a id="__codelineno-4-16" name="__codelineno-4-16" href="#__codelineno-4-16"></a>
+<a id="__codelineno-4-17" name="__codelineno-4-17" href="#__codelineno-4-17"></a>&quot;type&quot;: &quot;APPLICATION_TYPE&quot;
+<a id="__codelineno-4-18" name="__codelineno-4-18" href="#__codelineno-4-18"></a>
+<a id="__codelineno-4-19" name="__codelineno-4-19" href="#__codelineno-4-19"></a>
+<a id="__codelineno-4-20" name="__codelineno-4-20" href="#__codelineno-4-20"></a>
+<a id="__codelineno-4-21" name="__codelineno-4-21" href="#__codelineno-4-21"></a>}
+</code></pre></div>
+<h3 id="azure_compute_mode">AZURE_COMPUTE_MODE<a class="headerlink" href="#azure_compute_mode" title="Permanent link">&para;</a></h3>
+<p>AzureComputeModeComparison</p>
+<p>Параметры</p>
+<p>JSON model</p>
+<h4 id="azurecomputemodecomparison">Объект <code>AzureComputeModeComparison</code><a class="headerlink" href="#azurecomputemodecomparison" title="Permanent link">&para;</a></h4>
+<p>Сравнение для атрибутов <code>AZURE_COMPUTE_MODE</code>.</p>
+<table>
+<thead>
+<tr>
+<th>Элемент</th>
+<th>Тип</th>
+<th>Описание</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>operator</td>
+<td>string</td>
+<td>Оператор сравнения. Можно инвертировать его, установив <strong>negate</strong> в <code>true</code>.  Возможные значения зависят от <strong>type</strong> сравнения. Список актуальных моделей приведён в описании поля <strong>type</strong>, там же есть описание нужной модели. Элемент может принимать следующие значения * <code>EQUALS</code> * <code>EXISTS</code></td>
+</tr>
+<tr>
+<td>value</td>
+<td>string</td>
+<td>Значение для сравнения. Элемент может принимать следующие значения * <code>DEDICATED</code> * <code>SHARED</code></td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>{
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>&quot;operator&quot;: &quot;EQUALS&quot;,
+<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>
+<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a>
+<a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a>
+<a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a>&quot;value&quot;: &quot;DEDICATED&quot;,
+<a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a>
+<a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a>
+<a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a>
+<a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a>&quot;negate&quot;: false,
+<a id="__codelineno-5-14" name="__codelineno-5-14" href="#__codelineno-5-14"></a>
+<a id="__codelineno-5-15" name="__codelineno-5-15" href="#__codelineno-5-15"></a>
+<a id="__codelineno-5-16" name="__codelineno-5-16" href="#__codelineno-5-16"></a>
+<a id="__codelineno-5-17" name="__codelineno-5-17" href="#__codelineno-5-17"></a>&quot;type&quot;: &quot;AZURE_COMPUTE_MODE&quot;
+<a id="__codelineno-5-18" name="__codelineno-5-18" href="#__codelineno-5-18"></a>
+<a id="__codelineno-5-19" name="__codelineno-5-19" href="#__codelineno-5-19"></a>
+<a id="__codelineno-5-20" name="__codelineno-5-20" href="#__codelineno-5-20"></a>
+<a id="__codelineno-5-21" name="__codelineno-5-21" href="#__codelineno-5-21"></a>}
+</code></pre></div>
+<h3 id="azure_sku">AZURE_SKU<a class="headerlink" href="#azure_sku" title="Permanent link">&para;</a></h3>
+<p>AzureSkuComparision</p>
+<p>Параметры</p>
+<p>JSON model</p>
+<h4 id="azureskucomparision">Объект <code>AzureSkuComparision</code><a class="headerlink" href="#azureskucomparision" title="Permanent link">&para;</a></h4>
+<p>Сравнение для атрибутов <code>AZURE_SKU</code>.</p>
+<table>
+<thead>
+<tr>
+<th>Элемент</th>
+<th>Тип</th>
+<th>Описание</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>operator</td>
+<td>string</td>
+<td>Оператор сравнения. Можно инвертировать его, установив <strong>negate</strong> в <code>true</code>.  Возможные значения зависят от <strong>type</strong> сравнения. Список актуальных моделей приведён в описании поля <strong>type</strong>, там же есть описание нужной модели. Элемент может принимать следующие значения * <code>EQUALS</code> * <code>EXISTS</code></td>
+</tr>
+<tr>
+<td>value</td>
+<td>string</td>
+<td>Значение для сравнения. Элемент может принимать следующие значения * <code>BASIC</code> * <code>DYNAMIC</code> * <code>FREE</code> * <code>PREMIUM</code> * <code>SHARED</code> * <code>STANDARD</code></td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>{
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>
+<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>&quot;operator&quot;: &quot;EQUALS&quot;,
+<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a>
+<a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a>
+<a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a>
+<a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a>&quot;value&quot;: &quot;PREMIUM&quot;,
+<a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a>
+<a id="__codelineno-6-11" name="__codelineno-6-11" href="#__codelineno-6-11"></a>
+<a id="__codelineno-6-12" name="__codelineno-6-12" href="#__codelineno-6-12"></a>
+<a id="__codelineno-6-13" name="__codelineno-6-13" href="#__codelineno-6-13"></a>&quot;negate&quot;: false,
+<a id="__codelineno-6-14" name="__codelineno-6-14" href="#__codelineno-6-14"></a>
+<a id="__codelineno-6-15" name="__codelineno-6-15" href="#__codelineno-6-15"></a>
+<a id="__codelineno-6-16" name="__codelineno-6-16" href="#__codelineno-6-16"></a>
+<a id="__codelineno-6-17" name="__codelineno-6-17" href="#__codelineno-6-17"></a>&quot;type&quot;: &quot;AZURE_SKU&quot;
+<a id="__codelineno-6-18" name="__codelineno-6-18" href="#__codelineno-6-18"></a>
+<a id="__codelineno-6-19" name="__codelineno-6-19" href="#__codelineno-6-19"></a>
+<a id="__codelineno-6-20" name="__codelineno-6-20" href="#__codelineno-6-20"></a>
+<a id="__codelineno-6-21" name="__codelineno-6-21" href="#__codelineno-6-21"></a>}
+</code></pre></div>
+<h3 id="bitness">BITNESS<a class="headerlink" href="#bitness" title="Permanent link">&para;</a></h3>
+<p>BitnessComparison</p>
+<p>Параметры</p>
+<p>JSON model</p>
+<h4 id="bitnesscomparision">Объект <code>BitnessComparision</code><a class="headerlink" href="#bitnesscomparision" title="Permanent link">&para;</a></h4>
+<p>Сравнение для атрибутов <code>BITNESS</code>.</p>
+<table>
+<thead>
+<tr>
+<th>Элемент</th>
+<th>Тип</th>
+<th>Описание</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>operator</td>
+<td>string</td>
+<td>Оператор сравнения. Можно инвертировать его, установив <strong>negate</strong> в <code>true</code>.  Возможные значения зависят от <strong>type</strong> сравнения. Список актуальных моделей приведён в описании поля <strong>type</strong>, там же есть описание нужной модели. Элемент может принимать следующие значения * <code>EQUALS</code> * <code>EXISTS</code></td>
+</tr>
+<tr>
+<td>value</td>
+<td>string</td>
+<td>Значение для сравнения. Элемент может принимать следующие значения * <code>32</code> * <code>64</code></td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>{
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>
+<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>
+<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>&quot;operator&quot;: &quot;EQUALS&quot;,
+<a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a>
+<a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a>
+<a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a>
+<a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a>&quot;value&quot;: &quot;64&quot;,
+<a id="__codelineno-7-10" name="__codelineno-7-10" href="#__codelineno-7-10"></a>
+<a id="__codelineno-7-11" name="__codelineno-7-11" href="#__codelineno-7-11"></a>
+<a id="__codelineno-7-12" name="__codelineno-7-12" href="#__codelineno-7-12"></a>
+<a id="__codelineno-7-13" name="__codelineno-7-13" href="#__codelineno-7-13"></a>&quot;negate&quot;: false,
+<a id="__codelineno-7-14" name="__codelineno-7-14" href="#__codelineno-7-14"></a>
+<a id="__codelineno-7-15" name="__codelineno-7-15" href="#__codelineno-7-15"></a>
+<a id="__codelineno-7-16" name="__codelineno-7-16" href="#__codelineno-7-16"></a>
+<a id="__codelineno-7-17" name="__codelineno-7-17" href="#__codelineno-7-17"></a>&quot;type&quot;: &quot;BITNESS&quot;
+<a id="__codelineno-7-18" name="__codelineno-7-18" href="#__codelineno-7-18"></a>
+<a id="__codelineno-7-19" name="__codelineno-7-19" href="#__codelineno-7-19"></a>
+<a id="__codelineno-7-20" name="__codelineno-7-20" href="#__codelineno-7-20"></a>
+<a id="__codelineno-7-21" name="__codelineno-7-21" href="#__codelineno-7-21"></a>}
+</code></pre></div>
+<h3 id="cloud_type">CLOUD_TYPE<a class="headerlink" href="#cloud_type" title="Permanent link">&para;</a></h3>
+<p>CloudTypeComparison</p>
+<p>Параметры</p>
+<p>JSON model</p>
+<h4 id="cloudtypecomparison">Объект <code>CloudTypeComparison</code><a class="headerlink" href="#cloudtypecomparison" title="Permanent link">&para;</a></h4>
+<p>Сравнение для атрибутов <code>CLOUD_TYPE</code>.</p>
+<table>
+<thead>
+<tr>
+<th>Элемент</th>
+<th>Тип</th>
+<th>Описание</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>operator</td>
+<td>string</td>
+<td>Оператор сравнения. Можно инвертировать его, установив <strong>negate</strong> в <code>true</code>.  Возможные значения зависят от <strong>type</strong> сравнения. Список актуальных моделей приведён в описании поля <strong>type</strong>, там же есть описание нужной модели. Элемент может принимать следующие значения * <code>EQUALS</code> * <code>EXISTS</code></td>
+</tr>
+<tr>
+<td>value</td>
+<td>string</td>
+<td>Значение для сравнения. Элемент может принимать следующие значения * <code>AZURE</code> * <code>EC2</code> * <code>GOOGLE_CLOUD_PLATFORM</code> * <code>OPENSTACK</code> * <code>ORACLE</code> * <code>UNRECOGNIZED</code></td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>{
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>
+<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>
+<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a>
+<a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a>&quot;operator&quot;: &quot;EQUALS&quot;,
+<a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a>
+<a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a>
+<a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a>
+<a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a>&quot;value&quot;: &quot;ORACLE&quot;,
+<a id="__codelineno-8-10" name="__codelineno-8-10" href="#__codelineno-8-10"></a>
+<a id="__codelineno-8-11" name="__codelineno-8-11" href="#__codelineno-8-11"></a>
+<a id="__codelineno-8-12" name="__codelineno-8-12" href="#__codelineno-8-12"></a>
+<a id="__codelineno-8-13" name="__codelineno-8-13" href="#__codelineno-8-13"></a>&quot;negate&quot;: false,
+<a id="__codelineno-8-14" name="__codelineno-8-14" href="#__codelineno-8-14"></a>
+<a id="__codelineno-8-15" name="__codelineno-8-15" href="#__codelineno-8-15"></a>
+<a id="__codelineno-8-16" name="__codelineno-8-16" href="#__codelineno-8-16"></a>
+<a id="__codelineno-8-17" name="__codelineno-8-17" href="#__codelineno-8-17"></a>&quot;type&quot;: &quot;CLOUD_TYPE&quot;
+<a id="__codelineno-8-18" name="__codelineno-8-18" href="#__codelineno-8-18"></a>
+<a id="__codelineno-8-19" name="__codelineno-8-19" href="#__codelineno-8-19"></a>
+<a id="__codelineno-8-20" name="__codelineno-8-20" href="#__codelineno-8-20"></a>
+<a id="__codelineno-8-21" name="__codelineno-8-21" href="#__codelineno-8-21"></a>}
+</code></pre></div>
+<h3 id="custom_application_type">CUSTOM_APPLICATION_TYPE<a class="headerlink" href="#custom_application_type" title="Permanent link">&para;</a></h3>
+<p>CustomApplicationTypeComparison</p>
+<p>Параметры</p>
+<p>JSON model</p>
+<h4 id="customapplicationtypecomparison">Объект <code>CustomApplicationTypeComparison</code><a class="headerlink" href="#customapplicationtypecomparison" title="Permanent link">&para;</a></h4>
+<p>Сравнение для атрибутов <code>CUSTOM_APPLICATION_TYPE</code>.</p>
+<table>
+<thead>
+<tr>
+<th>Элемент</th>
+<th>Тип</th>
+<th>Описание</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>operator</td>
+<td>string</td>
+<td>Оператор сравнения. Можно инвертировать его, установив <strong>negate</strong> в <code>true</code>.  Возможные значения зависят от <strong>type</strong> сравнения. Список актуальных моделей приведён в описании поля <strong>type</strong>, там же есть описание нужной модели. Элемент может принимать следующие значения * <code>EQUALS</code> * <code>EXISTS</code></td>
+</tr>
+<tr>
+<td>value</td>
+<td>string</td>
+<td>Значение для сравнения. Элемент может принимать следующие значения * <code>AMAZON_ECHO</code> * <code>DESKTOP</code> * <code>EMBEDDED</code> * <code>IOT</code> * <code>MICROSOFT_HOLOLENS</code> * <code>UFO</code></td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>{
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>
+<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>
+<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a>
+<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a>&quot;operator&quot;: &quot;EQUALS&quot;,
+<a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a>
+<a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a>
+<a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a>
+<a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a>&quot;value&quot;: &quot;EMBEDDED&quot;,
+<a id="__codelineno-9-10" name="__codelineno-9-10" href="#__codelineno-9-10"></a>
+<a id="__codelineno-9-11" name="__codelineno-9-11" href="#__codelineno-9-11"></a>
+<a id="__codelineno-9-12" name="__codelineno-9-12" href="#__codelineno-9-12"></a>
+<a id="__codelineno-9-13" name="__codelineno-9-13" href="#__codelineno-9-13"></a>&quot;negate&quot;: false,
+<a id="__codelineno-9-14" name="__codelineno-9-14" href="#__codelineno-9-14"></a>
+<a id="__codelineno-9-15" name="__codelineno-9-15" href="#__codelineno-9-15"></a>
+<a id="__codelineno-9-16" name="__codelineno-9-16" href="#__codelineno-9-16"></a>
+<a id="__codelineno-9-17" name="__codelineno-9-17" href="#__codelineno-9-17"></a>&quot;type&quot;: &quot;CUSTOM_APPLICATION_TYPE&quot;
+<a id="__codelineno-9-18" name="__codelineno-9-18" href="#__codelineno-9-18"></a>
+<a id="__codelineno-9-19" name="__codelineno-9-19" href="#__codelineno-9-19"></a>
+<a id="__codelineno-9-20" name="__codelineno-9-20" href="#__codelineno-9-20"></a>
+<a id="__codelineno-9-21" name="__codelineno-9-21" href="#__codelineno-9-21"></a>}
+</code></pre></div>
+<h3 id="database_topology">DATABASE_TOPOLOGY<a class="headerlink" href="#database_topology" title="Permanent link">&para;</a></h3>
+<p>DatabaseTopologyComparison</p>
+<p>Параметры</p>
+<p>JSON model</p>
+<h4 id="databasetopologycomparison">Объект <code>DatabaseTopologyComparison</code><a class="headerlink" href="#databasetopologycomparison" title="Permanent link">&para;</a></h4>
+<p>Сравнение для атрибутов <code>DATABASE_TOPOLOGY</code>.</p>
+<table>
+<thead>
+<tr>
+<th>Элемент</th>
+<th>Тип</th>
+<th>Описание</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>operator</td>
+<td>string</td>
+<td>Оператор сравнения. Можно инвертировать его, установив <strong>negate</strong> в <code>true</code>.  Возможные значения зависят от <strong>type</strong> сравнения. Список актуальных моделей приведён в описании поля <strong>type</strong>, там же есть описание нужной модели. Элемент может принимать следующие значения * <code>EQUALS</code> * <code>EXISTS</code></td>
+</tr>
+<tr>
+<td>value</td>
+<td>string</td>
+<td>Значение для сравнения. Элемент может принимать следующие значения * <code>CLUSTER</code> * <code>EMBEDDED</code> * <code>FAILOVER</code> * <code>IPC</code> * <code>LOAD_BALANCING</code> * <code>SINGLE_SERVER</code> * <code>UNSPECIFIED</code></td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>{
+<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>
+<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>
+<a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a>
+<a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a>&quot;operator&quot;: &quot;EQUALS&quot;,
+<a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a>
+<a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a>
+<a id="__codelineno-10-8" name="__codelineno-10-8" href="#__codelineno-10-8"></a>
+<a id="__codelineno-10-9" name="__codelineno-10-9" href="#__codelineno-10-9"></a>&quot;value&quot;: &quot;LOAD_BALANCING&quot;,
+<a id="__codelineno-10-10" name="__codelineno-10-10" href="#__codelineno-10-10"></a>
+<a id="__codelineno-10-11" name="__codelineno-10-11" href="#__codelineno-10-11"></a>
+<a id="__codelineno-10-12" name="__codelineno-10-12" href="#__codelineno-10-12"></a>
+<a id="__codelineno-10-13" name="__codelineno-10-13" href="#__codelineno-10-13"></a>&quot;negate&quot;: false,
+<a id="__codelineno-10-14" name="__codelineno-10-14" href="#__codelineno-10-14"></a>
+<a id="__codelineno-10-15" name="__codelineno-10-15" href="#__codelineno-10-15"></a>
+<a id="__codelineno-10-16" name="__codelineno-10-16" href="#__codelineno-10-16"></a>
+<a id="__codelineno-10-17" name="__codelineno-10-17" href="#__codelineno-10-17"></a>&quot;type&quot;: &quot;DATABASE_TOPOLOGY&quot;
+<a id="__codelineno-10-18" name="__codelineno-10-18" href="#__codelineno-10-18"></a>
+<a id="__codelineno-10-19" name="__codelineno-10-19" href="#__codelineno-10-19"></a>
+<a id="__codelineno-10-20" name="__codelineno-10-20" href="#__codelineno-10-20"></a>
+<a id="__codelineno-10-21" name="__codelineno-10-21" href="#__codelineno-10-21"></a>}
+</code></pre></div>
+<h3 id="dcrum_decoder_type">DCRUM_DECODER_TYPE<a class="headerlink" href="#dcrum_decoder_type" title="Permanent link">&para;</a></h3>
+<p>DcrumDecoderComparison</p>
+<p>Параметры</p>
+<p>JSON model</p>
+<h4 id="dcrumdecodercomparison">Объект <code>DcrumDecoderComparison</code><a class="headerlink" href="#dcrumdecodercomparison" title="Permanent link">&para;</a></h4>
+<p>Сравнение для атрибутов <code>DCRUM_DECODER_TYPE</code>.</p>
+<table>
+<thead>
+<tr>
+<th>Элемент</th>
+<th>Тип</th>
+<th>Описание</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>operator</td>
+<td>string</td>
+<td>Оператор сравнения. Можно инвертировать его, установив <strong>negate</strong> в <code>true</code>.  Возможные значения зависят от <strong>type</strong> сравнения. Список актуальных моделей приведён в описании поля <strong>type</strong>, там же есть описание нужной модели. Элемент может принимать следующие значения * <code>EQUALS</code> * <code>EXISTS</code></td>
+</tr>
+<tr>
+<td>value</td>
+<td>string</td>
+<td>Значение для сравнения. Элемент может принимать следующие значения * <code>ALL_OTHER</code> * <code>CITRIX_APPFLOW</code> * <code>CITRIX_ICA</code> * <code>CITRIX_ICA_OVER_SSL</code> * <code>DB2_DRDA</code> * <code>HTTP</code> * <code>HTTPS</code> * <code>HTTP_EXPRESS</code> * <code>INFORMIX</code> * <code>MYSQL</code> * <code>ORACLE</code> * <code>SAP_GUI</code> * <code>SAP_GUI_OVER_HTTP</code> * <code>SAP_GUI_OVER_HTTPS</code> * <code>SAP_HANA_DB</code> * <code>SAP_RFC</code> * <code>SSL</code> * <code>TDS</code></td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>{
+<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>
+<a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a>
+<a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a>
+<a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a>&quot;operator&quot;: &quot;EQUALS&quot;,
+<a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a>
+<a id="__codelineno-11-7" name="__codelineno-11-7" href="#__codelineno-11-7"></a>
+<a id="__codelineno-11-8" name="__codelineno-11-8" href="#__codelineno-11-8"></a>
+<a id="__codelineno-11-9" name="__codelineno-11-9" href="#__codelineno-11-9"></a>&quot;value&quot;: &quot;MYSQL&quot;,
+<a id="__codelineno-11-10" name="__codelineno-11-10" href="#__codelineno-11-10"></a>
+<a id="__codelineno-11-11" name="__codelineno-11-11" href="#__codelineno-11-11"></a>
+<a id="__codelineno-11-12" name="__codelineno-11-12" href="#__codelineno-11-12"></a>
+<a id="__codelineno-11-13" name="__codelineno-11-13" href="#__codelineno-11-13"></a>&quot;negate&quot;: false,
+<a id="__codelineno-11-14" name="__codelineno-11-14" href="#__codelineno-11-14"></a>
+<a id="__codelineno-11-15" name="__codelineno-11-15" href="#__codelineno-11-15"></a>
+<a id="__codelineno-11-16" name="__codelineno-11-16" href="#__codelineno-11-16"></a>
+<a id="__codelineno-11-17" name="__codelineno-11-17" href="#__codelineno-11-17"></a>&quot;type&quot;: &quot;DCRUM_DECODER_TYPE&quot;
+<a id="__codelineno-11-18" name="__codelineno-11-18" href="#__codelineno-11-18"></a>
+<a id="__codelineno-11-19" name="__codelineno-11-19" href="#__codelineno-11-19"></a>
+<a id="__codelineno-11-20" name="__codelineno-11-20" href="#__codelineno-11-20"></a>
+<a id="__codelineno-11-21" name="__codelineno-11-21" href="#__codelineno-11-21"></a>}
+</code></pre></div>
+<h3 id="entity_id">ENTITY_ID<a class="headerlink" href="#entity_id" title="Permanent link">&para;</a></h3>
+<p>EntityIdComparison</p>
+<p>Параметры</p>
+<p>JSON model</p>
+<h4 id="entityidcomparison">Объект <code>EntityIdComparison</code><a class="headerlink" href="#entityidcomparison" title="Permanent link">&para;</a></h4>
+<p>Сравнение для атрибутов <code>ENTITY_ID</code>.</p>
+<table>
+<thead>
+<tr>
+<th>Элемент</th>
+<th>Тип</th>
+<th>Описание</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>operator</td>
+<td>string</td>
+<td>Оператор сравнения. Можно инвертировать его, установив <strong>negate</strong> в <code>true</code>.  Возможные значения зависят от <strong>type</strong> сравнения. Список актуальных моделей приведён в описании поля <strong>type</strong>, там же есть описание нужной модели. Элемент может принимать следующие значения * <code>EQUALS</code></td>
+</tr>
+<tr>
+<td>value</td>
+<td>string</td>
+<td>Значение для сравнения.</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>{
+<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>
+<a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a>
+<a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a>
+<a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a>&quot;operator&quot;: &quot;EQUALS&quot;,
+<a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a>
+<a id="__codelineno-12-7" name="__codelineno-12-7" href="#__codelineno-12-7"></a>
+<a id="__codelineno-12-8" name="__codelineno-12-8" href="#__codelineno-12-8"></a>
+<a id="__codelineno-12-9" name="__codelineno-12-9" href="#__codelineno-12-9"></a>&quot;value&quot;: &quot;HOST-80FF8584D8954C1D&quot;,
+<a id="__codelineno-12-10" name="__codelineno-12-10" href="#__codelineno-12-10"></a>
+<a id="__codelineno-12-11" name="__codelineno-12-11" href="#__codelineno-12-11"></a>
+<a id="__codelineno-12-12" name="__codelineno-12-12" href="#__codelineno-12-12"></a>
+<a id="__codelineno-12-13" name="__codelineno-12-13" href="#__codelineno-12-13"></a>&quot;negate&quot;: false,
+<a id="__codelineno-12-14" name="__codelineno-12-14" href="#__codelineno-12-14"></a>
+<a id="__codelineno-12-15" name="__codelineno-12-15" href="#__codelineno-12-15"></a>
+<a id="__codelineno-12-16" name="__codelineno-12-16" href="#__codelineno-12-16"></a>
+<a id="__codelineno-12-17" name="__codelineno-12-17" href="#__codelineno-12-17"></a>&quot;type&quot;: &quot;ENTITY_ID&quot;
+<a id="__codelineno-12-18" name="__codelineno-12-18" href="#__codelineno-12-18"></a>
+<a id="__codelineno-12-19" name="__codelineno-12-19" href="#__codelineno-12-19"></a>
+<a id="__codelineno-12-20" name="__codelineno-12-20" href="#__codelineno-12-20"></a>
+<a id="__codelineno-12-21" name="__codelineno-12-21" href="#__codelineno-12-21"></a>}
+</code></pre></div>
+<h3 id="hypervisor_type">HYPERVISOR_TYPE<a class="headerlink" href="#hypervisor_type" title="Permanent link">&para;</a></h3>
+<p>HypervisorTypeComparison</p>
+<p>Параметры</p>
+<p>JSON model</p>
+<h4 id="hypervisortypecomparision">Объект <code>HypervisorTypeComparision</code><a class="headerlink" href="#hypervisortypecomparision" title="Permanent link">&para;</a></h4>
+<p>Сравнение для атрибутов <code>HYPERVISOR_TYPE</code>.</p>
+<table>
+<thead>
+<tr>
+<th>Элемент</th>
+<th>Тип</th>
+<th>Описание</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>operator</td>
+<td>string</td>
+<td>Оператор сравнения. Можно инвертировать его, установив <strong>negate</strong> в <code>true</code>.  Возможные значения зависят от <strong>type</strong> сравнения. Список актуальных моделей приведён в описании поля <strong>type</strong>, там же есть описание нужной модели. Элемент может принимать следующие значения * <code>EQUALS</code> * <code>EXISTS</code></td>
+</tr>
+<tr>
+<td>value</td>
+<td>string</td>
+<td>Значение для сравнения. Элемент может принимать следующие значения * <code>AHV</code> * <code>AWS_NITRO</code> * <code>GVISOR</code> * <code>HYPER_V</code> * <code>KVM</code> * <code>LPAR</code> * <code>QEMU</code> * <code>UNRECOGNIZED</code> * <code>VIRTUAL_BOX</code> * <code>VMWARE</code> * <code>WPAR</code> * <code>XEN</code></td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>{
+<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>
+<a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a>
+<a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a>
+<a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a>&quot;operator&quot;: &quot;EQUALS&quot;,
+<a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a>
+<a id="__codelineno-13-7" name="__codelineno-13-7" href="#__codelineno-13-7"></a>
+<a id="__codelineno-13-8" name="__codelineno-13-8" href="#__codelineno-13-8"></a>
+<a id="__codelineno-13-9" name="__codelineno-13-9" href="#__codelineno-13-9"></a>&quot;value&quot;: &quot;HYPER_V&quot;,
+<a id="__codelineno-13-10" name="__codelineno-13-10" href="#__codelineno-13-10"></a>
+<a id="__codelineno-13-11" name="__codelineno-13-11" href="#__codelineno-13-11"></a>
+<a id="__codelineno-13-12" name="__codelineno-13-12" href="#__codelineno-13-12"></a>
+<a id="__codelineno-13-13" name="__codelineno-13-13" href="#__codelineno-13-13"></a>&quot;negate&quot;: false,
+<a id="__codelineno-13-14" name="__codelineno-13-14" href="#__codelineno-13-14"></a>
+<a id="__codelineno-13-15" name="__codelineno-13-15" href="#__codelineno-13-15"></a>
+<a id="__codelineno-13-16" name="__codelineno-13-16" href="#__codelineno-13-16"></a>
+<a id="__codelineno-13-17" name="__codelineno-13-17" href="#__codelineno-13-17"></a>&quot;type&quot;: &quot;HYPERVISOR_TYPE&quot;
+<a id="__codelineno-13-18" name="__codelineno-13-18" href="#__codelineno-13-18"></a>
+<a id="__codelineno-13-19" name="__codelineno-13-19" href="#__codelineno-13-19"></a>
+<a id="__codelineno-13-20" name="__codelineno-13-20" href="#__codelineno-13-20"></a>
+<a id="__codelineno-13-21" name="__codelineno-13-21" href="#__codelineno-13-21"></a>}
+</code></pre></div>
+<h3 id="indexed_name">INDEXED_NAME<a class="headerlink" href="#indexed_name" title="Permanent link">&para;</a></h3>
+<p>IndexedNameComparison</p>
+<p>Параметры</p>
+<p>JSON model</p>
+<h4 id="indexednamecomparison">Объект <code>IndexedNameComparison</code><a class="headerlink" href="#indexednamecomparison" title="Permanent link">&para;</a></h4>
+<p>Сравнение для атрибутов <code>INDEXED_NAME</code>.</p>
+<table>
+<thead>
+<tr>
+<th>Элемент</th>
+<th>Тип</th>
+<th>Описание</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>caseSensitive</td>
+<td>boolean</td>
+<td>Сравнение чувствительно (<code>true</code>) или нечувствительно (<code>false</code>) к регистру.</td>
+</tr>
+<tr>
+<td>operator</td>
+<td>string</td>
+<td>Оператор сравнения. Можно инвертировать его, установив <strong>negate</strong> в <code>true</code>.  Возможные значения зависят от <strong>type</strong> сравнения. Список актуальных моделей приведён в описании поля <strong>type</strong>, там же есть описание нужной модели. Элемент может принимать следующие значения * <code>CONTAINS</code> * <code>EQUALS</code> * <code>EXISTS</code></td>
+</tr>
+<tr>
+<td>value</td>
+<td>string</td>
+<td>Значение для сравнения.</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>{
+<a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a>
+<a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a>
+<a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a>
+<a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a>&quot;operator&quot;: &quot;EQUALS&quot;,
+<a id="__codelineno-14-6" name="__codelineno-14-6" href="#__codelineno-14-6"></a>
+<a id="__codelineno-14-7" name="__codelineno-14-7" href="#__codelineno-14-7"></a>
+<a id="__codelineno-14-8" name="__codelineno-14-8" href="#__codelineno-14-8"></a>
+<a id="__codelineno-14-9" name="__codelineno-14-9" href="#__codelineno-14-9"></a>&quot;value&quot;: &quot;string&quot;,
+<a id="__codelineno-14-10" name="__codelineno-14-10" href="#__codelineno-14-10"></a>
+<a id="__codelineno-14-11" name="__codelineno-14-11" href="#__codelineno-14-11"></a>
+<a id="__codelineno-14-12" name="__codelineno-14-12" href="#__codelineno-14-12"></a>
+<a id="__codelineno-14-13" name="__codelineno-14-13" href="#__codelineno-14-13"></a>&quot;negate&quot;: false,
+<a id="__codelineno-14-14" name="__codelineno-14-14" href="#__codelineno-14-14"></a>
+<a id="__codelineno-14-15" name="__codelineno-14-15" href="#__codelineno-14-15"></a>
+<a id="__codelineno-14-16" name="__codelineno-14-16" href="#__codelineno-14-16"></a>
+<a id="__codelineno-14-17" name="__codelineno-14-17" href="#__codelineno-14-17"></a>&quot;type&quot;: &quot;INDEXED_NAME&quot;
+<a id="__codelineno-14-18" name="__codelineno-14-18" href="#__codelineno-14-18"></a>
+<a id="__codelineno-14-19" name="__codelineno-14-19" href="#__codelineno-14-19"></a>
+<a id="__codelineno-14-20" name="__codelineno-14-20" href="#__codelineno-14-20"></a>
+<a id="__codelineno-14-21" name="__codelineno-14-21" href="#__codelineno-14-21"></a>}
+</code></pre></div>
+<h3 id="indexed_string">INDEXED_STRING<a class="headerlink" href="#indexed_string" title="Permanent link">&para;</a></h3>
+<p>IndexedStringComparison</p>
+<p>Параметры</p>
+<p>JSON model</p>
+<h4 id="indexedstringcomparison">Объект <code>IndexedStringComparison</code><a class="headerlink" href="#indexedstringcomparison" title="Permanent link">&para;</a></h4>
+<p>Сравнение для атрибутов <code>INDEXED_STRING</code>.</p>
+<table>
+<thead>
+<tr>
+<th>Элемент</th>
+<th>Тип</th>
+<th>Описание</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>caseSensitive</td>
+<td>boolean</td>
+<td>Сравнение чувствительно (<code>true</code>) или нечувствительно (<code>false</code>) к регистру.</td>
+</tr>
+<tr>
+<td>operator</td>
+<td>string</td>
+<td>Оператор сравнения. Можно инвертировать его, установив <strong>negate</strong> в <code>true</code>.  Возможные значения зависят от <strong>type</strong> сравнения. Список актуальных моделей приведён в описании поля <strong>type</strong>, там же есть описание нужной модели. Элемент может принимать следующие значения * <code>EQUALS</code> * <code>EXISTS</code></td>
+</tr>
+<tr>
+<td>value</td>
+<td>string</td>
+<td>Значение для сравнения.</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>{
+<a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a>
+<a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a>
+<a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a>
+<a id="__codelineno-15-5" name="__codelineno-15-5" href="#__codelineno-15-5"></a>&quot;operator&quot;: &quot;EQUALS&quot;,
+<a id="__codelineno-15-6" name="__codelineno-15-6" href="#__codelineno-15-6"></a>
+<a id="__codelineno-15-7" name="__codelineno-15-7" href="#__codelineno-15-7"></a>
+<a id="__codelineno-15-8" name="__codelineno-15-8" href="#__codelineno-15-8"></a>
+<a id="__codelineno-15-9" name="__codelineno-15-9" href="#__codelineno-15-9"></a>&quot;value&quot;: &quot;string&quot;,
+<a id="__codelineno-15-10" name="__codelineno-15-10" href="#__codelineno-15-10"></a>
+<a id="__codelineno-15-11" name="__codelineno-15-11" href="#__codelineno-15-11"></a>
+<a id="__codelineno-15-12" name="__codelineno-15-12" href="#__codelineno-15-12"></a>
+<a id="__codelineno-15-13" name="__codelineno-15-13" href="#__codelineno-15-13"></a>&quot;negate&quot;: false,
+<a id="__codelineno-15-14" name="__codelineno-15-14" href="#__codelineno-15-14"></a>
+<a id="__codelineno-15-15" name="__codelineno-15-15" href="#__codelineno-15-15"></a>
+<a id="__codelineno-15-16" name="__codelineno-15-16" href="#__codelineno-15-16"></a>
+<a id="__codelineno-15-17" name="__codelineno-15-17" href="#__codelineno-15-17"></a>&quot;type&quot;: &quot;INDEXED_STRING&quot;
+<a id="__codelineno-15-18" name="__codelineno-15-18" href="#__codelineno-15-18"></a>
+<a id="__codelineno-15-19" name="__codelineno-15-19" href="#__codelineno-15-19"></a>
+<a id="__codelineno-15-20" name="__codelineno-15-20" href="#__codelineno-15-20"></a>
+<a id="__codelineno-15-21" name="__codelineno-15-21" href="#__codelineno-15-21"></a>}
+</code></pre></div>
+<h3 id="indexed_tag">INDEXED_TAG<a class="headerlink" href="#indexed_tag" title="Permanent link">&para;</a></h3>
+<p>IndexedTagComparison</p>
+<p>Параметры</p>
+<p>JSON model</p>
+<h4 id="indexedtagcomparison">Объект <code>IndexedTagComparison</code><a class="headerlink" href="#indexedtagcomparison" title="Permanent link">&para;</a></h4>
+<p>Сравнение для атрибутов <code>INDEXED_TAG</code>.</p>
+<table>
+<thead>
+<tr>
+<th>Элемент</th>
+<th>Тип</th>
+<th>Описание</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>operator</td>
+<td>string</td>
+<td>Оператор сравнения. Его можно обратить, установив <strong>negate</strong> в <code>true</code>.  Возможные значения зависят от <strong>type</strong> сравнения. Список актуальных моделей приведён в описании поля <strong>type</strong>, там же можно посмотреть описание нужной модели. Элемент может принимать следующие значения * <code>EQUALS</code> * <code>EXISTS</code> * <code>TAG_KEY_EQUALS</code></td>
+</tr>
+<tr>
+<td>value</td>
+<td><a href="#openapi-definition-TagInfo">TagInfo</a></td>
+<td>Тег сущности Dynatrace.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="taginfo">Объект <code>TagInfo</code><a class="headerlink" href="#taginfo" title="Permanent link">&para;</a></h4>
+<p>Тег сущности Dynatrace.</p>
+<table>
+<thead>
+<tr>
+<th>Элемент</th>
+<th>Тип</th>
+<th>Описание</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>context</td>
+<td>string</td>
+<td>Источник тега, например AWS или Cloud Foundry.  Пользовательские теги используют значение <code>CONTEXTLESS</code>. Элемент может принимать следующие значения * <code>AWS</code> * <code>AWS_GENERIC</code> * <code>AZURE</code> * <code>CLOUD_FOUNDRY</code> * <code>CONTEXTLESS</code> * <code>ENVIRONMENT</code> * <code>GOOGLE_CLOUD</code> * <code>KUBERNETES</code></td>
+</tr>
+<tr>
+<td>key</td>
+<td>string</td>
+<td>Ключ тега.  У пользовательских тегов здесь находится значение тега.</td>
+</tr>
+<tr>
+<td>value</td>
+<td>string</td>
+<td>Значение тега.  Не применимо к пользовательским тегам.</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>{
+<a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a>
+<a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a>
+<a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a>
+<a id="__codelineno-16-5" name="__codelineno-16-5" href="#__codelineno-16-5"></a>&quot;operator&quot;: &quot;EQUALS&quot;,
+<a id="__codelineno-16-6" name="__codelineno-16-6" href="#__codelineno-16-6"></a>
+<a id="__codelineno-16-7" name="__codelineno-16-7" href="#__codelineno-16-7"></a>
+<a id="__codelineno-16-8" name="__codelineno-16-8" href="#__codelineno-16-8"></a>
+<a id="__codelineno-16-9" name="__codelineno-16-9" href="#__codelineno-16-9"></a>&quot;value&quot;: {
+<a id="__codelineno-16-10" name="__codelineno-16-10" href="#__codelineno-16-10"></a>
+<a id="__codelineno-16-11" name="__codelineno-16-11" href="#__codelineno-16-11"></a>
+<a id="__codelineno-16-12" name="__codelineno-16-12" href="#__codelineno-16-12"></a>
+<a id="__codelineno-16-13" name="__codelineno-16-13" href="#__codelineno-16-13"></a>&quot;context&quot;: &quot;CONTEXTLESS&quot;,
+<a id="__codelineno-16-14" name="__codelineno-16-14" href="#__codelineno-16-14"></a>
+<a id="__codelineno-16-15" name="__codelineno-16-15" href="#__codelineno-16-15"></a>
+<a id="__codelineno-16-16" name="__codelineno-16-16" href="#__codelineno-16-16"></a>
+<a id="__codelineno-16-17" name="__codelineno-16-17" href="#__codelineno-16-17"></a>&quot;key&quot;: &quot;hostOS&quot;
+<a id="__codelineno-16-18" name="__codelineno-16-18" href="#__codelineno-16-18"></a>
+<a id="__codelineno-16-19" name="__codelineno-16-19" href="#__codelineno-16-19"></a>
+<a id="__codelineno-16-20" name="__codelineno-16-20" href="#__codelineno-16-20"></a>
+<a id="__codelineno-16-21" name="__codelineno-16-21" href="#__codelineno-16-21"></a>},
+<a id="__codelineno-16-22" name="__codelineno-16-22" href="#__codelineno-16-22"></a>
+<a id="__codelineno-16-23" name="__codelineno-16-23" href="#__codelineno-16-23"></a>
+<a id="__codelineno-16-24" name="__codelineno-16-24" href="#__codelineno-16-24"></a>
+<a id="__codelineno-16-25" name="__codelineno-16-25" href="#__codelineno-16-25"></a>&quot;negate&quot;: false,
+<a id="__codelineno-16-26" name="__codelineno-16-26" href="#__codelineno-16-26"></a>
+<a id="__codelineno-16-27" name="__codelineno-16-27" href="#__codelineno-16-27"></a>
+<a id="__codelineno-16-28" name="__codelineno-16-28" href="#__codelineno-16-28"></a>
+<a id="__codelineno-16-29" name="__codelineno-16-29" href="#__codelineno-16-29"></a>&quot;type&quot;: &quot;INDEXED_TAG&quot;
+<a id="__codelineno-16-30" name="__codelineno-16-30" href="#__codelineno-16-30"></a>
+<a id="__codelineno-16-31" name="__codelineno-16-31" href="#__codelineno-16-31"></a>
+<a id="__codelineno-16-32" name="__codelineno-16-32" href="#__codelineno-16-32"></a>
+<a id="__codelineno-16-33" name="__codelineno-16-33" href="#__codelineno-16-33"></a>}
+</code></pre></div>
+<h3 id="integer">INTEGER<a class="headerlink" href="#integer" title="Permanent link">&para;</a></h3>
+<p>IntegerComparison-integer</p>
+<p>Параметры</p>
+<p>JSON model</p>
+<h4 id="integercomparison">Объект <code>IntegerComparison</code><a class="headerlink" href="#integercomparison" title="Permanent link">&para;</a></h4>
+<p>Сравнение для атрибутов <code>INTEGER</code>.</p>
+<table>
+<thead>
+<tr>
+<th>Элемент</th>
+<th>Тип</th>
+<th>Описание</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>operator</td>
+<td>string</td>
+<td>Оператор сравнения. Его можно обратить, установив <strong>negate</strong> в <code>true</code>.  Возможные значения зависят от <strong>type</strong> сравнения. Список актуальных моделей приведён в описании поля <strong>type</strong>, там же можно посмотреть описание нужной модели. Элемент может принимать следующие значения * <code>EQUALS</code> * <code>EXISTS</code> * <code>GREATER_THAN</code> * <code>GREATER_THAN_OR_EQUAL</code> * <code>LOWER_THAN</code> * <code>LOWER_THAN_OR_EQUAL</code></td>
+</tr>
+<tr>
+<td>value</td>
+<td>integer</td>
+<td>Значение для сравнения.</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>{
+<a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a>
+<a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a>
+<a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a>
+<a id="__codelineno-17-5" name="__codelineno-17-5" href="#__codelineno-17-5"></a>&quot;operator&quot;: &quot;GREATER_THAN&quot;,
+<a id="__codelineno-17-6" name="__codelineno-17-6" href="#__codelineno-17-6"></a>
+<a id="__codelineno-17-7" name="__codelineno-17-7" href="#__codelineno-17-7"></a>
+<a id="__codelineno-17-8" name="__codelineno-17-8" href="#__codelineno-17-8"></a>
+<a id="__codelineno-17-9" name="__codelineno-17-9" href="#__codelineno-17-9"></a>&quot;value&quot;: 88,
+<a id="__codelineno-17-10" name="__codelineno-17-10" href="#__codelineno-17-10"></a>
+<a id="__codelineno-17-11" name="__codelineno-17-11" href="#__codelineno-17-11"></a>
+<a id="__codelineno-17-12" name="__codelineno-17-12" href="#__codelineno-17-12"></a>
+<a id="__codelineno-17-13" name="__codelineno-17-13" href="#__codelineno-17-13"></a>&quot;negate&quot;: false,
+<a id="__codelineno-17-14" name="__codelineno-17-14" href="#__codelineno-17-14"></a>
+<a id="__codelineno-17-15" name="__codelineno-17-15" href="#__codelineno-17-15"></a>
+<a id="__codelineno-17-16" name="__codelineno-17-16" href="#__codelineno-17-16"></a>
+<a id="__codelineno-17-17" name="__codelineno-17-17" href="#__codelineno-17-17"></a>&quot;type&quot;: &quot;INTEGER&quot;
+<a id="__codelineno-17-18" name="__codelineno-17-18" href="#__codelineno-17-18"></a>
+<a id="__codelineno-17-19" name="__codelineno-17-19" href="#__codelineno-17-19"></a>
+<a id="__codelineno-17-20" name="__codelineno-17-20" href="#__codelineno-17-20"></a>
+<a id="__codelineno-17-21" name="__codelineno-17-21" href="#__codelineno-17-21"></a>}
+</code></pre></div>
+<h3 id="ip_address">IP_ADDRESS<a class="headerlink" href="#ip_address" title="Permanent link">&para;</a></h3>
+<p>IpAddressComparison</p>
+<p>Параметры</p>
+<p>JSON model</p>
+<h4 id="ipaddresscomparison">Объект <code>IpAddressComparison</code><a class="headerlink" href="#ipaddresscomparison" title="Permanent link">&para;</a></h4>
+<p>Сравнение для атрибутов <code>IP_ADDRESS</code>.</p>
+<table>
+<thead>
+<tr>
+<th>Элемент</th>
+<th>Тип</th>
+<th>Описание</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>caseSensitive</td>
+<td>boolean</td>
+<td>Сравнение учитывает регистр (<code>true</code>) или не учитывает (<code>false</code>).</td>
+</tr>
+<tr>
+<td>operator</td>
+<td>string</td>
+<td>Оператор сравнения. Его можно обратить, установив <strong>negate</strong> в <code>true</code>.  Возможные значения зависят от <strong>type</strong> сравнения. Список актуальных моделей приведён в описании поля <strong>type</strong>, там же можно посмотреть описание нужной модели. Элемент может принимать следующие значения * <code>BEGINS_WITH</code> * <code>CONTAINS</code> * <code>ENDS_WITH</code> * <code>EQUALS</code> * <code>EXISTS</code> * <code>IS_IP_IN_RANGE</code> * <code>REGEX_MATCHES</code></td>
+</tr>
+<tr>
+<td>value</td>
+<td>string</td>
+<td>Значение для сравнения.</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a>{
+<a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a>
+<a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a>
+<a id="__codelineno-18-4" name="__codelineno-18-4" href="#__codelineno-18-4"></a>
+<a id="__codelineno-18-5" name="__codelineno-18-5" href="#__codelineno-18-5"></a>&quot;operator&quot;: &quot;BEGINS_WITH&quot;,
+<a id="__codelineno-18-6" name="__codelineno-18-6" href="#__codelineno-18-6"></a>
+<a id="__codelineno-18-7" name="__codelineno-18-7" href="#__codelineno-18-7"></a>
+<a id="__codelineno-18-8" name="__codelineno-18-8" href="#__codelineno-18-8"></a>
+<a id="__codelineno-18-9" name="__codelineno-18-9" href="#__codelineno-18-9"></a>&quot;value&quot;: &quot;192&quot;,
+<a id="__codelineno-18-10" name="__codelineno-18-10" href="#__codelineno-18-10"></a>
+<a id="__codelineno-18-11" name="__codelineno-18-11" href="#__codelineno-18-11"></a>
+<a id="__codelineno-18-12" name="__codelineno-18-12" href="#__codelineno-18-12"></a>
+<a id="__codelineno-18-13" name="__codelineno-18-13" href="#__codelineno-18-13"></a>&quot;negate&quot;: false,
+<a id="__codelineno-18-14" name="__codelineno-18-14" href="#__codelineno-18-14"></a>
+<a id="__codelineno-18-15" name="__codelineno-18-15" href="#__codelineno-18-15"></a>
+<a id="__codelineno-18-16" name="__codelineno-18-16" href="#__codelineno-18-16"></a>
+<a id="__codelineno-18-17" name="__codelineno-18-17" href="#__codelineno-18-17"></a>&quot;type&quot;: &quot;IP_ADDRESS&quot;,
+<a id="__codelineno-18-18" name="__codelineno-18-18" href="#__codelineno-18-18"></a>
+<a id="__codelineno-18-19" name="__codelineno-18-19" href="#__codelineno-18-19"></a>
+<a id="__codelineno-18-20" name="__codelineno-18-20" href="#__codelineno-18-20"></a>
+<a id="__codelineno-18-21" name="__codelineno-18-21" href="#__codelineno-18-21"></a>&quot;caseSensitive&quot;: false
+<a id="__codelineno-18-22" name="__codelineno-18-22" href="#__codelineno-18-22"></a>
+<a id="__codelineno-18-23" name="__codelineno-18-23" href="#__codelineno-18-23"></a>
+<a id="__codelineno-18-24" name="__codelineno-18-24" href="#__codelineno-18-24"></a>
+<a id="__codelineno-18-25" name="__codelineno-18-25" href="#__codelineno-18-25"></a>}
+</code></pre></div>
+<h3 id="mobile_platform">MOBILE_PLATFORM<a class="headerlink" href="#mobile_platform" title="Permanent link">&para;</a></h3>
+<p>MobilePlatformComparison</p>
+<p>Параметры</p>
+<p>JSON model</p>
+<h4 id="mobileplatformcomparison">Объект <code>MobilePlatformComparison</code><a class="headerlink" href="#mobileplatformcomparison" title="Permanent link">&para;</a></h4>
+<p>Сравнение для атрибутов <code>MOBILE_PLATFORM</code>.</p>
+<table>
+<thead>
+<tr>
+<th>Элемент</th>
+<th>Тип</th>
+<th>Описание</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>operator</td>
+<td>string</td>
+<td>Оператор сравнения. Его можно обратить, установив <strong>negate</strong> в <code>true</code>.  Возможные значения зависят от <strong>type</strong> сравнения. Список актуальных моделей приведён в описании поля <strong>type</strong>, там же можно посмотреть описание нужной модели. Элемент может принимать следующие значения * <code>EQUALS</code> * <code>EXISTS</code></td>
+</tr>
+<tr>
+<td>value</td>
+<td>string</td>
+<td>Значение для сравнения. Элемент может принимать следующие значения * <code>ANDROID</code> * <code>IOS</code> * <code>LINUX</code> * <code>MAC_OS</code> * <code>OTHER</code> * <code>TVOS</code> * <code>WINDOWS</code></td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a>{
+<a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a>
+<a id="__codelineno-19-3" name="__codelineno-19-3" href="#__codelineno-19-3"></a>
+<a id="__codelineno-19-4" name="__codelineno-19-4" href="#__codelineno-19-4"></a>
+<a id="__codelineno-19-5" name="__codelineno-19-5" href="#__codelineno-19-5"></a>&quot;operator&quot;: &quot;EQUALS&quot;,
+<a id="__codelineno-19-6" name="__codelineno-19-6" href="#__codelineno-19-6"></a>
+<a id="__codelineno-19-7" name="__codelineno-19-7" href="#__codelineno-19-7"></a>
+<a id="__codelineno-19-8" name="__codelineno-19-8" href="#__codelineno-19-8"></a>
+<a id="__codelineno-19-9" name="__codelineno-19-9" href="#__codelineno-19-9"></a>&quot;value&quot;: &quot;IOS&quot;,
+<a id="__codelineno-19-10" name="__codelineno-19-10" href="#__codelineno-19-10"></a>
+<a id="__codelineno-19-11" name="__codelineno-19-11" href="#__codelineno-19-11"></a>
+<a id="__codelineno-19-12" name="__codelineno-19-12" href="#__codelineno-19-12"></a>
+<a id="__codelineno-19-13" name="__codelineno-19-13" href="#__codelineno-19-13"></a>&quot;negate&quot;: false,
+<a id="__codelineno-19-14" name="__codelineno-19-14" href="#__codelineno-19-14"></a>
+<a id="__codelineno-19-15" name="__codelineno-19-15" href="#__codelineno-19-15"></a>
+<a id="__codelineno-19-16" name="__codelineno-19-16" href="#__codelineno-19-16"></a>
+<a id="__codelineno-19-17" name="__codelineno-19-17" href="#__codelineno-19-17"></a>&quot;type&quot;: &quot;MOBILE_PLATFORM&quot;
+<a id="__codelineno-19-18" name="__codelineno-19-18" href="#__codelineno-19-18"></a>
+<a id="__codelineno-19-19" name="__codelineno-19-19" href="#__codelineno-19-19"></a>
+<a id="__codelineno-19-20" name="__codelineno-19-20" href="#__codelineno-19-20"></a>
+<a id="__codelineno-19-21" name="__codelineno-19-21" href="#__codelineno-19-21"></a>}
+</code></pre></div>
+<h3 id="os_architecture">OS_ARCHITECTURE<a class="headerlink" href="#os_architecture" title="Permanent link">&para;</a></h3>
+<p>OsArchitectureComparison</p>
+<p>Параметры</p>
+<p>JSON model</p>
+<h4 id="osarchitecturecomparison">Объект <code>OsArchitectureComparison</code><a class="headerlink" href="#osarchitecturecomparison" title="Permanent link">&para;</a></h4>
+<p>Сравнение для атрибутов <code>OS_ARCHITECTURE</code>.</p>
+<table>
+<thead>
+<tr>
+<th>Элемент</th>
+<th>Тип</th>
+<th>Описание</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>operator</td>
+<td>string</td>
+<td>Оператор сравнения. Его можно обратить, установив <strong>negate</strong> в <code>true</code>.  Возможные значения зависят от <strong>type</strong> сравнения. Список актуальных моделей приведён в описании поля <strong>type</strong>, там же можно посмотреть описание нужной модели. Элемент может принимать следующие значения * <code>EQUALS</code> * <code>EXISTS</code></td>
+</tr>
+<tr>
+<td>value</td>
+<td>string</td>
+<td>Значение для сравнения. Элемент может принимать следующие значения * <code>ARM</code> * <code>IA64</code> * <code>PARISC</code> * <code>PPC</code> * <code>PPCLE</code> * <code>S390</code> * <code>SPARC</code> * <code>X86</code> * <code>ZOS</code></td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a>{
+<a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a>
+<a id="__codelineno-20-3" name="__codelineno-20-3" href="#__codelineno-20-3"></a>
+<a id="__codelineno-20-4" name="__codelineno-20-4" href="#__codelineno-20-4"></a>
+<a id="__codelineno-20-5" name="__codelineno-20-5" href="#__codelineno-20-5"></a>&quot;operator&quot;: &quot;EQUALS&quot;,
+<a id="__codelineno-20-6" name="__codelineno-20-6" href="#__codelineno-20-6"></a>
+<a id="__codelineno-20-7" name="__codelineno-20-7" href="#__codelineno-20-7"></a>
+<a id="__codelineno-20-8" name="__codelineno-20-8" href="#__codelineno-20-8"></a>
+<a id="__codelineno-20-9" name="__codelineno-20-9" href="#__codelineno-20-9"></a>&quot;value&quot;: &quot;IA64&quot;,
+<a id="__codelineno-20-10" name="__codelineno-20-10" href="#__codelineno-20-10"></a>
+<a id="__codelineno-20-11" name="__codelineno-20-11" href="#__codelineno-20-11"></a>
+<a id="__codelineno-20-12" name="__codelineno-20-12" href="#__codelineno-20-12"></a>
+<a id="__codelineno-20-13" name="__codelineno-20-13" href="#__codelineno-20-13"></a>&quot;negate&quot;: false,
+<a id="__codelineno-20-14" name="__codelineno-20-14" href="#__codelineno-20-14"></a>
+<a id="__codelineno-20-15" name="__codelineno-20-15" href="#__codelineno-20-15"></a>
+<a id="__codelineno-20-16" name="__codelineno-20-16" href="#__codelineno-20-16"></a>
+<a id="__codelineno-20-17" name="__codelineno-20-17" href="#__codelineno-20-17"></a>&quot;type&quot;: &quot;OS_ARCHITECTURE&quot;
+<a id="__codelineno-20-18" name="__codelineno-20-18" href="#__codelineno-20-18"></a>
+<a id="__codelineno-20-19" name="__codelineno-20-19" href="#__codelineno-20-19"></a>
+<a id="__codelineno-20-20" name="__codelineno-20-20" href="#__codelineno-20-20"></a>
+<a id="__codelineno-20-21" name="__codelineno-20-21" href="#__codelineno-20-21"></a>}
+</code></pre></div>
+<h3 id="os_type">OS_TYPE<a class="headerlink" href="#os_type" title="Permanent link">&para;</a></h3>
+<p>OsTypeComparison</p>
+<p>Параметры</p>
+<p>JSON model</p>
+<h4 id="ostypecomparison">Объект <code>OsTypeComparison</code><a class="headerlink" href="#ostypecomparison" title="Permanent link">&para;</a></h4>
+<p>Сравнение для атрибутов <code>OS_TYPE</code>.</p>
+<table>
+<thead>
+<tr>
+<th>Элемент</th>
+<th>Тип</th>
+<th>Описание</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>operator</td>
+<td>string</td>
+<td>Оператор сравнения. Его можно обратить, установив <strong>negate</strong> в <code>true</code>.  Возможные значения зависят от <strong>type</strong> сравнения. Список актуальных моделей приведён в описании поля <strong>type</strong>, там же можно посмотреть описание нужной модели. Элемент может принимать следующие значения * <code>EQUALS</code> * <code>EXISTS</code></td>
+</tr>
+<tr>
+<td>value</td>
+<td>string</td>
+<td>Значение для сравнения. Элемент может принимать следующие значения * <code>AIX</code> * <code>DARWIN</code> * <code>HPUX</code> * <code>LINUX</code> * <code>SOLARIS</code> * <code>WINDOWS</code> * <code>ZOS</code></td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a>{
+<a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a>
+<a id="__codelineno-21-3" name="__codelineno-21-3" href="#__codelineno-21-3"></a>
+<a id="__codelineno-21-4" name="__codelineno-21-4" href="#__codelineno-21-4"></a>
+<a id="__codelineno-21-5" name="__codelineno-21-5" href="#__codelineno-21-5"></a>&quot;operator&quot;: &quot;EQUALS&quot;,
+<a id="__codelineno-21-6" name="__codelineno-21-6" href="#__codelineno-21-6"></a>
+<a id="__codelineno-21-7" name="__codelineno-21-7" href="#__codelineno-21-7"></a>
+<a id="__codelineno-21-8" name="__codelineno-21-8" href="#__codelineno-21-8"></a>
+<a id="__codelineno-21-9" name="__codelineno-21-9" href="#__codelineno-21-9"></a>&quot;value&quot;: &quot;LINUX&quot;,
+<a id="__codelineno-21-10" name="__codelineno-21-10" href="#__codelineno-21-10"></a>
+<a id="__codelineno-21-11" name="__codelineno-21-11" href="#__codelineno-21-11"></a>
+<a id="__codelineno-21-12" name="__codelineno-21-12" href="#__codelineno-21-12"></a>
+<a id="__codelineno-21-13" name="__codelineno-21-13" href="#__codelineno-21-13"></a>&quot;negate&quot;: false,
+<a id="__codelineno-21-14" name="__codelineno-21-14" href="#__codelineno-21-14"></a>
+<a id="__codelineno-21-15" name="__codelineno-21-15" href="#__codelineno-21-15"></a>
+<a id="__codelineno-21-16" name="__codelineno-21-16" href="#__codelineno-21-16"></a>
+<a id="__codelineno-21-17" name="__codelineno-21-17" href="#__codelineno-21-17"></a>&quot;type&quot;: &quot;OS_TYPE&quot;
+<a id="__codelineno-21-18" name="__codelineno-21-18" href="#__codelineno-21-18"></a>
+<a id="__codelineno-21-19" name="__codelineno-21-19" href="#__codelineno-21-19"></a>
+<a id="__codelineno-21-20" name="__codelineno-21-20" href="#__codelineno-21-20"></a>
+<a id="__codelineno-21-21" name="__codelineno-21-21" href="#__codelineno-21-21"></a>}
+</code></pre></div>
+<h3 id="paas_type">PAAS_TYPE<a class="headerlink" href="#paas_type" title="Permanent link">&para;</a></h3>
+<p>PaasTypeComparison</p>
+<p>Параметры</p>
+<p>JSON model</p>
+<h4 id="paastypecomparison">Объект <code>PaasTypeComparison</code><a class="headerlink" href="#paastypecomparison" title="Permanent link">&para;</a></h4>
+<p>Сравнение для атрибутов <code>PAAS_TYPE</code>.</p>
+<table>
+<thead>
+<tr>
+<th>Элемент</th>
+<th>Тип</th>
+<th>Описание</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>operator</td>
+<td>string</td>
+<td>Оператор сравнения. Его можно обратить, установив <strong>negate</strong> в <code>true</code>.  Возможные значения зависят от <strong>type</strong> сравнения. Список актуальных моделей приведён в описании поля <strong>type</strong>, там же можно посмотреть описание нужной модели. Элемент может принимать следующие значения * <code>EQUALS</code> * <code>EXISTS</code></td>
+</tr>
+<tr>
+<td>value</td>
+<td>string</td>
+<td>Значение для сравнения. Элемент может принимать следующие значения * <code>AWS_ECS_EC2</code> * <code>AWS_ECS_FARGATE</code> * <code>AWS_LAMBDA</code> * <code>AZURE_FUNCTIONS</code> * <code>AZURE_WEBSITES</code> * <code>CLOUD_FOUNDRY</code> * <code>GOOGLE_APP_ENGINE</code> * <code>GOOGLE_CLOUD_RUN</code> * <code>HEROKU</code> * <code>KUBERNETES</code> * <code>OPENSHIFT</code></td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a>{
+<a id="__codelineno-22-2" name="__codelineno-22-2" href="#__codelineno-22-2"></a>
+<a id="__codelineno-22-3" name="__codelineno-22-3" href="#__codelineno-22-3"></a>
+<a id="__codelineno-22-4" name="__codelineno-22-4" href="#__codelineno-22-4"></a>
+<a id="__codelineno-22-5" name="__codelineno-22-5" href="#__codelineno-22-5"></a>&quot;operator&quot;: &quot;EQUALS&quot;,
+<a id="__codelineno-22-6" name="__codelineno-22-6" href="#__codelineno-22-6"></a>
+<a id="__codelineno-22-7" name="__codelineno-22-7" href="#__codelineno-22-7"></a>
+<a id="__codelineno-22-8" name="__codelineno-22-8" href="#__codelineno-22-8"></a>
+<a id="__codelineno-22-9" name="__codelineno-22-9" href="#__codelineno-22-9"></a>&quot;value&quot;: &quot;KUBERNETES&quot;,
+<a id="__codelineno-22-10" name="__codelineno-22-10" href="#__codelineno-22-10"></a>
+<a id="__codelineno-22-11" name="__codelineno-22-11" href="#__codelineno-22-11"></a>
+<a id="__codelineno-22-12" name="__codelineno-22-12" href="#__codelineno-22-12"></a>
+<a id="__codelineno-22-13" name="__codelineno-22-13" href="#__codelineno-22-13"></a>&quot;negate&quot;: false,
+<a id="__codelineno-22-14" name="__codelineno-22-14" href="#__codelineno-22-14"></a>
+<a id="__codelineno-22-15" name="__codelineno-22-15" href="#__codelineno-22-15"></a>
+<a id="__codelineno-22-16" name="__codelineno-22-16" href="#__codelineno-22-16"></a>
+<a id="__codelineno-22-17" name="__codelineno-22-17" href="#__codelineno-22-17"></a>&quot;type&quot;: &quot;PAAS_TYPE&quot;
+<a id="__codelineno-22-18" name="__codelineno-22-18" href="#__codelineno-22-18"></a>
+<a id="__codelineno-22-19" name="__codelineno-22-19" href="#__codelineno-22-19"></a>
+<a id="__codelineno-22-20" name="__codelineno-22-20" href="#__codelineno-22-20"></a>
+<a id="__codelineno-22-21" name="__codelineno-22-21" href="#__codelineno-22-21"></a>}
+</code></pre></div>
+<h3 id="service_topology">SERVICE_TOPOLOGY<a class="headerlink" href="#service_topology" title="Permanent link">&para;</a></h3>
+<p>ServiceTopologyComparison</p>
+<p>Параметры</p>
+<p>JSON model</p>
+<h4 id="servicetopologycomparison">Объект <code>ServiceTopologyComparison</code><a class="headerlink" href="#servicetopologycomparison" title="Permanent link">&para;</a></h4>
+<p>Сравнение для атрибутов <code>SERVICE_TOPOLOGY</code>.</p>
+<table>
+<thead>
+<tr>
+<th>Элемент</th>
+<th>Тип</th>
+<th>Описание</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>operator</td>
+<td>string</td>
+<td>Оператор сравнения. Его можно обратить, установив <strong>negate</strong> в <code>true</code>.  Возможные значения зависят от <strong>type</strong> сравнения. Список актуальных моделей приведён в описании поля <strong>type</strong>, там же можно посмотреть описание нужной модели. Элемент может принимать следующие значения * <code>EQUALS</code> * <code>EXISTS</code></td>
+</tr>
+<tr>
+<td>value</td>
+<td>string</td>
+<td>Значение для сравнения. Элемент может принимать следующие значения * <code>EXTERNAL_SERVICE</code> * <code>FULLY_MONITORED</code> * <code>OPAQUE_SERVICE</code></td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a>{
+<a id="__codelineno-23-2" name="__codelineno-23-2" href="#__codelineno-23-2"></a>
+<a id="__codelineno-23-3" name="__codelineno-23-3" href="#__codelineno-23-3"></a>
+<a id="__codelineno-23-4" name="__codelineno-23-4" href="#__codelineno-23-4"></a>
+<a id="__codelineno-23-5" name="__codelineno-23-5" href="#__codelineno-23-5"></a>&quot;operator&quot;: &quot;EQUALS&quot;,
+<a id="__codelineno-23-6" name="__codelineno-23-6" href="#__codelineno-23-6"></a>
+<a id="__codelineno-23-7" name="__codelineno-23-7" href="#__codelineno-23-7"></a>
+<a id="__codelineno-23-8" name="__codelineno-23-8" href="#__codelineno-23-8"></a>
+<a id="__codelineno-23-9" name="__codelineno-23-9" href="#__codelineno-23-9"></a>&quot;value&quot;: &quot;FULLY_MONITORED&quot;,
+<a id="__codelineno-23-10" name="__codelineno-23-10" href="#__codelineno-23-10"></a>
+<a id="__codelineno-23-11" name="__codelineno-23-11" href="#__codelineno-23-11"></a>
+<a id="__codelineno-23-12" name="__codelineno-23-12" href="#__codelineno-23-12"></a>
+<a id="__codelineno-23-13" name="__codelineno-23-13" href="#__codelineno-23-13"></a>&quot;negate&quot;: false,
+<a id="__codelineno-23-14" name="__codelineno-23-14" href="#__codelineno-23-14"></a>
+<a id="__codelineno-23-15" name="__codelineno-23-15" href="#__codelineno-23-15"></a>
+<a id="__codelineno-23-16" name="__codelineno-23-16" href="#__codelineno-23-16"></a>
+<a id="__codelineno-23-17" name="__codelineno-23-17" href="#__codelineno-23-17"></a>&quot;type&quot;: &quot;SERVICE_TOPOLOGY&quot;
+<a id="__codelineno-23-18" name="__codelineno-23-18" href="#__codelineno-23-18"></a>
+<a id="__codelineno-23-19" name="__codelineno-23-19" href="#__codelineno-23-19"></a>
+<a id="__codelineno-23-20" name="__codelineno-23-20" href="#__codelineno-23-20"></a>
+<a id="__codelineno-23-21" name="__codelineno-23-21" href="#__codelineno-23-21"></a>}
+</code></pre></div>
+<h3 id="service_type">SERVICE_TYPE<a class="headerlink" href="#service_type" title="Permanent link">&para;</a></h3>
+<p>ServiceTypeComparison</p>
+<p>Параметры</p>
+<p>JSON model</p>
+<h4 id="servicetypecomparison">Объект <code>ServiceTypeComparison</code><a class="headerlink" href="#servicetypecomparison" title="Permanent link">&para;</a></h4>
+<p>Сравнение для атрибутов <code>SERVICE_TYPE</code>.</p>
+<table>
+<thead>
+<tr>
+<th>Элемент</th>
+<th>Тип</th>
+<th>Описание</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>operator</td>
+<td>string</td>
+<td>Оператор сравнения. Его можно обратить, установив <strong>negate</strong> в <code>true</code>.  Возможные значения зависят от <strong>type</strong> сравнения. Список актуальных моделей приведён в описании поля <strong>type</strong>, там же можно посмотреть описание нужной модели. Элемент может принимать следующие значения * <code>EQUALS</code> * <code>EXISTS</code></td>
+</tr>
+<tr>
+<td>value</td>
+<td>string</td>
+<td>Значение для сравнения. Элемент может принимать следующие значения * <code>BACKGROUND_ACTIVITY</code> * <code>CICS_SERVICE</code> * <code>CUSTOM_SERVICE</code> * <code>DATABASE_SERVICE</code> * <code>ENTERPRISE_SERVICE_BUS_SERVICE</code> * <code>EXTERNAL</code> * <code>IBM_INTEGRATION_BUS_SERVICE</code> * <code>IMS_SERVICE</code> * <code>MESSAGING_SERVICE</code> * <code>QUEUE_LISTENER_SERVICE</code> * <code>RMI_SERVICE</code> * <code>RPC_SERVICE</code> * <code>SPAN</code> * <code>UNIFIED</code> * <code>WEB_REQUEST_SERVICE</code> * <code>WEB_SERVICE</code> * <code>ZOS_CONNECT</code></td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a>{
+<a id="__codelineno-24-2" name="__codelineno-24-2" href="#__codelineno-24-2"></a>
+<a id="__codelineno-24-3" name="__codelineno-24-3" href="#__codelineno-24-3"></a>
+<a id="__codelineno-24-4" name="__codelineno-24-4" href="#__codelineno-24-4"></a>
+<a id="__codelineno-24-5" name="__codelineno-24-5" href="#__codelineno-24-5"></a>&quot;operator&quot;: &quot;EQUALS&quot;,
+<a id="__codelineno-24-6" name="__codelineno-24-6" href="#__codelineno-24-6"></a>
+<a id="__codelineno-24-7" name="__codelineno-24-7" href="#__codelineno-24-7"></a>
+<a id="__codelineno-24-8" name="__codelineno-24-8" href="#__codelineno-24-8"></a>
+<a id="__codelineno-24-9" name="__codelineno-24-9" href="#__codelineno-24-9"></a>&quot;value&quot;: &quot;BACKGROUND_ACTIVITY&quot;,
+<a id="__codelineno-24-10" name="__codelineno-24-10" href="#__codelineno-24-10"></a>
+<a id="__codelineno-24-11" name="__codelineno-24-11" href="#__codelineno-24-11"></a>
+<a id="__codelineno-24-12" name="__codelineno-24-12" href="#__codelineno-24-12"></a>
+<a id="__codelineno-24-13" name="__codelineno-24-13" href="#__codelineno-24-13"></a>&quot;negate&quot;: false,
+<a id="__codelineno-24-14" name="__codelineno-24-14" href="#__codelineno-24-14"></a>
+<a id="__codelineno-24-15" name="__codelineno-24-15" href="#__codelineno-24-15"></a>
+<a id="__codelineno-24-16" name="__codelineno-24-16" href="#__codelineno-24-16"></a>
+<a id="__codelineno-24-17" name="__codelineno-24-17" href="#__codelineno-24-17"></a>&quot;type&quot;: &quot;SERVICE_TYPE&quot;
+<a id="__codelineno-24-18" name="__codelineno-24-18" href="#__codelineno-24-18"></a>
+<a id="__codelineno-24-19" name="__codelineno-24-19" href="#__codelineno-24-19"></a>
+<a id="__codelineno-24-20" name="__codelineno-24-20" href="#__codelineno-24-20"></a>
+<a id="__codelineno-24-21" name="__codelineno-24-21" href="#__codelineno-24-21"></a>}
+</code></pre></div>
+<h3 id="simple_host_tech">SIMPLE_HOST_TECH<a class="headerlink" href="#simple_host_tech" title="Permanent link">&para;</a></h3>
+<p>SimpleHostTechComparison</p>
+<p>Параметры</p>
+<p>JSON model</p>
+<h4 id="simplehosttechcomparison">Объект <code>SimpleHostTechComparison</code><a class="headerlink" href="#simplehosttechcomparison" title="Permanent link">&para;</a></h4>
+<p>Сравнение для атрибутов <code>SIMPLE_HOST_TECH</code>.</p>
+<table>
+<thead>
+<tr>
+<th>Элемент</th>
+<th>Тип</th>
+<th>Описание</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>operator</td>
+<td>string</td>
+<td>Оператор сравнения. Его можно обратить, установив <strong>negate</strong> в <code>true</code>.  Возможные значения зависят от <strong>type</strong> сравнения. Список актуальных моделей приведён в описании поля <strong>type</strong>, там же можно посмотреть описание нужной модели. Элемент может принимать следующие значения * <code>EQUALS</code> * <code>EXISTS</code></td>
+</tr>
+<tr>
+<td>value</td>
+<td><a href="#openapi-definition-SimpleHostTech">SimpleHostTech</a></td>
+<td>Значение для сравнения.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="simplehosttech">Объект <code>SimpleHostTech</code><a class="headerlink" href="#simplehosttech" title="Permanent link">&para;</a></h4>
+<p>Значение для сравнения.</p>
+<table>
+<thead>
+<tr>
+<th>Элемент</th>
+<th>Тип</th>
+<th>Описание</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>type</td>
+<td>string</td>
+<td>Предопределённая технология, если технология не предопределена, нужно указать verbatim type. Элемент может принимать следующие значения * <code>APPARMOR</code> * <code>BOSH</code> * <code>BOSHBPM</code> * <code>CLOUDFOUNDRY</code> * <code>CONTAINERD</code> * <code>CRIO</code> * <code>DIEGO_CELL</code> * <code>DOCKER</code> * <code>GARDEN</code> * <code>GRSECURITY</code> * <code>KUBERNETES</code> * <code>OPENSHIFT</code> * <code>OPENSTACK_COMPUTE</code> * <code>OPENSTACK_CONTROLLER</code> * <code>SELINUX</code></td>
+</tr>
+<tr>
+<td>verbatimType</td>
+<td>string</td>
+<td>Непредопределённая технология, используется для пользовательских технологий.</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a>{
+<a id="__codelineno-25-2" name="__codelineno-25-2" href="#__codelineno-25-2"></a>
+<a id="__codelineno-25-3" name="__codelineno-25-3" href="#__codelineno-25-3"></a>
+<a id="__codelineno-25-4" name="__codelineno-25-4" href="#__codelineno-25-4"></a>
+<a id="__codelineno-25-5" name="__codelineno-25-5" href="#__codelineno-25-5"></a>&quot;operator&quot;: &quot;EQUALS&quot;,
+<a id="__codelineno-25-6" name="__codelineno-25-6" href="#__codelineno-25-6"></a>
+<a id="__codelineno-25-7" name="__codelineno-25-7" href="#__codelineno-25-7"></a>
+<a id="__codelineno-25-8" name="__codelineno-25-8" href="#__codelineno-25-8"></a>
+<a id="__codelineno-25-9" name="__codelineno-25-9" href="#__codelineno-25-9"></a>&quot;value&quot;: {
+<a id="__codelineno-25-10" name="__codelineno-25-10" href="#__codelineno-25-10"></a>
+<a id="__codelineno-25-11" name="__codelineno-25-11" href="#__codelineno-25-11"></a>
+<a id="__codelineno-25-12" name="__codelineno-25-12" href="#__codelineno-25-12"></a>
+<a id="__codelineno-25-13" name="__codelineno-25-13" href="#__codelineno-25-13"></a>&quot;type&quot;: &quot;CLOUDFOUNDRY&quot;
+<a id="__codelineno-25-14" name="__codelineno-25-14" href="#__codelineno-25-14"></a>
+<a id="__codelineno-25-15" name="__codelineno-25-15" href="#__codelineno-25-15"></a>
+<a id="__codelineno-25-16" name="__codelineno-25-16" href="#__codelineno-25-16"></a>
+<a id="__codelineno-25-17" name="__codelineno-25-17" href="#__codelineno-25-17"></a>},
+<a id="__codelineno-25-18" name="__codelineno-25-18" href="#__codelineno-25-18"></a>
+<a id="__codelineno-25-19" name="__codelineno-25-19" href="#__codelineno-25-19"></a>
+<a id="__codelineno-25-20" name="__codelineno-25-20" href="#__codelineno-25-20"></a>
+<a id="__codelineno-25-21" name="__codelineno-25-21" href="#__codelineno-25-21"></a>&quot;negate&quot;: false,
+<a id="__codelineno-25-22" name="__codelineno-25-22" href="#__codelineno-25-22"></a>
+<a id="__codelineno-25-23" name="__codelineno-25-23" href="#__codelineno-25-23"></a>
+<a id="__codelineno-25-24" name="__codelineno-25-24" href="#__codelineno-25-24"></a>
+<a id="__codelineno-25-25" name="__codelineno-25-25" href="#__codelineno-25-25"></a>&quot;type&quot;: &quot;SIMPLE_HOST_TECH&quot;
+<a id="__codelineno-25-26" name="__codelineno-25-26" href="#__codelineno-25-26"></a>
+<a id="__codelineno-25-27" name="__codelineno-25-27" href="#__codelineno-25-27"></a>
+<a id="__codelineno-25-28" name="__codelineno-25-28" href="#__codelineno-25-28"></a>
+<a id="__codelineno-25-29" name="__codelineno-25-29" href="#__codelineno-25-29"></a>}
+</code></pre></div>
+<h3 id="simple_tech">SIMPLE_TECH<a class="headerlink" href="#simple_tech" title="Permanent link">&para;</a></h3>
+<p>SimpleTechComparison</p>
+<p>Параметры</p>
+<p>JSON model</p>
+<h4 id="simpletechcomparison">Объект <code>SimpleTechComparison</code><a class="headerlink" href="#simpletechcomparison" title="Permanent link">&para;</a></h4>
+<p>Сравнение для атрибутов <code>SIMPLE_TECH</code>.</p>
+<table>
+<thead>
+<tr>
+<th>Элемент</th>
+<th>Тип</th>
+<th>Описание</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>operator</td>
+<td>string</td>
+<td>Оператор сравнения. Можно инвертировать, установив <strong>negate</strong> в <code>true</code>. Возможные значения зависят от <strong>type</strong> сравнения. Список актуальных моделей приведён в описании поля <strong>type</strong>, там же можно посмотреть описание нужной модели. Элемент может принимать следующие значения * <code>EQUALS</code> * <code>EXISTS</code></td>
+</tr>
+<tr>
+<td>value</td>
+<td><a href="#openapi-definition-SimpleTech">SimpleTech</a></td>
+<td>Значение для сравнения.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="simpletech">Объект <code>SimpleTech</code><a class="headerlink" href="#simpletech" title="Permanent link">&para;</a></h4>
+<p>Значение для сравнения.</p>
+<table>
+<thead>
+<tr>
+<th>Элемент</th>
+<th>Тип</th>
+<th>Описание</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>type</td>
+<td>string</td>
+<td>Предопределённая технология, если технология не предопределена, нужно указать дословный тип. Элемент может принимать следующие значения * <code>ACTIVEMQ_CLIENT</code> * <code>ACTIVE_MQ</code> * <code>ACTIVE_MQ_ARTEMIS</code> * <code>ADOBE_EXPERIENCE_MANAGER</code> * <code>ADO_NET</code> * <code>AIOHTTP</code> * <code>AIX</code> * <code>AKKA</code> * <code>AMAZON_BEDROCK</code> * <code>AMAZON_REDSHIFT</code> * <code>AMQP</code> * <code>APACHE_CAMEL</code> * <code>APACHE_CASSANDRA</code> * <code>APACHE_COUCH_DB</code> * <code>APACHE_DERBY</code> * <code>APACHE_HTTP_CLIENT_ASYNC</code> * <code>APACHE_HTTP_CLIENT_SYNC</code> * <code>APACHE_HTTP_SERVER</code> * <code>APACHE_KAFKA</code> * <code>APACHE_LOG4J</code> * <code>APACHE_PEKKO</code> * <code>APACHE_SOLR</code> * <code>APACHE_STORM</code> * <code>APACHE_SYNAPSE</code> * <code>APACHE_TOMCAT</code> * <code>APPARMOR</code> * <code>APPLICATION_INSIGHTS_SDK</code> * <code>ASP_DOTNET</code> * <code>ASP_DOTNET_CORE</code> * <code>ASP_DOTNET_CORE_SIGNALR</code> * <code>ASP_DOTNET_SIGNALR</code> * <code>ASYNC_HTTP_CLIENT</code> * <code>AWS_DYNAMO_DB</code> * <code>AWS_EVENT_BRIDGE</code> * <code>AWS_KINESIS</code> * <code>AWS_LAMBDA</code> * <code>AWS_RDS</code> * <code>AWS_S3</code> * <code>AWS_SERVICE</code> * <code>AWS_SNS_CLIENT</code> * <code>AWS_SQS</code> * <code>AXIS</code> * <code>AZURE_BLOB</code> * <code>AZURE_EVENT_HUB</code> * <code>AZURE_FUNCTIONS</code> * <code>AZURE_SERVICE_BUS</code> * <code>AZURE_SERVICE_FABRIC</code> * <code>AZURE_STORAGE</code> * <code>BOSHBPM</code> * <code>BOTTLE</code> * <code>CICS_FILE_ACCESS</code> * <code>CITRIX</code> * <code>CITRIX_COMMON</code> * <code>CITRIX_DESKTOP_DELIVERY_CONTROLLERS</code> * <code>CITRIX_DIRECTOR</code> * <code>CITRIX_LICENSE_SERVER</code> * <code>CITRIX_PROVISIONING_SERVICES</code> * <code>CITRIX_STOREFRONT</code> * <code>CITRIX_VIRTUAL_DELIVERY_AGENT</code> * <code>CITRIX_WORKSPACE_ENVIRONMENT_MANAGEMENT</code> * <code>CITRIX_XEN</code> * <code>CLOUDFOUNDRY</code> * <code>CLOUDFOUNDRY_AUCTIONEER</code> * <code>CLOUDFOUNDRY_BOSH</code> * <code>CLOUDFOUNDRY_GOROUTER</code> * <code>CLR</code> * <code>CODEIGNITER</code> * <code>COLDFUSION</code> * <code>CONFLUENT_KAFKA_CLIENT</code> * <code>CONTAINERD</code> * <code>CORE_DNS</code> * <code>COSMOSDB</code> * <code>COUCHBASE</code> * <code>CRIO</code> * <code>CXF</code> * <code>DATASTAX</code> * <code>DB2</code> * <code>DB2_CLIENT</code> * <code>DIEGO_CELL</code> * <code>DOCKER</code> * <code>DOTNET</code> * <code>DOTNET_REMOTING</code> * <code>DRUPAL</code> * <code>DYNATRACE</code> * <code>ELASTIC_SEARCH</code> * <code>ENVOY</code> * <code>ERLANG</code> * <code>ETCD</code> * <code>F5_LTM</code> * <code>FALCON</code> * <code>FASTAPI</code> * <code>FLASK</code> * <code>FSHARP</code> * <code>GARDEN</code> * <code>GLASSFISH</code> * <code>GO</code> * <code>GOOGLE_CLOUD_FUNCTIONS</code> * <code>GRAAL_NATIVE_IMAGE</code> * <code>GRAAL_TRUFFLE</code> * <code>GRAPH_QL</code> * <code>GRPC</code> * <code>GRSECURITY</code> * <code>HADOOP</code> * <code>HADOOP_HDFS</code> * <code>HADOOP_YARN</code> * <code>HAPROXY</code> * <code>HEAT</code> * <code>HELIDON</code> * <code>HESSIAN</code> * <code>HORNET_Q</code> * <code>HTTPX</code> * <code>IBM_CICS_REGION</code> * <code>IBM_CICS_TRANSACTION_GATEWAY</code> * <code>IBM_IMS_CONNECT_REGION</code> * <code>IBM_IMS_CONTROL_REGION</code> * <code>IBM_IMS_MESSAGE_PROCESSING_REGION</code> * <code>IBM_IMS_SOAP_GATEWAY</code> * <code>IBM_INTEGRATION_BUS</code> * <code>IBM_MQ</code> * <code>IBM_MQ_CLIENT</code> * <code>IBM_WEBSHPRERE_APPLICATION_SERVER</code> * <code>IBM_WEBSHPRERE_LIBERTY</code> * <code>IBM_WEBSPHERE_APPLICATION_SERVER</code> * <code>IBM_WEBSPHERE_LIBERTY</code> * <code>IIS</code> * <code>IIS_APP_POOL</code> * <code>ISTIO</code> * <code>JAVA</code> * <code>JAVA_HTTPURLCONNECTION</code> * <code>JAVA_HTTPURLCONNETION</code> * <code>JAX_WS</code> * <code>JBOSS</code> * <code>JBOSS_EAP</code> * <code>JBOSS_LOGMANAGER</code> * <code>JDK_HTTP_CLIENT</code> * <code>JDK_HTTP_SERVER</code> * <code>JERSEY</code> * <code>JETTY</code> * <code>JOOMLA</code> * <code>JRUBY</code> * <code>JYTHON</code> * <code>KOTLIN</code> * <code>KOTLIN_COROUTINES</code> * <code>KTOR_CLIENT</code> * <code>KTOR_SERVER</code> * <code>KUBERNETES</code> * <code>LAMINAS</code> * <code>LARAVEL</code> * <code>LIBC</code> * <code>LIBVIRT</code> * <code>LINKERD</code> * <code>LINUX_SYSTEM</code> * <code>LOGSTASH_LOGBACK_ENCODER</code> * <code>MAGENTO</code> * <code>MARIADB</code> * <code>MEMCACHED</code> * <code>MICRONAUT</code> * <code>MICROSOFT_SQL_SERVER</code> * <code>MONGODB</code> * <code>MONGODB_CLIENT</code> * <code>MONGODB_CLIENT_DOTNET</code> * <code>MSSQL_CLIENT</code> * <code>MULE_ESB</code> * <code>MYSQL</code> * <code>MYSQL_CONNECTOR</code> * <code>NETFLIX_SERVO</code> * <code>NETTY</code> * <code>NGINX</code> * <code>NODE_JS</code> * <code>OK_HTTP_CLIENT</code> * <code>ONEAGENT_SDK</code> * <code>OPENCENSUS</code> * <code>OPENSHIFT</code> * <code>OPENSTACK_COMPUTE</code> * <code>OPENSTACK_CONTROLLER</code> * <code>OPENTELEMETRY</code> * <code>OPENTRACING</code> * <code>OPEN_LIBERTY</code> * <code>ORACLE_DATABASE</code> * <code>ORACLE_DB_LISTENER</code> * <code>ORACLE_WEBLOGIC</code> * <code>OWIN</code> * <code>OWIN_KATANA</code> * <code>PERL</code> * <code>PHP</code> * <code>PHP_FPM</code> * <code>PLAY</code> * <code>PODMAN</code> * <code>POSTGRE_SQL</code> * <code>POSTGRE_SQL_DOTNET_DATA_PROVIDER</code> * <code>POWER_DNS</code> * <code>PROGRESS</code> * <code>PYTHON</code> * <code>QOS_LOGBACK</code> * <code>QUARKUS</code> * <code>R2DBC</code> * <code>RABBITMQ_CLIENT</code> * <code>RABBIT_MQ</code> * <code>REACTOR_CORE</code> * <code>REDIS</code> * <code>REQUESTS</code> * <code>RESTEASY</code> * <code>RESTLET</code> * <code>RIAK</code> * <code>RKE2</code> * <code>RSOCKET</code> * <code>RUBY</code> * <code>RUNC</code> * <code>RXJAVA</code> * <code>SAG_WEBMETHODS_IS</code> * <code>SANIC</code> * <code>SAP</code> * <code>SAP_HANADB</code> * <code>SAP_HYBRIS</code> * <code>SAP_MAXDB</code> * <code>SAP_SYBASE</code> * <code>SCALA</code> * <code>SECURITY_SOFTWARE</code> * <code>SELINUX</code> * <code>SHAREPOINT</code> * <code>SHELL</code> * <code>SLIM</code> * <code>SPARK</code> * <code>SPRING</code> * <code>SQLITE</code> * <code>STARLETTE</code> * <code>SYMFONY</code> * <code>THRIFT</code> * <code>TIBCO</code> * <code>TIBCO_BUSINESS_WORKS</code> * <code>TIBCO_EMS</code> * <code>TORNADO</code> * <code>UNDERTOW_IO</code> * <code>URLLIB3</code> * <code>VARNISH_CACHE</code> * <code>VERTX</code> * <code>VIM2</code> * <code>VIOS</code> * <code>VIRTUAL_MACHINE_KVM</code> * <code>VIRTUAL_MACHINE_QEMU</code> * <code>WCF</code> * <code>WILDFLY</code> * <code>WINDOWS_CONTAINERS</code> * <code>WINDOWS_SYSTEM</code> * <code>WINK</code> * <code>WORDPRESS</code> * <code>YII</code> * <code>ZERO_MQ</code> * <code>ZOS_CONNECT</code></td>
+</tr>
+<tr>
+<td>verbatimType</td>
+<td>string</td>
+<td>Непредопределённая технология, используется для пользовательских технологий.</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a>{
+<a id="__codelineno-26-2" name="__codelineno-26-2" href="#__codelineno-26-2"></a>
+<a id="__codelineno-26-3" name="__codelineno-26-3" href="#__codelineno-26-3"></a>
+<a id="__codelineno-26-4" name="__codelineno-26-4" href="#__codelineno-26-4"></a>
+<a id="__codelineno-26-5" name="__codelineno-26-5" href="#__codelineno-26-5"></a>&quot;operator&quot;: &quot;EQUALS&quot;,
+<a id="__codelineno-26-6" name="__codelineno-26-6" href="#__codelineno-26-6"></a>
+<a id="__codelineno-26-7" name="__codelineno-26-7" href="#__codelineno-26-7"></a>
+<a id="__codelineno-26-8" name="__codelineno-26-8" href="#__codelineno-26-8"></a>
+<a id="__codelineno-26-9" name="__codelineno-26-9" href="#__codelineno-26-9"></a>&quot;value&quot;: {
+<a id="__codelineno-26-10" name="__codelineno-26-10" href="#__codelineno-26-10"></a>
+<a id="__codelineno-26-11" name="__codelineno-26-11" href="#__codelineno-26-11"></a>
+<a id="__codelineno-26-12" name="__codelineno-26-12" href="#__codelineno-26-12"></a>
+<a id="__codelineno-26-13" name="__codelineno-26-13" href="#__codelineno-26-13"></a>&quot;verbatimType&quot;: &quot;MyTechnology&quot;
+<a id="__codelineno-26-14" name="__codelineno-26-14" href="#__codelineno-26-14"></a>
+<a id="__codelineno-26-15" name="__codelineno-26-15" href="#__codelineno-26-15"></a>
+<a id="__codelineno-26-16" name="__codelineno-26-16" href="#__codelineno-26-16"></a>
+<a id="__codelineno-26-17" name="__codelineno-26-17" href="#__codelineno-26-17"></a>},
+<a id="__codelineno-26-18" name="__codelineno-26-18" href="#__codelineno-26-18"></a>
+<a id="__codelineno-26-19" name="__codelineno-26-19" href="#__codelineno-26-19"></a>
+<a id="__codelineno-26-20" name="__codelineno-26-20" href="#__codelineno-26-20"></a>
+<a id="__codelineno-26-21" name="__codelineno-26-21" href="#__codelineno-26-21"></a>&quot;negate&quot;: false,
+<a id="__codelineno-26-22" name="__codelineno-26-22" href="#__codelineno-26-22"></a>
+<a id="__codelineno-26-23" name="__codelineno-26-23" href="#__codelineno-26-23"></a>
+<a id="__codelineno-26-24" name="__codelineno-26-24" href="#__codelineno-26-24"></a>
+<a id="__codelineno-26-25" name="__codelineno-26-25" href="#__codelineno-26-25"></a>&quot;type&quot;: &quot;SIMPLE_TECH&quot;
+<a id="__codelineno-26-26" name="__codelineno-26-26" href="#__codelineno-26-26"></a>
+<a id="__codelineno-26-27" name="__codelineno-26-27" href="#__codelineno-26-27"></a>
+<a id="__codelineno-26-28" name="__codelineno-26-28" href="#__codelineno-26-28"></a>
+<a id="__codelineno-26-29" name="__codelineno-26-29" href="#__codelineno-26-29"></a>}
+</code></pre></div>
+<h3 id="string_1">STRING<a class="headerlink" href="#string_1" title="Permanent link">&para;</a></h3>
+<p>StringComparison</p>
+<p>Параметры</p>
+<p>JSON model</p>
+<h4 id="stringcomparison">Объект <code>StringComparison</code><a class="headerlink" href="#stringcomparison" title="Permanent link">&para;</a></h4>
+<p>Сравнение для атрибутов <code>STRING</code>.</p>
+<table>
+<thead>
+<tr>
+<th>Элемент</th>
+<th>Тип</th>
+<th>Описание</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>caseSensitive</td>
+<td>boolean</td>
+<td>Сравнение чувствительно к регистру (<code>true</code>) или нечувствительно (<code>false</code>).</td>
+</tr>
+<tr>
+<td>operator</td>
+<td>string</td>
+<td>Оператор сравнения. Можно инвертировать, установив <strong>negate</strong> в <code>true</code>. Возможные значения зависят от <strong>type</strong> сравнения. Список актуальных моделей приведён в описании поля <strong>type</strong>, там же можно посмотреть описание нужной модели. Элемент может принимать следующие значения * <code>BEGINS_WITH</code> * <code>CONTAINS</code> * <code>ENDS_WITH</code> * <code>EQUALS</code> * <code>EXISTS</code> * <code>REGEX_MATCHES</code></td>
+</tr>
+<tr>
+<td>value</td>
+<td>string</td>
+<td>Значение для сравнения.</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a>{
+<a id="__codelineno-27-2" name="__codelineno-27-2" href="#__codelineno-27-2"></a>
+<a id="__codelineno-27-3" name="__codelineno-27-3" href="#__codelineno-27-3"></a>
+<a id="__codelineno-27-4" name="__codelineno-27-4" href="#__codelineno-27-4"></a>
+<a id="__codelineno-27-5" name="__codelineno-27-5" href="#__codelineno-27-5"></a>&quot;operator&quot;: &quot;CONTAINS&quot;,
+<a id="__codelineno-27-6" name="__codelineno-27-6" href="#__codelineno-27-6"></a>
+<a id="__codelineno-27-7" name="__codelineno-27-7" href="#__codelineno-27-7"></a>
+<a id="__codelineno-27-8" name="__codelineno-27-8" href="#__codelineno-27-8"></a>
+<a id="__codelineno-27-9" name="__codelineno-27-9" href="#__codelineno-27-9"></a>&quot;value&quot;: &quot;myValue&quot;,
+<a id="__codelineno-27-10" name="__codelineno-27-10" href="#__codelineno-27-10"></a>
+<a id="__codelineno-27-11" name="__codelineno-27-11" href="#__codelineno-27-11"></a>
+<a id="__codelineno-27-12" name="__codelineno-27-12" href="#__codelineno-27-12"></a>
+<a id="__codelineno-27-13" name="__codelineno-27-13" href="#__codelineno-27-13"></a>&quot;negate&quot;: false,
+<a id="__codelineno-27-14" name="__codelineno-27-14" href="#__codelineno-27-14"></a>
+<a id="__codelineno-27-15" name="__codelineno-27-15" href="#__codelineno-27-15"></a>
+<a id="__codelineno-27-16" name="__codelineno-27-16" href="#__codelineno-27-16"></a>
+<a id="__codelineno-27-17" name="__codelineno-27-17" href="#__codelineno-27-17"></a>&quot;type&quot;: &quot;STRING&quot;,
+<a id="__codelineno-27-18" name="__codelineno-27-18" href="#__codelineno-27-18"></a>
+<a id="__codelineno-27-19" name="__codelineno-27-19" href="#__codelineno-27-19"></a>
+<a id="__codelineno-27-20" name="__codelineno-27-20" href="#__codelineno-27-20"></a>
+<a id="__codelineno-27-21" name="__codelineno-27-21" href="#__codelineno-27-21"></a>&quot;caseSensitive&quot;: true
+<a id="__codelineno-27-22" name="__codelineno-27-22" href="#__codelineno-27-22"></a>
+<a id="__codelineno-27-23" name="__codelineno-27-23" href="#__codelineno-27-23"></a>
+<a id="__codelineno-27-24" name="__codelineno-27-24" href="#__codelineno-27-24"></a>
+<a id="__codelineno-27-25" name="__codelineno-27-25" href="#__codelineno-27-25"></a>}
+</code></pre></div>
+<h3 id="synthetic_engine_type">SYNTHETIC_ENGINE_TYPE<a class="headerlink" href="#synthetic_engine_type" title="Permanent link">&para;</a></h3>
+<p>SyntheticEngineTypeComparison</p>
+<p>Параметры</p>
+<p>JSON model</p>
+<h4 id="syntheticenginetypecomparison">Объект <code>SyntheticEngineTypeComparison</code><a class="headerlink" href="#syntheticenginetypecomparison" title="Permanent link">&para;</a></h4>
+<p>Сравнение для атрибутов <code>SYNTHETIC_ENGINE_TYPE</code>.</p>
+<table>
+<thead>
+<tr>
+<th>Элемент</th>
+<th>Тип</th>
+<th>Описание</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>operator</td>
+<td>string</td>
+<td>Оператор сравнения. Можно инвертировать, установив <strong>negate</strong> в <code>true</code>. Возможные значения зависят от <strong>type</strong> сравнения. Список актуальных моделей приведён в описании поля <strong>type</strong>, там же можно посмотреть описание нужной модели. Элемент может принимать следующие значения * <code>EQUALS</code> * <code>EXISTS</code></td>
+</tr>
+<tr>
+<td>value</td>
+<td>string</td>
+<td>Значение для сравнения. Элемент может принимать следующие значения * <code>CLASSIC</code> * <code>CUSTOM</code></td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a>{
+<a id="__codelineno-28-2" name="__codelineno-28-2" href="#__codelineno-28-2"></a>
+<a id="__codelineno-28-3" name="__codelineno-28-3" href="#__codelineno-28-3"></a>
+<a id="__codelineno-28-4" name="__codelineno-28-4" href="#__codelineno-28-4"></a>
+<a id="__codelineno-28-5" name="__codelineno-28-5" href="#__codelineno-28-5"></a>&quot;operator&quot;: &quot;EQUALS&quot;,
+<a id="__codelineno-28-6" name="__codelineno-28-6" href="#__codelineno-28-6"></a>
+<a id="__codelineno-28-7" name="__codelineno-28-7" href="#__codelineno-28-7"></a>
+<a id="__codelineno-28-8" name="__codelineno-28-8" href="#__codelineno-28-8"></a>
+<a id="__codelineno-28-9" name="__codelineno-28-9" href="#__codelineno-28-9"></a>&quot;value&quot;: &quot;CLASSIC&quot;,
+<a id="__codelineno-28-10" name="__codelineno-28-10" href="#__codelineno-28-10"></a>
+<a id="__codelineno-28-11" name="__codelineno-28-11" href="#__codelineno-28-11"></a>
+<a id="__codelineno-28-12" name="__codelineno-28-12" href="#__codelineno-28-12"></a>
+<a id="__codelineno-28-13" name="__codelineno-28-13" href="#__codelineno-28-13"></a>&quot;negate&quot;: false,
+<a id="__codelineno-28-14" name="__codelineno-28-14" href="#__codelineno-28-14"></a>
+<a id="__codelineno-28-15" name="__codelineno-28-15" href="#__codelineno-28-15"></a>
+<a id="__codelineno-28-16" name="__codelineno-28-16" href="#__codelineno-28-16"></a>
+<a id="__codelineno-28-17" name="__codelineno-28-17" href="#__codelineno-28-17"></a>&quot;type&quot;: &quot;SYNTHETIC_ENGINE_TYPE&quot;
+<a id="__codelineno-28-18" name="__codelineno-28-18" href="#__codelineno-28-18"></a>
+<a id="__codelineno-28-19" name="__codelineno-28-19" href="#__codelineno-28-19"></a>
+<a id="__codelineno-28-20" name="__codelineno-28-20" href="#__codelineno-28-20"></a>
+<a id="__codelineno-28-21" name="__codelineno-28-21" href="#__codelineno-28-21"></a>}
+</code></pre></div>
+<h3 id="tag">TAG<a class="headerlink" href="#tag" title="Permanent link">&para;</a></h3>
+<p>TagComparison</p>
+<p>Параметры</p>
+<p>JSON model</p>
+<h4 id="tagcomparison">Объект <code>TagComparison</code><a class="headerlink" href="#tagcomparison" title="Permanent link">&para;</a></h4>
+<p>Сравнение для атрибутов <code>TAG</code>.</p>
+<table>
+<thead>
+<tr>
+<th>Элемент</th>
+<th>Тип</th>
+<th>Описание</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>operator</td>
+<td>string</td>
+<td>Оператор сравнения. Можно инвертировать, установив <strong>negate</strong> в <code>true</code>. Возможные значения зависят от <strong>type</strong> сравнения. Список актуальных моделей приведён в описании поля <strong>type</strong>, там же можно посмотреть описание нужной модели. Элемент может принимать следующие значения * <code>EQUALS</code> * <code>TAG_KEY_EQUALS</code></td>
+</tr>
+<tr>
+<td>value</td>
+<td><a href="#openapi-definition-TagInfo">TagInfo</a></td>
+<td>Тег сущности Dynatrace.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="taginfo_1">Объект <code>TagInfo</code><a class="headerlink" href="#taginfo_1" title="Permanent link">&para;</a></h4>
+<p>Тег сущности Dynatrace.</p>
+<table>
+<thead>
+<tr>
+<th>Элемент</th>
+<th>Тип</th>
+<th>Описание</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>context</td>
+<td>string</td>
+<td>Источник происхождения тега, например AWS или Cloud Foundry. Пользовательские теги используют значение <code>CONTEXTLESS</code>. Элемент может принимать следующие значения * <code>AWS</code> * <code>AWS_GENERIC</code> * <code>AZURE</code> * <code>CLOUD_FOUNDRY</code> * <code>CONTEXTLESS</code> * <code>ENVIRONMENT</code> * <code>GOOGLE_CLOUD</code> * <code>KUBERNETES</code></td>
+</tr>
+<tr>
+<td>key</td>
+<td>string</td>
+<td>Ключ тега. Для пользовательских тегов здесь указывается значение тега.</td>
+</tr>
+<tr>
+<td>value</td>
+<td>string</td>
+<td>Значение тега. Не применимо к пользовательским тегам.</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-29-1" name="__codelineno-29-1" href="#__codelineno-29-1"></a>{
+<a id="__codelineno-29-2" name="__codelineno-29-2" href="#__codelineno-29-2"></a>
+<a id="__codelineno-29-3" name="__codelineno-29-3" href="#__codelineno-29-3"></a>
+<a id="__codelineno-29-4" name="__codelineno-29-4" href="#__codelineno-29-4"></a>
+<a id="__codelineno-29-5" name="__codelineno-29-5" href="#__codelineno-29-5"></a>&quot;operator&quot;: &quot;TAG_KEY_EQUALS&quot;,
+<a id="__codelineno-29-6" name="__codelineno-29-6" href="#__codelineno-29-6"></a>
+<a id="__codelineno-29-7" name="__codelineno-29-7" href="#__codelineno-29-7"></a>
+<a id="__codelineno-29-8" name="__codelineno-29-8" href="#__codelineno-29-8"></a>
+<a id="__codelineno-29-9" name="__codelineno-29-9" href="#__codelineno-29-9"></a>&quot;value&quot;: {
+<a id="__codelineno-29-10" name="__codelineno-29-10" href="#__codelineno-29-10"></a>
+<a id="__codelineno-29-11" name="__codelineno-29-11" href="#__codelineno-29-11"></a>
+<a id="__codelineno-29-12" name="__codelineno-29-12" href="#__codelineno-29-12"></a>
+<a id="__codelineno-29-13" name="__codelineno-29-13" href="#__codelineno-29-13"></a>&quot;context&quot;: &quot;CONTEXTLESS&quot;,
+<a id="__codelineno-29-14" name="__codelineno-29-14" href="#__codelineno-29-14"></a>
+<a id="__codelineno-29-15" name="__codelineno-29-15" href="#__codelineno-29-15"></a>
+<a id="__codelineno-29-16" name="__codelineno-29-16" href="#__codelineno-29-16"></a>
+<a id="__codelineno-29-17" name="__codelineno-29-17" href="#__codelineno-29-17"></a>&quot;key&quot;: &quot;hostOS&quot;
+<a id="__codelineno-29-18" name="__codelineno-29-18" href="#__codelineno-29-18"></a>
+<a id="__codelineno-29-19" name="__codelineno-29-19" href="#__codelineno-29-19"></a>
+<a id="__codelineno-29-20" name="__codelineno-29-20" href="#__codelineno-29-20"></a>
+<a id="__codelineno-29-21" name="__codelineno-29-21" href="#__codelineno-29-21"></a>},
+<a id="__codelineno-29-22" name="__codelineno-29-22" href="#__codelineno-29-22"></a>
+<a id="__codelineno-29-23" name="__codelineno-29-23" href="#__codelineno-29-23"></a>
+<a id="__codelineno-29-24" name="__codelineno-29-24" href="#__codelineno-29-24"></a>
+<a id="__codelineno-29-25" name="__codelineno-29-25" href="#__codelineno-29-25"></a>&quot;negate&quot;: false,
+<a id="__codelineno-29-26" name="__codelineno-29-26" href="#__codelineno-29-26"></a>
+<a id="__codelineno-29-27" name="__codelineno-29-27" href="#__codelineno-29-27"></a>
+<a id="__codelineno-29-28" name="__codelineno-29-28" href="#__codelineno-29-28"></a>
+<a id="__codelineno-29-29" name="__codelineno-29-29" href="#__codelineno-29-29"></a>&quot;type&quot;: &quot;TAG&quot;
+<a id="__codelineno-29-30" name="__codelineno-29-30" href="#__codelineno-29-30"></a>
+<a id="__codelineno-29-31" name="__codelineno-29-31" href="#__codelineno-29-31"></a>
+<a id="__codelineno-29-32" name="__codelineno-29-32" href="#__codelineno-29-32"></a>
+<a id="__codelineno-29-33" name="__codelineno-29-33" href="#__codelineno-29-33"></a>}
+</code></pre></div>
+<h2 id="_1">Связанные темы<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="../../../../manage/tags-and-metadata/setup/how-to-define-tags/" title="Узнайте, как определять и применять теги вручную и автоматически.">Определение и применение тегов</a></li>
+<li><a href="../../../../manage/tags-and-metadata/" title="Используйте теги и метаданные для организации данных в среде Dynatrace.">Теги и метаданные</a></li>
+</ul>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  К началу
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      © 2026 Dynatrace Docs | Yerkebulan Ardabayev
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/Yerkebulan-Ardabayev" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../../../..", "features": ["navigation.indexes", "navigation.prune", "navigation.path", "navigation.tracking", "navigation.top", "search.suggest", "search.highlight", "search.share", "content.code.copy", "content.code.annotate", "content.tabs.link", "content.tooltips", "toc.follow"], "search": "../../../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u0421\u043a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u043d\u043e \u0432 \u0431\u0443\u0444\u0435\u0440", "clipboard.copy": "\u041a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u0442\u044c \u0432 \u0431\u0443\u0444\u0435\u0440", "search.result.more.one": "\u0415\u0449\u0451 1 \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.more.other": "\u0415\u0449\u0451 # \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.none": "\u0421\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439 \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u043e", "search.result.one": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e 1 \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0435", "search.result.other": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439: #", "search.result.placeholder": "\u041d\u0430\u0447\u043d\u0438\u0442\u0435 \u043f\u0435\u0447\u0430\u0442\u0430\u0442\u044c \u0434\u043b\u044f \u043f\u043e\u0438\u0441\u043a\u0430", "search.result.term.missing": "\u041e\u0442\u0441\u0443\u0442\u0441\u0442\u0432\u0443\u0435\u0442", "select.version": "\u0412\u044b\u0431\u0435\u0440\u0438\u0442\u0435 \u0432\u0435\u0440\u0441\u0438\u044e"}, "version": null}</script>
+    
+    
+  
+      <script src="../../../../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../../../../../assets/javascripts/groq-chat.js?sha=17d46ba74"></script>
+      
+    
+  <script>
+    (function() {
+      // --- Keyboard shortcut Ctrl+K / Cmd+K for search ---
+      document.addEventListener('keydown', function(e) {
+        if ((e.ctrlKey || e.metaKey) && e.key === 'k') {
+          e.preventDefault();
+          var searchInput = document.querySelector('.md-search__input');
+          if (searchInput) {
+            searchInput.focus();
+            var searchToggle = document.querySelector('[data-md-toggle="search"]');
+            if (searchToggle && !searchToggle.checked) {
+              searchToggle.checked = true;
+              searchToggle.dispatchEvent(new Event('change'));
+            }
+          }
+        }
+        // --- "/" focuses search like GitHub / Algolia docs ---
+        if (e.key === '/' && !/^(input|textarea|select)$/i.test(e.target.tagName)) {
+          e.preventDefault();
+          var inp = document.querySelector('.md-search__input');
+          if (inp) {
+            inp.focus();
+            var t = document.querySelector('[data-md-toggle="search"]');
+            if (t && !t.checked) { t.checked = true; t.dispatchEvent(new Event('change')); }
+          }
+        }
+      });
+    })();
+  </script>
+
+  </body>
+</html>
