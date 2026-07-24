@@ -38,6 +38,7 @@ source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/setting
 | [Microsoft Defender for Cloud](/managed/dynatrace-api/environment-api/settings/schemas/app-dynatrace-microsoft-defender-cloud-connections) | `app:dynatrace.microsoft.defender.cloud:connections` | `environment` |
 | [Microsoft Sentinel](/managed/dynatrace-api/environment-api/settings/schemas/app-dynatrace-microsoft-sentinel-connections) | `app:dynatrace.microsoft.sentinel:connections` | `environment` |
 | [Microsoft 365 Email Connections](/managed/dynatrace-api/environment-api/settings/schemas/app-dynatrace-microsoft365-connector-mail-connection) | `app:dynatrace.microsoft365.connector:mail.connection` | `environment` |
+| [Microsoft Teams](/managed/dynatrace-api/environment-api/settings/schemas/app-dynatrace-msteams-app-connection) | `app:dynatrace.msteams:app-connection` | `environment` |
 | [Microsoft Teams](/managed/dynatrace-api/environment-api/settings/schemas/app-dynatrace-msteams-connection) | `app:dynatrace.msteams:connection` | `environment` |
 | [PagerDuty Connections](/managed/dynatrace-api/environment-api/settings/schemas/app-dynatrace-pagerduty-connection) | `app:dynatrace.pagerduty:connection` | `environment` |
 | [QuickStart Token Configuration](/managed/dynatrace-api/environment-api/settings/schemas/app-dynatrace-quickstart-dynatrace-quickstart-token-config) | `app:dynatrace.quickstart:dynatrace.quickstart.token-config` | `environment` |

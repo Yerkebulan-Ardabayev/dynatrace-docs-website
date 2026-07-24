@@ -9,7 +9,7 @@ source: https://docs.dynatrace.com/managed/whats-new/technology/end-of-life-anno
 
 * Reference
 * 1-min read
-* Updated on Jan 15, 2026
+* Updated on Jul 14, 2026
 
 ## General policy
 
@@ -107,3 +107,22 @@ Push notifications will now be delivered through third-party integrations such a
 ### Need help?
 
 For assistance with transitioning or setting up integrations, please see the Documentation links above or contact Support.
+
+## Legacy ActiveGate **Update now** action
+
+The legacy, cron-based **Update now** action for Environment ActiveGate, which force-updates an ActiveGate immediately without version selection or update window support, is deprecated.
+
+This action is superseded by Environment ActiveGate auto-update, which now supports selecting a target version and choosing an update mode, including scheduling updates to run only during configured update windows. See [Update now to target version](/managed/ingest-from/dynatrace-activegate/operation/update-activegate#update-now-to-target-version "Configure Environment ActiveGate automatic updates---update mode, target version, and update windows---and download or install manually.").
+
+### Key dates
+
+* **End of Life (EoL)**: January 1, 2027. The legacy **Update now** action and the `forceUpdate` API flag are removed on this date.
+
+### What's changing?
+
+* The **Update now** action (and the underlying `forceUpdate` API flag) no longer receives feature investment.
+* Auto-update now supports selecting a target version and scheduling updates to run only during configured update windows, in addition to immediate, on-demand updates to the configured target version.
+
+### Recommended actions
+
+* Configure a target version, update mode, and update windows for your Environment ActiveGates in [Update ActiveGate](/managed/ingest-from/dynatrace-activegate/operation/update-activegate "Configure Environment ActiveGate automatic updates---update mode, target version, and update windows---and download or install manually.").

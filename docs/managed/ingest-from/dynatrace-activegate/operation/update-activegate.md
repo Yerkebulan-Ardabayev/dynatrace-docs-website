@@ -9,7 +9,7 @@ source: https://docs.dynatrace.com/managed/ingest-from/dynatrace-activegate/oper
 
 * How-to guide
 * 5-min read
-* Updated on Jun 23, 2026
+* Updated on Jul 14, 2026
 
 Limitations
 
@@ -83,6 +83,10 @@ ActiveGate auto-update settings follow this override order:
 By default (new environment installation), ActiveGates update at the earliest convenience to the latest eligible version.
 
 ### Update now to target version
+
+Legacy Update now action is deprecated
+
+The legacy **Update now** action, which force-updates an Environment ActiveGate immediately without version selection or update-window support, is deprecated. It's superseded by the target version, update mode, and update window functionality described on this page. Switch to the new auto-update configuration to keep control over ActiveGate updates.
 
 You update an individual ActiveGate manually from its own update settings, not from the environment-wide defaults: open the **ActiveGate updates** settings for that specific ActiveGate. For an ActiveGate set to **No automatic updates** that is on a version older than its configured **target version**, the settings show the version it will update to and provide an **Update now to target version** button. Select the button to trigger the update immediately.
 
