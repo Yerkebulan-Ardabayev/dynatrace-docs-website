@@ -1,17 +1,17 @@
 ---
-title: Add-on for VS Code
+title: VS Code
 source: https://docs.dynatrace.com/managed/ingest-from/extensions/develop-your-extensions/addon-for-vscode
 ---
 
-# Add-on for VS Code
+# VS Code
 
-# Add-on for VS Code
+# VS Code
 
 * Explanation
 * 2-min read
-* Published Jun 16, 2025
+* Updated on Jul 07, 2026
 
-**Dynatrace Extensions** is an add-on for Visual Studio Code that supports all aspects of developing Extensions running on Dynatrace. Find it by searching the [VS Code extensions marketplace﻿](https://marketplace.visualstudio.com/items?itemName=DynatracePlatformExtensions.dynatrace-extensions).
+![Dynatrace Extensions](https://dt-cdn.net/images/dynatrace-extensions-icon-1580-5032ebda6e.png "Dynatrace Extensions") **Dynatrace Extensions** is an extension for Visual Studio Code that supports all aspects of developing Extensions running on Dynatrace. Find it by searching the [VS Code extensions marketplace﻿](https://marketplace.visualstudio.com/items?itemName=DynatracePlatformExtensions.dynatrace-extensions).
 
 It gives you access to a specialized toolkit that's ready to use and helps you out with the following:
 
@@ -19,18 +19,16 @@ It gives you access to a specialized toolkit that's ready to use and helps you o
 2. Content creation
 3. Content validation
 
-Check out the instructions for [getting started](/managed/ingest-from/extensions/develop-your-extensions/addon-for-vscode/getting-started "Set up the Dynatrace Extensions add-on for Visual Studio Code and build your first extension ready for upload in five minutes."), or keep reading to learn some of its features.
+Check out the instructions for [getting started](/managed/ingest-from/extensions/develop-your-extensions/addon-for-vscode/guides/getting-started "Set up the Dynatrace Extensions add-on for Visual Studio Code and build your first extension ready for upload in five minutes."), or keep reading to learn some of its features.
 
 ## Features
 
-Following are some features of **Dynatrace Extensions**.
-
 ### Operational efficiency
 
-**Dynatrace Extensions** makes you more operationally efficient when developing Extensions. It includes the following features:
+![Dynatrace Extensions](https://dt-cdn.net/images/dynatrace-extensions-icon-1580-5032ebda6e.png "Dynatrace Extensions") **Dynatrace Extensions** makes you more operationally efficient when developing extensions. It includes the following features:
 
-* Extension 2.0 project management and organization at scale.
-* Overview of deployments across multiple environments.
+* Dedicated views for managing workspaces and environments at scale
+* Overview of deployed extensions across multiple environments
 * All extension-related operations available within your editor:
 
   + Create, build, sign, upload, and activate extensions.
@@ -39,21 +37,24 @@ Following are some features of **Dynatrace Extensions**.
 
 ### Content creation
 
-You can also automatically generate significant portions of your extension's manifest and other content. Following are the features that you can use:
+You can speed up development by automatically generating significant portions of your extension's manifest and assets. These features include:
 
-* Generate [Unified analysis screens](/managed/ingest-from/extend-dynatrace/extend-ui/unified-analysis "Extend the Dynatrace web UI using entity-tailored unified analysis pages.") for your entities.
-* Generate documentation, dashboards, and alerts.
-* Run Windows Management Instrumentation (WMI) Queries to extract metrics and dimensions automatically.
-* Connect to Prometheus exporters to extract metrics, dimensions, and metadata automatically.
-* Use code completions where the values depend on data from your environment.
+* Generating [unified analysis pages](/managed/ingest-from/extend-dynatrace/extend-ui/unified-analysis "Extend the Dynatrace web UI using entity-tailored unified analysis pages.") for your entities.
+* Code completions based on data from your environment.
+
+* Generating documentation, dashboards, and alerts.
+* Running Windows Management Instrumentation (WMI) Queries to extract metrics and dimensions automatically.
+* Connecting to Prometheus exporters to extract metrics, dimensions, and metadata automatically.
+* Connecting to Java processes to extract JMX metrics and dimensions automatically.
 
 ### Content validation
 
-You can use the Dynatrace Extensions to validate your extension manifest early. Following are the features that you can use:
+You can reduce bugs by validating your extension content early. ![Dynatrace Extensions](https://dt-cdn.net/images/dynatrace-extensions-icon-1580-5032ebda6e.png "Dynatrace Extensions") **Dynatrace Extensions** provides:
 
-* Validate against targeted YAML schema versions.
-* Get custom diagnostics beyond what's included in the schema.
-* Validate your metric and entity selectors against environment data.
+* Extension manifest validation against different schema versions
+* Custom diagnostics beyond what's included in the extension schemas
+
+* Metric and entity selector validation against environment data
 
 ## Support
 

@@ -8,7 +8,11 @@ source: https://docs.dynatrace.com/managed/dynatrace-api/configuration-api/rum/g
 # Geographic regions - IP address mapping rules API
 
 * Reference
-* Published Sep 24, 2020
+* Updated on Jul 21, 2026
+
+Deprecated
+
+This API is deprecated. Use the [Map IP addresses to locations schema](/managed/dynatrace-api/environment-api/settings/schemas/builtin-rum-ip-mappings "View builtin:rum.ip-mappings settings schema table of your monitoring environment via the Dynatrace API.") instead.
 
 The **Geographic regions - IP address mapping rules** API enables you to manage the configuration of IP address mapping to geographic locations. You can also manage the same configuration in the Dynatrace UI at **Settings > Web and mobile monitoring > Map IP addresses to locations**.
 

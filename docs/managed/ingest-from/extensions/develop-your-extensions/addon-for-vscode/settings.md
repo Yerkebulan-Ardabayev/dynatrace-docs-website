@@ -17,7 +17,7 @@ You can learn more about accessing these settings in Visual Studio Code's [offic
 
 ## Credentials
 
-**Dynatrace Extensions** can either generate all the credentials required for Extension 2.0 development or allow you to bring your own credential files.
+![Dynatrace Extensions](https://dt-cdn.net/images/dynatrace-extensions-icon-1580-5032ebda6e.png "Dynatrace Extensions") **Dynatrace Extensions** can either generate all the credentials required for Extension 2.0 development or allow you to bring your own credential files.
 
 ### When using your credentials
 

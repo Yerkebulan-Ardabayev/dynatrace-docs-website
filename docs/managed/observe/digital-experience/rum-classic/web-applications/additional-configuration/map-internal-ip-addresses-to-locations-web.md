@@ -9,7 +9,7 @@ source: https://docs.dynatrace.com/managed/observe/digital-experience/rum-classi
 
 * How-to guide
 * 1-min read
-* Published Jul 19, 2017
+* Updated on Jul 21, 2026
 
 Dynatrace Real User Monitoring Classic groups [user sessions and user actions per location](/managed/observe/digital-experience/rum-classic/rum-concepts/detection-of-ip-addresses-locations-and-user-agents "Dynatrace detects IP addresses and geolocations like a city, region, and country as well as browsers, devices, and operating systems.") and shows them on the [world map](/managed/observe/digital-experience/rum-classic/web-applications/analyze-and-use/world-map-view "Learn how the World map view offers insights into Apdex ratings, user actions, action durations, and JavaScript errors.").
 
@@ -21,8 +21,8 @@ To add an IP address mapping rule
 2. Under **IP address mapping rules**, select **Add item**.
 3. Specify the IP address or IP range, and then set the **Country**, **Region**, and **City**.
 
-If you have numerous custom IP addresses to import, it's more convenient to use the Dynatrace API, specifically the [IP address mapping rules - PUT configuration](/managed/dynatrace-api/configuration-api/rum/geographic-regions-ip-address/put-configuration "Update the configuration of IP address mapping via the Dynatrace API.") method.
+If you have numerous custom IP addresses to import, it's more convenient to use the [Settings API](/managed/dynatrace-api/environment-api/settings "Find out what the Dynatrace Settings API offers."), specifically the [Map IP addresses to locations schema](/managed/dynatrace-api/environment-api/settings/schemas/builtin-rum-ip-mappings "View builtin:rum.ip-mappings settings schema table of your monitoring environment via the Dynatrace API.").
 
 ## Related topics
 
-* [Geographic regions - IP address mapping rules API](/managed/dynatrace-api/configuration-api/rum/geographic-regions-ip-address "Learn what the Dynatrace configuration API for IP address mapping rules offers.")
+* [Settings API - Map IP addresses to locations schema table](/managed/dynatrace-api/environment-api/settings/schemas/builtin-rum-ip-mappings "View builtin:rum.ip-mappings settings schema table of your monitoring environment via the Dynatrace API.")

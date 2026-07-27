@@ -9,7 +9,7 @@ source: https://docs.dynatrace.com/managed/ingest-from/opentelemetry/collector/u
 
 * How-to guide
 * 2-min read
-* Updated on Apr 01, 2026
+* Updated on Jul 20, 2026
 
 OpenTelemetry Host Monitoring is a Dynatrace feature that transforms raw telemetry data from OTel Collectors into actionable insights.
 Rather than simply ingesting metrics, logs, and traces, Dynatrace automatically builds meaningful context around your infrastructure.
@@ -101,14 +101,26 @@ For this purpose, we set the following two environment variables and reference t
 ### Topology
 
 This extension automatically generates topology for infrastructure monitored via the Collector.
-Specifically, it creates the following entity types based on metadata extracted from metrics, logs, and traces:
+Specifically, it creates the entity types based on metadata extracted from metrics, logs, and traces.
 
 | Entity type | Entity ID |
 | --- | --- |
-| OpenTelemetry Host | dt.entity.otel:host |
-| OpenTelemetry Process | dt.entity.otel:process |
+| OpenTelemetry host | `dt.entity.otel:host` |
+| OpenTelemetry process | `dt.entity.otel:process` |
 
 These entities enable Dynatrace to correlate your metrics, logs, and spans and provide unified context across your monitored environment.
+
+Required attributes for entity extraction
+
+In order for Dynatrace to extract host and process entities, the following resource attributes must be present on your telemetry data.
+If you use the reference configuration, these are automatically included by default.
+If you use a custom Collector configuration that differs from the reference configuration, make sure these attributes are included.
+
+| Signal | `otel:host` | `otel:process` |
+| --- | --- | --- |
+| Metrics | * `host.id` * `host.name` * `dt.metrics.source` must be `opentelemetry` | * All resource attributes as in `otel:host` * Additionally, `process.executable.name` |
+| Logs | * `host.id` * `host.name` * `dt.openpipeline.source` must be `/api/v2/otlp/v1/logs`   This is automatically set by OpenPipeline; if it is changed or removed, this cause entity extraction to not function properly. | * All resource attributes as in `otel:host` * Additionally, `process.executable.name` |
+| Spans | * `host.id` * `host.name` * `telemetry.sdk.name` must be `opentelemetry`, `odin`, or `otel` | * All resource attributes as in `otel:host` * Additionally, `process.executable.name` |
 
 ### Enrich application telemetry
 

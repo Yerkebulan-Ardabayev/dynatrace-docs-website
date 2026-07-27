@@ -8,7 +8,11 @@ source: https://docs.dynatrace.com/managed/dynatrace-api/configuration-api/rum/g
 # IP address mapping rules - PUT configuration
 
 * Reference
-* Published Sep 24, 2020
+* Updated on Jul 21, 2026
+
+Deprecated
+
+This API endpoint is deprecated. Use the [Map IP addresses to locations schema](/managed/dynatrace-api/environment-api/settings/schemas/builtin-rum-ip-mappings "View builtin:rum.ip-mappings settings schema table of your monitoring environment via the Dynatrace API.") instead.
 
 Updates the configuration of mapping between IP addresses and geographic regions.
 
