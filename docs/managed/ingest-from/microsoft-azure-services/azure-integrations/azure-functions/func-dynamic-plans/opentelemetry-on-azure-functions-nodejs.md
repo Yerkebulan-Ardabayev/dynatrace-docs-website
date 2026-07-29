@@ -535,6 +535,8 @@ registerTraceEndHook();
 | 1.327+ | 1.x.y | 1.0.x - 2.0.x |
 | 1.331+ | 1.x.y | 1.0.x - 2.2.x |
 | 1.335+ | 1.x.y | 1.0.x - 2.5.x |
+| 1.337+ | 1.x.y | 1.0.x - 2.6.x |
+| 1.343+ | 1.x.y | 1.0.x - 2.7.x |
 
 Dynatrace version 1.327+ The `@dynatrace/opentelemetry-azure-functions` module supports OpenTelemetry SDK V2. To use V2 (instead of V1), override the version of `@dynatrace/opentelemetry-core` module (required by `@dynatrace/opentelemetry-azure-functions`) with a version that supports OpenTelemetry SDK V2.
 

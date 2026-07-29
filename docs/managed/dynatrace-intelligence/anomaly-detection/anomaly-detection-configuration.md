@@ -9,7 +9,7 @@ source: https://docs.dynatrace.com/managed/dynatrace-intelligence/anomaly-detect
 
 * Explanation
 * 7-min read
-* Updated on May 29, 2026
+* Updated on Jul 27, 2026
 
 An anomaly detection configuration relies on several components:
 
@@ -107,6 +107,12 @@ The event template defines characteristics of an event triggered by threshold vi
     We recommend including the `{missing_data_samples}` placeholder in the event description to see whether the problem is raised due to missing data samples or threshold violations.
   + `{severity}` - the severity of the event.
   + `{threshold}` - the violated value of the threshold.
+
+Avoid exposing PII data through alert placeholders
+
+Placeholders such as `{dims}` inject dimension values directly from your DQL query result into the event title and description. If your query returns fields that contain personally identifiable information (PII), such as user names, email addresses, or customer IDs, these values become part of the event text.
+
+Since events can be forwarded to third-party notification channels, such as email or Slack integrations, we highly recommend avoiding placeholders that reference PII-containing fields. To prevent accidental PII exposure, exclude sensitive fields from your DQL query before they are added to the event template. You can do so by adding `fieldsRemove` or `fieldsKeep` commands to your query.
 
 You can provide additional parameters as key-value pairs. For a list of possible event properties, see [Semantic Dictionary](/managed/upgrade/unavailable-in-managed "Your selection is unavailable in Dynatrace Managed.").
 

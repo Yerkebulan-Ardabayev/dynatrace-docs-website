@@ -8,7 +8,7 @@ source: https://docs.dynatrace.com/managed/ingest-from/dynatrace-activegate/conf
 # Multi-environment deployment of ActiveGate
 
 * 4-min read
-* Updated on Feb 24, 2026
+* Updated on Jul 09, 2026
 
 If you've set up several monitoring environments, it might be cumbersome to install and maintain multiple ActiveGates. Therefore, Dynatrace enables you to configure a single ActiveGate in support of multiple monitoring environments. Such an ActiveGate is referred to as a **multi-environment ActiveGate**.
 
@@ -207,7 +207,7 @@ To configure an existing Environment ActiveGate for multi-environment support
    For correct operation, you must ensure that:
 
    * All environments that are to be supported by the same Environment ActiveGate run on the same Dynatrace Cluster.
-   * The main environment, associated with the `mainTenant` configuration property, is correctly configured. Incorrect configuration of the main environment will result in the **rejection of the ActiveGate in all configured environments**: An error will be logged in the ActiveGate logs, with information stating that `mainTenant` configuration is invalid, and the ActiveGate will not appear on the Deployment Status pages on any of the environments.
+   * The main environment, associated with the `mainTenant` configuration property, is correctly configured. Incorrect configuration of the main environment will result in the **rejection of the ActiveGate in all configured environments**: An error will be logged in the ActiveGate logs, with information stating that `mainTenant` configuration is invalid, and the ActiveGate won't appear in **Deployment Status** on any of the environments.
 6. **Save the `authorization.properties` file and [restart the ActiveGate main service](/managed/ingest-from/dynatrace-activegate/operation/stop-restart-activegate "Learn how you can start, stop and restart ActiveGate on Windows or Linux.").**
 7. **Verify that the new environments have been added successfully.**  
    The [ActiveGate log file](/managed/ingest-from/dynatrace-activegate/configuration/where-can-i-find-activegate-files "Find out where ActiveGate files are stored on Windows and Linux systems.") should contain the entry listing the number of environments that the ActiveGate is working with, for example:

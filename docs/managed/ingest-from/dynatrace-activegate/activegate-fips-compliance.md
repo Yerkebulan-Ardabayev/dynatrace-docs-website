@@ -7,7 +7,7 @@ source: https://docs.dynatrace.com/managed/ingest-from/dynatrace-activegate/acti
 
 # ActiveGate FIPS compliance
 
-* Updated on May 12, 2026
+* Updated on Jul 20, 2026
 
 ActiveGate version 1.315+
 
@@ -87,7 +87,7 @@ To check whether an ActiveGate is running in FIPS-compliant mode
 3. Search for the **FIPS mode** property.
 
    * If you find **FIPS mode** with a value of `True`, the ActiveGate is in FIPS-compliant mode.
-   * If you don't find **FIPS mode** at all, the ActiveGate is not in FIPS-compliant mode.
+   * If you don't find **FIPS mode** at all, the ActiveGate isn't in FIPS-compliant mode.
 
 To list all ActiveGates running in FIPS-compliant mode
 

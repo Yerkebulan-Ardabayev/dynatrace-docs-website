@@ -9,7 +9,7 @@ source: https://docs.dynatrace.com/managed/ingest-from/opentelemetry/otlp-api/in
 
 * Reference
 * 3-min read
-* Updated on May 04, 2026
+* Updated on Jul 15, 2026
 
 OpenTelemetry supports attributes at different levels in an OpenTelemetry log request, such as the resource level, scope level, and record level.
 
@@ -97,6 +97,12 @@ Maps are ingested by extracting their keys recursively and storing the values as
 ## Ingestion limits
 
 See [Log Monitoring default limits (Logs Classic)](/managed/analyze-explore-automate/log-monitoring/log-monitoring-limits "Default limits for the latest version of Dynatrace Log Monitoring.") for the limits applied to ingested log requests, their attributes, and their attribute values.
+
+For ActiveGate sizing recommendations for OTLP log ingestion, see:
+
+* [Linux ActiveGate sizing guide](/managed/ingest-from/dynatrace-activegate/installation/linux/linux-activegate-hardware-and-system-requirements#sizing-guide "Learn what hardware and operating system requirements need to be taken into account before installing ActiveGate on Linux for routing and monitoring purposes.")
+* [Windows ActiveGate sizing guide](/managed/ingest-from/dynatrace-activegate/installation/windows/windows-activegate-hardware-and-system-requirements#sizing-guide "Learn what hardware and operating system requirements need to be taken into account before installing ActiveGate on Windows for routing and monitoring.")
+* [Kubernetes ActiveGate sizing guide](/managed/ingest-from/setup-on-k8s/guides/deployment-and-configuration/resource-management/ag-resource-limits "Find CPU and memory resource recommendations for Dynatrace ActiveGates deployed in Kubernetes, sized by cluster scale and workload type.")
 
 ## Log ingestion API processing
 

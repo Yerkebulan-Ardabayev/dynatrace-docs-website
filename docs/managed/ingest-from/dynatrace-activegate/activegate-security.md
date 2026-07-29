@@ -8,7 +8,7 @@ source: https://docs.dynatrace.com/managed/ingest-from/dynatrace-activegate/acti
 # ActiveGate security
 
 * 8-min read
-* Published Jul 08, 2022
+* Updated on Jul 20, 2026
 
 ## Custom certificate for ActiveGate
 
@@ -122,6 +122,8 @@ During that period, if any attempt to connect without an ActiveGate token is det
 * The transitional period is reset to 30 days—ActiveGate token enforcement will be switched on automatically no sooner than 30 days from that point.
 
 ### ActiveGate token status
+
+Dynatrace Classic
 
 If your ActiveGates don't use valid ActiveGate tokens, you can check to learn why the tokens are invalid.
 
@@ -269,9 +271,11 @@ Besides setting up your internal mechanism for rotating ActiveGate tokens before
 
 For Dynatrace Managed, [emergency contacts](/managed/managed-cluster/configuration/configure-cluster-event-notifications "Configure Dynatrace Managed Cluster event notification recipients, emergency contacts, and which Managed Cluster events trigger email notifications.") also receive token expiry notifications.
 
+Dynatrace Classic
+
 To stop notifications
 
-1. In Dynatrace, go to **Deployment Status** > **ActiveGates**.
+1. Go to **Deployment Status** > **ActiveGates**.
 2. Select **More** (**…**), then select **ActiveGate token enforcement settings**.
 3. Turn off **Enable notifications about ActiveGate tokens expiration dates**.
 4. Select **Save changes**.

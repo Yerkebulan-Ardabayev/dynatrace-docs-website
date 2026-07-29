@@ -34,7 +34,7 @@ Enable automatic updates of Dynatrace Operator following a GitOps approach.](/ma
 
 Configure auto-updates for components managed by Dynatrace Operator.](/managed/ingest-from/setup-on-k8s/guides/deployment-and-configuration/updates-and-maintenance/auto-update-components "Configure auto-updates for all components managed by Dynatrace Operator")[### Dynatrace ActiveGate sizing guide
 
-Sizing guide for Dynatrace ActiveGate components](/managed/ingest-from/setup-on-k8s/guides/deployment-and-configuration/resource-management/ag-resource-limits "Set resource limits for Dynatrace ActiveGates")[### Configure startup probes for Dynatrace Operator
+Sizing guide for Dynatrace ActiveGate components](/managed/ingest-from/setup-on-k8s/guides/deployment-and-configuration/resource-management/ag-resource-limits "Find CPU and memory resource recommendations for Dynatrace ActiveGates deployed in Kubernetes, sized by cluster scale and workload type.")[### Configure startup probes for Dynatrace Operator
 
 Configure startup probes for Dynatrace Operator, Webhook, and CSI Driver.](/managed/ingest-from/setup-on-k8s/guides/deployment-and-configuration/configure-startup-probes "Set up and customize startup probes for Dynatrace Operator, Webhook, and CSI driver components to match your environment's requirements.")[### Customize ActiveGate for Kubernetes
 

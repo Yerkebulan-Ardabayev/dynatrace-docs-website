@@ -120,7 +120,7 @@ If you define 30 session properties, your monthly costs would be:
 * 10 billable properties × 3,600,000 sessions = 36,000,000
 * 36,000,000 × $0.0001 = **$3,600 per month**
 
-## Track your consumption
+## Understand and manage your consumption
 
 Dynatrace provides various options to help you understand and analyze your organization's consumption of RUM capabilities.
 

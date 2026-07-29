@@ -38,7 +38,9 @@ During an update, your ActiveGate configuration is preserved in the `custom.prop
 
 ## Update status
 
-The update status for an ActiveGate, as listed on the **Deployment Status** page, can assume the following values:
+Dynatrace Classic
+
+The update status for an ActiveGate can assume the following values:
 
 **Up to date**  
 The latest available ActiveGate version is installed on the respective host.
@@ -69,4 +71,4 @@ Possible problems are:
 
 **Unknown**  
 The connection to this ActiveGate has been lost and no status can be determined.  
-This status can also be displayed if an ActiveGate was successfully removed: In this case, **Deployment Status** will continue to display the uninstalled ActiveGate with update status `Unknown` for seven days.
+This status can also be displayed if an ActiveGate was successfully removed; in this case, the uninstalled ActiveGate continues to appear with update status `Unknown` for seven days.

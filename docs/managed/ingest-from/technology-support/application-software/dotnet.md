@@ -9,7 +9,7 @@ source: https://docs.dynatrace.com/managed/ingest-from/technology-support/applic
 
 * Reference
 * 3-min read
-* Updated on Apr 30, 2026
+* Updated on Jul 14, 2026
 
 Dynatrace OneAgent instruments your .NET applications by placing trace statements at strategic locations in your code for code tracing, performance metrics, error detection, dependency tracking, and more.
 
@@ -106,8 +106,5 @@ The .NET SDK supports building your application as a [single file﻿](https://le
 
 Depending on whether you use [framework-dependent deployment﻿](https://learn.microsoft.com/en-us/dotnet/core/deploying/#publish-framework-dependent) or [self-contained applications﻿](https://learn.microsoft.com/en-us/dotnet/core/deploying/#publish-self-contained), the runtime will also be bundled into the executable.
 
-Consider also the following information:
-
-* OneAgent doesn't support the instrumentation of modules bundled into the executable, which results in applications built as single files and self-contained not being supported at all.
-* Applications built as single file and framework-dependent can be partly instrumented.
-* .NET assemblies bundled into the single-file executable can't be instrumented (tracing logic can't be placed for those assemblies).
+This kind of application is supported with OneAgent version 1.343+ when using the feature "Instrument .NET Single-File Self-Contained applications", which also requires the feature "Advanced .NET Instrumentation Mode".
+On Linux and Alpine, Dynatrace doesn't support .NET 10 runtime versions 10.0.0–10.0.8 for Single-File Self-Contained applications.

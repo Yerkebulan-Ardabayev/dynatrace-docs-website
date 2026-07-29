@@ -407,11 +407,11 @@ Dynatrace Operator release notes](/managed/whats-new/dynatrace-operator)[#### Up
 
 Upgrade paths, update procedures, and uninstallation guide for Dynatrace Operator.
 
-Update or uninstall Dynatrace Operator](/managed/ingest-from/setup-on-k8s/guides/deployment-and-configuration/updates-and-maintenance/update-uninstall-operator)[#### Sizing guide for Dynatrace ActiveGates in the Kubernetes monitoring use-case
+Update or uninstall Dynatrace Operator](/managed/ingest-from/setup-on-k8s/guides/deployment-and-configuration/updates-and-maintenance/update-uninstall-operator)[#### Size Dynatrace ActiveGates in Kubernetes
 
-Set resource limits for Dynatrace ActiveGates
+Find CPU and memory resource recommendations for Dynatrace ActiveGates deployed in Kubernetes, sized by cluster scale and workload type.
 
-Sizing guide for Dynatrace ActiveGates in the Kubernetes monitoring use-case](/managed/ingest-from/setup-on-k8s/guides/deployment-and-configuration/resource-management/ag-resource-limits)
+Size Dynatrace ActiveGates in Kubernetes](/managed/ingest-from/setup-on-k8s/guides/deployment-and-configuration/resource-management/ag-resource-limits)
 
 ## Related topics
 

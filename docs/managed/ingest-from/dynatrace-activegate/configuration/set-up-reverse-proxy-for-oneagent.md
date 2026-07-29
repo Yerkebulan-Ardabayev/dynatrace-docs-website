@@ -8,7 +8,7 @@ source: https://docs.dynatrace.com/managed/ingest-from/dynatrace-activegate/conf
 # Reverse proxy or load balancer for OneAgent
 
 * 1-min read
-* Updated on Feb 24, 2026
+* Updated on Jul 09, 2026
 
 A reverse proxy/load balancer can be placed on the path from OneAgent to ActiveGate. You need to configure the URL of the load balancer on the ActiveGate so OneAgents can use that endpoint to connect to the ActiveGate.
 
@@ -74,7 +74,7 @@ After configuring the reverse proxy with `agctl`, you need to [restart ActiveGat
 
 To verify the configuration
 
-1. In Dynatrace, go to **Deployment Status** > **ActiveGates**.
+1. Go to **Deployment Status** > **ActiveGates**.
 2. Expand the row for your ActiveGate and check the **Load Balancer** property in the **Properties** section.
 
    You can filter the **ActiveGates** page by `Load Balancer address`.

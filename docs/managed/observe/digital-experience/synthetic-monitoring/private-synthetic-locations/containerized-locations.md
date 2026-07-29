@@ -9,7 +9,7 @@ source: https://docs.dynatrace.com/managed/observe/digital-experience/synthetic-
 
 * How-to guide
 * 26-min read
-* Updated on Jun 24, 2026
+* Updated on Jul 27, 2026
 
 Dynatrace version 1.264+
 
@@ -309,7 +309,7 @@ Select your location in **Private Synthetic locations** to download the location
 
    If you've renamed the template file, use the new filename in the commands.
 
-   ![Commands to create the location namespace](https://dt-cdn.net/images/k8s-location-commands-1106-4b8fac8db7.png)
+   ![Commands to create the location namespace](https://dt-cdn.net/images/k8s-location-creation-commands-921-7695da2244.png)
 
    Commands to create the location namespace
 7. Optional Run the following command to list all pods in a given namespace (`dynatrace` in the sample below) and verify their deployment.
@@ -349,7 +349,7 @@ This procedure generates a separate template for the Synthetic metric adapter. Y
 
    If you've renamed the template file, use the new filename in the commands.
 
-   ![Commands to create the metric adapter namespace](https://dt-cdn.net/images/k8s-location-adapter-commands-1167-f2c11204cc.png)
+   ![Commands to create the metric adapter namespace](https://dt-cdn.net/images/k8s-location-adapter-commands-749-cca7dc8081.png)
 
    Commands to create the metric adapter namespace
 
@@ -408,8 +408,13 @@ Any updates to a location require that you download the location template file a
 2. Execute the following command to apply the changes on your Kubernetes cluster. Be sure to use your location template filename in place of `synthetic.yaml`. Execute this command from the same location as the template file.
 
    ```
-   kubectl apply -f ./synthetic.yaml
+   kubectl apply --server-side --force-conflicts -f ./synthetic.yaml
    ```
+
+   * `--server-side` uses [server-side apply﻿](https://kubernetes.io/docs/reference/using-api/server-side-apply/), which tracks field ownership on the Kubernetes API server. This is the recommended approach for complex resource definitions like the location template and avoids the size limitations of client-side apply.
+   * `--force-conflicts` ensures the update applies even when field ownership conflicts exist—for example, if a field was previously managed by a different field manager such as an earlier `kubectl apply` run or a Kubernetes controller. Without this flag, you would need to resolve conflicts manually before the update can proceed.
+
+   If your configuration includes fields whose ownership you need to deliberately hand off to a controller—for example, transferring `replicas` to a HorizontalPodAutoscaler—see [Transferring ownership﻿](https://kubernetes.io/docs/reference/using-api/server-side-apply/#transferring-ownership) in the Kubernetes documentation for how to coordinate that transition safely.
 
 Any update redeploys ActiveGates in the reverse order of their deployment. For example, if your location contains the ActiveGates `activegate-name-0` and `activegate-name-1`, `activegate-name-1` is stopped and redeployed first.
 

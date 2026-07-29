@@ -8,7 +8,7 @@ source: https://docs.dynatrace.com/managed/ingest-from/dynatrace-activegate/inst
 # Installation
 
 * 1-min read
-* Published Apr 09, 2021
+* Updated on Jul 09, 2026
 
 Dynatrace offers two types of ActiveGate: Environment ActiveGate and Cluster ActiveGate. Dynatrace Managed deployments typically require both ActiveGate types, though the most important type is the [Cluster ActiveGate](/managed/managed-cluster/installation/install-cluster-activegate "Install a Cluster ActiveGate on Linux or Windows to route OneAgent traffic or run Synthetic monitors, and connect it to your Managed Cluster."). For Dynatrace Managed deployments, see [additional ActiveGate use cases for Dynatrace Managed](/managed/managed-cluster/basics/managed-deployments#scenario-2-pure-dynatrace-managed-setup "Understand how Dynatrace Managed deployments evolve from a basic internal setup to a globally distributed high-availability architecture.").
 

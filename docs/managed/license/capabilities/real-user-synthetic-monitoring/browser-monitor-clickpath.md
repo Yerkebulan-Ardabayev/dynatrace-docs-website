@@ -129,7 +129,7 @@ Your monthly consumption can be calculated with the formula below.
 
 Multiplied by the unit cost of $0.0045 per result, the total cost for synthetic actions in this example is **$116.64 per month**.
 
-## Track your consumption
+## Understand and manage your consumption
 
 Dynatrace provides various options to help you understand and analyze your organization's consumption of Browser Monitor or Clickpath.
 

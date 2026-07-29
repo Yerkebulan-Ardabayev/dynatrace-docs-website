@@ -98,9 +98,9 @@ Linux configuration file: `/var/lib/dynatrace/remotepluginmodule/agent/conf/exte
 | Linux distribution | Versions | CPU architectures |
 | --- | --- | --- |
 | Amazon Linux | 2, 2023[1](#fn-linux-distribution-1-def) | ARM64 (AArch64), x86-64 |
-| Oracle Linux | 8.10, 9.7, 10.1 | ARM64 (AArch64), x86-64 |
+| Oracle Linux | 8.10, 9.7, 9.8, 10.1, 10.2 | ARM64 (AArch64), x86-64 |
 | Red Hat Enterprise Linux | 8.10, 9.4, 9.6, 9.7, 9.8, 10.0, 10.1, 10.2 | ARM64 (AArch64), s390, x86-64 |
-| Rocky Linux | 8.10, 9.7, 10.1 | ARM64 (AArch64), x86-64 |
+| Rocky Linux | 8.10, 9.7, 9.8, 10.1, 10.2 | ARM64 (AArch64), x86-64 |
 | SUSE Enterprise Linux | 15.7 | ARM64 (AArch64), s390, x86-64 |
 | Ubuntu | 16.04, 18.04, 20.04, 22.04, 24.04, 26.04 | x86-64 |
 | Ubuntu | 20.04, 22.04, 24.04, 26.04 | ARM64 (AArch64), s390 |
@@ -160,6 +160,8 @@ For ActiveGates with the zRemote module, see [Install the zRemote module: System
 
 ## Sizing guide
 
+### Sizing guide for OneAgent traffic routing
+
 The following table represents the machine instance size requirement based on number of OneAgents communicating with the ActiveGate. On each host, OneAgent is performing eight monitoring tasks:
 
 * Infrastructure monitoring
@@ -170,7 +172,7 @@ The following table represents the machine instance size requirement based on nu
 
 The real number of hosts may be different depending on the monitored technologies in your environment. It is recommended that the machine on which ActiveGate is running should not exceed 50% CPU and 80% memory. Additionally, it must be assumed that ActiveGates may be inoperable during updates, restarts or short communication problems. In order to ensure high availability, operating ActiveGates should be able to takeover traffic of the unavailable ActiveGates
 
-### x86-64 architecture
+#### x86-64 architecture
 
 The C6i machine instances and the estimates:
 
@@ -180,7 +182,7 @@ The C6i machine instances and the estimates:
 | c6i.xlarge | 4 | 7.5 | EBS-Only | 750 | High | 1800 |
 | c6i.2xlarge | 8 | 15 | EBS-Only | 1,000 | High | 2500 |
 
-### ARM64 (AArch64) architecture
+#### ARM64 (AArch64) architecture
 
 The C7g machine instances and the estimates:
 
@@ -190,7 +192,7 @@ The C7g machine instances and the estimates:
 | c7g.xlarge | 4 | 7.5 | EBS-Only | 750 | High | 2700 |
 | c7g.2xlarge | 8 | 15 | EBS-Only | 1,000 | High | 5500 |
 
-### s390 architecture
+#### s390 architecture
 
 Machine sizes and estimates:
 
@@ -198,3 +200,63 @@ Machine sizes and estimates:
 | --- | --- | --- | --- |
 | S | 2 | 4 | 800 |
 | M | 4 | 8 | 1500 |
+
+### Sizing guide for API log ingestion only
+
+ActiveGate receives log data exclusively through the Log ingestion API.
+
+* Sustained log ingestion runs with a typical message size distribution.
+* **Message sizes**: 5% extra-small (1.5 KB), 20% small (1.5 KB), 50% medium (2.2 KB), 20% large (3 KB), 5% extra-large (7.8 KB)
+* **Attribute counts**: Varying from 5 to 100 attributes per log record
+* **Batch sizes**: Varying from 10 to 100 messages per API call
+
+These resource configurations provide headroom for traffic spikes and replica failover during updates.
+
+#### x86-64 architecture
+
+The following table lists C7i machine instances and their sizing estimates:
+
+| Instance | vCPU | Mem (GiB) | API log ingestion only (MB/min) |
+| --- | --- | --- | --- |
+| c7i.large | 2 | 3.75 | 1,100 |
+| c7i.xlarge | 4 | 7.5 | 2,300 |
+| c7i.2xlarge | 8 | 15 | 5,100 |
+
+#### ARM64 (AArch64) architecture
+
+The following table lists C7g machine instances and their sizing estimates:
+
+| Instance | vCPU | Mem (GiB) | API log ingestion only (MB/min) |
+| --- | --- | --- | --- |
+| c7g.large | 2 | 3.75 | 1,000 |
+| c7g.xlarge | 4 | 7.5 | 2,000 |
+| c7g.2xlarge | 8 | 15 | 4,600 |
+
+### Sizing guide for combined workload (OneAgent routing traffic + API log ingestion)
+
+ActiveGate handles both OneAgent routing traffic and API log ingestion concurrently.
+
+* OneAgent routing traffic is set at 50% of the routing-only capacity for the machine size (infrastructure monitoring, log monitoring, full-stack monitoring, extension monitoring).
+* API log ingestion runs concurrently with typical message size distribution.
+
+Actual capacity varies depending on your specific monitoring configuration, log volume, message sizes, and workload characteristics. The machine running ActiveGate shouldn't exceed 50% CPU and 80% memory. ActiveGates may be inoperable during updates, restarts, or short communication problems. To ensure high availability, remaining ActiveGates should be able to take over traffic from unavailable ActiveGates.
+
+#### x86-64 architecture
+
+The following table lists C7i machine instances and their sizing estimates:
+
+| Instance | vCPU | Mem (GiB) | Hosts | API log ingestion (MB/min) |
+| --- | --- | --- | --- | --- |
+| c7i.large | 2 | 3.75 | 400 | 750 |
+| c7i.xlarge | 4 | 7.5 | 900 | 1,500 |
+| c7i.2xlarge | 8 | 15 | 1,250 | 3,300 |
+
+#### ARM64 (AArch64) architecture
+
+The following table lists C7g machine instances and their sizing estimates:
+
+| Instance | vCPU | Mem (GiB) | Hosts | API log ingestion (MB/min) |
+| --- | --- | --- | --- | --- |
+| c7g.large | 2 | 3.75 | 400 | 280 |
+| c7g.xlarge | 4 | 7.5 | 1,350 | 560 |
+| c7g.2xlarge | 8 | 15 | 2,750 | 1,650 |

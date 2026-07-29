@@ -9,7 +9,7 @@ source: https://docs.dynatrace.com/managed/observe/digital-experience/synthetic-
 
 * Reference
 * 15-min read
-* Updated on Jun 29, 2026
+* Updated on Jul 27, 2026
 
 Ensure that the host you want to use for your private location complies with the following requirements.
 
@@ -64,10 +64,11 @@ A freshly installed ActiveGate can run your private synthetic monitors (both HTT
 
 #### Browser versions on Windows
 
-On Windows, the ActiveGate installer package includes the Chromium browser used to run browser monitors. The table below shows the Chromium versions that are bundled with the respective ActiveGate versions.
+On Windows, the ActiveGate installer package includes the Chrome for Testing browser used to run browser monitors. The table below shows the Chrome for Testing versions that are bundled with the respective ActiveGate versions.
 
 | ActiveGate version | Included browser version |
 | --- | --- |
+| 1.343[1](#fn-1-1-def) | 150 |
 | 1.341 | 148 |
 | 1.339 | 147 |
 | 1.337 | 146 |
@@ -80,7 +81,10 @@ On Windows, the ActiveGate installer package includes the Chromium browser used 
 | 1.323 | 139 |
 | 1.321 | 138 |
 | 1.319 | 138 |
-| 1.317 | 137 |
+
+1
+
+All Windows Server versions migrated to use Chrome for Testing instead of Chromium.
 
 #### Unsupported Windows versions for testing purposes only
 
@@ -94,11 +98,11 @@ As of ActiveGate version 1.263+, Synthetic-enabled ActiveGates no longer work on
 
 | Linux distribution | Versions |
 | --- | --- |
-| Red Hat Enterprise Linux[1](#fn-1-1-def) | 9.4, 9.6, 9.7 |
+| Red Hat Enterprise Linux[1](#fn-2-1-def) | 9.4, 9.6, 9.7 |
 | Ubuntu | 20.04, 22.04, 24.04 |
 | Amazon Linux | 2023 |
-| Oracle Linux[2](#fn-1-2-def) | 9.6, 9.7 |
-| Rocky Linux[3](#fn-1-3-def) | 9.8 |
+| Oracle Linux[2](#fn-2-2-def) | 9.6, 9.7 |
+| Rocky Linux[3](#fn-2-3-def) | 9.8 |
 
 1
 
@@ -116,13 +120,13 @@ The Synthetic installer can be installed on all minor releases of Rocky Linux 9.
 
 | Linux distribution | Versions |
 | --- | --- |
-| Red Hat Enterprise Linux | 7.9[1](#fn-2-1-def) |
-| CentOS | 7.9[1](#fn-2-1-def) |
-| Amazon Linux | 2[2](#fn-2-2-def) |
-| Red Hat Enterprise Linux | 8.8[3](#fn-2-3-def) |
-| Red Hat Enterprise Linux | 8.10[3](#fn-2-3-def) |
-| Oracle Linux | 8.10[3](#fn-2-3-def) |
-| Rocky Linux | 8.10[3](#fn-2-3-def) |
+| Red Hat Enterprise Linux | 7.9[1](#fn-3-1-def) |
+| CentOS | 7.9[1](#fn-3-1-def) |
+| Amazon Linux | 2[2](#fn-3-2-def) |
+| Red Hat Enterprise Linux | 8.8[3](#fn-3-3-def) |
+| Red Hat Enterprise Linux | 8.10[3](#fn-3-3-def) |
+| Oracle Linux | 8.10[3](#fn-3-3-def) |
+| Rocky Linux | 8.10[3](#fn-3-3-def) |
 
 1
 
@@ -147,16 +151,17 @@ When [installing ActiveGate and the browser from a custom, local repository](/ma
 Due to changes in `libdav1d.so.6` packet availability Chromium versions older than 130 cannot be installed on Red Hat/Rocky Linux 9.
 Please refer to [troubleshooting guide﻿](https://dt-url.net/x303x5f) for details.
 
-| ActiveGate version | Latest supported Chromium versionRed Hat/Rocky Linux 9 | Latest supported Chrome for Testing versionAmazon Linux 2023, Ubuntu, Oracle Linux 9 |
+| ActiveGate version | Latest supported Chromium version Red Hat/Rocky Linux 9 | Latest supported Chrome for Testing version Amazon Linux 2023, Ubuntu, Oracle Linux 9 |
 | --- | --- | --- |
+| 1.343 | 150 [Red Hat/Rocky Linux 9﻿](https://synthetic-packages.s3.amazonaws.com/Chromium/rpm/chromium-150.0.7871.128-1.el9.tgz) | [150﻿](https://synthetic-packages.s3.amazonaws.com/Chrome/chrome-for-testing-linux64/chrome-for-testing-linux64-150.0.7871.181.zip) |
 | 1.341 | 148 [Red Hat/Rocky Linux 9﻿](https://synthetic-packages.s3.amazonaws.com/Chromium/rpm/chromium-148.0.7778.215-1.el9.tgz) | [148﻿](https://synthetic-packages.s3.amazonaws.com/Chrome/chrome-for-testing-linux64/chrome-for-testing-linux64-148.0.7778.215.zip) |
 | 1.339 | 147 [Red Hat/Rocky Linux 9﻿](https://synthetic-packages.s3.amazonaws.com/Chromium/rpm/chromium-147.0.7727.137-1.el9.tgz) | [147﻿](https://synthetic-packages.s3.amazonaws.com/Chrome/chrome-for-testing-linux64/chrome-for-testing-linux64-147.0.7727.137.zip) |
 | 1.337 | 146 [Red Hat/Rocky Linux 9﻿](https://synthetic-packages.s3.amazonaws.com/Chromium/rpm/chromium-146.0.7680.177-1.el9.tgz) | [146﻿](https://synthetic-packages.s3.amazonaws.com/Chrome/chrome-for-testing-linux64/chrome-for-testing-linux64-146.0.7680.178.zip) |
 | 1.335 | 146 [Red Hat/Rocky Linux 9﻿](https://synthetic-packages.s3.amazonaws.com/Chromium/rpm/chromium-146.0.7680.177-1.el9.tgz) | [146﻿](https://synthetic-packages.s3.amazonaws.com/Chrome/chrome-for-testing-linux64/chrome-for-testing-linux64-146.0.7680.178.zip) |
 | 1.333 | 144 [Red Hat/Rocky Linux 9﻿](https://synthetic-packages.s3.amazonaws.com/Chromium/rpm/chromium-144.0.7559.132-1.el9.tgz) | [144﻿](https://synthetic-packages.s3.amazonaws.com/Chrome/chrome-for-testing-linux64/chrome-for-testing-linux64-144.0.7559.133.zip) |
-| 1.331[1](#fn-3-1-def) | 143 [Red Hat/Rocky Linux 9﻿](https://synthetic-packages.s3.amazonaws.com/Chromium/rpm/chromium-143.0.7499.192-1.el9.tgz) | [143﻿](https://synthetic-packages.s3.amazonaws.com/Chrome/chrome-for-testing-linux64/chrome-for-testing-linux64-143.0.7499.192.zip) |
+| 1.331[1](#fn-4-1-def) | 143 [Red Hat/Rocky Linux 9﻿](https://synthetic-packages.s3.amazonaws.com/Chromium/rpm/chromium-143.0.7499.192-1.el9.tgz) | [143﻿](https://synthetic-packages.s3.amazonaws.com/Chrome/chrome-for-testing-linux64/chrome-for-testing-linux64-143.0.7499.192.zip) |
 
-| ActiveGate version | Latest supported Chromium versionRed Hat/Oracle/Rocky Linux | Latest supported Chromium versionUbuntu 20 and 22 | Latest supported Chrome for Testing versionAmazon Linux 2023, Ubuntu 24, Oracle Linux 9 |
+| ActiveGate version | Latest supported Chromium version Red Hat/Oracle/Rocky Linux | Latest supported Chromium version Ubuntu 20 and 22 | Latest supported Chrome for Testing version Amazon Linux 2023, Ubuntu 24, Oracle Linux 9 |
 | --- | --- | --- | --- |
 | 1.329 | 142 [Red Hat/Rocky Linux 9﻿](https://synthetic-packages.s3.amazonaws.com/Chromium/rpm/chromium-142.0.7444.175-2.el9.tgz) | 142 [Ubuntu 20.04 and 22.04﻿](https://synthetic-packages.s3.amazonaws.com/Chromium/snap/chromium-142.0.7444.175-3313.tgz) | [142﻿](https://synthetic-packages.s3.amazonaws.com/Chrome/chrome-for-testing-linux64/chrome-for-testing-linux64-142.0.7444.175.zip) |
 | 1.327 | 141 [Red Hat/Rocky Linux 9﻿](https://synthetic-packages.s3.amazonaws.com/Chromium/rpm/chromium-141.0.7390.122-1.el9.tgz) | 141 [Ubuntu 20.04 and 22.04﻿](https://synthetic-packages.s3.amazonaws.com/Chromium/snap/chromium-141.0.7390.122-3285.tgz) | [141﻿](https://synthetic-packages.s3.amazonaws.com/Chrome/chrome-for-testing-linux64/chrome-for-testing-linux64-141.0.7390.122.zip) |
@@ -164,7 +169,6 @@ Please refer to [troubleshooting guide﻿](https://dt-url.net/x303x5f) for detai
 | 1.323 | 133 [Red Hat/Oracle/Rocky Linux 8﻿](https://synthetic-packages.s3.amazonaws.com/Chromium/rpm/chromium-133.0.6943.141-1.el8.tgz), 139 [Red Hat/Rocky Linux 9﻿](https://synthetic-packages.s3.amazonaws.com/Chromium/rpm/chromium-139.0.7258.138-1.el9.tgz) | 139 [Ubuntu 20.04 and 22.04﻿](https://synthetic-packages.s3.amazonaws.com/Chromium/snap/chromium-139.0.7258.138-3235.tgz) | 139 |
 | 1.321 | 133 [Red Hat/Oracle/Rocky Linux 8﻿](https://synthetic-packages.s3.amazonaws.com/Chromium/rpm/chromium-133.0.6943.141-1.el8.tgz), 138 [Red Hat/Rocky Linux 9﻿](https://synthetic-packages.s3.amazonaws.com/Chromium/rpm/chromium-138.0.7204.157-1.el9.tgz) | 138 [Ubuntu 20.04 and 22.04﻿](https://synthetic-packages.s3.amazonaws.com/Chromium/snap/chromium-138.0.7204.157-3203.tgz) | 138 |
 | 1.319 | 133 [Red Hat/Oracle/Rocky Linux 8﻿](https://synthetic-packages.s3.amazonaws.com/Chromium/rpm/chromium-133.0.6943.141-1.el8.tgz), 138 [Red Hat/Rocky Linux 9﻿](https://synthetic-packages.s3.amazonaws.com/Chromium/rpm/chromium-138.0.7204.100-1.el9.tgz) | 138 [Ubuntu 20.04 and 22.04﻿](https://synthetic-packages.s3.amazonaws.com/Chromium/snap/chromium-138.0.7204.100-3199.tgz) | 138 |
-| 1.317 | 133 [Red Hat/Oracle/Rocky Linux 8﻿](https://synthetic-packages.s3.amazonaws.com/Chromium/rpm/chromium-133.0.6943.141-1.el8.tgz), 137 [Red Hat/Rocky Linux 9﻿](https://synthetic-packages.s3.amazonaws.com/Chromium/rpm/chromium-137.0.7151.103-1.el9.tgz) | 137 [Ubuntu 20.04 and 22.04﻿](https://synthetic-packages.s3.amazonaws.com/Chromium/snap/chromium-137.0.7151.103-3169.tgz) | 137 |
 
 1
 
@@ -215,12 +219,12 @@ On Linux systems with only 4 GB of RAM, the increasing resource requirements of 
 | Minimum RAM | 4 GB | 4 GB |
 | Minimum free RAM | 3 GB | 2,7 GB |
 | Minimum disk IOPS (Windows) | 100 | 100 |
-| Estimated maximum number of HTTP monitor executions/h[1](#fn-4-1-def) | 300k | 300k |
-| Estimated maximum number of high-resource HTTP monitor[2](#fn-4-2-def) executions/h | 10k | 10k |
+| Estimated maximum number of HTTP monitor executions/h[1](#fn-5-1-def) | 300k | 300k |
+| Estimated maximum number of high-resource HTTP monitor[2](#fn-5-2-def) executions/h | 10k | 10k |
 | Estimated maximum number of browser monitor executions/h | 300 | - |
-| Estimated maximum number of NAM ICMP monitor packets/h[3](#fn-4-3-def) [5](#fn-4-5-def) | 500k | 500k |
-| Estimated maximum number of NAM TCP monitor requests/h[4](#fn-4-4-def) [6](#fn-4-6-def) | 1M | 1M |
-| Estimated maximum number of NAM DNS monitor request/h[4](#fn-4-4-def) [7](#fn-4-7-def) | 100k | 100k |
+| Estimated maximum number of NAM ICMP monitor packets/h[3](#fn-5-3-def) [5](#fn-5-5-def) | 500k | 500k |
+| Estimated maximum number of NAM TCP monitor requests/h[4](#fn-5-4-def) [6](#fn-5-6-def) | 1M | 1M |
+| Estimated maximum number of NAM DNS monitor request/h[4](#fn-5-4-def) [7](#fn-5-7-def) | 100k | 100k |
 
 Footnotes
 
@@ -266,12 +270,12 @@ Publicly available DNS servers were used: Google (8.8.8.8 and 8.8.4.4) and Cloud
 | Minimum RAM | 8 GB | 8 GB |
 | Minimum free RAM | 5 GB | 4 GB |
 | Minimum disk IOPS (Windows) | 200 | 200 |
-| Estimated maximum number of HTTP monitor executions/h[1](#fn-5-1-def) | 300k | 300k |
-| Estimated maximum number of high-resource HTTP monitor[2](#fn-5-2-def) executions/h | 20k | 20k |
+| Estimated maximum number of HTTP monitor executions/h[1](#fn-6-1-def) | 300k | 300k |
+| Estimated maximum number of high-resource HTTP monitor[2](#fn-6-2-def) executions/h | 20k | 20k |
 | Estimated maximum number of browser monitor executions/h | 650 | - |
-| Estimated maximum number of NAM ICMP monitor packets/h[3](#fn-5-3-def) [5](#fn-5-5-def) | 1M | 1M |
-| Estimated maximum number of NAM TCP monitor requests/h[4](#fn-5-4-def) [6](#fn-5-6-def) | 2M | 2M |
-| Estimated maximum number of NAM DNS monitor request/h[4](#fn-5-4-def) [7](#fn-5-7-def) | 200k | 200k |
+| Estimated maximum number of NAM ICMP monitor packets/h[3](#fn-6-3-def) [5](#fn-6-5-def) | 1M | 1M |
+| Estimated maximum number of NAM TCP monitor requests/h[4](#fn-6-4-def) [6](#fn-6-6-def) | 2M | 2M |
+| Estimated maximum number of NAM DNS monitor request/h[4](#fn-6-4-def) [7](#fn-6-7-def) | 200k | 200k |
 
 Footnotes
 
@@ -317,12 +321,12 @@ Publicly available DNS servers were used: Google (8.8.8.8 and 8.8.4.4) and Cloud
 | Minimum RAM | 16 GB | 16 GB |
 | Minimum free RAM | 8 GB | 6,5 GB |
 | Minimum disk IOPS (Windows) | 400 | 400 |
-| Estimated maximum number of HTTP monitor executions/h[1](#fn-6-1-def) | 300k | 300k |
-| Estimated maximum number of high-resource HTTP monitor[2](#fn-6-2-def) executions/h | 60k | 60k |
+| Estimated maximum number of HTTP monitor executions/h[1](#fn-7-1-def) | 300k | 300k |
+| Estimated maximum number of high-resource HTTP monitor[2](#fn-7-2-def) executions/h | 60k | 60k |
 | Estimated maximum number of browser monitor executions/h | 1200 | - |
-| Estimated maximum number of NAM ICMP monitor packets/h[3](#fn-6-3-def) [5](#fn-6-5-def) | 1.5M | 1.5M |
-| Estimated maximum number of NAM TCP monitor requests/h[4](#fn-6-4-def) [6](#fn-6-6-def) | 3M | 3M |
-| Estimated maximum number of NAM DNS monitor request/h[4](#fn-6-4-def) [7](#fn-6-7-def) | 300k | 300k |
+| Estimated maximum number of NAM ICMP monitor packets/h[3](#fn-7-3-def) [5](#fn-7-5-def) | 1.5M | 1.5M |
+| Estimated maximum number of NAM TCP monitor requests/h[4](#fn-7-4-def) [6](#fn-7-6-def) | 3M | 3M |
+| Estimated maximum number of NAM DNS monitor request/h[4](#fn-7-4-def) [7](#fn-7-7-def) | 300k | 300k |
 
 Footnotes
 
@@ -368,12 +372,12 @@ Publicly available DNS servers were used: Google (8.8.8.8 and 8.8.4.4) and Cloud
 | Minimum RAM | 32 GB | 32 GB |
 | Minimum free RAM | 12 GB | 10 GB |
 | Minimum disk IOPS (Windows) | 750 | 750 |
-| Estimated maximum number of HTTP monitor executions/h[1](#fn-7-1-def) | 300k | 300k |
-| Estimated maximum number of high-resource HTTP monitor[2](#fn-7-2-def) executions/h | 100k | 100k |
+| Estimated maximum number of HTTP monitor executions/h[1](#fn-8-1-def) | 300k | 300k |
+| Estimated maximum number of high-resource HTTP monitor[2](#fn-8-2-def) executions/h | 100k | 100k |
 | Estimated maximum number of browser monitor executions/h | 2200 | - |
-| Estimated maximum number of NAM ICMP monitor packets/h[3](#fn-7-3-def) [5](#fn-7-5-def) | 2M | 2M |
-| Estimated maximum number of NAM TCP monitor requests/h[4](#fn-7-4-def) [6](#fn-7-6-def) | 4M | 4M |
-| Estimated maximum number of NAM DNS monitor request/h[4](#fn-7-4-def) [7](#fn-7-7-def) | 400k | 400k |
+| Estimated maximum number of NAM ICMP monitor packets/h[3](#fn-8-3-def) [5](#fn-8-5-def) | 2M | 2M |
+| Estimated maximum number of NAM TCP monitor requests/h[4](#fn-8-4-def) [6](#fn-8-6-def) | 4M | 4M |
+| Estimated maximum number of NAM DNS monitor request/h[4](#fn-8-4-def) [7](#fn-8-7-def) | 400k | 400k |
 
 Footnotes
 
@@ -421,7 +425,7 @@ The table below shows the default installation locations (Linux and Windows) of 
 | `<INSTALL>` | * `/opt/dynatrace/` * `%PROGRAMFILES%\dynatrace` | 600 MB | For executable files, libraries, and related files  * 300 MB for ActiveGate * 270 MB for Private Synthetic files |
 | `<LOGS>` | * `/var/log/dynatrace` * `%PROGRAMDATA%\dynatrace` | 1.7 GB | * 500 MB for ActiveGate logs * 1 GB for Private Synthetic logs * 200 MB for autoupdater logs |
 | `<CONFIG>` | * `/var/lib/dynatrace` * `%PROGRAMDATA%\dynatrace` | 1 MB |  |
-| `<TEMP>` | * `/var/tmp/dynatrace` * `%PROGRAMDATA%\dynatrace` | 21 GB[1](#fn-8-1-def) | * 1 GB for ActiveGate temporary files (without cached OneAgent installers and container images) * 20 GB for Private Synthetic temporary files (including execution logs, cache, and screenshots) |
+| `<TEMP>` | * `/var/tmp/dynatrace` * `%PROGRAMDATA%\dynatrace` | 21 GB[1](#fn-9-1-def) | * 1 GB for ActiveGate temporary files (without cached OneAgent installers and container images) * 20 GB for Private Synthetic temporary files (including execution logs, cache, and screenshots) |
 
 1
 

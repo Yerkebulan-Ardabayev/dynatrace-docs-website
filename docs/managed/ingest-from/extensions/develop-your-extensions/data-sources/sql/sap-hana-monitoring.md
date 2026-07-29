@@ -222,7 +222,7 @@ Authentication details passed to the Dynatrace API when activating monitoring co
 
 The credential vault authentication type provides a more secure approach to using extensions by securely storing and managing user credentials. To use this, you must be the owner of the credentials and have a credential vault that meets the following criteria:
 
-* **Credential type**—User and password
+* **Credential type**—User and password in case of Basic Authentication, and username and Programmatic Access Token (PAT) in case of Programmatic Access Token (PAT) authentication
 * **Credential scope**—Synthetic (in case of external vault usage) and Extension authentication scopes enabled
 * **Owner access only** is enabled only for credential owners
 

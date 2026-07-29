@@ -953,7 +953,7 @@ To deploy ActiveGate, follow the steps below.
    Actual figures depend on your environment.
 
    These limits should be taken as a guideline. They're designed to prevent ActiveGate startup process slowdown and excessive node resource usage. The default values cover a large range of different cluster sizes; you can modify them according to your needs, based on the ActiveGate [self-monitoring metrics](/managed/analyze-explore-automate/metrics-classic/self-monitoring-metrics#activegate-insights "Explore the complete list of self-monitoring Dynatrace metrics.").
-   For more information with regards to sizing guidelines refer to [Sizing guide for Dynatrace ActiveGate components](/managed/ingest-from/setup-on-k8s/guides/deployment-and-configuration/resource-management/ag-resource-limits "Set resource limits for Dynatrace ActiveGates")
+   For more information with regards to sizing guidelines refer to [Sizing guide for Dynatrace ActiveGate components](/managed/ingest-from/setup-on-k8s/guides/deployment-and-configuration/resource-management/ag-resource-limits "Find CPU and memory resource recommendations for Dynatrace ActiveGates deployed in Kubernetes, sized by cluster scale and workload type.")
 
    For PPC64le architecture, additional configuration is required. For details, see [ActiveGate container image](/managed/ingest-from/dynatrace-activegate/activegate-in-container#additional-configuration "Deploy a containerized ActiveGate.").
 6. Deploy ActiveGate.

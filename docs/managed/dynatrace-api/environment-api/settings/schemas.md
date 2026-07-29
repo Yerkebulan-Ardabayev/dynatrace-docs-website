@@ -14,7 +14,6 @@ source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/setting
 | --- | --- | --- |
 | [Cloud SRE Agents](/managed/dynatrace-api/environment-api/settings/schemas/app-community-cloudsreagents-cloudsreagent-agent) | `app:community.cloudsreagents:cloudsreagent-agent` | `environment` |
 | [Cloud SRE Interaction Profiles](/managed/dynatrace-api/environment-api/settings/schemas/app-community-cloudsreagents-cloudsreagent-interactionprofile) | `app:community.cloudsreagents:cloudsreagent-interactionprofile` | `environment` |
-| [AbuseIPDB Connections](/managed/dynatrace-api/environment-api/settings/schemas/app-dynatrace-abuseipdb-connections) | `app:dynatrace.abuseipdb:connections` | `environment` |
 | [Amazon ECR](/managed/dynatrace-api/environment-api/settings/schemas/app-dynatrace-amazon-ecr-connections) | `app:dynatrace.amazon.ecr:connections` | `environment` |
 | [Amazon GuardDuty](/managed/dynatrace-api/environment-api/settings/schemas/app-dynatrace-amazon-guardduty-connections) | `app:dynatrace.amazon.guardduty:connections` | `environment` |
 | [Microsoft Entra ID](/managed/dynatrace-api/environment-api/settings/schemas/app-dynatrace-azure-connector-microsoft-entra-identity-developer-connection) | `app:dynatrace.azure.connector:microsoft-entra-identity-developer-connection` | `environment` |
@@ -47,7 +46,6 @@ source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/setting
 | [ServiceNow Connections](/managed/dynatrace-api/environment-api/settings/schemas/app-dynatrace-servicenow-connection) | `app:dynatrace.servicenow:connection` | `environment` |
 | [Site Reliability Guardian](/managed/dynatrace-api/environment-api/settings/schemas/app-dynatrace-site-reliability-guardian-guardians) | `app:dynatrace.site.reliability.guardian:guardians` | `environment` |
 | [Slack](/managed/dynatrace-api/environment-api/settings/schemas/app-dynatrace-slack-connection) | `app:dynatrace.slack:connection` | `environment` |
-| [VirusTotal Connections](/managed/dynatrace-api/environment-api/settings/schemas/app-dynatrace-virustotal-connections) | `app:dynatrace.virustotal:connections` | `environment` |
 | [DPS Advisor — Subscription API connection](/managed/dynatrace-api/environment-api/settings/schemas/app-my-dps-advisor-dps-advisor-subscription-api-connection) | `app:my.dps.advisor:dps-advisor-subscription-api-connection` | `environment` |
 | [Conversion Configuration](/managed/dynatrace-api/environment-api/settings/schemas/app-my-user-session-analytics-conversion-config) | `app:my.user.session.analytics:conversion-config` | `environment` |
 | [Saved Segments](/managed/dynatrace-api/environment-api/settings/schemas/app-my-user-session-analytics-segment-config) | `app:my.user.session.analytics:segment-config` | `environment` |
@@ -164,6 +162,7 @@ source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/setting
 | [Issue-tracking for releases](/managed/dynatrace-api/environment-api/settings/schemas/builtin-issue-tracking-integration) | `builtin:issue-tracking.integration` | `environment` |
 | [Kubernetes Telemetry Enrichment](/managed/dynatrace-api/environment-api/settings/schemas/builtin-kubernetes-generic-metadata-enrichment) | `builtin:kubernetes.generic.metadata.enrichment` | `KUBERNETES_CLUSTER` - Kubernetes cluster  `environment` |
 | [Security Posture Management: Kubernetes](/managed/dynatrace-api/environment-api/settings/schemas/builtin-kubernetes-security-posture-management) | `builtin:kubernetes.security-posture-management` | `KUBERNETES_CLUSTER` - Kubernetes cluster  `environment` |
+| [New Database Monitoring Experience](/managed/dynatrace-api/environment-api/settings/schemas/builtin-licensing-new-database-monitoring-experience) | `builtin:licensing.new-database-monitoring-experience` | `environment` |
 | [Custom log sources](/managed/dynatrace-api/environment-api/settings/schemas/builtin-logmonitoring-custom-log-source-settings) | `builtin:logmonitoring.custom-log-source-settings` | `HOST` - Host  `KUBERNETES_CLUSTER` - Kubernetes cluster  `HOST_GROUP` - Host Group  `environment` |
 | [Advanced log settings](/managed/dynatrace-api/environment-api/settings/schemas/builtin-logmonitoring-log-agent-configuration) | `builtin:logmonitoring.log-agent-configuration` | `HOST` - Host  `KUBERNETES_CLUSTER` - Kubernetes cluster  `HOST_GROUP` - Host Group  `environment` |
 | [Log module feature flags](/managed/dynatrace-api/environment-api/settings/schemas/builtin-logmonitoring-log-agent-feature-flags) | `builtin:logmonitoring.log-agent-feature-flags` | `HOST` - Host  `KUBERNETES_CLUSTER` - Kubernetes cluster  `HOST_GROUP` - Host Group  `environment` |

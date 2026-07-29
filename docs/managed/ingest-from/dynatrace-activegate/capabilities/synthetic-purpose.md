@@ -8,7 +8,7 @@ source: https://docs.dynatrace.com/managed/ingest-from/dynatrace-activegate/capa
 # Execute synthetic monitors from private locations
 
 * 2-min read
-* Updated on Jun 01, 2022
+* Updated on Jul 12, 2026
 
 **Synthetic-enabled ActiveGates** enable you to set up private Synthetic locations from which you can execute synthetic monitors to monitor your internal as well as external resources.
 
@@ -17,6 +17,8 @@ source: https://docs.dynatrace.com/managed/ingest-from/dynatrace-activegate/capa
 (module: [Synthetic](/managed/ingest-from/dynatrace-activegate/configuration/configure-activegate#synth_mod "Learn which ActiveGate properties you can configure based on your needs and requirements."))
 
 ActiveGates purposed for Dynatrace Synthetic Monitoring have the [Synthetic module](/managed/ingest-from/dynatrace-activegate/configuration/configure-activegate#synth_mod "Learn which ActiveGate properties you can configure based on your needs and requirements.") enabled.
+
+Synthetic-enabled ActiveGates are listed in **Deployment Status** > **ActiveGates**.
 
 Synthetic-enabled ActiveGates, along with the [Synthetic engine and Chromium](/managed/observe/digital-experience/synthetic-monitoring/private-synthetic-locations/create-a-private-synthetic-location "Learn how to create a private location for synthetic monitoring."), are elements of private Synthetic locations, which are locations in your private network infrastructure.
 

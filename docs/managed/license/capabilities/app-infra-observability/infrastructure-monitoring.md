@@ -9,7 +9,7 @@ source: https://docs.dynatrace.com/managed/license/capabilities/app-infra-observ
 
 * Explanation
 * 1-min read
-* Updated on Jun 01, 2026
+* Updated on Jul 22, 2026
 
 Dynatrace Infrastructure Monitoring is a OneAgent monitoring mode that provides comprehensive host-level observability for physical and virtual machines. This page explains how Infrastructure Monitoring consumption is calculated, how to track and analyze your usage, and how to optimize your spend.
 
@@ -78,7 +78,7 @@ An equal number of custom metric data points can be consumed:
 * Equally across multiple 15-minute intervals or all at once in a single minute.
 * By all Infrastructure-monitored hosts, a subset of all Infrastructure-monitored hosts, or a single infrastructure-monitored host.
 
-## Track your consumption
+## Understand and manage your consumption
 
 Dynatrace provides various options to help you understand and analyze your organization's consumption of Infrastructure Monitoring.
 

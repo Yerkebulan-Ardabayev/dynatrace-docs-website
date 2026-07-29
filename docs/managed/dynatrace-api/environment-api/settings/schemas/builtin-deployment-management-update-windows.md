@@ -1,11 +1,11 @@
 ---
-title: Settings API - Update windows for OneAgent updates schema table
+title: Settings API - Update windows for OneAgent and ActiveGate schema table
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/settings/schemas/builtin-deployment-management-update-windows
 ---
 
-# Settings API - Update windows for OneAgent updates schema table
+# Settings API - Update windows for OneAgent and ActiveGate schema table
 
-# Settings API - Update windows for OneAgent updates schema table
+# Settings API - Update windows for OneAgent and ActiveGate schema table
 
 * Published Dec 05, 2023
 

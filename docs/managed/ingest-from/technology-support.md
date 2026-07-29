@@ -8,7 +8,7 @@ source: https://docs.dynatrace.com/managed/ingest-from/technology-support
 # Technology support
 
 * 17-min read
-* Updated on Jul 10, 2026
+* Updated on Jul 21, 2026
 
 Dynatrace supports monitoring of the technologies and versions listed on this page. For serverless monitoring, see [Serverless compute support matrix](/managed/ingest-from/technology-support/serverless-compute-services "Learn which features and capabilities Dynatrace supports for serverless compute services for functions (FaaS)."). For mainframe, see [Mainframe technology support](/managed/ingest-from/technology-support/mainframe-technology-support "Learn which technologies Dynatrace supports for Mainframe monitoring.").
 
@@ -419,14 +419,14 @@ Some distributions and hosted versions require additional configuration. See [Te
 | --- | --- |
 | IBM WebSphere Liberty buildpack | v3.9-20170419-1403+ [See known issue](/managed/ingest-from/technology-support/known-solutions-and-workarounds "Check the solutions for reported problems regarding various technologies.") |
 
-#### [Cloud Foundry](/managed/ingest-from/technology-support/support-model-for-pivotal-platform "Read about Dynatrace support for VMware Tanzu Application Service.")
+#### [Cloud Foundry](/managed/ingest-from/technology-support/support-model-for-pivotal-platform "Read about Dynatrace support for Broadcom Elastic Application Runtime.")
 
 | Features | Versions |
 | --- | --- |
 | Garden-runC | v1.0.0+ |
 | BOSH BPM for platform process isolation | v0.11.0+ |
 | Winc for Windows Server containers | Windows server 1709+ |
-| VMware Tanzu Application Service (via BOSH add-on) | [See support model for Tanzu Application Service](/managed/ingest-from/technology-support/support-model-for-pivotal-platform "Read about Dynatrace support for VMware Tanzu Application Service.") |
+| VMware Tanzu Application Service (via BOSH add-on) | [See support model for Tanzu Application Service](/managed/ingest-from/technology-support/support-model-for-pivotal-platform "Read about Dynatrace support for Broadcom Elastic Application Runtime.") |
 
 ### [Heroku](/managed/ingest-from/setup-on-container-platforms/heroku "Install OneAgent to monitor applications running on Heroku.")
 
@@ -837,7 +837,8 @@ Supported in [AWS Lambda](/managed/ingest-from/amazon-web-services/integrate-int
 | Amazon DynamoDB | 3.5.0+[1](#fn-database-framework-1-def) |
 | Azure Cosmos DB | 3.18+[2](#fn-database-framework-2-def) |
 | [MongoDB .NET driver﻿](https://mongodb.github.io/mongo-csharp-driver/) | 2.3 - 2.7[2](#fn-database-framework-2-def), 2.8+[2](#fn-database-framework-2-def) |
-| [StackExchange.Redis﻿](https://github.com/StackExchange/StackExchange.Redis) | 2.0.0+[2](#fn-database-framework-2-def) |
+| [ServiceStack.Redis﻿](https://github.com/ServiceStack/ServiceStack/tree/main/ServiceStack.Redis) | 5.0.0+ |
+| [StackExchange.Redis﻿](https://github.com/StackExchange/StackExchange.Redis) | 2.0.0+ |
 
 1
 
@@ -929,6 +930,7 @@ The IAsyncResult pattern (APM) for .NET Framework 3.5 is supported in version 1.
 | Amazon DynamoDB | 3.5.0+[1](#fn-database-framework-1-def) |
 | Azure Cosmos DB | 3.18+ |
 | [MongoDB .NET driver﻿](https://mongodb.github.io/mongo-csharp-driver/) | 2.3 - 2.7, 2.8+ |
+| [ServiceStack.Redis﻿](https://github.com/ServiceStack/ServiceStack/tree/main/ServiceStack.Redis) | 5.0.0+ |
 
 1
 

@@ -8,7 +8,7 @@ source: https://docs.dynatrace.com/managed/ingest-from/dynatrace-activegate/inst
 # Hardware and system requirements for routing/monitoring ActiveGates on Windows
 
 * 2-min read
-* Updated on May 07, 2026
+* Updated on Jul 15, 2026
 
 ### Hardware and system requirements: Routing OneAgent traffic to Dynatrace, monitoring cloud environments, or monitoring remote technologies with extensions
 
@@ -21,6 +21,8 @@ Run ActiveGate on dedicated system
 
 For optimal performance and enhanced security, we recommend installing and running ActiveGate on a dedicated system.
 Utilizing ActiveGate on a dedicated system not only minimizes the risk of compromising ActiveGate authentication data but also reduces the potential for malicious configuration manipulation.
+
+Refer to the [Log Monitoring default limits (Logs Classic)](/managed/analyze-explore-automate/log-monitoring/log-monitoring-limits "Default limits for the latest version of Dynatrace Log Monitoring.") doc page for detailed log throughput characteristics on Environmental Active Gate for logs ingest API.
 
 ## Hardware requirements
 
@@ -103,7 +105,9 @@ Supported operating systems:
 * Ensure that you have proper [network port configuration](/managed/ingest-from/dynatrace-activegate/supported-connectivity-schemes-for-activegates "Learn about the connectivity priorities between ActiveGate types as well as the priorities between ActiveGates and OneAgents.").
 * ActiveGate installation is not supported on Windows with a disabled `NT AUTHORITY\LocalService` account.
 
-## AWS sizing guide
+## Sizing guide
+
+### Sizing guide for OneAgent traffic routing
 
 The following table represents the machine instance size requirement based on number of OneAgents communicating with the ActiveGate. On each host, OneAgent is performing eight monitoring tasks:
 
@@ -115,7 +119,7 @@ The following table represents the machine instance size requirement based on nu
 
 The real number of hosts may be different depending on the monitored technologies in your environment. It is recommended that the machine on which ActiveGate is running should not exceed 50% CPU and 80% memory. Additionally, it must be assumed that ActiveGates may be inoperable during updates, restarts or short communication problems. In order to ensure high availability, operating ActiveGates should be able to takeover traffic of the unavailable ActiveGates
 
-### x86-64 architecture
+#### x86-64 architecture
 
 The C6i machine instances and the estimates:
 
@@ -124,3 +128,43 @@ The C6i machine instances and the estimates:
 | c6i.large | 2 | 3.75 | EBS-Only | 500 | Moderate | 800 |
 | c6i.xlarge | 4 | 7.5 | EBS-Only | 750 | High | 1800 |
 | c6i.2xlarge | 8 | 15 | EBS-Only | 1,000 | High | 2500 |
+
+### Sizing guide for API log ingestion only
+
+ActiveGate receives log data exclusively through the Log ingestion API.
+
+* Sustained log ingestion runs with a typical message size distribution.
+* **Message sizes**: 5% extra-small (1.5 KB), 20% small (1.5 KB), 50% medium (2.2 KB), 20% large (3 KB), 5% extra-large (7.8 KB)
+* **Attribute counts**: Varying from 5 to 100 attributes per log record
+* **Batch sizes**: Varying from 10 to 100 messages per API call
+
+These resource configurations provide headroom for traffic spikes and replica failover during updates.
+
+#### x86-64 architecture
+
+The following table lists C7i machine instances and their sizing estimates:
+
+| Instance | vCPU | Mem (GiB) | API log ingestion only (MB/min) |
+| --- | --- | --- | --- |
+| c7i.large | 2 | 3.75 | 1,100 |
+| c7i.xlarge | 4 | 7.5 | 2,300 |
+| c7i.2xlarge | 8 | 15 | 5,100 |
+
+### Sizing guide for combined workload (OneAgent routing traffic + API log ingestion)
+
+ActiveGate handles both OneAgent routing traffic and API log ingestion concurrently.
+
+* OneAgent routing traffic is set at 50% of the routing-only capacity for the machine size (infrastructure monitoring, log monitoring, full-stack monitoring, extension monitoring).
+* API log ingestion runs concurrently with typical message size distribution.
+
+Actual capacity varies depending on your specific monitoring configuration, log volume, message sizes, and workload characteristics. The machine running ActiveGate shouldn't exceed 50% CPU and 80% memory. ActiveGates may be inoperable during updates, restarts, or short communication problems. To ensure high availability, remaining ActiveGates should be able to take over traffic from unavailable ActiveGates.
+
+#### x86-64 architecture
+
+The following table lists C7i machine instances and their sizing estimates:
+
+| Instance | vCPU | Mem (GiB) | Hosts | API log ingestion (MB/min) |
+| --- | --- | --- | --- | --- |
+| c7i.large | 2 | 3.75 | 400 | 750 |
+| c7i.xlarge | 4 | 7.5 | 900 | 1,500 |
+| c7i.2xlarge | 8 | 15 | 1,250 | 3,300 |

@@ -73,6 +73,14 @@ Definition of the end of support version schema with examples:
   + Vendor end of support: 2024-05-14
   + Last supported OneAgent version: 1.353
 
+### 2026-11-30 End of Support
+
+* OneAgent Feature: Azure Functions .NET In-Process Model
+
+  + Vendor end of support: 2026-11-10
+  + Last supported OneAgent version: 1.351
+  + For more details, see [Deprecation Notice: .NET In-Process Model Azure Functions Monitoring﻿](https://community.dynatrace.com/t5/Product-news/Deprecation-Notice-Azure-Functions-NET-In-Process-Model/ba-p/302232)
+
 ### 2026-09-30 End of Support
 
 * Hitachi Java 5
@@ -396,6 +404,9 @@ Note that JMX and PMI Extensions Framework 1.0 are supported past March 2025 but
 * [OneAgent SDK for Python﻿](https://github.com/Dynatrace/OneAgent-SDK-for-Python) 1.4
 
   + Any version of the [OneAgent SDK for Python﻿](https://github.com/Dynatrace/OneAgent-SDK-for-Python) on Python 3.4, 3.5, 3.6
+* Microsoft Internet Explorer 11 (RUM JavaScript). [Announcement﻿](https://community.dynatrace.com/t5/Product-news/Dynatrace-support-for-MS-Internet-Explorer-11-ends-in-May-2024/ba-p/239270)
+
+  + Vendor end of support: 2022-06-15
 
 ### 2024-04-30 End of support
 
@@ -810,6 +821,17 @@ The list of operating system versions supported by Dynatrace ActiveGate is updat
 
   + x86-64, ARM64 (AArch64)
   + [Vendor announcement﻿](https://aws.amazon.com/linux/)
+
+##### The following operating systems will no longer be supported starting 01 June 2027
+
+* Linux: Oracle Linux 9.8, 10.2
+
+  + x86-64
+  + [Vendor announcement﻿](https://www.oracle.com/a/ocom/docs/elsp-lifetime-069338.pdf)
+* Linux: Rocky Linux 9.8, 10.2
+
+  + x86-64
+  + [Vendor announcement﻿](https://endoflife.date/rocky-linux)
 
 ##### The following operating systems will no longer be supported starting 01 August 2027
 

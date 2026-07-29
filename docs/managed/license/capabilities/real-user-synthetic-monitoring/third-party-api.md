@@ -106,7 +106,7 @@ x 30 days
 
 Multiplied by the unit cost of $0.001 per result, the total cost for synthetic tests in this example month is **$172.80**.
 
-## Track your consumption
+## Understand and manage your consumption
 
 Dynatrace provides various options to help you understand and analyze your organization's consumption of DPS capabilities.
 

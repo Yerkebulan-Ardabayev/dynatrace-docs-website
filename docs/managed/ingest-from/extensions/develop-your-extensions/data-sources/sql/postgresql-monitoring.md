@@ -9,7 +9,7 @@ source: https://docs.dynatrace.com/managed/ingest-from/extensions/develop-your-e
 
 * Reference
 * 2-min read
-* Updated on Jun 30, 2026
+* Updated on Jul 23, 2026
 
 After you define the scope of your configuration, you need to identify the following:
 
@@ -275,31 +275,123 @@ The ActiveGate uses the IAM role assigned to it to authenticate, so there's no n
 
 **Note**: AWS IAM authentication requires SSL/TLS to be enabled. Set `ssl` to `true` in your endpoint configuration. For more information, see [SSL](#ssl).
 
-```
-"authentication": {
+To set up AWS IAM authentication:
+
+1. Create an IAM policy that allows token generation for the monitoring user (replace `<region>`, `<account-id>`, and `<dbi-resource-id>` with your values).
+
+   ```
+   {
 
 
 
-"scheme": "identity_aws",
+   "Version": "2012-10-17",
 
 
 
-"username": "username",
+   "Statement": [
 
 
 
-"region": "eu-central-1"
+   {
 
 
 
-}
-```
+   "Effect": "Allow",
+
+
+
+   "Action": "rds-db:connect",
+
+
+
+   "Resource": "arn:aws:rds-db:<region>:<account-id>:dbuser:<dbi-resource-id>/dynatrace"
+
+
+
+   }
+
+
+
+   ]
+
+
+
+   }
+   ```
+2. Attach the policy to the IAM role assigned to your ActiveGate host. The steps depend on how you host ActiveGate.
+
+   EC2
+
+   EKS
+
+   Other
+
+   ```
+   aws iam attach-role-policy \
+
+
+
+   --role-name <your-ec2-instance-role> \
+
+
+
+   --policy-arn arn:aws:iam::<account-id>:policy/RdsIamConnectPolicy
+   ```
+
+   Use IAM Roles for Service Accounts (IRSA) to associate the policy with the ActiveGate pod's service account:
+
+   ```
+   eksctl create iamserviceaccount \
+
+
+
+   --name <activegate-service-account> \
+
+
+
+   --namespace <activegate-namespace> \
+
+
+
+   --cluster <your-cluster-name> \
+
+
+
+   --attach-policy-arn arn:aws:iam::<account-id>:policy/RdsIamConnectPolicy \
+
+
+
+   --approve
+   ```
+
+   Attach the policy to the IAM role or identity associated with your ActiveGate host using the AWS Console or CLI. The role must be assumable by the compute resource running the ActiveGate.
+3. Configure the monitoring endpoint using the `identity_aws` scheme.
+
+   ```
+   "authentication": {
+
+
+
+   "scheme": "identity_aws",
+
+
+
+   "username": "dynatrace",
+
+
+
+   "region": "eu-central-1"
+
+
+
+   }
+   ```
 
 #### Credential vault
 
 The credential vault authentication type provides a more secure approach to using extensions by securely storing and managing user credentials. To use this, you must be the owner of the credentials and have a credential vault that meets the following criteria:
 
-* **Credential type**—User and password
+* **Credential type**—User and password in case of Basic Authentication, and username and Programmatic Access Token (PAT) in case of Programmatic Access Token (PAT) authentication
 * **Credential scope**—Synthetic (in case of external vault usage) and Extension authentication scopes enabled
 * **Owner access only** is enabled only for credential owners
 

@@ -104,7 +104,7 @@ x 30 days
 
 Multiplied by the unit cost of $0.001 per result, the total cost for synthetic tests in this example month is **$51.84**.
 
-## Track your consumption
+## Understand and manage your consumption
 
 This section describes the different Dynatrace tools that you can use to track consumption and costs.
 

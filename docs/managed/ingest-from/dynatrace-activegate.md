@@ -8,7 +8,7 @@ source: https://docs.dynatrace.com/managed/ingest-from/dynatrace-activegate
 # Dynatrace ActiveGate
 
 * 3-min read
-* Updated on Jun 09, 2026
+* Updated on Jul 09, 2026
 
 ### ActiveGate acts as a secure proxy
 

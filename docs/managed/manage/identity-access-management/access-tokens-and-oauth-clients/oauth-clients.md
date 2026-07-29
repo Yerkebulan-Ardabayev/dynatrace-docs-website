@@ -9,7 +9,7 @@ source: https://docs.dynatrace.com/managed/manage/identity-access-management/acc
 
 * Reference
 * 4-min read
-* Updated on Jun 02, 2026
+* Updated on Jul 22, 2026
 
 OAuth clients provide credentials according to the OAuth 2.0 standard. Credentials are managed by Dynatrace administrators and are used to automate account management, or build user-facing applications.
 
@@ -203,6 +203,13 @@ Provide the following parameters. Be sure to URL-encode all values.
 | code\_challenge\_method | Required Must be `S256`. |
 
 The `redirect_uri` must exactly match the value registered when creating the OAuth client. Any mismatch causes the authorization request to fail.
+
+For OAuth clients that require user consent (`dt0s17` client type), a consent page appears after SSO login and before the authorization code is issued. You must explicitly approve the authorization request.
+
+* If you approve, the flow resumes and you are redirected to your `redirect_uri` with the `code`.
+* If you deny, you are redirected to `redirect_uri?error=access_denied`.
+
+Consent is remembered for the duration of the SSO session—the page won't reappear unless the session expires.
 
 ### Step 3—Exchange the authorization code for tokens
 

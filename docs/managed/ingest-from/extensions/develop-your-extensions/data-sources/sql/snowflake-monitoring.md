@@ -9,7 +9,7 @@ source: https://docs.dynatrace.com/managed/ingest-from/extensions/develop-your-e
 
 * Reference
 * 2-min read
-* Published Apr 19, 2023
+* Updated on Jul 28, 2026
 
 After you define the scope of your configuration, you need to identify the following:
 
@@ -97,15 +97,15 @@ Example payload to activate the Snowflake Database extension:
 
 
 
-"scheme": "basic",
+"scheme": "programmaticAccessToken",
 
 
 
-"username": "admin",
+"username": "your-snowflake-username",
 
 
 
-"password": "password"
+"token": "your-programmatic-access-token"
 
 
 
@@ -215,15 +215,15 @@ You can define up to 20,000 endpoints in a single monitoring configuration in th
 
 
 
-"scheme": "basic",
+"scheme": "programmaticAccessToken",
 
 
 
-"username": "admin",
+"username": "your-snowflake-username",
 
 
 
-"password": "password"
+"token": "your-programmatic-access-token"
 
 
 
@@ -255,13 +255,61 @@ To define the Snowflake Database server, add the following details in the `endpo
 
 Authentication details passed to the Dynatrace API when activating monitoring configuration are obfuscated and it's impossible to retrieve them.
 
+#### Programmatic Access Token (PAT)
+
+Use Programmatic Access Tokens for more secure authentication:
+
+```
+"authentication": {
+
+
+
+"scheme": "programmaticAccessToken",
+
+
+
+"username": "your-snowflake-username",
+
+
+
+"token": "your-programmatic-access-token"
+
+
+
+}
+```
+
 #### Credential vault
 
 The credential vault authentication type provides a more secure approach to using extensions by securely storing and managing user credentials. To use this, you must be the owner of the credentials and have a credential vault that meets the following criteria:
 
-* **Credential type**—User and password
+* **Credential type**—User and password in case of Basic Authentication, and username and Programmatic Access Token (PAT) in case of Programmatic Access Token (PAT) authentication
 * **Credential scope**—Synthetic (in case of external vault usage) and Extension authentication scopes enabled
 * **Owner access only** is enabled only for credential owners
+
+```
+"authentication": {
+
+
+
+"scheme": "programmaticAccessToken",
+
+
+
+"useCredentialVault": true,
+
+
+
+"credentialVaultId": "some-credential-vault-id"
+
+
+
+}
+```
+
+Basic authentication (deprecated)
+
+Basic authentication is deprecated. Use Programmatic Access Token (PAT) authentication instead.
 
 ```
 "authentication": {
@@ -272,11 +320,11 @@ The credential vault authentication type provides a more secure approach to usin
 
 
 
-"useCredentialVault": true,
+"username": "admin",
 
 
 
-"credentialVaultId": "some-credential-vault-id"
+"password": "password"
 
 
 

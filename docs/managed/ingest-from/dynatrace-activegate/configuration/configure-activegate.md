@@ -8,7 +8,7 @@ source: https://docs.dynatrace.com/managed/ingest-from/dynatrace-activegate/conf
 # Configuration properties and parameters of ActiveGate
 
 * 17-min read
-* Updated on May 19, 2026
+* Updated on Jul 16, 2026
 
 ## Before you begin
 
@@ -213,8 +213,9 @@ For example:
 
 Different functional features provided by ActiveGate are referred to as **[modules](/managed/ingest-from/dynatrace-activegate/capabilities#functional_tbl "Learn the capabilities and uses of ActiveGate.")**. When you are installing ActiveGate for a specific [purpose](/managed/ingest-from/dynatrace-activegate/capabilities "Learn the capabilities and uses of ActiveGate."), a different set of modules is installed or enabled.
 
-A module is active if the corresponding configuration property is listed with value `true` in the configuration section dedicated to the module. Note, however, that you can't enable all modules using `custom.properties` simply by changing the value of a property: if you installed your ActiveGate to serve as a private Synthetic location or to monitor mainframe, and you need to change your ActiveGate purpose, you have to reinstall the ActiveGate.  
-Active modules are listed on the [Deployment status](/managed/ingest-from/dynatrace-activegate/operation/update-activegate "Configure Environment ActiveGate automatic updates---update mode, target version, and update windows---and download or install manually.") page.
+A module is active if the corresponding configuration property is listed with value `true` in the configuration section dedicated to the module. Note, however, that you can't enable all modules using `custom.properties` simply by changing the value of a property: if you installed your ActiveGate to serve as a private Synthetic location or to monitor mainframe, and you need to change your ActiveGate purpose, you have to reinstall the ActiveGate.
+
+Active modules are listed in **Deployment Status** > **ActiveGates**.
 
 Each module has a corresponding section in the configuration
 
@@ -388,14 +389,14 @@ Example: `proxy-password = foo\,bar`
 
 | Property | Default value | Description |
 | --- | --- | --- |
-| `synthetic_enabled` | `false` in the **Default** deployment mode  `true` in the **Synthetic monitoring** deployment mode | Enables the ActiveGate to execute monitors from private Synthetic locations. |
+| `synthetic_enabled` | `false` in the **Default** deployment mode  `true` in the **Synthetic monitoring** deployment mode | Enables the ActiveGate to run monitors from private Synthetic locations. |
 | `synthetic_autoinstall` | `true` to automatically update the Synthetic engine | Automatically set to `true` at installation time for Synthetic-enabled ActiveGates. |
 | `proxy-server` | unset | Proxy server address |
 | `proxy-port` | unset | Proxy port (numeric) |
-| `proxy-user` | unset | Proxy user name (optional) |
+| `proxy-user` | unset | Proxy username (optional) |
 | `proxy-password` | unset | Proxy password (optional)  The password provided in the `proxy-password` property  is obfuscated following ActiveGate restart and the obfuscated password  is stored in the `proxy-password-encr` property. **Note**: A comma character, when intended to be a part of a value, should be escaped with a single backslash. For example, `proxy-password = foo\,bar`. |
 | `proxy-off` | unset | Disable proxy communication between ActiveGate and tested resource. |
-| `proxy-non-proxy-hosts` | unset | Do not use proxy when communicating with these hosts. |
+| `proxy-non-proxy-hosts` | unset | Don't use proxy when communicating with these hosts. |
 | `chromium_repo` | unset  Specify the custom browser package repository on the HTTP server. Example: `https://172.18.0.100/chromium-repo` Only works if both `synthetic_autoinstall` and `synthetic_autoupgrade_chromium` are `true`. | Enables autoupdate of the browser from the [custom repository](/managed/observe/digital-experience/synthetic-monitoring/private-synthetic-locations/create-a-private-synthetic-location#custom-repo "Learn how to create a private location for synthetic monitoring."). |
 
 We recommend that you not edit the value of the `synthetic_autoupgrade_chromium` property in `custom.properties` because your changes might be overwritten.
@@ -489,7 +490,10 @@ agctl network-zone set production-zone
 
 After configuring the network zone with `agctl`, you must restart ActiveGate for the changes to take effect. See [Start/stop/restart ActiveGate](/managed/ingest-from/dynatrace-activegate/operation/stop-restart-activegate "Learn how you can start, stop and restart ActiveGate on Windows or Linux.").
 
-Alternatively, to modify network zone assignment centrally from the Dynatrace Cluster, you can use [Remote configuration management](/managed/ingest-from/bulk-configuration#configure-activegates "Perform OneAgent and ActiveGate configuration on hosts from the Deployment status page or at scale using the Dynatrace API.") (select the **modify network zone** action).
+Alternatively, you can manage network zones centrally through:
+
+* Go to **Deployment Status** > **Network zones** to view, edit, or create network zones.
+* **Remote configuration management** — use [Remote configuration management](/managed/ingest-from/bulk-configuration#configure-activegates "Perform OneAgent and ActiveGate configuration on hosts from the Deployment status page or at scale using the Dynatrace API.") (select the **modify network zone** action).
 
 ## Group
 
@@ -537,9 +541,9 @@ If the value contains a comma character, it must be escaped with a single backsl
 | Property | Default value | Description |
 | --- | --- | --- |
 | `port-ssl` | `9999` | The port on which the ActiveGate listens for traffic from OneAgent—used for the HTTPS connection. You can configure this using the [agctl ssl-port](/managed/ingest-from/dynatrace-activegate/agctl-command-line-interface#ssl-port "Learn how to use agctl to configure and manage ActiveGate from the command line") command. If you need to change the port value, see [Develop your own Extensions](/managed/ingest-from/extensions/develop-your-extensions "Develop your own Extensions in Dynatrace.") and [Extension Execution Controller custom configuration](/managed/ingest-from/extensions/advanced-configuration/eec-custom-configuration "Configure the Extension Execution Controller (EEC)."). |
-| `port` | unset | The port on which the ActiveGate listens for traffic from OneAgent—used for the HTTP connection. It is disabled by default. On Linux, a value > 1024 is recommended to ensure no root privileges are required. |
-| `ssl-protocols` | `TLSv1.2`, `TLSv1.3` | Supported SSL protocols. Can be one or a comma-separated list of values. Note that specifying a particular version does not automatically imply support for all the previous/lower versions—so you need to specify each version explicitly. The allowed values are `TLSv1.2` and `TLSv1.3` |
-| `excluded-ciphers` | unset | A list of excluded ciphers. Ciphers are defined by a substring matching at least a part of the cipher name, for example: `excluded-ciphers = TLS_RSA_WITH,SHA$,TLS_ECDH` |
+| `port` | unset | The port on which the ActiveGate listens for traffic from OneAgent—used for the HTTP connection. It's disabled by default. On Linux, a value > 1024 is recommended to ensure no root privileges are required. |
+| `ssl-protocols` | `TLSv1.2`, `TLSv1.3` | Supported SSL protocols. Can be one or a comma-separated list of values. Note that specifying a particular version doesn't automatically imply support for all the previous/lower versions—so you need to specify each version explicitly. The allowed values are `TLSv1.2` and `TLSv1.3` |
+| `excluded-ciphers` | unset | A list of excluded ciphers. Ciphers are defined by a substring matching at least a part of the cipher name, for example:`excluded-ciphers = TLS_RSA_WITH,SHA$,TLS_ECDH` |
 | `certificate-file` | unset | Path of the `PKCS#12` file containing certificates to be used by the ActiveGate web server. Also see [Configuration of custom SSL certificate on ActiveGate](/managed/ingest-from/dynatrace-activegate/configuration/configure-custom-ssl-certificate-on-activegate "Learn how to configure the SSL certificate on your ActiveGate."). |
 | `certificate-password` | unset | Password for the certificate file. |
 | `certificate-alias` | unset | Friendly name of the certificate in the `PKCS#12` file. |
