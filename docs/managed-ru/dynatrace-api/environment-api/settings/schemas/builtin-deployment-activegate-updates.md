@@ -1,24 +1,23 @@
 ---
 title: Settings API - ActiveGate updates schema table
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/settings/schemas/builtin-deployment-activegate-updates
-scraped: 2026-05-12T11:39:02.591534
 ---
 
 # Settings API - ActiveGate updates schema table
 
 # Settings API - ActiveGate updates schema table
 
-* Published Dec 05, 2023
+* Опубликовано 05 декабря 2023
 
 ### Обновления ActiveGate (`builtin:deployment.activegate.updates)`
 
-Настройте поведение обновления ActiveGate. Подробнее о последних обновлениях см. [ActiveGate release notes](https://dt-url.net/release-notes-activegate).
+Настройка поведения обновлений ActiveGate. Подробнее о последних обновлениях: [ActiveGate release notes﻿](https://dt-url.net/release-notes-activegate).
 
 | Schema ID | Schema groups | Scope |
 | --- | --- | --- |
 | `builtin:deployment.activegate.updates` | * `group:updates` | `ENVIRONMENT_ACTIVE_GATE`  `environment` |
 
-Получить schema через Settings API
+Получение схемы через Settings API
 
 |  |  |  |
 | --- | --- | --- |
@@ -28,10 +27,18 @@ scraped: 2026-05-12T11:39:02.591534
 
 ## Аутентификация
 
-Для выполнения запроса необходим access token со scope **Read settings** (`settings.read`). О том, как получить и использовать токен, см. [Tokens and authentication](/managed/discover-dynatrace/references/dynatrace-api/basics/dynatrace-api-authentication).
+Для выполнения этого запроса нужен токен доступа с областью **Read settings** (`settings.read`). Подробнее о получении и использовании токена: [Tokens and authentication](/managed/discover-dynatrace/references/dynatrace-api/basics/dynatrace-api-authentication).
 
 ## Параметры
 
-| Свойство | Тип | Описание | Обязательный |
+| Свойство | Тип | Описание | Обязательно |
 | --- | --- | --- | --- |
-| Автоматические обновления при первой возможности `autoUpdate` | boolean | - | Required |
+| Target version `targetVersion` | text | - | Обязательно |
+| Update mode `updateMode` | enum | Элемент принимает следующие значения enum * `AUTOMATIC` * `AUTOMATIC_DURING_UW` * `MANUAL` | Обязательно |
+| Update windows `updateWindows` | Set<[updateWindow](#updateWindow)> | - | Обязательно |
+
+##### Объект `updateWindow`
+
+| Свойство | Тип | Описание | Обязательно |
+| --- | --- | --- | --- |
+| Update window `updateWindow` | setting | Выбор окна обновлений для обновлений ActiveGate (`<your-dynatrace-url>//ui/settings/builtin:deployment.management.update-windows`) | Обязательно |

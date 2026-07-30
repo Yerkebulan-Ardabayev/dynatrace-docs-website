@@ -7,66 +7,66 @@ source: https://docs.dynatrace.com/managed/ingest-from/dynatrace-activegate/acti
 
 # Безопасность ActiveGate
 
-* Чтение: 8 мин
-* Опубликовано 08 июля 2022 г.
+* 8 мин чтения
+* Обновлено Jul 20, 2026
 
 ## Пользовательский сертификат для ActiveGate
 
-Для повышения безопасности рекомендуется использовать пользовательские сертификаты для ActiveGate.
+Рекомендуется использовать пользовательские сертификаты для ActiveGate, чтобы повысить безопасность.
 
 См. [Пользовательский SSL-сертификат для ActiveGate](/managed/ingest-from/dynatrace-activegate/configuration/configure-custom-ssl-certificate-on-activegate "Узнайте, как настроить SSL-сертификат на ActiveGate.").
 
 ## Токены
 
-Убедитесь, что в среде применяется принудительное использование токенов ActiveGate. Для этого [проверьте статус использования токенов ActiveGate](#determine-status-of-active-gate-token-usage) и примите меры по результату.
+Убедитесь, что токены ActiveGate применяются в вашей среде. Для этого [проверьте статус использования токенов ActiveGate](#determine-status-of-active-gate-token-usage) и выполните необходимые действия по результатам проверки.
 
 ### Переход на токены ActiveGate
 
-Чтобы перейти на безопасность на основе токенов ActiveGate, сначала определите статус использования токенов ActiveGate.
+Чтобы перейти на защиту на основе токенов ActiveGate, сначала определите статус использования токенов ActiveGate.
 
 #### Определение статуса использования токенов ActiveGate
 
 1. В Dynatrace перейдите в **Settings** > **Preferences** > **Network security**.
-2. Просмотрите сообщения на странице **Network security** и устраните проблемы, как описано ниже.
+2. Просмотрите сообщения на странице **Network security** и устраните проблемы в соответствии с описанием ниже.
 
-##### Действия не требуются
+##### Действий не требуется
 
-Если Dynatrace отображает такое сообщение:
+Если Dynatrace показывает сообщение следующего вида:
 
-![Принудительное использование токенов ActiveGate включено](https://dt-cdn.net/images/updated-ss-1-582-2d81cc06ad.png)
+![Токены ActiveGate применяются](https://dt-cdn.net/images/updated-ss-1-582-2d81cc06ad.png)
 
-Принудительное использование токенов ActiveGate включено
+Токены ActiveGate применяются
 
-* Никаких действий не требуется. Принудительное использование токенов ActiveGate включено, всё готово.
-* Подключаться к Dynatrace могут только ActiveGate с действительными токенами ActiveGate.
+* Никаких действий не требуется. Применение ActiveGate включено, всё готово.
+* Только ActiveGate с действительными токенами ActiveGate могут подключаться к Dynatrace.
 
 ##### Устранение проблем с токенами ActiveGate
 
-Если Dynatrace отображает такое сообщение:
+Если Dynatrace показывает сообщение следующего вида:
 
 ![Проблемы с токенами ActiveGate](https://dt-cdn.net/images/updated-ss-2-584-c069a85f68.png)
 
 Проблемы с токенами ActiveGate
 
-* Принудительное использование токенов ActiveGate пока не включено, и часть ActiveGate использует недействительные токены.
-* Нужно устранить проблемы в зависимости от [статуса](#statuses). В противном случае такие ActiveGate потеряют соединение после включения принудительного использования токенов ActiveGate.
+* Токены ActiveGate ещё не применяются, и часть ActiveGate использует недействительные токены.
+* Необходимо устранить проблемы в соответствии со [статусом](#statuses). В противном случае такие ActiveGate потеряют подключение после применения токенов ActiveGate.
 
-##### Немедленное принудительное включение токенов ActiveGate
+##### Немедленное применение токенов ActiveGate
 
-Если Dynatrace отображает такое сообщение:
+Если Dynatrace показывает сообщение следующего вида:
 
-![Ручное принудительное включение токенов ActiveGate](https://dt-cdn.net/images/manual-enforcement-580-5c1b3dbaf4.webp)
+![Ручное применение токенов ActiveGate](https://dt-cdn.net/images/manual-enforcement-580-5c1b3dbaf4.webp)
 
-Ручное принудительное включение токенов ActiveGate
+Ручное применение токенов ActiveGate
 
-* Есть возможность немедленно включить принудительное использование токенов ActiveGate. Это можно сделать в любой момент, независимо от того, сообщают ли ActiveGate о проблемах с токенами, но сначала обязательно прочитайте раздел [Ручное принудительное включение токенов ActiveGate](#manual) ниже. Все ActiveGate со статусом, отличным от **Valid**, потеряют соединение с Dynatrace.
+* Можно применить токены ActiveGate немедленно. Это доступно в любое время, независимо от того, сообщают ли ActiveGate о проблемах с токенами, однако сначала прочитайте раздел [Ручное применение токенов ActiveGate](#manual) ниже. Все ActiveGate со статусом, отличным от **Valid**, потеряют подключение к Dynatrace.
 
 ### Типы токенов ActiveGate
 
 Токены ActiveGate бывают двух типов:
 
-* **Seed-токен**, seed-токен ActiveGate автоматически встраивается в установщик ActiveGate при загрузке установщика через веб-интерфейс Dynatrace или [Dynatrace API](/managed/dynatrace-api/environment-api/deployment/activegate "Загрузка установщиков ActiveGate через Dynatrace API.").
-* **Индивидуальный токен**, при первом подключении ActiveGate к кластеру Dynatrace исходный seed-токен ActiveGate заменяется автоматически сгенерированным индивидуальным токеном ActiveGate. Один и тот же установщик можно использовать многократно: исходный seed-токен ActiveGate позволяет создавать несколько индивидуальных токенов ActiveGate.
+* **Seed token**, seed-токен ActiveGate, автоматически встраивается в установщик ActiveGate при загрузке установщика через веб-интерфейс Dynatrace или [Dynatrace API](/managed/dynatrace-api/environment-api/deployment/activegate "Загрузка установщиков ActiveGate через Dynatrace API.").
+* **Individual token**, при первом подключении ActiveGate к кластеру Dynatrace исходный seed-токен ActiveGate заменяется автоматически сгенерированным индивидуальным токеном ActiveGate. Один и тот же установщик можно использовать несколько раз; исходный seed-токен ActiveGate позволяет создать несколько индивидуальных токенов ActiveGate.
 
 ### Структура токена ActiveGate
 
@@ -78,18 +78,18 @@ source: https://docs.dynatrace.com/managed/ingest-from/dynatrace-activegate/acti
 
 | Часть | Название | Описание |
 | --- | --- | --- |
-| 1 | **prefix** | Первая часть (`dt0g02` в примере выше), это **префикс** токена. Он определяет тип токена. |
-| 2 | **public** | Вторая часть (`4KWZO5EF` в примере выше), это 8-символьная **публичная** часть токена.  Вместе префикс и публичная часть составляют **идентификатор токена**.  Идентификатор токена можно безопасно отображать в веб-интерфейсе и использовать для целей логирования. |
-| 3 | **secret** | Третья часть (`XT47R5DRADJIZUFOX4UDNOKTSUSABGLN7XSMJG7UXHRXKNY4WLORH4OF4T75MG7E` в примере выше), это 64-символьная **секретная** часть токена.  К секретной части нужно относиться как к паролю. Она не должна отображаться в Dynatrace (после первоначального создания) и не должна сохраняться в файлах журнала. |
+| 1 | **prefix** | Первая часть (`dt0g02` в примере выше) является **prefix** токена. Она определяет тип токена. |
+| 2 | **public** | Вторая часть (`4KWZO5EF` в примере выше) является 8-символьной **public**-частью токена. Вместе prefix и public-часть образуют **идентификатор токена** (token identifier). Идентификатор токена можно безопасно отображать в веб-интерфейсе и использовать в целях журналирования. |
+| 3 | **secret** | Третья часть (`XT47R5DRADJIZUFOX4UDNOKTSUSABGLN7XSMJG7UXHRXKNY4WLORH4OF4T75MG7E` в примере выше) является 64-символьной **secret**-частью токена. Обращаться с secret-частью нужно как с паролем. Её не следует отображать в Dynatrace (после первоначального создания) или хранить в файлах журналов. |
 
-### Принудительное использование токенов ActiveGate
+### Применение токенов ActiveGate
 
-Все ActiveGate уже были постепенно переведены на использование токенов ActiveGate в ходе обновлений ActiveGate, начиная с версии ActiveGate 1.225.
+Все ActiveGate уже постепенно перенесены на использование токенов ActiveGate в ходе обновлений ActiveGate, начиная с версии 1.225.
 
 Чтобы проверить, у каких ActiveGate включены токены ActiveGate:
 
 1. В Dynatrace перейдите в **Deployment Status** и выберите **ActiveGates**.
-2. ActiveGate можно фильтровать по следующим статусам токенов ActiveGate, подробнее см. [Статус токена ActiveGate](#statuses).
+2. Можно фильтровать ActiveGate по следующим статусам токенов ActiveGate; подробнее см. раздел [Статус токена ActiveGate](#statuses).
 
    * Absent
    * Expiring
@@ -98,39 +98,41 @@ source: https://docs.dynatrace.com/managed/ingest-from/dynatrace-activegate/acti
    * Valid
    * Unsupported
 
-#### Автоматическое принудительное включение токенов ActiveGate
+#### Автоматическое применение токенов ActiveGate
 
-Если все ActiveGate готовы к сетевой безопасности на основе токенов в течение 30 дней, среда автоматически переключится на сетевую безопасность на основе токенов ActiveGate.
+Если все ActiveGate готовы к сетевой защите на основе токенов в течение 30 дней, среда автоматически переключится на сетевую защиту на основе токенов ActiveGate.
 
-#### Ручное принудительное включение токенов ActiveGate
+#### Ручное применение токенов ActiveGate
 
-Если нужно ускорить процесс и есть уверенность, что в среде используются только ActiveGate версии 1.225+, можно принудительно переключиться на токены ActiveGate в любой удобный момент.
+Если нужно ускорить процесс и есть уверенность, что в среде используются только ActiveGate версии 1.225+, можно принудительно переключиться на токены ActiveGate в любое удобное время.
 
 1. В Dynatrace перейдите в **Settings** > **Preferences** > **Network security**.
 2. Включите **Manually enforce ActiveGate token authentication**.
 
-* При включении **Manually enforce ActiveGate token authentication** и сохранении изменений все ActiveGate со статусом, отличным от **Valid**, потеряют соединение с Dynatrace.
-* На отказ от ручного принудительного включения (отключение **Manually enforce ActiveGate token authentication**) даётся максимум 30 дней с момента обнаружения последнего недействительного токена. Например, если последний недействительный токен был обнаружен 20 дней назад, есть ещё 10 дней на отказ от принудительного включения. По истечении переходного периода переключатель отключается (то есть выключить его уже нельзя).
+* При включении **Manually enforce ActiveGate token authentication** и сохранении изменений все ActiveGate со статусом, отличным от **Valid**, потеряют подключение к Dynatrace.
+* После обнаружения последнего недействительного токена есть не более 30 дней для отмены ручного применения (то есть для отключения **Manually enforce ActiveGate token authentication**). Например, если последний недействительный токен был обнаружен 20 дней назад, остаётся ещё 10 дней для отмены применения. По истечении переходного периода переключатель отключается (выключить его будет невозможно).
 
 #### Переходный период
 
-Переходный период в 30 дней предназначен для предотвращения потери данных от ActiveGate, на которых новые токены в среде ещё не реализованы.
+Переходный период длиной 30 дней предназначен для предотвращения потери данных от ActiveGate, в которых новые токены ещё не внедрены в среде.
 
-В течение этого периода при обнаружении любой попытки подключения без токена ActiveGate:
+В течение этого периода, если обнаруживается попытка подключения без токена ActiveGate:
 
-* Принудительное использование токенов ActiveGate не будет включено, и всем ActiveGate будет разрешено подключаться к кластеру Dynatrace (потребуются только tenant-токены).
-* Переходный период сбрасывается на 30 дней, принудительное использование токенов ActiveGate будет включено автоматически не раньше, чем через 30 дней с этого момента.
+* Применение токенов ActiveGate не будет включено, и всем ActiveGate разрешается подключаться к кластеру Dynatrace (потребуются только tenant-токены).
+* Переходный период сбрасывается на 30 дней, и применение токенов ActiveGate будет включено автоматически не ранее чем через 30 дней с этого момента.
 
 ### Статус токена ActiveGate
 
-Если ActiveGate не используют действительные токены ActiveGate, можно проверить причину недействительности токенов.
+Dynatrace Classic
+
+Если ActiveGate не используют действительные токены ActiveGate, можно выяснить причину недействительности.
 
 1. В Dynatrace перейдите в **Deployment Status** и выберите **ActiveGates**.
 2. Выберите **Check ActiveGate token statuses**.
 
    Эта опция доступна только при наличии проблем с токенами ActiveGate.
 
-В зависимости от статуса может потребоваться выполнить определённые действия для перехода на сетевую безопасность на основе токенов ActiveGate.
+В зависимости от статуса может потребоваться выполнить ряд действий для перехода на сетевую защиту на основе токенов ActiveGate.
 
 #### Absent
 
@@ -138,51 +140,51 @@ source: https://docs.dynatrace.com/managed/ingest-from/dynatrace-activegate/acti
 
 #### Expiring
 
-Срок действия токена ActiveGate истекает через 30 дней или менее. Если в среде включено принудительное использование токенов ActiveGate, ActiveGate потеряет соединение после истечения срока действия токена.
+Токен ActiveGate истекает через 30 или менее дней. Если в среде применяются токены ActiveGate, ActiveGate потеряет подключение после истечения срока действия токена.
 
 #### Invalid
 
-ActiveGate настроен на использование токена ActiveGate, но формат недействителен. [Сгенерируйте и настройте](#generate) новый токен ActiveGate.
+ActiveGate настроен на использование токена ActiveGate, но формат токена недействителен. [Сгенерируйте и настройте](#generate) новый токен ActiveGate.
 
 #### Unknown
 
-ActiveGate настроен на использование токена ActiveGate, и формат токена действителен, но токен не распознаётся кластером Dynatrace. [Сгенерируйте и настройте](#generate) новый токен ActiveGate.
+ActiveGate настроен на использование токена ActiveGate, формат токена действителен, однако токен не распознаётся кластером Dynatrace. [Сгенерируйте и настройте](#generate) новый токен ActiveGate.
 
 #### Valid
 
-ActiveGate использует для аутентификации действительный токен ActiveGate.
+ActiveGate использует действительный токен ActiveGate для аутентификации.
 
 #### Unsupported
 
-Версия ActiveGate 1.223 или более ранняя; сетевая безопасность на основе токенов ActiveGate поддерживается для ActiveGate версии 1.225+.
+ActiveGate использует версию 1.223 или более раннюю; сетевая защита на основе токенов ActiveGate поддерживается для версий ActiveGate 1.225+.
 
 ### Генерация и настройка токена ActiveGate
 
 * Если ActiveGate развёрнут как [StatefulSet](/managed/ingest-from/setup-on-k8s/deployment/other/ag-statefulset "Install and configure ActiveGate in Kubernetes as a StatefulSet."), нужно [сгенерировать токен ActiveGate](#generate-individual) и добавить его в конфигурацию.
 
-  + Seed-токен ActiveGate нельзя использовать для контейнеризированных ActiveGate.
-  + Токен ActiveGate можно использовать совместно для нескольких ActiveGate в рамках одной среды.
-* Если ActiveGate развёрнут с помощью [Dynatrace Operator](/managed/ingest-from/setup-on-k8s/deployment "Deploy Dynatrace Operator on Kubernetes"), Dynatrace Operator сам обрабатывает токен авторизации. Начиная с версии Dynatrace Operator 0.9.0+, нужно включить область действия **Create ActiveGate tokens** (`activeGateTokenManagement.create`). Подробности см. в разделе [Tokens and permissions](/managed/ingest-from/setup-on-k8s/deployment/tokens-permissions "Configure tokens and permissions to monitor your Kubernetes cluster").
+  + Seed-токен ActiveGate не подходит для контейнеризованных ActiveGate.
+  + Токен ActiveGate можно использовать совместно между несколькими ActiveGate в одной среде.
+* Если ActiveGate развёрнут с помощью [Dynatrace Operator](/managed/ingest-from/setup-on-k8s/deployment "Deploy Dynatrace Operator on Kubernetes"), Dynatrace Operator управляет токеном авторизации. Начиная с версии Dynatrace Operator 0.9.0+, необходимо включить область **Create ActiveGate tokens** (`activeGateTokenManagement.create`). Подробнее: [Tokens and permissions](/managed/ingest-from/setup-on-k8s/deployment/tokens-permissions "Configure tokens and permissions to monitor your Kubernetes cluster").
 
-  По вопросам, связанным с токеном ActiveGate, см. [Problem with ActiveGate token﻿](https://dt-url.net/ym238od) в Dynatrace Community.
-* Все хост-based ActiveGate, установленные через веб-интерфейс Dynatrace или Dynatrace API, уже имеют автоматически сгенерированный токен ActiveGate. Однако иногда может понадобиться [сгенерировать токен ActiveGate](#generate-individual) и [настроить его в файле `authorization.properties`](#configure-hostbased).
+  При проблемах с токеном ActiveGate обращайтесь к [Problem with ActiveGate token﻿](https://dt-url.net/ym238od) в Dynatrace Community.
+* Все host-based ActiveGate, установленные через веб-интерфейс Dynatrace или Dynatrace API, уже имеют автоматически сгенерированный токен ActiveGate. Однако иногда может потребоваться [сгенерировать токен ActiveGate](#generate-individual) и [настроить его в файле `authorization.properties`](#configure-hostbased).
 
 #### Генерация токена ActiveGate
 
-1. [Сгенерировать токен API](/managed/dynatrace-api/basics/dynatrace-api-authentication#create-token "Find out how to get authenticated to use the Dynatrace API."). В целях безопасности выбрать одну из следующих областей действия токена, чтобы ограничить доступ:
+1. [Сгенерируйте токен API](/managed/dynatrace-api/basics/dynatrace-api-authentication#create-token "Find out how to get authenticated to use the Dynatrace API."). Для ограничения доступа в целях безопасности выберите одну из следующих областей токена:
 
    * **Create ActiveGate tokens**
    * **Write ActiveGate tokens**
-2. Сохранить токен.
+2. Сохраните токен.
 
    Он отображается только один раз.
-3. Использовать эндпоинт [ActiveGate tokens API - POST a token](/managed/dynatrace-api/environment-api/tokens-v2/activegate-tokens/post-activegate-token "Create a new ActiveGate token via Dynatrace API.") для создания токена. Авторизовать вызов только что созданным токеном API. Например, следующая команда сгенерирует токен ActiveGate со следующими параметрами:
+3. Используйте endpoint [ActiveGate tokens API - POST a token](/managed/dynatrace-api/environment-api/tokens-v2/activegate-tokens/post-activegate-token "Create a new ActiveGate token via Dynatrace API.") для создания токена. Авторизуйте вызов с помощью только что созданного токена API. Например, следующая команда сгенерирует токен ActiveGate со следующими параметрами:
 
    * Тип ActiveGate: `ENVIRONMENT`
-   * Срок действия токена ActiveGate истекает через: `6 months`
-   * Тип токена ActiveGate: индивидуальный токен ActiveGate (`seedToken` равен false).
+   * Срок действия токена ActiveGate: `6 месяцев`
+   * Тип токена ActiveGate: индивидуальный токен ActiveGate (значение `seedToken` равно false).
 
-   Начиная с версии Dynatrace 1.293+, нужно убедиться, что поле **expirationDate** не задано в прошлом и не превышает **двух лет** с момента создания.
+   Начиная с версии Dynatrace 1.293+, необходимо убедиться, что поле **expirationDate** не установлено в прошедшую дату и не превышает **двух лет** с момента создания.
 
    **Команда:**
 
@@ -226,10 +228,10 @@ ActiveGate использует для аутентификации действ
    }'
    ```
 
-   Заменить:
+   Замените:
 
-   * `{your-environment-id}` на [Environment ID](/managed/discover-dynatrace/get-started/monitoring-environment "Learn what a Dynatrace monitoring environment is, how to find your environment ID, and how to set up and connect multiple environments.")
-   * `{api-token}` на [токен API](/managed/dynatrace-api/basics/dynatrace-api-authentication "Find out how to get authenticated to use the Dynatrace API.") с одной из следующих областей действия: **Create ActiveGate tokens** или **Write ActiveGate tokens**.
+   * `{your-environment-id}` на [идентификатор среды Environment](/managed/discover-dynatrace/get-started/monitoring-environment "Learn what a Dynatrace monitoring environment is, how to find your environment ID, and how to set up and connect multiple environments.")
+   * `{api-token}` на [токен API](/managed/dynatrace-api/basics/dynatrace-api-authentication "Find out how to get authenticated to use the Dynatrace API.") с одной из следующих областей: **Create ActiveGate tokens** или **Write ActiveGate tokens**.
 
    **Пример тела ответа:**
 
@@ -253,36 +255,38 @@ ActiveGate использует для аутентификации действ
    }
    ```
 
-#### Настройка токена на хост-based ActiveGate
+#### Настройка токена на host-based ActiveGate
 
-1. В [каталоге конфигурации](/managed/ingest-from/dynatrace-activegate/configuration/where-can-i-find-activegate-files "Find out where ActiveGate files are stored on Windows and Linux systems.") ActiveGate найти файл `authorization.properties`.
-2. Отредактировать файл, добавив сгенерированный токен ActiveGate как значение свойства `authToken`. Например:
+1. В [директории конфигурации](/managed/ingest-from/dynatrace-activegate/configuration/where-can-i-find-activegate-files "Find out where ActiveGate files are stored on Windows and Linux systems.") ActiveGate найдите файл `authorization.properties`.
+2. Отредактируйте файл: добавьте сгенерированный токен ActiveGate в качестве значения свойства `authToken`. Например:
 
    ```
    authToken = dt0g02.4KWZO5EF.XT47R5DRADJIZUFOX4UDNOKTSUSABGLN7XSMJG7UXHRXKNY4WLORH4OF4T75MG7E     # present, if required
    ```
-3. [Перезапустить основную службу ActiveGate](/managed/ingest-from/dynatrace-activegate/operation/stop-restart-activegate "Learn how you can start, stop and restart ActiveGate on Windows or Linux.")
+3. [Перезапустите основной сервис ActiveGate](/managed/ingest-from/dynatrace-activegate/operation/stop-restart-activegate "Learn how you can start, stop and restart ActiveGate on Windows or Linux.")
 
 ### Уведомления об истечении срока действия токена ActiveGate
 
-Помимо настройки собственного механизма ротации токенов ActiveGate до истечения срока их действия, можно настроить уведомления об истекающих токенах ActiveGate. Для этого нужно создать интеграцию уведомлений о проблемах (например, [Email](/managed/analyze-explore-automate/notifications-and-alerting/problem-notifications/email-integration "Get email whenever Dynatrace detects a problem in your environment that affects real users.")), используя встроенный профиль оповещений **Default for ActiveGate Token Expiry**.
+Помимо настройки собственного механизма ротации токенов ActiveGate до истечения срока их действия, можно настроить уведомления об истекающих токенах ActiveGate. Для этого создайте интеграцию уведомлений о проблемах (например, [Email](/managed/analyze-explore-automate/notifications-and-alerting/problem-notifications/email-integration "Get email whenever Dynatrace detects a problem in your environment that affects real users.")) с использованием встроенного профиля оповещения **Default for ActiveGate Token Expiry**.
 
-Для Dynatrace Managed [экстренные контакты](/managed/managed-cluster/configuration/configure-cluster-event-notifications "Configure Dynatrace Managed Cluster event notification recipients, emergency contacts, and which Managed Cluster events trigger email notifications.") также получают уведомления об истечении срока действия токенов.
+В Dynatrace Managed [экстренные контакты](/managed/managed-cluster/configuration/configure-cluster-event-notifications "Configure Dynatrace Managed Cluster event notification recipients, emergency contacts, and which Managed Cluster events trigger email notifications.") также получают уведомления об истечении срока действия токенов.
 
-Чтобы остановить уведомления
+Dynatrace Classic
 
-1. В Dynatrace перейти в **Deployment Status** > **ActiveGates**.
-2. Выбрать **More** (**…**), затем выбрать **ActiveGate token enforcement settings**.
-3. Отключить **Enable notifications about ActiveGate tokens expiration dates**.
-4. Выбрать **Save changes**.
+Чтобы отключить уведомления
+
+1. Перейдите в **Deployment Status** > **ActiveGates**.
+2. Выберите **More** (**…**), затем выберите **ActiveGate token enforcement settings**.
+3. Отключите **Enable notifications about ActiveGate tokens expiration dates**.
+4. Нажмите **Save changes**.
 
 ### Автоматическая очистка токенов ActiveGate
 
-Dynatrace версии 1.272+
+Dynatrace версия 1.272+
 
-Dynatrace выполняет автоматическую очистку неиспользуемых токенов ActiveGate. Токен считается неиспользуемым по истечении двух лет с момента последнего использования. Проверить свои токены можно с помощью запроса [GET all tokens](/managed/dynatrace-api/environment-api/tokens-v2/activegate-tokens/get-all-activegate-tokens "List all ActiveGate tokens available for your monitoring environment via Dynatrace API.") API токенов, обратив внимание на поле **lastUsedDate**.
+Dynatrace выполняет автоматическую очистку неиспользуемых токенов ActiveGate. Токен считается неиспользуемым спустя два года с момента последнего использования. Проверить токены можно через запрос [GET all tokens](/managed/dynatrace-api/environment-api/tokens-v2/activegate-tokens/get-all-activegate-tokens "List all ActiveGate tokens available for your monitoring environment via Dynatrace API.") Tokens API: нужно обратить внимание на поле **lastUsedDate**.
 
-Пример полезной нагрузки API
+Пример payload API
 
 ```
 {

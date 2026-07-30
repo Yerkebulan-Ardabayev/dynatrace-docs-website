@@ -1,30 +1,27 @@
 ---
 title: Settings API - Service Detection v2 for OneAgent schema table
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/settings/schemas/builtin-service-detection-v2-for-oneagent
-scraped: 2026-05-12T11:48:55.475559
 ---
 
 # Settings API - Service Detection v2 for OneAgent schema table
 
 # Settings API - Service Detection v2 for OneAgent schema table
 
-* Published Sep 25, 2025
+* Опубликовано 25 сен. 2025
 
-### Service Detection v2 для OneAgent (`builtin:service-detection-v2-for-oneagent)`
+### Service Detection v2 for OneAgent (`builtin:service-detection-v2-for-oneagent)`
 
-Включение SDv2 для OneAgent задействует те же attribute-based правила, что и OpenTelemetry, для обнаружения сервисов, эндпоинтов и failure. Подробнее см. в [SDv2 documentation](https://dt-url.net/5e0309z).
-
-Это **Public Preview**-функция. До включения необходимо заполнить [access request form and agree to preview terms](https://dt-url.net/cb300tiz).
+При включении SDv2 для OneAgent используются те же правила на основе атрибутов, что и для OpenTelemetry, при обнаружении сервисов, эндпоинтов и сбоев. Подробности в [документации SDv2﻿](https://dt-url.net/5e0309z).
 
 **Важно**
 
-Сервисы, попадающие под ваши условия, получат новые ключи метрик, что сломает существующие API-запросы, дашборды и имена сервисов. Custom, opaque, third party, database и message queue-сервисы в SDv2 определяются иначе. Аналитические представления для операций service-to-database и message queue будут анонсированы в будущих релизах.
+Сервисы, соответствующие заданным условиям, получат новые ключи метрик, что нарушит работу существующих запросов API, дашбордов и имён сервисов. Custom, opaque, third party, database и message queue сервисы обнаруживаются в SDv2 иначе. Представления анализа для операций сервис-база данных и сервис-очередь сообщений будут объявлены в ближайших релизах.
 
-| Schema ID | Schema groups | Scope |
+| ID схемы | Группы схем | Область действия |
 | --- | --- | --- |
-| `builtin:service-detection-v2-for-oneagent` | * `group:service-detection` | `CLOUD_APPLICATION_NAMESPACE` - Kubernetes namespace  `KUBERNETES_CLUSTER` - Kubernetes cluster  `HOST_GROUP` - Host Group  `environment` |
+| `builtin:service-detection-v2-for-oneagent` | * `group:service-detection` | `CLOUD_APPLICATION_NAMESPACE` - пространство имён Kubernetes  `KUBERNETES_CLUSTER` - кластер Kubernetes  `HOST_GROUP` - Host Group  `environment` |
 
-Получить schema через Settings API
+Получить схему через Settings API
 
 |  |  |  |
 | --- | --- | --- |
@@ -34,14 +31,15 @@ scraped: 2026-05-12T11:48:55.475559
 
 ## Аутентификация
 
-Для выполнения запроса необходим access token со scope **Read settings** (`settings.read`). О том, как получить и использовать токен, см. [Tokens and authentication](/managed/discover-dynatrace/references/dynatrace-api/basics/dynatrace-api-authentication).
+Для выполнения этого запроса нужен токен доступа с областью **Read settings** (`settings.read`). Как получить и использовать токен, описано в разделе [Tokens and authentication](/managed/discover-dynatrace/references/dynatrace-api/basics/dynatrace-api-authentication).
 
 ## Параметры
 
-| Свойство | Тип | Описание | Обязательный |
+| Свойство | Тип | Описание | Обязательность |
 | --- | --- | --- | --- |
-| Включить Service Detection v2 для Kubernetes-workload `enableSDV2ForKubernetesWorkloads` | boolean | - | Required |
-| Условие сопоставления для Kubernetes-workload `condition` | text | Ограничивает scope opt-in фильтрацией [DQL matcher](https://dt-url.net/l603wby)-условиями по выбранному набору атрибутов.  Service detection v2 применяется только если это условие совпало. Допустимые атрибуты: Resource attributes и custom attributes. Если поле пустое, условие всегда совпадает. | Required |
-| Включить Service Detection v2 для FaaS `enableSDV2ForFaaS` | boolean | - | Optional |
-| Условие сопоставления для FaaS `conditionForFaaS` | text | Ограничивает scope opt-in фильтрацией [DQL matcher](https://dt-url.net/l603wby)-условиями по выбранному набору атрибутов.  Service detection v2 применяется только если это условие совпало. Допустимые атрибуты: Resource attributes и custom attributes. Если поле пустое, условие всегда совпадает. | Required |
-| Условие сопоставления для любого workload `conditionForAnyWorkload` | text | Ограничивает scope opt-in фильтрацией [DQL matcher](https://dt-url.net/l603wby)-условиями по выбранному набору атрибутов. Resource attributes должны присутствовать.  Service detection v2 применяется только если это условие совпало. Допустимые атрибуты: Resource attributes и custom attributes. Если поле пустое, условие всегда совпадает. Если набор resource attributes отсутствует или пуст, условие считается несовпавшим. | Required |
+| Enable Service detection v2 for Kubernetes workloads `enableSDV2ForKubernetesWorkloads` | boolean | - | Обязательный |
+| Matching condition for Kubernetes workloads `condition` | text | Сужает область действия опции фильтрацией по условиям [DQL matcher﻿](https://dt-url.net/l603wby) для выбранного набора атрибутов.  Service detection v2 применяется только при выполнении этого условия. Допустимые атрибуты: ресурсные атрибуты и пользовательские атрибуты. Если поле пустое, условие считается всегда выполненным. | Обязательный |
+| Enable Service detection v2 for FaaS `enableSDV2ForFaaS` | boolean | - | Необязательный |
+| Matching condition for FaaS `conditionForFaaS` | text | Сужает область действия опции фильтрацией по условиям [DQL matcher﻿](https://dt-url.net/l603wby) для выбранного набора атрибутов.  Service detection v2 применяется только при выполнении этого условия. Допустимые атрибуты: ресурсные атрибуты и пользовательские атрибуты. Если поле пустое, условие считается всегда выполненным. | Обязательный |
+| Enable Service detection v2 for generic workloads `enableSDV2ForAnyWorkload` | boolean | Убедитесь, что правила обнаружения сервисов (`<your-dynatrace-url>/builtin:service-detection-rules`) и правила разделения (`<your-dynatrace-url>/builtin:service-splitting-rules`) актуальны для этих рабочих нагрузок. | Необязательный |
+| Matching condition for generic workloads `conditionForAnyWorkload` | text | Сужает область действия опции фильтрацией по условиям [DQL matcher﻿](https://dt-url.net/l603wby) для выбранного набора атрибутов. Ресурсные атрибуты должны присутствовать.  Service detection v2 применяется только при выполнении этого условия. Допустимые атрибуты: ресурсные атрибуты и пользовательские атрибуты. Если поле пустое, условие считается всегда выполненным. Если набор ресурсных атрибутов отсутствует или пуст, условие считается не выполненным. | Обязательный |

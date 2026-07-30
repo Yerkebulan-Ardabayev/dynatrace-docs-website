@@ -1,31 +1,31 @@
 ---
-title: Свойства и параметры конфигурации ActiveGate
+title: Свойства конфигурации и параметры ActiveGate
 source: https://docs.dynatrace.com/managed/ingest-from/dynatrace-activegate/configuration/configure-activegate
 ---
 
-# Свойства и параметры конфигурации ActiveGate
+# Свойства конфигурации и параметры ActiveGate
 
-# Свойства и параметры конфигурации ActiveGate
+# Свойства конфигурации и параметры ActiveGate
 
-* Чтение: 17 мин
-* Обновлено 19 мая 2026 г.
+* Чтение 17 мин
+* Обновлено 16 июля 2026 г.
 
 ## Перед началом работы
 
-Разберитесь с основными концепциями конфигурации ActiveGate, связанными с файлами свойств.
+Ознакомьтесь с основными концепциями конфигурации ActiveGate, связанными с файлами свойств.
 
-Хостовые ActiveGate, то есть ActiveGate Module: OTLP Ingest, развёрнутые обычным способом с помощью установщика, и контейнеризированные ActiveGate используют одни и те же свойства конфигурации, хранящиеся в одних и тех же файлах конфигурации. Однако фактические значения этих свойств могут отличаться, а сами свойства задаются или изменяются разными механизмами: хостовые ActiveGate настраиваются непосредственно на хосте, где работает ActiveGate, тогда как контейнеризированные ActiveGate настраиваются с помощью механизма конфигурации вашей облачной платформы.
+ActiveGates на основе хоста, то есть ActiveGates Module: OTLP Ingest, развёрнутые стандартным способом с помощью установщика, и контейнеризованные ActiveGates используют одни и те же свойства конфигурации, хранящиеся в одних и тех же файлах конфигурации. Однако фактические значения этих свойств могут различаться, а способы их задания и изменения отличаются: ActiveGates на основе хоста настраиваются непосредственно на хосте, где запущен ActiveGate, тогда как контейнеризованные ActiveGates настраиваются через механизм конфигурации вашей облачной платформы.
 
-* [Как развернуть и настроить контейнеризированный ActiveGate в Kubernetes](/managed/ingest-from/dynatrace-activegate/activegate-in-container "Развёртывание контейнеризированного ActiveGate.")
+* [Как развернуть и настроить контейнеризованный ActiveGate в Kubernetes](/managed/ingest-from/dynatrace-activegate/activegate-in-container "Deploy a containerized ActiveGate.")
 
 ## Основные правила работы с конфигурацией ActiveGate
 
 ### Файлы конфигурации ActiveGate
 
-Многие настройки конфигурации ActiveGate (например, настройки подключения и прокси, шифры или настройки дампа памяти) хранятся в файлах свойств `config.properties` и `custom.properties`, которые находятся в **[каталоге конфигурации ActiveGate](/managed/ingest-from/dynatrace-activegate/configuration/where-can-i-find-activegate-files "Узнайте, где хранятся файлы ActiveGate в системах Windows и Linux.")**.
-Свойства, перечисленные в файлах свойств, применимы как к Environment ActiveGate, так и к Cluster ActiveGate.
+Многие параметры конфигурации ActiveGate (например, настройки подключения и прокси, шифры или параметры дампа памяти) хранятся в файлах свойств `config.properties` и `custom.properties`, которые расположены в **[каталоге конфигурации ActiveGate](/managed/ingest-from/dynatrace-activegate/configuration/where-can-i-find-activegate-files "Find out where ActiveGate files are stored on Windows and Linux systems.")**.
+Свойства, перечисленные в файлах свойств, применимы как к Environment ActiveGates, так и к Cluster ActiveGates.
 
-Файлы `config.properties` и `custom.properties` разделены на **секции**. Название каждой секции заключено в квадратные скобки, например:
+Файлы `config.properties` и `custom.properties` разделены на **секции**. Имя каждой секции заключено в квадратные скобки, например:
 
 ```
 [collector]
@@ -45,56 +45,56 @@ DumpSupported = false
 
 ### config.properties
 
-Файл конфигурации `config.properties` содержит настройки установки ActiveGate по умолчанию и не настраивается пользователем.
+Файл конфигурации `config.properties` содержит параметры установки ActiveGate по умолчанию и не предназначен для ручного редактирования.
 
 Этот файл конфигурации перезаписывается при каждом обновлении ActiveGate.
 
 ### custom.properties
 
-Настройки, хранящиеся в `custom.properties`, переопределяют соответствующие настройки в `config.properties`, и этот файл копируется в новую версию ActiveGate при обновлении.
+Параметры, хранящиеся в `custom.properties`, переопределяют соответствующие параметры из `config.properties`, а сам файл копируется в новую версию ActiveGate в процессе обновления.
 
-Файлы конфигурации разделены на `[секции]`, которые обозначаются квадратными скобками.  
-Чтобы задать пользовательские настройки в `custom.properties`, укажите названия секций и включите в них нужные свойства.
+Файлы конфигурации разделены на `[секции]`, обозначаемые квадратными скобками.  
+Чтобы задать пользовательские параметры в `custom.properties`, нужно указать имена секций и добавить в них соответствующие свойства.
 
-Файл `config.txt` можно использовать как справочник при добавлении пользовательских настроек в файл `custom.properties`. Файл `config.txt`, который также находится в каталоге конфигурации ActiveGate, самим ActiveGate не используется, однако содержит справочный список возможных свойств конфигурации.
-Также можно сначала найти нужную секцию в файле `config.properties`, а затем скопировать название секции вместе с именами нужных свойств в `custom.properties`.  
-После этого можно изменить записи в этой секции нужным образом.
+Файл `config.txt` можно использовать как справочник при добавлении пользовательских параметров в `custom.properties`. Файл `config.txt`, также расположенный в каталоге конфигурации ActiveGate, не используется ActiveGate, однако содержит справочный список возможных свойств конфигурации.
+Как вариант, можно найти нужную секцию в файле `config.properties`, а затем скопировать заголовок секции вместе с именами нужных свойств в `custom.properties`.  
+После этого можно изменить записи в секции по мере необходимости.
 
 ### launcheruserconfig.conf
 
-Лаунчер ActiveGate, это сторожевой процесс (watchdog), который запускает виртуальную машину Java для ActiveGate.
-Конфигурация лаунчера хранится в файле `launcheruserconfig.conf`, в **[каталоге конфигурации ActiveGate](/managed/ingest-from/dynatrace-activegate/configuration/where-can-i-find-activegate-files "Узнайте, где хранятся файлы ActiveGate в системах Windows и Linux.")**. Он содержит свойства и параметры лаунчера, которые передаются виртуальной машине Java.
+Launcher ActiveGate, это процесс-сторож, запускающий виртуальную машину Java для вашего ActiveGate.
+Конфигурация launcher хранится в файле `launcheruserconfig.conf`, в **[каталоге конфигурации ActiveGate](/managed/ingest-from/dynatrace-activegate/configuration/where-can-i-find-activegate-files "Find out where ActiveGate files are stored on Windows and Linux systems.")**. Файл содержит свойства launcher и параметры, передаваемые виртуальной машине Java.
 
-Для Remote Plugin Module (RPM) файл `launcheruserconfig.conf` должен размещаться именно в каталоге `/var/lib/dynatrace/remotepluginmodule/agent/conf/`.
+Для Remote Plugin Module (RPM) файл `launcheruserconfig.conf` должен находиться в каталоге `/var/lib/dynatrace/remotepluginmodule/agent/conf/`.
 
 Файл `launcheruserconfig.conf` сохраняется при обновлениях ActiveGate.
 
 ### Перезапуск ActiveGate
 
-При изменении конфигурации ActiveGate необходимо [перезапустить основную службу ActiveGate](/managed/ingest-from/dynatrace-activegate/operation/stop-restart-activegate "Узнайте, как запускать, останавливать и перезапускать ActiveGate в Windows или Linux."), чтобы изменения вступили в силу.
+При изменении конфигурации ActiveGate нужно [перезапустить основной сервис ActiveGate](/managed/ingest-from/dynatrace-activegate/operation/stop-restart-activegate "Learn how you can start, stop and restart ActiveGate on Windows or Linux."), чтобы изменения вступили в силу.
 
 ## Настройка ActiveGate с помощью `agctl`
 
 ActiveGate версии 1.333+
 
-Начиная с версии ActiveGate 1.333, можно использовать интерфейс командной строки `agctl` для управления конфигурацией ActiveGate. Инструмент `agctl` упрощает управление конфигурацией, предоставляя:
+Начиная с версии 1.333, для управления конфигурацией ActiveGate можно использовать интерфейс командной строки `agctl`. Инструмент `agctl` упрощает управление конфигурацией благодаря:
 
-* **Специализированные команды** для типовых задач конфигурации, таких как настройка конечных точек прокси, управление SSL-сертификатами, настройка хранилищ доверенных сертификатов и назначение групп ActiveGate.
-* **Универсальную команду для работы со свойствами**, которая позволяет настраивать любое свойство в файле `custom.properties` с помощью команды [agctl property](/managed/ingest-from/dynatrace-activegate/agctl-command-line-interface#property "Узнайте, как использовать agctl для настройки ActiveGate и управления им из командной строки") для свойств, у которых нет специализированных команд.
+* **Специализированным командам** для типовых задач конфигурирования: задание прокси-эндпоинтов, управление SSL-сертификатами, настройка хранилищ доверия и назначение групп ActiveGate.
+* **Универсальной команде property**, позволяющей настраивать любое свойство в файле `custom.properties` с помощью команды [agctl property](/managed/ingest-from/dynatrace-activegate/agctl-command-line-interface#property "Learn how to use agctl to configure and manage ActiveGate from the command line") для свойств, у которых нет специализированных команд.
 
-Подробности обо всех доступных командах, параметрах и примерах см. в разделе [Интерфейс командной строки agctl](/managed/ingest-from/dynatrace-activegate/agctl-command-line-interface "Узнайте, как использовать agctl для настройки ActiveGate и управления им из командной строки").
+Подробное описание всех доступных команд, параметров и примеров см. в разделе [agctl command-line interface](/managed/ingest-from/dynatrace-activegate/agctl-command-line-interface "Learn how to use agctl to configure and manage ActiveGate from the command line").
 
 ## Пример использования `agctl` для управления конфигурацией ActiveGate
 
 ActiveGate версии 1.333+
 
-В этом примере изменим путь очереди данных логов на хостовом ActiveGate.
+В этом примере рассмотрено изменение пути очереди данных журналов на ActiveGate на основе хоста.
 
-Для хостового Environment или Cluster ActiveGate путь, используемый для очереди данных логов, можно изменить с помощью [agctl](/managed/ingest-from/dynatrace-activegate/agctl-command-line-interface#property "Узнайте, как использовать agctl для настройки ActiveGate и управления им из командной строки"). В следующих шагах в качестве примера нового пути используется `/var/disk_queue`.
+Для Environment на основе хоста или Cluster ActiveGate путь, используемый для очереди данных журналов, можно изменить с помощью [agctl](/managed/ingest-from/dynatrace-activegate/agctl-command-line-interface#property "Learn how to use agctl to configure and manage ActiveGate from the command line"). В следующих шагах в качестве примера нового пути используется `/var/disk_queue`.
 
-1. Ознакомьтесь с [предварительными требованиями к интерфейсу командной строки `agctl`](/managed/ingest-from/dynatrace-activegate/agctl-command-line-interface#prerequisites "Узнайте, как использовать agctl для настройки ActiveGate и управления им из командной строки").
+1. Ознакомьтесь с [предварительными требованиями для работы с интерфейсом командной строки `agctl`](/managed/ingest-from/dynatrace-activegate/agctl-command-line-interface#prerequisites "Learn how to use agctl to configure and manage ActiveGate from the command line").
 2. Подключитесь к хосту по SSH.
-3. Остановите службу ActiveGate:
+3. Остановите сервис ActiveGate:
 
 ```
 systemctl stop dynatracegateway
@@ -106,15 +106,15 @@ systemctl stop dynatracegateway
 agctl property get --section=generic_ingest --key=disk_queue_path
 ```
 
-5. Убедитесь, что целевой каталог `/var/disk_queue` существует, доступен для записи и на нём есть как минимум `disk_queue_max_size_mb` МБ свободного дискового пространства.
+5. Убедитесь, что целевой каталог `/var/disk_queue` существует, доступен для записи и имеет не менее `disk_queue_max_size_mb` МБ свободного дискового пространства.
 6. Измените путь:
 
 ```
 agctl property set --section=generic_ingest --key=disk_queue_path --value=/var/disk_queue
 ```
 
-7. Опционально: удалите каталог, на который указывал старый путь.
-8. Запустите службу ActiveGate:
+7. Необязательно: удалите каталог, на который указывал старый путь.
+8. Запустите сервис ActiveGate:
 
 ```
 systemctl start dynatracegateway
@@ -122,12 +122,12 @@ systemctl start dynatracegateway
 
 ## Ограничения памяти ActiveGate
 
-Ограничения использования памяти для ActiveGate можно задать в файле конфигурации лаунчера `launcheruserconfig.conf` с помощью следующих свойств:
+Ограничения использования памяти для ActiveGate задаются в файле конфигурации launcher `launcheruserconfig.conf` с помощью следующих свойств:
 
 * `-java.xmx.relative_part`, процент доступной оперативной памяти
-* `-java.xmx.absolute_part`, абсолютное значение объёма памяти, в МБ
+* `-java.xmx.absolute_part`, абсолютное значение объёма памяти в МБ
 
-Конфигурация может включать любую комбинацию этих свойств, а итоговое ограничение памяти представляет собой сумму абсолютной части и относительной части (рассчитанной на основе доступной оперативной памяти).
+Конфигурация может включать любую комбинацию этих свойств, и итоговый лимит памяти равен сумме абсолютной части и относительной части (вычисляемой на основе доступной оперативной памяти).
 
 **Примеры:**
 
@@ -167,21 +167,21 @@ systemctl start dynatracegateway
 -java.xmx.relative_part=0
 ```
 
-## Диапазон портов heartbeat ActiveGate
+## Диапазон портов heartbeat для ActiveGate
 
-Лаунчер ActiveGate отслеживает процесс ActiveGate через локальный порт heartbeat. Этот порт выбирается лаунчером из заранее заданного диапазона портов, указанного в конфигурации лаунчера. Лаунчер находит свободный порт в заданном диапазоне, а затем передаёт номер порта процессу ActiveGate.
+Launcher ActiveGate отслеживает процесс ActiveGate через локальный порт heartbeat. Этот порт выбирается launcher из заранее заданного диапазона портов, указанного в конфигурации launcher. Launcher находит свободный порт в указанном диапазоне и затем передаёт номер порта процессу ActiveGate.
 
-По умолчанию лаунчер использует для мониторинга heartbeat порты выше 50000. В некоторых развёртываниях может потребоваться настроить для этой цели другие порты. Чтобы указать диапазон портов, который должен использовать лаунчер ActiveGate, добавьте или измените свойство `-healthcheck.heartbeat.portrange` в файле конфигурации лаунчера `launcheruserconfig.conf`, как показано в примере ниже.
+По умолчанию для мониторинга heartbeat launcher использует порты выше 50000. В некоторых развёртываниях может потребоваться настроить другие порты для этой цели. Чтобы задать диапазон портов, который должен использовать launcher ActiveGate, нужно добавить или изменить свойство `-healthcheck.heartbeat.portrange` в файле конфигурации launcher `launcheruserconfig.conf`, как показано в примере ниже.
 
 ```
 -healthcheck.heartbeat.portrange=60100:60200
 ```
 
-## Пользовательские параметры для процесса Java ActiveGate
+## Пользовательские параметры для Java-процесса ActiveGate
 
-Чтобы передать пользовательские параметры процессу Java ActiveGate, укажите их в файле конфигурации лаунчера `launcheruserconfig.conf`:
+Чтобы передать пользовательские параметры Java-процессу ActiveGate, нужно указать их в файле конфигурации launcher `launcheruserconfig.conf`:
 
-* Все строки после `-arguments_section.jvm` передаются в качестве аргументов JVM. Таким образом, указывая параметры `-D`, можно задавать аргументы для ActiveGate.
+* Все строки после `-arguments_section.jvm` передаются как аргументы JVM. Таким образом, с помощью опций `-D` можно задать аргументы для ActiveGate.
 
 Например:
 
@@ -211,22 +211,23 @@ systemctl start dynatracegateway
 
 ## Модули ActiveGate
 
-Разные функциональные возможности, предоставляемые ActiveGate, называются **[модулями](/managed/ingest-from/dynatrace-activegate/capabilities#functional_tbl "Learn the capabilities and uses of ActiveGate.")**. При установке ActiveGate для конкретной [цели](/managed/ingest-from/dynatrace-activegate/capabilities "Learn the capabilities and uses of ActiveGate.") устанавливается или включается разный набор модулей.
+Различные функциональные возможности ActiveGate называются **[модулями](/managed/ingest-from/dynatrace-activegate/capabilities#functional_tbl "Learn the capabilities and uses of ActiveGate.")**. При установке ActiveGate для конкретной [цели](/managed/ingest-from/dynatrace-activegate/capabilities "Learn the capabilities and uses of ActiveGate.") устанавливается или включается определённый набор модулей.
 
-Модуль активен, если соответствующее свойство конфигурации указано со значением `true` в разделе конфигурации, посвящённом этому модулю. Однако стоит учитывать, что нельзя включить все модули через `custom.properties` простым изменением значения свойства: если ActiveGate установлен для работы как приватная Synthetic-локация или для мониторинга мейнфрейма, а назначение ActiveGate нужно изменить, ActiveGate придётся переустановить.  
-Активные модули перечислены на странице [Deployment status](/managed/ingest-from/dynatrace-activegate/operation/update-activegate "Configure Environment ActiveGate automatic updates---update mode, target version, and update windows---and download or install manually.").
+Модуль активен, если соответствующее свойство конфигурации указано со значением `true` в разделе конфигурации, посвящённом этому модулю. Однако включить все модули через `custom.properties`, просто изменив значение свойства, нельзя: если ActiveGate установлен в качестве приватного Synthetic-локейшна или для мониторинга мейнфрейма, а цель ActiveGate нужно изменить, необходимо переустановить ActiveGate.
+
+Активные модули перечислены в разделе **Deployment Status** > **ActiveGates**.
 
 Каждый модуль имеет соответствующий раздел в конфигурации
 
-Помимо разделов конфигурации, посвящённых конкретной функциональности ActiveGate, каждый модуль ActiveGate имеет собственный раздел в файлах конфигурации ActiveGate. Настройки, указанные в этом разделе, применяются именно к данному модулю. Это касается, например, настроек прокси. Однако не все настройки можно продублировать таким образом и указать для модуля: каждый раздел модуля принимает лишь ограниченный набор параметров. **Не копируйте настройки конфигурации между разделами, если только это не указано отдельно.**
+Помимо разделов конфигурации, посвящённых конкретным функциям ActiveGate, каждый модуль ActiveGate имеет собственный раздел в файлах конфигурации ActiveGate. Параметры, указанные в этом разделе, применяются именно к данному модулю. Это касается, например, настроек прокси. Однако не все параметры можно таким образом повторить и задать для модуля отдельно: каждый раздел модуля принимает лишь ограниченный набор опций. **НЕ копируйте параметры конфигурации между разделами без явного указания на это.**
 
-### Управление модулями через `agctl`
+### Управление модулями с помощью `agctl`
 
-Версия ActiveGate 1.333+
+ActiveGate версии 1.333+
 
-С помощью [agctl](/managed/ingest-from/dynatrace-activegate/agctl-command-line-interface#modules "Learn how to use agctl to configure and manage ActiveGate from the command line") можно включать и отключать модули ActiveGate.
+Для включения или отключения модулей ActiveGate можно использовать [agctl](/managed/ingest-from/dynatrace-activegate/agctl-command-line-interface#modules "Learn how to use agctl to configure and manage ActiveGate from the command line").
 
-После включения или отключения модулей через `agctl` нужно [перезапустить ActiveGate](/managed/ingest-from/dynatrace-activegate/operation/stop-restart-activegate "Learn how you can start, stop and restart ActiveGate on Windows or Linux."), чтобы изменения вступили в силу.
+После включения или отключения модулей через `agctl` необходимо [перезапустить ActiveGate](/managed/ingest-from/dynatrace-activegate/operation/stop-restart-activegate "Learn how you can start, stop and restart ActiveGate on Windows or Linux."), чтобы изменения вступили в силу.
 
 #### Включение модулей
 
@@ -272,8 +273,8 @@ agctl modules disable aws_monitoring,azure_monitoring
 | Свойство | Описание |
 | --- | --- |
 | `aws_monitoring_enabled` | Включает модуль [мониторинга AWS](/managed/ingest-from/amazon-web-services "Set up and configure monitoring for Amazon Web Services."). Возможные значения: `true` или `false`. |
-| `aws_default_region` | Задаёт регион по умолчанию, используемый модулем [мониторинга AWS](/managed/ingest-from/amazon-web-services "Set up and configure monitoring for Amazon Web Services."). Возможные значения: допустимые коды регионов AWS. Например: `us-east-1` |
-| `aws_client_regions` | Задаёт регионы, используемые модулем [мониторинга AWS](/managed/ingest-from/amazon-web-services "Set up and configure monitoring for Amazon Web Services."). Возможные значения: список допустимых кодов регионов AWS, разделённых `;`. Например: `us-east-1;eu-central-1` |
+| `aws_default_region` | Задаёт регион по умолчанию для модуля [мониторинга AWS](/managed/ingest-from/amazon-web-services "Set up and configure monitoring for Amazon Web Services."). Возможные значения: допустимые коды регионов AWS. Например: `us-east-1` |
+| `aws_client_regions` | Задаёт регионы для модуля [мониторинга AWS](/managed/ingest-from/amazon-web-services "Set up and configure monitoring for Amazon Web Services."). Возможные значения: список допустимых кодов регионов AWS, разделённых символом `;`. Например: `us-east-1;eu-central-1` |
 
 ## Модуль: Azure
 
@@ -293,9 +294,9 @@ agctl modules disable aws_monitoring,azure_monitoring
 | --- | --- |
 | `cloudfoundry_monitoring_enabled` | Включает модуль [Cloud Foundry](/managed/ingest-from/setup-on-container-platforms/cloud-foundry/connect-your-cloud-foundry-foundations-to-dynatrace "Enable monitoring on your Cloud Foundry foundations."). Возможные значения: `true` или `false`. |
 
-Этот раздел может содержать настройки прокси для взаимодействия с Cloud Foundry. Если раздел содержит `proxy-off = true`, то прокси для взаимодействия с Cloud Foundry не используется. Если он содержит свойство `proxy-host`, то именно этот прокси используется для мониторинга Cloud Foundry вместо прокси, указанного в `[http.client.external]`.
+Этот раздел может содержать настройки прокси для связи с Cloud Foundry. Если раздел содержит `proxy-off = true`, прокси для связи с Cloud Foundry не используется. Если раздел содержит свойство `proxy-host`, этот прокси используется для мониторинга Cloud Foundry вместо прокси, указанного в `[http.client.external]`.
 
-Версия ActiveGate 1.247 и более ранние Если в файле `custom.properties` присутствует раздел `[cloudfoundry_monitoring]`, также необходим раздел `[http.client.external]`, в котором нужно указать все остальные параметры взаимодействия, используемые для связи с Cloud Foundry.
+ActiveGate версии 1.247 и ниже. Если в файле `custom.properties` есть раздел `[cloudfoundry_monitoring]`, необходимо также добавить раздел `[http.client.external]`, в котором указываются все остальные параметры связи для коммуникации с Cloud Foundry.
 
 [Настройка прокси только для мониторинга Cloud Foundry](/managed/ingest-from/dynatrace-activegate/configuration/set-up-proxy-authentication-for-activegate#set-up-proxy-only-for-cloud-foundry-monitoring "Learn how to configure ActiveGate properties to set up a proxy.")
 
@@ -308,10 +309,10 @@ agctl modules disable aws_monitoring,azure_monitoring
 | --- | --- |
 | `kubernetes_monitoring_enabled` | Включает модуль [мониторинга платформы Kubernetes](/managed/ingest-from/setup-on-k8s/deployment/other/ag-statefulset "Install and configure ActiveGate in Kubernetes as a StatefulSet."). Возможные значения: `true` или `false`. |
 
-Этот раздел может содержать настройки прокси для взаимодействия с Kubernetes, а также другие настройки, связанные с точной настройкой параметров взаимодействия для мониторинга платформы Kubernetes.  
-Если раздел содержит `proxy-off = true`, то прокси для взаимодействия с Kubernetes не используется. Если он содержит свойство `proxy-host`, то именно этот прокси используется для мониторинга платформы Kubernetes вместо прокси, указанного в `[http.client.external]`.
+Этот раздел может содержать настройки прокси для связи с Kubernetes, а также другие параметры тонкой настройки связи для мониторинга платформы Kubernetes.  
+Если раздел содержит `proxy-off = true`, прокси для связи с Kubernetes не используется. Если раздел содержит свойство `proxy-host`, этот прокси используется для мониторинга платформы Kubernetes вместо прокси, указанного в `[http.client.external]`.
 
-Версия ActiveGate 1.247 и более ранние Если в файле `custom.properties` присутствует раздел `[kubernetes_monitoring]`, также необходим раздел `[http.client.external]`, в котором нужно указать все остальные параметры взаимодействия, используемые для связи с Kubernetes.
+ActiveGate версии 1.247 и ниже. Если в файле `custom.properties` есть раздел `[kubernetes_monitoring]`, необходимо также добавить раздел `[http.client.external]`, в котором указываются все остальные параметры связи для коммуникации с Kubernetes.
 
 [Настройка прокси только для мониторинга платформы Kubernetes](/managed/ingest-from/dynatrace-activegate/configuration/set-up-proxy-authentication-for-activegate#set-up-proxy-only-for-kubernetes-monitoring "Learn how to configure ActiveGate properties to set up a proxy.")
 
@@ -325,12 +326,12 @@ agctl modules disable aws_monitoring,azure_monitoring
 
 **Раздел: [generic\_ingest]**
 
-Именно для Log Monitoring, при настройке приёма журналов API, можно настроить свойства очереди данных журналов. Можно указать временную папку, в которой будут храниться данные журналов из очереди. По умолчанию используется временная папка, настроенная в системе (см. [Директории ActiveGate](/managed/ingest-from/dynatrace-activegate/configuration/where-can-i-find-activegate-files "Find out where ActiveGate files are stored on Windows and Linux systems.")). Также можно изменить максимальный размер очереди, используемой в этой папке (размер по умолчанию, 300 МБ).
+Специально для Log Monitoring: при настройке API для приёма логов можно задать параметры очереди данных журналов. Можно указать временную папку, в которой будут храниться данные журналов в очереди. По умолчанию используется временная папка, настроенная в системе на текущий момент (см. [директории ActiveGate](/managed/ingest-from/dynatrace-activegate/configuration/where-can-i-find-activegate-files "Find out where ActiveGate files are stored on Windows and Linux systems.")). Также можно изменить максимальный размер очереди в этой папке (размер по умолчанию, 300 МБ).
 
 | Свойство | Значение по умолчанию | Описание |
 | --- | --- | --- |
-| `disk_queue_path` | Текущая общесистемная временная папка | Задаёт путь к временной папке, в которой будут храниться данные журналов из очереди. |
-| `disk_queue_max_size_mb` | 300 МБ | Задаёт максимальный размер данных журналов из очереди, которые могут храниться во временной папке. |
+| `disk_queue_path` | Текущая системная временная папка | Задаёт путь к временной папке, в которой будут храниться данные журналов в очереди. |
+| `disk_queue_max_size_mb` | 300 МБ | Задаёт максимальный размер данных журналов в очереди, которые можно сохранить во временной папке. |
 
 ## Модуль: VMware
 
@@ -343,12 +344,12 @@ agctl modules disable aws_monitoring,azure_monitoring
 
 ## Модуль: Database insights
 
-Database insights для Oracle  
+Анализ базы данных Oracle  
 **Раздел: [dbAgent]**
 
 | Свойство | Описание |
 | --- | --- |
-| `dbAgent_enabled` | Включает модуль [Database insights для Oracle](/managed/observe/infrastructure-observability/database-services-classic/database-insights "Learn how to extend your database monitoring to the database infrastructure layer."). Возможные значения: `true` или `false`. |
+| `dbAgent_enabled` | Включает модуль [анализа базы данных Oracle](/managed/observe/infrastructure-observability/database-services-classic/database-insights "Learn how to extend your database monitoring to the database infrastructure layer."). Возможные значения: `true` или `false`. |
 
 ## Модуль: Extensions
 
@@ -367,195 +368,198 @@ Database insights для Oracle
 | --- | --- |
 | `zremote_enabled` | Включает [модуль zRemote](/managed/ingest-from/dynatrace-oneagent/installation-and-operation/zos/installation/install-zremote "Prepare and install the zRemote for z/OS monitoring."). Возможные значения: `true` или `false`. |
 
-## Модуль: Synthetic
+## Module: Synthetic
 
-Синтетические мониторы из приватных Synthetic-локаций
-**Раздел: [synthetic]**
+Synthetic monitors из приватных Synthetic locations  
+**Section: [synthetic]**
 
-Настройки прокси для Synthetic Monitoring. Если этот раздел содержит `proxy-off = true`, значит для Synthetic Monitoring прокси не используется. Если он содержит свойство `proxy-host`, значит это прокси, который будет использоваться для Synthetic Monitoring, вместо прокси, указанного в `[http.client.external]` (или в `[http.client]`, если `[http.client.external]` не определён).
+Настройки прокси для Synthetic Monitoring. Если этот раздел содержит `proxy-off = true`, прокси для Synthetic Monitoring не используется. Если раздел содержит свойство `proxy-host`, оно задаёт прокси для Synthetic Monitoring вместо прокси, указанного в `[http.client.external]` (или в `[http.client]`, если `[http.client.external]` не задан).
 
-Если в файле `custom.properties` есть раздел `[synthetic]`, можно добавить раздел `[http.client.external]`, где нужно указать все остальные параметры соединения, используемые для Synthetic Monitoring. Либо можно указать остальные настройки соединения в разделе `[http.client]`.
+Если в файле `custom.properties` есть раздел `[synthetic]`, можно добавить раздел `[http.client.external]`, в котором указываются все остальные параметры связи для Synthetic Monitoring. Также можно задать оставшиеся параметры связи в разделе `[http.client]`.
 
-ActiveGate версии 1.247 и более ранние: однако, если создаётся раздел `[http.client.external]`, в нём нужно указать все параметры соединения. Иначе параметры соединения для отслеживаемых сред (Cloud Foundry, Kubernetes или Synthetic Monitoring) вернутся к заводским значениям по умолчанию.
+ActiveGate версии 1.247 и ниже. Однако, если раздел `[http.client.external]` создан, в нём нужно указать все параметры связи. Иначе параметры связи для отслеживаемых сред (Cloud Foundry, Kubernetes или Synthetic Monitoring) сбросятся до заводских значений по умолчанию.
 
-Подробнее о свойствах, связанных с прокси, для ActiveGate с поддержкой Synthetic, см. в разделе [Настройка прокси для приватного синтетического мониторинга](/managed/observe/digital-experience/synthetic-monitoring/private-synthetic-locations/setting-up-proxy-for-private-synthetic "Узнайте, как настроить свойства ActiveGate для настройки прокси для приватного синтетического мониторинга.").
+Подробнее о свойствах, связанных с прокси, для ActiveGate с поддержкой Synthetic см. в разделе [Set up a proxy for private synthetic monitoring](/managed/observe/digital-experience/synthetic-monitoring/private-synthetic-locations/setting-up-proxy-for-private-synthetic "Learn how to configure ActiveGate properties to set up a proxy for private synthetic monitoring.").
 
-Обратите внимание, что изменение свойства `synthetic_enabled` работает только в том случае, если ActiveGate был установлен для [запуска синтетических мониторов из приватной локации](/managed/ingest-from/dynatrace-activegate#synthetic "Основные понятия, связанные с ActiveGate."). Если ActiveGate был установлен для [маршрутизации трафика, мониторинга облачных сред или мониторинга удалённых технологий с помощью расширений](/managed/ingest-from/dynatrace-activegate#route "Основные понятия, связанные с ActiveGate.") или [мониторинга мейнфрейма](/managed/ingest-from/dynatrace-activegate#mainframe "Основные понятия, связанные с ActiveGate."), то для использования его в целях Synthetic Monitoring нужно переустановить ActiveGate. Подробнее см. в разделе [Создание приватной Synthetic-локации](/managed/observe/digital-experience/synthetic-monitoring/private-synthetic-locations/create-a-private-synthetic-location "Узнайте, как создать приватную локацию для синтетического мониторинга.").
+Изменение свойства `synthetic_enabled` работает только в том случае, если ActiveGate установлен для [запуска Synthetic monitors из приватной location](/managed/ingest-from/dynatrace-activegate#synthetic "Understand the basic concepts related to ActiveGate."). Если ActiveGate установлен для [маршрутизации трафика, мониторинга облачных сред или мониторинга удалённых технологий с расширениями](/managed/ingest-from/dynatrace-activegate#route "Understand the basic concepts related to ActiveGate.") либо для [мониторинга мейнфреймов](/managed/ingest-from/dynatrace-activegate#mainframe "Understand the basic concepts related to ActiveGate."), нужно переустановить ActiveGate для использования с Synthetic Monitoring. Подробнее см. в разделе [Create a private Synthetic location](/managed/observe/digital-experience/synthetic-monitoring/private-synthetic-locations/create-a-private-synthetic-location "Learn how to create a private location for synthetic monitoring.").
 
-Если запятая (`,`) является частью значения, перед ней нужно добавить экранирующий обратный слэш (`\`).
+Если значение содержит запятую (`,`), перед ней нужно добавить экранирующий обратный слеш (`\`).
 
 Пример: `proxy-password = foo\,bar`
 
-| Свойство | Значение по умолчанию | Описание |
+| Property | Default value | Description |
 | --- | --- | --- |
-| `synthetic_enabled` | `false` в режиме развёртывания **Default**  `true` в режиме развёртывания **Synthetic monitoring** | Включает выполнение мониторов из приватных Synthetic-локаций на ActiveGate. |
-| `synthetic_autoinstall` | `true` для автоматического обновления Synthetic-движка | Автоматически устанавливается в `true` при установке для ActiveGate с поддержкой Synthetic. |
-| `proxy-server` | не задано | Адрес прокси-сервера |
-| `proxy-port` | не задано | Порт прокси (числовое значение) |
-| `proxy-user` | не задано | Имя пользователя прокси (необязательно) |
-| `proxy-password` | не задано | Пароль прокси (необязательно)  Пароль, указанный в свойстве `proxy-password`, обфусцируется после перезапуска ActiveGate, а обфусцированный пароль сохраняется в свойстве `proxy-password-encr`. **Примечание**: символ запятой, если он должен являться частью значения, нужно экранировать одним обратным слэшем. Например, `proxy-password = foo\,bar`. |
-| `proxy-off` | не задано | Отключает взаимодействие через прокси между ActiveGate и тестируемым ресурсом. |
-| `proxy-non-proxy-hosts` | не задано | Не использовать прокси при взаимодействии с этими хостами. |
-| `chromium_repo` | не задано  Указывает пользовательский репозиторий пакетов браузера на HTTP-сервере. Пример: `https://172.18.0.100/chromium-repo` Работает только если и `synthetic_autoinstall`, и `synthetic_autoupgrade_chromium` имеют значение `true`. | Включает автообновление браузера из [пользовательского репозитория](/managed/observe/digital-experience/synthetic-monitoring/private-synthetic-locations/create-a-private-synthetic-location#custom-repo "Узнайте, как создать приватную локацию для синтетического мониторинга."). |
+| `synthetic_enabled` | `false` в режиме развёртывания **Default**  `true` в режиме развёртывания **Synthetic monitoring** | Включает запуск monitors из приватных Synthetic locations на ActiveGate. |
+| `synthetic_autoinstall` | `true` для автоматического обновления Synthetic engine | Автоматически устанавливается в `true` при установке ActiveGate с поддержкой Synthetic. |
+| `proxy-server` | unset | Адрес прокси-сервера |
+| `proxy-port` | unset | Порт прокси (числовой) |
+| `proxy-user` | unset | Имя пользователя прокси (необязательно) |
+| `proxy-password` | unset | Пароль прокси (необязательно)  Пароль, указанный в свойстве `proxy-password`, обфусцируется после перезапуска ActiveGate, и обфусцированное значение сохраняется в свойстве `proxy-password-encr`. **Примечание**: если запятая должна быть частью значения, её нужно экранировать одним обратным слешем. Например, `proxy-password = foo\,bar`. |
+| `proxy-off` | unset | Отключает проксирование при связи ActiveGate с тестируемым ресурсом. |
+| `proxy-non-proxy-hosts` | unset | Не использовать прокси при связи с этими хостами. |
+| `chromium_repo` | unset  Указывает репозиторий пользовательских пакетов браузера на HTTP-сервере. Пример: `https://172.18.0.100/chromium-repo` Работает только если оба свойства `synthetic_autoinstall` и `synthetic_autoupgrade_chromium` установлены в `true`. | Включает автообновление браузера из [пользовательского репозитория](/managed/observe/digital-experience/synthetic-monitoring/private-synthetic-locations/create-a-private-synthetic-location#custom-repo "Learn how to create a private location for synthetic monitoring."). |
 
-Рекомендуется не редактировать значение свойства `synthetic_autoupgrade_chromium` в файле `custom.properties`, поскольку внесённые изменения могут быть перезаписаны.
+Не рекомендуется вручную изменять значение свойства `synthetic_autoupgrade_chromium` в `custom.properties`, так как внесённые изменения могут быть перезаписаны.
 
-Свойство `synthetic_autoupgrade_chromium` для автообновления браузера можно определить на уровне локации (для локаций с Environment ActiveGate) либо [через веб-интерфейс](/managed/observe/digital-experience/synthetic-monitoring/private-synthetic-locations/manage-private-synthetic-locations#browser "Анализ и управление использованием мощностей в приватных Synthetic-локациях."), либо с помощью вызова [PUT a location](/managed/dynatrace-api/environment-api/synthetic-v2/synthetic-locations-v2/put-a-location "Обновление приватной синтетической локации через API Synthetic v2.") API Synthetic locations API v2. Для Cluster ActiveGate это свойство можно настроить через вызов [PUT a location (Dynatrace Managed)](/managed/dynatrace-api/cluster-api/cluster-api-v2/synthetic-locations-and-nodes/put-a-location "Обновление приватной Synthetic-локации через API Synthetic v2 в Dynatrace Managed.") API Cluster API v2. Это свойство не определено для ActiveGate, которые не были назначены локации. Для Activate, назначенных локации, значение по умолчанию, `true`.
+Свойство `synthetic_autoupgrade_chromium` для автообновления браузера можно задать на уровне location (для locations с Environment ActiveGates) либо [через веб-интерфейс](/managed/observe/digital-experience/synthetic-monitoring/private-synthetic-locations/manage-private-synthetic-locations#browser "Analyze and manage capacity usage at your private Synthetic locations."), либо с помощью вызова API [PUT a location](/managed/dynatrace-api/environment-api/synthetic-v2/synthetic-locations-v2/put-a-location "Update a private synthetic location via the Synthetic v2 API.") из Synthetic locations API v2. Для Cluster ActiveGates это свойство можно настроить через вызов API [PUT a location (Dynatrace Managed)](/managed/dynatrace-api/cluster-api/cluster-api-v2/synthetic-locations-and-nodes/put-a-location "Update a private Synthetic location via the Synthetic API v2 in Dynatrace Managed.") из Cluster API v2. Для ActiveGates, не назначенных ни одной location, это свойство не определено. Для ActiveGates, назначенных location, значение по умолчанию равно `true`.
 
-## Модуль: Beacon forwarder
+## Module: Beacon forwarder
 
-Использование ActiveGate для Real User Monitoring
-**Раздел: [beacon\_forwarder]**
+Использование ActiveGate для Real User Monitoring  
+**Section: [beacon\_forwarder]**
 
-| Свойство | Описание |
+| Property | Description |
 | --- | --- |
-| `beacon_forwarder_enabled` | Включает [модуль Beacon forwarder](/managed/observe/digital-experience/rum-classic/web-applications/additional-configuration/beacon-endpoint "Изменение URL конечной точки beacon по умолчанию и отправка RUM-бэконов на инфраструктуру Dynatrace или на другой инструментированный веб-сервер."). Возможные значения: `true` или `false`. |
+| `beacon_forwarder_enabled` | Включает [модуль Beacon forwarder](/managed/observe/digital-experience/rum-classic/web-applications/additional-configuration/beacon-endpoint "Change the default beacon endpoint URL and send RUM beacons to Dynatrace infrastructure or another instrumented web server."). Возможные значения: `true` или `false`. |
 
-## Модуль: HTTP Metric API
+## Module: HTTP Metric API
 
-Приём метрик: простой способ отправки любых пользовательских метрик в Dynatrace
-**Раздел: [metrics\_ingest]**
+Metric ingestion, простой способ отправлять произвольные пользовательские метрики в Dynatrace  
+**Section: [metrics\_ingest]**
 
-| Свойство | Описание |
+| Property | Description |
 | --- | --- |
-| `metrics_ingest_enabled` | Включает модуль HTTP Metric API, который обеспечивает [приём метрик](/managed/ingest-from/extend-dynatrace/extend-metrics "Узнайте, как расширить наблюдаемость метрик в Dynatrace."). Возможные значения: `true` или `false`. |
+| `metrics_ingest_enabled` | Включает модуль HTTP Metric API, который обеспечивает [metric ingestion](/managed/ingest-from/extend-dynatrace/extend-metrics "Learn how to extend metric observability in Dynatrace."). Возможные значения: `true` или `false`. |
 
-## Модуль: Memory dumps
+## Module: Memory dumps
 
-Инициирование и загрузка дампов памяти
-**Раздел: [collector]**
+Запуск и загрузка memory dumps  
+**Section: [collector]**
 
-| Свойство | Описание |
+| Property | Description |
 | --- | --- |
-| `DumpSupported` | Включает [модуль дампов памяти](/managed/observe/application-observability/profiling-and-optimization/memory-dump-analysis/configure-an-activegate-for-memory-dump-storage "Узнайте, как включить хранение дампов памяти на ActiveGate."). Возможные значения: `true` или `false`. |
+| `DumpSupported` | Включает [модуль memory dumps](/managed/observe/application-observability/profiling-and-optimization/memory-dump-analysis/configure-an-activegate-for-memory-dump-storage "Learn how to enable storage of memory dumps on an ActiveGate."). Возможные значения: `true` или `false`. |
 
-Когда в приложении возникают утечки памяти или высокая интенсивность создания объектов, важно получить дампы памяти, чтобы проанализировать эти проблемы. В производственных средах это часто оказывается затруднительным, когда нет возможности войти в среду и нет других способов инициировать дампы памяти. Dynatrace позволяет как инициировать, так и безопасно загружать дампы памяти в выбранный инструмент анализа.
-См. [Настройка ActiveGate для хранения дампов памяти](/managed/observe/application-observability/profiling-and-optimization/memory-dump-analysis/configure-an-activegate-for-memory-dump-storage "Узнайте, как включить хранение дампов памяти на ActiveGate.").
+Когда в приложении возникают утечки памяти или высокая интенсивность создания объектов, важно получать memory dumps для анализа этих проблем. В production-средах это часто затруднено, если нет возможности войти в среду и нет других способов запустить сбор дампов. Dynatrace позволяет как запускать сбор, так и безопасно скачивать memory dumps в любой удобный инструмент анализа.  
+См. [Configure ActiveGate for memory dump storage](/managed/observe/application-observability/profiling-and-optimization/memory-dump-analysis/configure-an-activegate-for-memory-dump-storage "Learn how to enable storage of memory dumps on an ActiveGate.").
 
-## Модуль: маршрутизация OneAgent
+## Module: OneAgent routing
 
-ActiveGate знает о структуре среды выполнения вашей Dynatrace среды и маршрутизирует сообщения от OneAgent к нужным конечным точкам сервера. Он обрабатывает маршрутизацию сообщений, буферизацию, сжатие, аутентификацию и доступ к изолированным сетям.
-**Раздел: [collector]**
+ActiveGate знает о структуре вашей среды Dynatrace в реальном времени и маршрутизирует сообщения от OneAgents на нужные серверные endpoints. Модуль обеспечивает маршрутизацию сообщений, буферизацию, сжатие, аутентификацию и доступ к изолированным сетям.  
+**Section: [collector]**
 
-| Свойство | Описание |
+| Property | Description |
 | --- | --- |
-| `MSGrouter` | Включает модуль маршрутизации OneAgent, который маршрутизирует трафик OneAgent и другой трафик ActiveGate через Dynatrace. Возможные значения: `true` или `false`. |
+| `MSGrouter` | Включает модуль маршрутизации OneAgent, который перенаправляет трафик OneAgent и других ActiveGate через Dynatrace. Возможные значения: `true` или `false`. |
 
-## Модуль: OTLP Ingest
+## Module: OTLP Ingest
 
-**Раздел: [otlp\_ingest]**
-Этот модуль создаёт на ActiveGate конечные точки, которые могут принимать данные трассировки OpenTelemetry (трассировки и спаны), метрики и логи в формате OTLP. Подробнее см. в разделе [Конечные точки API OTLP Dynatrace](/managed/ingest-from/opentelemetry/otlp-api "Узнайте о конечных точках API OTLP, которые ваше приложение использует для экспорта данных OpenTelemetry в Dynatrace.").
+**Section: [otlp\_ingest]**  
+Этот модуль создаёт на ActiveGate endpoints, которые принимают данные трассировки OpenTelemetry (traces и spans), метрики и логи в формате OTLP. Подробнее см. в разделе [Dynatrace OTLP API endpoints](/managed/ingest-from/opentelemetry/otlp-api "Learn about the OTLP API endpoints that your application uses to export OpenTelemetry data to Dynatrace.").
 
-| Свойство | Описание |
+| Property | Description |
 | --- | --- |
-| `otlp_ingest_enabled` | Включает модуль OTLP ingest, который обеспечивает приём [трассировок](/managed/ingest-from/opentelemetry "Узнайте, как интегрировать и принимать данные OpenTelemetry (трассировки, метрики и логи) в Dynatrace.") и [метрик](/managed/ingest-from/opentelemetry "Узнайте, как интегрировать и принимать данные OpenTelemetry (трассировки, метрики и логи) в Dynatrace.") OpenTelemetry. Возможные значения: `true` или `false`. |
+| `otlp_ingest_enabled` | Включает модуль OTLP ingest, который обеспечивает приём [traces](/managed/ingest-from/opentelemetry "Learn how to integrate and ingest OpenTelemetry data (traces, metrics, and logs) into Dynatrace.") и [metrics](/managed/ingest-from/opentelemetry "Learn how to integrate and ingest OpenTelemetry data (traces, metrics, and logs) into Dynatrace.") OpenTelemetry. Возможные значения: `true` или `false`. |
 
-## Модуль: REST API
+## Module: REST API
 
-**Раздел: [collector]**
-ActiveGate можно использовать для доступа к [API Dynatrace](/managed/dynatrace-api "Узнайте, что нужно для использования API Dynatrace."). ActiveGate поддерживает вызовы ко всем конечным точкам конфигурации и среды API Dynatrace, как в версии v1, так и в v2. Для доступа к API Dynatrace через ActiveGate используйте URL в следующем формате: `https://{your-ActiveGate-domain}/e/{your-environment-id}/api/...`
+**Section: [collector]**  
+Через ActiveGate можно получить доступ к [Dynatrace API](/managed/dynatrace-api "Find out what you need to use the Dynatrace API."). ActiveGate поддерживает вызовы всех configuration и environment endpoints Dynatrace API в версиях v1 и v2. Для доступа к Dynatrace API через ActiveGate нужно использовать URL следующего формата: `https://{your-ActiveGate-domain}/e/{your-environment-id}/api/...`
 
-| Свойство | Описание |
+| Property | Description |
 | --- | --- |
-| `restInterface` | Включает модуль REST API, который обеспечивает доступ к API Dynatrace через REST. Возможные значения: `true` или `false`. |
+| `restInterface` | Включает модуль REST API, который обеспечивает доступ к Dynatrace API по REST. Возможные значения: `true` или `false`. |
 
-## Модуль: отладка
+## Module: debugging
 
-**Раздел: [debugging]**
-ActiveGate можно использовать для доступа к данным на уровне кода, необходимым для быстрого устранения неполадок и отладки в любой среде, от разработки до продакшена.
+**Section: [debugging]**  
+Через ActiveGate можно получить доступ к данным на уровне кода, необходимым для быстрого поиска и устранения неисправностей в любой среде, от разработки до production.
 
-| Свойство | Описание |
+| Property | Description |
 | --- | --- |
 | `debugging_enabled` | Включает модуль Dynatrace Live Debugger. Возможные значения: `true` или `false`. |
 
-## Сетевая зона
+## Network zone
 
-**Раздел: [connectivity]**
+**Section: [connectivity]**
 
 | Свойство | Значение по умолчанию | Описание |
 | --- | --- | --- |
-| `networkZone` | не задано | Определяет [сетевую зону](/managed/manage/network-zones "Find out how network zones work in Dynatrace."), к которой относится ActiveGate. ActiveGate может относиться только к одной сетевой зоне. Имя сетевой зоны, это строка из буквенно-цифровых символов, дефисов (`-`), символов подчёркивания (`_`) и точек (`.`). Точки используются как разделители, поэтому нельзя использовать точку в качестве первого символа имени сетевой зоны. Длина строки ограничена 256 символами. После добавления или изменения этого параметра требуется перезапуск ActiveGate. После перезапуска сетевая зона автоматически создаётся в Dynatrace. |
-| `bindToNetworkInterface` | не задано | По умолчанию ActiveGate прослушивает все доступные интерфейсы. Если нужно, чтобы ActiveGate прослушивал только выбранный интерфейс, нужно настроить это свойство с IP-адресом, назначенным сетевому интерфейсу. |
+| `networkZone` | unset | Определяет [network zone](/managed/manage/network-zones "Find out how network zones work in Dynatrace."), к которой принадлежит ActiveGate. ActiveGate может принадлежать только одной network zone. Имя network zone, это строка из буквенно-цифровых символов, дефисов (`-`), знаков подчёркивания (`_`) и точек (`.`). Точки используются как разделители, поэтому первым символом имени network zone не может быть точка. Длина строки ограничена 256 символами. После добавления или изменения этого параметра требуется перезапуск ActiveGate. После перезапуска network zone автоматически создаётся в Dynatrace. |
+| `bindToNetworkInterface` | unset | По умолчанию ActiveGate прослушивает все доступные интерфейсы. Если нужно, чтобы ActiveGate прослушивал только выбранный интерфейс, следует указать в этом свойстве IP-адрес, назначенный данному сетевому интерфейсу. |
 
-### Управление сетевой зоной через `agctl`
+### Управление network zone с помощью `agctl`
 
-ActiveGate версии 1.333+
+ActiveGate версия 1.333+
 
-Для настройки сетевой зоны ActiveGate можно использовать [agctl](/managed/ingest-from/dynatrace-activegate/agctl-command-line-interface#network-zone "Learn how to use agctl to configure and manage ActiveGate from the command line"):
+Можно использовать [agctl](/managed/ingest-from/dynatrace-activegate/agctl-command-line-interface#network-zone "Learn how to use agctl to configure and manage ActiveGate from the command line") для настройки network zone для ActiveGate:
 
 ```
 agctl network-zone set production-zone
 ```
 
-После настройки сетевой зоны через `agctl` нужно перезапустить ActiveGate, чтобы изменения вступили в силу. См. [Запуск/остановка/перезапуск ActiveGate](/managed/ingest-from/dynatrace-activegate/operation/stop-restart-activegate "Learn how you can start, stop and restart ActiveGate on Windows or Linux.").
+После настройки network zone с помощью `agctl` необходимо перезапустить ActiveGate, чтобы изменения вступили в силу. См. [Start/stop/restart ActiveGate](/managed/ingest-from/dynatrace-activegate/operation/stop-restart-activegate "Learn how you can start, stop and restart ActiveGate on Windows or Linux.").
 
-Также, чтобы изменить привязку к сетевой зоне централизованно из Cluster Dynatrace, можно использовать [Remote configuration management](/managed/ingest-from/bulk-configuration#configure-activegates "Perform OneAgent and ActiveGate configuration on hosts from the Deployment status page or at scale using the Dynatrace API.") (выбрать действие **modify network zone**).
+Кроме того, управлять network zones централизованно можно следующими способами:
+
+* Перейти в **Deployment Status** > **Network zones**, чтобы просматривать, редактировать или создавать network zones.
+* **Remote configuration management**: использовать [Remote configuration management](/managed/ingest-from/bulk-configuration#configure-activegates "Perform OneAgent and ActiveGate configuration on hosts from the Deployment status page or at scale using the Dynatrace API.") (выбрать действие **modify network zone**).
 
 ## Group
 
-**Раздел: [collector]**
+**Section: [collector]**
 
 | Свойство | Значение по умолчанию | Описание |
 | --- | --- | --- |
-| `group` | не задано | [Группа ActiveGate](/managed/ingest-from/dynatrace-activegate/activegate-group "Understand the basic concepts of ActiveGate groups.") |
+| `group` | unset | [ActiveGate group](/managed/ingest-from/dynatrace-activegate/activegate-group "Understand the basic concepts of ActiveGate groups.") |
 
-### Управление группой ActiveGate через `agctl`
+### Управление группой ActiveGate с помощью `agctl`
 
-ActiveGate версии 1.333+
+ActiveGate версия 1.333+
 
-Для назначения ActiveGate группе можно использовать [agctl](/managed/ingest-from/dynatrace-activegate/agctl-command-line-interface#group "Learn how to use agctl to configure and manage ActiveGate from the command line"):
+Можно использовать [agctl](/managed/ingest-from/dynatrace-activegate/agctl-command-line-interface#group "Learn how to use agctl to configure and manage ActiveGate from the command line") для назначения ActiveGate группе:
 
 ```
 agctl group set my.group
 ```
 
-После настройки группы ActiveGate через `agctl` нужно перезапустить ActiveGate, чтобы изменения вступили в силу. См. [Запуск/остановка/перезапуск ActiveGate](/managed/ingest-from/dynatrace-activegate/operation/stop-restart-activegate "Learn how you can start, stop and restart ActiveGate on Windows or Linux.").
+После настройки группы ActiveGate с помощью `agctl` необходимо перезапустить ActiveGate, чтобы изменения вступили в силу. См. [Start/stop/restart ActiveGate](/managed/ingest-from/dynatrace-activegate/operation/stop-restart-activegate "Learn how you can start, stop and restart ActiveGate on Windows or Linux.").
 
-Также, чтобы изменить назначение группы ActiveGate централизованно из Cluster Dynatrace, можно использовать [Remote configuration management](/managed/ingest-from/bulk-configuration#configure-activegates "Perform OneAgent and ActiveGate configuration on hosts from the Deployment status page or at scale using the Dynatrace API.") (выбрать действие **modify ActiveGate group**).
+Для изменения назначения группы ActiveGate централизованно из кластера Dynatrace можно использовать [Remote configuration management](/managed/ingest-from/bulk-configuration#configure-activegates "Perform OneAgent and ActiveGate configuration on hosts from the Deployment status page or at scale using the Dynatrace API.") (выбрать действие **modify ActiveGate group**).
 
 ## Файловый кэш ActiveGate
 
-Файловый кэш ActiveGate снижает трафик между ActiveGate и Cluster Dynatrace, позволяя OneAgent загружать автоматические обновления с ActiveGate, а не с Cluster.
+Файловый кэш ActiveGate снижает трафик между ActiveGate и кластером Dynatrace, позволяя OneAgent скачивать автоматические обновления с ActiveGate, а не напрямую с кластера.
 
-Файловый кэш активируется автоматически при установке или обновлении ActiveGate. Однако активация происходит только при соблюдении **минимального требования к объёму свободного места в 512 МБ**. Если минимальное требование к объёму не соблюдено, кэширование автоматически деактивируется.
+Файловый кэш активируется автоматически при установке или обновлении ActiveGate. Однако активация происходит только при соблюдении **минимального требования к свободному месту, 512 МБ**. Если минимальное требование не выполнено, кэширование автоматически деактивируется.
 
-Файловый кэш можно настроить или отключить в конфигурации ActiveGate, в файле `custom.properties`:
+Файловый кэш можно настроить точнее или деактивировать в конфигурации ActiveGate, в файле `custom.properties`:
 
-**Раздел: [generic\_filecache]**
+**Section: [generic\_filecache]**
 
 | Свойство | Значение по умолчанию | Описание |
 | --- | --- | --- |
 | `generic_filecache_enabled` | `true` | Включает или отключает файловый кэш ActiveGate. Возможные значения: `true` или `false`. |
-| `generic_filecache_path` | `<временный каталог ActiveGate>/generic_filecache` | Путь к каталогу файлового кэша ActiveGate. Каталог будет создан, если он не существует (если это позволяют права доступа к файлам). |
-| `generic_filecache_size` | `2147483648` (2 ГБ) | Размер файлового кэша ActiveGate в байтах. Файловый кэш ActiveGate не будет использовать больше места, чем указано в конфигурации. Если доступного места меньше, чем указано в конфигурации, ActiveGate будет использовать доступное место. |
-| `generic_filecache_max_age` | `1209600000` (14 дней) | Максимальный возраст файлов, хранящихся в файловом кэше ActiveGate, в миллисекундах. Возраст файла отсчитывается с момента последнего использования файла (а не с момента загрузки/создания). Если файл не используется в течение настроенного максимального возраста, файл будет автоматически удалён. Файлы также удаляются из кэша до достижения максимального возраста, если недостаточно места для новых файлов. В первую очередь удаляются файлы LRU (least recently used, давно не использовавшиеся). |
+| `generic_filecache_path` | `<ActiveGate temporary directory>/generic_filecache` | Путь к директории файлового кэша ActiveGate. Директория будет создана, если не существует (при наличии соответствующих прав доступа к файлам). |
+| `generic_filecache_size` | `2147483648` (2 ГБ) | Размер файлового кэша ActiveGate в байтах. Файловый кэш ActiveGate не будет использовать больше места, чем указано в конфигурации. Если доступного места меньше, чем задано в конфигурации, ActiveGate использует доступное место. |
+| `generic_filecache_max_age` | `1209600000` (14 дней) | Максимальный возраст файлов, хранящихся в файловом кэше ActiveGate, в миллисекундах. Возраст файла отсчитывается с момента последнего использования файла (не с момента загрузки или создания). Если файл не используется в течение настроенного максимального возраста, он удаляется автоматически. Файлы также удаляются из кэша до истечения максимального возраста, если места недостаточно для новых файлов. Первыми удаляются файлы, использовавшиеся реже всего (LRU, least recently used). |
 
-Если значение содержит символ запятой, его нужно экранировать одним обратным слэшем. Например, `proxy-password = foo\,bar`.
+Если значение содержит символ запятой, его нужно экранировать одним обратным слешем. Например, `proxy-password = foo\,bar`.
 
-## Раздел: [com.compuware.apm.webserver]
+## Section: [com.compuware.apm.webserver]
 
 | Свойство | Значение по умолчанию | Описание |
 | --- | --- | --- |
-| `port-ssl` | `9999` | Порт, на котором ActiveGate прослушивает трафик от OneAgent, используется для HTTPS-соединения. Это можно настроить с помощью команды [agctl ssl-port](/managed/ingest-from/dynatrace-activegate/agctl-command-line-interface#ssl-port "Learn how to use agctl to configure and manage ActiveGate from the command line"). Если нужно изменить значение порта, см. [Разработка собственного Extensions](/managed/ingest-from/extensions/develop-your-extensions "Develop your own Extensions in Dynatrace.") и [Пользовательская конфигурация Extension Execution Controller](/managed/ingest-from/extensions/advanced-configuration/eec-custom-configuration "Configure the Extension Execution Controller (EEC)."). |
-| `port` | не задано | Порт, на котором ActiveGate прослушивает трафик от OneAgent, используется для HTTP-соединения. По умолчанию отключён. В Linux рекомендуется значение > 1024, чтобы не требовались права root. |
-| `ssl-protocols` | `TLSv1.2`, `TLSv1.3` | Поддерживаемые SSL-протоколы. Может быть одним значением или списком значений через запятую. Обратите внимание, что указание конкретной версии не подразумевает автоматически поддержку всех предыдущих/более низких версий, поэтому каждую версию нужно указывать явно. Допустимые значения: `TLSv1.2` и `TLSv1.3` |
-| `excluded-ciphers` | не задано | Список исключённых шифров. Шифры определяются подстрокой, соответствующей хотя бы части имени шифра, например: `excluded-ciphers = TLS_RSA_WITH,SHA$,TLS_ECDH` |
-| `certificate-file` | не задано | Путь к файлу `PKCS#12`, содержащему сертификаты, используемые веб-сервером ActiveGate. См. также [Настройка пользовательского SSL-сертификата на ActiveGate](/managed/ingest-from/dynatrace-activegate/configuration/configure-custom-ssl-certificate-on-activegate "Learn how to configure the SSL certificate on your ActiveGate."). |
-| `certificate-password` | не задано | Пароль для файла сертификата. |
-| `certificate-alias` | не задано | Понятное имя сертификата в файле `PKCS#12`. |
+| `port-ssl` | `9999` | Порт, на котором ActiveGate прослушивает трафик от OneAgent, используется для HTTPS-соединения. Настроить это можно с помощью команды [agctl ssl-port](/managed/ingest-from/dynatrace-activegate/agctl-command-line-interface#ssl-port "Learn how to use agctl to configure and manage ActiveGate from the command line"). Если нужно изменить значение порта, см. [Develop your own Extensions](/managed/ingest-from/extensions/develop-your-extensions "Develop your own Extensions in Dynatrace.") и [Extension Execution Controller custom configuration](/managed/ingest-from/extensions/advanced-configuration/eec-custom-configuration "Configure the Extension Execution Controller (EEC)."). |
+| `port` | unset | Порт, на котором ActiveGate прослушивает трафик от OneAgent, используется для HTTP-соединения. По умолчанию отключён. В Linux рекомендуется значение > 1024, чтобы не требовались права root. |
+| `ssl-protocols` | `TLSv1.2`, `TLSv1.3` | Поддерживаемые SSL-протоколы. Можно указать одно значение или список через запятую. Обратите внимание: указание конкретной версии не означает автоматическую поддержку всех предыдущих/более низких версий, поэтому каждую версию нужно указывать явно. Допустимые значения: `TLSv1.2` и `TLSv1.3`. |
+| `excluded-ciphers` | unset | Список исключённых шифров. Шифры задаются подстрокой, совпадающей хотя бы с частью имени шифра, например:`excluded-ciphers = TLS_RSA_WITH,SHA$,TLS_ECDH` |
+| `certificate-file` | unset | Путь к файлу `PKCS#12`, содержащему сертификаты, которые использует веб-сервер ActiveGate. См. также [Configuration of custom SSL certificate on ActiveGate](/managed/ingest-from/dynatrace-activegate/configuration/configure-custom-ssl-certificate-on-activegate "Learn how to configure the SSL certificate on your ActiveGate."). |
+| `certificate-password` | unset | Пароль к файлу сертификата. |
+| `certificate-alias` | unset | Понятное имя сертификата в файле `PKCS#12`. |
 
-#### Работа по HTTPS против HTTP
+#### Работа по HTTPS и HTTP
 
-По умолчанию ActiveGate работает безопасным способом, обслуживая входящие запросы по HTTPS. Это задаётся свойством конфигурации `port-ssl`, которое можно настроить в файле `custom.properties`. Однако, если нужно, чтобы ActiveGate использовал HTTP, нужно указать свойство `port` в `custom.properties`.
+По умолчанию ActiveGate работает в защищённом режиме, обслуживая входящие запросы по HTTPS. Это задаётся свойством конфигурации `port-ssl`, которое можно изменить в файле `custom.properties`. Однако если нужно, чтобы ActiveGate использовал HTTP, в `custom.properties` необходимо указать свойство `port`.
 
-Обратите внимание, что безопасный способ является вариантом по умолчанию и рекомендуемым. Однако вариант с HTTP можно выбрать из соображений производительности. Например, если перед Cluster ActiveGate установлен балансировщик нагрузки и если балансировщик нагрузки завершает входящие внешние SSL-соединения (см. [третий сценарий развёртывания](/managed/managed-cluster/basics/managed-deployments#scenario-3-integration-with-existing-it-landscape "Understand how Dynatrace Managed deployments evolve from a basic internal setup to a globally distributed high-availability architecture.")).
+Защищённый режим является режимом по умолчанию и рекомендуемым. Тем не менее HTTP может быть предпочтителен по соображениям производительности. Например, если перед кластерным ActiveGate установлен балансировщик нагрузки и балансировщик завершает входящие внешние SSL-соединения (см. [третий сценарий развёртывания](/managed/managed-cluster/basics/managed-deployments#scenario-3-integration-with-existing-it-landscape "Understand how Dynatrace Managed deployments evolve from a basic internal setup to a globally distributed high-availability architecture.")).
 
-## Раздел: [http.client]
+## Section: [http.client]
 
-Настройки связи, используемые для мониторинга AWS/VMware/Azure и для связи с Cluster Dynatrace (если не переопределены в `[http.client.internal]`).
+Настройки взаимодействия, используемые для мониторинга AWS/VMware/Azure и для связи с кластером Dynatrace (если не переопределены в `[http.client.internal]`).
 В частности, этот раздел содержит свойства конфигурации, относящиеся к настройкам прокси и таймаутам соединения.
 
-[Указать общие настройки прокси для связи с Cluster Dynatrace и мониторинга AWS/VMware/Azure](/managed/ingest-from/dynatrace-activegate/configuration/set-up-proxy-authentication-for-activegate#proxy-for-cluster-aws-vmware-azure "Learn how to configure ActiveGate properties to set up a proxy.").
+[Указать общие настройки прокси для взаимодействия с кластером Dynatrace и мониторинга AWS/VMware/Azure](/managed/ingest-from/dynatrace-activegate/configuration/set-up-proxy-authentication-for-activegate#proxy-for-cluster-aws-vmware-azure "Learn how to configure ActiveGate properties to set up a proxy.").
 
 ## Section: [http.client.internal]
 

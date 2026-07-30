@@ -1,24 +1,28 @@
 ---
-title: Settings API - Update windows for OneAgent updates schema table
+title: Settings API - Update windows for OneAgent and ActiveGate schema table
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/settings/schemas/builtin-deployment-management-update-windows
-scraped: 2026-05-12T11:41:30.622902
 ---
 
-# Settings API - Update windows for OneAgent updates schema table
+# Settings API - Update windows for OneAgent and ActiveGate schema table
 
-# Settings API - Update windows for OneAgent updates schema table
+# Settings API - Update windows for OneAgent and ActiveGate schema table
 
-* Published Dec 05, 2023
+* Опубликовано 05 декабря 2023 г.
 
-### Окна обновления для OneAgent (`builtin:deployment.management.update-windows)`
+### Окна обновления для OneAgent и ActiveGate (`builtin:deployment.management.update-windows)`
 
-Задайте окна обновления: как часто и когда обновлять instances OneAgent. Вы сможете применить эти окна к OneAgents, Host Groups или ко всему Environment в экранах настроек Automatic Update.
+Задаёт расписание автоматических обновлений OneAgent и ActiveGate.
+
+Окна обновления применяются на следующих уровнях:
+
+* **OneAgent:** среда, группа хостов или отдельный хост.
+* **ActiveGate:** среда или отдельный ActiveGate.
 
 | Schema ID | Schema groups | Scope |
 | --- | --- | --- |
 | `builtin:deployment.management.update-windows` | * `group:updates` | `environment` |
 
-Получить schema через Settings API
+Получение схемы через Settings API
 
 |  |  |  |
 | --- | --- | --- |
@@ -26,17 +30,17 @@ scraped: 2026-05-12T11:41:30.622902
 | GET | SaaS | `https://{your-environment-id}.live.dynatrace.com/api/v2/settings/schemas/builtin:deployment.management.update-windows` |
 | GET | Environment ActiveGate | `https://{your-activegate-domain}/e/{your-environment-id}/api/v2/settings/schemas/builtin:deployment.management.update-windows` |
 
-## Аутентификация
+## Authentication
 
-Для выполнения запроса необходим access token со scope **Read settings** (`settings.read`). О том, как получить и использовать токен, см. [Tokens and authentication](/managed/discover-dynatrace/references/dynatrace-api/basics/dynatrace-api-authentication).
+Для выполнения этого запроса нужен токен доступа с областью видимости **Read settings** (`settings.read`). Порядок получения и использования токена описан в разделе [Tokens and authentication](/managed/discover-dynatrace/references/dynatrace-api/basics/dynatrace-api-authentication).
 
-## Параметры
+## Parameters
 
-| Свойство | Тип | Описание | Обязательный |
+| Property | Type | Описание | Required |
 | --- | --- | --- | --- |
-| Вкл./Выкл. `enabled` | boolean | - | Required |
-| Имя `name` | text | - | Required |
-| Периодичность `recurrence` | enum | Возможные значения: * `ONCE` * `DAILY` * `WEEKLY` * `MONTHLY` | Required |
+| On/Off `enabled` | boolean | - | Required |
+| Name `name` | text | - | Required |
+| Recurrence `recurrence` | enum | Допустимые значения элемента: * `ONCE` * `DAILY` * `WEEKLY` * `MONTHLY` | Required |
 | `onceRecurrence` | [onceRecurrence](#onceRecurrence) | - | Required |
 | `dailyRecurrence` | [dailyRecurrence](#dailyRecurrence) | - | Required |
 | `weeklyRecurrence` | [weeklyRecurrence](#weeklyRecurrence) | - | Required |
@@ -44,66 +48,66 @@ scraped: 2026-05-12T11:41:30.622902
 
 ##### Объект `onceRecurrence`
 
-| Свойство | Тип | Описание | Обязательный |
+| Property | Type | Описание | Required |
 | --- | --- | --- | --- |
-| Время обновления `recurrenceRange` | [onceWindow](#onceWindow) | - | Required |
+| Update time `recurrenceRange` | [onceWindow](#onceWindow) | - | Required |
 
 ##### Объект `dailyRecurrence`
 
-| Свойство | Тип | Описание | Обязательный |
+| Property | Type | Описание | Required |
 | --- | --- | --- | --- |
-| Каждые X дней `every` | integer | Каждые **X** дней:  * `1` = ежедневно, * `2` = раз в два дня, * `3` = раз в три дня, * и т. д. | Required |
-| Время обновления `updateTime` | [updateTime](#updateTime) | - | Required |
-| Диапазон периодичности `recurrenceRange` | [recurrenceRange](#recurrenceRange) | - | Required |
+| Every X days `every` | integer | Каждые **X** дней: * `1` = каждый день, * `2` = каждые два дня, * `3` = каждые три дня, * и т.д. | Required |
+| Update time `updateTime` | [updateTime](#updateTime) | - | Required |
+| Recurrence range `recurrenceRange` | [recurrenceRange](#recurrenceRange) | - | Required |
 
 ##### Объект `weeklyRecurrence`
 
-| Свойство | Тип | Описание | Обязательный |
+| Property | Type | Описание | Required |
 | --- | --- | --- | --- |
-| День недели `selectedWeekDays` | [selectedWeekDays](#selectedWeekDays) | - | Required |
-| Каждые X недель `every` | integer | Каждые **X** недель:  * `1` = еженедельно, * `2` = раз в две недели, * `3` = раз в три недели, * и т. д. | Required |
-| Время обновления `updateTime` | [updateTime](#updateTime) | - | Required |
-| Диапазон периодичности `recurrenceRange` | [recurrenceRange](#recurrenceRange) | - | Required |
+| Day of the week `selectedWeekDays` | [selectedWeekDays](#selectedWeekDays) | - | Required |
+| Every X weeks `every` | integer | Каждые **X** недель: * `1` = каждую неделю, * `2` = каждые две недели, * `3` = каждые три недели, * и т.д. | Required |
+| Update time `updateTime` | [updateTime](#updateTime) | - | Required |
+| Recurrence range `recurrenceRange` | [recurrenceRange](#recurrenceRange) | - | Required |
 
 ##### Объект `monthlyRecurrence`
 
-| Свойство | Тип | Описание | Обязательный |
+| Property | Type | Описание | Required |
 | --- | --- | --- | --- |
-| День месяца `selectedMonthDay` | integer | - | Required |
-| Каждые X месяцев `every` | integer | Каждые **X** месяцев:  * `1` = ежемесячно, * `2` = раз в два месяца, * `3` = раз в три месяца, * и т. д. | Required |
-| Время обновления `updateTime` | [updateTime](#updateTime) | - | Required |
-| Диапазон периодичности `recurrenceRange` | [recurrenceRange](#recurrenceRange) | - | Required |
+| Day of the month `selectedMonthDay` | integer | - | Required |
+| Every X months `every` | integer | Каждые **X** месяцев: * `1` = каждый месяц, * `2` = каждые два месяца, * `3` = каждые три месяца, * и т.д. | Required |
+| Update time `updateTime` | [updateTime](#updateTime) | - | Required |
+| Recurrence range `recurrenceRange` | [recurrenceRange](#recurrenceRange) | - | Required |
 
 ##### Объект `onceWindow`
 
-| Свойство | Тип | Описание | Обязательный |
+| Property | Type | Описание | Required |
 | --- | --- | --- | --- |
-| Начало `start` | zoned\_date\_time | - | Required |
-| Конец `end` | zoned\_date\_time | - | Required |
+| Start `start` | zoned\_date\_time | - | Required |
+| End `end` | zoned\_date\_time | - | Required |
 
 ##### Объект `updateTime`
 
-| Свойство | Тип | Описание | Обязательный |
+| Property | Type | Описание | Required |
 | --- | --- | --- | --- |
-| Время начала (24-часовой формат) `startTime` | text | - | Required |
-| Часовой пояс `timeZone` | enum | Возможные значения: * `GMT-12:00` * `GMT-11:00` * `GMT-10:00` * `GMT-09:00` * `GMT-08:00` * `GMT-07:00` * `GMT-06:00` * `GMT-05:00` * `GMT-04:00` * `GMT-03:00` * `GMT-02:00` * `GMT-01:00` * `GMT+00:00` * `GMT+01:00` * `GMT+02:00` * `GMT+03:00` * `GMT+04:00` * `GMT+05:00` * `GMT+06:00` * `GMT+07:00` * `GMT+08:00` * `GMT+09:00` * `GMT+10:00` * `GMT+11:00` * `GMT+12:00` | Required |
-| Длительность (минуты) `duration` | integer | - | Required |
+| Start time (24-hour clock) `startTime` | text | - | Required |
+| Time zone `timeZone` | enum | Допустимые значения элемента: * `GMT-12:00` * `GMT-11:00` * `GMT-10:00` * `GMT-09:00` * `GMT-08:00` * `GMT-07:00` * `GMT-06:00` * `GMT-05:00` * `GMT-04:00` * `GMT-03:00` * `GMT-02:00` * `GMT-01:00` * `GMT+00:00` * `GMT+01:00` * `GMT+02:00` * `GMT+03:00` * `GMT+04:00` * `GMT+05:00` * `GMT+06:00` * `GMT+07:00` * `GMT+08:00` * `GMT+09:00` * `GMT+10:00` * `GMT+11:00` * `GMT+12:00` | Required |
+| Duration (minutes) `duration` | integer | - | Required |
 
 ##### Объект `recurrenceRange`
 
-| Свойство | Тип | Описание | Обязательный |
+| Property | Type | Описание | Required |
 | --- | --- | --- | --- |
-| Начало `start` | zoned\_date\_time | - | Required |
-| Конец `end` | zoned\_date\_time | - | Required |
+| Start `start` | zoned\_date\_time | - | Required |
+| End `end` | zoned\_date\_time | - | Required |
 
 ##### Объект `selectedWeekDays`
 
-| Свойство | Тип | Описание | Обязательный |
+| Property | Type | Описание | Required |
 | --- | --- | --- | --- |
-| Понедельник `monday` | boolean | - | Required |
-| Вторник `tuesday` | boolean | - | Required |
-| Среда `wednesday` | boolean | - | Required |
-| Четверг `thursday` | boolean | - | Required |
-| Пятница `friday` | boolean | - | Required |
-| Суббота `saturday` | boolean | - | Required |
-| Воскресенье `sunday` | boolean | - | Required |
+| Monday `monday` | boolean | - | Required |
+| Tuesday `tuesday` | boolean | - | Required |
+| Wednesday `wednesday` | boolean | - | Required |
+| Thursday `thursday` | boolean | - | Required |
+| Friday `friday` | boolean | - | Required |
+| Saturday `saturday` | boolean | - | Required |
+| Sunday `sunday` | boolean | - | Required |

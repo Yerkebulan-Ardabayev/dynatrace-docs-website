@@ -1,50 +1,51 @@
 ---
-title: Запуск синтетических мониторов из частных расположений
+title: Запуск синтетических мониторов из приватных локаций
 source: https://docs.dynatrace.com/managed/ingest-from/dynatrace-activegate/capabilities/synthetic-purpose
-scraped: 2026-05-12T11:08:04.971251
 ---
 
-# Запуск синтетических мониторов из частных расположений
+# Запуск синтетических мониторов из приватных локаций
 
-# Запуск синтетических мониторов из частных расположений
+# Запуск синтетических мониторов из приватных локаций
 
-* 2-min read
-* Updated on Jun 01, 2022
+* Чтение: 2 мин
+* Обновлено 12 июля 2026 г.
 
-**ActiveGate с поддержкой Synthetic** позволяют создавать частные синтетические расположения, из которых можно запускать синтетические мониторы для проверки как внутренних, так и внешних ресурсов.
+**ActiveGates с поддержкой Synthetic** позволяют настраивать приватные Synthetic-локации, из которых можно запускать синтетические мониторы для наблюдения за внутренними и внешними ресурсами.
 
-## Функциональность частного синтетического мониторинга и модуль Synthetic
+## Функциональность приватного синтетического мониторинга и модуль Synthetic
 
-(модуль: [Synthetic](/managed/ingest-from/dynatrace-activegate/configuration/configure-activegate#synth_mod "Узнайте, какие свойства ActiveGate можно настраивать в зависимости от ваших потребностей."))
+(модуль: [Synthetic](/managed/ingest-from/dynatrace-activegate/configuration/configure-activegate#synth_mod "Узнайте, какие свойства ActiveGate можно настраивать в зависимости от потребностей и требований."))
 
-У ActiveGate, предназначенных для синтетического мониторинга Dynatrace, включён [модуль Synthetic](/managed/ingest-from/dynatrace-activegate/configuration/configure-activegate#synth_mod "Узнайте, какие свойства ActiveGate можно настраивать в зависимости от ваших потребностей.").
+ActiveGates, предназначенные для Dynatrace Synthetic Monitoring, имеют включённый [модуль Synthetic](/managed/ingest-from/dynatrace-activegate/configuration/configure-activegate#synth_mod "Узнайте, какие свойства ActiveGate можно настраивать в зависимости от потребностей и требований.").
 
-ActiveGate с поддержкой Synthetic совместно с [движком Synthetic и Chromium](/managed/observe/digital-experience/synthetic-monitoring/private-synthetic-locations/create-a-private-synthetic-location "Узнайте, как создать частное расположение для синтетического мониторинга.") являются элементами частных синтетических расположений, которые представляют собой расположения в вашей частной сетевой инфраструктуре.
+ActiveGates с поддержкой Synthetic перечислены в разделе **Deployment Status** > **ActiveGates**.
 
-Частное расположение может включать один или несколько ActiveGate с поддержкой Synthetic. Смотрите [требования](/managed/observe/digital-experience/synthetic-monitoring/private-synthetic-locations/system-and-hardware-requirements-for-private-synthetic "Поддерживаемые ОС, версии Chromium и требования к оборудованию для запуска синтетических мониторов из частных расположений") и [процедуру](/managed/observe/digital-experience/synthetic-monitoring/private-synthetic-locations/create-a-private-synthetic-location "Узнайте, как создать частное расположение для синтетического мониторинга.") создания частных расположений. После настройки вы можете использовать [интерфейс управления частными расположениями и мониторами](/managed/observe/digital-experience/synthetic-monitoring/private-synthetic-locations/manage-private-synthetic-locations "Анализируйте и управляйте использованием ресурсов в ваших частных синтетических расположениях.") на базе Dynatrace.
+ActiveGates с поддержкой Synthetic вместе с [Synthetic engine и Chromium](/managed/observe/digital-experience/synthetic-monitoring/private-synthetic-locations/create-a-private-synthetic-location "Узнайте, как создать приватную локацию для синтетического мониторинга.") являются элементами приватных Synthetic-локаций, то есть локаций в частной сетевой инфраструктуре.
 
-### Важные примечания по аппаратному и программному обеспечению
+Приватная локация может включать один или несколько ActiveGates с поддержкой Synthetic. Изучите [требования](/managed/observe/digital-experience/synthetic-monitoring/private-synthetic-locations/system-and-hardware-requirements-for-private-synthetic "Поддерживаемые операционные системы, версии Chromium и требования к оборудованию для запуска синтетических мониторов из приватных локаций") и [процесс](/managed/observe/digital-experience/synthetic-monitoring/private-synthetic-locations/create-a-private-synthetic-location "Узнайте, как создать приватную локацию для синтетического мониторинга.") настройки приватных локаций. После настройки доступен основанный на Dynatrace [интерфейс управления приватными локациями и мониторами](/managed/observe/digital-experience/synthetic-monitoring/private-synthetic-locations/manage-private-synthetic-locations "Анализ и управление использованием ресурсов в приватных Synthetic-локациях.").
 
-ActiveGate с поддержкой Synthetic предъявляют повышенные требования к аппаратному обеспечению. Смотрите [Требования к частным синтетическим расположениям](/managed/observe/digital-experience/synthetic-monitoring/private-synthetic-locations/system-and-hardware-requirements-for-private-synthetic "Поддерживаемые ОС, версии Chromium и требования к оборудованию для запуска синтетических мониторов из частных расположений").
+### Важные замечания по оборудованию и ПО
 
-**Если ActiveGate запускает модуль Synthetic, на нём не может быть включён ни один другой функциональный модуль.** Запуск других модулей на том же ActiveGate может привести к ситуации, когда синтетические мониторы выполняются, но другие процессы перегружают машину, оказывая значительное влияние на метрики производительности мониторов и вызывая ложные оповещения о снижении производительности.
+ActiveGates с поддержкой Synthetic предъявляют повышенные требования к оборудованию. Подробнее: [Requirements for private Synthetic locations](/managed/observe/digital-experience/synthetic-monitoring/private-synthetic-locations/system-and-hardware-requirements-for-private-synthetic "Поддерживаемые операционные системы, версии Chromium и требования к оборудованию для запуска синтетических мониторов из приватных локаций").
 
-## Выполнение мониторов
+**Если ActiveGate запускает модуль Synthetic, на нём нельзя включать другие функциональные модули**. Запуск других модулей на том же ActiveGate может привести к ситуации, когда синтетические мониторы выполняются, а другие процессы перегружают машину и существенно влияют на метрики производительности мониторов, вызывая ложные алерты о деградации производительности.
 
-Любой ActiveGate с поддержкой Synthetic способен выполнять **как [браузерные, так и HTTP-мониторы](/managed/observe/digital-experience/synthetic-monitoring/general-information/types-of-synthetic-monitors "Узнайте о типах синтетических мониторов Dynatrace.")**.
+## Запуск мониторов
 
-Кроме того, в частных расположениях использование ресурсов отдельно отслеживается для ресурсоёмких HTTP-мониторов, имеющих специальные функции с интенсивным потреблением ресурсов.
+Любой ActiveGate с поддержкой Synthetic способен запускать **как [браузерные, так и HTTP-мониторы](/managed/observe/digital-experience/synthetic-monitoring/general-information/types-of-synthetic-monitors "Узнайте о типах синтетических мониторов Dynatrace.")**.
 
-Для запуска браузерных мониторов из частного расположения необходимо сначала удовлетворить зависимости движка до установки Environment или Cluster ActiveGate. Подробные инструкции смотрите в разделе [Создание частного синтетического расположения](/managed/observe/digital-experience/synthetic-monitoring/private-synthetic-locations/create-a-private-synthetic-location "Узнайте, как создать частное расположение для синтетического мониторинга.").
+Кроме того, в приватных локациях использование ресурсов отслеживается отдельно для ресурсоёмких HTTP-мониторов: такие мониторы обладают особыми функциями, требующими значительных ресурсов.
 
-### Сценарии использования
+Чтобы запускать браузерные мониторы из приватной локации, нужно сначала выполнить зависимости движка до установки Environment или Cluster ActiveGate. Подробные инструкции: [Создание приватной Synthetic-локации](/managed/observe/digital-experience/synthetic-monitoring/private-synthetic-locations/create-a-private-synthetic-location "Узнайте, как создать приватную локацию для синтетического мониторинга.").
 
-Частные расположения позволяют запускать мониторы в вашей внутренней сети, когда использование [публичных синтетических расположений](/managed/observe/digital-experience/synthetic-monitoring/general-information/public-synthetic-locations "Узнайте о всех доступных публичных расположениях синтетического мониторинга.") Dynatrace невозможно. С помощью частных расположений вы можете:
+### Варианты использования
+
+Приватные локации позволяют запускать мониторы во внутренней сети тогда, когда использовать Dynatrace [публичные Synthetic-локации](/managed/observe/digital-experience/synthetic-monitoring/general-information/public-synthetic-locations "Узнайте обо всех доступных на данный момент публичных Synthetic Monitoring Classic-локациях.") для синтетического мониторинга невозможно. С помощью приватных локаций можно:
 
 * Измерять производительность и доступность внутренних веб-страниц.
-* Измерять сложные внутренние приложения с помощью браузерных мониторов с clickpath.
+* Измерять сложные внутренние приложения с помощью мониторов кликпути браузера.
 
-Кроме того, вы также можете:
+Дополнительно можно также:
 
-* Измерять внешние ресурсы с помощью синтетических мониторов, запущенных из внутренних расположений.
-* Мониторить API, как внутренние, так и внешние.
+* Измерять внешние ресурсы с помощью синтетических мониторов, запускаемых из внутренних локаций.
+* Мониторить APIs, как внутренние, так и внешние.

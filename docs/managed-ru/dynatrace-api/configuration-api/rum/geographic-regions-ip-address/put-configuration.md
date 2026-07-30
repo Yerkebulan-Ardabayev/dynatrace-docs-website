@@ -8,11 +8,15 @@ source: https://docs.dynatrace.com/managed/dynatrace-api/configuration-api/rum/g
 # IP address mapping rules - PUT configuration
 
 * Справочник
-* Опубликовано 24 сентября 2020 г.
+* Обновлено 21 июл. 2026
+
+Устарело
+
+Этот API endpoint устарел. Вместо него используйте [схему Map IP addresses to locations](/managed/dynatrace-api/environment-api/settings/schemas/builtin-rum-ip-mappings "Просмотр таблицы схемы настроек builtin:rum.ip-mappings вашей среды мониторинга через Dynatrace API.").
 
 Обновляет конфигурацию сопоставления IP-адресов с географическими регионами.
 
-Запрос принимает полезную нагрузку `application/json`.
+Запрос принимает тело в формате `application/json`.
 
 |  |  |  |
 | --- | --- | --- |
@@ -21,15 +25,15 @@ source: https://docs.dynatrace.com/managed/dynatrace-api/configuration-api/rum/g
 
 ## Аутентификация
 
-Для выполнения этого запроса нужен токен доступа с областью действия `WriteConfig`.
+Для выполнения этого запроса нужен токен доступа с областью `WriteConfig`.
 
-Подробнее о том, как получить и использовать его, см. [Tokens and authentication](/managed/discover-dynatrace/references/dynatrace-api/basics/dynatrace-api-authentication).
+О том, как получить и использовать токен, см. [Tokens and authentication](/managed/discover-dynatrace/references/dynatrace-api/basics/dynatrace-api-authentication).
 
 ## Параметры
 
 | Параметр | Тип | Описание | В | Обязательный |
 | --- | --- | --- | --- | --- |
-| body | [IpAddressMappings](#openapi-definition-IpAddressMappings) | JSON тело запроса. Содержит конфигурацию сопоставления IP-адресов. | body | Опционально |
+| body | [IpAddressMappings](#openapi-definition-IpAddressMappings) | Тело JSON запроса. Содержит конфигурацию сопоставления IP-адресов. | body | Опциональный |
 
 ### Объекты тела запроса
 
@@ -39,7 +43,7 @@ source: https://docs.dynatrace.com/managed/dynatrace-api/configuration-api/rum/g
 
 | Элемент | Тип | Описание | Обязательный |
 | --- | --- | --- | --- |
-| ipAddressMappingRules | [IpAddressMappingRule](#openapi-definition-IpAddressMappingRule)[] | Список правил сопоставления IP-адресов. Правила проверяются сверху вниз, применяется первое подходящее правило. | Опционально |
+| ipAddressMappingRules | [IpAddressMappingRule](#openapi-definition-IpAddressMappingRule)[] | Список правил сопоставления IP-адресов. Правила вычисляются сверху вниз; применяется первое совпавшее правило. | Опциональный |
 
 #### Объект `IpAddressMappingRule`
 
@@ -47,8 +51,8 @@ source: https://docs.dynatrace.com/managed/dynatrace-api/configuration-api/rum/g
 
 | Элемент | Тип | Описание | Обязательный |
 | --- | --- | --- | --- |
-| ipAddressMappingLocation | [IpAddressMappingLocation](#openapi-definition-IpAddressMappingLocation) | Местоположение для сопоставления IP-адреса. | Обязательно |
-| ipAddressRange | [IpAddressRange](#openapi-definition-IpAddressRange) | IP-адрес или диапазон IP-адресов, сопоставляемый с местоположением. | Обязательно |
+| ipAddressMappingLocation | [IpAddressMappingLocation](#openapi-definition-IpAddressMappingLocation) | Местоположение для сопоставления IP-адреса. | Обязательный |
+| ipAddressRange | [IpAddressRange](#openapi-definition-IpAddressRange) | IP-адрес или диапазон IP-адресов, сопоставляемых с местоположением. | Обязательный |
 
 #### Объект `IpAddressMappingLocation`
 
@@ -56,25 +60,25 @@ source: https://docs.dynatrace.com/managed/dynatrace-api/configuration-api/rum/g
 
 | Элемент | Тип | Описание | Обязательный |
 | --- | --- | --- | --- |
-| city | string | Название города местоположения. | Опционально |
-| countryCode | string | Код страны местоположения. Чтобы получить список доступных кодов стран, используй запрос [GET all countries﻿](https://dt-url.net/37030go?dt=m). | Обязательно |
-| latitude | number | Широта местоположения в формате `DDD.dddd`. | Опционально |
-| longitude | number | Долгота местоположения в формате `DDD.dddd`. | Опционально |
-| regionCode | string | Код региона местоположения. Чтобы получить список доступных кодов регионов, используй запрос [GET regions of the country﻿](https://dt-url.net/az230x0?dt=m). | Опционально |
+| city | string | Название города для данного местоположения. | Опциональный |
+| countryCode | string | Код страны для данного местоположения. Чтобы получить список доступных кодов стран, используйте запрос [GET all countries﻿](https://dt-url.net/37030go?dt=m). | Обязательный |
+| latitude | number | Широта местоположения в формате `DDD.dddd`. | Опциональный |
+| longitude | number | Долгота местоположения в формате `DDD.dddd`. | Опциональный |
+| regionCode | string | Код региона для данного местоположения. Чтобы получить список доступных кодов регионов, используйте запрос [GET regions of the country﻿](https://dt-url.net/az230x0?dt=m). | Опциональный |
 
 #### Объект `IpAddressRange`
 
-IP-адрес или диапазон IP-адресов, сопоставляемый с местоположением.
+IP-адрес или диапазон IP-адресов, сопоставляемых с местоположением.
 
 | Элемент | Тип | Описание | Обязательный |
 | --- | --- | --- | --- |
-| address | string | IP-адрес, который нужно сопоставить. Для диапазона IP-адресов это начальный адрес (**from**). | Обязательно |
-| addressTo | string | Конечный адрес (**to**) диапазона IP-адресов. | Опционально |
-| subnetMask | integer | Маска подсети диапазона IP-адресов. | Опционально |
+| address | string | IP-адрес для сопоставления. Для диапазона IP-адресов это адрес **from** (начало диапазона). | Обязательный |
+| addressTo | string | Адрес **to** (конец) диапазона IP-адресов. | Опциональный |
+| subnetMask | integer | Маска подсети для диапазона IP-адресов. | Опциональный |
 
 ### Модель JSON тела запроса
 
-Это модель тела запроса, показывающая возможные элементы. Её нужно скорректировать для использования в реальном запросе.
+Это модель тела запроса, демонстрирующая возможные элементы. Перед использованием в реальном запросе её нужно адаптировать.
 
 ```
 {
@@ -150,12 +154,12 @@ IP-адрес или диапазон IP-адресов, сопоставляе�
 
 ## Ответ
 
-### Коды ответа
+### Коды ответов
 
 | Код | Тип | Описание |
 | --- | --- | --- |
-| **204** | - | Успех. Конфигурация обновлена. Ответ не содержит тела. |
-| **400** | [ErrorEnvelope](#openapi-definition-ErrorEnvelope) | Ошибка. Входные данные недопустимы |
+| **204** | - | Успех. Конфигурация обновлена. Тело ответа отсутствует. |
+| **400** | [ErrorEnvelope](#openapi-definition-ErrorEnvelope) | Ошибка. Входные данные недействительны. |
 
 ### Объекты тела ответа
 
@@ -169,7 +173,7 @@ IP-адрес или диапазон IP-адресов, сопоставляе�
 
 | Элемент | Тип | Описание |
 | --- | --- | --- |
-| code | integer | Код статуса HTTP |
+| code | integer | HTTP-код статуса |
 | constraintViolations | [ConstraintViolation](#openapi-definition-ConstraintViolation)[] | Список нарушений ограничений |
 | message | string | Сообщение об ошибке |
 
@@ -242,11 +246,11 @@ IP-адрес или диапазон IP-адресов, сопоставляе�
 }
 ```
 
-## Проверка полезной нагрузки
+## Валидация тела запроса
 
-Рекомендуется проверять полезную нагрузку перед её отправкой в составе реального запроса. Код ответа **204** означает, что полезная нагрузка допустима.
+Рекомендуется проверять тело запроса перед отправкой реального запроса. Код ответа **204** означает, что тело запроса корректно.
 
-Запрос принимает полезную нагрузку `application/json`.
+Запрос принимает тело в формате `application/json`.
 
 |  |  |  |
 | --- | --- | --- |
@@ -255,18 +259,18 @@ IP-адрес или диапазон IP-адресов, сопоставляе�
 
 ### Аутентификация
 
-Для выполнения этого запроса нужен токен доступа с областью действия `WriteConfig`.
+Для выполнения этого запроса нужен токен доступа с областью `WriteConfig`.
 
-Подробнее о том, как получить и использовать его, см. [Tokens and authentication](/managed/discover-dynatrace/references/dynatrace-api/basics/dynatrace-api-authentication).
+О том, как получить и использовать токен, см. [Tokens and authentication](/managed/discover-dynatrace/references/dynatrace-api/basics/dynatrace-api-authentication).
 
 ### Ответ
 
-#### Коды ответа
+#### Коды ответов
 
 | Код | Тип | Описание |
 | --- | --- | --- |
-| **204** | - | Успех. Отправленная конфигурация допустима. Ответ не содержит тела. |
-| **400** | [ErrorEnvelope](#openapi-definition-ErrorEnvelope) | Ошибка. Входные данные недопустимы |
+| **204** | - | Успех. Отправленная конфигурация корректна. Тело ответа отсутствует. |
+| **400** | [ErrorEnvelope](#openapi-definition-ErrorEnvelope) | Ошибка. Входные данные недействительны. |
 
 #### Объекты тела ответа
 
@@ -280,7 +284,7 @@ IP-адрес или диапазон IP-адресов, сопоставляе�
 
 | Элемент | Тип | Описание |
 | --- | --- | --- |
-| code | integer | Код статуса HTTP |
+| code | integer | HTTP-код статуса |
 | constraintViolations | [ConstraintViolation](#openapi-definition-ConstraintViolation)[] | Список нарушений ограничений |
 | message | string | Сообщение об ошибке |
 
@@ -353,8 +357,8 @@ IP-адрес или диапазон IP-адресов, сопоставляе�
 }
 ```
 
-## Похожие темы
+## Связанные темы
 
-* [Map internal IP addresses to locations for web applications in RUM Classic](/managed/observe/digital-experience/rum-classic/web-applications/additional-configuration/map-internal-ip-addresses-to-locations-web "Configure Dynatrace to use local addresses to understand where the users of your web applications are.")
-* [Map internal IP addresses to locations for mobile applications in RUM Classic](/managed/observe/digital-experience/rum-classic/mobile-applications/additional-configuration/map-internal-ip-addresses-to-locations-mobile "Configure Dynatrace to use local addresses to understand where the users of your mobile applications are.")
-* [Map internal IP addresses to locations for custom applications in RUM Classic](/managed/observe/digital-experience/rum-classic/custom-applications/additional-configuration/map-internal-ip-addresses-to-locations-custom "Configure Dynatrace to use local addresses to understand where the users of your custom applications are.")
+* [Сопоставление внутренних IP-адресов с местоположениями для веб-приложений в RUM Classic](/managed/observe/digital-experience/rum-classic/web-applications/additional-configuration/map-internal-ip-addresses-to-locations-web "Настройте Dynatrace для использования локальных адресов, чтобы определить местонахождение пользователей ваших веб-приложений.")
+* [Сопоставление внутренних IP-адресов с местоположениями для мобильных приложений в RUM Classic](/managed/observe/digital-experience/rum-classic/mobile-applications/additional-configuration/map-internal-ip-addresses-to-locations-mobile "Настройте Dynatrace для использования локальных адресов, чтобы определить местонахождение пользователей ваших мобильных приложений.")
+* [Сопоставление внутренних IP-адресов с местоположениями для пользовательских приложений в RUM Classic](/managed/observe/digital-experience/rum-classic/custom-applications/additional-configuration/map-internal-ip-addresses-to-locations-custom "Настройте Dynatrace для использования локальных адресов, чтобы определить местонахождение пользователей ваших пользовательских приложений.")

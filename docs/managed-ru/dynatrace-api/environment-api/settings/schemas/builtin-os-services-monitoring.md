@@ -1,31 +1,30 @@
 ---
 title: Settings API - OS services monitoring schema table
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/settings/schemas/builtin-os-services-monitoring
-scraped: 2026-05-12T11:40:55.878373
 ---
 
 # Settings API - OS services monitoring schema table
 
 # Settings API - OS services monitoring schema table
 
-* Опубликовано 5 декабря 2023 г.
+* Опубликовано 5 дек. 2023
 
-### Мониторинг OS services (`builtin:os-services-monitoring)`
+### OS services monitoring (`builtin:os-services-monitoring`)
 
-Настройка оповещений для OS services в нежелательных состояниях для Windows и Linux systemd.
-Note: при включении мониторинга для full availability metric происходит расход custom metric. Подробнее см. [documentation](https://dt-url.net/vl03xzk).
+Настройка оповещений для OS-сервисов в нежелательных состояниях для Windows и Linux systemd.
+Примечание: если мониторинг включён для метрики полной доступности, происходит потребление пользовательских метрик. Подробнее см. [документацию](https://dt-url.net/vl03xzk).
 
-Оставьте отзыв об этой функции в [Dynatrace Community](https://dt-url.net/nl02tbm).
+Оставить отзыв об этой функции можно в [Dynatrace Community](https://dt-url.net/nl02tbm).
 
-Чтобы настроить оповещение для определённой группы OS services, сначала создайте новую политику. Укажите, о каких состояниях службы вы хотите получать оповещения, затем добавьте detection rules, чтобы указать Dynatrace, какие именно OS services вас интересуют. Можно задать несколько detection rules.
+Чтобы настроить оповещение для определённой группы OS-сервисов, нужно сначала создать новую политику. Укажите, о каких состояниях сервисов нужно получать оповещения, затем добавьте правила обнаружения, чтобы сообщить Dynatrace, какие именно OS-сервисы вас интересуют. Можно задать несколько правил обнаружения.
 
-Note: политики задаются для каждой поддерживаемой OS отдельно, и часть параметров и свойств между ними различается.
+Политики задаются отдельно для каждой поддерживаемой операционной системы, часть параметров и свойств различается между ними.
 
-| Schema ID | Группы схемы | Scope |
+| Schema ID | Schema groups | Scope |
 | --- | --- | --- |
-| `builtin:os-services-monitoring` | * `group:monitoring` | `HOST` - Host  `HOST_GROUP` - Host Group  `environment` |
+| `builtin:os-services-monitoring` | * `group:monitoring` | `HOST` - Хост  `HOST_GROUP` - Host Group  `environment` |
 
-Получить schema через Settings API
+Получить схему через Settings API
 
 |  |  |  |
 | --- | --- | --- |
@@ -35,56 +34,56 @@ Note: политики задаются для каждой поддержива
 
 ## Аутентификация
 
-Для выполнения запроса необходим access token со scope **Read settings** (`settings.read`). О том, как получить и использовать токен, см. [Tokens and authentication](/managed/discover-dynatrace/references/dynatrace-api/basics/dynatrace-api-authentication).
+Для выполнения этого запроса нужен токен доступа с разрешением **Read settings** (`settings.read`). О том, как получить и использовать токен, см. [Tokens and authentication](/managed/discover-dynatrace/references/dynatrace-api/basics/dynatrace-api-authentication).
 
-## Параметры
+## Parameters
 
-| Свойство | Тип | Описание | Обязательный |
+| Свойство | Тип | Описание | Обязательность |
 | --- | --- | --- | --- |
-| Включено `enabled` | boolean | - | Required |
-| Система `system` | enum | Возможные значения: * `WINDOWS` * `LINUX` | Required |
-| Имя правила `name` | text | - | Required |
-| Мониторить `monitoring` | boolean | Включите или выключите switch для включения/отключения мониторинга availability metric для этой политики. Availability metrics порождают custom metrics. Примеры расхода см. в [documentation](https://dt-url.net/vl03xzk). Каждый мониторимый service потребляет одну custom metric. **Функция недоступна для настройки на hosts в режиме Discovery** | Required |
-| Оповещение `alerting` | boolean | Включите или выключите switch для включения/отключения alerting для этой политики | Required |
-| Оповещать, если служба не установлена `notInstalledAlerting` | boolean | По умолчанию Dynatrace не оповещает, если служба не установлена. Включите или выключите switch, чтобы включить или отключить эту функцию | Required |
-| Условие статуса службы для alerting `statusConditionWindows` | text | Строка должна соответствовать требуемому формату. См. [OS services monitoring](https://dt-url.net/vl03xzk). * `$eq(paused)`, совпадает со службами в состоянии paused. Доступные логические операции: * `$not($eq(paused))`, совпадает со службами в состоянии, отличном от paused. * `$or($eq(paused),$eq(running))`, совпадает со службами либо в состоянии paused, либо running. Используйте одно из следующих значений как параметр для условия: * `running` * `stopped` * `start_pending` * `stop_pending` * `continue_pending` * `pause_pending` * `paused` | Required |
-| Условие статуса службы для alerting `statusConditionLinux` | text | Строка должна соответствовать требуемому формату. См. [OS services monitoring](https://dt-url.net/vl03xzk). * `$eq(failed)`, совпадает со службами в состоянии failed. Доступные логические операции: * `$not($eq(active))`, совпадает со службами в состоянии, отличном от active. * `$or($eq(inactive),$eq(failed))`, совпадает со службами либо в состоянии inactive, либо failed. Используйте одно из следующих значений как параметр для условия: * `reloading` * `activating` * `deactivating` * `failed` * `inactive` * `active` | Required |
-| Задержка alerting `alertActivationDuration` | integer | Количество **10-секундных циклов измерений** до срабатывания alerting. Этим значением управляйте скоростью alerting. Минимальное значение 1 равно одному 10-секундному sample. Если задать 30, alerting сработает через 5 минут. | Required |
-| Правила обнаружения `detectionConditionsWindows` | [windowsDetectionCondition](#windowsDetectionCondition)[] | - | Required |
-| Правила обнаружения `detectionConditionsLinux` | [linuxDetectionCondition](#linuxDetectionCondition)[] | - | Required |
-| Свойства `metadata` | Set<[MetadataItem](#MetadataItem)> | Набор дополнительных key-value свойств, прикрепляемых к создаваемому event. Доступные ключи свойств можно получить через [Events API v2](https://dt-url.net/9622g1w). Дополнительно любой Host resource attribute может подставляться динамически (agent 1.325+). | Required |
+| Enabled `enabled` | boolean | - | Required |
+| System `system` | enum | Элемент принимает следующие значения: * `WINDOWS` * `LINUX` | Required |
+| Rule name `name` | text | - | Required |
+| Monitor `monitoring` | boolean | Переключатель включает или отключает мониторинг метрики доступности для данной политики. Метрики доступности формируют пользовательские метрики. Примеры потребления описаны в [документации﻿](https://dt-url.net/vl03xzk). Каждый отслеживаемый сервис потребляет одну пользовательскую метрику.  **Функцию нельзя настроить на хостах в режиме Discovery** | Required |
+| Alert `alerting` | boolean | Переключатель включает или отключает оповещение для данной политики | Required |
+| Alert if service is not installed `notInstalledAlerting` | boolean | По умолчанию Dynatrace не отправляет оповещение, если сервис не установлен. Переключатель включает или отключает эту функцию | Required |
+| Service status condition for alerting `statusConditionWindows` | text | Строка должна соответствовать обязательному формату. См. [мониторинг сервисов ОС﻿](https://dt-url.net/vl03xzk).  * `$eq(paused)` - совпадает с сервисами в состоянии paused.  Доступные логические операции:  * `$not($eq(paused))` - совпадает с сервисами в состоянии, отличном от paused. * `$or($eq(paused),$eq(running))` - совпадает с сервисами в состоянии paused или running.  В качестве параметра условия используйте одно из следующих значений:  * `running` * `stopped` * `start_pending` * `stop_pending` * `continue_pending` * `pause_pending` * `paused` | Required |
+| Service status condition for alerting `statusConditionLinux` | text | Строка должна соответствовать обязательному формату. См. [мониторинг сервисов ОС﻿](https://dt-url.net/vl03xzk).  * `$eq(failed)` - совпадает с сервисами в состоянии failed.  Доступные логические операции:  * `$not($eq(active))` - совпадает с сервисами в состоянии, отличном от active. * `$or($eq(inactive),$eq(failed))` - совпадает с сервисами в состоянии inactive или failed.  В качестве параметра условия используйте одно из следующих значений:  * `reloading` * `activating` * `deactivating` * `failed` * `inactive` * `active` | Required |
+| Alerting delay `alertActivationDuration` | integer | Количество **10-секундных циклов измерения** до срабатывания оповещения.  Задайте это значение для управления скоростью оповещения. Минимальное значение равно 1 и соответствует одному 10-секундному замеру. При значении 30 оповещение срабатывает через 5 минут. | Required |
+| Detection rules `detectionConditionsWindows` | [windowsDetectionCondition](#windowsDetectionCondition)[] | - | Required |
+| Detection rules `detectionConditionsLinux` | [linuxDetectionCondition](#linuxDetectionCondition)[] | - | Required |
+| Properties `metadata` | Set<[MetadataItem](#MetadataItem)> | Набор дополнительных key-value свойств, прикрепляемых к вызванному событию. Доступные ключи свойств можно получить через [Events API v2﻿](https://dt-url.net/9622g1w). Кроме того, любой атрибут ресурса Host может подставляться динамически (agent 1.325+). | Required |
 
 ##### Объект `windowsDetectionCondition`
 
-| Свойство | Тип | Описание | Обязательный |
+| Свойство | Тип | Описание | Обязательность |
 | --- | --- | --- | --- |
-| Scope правила `ruleType` | enum | Возможные значения: * `RuleTypeOsService` * `RuleTypeHost` | Optional |
-| Свойство службы `property` | enum | Возможные значения: * `DisplayName` * `ServiceName` * `Path` * `StartupType` * `Manufacturer` | Required |
-| Условие `condition` | text | Строка должна соответствовать требуемому формату. См. [OS services monitoring](https://dt-url.net/vl03xzk). * `$match(ip?tables*)`, совпадает со строкой с wildcards: `*` любое количество (включая ноль) символов и `?` ровно один символ. * `$contains(ssh)`, совпадает, если `ssh` встречается в значении свойства службы. * `$eq(sshd)`, совпадает, если `sshd` равно значению свойства службы. * `$prefix(ss)`, совпадает, если `ss` является префиксом значения свойства службы. * `$suffix(hd)`, совпадает, если `hd` является суффиксом значения свойства службы. Доступные логические операции: * `$not($eq(sshd))`, совпадает, если значение свойства службы отличается от `sshd`. * `$and($prefix(ss),$suffix(hd))`, совпадает, если значение свойства службы начинается с `ss` и заканчивается на `hd`. * `$or($prefix(ss),$suffix(hd))`, совпадает, если значение свойства службы начинается с `ss` или заканчивается на `hd`. Скобки **(** и **)**, которые являются частью свойства, **должны экранироваться тильдой (~)** | Required |
-| Условие `startupCondition` | text | Строка должна соответствовать требуемому формату. См. [OS services monitoring](https://dt-url.net/vl03xzk). * `$eq(manual)`, совпадает со службами, запускаемыми вручную. Доступные логические операции: * `$not($eq(auto))`, совпадает со службами с типом запуска, отличным от Automatic. * `$or($eq(auto),$eq(manual))`, совпадает, если тип запуска службы Automatic либо Manual. Используйте одно из следующих значений как параметр для условия: * `manual` для Manual * `manual_trigger` для Manual (Trigger Start) * `auto` для Automatic * `auto_delay` для Automatic (Delayed Start) * `auto_trigger` для Automatic (Trigger Start) * `auto_delay_trigger` для Automatic (Delayed Start, Trigger Start) * `disabled` для Disabled | Required |
+| Rule scope `ruleType` | enum | Элемент принимает следующие значения: * `RuleTypeOsService` * `RuleTypeHost` | Optional |
+| Service property `property` | enum | Элемент принимает следующие значения: * `DisplayName` * `ServiceName` * `Path` * `StartupType` * `Manufacturer` | Required |
+| Condition `condition` | text | Строка должна соответствовать обязательному формату. См. [мониторинг сервисов ОС﻿](https://dt-url.net/vl03xzk).  * `$match(ip?tables*)` - совпадает со строкой с подстановочными символами: `*` - любое количество символов (включая ноль), `?` - ровно один символ. * `$contains(ssh)` - совпадает, если `ssh` встречается в значении свойства сервиса. * `$eq(sshd)` - совпадает, если `sshd` точно совпадает со значением свойства сервиса. * `$prefix(ss)` - совпадает, если `ss` является префиксом значения свойства сервиса. * `$suffix(hd)` - совпадает, если `hd` является суффиксом значения свойства сервиса.  Доступные логические операции:  * `$not($eq(sshd))` - совпадает, если значение свойства сервиса отличается от `sshd`. * `$and($prefix(ss),$suffix(hd))` - совпадает, если значение свойства сервиса начинается с `ss` и заканчивается на `hd`. * `$or($prefix(ss),$suffix(hd))` - совпадает, если значение свойства сервиса начинается с `ss` или заканчивается на `hd`.  Скобки **(** и **)**, являющиеся частью проверяемого свойства, **необходимо экранировать тильдой (~)** | Required |
+| Condition `startupCondition` | text | Строка должна соответствовать обязательному формату. См. [мониторинг сервисов ОС﻿](https://dt-url.net/vl03xzk).  * `$eq(manual)` - совпадает с сервисами, запускаемыми вручную.  Доступные логические операции:  * `$not($eq(auto))` - совпадает с сервисами с типом запуска, отличным от Automatic. * `$or($eq(auto),$eq(manual))` - совпадает, если тип запуска сервиса равен Automatic или Manual.  В качестве параметра условия используйте одно из следующих значений:  * `manual` для Manual * `manual_trigger` для Manual (Trigger Start) * `auto` для Automatic * `auto_delay` для Automatic (Delayed Start) * `auto_trigger` для Automatic (Trigger Start) * `auto_delay_trigger` для Automatic (Delayed Start, Trigger Start) * `disabled` для Disabled | Required |
 | Resource attribute `hostMetadataCondition` | [HostMetadataCondition](#HostMetadataCondition) | - | Required |
 
 ##### Объект `linuxDetectionCondition`
 
-| Свойство | Тип | Описание | Обязательный |
+| Свойство | Тип | Описание | Обязательность |
 | --- | --- | --- | --- |
-| Scope правила `ruleType` | enum | Возможные значения: * `RuleTypeOsService` * `RuleTypeHost` | Optional |
-| Свойство службы `property` | enum | Возможные значения: * `ServiceName` * `StartupType` | Required |
-| Условие `condition` | text | Строка должна соответствовать требуемому формату. См. [OS services monitoring](https://dt-url.net/vl03xzk). * `$match(ip?tables*)`, совпадает со строкой с wildcards: `*` любое количество (включая ноль) символов и `?` ровно один символ. * `$contains(ssh)`, совпадает, если `ssh` встречается в значении свойства службы. * `$eq(sshd)`, совпадает, если `sshd` равно значению свойства службы. * `$prefix(ss)`, совпадает, если `ss` является префиксом значения свойства службы. * `$suffix(hd)`, совпадает, если `hd` является суффиксом значения свойства службы. Доступные логические операции: * `$not($eq(sshd))`, совпадает, если значение свойства службы отличается от `sshd`. * `$and($prefix(ss),$suffix(hd))`, совпадает, если значение свойства службы начинается с `ss` и заканчивается на `hd`. * `$or($prefix(ss),$suffix(hd))`, совпадает, если значение свойства службы начинается с `ss` или заканчивается на `hd`. Скобки **(** и **)**, которые являются частью свойства, **должны экранироваться тильдой (~)** | Required |
-| Условие `startupCondition` | text | Строка должна соответствовать требуемому формату. См. [OS services monitoring](https://dt-url.net/vl03xzk). * `$eq(enabled)`, совпадает со службами с типом запуска enabled. Доступные логические операции: * `$not($eq(enabled))`, совпадает со службами с типом запуска, отличным от enabled. * `$or($eq(enabled),$eq(disabled))`, совпадает со службами либо enabled, либо disabled. Используйте одно из следующих значений как параметр для условия: * `enabled` * `enabled-runtime` * `static` * `disabled` | Required |
-| Resource attribute `hostMetadataCondition` | [HostMetadataCondition](#HostMetadataCondition) | Host resource attributes, это dimensions, обогащающие host, включая custom metadata (пользовательские key-value пары, которые можно присваивать hosts, мониторимым Dynatrace). Через custom metadata можно дополнять данные мониторинга контекстом, специфичным для нужд организации: имена environment, ответственность команд, версии приложения и т.д. См. [Define tags and metadata for hosts](https://dt-url.net/w3hv0kbw). Note: начиная с версии 1.325 host resource attributes поддерживаются наряду с host custom metadata. | Required |
+| Rule scope `ruleType` | enum | Элемент принимает следующие значения: * `RuleTypeOsService` * `RuleTypeHost` | Optional |
+| Service property `property` | enum | Элемент принимает следующие значения: * `ServiceName` * `StartupType` | Required |
+| Condition `condition` | text | Строка должна соответствовать обязательному формату. См. [мониторинг сервисов ОС﻿](https://dt-url.net/vl03xzk).  * `$match(ip?tables*)` - совпадает со строкой с подстановочными символами: `*` - любое количество символов (включая ноль), `?` - ровно один символ. * `$contains(ssh)` - совпадает, если `ssh` встречается в значении свойства сервиса. * `$eq(sshd)` - совпадает, если `sshd` точно совпадает со значением свойства сервиса. * `$prefix(ss)` - совпадает, если `ss` является префиксом значения свойства сервиса. * `$suffix(hd)` - совпадает, если `hd` является суффиксом значения свойства сервиса.  Доступные логические операции:  * `$not($eq(sshd))` - совпадает, если значение свойства сервиса отличается от `sshd`. * `$and($prefix(ss),$suffix(hd))` - совпадает, если значение свойства сервиса начинается с `ss` и заканчивается на `hd`. * `$or($prefix(ss),$suffix(hd))` - совпадает, если значение свойства сервиса начинается с `ss` или заканчивается на `hd`.  Скобки **(** и **)**, являющиеся частью проверяемого свойства, **необходимо экранировать тильдой (~)** | Required |
+| Condition `startupCondition` | text | Строка должна соответствовать обязательному формату. См. [мониторинг сервисов ОС﻿](https://dt-url.net/vl03xzk).  * `$eq(enabled)` - совпадает с сервисами, у которых тип запуска равен enabled.  Доступные логические операции:  * `$not($eq(enabled))` - совпадает с сервисами с типом запуска, отличным от enabled. * `$or($eq(enabled),$eq(disabled))` - совпадает с сервисами, у которых тип запуска равен enabled или disabled.  В качестве параметра условия используйте одно из следующих значений:  * `enabled` * `enabled-runtime` * `static` * `disabled` * `indirect` * `linked` * `linked-runtime` | Required |
+| Resource attribute `hostMetadataCondition` | [HostMetadataCondition](#HostMetadataCondition) | Атрибуты ресурса Host, это измерения, обогащающие хост, включая пользовательские метаданные, то есть определяемые пользователем пары ключ-значение, назначаемые хостам, которые отслеживает Dynatrace.  Пользовательские метаданные позволяют дополнить данные мониторинга контекстом, специфичным для нужд организации: именами окружений, принадлежностью командам, версиями приложений и другими сведениями.  См. [Определение тегов и метаданных для хостов﻿](https://dt-url.net/w3hv0kbw).  Примечание: начиная с версии 1.325 поддерживаются атрибуты ресурса Host в дополнение к пользовательским метаданным хоста. | Required |
 
 ##### Объект `MetadataItem`
 
-| Свойство | Тип | Описание | Обязательный |
+| Свойство | Тип | Описание | Обязательность |
 | --- | --- | --- | --- |
-| Ключ `metadataKey` | text | Введите 'dt.' для подсказок ключей. | Required |
-| Значение `metadataValue` | text | Введите '{' для подсказок placeholder. | Required |
+| Key `metadataKey` | text | Введите `dt.` для подсказок по ключам. | Required |
+| Value `metadataValue` | text | Введите `{` для подсказок по плейсхолдерам. | Required |
 
 ##### Объект `HostMetadataCondition`
 
-| Свойство | Тип | Описание | Обязательный |
+| Свойство | Тип | Описание | Обязательность |
 | --- | --- | --- | --- |
-| Ключ должен существовать `keyMustExist` | boolean | Когда включено, условие требует, чтобы resource attribute существовал и удовлетворял ограничениям; когда выключено, ключ необязателен, но при наличии всё равно должен удовлетворять ограничениям. | Required |
-| Ключ `metadataKey` | text | - | Required |
-| Условие `metadataCondition` | text | Строка должна соответствовать требуемому формату. * `$match(ver*_1.2.?)`, совпадает со строкой с wildcards: `*` любое количество (включая ноль) символов и `?` ровно один символ. * `$contains(production)`, совпадает, если `production` встречается в значении host metadata. * `$eq(production)`, совпадает, если `production` равно значению host metadata. * `$prefix(production)`, совпадает, если `production` является префиксом значения host metadata. * `$suffix(production)`, совпадает, если `production` является суффиксом значения host metadata. Доступные логические операции: * `$not($eq(production))`, совпадает, если значение host metadata отличается от `production`. * `$and($prefix(production),$suffix(main))`, совпадает, если значение host metadata начинается с `production` и заканчивается на `main`. * `$or($prefix(production),$suffix(main))`, совпадает, если значение host metadata начинается с `production` или заканчивается на `main`. Скобки **(** и **)**, которые являются частью свойства, **должны экранироваться тильдой (~)** | Required |
+| Key must exist `keyMustExist` | boolean | При включённом параметре условие требует, чтобы атрибут ресурса существовал и соответствовал ограничениям; при отключённом ключ необязателен, но при наличии должен соответствовать ограничениям. | Required |
+| Key `metadataKey` | text | - | Required |
+| Condition `metadataCondition` | text | Строка должна соответствовать обязательному формату.  * `$match(ver*_1.2.?)` - совпадает со строкой с подстановочными символами: `*` - любое количество символов (включая ноль), `?` - ровно один символ. * `$contains(production)` - совпадает, если `production` встречается в значении метаданных хоста. * `$eq(production)` - совпадает, если `production` точно совпадает со значением метаданных хоста. * `$prefix(production)` - совпадает, если `production` является префиксом значения метаданных хоста. * `$suffix(production)` - совпадает, если `production` является суффиксом значения метаданных хоста.  Доступные логические операции:  * `$not($eq(production))` - совпадает, если значение метаданных хоста отличается от `production`. * `$and($prefix(production),$suffix(main))` - совпадает, если значение метаданных хоста начинается с `production` и заканчивается на `main`. * `$or($prefix(production),$suffix(main))` - совпадает, если значение метаданных хоста начинается с `production` или заканчивается на `main`.  Скобки **(** и **)**, являющиеся частью проверяемого свойства, **необходимо экранировать тильдой (~)** | Required |

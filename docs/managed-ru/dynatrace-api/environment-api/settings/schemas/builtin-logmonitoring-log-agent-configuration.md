@@ -1,24 +1,23 @@
 ---
 title: Settings API - Advanced log settings schema table
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/settings/schemas/builtin-logmonitoring-log-agent-configuration
-scraped: 2026-05-12T11:48:26.729030
 ---
 
 # Settings API - Advanced log settings schema table
 
 # Settings API - Advanced log settings schema table
 
-* Published Dec 05, 2023
+* Опубликовано 05 дек. 2023
 
-### Расширенные параметры логов (`builtin:logmonitoring.log-agent-configuration)`
+### Advanced log settings (`builtin:logmonitoring.log-agent-configuration`)
 
-Настройте параметры OneAgent для Dynatrace Log Monitoring
+Настройка OneAgent параметров для Dynatrace Log Monitoring
 
 | Schema ID | Schema groups | Scope |
 | --- | --- | --- |
-| `builtin:logmonitoring.log-agent-configuration` | * `group:log-monitoring` * `group:log-monitoring.ingest-and-processing` | `HOST` - Host  `KUBERNETES_CLUSTER` - Kubernetes cluster  `HOST_GROUP` - Host Group  `environment` |
+| `builtin:logmonitoring.log-agent-configuration` | * `group:log-monitoring` * `group:log-monitoring.ingest-and-processing` | `HOST` - Хост  `KUBERNETES_CLUSTER` - Kubernetes кластер  `HOST_GROUP` - Host Group  `environment` |
 
-Получить schema через Settings API
+Получить схему через Settings API
 
 |  |  |  |
 | --- | --- | --- |
@@ -28,23 +27,24 @@ scraped: 2026-05-12T11:48:26.729030
 
 ## Аутентификация
 
-Для выполнения запроса необходим access token со scope **Read settings** (`settings.read`). О том, как получить и использовать токен, см. [Tokens and authentication](/managed/discover-dynatrace/references/dynatrace-api/basics/dynatrace-api-authentication).
+Для выполнения этого запроса нужен токен доступа с правами **Read settings** (`settings.read`). Порядок получения и использования описан в разделе [Tokens and authentication](/managed/discover-dynatrace/references/dynatrace-api/basics/dynatrace-api-authentication).
 
 ## Параметры
 
 | Свойство | Тип | Описание | Обязательный |
 | --- | --- | --- | --- |
-| Обнаруживать открытые лог-файлы `LAConfigOpenLogFilesDetectionEnabled` | boolean | Автоматически обнаруживать логи, записываемые важными процессами. Подробнее см. в [documentation](https://dt-url.net/7v02z76) | Required |
-| Обнаруживать системные логи `LAConfigSystemLogsDetectionEnabled` | boolean | Linux: syslog, message log Windows: system, application, security event logs | Required |
-| Обнаруживать логи контейнеризованных приложений `LAConfigContainersLogsDetectionEnabled` | boolean | Позволяет обнаруживать сообщения логов, записываемые в потоки stdout/stderr контейнеризованного приложения. | Required |
-| Обнаруживать IIS-логи `LAConfigIISDetectionEnabled` | boolean | Позволяет обнаруживать логи и event logs, записываемые IIS-сервером. | Required |
-| Обнаруживать логи на сетевых файловых системах `LAConfigLogScannerLinuxNfsEnabled` | boolean | Позволяет обнаруживать логи, записываемые на смонтированные сетевые накопители. Применяется только к Linux-хостам. Для Windows-систем включено всегда. | Required |
-| Разрешить OneAgent мониторить Dynatrace-логи `LAConfigMonitorOwnLogsEnabled` | boolean | Включение этой опции может повлиять на лицензионные затраты. Подробнее см. в [documentation](https://dt-url.net/7v02z76). | Required |
-| Обнаруживать часовые пояса контейнеров `LAConfigContainerTimezoneHeuristicEnabled` | boolean | Включает автоматическое обнаружение часового пояса в логах контейнера, если он не задан явно в контенте или в конфигурации. | Required |
-| Часовой пояс по умолчанию для агентов `LAConfigDefaultTimezone` | text | Часовой пояс по умолчанию для агента, если не задана более конкретная конфигурация. | Required |
-| Лимит поиска временной метки `LAConfigDateSearchLimit_Bytes` | integer | Задаёт количество символов в каждой строке лога (начиная с первого символа), в которых ищется временная метка. | Required |
-| Лимит поиска severity по символам `LAConfigSeverityDetectionLimit_Bytes` | integer | Задаёт количество символов в каждой строке лога (начиная с первого символа), в которых ищется severity. | Required |
-| Лимит поиска severity по строкам `LAConfigSeverityDetectionLinesLimit` | integer | Задаёт количество первых строк каждой записи лога, в которых ищется severity. | Required |
-| Максимальное число источников логов на один process group instance `LAConfigMaxLgisPerEntityCount` | integer | Задаёт максимальное число log group instances на одну сущность, после которого новые автоматические instances не добавляются. | Required |
-| Таймаут запроса Windows Event Log `LAConfigEventLogQueryTimeout_Sec` | integer | Задаёт максимальное значение таймаута (в секундах) для запроса, извлекающего Windows Event Logs | Required |
-| Минимальный размер лог-файла для бинарного обнаружения. `LAConfigMinBinaryDetectionLimit_Bytes` | integer | Задаёт минимальное число байт в лог-файле, необходимое для бинарного обнаружения. | Required |
+| Detect open log files `LAConfigOpenLogFilesDetectionEnabled` | boolean | Автоматически обнаруживать журналы, записываемые важными процессами. Подробнее в [документации﻿](https://dt-url.net/7v02z76) | Обязательный |
+| Detect system logs `LAConfigSystemLogsDetectionEnabled` | boolean | Linux: syslog, журнал сообщений. Windows: системные, прикладные журналы и журналы событий безопасности | Обязательный |
+| Detect logs of containerized applications `LAConfigContainersLogsDetectionEnabled` | boolean | Позволяет обнаруживать сообщения журнала, записываемые в потоки stdout/stderr контейнеризированного приложения. | Обязательный |
+| Detect IIS logs `LAConfigIISDetectionEnabled` | boolean | Позволяет обнаруживать журналы и журналы событий, записываемые сервером IIS. | Обязательный |
+| Detect logs on network file systems `LAConfigLogScannerLinuxNfsEnabled` | boolean | Позволяет обнаруживать журналы, записываемые на подключённые сетевые хранилища. Применяется только к Linux-хостам. Для Windows всегда включено. | Обязательный |
+| Allow OneAgent to monitor Dynatrace logs `LAConfigMonitorOwnLogsEnabled` | boolean | Включение этого параметра может повлиять на стоимость лицензии. Подробнее в [документации﻿](https://dt-url.net/7v02z76). | Обязательный |
+| Detect container time zones `LAConfigContainerTimezoneHeuristicEnabled` | boolean | Включает автоматическое определение часового пояса в журналах контейнера, если он не задан явно в содержимом или конфигурации. | Обязательный |
+| Default timezone for agents `LAConfigDefaultTimezone` | text | Часовой пояс по умолчанию для агента, если не задана более точная конфигурация. | Обязательный |
+| Timestamp search limit `LAConfigDateSearchLimit_Bytes` | integer | Задаёт количество символов в каждой строке журнала (начиная с первого символа), в пределах которых выполняется поиск метки времени. | Обязательный |
+| Severity search chars limit `LAConfigSeverityDetectionLimit_Bytes` | integer | Задаёт количество символов в каждой строке журнала (начиная с первого символа), в пределах которых выполняется поиск уровня серьёзности. | Обязательный |
+| Severity search lines limit `LAConfigSeverityDetectionLinesLimit` | integer | Задаёт количество первых строк каждой записи журнала, в пределах которых выполняется поиск уровня серьёзности. | Обязательный |
+| Maximum number of log sources per process group instance `LAConfigMaxLgisPerEntityCount` | integer | Задаёт максимальное количество экземпляров группы журналов на объект, после достижения которого новые автоматические экземпляры не добавляются. | Обязательный |
+| Windows Event Log query timeout `LAConfigEventLogQueryTimeout_Sec` | integer | Задаёт максимальное значение тайм-аута в секундах для запроса, извлекающего журналы событий Windows. | Обязательный |
+| Minimal log file size to perform binary detection. `LAConfigMinBinaryDetectionLimit_Bytes` | integer | Задаёт минимальное количество байт в файле журнала, необходимое для обнаружения бинарного содержимого. | Обязательный |
+| Binary detection mode `BinaryDetectionMode` | enum | Задаёт степень детализации обнаружения бинарных файлов журналов. 'Per log source' применяет обнаружение на уровне источника журнала, 'Per log file' оценивает каждый файл журнала отдельно. Элемент имеет следующие перечисляемые значения: * `BinaryPerLogSource` * `BinaryPerLogFile` | Обязательный |

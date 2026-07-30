@@ -1,25 +1,24 @@
 ---
 title: Обратный прокси или балансировщик нагрузки для OneAgent
 source: https://docs.dynatrace.com/managed/ingest-from/dynatrace-activegate/configuration/set-up-reverse-proxy-for-oneagent
-scraped: 2026-05-12T11:36:23.797788
 ---
 
 # Обратный прокси или балансировщик нагрузки для OneAgent
 
 # Обратный прокси или балансировщик нагрузки для OneAgent
 
-* 1-min read
-* Updated on Feb 24, 2026
+* Чтение займёт 1 минуту
+* Обновлено 09 июля 2026 г.
 
-На пути от OneAgent к ActiveGate можно установить обратный прокси или балансировщик нагрузки. Необходимо настроить URL балансировщика нагрузки на ActiveGate, чтобы OneAgent мог использовать эту конечную точку для подключения к ActiveGate.
+Обратный прокси или балансировщик нагрузки можно разместить на пути от OneAgent до ActiveGate. Нужно настроить URL балансировщика на стороне ActiveGate, чтобы OneAgent мог использовать этот endpoint для подключения к ActiveGate.
 
-Настраивать OneAgent для использования обратного прокси не нужно. OneAgent использует список конечных точек связи, встроенных в установщик, для подключения к окружению. ActiveGate сообщает OneAgent URL, используемый для настройки установки OneAgent.
+Настраивать OneAgent на работу через обратный прокси не нужно. OneAgent использует список коммуникационных endpoint'ов, встроенных в установщик, для подключения к среде. ActiveGate сообщает OneAgent URL, который применяется при настройке установки OneAgent.
 
 ## Настройка во время установки
 
 Только Linux
 
-На Linux-системах можно настроить обратный прокси или балансировщик нагрузки для OneAgent, указав параметры установки во время установки ActiveGate. Подробнее см. [Настройка установки ActiveGate на Linux](/managed/ingest-from/dynatrace-activegate/installation/linux/linux-customize-installation-for-activegate#load-balancer-oneagent "Узнайте о параметрах командной строки для ActiveGate на Linux.").
+На системах Linux обратный прокси или балансировщик нагрузки для OneAgent можно настроить, указав параметры установки во время инсталляции ActiveGate. Подробнее см. [Customize ActiveGate installation on Linux](/managed/ingest-from/dynatrace-activegate/installation/linux/linux-customize-installation-for-activegate#load-balancer-oneagent "Learn about the command-line parameters that you can use with ActiveGate on Linux.").
 
 ## Настройка после установки
 
@@ -29,24 +28,24 @@ custom.properties
 
 ActiveGate версии 1.333+
 
-Используйте [agctl](/managed/ingest-from/dynatrace-activegate/agctl-command-line-interface#incoming-endpoint "Узнайте, как использовать agctl для настройки и управления ActiveGate из командной строки") для настройки обратного прокси или балансировщика нагрузки для OneAgent.
+Для настройки обратного прокси или балансировщика нагрузки для OneAgent можно использовать [agctl](/managed/ingest-from/dynatrace-activegate/agctl-command-line-interface#incoming-endpoint "Learn how to use agctl to configure and manage ActiveGate from the command line").
 
-#### Установка одной конечной точки обратного прокси:
+#### Задать один endpoint обратного прокси:
 
 ```
 agctl incoming-endpoint set https://address.of.my.lb.com:9999
 ```
 
-#### Установка нескольких конечных точек обратного прокси:
+#### Задать несколько endpoint'ов обратного прокси:
 
 ```
 agctl incoming-endpoint set https://address.of.my.lb-1.com:9999,https://address.of.my.lb-2.com:9999
 ```
 
-После настройки обратного прокси с помощью `agctl` необходимо [перезапустить ActiveGate](/managed/ingest-from/dynatrace-activegate/operation/stop-restart-activegate "Узнайте, как запустить, остановить и перезапустить ActiveGate на Windows или Linux.") для применения изменений.
+После настройки обратного прокси через `agctl` нужно [перезапустить ActiveGate](/managed/ingest-from/dynatrace-activegate/operation/stop-restart-activegate "Learn how you can start, stop and restart ActiveGate on Windows or Linux."), чтобы изменения вступили в силу.
 
-1. Остановите ActiveGate и отредактируйте файл `custom.properties` в [директории конфигурации ActiveGate](/managed/ingest-from/dynatrace-activegate/configuration/where-can-i-find-activegate-files "Узнайте, где хранятся файлы ActiveGate на Windows и Linux.").
-2. Настройте параметр `dnsEntryPoint` в разделе `[connectivity]` в следующем формате:
+1. Остановите ActiveGate и откройте файл `custom.properties` в [директории конфигурации ActiveGate](/managed/ingest-from/dynatrace-activegate/configuration/where-can-i-find-activegate-files "Find out where ActiveGate files are stored on Windows and Linux systems.").
+2. Настройте параметр `dnsEntryPoint` в секции `[connectivity]`, используя следующий формат:
 
    `dnsEntryPoint = https://<DOMAIN>:<PORT>`
 
@@ -60,7 +59,7 @@ agctl incoming-endpoint set https://address.of.my.lb-1.com:9999,https://address.
    dnsEntryPoint = https://address.of.my.lb.com:9999
    ```
 
-   Для указания нескольких адресов, к которым подключается OneAgent, используйте список через запятую. Например:
+   Чтобы указать несколько адресов назначения, к которым подключается OneAgent, используйте список через запятую. Например:
 
    ```
    [connectivity]
@@ -69,13 +68,13 @@ agctl incoming-endpoint set https://address.of.my.lb-1.com:9999,https://address.
 
    dnsEntryPoint = https://address.of.my.lb-1.com:9999,https://address.of.my.lb-2.com:9999
    ```
-3. Сохраните файл `custom.properties` и [перезапустите основную службу ActiveGate](/managed/ingest-from/dynatrace-activegate/operation/stop-restart-activegate "Узнайте, как запустить, остановить и перезапустить ActiveGate на Windows или Linux.").
+3. Сохраните файл `custom.properties` и [перезапустите основную службу ActiveGate](/managed/ingest-from/dynatrace-activegate/operation/stop-restart-activegate "Learn how you can start, stop and restart ActiveGate on Windows or Linux.").
 
 ## Проверка конфигурации
 
-Для проверки конфигурации:
+Чтобы проверить конфигурацию:
 
-1. В Dynatrace перейдите в **Deployment Status** > **ActiveGates**.
-2. Разверните строку нужного ActiveGate и проверьте свойство **Load Balancer** в разделе **Properties**.
+1. Перейдите в **Deployment Status** > **ActiveGates**.
+2. Раскройте строку нужного ActiveGate и проверьте свойство **Load Balancer** в разделе **Properties**.
 
-   Страницу **ActiveGates** можно фильтровать по `Load Balancer address`.
+   Страницу **ActiveGates** можно отфильтровать по `Load Balancer address`.

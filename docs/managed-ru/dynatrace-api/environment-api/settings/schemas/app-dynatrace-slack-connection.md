@@ -1,26 +1,25 @@
 ---
 title: Settings API - Slack schema table
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/settings/schemas/app-dynatrace-slack-connection
-scraped: 2026-05-12T11:43:06.709745
 ---
 
 # Settings API - Slack schema table
 
 # Settings API - Slack schema table
 
-* Published Dec 05, 2023
+* Опубликовано 05 дек. 2023
 
 ### Slack (`app:dynatrace.slack:connection)`
 
 Данные аутентификации для Slack API
 
-(подробнее в [документации по Slack API](https://api.slack.com/authentication/basics/ "Открыть документ Slack"))
+(подробнее в [документации Slack api﻿](https://api.slack.com/authentication/basics/ "Visit Slack document"))
 
 | Schema ID | Schema groups | Scope |
 | --- | --- | --- |
 | `app:dynatrace.slack:connection` | - | `environment` |
 
-Получить schema через Settings API
+Получить схему через Settings API
 
 |  |  |  |
 | --- | --- | --- |
@@ -30,11 +29,13 @@ scraped: 2026-05-12T11:43:06.709745
 
 ## Аутентификация
 
-Для выполнения запроса необходим access token со scope **Read settings** (`settings.read`). О том, как получить и использовать токен, см. [Tokens and authentication](/managed/discover-dynatrace/references/dynatrace-api/basics/dynatrace-api-authentication).
+Для выполнения этого запроса нужен токен доступа с областью **Read settings** (`settings.read`). Подробнее о получении и использовании: [Tokens and authentication](/managed/discover-dynatrace/references/dynatrace-api/basics/dynatrace-api-authentication).
 
 ## Параметры
 
-| Свойство | Тип | Описание | Обязательный |
+| Свойство | Тип | Описание | Обязательность |
 | --- | --- | --- | --- |
-| Имя подключения `name` | text | Укажите уникальное и однозначно идентифицируемое имя подключения к вашему приложению Slack. | Required |
-| Токен бота `token` | secret | Токен бота, полученный из интерфейса Slack App Management.  Токен бота в формате `xoxb-******` | Required |
+| Название соединения `name` | text | Укажите уникальное и легко узнаваемое название соединения со Slack App. | Обязательно |
+| Bot-токен `token` | secret | Bot-токен, полученный в Slack App Management UI.  Формат токена: `xoxb-******` | Обязательно |
+| Внешнее согласование `externalApproval` | boolean | Включение внешних согласований позволяет пользователям Slack напрямую отвечать на запросы согласования. | Необязательно |
+| Подписывающий секрет `signingSecret` | secret | Подписывающий секрет, полученный в Slack App Management UI. | Обязательно |

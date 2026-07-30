@@ -1,88 +1,87 @@
 ---
 title: Settings API - DELETE an object
 source: https://docs.dynatrace.com/managed/dynatrace-api/environment-api/settings/objects/del-object
-scraped: 2026-05-12T11:38:50.967831
 ---
 
 # Settings API - DELETE an object
 
 # Settings API - DELETE an object
 
-* Reference
-* Published Feb 24, 2021
+* Справочник
+* Обновлено 09 июл. 2026 г.
 
-Обновляет указанный settings object. Удаление нельзя отменить!
+Удаляет указанный объект настроек. Удаление нельзя отменить!
 
 |  |  |  |
 | --- | --- | --- |
 | DELETE | ManagedDynatrace for Government | `https://{your-domain}/e/{your-environment-id}/api/v2/settings/objects/{objectId}` |
 | DELETE | Environment and Cluster ActiveGate (default port 9999) | `https://{your-activegate-domain}:9999/e/{your-environment-id}/api/v2/settings/objects/{objectId}` |
 
-## Аутентификация
+## Authentication
 
-Для выполнения запроса необходим access token со scope `settings.write`.
+Для выполнения этого запроса нужен токен доступа со скоупом `settings.write`.
 
-О том, как получить и использовать токен, см. [Tokens and authentication](/managed/discover-dynatrace/references/dynatrace-api/basics/dynatrace-api-authentication).
+О получении и использовании токена читайте в разделе [Tokens and authentication](/managed/discover-dynatrace/references/dynatrace-api/basics/dynatrace-api-authentication).
 
-## Параметры
+## Parameters
 
-| Параметр | Тип | Описание | Где | Обязательный |
+| Parameter | Type | Description | In | Required |
 | --- | --- | --- | --- | --- |
-| objectId | string | ID нужного settings object. | path | Required |
-| updateToken | string | Update token объекта. Вы можете использовать его для обнаружения одновременных модификаций разными пользователями.  Он генерируется при получении (GET-запросы). Если задан при обновлении (PUT-запрос) или удалении, обновление/удаление будет разрешено только если между получением и обновлением не было изменений.  Если опущен при обновлении/удалении, операция переопределяет текущее значение или удаляет его без каких-либо проверок. | query | Optional |
-| adminAccess | boolean | Если установлено в true и у пользователя есть право settings:objects:admin, endpoint будет действовать так, как будто пользователь является владельцем всех объектов | query | Optional |
+| objectId | string | Идентификатор нужного объекта настроек. | path | Required |
+| updateToken | string | Токен обновления объекта. Позволяет обнаруживать одновременные изменения от разных пользователей. Генерируется при получении (GET-запросы). Если указан при обновлении (PUT-запрос) или удалении, операция разрешается только при отсутствии изменений между получением и обновлением. Если не указан при обновлении/удалении, операция перезаписывает текущее значение или удаляет его без каких-либо проверок. | query | Optional |
+| adminAccess | boolean | Если true и у пользователя есть разрешение settings:objects:admin, endpoint ведёт себя так, будто пользователь является владельцем всех объектов. | query | Optional |
 
-## Ответ
+## Response
 
-### Коды ответа
+### Response codes
 
-| Код | Тип | Описание |
+| Code | Type | Description |
 | --- | --- | --- |
-| **204** | - | Успех. Ответ не содержит тела. |
-| **400** | [SettingsObjectResponse](#openapi-definition-SettingsObjectResponse) | Сбой. Не пройдена валидация схемы. |
-| **403** | [ErrorEnvelope](#openapi-definition-ErrorEnvelope) | Сбой. Доступ запрещён. |
-| **404** | [SettingsObjectResponse](#openapi-definition-SettingsObjectResponse) | Сбой. Запрашиваемый ресурс не существует. |
-| **409** | [SettingsObjectResponse](#openapi-definition-SettingsObjectResponse) | Сбой. Конфликтующий ресурс. |
+| **204** | - | Успех. Тело ответа отсутствует. |
+| **400** | [SettingsObjectResponse](#openapi-definition-SettingsObjectResponse) | Ошибка. Не прошла валидация схемы. |
+| **403** | [ErrorEnvelope](#openapi-definition-ErrorEnvelope) | Ошибка. Доступ запрещён. |
+| **404** | [SettingsObjectResponse](#openapi-definition-SettingsObjectResponse) | Ошибка. Запрошенный ресурс не существует. |
+| **409** | [SettingsObjectResponse](#openapi-definition-SettingsObjectResponse) | Ошибка. Конфликт ресурса. |
 | **4XX** | [ErrorEnvelope](#openapi-definition-ErrorEnvelope) | Ошибка на стороне клиента. |
 | **5XX** | [ErrorEnvelope](#openapi-definition-ErrorEnvelope) | Ошибка на стороне сервера. |
 
-### Объекты тела ответа
+### Response body objects
 
-#### Объект `SettingsObjectResponse`
+#### The `SettingsObjectResponse` object
 
 Ответ на запрос создания или обновления.
 
-| Элемент | Тип | Описание |
+| Element | Type | Description |
 | --- | --- | --- |
-| code | integer | HTTP-код состояния для объекта. |
+| code | integer | HTTP-статус код объекта. |
 | error | [Error](#openapi-definition-Error) | - |
-| invalidValue | string | Значение настройки.  Оно определяет фактические значения параметров настроек.  Фактическое содержимое зависит от schema объекта. |
-| objectId | string | Для успешного запроса: ID созданного или изменённого settings object. |
+| invalidValue | [AnyValue](#openapi-definition-AnyValue) | Значение настройки. Определяет фактические значения параметров настроек. Содержание зависит от схемы объекта. |
+| objectId | string | При успешном запросе, идентификатор созданного или изменённого объекта настроек. |
 
-#### Объект `Error`
+#### The `Error` object
 
-| Элемент | Тип | Описание |
+| Element | Type | Description |
 | --- | --- | --- |
-| code | integer | HTTP-код состояния |
-| constraintViolations | [ConstraintViolation[]](#openapi-definition-ConstraintViolation) | Список нарушений ограничений |
-| message | string | Сообщение об ошибке |
+| code | integer | HTTP-статус код. |
+| constraintViolations | [ConstraintViolation](#openapi-definition-ConstraintViolation)[] | Список нарушений ограничений. |
+| message | string | Сообщение об ошибке. |
 
-#### Объект `ConstraintViolation`
+#### The `ConstraintViolation` object
 
-Список нарушений ограничений
+Список нарушений ограничений.
 
-| Элемент | Тип | Описание |
+| Element | Type | Description |
 | --- | --- | --- |
 | location | string | - |
 | message | string | - |
-| parameterLocation | string | -Возможные значения: * `HEADER` * `PATH` * `PAYLOAD_BODY` * `QUERY` |
+| parameterLocation | string | -Элемент может принимать следующие значения: * `HEADER` * `PATH` * `PAYLOAD_BODY` * `QUERY` |
 | path | string | - |
 
-#### Объект `AnyValue`
+#### The `AnyValue` object
 
-Schema, представляющая произвольный тип значения.
+Схема, представляющая произвольный тип значения.
 
-### JSON-модели тела ответа
+### Response body JSON models
 
 ```
 {
@@ -141,7 +140,15 @@ Schema, представляющая произвольный тип значе�
 
 
 
-"invalidValue": "string",
+"invalidValue": {
+
+
+
+"autoMonitoring": true
+
+
+
+},
 
 
 
